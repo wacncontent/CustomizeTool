@@ -56,12 +56,12 @@ Avid DNxHD (in MXF)									|Yes
 DVCPro/DVCProHD (in MXF)							|Yes 
 Digital video (DV) (in AVI files)                   |Yes
 JPEG 2000											|Yes 
-MPEG-2 (up to 422 Profile and High Level; including variants such as XDCAM, XDCAM HD, XDCAM IMX, CableLabs® and D10)|Up to 422 Profile 
+MPEG-2 (up to 422 Profile and High Level; including variants such as XDCAM, XDCAM HD, XDCAM IMX, CableLabs速 and D10)|Up to 422 Profile 
 MPEG-1												|Yes 
 VC-1/WMV9											|Yes 
 Canopus HQ/HQX										|No 
 MPEG-4 Part 2										|Yes 
-[Theora](https://en.wikipedia.org/wiki/Theora)		|Yes 
+[Theora](https://zh.wikipedia.org/wiki/Theora)		|Yes 
 YUV420 uncompressed, or mezzanine					|Yes
 Apple ProRes 422									|Yes
 Apple ProRes 422 LT	|Yes
@@ -81,14 +81,14 @@ MPEG Layer 2|Yes
 MP3 (MPEG-1 Audio Layer 3)|Yes 
 Windows Media Audio|Yes 
 WAV/PCM|Yes 
-[FLAC](https://en.wikipedia.org/wiki/FLAC)</a>|Yes 
-[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) |Yes 
+[FLAC](https://zh.wikipedia.org/wiki/FLAC)</a>|Yes 
+[Opus](https://en.wikipedia.org/wiki/Opus_codec) |Yes 
 [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a>|Yes 
 AMR (adaptive multi-rate)|Yes
 AES (SMPTE 331M and 302M, AES3-2003)		|No 
-Dolby® E									|No 
-Dolby® Digital (AC3)						|No 
-Dolby® Digital Plus (E-AC3)					|No 
+Dolby速 E									|No 
+Dolby速 Digital (AC3)						|No 
+Dolby速 Digital Plus (E-AC3)					|No 
 
 
 ##Output Formats and codecs

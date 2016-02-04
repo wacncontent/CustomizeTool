@@ -1,21 +1,24 @@
 
-<properties
-	pageTitle="Get Started with Azure Mobile Services for Android apps"
-	description="Follow this tutorial to get started using Azure Mobile Services for Android development."
-	services="mobile-services"
-	documentationCenter="android"
-	authors="RickSaling"
-	manager="dwrede"
+<properties 
+	pageTitle="Get Started with Azure Mobile Services for Android apps" 
+	description="Follow this tutorial to get started using Azure Mobile Services for Android development." 
+	services="mobile-services" 
+	documentationCenter="android" 
+	authors="RickSaling" 
+	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="10/07/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="11/05/2015"
 	wacn.date=""/>
 
 
 # <a name="getting-started"> </a>Get started with Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
@@ -29,9 +32,9 @@ A screenshot from the completed app is below:
 
 Completing this tutorial requires the [Android Developer Tools][Android Studio], which includes the Android Studio integrated development environment, and the latest Android platform. Android 4.2 or a later version is required.  
 
-The downloaded quickstart project contains the Mobile Services SDK for Android.
+The downloaded quickstart project contains the Mobile Services SDK for Android. 
 
-> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28).
+> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/).
 
 
 ## <a name="create-new-service"> </a>Create a new mobile service
@@ -64,15 +67,15 @@ Now that you have created the mobile service, download your personalized mobile 
 
 In this section you will create a new Android app that is connected to your mobile service.
 
-1. In the [Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
+1. In the [Azure Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
 
-2. In the quickstart tab, click **Android** under **Choose platform** and expand **Create a new Android app**.
-
+2. In the quickstart tab, click **Android** under **Choose platform** and expand **Create a new Android app**. 
+ 
 	![][2]  
 
 3. If you haven't already done so, download and install the [Android Developer Tools][Android SDK] on your local computer or virtual machine.
 
-4. Under **Download and run your app**, click **Download**.
+4. Under **Download and run your app**, click **Download**. 
 
   	This downloads the project for the sample _To do list_ application that is connected to your mobile service. Save the compressed project file to your local computer, and make a note of where you save it.
 
@@ -81,7 +84,7 @@ In this section you will create a new Android app that is connected to your mobi
 [AZURE.INCLUDE [mobile-services-run-your-app](../includes/mobile-services-android-get-started.md)]
 
 ## <a name="next-steps"> </a>Next Steps
-Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services:
+Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services: 
 
 * [Add push notifications to your app]
   <br/>Learn how to send a very basic push notification to your app.
@@ -90,7 +93,7 @@ Now that you have completed the quickstart, learn how to perform additional impo
   <br/>Learn how to restrict access to your backend data to specific registered users of your app.
 
 * [Troubleshoot a Mobile Services .NET backend]
-  <br/> Learn how to diagnose and fix issues that can arise with a Mobile Services .NET backend.
+  <br/> Learn how to diagnose and fix issues that can arise with a Mobile Services .NET backend. 
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]:#getting-started
@@ -124,4 +127,4 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Troubleshoot a Mobile Services .NET backend]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
 
-[Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn/

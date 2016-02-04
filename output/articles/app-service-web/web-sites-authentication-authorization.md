@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Use Active Directory for authentication in Azure Websites" 
-	description="Learn the different authentication and authorization options for line-of-business applications that are deployed to Azure Websites" 
+	pageTitle="Use Active Directory for authentication in Azure Web App" 
+	description="Learn the different authentication and authorization options for line-of-business applications that are deployed to Azure Web Apps" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/29/2015"
+	ms.date="12/10/2015"
 	wacn.date=""/>
 
-# Use Active Directory for authentication in Azure Websites #
+# Use Active Directory for authentication in Azure #
 
-[Azure Websites](/documentation/services/web-sites/) enables enterprise line-of-business application scenarios by supporting single sign-on (SSO) of users whether they access the application from your on-premises environment or the public internet. It can be integrated with [Azure Active Directory](/home/features/identity/) (AAD) or an on-premises secure token service (STS), such as Active Directory Federation Services (AD FS), to authenticate your internal Active Directory (AD) users and authorize them properly.
+[Azure Web Apps](/documentation/services/web-sites/) enables enterprise line-of-business application scenarios by supporting single sign-on (SSO) of users whether they access the application from your on-premises environment or the public internet. It can be integrated with [Azure Active Directory](/home/features/identity/) (AAD) or an on-premises secure token service (STS), such as Active Directory Federation Services (AD FS), to authenticate your internal Active Directory (AD) users and authorize them properly.
 
 ## Zero-friction authentication and authorization ##
 
@@ -41,4 +41,9 @@ In many scenarios, you want to customize the authentication and authorization be
 	-	Only AD FS administrators can configure [relying party trusts and claim rules](http://technet.microsoft.com/zh-cn/library/dd807108.aspx).
 	-	Can manage [claims](http://technet.microsoft.com/zh-cn/library/ee913571.aspx) on a per-application basis.
 	-	Must have a separate solution for accessing on-premises AD data through the corporate firewall.
+
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+
+## What's changed
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
  

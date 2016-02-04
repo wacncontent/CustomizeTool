@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Elastic performance and scale with SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Elastic performance and scale with SQL Data Warehouse | Windows Azure"
    description="Understand SQL Data Warehouse elasticity using Data Warehouse Units to scale compute resources up and down. Code examples provided."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="nicw;JRJ@BigBangData.co.uk;mausher"/>
+	ms.service="sql-data-warehouse"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # Elastic performance and scale with SQL Data Warehouse
 To elastically increase or decrease your compute power all you need to do is adjust the number of Data Warehouse Units (DWU) allocated to your SQL Data Warehouse. Data Warehouse Units are a new concept delivered by SQL Data Warehouse to enable you to manage this simmply and effectively. This topic serves as an introduction to Data Warehouse units; explaining how you can use them to elastically scale your compute power. The article also provides some initial guidance on how to set a reasonable DWU value for your environment.
@@ -36,9 +32,9 @@ If your application has a fluctuating workload, move performance levels up or do
 ## Scaling compute resources up and down
 Independent of cloud storage, SQL Data Warehouse's elasticity lets you grow, shrink, or pause compute power by using a sliding scale of data warehouse units (DWUs). This gives you the flexibility to tune your compute power to something that is optimal for your business.  
 
-To increase the compute power you can add more DWUs to the service using the scale slider in the Azure Portal.  You can also add DWUs through T-SQL, REST APIs, or Powershell cmdlets.  Scaling up and down cancels all running or queued activities, but completes in seconds so you can resume with more or less compute power.
+To increase the compute power you can add more DWUs to the service using the scale slider in the Azure Management Portal.  You can also add DWUs through T-SQL, REST APIs, or Powershell cmdlets.  Scaling up and down cancels all running or queued activities, but completes in seconds so you can resume with more or less compute power.
 
-In the [Azure Portal][], you can click the 'Scale' icon at the top of your SQL Data Warehouse page and then use the slider to increase or decrease the amount of DWUs applied to your Data Warehouse before clicking 'Save'.  If you would rather change the scale programmatically, the T-SQL code below shows how to adjust the DWU allocation for your SQL Data Warehouse:
+In the [Azure Management Portal][], you can click the 'Scale' icon at the top of your SQL Data Warehouse page and then use the slider to increase or decrease the amount of DWUs applied to your Data Warehouse before clicking 'Save'.  If you would rather change the scale programmatically, the T-SQL code below shows how to adjust the DWU allocation for your SQL Data Warehouse:
 
 ```
 ALTER DATABASE MySQLDW 
@@ -50,7 +46,7 @@ Please note that this T-SQL should be run against your logical server, and not a
 You can also achieve the same with result using Powershell using the code below:
 
 ```
-Set-AzureSQLDatabase -DatabaseName "MySQLDW" -ServerName "MyServer.database.windows.net" -ServiceObjective "DW1000"
+Set-AzureSQLDatabase -DatabaseName "MySQLDW" -ServerName "MyServer.database.chinacloudapi.cn" -ServiceObjective "DW1000"
 ```
 
 ## Pausing compute resources
@@ -58,19 +54,19 @@ Unique to SQL Data Warehouse is the ability to pause and resume compute on deman
 
 The pause action returns your compute resources back to the pool of available resources in the data center and the resume action acquires the necessary compute resources needed for the DWU you've set and assigns them to your Data Warehouse instance.  
 
-Pause and resume of your compute power can be done through the [Azure Portal][], via REST APIs or through Powershell.  Pausing cancels all running or queued activities and when you return you can resume your compute resources in seconds. 
+Pause and resume of your compute power can be done through the [Azure Management Portal][], via REST APIs or through Powershell.  Pausing cancels all running or queued activities and when you return you can resume your compute resources in seconds. 
 
 The code below shows how to perform a pause using PowerShell:
 
 ```
-Suspend-AzureSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName
-"Server01" –DatabaseName "Database02"
+Suspend-AzureSqlDatabase -ResourceGroupName "ResourceGroup11" -ServerName
+"Server01" -DatabaseName "Database02"
 ```
 
 Resuming the service is also very straightforward with PowerShell:
 
 ```
-Resume-AzureSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
+Resume-AzureSqlDatabase -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database02"
 ```
 
 For more details on how to use PowerShell please refer to the [Introduction to PowerShell cmdlets][] article.
@@ -91,4 +87,9 @@ For the performance overview, see [performance overview][].
 
 <!--Other Web references-->
 
-[Azure Portal]: http://portal.azure.com/
+<!-- deleted by customization
+[Azure Management Portal]: http://manage.windowsazure.cn/
+-->
+<!-- keep by customization: begin -->
+[Azure Management Portal]: https://manage.windowsazure.cn
+<!-- keep by customization: end -->

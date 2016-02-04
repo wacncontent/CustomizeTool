@@ -7,20 +7,16 @@
 	manager="stevenp" 
 	editor="curtland"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 # Use mobile app as your contact method with Azure Multi-Factor Authentication
 
 If you want to use the mobile app as your primary contact method you can use this article.  It will walk you through setting up multi-factor authentication to use your mobile app as your primary contact method.
 
-The Azure Authenticator app is available for [Windows Phone](http://www.windowsphone.com/en-us/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator), and [IOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458).
+The Azure Authenticator app is available for [Windows <!-- deleted by customization Phone](http://www.windowsphone.com/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50) --><!-- keep by customization: begin --> Phone](http://www.windowsphone.com/zh-cn/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50) <!-- keep by customization: end -->, [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator), and [IOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458).
 
 ## To use a mobile app as your contact method
 

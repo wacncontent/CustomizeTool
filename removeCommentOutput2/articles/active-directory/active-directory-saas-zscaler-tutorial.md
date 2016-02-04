@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Zscaler
@@ -76,7 +76,7 @@ As part of this procedure, you are required to upload a certificate to Zscaler.
 
 3.  On the **Configure App URL** page, in the **Zscaler Sign In URL** textbox, type your sign in URL you got from Zscaler, and then click **Next**: 
 
-    >[AZURE.NOTE] Please contact the Zscaler support team if you don’t know what your sign in URL is.
+    >[AZURE.NOTE] Please contact the Zscaler support team if you don't know what your sign in URL is.
 
     ![Configure app URL](./media/active-directory-saas-zscaler-tutorial/IC769231.png "Configure app URL")
 

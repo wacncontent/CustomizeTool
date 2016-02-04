@@ -9,11 +9,10 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/30/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 
-[WACOM.INCLUDE [disclaimer](../includes/disclaimer)]
 # Sign up for Azure as an organization
 
 Until recently, you could only sign up for a new Windows Azure subscription using your Microsoft account (Windows Live ID). Azure now supports using either of the following two account methods to sign up:
@@ -24,7 +23,7 @@ Until recently, you could only sign up for a new Windows Azure subscription usin
 
 	After this directory has been created, an admin can then create users and assign licenses to them based on which cloud service subscriptions they need access to, such as Azure.
 
-Want to sign up for Azure as an organization? [**Sign up now**](/pricing/overview/)
+Want to sign up for Azure as an organization? [**Sign up now**](https://windowsazure.cn/pricing/overview/) 
 
 **Additional Resources**
 

@@ -1,29 +1,29 @@
-<properties 
-	pageTitle="Set up protection between on-premises VMware Sites" 
-	description="Use this article to configure protection between two VMware sites using Azure Site Recovery." 
-	services="site-recovery" 
-	documentationCenter="" 
-	authors="rayne-wiselman" 
-	manager="jwhit" 
+<properties
+	pageTitle="Set up protection between on-premises VMware Sites"
+	description="Use this article to configure protection between two VMware sites using Azure Site Recovery."
+	services="site-recovery"
+	documentationCenter=""
+	authors="rayne-wiselman"
+	manager="jwhit"
 	editor=""/>
 
 <tags
 	ms.service="site-recovery"
-	ms.date="10/07/2015"
+	ms.date="12/03/2015"
 	wacn.date=""/>
 
 
 # Set up protection between on-premises VMware sites
 
 
-## Overview
+##Overview
 
 InMage Scout in Azure Site Recovery provides real-time replication between on-premises VMware sites. InMage Scout is included in Azure Site Recovery service subscriptions.
 
 
 ## Prerequisites
 
-- **Azure account**—You'll need a [Windows Azure](http://www.windowsazure.cn/) account. You can start with a [trial](/pricing/1rmb-trial/).
+- **Azure account**—You'll need a [Windows Azure](http://www.windowsazure.cn/) account. You can start with a [trial](/pricing/1rmb-trial).
 
 
 ## Step 1: Create a vault
@@ -59,13 +59,13 @@ Install as follows:
 1. Download the [update](http://download.microsoft.com/download/9/F/D/9FDC6001-1DD0-4C10-BDDD-8A9EBFC57FDF/ASR Scout 8.0.1 Update1.zip) zip file. This zip file contains the following files:
 
 	-  RX_8.0.1.0_GA_Update_1_3279231_23Jun15.tar.gz
-	-  CX_Windows_8.0.1.0_GA_Update_1_3259146_23Jun15.exe
+	-  CX_Windows_8.0.2.0_GA_Update_2_4306954_21Aug15.exe
 	-  UA_Windows_8.0.1.0_GA_Update_1_3259401_23Jun15.exe
 	-  UA_RHEL6-64_8.0.1.0_GA_Update_1_3259401_23Jun15.tar.gz
 	-  vCon_Windows_8.0.1.0_GA_Update_1_3259523_23Jun15.exe
 2. Extract the zip files.
 2. **RX server**: Copy **RX_8.0.1.0_GA_Update_1_3279231_23Jun15.tar.gz** to the RX server and extract it. In the extracted folder run **/Install**.
-2. **Configuration server/process server**: Copy **CX_Windows_8.0.1.0_GA_Update_1_3259146_23Jun15.exe** to the configuration server and process server. Double click to run it.
+2. **Configuration server/process server**: Copy **CX_Windows_8.0.2.0_GA_Update_2_4306954_21Aug15.exe** to the configuration server and process server. Double click to run it.
 3. **Windows master target server**: To update the  unified agent copy **UA_Windows_8.0.1.0_GA_Update_1_3259401_23Jun15.exe** to the master target server. Double click it to run it. Note that the unified agent for Windows isn't applicable on the source server. It should be installed on the Windows master target server only.
 4. **Linux master target server**:  To update the unified agent copy **UA_RHEL6-64_8.0.1.0_GA_Update_1_3259401_23Jun15.tar.gz** to the master target server and extract it. In the extracted folder run **/Install**.
 5. **vContinuum server**: Copy **vCon_Windows_8.0.1.0_GA_Update_1_3259523_23Jun15.exe** to the vContinuum server. Make sure you've closed the vContinuum Wizard. Double click on the file to run it.
@@ -82,6 +82,19 @@ Install as follows:
 
 
 ## Updates
+
+### ASR Scout 8.0.1 Update 03Dec15
+
+Fixes in Update 03-Dec-15 includes:
+
+- **Configuration server** —Fixes an issue that prevented the 31-day free metering feature from working as expected when the configuration server was registered in Site Recovery.
+- **Unified agent** —Fixes an issue in Update 1 for the Master Target, that resulted in the update not being installed on the master target server when it's upgraded from version 8.0 to 8.0.1.
+
+>[AZURE.NOTE]
+>
+>-	All ASR updates are cumulative.
+>-	The CS and RX updates can't be rolled back once it is applied on the system.
+
 
 ### ASR Scout 8.0.1 Update 1
 
@@ -108,7 +121,7 @@ This latest update includes bug fixes and new features:
 	-  In the vContinuum wizard the disk is automatically unselected when clicking on **Details** in the disk view during protection of MSCS virtual machines.
 	- During P2V scenario required HP sevices such as CIMnotify, CqMgHost aren't moved to Manual in the recover virtual machine, resulting is additional boot time.
 	- Linux virtual machine protected fails when there are more than 26 disks on the master target server.
-	
+
 ## Next steps
 
-Post any questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).< 
+Post any questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/zh-cn/home?forum=hypervrecovmgr).

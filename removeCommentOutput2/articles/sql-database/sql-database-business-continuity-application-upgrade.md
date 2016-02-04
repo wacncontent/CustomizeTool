@@ -23,6 +23,6 @@ When designing the application upgrade process the main goal should be eliminati
 3.	Ability to roll back in case of any errors during upgrade.
 4.	Total dollar cost involved.  This includes the cost of additional application components needed to create a temporary copy (such as additional premium databases for active geo-replication) and incremental costs for temporary deployments used by the upgrade process. 
 
-If the application can temporarily operate in read-only mode the upgrade workflow could be designed to effectively eliminate the downtime altogether. To understand how to implement the upgrade work-flow for your specific application topology please refer to [Best Practices for minimal disruption to Azure SQL DB during application rolling upgrades](https://msdn.microsoft.com/zh-cn/library/azure/dn790385.aspx)
+If the application can temporarily operate in read-only mode the upgrade workflow could be designed to effectively eliminate the downtime altogether. To understand how to implement the upgrade work-flow for your specific application topology please refer to [Best Practices for minimal disruption to Azure SQL DB during application rolling upgrades](https://msdn.microsoft.com/zh-CN/library/azure/dn790385.aspx) 
  
  

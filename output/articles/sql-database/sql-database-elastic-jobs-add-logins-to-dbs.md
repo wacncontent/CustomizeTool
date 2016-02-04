@@ -6,10 +6,10 @@
 	manager="jeffreyg" 
 	authors="ddove"/>
 
-<tags
+<tags 
 	ms.service="sql-database"
 	ms.date="11/03/2015"
-	wacn.date=""/>
+	wacn.date="" />
 
 # How to add users to an Elastic Database pool
 

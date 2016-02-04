@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Replace a StorSimple EBOD controller | Microsoft Azure"
+   pageTitle="Replace a StorSimple EBOD controller | Windows Azure"
    description="Explains how to remove and replace one or both EBOD controllers on a StorSimple 8600 device."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/12/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 # Replace an EBOD controller on your StorSimple device
 
@@ -38,7 +34,7 @@ Before replacing the failed EBOD controller module in your StorSimple device, ma
 
 #### To remove an EBOD module
 
-1. Open the Management Portal.
+1. Open the Azure Management Portal.
 
 2. Navigate to **Devices** > **Maintenance** > **Hardware Status**, and verify that the status of the LED for the active EBOD controller module is green and the LED for the failed EBOD controller module is red.
 
@@ -105,4 +101,4 @@ The following procedure and table explain how to install an EBOD controller modu
 
 ## Next steps
 
-Learn more about [StorSimple hardware component replacement](storsimple-hardware-component-replacement.md).
+Learn more about [StorSimple hardware component replacement](/documentation/articles/storsimple-hardware-component-replacement).

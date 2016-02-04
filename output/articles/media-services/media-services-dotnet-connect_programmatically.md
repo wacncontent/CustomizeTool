@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -33,7 +33,7 @@ At the end of the Media Services account setup process, you obtained the followi
 
 - Your Media Services account key.
 
-To find these values, go to the Azure Managment Portal, select your Media Service account, and click on the “**MANAGE KEYS**” icon on the bottom of the portal window. Clicking on the icon next to each text box copies the value to the system clipboard.
+To find these values, go to the Azure Managment Portal, select your Media Service account, and click on the "**MANAGE KEYS**" icon on the bottom of the portal window. Clicking on the icon next to each text box copies the value to the system clipboard.
 
 
 ## Creating a CloudMediaContext Instance
@@ -95,7 +95,7 @@ Starting with the Media Services SDK version 3.0.0.0, you can reuse the ACS toke
 		// Save token values for later use. 
 		// The SaveTokenDataToExternalStorage method should check 
 		// whether the TokenExpiration value is valid before saving the token data. 
-		// If it is not valid, call MediaServicesCredentials’s RefreshToken before caching.
+		// If it is not valid, call MediaServicesCredentials's RefreshToken before caching.
 		SaveTokenDataToExternalStorage(accessToken, tokenExpiration);
 		
 	Use the saved token values to create MediaServicesCredentials.
@@ -184,10 +184,10 @@ To retrieve connection values from configuration, you can use the **Configuratio
 
 
 
+##Media Services learning paths
 
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-<!-- Anchors. -->
+##Provide feedback
 
-
-<!-- URLs. -->
- 
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

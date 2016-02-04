@@ -1,110 +1,114 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="如何配置 App Service 环境" 
-	description="App Service 环境的配置、管理和监视" 
-	services="app-service\web" 
+	pageTitle="How to Configure an Azure Websites Environment" 
+	description="Configuration, management and monitoring of Azure Websites Environments" 
+	services="app-service" 
 	documentationCenter="" 
 	authors="ccompy" 
 	manager="stefsch" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.date="04/27/2015" 
-	wacn.date=""/>
+<tags
+	ms.service="app-service"
+	ms.date="09/11/2015"
+	wacn.date="11/27/2015"/>
 
-# 配置 App Service 环境 #
+# Configuring an Azure Websites Environment #
 
-## 概述 ##
+## Overview ##
 
-App Service 环境是预览版中正提供的新的高级层功能。它提供新的缩放和网络访问功能。通过这个新的缩放功能，你可以将 Azure App Service 的实例置于虚拟网络。如果你不熟悉 App Service 环境 (ASE) 功能，请阅读此处的文档：[什么是 App Service 环境]/app-service-app-service-environment-intro.md)。有关如何创建 ASE 的信息，请阅读此处的文档：[如何创建 App Service 环境](/documentation/articles/app-service-web-how-to-create-an-app-service-environment)。
+Azure Websites Environments is a new Premium Tier capability in the Azure Websites that offers new scaling and network access capabilities.  This new scale capability allows you to place an instance of the Azure Websites into your VNET.  If you are unfamiliar with the Azure Websites Environment (ASE) capability then read the document here [What is an Azure Websites Environment](/documentation/articles/app-service-app-service-environment-intro). For information on how to create an ASE read the document here [How to Create an Azure Websites Environment](/documentation/articles/app-service-web-how-to-create-an-app-service-environment). 
 
-高级别 App Service 环境包括几个主要组件：
+At a high level an Azure Websites Environment consists of several major components:
 
-- 在 Azure App 环境托管服务中运行的计算资源
-- 存储
-- 数据库
-- 具有至少一个子网的虚拟网络
-- Azure App 环境托管服务在其中运行的子网
+- Compute resources running in the Azure App Environment Hosted Service
+- Storage
+- Database
+- A classic "v1" Virtual Network with at least one subnet
+- subnet with the Azure App Environment hosted service running in it
 
-要协助管理和监视 App Service 环境，可通过 Azure 预览门户中的“浏览”->“App Service 环境”来访问用于该目的的 UI。初始版本确实具有管理系统所需的内容，并将在未来几周内持续改进，增加其他功能。
+To help manage and monitor your Azure Websites Environments you can access UI for that purpose from Browse -> Azure Websites Environments in the Azure preview portal. The initial release does have what you need to manage the system and will continue to improve with additional capabilities in coming weeks.  
 
 ![][1]
 
-## 监视 ##
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
-初始预览版本中未提供许多度量值功能，但将很快推出。这些度量值功能将帮助系统管理员决定系统缩放和操作。
+## Monitoring ##
 
-即便是现在你也可在门户中列出 ASE 中所有 App Service 计划及 App Service 环境中所有 Web 应用。若要查看任一列表，请转到“设置”并选择感兴趣的项。
+There aren't many metrics capabilities available in the initial Preview release but they will be rolling out shortly.  Those metrics capabilities will help system administrators to make decisions on system scaling and operations.
+
+Even now in the portal you can list all of the App Service Plans in the ASE as well as all of the web sites in the Azure Websites Environment.  To see either list go to Settings and select the item you are interested in.  
 
 ![][3]
 
-在这两个列表中，你都可以通过正在使用的计算资源实例数和大小了解辅助池的分配情况。可使用一般方式查看有关独立 App Service 计划中性能的详细信息，即打开 App Service 计划 UI 进行查看。
+In both lists you can see the Worker Pool assignment with how many instances and the size of the compute resource that is being used.  Details around the performance within an individual App Service Plan will be available the same as normal which is by opening up the App Service Plan UI.  
 
 ![][4]
 
-## 计算资源 ##
+## Compute Resources ##
 
-计算资源、存储器和数据库均通过 Azure App Service 进行操作。不过计算资源的数量和大小由用户决定。
+The compute resources, Storage and Database are all operated by the Azure Websites.  The quantity and sizes of compute resources though are up to the user to decide.  
 
-无论计算资源的大小如何，最小占用具有 2 个前端服务器和 2 个辅助角色。可对 App Service 环境进行配置以使用最多 55 个总计算资源。在这 55 个计算资源中，只有 50 个可用于承载工作负荷。原因在于两个方面。至少有 2 个前端计算资源。还剩最多 53 个来支持辅助池分配。不过为了提供容错功能，还需根据以下规则分配额外计算资源：
+Regardless of the size of the compute resources, the minimum footprint has 2 Front End servers and 2 Workers.  An Azure Websites Environment can be configured to use up to 55 total compute resources.  Of those 55 compute resources, only 50 can be used to host workloads. The reason for that is two fold.  There are a minimum of 2 Front End compute resources.  That leaves up to 53 to support worker pool allocation. In order to provide fault tolerance though, you need to have an additional compute resource allocated according to the following rules:
 
-- 每个辅助池至少需要一个额外计算资源，该资源不能是已分配的工作负荷
-- 当池中计算资源的数量超出特定值时，则需要另一个计算资源
+- each worker pool needs at least one additional compute resource which cannot be assigned workload
+- when the quantity of compute resources in a pool goes above a certain value then another compute resource is required
 
-在任何单个辅助池中，对于分配到辅助池的给定 X 个资源，容错要求如下：
+Within any single worker pool the fault tolerance requirements are that for a given value of X resources assigned to a worker pool:
 
-- 如果 X 介于 2 到 20，则可用于工作负荷的可用计算资源量为 X-1
-- 如果 X 介于 21 到 40，则可用于工作负荷的可用计算资源量为 X-2
-- 如果 X 介于 41 到 53，则可用于工作负荷的可用计算资源量为 X-3
+- if X is between 2 to 20, the amount of usable compute resources you can use for workloads is X-1
+- if X is between 21 to 40, the amount of usable compute resources you can use for workloads is X-2
+- if X is between 41 to 53, the amount of usable compute resources you can use for workloads is X-3
 
-除了能够管理可分配到给定池的计算资源的数量之外，你还可控制其大小。在 App Service 环境中，可从 4 种不同大小（标记为 P1 到 P4）进行选择。有关这些大小及其定价的详细信息，请参阅此处：[App Service 定价](/documentation/articles/app-service-value-prop-what-is) P1 到 P3 计算资源的大小与一般可用大小相同。P4 计算资源提供具有 14 GB RAM 的 8 个内核，仅在 App Service 环境中可用。
+In addition to being able to manage the quantity of compute resources that you can assign to a given pool you also have control over the size.  With Azure Websites Environments you can choose from 4 different sizes labeled P1 through P4.  For details around those sizes and their pricing please see here [Azure Websites Pricing](/documentation/services/web-sites) The P1 to P3 compute resource sizes are the same as what is available normally.  The P4 compute resource gives 8 cores with 14 GB of RAM and is only available in an Azure Websites Environment.
 
-如前文所述，App Service 环境功能当前在预览版中可用，因此仍有增长的空间。除附加监视功能外，App Service 环境转移到 GA 时还将推出更多管理功能。现在有仅几项可在此界面中进行管理：
+As noted earlier, the Azure Websites Environment feature is currently in Preview and as such it still has room to grow.  In addition to additional monitoring capabilities, more management features will be rolled out as Azure Websites Environments moves to GA.  For now there are only a few things that can be managed in this interface:
 
-- 每个池的计算资源数量
-- 每个池的计算资源大小
-- 可用的 IP 地址数
+- Number of compute resources in each pool
+- Size of the compute resources in each pool
+- Number of IP addresses available
 
-若要控制这些内容，请选择顶部的“缩放”配置项。
+To control these things select the Scale configuration item at the top.  
 
 ![][2]
 
-可以在此处调整每个池的计算资源数量及其大小。在进行任何更改之前，特别要注意一些事项：
+The quantity of compute resources in each pool and their size can be adjusted here.  Before making any changes though it is important to note a few things:
 
-- 所做的更改可能要花费数小时才能完成，具体取决于所请求更改的大小
-- 存在正在进行的 App Service 环境配置更改时，无法启动另一更改
-- 如果更改辅助池中所用计算资源的大小，可能会导致在该辅助池中运行的 Web 应用运行中断
+- changes made can take hours to complete depending on how large is the change requested
+- when there is already a Azure Websites Environment configuration change in work, you cannot start another change
+- if you change the size of the compute resources used in a worker pool you can cause outages for the web sites running in that worker pool
 
-向辅助池是其他实例良性操作，不会对引发系统冲击。更改辅助池中所用计算资源的大小则不然。为了避免在对辅助池进行大小更改期间出现任何应用停机时间，最好执行以下操作：
+Adding additional instances to a worker pool is a benign operation and does not incur a system impact.  Changing the size of the compute resource used in a worker pool is another story though.  To avoid any app down time during a size change to a worker pool it is best to:
 
-- 使用未使用的辅助池以所需大小显示所需实例
-- 将 App Service 计划缩放到新的辅助池。  
+- use an unused worker pool to bring up the instances required in the size desired
+- scale the App Service Plans to the new worker pool.  
  
-与使用运行中工作负荷更改计算资源大小相比，这对运行应用造成的干扰较小。有关在 App Service 环境中缩放 Web 应用的详细信息，请转到此处：[ App Service 环境中缩放 Web 应用](/documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment)
+This is much less disruptive to running apps than changing the compute resource size with running workloads.  For details around scaling web sites in an Azure Websites Environment go here [Scaling Web Sites in an Azure Websites Environment](/documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment)  
 
-## 虚拟网络 ##
+## Virtual Network ##
 
-[虚拟网络][virtualnetwork]和子网都由用户控制。App Service 环境确实有一些网络要求，但其他部分都由用户来控制。这些 ASE 要求包括：
+The [Virtual Network][virtualnetwork] and subnet are all under user control.  Azure Websites Environments does have a few network requirements but the rest is up to the user to control.  Those ASE requirements are:
 
-- 至少具有 512 个地址的虚拟网络
-- 至少具有 256 个地址的子网 
-- 虚拟网络必须为区域虚拟网络  
+- a classic "v1" VNET with at least 512 addresses
+- a subnet with at least 8 addresses 
+- the VNET must be a regional VNET  
  
-通过正常的虚拟网络 UI 管理虚拟网络。
+Administering your VNET is done through the normal Virtual Network UI.
 
-因为此功能将 Azure App Service 置于虚拟网络，这意味着托管在 ASE 中的应用现在可直接访问通过 ExpressRoute 或站点到站点 VPN 提供的资源。App Service 环境中的应用不需要其他网络功能即可访问承载着 App Service 环境的虚拟网络可用的资源。
+Because this capability places the Azure Websites into your VNET it means that your apps hosted in your ASE can now access resources made available through ExpressRoute or Site to Site VPNs directly.  The apps within your Azure Websites Environments do not require additional networking features to access resources available to the VNET hosting your Azure Websites Environment.  
 
-如果需要，现在还可以使用网络安全组来控制访问。通过此功能，可以将 App Service 环境锁定到你想限定使用的 IP 地址。有关如何操作的详细信息，请参阅此处的文档：[如何在 App Service 环境中控制入站流量](/documentation/articles/app-service-app-service-environment-control-inbound-traffic)。
+If desired you can also now control access using Network Security Groups.  This capability allows you to lock down your Azure Websites Environment to just the IP addresses you wish to restrict it to.  For more information around how to do that see the document here [How to Control Inbound Traffic in an Azure Websites Environment](/documentation/articles/app-service-app-service-environment-control-inbound-traffic).
 
-## 删除 App Service 环境 ##
+## Deleting an Azure Websites Environment ##
 
-如果想要删除 App Service 环境，使用“App Service 环境”边栏选项卡顶部的“删除”操作即可。但不能删除具有内容的 ASE。务必删除所有 Web 应用和 App Service 计划，才能删除 App Service 环境。
+If you want to delete an Azure Websites Environment then simply use the Delete action at the top of the Azure Websites Environment blade.  You cannot delete an ASE though that has content in it.  Be sure to remove all web sites and App Service Plans in order to delete your Azure Websites Environment.  
 
-## 入门
+## Getting started
 
-若要开始使用 App Service 环境，请参阅[如何创建 App Service 环境](/documentation/articles/app-service-web-how-to-create-an-app-service-environment)
+To get started with Azure Websites Environments, see [How To Create An Azure Websites Environment](/documentation/articles/app-service-web-how-to-create-an-app-service-environment)
 
-有关 Azure App Service 平台的详细信息，请参阅 [/文档/文章/Azure App Service](/documentation/articles/app-service-value-prop-what-is)。
+For more information about the Azure Websites platform, see [Azure Websites](/documentation/services/web-sites).
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
@@ -117,13 +121,12 @@ App Service 环境是预览版中正提供的新的高级层功能。它提供�
 [4]: ./media/app-service-web-configure-an-app-service-environment/configurewebapplist.png
 
 <!--Links-->
-[WhatisASE]: /documentation/articles/app-service-app-service-environment-intro
-[Appserviceplans]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview
-[HowtoCreateASE]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment
-[HowtoScale]: /documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment
-[ControlInbound]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic
-[virtualnetwork]: https://msdn.microsoft.com/zh-cn/library/azure/dn133803.aspx
-[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
+[WhatisASE]: /documentation/articles/app-service-app-service-environment-intro/
+[Appserviceplans]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
+[HowtoCreateASE]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
+[HowtoScale]: /documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment/
+[ControlInbound]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
+[virtualnetwork]: /documentation/articles/virtual-networks-faq/
+[AppServicePricing]: /home/features/app-service/#price 
+[AzureAppService]: /documentation/services/web-sites/
  
-
-<!---HONumber=67-->

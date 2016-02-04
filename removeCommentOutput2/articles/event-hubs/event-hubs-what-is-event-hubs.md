@@ -26,7 +26,7 @@ Event Hubs is an event processing service that provides event and telemetry ingr
 
 Some other key Event Hubs capabilities are behavior tracking in mobile apps, traffic information from web farms, in-game event capture in console games, or telemetry data collected from industrial machines or connected vehicles.
 
-Unlike [Service Bus queues and topics](/documentation/articles/service-bus-messaging-overview), Event Hubs is focused on delivering messaging stream handling at scale. Event Hubs capabilities differ from topics in that they are strongly biased towards high throughput and event processing scenarios. As a result, Event Hubs do not implement some of the messaging capabilities that are available for [topics](/documentation/articles/service-bus-fundamentals-hybrid-solutions#topics). If you need those capabilities, topics remain the optimal choice.
+Unlike [Service Bus queues and topics](/documentation/articles/service-bus-messaging-overview), Event Hubs is focused on delivering messaging stream handling at scale. Event Hubs capabilities differ from topics in that they are strongly biased towards high throughput and event processing scenarios. As a result, Event Hubs do not implement some of the messaging capabilities that are available for [topics](/documentation/articles/service-bus-fundamentals-service-bus-hybrid-solutions#topics). If you need those capabilities, topics remain the optimal choice.
 
 ## Next steps
 
@@ -38,5 +38,6 @@ For detailed information about Event Hubs, see the following topics.
 - Get started with an [Event Hubs tutorial][]
 - A complete [sample application that uses Event Hubs][]
 
-[Event Hubs tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted
-[sample application that uses Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
+[Event Hubs tutorial]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started
+[sample application that uses Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
+

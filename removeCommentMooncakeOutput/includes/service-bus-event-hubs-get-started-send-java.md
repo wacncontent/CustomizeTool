@@ -88,9 +88,5 @@ In this section we will write a Java console app to send events to your Event Hu
 
 
 
-<!-- Links -->
-[Azure Management Portal]: https://manage.windowsazure.cn/
-
-
 <!-- Images -->
 [8]: ./media/service-bus-event-hubs-getstarted/create-sender-java1.png

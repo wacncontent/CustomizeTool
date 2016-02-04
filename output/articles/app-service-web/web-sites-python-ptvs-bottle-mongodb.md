@@ -17,11 +17,11 @@
 
 > **NOTE:** The MongoLab workflow is not currently supported in the Preview Portal
 
-In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates. This tutorial is also available as a [video](https://www.youtube.com/watch?v=8hQMyf8p_Jo).
+In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web site using one of the PTVS sample templates. This tutorial is also available as a [video](https://www.youtube.com/watch?v=8hQMyf8p_Jo).
 
-The polls web app defines an abstraction for its repository, so you can easily switch between different types of repositories (In-Memory, Azure Table Storage, MongoDB).
+The polls web site defines an abstraction for its repository, so you can easily switch between different types of repositories (In-Memory, Azure Table Storage, MongoDB).
 
-We'll learn how to use one of the hosted MongoDB services on Azure, how to configure the application to use MongoDB, and how to publish the web app to [Azure Websites](/documentation/services/web-sites/).
+We'll learn how to use one of the hosted MongoDB services on Azure, how to configure the application to use MongoDB, and how to publish the web site to [Azure Websites](/documentation/services/web-sites/).
 
 See the [Python Developer Center] for more articles that cover development of Azure Websites with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services.  While this article focuses on Azure Websites, the steps are similar when developing [Azure Cloud Services].
 
@@ -45,7 +45,7 @@ See the [Python Developer Center] for more articles that cover development of Az
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 
 ## Create the Project
 
@@ -151,20 +151,20 @@ You can use an application such as [RoboMongo] to query and make edits to a Mong
 
   	![RoboMongo Query Results](./media/web-sites-python-ptvs-bottle-mongodb/PollsCommonRobomongoQuery.png)
 
-## Publish web app to Azure
+## Publish web site to Azure
 
-The Azure .NET SDK provides an easy way to deploy your web application to Azure.
+The Azure .NET SDK provides an easy way to deploy your web site to Azure.
 
 1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
-1.  Click on **Windows Azure Web Apps**.
+1.  Click on **Windows Azure web sites**.
 
 3. If you haven't signed in to Azure, click **Sign In** and use the Microsoft account for your Azure subscription to sign in.
 
-2.  Click on **New** to create a new web app.
+2.  Click on **New** to create a new web site.
 
 1.  Fill in the following fields and click **Create**.
-	-	**Web App name**
+	-	**web site name**
 	-	**App Service plan**
 	-	**Resource group**
 	-	**Region**
@@ -174,15 +174,15 @@ The Azure .NET SDK provides an easy way to deploy your web application to Azure.
 
 1.  Accept all other defaults and click **Publish**.
 
-1.  Your web browser will open automatically to the published web app. If you browse to the about page, you'll see that it uses the **In-Memory** repository, not the **MongoDB** repository.
+1.  Your web browser will open automatically to the published web site. If you browse to the about page, you'll see that it uses the **In-Memory** repository, not the **MongoDB** repository.
 
-    That's because the environment variables are not set on the Web Apps instance in Azure Websites, so it uses the default values specified in **settings.py**.
+    That's because the environment variables are not set on the web sites instance in Azure Websites, so it uses the default values specified in **settings.py**.
 
-## Configure the Web Apps instance
+## Configure the web sites instance
 
-In this section, we'll configure environment variables for the Web Apps instance.
+In this section, we'll configure environment variables for the web sites instance.
 
-1.  In [Azure Management Portal], click on the web app created in the previous section.
+1.  In [Azure Management Portal], click on the web site created in the previous section.
 
 1.  In the top menu, click on **CONFIGURE**.
 

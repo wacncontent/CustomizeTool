@@ -4,7 +4,7 @@ deleted:
 
 		<a href="/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">activate your MSDN subscriber benefits</a> or
 
-reason: (“Try it now”)
+reason: (MSDN subscriber)
 
 deleted:
 

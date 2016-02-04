@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #How to: Check Job Progress
@@ -21,7 +21,7 @@
 
 ##Use Portal to check the job status
 
-1. In the [Management Portal](http://manage.windowsazure.cn), click **Media Services** and then click on the Media Services account name.
+1. In the [Azure Management Portal](http://manage.windowsazure.cn), click **Media Services** and then click on the Media Services account name.
 2. Select the **JOBS** page. 
 
 	On the page you can see the status of  all your jobs. You can aslo filter by status, time, or job id.
@@ -31,10 +31,11 @@
 
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 
 ##Next Step

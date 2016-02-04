@@ -4,7 +4,7 @@ deleted:
 
 		[AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -20,19 +20,13 @@ deleted:
 		
 		4. Click **Create**.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		- [Analyze Twitter sentiment with HBase in HDInsight](/documentation/articles/hdinsight-hbase-twitter-sentiment)
 
-reason: ()
-
-deleted:
-
-		[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-twitter-sentiment
-
-reason: ()
+reason: (google facebook twitter)
 
 replacement:
 
@@ -78,7 +72,7 @@ replaced by:
 		10. Verify **CIDR(ADDRESS COUNT)** for the subnet that will be used for the cluster. The address count must be greater than the number of worker nodes plus seven (gateway: 2, head node: 2, Zookeeper: 3). For example, if you need a 10-node HBase cluster, the address count for the subnet must be greater than 17 (10+7). Otherwise the deployment will fail.
 		11. Click **Save** on the bottom of the page, if you have updated the subnet values.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -191,5 +185,5 @@ replaced by:
 		
 			> [AZURE.NOTE] This page can be used to customize the cluster during setup. For more information, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster).
 
-reason: ()
+reason: (the new Ibiza portal)
 

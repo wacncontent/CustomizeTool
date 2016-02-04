@@ -4,12 +4,12 @@ A **CloudQueueClient** object lets you get reference objects for queues. The fol
 	// Create the queue client.
 	CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-Use the **queueClient** object to get a reference to the queue you want to use. The code tries to reference a queue named “myqueue.” If it can’t find a queue with that name, it creates one.
+Use the **queueClient** object to get a reference to the queue you want to use. The code tries to reference a queue named “myqueue.” If it can't find a queue with that name, it creates one.
 
 	// Get a reference to a queue named “myqueue”.
 	CloudQueue queue = queueClient.GetQueueReference("myqueue");
 
-	// If the queue isn’t already there, then create it.
+	// If the queue isn't already there, then create it.
 	queue.CreateIfNotExists();
 
 **NOTE:** Use this code block in front of the code in the following sections.

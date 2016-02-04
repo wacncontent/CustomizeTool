@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="11/04/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 
@@ -17,13 +17,15 @@
 
 ## Overview
 
-Azure Premium Storage delivers high-performance, low-latency disk support for virtual machines running I/O-intensive workloads. Virtual machine (VM) disks that use Premium Storage store data on solid state drives (SSDs). You can migrate your application's VM disks to Azure Premium Storage to take advantage of the speed and performance of these disks. 
+Azure Premium Storage delivers high-performance, low-latency disk support for virtual machines running I/O-intensive workloads. Virtual machine (VM) disks that use Premium Storage store data on solid state drives (SSDs). You can migrate your application's VM disks to Azure Premium Storage to take advantage of the speed and performance of these disks.
 
 An Azure VM supports attaching several Premium Storage disks, so that your applications can have up to 64 TB of storage per VM. With Premium Storage, your applications can achieve 80,000 IOPS (input/output operations per second) per VM and 2000 MB per second disk throughput per VM with extremely low latencies for read operations.
 
+With Premium Storage, Azure offers the ability to truly lift-and-shift your demanding enterprise applications like, Dynamics AX, Dynamics CRM, Exchange Server, SharePoint Farms, and SAP Business Suite, to the cloud. You can run a variety of performance intensive database workloads like SQL Server, Oracle, MongoDB, MySQL, Redis, that require consistent high performance and low latency on Premium Storage.
+
 >[AZURE.NOTE] We recommend migrating any virtual machine disk requiring high IOPS to Azure Premium Storage for the best performance for your application. If your disk does not require high IOPS, you can limit costs by maintaining it in Standard Storage, which stores virtual machine disk data on Hard Disk Drives (HDDs) instead of SSDs.
 
-To get started with Azure Premium Storage, visit [Get started for free](/pricing/1rmb-trial/) page. For information on migrating your existing virtual machines to Premium Storage, see [Migrating to Azure Premium Storage](/documentation/articles/storage-migration-to-premium-storage).
+To get started with Azure Premium Storage, visit [Get started for free](/zh-cn/pricing/1rmb-trial/) page. For information on migrating your existing virtual machines to Premium Storage, see [Migrating to Azure Premium Storage](/documentation/articles/storage-migration-to-premium-storage).
 
 ## Important Things to Know About Premium Storage
 
@@ -31,7 +33,7 @@ The following is a list of important things to consider before or when using Pre
 
 - To use Premium Storage, you need to have a Premium Storage account. To learn how to create a Premium Storage account, see [Creating and using Premium Storage Account for Disks](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
 
-- Premium Storage is currently available in the [Windows Azure Management Portal](https://manage.windowsazure.cn) and accessible via the following SDK libraries: [Storage REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) version 2014-02-14 or later; [Service Management REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) version 2014-10-01 or later; and [Azure PowerShell](/documentation/articles/install-configure-powershell) version 0.8.10 or later.
+- Premium Storage is available in the [Windows Azure Management Portal](https://manage.windowsazure.cn) and accessible via the following SDK libraries: [Storage REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) version 2014-02-14 or later; [Service Management REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) version 2014-10-01 or later; and [Azure PowerShell](/documentation/articles/powershell-install-configure) version 0.8.10 or later.
 
 - For a list of regions that currently support Premium Storage, see [Azure Services by Region](http://azure.microsoft.com/regions/#services).
 
@@ -56,17 +58,16 @@ You can use Premium Storage for Disks in one of two ways:
 Azure uses the storage account as a container for your operating system (OS) and data disks. In other words, if you create an Azure DS-series or GS-series VM and select an Azure Premium Storage account, your operating system and data disks are stored in that storage account.
 
 For information on migrating your existing virtual machines to Premium Storage, see [Migrating to Azure Premium Storage](/documentation/articles/storage-migration-to-premium-storage).
-
-To leverage the benefits of Premium Storage, create a Premium Storage account using an account type of *Premium_LRS* first. To do this, you can use the [Windows Azure Preview Portal](https://manage.windowsazure.cn/), [Azure PowerShell](/documentation/articles/install-configure-powershell), or the [Service Management REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx). For step-by-step instructions, see [Creating and using Premium Storage Account for Disks](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
+To leverage the benefits of Premium Storage, create a Premium Storage account using an account type of *Premium_LRS* first. To do this, you can use the [Windows Azure Preview Portal](https://manage.windowsazure.cn), [Azure PowerShell](/documentation/articles/powershell-install-configure), or the [Service Management REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx). For step-by-step instructions, see [Creating and using Premium Storage Account for Disks](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
 
 ### Important notes:
 
 - For details about the capacity and bandwidth limits for Premium Storage accounts, see the [Scalability and Performance Targets when using Premium Storage](#scalability-and-performance-targets-when-using-premium-storage) section. If the needs of your application exceed the scalability targets of a single storage account, build your application to use multiple storage accounts, and partition your data across those storage accounts. For example, if you want to attach 51 terabytes (TB) disks across a number of VMs, spread them across two storage accounts since 35 TB is the limit for a single Premium storage account. Make sure that a single Premium Storage account has never more than 35 TB of provisioned disks.
-- By default, disk caching policy is "Read-Only" for all the Premium data disks, and "Read-Write" for the Premium operating system disk attached to the VM. This configuration setting is recommended to achieve the optimal performance for your application’s I/Os. For write-heavy or write-only data disks (such as SQL Server log files), disable disk caching so that you can achieve better application performance.
+- By default, disk caching policy is "Read-Only" for all the Premium data disks, and "Read-Write" for the Premium operating system disk attached to the VM. This configuration setting is recommended to achieve the optimal performance for your application's I/Os. For write-heavy or write-only data disks (such as SQL Server log files), disable disk caching so that you can achieve better application performance.
 - Make sure that there is sufficient bandwidth available on your VM to drive the disk traffic. For example, a STANDARD_DS1 VM has 32 MB per second dedicated bandwidth available for Premium Storage disk traffic. That means, a P10 Premium Storage disk attached to this VM can only go up to 32 MB per second but not up to 100 MB per second that the P10 disk can provide. Similarly, a STANDARD_DS13 VM can go up to 256 MB per second across all disks. Currently, the largest VM on DS-series is STANDARD_DS14 and it can provide up to 512 MB per second across all disks. The largest VM on GS-series is STANDARD_GS5 and it can give up to 2000 MB per second across all disks.
 
-	Note that these limits are for disk traffic alone, not including cache-hits and network traffic. There is a separate bandwidth available for VM network traffic, which is different from the dedicated bandwidth for Premium Storage disks. 
-	
+	Note that these limits are for disk traffic alone, not including cache-hits and network traffic. There is a separate bandwidth available for VM network traffic, which is different from the dedicated bandwidth for Premium Storage disks.
+
 	For the most up-to-date information on maximum IOPS and throughput (bandwidth) for DS-series and GS-series VMs, see [Virtual Machine and Cloud Service Sizes for Azure](/documentation/articles/virtual-machines-size-specs). To learn about the Premium storage disks and their IOPs and throughput limits, see the table in the [Scalability and Performance Targets when using Premium Storage](#scalability-and-performance-targets-when-using-premium-storage) section in this article.
 
 > [AZURE.NOTE] Cache-hits are not limited by the allocated IOPS/Throughput of the disk. That is, when you use a data disk with ReadOnly cache setting on a DS-series VM or GS-series VM, Reads that are served from the cache are not subject to Premium Storage disk limits. Hence you could get very high throughput from a disk if the workload is predominantly Reads. Note that, cache is subject to separate IOPS / Throughput limits at VM level based on the VM size. DS-series VMs have roughly 4000 IOPS and 33 MB/sec per core for cache and local SSD IOs.
@@ -84,7 +85,7 @@ To leverage the benefits of Premium Storage, create a Premium Storage account us
 	`azure vm disk attach --help`
 
 
-## Scalability and Performance Targets when using Premium Storage
+##<a id="scalability-and-performance-targets-when-using-premium-storage"></a> Scalability and Performance Targets when using Premium Storage
 
 When you provision a disk against a Premium Storage account, how much input/output operations per second (IOPS) and throughput (bandwidth) it can get depends on the size of the disk. Currently, there are three types of Premium Storage disks: P10, P20, and P30. Each one has specific limits for IOPS and throughput as specified in the following table:
 
@@ -155,7 +156,7 @@ The following table describes the scalability targets for Premium storage accoun
 For more information, see [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx).
 
 ## Throttling when using Premium Storage
-You may see throttling if your application’s IOPS or throughput exceed the allocated limits for a Premium Storage disk or if your total disk traffic across all disks on the VM exceeds the disk bandwidth limit available for the VM. To avoid throttling, we recommend that you limit the number of pending I/O requests for disk based on the scalability and performance targets for the disk you have provisioned and based on the disk bandwidth available to the VM.  
+You may see throttling if your application's IOPS or throughput exceed the allocated limits for a Premium Storage disk or if your total disk traffic across all disks on the VM exceeds the disk bandwidth limit available for the VM. To avoid throttling, we recommend that you limit the number of pending I/O requests for disk based on the scalability and performance targets for the disk you have provisioned and based on the disk bandwidth available to the VM.  
 
 Your application can achieve the lowest latency when it is designed to avoid throttling. On the other hand, if the number of pending I/O requests for the disk is too small, your application cannot take advantage of the maximum IOPS and throughput levels that are available to the disk.
 
@@ -174,7 +175,7 @@ Your application has done 400 I/Os of 256 KB disk size on a P10 disk. The total 
 You have a DS4 VM with two P30 disks attached. Each P30 disk is capable of 200 MB per second throughput. However, a DS4 VM has a total disk bandwidth capacity of 256 MB per second. Therefore, you cannot drive the attached disks to the maximum throughput on this DS4 VM at the same time. To resolve this, you can sustain traffic of 200 MB per second on one disk and 56 MB per second on the other disk. If the sum of your disk traffic goes over 256 MB per second, the disk traffic gets throttled.
 
 ### Note:
-If the disk traffic mostly consists of small I/O sizes, it is highly likely that your application will hit the IOPS limit before the throughput limit. On the other hand, if the disk traffic mostly consists of large I/O sizes, it is highly likely that your application will hit the throughput limit instead of the IOPS limit. You can maximize your application’s IOPS and throughput capacity by using optimal I/O sizes and also by limiting the number of pending I/O requests for disk.
+If the disk traffic mostly consists of small I/O sizes, it is highly likely that your application will hit the IOPS limit before the throughput limit. On the other hand, if the disk traffic mostly consists of large I/O sizes, it is highly likely that your application will hit the throughput limit instead of the IOPS limit. You can maximize your application's IOPS and throughput capacity by using optimal I/O sizes and also by limiting the number of pending I/O requests for disk.
 
 ## Snapshots and Copy Blob when using Premium Storage
 You can create a snapshot for Premium Storage in the same way as you create a snapshot when using Standard Storage. Since Premium Storage is locally redundant, we recommend that you create snapshots and then copy those snapshots to a geo-redundant standard storage account. For more information, see [Azure Storage Redundancy Options](http://msdn.microsoft.com/zh-cn/library/azure/dn727290.aspx).
@@ -197,6 +198,7 @@ Please refer to important instructions below for configuring your Linux VMs on P
 	- If you use **XFS**, disable barriers using the mount option “nobarrier” (For enabling barriers, use the option “barrier”)
 
 - For Premium Storage disks with cache setting “ReadWrite”, barriers should be enabled for durability of writes.
+- For the volume labels to persist after VM reboot, you must update /etc/fstab with the UUID references to the disks. Also refer to [How to Attach a Data Disk to a Linux Virtual Machine.]/documentation/articles/virtual-machines-linux-how-to-attach-disk) 
 
 Following are the Linux Distributions that we validated with Premium Storage. We recommend that you upgrade your VMs to at least one of these versions (or later) for better performance and stability with Premium Storage. Also, some of the versions require the latest LIS (Linux Integration Services v4.0 for Windows Azure). Please follow the link provided below for download and installation. We will continue to add more images to the list as we complete additional validations. Please note, our validations showed that performance varies for these images, and it also depends on workload characteristics and settings on the images. Different images are tuned for different kinds of workload.
 <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
@@ -289,26 +291,21 @@ When using Premium Storage, the following billing considerations apply:
 
 - Billing for a Premium Storage disk depends on the provisioned size of the disk. Azure maps the disk size (rounded up) to the nearest Premium Storage Disk option as specified in the table given in the [Scalability and Performance Targets when using Premium Storage](#scalability-and-performance-targets-when-using-premium-storage) section. Billing for any provisioned disk is prorated hourly using the monthly price for the Premium Storage offer. For example, if you provisioned a P10 disk and deleted it after 20 hours, you are billed for the P10 offering prorated to 20 hours. This is regardless of the amount of actual data written to the disk or the IOPS/throughput used.
 - Snapshots on Premium Storage are billed for the additional capacity used by the snapshots. For information on snapshots, see [Creating a Snapshot of a Blob](http://msdn.microsoft.com/zh-cn/library/azure/hh488361.aspx).
-- [Outbound data transfers](/home/features/data-transfers/#price) (data going out of Azure data centers) incur billing for bandwidth usage.
+- [Outbound data transfers](/home/features/data-transfer/#price) (data going out of Azure data centers) incur billing for bandwidth usage.
 
 For detailed information on pricing for Premium Storage,  DS-series VMs and GS-series VMs, see:
 
 - [Azure Storage Pricing](/home/features/storage/#price)
-- [Virtual Machines Pricing](/home/features/virtual-machines/#price)
+- [Virtual Machines Pricing](/home/features/virtual-machines#price)
 
-## Create and use a Premium Storage account for a virtual machine data disk
-
+##<a id="create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk"></a> Create and use a Premium Storage account for a virtual machine data disk
 This section demonstrates how to create a Premium Storage account using the Azure Preview Portal, Azure PowerShell, and the Azure Command-Line Interface (Azure CLI). In addition, it demonstrates a sample use case for premium storage accounts: creating a virtual machine and attaching a data disk to a virtual machine when using Premium Storage.
 
 ### Create an Azure virtual machine using Premium Storage via the Azure Preview Portal
 
 This section shows how to create a Premium Storage account using the Azure Preview Portal.
 
-1.	Sign in to the [Azure Preview Portal](https://manage.windowsazure.cn/). Check out the [Trial](/pricing/1rmb-trial/) offer if you do not have a subscription yet.
-
-
-    > [AZURE.NOTE] If you log in to the Azure Management Portal, click your user account name at the top right corner of the portal. Then, click **Switch to new portal**.
-
+1.	Sign in to the [Azure Preview Portal](https://manage.windowsazure.cn). Check out the [Trial](/pricing/1rmb-trial/) offer if you do not have a subscription yet.
 
 2.	On the Hub menu, click **New**.
 
@@ -321,15 +318,15 @@ This section shows how to create a Premium Storage account using the Azure Previ
 
 5.	On the **Storage Account** blade, keep the default values for **Resource Group**, **Subscription**, **Location**, and **Diagnostics**. Click **Create**.
 
-For a complete walk-through inside an Azure environment, see [Create a Virtual Machine Running Windows in the Azure Preview Portal](/documentation/articles/virtual-machines-windows-tutorial-azure-preview).
+For a complete walk-through inside an Azure environment, see [Create a Virtual Machine Running Windows in the Azure Preview Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal-azure-preview).
 
 ### Create an Azure virtual machine using Premium Storage via Azure PowerShell
 This PowerShell example shows how to create a new Premium Storage account and attach a data disk that uses that account to a new Azure virtual machine.
 
-1. Setup your PowerShell environment by following the steps given at [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell).
+1. Setup your PowerShell environment by following the steps given at [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 2. Start the PowerShell console, connect to your subscription, and run the following PowerShell cmdlet in the console window. As seen in this PowerShell statement, you need to specify the **Type** parameter as **Premium_LRS** when you create a premium storage account.
 
-		New-AzureStorageAccount -StorageAccountName "yourpremiumaccount" -Location "China North" -Type "Premium_LRS"
+		New-AzureStorageAccount -StorageAccountName "yourpremiumaccount" -Location "China East" -Type "Premium_LRS"
 
 3. Next, create a new DS-Series VM and specify that you want Premium Storage by running the following PowerShell cmdlets in the console window. You can create a GS-series VM using the same steps. Specify the appropriate VM size in the commands. For e.g. Standard_GS2:
 
@@ -337,7 +334,7 @@ This PowerShell example shows how to create a new Premium Storage account and at
     	$adminName = "youradmin"
     	$adminPassword = "yourpassword"
     	$vmName ="yourVM"
-    	$location = "China North"
+    	$location = "China East"
     	$imageName = "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201409.01-en.us-127GB.vhd"
     	$vmSize ="Standard_DS2"
     	$OSDiskPath = "https://" + $storageAccount + ".blob.core.chinacloudapi.cn/vhds/" + $vmName + "_OS_PIO.vhd"
@@ -362,12 +359,12 @@ The [Azure Commnand-Line Interface](/documentation/articles/xplat-cli-install)(A
 #### Create a premium storage account
 
 ````
-azure storage account create "premiumtestaccount" -l "west us" --type PLRS
+azure storage account create "premiumtestaccount" -l "China East" --type PLRS
 ````
 
 #### Create a DS-series virtual machine
 
-	azure vm create -z "Standard_DS2" -l "west us" -e 22 "premium-test-vm"
+	azure vm create -z "Standard_DS2" -l "China East" -e 22 "premium-test-vm"
 		"b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB" -u "myusername" -p "passwd@123"
 
 #### Display information about the virtual machine
@@ -384,12 +381,10 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 
 ## Next steps
 
-- [Using Blob Service Operations with Azure Premium Storage](https://msdn.microsoft.com/zh-cn/library/dn889922.aspx)
+[Using Blob Service Operations with Azure Premium Storage](https://msdn.microsoft.com/zh-cn/library/dn889922.aspx)
 - [Migrating to Azure Premium Storage](/documentation/articles/storage-migration-to-premium-storage).
-- [Create a Virtual Machine Running Windows](/documentation/articles/virtual-machines-windows-tutorial-azure-preview)
-- [Virtual Machine and Cloud Service Sizes for Azure](/documentation/articles/virtual-machines-size-specs)
-- [Storage Documentation](/documentation/services/storage/)
-- [MSDN Reference](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
+[Create a Virtual Machine Running Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal-azure-preview)
+[Virtual Machine and Cloud Service Sizes for Azure](/documentation/articles/virtual-machines-size-specs)
+[Storage Documentation](/documentation/services/storage/)
 
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
- 

@@ -1,10 +1,20 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Directions on Microsoft | Windows Azure" description="Learn how to use Directions on Microsoft with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties 
+    pageTitle="Tutorial: Azure Active Directory integration with Directions on Microsoft | Windows Azure" 
+    description="Learn how to use Directions on Microsoft with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="08/01/2015"
+	ms.date="10/22/2015"
 	wacn.date=""/>
+
 #Tutorial: Azure Active Directory integration with Directions on Microsoft
->[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/61f0061f-779f-4dad-8540-bcf1d3402673/tutorial-azure-active-directory-integration-with-directions-on-microsoft?forum=WindowsAzureAD).
+<!-- keep by customization: begin -->
+>[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=533728).
+<!-- keep by customization: end -->
+<!-- keep by customization: end -->
 
 The objective of this tutorial is to show the integration of Azure Active Directory and Directions on Microsoft.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -12,7 +22,12 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A Directions on Microsoft subscription
 
-If you don’t have a federated Directions on Microsoft subscription yet, email a request to “*service@DirectionsOnMicrosoft.com*”.
+<!-- deleted by customization
+If you don't have a federated Directions on Microsoft subscription yet, email a request to “*service@DirectionsOnMicrosoft.com*”.
+-->
+<!-- keep by customization: begin -->
+If you <!-- deleted by customization don't --><!-- keep by customization: begin --> don’t <!-- keep by customization: end --> have a federated Directions on Microsoft subscription yet, email a request to “*service@DirectionsOnMicrosoft.com*”.
+<!-- keep by customization: end -->
 
 After completing this tutorial, the Azure Active Directory users you have assigned to Directions on Microsoft will be able to single sign into the application using single sign-on.
 

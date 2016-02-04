@@ -1,5 +1,5 @@
 
-> [WACOM.NOTE] **This article uses the Azure Preview portal**
+> <!-- deleted by customization [AZURE.NOTE] --><!-- keep by customization: begin --> [WACOM.NOTE] <!-- keep by customization: end --> **This article uses the Azure Preview portal**
 > 
 > The [Preview portal](https://manage.windowsazure.cn/) provides access to new features and experiences on the Azure platform, and is required when using the steps and information provided in this article.
 > 

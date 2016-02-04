@@ -56,7 +56,7 @@
 		<Button Name="ButtonLogin" Click="ButtonLogin_Click" 
                         Visibility="Visible">Sign in</Button>
 
-<!-- deleted by customization 6 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->. In the Windows Phone app project, add the following **Button** elements just just before the element that defines the **Save** button:
+6. In the Windows Phone app project, add the following **Button** elements just before the element that defines the **Save** button:
 
 		<Button Grid.Row ="1" Grid.Column="1" Name="ButtonLogin" Click="ButtonLogin_Click" 
                         Visibility="Visible" Margin="10, 0, 0, 0">Sign in</Button> 
@@ -88,4 +88,4 @@
 
    	When you are successfully logged-in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
 
-9. Right-click the Windows Phone Store app project, click **Set as StartUp Project**, then repeat the previous step to verify that the Windows Phone Store app also runs correctly.  
+9. Right-click the Windows Phone Store app project, click **Set as StartUp Project**, then repeat the previous step to verify that the Windows Phone Store app also runs correctly.  

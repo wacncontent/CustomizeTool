@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Configure SSL for a cloud service (preview portal) | Windows Azure" 
-	description="Learn how to specify an HTTPS endpoint for a web role and how to upload an SSL certificate to secure your application. These examples use the Azure preview portal." 
+	pageTitle="Configure SSL for a cloud service  | Windows Azure" 
+	description="Learn how to specify an HTTPS endpoint for a web role and how to upload an SSL certificate to secure your application. These examples use the Azure Management Portal." 
 	services="cloud-services" 
 	documentationCenter=".net" 
 	authors="Thraka" 
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/22/2015"
+	ms.date="01/15/2016"
 	wacn.date=""/>
 
 
@@ -18,12 +18,12 @@
 # Configuring SSL for an application in Azure
 
 > [AZURE.SELECTOR]
+- [Azure Management Portal](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
 - [Azure Management Portal](/documentation/articles/cloud-services-configure-ssl-certificate)
-- [Azure Preview Portal](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
 
 Secure Socket Layer (SSL) encryption is the most commonly used method of securing data sent across the internet. This common task discusses how to specify an HTTPS endpoint for a web role and how to upload an SSL certificate to secure your application.
 
-> [AZURE.NOTE] The procedures in this task apply to Azure Cloud Services; for Websites, see [Configuring an SSL certificate for an Azure website](/documentation/articles/web-sites-configure-ssl-certificate).
+> [AZURE.NOTE] The procedures in this task apply to Azure Cloud Services; for Azure Web App, see [this](/documentation/articles/web-sites-configure-ssl-certificate).
 
 This task will use a production deployment; information on using a staging deployment is provided at the end of this topic.
 
@@ -66,7 +66,7 @@ Your application must be configured to use the certificate, and an HTTPS endpoin
         ...
         </WebRole>
 
-    The **Certificates** section defines the name of our certificate, its location, and the name of the store where it is located. We have chosen to store the certificate in the CA (Certificate Authority)tore, but you can choose other options as well. See [How to associate a certificate with a service][] for more information.
+    The **Certificates** section defines the name of our certificate, its location, and the name of the store where it is located.
 
 2.  In your service definition file, add an **InputEndpoint** element
     within the **Endpoints** section to enable HTTPS:
@@ -163,8 +163,6 @@ connect to it using HTTPS.
     >[AZURE.TIP] If you want to use SSL for a staging deployment instead of a production deployment, you'll first need to determine the URL used for the staging deployment. Once your cloud service has been deployed, the URL to the staging envorionment is determined by the **Deployment ID** GUID in this format: `https://deployment-id.chinacloudapp.cn/`  
       
     >Create a certificate with the common name (CN) equal to the GUID-based URL (for example, **328187776e774ceda8fc57609d404462.chinacloudapp.cn**), use the portal to add the certificate to your staged cloud service, add the certificate information to your CSDEF and CSCFG files, repackage your application, and update your staged deployment to use the new package and CSCFG file.
-
-[Azure Management Portal]: http://manage.windowsazure.cn/
 
 ## Next steps
 

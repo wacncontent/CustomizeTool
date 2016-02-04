@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Consistency levels in DocumentDB | Microsoft Azure" 
+	pageTitle="Consistency levels in DocumentDB | Windows Azure" 
 	description="Review how DocumentDB has four consistency levels with associated performance levels to help balance eventual consistency, availability, and latency trade-offs." 
 	keywords="eventual consistency, documentdb, azure, Microsoft azure"
 	services="documentdb" 
@@ -8,14 +8,10 @@
 	editor="cgronlun" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/25/2015" 
-	ms.author="mimig"/>
+<tags
+	ms.service="documentdb"
+	ms.date="09/25/2015"
+	wacn.date=""/>
 
 # Using consistency levels to maximize availability and performance in DocumentDB
 
@@ -56,7 +52,7 @@ Eventual consistency provides the weakest read consistency but offers the lowest
 
 ### Changing the database consistency level
 
-1.  In the [Azure Preview portal](https://portal.azure.com/), in the Jumpbar, click **DocumentDB Accounts**.
+1.  In the [Azure Preview <!-- deleted by customization portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> portal](https://portal.azure.com/) <!-- keep by customization: end -->, in the Jumpbar, click **DocumentDB Accounts**.
 
 2. In the **DocumentDB Accounts** blade, select the database account to modify.
 

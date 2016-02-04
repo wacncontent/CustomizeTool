@@ -16,7 +16,7 @@ The following steps show how to create the new ASP.NET WebAPI backend:
 > [AZURE.NOTE] Make sure you have installed the Visual Studio [Azure SDK](/downloads/) for website deployment.
 
 1. Start Visual Studio or Visual Studio Express. Click **Server Explorer** and sign in to your Azure account. Visual Studio will need you signed in to create the web site resources on your account.
-2. In Visual Studio, click **File**, then click **New**, then **Project**, expand **Templates**, **Visual C#**, then click **Web** and **ASP.NET Web Application**, type the name **AppBackend**, and then click **OK**. 
+2. In Visual Studio, click **File**, then click **New**, then **Project**, expand **Templates**, **Visual C#**, then click **Web** and **ASP.NET web site**, type the name **AppBackend**, and then click **OK**. 
 	
 	![][B1]
 
@@ -24,7 +24,7 @@ The following steps show how to create the new ASP.NET WebAPI backend:
 
 	![][B2]
 
-4. In the **Configure Windows Azure Web App** dialog, choose a subscription, and an **App Service plan** you have already created. You can also choose **Create a new app service plan** and create one from the dialog. You do not need a database for this tutorial. Once you have selected your app service plan, click **OK** to create the project.
+4. In the **Configure Windows Azure web site** dialog, choose a subscription, and an **App Service plan** you have already created. You can also choose **Create a new app service plan** and create one from the dialog. You do not need a database for this tutorial. Once you have selected your app service plan, click **OK** to create the project.
 
 	![][B5]
 
@@ -288,7 +288,9 @@ In this section you add a new controller that exposes a way for client devices t
 
 3. Add the following method to the **NotificationsController** class.
 
-	This code send a notification type based on the Platform Notification Service (PNS) `pns` parameter. The value of `to_tag` is used to set the *username* tag on the message. This tag must match a username tag of an active notification hub registration. The notification message is pulled from the body of the POST request. 
+	This code send a notification type based on the Platform Notification Service (PNS) `pns` parameter. The value of `to_tag` is used to set the *username* tag on the message. This tag must match a username tag of an active notification hub registration. The notification message is pulled from the body of the POST request and formatted for the target PNS. 
+
+	Depending on the Platform Notification Service (PNS) that your supported devices use to receive notifications, different notifications are supported using different formats. For example on Windows devices, you could use a [toast notification with WNS](https://msdn.microsoft.com/zh-cn/library/windows/apps/br230849.aspx) that isn't directly supported by another PNS. So your backend would need to format the notification into a supported notification for the PNS of devices you plan to support. Then use the appropriate send API on the [NotificationHubClient class](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.notificationhubs.notificationhubclient_methods.aspx)
 
         public async Task<HttpResponseMessage> Post(string pns, [FromBody]string message, string to_tag)
         {
@@ -339,11 +341,11 @@ In this section you add a new controller that exposes a way for client devices t
 
 1. Now we will deploy this app to an Azure Website in order to make it accessible from all devices. Right-click on the **AppBackend** project and select **Publish**.
 
-2. Select **Windows Azure Web Apps** as your publish target.
+2. Select **Windows Azure web sites** as your publish target.
 
     ![][B15]
 
-3. Log in with your Azure account and select an existing or new Web App.
+3. Log in with your Azure account and select an existing or new web site.
 
     ![][B16]
 

@@ -41,12 +41,12 @@ The default [published workflows](/documentation/articles/media-services-workflo
 
 The following videos demonstrate how to use the designer.
 
-###Day 1 – Getting Started
+###Day 1 - Getting Started
 
 Day 1 video covers:
 
 - Designer Overview
-- Basic Workflows – “Hello World”
+- Basic Workflows - "Hello World"
 - Creating multiple output MP4 files for use with Azure Media Services streaming
 
 > [AZURE.VIDEO azure-premium-encoder-workflow-designer-training-videos-day-1]
@@ -55,7 +55,7 @@ Day 1 video covers:
 
 Day 2 video covers:
 
-- Varying Source file scenarios – handling audio
+- Varying Source file scenarios - handling audio
 - Workflows with advanced Logic
 - Graph stages
 

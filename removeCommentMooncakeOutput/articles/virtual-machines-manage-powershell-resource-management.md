@@ -10,7 +10,7 @@
 
 Many tasks you do each day to manage your VMs can by automated by using Azure PowerShell cmdlets in Azure Resource Manager mode. This article gives you example commands for simpler tasks, and links to articles that show the commands for more complex tasks.
 
->[AZURE.NOTE] If you haven't installed and configured Azure PowerShell yet, you can get instructions [here](/documentation/articles/install-configure-powershell).
+>[AZURE.NOTE] If you haven't installed and configured Azure PowerShell yet, you can get instructions [here](/documentation/articles/powershell-install-configure).
 
 ## How to Use the Example Commands
 You'll need to replace some of the text in the commands with text that's appropriate for your environment. The < and > symbols indicate text you need to replace. When you replace the text, remove the symbols but leave the quote marks in place. 

@@ -40,8 +40,8 @@ For more information about the Hadoop Streaming interface, see [Hadoop Streaming
 Before you begin, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-- **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters).
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
+- **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters-v1).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 
 
@@ -179,15 +179,16 @@ For tutorials that run other samples and provide instructions for running Pig, H
 * [Use Hive with HDInsight][hdinsight-use-hive]
 * [Azure HDInsight SDK documentation][hdinsight-sdk-documentation]
 
-[hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
+[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 [hadoop-streaming]: http://wiki.apache.org/hadoop/HadoopStreaming
 [streamreader]: http://msdn.microsoft.com/zh-cn/library/system.io.streamreader.aspx
 [console-writeline]: http://msdn.microsoft.com/zh-cn/library/system.console.writeline
 [stdin-stdout-stderr]: http://msdn.microsoft.com/zh-cn/library/3x292kth(v=vs.110).aspx
 
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
+
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples
 [hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
 [hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming

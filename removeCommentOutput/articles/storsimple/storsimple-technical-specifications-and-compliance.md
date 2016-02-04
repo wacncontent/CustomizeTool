@@ -1,27 +1,21 @@
 <properties 
-   pageTitle="StorSimple technical specifications | Microsoft Azure"
+   pageTitle="StorSimple technical specifications | Windows Azure"
    description="Describes the technical specifications and regulatory standards compliance information for the StorSimple hardware components."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
    manager="carolz"
    editor="" />
- <tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/26/2015"
-   ms.author="alkohli" />
+ <tags
+	ms.service="storsimple"
+	ms.date="10/27/2015"
+	wacn.date=""/>
 
 # Technical specifications and compliance for the StorSimple device
 
 ## Overview
 
-The hardware components of your Microsoft Azure StorSimple device adhere to the technical specifications and regulatory standards outlined in this article. The technical specifications describe the Power and Cooling Modules (PCMs), disk drives, and enclosures. The compliance information covers such things as international standards, safety and emissions, and cabling. 
-
-> [AZURE.NOTE] For more information about the StorSimple device, download the [StorSimple 8000 Series Datasheet](http://www.microsoft.com/server-cloud/products/storsimple/resources.aspx).  
+The hardware components of your Windows Azure StorSimple device adhere to the technical specifications and regulatory standards outlined in this article. The technical specifications describe the Power and Cooling Modules (PCMs), disk drives, and enclosures. The compliance information covers such things as international standards, safety and emissions, and cabling. 
 
 ## Power and Cooling Module specifications  
 
@@ -33,7 +27,7 @@ The EBOD enclosure uses a 580 W PCM, and primary enclosure uses a 764 W PCM. The
 |------------------------ | --------------------------------------------------- | -------------------------------------------------- |
 | Maximum output power    | 580 W                                               | 764                                                |
 | Frequency               | 50/60 Hz                                            | 50/60 Hz                                           |
-| Voltage range selection | Auto ranging: 90 – 264 V AC, 47/63 Hz               | Auto ranging: 90- 264 V AC, 47/63 Hz               |
+| Voltage range selection | Auto ranging: 90 - 264 V AC, 47/63 Hz               | Auto ranging: 90- 264 V AC, 47/63 Hz               |
 | Maximum inrush current  | 20 A                                                | 20 A                                               |
 | Power factor correction | >95% nominal input voltage                          | >95% nominal input voltage                         |
 | Harmonics               | Meets EN61000-3-2                                   | Meets EN61000-3-2                                  |
@@ -84,8 +78,8 @@ Depending on the configuration, a fully loaded primary enclosure can weigh from 
  
 | Enclosure | Weight |
 |-----------|--------| 
-| Maximum weight (depends on the configuration) |30 kg – 33 kg |
-| Empty (no drives fitted) |21 – 23 kg |
+| Maximum weight (depends on the configuration) |30 kg - 33 kg |
+| Empty (no drives fitted) |21 - 23 kg |
 
 ## Enclosure environment specifications  
 
@@ -116,7 +110,7 @@ This section lists the specifications related to the enclosure environment. The 
 | EMC  | EN55022 (CISPR - A), FCC A |
 
 ## International standards compliance
-Your Microsoft Azure StorSimple device complies with the following international standards:  
+Your Windows Azure StorSimple device complies with the following international standards:  
 
 - CE - EN 60950 - 1  
 - CB report to IEC 60950 - 1  
@@ -124,14 +118,14 @@ Your Microsoft Azure StorSimple device complies with the following international
 
 ## Safety compliance  
 
-Your Microsoft Azure StorSimple device meets the following safety ratings:  
+Your Windows Azure StorSimple device meets the following safety ratings:  
 
 - System product type approval: UL, cUL, CE  
 - Safety compliance: UL 60950, IEC 60950, EN 60950  
 
 ## EMC compliance 
 
-Your Microsoft Azure StorSimple device meets the following EMC ratings.  
+Your Windows Azure StorSimple device meets the following EMC ratings.  
 
 ### Emissions
 
@@ -168,6 +162,8 @@ The plug and the complete power cord assembly must meet the standards appropriat
 
 ## Supported network cables  
 
-For the 10 GbE network interfaces, DATA 2 and DATA 3, refer to the [list of supported network cables and modules](storsimple-supported-hardware-for-10-gbe-network-interfaces.md).
+For the 10 GbE network interfaces, DATA 2 and DATA 3, refer to the [list of supported network cables and modules](/documentation/articles/storsimple-supported-hardware-for-10-gbe-network-interfaces).
 
- 
+## Next steps
+
+For more information about the StorSimple device specifications, download the [StorSimple 8000 Series Specifications](http://storsimple.seagate.com/Specifications-8000).  

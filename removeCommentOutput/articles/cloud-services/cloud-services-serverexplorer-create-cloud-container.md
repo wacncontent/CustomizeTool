@@ -20,7 +20,7 @@ To view **Server Explorer** in Visual Studio, on the menu bar, choose **View**, 
 
 2.  If the user is not logged in, a sign-in dialog would automatically be prompted. Follow the instructions to login to Azure subscription
 
-3.  Right-click on **Cloud Service** node, choose **Create Cloud Service…**
+3.  Right-click on **Cloud Service** node, choose **Create Cloud ServiceâŚ**
 
 4.  A **Create Cloud Service** dialog would appear. Fill out **Subscription**, **Name**, **Region or Affinity Group** fields and click **Create** button to create an empty Cloud Service container
 

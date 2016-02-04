@@ -7,12 +7,10 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags
-	ms.service="service-bus"
-	ms.date="10/06/2015"
+<tags 
+	ms.service="service-bus" 
+	ms.date="10/06/2015" 
 	wacn.date=""/>
-
-
 # How to use Service Bus topics and subscriptions
 
 [AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
@@ -59,7 +57,7 @@ To instantiate an Azure Service Bus client you must first have a valid connectio
 Endpoint=[yourEndpoint];SharedSecretIssuer=[Default Issuer];SharedSecretValue=[Default Key]
 ```
 
-Where `Endpoint` is typically of the format `https://[yourNamespace].servicebus.chinacloudapi.cn`.
+Where **Endpoint** is typically of the format `https://[yourNamespace].servicebus.chinacloudapi.cn`.
 
 To create any Azure service client you must use the **ServicesBuilder** class. You can:
 
@@ -73,9 +71,9 @@ For the examples outlined here, the connection string is passed directly.
 ```
 require_once 'vendor\autoload.php';
 
-use WindowsAzure\Common\ServicesBuilder;
+	use WindowsAzure\Common\ServicesBuilder;
 	
-$connectionString = "Endpoint=[yourEndpoint];SharedSecretIssuer=[Default Issuer];SharedSecretValue=[Default Key]";
+	$connectionString = "Endpoint=[yourEndpoint];SharedSecretIssuer=[Default Issuer];SharedSecretValue=[Default Key]";
 
 $serviceBusRestProxy = ServicesBuilder::getInstance()->createServiceBusService($connectionString);
 ```
@@ -329,9 +327,9 @@ $serviceBusRestProxy->deleteSubscription("mytopic", "mysubscription");
 
 ## Next steps
 
-Now that you've learned the basics of Service Bus queues, see [Queues, topics, and subscriptions][] for more information.
+Now that you've learned the basics of Service Bus queues, see [Queues, Topics, and Subscriptions][] for more information.
 
 [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
 [sqlfilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
 [require-once]: http://php.net/require_once
-[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas
+[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas

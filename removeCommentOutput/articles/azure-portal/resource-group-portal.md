@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use Azure preview portal to manage Azure resources | Microsoft Azure" 
+	pageTitle="Use Azure preview portal to manage Azure resources | Windows Azure" 
 	description="Group multiple resources as a logical group that becomes the lifecycle boundary for resources contained within it." 
 	services="azure-resource-manager,azure-portal" 
 	documentationCenter="" 
@@ -7,25 +7,21 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="azure-resource-manager" 
-	ms.workload="multiple" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/16/2015" 
-	ms.author="tomfitz"/>
+<tags
+	ms.service="azure-resource-manager"
+	ms.date="11/11/2015"
+	wacn.date=""/>
 
 
 # Using the Azure Preview Portal to manage your Azure resources
 
 ## Introduction
 
-Historically, managing a resource (such as a database server, database, or web app) in Microsoft Azure required you to perform operations against one resource at a time. If you had a complex application made up of multiple resources, you had to manually coordinate changes to the application infrastructure. In the Azure preview portal, you can utilize Azure Resource Manager to create resource groups to deploy and manage all the resources in an application together.
+Historically, managing a resource (such as a database server, database, or web site) in Windows Azure required you to perform operations against one resource at a time. If you had a complex application made up of multiple resources, you had to manually coordinate changes to the application infrastructure. In the Azure preview portal, you can utilize Azure Resource Manager to create resource groups to deploy and manage all the resources in an application together.
 
-Typically, a resource group contains resources related to a specific application. For example, a group may contain a web app that hosts your public website, a SQL Database that stores relational data used by the site, and a Storage account that stores non-relational assets. Every resource in a resource group should share the same lifecycle. For more information about Resource Manager, see [Resource Manager overview](../resource-group-overview.md).
+Typically, a resource group contains resources related to a specific application. For example, a group may contain a web site that hosts your public website, a SQL Database that stores relational data used by the site, and a Storage account that stores non-relational assets. Every resource in a resource group should share the same lifecycle. For more information about Resource Manager, see [Resource Manager overview](/documentation/articles/resource-group-overview).
 
-This topic provides an overview of how to use resource groups within the Azure preview portal. 
+This topic provides an overview of how to use resource groups within the Azure preview portal. Currently, not every service supports the preview portal or Resource Manager. For those services, you will need to use the [portal](https://manage.windowsazure.cn). For the status of each service, see [Resource Manager support for services, regions, and API versions](/documentation/articles/resource-manager-supported-services)
 
 ## Create resource group and resources
 
@@ -37,7 +33,7 @@ You give it a name and location, and, if necessary, select a subscription.
 
 ![set group values](./media/resource-group-portal/set-group-properties.png)
 
-However, you do not need to explicitly create an empty resource group. When creating a new resource, you can choose to either create a new resource group or use an existing resource group. The following image shows how to create a new web app with the option of selecting an existing resource group or creating a new one. 
+However, you do not need to explicitly create an empty resource group. When creating a new resource, you can choose to either create a new resource group or use an existing resource group. The following image shows how to create a new web site with the option of selecting an existing resource group or creating a new one. 
 
 ![create resource group](./media/resource-group-portal/select-existing-group.png)
 
@@ -125,11 +121,11 @@ Since resource groups allow you to manage the lifecycle of all the contained res
 
 ## Tagging resources
 
-You can apply tags to resource groups and resources to logically organize your assets. For information about working with tags through the preview portal, see [Using tags to organize your Azure resources](../resource-group-using-tags.md).
+You can apply tags to resource groups and resources to logically organize your assets. For information about working with tags through the preview portal, see [Using tags to organize your Azure resources](/documentation/articles/resource-group-using-tags).
 
 ## Deploying a custom template
 
-If you want to execute a deployment but not use any of the templates in the Marketplace, you can create customized template that defines the infrastructure for your solution. For more information about templates, see [Authoring Azure Resource Manager templates](../resource-group-authoring-templates.md).
+If you want to execute a deployment but not use any of the templates in the Marketplace, you can create customized template that defines the infrastructure for your solution. For more information about templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates).
 
 To deploy a customized template through the preview portal, select **New**, **Marketplace**, and **Everything**.
 
@@ -146,9 +142,9 @@ After launching the template deployment, you can create the custom template and 
 ## Next Steps
 Getting Started  
 
-- For an introduction to the concepts in Resource Manager, see [Azure Resource Manager Overview](../resource-group-overview.md).  
-- For an introduction to using Azure PowerShell when deploying resources, see [Using Azure PowerShell with Azure Resource Manager](../powershell-azure-resource-manager.md).
-- For an introduction to using Azure CLI when deploying resources, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management](../xplat-cli-azure-resource-manager.md). 
+- For an introduction to the concepts in Resource Manager, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).  
+- For an introduction to using Azure PowerShell when deploying resources, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
+- For an introduction to using Azure CLI when deploying resources, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management](/documentation/articles/xplat-cli-azure-resource-manager). 
   
 
 

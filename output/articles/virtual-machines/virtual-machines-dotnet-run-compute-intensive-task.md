@@ -6,7 +6,7 @@
 	authors="wadepickett"
 	manager="wpickett"
 	editor="mollybos"
-	tags=¡°azure-service-management"/>
+	tags=Ã¢Â€Âœazure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -16,6 +16,9 @@
 # How to run a compute-intensive task in .NET on an Azure virtual machine
 
 With Azure, you can use a virtual machine to handle compute-intensive tasks. For example, a virtual machine can handle tasks and deliver results to client machines or mobile applications. After completing the tutorial, you will understand how to create a virtual machine that runs a compute-intensive .NET application that can be monitored by another .NET application.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+
 
 This tutorial assumes you know how to create .NET console applications. No knowledge of Azure is assumed.
 

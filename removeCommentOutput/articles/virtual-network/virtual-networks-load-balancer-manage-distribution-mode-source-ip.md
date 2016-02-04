@@ -4,13 +4,13 @@
    services="virtual-network" 
    documentationCenter="" 
    authors="telmosampaio" 
-   manager="carolz" 
+   manager="carmonm" 
    editor=""
    />
 
 <tags
 	ms.service="virtual-network"
-	ms.date="08/21/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
    
 # Manage virtual network: Load balancer distribution mode (Source IP Affinity)
@@ -50,14 +50,14 @@ Please download [the latest Azure PowerShell release](https://github.com/Azure/a
 
 ### Add an Azure endpoint to a Virtual Machine and set load balancer distribution mode
 
-    Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 –LoadBalancerDistribution “sourceIP”| Update-AzureVM  
+    Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 -LoadBalancerDistribution “sourceIP”| Update-AzureVM  
 
     Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 â€“LoadBalancerDistribution â€œsourceIPâ€�| Update-AzureVM  
 
 LoadBalancerDistribution can be set to sourceIP for 2-tuple (source IP, Destination IP) load balancing, sourceIPProtocol for 3-tuple (source IP, Destination IP, protocol) load balancing, or none if you want the default behavior (5-tuple load balancing).  
 
 ### Retrieve an endpoint load balancer distribution mode configuration
-    PS C:\> Get-AzureVM –ServiceName "mySvc" -Name "MyVM1" | Get-AzureEndpoint
+    PS C:\> Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Get-AzureEndpoint
     
     VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
     LBSetName : MyLoadBalancedSet
@@ -81,7 +81,7 @@ If the LoadBalancerDistribution element is not present then the Azure Load balan
 
 ### Set the Distribution mode on a load balanced endpoint set
 
-    Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 –LoadBalancerDistribution "sourceIP"
+    Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 -LoadBalancerDistribution "sourceIP"
 
     Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 â€“LoadBalancerDistribution "sourceIP"
     

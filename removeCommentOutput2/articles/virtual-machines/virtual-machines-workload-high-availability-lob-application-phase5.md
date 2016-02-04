@@ -15,6 +15,8 @@
 
 # Line of Business Application Workload Phase 5: Create the availability group and add the application databases
 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
 In this final phase of deploying a high-availability line of business application in Azure infrastructure services, you create a new SQL Server AlwaysOn Availability Group and add the databases of the application.
 
 See [Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview) for all of the phases.

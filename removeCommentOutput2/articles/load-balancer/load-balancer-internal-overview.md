@@ -1,20 +1,16 @@
 
 <properties 
-   pageTitle="Internal load balancer Overview | Microsoft Azure"
+   pageTitle="Internal load balancer Overview | Windows Azure"
    description="Overview for internal load balancer and its features.How a load balancer works for Azure and possible scenarios to configure internal endpoints"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
    manager="adinah"
    editor="tysonn" />
-<tags 
-   ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/12/2015"
-   ms.author="joaoma" />
+<tags
+	ms.service="load-balancer"
+	ms.date="12/09/2015"
+	wacn.date=""/>
 
 
 # Internal Load balancer Overview
@@ -23,11 +19,11 @@ Internal Load Balancer (ILB) is a security enhancement over the current Internet
 			
 The infrastructure  restricts the accessibility and creates a trust boundary between the load balanced virtual IP addresses to a Cloud Service or a Virtual Network and will never be exposed to a Internet endpoint directly. This enables internal Line of Business applications to run in Azure and be accessed within the cloud or from on-premises.
 
-## Scenarios for Internal load balancer
+## Scenarios for internal load balancer
 
 You can use ILB in many new configurations, including the following:
 
-Azure Internal Load Balancing (ILB) provides load balancing between virtual machines that reside inside of a cloud service or a virtual network with a regional scope. For information about the use and configuration of virtual networks with a regional scope, see [Regional Virtual Networks](http://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/) in the Azure blog. Existing virtual networks that have been configured for an affinity group cannot use ILB.
+Azure Internal Load Balancing (ILB) provides load balancing between virtual machines that reside inside of a cloud service or a virtual network with a regional scope. For information about the use and configuration of virtual networks with a regional scope, see [Regional Virtual Networks](http://www.windowsazure.cn/blog/2014/05/14/regional-virtual-networks/) in the Azure blog. Existing virtual networks that have been configured for an affinity group cannot use ILB.
 
 ILB enables the following new types of load balancing:
 
@@ -83,12 +79,12 @@ Another scenario for the LOB is to have a site to site VPN to the virtual networ
 
 ## Next Steps
 
-[Get started configuring an Internet facing load balancer](load-balancer-internet-getstarted.md)
+[Get started configuring an Internet facing load balancer](/documentation/articles/load-balancer-internet-getstarted)
 
-[Get started configuring an Internal load balancer](load-balancer-internal-getstarted.md)
+[Get started configuring an Internal load balancer](/documentation/articles/load-balancer-internal-getstarted)
 
-[Configure a Load balancer distribution mode](load-balancer-distribution-mode.md)
+[Configure a Load balancer distribution mode](/documentation/articles/load-balancer-distribution-mode)
 
-[Configure idle TCP timeout settings for your load balancer](load-balancer-tcp-idle-timeout.md)
+[Configure idle TCP timeout settings for your load balancer](/documentation/articles/load-balancer-tcp-idle-timeout)
 
  

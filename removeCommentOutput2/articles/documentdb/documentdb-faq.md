@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="DocumentDB Database Questions - Frequently Asked Questions | Microsoft Azure" 
-	description="Get answers to frequently asked questions about Azure DocumentDB NoSql document database service. Answer database questions about capacity, performance levels, and scaling." 
+	pageTitle="DocumentDB Database Questions - Frequently Asked Questions | Windows Azure" 
+	description="Get answers to frequently asked questions about Azure DocumentDB a NoSQL document database service for JSON. Answer database questions about capacity, performance levels, and scaling." 
 	keywords="Database questions, frequently asked questions, documentdb, azure, Microsoft azure"
 	services="documentdb" 
 	authors="mimig1" 
@@ -8,14 +8,10 @@
 	editor="monicar" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="mimig"/>
+<tags
+	ms.service="documentdb"
+	ms.date="12/03/2015"
+	wacn.date=""/>
 
 
 #Frequently asked questions about DocumentDB
@@ -23,7 +19,7 @@
 ## Database questions about Microsoft Azure DocumentDB fundamentals
 
 ### What is Microsoft Azure DocumentDB? 
-Microsoft Azure DocumentDB is a highly-scalable NoSQL document database-as-a-service that offers rich querying over schema-free data, helps deliver configurable and reliable performance, and enables rapid development, all through a managed platform backed by the power and reach of Microsoft Azure. DocumentDB is the right solution for web and mobile applications when predictable throughput, low latency, and a schema-free data model are key requirements. DocumentDB delivers schema flexibility and rich indexing via a native JSON data model, and includes multi-document transactional support with integrated JavaScript.  
+Microsoft Azure DocumentDB is a highly-scalable NoSQL document database-as-a-service that offers rich querying over schema-free data, helps deliver configurable and reliable performance, and enables rapid development, all through a managed platform backed by the power and reach of Microsoft Azure. DocumentDB is the right solution for web and mobile applications when predictable throughput, low latency, and a schema-free data model are key requirements. DocumentDB delivers schema flexibility and rich indexing via a native JSON data model, and includes multi-document transactional support with integrated JavaScript.
   
 For more database questions, answers, and instructions on deploying and using this service, see the [DocumentDB documentation page](http://azure.microsoft.com/documentation/services/documentdb/).
 
@@ -111,3 +107,4 @@ Yes, because DocumentDB is a RESTful service, resource links are immutable and c
 [azure-portal]: https://portal.azure.com
 [query]: documentdb-sql-query.md
  
+

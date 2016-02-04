@@ -10,10 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/21/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 # Create a cross-premises virtual network by using configuration tables
+
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager deployment model.
 
 This topic steps you through the creation of a cross-premises virtual network by using settings previously specified in the following set of configuration tables:
 

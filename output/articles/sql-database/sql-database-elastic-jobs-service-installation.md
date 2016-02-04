@@ -13,6 +13,7 @@
 	wacn.date=""/>
 
 # Installing Elastic Database jobs overview
+
 [**Elastic Database jobs**](/documentation/articles/sql-database-elastic-jobs-overview) can be installed via PowerShell or through the Azure Management Portal.You can gain access to create and manage jobs using the PowerShell API only if you install the PowerShell package. Additionally, the PowerShell APIs provide significantly more functionality than the portal at this point in time. 
 
 If you have already installed **Elastic Database jobs** through the Portal from an existing **Elastic Database pool**, the latest Powershell preview includes scripts to upgrade your existing installation. It is highly recommended to upgrade your installation to the latest **Elastic Database jobs** components in order to take advantage of new functionality exposed via the PowerShell APIs.
@@ -62,7 +63,7 @@ The parameters provided on this sample invocation can be modified for your desir
 
 <tr>
 	<td>ResourceGroupName</td>
-	<td>Provides the Azure resource group name created to contain the newly created Azure components. This parameter defaults to “__ElasticDatabaseJob”. It is not recommended to change this value.</td>
+	<td>Provides the Azure resource group name created to contain the newly created Azure components. This parameter defaults to "__ElasticDatabaseJob". It is not recommended to change this value.</td>
 	</tr>
 
 </tr>
@@ -74,7 +75,7 @@ The parameters provided on this sample invocation can be modified for your desir
 
 <tr>
 	<td>ServiceWorkerCount</td>
-	<td>Provides the number of service workers to install. This parameter defaults to 1. A higher number of workers can be used to scale out the service and to provide high availability. It is recommended to use “2” for deployments that require high availability of the service.</td>
+	<td>Provides the number of service workers to install. This parameter defaults to 1. A higher number of workers can be used to scale out the service and to provide high availability. It is recommended to use "2" for deployments that require high availability of the service.</td>
 	</tr>
 
 </tr>
@@ -124,7 +125,7 @@ To update the VM size of an installation, run the following script with paramete
 
   <tr>
 	<td>ResourceGroupName</td>
-	<td>Identifies the Azure resource group name used when the Elastic Database job components were initially installed. This parameter defaults to “__ElasticDatabaseJob”. Since it is not recommended to change this value, you shouldn't have to specify this parameter.</td>
+	<td>Identifies the Azure resource group name used when the Elastic Database job components were initially installed. This parameter defaults to "__ElasticDatabaseJob". Since it is not recommended to change this value, you shouldn't have to specify this parameter.</td>
 	</tr>
 </tr>
 
@@ -132,7 +133,7 @@ To update the VM size of an installation, run the following script with paramete
 
   <tr>
 	<td>ServiceWorkerCount</td>
-	<td>Provides the number of service workers to install.  This parameter defaults to 1.  A higher number of workers can be used to scale out the service and to provide high availability.  It is recommended to use “2” for deployments that require high availability of the service.</td>
+	<td>Provides the number of service workers to install.  This parameter defaults to 1.  A higher number of workers can be used to scale out the service and to provide high availability.  It is recommended to use "2" for deployments that require high availability of the service.</td>
 </tr>
 
 </tr>
@@ -151,7 +152,7 @@ Once you have [created an Elastic Database pool](/documentation/articles/sql-dat
 
 **Estimated time to complete:** 10 minutes.
 
-1. From the dashboard view of the elastic database pool via the [Azure preview portal](https://manage.windowsazure.cn/#) , click **Create job**.
+1. From the dashboard view of the elastic database pool via the [Azure Management Portal](https://manage.windowsazure.cn/#) , click **Create job**.
 2. If you are creating a job for the first time, you must install **Elastic Database jobs** by clicking **PREVIEW TERMS**. 
 3. Accept the terms by clicking the checkbox.
 4. In the "Install services" view, click **JOB CREDENTIALS**.
@@ -174,12 +175,12 @@ If uninstallation is required, delete the resource group. See [How to uninstall 
 
 ## Next steps
 
-Ensure a credential with the appropriate rights for script execution is created on each database in the group, for more information see [How to add users to all database in my group of databases](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs). 
+Ensure a credential with the appropriate rights for script execution is created on each database in the group, for more information see [Securing your SQL Database](/documentation/articles/sql-database-security). 
 See [Creating and managing an Elastic Database jobs](/documentation/articles/sql-database-elastic-jobs-create-and-manage) to get started.
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-jobs-service-installation/screen-1.png
 [2]: ./media/sql-database-elastic-jobs-service-installation/credentials.png
 [3]: ./media/sql-database-elastic-jobs-service-installation/start-board.png
-[4]: ./media/sql-database-elastic-jobs-service-installation/incomplete.png
+[4]: ./media/sql-database-elastic-jobs-service-installation/not-done.png
  

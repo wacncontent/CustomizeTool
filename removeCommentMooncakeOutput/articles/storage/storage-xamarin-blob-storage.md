@@ -3,13 +3,14 @@
 	description="The Azure Storage Client Library for Xamarin preview enables developers to create iOS, Android, and Windows Store apps with their native user interfaces. This tutorial shows how to use Xamarin to create an Android application that uses Azure Blob storage." 
 	services="storage" 
 	documentationCenter="xamarin" 
-	authors="tamram" 
-	manager="carolz" 
+	authors="micurd" 
+	manager="" 
 	editor=""/>
 
-<tags
-	ms.service="storage"
-	ms.date="09/03/2015"
+<tags 
+	ms.service="storage" 
+
+	ms.date="12/01/2015" 
 	wacn.date=""/>
 
 # How to use Blob Storage from Xamarin (Preview)
@@ -26,11 +27,11 @@ This tutorial shows you how to use Azure Blob storage with a Xamarin Android app
 
 ## Generate a Shared Access Signature
 
-When developing with the Azure Storage Client Library for Xamarin, you cannot authenticate access to an Azure Storage account using your account access keys. This is to prevent your account credentials from being distributed to users that may download your app. Instead, we encourage the use of shared access signatures (SAS), which won’t expose your account credentials.
+When developing with the Azure Storage Client Library for Xamarin, you cannot authenticate access to an Azure Storage account using your account access keys. This is to prevent your account credentials from being distributed to users that may download your app. Instead, we encourage the use of shared access signatures (SAS), which won't expose your account credentials.
 
 In this guide, we'll use Azure PowerShell to generate a SAS token. Then we'll create a Xamarin app that uses the generated SAS.
 
-First, you’ll need to install Azure PowerShell. Check out [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure#Install) for instructions.
+First, you'll need to install Azure PowerShell. Check out [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure#Install) for instructions.
 
 Next, open Azure PowerShell and run the following commands. Remember to replace `ACCOUNT_NAME` and `ACCOUNT_KEY== ` with your storage account credentials. Replace `CONTAINER_NAME` with a name of your choosing.
 
@@ -70,7 +71,7 @@ First add the following **using** statements:
 	using Microsoft.WindowsAzure.Storage.Blob;
 
 
-Next, add a line for your SAS token. Replace the `"SAS_URI"` string with the SAS URI that you generated in Azure PowerShell. Then add a line for a call to the `UseContainerSAS` method that we’ll create below. Note that the **async** keyword has been added before the delegate.
+Next, add a line for your SAS token. Replace the `"SAS_URI"` string with the SAS URI that you generated in Azure PowerShell. Then add a line for a call to the `UseContainerSAS` method that we'll create below. Note that the **async** keyword has been added before the delegate.
 
 
 	public class MainActivity : Activity
@@ -173,4 +174,4 @@ Learn more about blobs, tables, and queues by checking out the following links:
 [How to use Blob Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs)  
 [How to use Table Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-tables)  
 [How to use Queue Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-queues)
- 
+[Transfer data with the AzCopy command-line utility](/documentation/articles/storage-use-azcopy) 

@@ -8,9 +8,10 @@
    editor=""/>
 
 <tags
-	ms.service="active-directory"
-	ms.date="10/13/2015"
-	wacn.date=""/>
+   ms.service="active-directory"
+
+   ms.date="12/02/2015"
+   wacn.date=""/>
 
 # Design concepts for Azure AD Connect
 The purpose of this topic is to describe areas which must be thought through during the implementation design of Azure AD Connect. This is a deep dive on certain areas and these concept are briefly described in other topics as well.
@@ -18,7 +19,7 @@ The purpose of this topic is to describe areas which must be thought through dur
 ## sourceAnchor
 The sourceAnchor attribute is defined as *an attribute immutable during the lifetime of an object*. It uniquely identifies an object as being the same object on-premises and in Azure AD. The attribute is also called **immutableId** and the two names are used interchangeable.
 
-The word immutable, i.e. cannot be changed, is important to this topic. Since this attribute’s value cannot be changed after it has been set it is important to pick a design which will support your scenario.
+The word immutable, i.e. cannot be changed, is important to this topic. Since this attribute's value cannot be changed after it has been set it is important to pick a design which will support your scenario.
 
 The attribute is used for the following scenarios:
 
@@ -61,6 +62,5 @@ For this reason, the following restrictions apply to Azure AD Connect:
 - The sourceAnchor attribute can only be set during initial installation. If you re-run the installation wizard this option is read-only. If you need to change this, then you must uninstall and reinstall.
 - If you install another Azure AD Connect server, then you must select the same sourceAnchor attribute as previously used. If you have earlier been using DirSync and move to Azure AD Connect, then you must use **objectGUID** since that is the attribute used by DirSync.
 - If the value for sourceAnchor is changed after the object has been exported to Azure AD, then Azure AD Connect sync will throw an error and will not allow any more changes on that object before the issue has been fixed and the sourceAnchor is changed back in the source directory.
-
 ## Next steps
 Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

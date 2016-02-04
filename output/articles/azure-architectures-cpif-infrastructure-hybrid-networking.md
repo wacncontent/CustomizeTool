@@ -8,7 +8,7 @@
    editor=""/>
 
 <tags
-	ms.service="cloud-services"
+	ms.service="multiple"
 	ms.date="03/25/2015"
 	wacn.date=""/>
 

@@ -9,17 +9,16 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/21/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 # Learn more about Azure AD
 
-### Other articles on this topic
 [What is Azure AD?](/documentation/articles/active-directory-whatis)<br>
 [How does it work?](/documentation/articles/active-directory-works)<br>
 [Get started](/documentation/articles/active-directory-get-started)<br>
 [Next steps](/documentation/articles/active-directory-next-steps)<br>
-[Learn more](/documentation/articles/active-directory-learn-map)
+[Learn more](/documentation/articles/active-directory-learn-map)<br> 
 
 I already have an Azure subscription. How is Azure AD related to that? [How subscriptions are associated with a directory](/documentation/articles/active-directory-how-subscriptions-associated-directory)
 

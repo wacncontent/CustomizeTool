@@ -6,10 +6,11 @@ documentationCenter=""
 authors="sbtron" 
 manager="timlt" 
 editor=""/>
-<tags
-	ms.service="cloud-services"
-	ms.date="09/17/2015"
-	wacn.date=""/>
+<tags 
+ms.service="cloud-services" 
+
+ms.date="09/17/2015" 
+wacn.date=""/>
 
 # Enable Remote Desktop Connection for a Role in Azure Cloud Services using PowerShell
 

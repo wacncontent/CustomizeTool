@@ -3,13 +3,13 @@
 	description="Learn how to deploy your Azure application to a staging environment, then deploy to a production environment using Virtual IP (VIP) swap." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/08/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 
@@ -29,7 +29,7 @@ environment by performing a Virtual IP (VIP) swap.
 
 ## Step 1: Stage an Application
 
-This task covers how to stage an application by using the **Microsoft
+This task covers how to stage an application by using the **Windows 
 Azure PowerShell**.
 
 1.  When publishing a service, simply pass the **-Slot** parameter to
@@ -84,5 +84,4 @@ deployment by swapping VIPs with the deployment in staging.
 [cloud-service-dashboard]: ./media/cloud-services-nodejs-stage-application/cloud-service-dashboard-staging.png
 [cloud-service-staging-url]: ./media/cloud-services-nodejs-stage-application/cloud-service-staging-url.png
 [vip-swap-dialog]: ./media/cloud-services-nodejs-stage-application/vip-swap-dialog.png
-[How to Deploy a Service Upgrade to Production by Swapping VIPs in Azure]: /documentation/articles/cloud-services-how-to-manage#how-to-swap-deployments-to-promote-a-staged-deployment-to-production
-  [Overview of Managing Deployments in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/hh386336.aspx
+[How to Deploy a Service Upgrade to Production by Swapping VIPs in Azure]: /documentation/articles/cloud-services-how-to-manage/#how-to-swap-deployments-to-promote-a-staged-deployment-to-production 

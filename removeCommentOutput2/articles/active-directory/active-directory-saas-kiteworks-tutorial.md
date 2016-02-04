@@ -3,13 +3,13 @@
 	description="Learn how to configure single sign-on between Azure Active Directory and Kiteworks."
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
-	manager="stevenpo"
+	authors="jeevansd"
+	manager="prasannas"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/05/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 
@@ -19,7 +19,7 @@ The objective of this tutorial is to show you how to integrate Kiteworks with Az
 
 - You can control in Azure AD who has access to Kiteworks 
 - You can enable your users to automatically get signed-on to Kiteworks (Single Sign-On) with their Azure AD accounts
-- You can manage your accounts in one central location - the Azure Active Directory Portal
+- You can manage your accounts in one central location - the Azure Active Directory 
 
 If you want to know more details about SaaS app integration with Azure AD, see [What is application access and single sign-on with Azure Active Directory](/documentation/articles/active-directory-appssoaccess-whatis).
 
@@ -86,15 +86,15 @@ To configure and test Azure AD single sign-on with Kiteworks, you need to comple
 
 ### Configuring Azure AD Single Sign-On
 
-The objective of this section is to enable Azure AD single sign-on in the Azure AD portal and to configure single sign-on in your Kiteworks application. As part of this procedure, you are required to create a base-64 encoded certificate file. If you are not familiar with this procedure, see [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o).
+The objective of this section is to enable Azure AD single sign-on in the Azure Management Portal and to configure single sign-on in your Kiteworks application. As part of this procedure, you are required to create a base-64 encoded certificate file. If you are not familiar with this procedure, see [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o).
 
-To configure single sign-on for Kiteworks, you need a registered domain. If you don't have a registered domain yet, contact your Kiteworks support team via [support@flatterfiles.com](mailto:support@flatterfiles.com).  
+To configure single sign-on for Kiteworks, you need a registered domain. If you don't have a registered domain yet, contact your Kiteworks support team.  
 
 
 
 **To configure Azure AD single sign-on with Kiteworks, perform the following steps:**
 
-1. In the Azure AD portal, on the **Kiteworks** application integration page, click **Configure single sign-on** to open the **Configure Single Sign-On**  dialog.
+1. In the Azure Management Portal, on the **Kiteworks** application integration page, click **Configure single sign-on** to open the **Configure Single Sign-On**  dialog.
 <br><br> ![Configure Single Sign-On][6] <br>
 
 2. On the **How would you like users to sign on to Kiteworks** page, select **Azure AD Single Sign-On**, and then click **Next**.
@@ -145,7 +145,7 @@ To configure single sign-on for Kiteworks, you need a registered domain. If you 
     g. Click **Save**.
 
 
-6. In the Azure AD portal, select the single sign-on configuration confirmation, and then click **Next**. 
+6. In the Azure Management Portal, select the single sign-on configuration confirmation, and then click **Next**. 
 <br><br>![Azure AD Single Sign-On][10]<br>
 
 7. On the **Single sign-on confirmation** page, click **Complete**.  

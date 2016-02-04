@@ -128,7 +128,7 @@ This section shows how to connect to SQL Database instance using different
 
 
 If you choose to use Visual Studio and your configuration doesn't
-include an Azure web application as a front-end, there are no
+include an Azure web site as a front-end, there are no
 additional tools or SDKs needed to be installed on the development
 computer. You can just start developing your application.
 

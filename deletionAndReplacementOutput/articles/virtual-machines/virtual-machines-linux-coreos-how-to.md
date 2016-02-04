@@ -19,14 +19,3 @@ replaced by:
 		[portal](https://manage.windowsazure.cn)
 
 reason: ()
-
-deleted:
-
-		cloud service
-
-replaced by:
-
-		Cloud Service
-
-reason: ()
-

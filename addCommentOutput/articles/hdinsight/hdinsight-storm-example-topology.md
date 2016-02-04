@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Example Storm toplogies and components for Apache Storm on HDInsight
@@ -43,18 +43,21 @@ The following is a list of examples created and maintained by Microsoft for use 
 
 * [Learn how to deploy and manage Storm topologies with Storm on HDInsight][6eb0d3b8]
 
-  [2b8c3488]: /documentation/articles/hdinsight-storm-getting-started "Learn how to create a Storm on HDInsight cluster and use the Storm Dashboard to deploy example topologies."
-  [6eb0d3b8]: /documentation/articles/hdinsight-storm-deploy-monitor-topology "Learn how to deploy and manage topologies using the web-based Storm Dashboard and Storm UI or the HDInsight Tools for Visual Studio."
-  [16fce2d1]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology "Learn how to create C# Storm topologies by using the HDInsight Tools for Visual Studio."
-  [5797064f]: /documentation/articles/hdinsight-storm-develop-java-topology "Learn how to create Storm topologies in Java, using Maven, by creating a basic wordcount topology."
-  [94d15238]: /documentation/articles/hdinsight-storm-power-bi-topology "Demonstrates how to write data to Power BI from a C# topology, then create a chart and dashboard from the data."
+  [2b8c3488]: <!-- deleted by customization hdinsight-apache-storm-tutorial-get-started.md --><!-- keep by customization: begin --> /documentation/articles/hdinsight-apache-storm-tutorial-get-started <!-- keep by customization: end --> "Learn how to create a Storm on HDInsight cluster and use the Storm Dashboard to deploy example topologies."
+  [6eb0d3b8]: <!-- deleted by customization hdinsight-storm-deploy-monitor-topology.md --><!-- keep by customization: begin --> /documentation/articles/hdinsight-storm-deploy-monitor-topology <!-- keep by customization: end --> "Learn how to deploy and manage topologies using the web-based Storm Dashboard and Storm UI or the HDInsight Tools for Visual Studio."
+  [16fce2d1]: <!-- deleted by customization hdinsight-storm-develop-csharp-visual-studio-topology.md --><!-- keep by customization: begin --> /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology <!-- keep by customization: end --> "Learn how to create C# Storm topologies by using the HDInsight Tools for Visual Studio."
+  [5797064f]: <!-- deleted by customization hdinsight-storm-develop-java-topology.md --><!-- keep by customization: begin --> /documentation/articles/hdinsight-storm-develop-java-topology <!-- keep by customization: end --> "Learn how to create Storm topologies in Java, using Maven, by creating a basic wordcount topology."
+  [94d15238]: <!-- deleted by customization hdinsight-storm-power-bi-topology.md --><!-- keep by customization: begin --> /documentation/articles/hdinsight-storm-power-bi-topology <!-- keep by customization: end --> "Demonstrates how to write data to Power BI from a C# topology, then create a chart and dashboard from the data."
   [ec5a4064]: https://github.com/Blackmist/csharp-storm-example "Demonstrates a basic Storm topology that performs a wordcount, implemented in C#. This also demonstrates how to create multiple data streams within a C# topology."
-  [844d1d81]: /documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology "Learn how to read and write data from Azure Event Hubs with Storm on HDInsight."
-  [ab894747]: /documentation/articles/hdinsight-storm-sensor-data-analysis "Learn how to use Apache Storm on HDInsight to process sensor data from Azure Event Hubs, visualize it using D3.js, and (optionally,) store it to HBase."
+  [844d1d81]: <!-- deleted by customization hdinsight-storm-develop-csharp-event-hub-topology.md --><!-- keep by customization: begin --> /documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology <!-- keep by customization: end --> "Learn how to read and write data from Azure Event Hubs with Storm on HDInsight."
+  [ab894747]: <!-- deleted by customization hdinsight-storm-sensor-data-analysis.md --><!-- keep by customization: begin --> /documentation/articles/hdinsight-storm-sensor-data-analysis <!-- keep by customization: end --> "Learn how to use Apache Storm on HDInsight to process sensor data from Azure Event Hubs, visualize it using D3.js, and (optionally,) store it to HBase."
 <!-- deleted by customization
-  [3c86c7c8]: /documentation/articles/hdinsight-storm-twitter-trending "Learn how to use Trident to create a Storm topology that determines trending topics (based on hashtags,) on Twitter."
+  [3c86c7c8]: hdinsight-storm-twitter-trending.md "Learn how to use Trident to create a Storm topology that determines trending topics (based on hashtags,) on Twitter."
+  [246ee964]: hdinsight-storm-iot-eventhub-documentdb.md "Learn how to use a Storm topology to read messages from Azure Event Hubs, read documents from Azure DocumentDB for data referencing and save data to Azure Storage."
 -->
+<!-- keep by customization: begin -->
   [246ee964]: /documentation/articles/hdinsight-storm-iot-eventhub-documentdb "Learn how to use a Storm topology to read messages from Azure Event Hubs, read documents from Azure DocumentDB for data referencing and save data to Azure Storage."
+<!-- keep by customization: end -->
   [d6c540e3]: https://github.com/hdinsight/hdinsight-storm-examples/blob/master/EventCountExample "Several topologies to demonstrate throughput when reading from Azure Event Hubs and storing to SQL Database using Apache Storm on HDInsight."
   [b4b68194]: https://github.com/hdinsight/hdinsight-storm-examples/blob/master/RealTimeETLExample "Learn how to read data from Azure Event Hubs, aggregate & transform the data, then store it to HBase on HDInsight."
   [ce0c02a2]: https://github.com/hdinsight/hdinsight-storm-examples/tree/master/templates/HDInsightStormExamples "This project contains templates for spouts, bolts and topologies to interact with various Azure services like Event Hubs, DocumentDB, and SQL Database."

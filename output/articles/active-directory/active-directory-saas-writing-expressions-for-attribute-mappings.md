@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/20/2015"
+	ms.date="01/04/2016"
 	wacn.date=""/>
 
 
 # Writing Expressions for Attribute Mappings in Azure Active Directory
 
 When you configure provisioning to a SaaS application, one of the types of attribute mappings that you can specify is an expression mapping. 
- For these, you must write a script-like expression that allows you to transform your users’ data into formats that are more acceptable for the SaaS application.
+ For these, you must write a script-like expression that allows you to transform your users' data into formats that are more acceptable for the SaaS application.
 
 
 
@@ -85,7 +85,7 @@ Takes a date string from one format and converts it into a different format.
 |Name| Required/ Repeating | Type | Notes |
 |--- | ---                 | ---  | ---   |
 | **source** | Required | String | Usually name of the attribute from the source object. |
-| **inputFormat** | Required | String | Expected format of the source value. For supported formats, see <!-- deleted by customization [https://msdn.microsoft.com/library/8kb3ddd4(v=vs.110).aspx](https://msdn.microsoft.com/library/8kb3ddd4(v=vs.110).aspx) --><!-- keep by customization: begin --> [http://msdn.microsoft.com/zh-cn/library/8kb3ddd4%28v=vs.110%29.aspx](http://msdn.microsoft.com/zh-cn/library/8kb3ddd4%28v=vs.110%29.aspx) <!-- keep by customization: end -->. |
+| **inputFormat** | Required | String | Expected format of the source value. For supported formats, see [https://msdn.microsoft.com/library/8kb3ddd4(v=vs.110).aspx](https://msdn.microsoft.com/library/8kb3ddd4(v=vs.110).aspx). |
 | **outputFormat** | Required | String | Format of the output date. |
 
 
@@ -233,7 +233,7 @@ When **source** value matches a **key**, returns **value** for that **key**. If 
 
 ### Strip known domain name
 
-You need to strip a known domain name from a user’s email to obtain a user name. <br>
+You need to strip a known domain name from a user's email to obtain a user name. <br>
 For example, if the domain is "contoso.com", then you could use the following expression:
 
 

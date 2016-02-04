@@ -40,7 +40,7 @@ Scenario Prerequisites
 * Updated schema in Windows Server 2012 R2
 * Subscription to Azure Active Directory Premium
 * Windows Server 2012 R2 Federation Services, configured for SSO to Azure AD
-* Windows Server 2012 R2 Web Application Proxy Microsoft Azure Active Directory Connect (Azure AD Connect). [Download Azure AD Connect here](http://www.microsoft.com/download/details.aspx?id=47594).
+* Windows Server 2012 R2 Web Site Proxy Microsoft Azure Active Directory Connect (Azure AD Connect). [Download Azure AD Connect here](http://www.microsoft.com/download/details.aspx?id=47594).
 * Verified domain. 
 
 Known Issues in this release

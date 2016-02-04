@@ -186,7 +186,7 @@ The following table lists out all the object types of **Elastic Database jobs** 
 </table>
 
 ## Supported Elastic Database jobs group types
-The job executes Transact-SQL (T-SQL) scripts or application of DACPACs across a group of databases. When a job is submitted to be executed across a group of databases, the job “expands” the into child jobs where each performs the requested execution against a single database in the group. 
+The job executes Transact-SQL (T-SQL) scripts or application of DACPACs across a group of databases. When a job is submitted to be executed across a group of databases, the job "expands" the into child jobs where each performs the requested execution against a single database in the group. 
  
 There are two types of groups that you can create: 
 
@@ -244,7 +244,7 @@ This example creates a shard map manager along with several shards, followed by 
 
 2.  In the command window, type "1" and press **Enter**. This creates the shard map manager, and adds two shards to the server. Then type "3" and press **Enter**; repeat the action four times. This inserts sample data rows in your shards.
   
-3.  The [Azure preview portal](https://manage.windowsazure.cn) should show three new databases in your v12 server:
+3.  The [Azure Management Portal](https://manage.windowsazure.cn) should show three new databases in your v12 server:
 
 	![Visual Studio confirmation][2]
 
@@ -377,7 +377,7 @@ Retrieve all top level job executions, including inactive job executions:
 Retrieve all child job executions of a provided job execution ID, including inactive job executions:
 
 	$parentJobExecutionId = "{Job Execution Id}"
-	Get-AzureSqlJobExecution -AzureSqlJobExecution -JobExecutionId $parentJobExecutionId –IncludeInactive -IncludeChildren
+	Get-AzureSqlJobExecution -AzureSqlJobExecution -JobExecutionId $parentJobExecutionId -IncludeInactive -IncludeChildren
 
 Retrieve all job executions created using a schedule / job combination, including inactive jobs:
 
@@ -391,13 +391,13 @@ Retrieve all jobs targeting a specified shard map, including inactive jobs:
 	$shardMapDatabaseName = "{Shard Map Database Name}"
 	$shardMapName = "{Shard Map Name}"
 	$target = Get-AzureSqlJobTarget -ShardMapManagerDatabaseName $shardMapDatabaseName -ShardMapManagerServerName $shardMapServerName -ShardMapName $shardMapName
-	Get-AzureSqlJobExecution -TargetId $target.TargetId –IncludeInactive
+	Get-AzureSqlJobExecution -TargetId $target.TargetId -IncludeInactive
 
 Retrieve all jobs targeting a specified custom collection, including inactive jobs:
 
 	$customCollectionName = "{Custom Collection Name}"
 	$target = Get-AzureSqlJobTarget -CustomCollectionName $customCollectionName
-	Get-AzureSqlJobExecution -TargetId $target.TargetId –IncludeInactive
+	Get-AzureSqlJobExecution -TargetId $target.TargetId -IncludeInactive
  
 Retrieve the list of job task executions within a specific job execution:
 
@@ -559,7 +559,7 @@ Use the [**New-AzureSqlJob**](https://msdn.microsoft.com/zh-cn/library/mt346078.
 
 ## Data collection across databases
 
-You can use a job to execute a query across a group of databases and send the results to a specific table. The table can be queried after the fact to see the query’s results from each database. This provides an asynchronous method to execute a query across many databases. Failed attempts are handled automatically via retries.
+You can use a job to execute a query across a group of databases and send the results to a specific table. The table can be queried after the fact to see the query's results from each database. This provides an asynchronous method to execute a query across many databases. Failed attempts are handled automatically via retries.
 
 The specified destination table will be automatically created if it does not yet exist. The new table matches the schema of the returned result set. If a script returns multiple result sets, Elastic Database jobs will only send the first to the destination table.
 
@@ -620,7 +620,7 @@ Use [New-AzureSqlJobTrigger](https://msdn.microsoft.com/zh-cn/library/mt346069.a
 	$scheduleName = "{Schedule Name}"
 	$jobTrigger = New-AzureSqlJobTrigger
 	-ScheduleName $scheduleName
-	–JobName $jobName
+	-JobName $jobName
 	Write-Output $jobTrigger
 
 ### To remove a scheduled association to stop job from executing on schedule

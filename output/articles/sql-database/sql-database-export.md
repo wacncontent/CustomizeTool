@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/23/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 
@@ -18,10 +18,10 @@
 **Single database**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](/documentation/articles/sql-database-export)
+- [Azure Management Portal](/documentation/articles/sql-database-export)
 - [PowerShell](/documentation/articles/sql-database-export-powershell)
 
-This article provides directions for exporting a BACPAC of your Azure SQL database with the [Azure preview portal](https://manage.windowsazure.cn).
+This article provides directions for exporting a BACPAC of your Azure SQL database with the [Azure Management Portal](https://manage.windowsazure.cn).
 
 A [BACPAC](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx#Anchor_4) is a .bacpac file that contains a database schema and data. The primary use case for a BACPAC is to move a database from one server to another, to [migrate a local database to the cloud](/documentation/articles/sql-database-cloud-migrate), and for archiving an existing database in an open format.
 
@@ -43,7 +43,7 @@ Open the SQL Database blade for the database you want to export.
 
 > [AZURE.IMPORTANT] To guarantee a transactionally consistent BACPAC file you should first [create a copy of your database](/documentation/articles/sql-database-copy) and then export the database copy. 
 
-1.	Go to the [Azure Preview Portal](https://manage.windowsazure.cn).
+1.	Go to the [Azure Management Portal](https://manage.windowsazure.cn).
 2.	Click **BROWSE ALL**.
 3.	Click **SQL databases**.
 2.	Click the database you want to export as a BACPAC.
@@ -90,12 +90,7 @@ Clicking **Create** creates an export database request and submits it to the ser
 
 - [Business Continuity Overview](/documentation/articles/sql-database-business-continuity)
 - [Disaster Recovery Drills](/documentation/articles/sql-database-disaster-recovery-drills)
-<!-- deleted by customization
 - [SQL Database documentation](/documentation/services/sql-database/)
--->
-<!-- keep by customization: begin -->
-- [SQL Database documentation](/documentation/services/sql-databases/)
-<!-- keep by customization: end -->
 
 
 <!--Image references-->

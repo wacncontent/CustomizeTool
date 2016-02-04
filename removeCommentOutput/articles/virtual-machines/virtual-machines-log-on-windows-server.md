@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Log on to a VM | Windows Azure"
-	description="Use the portal to log on to a Windows virtual machine created with the classic deployment model."
+	description="Use the Azure Management Portal to log on to a Windows virtual machine created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -34,7 +34,7 @@ Here's a video walkthrough of the steps in this tutorial. It also covers endpoin
 
 ## Connect to the virtual machine
 
-1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn).
+1. Sign in to the Azure Management Portal.
 
 2. Click **Virtual Machines**, and then select the virtual machine.
 

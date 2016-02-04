@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/16/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 
@@ -18,7 +18,7 @@
 **Single database**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](/documentation/articles/sql-database-copy)
+- [Azure Management Portal](/documentation/articles/sql-database-copy)
 - [PowerShell](/documentation/articles/sql-database-copy-powershell)
 - [SQL](/documentation/articles/sql-database-copy-transact-sql)
 
@@ -140,4 +140,4 @@ After running **Start-AzureSqlDatabaseCopy** you can check the status of the cop
 
 - [Business Continuity Overview](/documentation/articles/sql-database-business-continuity)
 - [Disaster Recovery Drills](/documentation/articles/sql-database-disaster-recovery-drills)
-- [SQL Database documentation](/documentation/services/sql-database/)
+- [SQL Database documentation](/documentation/services/sql-databases/)

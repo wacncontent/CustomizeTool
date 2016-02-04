@@ -17,7 +17,8 @@
 
 The Azure CLI is a set of open-source, cross-platform commands for working with the Azure platform. This article describes how to connect to your Azure subscription from the Azure CLI to use all of the CLI commands. If you haven't already installed the CLI, see [Install the Azure CLI](/documentation/articles/xplat-cli-install).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating and managing resources with the Resource Manager deployment model or the classic deployment model.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
 There are two ways to connect to your subscription from the Azure CLI:
@@ -93,7 +94,7 @@ This opens your default browser and prompts you to sign in to the [Azure Managem
 
 	> [AZURE.NOTE] If your account is associated with multiple Azure Active Directory tenants, you may be prompted to select which Active Directory you wish to download a publish settings file for.
 	>
-	> Once selected using the download page, or by visiting the Azure Management Portal, the selected Active Directory becomes the default used by the portal and download page. Once a default has been established, you will see the text '__click here to return to the selection page__' at the top of the download page. Use the provided link to return to the selection page.
+	> Once selected using the download page, or by visiting the Azure portal, the selected Active Directory becomes the default used by the Management Portal and download page. Once a default has been established, you will see the text '__click here to return to the selection page__' at the top of the download page. Use the provided link to return to the selection page.
 
 * **To import the publish settings file**, run the following command:
 
@@ -150,5 +151,5 @@ Whether you log in with a work or school account or import publish settings, you
 [free-trial]: /pricing/1rmb-trial/
 [portal]: https://manage.windowsazure.cn
 [signuporg]: /documentation/articles/sign-up-organization/
-[cliasm]: /documentation/articles/virtual-machines-command-line-tools
-[cliarm]: /documentation/articles/xplat-cli-azure-resource-manager
+[cliasm]: virtual-machines/virtual-machines-command-line-tools.md
+[cliarm]: xplat-cli-azure-resource-manager.md

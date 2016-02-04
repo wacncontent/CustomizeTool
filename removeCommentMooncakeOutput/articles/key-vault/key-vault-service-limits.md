@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Key Vault Service Limits | Microsoft Azure"
+   pageTitle="Azure Key Vault Service Limits | Windows Azure"
    description="Learn about the service limits for Azure Key Vault."
    documentationCenter="dev-center-name"
    services="key-vault"  
@@ -9,15 +9,11 @@
 
 <tags
    ms.service="key-vault"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
    ms.date="09/22/2015"
-   ms.author="mbaldwin"/>
+   wacn.date=""/>
 
 # Azure Key Vault Service Limits
 
 These are the service limits for Azure Key Vault.
 
-[AZURE.INCLUDE [key-vault-limits](../../includes/key-vault-limits.md)]
+[AZURE.INCLUDE [key-vault-limits](../includes/key-vault-limits.md)]

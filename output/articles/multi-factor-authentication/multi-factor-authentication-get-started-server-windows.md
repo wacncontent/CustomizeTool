@@ -7,21 +7,17 @@
 	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 # Windows Authentication and Azure Multi-Factor Authentication Server
 
 The Windows Authentication section allows the administrator to enable and configure Windows authentication for one or more applications.  The following is a list of things to keep in mind prior to setting up Windows Authentication.
 
 -  reboot is needed before the Azure Multi-Factor Authentication for Terminal Services will be in effect.
--  If ‘Require Azure Multi-Factor Authentication user match’ is checked and you are not in the user list, you will not be able to log into the machine after reboot.
+-  If 'Require Azure Multi-Factor Authentication user match' is checked and you are not in the user list, you will not be able to log into the machine after reboot.
 -  Trusted IPs is dependent on whether the application can provide the client IP with the authentication. Currently only Terminal Services is supported.  
 
 
@@ -41,7 +37,7 @@ The Windows Authentication section allows the administrator to enable and config
 ![Windows Authentication](./media/multi-factor-authentication-get-started-server-windows/windowsauth.png)
 2. Check the Enable Windows authentication checkbox. By default, this box is unchecked.
 3. The Applications tab allows the administrator to configure one or more applications for Windows Authentication.
-4. Select a server or application – specify whether the server/application is enabled. Click OK.
+4. Select a server or application - specify whether the server/application is enabled. Click OK.
 5. Click Add… button.
 6. The Trusted IPs tab allows you to skip Azure Multi-Factor Authentication for Windows sessions originating from specific IPs. For example, if employees use the application from the office and from home, you may decide you don't want their phones ringing for Azure Multi-Factor Authentication while at the office. For this, you would specify the office subnet as Trusted IPs entry.
 7. Click Add… button.

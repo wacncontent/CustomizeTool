@@ -63,7 +63,7 @@ MPEG-1 (Including MPEG-PS)							|Yes
 Windows Media Video/VC-1							|Yes
 Canopus HQ/HQX										|Yes
 MPEG-4 v2 (Simple Visual Profile and Advanced Simple Profile)	|Yes
-[Theora](https://en.wikipedia.org/wiki/Theora)		|No
+[Theora](https://zh.wikipedia.org/wiki/Theora)		|No
 VC-1 (Simple, Main, and Advanced Profiles)			|Yes
 Windows Media Video (Simple, Main, and Advanced Profiles)	|Yes
 DV (DVC, DVHD, DVSD, DVSL)							|Yes
@@ -83,8 +83,8 @@ MPEG Layer 2|Yes|Yes|Yes
 MP3 (MPEG-1 Audio Layer 3)|Yes
 Windows Media Audio 9 (Windows Media Audio Standard, Windows Media Audio Professional, and Windows Media Audio Lossless)	|Yes
 WAV/PCM|Yes
-[FLAC](https://en.wikipedia.org/wiki/FLAC)|No
-[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) |No
+[FLAC](https://zh.wikipedia.org/wiki/FLAC)|No
+[Opus](https://en.wikipedia.org/wiki/Opus_codec) |No
 [Vorbis](https://en.wikipedia.org/wiki/Vorbis)|No
 
 

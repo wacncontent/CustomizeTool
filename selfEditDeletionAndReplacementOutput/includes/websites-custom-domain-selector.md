@@ -4,11 +4,11 @@ deleted:
 
 		- [Buy Domain for Web Apps](/documentation/articles/custom-dns-web-site-buydomains-web-app)
 
-reason: ()
+reason: (Buy Domains)
 
 deleted:
 
 		- [GoDaddy](/documentation/articles/web-sites-godaddy-custom-domain-name)
 
-reason: ()
+reason: (Buy Domains)
 

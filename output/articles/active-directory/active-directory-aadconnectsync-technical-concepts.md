@@ -13,7 +13,7 @@
 	wacn.date=""/>
 
 
-# Azure AD Connect Sync: Technical Concepts
+# Azure AD Connect sync: Technical Concepts
 
 Azure AD Connect sync builds upon a solid metadirectory synchronization platform.
 The following sections introduce the concepts for metadirectory synchronization.

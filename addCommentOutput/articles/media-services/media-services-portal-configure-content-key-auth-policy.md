@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 
@@ -78,16 +78,17 @@ When protecting your content with **PlayReady**, one of the things you need to s
 	  </LicenseTemplates>
 	</PlayReadyLicenseResponseTemplate>
 
-You can click the **import policy xml** button and provide a different XML which conforms to the  XML Schema defined [here](https://msdn.microsoft.com/zh-cn/library/azure/dn783459.aspx).
+You can click the **import policy xml** button and provide a different XML which conforms to the  XML Schema defined [here](/documentation/articles/media-services-playready-license-template-overview).
 
 
 <!-- deleted by customization
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 -->
 

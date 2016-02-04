@@ -9,17 +9,19 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/02/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 
 # <a name="getting-started"> </a>Get started with Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]  
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
->[AZURE.TIP] If you are new to mobile development using Windows Azure, [get started with Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview) instead of Azure Mobile Services; this gives you [additional advantages](/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services-preview).
- 
+>[AZURE.TIP] If you are new to mobile development using Windows Azure, [get started with Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview) instead of Azure Mobile Services; Mobile Apps gives you [additional advantages](/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services-preview).
 This tutorial shows you how to add a cloud-based backend service to a universal Windows app using Azure Mobile Services. Universal Windows app solutions include projects for both Windows Store 8.1 and Windows Phone Store 8.1 apps and a common shared project. For more information, see [Build universal Windows apps that target Windows and Windows Phone](http://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/dn609832.aspx).
 
 In this tutorial, you will create both a new mobile service and a simple *To do list* app that stores app data in the new mobile service. The mobile service that you will create uses the supported .NET languages using Visual Studio for server-side business logic and to manage the mobile service. To create a mobile service that lets you write your server-side business logic in JavaScript, see the JavaScript backend version of this topic.
@@ -32,7 +34,7 @@ In this tutorial, you will create both a new mobile service and a simple *To do 
 
 To complete this tutorial, you need the following:
 
-* An active Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started%2F).
+* An active Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure <!-- deleted by customization Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started%2F) --><!-- keep by customization: begin --> Trial](/pricing/1rmb-trial/) <!-- keep by customization: end -->.
 * [Visual Studio 2013].
 
 ## Create a new mobile service
@@ -41,11 +43,11 @@ To complete this tutorial, you need the following:
 
 ## Create a new universal Windows app
 
-Once you have created your mobile service, you can follow an easy quickstart in the Management Portal to either create a new app or modify an existing app to connect to your mobile service.
+Once you have created your mobile service, you can follow an easy quickstart in the Azure Management Portal to either create a new app or modify an existing app to connect to your mobile service.
 
 In this section you will create a new universal Windows app that is connected to your mobile service.
 
-1. In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+1. In the [Azure Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
 
 2. In the quickstart tab, click **Windows** under **Choose platform** and expand **Create a new Windows Store app**.
 
@@ -106,7 +108,7 @@ Now that you have completed the quickstart, learn how to perform additional impo
 * [Troubleshoot a Mobile Services .NET backend]
   <br/> Learn how to diagnose and fix issues that can arise with a Mobile Services .NET backend.
 
-For more information about universal Windows apps, see [Supporting multiple device platforms from a single mobile service](/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service#shared-vs).
+For more information about universal Windows apps, see [Supporting multiple device platforms from a single mobile <!-- deleted by customization service](/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service#shared-vs) --><!-- keep by customization: begin --> service](/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service/#shared-vs) <!-- keep by customization: end -->.
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
@@ -118,14 +120,27 @@ For more information about universal Windows apps, see [Supporting multiple devi
 
 <!-- URLs. -->
 [Visual Studio 2013]: https://www.visualstudio.com/downloads/download-visual-studio-vs
+<!-- deleted by customization
+[Get started with data]: mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data.md
+[Get started with data]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-data.md
+[Get started with offline data sync]: mobile-services-windows-store-dotnet-get-started-offline-data.md
+[Get started with authentication]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-users.md
+[Get started with push notifications]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-push.md
+-->
+<!-- keep by customization: begin -->
 [Get started with data]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data
 [Get started with data]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data
 [Get started with offline data sync]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
+<!-- keep by customization: end -->
 [Visual Studio Professional 2013]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[JavaScript and HTML]: /documentation/articles/mobile-services-win8-javascript
-[Management Portal]: https://manage.windowsazure.cn/
-[Troubleshoot a Mobile Services .NET backend]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
- 
+<!-- deleted by customization
+[JavaScript and HTML]: mobile-services-win8-javascript/
+-->
+<!-- keep by customization: begin -->
+[JavaScript and HTML]: documentation/articles/mobile-services-win8-javascript/
+<!-- keep by customization: end -->
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[Troubleshoot a Mobile Services .NET backend]: <!-- deleted by customization mobile-services-dotnet-backend-how-to-troubleshoot.md --><!-- keep by customization: begin --> /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot <!-- keep by customization: end -->

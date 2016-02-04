@@ -1,30 +1,26 @@
 <properties 
-   pageTitle="Safety for your StorSimple device | Microsoft Azure"
+   pageTitle="Safety for your StorSimple device | Windows Azure"
    description="Describes safety conventions, guidelines, and considerations, and explains how to safely install and operate your StorSimple device."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/26/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="08/26/2015"
+	wacn.date=""/>
 
 # Safely install and operate your StorSimple device
 
 ![Warning Icon](./media/storsimple-safety/IC740879.png)
 ![Read Safety Notice Icon](./media/storsimple-safety/IC740885.png) **READ SAFETY AND HEALTH INFORMATION**
 
-Read all the safety and health information in this article that applies to your Microsoft Azure StorSimple device. Keep all the printed guides shipped with your StorSimple device for future reference. Failure to follow instructions and properly set up, use, and care for this product can increase the risk of serious injury or death, or damage to the device or devices. A [downloadable version of this guide](http://www.microsoft.com/download/details.aspx?id=44233) is also available.
+Read all the safety and health information in this article that applies to your <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple device. Keep all the printed guides shipped with your StorSimple device for future reference. Failure to follow instructions and properly set up, use, and care for this product can increase the risk of serious injury or death, or damage to the device or devices. A [downloadable version of this guide](http://www.microsoft.com/download/details.aspx?id=44233) is also available.
 
 ## Safety icon conventions
 
-Here are the icons that you will find when you review the safety precautions to be observed when setting up and running your Microsoft Azure StorSimple device.
+Here are the icons that you will find when you review the safety precautions to be observed when setting up and running your <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple device.
 
 | Icon  | Description  |
 |:------|:-------------| 
@@ -130,7 +126,7 @@ The device is designed to operate with two PCMs. Each of the PCMs has a power su
 
 To reduce the likelihood of injury, electrical shock, or death:
 
-- Do not remove the covers from the PCM. There is a danger of electric shock inside. To return the PCM and obtain a replacement, [contact Microsoft Support](https://msdn.microsoft.com/library/azure/dn757750.aspx).
+- Do not remove the covers from the PCM. There is a danger of electric shock inside. To return the PCM and obtain a replacement, [contact Microsoft <!-- deleted by customization Support](https://msdn.microsoft.com/zh-cn/library/azure/dn757750.aspx) --><!-- keep by customization: begin --> Support](https://msdn.microsoft.com/library/azure/dn757750.aspx) <!-- keep by customization: end -->.
 
 ![Notice Icon](./media/storsimple-safety/IC740881.png) **NOTICE:**
 
@@ -176,7 +172,7 @@ After you have reviewed these safety notices, the next steps are to unpack, rack
 
 ## Next steps
 
-- For an 8100 device, go to [Install your StorSimple 8100 device](storsimple-8100-hardware-installation.md).
+- For an 8100 device, go to [Install your StorSimple 8100 <!-- deleted by customization device](/documentation/articles/storsimple-8100-hardware-installation) --><!-- keep by customization: begin --> device](storsimple-8100-hardware-installation.md) <!-- keep by customization: end -->.
 
-- For an 8600 device, go to [Install your StorSimple 8600 device](storsimple-8600-hardware-installation.md).
+- For an 8600 device, go to [Install your StorSimple 8600 <!-- deleted by customization device](/documentation/articles/storsimple-8600-hardware-installation) --><!-- keep by customization: begin --> device](storsimple-8600-hardware-installation.md) <!-- keep by customization: end -->.
 

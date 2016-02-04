@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/17/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 # Azure Active Directory Code Samples
@@ -22,9 +22,9 @@ To understand the basic scenario for each sample type, see Authentication Scenar
 
 Contribute to our samples on GitHub: [Windows Azure Active Directory Samples and Documentation](https://github.com/AzureADSamples).
 
-## Web Browser to Web Application
+## Web Browser to Web Site 
 
-These samples show how to write a web application that directs the user’s browser to sign them in to Azure AD.
+These samples show how to write a web application that directs the userâs browser to sign them in to Azure AD.
 
 
 
@@ -49,9 +49,9 @@ This sample shows how to write a single page application secured with Azure AD.
 
 
 ## Native Application to Web API
-
-These code samples show how to build native client applications that call web APIs that are secured by Azure AD. They use [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-cn/library/jj573266) and [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
-
+ 
+These code samples show how to build native client applications that call web APIs that are secured by Azure AD. They use [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-CN/library/jj573266) and [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-CN/library/azure/dn645545.aspx).
+ 
 | Language/Platform | Sample | Description
 | ----------------- | ------ | -----------
 | Javascript | [NativeClient-MultiTarget-Cordova](https://github.com/AzureADSamples/NativeClient-MultiTarget-Cordova) | Use the ADAL plugin for Apache Cordova to build an Apache Cordova app that calls a web API and uses Azure AD for authentication.
@@ -67,23 +67,23 @@ These code samples show how to build native client applications that call web AP
 | C#/Xamarin | [NativeClient-MultiTarget-DotNet](http://github.com/AzureADSamples/NativeClient-MultiTarget-DotNet) | A Xamarin project that targets five platforms and calls a web API that is secured by Azure AD.
 | C#/.NET | [NativeClient-Headless-DotNet](http://github.com/AzureADSamples/NativeClient-Headless-DotNet) | A native application that performs non-interactive authentication and calls a web API that is secured by Azure AD.
 
+   
 
+## Web Site to Web API
 
-## Web Application to Web API
-
-These code samples show how use [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx) to build web applications that call web APIs that are secured by Azure AD.
+These code samples show how use [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-CN/library/azure/dn645545.aspx) to build web sites that call web APIs that are secured by Azure AD.
 
 | Language/Platform | Sample | Description
 | ----------------- | ------ | -----------
 | C#/.NET | [WebApp-WebAPI-OpenIDConnect-DotNet](http://github.com/AzureADSamples/WebApp-WebAPI-OpenIDConnect-DotNet) | Call a web API with the signed-in user's permissions.
 |  C#/.NET | [WebApp-WebAPI-OAuth2-AppIdentity-DotNet](http://github.com/AzureADSamples/WebApp-WebAPI-OAuth2-AppIdentity-DotNet) | Call a web API with the application's permissions.
-| C#/.NET | [WebApp-WebAPI-OAuth2-UserIdentity-Dotnet](http://github.com/AzureADSamples/WebApp-WebAPI-OAuth2-UserIdentity-Dotnet) | Add authorization with [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx) to an existing web application so it can call a web API.
+| C#/.NET | [WebApp-WebAPI-OAuth2-UserIdentity-Dotnet](http://github.com/AzureADSamples/WebApp-WebAPI-OAuth2-UserIdentity-Dotnet) | Add authorization with [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-CN/library/azure/dn645545.aspx) to an existing web application so it can call a web API.
 | JavaScript | [WebAPI-Nodejs](http://github.com/AzureADSamples/WebAPI-Nodejs) | Set up a REST API service that's integrated with Azure AD for API protection. Includes a Node.js server with a Web API.
 | C#/.NET | [WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet](https://github.com/AzureADSamples/WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet) |  A multi-tenant MVC web application that uses OpenID Connect (ASP.Net OpenID Connect OWIN middleware) to authenticate users from an Azure AD tenant. Uses an authorization code to invoke the Graph API.
 
 ## Server or Daemon Application to Web API
 
-These code samples show how to build a daemon or server application that gets resources from a web API by using [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-cn/library/jj573266) and [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
+These code samples show how to build a daemon or server application that gets resources from a web API by using [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/zh-CN/library/jj573266) and [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/zh-CN/library/azure/dn645545.aspx).
 
 | Language/Platform | Sample | Description
 | ----------------- | ------ | -----------
@@ -145,4 +145,4 @@ PHP | [PHP Sample App for Azure AD Graph API](http://code.msdn.microsoft.com/PHP
 
 [Azure AD Graph API Helper Library](http://code.msdn.microsoft.com/Windows-Azure-AD-Graph-API-a8c72e18)
 
-[Developing Modern Applications using OAuth and Active Directory Federation Services](http://msdn.microsoft.com/zh-cn/library/dn633593.aspx)
+[Developing Modern Applications using OAuth and Active Directory Federation Services](https://msdn.microsoft.com/zh-CN/library/dn633593.aspx) 

@@ -6,9 +6,9 @@
 	authors="Thraka" 
 	manager="timlt"/>
 
-<tags
-	ms.service="multiple"
-	ms.date="09/01/2015"
+<tags 
+	ms.service="multiple"  
+	ms.date="09/01/2015" 
 	wacn.date=""/>
 
 # Should I Choose Cloud Services?
@@ -17,7 +17,7 @@ Azure provides different hosting models for running applications. Each one provi
 
 | Compute Options    | Audience   |
 | ------------------ | --------   |
-| [Azure Websites]     | Scalable Web Apps, Mobile Apps, API Apps, and Logic Apps for any device |
+| [Azure Websites]     | Scalable Web Sites, Mobile Apps, API Apps, and Logic Apps for any device |
 | [Cloud Services]   | Highly available, scalable n-tier cloud apps with more control of the OS |
 | [Virtual Machines] | Customized Windows and Linux VMs with complete control of the OS |
 

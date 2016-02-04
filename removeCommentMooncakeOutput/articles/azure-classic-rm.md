@@ -9,9 +9,9 @@
    tags="azure-resource-manager,azure-service-management"/>
 
 <tags
-	ms.service="virtual-network"
-	ms.date="08/14/2015"
-	wacn.date=""/>
+   ms.service="virtual-network"
+   ms.date="12/07/2015"
+   wacn.date=""/>
 
 # Azure Deployment Models
 
@@ -44,7 +44,6 @@ The sections below explain how Azure resources are configured using the differen
 Azure has two portals:
 
 - **[Azure Management Portal](https://manage.windowsazure.cn):** If you've been using Azure for a while, you've used this portal. It is used to create and configure older Azure resources that support the classic deployment model. You cannot use it to create or configure resources that only support Resource Manager. 
-- **[Azure preview portal](http://azure.microsoft.comhttps://manage.windowsazure.cn):** If you're using a newer Azure resource, you've likely used this portal. It can be used to create and configure some Azure resources. You'll eventually be able to create and configure all Azure resources with it. For some resources that support both deployment models, this portal can be used to create and configure a resource using either deployment model. 
 
 Some resources and features can only be created and configured in one portal or the other. Some resources or features can't (yet) be created or configured in either portal, and can only be configured with PowerShell, the CLI, or both. The documentation for each Azure resource details which method it can be created with. 
 

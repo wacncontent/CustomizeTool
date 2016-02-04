@@ -1,25 +1,21 @@
 <properties 
-   pageTitle="Replace a disk drive on a StorSimple device | Microsoft Azure"
+   pageTitle="Replace a disk drive on a StorSimple device | Windows Azure"
    description="Explains how to replace a disk drive on a StorSimple primary device or an EBOD enclosure."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/31/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="08/31/2015"
+	wacn.date=""/>
 
 # Replace a disk drive on your StorSimple device
 
 ## Overview
 
-This tutorial explains how you can remove and replace a malfunctioning or failed hard disk drive on a Microsoft Azure StorSimple device. To replace a disk drive, you need to:
+This tutorial explains how you can remove and replace a malfunctioning or failed hard disk drive on a <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple device. To replace a disk drive, you need to:
 
 - Disengage the antitamper lock
 
@@ -27,7 +23,7 @@ This tutorial explains how you can remove and replace a malfunctioning or failed
 
 - Install the replacement disk drive
 
->[AZURE.IMPORTANT] Before removing and replacing a disk drive, review the safety information in [StorSimple hardware component replacement](storsimple-hardware-component-replacement.md).
+>[AZURE.IMPORTANT] Before removing and replacing a disk drive, review the safety information in [StorSimple hardware component <!-- deleted by customization replacement](/documentation/articles/storsimple-hardware-component-replacement) --><!-- keep by customization: begin --> replacement](storsimple-hardware-component-replacement.md) <!-- keep by customization: end -->.
 
 ## Disengage the antitamper lock
 
@@ -62,7 +58,7 @@ Follow the steps in reverse to engage the lock.
 
 ## Remove the disk drive
 
-Your StorSimple device supports a RAID 10–like storage spaces configuration. This implies that it can operate normally with one failed disk, solid-state drive (SSD), or hard disk drive (HDD). 
+Your StorSimple device supports a RAID <!-- deleted by customization 10-like --><!-- keep by customization: begin --> 10–like <!-- keep by customization: end --> storage spaces configuration. This implies that it can operate normally with one failed disk, solid-state drive (SSD), or hard disk drive (HDD).
 
 >[AZURE.IMPORTANT]
 >
@@ -70,7 +66,7 @@ Your StorSimple device supports a RAID 10–like storage spaces configuration. T
 >
 >- Make sure that you place a replacement SSD in a slot that previously contained an SSD. Similarly, place a replacement HDD in a slot that previously contained an HDD.
 >
->- In the Management Portal, slots are numbered from 0 – 11. Therefore, if the portal shows that a disk in slot 2 has failed, on the device, look for the failed disk in the third slot from the top left.
+>- In the Management Portal, slots are numbered from 0 <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> 11. Therefore, if the portal shows that a disk in slot 2 has failed, on the device, look for the failed disk in the third slot from the top left.
 
 Drives can be removed and replaced while the system is operating.
 
@@ -96,7 +92,7 @@ Drives can be removed and replaced while the system is operating.
 
 ## Install the replacement disk drive
 
-After a drive has failed in your Microsoft Azure StorSimple device and you have removed it, follow this procedure to replace it with a new drive.
+After a drive has failed in your <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple device and you have removed it, follow this procedure to replace it with a new drive.
 
 #### To insert a drive
 
@@ -122,4 +118,4 @@ After a drive has failed in your Microsoft Azure StorSimple device and you have 
 
 ## Next steps
 
-Learn more about [StorSimple hardware component replacement](storsimple-hardware-component-replacement.md).
+Learn more about [StorSimple hardware component <!-- deleted by customization replacement](/documentation/articles/storsimple-hardware-component-replacement) --><!-- keep by customization: begin --> replacement](storsimple-hardware-component-replacement.md) <!-- keep by customization: end -->.

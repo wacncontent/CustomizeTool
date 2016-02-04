@@ -8,5 +8,5 @@ replaced by:
 
 		1. Launch the Azure Management Portal at [https://manage.windowsazure.cn](https://manage.windowsazure.cn).
 
-reason: ()
+reason: (preview portal)
 

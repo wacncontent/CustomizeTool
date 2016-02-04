@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Run Hive queries using the Query Console
@@ -31,8 +31,8 @@ To complete the steps in this article, you will need the following.
 * A modern web browser
 
 ##<a id="run"></a> Run Hive queries using the Query Console
-<!-- deleted by customization
 
+<!-- deleted by customization
 1. Open a web browser and navigate to __https://CLUSTERNAME.azurehdinsight.cn__, where __CLUSTERNAME__ is the name of your HDInsight cluster. If prompted, enter the user name and password that you used when you created the cluster.
 
 -->
@@ -89,14 +89,14 @@ For information about other ways you can work with Hadoop on HDInsight:
 
 * [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
-[1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
 <!-- deleted by customization
-
-[hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
+[1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started.md
 -->
 <!-- keep by customization: begin -->
-[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
+[1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
 <!-- keep by customization: end -->
+
+[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
@@ -104,21 +104,42 @@ For information about other ways you can work with Hadoop on HDInsight:
 
 [apache-tez]: http://tez.apache.org
 [apache-hive]: http://hive.apache.org/
-[apache-log4j]: http://en.wikipedia.org/wiki/Log4j
+[apache-log4j]: http://zh.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 
+<!-- deleted by customization
+[hdinsight-use-oozie]: hdinsight-use-oozie.md
+[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data.md
+
+
+
+[hdinsight-storage]: hdinsight-use-blob-storage.md
+
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-get-started]: hdinsight-get-started.md
+
+[Powershell-install-configure]: install-configure-powershell.md
+-->
+<!-- keep by customization: begin -->
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+
+
+
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
+<!-- keep by customization: end -->
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
-[image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png
+
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
-[image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png

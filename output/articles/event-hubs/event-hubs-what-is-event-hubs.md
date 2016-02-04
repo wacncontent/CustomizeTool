@@ -38,5 +38,5 @@ For detailed information about Event Hubs, see the following topics.
 - Get started with an [Event Hubs tutorial][]
 - A complete [sample application that uses Event Hubs][]
 
-[Event Hubs tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted
+[Event Hubs tutorial]: event-hubs-csharp-ephcs-getstarted.md
 [sample application that uses Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097

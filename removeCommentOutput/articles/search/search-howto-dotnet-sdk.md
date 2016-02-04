@@ -1,5 +1,5 @@
 <properties
-   pageTitle="How to use Azure Search from a .NET Application | Microsoft Azure"
+   pageTitle="How to use Azure Search from a .NET Application | Windows Azure | Hosted cloud search service"
    description="How to use Azure Search from a .NET Application"
    services="search"
    documentationCenter=""
@@ -8,17 +8,13 @@
    editor=""/>
 
 <tags
-   ms.service="search"
-   ms.devlang="dotnet"
-   ms.workload="search"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.date="10/07/2015"
-   ms.author="brjohnst"/>
+	ms.service="search"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # How to use Azure Search from a .NET Application #
 
-This article is a walkthrough to get you up and running with the [Azure Search .NET SDK](https://msdn.microsoft.com/library/azure/dn951165.aspx). You can use the .NET SDK to implement a rich search experience in your application using Azure Search.
+This article is a walkthrough to get you up and running with the [Azure Search .NET SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn951165.aspx). You can use the .NET SDK to implement a rich search experience in your application using Azure Search.
 
 ## What's in the Azure Search SDK ##
 
@@ -26,22 +22,22 @@ The SDK consists of a client library, `Microsoft.Azure.Search`. It enables you t
 
 The client library defines classes like `Index`, `Field`, and `Document`, as well as operations like `Indexes.Create` and `Documents.Search` on the `SearchServiceClient` and `SearchIndexClient` classes. These classes are organized into the following namespaces:
 
-- [Microsoft.Azure.Search](https://msdn.microsoft.com/library/azure/microsoft.azure.search.aspx)
-- [Microsoft.Azure.Search.Models](https://msdn.microsoft.com/library/azure/microsoft.azure.search.models.aspx)
+- [Microsoft.Azure.Search](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.search.aspx)
+- [Microsoft.Azure.Search.Models](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.search.models.aspx)
 
 The current version of the Azure Search .NET SDK is a pre-release version. If you would like to provide feedback for us to incorporate in the first stable version, please visit our [feedback page](http://feedback.azure.com/forums/263029-azure-search).
 
-The .NET SDK supports version `2015-02-28` of the Azure Search REST API, documented on [MSDN](https://msdn.microsoft.com/library/azure/dn798935.aspx). This version now includes support for Microsoft language analyzers. Newer features that are *not* part of this version, such as support for the `moreLikeThis` search parameter, are in [preview](search-api-2015-02-28-preview.md) and not yet available in the SDK. You can check back on [Search service versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) or [Latest updates to Azure Search](search-latest-updates.md) for status updates on either feature.
+The .NET SDK supports version `2015-02-28` of the Azure Search REST API, documented on [MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx). This version now includes support for Microsoft language analyzers. Newer features that are *not* part of this version, such as support for the `moreLikeThis` search parameter, are in [preview](/documentation/articles/search-api-2015-02-28-preview) and not yet available in the SDK. You can check back on [Search service versioning](https://msdn.microsoft.com/zh-cn/library/azure/dn864560.aspx) or [Latest updates to Azure Search](/documentation/articles/search-latest-updates) for status updates on either feature.
 
 Other features not supported in this SDK include:
 
-  - [Management Operations](https://msdn.microsoft.com/library/azure/dn832684.aspx). Management operations include provisioning Azure Search services and managing API keys. These will be supported in a separate Azure Search .NET Management SDK in the future.
+  - [Management Operations](https://msdn.microsoft.com/zh-cn/library/azure/dn832684.aspx). Management operations include provisioning Azure Search services and managing API keys. These will be supported in a separate Azure Search .NET Management SDK in the future.
 
 ## Requirements for the SDK ##
 
 1. Visual Studio 2013 or a newer version.
 
-2. Your own Azure Search service. In order to use the SDK, you will need the name of your service and one or more API keys. [Create a service in the portal](search-create-service-portal.md) will help you through these steps.
+2. Your own Azure Search service. In order to use the SDK, you will need the name of your service and one or more API keys. [Create a service in the portal](/documentation/articles/search-create-service-portal) will help you through these steps.
 
 3. Download the Azure Search .NET SDK [NuGet package](http://www.nuget.org/packages/Microsoft.Azure.Search) by using "Manage NuGet Packages" in Visual Studio. Just search for the package name `Microsoft.Azure.Search` on NuGet.org. Make sure to select "Include Prerelease" to ensure that the pre-release SDK will appear in the search results.
 
@@ -65,7 +61,7 @@ The sample application we'll be exploring creates a new index named "hotels", po
     static void Main(string[] args)
     {
         // Put your search service name here. This is the hostname portion of your service URL.
-        // For example, if your service URL is https://myservice.search.windows.net, then your
+        // For example, if your service URL is https://myservice.search.chinacloudapi.cn, then your
         // service name is myservice.
         string searchServiceName = "myservice";
 
@@ -97,7 +93,7 @@ The sample application we'll be exploring creates a new index named "hotels", po
 We'll walk through this step by step. First we need to create a new `SearchServiceClient`. This object allows you to manage indexes. In order to construct one, you need to provide your Azure Search service name as well as an admin API key.
 
         // Put your search service name here. This is the hostname portion of your service URL.
-        // For example, if your service URL is https://myservice.search.windows.net, then your
+        // For example, if your service URL is https://myservice.search.chinacloudapi.cn, then your
         // service name is myservice.
         string searchServiceName = "myservice";
 
@@ -119,7 +115,7 @@ Next, the index needs to be populated. To do this, we will need a `SearchIndexCl
 
         SearchIndexClient indexClient = serviceClient.Indexes.GetClient("hotels");
 
-> [AZURE.NOTE] In a typical search application, index management and population is handled by a separate component from search queries. `Indexes.GetClient` is convenient for populating an index because it saves you the trouble of providing another `SearchCredentials`. It does this by passing the admin key that you used to create the `SearchServiceClient` to the new `SearchIndexClient`. However, in the part of your application that executes queries, it is better to create the `SearchIndexClient` directly so that you can pass in a query key instead of an admin key. This is consistent with the principle of least privilege and will help to make your application more secure. You can find out more about admin keys and query keys [here](https://msdn.microsoft.com/library/azure/dn798935.aspx).
+> [AZURE.NOTE] In a typical search application, index management and population is handled by a separate component from search queries. `Indexes.GetClient` is convenient for populating an index because it saves you the trouble of providing another `SearchCredentials`. It does this by passing the admin key that you used to create the `SearchServiceClient` to the new `SearchIndexClient`. However, in the part of your application that executes queries, it is better to create the `SearchIndexClient` directly so that you can pass in a query key instead of an admin key. This is consistent with the principle of least privilege and will help to make your application more secure. You can find out more about admin keys and query keys [here](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx).
 
 Now that we have a `SearchIndexClient`, we can populate the index. This is done by another method that we will walk through later.
 
@@ -200,7 +196,7 @@ Next, `Main` creates a new "hotels" index by calling this method:
         serviceClient.Indexes.Create(definition);
     }
 
-This method creates a new `Index` object with a list of `Field` objects that defines the schema of the new index. Each field has a name, data type, and several attributes that define its search behavior. In addition to fields, you can also add scoring profiles, suggesters, or CORS options to the Index (these are omitted from the sample for brevity). You can find more information about the Index object and its constituent parts in the SDK reference on [MSDN](https://msdn.microsoft.com/library/azure/microsoft.azure.search.models.index_members.aspx), as well as in the [Azure Search REST API reference](https://msdn.microsoft.com/library/azure/dn798935.aspx).
+This method creates a new `Index` object with a list of `Field` objects that defines the schema of the new index. Each field has a name, data type, and several attributes that define its search behavior. In addition to fields, you can also add scoring profiles, suggesters, or CORS options to the Index (these are omitted from the sample for brevity). You can find more information about the Index object and its constituent parts in the SDK reference on [MSDN](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.search.models.index_members.aspx), as well as in the [Azure Search REST API reference](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx).
 
 ### Populating the Index ###
 
@@ -335,13 +331,13 @@ You may be wondering how the Azure Search .NET SDK is able to upload instances o
 
 The first thing to notice is that each public property of `Hotel` corresponds to a field in the index definition, but with one crucial difference: The name of each field starts with a lower-case letter ("camel case"), while the name of each public property of `Hotel` starts with an upper-case letter ("Pascal case"). This is a common scenario in .NET applications that perform data-binding where the target schema is outside the control of the application developer. Rather than having to violate the .NET naming guidelines by making property names camel-case, you can tell the SDK to map the property names to camel-case automatically with the `[SerializePropertyNamesAsCamelCase]` attribute.
 
-The second important thing about the `Hotel` class are the data types of the public properties. The .NET types of  these properties map to their equivalent field types in the index definition. For example, the `Category` string property maps to the `category` field, which is of type `Edm.String`. There are similar type mappings between `bool?` and `Edm.Boolean`, `DateTimeOffset?` and `Edm.DateTimeOffset`, etc. The specific rules for the type mapping are documented with the `Documents.Get` method on [MSDN](https://msdn.microsoft.com/library/azure/dn931291.aspx).
+The second important thing about the `Hotel` class are the data types of the public properties. The .NET types of  these properties map to their equivalent field types in the index definition. For example, the `Category` string property maps to the `category` field, which is of type `Edm.String`. There are similar type mappings between `bool?` and `Edm.Boolean`, `DateTimeOffset?` and `Edm.DateTimeOffset`, etc. The specific rules for the type mapping are documented with the `Documents.Get` method on [MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn931291.aspx).
  
 > [AZURE.NOTE] When designing your own model classes to map to an Azure Search index, make sure to declare properties of value types such as `bool` and `int` to be nullable (for example, `bool?` instead of `bool`). This is required because all primitive field types in Azure Search are nullable. If you use non-nullable types, you will get unexpected results when indexing default values like `0` and `false`. Specifically, such default values will be converted to null during indexing. In a future release of the SDK, using non-nullable types will result in an exception being thrown instead.
 
 This ability to use your own classes as documents works in both directions; You can also retrieve search results and have the SDK automatically deserialize them to a type of your choice, as we will see in the next section.
 
-> [AZURE.NOTE] The Azure Search .NET SDK also supports dynamically-typed documents using the `Document` class, which is a key/value mapping of field names to field values. This is useful in scenarios where you don't know the index schema at design-time, or where it would be inconvenient to bind to specific model classes. All the methods in the SDK that deal with documents have overloads that work with the `Document` class, as well as strongly-typed overloads that take a generic type parameter. Only the latter are used in the sample code in this tutorial. You can find out more about the `Document` class [here](https://msdn.microsoft.com/library/azure/microsoft.azure.search.models.document.aspx).
+> [AZURE.NOTE] The Azure Search .NET SDK also supports dynamically-typed documents using the `Document` class, which is a key/value mapping of field names to field values. This is useful in scenarios where you don't know the index schema at design-time, or where it would be inconvenient to bind to specific model classes. All the methods in the SDK that deal with documents have overloads that work with the `Document` class, as well as strongly-typed overloads that take a generic type parameter. Only the latter are used in the sample code in this tutorial. You can find out more about the `Document` class [here](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.search.models.document.aspx).
 
 ### Searching for Documents in the Index ###
 
@@ -376,9 +372,9 @@ Let's take a closer look at how this method is called:
 
     SearchDocuments(indexClient, searchText: "*", filter: "category eq 'Luxury'");
 
-In the first call, we're looking for all documents containing the query terms "fancy" or "wifi". In the second call, the search text is set to "*", which means "find everything". You can find more information about the search query expression syntax [here](https://msdn.microsoft.com/library/azure/dn798920.aspx).
+In the first call, we're looking for all documents containing the query terms "fancy" or "wifi". In the second call, the search text is set to "*", which means "find everything". You can find more information about the search query expression syntax [here](https://msdn.microsoft.com/zh-cn/library/azure/dn798920.aspx).
 
-The second call uses an OData `$filter` expression, `category eq 'Luxury'`. This constrains the search to only return documents where the `category` field exactly matches the string "Luxury". You can find out more about the OData syntax that Azure Search supports [here](https://msdn.microsoft.com/library/azure/dn798921.aspx).
+The second call uses an OData `$filter` expression, `category eq 'Luxury'`. This constrains the search to only return documents where the `category` field exactly matches the string "Luxury". You can find out more about the OData syntax that Azure Search supports [here](https://msdn.microsoft.com/zh-cn/library/azure/dn798921.aspx).
 
 Now that you know what these two calls do, it should be easier to see why their output looks like this:
 
@@ -398,10 +394,10 @@ This step completes the tutorial, but don't stop here. **Next steps** provides a
 
 ## Next Steps ##
 
-- Deepen your knowledge through [videos and other samples and tutorials](search-video-demo-tutorial-list.md).
-- Read about features and capabilities in this version of the Azure Search SDK: [Azure Search Overview](https://msdn.microsoft.com/library/azure/dn798933.aspx)
-- Review [naming conventions](https://msdn.microsoft.com/library/azure/dn857353.aspx) to learn the rules for naming various objects.
-- Review [supported data types](https://msdn.microsoft.com/library/azure/dn798938.aspx) in Azure Search.
+- Deepen your knowledge through [videos and other samples and tutorials](/documentation/articles/search-video-demo-tutorial-list).
+- Read about features and capabilities in this version of the Azure Search SDK: [Azure Search Overview](https://msdn.microsoft.com/zh-cn/library/azure/dn798933.aspx)
+- Review [naming conventions](https://msdn.microsoft.com/zh-cn/library/azure/dn857353.aspx) to learn the rules for naming various objects.
+- Review [supported data types](https://msdn.microsoft.com/zh-cn/library/azure/dn798938.aspx) in Azure Search.
 
 
 ## Sample Application Source Code ##
@@ -426,7 +422,7 @@ Program.cs:
             static void Main(string[] args)
             {
                 // Put your search service name here. This is the hostname portion of your service URL.
-                // For example, if your service URL is https://myservice.search.windows.net, then your
+                // For example, if your service URL is https://myservice.search.chinacloudapi.cn, then your
                 // service name is myservice.
                 string searchServiceName = "myservice";
 

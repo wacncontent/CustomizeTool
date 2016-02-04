@@ -4,23 +4,23 @@
 	services="storage"
 	documentationCenter=""
 	authors="tamram"
-	manager="adinah"
-	editor="cgronlun"/>
+	manager="carmonm"
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/27/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Monitor a storage account in the Azure Management Portal
 
 ## Overview
 
-You can monitor your storage account from the Azure Management Portal. When you configure your storage account for monitoring through the portal, Azure Storage uses [Storage Analytics](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx) to track metrics for your account and log request data.
+You can monitor your storage account from the [Azure Management portal](https://manage.windowsazure.cn). When you configure your storage account for monitoring through the portal, Azure Storage uses [Storage Analytics](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx) to track metrics for your account and log request data.
 
-> [AZURE.NOTE] Additional costs are associated with examining monitoring data in the Azure Management Portal. For more information, see <a href="http://msdn.microsoft.com/zh-cn/library/azure/hh360997.aspx">Storage Analytics and Billing</a>. <br />
+> [AZURE.NOTE] Additional costs are associated with examining monitoring data in the [Azure management portal](https://manage.windowsazure.cn). For more information, see <a href="http://msdn.microsoft.com/zh-cn/library/azure/hh360997.aspx">Storage Analytics and Billing</a>. <br />
 
-> Azure File storage currently supports Storage Analytics metrics, but does not yet support logging. You can enable metrics for Azure File storage via the [Azure preview portal](https://manage.windowsazure.cn).
+> Azure File storage currently supports Storage Analytics metrics, but does not yet support logging. You can enable metrics for Azure File storage via the [Azure Management portal](https://manage.windowsazure.cn).
 
 > For an in-depth guide on using Storage Analytics and other tools to identify, diagnose, and troubleshoot Azure Storage-related issues, see [Monitor, diagnose, and troubleshoot Windows Azure Storage](/documentation/articles/storage-monitoring-diagnosing-troubleshooting).
 
@@ -51,7 +51,7 @@ You should start seeing monitoring data on the dashboard and the **Monitor** pag
 
 Until you configure monitoring for a storage account, no monitoring data is collected, and the metrics charts on the dashboard and **Monitor** page are empty.
 
-After you set the monitoring levels and retention policies, you can choose which of the available metrics to monitor in the Azure Management Portal, and which metrics to plot on metrics charts. A default set of metrics are displayed at each monitoring level. You can use **Add Metrics** to add or remove metrics from the metrics list.
+After you set the monitoring levels and retention policies, you can choose which of the available metrics to monitor in the [Azure management portal](https://manage.windowsazure.cn), and which metrics to plot on metrics charts. A default set of metrics are displayed at each monitoring level. You can use **Add Metrics** to add or remove metrics from the metrics list.
 
 Metrics are stored in the storage account in four tables named $MetricsTransactionsBlob, $MetricsTransactionsTable, $MetricsTransactionsQueue, and $MetricsCapacityBlob. For more information, see [About Storage Analytics Metrics](http://msdn.microsoft.com/zh-cn/library/azure/hh343258.aspx).
 
@@ -109,7 +109,7 @@ Use the following procedures to choose which storage metrics to view in the metr
 	![AddMetricsScrollbar](./media/storage-monitor-storage-account/Storage_AddMetrics_Scrollbar.png)
 
 
-5. Click the down arrow by a metric to expand a list of operations the metric is scoped to include. Select each operation that you want to view in the metrics table in the Azure Management Portal.
+5. Click the down arrow by a metric to expand a list of operations the metric is scoped to include. Select each operation that you want to view in the metrics table in the [Azure management portal](https://manage.windowsazure.cn).
 
 	In the following illustration, the AUTHORIZATION ERROR PERCENTAGE metric has been expanded.
 

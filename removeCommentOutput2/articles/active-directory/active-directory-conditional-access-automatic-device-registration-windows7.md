@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/26/2015"
+	ms.date="11/24/2015"
 	wacn.date=""/>
 
 # Configure automatic device registration for Windows 7 domain joined devices
@@ -18,15 +18,15 @@ As an IT admin, you can configure your Windows 7 domain joined devices to automa
 
 ##Installing the device registration software package on Windows 7 domain joined devices
 
-Device registration for Windows 7 is available as a [downloadable MSI package](https://connect.microsoft.com/site1164). The package must be installed on Windows 7 machines that are joined to an Active Directory Domain. You should deploy the package using a software distribution system such as System Center Configuration Manager. The MSI package supports the standard silent install options using the /quiet parameter.
-The software package is available for download at the [Microsoft Connect website](https://connect.microsoft.com/site1164). Here you can select and then download Workplace Join for Windows 7.
+Device registration for Windows 7 is available as a downloadable MSI package. The package must be installed on Windows 7 machines that are joined to an Active Directory Domain. You should deploy the package using a software distribution system such as System Center Configuration Manager. The MSI package supports the standard silent install options using the /quiet parameter.
+The software package is available for download at the Microsoft Connect website. Here you can select and then download Workplace Join for Windows 7.
 
 ![](./media/active-directory-conditional-access/device-registration-process-windows7.gif)
 
 ## Workplace Join with Azure Active Directory
 Device registration for Windows 7 domain joined devices does not require or include a user interface. Once installed on the machine, any domain user that logs into the machine will be automatically and silently registered with a device object in Azure AD. There will be one device object in Azure AD for every registered user of the physical device.
 
-The installer creates a Scheduled Task on the system that runs in the user’s context and is triggered on user sign-in. The task silently registers the user and device with Azure AD after the user signs-in is complete. 
+The installer creates a Scheduled Task on the system that runs in the userâs context and is triggered on user sign-in. The task silently registers the user and device with Azure AD after the user signs-in is complete. 
 The Scheduled Task can be found in the Task Scheduler Library under **Microsoft** > **Workplace Join**.
 The task will run and register any and all Active Directory users that sign-in to the machine.
 The following illustration lists the step-by-step process for automatic device registration.

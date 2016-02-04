@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/20/2015"
+	ms.date="12/15/2015"
 	wacn.date=""/>
 
 
@@ -21,7 +21,7 @@
 
 The Linux Diagnostic Extension helps a user monitor the Linux VMs running on Windows Azure, with the following functionalities:
 
-- Collects and uploads Linux VM's system performance, diagnostic, and syslog data to user’s storage table.
+- Collects and uploads Linux VM's system performance, diagnostic, and syslog data to user's storage table.
 - Enables user to customize the data metrics that will be collected and uploaded.
 - Enables user to upload specified log files to designated storage table.
 
@@ -144,4 +144,4 @@ If have enabled fileCfg or perfCfg specified in Scenario 2 and 3, you can use th
 
 ## Known issues
 - For version 2.0, the Rsyslog information and customer specified log file can only be accessed via scripting.
-- For version 2.0, if you have enabled the Linux Diagnostic extension via script first, then you cannot view the data from the Azure Management Portal. If you enable the extension from the portal first, then the scripts will still work.
+

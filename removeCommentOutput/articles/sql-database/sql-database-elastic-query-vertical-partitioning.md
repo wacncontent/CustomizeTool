@@ -1,17 +1,17 @@
 <properties
-    pageTitle="Elastic database query for vertical partitioning | Windows Azure"
+    pageTitle="Elastic database query for cross-database queries (vertical partitioning) | Windows Azure"
     description="how to set up cross-database queries over vertical partitions"    
     services="sql-database"
     documentationCenter=""  
     manager="jeffreyg"
-    authors="sidneyh"/>
+    authors="torsteng"/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/19/2015"
+	ms.date="11/09/2015"
 	wacn.date=""/>
 
-# Elastic database query for vertical partitioning
+# Elastic database query for cross-database queries (vertical partitioning)
 
 This document explains how to setup elastic query for cross-database querying scenarios (vertical partitioning) and how to perform your queries. For a definition of the vertical partitioning scenario, see [Azure SQL Database elastic database query overview (preview)](/documentation/articles/sql-database-elastic-query-overview).
 
@@ -35,12 +35,12 @@ Defining the database objects for elastic database query relies on the following
 
 A credential represents the user ID and password that elastic query will use to connect to your remote databases in Azure SQL DB. To create the required master key and credential use the following syntax: 
 
-    CREATE MASTER KEY ENCRYPTION BY PASSWORD = ’password’;
-    CREATE DATABASE SCOPED CREDENTIAL <credential_name>  WITH IDENTITY = ‘<username>’,  
-    SECRET = ‘<password>’
+    CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'password';
+    CREATE DATABASE SCOPED CREDENTIAL <credential_name>  WITH IDENTITY = '<username>',  
+    SECRET = '<password>'
     [;]
     
-or to drop:
+To delete the credential:
     
     DROP DATABASE SCOPED CREDENTIAL <credential_name>;  
     DROP MASTER KEY;   
@@ -55,8 +55,8 @@ You provide the information about your remote databases to elastic query by defi
     <External_Data_Source> ::=
     CREATE EXTERNAL DATA SOURCE <data_source_name> WITH 
                (TYPE = RDBMS,
-                LOCATION = ’<fully_qualified_server_name>’,
-                DATABASE_NAME = ‘<remote_database_name>’,  
+                LOCATION = '<fully_qualified_server_name>',
+                DATABASE_NAME = '<remote_database_name>',  
                 CREDENTIAL = <credential_name> 
                 ) [;] 
 
@@ -109,7 +109,7 @@ Using an external data source as outlined in the previous section, the syntax to
 
 The DATA_SOURCE clause defines the external data source (i.e. the remote database in case of vertical partitioning) that is used for the external table.  
 
-The SCHEMA_NAME and OBJECT_NAME clauses provide the ability to map the external table definition to a table in a different schema on the remote database, or to a table with a different name, respectively. This is useful is you want to define an external table to a catalog view or DMV on your remote database – or any other situation where the remote table name is already taken locally.  
+The SCHEMA_NAME and OBJECT_NAME clauses provide the ability to map the external table definition to a table in a different schema on the remote database, or to a table with a different name, respectively. This is useful is you want to define an external table to a catalog view or DMV on your remote database - or any other situation where the remote table name is already taken locally.  
 
 The following DDL statement drops an existing external table definition from the local catalog. It does not impact the remote database. 
 

@@ -45,9 +45,9 @@ Use PowerShell to programmatically perform a Point In Time Restore with the [Sta
 
 > [AZURE.IMPORTANT] This article contains commands for versions of Azure PowerShell up to *but not including* versions 1.0 and later. You can check your version of Azure PowerShell with the **Get-Module azure | format-table version** command.
 
-		$Database = Get-AzureSqlDatabase -ServerName "YourServerName" –DatabaseName “YourDatabaseName”
-		$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceDatabase $Database –TargetDatabaseName “NewDatabaseName” –PointInTime “2015-01-01 06:00:00”
-		Get-AzureSqlDatabaseOperation –ServerName "YourServerName" –OperationGuid $RestoreRequest.RequestID
+		$Database = Get-AzureSqlDatabase -ServerName "YourServerName" -DatabaseName "YourDatabaseName"
+		$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceDatabase $Database -TargetDatabaseName "NewDatabaseName" -PointInTime "2015-01-01 06:00:00"
+		Get-AzureSqlDatabaseOperation -ServerName "YourServerName" -OperationGuid $RestoreRequest.RequestID
 		 
 
 ###REST API 
@@ -86,9 +86,9 @@ To restore a deleted database using PowerShell, use the [Start-AzureSqlDatabaseR
 
 2. Get the specific deleted database and start the restore.
 
-		$Database = Get-AzureSqlDatabase -RestorableDropped -ServerName "YourServerName" –DatabaseName “YourDatabaseName” -DeletionDate "1/01/2015 12:00:00 AM""
-		$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase $Database –TargetDatabaseName “NewDatabaseName”
-		Get-AzureSqlDatabaseOperation –ServerName "YourServerName" –OperationGuid $RestoreRequest.RequestID
+		$Database = Get-AzureSqlDatabase -RestorableDropped -ServerName "YourServerName" -DatabaseName "YourDatabaseName" -DeletionDate "1/01/2015 12:00:00 AM""
+		$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase $Database -TargetDatabaseName "NewDatabaseName"
+		Get-AzureSqlDatabaseOperation -ServerName "YourServerName" -OperationGuid $RestoreRequest.RequestID
 		 
 
 ###REST API 
@@ -101,4 +101,3 @@ Use REST to programmatically perform database restore.
 3.	Begin your restore by using the [Create Database Restore Request](http://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx) operation.
 	
 4.	Track the status of your restore by using the [Database Operation Status](http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx) operation.
-

@@ -6,10 +6,10 @@
  authors="krisragh" 
  manager="dwrede" 
  editor=""/>
-<tags
-	ms.service="scheduler"
-	ms.date="08/04/2015"
-	wacn.date=""/>
+<tags 
+ ms.service="scheduler" 
+ ms.date="12/04/2015" 
+ wacn.date=""/>
 
 # How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler  
 
@@ -17,17 +17,17 @@
 
 At the heart of an Azure Scheduler job is the *schedule*. The schedule determines when and how the Scheduler executes the job.
 
-Azure Scheduler allows you to specify different one-time and recurring schedules for a job. *One-time* schedules fire once at a specified time – effectively, they are *recurring* schedules that execute only once. Recurring schedules fire on a predetermined frequency.
+Azure Scheduler allows you to specify different one-time and recurring schedules for a job. *One-time* schedules fire once at a specified time - effectively, they are *recurring* schedules that execute only once. Recurring schedules fire on a predetermined frequency.
 
 With this flexibility, Azure Scheduler lets you support a wide variety of business scenarios:
 
--	Periodic data cleanup –  e.g., every day, delete all tweets older than 3 months
--	Archival – e.g., every month, push invoice history to backup service
--	Requests for external data – e.g., every 15 minutes, pull new ski weather report from NOAA
--	Image processing – e.g. every weekday, during off-peak hours, use cloud computing to compress images uploaded that day
+-	Periodic data cleanup -  e.g., every day, delete all tweets older than 3 months
+-	Archival - e.g., every month, push invoice history to backup service
+-	Requests for external data - e.g., every 15 minutes, pull new ski weather report from NOAA
+-	Image processing - e.g. every weekday, during off-peak hours, use cloud computing to compress images uploaded that day
 
 
-In this article, we walk through example jobs that you can create with Azure Scheduler. We provide the JSON data that describes each schedule. If you use the [Scheduler REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn528946.aspx), you can use this same JSON for [creating an Azure Scheduler job](https://msdn.microsoft.com/zh-cn/library/azure/dn528937.aspx).
+In this article, we walk through example jobs that you can create with Azure Scheduler. We provide the JSON data that describes each schedule. If you use the [Scheduler REST API](https://msdn.microsoft.com/zh-CN/library/azure/dn528946.aspx), you can use this same JSON for [creating an Azure Scheduler job](https://msdn.microsoft.com/zh-CN/library/azure/dn528937.aspx).
 
 ## Supported Scenarios
 
@@ -38,7 +38,7 @@ The many examples in this topic illustrate the breadth of scenarios that Azure S
 -	Run immediately and recur 
 -	Run and recur every *n* minutes, hours, days, weeks, or months, starting at a particular time
 -	Run and recur at weekly or monthly frequency but only on specific days, specific days of week, or  specific days of month
--	Run and recur at multiple times in a period – e.g., last Friday and Monday of every month, or at 5:15am and 5:15pm every day
+-	Run and recur at multiple times in a period - e.g., last Friday and Monday of every month, or at 5:15am and 5:15pm every day
 
 ## Dates and DateTimes
 
@@ -48,7 +48,7 @@ Date-Time references in Azure Scheduler jobs follow the [ISO-8601 specification]
 
 ## How To: Use JSON and REST API for Creating Schedules
 
-To create a simple schedule using the JSON examples in this article and the Azure Scheduler REST API, [first create a cloud service](https://msdn.microsoft.com/zh-cn/library/azure/dn528943.aspx), [then create a job collection](https://msdn.microsoft.com/zh-cn/library/azure/dn528940.aspx), and [finally create a job](https://msdn.microsoft.com/zh-cn/library/azure/dn528937.aspx). When you create a job, you can specify scheduling and recurrence using JSON like the one excerpted below:
+To create a simple schedule using the JSON examples in this article and the Azure Scheduler REST API, [first create a cloud service](https://msdn.microsoft.com/zh-CN/library/azure/dn528943.aspx), [then create a job collection](https://msdn.microsoft.com/zh-CN/library/azure/dn528940.aspx), and [finally create a job](https://msdn.microsoft.com/zh-CN/library/azure/dn528937.aspx). When you create a job, you can specify scheduling and recurrence using JSON like the one excerpted below:
 
 	{
 	    "startTime": "2012-08-04T00:00Z", // optional
@@ -84,7 +84,7 @@ The following table provides a high-level overview of the major elements related
 
 ## Overview: Job Schema Defaults, Limits, and Examples
 
-After this overview, let’s discuss each of these elements in detail.
+After this overview, let's discuss each of these elements in detail.
 
 |**JSON name**|**Value type**|**Required?**|**Default value**|**Valid values**|**Example**|
 |:---|:---|:---|:---|:---|:---|
@@ -110,9 +110,9 @@ Let's see an example of what happens where _startTime_ is in the past, with _rec
 
 Under these conditions, the _first execution_ will be 2015-04-09 at 14:00\. The Scheduler engine calculates execution occurrences from the start time.  Any instances in the past are discarded. The engine uses the next instance that occurs in the future.  So in this case, _startTime_ is 2015-04-07 at 2:00pm, so the next instance is 2 days from that time, which is 2015-04-09 at 2:00pm. 
 
-Note that the first execution would be the same even if the startTime 2015-04-05 14:00 or 2015-04-01 14:00\. After the first execution, subsequent executions are calculated using the scheduled – so they'd be at 2015-04-11 at 2:00pm, then 2015-04-13 at 2:00pm, then 2015-04-15 at 2:00pm, etc.
+Note that the first execution would be the same even if the startTime 2015-04-05 14:00 or 2015-04-01 14:00\. After the first execution, subsequent executions are calculated using the scheduled - so they'd be at 2015-04-11 at 2:00pm, then 2015-04-13 at 2:00pm, then 2015-04-15 at 2:00pm, etc.
 
-Finally, when a job has a schedule, if hours and/or minutes aren’t set in the schedule, they default to the hours and/or minutes of the first execution, respectively.
+Finally, when a job has a schedule, if hours and/or minutes aren't set in the schedule, they default to the hours and/or minutes of the first execution, respectively.
 
 ## Deep Dive: _schedule_
 
@@ -120,7 +120,7 @@ On one hand, a _schedule_ can _limit_ the number of job executions.  For example
 
 On the other hand, a _schedule_ can also _expand_ the number of job executions. For example, if a job with a "month" frequency has a _schedule_ that runs on month days 1 and 2, the job runs on the 1<sup>st</sup> and 2<sup>nd</sup> days of the month instead of just once a month.
 
-If multiple schedule elements are specified, the order of evaluation is from the largest to smallest – week number, month day, week day, hour, and minute.
+If multiple schedule elements are specified, the order of evaluation is from the largest to smallest - week number, month day, week day, hour, and minute.
 
 The following table describes _schedule_ elements in detail.
 
@@ -134,9 +134,9 @@ The following table describes _schedule_ elements in detail.
 
 ## Examples: Recurrence Schedules
 
-The following are various examples of recurrence schedules – focusing on the schedule object and its sub-elements.
+The following are various examples of recurrence schedules - focusing on the schedule object and its sub-elements.
 
-The schedules below all assume that the _interval_ is set to 1\. Also, one must assume the right frequency in accordance to what is in the _schedule_ – e.g., one can't use frequency "day" and have a "monthDays" modification in the schedule. Such restrictions are described above.
+The schedules below all assume that the _interval_ is set to 1\. Also, one must assume the right frequency in accordance to what is in the _schedule_ - e.g., one can't use frequency "day" and have a "monthDays" modification in the schedule. Such restrictions are described above.
 
 |**Example**|**Description**|
 |:---|:---|

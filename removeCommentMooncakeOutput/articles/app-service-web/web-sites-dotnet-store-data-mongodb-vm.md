@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Create a web app in Azure that connects to MongoDB running on a virtual machine" 
+	pageTitle="Create a web site in Azure that connects to MongoDB running on a virtual machine" 
 	description="A tutorial that teaches you how to use Git to deploy an ASP.NET app to Azure Websites, connected to MongoDB on an Azure Virtual Machine."
 	tags="azure-portal" 
 	services="app-service\web, virtual-machines" 
@@ -10,13 +10,14 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/11/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 
-# Create a web app in Azure that connects to MongoDB running on a virtual machine
+# Create a web site in Azure that connects to MongoDB running on a virtual machine
 
 Using Git, you can deploy an ASP.NET application to Azure Websites. In this tutorial, you will build a simple front-end ASP.NET MVC task list application that connects to a MongoDB database running on a virtual machine in Azure.  [MongoDB][MongoDB] is a popular open source, high performance NoSQL database. After running and testing the ASP.NET application on your development computer, you will upload the application to Azure Websites using Git.
+
 In this tutorial you will:
 
 - [Create a virtual machine and install MongoDB](#virtualmachine)
@@ -29,8 +30,8 @@ In this tutorial you will:
 Knowledge of the following is useful for this tutorial, though not required:
 
 * The C# driver for MongoDB. For more information on developing C# applications against MongoDB, see the MongoDB [CSharp Language Center][MongoC#LangCenter]. 
-* The ASP .NET web application framework. You can learn all about it at the [ASP.net website][ASP.NET].
-* The ASP .NET MVC web application framework. You can learn all about it at the [ASP.NET MVC website][MVCWebSite].
+* The ASP .NET web site framework. You can learn all about it at the [ASP.net website][ASP.NET].
+* The ASP .NET MVC web site framework. You can learn all about it at the [ASP.NET MVC website][MVCWebSite].
 * Azure. You can get started reading at [Azure][WindowsAzure].
 
 ## Prerequisites ##
@@ -57,7 +58,7 @@ In this section you will create an ASP.NET application called "My Task List" by 
 
 	![Start Page New Project][StartPageNewProject]
 
-1. In the **New Project** window, in the left pane, select **Visual C#**, and then select **Web**. In the middle pane, select **ASP.NET  Web Application**. At the bottom, name your project "MyTaskListApp," and then click **OK**.
+1. In the **New Project** window, in the left pane, select **Visual C#**, and then select **Web**. In the middle pane, select **ASP.NET  web site**. At the bottom, name your project "MyTaskListApp," and then click **OK**.
 
 	![New Project Dialog][NewProjectMyTaskListApp]
 
@@ -66,11 +67,11 @@ In this section you will create an ASP.NET application called "My Task List" by 
 	![Select MVC Template][VS2013SelectMVCTemplate]
 
 1. If you aren't already signed into Windows Azure, you will be prompted to sign in. Follow the prompts to sign into Azure.
-2. Once you are signed in, you can start configuring your Azure Websites web app. Specify the **Web App name**, **App Service plan**, **Resource group**, and **Region**, then click **OK**.
+2. Once you are signed in, you can start configuring your Azure Websites. Specify the **web site name**, **App Service plan**, **Resource group**, and **Region**, then click **Create**.
 
 	![](./media/web-sites-dotnet-store-data-mongodb-vm/VSConfigureWebAppSettings.png)
 
-1. After the project creation completes, wait for the web app to be created in Azure Websites as indicated in the **Azure Websites Activity** window. Then, click **Publish MyTaskListApp to this Web App now**.
+1. After the project creation completes, wait for the web site to be created in Azure Websites as indicated in the **Azure Websites Activity** window. Then, click **Publish MyTaskListApp to this web site now**.
 
 1. Click **Publish**.
 
@@ -144,7 +145,9 @@ In **Solution Explorer**, right-click the *MyTaskListApp* project and **Add** a 
 	using System.Web;
 	using MyTaskListApp.Models;
 	using MongoDB.Driver;
+	using MongoDB.Bson;
 	using System.Configuration;
+	
 	
 	namespace MyTaskListApp
 	{
@@ -154,42 +157,42 @@ In **Solution Explorer**, right-click the *MyTaskListApp* project and **Add** a 
 	        private bool disposed = false;
 	
 	        // To do: update the connection string with the DNS name
-			// or IP address of your server. 
-			//For example, "mongodb://testlinux.chinacloudapp.cn"
-	        private string connectionString = "mongodb://<vm-dns-name>";
+	        // or IP address of your server. 
+	        //For example, "mongodb://testlinux.chinacloudapp.cn"
+	        private string connectionString = "mongodb://mongodbsrv20151211.chinacloudapp.cn";
 	
 	        // This sample uses a database named "Tasks" and a 
-			//collection named "TasksList".  The database and collection 
-			//will be automatically created if they don't already exist.
+	        //collection named "TasksList".  The database and collection 
+	        //will be automatically created if they don't already exist.
 	        private string dbName = "Tasks";
 	        private string collectionName = "TasksList";
 	
 	        // Default constructor.        
 	        public Dal()
 	        {
-	        }        
+	        }
 	
 	        // Gets all Task items from the MongoDB server.        
 	        public List<MyTask> GetAllTasks()
 	        {
 	            try
 	            {
-	                MongoCollection<MyTask> collection = GetTasksCollection();
-	                return collection.FindAll().ToList<MyTask>();
+	                var collection = GetTasksCollection();
+	                return collection.Find(new BsonDocument()).ToList();
 	            }
 	            catch (MongoConnectionException)
 	            {
-	                return new List<MyTask >();
+	                return new List<MyTask>();
 	            }
 	        }
 	
 	        // Creates a Task and inserts it into the collection in MongoDB.
 	        public void CreateTask(MyTask task)
 	        {
-	            MongoCollection<MyTask> collection = GetTasksCollectionForEdit();
+	            var collection = GetTasksCollectionForEdit();
 	            try
 	            {
-	                collection.Insert(task, SafeMode.True);
+	                collection.InsertOne(task);
 	            }
 	            catch (MongoCommandException ex)
 	            {
@@ -197,19 +200,19 @@ In **Solution Explorer**, right-click the *MyTaskListApp* project and **Add** a 
 	            }
 	        }
 	
-	        private MongoCollection<MyTask> GetTasksCollection()
+	        private IMongoCollection<MyTask> GetTasksCollection()
 	        {
-	            MongoServer server = MongoServer.Create(connectionString);
-	            MongoDatabase database = server[dbName];
-	            MongoCollection<MyTask> todoTaskCollection = database.GetCollection<MyTask>(collectionName);
+	            MongoClient client = new MongoClient(connectionString);
+	            var database = client.GetDatabase(dbName);
+	            var todoTaskCollection = database.GetCollection<MyTask>(collectionName);
 	            return todoTaskCollection;
 	        }
 	
-	        private MongoCollection<MyTask> GetTasksCollectionForEdit()
+	        private IMongoCollection<MyTask> GetTasksCollectionForEdit()
 	        {
-	            MongoServer server = MongoServer.Create(connectionString);
-	            MongoDatabase database = server[dbName];
-	            MongoCollection<MyTask> todoTaskCollection = database.GetCollection<MyTask>(collectionName);
+	            MongoClient client = new MongoClient(connectionString);
+	            var database = client.GetDatabase(dbName);
+	            var todoTaskCollection = database.GetCollection<MyTask>(collectionName);
 	            return todoTaskCollection;
 	        }
 	
@@ -433,12 +436,11 @@ For more information on MongoDB connection strings, see [Connections][MongoConne
 To run your application on your development computer, select **Start Debugging** from the **Debug** menu or hit **F5**. IIS Express starts and a browser opens and launches the application's home page.  You can add a new task, which will be added to the MongoDB database running on your virtual machine in Azure.
 
 ![My Task List Application][TaskListAppBlank]
-<h2>Deploy the ASP.NET application to an Azure website</h2>
 
+## Publish to Azure Websites
 In this section you will create a website and deploy the My Task List ASP.NET application using Git.
 
-<a id="createwebsite"></a> 
-###Create an Azure website###
+###<a id="createwebsite"></a> Create an Azure website###
 In this section you will create an Azure website.
 
 1. Open a web browser and browse to the [Azure Management Portal][AzurePortal]. Sign in with your Azure account. 
@@ -453,8 +455,7 @@ In this section you will create an Azure website.
 
 ![WAWSDashboardMyTaskListApp][WAWSDashboardMyTaskListApp]
 
-<a id="deployapp"></a> 
-###Deploy the ASP.NET application to the website using Git
+###<a id="deployapp"></a> Deploy the ASP.NET application to the website using Git
 In this section you will deploy the My Task List application using Git.
 
 1. Click your website name in **Websites**, then click **Dashboard**.  On the right side, under Quick Glance, click **Set up deployment from source control**.
@@ -477,11 +478,11 @@ In this section you will deploy the My Task List application using Git.
 9. Your Azure website is now available.  Check the **Dashboard** page for your site and the **Site URL** field to find the URL for your site. Following the procedures in this tutorial, your site would be available at this URL: http://mytasklistapp.chinacloudsites.cn.
 ## Summary ##
 
-You have now successfully deployed your ASP.NET application to Azure Websites. To view the web app:
+You have now successfully deployed your ASP.NET application to Azure Websites. To view the web site:
 
 1. Log into the Azure Management Portal.
-2. Click **Web apps**. 
-3. Select your web app in the **Web Apps** list.
+2. Click **Web Apps**. 
+3. Select your web site in the **Web Apps** list.
 
 For more information on developing C# applications against MongoDB, see [CSharp Language Center][MongoC#LangCenter]. 
  

@@ -6,7 +6,7 @@
    authors="dlepow"
    manager="timlt"
    editor=""
-   tags="azure-service-management"/>
+   tags="azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/29/2015"
@@ -38,7 +38,7 @@ For background information about planning an HPC Pack cluster, see the [Product 
 * **Windows client computer with Azure PowerShell 0.8.7 or later installed and configured** - See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). The script runs in Azure Service Management.
 
 
-* **HPC Pack IaaS deployment script** - Download and unpack the latest version of the script from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=44949). You can check the version of the script by running `New-HPCIaaSCluster.ps1 –Version`. This article is based on version 4.4.0 of the script.
+* **HPC Pack IaaS deployment script** - Download and unpack the latest version of the script from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=44949). You can check the version of the script by running `New-HPCIaaSCluster.ps1 -Version`. This article is based on version 4.4.0 of the script.
 
 * **Script configuration file** - You'll need to create an XML file that the script uses to configure the HPC cluster. For information and examples, see sections later in this article.
 
@@ -56,7 +56,7 @@ New-HPCIaaSCluster.ps1 [-ConfigFile] <String> [-AdminUserName]<String> [[-AdminP
 
 * **AdminUserName** -Specifies the user name. If the domain forest is created by the script, this becomes the local administrator user name for all VMs as well as the domain administrator name. If the domain forest already exists, this specifies the domain user as the local administrator user name to install HPC Pack.
 
-* **AdminPassword** - Specifies the administrator’s password. If not specified in the command line, the script will prompt you to input the password.
+* **AdminPassword** - Specifies the administrator's password. If not specified in the command line, the script will prompt you to input the password.
 
 * **HPCImageName** (optional) - Specifies the HPC Pack VM image name used to deploy the HPC cluster. It must be a Microsoft-provided HPC Pack image from the Azure Marketplace. If not specified (recommended in most cases), the script chooses the latest published HPC Pack image.
 
@@ -77,13 +77,14 @@ New-HPCIaaSCluster.ps1 [-ConfigFile] <String> [-AdminUserName]<String> [[-AdminP
 The following example creates a new HPC Pack cluster using the
 configuration file MyConfigFile.xml, and specifies administrative
 credentials for installing the cluster.
+
 ```
-New-HPCIaaSCluster.ps1 –ConfigFile MyConfigFile.xml -AdminUserName
-<username> –AdminPassword <password>
+New-HPCIaaSCluster.ps1 -ConfigFile MyConfigFile.xml -AdminUserName <username> -AdminPassword <password>
 ```
+
 ### Additional considerations
 
-* The script uses the HPC Pack VM image in the Azure Marketplace to create the cluster head node. The current image is based on Windows Server 2012 R2 Datacenter with HPC Pack 2012 R2 Update 2 installed.
+* The script uses the HPC Pack VM image in the Azure Marketplace to create the cluster head node. The current image is based on Windows Server 2012 R2 Datacenter with HPC Pack 2012 R2 Update 3 installed.
 
 * The script can optionally enable job submission through the HPC Pack web portal or the HPC Pack REST API.
 
@@ -411,7 +412,7 @@ will run on the head node after the head node is configured.
 ## Known issues
 
 
-* **“VNet doesn’t exist” error** - If you run the HPC Pack IaaS deployment script to deploy multiple
+* **“VNet doesn't exist” error** - If you run the HPC Pack IaaS deployment script to deploy multiple
 clusters in Azure concurrently under one subscription, one or more
 deployments may fail with the error “VNet *VNet\_Name* doesn't exist”.
 If this error occurs, re-run the script for the failed deployment.
@@ -421,7 +422,7 @@ the deployment script, or you manually promote a VM to domain
 controller, you may experience problems connecting the VMs in the Azure
 virtual network to the Internet. This can occur if a forwarder DNS
 server is automatically configured on the domain controller, and this
-forwarder DNS server doesn’t resolve properly.
+forwarder DNS server doesn't resolve properly.
 
     To work around this problem, log on to the domain controller and either
     remove the forwarder configuration setting or configure a valid
@@ -445,6 +446,6 @@ extension might be stuck in the installing state.
 
 * Try running a test workload on the cluster. For an example, see the HPC Pack [getting started guide](https://technet.microsoft.com/zh-cn/library/jj884144).
 
-* For a tutorial that uses the script to create a cluster and run an HPC workload, see [Get started with an HPC Pack cluster in Azure to run Excel and SOA workloads](/documentation/articles/virtual-machines-excel-cluster-hpcpac) or [Run NAMD with Microsoft HPC Pack on Linux compute nodes in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd).
+* For tutorials that use the script to create a cluster and run an HPC workload, see [Get started with an HPC Pack cluster in Azure to run Excel and SOA workloads](/documentation/articles/virtual-machines-excel-cluster-hpcpac), [Run NAMD with Microsoft HPC Pack on Linux compute nodes in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd), or [Run OpenFOAM with Microsoft HPC Pack on Linux compute nodes in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack-openfoam).
 
 * Try HPC Pack's tools to start, stop, add, and remove compute nodes from a cluster you create. See [Manage compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-hpcpack-cluster-node-manage)

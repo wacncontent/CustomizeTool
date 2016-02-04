@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/22/2015"
+	ms.date="11/11/2015"
 	wacn.date=""/>
 
 # Send push notifications to authenticated users
@@ -88,8 +88,15 @@ After you have completed both tutorials, you can prevent unauthenticated users f
 
 
 <!-- URLs. -->
+<!-- deleted by customization
+[Add authentication to your app]: ../mobile-services-windows-store-dotnet-get-started-users.md
+-->
+<!-- keep by customization: begin -->
 [Add authentication to your app]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
+<!-- keep by customization: end -->
 [Add push notifications to your app]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+<!-- keep by customization: begin -->
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
- 
+
+<!-- keep by customization: end -->

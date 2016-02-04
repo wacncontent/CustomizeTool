@@ -8,7 +8,7 @@
  editor=""/>
 <tags
 	ms.service="scheduler"
-	ms.date="08/04/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
  
  
@@ -18,19 +18,23 @@
 
 As a core Azure platform service, Azure Scheduler is highly available and features both geo-redundant service deployment and geo-regional job replication.
 
+### Geo-redundant service deployment
+
+Azure Scheduler is available in two regions in China, China East and China North. If a data center in a hosted region is rendered unavailable, the failover capabilities of Azure Scheduler are such that the service is available from another data center.
+
 ### Geo-regional job replication
 
-Not only is the Azure Scheduler front-end available for management requests, but your own job is also geo-replicated. When there’s an outage in one region, Azure Scheduler fails over and ensures that the job is run from another data center in the paired geographic region.
+Not only is the Azure Scheduler front-end available for management requests, but your own job is also geo-replicated. When there's an outage in one region, Azure Scheduler fails over and ensures that the job is run from another data center in the paired geographic region.
 
-For example, if you’ve created a job in China East, Azure Scheduler automatically replicates that job in China North. When there’s a failure in China East, Azure Scheduler ensures that the job is run from China North. [The list of paired Azure regions is available here](https://msdn.microsoft.com/zh-cn/library/azure/dn758204.aspx).
+For example, if you've created a job in China East, Azure Scheduler automatically replicates that job in China North. When there's a failure in China East, Azure Scheduler ensures that the job is run from China North. [The list of paired Azure regions is available here](/documentation/articles/sql-database-business-continuity-design).
 
 ![][1]
 
-As a result, Azure Scheduler ensures that your data stays within the same broader geographic region in case of an Azure failure. As a result, you need not duplicate your job just to add high availability – Azure Scheduler automatically provides high-availability capabilities for your jobs.
+As a result, Azure Scheduler ensures that your data stays within the same broader geographic region in case of an Azure failure. As a result, you need not duplicate your job just to add high availability - Azure Scheduler automatically provides high-availability capabilities for your jobs.
 
 ## Azure Scheduler Reliability
 
-Azure Scheduler guarantees its own high-availability and takes a different approach to user-created jobs. For example, your job may invoke an HTTP endpoint that’s unavailable. Azure Scheduler nonetheless tries to execute your job successfully, by giving you alternative options to deal with failure. Azure Scheduler does this in two ways:
+Azure Scheduler guarantees its own high-availability and takes a different approach to user-created jobs. For example, your job may invoke an HTTP endpoint that's unavailable. Azure Scheduler nonetheless tries to execute your job successfully, by giving you alternative options to deal with failure. Azure Scheduler does this in two ways:
 
 ### Configurable Retry Policy via “retryPolicy”
 
@@ -48,12 +52,12 @@ As an example, in the diagram below, Azure Scheduler follows its retry policy to
 
 ![][2]
 
-Note that the same retry policy applies to both the original action and the alternate error action. It’s also possible to have the alternate error action’s action type be different from the main action’s action type. For example, while the main action may be invoking an HTTP endpoint, the error action may instead be a storage queue action that does error-logging.
+Note that the same retry policy applies to both the original action and the alternate error action. It's also possible to have the alternate error action's action type be different from the main action's action type. For example, while the main action may be invoking an HTTP endpoint, the error action may instead be a storage queue action that does error-logging.
 
 To learn how to configure an alternate endpoint, refer to [errorAction](/documentation/articles/scheduler-concepts-terms#action-and-erroraction).
 
 ## See Also
- 
+
  [What is Scheduler?](/documentation/articles/scheduler-intro)
  
  [Scheduler Concepts, Terminology, and Entity Hierarchy](/documentation/articles/scheduler-concepts-terms)
@@ -64,7 +68,7 @@ To learn how to configure an alternate endpoint, refer to [errorAction](/documen
  
  [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
  
- [Scheduler REST API Reference](https://msdn.microsoft.com/zh-cn/library/dn528946)   
+ [Scheduler REST API Reference](https://msdn.microsoft.com/zh-CN/library/dn528946)   
  
  [Scheduler PowerShell Cmdlets Reference](/documentation/articles/scheduler-powershell-reference)
  

@@ -5,8 +5,8 @@
   services="storage" 
   documentationCenter="" 
   authors="tamram" 
-  manager="adinah" 
-  editor=""/>
+  manager="carmonm" 
+  editor="tysonn"/>
 
 <tags 
   ms.service="storage" 
@@ -14,7 +14,7 @@
   ms.tgt_pltfrm="na" 
   ms.devlang="na" 
   ms.topic="article" 
-  ms.date="10/20/2015" 
+  ms.date="01/05/2016" 
   ms.author="tamram"/>
 
 # Azure Storage replication
@@ -74,7 +74,6 @@ When you create a storage account, you select the primary region for the account
 | ---------------   |----------------
 |China North   |China East
 |China East   |China North
-<!-- deleted by customization
 |China East            |China North
 |China North            |China East
 |China East 2          |China North
@@ -90,7 +89,6 @@ When you create a storage account, you select the primary region for the account
 |Brazil South       |China East
 |Australia East     |Australia Southeast
 |Australia Southeast|Australia East
--->
 |India South        |India Central
 |India Central      |India South
   
@@ -99,7 +97,7 @@ When you create a storage account, you select the primary region for the account
 
 Read-access geo-redundant storage (RA-GRS) maximizes availability for your storage account, by providing read-only access to the data in the secondary location, in addition to the replication across two regions provided by GRS. In the event that data becomes unavailable in the primary region, your application can read data from the secondary region.
 
-When you enable read-only access to your data in the secondary region, your data is available on a secondary endpoint, in addition to the primary endpoint for your storage account. The secondary endpoint is similar to the primary endpoint, but appends the suffix `–secondary` to the account name. For example, if your primary endpoint for the Blob service is `myaccount.blob.core.chinacloudapi.cn`, then your secondary endpoint is `myaccount-secondary.blob.core.chinacloudapi.cn`. The access keys for your storage account are the same for both the primary and secondary endpoints.
+When you enable read-only access to your data in the secondary region, your data is available on a secondary endpoint, in addition to the primary endpoint for your storage account. The secondary endpoint is similar to the primary endpoint, but appends the suffix `-secondary` to the account name. For example, if your primary endpoint for the Blob service is `myaccount.blob.core.chinacloudapi.cn`, then your secondary endpoint is `myaccount-secondary.blob.core.chinacloudapi.cn`. The access keys for your storage account are the same for both the primary and secondary endpoints.
 
 ## Next steps
 

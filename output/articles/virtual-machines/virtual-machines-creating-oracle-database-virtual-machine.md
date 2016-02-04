@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Create an Oracle Database VM with the Azure Management Portal | Windows Azure" 
-	description="Learn how to create a virtual machine with an Oracle Database on it using the classic deployment model and the Azure preview portal." 
-	services="virtual-machines" 
-	authors="bbenz" 
+<properties
+	pageTitle="Create an Oracle Database VM with the Azure Management Portal | Windows Azure"
+	description="Learn how to create a virtual machine with an Oracle Database on it using the classic deployment model and the Azure Management Portal."
+	services="virtual-machines"
+	authors="bbenz"
 	documentationCenter=""
 	tags="azure-service-management"/>
-	
+
 <tags
 	ms.service="virtual-machines"
 	ms.date="06/22/2015"
 	wacn.date=""/>
-	
+
 #Create an Oracle Database virtual machine in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model. 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 The following example shows you how you can create a virtual machine (VM) based on a Microsoft-provided Oracle Database image running on Windows Server 2012 in Azure. There are two steps. First, create the VM, and then create the Oracle Database inside the VM. The example shown is Oracle Database version 12c, but the steps are virtually identical for version 11g.
@@ -38,7 +38,7 @@ The following example shows you how you can create a virtual machine (VM) based 
 
 	a. Leave **Storage Account** as-is to create a new storage account with the VM name.
 
-	b. Leave **Availability Set** as “Not Configured”.
+	b. Leave **Availability Set** as "Not Configured".
 
 	c. Do not add any **endpoints** at this time.
 
@@ -91,13 +91,13 @@ The following example shows you how you can create a virtual machine (VM) based 
 
 	c. **Step 3:** The prerequisites check should proceed automatically, advancing to **Step 4**.
 
-	d. **Step 4:** Review the **Create Database – Summary** options, and then click **Finish**.
+	d. **Step 4:** Review the **Create Database - Summary** options, and then click **Finish**.
 
 		![](./media/virtual-machines-creating-oracle-database-virtual-machine/image7.png)
 	e. **Step 5:** The **Progress Page** will report the status of your database creation.
 
 		![](./media/virtual-machines-creating-oracle-database-virtual-machine/image8.png)
-	f. After your database is created, you’ll have the option to use the **Password Management** dialog box. Modify password settings if needed for your requirements, and then close the dialog boxes to exit the **Database Configuration Assistant** wizard.
+	f. After your database is created, you'll have the option to use the **Password Management** dialog box. Modify password settings if needed for your requirements, and then close the dialog boxes to exit the **Database Configuration Assistant** wizard.
 
 ##To confirm your database is installed
 
@@ -114,7 +114,7 @@ The following example shows you how you can create a virtual machine (VM) based 
 	![](./media/virtual-machines-creating-oracle-database-virtual-machine/image9.png)
 
 ##Allowing your database to be reached remotely
-To allow your database to be reached remotely (for example, from a client computer running Java code), you’ll need to start the database listener, open port 1521 in your virtual machine’s firewall, and create a public endpoint for port 1521.
+To allow your database to be reached remotely (for example, from a client computer running Java code), you'll need to start the database listener, open port 1521 in your virtual machine's firewall, and create a public endpoint for port 1521.
 
 ### Start the database listener
 1.	Log in to your VM.
@@ -127,11 +127,11 @@ To allow your database to be reached remotely (for example, from a client comput
 
 > [AZURE.NOTE] You can run **lsnrctl status** to check the status of the listener. When you want to stop the listener, you can run **lsnrctl stop**.
 
-### Open port 1521 in your virtual machine’s firewall
+### Open port 1521 in your virtual machine's firewall
 
 1.	While still logged in to your virtual machine, in Windows, click **Start**, type **Windows Firewall with Advanced Security**, and then click the **Windows Firewall with Advanced Security** icon. This opens the **Windows Firewall with Advanced Security** management console.
 
-2.	Within the firewall management console, click **Inbound Rules** in the left pane (if you don’t see **Inbound Rules**, expand the top node in the left pane), and then click **New Rule** in the right pane.
+2.	Within the firewall management console, click **Inbound Rules** in the left pane (if you don't see **Inbound Rules**, expand the top node in the left pane), and then click **New Rule** in the right pane.
 
 3.	For **Rule Type**, select **Port** and then click **Next**.
 
@@ -174,6 +174,8 @@ To allow your database to be reached remotely (for example, from a client comput
 ##Enabling Oracle Database Enterprise Manager remote access
 If you want to enable remote access to Oracle Database Enterprise Manager, open port 5500 in your firewall, and create a virtual machine endpoint for 5500 in the Azure Management Portal (using the steps shown earlier for opening port 1521 and creating an endpoint for 1521). Then, to run the Oracle Enterprise Manager from the remote computer, open a browser to the URL in the form of `http://<<unique_domain_name>>:5500/em`.
 
+> [AZURE.NOTE] You can determine the value for *\<\<unique\_domain\_name\>\>* within the [Azure Management Portal](https://manage.windowsazure.cn/) by clicking **Virtual Machines** and then selecting the virtual machine that you are using to run Oracle Database).
+
 ##Configuring Popular Options and Advanced Options Bundles
 If you chose the **Oracle Database with Popular Options** or the **Oracle Database with Advanced Options bundle**, the next step is to configure the add-on features in your Oracle installation. Refer to the Oracle documentation for instruction on setting these up on Windows, as configurations can vary widely based on your needs of each individual component.
 
@@ -182,7 +184,7 @@ The **Oracle Database with Popular Options bundle** includes Oracle Database Ent
 The **Oracle Database with Advanced Options bundle** includes license-included instances of all the options in the Popular Options bundle, plus [Advanced Compression](http://www.oracle.com/us/products/database/options/advanced-compression/overview/index.html), [Advanced Security](http://www.oracle.com/us/products/database/options/advanced-security/overview/index.html), [Label Security](http://www.oracle.com/us/products/database/options/label-security/overview/index.html), [Database Vault](http://www.oracle.com/us/products/database/options/database-vault/overview/index.html), [Advanced Analytics](http://www.oracle.com/us/products/database/options/advanced-analytics/overview/index.html), [OLAP](http://docs.oracle.com/cd/E11882_01/license.112/e47877/options.htm#CIHGDEEF), [Spatial and Graph](http://docs.oracle.com/cd/E11882_01/license.112/e47877/options.htm#CIHGDEEF), [In-Memory Database Cache](http://www.oracle.com/technetwork/products/timesten/overview/timesten-imdb-cache-101293.html), [Data Masking Pack](http://docs.oracle.com/cd/E11882_01/license.112/e47877/options.htm#CHDGEEBB), and the Oracle Test Data Management Pack (as part of the Data Masking Pack).
 
 ##Additional resources
-Now that you’ve set up your virtual machine and created your database, see the following topics for additional information.
+Now that you've set up your virtual machine and created your database, see the following topics for additional information.
 
 -	[Oracle virtual machine images - Miscellaneous considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
 

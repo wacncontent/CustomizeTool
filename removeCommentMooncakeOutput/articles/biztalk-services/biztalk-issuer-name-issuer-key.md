@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Issuer Name and Issuer Key in BizTalk Services | Microsoft Azure" 
+	pageTitle="Issuer Name and Issuer Key in BizTalk Services | Windows Azure" 
 	description="Learn how to retrieve Issuer Name and Issuer Key for either Service Bus or Access Control (ACS) in BizTalk Services. MABS, WABS" 
 	services="biztalk-services" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="biztalk-services" 
-	ms.workload="integration" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/26/2015" 
-	ms.author="mandia"/>
+<tags
+	ms.service="biztalk-services"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 
 
@@ -39,7 +35,7 @@ The Access Control Issuer Name and Issuer Key are used by the following:
 
 ### To copy and paste the Access Control Issuer Name and Issuer Key
 
-1. Sign in to the [Azure Management Portal](http://go.microsoft.com/fwlink/p/?LinkID=213885).
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).
 2. In the left navigation pane, select **BizTalk Services**.
 3. Select your BizTalk Service. 
 4. Select **Connection Information** in the task bar. The Access Control Namespace, Default Issuer (Issuer Name), and Default Key (Issuer Key) are listed and can be copied and pasted.  
@@ -51,7 +47,7 @@ Issuer Key = Default Key
 
 You can also select **Open ACS Management Portal** to get the Access Control values:
 
-1. Sign in to the [Azure Management Portal](http://go.microsoft.com/fwlink/p/?LinkID=213885).
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).
 2. In the left navigation pane, select **BizTalk Services**.
 3. Select your BizTalk Service.
 4. Select the Connection Information button and select **Open ACS Management Portal**.
@@ -73,7 +69,7 @@ Service Bus Issuer Name and Issuer Key are used by BizTalk Adapter Services. In 
 
 ### To retrieve the Service Bus Issuer Name and Issuer Key
 
-1. Sign in to the [Azure Management Portal](http://go.microsoft.com/fwlink/p/?LinkID=213885).
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).
 2. In the left navigation pane, select **Service Bus**.
 3. Select your namespace. In the task bar, select **Connection Information**. This displays the **Default Issuer** (Issuer Name) and **Default Key** (Issuer Key). Their values can be copied.  
 

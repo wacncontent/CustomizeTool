@@ -1,16 +1,16 @@
-<properties
-	pageTitle="Azure Active Directory editions | Windows Azure"
-	description="A topic that explains choices for free and paid editions of Azure Active Directory."
-	services="active-directory"
-	documentationCenter=""
+<properties 
+	pageTitle="Azure Active Directory Editions" 
+	description="A topic that explains choices for free and paid editions of Azure Active Directory." 
+	services="active-directory" 
+	documentationCenter="" 
 	authors="MarkusVi"
 	manager="stevenpo"
 	editor=""/>
 
-<tags
-	ms.service="active-directory"
-	ms.date="10/17/2015"
-	wacn.date=""/>
+<tags 
+	ms.service="active-directory" 
+	ms.date="12/04/2015"
+	wacn.date="" />
 
 # Azure Active Directory editions
 
@@ -27,7 +27,7 @@ Office 365 subscriptions include additional Azure Active Directory features desc
 > [AZURE.NOTE] For the pricing options of these editions, see [Azure Active Directory Pricing](/home/features/identity/#price). <br>Azure Active Directory Premium and Azure Active Directory Basic are not currently supported in China. Please contact us at the Azure Active Directory Forum for more information
 
 
-- **Azure Active Directory Basic** - Designed for task workers with cloud-first needs, this edition provides cloud centric application access and self-service identity management solutions. With the Basic edition of Azure Active Directory, you get productivity enhancing and cost reducing features like group-based access management, self-service password reset for cloud applications, and Azure Active Directory Application Proxy (to publish on-premises web applications using Azure Active Directory), all backed by an enterprise-level SLA of 99.9 percent uptime.
+- **Azure Active Directory Basic** - Designed for task workers with cloud-first needs, this edition provides cloud centric application access and self-service identity management solutions. With the Basic edition of Azure Active Directory, you get productivity enhancing and cost reducing features like group-based access management, self-service password reset for cloud applications, and Azure Active Directory Application Proxy (to publish on-premises web sites using Azure Active Directory), all backed by an enterprise-level SLA of 99.9 percent uptime.
  
 - **Azure Active Directory Premium** - Designed to empower organizations with more demanding identity and access management needs, Azure Active Directory Premium edition adds feature-rich enterprise-level identity management capabilities and enables hybrid users to seamlessly access on-premises and cloud capabilities. This edition includes everything you need for information worker and identity administrators in hybrid environments across application access, self-service identity and access management (IAM), identity protection and security in the cloud. It supports advanced administration and delegation resources like dynamic groups and self-service group management. It includes Microsoft Identity Manager (an on-premises identity and access management suite) and provides cloud write-back capabilities enabling solutions like self-service password reset for your on-premises users. 
 
@@ -44,47 +44,41 @@ To sign up and start using Active Directory Premium today, see [Getting started 
 
 <br>
 
-
-
-
-| Feature Type| Features| Free Edition| Basic Edition| Premium Edition |
-| --- | --- | --- | --- | --- |
-| **Common features**| Directory as a service| ![Check][12] Up to 500K users [1]| ![Check][12] No object limit| ![Check][12] No object limit|
-|  | [User and group management using UI or Windows PowerShell cmdlets](/documentation/articles/active-directory-administer)| ![Check][12]| ![Check][12]| ![Check][12]|
-|  | [Device registration](/documentation/articles/active-directory-conditional-access-device-registration-overview)| ![Check][12]| ![Check][12]| ![Check][12]|
-|  | [Access Panel portal for SSO-based user access to SaaS and custom applications](/documentation/articles/active-directory-saas-access-panel-introduction)| ![Check][12] Up to 10 apps per user [2]| ![Check][12] Up to 1- apps per user [2]| ![Check][12] No app limit|
-|  | [User-based application access management and provisioning](/documentation/articles/active-directory-saas-app-provisioning)| ![Check][12]| ![Check][12]| ![Check][12]|
-|  | Self-service password change for cloud users| ![Check][12]| ![Check][12]| ![Check][12]|
-|  | [Azure AD Connect – For syncing between on-premises directories and Azure Active Directory](/documentation/articles/active-directory-aadconnect)| ![Check][12]| ![Check][12]| ![Check][12]|
-|  | [Standard security reports](/documentation/articles/active-directory-view-access-usage-reports)| ![Check][12]| ![Check][12]| ![Check][12]|
-|  | [B2B collaboration (cross-organization collaboration) (in preview)](/documentation/articles/active-directory-b2b-collaboration-overview)| ![Check][12]| ![Check][12]| ![Check][12]|
-| **Premium and Basic features**| [Customization of company logo and colors to the Sign In and Access Panel pages](/documentation/articles/active-directory-add-company-branding)| Included with Office 365 subscriptions [4]| ![Check][12]| ![Check][12]|
-|  | [Self-service password reset for cloud users](/documentation/articles/active-directory-passwords)| Included with Office 365 subscriptions [4]| ![Check][12]| ![Check][12]|
-|  | [Application Proxy: Secure Remote Access and SSO to on-premises web applications](/documentation/articles/active-directory-application-proxy-get-started)|  | ![Check][12]| ![Check][12]|
-|  | [Group-based application access management and provisioning](/documentation/articles/active-directory-accessmanagement-group-saasapps)|  | ![Check][12]| ![Check][12]|
-|  | [High availability SLA uptime (99.9%)](https://azure.microsoft.com/support/legal/sla/)| Microsoft Online Services SLA [5]| ![Check][12]| ![Check][12]|
-| **Premium only features**| [Advanced application usage reporting](/documentation/articles/active-directory-view-access-usage-reports)|  |  | ![Check][12]|
-|  | [Self-service group management for cloud users](Self-service group management for users in Azure AD)|  |  | ![Check][12]|
-|  | [Self-service password reset with on-premises write-back](/documentation/articles/active-directory-passwords-getting-started#enable-users-to-reset-or-change-their-ad-passwords)|  |  | ![Check][12]|
-|  | [Microsoft Identity Manager (MIM) user licenses – For on-premises identity and access management](http://www.microsoft.com/server-cloud/products/microsoft-identity-manager/default.aspx)|  |  | ![Check][12] [3]|
-|  | [Advanced anomaly security reports (machine learning-based)](/documentation/articles/active-directory-view-access-usage-reports)|  |  | ![Check][12]|
-|  | [Cloud app discovery](/documentation/articles/active-directory-cloudappdiscovery-whatis)|  |  | ![Check][12]|
-|  | [Multi-Factor Authentication service for cloud users](/documentation/articles/multi-factor-authentication)| Included with Office 365 subscriptions [4]|  | ![Check][12]|
-|  | [Multi-Factor Authentication server for on-premises users](/documentation/articles/multi-factor-authentication)|  |  | ![Check][12]|
-|  | [Azure Active Directory Connect Health to monitor the health of on-premises Active Directory infrastructure, and get usage analytics](/documentation/articles/active-directory-aadconnect-health)|  |  | ![Check][12]|
+| Feature Type| Features| Free Edition| Basic Edition| Premium Edition| Office 365 Apps Only |
+| --- | --- | --- | --- | --- | --- |
+| **Common features**| Directory objects [1]| Up to 500,000 objects| No object limit| No object limit| No object limit for Office 365 user accounts|
+|  | [User and group management (add / update / delete), user-based provisioning](/documentation/articles/active-directory-administer), [device registration](/documentation/articles/active-directory-conditional-access-device-registration-overview)| ![Check][12]| ![Check][12]| ![Check][12]| ![Check][12]|
+|  | [SSO to SaaS apps, custom apps, Application Proxy apps](/documentation/articles/active-directory-enable-sso-scenario)| 10 apps per user [2]| 10 apps per user [2]| no limit| 10 apps per user [2]|
+|  | [Self-service password change for cloud users](/documentation/articles/active-directory-passwords-update-your-own-password)| ![Check][12]| ![Check][12]| ![Check][12]| ![Check][12]|
+|  | [Connect - For syncing between on-premises directories and Azure Active Directory](/documentation/articles/active-directory-aadconnect)| ![Check][12]| ![Check][12]| ![Check][12]| ![Check][12]|
+|  | **Preview**:[ B2B collaboration](/documentation/articles/active-directory-b2b-collaboration-overview)| ![Check][12]| ![Check][12]| ![Check][12]| ![Check][12]|
+|  | [Security / usage reports](/documentation/articles/active-directory-view-access-usage-reports)| Basic reports| Basic reports| Advanced reports| Basic reports|
+| **Premium and Basic features**| [Group-based application access management and provisioning](/documentation/articles/active-directory-accessmanagement-group-saasapps)|  | ![Check][12]| ![Check][12]|  |
+|  | [Self-service password reset for cloud users](/documentation/articles/active-directory-passwords)|  | ![Check][12]| ![Check][12]| ![Check][12]|
+|  | [Company branding (Log-on pages and Access Panel customization)](/documentation/articles/active-directory-add-company-branding)|  | ![Check][12]| ![Check][12]| ![Check][12]|
+|  | [Application Proxy](/documentation/articles/active-directory-application-proxy-get-started)|  | ![Check][12]| ![Check][12]|  |
+|  | [High availability SLA uptime (99.9%)](https://azure.microsoft.com/support/legal/sla/)|  | ![Check][12]| ![Check][12]| ![Check][12]|
+| **Premium only features**| Self-service group management / self-service application addition / dynamic group membership|  |  | ![Check][12]|  |
+|  | [Self-service password reset, change, unlock with on-premises write-back](/documentation/articles/active-directory-passwords-getting-started/#enable-users-to-reset-or-change-their-ad-passwords)|  |  | ![Check][12]|  |
+|  | [Multi-Factor Authentication (cloud and on-premises)](/documentation/articles/multi-factor-authentication)|  |  | ![Check][12]| Limited to cloud only for Office 365 Apps|
+|  | [Microsoft Identity Manager (MIM) user licenses and MIM server [3]](http://www.microsoft.com/server-cloud/products/microsoft-identity-manager/default.aspx)|  |  | ![Check][12]|  |
+|  | [Cloud App Discovery](/documentation/articles/active-directory-cloudappdiscovery-whatis)|  |  | ![Check][12]|  |
+|  | [Azure Active Directory Connect Health](/documentation/articles/active-directory-aadconnect-health)|  |  | ![Check][12]|  |
+|  | Automatic password rollover for group accounts|  |  | ![Check][12]|  |
+|  | **Preview**: Conditional Access|  |  | ![Check][12]|  |
+|  | **Preview**: Privileged Identity Management|  |  | ![Check][12]|  |
+| **Windows 10 and Azure AD Join related features**| Join a Windows 10 device to Azure AD, Desktop SSO, Microsoft Passport for Azure AD, Administrator Bitlocker recovery| ![Check][12]| ![Check][12]| ![Check][12]| ![Check][12]|
+|  | MDM auto-enrolment,  Self-Service Bitlocker recovery, Additional  local administrators to Windows 10 devices via Azure AD Join|  |  | ![Check][12]|  |
 
 
 
 
-[1] The 500k object limit does not apply for Office 365, Microsoft Intune or any other Microsoft online service that relies on Azure Active Directory for directory services.
 
-[2] With Azure Active Directory Free and Azure Active Directory Basic, end users who have been assigned access to each SaaS app, can see up to 10 apps in their Access Panel and get SSO access to them (assuming they have first been configured with SSO by the admin). Admins can configure SSO and assign user access to as many SaaS apps as they want with Free, however end users will only see 10 apps in their Access Panel at a time.
+[1] The Default usage quota is 150,000 objects. An object is an entry in the directory service, represented by its unique distinguished name. An example of an object is a user entry used for authentication purposes. If you need to exceed this default quota, please contact support. The 500,000 object limit does not apply for Office 365, Microsoft Intune or any other Microsoft paid online service that relies on Azure Active Directory for directory services.
 
-[3] Microsoft Identity Manager Server software rights are granted with Windows Server licenses (any edition). Because Microsoft Identity Manager runs on the Windows Server operating system, as long as the server is running a valid, licensed copy of Windows Server, then Microsoft Identity Manager can be installed and used on that server. No other separate license is required for Microsoft Identity Manager Server.
+[2] With Azure AD Free and Azure AD Basic, end users who have been assigned access to SaaS apps, can see up to 10 apps in their Access panel and get SSO access to them. Admins can configure SSO and assign user access to as many SaaS apps as they want with Free and Basic however, end users will only see 10 apps in their Access panel at a time.
 
-[4] Azure AD paid features included with Office 365 are limited to use when accessing Office 365 applications only.
-
-[5] Each of Microsoft's Online business Services, Office 365, Microsoft Intune, or any other Microsoft online service that relies on Azure Active Directory for directory services, carry their own service SLA which extends to their use of Azure Active Directory. To learn more, see [Microsoft online services SLA](https://gallery.technet.microsoft.com/online-SLA-ea09109e).
+[3] Microsoft Identity Manager Server software rights are granted with Windows Server licenses (any edition). Since Microsoft Identity Manager runs on Windows Server OS, as long as the server is running a valid, licensed copy of Windows Server, then Microsoft Identity Manager can be installed and used on that server. No other separate license is required for Microsoft Identity Manager Server.
 
 
 

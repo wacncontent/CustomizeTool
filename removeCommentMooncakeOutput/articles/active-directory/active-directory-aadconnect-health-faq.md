@@ -1,14 +1,14 @@
-<properties
-	pageTitle="Azure AD Connect Health FAQ"
-	description="This FAQ answers questions about Azure AD Connect Health. This FAQ covers questions about using the service, including the billing model, capabilities, limitations, and support."
-	services="active-directory"
-	documentationCenter=""
-	authors="billmath"
-	manager="stevenpo"
+<properties 
+	pageTitle="Azure AD Connect Health FAQ" 
+	description="This FAQ answers questions about Azure AD Connect Health. This FAQ covers questions about using the service, including the billing model, capabilities, limitations, and support." 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="billmath" 
+	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags
-	ms.service="active-directory"
+<tags 
+	ms.service="active-directory"  
 	ms.date="10/15/2015"
 	wacn.date=""/>
 
@@ -63,9 +63,13 @@ Select Use a Proxy Server for you LAN.<br>
 Select Advanced IF you have different proxy ports for HTTP and HTTPS/Secure.<br>
 
 
+
+
 **Q: Does Azure AD Connect Health Services support basic authentication when connecting to Http Proxies?**
 
 No. A mechanism for specifying arbitrary username/password for Basic Authentication is not currently supported.
+
+
 
 
 
@@ -73,15 +77,15 @@ No. A mechanism for specifying arbitrary username/password for Basic Authenticat
 
 
 
-**Q: Do I need to enable auditing on my AD FS Application Proxy Servers or my Web Application Proxy Servers?**
+**Q: Do I need to enable auditing on my AD FS Application Proxy Servers or my Web Site Proxy Servers?**
 
-No, auditing does not need to be enabled on AD FS Application Proxy Servers or Web Application Proxy Servers. It only needs to be enabled on the AD FS federated servers.
+No, auditing does not need to be enabled on AD FS Application Proxy Servers or Web Site Proxy Servers. It only needs to be enabled on the AD FS federated servers.
 
 
 
 **Q: How do Azure AD Connect Health Alerts get resolved?**
 
-Azure AD Connect Health Alerts get resolved on a success condition. Azure AD Connect Health Agents detect and report the success conditions to the service on a periodic basis. For a few alerts, the suppression is time based. That is if the same error condition is not observed within 48 hours from alert generation, the alert is automatically resolved.
+Azure AD Connect Health Alerts get resolved on a success condition. Azure AD Connect Health Agents detect and report the success conditions to the service on a periodic basis. For a few alerts, the suppression is time based. That is if the same error condition is not observed within 48 hours from alert generation, the alert is automatically resolved. 
 
 
 
@@ -93,6 +97,7 @@ You will need to have TCP/UDP ports 80, 443 and 5671 open for the Azure AD Conne
 ## Related links
 
 * [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health)
-* [Azure AD Connect Health Agent Installation for AD FS](/documentation/articles/active-directory-aadconnect-health-agent-install-adfs)
-* [Using Azure AD Connect Health with AD FS](/documentation/articles/active-directory-aadconnect-health-adfs)
+* [Azure AD Connect Health Agent Installation](/documentation/articles/active-directory-aadconnect-health-agent-install)
 * [Azure AD Connect Health Operations](/documentation/articles/active-directory-aadconnect-health-operations)
+* [Using Azure AD Connect Health with AD FS](/documentation/articles/active-directory-aadconnect-health-adfs)
+* [Using Azure AD Connect Health for sync](/documentation/articles/active-directory-aadconnect-health-sync)

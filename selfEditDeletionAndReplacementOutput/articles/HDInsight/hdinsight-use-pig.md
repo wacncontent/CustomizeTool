@@ -4,29 +4,29 @@ deleted:
 
 		| [SSH](/documentation/articles/hdinsight-hadoop-use-pig-ssh)                        |              ✔              |            ✔            | Linux                                     | Linux, Unix, Mac OS X, or Windows        |
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		Linux or
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		Linux, Unix, Mac OS X, or
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		Linux or
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		Linux or
 
-reason: ()
+reason: (Linux Support)
 

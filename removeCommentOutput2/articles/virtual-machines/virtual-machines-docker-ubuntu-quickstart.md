@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="How to Use Docker Quickly with Ubuntu-Docker VM Image"
 	description="Describes and demonstrates how to be using Docker on Ubuntu Server in minutes directly from the Azure Image Gallery"
@@ -9,7 +11,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/04/2015"
+	ms.date="01/04/2016"
 	wacn.date=""/>
 
 # How to Get Started Quickly with Docker in the Azure Marketplace
@@ -21,7 +23,7 @@ The fastest way to get started using [Docker] is to go to the Azure Marketplace 
 
 You can immediately connect to the VM using SSH and begin doing work with Docker directly without doing anything else.
 
-> [AZURE.NOTE]The VM created by the Azure Marketplace template does not host the Docker remote API for management by a remote docker client. To enable controlling the Docker Host on this VM remotely, see either [Running Docker with HTTPS](https://docs.docker.com/articles/https/) or follow the steps in [Using the Docker VM Extension from the Azure Management Portal](/documentation/articles/virtual-machines-docker-with-portal) or [Using the Docker VM Extension from the Azure CLI](/documentation/articles/virtual-machines-docker-with-xplat-cli-install). If you're feeling especially geeky, you can build the [Windows Docker Client](https://github.com/ahmetalpbalkan/Docker.DotNet) from GitHub and try that as well (or just grab it from [nuget](https://www.nuget.org/packages/Docker.DotNet/)). 
+> [AZURE.NOTE]The VM created by the Azure Marketplace template does not host the Docker remote API for management by a remote docker client. To enable controlling the Docker Host on this VM remotely, see either [Running Docker with HTTPS](https://docs.docker.com/articles/https/) or follow the steps in [Using the Docker VM Extension from the Azure Management Portal](/documentation/articles/virtual-machines-docker-with-portal) or [Using the Docker VM Extension from the Azure CLI](/documentation/articles/virtual-machines-docker-with-xplat-cli). 
 <!-- -->
 If you want to automate your Azure Docker VM from Windows, you can [install the Docker Toolbox](https://docs.docker.com/installation/windows/) or get Docker.exe [from Chocolatey](https://chocolatey.org/packages/docker).
 
@@ -70,7 +72,7 @@ You're going to want to start using [Docker]!
 
 
 [Docker]: https://www.docker.com/
-[BusyBox]: http://en.wikipedia.org/wiki/BusyBox
+[BusyBox]: http://zh.wikipedia.org/wiki/BusyBox
 [Docker scratch image]: https://docs.docker.com/articles/baseimages/#creating-a-simple-base-image-using-scratch
 [Canonical]: http://www.canonical.com/
 [MSOpenTech]: http://msopentech.com/

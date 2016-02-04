@@ -1,7 +1,8 @@
 <properties
-	pageTitle="Connect to an Azure SQL Database with Excel"
-	description="Excel spreadsheet to Azure SQL Database for reporting and data exploration."
+	pageTitle="Connect Excel to SQL Database | Windows Azure"
+	description="Learn how to connect Microsoft Excel to Azure SQL database in the cloud. Import data into Excel for reporting and data exploration."
 	services="sql-database"
+	keywords="connect excel to sql, import data to excel"
 	documentationCenter=""
 	authors="joseidz"
 	manager="jeffreyg"
@@ -21,7 +22,7 @@
 - [SSMS](/documentation/articles/sql-database-connect-query-ssms)
 - [Excel](/documentation/articles/sql-database-connect-excel)
 
-This article shows you how to connect Excel to an Azure SQL database and create a report over the data in the database. You'll need a SQL database first. If you don't have one, see [Create your first SQL database](/documentation/articles/sql-database-get-started) to get a database with sample data up and running in a few minutes. This article is based on the sample data from that article, but you can follow similar steps on your own data.
+This article shows you how to connect Excel to an Azure SQL database and create a report over the data in the database. You'll need a SQL database first. If you don't have one, seeÂ [Create your first SQL database](/documentation/articles/sql-database-get-started) to get a database with sample data up and running in a few minutes. This article is based on the sample data from that article, but you can follow similar steps on your own data.
 
 You'll also need a copy of Excel. This article uses [Microsoft Excel 2016](https://products.office.com/).
 

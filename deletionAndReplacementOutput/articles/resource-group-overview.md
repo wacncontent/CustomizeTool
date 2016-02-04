@@ -12,5 +12,5 @@ deleted:
 		
 		[AZURE.VIDEO azure-resource-manager-overview]
 
-reason: ()
+reason: (video)
 

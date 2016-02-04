@@ -3,9 +3,9 @@
    description="Learn the procedures to set up cloud and storage account services and configure your Azure application."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
 	ms.date="09/28/2015"
@@ -50,7 +50,7 @@ To publish a cloud service to Azure, you must first create a cloud service, whic
 
 1. (optional) To display a list of cloud services that you've already created, choose the Cloud Services link on the left side of the page.
 
-1. Choose the **+** icon in the lower-left corner, and then choose **Cloud Service** on the menu that appears. Another screen with two options, **Quick Create** and **Custom Create**, appears. If you choose **Quick Create**, you can create a cloud service just by specifying its URL and the region where it will be physically hosted. If you choose **Custom Create**, you can immediately publish a cloud service by specifying a package (.cspkg file), a configuration (.cscfg) file, and a certificate. Custom Create isn’t required if you intend to publish your cloud service by using the **Publish** command in an Azure project. The **Publish** command is available on the shortcut menu for an Azure project.
+1. Choose the **+** icon in the lower-left corner, and then choose **Cloud Service** on the menu that appears. Another screen with two options, **Quick Create** and **Custom Create**, appears. If you choose **Quick Create**, you can create a cloud service just by specifying its URL and the region where it will be physically hosted. If you choose **Custom Create**, you can immediately publish a cloud service by specifying a package (.cspkg file), a configuration (.cscfg) file, and a certificate. Custom Create isn't required if you intend to publish your cloud service by using the **Publish** command in an Azure project. The **Publish** command is available on the shortcut menu for an Azure project.
 
 1. Choose **Quick Create** to later publish your cloud service by using Visual Studio.
 
@@ -76,7 +76,7 @@ A storage account provides access to the Blob, Queue, and Table services. You ca
     - The region or affinity group (such as China North or China East).
     - The type of replication you want to use for the storage account, such as Geo-Redundant.
 
-1. When you’re done, choose **Create**.The new storage account appears in the **Storage** list in **Server Explorer**.
+1. When you're done, choose **Create**.The new storage account appears in the **Storage** list in **Server Explorer**.
 
 ### To create a storage account by using the Azure Management Portal
 
@@ -120,7 +120,7 @@ You must configure any role that accesses storage services to use the Azure stor
 
 1. In the **Subscription** list, choose your subscription. If the list of subscriptions doesn't include the one that you want, choose the **Download Publish Settings** link.
 
-1. In the **Account name** list, choose your storage account name. Azure Tools obtains storage account credentials automatically by using the .publishsettings file. To specify your storage account credentials manually, choose the **Manually entered credentials** option, and then continue with this procedure. You can get your storage account name and primary key from the [Azure Management Portal](https://manage.windowsazure.cn/). If you don’t want to specify your storage account settings manually, choose the **OK** button to close the dialog box.
+1. In the **Account name** list, choose your storage account name. Azure Tools obtains storage account credentials automatically by using the .publishsettings file. To specify your storage account credentials manually, choose the **Manually entered credentials** option, and then continue with this procedure. You can get your storage account name and primary key from the [Azure Management Portal](https://manage.windowsazure.cn/). If you don't want to specify your storage account settings manually, choose the **OK** button to close the dialog box.
 
 1. Choose the **Enter storage account** credentials link.
 

@@ -6,10 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="" />
-<tags
-	ms.service="event-hubs"
-	ms.date="10/07/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="event-hubs"
+   ms.date="10/07/2015"
+   wacn.date="" />
 
 # Event Hubs authentication and security model overview
 
@@ -147,5 +147,5 @@ To learn more about Event Hubs, visit the following topics:
 
 [Event Hubs overview]: /documentation/articles/event-hubs-overview
 [sample application that uses Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
-[queued messaging solution]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
+[queued messaging solution]: /documentation/articles/service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues
  

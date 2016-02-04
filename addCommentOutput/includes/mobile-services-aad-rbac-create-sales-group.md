@@ -3,7 +3,7 @@ In this section you add two new users to your directory along with the new Sales
 ### Create the users
 
 
-1. In the [Azure Management Portal] navigate to the directory that you previously configured for authentication when you completed the <!-- keep by customization: begin --> [Get Started with Authentication] <!-- keep by customization: end --> tutorial <!-- deleted by customization to add authentication to your app -->.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn) navigate to the directory that you previously configured for authentication when you completed the tutorial to add authentication to your app.
 2. Click **Users** at the top of the page. Then click the **Add User** button at the bottom. 
 3. Complete the new user dialogs creating to create a user named **Bob**. Note the temporary password for the user. 
 4. Create another user named **Dave**. Note the temporary password for the user.

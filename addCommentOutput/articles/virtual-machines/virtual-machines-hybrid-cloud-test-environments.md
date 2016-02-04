@@ -17,11 +17,11 @@
 
 <!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
 -->
 <!-- keep by customization: begin -->
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating resources with the classic deployment model. 
 <!-- keep by customization: end -->
-
 
 For dev/test or a proof-of-concept, hybrid cloud test environments use your local Internet connection and one of your public IP addresses and step you through setting up a functioning, cross-premises Azure Virtual Network (VNet). When you are finished, you can develop and test applications, experiment with simplified IT workloads, and gauge the performance of a site-to-site virtual private network (VPN) connection relative to your location on the Internet.
 
@@ -39,7 +39,7 @@ The [SharePoint intranet farm in a hybrid cloud test environment](/documentation
 
 ## Web-based line-of-business (LOB) application in a hybrid cloud
 
-The [web-based LOB application in a hybrid cloud test environment](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing) adds a SQL Server 2014 server and an Internet Information Services (IIS) server to the hybrid cloud base configuration. This creates the infrastructure in which you can deploy and test a tiered, web-based LOB application.
+The [web-based LOB application in a hybrid cloud test environment](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing) adds a SQL Server 2014 server and an Internet Information Services (IIS) server to the hybrid cloud base configuration. This creates the infrastructure <!-- deleted by customization in --><!-- keep by customization: begin --> into <!-- keep by customization: end --> which you can deploy and test a tiered, web-based LOB application.
 
 ## Office 365 Directory Synchronization (DirSync) server in a hybrid cloud
 
@@ -56,6 +56,6 @@ For organizations and individuals for which a direct Internet connection and pub
 
 [Azure Infrastructure Services Workload: High-availability line of business application](/documentation/articles/virtual-machines-workload-high-availability-LOB-application)
 
-[Deploy Office 365 Directory Synchronization (DirSync) in Windows Azure](https://technet.microsoft.com/zh-cn/library/dn635310.aspx)
+[Deploy Office 365 Directory Synchronization (DirSync) in Windows <!-- deleted by customization Azure](https://technet.microsoft.com/zh-cn/library/dn635310.aspx) --><!-- keep by customization: begin --> Azure](https://technet.microsoft.com/zh-CN/library/dn635310.aspx) <!-- keep by customization: end -->
 
 [Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)

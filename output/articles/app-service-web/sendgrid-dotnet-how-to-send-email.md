@@ -19,7 +19,6 @@
 # How to Send Email Using SendGrid with Azure
 
 
-<a name="overview"></a>
 ## Overview
 
 This guide demonstrates how to perform common programming tasks with the
@@ -29,7 +28,6 @@ email**, **sending email**, **adding attachments**, and **using
 filters**. For more information on SendGrid and sending email, see the
 [Next steps][] section.
 
-<a name="whatis"></a>
 ## What is the SendGrid email service?
 
 SendGrid is a [cloud-based email service] that provides reliable
@@ -48,12 +46,10 @@ include:
 
 For more information, see [https://sendgrid.com](https://sendgrid.com) or our [C# library][sendgrid-csharp]
 
-<a name="createaccount"></a>
 ## Create a SendGrid account
 
 [AZURE.INCLUDE [sendgrid-sign-up](../includes/sendgrid-sign-up.md)]
 
-<a name="reference"></a>
 ## Reference the SendGrid .NET class library
 
 The [SendGrid NuGet package](https://www.nuget.org/packages/Sendgrid) is the easiest way to get the SendGrid API
@@ -102,7 +98,6 @@ the SendGrid APIs.
     using System.Net.Mail;
     using SendGrid;
 
-<a name="createemail"></a>
 ## How to: Create an email
 
 Use the **SendGridMessage** object to create an email
@@ -139,7 +134,6 @@ object:
 For more information on all properties and methods supported by the
 **SendGrid** type, see [sendgrid-csharp][] on GitHub.
 
-<a name="sendemail"></a>
 ## How to: Send an email
 
 After creating an email message, you can send it using
@@ -227,7 +221,6 @@ You can also add attachments from the data's **Stream**. It can be done by calli
     }
 
 
-<a name="usefilters"></a>
 ## How to: Use apps to enable footers, tracking, and analytics
 
 SendGrid provides additional email functionality through the use of
@@ -268,14 +261,12 @@ filters:
     // should also be overwritten for link tracking purposes. 
     myMessage.EnableClickTracking(true);
 
-<a name="useservices"></a>
 ## How to: Use additional SendGrid services
 
 SendGrid offers web-based APIs and webhooks that you can use to leverage additional
 SendGrid functionality from your Azure application. For full
 details, see the [SendGrid API documentation][].
 
-<a name="nextsteps"></a>
 ## Next steps
 
 Now that you've learned the basics of the SendGrid Email service, follow

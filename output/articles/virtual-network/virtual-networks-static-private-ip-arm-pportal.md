@@ -1,18 +1,16 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
    pageTitle="How to set a static private IP in ARM mode using the Preview Portal| Windows Azure"
    description="Understanding private IPs (DIPs) and how to manage them in ARM mode using the preview portal"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn"
    tags="azure-resource-manager"
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/08/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # How to set a static private IP address in the preview portal

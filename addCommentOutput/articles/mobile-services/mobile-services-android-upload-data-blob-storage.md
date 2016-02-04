@@ -14,6 +14,9 @@
 
 # Upload images to Azure Storage from an Android  device
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
 This topic shows how to enable your Android Azure Mobile Services app to upload images to Azure Storage.
@@ -46,7 +49,7 @@ It's not safe to store the credentials needed to upload data to the Azure Storag
 ## Code Sample
 [Here](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages) is the completed client source code part of this app. To run it you must complete the Mobile Services backend parts of this tutorial.
 
-## Update the registered insert script in the Management Portal
+## Update the registered insert script in the Azure Management Portal
 
 [AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 
@@ -121,13 +124,12 @@ It's not safe to store the credentials needed to upload data to the Azure Storag
 	        return image;
 	    }
 
-5. Add this code to start the Android camera app. You can then take pictures, and when one looks OK, press **Save**, which will store it in the file you just created.
+<!-- deleted by customization 5 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->. Add this code to start the Android camera app. You can then take pictures, and when one looks OK, press **Save**, which will store it in the file you just created.
 
 		// Run an Intent to start up the Android camera
 	    static final int REQUEST_TAKE_PHOTO = 1;
 	    public Uri mPhotoFileUri = null;
 	    public File mPhotoFile = null;
-
 	    public void takePicture(View view) {
 	        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 	        // Ensure that there's a camera activity to handle the intent
@@ -158,14 +160,12 @@ It's not safe to store the credentials needed to upload data to the Azure Storag
 	     */
 	    @com.google.gson.annotations.SerializedName("imageUri")
 	    private String mImageUri;
-
 	    /**
 	     * Returns the item ImageUri
 	     */
 	    public String getImageUri() {
 	        return mImageUri;
 	    }
-
 	    /**
 	     * Sets the item ImageUri
 	     *
@@ -175,20 +175,17 @@ It's not safe to store the credentials needed to upload data to the Azure Storag
 	    public final void setImageUri(String ImageUri) {
 	        mImageUri = ImageUri;
 	    }
-
 	    /**
 	     * ContainerName - like a directory, holds blobs
 	     */
 	    @com.google.gson.annotations.SerializedName("containerName")
 	    private String mContainerName;
-
 	    /**
 	     * Returns the item ContainerName
 	     */
 	    public String getContainerName() {
 	        return mContainerName;
 	    }
-
 	    /**
 	     * Sets the item ContainerName
 	     *
@@ -198,20 +195,17 @@ It's not safe to store the credentials needed to upload data to the Azure Storag
 	    public final void setContainerName(String ContainerName) {
 	        mContainerName = ContainerName;
 	    }
-
 	    /**
 	     *  ResourceName
 	     */
 	    @com.google.gson.annotations.SerializedName("resourceName")
 	    private String mResourceName;
-
 	    /**
 	     * Returns the item ResourceName
 	     */
 	    public String getResourceName() {
 	        return mResourceName;
 	    }
-
 	    /**
 	     * Sets the item ResourceName
 	     *
@@ -221,20 +215,17 @@ It's not safe to store the credentials needed to upload data to the Azure Storag
 	    public final void setResourceName(String ResourceName) {
 	        mResourceName = ResourceName;
 	    }
-
 	    /**
 	     *  SasQueryString - permission to write to storage
 	     */
 	    @com.google.gson.annotations.SerializedName("sasQueryString")
 	    private String mSasQueryString;
-
 	    /**
 	     * Returns the item SasQueryString
 	     */
 	    public String getSasQueryString() {
 	        return mSasQueryString;
 	    }
-
 	    /**
 	     * Sets the item SasQueryString
 	     *
@@ -294,19 +285,15 @@ It's not safe to store the credentials needed to upload data to the Azure Storag
 	        if (mClient == null) {
 	            return;
 	        }
-
 	        // Create a new item
 	        final ToDoItem item = new ToDoItem();
-
 	        item.setText(mTextNewToDo.getText().toString());
 	        item.setComplete(false);
 	        item.setContainerName("todoitemimages");
-
 	        // Use a unigue GUID to avoid collisions.
 	        UUID uuid = UUID.randomUUID();
 	        String uuidInString = uuid.toString();
 	        item.setResourceName(uuidInString);
-
 	        // Send the item to be inserted. When blob properties are set this
 	        // generates an SAS in the response.
 	        AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>(){
@@ -314,23 +301,18 @@ It's not safe to store the credentials needed to upload data to the Azure Storag
 	            protected Void doInBackground(Void... params) {
 	                try {
 		                    final ToDoItem entity = addItemInTable(item);
-
 		                    // If we have a returned SAS, then upload the blob.
 		                    if (entity.getSasQueryString() != null) {
-
 	                       // Get the URI generated that contains the SAS
 	                        // and extract the storage credentials.
 	                        StorageCredentials cred =
 								new StorageCredentialsSharedAccessSignature(entity.getSasQueryString());
 	                        URI imageUri = new URI(entity.getImageUri());
-
 	                        // Upload the new image as a BLOB from a stream.
 	                        CloudBlockBlob blobFromSASCredential =
 	                                new CloudBlockBlob(imageUri, cred);
-
 	                        blobFromSASCredential.uploadFromFile(mPhotoFileUri.getPath());
   	                    }
-
 	                    runOnUiThread(new Runnable() {
 	                        @Override
 	                        public void run() {
@@ -345,12 +327,9 @@ It's not safe to store the credentials needed to upload data to the Azure Storag
 	                return null;
 	            }
 	        };
-
 	        runAsyncTask(task);
-
 	        mTextNewToDo.setText("");
 	    }
-
 
 This code sends a request to the mobile service to insert a new TodoItem. The response contains the SAS, which is then used to upload the image from local storage to a blob in Azure storage.
 
@@ -365,7 +344,7 @@ This code sends a request to the mobile service to insert a new TodoItem. The re
 
 4. Press **Upload**. Note how the ToDoItem has been added to the list, as usual.
 
-5. In the Windows Azure Management Portal, go to your storage account and press the **Containers** tab, and press the name of your container in the list.
+5. In the Azure Management Portal, go to your storage account and press the **Containers** tab, and press the name of your container in the list.
 
 6. A list of your uploaded blob files will appear. Select one and press **Download**.
 
@@ -377,7 +356,6 @@ This code sends a request to the mobile service to insert a new TodoItem. The re
 Now that you have been able to securely upload images by integrating your mobile service with the Blob service, check out some of the other backend service and integration topics:
 
 + [Send email from Mobile Services with SendGrid]
-
   Learn how to add email functionality to your Mobile Service using the SendGrid email service. This topic demonstrates how to add server side scripts to send email using SendGrid.
 
 + [Schedule backend jobs in Mobile Services]
@@ -387,12 +365,9 @@ Now that you have been able to securely upload images by integrating your mobile
 + [Mobile Services server script reference]
 
   Reference topics for using server scripts to perform server-side tasks and integration with other Azure components and external resources.
-
 + [Mobile Services .NET How-to Conceptual Reference]
 
   Learn more about how to use Mobile Services with .NET
-
-
 <!-- Anchors. -->
 [Install the Storage Client library]: #install-storage-client
 [Update the client app to capture images]: #add-select-images
@@ -406,14 +381,20 @@ Now that you have been able to securely upload images by integrating your mobile
 
 
 <!-- URLs. -->
-[Send email from Mobile Services with SendGrid]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts
-[Schedule backend jobs in Mobile Services]: /documentation/articles/mobile-services-schedule-recurring-tasks
+[Send email from Mobile Services with SendGrid]: <!-- deleted by customization store-sendgrid-mobile-services-send-email-scripts.md --><!-- keep by customization: begin --> /documentation/articles/store-sendgrid-mobile-services-send-email-scripts <!-- keep by customization: end -->
+[Schedule backend jobs in Mobile Services]: <!-- deleted by customization mobile-services-schedule-recurring-tasks.md --><!-- keep by customization: begin --> /documentation/articles/mobile-services-schedule-recurring-tasks <!-- keep by customization: end -->
 [Send push notifications to Windows Store apps using Service Bus from a .NET back-end]: http://go.microsoft.com/fwlink/?LinkId=277073&clcid=0x409
+<!-- deleted by customization
+[Mobile Services server script reference]: mobile-services-how-to-use-server-scripts.md
+[Get started with Mobile Services]: mobile-services-javascript-backend-windows-store-dotnet-get-started.md
+
+-->
+<!-- keep by customization: begin -->
 [Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
-
+<!-- keep by customization: end -->
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
+[How To Create a Storage Account]: <!-- deleted by customization ../storage-create-storage-account.md --><!-- keep by customization: begin --> /documentation/articles/storage-create-storage-account <!-- keep by customization: end -->
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866
-[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[Mobile Services .NET How-to Conceptual Reference]: <!-- deleted by customization mobile-services-windows-dotnet-how-to-use-client-library.md --><!-- keep by customization: begin --> /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library <!-- keep by customization: end -->
 [App settings]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

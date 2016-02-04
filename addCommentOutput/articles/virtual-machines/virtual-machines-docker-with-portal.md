@@ -53,7 +53,7 @@ At the command line, use **`base64`** or another favorite encoding tool to creat
 
 ## Add the Docker VM Extension
 To add the Docker VM Extension, locate the VM instance you created and scroll down to **Extensions** and click it to bring up VM Extensions, as shown below.
-> [AZURE.NOTE] This functionality is supported in the preview portal only: https://manage.windowsazure.cn/
+> [AZURE.NOTE] This functionality is supported in the preview portal only: <!-- deleted by customization https://manage.windowsazure.cn/ --><!-- keep by customization: begin --> https://manage.windowsazure.cn <!-- keep by customization: end -->
 
 ![](./media/virtual-machines-docker-with-portal/ClickExtensions.png)
 ### Add an Extension
@@ -137,7 +137,8 @@ You are ready to go to the [Docker User Guide] and use your Docker VM. If you wa
 
 <!--Link references-->
 [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]: /documentation/articles/virtual-machines-docker-with-xplat-cli/
-[Azure Linux Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide
-[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
+[Azure Linux Agent]: virtual-machines-linux-agent-user-guide.md
+[Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
+
 [Running Docker with https]: http://docs.docker.com/articles/https/
 [Docker User Guide]: https://docs.docker.com/userguide/

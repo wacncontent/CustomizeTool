@@ -1,24 +1,25 @@
 <properties 
-	pageTitle="Learn how to secure access to data in DocumentDB | Microsoft Azure" 
+	pageTitle="Learn how to secure access to data in DocumentDB | Windows Azure" 
 	description="Learn about access control concepts in DocumentDB, including master keys, read-only keys, users, and permissions." 
 	services="documentdb" 
-	authors="stephbaron" 
+	authors="ryancrawcour" 
 	manager="jhubbard" 
 	editor="monicar" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="stbaro"/>
+<tags
+	ms.service="documentdb"
+	ms.date="10/16/2015"
+	wacn.date=""/>
 
 # Securing access to DocumentDB data #
 
+<!-- deleted by customization
+This article provides an overview of securing access to data stored in [Windows Azure DocumentDB](/home/features/documentdb/). 
+-->
+<!-- keep by customization: begin -->
 This article provides an overview of securing access to data stored in [Microsoft Azure DocumentDB](../../services/documentdb/). 
+<!-- keep by customization: end -->
 
 After reading this overview, you'll be able to answer the following questions:  
 
@@ -160,6 +161,5 @@ In order to easily obtain all permission resources associated with a particular 
 ##<a name="NextSteps"></a>Next steps
 
 - To learn more about DocumentDB, click [here](http://azure.com/docdb).
-- To learn about managing master and read-only keys, click [here](documentdb-manage-account.md).
-- To learn how to construct DocumentDB authorization tokens, click [here](https://msdn.microsoft.com/library/azure/dn783368.aspx)
- 
+- To learn about managing master and read-only keys, click <!-- deleted by customization [here](/documentation/articles/documentdb-manage-account) --><!-- keep by customization: begin --> [here](documentdb-manage-account.md) <!-- keep by customization: end -->.
+- To learn how to construct DocumentDB authorization tokens, click <!-- deleted by customization [here](https://msdn.microsoft.com/zh-cn/library/azure/dn783368.aspx) --><!-- keep by customization: begin --> [here](https://msdn.microsoft.com/library/azure/dn783368.aspx) <!-- keep by customization: end -->

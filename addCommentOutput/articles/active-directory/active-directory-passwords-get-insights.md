@@ -1,19 +1,19 @@
-<properties
-	pageTitle="Get Insights: Azure AD Password Management Reports | Windows Azure"
-	description="This article describes how to use reports to get insight into Password Management operations in your organization."
-	services="active-directory"
-	documentationCenter=""
-	authors="asteen"
-	manager="kbrint"
+<properties 
+	pageTitle="Get Insights: Azure AD Password Management Reports | Windows Azure" 
+	description="This article describes how to use reports to get insight into Password Management operations in your organization." 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="asteen" 
+	manager="kbrint" 
 	editor="billmath"/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/18/2015"
+	ms.date="11/16/2015"
 	wacn.date=""/>
 
 # How to get operational insights with Password Management reports
-This section describes how you can use Azure Active Directory’s Password Management reports to view how users are using password reset and change in your organization.
+This section describes how you can use Azure Active Directory's Password Management reports to view how users are using password reset and change in your organization.
 
 - [**Password Management reports overview**](#overview-of-password-management-reports)
 - [**How to view Password Management reports**](#how-to-view-password-management-reports)
@@ -44,6 +44,16 @@ To find the Password Management reports, follow the steps below:
 
     ![][001]
 
+## How to access Password Management Reports from an API
+As of August 2015, the Azure AD Reports and Events now supports retrieving all of the information included in the Password Reset and Password Reset Registration reports.
+
+To access this data, you'll need to write a small app or script to retrieve it from our servers. [Learn how to get started with the Azure AD Reporting API](/documentation/articles/active-directory-reporting-api-getting-started).
+
+Once you have a working script, you'll next want to examine the password reset and registration events that you can retrieve to meet your scenarios.
+
+- [SsprActivityEvent](https://msdn.microsoft.com/zh-cn/library/azure/mt126081.aspx#BKMK_SsprActivityEvent): Lists the columns available for password reset events
+- [SsprRegistrationActivityEvent](https://msdn.microsoft.com/zh-cn/library/azure/mt126081.aspx#BKMK_SsprRegistrationActivityEvent): Lists the columns available for password reset registration events
+
 ## View password Reset registration activity
 
 The password reset registration activity report shows all password reset registrations that have occurred in your organization.  A password reset registration is displayed in this report for any user who has successfully registered authentication information at the password reset registration portal ([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)).
@@ -57,17 +67,17 @@ The password reset registration activity report shows all password reset registr
 ### Description of report columns
 The following list explains each of the report columns in detail:
 
-- **User** – the user who attempted a password reset registration operation.
-- **Role** – the role of the user in the directory.
-- **Date and Time** – the date and time of the attempt.
-- **Data Registered** – what authentication data the user provided during password reset registration.
+- **User** - the user who attempted a password reset registration operation.
+- **Role** - the role of the user in the directory.
+- **Date and Time** - the date and time of the attempt.
+- **Data Registered** - what authentication data the user provided during password reset registration.
 
 ### Description of report values
 The following table describes the different values allowed for each column:
 
 Column|Allowed values and their meanings
 ---|---
-Data Registered| **Alternate Email** – user used alternate email or authentication email to authenticate<p><p>**Office Phone**– user used office phone to authenticate<p>**Mobile Phone** - user used mobile phone or authentication phone to authenticate<p>**Security Questions** – user used security questions to authenticate<p>**Any combination of the above (e.g. Alternate Email + Mobile Phone)** – occurs when a 2 gate policy is specified and shows which two methods the user used to authentication his password reset request.
+Data Registered| **Alternate Email** - user used alternate email or authentication email to authenticate<p><p>**Office Phone**- user used office phone to authenticate<p>**Mobile Phone** - user used mobile phone or authentication phone to authenticate<p>**Security Questions** - user used security questions to authenticate<p>**Any combination of the above (e.g. Alternate Email + Mobile Phone)** - occurs when a 2 gate policy is specified and shows which two methods the user used to authentication his password reset request.
 
 ## View password reset activity
 
@@ -82,21 +92,20 @@ This report shows all password reset attempts that have occurred in your organiz
 ### Description of report columns
 The following list explains each of the report columns in detail:
 
-1. **User** – the user who attempted a password reset operation (based on the User ID field provided when the user comes to reset a password).
-2. **Role** – the role of the user in the directory.
-3. **Date and Time** – the date and time of the attempt.
-4. **Method(s) Used** – what authentication methods the user used for this reset operation.
-5. **Result** – the end result of the password reset operation.
-6. **Details** – the details of why the password reset resulted in the value it did.  Also includes any mitigation steps you might take to resolve an unexpected error.
+1. **User** - the user who attempted a password reset operation (based on the User ID field provided when the user comes to reset a password).
+2. **Role** - the role of the user in the directory.
+3. **Date and Time** - the date and time of the attempt.
+4. **Method(s) Used** - what authentication methods the user used for this reset operation.
+5. **Result** - the end result of the password reset operation.
+6. **Details** - the details of why the password reset resulted in the value it did.  Also includes any mitigation steps you might take to resolve an unexpected error.
 
 ### Description of report values
 The following table describes the different values allowed for each column:
 
-
 Column|Allowed values and their meanings
 ---|---
-Methods Used|**Alternate Email** – user used alternate email or authentication email to authenticate<p>**Office Phone** – user used office phone to authenticate<p>**Mobile Phone** – user used mobile phone or authentication phone to authenticate<p>**Security Questions** – user used security questions to authenticate<p>**Any combination of the above (e.g. Alternate Email + Mobile Phone)** – occurs when a 2 gate policy is specified and shows which two methods the user used to authentication his password reset request.
-Result|**Abandoned** – user started password reset but then stopped halfway through without completing<p>**Blocked** – user’s account was prevented to use password reset due to attempting to use the password reset page or a single password reset gate too many times in a 24 hour period<p>**Cancelled** – user started password reset but then clicked the cancel button to cancel the session part way through <p>**Contacted Admin** – user had a problem during his session that he could not resolve, so the user clicked the “Contact your administrator” link instead of finishing the password reset flow<p>**Failed** – user was not able to reset a password, likely because the user was not configured to use the feature (e.g. no license, missing authentication info, password managed on-prem but writeback is off).<p>**Succeeded** – password reset was successful.
+Methods Used|**Alternate Email** - user used alternate email or authentication email to authenticate<p>**Office Phone** - user used office phone to authenticate<p>**Mobile Phone** - user used mobile phone or authentication phone to authenticate<p>**Security Questions** - user used security questions to authenticate<p>**Any combination of the above (e.g. Alternate Email + Mobile Phone)** - occurs when a 2 gate policy is specified and shows which two methods the user used to authentication his password reset request.
+Result|**Abandoned** - user started password reset but then stopped halfway through without completing<p>**Blocked** - user's account was prevented to use password reset due to attempting to use the password reset page or a single password reset gate too many times in a 24 hour period<p>**Cancelled** - user started password reset but then clicked the cancel button to cancel the session part way through <p>**Contacted Admin** - user had a problem during his session that he could not resolve, so the user clicked the “Contact your administrator” link instead of finishing the password reset flow<p>**Failed** - user was not able to reset a password, likely because the user was not configured to use the feature (e.g. no license, missing authentication info, password managed on-prem but writeback is off).<p>**Succeeded** - password reset was successful.
 Details|See table below
 
 ### Allowed values for details column
@@ -140,21 +149,20 @@ This user is not a member of the password reset users group. Add this user to th
 Password reset has been disabled entirely for this tenant. See [here](/documentation/articles/active-directory-passwords-getting-started/#enable-users-to-reset-their-azure-ad-passwords) to resolve this. | Failed
 User successfully reset password|Succeeded
 
-**Additional Resources**
+## Links to password reset documentation
+Below are links to all of the Azure AD Password Reset documentation pages: 
 
-
-* [What is Password Management](/documentation/articles/active-directory-passwords)
-* [How Password Management works](/documentation/articles/active-directory-passwords-how-it-works)
-* [Getting started with Password Mangement](/documentation/articles/active-directory-passwords-getting-started)
-* [Customize Password Management](/documentation/articles/active-directory-passwords-customize)
-* [Password Management Best Practices](/documentation/articles/active-directory-passwords-best-practices)
-* [Password Management FAQ](/documentation/articles/active-directory-passwords-faq)
-* [Troubleshoot Password Management](/documentation/articles/active-directory-passwords-troubleshoot)
-* [Learn More](/documentation/articles/active-directory-passwords-learn-more)
-* [Password Management on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)
+* [**Reset your own password**](/documentation/articles/active-directory-passwords-update-your-own-password) - learn about how to reset or change your own password as a user of the system
+* [**How it works**](/documentation/articles/active-directory-passwords-how-it-works) - learn about the six different components of the service and what each does
+* [**Getting started**](/documentation/articles/active-directory-passwords-getting-started) - learn how to allow you users to reset and change their cloud or on-premises passwords
+* [**Customize**](/documentation/articles/active-directory-passwords-customize) - learn how to customize the look & feel and behavior of the service to your organization's needs
+* [**Best practices**](/documentation/articles/active-directory-passwords-best-practices) - learn how to quickly deploy and effectively manage passwords in your organization
+* [**FAQ**](/documentation/articles/active-directory-passwords-faq) - get answers to frequently asked questions
+* [**Troubleshooting**](/documentation/articles/active-directory-passwords-troubleshoot) - learn how to quickly troubleshoot problems with the service
+* [**Learn more**](/documentation/articles/active-directory-passwords-learn-more) - go deep into the technical details of how the service works
 
 
 
 [001]: ./media/active-directory-passwords-get-insights/001.jpg "Image_001.jpg"
 [002]: ./media/active-directory-passwords-get-insights/002.jpg "Image_002.jpg"
-[003]: ./media/active-directory-passwords-get-insights/003.jpg "Image_003.jpg"
+[003]: ./media/active-directory-passwords-get-insights/003.jpg "Image_003.jpg"

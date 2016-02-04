@@ -11,6 +11,7 @@
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with ServiceNow
+>[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=521880).
   
 The objective of this tutorial is to show the integration of Azure and ServiceNow.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -90,6 +91,10 @@ As part of this procedure, you are required to upload a base-64 encoded certific
     ![Configure app URL](./media/active-directory-saas-servicenow-tutorial/IC7694971.png "Configure app URL")
 
 
+
+3.  On the **Configure App URL** page, in the **ServiceNow Sign In URL** textbox, type your URL using the following pattern "*https://<InstanceName>.servicenow.com*", and then click **Next**.
+
+    ![Configure app URL](./media/active-directory-saas-servicenow-tutorial/IC769497.png "Configure app URL")
 
 4.  On the **Configure single sign-on at ServiceNow** page, click **Download certificate**, save the certificate file locally on your computer, and then click **Next**.
 
@@ -211,6 +216,83 @@ As part of this procedure, you are required to upload a base-64 encoded certific
 7. On the **Single sign-on confirmation** page, click **Complete**.
  
     ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC7694991.png "Configure single sign-on")
+5.  In your ServiceNow tenant, on the navigation bar at the left side, click **Properties** to open the **SAML 2.0 Single Sign on properties** page.
+
+
+6. On the **SAML 2.0 Single Sign-on properties** page, perform the following steps:
+
+     6.1. As **Enable external authentication**, select **Yes**.
+
+
+     6.2. In **The Identity Provider URL which will issue the SAML2 security token with user info** textbox, type **https://sts.chinacloudapi.cn/<your tenant’s GUID>/**.
+
+
+     6.3. In **The base URL to the Identity Provider’s AuthnRequest service** textbox, type **https://login.chinacloudapi.cn/<your tenant’s GUID>/saml2**.
+
+
+     6.4. In **The base URL to the Identity Provider’s SingleLogoutRequest service** textbox, type **https://login.chinacloudapi.cn/<your tenant’s GUID>/saml2**.
+
+
+     6.5. In **The protocol binding for the Identity Provider’s SingleLogoutRequest service** textbox, type **urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect**.
+
+     6.6. As **Sign LogoutRequest**, select **Yes**.
+
+     6.7. In the **When SAML 2.0 single sign-on fails because the session is not authenticated, or this is the first login, redirect to this URL** textbox, type **https://login.chinacloudapi.cn/<your tenant’s GUID>/saml2**.
+
+  
+
+7. In the **Service Provider (Service-Now) properties **section, perform the following steps:
+
+     7.1. In **The URL to Service-now instance homepage** textbox, type the URL to your ServiceNow instance homepage. The URL of the ServiceNow instance homepage is a concatenation of your **ServiceNow tenant URL** and **/navpage.do**: **https://<InstanceName>.service-now.com/navpage.do** <br><br>   ![Service-now instance homepage](./media/active-directory-saas-servicenow-tutorial/IC700342.png "Service-now instance homepage")
+
+
+     7.2. In **The entity identification, or the issuer** textbox, type the URL of your tenant.
+
+     7.3. In **The audience uri that accepts SAML2 token** textbox, type the URL of your tenant.
+
+     7.4. In **The User table field to match with the Subject’s NameID element in the SAMLResponse** textbox, type **email**.
+
+     7.5. In **The NameID policy to use for returning the Subject’s NameID in the SAMLResponse** textbox, type **urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified**.
+
+     7.6 Leave **Create an AuthnContextClass request in the AuthnRequest statement** unchecked.
+
+     7.7 In **The AuthnContextClassRef method that will be included in our SAML 2.0 AuthnRequest to the Identity Provider** textbox, type **http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password**.
+
+
+
+8. In the **Advanced settings** section perform the following steps:
+
+     8.1. In **The number in seconds before “notBefore” constraint, or after “notOnOrAfter” constraint to consider still valid** textbox, type **60**.
+
+
+9. To save the configuration, click **Save**.
+
+10. On the navigation bar at the left side, click **Certificate** to open the **Certificate** page.
+
+
+
+11. To upload your certificate, on the certificate page, perform the following steps:
+
+     11.1. Click **New**.
+
+     11.2. In the **Name** textbox, type **SAML 2.0**.
+
+     11.3. Select **Active**.
+
+    11.4. As **Format**, select **PEM**.
+
+     11.5. Create a Base-64 encoded file from your downloaded certificate.  > [AZURE.NOTE] For more details, see [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o).
+
+     11.6. In **Notepad**, open your Base-64 encoded file, and then copy the content of this file into the clipboard.
+
+     11.7. Paste the content of your clipboard into the **PEM Certificate** textbox.
+
+     11.8. Click **Submit**.
+
+    
+
+12. On the Azure AD portal, select the single sign-on configuration confirmation, and then click Complete to close the Configure Single Sign On dialog. <br><br> ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC749326.png "Configure single sign-on")
+
 
 
 

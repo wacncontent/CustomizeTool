@@ -1,25 +1,21 @@
 <properties 
-   pageTitle="StorSimple Snapshot Manager backup policies | Microsoft Azure"
+   pageTitle="StorSimple Snapshot Manager backup policies | Windows Azure"
    description="Describes how to use the StorSimple Snapshot Manager MMC snap-in to create and manage the backup policies that control scheduled backups."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/15/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 # Use StorSimple Snapshot Manager to create and manage backup policies
 
 ## Overview
 
-A backup policy creates a schedule for backing up volume data locally or in the cloud. When you create a backup policy, you can also specify a retention policy. (You can retain a maximum of 64 snapshots.) For more information about backup policies, see [Backup types and backup policies](storsimple-what-is-snapshot-manager.md#backup-types-and-backup-policies).
+A backup policy creates a schedule for backing up volume data locally or in the cloud. When you create a backup policy, you can also specify a retention policy. (You can retain a maximum of 64 snapshots.) For more information about backup policies, see [Backup types and backup <!-- deleted by customization policies](/documentation/articles/storsimple-what-is-snapshot-manager#backup-types-and-backup-policies) --><!-- keep by customization: begin --> policies](storsimple-what-is-snapshot-manager.md#backup-types-and-backup-policies) <!-- keep by customization: end -->.
 
 This tutorial explains how to:
 
@@ -71,17 +67,17 @@ Use the following procedure to create a new backup policy.
 
 After you create a backup policy, the following information appears in the **Results** pane:
 
-- **Name** – the name of backup policy.
+- **Name** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the name of backup policy.
 
-- **Type** – local snapshot or cloud snapshot.
+- **Type** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> local snapshot or cloud snapshot.
 
-- **Volume Group** – the volume group associated with the policy.
+- **Volume Group** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the volume group associated with the policy.
 
-- **Retention** – the number of snapshots retained; the maximum is 64.
+- **Retention** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the number of snapshots retained; the maximum is 64.
 
-- **Created** – the date that this policy was created.
+- **Created** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the date that this policy was created.
 
-- **Enabled** – whether the policy is currently in effect: **True** indicates that it is in effect; **False** indicates that it is not in effect. 
+- **Enabled** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> whether the policy is currently in effect: **True** indicates that it is in effect; **False** indicates that it is not in effect.
 
 ## Edit a backup policy
 
@@ -117,5 +113,5 @@ e
 
 ## Next steps
 
-- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple solution](storsimple-snapshot-manager-admin.md).
-- Learn how to [use StorSimple Snapshot Manager to view and manage backup jobs](storsimple-snapshot-manager-manage-backup-jobs.md).
+- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple <!-- deleted by customization solution](/documentation/articles/storsimple-snapshot-manager-admin) --><!-- keep by customization: begin --> solution](storsimple-snapshot-manager-admin.md) <!-- keep by customization: end -->.
+- Learn how to [use StorSimple Snapshot Manager to view and manage backup <!-- deleted by customization jobs](/documentation/articles/storsimple-snapshot-manager-manage-backup-jobs) --><!-- keep by customization: begin --> jobs](storsimple-snapshot-manager-manage-backup-jobs.md) <!-- keep by customization: end -->.

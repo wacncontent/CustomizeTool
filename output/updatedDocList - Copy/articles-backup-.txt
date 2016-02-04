@@ -1,0 +1,12 @@
+updated docs: 4
+articles/backup/backup-azure-microsoft-azure-backup.md
+articles/backup/backup-azure-vms-automation.md
+articles/backup/backup-azure-vms-troubleshoot.md
+articles/backup/backup-introduction-to-azure-backup.md
+
+updated includes: 5
+includes/backup-create-vault-wgif.md
+includes/backup-create-vault.md
+includes/backup-install-agent.md
+includes/storsimple-create-custom-backup-policy.md
+includes/storsimple-delete-backup-policy.md

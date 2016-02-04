@@ -2,15 +2,6 @@ deletion:
 
 deleted:
 
-		For more information, see the following resources:
-		
-		* [Continuous delivery to Azure using Visual Studio Online and TFVC](/documentation/articles/cloud-services-continuous-delivery-use-vso). Step-by-step tutorial that shows how to set up continuous delivery from Visual Studio Online to a web app, using TFVC. TFVC is the centralized source control option, as opposed to Git, which is the distributed source control option.
-		* [Continuous delivery to Azure using Visual Studio Online and Git](/documentation/articles/cloud-services-continuous-delivery-use-vso-git). Similar to the previous tutorial but uses Git instead of TFVC.
-
-reason: ()
-
-deleted:
-
 		##<a name="dropbox"></a>Dropbox
 		
 		[Dropbox](https://www.dropbox.com/) is not a source control system, but if you store your source code in Dropbox you can automate deployment from your Dropbox account.

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Modeling data in Azure DocumentDB | Microsoft Azure" 
+	pageTitle="Modeling data in Azure DocumentDB | Windows Azure" 
 	description="Learn how to model data for a NoSQL document database like Azure DocumentDB." 
 	services="documentdb" 
 	authors="ryancrawcour" 
@@ -7,14 +7,10 @@
 	editor="mimig1" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="ryancraw"/>
+<tags
+	ms.service="documentdb"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 #Modeling data in DocumentDB#
 While schema-free databases, like DocumentDB, make it super easy to embrace changes to your data model you should still spend some time thinking about your data. 
@@ -389,7 +385,7 @@ To learn more about Azure DocumentDB, refer to the service’s [documentation]( 
 
 To learn about tuning indexes in Azure DocumentDB, refer to the article on [indexing policies](documentdb-indexing-policies.md).
 
-To understand how to shard your data across multiple partitions, refer to [Partitioning Data in DocumentDB](documentdb-partition-data.md). 
+To understand how to shard your data across multiple partitions, refer to [Partitioning Data in DocumentDB](documentdb-partition-data.md).
 
 And finally, for guidance on data modeling and sharding for multi-tenant applications, consult [Scaling a Multi-Tenant Application with Azure DocumentDB](http://blogs.msdn.com/b/documentdb/archive/2014/12/03/scaling-a-multi-tenant-application-with-azure-documentdb.aspx).
  

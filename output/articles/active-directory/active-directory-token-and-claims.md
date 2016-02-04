@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/17/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 # Supported Token and Claim Types
@@ -85,7 +85,7 @@ In a SAML token, the authentication method value appears in the AuthnContextClas
 
 In a JWT token, the authentication method value appears inside the amr claim.
 
-    “amr”: ["pwd"]
+    "amr": ["pwd"]
 
 ###First Name
 
@@ -93,7 +93,7 @@ The First Name or "given name" claim provides the first or "given" name of the u
 
 In a SAML token, the first name (or "given name") appears in a claim in the givenname SAML Attribute element.
 
-    <Attribute Name=” http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname”>
+    <Attribute Name=" http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname">
     <AttributeValue>Frank<AttributeValue>
 
 In a JWT token, the first name appears in the given_name claim.
@@ -111,7 +111,7 @@ In a SAML token, the groups claim appears in the groups attribute.
 
 In a JWT token, the groups claim appears in the groups claim.
 
-    “groups”: ["0e129f5b-6b0a-4944-982d-f776045632af", … ]
+    "groups": ["0e129f5b-6b0a-4944-982d-f776045632af", … ]
 
 ### Identity Provider
 
@@ -119,12 +119,12 @@ The Identity Provider claim records the identity provider that authenticated the
 
 In a SAML token, the identity provider appears in a claim in the identityprovider SAML Attribute element.
 
-    <Attribute Name=” http://schemas.microsoft.com/identity/claims/identityprovider”>
+    <Attribute Name=" http://schemas.microsoft.com/identity/claims/identityprovider">
     <AttributeValue>https://sts.chinacloudapi.cn/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/<AttributeValue>
 
 In a JWT token, the identity provider appears in an idp claim.
 
-    "idp":”https://sts.chinacloudapi.cn/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/”
+    "idp":"https://sts.chinacloudapi.cn/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/"
 
 ### IssuedAt
 
@@ -148,14 +148,14 @@ In a SAML token, the Issuer claim appears in an Issuer element.
 
 In a JWT token, the Issuer appears in an iss claim.
 
-    "iss":”https://sts.chinacloudapi.cn/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/”
+    "iss":"https://sts.chinacloudapi.cn/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/"
 
 ### Last Name
 
 The Last Name claim provides the last name, surname, or family name of the user as defined in the Azure AD user object.
 In a SAML token, The last name appears in a claim in the surname SAML Attribute element.
 
-    <Attribute Name=” http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname”>
+    <Attribute Name=" http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname">
     <AttributeValue>Miller<AttributeValue>
 
 In a JWT token, the last name appears in the family_name claim.
@@ -167,7 +167,7 @@ In a JWT token, the last name appears in the family_name claim.
 The Name claim provides a human readable value that identifies the subject of the token. This value is not guaranteed to be unique within a tenant and is designed to be used only for display purposes.
 In a SAML token, the name appears in the Name attribute.
 
-    <Attribute Name=”http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name”>
+    <Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">
     <AttributeValue>frankm@contoso.com<AttributeValue>
 
 In a JWT claim, the name appears in the unique_name claim.
@@ -196,7 +196,7 @@ In a SAML token, the roles claim appears in the roles attribute.
 
 In a JWT token, the roles claim appears in the roles claim.
 
-    “roles”: ["Admin", … ]
+    "roles": ["Admin", … ]
 
 ### Scope
 
@@ -228,7 +228,7 @@ The Tenant ID is an immutable, non-reusable identifier that identifies the direc
 
 In a SAML token, the tenant ID appears in a claim in the tenantid SAML Attribute element.
 
-    <Attribute Name=”http://schemas.microsoft.com/identity/claims/tenantid”>
+    <Attribute Name="http://schemas.microsoft.com/identity/claims/tenantid">
     <AttributeValue>cbb1a5ac-f33b-45fa-9bf5-f37db0fed422<AttributeValue>
 
 In a JWT token, the tenant ID appears in a tid claim.

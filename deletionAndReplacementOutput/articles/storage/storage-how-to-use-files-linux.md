@@ -8,7 +8,7 @@ replaced by:
 
 		Management
 
-reason: ()
+reason: (preview portal)
 
 deleted:
 
@@ -18,15 +18,5 @@ replaced by:
 
 		Management
 
-reason: ()
-
-deleted:
-
-		available](https://azure.microsoft.com/zh-cn/blog/)
-
-replaced by:
-
-		available](/blog/)
-
-reason: ()
+reason: (preview portal)
 

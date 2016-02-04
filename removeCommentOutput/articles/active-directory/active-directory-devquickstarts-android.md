@@ -20,7 +20,7 @@
 
 If you're developing a desktop application, Azure AD makes it simple and straightforward for you to authenticate your users with their Active Directory accounts.  It also enables your application to securely consume any web API protected by Azure AD, such as the Office 365 APIs or the Azure API.
 
-For Android clients that need to access protected resources, Azure AD provides the Active Directory Authentication Library, or ADAL.  ADAL’s sole purpose in life is to make it easy for your app to get access tokens.  To demonstrate just how easy it is, here we’ll build an Android To-Do List application that:
+For Android clients that need to access protected resources, Azure AD provides the Active Directory Authentication Library, or ADAL.  ADALâs sole purpose in life is to make it easy for your app to get access tokens.  To demonstrate just how easy it is, here weâll build an Android To-Do List application that:
 
 -	Gets access tokens for calling a To-Do List API using the [OAuth 2.0 authentication protocol](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
 -	Gets a user's To-Do List
@@ -52,7 +52,7 @@ Steps to register a Web API with Windows Azure AD
 4. Click the Applications tab.
 5. In the drawer, click Add.
 6. Click "Add an application my organization is developing".
-7. Enter a friendly name for the application, for example "TodoListService", select "Web Application and/or Web API", and click next.
+7. Enter a friendly name for the application, for example "TodoListService", select "web site and/or Web API", and click next.
 8. For the sign-on URL, enter the base URL for the sample, which is by default `https://localhost:8080`.
 9. For the App ID URI, enter `https://<your_tenant_name>/TodoListService`, replacing `<your_tenant_name>` with the name of your Azure AD tenant.  Click OK to complete the registration.
 10. While still in the Azure Management Portal, click the Configure tab of your application.
@@ -60,7 +60,7 @@ Steps to register a Web API with Windows Azure AD
 
 ## Step 3: Register the sample Android Native Client application
 
-Registering your web application is the first step. Next, you'll need to tell Azure Active Directory about your application as well. This allows your application to communicate with the just registered Web API
+Registering your web site is the first step. Next, you'll need to tell Azure Active Directory about your application as well. This allows your application to communicate with the just registered Web API
 
 **What am I doing?**  
 

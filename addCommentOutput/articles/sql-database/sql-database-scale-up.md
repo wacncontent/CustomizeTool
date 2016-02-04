@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="09/10/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 
@@ -18,19 +18,19 @@
 **Single database**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](/documentation/articles/sql-database-scale-up)
+- [Azure Management Portal](/documentation/articles/sql-database-scale-up)
 - [PowerShell](/documentation/articles/sql-database-scale-up-powershell)
 
-This article shows how to change the service tier and performance level of your SQL database with the [Azure preview portal](https://manage.windowsazure.cn). 
+This article shows how to change the service tier and performance level of your SQL database with the [Azure Management Portal](https://manage.windowsazure.cn). 
 
 Use the information in [Upgrade SQL Database Web/Business Databases to New Service Tiers](/documentation/articles/sql-database-upgrade-new-service-tiers) and [Azure SQL Database Service Tiers and Performance Levels](/documentation/articles/sql-database-service-tiers) to determine the appropriate service tier and performance level for your Azure SQL Database.
 
 > [AZURE.IMPORTANT] Changing the service tier and performance level of a SQL database is an online operation. This means your database will remain online and available during the entire operation with no downtime.
 
 - To downgrade a database, the database should be smaller than the maximum allowed size of the target service tier. 
-- When upgrading a database with [Standard Geo-Replication](https://msdn.microsoft.com/zh-cn/library/azure/dn758204.aspx) or [Active Geo-Replication](https://msdn.microsoft.com/zh-cn/library/azure/dn741339.aspx) enabled, you must first upgrade its secondary databases to the desired performance tier before upgrading the primary database.
-- When downgrading from a Premium service tier, you must first terminate all Geo-Replication relationships. You can follow the steps described in the [Terminate a Continuous Copy Relationship](https://msdn.microsoft.com/zh-cn/library/azure/dn741323.aspx) topic to stop the replication process between the primary and the active secondary databases.
-- The restore service offerings are different for the various service tiers. If you are downgrading you may lose the ability to restore to a point in time, or have a lower backup retention period. For more information, see [Azure SQL Database Backup and Restore](https://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx).
+- When upgrading a database with [Standard <!-- deleted by customization Geo-Replication](https://msdn.microsoft.com/zh-cn/library/azure/dn758204.aspx) --><!-- keep by customization: begin --> Geo-Replication](/documentation/articles/sql-database-business-continuity-design) <!-- keep by customization: end --> or [Active <!-- deleted by customization Geo-Replication](https://msdn.microsoft.com/zh-cn/library/azure/dn741339.aspx) --><!-- keep by customization: begin --> Geo-Replication](/documentation/articles/sql-database-geo-replication-overview) <!-- keep by customization: end --> enabled, you must first upgrade its secondary databases to the desired performance tier before upgrading the primary database.
+- When downgrading from a Premium service tier, you must first terminate all Geo-Replication relationships. You can follow the steps described in the [Terminate a Continuous Copy <!-- deleted by customization Relationship](https://msdn.microsoft.com/zh-cn/library/azure/dn741323.aspx) --><!-- keep by customization: begin --> Relationship](/documentation/articles/sql-database-disaster-recovery) <!-- keep by customization: end --> topic to stop the replication process between the primary and the active secondary databases.
+- The restore service offerings are different for the various service tiers. If you are downgrading you may lose the ability to restore to a point in time, or have a lower backup retention period. For more information, see [Azure SQL Database Backup and <!-- deleted by customization Restore](https://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx) --><!-- keep by customization: begin --> Restore](/documentation/articles/sql-database-business-continuity) <!-- keep by customization: end -->.
 - You can make up to four individual database changes (service tier or performance levels) within a 24 hour period.
 - The new properties for the database are not applied until the changes are complete.
 
@@ -46,7 +46,7 @@ Use the information in [Upgrade SQL Database Web/Business Databases to New Servi
 
 Open the SQL Database blade for the database you want to scale up or down:
 
-1.	Go to the [Azure Preview Portal](https://manage.windowsazure.cn).
+1.	Go to the [Azure Management Portal](https://manage.windowsazure.cn).
 2.	Click **BROWSE ALL**.
 3.	Click **SQL databases**.
 2.	Click the database you want to change.
@@ -89,7 +89,7 @@ Open the SQL Database blade for the database you want to scale up or down:
 - [SQL Database documentation](/documentation/services/sql-database/)
 -->
 <!-- keep by customization: begin -->
-- [SQL Database documentation](/documentation/services/sql-databases/)
+- [SQL Database documentation](/documentation/services/sql-databases)
 <!-- keep by customization: end -->
 
 

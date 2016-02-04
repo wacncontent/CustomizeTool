@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="10/07/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # Understanding Resource Manager deployment and classic deployment
@@ -44,28 +44,28 @@ Resources created through Resource Manager share the following characteristics:
 
 - Created through one of the following methods:
 
-  - The [preview portal](https://manage.windowsazure.cn/).
+<!-- deleted by customization
+  - The [Azure Management Portal](https://manage.windowsazure.cn/).
 
-        ![preview portal](./media/resource-manager-deployment-model/preview-portal.png)
+        ![Azure Management Portal](./media/resource-manager-deployment-model/preview-portal.png)
+-->
+<!-- keep by customization: begin -->
+  - The [Azure Management Portal](https://manage.windowsazure.cn).
 
-        For Compute, Storage, and Networking resources, you have the option of using either Resourece Manager or Classic deployment. Select **Resource Manager**.
+        ![Azure Management Portal](./media/resource-manager-deployment-model/preview-portal.png)
+<!-- keep by customization: end -->
+
+        For Compute, Storage, and Networking resources, you have the option of using either Resource Manager or Classic deployment. Select **Resource Manager**.
 
         ![Resource Manager deployment](./media/resource-manager-deployment-model/select-resource-manager.png)
 
-<!-- deleted by customization
-  - For Azure PowerShell versions earlier than 1.0 Preview, commands run in the **AzureResourceManager** mode.
--->
-<!-- keep by customization: begin -->
-  - PowerShell commands run in the **AzureResourceManager** mode.
-<!-- keep by customization: end -->
+  - For Azure PowerShell versions earlier than 1.0, commands run in the **AzureResourceManager** mode.
 
             PS C:\> Switch-AzureMode -Name AzureResourceManager
-<!-- deleted by customization
 
-  - For Azure PowerShell 1.0 Preview, use the Resource Manager version of commands. These commands have the format *verb-AzureRm*, as shown below.
+  - For Azure PowerShell 1.0, use the Resource Manager version of commands. These commands have the format *verb-AzureRm*, as shown below.
 
             PS C:\> Get-AzureRmResourceGroupDeployment
--->
 
   - [Azure Resource Manager REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx) for REST operations.
   - Azure CLI commands run in the **arm** mode.
@@ -74,7 +74,7 @@ Resources created through Resource Manager share the following characteristics:
 
 - The resource type does not include **(classic)** in the name. The image below shows the type as **Storage account**.
 
-    ![web app](./media/resource-manager-deployment-model/resource-manager-type.png)
+    ![web site](./media/resource-manager-deployment-model/resource-manager-type.png)
 
 ## Classic deployment characteristics
 
@@ -82,23 +82,32 @@ Resources created in the classic deployment model share the following characteri
 
 - Created through one of the following methods:
 
+<!-- deleted by customization
+  - [Management Portal](https://manage.windowsazure.cn)
+
+        ![Management Portal](./media/resource-manager-deployment-model/azure-portal.png)
+
+        Or, the portal and you specify **Classic** deployment (for Compute, Storage, and Networking).
+
+        ![Classic deployment](./media/resource-manager-deployment-model/select-classic.png)
+-->
+<!-- keep by customization: begin -->
   - [Azure Management Portal](https://manage.windowsazure.cn)
 
         ![Azure Management Portal](./media/resource-manager-deployment-model/azure-portal.png)
 
-        Or, the preview portal and you specify **Classic** deployment (for Compute, Storage, and Networking).
+        Or, the Azure Management Portal and you specify **Classic** deployment (for Compute, Storage, and Networking).
 
         ![Classic deployment](./media/resource-manager-deployment-model/select-classic.png)
+<!-- keep by customization: end -->
 
-  - <!-- deleted by customization For versions of Azure --> PowerShell <!-- deleted by customization earlier than 1.0 Preview, --> commands run in the **AzureServiceManagement** mode (which is the default mode, so if do not you specifically switch to AzureResourceManager, you are running in AzureServiceManagement mode).
+  - For versions of Azure PowerShell earlier than 1.0, commands run in the **AzureServiceManagement** mode (which is the default mode, so if do not you specifically switch to AzureResourceManager, you are running in AzureServiceManagement mode).
 
             PS C:\> Switch-AzureMode -Name AzureServiceManagement
-<!-- deleted by customization
 
-  - For Azure PowerShell 1.0 Preview, use the Service Management version of commands. These command names **do not** have the format *verb-AzureRm*, as shown below.
+  - For Azure PowerShell 1.0, use the Service Management version of commands. These command names **do not** have the format *verb-AzureRm*, as shown below.
 
             PS C:\> Get-AzureDeployment
--->
 
   - [Service Management REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) for REST operations.
   - Azure CLI commands run in **asm** or default mode.
@@ -106,7 +115,7 @@ Resources created in the classic deployment model share the following characteri
 
     ![classic type](./media/resource-manager-deployment-model/classic-type.png)
 
-You can still use the preview portal to manage resources that were created through classic deployment.
+You can still use the portal to manage resources that were created through classic deployment.
 
 ## Benefits of using Resource Manager and resource groups
 
@@ -121,7 +130,7 @@ Resource Manager added the concept of the resource group. Every resource you cre
 
 
 Prior to Resource Manager, every resource you created through classic deployment did not exist within a resource group. When Resource Manager was added, all resources were retroactively added to default resource groups. If you create a resource through classic deployment now, the resource is 
-automatically created within a default resource group for that service, even though you did not specify that resource group at deployment. However, just existing within a resource group does not mean that the resource has been converted to the Resourece Manager model. For Virtual Machines, Storage, and Virtual Networks, if the resource was created through classic deployment, you must continue to operate on it through classic operations. 
+automatically created within a default resource group for that service, even though you did not specify that resource group at deployment. However, just existing within a resource group does not mean that the resource has been converted to the <!-- deleted by customization Resource --><!-- keep by customization: begin --> Resourece <!-- keep by customization: end --> Manager model. For Virtual Machines, Storage, and Virtual Networks, if the resource was created through classic deployment, you must continue to operate on it through classic operations.
 
 You can move resources to a different resource group, and add new resources to an existing resource group. So, your resource group can contain a 
 mix of resources created through Resource Manager and classic deployment. This combination of resources can create unexpected results because the resources 
@@ -172,6 +181,8 @@ There are some important considerations when working Virtual Machines.
 - Virtual machines deployed with the classic deployment model cannot be included in a virtual network deployed with Resource Manager.
 - Virtual machines deployed with the Resource Manager deployment model must be included in a virtual network.
 - Virtual machines deployed with the classic deployment model don't have to be included in a virtual network.
+
+If you can afford downtime for your Virtual Machines, you can transition them from classic deployment to Resource Manager with the [ASM2ARM PowerShell scripts](https://github.com/fullscale180/asm2arm). 
 
 For a list of equivalent Azure CLI commands when transitioning from classic deployment to Resource Manager, see [Equivalent Resource Manager and Service Management commands for VM operations](/documentation/articles/xplat-cli-azure-manage-vm-asm-arm).
 

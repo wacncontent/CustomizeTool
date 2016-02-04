@@ -1,0 +1,7 @@
+new docs: 3, word count: {word_count_TODO}
+articles/application-gateway/application-gateway-create-probe-classic-ps.md
+articles/application-gateway/application-gateway-create-probe-ps.md
+articles/application-gateway/application-gateway-probe-overview.md
+
+new includes: 1
+includes/application-gateway-create-probe-intro-include.md

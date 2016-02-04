@@ -9,10 +9,13 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="06/29/2015"
+	ms.date="10/21/2015"
 	wacn.date=""/>
 
 # The Docker Virtual Machine Extension for Linux on Azure
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)] 
+
 [Docker](https://www.docker.com/) is one of the most popular virtualization approaches that uses [Linux containers](http://en.wikipedia.org/wiki/LXC) rather than virtual machines as a way of isolating application data and computing on shared resources. You can use the [Azure Docker VM extension](https://github.com/Azure/azure-docker-extension/blob/master/README.md) to the [Azure Linux Agent](/documentation/articles/virtual-machines-linux-agent-user-guide) to create a Docker VM that hosts any number of containers for your applications on Azure.
 
 This topic describes:
@@ -67,7 +70,7 @@ To create Docker-enabled VMs right now, see:
 ## Virtual Machine Extensions for Linux and Windows
 The [Docker VM extension for Azure](https://github.com/Azure/azure-docker-extension/blob/master/README.md) is just one of several VM extensions that provide special behaviour, and more are in development. For example, several of the [Linux VM Agent extension](/documentation/articles/virtual-machines-linux-agent-user-guide) features allow you to modify and manage the Virtual Machine, including security features, kernel and networking features, and so on. The VMAccess extension for example lets you reset the administrator password or SSH key.
 
-For a complete list, see [Azure VM Extensions](http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx).
+For a complete list, see [Azure VM <!-- deleted by customization Extensions](/documentation/articles/virtual-machines-extensions-features) --><!-- keep by customization: begin --> Extensions](http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx) <!-- keep by customization: end -->.
 
 <!--Anchors-->
 [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]: /documentation/articles/virtual-machines-docker-with-xplat-cli/
@@ -76,4 +79,3 @@ For a complete list, see [Azure VM Extensions](http://msdn.microsoft.com/zh-cn/l
 [Docker and Linux Containers]: #Docker-and-Linux-Containers
 [How to use the Docker VM Extension with Azure]: #How-to-use-the-Docker-VM-Extension-with-Azure
 [Virtual Machine Extensions for Linux and Windows]: #Virtual-Machine-Extensions-For-Linux-and-Windows
- 

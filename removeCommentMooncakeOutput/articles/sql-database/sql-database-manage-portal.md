@@ -7,9 +7,9 @@
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags
-	ms.service="sql-database"
-	ms.date="09/11/2015"
+<tags 
+	ms.service="sql-database" 
+	ms.date="09/11/2015" 
 	wacn.date=""/>
 
 
@@ -22,6 +22,8 @@
 - [PowerShell](/documentation/articles/sql-database-command-line-tools)
 
 The [Azure management portal][Management Portal] allows you to create, monitor and manage Azure SQL databases and servers. This article will highlight the database operations that can be accomplished using the management portal.
+
+>[AZURE.NOTE] If you are unfamiliar with the Azure management portal, this [video tour provides a quick overview][Azure Management Portal Tour] of its general features and concepts.
 
 ![Database Overview](./media/sql-database-manage-portal/sqldatabase_annotated.png)
 
@@ -73,9 +75,9 @@ Azure SQL databases can be configured to asynchronously replicate committed tran
   [Management Portal]: https://manage.windowsazure.cn
   [Azure part monitoring]: /documentation/articles/documentdb-monitor-accounts
   [AzureDb management overview]: http://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database/
-  [Introducing SQL Database]: /documentation/services/sql-databases
+  [Introducing SQL Database]: /services/sql-database
   [Database geo-replication]: http://azure.microsoft.com/blog/2014/07/12/spotlight-on-sql-database-active-geo-replication/
-  [Managing Azure SQL Database using SQL Server Management Studio]: /documentation/articles/sql-database-manage-azure-ssms
+  [Managing Azure SQL Database using SQL Server Management Studio]: sql-database-manage-azure-ssms.md
   [Monitoring SQL Database using Dynamic Management Views]: http://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx
   [Transact-SQL Reference (SQL Database)]: http://msdn.microsoft.com/zh-cn/library/bb510741(v=sql.120).aspx
   [AzureDb Auditing]: /documentation/articles/sql-database-auditing-get-started/

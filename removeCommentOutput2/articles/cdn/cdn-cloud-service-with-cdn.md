@@ -3,13 +3,13 @@
 	description="A tutorial that teaches you how to deploy a cloud service that serves content from an integrated Azure CDN endpoint" 
 	services="cdn, cloud-services" 
 	documentationCenter=".net" 
-	authors="cephalin" 
-	manager="wpickett" 
+	authors="camsoper" 
+	manager="dwrede" 
 	editor="tysonn"/>
 
 <tags
 	ms.service="cdn"
-	ms.date="09/01/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 
@@ -91,7 +91,7 @@ In this section, you will deploy the default ASP.NET MVC application template in
 	When the **Windows Azure Activity Log** shows that publishing status is **Completed**, you will create a CDN endpoint that's integrated with this cloud service. 
 
 1. To create a CDN endpoint, log into your [Azure management portal](http://manage.windowsazure.cn/). 
-2. Click **New** > **App Services** > **CDN** > **Quick Create**. Select **http://*&lt;servicename>*.chinacloudapp.cn/cdn/** and click **Create**.
+2. Click **New** > **Azure Websitess** > **CDN** > **Quick Create**. Select **http://*&lt;servicename>*.chinacloudapp.cn/cdn/** and click **Create**.
 
 	![](./media/cdn-cloud-service-with-cdn/cdn-cs-10-createcdn.png)
 
@@ -113,7 +113,7 @@ In this section, you will deploy the default ASP.NET MVC application template in
 
 	![](./media/cdn-cloud-service-with-cdn/cdn-cs-13-testcdn.png)
 
-6. Back in Visual Studio 2013, open **Web.config** in your **WebRole1** project and add the following code into the `<system.webServer>` tag:
+6. Back in Visual Studio 2013, open **Web.config** in your **WebRole1** project and add the following code into the `<system.webServer>` tag:  
 
 		<system.webServer>
 		  <rewrite>
@@ -135,17 +135,17 @@ In this section, you will deploy the default ASP.NET MVC application template in
 
 		http://az632148.vo.msecnd.net/Content/bootstrap.css
 
-	Which corresponds to the following origin URL at the CDN endpoint:
+Which corresponds to the following origin URL at the CDN endpoint:
 
 		http://cephalinservice.chinacloudapp.cn/cdn/Content/bootstrap.css
 
-	After URL rewrite in my Web app, the actual file that gets cached to my CDN cache is:
+	After URL rewrite in my Web Site, the actual file that gets cached to my CDN cache is:
 
 		http://cephalinservice.chinacloudapp.cn/Content/bootstrap.css
 
-	When you navigate to **http://*&lt;cdnName>*.vo.msecnd.net/Content/bootstrap.css**, you will be prompted to download the bootstrap.css that came from your published Web app. 
+	When you navigate to **http://*&lt;cdnName>*.vo.msecnd.net/Content/bootstrap.css**, you will be prompted to download the bootstrap.css that came from your published Web Site. 
 
-	![](./media/cdn-cloud-service-with-cdn/cdn-1-browser-access.PNG)
+![](./media/cdn-cloud-service-with-cdn/cdn-1-browser-access.PNG)
 
 You can similarly access any publicly accessible URL at **http://*&lt;serviceName>*.chinacloudapp.cn/**, straight from your CDN endpoint. For example:
 
@@ -341,19 +341,19 @@ When you submit the form values to `/MemeGenerator/Index`, the `Index_Post` acti
 	public ActionResult Show(string id)
 	{
 	    Tuple&lt;string, string&gt; data = null;
-	    if (!Memes.TryGetValue(id, out data))
-	    {
-	        return new HttpStatusCodeResult(HttpStatusCode.NotFound);
-	    }
-	
-	    if (Debugger.IsAttached) // Preserve the debug experience
-	    {
+		if (!Memes.TryGetValue(id, out data))
+		{
+			return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+		}
+
+		if (Debugger.IsAttached) // Preserve the debug experience
+		{
 	        return Redirect(string.Format(&quot;/MemeGenerator/Generate?top={0}&bottom={1}&quot;, data.Item1, data.Item2));
-	    }
-	    else // Get content from Azure CDN
-	    {
+		}
+		else // Get content from Azure CDN
+		{
 	        return Redirect(string.Format(&quot;http://<mark>&lt;cdnName&gt;</mark>.vo.msecnd.net/MemeGenerator/Generate?top={0}&amp;bottom={1}&quot;, data.Item1, data.Item2));
-	    }
+		}
 	}
 	
 If your local debugger is attached, then you will get the regular debug experience with a local redirect. If it's running in the cloud service, then it will redirect to:
@@ -367,6 +367,7 @@ Which corresponds to the following origin URL at your CDN endpoint:
 After URL rewrite rule previously applied, the actual file that gets cached to your CDN endpoint is:
 
 	http://<youCloudServiceName>.chinacloudapp.cn/MemeGenerator/Generate?top=<formInput>&bottom=<formInput>
+
 
 You can then use the `OutputCacheAttribute` attribute on the `Generate` method to specify how the action result should be cached, which Azure CDN will honor. The code below specify a cache expiration of 1 hour (3,600 seconds).
 
@@ -613,7 +614,7 @@ The [Bundle](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bun
 
 ## More Information ##
 - [Overview of the Azure Content Delivery Network (CDN)](http://msdn.microsoft.com/zh-cn/library/azure/ff919703.aspx)
-- [Serve Content from Azure CDN in Your Web Application](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application)
+- [Serve Content from Azure CDN in Your Web Site](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application)
 - [Integrate an Azure Website with Azure CDN](/documentation/articles/cdn-websites-with-cdn)
 - [ASP.NET Bundling and Minification](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)
 - [Using CDN for Azure](/documentation/articles/cdn-how-to-use)

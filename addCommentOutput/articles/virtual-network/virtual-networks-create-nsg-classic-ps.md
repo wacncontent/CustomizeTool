@@ -4,13 +4,13 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn"
    tags="azure-service-management"
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/14/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # How to create NSGs (classic) in PowerShell
@@ -137,7 +137,7 @@ To create an NSG named named *NSG-FrontEnd* based on the scenario above, follow 
 		| Set-AzureNetworkSecurityRule -Name rdp-rule `
 		    -Action Allow -Protocol TCP -Type Inbound -Priority 100 `
 		    -SourceAddressPrefix 192.168.1.0/24  -SourcePortRange '*' `
-		    -DestinationAddressPrefix '*' -DestinationPortRange '3389' 
+		    -DestinationAddressPrefix '*' -DestinationPortRange '1433' 
 
 	Expected output:
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to create a custom template image for Azure RemoteApp | Microsoft Azure"
+	pageTitle="How to create a custom template image for Azure RemoteApp | Windows Azure"
 	description="Learn how to create a custom template image for Azure RemoteApp. You can use this template with either a hybrid or cloud collection."
 	services="remoteapp"
 	documentationCenter=""
@@ -9,20 +9,18 @@
 
 <tags
 	ms.service="remoteapp"
-	ms.workload="compute"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/12/2015" 
-	ms.author="elizapo"/>
+	ms.date="09/12/2015"
+	wacn.date=""/>
 
 # How to create a custom template image for Azure RemoteApp
-Azure RemoteApp uses a Windows Server 2012 R2 template image to host all the programs that you want to share with your users. To create a custom RemoteApp template image, you can start with an existing image or create a new one. 
+Azure RemoteApp uses a Windows Server 2012 R2 template image to host all the programs that you want to share with your users. To create a custom RemoteApp template image, you can start with an existing image or create a new one. <!-- keep by customization: begin --> The requirements for the image that can be uploaded for use with Azure RemoteApp are: <!-- keep by customization: end -->
+<!-- deleted by customization
 
 
-> [AZURE.TIP] Did you know you can create an image from an Azure VM? True story, and it cuts down on the amount of time it takes to import the image. Check out the steps [here](remoteapp-image-on-azurevm.md).
+> [AZURE.TIP] Did you know you can create an image from an Azure VM? True story, and it cuts down on the amount of time it takes to import the image. Check out the steps [here](/documentation/articles/remoteapp-image-on-azurevm).
 
 The requirements for the image that can be uploaded for use with Azure RemoteApp are:
+-->
 
 
 - The image size should be a multiple of MBs. If you try to upload an image that is not an exact multiple, the upload will fail.
@@ -38,15 +36,23 @@ The requirements for the image that can be uploaded for use with Azure RemoteApp
 - The image must be SYSPREPed using the parameters **/oobe /generalize /shutdown** (DO NOT use the **/mode:vm** parameter).
 - Uploading your VHD from a snapshot chain is not supported.
 
+<!-- keep by customization: begin -->
+> [AZURE.TIP] Did you know you can now create an image from an Azure VM? True story, and it cuts down on the amount of time it takes to import the image. Check out the steps [here](/documentation/articles/remoteapp-image-on-azurevm).
+<!-- keep by customization: end -->
 
 **Before you begin**
 
 You need to do the following before creating the service:
 
-- [Sign up](http://azure.microsoft.com/services/remoteapp/) for RemoteApp.
-- Create a user account in Active Directory to use as the RemoteApp service account. Restrict the permissions for this account so that it can only join machines to the domain. See [Configure Azure Active Directory for RemoteApp](remoteapp-ad.md) for more information.
+<!-- deleted by customization
+- [Sign up](/home/features/remoteapp/) for RemoteApp.
+-->
+<!-- keep by customization: begin -->
+- [Sign up](http://www.windowsazure.cn/services/remoteapp/) for RemoteApp.
+<!-- keep by customization: end -->
+- Create a user account in Active Directory to use as the RemoteApp service account. Restrict the permissions for this account so that it can only join machines to the domain. See [Configure Azure Active Directory for RemoteApp](/documentation/articles/remoteapp-ad) for more information.
 - Gather information about your on-premises network: IP address information and VPN device details.
-- Install the [Azure PowerShell](../install-configure-powershell.md) module.
+- Install the [Azure PowerShell](/documentation/articles/powershell-install-configure) module.
 - Gather information about the users that you want to grant access to. This can be either Microsoft account information or Active Directory work account information for users.
 
 
@@ -60,7 +66,7 @@ These are the high level steps to create a new template image from scratch:
 4.	Install Windows Server 2012 R2.
 5.	Install the Remote Desktop Session Host (RDSH) role and the Desktop Experience feature.
 6.	Install additional features required by your applications.
-7.	Install and configure your applications. To make sharing apps easier, add any apps or programs that you want to share to the **Start** menu of the image, specifically in **%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs.
+7.	Install and configure your applications. <!-- deleted by customization To make sharing apps easier, add any apps or programs that you want to share to the **Start** menu of the image, specifically in **%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs. -->
 8.	Perform any additional Windows configurations required by your applications.
 9.	Disable the Encrypting File System (EFS).
 10.	**REQUIRED:** Go to Windows Update and install all important updates.
@@ -75,7 +81,7 @@ The detailed steps for creating a new image are:
 		1.	Click **Action > Create VHD**.
 		2.	Specify the location, size, and VHD format. Select **Dynamically expanding**, and then click **OK**.
 
-			This will run for several seconds. When the VHD creation is complete, you should see a new disk without any drive letter and in “Not initialized" state in the Disk Management console.
+			This will run for several seconds. When the VHD creation is complete, you should see a new disk without any drive letter and in âNot initialized" state in the Disk Management console.
 
 		- Right-click the disk (not the unallocated space), and then click **Initialize Disk**. Select **MBR** (Master Boot Record) as the partition style, and then click **OK**.
 		- Create a new volume: right-click the unallocated space, and then click **New Simple Volume**. You can accept the defaults in the wizard, but make sure you assign a drive letter to avoid potential problems when you upload the template image.
@@ -110,12 +116,21 @@ The detailed steps for creating a new image are:
 1.	Install additional features required by your applications, such as the .NET Framework 3.5. To install the features, run the Add Roles and Features Wizard.
 7.	Install and configure the programs and applications you want to publish through RemoteApp.
 
+<!-- deleted by customization
 >[AZURE.IMPORTANT]
 >
 >Install the RDSH role before installing applications to ensure that any issues with application compatibility are discovered before the image is uploaded to RemoteApp.
 >
 >Make sure a shortcut to your application (**.lnk** file) appears in the **Start** menu for all users (%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs). Also ensure that the icon you see in the **Start** menu is what you want users to see. If not, change it. (You do not *have* to add the application to the Start menu, but it makes it much easier to publish the application in RemoteApp. Otherwise, you have to provide the installation path for the application when you publish the app.)
 
+-->
+<!-- keep by customization: begin -->
+ 	**Important:**
+
+
+	- Install the RDSH role before installing applications to ensure that any issues with application compatibility are discovered before the image is uploaded to RemoteApp.
+	- Make sure your application appears in the **Start** menu. Also ensure that the icon you see in the **Start** menu is what you want users to see. If not, change it. (You do not *have* to add the application to the Start menu, but it makes it much easier to publish the application in RemoteApp. Otherwise, you have to provide the installation path for the application when you publish the app.)
+<!-- keep by customization: end -->
 
 8.	Perform any additional Windows configurations required by your applications.
 9.	Disable the Encrypting File System (EFS). Run the following command at an elevated command window:
@@ -138,6 +153,6 @@ The detailed steps for creating a new image are:
 Now that you have your custom template image, you need to upload that image to your RemoteApp collection. Use the information in the following articles to create your collection:
 
 
-- [How to create a hybrid collection of RemoteApp](remoteapp-create-hybrid-deployment.md)
-- [How to create a cloud collection of RemoteApp](remoteapp-create-cloud-deployment.md)
+- [How to create a hybrid collection of RemoteApp](/documentation/articles/remoteapp-create-hybrid-deployment)
+- [How to create a cloud collection of RemoteApp](/documentation/articles/remoteapp-create-cloud-deployment)
  

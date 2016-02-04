@@ -1,11 +1,11 @@
 <properties
-   pageTitle="Create and manage Azure Virtual Machines in Visual Studio"
+   pageTitle="Create and manage Azure Virtual Machines in Visual Studio | Windows Azure"
    description="Create and manage Azure Virtual Machines in Visual Studio"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/30/2015"
@@ -31,7 +31,7 @@ While you can create a virtual machine in the [Azure Management Portal](https://
 
 1. On the **Choose a Subscription** page, select a subscription to use when creating the virtual machine and then click **Next**.
 
-    If you aren’t signed in to Azure, click **Sign In** to sign in. Then, select your Azure subscription in the dropdown list box if it’s not already selected.
+    If you aren't signed in to Azure, click **Sign In** to sign in. Then, select your Azure subscription in the dropdown list box if it's not already selected.
 
 1. On the **Select a Virtual Machine Image** page, select an image type in the **Image type** dropdown list box, and then select a virtual machine images in the **Image name** list box. When you're done, click **Next**.
 
@@ -55,19 +55,19 @@ While you can create a virtual machine in the [Azure Management Portal](https://
 
 1. On the **Virtual Machine Basic Settings** page, enter a machine name and then add the specifications for the virtual machine, including the size, and a user name and password. When you're done, click **Next**.
 
-    You’ll use the new name and password to log into the machine using remote desktop, so it’s a good idea to write them down in case you forget. After you create an Azure virtual machine in Visual Studio, you can change its size and other settings in the [Azure Management Portal](https://manage.windowsazure.cn/).
+    You'll use the new name and password to log into the machine using remote desktop, so it's a good idea to write them down in case you forget. After you create an Azure virtual machine in Visual Studio, you can change its size and other settings in the [Azure Management Portal](https://manage.windowsazure.cn/).
 
         >[AZURE.NOTE] If you choose larger sizes for the virtual machine, extra charges may apply. See [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) for more information.
 
-1. Virtual machines created in Visual Studio require a cloud service. On the **Cloud Service Settings** page, select a cloud service for the virtual machine, or click **<Create New…>** in the dropdown list if you don’t already have a cloud service or want to use a new one. A storage account is also required, so choose a storage account (or create a new storage account) in the **Storage account** dropdown list box. See [Introduction to Windows Azure Storage](/documentation/articles/storage-introduction) for more information.
+1. Virtual machines created in Visual Studio require a cloud service. On the **Cloud Service Settings** page, select a cloud service for the virtual machine, or click **<Create New…>** in the dropdown list if you don't already have a cloud service or want to use a new one. A storage account is also required, so choose a storage account (or create a new storage account) in the **Storage account** dropdown list box. See [Introduction to Windows Azure Storage](/documentation/articles/storage-introduction) for more information.
 
 1. If you want to specify a virtual network (which is optional), select it in the Virtual Network and Subnet dropdown list boxes.
 
-    Virtual machines that are members of an availability set are deployed to different fault domains. See [Azure Virtual <!-- deleted by customization Network](https://azure.microsoft.com/zh-cn/services/virtual-network/) --><!-- keep by customization: begin --> Network](https://azure.microsoft.com/zh-cn/services/networking/) <!-- keep by customization: end --> for more information.
+    Virtual machines that are members of an availability set are deployed to different fault domains. See [Azure Virtual <!-- deleted by customization Network](https://azure.microsoft.com/zh-cn/services/virtual-network/) --><!-- keep by customization: begin --> Network](http://www.windowsazure.cn/services/networking/) <!-- keep by customization: end --> for more information.
 
 1. If you want your virtual machine to belong to an availability set (also optional), select the **Specify an availability set** check box and then choose an availability set in the dropdown list box. When you're done, choose the **Next** button.
 
-    Adding your virtual machine to an availability set helps your application stay available during network failures, local disk hardware failures, and any planned downtime. You need to use the [Azure Management Portal](https://manage.windowsazure.cn/) to create virtual networks, subnets, and availability sets. See [Manage the Availability of Virtual Machines](/documentation/articles/virtual-machines-manage-availability/) for more information.
+    Adding your virtual machine to an availability set helps your application stay available during network failures, local disk hardware failures, and any planned downtime. You need to use the [Azure Management Portal](https://manage.windowsazure.cn/) to create virtual networks, subnets, and availability sets. See [Manage the Availability of Virtual <!-- deleted by customization Machines](/documentation/articles/virtual-machines-manage-availability/) --><!-- keep by customization: begin --> Machines](http://www.windowsazure.cn/documentation/articles/manage-availability-virtual-machines/) <!-- keep by customization: end --> for more information.
 
 1. On the **Endpoints** page, specify the public endpoints that you want available to users of your virtual machine. For example, you might choose to enable HTTP (Port 80) in addition to the Remote Desktop and PowerShell endpoints, which are enabled by default. To add an endpoint, choose one in the **Port Name** dropdown list box and then choose the **Add** button. To remove an endpoint, choose the red **X** next to the name in the endpoints list.
 
@@ -77,7 +77,7 @@ While you can create a virtual machine in the [Azure Management Portal](https://
 
     >[AZURE.NOTE] Enabling public endpoints makes services on your virtual machine available to the internet. Be sure to install and properly configure the endpoints and services on your virtual machine, such as setting access control lists (ACLs) for the endpoints. See [How to Set Up Endpoints to a Virtual Machine](/documentation/articles/virtual-machines-set-up-endpoints/) for more information.
 
-1. After you’re done configuring the virtual machine settings, choose the **Create** button to create the virtual machine.
+1. After you're done configuring the virtual machine settings, choose the **Create** button to create the virtual machine.
 
     As Azure creates the virtual machine, the **Azure Activity Log** shows the progress of the virtual machine creation operation.
 
@@ -137,15 +137,15 @@ As you configure your virtual machine and install software on it, it's a good id
 
 1. If you have already run Sysprep on this virtual machine, select the **I have run Sysprep on the virtual machine** box.
 
-    Sysprep is a tool that, among other things, removes systems-specific data from the virtual machine’s version of Windows, making it template that others can use. See [How to Capture a Windows Virtual Machine to Use as a Template](/documentation/articles/virtual-machines-capture-image-windows-server/) for more information.
+    Sysprep is a tool that, among other things, removes systems-specific data from the virtual machine's version of Windows, making it template that others can use. See [How to Capture a Windows Virtual Machine to Use as a Template](/documentation/articles/virtual-machines-capture-image-windows-server/) for more information.
 
-1. After you’re done configuring the capture settings, choose the **Capture** button to create the checkpoint.
+1. After you're done configuring the capture settings, choose the **Capture** button to create the checkpoint.
 
     As Azure creates the checkpoint, the **Azure Activity Log** shows the progress of the operation.
 
     ![Capturing a virtual machine checkpoint](./media/vs-azure-tools-virtual-machines-create-manage/IC744144.png)
 
-    When the checkpoint operation completes, you’ll see it in the **Azure Activity Log**.
+    When the checkpoint operation completes, you'll see it in the **Azure Activity Log**.
 
     ![Checkpoint operation completed](./media/vs-azure-tools-virtual-machines-create-manage/IC744145.png)
 
@@ -171,4 +171,4 @@ As you configure your virtual machine and install software on it, it's a good id
 
 ## Next steps
 
-To learn more about creating virtual machines, see [Create a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-tutorial) and [Create a virtual machine running Windows in the Azure preview portal](/documentation/articles/virtual-machines-windows-tutorial).
+To learn more about creating virtual machines, see [Create a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-tutorial) and [Create a virtual machine running Windows in the Azure preview portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).

@@ -108,13 +108,13 @@ You need **deisctl** to control your Deis cluster. Although deisctl is automatic
 
 3. Configure deisctl:
 
-        export DEISCTL_TUNNEL=[public ip of the load balancer]: 2223
+        export DEISCTL_TUNNEL=[public ip of the load balancer]:2223
 
 The template defines inbound NAT rules that map 2223 to instance 1, 2224 to instance 2, and 2225 to instance 3. This provides redundancy for using the deisctl tool. You can examine these rules on Azure Management Portal:
 
 ![NAT rules on the load balancer](./media/virtual-machines-deis-cluster/nat-rules.png)
 
-> [AZURE.NOTE] Currently the template only supports 3-node clusters. This is because of a limitation in Azure Resource Manager template NAT rule definition, which doesn’t support loop syntax.
+> [AZURE.NOTE] Currently the template only supports 3-node clusters. This is because of a limitation in Azure Resource Manager template NAT rule definition, which doesn't support loop syntax.
 
 ## Install and start the Deis platform
 
@@ -165,7 +165,7 @@ Congratulations! Now you've got a running Deis clsuter on Azure! Next, let's dep
 
 The following steps show how to deploy a "Hello World" Go application to the cluster. The steps are based on [Deis documentation](http://docs.deis.io/en/latest/using_deis/using-dockerfiles/#using-dockerfiles).
 
-1. For the routing mesh to work properly, you’ll need to have a wildcard A record for your domain pointing to the public IP of the load balancer. The following screenshot shows the A record for a sample domain registration on GoDaddy:
+1. For the routing mesh to work properly, you'll need to have a wildcard A record for your domain pointing to the public IP of the load balancer. The following screenshot shows the A record for a sample domain registration on GoDaddy:
 
     ![Godaddy A record](./media/virtual-machines-deis-cluster/go-daddy.png)
 <p />
@@ -200,7 +200,7 @@ The following steps show how to deploy a "Hello World" Go application to the clu
         deis create
         git push deis master
 <p />
-8. The git push will trigger Docker images to be built and deployed, which will take a few minutes. From my experience, occasionally, Step 10 (Pushing image to private repository) may hang. When this happens, you can stop the process, remove the application using `deis apps:destroy –a <application name>` to remove the application and try again. You can use `deis apps:list` to find out the name of your application. If everything works out, you should see something like the following at the end of command outputs:
+8. The git push will trigger Docker images to be built and deployed, which will take a few minutes. From my experience, occasionally, Step 10 (Pushing image to private repository) may hang. When this happens, you can stop the process, remove the application using `deis apps:destroy -a <application name>` to remove the application and try again. You can use `deis apps:list` to find out the name of your application. If everything works out, you should see something like the following at the end of command outputs:
 
         -----> Launching...
                done, lambda-underdog:v2 deployed to Deis
@@ -255,6 +255,6 @@ This article walked you through all the steps to provision a new Deis cluster on
 [How to use the Azure CLI] [azure-command-line-tools]  
 [Using Azure PowerShell with Azure Resource Manager] [powershell-azure-resource-manager]  
 
-[azure-command-line-tools]: /documentation/articles/xplat-cli-install
-[resource-group-overview]: /documentation/articles/resource-group-overview
-[powershell-azure-resource-manager]: /documentation/articles/powershell-azure-resource-manager
+[azure-command-line-tools]: ../xplat-cli-install.md
+[resource-group-overview]: ../documentation/articles/resource-group-overview
+[powershell-azure-resource-manager]: ../powershell-azure-resource-manager.md

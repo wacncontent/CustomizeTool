@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Understanding Site to Azure Protection" 
+	pageTitle="Understanding Hyper-V replication with Azure Site Recovery | Windows Azure" 
 	description="Use this article to understand the technical concepts which helps you successfully install, configure, and manage Azure Site Recovery." 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="09/01/2015"
+	ms.date="12/14/2015"
 	wacn.date=""/>
 
 
-# Understanding Hyper-V or VMM site to Azure protection
+# Understanding Hyper-V replication with Azure Site Recovery
 
 This article describes the technical concepts which helps you successfully configure and manage Hyper-V site or VMM site to Azure protection using Azure Site Recovery.
 
@@ -25,7 +25,7 @@ As part of setting up DR between on-premises & Azure; Azure Site Recovery Provid
 
 ![VMM Site Deployment for replication between on-premises & Azure](./media/site-recovery-understanding-site-to-azure-protection/image00.png)
 
-Hyper-V Site deployment is same as that of VMM Deployment – only difference being Provider & Agent gets installed on the Hyper-V host itself.
+Hyper-V Site deployment is same as that of VMM Deployment â only difference being Provider & Agent gets installed on the Hyper-V host itself.
 
 ## Understanding the workflows
 
@@ -39,7 +39,7 @@ Once you protect a virtual machine from portal or on-premises, an ASR job named 
 ![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-understanding-site-to-azure-protection/image02.png)
 
 ### Finalize Protection
-A [Hyper-V VM snapshot](https://technet.microsoft.com/zh-cn/library/dd560637.aspx) is taken when Initial Replication is triggered. Virtual hard disks are processed one by one till all the disks are uploaded to Azure. This normally takes a while to complete based on the disk size and the bandwidth. Refer [How to manage on-premises to Azure protection network bandwidth usage](https://support.microsoft.com/kb/3056159) for optimizing your network usage. Once initial replication completes *Finalize protection on the virtual machine* job configures the network and post-replication settings. While Initial Replication is in-progress all the changes to the disks gets tracked as mentioned in Delta Replication section below. Additional disk storage will be consumed for the snapshot and HRL files while Initial Replication is in-progress. On completion of an Initial Replication, Hyper-V VM snapshot will be deleted which results in merging data changes post Initial Replication to the parent disk.
+A [Hyper-V VM snapshot](https://technet.microsoft.com/zh-cn/library/dd560637.aspx) is taken when Initial Replication is triggered. Virtual hard disks are processed one by one till all the disks are uploaded to Azure. This normally takes a while to complete based on the disk size and the bandwidth. Refer [How to manage on-premises to Azure protection network bandwidth <!-- deleted by customization usage](https://support.microsoft.com/kb/3056159) --><!-- keep by customization: begin --> usage](https://support.microsoft.com/zh-cn/kb/3056159) <!-- keep by customization: end --> for optimizing your network usage. Once initial replication completes *Finalize protection on the virtual machine* job configures the network and post-replication settings. While Initial Replication is in-progress all the changes to the disks gets tracked as mentioned in Delta Replication section below. Additional disk storage will be consumed for the snapshot and HRL files while Initial Replication is in-progress. On completion of an Initial Replication, Hyper-V VM snapshot will be deleted which results in merging data changes post Initial Replication to the parent disk.
 
 ![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-understanding-site-to-azure-protection/image03.png)
 

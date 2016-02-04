@@ -3,13 +3,13 @@
 	description="The Country Filtering feature uses country codes to define the countries from which a request will be allowed or blocked for a secured directory." 
 	services="cdn" 
 	documentationCenter=".NET" 
-	authors="juliako" 
+	authors="camsoper" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags
 	ms.service="cdn"
-	ms.date="09/01/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 #Country codes

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/09/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 #Uninstall Elastic Database jobs components
@@ -46,7 +46,7 @@ Or simply, execute the following script, assuming default values where used on i
 		    return
 		}
 		
-		Write-Host "Removing the Azure Resource Group: $ResourceGroupName.  This may take a few minutes.”
+		Write-Host "Removing the Azure Resource Group: $ResourceGroupName.  This may take a few minutes.â
 		Remove-AzureResourceGroup -Name $ResourceGroupName -Force
 		Write-Host "Completed removing the Azure Resource Group: $ResourceGroupName.  Elastic database job compoennts are now uninstalled."
 

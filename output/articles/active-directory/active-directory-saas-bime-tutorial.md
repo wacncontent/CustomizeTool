@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory Integration with Bime | Windows Azure" 
     description="Learn how to use Bime with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory Integration with Bime
@@ -117,7 +117,7 @@ In the case of Bime, provisioning is a manual task.
 
     ![Admin](./media/active-directory-saas-bime-tutorial/IC775561.png "Admin")
 
-3.  In the **Users List**, click **Add New User** (“+”).
+3.  In the **Users List**, click **Add New User** ("+").
 
     ![Users](./media/active-directory-saas-bime-tutorial/IC775562.png "Users")
 

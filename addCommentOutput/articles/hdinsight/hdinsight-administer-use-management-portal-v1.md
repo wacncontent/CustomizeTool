@@ -9,17 +9,17 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/11/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # Manage Hadoop clusters in HDInsight by using the Azure Management Portal
 
 Using the [Azure Management Portal](https://manage.windowsazure.cn), you can provision Hadoop clusters in Azure HDInsight, change Hadoop user password, and enable Remote Desktop Protocol (RDP) so you can access the Hadoop command console on the cluster.
-
-[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 <!-- deleted by customization
 
-* [Manage Hadoop clusters in HDInsight by using the Azure preview portal](/documentation/articles/hdinsight-administer-use-management-portal-v1)
+[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
+
+* [Manage Hadoop clusters in HDInsight by using the Azure Management Portal](/documentation/articles/hdinsight-administer-use-management-portal-v1)
 -->
 
 ## Other tools for administering HDInsight
@@ -34,15 +34,15 @@ There are also other tools available for administering HDInsight in addition to 
 Before you begin this article, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-- **Azure Storage account** - An HDInsight cluster uses an Azure Blob storage container as the default file system. For more information about how Azure Blob storage provides a seamless experience with HDInsight clusters, see [Use Azure Blob Storage with HDInsight](/documentation/articles/hdinsight-use-blob-storage). For details on creating an Azure Storage account, see [How to Create a Storage Account](/documentation/articles/storage-create-storage-account).
+- **Azure Storage account** - An HDInsight cluster uses an Azure Blob storage container as the default file system. For more information about how Azure Blob storage provides a seamless experience with HDInsight clusters, see [Use Azure Blob Storage with HDInsight](/documentation/articles/hdinsight-hadoop-use-blob-storage). For details on creating an Azure Storage account, see [How to Create a Storage Account](/documentation/articles/storage-create-storage-account).
 
 
 ##Provision HDInsight clusters
 
 You can provision HDInsight clusters from the Azure Management Portal by using the Quick Create or Custom Create option. See the following links for instructions:
 
-- [Provision a cluster by using Quick Create](/documentation/articles/hdinsight-get-started#provision)
-- [Provision a cluster by using Custom Create](/documentation/articles/hdinsight-provision-clusters#portal)
+- [Provision a cluster by using Quick Create](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1#provision)
+- [Provision a cluster by using Custom Create](/documentation/articles/hdinsight-provision-clusters-v1#portal)
 
 [AZURE.INCLUDE [data center list](../includes/hdinsight-pricing-data-centers-clusters.md)]
 
@@ -51,14 +51,14 @@ You can provision HDInsight clusters from the Azure Management Portal by using t
 
 HDInsight works with a wide range of Hadoop components. For the list of the components that have been verified and supported, see [What version of Hadoop is in Azure HDInsight](/documentation/articles/hdinsight-component-versioning). You can customize HDInsight by using one of the following options:
 
-- Use Script Action to run custom scripts that can customize a cluster to either change cluster configuration or install custom components such as Giraph or Solr. For more information, see [Customize HDInsight cluster using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster).
-- Use the cluster customization parameters in the HDInsight .NET SDK or Azure PowerShell during cluster provisioning. These configuration changes are then preserved through the lifetime of the cluster and are not affected by cluster node reimages that Azure platform periodically performs for maintenance. For more information on using the cluster customization parameters, see [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters).
+- Use Script Action to run custom scripts that can customize a cluster to either change cluster configuration or install custom components such as Giraph or Solr. For more information, see [Customize HDInsight cluster using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1).
+- Use the cluster customization parameters in the HDInsight .NET SDK or Azure PowerShell during cluster provisioning. These configuration changes are then preserved through the lifetime of the cluster and are not affected by cluster node reimages that Azure platform periodically performs for maintenance. For more information on using the cluster customization parameters, see [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1).
 - Some native Java components, like Mahout and Cascading, can be run on the cluster as JAR files. These JAR files can be distributed to Azure Blob storage, and submitted to HDInsight clusters through Hadoop job submission mechanisms. For more information, see [Submit Hadoop jobs programmatically](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically).
 
 
-	>[AZURE.NOTE] If you have issues deploying JAR files to HDInsight clusters or calling JAR files on HDInsight clusters, contact [Microsoft Support](/support/contact/).
+	>[AZURE.NOTE] If you have issues deploying JAR files to HDInsight clusters or calling JAR files on HDInsight clusters, contact <!-- deleted by customization [Microsoft --><!-- keep by customization: begin --> [WindowsAzure.cn <!-- keep by customization: end --> Support](/support/contact/).
 
-	> Cascading is not supported by HDInsight, and is not eligible for Microsoft Support. For lists of supported components, see [What's new in the cluster versions provided by HDInsight?](/documentation/articles/hdinsight-component-versioning).
+	> Cascading is not supported by HDInsight, and is not eligible for <!-- deleted by customization Microsoft --><!-- keep by customization: begin --> WindowsAzure.cn <!-- keep by customization: end --> Support. For lists of supported components, see [What's new in the cluster versions provided by HDInsight?](/documentation/articles/hdinsight-component-versioning).
 
 
 Installation of custom software on the cluster by using Remote Desktop Connection is not supported. You should avoid storing any files on the drives of the head node, as they will be lost if you need to re-create the clusters. We recommend storing files on Azure Blob storage. Blob storage is persistent.
@@ -79,7 +79,12 @@ An HDInsight cluster can have two user accounts. The HDInsight cluster user acco
 8. Click **SAVE**.
 
 
+<!-- deleted by customization
 ##Connect to HDInsight clusters by using RDP
+-->
+<!-- keep by customization: begin -->
+##<a id="connect-to-hdinsight-clusters-by-using-rdp" name="rdp"></a> Connect to HDInsight clusters by using RDP
+<!-- keep by customization: end -->
 
 The credentials for the cluster that you provided at its creation give access to the services on the cluster, but not to the cluster itself through Remote Desktop. Remote Desktop access is turned off by default, and so direct access to the cluster using it requires some additional, post-creation configuration.
 
@@ -109,13 +114,18 @@ The credentials for the cluster that you provided at its creation give access to
 4. From the top of the page, click **CONFIGURATION**.
 5. Click **CONNECT**, and then follow the instructions.
 
+<!-- deleted by customization
 ##Create a self-signed certificate
+-->
+<!-- keep by customization: begin -->
+##<a name="cert"></a> Create a self-signed certificate
+<!-- keep by customization: end -->
 
 If you want to perform any operations on the cluster by using the .NET SDK, you must create a self-signed certificate on the workstation, and also upload the certificate to your Azure subscription. This is a one-time task. You can install the same certificate on other machines, as long as the certificate is valid.
 
 **To create a self-signed certificate**
 
-1. Create a self-signed certificate that is used to authenticate the requests. You can use Internet Information Services (IIS) or [makecert]( https://msdn.microsoft.com/zh-cn/library/bfsktky3(v=vs.110).aspx) to create the certificate.
+1. Create a self-signed certificate that is used to authenticate the requests. You can use Internet Information Services (IIS) or <!-- deleted by customization [makecert]( https://msdn.microsoft.com/zh-cn/library/bfsktky3(v=vs.110).aspx) --><!-- keep by customization: begin --> [makecert](https://msdn.microsoft.com/zh-cn/library/windows/desktop/aa386968.aspx) <!-- keep by customization: end --> to create the certificate.
 
 2. Browse to the location of the certificate, right-click the certificate, click **Install Certificate**, and install the certificate to the computer's personal store. Edit the certificate properties to assign it a friendly name.
 
@@ -130,7 +140,9 @@ HDInsight clusters have the following HTTP web services (all of these services h
 
 - ODBC
 - JDBC
+<!-- deleted by customization
 - Ambari
+-->
 - Oozie
 - Templeton
 
@@ -147,11 +159,6 @@ By default, these services are granted for access. You can revoke/grant the acce
 5. Click **ON** or **OFF** next to **HADOOP SERVICES**.
 6. For **USER NAME** and **NEW PASSWORD**, enter the new user name and password (respectively) for the cluster.
 7. Click **SAVE**.
-
-This can also be done through the Azure PowerShell cmdlets:
-
-- Grant-AzureHDInsightHttpServicesAccess
-- Revoke-AzureHDInsightHttpServicesAccess
 
 See [Administer HDInsight using Azure PowerShell](/documentation/articles/hdinsight-administer-use-powershell).
 
@@ -192,13 +199,11 @@ In this article, you have learned how to create an HDInsight cluster by using th
 
 * [Administer HDInsight Using Azure PowerShell](/documentation/articles/hdinsight-administer-use-powershell)
 * [Administer HDInsight Using Azure CLI](/documentation/articles/hdinsight-administer-use-command-line)
-* [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters)
+* [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1)
 * [Submit Hadoop jobs programmatically](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)
-* [Get Started with Azure HDInsight](/documentation/articles/hdinsight-get-started)
+* [Get Started with Azure HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 * [What version of Hadoop is in Azure HDInsight?](/documentation/articles/hdinsight-component-versioning)
 
-[image-cluster-quickcreate]: ./media/hdinsight-administer-use-management-portal-v1/HDI.QuickCreateCluster.png
-[image-cluster-landing]: ./media/hdinsight-administer-use-management-portal-v1/HDI.ClusterLanding.PNG "Cluster landing page"
-[image-hdi-create-rpd-user]: ./media/hdinsight-administer-use-management-portal-v1/HDI.CreateRDPUser.png
-[image-hadoopcommandline]: ./media/hdinsight-administer-use-management-portal-v1/HDI.HadoopCommandLine.PNG "Hadoop command line"
-[image-hdiclustercreate-uploadcert]: ./media/hdinsight-administer-use-management-portal-v1/HDI.ClusterCreate.UploadCert.png
+[image-hdi-create-rpd-user]: ./media/hdinsight-administer-use-management-portal-v1/hdi.createrdpuser.png
+[image-hadoopcommandline]: ./media/hdinsight-administer-use-management-portal-v1/hdinsight-hadoop-command-line.png "Hadoop command line"
+[image-hdiclustercreate-uploadcert]: ./media/hdinsight-administer-use-management-portal-v1/hdi.clustercreate.uploadcert.png

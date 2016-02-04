@@ -9,13 +9,10 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/30/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 
-<!-- keep by customization: begin -->
-[WACOM.INCLUDE [disclaimer](../includes/disclaimer)]
-<!-- keep by customization: end -->
 # Sign up for Azure as an organization
 
 Until recently, you could only sign up for a new Windows Azure subscription using your Microsoft account (Windows Live ID). Azure now supports using either of the following two account methods to sign up:

@@ -13,7 +13,7 @@
 
 # ExpressRoute NAT requirements
 
-To connect to Microsoft cloud services using ExpressRoute, you’ll need to set up and manage NATs. Some connectivity providers offer setting up and managing NAT as a managed service. Check with your connectivity provider to see if they offer such a service. If not, you must adhere to the requirements described below. 
+To connect to Microsoft cloud services using ExpressRoute, youâll need to set up and manage NATs. Some connectivity providers offer setting up and managing NAT as a managed service. Check with your connectivity provider to see if they offer such a service. If not, you must adhere to the requirements described below. 
 
 Review the [ExpressRoute circuits and routing domains](/documentation/articles/expressroute-circuit-peerings) page to get an overview of the various routing domains. To meet the public IP address requirements for Azure public and Microsoft peering, we recommend that you set up NAT between your network and Microsoft. This section provides a detailed description of the NAT infrastructure you need to set up.
 

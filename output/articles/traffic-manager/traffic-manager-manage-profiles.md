@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="11/12/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Manage an Azure Traffic Manager profile
@@ -27,13 +27,13 @@ You can quickly create a Traffic Manager profile by using Quick Create in the Az
 3. **Configure the DNS prefix.** Give your traffic manager profile a unique DNS prefix name. You can specify only the prefix for a Traffic Manager domain name.
 4. **Select the subscription.** Select the appropriate Azure subscription. Each profile is associated with a single subscription. If you only have one subscription, this option does not appear.
 5. **Select the traffic routing method.** Select the traffic routing method in **traffic routing Policy**. For more information about traffic routing methods, see [About Traffic Manager traffic routing methods](/documentation/articles/traffic-manager-load-balancing-methods).
-6. **Click “Create” to create your new profile**. When the profile configuration is completed, you can locate your profile in the Traffic Manager pane in the Azure Management Portal.
+6. **Click "Create" to create your new profile**. When the profile configuration is completed, you can locate your profile in the Traffic Manager pane in the Azure Management Portal.
 7. **Configure endpoints, monitoring, and additional settings in the Azure Management Portal.** Because you can only configure basic settings by using Quick Create, it is necessary to configure additional settings, such as the list of endpoints and the endpoint failover order, in order to complete your desired configuration. 
 
 
 ## Disable, enable, or delete a profile
 
-You can disable an existing Traffic Manager profile so that it will not refer user requests to its configured endpoints. When you disable a Traffic Manager profile, the profile itself and the information contained in the profile will remain intact and can be edited in the Traffic Manager interface. When you want to re-enable the profile, you can easily do so in the Azure Management Portal and referrals will resume. When you create a Traffic Manager profile in the Azure Management Portal, it’s automatically enabled. If you decide a profile will no longer be necessary, you can delete it.
+You can disable an existing Traffic Manager profile so that it will not refer user requests to its configured endpoints. When you disable a Traffic Manager profile, the profile itself and the information contained in the profile will remain intact and can be edited in the Traffic Manager interface. When you want to re-enable the profile, you can easily do so in the Azure Management Portal and referrals will resume. When you create a Traffic Manager profile in the Azure Management Portal, it's automatically enabled. If you decide a profile will no longer be necessary, you can delete it.
 
 ### To disable a profile
 

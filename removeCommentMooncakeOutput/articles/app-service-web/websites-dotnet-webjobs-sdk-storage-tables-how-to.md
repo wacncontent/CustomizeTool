@@ -31,6 +31,7 @@ Some of the code snippets show the `Table` attribute used in functions that are 
 -   [How to use the .NET Storage API directly to work with a table](#readone)
 -   [Related topics covered by the queues how-to article](#queues)
 -   [Next steps](#nextsteps)
+
 ## <a id="ingress"></a> How to add entities to a table
 
 To add entities to a table, use the `Table` attribute with an `ICollector<T>` or `IAsyncCollector<T>` parameter where `T` specifies the schema of the entities you want to add. The attribute constructor takes a string parameter that specifies the name of the table. 

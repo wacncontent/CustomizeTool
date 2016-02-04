@@ -3,20 +3,17 @@
 	description="Describes what happens after adding Azure Storage to a ASP.NET project using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/03/2015"
+
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # What happened to my ASP.NET project (Visual Studio Azure Storage connected service)?
-
-> [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-aspnet-getting-started-blobs)
-> - [What happened](/documentation/articles/vs-storage-aspnet-what-happened)
 
 ## References added
 

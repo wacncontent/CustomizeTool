@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/16/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Run Pig jobs using PowerShell
@@ -26,8 +26,7 @@ This document provides an example of using Azure PowerShell to submit Pig jobs t
 To complete the steps in this article, you will need the following.
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install Azure PowerShell 1.0 and greater](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater).
 
 
 ##<a id="powershell"></a>Run Pig jobs using PowerShell

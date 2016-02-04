@@ -21,11 +21,16 @@ For complete details on the topics in this article, see [Getting Started with Wi
 
 ## Types of runbook
 
+<!-- deleted by customization
 There are two types of runbook in Azure Automation, *textual* and *graphical*.  You define the runbook type when you create the runbook, and you can't convert a runbook to the other type once it's been created.
 
 Textual runbooks are for users who prefer to work directly with the PowerShell workflow code either using the textual editor in Azure Automation or an offline editor such as PowerShell ISE. You should understand the information in this article if you are creating a textual runbook. 
 
 Graphical runbooks allow you to create a runbook using the same activities and cmdlets but using a graphical interface that hides the complexities of the underlying PowerShell workflow.  Concepts in this article such as checkpoints and parallel execution still apply to graphical runbooks, but you won't have to worry about the detailed syntax. 
+-->
+<!-- keep by customization: begin -->
+Windows Azure China currently only supports textual Runbook.
+<!-- keep by customization: end -->
 
 ## Basic structure of a workflow
 
@@ -94,6 +99,9 @@ Another option is to use another cmdlet that performs the same functionality as 
 
 
 ## InlineScript
+<!-- keep by customization: begin -->
+<a name="inlinescript"></a>
+<!-- keep by customization: end -->
 
 The **InlineScript** activity is useful when you need to run one or more commands as traditional PowerShell script instead of PowerShell workflow.  While commands in a workflow are sent to Windows Workflow Foundation for processing, commands in an InlineScript block are processed by Windows PowerShell. 
 
@@ -144,6 +152,9 @@ For further details on using InlineScript, see [Running Windows PowerShell Comma
 
 
 ## Parallel processing
+<!-- keep by customization: begin -->
+<a name="parallel-execution"></a>
+<!-- keep by customization: end -->
 
 One advantage of Windows PowerShell Workflows is the ability to perform a set of commands in parallel instead of sequentially as with a typical script. 
 
@@ -206,8 +217,15 @@ The following example is similar to the previous example copying files in parall
 
 
 ## Checkpoints
+<!-- deleted by customization
 
-A *checkpoint* is a snapshot of the current state of the workflow that includes the current value for variables and any output generated to that point. If a workflow ends in error or is <!-- deleted by customization [suspended](/documentation/articles/suspending-a-workflow) --><!-- keep by customization: begin --> suspended <!-- keep by customization: end -->, then the next time it is run it will start from its last checkpoint instead of the start of the worfklow.  You can set a checkpoint in a workflow with the **Checkpoint-Workflow** activity.
+A *checkpoint* is a snapshot of the current state of the workflow that includes the current value for variables and any output generated to that point. If a workflow ends in error or is [suspended](/documentation/articles/suspending-a-workflow), then the next time it is run it will start from its last checkpoint instead of the start of the worfklow.  You can set a checkpoint in a workflow with the **Checkpoint-Workflow** activity.
+-->
+<!-- keep by customization: begin -->
+<a name="Checkpoints"></a>
+
+A *checkpoint* is a snapshot of the current state of the workflow that includes the current value for variables and any output generated to that point. If a workflow ends in error or is suspended, then the next time it is run it will start from its last checkpoint instead of the start of the worfklow.  You can set a checkpoint in a workflow with the **Checkpoint-Workflow** activity.
+<!-- keep by customization: end -->
 
 In the following sample code, an exception occurs after Activity2 causing the workflow to end. When the workflow is run again, it starts by running Activity2 since this was just after the last checkpoint set.
 

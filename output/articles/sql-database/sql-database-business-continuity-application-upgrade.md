@@ -7,7 +7,8 @@
    manager="jeffreyg" 
    editor="monicar"/>
 
-<tags	ms.service="sql-database"
+<tags
+	ms.service="sql-database"
 	ms.date="07/14/2015"
 	wacn.date=""/>
 

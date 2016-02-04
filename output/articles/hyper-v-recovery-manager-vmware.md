@@ -15,7 +15,7 @@
 <div class="dev-callout"> 
 
 <UL>
-<LI><b>Azure account</b>—You'll need an Azure account. If you don't have one, see <a href="/pricing/1rmb-trial/">Azure trial</a>. Get subscription pricing information at <a href="/home/features/site-recovery/#price">Azure Site Recovery Manager Pricing Details</a>.</LI>
+<LI><b>Azure account</b>âYou'll need an Azure account. If you don't have one, see <a href="/pricing/1rmb-trial/">Azure trial</a>. Get subscription pricing information at <a href="/home/features/site-recovery/#price">Azure Site Recovery Manager Pricing Details</a>.</LI>
 </UL>
 
 

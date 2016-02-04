@@ -1,15 +1,3 @@
-updated docs: 12
-articles/automation/automation-certificates.md
-articles/automation/automation-configuring.md
-articles/automation/automation-connections.md
-articles/automation/automation-credentials.md
-articles/automation/automation-intro.md
-articles/automation/automation-managing-data.md
-articles/automation/automation-runbook-execution.md
-articles/automation/automation-runbook-settings.md
-articles/automation/automation-runbook-types.md
-articles/automation/automation-schedules.md
-articles/automation/automation-starting-a-runbook.md
-articles/automation/automation-variables.md
+updated docs: 0
 
 updated includes: 0

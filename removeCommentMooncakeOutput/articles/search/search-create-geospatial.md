@@ -1,24 +1,20 @@
 <properties 
-	pageTitle="Create a geospatial search app using Azure Search" 
-	description="Create a geospatial search app using Bing and Azure Search" 
+	pageTitle="Create a geospatial search app using Azure Search | Windows Azure | Hosted cloud search service" 
+	description="Create a geospatial search app using Bing and Azure Search, a hosted cloud search service on Windows Azure." 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
 	manager="mblythe" 
 	editor=""/>
 
-<tags 
-	ms.service="search" 
-	ms.devlang="rest-api" 
-	ms.workload="search" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.date="07/08/2015" 
-	ms.author="heidist"/>
+<tags
+	ms.service="search"
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
 # Create a geospatial search app using Azure Search
 
-This tutorial demonstrates how to add geospatial search to web applications using Azure Search and Bing Maps. Using geo-search, you can find search targets within a certain distance of a point (such as finding all restaurants within 5 KM of my current location). The geo-spatial capability in Azure Search supports commonly used mapping techniques. For example, if you want to use polygon shapes in a real estate app showing houses for sale within a polygon boundary, you can easily do that using either OData or our simple search syntax.
+This tutorial demonstrates how to add geospatial search to web sites using Azure Search and Bing Maps. Using geo-search, you can find search targets within a certain distance of a point (such as finding all restaurants within 5 KM of my current location). The geo-spatial capability in Azure Search supports commonly used mapping techniques. For example, if you want to use polygon shapes in a real estate app showing houses for sale within a polygon boundary, you can easily do that using either OData or our simple search syntax.
 
 For more overview, watch this Channel 9 video about [Azure Search and Geospatial Data](http://channel9.msdn.com/Shows/Data-Exposed/Azure-Search-and-Geospatial-Data).
 
@@ -26,13 +22,13 @@ For more overview, watch this Channel 9 video about [Azure Search and Geospatial
 
 To create the application, we'll leverage the Bing mapping service to geocode addresses loaded from a CSV file, and then store the resulting data in a Search index. 
 
-This tutorial builds on the [Azure Search – Adventure Works Demo](http://azuresearchadventureworksdemo.codeplex.com). If you haven’t walked through that demo yet, start there to get some experience in creating an index and calling the Azure Search API from a web app.  
+This tutorial builds on the [Azure Search - Adventure Works Demo](http://azuresearchadventureworksdemo.codeplex.com). If you haven't walked through that demo yet, start there to get some experience in creating an index and calling the Azure Search API from a web site.  
 
 <a id="sub-1"></a>
 ## Prerequisites
 
 +	Visual Studio 2012 or higher with ASP.NET MVC 4 and SQL Server installed. You can download the free Express editions if you don't already have the software installed: [Visual Studio 2013 Express](http://www.visualstudio.com/products/visual-studio-express-vs.aspx) and [Microsoft SQL Server 2014 Express](http://msdn.microsoft.com/evalcenter/dn434042.aspx).
-+	An Azure Search service. You'll need the Search service name, plus the admin key. See [Create an Azure Search service in the portal](search-create-service-portal.md) for details.
++	An Azure Search service. You'll need the Search service name, plus the admin key. See [Create an Azure Search service in the portal](/documentation/articles/search-create-service-portal) for details.
 +	A Bing map service and a key to access it. Instructions are provided in the next section
 +	[Azure Search GeoSearch Sample on CodePlex](https://azuresearchgeospatial.codeplex.com/). On the Source tab, click **Download** to get a zip file of the solution. 
 
@@ -43,7 +39,7 @@ This solution contains two projects:
 +	**StoreIndexer** creates an Azure Search index and loads data.
 +	**AdventureWorksWebGeo** is an MVC4-based application that queries the Azure Search index and shows store locations on a Bing map.
 
-[AZURE.INCLUDE [You need an Azure account to complete this tutorial:](../../includes/free-trial-note.md)]
+[AZURE.INCLUDE [You need an Azure account to complete this tutorial:](../includes/free-trial-note.md)]
 
 <a id="sub-2"></a>
 ## Bing Maps
@@ -52,7 +48,7 @@ We are going to use the Bing Maps API for two things.
 
 + **Geocoding Addresses:** In the data, we have addresses (city, state, zip), but we also want the longitude and latitude coordinates of an address so that we can do geospatial searches. To get the cooridnates, we'll use the Bing Maps DataFlow API to send up a batch of addresses for geocoding. Using the Bing Trial account, we are limited to 50 addresses at one time, but that will be sufficient for this tutorial.
 
-+ **Bing Maps:** When the app runs, we’ll use Bing Maps to display store locations, overlayed on top of a Bing Map.
++ **Bing Maps:** When the app runs, we'll use Bing Maps to display store locations, overlayed on top of a Bing Map.
 
 ### Create an account for Bing Maps
 
@@ -67,11 +63,11 @@ We are going to use the Bing Maps API for two things.
 
 In this step, we use the Bing Maps DataFlow API to geocode some addresses for various bike stores around the world. 
 
-This data comes from a CSV file called store_locations.csv located in the source you downloaded earlier. If you open up this file in a text editor or Excel, you’ll see that it has an ID column for each store, the name of the store, and its address.
+This data comes from a CSV file called store_locations.csv located in the source you downloaded earlier. If you open up this file in a text editor or Excel, you'll see that it has an ID column for each store, the name of the store, and its address.
 
 Let's walk through the code that explains how this works.
 
-1. Open the AdventureWorksGeo solution in Visual Studio, expand the project **StoreIndexer** in the Solution Explorer and open Program.cs. Since we already covered index creation in the [Azure Search – Adventure Works Demo](http://azuresearchadventureworksdemo.codeplex.com/), we'll skip the discussion on how that works in Program.cs.
+1. Open the AdventureWorksGeo solution in Visual Studio, expand the project **StoreIndexer** in the Solution Explorer and open Program.cs. Since we already covered index creation in the [Azure Search - Adventure Works Demo](http://azuresearchadventureworksdemo.codeplex.com/), we'll skip the discussion on how that works in Program.cs.
 
 2. Go to the **Main** function and notice that it calls **ApplyStoreData**.  Move to this function and walk through the code.  
 
@@ -89,7 +85,7 @@ Let's walk through the code that explains how this works.
 
   **UpdateStoreData** uses the action **@search.action: merge** to update the location field of type Edm.GeographyPoint with the geocoded longitude and latitude coordinates that were just downloaded from Bing Maps. It does this by looking up the storeId which is the unique key for the document in the "stores" index and merging this new data into the existing document.
 
-8. Before running the application, add your Azure Search and Bing Maps API information by opening App.config and update the values for "SearchServiceName", "SearchServiceApiKey" and "BingMapsAPI" to those of your Azure Search service and Bing Maps API. For Search service name, if your service is "mysearch.search.windows.net", you would enter "mysearch".
+8. Before running the application, add your Azure Search and Bing Maps API information by opening App.config and update the values for "SearchServiceName", "SearchServiceApiKey" and "BingMapsAPI" to those of your Azure Search service and Bing Maps API. For Search service name, if your service is "mysearch.search.chinacloudapi.cn", you would enter "mysearch".
 
 9. Right-click on the **StoreIndexer** project and choose **Debug** | **Start New Instance** to run it.
 
@@ -102,7 +98,7 @@ In this step, you'll build and run the search application in a web browser that 
 	
 2.	Right-click **AdventureWorksWebGeo** in the Solution Explorer and select **Set as startup project**.
 	
-3.	Open Web.config in this project and update the values for "SearchServiceName", "SearchServiceApiKey" and "BingMapsAPI" to those of your Azure Search service and Bing Maps API. For Search service name, if your service is "mysearch.search.windows.net", you would enter "mysearch".
+3.	Open Web.config in this project and update the values for "SearchServiceName", "SearchServiceApiKey" and "BingMapsAPI" to those of your Azure Search service and Bing Maps API. For Search service name, if your service is "mysearch.search.chinacloudapi.cn", you would enter "mysearch".
 
 4.	Save Web.config.
 	
@@ -119,7 +115,7 @@ The project **AdventureWorksWebGeo** shows us how ASP.NET MVC 4 can be used to i
 
 2.	Open Index.cshtml from **Views** | **Home**.
 
-3.	This file follows the typical way that you would add Bing Maps to a web application, however a few things to point out are:
+3.	This file follows the typical way that you would add Bing Maps to a web site, however a few things to point out are:
 
 +	The ViewBag from the controller is used to load the credentials for the map using: credentials: '@ViewBag.BingAPI' 
 

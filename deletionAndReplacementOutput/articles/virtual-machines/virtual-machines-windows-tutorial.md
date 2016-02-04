@@ -10,7 +10,7 @@ deleted:
 		
 		[AZURE.VIDEO create-a-virtual-machine-running-windows-in-the-azure-preview-portal]
 
-reason: ()
+reason: (video)
 
 deleted:
 
@@ -28,7 +28,7 @@ replaced by:
 
 		1. Sign in to the [portal](https://manage.windowsazure.cn).
 
-reason: ()
+reason: (preview portal)
 
 deleted:
 
@@ -38,5 +38,5 @@ replaced by:
 
 		[portal](https://manage.windowsazure.cn)
 
-reason: ()
+reason: (preview portal)
 

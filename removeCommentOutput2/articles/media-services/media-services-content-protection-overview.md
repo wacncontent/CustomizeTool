@@ -9,13 +9,13 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="11/03/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 #Protecting Content Overview
 
 
-Windows Azure Media Services enables you to secure your media from the time it leaves your computer through storage, processing, and delivery. Media Services allows you to deliver your content encrypted dynamically with Advanced Encryption Standard (AES) (using 128-bit encryption keys) and common encryption (CENC) using PlayReady and/or Widevine DRM. Media Services also provides a service for delivering keys and PlayReady licenses to authorized clients. Currently, Media Services does not provide a Widevine license server. You can use the following AMS partners to help you deliver Widevine licenses: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
+Windows Azure Media Services enables you to secure your media from the time it leaves your computer through storage, processing, and delivery. Media Services allows you to deliver your content encrypted dynamically with Advanced Encryption Standard (AES) (using 128-bit encryption keys) and common encryption (CENC) using PlayReady and/or Widevine DRM. Media Services also provides a service for delivering AES keys and PlayReady licenses to authorized clients. Widevine license delivery services provided by Azure Media Sevices is in preview. You can also use the following AMS partners to help you deliver Widevine licenses: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
 
 - The following image demonstrates the "PlayReady and/or Widevine DRM dynamic common encryption" workflow. For details, see [Using PlayReady and/or Widevine DRM dynamic common encryption](/documentation/articles/media-services-protect-with-drm).
 
@@ -38,13 +38,13 @@ Depending on the type of content you want to upload, store, and deliver, Media S
 
 If you plan to deliver an MP4 using progressive download, use this option to upload your content.
 
-**StorageEncrypted** – Use this option to encrypt your clear content locally using AES 256 bit encryption and then upload it to Azure Storage where it is stored encrypted at rest. Assets protected with storage encryption are automatically unencrypted and placed in an encrypted file system prior to encoding, and optionally re-encrypted prior to uploading back as a new output asset. The primary use case for storage encryption is when you want to secure your high quality input media files with strong encryption at rest on disk.
+**StorageEncrypted** - Use this option to encrypt your clear content locally using AES 256 bit encryption and then upload it to Azure Storage where it is stored encrypted at rest. Assets protected with storage encryption are automatically unencrypted and placed in an encrypted file system prior to encoding, and optionally re-encrypted prior to uploading back as a new output asset. The primary use case for storage encryption is when you want to secure your high quality input media files with strong encryption at rest on disk.
 
-In order to deliver a storage encrypted asset, you must configure the asset’s delivery policy so Media Services knows how you want to deliver your content. Before your asset can be streamed, the streaming server removes the storage encryption and streams your content using the specified delivery policy (for example, AES, common encryption, or no encryption).
+In order to deliver a storage encrypted asset, you must configure the asset's delivery policy so Media Services knows how you want to deliver your content. Before your asset can be streamed, the streaming server removes the storage encryption and streams your content using the specified delivery policy (for example, AES, common encryption, or no encryption).
 
 **CommonEncryptionProtected** - Use this option if you want to encrypt (or upload already encrypted) content with Common Encryption. Both PlayReady and Widewine are encrypted per the Common Encryption (CENC) specification and are supported by AMS.
 
-**EnvelopeEncryptionProtected** – Use this option if you want to protect (or upload already protected) HTTP Live Streaming (HLS) encrypted with Advanced Encryption Standard (AES). Note that if you are uploading HLS already encrypted with AES, it must have been encrypted by Transform Manager.
+**EnvelopeEncryptionProtected** - Use this option if you want to protect (or upload already protected) HTTP Live Streaming (HLS) encrypted with Advanced Encryption Standard (AES). Note that if you are uploading HLS already encrypted with AES, it must have been encrypted by Transform Manager.
 
 
 

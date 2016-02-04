@@ -8,9 +8,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="08/18/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
-
 # Send cross-platform notifications to users with Notification Hubs
 
 
@@ -50,7 +49,6 @@ Complete the following steps to send cross-platform notifications using template
             default:
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
         }
-
 	This code calls the platform-specific method to create a template registration instead of a native registration. Existing registrations need not be modified because template registrations derive from native registrations.
 
 3. In the **Notifications** controller, replace the **sendNotification** method with the following code:
@@ -84,9 +82,6 @@ Now that you have completed this tutorial, find out more about Notification Hubs
 
 +  **[Azure Notification Hubs Overview][Templates]**<br/>Overview topic has more detailed information on templates.
 
-+  **[Notification Hub How to for Windows Store]**<br/>Includes a template expression language reference.
-
-
 
 <!-- Anchors. -->
 
@@ -100,9 +95,16 @@ Now that you have completed this tutorial, find out more about Notification Hubs
 [Push to users Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
 [Visual Studio 2012 Express for Windows 8]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 
-[Management Portal]: https://manage.windowsazure.cn/
-[Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
+<!-- deleted by customization
+[Use Notification Hubs to send breaking news]: notification-hubs-windows-store-dotnet-send-breaking-news.md
 [Azure Notification Hubs]: /home/features/notification-hubs/#price
+[Notify users with Notification Hubs]: notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
+-->
+<!-- keep by customization: begin -->
+[Management Portal]: https://manage.windowsazure.cn/
+[Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+[Azure Notification Hubs]: http://www.windowsazure.cn/zh-cn/home/features/notification-hubs/#price
 [Notify users with Notification Hubs]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
+<!-- keep by customization: end -->
 [Templates]: https://msdn.microsoft.com/zh-cn/library/jj927170.aspx#BKMK_NH7
 [Notification Hub How to for Windows Store]: http://msdn.microsoft.com/zh-cn/library/azure/jj927172.aspx

@@ -5,11 +5,11 @@
 	documentationCenter="python"
 	authors="emgerner-msft"
 	manager="wpickett"
-	editor=""/>
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="08/25/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 
@@ -55,12 +55,12 @@ Entities that have the same **PartitionKey** are stored on the same node. **RowK
 belongs to.
 
 To add an entity to your table, pass a dictionary object
-to the **insert\_entity** method.
+to the **insert_entity** method.
 
 	task = {'PartitionKey': 'tasksSeattle', 'RowKey': '1', 'description' : 'Take out the trash', 'priority' : 200}
 	table_service.insert_entity('tasktable', task)
 
-You can also pass an instance of the **Entity** class to the **insert\_entity** method.
+You can also pass an instance of the **Entity** class to the **insert_entity** method.
 
 	task = Entity()
 	task.PartitionKey = 'tasksSeattle'
@@ -79,7 +79,7 @@ with an updated version.
 
 If the entity that is being updated does not exist, then the update
 operation will fail. If you want to store an entity
-regardless of whether it existed before, use **insert\_or\_replace_entity**.
+regardless of whether it existed before, use **insert_or_replace_entity**.
 In the following example, the first call will replace the existing entity. The second call will insert a new entity, since no entity with the specified **PartitionKey** and **RowKey** exists in the table.
 
 	task = {'description' : 'Take out the garbage again', 'priority' : 250}
@@ -92,9 +92,9 @@ In the following example, the first call will replace the existing entity. The s
 
 Sometimes it makes sense to submit multiple operations together in a
 batch to ensure atomic processing by the server. To accomplish that, you
-use the **begin\_batch** method on **TableService** and then call the
+use the **begin_batch** method on **TableService** and then call the
 series of operations as usual. When you do want to submit the
-batch, you call **commit\_batch**. Note that all entities must be in the same partition in order to be changed as a batch. The example below adds two entities together in a batch.
+batch, you call **commit_batch**. Note that all entities must be in the same partition in order to be changed as a batch. The example below adds two entities together in a batch.
 
 	task10 = {'PartitionKey': 'tasksSeattle', 'RowKey': '10', 'description' : 'Go grocery shopping', 'priority' : 400}
 	task11 = {'PartitionKey': 'tasksSeattle', 'RowKey': '11', 'description' : 'Clean the bathroom', 'priority' : 100}
@@ -105,7 +105,7 @@ batch, you call **commit\_batch**. Note that all entities must be in the same pa
 
 ## Query for an entity
 
-To query an entity in a table, use the **get\_entity** method by
+To query an entity in a table, use the **get_entity** method by
 passing **PartitionKey** and **RowKey**.
 
 	task = table_service.get_entity('tasktable', 'tasksSeattle', '1')
@@ -162,8 +162,6 @@ to learn about more complex storage tasks:
 
 For more information, see also the [Python Developer Center](/develop/python/).
 
-
-[Azure Storage]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team blog]: http://blogs.msdn.com/b/windowsazurestorage/
 [Python Azure package]: https://pypi.python.org/pypi/azure
 [Python Azure Storage package]: https://pypi.python.org/pypi/azure-storage

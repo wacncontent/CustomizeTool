@@ -14,6 +14,11 @@
 
 # <a name="getting-started"> </a>Get started with Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
+
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
@@ -91,13 +96,10 @@ Learn how to perform additional important tasks in Mobile Services:
 
 
 <!-- URLs. -->
-[Get started with offline data sync]: /documentation/articles/mobile-services-ios-get-started-offline-data
-[Add authentication to an existing app]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
-[Add push notifications to an existing app]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
-[Troubleshoot Mobile Services .NET backend]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
-
+[Get started with offline data sync]: mobile-services-ios-get-started-offline-data.md
+[Add authentication to an existing app]: mobile-services-dotnet-backend-ios-get-started-users.md
+[Add push notifications to an existing app]: mobile-services-dotnet-backend-ios-get-started-push.md
+[Troubleshoot Mobile Services .NET backend]: mobile-services-dotnet-backend-how-to-troubleshoot.md
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-
-[Management Portal]: https://manage.windowsazure.cn/
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[JavaScript backend version]: /documentation/articles/mobile-services-ios-get-started
+[JavaScript backend version]: mobile-services-ios-get-started.md

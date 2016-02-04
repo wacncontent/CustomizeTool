@@ -8,16 +8,12 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/26/2015"
-   ms.author="aprameyr"/>
+	ms.service="service-fabric"
+	ms.date="08/26/2015"
+	wacn.date=""/>
 
 # Partitioning Service Fabric services
-Service Fabric makes it easy to build scalable stateful services by supporting partitioning of the service state and having each partition operate on a subset of the total state. Each partition becomes a unit that is made [highly available](service-fabric-availability-services.md). The replicas of partitions are distributed across the nodes in the cluster and are balanced.
+Service Fabric makes it easy to build scalable stateful services by supporting partitioning of the service state and having each partition operate on a subset of the total state. Each partition becomes a unit that is made [highly available](/documentation/articles/service-fabric-availability-services). The replicas of partitions are distributed across the nodes in the cluster and are balanced.
 
 > [AZURE.NOTE] While Stateless Services can also be partitioned this scenario is rare and unnecessary for most Service Fabric services.  
 
@@ -49,7 +45,7 @@ A good resource for general hash code algorithm choices is [the Wikipedia page o
 
 For information on Service Fabric concepts, see the following:
 
-- [Availability of Service Fabric Services](service-fabric-availability-services.md)
+- [Availability of Service Fabric Services](/documentation/articles/service-fabric-availability-services)
 
-- [Scalability of Service Fabric Services](service-fabric-concepts-scalability.md)
+- [Scalability of Service Fabric Services](/documentation/articles/service-fabric-concepts-scalability)
  

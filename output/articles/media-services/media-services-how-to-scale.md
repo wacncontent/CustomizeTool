@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -41,4 +41,10 @@ For more information, see [Managing Media Services Assets across Multiple Storag
 
 
 
+##Media Services learning paths
 
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

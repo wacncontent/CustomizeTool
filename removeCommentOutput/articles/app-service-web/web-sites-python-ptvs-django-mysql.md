@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Django and MySQL on Azure with Python Tools 2.2 for Visual Studio" 
-	description="Learn how to use the Python Tools for Visual Studio to create a Django web app that stores data in a MySQL database instance and deploy it to Azure Websites." 
+	description="Learn how to use the Python Tools for Visual Studio to create a Django web site that stores data in a MySQL database instance and deploy it to Azure Websites." 
 	services="app-service\web" 
 	documentationCenter="python" 
 	authors="huguesv" 
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/30/2015"
+	ms.date="11/17/2015"
 	wacn.date=""/>
 
 # Django and MySQL on Azure with Python Tools 2.2 for Visual Studio 
@@ -22,9 +22,9 @@
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
 - [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates. This tutorial is also available as a [video](https://www.youtube.com/watch?v=oKCApIrS0Lo).
+In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web site using one of the PTVS sample templates. This tutorial is also available as a [video](https://www.youtube.com/watch?v=oKCApIrS0Lo).
 
-We'll learn how to use a MySQL service hosted on Azure, how to configure the web app to use MySQL, and how to publish the web app to [Azure Websites](/documentation/services/web-sites/).
+We'll learn how to use a MySQL service hosted on Azure, how to configure the web site to use MySQL, and how to publish the web site to [Azure Websites](/documentation/services/web-sites/).
 
 See the [Python Developer Center] for more articles that cover development of Azure Websites with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Websites, the steps are similar when developing [Azure Cloud Services].
 
@@ -38,7 +38,7 @@ See the [Python Developer Center] for more articles that cover development of Az
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 
 ## Create the Project
 
@@ -94,14 +94,13 @@ As an alternative, you can create your own Virtual Machine running in Azure, the
 
 You can create a database with a free plan by following these steps.
 
-1.  Log into the [Azure Management Portal].
+1.  Log into the [Azure Management Portal](https://manage.windowsazure.cn/).
 
-1.  At the bottom of the navigation pane, click **NEW**. Then, click **DATA SERVICE** > **Azure Marketplace**. 
+1.  At the Top of the navigation pane, click **NEW**. Then, click **DATA SERVICE** > **MySQL Database**. 
 
-  	<!-- ![New Button](./media/web-sites-python-ptvs-django-mysql/PollsCommonAzurePlusNew.png)-->
+  
 
-1.  Type "**mysql**" in the search box, then click **MySQL Database**, and then click **Create**.
-
+1.  Type "**mysql**" in the search box, then click **MySQL Database**, and then click **Create**.  -->
   	<!-- ![Choose Add-on Dialog](./media/web-sites-python-ptvs-django-mysql/PollsDjangoClearDBAddon1.png) -->
 
 1.  Configure the new MySQL database by creating a new resource group and select the appropriate location for it.
@@ -113,7 +112,7 @@ You can create a database with a free plan by following these steps.
 
 ## Configure the Project
 
-In this section, we'll configure our web app to use the MySQL database we just created. We'll also install additional Python packages required to use MySQL databases with Django. Then we'll run the web app locally.
+In this section, we'll configure our web site to use the MySQL database we just created. We'll also install additional Python packages required to use MySQL databases with Django. Then we'll run the web site locally.
 
 1.  In Visual Studio, open **settings.py**, from the *ProjectName* folder. Temporarily paste the connection string in the editor. The connection string is in this format:
 
@@ -147,20 +146,20 @@ In this section, we'll configure our web app to use the MySQL database we just c
 
 1.  Run the application with `F5`. Polls that are created with **Create Sample Polls** and the data submitted by voting will be serialized in the MySQL database.
 
-## Publish the web app to Azure Websites
+## Publish the web site to Azure Websites
 
-The Azure .NET SDK provides an easy way to deploy your web app to Azure Websites.
+The Azure .NET SDK provides an easy way to deploy your web site to Azure Websites.
 
 1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
   	![Publish Web Dialog](./media/web-sites-python-ptvs-django-mysql/PollsCommonPublishWebSiteDialog.png)
 
-1.  Click on **Windows Azure Web Apps**.
+1.  Click on **Windows Azure web sites**.
 
-1.  Click on **New** to create a new web app.
+1.  Click on **New** to create a new web site.
 
 1.  Fill in the following fields and click **Create**.
-	-	**Web App name**
+	-	**web site name**
 	-	**App Service plan**
 	-	**Resource group**
 	-	**Region**
@@ -170,7 +169,7 @@ The Azure .NET SDK provides an easy way to deploy your web app to Azure Websites
 
 1.  Accept all other defaults and click **Publish**.
 
-1.  Your web browser will open automatically to the published web app. You should see the web app working as expected, using the **MySQL** database hosted on Azure.
+1.  Your web browser will open automatically to the published web site. You should see the web site working as expected, using the **MySQL** database hosted on Azure.
 
     Congratulations!
 
@@ -191,12 +190,11 @@ For more information, see the [Python Developer Center](/develop/python/).
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
-[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
+[Azure Cloud Services]: ../cloud-services-python-ptvs.md
 
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn

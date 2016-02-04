@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Develop Java-based topologies for a basic word-count application with Apache Storm and Maven on HDInsight
@@ -447,7 +447,7 @@ By looking at the data emitted by the count bolt, we can see that 'apple' has be
 
 Trident is a high-level abstraction that is provided by Storm. It supports stateful processing. The primary advantage of Trident is that it can guarantee that every message that enters the topology is processed only once. This is difficult to achieve in a raw Java topology, which guarantee's that messages will be processed at least once. There are also other differences, such as built-in components that can be used instead of creating bolts. In fact, bolts are completely replaced by less-generic components, such as filters, projections, and functions.
 
-Trident applications can be created by using Maven projects. You use the same basic steps as presented earlier in this article—only the code is different.
+Trident applications can be created by using Maven projects. You use the same basic steps as presented earlier in this articleâonly the code is different.
 
 For more information about Trident, see the <a href="http://storm.apache.org/documentation/Trident-API-Overview.html" target="_blank">Trident API Overview</a>.
 

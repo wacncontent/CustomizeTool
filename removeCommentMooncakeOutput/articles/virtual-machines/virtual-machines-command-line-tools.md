@@ -15,7 +15,7 @@
 
 # Using the Azure CLI for Mac, Linux, and Windows with Azure Service Management
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating and managing a resource with CLI commands in the classic deployment model. You can also create and manage a resource with CLI commands in the [Resource Manager deployment model](/documentation/articles/azure-cli-arm-commands).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model. You can also create a resource with the [Resource Manager deployment model](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli).
 
 This article describes how to use the Azure CLI in the Service Management mode (asm mode) to create, manage, and delete services on the command line of Mac, Linux, and Windows computers. You can perform many of the same tasks using the various libraries of the Azure SDKs, with Azure PowerShell, and using the Azure Management Portal. Using Azure services with the Service Management mode is conceptually similar to creating and managing individual Azure concepts and services like Websites, Virtual Machines, Virtual Networks, Storage, and so on.  
 
@@ -59,9 +59,9 @@ This command imports a publishsettings file or certificate so that it can be use
 
 	~$ azure account import publishsettings.publishsettings
 	info:   Importing publish settings file publishsettings.publishsettings
-	info:   Found subscription: 3-Month Trial
+	info:   Found subscription: 3-Month 1-RMB Trial
 	info:   Found subscription: Pay-As-You-Go
-	info:   Setting default subscription to: 3-Month Trial
+	info:   Setting default subscription to: 3-Month 1-RMB Trial
 	warn:   The 'publishsettings.publishsettings' file contains sensitive information.
 	warn:   Remember to delete it now that it has been imported.
 	info:   Account publish settings imported successfully
@@ -169,8 +169,8 @@ Show account environment details
 	~$ azure account env show
 	info:    Executing command account env show
 	Environment name: AzureCloud
-	data:    Environment publishingProfile  http://go.microsoft.com/fwlink/?LinkId=2544
-	data:    Environment portal  http://go.microsoft.com/fwlink/?LinkId=2544
+	data:    Environment publishingProfile  <!--http://go.microsoft.com/fwlink/?LinkId=2544--><!--??????cannot be found -->
+	data:    Environment portal  <!--http://go.microsoft.com/fwlink/?LinkId=2544--><!--??????cannot be found -->
 	info:    account env show command OK
 
 **account env add [options] [environment]**
@@ -219,7 +219,7 @@ The following optional parameters are supported for this command:
 **-s** The subscription <br />
 **-o, --community** The specified image is a community image <br />
 **-w** The virtual network name <br/>
-**-l, --location** specifies the location (for example, "China North"). <br />
+**-l, --location** specifies the location (for example, "North Central China"). <br />
 **-a, --affinity-group** specifies the affinity group.<br />
 **-w, --virtual-network-name** Specify the virtual network on which to add the new virtual machine. Virtual networks can be set up and managed from the Azure Management Portal.<br />
 **-b, --subnet-names** Specifies the subnet names to assign the virtual machine.
@@ -257,7 +257,7 @@ This command lists all available Azure account locations.
 	info:   Executing command vm location list
 	data:   Name                   Display Name
 	data:   ---------------------  ------------
-	data:   Azure Preview  China North
+	data:   Azure Preview  North US
 	info:   account location list command OK
 
 **vm show [options] &lt;name>**
@@ -460,7 +460,7 @@ This command shows the details of a virtual machine image.
 	data:       Label: 'Windows Server 2008 R2 SP1, Nov 2011',
 	data:       Name: 'MSFT__Windows-Server-2008-R2-SP1.11-29-2011',
 	data:       Description: 'Microsoft Windows Server 2008 R2 SP1',
-	data:       @: { xmlns: 'http://schemas.microsoft.com/windowsazure', xmlns:i: 'http://www.w3.org/2001/XMLSchema-instance' },
+	data:       @: { xmlns: 'http://schemas.microsoft.cn/windowsazure', xmlns:i: 'http://www.w3.org/2001/XMLSchema-instance' },
 	data:       Category: 'Microsoft',
 	data:       OS: 'Windows',
 	data:       Eula: 'http://www.microsoft.com',
@@ -611,6 +611,10 @@ This command creates a new cloud service
 	help:    Location:
 	  1) China East
 	  2) China North
+	  3) China North
+	  4) West Europe
+	  5) China East
+	  6) China North
 	  : 6
 	+ Creating cloud service
 	data:    Cloud service name newservicemsopentech
@@ -692,13 +696,13 @@ This command deletes a certificate.
 	info:   nghinazz : cert deleted
 	info:   service cert delete command OK
 
-## Commands to manage your web apps
+## Commands to manage your web sites
 
-An Azure web app is a web configuration accessible by URI. Web apps are hosted in virtual machines, but you do not need to think about the details of creating and deploying the virtual machine yourself. Those details are handled for you by Azure.
+An Azure Website is a web configuration accessible by URI. Web Sites are hosted in virtual machines, but you do not need to think about the details of creating and deploying the virtual machine yourself. Those details are handled for you by Azure.
 
 **site list [options]**
 
-This command lists your web apps.
+This command lists your web sites.
 
 	~$ azure site list
 	info:   Executing command site list
@@ -711,7 +715,7 @@ This command lists your web apps.
 
 **site set [options] [name]**
 
-This command will set configuration options for your web app [name]
+This command will set configuration options for your web site [name]
 
 	~$ azure site set
 	info:    Executing command site set
@@ -732,7 +736,7 @@ This command will generate a custom deployment script
 
 **site create [options] [name]**
 
-This command creates a new web app and local directory.
+This command creates a new web site and local directory.
 
 	~$ azure site create mysite
 	info:   Executing command site create
@@ -747,7 +751,7 @@ This command creates a new web app and local directory.
 
 **site browse [options] [name]**
 
-This command opens your web app in a browser.
+This command opens your web site in a browser.
 
 	~$ azure site browse mysite
 	info:   Executing command site browse
@@ -756,7 +760,7 @@ This command opens your web app in a browser.
 
 **site show [options] [name]**
 
-This command shows details for a web app.
+This command shows details for a web site.
 
 	~$ azure site show mysite
 	info:   Executing command site show
@@ -786,7 +790,7 @@ This command shows details for a web app.
 
 **site delete [options] [name]**
 
-This command deletes a web app.
+This command deletes a web site.
 
 	~$ azure site delete mysite
 	info:   Executing command site delete
@@ -796,7 +800,7 @@ This command deletes a web app.
 
  **site swap [options] [name]**
 
-This command swaps two web app slots.
+This command swaps two web site slots.
 
 This command supports the following additional option:
 
@@ -805,7 +809,7 @@ This command supports the following additional option:
 
 **site start [options] [name]**
 
-This command starts a web app.
+This command starts a web site.
 
 	~$ azure site start mysite
 	info:   Executing command site start
@@ -815,7 +819,7 @@ This command starts a web app.
 
 **site stop [options] [name]**
 
-This command stops a web app.
+This command stops a web site.
 
 	~$ azure site stop mysite
 	info:   Executing command site stop
@@ -825,7 +829,7 @@ This command stops a web app.
 
 **site restart [options] [name]
 
-This command stops and then starts a specified web app.
+This command stops and then starts a specified web site.
 
 This command supports the following additional option:
 
@@ -834,22 +838,26 @@ This command supports the following additional option:
 
 **site location list [options]**
 
-This command lists your web app locations.
+This command lists your web site locations.
 
 	~$ azure site location list
 	info:    Executing command site location list
 	+ Getting locations
 	data:    Name
 	data:    ----------------
+	data:    West Europe
+	data:    China North
+	data:    North Central China
 	data:    China North
 	data:    China East
+	data:    ChinaEast
 	info:    site location list command OK
 
-###Commands to manage your web app application settings
+###Commands to manage your web site application settings
 
 **site appsetting list [options] [name]**
 
-This command lists the app setting added to the web app.
+This command lists the app setting added to the web site.
 
 	~$ azure site appsetting list
 	info:    Executing command site appsetting list
@@ -863,7 +871,7 @@ This command lists the app setting added to the web app.
 
 **site appsetting add [options] &lt;keyvaluepair> [name]**
 
-This command adds an app setting to your web app as a key value pair.
+This command adds an app setting to your web site as a key value pair.
 
 	~$ azure site appsetting add test=value
 	info:    Executing command site appsetting add
@@ -875,7 +883,7 @@ This command adds an app setting to your web app as a key value pair.
 
 **site appsetting delete [options] &lt;key> [name]**
 
-This command deletes the specified app setting from the web app.
+This command deletes the specified app setting from the web site.
 
 	~$ azure site appsetting delete test
 	info:    Executing command site appsetting delete
@@ -898,11 +906,11 @@ This command displays details of the specified app setting
 	data:    Value:  value
 	info:    site appsetting show command OK
 
-###Commands to manage your web app certificates
+###Commands to manage your web site certificates
 
 **site cert list [options] [name]**
 
-This command displays a list of the web app certs.
+This command displays a list of the web site certs.
 
 	~$ azure site cert list
 	info:    Executing command site cert list
@@ -938,7 +946,7 @@ This command shows the cert details
 	data:    Certificate thumbprint CE1CD65852B38DC32001C2E0E8F7A526A29B541F
 	info:    site cert show command OK
 
-###Commands to manage your web app connection strings
+###Commands to manage your web site connection strings
 
 **site connectionstring list [options] [name]**
 
@@ -948,7 +956,7 @@ This command shows the cert details
 
 **site connectionstring show [options] &lt;connectionname> [name]**
 
-###Commands to manage your web app default documents
+###Commands to manage your web site default documents
 
 **site defaultdocument list [options] [name]**
 
@@ -956,7 +964,7 @@ This command shows the cert details
 
 **site defaultdocument delete [options] &lt;document> [name]**
 
-###Commands to manage your web app deployments
+###Commands to manage your web site deployments
 
 **site deployment list [options] [name]**
 
@@ -968,7 +976,7 @@ This command shows the cert details
 
 **site deployment user set [options] [username] [pass]**
 
-###Commands to manage your web app domains
+###Commands to manage your web site domains
 
 **site domain list [options] [name]**
 
@@ -976,7 +984,7 @@ This command shows the cert details
 
 **site domain delete [options] &lt;dn> [name]**
 
-###Commands to manage your web app handler mappings
+###Commands to manage your web site handler mappings
 
 **site handler list [options] [name]**
 
@@ -988,7 +996,7 @@ This command shows the cert details
 
 **site job list [options] [name]**
 
-This command list all the web jobs under a web app.
+This command list all the web jobs under a web site.
 
 This command supports the following additional options:
 
@@ -1068,11 +1076,11 @@ This command supports the following additional options:
 + **--run-id** &lt;run-id>: Optional. The id of the run history. If not specified, show the latest run.
 + **--slot** &lt;slot>: The name of the slot to restart.
 
-###Commands to manage your web app diagnostics
+###Commands to manage your web site diagnostics
 
 **site log download [options] [name]**
 
-Download a .zip file that contains your web app's diagnostics.
+Download a .zip file that contains your web site's diagnostics.
 
 	~$ azure site log download
 	info:    Executing command site log download
@@ -1095,7 +1103,7 @@ This command connects your terminal to the log-streaming service.
 
 **site log set [options] [name]**
 
-This command configures the diagnostic options for your web app.
+This command configures the diagnostic options for your web site.
 
 	~$ azure site log set -a
 	info:    Executing command site log set
@@ -1112,7 +1120,7 @@ This command configures the diagnostic options for your web app.
 	+ Updating diagnostic settings
 	info:    site log set command OK
 
-###Commands to manage your web app repositories
+###Commands to manage your web site repositories
 
 **site repository branch [options] &lt;branch> [name]**
 
@@ -1120,7 +1128,7 @@ This command configures the diagnostic options for your web app.
 
 **site repository sync [options] [name]**
 
-###Commands to manage your web app scaling
+###Commands to manage your web site scaling
 
 **site scale mode [options] &lt;mode> [name]**
 
@@ -1154,6 +1162,7 @@ This command lists geographic locations supported by Mobile Services.
 	~$ azure mobile locations
 	info:    Executing command mobile locations
 	info:    China East (default)
+	info:    China North
 	info:    China North
 
 **mobile create [options] [servicename] [sqlAdminUsername] [sqlAdminPassword]**
@@ -1813,8 +1822,14 @@ Display a list of all available namespace locations.
 	+ Getting locations
 	data:    Name              Code
 	data:    ----------------  ----------------
+	data:    China East         China East
+	data:    West Europe       West Europe
 	data:    China North      China North
 	data:    China East           China East
+	data:    China North    China North
+	data:    China North  China North
+	data:    China North           China North
+	data:    China East  China East
 	info:    sb namespace location list command OK
 
 **sb namespace show &lt;name>**

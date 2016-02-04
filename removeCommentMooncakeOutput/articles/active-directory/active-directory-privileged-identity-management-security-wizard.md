@@ -16,11 +16,11 @@
 
 The first time you run Azure Privileged Identity Management, you will be presented with a wizard. The wizard helps you understand the security risks of privileged identities and how to use Privileged Identity Management to reduce risk.
 
-There are three sections to review, **YOUR ADMINS MIGHT PUT YOU AT RISK, MANAGE YOUR ADMINS’ ATTACK SURFACE**, and **DEFINE TEMPORARY ADMIN SETTINGS**. Each section gives you an overview of the concepts and an explanation of some actions to take.
+There are three sections to review, **YOUR ADMINS MIGHT PUT YOU AT RISK, MANAGE YOUR <!-- deleted by customization ADMINS' --><!-- keep by customization: begin --> ADMINS’ <!-- keep by customization: end --> ATTACK SURFACE**, and **DEFINE TEMPORARY ADMIN SETTINGS**. Each section gives you an overview of the concepts and an explanation of some actions to take.
 
 At first, all of your global administrators will be permanent. When you click on **YOUR ADMINS MIGHT PUT YOU AT RISK**, you will be shown a list of global administrator roles and how many of them you currently have.
 
-Clicking on **MANAGE YOUR ADMINS’ ATTACK SURFACE**, will present you with an opportunity to change administrators to temporary, leave them permanent or remove them from the role altogether.
+Clicking on **MANAGE YOUR <!-- deleted by customization ADMINS' --><!-- keep by customization: begin --> ADMINS’ <!-- keep by customization: end --> ATTACK SURFACE**, will present you with an opportunity to change administrators to temporary, leave them permanent or remove them from the role altogether.
 
 **DEFINE TEMPORARY ADMINS SETTINGS** allows you to determine how long a temporary administrator will have privileges, enable notifications, and require multi-factor authentication.
 
@@ -56,7 +56,7 @@ For more information about MFA and PIM, click here. PLACEHOLDER: NEED LINK TO MF
 
 Select the roles that these settings will be applied to. Click **OK**.
 
-> [AZURE.WARNING] If is important, at this time, that you have more than one security administrator, because if that one security administrator is not set to permanent and the role assignment expires, and you don’t have MFA set up for that user, the user will not be able to administer PIM at all.
+> [AZURE.WARNING] If is important, at this time, that you have more than one security administrator, because if that one security administrator is not set to permanent and the role assignment expires, and you <!-- deleted by customization don't --><!-- keep by customization: begin --> don’t <!-- keep by customization: end --> have MFA set up for that user, the user will not be able to administer PIM at all.
 
 Click the **OK** button. When you are finished.
 

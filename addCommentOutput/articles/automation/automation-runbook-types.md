@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="09/24/2015"
+	ms.date="11/13/2015"
 	wacn.date=""/>
 
 # Azure Automation runbook types
@@ -22,8 +22,8 @@ Azure Automation supports three types of runbooks that are  briefly described in
 | [Graphical](#graphical-runbooks) | Based on Windows PowerShell Workflow and created and edited completely in graphical editor in Azure Management Portal. | 
 -->
 | [PowerShell Workflow](#powershell-workflow-runbooks) | Text runbook based on Windows PowerShell Workflow. |
-| [PowerShell](#powershell-runbooks) | Text runbook based on Windows PowerShell script. |
 <!-- deleted by customization
+| [PowerShell](#powershell-runbooks) | Text runbook based on Windows PowerShell script. |
 
 ## Graphical runbooks
 
@@ -36,7 +36,6 @@ Azure Automation supports three types of runbooks that are  briefly described in
 - Use [checkpoints](/documentation/articles/automation-powershell-workflow#checkpoints) to resume runbook in case of error.
 - Use [parallel processing](/documentation/articles/automation-powershell-workflow#parallel-processing) to perform mulitple activities in parallel.
 - Can include other Graphical runbooks and PowerShell Workflow runbooks as child runbooks to create high level workflows.
--->
 
 
 ### Limitations
@@ -47,10 +46,11 @@ Azure Automation supports three types of runbooks that are  briefly described in
 - Runbook takes longer to start than PowerShell runbooks since it needs to be compiled before running.
 - PowerShell runbooks can only be included as child runbooks by using the Start-AzureAutomationRunbook cmdlet which creates a new job.
 
+-->
 
 ## PowerShell Workflow runbooks
 
-PowerShell Workflow runbooks are text runbooks based on [Windows PowerShell Workflow](/documentation/articles/automation-powershell-workflow).  You directly edit the code of the runbook using the text editor in the Azure Management Portal.  You can also use any offline text editor and [import the <!-- deleted by customization runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx) --><!-- keep by customization: begin --> runbook](/documentation/articles/automation-creating-importing-runbook) <!-- keep by customization: end --> into Azure Automation.
+PowerShell Workflow runbooks are text runbooks based on [Windows PowerShell Workflow](/documentation/articles/automation-powershell-workflow).  You directly edit the code of the runbook using the text editor in the Azure Management Portal.  You can also use any offline text editor and [import the runbook](/documentation/articles/automation-creating-importing-runbook) into Azure Automation.
 
 ### Advantages
 
@@ -66,29 +66,24 @@ PowerShell Workflow runbooks are text runbooks based on [Windows PowerShell Work
 - Runbook must deal with the additional complexity of PowerShell Workflow such as [deserialized objects](/documentation/articles/automation-powershell-workflow#code-changes).
 - Runbook takes longer to start than PowerShell runbooks since it needs to be compiled before running.
 - PowerShell runbooks can only be included as child runbooks by using the Start-AzureAutomationRunbook cmdlet which creates a new job.
+<!-- deleted by customization
 
 
 ## PowerShell runbooks
 
-PowerShell runbooks are based on Windows PowerShell.  You directly edit the code of the runbook using the text editor in the Azure Management Portal.  You can also use any offline text editor and [import the <!-- deleted by customization runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx) --><!-- keep by customization: begin --> runbook](/documentation/articles/automation-creating-importing-runbook) <!-- keep by customization: end --> into Azure Automation.
+PowerShell runbooks are based on Windows PowerShell.  You directly edit the code of the runbook using the text editor in the Azure Management Portal.  You can also use any offline text editor and [import the runbook](/documentation/articles/automation-creating-importing-runbook) into Azure Automation.
 
 ### Advantages
 
 - Implement all complex logic with PowerShell code without the additional complexities of PowerShell Workflow. 
-- Runbook starts faster than <!-- deleted by customization Graphical or --> PowerShell Workflow runbooks since it doesn't need to be compiled before running.
+- Runbook starts faster than Graphical or PowerShell Workflow runbooks since it doesn't need to be compiled before running.
 
 ### Limitations
 
 - Must be familiar with PowerShell scripting.
 - Can't use [parallel processing](/documentation/articles/automation-powershell-workflow#parallel-processing) to perform multiple actions in parallel.
 - Can't use [checkpoints](/documentation/articles/automation-powershell-workflow#checkpoints) to resume runbook in case of error.
-<!-- deleted by customization
-- Can't run runbooks on [Hybrid Runbook Worker](/documentation/articles/automation-hybrid-runbook-worker).
 - PowerShell Workflow runbooks and Graphical runbooks can only be included as child runbooks by using the Start-AzureAutomationRunbook cmdlet which creates a new job.
--->
-<!-- keep by customization: begin -->
-- PowerShell Workflow runbooks can only be included as child runbooks by using the Start-AzureAutomationRunbook cmdlet which creates a new job.
-<!-- keep by customization: end -->
 
 ### Known Issues
 Following are current known issues with PowerShell runbooks.
@@ -97,6 +92,7 @@ Following are current known issues with PowerShell runbooks.
 - PowerShell runbooks cannot retrieve a [variable asset](/documentation/articles/automation-variables) with *~* in the name.
 - Get-Process in a loop in a PowerShell runbook may crash after about 80 iterations. 
 - A PowerShell runbook may fail if it attempts to write a very large amount of data to the output stream at once.   You can typically work around this issue by outputting just the information you need when working with large objects.  For example, instead of outputting something like *Get-Process*, you can output just the required fields with *Get-Process | Select ProcessName, CPU*.
+-->
 
 ## Considerations
 
@@ -114,11 +110,9 @@ You should take into account the following additional considerations when determ
 - [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)
 -->
 - [Learning Windows PowerShell Workflow](/documentation/articles/automation-powershell-workflow)
-<!-- deleted by customization
-- [Creating or Importing a Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx)
--->
 <!-- keep by customization: begin -->
 - [Creating or Importing a Runbook](/documentation/articles/automation-creating-importing-runbook)
 <!-- keep by customization: end -->
+- [Creating or Importing a Runbook](/documentation/articles/automation-creating-importing-runbook)
 
 

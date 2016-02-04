@@ -10,12 +10,12 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/30/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Understand and resolve errors received from WebHCat (Templeton,) on HDInsight
 
-When using WebHCat (formerly known as Templeton,) to work with HDInsight, you may receive errors. This document provides guidance on common errors – why they occur and what you can do to resolve them.
+When using WebHCat (formerly known as Templeton,) to work with HDInsight, you may receive errors. This document provides guidance on common errors - why they occur and what you can do to resolve them.
 
 ##What is WebHCat?
 

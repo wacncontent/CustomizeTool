@@ -42,7 +42,7 @@
 
     > [AZURE.NOTE] The client secret and package SID are important security credentials. Do not share these secrets with anyone or distribute them with your app.
 
-11. Log on to the [Azure Management Portal], click **Mobile Services**, and then click your app.
+11. Log on to the [Azure Management Portal](https://manage.windowsazure.cn/), click **Mobile Services**, and then click your app.
 
    	![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-selection.png)
 
@@ -55,6 +55,13 @@
 	>[AZURE.NOTE]When you set your WNS credentials for enhanced push notifications in the **Push** tab in the portal, they are shared with Notification Hubs to configure the notification hub for your app.
 
 <!-- URLs. -->
-[Get started with Mobile Services]: <!-- deleted by customization /documentation/articles/mobile-services-windows-store-get-started --><!-- keep by customization: begin --> /documentation/articles/mobile-services-windows-store-get-started/ <!-- keep by customization: end -->
+<!-- deleted by customization
+[Get started with Mobile Services]: ../articles/mobile-services-windows-store-get-started.md
+-->
+<!-- keep by customization: begin -->
+[Get started with Mobile Services]: /documentation/articles/mobile-services-windows-store-get-started/
+<!-- keep by customization: end -->
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+<!-- keep by customization: begin -->
 [Azure Management Portal]: https://manage.windowsazure.cn/
+<!-- keep by customization: end -->

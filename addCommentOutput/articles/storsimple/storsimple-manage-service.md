@@ -1,35 +1,31 @@
 <properties 
-   pageTitle="Deploy the StorSimple Manager service | Microsoft Azure"
+   pageTitle="Deploy the StorSimple Manager service | Windows Azure"
    description="Explains how to create and delete the StorSimple Manager service in the Management Portal, and describes how to manage the service registration key."
    services="storsimple"
    documentationCenter=""
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/14/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/14/2015"
+	wacn.date=""/>
 
 # Deploy the StorSimple Manager service
 
 ## Overview
 
-The StorSimple Manager service runs in Microsoft Azure and connects to multiple StorSimple devices. After you create the service, you can use it to manage the devices from the Microsoft Azure Management Portal running in a browser. This allows you to monitor all the devices that are connected to the StorSimple Manager service from a single, central location, thereby minimizing administrative burden.
+The StorSimple Manager service runs in <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure and connects to multiple StorSimple devices. After you create the service, you can use it to manage the devices from the <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure Management Portal running in a browser. This allows you to monitor all the devices that are connected to the StorSimple Manager service from a single, central location, thereby minimizing administrative burden.
 
 The StorSimple Manager landing page lists all the StorSimple Manager services that you can use to manage your StorSimple storage devices. For each StorSimple Manager service, the following information is presented on the StorSimple Manager page:
 
-- **Name** – The name that was assigned to your StorSimple Manager service when it was created. The service name cannot be changed after the service is created.
+- **Name** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The name that was assigned to your StorSimple Manager service when it was created. The service name cannot be changed after the service is created.
 
-- **Status** – The status of the service, which can be **Active**, **Creating**, or **Online**.
+- **Status** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The status of the service, which can be **Active**, **Creating**, or **Online**.
 
-- **Location** – The geographical location in which the StorSimple device will be deployed.
+- **Location** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The geographical location in which the StorSimple device will be deployed.
 
-- **Subscription** – The billing subscription that is associated with your service.
+- **Subscription** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The billing subscription that is associated with your service.
 
 The common tasks that can be performed through the StorSimple Manager page are:
 
@@ -45,7 +41,12 @@ This tutorial describes how to perform each of these tasks.
 Use the **Quick Create** option to create a StorSimple Manager service if you want to deploy your StorSimple device. To create a service, you need to have:
 
 - A subscription with an Enterprise Agreement
+<!-- deleted by customization
+- An active Windows Azure storage account
+-->
+<!-- keep by customization: begin -->
 - An active Microsoft Azure storage account
+<!-- keep by customization: end -->
 - The billing information that is used for access management
 
 You can also choose to generate a default storage account when you create the service.
@@ -54,7 +55,12 @@ A single service can manage multiple devices. However, a device cannot span mult
 
 Perform the following steps to create a service.
 
+<!-- deleted by customization
+[AZURE.INCLUDE [storsimple-create-new-service](../includes/storsimple-create-new-service.md)]
+-->
+<!-- keep by customization: begin -->
 [AZURE.INCLUDE [storsimple-create-new-service](../../includes/storsimple-create-new-service.md)]
+<!-- keep by customization: end -->
 
 ## Delete a service
 
@@ -74,15 +80,20 @@ Perform the following steps to delete a service.
 
 ## Get the service registration key
 
-After you have successfully created a service, you will need to register your StorSimple device with the service. To register your first StorSimple device, you will need the service registration key. To register additional devices with an existing StorSimple service, you will need both the registration key and the service data encryption key (which is generated on the first device during registration). For more information about the service data encryption key, see [StorSimple security](storsimple-security.md). You can get the registration key by accessing **Registration Key** on the **Services** page.
+After you have successfully created a service, you will need to register your StorSimple device with the service. To register your first StorSimple device, you will need the service registration key. To register additional devices with an existing StorSimple service, you will need both the registration key and the service data encryption key (which is generated on the first device during registration). For more information about the service data encryption key, see [StorSimple <!-- deleted by customization security](/documentation/articles/storsimple-security) --><!-- keep by customization: begin --> security](storsimple-security.md) <!-- keep by customization: end -->. You can get the registration key by accessing **Registration Key** on the **Services** page.
 
 Perform the following steps to get the service registration key.
 
+<!-- deleted by customization
+[AZURE.INCLUDE [storsimple-get-service-registration-key](../includes/storsimple-get-service-registration-key.md)]
+-->
+<!-- keep by customization: begin -->
 [AZURE.INCLUDE [storsimple-get-service-registration-key](../../includes/storsimple-get-service-registration-key.md)]
+<!-- keep by customization: end -->
 
 Keep the service registration key in a safe location. You will need this key, as well as the service data encryption key, to register additional devices with this service. After obtaining the service registration key, you will need to configure your device through the Windows PowerShell for StorSimple interface.
 
-For details on how to use this registration key, see [Step 3: Configure and register the device through Windows PowerShell for StorSimple](storsimple-deployment-walkthrough.md#step-2-configure-and-register-the-device-through-windows-powershell-for-storsimple).
+For details on how to use this registration key, see [Step 3: Configure and register the device through Windows PowerShell for <!-- deleted by customization StorSimple](/documentation/articles/storsimple-deployment-walkthrough#step-2-configure-and-register-the-device-through-windows-powershell-for-storsimple) --><!-- keep by customization: begin --> StorSimple](storsimple-deployment-walkthrough.md#step-2-configure-and-register-the-device-through-windows-powershell-for-storsimple) <!-- keep by customization: end -->.
 
 ## Regenerate the service registration key
 
@@ -107,10 +118,10 @@ Perform the following steps to regenerate a service registration key.
 
 ## Next steps
 
-- Learn more about the [StorSimple deployment process](storsimple-deployment-walkthrough.md).
+- Learn more about the [StorSimple deployment <!-- deleted by customization process](/documentation/articles/storsimple-deployment-walkthrough) --><!-- keep by customization: begin --> process](storsimple-deployment-walkthrough.md) <!-- keep by customization: end -->.
 
-- Learn more about [managing your StorSimple storage account](storsimple-manage-storage-accounts.md).
+- Learn more about [managing your StorSimple storage <!-- deleted by customization account](/documentation/articles/storsimple-manage-storage-accounts) --><!-- keep by customization: begin --> account](storsimple-manage-storage-accounts.md) <!-- keep by customization: end -->.
 
-- Learn more about how to [use the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+- Learn more about how to [use the StorSimple Manager service to administer your StorSimple <!-- deleted by customization device](/documentation/articles/storsimple-manager-service-administration) --><!-- keep by customization: begin --> device](storsimple-manager-service-administration.md) <!-- keep by customization: end -->.
 
  

@@ -23,7 +23,7 @@
 
 This article describes how you can use Azure Media Services (AMS) to deliver a stream that is dynamically encrypted by AMS with both PlayReady and Widevine DRMs. The PlayReady license comes from Media Services PlayReady license server and Widevine license is delivered by **castLabs** license server.
 
-To playback streaming content protected by CENC (PlayReady and/or Widevine), you can use  [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html). See [AMP document](http://amp.azure.net/libs/amp/latest/docs/) for details.
+To playback streaming content protected by CENC (PlayReady and/or Widevine), you can use  [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html). See [AMP document](http://amp.chinacloudapi.cn/libs/amp/latest/docs/) for details.
 
 The following diagram demonstrates a high-level Azure Media Services and castLabs integration architecture.
 
@@ -70,7 +70,7 @@ jti|A unique identifier about this token (every token can only be used once in t
 The [sample solution](https://github.com/AzureMediaServicesSamples/CastlabsIntegration) consists of two projects:
 
 -	A console app that can be used to set DRM restrictions on an already ingested asset, for both PlayReady and Widevine.
--	A Web Application that hands out tokens, which could be seen as a VERY SIMPLIFIED version of an STS.
+-	A web site that hands out tokens, which could be seen as a VERY SIMPLIFIED version of an STS.
 
 
 To use the console application:
@@ -88,7 +88,7 @@ To use the console application:
 5.	Run the program.
 
 
-To use the Web Application (STS):
+To use the web site (STS):
 
 1.	Change the web.config to setup castlabs merchant ID, the STS configuration and the shared key.
 2.	Deploy to Azure Websites.
@@ -105,14 +105,15 @@ To playback a video encrypted with common encryption (PlayReady and/or Widevine)
 5.	In the **Protection** dropdown, select PlayReady and/or Widevine.
 6.	Paste the token that you got from your STS in the Token textbox. 
 	
-	The castLab license server does not need the “Bearer=” prefix in front of the token. So please remove that before submitting the token.
+	The castLab license server does not need the âBearer=â prefix in front of the token. So please remove that before submitting the token.
 7.	Update the player.
 8.	The video should be playing.
 
+
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
 
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

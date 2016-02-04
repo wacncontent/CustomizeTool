@@ -1,14 +1,14 @@
 <properties 
-   pageTitle="Managing Azure resources with Cloud Explorer"
+   pageTitle="Managing Azure resources with Cloud Explorer | Windows Azure"
    description="Learn how to use Cloud Explorer to browse and manage Azure resources within Visual Studio."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="08/13/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 # Managing Azure resources with Cloud Explorer
@@ -54,7 +54,7 @@ If you haven't used Azure before, or you haven't added the necessary accounts to
 
 1. Choose **File**, **Account Settings** on the menu bar.
 
-1. In the **All Accounts** section of the **Account Settings** dialog box, choose the **Remove** command next to the account you want to remove. Note that this command only removes the account from Visual Studio–it doesn't affect the Azure account itself.
+1. In the **All Accounts** section of the **Account Settings** dialog box, choose the **Remove** command next to the account you want to remove. Note that this command only removes the account from Visual Studioâit doesn't affect the Azure account itself.
 
 ## View resource types or groups
 

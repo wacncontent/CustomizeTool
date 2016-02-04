@@ -1,19 +1,22 @@
-<properties 
-	pageTitle="Upload images to Azure Blob storage from a universal Windows app | Windows Azure" 
-	description="Learn how to use a .NET backend mobile service to upload images to Azure Blob Storage and access the images from your universal Windows app." 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	services="mobile-services,storage" 
-	manager="dwrede" 
+<properties
+	pageTitle="Upload images to Azure Blob storage from a universal Windows app | Windows Azure"
+	description="Learn how to use a .NET backend mobile service to upload images to Azure Blob Storage and access the images from your universal Windows app."
+	documentationCenter="windows"
+	authors="ggailey777"
+	services="mobile-services,storage"
+	manager="dwrede"
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="07/13/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="07/13/2015" 
 	wacn.date=""/>
 
 # Upload images to Azure Storage by using Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
 ##Overview
@@ -62,7 +65,6 @@ Now that you have been able to securely upload images by integrating your mobile
 
 <!-- URLs. -->
 [Get started with Mobile Services]: /documentation/articles/mobile-services-windows-store-dotnet-get-started
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn
 [How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866 
- 

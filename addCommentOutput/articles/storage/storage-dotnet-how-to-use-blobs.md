@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="10/16/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 
@@ -20,9 +20,11 @@
 ## Overview
 
 This guide will demonstrate how to perform common scenarios using the
-Azure Blob storage service. The samples are written in C\# and
-use the Azure Storage Client Library for .NET. The scenarios covered include
-**uploading**, **listing**, **downloading**, and **deleting** blobs.
+Azure Blob storage service. The samples are written in <!-- deleted by customization C\# --><!-- keep by customization: begin --> C# <!-- keep by customization: end --> and
+use the Azure Storage Client Library for .NET. The Storage Client Library is an SDK that simplifies interacting with Blob Storage REST API's. The scenarios covered in this guide include <!-- deleted by customization **uploading**, **listing**, **downloading**, and **deleting** blobs and should take you about an hour to complete. If you want to watch a Getting Started Video see [Introduction To Azure Storage in five minutes](https://azure.microsoft.com/documentation/videos/azure-storage-5-minute-overview/) or you can read [Getting started with Azure Storage in five minutes](/documentation/articles/storage-getting-started-guide). -->
+<!-- keep by customization: begin -->
+**uploading**, **listing**, **downloading**, and **deleting** blobs and should take you about an hour to complete. If you want to watch a Getting Started Video see Introduction To Storage In Five Minutes or you can read the [Getting Started with Storage In Five Minutes](/documentation/articles/storage-getting-started-guide) guide.
+<!-- keep by customization: end -->
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -37,7 +39,7 @@ use the Azure Storage Client Library for .NET. The scenarios covered include
 [AZURE.INCLUDE [storage-dotnet-obtain-assembly](../includes/storage-dotnet-obtain-assembly.md)]
 
 ### Namespace declarations
-Add the following namespace declarations to the top of any C\# file
+Add the following namespace declarations to the top of any <!-- deleted by customization C\# --><!-- keep by customization: begin --> C# <!-- keep by customization: end --> file
 in which you wish to programmatically access Azure Storage:
 
     using Microsoft.WindowsAzure;
@@ -360,26 +362,27 @@ See [Understanding Block Blobs, Page Blobs, and Append Blobs](https://msdn.micro
 
 ## Next steps
 
-Now that you've learned the basics of blob storage, follow these links
-to learn about more complex storage tasks.
-<ul>
-<li>View the Blob service reference documentation for complete details about available APIs:
-  <ul>
-    <li><a href="https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx&clcid=0x409">Storage Client Library for .NET reference</a>
-    </li>
-    <li><a href="http://msdn.microsoft.com/zh-cn/library/azure/dd179355">REST API reference</a></li>
-  </ul>
-</li>
-<li>Learn about more advanced tasks you can perform with Azure Storage at <a href="http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx">Storing and Accessing Data in Azure</a>.</li>
-<li>Learn how to simplify the code you write to work with Azure Storage by using the <a href="/documentation/articles/websites-dotnet-webjobs-sdk">Azure WebJobs SDK.</li>
-<li>View more feature guides to learn about additional options for storing data in Azure.
-  <ul>
-    <li>Use <a href="/documentation/articles/storage-dotnet-how-to-use-tables/">Table Storage</a> to store structured data.</li>
-    <li>Use <a href="/documentation/articles/storage-dotnet-how-to-use-queues/">Queue Storage</a> to store unstructured data.</li>
-    <li>Use <a href="/documentation/articles/sql-database-dotnet-how-to-use/">SQL Database</a> to store relational data.</li>
-  </ul>
-</li>
-</ul>
+Now that you've learned the basics of Blob storage, follow these links
+to learn more.
+
+### Blob storage reference documentation
+
+<!-- deleted by customization
+- [Storage Client Library for .NET reference](https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx&clcid=0x409)
+-->
+<!-- keep by customization: begin -->
+- [Storage Client Library for .NET reference](https://msdn.microsoft.com/zh-cn/library/mt347887.aspx)
+<!-- keep by customization: end -->
+- [REST API reference](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
+
+### Additional feature guides
+
+- [Get started with Table storage for .NET](/documentation/articles/storage-dotnet-how-to-use-tables)
+- [Get started with Queue storage for .NET](/documentation/articles/storage-dotnet-how-to-use-queues)
+- [Get started with File storage for .NET](/documentation/articles/storage-dotnet-how-to-use-files)
+- [Transfer data with the AzCopy command-line utility](/documentation/articles/storage-use-azcopy)
+- [Use SQL Database to store relational <!-- deleted by customization data](/documentation/articles/sql-database-dotnet-how-to-use) --><!-- keep by customization: begin --> data](/documentation/articles/sql-database/articles/sql-database-dotnet-how-to-use) <!-- keep by customization: end -->
+- [How to use Azure blob storage with the WebJobs <!-- deleted by customization SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to) --><!-- keep by customization: begin --> SDK](/documentation/articles/app-service-web/websites-dotnet-webjobs-sdk-storage-blobs-how-to) <!-- keep by customization: end -->
 
   [Blob5]: ./media/storage-dotnet-how-to-use-blobs/blob5.png
   [Blob6]: ./media/storage-dotnet-how-to-use-blobs/blob6.png
@@ -387,9 +390,7 @@ to learn about more complex storage tasks.
   [Blob8]: ./media/storage-dotnet-how-to-use-blobs/blob8.png
   [Blob9]: ./media/storage-dotnet-how-to-use-blobs/blob9.png
 
-  [Azure Storage]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
   [Configuring Connection Strings]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx
   [.NET client library reference]: https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx&clcid=0x409
-  [REST API reference]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
- 
+  [REST API reference]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355

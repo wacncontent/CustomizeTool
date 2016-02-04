@@ -9,7 +9,7 @@
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/19/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # SQL Server Business Intelligence in Azure Virtual Machines
@@ -37,7 +37,7 @@ The Windows Azure Virtual Machine gallery includes several images that contain M
 
 ![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif) The following PowerShell script returns the list of Azure images that contain “SQL-Server” in the ImageName:
 
-	# assumes you have already uploaded a management certificate to your Windows Azure Subscription. View the thumbprint value from the "settings" menu in Windows Azure Management Portal
+	# assumes you have already uploaded a management certificate to your Windows Azure Subscription. View the thumbprint value from the "settings" menu in Azure Management Portal.
 	
 	$subscriptionID = ""    # REQUIRED: Provide your subscription ID.
 	$subscriptionName = "" # REQUIRED: Provide your subscription name.
@@ -108,7 +108,7 @@ The following table summarizes the Business Intelligence features installed on t
 
 	For more information, see the following: [Uninstall Reporting Services](https://msdn.microsoft.com/zh-cn/library/hh479745.aspx) and [Uninstall an Instance of Analysis Services](https://msdn.microsoft.com/zh-cn/library/ms143687.aspx).
 
-- Check **Windows Update** for new ‘Important updates’. The Windows Azure Virtual Machine images are frequently refreshed; however important updates could become available from **Windows Update** after the VM image was last refreshed.
+- Check **Windows Update** for new 'Important updates'. The Windows Azure Virtual Machine images are frequently refreshed; however important updates could become available from **Windows Update** after the VM image was last refreshed.
 
 ## Example Deployment Topologies
 
@@ -128,7 +128,7 @@ Analysis Services, Reporting Services, SQL Server Database Engine, and data sour
 
 ![bi  iaas scenario with 2 virtual machines](./media/virtual-machines-sql-server-business-intelligence/IC650109.gif)
 
-### Mixed Azure – data on Azure SQL database
+### Mixed Azure - data on Azure SQL database
 
 - Analysis Services, Reporting Services, and the SQL Server Database Engine on a single virtual machine. This deployment includes the report server databases.
 
@@ -136,7 +136,7 @@ Analysis Services, Reporting Services, SQL Server Database Engine, and data sour
 
 ![bi iaas scenarios vm and AzureSQL as data source](./media/virtual-machines-sql-server-business-intelligence/IC650110.gif)
 
-### Hybrid –data on-premises
+### Hybrid -data on-premises
 
 - In this example deployment Analysis Services, Reporting Services, and the SQL Server Database Engine run on a single virtual machine. The virtual machine hosts the report server databases. The virtual machine is joined to an on-premises Domain through Azure Virtual Networking, or some other VPN tunneling solution.
 
@@ -262,7 +262,7 @@ If you want to connect to Report Manager on the virtual machine from a remote co
 
 1. Create an Endpoint for the Virtual Machine of TCP Port 80. For more information see, the [Virtual Machine Endpoints and Firewall Ports](#virtual-machine-endpoints-and-firewall-ports) section in this document.
 
-1. Open port 80 in the virtual machine’s firewall.
+1. Open port 80 in the virtual machine's firewall.
 
 1. Browse to report manager using Azure Virtual Machine **DNS Name** as the server name in the URL. For example: 
 
@@ -301,7 +301,7 @@ The following table summarizes some of the options available to publish existing
 
 ## Install other SQL Server Services and features
 
-To install additional SQL Server services, such as Analysis Services in tabular mode, run the SQL server setup wizard. The setup files are on the virtual machine’s local disk.
+To install additional SQL Server services, such as Analysis Services in tabular mode, run the SQL server setup wizard. The setup files are on the virtual machine's local disk.
 
 1. Click **Start** and then click **All Programs**.
 

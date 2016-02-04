@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with SimpleNexus
@@ -73,7 +73,7 @@ The objective of this section is to outline how to enable users to authenticate 
 
     ![Configure Single Sign-On](./media/active-directory-saas-simplenexus-tutorial/IC785897.png "Configure Single Sign-On")
 
-3.  On the **Configure App URL** page, in the **SimpleNexus Sign In URL** textbox, type your URL using the following pattern <!-- deleted by customization "*https://simplenexus.com/CompanyName\_login*" --><!-- keep by customization: begin --> "*https://simplenexus.com/CompanyName_login*" <!-- keep by customization: end -->, and then click **Next**.
+3.  On the **Configure App URL** page, in the **SimpleNexus Sign In URL** textbox, type your URL using the following pattern "*https://simplenexus.com/CompanyName\_login*", and then click **Next**.
 
     ![Configure App URL](./media/active-directory-saas-simplenexus-tutorial/IC786904.png "Configure App URL")
 

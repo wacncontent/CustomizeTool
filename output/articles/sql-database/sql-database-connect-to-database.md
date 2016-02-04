@@ -4,7 +4,7 @@
    services="sql-database"
    documentationCenter=""
    authors="sidneyh"
-   manager="jhubbard"
+   manager="jeffreyg"
    editor=""
    tags=""/>
 <tags
@@ -26,7 +26,7 @@ Use the following steps to connect and query your SQL database using SQL Server 
 
 To connect to your database you need the full name  of the server (***servername**.database.chinacloudapi.cn*) that contains the database you want to connect to.
 
-1. Go to the [Azure preview portal](https://manage.windowsazure.cn).
+1. Go to the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Browse to the database you want to connect to.
 3. Locate the full server name:
 

@@ -21,7 +21,7 @@ This topic is part of a larger whitepaper. To read the full paper, download [Wor
 
 ## Using complex objects to share state
 
-Rather than offer a template that provides total flexibility and countless variations, a common pattern is to provide the ability to select known configurations — in effect, standard t-shirt sizes such as sandbox, small, medium, and large. Other examples of t-shirt sizes are product offerings, such as community edition or enterprise edition. In other cases, it may be workload specific configurations of a technology – such as map reduce or no sql.
+Rather than offer a template that provides total flexibility and countless variations, a common pattern is to provide the ability to select known configurations — in effect, standard t-shirt sizes such as sandbox, small, medium, and large. Other examples of t-shirt sizes are product offerings, such as community edition or enterprise edition. In other cases, it may be workload specific configurations of a technology - such as map reduce or no sql.
 
 With complex objects, you can create variables that contain collections of data, sometimes known as "property bags" and use that data to drive the resource declaration in your template. This approach provides good, known configurations of varying sizes that are preconfigured for customers. Without known configurations, end customers must determine cluster sizing on their own, factor in platform resource constraints, and do math to identify the resulting partitioning of storage accounts and other resources (due to cluster size and resource constraints). Known configurations enable customers to easily select the right t-shirt size—that is, a given deployment. In addition to making a better experience for the customer, a small number of known configurations is easier to support and can help you deliver a higher level of density.
 
@@ -366,7 +366,7 @@ each individual node, an installation that runs after all nodes are deployed, an
 
 This example is from a template used to deploy MongoDB, which requires an arbiter to deliver high availability. The *arbiterNodeInstallCommand* has been added to *vmScripts* to install the arbiter.
 
-The variables section is where you’ll find the variables that define the specific text to execute the script with the proper values.
+The variables section is where you'll find the variables that define the specific text to execute the script with the proper values.
 
     "vmScripts": {
         "scriptsToDownload": [

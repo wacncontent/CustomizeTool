@@ -21,7 +21,7 @@ replaced by:
 		
 		## <a name="bkmk_WhatIsSendGrid"> </a>What is the SendGrid Email Service?
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -31,7 +31,7 @@ replaced by:
 
 		## <a name="bkmk_CreateSendGridAcct"> </a>Create a SendGrid account
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -41,7 +41,7 @@ replaced by:
 
 		## <a name="bkmk_HowToUseJavax"> </a>How to: Use the javax.mail libraries
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -51,7 +51,7 @@ replaced by:
 
 		## <a name="bkmk_HowToCreateEmail"> </a>How to: Create an email
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -61,7 +61,7 @@ replaced by:
 
 		## <a name="bkmk_HowToSendEmail"> </a>How to: Send an email
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -71,7 +71,7 @@ replaced by:
 
 		## <a name="bkmk_HowToAddAttachment"> </a>How to: Add an attachment
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -81,7 +81,7 @@ replaced by:
 
 		<a name="bkmk_HowToUseFilters"> </a>How
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -91,7 +91,7 @@ replaced by:
 
 		## <a name="bkmk_HowToUpdateEmail"> </a>How to: Update email properties
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -101,7 +101,7 @@ replaced by:
 
 		## <a name="bkmk_HowToUseAdditionalSvcs"> </a>How to: Use additional SendGrid services
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -111,5 +111,5 @@ replaced by:
 
 		## <a name="bkmk_NextSteps"> </a>Next steps
 
-reason: ()
+reason: (inpage link)
 

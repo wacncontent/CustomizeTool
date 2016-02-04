@@ -4,15 +4,15 @@
     services="storage"
     documentationCenter=".net"
     authors="tamram"
-    manager="adinah"
-    editor=""/>
+    manager="carmonm"
+    editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/23/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
-# How to use Table storage from C++
+# How to use Table Storage from C++
 
 [AZURE.INCLUDE [storage-selector-table-include](../includes/storage-selector-table-include.md)]
 
@@ -31,38 +31,38 @@ In this guide, you will use storage features that can be run within a C++ applic
 To install the Azure Storage Client Library for C++, you can use the following methods:
 
 -	**Linux:** Follow the instructions given on the [Azure Storage Client Library for C++ README](https://github.com/Azure/azure-storage-cpp/blob/master/README.md) page.  
--	**Windows:** In Visual Studio, click **Tools > NuGet Package Manager > Package Manager Console**. Type the following command into the [NuGet Package Manager console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) and press Enter.  
+-	**Windows:** In Visual Studio, click **Tools > NuGet Package Manager > Package Manager Console**. Type the following command into the [NuGet Package Manager console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) and press **ENTER**.
 
 		Install-Package wastorage
 
-## Configure your application to access Table storage  
+## Configure your application to access Table Storage 
 Add the following include statements to the top of the C++ file where you want to use the Azure storage APIs to access tables:  
 
 	#include "was/storage_account.h"
 	#include "was/table.h"
 
-## Set up an Azure storage connection string  
-An Azure storage client uses a storage connection string to store endpoints and credentials for accessing data management services. When running a client application, you must provide the storage connection string in the following format. Use the name of your storage account and the storage access key for the storage account listed in the Azure Management Portal for the *AccountName* and *AccountKey* values. For information on storage accounts and access keys, see [About Azure storage accounts](/documentation/articles/storage-create-storage-account). This example shows how you can declare a static field to hold the connection string:  
+## Setup an Azure storage connection string  
+An Azure storage client uses a storage connection string to store endpoints and credentials for accessing data management services. When running a client application, you must provide the storage connection string in the following format. Use the name of your storage account and the storage access key for the storage account listed in the  Management Portal for the *AccountName* and *AccountKey* values. For information on storage accounts and access keys, see [About Azure Storage Accounts](/documentation/articles/storage-create-storage-account). This example shows how you can declare a static field to hold the connection string:
 
-	// Define the connection string with your values.
+	// Define the connection-string with your values.
 	const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key"));
 
 To test your application in your local Windows-based computer, you can use the Azure [storage emulator](/documentation/articles/storage-use-emulator) that is installed with the [Azure SDK](/downloads/). The storage emulator is a utility that simulates the Azure Blob, Queue, and Table services available on your local development machine. The following example shows how you can declare a static field to hold the connection string to your local storage emulator:  
 
-	// Define the connection string with Azure storage emulator.
+	// Define the connection-string with Azure Storage Emulator.
 	const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  
 
-To start the Azure storage emulator, click the **Start** button or press the Windows key. Begin typing **Azure Storage Emulator**, and then select **Windows Azure Storage Emulator** from the list of applications.  
+To start the Azure storage emulator, click the **Start** button or press the **Windows** key. Begin typing **Azure Storage Emulator**, and then select **Windows Azure Storage Emulator** from the list of applications.
 
 The following samples assume that you have used one of these two methods to get the storage connection string.  
 
 ## Retrieve your connection string  
-You can use the **cloud_storage_account** class to represent your storage account information. To retrieve your storage account information from the storage connection string, you can use the parse method.
+You can use the **cloud_storage_account** class to represent your Storage Account information. To retrieve your storage account information from the storage connection string, you can use the parse method.
 
 	// Retrieve the storage account from the connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
 
-Next, get a reference to a **cloud_table_client** class, as it lets you get reference objects for tables and entities stored within the Table storage service. The following code creates a **cloud_table_client** object by using the storage account object we retrieved above:  
+Next, get a reference to a **cloud_table_client** class, as it lets you get reference objects for tables and entities stored within the Table Storage Service. The following code creates a **cloud_table_client** object by using the storage account object we retrieved above:
 
 	// Create the table client.
 	azure::storage::cloud_table_client table_client = storage_account.create_cloud_table_client();
@@ -83,7 +83,7 @@ A **cloud_table_client** object lets you get reference objects for tables and en
 	table.create_if_not_exists();  
 
 ## Add an entity to a table
-To add an entity to a table, create a new **table_entity** object and pass it to **table_operation::insert_entity**. The following code uses the customer's first name as the row key and last name as the partition key. Together, an entity's partition and row key uniquely identify the entity in the table. Entities with the same partition key can be queried faster than those with different partition keys, but using diverse partition keys allows for greater parallel operation scalability. For more information, see [Windows Azure storage performance and scalability checklist](/documentation/articles/storage-performance-checklist).
+To add an entity to a table, create a new **table_entity** object and pass it to **table_operation::insert_entity**. The following code uses the customer's first name as the row key and last name as the partition key. Together, an entity's partition and row key uniquely identify the entity in the table. Entities with the same partition key can be queried faster than those with different partition keys, but using diverse partition keys allows for greater parallel operation scalability. For more information, see [Windows Azure Storage Performance and Scalability Checklist](/documentation/articles/storage-performance-checklist).
 
 The following code creates a new instance of **table_entity** with some customer data to be stored. The code next calls **table_operation::insert_entity** to create a **table_operation** object to insert an entity into a table, and associates the new table entity with it. Finally, the code calls the execute method on the **cloud_table** object. And the new **table_operation** sends a request to the Table service to insert the new customer entity into the "people" table.  
 
@@ -163,7 +163,7 @@ You can insert a batch of entities to the Table service in one write operation. 
 
 Some things to note on batch operations:  
 
--	You can perform up to 100 insert, delete, merge, replace, insert-or-merge, and insert-or-replace operations in any combination in a single batch.  
+-	You can perform up to 100 insert, delete, merge, replace, insert or merge, and insert or replace operations in any combination in a single batch.
 -	A batch operation can have a retrieve operation, if it is the only operation in the batch.  
 -	All entities in a single batch operation must have the same partition key.  
 -	A batch operation is limited to a 4-MB data payload.  
@@ -285,11 +285,11 @@ To replace an entity, retrieve it from the Table service, modify the entity obje
 	// Create an operation to replace the entity.
 	azure::storage::table_operation replace_operation = azure::storage::table_operation::replace_entity(entity_to_replace);
 
-	// Submit the operation to the Table service.
+	// Submit the operation to the table service.
 	azure::storage::table_result replace_result = table.execute(replace_operation);
 
 ## Insert-or-replace an entity
-**table_operation::replace_entity** operations will fail if the entity has been changed since it was retrieved from the server. Furthermore, you must retrieve the entity from the server first in order for **table_operation::replace_entity** to be successful. Sometimes, however, you don't know if the entity exists on the server and the current values stored in it are irrelevant�your update should overwrite them all. To accomplish this, you would use a **table_operation::insert_or_replace_entity** operation. This operation inserts the entity if it doesn't exist, or replaces it if it does, regardless of when the last update was made. In the following code example, the customer entity for Jeff Smith is still retrieved, but it is then saved back to the server via **table_operation::insert_or_replace_entity**. Any updates made to the entity between the retrieval and update operation will be overwritten.
+**table_operation::replace_entity** operations will fail if the entity has been changed since it was retrieved from the server. Furthermore, you must retrieve the entity from the server first in order for **table_operation::replace_entity** to be successful. Sometimes, however, you don't know if the entity exists on the server and the current values stored in it are irrelevantĄŞyour update should overwrite them all. To accomplish this, you would use a **table_operation::insert_or_replace_entity** operation. This operation inserts the entity if it doesn't exist, or replaces it if it does, regardless of when the last update was made. In the following code example, the customer entity for Jeff Smith is still retrieved, but it is then saved back to the server via **table_operation::insert_or_replace_entity**. Any updates made to the entity between the retrieval and update operation will be overwritten.
 
 	// Retrieve the storage account from the connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -315,7 +315,7 @@ To replace an entity, retrieve it from the Table service, modify the entity obje
 	// Create an operation to insert-or-replace the entity.
 	azure::storage::table_operation insert_or_replace_operation = azure::storage::table_operation::insert_or_replace_entity(entity_to_insert_or_replace);
 
-	// Submit the operation to the Table service.
+	// Submit the operation to the table service.
 	azure::storage::table_result insert_or_replace_result = table.execute(insert_or_replace_operation);
 
 ## Query a subset of entity properties  
@@ -376,7 +376,7 @@ You can easily delete an entity after you have retrieved it. Once the entity is 
 	// Create an operation to delete the entity.
 	azure::storage::table_operation delete_operation = azure::storage::table_operation::delete_entity(retrieve_result.entity());
 
-	// Submit the delete operation to the Table service.
+	// Submit the delete operation to the table service.
 	azure::storage::table_result delete_result = table.execute(delete_operation);  
 
 ## Delete a table
@@ -398,14 +398,15 @@ Finally, the following code example deletes a table from a storage account. A ta
 	// Create an operation to delete the entity.
 	azure::storage::table_operation delete_operation = azure::storage::table_operation::delete_entity(retrieve_result.entity());
 
-	// Submit the delete operation to the Table service.
+	// Submit the delete operation to the table service.
 	azure::storage::table_result delete_result = table.execute(delete_operation);
 
 ## Next steps
 Now that you've learned the basics of table storage, follow these links to learn more about Azure Storage:  
 
--	[How to use Blob storage from C++](/documentation/articles/storage-c-plus-plus-how-to-use-blobs)
--	[How to use Queue storage from C++](/documentation/articles/storage-c-plus-plus-how-to-use-queues)
--	[List Azure Storage resources in C++](/documentation/articles/storage-c-plus-plus-enumeration)
--	[Storage Client Library for C++ reference](http://azure.github.io/azure-storage-cpp)
--	[Azure Storage documentation](/documentation/services/storage/)
+-	[How to use Blob Storage from C++](/documentation/articles/storage-c-plus-plus-how-to-use-blobs)
+-	[How to use Queue Storage from C++](/documentation/articles/storage-c-plus-plus-how-to-use-queues)
+-	[List Azure Storage Resources in C++](/documentation/articles/storage-c-plus-plus-enumeration)
+-	[Storage Client Library for C++ Reference](http://azure.github.io/azure-storage-cpp)
+-	[Azure Storage Documentation](/documentation/services/storage/)
+ 

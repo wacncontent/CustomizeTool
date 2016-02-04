@@ -13,7 +13,7 @@ deleted:
 		>
 		> HDInsight on the Azure Management Portal will not receive upgrades after July 2015 and is replaced by the Azure preview portal.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -21,13 +21,13 @@ deleted:
 		
 		For a complete set of articles about using Linux and Linux clusters, go to the [HDInsight documentation page](/documentation/services/hdinsight/).
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		* [Analyze real-time Twitter sentiment on HBase](/documentation/articles/hdinsight-hbase-analyze-twitter-sentiment)
 
-reason: ()
+reason: (google facebook twitter)
 
 deleted:
 
@@ -40,14 +40,14 @@ deleted:
 		* [Spark job server on HDInsight clusters](/documentation/articles/hdinsight-apache-spark-job-server)
 		* [Provision Apache Spark and run interactive queries using Spark SQL](/documentation/articles/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1)
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		* [Analyze stored Twitter data using Hive](/documentation/articles/hdinsight-analyze-twitter-data)
 		* [Determine Twitter trending topics with Apache Storm](/documentation/articles/hdinsight-storm-twitter-trending)
 
-reason: ()
+reason: (google facebook twitter)
 
 deleted:
 
@@ -58,13 +58,13 @@ deleted:
 		* [Learning path: Advanced data processing](/documentation/articles/machine-learning-data-science-advanced-data-processing)
 		* [Predict taxi tips with HDInsight and Machine Learning](/documentation/articles/machine-learning-data-science-process-hive-walkthrough)
 
-reason: ()
+reason: ({machine learning})
 
 deleted:
 
 		* [Install and use Spark on Hadoop clusters](/documentation/articles/hdinsight-hadoop-spark-install)
 
-reason: ()
+reason: (Spark managment)
 
 replacement:
 
@@ -76,7 +76,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -86,5 +86,5 @@ replaced by:
 
 		Azure Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # Send Push Notifications to Authenticated Users
@@ -68,3 +68,4 @@ function insert(item, user, request) {
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-ios-how-to-use-client-library
+

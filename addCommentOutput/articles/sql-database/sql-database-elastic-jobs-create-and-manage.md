@@ -1,15 +1,15 @@
 <properties
-	pageTitle="Creating and managing elastic database jobs"
+	pageTitle="Creating and managing elastic database jobs | Micosoft Azure"
 	description="Walk through creation and management of an elastic database job."
 	services="sql-database"
 	documentationCenter=""
 	manager="jhubbard"
-	authors="sidneyh"
+	authors="ddove"
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/21/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # Create and manage a SQL Database elastic jobs with Portal (preview)
@@ -23,7 +23,7 @@
 
 ## Prerequisites
 
-* An Azure subscription. For a trial, see [Free one-month trial](/pricing/1rmb-trial/).
+* An Azure subscription. For a trial, see <!-- deleted by customization [Free one-month trial](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> [trial](/pricing/1rmb-trial) <!-- keep by customization: end -->.
 * An elastic database pool. See [About Elastic database pools](/documentation/articles/sql-database-elastic-pool)
 * Installation of elastic database job service components. See [Installing the elastic database job service](/documentation/articles/sql-database-elastic-jobs-service-installation).
 
@@ -108,5 +108,4 @@ If a job fails, a log of its execution can found. Click the name of the failed j
 [3]: ./media/sql-database-elastic-jobs-create-and-manage/running-jobs.png
 [4]: ./media/sql-database-elastic-jobs-create-and-manage/failed.png
 [5]: ./media/sql-database-elastic-jobs-create-and-manage/screen-2.png
-
- 
+

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/11/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 # App model v2.0 preview: Sign-in Microsoft Account & Azure AD users in a single app
@@ -19,7 +19,7 @@
 
 In the past, an app developer who wanted to support both Microsoft accounts and Azure Active Directory was required to integrate with two separate systems. With the v2.0 app model, you can now sign users in with both types of accounts. One simple integration allows you to reach an audience that spans millions of users with both personal and work/school accounts.
 
-Your apps can also consume a [set of Office 365 REST APIs](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) using either type of account.  Currently, these APIs include Outlook's Mail, Contacts, and Calendars APIs.  Additional services will be added in the near future.
+Your apps can also consume a [set of Office 365 REST <!-- deleted by customization APIs](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) --><!-- keep by customization: begin --> APIs](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) <!-- keep by customization: end --> using either type of account.  Currently, these APIs include Outlook's Mail, Contacts, and Calendars APIs.  Additional services will be added in the near future.
 <!-- TODO: customer reference article -->
 <!-- Several apps have already begun to bridge the gap between consumer and enterprise accounts, including: [Boomerang](), [TripIt](), & [Uber](). -->
 
@@ -46,7 +46,12 @@ These links will be useful for exploring the platform in depth:
 - Give us your thoughts on the preview using [User Voice](http://feedback.azure.com/forums/169401-azure-active-directory) - we want to hear them!  Use the phrase "AppModelv2:" in the title of your post so we can find it.
 - [App Model v2.0 Protocol Reference](/documentation/articles/active-directory-v2-protocols)
 - [App Model v2.0 Token Reference](/documentation/articles/active-directory-v2-tokens)
+<!-- deleted by customization
+- [Office 365 REST API Reference](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)
+-->
+<!-- keep by customization: begin -->
 - [Office 365 REST API Reference](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)
+<!-- keep by customization: end -->
 - [Scopes and Consent in the v2 endpoint](/documentation/articles/active-directory-v2-scopes)
 
 <!-- TODO: These articles

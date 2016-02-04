@@ -127,7 +127,7 @@ The following sample commands show how to replace the existing contents of a run
     $scriptPath = "c:\runbooks\Sample-TestRunbook.ps1"
 
     Set-AzureAutomationRunbookDefinition -AutomationAccountName $automationAccountName -Name $runbookName -Path $scriptPath -Overwrite
-    Publish-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName
+    Publish-AzureAutomationRunbook âAutomationAccountName $automationAccountName âName $runbookName
 
 ## Related articles
 

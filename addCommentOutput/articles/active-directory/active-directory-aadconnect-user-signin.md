@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect - User Sign In | Windows Azure"
+	pageTitle="Azure AD Connect: User Sign In | Windows Azure"
 	description="Azure AD Connect user sign in for custom settings."
 	services="active-directory"
 	documentationCenter=""
@@ -37,14 +37,14 @@ With federated sign on, your users can sign on to Azure AD based services with t
 If you are deploying a new farm:
 
 - A Windows Server 2012 R2 server for the federation server.
-- A Windows Server 2012 R2 server for the Web Application Proxy.
+- A Windows Server 2012 R2 server for the web site Proxy.
 - a .pfx file with one SSL certificate for your intended federation service name, such as fs.contoso.com.
 
 If you are deploying a new farm or using an existing farm:
 
 - Local administrator credentials on your federation servers.
-- Local administrator credentials on any workgroup (non-domain joined) servers on which you intend to deploy the Web Application Proxy role.
-- The machine on which you execute the wizard must be able to connect to any other machines on which you want to install AD FS or Web Application Proxy via Windows Remote Management.
+- Local administrator credentials on any workgroup (non-domain joined) servers on which you intend to deploy the <!-- deleted by customization web site --><!-- keep by customization: begin --> Web Site <!-- keep by customization: end --> Proxy role.
+- The machine on which you execute the wizard must be able to connect to any other machines on which you want to install AD FS or <!-- deleted by customization web site --><!-- keep by customization: begin --> Web Site <!-- keep by customization: end --> Proxy via Windows Remote Management.
 
 #### Sign on using an earlier version of AD FS or a third party solution
 If you have already configured cloud sign on using an earlier version of AD FS (such as AD FS 2.0) or a third party federation provider, you can choose to skip user sign in configuration via Azure AD Connect.  This will enable you to get the latest synchronization and other capabilities of Azure AD Connect while still using your existing solution for sign on.
@@ -60,3 +60,7 @@ Some organizations, however, have particular reasons for using a federated sign 
 	- On-premises multi-factor authentication using a third party provider or smart cards (learn about third party MFA providers for AD FS in Windows Server 2012 R2)
 	- Active Directory integration features such as soft account lockout or AD password and work hours policy
 	- Conditional access to both on-premises and cloud resources using device registration, Azure AD join, or Intune MDM policies
+
+
+## Next steps
+Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).

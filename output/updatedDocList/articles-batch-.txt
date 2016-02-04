@@ -1,7 +1,3 @@
-updated docs: 3
-articles/batch/batch-api-basics.md
-articles/batch/batch-parallel-node-tasks.md
-articles/batch/batch-technical-overview.md
+updated docs: 0
 
-updated includes: 1
-includes/azure-batch-limits.md
+updated includes: 0

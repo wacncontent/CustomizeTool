@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use Azure Key Vault from a Web Application | Microsoft Azure" 
+	pageTitle="Use Azure Key Vault from a Web Application | Windows Azure" 
 	description="Use this tutorial to help you learn how to use Azure Key Vault from a web application." 
 	services="key-vault" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager=""
 	tags="azure-resource-manager"//>
 
-<tags 
-	ms.service="key-vault" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/16/2015" 
-	ms.author="adhurwit"/>
+<tags
+	ms.service="key-vault"
+	ms.date="09/16/2015"
+	wacn.date=""/>
 
 # Use Azure Key Vault from a Web Application #
 
@@ -24,7 +20,7 @@ Use this tutorial to help you learn how to use Azure Key Vault from a web applic
 **Estimated time to complete:** 15 minutes
 
 
-For overview information about Azure Key Vault, see [What is Azure Key Vault?](key-vault-whatis.md)
+For overview information about Azure Key Vault, see [What is Azure Key Vault?](/documentation/articles/key-vault-whatis)
 
 ## Prerequisites 
 
@@ -34,22 +30,22 @@ To complete this tutorial, you must have the following:
 - A Client ID and a Client Secret for a web application registered with Azure Active Directory that has access to your Key Vault
 - A web application. We will be showing the steps for an ASP.NET MVC application deployed in Azure as a Web App. 
 
-> [AZURE.NOTE]  It is essential that you have completed the steps listed in [Get Started with Azure Key Vault](key-vault-get-started.md) for this tutorial so that you have the URI to a secret and the Client ID and Client Secret for a web application. 
+> [AZURE.NOTE]  It is essential that you have completed the steps listed in [Get Started with Azure Key Vault](/documentation/articles/key-vault-get-started) for this tutorial so that you have the URI to a secret and the Client ID and Client Secret for a web application. 
 
 The web application that will be accessing the Key Vault is the one that is registered in Azure Active Directory and has been given access to your Key Vault. If this is not the case, go back to Register an Application in the Get Started tutorial and repeat the steps listed. 
 
-This tutorial is designed for web developers that understand the basics of creating web applications on Azure. For more information about Azure Web Apps, see [Web Apps overview](../app-service-web-overview.md).
+This tutorial is designed for web developers that understand the basics of creating web applications on Azure. For more information about Azure Web Apps, see [Web Apps overview](/home/features/web-site).
 
 
 
 ## <a id="packages"></a>Add Nuget Packages ##
-There are three packages that your web application needs to have installed. 
+There are two packages that your web application needs to have installed. 
 
 - Active Directory Authentication Library - contains methods for interacting with Azure Active Directory and managing user identity
 - Azure Key Vault Library - contains methods for interacting with Azure Key Vault
 
 
-All three of these packages can be installed using the Package Manager Console using the Install-Package command. 
+Both of these packages can be installed using the Package Manager Console using the Install-Package command. 
 
 	// this is currently the latest stable version of ADAL
 	Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 2.16.204221202
@@ -68,7 +64,7 @@ There are three application settings that need to be added to the web.config fil
     <add key="SecretUri" value="secreturi" />
 
 
-If you are not going to host your application as an Azure Web App, then you should add the actual ClientId, Client Secret, and Secret URI values to the web.config. Otherwise leave these dummy values because we will be adding the actual values in the Azure Portal for an additional level of security. 
+If you are not going to host your application as an Azure Web App, then you should add the actual ClientId, Client Secret, and Secret URI values to the web.config. Otherwise leave these dummy values because we will be adding the actual values in the Azure Management Portal for an additional level of security. 
 
 
 ## <a id="gettoken"></a>Add Method to Get an Access Token ##
@@ -119,10 +115,10 @@ Now we need code to call the Key Vault API and retrieve the secret. The followin
 
 
 
-## <a id="portalsettings"></a>Add App Settings in the Azure Portal (optional) ##
-If you have an Azure Web App you can now add the actual values for the AppSettings in the Azure Portal. By doing this, the actual values will not be in the web.config but protected via the Portal where you have separate access control capabilities. These values will be substituted for the values that you entered in your web.config. Make sure that the names are the same.
+## <a id="portalsettings"></a>Add App Settings in the Azure Management Portal (optional) ##
+If you have an Azure Web App you can now add the actual values for the AppSettings in the Azure Management Portal. By doing this, the actual values will not be in the web.config but protected via the Portal where you have separate access control capabilities. These values will be substituted for the values that you entered in your web.config. Make sure that the names are the same.
 
-![Application Settings displayed in Azure Portal][1]
+![Application Settings displayed in Azure Management Portal][1]
 
 
 ## Authenticate with a Certificate instead of a Client Secret 
@@ -142,7 +138,7 @@ For our purposes we will make a test certificate. Here are a couple of commands 
 
 Make note of the end date and the password for the .pfx (in this example: 07/31/2016 and test123). You will need them below. 
 
-For more information on creating a test certificate, see [How to: Create Your Own Test Certificate](https://msdn.microsoft.com/en-in/library/ff699202.aspx)
+For more information on creating a test certificate, see [How to: Create Your Own Test Certificate](https://msdn.microsoft.com/zh-cn/library/ff699202.aspx)
 
 
 **Associate the Certificate with an Azure AD application**
@@ -170,7 +166,7 @@ Now that you have a certificate, you need to associate it with an Azure AD appli
 
 After you have run these commands, you can see the application in Azure AD. If you don't see the application at first, search for "Applications my company owns" instead of "Applications my company uses". 
 
-To learn more about Azure AD Application Objects and ServicePrincipal Objects, see [Application Objects and Service Principal Objects](../active-directory/active-directory-application-objects.md)
+To learn more about Azure AD Application Objects and ServicePrincipal Objects, see [Application Objects and Service Principal Objects](/documentation/articles/active-directory-application-objects)
 
 
 
@@ -233,9 +229,9 @@ The last code change is in the Application_Start method. First we need to call t
 
 
 **Add a Certificate to your Web App**
-Adding a Certificate to your Web App is a simple two-step process. First, go to the Azure Portal and navigate to your Web App. On the Settings blade for your Web App, click on the entry for "Custom domains and SSL". On the blade that opens you will be able to upload the Certificate that you created above, KVWebApp.pfx, make sure that you remember the password for the pfx. 
+Adding a Certificate to your Web App is a simple two-step process. First, go to the Azure Management Portal and navigate to your Web App. On the Settings blade for your Web App, click on the entry for "Custom domains and SSL". On the blade that opens you will be able to upload the Certificate that you created above, KVWebApp.pfx, make sure that you remember the password for the pfx. 
 
-![Adding a Certificate to a Web App in the Azure Portal][2]
+![Adding a Certificate to a Web App in the Azure Management Portal][2]
 
 
 The last thing that you need to do is to add an Application Setting to your Web App that has the name WEBSITE\_LOAD\_CERTIFICATES and a value of *. This will ensure that all Certificates are loaded. If you wanted to load only the Certificates that you have uploaded, then you can enter a comma-separated list of their thumbprints. 
@@ -247,7 +243,7 @@ To learn more about adding a Certificate to a Web App, see [Using Certificates i
 ## <a id="next"></a>Next steps ##
 
 
-For programming references, see [Azure Key Vault C# Client API Reference](https://msdn.microsoft.com/library/azure/dn903628.aspx).
+For programming references, see [Azure Key Vault C# Client API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn903628.aspx).
 
 
 <!--Image references-->

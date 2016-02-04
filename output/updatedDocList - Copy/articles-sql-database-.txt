@@ -1,0 +1,18 @@
+updated docs: 12
+articles/sql-database/sql-database-cloud-migrate.md
+articles/sql-database/sql-database-connect-central-recommendations.md
+articles/sql-database/sql-database-connectivity-issues.md
+articles/sql-database/sql-database-develop-quick-start-client-code-samples.md
+articles/sql-database/sql-database-elastic-query-horizontal-partitioning.md
+articles/sql-database/sql-database-elastic-query-vertical-partitioning.md
+articles/sql-database/sql-database-general-limitations.md
+articles/sql-database/sql-database-service-tiers.md
+articles/sql-database/sql-database-technical-overview.md
+articles/sql-database/sql-database-transact-sql-information.md
+articles/sql-database/sql-database-troubleshoot-permissions.md
+articles/sql-database/sql-database-xevent-code-ring-buffer.md
+
+updated includes: 3
+includes/sql-database-include-ip-address-22-v12portal.md
+includes/sql-database-service-tiers-table.md
+includes/sql-database-understanding-dtus.md

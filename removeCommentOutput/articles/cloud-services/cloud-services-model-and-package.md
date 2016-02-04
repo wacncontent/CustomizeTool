@@ -83,7 +83,7 @@ The **ServiceDefinition.csdef** file specifies the settings that are used by Azu
 You can refer to the [Service Definition Schema][] for a better understanding of the XML schema used here, however, here is a quick explanation of some of the elements:
 
 >**Sites**  
->Contains the definitions for websites or web applications that are hosted in IIS7.
+>Contains the definitions for websites or web sites that are hosted in IIS7.
 >
 >**InputEndpoints**  
 >Contains the definitions for endpoints that are used to contact the cloud service.
@@ -152,7 +152,7 @@ You can refer to the [Service Configuration Schema](https://msdn.microsoft.com/z
 ## Defining ports for role instances
 Azure allows only one entry point to a web role. This means that all traffic occurs through one IP address. You can configure your websites to share a port by configuring the host header to direct the request to the correct location. You can also configure your applications to listen to well-known ports on the IP address.
 
-The following sample shows the configuration for a web role with a website and web application. The website is configured as the default entry location on port 80, and the web applications are configured to receive requests from an alternate host header that is called “mail.mysite.chinacloudapp.cn”.
+The following sample shows the configuration for a web role with a website and web site. The website is configured as the default entry location on port 80, and the web sites are configured to receive requests from an alternate host header that is called “mail.mysite.chinacloudapp.cn”.
 
 ```xml
 <WebRole>
@@ -277,8 +277,8 @@ I am using Visual Studio and I want to...
 * [Setup remote desktop for a cloud service instance][vs_remote]
 
 
-[deploy]: /documentation/articles/cloud-services-how-to-create-deploy-portal
-[remotedesktop]: /documentation/articles/cloud-services-role-enable-remote-desktop
+[deploy]: cloud-services-how-to-create-deploy-portal.md
+[remotedesktop]: cloud-services-role-enable-remote-desktop.md
 [vs_remote]: https://msdn.microsoft.com/zh-cn/library/gg443832.aspx
 [vs_deploy]: https://msdn.microsoft.com/zh-cn/library/ee460772.aspx
 [vs_reconfigure]: https://msdn.microsoft.com/zh-cn/library/ee405486.aspx

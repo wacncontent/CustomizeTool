@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Create and Deploy a PHP-MySQL web app in Azure Websites using WebMatrix" 
-	description="A tutorial that demonstrates how to use the free WebMatrix IDE to create and deploy a PHP web app in Azure Websites that stores data in MySQL."
+	pageTitle="Create and Deploy a PHP-MySQL web site in Azure Websites using WebMatrix" 
+	description="A tutorial that demonstrates how to use the free WebMatrix IDE to create and deploy a PHP web site in Azure Websites that stores data in MySQL."
 	tags="azure-portal" 
 	services="app-service\web" 
 	documentationCenter="php" 
@@ -17,21 +17,21 @@
 
 
 
-# Create and Deploy a PHP-MySQL web app in Azure Websites using WebMatrix
+# Create and Deploy a PHP-MySQL web site in Azure Websites using WebMatrix
 
-This tutorial shows you how to use WebMatrix to develop and deploy a PHP-MySQL application to [Azure Websites](/documentation/services/web-sites/) Web Apps. WebMatrix is a free web development tool from Microsoft that includes everything you need for website development. WebMatrix supports PHP and includes intellisense for PHP development.
+This tutorial shows you how to use WebMatrix to develop and deploy a PHP-MySQL application to [Azure Websites](/documentation/services/web-sites/) web sites. WebMatrix is a free web development tool from Microsoft that includes everything you need for website development. WebMatrix supports PHP and includes intellisense for PHP development.
 
 This tutorial assumes you have [MySQL][install-mysql] installed on your computer so that you can test an application locally. However, you can complete the tutorial without having MySQL installed. Instead, you can deploy your application directly to Azure Websites.
 
-Upon completing this guide, you will have a PHP-MySQL website running in Web Apps.
+Upon completing this guide, you will have a PHP-MySQL website running in web sites.
  
 You will learn:
 
-* How to create a website in Azure Websites and a MySQL database using the [Azure Management Portal](https://manage.windowsazure.cn/). Because PHP is enabled in Web Apps by default, nothing special is required to run your PHP code.
+* How to create a website in Azure Websites and a MySQL database using the [Azure Management Portal](https://manage.windowsazure.cn/). Because PHP is enabled in web sites by default, nothing special is required to run your PHP code.
 * How to develop a PHP application using WebMatrix.
-* How to publish and re-publish your application to Web Apps using WebMatrix.
+* How to publish and re-publish your application to web sites using WebMatrix.
  
-By following this tutorial, you will build a simple Tasklist web application in PHP. The application will be hosted in Azure Websites. A screenshot of the running application is below:
+By following this tutorial, you will build a simple Tasklist web site in PHP. The application will be hosted in Azure Websites. A screenshot of the running application is below:
 
 ![Azure PHP Web Site][running-app]
 
@@ -54,9 +54,9 @@ By following this tutorial, you will build a simple Tasklist web application in 
 
 	This step is only necessary if you want to test your application locally.
 
-## Create a web app and MySQL database
+## Create a web site and MySQL database
 
-Follow these steps to create a web app and a MySQL database:
+Follow these steps to create a web site and a MySQL database:
 1. Login to the [Management Portal][Azure-portal].
 1. Click the **+ New** icon on the bottom left of the portal.
 
@@ -165,7 +165,7 @@ Before publishing your application to Azure  Websites, the database connection i
 
 3. Click **Choose an existing site from Windows Azure**.
 
-3. Select the Azure Websites web app you created earlier.
+3. Select the Azure Websites you created earlier.
 
 	![](./media/web-sites-php-mysql-use-webmatrix/webmatrix-publish-existing-site-choose.png)
 

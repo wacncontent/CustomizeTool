@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="best-practice"
-	ms.date="04/28/2015"
+	ms.date="12/15/2015"
 	wacn.date=""/>
 
 # Availability checklist

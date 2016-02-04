@@ -4,17 +4,13 @@
    services="Service-Fabric"
    documentationCenter=".net"
    authors="sumukhs"
-   manager="anuragg"
+   manager="timlt"
    editor=""/>
 
 <tags
-   ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/26/2015"
-   ms.author="sumukhs"/>
+	ms.service="Service-Fabric"
+	ms.date="08/26/2015"
+	wacn.date=""/>
 
 # Configuring Stateful Reliable Services
 Stateful Reliable Service's default configuration can be modified by changing the "settings.xml" file generated in the Visual Studio package root under the "Config" folder for each service in the application.
@@ -29,6 +25,11 @@ By default, an empty security configuration section does not enable replication 
 
 ### Section Name
 ReplicatorSecurityConfig
+<!-- keep by customization: begin -->
+
+### Configuration Names
+Refer to [Replication Security](/documentation/articles/service-fabric-replication-security)
+<!-- keep by customization: end -->
 
 ## Replicator Configuration
 Replicator Configurations are used to configure the replicator that is responsible for making the stateful Reliable Service's state highly reliable by replicating and persisting the state locally.
@@ -42,7 +43,7 @@ ReplicatorConfig
 |Name|Unit|Default Value|Remarks|
 |----|----|-------------|-------|
 |BatchAcknowledgementInterval|Seconds|0.05|Time period for which the replicator at the secondary waits after receiving an operation before sending back an acknowledgement to the primary. Any other acknowledgements to be sent for operations processed within this interval are sent as one response.|
-|ReplicatorEndpoint|N/A|N/A - RequiredParameter|IP address and port that the primary/secondary replicator will use to communicate with other replicators in the replica set. This should reference a TCP Resource Endpoint in the service manifest. Refer to [Service Manifest Resources](service-fabric-service-manifest-resources.md) to read more about defining endpoint resources in service manifest. |
+|ReplicatorEndpoint|N/A|N/A - RequiredParameter|IP address and port that the primary/secondary replicator will use to communicate with other replicators in the replica set. This should reference a TCP Resource Endpoint in the service manifest. Refer to [Service Manifest Resources](/documentation/articles/service-fabric-service-manifest-resources) to read more about defining endpoint resources in service manifest. |
 |RetryInterval|Seconds|5|Time period after which the replicator re-transmits a message if it does not receive an acknowledgement for an operation.|
 |MaxReplicationMessageSize|Bytes|50MB|Maximum size of replication data that can be transmitted in a single message.|
 |MaxPrimaryReplicationQueueSize|Number of operations|1024|Maximum number of operations in the primary queue. An Operation is freed up after the primary replicator receives an acknowledgement from all the secondary replicators.This value must be greater than 64 and a power of 2.|
@@ -95,4 +96,4 @@ causing larger data items to be part of the state information then this value mi
 only use the space needed for the smaller record. It is expected that it would need to be changed in only rare cases.
 
 The SharedLogId and SharedLogPath settings are always used together and allow a service to use a separate shared log from the default shared log for the node. For best efficiency, as many services as
-possible should specify the same shared log. Shared log files should be placed on disks that are used solely for the shared log file so that head movement contention is reduced. It is expected that it would need to be changed in only rare cases.
+possible should specify the same shared log. Shared log files should be placed on disks that are used solely for the shared log file so that head movement contention is reduced. It is expected that it would need to be changed in only rare cases.

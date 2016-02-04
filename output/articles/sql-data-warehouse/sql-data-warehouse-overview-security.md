@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Secure a database in SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Secure a database in SQL Data Warehouse | Windows Azure"
    description="Tips for securing a database in Azure SQL Data Warehouse for developing solutions."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="10/15/2015"
-   ms.author="sahajs"/>
+	ms.service="sql-data-warehouse"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 # Secure a database in SQL Data Warehouse
 
@@ -33,7 +29,7 @@ Authentication refers to how you prove your identity when connecting to the data
 
 When you created the logical server for your database, you specified a "server admin" login with a username and password. Using these credentials, you can authenticate to any database on that server as the database owner, or "dbo."
 
-However, as a best practice your organization’s users should use a different account to authenticate. This way you can limit the permissions granted to the application and reduce the risks of malicious activity in case your application code is vulnerable to a SQL injection attack. To create a database user based on server login:
+However, as a best practice your organizationâs users should use a different account to authenticate. This way you can limit the permissions granted to the application and reduce the risks of malicious activity in case your application code is vulnerable to a SQL injection attack. To create a database user based on server login:
 
 First, connect to the master database on your server with your server admin login and create a new server login. 
 
@@ -72,7 +68,7 @@ There are ways to further limit what a user can do with Azure SQL Database:
 - Granular [Permissions][] let you control which operations you can do on individual columns, tables, views, procedures, and other objects in the database.
 - [Stored procedures][] can be used to limit the actions that can be taken on the database.
 
-Managing databases and logical servers from the Azure Management Portal or using the Azure Resource Manager API is controlled by your portal user account's role assignments. For more information on this topic, see [Role-based access control in Azure preview portal][].
+Managing databases and logical servers from the Azure Management Portal or using the Azure Resource Manager API is controlled by your portal user account's role assignments. For more information on this topic, see [Role-based access control in Azure Management Portal][].
 
 
 
@@ -87,7 +83,7 @@ ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
 
 ```
 
-You can also enable Transparent Data Encryption from database settings in the [Azure Portal][].
+You can also enable Transparent Data Encryption from database settings in the [Azure Management Portal][].
 
 
 
@@ -107,14 +103,14 @@ For more development tips, see [development overview][].
 
 
 <!--MSDN references-->
-[Azure SQL Database firewall]: https://msdn.microsoft.com/library/ee621782.aspx
-[Database roles]: https://msdn.microsoft.com/library/ms189121.aspx
-[Managing databases and logins in Azure SQL Database]: https://msdn.microsoft.com/library/ee336235.aspx
-[Permissions]: https://msdn.microsoft.com/library/ms191291.aspx
-[Stored procedures]: https://msdn.microsoft.com/library/ms190782.aspx 
-[Transparent Data Encryption]: http://go.microsoft.com/fwlink/?LinkId=526242
+[Azure SQL Database firewall]: https://msdn.microsoft.com/zh-cn/library/ee621782.aspx
+[Database roles]: https://msdn.microsoft.com/zh-cn/library/ms189121.aspx
+[Managing databases and logins in Azure SQL Database]: https://msdn.microsoft.com/zh-cn/library/ee336235.aspx
+[Permissions]: https://msdn.microsoft.com/zh-cn/library/ms191291.aspx
+[Stored procedures]: https://msdn.microsoft.com/zh-cn/library/ms190782.aspx 
+[Transparent Data Encryption]: https://msdn.microsoft.com/zh-cn/library/dn948096.aspx
 [Get started with SQL Database Auditing]: sql-database-auditing-get-started.md
-[Azure Portal]: https://portal.azure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 
 <!--Other Web references-->
-[Role-based access control in Azure preview portal]: http://azure.microsoft.com/en-us/documentation/articles/role-based-access-control-configure.aspx
+[Role-based access control in Azure Management Portal]: /documentation/articles/role-based-access-control-configure.aspx

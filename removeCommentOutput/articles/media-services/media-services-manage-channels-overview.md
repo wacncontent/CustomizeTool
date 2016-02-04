@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
+	ms.date="12/15/2015"
 	wacn.date=""/>
 
 #Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders
@@ -117,7 +117,7 @@ You have an option of ingesting Fragmented MP4 (Smooth Streaming) live stream ov
 
 ####<a id="keyframe_interval"></a>Keyframe interval
 
-When using an on-premises live encoder to generate multi-bitrate stream, the keyframe interval specifies GOP duration (as used by that external encoder). Once this incoming stream is received by the Channel, you can then deliver your live stream to client playback applications in any of the following formats: Smooth Streaming, DASH and HLS. When doing live streaming, HLS is always packaged dynamically. By default, Media Services automatically calculates HLS segment packaging ratio (fragments per segment) based on the keyframe interval, also referred to as Group of Pictures – GOP, that is received from the live encoder. 
+When using an on-premises live encoder to generate multi-bitrate stream, the keyframe interval specifies GOP duration (as used by that external encoder). Once this incoming stream is received by the Channel, you can then deliver your live stream to client playback applications in any of the following formats: Smooth Streaming, DASH and HLS. When doing live streaming, HLS is always packaged dynamically. By default, Media Services automatically calculates HLS segment packaging ratio (fragments per segment) based on the keyframe interval, also referred to as Group of Pictures - GOP, that is received from the live encoder. 
 
 The following table shows how the segment duration is being calculated:
 
@@ -128,7 +128,7 @@ less than or equal to 3 seconds|3:1|If the KeyFrameInterval (or GOP) is 2 second
 greater than 5 seconds|1:1|If the KeyFrameInterval (or GOP) is 6 seconds long, the default HLS segment packaging ratio will be 1 to 1, which will create a 6 second long HLS segment.
 
 
-You can change the fragments per segment ratio by configuring channel’s output and setting FragmentsPerSegment on ChannelOutputHls. 
+You can change the fragments per segment ratio by configuring channel's output and setting FragmentsPerSegment on ChannelOutputHls. 
 
 You can also change the keyframe interval value, by setting the KeyFrameInterval property on ChanneInput. 
 
@@ -139,7 +139,7 @@ If you explicitly set both KeyFrameInterval and FragmentsPerSegment, Media Servi
 
 ####Allowed IP addresses
 
-You can define the IP addresses that are allowed to publish video to this channel. Allowed IP addresses can be specified as either a single IP address (e.g. ‘10.0.0.1’), an IP range using an IP address and a CIDR subnet mask (e.g. ‘10.0.0.1/22’), or an IP range using an IP address and a dotted decimal subnet mask (e.g. ‘10.0.0.1(255.255.252.0)’). 
+You can define the IP addresses that are allowed to publish video to this channel. Allowed IP addresses can be specified as either a single IP address (e.g. '10.0.0.1'), an IP range using an IP address and a CIDR subnet mask (e.g. '10.0.0.1/22'), or an IP range using an IP address and a dotted decimal subnet mask (e.g. '10.0.0.1(255.255.252.0)'). 
 
 If no IP addresses are specified and there is no rule definition, then no IP address will be allowed. To allow any IP address, create a rule and set 0.0.0.0/0.
 
@@ -158,7 +158,7 @@ Note that currently the preview stream can only be delivered in Fragmented MP4 (
 
 ####Allowed IP Addresses
 
-You can define the IP addresses that are allowed to connect to the preview endpoint. If no IP addresses are specified any IP address will be allowed. Allowed IP addresses can be specified as either a single IP address (e.g. ‘10.0.0.1’), an IP range using an IP address and a CIDR subnet mask (e.g. ‘10.0.0.1/22’), or an IP range using an IP address and a dotted decimal subnet mask (e.g. ‘10.0.0.1(255.255.252.0)’).
+You can define the IP addresses that are allowed to connect to the preview endpoint. If no IP addresses are specified any IP address will be allowed. Allowed IP addresses can be specified as either a single IP address (e.g. '10.0.0.1'), an IP range using an IP address and a CIDR subnet mask (e.g. '10.0.0.1/22'), or an IP range using an IP address and a dotted decimal subnet mask (e.g. '10.0.0.1(255.255.252.0)').
 
 ###Channel output
 
@@ -204,7 +204,7 @@ Running|Ready (no running programs)<p>or<p>Streaming (at least one running progr
 Stopping|Stopping|No (transient state)
 Stopped|Stopped|No
 
-###Closed Captioning and Ad Insertion 
+##<a id="cc_and_ads"></a>Closed Captioning and Ad Insertion 
 
 The following table demonstrates supported closed captioning and ad insertion standards.
 
@@ -236,19 +236,22 @@ Other considerations related to working with channels and related components:
 
 ##How to create channels that receive multi-bitrate live stream from on-premises encoders
 
-For more information about on-premises live encoders, see [Using 3rd Party Live Encoders with Azure Media Services](https://msdn.microsoft.com/zh-cn/library/azure/dn783464.aspx).
+For more information about on-premises live encoders, see [Using 3rd Party Live Encoders with Azure Media Services](https://azure.microsoft.com/blog/azure-media-services-rtmp-support-and-live-encoders/).
 
 Choose **Portal**, **.NET**, **REST API** to see how to create and manage channels and programs.
 
 [AZURE.INCLUDE [media-services-selector-manage-channels](../includes/media-services-selector-manage-channels.md)]
 
 
+
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
 
 
 ##Related topics

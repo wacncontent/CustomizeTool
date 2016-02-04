@@ -4,7 +4,7 @@ deleted:
 
 		Portal](https://manage.windowsazure.cn/) and the [Azure Preview
 
-reason: ()
+reason: (preview portal)
 
 deleted:
 
@@ -12,7 +12,7 @@ deleted:
 		
 				![Azure Preview Portal][Image2]
 
-reason: ()
+reason: (preview portal)
 
 replacement:
 
@@ -24,5 +24,5 @@ replaced by:
 
 		one portal in China
 
-reason: ()
+reason: (preview portal)
 

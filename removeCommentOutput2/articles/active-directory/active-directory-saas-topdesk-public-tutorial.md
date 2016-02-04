@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Directory integration with TOPdesk - Public
@@ -108,7 +108,7 @@ Configuring single sign-on for TOPdesk - Public requires you to upload a logo ic
     ![Configure App URL](./media/active-directory-saas-topdesk-public-tutorial/IC790622.png "Configure App URL")
 
     1.  In the **TOPdesk - Public Sign On URL** textbox, type the URL used by your users to sign into your TOPdesk - Public application (e.g.: "*https://qssolutions.topdesk.net*").
-    2.  In the **TOPdesk – Public Reply URL** textbox, paste the **TOPdesk - Public AssertionConsumerService URL** (e.g.: "*https://qssolutions.topdesk.net/tas/public/login/saml*")
+    2.  In the **TOPdesk - Public Reply URL** textbox, paste the **TOPdesk - Public AssertionConsumerService URL** (e.g.: "*https://qssolutions.topdesk.net/tas/public/login/saml*")
     3.  Click **Next**.
 
 10. On the **Configure single sign-on at TOPdesk - Public** page, to download your metadata file, click **Download metadata**, and then save the file locally on your computer.

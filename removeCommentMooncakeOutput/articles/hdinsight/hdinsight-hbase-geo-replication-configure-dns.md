@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/28/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # Configure DNS between two Azure virtual networks
@@ -38,7 +38,7 @@ Before you begin this tutorial, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 	Before running PowerShell scripts, make sure you are connected to your Azure subscription using the following cmdlet:
 
@@ -141,7 +141,7 @@ DNS servers requires static IP addresses.  This step can't be done from the Azur
 1.	From the Azure Management Portal, click **NEW**, **NETWORK SERVICES**, **VIRTUAL NETWORK**, **REGISTER DNS SERVER**.
 2.	Enter:
 	- **NAME**: Contoso-DNS-CN
-	- **DNS SERVER IP ADDRESS**: 10.1.0.4 – the IP address must matching the DNS server virtual machine IP address.
+	- **DNS SERVER IP ADDRESS**: 10.1.0.4 - the IP address must matching the DNS server virtual machine IP address.
 	 
 3.	Repeat the process to register Contoso-DNS-CE with the following settings:
 	- **NAME**: Contoso-DNS-CE
@@ -149,7 +149,7 @@ DNS servers requires static IP addresses.  This step can't be done from the Azur
 
 **To assign the two DNS servers to the two virtual networks**
 
-1.	Click **Networks** from the left pane in the Management portal.
+1.	Click **Networks** from the left pane in the Management Portal.
 2.	Click **Contoso-VNet-CN**.
 3.	Click **CONFIGURE**.
 4.	Select **Contoso-DNS-CN** in the **dns servers** section.
@@ -190,11 +190,11 @@ To configure conditional forwarder, you need to know the domain suffixes of the 
 4.	In the left pane, expand **DSN**, **Contoso-DNS-CN**.
 5.	Enter the following information:
 	- **DNS Domain**: enter the DNS suffix of the Contoso-DNS-CE. For example: Contoso-DNS-CE.b5.internal.chinacloudapp.cn.
-	- **IP addresses of the master servers**: enter 10.2.0.4, which is the Contoso-DNS-CE’s IP address.
-6.	Press **ENTER**, and then click **OK**.  Now you will be able to resolve the Contoso-DNS-CE’s IP address from Contoso-DNS-CN.
+	- **IP addresses of the master servers**: enter 10.2.0.4, which is the Contoso-DNS-CE's IP address.
+6.	Press **ENTER**, and then click **OK**.  Now you will be able to resolve the Contoso-DNS-CE's IP address from Contoso-DNS-CN.
 7.	Repeat the steps to add a DNS forwarder to the DNS service on the Contoso-DNS-CE virtual machine with the following values:
 	- **DNS Domain**: enter the DNS suffix of the Contoso-DNS-CN. 
-	- **IP addresses of the master servers**: enter 10.2.0.4, which is the Contoso-DNS-CN’s IP address.
+	- **IP addresses of the master servers**: enter 10.2.0.4, which is the Contoso-DNS-CN's IP address.
 
 ##Test the name resolution across the virtual networks
 
@@ -212,5 +212,6 @@ In this tutorial, you have learned how to configure name resolution across virtu
 
 [hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication
 [hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
-[powershell-install]: /documentation/articles/install-configure-powershell
+[powershell-install]: /documentation/articles/powershell-install-configure
+
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-DNS/HDInsight.HBase.VPN.diagram.png 

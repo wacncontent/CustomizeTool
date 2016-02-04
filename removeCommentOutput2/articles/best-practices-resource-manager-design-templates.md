@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="08/13/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 # Best practices for designing Azure Resource Manager templates
@@ -33,7 +33,7 @@ This article provides details on consumption scenarios, architecture, and implem
 implementations with Azure Customer Advisory Team (AzureCAT) customers. Far from academic, these are proven practices informed by the development of templates 
 for 12 of the top Linux-based OSS technologies, including: Apache Kafka, Apache Spark, Cloudera, Couchbase, Hortonworks HDP, DataStax Enterprise powered by 
 Apache Cassandra, Elasticsearch, Jenkins, MongoDB, Nagios, PostgreSQL, Redis, and Nagios. The majority of these templates were developed with a well-known vendor of 
-a given distribution and influenced by the requirements of Microsoft’s enterprise and SI customers during recent projects.
+a given distribution and influenced by the requirements of Microsoft's enterprise and SI customers during recent projects.
 
 This article shares these proven practices to help you architect world class Azure Resource Manager templates.  
 
@@ -43,7 +43,7 @@ The following sections provides a high-level overview of common scenarios and pa
 ## Enterprises and system integrators
 
 Within large organizations, we commonly see two consumers of ARM templates: internal software development teams and corporate IT. The scenarios for the 
-SIs we’ve worked with have mapped to those of Enterprises, so the same considerations apply.
+SIs we've worked with have mapped to those of Enterprises, so the same considerations apply.
 
 ### Internal software development teams
 
@@ -54,7 +54,7 @@ You can use templates as-is or extend or compose them to accommodate your needs.
 various views such as team, project, individual, and education.
 
 Businesses often want software development teams to create a template for consistent deployment of a solution while also offering constraints so certain 
-items within that environment remain fixed and can’t be overridden. For example, a bank might require a template to include RBAC so a programmer can’t revise a 
+items within that environment remain fixed and can't be overridden. For example, a bank might require a template to include RBAC so a programmer can't revise a 
 banking solution to send data to a personal storage account.
 
 ### Corporate IT
@@ -78,7 +78,7 @@ You can use templates to support cloud-hosted capabilities, including individual
 of business. An example of a composite offering would be analytics-as-a-service—analytics, visualization, and other technologies—delivered in an optimized, 
 connected configuration on a predefined network topology.
 
-Cloud-hosted capabilities are affected by the security and role considerations established by the cloud capacity offering on which they’re built as described above.
+Cloud-hosted capabilities are affected by the security and role considerations established by the cloud capacity offering on which they're built as described above.
 These capabilities are offered as is or as a managed service. For the latter, access-constrained roles are required to enable access into the environment for 
 management purposes.
 
@@ -100,14 +100,14 @@ and number of transactions. These scale units are increased or decreased as dema
 
 ### CSV offering injected into customer subscription
 
-You may want to deploy your software into subscriptions owned by end customers. You can use templates to deploy distinct deployments into a customer’s Azure account.
+You may want to deploy your software into subscriptions owned by end customers. You can use templates to deploy distinct deployments into a customer's Azure account.
 
-These deployments use RBAC so you can update and manage the deployment within the customer’s account.
+These deployments use RBAC so you can update and manage the deployment within the customer's account.
 
-### Azure Marketplace
+### Azure gallery
 
-If you want to advertise and sell your offerings through a marketplace, such as Azure Marketplace, you can develop templates to deliver distinct types of 
-deployments that will run in a customer’s Azure account. This distinct deployments can be typically described as a t-shirt size (small, medium, large), 
+If you want to advertise and sell your offerings through a marketplace, such as Azure gallery, you can develop templates to deliver distinct types of 
+deployments that will run in a customer's Azure account. This distinct deployments can be typically described as a t-shirt size (small, medium, large), 
 product/audience type (community, developer, enterprise), or feature type (basic, high availability).  In some cases, these types will allow you to specify 
 certain attributes of the deployment, such as VM type or number of disks.
 
@@ -120,10 +120,10 @@ The following sections identify the things you need to consider before designing
 
 ## Identifying what is outside and inside of a VM
 
-As you design your template, it’s helpful to look at the requirements in terms of what’s outside and inside of the virtual machines (VMs):
+As you design your template, it's helpful to look at the requirements in terms of what's outside and inside of the virtual machines (VMs):
 
 - Outside means the VMs and other resources of your deployment, such as the network topology, tagging, references to the certs/secrets, and role-based access control. All of these resources are part of your template.
-- Inside means the installed software and overall desired state configuration. Other mechanisms, such as VM extensions or scripts, are used in whole or in part. These mechanisms may be identified and executed by the template but aren’t in it.
+- Inside means the installed software and overall desired state configuration. Other mechanisms, such as VM extensions or scripts, are used in whole or in part. These mechanisms may be identified and executed by the template but aren't in it.
 
 Common examples of activities you would do “inside the box” include -  
 
@@ -141,8 +141,8 @@ Common examples of activities you would do “inside the box” include -
 
 ### Desired state configuration (DSC)
 
-Thinking about the internal state of your VMs beyond deployment, you’ll want to make sure this deployment doesn’t “drift” from the configuration that you have 
-defined and checked into source control. This ensures your developers or operations staff don’t manually make ad-hoc changes to an environment that are not vetted, 
+Thinking about the internal state of your VMs beyond deployment, you'll want to make sure this deployment doesn't “drift” from the configuration that you have 
+defined and checked into source control. This ensures your developers or operations staff don't manually make ad-hoc changes to an environment that are not vetted, 
 tested or recorded in source control. This is important, because the manual changes are not in source control, they are also not part of the standard deployment 
 and will impact future automated deployments of the software.
 
@@ -155,7 +155,7 @@ also be used to make sure the desired state is maintained.
 
 ## Common template scopes
 
-In our experience, we’ve seen three key solution templates scopes emerge. These three scopes – capacity, capability, and end-to-end solution – are described in 
+In our experience, we've seen three key solution templates scopes emerge. These three scopes - capacity, capability, and end-to-end solution - are described in 
 more detail below.
 
 ### Capacity scope
@@ -209,13 +209,13 @@ mathematical functions, so you must perform these calculations in code, generati
 In enterprise IT and SI scenarios, someone must maintain the templates and provide support for the deployed topologies for one or more organizations. 
 This additional overhead — different configurations and templates for each customer — is far from desirable.
 
-You can use these templates to deploy environments in your customer’s Azure subscription, but both corporate IT teams and CSVs typically deploy them into their 
+You can use these templates to deploy environments in your customer's Azure subscription, but both corporate IT teams and CSVs typically deploy them into their 
 own subscriptions, using a chargeback function to bill their customers. In these scenarios, the goal is to deploy capacity for multiple customers across a pool 
 of subscriptions and keep deployments densely populated into the subscriptions to minimize subscription sprawl—that is, more subscriptions to manage. With truly 
 dynamic deployment sizes, achieving this type of density requires careful planning and additional development for scaffolding work on behalf of the organization.
 
-In addition, you can’t create subscriptions via an API call but must do so manually through the portal. As the number of subscriptions increases, any resulting 
-subscription sprawl requires human intervention—it can’t be automated. With so much variability in the sizes of deployments, you would have to pre-provision a 
+In addition, you can't create subscriptions via an API call but must do so manually through the portal. As the number of subscriptions increases, any resulting 
+subscription sprawl requires human intervention—it can't be automated. With so much variability in the sizes of deployments, you would have to pre-provision a 
 number of subscriptions manually to ensure subscriptions are available.
 
 Considering all these factors, a truly free-form configuration is less appealing than at first blush.
@@ -224,7 +224,7 @@ Considering all these factors, a truly free-form configuration is less appealing
 
 Rather than offer a template that provides total flexibility and countless variations, in our experience a common pattern is to provide the ability to select 
 known configurations — in effect, standard t-shirt sizes such as sandbox, small, medium, and large. Other examples of t-shirt sizes are product offerings, 
-such as community edition or enterprise edition.  In other cases, it may be workload specific configurations of a technology – such as map reduce or no sql.
+such as community edition or enterprise edition.  In other cases, it may be workload specific configurations of a technology - such as map reduce or no sql.
 
 Many enterprise IT organizations, OSS vendors, and SIs make their offerings available today in this way in on-premises, virtualized environments 
 (enterprises) or as software-as-a-service (SaaS) offerings (CSVs and OSVs).
@@ -396,7 +396,7 @@ that is called after all VMs (or all VMs of a given member type) are deployed.
 
 ## Capability-scoped solution template example - Redis
 
-To show how an implementation might work, let’s look at a practical example of building a template that will facilitate the deployment and configuration of 
+To show how an implementation might work, let's look at a practical example of building a template that will facilitate the deployment and configuration of 
 Redis in standard t-shirt sizes.  
 
 For the deployment, there will be set of shared resources (virtual network, storage account, availability sets) and an optional resource (jumpbox). There are 
@@ -411,9 +411,9 @@ You create Shared Resources Template named shared-resources.json
 
 You create an Optional Resource Template to enable the deployment of a jumpbox, named jumpbox_enabled.json
 
-Redis will use just a single node type, so you’ll create a single Member Resource Template named node-resources.json.
+Redis will use just a single node type, so you'll create a single Member Resource Template named node-resources.json.
 
-With Redis, you’ll want to install each individual node and then, once all nodes are installed you’ll want to set up the cluster.  You have scripts to 
+With Redis, you'll want to install each individual node and then, once all nodes are installed you'll want to set up the cluster.  You have scripts to 
 accommodate both of these, redis-cluster-install.sh and redis-cluster-setup.sh.
 
 ### Linking the templates

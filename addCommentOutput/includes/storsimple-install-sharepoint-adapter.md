@@ -2,7 +2,7 @@
 
 #### To install the StorSimple Adapter for SharePoint
 
-1. Copy the installer to the web front end (WFE) server that is also configured to run the SharePoint Central Administration web application. 
+1. Copy the installer to the web front end (WFE) server that is also configured to run the SharePoint Central Administration web site. 
 
 2. Use an account with administrator privileges to log on to the WFE server.
 

@@ -9,21 +9,21 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+	ms.date="07/17/2015"
 	wacn.date=""/>
 
 # Integrate Azure AD into an iOS App
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher)]
 
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide)]
 
-Azure AD provides the Active Directory Authentication Library, or ADAL, for iOS clients that need to access protected resources.  ADAL’s sole purpose in life is to make it easy for your app to get access tokens.  To demonstrate just how easy it is, here we’ll build a Objective C To-Do List application that:
+Azure AD provides the Active Directory Authentication Library, or ADAL, for iOS clients that need to access protected resources.  ADAL's sole purpose in life is to make it easy for your app to get access tokens.  To demonstrate just how easy it is, here we'll build a Objective C To-Do List application that:
 
 -	Gets access tokens for calling the Azure AD Graph API using the [OAuth 2.0 authentication protocol](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
 -	Searches a directory for users with a given alias.
 
-To build the complete working application, you’ll need to:
+To build the complete working application, you'll need to:
 
 2. Register your application with Azure AD.
 3. Install & Configure ADAL.
@@ -220,4 +220,4 @@ For reference, the completed sample (without your configuration values) is provi
 
 [Secure a Node.JS Web API with Azure AD >>](/documentation/articles/active-directory-devquickstarts-webapi-nodejst)
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]

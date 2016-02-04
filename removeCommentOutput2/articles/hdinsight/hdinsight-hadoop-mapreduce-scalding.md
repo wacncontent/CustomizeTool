@@ -9,7 +9,7 @@
 	tags="azure-portal"/>
 <tags
 	ms.service="hdinsight"
-	ms.date="10/15/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Develop Scalding MapReduce jobs with Apache Hadoop on HDInsight
@@ -21,7 +21,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 ## Prerequisites
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-* **A Windows based Hadoop on HDInsight cluster**. See [Provision Windows-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters) for more information.
+* **A Windows based Hadoop on HDInsight cluster**. See [Provision Windows-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) for more information.
 
 * **[Maven](http://maven.apache.org/)**
 
@@ -183,7 +183,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 
 > [AZURE.NOTE] The following steps use Windows PowerShell. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce).
 
-1. [Install and configure Azure PowerShell](/documentation/articles/install-configure-powershell).
+1. [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 2. Download [hdinsight-tools.psm1](https://github.com/Blackmist/hdinsight-tools/blob/master/hdinsight-tools.psm1) and save to a file named **hdinsight-tools.psm1**.
 
@@ -208,7 +208,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 
         Get-HDInsightFile -clusterName $clusterName -remotePath example/wordcountout/part-00000 -localPath output.txt
 
-7. The output consists of tab delimited word and count values. use the following command to display the results.
+6. Once the job completes, the output will be downloaded to the file __output.txt__ in the current directory. Use the following command to display the results.
 
         cat output.txt
 

@@ -15,6 +15,9 @@
 
 # Add Push Notifications to iOS App and .NET Backend
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 This topic shows you how to add push notifications to the [quickstart project](/documentation/articles/mobile-services-dotnet-backend-ios-get-started), so that your mobile service sends a push notification each time a record is inserted. You must complete [Get Started with Mobile Services] first.
@@ -114,12 +117,26 @@ This topic shows you how to add push notifications to the [quickstart project](/
 [iOS Provisioning Portal]: https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple Push Notification Service]: https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html
+<!-- deleted by customization
+[Get started with Mobile Services]: mobile-services-dotnet-backend-ios-get-started.md
+-->
+<!-- keep by customization: begin -->
 [Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
 [Azure Management Portal]: https://manage.windowsazure.cn/
+<!-- keep by customization: end -->
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
+<!-- deleted by customization
+[Get started with authentication]: mobile-services-dotnet-backend-ios-get-started-users.md
+[Mobile Services Objective-C how-to conceptual reference]: mobile-services-windows-dotnet-how-to-use-client-library.md
+[What are Notification Hubs?]: ../notification-hubs-overview.md
+[Send broadcast notifications to subscribers]: ../notification-hubs-ios-send-breaking-news.md
+[Send template-based notifications to subscribers]: ../notification-hubs-ios-send-localized-breaking-news.md
+-->
+<!-- keep by customization: begin -->
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
 [Mobile Services Objective-C how-to conceptual reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
 [Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-breaking-news
 [Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news
+<!-- keep by customization: end -->

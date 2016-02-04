@@ -1,6 +1,8 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Log on to a Windows Server VM | Windows Azure"
-	description="Learn how to log on to a Windows Server VM using the Azure preview portal and the Resource Manager deployment model."
+	description="Learn how to log on to a Windows Server VM using the Azure Management Portal and the Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -21,7 +23,7 @@ You'll use the **Connect** button in the Azure preview portal to start a Remote 
 
 ## Connect to the virtual machine
 
-1. If you haven't already done so, sign in to the [Azure preview portal](https://manage.windowsazure.cn/).
+1. If you haven't already done so, sign in to the [Azure preview portal](https://manage.windowsazure.cn).
 
 2.	On the Hub menu, click **Browse**.  
 

@@ -8,5 +8,5 @@ deleted:
 		
 		[AZURE.VIDEO building-a-linux-virtual-machine-tutorial]
 
-reason: ()
+reason: (video)
 

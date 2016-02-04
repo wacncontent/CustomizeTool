@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure SQL Database - elastic database tools"
+    pageTitle="Elastic Database tools features overview | Windows Azure"
     description="Software as a Service (SaaS) developers can easily create elastic, scalable databases in the cloud using these tools"
     services="sql-database"
     documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/27/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # Elastic Database features overview
@@ -41,7 +41,7 @@ In this graphic, colors of the database represent schemas. Databases with the sa
 Achieving elasticity and scale for cloud applications has been straightforward for compute and blob storage--simply add or subtract units. But it has remained a challenge for stateful data processing in relational databases. We have seen these challenges emerge most prominently in the two following scenarios:
 
 * Growing and shrinking capacity for the relational database part of your workload.
-* Managing hotspots that may arise affecting a specific subset of data – such as a particularly busy end-customer (tenant).
+* Managing hotspots that may arise affecting a specific subset of data - such as a particularly busy end-customer (tenant).
 
 Traditionally, scenarios like these have been addressed by investing in larger-scale database servers to support the application. However, this option is limited in the cloud where all processing happens on predefined commodity hardware. Instead, distributing data and processing across many identically-structured databases (a scale-out pattern known as "sharding") provides an alternative to traditional scale-up approaches both in terms of cost and elasticity.
 
@@ -55,7 +55,7 @@ Horizontal scaling refers to adding or removing databases in order to adjust cap
 
 Vertical scaling refers to increasing or decreasing the performance level of an individual database—this is also known as “scaling up.”
 
-Most cloud-scale database applications will use a combination of these two strategies. For example, a Software as a Service application may use horizontal scaling to provision new end-customers and vertical scaling to allow each end-customer’s database to grow or shrink resources as needed by the workload.
+Most cloud-scale database applications will use a combination of these two strategies. For example, a Software as a Service application may use horizontal scaling to provision new end-customers and vertical scaling to allow each end-customer's database to grow or shrink resources as needed by the workload.
 
 * Horizontal scaling is managed using the [Elastic Database client library](/documentation/articles/sql-database-elastic-database-client-library).
 
@@ -74,11 +74,11 @@ In other scenarios, such as ingestion of data from distributed devices, sharding
 
 Sharding works best when every transaction in an application can be restricted to a single value of a sharding key. That ensures that all transactions will be local to a specific database.
 
-Some applications use the simplest approach of creating a separate database for each tenant. This is the **single tenant sharding pattern** that provides isolation, backup/restore ability and resource scaling at the granularity of the tenant. With single tenant sharding, each database is associated with a specific tenant ID value (or customer key value), but that key need not always be present in the data itself. It is the application’s responsibility to route each request to the appropriate database – and the client library can simplify this.
+Some applications use the simplest approach of creating a separate database for each tenant. This is the **single tenant sharding pattern** that provides isolation, backup/restore ability and resource scaling at the granularity of the tenant. With single tenant sharding, each database is associated with a specific tenant ID value (or customer key value), but that key need not always be present in the data itself. It is the application's responsibility to route each request to the appropriate database - and the client library can simplify this.
 
 ![Single tenant versus multi-tenant][4]
 
-Others scenarios pack multiple tenants together into databases, rather than isolating them into separate databases. This is a typical **multi-tenant sharding pattern** – and it may be driven by the fact that an application manages large numbers of very small tenants. In multi-tenant sharding, the rows in the database tables are all designed to carry a key identifying the tenant ID or sharding key. Again, the application tier is responsible for routing a tenant’s request to the appropriate database, and this can be supported by the elastic database client library. In addition, row-level security can be used to filter which rows each tenant can access – for details, see [Multi-tenant applications with elastic database tools and row-level security](/documentation/articles/sql-database-elastic-tools-multi-tenant-row-level-security). Redistributing data among databases may be needed with the multi-tenant sharding pattern, and this is facilitated by the elastic database split-merge tool.
+Others scenarios pack multiple tenants together into databases, rather than isolating them into separate databases. This is a typical **multi-tenant sharding pattern** - and it may be driven by the fact that an application manages large numbers of very small tenants. In multi-tenant sharding, the rows in the database tables are all designed to carry a key identifying the tenant ID or sharding key. Again, the application tier is responsible for routing a tenant's request to the appropriate database, and this can be supported by the elastic database client library. In addition, row-level security can be used to filter which rows each tenant can access - for details, see [Multi-tenant applications with elastic database tools and row-level security](/documentation/articles/sql-database-elastic-tools-multi-tenant-row-level-security). Redistributing data among databases may be needed with the multi-tenant sharding pattern, and this is facilitated by the elastic database split-merge tool.
 
 ### Move data from multiple to single-tenancy databases
 When creating a SaaS application, it is typical to offer prospective customers a trial version of the software. In this case, it is cost-effective to use a multi-tenant database for the data. However, when a prospect becomes a customer, a single-tenant database is better since it provides better performance. If the customer had created data during the trial period, use the [split-merge tool](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge) to move the data from the multi-tenant to the new single-tenant database.

@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory integration with Benefitsolver | Windows Azure"
     description="Learn how to use Benefitsolver with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="MarkusVi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Benefitsolver
@@ -81,8 +81,8 @@ The following screenshot shows an example for this.
 
     ![Configure App Settings](./media/active-directory-saas-benefitsolver-tutorial/IC804826.png "Configure App Settings")
 
-    1.  In the **Sign On URL** textbox, type the URL used by your users to sign-on to your Benefitsolver application (e.g.: “*http://azure-dev.benefitsolver.com*
-    2.  In the **Reply URL** textbox, type your Benefitsolver AssertionConsumerService URL (e.g.: <!-- deleted by customization “*https://dev.benefitsolver.com/benefits/BenefitSolverView?page\_name=single\_signon\_saml*”) --><!-- keep by customization: begin --> “*https://dev.benefitsolver.com/benefits/BenefitSolverView?page_name=single_signon_saml*”) <!-- keep by customization: end -->.
+    1.  In the **Sign On URL** textbox, type the URL used by your users to sign-on to your Benefitsolver application (e.g.: "*http://azure-dev.benefitsolver.com*
+    2.  In the **Reply URL** textbox, type your Benefitsolver AssertionConsumerService URL (e.g.: "*https://dev.benefitsolver.com/benefits/BenefitSolverView?page\_name=single\_signon\_saml*").  
 
         >[AZURE.NOTE] You can get the actual value for your environment from your Benefitsolver support team.
 

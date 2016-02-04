@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="Azure Active Directory hybrid identity design considerations- determine access control requirements| Windows Azure"
+	pageTitle="Azure Active Directory hybrid identity design considerations - determine access control requirements| Windows Azure"
 	description="Covers the pillars of identity, and identifying access requirements for resources for users in a hybrid environment."
 	documentationCenter=""
 	services="active-directory"
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/11/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Determine access control requirements for your hybrid identity solution
@@ -35,8 +35,8 @@ There are different scenarios for authentication and authorization, these scenar
 - Does the hybrid identity solution that you are going to adopt support those protocols?
 
 Another important point to consider is where the authentication repository that will be used by users and partners will be located and the administrative model to be used. Consider the following two core options:
-- Centralized: in this model the user’s credentials, policies and administration can be centralized on-premises or in the cloud. 
-- Hybrid: in this model the user’s credentials, policies and administration will be centralized on-premises and a replicated in the cloud.
+- Centralized: in this model the userâs credentials, policies and administration can be centralized on-premises or in the cloud. 
+- Hybrid: in this model the userâs credentials, policies and administration will be centralized on-premises and a replicated in the cloud.
 
 Which model your organization will adopt will vary according to their business requirements, you want to answer the following questions to identify where the identity management system will reside and the administrative mode to use:
 
@@ -47,7 +47,7 @@ Which model your organization will adopt will vary according to their business r
  - If yes, does the adoption of a hybrid identity model affect this process?
 
 ## Access Control
-While authentication and authorization are core elements to enable access to corporate data through user’s validation, it is also important to control the level of access that these users will have and the level of access administrators will have over the resources that they are managing. Your hybrid identity solution must be able to provide granular access to resources, delegation and role base access control. Ensure that the following question are answered regarding access control:
+While authentication and authorization are core elements to enable access to corporate data through userâs validation, it is also important to control the level of access that these users will have and the level of access administrators will have over the resources that they are managing. Your hybrid identity solution must be able to provide granular access to resources, delegation and role base access control. Ensure that the following question are answered regarding access control:
 
 - Does your company have more than one user with elevated privilege to manage your identity system?
  - If yes, does each user need the same access level?

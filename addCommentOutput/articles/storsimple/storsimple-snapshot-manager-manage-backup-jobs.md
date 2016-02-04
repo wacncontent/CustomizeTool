@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="StorSimple Snapshot Manager backup jobs | Microsoft Azure"
+   pageTitle="StorSimple Snapshot Manager backup jobs | Windows Azure"
    description="Describes how to use the StorSimple Snapshot Manager MMC snap-in to view and manage scheduled, currently running, and completed backup jobs."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/15/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 
 # Use StorSimple Snapshot Manager to view and manage backup jobs
@@ -34,11 +30,11 @@ Use the following procedure to view scheduled backup jobs.
 
 2. In the **Scope** pane, expand the **Jobs** node, and click **Scheduled**. The following information appears in the **Results** pane:
 
-    - **Name** – the name of the scheduled snapshot
+    - **Name** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the name of the scheduled snapshot
 
-    - **Next Run** – the date and time of the next scheduled snapshot
+    - **Next Run** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the date and time of the next scheduled snapshot
 
-    - **Last Run** – the date and time of the most recent scheduled snapshot
+    - **Last Run** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the date and time of the most recent scheduled snapshot
 
     >[AZURE.NOTE] For one-time only snapshots, the **Next Run** and **Last Run** will be the same. 
  
@@ -56,19 +52,19 @@ Use the following procedure to view backup and restore jobs that were completed 
 
 2. In the **Scope** pane, expand the **Jobs** node, and click **Last 24 hours**. The **Results** pane shows backup jobs for the last 24 hours (to a maximum of 64 jobs). The following information appears in the **Results** pane, depending on the **View** options you specify:
 
-    - **Name** – the name of the scheduled snapshot.
+    - **Name** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the name of the scheduled snapshot.
  
-    - **Started** – the date and time when the snapshot began.
+    - **Started** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the date and time when the snapshot began.
 
-    - **Stopped** – the date and time when the snapshot finished or was terminated.
+    - **Stopped** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the date and time when the snapshot finished or was terminated.
 
-    - **Elapsed** – the amount of time between the **Started** and **Stopped** times.
+    - **Elapsed** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the amount of time between the **Started** and **Stopped** times.
 
-    - **Status** – the state of the recently completed job. **Success** indicates that the backup was created successfully. **Failed** indicates that the job did not run successfully.
+    - **Status** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the state of the recently completed job. **Success** indicates that the backup was created successfully. **Failed** indicates that the job did not run successfully.
 
-    - **Information** – the reason for the failure.
+    - **Information** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the reason for the failure.
 
-    - **Bytes processed (MB)** – the amount of data from the volume group that was processed (in MBs). 
+    - **Bytes processed (MB)** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the amount of data from the volume group that was processed (in MBs).
 
     ![Jobs that ran in the last 24 hours](./media/storsimple-snapshot-manager-manage-backup-jobs/HCS_SSM_Jobs_Last_24_hours.png) 
 
@@ -86,21 +82,21 @@ Use the following procedure to view jobs that are currently running.
 
 2. In the **Scope** pane, expand the **Jobs** node, and click **Running**. Depending on the **View** options you specify, the following information appears in the **Results** pane: 
 
-    - **Name** – the name of the scheduled snapshot.
+    - **Name** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the name of the scheduled snapshot.
 
-    - **Started** – the date and time when the snapshot began.
+    - **Started** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the date and time when the snapshot began.
 
-    - **Checkpoint** – the current action of the backup.
+    - **Checkpoint** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the current action of the backup.
 
-    - **Status** – the percentage of completion.
+    - **Status** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the percentage of completion.
     
-    - **Elapsed** – the amount of time that has passed since the backup began. 
+    - **Elapsed** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the amount of time that has passed since the backup began.
 
-    - **Average throughput (MB)** – the median amount of data delivered, expressed in megabytes (MBs).
+    - **Average throughput (MB)** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the median amount of data delivered, expressed in megabytes (MBs).
 
-    - **Bytes processed (MB)** – the amount of data from the volume group that was processed (in MBs).
+    - **Bytes processed (MB)** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the amount of data from the volume group that was processed (in MBs).
 
-    - **Bytes written (MB)** – the amount of data that was written to the backup (in MBs).
+    - **Bytes written (MB)** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> the amount of data that was written to the backup (in MBs).
 
     ![Jobs currently running](./media/storsimple-snapshot-manager-manage-backup-jobs/HCS_SSM_Jobs_running.png)
 
@@ -108,8 +104,8 @@ Use the following procedure to view jobs that are currently running.
 
 ## Next steps
 
-- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple solution](storsimple-snapshot-manager-admin.md).
-- Learn how to [use StorSimple Snapshot Manager to manage the backup catalog](storsimple-snapshot-manager-manage-backup-catalog.md).
+- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple <!-- deleted by customization solution](/documentation/articles/storsimple-snapshot-manager-admin) --><!-- keep by customization: begin --> solution](storsimple-snapshot-manager-admin.md) <!-- keep by customization: end -->.
+- Learn how to [use StorSimple Snapshot Manager to manage the backup <!-- deleted by customization catalog](/documentation/articles/storsimple-snapshot-manager-manage-backup-catalog) --><!-- keep by customization: begin --> catalog](storsimple-snapshot-manager-manage-backup-catalog.md) <!-- keep by customization: end -->.
 
 
 

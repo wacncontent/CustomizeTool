@@ -1,10 +1,12 @@
+<!-- not suitable for Mooncake -->
+
 This topic shows you how to create an app with both a mobile and web client. You will create a mobile app and a web app and use the same underlying database for both.
 
 First you will create both a new mobile app backend and a simple *To do list* app that stores app data in the new mobile app backend. The mobile app backend uses the supported .NET languages for server-side business logic. The client app can use any client platform supported by Mobile App, including iOS, Windows, Xamarin iOS, and Xamarin Android.
 
 Then, you will create a web app, using the same database as your mobile app. At the end of the tutorial, you will have a web client and a mobile client that work with the same data.
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 ## Create a new mobile app backend and client
 
@@ -42,7 +44,7 @@ In this section, you will create a new web app using a sample Web Application so
 
 ## Publish a TodoList web client UI from Visual Studio
 
-In this section, you will use a sample web client application implemented with AngularJS. You will then use Visual Studio to publish the project to a new hosted Azure Websites web app in Azure.
+In this section, you will use a sample web client application implemented with AngularJS. You will then use Visual Studio to publish the project to a new hosted Azure web app in Azure.
 
 1. In Visual Studio, open the project **MultiChannelToDo.Web**. Edit the file `js/service/ToDoService.js`, adding the URL to the Web API you just published:
 
@@ -50,7 +52,7 @@ In this section, you will use a sample web client application implemented with A
 
 2. Right click the project **MultiChannelToDo.Web** and select **Publish**.
 
-3. In the **Publish Web** wizard, select **Azure Web App** as the publish target and create a new web app without a database.
+3. In the **Publish Web** wizard, select **App Services** as the publish target and create a new web app without a database.
 
 4. Once your project has been sucessfully published, you will see the web UI in your browser.
 
@@ -65,10 +67,10 @@ In this section, you will use a sample web client application implemented with A
     ![View of Xamarin Mobile App](./media/app-service-mobile-dotnet-backend-web-and-mobile/xamarin-ios-quickstart-device.png)
 
 ## What's changed
-* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the Azure Management Portal](https://manage.windowsazure.cn/)
 
 <!-- Links -->
 
 [MultiChannelToDo]: https://github.com/Azure/mobile-services-samples/tree/web-mobile/MultiChannelToDo
-[Create a mobile app]: /documentation/articles/app-service-mobile-dotnet-backend-xamarin-ios-get-started-preview
+[Create a mobile app]: /documentation/articles/app-service-mobile-xamarin-ios-get-started

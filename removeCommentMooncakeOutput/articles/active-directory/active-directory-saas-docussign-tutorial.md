@@ -3,13 +3,13 @@
 	description="Learn how to configure single sign-on between Azure Active Directory and DocuSign."
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
+	authors="jeevansd"
 	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/06/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 
@@ -92,7 +92,7 @@ The URL has the following schema: *https://<yourcompanyname>.docusign.net/Member
 <br><br>![Configuring single sign-on ][9]<br>
 
 
-    > [AZURE.TIP] If you don’t know what your app URL for your tenant is, try contacting Docusign via SSOSetup@Docusign.com to get the SP Initiated SSO URL for your tenant.
+    > [AZURE.TIP] If you <!-- deleted by customization donât --><!-- keep by customization: begin --> don’t <!-- keep by customization: end --> know what your app URL for your tenant is, try contacting Docusign via SSOSetup@Docusign.com to get the SP Initiated SSO URL for your tenant.
  
 
 4. On the **Configure single sign-on at Docusign** page, click **Download certificate**, and then save the certificate file locally on your computer.
@@ -102,7 +102,7 @@ The URL has the following schema: *https://<yourcompanyname>.docusign.net/Member
 5. In a different web browser window, log into your **Docusign** company site as an administrator.
 
 
-6. In the menu on the top, expand the user’s menu, click **Preferences**, and then, in the navigation pane on the left, expand **Account Management**, and then click **Features**.
+6. In the menu on the top, expand the <!-- deleted by customization userâs --><!-- keep by customization: begin --> user’s <!-- keep by customization: end --> menu, click **Preferences**, and then, in the navigation pane on the left, expand **Account Management**, and then click **Features**.
 <br><br>![Configuring single sign-on ][11]<br>
 
 7. Click **SAML Configuration**, and then click the **SAML Configuration** link.

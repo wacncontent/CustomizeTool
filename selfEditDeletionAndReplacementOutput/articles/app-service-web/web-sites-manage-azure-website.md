@@ -4,20 +4,19 @@ deleted:
 
 		- For deeper insight, use New Relic to monitor and manage performance. See [.NET web app in Azure Websites with New Relic application performance management](/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management).
 
-reason: ()
+reason: (New Relic)
 
 deleted:
 
-		If you use Visual Studio Online, you can set up continuous deployment from source control:
-		
-		- [Using Team Foundation Version Control (TFVC)](/documentation/articles/cloud-services-continuous-delivery-use-vso) 
-		- [Using Git](/documentation/articles/cloud-services-continuous-delivery-use-vso-git)
-		 
 		[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
-		
+
+reason: (terminology: Azure App Service Web)
+
+deleted:
+
 		[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
 
-reason: ()
+reason: (“Try it now”)
 
 replacement:
 
@@ -29,7 +28,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -39,5 +38,5 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 

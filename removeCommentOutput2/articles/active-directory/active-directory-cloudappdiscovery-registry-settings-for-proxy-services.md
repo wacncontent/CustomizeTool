@@ -8,7 +8,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/20/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 # Cloud App Discovery Registry Settings for Proxy Services

@@ -1,6 +1,6 @@
-﻿<properties
+<properties
 	pageTitle="Azure Resource Manager Policy | Windows Azure"
-	description="Describes how to use Azure Resource Manager Policy to prevent violations at different scopes like 			subscription, resource groups or individual resources."
+	description="Describes how to use Azure Resource Manager Policy to prevent violations at different scopes like subscription, resource groups or individual resources."
 	services="azure-resource-manager"
 	documentationCenter="na"
 	authors="ravbhatnagar"
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="11/10/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 # Use Policy to manage resources and control access
@@ -73,7 +73,7 @@ Basically, a policy contains the following:
 can be manipulated through a set of logical operators.
 
 **Effect:** This describes what the effect will be when the condition is
-satisfied – either deny or audit. An audit effect will emit a warning
+satisfied â either deny or audit. An audit effect will emit a warning
 event service log. For example, an administrator can create a policy which causes an audit if anyone creates a large VM, then review the logs later.
 
     {
@@ -93,10 +93,11 @@ The supported logical operators along with the syntax are listed below:
 | Operator Name		| Syntax		 |
 | :------------- | :------------- |
 | Not			 | "not" : {&lt;condition  or operator &gt;}			 |
-| And			| "allOf" : [ {&lt;condition1&gt;},{&lt;condition2&gt;}] |
-| Or						 | "anyOf" : [ {&lt;condition1&gt;},{&lt;condition2&gt;}] |
+| And			| "allOf" : [ {&lt;condition  or operator &gt;},{&lt;condition  or operator &gt;}] |
+| Or						 | "anyOf" : [ {&lt;condition  or operator &gt;},{&lt;condition  or operator &gt;}] |
 
-Nested conditions are not supported.
+Resource Manager enables you to specify complex logic in your policy through nested operators. For example, you can deny resource creation in a particular location for a specified resource type. An example of nested 
+operators is shown below.
 
 ## Conditions
 
@@ -110,7 +111,6 @@ A condition evaluates whether a **field** or **source** meets certain criteria. 
 | In						| "in" : [ "&lt;value1&gt;","&lt;value2&gt;" ]|
 | ContainsKey	 | "containsKey" : "&lt;keyName&gt;" |
 
-
 ## Fields and Sources
 
 Conditions are formed through the use of fields and sources. A field represents properties in the resource request payload. A source represents characteristics of the request itself. 
@@ -121,7 +121,7 @@ Fields: **name**, **kind**, **type**, **location**, **tags**, **tags.***.
 
 Sources: **action**. 
 
-To get more information about actions, see [RBAC - Built in Roles] (active-directory/role-based-access-built-in-roles.md). 
+To get more information about actions, see [RBAC - Built in Roles] (active-directory/role-based-access-built-in-roles.md). Currently, policy only works on PUT requests. 
 
 ## Policy Definition Examples
 
@@ -130,7 +130,7 @@ scenarios listed above.
 
 ### Chargeback: Require departmental tags
 
-The below policy denies all requests which don’t have a tag containing
+The below policy denies all requests which donât have a tag containing
 "costCenter" key.
 
     {
@@ -213,6 +213,30 @@ the request.
       "then" : {
         "effect" : "deny"
       }
+    }
+    
+### Tag requirement just for Storage resources
+
+The below example shows how to nest logical operators to require an application tag for only Storage resources.
+
+    {
+        "if": {
+            "allOf": [
+              {
+                "not": {
+                  "field": "tags",
+                  "containsKey": "application"
+                }
+              },
+              {
+                "source": "action",
+                "like": "Microsoft.Storage/*"
+              }
+            ]
+        },
+        "then": {
+            "effect": "audit"
+        }
     }
 
 ## Policy Assignment
@@ -327,3 +351,17 @@ If you want to remove the above policy assignment, you can do it as follows:
 You can get, change or remove policy definitions through Get-AzureRmPolicyDefinition, Set-AzureRmPolicyDefinition and Remove-AzureRmPolicyDefinition cmdlets respectively.
 
 Similarly, you can get, change or remove policy assignments through the Get-AzureRmPolicyAssignment, Set-AzureRmPolicyAssignment and Remove-AzureRmPolicyAssignment cmdlets respectively.
+
+##Policy Audit Events
+
+After you have applied your policy, you will begin to see policy-related events. You can either go to portal or use PowerShell to get this data. 
+
+To view all events that related to deny effect, you can use the following command. 
+
+    Get-AzureRmLog | where {$_.subStatus -eq "Forbidden"}     
+
+To view all events related to audit effect, you can use the following command. 
+
+    Get-AzureRmLog | where {$_.OperationName -eq "Microsoft.Authorization/policies/audit/action"} 
+    
+

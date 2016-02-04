@@ -64,7 +64,7 @@ The Azure module reads the environment variables AZURE\_SERVICEBUS\_NAMESPACE an
 
 For an example of setting the environment variables in a configuration file for an Azure Cloud Service, see [Node.js Cloud Service with Storage][].
 
-For an example of setting the environment variables in the Azure Management Portal for an Azure Website, see [Node.js Web Application with Storage][].
+For an example of setting the environment variables in the [Azure Management Portal][] for an Azure Website, see [Node.js web site with Storage][].
 
 ## Create a queue
 
@@ -191,10 +191,10 @@ To learn more, see the following resources.
   [Azure SDK for Node]: https://github.com/Azure/azure-sdk-for-node
   [Azure Management Portal]: http://manage.windowsazure.cn
   
-  [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
-  [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
-  [Create and deploy a Node.js application to an Azure Website]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
-  [Node.js Cloud Service with Storage]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
-  [Node.js Web Application with Storage]: /documentation/articles/storage-nodejs-how-to-use-table-storage
+  [Node.js Cloud Service]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
+  [Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
+  [Create and deploy a Node.js application to an Azure Website]: ../app-service-web/web-sites-nodejs-develop-deploy-mac.md
+  [Node.js Cloud Service with Storage]: ../cloud-services/storage-nodejs-use-table-storage-cloud-service-app.md
+  [Node.js web site with Storage]: ../storage/storage-nodejs-how-to-use-table-storage.md
   [Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas
  

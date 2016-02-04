@@ -46,7 +46,7 @@ For more information, see
 - Upload and encode your assets using **AssetCreationOptions.StorageEncrypted** option.
 - If you plan to have multiple content keys that require the same policy configuration, it is strongly recommended to create a single authorization policy and reuse it with multiple content keys.
 - The Key Delivery service caches ContentKeyAuthorizationPolicy and its related objects (policy options and restrictions) for 15 minutes.  If you create a ContentKeyAuthorizationPolicy and specify to use a “Token” restriction, then test it, and then update the policy to “Open” restriction, it will take roughly 15 minutes before the policy switches to the “Open” version of the policy.
-- If you add or update your asset’s delivery policy, you must delete an existing locator (if any) and create a new locator.
+- If you add or update your asset's delivery policy, you must delete an existing locator (if any) and create a new locator.
 
 
 ##AES-128 Dynamic Encryption 
@@ -186,7 +186,7 @@ Response:
 
 This section describes how to create a content key authorization policy and associate it with the content key. The authorization policy describes what authorization requirements must be met to determine if the user is authorized to receive the key (for example, does the “verification key” list contain the key that the token was signed with).
 
-To configure the token restriction option, you need to use an XML to describe the token’s authorization requirements. The token restriction configuration XML must conform to the following XML schema.
+To configure the token restriction option, you need to use an XML to describe the token's authorization requirements. The token restriction configuration XML must conform to the following XML schema.
 
 ####<a id="schema"></a>Token restriction schema
 	
@@ -296,7 +296,7 @@ Add AuthorizationPolicy to the ContentKey as shown [here](#AddAuthorizationPolic
 
 Media Services enables you to configure the rights and restrictions that you want for the PlayReady DRM runtime to enforce when a user is trying to play back protected content. 
 
-When protecting your content with PlayReady, one of the things you need to specify in your authorization policy is an XML string that defines the [PlayReady license template](https://msdn.microsoft.com/zh-cn/library/azure/dn783459.aspx). 
+When protecting your content with PlayReady, one of the things you need to specify in your authorization policy is an XML string that defines the [PlayReady license template](/documentation/articles/media-services-playready-license-template-overview). 
 
 ###Open Restriction
 	
@@ -390,7 +390,7 @@ Add AuthorizationPolicy to the ContentKey as shown [here](#AddAuthorizationPolic
 
 ###Token Restriction
 
-To configure the token restriction option, you need to use an XML to describe the token’s authorization requirements. The token restriction configuration XML must conform to the XML schema shown in [this](#schema) section.
+To configure the token restriction option, you need to use an XML to describe the token's authorization requirements. The token restriction configuration XML must conform to the XML schema shown in [this](#schema) section.
 	
 ####Create ContentKeyAuthorizationPolicies
 	
@@ -460,7 +460,9 @@ Add AuthorizationPolicy to the ContentKey as shown [here](#AddAuthorizationPolic
         None = 0,
         PlayReadyLicense = 1,
         BaselineHttp = 2,
+        Widevine = 3
     }
+
 
 
 

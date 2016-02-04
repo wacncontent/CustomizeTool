@@ -1,10 +1,13 @@
-<properties pageTitle="Azure Search Management REST API Version 2015-02-28" description="Azure Search Management REST API: Version 2015-02-28" services="search" documentationCenter="" authors="HeidiSteen" manager="mblythe" editor=""/>
+<properties pageTitle="Azure Search Management REST API Version 2015-02-28 | Windows Azure | Hosted cloud search service" description="Azure Search Management REST API: Version 2015-02-28" services="search" documentationCenter="" authors="HeidiSteen" manager="mblythe" editor=""/>
 
-<tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="09/16/2015" ms.author="heidist" />
+<tags
+	ms.service="search"
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
 # Management API: Version 2015-02-28
 
-This document describes the **2015-02-28* version of the Azure Search Management REST API. It has since been replaced by newer versions. For the latest, see [Azure Search Management REST API 2015-08-19](https://msdn.microsoft.com/library/dn832684.aspx) on MSDN.
+Azure Search is a hosted cloud search service on Windows Azure. This document describes the **2015-02-28* version of the Azure Search Management REST API. It has since been replaced by newer versions. For the latest, see [Azure Search Management REST API 2015-08-19](https://msdn.microsoft.com/zh-cn/library/dn832684.aspx) on MSDN.
 
 ##Service management operations
 
@@ -14,13 +17,13 @@ The Azure Search Service Management REST API provides programmatic access to muc
 - Create, regenerate, or retrieve `api-keys` to automate routine changes to the administrative keys used for authenticating search data operations. 
 - Adjust the scale of an Azure Search service in response to changes in query volume or storage requirements.
 
-To fully administer your service programmatically, you will need two APIs: The Management REST API of Azure Search, plus the common [Azure Resource Manager REST API](https://msdn.microsoft.com/library/azure/dn790568.aspx). The Resource Manager API is used for general purpose operations that are not service specific, such as querying subscription data, listing geo-locations, and so forth. To create and manage Azure Search services in your subscription, make sure your HTTP request includes the Resource Manager endpoint, subscription ID, provider (in this case, Azure Search), and the Search service-specific operation.
+To fully administer your service programmatically, you will need two APIs: The Management REST API of Azure Search, plus the common [Azure Resource Manager REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx). The Resource Manager API is used for general purpose operations that are not service specific, such as querying subscription data, listing geo-locations, and so forth. To create and manage Azure Search services in your subscription, make sure your HTTP request includes the Resource Manager endpoint, subscription ID, provider (in this case, Azure Search), and the Search service-specific operation.
 
 [Get started with Azure Search Management REST API](http://go.microsoft.com/fwlink/p/?linkID=516968) is a walkthrough of sample code that demonstrates application configuration and service management operations. The sample application issues requests to the Azure Resource Manager API as well as the service management API for Azure Search, giving you an idea of how to piece together a cohesive application that draws on both APIs.
 
 ### Endpoint ###
 
-The endpoint for service administration operations is the URL of Azure Resource Manager, `https://management.azure.com`. 
+The endpoint for service administration operations is the URL of Azure Resource Manager, `https://manage.windowsazure.cn`. 
 
 Note that all management API calls must include the subscription ID and an API version.
 
@@ -35,11 +38,11 @@ The Azure Search Management REST API is an extension of the Azure Resource Manag
 Note that if your application code handles *service management operations* as well as *data operations* on indexes or documents, you'll be using two authentication approaches for each of the Azure Search APIs:
 
 - Service and key administration, due to the dependency on Resource Manager, relies on Active Directory for authentication.
-- Data requests against the Azure Search service endpoint, such as Create Index or Search Documents, use an `api-key` in the request header. See [Azure Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) for information about authenticating a data request.
+- Data requests against the Azure Search service endpoint, such as Create Index or Search Documents, use an `api-key` in the request header. See [Azure Search Service REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) for information about authenticating a data request.
 
 The sample application documented in [Get started with Azure Search Management REST API](http://go.microsoft.com/fwlink/p/?linkID=516968) demonstrates the authentication techniques for each type of operation. Instructions for configuring a client application to use Active Directory are included in the getting started. 
 
-Access control for Azure Resource Manager uses the built-in Owner, Contributor, and Reader roles. By default, all service administrators are members of the Owner role. For details, see [Role-based access control in the Azure portal](../role-based-access-control-configure.md).
+Access control for Azure Resource Manager uses the built-in Owner, Contributor, and Reader roles. By default, all service administrators are members of the Owner role. For details, see [Role-based access control in the Azure Management Portal](/documentation/articles/role-based-access-control-configure).
 
 
 ### Summary of APIs ##
@@ -48,43 +51,43 @@ Operations include the following APIs.
 
 - <a name="CreateService">Create Search Service</a>
 
-    `PUT	https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28`
+    `PUT	https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28`
 
 - <a name="GetService">Get Search Service</a>
 
-    `GET https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28`
+    `GET https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28`
 
 - <a name="ListService">List Search Services</a>
 
-    `GET https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices?api-version=2015-02-28`
+    `GET https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices?api-version=2015-02-28`
 
 - <a name="DeleteService">Delete Search Service</a>
 
-    `DELETE https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28`
+    `DELETE https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28`
 
 - <a name="UpdateService">Update Search Service</a>
 
-    `PATCH https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28`
+    `PATCH https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28`
 
 - <a name="ListAdminKey">List Admin Keys</a>
 
-    `POST https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/listAdminKeys?api-version=2015-02-28`
+    `POST https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/listAdminKeys?api-version=2015-02-28`
 
 - <a name="RegenAdminKey">Regenerate Admin Key</a>
 
-    `POST https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/regenerateAdminKey/[keyKind]?api-version=2015-02-28`
+    `POST https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/regenerateAdminKey/[keyKind]?api-version=2015-02-28`
 
 - <a name="CreateQueryKey">Create Query Key</a>
 
-    `POST https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/createQueryKey/[name]?api-version=2015-02-28`
+    `POST https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/createQueryKey/[name]?api-version=2015-02-28`
 
 - <a name="ListQueryKey">List Query Keys</a>
 
-    `GET	https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/listQueryKeys?api-version=2015-02-28`
+    `GET	https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/listQueryKeys?api-version=2015-02-28`
 
 - <a name="DeleteQueryKey">Delete Query Keys</a>
 
-    `DELETE https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/deleteQueryKey/[key]?api-version=2015-02-28`
+    `DELETE https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/deleteQueryKey/[key]?api-version=2015-02-28`
 
 <a name="ServiceOps"></a>
 ##Service Operations
@@ -107,15 +110,15 @@ Service-related options include the following APIs:
 
 The **Create Search Service** operation provisions a new Search service with the specified parameters. This API can also be used to update an existing service definition.
 
-    PUT	https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28
+    PUT	https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28
 
 #### Request URI Parameters
 
 `subscriptionId`: Required. The `subscriptionID` for the Azure user. You can obtain this value from the Azure Resource Manager API or the portal.
 
-`resourceGroupName`: Required. The name of the resource group within the user’s subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+`resourceGroupName`: Required. The name of the resource group within the user's subscription. You can obtain this value from the Azure Resource Manager API or the portal.
 
-`serviceName`: Required. The name of the search service within the specified resource group. Service names must only contain lowercase letters, digits or dashes, cannot use dash as the first two or last one characters, cannot contain consecutive dashes, and must be between 2 and 15 characters in length. Since all names end up being <name>.search.windows.net, service names must be globally unique. No two services either within or across subscriptions and resource groups can have the same name. You cannot change the service name after it is created.
+`serviceName`: Required. The name of the search service within the specified resource group. Service names must only contain lowercase letters, digits or dashes, cannot use dash as the first two or last one characters, cannot contain consecutive dashes, and must be between 2 and 15 characters in length. Since all names end up being <name>.search.chinacloudapi.cn, service names must be globally unique. No two services either within or across subscriptions and resource groups can have the same name. You cannot change the service name after it is created.
 
 `api-version`: Required. Specifies the version of the protocol used for this request. The current version is `2015-02-28`.
 
@@ -146,11 +149,11 @@ The **Create Search Service** operation provisions a new Search service with the
 
 #### Request Body Parameters#
 
-`location`: Required. One of the supported and registered Azure Geo Regions (for example, West US, East US, Southeast Asia, and so on). Note that the location of a resource cannot be changed once it is created.
+`location`: Required. One of the supported and registered Azure Geo Regions (for example, China North, China East, China North, and so on). Note that the location of a resource cannot be changed once it is created.
 
 `tags`: Optional. A list of key value pairs that describe the resource. These tags can be used in viewing and grouping a resource across resource groups. A maximum of 10 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters.   
 
-`sku`: Required. Valid values are `free` and `standard`. `standard2` is also valid, but can only be used when it's enabled for your Azure subscription by Microsoft support. `free` provisions the service in shared clusters. `standard` provisions the service in dedicated clusters. You can only create one Search service at the free pricing tier. Additional services must be created at the standard pricing tier. By default, a service is created with one partition and one replica. Additional partitions and replicas are priced in terms of search units. See [Limits and constraints](search-limits-quotas-capacity.md) for details. You cannot change the `sku` once the service is created.
+`sku`: Required. Valid values are `free` and `standard`. `standard2` is also valid, but can only be used when it's enabled for your Azure subscription by Microsoft support. `free` provisions the service in shared clusters. `standard` provisions the service in dedicated clusters. You can only create one Search service at the free pricing tier. Additional services must be created at the standard pricing tier. By default, a service is created with one partition and one replica. Additional partitions and replicas are priced in terms of search units. See [Limits and constraints](/documentation/articles/search-limits-quotas-capacity) for details. You cannot change the `sku` once the service is created.
 
 `replicaCount`: Optional. Default is 1. Valid values include 1 through 6. Valid only when `sku` is `standard`. 
 
@@ -202,7 +205,7 @@ For HTTP 200 and 201, the response body contains the service definition.
 
 `name`: The name of the search service.  
 
-`location`: One of the supported and registered Azure Geo Regions (for example, West US, East US, Southeast Asia, and so forth).
+`location`: One of the supported and registered Azure Geo Regions (for example, China North, China East, China North, and so forth).
 
 `tags`: A list of key-value pairs that describe the resource, used in viewing and grouping resources across resource groups.  
 
@@ -242,13 +245,13 @@ Provisioning is an intermediate state that occurs while service capacity is bein
 
 The **Get Search Service** operation returns the properties for the specified Search service. Note that admin keys are not returned. Use the **Get Admin Keys** operation to retrieve admin keys.
 
-    GET https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28
+    GET https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28
 
 #### Request URI
 
 `subscriptionId`: Required. The subscriptionID for the Azure user. You can obtain this value from the Azure Resource Manager API or the portal.
 
-`resourceGroupName`: Required. The name of the resource group within the user’s subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+`resourceGroupName`: Required. The name of the resource group within the user's subscription. You can obtain this value from the Azure Resource Manager API or the portal.
 
 `serviceName`:	Required. The name of the Search service within the specified resource group. If you don't know the service name, you can obtain a list using List Search Services (Azure Search API). 
 
@@ -305,7 +308,7 @@ HTTP 200 (OK) if successful.
 
 `name`:	The name of the Search service. 
 
-`location`:	The location of the resource. This will be one of the supported and registered Azure Geo Regions (for example, West US, East US, Southeast Asia, and so forth). 
+`location`:	The location of the resource. This will be one of the supported and registered Azure Geo Regions (for example, China North, China East, China North, and so forth). 
 
 `tags`:	Tags are a list of key value pairs that describe the resource. These tags can be used in viewing and grouping a resource across resource groups. 
 
@@ -344,13 +347,13 @@ HTTP 200 (OK) if successful.
 
 The **List Services** operation returns a list of all Search services in the subscription of a specific resource group. This operation returns service definitions, minus the admin api-keys. Use the **Get Admin Keys** operation to retrieve admin keys.
 
-    GET https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices?api-version=2015-02-28
+    GET https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices?api-version=2015-02-28
     
 #### Request URI Parameters
 
 `subscriptionId`: Required. The `subscriptionID` for the Azure user. You can obtain this value from the Azure Resource Manager API or the portal.
 
-`resourceGroupName`: Required. The name of the resource group within the user’s subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+`resourceGroupName`: Required. The name of the resource group within the user's subscription. You can obtain this value from the Azure Resource Manager API or the portal.
 
 `api-version`: Required. Specifies the version of the protocol used for this request. The current version is `2015-02-28`.
 
@@ -377,7 +380,7 @@ Status Code is HTTP 200 (OK) if successful.
 
 The response body is a list of services, returned as a JSON array, where each service follows the format in **Get Search Service** operation.  
 
-Note that the `nextLink` field is always null because the current version doesn’t support paging. Returning it with an empty value is done to preserve future compatibility. 
+Note that the `nextLink` field is always null because the current version doesn't support paging. Returning it with an empty value is done to preserve future compatibility. 
 
     {
       "value": [
@@ -431,7 +434,7 @@ Note that the `nextLink` field is always null because the current version doesn�
 
 The **Delete Service** operation deletes the Search service and search data, including all indexes and documents.
     
-    DELETE https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28
+    DELETE https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28
 
 **Note:** Administrators and developers are accustomed to backing up application data before deleting it from a production server. In Azure Search, there is no backup operation. If you are using the index as primary storage for your application, you will need to use a Search operation to return all of the data in the index, which you can store externally.
 
@@ -439,7 +442,7 @@ The **Delete Service** operation deletes the Search service and search data, inc
 
 `subscriptionId`: Required. The subscriptionID for the Azure user. You can obtain this value from the Azure Resource Manager API or the portal.
 
-`resourceGroupName`: Required. The name of the resource group within the user’s subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+`resourceGroupName`: Required. The name of the resource group within the user's subscription. You can obtain this value from the Azure Resource Manager API or the portal.
 
 `serviceName`:	Required. The name of the search service within the specified resource group. If you don't know the service name, you can obtain a list using List Search Services (Azure Search API). 
 
@@ -474,17 +477,17 @@ The **Update Service** operation changes Search service configuration. Valid cha
 
 Note that you cannot change the name, location, and sku. Changing any of these properties will require that you create a new service. 
 
-    PATCH https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28
+    PATCH https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28
 
 Alternatively, you can use PUT.
 
-    PUT https://management.azure.com/subscriptions/[subscriptionId]/resourcegroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28
+    PUT https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourcegroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]?api-version=2015-02-28
 
 ###Request URI Parameters###
 
 `subscriptionId`: Required. The `subscriptionID` for the Azure user. You can obtain this value from the Azure Resource Manager API or the portal.
 
-`resourceGroupName`: Required. The name of the resource group within the user’s subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+`resourceGroupName`: Required. The name of the resource group within the user's subscription. You can obtain this value from the Azure Resource Manager API or the portal.
 
 `serviceName`:	Required. The name of the search service within the specified resource group. If you don't know the service name, you can obtain a list using List Search Services (Azure Search API). 
 
@@ -565,7 +568,7 @@ Key-related operations include the following APIs:
 
 The **List Admin Keys** operation returns the primary and secondary admin keys for the specified search service. The POST method is used because this action returns read-write keys.
 
-    POST https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/listAdminKeys?api-version=2015-02-28
+    POST https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/listAdminKeys?api-version=2015-02-28
 
 Admin keys are created with the service. There are always two keys, primary and secondary. You can regenerate these keys, but you cannot delete them. 
 
@@ -573,7 +576,7 @@ Admin keys are created with the service. There are always two keys, primary and 
 
 `subscriptionId`: Required. The subscriptionID for the Azure user. You can obtain this value from the Azure Resource Manager API or the portal.
 
-`resourceGroupName`: Required. The name of the resource group within the user’s subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+`resourceGroupName`: Required. The name of the resource group within the user's subscription. You can obtain this value from the Azure Resource Manager API or the portal.
 
 `serviceName`:	Required. The name of the search service within the specified resource group. If you don't know the service name, you can obtain a list using List Search Services (Azure Search API). 
 
@@ -612,13 +615,13 @@ HTTP 200 (OK) is returned if the operation is successful.
 
 The **Regenerate Admin Keys** operation deletes and regenerates either the primary or secondary key. You can only regenerate one key at a time. When regenerating keys, consider how you will maintain access to the service. A secondary key exists so that you have a key available when rolling over the primary key. Every service always has both keys. You can regenerate keys, but you cannot delete them or run a service without them.
  
-    POST https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/regenerateAdminKey/[keyKind]?api-version=2015-02-28
+    POST https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/regenerateAdminKey/[keyKind]?api-version=2015-02-28
 
 ###Request URI Parameters###
 
 `subscriptionId`: Required. The subscriptionID for the Azure user. You can obtain this value from the Azure Resource Manager API or the portal.
 
-`resourceGroupName`: Required. The name of the resource group within the user’s subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+`resourceGroupName`: Required. The name of the resource group within the user's subscription. You can obtain this value from the Azure Resource Manager API or the portal.
 
 `serviceName`: Required. The name of the search service within the specified resource group. If you don't know the service name, you can obtain a list using List Search Services (Azure Search API). 
 
@@ -671,13 +674,13 @@ HTTP 200 (OK) is returned if the operation is successful.
 
 The **Create Query Key** operation generates a new query key for the Search service. You can create up to 50 query keys per service.
 
-    POST https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/createQueryKey/[name]?api-version=2015-02-28
+    POST https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/createQueryKey/[name]?api-version=2015-02-28
 
 ###Request URI Parameters###
 
 `subscriptionId`: Required. The subscriptionID for the Azure user. You can obtain this value from the Azure Resource Manager API or the portal.
 
-`resourceGroupName`: Required. The name of the resource group within the user’s subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+`resourceGroupName`: Required. The name of the resource group within the user's subscription. You can obtain this value from the Azure Resource Manager API or the portal.
 
 `serviceName`: Required. The name of the Search service within the specified resource group. If you don't know the service name, you can obtain a list using List Search Services (Azure Search API). 
 
@@ -725,13 +728,13 @@ Response Status Code is HTTP 200 (OK) if the operation is successful.
 
 The **List Query Keys** operation returns the query keys for the specified Search service. Query keys are used to send query API (read-only) calls to a Search service. There can be up to 50 query keys per service. 
 
-    GET	https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/listQueryKeys?api-version=2015-02-28
+    GET	https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/listQueryKeys?api-version=2015-02-28
 
 ###Request URI Parameters###
 
 `subscriptionId`: Required. The subscriptionID for the Azure user. You can obtain this value from the Azure Resource Manager API or the portal.
 
-`resourceGroupName`: Required. The name of the resource group within the user’s subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+`resourceGroupName`: Required. The name of the resource group within the user's subscription. You can obtain this value from the Azure Resource Manager API or the portal.
 
 `serviceName`: Required. The name of the search service within the specified resource group. If you don't know the service name, you can obtain a list using List Search Services (Azure Search API). 
 
@@ -785,7 +788,7 @@ Response Status Code is HTTP 200 (OK) is returned if the operation is successful
 
 The **Delete Query Key** operation deletes the specified query key. Query keys are optional and used for read-only queries.
 
-    DELETE https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/deleteQueryKey/[key]?api-version=2015-02-28
+    DELETE https://manage.windowsazure.cn/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/deleteQueryKey/[key]?api-version=2015-02-28
 
 Contrasted with admin keys, query keys are not regenerated. The process for regenerating a query key is to delete and then recreate it.  
 
@@ -793,7 +796,7 @@ Contrasted with admin keys, query keys are not regenerated. The process for rege
 
 `subscriptionId`: Required. The subscriptionID for the Azure user. You can obtain this value from the Azure Resource Manager API or the portal.
 
-`resourceGroupName`: Required. The name of the resource group within the user’s subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+`resourceGroupName`: Required. The name of the resource group within the user's subscription. You can obtain this value from the Azure Resource Manager API or the portal.
 
 `serviceName`: Required. The name of the Search service within the specified resource group. If you don't know the service name, you can obtain a list using List Search Services (Azure Search API). 
 

@@ -20,6 +20,8 @@
 - [Portal](/documentation/articles/media-services-portal-encoding-units)
 - [.NET](/documentation/articles/media-services-dotnet-encoding-units)
 - [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn859236.aspx)
+- [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
+- [PHP](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
 
 ##Overview
 
@@ -67,11 +69,3 @@ To open a support ticket do the following:
  
 
 
-
-##Media Services learning paths
-
-You can view AMS learning paths here:
-
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
- 

@@ -42,10 +42,10 @@ To create a service namespace:
 
 1.  Log on to the [Azure Management Portal][].
 
-2.  In the left navigation pane of the Azure Management Portal, click
+2.  In the left navigation pane of the portal, click
     **Service Bus**.
 
-3.  In the lower pane of the Azure Management Portal, click **Create**.
+3.  In the lower pane of the portal, click **Create**.
 
 	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png)
 
@@ -53,6 +53,7 @@ To create a service namespace:
     The system immediately checks to see if the name is available.
 
 	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-04.png)
+
 
 5.  After making sure the namespace name is available, choose the
     country or region in which your namespace should be hosted (make
@@ -65,7 +66,7 @@ To create a service namespace:
 
 	![](./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-27.png)
 
-	The namespace you created then appears in the Azure Management Portal and takes a moment to activate. Wait until the status is **Active** before continuing.
+	The namespace you created then appears in the portal and takes a moment to activate. Wait until the status is **Active** before continuing.
 
 ## Obtain the default management credentials for the namespace
 
@@ -94,7 +95,7 @@ To install the NuGet package in your application, do the following:
     Service Bus** item. Click **Install** to complete the installation, then close the following dialog box.
 
 	![](./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-13.png)
-
+  
 
 ## Use Service Bus to expose and consume a SOAP web service with TCP
 
@@ -111,7 +112,7 @@ Before starting the steps below, complete the following procedure to set up your
 
 First, create the service itself. Any WCF service consists of at least three distinct parts:
 
--   Definition of a contract that describes what messages are exchanged and what operations are to be invoked.
+-   Definition of a contract that describes what messages are exchanged and what operations are to be invoked. 
 -   Implementation of said contract.
 -   Host that hosts the WCF service and exposes a number of endpoints.
 
@@ -147,7 +148,7 @@ class ProblemSolver : IProblemSolver
 ### Configure a service host programmatically
 
 With the contract and implementation in place, you can now host the service. Hosting occurs inside a
-[System.ServiceModel.ServiceHost](https://msdn.microsoft.com/zh-cn/library/azure/system.servicemodel.servicehost.aspx) object, which takes care of managing instances of the service and hosts the endpoints that listen for messages. The following code configures the service with both a regular local endpoint and a Service Bus endpoint to illustrate the appearance, side-by-side, of internal and external endpoints. Replace the string *namespace* with your namespace name and *yourKey* with the SAS key that you obtained in the previous setup step.
+[System.ServiceModel.ServiceHost](https://msdn.microsoft.com/zh-cn/library/azure/system.servicemodel.servicehost.aspx) object, which takes care of managing instances of the service and hosts the endpoints that listen for messages. The following code configures the service with both a regular local endpoint and a Service Bus endpoint to illustrate the appearance, side-by-side, of internal and external endpoints. Replace the string *namespace* with your namespace name and *yourKey* with the SAS key that you obtained in the previous setup step. 
 
 ```
 ServiceHost sh = new ServiceHost(typeof(ProblemSolver));

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/20/2015"
+	ms.date="11/24/2015"
 	wacn.date=""/>
 
 # Azure SQL Database security guidelines and limitations
@@ -92,7 +92,7 @@ For more information about logins and users, see [Managing databases and logins 
 
 Consider the following points to make your Azure SQL Database applications less vulnerable to security threats:
 
-- Always use the latest updates: When connecting to your SQL Database, always use the most current version of tools and libraries to prevent security vulnerabilities. For more information about which tools and libraries are supported, see [Azure SQL Database General Guidelines and Limitations](https://msdn.microsoft.com/zh-cn/library/azure/ee336245.aspx).
+- Always use the latest updates: When connecting to your SQL Database, always use the most current version of tools and libraries to prevent security vulnerabilities.
 - Block inbound connections on TCP port 1433: Only outbound connections on TCP port 1433 are needed for applications to communicate with SQL Database. If inbound communications are not needed by any other applications on that computer, ensure that your firewall continues to block inbound connections on TCP port 1433.
 - Prevent injection vulnerabilities: To make sure that your applications do not have SQL injection vulnerabilities, use parameterized queries where possible. Also, be sure to review code thoroughly and run a penetration test before deploying your application.
 
@@ -103,6 +103,6 @@ Consider the following points to make your Azure SQL Database applications less 
 
 [How to: Configure Firewall Settings (Azure SQL Database)](/documentation/articles/sql-database-configure-firewall-settings)
 
-[Azure SQL Database General Guidelines and Limitations](https://msdn.microsoft.com/zh-cn/library/azure/ee336245.aspx)
-
 [Managing databases and logins in Azure SQL Database](/documentation/articles/sql-database-manage-logins)
+
+[Security Center for SQL Server Database Engine and Azure SQL Database](https://msdn.microsoft.com/zh-cn/library/bb510589)

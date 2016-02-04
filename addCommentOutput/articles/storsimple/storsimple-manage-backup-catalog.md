@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Manage your StorSimple backup catalog | Microsoft Azure"
+   pageTitle="Manage your StorSimple backup catalog | Windows Azure"
    description="Explains how to use the StorSimple Manager service Backup Catalog page to list, select, and delete backup sets for a volume."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/14/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/14/2015"
+	wacn.date=""/>
 
 # Use the StorSimple Manager service to manage your backup catalog
 
@@ -21,29 +17,29 @@
 
 The StorSimple Manager service **Backup Catalog** page displays all the backup sets that are created when manual or automated backups are taken. You can use this page to list all the backups for a backup policy or a volume, select or delete backups, or use a backup to restore or clone a volume.
 
-This tutorial explains how to list, select, and delete a backup set. To learn how to restore your device from backup, go to [Restore your device from a backup set](storsimple-restore-from-backup-set.md). To learn how to clone a volume, go to [Clone a StorSimple volume](storsimple-clone-volume.md).
+This tutorial explains how to list, select, and delete a backup set. To learn how to restore your device from backup, go to [Restore your device from a backup <!-- deleted by customization set](/documentation/articles/storsimple-restore-from-backup-set) --><!-- keep by customization: begin --> set](storsimple-restore-from-backup-set.md) <!-- keep by customization: end -->. To learn how to clone a volume, go to [Clone a StorSimple <!-- deleted by customization volume](/documentation/articles/storsimple-clone-volume) --><!-- keep by customization: begin --> volume](storsimple-clone-volume.md) <!-- keep by customization: end -->.
 
 ![Backup catalog](./media/storsimple-manage-backup-catalog/HCS_BackupCatalog.png) 
 
 The **Backup Catalog** page provides a query to narrow your backup set selection. You can filter the backup sets that are retrieved, based on the following parameters:
 
-- **Device** – The device on which the backup set was created.
+- **Device** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The device on which the backup set was created.
 
-- **Backup Policy or Volume** – The backup policy or volume associated with this backup set.
+- **Backup Policy or Volume** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The backup policy or volume associated with this backup set.
 
-- **From and To** – The date and time range when the backup set was created.
+- **From and To** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The date and time range when the backup set was created.
 
 The filtered backup sets are then tabulated based on the following attributes:
 
-- **Name** – The name of the backup policy or volume associated with the backup set.
+- **Name** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The name of the backup policy or volume associated with the backup set.
 
-- **Size** – The actual size of the backup set.
+- **Size** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The actual size of the backup set.
 
-- **Created** On – The date and time when the backups were created. 
+- **Created** On <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The date and time when the backups were created.
 
-- **Type** – Backup sets can be local snapshots or cloud snapshots. A local snapshot is a backup of all your volume data stored locally on the device, whereas a cloud snapshot refers to the backup of volume data residing in the cloud. Local snapshots provide faster access, whereas cloud snapshots are chosen for data resiliency.
+- **Type** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> Backup sets can be local snapshots or cloud snapshots. A local snapshot is a backup of all your volume data stored locally on the device, whereas a cloud snapshot refers to the backup of volume data residing in the cloud. Local snapshots provide faster access, whereas cloud snapshots are chosen for data resiliency.
 
-- **Initiated By** – The backups can be initiated automatically by a schedule or manually by a user. You can use a backup policy to schedule backups. Alternatively, you can use the **Take backup** option to take an interactive backup.
+- **Initiated By** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The backups can be initiated automatically by a schedule or manually by a user. You can use a backup policy to schedule backups. Alternatively, you can use the **Take backup** option to take an interactive backup.
 
 ## List backup sets for a volume
  
@@ -113,6 +109,6 @@ Delete a backup when you no longer wish to retain the data associated with it. P
 
 ## Next steps
 
-- Learn how to [use the backup catalog to restore your device from a backup set](storsimple-restore-from-backup-set.md).
+- Learn how to [use the backup catalog to restore your device from a backup <!-- deleted by customization set](/documentation/articles/storsimple-restore-from-backup-set) --><!-- keep by customization: begin --> set](storsimple-restore-from-backup-set.md) <!-- keep by customization: end -->.
 
-- Learn how to [use the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+- Learn how to [use the StorSimple Manager service to administer your StorSimple <!-- deleted by customization device](/documentation/articles/storsimple-manager-service-administration) --><!-- keep by customization: begin --> device](storsimple-manager-service-administration.md) <!-- keep by customization: end -->.

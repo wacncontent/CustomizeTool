@@ -1,9 +1,18 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Salesforce Sandbox | Windows Azure" description="Learn how to use Salesforce Sandbox with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties 
+    pageTitle="Tutorial: Azure Active Directory integration with Salesforce Sandbox | Windows Azure" description="Learn how to use Salesforce Sandbox with Azure Active Directory to enable single sign-on, automated provisioning, and more!." 
+    services="active-directory" 
+    authors="jeevansd"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+
 <tags
 	ms.service="active-directory"
-	ms.date="10/07/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
+
+
 #Tutorial: Azure Active Directory integration with Salesforce Sandbox
+>[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/7eb2d595-9d13-4311-935e-83204599629b/tutorial-azure-ad-integration-with-salesforce-sandbox?forum=WindowsAzureAD).
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=521878).
   
 The objective of this tutorial is to show the integration of Azure and Salesforce Sandbox.  
@@ -71,7 +80,7 @@ The objective of this section is to outline how to enable users to authenticate 
 
     ![Configure App URL](./media/active-directory-saas-salesforce-sandbox-tutorial/IC781022.png "Configure App URL")
 
-4. If you have already configured single sign-on for another Salesforce Sandbox instance in your directory, then you must also configure the **Issuer URL** to have the same value as the **Sign on URL**. The **Issuer URL** field can be found by checking the **Show advanced settings** checkbox on the **Configure App URL** page of the dialog.
+4. If you have already configured single sign-on for another Salesforce Sandbox instance in your directory, then you must also configure the **Identifier** to have the same value as the **Sign on URL**. The **Identifier** field can be found by checking the **Show advanced settings** checkbox on the **Configure App URL** page of the dialog.
 
 4.  On the **Configure single sign-on at Salesforce Sandbox** page, click **Download certificate**, and then save the certificate file on your computer.
 

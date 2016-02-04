@@ -8,5 +8,5 @@ deleted:
 		
 		[AZURE.VIDEO azure-backup-vault-creation]
 
-reason: ()
+reason: (video)
 

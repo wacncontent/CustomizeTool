@@ -4,12 +4,12 @@
    services="cloud-services"
    documentationCenter=""
    authors="curtand"
-   manager="msStevenPo"
+   manager="stevenpo"
    editor=""/>
 
 <tags
 	ms.service="multiple"
-	ms.date="09/10/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Azure Management Portal keyboard shortcuts
@@ -45,3 +45,4 @@
 ## Next steps
 
 Get to know the Azure Management Portal better: http://azure.microsoft.com.
+

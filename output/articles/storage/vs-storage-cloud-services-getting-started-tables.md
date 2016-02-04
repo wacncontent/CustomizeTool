@@ -3,23 +3,16 @@
 	description="How to get started using Azure Table storage in a cloud service project in Visual Studio after connecting to a storage account using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Getting started with Azure table storage and Visual Studio connected services (cloud services projects)
-
-> [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-cloud-services-getting-started-tables)
-> - [What happened](/documentation/articles/vs-storage-cloud-services-what-happened)
-> - [Blobs](/documentation/articles/vs-storage-cloud-services-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-cloud-services-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-cloud-services-getting-started-tables)
 
 ##Overview
 

@@ -63,7 +63,7 @@ MPEG-1 (Including MPEG-PS)							|Yes
 Windows Media Video/VC-1							|Yes
 Canopus HQ/HQX										|Yes
 MPEG-4 v2 (Simple Visual Profile and Advanced Simple Profile)	|Yes
-[Theora](https://en.wikipedia.org/wiki/Theora)		|No
+[Theora](https://zh.wikipedia.org/wiki/Theora)		|No
 VC-1 (Simple, Main, and Advanced Profiles)			|Yes
 Windows Media Video (Simple, Main, and Advanced Profiles)	|Yes
 DV (DVC, DVHD, DVSD, DVSL)							|Yes
@@ -83,8 +83,8 @@ MPEG Layer 2|Yes|Yes|Yes
 MP3 (MPEG-1 Audio Layer 3)|Yes
 Windows Media Audio 9 (Windows Media Audio Standard, Windows Media Audio Professional, and Windows Media Audio Lossless)	|Yes
 WAV/PCM|Yes
-[FLAC](https://en.wikipedia.org/wiki/FLAC)|No
-[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) |No
+[FLAC](https://zh.wikipedia.org/wiki/FLAC)|No
+[Opus](https://zh.wikipedia.org/wiki/Opus_codec |No
 [Vorbis](https://en.wikipedia.org/wiki/Vorbis)|No
 
 
@@ -130,3 +130,11 @@ YUV 211 format data|A packed YUV format. A Y sample at every second pixel, a U a
 Cirrus Logic Jr YUV 411 format|Cirrus Logic Jr YUV 411 format with less than 8 bits per Y, U, and V sample. A Y sample at every pixel, a U and V sample at every fourth pixel horizontally on each line; every vertical line sampled.
 Indeo-produced YVU9 format|Indeo-produced YVU9 format with additional information about differences from the last frame. 9.5 bits per pixel but reported as 9.
 
+
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

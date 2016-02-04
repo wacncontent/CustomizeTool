@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/17/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 # Azure Active Directory Authentication Protocols
@@ -18,7 +18,7 @@ Azure Active Directory (Azure AD) supports several of the most widely used authe
 
 ## Authentication Protocols Articles and Reference
 
-- [Important Information About Signing Key Rollover in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn641920.aspx) – Learn about Azure AD’s signing key rollover cadence, changes you can make to update the key automatically, and discussion for how to update the most common application scenarios.
+- [Important Information About Signing Key Rollover in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn641920.aspx) â Learn about Azure ADâs signing key rollover cadence, changes you can make to update the key automatically, and discussion for how to update the most common application scenarios.
 
 
 - [Supported Token and Claim Types](/documentation/articles/active-directory-token-and-claims) - Learn about the claims in the tokens that Azure AD issue.

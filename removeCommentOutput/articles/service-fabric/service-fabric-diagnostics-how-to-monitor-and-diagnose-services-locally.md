@@ -1,27 +1,23 @@
 <properties
-   pageTitle="Microsoft Azure Service Fabric How to monitor and diagnose services locally"
-   description="This article describes how you can monitor and diagnose your services written using Microsoft Azure Service Fabric on a local development machine."
+   pageTitle="Windows Azure Service Fabric How to monitor and diagnose services locally"
+   description="This article describes how you can monitor and diagnose your services written using Windows Azure Service Fabric on a local development machine."
    services="service-fabric"
    documentationCenter=".net"
    authors="kunaldsingh"
-   manager="samgeo"
+   manager="timlt"
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="07/22/2015"
-   ms.author="kunalds"/>
+	ms.service="service-fabric"
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
 
 # Monitoring and Diagnosing Services in a local machine development setup
 Monitoring, detecting, diagnosing and troubleshooting allows for services to continue with minimal disruption to user experience. While it is critical in an actual deployed production environment, the efficacy will depend on adopting a similar model during development of services to ensure that it works when you move to a real world setup. Service Fabric makes it easy for service developers to implement diagnostics that can seamlessly work across single machine local development and real world production cluster setups.
 
 ## Tracing and logging
-[Event Tracing for Windows](https://msdn.microsoft.com/library/windows/desktop/bb968803.aspx) (ETW) is the recommended technology for tracing messages in Service Fabric. Reasons for this are:
+[Event Tracing for Windows](https://msdn.microsoft.com/zh-cn/library/windows/desktop/bb968803.aspx) (ETW) is the recommended technology for tracing messages in Service Fabric. Reasons for this are:
 
 * ETW is fast. It was built as a tracing technology that has a minimal impact on your code execution times.
 * ETW tracing works seamlessly across local development environments and also real world cluster setups. This  means you don't have to rewrite your tracing code when you are ready to deploy your code to a real cluster.
@@ -74,7 +70,6 @@ The same tracing code that you added to your application above for local diagnos
 
 ## Next steps
 
-* [Service Fabric Health Introduction](service-fabric-health-introduction.md)
-* [Application Insights setup](service-fabric-diagnostics-application-insights-setup.md)
-* [Azure Service Fabric Actors Diagnostics and Performance Monitoring](service-fabric-reliable-actors-diagnostics.md)
-* [Stateful Reliable Service Diagnostics](service-fabric-reliable-services-diagnostics.md)
+* [Service Fabric Health Introduction](/documentation/articles/service-fabric-health-introduction)
+* [Azure Service Fabric Actors Diagnostics and Performance Monitoring](/documentation/articles/service-fabric-reliable-actors-diagnostics)
+* [Stateful Reliable Service Diagnostics](/documentation/articles/service-fabric-reliable-services-diagnostics)

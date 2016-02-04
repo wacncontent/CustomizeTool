@@ -55,7 +55,7 @@ The Power Query add-in for Excel makes it easy to import data from your HDInsigh
 
 	**Note:** Power Query also allows you to import data from HDFS by clicking **From Other Sources**.
 
-3. For **Account Name**, enter the name of the Azure Blob storage account associated with your cluster, and then click **OK**.
+3. For **Account Name**, enter the name of the Azure Blob storage account associated with your cluster, and then click **OK**. <!-- keep by customization: begin --> (For Windows Azure China, **Account Name** must be a full url, such as: https://<your account name\>.blob.core.chinacloudapi.cn/) <!-- keep by customization: end -->
 
 4. For **Account Key**, enter the key for the Blob storage account, and then click **Save**. (You need to do this only the first time you access this store.)
 
@@ -76,9 +76,17 @@ In this article, you learned how to use Power Query to retrieve data from HDInsi
 * [Connect Excel to HDInsight with the Microsoft Hive ODBC Driver][hdinsight-ODBC]
 * [Upload Data to HDInsight][hdinsight-upload-data]
 
+<!-- deleted by customization
+[hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver.md
+[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
+-->
+<!-- keep by customization: begin -->
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+<!-- keep by customization: end -->
+
 [image-hdi-powerquery-hdi-source]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.SelectHdiSource.png
 [image-hdi-powerquery-importdata]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.ImportData.png
 [image-hdi-powerquery-imported-table]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.ImportedTable.PNG

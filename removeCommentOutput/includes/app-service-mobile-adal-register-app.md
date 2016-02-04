@@ -16,7 +16,7 @@
 
 8. Scroll the page down to the **permissions to other applications** section and click **Add application**.
 
-9. Search for the web application that you registered earlier and click the plus icon. Then click the check to close the dialog.
+9. Search for the web site that you registered earlier and click the plus icon. Then click the check to close the dialog.
 
 10. On the new entry you just added, open the **Delegated Permissions** dropdown and select **Access (appName)**. Then click **Save**
 
@@ -25,4 +25,4 @@
 Your application is now configured in AAD so that users can log in using AAD sign-on.
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[How to configure your Mobile App with Azure Active Directory]: /documentation/articles/app-service-how-to-configure-active-directory-authentication-preview
+[How to configure your Mobile App with Azure Active Directory]: ../articles/app-service-how-to-configure-active-directory-authentication.md

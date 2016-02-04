@@ -6,10 +6,10 @@
    authors="cherylmc"
    manager="carolz"
    editor=""/>
-<tags
-	ms.service="expressroute"
-	ms.date="09/22/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="expressroute"
+   ms.date="09/22/2015"
+   wacn.date=""/>
 
 # ExpressRoute circuits and routing domains
 

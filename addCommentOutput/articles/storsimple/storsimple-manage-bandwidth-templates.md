@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Manage your StorSimple bandwidth templates | Microsoft Azure"
+   pageTitle="Manage your StorSimple bandwidth templates | Windows Azure"
    description="Describes how to manage StorSimple bandwidth templates, which allow you to control bandwidth consumption."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="10/12/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="10/12/2015"
+	wacn.date=""/>
 
 # Use the StorSimple Manager service to manage StorSimple bandwidth templates
 
@@ -29,11 +25,11 @@ With bandwidth throttling schedules you can:
 
 This feature is available only for StorSimple physical devices and not for virtual devices. All the bandwidth templates for your service are displayed in a tabular format, and contain the following information:
 
-- **Name** – A unique name assigned to the bandwidth template when it was created.
+- **Name** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> A unique name assigned to the bandwidth template when it was created.
 
-- **Schedule** – The number of schedules contained in a given bandwidth template.
+- **Schedule** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The number of schedules contained in a given bandwidth template.
 
-- **Used by** – The number of volumes using the bandwidth templates.
+- **Used by** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The number of volumes using the bandwidth templates.
 
 You use the StorSimple Manager service **Configure** page in the Management Portal to manage bandwidth templates. The most common tasks related to bandwidth templates that can be performed on this page are:
 
@@ -114,9 +110,16 @@ You can delete all the references to the template by accessing the **Volume Cont
 
 A default bandwidth template is provided and is used by volume containers by default to enforce bandwidth controls when accessing the cloud. The default template also serves as a ready reference for users who create their own templates. The details of this default template are:
 
+<!-- deleted by customization
+- **Name** - Unlimited nights and weekends
+
+- **Schedule** - A single schedule from Monday to Friday that applies a bandwidth rate of 1 Mbps between 8 AM and 5 PM device time. The bandwidth is set to Unlimited for the remainder of the week.
+-->
+<!-- keep by customization: begin -->
 - **Name** – Unlimited nights and weekends
 
 - **Schedule** – A single schedule from Monday to Friday that applies a bandwidth rate of 1 Mbps between 8 AM and 5 PM device time. The bandwidth is set to Unlimited for the remainder of the week.
+<!-- keep by customization: end -->
 
 The default template can be edited. The usage of this template (including edited versions) is tracked.
 
@@ -174,4 +177,4 @@ Follow these best practices for your StorSimple device:
 
 ## Next steps
 
-Learn more about [using the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+Learn more about [using the StorSimple Manager service to administer your StorSimple <!-- deleted by customization device](/documentation/articles/storsimple-manager-service-administration) --><!-- keep by customization: begin --> device](storsimple-manager-service-administration.md) <!-- keep by customization: end -->.

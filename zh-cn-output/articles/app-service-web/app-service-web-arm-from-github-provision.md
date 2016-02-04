@@ -1,32 +1,37 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="部署链接到 GitHub 存储库的 Web 应用" 
-	description="使用 Azure 资源管理器模板来部署包含 GitHub 存储库中项目的 Web 应用。" 
-	services="app-service\web" 
+	pageTitle="Deploy a web site that is linked to a GitHub repository" 
+	description="Use an Azure Resource Manager template to deploy a web site that contains a project from a GitHub repository." 
+	services="app-service" 
 	documentationCenter="" 
 	authors="tfitzmac" 
 	manager="wpickett" 
-	editor=""/>
+	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.date="06/29/2015" 
-	wacn.date=""/>
+<tags
+	ms.service="app-service"
+	ms.date="09/15/2015"
+	wacn.date="11/27/2015"/>
 
-# 部署链接到 GitHub 存储库的 Web 应用
+# Deploy a web site linked to a GitHub repository
 
-在本主题中，你将学习如何创建 Azure 资源管理器模板，该模板部署链接到 GitHub 存储库中项目的 Web 应用。你将了解如何定义要部署的资源以及如何定义执行部署时指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求。
+In this topic, you will learn how to create an Azure Resource Manager template that deploys a web site that is linked to a project in a GitHub repository. You will learn how to define which resources are deployed and 
+how to define parameters that are specified when the deployment is executed. You can use this template for your own deployments, or customize it to meet your requirements.
 
-有关创建模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
+For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
 
-有关完整的模板，请参阅[链接到 GitHub 的 Web 应用的模板](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-github-deploy/azuredeploy.json)。
+For the complete template, see [Web Site Linked to GitHub template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-github-deploy/azuredeploy.json).
 
-## 将部署的内容
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
-使用此模板，你将部署包含 GitHub 中项目代码的 Web 应用。
+## What you will deploy
 
-若要自动运行部署，请单击以下按钮：
+With this template, you will deploy a web site that contains the code from a project in GitHub.
 
-[![部署到 Azure](http://azuredeploy.net/deploybutton.png)](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-github-deploy%2Fazuredeploy.json)
+To run the deployment automatically, click the following button:
+
+[![Deploy to Azure](./media/app-service-web-arm-from-github-provision/deploybutton.png)](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-github-deploy%2Fazuredeploy.json)
 
 ## Parameters
 
@@ -34,7 +39,7 @@
 
 ### repoURL
 
-包含要部署项目的 GitHub 存储库的 URL。此参数包含默认值，但此值仅用于向你展示如何提供存储库的 URL。测试模板时可以使用此值，但使用模板时你将需要为自己的存储库提供 URL。
+The URL for GitHub repository that contains the project to deploy. This parameter contains a default value but this value is only intended to show you how to provide the URL for repository. You can use this value when testing the template but you will want to provide the URL your own repository when working with the template.
 
     "repoURL": {
         "type": "string",
@@ -43,24 +48,30 @@
 
 ### branch
 
-部署应用程序时要使用的存储库的分支。默认值为 master，但也可输入你想要部署的存储库中任何分支的名称。
+The branch of the repository to use when deploying the application. The default value is master, but you can provide the name of any branch in the repository that you wish to deploy.
 
     "branch": {
         "type": "string",
         "defaultValue": "master"
     }
     
-## 要部署的资源
+## Resources to deploy
 
 [AZURE.INCLUDE [app-service-web-deploy-web-host](../includes/app-service-web-deploy-web-host.md)]
 
-### Web 应用
+### Web Site
 
-创建链接到 GitHub 中项目的 Web 应用。
+Creates the web site that is linked to the project in GitHub. 
 
-通过 **siteName** 参数指定 Web 应用的名称，通过 **siteLocation** 参数指定 Web 应用的位置。在 **dependsOn** 元素中，该模板将 Web 应用定义为依赖服务托管计划。因为它依赖托管计划，所以只有当托管计划创建完成后才会创建 Web 应用。**dependsOn** 元素仅用于指定部署顺序。如果未将 Web 应用标记为依赖托管计划，Azure 资源管理器将尝试同时创建两个资源，而如果在创建托管计划之前创建了 Web 应用，则可能会接收到错误。
+You specify the name of the web site through the **siteName** parameter, and the location of the web site through the **siteLocation** parameter. In the **dependsOn** element, the template defines the web site 
+as dependent on the service hosting plan. Because it is dependent on the hosting plan, the web site is not created until the hosting plan has finished being created. The **dependsOn** element is only used to specify deployment 
+order. If you do not mark the web site as dependent on the hosting plan, Azure Resource Mananger will attempt to create both resources at the same time and you may receive an error if the web site is created before the hosting 
+plan.
 
-Web 应用还具有一个子资源，在以下**资源**部分中对其进行定义。此子资源为使用 Web 应用部署的项目定义源代码管理。在此模板中，源代码管理链接到特定的 GitHub 存储库。使用代码 **"RepoUrl":"https://github.com/davidebbo-test/Mvc52Application.git"** 定义 GitHub 存储库。如果要使用最少的参数创建可重复部署单个项目的模板，可以对存储库 URL 进行硬编码。如果不对存储库 URL 进行硬编码，可为存储库 URL 添加一个参数，并将该值用于 **RepoUrl** 属性。可在[使用 Web 作业的 Web 应用模板](/documentation/articles/app-service-web-deploy-web-app-with-webjobs)中查看存储库 URL 参数的示例。
+The web site also has a child resource which is defined in **resources** section below. This child resource defines source control for the project deployed with the web site. In this template, the source control 
+is linked to a particular GitHub repository. The GitHub repository is defined with the code **"RepoUrl":"https://github.com/davidebbo-test/Mvc52Application.git"** You might hard-code the repository URL when you want to create a template that repeatedly deploys a single project while requiring the minimum number of parameters.
+Instead of hard-coding the repository URL, you can add a parameter for the repository URL and use that value for the **RepoUrl** property. You can see an example of repository URL parameter in the 
+[Web Site with Web Jobs template](/documentation/articles/app-service-web-deploy-web-app-with-webjobs).
 
     {
       "apiVersion":"2015-04-01",
@@ -89,7 +100,7 @@ Web 应用还具有一个子资源，在以下**资源**部分中对其进行定
        ]
      }
 
-## 运行部署的命令
+## Commands to run deployment
 
 [AZURE.INCLUDE [app-service-deploy-commands](../includes/app-service-deploy-commands.md)]
 
@@ -103,5 +114,3 @@ Web 应用还具有一个子资源，在以下**资源**部分中对其进行定
 
 
  
-
-<!---HONumber=67-->

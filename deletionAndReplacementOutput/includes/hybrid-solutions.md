@@ -151,46 +151,6 @@ reason: ()
 
 deleted:
 
-		*ReceiveAndDelete*
-
-replaced by:
-
-		ReceiveAndDelete
-
-reason: ()
-
-deleted:
-
-		*PeekLock*
-
-replaced by:
-
-		PeekLock
-
-reason: ()
-
-deleted:
-
-		*Complete*
-
-replaced by:
-
-		Complete
-
-reason: ()
-
-deleted:
-
-		*Abandon*
-
-replaced by:
-
-		Abandon
-
-reason: ()
-
-deleted:
-
 		## Topics
 
 replaced by:

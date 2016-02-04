@@ -1,4 +1,4 @@
-﻿<properties
+<properties
    pageTitle="Azure Active Directory developer's guide | Windows Azure"
    description="This article provides a comprehensive guide to developer-oriented resources for Azure Active Directory."
    services="active-directory"
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/06/2015"
+	ms.date="01/06/2016"
 	wacn.date=""/>
 
 
@@ -25,9 +25,9 @@ As an identity management as a service (IDMaaS) platform, Azure Active Directory
 
 1. [Integrating applications with Azure Active Directory](/documentation/articles/active-directory-integrating-applications): Learn how to add, update, and remove applications from Azure Active Directory, and about the branding guidelines for integrated apps.
 
-1. [Azure Active Directory Graph API](/documentation/articles/active-directory-graph-api): Use the Azure Active Directory Graph API to programmatically access Azure Active Directory through REST API endpoints.
+1. [Azure Active Directory Graph API](/documentation/articles/active-directory-graph-api): Use the Azure Active Directory Graph API to programmatically access Azure Active Directory through REST API endpoints. Note that Azure AD Graph API is also accessible through [Microsoft Graph](https://graph.microsoft.io/), a unified API that  enables access to multiple Microsoft cloud service APIs through a single REST API endpoint, and with a single access token.
 
-1. [Azure Active Directory authentication libraries](/documentation/articles/active-directory-authentication-libraries): Easily authenticate users to obtain access tokens by using the Azure authentication libraries.
+1. [Azure Active Directory authentication libraries](/documentation/articles/active-directory-authentication-libraries): Easily authenticate users to obtain access tokens by using Azure AD authentication libraries for .NET, JavaScript, Objective-C, Android, and more.
 
 
 ## Getting started
@@ -80,17 +80,20 @@ These articles provide a foundation reference for REST and authentication librar
 
 ### Code
 
-- [Azure Active Directory open-source libraries](http://github.com/AzureAD): The easiest way to find a library’s source is by using our [library list](/documentation/articles/active-directory-authentication-libraries).
+- [Azure Active Directory open-source libraries](http://github.com/AzureAD): The easiest way to find a libraryâs source is by using our [library list](/documentation/articles/active-directory-authentication-libraries).
 
-- [Azure Active Directory samples](http://github.com/AzureADSamples): The easiest way to navigate the list of samples is by using the [index of code samples](/documentation/articles/active-directory-code-samples).
+- [Azure Active Directory samples](https://github.com/azure-samples?query=active-directory): The easiest way to navigate the list of samples is by using the [index of code samples](/documentation/articles/active-directory-code-samples).
 
 
 ### Graph API
 
 - [Graph API reference](https://msdn.microsoft.com/zh-cn/library/azure/hh974476.aspx): REST reference for the Azure Active Directory Graph API. [View the interactive Graph API reference experience](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog).
 
-- [Graph API permission scopes](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/graph-api-permission-scopes): OAuth 2.0 permission scopes that are used to control the access that an app has to directory data in a tenant.
+- [Graph API permission scopes](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes): OAuth 2.0 permission scopes that are used to control the access that an app has to directory data in a tenant.
 
+### Authentication libraries
+
+- [.NET](https://msdn.microsoft.com/zh-cn/library/azure/mt417579.aspx): Documentation for the .NET authentication libary.
 
 ### Authentication protocols
 
@@ -107,7 +110,6 @@ These articles provide a foundation reference for REST and authentication librar
 
 - [Supported token and claim types](/documentation/articles/active-directory-token-and-claims): You can use this guide to understand and evaluate the claims in the SAML 2.0 and JSON Web Tokens (JWT) tokens.
 
-<!-- deleted by customization
 ## Videos
 
 ### Build 2015
@@ -119,13 +121,12 @@ These overview presentations on developing apps by using Azure Active Directory 
 - [Develop modern native applications with Azure Active Directory](http://azure.microsoft.com/documentation/videos/build-2015-develop-modern-native-applications-with-azure-active-directory)
 
 ### Azure Friday
-[Azure Friday](http://azure.microsoft.com/documentation/videos/azure-friday/) is a recurring Friday 1:1 video series that's dedicated to bringing you short (10–15 minutes) interviews with experts on a variety of Azure topics.  Use the Services Filter feature on the page to see all Azure Active Directory videos.
+[Azure Friday](http://azure.microsoft.com/documentation/videos/azure-friday/) is a recurring Friday 1:1 video series that's dedicated to bringing you short (10â15 minutes) interviews with experts on a variety of Azure topics.  Use the Services Filter feature on the page to see all Azure Active Directory videos.
 
 - [Azure Identity 101](http://azure.microsoft.com/documentation/videos/azure-identity-basics/)
 - [Azure Identity 102](http://azure.microsoft.com/documentation/videos/azure-identity-creating-active-directory/)
 - [Azure Identity 103](http://azure.microsoft.com/documentation/videos/azure-identity-application-to-authenticate/)
 
--->
 ## Social
 
 - [Active Directory Team blog](http://blogs.technet.com/b/ad/): The latest developments in the world of Azure Active Directory.

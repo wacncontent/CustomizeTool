@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 
@@ -32,13 +32,15 @@ In this document, learn how to use C# with Hive and Pig.
 
 	* Visual Studio 2015 Preview
 
-* Hadoop on HDInsight cluster - see [Provision an HDInsight cluster](/documentation/articles/hdinsight-provision-clusters) for steps to create a cluster
+* Hadoop on HDInsight cluster - see [Provision an HDInsight cluster](/documentation/articles/hdinsight-provision-clusters-v1) for steps to create a cluster
 
 * Hadoop Tools for Visual Studio. See [Get started using HDInsight Hadoop Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started) for steps on installing and configuring the tools.
 
 ##.NET on HDInsight
 
 The .NET common language runtime (CLR) and frameworks are installed by default on Windows-based HDInsight clusters. This allows you to use C# applications with Hive and Pig streaming (data is passed between Hive/Pig and the C# application via stdout/stdin).
+
+Currently there is no support for running .NET Framework applications on Linux-based HDInsight clusters.
 
 ##.NET and streaming
 

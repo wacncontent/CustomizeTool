@@ -1,6 +1,7 @@
 <properties
-	pageTitle="SQL Database Service Tiers"
-	description="Compare performance and business continuity features of Azure SQL Database service tiers to find the right balance of cost and capability as you scale on demand with no downtime."
+	pageTitle="SQL Database performance & options: Service tiers | Windows Azure"
+	description="Compare SQL Database performance and business continuity features of the service tiers to balance cost and capability as you scale."
+	keywords="database options,database performance,eDTU"
 	services="sql-database"
 	documentationCenter=""
 	authors="rothja"
@@ -9,15 +10,15 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="11/10/2015"
+	ms.date="12/22/2015"
 	wacn.date=""/>
 
-# SQL Database service tiers
+# SQL Database options and performance: Understand what's available in each service tier
  
-## Overview
-[Azure SQL Database](/documentation/articles/sql-database-technical-overview) provides multiple service tiers to handle different types of workloads. You have the option of [creating a single database](/documentation/articles/sql-database-get-started) with defined characteristics and pricing. Or you can manage multiple databases by [creating an elastic database pool](/documentation/articles/sql-database-elastic-pool-portal). In both cases, the tiers include **Basic**, **Standard**, and **Premium**. But the characteristics of these tiers vary based on whether you are creating an individual database or a database within an elastic database pool. This article provides an overview of service tiers in both contexts.
 
-## Service tiers
+[Azure SQL Database](/documentation/articles/sql-database-technical-overview) provides multiple service tiers to handle different types of workloads. You can [create a single database](/documentation/articles/sql-database-get-started) with defined characteristics and pricing. Or you can manage multiple databases by [creating an elastic database pool](/documentation/articles/sql-database-elastic-pool-portal). In both cases, the tiers include **Basic**, **Standard**, and **Premium**. But the database options in these tiers vary based on whether you are creating an individual database or a database within an elastic database pool. This article provides an overview of service tiers in both contexts.
+
+## Service tiers and database options
 Basic, Standard, and Premium service tiers all have an uptime SLA of 99.99% and offer predictable performance, flexible business continuity options, security features, and hourly billing. The following table provides examples of the tiers best suited for different application workloads.
 
 | Service tier | Target workloads |
@@ -26,10 +27,10 @@ Basic, Standard, and Premium service tiers all have an uptime SLA of 99.99% and 
 | **Standard** | The go-to option for most cloud applications, supporting multiple concurrent queries. Examples include workgroup or web applications. |
 | **Premium** | Designed for high transactional volume, supporting a large number of concurrent users and requiring the highest level of business continuity capabilities. Examples are databases supporting mission critical applications. |
 
->[AZURE.NOTE] Web and Business editions are being retired. Find out how to [upgrade Web and Business editions](/documentation/articles/sql-database-upgrade-new-service-tiers). <!-- deleted by customization Please read the [Sunset FAQ](/home/features/sql-database/#priceweb-business/) if you plan to continue using Web and Business Editions. -->
+>[AZURE.NOTE] Web and Business editions are being retired. Find out how to [upgrade Web and Business editions](/documentation/articles/sql-database-upgrade-new-service-tiers). Please read the [Sunset FAQ](/home/features/sql-database/#priceweb-business/) if you plan to continue using Web and Business Editions.
 
-### Service tiers for single databases
-For single databases there are multiple performance levels within each service tier, you have the flexibility to choose the level that best meets your workload’s demands. If you need to scale up or down, you can easily change the tiers of your database in the Azure Management Portal, with zero-downtime for your application. See [Changing Database Service Tiers and Performance Levels](/documentation/articles/sql-database-scale-up) for details.
+### Single database service tiers and performance levels
+For single databases there are multiple performance levels within each service tier, you have the flexibility to choose the level that best meets your workloadâs demands. If you need to scale up or down, you can easily change the tiers of your database in the Azure Management Portal, with zero-downtime for your application. See [Changing Database Service Tiers and Performance Levels](/documentation/articles/sql-database-scale-up) for details.
 
 Performance characteristics listed here apply to databases created using [SQL Database V12](/documentation/articles/sql-database-v12-whats-new). In situations where the underlying hardware in Azure hosts multiple SQL databases, your database will still get a guaranteed set of resources, and the expected performance characteristics of your individual database is not affected.
 
@@ -40,7 +41,7 @@ For a better understanding of DTUs, see the [DTU section](#understanding-dtus) i
 
 >[AZURE.NOTE] For a detailed explanation of all other rows in this service tiers table, see [Service tier capabilities and limits](/documentation/articles/sql-database-performance-guidance#service-tier-capabilities-and-limits).
 
-### Service tiers for elastic database pools
+### Elastic database pool service tiers and performance in eDTUs
 In addition to creating and scaling a single database, you also have the option of managing multiple databases within an [elastic database pool](/documentation/articles/sql-database-elastic-pool). All of the databases in an elastic database pool share a common set of resources. The performance characteristics are measured by *elastic Database Transaction Units* (eDTUs). As with single databases, elastic database pools come in three service tiers: **Basic**, **Standard**, and **Premium**. For elastic databases these three service tiers still define the overall performance limits and several features.  
 
 Elastic database pools allow these databases to share and consume DTU resources without needing to assign a specific performance level to the databases in the pool. For example, a single database in a Standard pool can go from using 0 eDTUs to the maximum database eDTU (either 100 eDTUs defined by the service tier or a custom number that you configure). This allows multiple databases with varying workloads to efficiently use eDTU resources available to the entire pool. 
@@ -55,23 +56,23 @@ Each database within a pool also adheres to the single-database characteristics 
 
 [AZURE.INCLUDE [SQL DB DTU description](../includes/sql-database-understanding-dtus.md)]
 
-## Monitoring performance
-Monitoring the performance of a SQL Database starts with monitoring the resource utilization relative to the performance level you chose for your database. This relevant data is exposed in the following ways:
+## Monitoring database performance
+Monitoring the performance of a SQL database starts with monitoring the resource utilization relative to level of database performance you choose. This relevant data is exposed in the following ways:
 
 1.	The Windows Azure Management Portal.
 
 2.	Dynamic Management Views in the user database, and in the master database of the server that contains the user database.
 
-In the [Azure Preview portal](https://manage.windowsazure.cn/), you can monitor a single database’s utilization by selecting your database and clicking the **Monitoring** chart. This brings up a **Metric** window that you can change by clicking the **Edit chart** button. Add the following metrics:
+In the [Azure Management Portal](https://manage.windowsazure.cn/), you can monitor a single databaseâs utilization by selecting your database and clicking the **Monitoring** chart. This brings up a **Metric** window that you can change by clicking the **Edit chart** button. Add the following metrics:
 
 - CPU Percentage
 - DTU Percentage
 - Data IO Percentage
 - Storage Percentage
 
-Once you’ve added these metrics, you can continue to view them in the **Monitoring** chart with more details on the **Metric** window. All four metrics show the average utilization percentage relative to the **DTU** of your database.
+Once youâve added these metrics, you can continue to view them in the **Monitoring** chart with more details on the **Metric** window. All four metrics show the average utilization percentage relative to the **DTU** of your database.
 
-![service tier monitoring](./media/sql-database-service-tiers/sqldb_service_tier_monitoring.png)
+![Service tier monitoring of database performance.](./media/sql-database-service-tiers/sqldb_service_tier_monitoring.png)
 
 You can also configure alerts on the performance metrics. Click the **Add alert** button in the **Metric** window. Follow the wizard to configure your alert. You have the option to alert if the metrics exceeds a certain threshold or if the metric falls below a certain threshold.
 

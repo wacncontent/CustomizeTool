@@ -3,13 +3,13 @@
 	description="You can improve file transfer speed and increases page load performance by compressing your files." 
 	services="cdn" 
 	documentationCenter=".NET" 
-	authors="juliako" 
+	authors="camsoper" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags
 	ms.service="cdn"
-	ms.date="09/01/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 #Improve performance by compressing files

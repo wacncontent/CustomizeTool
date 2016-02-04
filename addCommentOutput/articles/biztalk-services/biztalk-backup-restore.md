@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Create and restore a backup in BizTalk Services | Microsoft Azure" 
+	pageTitle="Create and restore a backup in BizTalk Services | Windows Azure" 
 	description="BizTalk Services includes Backup and Restore. Learn how to create and restore a backup and determine what gets backed up. MABS, WABS" 
 	services="biztalk-services" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="biztalk-services" 
-	ms.workload="integration" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/18/2015" 
-	ms.author="mandia"/>
+<tags
+	ms.service="biztalk-services"
+	ms.date="08/18/2015"
+	wacn.date=""/>
 
 
 # BizTalk Services: Backup and Restore
@@ -25,7 +21,7 @@ You can also back up BizTalk Services using the [BizTalk Services REST API](http
 
 ## Before you Begin
 
-- Backup and Restore may not be available for all editions. See [BizTalk Services: Editions Chart](biztalk-editions-feature-chart.md).
+- Backup and Restore may not be available for all editions. See [BizTalk Services: Editions <!-- deleted by customization Chart](/documentation/articles/biztalk-editions-feature-chart) --><!-- keep by customization: begin --> Chart](biztalk-editions-feature-chart.md) <!-- keep by customization: end -->.
 
 	**Note**  Hybrid Connections are NOT backed up, regardless of the Edition.
 
@@ -98,7 +94,7 @@ You can restore backups from the Azure Management Portal or from the [Restore Bi
 
 #### Restore a backup
 
-1. In the Azure Management Portal, select **New** > **App Services** > **BizTalk Service** > **Restore**:
+1. In the Azure Management Portal, select **New** > <!-- deleted by customization **Azure Websitess** --><!-- keep by customization: begin --> **App Services** <!-- keep by customization: end --> > **BizTalk Service** > **Restore**:
 
 	![Restore a backup][Restore]
 

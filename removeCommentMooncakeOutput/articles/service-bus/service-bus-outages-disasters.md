@@ -6,10 +6,11 @@
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" /> 
-<tags
-	ms.service="service-bus"
-	ms.date="09/18/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="service-bus"
+
+   ms.date="09/18/2015"
+   wacn.date="" />
 
 # Best Practices for insulating applications against Service Bus outages and disasters
 
@@ -37,7 +38,7 @@ A non-partitioned queue or topic is assigned to one messaging store. If this mes
 
 ## Protecting against datacenter outages or disasters
 
-To allow for a failover between two datacenters, you can create a Service Bus service namespace in each datacenter. For example, the Service Bus service namespace **contosoPrimary.servicebus.chinacloudapi.cn** might be located in the United States (North/Central) region, and **contosoSecondary.servicebus.chinacloudapi.cn** might be located in the United States (South/Central) region. If a Service Bus messaging entity must remain accessible in the presence of a datacenter outage, you can create that entity in both namespaces.
+To allow for a failover between two datacenters, you can create a Service BusÂ service namespace in each datacenter. For example, the Service BusÂ service namespace **contosoPrimary.servicebus.chinacloudapi.cn** might be located in the United States (North/Central) region, and **contosoSecondary.servicebus.chinacloudapi.cn** might be located in the United States (South/Central) region. If a Service Bus messaging entity must remain accessible in the presence of a datacenter outage, you can create that entity in both namespaces.
 
 For more information, see the "Failure of Service Bus within an Azure datacenter" section in [Asynchronous Messaging Patterns and High Availability][].
 

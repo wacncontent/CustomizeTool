@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/08/2015"
+	ms.date="11/16/2015"
 	wacn.date=""/>
 
 # Deploying Password Management and training users to use it
@@ -44,18 +44,20 @@ Before a user can use password reset, **all** of the following conditions must b
 You have several options on how to specify data for users in your organization to be used for password reset.
 
 - Edit users in the [Azure Management Portal](https://manage.windowsazure.cn) or the [Office 365 Admin Portal](https://portal.partner.microsoftonline.cn)
-- Use AADSync to synchronize user properties into Azure AD from an on-premises Active Directory domain
-- Use Windows PowerShell to edit user properties
+- Use Azure AD Sync to synchronize user properties into Azure AD from an on-premises Active Directory domain
+- Use Windows PowerShell to edit user properties by [following the steps here](/documentation/articles/active-directory-passwords-learn-more#how-to-access-password-reset-data-for-your-users).
 - Allow users to register their own data by guiding them to the registration portal at [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)
-- Require users to register for password reset when they sign in to the Access Panel at [http://myapps.microsoft.com](http://myapps.microsoft.com) by setting the **Require users to register SSPR** configuration option to **Yes**.
+- Require users to register for password reset when they sign in to their Azure AD account by setting the  [**Require users to register when signing in?**](/documentation/articles/active-directory-passwords-customize#require-users-to-register-when-signing-in) configuration option to **Yes**.
 
-Users need not register for password reset for the system to work.  For example, if you have existing phone numbers in your local directory, you can synchronize them in Azure AD and we will use them for password reset automatically.
+Users need not register for password reset for the system to work.  For example, if you have existing mobile or office phone numbers in your local directory, you can synchronize them in Azure AD and we will use them for password reset automatically.
+
+You can also read more about [how data is used by password reset](/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset) and [how you can populate individual authentication fields with PowerShell](/documentation/articles/active-directory-passwords-learn-more#how-to-access-password-reset-data-for-your-users).
 
 ## What is the best way to roll out password reset for users?
 The following are the general rollout steps for password reset:
 
 1.	Enable password reset in your directory by going to the **Configure** tab in the [Azure Management Portal](https://manage.windowsazure.cn) and selecting **Yes** for the **Users Enabled for Password Reset** option.
-2.	Assign the appropriate licenses to each user to whom you’d like to offer password reset in the by going to the **Licenses** tab in the [Azure Management Portal](https://manage.windowsazure.cn).
+2.	Assign the appropriate licenses to each user to whom youâd like to offer password reset in the by going to the **Licenses** tab in the [Azure Management Portal](https://manage.windowsazure.cn).
 3.	Optionally restrict password reset to a group of users to roll out the feature slowly over time by setting the **Restrict Access to Password Reset** toggle to **Yes** and selecting a security group to enable for password reset (note these users must all have licenses assigned to them).
 4.	Instruct your users to use password reset by either sending them an email instructing them to register, enabling enforced registration on the access panel, or by uploading the appropriate authentication data for those users yourself via DirSync, PowerShell, or the [Azure Management Portal](https://manage.windowsazure.cn).  More details on this are provided below.
 5.	Over time, review users registering by navigating to the Reports tab and viewing the [**Password Reset Registration Activity**](/documentation/articles/active-directory-passwords-get-insights#view-password-reset-registration-activity) report.
@@ -82,7 +84,7 @@ To get going here, we've created a simple page that uses the latest responsive U
 You can [download the website template here](https://github.com/kenhoff/password-reset-page).  We recommend customizing the logo and colors to the need of your organization.
 
 ### Using enforced registration
-If you want your users to register for password reset themselves, you can also force them to register when they sign in to the access panel at [http://myapps.microsoft.com](http://myapps.microsoft.com).  You can enable this option from your directory’s **Configure** tab by enabling the **Require Users to Register when Signing in to the Access Panel** option.  
+If you want your users to register for password reset themselves, you can also force them to register when they sign in to the access panel at [http://myapps.microsoft.com](http://myapps.microsoft.com).  You can enable this option from your directoryâs **Configure** tab by enabling the **Require Users to Register when Signing in to the Access Panel** option.  
 
 You can also optionally define whether or not they will be asked to re-register after a configurable period of time by modifying the **Number of days before users must confirm their contact data** option to be a non-zero value. See [Customizing User Password Management Behavior](/documentation/articles/active-directory-passwords-customize#password-management-behavior) for more information.
 
@@ -117,6 +119,8 @@ You can upload the authentication data via the [Azure Management Portal](https:/
 
 See [What data is used by password reset](/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset) to see how each of these properties can be used.
 
+See [How to access password reset data for your users from PowerShell](/documentation/articles/active-directory-passwords-learn-more#how-to-access-password-reset-data-for-your-users) to see how you can read and set this data with PowerShell.
+
 ## Sample training materials
 We are working on sample training materials that you can use to get your IT organization and your users up to speed quickly on how to deploy and use password reset.  Stay tuned!
 
@@ -125,18 +129,17 @@ We are working on sample training materials that you can use to get your IT orga
 <br/>
 <br/>
 
-**Additional Resources**
+## Links to password reset documentation
+Below are links to all of the Azure AD Password Reset documentation pages: 
 
-
-* [What is Password Management](/documentation/articles/active-directory-passwords)
-* [How Password Management works](/documentation/articles/active-directory-passwords-how-it-works)
-* [Getting started with Password Mangement](/documentation/articles/active-directory-passwords-getting-started)
-* [Customize Password Management](/documentation/articles/active-directory-passwords-customize)
-* [How to get Operational Insights with Password Management Reports](/documentation/articles/active-directory-passwords-get-insights)
-* [Password Management FAQ](/documentation/articles/active-directory-passwords-faq)
-* [Troubleshoot Password Management](/documentation/articles/active-directory-passwords-troubleshoot)
-* [Learn More](/documentation/articles/active-directory-passwords-learn-more)
-* [Password Management on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)
+* [**Reset your own password**](/documentation/articles/active-directory-passwords-update-your-own-password) - learn about how to reset or change your own password as a user of the system
+* [**How it works**](/documentation/articles/active-directory-passwords-how-it-works) - learn about the six different components of the service and what each does
+* [**Getting started**](/documentation/articles/active-directory-passwords-getting-started) - learn how to allow you users to reset and change their cloud or on-premises passwords
+* [**Customize**](/documentation/articles/active-directory-passwords-customize) - learn how to customize the look & feel and behavior of the service to your organization's needs
+* [**Get insights**](/documentation/articles/active-directory-passwords-get-insights) - learn about our integrated reporting capabilities
+* [**FAQ**](/documentation/articles/active-directory-passwords-faq) - get answers to frequently asked questions
+* [**Troubleshooting**](/documentation/articles/active-directory-passwords-troubleshoot) - learn how to quickly troubleshoot problems with the service
+* [**Learn more**](/documentation/articles/active-directory-passwords-learn-more) - go deep into the technical details of how the service works
 
 
 

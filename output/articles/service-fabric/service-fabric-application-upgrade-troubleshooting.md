@@ -1,20 +1,16 @@
 <properties
-   pageTitle="Troubleshooting Service Fabric application upgrades"
+   pageTitle="Troubleshooting application upgrades | Windows Azure"
    description="This article covers some common issues around upgrading a Service Fabric application and how to resolve them."
    services="service-fabric"
    documentationCenter=".net"
    authors="mani-ramaswamy"
-   manager="samgeo"
+   manager="timlt"
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/11/2015"
-   ms.author="subramar"/>
+	ms.service="service-fabric"
+	ms.date="08/11/2015"
+	wacn.date=""/>
 
 # Troubleshoot application upgrades
 
@@ -86,7 +82,7 @@ The current **UpgradeState** is *RollingBackCompleted*, so the original upgrade 
 
 ### Investigate health check failures
 
-Health check failures can be triggered by a variety of additional issues that can happen after all nodes in an upgrade domain finish upgrading, passing all safety checks. The output below is typical of an upgrade failure due to failed health checks. The **UnhealthyEvaluations** field captures a snapshot of all failing health checks at the time of the upgrade failure according the user-specified [Health Policy](service-fabric-health-introduction.md).
+Health check failures can be triggered by a variety of additional issues that can happen after all nodes in an upgrade domain finish upgrading, passing all safety checks. The output below is typical of an upgrade failure due to failed health checks. The **UnhealthyEvaluations** field captures a snapshot of all failing health checks at the time of the upgrade failure according the user-specified [Health Policy](/documentation/articles/service-fabric-health-introduction).
 
 ~~~
 PS D:\temp> Get-ServiceFabricApplicationUpgrade fabric:/DemoApp
@@ -216,11 +212,13 @@ The upgrade time for a upgrade domain is limited by *UpgradeDomainTimeout*.  If 
 
 ## Next steps
 
-[Upgrade Tutorial](service-fabric-application-upgrade-tutorial.md)
+[Service Fabric Application Upgrade using Visual Studio](/documentation/articles/service-fabric-application-upgrade)
 
-[Upgrade Parameters](service-fabric-application-upgrade-parameters.md)
+[Service Fabric Application Upgrade using PowerShell](/documentation/articles/service-fabric-application-upgrade-powershell)
 
-[Advanced Topics](service-fabric-application-upgrade-advanced.md)
+[Upgrade Parameters](/documentation/articles/service-fabric-application-upgrade-parameters)
 
-[Data Serialization](service-fabric-application-upgrade-data-serialization.md)
+[Manual Upgrade and Upgrading with a Diff Package](/documentation/articles/service-fabric-application-upgrade-advanced)
+
+[Data Serialization](/documentation/articles/service-fabric-application-upgrade-data-serialization)
  

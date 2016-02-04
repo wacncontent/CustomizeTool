@@ -1,18 +1,21 @@
-<properties 
-	pageTitle="Creating a Windows Store leaderboard app with .NET Backend | Azure Mobile Services" 
-	description="Learn how to build a Windows Store leaderboard app using Azure Mobile Services with a .NET backend." 
-	documentationCenter="windows" 
-	authors="MikeWasson" 
-	manager="dwrede" 
-	editor="" 
+<properties
+	pageTitle="Creating a Windows Store leaderboard app with .NET Backend | Azure Mobile Services"
+	description="Learn how to build a Windows Store leaderboard app using Azure Mobile Services with a .NET backend."
+	documentationCenter="windows"
+	authors="rmcmurray"
+	manager="wpickett"
+	editor="jimbe"
 	services="mobile-services"/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="09/24/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="11/19/2015"
 	wacn.date=""/>
 
 # Creating a Leaderboard App with Azure Mobile Services .NET Backend
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 
 This tutorial shows how build a Windows Store app using Azure Mobile Services with a .NET backend. Azure Mobile Services provides a scalable and secure backend with built-in authentication, monitoring, push notifications, and other features, plus a cross-platform client library for building mobile apps. The .NET backend for Mobile Services is based on [ASP.NET Web API](http://asp.net/web-api), and gives .NET developers a first-class way to create REST APIs.   
 
@@ -60,11 +63,11 @@ Download the completed project [here](http://code.msdn.microsoft.com/Leaderboard
 
 ## Create the project
 
-Launch Visual Studio and create a new ASP.NET Web Application project. Name the project Leaderboard.
+Launch Visual Studio and create a new ASP.NET web site project. Name the project Leaderboard.
 
 ![][3]
 
-In Visual Studio 2013, the ASP.NET Web Application project includes a template for Azure Mobile Service. Select this template and click **OK**.
+In Visual Studio 2013, the ASP.NET web site project includes a template for Azure Mobile Service. Select this template and click **OK**.
 
 ![][4]
  
@@ -76,7 +79,7 @@ These aren't needed for the tutorial, so you can delete them from the project. A
 
 ## Add data models
 
-You will use [EF Code First](http://msdn.microsoft.com/data/ee712907#codefirst) to define the database tables. Under the DataObjects folder, add a class named `Player`.
+You will use [EF Code First](http://msdn.microsoft.com/zh-cn/data/ee712907#codefirst) to define the database tables. Under the DataObjects folder, add a class named `Player`.
 
 	using Microsoft.WindowsAzure.Mobile.Service;
 	
@@ -105,9 +108,9 @@ Add another class named `PlayerRank`.
 	    }
 	}
 
-Notice that both classes inherit from the **EntityData** class. Deriving from **EntityData** makes it easy for the app consume the data, using the cross-platform client library for Azure Mobile Services. **EntityData** also makes it easier for an app to [handle database write conflicts](/documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts).
+Notice that both classes inherit from the **EntityData** class. Deriving from **EntityData** makes it easy for the app consume the data, using the cross-platform client library for Azure Mobile Services. **EntityData** also makes it easier for an app to [handle database write conflicts](/documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/).
 
-The `PlayerRank` class has a [navigation property](http://msdn.microsoft.com/data/jj713564.aspx) that points to the related `Player` entity. The **[ForeignKey]** attribute tells EF that the `Player` property represents a foreign key.
+The `PlayerRank` class has a [navigation property](http://msdn.microsoft.com/zh-cn/data/jj713564.aspx) that points to the related `Player` entity. The **[ForeignKey]** attribute tells EF that the `Player` property represents a foreign key.
 
 ## Add Web API controllers
 
@@ -682,7 +685,7 @@ Now you are ready to connect the leaderboard app to the live service. You need t
 - The URL of the service
 - The application key
 
-You can get both from the Azure Management Portal. In the Management Portal, click **Mobile Services**, and then click the mobile service. The service URL is listed on the dashboard tab. To get the application key, click **Manage Keys**.
+You can get both from the Azure Management Portal. In the portal, click **Mobile Services**, and then click the mobile service. The service URL is listed on the dashboard tab. To get the application key, click **Manage Keys**.
 
 ![][16]
  
@@ -751,10 +754,8 @@ Now when you run the app, it communicates with the real service.
 
 <!-- URLs. -->
 
-[Learn more about Azure Mobile Services]: /develop/mobile/resources/
+[Learn more about Azure Mobile Services]: /documentation/services/mobile-services/
 [Learn more about Web API]: http://asp.net/web-api
 [Handle database write conflicts]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts
 [Add push notifications]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-dotnet
-
- 
+[Get started with authentication]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users

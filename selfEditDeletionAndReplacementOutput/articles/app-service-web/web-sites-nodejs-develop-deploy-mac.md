@@ -4,34 +4,19 @@ deleted:
 
 		[activate your MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or
 
-reason: ()
+reason: (MSDN subscriber)
 
 deleted:
 
-		>
 		> If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azure Websites—no credit card required, and no commitments.
 
-reason: ()
+reason: (“Try it now”)
 
 deleted:
 
 		![Browse button](./media/web-sites-nodejs-develop-deploy-mac/browsebutton.png)
-		
-			![Hello world in Azure](./media/web-sites-nodejs-develop-deploy-mac/helloworldazure.png)
 
-reason: ()
-
-deleted:
-
-		To learn more about how Azure Websites web apps run Node.js applications, see [Azure Websites: Node.js](http://blogs.msdn.com/b/silverlining/archive/2012/06/14/windows-azure-websites-node-js.aspx) and [Specifying a Node.js version in an Azure application](/documentation/articles/nodejs-specify-node-version-azure-apps).
-
-reason: ()
-
-deleted:
-
-		To learn how Web Apps works with modules, see [Using Node.js modules with Azure applications](/documentation/articles/nodejs-use-node-modules-azure-apps).
-
-reason: ()
+reason: (the new Ibiza portal)
 
 replacement:
 
@@ -129,7 +114,7 @@ replaced by:
 		
 			![Git deployment instructions returned after creating a repository for the website.][git-instructions]
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -141,5 +126,5 @@ replaced by:
 
 		4. You can revert to the previous deployment by selecting it in **Deployments**.
 
-reason: ()
+reason: (the new Ibiza portal)
 

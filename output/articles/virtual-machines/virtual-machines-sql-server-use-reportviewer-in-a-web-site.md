@@ -9,12 +9,13 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/19/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # Use ReportViewer in a Web Site Hosted in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model. 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
 
 You can build a Windows Azure Web site with the Visual Studio ReportViewer control that displays a report stored on an Windows Azure Virtual Machine. The ReportViewer control is in a Web application that you build using the ASP.NET Web application template.
 
@@ -30,7 +31,7 @@ To incorporate ReportViewer into your Windows Azure Web site, you need to comple
 
 ## Prerequisites
 
-Review the “General recommendation and best practices” section in [SQL Server Business Intelligence in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-business-intelligence).
+Review the "General recommendation and best practices" section in [SQL Server Business Intelligence in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-business-intelligence).
 
 >[AZURE.NOTE] ReportViewer controls are shipped with Visual Studio, Standard Edition or above. If you are using the Web Developer Express Edition, you must install the [MICROSOFT REPORT VIEWER 2012 RUNTIME](https://www.microsoft.com/download/details.aspx?id=35747) to use the ReportViewer runtime features.
 >
@@ -50,7 +51,7 @@ In remote processing mode, the ReportViewer control uses the following assemblie
 
 ### To add a reference to Microsoft.ReportViewer.Common
 
-- Right-click your project’s **References** node and select **Add Reference**, select the assembly in the .NET tab, and click **OK**.
+- Right-click your project's **References** node and select **Add Reference**, select the assembly in the .NET tab, and click **OK**.
 
 ### To make the assemblies locally accessible by your ASP.NET application
 
@@ -78,7 +79,7 @@ In remote processing mode, the ReportViewer control uses the following assemblie
 
 1. Download and install the Microsoft Report Viewer 2012 Runtime redistributable package by following the above specified instructions.
 
-1. Create <language> folder in the project and copy the associated resource assembly files there. The resource assembly files to be copied are: **Microsoft.ReportViewer.Webforms.Resources.dll** and **Microsoft.ReportViewer.Common.Resources.dll**.Select the resource assembly files, and in the Properties pane, set **Copy to Output Directory** to “**Copy always**”.
+1. Create <language> folder in the project and copy the associated resource assembly files there. The resource assembly files to be copied are: **Microsoft.ReportViewer.Webforms.Resources.dll** and **Microsoft.ReportViewer.Common.Resources.dll**.Select the resource assembly files, and in the Properties pane, set **Copy to Output Directory** to "**Copy always**".
 
 1. Set the Culture & UICulture for the web project. For more information about how to set the Culture and UI Culture for an ASP.NET Web page, see [How to: Set the Culture and UI Culture for ASP.NET Web Page Globalization](https://msdn.microsoft.com/zh-cn/library/bz9tc508.aspx).
 
@@ -88,7 +89,7 @@ The ReportViewer needs to use proper credentials to authenticate with the report
 
 ## Publish the ASP.NET Web application to Azure
 
-For instructions on publishing an ASP.NET Web application to Azure, see [How to: Migrate and Publish a Web Application to Azure from Visual Studio](https://msdn.microsoft.com/zh-cn/library/azure/hh420322.aspx) and [Get started with Web Apps and ASP.NET](/documentation/articles/web-sites-dotnet-get-started).
+For instructions on publishing an ASP.NET Web application to Azure, see [How to: Migrate and Publish a Web Application to Azure from Visual Studio](/documentation/articles/vs-azure-tools-migrate-publish-web-app-to-cloud-service) and [Get started with Web Apps and ASP.NET](/documentation/articles/web-sites-dotnet-get-started).
 
 >[AZURE.IMPORTANT] If the Add Azure Deployment Project or Add Azure Cloud Service Project command does not appear in the shortcut menu in Solution Explorer, you may need to change the Target framework for the project to .NET Framework 4.
 >

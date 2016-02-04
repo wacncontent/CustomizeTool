@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/28/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -88,4 +88,4 @@ Now that you know how to get a media processor instance, go to the [How to Encod
 
 [How to Encode an Asset]: /documentation/articles/media-services-rest-encode-asset
 [Task Preset Strings for the Azure Media Encoder]: http://msdn.microsoft.com/zh-cn/library/jj129582.aspx
-[How to: Connect to Media Services Programmatically]: /documentation/articles/media-services-rest-connect_programmatically
+[How to: Connect to Media Services Programmatically]: /documentation/articles/media-services-rest-connect_programmatically 

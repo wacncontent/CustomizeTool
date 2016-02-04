@@ -1,25 +1,12 @@
-<properties 
-pageTitle="Prepare an Oracle Linux Virtual Machine for Azure | Windows Azure" 
-description="Step by Step configuration of an Oracle virtual machine running Linux in Windows Azure." 
-services="virtual-machines" 
-authors="bbenz" 
-documentationCenter="virtual-machines"
-tags="azure-service-management,azure-resource-manager"
-/>
-
-<tags
-	ms.service="virtual-machines"
-	ms.date="06/22/2015"
-	wacn.date=""/>
-
+<properties title="Prepare an Oracle Linux Virtual Machine for Azure" pageTitle="Prepare an Oracle Linux Virtual Machine for Azure" description="Step through the configuration of an Oracle virtual machine running Linux in Windows Azure." services="virtual-machines" authors="bbenz" documentationCenter=""/>
+<tags ms.service="virtual-machines" ms.date="06/22/2015" wacn.date="" />
 #Prepare an Oracle Linux virtual machine for Azure
-
 -   [Prepare an Oracle Linux 6.4+ virtual machine for Azure](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
 
--   [Prepare an Oracle Linux 7.0+ virtual machine for Azure](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
+-   [Prepare an Oracle Linux 7.0+ Virtual Machine for Azure](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
 
 ##Prerequisites
-This article assumes that you have already installed an Oracle Linux operating system to a virtual hard disk. Multiple tools exist to create .vhd files, for example a virtualization solution such as Hyper-V. For instructions, see [Install Hyper-V and create a virtual machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx).
+This article assumes that you have already installed an Oracle Linux operating system to a virtual hard disk. Multiple tools exist to create .vhd files, for example a virtualization solution such as Hyper-V. For instructions, see [Install Hyper-V and create a vRirtual machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx).
 
 **Oracle Linux installation notes**
 

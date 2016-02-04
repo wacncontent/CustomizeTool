@@ -24,7 +24,7 @@ deleted:
 		
 			![Preview portal - Diagnostics logs](./media/virtual-network-nsg-manage-log/portal-enable3.png)
 
-reason: ()
+reason: (the new Ibiza portal)
 
 replacement:
 
@@ -36,7 +36,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -46,5 +46,5 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 

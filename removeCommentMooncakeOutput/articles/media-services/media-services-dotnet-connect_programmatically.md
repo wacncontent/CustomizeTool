@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -33,7 +33,7 @@ At the end of the Media Services account setup process, you obtained the followi
 
 - Your Media Services account key.
 
-To find these values, go to the Azure Managment Portal, select your Media Service account, and click on the “**MANAGE KEYS**” icon on the bottom of the portal window. Clicking on the icon next to each text box copies the value to the system clipboard.
+To find these values, go to the Azure Managment Portal, select your Media Service account, and click on the â**MANAGE KEYS**â icon on the bottom of the portal window. Clicking on the icon next to each text box copies the value to the system clipboard.
 
 
 ## Creating a CloudMediaContext Instance
@@ -60,7 +60,7 @@ The following example uses the public CloudMediaContext(MediaServicesCredentials
 This section shows how to reuse Access Control Service tokens by using CloudMediaContext constructors that take MediaServicesCredentials as a parameter.
 
 
-[Azure Active Directory Access Control](https://msdn.microsoft.com/zh-cn/library/hh147631.aspx) (also known as Access Control Service or ACS) is a cloud-based service that provides an easy way of authenticating and authorizing users to gain access to their web applications. Windows Azure Media Services controls access to its services though OAuth protocol that requires an ACS token. Media Services receives the ACS tokens from an authorization server.
+[Azure Active Directory Access Control](https://msdn.microsoft.com/zh-cn/library/hh147631.aspx) (also known as Access Control Service or ACS) is a cloud-based service that provides an easy way of authenticating and authorizing users to gain access to their web sites. Windows Azure Media Services controls access to its services though OAuth protocol that requires an ACS token. Media Services receives the ACS tokens from an authorization server.
 
 When developing with the Media Services SDK, you can choose to not deal with the tokens because the SDK code managers them for you. However, letting the SDK fully manage the ACS tokens leads to unnecessary token requests. Requesting tokens takes time and consumes the client and server resources. Also, the ACS server throttles the requests if the rate is too high. The limit is 30 requests per second, see [ACS Service Limitations](https://msdn.microsoft.com/zh-cn/library/gg185909.aspx) for more details.
 
@@ -95,7 +95,7 @@ Starting with the Media Services SDK version 3.0.0.0, you can reuse the ACS toke
 		// Save token values for later use. 
 		// The SaveTokenDataToExternalStorage method should check 
 		// whether the TokenExpiration value is valid before saving the token data. 
-		// If it is not valid, call MediaServicesCredentials’s RefreshToken before caching.
+		// If it is not valid, call MediaServicesCredentials's RefreshToken before caching.
 		SaveTokenDataToExternalStorage(accessToken, tokenExpiration);
 		
 	Use the saved token values to create MediaServicesCredentials.
@@ -184,10 +184,3 @@ To retrieve connection values from configuration, you can use the **Configuratio
 
 
 
-
-
-<!-- Anchors. -->
-
-
-<!-- URLs. -->
- 

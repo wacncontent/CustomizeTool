@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/23/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Create Linux-based clusters in HDInsight using cURL and the Azure REST API
@@ -23,7 +23,7 @@ The Azure REST API allows you to perform management operations on services hoste
 >
 > For more information on node sizes and associated costs, see [HDInsight pricing](/home/features/hdinsight/#price).
 
-##Prerequisites
+###Prerequisites
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
@@ -270,7 +270,7 @@ Follow the steps documented in [Connect to an Azure subscription from the Azure 
 > * Application ID - returned when creating the service principal
 > * Password for the service principal - used when creating the service principal
 
-Follow the steps in the _Authenticate service principal with a password - Azure CLI_ section of the [Authenticating a service principal with Azure Resource <!-- deleted by customization Manager](/documentation/articles/resource-group-authenticate-service-principal/#authenticate-service-principal-with-password---azure-cli) --><!-- keep by customization: begin --> Manager](/documentation/articles/resource-group-authenticate-service-principal#authenticate-service-principal-with-password---azure-cli) <!-- keep by customization: end --> document. This will create a new service principal that can be used to authenticate the cluster creation request.
+Follow the steps in the _Authenticate service principal with a password - Azure CLI_ section of the [Authenticating a service principal with Azure Resource Manager](/documentation/articles/resource-group-authenticate-service-principal/#authenticate-service-principal-with-password---azure-cli) document. This will create a new service principal that can be used to authenticate the cluster creation request.
 
 ##Get an authentication token
 
@@ -302,7 +302,7 @@ Use the following to create a new resource group. You must create the group firs
         -H "Content-Type: application/json" \
         -d $'{
     "location": "DATACENTERLOCATION"
-    }’
+    }'
 
 If this request is successful, you will receive a 200 series response and the response body will contain a JSON document containing information about the group. The `"provisioningState"` element will contain a value of `"Succeeded"`.
 
@@ -352,11 +352,11 @@ Now that you have successfully created an HDInsight cluster, use the following t
 
 ###HBase clusters
 
-* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-stared-linux)
+* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1-linux)
 * [Develop Java applications for HBase on HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux)
 
 ###Storm clusters
 
 * [Develop Java topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology)
-* [Use Python components in Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-python)
+* [Use Python components in Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-python-topology)
 * [Deploy and monitor topologies with Storm on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)

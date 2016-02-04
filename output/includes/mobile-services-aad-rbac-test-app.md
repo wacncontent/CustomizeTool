@@ -17,3 +17,5 @@ The instructions and screenshots below apply to testing a Windows Store client b
 
     ![](./media/mobile-services-aad-rbac-test-app/success.png)
 
+
+

@@ -1,4 +1,57 @@
-new docs: 0, word count: 189
+new docs: 38, word count: 65374
+articles/notification-hubs/notification-hubs-android-get-started.md
+articles/notification-hubs/notification-hubs-aspnet-backend-android-breaking-news.md
+articles/notification-hubs/notification-hubs-aspnet-backend-android-notify-users.md
+articles/notification-hubs/notification-hubs-aspnet-backend-android-secure-push.md
+articles/notification-hubs/notification-hubs-aspnet-backend-ios-notify-users.md
+articles/notification-hubs/notification-hubs-aspnet-backend-ios-rich-push.md
+articles/notification-hubs/notification-hubs-aspnet-backend-ios-secure-push.md
+articles/notification-hubs/notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
+articles/notification-hubs/notification-hubs-aspnet-backend-windows-dotnet-secure-push.md
+articles/notification-hubs/notification-hubs-aspnet-cross-platform-notify-users.md
+articles/notification-hubs/notification-hubs-baidu-get-started.md
+articles/notification-hubs/notification-hubs-chrome-get-started.md
+articles/notification-hubs/notification-hubs-deploy-and-manage-ps.md
+articles/notification-hubs/notification-hubs-diagnosing.md
+articles/notification-hubs/notification-hubs-enterprise-push-architecture.md
+articles/notification-hubs/notification-hubs-faq.md
+articles/notification-hubs/notification-hubs-ios-aspnet-register-user-push-notifications.md
+articles/notification-hubs/notification-hubs-ios-get-started.md
+articles/notification-hubs/notification-hubs-ios-mobile-services-register-user-push-notifications.md
+articles/notification-hubs/notification-hubs-ios-send-breaking-news.md
+articles/notification-hubs/notification-hubs-ios-send-localized-breaking-news.md
+articles/notification-hubs/notification-hubs-java-backend-how-to.md
+articles/notification-hubs/notification-hubs-kindle-get-started.md
+articles/notification-hubs/notification-hubs-nodejs-how-to-use-notification-hubs.md
+articles/notification-hubs/notification-hubs-overview.md
+articles/notification-hubs/notification-hubs-php-backend-how-to.md
+articles/notification-hubs/notification-hubs-python-backend-how-to.md
+articles/notification-hubs/notification-hubs-registration-management.md
+articles/notification-hubs/notification-hubs-routing-tag-expressions.md
+articles/notification-hubs/notification-hubs-security.md
+articles/notification-hubs/notification-hubs-templates.md
+articles/notification-hubs/notification-hubs-windows-phone-get-started.md
+articles/notification-hubs/notification-hubs-windows-phone-send-breaking-news.md
+articles/notification-hubs/notification-hubs-windows-store-dotnet-get-started.md
+articles/notification-hubs/notification-hubs-windows-store-dotnet-send-breaking-news.md
+articles/notification-hubs/notification-hubs-windows-store-dotnet-send-localized-breaking-news.md
+articles/notification-hubs/partner-xamarin-notification-hubs-android-get-started.md
+articles/notification-hubs/partner-xamarin-notification-hubs-ios-get-started.md
 
-new includes: 1
+new includes: 16
+includes/notification-hubs-android-get-started.md
+includes/notification-hubs-android-studio-add-google-play-services.md
+includes/notification-hubs-aspnet-backend-notifyusers.md
+includes/notification-hubs-aspnet-backend-securepush.md
+includes/notification-hubs-back-end.md
+includes/notification-hubs-backend-how-to-selector.md
+includes/notification-hubs-enable-apple-push-notifications.md
+includes/notification-hubs-hero-slug.md
+includes/notification-hubs-localized-back-end.md
 includes/notification-hubs-portal-create-new-hub.md
+includes/notification-hubs-selector-aspnet-backend-notify-users.md
+includes/notification-hubs-selector-breaking-news.md
+includes/notification-hubs-selector-get-started.md
+includes/notification-hubs-send-categories-template.md
+includes/notification-hubs-sending-notifications-from-the-portal.md
+includes/notification-hubs-xamarin-enable-apple-push-notifications.md

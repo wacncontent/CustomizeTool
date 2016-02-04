@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Design decisions and coding techniques for SQL Data Warehouse development | Microsoft Azure"
+   pageTitle="Design decisions and coding techniques for SQL Data Warehouse development | Windows Azure"
    description="Development concepts, design decisions, recommendations and coding techniques for SQL Data Warehouse."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+	ms.service="sql-data-warehouse"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # Design decisions and coding techniques for SQL Data Warehouse
 

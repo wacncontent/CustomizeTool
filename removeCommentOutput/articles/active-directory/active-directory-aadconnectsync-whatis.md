@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure AD Connect sync customization options | Windows Azure"
-	description="Explains how to customize Azure AD Connect sync."
+	pageTitle="Azure AD Connect sync: Understand and customize synchronization | Windows Azure"
+	description="Explains how Azure AD Connect sync works and how to customize."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
@@ -13,7 +13,7 @@
 	wacn.date=""/>
 
 
-# Azure AD Connect sync: Customizing Synchronization options
+# Azure AD Connect sync: Understand and customize synchronization
 
 The Azure Active Directory Connect synchronization services (Azure AD Connect sync) is a main component of Azure AD Connect that takes care of all the operations that are related to synchronizing identity data between your on-premises environment and Azure AD in the cloud. From a synchronization perspective, Azure AD Connect sync is the successor of DirSync, Azure AD Sync and Forefront Identity Manager with the Azure Active Directory Connector configured.
 
@@ -29,6 +29,7 @@ What do you want to do next?:
 - For an overview of topologies and scenarios supported by Azure AD Connect sync, see [Topologies for Azure AD Connect](/documentation/articles/active-directory-aadconnect-topologies).
 - If you want to learn about how implement a filter, see [Configure Filtering](/documentation/articles/active-directory-aadconnectsync-configure-filtering).
 - If you want to know more about password synchronization, see [Implement password synchronization](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization).
+- If you want to understand the default configuration in Azure AD Connect sync, see [Understanding the default configuration](/documentation/articles/active-directory-aadconnectsync-understanding-default-configuration).
 - If you want to know more about users and contacts in Azure AD Connect sync, see [Understanding Users and Contacts](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts).
 - If you want to change the default configuration, see [Best practices for changing the default configuration](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration)
 - If you want to know more about how to operate the sync server, see [Operational tasks and considerations](/documentation/articles/active-directory-aadconnectsync-operations)
@@ -37,11 +38,6 @@ What do you want to do next?:
 - To explore the declarative provisioning functions, see [Functions Reference](/documentation/articles/active-directory-aadconnectsync-functions-reference)
 
 
-
-
 ## Additional Resources
 
-* [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
-
-
-<!--Image references-->
+* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)

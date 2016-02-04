@@ -12,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/14/2015"
+	ms.date="11/16/2015"
 	wacn.date=""/>
 
 
@@ -20,7 +20,7 @@
 
 [AZURE.INCLUDE [selector](../includes/hdinsight-create-linux-cluster-selector.md)]
 
-The Azure Management Portal is a web-based management tool for services and resources hosted in the Windows Azure cloud. Use the information in this document to create a new Linux-based HDInsight cluster using the Management Portal and your web browser
+The Azure Management Portal is a web-based management tool for services and resources hosted in the Windows Azure cloud. Use the information in this document to create a new Linux-based HDInsight cluster using the Portal and your web browser
 
 ##Prerequisites
 
@@ -79,6 +79,10 @@ The Azure Management Portal is a web-based management tool for services and reso
 8. Click **Node Pricing Tiers** to display information about the nodes that will be created for this cluster. Set the number of worker nodes that you need for the cluster. The estimated cost of the cluster will be shown within the blade.
 
 	![Node pricing tiers blade](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.5.png "Specify number of cluster nodes")
+    
+    > [AZURE.IMPORTANT] If you plan on more than 32 worker nodes, either at cluster creation or by scaling the cluster after creation, then you must select a head node size with at least 8 cores and 14GB ram.
+    >
+    > For more information on node sizes and associated costs, see [HDInsight pricing](/home/features/hdinsight/#price).
 
 	Click **Select** to save the node pricing configuration.
 
@@ -93,6 +97,8 @@ The Azure Management Portal is a web-based management tool for services and reso
     	>[AZURE.NOTE] Windows based HDInsight cluster can only be placed into a classical virtual network.
 
 	* Click **External Metastores** to specify SQL database that you want to use to save Hive and Oozie metadata associated with the cluster.
+    
+        > [AZURE.NOTE] Metastore configuration is not available for HBase cluster types.
 
 		![Custom metastores blade](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.7.png "Specify external metastores")
 
@@ -100,7 +106,7 @@ The Azure Management Portal is a web-based management tool for services and reso
 
 		>[AZURE.NOTE] The Azure SQL database used for the metastore must allow connectivity to other Azure services, including Azure HDInsight. On the Azure SQL database dashboard, on the right side, click the server name. This is the server on which the SQL database instance is running. Once you are on the server view, click **Configure**, and then for **Azure Services**, click **Yes**, and then click **Save**.
 
-	* **Script Actions** if you want to use a custom script to customize a cluster, as the cluster is being created. For more information about script actions, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster). On the Script Actions blade provide the details as shown in the screen capture.
+	* **Script Actions** if you want to use a custom script to customize a cluster, as the cluster is being created. For more information about script actions, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1). On the Script Actions blade provide the details as shown in the screen capture.
 
 		![Script action blade](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.8.png "Specify script action")
 

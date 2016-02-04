@@ -1,15 +1,16 @@
 <properties 
 	pageTitle="Set up a Windows 10 device with Azure AD from Settings| Windows Azure" 
-	description="A topic that explains how users can join to Azure AD through the settings menu." 
+	description="Explains how users can join to Azure AD through the settings menu." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="femila" 
 	manager="stevenpo" 
-	editor=""/>
+	editor=""
+	tags="azure-classic-portal"/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/21/2015"
+	ms.date="11/19/2015"
 	wacn.date=""/>
 
 # Set up a Windows 10 device with Azure AD from Settings
@@ -30,11 +31,16 @@ To join to Azure AD from the settings menu
 <center>
 ![](./media/active-directory-azureadjoin/active-directory-azureadjoin-sign-in.png) </center>
 5. If your organization has configured multi-factor authenticaion for joining to Azure AD, you will have to provide the second factor before being able to proceed.
-6. Click **Accept** on the Allow this device to be managed screen.
+6. Click **Accept** on the** Allow this device to be managed** screen.
 7. you should see the message "Your device is now joined to your organization in Azure AD".
 
 
 ## Additional Information
-* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](/documentation/articles/active-directory-azureadjoin-overview)
-* [Learn about usage scenarios and deployment considerations for Azure AD Join](/documentation/articles/active-directory-azureadjoin-deployment-aadjoindirect)
+* [Learn about usage scenarios for Azure AD Join](/documentation/articles/active-directory-azureadjoin-deployment-aadjoindirect)
+* [Connect domain-joined devices to Azure AD for Windows 10 experiences](/documentation/articles/active-directory-azureadjoin-devices-group-policy)
 * [Set up Azure AD Join](/documentation/articles/active-directory-azureadjoin-setup)
+* [Authenticating identities without passwords through Microsoft Passport](/documentation/articles/active-directory-azureadjoin-passport)
+* [Learn about usage scenarios for Azure AD Join](/documentation/articles/active-directory-azureadjoin-deployment-aadjoindirect)
+* [Connect domain-joined devices to Azure AD for Windows 10 experiences](/documentation/articles/active-directory-azureadjoin-devices-group-policy)
+* [Set up Azure AD Join](/documentation/articles/active-directory-azureadjoin-setup)
+

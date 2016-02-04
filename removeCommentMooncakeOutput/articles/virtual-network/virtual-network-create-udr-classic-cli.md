@@ -4,13 +4,13 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-service-management"
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="10/06/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 #Control routing and use virtual appliances (classic) using the Azure CLI

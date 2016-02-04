@@ -21,7 +21,7 @@
 The PowerShell APIs for **Elastic Database jobs** (in preview), let you define a group of databases against which scripts will execute. This article shows how to create and manage **Elastic Database jobs** using PowerShell cmdlets. See [Elastic jobs overview](/documentation/articles/sql-database-elastic-jobs-overview). 
 
 ## Prerequisites
-* An Azure subscription. For a trial, see [Free one-month trial](/pricing/1rmb-trial/).
+* An Azure subscription. For a trial, see [trial](/pricing/1rmb-trial).
 * A set of databases created with the Elastic Database tools. See [Get started with Elastic Database tools](/documentation/articles/sql-database-elastic-scale-get-started).
 * Azure PowerShell. For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 * **Elastic Database jobs** PowerShell package: See [Installing Elastic Database jobs](/documentation/articles/sql-database-elastic-jobs-service-installation)
@@ -238,13 +238,13 @@ Too execute a job against all databases in a shard set (created using [Elastic D
 
 This example creates a shard map manager along with several shards, followed by insertion of data into the shards. 
 
-1. Build and run the **Getting started with Elastic Database tools** sample application. Follow the steps until step 7 in the section [Download and run the sample app](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools). At the end of Step 7, you will see the following command prompt:
+1. Build and run the **Getting started with Elastic Database tools** sample application. Follow the steps until step 7 in the section [Download and run the sample app](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools). At the end of Step 7, you will see the following command prompt:
 
 	![command prompt][1]
 
 2.  In the command window, type "1" and press **Enter**. This creates the shard map manager, and adds two shards to the server. Then type "3" and press **Enter**; repeat the action four times. This inserts sample data rows in your shards.
   
-3.  The [Azure preview portal](https://manage.windowsazure.cn) should show three new databases in your v12 server:
+3.  The [Azure Management Portal](https://manage.windowsazure.cn) should show three new databases in your v12 server:
 
 	![Visual Studio confirmation][2]
 
@@ -377,7 +377,7 @@ Retrieve all top level job executions, including inactive job executions:
 Retrieve all child job executions of a provided job execution ID, including inactive job executions:
 
 	$parentJobExecutionId = "{Job Execution Id}"
-	Get-AzureSqlJobExecution -AzureSqlJobExecution -JobExecutionId $parentJobExecutionId –IncludeInactive -IncludeChildren
+	Get-AzureSqlJobExecution -AzureSqlJobExecution -JobExecutionId $parentJobExecutionId -IncludeInactive -IncludeChildren
 
 Retrieve all job executions created using a schedule / job combination, including inactive jobs:
 
@@ -391,13 +391,13 @@ Retrieve all jobs targeting a specified shard map, including inactive jobs:
 	$shardMapDatabaseName = "{Shard Map Database Name}"
 	$shardMapName = "{Shard Map Name}"
 	$target = Get-AzureSqlJobTarget -ShardMapManagerDatabaseName $shardMapDatabaseName -ShardMapManagerServerName $shardMapServerName -ShardMapName $shardMapName
-	Get-AzureSqlJobExecution -TargetId $target.TargetId –IncludeInactive
+	Get-AzureSqlJobExecution -TargetId $target.TargetId -IncludeInactive
 
 Retrieve all jobs targeting a specified custom collection, including inactive jobs:
 
 	$customCollectionName = "{Custom Collection Name}"
 	$target = Get-AzureSqlJobTarget -CustomCollectionName $customCollectionName
-	Get-AzureSqlJobExecution -TargetId $target.TargetId –IncludeInactive
+	Get-AzureSqlJobExecution -TargetId $target.TargetId -IncludeInactive
  
 Retrieve the list of job task executions within a specific job execution:
 
@@ -559,7 +559,7 @@ Use the [**New-AzureSqlJob**](https://msdn.microsoft.com/zh-cn/library/mt346078.
 
 ## Data collection across databases
 
-You can use a job to execute a query across a group of databases and send the results to a specific table. The table can be queried after the fact to see the query’s results from each database. This provides an asynchronous method to execute a query across many databases. Failed attempts are handled automatically via retries.
+You can use a job to execute a query across a group of databases and send the results to a specific table. The table can be queried after the fact to see the query's results from each database. This provides an asynchronous method to execute a query across many databases. Failed attempts are handled automatically via retries.
 
 The specified destination table will be automatically created if it does not yet exist. The new table matches the schema of the returned result set. If a script returns multiple result sets, Elastic Database jobs will only send the first to the destination table.
 
@@ -620,7 +620,7 @@ Use [New-AzureSqlJobTrigger](https://msdn.microsoft.com/zh-cn/library/mt346069.a
 	$scheduleName = "{Schedule Name}"
 	$jobTrigger = New-AzureSqlJobTrigger
 	-ScheduleName $scheduleName
-	–JobName $jobName
+	-JobName $jobName
 	Write-Output $jobTrigger
 
 ### To remove a scheduled association to stop job from executing on schedule

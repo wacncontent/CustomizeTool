@@ -13,48 +13,11 @@
 
 # Editing textual runbooks in Azure Automation
 
-The textual editor in Azure Automation can be used to edit [PowerShell runbooks](/documentation/articles/automation-runbook-types#powershell-runbooks) and [PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks). This has the typical features of other code editors such as intellisense and color coding  with additional special features to assist you in accessing resources common to runbooks.  This article provides detailed steps for performing different functions with this editor.
+The textual editor in Azure Automation can be used to edit PowerShell Workflow runbooks. This has the typical features of other code editors such as intellisense and color coding  with additional special features to assist you in accessing resources common to runbooks.  This article provides detailed steps for performing different functions with this editor.
 
 The textual editor includes a feature to insert code for activities, assets, and child runbooks into a runbook. Rather than typing in the code yourself, you can select from a list of available resources and have the appropriate code inserted into the runbook.
 
 Each runbook in Azure Automation has two versions, Draft and Published. You edit the Draft version of the workflow and then publish it so it can be executed. The Published version cannot be edited. See [Publishing a runbook](/documentation/articles/automation-creating-importing-runbook#publishing-a-runbook) for more information.
-
-## To edit a runbook with the Azure Management Portal
-
-Use the following procedure to open a runbook for editing in the textual editor.
-
-1. In the Azure Management Portal, select your automation account.
-2. Click the **Runbooks** tile to open the list of runbooks.
-3. Click the name of the runbook you want to edit and then click the **Edit** button.
-6. Perform the required editing.
-7. Click **Save** when your edits are complete.
-8. Click **Publish** if you want the latest draft version of the runbook to be published.
-
-### To insert a cmdlet into a runbook
-
-2. In the Canvas of the textual editor, position the cursor where you want to place the cmdlet.
-3. Expand the **Cmdlets** node in the Library control. 
-3. Expand the module containing the cmdlet you want to use.
-4. Right click the cmdlet to insert and select **Add to canvas**.  If the cmdlet has more than one parameter set, then the default set will be added.  You can also expand the cmdlet to select a different parameter set.
-4. The code for the cmdlet is inserted with its entire list of parameters.
-5. Provide an appropriate value in place of the data type surrounded by braces <> for any required parameters.  Remove any parameters you don't need.
-
-### To insert code for a child runbook into a runbook
-
-2. In the Canvas of the textual editor, position the cursor where you want to place the code for the [child runbook](/documentation/articles/automation-child-runbooks).
-3. Expand the **Runbooks** node in the Library control. 
-3. Right click the runbook to insert and select **Add to canvas**.
-4. The code for the child runbook is inserted with any placeholders for any runbook parameters.
-5. Replace the placeholders with appropriate values for each parameter.
-
-### To insert an asset into a runbook
-
-2. In the Canvas of the textual editor, position the cursor where you want to place the code for the child runbook.
-3. Expand the **Assets** node in the Library control. 
-4. Expand the node for the type of asset you want.
-3. Right click the asset to insert and select **Add to canvas**.  
-4. The code for the asset is inserted into the runbook.
-
 
 
 ## To edit a runbook with the Azure Management Portal
@@ -125,7 +88,7 @@ The following sample commands show how to replace the existing contents of a run
     $scriptPath = "c:\runbooks\Sample-TestRunbook.ps1"
 
     Set-AzureAutomationRunbookDefinition -AutomationAccountName $automationAccountName -Name $runbookName -Path $scriptPath -Overwrite
-    Publish-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName
+    Publish-AzureAutomationRunbook âAutomationAccountName $automationAccountName âName $runbookName
 
 ## Related articles
 

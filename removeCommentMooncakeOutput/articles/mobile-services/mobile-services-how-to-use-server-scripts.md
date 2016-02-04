@@ -7,14 +7,15 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="08/17/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="12/01/2015" 
 	wacn.date=""/>
 
 
 # Work with a JavaScript backend mobile service
 
+ 
 This article provides detailed information about and examples of how to work with a JavaScript backend in Azure Mobile Services. 
 
 ##<a name="intro"></a>Introduction
@@ -79,13 +80,13 @@ Here are the canonical main-function signatures for the table operations:
 
 >[AZURE.NOTE]A function that's registered to the delete operation must be named _del_ because delete is a reserved keyword in JavaScript. 
 
-Every server script has a main function, and may have optional helper functions. Even though a server script may have been been created for a specific table, it can also reference other tables in the same database. You can also define common functions as modules that can be shared across scripts. For more information, see [Source control and shared code][Source control, shared code, and helper functions].
+Every server script has a main function, and may have optional helper functions. Even though a server script may have been created for a specific table, it can also reference other tables in the same database. You can also define common functions as modules that can be shared across scripts. For more information, see [Source control and shared code][Source control, shared code, and helper functions].
 
 ###<a name="register-table-scripts"></a>How to: Register table scripts
 
 You can define server scripts that are registered to a table operation in one of the following ways:
 
-+ In the [Azure Management Portal][Management Portal]. Scripts for table operations are accessed in the **Scripts** tab for a given table. The following shows the default code registered to the insert script for the `TodoItem` table. You can override this code with your own custom business logic.
++ In the [Azure Management Portal]. Scripts for table operations are accessed in the **Scripts** tab for a given table. The following shows the default code registered to the insert script for the `TodoItem` table. You can override this code with your own custom business logic.
 
 	![1][1]
 	
@@ -285,7 +286,7 @@ In JavaScript it is a compact version of the lengthier equivalent:
 
 ###<a name="work-with-users"></a>How to: Work with users
 
-In Azure Mobile Services, you can use an identity provider to authenticate users. For more information, see [Get started with authentication]. When an authenticated user invokes a table operation, Mobile Services uses the [user object] to supply information about the user to the registered script function. The **userId** property can be used to store and retrieve user-specific information. The following example sets the owner property of an item based on the userId of an authenticated user:
+In Azure Mobile Services, you can use an identity provider to authenticate users. For more information, see [Get started with authentication]. When an authenticated user invokes a table operation, Mobile Services uses the [user object] to supply information about the user to the registered script function. The **userId** property can be used to store and retrieve user-specific information. The following example sets the owner property of an item based on the **userId** of an authenticated user:
 
 	function insert(item, user, request) {
 	    item.owner = user.userId;
@@ -332,7 +333,7 @@ The global state is maintained between executions.
 
 You can define server scripts that are registered to HTTP methods in a custom API endpoint in one of the following ways:
 
-+ In the [Azure Management Portal][Management Portal]. Custom API scripts are created and modified in the **API** tab. The server script code is in the **Scripts** tab of a given custom API. The following shows the script that is invoked by a POST request to the `CompleteAll` custom API endpoint. 
++ In the [Azure Management Portal]. Custom API scripts are created and modified in the **API** tab. The server script code is in the **Scripts** tab of a given custom API. The following shows the script that is invoked by a POST request to the `CompleteAll` custom API endpoint. 
 
 	![2][2]
 	
@@ -374,7 +375,7 @@ This custom API function is invoked by an HTTP GET request to the following endp
 
 In Azure Mobile Services, you can use an identity provider to authenticate users. For more information, see [Get started with authentication]. When an authenticated user requests a custom API, Mobile Services uses the [user object] to provide information about the user to custom API code. The [user object] is accessed from the user property of the [request object]. The **userId** property can be used to store and retrieve user-specific information. 
 
-The following **OrderPizza** custom API function sets the owner property of an item based on the userId of an authenticated user:
+The following **OrderPizza** custom API function sets the owner property of an item based on the **userId** of an authenticated user:
 
 		exports.post = function(request, response) {
 			var userTable = request.service.tables.getTable('user');
@@ -439,17 +440,17 @@ The two routes in the above custom API example can be invoked by HTTP GET reques
 
 ##<a name="scheduler-scripts"></a>Job Scheduler
 
-Mobile Services enables you to define server scripts that are executed either as jobs on a fixed schedule or on-demand from the Management Portal. Scheduled jobs are useful for performing periodic tasks such as cleaning-up table data and batch processing. For more information, see [Schedule jobs].
+Mobile Services enables you to define server scripts that are executed either as jobs on a fixed schedule or on-demand from the Azure Management Portal. Scheduled jobs are useful for performing periodic tasks such as cleaning-up table data and batch processing. For more information, see [Schedule jobs].
 
 Scripts that are registered to scheduled jobs have a main function with the same name as the scheduled job. Because a scheduled script is not invoked by an HTTP request, there is no context that can be passed by the server runtime and the function takes no parameters. Like other kinds of scripts, you can have subroutine functions and require shared modules. For more information, see [Source control, shared code, and helper functions].
 
 ###<a name="scheduler-scripts"></a>How to: Define scheduled job scripts
 
-A server script can be assigned to a job that's defined in the Mobile Services Scheduler. These scripts belong to the job and are executed according to the job schedule. (You can also use the [Management Portal] to run jobs on demand.) A script that defines a scheduled job has no parameters because Mobile Services doesn't pass it any data; it's executed as a regular JavaScript function and doesn't interact with Mobile Services directly. 
+A server script can be assigned to a job that's defined in the Mobile Services Scheduler. These scripts belong to the job and are executed according to the job schedule. (You can also use the [Azure Management Portal] to run jobs on demand.) A script that defines a scheduled job has no parameters because Mobile Services doesn't pass it any data; it's executed as a regular JavaScript function and doesn't interact with Mobile Services directly. 
 
 You define scheduled jobs in one of the following ways: 
 
-+ In the [Azure Management Portal][Management Portal] in the **Script** tab in the scheduler:
++ In the [Azure Management Portal] in the **Script** tab in the scheduler:
 
 	![3][3]
 
@@ -920,7 +921,7 @@ The primary way to debug and troubleshoot your server scripts is by writing to t
 
 To write to the logs, use the global [console object]. Use the **log** or **info** function to log information-level warnings. The **warning** and **error** functions log their respective levels, which are called-out in the logs. 
 
-> [AZURE.NOTE] To view the logs for your mobile service, log on to the [Management Portal](https://manage.windowsazure.cn/), select your mobile service, and then choose the **Logs** tab.
+> [AZURE.NOTE] To view the logs for your mobile service, log on to the [Azure Management Portal](https://manage.windowsazure.cn/), select your mobile service, and then choose the **Logs** tab.
 
 You can also use the logging functions of the [console object] to format your messages using parameters. The following example supplies a JSON object as a parameter to the message string:
 
@@ -982,7 +983,7 @@ To avoid overloading your log, you should remove or disable calls to console.log
 
 <!-- URLs. -->
 [Mobile Services server script reference]: http://msdn.microsoft.com/zh-cn/library/azure/jj554226.aspx
-[Schedule backend jobs in Mobile Services]: /develop/mobile/tutorials/schedule-backend-tasks/
+[Schedule backend jobs in Mobile Services]: /documentation/articles/mobile-services-schedule-recurring-tasks/
 [request object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554218.aspx
 [response object]: http://msdn.microsoft.com/zh-cn/library/azure/dn303373.aspx
 [User object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554220.aspx
@@ -1007,18 +1008,18 @@ To avoid overloading your log, you should remove or disable calls to console.log
 [Validate data]: http://msdn.microsoft.com/zh-cn/library/azure/jj631638.aspx
 [Modify the request]: http://msdn.microsoft.com/zh-cn/library/azure/jj631635.aspx
 [Modify the response]: http://msdn.microsoft.com/zh-cn/library/azure/jj631631.aspx
-[Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [Schedule jobs]: http://msdn.microsoft.com/zh-cn/library/azure/jj860528.aspx
-[Validate and modify data in Mobile Services by using server scripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/
-[Commands to manage Azure Mobile Services]: /documentation/articles/virtual-machines-command-line-tools#Mobile_Scripts
-[Windows Store Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-dotnet/
+[Validate and modify data in Mobile Services by using server scripts]: /documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/
+[Commands to manage Azure Mobile Services]: /documentation/articles/command-line-tools/#Commands_to_manage_mobile_services/#Mobile_Scripts
+[Windows Store Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
 [Windows Phone Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
 [iOS Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
 [Android Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
 [Azure SDK for Node.js]: http://go.microsoft.com/fwlink/p/?LinkId=275539
 [Send HTTP request]: http://msdn.microsoft.com/zh-cn/library/azure/jj631641.aspx
-[Send email from Mobile Services with SendGrid]: /develop/mobile/tutorials/send-email-with-sendgrid/
-[Get started with authentication]: http://go.microsoft.com/fwlink/p/?LinkId=287177
+[Send email from Mobile Services with SendGrid]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts/
+[Get started with authentication]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 [crypto API]: http://go.microsoft.com/fwlink/p/?LinkId=288802
 [path API]: http://go.microsoft.com/fwlink/p/?LinkId=288803
 [querystring API]: http://go.microsoft.com/fwlink/p/?LinkId=288804
@@ -1026,14 +1027,13 @@ To avoid overloading your log, you should remove or disable calls to console.log
 [util API]: http://go.microsoft.com/fwlink/p/?LinkId=288806
 [zlib API]: http://go.microsoft.com/fwlink/p/?LinkId=288807
 [Custom API]: http://msdn.microsoft.com/zh-cn/library/azure/dn280974.aspx
-[Call a custom API from the client]: /develop/mobile/tutorials/call-custom-api-dotnet/#define-custom-api
+[Call a custom API from the client]: /documentation/articles/mobile-services-windows-store-dotnet-call-custom-api/#define-custom-api
 [express.js library]: http://go.microsoft.com/fwlink/p/?LinkId=309046
-[Define a custom API that supports periodic notifications]: /develop/mobile/tutorials/create-pull-notifications-dotnet/
+[Define a custom API that supports periodic notifications]: /documentation/articles/mobile-services-windows-store-dotnet-create-pull-notifications/
 [express object in express.js]: http://expressjs.com/api.html#express
-[Store server scripts in source control]: /develop/mobile/tutorials/store-scripts-in-source-control/
-[Leverage shared code and Node.js modules in your server scripts]: /develop/mobile/tutorials/store-scripts-in-source-control/#use-npm
+[Store server scripts in source control]: /documentation/articles/mobile-services-store-scripts-source-control/
+[Leverage shared code and Node.js modules in your server scripts]: /documentation/articles/mobile-services-store-scripts-source-control/#use-npm
 [service object]: http://msdn.microsoft.com/zh-cn/library/azure/dn303371.aspx
 [App settings]: http://msdn.microsoft.com/zh-cn/library/dn529070.aspx
 [config module]: http://msdn.microsoft.com/zh-cn/library/dn508125.aspx
 [Support for package.json in Azure Mobile Services]: http://go.microsoft.com/fwlink/p/?LinkId=391036
- 

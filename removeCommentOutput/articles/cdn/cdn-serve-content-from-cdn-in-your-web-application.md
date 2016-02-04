@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Serve Content from Azure CDN in Your Web Application" 
-	description="A tutorial that teaches you how to use content from a CDN to improve the performance of your Web application." 
+	pageTitle="Serve Content from Azure CDN in Your web site" 
+	description="A tutorial that teaches you how to use content from a CDN to improve the performance of your web site." 
 	services="cdn" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="cdn"
-	ms.date="09/01/2015"
+	ms.date="12/08/2015"
 	wacn.date=""/>
 
-# Serve Content from Azure CDN in Your Web Application #
+# Serve Content from Azure CDN in Your web site #
 
-This tutorial shows you how to take advantage of Azure CDN to improve the reach and performance of your Web application. Azure CDN can help improve the performance of your Web application when:
+This tutorial shows you how to take advantage of Azure CDN to improve the reach and performance of your web site. Azure CDN can help improve the performance of your web site when:
 
 - You have many links to static or semi-static content on your pages
 - Your application is accessed by clients globally
@@ -63,7 +63,7 @@ Let's get to it. Follow the steps below to start using the Azure CDN:
 
 	>[AZURE.NOTE] Note that I'm using China East as the region as it is far enough away for me to test my CDN from North America later.
 
-2. Once the new storage account's status is **Online**, create a new CDN endpoint that's tied to the storage account you created. Click **New > Azure Websites > CDN > Quick Create**. Select the storage account you created and click **Create**.
+2. Once the new storage account's status is **Online**, create a new CDN endpoint that's tied to the storage account you created. Click **New > Azure Websitess > CDN > Quick Create**. Select the storage account you created and click **Create**.
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-2.PNG)
 
@@ -145,7 +145,7 @@ In this section, you have learned how to create a CDN endpoint, upload content t
 <a name="upload"></a>
 ## Automate content upload from your ASP.NET application to your CDN endpoint ##
 
-If you want to easily upload all of the static content in your ASP.NET Web application to your CDN endpoint, or if your deploy your Web application using continuous delivery (for an example, see [Continuous Delivery for Cloud Services in Azure](/documentation/articles/cloud-services-dotnet-continuous-delivery)), you can use Azure PowerShell to automate the synchronization of the latest content files to Azure blobs every time you deploy your Web application. For example, you can run the script at [Upload Content Files from ASP.NET Application to Azure Blobs](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a) upload all the content files in an ASP.NET application. To use this script:
+If you want to easily upload all of the static content in your ASP.NET web site to your CDN endpoint, or if your deploy your web site using continuous delivery (for an example, see [Continuous Delivery for Cloud Services in Azure](/documentation/articles/cloud-services-dotnet-continuous-delivery)), you can use Azure PowerShell to automate the synchronization of the latest content files to Azure blobs every time you deploy your web site. For example, you can run the script at [Upload Content Files from ASP.NET Application to Azure Blobs](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a) upload all the content files in an ASP.NET application. To use this script:
 
 4. From the **Start** menu, run **Windows Azure PowerShell**.
 5. In the Azure PowerShell window, run `Get-AzurePublishSettingsFile` to download a publish settings file for your Azure account.
@@ -167,10 +167,10 @@ This script uploads all files from your *\Content* and *\Scripts* folders to the
 
 -	Automatically replicate the file structure of your Visual Studio project
 -	Automatically create blob containers as needed
--	Reuse the same Azure storage account and CDN endpoint for multiple Web applications, each in a separate blob container
+-	Reuse the same Azure storage account and CDN endpoint for multiple web sites, each in a separate blob container
 -	Easily update the Azure CDN with new content. For more information on updating content, see [Configure the CDN cache to reflect the desired content update](#update).
 
-For the `-StorageContainer` parameter, it makes sense to use the name of your Web application, or the Visual Studio project name. Whereas I used the generic "cdn" as the container name previously, using the name of your Web application allows related content to be organized into the same easily identifiable container.
+For the `-StorageContainer` parameter, it makes sense to use the name of your web site, or the Visual Studio project name. Whereas I used the generic "cdn" as the container name previously, using the name of your web site allows related content to be organized into the same easily identifiable container.
 
 Once the content has finished uploading, you can link to anything in your *\Content* and *\Scripts* folder in your HTML code, such as in your .cshtml files, using `http://<yourCDNName>.vo.msecnd.net/<containerName>`. Here is an example of something I can use in a Razor view: 
 
@@ -181,7 +181,7 @@ For an example of integrating PowerShell scripts into your continuous delivery c
 <a name="update"></a>
 ## Configure the CDN cache to reflect the desired content update ##
 
-Now, suppose after you have uploaded the static files from your Web app in a blob container, you make a change to one of the files in your project and upload it to the blob container again. You may think that it's automatically updated to your CDN endpoint, but are actually puzzled why you don't see the update reflected when you access the content's CDN URL. 
+Now, suppose after you have uploaded the static files from your web site in a blob container, you make a change to one of the files in your project and upload it to the blob container again. You may think that it's automatically updated to your CDN endpoint, but are actually puzzled why you don't see the update reflected when you access the content's CDN URL. 
 
 The truth is that the CDN does indeed automatically update from your blob storage, but it does so by applying a default 7-day caching rule to the content. This means that once a CDN node pulls your content from blob storage, the same content is not refreshed until it expires in the cache.
 
@@ -238,7 +238,7 @@ The trick then is to update the version number automatically. In Visual Studio, 
 	
 	<link href="http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css?v=@cdnVersion" rel="stylesheet"/>
 
-If you change the assembly number as part of every publish cycle, then you can likewise be sure to get a unique version number every time you publish your Web app, which will remain the same until the next publish cycle. Or, you can make Visual Studio automatically increment the assembly version number every time the Web app builds by opening *Properties\AssemblyInfo.cs* in your Visual Studio project and use `*` in `AssemblyVersion`. For example:
+If you change the assembly number as part of every publish cycle, then you can likewise be sure to get a unique version number every time you publish your web site, which will remain the same until the next publish cycle. Or, you can make Visual Studio automatically increment the assembly version number every time the web site builds by opening *Properties\AssemblyInfo.cs* in your Visual Studio project and use `*` in `AssemblyVersion`. For example:
 
 	[assembly: AssemblyVersion("1.0.0.*")]
 
@@ -248,9 +248,9 @@ With [Azure Websites](/documentation/services/web-sites/) and [Azure Cloud Servi
 
 Integrating Azure Websites or Azure Cloud Services with Azure CDN gives you the following advantages:
 
-- Integrate content deployment (images, scripts, and stylesheets) as part of your Azure web app's [continuous deployment](/documentation/articles/web-sites-publish-source-control) process
+- Integrate content deployment (images, scripts, and stylesheets) as part of your Azure web site's [continuous deployment](/documentation/articles/web-sites-publish-source-control) process
 - Easily upgrade your CDN-served NuGet packages, such as jQuery or Bootstrap versions 
-- Manage your Web application and your CDN-served content from the same Visual Studio interface
+- Manage your web site and your CDN-served content from the same Visual Studio interface
 
 For related tutorials, see:
 - [Use Azure CDN in Azure Websites](/documentation/articles/cdn-websites-with-cdn)

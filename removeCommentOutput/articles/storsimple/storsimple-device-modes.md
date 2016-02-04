@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Change the StorSimple device mode | Microsoft Azure"
+   pageTitle="Change the StorSimple device mode | Windows Azure"
    description="Describes the StorSimple device modes and explains how to use Windows PowerShell for StorSimple to change the device mode."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/17/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/17/2015"
+	wacn.date=""/>
 
 # Change the device mode on your StorSimple device
 
@@ -49,7 +45,7 @@ You can put the system into maintenance mode only via the Windows PowerShell for
 
 Recovery mode can be described as "Windows Safe Mode with network support". Recovery mode engages the Microsoft Support team and allows them to perform diagnostics on the system. The primary goal of recovery mode is to retrieve the system logs.
 
-If your system goes into recovery mode, you should contact Microsoft Support for next steps. For more information, go to [Contact Microsoft Support](storsimple-contact-microsoft-support.md).
+If your system goes into recovery mode, you should contact Microsoft Support for next steps. For more information, go to [Contact Microsoft Support](/documentation/articles/storsimple-contact-microsoft-support).
 
 >[AZURE.NOTE] **You cannot place the device in recovery mode. If the device is in a bad state, recovery mode tries to get the device into a state in which Microsoft Support personnel can examine it.**
 
@@ -57,18 +53,18 @@ If your system goes into recovery mode, you should contact Microsoft Support for
 
 #### To determine the current device mode
 
-1. Log on to the device serial console by following the steps in [Use PuTTY to connect to the device serial console](storsimple-deployment-walkthrough.md#use-putty-to-connect-to-the-device-serial-console).
+1. Log on to the device serial console by following the steps in [Use PuTTY to connect to the device serial console](/documentation/articles/storsimple-deployment-walkthrough#use-putty-to-connect-to-the-device-serial-console).
 2. Look at the banner message in the serial console menu of the device. This message explicitly indicates whether the device is in maintenance or recovery mode. If the message does not contain any specific information pertaining to the system mode, the device is in normal mode.
 
 ## Change the StorSimple device mode 
 
 You can place the StorSimple device into maintenance mode (from normal mode) to perform maintenance or install maintenance mode updates. Perform the following procedures to enter or exit maintenance mode.
 
-> [AZURE.IMPORTANT] Before entering maintenance mode, verify that both device controllers are healthy by accessing the **Hardware Status** on the **Maintenance** page in the Management Portal. If the controller is not healthy, contact Microsoft Support for the next steps. For more information, go to [Contact Microsoft Support](storsimple-contact-microsoft-support.md).
+> [AZURE.IMPORTANT] Before entering maintenance mode, verify that both device controllers are healthy by accessing the **Hardware Status** on the **Maintenance** page in the Management Portal. If the controller is not healthy, contact Microsoft Support for the next steps. For more information, go to [Contact Microsoft Support](/documentation/articles/storsimple-contact-microsoft-support).
 
 #### To enter maintenance mode
 
-1. Log on to the device serial console by following the steps in [Use PuTTY to connect to the device serial console](storsimple-deployment-walkthrough.md#use-putty-to-connect-to-the-device-serial-console).
+1. Log on to the device serial console by following the steps in [Use PuTTY to connect to the device serial console](/documentation/articles/storsimple-deployment-walkthrough#use-putty-to-connect-to-the-device-serial-console).
 
 2. In the serial console menu, choose option 1, **Log in with full access**. When prompted, provide the **device administrator password**. The default password is: `Password1`.
 
@@ -96,5 +92,5 @@ You can place the StorSimple device into maintenance mode (from normal mode) to 
 
 ## Next steps
 
-Learn how to [apply normal and maintenance mode updates](storsimple-update-device.md) on your StorSimple device.
+Learn how to [apply normal and maintenance mode updates](/documentation/articles/storsimple-update-device) on your StorSimple device.
 

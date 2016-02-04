@@ -4,13 +4,13 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-resource-manager"
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/30/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 #Create User Defined Routes (UDR) in the Azure CLI

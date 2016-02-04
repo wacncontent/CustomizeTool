@@ -1,10 +1,20 @@
-<properties pageTitle="Tutorial: Azure ActiveDirectory integration with SuccessFactors | Windows Azure" description="Learn how to use SuccessFactors with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties 
+    pageTitle="Tutorial: Azure ActiveDirectory integration with SuccessFactors | Windows Azure"
+    description="Learn how to use SuccessFactors with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="08/01/2015"
+	ms.date="10/22/2015"
 	wacn.date=""/>
+
 #Tutorial: Azure ActiveDirectory integration with SuccessFactors
->[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/957efd7b-a8b7-473f-b706-0a58c028b1ac/tutorial-azure-active-directory-integration-with-successfactors?forum=WindowsAzureAD).
+<!-- keep by customization: begin -->
+>[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=529792).
+<!-- keep by customization: end -->
+<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and SuccessFactors in **SP initiated single sign-on mode**.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -12,7 +22,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A SuccessFactors single sign-on enabled subscription in SP initiated mode
   
-After completing this tutorial, the Azure AD users you have assigned to SuccessFactors will be able to single sign into the application at your SuccessFactors company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to SuccessFactors will be able to single sign into the application at your SuccessFactors company site (service provider initiated sign on), or using the [Introduction to the Access <!-- keep by customization: begin --><!-- deleted by customization <!-- keep by customization: end --> Panel](/documentation/articles/active-directory-saas-access-panel-introduction). <!-- keep by customization: begin --> --><!-- keep by customization: begin --> Panel](https://msdn.microsoft.com/zh-cn/library/dn308586) <!-- keep by customization: end --><!-- keep by customization: end -->
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -106,7 +116,12 @@ To get single sign-on configured, you will have to contact your SuccessFactors s
 In order to enable Azure AD users to log into SuccessFactors, they must be provisioned into SuccessFactors.  
 In the case of SuccessFactors, provisioning is a manual task.
   
-To get users created in SuccessFactors, you need to contact the SuccessFactors’ support team.
+<!-- deleted by customization
+To get users created in SuccessFactors, you need to contact the SuccessFactors' support team.
+-->
+<!-- keep by customization: begin -->
+To get users created in SuccessFactors, you need to contact the <!-- deleted by customization SuccessFactors' --><!-- keep by customization: begin --> SuccessFactors’ <!-- keep by customization: end --> support team.
+<!-- keep by customization: end -->
 
 ##Assigning users
   
@@ -124,4 +139,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-successfactors-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).

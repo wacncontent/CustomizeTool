@@ -2,12 +2,6 @@ deletion:
 
 deleted:
 
-		,
-
-reason: ()
-
-deleted:
-
 		"minValue": <optional-minimum-value-for-int-parameters>,
 		         "maxValue": <optional-maximum-value-for-int-parameters>,
 		         "minLength": <optional-minimum-length-for-string-secureString-array-parameters>,
@@ -26,20 +20,8 @@ reason: ()
 
 deleted:
 
-		,
-
-reason: ()
-
-deleted:
-
 		"minLength": 2,
 		          "maxLength": 60
-
-reason: ()
-
-deleted:
-
-		,
 
 reason: ()
 

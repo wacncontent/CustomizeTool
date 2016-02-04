@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Deploy the StorSimple Manager service | Microsoft Azure"
-   description="Explains how to create and delete the StorSimple Manager service in the Management Portal, and describes how to manage the service registration key."
+   pageTitle="Deploy the StorSimple Manager service | Windows Azure"
+   description="Explains how to create and delete the StorSimple Manager service in the Azure Management Portal, and describes how to manage the service registration key."
    services="storsimple"
    documentationCenter=""
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/14/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/01/2015"
+	wacn.date=""/>
 
 # Deploy the StorSimple Manager service
 
@@ -23,13 +19,13 @@ The StorSimple Manager service runs in Microsoft Azure and connects to multiple 
 
 The StorSimple Manager landing page lists all the StorSimple Manager services that you can use to manage your StorSimple storage devices. For each StorSimple Manager service, the following information is presented on the StorSimple Manager page:
 
-- **Name** – The name that was assigned to your StorSimple Manager service when it was created. The service name cannot be changed after the service is created.
+– **Name** - The name that was assigned to your StorSimple Manager service when it was created. The service name cannot be changed after the service is created.
 
-- **Status** – The status of the service, which can be **Active**, **Creating**, or **Online**.
+– **Status** - The status of the service, which can be **Active**, **Creating**, or **Online**.
 
-- **Location** – The geographical location in which the StorSimple device will be deployed.
+– **Location** - The geographical location in which the StorSimple device will be deployed.
 
-- **Subscription** – The billing subscription that is associated with your service.
+– **Subscription** - The billing subscription that is associated with your service.
 
 The common tasks that can be performed through the StorSimple Manager page are:
 

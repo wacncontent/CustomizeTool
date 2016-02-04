@@ -1,5 +1,5 @@
 
-1. Log on to the [Azure Management Portal], click **Mobile Services**, and then click your mobile service.
+1. Log on to the [Azure Management Portal](https://manage.windowsazure.cn/), click **Mobile Services**, and then click your mobile service.
 
 2. Click the **Push** tab, select **Only Authenticated Users** for **Permissions**, click **Save**, and then click **Edit Script**.
 	
@@ -31,7 +31,7 @@
 		    for(var i = 0; i < registration.tags.length; i++) { 
 		        console.log(registration.tags[i]);           
 				if (registration.tags[i]
-				.search(/microsoft:/i) !== -1){
+				.search(/facebook:|twitter:|google:|microsoft:/i) !== -1){
 					return false;
 				}
 				return true;

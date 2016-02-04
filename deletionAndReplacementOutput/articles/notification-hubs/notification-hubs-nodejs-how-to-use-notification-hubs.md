@@ -8,7 +8,7 @@ replaced by:
 
 		##<a id="create"></a> Create a Node.js Application
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -18,7 +18,7 @@ replaced by:
 
 		##<a id="config"></a> Configure Your Application to Use Notification Hub
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -28,7 +28,7 @@ replaced by:
 
 		##<a id="send"></a> How to send notifications
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -38,5 +38,5 @@ replaced by:
 
 		##<a id="next"></a> Next Steps
 
-reason: ()
+reason: (inpage link)
 

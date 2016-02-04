@@ -5,11 +5,11 @@
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor=""/>
 
 <tags
 	ms.service="multiple"
-	ms.date="08/31/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 # Adding a Certificate to the Java CA Certificates Store

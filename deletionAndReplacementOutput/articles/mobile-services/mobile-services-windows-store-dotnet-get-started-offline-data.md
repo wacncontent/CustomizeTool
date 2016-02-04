@@ -6,7 +6,7 @@ deleted:
 		
 		> [AZURE.VIDEO build-offline-apps-with-mobile-services]
 
-reason: ()
+reason: (video)
 
 deleted:
 

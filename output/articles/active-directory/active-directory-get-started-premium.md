@@ -29,11 +29,11 @@ To sign up, see the [Volume Licensing](http://www.microsoft.com/licensing/how-to
 
 ## Step 2: Activate your license plan
 
-If this is the first time you have purchased a license plan through Microsoft’s Enterprise Volume Licensing program, you will need to first activate your license plan before you can start assigning licenses from within your Azure Active Directory directory. To do this, you must click on either the Sign In or Sign Up link found in the confirmation email (see below) you will receive after your very first license plan purchase has been completed. On any subsequent purchase for this directory the licenses will automatically be activated in the same directory.
+If this is the first time you have purchased a license plan through Microsoft's Enterprise Volume Licensing program, you will need to first activate your license plan before you can start assigning licenses from within your Azure Active Directory directory. To do this, you must click on either the Sign In or Sign Up link found in the confirmation email (see below) you will receive after your very first license plan purchase has been completed. On any subsequent purchase for this directory the licenses will automatically be activated in the same directory.
 
 ![][1]
 
-If you have an existing tenant, select the **Sign In** link to sign in with your existing administrator account. It’s important that you sign in with the global administrator credentials from the directory where the licenses must be activated.
+If you have an existing tenant, select the **Sign In** link to sign in with your existing administrator account. It's important that you sign in with the global administrator credentials from the directory where the licenses must be activated.
 
 If you want to create a new Azure Active Directory tenant to use with your licensing plan then you should select the **Sign Up** link which will take you to the following screen.
 
@@ -73,7 +73,7 @@ New administrators in your subscription can also activate their access to the Ma
 
 ## Step 4: Assign license to user accounts
 
-Before you can start using the plan you purchased, you’ll need to manually assign licenses to user accounts within your organization so that they can use the rich features provided with Premium. Use the following steps to assign licenses to users so they can use Azure Active Directory Premium features.
+Before you can start using the plan you purchased, you'll need to manually assign licenses to user accounts within your organization so that they can use the rich features provided with Premium. Use the following steps to assign licenses to users so they can use Azure Active Directory Premium features.
 
 To assign licenses to users:
 
@@ -89,15 +89,15 @@ To assign licenses to users:
 
 ## License restrictions
 
-Some license plans are subsets or supersets of other license plans. In most cases, a user cannot be assigned a license plan that has already been assigned to them. If it’s your intention to assign a license plan that is a superset, you’ll need to first remove the subset license plan.
+Some license plans are subsets or supersets of other license plans. In most cases, a user cannot be assigned a license plan that has already been assigned to them. If it's your intention to assign a license plan that is a superset, you'll need to first remove the subset license plan.
 
 ## License requirements
 
-When you assign a license to a user, you can specify a primary usage location in the properties of their account as shown below. If a usage location is not specified, the tenant’s location is automatically assigned to the user.
+When you assign a license to a user, you can specify a primary usage location in the properties of their account as shown below. If a usage location is not specified, the tenant's location is automatically assigned to the user.
 
 ![][12]
 
-The availability of services and features for a Microsoft cloud service varies by country or region. A service, such as Voice over Internet Protocol (VoIP), may be available in one country or region, and not available in another. Features within a service can be restricted for legal reasons in certain countries or regions. To see if a service or feature is available with or without restrictions, look for your country or region on the service’s license restrictions site.
+The availability of services and features for a Microsoft cloud service varies by country or region. A service, such as Voice over Internet Protocol (VoIP), may be available in one country or region, and not available in another. Features within a service can be restricted for legal reasons in certain countries or regions. To see if a service or feature is available with or without restrictions, look for your country or region on the service's license restrictions site.
 
 ## What's next
 

@@ -1,22 +1,22 @@
 <properties
-	pageTitle="How to use Hudson with the Azure Blob service | Windows Azure"
+	pageTitle="How to use Hudson with Blob storage | Windows Azure"
 	description="Describes how to use Hudson with Azure Blob storage as a repository for build artifacts."
 	services="storage"
 	documentationCenter="java"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="10/12/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 # Using Azure Storage with a Hudson Continuous Integration solution
 
 ## Overview
 
-The following information shows how to use the Azure Blob service as a repository of build artifacts created by a Hudson Continuous Integration (CI) solution, or as a source of downloadable files to be used in a build process. One of the scenarios where you would find this useful is when you're coding in an agile development environment (using Java or other languages), builds are running based on continuous integration, and you need a repository for your build artifacts, so that you could, for example, share them with other organization members, your customers, or maintain an archive.  Another scenario is when your build job itself requires other files, for example, dependencies to download as part of the build input.
+The following information shows how to use Blob storage as a repository of build artifacts created by a Hudson Continuous Integration (CI) solution, or as a source of downloadable files to be used in a build process. One of the scenarios where you would find this useful is when you're coding in an agile development environment (using Java or other languages), builds are running based on continuous integration, and you need a repository for your build artifacts, so that you could, for example, share them with other organization members, your customers, or maintain an archive.  Another scenario is when your build job itself requires other files, for example, dependencies to download as part of the build input.
 
 In this tutorial you will be using the Azure Storage plugin for Hudson CI made available by Microsoft.
 
@@ -82,11 +82,11 @@ To use the Blob service with Hudson, you'll need to install the Azure Storage pl
 2. On the **Manage Hudson** page, click **Configure System**.
 3. In the **Windows Azure Storage Account Configuration** section:
 
-    a. Enter your storage account name, which you can obtain from the [Azure Management Portal](https://manage.windowsazure.cn).
+    a. Enter your storage account name, which you can obtain from the [Azure Management Portal](portal.azure.com).
 
-    b. Enter your storage account key, also obtainable from the Azure Management Portal.
+    b. Enter your storage account key, also obtainable from the [Azure Management Portal](portal.azure.com).
 
-    c. Use the default value for **Blob Service Endpoint URL** if you are using the public Azure cloud. If you are using a different Azure cloud, use the endpoint as specified in the Azure Management Portal for your storage account.
+    c. Use the default value for **Blob Service Endpoint URL** if you are using the public Azure cloud. If you are using a different Azure cloud, use the endpoint as specified in the [Azure Management Portal](portal.azure.com) for your storage account.
 
     d. Click **Validate storage credentials** to validate your storage account.
 
@@ -125,7 +125,7 @@ For instruction purposes, first we'll need to create a job that will create seve
 13. In the Hudson dashboard, click **Build Now** to run **MyJob**. Examine the console output for status. Status messages for Azure Storage will be included in the console output when the post-build action starts to upload build artifacts.
 14. Upon successful completion of the job, you can examine the build artifacts by opening the public blob.
 
-    a. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
+    a. Sign in to the [Azure Management Portal](portal.azure.com).
 
     b. Click **Storage**.
 
@@ -162,7 +162,7 @@ The following provides an overview of the Blob service components.
 
     `http://storageaccount.blob.core.chinacloudapi.cn/container_name/blob_name`
 
-    (The format above applies to the public Azure cloud. If you are using a different Azure cloud, use the endpoint within the Azure Management Portal to determine your URL endpoint.)
+    (The format above applies to the public Azure cloud. If you are using a different Azure cloud, use the endpoint within the [Azure Management Portal](portal.azure.com) to determine your URL endpoint.)
 
     In the format above, `storageaccount` represents the name of your storage account, `container_name` represents the name of your container, and `blob_name` represents the name of your blob, respectively. Within the container name, you can have multiple paths, separated by a forward slash, **/**. The example container name in this tutorial was **MyJob**, and **${BUILD\_ID}/${BUILD\_NUMBER}** was used for the common virtual path, resulting in the blob having a URL of the following form:
 

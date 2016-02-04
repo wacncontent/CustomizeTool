@@ -1,0 +1,7 @@
+updated docs: 0
+
+updated includes: 4
+includes/service-bus-event-hubs-get-started-receive-ephcs.md
+includes/service-bus-event-hubs-get-started-receive-storm.md
+includes/service-bus-event-hubs-get-started-send-c.md
+includes/service-bus-event-hubs-get-started-send-java.md

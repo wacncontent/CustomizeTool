@@ -7,14 +7,10 @@
     authors="lizap" 
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/12/2015" 
-    ms.author="mbaldwin" />
+<tags
+	ms.service="remoteapp"
+	ms.date="08/12/2015"
+	wacn.date=""/>
 
 
 

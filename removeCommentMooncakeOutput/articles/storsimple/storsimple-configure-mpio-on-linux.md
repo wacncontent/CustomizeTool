@@ -1,23 +1,19 @@
 <properties 
-   pageTitle="Configure MPIO on StorSimple Linux host| Microsoft Azure"
+   pageTitle="Configure MPIO on StorSimple Linux host| Windows Azure"
    description="Configure MPIO on StorSimple connected to a Linux host running CentOS 6.6"
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
    manager="adinah"
    editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/28/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 # Configure MPIO on a StorSimple host running CentOS
 
-This article explains the steps required to configure Multipathing IO (MPIO) on your Centos 6.6 host server. The host server is connected to your Microsoft Azure StorSimple device for high availability via iSCSI initiators. It describes in detail the automatic discovery of multipath devices and the specific setup only for StorSimple volumes.
+This article explains the steps required to configure Multipathing IO (MPIO) on your Centos 6.6 host server. The host server is connected to your Windows Azure StorSimple device for high availability via iSCSI initiators. It describes in detail the automatic discovery of multipath devices and the specific setup only for StorSimple volumes.
 
 This procedure is applicable to all the models of StorSimple 8000 series devices.
 
@@ -163,9 +159,9 @@ This section details the configuration prerequisites for CentOS server and your 
 
 Your StorSimple device should have:
 
-- A minimum of two interfaces enabled for iSCSI. To verify that two interfaces are iSCSI-enabled on your StorSimple device, perform the following steps in the Management Portal of your StorSimple device:
+- A minimum of two interfaces enabled for iSCSI. To verify that two interfaces are iSCSI-enabled on your StorSimple device, perform the following steps in the Azure Management Portal for your StorSimple device:
 
-	1. Log into the Management Portal of your StorSimple device.
+	1. Log into the Management Portal for your StorSimple device.
 
 	1. Select your StorSimple Manager service, click **Devices** and choose the specific StorSimple device. Click **Configure** and verify the network interface settings. A screenshot with two iSCSI-enabled network interfaces is shown below. Here DATA 2 and DATA 3, both 10 GbE interfaces are enabled for iSCSI. 
 	
@@ -340,14 +336,14 @@ This load-balancing algorithm uses all the available multipaths to the active co
 	    		Login to [iface: eth1, target: iqn.1991-05.com.microsoft:storsimple8100-shx0991003g00dv-target, portal: 10.126.162.26,3260] successful.
 
 
-		If you see only one host interface and two paths here, then you need to enable both the interfaces on host for iSCSI. You can follow the [detailed instructions in Linux documentation](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Online_Storage_Reconfiguration_Guide/iscsioffloadmain.html).
+		If you see only one host interface and two paths here, then you need to enable both the interfaces on host for iSCSI. You can follow the [detailed instructions in Linux documentation](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/5/html/Online_Storage_Reconfiguration_Guide/iscsioffloadmain.html).
 
 	
-	1. A volume is exposed to the CentOS server from the StorSimple device. For more information, see how to [Step 6: Create a volume](https://sandboxmsdnstage.redmond.corp.microsoft.com/en-us/library/azure/dn772357.aspx) via Management Portal on your StorSimple device.
+	1. A volume is exposed to the CentOS server from the StorSimple device. For more information, see [Step 6: Create a volume](/documentation/articles/storsimple-deployment-walkthrough#step-6-create-a-volume) via the Azure Management Portal on your StorSimple device.
 
 	1. Verify the available paths. Type:
 
-		`multipath –l`
+		`multipath -l`
 
 		The following example shows the output for two network interfaces on a StorSimple device connected to a single host network interface with two available paths.
 
@@ -382,13 +378,13 @@ A. If you have made any changes to the `multipath.conf` file, you will need to r
 
 Q. I have enabled two network interfaces on the StorSimple device and two network interfaces on the host. When I list the available paths, I see only two paths. I expected to see four available paths.
 
-A. Make sure that the two paths are on the same subnet and routable. If the network interfaces are on different vLANs and not routable, you will see only two paths. One way to verify this is to make sure that you can reach both the host interfaces from a network interface on the StorSimple device. You will need to [contact Microsoft Support](storsimple-contact-microsoft-support.md) as this verification can only be done via a support session.
+A. Make sure that the two paths are on the same subnet and routable. If the network interfaces are on different vLANs and not routable, you will see only two paths. One way to verify this is to make sure that you can reach both the host interfaces from a network interface on the StorSimple device. You will need to [contact Microsoft Support](/documentation/articles/storsimple-contact-microsoft-support) as this verification can only be done via a support session.
 
 Q. When I list available paths, I do not see any output.
 
-A. Typically, not seeing any multipathed paths suggests a problem with the multipathing daemon, and it’s most likely that any problem here lies in the `multipath.conf` file. 
+A. Typically, not seeing any multipathed paths suggests a problem with the multipathing daemon, and it's most likely that any problem here lies in the `multipath.conf` file. 
 
-It would also be worth checking that you can actually see some disks after connecting to the target, as no response from the multipath listings could also mean you don’t have any disks.
+It would also be worth checking that you can actually see some disks after connecting to the target, as no response from the multipath listings could also mean you don't have any disks.
 
 - Use the following command to rescan the SCSI bus: 
  
@@ -400,7 +396,7 @@ It would also be worth checking that you can actually see some disks after conne
  
 - Or
 
-	`$ fdisk –l`
+	`$ fdisk -l`
  
 	These will return details of recently added disks.
   
@@ -408,7 +404,7 @@ It would also be worth checking that you can actually see some disks after conne
  
 	`cat /sys/block/<DISK>/device/model` 
  
-	This will return a string, which will determine if it’s a StorSimple disk.
+	This will return a string, which will determine if it's a StorSimple disk.
 
 A less likely but possible cause could also be stale iscsid pid. Use the following command to log off from the iSCSI sessions:
 
@@ -423,7 +419,7 @@ Q. I am not sure if my device is whitelisted.
 
 A. To verify whether your device is whitelisted, use the following troubleshooting interactive command:
 
-	multipathd –k
+	multipathd -k
 	multipathd> show devices
 	available block devices:
     ram0 devnode blacklisted, unmonitored
@@ -460,7 +456,7 @@ A. To verify whether your device is whitelisted, use the following troubleshooti
     dm-3 devnode blacklisted, unmonitored
 
 
-For more information, see how to [use troubleshooting interactive command for multipathing](http://www.centos.org/docs/5/html/5.1/DM_Multipath/multipath_config_confirm.html).
+For more information, go to [use troubleshooting interactive command for multipathing](http://www.centos.org/docs/5/html/5.1/DM_Multipath/multipath_config_confirm.html).
 
 ## List of useful commands
 
@@ -473,15 +469,15 @@ For more information, see how to [use troubleshooting interactive command for mu
 ||`iscsiadm -m node --login -T <TARGET_IQN>`|Log in to the iSCSI target|
 ||`iscsiadm -m node --logout -p <Target_IP>`|Log out from the iSCSI target|
 ||`cat /etc/iscsi/initiatorname.iscsi`|Print iSCSI initiator name|
-||`iscsiadm –m session –s <sessionid> -P 3`|Check the state of the iSCSI session and volume discovered on the host|
-||`iscsi –m session`|Shows all the iSCSI sessions established between the host and the StorSimple device|
+||`iscsiadm -m session -s <sessionid> -P 3`|Check the state of the iSCSI session and volume discovered on the host|
+||`iscsi -m session`|Shows all the iSCSI sessions established between the host and the StorSimple device|
 | | | |
 |**Multipathing**|`service multipathd start`|Start multipath daemon|
 ||`service multipathd stop`|Stop multipath daemon|
 ||`service multipathd restart`|Restart multipath daemon|
-||`chkconfig multipathd on` </br> OR </br> `mpathconf –with_chkconfig y`|Enable multipath daemon to start at boot time|
-||`multipathd –k`|Start the interactive console for troubleshooting|
-||`multipath –l`|List multipath connections and devices|
+||`chkconfig multipathd on` </br> OR </br> `mpathconf -with_chkconfig y`|Enable multipath daemon to start at boot time|
+||`multipathd -k`|Start the interactive console for troubleshooting|
+||`multipath -l`|List multipath connections and devices|
 ||`mpathconf --enable`|Create a sample mulitpath.conf file in `/etc/mulitpath.conf`|
 ||||
 

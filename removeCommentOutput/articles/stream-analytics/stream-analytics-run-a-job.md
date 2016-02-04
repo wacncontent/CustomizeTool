@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Run a Job | Microsoft Azure" 
+	pageTitle="Run a Job | Windows Azure" 
 	description="Run a Job learning path segment."
 	documentationCenter=""
 	services="stream-analytics"
@@ -7,14 +7,10 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="stream-analytics" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="data-services" 
-	ms.date="09/29/2015" 
-	ms.author="jeffstok"/>
+<tags
+	ms.service="stream-analytics"
+	ms.date="11/10/2015"
+	wacn.date=""/>
 
 # Run a job
 
@@ -22,7 +18,7 @@ When a job input, query and output have all been specified you can start the Str
 
 To start your job:
 
-1.	In the Azure portal, from the job dashboard, click **Start** at the bottom of the page.
+1.	In the Azure Management Portal, from the job dashboard, click **Start** at the bottom of the page.
 
     ![Start Button](./media/stream-analytics-run-a-job/1-stream-analytics-run-a-job.png)  
 
@@ -43,12 +39,12 @@ To start your job:
     ![Azure preview portal Progress](./media/stream-analytics-run-a-job/6-stream-analytics-run-a-job.png)  
 
 ## Get help
-For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics)
+For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/home?forum=AzureStreamAnalytics)
 
 ## Next steps
 
-- [Introduction to Azure Stream Analytics](stream-analytics-introduction.md)
-- [Get started using Azure Stream Analytics](stream-analytics-get-started.md)
-- [Scale Azure Stream Analytics jobs](stream-analytics-scale-jobs.md)
-- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+- [Introduction to Azure Stream Analytics](/documentation/articles/stream-analytics-introduction)
+- [Get started using Azure Stream Analytics](/documentation/articles/stream-analytics-get-started)
+- [Scale Azure Stream Analytics jobs](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)

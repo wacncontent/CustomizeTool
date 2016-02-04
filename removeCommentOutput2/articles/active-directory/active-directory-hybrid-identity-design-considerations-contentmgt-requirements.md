@@ -14,7 +14,7 @@
 
 # Determine content management requirements for your hybrid identity solution
 
-Understanding the content management requirements for your business may direct affect your decision on which hybrid identity solution to use. With the proliferation of multiple devices and the capability of users to bring their own devices ([BYOD](http://aka.ms/byodcg)), the company must protect its own data but it also must keep user’s privacy intact. Usually when a user has his own device he might have also multiple credentials that will be alternating according to the application that he uses. It is important to differentiate what content was created using personal credentials versus the ones created using corporate credentials. Your identity solution should be able to interact with cloud services to provide a seamless experience to the end user while ensure his privacy and increase the protection against data leakage. 
+Understanding the content management requirements for your business may direct affect your decision on which hybrid identity solution to use. With the proliferation of multiple devices and the capability of users to bring their own devices ([BYOD](http://aka.ms/byodcg)), the company must protect its own data but it also must keep userâs privacy intact. Usually when a user has his own device he might have also multiple credentials that will be alternating according to the application that he uses. It is important to differentiate what content was created using personal credentials versus the ones created using corporate credentials. Your identity solution should be able to interact with cloud services to provide a seamless experience to the end user while ensure his privacy and increase the protection against data leakage. 
 
 Your identity solution will be leveraged by different technical controls in order to provide content management as shown in the figure below:
  
@@ -26,12 +26,12 @@ In general, content management requirements will leverage your identity manageme
 
 - Privacy: identifying the user that owns a resource and applying the appropriate controls to maintain integrity.
 - Data Classification: identify the user or group and level of access to an object according to its classification. 
-- Data Leakage Protection: security controls responsible for protecting data to avoid leakage will need to interact with the identity system to validate the user’s identity. This is also important for auditing trail purpose.
+- Data Leakage Protection: security controls responsible for protecting data to avoid leakage will need to interact with the identity system to validate the userâs identity. This is also important for auditing trail purpose.
 
 >[AZURE.NOTE]
 Read [data classification for cloud readiness](http://download.microsoft.com/download/0/A/3/0A3BE969-85C5-4DD2-83B6-366AA71D1FE3/Data-Classification-for-Cloud-Readiness.pdf) for more information about best practices and guidelines for data classification.
 
-When planning your hybrid identity solution ensure that the following questions are answered according to your organization’s requirements:
+When planning your hybrid identity solution ensure that the following questions are answered according to your organizationâs requirements:
 
 - Does your company have security controls in place to enforce data privacy?
  - If yes, will those security controls be able to integrate with the hybrid identity solution that you are going to adopt?

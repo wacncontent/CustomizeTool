@@ -8,5 +8,5 @@ replaced by:
 
 		"allowedValues": ["China East", "China North"],
 
-reason: ()
+reason: (region diff)
 

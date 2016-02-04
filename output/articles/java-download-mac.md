@@ -5,11 +5,11 @@
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor=""/>
 
 <tags
 	ms.service="multiple"
-	ms.date="10/12/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 #Download the Azure SDK for Java

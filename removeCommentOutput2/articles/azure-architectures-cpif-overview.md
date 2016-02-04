@@ -8,7 +8,7 @@
    editor=""/>
 
 <tags
-	ms.service="cloud-services"
+	ms.service="multiple"
 	ms.date="03/25/2015"
 	wacn.date=""/>
 
@@ -27,9 +27,9 @@ Both public and private cloud environments provide common elements to support th
 
 These architectural patterns fall within the following categories:
 
-- **Infrastructure**– Windows Azure is an Infrastructure- and Platform-as-a-Service Solution which is comprised of several underlying services and capabilities.  These services largely can be decomposed into compute, storage and network services, however there are several capabilities which may fall outside of these definitions.  Infrastructure patterns detail a given functional area of Windows Azure which is required to provide a given service to one or more Solutions hosted within a given Azure subscription. 
-- **Foundation** – When composing a multi-tiered application or service within Azure, several components must be used in combination to provide a suitable hosting environment.  Foundation patterns compose one or more services from Windows Azure to support a given layer of functionality within an application. This may require the use of one or more components described in the infrastructure patterns outlined above. For example, the presentation layer of a multi-tier application requires compute, network and storage capabilities within Azure to become functional.  Foundation patterns are meant to be composed with other patterns as part of a given Solution.
-- **Solution** – Solution patterns are composed of infrastructure and/or foundation patterns to represent an end application or service being developed.  It is envisioned that complex solutions would not be developed independently of other patterns.  Rather, they should utilize the components and interfaces defined in each of the pattern categories outlined above.    
+- **Infrastructure**- Windows Azure is an Infrastructure- and Platform-as-a-Service Solution which is comprised of several underlying services and capabilities.  These services largely can be decomposed into compute, storage and network services, however there are several capabilities which may fall outside of these definitions.  Infrastructure patterns detail a given functional area of Windows Azure which is required to provide a given service to one or more Solutions hosted within a given Azure subscription. 
+- **Foundation** - When composing a multi-tiered application or service within Azure, several components must be used in combination to provide a suitable hosting environment.  Foundation patterns compose one or more services from Windows Azure to support a given layer of functionality within an application. This may require the use of one or more components described in the infrastructure patterns outlined above. For example, the presentation layer of a multi-tier application requires compute, network and storage capabilities within Azure to become functional.  Foundation patterns are meant to be composed with other patterns as part of a given Solution.
+- **Solution** - Solution patterns are composed of infrastructure and/or foundation patterns to represent an end application or service being developed.  It is envisioned that complex solutions would not be developed independently of other patterns.  Rather, they should utilize the components and interfaces defined in each of the pattern categories outlined above.    
 
 ## Azure Architectural Pattern Concepts
 

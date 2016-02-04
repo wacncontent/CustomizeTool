@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Run a Hadoop job using DocumentDB and HDInsight | Microsoft Azure" 
+	pageTitle="Run a Hadoop job using DocumentDB and HDInsight | Windows Azure" 
 	description="Learn how to run a simple Hive, Pig, and MapReduce job with DocumentDB and Azure HDInsight."
 	services="documentdb" 
 	authors="AndrewHoh" 
@@ -8,14 +8,10 @@
 	documentationCenter=""/>
 
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="java" 
-	ms.topic="article" 
-	ms.date="07/20/2015" 
-	ms.author="anhoh"/>
+<tags
+	ms.service="documentdb"
+	ms.date="10/28/2015"
+	wacn.date=""/>
 
 #<a name="DocumentDB-HDInsight"></a>Run a Hadoop job using DocumentDB and HDInsight
 
@@ -42,7 +38,12 @@ Don't have time to complete the tutorial and just want to get the full sample Po
 	<tr><th>Hadoop Connector Version</th>
 		<td>1.1.0</td></tr>
 	<tr><th>Script Uri</th>
+<!-- deleted by customization
+		<td>https://portalcontent.blob.core.chinacloudapi.cn/scriptaction/documentdb-hadoop-installer-v03.ps1</td></tr>
+-->
+<!-- keep by customization: begin -->
 		<td>https://portalcontent.blob.core.windows.net/scriptaction/documentdb-hadoop-installer-v03.ps1</td></tr>
+<!-- keep by customization: end -->
 	<tr><th>Date Modified</th>
 		<td>07/20/2015</td></tr>
 	<tr><th>Supported HDInsight Versions</th>
@@ -80,16 +81,16 @@ When you provision an HDInsight cluster, you specify an Azure Storage account. A
 
 1. Sign into the [Azure management portal][azure-classic-portal].
 	
-	> [AZURE.NOTE] Azure HDInsight is currently supported in the Azure management portal, while Azure DocumentDB only exists in the Microsoft Azure  portal.
+	> [AZURE.NOTE] Azure HDInsight is currently supported in the Azure management portal, while Azure DocumentDB only exists in the <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure  portal.
 
 2. Click **+ NEW** on the lower left corner, point to **DATA SERVICES**, point to **STORAGE**, and then click **QUICK CREATE**.
-	![Azure portal where you can use Quick Create to set up a new storage account.][image-storageaccount-quickcreate]
+	![Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> portal <!-- keep by customization: end --> where you can use Quick Create to set up a new storage account.][image-storageaccount-quickcreate]
 
 3. Enter the **URL**, select the **LOCATION** and **REPLICATION** values, and then click **CREATE STORAGE ACCOUNT**. Affinity groups are not supported. 
 	
 	You will see the new storage account in the storage list.
 
-	> [AZURE.IMPORTANT] For best performance, make sure your storage account, HDInsight cluster, and DocumentDB account are located in the same Azure region. Azure regions that support all three services are:  **East Asia**, **Southeast Asia**, **North Europe**, **West Europe**, **East US**, and **West US**.
+	> [AZURE.IMPORTANT] For best performance, make sure your storage account, HDInsight cluster, and DocumentDB account are located in the same Azure region. Azure regions that support all three services are:  <!-- deleted by customization **China East** --><!-- keep by customization: begin --> **East Asia** <!-- keep by customization: end -->, <!-- deleted by customization **China North** --><!-- keep by customization: begin --> **Southeast Asia** <!-- keep by customization: end -->, <!-- deleted by customization **China North** --><!-- keep by customization: begin --> **North Europe** <!-- keep by customization: end -->, **West Europe**, <!-- deleted by customization **China East** --><!-- keep by customization: begin --> **East US** <!-- keep by customization: end -->, and <!-- deleted by customization **China North** --><!-- keep by customization: begin --> **West US** <!-- keep by customization: end -->.
 
 4. Wait until the **STATUS** of the new storage account is changed to **Online**.
 
@@ -162,7 +163,7 @@ This tutorial uses Script Action from the Azure management portal to customize y
 			<td>Specifies the default container on the storage account that is used as the default file system for the HDInsight cluster. If you choose <strong>Use Existing Storage</strong> for the <strong>Storage Account</strong> field, and there are no existing containers in that account, the container is created by default with the same name as the cluster name. If a container with the name of the cluster already exists, a sequence number will be appended to the container name.
         </td></tr>
 		<tr><td>Additional Storage Accounts</td>
-			<td>HDInsight supports multiple storage accounts. There is no limit on the additional storage accounts that can be used by a cluster. However, if you create a cluster using the Azure portal, you have a limit of seven due to the UI constraints. Each additional storage account you specify adds an extra Storage Account page to the wizard where you can specify the account information.</td></tr>
+			<td>HDInsight supports multiple storage accounts. There is no limit on the additional storage accounts that can be used by a cluster. However, if you create a cluster using the Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> portal <!-- keep by customization: end -->, you have a limit of seven due to the UI constraints. Each additional storage account you specify adds an extra Storage Account page to the wizard where you can specify the account information.</td></tr>
 	</table>
 
 	Click the right arrow.
@@ -177,7 +178,12 @@ This tutorial uses Script Action from the Azure management portal to customize y
 			<td>Specify a name for the script action.</td></tr>
 		<tr><td>Script URI</td>
 			<td>Specify the URI to the script that is invoked to customize the cluster.</br></br>
+<!-- deleted by customization
+			Please enter: </br> <strong>https://portalcontent.blob.core.chinacloudapi.cn/scriptaction/documentdb-hadoop-installer-v03.ps1</strong>.</td></tr>
+-->
+<!-- keep by customization: begin -->
 			Please enter: </br> <strong>https://portalcontent.blob.core.windows.net/scriptaction/documentdb-hadoop-installer-v03.ps1</strong>.</td></tr>
+<!-- keep by customization: end -->
 		<tr><td>Node Type</td>
 			<td>Specifies the nodes on which the customization script is run. You can choose <b>All Nodes</b>, <b>Head nodes only</b>, or <b>Worker nodes</b> only.</br></br>
 			Please select <strong>All Nodes</strong>.</td></tr>
@@ -461,19 +467,41 @@ To learn more, see the following articles:
 [apache-pig]: http://pig.apache.org/
 [getting-started]: documentdb-get-started.md
 
+<!-- deleted by customization
+[azure-classic-portal]: https://manage.windowsazure.cn/
+-->
+<!-- keep by customization: begin -->
 [azure-classic-portal]: https://manage.windowsazure.com/
+<!-- keep by customization: end -->
 [azure-powershell-diagram]: ./media/documentdb-run-hadoop-with-hdinsight/azurepowershell-diagram-med.png
+<!-- deleted by customization
+[azure-portal]: https://manage.windowsazure.cn/
+
+[documentdb-hdinsight-samples]: http://portalcontent.blob.core.chinacloudapi.cn/samples/documentdb-hdinsight-samples.zip
+-->
+<!-- keep by customization: begin -->
 [azure-portal]: https://portal.azure.com/
 
 [documentdb-hdinsight-samples]: http://portalcontent.blob.core.windows.net/samples/documentdb-hdinsight-samples.zip
+<!-- keep by customization: end -->
 [documentdb-github]: https://github.com/Azure/azure-documentdb-hadoop
 [documentdb-java-application]: documentdb-java-application.md
+<!-- deleted by customization
+[documentdb-manage-collections]: /documentation/articles/documentdb-manage#Collections
+-->
+<!-- keep by customization: begin -->
 [documentdb-manage-collections]: documentdb-manage.md#Collections
+<!-- keep by customization: end -->
 [documentdb-manage-document-storage]: documentdb-manage.md#IndexOverhead
 [documentdb-manage-throughput]: documentdb-manage.md#ProvThroughput
 [documentdb-import-data]: documentdb-import-data.md
 
+<!-- deleted by customization
+[hdinsight-custom-provision]: /documentation/articles/hdinsight-provision-clusters#powershell
+-->
+<!-- keep by customization: begin -->
 [hdinsight-custom-provision]: ../hdinsight/hdinsight-provision-clusters.md#powershell
+<!-- keep by customization: end -->
 [hdinsight-develop-deploy-java-mapreduce]: ../hdinsight/hdinsight-develop-deploy-java-mapreduce.md
 [hdinsight-hadoop-customize-cluster]: ../hdinsight/hdinsight-hadoop-customize-cluster.md
 [hdinsight-get-started]: ../hdinsight-get-started.md 

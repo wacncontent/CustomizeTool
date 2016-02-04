@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/30/2015"
+	ms.date="10/29/2015"
 	wacn.date=""/>
 
 
@@ -275,4 +275,6 @@
 
 
 
-[hdinsight-hadoop-emulator-get-started]: /documentation/articles/hdinsight-get-started-emulator
+[hdinsight-hadoop-emulator-get-started]: /documentation/articles/hdinsight-hadoop-emulator-get-started
+
+ 

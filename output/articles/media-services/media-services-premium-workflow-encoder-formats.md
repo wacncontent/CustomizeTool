@@ -1,17 +1,15 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Media Encoder Premium Workflow Formats and Codecs" 
 	description="This topic gives an overview of Media Encoder Premium Workflow Formats formats and codecs" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
 	wacn.date=""/>
 
 #Media Encoder Premium Workflow Formats and Codecs
@@ -107,7 +105,7 @@ On ingest, **Media Encoder Premium Workflow** supports:
 
 1. SCC files
 1. SMPTE-TT files
-1. CEA-608/CEA-708 – carried as user data (SEI messages of H.264 elementary streams, ATSC/53, SCTE20) or carried as ancillary data in MXF/GXF files
+1. CEA-608/CEA-708 - carried as user data (SEI messages of H.264 elementary streams, ATSC/53, SCTE20) or carried as ancillary data in MXF/GXF files
 1. STL subtitle files
 
 On output, the following options are available:
@@ -124,3 +122,12 @@ Note: not all of the above output formats are supported for delivery via streami
 ##Known issues
 
 If your input video does not contain closed captioning, the output Asset will still contain an empty TTML file. 
+
+
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

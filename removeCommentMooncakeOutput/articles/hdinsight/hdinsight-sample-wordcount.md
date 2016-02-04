@@ -30,8 +30,8 @@ The program are installed on the clusters. The text file analyzed in this tutori
 
 **Prerequisites**:
 
-- **An HDInsight cluster**. For instructions about the various ways in which such clusters can be created, see [Get Started with Azure HDInsight][hdinsight-get-started] or [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters).
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
+- **An HDInsight cluster**. For instructions about the various ways in which such clusters can be created, see [Get Started with Azure HDInsight][hdinsight-get-started] or [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters-v1).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 <a id="run-sample"></a>
 ## Run the sample by using Azure PowerShell
@@ -204,6 +204,6 @@ Note that the output files of a MapReduce job are immutable. So if you rerun thi
 [hdinsight-sample-cs-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 [image-hdi-sample-wordcount-output]: ./media/hdinsight-sample-wordcount/HDI.Sample.WordCount.Output.png

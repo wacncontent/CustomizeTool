@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Set up protection between on-premises VMM sites with SAN"
+	pageTitle="Set up protection between on-premises VMM sites using SAN with Azure Site Recovery | Windows Azure"
 	description="Azure Site Recovery coordinates the replication, failover and recovery of Hyper-V virtual machines between on-premises sites using SAN replication."
 	services="site-recovery"
 	documentationCenter=""
@@ -12,7 +12,7 @@
 	ms.date="10/12/2015"
 	wacn.date=""/>
 
-# Set up protection between on-premises VMM sites with SAN
+# Set up protection between on-premises VMM sites using SAN with Azure Site Recovery
 
 Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover and recovery of virtual machines and physical servers. Read about possible deployment scenarios in the [Azure Site Recovery overview](/documentation/articles/site-recovery-overview).
 
@@ -68,7 +68,7 @@ This scenario protects your workloads by backing up Hyper-V virtual machines fro
 ### SAN prerequisites
 
 - Using SAN replication you can replicate guest-clustered virtual machines with iSCSI or fibre channel storage, or using shared virtual hard disks (vhdx). SAN prerequisites are as follows:
-	- You’ll need two SAN arrays set up, one in the primary site and one in the secondary.
+	- You'll need two SAN arrays set up, one in the primary site and one in the secondary.
 	- Network infrastructure should be set up between the arrays. Peering and replication should be configured. Replication licenses should be set up in accordance with the storage array requirements.
 	- Networking should be set up between the Hyper-V host servers and the storage array so that hosts can communicate with storage LUNs using ISCSI or Fibre Channel.
 	- See a list of [supported storage arrays](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx).
@@ -82,7 +82,7 @@ This scenario protects your workloads by backing up Hyper-V virtual machines fro
 You can optionally configure network mapping to ensure that replica virtual machines are optimally placed on Hyper-V host servers after failover, and that they can connect to appropriate VM networks. Note that:
 
 - When network mapping is enabled, a virtual machine at the primary location will be connected to a network and its replica at the target location will be connected to its mapped network.
-- If you don’t configure network mapping virtual machines won’t be connected to VM networks after failover.
+- If you don't configure network mapping virtual machines won't be connected to VM networks after failover.
 - VM networks must be set up in VMM. For details read Configuring VM Networks and Gateways in VMM
 - Virtual machines on the source VMM server should be connected to a VM network. The source VM network should be linked to a logical network that is associated with the cloud.
 
@@ -101,7 +101,7 @@ To prepare your VMM infrastructure you need to:
 
 Site Recovery orchestrates protection for virtual machines located on Hyper-V host servers in VMM clouds. You'll need to ensure that those clouds are set up properly before you begin Site Recovery deployment. A couple of good sources include:
 
-- [What’s New in Private Cloud](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/MDC-B357)
+- [What's New in Private Cloud](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/MDC-B357)
 - [VMM 2012 and the clouds](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html) on Gunter Danzeisen's blog.
 - [Configuring the VMM cloud fabric](https://msdn.microsoft.com/zh-cn/library/azure/dn883636.aspx#BKMK_Fabric)
 - [Creating a private cloud in VMM](https://technet.microsoft.com/zh-cn/library/jj860425.aspx)
@@ -227,7 +227,7 @@ Check the status bar to confirm that the vault was successfully created. The vau
 		- *.store.core.chinacloudapi.cn
 	- Allow the IP addresses described in [Azure Datacenter IP Ranges](https://msdn.microsoft.com/zh-cn/library/azure/dn175718.aspx) and HTTPS (443) protocol. You would have to white-list IP ranges of the Azure region that you plan to use and that of China North.
 
-	- If you use a custom proxy a VMM RunAs account (DRAProxyAccount) will be created automatically using the specified proxy credentials. Configure the proxy server so that this account can authenticate successfully. The VMM RunAs account settings can be modified in the VMM console. To do this, open the Settings workspace, expand Security, click Run As Accounts, and then modify the password for DRAProxyAccount. You’ll need to restart the VMM service so that this setting takes effect.
+	- If you use a custom proxy a VMM RunAs account (DRAProxyAccount) will be created automatically using the specified proxy credentials. Configure the proxy server so that this account can authenticate successfully. The VMM RunAs account settings can be modified in the VMM console. To do this, open the Settings workspace, expand Security, click Run As Accounts, and then modify the password for DRAProxyAccount. You'll need to restart the VMM service so that this setting takes effect.
 
 6. In **Registration Key**, select that you downloaded from Azure Site Recovery and copied to the VMM server.
 7. In **Vault name**, verify the name of the vault in which the server will be registered. Click *Next*.
@@ -322,7 +322,7 @@ After VMM servers are registered, you can configure cloud protection settings. Y
 
 ## Step 7: Enable replication for replication groups</h3>
 
-Before you can enable protection for virtual machines you’ll need to enable replication for storage replication groups.
+Before you can enable protection for virtual machines you'll need to enable replication for storage replication groups.
 
 1. In the Azure Site Recovery portal, in the properties page of the primary cloud open the **Virtual Machines** tab. Click **Add Replication Group**.
 2. Select one or more VMM replication groups that are associated with the cloud, verify the source and target arrays, and specify the replication frequency.
@@ -341,7 +341,7 @@ With this option VMM uses intelligent placement to optimally place the virtual m
 	![Enable protection](./media/site-recovery-vmm-san/SRSAN_EnableProtection.png)
 
 
-<P>After virtual machines are enabled for protection they appear in the Azure Site Recovery console. You can view virtual machine properties, track status, and fail over replication groups that contain multiple virtual machines. Note that in SAN replication all virtual machines associated with a replication group must fail over together. This is because failover occurs at the storage layer first. It’s important to group your replication groups properly and place only associated virtual machines together.</P>
+<P>After virtual machines are enabled for protection they appear in the Azure Site Recovery console. You can view virtual machine properties, track status, and fail over replication groups that contain multiple virtual machines. Note that in SAN replication all virtual machines associated with a replication group must fail over together. This is because failover occurs at the storage layer first. It's important to group your replication groups properly and place only associated virtual machines together.</P>
 
 Track progress of the Enable Protection action in the **Jobs** tab, including the initial replication. After the Finalize Protection job runs the virtual machine is ready for failover.
 	![Virtual machine protection job](./media/site-recovery-vmm-san/SRSAN_JobPropertiesTab.png)
@@ -366,8 +366,8 @@ Test your deployment to make sure virtual machines and data fail over as expecte
 	![Select test network](./media/site-recovery-vmm-san/SRSAN_TestFailover1.png)
 
 
-8. The test virtual machine will be created on the same host as the host on which the replica virtual machine exists. It isn’t added to the cloud in which the replica virtual machine is located.
-9. After replication the replica virtual machine will have an IP address that isn’t the same as the IP address of the primary virtual machine. If you're issuing addresses from DHCP then will be updated automatically. If you're  not using DHCP and you want to make sure the addresses are the same you'll need to run a couple of scripts.
+8. The test virtual machine will be created on the same host as the host on which the replica virtual machine exists. It isn't added to the cloud in which the replica virtual machine is located.
+9. After replication the replica virtual machine will have an IP address that isn't the same as the IP address of the primary virtual machine. If you're issuing addresses from DHCP then will be updated automatically. If you're  not using DHCP and you want to make sure the addresses are the same you'll need to run a couple of scripts.
 10. Run this sample script to retrieve the IP address.
 
     	$vm = Get-SCVirtualMachine -Name <VM_NAME>

@@ -6,10 +6,10 @@
    authors="kempb"
    manager="douge"
    editor="tlee" />
-<tags
-	ms.service="storage"
-	ms.date="08/24/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="storage"
+   ms.date="08/24/2015"
+   wacn.date="" />
 
 # Configuring and Using the Storage Emulator with Visual Studio
 

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create Azure BizTalk Services in the Azure portal | Microsoft Azure"
-	description="Learn how to provision or create Azure BizTalk Services in the Azure portal; MABS, WABS"
+	pageTitle="Create Azure BizTalk Services in the Azure Management Portal | Windows Azure"
+	description="Learn how to provision or create Azure BizTalk Services in the Azure Management Portal; MABS, WABS"
 	services="biztalk-services"
 	documentationCenter=""
 	authors="MandiOhlinger"
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="biztalk-services"
-	ms.workload="integration"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="hero-article"
-	ms.date="08/26/2015"
-	ms.author="mandia"/>
+	ms.date="12/01/2015"
+	wacn.date=""/>
 
 
 
@@ -204,7 +200,7 @@ The SQL Database scale is automatically configured. Typically, the default scale
 <td>Gives access to tables, blobs, and queues used by your BizTalk Service to save the following:
 
 <ul>
-<li>Log files that monitor the BizTalk Service. The monitoring output is also displayed in the **Monitoring** tab in the Azure portal.</li>
+<li>Log files that monitor the BizTalk Service. The monitoring output is also displayed in the **Monitoring** tab in the Azure portal.</li> 
 <li>When creating an X12 or AS2 agreement between partners, you can enable the Archiving feature to store message properties. This data is saved in the Storage account.</li>
 </ul>
 <br/>
@@ -265,7 +261,7 @@ Now that a BizTalk Service is created, familiarize yourself with the different [
 - [BizTalk Services: State Chart](biztalk-service-state-chart.md)<br/>
 - [BizTalk Services: Backup and Restore](biztalk-backup-restore.md)<br/>
 - [BizTalk Services: Throttling](biztalk-throttling-thresholds.md)<br/>
-- [BizTalk Services: Issuer Name and Issuer Key](biztalk-issuer-name-issuer-key.md)<br/>
+- [BizTalk Services: Issuer Name and Issuer Key](biztalk-issuer-name-issuer-key.md)<br/> 
 - [How do I Start Using the Azure BizTalk Services SDK](http://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
 - [Hybrid Connections](integration-hybrid-connection-overview.md)
 

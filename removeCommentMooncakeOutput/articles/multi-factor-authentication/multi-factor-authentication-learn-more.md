@@ -9,12 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+	ms.date="11/19/2015" 
+	wacn.date=""/>
 
 # Learn more about Azure Multi-Factor Authentication
 
@@ -23,17 +19,17 @@ The following is a collection of additional resources that will help you take fu
 
 ## Documentation
 
-[Configure MFA Server for use with IIS Authentication.](https://msdn.microsoft.com/library/azure/dn394291.aspx)
+[Configure MFA Server for use with IIS Authentication.](https://msdn.microsoft.com/zh-cn/library/azure/dn394291.aspx)
 
-[Configure MFA Server for use with Radius Authentication.](https://msdn.microsoft.com/library/azure/dn394299.aspx)
+[Configure MFA Server for use with Radius Authentication.](https://msdn.microsoft.com/zh-cn/library/azure/dn394299.aspx)
 
-[Configure MFA Server for use with LDAP Authentication.](https://msdn.microsoft.com/library/azure/dn394286.aspx)
+[Configure MFA Server for use with LDAP Authentication.](https://msdn.microsoft.com/zh-cn/library/azure/dn394286.aspx)
 
-[Configure MFA Server for use with Windows Authentication.](https://msdn.microsoft.com/library/azure/dn394278.aspx)
+[Configure MFA Server for use with Windows Authentication.](https://msdn.microsoft.com/zh-cn/library/azure/dn394278.aspx)
 
-[Remote Desktop Gateway and Azure Multi-Factor Authentication Server using RADIUS](https://msdn.microsoft.com/library/azure/dn394287.aspx)
+[Remote Desktop Gateway and Azure Multi-Factor Authentication Server using RADIUS](https://msdn.microsoft.com/zh-cn/library/azure/dn394287.aspx)
 
-[Building Multi-Factor Authentication into Custom Apps (SDK)](https://msdn.microsoft.com/library/azure/dn249464.aspx)
+[Building Multi-Factor Authentication into Custom Apps (SDK)](https://msdn.microsoft.com/zh-cn/library/azure/dn249464.aspx)
 
 
  

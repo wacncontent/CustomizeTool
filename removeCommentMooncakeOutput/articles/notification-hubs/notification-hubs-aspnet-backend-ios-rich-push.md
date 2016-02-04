@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="09/24/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 #Azure Notification Hubs Rich Push
@@ -19,10 +19,8 @@
 
 In order to engage users with instant rich contents, an application might want to push beyond plain text. These notifications promote user interactions and  present content such as urls, sounds, images/coupons, and more. This tutorial builds on the [Notify Users](/documentation/articles/notification-hubs-aspnet-backend-ios-notify-users) topic, and shows how to send push notifications that incorporate payloads (for example, image).
 
-
 This tutorial is compatible with iOS 7 & 8.
-
-  ![][IOS1]
+    ![][IOS1]
 
 At a high level:
 
@@ -92,7 +90,7 @@ At a high level:
             }
         }
 
-> [AZURE.NOTE]  (optional) Refer to [How to embed and access resources by using Visual C#](http://support.microsoft.com/kb/319292) for more information on how to add and obtain project resources.
+> [AZURE.NOTE]  (optional) Refer to [How to embed and access resources by using Visual C#](https://support.microsoft.com/zh-cn/kb/319292) for more information on how to add and obtain project resources.
 
 7. In **NotificationsController.cs**, redefine **NotificationsController**  with the following snippets. This sends an initial silent rich notification id to device and allows client-side retrieval of image:
 

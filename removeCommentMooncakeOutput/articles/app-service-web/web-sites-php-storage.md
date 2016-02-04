@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Create a PHP web app in Azure Websites using Azure Storage" 
-	description="This tutorial shows you how to create a PHP web app in Azure Websites and use the Azure Tables storage service in the back-end." 
+	pageTitle="Create a PHP web site in Azure Websites using Azure Storage" 
+	description="This tutorial shows you how to create a PHP web site in Azure Websites and use the Azure Tables storage service in the back-end." 
 	services="app-service\web, storage" 
 	documentationCenter="php" 
 	authors="tfitzmac" 
@@ -12,20 +12,20 @@
 	ms.date="07/02/2015"
 	wacn.date=""/>
 
-# Create a PHP web app in Azure Websites using Azure Storage
+# Create a PHP web site in Azure Websites using Azure Storage
 
-This tutorial shows you how to create a PHP web app in [Azure Websites](/documentation/services/web-sites/) and use the Azure Tables storage service in the back-end. This tutorial assumes you have [PHP][install-php] and a web server installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP web app running in Azure and accessing the Table storage service.
+This tutorial shows you how to create a PHP web site in [Azure Websites](/documentation/services/web-sites/) and use the Azure Tables storage service in the back-end. This tutorial assumes you have [PHP][install-php] and a web server installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP web site running in Azure and accessing the Table storage service.
  
 You will learn:
 
 * How to install the Azure client libraries and include them into your application.
 * How to use the client libraries for creating tables, and for creating, querying and deleting table entities.
 * How to create an Azure Storage Account and set up your application to use it.
-* How to create an Azure web app and deploy to it using Git
+* How to create an Azure web site and deploy to it using Git
  
-You will build a simple Tasklist web application in PHP. A screenshot of the completed application is below:
+You will build a simple Tasklist web site in PHP. A screenshot of the completed application is below:
 
-![Azure PHP web app][ws-storage-app]
+![Azure PHP web site][ws-storage-app]
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -345,9 +345,9 @@ To make your application store data into the cloud you need to first create a st
 
 7. Open **init.php** and replace `[YOUR_STORAGE_ACCOUNT_NAME]` and `[YOUR_STORAGE_ACCOUNT_KEY]` with the account name and key you took note of in the last step. Save the file.
 
-## Create an Azure web app and set up Git publishing
+## Create an Azure web site and set up Git publishing
 
-Follow these steps to create an Azure web app:
+Follow these steps to create an Azure web site:
 
 1. Login to the [Azure Management Portal][management-portal].
 2. Click the **+ New** icon on the bottom left of the portal.
@@ -409,8 +409,8 @@ To publish your application with Git, follow the steps below.
 
 	You will be prompted for the password you created earlier.
 
-3. Browse to **http://[your web app domain]/createtable.php** to create the table for the application.
-4. Browse to **http://[your web app domain]/index.php** to begin using the application.
+3. Browse to **http://[your web site domain]/createtable.php** to create the table for the application.
+4. Browse to **http://[your web site domain]/index.php** to begin using the application.
 
 After you have published your application, you can begin making changes to it and use Git to publish them. 
 
@@ -427,7 +427,7 @@ To publish changes to application, follow these steps:
 
 	You will be prompted for the password you created earlier.
 
-3. Browse to **http://[your web app domain]/index.php** to see your changes. 
+3. Browse to **http://[your web site domain]/index.php** to see your changes. 
 [new- Website]: ./media/web-sites-php-storage/new_Website.jpg
 [website-quick-create]: ./media/web-sites-php-storage/createsite.png
 [website-quick-create-details]: ./media/web-sites-php-storage/sitedetails.png
@@ -436,7 +436,7 @@ To publish changes to application, follow these steps:
 [go-to-dashboard]: ./media/web-sites-php-storage/selectsite.png
 [where-is-code]: ./media/web-sites-php-storage/where_is_code.png
 [install-php]: http://www.php.net/manual/en/install.php
-[install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
+[install-git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
 [composer-phar]: http://getcomposer.org/composer.phar
 [msdn-errors]: http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
 

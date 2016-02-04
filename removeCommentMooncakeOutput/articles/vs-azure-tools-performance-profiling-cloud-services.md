@@ -6,11 +6,10 @@
    authors="patshea123"
    manager="douge"
    editor="tlee" />
-<tags
-	ms.service="visual-studio-online"
-	ms.date="08/14/2015"
-	wacn.date=""/>
-
+<tags 
+   ms.service="visual-studio-online"
+   ms.date="08/14/2015"
+   wacn.date="" />
 
 # Testing the performance of a cloud service 
 
@@ -20,7 +19,7 @@ You can test the performance of a cloud service in the following ways:
 
 - Use Azure Diagnostics to collect information about requests and connections, and to review site statistics that show how the service performs from a customer perspective. To get started with , see [Configuring diagnostics for Azure Cloud Services and Virtual Machines]( https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx).
 
-- Use the Visual Studio profiler to get an in-depth analysis of the computational aspects of how the service runs. As this topic describes, you can use the profiler to measure performance as a service runs in Azure. For information about how to use the profiler to measure performance as a service runs locally in a compute emulator, see [Testing the Performance of an Azure Cloud Service Locally in the Compute Emulator Using the Visual Studio Profiler](/documentation/articles/cloud-services-performance-testing-visual-studio-profiler/).
+- Use the Visual Studio profiler to get an in-depth analysis of the computational aspects of how the service runs. As this topic describes, you can use the profiler to measure performance as a service runs in Azure. For information about how to use the profiler to measure performance as a service runs locally in a compute emulator, see [Testing the Performance of an Azure Cloud Service Locally in the Compute Emulator Using the Visual Studio Profiler](https://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-performance-testing-visual-studio-profiler/).
 
 
 
@@ -50,7 +49,7 @@ When you use the profiler, you can collect data when a cloud service runs locall
 
 ###Collect profiling data locally to:###
 
-- Test the performance of a part of a cloud service, such as the execution of specific worker role, that doesn’t require a realistic simulated load.
+- Test the performance of a part of a cloud service, such as the execution of specific worker role, that doesnât require a realistic simulated load.
 
 - Test the performance of a cloud service in isolation, under controlled conditions.
 
@@ -138,7 +137,7 @@ A profiling session is created for each instance of a role in your cloud service
 
 ## Next steps
 
-[Debugging Cloud Services](https://msdn.microsoft.com/zh-cn/library/azure/ee405479.aspx)
+[Debugging Cloud Services](http://go.microsoft.com/fwlink//p/?LinkID=62304)
 
-[Publishing to an Azure Cloud Service from Visual Studio](https://msdn.microsoft.com/zh-cn/library/azure/ee460772.aspx)
+[Publishing to an Azure Cloud Service from Visual Studio](http://go.microsoft.com/fwlink//p/?LinkID=623012)
 

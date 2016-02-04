@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/15/2015"
 	wacn.date=""/>
 
 
@@ -17,18 +17,18 @@
 
 This topic contains information on how to insert various types of ads on the client side.
 
-For information about closed captioning and ad support in Live streaming videos, see [Supported Closed Captioning and Ad Insertion Standards](https://msdn.microsoft.com/zh-cn/library/azure/dn783466.aspx#caption_ad).
+For information about closed captioning and ad support in Live streaming videos, see [Supported Closed Captioning and Ad Insertion Standards](/documentation/articles/media-services-manage-channels-overview#cc_and_ads).
 
  
 ##<a id="insert_ads_into_media"></a>Inserting Ads into your Media
 
 Azure Media Services provides support for ad insertion through the Windows Media Platform: Player Frameworks. Player frameworks with ad support are available for Windows 8, Silverlight, Windows Phone 8, and iOS devices. Each player framework contains sample code that shows you how to implement a player application.There are three different kinds of ads you can insert into your media:list.
 
-- **Linear** – full frame ads that pause the main video.
-- **Nonlinear** – overlay ads that are displayed as the main video is playing, usually a logo or other static image placed within the player.
-- **Companion** – ads that are displayed outside of the player.
+- **Linear** - full frame ads that pause the main video.
+- **Nonlinear** - overlay ads that are displayed as the main video is playing, usually a logo or other static image placed within the player.
+- **Companion** - ads that are displayed outside of the player.
 
-Ads can be placed at any point in the main video’s time line. You must tell the player when to play the ad and which ads to play. This is done using a set of standard XML-based files: Video Ad Service Template (VAST), Digital Video Multiple Ad Playlist (VMAP), Media Abstract Sequencing Template (MAST), and Digital Video Player Ad Interface Definition (VPAID). VAST files specify what ads to display. VMAP files specify when to play various ads and contain VAST XML. MAST files are another way to sequence ads which also can contain VAST XML. VPAID files define an interface between the video player and the ad or ad server.
+Ads can be placed at any point in the main video's time line. You must tell the player when to play the ad and which ads to play. This is done using a set of standard XML-based files: Video Ad Service Template (VAST), Digital Video Multiple Ad Playlist (VMAP), Media Abstract Sequencing Template (MAST), and Digital Video Player Ad Interface Definition (VPAID). VAST files specify what ads to display. VMAP files specify when to play various ads and contain VAST XML. MAST files are another way to sequence ads which also can contain VAST XML. VPAID files define an interface between the video player and the ad or ad server.
 
 Each player framework works differently and each will be covered in its own topic. This topic will describe the basic mechanisms used to insert ads.Video player applications request ads from an ad server. The ad server can respond in a number of ways:
 
@@ -84,7 +84,7 @@ A VAST file specifies what ad or ads to display. The following XML is an example
 	  </Ad>
 	</VAST>
 	
-The linear ad is described by the **<Linear>** element. It specifies the duration of the ad, tracking events, click through, click tracking, and a number of **<MediaFile>** elements. Tracking events are specified within the **<TrackingEvents>** element and allow an ad server to track various events that occur while viewing the ad. In this case the start, midpoint, complete, and expand events are tracked. The start event occurs when the ad is displayed. The midpoint event occurs when at least 50% of the ad’s timeline has been viewed. The complete event occurs when the ad has run to the end. The Expand event occurs when the user expands the video player to full screen. Clickthroughs are specified with a **<ClickThrough>** element within a **<VideoClicks>** element and specifies a URI to a resource to display when the user clicks on the ad. ClickTracking is specified in a **<ClickTracking>** element, also within the **<VideoClicks>** element and specifies a tracking resource for the player to request when the user clicks on the ad.The **<MediaFile>** elements specify information about a specific encoding of an ad. When there is more than one **<MediaFile>** element, the video player can choose the best encoding for the platform. 
+The linear ad is described by the **<Linear>** element. It specifies the duration of the ad, tracking events, click through, click tracking, and a number of **<MediaFile>** elements. Tracking events are specified within the **<TrackingEvents>** element and allow an ad server to track various events that occur while viewing the ad. In this case the start, midpoint, complete, and expand events are tracked. The start event occurs when the ad is displayed. The midpoint event occurs when at least 50% of the ad's timeline has been viewed. The complete event occurs when the ad has run to the end. The Expand event occurs when the user expands the video player to full screen. Clickthroughs are specified with a **<ClickThrough>** element within a **<VideoClicks>** element and specifies a URI to a resource to display when the user clicks on the ad. ClickTracking is specified in a **<ClickTracking>** element, also within the **<VideoClicks>** element and specifies a tracking resource for the player to request when the user clicks on the ad.The **<MediaFile>** elements specify information about a specific encoding of an ad. When there is more than one **<MediaFile>** element, the video player can choose the best encoding for the platform. 
 
 Linear ads can be displayed in a specified order. To do this, add additional <Ad> elements to the VAST file and specify the order using the sequence attribute. The following example illustrates this:
 	
@@ -149,11 +149,11 @@ Nonlinear ads are specified in a <Creative> element as well. The following examp
  
 The **<NonLinearAds>** element can contain one or more **<NonLinear>** elements, each of which can describe a nonlinear ad. The **<NonLinear>** element specifies the resource for the nonlinear ad. The resource can be a **<StaticResouce>**, an **<IFrameResource>**, or an **<HTMLResouce>**.**<StaticResource>** describes a non-HTML resource and defines a creativeType attribute that specifies how the resource is displayed:
 
-Image/gif, image/jpeg, image/png – the resource is displayed in an HTML **<img>** tag.
+Image/gif, image/jpeg, image/png - the resource is displayed in an HTML **<img>** tag.
 
-Application/x-javascript – the resource is displayed in an HTML <**script**> tag.
+Application/x-javascript - the resource is displayed in an HTML <**script**> tag.
 
-Application/x-shockwave-flash – the resource is displayed in a Flash player.
+Application/x-shockwave-flash - the resource is displayed in a Flash player.
 
 **<IFrameResource>** describes an HTML resource that can be displayed in an IFrame. **<HTMLResource>** describes a piece of HTML code that can be inserted into a web page. **<TrackingEvents>** specify tracking events and the URI to request when the event occurs. In this sample the acceptInvitation and collapse events are tracked. For more information on the **<NonLinearAds>** element and its children, see IAB.NET/VAST. Note that the **<TrackingEvents>** element is located within the** <NonLinearAds>** element rather than the **<NonLinear>** element.
 
@@ -212,16 +212,16 @@ A VMAP file allows you to specify when ad breaks occur, how long each break is, 
 	 
 A VMAP file begins with a <VMAP> element that contains one or more <AdBreak> elements, each defining an ad break. Each ad break specifies a break type, break ID, and time offset. The breakType attribute specifies the type of ad that can be played during the break: linear, nonlinear, or display. Display ads map to VAST companion ads. More than one ad type can be specified in a comma (no spaces) separated list. The breakID is an optional identifier for the ad. The timeOffset specifies when the ad should be displayed. It can be specified in one of the following ways:
 
-1. Time – in hh:mm:ss or hh:mm:ss.mmm format where .mmm is milliseconds. The value of this attribute specifies the time from the beginning of the video timeline to the beginning of the ad break.
-1. Percentage – in n% format where n is the percentage of the video timeline to play before playing the ad
-1. Start/End – specifies that an ad should be displayed before or after the video has been displayed
-1. Position – specifies the order of ad breaks when the timing of the ad breaks is unknown, such as in live streaming. The order of each ad break is specified in the #n format where n is an integer 1 or greater. 1 signifies the ad should be played at the first opportunity, 2 signifies the ad should be played at the second opportunity and so on.
+1. Time - in hh:mm:ss or hh:mm:ss.mmm format where .mmm is milliseconds. The value of this attribute specifies the time from the beginning of the video timeline to the beginning of the ad break.
+1. Percentage - in n% format where n is the percentage of the video timeline to play before playing the ad
+1. Start/End - specifies that an ad should be displayed before or after the video has been displayed
+1. Position - specifies the order of ad breaks when the timing of the ad breaks is unknown, such as in live streaming. The order of each ad break is specified in the #n format where n is an integer 1 or greater. 1 signifies the ad should be played at the first opportunity, 2 signifies the ad should be played at the second opportunity and so on.
 
 Within the <**AdBreak**> element there can be one <**AdSource**> element. The <**AdSource**> element contains the following attributes:
 
-1. Id – specifies an identifier for the ad source
-1. allowMultipleAds – a Boolean value that specifies whether multiple ads can be displayed during the ad break
-1. followRedirects – an optional Boolean value that specifies if the video player should honor redirects within an ad response
+1. Id - specifies an identifier for the ad source
+1. allowMultipleAds - a Boolean value that specifies whether multiple ads can be displayed during the ad break
+1. followRedirects - an optional Boolean value that specifies if the video player should honor redirects within an ad response
 
 The <**AdSource**> element provides the player an inline ad response or a reference to an ad response. It can contain one of the following elements:
 
@@ -233,9 +233,9 @@ In this example an in-line ad response is specified with a <VASTAdData> element 
 
 The <**AdBreak**> element can also contain one <**TrackingEvents**> element. The <**TrackingEvents**> element allows you to track the start or end of an ad break or whether an error occurred during the ad break. The <**TrackingEvents**> element contains one or more <**Tracking**> elements, each of which specifies a tracking event and a tracking URI. The possible tracking events are:
 
-1. breakStart – tracks the beginning of an ad break
-1. breakEnd – track the completion of an ad break
-1. error – tracks an error that occurred during the ad break
+1. breakStart - tracks the beginning of an ad break
+1. breakEnd - track the completion of an ad break
+1. error - tracks an error that occurred during the ad break
 
 The following example shows a VMAP file that specifies tracking events
 
@@ -313,10 +313,10 @@ A MAST file begins with a **<MAST>** element that contains one **<triggers>** el
 
 The **<trigger>** element contains a **<startConditions>** element which specify when an ad should begin to play. The **<startConditions>** element contains one or more <condition> elements. When each <condition> evaluates to true a trigger is initiated or revoked depending upon whether the <condition> is contained within a **<startConditions**> or **<endConditions>** element respectively. When multiple <condition> elements are present, they are treated as an implicit OR, any condition evaluating to true will cause the trigger to initiate. <condition> elements can be nested. When child <condition> elements are preset, they are treated as an implicit AND, all conditions must evaluate to true for the trigger to initiate. The <condition> element contains the following attributes that define the condition: 
 
-1. **type** – specifies the type of condition, event or property
-1. **name** – the name of the property or event to be used during evaluation
-1. **value** – the value that a property will be evaluated against
-1. **operator** – the operation to use during evaluation: EQ (equal), NEQ (not equal), GTR (greater), GEQ (greater or equal), LT (Less than), LEQ (less than or equal), MOD (modulo)
+1. **type** - specifies the type of condition, event or property
+1. **name** - the name of the property or event to be used during evaluation
+1. **value** - the value that a property will be evaluated against
+1. **operator** - the operation to use during evaluation: EQ (equal), NEQ (not equal), GTR (greater), GEQ (greater or equal), LT (Less than), LEQ (less than or equal), MOD (modulo)
 
 **<endConditions>** also contain <condition> elements. When a condition evaluates to true the trigger is reset.The <trigger> element also contains a <sources> element that contains one or more <source> elements. The <source> elements define the URI to the ad response and the type of ad response. In this example a URI is given to a VAST response. 
 

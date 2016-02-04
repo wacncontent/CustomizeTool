@@ -9,8 +9,8 @@
    tags="azure-resource-manager,azure-service-management"/>
 
 <tags
-	ms.service="azure-resource-manager"
-	ms.date="08/25/2015"
+	ms.service="virtual-machines"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Azure Resource Manager Architecture

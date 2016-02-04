@@ -73,9 +73,9 @@ No. A mechanism for specifying arbitrary username/password for Basic Authenticat
 
 
 
-**Q: Do I need to enable auditing on my AD FS Application Proxy Servers or my Web Application Proxy Servers?**
+**Q: Do I need to enable auditing on my AD FS Application Proxy Servers or my <!-- deleted by customization web site --><!-- keep by customization: begin --> Web Site <!-- keep by customization: end --> Proxy Servers?**
 
-No, auditing does not need to be enabled on AD FS Application Proxy Servers or Web Application Proxy Servers. It only needs to be enabled on the AD FS federated servers.
+No, auditing does not need to be enabled on AD FS Application Proxy Servers or <!-- deleted by customization web site --><!-- keep by customization: begin --> Web Site <!-- keep by customization: end --> Proxy Servers. It only needs to be enabled on the AD FS federated servers.
 
 
 
@@ -93,6 +93,7 @@ You will need to have TCP/UDP ports 80, 443 and 5671 open for the Azure AD Conne
 ## Related links
 
 * [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health)
-* [Azure AD Connect Health Agent Installation for AD FS](/documentation/articles/active-directory-aadconnect-health-agent-install-adfs)
-* [Using Azure AD Connect Health with AD FS](/documentation/articles/active-directory-aadconnect-health-adfs)
+* [Azure AD Connect Health Agent Installation](/documentation/articles/active-directory-aadconnect-health-agent-install)
 * [Azure AD Connect Health Operations](/documentation/articles/active-directory-aadconnect-health-operations)
+* [Using Azure AD Connect Health with AD FS](/documentation/articles/active-directory-aadconnect-health-adfs)
+* [Using Azure AD Connect Health for sync](/documentation/articles/active-directory-aadconnect-health-sync)

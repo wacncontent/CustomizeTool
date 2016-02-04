@@ -1,15 +1,16 @@
-<properties 
-	pageTitle="Register for Twitter authentication | Windows Azure" 
-	description="Learn how to use Twitter authentication with your Azure Mobile Services application." 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Register for Twitter authentication | Windows Azure"
+	description="Learn how to use Twitter authentication with your Azure Mobile Services application."
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
+
 
 <tags
 	ms.service="mobile-services"
-	ms.date="11/15/2015"
+	ms.date="11/30/2015"
 	wacn.date=""/>
 
 #Register your apps for Twitter login with Mobile Services
@@ -30,15 +31,15 @@ To complete the procedure in this topic, you must have a Twitter account that ha
 	+ **JavaScript backend**: `https://<mobile_service>.azure-mobile.cn/login/twitter` 
 
 	 >[AZURE.NOTE]Make sure that you use the correct redirect URL path format for your type of Mobile Services backend. When this is incorrect, authentication will not succeed. 
-	&nbsp; 
+	&nbsp;
 
    	![][2]
 
-3.  At the bottom the page, read and accept the terms, and then click **Create your Twitter application**. 
+3.  At the bottom the page, read and accept the terms, and then click **Create your Twitter application**.
 
    	This registers the app displays the application details.
 
-6. Click the **Keys and Access Tokens** tab in your app dashboard and make a note of the values of **Consumer key** and **Consumer secret**. 
+6. Click the **Keys and Access Tokens** tab in your app dashboard and make a note of the values of **Consumer key** and **Consumer secret**.
 
     > [AZURE.NOTE] The consumer secret is an important security credential. Do not share this secret with anyone or distribute it with your app.
 
@@ -55,7 +56,8 @@ You are now ready to use a Twitter login for authentication in your app by provi
 <!-- URLs. -->
 
 [Twitter Developers]: https://apps.twitter.com/
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-dotnet/
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-users/
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn
  
+

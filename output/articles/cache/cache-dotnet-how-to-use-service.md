@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cache"
-	ms.date="11/03/2015"
+	ms.date="12/03/2015"
 	wacn.date=""/>
 
 # How to Use Azure Managed Cache Service
@@ -21,7 +21,7 @@ objects from the cache, storing ASP.NET session state in the cache**,
 and **enabling ASP.NET page output caching using the cache**. For more
 information on using Azure Cache, refer to the [Next Steps][] section.
 
->For guidance on choosing the right Azure Cache offering for your application, see [Which Azure Cache offering is right for me?][].
+>[AZURE.IMPORTANT]Weâre announcing the November 30, 2016, retirement for Azure Managed Cache Service and Azure In-Role Cache. We recommend that you migrate to Azure Redis Cache in preparation for this retirement. For more information on dates and migration guidance, see [Which Azure Cache offering is right for me?](/documentation/articles/cache-faq#which-azure-cache-offering-is-right-for-me)
 
 <a name="what-is"></a>
 ## What is Azure Managed Cache Service?
@@ -91,9 +91,9 @@ For **Location**, specify a region for the cache. For the best performance, crea
 
 Choose the **Sku** and **Memory** that meets the needs of your application. Note that some cache features, such as notifications and high availability, are only available with certain cache offerings. For more information on choosing the cache offering and size that's best for your application, see [Cache offerings][].
 
- In the following example, a Basic 128MB cache is created with name contosocache, in the China <!-- deleted by customization East --><!-- keep by customization: begin --> North <!-- keep by customization: end --> geographic region.
+ In the following example, a Basic 128MB cache is created with name contosocache, in the China East geographic region.
 
-	New-AzureManagedCache -Name contosocache -Location "China <!-- deleted by customization East" --><!-- keep by customization: begin --> North" <!-- keep by customization: end --> -Sku Basic -Memory 128MB
+	New-AzureManagedCache -Name contosocache -Location "China East" -Sku Basic -Memory 128MB
 
 >For a complete list of parameters and values that can be used when creating a cache, see the [New-AzureManagedCache][] cmdlet documentation.
 
@@ -106,7 +106,7 @@ You can monitor the creation progress in the Azure PowerShell window. Once the c
 	VERBOSE: Subscription "MySubscription" is selected as the default subscription.
 	VERBOSE: To view all the subscriptions, please use Get-AzureSubscription.
 	VERBOSE: To switch to a different subscription, please use Select-AzureSubscription.
-	PS C:\> New-AzureManagedCache -Name contosocache -Location "China <!-- deleted by customization East" --><!-- keep by customization: begin --> North" <!-- keep by customization: end --> -Sku Basic -Memory 128MB
+	PS C:\> New-AzureManagedCache -Name contosocache -Location "China East" -Sku Basic -Memory 128MB
 	VERBOSE: Intializing parameters...
 	VERBOSE: Creating prerequisites...
 	VERBOSE: Verify cache service name...
@@ -115,12 +115,7 @@ You can monitor the creation progress in the Azure PowerShell window. Once the c
 
 
 	Name     : contosocache
-<!-- deleted by customization
 	Location : China East
--->
-<!-- keep by customization: begin -->
-	Location : China North
-<!-- keep by customization: end -->
 	State    : Active
 	Sku      : Basic
 	Memory   : 128MB
@@ -135,7 +130,7 @@ You can monitor the creation progress in the Azure PowerShell window. Once the c
 <a name="enable-caching"></a>
 ## Configure the cache
 
-The **Configure** tab for Cache in the Management Portal is where you configure the options for your cache. Each cache has a **default** named cache, and the Standard and Premium cache offerings support up to nine additional named caches, for a total of ten. Each named cache has its own set of options which allow you to configure your cache in a highly flexible manner.
+The **Configure** tab for Cache in the Azure Management Portal is where you configure the options for your cache. Each cache has a **default** named cache, and the Standard and Premium cache offerings support up to nine additional named caches, for a total of ten. Each named cache has its own set of options which allow you to configure your cache in a highly flexible manner.
 
 ![NamedCaches][NamedCaches]
 
@@ -235,11 +230,11 @@ These new sections include references to a **dataCacheClients** element, which i
 
 After the configuration is added, replace the following two items in the newly added configuration.
 
-1. Replace **[Cache role name or Service Endpoint]** with the endpoint, which is displayed on the Dashboard in the Management Portal.
+1. Replace **[Cache role name or Service Endpoint]** with the endpoint, which is displayed on the Dashboard in the Azure Management Portal.
 
 	![Endpoint][Endpoint]
 
-2. Uncomment the securityProperties section, and replace **[Authentication Key]** with the authentication key, which can be found in the Management Portal by clicking **Manage Keys** from the cache dashboard.
+2. Uncomment the securityProperties section, and replace **[Authentication Key]** with the authentication key, which can be found in the Azure Management Portal by clicking **Manage Keys** from the cache dashboard.
 
 	![AccessKeys][AccessKeys]
 
@@ -354,7 +349,7 @@ if it does not exist, or replaces the object if it does exist.
 <a name="specify-expiration"></a>
 ## How To: Specify the Expiration of an Object in the Cache
 
-By default items in the cache expire 10 minutes after they are placed in the cache. This can be configured in the **Time (min)** setting on the Configure tab for Cache in the Management Portal.
+By default items in the cache expire 10 minutes after they are placed in the cache. This can be configured in the **Time (min)** setting on the Configure tab for Cache in the Azure Management Portal.
 
 ![NamedCaches][NamedCaches]
 
@@ -489,38 +484,23 @@ follow these links to learn how to do more complex caching tasks.
 <!-- LINKS -->
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [How to: Configure a Cache Client Programmatically]: http://msdn.microsoft.com/zh-cn/library/azure/gg618003.aspx
-[Session State Provider for Azure Cache]: <!-- deleted by customization http://go.microsoft.com/fwlink/?LinkId=320835 --><!-- keep by customization: begin --> https://msdn.microsoft.com/zh-cn/library/azure/dn386101.aspx <!-- keep by customization: end -->
+[Session State Provider for Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320835
 [Azure AppFabric Cache: Caching Session State]: http://www.microsoft.com/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
-[Output Cache Provider for Azure Cache]: <!-- deleted by customization http://go.microsoft.com/fwlink/?LinkId=320837 --><!-- keep by customization: begin --> https://msdn.microsoft.com/zh-cn/library/vstudio/hdxfb6cy(v=vs.100).aspx <!-- keep by customization: end -->
+[Output Cache Provider for Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320837
 [Azure Shared Caching]: http://msdn.microsoft.com/zh-cn/library/azure/gg278356.aspx
 [Team Blog]: http://blogs.msdn.com/b/windowsazure/
-<!-- deleted by customization
 [Azure Caching]: http://www.microsoft.com/showcase/Search.aspx?phrase=azure+caching
 [How to Configure Virtual Machine Sizes]: http://go.microsoft.com/fwlink/?LinkId=164387
 [Azure Caching Capacity Planning Considerations]: http://go.microsoft.com/fwlink/?LinkId=320167
 [Azure Caching]: http://go.microsoft.com/fwlink/?LinkId=252658
--->
-<!-- keep by customization: begin -->
-[How to Configure Virtual Machine Sizes]: https://msdn.microsoft.com/zh-cn/library/azure/ee814754.aspx
-[Azure Caching Capacity Planning Considerations]: https://msdn.microsoft.com/zh-cn/library/azure/dn386139.aspx
-[Azure Caching]: https://msdn.microsoft.com/zh-cn/library/azure/gg278356
-<!-- keep by customization: end -->
 [How to: Set the Cacheability of an ASP.NET Page Declaratively]: http://msdn.microsoft.com/zh-cn/library/zd1ysf1y.aspx
 [How to: Set a Page's Cacheability Programmatically]: http://msdn.microsoft.com/zh-cn/library/z852zf6b.aspx
 [Overview of Azure Managed Cache Service]: http://go.microsoft.com/fwlink/?LinkId=320830
 [Managed Cache Service]: http://go.microsoft.com/fwlink/?LinkId=320830
-<!-- deleted by customization
 [OutputCache Directive]: http://go.microsoft.com/fwlink/?LinkId=251979
 [Troubleshooting and Diagnostics]: http://go.microsoft.com/fwlink/?LinkId=320839
--->
-<!-- keep by customization: begin -->
-[OutputCache Directive]: https://msdn.microsoft.com/zh-cn/library/hdxfb6cy.aspx
-[Troubleshooting and Diagnostics]: https://msdn.microsoft.com/zh-cn/library/azure/dn386117.aspx
-<!-- keep by customization: end -->
 [NuGet Package Manager Installation]: http://go.microsoft.com/fwlink/?LinkId=240311
-[Cache Pricing Details]: <!-- deleted by customization /home/features/cache/#price --><!-- keep by customization: begin --> /home/features/cache/#price/ <!-- keep by customization: end -->
-[Management Portal]: https://manage.windowsazure.cn/
-<!-- deleted by customization
+[Cache Pricing Details]: /home/features/cache/#price
 [Cache offerings]: http://go.microsoft.com/fwlink/?LinkId=317277
 [Capacity planning]: http://go.microsoft.com/fwlink/?LinkId=320167
 [Expiration and Eviction]: http://go.microsoft.com/fwlink/?LinkId=317278
@@ -528,16 +508,6 @@ follow these links to learn how to do more complex caching tasks.
 [Notifications]: http://go.microsoft.com/fwlink/?LinkId=317276
 [Migrate to Managed Cache Service]: http://go.microsoft.com/fwlink/?LinkId=317347
 [Managed Cache Service Samples]: http://go.microsoft.com/fwlink/?LinkId=320840
--->
-<!-- keep by customization: begin -->
-[Cache offerings]: https://msdn.microsoft.com/zh-cn/library/azure/dn386114.aspx
-[Capacity planning]: https://msdn.microsoft.com/zh-cn/library/azure/dn386139.aspx
-[Expiration and Eviction]: https://msdn.microsoft.com/zh-cn/library/azure/dn386128.aspx
-[High Availability]: https://msdn.microsoft.com/zh-cn/library/azure/dn386134.aspx
-[Notifications]: https://msdn.microsoft.com/zh-cn/library/azure/dn386095.aspx
-[Migrate to Managed Cache Service]: https://msdn.microsoft.com/zh-cn/library/azure/dn386108.aspx
-[Managed Cache Service Samples]: https://msdn.microsoft.com/zh-cn/library/azure/dn386105.aspx
-<!-- keep by customization: end -->
 [New-AzureManagedCache]: http://go.microsoft.com/fwlink/?LinkId=400495
 [Azure Managed Cache Cmdlets]: http://go.microsoft.com/fwlink/?LinkID=398555
 [How to install and configure Azure PowerShell]: http://go.microsoft.com/fwlink/?LinkId=400494

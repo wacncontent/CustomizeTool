@@ -20,7 +20,7 @@
 This topic describes the planning and preparations you must perform to upgrade your Azure SQL databases from version V11 to V12.
 
 
-A new [Azure preview portal](http://manage.windowsazure.cn/) is available to support your upgrade to V12.
+A new [Azure Management Portal](http://manage.windowsazure.cn/) is available to support your upgrade to V12.
 
 
 The following table lists other Help topics for V12.
@@ -87,7 +87,7 @@ The Web and Business service pricing tier is not supported on V12.
 If your V11 Azure SQL database is a Web or Business database, the upgrade process offers to switch your database to a supported tier. The upgrade recommends a tier that fits the workload history of your database. However, you can choose any supported tier you like.
 
 
-You can reduce the steps necessary during upgrade by switching your V11 database away from the Web-and-Business tier before you start the upgrade. You can do this by using the new [Azure preview portal](http://manage.windowsazure.cn/).
+You can reduce the steps necessary during upgrade by switching your V11 database away from the Web-and-Business tier before you start the upgrade. You can do this by using the new [Azure Management Portal](http://manage.windowsazure.cn/).
 
 
 If you are unsure which service tier to switch to, the S2 level of the Standard tier might be a sensible initial choice. Any lesser tier will have fewer resources than the Web and Business tier had.
@@ -123,7 +123,7 @@ Click [here](/documentation/articles/sql-database-develop-direct-route-ports-ado
 There are three portals for Azure, and each has different abilities regarding SQL Database V12.
 
 
-- [http://manage.windowsazure.cn/](http://manage.windowsazure.cn/)<br/>This Azure preview portal is new and is still at preview status. This portal is not quite yet at full General Availability (GA). This portal:
+- [http://manage.windowsazure.cn/](http://manage.windowsazure.cn/)<br/>This Azure Management Portal is new and is still at preview status. This portal is not quite yet at full General Availability (GA). This portal:
  - Can manage your V12 server and database.
  - Can upgrade your V11 database to V12.
 
@@ -134,7 +134,7 @@ There are three portals for Azure, and each has different abilities regarding SQ
 
 
 - (http://*yourservername*.database.chinacloudapi.cn)<br/>
-Azure SQL Database Management portal:
+Azure SQL Database Management Portal:
  - Can*not* manage V12 servers.
 
 
@@ -181,7 +181,7 @@ The V11 database remains available for data access during the upgrade to V12. Ye
 ### Export and import *after* upgrade to V12
 
 
-You can export or import a V12 database by using the [Azure preview portal](http://manage.windowsazure.cn/). Or you can export or import by using any of the following tools:
+You can export or import a V12 database by using the [Azure Management Portal](http://manage.windowsazure.cn/). Or you can export or import by using any of the following tools:
 
 
 - SQL Server Management Studio (SSMS)

@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="11/12/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Testing Traffic Manager Settings
@@ -44,7 +44,7 @@ A typical result will show the following:
 2-Use a single client.
 3-Request DNS resolution for your company domain name using the Nslookup.exe tool or a similar utility.
 4-Ensure that the resolved IP address your obtain is for your primary endpoint
-5-Bring your primary endpoint down or remove the monitoring file so that Traffic Manager thinks it’s down.
+5-Bring your primary endpoint down or remove the monitoring file so that Traffic Manager thinks it's down.
 6-Wait for the DNS Time-to-Live (TTL) of the Traffic Manager profile plus an additional 2 minutes. For example, if your DNS TTL is 300 seconds (5 minutes), you must wait for 7 minutes.
 7-Flush your DNS client cache and request DNS resolution. In Windows, you can flush your DNS cache with the ipconfig /flushdns command issued at a command or Windows PowerShell prompt.
 8-Ensure that the IP address you obtain is for your secondary endpoint.
@@ -62,9 +62,9 @@ A typical result will show the following:
 
 To effectively test a performance load balancing method, you must have clients located in different parts of the world. You could create clients in Azure that will attempt to call your services via your company domain name. Alternatively, if your corporation is global, you can remotely log into clients in other parts of the world and test from those clients.
 
-There are free web-based DNS lookup and dig services available. Some of these give you the ability to check DNS name resolution from various locations. Do a search on “DNS lookup” for examples. Another option is to use a third-party solution like Gomez or Keynote to confirm that your profiles are distributing traffic as expected.
+There are free web-based DNS lookup and dig services available. Some of these give you the ability to check DNS name resolution from various locations. Do a search on âDNS lookupâ for examples. Another option is to use a third-party solution like Gomez or Keynote to confirm that your profiles are distributing traffic as expected.
 
-## See Also
+## Next Steps
 
 [About Traffic Manager traffic routing methods](/documentation/articles/about-traffic-manager-balancing-methods)
 [Traffic Manager](/documentation/articles/traffic-manager)

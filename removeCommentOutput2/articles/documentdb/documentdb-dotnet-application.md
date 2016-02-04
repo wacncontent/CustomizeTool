@@ -1,7 +1,7 @@
 <properties 
-	pageTitle="Web Application Development with ASP.NET MVC using DocumentDB | Microsoft Azure" 
-	description="Learn how to use DocumentDB with .NET to build a To Do List web application. You'll store and access data from an ASP.NET MVC web application hosted on Azure Websites." 
-	keywords="Github, visual studio, web application development, application development, database tutorial, mvc applications, json data, documentdb, azure, Microsoft azure"
+	pageTitle="ASP.NET MVC tutorial for DocumentDB: web site Development | Windows Azure" 
+	description="Complete this ASP.NET MVC tutorial to create an MVC web site using DocumentDB. You'll store JSON and access data from a todo app hosted on Azure Websites." 
+	keywords="asp.net mvc tutorial, web site development, mvc web site, asp net mvc tutorial step by step"
 	services="documentdb" 
 	documentationCenter=".net" 
 	authors="ryancrawcour" 
@@ -9,14 +9,10 @@
 	editor="cgronlun"/>
 
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="hero-article" 
-	ms.date="07/24/2015" 
-	ms.author="ryancraw"/>
+<tags
+	ms.service="documentdb"
+	ms.date="11/18/2015"
+	wacn.date=""/>
 
 #<a name="_Toc395809351"></a>Web application development with ASP.NET MVC using DocumentDB
 
@@ -64,7 +60,7 @@ Now that you have an account, let's create our new ASP.NET project.
    	The **New Project** dialog box appears.
 2. In the **Project types** pane, expand **Templates**, **Visual C#**, **Web**, and then select **ASP.NET Web Application**.
 
-  	![Screen shot of the New Project dialog box with the ASP.NET Web Application project type highlighted](./media/documentdb-dotnet-application/image10.png)
+  	![Screen shot of the New Project dialog box with the ASP.NET Web Application project type highlighted](./media/documentdb-dotnet-application/asp-net-mvc-tutorial-image10.png)
 
 3. In the **Name** box, type the name of the project. This tutorial uses the name "todo". If you choose to use something other than this, then wherever this tutorial talks about the todo namespace, you need to adjust the provided code samples to use whatever you named your application. 
 
@@ -72,7 +68,7 @@ Now that you have an account, let's create our new ASP.NET project.
 
   	The **New ASP.NET Project** dialog box appears.
 
-  	![Screen shot of the New ASP.NET Project dialog box with the MVC application template highlighted and the Host in the cloud box checked](./media/documentdb-dotnet-application/image11.png)
+  	![Screen shot of the New ASP.NET Project dialog box with the MVC application template highlighted and the Host in the cloud box checked](./media/documentdb-dotnet-application/asp-net-mvc-tutorial-image11.png)
 
 5. In the templates pane, select **MVC**.
 
@@ -82,7 +78,7 @@ Now that you have an account, let's create our new ASP.NET project.
 
 8. If you chose to host this in the cloud you will see at least one additional screen asking you to login to your Azure account and provide some values for your new website. Supply all the additional values and continue. 
 
-  	I haven't chosen a "Database server" here because we're not using an Azure SQL Database Server here, we're going to be creating a new Azure DocumentDB account later on in the Azure Preview portal.
+  	I haven't chosen a "Database server" here because we're not using an Azure SQL Database Server here, we're going to be creating a new Azure DocumentDB account later on in the Azure Management Portal.
 
 	For more information about choosing an **App Service plan** and **Resource group**, see [Azure App Service plans in-depth overview](azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
@@ -92,10 +88,10 @@ Now that you have an account, let's create our new ASP.NET project.
 
 	We'll skip running the project locally because I'm sure we've all seen the ASP.NET "Hello World" application. Let's go straight to adding DocumentDB to this project and building our application.
 
-## <a name="_Toc395637767"></a>Step 3: Add DocumentDB to your web application project
+## <a name="_Toc395637767"></a>Step 3: Add DocumentDB to your MVC web application project
 
 Now that we have most of the ASP.NET MVC plumbing that we need for
-this solution, let's get to the real purpose of this tutorial, adding Azure DocumentDB to our web application.
+this solution, let's get to the real purpose of this tutorial, adding Azure DocumentDB to our MVC web application.
 
 1. The DocumentDB .NET SDK is packaged and distributed as a NuGet package. To get the NuGet package in Visual Studio, use the NuGet package manager in Visual Studio by right-clicking on the project in **Solution Explorer** and then clicking **Manage NuGet Packages**.
 
@@ -257,7 +253,7 @@ In this section, we'll add code to handle the following:
 - [Adding Items](#_Toc395637771).
 - [Editing Items](#_Toc395637772).
 
-### <a name="_Toc395637770"></a>Listing incomplete Items in your web application
+### <a name="_Toc395637770"></a>Listing incomplete Items in your MVC web application 
 
 The first thing to do here is add a class that contains all the logic to connect to and use DocumentDB. For this tutorial we'll encapsulate all this logic in to a repository class called DocumentDBRepository. 
 
@@ -399,16 +395,16 @@ The first thing to do here is add a class that contains all the logic to connect
     	    }
     	}
 
-	> [AZURE.TIP] When creating a new DocumentCollection you can supply an optional RequestOptions parameter of OfferType, which allows you to specify the performance level of the new collection. If this parameter is not passed the default offer type will be used. For more on DocumentDB offer types please refer to [DocumentDB Performance Levels](documentdb-performance-levels.md)
+	> [AZURE.TIP] When creating a new DocumentCollection you can supply an optional RequestOptions parameter of OfferType, which allows you to specify the performance level of the new collection. If this parameter is not passed the default offer type will be used. For more on DocumentDB offer types please refer to [DocumentDB Performance Levels](documentdb-performance-levels.md) 
 
 3. We're reading some values from configuration, so open the **Web.config** file of your application and add the following lines under the `<AppSettings>` section.
 	
-    	<add key="endpoint" value="enter the URI from the Keys blade of the Azure Preview portal"/>
-    	<add key="authKey" value="enter the PRIMARY KEY, or the SECONDARY KEY, from the Keys blade of the Azure  Preview portal"/>
+    	<add key="endpoint" value="enter the URI from the Keys blade of the Azure Management Portal"/>
+    	<add key="authKey" value="enter the PRIMARY KEY, or the SECONDARY KEY, from the Keys blade of the Azure  Portal"/>
     	<add key="database" value="ToDoList"/>
     	<add key="collection" value="Items"/>
 	
-4. Now, update the values for *endpoint* and *authKey* using the Keys blade of the Azure Preview portal. Use the **URI** from the Keys blade as the value of the endpoint setting, and use the **PRIMARY KEY**, or **SECONDARY KEY** from the Keys blade as the value of the authKey setting.
+4. Now, update the values for *endpoint* and *authKey* using the Keys blade of the Azure Management Portal. Use the **URI** from the Keys blade as the value of the endpoint setting, and use the **PRIMARY KEY**, or **SECONDARY KEY** from the Keys blade as the value of the authKey setting.
 
 
     That takes care of wiring up the DocumentDB repository, now let's add our application logic.
@@ -609,7 +605,7 @@ To test the application on your local machine, do the following:
 
 ##<a name="_Toc395637774"></a>Step 7: Deploy the application to Azure Websites
 
-Now that you have the complete application working correctly with DocumentDB we're going to deploy this web app to Azure Websites. If you selected **Host in the cloud** when you created the empty ASP.NET MVC project then Visual Studio makes this really easy and does most of the work for you. 
+Now that you have the complete application working correctly with DocumentDB we're going to deploy this web app to Azure Websites. If you selected **Host in the cloud** when you created the empty ASP.NET MVC project then Visual Studio makes this really easy and does most of the work for you.
 
 1. To publish this application all you need to do is right-click on the project in **Solution Explorer** and click **Publish**.
 
@@ -617,15 +613,15 @@ Now that you have the complete application working correctly with DocumentDB we'
 
 2. Everything should already be configured according to your credentials; in fact the website has already been created in Azure for you at the **Destination URL** shown, all you need to do is click **Publish**.
 
-    ![Screen shot of the Publish Web dialog box in Visual Studio](./media/documentdb-dotnet-application/image29.png)
+    ![Screen shot of the Publish Web dialog box in Visual Studio - ASP NET MVC tutorial step by step](./media/documentdb-dotnet-application/image29.png)
 
 In a few seconds, Visual Studio will finish publishing your web application and launch a browser where you can see your handy work running in Azure!
 
 ##<a name="_Toc395637775"></a>Next steps
 
-Congratulations! You just built your first ASP.NET MVC application using Azure DocumentDB and published it to Azure Websites. The source code for the complete application, including the detail and delete functionality that were not included in this tutorial can be downloaded or cloned from [GitHub][]. So if you're interested in adding that to your app, grab the code and add it to this app.
+Congratulations! You just built your first ASP.NET MVC web site using Azure DocumentDB and published it to Azure Websites. The source code for the complete application, including the detail and delete functionality that were not included in this tutorial can be downloaded or cloned from [GitHub][]. So if you're interested in adding that to your app, grab the code and add it to this app.
 
-To add additional functionality to your application, review the APIs available in the [Document DB .NET Library](http://msdn.microsoft.com/library/azure/dn783362.aspx) and feel free to contribute to the DocumentDB .NET Library on [GitHub][]. 
+To add additional functionality to your application, review the APIs available in the [Document DB .NET Library](https://msdn.microsoft.com/zh-cn/library/azure/dn948556.aspx) and feel free to contribute to the DocumentDB .NET Library on [GitHub][].
 
 
 [\*]: https://microsoft.sharepoint.com/teams/DocDB/Shared%20Documents/Documentation/Docs.LatestVersions/PicExportError

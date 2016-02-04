@@ -11,9 +11,9 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="07/06/2015"
-   wacn.date=""/>
+	ms.service="hdinsight"
+	ms.date="12/04/2015"
+	wacn.date=""/>
 
 #Determine Twitter trending topics with Apache Storm on HDInsight
 

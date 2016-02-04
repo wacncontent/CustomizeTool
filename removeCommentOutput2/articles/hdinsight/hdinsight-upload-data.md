@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/28/2015"
+	ms.date="12/29/2015"
 	wacn.date=""/>
 
 
@@ -58,11 +58,11 @@ Microsoft provides the following utilities to work with Azure Blob storage:
 
 The Azure CLI is a cross-platform tool that allows you to manage Azure services. Use the following steps to upload data to Azure Blob storage:
 
-1. [Install and configure the Azure CLI ](/documentation/articles/xplat-cli-install).
+1. [Install and configure the Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install).
 
 2. Open a command prompt, bash, or other shell, and use the following to authenticate to your Azure subscription.
 
-		azure login
+		azure login -e AzureChinaCloud 
 
 	When prompted, enter the user name and password for your subscription.
 
@@ -92,9 +92,9 @@ The Azure CLI is a cross-platform tool that allows you to manage Azure services.
 
 > [AZURE.NOTE] If you will always be working with the same storage account, you can set the following environment variables instead of specifying the account and key for every command:
 >
-> * **AZURE_STORAGE_ACCOUNT**: The storage account name
+> * **AZURE\_STORAGE\_ACCOUNT**: The storage account name
 >
-> * **AZURE_STORAGE_ACCESS_KEY**: The storage account key
+> * **AZURE\_STORAGE\_ACCESS\_KEY**: The storage account key
 
 ###<a id="powershell"></a>Azure PowerShell
 
@@ -119,8 +119,7 @@ Azure PowerShell is a scripting environment that you can use to control and auto
 		Select-AzureSubscription $subscriptionName
 
 		# Get the storage account key
-		$storageaccountkey = get-azurestoragekey -ResourceGroupName $resourceGroupName -Name $storageAccountName | %{$_.Primary}
-
+		$storageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName | %{ $_.Key1 }
 		# Create the storage context object
 		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageaccountkey
 
@@ -250,15 +249,15 @@ Now that you understand how to get data into HDInsight, read the following artic
 
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 
-[sqldatabase-create-configure]: /documentation/articles/sql-database-create-configure
+[sqldatabase-create-configure]: /documentation/articles/sql-database-get-started
 
 [apache-sqoop-guide]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 

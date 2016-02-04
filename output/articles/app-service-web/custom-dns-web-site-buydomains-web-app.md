@@ -1,33 +1,34 @@
-<!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="How to buy a custom domain name in Azure Websites"
-	description="Learn how to buy a custom domain name with a web app in Azure Websites."
+	pageTitle="How to buy a custom domain name in Azure Web Apps"
+	description="Learn how to buy a custom domain name with a web app in Azure."
 	services="app-service\web"
 	documentationCenter=""
-	authors="MikeWasson"
+	authors="rmcmurray"
 	manager="wpickett"
 	editor=""/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="05/21/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
-# Buy and Configure a custom domain name in Azure Websites
+# Buy and Configure a custom domain name in Azure
 
-<div class="dev-center-tutorial-selector sublanding">
-  <a href="/documentation/articles/custom-dns-web-site-buydomains-web-app" title="Web Apps" class="current">Buy Domain for Web Apps</a>
-  <a href="/documentation/articles/web-sites-custom-domain-name" title="Web Apps">Web Apps with External Domains</a>
-  <a href="/documentation/articles/web-sites-traffic-manager-custom-domain-name/" title="Web Apps with Traffic Manager">Web Apps with Traffic Manager</a>
+> [AZURE.SELECTOR]
+- [Buy Domain for Web Apps](/documentation/articles/custom-dns-web-site-buydomains-web-app)
+- [Web Apps with External Domains](/documentation/articles/web-sites-custom-domain-name)
+- [Web Apps with Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name)
+- [GoDaddy](/documentation/articles/web-sites-godaddy-custom-domain-name)
 
-</div>
+
+
 
 [AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
 When you create a web app, Azure assigns it to a subdomain of chinacloudsites.cn. For example, if your web app is named **contoso**, the URL is **contoso.chinacloudsites.cn**. Azure also assigns a virtual IP address.
 
-For a production web app, you probably want users to see a custom domain name. This article explains how to buy and configure a custom domain with [Azure Websites](/documentation/services/web-sites/). 
+For a production web app, you probably want users to see a custom domain name. This article explains how to buy and configure a custom domain with [Azure Web Apps](/documentation/services/web-sites/). 
 
 [AZURE.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]
 
@@ -51,7 +52,7 @@ Use the following steps to buy domain names and assign to your web app.
 
 	![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-1.png)
 
-4. In the **Buy Domains** blade, use the text box to type the domain name you want to buy and hit Enter. The suggested available domains will be shown just blow the text box. Select what domain you want to buy. You can choose to purchase multiple domains at once. 
+4. In the **Buy Domains** blade, use the text box to type the domain name you want to buy and hit Enter. The suggested available domains will be shown just below the text box. Select what domain you want to buy. You can choose to purchase multiple domains at once. 
 
   ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-2.png)
 
@@ -88,7 +89,7 @@ Use the following steps to buy domain names and assign to your web app.
 
 > [AZURE.NOTE] You can "Cancel purchase" within 5 days for full refund. After 5 days you will not be able to "Cancel purchase", instead you will see an option to "Delete" the domain. Deleting the domain will result in releasing it from your subscription without refund and will become available domain. 
 
-	Once configuration has completed, the custom domain name will be listed in the **Hostname bindings** section of your web app.
+Once configuration has completed, the custom domain name will be listed in the **Hostname bindings** section of your web app.
 
 At this point, you should be able to enter the custom domain name in your browser and see that it successfully takes you to your web app.
  

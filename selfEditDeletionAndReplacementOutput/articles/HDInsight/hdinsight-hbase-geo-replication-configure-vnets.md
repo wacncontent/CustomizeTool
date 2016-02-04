@@ -6,5 +6,5 @@ deleted:
 		
 		> [AZURE.VIDEO configure-the-vpn-connectivity-between-two-azure-virtual-networks]
 
-reason: ()
+reason: (video)
 

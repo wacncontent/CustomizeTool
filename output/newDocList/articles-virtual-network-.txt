@@ -1,12 +1,5 @@
-new docs: 5, word count: 6485
-articles/virtual-network/virtual-network-deploy-multinic-arm-cli.md
-articles/virtual-network/virtual-network-deploy-multinic-arm-ps.md
-articles/virtual-network/virtual-network-deploy-multinic-arm-template.md
-articles/virtual-network/virtual-network-deploy-multinic-classic-cli.md
-articles/virtual-network/virtual-network-deploy-multinic-classic-ps.md
+new docs: 0, word count: 199
 
-new includes: 4
-includes/virtual-network-deploy-multinic-arm-selectors-include.md
-includes/virtual-network-deploy-multinic-classic-selectors-include.md
-includes/virtual-network-deploy-multinic-intro-include.md
-includes/virtual-network-deploy-multinic-scenario-include.md
+new includes: 2
+includes/virtual-network-deploy-static-pip-intro-include.md
+includes/virtual-network-deploy-static-pip-scenario-include.md

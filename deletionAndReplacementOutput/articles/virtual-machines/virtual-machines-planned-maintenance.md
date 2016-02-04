@@ -12,5 +12,5 @@ deleted:
 		Australia Southeast | Australia East
 		US Gov Iowa | US Gov Virginia
 
-reason: ()
+reason: (region diff)
 

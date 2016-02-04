@@ -7,9 +7,9 @@
 	manager="adinah" 
 	editor="cgronlun"/>
 
-<tags
-	ms.service="storage"
-	ms.date="09/23/2015"
+<tags 
+	ms.service="storage" 
+	ms.date="09/23/2015" 
 	wacn.date=""/>
 
 # Configure Azure Storage Connection Strings

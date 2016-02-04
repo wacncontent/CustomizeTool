@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory integration with Coupa | Windows Azure" 
     description="Learn how to use Coupa with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Coupa
@@ -91,7 +91,7 @@ If you are not familiar with this procedure, see [How to retrieve a certificate'
 
     ![Configure App URL](./media/active-directory-saas-coupa-tutorial/IC791904.png "Configure App URL")
 
-    1.  In the **Sign On URL** textbox, type URL used by your users to sign on to your Coupa application (e.g.: “*http://company.Coupa.com*”).
+    1.  In the **Sign On URL** textbox, type URL used by your users to sign on to your Coupa application (e.g.: "*http://company.Coupa.com*").
     2.  Open your downloaded Coupa metadata file, and then copy the **AssertionConsumerService index/URL**.
     3.  In the **Coupa Reply URL** textbox, paste the **AssertionConsumerService index/URL** value.
     4.  Click **Next**.

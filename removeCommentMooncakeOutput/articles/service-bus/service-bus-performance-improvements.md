@@ -6,10 +6,11 @@
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" /> 
-<tags
-	ms.service="service-bus"
-	ms.date="09/18/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="service-bus"
+
+   ms.date="09/18/2015"
+   wacn.date="" />
 
 # Best Practices for performance improvements using Service Bus brokered messaging
 
@@ -120,7 +121,7 @@ When using the default lock expiration of 60 seconds, a good value for [Subscrip
 
 Prefetching messages increases the overall throughput for a queue or subscription because it reduces the overall number of message operations, or round trips. Fetching the first message, however, will take longer (due to the increased message size). Receiving prefetched messages will be faster because these messages have already been downloaded by the client.
 
-The time-to-live (TTL) property of a message is checked by the server at the time the server sends the message to the client. The client does not check the message’s TTL property when the message is received. Instead, the message can be received even if the message’s TTL has passed while the message was cached by the client.
+The time-to-live (TTL) property of a message is checked by the server at the time the server sends the message to the client. The client does not check the messageâs TTL property when the message is received. Instead, the message can be received even if the messageâs TTL has passed while the message was cached by the client.
 
 Prefetching does not affect the number of billable messaging operations, and is available only for the Service Bus client protocol. The HTTP protocol does not support prefetching. Prefetching is available for both synchronous and asynchronous receive operations.
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="How to View Azure Service Fabric entities aggregated health"
+   pageTitle="How to View Azure Service Fabric entities aggregated health | Windows Azure"
    description="Describes how to query, view and evaluate the Azure Service Fabric entities aggregated health, through health queries and general queries."
    services="service-fabric"
    documentationCenter=".net"
@@ -8,22 +8,18 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/03/2015"
-   ms.author="oanapl"/>
+	ms.service="service-fabric"
+	ms.date="10/23/2015"
+	wacn.date=""/>
 
 # How to view Service Fabric health reports
-Service Fabric introduces a [Health Model](service-fabric-health-introduction.md) comprised of health entities on which System components and watchdogs can report local conditions they are monitoring. The [Health Store](service-fabric-health-introduction.md#health-store) aggregates all health data to determine whether entities are healthy.
+Service Fabric introduces a [Health Model](/documentation/articles/service-fabric-health-introduction) comprised of health entities on which System components and watchdogs can report local conditions they are monitoring. The [Health Store](/documentation/articles/service-fabric-health-introduction#health-store) aggregates all health data to determine whether entities are healthy.
 
-Out of the box, the cluster is populated with health reports sent by the System components. Read more at [Using System health reports for troubleshooting](service-fabric-understand-and-troubleshoot-with-system-health-reports.md).
+Out of the box, the cluster is populated with health reports sent by the System components. Read more at [Using System health reports for troubleshooting](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports).
 
 Service Fabric provides multiple ways to get the entities aggregated health:
 
-- [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) or other visualization tools
+- [Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster) or other visualization tools
 
 - Health queries (through Powerhsell/API/REST)
 
@@ -57,20 +53,20 @@ View of the cluster with ServiceFabricExplorer.
 [1]: ./media/service-fabric-view-entities-aggregated-health/servicefabric-explorer-cluster-health.png
 
 
-> [AZURE.NOTE] Read more about [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md).
+> [AZURE.NOTE] Read more about [Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster).
 
 ## Health queries
-Service Fabric exposes health queries for each of the supported [entity types](service-fabric-health-introduction.md#health-entities-and-hierarchy). They can be accessed trough API (methods on FabricClient.HealthManager), Powershell cmdlets and REST. These queries return complete health information about the entity, including aggregated health state, health events reported on the entity, children health states (when applicable) and unhealthy evaluations when the entity is not healthy.
+Service Fabric exposes health queries for each of the supported [entity types](/documentation/articles/service-fabric-health-introduction#health-entities-and-hierarchy). They can be accessed trough API (methods on FabricClient.HealthManager), Powershell cmdlets and REST. These queries return complete health information about the entity, including aggregated health state, health events reported on the entity, children health states (when applicable) and unhealthy evaluations when the entity is not healthy.
 
 > [AZURE.NOTE] A health entity is returned to the user when it is completely populated in the Health Store: the entity has a System report, it's active (not deleted) and parent entities on the hierarchy chain have System reports. If any of these conditions is not satisfied, the health queries return an exception showing why the entity is not returned.
 
-The health queries require passing in the entity identifier, which depends on the entity type. They accept optional health policy parameters. If not specified, the [health policies](service-fabric-health-introduction.md#health-policies) from cluster or application manifest are used for evaluation. They also accept filters for returning only partial children or events, the ones that respect the specified filters.
+The health queries require passing in the entity identifier, which depends on the entity type. They accept optional health policy parameters. If not specified, the [health policies](/documentation/articles/service-fabric-health-introduction#health-policies) from cluster or application manifest are used for evaluation. They also accept filters for returning only partial children or events, the ones that respect the specified filters.
 
 > [AZURE.NOTE] The output filters are applied on the server side, so the message reply size is reduced. It is recommended to use the filters to limit the data returned rather than apply filters on the client side.
 
 An entity health contains the following information:
 
-- The aggregated health state of the entity. This is computed by the Health Store based on entity health reports, children health states (when applicable) and health policies. Read more about [Entity health evaluation](service-fabric-health-introduction.md#entity-health-evaluation).  
+- The aggregated health state of the entity. This is computed by the Health Store based on entity health reports, children health states (when applicable) and health policies. Read more about [Entity health evaluation](/documentation/articles/service-fabric-health-introduction#entity-health-evaluation).  
 
 - The health events on the entity.
 
@@ -698,7 +694,7 @@ HealthEvents          :
 ```
 
 ## General Queries
-The general queries return the list of Service Fabric entities of the specified type. They are exposed through API (methods on FabricClient.QueryManager), Powershell cmdlets and REST. These queries aggregate sub-queries from multiple components. One of them is the [Health Store](service-fabric-health-introduction.md#health-store), which populates the aggregated health state for each query result.  
+The general queries return the list of Service Fabric entities of the specified type. They are exposed through API (methods on FabricClient.QueryManager), Powershell cmdlets and REST. These queries aggregate sub-queries from multiple components. One of them is the [Health Store](/documentation/articles/service-fabric-health-introduction#health-store), which populates the aggregated health state for each query result.  
 
 > [AZURE.NOTE] The general queries return the aggregated health state of the entity and do not contain the rich health data. If an entity is not healthy, you can follow up with health queries to get all health information, like events, children health states and unhealthy evaluations.
 
@@ -824,17 +820,17 @@ ForceRestart                  : False
 UpgradeReplicaSetCheckTimeout : 00:15:00
 ```
 
-Read more about [Service Fabric Application Upgrade](service-fabric-application-upgrade.md).
+Read more about [Service Fabric Application Upgrade](/documentation/articles/service-fabric-application-upgrade).
 
 ## Troubleshoot with Health
 Whenever there is an issue in the cluster or an application, look at the cluster or the application health to pinpoint what is wrong. The unhealthy evaluations will show with details what triggered the current unhealthy state. If needed, drill down into unhealthy children entities to figure out issues.
 
 ## Next steps
-[Using System health reports for troubleshooting](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
+[Using System health reports for troubleshooting](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports)
 
-[Adding custom Service Fabric health reports](service-fabric-report-health.md)
+[Adding custom Service Fabric health reports](/documentation/articles/service-fabric-report-health)
 
-[How to Monitor and Diagnose Services locally](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md)
+[How to Monitor and Diagnose Services locally](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally)
 
-[Service Fabric Application Upgrade](service-fabric-application-upgrade.md)
+[Service Fabric Application Upgrade](/documentation/articles/service-fabric-application-upgrade)
  

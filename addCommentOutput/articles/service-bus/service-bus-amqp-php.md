@@ -226,4 +226,9 @@ Ready to learn more? Visit the following links:
 
 [AMQP in Service Bus for Windows Server]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
 
+<!-- deleted by customization
+[Service Bus AMQP overview]: service-bus-amqp-overview.md
+-->
+<!-- keep by customization: begin -->
 [Service Bus AMQP overview]: /documentation/articles/service-bus-amqp-overview
+<!-- keep by customization: end -->

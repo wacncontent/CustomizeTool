@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure Site Recovery: Performance and scaling testing: On-premises to on-premises"
-	description="This article discusses the testing of the performance impact of replication using Azure Site Recovery in an on-premises to on-premises deployment."
+	pageTitle="Performance test and scale results for on-premises to on-premises Hyper-V replication with Site Recovery | Windows Azure"
+	description="This article provides information about performance testing for on-premises to on-premises replication using Azure Site Recovery."
 	services="site-recovery"
 	documentationCenter=""
 	authors="csilauraa"
@@ -9,24 +9,25 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="10/07/2015"
+	ms.date="12/14/2015"
 	wacn.date=""/>
 
-# Performance and scaling testing: On-premises to on-premises
+# Performance test and scale results for on-premises to on-premises Hyper-V replication with Site Recovery
 
-Windows Azure Site Recovery orchestrates and manages replication of your primary data center to a second location so that your data is backed up and recoverable in the case of planned and unplanned outages. You can backup up on-premises private clouds located on System Center Virtual Machine Manager (VMM) to another on-premises location, or to Windows Azure storage. To perform the replication, VMM uses Hyper-V Replica, a replication mechanism that is built into Hyper-V in Windows Server 2012 and Windows Server 2012 R2. It provides asynchronous replication of Hyper-V virtual machines between two hosting servers. Any server workload that can be virtualized in Hyper-V can be replicated. Replication works over any ordinary IP-based network Hyper-V Replica works with standalone servers, failover clusters, or a mixture of both.
+You can use Windows Azure Site Recovery to orchestrate and manage replication of virtual machines and physical servers to Azure, or to a secondary datacenter. This article provides the results of performance testing we did when replicating Hyper-V virtual machines between two on-premises datacenters.
 
-This topic discusses the testing of the performance impact of replication using Azure Site Recovery in an on-premises to on-premises deployment. It provides detailed information about the parameters and configuration settings used in the test, shows the test deployment step, and provided detailed test results.
 
-## Test goals
 
-The goal is to examine how Azure Site Recovery performs during steady state replication. Steady state replication occurs when virtual machines have completed initial replication and are synchronizing delta changes. It’s important to measure performance using steady state because it’s the state in which most virtual machines remain unless unexpected outages occur.
+## Overview
 
-## Running the test deployment
+The goal of testing was to examine how Azure Site Recovery performs during steady state replication. Steady state replication occurs when virtual machines have completed initial replication and are synchronizing delta changes. It's important to measure performance using steady state because it's the state in which most virtual machines remain unless unexpected outages occur.
 
-The test deployment consisted of two on-premises sites with a VMM server in each. Both VMM servers are registered in an Azure Site Recovery vault. This test deployment is typical of a head office/branch office deployment, with head office acting as the primary site and the branch office as the secondary or recovery site.
 
-### Test deployment steps
+The test deployment consisted of two on-premises sites with a VMM server in each site. This test deployment is typical of a head office/branch office deployment, with head office acting as the primary site and the branch office as the secondary or recovery site.
+
+### What we did
+
+Here's what we did in the test pass:
 
 1. Created virtual machines using VMM templates.
 
@@ -70,7 +71,7 @@ Hyper-V Replica uses a small amount of memory on the recovery server to optimize
 
 ![Secondary results](./media/site-recovery-performance-and-scaling-testing-on-premises-to-on-premises/IC744916.png)
 
-The amount of I/O operations on the recovery site is a function of the number of write operations on the primary site. Let’s look at the total I/O operations on the recovery site in comparison with the total I/O operations and write operations on the primary site. The graphs show that the total IOPS on the recovery site is
+The amount of I/O operations on the recovery site is a function of the number of write operations on the primary site. Let's look at the total I/O operations on the recovery site in comparison with the total I/O operations and write operations on the primary site. The graphs show that the total IOPS on the recovery site is
 
 - Around 1.5 times the write IOPS on the primary.
 
@@ -88,7 +89,7 @@ An average of 275 MB per second of network bandwidth was used between the primar
 
 ### Effect of replication on virtual machine performance
 
-An important consideration is the impact of replication on production workloads running on the virtual machines. If the primary site is adequately provisioned for replication, there shouldn’t be any impact on the workloads. Hyper-V Replica’s lightweight tracking mechanism ensures that workloads running in the virtual machines are not impacted during steady-state replication. This is illustrated in the following graphs.
+An important consideration is the impact of replication on production workloads running on the virtual machines. If the primary site is adequately provisioned for replication, there shouldn't be any impact on the workloads. Hyper-V Replica's lightweight tracking mechanism ensures that workloads running in the virtual machines are not impacted during steady-state replication. This is illustrated in the following graphs.
 
 This graph shows IOPS performed by virtual machines running different workloads before and after replication was enabled. You can observe that there is no difference between the two.
 
@@ -102,7 +103,7 @@ The following graph shows the throughput of virtual machines running different w
 
 The results clearly show that Azure Site Recovery, coupled with Hyper-V Replica, scales well with minimum overhead for a large cluster.  Azure Site Recovery provides simple deployment, replication, management and monitoring. Hyper-V Replica provides the necessary infrastructure for successful replication scaling. For planning an optimum deployment we suggest you download the [Hyper-V Replica Capacity Planner](https://www.microsoft.com/download/details.aspx?id=39057).
 
-## Test deployment environment
+## Test environment details
 
 ### Primary site
 
@@ -110,7 +111,7 @@ The results clearly show that Azure Site Recovery, coupled with Hyper-V Replica,
 
 - The virtual machines run different workloads, and all have Azure Site Recovery protection enabled.
 
-- Storage for the cluster node is provided by an iSCSI SAN. Model – Hitachi HUS130.
+- Storage for the cluster node is provided by an iSCSI SAN. Model - Hitachi HUS130.
 
 - Each cluster server has four network cards (NICs) of one Gbps each.
 
@@ -127,7 +128,7 @@ The results clearly show that Azure Site Recovery, coupled with Hyper-V Replica,
 
 - The secondary site has a six-node failover cluster.
 
-- Storage for the cluster node is provided by an iSCSI SAN. Model – Hitachi HUS130.
+- Storage for the cluster node is provided by an iSCSI SAN. Model - Hitachi HUS130.
 
 ![Primary hardware specification](./media/site-recovery-performance-and-scaling-testing-on-premises-to-on-premises/IC744923.png)
 
@@ -201,11 +202,6 @@ The table summarizes the performance metrics and counters that were measured in 
 
 ## Next steps
 
-To start deploying ASR:
-
-- [Set up protection between an on-premises VMM site and Azure](/documentation/articles/site-recovery-vmm-to-azure)
-- [Set up protection between an on-premises Hyper-V site and Azure](/documentation/articles/site-recovery-hyper-v-site-to-azure)
 - [Set up protection between two on-premises VMM sites](/documentation/articles/site-recovery-vmm-to-vmm)
-- [Set up protection between two on-premises VMM sites with SAN](/documentation/articles/site-recovery-vmm-san)
-- [Set up protection with a single VMM server](/documentation/articles/site-recovery-single-vmm)
+
  

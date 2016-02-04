@@ -28,7 +28,7 @@ Visit [the Virtual Network documentation](/documentation/services/networking/) t
 
 ### What services can I use with VNets?
 
-VNets can be used with a variety of different Azure services, such as Cloud Services (PaaS), Virtual Machines, and Web Apps. However, there are a few services that are not supported on a VNet. Please check the specific service you want to use and verify that it is compatible.
+VNets can be used with a variety of different Azure services, such as Cloud Services (PaaS), Virtual Machines, and web sites. However, there are a few services that are not supported on a VNet. Please check the specific service you want to use and verify that it is compatible.
 
 ### Can I use VNets without cross-premises connectivity?
 
@@ -193,7 +193,7 @@ No. You must not change any interface properties of VMs. Any changes may lead to
 
 Nothing. The IP addresses (both public VIP and internal IP address) will stay with your cloud service or VM. 
 
-> [AZURE.NOTE] If you want to simply shut down the VM, don't use the Management Portal to do so. Currently, the shutdown button will deallocate the virtual machine.
+> [AZURE.NOTE]Â If you want to simply shut down the VM, don't use the Management Portal to do so. Currently, the shutdown button will deallocate the virtual machine.
 
 ### Can I move VMs from one subnet to another subnet in a VNet without re-deploying?
 
@@ -205,7 +205,7 @@ No. A MAC address cannot be statically configured.
 
 ### Will the MAC address remain the same for my VM once it has been created?
 
-No. A VM's MAC address can change for a different reasons. If the VM is put in the status Stopped (Deallocated), if you change the VM size, or if there is service healing or planned maintenance of the host server, the MAC address is not retained.
+No, but it will only change if the VM is put in the status Stopped (Deallocated). If you change the VM size, reboot, or in case of service healing or planned maintenance of the host server, the MAC address is retained.
 
 ### Can I connect to the internet from a VM in a VNet?
 
@@ -217,17 +217,18 @@ Yes. All services deployed within a VNet can connect to the Internet. Additional
 
 You can only use compute services within VNets. Compute services are limited to Cloud Services (web and worker roles) and VMs.
 
-### Can I use Web Apps with Virtual Network?
+### Can I use web sites with Virtual Network?
 
-No. An Azure Web App cannot be deployed in a VNet. However, Web Apps can securely connect and access resources in your Azure VNet if you have point-to-site configured for your VNet. For more information, see the following:
+Yes. You can deploy web sites inside a VNet using ASE (Azure Websites Environment). Adding to that, web sites can securely connect and access resources in your Azure VNet if you have point-to-site configured for your VNet. For more information, see the following:
 
-- [Web Apps Virtual Network Integration](http://azure.microsoft.com/blog/
-- 014/09/15/azure-websites-virtual-network-integration/)
 
-- [Using VNet Integration and Hybrid Connections with Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
+- [Creating web sites in an Azure Websites Environment](/documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase)
 
-- [Integrate a web app with an Azure Virtual Network](/documentation/articles/web-sites-integrate-with-vnet)
+- [web sites Virtual Network Integration](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)
 
+- [Using VNet Integration and Hybrid Connections with web sites](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
+
+- [Integrate a web site with an Azure Virtual Network](/documentation/articles/web-sites-integrate-with-vnet)
 
 ### Can I deploy cloud services with web and worker roles (PaaS) in a VNet?
 

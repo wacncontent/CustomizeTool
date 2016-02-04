@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="billing"
-	ms.date="10/16/2015"
+	ms.date="10/22/2015"
 	wacn.date=""/>
 
 
@@ -20,7 +20,15 @@ The charges for Windows Azure subscriptions vary by rate plan. Some rate plans, 
 
 Please note that up to 24 hours of latent usage from your prior billing period can be reported in your current billing period.
 
-For more information about consumption, usage, and rate plans, see the [Windows Azure Purchase Options page](/pricing/overview/).
+For more information about consumption and rate plans, see the [Windows Azure Purchase Options page](/pricing/overview/).
+
+The below links cover a complete list of all Windows Azure services.
+
+- [Service Details list (csv1)](https://azurepricing.blob.core.chinacloudapi.cn/supplemental/MOSPServices_csv1.xlsx)
+- [Service Details list (csv2)](https://azurepricing.blob.core.chinacloudapi.cn/supplemental/MOSPServices_csv2.xlsx)
+
+*NOTE: The **csv1** link refers to the column header names for csv version 1 and **csv2** link refers to the new column header names for csv version 2.  These files are updated monthly.*
+
 
 ## Content:
 
@@ -124,7 +132,7 @@ Any bill adjustments (credits or balances) applied to your account since your la
 The Current Charges section of the bill contains details about your monthly charges. The links are organized into the following subsections.
 
 ### Usage Charges
-Usage charges are total monthly charges on a subscription. You are billed in arrears for your past month’s usage.
+Usage charges are total monthly charges on a subscription. You are billed in arrears for your past monthâs usage.
 
 ### Discounts
 Service discounts on your usage would be reflected in this line item that are applied to your current bill.
@@ -156,7 +164,7 @@ This section is the payment instructions of where to send checks, wire transfers
 
 As part of our ongoing commitment to help customers easily manage their Azure use, we've enhanced the download usage file that reports on your Azure services usage and costs.  The download link contains two versions of the usage file: **Version 1** uses the pre-existing format; **Version 2** includes additional information and updated column names in the Daily Usage section.  
 
-Usage charges are total **monthly** charges on a subscription less any credit or discount. You are billed in arrears for your past month’s usage.  The top section of the file display the details on the services you are being billed for during the previous month's billing cycle.  The table below lists the names of the columns for each of the .csv version files.
+Usage charges are total **monthly** charges on a subscription less any credit or discount. You are billed in arrears for your past monthâs usage.  The top section of the file display the details on the services you are being billed for during the previous month's billing cycle.  The table below lists the names of the columns for each of the .csv version files.
 
 **Version 1** |  **Version 2**  |  **Description**|
 :---------------| :---------------- | --------|
@@ -233,15 +241,6 @@ In addition to some new fields and name changes to csv Version 2, there will be 
 
 ![tags](./media/billing-understand-your-bill/tags.png)
 
-
-Please see these additional sources for more details on each service. These files are updated on a monthly basis, published on the 25th for the coming month, and are available from **May 2015** onwards for .csv Version 1, and from **June 2015** onward for .csv Version 2. Below is the base file URL for the Service Download Fields:
-
->>  https://azurepricing.blob.core.chinacloudapi.cn/supplemental/MOSPServices_v1_MMYYYY.xlsx
->>  https://azurepricing.blob.core.chinacloudapi.cn/supplemental/MOSPServices_v2_MMYYYY.xlsx
-
-
-
-To find the most current version, enter in the Year and Month (looking for May 2015 file, enter in **052015** into the section _**“MMYYYY”**_ in the above URL).  This spreadsheet provides a listing of all possible combinations of the service related fields in the **Usage Download Report**.
 
 ## More Resources
 Navigate to the section, **Manage Accounts, Subscriptions, and Admin Roles**, under [Manage your services](https://msdn.microsoft.com/zh-cn/library/azure/dn578292.aspx) for some very helpful links:

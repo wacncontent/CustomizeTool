@@ -14,13 +14,13 @@
 
 # Troubleshooting resource group deployments in Azure
 
-When you encounter a problem during deployment, you need to discover what went wrong. Resource Manager provides two ways for you to find out what happened and why it happened. You can use deployment commands to retrieve information about 
-particular deployments for a resource group. Or, you can use the audit logs to retrieve information about all operations performed on a resource group.  With this information, you can fix the 
+When you encounter a problem during deployment, you need to discover what went wrong. Resource Manager provides two ways for you to find out what happened and why it happened. You can use deployment commands to retrieve information about
+particular deployments for a resource group. Or, you can use the audit logs to retrieve information about all operations performed on a resource group.  With this information, you can fix the
 issue and resume operations in your solution.
 
 This topic focuses primarily on using deployment commands to troubleshoot deployments. For information about using the audit logs to track all operations on your resources, see [Audit operations with Resource Manager](/documentation/articles/resource-group-audit).
 
-This topic shows how to retrieve troubleshooting information through Azure PowerShell, Azure CLI and REST API. For information about using the preview portal to troubleshoot deployments, see [Using the Azure Preview Portal to manage your Azure resources](/documentation/articles/resource-group-portal).
+This topic shows how to retrieve troubleshooting information through Azure PowerShell, Azure CLI and REST API. For information about using the preview portal to troubleshoot deployments, see [Using the Azure <!-- deleted by customization Management --><!-- keep by customization: begin --> Preview <!-- keep by customization: end --> Portal to manage your Azure resources](/documentation/articles/resource-group-portal).
 
 Solutions to common errors that users encounter are also described in this topic.
 
@@ -60,7 +60,7 @@ Each deployment is usually made up of multiple operations, with each operation r
     /subscriptions/xxxxx...   347A111792B648D8     @{ProvisioningState=Failed; Timestam...
     /subscriptions/xxxxx...   699776735EFC3D15     @{ProvisioningState=Succeeded; Times...
 
-It shows two operations in the deployment. One has a provisioning state of Failed and the other of Succeeded. 
+It shows two operations in the deployment. One has a provisioning state of Failed and the other of Succeeded.
 
 You can retrieve the status message with the following command:
 
@@ -95,7 +95,7 @@ You can get the overall status of a deployment with the **azure group deployment
     info:    group deployment show command OK
 
 
-You can find out more information about why the deployment failed in the audit logs. To see the audit logs, run the **azure group log show** command. You can include the **--last-deployment** option to retrieve only the log for the most recent deployment. 
+You can find out more information about why the deployment failed in the audit logs. To see the audit logs, run the **azure group log show** command. You can include the **--last-deployment** option to retrieve only the log for the most recent deployment.
 
     azure group log show ExampleGroup --last-deployment
 
@@ -134,7 +134,7 @@ The **azure group log show** command can return a lot of information. For troubl
       },
       "properties": {
         "statusCode": "Conflict",
-        "statusMessage": "{\"Code\":\"Conflict\",\"Message\":\"Website with given name mysite already exists.\",\"Target\":null,\"Details\":[{\"Message\":\"Website with given name 
+        "statusMessage": "{\"Code\":\"Conflict\",\"Message\":\"Website with given name mysite already exists.\",\"Target\":null,\"Details\":[{\"Message\":\"Website with given name
           mysite already exists.\"},{\"Code\":\"Conflict\"},{\"ErrorEntity\":{\"Code\":\"Conflict\",\"Message\":\"Website with given name mysite already exists.\",\"ExtendedCode\":
           \"54001\",\"MessageTemplate\":\"Website with given name {0} already exists.\",\"Parameters\":[\"mysite\"],\"InnerErrors\":null}}],\"Innererror\":null}"
       },
@@ -204,14 +204,14 @@ For versions of PowerShell prior to 1.0 Preview, you can see the full list of re
 
     Name                                    Locations                               LocationsString
     ----                                    ---------                               ---------------
-    ResourceGroup                           {China East, <!-- deleted by customization South --> China <!-- deleted by customization East, China East.. --><!-- keep by customization: begin --> North.. <!-- keep by customization: end -->. China East <!-- deleted by customization, South --> China <!-- deleted by customization East, China East,.. --><!-- keep by customization: begin --> North,.. <!-- keep by customization: end -->.
+    ResourceGroup                           {China East, <!-- deleted by customization South China --><!-- keep by customization: begin --> china <!-- keep by customization: end --><!-- deleted by customization East, China East.. --><!-- keep by customization: begin --> North.. <!-- keep by customization: end -->. China East <!-- deleted by customization, South --> China <!-- deleted by customization East, China East,.. --><!-- keep by customization: begin --> North,.. <!-- keep by customization: end -->.
 <!-- deleted by customization
     Microsoft.ApiManagement/service         {China North, China East, China East 2, Nor... China North, China East, China East 2, Nort...
     Microsoft.AppService/apiapps            {China East, China North, China East,... China East, China North, China East, ...
 -->
 <!-- keep by customization: begin -->
-    Microsoft.ApiManagement/service         {China East, China North... China East China North,...
-    Microsoft.AppService/apiapps            {China East, China North... China East China North,...
+    Microsoft.ApiManagement/service         {China East, china North... China East China North,...
+    Microsoft.AppService/apiapps            {China East, china North... China East China North,...
 <!-- keep by customization: end -->
     ...
 
@@ -261,16 +261,10 @@ For Azure CLI, you can use **azure location list**. Because the list of location
     azure location list --json | jq '.[] | select(.name == "Microsoft.Compute/virtualMachines")'
     {
       "name": "Microsoft.Compute/virtualMachines",
-<!-- deleted by customization
       "location": "China East,China East 2,China North,China North,China East,China North,West Europe,China East,China North,Japan East,China East"
--->
-<!-- keep by customization: begin -->
-      "location": "China East,China North"
-<!-- keep by customization: end -->
     }
 
 ### REST API
-        
 For REST API, see [Get information about a resource provider](https://msdn.microsoft.com/zh-cn/library/azure/dn790534.aspx).
 
 ## Creating unique resource names
@@ -390,14 +384,16 @@ Again, if you want more information about providers, including their regional av
                 "2014-02-14"
               ],
               "locations": [
-                "China North",
 <!-- deleted by customization
-                "China East",
                 "China North",
+-->
+                "China East",
+                "China North" <!-- deleted by customization, -->
+<!-- deleted by customization
                 "China North",
                 "West Europe",
--->
                 "China East"
+-->
               ],
               "properties": {},
               "name": "service"
@@ -423,7 +419,7 @@ If you are using templates that you created, it's important to understand that t
 
 Note however, that this does not necessarily mean that your resource group is "active and ready for your users". For example, most deployments request the deployment to download upgrades, wait on other, non-template resources, or to install complex scripts or some other executable activity that Azure does not know about because it is not an activity that a provider is tracking. In these cases, it can be some time before your resources are ready for real-world use. As a result, you should expect that the deployment status succeeds some time before your deployment can be used.
 
-You can prevent Azure from reporting deployment success, however, by creating a custom script for your custom template -- using the [CustomScriptExtension](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/) for example -- that knows how to monitor the entire deployment for system-wide readiness and returns successfully only when users can interact with the entire deployment. If you want to ensure that your extension is the last to run, use the **dependsOn** property in your template. An example can be seen [here](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx).
+You can prevent Azure from reporting deployment success, however, by creating a custom script for your custom template -- using the [CustomScriptExtension](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/) for example -- that knows how to monitor the entire deployment for system-wide readiness and returns successfully only when users can interact with the entire deployment. If you want to ensure that your extension is the last to run, use the **dependsOn** property in your template. An example can be seen <!-- deleted by customization when [creating template deployments](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx) --><!-- keep by customization: begin --> [here](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx) <!-- keep by customization: end -->.
 
 ## Useful tools to interact with Azure
 When you work with your Azure resources from the command-line, you will collect tools that help you do your work. Azure resource group templates are JSON documents, and the Azure Resource Manager API accepts and returns JSON, so JSON parsing tools are some of the first things you will use to help you navigate information about your resources and to design or interact with templates and template parameter files.
@@ -448,4 +444,3 @@ To master the creation of templates, read through the [Authoring Azure Resource 
 <!--Image references-->
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
-

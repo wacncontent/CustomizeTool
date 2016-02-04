@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Create Stream Analytics Outputs | Microsoft Azure" 
+	pageTitle="Create Stream Analytics Outputs | Windows Azure" 
 	description="Learn how to connect to and configure the output targets for Stream Analytics solutions." 
 	documentationCenter="" 
 	services="stream-analytics"
@@ -7,14 +7,10 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="stream-analytics" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="data-services" 
-	ms.date="10/05/2015" 
-	ms.author="jeffstok"/>
+<tags
+	ms.service="stream-analytics"
+	ms.date="11/06/2015"
+	wacn.date=""/>
 
 # Create Stream Analytics outputs
 
@@ -26,7 +22,7 @@ Azure Stream Analytics provides seven different methods for storing and viewing 
 
 ## Using a SQL Database as an output ##
 ---
-A SQL Database can be used as an output for data that is relational in nature or for applications that depend on content being hosted in a relational database. For more information on Azure SQL databases see [Azure SQL Databases](http://azure.microsoft.com/services/sql-database/).
+A SQL Database can be used as an output for data that is relational in nature or for applications that depend on content being hosted in a relational database. For more information on Azure SQL databases see [Azure SQL Databases](/documentation/services/sql-databases/).
 
 ### Parameters ###
 
@@ -65,7 +61,7 @@ The second operation is to test the connection. Azure Stream Analytics will try 
 
 ## Using Blob storage as an output ##
 ---
-For an introduction on Azure Blob storage and its usage, see the documentation at [How to use Blobs](./articles/storage/storage-dotnet-how-to-use-blobs.md).
+For an introduction on Azure Blob storage and its usage, see the documentation at [How to use Blobs](/documentation/articles/storage-dotnet-how-to-use-blobs).
 
 ### Parameters ###
 
@@ -90,14 +86,14 @@ Then supply the details as shown below:
 ---
 ### Overview ###
  
-Event Hubs are a highly scalable event ingestor, and typically are the most common way for Stream Analytics data ingress. Their robust handling of high numbers of events also make them perfect for job output.  One use of an Event Hub as output is when the output of an Stream Analytics job will be the input of another streaming job. For further details on Event Hubs visit the portal at [Event Hubs](https://azure.microsoft.com/services/event-hubs/ "Event Hubs").
+Event Hubs are a highly scalable event ingestor, and typically are the most common way for Stream Analytics data ingress. Their robust handling of high numbers of events also make them perfect for job output.  One use of an Event Hub as output is when the output of an Stream Analytics job will be the input of another streaming job. For further details on Event Hubs visit the portal at [Event Hubs](/home/features/event-hubs/ "Event Hubs").
  
 ### Parameters ###
 
 There are a few parameters that are needed to configure Event Hub data streams.
 
 1. Service Bus Namespace: Service Bus Namespace of the Event Hub. A Service Bus namespace is a container for a set of messaging entities. When creating a new Event Hub, a Service Bus namespace is also created. 
-2. Event Hub Name: Name of the Event Hub.  It’s the name specified when creating a new Event Hub. 
+2. Event Hub Name: Name of the Event Hub.  It's the name specified when creating a new Event Hub. 
 3. Event Hub Policy Name: The name of the shared access policy for accessing the Event Hub.  Shared access policies can be configured for an Event Hub on the Configure tab. Each shared access policy will have a name, permissions set, and access keys generated.
 4. Event Hub Policy Key:  The primary or secondary key of the shared access policy for accessing the Event Hub.  
 5. Partition Key Column:  Optional parameter for Event Hub outputs. This column contains the partition key for Event Hub output.
@@ -125,9 +121,10 @@ Power BI can be utilized as an output for a Stream Analytics job to provide for 
 
 There are a few parameters that are needed to configure a Power BI output.
 
-1. Output Alias – Any friendly-named output alias that is easy to refer to. This output alias is particularly helpful if it is decided to have multiple outputs for a job. In that case, this alias will be referred to in your query. For example, use the output alias value = “OutPbi”.
+1. Output Alias - Any friendly-named output alias that is easy to refer to. This output alias is particularly helpful if it is decided to have multiple outputs for a job. In that case, this alias will be referred to in your query. For example, use the output alias value = “OutPbi”.
 2. Dataset Name - Provide a dataset name that it is desired for the Power BI output to use. For example, use “pbidemo”.
 2. Table Name - Provide a table name under the dataset of the Power BI output. For example, use “pbidemo”. **Currently, Power BI output from Stream Analytics jobs may only have one table in a dataset.**
+<!-- deleted by customization
 
 ### Adding Power BI as an output ###
 
@@ -145,14 +142,15 @@ There are a few parameters that are needed to configure a Power BI output.
     ![graphic24][graphic24]
 
 
->	[AZURE.NOTE] One should not explicitly create the dataset and table in the Power BI dashboard. The dataset and table will be automatically populated when the job is started and the job starts pumping output into Power BI. Note that if the job query doesn’t return any results, the dataset and table will not be created. Also be aware that if Power BI already had a dataset and table with the same name as the one provided in this Stream Analytics job, the existing data will be overwritten.
+>	[AZURE.NOTE] One should not explicitly create the dataset and table in the Power BI dashboard. The dataset and table will be automatically populated when the job is started and the job starts pumping output into Power BI. Note that if the job query doesn't return any results, the dataset and table will not be created. Also be aware that if Power BI already had a dataset and table with the same name as the one provided in this Stream Analytics job, the existing data will be overwritten.
 
 *	Click **OK**, **Test Connection** and now the output configuration is complete.
 
+-->
 
 ## Using Azure Table storage for an output ##
 ---
-Table storage offers highly available, massively scalable storage, so that an application can automatically scale to meet user demand. Table storage is Microsoft’s NoSQL key/attribute store which one can leverage for structured data with less constraints on the schema. Azure Table storage can be used to store data for persistence and efficient retrieval. For further information on Azure Table storage visit [Azure Table storage](./articles/storage/storage-introduction.md).
+Table storage offers highly available, massively scalable storage, so that an application can automatically scale to meet user demand. Table storage is Microsoft's NoSQL key/attribute store which one can leverage for structured data with less constraints on the schema. Azure Table storage can be used to store data for persistence and efficient retrieval. For further information on Azure Table storage visit [Azure Table storage](/documentation/articles/storage-introduction).
 
 ### Parameters ###
 
@@ -165,7 +163,7 @@ To start using an Azure Table storage, the following information is needed:
 5. Row key
 
 For a better design of Partition key and Row key, please refer article below
-[Designing a Scalable Partitioning Strategy for Azure Table Storage](https://msdn.microsoft.com/library/azure/hh508997.aspx).
+[Designing a Scalable Partitioning Strategy for Azure Table Storage](https://msdn.microsoft.com/zh-cn/library/azure/hh508997.aspx).
 
 ### Adding Azure Table storage as an output ###
 
@@ -185,7 +183,7 @@ Enter the Azure Table information on the next page. The output alias is the name
 
 ![graphic15][graphic15]
 
-Batch Size is the number of records for a batch operation. Typically the default is sufficient for most jobs, refer to the [Table Batch Operation spec](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tablebatchoperation.aspx) for more details on modifying this setting.
+Batch Size is the number of records for a batch operation. Typically the default is sufficient for most jobs, refer to the [Table Batch Operation spec](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.table.tablebatchoperation.aspx) for more details on modifying this setting.
 
 If an Azure Storage account exists within the same subscription being used to create the job, select "Use Storage Account from Current Subscription", and select the Storage Account from the drop down.
 
@@ -200,13 +198,13 @@ The second one is to test the connection. Azure Stream Analytics will try to con
 ### Introduction to Service Bus Queues concepts ###
 Service Bus Queues offer a First In, First Out (FIFO) message delivery to one or more competing consumers. Typically, messages are expected to be received and processed by the receivers in the temporal order in which they were added to the queue, and each message is received and processed by only one message consumer.
 
-For further information on Service Bus Queues see [Service Bus Queues, Topics, and Subscriptions](https://msdn.microsoft.com/library/azure/hh367516.aspx "Service Bus Queues, Topics, and Subscriptions") and [An Introduction to Service Bus Queues](http://blogs.msdn.com/b/appfabric/archive/2011/05/17/an-introduction-to-service-bus-queues.aspx "An Introduction to Service Bus Queues").
+For further information on Service Bus Queues see [Service Bus Queues, Topics, and Subscriptions](https://msdn.microsoft.com/zh-cn/library/azure/hh367516.aspx "Service Bus Queues, Topics, and Subscriptions") and [An Introduction to Service Bus Queues](http://blogs.msdn.com/b/appfabric/archive/2011/05/17/an-introduction-to-service-bus-queues.aspx "An Introduction to Service Bus Queues").
 
 ### Parameters ###
 
 To start using a Service Bus Queues output, the following information will be needed:
 
-1. Output Alias – Any friendly-named output alias that is easy to refer to. This output alias is particularly helpful if it is decided to have multiple outputs for a job. In that case, this alias will be referred to in the job query.
+1. Output Alias - Any friendly-named output alias that is easy to refer to. This output alias is particularly helpful if it is decided to have multiple outputs for a job. In that case, this alias will be referred to in the job query.
 2. The namespace and service bus name.
 3. Queue Name - Queues are messaging entities, similar to event hubs and topics. They're designed to collect event streams from a number of different devices and services. When a queue is created it is also given a specific name.
 4. What serialization format is utilized for the data (Avro, CSV, JSON).
@@ -228,13 +226,13 @@ Verify your data format and serialization are correct.
 ### Introduction to Service Bus Topics concepts ###
 While Service Bus Queues provide a one to one communication method from sender to receiver, Service Bus Topics provide a one-to-many form of communication.
 
-For further information on Service Bus Topics see [Service Bus Queues, Topics, and Subscriptions](https://msdn.microsoft.com/library/azure/hh367516.aspx "Service Bus Queues, Topics, and Subscriptions") and [An Introduction to Service Bus Topics](http://blogs.msdn.com/b/appfabric/archive/2011/05/25/an-introduction-to-service-bus-topics.aspx "An Introduction to Service Bus Topics")
+For further information on Service Bus Topics see [Service Bus Queues, Topics, and Subscriptions](https://msdn.microsoft.com/zh-cn/library/azure/hh367516.aspx "Service Bus Queues, Topics, and Subscriptions") and [An Introduction to Service Bus Topics](http://blogs.msdn.com/b/appfabric/archive/2011/05/25/an-introduction-to-service-bus-topics.aspx "An Introduction to Service Bus Topics")
 
 ### Parameters ###
 
 To start using a Service Bus Topics output, the following information will be needed:
 
-1. Output Alias – Any friendly-named output alias that is easy to refer to. This output alias is particularly helpful if it is decided to have multiple outputs for a job. In that case, this alias will be referred to in your query.
+1. Output Alias - Any friendly-named output alias that is easy to refer to. This output alias is particularly helpful if it is decided to have multiple outputs for a job. In that case, this alias will be referred to in your query.
 2. The namespace and service bus name.
 3. Topic Name - Topics are messaging entities, similar to event hubs and queues. They're designed to collect event streams from a number of different devices and services. When a topic is created, it is also given a specific name. The messages sent to a Topic will not be available unless a subscription is created, so ensure there are one or more subscriptions under the topic.
 4. What serialization format is utilized for the data (Avro, CSV, JSON).
@@ -255,15 +253,15 @@ Verify your data format and serialization are correct.
 
 
 ## Get help
-For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics)
+For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/home?forum=AzureStreamAnalytics)
 
 ## Next steps
 
-- [Introduction to Azure Stream Analytics](stream-analytics-introduction.md)
-- [Get started using Azure Stream Analytics](stream-analytics-get-started.md)
-- [Scale Azure Stream Analytics jobs](stream-analytics-scale-jobs.md)
-- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+- [Introduction to Azure Stream Analytics](/documentation/articles/stream-analytics-introduction)
+- [Get started using Azure Stream Analytics](/documentation/articles/stream-analytics-get-started)
+- [Scale Azure Stream Analytics jobs](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
 
 

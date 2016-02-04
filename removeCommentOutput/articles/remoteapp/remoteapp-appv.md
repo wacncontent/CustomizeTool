@@ -1,19 +1,15 @@
 <properties 
-    pageTitle="Using App-V apps with Azure RemoteApp| Microsoft Azure" 
+    pageTitle="Using App-V apps with Azure RemoteApp| Windows Azure" 
     description="Learn how to use App-V apps in Azure RemoteApp." 
     services="remoteapp" 
 	documentationCenter="" 
     authors="ericorman" 
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="10/19/2015" 
-    ms.author="elizapo" />
+<tags
+	ms.service="remoteapp"
+	ms.date="10/19/2015"
+	wacn.date=""/>
 
 
 
@@ -21,9 +17,9 @@
 
 You can use App-V applications in a Azure RemoteApp hybrid collection, which requires domain join.
 
-Before you get started, make sure to install the App-V 5.1 client with the latest updates. You will need to create a [custom image](remoteapp-create-custom-image.md) that includes the App-V client.  
+Before you get started, make sure to install the App-V 5.1 client with the latest updates. You will need to create a [custom image](/documentation/articles/remoteapp-create-custom-image) that includes the App-V client.  
 
-It’s easy to use your existing App-V infrastructure with Azure RemoteApp. Since a hybrid collection is deployed into an Azure VNET that has access to your domain controller and the VMs are domain joined, you can leverage your existing App-v infrastructure and deployment methods to easyily host App-V application in Azure RemoteApp. Here are some considerations that you should be aware of based on the type of App-V deployment you currently have:
+Itâs easy to use your existing App-V infrastructure with Azure RemoteApp. Since a hybrid collection is deployed into an Azure VNET that has access to your domain controller and the VMs are domain joined, you can leverage your existing App-v infrastructure and deployment methods to easyily host App-V application in Azure RemoteApp. Here are some considerations that you should be aware of based on the type of App-V deployment you currently have:
 
 | Configuration options |                       | Positive                                                               | Negative                                                                                              |
 |-----------------------|-----------------------|------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|

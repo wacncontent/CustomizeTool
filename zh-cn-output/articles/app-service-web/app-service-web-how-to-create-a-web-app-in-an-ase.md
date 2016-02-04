@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="04/27/2015"
-	wacn.date=""/>
+	wacn.date="11/27/2015"/>
 
 # 如何在 App Service 环境中创建 Web 应用 #
 
@@ -25,11 +25,11 @@
 
 如果你使用已在 App Service 环境中创建的 App Service 计划，请选择该计划，输入 Web 应用的名称并选择“创建”。与创建 Web 应用的常规流程相同。此处的主要区别在于 Web 应用的访问地址：
 
-在 [*sitename*].[*App Service 环境名称*].p.chinacloudsites.cn 处进行访问
+在 [*sitename*].[*App Service 环境名称*].p.azurewebsites.net 处进行访问
 
 而不是
 
-在 [*sitename*].chinacloudsites.cn 处进行访问
+在 [*sitename*].azurewebsites.net 处进行访问
 
 现在要求 Web 应用名在整个 Azure App Service 中是唯一的。这意味着，如果想要创建名为“thisismywebapp”的 Web 应用，则 Azure App Service 中当前不能存在任何其他名为“thisismywebapp”的 Web 应用。
 
@@ -47,7 +47,7 @@ App Service 计划是一组托管的 Web 应用。选择定价时，支付的价
 
 ![][2]
 
-选择后，UI 将使用辅助池选取器更新并替换定价计划选取器。位置显示 ASE 系统的名称及其所在区域。在 URL 下方，ASE 的域名会将通常出现的 chinacloudsites.cn 替换为 App Service 环境的名称。
+选择后，UI 将使用辅助池选取器更新并替换定价计划选取器。位置显示 ASE 系统的名称及其所在区域。在 URL 下方，ASE 的域名会将通常出现的 azurewebsites.net 替换为 App Service 环境的名称。
 
 ![][3]
 

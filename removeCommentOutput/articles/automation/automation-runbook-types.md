@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="09/24/2015"
+	ms.date="11/13/2015"
 	wacn.date=""/>
 
 # Azure Automation runbook types
@@ -46,7 +46,7 @@ Azure Automation supports three types of runbooks that are  briefly described in
 
 ## PowerShell Workflow runbooks
 
-PowerShell Workflow runbooks are text runbooks based on [Windows PowerShell Workflow](/documentation/articles/automation-powershell-workflow).  You directly edit the code of the runbook using the text editor in the Azure Management Portal.  You can also use any offline text editor and [import the runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx) into Azure Automation.
+PowerShell Workflow runbooks are text runbooks based on [Windows PowerShell Workflow](/documentation/articles/automation-powershell-workflow).  You directly edit the code of the runbook using the text editor in the Azure Management Portal.  You can also use any offline text editor and [import the runbook](/documentation/articles/automation-creating-importing-runbook) into Azure Automation.
 
 ### Advantages
 
@@ -66,7 +66,7 @@ PowerShell Workflow runbooks are text runbooks based on [Windows PowerShell Work
 
 ## PowerShell runbooks
 
-PowerShell runbooks are based on Windows PowerShell.  You directly edit the code of the runbook using the text editor in the Azure Management Portal.  You can also use any offline text editor and [import the runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx) into Azure Automation.
+PowerShell runbooks are based on Windows PowerShell.  You directly edit the code of the runbook using the text editor in the Azure Management Portal.  You can also use any offline text editor and [import the runbook](/documentation/articles/automation-creating-importing-runbook) into Azure Automation.
 
 ### Advantages
 
@@ -78,7 +78,6 @@ PowerShell runbooks are based on Windows PowerShell.  You directly edit the code
 - Must be familiar with PowerShell scripting.
 - Can't use [parallel processing](/documentation/articles/automation-powershell-workflow#parallel-processing) to perform multiple actions in parallel.
 - Can't use [checkpoints](/documentation/articles/automation-powershell-workflow#checkpoints) to resume runbook in case of error.
-- Can't run runbooks on [Hybrid Runbook Worker](/documentation/articles/automation-hybrid-runbook-worker).
 - PowerShell Workflow runbooks and Graphical runbooks can only be included as child runbooks by using the Start-AzureAutomationRunbook cmdlet which creates a new job.
 
 ### Known Issues
@@ -103,6 +102,6 @@ You should take into account the following additional considerations when determ
 
 - [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)
 - [Learning Windows PowerShell Workflow](/documentation/articles/automation-powershell-workflow)
-- [Creating or Importing a Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx)
+- [Creating or Importing a Runbook](/documentation/articles/automation-creating-importing-runbook)
 
 

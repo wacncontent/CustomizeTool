@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/02/2015"
+	ms.date="11/24/2015"
 	wacn.date=""/>
 
 # Azure Active Directory Device Registration overview

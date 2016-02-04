@@ -63,7 +63,7 @@ Note that when you create a locator, there may be a 30-second delay due to requi
 
 Adaptive bitrate technologies allow video player applications to determine network conditions and select from among several bitrates. When network communication degrades, the client can select a lower bitrate allowing the player to continue to play the video at a lower video quality. As network conditions improve the client can switch to a higher bitrate with improved video quality. Azure Media Services supports the following adaptive bitrate technologies: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH, and HDS.
 
-To provide users with streaming URLs, you first must create an OnDemandOrigin locator. Creating the locator, gives you the base Path to the asset that contains the content you want to stream. However, to be able to stream this content you need to modify this path further. To construct a full URL to the streaming manifest file, you must concatenate the locator’s Path value and the manifest (filename.ism) file name. Then, append /Manifest and an appropriate format (if needed) to the locator path. 
+To provide users with streaming URLs, you first must create an OnDemandOrigin locator. Creating the locator, gives you the base Path to the asset that contains the content you want to stream. However, to be able to stream this content you need to modify this path further. To construct a full URL to the streaming manifest file, you must concatenate the locator's Path value and the manifest (filename.ism) file name. Then, append /Manifest and an appropriate format (if needed) to the locator path. 
 
 >[AZURE.NOTE]You can also stream your content over an SSL connection. To do this, make sure your streaming URLs start with HTTPS. 
 
@@ -96,7 +96,7 @@ Example
 
 **Apple HTTP Live Streaming (HLS) format with audio-only filter**
 
-By default audio only tracks are included in the HLS manifest. This is required for Apple store certification for cellular networks. In this case, if a client doesn’t have sufficient bandwidth or connected over a 2G connection it switches to audio only playback. This helps to keep ongoing streaming without buffering but with a drawback of no video. However, in some scenarios, player buffering might be preferred over audio-only. If you want to remove audio-only track you can add (audio-only=false) to the URL and remove it.
+By default audio only tracks are included in the HLS manifest. This is required for Apple store certification for cellular networks. In this case, if a client doesn't have sufficient bandwidth or connected over a 2G connection it switches to audio only playback. This helps to keep ongoing streaming without buffering but with a drawback of no video. However, in some scenarios, player buffering might be preferred over audio-only. If you want to remove audio-only track you can add (audio-only=false) to the URL and remove it.
 
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3,audio-only=false)
 
@@ -172,16 +172,17 @@ The following considerations apply:
 A **Streaming Endpoint** represents a streaming service that can deliver content directly to a client player application, or to a Content Delivery Network (CDN) for further distribution. The outbound stream from a streaming endpoint service can be a live stream, or a video on demand asset in your Media Services account. In addition, you can control the capacity of the Streaming Endpoint service to handle growing bandwidth needs by adjusting streaming reserved units. You should allocate at least one reserved unit for applications in a production environment. For more information, see [How to Scale a Media Service](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints).
 
 
+
 <!-- deleted by customization
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 -->
-
 ##Related topics
 
 [Update Media Services locators after rolling storage keys](/documentation/articles/media-services-roll-storage-access-keys)

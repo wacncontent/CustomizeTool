@@ -1,6 +1,6 @@
 <properties
-	pageTitle="App Model v2.0 .NET Web App | Windows Azure"
-	description="How to build a .NET MVC Web App that calls web services using personal Microsoft accounts and work or school accounts for sign-in."
+	pageTitle="App Model v2.0 .NET web site | Windows Azure"
+	description="How to build a .NET MVC web site that calls web services using personal Microsoft accounts and work or school accounts for sign-in."
 	services="active-directory"
 	documentationCenter=".net"
 	authors="dstrockis"
@@ -9,26 +9,26 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/11/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
-# App model v2.0 preview: Calling a web API from a .NET web app
+# App model v2.0 preview: Calling a web API from a .NET web site
 
 > [AZURE.NOTE]
 	This information applies to the v2.0 endpoint public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](/documentation/articles/active-directory-developers-guide).
 
-With the v2.0 app model, you can quickly add authentication to your web apps and web APIs with support for both personal Microsoft accounts and work or school accounts.  Here, we'll build an MVC web app that:
+With the v2.0 app model, you can quickly add authentication to your web sites and web APIs with support for both personal Microsoft accounts and work or school accounts.  Here, we'll build an MVC web site that:
 
 - Signs users in using OpenID Connect, with some help from Microsoft's OWIN middleware.
 - Gets OAuth 2.0 access tokens for a web API using ADAL.
 - Creates, Reads, and Deletes items on a user's "To-Do List", which is hosted on the web api and secured by OAuth 2.0.
 
-This tutorial will focus primarily on getting and using access tokens in a web app, described in full [here](/documentation/articles/active-directory-v2-flows#web-apps).  As prerequisites, you may want to first learn how to [add basic sign-in to a web app](/documentation/articles/active-directory-v2-devquickstarts-dotnet-web) or how to [properly secure a web API](/documentation/articles/active-directory-v2-devquickstarts-dotnet-api).
+This tutorial will focus primarily on getting and using access tokens in a web site, described in full [here](/documentation/articles/active-directory-v2-flows#web-apps).  As prerequisites, you may want to first learn how to [add basic sign-in to a web site](/documentation/articles/active-directory-v2-devquickstarts-dotnet-web) or how to [properly secure a web API](/documentation/articles/active-directory-v2-devquickstarts-dotnet-api).
 
 The basic steps to call the To-Do List Web API from the client are:
 
 1. Register an app
-2. Sign the user into the web app using OpenID Connect
+2. Sign the user into the web site using OpenID Connect
 3. Use ADAL to get an access token upon user sign-in
 4. Call the To-Do List Web API with an access token.
 
@@ -83,7 +83,7 @@ public void ConfigureAuth(IAppBuilder app)
         new OpenIdConnectAuthenticationOptions
         {
 
-					// The `Authority` represents the v2.0 endpoint - https://login.microsoftonline.com/common/v2.0
+					// The `Authority` represents the v2.0 endpoint - https://login.chinacloudapi.cn/common/v2.0
 					// The `Scope` describes the permissions that your app will need.  See /documentation/articles/active-directory-v2-scopes/
 					// In a real application you could use issuer validation for additional checks, like making sure the user's organization has signed up for your app, for instance.
 
@@ -127,20 +127,20 @@ private async Task OnAuthorizationCodeReceived(AuthorizationCodeReceivedNotifica
 		string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenantID, string.Empty);
 		ClientCredential cred = new ClientCredential(clientId, clientSecret);
 
-		// Here you ask for a token using the web app's clientId as the scope, since the web app and service share the same clientId.
+		// Here you ask for a token using the web site's clientId as the scope, since the web site and service share the same clientId.
 		var authContext = new Microsoft.IdentityModel.Clients.ActiveDirectory.AuthenticationContext(authority, new NaiveSessionCache(userObjectId));
 		var authResult = await authContext.AcquireTokenByAuthorizationCodeAsync(notification.Code, new Uri(redirectUri), cred, new string[] { clientId });
 }
 ...
 ```
 
-- In web apps, ADAL has an extensible token cache that can be used to store tokens.  This sample implements the `NaiveSessionCache` which uses http session storage to cache tokens.
+- In web sites, ADAL has an extensible token cache that can be used to store tokens.  This sample implements the `NaiveSessionCache` which uses http session storage to cache tokens.
 
 <!-- TODO: Token Cache article -->
 
 
 ## 4. Call the To-Do List Web API
-Now it's time to actually use the access_token you acquired in step 3.  Open the web app's `Controllers\TodoListController.cs` file, which makes all the CRUD requests to the To-Do List API.
+Now it's time to actually use the access_token you acquired in step 3.  Open the web site's `Controllers\TodoListController.cs` file, which makes all the CRUD requests to the To-Do List API.
 
 - You can use ADAL again here to fetch access_tokens from the ADAL cache.  First, add a `using` statement for ADAL to this file.
 
@@ -155,7 +155,7 @@ string tenantID = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.co
 string authority = String.Format(CultureInfo.InvariantCulture, Startup.aadInstance, tenantID, string.Empty);
 ClientCredential credential = new ClientCredential(Startup.clientId, Startup.clientSecret);
 
-// Here you ask for a token using the web app's clientId as the scope, since the web app and service share the same clientId.
+// Here you ask for a token using the web site's clientId as the scope, since the web site and service share the same clientId.
 AuthenticationContext authContext = new AuthenticationContext(authority, new NaiveSessionCache(userObjectID));
 result = await authContext.AcquireTokenSilentAsync(new string[] { Startup.clientId }, credential, UserIdentifier.AnyUser);
 ...
@@ -191,9 +191,9 @@ catch (AdalException ee)
 ...
 ```
 
-- The exact same `AcquireTokenSilentAsync` call is implementd in the `Create` and `Delete` actions.  In web apps, you can use this ADAL method to get access_tokens whenever you need them in your app.  ADAL will take care of acquiring, caching, and refreshing tokens for you.
+- The exact same `AcquireTokenSilentAsync` call is implementd in the `Create` and `Delete` actions.  In web sites, you can use this ADAL method to get access_tokens whenever you need them in your app.  ADAL will take care of acquiring, caching, and refreshing tokens for you.
 
-Finally, build and run your app!  Sign in with either a Microsoft Account or an Azure AD Account, and notice how the user's identity is reflected in the top navigation bar.  Add and delete some items from the user's To-Do List to see the OAuth 2.0 secured API calls in action.  You now have a web app & web API, both secured using industry standard protocols, that can authenticate users with both their personal and work/school accounts.
+Finally, build and run your app!  Sign in with either a Microsoft Account or an Azure AD Account, and notice how the user's identity is reflected in the top navigation bar.  Add and delete some items from the user's To-Do List to see the OAuth 2.0 secured API calls in action.  You now have a web site & web API, both secured using industry standard protocols, that can authenticate users with both their personal and work/school accounts.
 
 For reference, the completed sample (without your configuration values) [is provided here](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-WebAPI-OpenIdConnect-DotNet/archive/complete.zip).  
 

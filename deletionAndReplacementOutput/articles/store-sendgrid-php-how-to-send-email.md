@@ -18,7 +18,7 @@ replaced by:
 		
 		## <a name="bkmk_WhatIsSendGrid"> </a>What is the SendGrid Email Service?
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -28,7 +28,7 @@ replaced by:
 
 		## <a name="bkmk_CreateSendGrid"> </a>Create a SendGrid Account
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -38,7 +38,7 @@ replaced by:
 
 		## <a name="bkmk_UsingSendGridfromPHP"> </a>Using SendGrid from your PHP Application
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -48,7 +48,7 @@ replaced by:
 
 		## <a name="bkmk_HowToSendEmail"> </a>How to: Send an Email
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -58,7 +58,7 @@ replaced by:
 
 		## <a name="bkmk_HowToAddAttachment"> </a>How to: Add an Attachment
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -68,7 +68,7 @@ replaced by:
 
 		<a name="bkmk_HowToUseFilters"> </a>How
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -78,5 +78,5 @@ replaced by:
 
 		## <a name="bkmk_NextSteps"> </a>Next Steps
 
-reason: ()
+reason: (inpage link)
 

@@ -7,14 +7,10 @@
 	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 # Managing user settings with Azure Multi-Factor Authentication in the cloud
 
@@ -78,7 +74,7 @@ This deletes all of the app passwords that a user has created. Non-browser apps 
 
 ## Restore MFA on all suspended devices for a user
 
-Administrators have the ability to reset Multi-Factor Authentication on their devices and browsers. This is done by restoring Multi-Factor Authentication for a user’s devices and browsers. When doing this, this will remove the suspension from all of the user’s devices and browsers. 
+Administrators have the ability to reset Multi-Factor Authentication on their devices and browsers. This is done by restoring Multi-Factor Authentication for a userâs devices and browsers. When doing this, this will remove the suspension from all of the userâs devices and browsers. 
 
 ### How to restore MFA on all suspended devices for a user
 

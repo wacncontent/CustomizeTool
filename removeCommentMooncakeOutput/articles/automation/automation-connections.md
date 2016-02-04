@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Connection assets in Azure Automation | Windows Azure"
-   description="Connection assets in Azure Automation contain the information required to connect to an external service or application from a runbook.  This article explains the details of connections and how to work with them in both textual and graphical authoring."
+   description="Connection assets in Azure Automation contain the information required to connect to an external service or application from a runbook. This article explains the details of connections and how to work with them in both textual and graphical authoring."
    services="automation"
    documentationCenter=""
    authors="bwren"
@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="08/18/2015"
+	ms.date="10/23/2015"
 	wacn.date=""/>
 
 # Connection assets in Azure Automation
@@ -25,12 +25,12 @@ The cmdlets in the following table are used to create and manage Automation conn
 
 |Cmdlet|Description|
 |:---|:---|
-|[Get-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921828.aspx)|Retrieves a connection. Includes a hashtable with the values of the connection’s fields.|
+|[Get-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921828.aspx)|Retrieves a connection. Includes a hashtable with the values of the connectionâs fields.|
 |[New-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921825.aspx)|Creates a new connection.|
 |[Remove-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921827.aspx)|Remove an existing connection.|
 |[Set-AzureAutomationConnectionFieldValue](http://msdn.microsoft.com/zh-cn/library/dn921826.aspx)|Sets the value of a particular field for an existing connection.|
 
-## Runbook Activities
+## Activities
 
 The activities in the following table are used to access connections in a runbook.
 
@@ -38,7 +38,7 @@ The activities in the following table are used to access connections in a runboo
 |---|---|
 |Get-AutomationConnection|Gets a connection to use in a runbook. Returns a hashtable with the properties of the connection.|
 
->[AZURE.NOTE] You should avoid using variables in the –Name parameter of **Get- AutomationConnection** since this can complicate discovering dependencies between runbooks and connection assets at design time.
+>[AZURE.NOTE] You should avoid using variables in the âName parameter of **Get- AutomationConnection** since this can complicate discovering dependencies between runbooks and connection assets at design time.
 
 ## Creating a New Connection
 

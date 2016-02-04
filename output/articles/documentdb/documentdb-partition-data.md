@@ -1,5 +1,5 @@
 <properties      
-    pageTitle="Partition and Scale Data in DocumentDB with Sharding | Microsoft Azure"      
+    pageTitle="Partition and Scale Data in DocumentDB with Sharding | Windows Azure"      
     description="Review how to scale data with a technique called sharding. Learn about shards, how to partition data in DocumentDB, and when to use Hash and Range partitioning."         
     keywords="Scale data, shard, sharding, documentdb, azure, Microsoft azure"
 	services="documentdb"      
@@ -7,18 +7,14 @@
     manager="jhubbard"      
     editor="monicar"      
     documentationCenter=""/> 
-<tags      
-    ms.service="documentdb"      
-    ms.workload="data-services"      
-    ms.tgt_pltfrm="na"      
-    ms.devlang="na"      
-    ms.topic="article"      
-    ms.date="10/05/2015"      
-    ms.author="arramac"/> 
+<tags
+	ms.service="documentdb"
+	ms.date="10/05/2015"
+	wacn.date=""/> 
 
 # Partition and scale data in DocumentDB
 
-[Microsoft Azure DocumentDB](../../services/documentdb/) is designed to help you achieve fast, predictable performance and *scale-out* seamlessly along with your application as it grows. DocumentDB has been used to power high-scale production services at Microsoft like the User Data Store that powers the MSN suite of web and mobile apps. 
+[Windows Azure DocumentDB](/home/features/documentdb/) is designed to help you achieve fast, predictable performance and *scale-out* seamlessly along with your application as it grows. DocumentDB has been used to power high-scale production services at Microsoft like the User Data Store that powers the MSN suite of web and mobile apps. 
 
 You can achieve near-infinite scale in terms of storage and throughput for your DocumentDB application by horizontally partitioning your data - a concept commonly referred to as **sharding**.  DocumentDB accounts can be scaled linearly with cost via stackable units a.k.a. **collections**. How you best partition your data across collections will depend on your data format and access patterns. 
 
@@ -28,7 +24,7 @@ After reading this article on data scaling you will be able to answer the follow
  - When would you use each partitioning technique and why?
  - How do you go about building a partitioned application on Azure DocumentDB?
 
-This article presents some concepts about sharding. If you're ready to write code that partitions data using the DocumentDB .NET SDK, take a look at [Partitioning data with the DocumentDB .NET SDK](documentdb-sharding.md).
+This article presents some concepts about sharding. If you're ready to write code that partitions data using the DocumentDB .NET SDK, take a look at [Partitioning data with the DocumentDB .NET SDK](/documentation/articles/documentdb-sharding).
 
 ## Collections = Partitions
 
@@ -90,7 +86,7 @@ If not, you can store it in any persistent store. A common design pattern we've 
 
 ## Adding and removing partitions to scale data
 
-With DocumentDB, you can add and remove collections at any time and use them to store new incoming data or re-balance data available on existing collections. Review the [Limits](documentdb-limits.md) page for the number of collections. You can always call us to increase these limits.
+With DocumentDB, you can add and remove collections at any time and use them to store new incoming data or re-balance data available on existing collections. Review the [Limits](/documentation/articles/documentdb-limits) page for the number of collections. You can always call us to increase these limits.
 
 Adding and removing a new partition with range partitioning is straightforward. For example, adding a new geographic region or new time range for recent data, you just need to append the new partitions to the partition map. Splitting an existing partition into multiple partitions, or merge two partitions requires a little more effort. You need to either 
 
@@ -104,8 +100,8 @@ A relatively easy way to add new partitions without requiring data movement is t
 ## Next Steps
 In this article, we've introduced some common techniques on how you can partition data with DocumentDB, and when to use which technique or combination of techniques. 
 
--   Next, take a look at this [article](documentdb-sharding.md) on how you can partition data using partition resolvers with the DocumentDB SDK. 
--   Download one of the [supported SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx)
+-   Next, take a look at this [article](/documentation/articles/documentdb-sharding) on how you can partition data using partition resolvers with the DocumentDB SDK. 
+-   Download one of the [supported SDKs](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)
 -   Contact us through the [MSDN support forums](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureDocumentDB) if you have questions.
    
 

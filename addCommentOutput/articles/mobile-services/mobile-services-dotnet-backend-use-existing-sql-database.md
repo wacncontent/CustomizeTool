@@ -9,12 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/01/2015"
+	ms.date="11/09/2015"
 	wacn.date=""/>
 
 
 # Build a service using an existing SQL database with the Mobile Services .NET backend
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 The Mobile Services .NET backend makes it easy to take advantage of existing assets in building a mobile service. One particularly interesting scenario is using an existing SQL database (either on-premises or in the cloud), that may already be used by other applications, to make existing data available to mobile clients. In this case it's a requirement that database model (or *schema*) remain unchanged, in order for existing solutions to continue working.
 
 <a name="ExistingModel"></a>
@@ -35,7 +38,6 @@ For this tutorial we will use the database that was created with your mobile ser
             {
                 [Key]
                 public int CustomerId { get; set; }
-
                 public string Name { get; set; }
 
                 public virtual ICollection<Order> Orders { get; set; }
@@ -44,7 +46,6 @@ For this tutorial we will use the database that was created with your mobile ser
         }
 
 3. Create an **Order.cs** file inside the **Models** folder and use the following implementation:
-
         using System.ComponentModel.DataAnnotations;
 
         namespace ShoppingService.Models
@@ -61,7 +62,6 @@ For this tutorial we will use the database that was created with your mobile ser
                 public bool Completed { get; set; }
 
                 public int CustomerId { get; set; }
-
                 public virtual Customer Customer { get; set; }
 
             }
@@ -140,10 +140,8 @@ The data model you would like to use with your mobile service may be arbitrarily
     The **Customer** relationship property has been replaced with the **Customer** name and a **MobileCustomerId** property that can be used to manually model the relationship on the client. For now you can ignore the **CustomerId** property, it is only used later on.
 
 3. You might notice that with the addition of the system properties on the **EntityData** base class, our DTOs now have more properties than the model types. Clearly we need a place to store these properties, so we will add a few extra columns to the original database. While this does change the database, it will not break existing applications since the changes are purely additive (adding new columns to the schema). To do that, add the following statements to the top of **Customer.cs** and **Order.cs**:
-
         using System.ComponentModel.DataAnnotations.Schema;
         using Microsoft.WindowsAzure.Mobile.Service.Tables;
-        using System.ComponentModel.DataAnnotations;
         using System;
 
 4. Next, add these extra properties to each of the classes:
@@ -170,7 +168,6 @@ The data model you would like to use with your mobile service may be arbitrarily
         public byte[] Version { get; set; }
 
 4. The system properties just added have some built-in behaviors (for example automatic update of created/updated at) that happen transparently with database operations. To enable these behaviors, we need to make a change to **ExistingContext.cs**. At the top of the file, add the following:
-
         using System.Data.Entity.ModelConfiguration.Conventions;
         using Microsoft.WindowsAzure.Mobile.Service.Tables;
         using System.Linq;
@@ -314,7 +311,6 @@ The next step is to implement a [**MappedEntityDomainManager**](http://msdn.micr
                 {
                     return (T)(object)GetKey(mobileCustomerId, this.context.Customers, this.Request);
                 }
-
                 public override SingleResult<MobileCustomer> Lookup(string mobileCustomerId)
                 {
                     int customerId = GetKey<int>(mobileCustomerId);
@@ -465,7 +461,7 @@ The next step is to implement a [**MappedEntityDomainManager**](http://msdn.micr
             }
         }
 
-    In this case the **InsertAsync** and **UpdateAsync** methods are interesting; that's where we enforce the relationship that each **Order** must have a valid associated **Customer**. In **InsertAsync** you'll notice that we populate the **MobileOrder.CustomerId** property, which maps to the **Order.CustomerId** property. We get that value by based looking up the **Customer** with the matching **MobileOrder.MobileCustomerId**. This is because by default the client is only aware of the Mobile Services ID (**MobileOrder.MobileCustomerId**) of the **Customer**, which is different than its actual primary key needed to set the foreign key (**MobileOrder.CustomerId**) from **Order** to **Customer**. This is only used internally within the service to facilitate the insert operation.
+    In this case the **InsertAsync** and **UpdateAsync** methods are interesting; that's where we enforce the relationship that each **Order** must have a valid associated **Customer**. In **InsertAsync** you'll notice that we populate the **MobileOrder.CustomerId** property, which maps to the **Order.CustomerId** property. We get that value based by looking up the **Customer** with the matching **MobileOrder.MobileCustomerId**. This is because by default the client is only aware of the Mobile Services ID (**MobileOrder.MobileCustomerId**) of the **Customer**, which is different than its actual primary key needed to set the foreign key (**MobileOrder.CustomerId**) from **Order** to **Customer**. This is only used internally within the service to facilitate the insert operation.
 
 We are now ready to create controllers to expose our DTOs to our clients.
 
@@ -581,7 +577,7 @@ We are now ready to create controllers to expose our DTOs to our clients.
 
 3. You are now ready to run your service. Press **F5** and use the test client built into the help page to modify the data.
 
-Please note that both controller implementations make exclusive use of the DTOs **MobileCustomer** and **MobileOrder** and are agnostic of the underlying model. These DTOs are readily serialized to JSON and can be used to exchange data with the  Mobile Services client SDK on all platforms. For example, if building a Windows Store app, the corresponding client-side type would look as shown below. The type would be analogous on other client platforms.
+Please note that both controller implementations make exclusive use of the DTOs **MobileCustomer** and **MobileOrder** and are agnostic of the underlying model. These DTOs are readily serialized to JSON and can be used to exchange data with the  Mobile Services client SDK on all platforms. For example, building a Windows Store app, the corresponding client-side type would look as shown below. The type would be analogous on other client platforms.
 
     using Microsoft.WindowsAzure.MobileServices;
     using System;
@@ -601,7 +597,6 @@ Please note that both controller implementations make exclusive use of the DTOs 
             public DateTimeOffset? UpdatedAt { get; set; }
 
             public bool Deleted { get; set; }
-
             [Version]
             public string Version { get; set; }
 

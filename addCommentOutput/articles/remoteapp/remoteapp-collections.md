@@ -1,19 +1,15 @@
 <properties 
-    pageTitle="What kind of collection do you need for Azure RemoteApp? | Microsoft Azure" 
+    pageTitle="What kind of collection do you need for Azure RemoteApp? | Windows Azure" 
     description="Learn about the types of collections available with Azure RemoteApp." 
     services="remoteapp" 
 	documentationCenter="" 
     authors="lizap" 
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="09/28/2015" 
-    ms.author="elizapo" />
+<tags
+	ms.service="remoteapp"
+	ms.date="09/28/2015"
+	wacn.date=""/>
 
 
 
@@ -49,7 +45,7 @@ Ok, how do I create one?
 - Provide full access to on-premises network + Azure VNET.
 - Includes domain join access for apps and data. Remote applications can authentication against your on-premises Active Directory - they can then access resources in your domain.
 - Enable advanced monitoring and management with existing System Center solutions and Windows Group Policies (through a custom image built on Windows Server 2012 R2)
-- Support [Express Route](http://azure.microsoft.com/services/expressroute/) to connect your Azure VNET to your local VNET.
+- Support [Express <!-- deleted by customization Route](/home/features/expressroute/) --><!-- keep by customization: begin --> Route](http://azure.microsoft.com/services/expressroute/) <!-- keep by customization: end --> to connect your Azure VNET to your local VNET.
 
 Create using the **Create with VNET** option and DO choose to join a domain.
 
@@ -74,19 +70,24 @@ With cloud collections, you can use Microsoft accounts, Azure AD accounts, or a 
 
 There are no specific requirements for using Microsoft accounts. 
 
-If you want to use Azure AD accounts, you need to make sure that your Azure AD tenant matches the one associated with your subscription. When you created your Azure RemoteApp subscription, the Azure AD tenant you were using was automatically associated with your subscription. Any Azure AD user you give permission to needs to be that same tenant. If needed, you can [change the Azure AD tenant](remoteapp-changetenant.md) associated with your subscription.
+If you want to use Azure AD accounts, you need to make sure that your Azure AD tenant matches the one associated with your subscription. When you created your Azure RemoteApp subscription, the Azure AD tenant you were using was automatically associated with your subscription. Any Azure AD user you give permission to needs to be that same tenant. If needed, you can [change the Azure AD <!-- deleted by customization tenant](/documentation/articles/remoteapp-changetenant) --><!-- keep by customization: begin --> tenant](remoteapp-changetenant.md) <!-- keep by customization: end --> associated with your subscription.
  
 ### Hybrid (or cloud + Azure AD + AD)
 
 Using Azure AD + on-premises Active Directory is a prerequisite for a hybrid collection. You need to use AD Connect to integrate the two directories. But you do have some choice when it comes to how you configure AD Connect. 
 
-There are 2 AD Connect scenarios - using password synchronization or using AD federation. Check out the [AD Connect information](active-directory-aadconnect.md) to figure out which of these works best for you.
+There are 2 AD Connect scenarios - using password synchronization or using AD federation. Check out the [AD Connect <!-- deleted by customization information](/documentation/articles/active-directory-aadconnect) --><!-- keep by customization: begin --> information](active-directory-aadconnect.md) <!-- keep by customization: end --> to figure out which of these works best for you.
 
 You can also use Azure AD + AD with a cloud collection. Make sure you follow the same set up steps.
 
-Check out [Azure AD + Active Directory requirements for Azure RemoteApp](remoteapp-ad.md) for the steps required to configure Azure AD and Active Directory.
+Check out [Azure AD + Active Directory requirements for Azure <!-- deleted by customization RemoteApp](/documentation/articles/remoteapp-ad) --><!-- keep by customization: begin --> RemoteApp](remoteapp-ad.md) <!-- keep by customization: end --> for the steps required to configure Azure AD and Active Directory.
 
 ## Go create your collection!
 Ok, I think we've figured it out now, so there's just one thing left to do - create your first Azure RemoteApp collection.
 
+<!-- deleted by customization
+[Create a cloud collection](/documentation/articles/remoteapp-create-cloud-deployment) or [create a hybrid collection](/documentation/articles/remoteapp-create-hybrid-deployment) - just get creating.
+-->
+<!-- keep by customization: begin -->
 [Create a cloud collection](remoteapp-create-cloud-deployment.md) or [create a hybrid collection](remoteapp-create-hybrid-deployment.md) - just get creating.
+<!-- keep by customization: end -->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Get started with Azure Search in Java | Microsoft Azure"
-	description="How to build a custom Azure Search application using Java as your programming language."
+	pageTitle="Get started with Azure Search in Java | Windows Azure | Hosted cloud search service"
+	description="How to build a hosted cloud search application on Azure using Java as your programming language."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="search"
-	ms.devlang="na"
-	ms.workload="search"
-	ms.topic="hero-article"
-	ms.tgt_pltfrm="na"
-	ms.date="09/08/2015"
-	ms.author="heidist"/>
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
 # Get started with Azure Search in Java
 
-Learn how to build a custom Java search application that uses Azure Search for its search experience. This tutorial uses the [Azure Search Service REST API](https://msdn.microsoft.com/library/dn798935.aspx) to construct the objects and operations used in this exercise.
+Learn how to build a custom Java search application that uses Azure Search for its search experience. This tutorial uses the [Azure Search Service REST API](https://msdn.microsoft.com/zh-cn/library/dn798935.aspx) to construct the objects and operations used in this exercise.
 
 We used the following software to build and test this sample:
 
@@ -28,7 +24,7 @@ We used the following software to build and test this sample:
 
 - [Apache Tomcat 8.0](http://tomcat.apache.org/download-80.cgi)
 
-To run this sample, you need an Azure Search service, which you can sign up for in the [Azure management portal](https://portal.azure.com).
+To run this sample, you need an Azure Search service, which you can sign up for in the [Azure Management Portal](https://manage.windowsazure.cn).
 
 > [AZURE.TIP] Download the source code for this tutorial at [Azure Search Java demo](http://go.microsoft.com/fwlink/p/?LinkId=530197) on Github.
 
@@ -36,9 +32,9 @@ To run this sample, you need an Azure Search service, which you can sign up for 
 
 This sample application uses data from the [United States Geological Services (USGS)](http://geonames.usgs.gov/domestic/download_data.htm), filtered on the state of Rhode Island to reduce the dataset size. We'll use this data to build a search application that returns landmark buildings such as hospitals and schools, as well as geological features like streams, lakes, and summits.
 
-In this application, the **SearchServlet.java** program builds and loads the index using an [Indexer](https://msdn.microsoft.com/library/azure/dn798918.aspx) construct, retrieving the filtered USGS dataset from a public Azure SQL Database. Predefined credentials and connection  information to the online data source are provided in the program code. In terms of data access, no further configuration is necessary.
+In this application, the **SearchServlet.java** program builds and loads the index using an [Indexer](https://msdn.microsoft.com/zh-cn/library/azure/dn798918.aspx) construct, retrieving the filtered USGS dataset from a public Azure SQL Database. Predefined credentials and connection  information to the online data source are provided in the program code. In terms of data access, no further configuration is necessary.
 
-> [AZURE.NOTE] We applied a filter on this dataset to stay under the 10,000 document limit of the free pricing tier. If you use the standard tier, this limit does not apply, and you can modify this code to use a bigger dataset. For details about capacity for each pricing tier, see [Limits and constraints](search-limits-quotas-capacity.md).
+> [AZURE.NOTE] We applied a filter on this dataset to stay under the 10,000 document limit of the free pricing tier. If you use the standard tier, this limit does not apply, and you can modify this code to use a bigger dataset. For details about capacity for each pricing tier, see [Limits and constraints](/documentation/articles/search-limits-quotas-capacity).
 
 ## About the program files
 
@@ -55,7 +51,7 @@ The following list describes the files that are relevant to this sample.
 
 ## Create the service
 
-1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
 
 2. In the Jumpbar, click **New** > **Data + storage** > **Search**.
 
@@ -65,7 +61,7 @@ The following list describes the files that are relevant to this sample.
 
      ![][2]
 
-	- **Service name** must be unique, lower-case, under 15 characters, with no spaces. This name becomes part of the endpoint of your Azure Search service. See [Naming Rules](https://msdn.microsoft.com/library/azure/dn857353.aspx) for more information about naming conventions.
+	- **Service name** must be unique, lower-case, under 15 characters, with no spaces. This name becomes part of the endpoint of your Azure Search service. See [Naming Rules](https://msdn.microsoft.com/zh-cn/library/azure/dn857353.aspx) for more information about naming conventions.
 
 	- **Pricing Tier** determines capacity and billing. Both tiers provide the same features, but at different resource levels.
 
@@ -123,9 +119,9 @@ All subsequent file modifications and run statements will be made against files 
 
 1. In **Project Explorer**, double-click **config.properties** to edit the configuration settings containing the server name and api-key.
 
-2. Refer to the steps earlier in this article, where you found the service URL and api-key in the [Azure portal](https://portal.azure.com), to get the values you will now enter into **config.properties**.
+2. Refer to the steps earlier in this article, where you found the service URL and api-key in the [Azure Management Portal](https://manage.windowsazure.cn), to get the values you will now enter into **config.properties**.
 
-3. In **config.properties**, replace "Api Key" with the api-key for your service. Next, service name (the first component of the URL http://servicename.search.windows.net) replaces "service name" in the same file.
+3. In **config.properties**, replace "Api Key" with the api-key for your service. Next, service name (the first component of the URL http://servicename.search.chinacloudapi.cn) replaces "service name" in the same file.
 
 	![][5]
 
@@ -163,7 +159,7 @@ All subsequent file modifications and run statements will be made against files 
 
     ![][9]
 
-14. Optionally, select **Window** > **Web Browser** > **Internet Explorer** to open the application in an external browser window. Using an external browser gives you a better Web application experience.
+14. Optionally, select **Window** > **Web Browser** > **Internet Explorer** to open the application in an external browser window. Using an external browser gives you a better web site experience.
 
     ![][8]
 
@@ -213,9 +209,9 @@ You could also try any of these terms:
 
 This is the first Azure Search tutorial based on Java and the USGS dataset. Over time, we'll extend this tutorial to demonstrate additional search features you might want to use in your custom solutions.
 
-If you already have some background in Azure Search, you can use this sample as a springboard for further experimentation, perhaps augmenting the [search page](search-pagination.md), or implementing [faceted navigation](search-faceted-navigation.md). You can also improve upon the search results page by adding counts and batching documents so that users can page through the results.
+If you already have some background in Azure Search, you can use this sample as a springboard for further experimentation, perhaps augmenting the [search page](/documentation/articles/search-pagination), or implementing [faceted navigation](/documentation/articles/search-faceted-navigation). You can also improve upon the search results page by adding counts and batching documents so that users can page through the results.
 
-New to Azure Search? We recommend trying other tutorials to develop an understanding of what you can create. Visit our [documentation page](http://azure.microsoft.com/documentation/services/search/) to find more resources. You can also view the links in our [Video and Tutorial list](search-video-demo-tutorial-list.md) to access more information.
+New to Azure Search? We recommend trying other tutorials to develop an understanding of what you can create. Visit our [documentation page](/documentation/services/search/) to find more resources. You can also view the links in our [Video and Tutorial list](/documentation/articles/search-video-demo-tutorial-list) to access more information.
 
 <!--Image references-->
 [1]: ./media/search-get-started-java/create-search-portal-1.PNG

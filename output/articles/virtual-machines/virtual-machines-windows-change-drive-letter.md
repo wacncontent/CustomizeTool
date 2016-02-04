@@ -13,13 +13,10 @@
 	ms.date="11/03/2015"
 	wacn.date=""/>
 
-<!# Use the D drive as a data drive on a Windows VM
+# Use the D drive as a data drive on a Windows VM 
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
-<!-- keep by customization: begin -->
-#Change the drive letter of the Windows temporary disk
-<!-- keep by customization: end -->
 
 If you need to use the D drive to store data, follow these instructions to use a different drive letter for the temporary disk. Never use the temporary disk to store data that you need to keep.
 
@@ -27,11 +24,8 @@ If you need to use the D drive to store data, follow these instructions to use a
 
 First, you'll need to attach the data disk to the virtual machine. To attach a new disk, see [How to attach a data disk to a Windows virtual machine][Attach]. 
 
-<!If you want to use an existing data disk, make sure you've also uploaded the VHD to the Storage account. For instructions, see steps 3 and 4 in [Create and upload a Windows Server VHD to Azure][VHD].
+If you want to use an existing data disk, make sure you've also uploaded the VHD to the Storage account. For instructions, see steps 3 and 4 in [Create and upload a Windows Server VHD to Azure][VHD]. 
 
-<!-- keep by customization: begin -->
-> [AZURE.WARNING] If you resize a virtual machine and doing that moves the virtual machine to a different host, the temporary disk changes back to the D drive.
-<!-- keep by customization: end -->
 
 ## Temporarily move pagefile.sys to C drive
 
@@ -114,12 +108,12 @@ First, you'll need to attach the data disk to the virtual machine. To attach a n
 [About Azure Storage accounts][Storage]
 
 <!--Link references-->
-[Attach]: /documentation/articles/storage-windows-attach-disk
+[Attach]: storage-windows-attach-disk.md
 
-[VHD]: /documentation/articles/virtual-machines-create-upload-vhd-windows-server
+[VHD]: virtual-machines-create-upload-vhd-windows-server.md
 
-[Logon]: /documentation/articles/virtual-machines-log-on-windows-server
+[Logon]: virtual-machines-log-on-windows-server.md
 
-[Detach]: /documentation/articles/storage-windows-detach-disk
+[Detach]: storage-windows-detach-disk.md
 
-[Storage]: /documentation/articles/storage-whatis-account
+[Storage]: ../storage-whatis-account.md

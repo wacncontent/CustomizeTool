@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="11/04/2015"
+	ms.date="12/15/2015"
 	wacn.date=""/>
 
 # Get started with Notification Hubs for iOS apps
@@ -33,7 +33,7 @@ The completed code for this tutorial can be found on GitHub [here](https://githu
 
 This tutorial requires the following:
 
-+ [Mobile Services iOS SDK]
++ [Mobile Services iOS SDK version 1.2.4]
 + [Xcode 7][Install Xcode]
 + An iOS 8 (or later version) capable device
 + iOS Developer Program membership
@@ -82,7 +82,9 @@ Your notification hub is now configured to work with APNS, and you have the conn
 
    	![][9]
 
-4. Download version 1.2.4 of the [Mobile Services iOS SDK] and unzip the file. In Xcode, right-click your project and click the **Add Files to** option to add the **WindowsAzureMessaging.framework** folder to your Xcode project. Select **Copy items if needed**, and then click **Add**.
+4. Download the [Mobile Services iOS SDK version 1.2.4] and unzip the file. In Xcode, right-click your project and click the **Add Files to** option to add the **WindowsAzureMessaging.framework** folder to your Xcode project. Select **Copy items if needed**, and then click **Add**.
+
+	>[AZURE.NOTE] The notification hubs SDK does not currently support bitcode on Xcode 7.  You must set **Enable Bitcode** to **No** in the **Build Options** for your project.
 
    	![][10]
 
@@ -153,7 +155,7 @@ Your notification hub is now configured to work with APNS, and you have the conn
 ## Send notifications
 
 
-You can test receiving notifications in your app by sending notifications in the Azure Management Portal via the debug tab on the notification hub, as shown in the screen below.
+You can test receiving notifications in your app by sending notifications in the [Azure Management Portal] via the debug tab on the notification hub, as shown in the screen below.
 
 ![][30]
 
@@ -249,6 +251,7 @@ If you want to send notifications within an app. This section provides an exampl
 		{
 			[super viewDidLoad];
 			[self ParseConnectionString];
+			[_notificationMessage setDelegate:self];
 		}
 
 		-(NSString *)CF_URLEncodedString:(NSString *)inputString
@@ -317,7 +320,7 @@ If you want to send notifications within an app. This section provides an exampl
 		}
 
 
-8. Ctrl+drag from the **Send Notification** button to ViewController.m to add an action named **SendNotificationMessage** for the **Touch Down**. Update method with the following code to send the notification using the REST API.
+8. Ctrl+drag from the **Send Notification** button to ViewController.m to add an action named **SendNotificationMessage** for the **Touch Down** event. Update method with the following code to send the notification using the REST API.
 
 		- (IBAction)SendNotificationMessage:(id)sender
 		{
@@ -442,7 +445,7 @@ To test push notifications on iOS, you must deploy the app to a device. You cann
 
 	![][33]
 
-2. You can send a test notification from the Azure Management Portal. If you added code for sending the notification in the app, touch inside the text field to enter a notification message. Then press the **Send** button on the keyboard or the **Send Notification** button in the view to send the notification message.
+2. You can send a test notification from the [Azure Management Portal]. If you added code for sending the notification in the app, touch inside the text field to enter a notification message. Then press the **Send** button on the keyboard or the **Send Notification** button in the view to send the notification message.
 
 	![][34]
 
@@ -482,6 +485,7 @@ For more general information about Notification Hubs, see [Notification Hubs Gui
 
 
 <!-- URLs. -->
+[Mobile Services iOS SDK version 1.2.4]: http://aka.ms/kymw2g
 [Mobile Services iOS SDK]: http://go.microsoft.com/fwLink/?LinkID=266533
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
@@ -493,8 +497,8 @@ For more general information about Notification Hubs, see [Notification Hubs Gui
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS Provisioning Portal]: https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action
 
-[Get started with push notifications in Mobile Services]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push
-[Use Notification Hubs to push notifications to users]: /documentation/articles/notification-hubs-aspnet-backend-ios-notify-users
-[Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-ios-send-breaking-news
+[Get started with push notifications in Mobile Services]: ../mobile-services-javascript-backend-ios-get-started-push.md
+[Use Notification Hubs to push notifications to users]: notification-hubs-aspnet-backend-ios-notify-users.md
+[Use Notification Hubs to send breaking news]: notification-hubs-ios-send-breaking-news.md
 
 [Local and Push Notification Programming Guide]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1

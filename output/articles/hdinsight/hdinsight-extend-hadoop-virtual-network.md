@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/28/2015"
+	ms.date="01/13/2015"
 	wacn.date=""/>
 
 
@@ -18,7 +18,7 @@
 Azure Virtual Network allows you to extend your Hadoop solutions to incorporate on-premises resources such as SQL Server, or to create secure private networks between resources in the cloud.
 
 > [AZURE.NOTE] HDInsight does not support affinity-based Azure virtual networks. When using HDInsight, you must use location-based virtual networks.
-<!
+
 
 ##<a id="whatis"></a>What is Azure Virtual Network?
 
@@ -55,18 +55,39 @@ Azure Virtual Network allows you to extend your Hadoop solutions to incorporate 
 For more information on Virtual Network features, benefits, and capabilities, see the [Azure Virtual Network overview](/documentation/articles/virtual-networks-overview).
 
 > [AZURE.NOTE] You must create the Azure Virtual Network before provisioning an HDInsight cluster. For more information, see [Virtual Network configuration tasks](/documentation/services/networking/).
->
-> Azure HDInsight supports only location-based virtual networks, and does not currently work with virtual networks based on affinity group. 
->
-> It is highly recommended to designate a single subnet for each cluster. 
-<!-- deleted by customization
->
-> You cannot use a v1 (Classic,) Azure Virtual Network with Linux-based HDInsight. The Virtual Network must be v2 (Azure Resource Manager,) in order for it to be listed as an option during the HDInsight cluster creation process in the Azure preview portal, or to be usable when creating a cluster from the Azure CLI or Azure PowerShell. 
->
-> If you have resources on a v1 network, and you wish to make HDInsight directly accessible to those resources through a virtual network, see [Connecting classic VNets to new VNets](/documentation/articles/virtual-networks-arm-asm-s2s) for information on how to connect a v2 Virtual Network to a v1 Virtual Network. Once this connection is established, you can create the HDInsight cluster in the v2 Virtual Network.
--->
 
-For more information on provisioning an HDInsight cluster on a virtual network, see [Provisioning Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters).
+## Virtual Network requirements
+
+> [AZURE.IMPORTANT] Creating an HDInsight cluster on a Virtual Network requires specific Virtual Network configurations, which are described in this section.
+
+* Azure HDInsight supports only location-based virtual networks, and does not currently work with virtual networks based on affinity group. 
+
+* It is highly recommended that you create a single subnet for each HDInsight cluster. 
+
+* Windows-based clusters require a v1 (Classic) Virtual Network, while Linux-based clusters require a v2 (Azure Resource Manager,) Virtual Network. If you do not have the correct type of network, it will not be usable when you create the cluster.
+
+    If you have resources on a Virtual Network that is not usable by the cluster you plan on creating, you can create a new Virtual Network that is usable by the cluster, and connect it to the incompatible Virtual Network. You can then create the cluster in the network version that it requires, and it will be able to access resources in the other network since the two are joined. For more information on connecting classic and new Virtual Networks, see [Connecting classic VNets to new VNets](/documentation/articles/virtual-networks-arm-asm-s2s).
+
+* HDInsight is not supported on Azure Virtual Networks that explicitly restrict access to/from the Internet. For example, using Network Security Groups or ExpressRoute to block Internet traffic to resources in the Virtual Network. The HDInsight service is a managed service, and requires Internet access during provisioning and while running so that Azure can monitor the health of the cluster, initiate failover of cluster resources, and other automated management tasks.
+
+    If you want to use HDInsight on a Virtual Network that blocks Internet traffic, you can use the following steps:
+
+    1. Create a new subnet within the Virtual Network. By default, the new subnet will be able to communicate with the Internet. This allows HDInsight to be installed on this subnet. Since the new subnet is in the same virtual network as the secured subnet(s), it can also communicate with resources installed there.
+    
+    2. You can confirm that there are no specific Network Security Group or route table attached to the subnet by using the following PowerShell statements. Replace __VIRTUALNETWORKNAME__ with your virtual network name, replace __GROUPNAME__ with the name of the resource group that contains the virtual network, and replace __SUBNET__ with the name of the subnet.
+        
+            $vnet = Get-AzureRmVirtualNetwork -Name VIRTUALNETWORKNAME -ResourceGroupName GROUPNAME
+            $vnet.Subnets | Where-Object Name -eq "SUBNET"
+            
+        In the results, note that __NetworkSecurityGroup__ and __RouteTable__ are both `null`.
+    
+    2. Create the HDInsight cluster. When configuring the Virtual Network settings for the cluster, select the subnet created in step 1.
+
+    > [AZURE.NOTE] The above steps assume that you have not restricted communications to IP addresses _within the Virtual Network IP address range_. If you have, you may need to modify these restrictions to allow communication with the new subnet.
+
+    For more information on Network Security Groups, see [Network Security Groups overview](/documentation/articles/virtual-networks-nsg). For information on controlling routing in an Azure Virtual Network, see [User Defined Routes and IP forwarding](/documentation/articles/virtual-networks-udr-overview).
+
+For more information on provisioning an HDInsight cluster on a virtual network, see [Provisioning Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1).
 
 ##<a id="tasks"></a>Tasks and information
 
@@ -168,7 +189,7 @@ The following examples demonstrate how to use HDInsight with Azure Virtual Netwo
 
 * [Analyze sensor data with Storm and HBase in HDInsight](/documentation/articles/hdinsight-storm-sensor-data-analysis) - Demonstrates how to configure a Storm and HBase cluster in a virtual network, as well as how to remotely write data to HBase from Storm.
 
-* [Provision Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters) - Provides information on provisioning Hadoop clusters, including information on using Azure Virtual Network.
+* [Provision Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) - Provides information on provisioning Hadoop clusters, including information on using Azure Virtual Network.
 
 * [Use Sqoop with Hadoop in HDInsight](/documentation/articles/hdinsight-use-sqoop) - Provides information on using Sqoop to transfer data with SQL Server over a virtual network.
 

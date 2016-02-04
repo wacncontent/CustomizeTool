@@ -1,8 +1,6 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
-	pageTitle=".NET web app in Azure Websites with New Relic application performance management" 
-	description="Learn how to use New Relic's performance monitoring for ASP.NET applications running on Azure Websites." 
+	pageTitle=".NET web app in Azure with New Relic application performance management" 
+	description="Learn how to use New Relic's performance monitoring for ASP.NET applications running on Azure Web App." 
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -16,10 +14,10 @@
 
 
 
-# .NET web app in Azure Websites with New Relic application performance management
+# .NET web app in Azure with New Relic application performance management
 
 This guide describes how to add New Relic's world-class performance
-monitoring to your web app in [Azure Websites](/documentation/services/web-sites/). We'll cover the fast and simple
+monitoring to your web app in [Azure Web App](/documentation/services/web-sites/). We'll cover the fast and simple
 process to add New Relic to your application and introduce you to some of
 New Relic's features. For more information about using New Relic, see [Using New Relic](#using-new-relic).
 
@@ -40,22 +38,22 @@ alerting, tracks application exceptions, and a whole lot more.
 New Relic Standard is free to Azure users.
 New Relic Pro is offered in multiple packages based on which website mode you are using, and the instance size if you are using reserved mode.
 
-For pricing information see the [New Relic page in the Azure Marketplace](/marketplace/partners/newrelic/newrelic).
+For pricing information see the [New Relic page in the Azure gallery](/marketplace/partners/newrelic/newrelic).
 
 > [AZURE.NOTE] Pricing is only listed for up to 10 compute instances. For counts greater than 10 please contact New Relic (sales@newrelic.com) for volume pricing.
 
 Azure customers receive a 2 week trial subscription of New Relic Pro when they deploy the New Relic agent.
 
-Sign up for New Relic using the Azure Marketplace
+Sign up for New Relic using the Azure gallery
 --
 
-New Relic integrates seamlessly with Azure Web Roles, Worker roles and Azure Websites.
+New Relic integrates seamlessly with Azure Web Roles, Worker roles and Azure Web App.
 
-To sign up for New Relic directly from the Azure Marketplace, follow these four easy steps.
+To sign up for New Relic directly from the Azure gallery, follow these four easy steps.
 
 ## Step 1. Create a New Relic account
 
-1. Log in to the [Azure preview portal](https://manage.windowsazure.cn) and click **New** in the corner.
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn) and click **New** in the corner.
 3. Click **Developer services** > **New Relic APM**.
 4. Configure your New Relic account by specifying the following, then click **Create**.
 	- **Name**
@@ -71,7 +69,7 @@ To sign up for New Relic directly from the Azure Marketplace, follow these four 
 
 ## Step 2: Configure New Relic integration for your web app
 
-1. Open your web app's blade in the [Azure preview portal](https://manage.windowsazure.cn).
+1. Open your web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Click the "..." menu at the top of the blade and select **Add tiles**.
 3. On the **Monitoring** tab select **Application summary** and drag it to where you want the tile to appear on your web app's blade.
 4. Click Done to finish adding tiles.
@@ -92,7 +90,7 @@ Using Visual Studio, publish your web app. If you have previously published your
 
 To view your New Relic dashboard:
 
-2. Open your web app's blade in the [Azure preview portal](https://manage.windowsazure.cn).
+2. Open your web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn).
 3. Click **Application monitoring** > **application name** > **View at New Relic**.
 
 	![](./media/store-new-relic-web-sites-dotnet-application-performance-management/view-new-relic-data.png)
@@ -171,14 +169,13 @@ Overview of the New Relic UI, setting user rights and profiles, using standard f
 browsers to load your webpages, where they come from, and what browsers they use
  * [Finding Help](https://docs.newrelic.com/docs/accounts-partnerships/education/getting-started-new-relic/finding-help): Resources available through New Relic's online Help Center
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 ## What's changed
-* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the Azure Management Portal to the Azure preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
 
-[vswebsite]: /documentation/articles/web-sites-dotnet-get-started
+[vswebsite]: web-sites-dotnet-get-started.md
 
 [wmnugetbutton]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetbutton.png
 [wmnugetgallery]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetgallery.png

@@ -22,7 +22,7 @@ Windows Azure Media Services is introducing the **Media Encoder Premium Workflow
 
 The following topics outline details related to **Media Encoder Premium Workflow**: 
 
-- [Formats Supported by the Media Encoder Premium Workflow](/documentation/articles/media-services-premium-workflow-encoder-formats) – Discusses the file formats and codecs supported by **Media Encoder Premium Workflow**.
+- [Formats Supported by the Media Encoder Premium Workflow](/documentation/articles/media-services-premium-workflow-encoder-formats) - Discusses the file formats and codecs supported by **Media Encoder Premium Workflow**.
 
 - The [compare encoders](/documentation/articles/media-services-encode-asset#compare_encoders) section compares the encoding capabilities of **Media Encoder Premium Workflow** and **Azure Media Encoder**.
 
@@ -49,9 +49,9 @@ The following steps are performed:
 4. Create a job and a task.
 5. Add two input assets to the task.
 	
-	a. 1st – the workflow asset.
+	a. 1st - the workflow asset.
 
-	b. 2nd – the video asset.
+	b. 2nd - the video asset.
 	
 	**Note**: The workflow asset must be added to the task before the media asset. 
 The configuration string for this task should be empty. 
@@ -268,8 +268,8 @@ If your input video does not contain closed captioning, the output Asset will st
 
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
 
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

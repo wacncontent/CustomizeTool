@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Set up staging environments for web apps in Azure Websites"
-	description="Learn how to use staged publishing for web apps in Azure Websites."
+	pageTitle="Set up staging environments for web sites in Azure Websites"
+	description="Learn how to use staged publishing for web sites in Azure Websites."
 	services="app-service"
 	documentationCenter=""
 	authors="cephalin"
@@ -13,42 +13,42 @@
 	ms.date="09/21/2015"
 	wacn.date=""/>
 
-# Set up staging environments for web apps in Azure Websites
+# Set up staging environments for web sites in Azure Websites
 <a name="Overview"></a>
 
-When you deploy your web app to [Azure Websites](/documentation/services/web-sites/), you can deploy to a separate deployment slot instead of the default production slot when running in the **Standard** or **Premium** App Service plan mode. Deployment slots are actually live web apps with their own hostnames. Web app content and configurations elements can be swapped between two deployment slots, including the production slot. Deploying your application to a deployment slot has the following benefits:
+When you deploy your web site to [Azure Websites](/documentation/services/web-sites/), you can deploy to a separate deployment slot instead of the default production slot when running in the **Standard** or **Premium** App Service plan mode. Deployment slots are actually live web sites with their own hostnames. web site content and configurations elements can be swapped between two deployment slots, including the production slot. Deploying your application to a deployment slot has the following benefits:
 
-- You can validate web app changes in a staging deployment slot before swapping it with the production slot.
+- You can validate web site changes in a staging deployment slot before swapping it with the production slot.
 
-- Deploying a web app to a slot first and swapping it into production ensures that all instances of the slot are warmed up before being swapped into production. This eliminates downtime when you deploy your web app. The traffic redirection is seamless, and no requests are dropped as a result of swap operations. This entire workflow can be automated by configuring [Auto Swap](#configure-auto-swap-for-your-web-app) when pre-swap validation is not needed.
+- Deploying a web site to a slot first and swapping it into production ensures that all instances of the slot are warmed up before being swapped into production. This eliminates downtime when you deploy your web site. The traffic redirection is seamless, and no requests are dropped as a result of swap operations. This entire workflow can be automated by configuring [Auto Swap](#configure-auto-swap-for-your-web-app) when pre-swap validation is not needed.
 
-- After a swap, the slot with previously staged web app now has the previous production web app. If the changes swapped into the production slot are not as you expected, you can perform the same swap immediately to get your "last known good site" back.
+- After a swap, the slot with previously staged web site now has the previous production web site. If the changes swapped into the production slot are not as you expected, you can perform the same swap immediately to get your "last known good site" back.
 
-Each App Service plan mode supports a different number of deployment slots. To find out the number of slots your web app's mode supports, see [Azure Websites Pricing](/home/features/app-service/#price).
+Each App Service plan mode supports a different number of deployment slots. To find out the number of slots your web site's mode supports, see [Azure Websites Pricing](/home/features/web-site/#price).
 
-- When your web app has multiple slots, you cannot change the mode.
+- When your web site has multiple slots, you cannot change the mode.
 
 - Scaling is not available for non-production slots.
 
-- Linked resource management is not supported for non-production slots. In the [Azure preview portal](https://manage.windowsazure.cn/) only, you can avoid this potential impact on a production slot by temporarily moving the non-production slot to a different App Service plan mode. Note that the non-production slot must once again share the same mode with the production slot before you can swap the two slots.
+- Linked resource management is not supported for non-production slots. In the [Azure Management Portal](https://manage.windowsazure.cn/) only, you can avoid this potential impact on a production slot by temporarily moving the non-production slot to a different App Service plan mode. Note that the non-production slot must once again share the same mode with the production slot before you can swap the two slots.
 
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
 <a name="Add"></a>
-## Add a deployment slot to a web app ##
+## Add a deployment slot to a web site ##
 
-The web app must be running in the **Standard** or **Premium** mode in order for you to enable multiple deployment slots.
+The web site must be running in the **Standard** or **Premium** mode in order for you to enable multiple deployment slots.
 
-1. In the [Azure Preview Portal](https://manage.windowsazure.cn/), open your web app's blade.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), open your web site's blade.
 2. Click **Deployment slots**. Then, in the **Deployment slots** blade, click **Add Slot**.
 
 	![Add a new deployment slot][QGAddNewDeploymentSlot]
 
 	> [AZURE.NOTE]
-	> If the web app is not already in the **Standard** or **Premium** mode, you will receive a message indicating the supported modes for enabling staged publishing. At this point, you have the option to select **Upgrade** and navigate to the **Scale** tab of your web app before continuing.
+	> If the web site is not already in the **Standard** or **Premium** mode, you will receive a message indicating the supported modes for enabling staged publishing. At this point, you have the option to select **Upgrade** and navigate to the **Scale** tab of your web site before continuing.
 
-2. In the **Add a slot** blade, give the slot a name, and select whether to clone web app configuration from another existing deployment slot. Click the check mark to continue.
+2. In the **Add a slot** blade, give the slot a name, and select whether to clone web site configuration from another existing deployment slot. Click the check mark to continue.
 
 	![Configuration Source][ConfigurationSource1]
 
@@ -58,11 +58,11 @@ The web app must be running in the **Standard** or **Premium** mode in order for
 
 	![Configuration sources][MultipleConfigurationSources]
 
-5. In the **Deployment slots** blade, click the deployment slot to open a blade for the slot, with a set of metrics and configuration just like any other web app. **your-web-app-name-deployment-slot-name** will appear at the top of blade to remind you that you are viewing the deployment slot.
+5. In the **Deployment slots** blade, click the deployment slot to open a blade for the slot, with a set of metrics and configuration just like any other web site. **your-web-app-name-deployment-slot-name** will appear at the top of blade to remind you that you are viewing the deployment slot.
 
 	![Deployment Slot Title][StagingTitle]
 
-5. Click the app URL in the slot's blade. Notice the the deployment slot has its own hostname and is also a live app. To limit public access to the deployment slot, see [Azure Websites Web App – block web access to non-production deployment slots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/).
+5. Click the app URL in the slot's blade. Notice the the deployment slot has its own hostname and is also a live app. To limit public access to the deployment slot, see [Azure Websites - block web access to non-production deployment slots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/).
 
 There is no content after deployment slot creation. You can deploy to the slot from a different repository branch, or an altogether different repository. You can also change the slot's configuration. Use the publish profile or deployment credentials associated with the deployment slot for content updates.  For example, you can [publish to this slot with git](/documentation/articles/web-sites-publish-source-control).
 
@@ -87,24 +87,24 @@ When you clone configuration from another deployment slot, the cloned configurat
 - Scale settings
 - WebJobs schedulers
 
-To configure an app setting or connection string to stick to a slot (not swapped), access the **Application Settings** blade for a specific slot, then select the **Slot Setting** box for the configuration elements that should stick the slot. Note that marking a configuration element as slot specific has the effect of establishing that element as not swappable across all the deployment slots associated with the web app.
+To configure an app setting or connection string to stick to a slot (not swapped), access the **Application Settings** blade for a specific slot, then select the **Slot Setting** box for the configuration elements that should stick the slot. Note that marking a configuration element as slot specific has the effect of establishing that element as not swappable across all the deployment slots associated with the web site.
 
 ![Slot settings][SlotSettings]
 
 <a name="Swap"></a>
 ## To swap deployment slots ##
 
->[AZURE.IMPORTANT] Before you swap a web app from a deployment slot into production, make sure that all non-slot specific settings are configured exactly as you want to have it in the swap target.
+>[AZURE.IMPORTANT] Before you swap a web site from a deployment slot into production, make sure that all non-slot specific settings are configured exactly as you want to have it in the swap target.
 
-1. To swap deployment slots, click the **Swap** button in the command bar of the web app or in the command bar of a deployment slot. Make sure that the swap source and swap target are set properly. Usually, the swap target would be the production slot.  
+1. To swap deployment slots, click the **Swap** button in the command bar of the web site or in the command bar of a deployment slot. Make sure that the swap source and swap target are set properly. Usually, the swap target would be the production slot.  
 
 	![Swap Button][SwapButtonBar]
 
 3. Click **OK** to complete the operation. When the operation finishes, the deployment slots have been swapped.
 
-## Configure Auto Swap for your web app ##
+## Configure Auto Swap for your web site ##
 
-Auto Swap streamlines DevOps scenarios where you want to continuously deploy your web app with zero cold start and zero downtime for end customers of the web app. When a deployment slot is configured for Auto Swap into production, every time you push your code update to that slot, Azure Websites will automatically swap the web app into production after it has already warmed up in the slot.
+Auto Swap streamlines DevOps scenarios where you want to continuously deploy your web site with zero cold start and zero downtime for end customers of the web site. When a deployment slot is configured for Auto Swap into production, every time you push your code update to that slot, Azure Websites will automatically swap the web site into production after it has already warmed up in the slot.
 
 >[AZURE.IMPORTANT] When you enable Auto Swap for a slot, make sure the slot configuration is exactly the configuration intended for the target slot (usually the production slot).
 
@@ -120,12 +120,12 @@ Configuring Auto Swap for a slot is easy. Follow the steps below:
 
 	![][Autoswap2]
 
-	>[AZURE.NOTE] To test Auto Swap for your web app, you can first select a non-production target slot in **Auto Swap Slot** to become familiar with the feature.  
+	>[AZURE.NOTE] To test Auto Swap for your web site, you can first select a non-production target slot in **Auto Swap Slot** to become familiar with the feature.  
 
 3. Execute a code push to that deployment slot. Auto Swap will happen after a short time and the update will be reflected at your target slot's URL.
 
 <a name="Multi-Phase"></a>
-## Use multi-phase swap for your web app ##
+## Use multi-phase swap for your web site ##
 
 Multi-phase swap is available to simplify validation in the context of configuration elements designed to stick to a slot such as connection strings. In these cases it may be useful to apply such configuration elements from the swap target to the swap source and validate before swap actually takes effect. Once swap target configuration elements are applied to the swap source the actions available are either completing the swap or reverting to original configuration for the swap source which also has the effect of canceling the swap. Samples for the Azure PowerShell cmdlets available for multi-phase swap are included in the Azure PowerShell cmdlets for deployment slots section.
 
@@ -145,49 +145,49 @@ In the blade for a deployment slot, click **Delete** in the command bar.
 <a name="PowerShell"></a>
 ## Azure PowerShell cmdlets for deployment slots
 
-Azure PowerShell is a module that provides cmdlets to manage Azure through Windows PowerShell, including support for managing web app deployment slots in Azure Websites.
+Azure PowerShell is a module that provides cmdlets to manage Azure through Windows PowerShell, including support for managing web site deployment slots in Azure Websites.
 
-- For information on installing and configuring Azure PowerShell, and on authenticating Azure PowerShell with your Azure subscription, see [How to install and configure Windows Azure PowerShell](/documentation/articles/install-configure-powershell).  
+- For information on installing and configuring Azure PowerShell, and on authenticating Azure PowerShell with your Azure subscription, see [How to install and configure Windows Azure PowerShell](/documentation/articles/powershell-install-configure).  
 
 - In order to use the new Azure Resource Manager mode for PowerShell cmdlets start with the following: `Switch-AzureMode -Name AzureResourceManager`.
 
 ----------
 
-### Create web app
+### Create web site
 
-`New-AzureWebApp -ResourceGroupName [resource group name] -Name [web app name] -Location [location] -AppServicePlan [app service plan name]`
+`New-AzureWebApp -ResourceGroupName [resource group name] -Name [web site name] -Location [location] -AppServicePlan [app service plan name]`
 
 ----------
 
-### Create a deployment slot for a web app
+### Create a deployment slot for a web site
 
-`New-AzureWebApp -ResourceGroupName [resource group name] -Name [web app name] -SlotName [deployment slot name] -Location [location] -AppServicePlan [app service plan name]`
+`New-AzureWebApp -ResourceGroupName [resource group name] -Name [web site name] -SlotName [deployment slot name] -Location [location] -AppServicePlan [app service plan name]`
 
 ----------
 
 ### Initiate multi-phase swap and apply target slot configuration to source slot
 
-`$ParametersObject = @{targetSlot  = "[slot name – e.g. “production”]"}`
-`Invoke-AzureResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [web app name]/[slot name] -Action applySlotConfig -Parameters $ParametersObject -ApiVersion 2015-07-01`
+`$ParametersObject = @{targetSlot  = "[slot name - e.g. “production”]"}`
+`Invoke-AzureResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [web site name]/[slot name] -Action applySlotConfig -Parameters $ParametersObject -ApiVersion 2015-07-01`
 
 ----------
 
 ### Revert the first phase of multi-phase swap and restore source slot configuration
 
-`Invoke-AzureResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [web app name]/[slot name] -Action resetSlotConfig -ApiVersion 2015-07-01`
+`Invoke-AzureResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [web site name]/[slot name] -Action resetSlotConfig -ApiVersion 2015-07-01`
 
 ----------
 
 ### Swap deployment slots
 
-`$ParametersObject = @{targetSlot  = "[slot name – e.g. “production”]"}`
-`Invoke-AzureResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [web app name]/[slot name] -Action slotsswap -Parameters $ParametersObject -ApiVersion 2015-07-01`
+`$ParametersObject = @{targetSlot  = "[slot name - e.g. “production”]"}`
+`Invoke-AzureResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [web site name]/[slot name] -Action slotsswap -Parameters $ParametersObject -ApiVersion 2015-07-01`
 
 ----------
 
 ### Delete deployment slot
 
-`Remove-AzureResource -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots –Name [web app name]/[slot name] -ApiVersion 2015-07-01`
+`Remove-AzureResource -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -Name [web site name]/[slot name] -ApiVersion 2015-07-01`
 
 ----------
 
@@ -196,7 +196,7 @@ Azure PowerShell is a module that provides cmdlets to manage Azure through Windo
 <a name="CLI"></a>
 ## Azure Command-Line Interface (Azure CLI) commands for Deployment Slots
 
-The Azure CLI provides cross-platform commands for working with Azure, including support for managing Web App deployment slots.
+The Azure CLI provides cross-platform commands for working with Azure, including support for managing web site deployment slots.
 
 - For instructions on installing and configuring the Azure CLI, including information on how to connect Azure CLI to your Azure subscription, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install).
 
@@ -204,13 +204,13 @@ The Azure CLI provides cross-platform commands for working with Azure, including
 
 ----------
 ### azure site list
-For information about the web apps in the current subscription, call **azure site list**, as in the following example.
+For information about the web sites in the current subscription, call **azure site list**, as in the following example.
 
 `azure site list webappslotstest`
 
 ----------
 ### azure site create
-To create a deployment slot, call **azure site create** and specify the name of an existing web app and the name of the slot to create, as in the following example.
+To create a deployment slot, call **azure site create** and specify the name of an existing web site and the name of the slot to create, as in the following example.
 
 `azure site create webappslotstest --slot staging`
 
@@ -232,16 +232,15 @@ To delete a deployment slot that is no longer needed, use the **azure site delet
 
 ----------
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 
 ## Next Steps ##
-[Azure Websites Web App – block web access to non-production deployment slots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
+[Azure Websites - block web access to non-production deployment slots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
 
 [Windows Azure Trial](/pricing/1rmb-trial/)
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
 <!-- IMAGES -->
 [QGAddNewDeploymentSlot]:  ./media/web-sites-staged-publishing/QGAddNewDeploymentSlot.png

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/15/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 #Tutorial: How to integrate Salesforce with Azure Active Directory
@@ -148,7 +148,7 @@ You may follow this tutorial using the videos below.
 
 	![Select your SSO configuration][17]
 
-	> [AZURE.NOTE] If more than one authentication service is selected, then when users attempt to initiate single sign-on to your Salesforce environment, they will be prompted to select which authentication service they would like to sign in with. If you don’t want this to happen, then you should **leave all other authentication services unchecked**.
+	> [AZURE.NOTE] If more than one authentication service is selected, then when users attempt to initiate single sign-on to your Salesforce environment, they will be prompted to select which authentication service they would like to sign in with. If you donât want this to happen, then you should **leave all other authentication services unchecked**.
 
 15. In Azure AD, select the single sign-on configuration confirmation checkbox to enable the certificate that you uploaded to Salesforce. Then click **Next**.
 

@@ -10,12 +10,12 @@
 <tags 
 	ms.service="app-service" 
 	ms.date="09/16/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="11/27/2015"/>
 
 
 # 在 Azure 网站中使用 Azure CDN
 
-Azure 网站可以集成 [Azure CDN](/home/features/caching/)，增强 [Azure 网站](/documentation/services/web-sites/)固有的全局缩放功能，在全球通过靠近客户的服务器节点提供 Web 应用内容。在特定情况下（例如提供静态映像），此集成可以大幅提高 Azure 网站的性能，在全球显著改善 Web 应用的用户体验。
+Azure 网站可以集成 [Azure CDN](/home/features/caching/)，增强 [Azure 网站](http://go.microsoft.com/fwlink/?LinkId=529714)固有的全局缩放功能，在全球通过靠近客户的服务器节点提供 Web 应用内容（如需已更新的包含所有最新节点位置的列表，请单击[此处](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx)）。在特定情况下（例如提供静态映像），此集成可以大幅提高 Azure 网站的性能，在全球显著改善 Web 应用的用户体验。
 
 将 Web Apps 与 Azure CDN 集成具有以下优点：
 
@@ -34,10 +34,10 @@ Azure 网站可以集成 [Azure CDN](/home/features/caching/)，增强 [Azure �
 
 本教程设置了以下前提条件：
 
--	有效的 [Windows Azure 帐户](https://account.windowsazure.cn/Home/Index)
--	Visual Studio 2013 with the [Azure SDK for .NET](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)
+-	有效的 [Windows Azure 帐户](/account/)
+-	Visual Studio 2013 with the [Azure SDK for .NET](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409)
 
-> [AZURE.NOTE]完成本教程需要有一个 Azure 帐户：+ 你可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - 获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web Apps）。
+> [AZURE.NOTE]完成本教程需要有一个 Azure 帐户：+ 你可以[免费建立一个 Azure 帐户](/pricing/free-trial/?WT.mc_id=A261C142F) - 获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web Apps）。+ 你可以[激活 MSDN 订户权益](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - 订阅 MSDN 后，你可以每月获得相应的信用额度，这些信用额度可以用于付费的 Azure 服务。
 >
 
 ## 将 Web 应用部署到具有集成 CDN 终结点的 Azure ##
@@ -73,7 +73,7 @@ Azure 网站可以集成 [Azure CDN](/home/features/caching/)，增强 [Azure �
 
 	发布完成后，你会在浏览器中看到发布的 Web 应用。
 
-1. 若要创建一个 CDN 终结点，请登录到 [Azure 门户](https://manage.windowsazure.cn/)。
+1. 若要创建一个 CDN 终结点，请登录到 [Azure 门户](http://go.microsoft.com/fwlink/?LinkId=529715)。
 2. 单击“新建 > 应用服务 > CDN > 快速创建”。选择 **http://*&lt;sitename>*.chinacloudsites.cn/**，然后单击“创建”。
 
 	![](./media/cdn-websites-with-cdn/7-create-cdn.png)
@@ -358,7 +358,7 @@ Azure 网站可以集成 [Azure CDN](/home/features/caching/)，增强 [Azure �
 
 按照以下步骤操作，将 ASP.NET 绑定和缩减功能集成到 CDN 终结点。
 
-1. 回到 *App\_Start\\BundleConfig.cs*，修改 `bundles.Add()` 方法以使用其他[捆绑包构造函数](http://msdn.microsoft.com/zh-cn/library/jj646464.aspx)来指定 CDN 地址。为此，请使用以下代码替换 `RegisterBundles` 方法定义：  
+1. 回到 *App\_Start\\BundleConfig.cs*，修改 `bundles.Add()` 方法以使用其他[捆绑包构造函数](http://msdn.microsoft.com/library/jj646464.aspx)来指定 CDN 地址。为此，请使用以下代码替换 `RegisterBundles` 方法定义：  
 	
         public static void RegisterBundles(BundleCollection bundles)
         {
@@ -438,9 +438,9 @@ Azure 网站可以集成 [Azure CDN](/home/features/caching/)，增强 [Azure �
 
 你希望你的网页在 Azure CDN 终结点因某种原因而出现故障时，能够表现出相当的智能，即能够访问作为回退选项的源 Web 服务器，以便加载 JavaScript 或 Bootstrap。因 CDN 不可用而丢失 Web 应用上的映像是很严重的问题，但更为严重的是失去脚本和样式表提供的重要页面功能。
 
-[捆绑包](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bundle.aspx)类包含一个名为 [CdnFallbackExpression](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bundle.cdnfallbackexpression.aspx) 的属性，该属性可以让你配置回退机制以应对 CDN 故障情况。若要使用此属性，请执行以下步骤：
+[捆绑包](http://msdn.microsoft.com/library/system.web.optimization.bundle.aspx)类包含一个名为 [CdnFallbackExpression](http://msdn.microsoft.com/library/system.web.optimization.bundle.cdnfallbackexpression.aspx) 的属性，该属性可以让你配置回退机制以应对 CDN 故障情况。若要使用此属性，请执行以下步骤：
 
-1. 在 ASP.NET 项目中打开 *App\_Start\\BundleConfig.cs*（你已在其中将 CDN URL 添加到了每个[捆绑包构造函数](http://msdn.microsoft.com/zh-cn/library/jj646464.aspx)），然后将 `CdnFallbackExpression` 代码添加到所示的四个位置，以便将回退机制添加到默认捆绑包中。  
+1. 在 ASP.NET 项目中打开 *App\_Start\\BundleConfig.cs*（你已在其中将 CDN URL 添加到了每个[捆绑包构造函数](http://msdn.microsoft.com/library/jj646464.aspx)），然后将 `CdnFallbackExpression` 代码添加到所示的四个位置，以便将回退机制添加到默认捆绑包中。  
 	
         public static void RegisterBundles(BundleCollection bundles)
         {
@@ -502,36 +502,38 @@ Azure 网站可以集成 [Azure CDN](/home/features/caching/)，增强 [Azure �
 4. 重新发布到 Azure Web 应用并访问主页。
 5. 查看页面的 HTML 代码。你会发现如下所示的已注入脚本：    
 	
-		...
-		<link href="http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474" rel="stylesheet"/>
-			<script>(function() {
-        	        var loadFallback,
-        	            len = document.styleSheets.length;
-        	        for (var i = 0; i < len; i++) {
-        	            var sheet = document.styleSheets[i];
-        	            if (sheet.href.indexOf('http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474') !== -1) {
-        	                var meta = document.createElement('meta');
-        	                meta.className = 'sr-only';
-        	                document.head.appendChild(meta);
-        	                var value = window.getComputedStyle(meta).getPropertyValue('width');
-        	                document.head.removeChild(meta);
-        	                if (value !== '1px') {
-        	                    document.write('<link href="/Content/css" rel="stylesheet" type="text/css" />');
-        	                }
-        	            }
-        	        }
-        	        return true;
-        	    }())||document.write('<script src="/Content/css"><\/script>');</script>
+	```
+	...
+	<link href="http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474" rel="stylesheet"/>
+<script>(function() {
+                var loadFallback,
+                    len = document.styleSheets.length;
+                for (var i = 0; i < len; i++) {
+                    var sheet = document.styleSheets[i];
+                    if (sheet.href.indexOf('http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474') !== -1) {
+                        var meta = document.createElement('meta');
+                        meta.className = 'sr-only';
+                        document.head.appendChild(meta);
+                        var value = window.getComputedStyle(meta).getPropertyValue('width');
+                        document.head.removeChild(meta);
+                        if (value !== '1px') {
+                            document.write('<link href="/Content/css" rel="stylesheet" type="text/css" />');
+                        }
+                    }
+                }
+                return true;
+            }())||document.write('<script src="/Content/css"><\/script>');</script>
 
-		<script src="http://az673227.vo.msecnd.net/bundles/modernizer?v=1.0.0.25474"></script>
- 		<script>(window.Modernizr)||document.write('<script src="/bundles/modernizr"><\/script>');</script>
-		... 
-		<script src="http://az673227.vo.msecnd.net/bundles/jquery?v=1.0.0.25474"></script>
-		<script>(window.jquery)||document.write('<script src="/bundles/jquery"><\/script>');</script>
+	<script src="http://az673227.vo.msecnd.net/bundles/modernizer?v=1.0.0.25474"></script>
+ 	<script>(window.Modernizr)||document.write('<script src="/bundles/modernizr"><\/script>');</script>
+	... 
+	<script src="http://az673227.vo.msecnd.net/bundles/jquery?v=1.0.0.25474"></script>
+	<script>(window.jquery)||document.write('<script src="/bundles/jquery"><\/script>');</script>
 
- 		<script src="http://az673227.vo.msecnd.net/bundles/bootstrap?v=1.0.0.25474"></script>
- 		<script>($.fn.modal)||document.write('<script src="/bundles/bootstrap"><\/script>');</script>
-		...
+ 	<script src="http://az673227.vo.msecnd.net/bundles/bootstrap?v=1.0.0.25474"></script>
+ 	<script>($.fn.modal)||document.write('<script src="/bundles/bootstrap"><\/script>');</script>
+	...
+	```
 
 	Note that injected script for the CSS bundle still contains the errant remnant from the `CdnFallbackExpression` property in the line:
 
@@ -546,6 +548,15 @@ Azure 网站可以集成 [Azure CDN](/home/features/caching/)，增强 [Azure �
 7. 刷新 Azure Web 应用的浏览器窗口。你现在应该会看到所有脚本和样式表都已正常加载。
 
 ## 更多信息 
+- [Azure 内容交付网络 (CDN) 概述](/documentation/articles/cdn-overview)
+- [在 Web 应用程序中从 Azure CDN 提供内容](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application)
+- [将云服务与 Azure CDN 集成](/documentation/articles/cdn-cloud-service-with-cdn)
 - [ASP.NET 绑定和缩减](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)
+- [使用 Azure CDN](/documentation/articles/cdn-how-to-use-cdn)
+
+## 发生的更改
+* 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
+ 
 
 <!---HONumber=74-->

@@ -3,25 +3,16 @@
 	description="How to get started using Blob storage in a WebJob project after connecting to an Azure storage using Visual Studio connected services."
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Get started with Azure Blob storage and Visual Studio connected services (WebJob projects)
-
-> [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-webjobs-getting-started-blobs)
-> - [What happened](/documentation/articles/vs-storage-webjobs-what-happened)
-
-> [AZURE.SELECTOR]
-> - [Blobs](/documentation/articles/vs-storage-webjobs-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-webjobs-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-webjobs-getting-started-tables)
 
 ## Overview
 

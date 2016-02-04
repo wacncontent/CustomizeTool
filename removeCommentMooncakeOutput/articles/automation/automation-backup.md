@@ -17,7 +17,7 @@ When you delete an automation account in Windows Azure, all objects in the accou
 
 ## Runbooks
 
-You can export your runbooks to script files using either the Azure Management Portal or the [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-CN/library/dn690269.aspx) cmdlet in Windows PowerShell.  These script files can be imported into another automation account as discussed in [Creating or Importing a Runbook](https://msdn.microsoft.com/zh-CN/library/dn643637.aspx).
+You can export your runbooks to script files using either the Azure Management Portal or the [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-CN/library/dn690269.aspx) cmdlet in Windows PowerShell.  These script files can be imported into another automation account as discussed in [Creating or Importing a Runbook](/documentation/articles/automation-creating-importing-runbook).
 
 
 ## Integration modules
@@ -36,6 +36,6 @@ You cannot export certificates from Azure Automation.  You must ensure that any 
 
 ## Related articles
 
-- [Creating or Importing a Runbook](https://msdn.microsoft.com/zh-CN/library/dn643637.aspx)
+- [Creating or Importing a Runbook](/documentation/articles/automation-creating-importing-runbook)
 - [Automation assets](https://msdn.microsoft.com/zh-CN/library/dn939988.aspx)
 - [Azure cmdlets](https://msdn.microsoft.com/zh-CN/library/dn690262.aspx)

@@ -308,7 +308,7 @@ Azure HDInsight uses Azure Blob storage as the default file system. You can conf
 
 		# Create a Blob storage container
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-		$destContext = New-AzureStorageContext –StorageAccountName $storageAccountName –StorageAccountKey $storageAccountKey  
+		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 		New-AzureStorageContainer -Name $containerName -Context $destContext
 
 4. Run the following commands to verify the Storage account and the container:
@@ -433,7 +433,7 @@ This section provides an Azure PowerShell script that performs all the tasks rel
 		#====== CREATE A BLOB STORAGE CONTAINER ======
 		Write-Host "Create a Blob storage container" -ForegroundColor Green
 		$storageAccountKey_Default = Get-AzureStorageKey $storageAccountName_Default | %{ $_.Primary }
-		$destContext = New-AzureStorageContext –StorageAccountName $storageAccountName_Default –StorageAccountKey $storageAccountKey_Default
+		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName_Default -StorageAccountKey $storageAccountKey_Default
 
 		New-AzureStorageContainer -Name $containerName_Default -Context $destContext
 
@@ -507,7 +507,7 @@ This section shows you how to download and display the output. For information o
 
 		Select-AzureSubscription $subscriptionName
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-		$storageContext = New-AzureStorageContext –StorageAccountName $storageAccountName –StorageAccountKey $storageAccountKey  
+		$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 
 4. Run the following commands to download and display the output:
 
@@ -519,7 +519,7 @@ This section shows you how to download and display the output. For information o
 ##Next steps
 In this tutorial, you have learned how to develop a Hadoop streaming MapReduce job, how to test the application on the HDInsight Emulator, and how to write an Azure PowerShell script to provision an HDInsight cluster and run a MapReduce job on the cluster. To learn more, see the following articles:
 
-- [Get started with Azure HDInsight](/documentation/articles/hdinsight-get-started)
+- [Get started with Azure HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 - [Get started with the HDInsight Emulator][hdinsight-get-started-emulator]
 - [Develop Java MapReduce programs for HDInsight][hdinsight-develop-mapreduce]
 - [Use Azure Blob storage with HDInsight][hdinsight-storage]
@@ -532,21 +532,21 @@ In this tutorial, you have learned how to develop a Hadoop streaming MapReduce j
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
+[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
 
-[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator
-[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-get-started-emulator#blobstorage
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-get-started-emulator]: ../hdinsight-get-started-emulator.md
+[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-hadoop-emulator-get-started#blobstorage
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
 
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver.md
+[hdinsight-power-query]: hdinsight-connect-excel-power-query.md
 
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
-[powershell-install]: /documentation/articles/powershell-install-configure
+[powershell-install]: ../powershell-install-configure.md
 
 [image-hdi-wordcountdiagram]: ./media/hdinsight-hadoop-develop-deploy-streaming-jobs/HDI.WordCountDiagram.gif "MapReduce wordcount application flow"

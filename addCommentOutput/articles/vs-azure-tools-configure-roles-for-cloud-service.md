@@ -3,12 +3,12 @@
    description="Learn how to set up and configure roles for Azure cloud services by using Visual Studio."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="09/08/2015"
+	ms.date="12/19/2015"
 	wacn.date=""/>
 
 # Configure the Roles for an Azure Cloud Service with Visual Studio
@@ -35,7 +35,12 @@ When you create a new Azure cloud service in Visual Studio, two service configur
 
 You can configure an Azure cloud service from Solution Explorer in Visual Studio, as shown in the following illustration.
 
+<!-- deleted by customization
 ![Configure Cloud Service](./media/vs-azure-tools-configure-roles-for-cloud-service/IC713462.png)
+-->
+<!-- keep by customization: begin -->
+    ![](./media/vs-azure-tools-configure-roles-for-cloud-service/IC713462.png)
+<!-- keep by customization: end -->
 
 ### To configure an Azure cloud service
 
@@ -53,7 +58,7 @@ You can configure an Azure cloud service from Solution Explorer in Visual Studio
 
 ## Change the number of role instances
 
-To improve the performance of your cloud service, you can change the number of instances of a role that are running, based on the number of users or the load expected for a particular role. A separate virtual machine is created for each instance of a role when the cloud service runs in Azure. This will affect the billing for the deployment of this cloud service. For more information about billing, see [Understand your bill for Windows Azure](/documentation/articles/billing-understand-your-bill).
+To improve the performance of your cloud service, you can change the number of instances of a role that are running, based on the number of users or the load expected for a particular role. A separate virtual machine is created for each instance of a role when the cloud service runs in Azure. This will affect the billing for the deployment of this cloud service. For more information about billing, see [Understand <!-- deleted by customization your --><!-- keep by customization: begin --> Your <!-- keep by customization: end --><!-- deleted by customization bill for Windows Azure](/documentation/articles/billing-understand-your-bill) --><!-- keep by customization: begin --> Azure Bill](/documentation/articles/billing-understand-your-bill) <!-- keep by customization: end -->.
 
 ### To change the number of instances for a role
 
@@ -97,7 +102,7 @@ By using a different value for each service configuration, you do not have to us
 
 1. To use a storage account in Azure, choose the **Your subscription** option button and select the desired storage account.
 
-1. To use custom credentials, choose the **Manually entered credentials** options button. Enter the storage account name, and either the primary or second key. For information about how to create a storage account and how to enter the details for the storage account in the **Create Storage Connection String** dialog box, see [Prepare to publish or deploy an Azure application from Visual Studio](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio).
+1. To use custom credentials, choose the **Manually entered credentials** options button. Enter the storage account name, and either the primary or second key. For information about how to create a storage account and how to enter the details for the storage account in the **Create Storage Connection String** dialog box, see <!-- deleted by customization [Prepare --><!-- keep by customization: begin --> [Setting Up Services Required <!-- keep by customization: end --> to <!-- deleted by customization publish --><!-- keep by customization: begin --> Publish <!-- keep by customization: end --><!-- deleted by customization or deploy an Azure application --><!-- keep by customization: begin --> a Cloud Service <!-- keep by customization: end --> from Visual <!-- deleted by customization Studio](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio) --><!-- keep by customization: begin --> Studio](/documentation/articles/vs-azure-tools-setting-up-services-required-to-publish-a-cloud-service-from-visual-studio) <!-- keep by customization: end -->.
 
 1. To delete a connection string, select the connection string and then choose the **Remove Setting** button.
 
@@ -179,7 +184,7 @@ By using a different value for each service configuration, you do not have to us
 
 ## Manage local storage for each role instance
 
-You can add local file system storage for each instance of a role. You can store local data here that does not need to be accessed by other roles. Any data that you do not need to save into table, blob, or SQL Database storage can be stored in here. For example, you could use this local storage to cache data that might need to be used again. This stored data can’t be accessed by other instances of a role. For more information about local storage resources, see [Configure Local Storage Resources](/documentation/articles/cloud-services-configure-local-storage-resources).
+You can add local file system storage for each instance of a role. You can store local data here that does not need to be accessed by other roles. Any data that you do not need to save into table, blob, or SQL Database storage can be stored in here. For example, you could use this local storage to cache data that might need to be used again. This stored data can't be accessed by other instances of a role. For more information about local storage resources, see [Configure Local Storage Resources](/documentation/articles/cloud-services-configure-local-storage-resources).
 
 Local storage settings apply to all service configurations. You can only add, remove, or modify local storage for all service configurations.
 
@@ -271,7 +276,12 @@ You can collect diagnostics data for your Azure cloud service. This data is adde
 
 1. To use a storage account for the local connection string, choose the **Manually entered credentials** option.
 
+<!-- deleted by customization
     For more information about how to create a storage account and how to enter the details for the storage account in the **Create Storage Connection String** dialog box, see [Prepare to publish or deploy an Azure application from Visual Studio](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio).
+-->
+<!-- keep by customization: begin -->
+    For more information about how to create a storage account and how to enter the details for the storage account in the Create Storage Connection String dialog box, see [Setting Up Services Required to Publish a Cloud Service from Visual Studio](/documentation/articles/vs-azure-tools-setting-up-services-required-to-publish-a-cloud-service-from-visual-studio).
+<!-- keep by customization: end -->
 
 1. Choose the storage account you want to use in **Account name**.
 
@@ -289,9 +299,9 @@ You can collect diagnostics data for your Azure cloud service. This data is adde
 
 ## Change the size of the virtual machine used for each role
 
-You can set the virtual machine size for each role. You can only set this size for all service configurations. If you select a smaller machine size, then less CPU cores, memory and local disk storage is allocated. The allocated bandwidth is also smaller. For more information about these sizes and the resources allocated, see [Sizes for Cloud Services](/documentation/articles/cloud-services-sizes-specs).
+You can set the virtual machine size for each role. You can only set this size for all service configurations. If you select a smaller machine size, then less CPU cores, memory and local disk storage is allocated. The allocated bandwidth is also smaller. For more information about these sizes and the resources allocated, see <!-- deleted by customization [Sizes --><!-- keep by customization: begin --> [Configure Sizes <!-- keep by customization: end --> for Cloud <!-- deleted by customization Services](/documentation/articles/cloud-services-sizes-specs) --><!-- keep by customization: begin --> Services](https://msdn.microsoft.com/zh-cn/library/azure/ee814754) <!-- keep by customization: end -->.
 
-The resources required for each virtual machine in Azure affects the cost of running your cloud service in Azure. For more information about Azure Billing, see [Understand your bill for Windows Azure](/documentation/articles/billing-understand-your-bill).
+The resources required for each virtual machine in Azure affects the cost of running your cloud service in Azure. For more information about Azure Billing, see [Understand <!-- deleted by customization your --><!-- keep by customization: begin --> Your <!-- keep by customization: end --><!-- deleted by customization bill for Windows Azure](/documentation/articles/billing-understand-your-bill) --><!-- keep by customization: begin --> Azure Bill](/documentation/articles/billing-understand-your-bill) <!-- keep by customization: end -->.
 
 ### To change the size of the virtual machine
 
@@ -305,7 +315,7 @@ The resources required for each virtual machine in Azure affects the cost of run
 
 ## Manage endpoints and certificates for your roles
 
-You configure networking endpoints by specifying the protocol, the port number, and, for HTTPS, the SSL certificate information. Releases before June 2012 support HTTP, HTTPS, and TCP. The June 2012 release supports those protocols and UDP. You can’t use UDP for input endpoints in the compute emulator. You can use that protocol only for internal endpoints.
+You configure networking endpoints by specifying the protocol, the port number, and, for HTTPS, the SSL certificate information. Releases before June 2012 support HTTP, HTTPS, and TCP. The June 2012 release supports those protocols and UDP. You can't use UDP for input endpoints in the compute emulator. You can use that protocol only for internal endpoints.
 
 To improve the security of your Azure cloud service, you can create endpoints that use the HTTPS protocol. For example, if you have a cloud service that is used by customers to purchase orders, you want to make sure that their information is secure by using SSL.
 

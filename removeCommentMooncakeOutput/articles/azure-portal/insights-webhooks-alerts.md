@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="azure-portal"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/25/2015"
-	ms.author="robb"/>
+	wacn.date=""/>
 
 # How to configure webhooks for alerts
 
@@ -24,7 +20,7 @@ The webhook uri must be a valid HTTP or HTTPS endpoint. The Azure Alert service 
 
 ## Configuring webhooks via the portal
 
-In the Create/Update Alerts screen on the [Azure Portal](https://portal.azure.com/), you can add or update the webhook uri.
+In the Create/Update Alerts screen on the [Azure Management Portal](https://manage.windowsazure.cn/), you can add or update the webhook uri.
 
 ![Add an alert Rule](./media/insights-webhooks-alerts/Alertwebhook.png)
 
@@ -65,7 +61,7 @@ The POST operation will contain the following JSON payload and schema for all me
             "resourceType": "microsoft.foo/sites",
             "resourceId": "/subscriptions/s1/resourceGroups/useast/providers/microsoft.foo/sites/mysite1",
             "resourceRegion": "centralus",
-            "portalLink": “https://portal.azure.com/#resource/subscriptions/s1/resourceGroups/useast/providers/microsoft.foo/sites/mysite1”                                
+            "portalLink": “https://manage.windowsazure.cn/#resource/subscriptions/s1/resourceGroups/useast/providers/microsoft.foo/sites/mysite1”                                
 },
 "properties": {
               "key1": "value1",
@@ -88,11 +84,11 @@ The POST operation will contain the following JSON payload and schema for all me
 |conditionType		|Y					|“Metric”, “Event”			|Two types of alerts are supported. One based on metric and the other based on event. In the future we will support alerts for Events, so use this value to check if the alert is based on metric or event|
 |condition			|Y					|							|This will have the specific fields to check for based on the conditionType|
 |metricName			|for Metric alerts	|							|The name of the metric that defines what the rule monitors.|
-|metricUnit			|for Metric alerts	|"Bytes", "BytesPerSecond" , "Count" , "CountPerSecond" , "Percent", "Seconds"|	 The unit allowed in the metric. Allowed values: https://msdn.microsoft.com/en-us/library/microsoft.azure.insights.models.unit.aspx|
+|metricUnit			|for Metric alerts	|"Bytes", "BytesPerSecond" , "Count" , "CountPerSecond" , "Percent", "Seconds"|	 The unit allowed in the metric. Allowed values: https://msdn.microsoft.com/zh-cn/library/microsoft.azure.insights.models.unit.aspx|
 |metricValue		|for Metric alerts	|							|The actual value of the metric that caused the alert|
 |threshold			|for Metric alerts	|							|The threshold value that activates the alert|
 |windowSize			|for Metric alerts	|							|The period of time that is used to monitor alert activity based on the threshold. Must be between 5 minutes and 1 day. ISO 8601 duration format.|
-|timeAggregation	|for Metric alerts	|"Average", "Last" , "Maximum" , "Minimum" , "None", "Total" |	How the data that is collected should be combined over time. The default value is Average. Allowed values: https://msdn.microsoft.com/en-us/library/microsoft.azure.insights.models.aggregationtype.aspx|
+|timeAggregation	|for Metric alerts	|"Average", "Last" , "Maximum" , "Minimum" , "None", "Total" |	How the data that is collected should be combined over time. The default value is Average. Allowed values: https://msdn.microsoft.com/zh-cn/library/microsoft.azure.insights.models.aggregationtype.aspx|
 |operator			|for Metric alerts 	|							|The operator used to compare the data and the threshold.|
 |subscriptionId	 	|Y					|							|Azure subscription GUID|
 |resourceGroupName	|Y					|							|resource-group-name of the impacted resource|
@@ -100,7 +96,7 @@ The POST operation will contain the following JSON payload and schema for all me
 |resourceType	 	|Y					|							|resource type of the impacted resource|
 |resourceId	 		|Y					|							|resource id URI that uniquely identifies that resource|
 |resourceRegion	 	|Y					|							|region/location of the resource that's impacted|
-|portalLink	 		|Y					|							|direct azure portal link to the resource summary page|
+|portalLink	 		|Y					|							|direct Azure Management Portal link to the resource summary page|
 |properties			|N					|Optional					|Is a set of <Key, Value> pairs (i.e. Dictionary<String, String>) that includes details about the event. The properties field is optional. In a custom UI or Logic app based workflow, users can enter key/values that can be passed via the payload. The alternate way to pass custom properties back to the webhook is via the webhook uri itself (as query parameters)|
 
 

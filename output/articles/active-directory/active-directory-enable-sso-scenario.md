@@ -22,23 +22,23 @@ Beyond the actual workflow or content, businesses have two basic requirements fo
 
 2. To enable security and governance, the organization needs control and oversight on who can and actually is accessing each application
 
-In the word of cloud applications this can best be achieved using identity to control “*WHO is allowed to do WHAT*”.
+In the word of cloud applications this can best be achieved using identity to control "*WHO is allowed to do WHAT*".
 
 In computing terminology:
 
 - *Who* is known as *identity* - a data store that consists of users and groups
 
-- *What* is known as *access management* – management of access to protected resources
+- *What* is known as *access management* - management of access to protected resources
 
-Both components together is known as *Identity and Access Management (IAM)*, which is defined by the [Gartner](http://www.gartner.com/it-glossary/identity-and-access-management-iam) group as “*the security discipline that enables the right individuals to access the right resources at the right times for the right reasons*”.
+Both components together is known as *Identity and Access Management (IAM)*, which is defined by the [Gartner](http://www.gartner.com/it-glossary/identity-and-access-management-iam) group as "*the security discipline that enables the right individuals to access the right resources at the right times for the right reasons*".
 
-Okay, so what’s the problem? If IAM is *not managed* in one place with an integrated solution:
+Okay, so what's the problem? If IAM is *not managed* in one place with an integrated solution:
 
 - Identity administrators have to individually create and update user accounts in all applications separately, a redundant and time consuming activity.
 
 - Users have to memorize multiple credentials to access the applications they need to work with, especially since they are encouraged not to use the same password for every application for security reasons. As a result, users tend to write down their passwords or use other password management solutions which introduces other data security risks.
 
-- Redundant, time consuming activities reduce the amount of time users and administrators are working on business activities that increase your business’s bottom line.
+- Redundant, time consuming activities reduce the amount of time users and administrators are working on business activities that increase your business's bottom line.
 
 So, what generally prevents organizations from adopting integrated IAM solutions?
 
@@ -50,9 +50,9 @@ So, what generally prevents organizations from adopting integrated IAM solutions
 
 ## Azure Active Directory (AD) integrated with applications
 
-Azure Active Directory (AD) is Microsoft’s comprehensive Identity as a Service (IDaaS) solution enabling IAM as a cloud service and providing built in access management, single-sign on (SSO), and reporting [pre-integrated with thousands of applications](/home/features/identity/), including Salesforce, Google Apps, Box, Concur, and lots more. With Azure AD applications you publish for your partners and customers (business or consumer) will have the same identity and access management capabilities freeing you to focus on you main business.
+Azure Active Directory (AD) is Microsoft's comprehensive Identity as a Service (IDaaS) solution enabling IAM as a cloud service and providing built in access management, single-sign on (SSO), and reporting [pre-integrated with thousands of applications](/home/features/identity/), including Salesforce, Google Apps, Box, Concur, and lots more. With Azure AD applications you publish for your partners and customers (business or consumer) will have the same identity and access management capabilities freeing you to focus on you main business.
 
-The value of Azure AD goes beyond “just” cloud applications. You can also use it with on-premises applications by providing secure remote access, avoiding the need for VPNs or other traditional remote access management system.
+The value of Azure AD goes beyond "just" cloud applications. You can also use it with on-premises applications by providing secure remote access, avoiding the need for VPNs or other traditional remote access management system.
 
 What if you need to implement an application that is not yet listed in the application gallery? While this is a bit more time-consuming than configuring SSO for applications from the application gallery, Azure AD provides you with a wizard that helps you with the configuration.
 
@@ -62,19 +62,19 @@ By providing central access management and single sign on (SSO) for all your app
 
 - Identity administrators can manage access to applications in one place.
 
-The benefit for the user and for your company is obvious. Let’s take a closer look at the benefits for an identity administrator and the organization.
+The benefit for the user and for your company is obvious. Let's take a closer look at the benefits for an identity administrator and the organization.
 
 ## Integrated application benefits
 
 The SSO process has two steps:
 
-- Authentication, the process of validating the user’s identity.
+- Authentication, the process of validating the user's identity.
 
 - Authorization, the decision to enable or block access to a resource with an access policy.
 
 When using Azure AD to manage applications and enable SSO:
 
-- Authentication is done on the user’s on-premises (e.g. AD) or Azure AD account.
+- Authentication is done on the user's on-premises (e.g. AD) or Azure AD account.
 
 - Authorization executes on the Azure AD assignment and protection policy ensuring consistent end user experience and enabling you to add assignment, locations, and MFA conditions on any application, regardless of its internal capabilities.
 

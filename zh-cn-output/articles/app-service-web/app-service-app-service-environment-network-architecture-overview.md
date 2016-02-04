@@ -1,71 +1,87 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="App Service 环境的网络体系结构概述" 
-	description="App Service 网络拓扑的体系结构概述。" 
-	services="app-service\web" 
+	pageTitle="Network Architecture Overview of Azure Websites Environments" 
+	description="Architectural overview of network topology ofAzure Websites Environments." 
+	services="app-service" 
 	documentationCenter="" 
 	authors="stefsch" 
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.date="07/06/2015" 
-	wacn.date=""/>	
+<tags
+	ms.service="app-service"
+	ms.date="10/01/2015"
+	wacn.date="11/27/2015"/>	
 
-# App Service 环境的网络体系结构概述
+# Network Architecture Overview of Azure Websites Environments
 
-## 介绍 ##
-App Service 环境始终创建于[虚拟网络][virtualnetwork]的子网内，在 App Service 环境中运行的应用可与相同虚拟网络拓扑中的专用终结点通信。由于客户可能锁定了其虚拟网络基础结构的组件，因此请务必了解与 App Service 环境发生的网络通信流类型。
+## Introduction ##
+Azure Websites Environments are always created within a subnet of a [virtual network][virtualnetwork] - apps running in an Azure Websites Environment can communicate with private endpoints located within the same virtual network topology.  Since customers may lock down parts of their virtual network infrastructure, it is important to understand the types of network communication flows that occur with an Azure Websites Environment.
 
-## 常规网络流 ##
+## General Network Flow ##
  
-App Service 环境始终具有一个公共虚拟 IP 地址 (VIP)。所有入站流量都会到达该公共 VIP（包括应用的 HTTP 和 HTTPS 流量，以及 FTP、远程调试功能和 Azure 管理操作的其他流量）。有关公共 VIP 上可用特定端口（必需和可选）的完整列表，请参阅有关[控制发往 App Service 环境的入站流量][controllinginboundtraffic]的文章。
+An Azure Websites Environment always has a public virtual IP address (VIP).  All inbound traffic arrives on that public VIP including HTTP and HTTPS traffic for apps, as well as other traffic for FTP, remote debugging functionality, and Azure management operations.  For a full list of the specific ports (both required and optional) that are available on the public VIP see the article on [controlling inbound traffic][controllinginboundtraffic] to an Azure Websites Environment. 
 
-下图显示了各种入站和出站网络流的概览：
+The diagram below shows an overview of the various inbound and outbound network flows:
 
-![常规网络流][GeneralNetworkFlows]
+![General Network Flows][GeneralNetworkFlows]
 
-App Service 环境可与各种专用客户终结点进行通信。例如，在 App Service 环境中运行的应用可以连接到在相同虚拟网络拓扑中的 IaaS 虚拟机上运行的数据库服务器。
+An Azure Websites Environment can communicate with a variety of private customer endpoints.  For example, apps running in the Azure Websites Environment can connect to database server(s) running on IaaS virtual machines in the same virtual network topology.  
 
-App Service 环境还能与管理和操作 App Service 环境所需的 Sql DB 与 Azure 存储空间资源进行通信。与 App Service 环境通信的一些 SQL 和存储资源位于与 App Service 环境相同的区域中，有些则位于远程 Azure 区域中。因此，只有与 Internet 建立了出站连接，App Service 环境才能正常工作。
+Azure Websites Environments also communicate with Sql DB and Azure Storage resources necessary for managing and operating an Azure Websites Environment.  Some of the Sql and Storage resources that an Azure Websites Environment communicates with are located in the same region as the Azure Websites Environment, while others are located in remote Azure regions.  As a result, outbound connectivity to the Internet is always required for an Azure Websites Environment to function properly. 
 
-由于 App Service 环境是在子网中部署的，因此可以使用网络安全组来控制发往子网的入站流量。有关如何控制发往 App Service 环境的入站流量的详细信息，请参阅以下[文章][controllinginboundtraffic]。
+Since an Azure Websites Environment is deployed in a subnet, network security groups can be used to control inbound traffic to the subnet.  For details on how to control inbound traffic to an Azure Websites Environment, see the following [article][controllinginboundtraffic].
 
-有关如何允许来自 App Service 环境的出站 Internet 连接的详细信息，请参阅以下有关使用 [Express Route][ExpressRoute] 的文章。此文章所述的方法同样适用于使用站点到站点连接以及使用强制隧道的情况。
+For details on how to allow outbound Internet connectivity from an Azure Websites Environment, see the following article about working with [Express Route][ExpressRoute].  The same approach described in the article applies when working with Site-to-Site connectivity and using forced tunneling.
 
-## 出站网络地址 ##
-App Service 环境执行出站调用时，IP 地址始终与出站调用相关联。使用的特定 IP 地址取决于所调用的终结点是位于虚拟网络拓扑内部还是外部。
+## Outbound Network Addresses ##
+When an Azure Websites Environment makes outbound calls, an IP Address is always associated with the outbound calls.  The specific IP address that is used depends on whether the endpoint being called is located within the virtual network topology, or outside of the virtual network topology.
 
-如果调用的终结点在虚拟网络拓扑**外部**，则使用的出站地址（也称为出站 NAT 地址）是 App Service 环境的公共 VIP。你可以在 App Service 环境的门户用户界面中找到此地址（注：UX 制作中）。
+If the endpoint being called is **outside** of the virtual network topology, then the outbound address (aka the outbound NAT address) that is used is the public VIP of the Azure Websites Environment.  This address can be found in the portal user interface for the Azure Websites Environment in Properties blade.
+ 
+![Outbound IP Address][OutboundIPAddress]
 
-也可以通过在 App Service 环境中创建一个应用，然后对该应用的地址执行 *nslookup*，来确定此地址。最终的 IP 地址既是公共 VIP，也是 App Service 环境的出站 NAT 地址。
+This address can also be determined by creating an app in the Azure Websites Environment, and then performing an *nslookup* on the app's address. The resultant IP address is the both the public VIP, as well as the Azure Websites Environment's outbound NAT address.
 
-如果调用的终结点在虚拟网络拓扑**内部**，则调用端应用的出站地址是运行应用的单个计算资源的内部 IP 地址。但是，虚拟网络内部 IP 地址与应用之间不存在持久性的映射。应用可以在不同的计算资源之间移动，并且可以基于缩放操作更改 App Service 环境中的可用计算资源池。
+If the endpoint being called is **inside** of the virtual network topology, the outbound address of the calling app will be the internal IP address of the individual compute resource running the app.  However there is not a persistent mapping of virtual network internal IP addresses to apps.  Apps can move around across different compute resources, and the pool of available compute resources in an Azure Websites Environment can change due to scaling operations.
 
-但是，由于 App Service 环境始终位在子网内，可以保证运行应用的计算资源的内部 IP 地址始终处于子网的 CIDR 范围内。因此，使用精细 ACL 或网络安全组来保护虚拟网络中其他终结点的访问时，需要将访问权限授予包含 App Service 环境的子网范围。
+However, since an Azure Websites Environment is always located within a subnet, you are guaranteed that the internal IP address of a compute resource running an app will always lie within the CIDR range of the subnet.  As a result, when fine-grained ACLs or network security groups are used to secure access to other endpoints within the virtual network, the subnet range containing the Azure Websites Environment needs to be granted access.
 
-下图更详细地演示了这些概念：
+The following diagram shows these concepts in more detail:
 
-![出站网络地址][OutboundNetworkAddresses]
+![Outbound Network Addresses][OutboundNetworkAddresses]
 
-在上图中：
+In the above diagram:
 
-- 由于 App Service 环境的公共 VIP 是 192.23.1.2，因此这是调用“Internet”终结点时使用的出站 IP 地址。
-- App Service 环境的包含子网的 CIDR 范围是 10.0.1.0/26。同一虚拟网络基础结构中的其他终结点将看到源自此地址范围内某个应用的调用。
+- Since the public VIP of the Azure Websites Environment is 192.23.1.2, that is the outbound IP address used when making calls to "Internet" endpoints.
+- The CIDR range of the containing subnet for the Azure Websites Environment is 10.0.1.0/26.  Other endpoints within the same virtual network infrastructure will see calls from apps as originating from somewhere within this address range.
 
-## 其他链接和信息 ##
-[此处][controllinginboundtraffic]提供了有关 App Service 环境使用的入站端口以及使用网络安全组控制入站流量的详细信息。
+## Calls Between Azure Websites Environments ##
+A more complex scenario can occur if you deploy multiple Azure Websites Environments in the same virtual network, and make outbound calls from one Azure Websites Environment to another Azure Websites Environment.  These types of cross Azure Websites Environment calls will also be treated as "Internet" calls.
 
-此[文章][ExpressRoute]介绍了有关使用用户定义路由来授予对 App Service 环境的出站 Internet 访问权限的详细信息。
+The following diagram shows an example of a layered architecture with apps on one Azure Websites Environment (e.g. "Front door" web sites) calling apps on a second Azure Websites Environment (e.g. internal back-end API apps not intended to be accessible from the Internet). 
+
+![Calls Between Azure Websites Environments][CallsBetweenAppServiceEnvironments] 
+
+In the example above the Azure Websites Environment "ASE One" has an outbound IP address of 192.23.1.2.  If an app running on this Azure Websites Environment makes an outbound call to an app running on a second Azure Websites Environment ("ASE Two") located in the same virtual network, the outbound call will be treated as an "Internet" call.  As a result the network traffic arriving on the second Azure Websites Environment will show as originating from 192.23.1.2 (i.e. not the subnet address range of the first Azure Websites Environment).
+
+Even though calls between different Azure Websites Environments are treated as "Internet" calls, when both Azure Websites Environments are located in the same Azure region the network traffic will remain on the regional Azure network and will not physically flow over the public Internet.  As a result you can use a network security group on the subnet of the second Azure Websites Environment to only allow inbound calls from the first Azure Websites Environment (whose outbound IP address is 192.23.1.2), thus ensuring secure communication between the Azure Websites Environments.
+
+## Additional Links and Information ##
+Details on inbound ports used by Azure Websites Environments and using network security groups to control inbound traffic is available [here][controllinginboundtraffic].
+
+Details on using user defined routes to grant outbound Internet access to Azure Websites Environments is available in this [article][ExpressRoute]. 
 
 
 <!-- LINKS -->
-[virtualnetwork]: /documentation/services/virtual-network
-[controllinginboundtraffic]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic
-[ExpressRoute]: /documentation/articles/app-service-app-service-environment-network-configuration-expressroute
+[virtualnetwork]: http://azure.microsoft.com/services/networking/
+[controllinginboundtraffic]:  /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
+[ExpressRoute]:  /documentation/articles/app-service-app-service-environment-network-configuration-expressroute/
 
 <!-- IMAGES -->
 [GeneralNetworkFlows]: ./media/app-service-app-service-environment-network-architecture-overview/NetworkOverview-1.png
+[OutboundIPAddress]: ./media/app-service-app-service-environment-network-architecture-overview/OutboundIPAddress-1.png
 [OutboundNetworkAddresses]: ./media/app-service-app-service-environment-network-architecture-overview/OutboundNetworkAddresses-1.png
+[CallsBetweenAppServiceEnvironments]: ./media/app-service-app-service-environment-network-architecture-overview/CallsBetweenEnvironments-1.png
 
-<!---HONumber=66-->

@@ -19,7 +19,7 @@ This article discusses availability information and answers some frequently-aske
 
 ## Pricing information
 
-For complete information about Event Hubs pricing, see the [Event Hubs pricing details](/home/features/event-hubs/#price).
+For <!-- deleted by customization complete --> information about Event Hubs pricing, see the [Event Hubs pricing details](/home/features/event-hubs/#price).
 
 ## How are Event Hubs ingress events calculated?
 
@@ -95,9 +95,9 @@ Event Hubs is available in the following regions:
 
 ## Support and SLA
 
-Technical support for Event Hubs is available through the [community forums](https://social.msdn.microsoft.com/forums/azure/home). Billing and subscription management support is provided at no cost.
+Technical support for Event Hubs is available through the [community <!-- deleted by customization forums](https://social.msdn.microsoft.com/forums/azure/home) --><!-- keep by customization: begin --> forums](http://www.windowsazure.cn/support/forums/) <!-- keep by customization: end -->. Billing and subscription management support is provided at no cost.
 
-To learn more about our SLA, please visit the [Service Level Agreements](/support/legal/sla/) page.
+To learn more about our SLA, please visit the [Service Level <!-- deleted by customization Agreements](/support/legal/sla/) --><!-- keep by customization: begin --> Agreements](http://www.windowsazure.cn/support/legal/sla) <!-- keep by customization: end --> page.
 
 ## Next steps
 
@@ -107,6 +107,14 @@ To learn more about Event Hubs, see the following articles:
 - A complete [sample application that uses Event Hubs].
 - A [queued messaging solution] using Service Bus queues.
 
-[Event Hubs overview]: /documentation/articles/event-hubs-overview
+<!-- deleted by customization
+[Event Hubs overview]: event-hubs-overview.md
 [sample application that uses Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
-[queued messaging solution]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
+[queued messaging solution]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
+-->
+<!-- keep by customization: begin -->
+[Event Hubs Overview]: /documentation/articles/event-hubs-overview
+[sample application that uses Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
+[queued messaging solution]: /documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues
+ 
+<!-- keep by customization: end -->

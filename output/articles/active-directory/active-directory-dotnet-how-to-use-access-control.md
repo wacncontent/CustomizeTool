@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/02/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -374,7 +374,7 @@ To further explore ACS functionality and to experiment with more scenarios, see 
   [Create an Access Control Namespace]: #create-namespace
   [Integrate your Web Application with ACS]: #Identity-Access
   [Test the Integration with ACS]: #Test-ACS
-  [View the Application in the ACS Management Portal]: /documentation/articles/acs-portal
+  [View the Application in the ACS Management Portal]: acs-portal
   [Add an Identity Provider]: #add-IP
   [What's Next]: #whats-next
   [vcsb]: #bkmk_viewClaims

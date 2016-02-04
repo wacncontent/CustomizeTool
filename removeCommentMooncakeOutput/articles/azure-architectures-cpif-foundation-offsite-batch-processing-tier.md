@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-	ms.service="cloud-services"
-	ms.date="03/25/2015"
-	wacn.date=""/>
+   ms.service="cloud-services"
+   ms.date="03/25/2015"
+   wa.date=""/>
 
 # Offsite Batch Processing Tier (Azure Architecture Patterns)
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="08/25/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 
@@ -162,8 +162,6 @@ to learn about more complex storage tasks:
 
 For more information, see also the [Python Developer Center](/develop/python/).
 
-
-[Azure Storage]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team blog]: http://blogs.msdn.com/b/windowsazurestorage/
 [Python Azure package]: https://pypi.python.org/pypi/azure
 [Python Azure Storage package]: https://pypi.python.org/pypi/azure-storage

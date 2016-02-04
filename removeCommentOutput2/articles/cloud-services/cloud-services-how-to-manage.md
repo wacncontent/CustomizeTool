@@ -81,7 +81,7 @@ To show your cloud service's dependencies on other resources, you can link an Az
 
 Use **Link** to link a new or existing SQL Database instance or storage account to your cloud service. You can then scale the database along with the cloud service role that is using it on the **Scale** page. (A storage account scales automatically as usage increases.) For more information, see [How to Scale a Cloud Service and Linked Resources](/documentation/articles/cloud-services-how-to-scale). 
 
-You also can monitor, manage, and scale the database in the **Databases** node of the Management Portal. 
+You also can monitor, manage, and scale the database in the **Databases** node of the Management Portal.
 
 "Linking" a resource in this sense doesn't connect your app to the resource. If you create a new database using **Link**, you'll need to add the connection strings to your application code and then upgrade the cloud service. You'll also need to add connection strings if your app uses resources in a linked storage account.
 
@@ -151,8 +151,7 @@ Use the following procedure to delete a deployment or your cloud service.
 5. To delete the cloud service, click **Delete cloud service**. Then, at the confirmation prompt, click **Yes**.
 
 > [AZURE.NOTE]
-> If verbose monitoring is configured for your cloud service, Azure does not delete the monitoring data from your storage account when you delete the cloud service. You will need to delete the data manually. For information about where to find the metrics tables, see "How to: Access verbose monitoring data outside the Management Portal" in <a href="/documentation/articles/cloud-services-how-to-monitor/">How to Monitor Cloud Services</a>.
-
+> If verbose monitoring is configured for your cloud service, does not delete the monitoring data from your storage account when you delete the cloud service. You will need to delete the data manually. For information about where to find the metrics tables, see "How to: Access verbose monitoring data outside the Azure Management Portal" in <a href="/documentation/articles/cloud-services-how-to-monitor">How to Monitor Cloud Services</a>.
 
 ## Next steps
 

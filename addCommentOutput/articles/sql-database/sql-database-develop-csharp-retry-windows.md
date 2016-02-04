@@ -10,14 +10,19 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/15/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 
 # Code sample: Retry logic in C# for connecting to SQL Database
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+
+> [AZURE.SELECTOR]
+- [PHP](/documentation/articles/sql-database-develop-php-retry-windows)
+- [C#](/documentation/articles/sql-database-develop-csharp-retry-windows)
+- [C# EntLib6](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows)
+
 
 
 This topic provides a C# code sample that demonstrates custom retry logic. The retry logic is designed to gracefully process temporary errors or *transient faults* that tend to go away if the program waits a few seconds and retries.
@@ -43,14 +48,14 @@ Your program must distinguish between transient errors versus persistent errors.
 The list of error numbers that are categorized as transient faults is available at:
 
 
-- [Error messages for SQL Database client programs](/documentation/articles/sql-database-develop-error-messages#bkmk_connection_errors)
+- [Error messages for SQL Database client <!-- deleted by customization programs](/documentation/articles/sql-database-develop-error-messages#bkmk_connection_errors) --><!-- keep by customization: begin --> programs](/documentation/articles/sql-database-develop-error-messages/#bkmk_connection_errors) <!-- keep by customization: end -->
  - See the top section about *Transient Errors, Connection-Loss Errors*.
 
 
 ## C# code sample
 
 
-The C# code sample in the present topic contains custom detection and retry logic to handle transient errors.
+The C# code sample in the present topic contains custom detection and retry logic to handle transient errors. The sample assumes .NET Framework 4.5.1 or later is installed.
 
 
 The code sample follows a few basic guidelines or recommendations that apply regardless of which technology you use to interact with Azure SQL Database. You can see the general recommendations at:
@@ -127,8 +132,6 @@ namespace RetryAdo2
 			int retryIntervalSeconds = 10;
 			bool returnBool = false;
 
-			Program program = new Program();
-
 			for (int tries = 1; tries <= 5; tries++)
 			{
 				try
@@ -138,8 +141,7 @@ namespace RetryAdo2
 						H.Thread.Sleep(1000 * retryIntervalSeconds);
 						retryIntervalSeconds = Convert.ToInt32(retryIntervalSeconds * 1.5);
 					}
-
-					program.GetSqlConnectionStringBuilder(out sqlConnectionSB);
+					this.GetSqlConnectionStringBuilder(out sqlConnectionSB);
 
 					sqlConnection = new C.SqlConnection(sqlConnectionSB.ToString());
 
@@ -189,6 +191,10 @@ SELECT TOP 3
 			_sqlConnectionSB["User ID"] = "MyLogin";  // "@yourservername"  as suffix sometimes.
 			_sqlConnectionSB["Password"] = "MyPassword";
 			_sqlConnectionSB["Database"] = "MyDatabase";
+
+			// Adjust these values if you like. (.NET 4.5.1 or later.)
+			_sqlConnectionSB["ConnectRetryCount"] = 3;
+			_sqlConnectionSB["ConnectRetryInterval"] = 10;  // Seconds.
 
 			// Leave these values as they are.
 			_sqlConnectionSB["Trusted_Connection"] = false;
@@ -276,4 +282,7 @@ Run the program with the "test" parameter, and verify it first fails but then su
 
 
 - [Client quick-start code samples to SQL Database](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
+
+- [Try SQL Database: Use C# to create a SQL database with the SQL Database Library for .NET](/documentation/articles/sql-database-get-started-csharp)
+
 

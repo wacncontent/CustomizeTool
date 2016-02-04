@@ -5,17 +5,19 @@
    documentationCenter="na"
    authors="cherylmc"
    manager="carolz"
-   editor="tysonn" />
-<tags 
-   ms.service="vpn-gateway"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/04/2015"
-   ms.author="cherylmc" />
+   editor=""
+   tags="azure-service-management"/>
+
+<tags
+	ms.service="vpn-gateway"
+	ms.date="10/21/2015"
+	wacn.date=""/>
 
 # Connect multiple on-premises sites to a virtual network
+
+>[AZURE.NOTE] It's important to know that Azure currently works with two deployment models: Resource Manager, and classic. Before you begin your configuration, make sure that you understand the deployment models and tools. For information about the deployment models, see [Azure deployment models](/documentation/articles/azure-classic-rm).
+
+This article applies to VNets and VPN Gateways created using the classic deployment model (Service Management).
 
 You can connect multiple on-premises sites to a single virtual network. This is especially attractive for building hybrid cloud solutions. Creating a multi-site connection to your Azure virtual network gateway is very similar to creating other site-to-site connections. In fact, you can use an existing Azure VPN gateway, provided you have a route-based (or dynamic routing) VPN gateway configured for your virtual network. 
 
@@ -25,37 +27,37 @@ If your gateway is policy-based (or static routing), you can always change the g
 
 ## Points to consider
 
-**You won't be able to use the Management Portal to make changes to this virtual network.** For this release, you'll need to make changes to the network configuration file instead of using the Management Portal. If you make changes in the Management Portal, they'll overwrite your multi-site reference settings for this virtual network. You should feel pretty comfortable using the network configuration file by the time you've completed the multi-site procedure. However, if you have multiple people working on your network configuration, you'll need to make sure that everyone knows about this limitation. This doesn't mean that you can't use the Management Portal at all. You can use it for everything else except making configuration changes to this particular virtual network.
+**You won't be able to use the Azure Management Portal to make changes to this virtual network.** For this release, you'll need to make changes to the network configuration file instead of using the Azure Management Portal. If you make changes in the Azure Management Portal, they'll overwrite your multi-site reference settings for this virtual network. You should feel pretty comfortable using the network configuration file by the time you've completed the multi-site procedure. However, if you have multiple people working on your network configuration, you'll need to make sure that everyone knows about this limitation. This doesn't mean that you can't use the Azure Management Portal at all. You can use it for everything else except making configuration changes to this particular virtual network.
 
 ## Before you begin
 
 Before you begin configuration, verify that you have the following:
 
-- An Azure subscription. If you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) or sign up for a [free trial](http://azure.microsoft.com/pricing/free-trial/).
+- An Azure subscription. If you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/) or sign up for a [trial](/pricing/1rmb-trial/).
 
-- Compatible VPN hardware for each on-premises location. Check [About VPN Devices for Virtual Network Connectivity](http://go.microsoft.com/fwlink/p/?linkid=615099) to verify if the device that you want to use is something that is known to be compatible.
+- Compatible VPN hardware for each on-premises location. Check [About VPN Devices for Virtual Network Connectivity](/documentation/articles/vpn-gateway-about-vpn-devices/) to verify if the device that you want to use is something that is known to be compatible.
 
 - An externally facing public IPv4 IP address for each VPN device. The IP address cannot be located behind a NAT. This is requirement.
 
--   The latest version of Azure PowerShell cmdlets. You can download and install the latest version from the Windows PowerShell section of the [Downloads](http://azure.microsoft.com/downloads/) page.
+-   The latest version of Azure PowerShell cmdlets. You can download and install the latest version from the Windows PowerShell section of the [Downloads](/downloads/) page.
 
-- Someone who is proficient at configuring your VPN hardware. You won't be able to use the auto-generated VPN scripts from the Management Portal to configure your VPN devices. This means you'll have to have a strong understanding of how to configure your VPN device, or work with someone who does.
+- Someone who is proficient at configuring your VPN hardware. You won't be able to use the auto-generated VPN scripts from the Azure Management Portal to configure your VPN devices. This means you'll have to have a strong understanding of how to configure your VPN device, or work with someone who does.
 
 - The IP address ranges that you want to use for your virtual network (if you haven't already created one). 
 
-- The IP address ranges for each of the local network sites that you'll be connecting to. You'll need to make sure that the IP address ranges for each of the local network sites that you want to connect to do not overlap. Otherwise, the Management Portal or the REST API will reject the configuration being uploaded. For example, if you have two local network sites that both contain the IP address range 10.2.3.0/24 and you have a package with a destination address 10.2.3.3, Azure wouldn't know which site you want to send the package to because the address ranges are overlapping. To prevent routing issues, Azure doesn't allow you to upload a configuration file that has overlapping ranges.
+- The IP address ranges for each of the local network sites that you'll be connecting to. You'll need to make sure that the IP address ranges for each of the local network sites that you want to connect to do not overlap. Otherwise, the Azure Management Portal or the REST API will reject the configuration being uploaded. For example, if you have two local network sites that both contain the IP address range 10.2.3.0/24 and you have a package with a destination address 10.2.3.3, Azure wouldn't know which site you want to send the package to because the address ranges are overlapping. To prevent routing issues, Azure doesn't allow you to upload a configuration file that has overlapping ranges.
 
 ## Create your virtual network and gateway
 
 1. **Create a site-to-site VPN with a dynamic routing gateway.** If you already have one, great! You can proceed to [Export the virtual network configuration settings](#export). If not, do the following:
 
-	**If you already have a site-to-site virtual network, but it has a static routing gateway:** **1.** Change your gateway type to dynamic routing. A multi-site VPN requires a dynamic routing gateway. To change your gateway type, you'll need to first delete the existing gateway, then create a new one. For instructions, see [Change a VPN Gateway Routing Type](vpn-gateway-configure-vpn-gateway-mp.md/#how-to-change-your-vpn-gateway-type). **2.** Configure your new gateway and create your VPN tunnel. For instructions, see [Configure a VPN Gateway in the Management Portal](vpn-gateway-configure-vpn-gateway-mp.md). 
+	**If you already have a site-to-site virtual network, but it has a static routing gateway:** **1.** Change your gateway type to dynamic routing. A multi-site VPN requires a dynamic routing gateway. To change your gateway type, you'll need to first delete the existing gateway, then create a new one. For instructions, see [Change a VPN Gateway Routing Type](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp#how-to-change-your-vpn-gateway-type). **2.** Configure your new gateway and create your VPN tunnel. For instructions, see [Configure a VPN Gateway in the Azure Management Portal](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp). 
 	
-	**If you don't have a site-to-site virtual network:** **1.** Create your site-to-site virtual network using these instructions: [Create a Virtual Network with a Site-to-Site VPN Connection in the Management Portal](vpn-gateway-site-to-site-create.md). **2.** Configure a dynamic routing gateway using these instructions: [Configure a VPN Gateway in the Management Portal](vpn-gateway-configure-vpn-gateway-mp.md). Be sure to select **dynamic routing** for your gateway type.
+	**If you don't have a site-to-site virtual network:** **1.** Create your site-to-site virtual network using these instructions: [Create a Virtual Network with a Site-to-Site VPN Connection in the Azure Management Portal](/documentation/articles/vpn-gateway-site-to-site-create). **2.** Configure a dynamic routing gateway using these instructions: [Configure a VPN Gateway](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp). Be sure to select **dynamic routing** for your gateway type.
 
 
 
-1. **<a name="export"></a>Export the virtual network configuration settings.** To export your network configuration file, see [To export your network settings](../virtual-network/virtual-networks-using-network-configuration-file.md#export-and-import-virtual-network-settings-using-the-management-portal). The file that you export will be used to configure your new multi-site settings.
+1. **<a name="export"></a>Export the virtual network configuration settings.** To export your network configuration file, see [To export your network settings](/documentation/articles/virtual-networks-using-network-configuration-file). The file that you export will be used to configure your new multi-site settings.
 
 1. **Open your network configuration file.** Open the network configuration file that you downloaded in the last step. Use any xml editor that you like. The file should look similar to the following:
 
@@ -123,7 +125,7 @@ Before you begin configuration, verify that you have the following:
           </ConnectionsToLocalNetwork>
         </Gateway>
 
-1. **Save the network configuration file and import it.** To import the network configuration file, see [To import your network settings](../virtual-network/../virtual-network/virtual-networks-using-network-configuration-file.md#export-and-import-virtual-network-settings-using-the-management-portal). When you import this file with the changes, the new tunnels will be added. The tunnels will use the dynamic gateway that you created earlier.
+1. **Save the network configuration file and import it.** To import the network configuration file, see [To import your network settings](../networking/../networking/virtual-networks-using-network-configuration-file.md#export-and-import-virtual-network-settings-using-the-management-portal). When you import this file with the changes, the new tunnels will be added. The tunnels will use the dynamic gateway that you created earlier.
 
 
 
@@ -131,9 +133,9 @@ Before you begin configuration, verify that you have the following:
 
 	For example:
 
-		PS C:\> Get-AzureVNetGatewayKey –VNetName "VNet1" –LocalNetworkSiteName "Site1"
+		PS C:\> Get-AzureVNetGatewayKey -VNetName "VNet1" -LocalNetworkSiteName "Site1"
 
-		PS C:\> Get-AzureVNetGatewayKey –VNetName "VNet1" –LocalNetworkSiteName "Site2"
+		PS C:\> Get-AzureVNetGatewayKey -VNetName "VNet1" -LocalNetworkSiteName "Site2"
 
 	If you prefer, you can also use the *Get Virual Network Gateway Shared Key* REST API to get the pre-shared keys.
 
@@ -167,7 +169,7 @@ Before you begin configuration, verify that you have the following:
 		OperationId               : 7893b329-51e9-9db4-88c2-16b8067fed7f
 		OperationStatus           : Succeeded
 
-## Next Steps
+## Next steps
 
-To learn more about VPN Gateways, see [About VPN Gateways](../vpn-gateway/vpn-gateway-about-vpngateways.md).
+To learn more about VPN Gateways, see [About VPN Gateways](/documentation/articles/vpn-gateway-about-vpngateways).
 

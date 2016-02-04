@@ -34,7 +34,7 @@ The existing **TodoItemController** is updated so that the **PostTodoItem** meth
 
 0. If you haven't yet created your storage account, see [How To Create a Storage Account].
 
-1. In the Management Portal, click **Storage**, click the storage account, then click **Manage Keys**. 
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Storage**, click the storage account, then click **Manage Keys**. 
 
 2. Make a note of the **Storage Account Name** and **Access Key**.
  
@@ -130,5 +130,5 @@ Next, you will update the quickstart app to add image upload functionality by us
 <!-- Images. -->
 
 <!-- URLs. -->
-[How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
+[How To Create a Storage Account]: /documentation/articles/storage-create-storage-account 
 [App settings]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

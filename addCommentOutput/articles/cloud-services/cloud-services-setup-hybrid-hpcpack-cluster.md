@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="dlepow"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-service-management,hpc-pack"/>
 
 <tags
 	ms.service="cloud-services"
@@ -13,7 +14,12 @@
 	wacn.date=""/>
 
 
+<!-- deleted by customization
+# Set up a hybrid compute cluster with Microsoft HPC Pack
+-->
+<!-- keep by customization: begin -->
 # Set up a Hybrid Compute Cluster with Microsoft HPC Pack
+<!-- keep by customization: end -->
 This tutorial shows you how to use Microsoft HPC Pack 2012 R2 and Azure to set up a small, hybrid high performance computing (HPC) cluster. The cluster will consist of an on-premises head node (a computer running the Windows Server operating system and HPC Pack) and some compute nodes you deploy on-demand as worker role instances in an Azure cloud service. You can then run compute jobs on the hybrid cluster.
 
 ![Hybrid HPC cluster][Overview]
@@ -26,7 +32,7 @@ This tutorial assumes no prior experience with compute clusters or HPC Pack. It 
 
 ## Prerequisites
 
->[AZURE.NOTE]To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Create an Azure account](/pricing/1rmb-trial/).
+>[AZURE.NOTE]To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Create an Azure <!-- deleted by customization account](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> account](/develop/php/) <!-- keep by customization: end -->.
 
 In addition, you need the following for this tutorial.
 
@@ -88,7 +94,6 @@ Use the [Azure Management Portal](https://manage.windowsazure.cn) to perform the
 - Create an Azure cloud service in which Azure nodes (worker role instances) will run
 
 - Create an Azure storage account
-
 	>[AZURE.NOTE]Also make a note of your Azure subscription ID, which you will need later. Find this in your Azure <a href="[https://account.windowsazure.cn/Subscriptions">account information</a>.
 
 ### <a>Upload the default management certificate</a>
@@ -292,7 +297,7 @@ After you try out the cluster, you can use HPC Cluster Manager to stop the Azure
 
 	![Not Deployed Nodes][stop_node4]
 
-4. To confirm that the role instances are no longer running in Azure, in the [Management Portal](https://manage.windowsazure.cn), click **Cloud Services**, click the name of your cloud service, and then click **Instances**. No instances will be deployed in the production environment.
+4. To confirm that the role instances are no longer running in Azure, in the <!-- deleted by customization [portal](https://manage.windowsazure.cn) --><!-- keep by customization: begin --> [Management Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->, click **Cloud Services**, click the name of your cloud service, and then click **Instances**. No instances will be deployed in the production environment.
 
 	![No Instances][view_instances2]
 

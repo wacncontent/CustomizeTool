@@ -7,14 +7,10 @@
 	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 # Reports in Azure Multi-Factor Authentication
 
@@ -46,6 +42,6 @@ Queued|Lists reports queued for processing and their status. A link to download 
 
 **Additional Resources**
 
-* [For Users](multi-factor-authentication-end-user.md)
-* [Azure Multi-Factor Authentication on MSDN](https://msdn.microsoft.com/library/azure/dn249471.aspx)
+* [For Users](/documentation/articles/multi-factor-authentication-end-user)
+* [Azure Multi-Factor Authentication on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn249471.aspx)
  

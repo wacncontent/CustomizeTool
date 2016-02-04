@@ -1,25 +1,18 @@
-<properties 
+<properties
 	pageTitle="Getting started with queue storage and Visual Studio connected services (WebJob projects) | Windows Azure"
 	description="How to get started using Azure Queue storage in a WebJob project after connecting to a storage account using Visual Studio connected services."
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Getting started with Azure Queue storage and Visual Studio connected services (WebJob Projects)
-
-> [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-webjobs-getting-started-queues)
-> - [What happened](/documentation/articles/vs-storage-webjobs-what-happened)
-> - [Blobs](/documentation/articles/vs-storage-webjobs-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-webjobs-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-webjobs-getting-started-tables)
 
 ## Overview
 
@@ -33,7 +26,7 @@ Azure Queue storage is a service for storing large numbers of messages that can 
 
 ## How to trigger a function when a queue message is received
 
-To write a function that the WebJobs SDK calls when a queue message is received, use the **QueueTrigger** attribute. The attribute constructor takes a string parameter that specifies the name of the queue to poll. You can also [set the queue name dynamically](/documentation/articles/how-to-set-configuration-options).
+To write a function that the WebJobs SDK calls when a queue message is received, use the **QueueTrigger** attribute. The attribute constructor takes a string parameter that specifies the name of the queue to poll. You can also [set the queue name dynamically](#how-to-set-configuration-options).
 
 ### String queue messages
 
@@ -105,7 +98,7 @@ If you have multiple functions listening on different queues, the SDK will call 
 
 The same is true when multiple messages are received for a single queue. By default, the SDK gets a batch of 16 queue messages at a time and executes the function that processes them in parallel. [The batch size is configurable](#how-to-set-configuration-options). When the number being processed gets down to half of the batch size, the SDK gets another batch and starts processing those messages. Therefore the maximum number of concurrent messages being processed per function is one and a half times the batch size. This limit applies separately to each function that has a **QueueTrigger** attribute. If you don't want parallel execution for messages received on one queue, set the batch size to 1.
 
-## Get queue or queue message metadata
+##<a id="get-queue-or-queue-message-metadata"></a> Get queue or queue message metadata
 
 You can get the following message properties by adding parameters to the method signature:
 
@@ -242,7 +235,7 @@ You can use the **Queue** attribute on the following parameter types:
 * **IAsyncCollector**
 * **CloudQueue** (for creating messages manually using the Azure Storage API directly)
 
-### Use WebJobs SDK attributes in the body of a function
+###<a id="use-webjobs-sdk-attributes-in-the-body-of-a-function"></a> Use WebJobs SDK attributes in the body of a function
 
 If you need to do some work in your function before using a WebJobs SDK attribute such as **Queue**, **Blob**, or **Table**, you can use the **IBinder** interface.
 
@@ -260,7 +253,7 @@ The following example takes an input queue message and creates a new message wit
 
 The **IBinder** interface can also be used with the **Table** and **Blob** attributes.
 
-## How to read and write blobs and tables while processing a queue message
+##<a id="how-to-read-and-write-blobs-and-tables-while-processing-a-queue-message"></a>How to read and write blobs and tables while processing a queue message
 
 The **Blob** and **Table** attributes enable you to read and write blobs and tables. The samples in this section apply to blobs. For code samples that show how to trigger processes when blobs are created or updated, see [How to use Azure blob storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to), and for code samples that read and write tables, see [How to use Azure table storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to).
 
@@ -379,7 +372,7 @@ You can get the number of times a message has been picked up for processing by a
 		    }
 		}
 
-## How to set configuration options
+##<a id="how-to-set-configuration-options"></a>How to set configuration options
 
 You can use the **JobHostConfiguration** type to set the following configuration options:
 
@@ -488,7 +481,7 @@ To trigger a function manually, use the **Call** or **CallAsync** method on the 
 		    }
 		}
 
-## How to write logs
+##<a id="how-to-write-logs"></a>How to write logs
 
 The Dashboard shows logs in two places: the page for the WebJob, and the page for a particular WebJob invocation.
 
@@ -547,4 +540,4 @@ And in an Azure table the **Console.Out** and **Console.Error** logs look like t
 
 ##Next steps
 
-This article has provided code samples that show how to handle common scenarios for working with Azure queues. For more information about how to use Azure WebJobs and the WebJobs SDK, see [Azure WebJobs Recommended Resources](/documentation/articles/websites-webjobs-resources/).
+This article has provided code samples that show how to handle common scenarios for working with Azure queues. For more information about how to use Azure WebJobs and the WebJobs SDK, see [Azure WebJobs Recommended Resources](/documentation/articles/websites-webjobs-resources).

@@ -10,19 +10,19 @@ deleted:
 
 		, Cent...
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		, Cent...
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		, Cent...
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -31,7 +31,7 @@ deleted:
 		    China East
 		    Japan East
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -43,13 +43,13 @@ deleted:
 		    China North
 		    China East 2
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		China East 2
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -64,7 +64,7 @@ deleted:
 		    West Europe
 		    Brazil South
 
-reason: ()
+reason: (region diff)
 
 replacement:
 
@@ -76,7 +76,7 @@ replaced by:
 
 		North
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -86,7 +86,7 @@ replaced by:
 
 		North
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -96,5 +96,5 @@ replaced by:
 
 		North
 
-reason: ()
+reason: (region diff)
 

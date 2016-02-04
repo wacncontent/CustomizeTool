@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/28/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 
@@ -81,7 +81,7 @@ Before you begin this tutorial, you must have the following:
 	<tr><td>SQL database name</td><td>$sqlDatabaseName</td><td></td><td>The Azure SQL database to which Sqoop will export data. </td></tr>
 	</table>
 
-	> [AZURE.NOTE] By default an Azure SQL database allows connections from Azure Services, such as Azure HDInsight. If this firewall setting is disabled, you must enable it from the Azure preview portal. For instruction about creating a SQL Database and configuring firewall rules, see [Create and Configure SQL Database][sqldatabase-create-configure].
+	> [AZURE.NOTE] By default an Azure SQL database allows connections from Azure Services, such as Azure HDInsight. If this firewall setting is disabled, you must enable it from the Azure Management Portal. For instruction about creating a SQL Database and configuring firewall rules, see [Create and Configure SQL Database][sqldatabase-create-configure].
 
 
 > [AZURE.NOTE] Fill-in the values in the tables. It will be helpful for going through this tutorial.
@@ -699,29 +699,29 @@ In this tutorial, you learned how to define an Oozie workflow and an Oozie coord
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
 
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+[hdinsight-versions]:  hdinsight-component-versioning.md
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1
 
 
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator
-[hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-develop-java-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-get-started-emulator]: ../hdinsight-get-started-emulator.md
+[hdinsight-develop-streaming-jobs]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
+[hdinsight-develop-java-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
+[hdinsight-use-oozie]: hdinsight-use-oozie.md
 
-[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
-[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
+[sqldatabase-create-configue]: ../sql-database-create-configure.md
+[sqldatabase-get-started]: ../sql-database-get-started.md
 
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-create-storageaccount]: ../storage-create-storage-account.md
 
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
@@ -729,9 +729,9 @@ In this tutorial, you learned how to define an Oozie workflow and an Oozie coord
 
 [powershell-download]: /downloads/
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: ../powershell-install-configure.md
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
+[powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 

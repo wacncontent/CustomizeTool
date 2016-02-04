@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cache"
-	ms.date="10/23/2015"
+	ms.date="12/03/2015"
 	wacn.date=""/>
 
 # How to use Azure Redis Cache with Python
@@ -30,24 +30,26 @@ Install [redis-py](https://github.com/andymccurdy/redis-py).
 
 ## Create a Redis cache on Azure
 
-In the [Azure Management Portal Preview](https://manage.windowsazure.cn/), click **New**, **DATA SERVICE**, and select **Redis Cache**.
+In Windows Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
 
-  ![][1]
+[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
-Enter a DNS hostname. It will have the form `<name>.redis.cache.chinacloudapi.cn`. Click **Create**.
+Use the following PowerShell Script to create a cache:
 
-  ![][2]
+	$VerbosePreference = "Continue"
 
-Once you create the cache, click on it in the Azure Management Portal to view the cache settings. You will need:
+	# Create a new cache with date string to make name unique. 
+	$cacheName = "MovieCache" + $(Get-Date -Format ('ddhhmm')) 
+	$location = "China North"
+	$resourceGroupName = "Default-Web-ChinaNorth"
+	
+	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
 
-- **Hostname.** You entered this name when you created the cache.
-- **Port.** Click the link under **Ports** to view the ports. Use the SSL port.
-- **Access Key.** Click the link under **Keys** and copy the primary key.
 
-## Add something to the cache and retrieve it
+  ## Add something to the cache and retrieve it
 
-    >>> import redis
-    >>> r = redis.StrictRedis(host='<name>.redis.cache.chinacloudapi.cn',
+  >>> import redis
+  >>> r = redis.StrictRedis(host='<name>.redis.cache.chinacloudapi.cn',
           port=6380, db=0, password='<key>', ssl=True)
     >>> r.set('foo', 'bar')
     True

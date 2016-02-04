@@ -19,7 +19,7 @@ This article describes the message processing architecture of Azure Service Bus.
 
 Service Bus is organized by *scale units*. A scale unit is a unit of deployment and contains all components required run the service. Each region deploys one or more Service Bus scale units.
 
-A Service Bus namespace is mapped to a scale unit. The scale unit handles all types of Service Bus entities: relays and brokered messaging entities (queues, topics, subscriptions). A Service Bus scale unit consists of the following components:
+A Service BusÂ namespace is mapped to a scale unit. The scale unit handles all types of Service Bus entities: relays and brokered messaging entities (queues, topics, subscriptions). A Service Bus scale unit consists of the following components:
 
 - **A set of gateway nodes.** Gateway nodes authenticate incoming requests and handle relay requests. Each gateway node has a public IP address.
 

@@ -7,14 +7,14 @@
 	authors="sidneyh" 
 	editor=""/>
 
-<tags
-	ms.service="sql-database"
-	ms.date="07/24/2015"
+<tags 
+	ms.service="sql-database" 
+	ms.date="07/24/2015" 
 	wacn.date=""/>
 
 # How to: add Elastic Database client library references to a Visual Studio project 
 
-### Prerequisites: 
+###Prerequisites: 
 
 - Install [NuGet Visual Studio Extension Gallery](http://docs.nuget.org/docs/start-here/installing-nuget) for Visual Studio 
 
@@ -22,7 +22,7 @@
 
 1. Open an existing project, or create a new project using the New Project dialog box located at **File** --> **New** --> **Project** 
 2. In the Solution Explorer, right-click on **References** and select **Manage NuGet Packages**
-3. In the menu on the left-hand side of the Manage NuGet Packages window, select **Online** and then **nuget.org** or “All” 
+3. In the menu on the left-hand side of the Manage NuGet Packages window, select **Online** and then **nuget.org** or âAllâ 
 4. In the **Search Online** dialog box, type **Elastic Database**, select the **Elastic Database client library** and click **Install**.
 
 	![Search online][1]

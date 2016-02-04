@@ -3,27 +3,16 @@
 	description="How to get started using Azure queue storage in an ASP.NET 5 project in Visual Studio"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Get started with queue storage and Visual Studio connected services (ASP.NET 5)
-
-> [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-aspnet5-getting-started-queues)
-> - [What happened](/documentation/articles/vs-storage-aspnet5-what-happened)
-<!-- deleted by customization
-
-> [AZURE.SELECTOR]
--->
-> - [Blobs](/documentation/articles/vs-storage-aspnet5-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-aspnet5-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-aspnet5-getting-started-tables)
 
 ##Overview
 
@@ -64,12 +53,12 @@ To access queues in ASP.NET 5 projects, you need to include the following items 
 3. Get a **CloudQueueClient** object to reference the queue objects in your storage account.  
 
 	    // Create the table client.
-    	CloudQuecClient queueClient = storageAccount.CreateCloudTableClient();
+    	CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
 4. Get a **CloudQueue** object to reference a specific queue.
 
     	// Get a reference to a table named "messageQueue"
-	    CloudTable messageQueue = queueClient.GetQueueReference("messageQueue");
+	    CloudQueue messageQueue = queueClient.GetQueueReference("messageQueue");
 
 
 **NOTE:** Use all of the above code in front of the code in the following samples.
@@ -165,7 +154,7 @@ property returns the last value retrieved by the
 
 ## Use the Async-Await pattern with common queue APIs
 
-This example shows how to use the Async-Await pattern with common queue APIs. The sample calls the async version of each of the given methods. This can be seen by the Async post-fix of each method. When an async method is used, the Async-Await pattern suspends local execution until the call is completed. This behavior allows the current thread to do other work which helps avoid performance bottlenecks and improves the overall responsiveness of your application. For more details on using the Async-Await pattern in .NET, see [Async and Await (C# and Visual Basic)] (https://msdn.microsoft.com/zh-cn/library/hh191443.aspx)
+This example shows how to use the Async-Await pattern with common queue APIs. The sample calls the async version of each of the given methods <!-- deleted by customization. This --><!-- keep by customization: begin -->, this <!-- keep by customization: end --> can be seen by the Async post-fix of each method. When an async method is used <!-- deleted by customization, --> the <!-- deleted by customization Async-Await --><!-- keep by customization: begin --> async-await <!-- keep by customization: end --> pattern suspends local execution until the call <!-- deleted by customization is completed --><!-- keep by customization: begin --> completes <!-- keep by customization: end -->. This behavior allows the current thread to do other work which helps avoid performance bottlenecks and improves the overall responsiveness of your application. For more details on using the Async-Await pattern in .NET <!-- deleted by customization, --> see [Async and Await (C# and Visual Basic)] (https://msdn.microsoft.com/zh-cn/library/hh191443.aspx)
 
     // Get a reference to the CloudQueue object named 'messageQueue' as described in "Access a queue in code".
 

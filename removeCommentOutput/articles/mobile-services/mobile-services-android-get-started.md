@@ -9,10 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/08/2015"
+	ms.date="11/05/2015"
 	wacn.date=""/>
 
 # Get started with Mobile Services for Android  (JavaScript backend)
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
@@ -25,6 +29,7 @@ This tutorial shows you how to add a cloud-based backend service to an Android a
 > [AZURE.VIDEO mobile-get-started-android]
 
 A screenshot from the completed app is below:
+
 ![](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
 
 ## Prerequisites
@@ -42,11 +47,11 @@ The downloaded quickstart project contains the Azure Mobile Services SDK for And
 
 ## Create a new Android app
 
-Once you have created your mobile service, you can follow an easy quickstart in the Management Portal to either create a new app or modify an existing app to connect to your mobile service.
+Once you have created your mobile service, you can follow an easy quickstart in the Azure Management Portal to either create a new app or modify an existing app to connect to your mobile service.
 
 In this section you will create a new Android app that is connected to your mobile service.
 
-1.  In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+1.  In the Azure Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
 
 2. In the quickstart tab, click **Android** under **Choose platform** and expand **Create a new Android app**.
 
@@ -85,10 +90,9 @@ Now that you have completed the quickstart, learn how to perform additional impo
 
 
 <!-- URLs. -->
-[Get started (Eclipse)]: /documentation/articles/mobile-services-android-get-started-ec
-[Get started with data]: /documentation/articles/mobile-services-android-get-started-data
-[Get started with authentication]: /documentation/articles/mobile-services-android-get-started-users
-[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
+[Get started (Eclipse)]: mobile-services-android-get-started-ec.md
+[Get started with data]: mobile-services-android-get-started-data.md
+[Get started with authentication]: mobile-services-android-get-started-users.md
+[Get started with push notifications]: mobile-services-javascript-backend-android-get-started-push.md
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
-[Management Portal]: https://manage.windowsazure.cn/

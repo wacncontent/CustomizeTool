@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/26/2015"
+	ms.date="11/24/2015"
 	wacn.date=""/>
 
 # Configure automatic device registration for Windows 7 domain joined devices
@@ -26,7 +26,7 @@ The software package is available for download at the [Microsoft Connect website
 ## Workplace Join with Azure Active Directory
 Device registration for Windows 7 domain joined devices does not require or include a user interface. Once installed on the machine, any domain user that logs into the machine will be automatically and silently registered with a device object in Azure AD. There will be one device object in Azure AD for every registered user of the physical device.
 
-The installer creates a Scheduled Task on the system that runs in the user’s context and is triggered on user sign-in. The task silently registers the user and device with Azure AD after the user signs-in is complete. 
+The installer creates a Scheduled Task on the system that runs in the userâs context and is triggered on user sign-in. The task silently registers the user and device with Azure AD after the user signs-in is complete. 
 The Scheduled Task can be found in the Task Scheduler Library under **Microsoft** > **Workplace Join**.
 The task will run and register any and all Active Directory users that sign-in to the machine.
 The following illustration lists the step-by-step process for automatic device registration.
@@ -54,3 +54,11 @@ Then, open a command prompt on the Windows 7 machine and execute the following c
 Event Viewer and Errors for Windows 7 domain joined devices.
 
 The Windows Event Log on the Windows 7 machine will display messages related to Workplace Join. You can find messages for both successful and unsuccessful Workplace Join events. The Event Log can be found in the Event Viewer under Applications and Services Logs> Microsoft-Workplace Join.
+
+## Additional topics
+
+- [Azure Active Directory Device Registration overview](/documentation/articles/active-directory-conditional-access-device-registration-overview)
+- [Automatic device registration with Azure Active Directory for Windows Domain-Joined Devices](/documentation/articles/active-directory-conditional-access-automatic-device-registration)
+- [Configure automatic device registration for Windows 8.1 domain joined devices](/documentation/articles/active-directory-conditional-access-automatic-device-registration-windows8_1)
+
+ 

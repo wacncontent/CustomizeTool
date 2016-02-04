@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/19/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Install and use Spark on HDInsight Hadoop clusters
@@ -42,9 +42,9 @@ This script installs Spark version 1.5.1 into `/usr/hdp/current/spark`.
 
 A sample script to install Spark on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh](https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh). This section provides instructions on how to use the sample script while creating the cluster by using the Azure Management Portal. 
 
-> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster).
+> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster-v1).
 
-1. Start creating a cluster by using the steps in [Create Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal), but do not complete creation.
+1. Start creating a cluster by using the steps in [Create Linux-based HDInsight clusters](/documentation/articles/hdinsight-hadoop-create-linux-clusters-portal), but do not complete creation.
 
 2. On the **Optional Configuration** blade, select **Script Actions**, and provide the information below:
 
@@ -222,14 +222,12 @@ In this section, you will create a Scala application that counts the number of l
 
 - [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-linux). Use cluster customization to install Giraph on HDInsight Hadoop clusters. Giraph allows you to perform graph processing by using Hadoop, and can be used with Azure HDInsight.
 
-- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-linux). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on data stored.
+- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on data stored.
 
-- [Install Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Use cluster customization to install Hue on HDInsight Hadoop clusters. Hue is a set of Web applications used to interact with a Hadoop cluster.
+- [Install Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Use cluster customization to install Hue on HDInsight Hadoop clusters. Hue is a set of web sites used to interact with a Hadoop cluster.
 
 
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-linux
-[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts-linux
-[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[hdinsight-install-r]: hdinsight-hadoop-r-scripts-linux.md
+[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
  

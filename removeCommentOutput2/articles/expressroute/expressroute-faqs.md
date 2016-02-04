@@ -15,7 +15,7 @@
 
 
 ## What is ExpressRoute?
-ExpressRoute is an Azure service that lets you create private connections between Microsoft datacenters and infrastructure that’s on your premises or in a colocation facility. ExpressRoute connections do not go over the public Internet, and offer higher security, reliability and speeds with lower latencies than typical connections over the Internet.
+ExpressRoute is an Azure service that lets you create private connections between Microsoft datacenters and infrastructure that's on your premises or in a colocation facility. ExpressRoute connections do not go over the public Internet, and offer higher security, reliability and speeds with lower latencies than typical connections over the Internet.
 
 ### What are the benefits of using ExpressRoute and private network connections?
 ExpressRoute connections do not go over the public Internet, and offer higher security, reliability and speeds with lower and consistent latencies than typical connections over the Internet. In some cases, using ExpressRoute connections to transfer data between on-premises devices and Azure can yield significant cost benefits.
@@ -26,7 +26,7 @@ ExpressRoute supports most Windows Azure services today including Office 365.  L
 ### Where is the service available?
 See this page for service location and availability: [ExpressRoute partners and locations](/documentation/articles/expressroute-locations).
 
-### How can I use ExpressRoute to connect to Microsoft if I don’t have partnerships with one of the ExpressRoute-carrier partners?
+### How can I use ExpressRoute to connect to Microsoft if I don't have partnerships with one of the ExpressRoute-carrier partners?
 You can select a regional carrier and land Ethernet connections to one of the supported exchange provider locations. You can then peer with Microsoft at the provider location. Check the last section of [ExpressRoute partners and locations](/documentation/articles/expressroute-locations) to see if your service provider is present in any of the Exchange locations. You can then order an ExpressRoute circuit through the service provider to connect to Azure.
 
 ### How much does ExpressRoute cost?
@@ -55,7 +55,7 @@ Most Azure services are supported over ExpressRoute.
 	**The following services are not supported:**
 
 	- CDN
-	- Visual Studio Online Load Testing
+	- Visual Studio Team Services Load Testing
 	- Multi-factor Authentication
 
 ## Data and connections
@@ -112,10 +112,10 @@ Yes. You can link up to 10 virtual networks to an ExpressRoute circuit.
 ### I have multiple Azure subscriptions that contain virtual networks. Can I connect virtual networks that are in separate subscriptions to a single ExpressRoute circuit?
 Yes. You can authorize up to 10 other Azure subscriptions to use a single ExpressRoute circuit. This limit can be increased by enabling the ExpressRoute premium feature.
 
-For more details, see [Sharing an ExpressRoute circuit across multiple subscriptions](/documentation/articles/expressroute-share-circuit).
+For more details, see [Sharing an ExpressRoute Circuit across multiple subscriptions](/documentation/articles/expressroute-share-circuit).
 
 ### Are virtual networks connected to the same circuit isolated from each other?
-No. All virtual networks linked to the same ExpressRoute circuit are part of the same routing domain and are not isolated from each other from a routing perspective. If you need route isolation, you’ll need to create a separate ExpressRoute circuit.
+No. All virtual networks linked to the same ExpressRoute circuit are part of the same routing domain and are not isolated from each other from a routing perspective. If you need route isolation, you'll need to create a separate ExpressRoute circuit.
 
 ### Can I have one virtual network connected to more than one ExpressRoute circuit?
 Yes. You can link a single virtual network with up to 4 ExpressRoute circuits. They must be ordered through 4 different locations.
@@ -204,7 +204,7 @@ You can disable ExpressRoute premium by calling the update dedicated circuit API
 No. You will not be able to pick the features you need. We enable all features when you turn on ExpressRoute premium.
 
 ### How much does ExpressRoute premium cost?
-Refer to [pricing details](/home/features/expressroute/#price) for cost.
+Refer to the [Pricing Details](/home/features/expressroute/#price) for cost.
 
 ### Do I pay for ExpressRoute premium in addition to standard ExpressRoute charges?
 Yes. ExpressRoute premium charges apply on top of ExpressRoute circuit charges and charges required by the connectivity provider.

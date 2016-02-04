@@ -8,7 +8,7 @@ manager="timlt"
 editor=""/>
 <tags
 	ms.service="cloud-services"
-	ms.date="09/08/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 
@@ -90,7 +90,7 @@ The following describes the attributes of the **Task** element in the [ServiceDe
 - The command, with optional command line parameters, which begins the startup task.
 - Frequently this is the filename of a .cmd or .bat batch file.
 - The task is relative to the AppRoot\\Bin folder for the deployment. Environment variables are not expanded in determining the path and file of the task. If environment expansion is required, you can create a small .cmd script that calls your startup task.
-- Can be a console application or a batch file that starts a [PowerShell script](/documentation/articles/cloud-services-startup-tasks-common#create-a-powershell-startup-task).
+- Can be a console application or a batch file that starts a [PowerShell script](/documentation/articles/cloud-services-startup-tasks-common/#create-a-powershell-startup-task).
 
 **executionContext** - Specifies the privilege level for the startup task. The privilege level can be limited or elevated:
 
@@ -156,7 +156,7 @@ Learn how to perform some [common startup tasks](/documentation/articles/cloud-s
 [Package](/documentation/articles/cloud-services-model-and-package) your Cloud Service.  
 
 
-[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package#csdef
+[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package/#csdef
 [Task]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
 [Startup]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime

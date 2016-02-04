@@ -10,15 +10,13 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="11/09/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 # Azure Infrastructure Services Workload: High-availability line of business application
-<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
--->
 
 Set up your first or next web-based, intranet-only line of business application in Windows Azure and take advantage of ease of configuration and the ability to quickly expand the application to include new capacity.
  
@@ -38,7 +36,7 @@ A cross-premises virtual network is connected to an on-premises network with a s
 
 ![](./media/virtual-machines-workload-high-availability-LOB-application/CreateLOBAppHybridCloud_3.png)
  
-You can create this dev/test environment for free with your [MSDN subscription](/pricing/member-offers/msdn-benefits/) or an [Azure Trial Subscription](/pricing/1rmb-trial/).
+You can create this dev/test environment for or an [Azure Trial Subscription](/pricing/1rmb-trial/).
 
 Your next step is to create a high-availability line of business application in Azure.
 
@@ -55,41 +53,6 @@ This consists of:
 - Active Directory Domain Services in the virtual network with two replica domain controllers.
 
 For an overview of line of business applications, see the [Line of Business Applications architecture blueprint](http://msdn.microsoft.com/dn630664).
-
-### Bill of materials
-
-This baseline configuration requires the following set of Azure services and components:
-
-- Seven virtual machines
-- Four extra data disks for the domain controllers and virtual machines running SQL Server
-- Three availability sets
-- One cross-premises virtual network
-- Two storage accounts
-
-Here are the virtual machines and thier default sizes for this configuration.
-
-Item | Virtual machine description | Gallery image | Default size 
---- | --- | --- | --- 
-1. | First domain controller | Windows Server 2012 R2 Datacenter | D1
-2. | Second domain controller | Windows Server 2012 R2 Datacenter | D1
-3. | Primary database server | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | D4
-4. | Secondary database server | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | D4
-5. | Majority node for the cluster | Windows Server 2012 R2 Datacenter | D1
-6. | First web server | Windows Server 2012 R2 Datacenter | D3
-7. | Second web server | Windows Server 2012 R2 Datacenter | D3
-
-To compute the estimated costs for this configuration, see the [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/). 
-
-1. In **Modules**, click **Compute**, and then click **Virtual Machines** enough times to create a list of seven virtual machines.
-2. For each virtual machine, select:
-	- Your intended region
-	- **Windows** for the type
-	- **Standard** for the pricing tier
-	- The default size in the previous table or your intended size for the **Instance size**
-
-> [AZURE.NOTE] The Azure Pricing Calculator does not include the additional costs for the SQL Server license for the two virtual machines running SQL Server 2014 Enterprise. See [Virtual Machines Pricing-SQL](/home/features/virtual-machines/#price) for more information.
-
-### Deployment phases
 
 To deploy this configuration, use the following process:
 
@@ -115,14 +78,7 @@ To deploy this configuration, use the following process:
 
 Once configured, you can easily expand this line of business application by adding more web servers or virtual machines running SQL Servers to the cluster.
 
-## Additional resources
+## Next step
 
-[Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview)
+- Get an [overview](/documentation/articles/virtual-machines-workload-high-availability-lob-application-overview) of the production workload before diving into the configuration.
 
-[Line of Business Applications architecture blueprint](http://msdn.microsoft.com/dn630664)
-
-[Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
-
-[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
-
-[Azure Infrastructure Services Workload: SharePoint Server 2013 farm](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)

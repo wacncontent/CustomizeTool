@@ -11,20 +11,14 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 
 # Apache Storm tutorial: Get started with the Storm Starter samples for big data analytics on HDInsight
 
-Apache Storm is a scalable, fault-tolerant, distributed, real-time computation system for processing streams of data. With Storm on Windows Azure HDInsight, you can create a cloud-based Storm cluster that performs big data analytics in real time.
+Apache Storm is a scalable, fault-tolerant, distributed, real-time computation system for processing streams of data. With Storm on Windows Azure HDInsight, you can create a cloud-based Storm cluster that performs big data analytics in real time. 
 <!-- deleted by customization
-
-[AZURE.INCLUDE [preview portal](../includes/hdinsight-azure-preview-portal.md)]
-
-* [Apache Storm Tutorial: Get started with the Storm Starter samples for big data analytics on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
-
-   
 
 > [AZURE.NOTE] The steps in this article create a Windows-based HDInsight cluster. For steps to create a Linux-based Storm on HDInsight cluster, see [Apache Storm tutorial: Get started with the Storm Starter sample using data analytics on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 -->
@@ -40,11 +34,11 @@ You must have the following to successfully complete this Apache Storm tutorial:
 Storm on HDInsight uses Azure Blob storage for storing log files and topologies submitted to the cluster. Use the following steps to create an Azure storage account for use with your cluster:
 <!-- deleted by customization
 
-1. Sign in to the [Azure preview portal][preview-portal].
+1. Sign in to the [Azure Management Portal][preview-portal].
 
 2. Select **NEW**, select __Data Analytics__, and then select __HDInsight__.
 
-	![Create a new cluster in the Azure preview portal](./media/hdinsight-apache-storm-tutorial-get-started/new-cluster.png)
+	![Create a new cluster in the Azure Management Portal](./media/hdinsight-apache-storm-tutorial-get-started/new-cluster.png)
 
 3. Enter a __Cluster Name__, and then select __Storm__ for the __Cluster Type__. A green check appears beside the __Cluster Name__ if it is available.
 
@@ -287,7 +281,10 @@ In this Apache Storm tutorial, you used the Storm Starter to learn how to create
 [stormstarter]: https://github.com/apache/storm/tree/master/examples/storm-starter
 [stormjavadocs]: https://storm.incubator.apache.org/apidocs/
 [azureportal]: https://manage.windowsazure.cn/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 <!-- deleted by customization
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
 [preview-portal]: https://manage.windowsazure.cn/
 -->
+<!-- keep by customization: begin -->
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+<!-- keep by customization: end -->

@@ -4,11 +4,11 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="08/10/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # How to create routes and enable IP Forwarding in Azure

@@ -7,9 +7,9 @@
    manager="douge"
    editor="tglee" />
 <tags
-	ms.service="multiple"
-	ms.date="09/04/2015"
-	wacn.date=""/>
+   ms.service="multiple"
+   ms.date="09/04/2015"
+   wacn.date="" />
 
 # Publishing a Cloud Service using the Azure Tools
 
@@ -65,7 +65,7 @@ When you publish your Azure application, you can do one of the following tasks:
 
 ## Update a Web Role as Part of the Development and Testing Cycle
 
-If your app’s backend infrastructure is stable, but the web roles need more frequent updating, you can use Web Deploy to update only a web role in your project. This is handy when you don’t want to rebuild and redeploy the backend worker roles, or if you have multiple web roles and you want to update only one of the web roles.
+If your app's backend infrastructure is stable, but the web roles need more frequent updating, you can use Web Deploy to update only a web role in your project. This is handy when you don't want to rebuild and redeploy the backend worker roles, or if you have multiple web roles and you want to update only one of the web roles.
 
 ### Requirements
 
@@ -73,11 +73,11 @@ Here are the requirements to use Web Deploy to update your web role:
 
 - **For development and testing purposes only:** The changes are made directly to the virtual machine where the web role is running. If this virtual machine has to be recycled, the changes are lost because the original package that you published is used to recreate the virtual machine for the role. You must republish your application to get the latest changes for the web role.
 
-- **Only web roles can be updated:** Worker roles can’t be updated. In addition, you can’t update the RoleEntryPoint in web role.cs.
+- **Only web roles can be updated:** Worker roles can't be updated. In addition, you can't update the RoleEntryPoint in web role.cs.
 
-- **Can only support a single instance of a web role:** You can’t have multiple instances of any web role in your deployment environment. However, multiple web roles each with only one instance are supported.
+- **Can only support a single instance of a web role:** You can't have multiple instances of any web role in your deployment environment. However, multiple web roles each with only one instance are supported.
 
-- **You must enable remote desktop connections:** This is required so that Web Deploy can use the user and password to connect to the virtual machine to deploy the changes to the server that’s running Internet Information Services (IIS). In addition, you might need to connect to the virtual machine to add a trusted certificate to IIS on this virtual machine. (This ensures that the remote connection for IIS that is used by Web Deploy is secure.)
+- **You must enable remote desktop connections:** This is required so that Web Deploy can use the user and password to connect to the virtual machine to deploy the changes to the server that's running Internet Information Services (IIS). In addition, you might need to connect to the virtual machine to add a trusted certificate to IIS on this virtual machine. (This ensures that the remote connection for IIS that is used by Web Deploy is secure.)
 
 The following procedure assumes that you are using the **Publish Azure Application** wizard.
 
@@ -93,7 +93,7 @@ The following procedure assumes that you are using the **Publish Azure Applicati
 
     The cloud service is published. The virtual machine that is created has remote connections enabled for IIS so that Web Deploy can be used to update your web roles without republishing them.
 
-    >[AZURE.NOTE] If you have more than one instance configured for a web role, a warning message appears, stating that each web role will be limited to one instance only in the package that’s created to publish your application. Click OK to continue. As stated in the Requirements section, you can have more than one web role but only one instance of each role.
+    >[AZURE.NOTE] If you have more than one instance configured for a web role, a warning message appears, stating that each web role will be limited to one instance only in the package that's created to publish your application. Click OK to continue. As stated in the Requirements section, you can have more than one web role but only one instance of each role.
 
 ### To Update Your Web Role by Using Web Deploy
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Recover a database from user error in SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Recover a database from user error in SQL Data Warehouse | Windows Azure"
    description="Steps for recovering a database from user error in SQL Data Warehouse. "
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/23/2015"
-   ms.author="sahajs"/>
+	ms.service="sql-data-warehouse"
+	ms.date="09/23/2015"
+	wacn.date=""/>
 
 # Recover a database from user error in SQL Data Warehouse
 
@@ -34,7 +30,7 @@ Use Azure PowerShell to programmatically perform database restore. To download t
 
 To restore a database, use the [Start-AzureSqlDatabaseRestore][] cmdlet. 
 
-1. Open Microsoft Azure PowerShell.
+1. Open Windows Azure PowerShell.
 2. Connect to your Azure account and list all the subscriptions associated with your account.
 3. Select the subscription that contains the database to be restored.
 4. List restore points for the database (requires Azure Resource Management mode).
@@ -57,16 +53,16 @@ $PointInTime = "<RestorePointCreationDate>"
 
 # Get the specific database to restore
 Switch-AzureMode AzureServiceManagement
-$Database = Get-AzureSqlDatabase -ServerName "<YourServerName>" –DatabaseName "<YourDatabaseName>"
+$Database = Get-AzureSqlDatabase -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>"
 
 # Restore database
 $RestoreRequest = Start-AzureSqlDatabaseRestore -SourceServerName "<YourServerName>" -SourceDatabase $Database -TargetDatabaseName "<NewDatabaseName>" -PointInTime $PointInTime
 
 # Monitor progress of restore operation
-Get-AzureSqlDatabaseOperation -ServerName "<YourServerName>" –OperationGuid $RestoreRequest.RequestID
+Get-AzureSqlDatabaseOperation -ServerName "<YourServerName>" -OperationGuid $RestoreRequest.RequestID
 ```
 
-Note that if your server is foo.database.windows.net, use "foo" as the -ServerName in the above powershell cmdlets.
+Note that if your server is foo.database.chinacloudapi.cn, use "foo" as the -ServerName in the above powershell cmdlets.
 
 ### REST API
 Use REST to programmatically perform database restore.
@@ -85,7 +81,7 @@ Use Azure PowerShell to programmatically perform a deleted database restore. To 
 
 To restore a deleted database, use the [Start-AzureSqlDatabaseRestore][] cmdlet.
 
-1. Open Microsoft Azure PowerShell.
+1. Open Windows Azure PowerShell.
 2. Connect to your Azure account and list all the subscriptions associated with your account.
 3. Select the subscription that contains the deleted database to be restored.
 4. Find the database and its deletion date from the list of deleted databases
@@ -97,14 +93,14 @@ Get-AzureSqlDatabase -RestorableDropped -ServerName "<YourServerName>"
 5. Get the specific deleted database and start the restore.
 
 ```
-$Database = Get-AzureSqlDatabase -RestorableDropped -ServerName "<YourServerName>" –DatabaseName "<YourDatabaseName>" -DeletionDate "1/01/2015 12:00:00 AM"
+$Database = Get-AzureSqlDatabase -RestorableDropped -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>" -DeletionDate "1/01/2015 12:00:00 AM"
 
-$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase $Database –TargetDatabaseName "<NewDatabaseName>"
+$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase $Database -TargetDatabaseName "<NewDatabaseName>"
 
-Get-AzureSqlDatabaseOperation –ServerName "<YourServerName>" –OperationGuid $RestoreRequest.RequestID
+Get-AzureSqlDatabaseOperation -ServerName "<YourServerName>" -OperationGuid $RestoreRequest.RequestID
 ```
 
-Note that if your server is foo.database.windows.net, use "foo" as the -ServerName in the above powershell cmdlets.
+Note that if your server is foo.database.chinacloudapi.cn, use "foo" as the -ServerName in the above powershell cmdlets.
 
 ### REST API
 Use REST to programmatically perform database restore.
@@ -128,10 +124,10 @@ To learn about the business continuity features of other Azure SQL Database edit
 [Finalize a recovered database]: sql-database/sql-database-recovered-finalize.md
 
 <!--MSDN references-->
-[Create database restore request]: http://msdn.microsoft.com/library/azure/dn509571.aspx
-[Database operation status]: http://msdn.microsoft.com/library/azure/dn720371.aspx
-[Get restorable dropped database]: http://msdn.microsoft.com/library/azure/dn509574.aspx
-[List restorable dropped databases]: http://msdn.microsoft.com/library/azure/dn509562.aspx
-[Start-AzureSqlDatabaseRestore]: https://msdn.microsoft.com/en-us/library/dn720218.aspx
+[Create database restore request]: http://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx
+[Database operation status]: http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx
+[Get restorable dropped database]: http://msdn.microsoft.com/zh-cn/library/azure/dn509574.aspx
+[List restorable dropped databases]: http://msdn.microsoft.com/zh-cn/library/azure/dn509562.aspx
+[Start-AzureSqlDatabaseRestore]: https://msdn.microsoft.com/zh-cn/library/dn720218.aspx
 
 <!--Other Web references-->

@@ -8,10 +8,10 @@
    editor="tysonn" />
 <tags
 	ms.service="service-bus"
-	ms.date="09/09/2015"
+	ms.date="12/28/2015"
 	wacn.date=""/>
 
-# Service Bus Pricing FAQ
+# Service Bus pricing FAQ
 
 This section answers some frequently-asked questions about the Service Bus pricing structure. You can also visit the [Azure Support FAQ](http://go.microsoft.com/fwlink/?LinkID=185083) for general Windows Azure pricing information. For complete information about Service Bus pricing, see [Service Bus pricing details](/home/features/service-bus/#price).
 
@@ -19,7 +19,7 @@ This section answers some frequently-asked questions about the Service Bus prici
 
 - [How do you charge for Service Bus?](#how-do-you-charge-for-service-bus)
 - [What usage of Service Bus is subject to data transfer? What is not?](#what-usage-of-service-bus-is-subject-to-data-transfer-what-is-not)
-- [What exactly is a Service Bus “relay”?](#what-exactly-is-a-service-bus-quotrelayquot)
+- [What exactly is a Service Bus "relay"?](#what-exactly-is-a-service-bus-quotrelayquot)
 - [How is the Relay Hours meter calculated?](#how-is-the-relay-hours-meter-calculated)
 - [What if I have more than one listener connected to a given relay?](#what-if-i-have-more-than-one-listener-connected-to-a-given-relay)
 - [How is the Messages meter calculated for relays?](#how-is-the-messages-meter-calculated-for-relays)
@@ -36,11 +36,11 @@ Any data transfer within a given Azure region is provided at no charge. Any data
 
 ## What exactly is a Service Bus "relay"?
 
-A relay is a Service Bus entity that relays messages between clients and Web services. The relay provides the service with a persistent, discoverable Service Bus address, reliable connectivity with firewall/NAT traversal capabilities, and additional features such as automatic load balancing. A relay is implicitly instantiated and opened at a given Service Bus address (namespace URL) whenever a relay-enabled WCF service, or “relay listener,” first connects to that address. Applications create relay listeners by using the Service Bus .NET managed API, which provides special relay-enabled versions of the standard WCF bindings.
+A relay is a Service Bus entity that relays messages between clients and Web services. The relay provides the service with a persistent, discoverable Service Bus address, reliable connectivity with firewall/NAT traversal capabilities, and additional features such as automatic load balancing. A relay is implicitly instantiated and opened at a given Service Bus address (namespace URL) whenever a relay-enabled WCF service, or "relay listener," first connects to that address. Applications create relay listeners by using the Service Bus .NET managed API, which provides special relay-enabled versions of the standard WCF bindings.
 
 ## How is the Relay Hours meter calculated?
 
-Relay hours are billed for the cumulative amount of time during which each Service Bus relay is “open” during a given billing period. A relay is implicitly instantiated and opened at a given Service Bus address (service namespace URL) when a relay-enabled WCF service, or “Relay listener,” first connects to that address. The relay is closed only when the last listener disconnects from its address. Therefore, for billing purposes a relay is considered “open” from the time the first relay listener connects, to the time the last relay listener disconnects from the Service Bus address of that relay. In other words, a relay is considered “open” whenever one or more relay listeners are connected to its Service Bus address.
+Relay hours are billed for the cumulative amount of time during which each Service Bus relay is "open" during a given billing period. A relay is implicitly instantiated and opened at a given Service Bus address (service namespace URL) when a relay-enabled WCF service, or "Relay listener," first connects to that address. The relay is closed only when the last listener disconnects from its address. Therefore, for billing purposes a relay is considered "open" from the time the first relay listener connects, to the time the last relay listener disconnects from the Service Bus address of that relay. In other words, a relay is considered "open" whenever one or more relay listeners are connected to its Service Bus address.
 
 ## What if I have more than one listener connected to a given relay?
 
@@ -50,7 +50,7 @@ In some cases, a single relay in Service Bus may have multiple connected listene
 
 In general, billable messages are calculated for relays using the same method as described above for brokered entities (queues, topics, and subscriptions). However, there are several notable differences:
 
-1. Sending a message to a Service Bus relay is treated as a “full through” send to the relay listener that receives the message, rather than a send to the Service Bus relay followed by a delivery to the relay listener. Therefore, a request-reply style service invocation (of up to 64 KB) against a relay listener will result in two billable messages: one billable message for the request and one billable message for the response (assuming the response is also <= 64 KB). This differs from using a queue to mediate between a client and a service. In the latter case, the same request-reply pattern would require a request send to the queue, followed by a dequeue/delivery from the queue to the service, followed by a response send to another queue, and a dequeue/delivery from that queue to the client. Using the same (<= 64 KB) size assumptions throughout, the mediated queue pattern would thus result in four billable messages, twice the number billed to implement the same pattern using relay. Of course, there are benefits to using queues to achieve this pattern, such as durability and load leveling. These benefits may justify the additional expense.
+1. Sending a message to a Service Bus relay is treated as a "full through" send to the relay listener that receives the message, rather than a send to the Service Bus relay followed by a delivery to the relay listener. Therefore, a request-reply style service invocation (of up to 64 KB) against a relay listener will result in two billable messages: one billable message for the request and one billable message for the response (assuming the response is also <= 64 KB). This differs from using a queue to mediate between a client and a service. In the latter case, the same request-reply pattern would require a request send to the queue, followed by a dequeue/delivery from the queue to the service, followed by a response send to another queue, and a dequeue/delivery from that queue to the client. Using the same (<= 64 KB) size assumptions throughout, the mediated queue pattern would thus result in four billable messages, twice the number billed to implement the same pattern using relay. Of course, there are benefits to using queues to achieve this pattern, such as durability and load leveling. These benefits may justify the additional expense.
 
 2. Relays that are opened using the **netTCPRelay** WCF binding treat messages not as individual messages but as a stream of data flowing through the system. In other words, only the sender and listener have visibility into the framing of the individual messages sent/received using this binding. Thus, for relays using the **netTCPRelay** bindng, all data is treated as a stream for the purpose of calculating billable messages. In this case, Service Bus will calculate the total amount of data sent or received via each individual relay on a 5-minute basis and divide that total by 64 KB in order to determine the number of billable messages for the relay in question during that time period.
 
@@ -60,7 +60,7 @@ No, Service Bus does not charge for storage. However, there is a quota limiting 
 
 ## Does Service Bus have any usage quotas?
 
-By default, for any cloud service Microsoft sets an aggregate monthly usage quota that is calculated across all of a customer’s subscriptions. Because we understand that you may need more than these limits, please contact customer service at any time so that we can understand your needs and adjust these limits appropriately. For Service Bus, the aggregate usage quotas are as follows:
+By default, for any cloud service Microsoft sets an aggregate monthly usage quota that is calculated across all of a customer's subscriptions. Because we understand that you may need more than these limits, please contact customer service at any time so that we can understand your needs and adjust these limits appropriately. For Service Bus, the aggregate usage quotas are as follows:
 
 - 5 billion messages
 
@@ -70,33 +70,33 @@ While we do reserve the right to disable a customer's account that has exceeded 
 
 As with other services on Azure, Service Bus enforces a set of specific quotas to ensure that there is fair usage of resources. The following are the usage quotas that the service enforces:
 
-- **Queue/topic size** – You specify the maximum queue or topic size upon creation of the queue or topic. This quota can have a value of 1, 2, 3, 4, or 5 GB. If the maximum size is reached, additional incoming messages will be rejected and an exception will be received by the calling code.
+- **Queue/topic size** - You specify the maximum queue or topic size upon creation of the queue or topic. This quota can have a value of 1, 2, 3, 4, or 5 GB. If the maximum size is reached, additional incoming messages will be rejected and an exception will be received by the calling code.
 
 - **Number of concurrent connections**
 	- **Queue/Topic/Subscription** - The number of concurrent TCP connections on a queue/topic/subscription is limited to 100. If this quota is reached, subsequent requests for additional connections will be rejected and an exception will be received by the calling code. For every messaging factory, Service Bus maintains one TCP connection if any of the clients created by that messaging factory have an active operation pending, or have completed an operation less than 60 seconds ago. REST operations do not count towards concurrent TCP connections.
 
 
-- **Number of concurrent listeners on a relay** – The number of concurrent **netTcpRelay** and **netHttpRelay ** listeners on a relay is limited to 25 (1 for a **NetOneway** relay).
+- **Number of concurrent listeners on a relay** - The number of concurrent **netTcpRelay** and **netHttpRelay ** listeners on a relay is limited to 25 (1 for a **NetOneway** relay).
 
-- **Number of concurrent relay listeners per namespace** – Service Bus enforces a limit of 2000 concurrent relay listeners per service namespace. If this quota is reached, subsequent requests to open additional relay listeners will be rejected and an exception will be received by the calling code.
+- **Number of concurrent relay listeners per namespace** - Service Bus enforces a limit of 2000 concurrent relay listeners per service namespace. If this quota is reached, subsequent requests to open additional relay listeners will be rejected and an exception will be received by the calling code.
 
-- **Number of topics/queues per service namespace** – The maximum number of topics/queues (durable storage-backed entities) on a service namespace is limited to 10,000. If this quota is reached, subsequent requests for creation of a new topic/queue on the service namespace will be rejected. In this case, the Azure Management Portal will display an error message or the calling client code will receive an exception, depending on whether the create attempt was done via the portal or in client code.
+- **Number of topics/queues per service namespace** - The maximum number of topics/queues (durable storage-backed entities) on a service namespace is limited to 10,000. If this quota is reached, subsequent requests for creation of a new topic/queue on the service namespace will be rejected. In this case, the [Azure Management Portal][] will display an error message or the calling client code will receive an exception, depending on whether the create attempt was done via the portal or in client code.
 
 - **Message size quotas**
 	- **Queue/Topic/Subscription**
-		- **Message size** – Each message is limited to a total size of 256KB, including message headers.
-		- **Message header size** – Each message header is limited to 64KB.
+		- **Message size** - Each message is limited to a total size of 256KB, including message headers.
+		- **Message header size** - Each message header is limited to 64KB.
 
 	- **NetOneway and NetEvent relays** - Each message is limited to a total size of 64KB, including message headers.
-	- **Http and NetTcp relays** – Service Bus does not enforce an upper bound on the size of these messages.
+	- **Http and NetTcp relays** - Service Bus does not enforce an upper bound on the size of these messages.
 
 	Messages that exceed these size quotas will be rejected and an exception will be received by the calling code.
 
-- **Number of subscriptions per topic** – The maximum number of subscriptions per topic is limited to 2,000. If this quota is reached, subsequent requests for creating additional subscriptions to the topic will be rejected. In this case, the management portal will display an error message or the calling client code will receive an exception, depending on whether the create attempt was done via the portal or in client code.
+- **Number of subscriptions per topic** - The maximum number of subscriptions per topic is limited to 2,000. If this quota is reached, subsequent requests for creating additional subscriptions to the topic will be rejected. In this case, the [Azure Management Portal][] will display an error message or the calling client code will receive an exception, depending on whether the create attempt was done via the portal or in client code.
 
-- **Number of SQL filters per topic** – The maximum number of SQL filters per topic is limited to 2,000. If this quota is reached, any subsequent requests for creation of additional filters on the topic will be rejected and an exception will be received by the calling code.
+- **Number of SQL filters per topic** - The maximum number of SQL filters per topic is limited to 2,000. If this quota is reached, any subsequent requests for creation of additional filters on the topic will be rejected and an exception will be received by the calling code.
 
-- **Number of correlation filters per topic** – The maximum number of correlation filters per topic is limited to 100,000. If this quota is reached, any subsequent requests for creation of additional filters on the topic will be rejected and an exception will be received by the calling code.
+- **Number of correlation filters per topic** - The maximum number of correlation filters per topic is limited to 100,000. If this quota is reached, any subsequent requests for creation of additional filters on the topic will be rejected and an exception will be received by the calling code.
 
 For more information about quotas, see [Service Bus quotas](/documentation/articles/service-bus-quotas).
 
@@ -107,5 +107,7 @@ To learn more about Service Bus messaging, see the following topics.
 - [Introducing Azure Service Bus Premium messaging (blog post)](http://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/)
 - [Introducing Azure Service Bus Premium messaging (Channel9)](https://channel9.msdn.com/Blogs/Subscribe/Introducing-Azure-Service-Bus-Premium-Messaging)
 - [Service Bus messaging overview](/documentation/articles/service-bus-messaging-overview)
-- [Azure Service Bus Architectural Overview](/documentation/articles/fundamentals-service-bus-hybrid-solutions)
+- [Azure Service Bus architecture overview](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 - [How to use Service Bus queues](/documentation/articles/service-bus-dotnet-how-to-use-queues)
+
+[Azure Management Portal]: http://manage.windowsazure.cn

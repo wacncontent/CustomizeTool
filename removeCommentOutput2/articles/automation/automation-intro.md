@@ -3,7 +3,7 @@
 	description="Learn what value Azure Automation provides and get answers to common questions so that you can get started in creating, using runbooks and Azure Automation DSC."
 	services="automation"
 	documentationCenter=""
-	authors="bwren"
+	authors="SnehaGunda"
 	manager="stevenka"
 	editor=""/>
 
@@ -22,39 +22,26 @@ Windows Azure Automation provides a way for users to automate the manual, long-r
 
 A runbook is a set of tasks that perform some automated process in Azure Automation. It may be a simple process such as starting a virtual machine and creating a log entry, or you may have a complex runbook that combines other smaller runbooks to perform a complex process across multiple resources or even multiple clouds and on premise environments.  
 
-For example, you might have an existing manual process for truncating a SQL database if it’s approaching maximum size that includes multiple steps such as connecting to the server, connecting to the database, get the current size of database, check if threshold has exceeded and then truncate it and notify user. Instead of manually performing each of these steps, you could create a runbook that would perform all of these tasks as a single process. You would start the runbook, provide the required information such as the SQL server name, database name, and recipient e-mail and then sit back while the process completes. 
+For example, you might have an existing manual process for truncating a SQL database if itâs approaching maximum size that includes multiple steps such as connecting to the server, connecting to the database, get the current size of database, check if threshold has exceeded and then truncate it and notify user. Instead of manually performing each of these steps, you could create a runbook that would perform all of these tasks as a single process. You would start the runbook, provide the required information such as the SQL server name, database name, and recipient e-mail and then sit back while the process completes.
 
 
 ## What can runbooks automate?
 
-Runbooks in Azure Automation are based on Windows PowerShell or Windows PowerShell Workflow, so they do anything that PowerShell can do. If an application or service has an API, then a runbook can work with it. If you have a PowerShell module for the application, then you can load that module into Azure Automation and include those cmdlets in your runbook. Azure Automation runbooks run in the Azure cloud and can access any cloud resources or external resources that can be accessed from the cloud. 
+Runbooks in Azure Automation are based on Windows PowerShell Workflow, so they do anything that PowerShell can do. If an application or service has an API, then a runbook can work with it. If you have a PowerShell module for the application, then you can load that module into Azure Automation and include those cmdlets in your runbook. Azure Automation runbooks run in the Azure cloud and can access any cloud resources or external resources that can be accessed from the cloud. 
 
 
 ## Getting runbooks from the community
 
-The [Runbook Gallery](http://msdn.microsoft.com/zh-cn/library/azure/dn781422.aspx) contains runbooks from Microsoft and the community that you can either use unchanged in your environment or customize them for your own purposes. They are also useful to as references to learn how to create your own runbooks. You can even contribute your own runbooks to the gallery that you think other users may find useful. 
+The [Runbook Gallery](/documentation/articles/automation-runbook-gallery) contains runbooks from Microsoft and the community that you can either use unchanged in your environment or customize them for your own purposes. They are also useful to as references to learn how to create your own runbooks. You can even contribute your own runbooks to the gallery that you think other users may find useful.
 
 
 ## Creating Runbooks with Azure Automation 
 
-You can [create your own runbooks](/documentation/articles/automation-creating-importing-runbook) from scratch or modify runbooks from the [Runbook Gallery](http://msdn.microsoft.com/zh-cn/library/azure/dn781422.aspx) for your own requirements. There are three different [runbook types](/documentation/articles/automation-runbook-types) that you can choose from based on your requirements and PowerShell experience. If you prefer to work directly with the PowerShell code, then you can use a [PowerShell runbook](/documentation/articles/automation-runbook-types#powershell-runbooks) or [PowerShell Workflow runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks) that you edit offline or with the [textual editor](http://msdn.microsoft.com/zh-cn/library/azure/dn879137.aspx) in the Azure Management Portal. If you prefer to edit a runbook without being exposed to the underlying code, then you can create a [Graphical runbook](/documentation/articles/automation-runbook-types#graphical-runbooks) using the [graphical editor](/documentation/articles/automation-graphical-authoring-intro) in the Azure preview portal.
-
-
-## Automating configuration management with Desired State Configuration 
-
-[PowerShell DSC](https://technet.microsoft.com/zh-cn/library/dn249912.aspx) is a management platform that allows you to manage, deploy and enforce configuration for physical hosts and virtual machines using a declarative PowerShell syntax. You can define configurations on a central DSC Pull Server that target machines can automatically retrieve and apply. DSC provides a set of PowerShell cmdlets that you can use to manage configurations and resources.  
-
-[Azure Automation DSC](/documentation/articles/automation-dsc-overview) is a cloud based solution for PowerShell DSC that provides services required for enterprise environments.  You can manage your DSC resources in Azure Automation and apply configurations to virtual or physical machines that retrieve them from a DSC Pull Server in the Azure cloud.  It also provides reporting services that inform you of important events such as when nodes have deviated from their assigned configuration and when a new configuration has been applied. 
-
-
-## Creating your own DSC configurations with Azure Automation
-
-[DSC configurations](/documentation/articles/automation-dsc-overview#azure-automation-dsc-terms) specify the desired state of a node.  Multiple nodes can apply the same configuration to assure that they all maintain an identical state.  You can create a configuration using any text editor on your local machine and then import it into Azure Automation where you can compile it and apply it nodes.
-
+You can [create your own runbooks](/documentation/articles/automation-creating-importing-runbook) from scratch or modify runbooks from the [Runbook Gallery](/documentation/articles/automation-runbook-gallery) for your own requirements. There is only one runbook type in WindowsAzure.cn. You can use a PowerShell Workflow runbook that you edit offline or with the [textual editor](/documentation/articles/automation-edit-textual-runbook) in the Azure Management Portal.
 
 ## Getting modules and configurations 
 
-You can get [PowerShell modules](/documentation/articles/automation-runbook-gallery#modules-in-powershell-gallery) containing cmdlets that you can use in your runbooks and DSC configurations from the [PowerShell Gallery](http://www.powershellgallery.com/). You can launch this gallery from the Azure preview portal and import modules directly into Azure Automation, or you can download and import them manually. You cannot install the modules directly from the Azure Management Portal, but you can download them install them as you would any other module. 
+You can get [PowerShell modules](/documentation/articles/automation-runbook-gallery#modules-in-powershell-gallery) containing cmdlets that you can use in your runbooks from the [PowerShell Gallery](http://www.powershellgallery.com/). You can download and import them manually. You cannot install the modules directly from the Azure Management Portal, but you can download them install them as you would any other module.
 
 
 ## Example practical applications of Azure Automation 
@@ -73,10 +60,7 @@ Following are just a few examples of the kinds of scenarios that you can automat
 
 ## How does Azure Automation relate to other automation tools?
 
-[Service Management Automation (SMA)](http://technet.microsoft.com/zh-cn/library/dn469260.aspx) is intended to automate management tasks in the private cloud. It is installed locally in your data center as a component of [Windows Azure Pack](https://www.microsoft.com/server-cloud/). SMA and Azure Automation use the same runbook format based on Windows PowerShell and Windows PowerShell Workflow.
-
-[System Center 2012 Orchestrator](http://technet.microsoft.com/zh-cn/library/hh237242.aspx) is intended for automation of on-premises resources. It uses a different runbook format than Azure Automation and Service Management Automation and has a graphical interface to create runbooks without requiring any scripting. Its runbooks are composed of activities from Integration Packs that are written specifically for Orchestrator. 
-
+[Service Management Automation (SMA)](http://technet.microsoft.com/zh-cn/library/dn469260.aspx) is intended to automate management tasks in the private cloud. It is installed locally in your data center as a component of [Windows Azure Pack](https://www.microsoft.com/server-cloud/). SMA and Azure Automation use the same runbook format based on Windows PowerShell Workflow.
 
 ## Where can I get more information? 
 

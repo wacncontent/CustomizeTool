@@ -4,7 +4,15 @@ deleted:
 
 		>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
-reason: ()
+reason: (“Try it now”)
+
+deleted:
+
+		## What's changed
+		* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+		* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the portal](https://manage.windowsazure.cn/)
+
+reason: (terminology: Azure App Service Web, the new Ibiza portal)
 
 replacement:
 
@@ -54,7 +62,7 @@ replaced by:
 		
 		7. Open **init.php** and replace `[YOUR_STORAGE_ACCOUNT_NAME]` and `[YOUR_STORAGE_ACCOUNT_KEY]` with the account name and key you took note of in the last step. Save the file.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -118,23 +126,5 @@ replaced by:
 		
 			![Git deployment instructions returned after creating a repository for the  Website.][git-instructions]
 
-reason: ()
-
-deleted:
-
-		## What's changed
-		* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-		* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the portal](https://manage.windowsazure.cn/)
-
-replaced by:
-
-		[new- Website]: ./media/web-sites-php-storage/new_Website.jpg
-		[website-quick-create]: ./media/web-sites-php-storage/createsite.png
-		[website-quick-create-details]: ./media/web-sites-php-storage/sitedetails.png
-		[storage-quick-create-details]: ./media/web-sites-php-storage/provideurl.png
-		[storage-manage-keys]: ./media/web-sites-php-storage/accesskeys.png
-		[go-to-dashboard]: ./media/web-sites-php-storage/selectsite.png
-		[where-is-code]: ./media/web-sites-php-storage/where_is_code.png
-
-reason: ()
+reason: (the new Ibiza portal)
 

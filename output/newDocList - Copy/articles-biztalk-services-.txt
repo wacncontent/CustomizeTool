@@ -1,0 +1,18 @@
+new docs: 14, word count: {word_count_TODO}
+articles/biztalk-services/biztalk-administration-and-Development-Task-List-in-BizTalk-Services.md
+articles/biztalk-services/biztalk-backup-restore.md
+articles/biztalk-services/biztalk-dashboard-monitor-scale-tabs.md
+articles/biztalk-services/biztalk-editions-feature-chart.md
+articles/biztalk-services/biztalk-issuer-name-issuer-key.md
+articles/biztalk-services/biztalk-migrating-to-edi-guide.md
+articles/biztalk-services/biztalk-process-edifact-invoice.md
+articles/biztalk-services/biztalk-provision-services.md
+articles/biztalk-services/biztalk-release-notes.md
+articles/biztalk-services/biztalk-service-state-chart.md
+articles/biztalk-services/biztalk-throttling-thresholds.md
+articles/biztalk-services/biztalk-troubleshoot-using-ops-logs.md
+articles/biztalk-services/integration-hybrid-connection-create-manage.md
+articles/biztalk-services/integration-hybrid-connection-overview.md
+
+new includes: 1
+includes/biztalk-services-service-limits.md

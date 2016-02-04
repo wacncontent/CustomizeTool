@@ -1,22 +1,23 @@
 <properties
-   pageTitle="What is SQL Database | Windows Azure"
-   description="Discover the technical details and capabilities of Azure SQL Database, Microsoft's relational database management system (RDBMS) and PaaS solution in the cloud."
-   services="sql-database"
-   documentationCenter=""
-   authors="shontnew"
-   manager="jeffreyg"
-   editor="monicar"/>
+	pageTitle="What is SQL Database? Intro to SQL Database | Windows Azure"
+	description="Get an introduction to SQL Database: technical details and capabilities of Microsoft's relational database management system (RDBMS) in the cloud."
+	keywords="introduction to sql,intro to sql,what is sql database,DTU"
+	services="sql-database"
+	documentationCenter=""
+	authors="shontnew"
+	manager="jeffreyg"
+	editor="cgronlun"/>
 
 <tags
 	ms.service="sql-database"
 	ms.date="09/30/2015"
 	wacn.date=""/>
 
-# Introduction to SQL Database
+# What is SQL Database? Introduction to SQL Database, technical details, and an explanation of DTUs
 
-SQL Database is a relational database service in the cloud based on the market leading Microsoft SQL Server engine, with mission-critical capabilities. SQL Database delivers predictable performance, scalability with no downtime, business continuity and data protection—all with near-zero administration. You can focus on rapid app development and accelerating your time to market, rather than managing virtual machines and infrastructure. Because it’s based on the [SQL Server](https://msdn.microsoft.com/zh-cn/library/bb545450.aspx) engine, SQL Database supports existing SQL Server tools, libraries and APIs, which makes it easier for you to move and extend to the cloud.
+SQL Database is a relational database service in the cloud based on the market-leading Microsoft SQL Server engine, with mission-critical capabilities. SQL Database delivers predictable performance, scalability with no downtime, business continuity and data protection—all with near-zero administration. You can focus on rapid app development and accelerating your time to market, rather than managing virtual machines and infrastructure. Because it's based on the [SQL Server](https://msdn.microsoft.com/zh-cn/library/bb545450.aspx) engine, SQL Database supports existing SQL Server tools, libraries and APIs, which makes it easier for you to move and extend to the cloud.
 
-This article introduces the core concepts and features of SQL Database related to performance, scalability, and manageability, with links to explore details. If you’re ready to jump in, you can [Create your first SQL database](/documentation/articles/sql-database-get-started) or [Create an elastic database pool](/documentation/articles/sql-database-elastic-pool-portal) in minutes. If you want a deeper dive, watch this 30 minute video.
+This article is an introduction to SQL Database core concepts and features related to performance, scalability, and manageability, with links to explore details. If you're ready to jump in, you can [Create your first SQL database](/documentation/articles/sql-database-get-started) or [Create an elastic database pool](/documentation/articles/sql-database-elastic-pool-portal) in minutes. If you want a deeper dive, watch this 30 minute video.
 
 
 > [AZURE.VIDEO azurecon-2015-get-started-with-azure-sql-database]
@@ -27,25 +28,15 @@ SQL databases is available in Basic, Standard, and Premium *service tiers*. Each
 
 For many businesses and apps, being able to create databases and dial single database performance up or down on demand is enough, especially if usage patterns are relatively predictable. But if you have unpredictable usage patterns, it can make it hard to manage costs and your business model. 
 
-[Elastic database pools](/documentation/articles/sql-database-elastic-pool) in SQL Database solve this problem. The concept is simple. You allocate performance to a pool, and pay for the collective performance of the pool rather than single database performance. You don’t need to dial database performance up or down. The databases in the pool, called *elastic databases*, automatically scale up and down to meet demand. Elastic databases consume but don’t exceed the limits of the pool, so your cost remains predictable even if database usage doesn’t. What’s more, you can [add and remove databases to the pool](/documentation/articles/sql-database-elastic-pool-portal), scaling your app from a handful of databases to thousands, all within a budget that you control.
+[Elastic database pools](/documentation/articles/sql-database-elastic-pool) in SQL Database solve this problem. The concept is simple. You allocate performance to a pool, and pay for the collective performance of the pool rather than single database performance. You don't need to dial database performance up or down. The databases in the pool, called *elastic databases*, automatically scale up and down to meet demand. Elastic databases consume but don't exceed the limits of the pool, so your cost remains predictable even if database usage doesn't. What's more, you can [add and remove databases to the pool](/documentation/articles/sql-database-elastic-pool-portal), scaling your app from a handful of databases to thousands, all within a budget that you control.
 
-Either way you go—single or elastic—you’re not locked in. You can blend single databases with elastic database pools, and change the service tiers of single databases and pools to create innovate designs. Moreover, with the power and reach of Azure, you can mix-and-match Azure services with SQL Database to meet your unique modern app design needs, drive cost and resource efficiencies, and unlock new business opportunities.
+Either way you go—single or elastic—you're not locked in. You can blend single databases with elastic database pools, and change the service tiers of single databases and pools to create innovate designs. Moreover, with the power and reach of Azure, you can mix-and-match Azure services with SQL Database to meet your unique modern app design needs, drive cost and resource efficiencies, and unlock new business opportunities.
 
 But how can you compare the relative performance of databases and database pools? How do you know the right click-stop when you dial up and down? The answer is the database transaction unit (DTU) for single databases and the elastic DTU (eDTU) for elastic databases and database pools.
 
 ## Understand DTUs
 
-The Database Transaction Unit (DTU) is the unit of measure in SQL Database that represents the relative power of databases based on a real-world measure: the database transaction. We took a set of operations that are typical for an online transaction processing (OLTP) request, and then measured how many transactions could be completed per second under fully loaded conditions (that’s the short version, you can read the gory details in the [Benchmark overview](https://msdn.microsoft.com/zh-cn/library/azure/dn741327.aspx)).
-
-A Basic database has 5 DTUs, which means it can complete 5 transactions per second, while a Premium P11 database has 1750 DTUs.
-
-![Single database DTUs](./media/sql-database-technical-overview/single_db_dtus.png)
-
-The DTU for single databases translates directly to the eDTU for elastic databases. For example, a database in a Basic elastic database pool offers up to 5 eDTUs. That’s the same performance as a single Basic database. The difference is that the elastic database won’t consume any eDTUs from the pool until it has to. 
-
-![Elastic pools and eDTUs](./media/sql-database-technical-overview/sqldb_elastic_pools.png)
-
-A simple example helps. Take a Basic elastic database pool with 1000 DTUs and drop 800 databases in it. As long as only 200 of the 800 databases are being used at any point in time (5DTU X 200 = 1000), you won’t hit capacity of the pool, and database performance won’t degrade. This example is simplified for clarity. The real math is a bit more involved. The portal does the math for you, and makes a recommendation based on historical database usage. See [Price and performance considerations for an elastic database pool](/documentation/articles/sql-database-elastic-pool-guidance) to learn how the recommendations work, or to do the math yourself.
+[AZURE.INCLUDE [SQL DB DTU description](../includes/sql-database-understanding-dtus.md)]
 
 ## Keep your app and business running
 
@@ -60,6 +51,7 @@ See [Business Continuity](/documentation/articles/sql-database-business-continui
 SQL Server has a tradition of solid  data security that SQL Database upholds  with features that limit access, protect data, and help you monitor activity. See [Securing your SQL database](/documentation/articles/sql-database-security) for a quick rundown of security options you have in SQL Database. See the [Security Center for SQL Server Database Engine and SQL Database](https://msdn.microsoft.com/zh-cn/library/bb510589) for a more comprehensive view of security features. And visit the [Azure Trust Center](/support/trust-center/security/) for information about Azure's platform security.
 
 ## Next steps
+Now that you've read an introduction to SQL Database and answered the question "What is SQL Database?", you're ready for the following:
 
 - See the [pricing page](/home/features/sql-database/#price) for single database and elastic database pricing and calculators.
 

@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/23/2015"
-   ms.author="alexwun"/>
+	ms.service="service-fabric"
+	ms.date="09/23/2015"
+	wacn.date=""/>
 
 # Deploy an application
 
@@ -213,15 +209,22 @@ PS D:\temp>
 
 ## Next steps
 
-[Service Fabric Application Upgrade](service-fabric-application-upgrade.md)
+[Service Fabric Application Upgrade](/documentation/articles/service-fabric-application-upgrade)
 
-[Service Fabric Health Introduction](service-fabric-health-introduction.md)
+[Service Fabric Health Introduction](/documentation/articles/service-fabric-health-introduction)
 
-[Diagnose and troubleshoot a Service Fabric service](service-fabric-diagnose-monitor-your-service-index.md)
+[Diagnose and troubleshoot a Service Fabric service](/documentation/articles/service-fabric-diagnose-monitor-your-service-index)
 
-[Model an application in Service Fabric](service-fabric-application-model.md)
+[Model an application in Service Fabric](/documentation/articles/service-fabric-application-model)
 
 <!--Link references--In actual articles, you only need a single period before the slash-->
+<!-- deleted by customization
 [10]: service-fabric-application-model.md
 [11]: service-fabric-application-upgrade.md
+
+-->
+<!-- keep by customization: begin -->
+[10]: /documentation/articles/service-fabric-application-model
+[11]: /documentation/articles/service-fabric-application-upgrade
  
+<!-- keep by customization: end -->

@@ -14,7 +14,7 @@
 
 # Get started with Notification Hubs for Kindle apps
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
+[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started)]
 
 ##Overview
 
@@ -52,7 +52,7 @@ This tutorial requires the following:
 
 ## Create an API key
 
-1. Open a command prompt with administrator privileges.
+1. Open a command prompt with Administrator privileges.
 2. Navigate to the Android SDK folder.
 3. Enter the following command:
 

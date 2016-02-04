@@ -1,0 +1,4 @@
+updated docs: 1
+articles/automation/automation-dsc-onboarding.md
+
+updated includes: 0

@@ -1,10 +1,22 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Salesforce Sandbox | Windows Azure" description="Learn how to use Salesforce Sandbox with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties 
+    pageTitle="Tutorial: Azure Active Directory integration with Salesforce Sandbox | Windows Azure" description="Learn how to use Salesforce Sandbox with Azure Active Directory to enable single sign-on, automated provisioning, and more!." 
+    services="active-directory" 
+    authors="jeevansd"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+
 <tags
 	ms.service="active-directory"
-	ms.date="10/07/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
+
+
 #Tutorial: Azure Active Directory integration with Salesforce Sandbox
 >[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/7eb2d595-9d13-4311-935e-83204599629b/tutorial-azure-ad-integration-with-salesforce-sandbox?forum=WindowsAzureAD).
+<!-- keep by customization: begin -->
+>[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=521878).
+<!-- keep by customization: end -->
+<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Salesforce Sandbox.  
 Sandboxes give you the ability to create multiple copies of your organization in separate environments for a variety of purposes, such as development, testing, and training, without compromising the data and applications in your Salesforce production organization.  
@@ -15,7 +27,12 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A sandbox in Salesforce.com
   
-If you don’t have a valid sandbox in Salesforce.com yet, you need to contact Salesforce.
+<!-- deleted by customization
+If you don't have a valid sandbox in Salesforce.com yet, you need to contact Salesforce.
+-->
+<!-- keep by customization: begin -->
+If you <!-- deleted by customization don't --><!-- keep by customization: begin --> don’t <!-- keep by customization: end --> have a valid sandbox in Salesforce.com yet, you need to contact Salesforce.
+<!-- keep by customization: end -->
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -71,7 +88,7 @@ The objective of this section is to outline how to enable users to authenticate 
 
     ![Configure App URL](./media/active-directory-saas-salesforce-sandbox-tutorial/IC781022.png "Configure App URL")
 
-4. If you have already configured single sign-on for another Salesforce Sandbox instance in your directory, then you must also configure the **Issuer URL** to have the same value as the **Sign on URL**. The **Issuer URL** field can be found by checking the **Show advanced settings** checkbox on the **Configure App URL** page of the dialog.
+4. If you have already configured single sign-on for another Salesforce Sandbox instance in your directory, then you must also configure the **Identifier** to have the same value as the **Sign on URL**. The **Identifier** field can be found by checking the **Show advanced settings** checkbox on the **Configure App URL** page of the dialog.
 
 4.  On the **Configure single sign-on at Salesforce Sandbox** page, click **Download certificate**, and then save the certificate file on your computer.
 
@@ -98,7 +115,12 @@ The objective of this section is to outline how to enable users to authenticate 
 
     ![SAML Single Sign-On Settings](./media/active-directory-saas-salesforce-sandbox-tutorial/IC781027.png "SAML Single Sign-On Settings")
 
+<!-- deleted by customization
+    1.  In the Name textbox, type the name of the configuration (e.g.: *SPSSOWAAD\_Test*).
+-->
+<!-- keep by customization: begin -->
     1.  In the Name textbox, type the name of the configuration (e.g.: <!-- deleted by customization *SPSSOWAAD\_Test*) --><!-- keep by customization: begin --> *SPSSOWAAD_Test*) <!-- keep by customization: end -->.
+<!-- keep by customization: end -->
     2.  In the Azure Management Portal, on the **Configure single sign-on at Salesforce Sandbox** dialogue page, copy the **Issuer URL** value, and then paste it into the **Issuer** textbox.
     3.  In the **Entity Id** textbox, type **https://test.salesforce.com** if this is the first Salesforce Sandbox instance that you are adding to your directory. If you have already added an instance of Salesforce Sandbox, then for the **Entity ID** type in the **Sign On URL**, which should be in this format: `http://company.my.salesforce.com`
     4.  Click **Browse** to upload the downloaded certificate.

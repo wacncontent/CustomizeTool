@@ -9,8 +9,8 @@
 	editor=""/>
 
 <tags
-	ms.service="active-directory"
-	ms.date="10/09/2015"
+	ms.service="active-directory" 
+	ms.date="10/09/2015" 
 	wacn.date=""/>
 
 
@@ -18,7 +18,7 @@
 The Azure Management Portal provides you with the flexibility to set up a more advanced rule to enable dynamic memberships for groups.
 
 **To create the advanced rule**
-In the Azure Management Portal, under the group’s **Configure** tab, select the **Advanced rule** radio button and then type in your advanced rule in the provided text box. You can create your advanced rule using the following information.
+In the Azure Management Portal, under the group's **Configure** tab, select the **Advanced rule** radio button and then type in your advanced rule in the provided text box. You can create your advanced rule using the following information.
 
 ## Constructing the body of an advanced rule
 The advanced rule that you can create for the dynamic memberships for groups is essentially a binary expression that consists of three parts and results in a true or false outcome. The three parts are:
@@ -60,7 +60,7 @@ The following table lists all the supported expression rule operators and their 
 | Error: Attribute not supported.                                      | (user.invalidProperty -eq "Value")                                                                                 | (user.department -eq "value")Property should match one from the supported properties list above.                                                                                                                                                                           |
 | Error: Operator is not supported on attribute.                       | (user.accountEnabled -contains true)                                                                               | (user.accountEnabled -eq true)Property is of type boolean. Use the supported operators (-eq or -ne) on boolean type from the above list.                                                                                                                                   |
 | Error: Query compilation error.                                      | (user.department -eq "Sales") -and (user.department -eq "Marketing")(user.userPrincipalName -match "*@domain.ext") | (user.department -eq "Sales") -and (user.department -eq "Marketing")Logical operator should match one from the supported properties list above.(user.userPrincipalName -match ".*@domain.ext")or(user.userPrincipalName -match "@domain.ext$")Error in regular expression. |
-| Error: Binary expression is not in right format.                     | (user.department –eq “Sales”) (user.department -eq "Sales")(user.department-eq"Sales")                             | (user.accountEnabled -eq true) -and (user.userPrincipalName -contains "alias@domain")Query has multiple errors. Parenthesis not in right place.                                                                                                                            |
+| Error: Binary expression is not in right format.                     | (user.department -eq “Sales”) (user.department -eq "Sales")(user.department-eq"Sales")                             | (user.accountEnabled -eq true) -and (user.userPrincipalName -contains "alias@domain")Query has multiple errors. Parenthesis not in right place.                                                                                                                            |
 | Error: Unknown error occurred during setting up dynamic memberships. | (user.accountEnabled -eq "True" AND user.userPrincipalName -contains "alias@domain")                               | (user.accountEnabled -eq true) -and (user.userPrincipalName -contains "alias@domain")Query has multiple errors. Parenthesis not in right place.                                                                                                                            |
 
 ##Supported Parameters

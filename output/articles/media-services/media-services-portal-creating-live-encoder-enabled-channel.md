@@ -82,7 +82,7 @@ To take advantage of dynamic packaging, you need to get at least one streaming u
 
 To change the number of streaming reserved units, do the following:
 
-1. In the [Management Portal](https://manage.windowsazure.cn/), click **Media Services**. Then, click the name of the media service.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Media Services**. Then, click the name of the media service.
 
 2. Select the STREAMING ENDPOINTS page. Then, click on the streaming endpoint that you want to modify.
 
@@ -102,7 +102,7 @@ To change the number of streaming reserved units, do the following:
  
 ##Create a CHANNEL
 
-1.	In the [Management Portal](http://manage.windowsazure.cn/), click Media Services and then click on the Media Services account name.
+1.	In the [Azure Management Portal](http://manage.windowsazure.cn/), click Media Services and then click on the Media Services account name.
 2.	Select the CHANNELS page.
 3.	Select Add+ to add a new channel.
 
@@ -132,7 +132,7 @@ On the **Encoding Preset** page, you can select system presets. Currently, the o
 
 ![standard3][standard3]
 
-On the **Channel Creation** page, you can define the IP addresses that are allowed to publish video to this channel. Allowed IP addresses can be specified as either a single IP address (e.g. ‘10.0.0.1’), an IP range using an IP address and a CIDR subnet mask (e.g. ‘10.0.0.1/22’), or an IP range using an IP address and a dotted decimal subnet mask (e.g. ‘10.0.0.1(255.255.252.0)’).
+On the **Channel Creation** page, you can define the IP addresses that are allowed to publish video to this channel. Allowed IP addresses can be specified as either a single IP address (e.g. '10.0.0.1'), an IP range using an IP address and a CIDR subnet mask (e.g. '10.0.0.1/22'), or an IP range using an IP address and a dotted decimal subnet mask (e.g. '10.0.0.1(255.255.252.0)').
 
 If no IP addresses are specified and there is no rule definition then no IP address will be allowed. To allow any IP address, create a rule and set 0.0.0.0/0.
 
@@ -254,6 +254,16 @@ If you are done streaming events and want to clean up the resources provisioned 
 
 - Currently, the max recommended duration of a live event is 8 hours. Please contact amslived at WindowsAzure.cn if you need to run a Channel for longer periods of time.
 - Make sure to have at least one streaming reserved unit on the streaming endpoint from which you want to stream content.
+
+
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
 
 
 [standard0]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard0.png

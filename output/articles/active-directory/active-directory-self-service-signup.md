@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/21/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 
@@ -164,11 +164,11 @@ For example:
 
 3. Then run the Get-MsolDomainVerificationDns cmdlet to create a challenge:
 
-	Get-MsolDomainVerificationDns –DomainName *your_domain_name* –Mode DnsTxtRecord
+	Get-MsolDomainVerificationDns -DomainName *your_domain_name* -Mode DnsTxtRecord
 
 	For example:
 
-	Get-MsolDomainVerificationDns –DomainName contoso.com –Mode DnsTxtRecord
+	Get-MsolDomainVerificationDns -DomainName contoso.com -Mode DnsTxtRecord
 
 4. Copy the value (the challenge) that is returned from this command.
 

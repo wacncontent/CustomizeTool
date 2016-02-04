@@ -254,27 +254,27 @@ Now that you understand how to get data into HDInsight, read the following artic
 [azure-powershell]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
 
 [azure-storage-client-library]: /documentation/articles/storage-dotnet-how-to-use-blobs/
-[azure-create-storage-account]: /documentation/articles/storage-create-storage-account
-[azure-azcopy-download]: /documentation/articles/storage-use-azcopy
-[azure-azcopy]: /documentation/articles/storage-use-azcopy
+[azure-create-storage-account]: ../storage-create-storage-account.md
+[azure-azcopy-download]: ../storage-use-azcopy.md
+[azure-azcopy]: ../storage-use-azcopy.md
 
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
 
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
+[hdinsight-get-started]: ../hdinsight-get-started.md
 
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
 
-[sqldatabase-create-configure]: /documentation/articles/sql-database-create-configure
+[sqldatabase-create-configure]: ../sql-database-create-configure.md
 
 [apache-sqoop-guide]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
-[Powershell-install-configure]: /documentation/articles/powershell-install-configure
+[Powershell-install-configure]: ../powershell-install-configure.md
 
-[azurecli]: /documentation/articles/xplat-cli-install
+[azurecli]: ../xplat-cli-install.md
 
 
 [image-azure-storage-explorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png

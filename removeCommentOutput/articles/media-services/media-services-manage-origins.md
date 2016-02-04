@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 
@@ -20,28 +20,29 @@
 - [Portal](/documentation/articles/media-services-manage-origins)
 - [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 
-In Windows Azure Media Services, a **Streaming Endpoint** represents a streaming service that can deliver content directly to a client player application, or to a Content Delivery Network (CDN) for further distribution. Media Services also provides seamless Azure CDN integration. The outbound stream from a StreamingEndpoint service can be a live stream, or a video on demand Asset in your Media Services account.  
+
+In Windows Azure Media Services, a **Streaming Endpoint** represents a streaming service that can deliver content directly to a client player application, or to a Content Delivery Network (CDN) for further distribution. Media Services also provides seamless Azure CDN integration. The outbound stream from a StreamingEndpoint service can be a live stream, or a video on demand Asset in your Media Services account.
 
 In addition, you can control the capacity of the Streaming Endpoint service to handle growing bandwidth needs by adjusting scale units (also known as streaming units). It is recommended to allocate one or more scale units for applications in production environment. Scale units provide you with both dedicated egress capacity that can be purchased in increments of 200 Mbps and additional functionality which functionality which includes: [dynamic packaging](/documentation/articles/media-services-dynamic-packaging-overview), CDN integration, and advanced configuration.
 
-Note that you are only billed when your StreamingEndpoint is in running state. 
+Note that you are only billed when your StreamingEndpoint is in running state.
 
 This topic gives an overview of the main functionalities that are provided by Streaming Endpoints. The topic also shows how to use the Azure Management Portal to manage streaming endpoints.
 
 
-##Adding and Deleting Streaming Endpoints 
+##Adding and Deleting Streaming Endpoints
 
 You can add or remove streaming endpoints using .NET SDK, REST API, or Azure Management Portal.
 
-To add\delete streaming endpoint using the Portal, do the following:
+To add\delete streaming endpoint using the Azure Management Portal, do the following:
 
-1. In the [Management Portal](https://manage.windowsazure.cn/), click **Media Services**. Then, click the name of the media service.
-2. Select the **STREAMING ENDPOINTS** page. 
-3. Click the ADD or DELETE button at the bottom of the page. Note that the default streaming endpoint cannot be deleted. 
-4. Click the START button to start the streaming endpoint. 
-5. Click on the name of the streaming endpoint to configure it.   
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Media Services**. Then, click the name of the media service.
+2. Select the **STREAMING ENDPOINTS** page.
+3. Click the ADD or DELETE button at the bottom of the page. Note that the default streaming endpoint cannot be deleted.
+4. Click the START button to start the streaming endpoint.
+5. Click on the name of the streaming endpoint to configure it.
 
-	![Streaming Endpoint page][streaming-endpoint]
+![Streaming Endpoint page][streaming-endpoint]
 
 
 By default you can have up to two streaming endpoints. If you need to request more, see [Quotas and limitations](/documentation/articles/media-services-quotas-and-limitations).
@@ -123,8 +124,8 @@ Once it is enabled, the following configurations get disabled: **Custom Host Nam
 
 ###Additional considerations
 
-- When CDN is enabled for a streaming endpoint, clients cannot request content directly from the origin. If you need the ability to test your content with or without CDN you can create another streaming endpoint that isn’t CDN enabled.
-- Your streaming endpoint hostname remains the same after enabling CDN. You don’t need to make any changes to your media services workflow after CDN is enabled. For example, if your streaming endpoint hostname is strasbourg.streaming.mediaservices.chinacloudapi.cn, after enabling CDN, the exact same hostname is used.
+- When CDN is enabled for a streaming endpoint, clients cannot request content directly from the origin. If you need the ability to test your content with or without CDN you can create another streaming endpoint that isnât CDN enabled.
+- Your streaming endpoint hostname remains the same after enabling CDN. You donât need to make any changes to your media services workflow after CDN is enabled. For example, if your streaming endpoint hostname is strasbourg.streaming.mediaservices.chinacloudapi.cn, after enabling CDN, the exact same hostname is used.
 - For new streaming endpoints, you can enable CDN simply by creating a new endpoint; for existing streaming endpoints, you will need to first stop the endpoint and then enable the CDN.
  
 
@@ -133,11 +134,11 @@ For more information see, [Announcing Azure Media Services integration with Azur
 
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
 
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 [streaming-endpoint-enable-cdn]: ./media/media-services-manage-origins/media-services-origins-enable-cdn.png
 [streaming-endpoint]: ./media/media-services-manage-origins/media-services-origins-page.png

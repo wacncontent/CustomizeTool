@@ -22,5 +22,5 @@ replaced by:
 
 		Go to the [Azure Management Portal](https://manage.windowsazure.cn).
 
-reason: ()
+reason: (preview portal)
 

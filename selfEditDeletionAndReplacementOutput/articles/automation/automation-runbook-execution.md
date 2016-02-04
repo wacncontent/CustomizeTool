@@ -4,23 +4,23 @@ deleted:
 
 		[Graphical runbooks](/documentation/articles/automation-runbook-types#graphical-runbooks) and
 
-reason: ()
+reason: (Graphical Runbook)
 
 deleted:
 
 		Graphical and
 
-reason: ()
+reason: (Graphical Runbook)
 
 deleted:
 
 		Graphical and
 
-reason: ()
+reason: (Graphical Runbook)
 
 deleted:
 
 		Graphical and
 
-reason: ()
+reason: (Graphical Runbook)
 

@@ -246,8 +246,8 @@ In this topic we showed how to create a simple Java REST client for Notification
 * Continue learning about Notification Hubs tagging feature in the [Breaking News tutorial]
 * Learn about pushing notifications to individual users in [Notify Users tutorial]
 
-For more information, see also the [PHP Developer Center](/develop/php/).
+<!-- For more information, see also the [PHP Developer Center](/develop/php/). -->
 
 [PHP REST wrapper sample]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
-[Get started tutorial]: /documentation/articles/notification-hubs-ios-get-started/
+[Get started tutorial]: /documentation/articles/notification-hubs-ios-get-started 
  

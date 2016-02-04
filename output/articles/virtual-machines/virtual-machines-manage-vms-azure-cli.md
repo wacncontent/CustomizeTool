@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Manage virtual machines with the CLI | Windows Azure"
    description="Automate the management of your Azure Resource Manager VMs by using the Azure Command-Line Interface (CLI)."
@@ -9,11 +11,14 @@
    tags="azure-resource-manager"/>
 
    <tags
-	ms.service="virtual-machines"
-	ms.date="10/07/2015"
-	wacn.date=""/>
+   ms.service="virtual-machines"
+   ms.date="10/07/2015"
+   wacn.date=""/>
 
 # Manage your Resource Manager virtual machines by using the Azure CLI for Mac, Linux, and Windows
+
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](/documentation/articles/virtual-machines-how-to-automate-azure-resource-manager).
 
 Many tasks you do each day to manage your VMs can by automated by using the Azure Command-Line Interface (CLI) for Mac, Linux, and Windows. This article gives you example commands for simpler tasks, and links to articles that show the commands for more complex tasks.
 
@@ -80,3 +85,4 @@ Of course, if you already have those values you can find the proper switches to 
 
 * For more examples of Azure CLI usage with the Azure Resource Manager mode, see [Using the Windows Azure CLI for Mac, Linux, and Windows with Azure Resource Management](/documentation/articles/xplat-cli-azure-resource-manager).
 
+* To learn more about Azure resources and their concepts, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).

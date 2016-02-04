@@ -7,5 +7,5 @@ deleted:
 		|South China East    |China East
 		|Japan East         |China East
 
-reason: ()
+reason: (region diff)
 

@@ -14,11 +14,9 @@
 	wacn.date=""/>
 
 #About Azure virtual machines 
-<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
--->
 
 Azure Virtual Machines is one of several types of on-demand, scalable computing resources that Azure offers. Typically, you'll choose a virtual machine if you need more control over the computing environment than the other choices offer.
 
@@ -34,7 +32,7 @@ Try out a virtual machine by creating a simple virtual machine quickly. For inst
 
 [Create a virtual machine running Linux](/documentation/articles/virtual-machines-linux-tutorial)
 
-[Create a virtual machine running Windows in the Azure preview portal](/documentation/articles/virtual-machines-windows-tutorial)
+[Create a virtual machine running Windows in the Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 
 Because those tutorials help you create a virtual machine quickly, they show you only one way to do it instead of describing the various tools you can use to create virtual machines. For a summary of these tools and links to instructions, see:
 
@@ -46,6 +44,6 @@ If you're just starting to learn about Azure virtual machines, be sure to also c
 
 
 <!--links-->
-[Azure Websites]: /documentation/services/web-sites
+[Azure Web App]: app-service-choose-me.md
 [Virtual Machines]: #tellmevm
-[Cloud Services]: /documentation/articles/cloud-services-choose-me
+[Cloud Services]: cloud-services-choose-me.md

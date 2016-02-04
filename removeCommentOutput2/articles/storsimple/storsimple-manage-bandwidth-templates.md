@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Manage your StorSimple bandwidth templates | Microsoft Azure"
+   pageTitle="Manage your StorSimple bandwidth templates | Windows Azure"
    description="Describes how to manage StorSimple bandwidth templates, which allow you to control bandwidth consumption."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="10/12/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 # Use the StorSimple Manager service to manage StorSimple bandwidth templates
 
@@ -29,13 +25,13 @@ With bandwidth throttling schedules you can:
 
 This feature is available only for StorSimple physical devices and not for virtual devices. All the bandwidth templates for your service are displayed in a tabular format, and contain the following information:
 
-- **Name** – A unique name assigned to the bandwidth template when it was created.
+– **Name** - A unique name assigned to the bandwidth template when it was created.
 
-- **Schedule** – The number of schedules contained in a given bandwidth template.
+– **Schedule** - The number of schedules contained in a given bandwidth template.
 
-- **Used by** – The number of volumes using the bandwidth templates.
+– **Used by** - The number of volumes using the bandwidth templates.
 
-You use the StorSimple Manager service **Configure** page in the Management Portal to manage bandwidth templates. The most common tasks related to bandwidth templates that can be performed on this page are:
+You use the StorSimple Manager service **Configure** page in the Azure Management Portal to manage bandwidth templates. The most common tasks related to bandwidth templates that can be performed on this page are:
 
 - Add a bandwidth template
 - Edit a bandwidth template
@@ -174,4 +170,4 @@ Follow these best practices for your StorSimple device:
 
 ## Next steps
 
-Learn more about [using the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+Learn more about [using the StorSimple Manager service to administer your StorSimple device](/documentation/articles/storsimple-manager-service-administration).

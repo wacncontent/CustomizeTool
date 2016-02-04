@@ -10,8 +10,11 @@
 	ms.date="06/22/2015"
 	wacn.date=""/>
 
-	
+
 #Configuring Oracle GoldenGate for Azure
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+
 
 This tutorial demonstrates how to setup Oracle GoldenGate for Azure Virtual Machines environment for high availability and disaster recovery. The tutorial focuses on [bi-directional replication](http://docs.oracle.com/goldengate/1212/gg-winux/GWUAD/wu_about_gg.htm) for non-RAC Oracle databases and requires that both sites are active.
 
@@ -23,15 +26,15 @@ This tutorial assumes that you already have theoretical and practical knowledge 
 
 In addition, the tutorial assumes that you have already implemented the following prerequisites:
 
-- You’ve already reviewed the High Availability and Disaster Recovery Considerations section in the [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images) topic. Note that Azure supports standalone Oracle Database instances but not Oracle Real Application Clusters (Oracle RAC) currently.
+- You've already reviewed the High Availability and Disaster Recovery Considerations section in the [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images) topic. Note that Azure supports standalone Oracle Database instances but not Oracle Real Application Clusters (Oracle RAC) currently.
 
-- You’ve downloaded the Oracle GoldenGate software from the [Oracle Downloads](http://www.oracle.com/us/downloads/index.html) web site. You’ve selected the Product Pack Oracle Fusion Middleware – Data Integration. Then, you’ve selected Oracle GoldenGate on Oracle v11.2.1 Media Pack for Microsoft Windows x64 (64-bit) for an Oracle 11g database. Next, download Oracle GoldenGate V11.2.1.0.3 for Oracle 11g 64bit on Windows 2008 (64bit).
+- You've downloaded the Oracle GoldenGate software from the [Oracle Downloads](http://www.oracle.com/us/downloads/index.html) web site. You've selected the Product Pack Oracle Fusion Middleware - Data Integration. Then, you've selected Oracle GoldenGate on Oracle v11.2.1 Media Pack for Microsoft Windows x64 (64-bit) for an Oracle 11g database. Next, download Oracle GoldenGate V11.2.1.0.3 for Oracle 11g 64bit on Windows 2008 (64bit).
 
 - You have created two Virtual Machines (VMs) in Azure using the platform provided Oracle Enterprise Edition image on Windows Server. For information, see [Creating an Oracle Database 12c Virtual Machine in Azure](#z3dc8d3c097cf414e9048f7a89c026f80) and [Azure Virtual Machines](/documentation/services/virtual-machines/). Make sure that the Virtual Machines are in the [same cloud service](/documentation/articles/virtual-machines-load-balance) and in the same [Virtual Network](/documentation/services/networking/) to ensure they can access each other over the persistent private IP address.
 
-- You’ve set the Virtual Machine names as “MachineGG1” for Site A and “MachineGG2” for Site B at the Azure Management Portal.
+- You've set the Virtual Machine names as "MachineGG1" for Site A and "MachineGG2" for Site B at the Azure Management Portal.
 
-- You’ve created test databases “TestGG1” on Site A and “TestGG2” on Site B.
+- You've created test databases "TestGG1" on Site A and "TestGG2" on Site B.
 
 - You log on to your Windows server as a member of the Administrators group or a member of the **ORA_DBA** group.
 
@@ -77,7 +80,7 @@ In this tutorial, you will:
 >
 >|                        | **Site A Database**              | **Site B Database**              |
 >|------------------------|----------------------------------|----------------------------------|
->| **Oracle Release**     | Oracle11g Release 2 – (11.2.0.1) | Oracle11g Release 2 – (11.2.0.1) |
+>| **Oracle Release**     | Oracle11g Release 2 - (11.2.0.1) | Oracle11g Release 2 - (11.2.0.1) |
 >| **Machine Name**       | MachineGG1                       | MachineGG2                       |
 >| **Operating System**   | Windows 2008 R2                  | Windows 2008 R2                  |
 >| **Oracle SID**         | TESTGG1                          | TESTGG2                          |
@@ -88,7 +91,7 @@ For subsequent releases of Oracle Database and Oracle GoldenGate, there might be
 ##1. Setup database on Site A and Site B
 This section explains how to perform the database prerequisites on both Site A and Site B. You must perform all the steps of this section on both sites: Site A and Site B.
 
-First, remote desktop to Site A and Site B via the Management Portal. Open up a Windows command prompt and create a home directory for Oracle GoldenGate setup files:
+First, remote desktop to Site A and Site B via the Azure Management Portal. Open up a Windows command prompt and create a home directory for Oracle GoldenGate setup files:
 
 	mkdir C:\OracleGG
 
@@ -218,7 +221,7 @@ Then, run the following scripts:
 	 SQL> @ddl_pin ggate
 
 
-Oracle GoldenGate tool requires a table level login for DDL (data definition language) support. That’s why, enable supplemental logging at the table level by using the ADD TRANDATA command. Open up Oracle GoldenGate Command interpreter window, login to database, and then run the ADD TRANDATA command:
+Oracle GoldenGate tool requires a table level login for DDL (data definition language) support. That's why, enable supplemental logging at the table level by using the ADD TRANDATA command. Open up Oracle GoldenGate Command interpreter window, login to database, and then run the ADD TRANDATA command:
 
 	GGSCI 5> DBLOGIN USERID ggate, PASSWORD ggate
 
@@ -279,7 +282,7 @@ Start the manager process:
 ###Create Extract and Data Pump processes on Site A
 
 You need to create the Extract and Data Pump processes on Site A and Site B.
-Remote desktop to Site A and Site B via the Management Portal. Open up GGSCI command interpreter window. Run the following commands on Site A:
+Remote desktop to Site A and Site B via the Azure Management Portal. Open up GGSCI command interpreter window. Run the following commands on Site A:
 
 	GGSCI (MachineGG1) 14> add extract ext1 tranlog begin now
 	EXTRACT added.
@@ -337,7 +340,7 @@ As a final step, save and close the GLOBALS parameter file.
 
 
 ###Add REPLICAT on Site B
-This section describes how to add a REPLICAT process “REP2” on Site B.
+This section describes how to add a REPLICAT process "REP2" on Site B.
 
 Use ADD REPLICAT command to create a Replicat group on Site B:
 
@@ -354,7 +357,7 @@ Open the parameter file using the EDIT PARAMS command and then append the follow
 
 ###Create Extract and Data Pump processes on Site B
 
-This section describes how to create a new extract process “EXT2” and a new data pump process “DPUMP2” on Site B:
+This section describes how to create a new extract process "EXT2" and a new data pump process "DPUMP2" on Site B:
 
 	GGSCI (MachineGG2) 3> add extract ext2 tranlog begin now
 	 EXTRACT added.
@@ -411,7 +414,7 @@ Save and close the GLOBALS parameter file.
 
 ###Add REPLICAT on Site A
 
-This section describes how to add a REPLICAT process “REP1” on Site A.
+This section describes how to add a REPLICAT process "REP1" on Site A.
 
 The following command creates a Replicat group rep1 with the name of a trail, and the associated checkpointtable.
 
@@ -532,7 +535,7 @@ Display the status and lag (where relevant) for all Manager, Extract, and Replic
 
 ### Start REPLICAT process on Site A
 
-This section describes how to start the REPLICAT process “REP1” on Site A.
+This section describes how to start the REPLICAT process "REP1" on Site A.
 
 Start the Replicat process on Site A:
 
@@ -547,7 +550,7 @@ Display the status of a Replicat group:
 
 ###Start REPLICAT process on Site B
 
-This section describes how to start the REPLICAT process “REP2” on Site B.
+This section describes how to start the REPLICAT process "REP2" on Site B.
 
 Start the Replicat process on Site B:
 
@@ -570,7 +573,7 @@ Remote Desktop to Site A. Open up SQL*Plus command window and run:
 	———
 	TESTGG
 
-	SQL> insert into inventory values  (100,’TV’,100,sysdate);
+	SQL> insert into inventory values  (100,'TV',100,sysdate);
 
 	1 row created.
 
@@ -589,12 +592,12 @@ Then, check if that row is replicated on Site B. To do this, remote desktop to S
 	SQL> select * from inventory;
 
 	PROD_ID PROD_CATEGORY QTY_IN_STOCK LAST_DML
-	———- ——————– ———— ———
+	———- ——————- ———— ———
 	100 TV 100 22-MAR-13
 
 Insert a new record at Site B:
 
-	SQL> insert into inventory  values  (101,’DVD’,10,sysdate);
+	SQL> insert into inventory  values  (101,'DVD',10,sysdate);
 	1 row created.
 
 	SQL> commit;
@@ -606,7 +609,7 @@ Remote desktop to Site A and check if the replication has taken place:
 	SQL> select * from inventory;
 
 	PROD_ID PROD_CATEGORY QTY_IN_STOCK LAST_DML
-	———- ——————– ———— ———
+	———- ——————- ———— ———
 	100 TV 100 22-MAR-13
 	101 DVD 10 22-MAR-13
 

@@ -1,30 +1,27 @@
-<properties
-	pageTitle="Get Started with Mobile Services for Xamarin Android apps | Windows Azure"
-	description="Learn how to use Azure Mobile Services and Notification Hubs to send push notifications to your Xamarin Android app"
-	services="mobile-services"
-	documentationCenter="xamarin"
-	authors="ggailey777"
-	manager="dwrede"
+<properties 
+	pageTitle="Get Started with Mobile Services for Xamarin Android apps - Azure Mobile Services" 
+	description="Learn how to use Azure Mobile Services and Notification Hubs to send push notifications to your Xamarin Android app" 
+	services="mobile-services" 
+	documentationCenter="xamarin" 
+	authors="ggailey777" 
+	manager="dwrede" 
 	editor="mollybos"/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="08/18/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # Add push notifications to your Mobile Services app
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
+##Overview
+
 This topic shows you how to use Azure Mobile Services to send push notifications to a Xamarin.Android app. In this tutorial you add push notifications using the Google Cloud Messaging (GCM) service to the [Get started with Mobile Services] project. When complete, your mobile service will send a push notification each time a record is inserted.
-
-This tutorial walks you through these basic steps to enable push notifications:
-
-1. [Enable Google Cloud Messaging](#register)
-2. [Configure Mobile Services](#configure)
-3. [Configure the project for push notifications](#configure-app)
-4. [Add push notifications code to your app](#add-push)
-5. [Insert data to receive notifications](#test)
 
 This tutorial requires the following:
 
@@ -35,7 +32,7 @@ You should already have the [Xamarin.Android] and [Azure Mobile Services][Azure 
 
 ##<a id="register"></a>Enable Google Cloud Messaging
 
-[AZURE.INCLUDE [Enable GCM](../includes/mobile-services-enable-google-cloud-messaging.md)]
+[AZURE.INCLUDE [Enable GCM](../includes/mobile-services-enable-Google-cloud-messaging.md)]
 
 ##<a id="configure"></a>Configure your mobile service to send push requests
 

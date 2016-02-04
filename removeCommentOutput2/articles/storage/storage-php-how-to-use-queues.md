@@ -4,12 +4,12 @@
 	documentationCenter="php"
 	services="storage"
 	authors="tfitzmac"
-	manager="adinah"
-	editor=""/>
+	manager="carmonm"
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/23/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # How to use Queue storage from PHP
@@ -58,7 +58,7 @@ To instantiate an Azure Queue storage client, you must first have a valid connec
 
 For accessing a live service:
 
-	DefaultEndpointsProtocol=[http|https];AccountName=[yourAccount];AccountKey=[yourKey]
+	DefaultEndpointsProtocol=[http|https];AccountName=[yourAccount];AccountKey=[yourKey];EndpointSuffix=core.chinacloudapi.cn 
 
 For accessing the emulator storage:
 
@@ -69,7 +69,7 @@ To create any Azure service client, you need to use the **ServicesBuilder** clas
 
 * Pass the connection string directly to it.
 * Use **CloudConfigurationManager (CCM)** to check multiple external sources for the connection string:
-	* By default, it comes with support for one external source—environmental variables.
+	* By default, it comes with support for one external sourceâenvironmental variables.
 	* You can add new sources by extending the **ConnectionStringSource** class.
 
 For the examples outlined here, the connection string will be passed directly.
@@ -372,7 +372,6 @@ To delete a queue and all the messages in it, call the **QueueRestProxy->deleteQ
 
 Now that you've learned the basics of Azure Queue storage, follow these links to learn about more complex storage tasks:
 
-- See the MSDN reference [Azure Storage](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx).
 - Visit the [Azure Storage Team blog](http://blogs.msdn.com/b/windowsazurestorage/).
 
 For more information, see also the [PHP Developer Center](/develop/php/).
@@ -380,4 +379,4 @@ For more information, see also the [PHP Developer Center](/develop/php/).
 [download]: /documentation/articles/php-download-sdk
 [require_once]: http://www.php.net/manual/en/function.require-once.php
 [Azure Management Portal]: http://manage.windowsazure.cn/
-[Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+

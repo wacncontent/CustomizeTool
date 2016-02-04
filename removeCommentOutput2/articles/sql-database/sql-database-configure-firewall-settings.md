@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="11/13/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 
@@ -18,26 +18,26 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](/documentation/articles/sql-database-configure-firewall-settings)
+- [Azure Management Portal](/documentation/articles/sql-database-configure-firewall-settings)
 - [TSQL](/documentation/articles/sql-database-configure-firewall-settings-tsql)
 - [PowerShell](/documentation/articles/sql-database-configure-firewall-settings-powershell)
 - [REST API](/documentation/articles/sql-database-configure-firewall-settings-rest)
 
 
-Windows Azure SQL Database uses firewall rules to allow connections to your servers and databases. You can define server-level and database-level firewall settings for the master or a user database in your Azure SQL Database server to selectively allow access to the database.
+SQL Database uses firewall rules to allow connections to your servers and databases. You can define server-level and database-level firewall settings for the master or a user database in your SQL Database logical server to selectively allow access to the database.
 
-> [AZURE.IMPORTANT]  To allow applications from Azure to connect to your database server, Azure connections must be enabled. For more information about firewall rules and enabling connections from Azure, see [Azure SQL Database Firewall](/documentation/articles/sql-database-firewall-configure). 
+> [AZURE.IMPORTANT] To allow applications from Azure to connect to your database server, Azure connections must be enabled. For more information about firewall rules and enabling connections from Azure, see [Azure SQL Database Firewall](/documentation/articles/sql-database-firewall-configure). You may have to open some additional TCP ports if you are making connections inside the Azure cloud boundary. For more information, see the **V12 of SQL Database: Outside vs inside** section of [Ports beyond 1433 for ADO.NET 4.5 and SQL Database V12](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)
 
 
-### Manage server-level firewall rules through the New Azure Management Portal
+### Manage server-level firewall rules through the Azure Management Portal
 
 
 [AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../includes/sql-database-include-ip-address-22-v12portal.md)]
 
 
-## Manage server-level firewall rules through Management Portal 
+## Manage server-level firewall rules 
 
-1. From the Management Portal, click **SQL Databases**. All databases and their corresponding servers are listed here.
+1. In the Azure Management Portal, click **SQL Databases**. All databases and their corresponding servers are listed here.
 2. Click **Servers** at the top of the page.
 3. Click the arrow beside the server for which you want to manage firewall rules.
 4. Click **Configure** at the top of the page.

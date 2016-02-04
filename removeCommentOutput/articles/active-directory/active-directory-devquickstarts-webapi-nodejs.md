@@ -47,11 +47,11 @@ To enable your app to authenticate users, you'll first need to register a new ap
 - In the left hand nav, click on **Active Directory**.
 - Select the tenant where you wish to register the application.
 - Click the **Applications** tab, and click add in the bottom drawer.
-- Follow the prompts and create a new **Web Application and/or WebAPI**.
+- Follow the prompts and create a new **web site and/or WebAPI**.
     - The **name** of the application will describe your application to end-users
-    -	The **Sign-On URL** is the base URL of your app.  The skeleton’s default is `https://localhost:8888`.
+    -	The **Sign-On URL** is the base URL of your app.  The skeleton's default is `https://localhost:8888`.
     - The **App ID URI** is a unique identifier for your application.  The convention is to use `https://<tenant-domain>/<app-name>`, e.g. `https://contoso.partner.onmschina.cn/my-first-aad-app`
-- Once you’ve completed registration, AAD will assign your app a unique client identifier.  You’ll need this value in the next sections, so copy it from the Configure tab.
+- Once you've completed registration, AAD will assign your app a unique client identifier.  You'll need this value in the next sections, so copy it from the Configure tab.
 
 ## Step 3: Download node.js for your platform
 To successfully use this sample, you must have a working installation of Node.js.
@@ -139,7 +139,7 @@ The output of this command should appear similar to the following:
 
 ## Step 6: Install Passport.js in to your Web API
 
-[Passport](http://passportjs.org/) is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Azure Active Directory. We will install this module and then add the Azure Active Directory strategy plug-in.
+[Passport](http://passportjs.org/) is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web site. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Azure Active Directory. We will install this module and then add the Azure Active Directory strategy plug-in.
 
 From the command-line, change directories to the azuread directory.
 

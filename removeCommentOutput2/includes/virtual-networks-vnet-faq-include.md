@@ -1,4 +1,4 @@
-﻿## Virtual Network Basics
+## Virtual Network Basics
 
 ### What is an Azure Virtual network (VNet)?
 
@@ -205,7 +205,7 @@ No. A MAC address cannot be statically configured.
 
 ### Will the MAC address remain the same for my VM once it has been created?
 
-No. A VM's MAC address can change for a different reasons. If the VM is put in the status Stopped (Deallocated), if you change the VM size, or if there is service healing or planned maintenance of the host server, the MAC address is not retained.
+No, but it will only change if the VM is put in the status Stopped (Deallocated). If you change the VM size, reboot, or in case of service healing or planned maintenance of the host server, the MAC address is retained.
 
 ### Can I connect to the internet from a VM in a VNet?
 
@@ -216,15 +216,6 @@ Yes. All services deployed within a VNet can connect to the Internet. Additional
 ### What services can I use with VNets?
 
 You can only use compute services within VNets. Compute services are limited to Cloud Services (web and worker roles) and VMs.
-
-### Can I use Web Apps with Virtual Network?
-
-Yes. You can deploy Web Apps inside a VNet using ASE (Azure Websites Environment). Adding to that, Web Apps can securely connect and access resources in your Azure VNet if you have point-to-site configured for your VNet. For more information, see the following:
-
-
-- [Creating Web Apps in an Azure Websites Environment](/documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase/)
-
-- [Web Apps Virtual Network Integration](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)
 
 - [Using VNet Integration and Hybrid Connections with Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 

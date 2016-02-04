@@ -4,11 +4,11 @@
    services="expressroute"
    documentationCenter="na"
    authors="cherylmc"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags
 	ms.service="expressroute"
-	ms.date="09/22/2015"
+	ms.date="01/15/2015"
 	wacn.date=""/>
 
 # ExpressRoute partners and peering locations
@@ -27,8 +27,8 @@ You will have access to Azure services across all regions within a geopolitical 
 |---|---|---|
 |**US**|All US Regions - China East, China North, China East 2, China North, China East, China North|Atlanta, Shanghai, Dallas, Los Angeles, Beijing, Seattle, Silicon Valley, Washington DC|
 |**South America**|Brazil South|Sao Paulo|
-|**Europe**|China North, West Europe|Amsterdam, London|
-|**Asia**|China East, China North|Hong Kong, Singapore|
+|**Europe**|China North, West Europe|Amsterdam, Dublin, London|
+|**Asia**|China East, China North, China North, China East|Beijing, Shanghai, Hong Kong, Singapore|  
 |**Japan**|China East, Japan East|Tokyo|
 |**Australia**|Australia Southeast, Australia East|Melbourne, Sydney|
 |**India**|India West, India Central, India South|Chennai, Mumbai|
@@ -51,9 +51,9 @@ Connectivity across geopolitical regions is not supported on the standard Expres
 
 | **Service provider**  |**Windows Azure** | **Office 365** | **Locations** |
 |-----------------------|--------------------|----------------|---------------|
-| **[Aryaka Networks]( http://www.aryaka.com/)** | Supported | Not Supported | Silicon Valley, Singapore, Washington DC |
-| **[AT&T NetBond]( https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** | Supported | Supported | Amsterdam, London+, Dallas, Silicon Valley, Washington DC |
-| **[British Telecom]( http://www.globalservices.bt.com/uk/en/news/bt_to_provide_connectivity_to_microsoft_azure)** | Supported | Supported | Amsterdam, London, Silicon Valley+, Washington DC |
+| **[Aryaka Networks]( http://www.aryaka.com/)** | Supported | Supported | Amsterdam, Silicon Valley, Singapore, Washington DC |
+| **[AT&T NetBond]( https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** | Supported | Supported | Amsterdam, Dallas, London, Silicon Valley, Singapore, Washington DC |
+| **[British Telecom]( http://www.globalservices.bt.com/uk/en/news/bt_to_provide_connectivity_to_microsoft_azure)** | Supported | Not Supported | Amsterdam, Hong Kong, London, Silicon Valley, Singapore, Tokyo, Washington DC |
 |**China Telecom Global** | Coming Soon | Not Supported | Hong Kong+ |
 | **[Colt]( http://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)**  |  Supported | Not Supported | Amsterdam, London |
 | **Comcast** | Supported | Not Supported | Silicon Valley, Washington DC |
@@ -65,15 +65,15 @@ Connectivity across geopolitical regions is not supported on the standard Expres
 | **[Level 3 Communications]( http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** | Supported | Not Supported | Amsterdam, Shanghai, Dallas, London, Seattle, Silicon Valley, Washington DC |
 | **Megaport** | Supported | Not Supported | Melbourne, Sydney |
 | **MTN** | Supported | Not Supported | London |
-| **NTT Communications** | Supported | Not Supported | London+, Tokyo |
+| **NTT Communications** | Supported | Coming soon | London, Tokyo |
 | **NEXTDC** | Supported | Not Supported | Melbourne, Sydney+ |
-| **[Orange]( http://www.orange-business.com/)** | Supported | Not Supported | Amsterdam, London, Silicon Valley, Washington DC |
-| **PCCW Global Limited** | Supported | Not Supported | Hong Kong |
+| **[Orange]( http://www.orange-business.com/)** | Supported | Not Supported | Amsterdam, London, Silicon Valley,  Washington DC |
+| **PCCW Global Limited** | Supported | Supported | Hong Kong |
 | **[SingTel]( http://info.singtel.com/about-us/news-releases/singtel-provide-secure-private-access-microsoft-azure-public-cloud)** |  Supported | Not Supported | Singapore |
 | **[Tata Communications](http://www.tatacommunications.com/lp/izo/azure/azure_index.html)** | Supported | Supported | Amsterdam, Chennai+, Hong Kong, London, Mumbai+, Singapore |
 | **[TeleCity Group]( http://www.telecitygroup.com/investor-centre/news_details.htm?locid=03100500400b00d&xml)** | Supported | Supported | Amsterdam, London |
-| **[Telstra Corporation]( http://www.telstra.com.au/business-enterprise/network-services/networks/cloud-direct-connect/)** | Supported | Not Supported | Melbourne+, Sydney |
-| **[Verizon](http://www.verizonenterprise.com/products/networking/secure-cloud-interconnect/)** | Supported | Supported | London, Hong Kong, Silicon Valley, Sydney, Tokyo, Washington DC |
+| **[Telstra Corporation]( http://www.telstra.com.au/business-enterprise/network-services/networks/cloud-direct-connect/)** | Supported | Not Supported | Melbourne, Sydney |
+| **[Verizon](http://www.verizonenterprise.com/products/networking/secure-cloud-interconnect/)** | Supported | Supported | Amsterdam, Hong Kong, London, Silicon Valley, Sydney, Tokyo, Washington DC |
 | **[Zayo Group]( http://www.zayo.com/)** | Supported | Not Supported | Shanghai, Silicon Valley, Washington DC |
 
  **+** denotes coming soon
@@ -117,6 +117,8 @@ Enabling private connectivity to fit your needs can be challenging, based on the
 |---|---|
 |**[Nimbo](http://www.nimbo.com/)**|US||
 |**[Dotnet Solutions](http://www.dotnetsolutions.co.uk/)**|EMEA|
+|**[Project Leadership](http://www.projectleadership.net/azure)** | US |
+|**[Perficient](http://www.perficient.com/Partners/Microsoft/Cloud/Azure-ExpressRoute)** | US |
 
 ## Next steps
 

@@ -9,18 +9,13 @@
    tags="azure-resource-manager,azure-service-management"/>
 
 <tags
-	ms.service="azure-resource-manager"
-	ms.date="08/25/2015"
+	ms.service="virtual-machines"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Azure Resource Manager Architecture
 
-<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
-<!-- keep by customization: end -->
 
 
 

@@ -110,12 +110,11 @@ The client connection differences between SQL Database V11 and V12 are highlight
 
 - [Connecting to SQL Database: Links, Best Practices and Design Guidelines](/documentation/articles/sql-database-connect-central-recommendations)
 
-
 <!-- deleted by customization
+
 - [Azure SQL Database firewall](/documentation/articles/sql-database-firewall-configure)
 
 
 - [How to: Configure firewall settings on SQL Database](/documentation/articles/sql-database-configure-firewall-settings)
-
 
 -->

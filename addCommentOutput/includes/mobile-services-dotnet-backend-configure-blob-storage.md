@@ -34,7 +34,7 @@ The existing **TodoItemController** is updated so that the **PostTodoItem** meth
 
 0. If you haven't yet created your storage account, see [How To Create a Storage Account].
 
-1. In the Management Portal, click **Storage**, click the storage account, then click **Manage Keys**. 
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Storage**, click the storage account, then click **Manage Keys**. 
 
 2. Make a note of the **Storage Account Name** and **Access Key**.
  
@@ -120,7 +120,7 @@ The existing **TodoItemController** is updated so that the **PostTodoItem** meth
 
    	This POST method now generates a new SAS for the inserted item, which is valid for 5 minutes, and assigns the value of the generated SAS to the `sasQueryString` property of the returned item. The `imageUri` property is also set to the resource path of the new BLOB to enable image display during binding in the client UI.
 
-	>[AZURE.NOTE] This code creates an SAS for an individual BLOB. If you need to upload multiple blobs to a container using the same SAS, you can instead call the <a <!-- deleted by customization href="http://dl.windowsazure.com/nodedocs/BlobService.html#generateSharedAccessSignature" --><!-- keep by customization: begin --> href="http://dl.windowsazure.cn/nodedocs/BlobService.html#generateSharedAccessSignature" <!-- keep by customization: end --> target="_blank">generateSharedAccessSignature method</a> with an empty blob resource name, like this:
+	>[AZURE.NOTE] This code creates an SAS for an individual BLOB. If you need to upload multiple blobs to a container using the same SAS, you can instead call the <a href="http://dl.windowsazure.com/nodedocs/BlobService.html#generateSharedAccessSignature" target="_blank">generateSharedAccessSignature method</a> with an empty blob resource name, like this: 
 	<pre><code>blobService.generateSharedAccessSignature(containerName, '', sharedAccessPolicy);</code></pre>
 
 Next, you will update the quickstart app to add image upload functionality by using the SAS generated on insert.
@@ -130,5 +130,5 @@ Next, you will update the quickstart app to add image upload functionality by us
 <!-- Images. -->
 
 <!-- URLs. -->
-[How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
+[How To Create a Storage Account]: <!-- deleted by customization ../articles/storage/storage-create-storage-account.md --><!-- keep by customization: begin --> /documentation/articles/storage-create-storage-account <!-- keep by customization: end -->
 [App settings]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

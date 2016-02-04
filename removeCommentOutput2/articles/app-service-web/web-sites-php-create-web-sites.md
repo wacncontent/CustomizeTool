@@ -53,9 +53,9 @@ For information about additional options, see [How to create and manage an Azure
 
 To create a PHP  Website using the Azure PowerShell cmdlets, do the following:
 
-1. Install the Azure PowerShell cmdlets by following the instructions here: [Get started with Azure PowerShell](/documentation/articles/install-configure-powershell#GetStarted).
+1. Install the Azure PowerShell cmdlets by following the instructions here: [Get started with Azure PowerShell](/documentation/articles/powershell-install-configure#GetStarted).
 
-1. Download and import your publish settings file by following the instructions here: [How to: Import publish settings](/documentation/articles/install-configure-powershell#ImportPubSettings).
+1. Download and import your publish settings file by following the instructions here: [How to: Import publish settings](/documentation/articles/powershell-install-configure#ImportPubSettings).
 
 1. Open a PowerShell command prompt and execute the following command:
 
@@ -87,7 +87,7 @@ For end-to-end tutorials, visit the [PHP Developer Center - Tutorials](/develop/
 [waws]: /zh-cn/documentation/services/web-sites
 [Azure Management Portal]: http://manage.windowsazure.cn/
 [xplat-tools]: /documentation/articles/xplat-cli
-[powershell-cmdlets]: /documentation/articles/install-configure-powershell
+[powershell-cmdlets]: /documentation/articles/powershell-install-configure
 [configure-php]: /documentation/articles/web-sites-php-configure
 [Website-mysql-git]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Websites-pricing]: /zh-cn/pricing/overview/

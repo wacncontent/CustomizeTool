@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="StorSimple virtual device Update 1 | Microsoft Azure"
-   description="Learn how to create, deploy, and manage a StorSimple virtual device in a Microsoft Azure virtual network. (Applies to StorSimple Update 1)."
+   pageTitle="StorSimple virtual device Update 1 | Windows Azure"
+   description="Learn how to create, deploy, and manage a StorSimple virtual device in a Windows Azure virtual network. (Applies to StorSimple Update 1)."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/16/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/01/2015"
+	wacn.date=""/>
 
 # Deploy and manage a StorSimple virtual device in Azure
 
@@ -57,7 +53,7 @@ Keep the following security considerations in mind when you use the StorSimple v
 
 - The virtual device is secured through your Microsoft Azure subscription. This means that if you are using the virtual device and your Azure subscription is compromised, the data stored on your virtual device is also susceptible.
 
-- The public key of the certificate used to encrypt data stored in Azure StorSimple is securely made available to the Microsoft Azure management portal, and the private key is retained with the StorSimple device. On the StorSimple virtual device, both the public and private keys are stored in Azure. 
+- The public key of the certificate used to encrypt data stored in Azure StorSimple is securely made available to the Azure Management Portal, and the private key is retained with the StorSimple device. On the StorSimple virtual device, both the public and private keys are stored in Azure.
 
 - The virtual device is hosted in the Microsoft Azure datacenter.
 
@@ -70,13 +66,13 @@ The following sections will help you prepare to use the StorSimple virtual devic
 
 Before you provision the virtual device, you need to make the following preparations in your Azure environment:
 
-- For the virtual device, [configure a virtual network on Azure](../virtual-network/virtual-networks-create-vnet.md). 
+- For the virtual device, [configure a virtual network on Azure](../virtual-network/virtual-networks-create-vnet.md).
 - It is advisable to use the default DNS server provided by Azure instead of specifying your own DNS server name. If your DNS server name is not valid, creation of the virtual device will fail.
 - Point-to-site and site-to-site are optional, but not required. If you wish, you can configure these options for more advanced scenarios. 
 
 >[AZURE.IMPORTANT] **Make sure that the virtual network is in the same region as the cloud storage accounts that you are going to be using with the virtual device.**
 
-- You can create [Azure Virtual Machines](../virtual-machines/virtual-machines-about.md) (host servers) in the virtual network that can use the volumes exposed by the virtual device. These servers must meet the following requirements: 							
+- You can create [Azure Virtual Machines](../virtual-machines/virtual-machines-about.md) (host servers) in the virtual network that can use the volumes exposed by the virtual device. These servers must meet the following requirements:
 	- Be Windows or Linux VMs with iSCSI Initiator software installed
 	- Be running in the same virtual network as the virtual device
 	- Be able to connect to the iSCSI target of the virtual device through the internal IP address of the virtual device
@@ -118,7 +114,7 @@ After you have created a virtual network, configured a StorSimple Manager servic
 
 Perform the following steps to create the StorSimple virtual device.
 
-1.  In the Management Portal, go to the **StorSimple Manager** service.
+1.  In the Azure Management Portal, go to the **StorSimple Manager** service.
 
 2. Go to the **Devices** page. Click **Create virtual device** at the bottom of the **Devices** page.
 
@@ -130,14 +126,14 @@ Perform the following steps to create the StorSimple virtual device.
 
 	2. **Version** - Choose the version of the virtual device. This option will be absent if you only have Update 1 (or above) physical devices registered with this service. This field is presented only if you have a combination of pre-update 1 and Update 1 physical devices registered with the service. Given the version of the virtual device will determine which physical device you can failover or clone from, it is important that you create an appropriate version of the virtual device. Select:
 
-	   - Version Update 0.3 if you will fail over or DR from a physical device with GA Release or Updates 0.1 to 0.3. 
+	   - Version Update 0.3 if you will fail over or DR from a physical device with GA Release or Updates 0.1 to 0.3.
 	   - Version Update 1 if you will fail over or clone from a physical device with Update 1 (or above). 
  
 	3. **Virtual Network** – The name of the virtual network that you want to use with this virtual device.
 
 	4. **Subnet** – The subnet on the virtual network for use with the virtual device.
 
-	5. **Storage Account for Virtual Device Creation** – The storage account that will be used to hold the image of the virtual device during provisioning. This storage account should be in the same region as the virtual device and virtual network. It should not be used for data storage by either the physical device or the virtual device. By default, a new storage account will be created for this purpose. However, if you know that you already have a storage account that is suitable for this use, you can select it from the list. 
+	5. **Storage Account for Virtual Device Creation** – The storage account that will be used to hold the image of the virtual device during provisioning, and will host the disks of the virtal device after provisioning. This storage account should be in the same region as the virtual device and virtual network. It should not be used for data storage by either the physical device or the virtual device. By default, a new storage account will be created for this purpose. However, if you know that you already have a storage account that is suitable for this use, you can select it from the list.
 
     >[AZURE.NOTE] The virtual device can only work with the Azure storage accounts. Other cloud service providers such as Amazon, HP and OpenStack (that are supported for the physical device) are not supported for the StorSimple virtual device.
 	
@@ -259,8 +255,8 @@ The following sections discuss some of the differences you will encounter when w
 
 Because it is a software-only device, maintenance for the virtual device is minimal when compared to maintenance for the physical device. You have the following options:
 
-- **Software updates** – You can view the date that the software was last updated, together with any update status messages. You can use the **Scan updates** button at the bottom of the page to perform a manual scan if you want to check for new updates. If updates are available, click **Install Updates** to install. Because there is only a single interface on the virtual device, this means that there will be a slight service interruption when updates are applied. The virtual device will shut down and restart (if necessary) to apply any updates that have been released.
-- **Support package** – You can create and upload a support package to help Microsoft Support troubleshoot issues with your virtual device.
+– **Software updates** - You can view the date that the software was last updated, together with any update status messages. You can use the **Scan updates** button at the bottom of the page to perform a manual scan if you want to check for new updates. If updates are available, click **Install Updates** to install. Because there is only a single interface on the virtual device, this means that there will be a slight service interruption when updates are applied. The virtual device will shut down and restart (if necessary) to apply any updates that have been released.
+– **Support package** - You can create and upload a support package to help Microsoft Support troubleshoot issues with your virtual device.
 
 ### Storage accounts for a virtual device
 
@@ -294,7 +290,7 @@ However, if you want to connect directly to the virtual device from another comp
 
 Perform the following steps to create a public endpoint on the virtual device.
 
-1. Sign in to the Management Portal.
+1. Sign in to the Azure Management Portal.
 
 - Click **Virtual Machines**, and then select the virtual machine that is being used as your virtual device.
 
@@ -376,7 +372,7 @@ If you delete or shut down the virtual device, it will appear as **Offline** on 
 
 ### To shut down the StorSimple virtual device
 
-1. Sign in to the Management Portal.
+1. Sign in to the Azure Management Portal.
 
 2. Click **Virtual Machines**, and then select the virtual device.
 
@@ -384,7 +380,7 @@ If you delete or shut down the virtual device, it will appear as **Offline** on 
 
 ### To delete the StorSimple virtual device
 
-1. Sign in to the Management Portal.
+1. Sign in to the Azure Management Portal.
 
 - Click **Virtual Machines**, and then select the virtual device.
 
@@ -392,4 +388,4 @@ If you delete or shut down the virtual device, it will appear as **Offline** on 
 
 ## Next steps
 
-Learn how to [Restore a StorSimple volume from a backup set](storsimple-restore-from-backup-set.md). 
+Learn how to [Restore a StorSimple volume from a backup set](storsimple-restore-from-backup-set.md).

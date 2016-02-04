@@ -6,10 +6,10 @@
  authors="krisragh" 
  manager="dwrede" 
  editor=""/>
-<tags
-	ms.service="scheduler"
-	ms.date="08/04/2015"
-	wacn.date=""/>
+<tags 
+ ms.service="scheduler" 
+ ms.date="12/04/2015" 
+ wacn.date=""/>
  
 # Scheduler PowerShell Cmdlets Reference
 
@@ -35,18 +35,19 @@ The following table describes and links to the reference page of each of the maj
  
  [What is Scheduler?](/documentation/articles/scheduler-intro)
  
- [Scheduler Concepts, Terminology, and Entity Hierarchy](/documentation/articles/scheduler-concepts-terms)
+ [Azure Scheduler Concepts, Terminology, and Entity Hierarchy](/documentation/articles/scheduler-concepts-terms)
  
  [Get Started Using Scheduler in the Management Portal](/documentation/articles/scheduler-get-started-portal)
  
  [Plans and Billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
  
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
+ [Azure Scheduler REST API Reference](https://msdn.microsoft.com/zh-cn/library/dn528946)   
  
- [Scheduler REST API Reference](https://msdn.microsoft.com/zh-cn/library/dn528946)   
+ [Azure Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
+ [Azure Scheduler limits, defaults, and error codes](/documentation/articles/scheduler-limits-defaults-errors)
+ [Azure Scheduler outbound authentication](/documentation/articles/scheduler-outbound-authentication)
  
- [Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
- 
- [Scheduler Outbound Authentication](/documentation/articles/scheduler-outbound-authentication)
+  
+
 
   

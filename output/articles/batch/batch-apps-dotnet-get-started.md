@@ -22,16 +22,16 @@ Batch Apps is a feature of Azure Batch that provides an application-centric way 
 
 In the Batch Apps scenario, you write code using the Batch Apps Cloud SDK to partition jobs into parallel tasks, describe any dependencies between these tasks, and specify how to execute each task.  This code is deployed to the Batch account.  Clients can then execute jobs simply by specifying the kind of job and the input files to a REST API.
 
->[AZURE.NOTE] To complete this tutorial, you need an Azure account. You can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/). You can use NuGet to obtain both the <a href="http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps.Cloud/">Batch Apps Cloud</a> assembly and the <a href="http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps/">Batch Apps Client</a> assembly. After you create your project in Visual Studio, right-click the project in **Solution Explorer** and choose **Manage NuGet Packages**. You can also download the Visual Studio Extension for Batch Apps which includes a project template to cloud-enable applications and ability to deploy an application <a href="https://visualstudiogallery.msdn.microsoft.com/8b294850-a0a5-43b0-acde-57a07f17826a">here</a> or via searching for **Batch Apps** in Visual Studio via the Extensions and Updates menu item.  You can also find <a href="https://github.com/Azure/azure-batch-samples">end-to-end samples on MSDN.</a>
+>[AZURE.NOTE] To complete this tutorial, you need an Azure account. You can create a trial account in just a couple of minutes. For details, see [Azure Trial](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/). You can use NuGet to obtain both the <a href="http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps.Cloud/">Batch Apps Cloud</a> assembly and the <a href="http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps/">Batch Apps Client</a> assembly. After you create your project in Visual Studio, right-click the project in **Solution Explorer** and choose **Manage NuGet Packages**. You can also download the Visual Studio Extension for Batch Apps which includes a project template to cloud-enable applications and ability to deploy an application <a href="https://visualstudiogallery.msdn.microsoft.com/8b294850-a0a5-43b0-acde-57a07f17826a">here</a> or via searching for **Batch Apps** in Visual Studio via the Extensions and Updates menu item.  You can also find <a href="https://github.com/Azure/azure-batch-samples">end-to-end samples on MSDN.</a>
 >
 
 ###Fundamentals of Azure Batch Apps
 Batch is designed to work with existing compute-intensive applications. It leverages your existing application code and runs it in a dynamic, virtualized, general-purpose environment. To enable an application to work with Batch Apps there are a couple of things that need to be done:
 
-1.	Prepare a zip file of your existing application executables – the same executables that would be run in a traditional server farm or cluster – and any support files it needs. This zip file is then uploaded to your Batch account using the management portal or REST API.
+1.	Prepare a zip file of your existing application executables - the same executables that would be run in a traditional server farm or cluster - and any support files it needs. This zip file is then uploaded to your Batch account using the management portal or REST API.
 2.	Create a zip file of the "cloud assemblies" that dispatch your workloads to the application, and upload it via the management portal or REST API. A cloud assembly contains two components which are built against the Cloud SDK:
-	1.	Job Splitter – which breaks the job down into tasks that can be processed independently. For example, in an animation scenario, the job splitter would take a movie job and break it down into individual frames.
-	2.	Task Processor – which invokes the application executable for a given task. For example, in an animation scenario, the task processor would invoke a rendering program to render the single frame specified by the task at hand.
+	1.	Job Splitter - which breaks the job down into tasks that can be processed independently. For example, in an animation scenario, the job splitter would take a movie job and break it down into individual frames.
+	2.	Task Processor - which invokes the application executable for a given task. For example, in an animation scenario, the task processor would invoke a rendering program to render the single frame specified by the task at hand.
 3.	Provide a way to submit jobs to the enabled application in Azure. This might be a plugin in your application UI or a web portal or even an unattended service as part of your execution pipeline. See the <a href="https://github.com/Azure/azure-batch-samples">samples</a> on MSDN for examples.
 
 
@@ -40,7 +40,7 @@ Batch is designed to work with existing compute-intensive applications. It lever
 The Batch Apps programming and usage model revolves around the following key concepts:
 
 ####Jobs
-A **job** is a piece of work submitted by the user. When a job is submitted, the user specifies the type of job, any settings for that job, and the data required for the job. Either the enabled implementation can work out these details on the user’ behalf or in some cases the user can provide this information explicitly via the client. A job has results that are returned. Each job has a primary output and optionally a preview output. Jobs can also return extra outputs if desired.
+A **job** is a piece of work submitted by the user. When a job is submitted, the user specifies the type of job, any settings for that job, and the data required for the job. Either the enabled implementation can work out these details on the user' behalf or in some cases the user can provide this information explicitly via the client. A job has results that are returned. Each job has a primary output and optionally a preview output. Jobs can also return extra outputs if desired.
 
 ####Tasks
 A **task** is a piece of work to be done as part of a job. When a user submits a job, it is broken up into smaller tasks. The service then processes these individual tasks, then assemblies the task results into an overall job output. The nature of tasks depends on the kind of job. The Job Splitter defines how a job is broken down into tasks, guided by the knowledge of what chunks of work the application is designed to process. Task outputs can also be download individually and might be useful in some cases, e.g. when a user may want to download individual tasks from an animation job.
@@ -76,7 +76,7 @@ Your SplitIntoTasks implementation must return a sequence of tasks. Each task re
 The tasks specified by the job splitter are represented as TaskSpecifier objects. TaskSpecifier has a number of properties which you can set before you return the task.
 
 
--	TaskIndex is ignored, but is available to task processors. You can use this to pass an index to the task processor. If you don’t need to pass an index, you don’t need to set this property.
+-	TaskIndex is ignored, but is available to task processors. You can use this to pass an index to the task processor. If you don't need to pass an index, you don't need to set this property.
 -	Parameters is an empty collection by default. You can add to it or replace it with a new collection. You can copy entries from the job parameters collection using the WithJobParameters or WithAllJobParameters method.  
 
 
@@ -92,7 +92,7 @@ The task will not run until the output of the depended on task is available.
 
 You can also specify that a whole group of tasks should not start processing until another group has completely finished. In this case you can set the TaskSpecifier.Stage property. Tasks with a given Stage value will not begin processing until all tasks with lower Stage values have finished; for example, tasks with Stage 3 will not begin processing until all tasks with Stage 0, 1 or 2 have finished. Stages must begin at 0, the sequence of stages must have no gaps, and SplitIntoTasks must return tasks in stage order: for example, it is an error to return a task with Stage 0 after a task with Stage 1.
 
-Every parallel job ends with a special task called the merge task. The merge task’s job is to assemble the results of the parallel processing tasks into a final result. Batch Apps automatically creates the merge task for you.  
+Every parallel job ends with a special task called the merge task. The merge task's job is to assemble the results of the parallel processing tasks into a final result. Batch Apps automatically creates the merge task for you.  
 
 In rare cases, you may want to explicitly control the merge task, for example to customize its parameters. In this case, you can specify the merge task by returning a TaskSpecifier with its IsMerge property set to true. This will override the automatic merge task. If you create an explicit merge task:  
 

@@ -7,14 +7,10 @@
 	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 # IIS Authentication
 
@@ -35,8 +31,8 @@ To secure an IIS web application that uses form-based authentication, install th
 5. Check the Require Multi-Factor Authentication user match box if all users have been or will be imported into the Server and subject to multi-factor authentication. If a significant number of users have not yet been imported into the Server and/or will be exempt from multi-factor authentication, leave the box unchecked.
 6. If the page variables cannot be detected automatically, click the Specify Manually… button in the Auto-Configure Form-Based Website dialog box.
 7. In the Add Form-Based Website dialog box, enter the URL to the login page in the Submit URL field and enter an Application name (optional). The Application name appears in Azure Multi-Factor Authentication reports and may be displayed within SMS or Mobile App authentication messages. See the help file for more information on the Submit URL. 
-8. Select the correct Request format. This is set to “POST or GET” for most web applications.
-9. Enter the Username variable, Password variable and Domain variable (if it appears on the login page). You may need to navigate to the login page in a web browser, right-click on the page and select “View Source” to find the names of the input boxes within the page.
+8. Select the correct Request format. This is set to "POST or GET" for most web applications.
+9. Enter the Username variable, Password variable and Domain variable (if it appears on the login page). You may need to navigate to the login page in a web browser, right-click on the page and select "View Source" to find the names of the input boxes within the page.
 10. Check the Require Azure Multi-Factor Authentication user match box if all users have been or will be imported into the Server and subject to multi-factor authentication. If a significant number of users have not yet been imported into the Server and/or will be exempt from multi-factor authentication, leave the box unchecked. See the help file for additional information on this feature.
 11.  Click the Advanced… button to review advanced settings, including the ability to select a custom denial page file, to cache successful authentications to the website for a period of time using cookies and to select whether to authenticate the primary credentials against the Windows Domain, an LDAP directory or a RADIUS server. When complete click the OK button to return to the Add Form-Based Website dialog box. See the help file for more information on the advanced settings.
 12. Click the OK button.

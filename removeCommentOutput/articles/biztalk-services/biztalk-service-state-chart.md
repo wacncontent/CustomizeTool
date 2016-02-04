@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Tasks allowed in different states or statuses in BizTalk Services | Microsoft Azure" 
+	pageTitle="Tasks allowed in different states or statuses in BizTalk Services | Windows Azure" 
 	description="The actions/operations allowed in different MABS status: stop, start, restart, suspend, resume, delete, scale, update configuration, and backing up" 
 	services="biztalk-services" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="biztalk-services" 
-	ms.workload="integration" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/26/2015" 
-	ms.author="mandia"/>
+<tags
+	ms.service="biztalk-services"
+	ms.date="08/26/2015"
+	wacn.date=""/>
 
 
 

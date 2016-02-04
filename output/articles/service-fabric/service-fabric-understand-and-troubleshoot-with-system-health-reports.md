@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Using System health reports for troubleshooting"
-   description="Describes the System Health reports and how to use them for troubleshooting cluster or application issues"
+   pageTitle="Troubleshoot with System health reports | Windows Azure"
+   description="Describes the health reports sent by Azure Service Fabric components and their usage for troubleshooting cluster or application issues."
    services="service-fabric"
    documentationCenter=".net"
    authors="oanapl"
@@ -8,19 +8,15 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/03/2015"
-   ms.author="oanapl"/>
+	ms.service="service-fabric"
+	ms.date="10/23/2015"
+	wacn.date=""/>
 
 # Using System health reports for troubleshooting
 
-Service Fabric components report out of the box on all entities in the cluster. The [Health Store](service-fabric-health-introduction.md#health-store) creates and deletes entities based on the system reports, and organizes them in an hierarchy that captures entity interactions.
+Service Fabric components report out of the box on all entities in the cluster. The [Health Store](/documentation/articles/service-fabric-health-introduction#health-store) creates and deletes entities based on the system reports, and organizes them in an hierarchy that captures entity interactions.
 
-> [AZURE.NOTE] Read more about the [Service Fabric Health Model](service-fabric-health-introduction.md) to understand health related concepts.
+> [AZURE.NOTE] Read more about the [Service Fabric Health Model](/documentation/articles/service-fabric-health-introduction) to understand health related concepts.
 
 The System health reports provide visibility into cluster and application functionality and flag issues through health. For application and services, the System health reports verify that entities are implemented and are behaving correctly from Service Fabric perspective. The reports do not provide any health monitoring of the business logic of the service or detection of hung processes. User services can enrich the health data with information specific to their logic.
 
@@ -532,9 +528,9 @@ System.Hosting reports Error if validation during upgrade fails or if upgrade fa
 - Description: points to the error encountered.
 
 ## Next steps
-[How to view Service Fabric health reports](service-fabric-view-entities-aggregated-health.md)
+[How to view Service Fabric health reports](/documentation/articles/service-fabric-view-entities-aggregated-health)
 
-[How to Monitor and Diagnose Services locally](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md)
+[How to Monitor and Diagnose Services locally](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally)
 
-[Service Fabric Application Upgrade](service-fabric-application-upgrade.md)
+[Service Fabric Application Upgrade](/documentation/articles/service-fabric-application-upgrade)
  

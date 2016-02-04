@@ -15,9 +15,16 @@
 
 # Securing AngularJS Single Page Apps with Azure AD
 
+<!-- deleted by customization
 [AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
 
 [AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher)]
+
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide)]
+<!-- keep by customization: end -->
 
 Azure AD makes it simple and straightforward for you to add sign in, sign out, and secure OAuth API calls to your single page apps.  It enables your app to authenticate users with their Active Directory accounts and consume any web API protected by Azure AD, such as the Office 365 APIs or the Azure API.
 
@@ -28,7 +35,7 @@ For javascript applications running in a browser, Azure AD provides the Active D
 - Securely calls the app's To Do List API using Bearer tokens from AAD.
 - Signs the user out of the app.
 
-To build the complete working application, you'll need to:
+To build the complete working application, <!-- deleted by customization you'll --><!-- keep by customization: begin --> you will <!-- keep by customization: end --> need to:
 
 2. Register your application with Azure AD.
 3. Install ADAL & Configure the SPA.
@@ -43,7 +50,7 @@ To enable your app to authenticate users and get tokens, you'll first need to re
 -	In the left hand nav, click on **Active Directory**
 -	Select a tenant in which to register the application.
 -	Click the **Applications** tab, and click **Add** in the bottom drawer.
--	Follow the prompts and create a new **Web Application and/or WebAPI**.
+-	Follow the prompts and create a new <!-- deleted by customization **web site --><!-- keep by customization: begin --> **Web Site <!-- keep by customization: end --> and/or WebAPI**.
     -	The **Name** of the application will describe your application to end-users.
     -	The **Redirect Uri** is location to which AAD will return tokens.  The default location for this sample is `https://localhost:44326/`
 -	Once you've completed registration, AAD will assign your app a unique **Client ID**.  You'll need this value in the next sections, so copy it from the **Configure** tab.
@@ -121,7 +128,7 @@ $scope.logout = function () {
 };
 ...
 ```
-- You might also want to present user information in the app's UI.  The adal service has already been added to the `userDataCtrl` controller, so you can access the `userInfo` object in the associated view, `App/Scripts/UserData.html`:
+- You might also want to present user information in the app's UI.  The adal service has already been added to the `userDataCtrl` controller, so you can access the `userInfo` object in the associated view, <!-- deleted by customization `App/Views/UserData.html` --><!-- keep by customization: begin --> `App/Scripts/UserData.html` <!-- keep by customization: end -->:
 
 ```js
 <p>{{userInfo.userName}}</p>
@@ -145,4 +152,9 @@ For reference, the completed sample (without your configuration values) is provi
 
 [Call a CORS Web API from a SPA >>](https://github.com/AzureAdSamples/SinglePageApp-WebAPI-AngularJS-DotNet)
 
+<!-- deleted by customization
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]
+<!-- keep by customization: end -->

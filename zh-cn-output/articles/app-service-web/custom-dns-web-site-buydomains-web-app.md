@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="05/21/2015"
-	wacn.date=""/>
+	wacn.date="11/27/2015"/>
 
 # 在 Azure App Service 中购买和配置自定义域名
 
@@ -20,13 +20,13 @@
 
 </div>
 
-[AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../includes/websites-cloud-services-css-guided-walkthrough.md)]
+[AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
-当你创建 Web 应用时，Azure 会将其分配给 chinacloudsites.cn 的子域。例如，如果你的 Web 应用名为 **contoso**，URL 为 **contoso.chinacloudsites.cn**。Azure 还会将分配一个虚拟 IP 地址。
+当你创建 Web 应用时，Azure 会将其分配给 azurewebsites.net 的子域。例如，如果你的 Web 应用名为 **contoso**，URL 为 **contoso.azurewebsites.net**。Azure 还会将分配一个虚拟 IP 地址。
 
-对于生产 Web 应用，你可能希望用户看到的自定义域名。本文介绍如何使用 [App Service Web Apps](/documentation/services/web-sites/) 购买和配置自定义域。
+对于生产 Web 应用，你可能希望用户看到的自定义域名。本文介绍如何使用 [App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714) 购买和配置自定义域。
 
-[AZURE.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]
+[AZURE.INCLUDE [introfooter](../../includes/custom-dns-web-site-intro-notes.md)]
 
 
 ## 概述

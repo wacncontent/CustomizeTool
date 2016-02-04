@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Monitor Web Apps in Azure Websites"
-	description="Learn how to monitor Web Apps in Azure Websites by using the Management Portal."
+	pageTitle="Monitor Web Apps in Azure"
+	description="Learn how to monitor Web Apps in Azure by using the Management Portal."
 	services="app-service"
 	documentationCenter=""
 	authors="cephalin"
@@ -12,9 +12,9 @@
 	ms.date="10/14/2015"
 	wacn.date=""/>
 
-#<a name="howtomonitor"></a>Monitor Web Apps in Azure Websites
+#<a name="howtomonitor"></a>Monitor Web Apps in Azure
 
-[Azure Websites](/documentation/services/web-sites/) provide monitoring functionality for Standard App Service plans via the Monitor management page. The Monitor management page provides performance statistics for a web app as described below.
+[Azure Web Apps](/documentation/services/web-sites/) provide monitoring functionality for Standard App Service plans via the Monitor management page. The Monitor management page provides performance statistics for a web app as described below.
 ## Table of Contents ##
 - [How to: Add web site metrics](#websitemetrics)
 - [How to: Receive alerts from web site metrics](#howtoreceivealerts)
@@ -28,12 +28,12 @@
 >[AZURE.NOTE] The retention policy for app metrics varies by granularity.
 
 - **Minute** granularity metrics are retained for **24 hours**
-- **Hour** granultarity metris are retained for **7 days**
-- **Day** granularity metrics are ratianed for **30 days**
+- **Hour** granularity metrics are retained for **7 days**
+- **Day** granularity metrics are retained for **30 days**
 
 ##<a name="websitemetrics"></a>How to: Add web app metrics
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn), from the web app's page, click the **Monitor** tab to display the **Monitor** management page. By default the chart on the **Monitor** page displays the same metrics as the chart on the **Dashboard** page.
+1. In the [Management Portal](https://manage.windowsazure.cn), from the web app's page, click the **Monitor** tab to display the **Monitor** management page. By default the chart on the **Monitor** page displays the same metrics as the chart on the **Dashboard** page.
 
 2. To view additional metrics for the web app, click **Add Metrics** at the bottom of the page to display the **Choose Metrics** dialog box.
 
@@ -53,15 +53,15 @@ In **Standard** web app mode, you can receive alerts based on your web app monit
 
 ##<a name="howtoviewusage"></a>How to: View usage quotas for a web app
 
-Web apps can be configured to run in either **Shared** or **Standard** mode from the web app's **Scale** management page in the [Azure Management Portal](https://manage.windowsazure.cn). Each Azure subscription has access to a pool of resources provided for the purpose of running up to 100 web apps per region in **Shared** mode. The pool of resources available to each web app subscription for this purpose is shared by other web app in the same geo-region that are configured to run in **Shared** mode. Because these resources are shared for use by other web apps, all subscriptions are limited in their use of these resources. Limits applied to a subscription's use of these resources are expressed as usage quotas listed under the usage overview section of each web app's **Dashboard** management page.
+Web apps can be configured to run in either **Shared** or **Standard** mode from the web app's **Scale** management page in the [Management Portal](https://manage.windowsazure.cn). Each Azure subscription has access to a pool of resources provided for the purpose of running up to 100 web apps per region in **Shared** mode. The pool of resources available to each web app subscription for this purpose is shared by other web app in the same geo-region that are configured to run in **Shared** mode. Because these resources are shared for use by other web apps, all subscriptions are limited in their use of these resources. Limits applied to a subscription's use of these resources are expressed as usage quotas listed under the usage overview section of each web app's **Dashboard** management page.
 
 >[AZURE.NOTE] When a web app is configured to run in **Standard** mode, it is allocated dedicated resources equivalent to the **Small** (default), **Medium** or **Large** virtual machine sizes in the table at [Virtual Machine and Cloud Service Sizes for Azure][vmsizes]. There are no limits to the resources a subscription can use for running web apps in **Standard** mode. However, the number of **Standard** mode web apps that can be created per region is 500.
 
 ### How to: View usage quotas for web apps configured for Shared mode ###
 To determine the extent that a web app is impacting resource usage quotas, follow these steps:
 
-1. Open the web app's **Dashboard** management page in the [Azure Management Portal](https://manage.windowsazure.cn).
-2. Under the **usage overview** section the usage quotas for your respective [Azure Websites](/documentation/services/web-sites/) plan are displayed, which is a subset of the following:
+1. Open the web app's **Dashboard** management page in the [Management Portal](https://manage.windowsazure.cn).
+2. Under the **usage overview** section the usage quotas for your respective [Azure Web App](/documentation/services/web-sites/) plan are displayed, which is a subset of the following:
 	-	**Data Out**, **CPU Time**, and **Memory** - when the quota is exceeded, Azure stops the web app for the remainder of the current quota interval. Azure will start the web app at the beginning of the next quota interval.
 	-	**File System Storage** - when this quota is reached, file system storage remains accessible for read operations, but all write operations, including those required for normal web app activity, are blocked. Write operations will resume when you reduce file usage or move the web app to an App Service plan with a higher quota.
 	-	**Linked Resources** - quotas for any linked resources of the web app, such as database or storage, are displayed here as well.
@@ -77,7 +77,7 @@ Quotas are not a matter of performance or cost, but it's the way Azure governs r
 
 ##<a name="howtoconfigdiagnostics"></a>How to: Configure diagnostics and download logs for a web app
 
-Diagnostics are enabled on the **Configure** tab for the web app in the [Azure Management Portal](https://manage.windowsazure.cn). There are two types of diagnostics: **application diagnostics** and **site diagnostics**.
+Diagnostics are enabled on the **Configure** tab for the web app in the [Management Portal](https://manage.windowsazure.cn). There are two types of diagnostics: **application diagnostics** and **site diagnostics**.
 
 #### Application Diagnostics ####
 
@@ -107,11 +107,11 @@ Since application logging to storage requires using a storage client to view the
 
 **Application diagnostics (file system)**, **Application diagnostics (table storage)**, and **Application diagnostics (blob storage)** can be enabled at the same time, and have individual log level configurations. For example, you may wish to log errors and warnings to storage as a long-term logging solution, while enabling file system logging with a level of verbose after instrumenting the application code in order to troubleshoot a problem.
 
-Diagnostics can also be enabled from Azure PowerShell using the **Set-AzureWebsite** cmdlet. If you have not installed Azure PowerShell, or have not configured it to use your Azure Subscription, see [How to Use Azure PowerShell](/documentation/articles/install-configure-powershell/).
+Diagnostics can also be enabled from Azure PowerShell using the **Set-AzureWebsite** cmdlet. If you have not installed Azure PowerShell, or have not configured it to use your Azure Subscription, see [How to Use Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 > [AZURE.NOTE] Application logging relies on log information generated by your application. The method used to generate log information, as well as the format of the information is specific to the language your application is written in. For language-specific information on using application logging, see the following articles:
 >
-> - **.NET** - [Troubleshoot a web app in Azure Websites using Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
+> - **.NET** - [Troubleshoot a web app in Azure using Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
 > - **Node.js** - [How to debug a Node.js application in Azure Websites](/documentation/articles/web-sites-nodejs-debug)
 >
 > Application logging to table or blob storage is only supported for .NET applications.
@@ -165,7 +165,7 @@ Log files can be downloaded using either FTP, Azure PowerShell, or the Azure CLI
 
 **FTP**
 
-1. Open the web app's **Dashboard** management page in the [Azure Management Portal](https://manage.windowsazure.cn) and make note of the FTP site listed under **Diagnostics Logs** and the account listed under **Deployment User**. The FTP site is where the log files are located and the account listed under Deployment User is used to authenticate to the FTP site.
+1. Open the web app's **Dashboard** management page in the [Management Portal](https://manage.windowsazure.cn) and make note of the FTP site listed under **Diagnostics Logs** and the account listed under **Deployment User**. The FTP site is where the log files are located and the account listed under Deployment User is used to authenticate to the FTP site.
 2. If you have not yet created deployment credentials, the account listed under **Deployment User** is listed as **Not set**. In this case you must create deployment credentials as described in the Reset Deployment Credentials section of the Dashboard because these credentials must be used to authenticate to the FTP site where the log files are stored. Azure does not support authenticating to this FTP site using Live ID credentials.
 3. Consider using an FTP client such as [FileZilla][fzilla] to connect to the FTP site. An FTP client provides greater ease of use for specifying credentials and viewing folders on an FTP site than is typically possible with a browser.
 4. Copy the log files from the FTP site to your local computer.
@@ -259,7 +259,7 @@ After you configure endpoint monitoring, you can drill down into the individual 
 2.	Click the **Configure** tab.
 3.     Go to the **Monitoring** section to enter your endpoint settings.
 4.	Enter a name for the endpoint.
-5.	Enter the URL for a part of your web app that you want to monitor. For example, [http://contoso.azurewebsites.net/archive](http://contoso.azurewebsites.net/archive).
+5.	Enter the URL for a part of your web app that you want to monitor. For example, [http://contoso.chinacloudsites.cn/archive](http://contoso.chinacloudsites.cn/archive).
 6.	Select one or more geographic locations from the list.
 7.	Optionally, repeat the previous steps to create a second endpoint.
 8.	Click **Save**. It may take some time for the web endpoint monitoring data to be available on the **Dashboard** and **Monitor** tabs.

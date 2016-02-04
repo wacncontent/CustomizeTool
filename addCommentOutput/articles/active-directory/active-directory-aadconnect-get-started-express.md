@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Getting Started with Azure AD Connect using express settings | Windows Azure"
+	pageTitle="Azure AD Connect: Getting Started using express settings | Windows Azure"
 	description="Learn how to download, install and run the setup wizard for Azure AD Connect."
 	services="active-directory"
 	documentationCenter=""
@@ -45,18 +45,20 @@ Selecting Express Settings is the default option and is one of the most common s
 ![Welcome to Azure AD Connect](./media/active-directory-aadconnect-get-started/install4.png)
 7. On the Ready to configure screen, click **Install**.
 	- Optionally on the Ready to Configure page, you can un-check the “**Start the synchronization process as soon as configuration completes**” checkbox.  If you do this, the wizard will configure sync but will leave the task disabled so it will not run until you enable it manually in the Task Scheduler.  Once the task is enabled, synchronization will run every three hours.
-	- Also optionally you can choose to configure sync services for **Exchange Hybrid deployment** by checking the corresponding checkbox.  If you don’t plan to have Exchange mailboxes both in the cloud and on premises, you do not need this.
+	- Also optionally you can choose to configure sync services for **Exchange Hybrid deployment** by checking the corresponding checkbox.  If you don't plan to have Exchange mailboxes both in the cloud and on premises, you do not need this.
 ![Welcome to Azure AD Connect](./media/active-directory-aadconnect-get-started/readyinstall.png)<br>
 8. Once the installation completes, click **Exit**.
-
+9. After the installation has completed, Logoff and Login again before you use Synchronization Service Manager or Synchronization Rule Editor.
 
 <br>
 <br>
 
 For a video on using the express installation check out the following:
 
+<!-- deleted by customization
 <center>[AZURE.VIDEO azure-active-directory-connect-express-settings]</center>
 
+-->
 
 ## Next steps
 Now that you have Azure AD Connect installed you can [verify the installation and assign licenses](/documentation/articles/active-directory-aadconnect-whats-next).

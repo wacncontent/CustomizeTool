@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with SAP HANA Cloud Platform
@@ -94,7 +94,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![Configure App URL](./media/active-directory-saas-sap-hana-cloud-platform-tutorial/IC790798.png "Configure App URL")
 
-    1.  In the **Sign On URL** textbox, type the URL used by your users to sign into your **SAP HANA Cloud Platform** application. This is the account-specific URL of a protected resource in your SAP HANA Cloud Platform application. The URL is based on the following pattern: *https://\<applicationName\>\<accountName\>.\<landscape <!-- deleted by customization host\>.ondemand.com/\<path\_to\_protected\_resource\>* --><!-- keep by customization: begin --> host\>.ondemand.com/\<path_to_protected_resource\>* <!-- keep by customization: end --> (e.g.: *https://xleavep1941203872trial.hanatrial.ondemand.com/xleave*)
+    1.  In the **Sign On URL** textbox, type the URL used by your users to sign into your **SAP HANA Cloud Platform** application. This is the account-specific URL of a protected resource in your SAP HANA Cloud Platform application. The URL is based on the following pattern: *https://\<applicationName\>\<accountName\>.\<landscape host\>.ondemand.com/\<path\_to\_protected\_resource\>* (e.g.: *https://xleavep1941203872trial.hanatrial.ondemand.com/xleave*)
 
 		>[AZURE.NOTE]This is the URL in your SAP HANA Cloud Platform application that requires the user to authenticate.
 
@@ -157,7 +157,7 @@ As an optional step, you can configure assertion-based groups for your Azure Act
 
 >[AZURE.NOTE]Using groups on SAP HANA Cloud Platform allows you to dynamically assign one or more users to one or more roles in your SAP HANA Cloud Platform applications, determined by values of attributes in the SAML 2.0 assertion. For example, if the assertion contains the attribute "*contract=temporary*", you may want all affected users to be added to the group "*TEMPORARY*". The group "*TEMPORARY*" may contain one or more roles from one or more applications deployed in your SAP HANA Cloud Platform account.
 >  
->Use assertion-based groups if you want to mass-assign many users to one or more roles of applications in your SAP HANA Cloud Platform account. If you only want to assign a single or small number of users to (a) specific role(s) we recommend assigning them directly in the “**Authorizations**” tab of the SAP HANA Cloud Platform cockpit.
+>Use assertion-based groups if you want to mass-assign many users to one or more roles of applications in your SAP HANA Cloud Platform account. If you only want to assign a single or small number of users to (a) specific role(s) we recommend assigning them directly in the "**Authorizations**" tab of the SAP HANA Cloud Platform cockpit.
 
 ##Assigning a role to a user
   
@@ -173,7 +173,7 @@ In order to enable Azure AD users to log into SAP HANA Cloud Platform, you must 
 
     1.  Click **Authorization**.
     2.  Click the **Users** tab.
-    3.  In the **User** textbox, type the user’s email address.
+    3.  In the **User** textbox, type the user's email address.
     4.  Click **Assign** to assign the user to a role.
     5.  Click **Save**.
 

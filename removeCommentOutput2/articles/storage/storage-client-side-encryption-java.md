@@ -1,17 +1,16 @@
-<properties 
-	pageTitle="Client-Side Encryption with Java for Windows Azure Storage | Windows Azure" 
-	description="The Azure Storage Client Library for Java supports client-side encryption and integration with Azure Key Vault for maximum security for your Azure Storage applications." 
-	services="storage" 
-	documentationCenter="java" 
-	authors="dineshm" 
-	manager="carolz" 
-	editor=""/>
+<properties
+	pageTitle="Client-Side Encryption with Java for Windows Azure Storage | Windows Azure"
+	description="The Azure Storage Client Library for Java supports client-side encryption and integration with Azure Key Vault for maximum security for your Azure Storage applications."
+	services="storage"
+	documentationCenter="java"
+	authors="dineshmurthy"
+	manager="carmonm"
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="10/07/2015"
+	ms.date="01/13/2016"
 	wacn.date=""/>
-
 
 # Client-Side Encryption with Java for Windows Azure Storage   
 
@@ -42,7 +41,7 @@ Decryption via the envelope technique works in the following way:
 
 2.	The client library downloads the encrypted data along with any encryption material that is stored on the service.  
 
-3.	The wrapped content encryption key (CEK) is then unwrapped (decrypted) using the key encryption key (KEK). Here again, the client library does not have access to KEK. It simply invokes the custom or Key Vault provider’s unwrapping algorithm.  
+3.	The wrapped content encryption key (CEK) is then unwrapped (decrypted) using the key encryption key (KEK). Here again, the client library does not have access to KEK. It simply invokes the custom or Key Vault provider's unwrapping algorithm.  
 
 4.	The content encryption key (CEK) is then used to decrypt the encrypted user data.
 
@@ -52,7 +51,7 @@ The storage client library uses [AES](http://en.wikipedia.org/wiki/Advanced_Encr
 ### Blobs  
 The client library currently supports encryption of whole blobs only. Specifically, encryption is supported when users use the **upload*** methods or the **openOutputStream** method. For downloads, both complete and range downloads are supported.  
 
-During encryption, the client library will generate a random Initialization Vector (IV) of 16 bytes, together with a random content encryption key (CEK) of 32 bytes, and perform envelope encryption of the blob data using this information. The wrapped CEK and some additional encryption metadata are then stored as blob metadata along with the encrypted blob on the service. 
+During encryption, the client library will generate a random Initialization Vector (IV) of 16 bytes, together with a random content encryption key (CEK) of 32 bytes, and perform envelope encryption of the blob data using this information. The wrapped CEK and some additional encryption metadata are then stored as blob metadata along with the encrypted blob on the service.
 
 >**Warning:**  
 >If you are editing or uploading your own metadata for the blob, you need to ensure that this metadata is preserved. If you upload new metadata without this metadata, the wrapped CEK, IV and other metadata will be lost and the blob content will never be retrievable again.
@@ -73,7 +72,7 @@ During encryption, the client library generates a random IV of 16 bytes along wi
 During decryption, the wrapped key is extracted from the queue message and unwrapped. The IV is also extracted from the queue message and used along with the unwrapped key to decrypt the queue message data. Note that the encryption metadata is small (under 500 bytes), so while it does count toward the 64KB limit for a queue message, the impact should be manageable.
 
 ### Tables  
-The client library supports encryption of entity properties for insert and replace operations. 
+The client library supports encryption of entity properties for insert and replace operations.
 
 >**Note:**  
 >Merge is not currently supported. Since a subset of properties may have been encrypted previously using a different key, simply merging the new properties and updating the metadata will result in data loss. Merging either requires making extra service calls to read the pre-existing entity from the service, or using a new key per property, both of which are not suitable for performance reasons.
@@ -99,7 +98,7 @@ In batch operations, the same KEK will be used across all the rows in that batch
 To perform query operations, you must specify a key resolver that is able to resolve all the keys in the result set. If an entity contained in the query result cannot be resolved to a provider, the client library will throw an error. For any query that performs server side projections, the client library will add the special encryption metadata properties (_ClientEncryptionMetadata1 and _ClientEncryptionMetadata2) by default to the selected columns.
 
 ## Azure Key Vault  
-Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud applications and services. By using Azure Key Vault, users can encrypt keys and secrets (such as authentication keys, storage account keys, data encryption keys, .PFX files, and passwords) by using keys that are protected by hardware security modules (HSMs). For more information, see [What is Azure Key Vault?](/documentation/articles/key-vault-whatis).
+Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud applications and services. By using Azure Key Vault, users can encrypt keys and secrets (such as authentication keys, storage account keys, data encryption keys, .PFX files, and passwords) by using keys that are protected by hardware security modules (HSMs). For more information, see [What is Azure Key Vault?](/documemtation/articles/key-vault-whatis).
 
 The storage client library uses the Key Vault core library in order to provide a common framework across Azure for managing keys. Users also get the additional benefit of using the Key Vault extensions library. The extensions library provides useful functionality around simple and seamless Symmetric/RSA local and cloud key providers as well as with aggregation and caching.
 
@@ -156,47 +155,48 @@ Create a **BlobEncryptionPolicy** object and set it in the request options (per 
 
 	// Create the encryption policy to be used for upload and download.
 	BlobEncryptionPolicy policy = new BlobEncryptionPolicy(key, null);
-	
+
 	// Set the encryption policy on the request options.
 	BlobRequestOptions options = new BlobRequestOptions();
 	options.setEncryptionPolicy(policy);
-	
+
 	// Upload the encrypted contents to the blob.
 	blob.upload(stream, size, null, options, null);
-	
+
 	// Download and decrypt the encrypted contents from the blob.
-	ByteArrayOutputStream outputStream = new ByteArrayOutputStream(); blob.DownloadToStream(outputStream, null, options, null);
+	ByteArrayOutputStream outputStream = new ByteArrayOutputStream(); 
+	blob.download(outputStream, null, options, null);
 
 ### Queue service encryption  
 Create a **QueueEncryptionPolicy** object and set it in the request options (per API or at a client level by using **DefaultRequestOptions**). Everything else will be handled by the client library internally.
 
 	// Create the IKey used for encryption.
 	RsaKey key = new RsaKey("private:key1" /* key identifier */);
-	
+
 	// Create the encryption policy to be used for upload and download.
 	QueueEncryptionPolicy policy = new QueueEncryptionPolicy(key, null);
-	
+
 	// Add message
 	QueueRequestOptions options = new QueueRequestOptions();
 	options.setEncryptionPolicy(policy);
-	
+
 	queue.addMessage(message, 0, 0, options, null);
-	
+
 	// Retrieve message
 	CloudQueueMessage retrMessage = queue.retrieveMessage(30, options, null);
 
 ### Table service encryption  
-In addition to creating an encryption policy and setting it on request options, you must either specify an **EncryptionResolver** in **TableRequestOptions**, or set the [Encrypt] attribute on the entity’s getter and setter.
+In addition to creating an encryption policy and setting it on request options, you must either specify an **EncryptionResolver** in **TableRequestOptions**, or set the [Encrypt] attribute on the entity's getter and setter.
 
 ### Using the resolver  
 
 	// Create the IKey used for encryption.
 	RsaKey key = new RsaKey("private:key1" /* key identifier */);
-	
+
 	// Create the encryption policy to be used for upload and download.
 	TableEncryptionPolicy policy = new TableEncryptionPolicy(key, null);
-	
-	TableRequestOptions options = new TableRequestOptions() 
+
+	TableRequestOptions options = new TableRequestOptions()
 	options.setEncryptionPolicy(policy);
 	options.setEncryptionResolver(new EncryptionResolver() {
 	    public boolean encryptionResolver(String pk, String rk, String key) {
@@ -207,15 +207,15 @@ In addition to creating an encryption policy and setting it on request options, 
         	return false;
     	}
 	});
-	
+
 	// Insert Entity
 	currentTable.execute(TableOperation.insert(ent), options, null);
-	
+
 	// Retrieve Entity
 	// No need to specify an encryption resolver for retrieve
-	TableRequestOptions retrieveOptions = new TableRequestOptions() 
+	TableRequestOptions retrieveOptions = new TableRequestOptions()
 	retrieveOptions.setEncryptionPolicy(policy);
-	
+
 	TableOperation operation = TableOperation.retrieve(ent.PartitionKey, ent.RowKey, DynamicTableEntity.class);
 	TableResult result = currentTable.execute(operation, retrieveOptions, null);
 
@@ -228,7 +228,7 @@ As mentioned above, if the entity implements TableEntity, then the properties ge
 	public String getEncryptedProperty1 () {
 	    return this.encryptedProperty1;
 	}
-	
+
 	@Encrypt
 	public void setEncryptedProperty1(final String encryptedProperty1) {
 	    this.encryptedProperty1 = encryptedProperty1;
@@ -238,7 +238,8 @@ As mentioned above, if the entity implements TableEntity, then the properties ge
 Note that encrypting your storage data results in additional performance overhead. The content key and IV must be generated, the content itself must be encrypted, and additional meta-data must be formatted and uploaded. This overhead will vary depending on the quantity of data being encrypted. We recommend that customers always test their applications for performance during development.
 
 ## Next steps  
-Download the [Azure Storage Client Library for Java Maven package](<fix URL>)  
+Download the [Azure Storage Client Library for Java Maven package](http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/4.0.0)  
 Download the [Azure Storage Client Library for Java Source Code from GitHub](https://github.com/Azure/azure-storage-java)   
 Download the Azure Key Vault Maven [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/), and [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) packages
+
 Visit the [Azure Key Vault Documentation](/documentation/articles/key-vault-whatis)  

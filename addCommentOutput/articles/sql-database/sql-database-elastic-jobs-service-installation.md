@@ -1,24 +1,24 @@
 <properties 
-	pageTitle="Installing elastic database jobs" 
+	pageTitle="Installing elastic database jobs | Windows Azure" 
 	description="Walk through installation of the elastic job feature." 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jhubbard" 
-	authors="sidneyh" 
+	authors="ddove" 
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/03/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # Installing Elastic Database jobs overview
-**Elastic Database jobs** can be installed via PowerShell or through the Azure Management Portal, although you will only gain access to create and manage jobs using the PowerShell API only if you install the PowerShell package. Additionally, the PowerShell APIs provide significantly more functionality over the portal at this point in time. For more information about **Elastic Database jobs**, see [Elastic Database jobs overview](/documentation/articles/sql-database-elastic-jobs-overview).
+[**Elastic Database jobs**](/documentation/articles/sql-database-elastic-jobs-overview) can be installed via PowerShell or through the Azure Management Portal.You can gain access to create and manage jobs using the PowerShell API only if you install the PowerShell package. Additionally, the PowerShell APIs provide significantly more functionality than the portal at this point in time. 
 
 If you have already installed **Elastic Database jobs** through the Portal from an existing **Elastic Database pool**, the latest Powershell preview includes scripts to upgrade your existing installation. It is highly recommended to upgrade your installation to the latest **Elastic Database jobs** components in order to take advantage of new functionality exposed via the PowerShell APIs.
 
 ## Prerequisites
-* An Azure subscription. For a trial, see [trial](/pricing/1rmb-trial/).
+* An Azure subscription. For a trial, see <!-- deleted by customization [trial](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> [trial](/pricing/1rmb-trial) <!-- keep by customization: end -->.
 * Azure PowerShell version >= 0.8.16. Install the latest version (0.9.5) through the [Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376). For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 * [NuGet Command-line Utility](https://nuget.org/nuget.exe) is used to install the Elastic Database jobs package. For more information, see http://docs.nuget.org/docs/start-here/installing-nuget.
 
@@ -45,7 +45,7 @@ If you have already installed **Elastic Database jobs** through the Portal from 
 
 		PS C:\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*>cd tools
 
-2.	Execute the .\InstallElasticDatabaseJobs.ps1 PowerShell script and supply values for its requested variables. This script will create the components described in [Elastic Database jobs components and pricing](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing) along with configuring the Azure Cloud Service to appropriately use the dependent components.
+2.	Execute the .\InstallElasticDatabaseJobs.ps1 PowerShell script and supply values for its requested variables. This script will create the components described in [Elastic Database jobs components and <!-- deleted by customization pricing](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing) --><!-- keep by customization: begin --> pricing](/documentation/articles/sql-database-elastic-jobs-overview/#components-and-pricing) <!-- keep by customization: end --> along with configuring the Azure Cloud Service to appropriately use the dependent components.
 
 		PS C:\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>Unblock-File .\InstallElasticDatabaseJobs.ps1 
 		PS C:\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>.\InstallElasticDatabaseJobs.ps1
@@ -62,7 +62,7 @@ The parameters provided on this sample invocation can be modified for your desir
 
 <tr>
 	<td>ResourceGroupName</td>
-	<td>Provides the Azure resource group name created to contain the newly created Azure components. This parameter defaults to 鈥淿_ElasticDatabaseJob鈥?. It is not recommended to change this value.</td>
+	<td>Provides the Azure resource group name created to contain the newly created Azure components. This parameter defaults to “__ElasticDatabaseJob”. It is not recommended to change this value.</td>
 	</tr>
 
 </tr>
@@ -74,19 +74,19 @@ The parameters provided on this sample invocation can be modified for your desir
 
 <tr>
 	<td>ServiceWorkerCount</td>
-	<td>Provides the number of service workers to install. This parameter defaults to 1. A higher number of workers can be used to scale out the service and to provide high availability. It is recommended to use 鈥?鈥? for deployments that require high availability of the service.</td>
+	<td>Provides the number of service workers to install. This parameter defaults to 1. A higher number of workers can be used to scale out the service and to provide high availability. It is recommended to use “2” for deployments that require high availability of the service.</td>
 	</tr>
 
 </tr>
 	<tr>
 	<td>ServiceVmSize</td>
-	<td>Provides the VM size for usage within the Cloud Service. This parameter defaults to A0. Parameters values of A0/A1/A2/A3 are accepted which cause the worker role to use an ExtraSmall/Small/Medium/Large size, respectively. Fo more information on worker role sizes, see [Elastic Database jobs components and pricing](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing).</td>
+	<td>Provides the VM size for usage within the Cloud Service. This parameter defaults to A0. Parameters values of A0/A1/A2/A3 are accepted which cause the worker role to use an ExtraSmall/Small/Medium/Large size, respectively. Fo more information on worker role sizes, see [Elastic Database jobs components and <!-- deleted by customization pricing](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing).</td> --><!-- keep by customization: begin --> pricing](/documentation/articles/sql-database-elastic-jobs-overview/#components-and-pricing).</td> <!-- keep by customization: end -->
 </tr>
 
 </tr>
 	<tr>
 	<td>SqlServerDatabaseSlo</td>
-	<td>Provides the service level objective for a Standard edition. This parameter defaults to S0. Parameter values of S0/S1/S2/S3 are accepted which cause the Azure SQL Database to use the respective SLO. For more information on SQL Database SLOs, see [Elastic Database jobs components and pricing](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing).</td>
+	<td>Provides the service level objective for a Standard edition. This parameter defaults to S0. Parameter values of S0/S1/S2/S3 are accepted which cause the Azure SQL Database to use the respective SLO. For more information on SQL Database SLOs, see [Elastic Database jobs components and <!-- deleted by customization pricing](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing).</td> --><!-- keep by customization: begin --> pricing](/documentation/articles/sql-database-elastic-jobs-overview/#components-and-pricing).</td> <!-- keep by customization: end -->
 </tr>
 
 </tr>
@@ -124,7 +124,7 @@ To update the VM size of an installation, run the following script with paramete
 
   <tr>
 	<td>ResourceGroupName</td>
-	<td>Identifies the Azure resource group name used when the Elastic Database job components were initially installed. This parameter defaults to 鈥淿_ElasticDatabaseJob鈥?. Since it is not recommended to change this value, you shouldn't have to specify this parameter.</td>
+	<td>Identifies the Azure resource group name used when the Elastic Database job components were initially installed. This parameter defaults to “__ElasticDatabaseJob”. Since it is not recommended to change this value, you shouldn't have to specify this parameter.</td>
 	</tr>
 </tr>
 
@@ -132,14 +132,14 @@ To update the VM size of an installation, run the following script with paramete
 
   <tr>
 	<td>ServiceWorkerCount</td>
-	<td>Provides the number of service workers to install.  This parameter defaults to 1.  A higher number of workers can be used to scale out the service and to provide high availability.  It is recommended to use 鈥?鈥? for deployments that require high availability of the service.</td>
+	<td>Provides the number of service workers to install.  This parameter defaults to 1.  A higher number of workers can be used to scale out the service and to provide high availability.  It is recommended to use “2” for deployments that require high availability of the service.</td>
 </tr>
 
 </tr>
 
 	<tr>
 	<td>ServiceVmSize</td>
-	<td>Provides the VM size for usage within the Cloud Service. This parameter defaults to A0. Parameters values of A0/A1/A2/A3 are accepted which cause the worker role to use an ExtraSmall/Small/Medium/Large size, respectively. Fo more information on worker role sizes, see [Elastic Database jobs components and pricing](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing).</td>
+	<td>Provides the VM size for usage within the Cloud Service. This parameter defaults to A0. Parameters values of A0/A1/A2/A3 are accepted which cause the worker role to use an ExtraSmall/Small/Medium/Large size, respectively. Fo more information on worker role sizes, see [Elastic Database jobs components and <!-- deleted by customization pricing](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing).</td> --><!-- keep by customization: begin --> pricing](/documentation/articles/sql-database-elastic-jobs-overview/#components-and-pricing).</td> <!-- keep by customization: end -->
 </tr>
 
 </table>
@@ -151,7 +151,7 @@ Once you have [created an Elastic Database pool](/documentation/articles/sql-dat
 
 **Estimated time to complete:** 10 minutes.
 
-1. From the dashboard view of the elastic database pool via the [Azure preview portal](https://manage.windowsazure.cn/#) , click **Create job**.
+1. From the dashboard view of the elastic database pool via the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/#) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->, click **Create job**.
 2. If you are creating a job for the first time, you must install **Elastic Database jobs** by clicking **PREVIEW TERMS**. 
 3. Accept the terms by clicking the checkbox.
 4. In the "Install services" view, click **JOB CREDENTIALS**.
@@ -181,5 +181,4 @@ See [Creating and managing an Elastic Database jobs](/documentation/articles/sql
 [1]: ./media/sql-database-elastic-jobs-service-installation/screen-1.png
 [2]: ./media/sql-database-elastic-jobs-service-installation/credentials.png
 [3]: ./media/sql-database-elastic-jobs-service-installation/start-board.png
-[4]: ./media/sql-database-elastic-jobs-service-installation/incomplete.png
- 
+[4]: ./media/sql-database-elastic-jobs-service-installation/incomplete.png

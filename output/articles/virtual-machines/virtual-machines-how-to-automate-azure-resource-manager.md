@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Automate with Azure Resource Manager | Windows Azure"
 	description="Get links to topics on how to automate the creation and management of Azure virtual machines by using Resource Manager."
@@ -16,12 +18,7 @@
 
 # How to automate with Azure Resource Manager
 
-<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the Resource Manager deployment model. You can't create this resource with the classic deployment model.
-<!-- keep by customization: end -->
 
 Azure Resource Manager simplifies the deployment and management of complex applications running on Azure infrastructure services. Many applications require a combination of compute, network, and storage resources, such as virtual network, Storage account, and virtual machines with network interfaces. Azure Resource Manager allows you to use or construct a JSON template to deploy and manage all these resources together as a single application.
 

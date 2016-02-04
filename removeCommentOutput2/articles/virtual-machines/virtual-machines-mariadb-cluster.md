@@ -15,7 +15,7 @@
 
 # MariaDB (MySQL) cluster - Azure tutorial
 
-We're creating a multi-Master [Galera](http://galeracluster.com/products/) cluster of [MariaDBs](https://mariadb.org/en/about/), a robust, scalable, and reliable drop-in replacement for MySQL, to work in a highly available environment on Azure Virtual Machines.
+<p>We're creating a multi-Master [Galera](http://galeracluster.com/products/) cluster of [MariaDBs](https://mariadb.org/en/about/), a robust, scalable, and reliable drop-in replacement for MySQL, to work in a highly available environment on Azure Virtual Machines.</p>
 
 ## Architecture overview
 
@@ -232,7 +232,7 @@ Create 3 VMs out of the template you just created and then configure and start t
 
 1. Create the first CentOS 7 VM from the **mariadb-galera-image** image you created, providing the virtual network name **mariadbvnet** and the subnet **mariadb**, machine size **Medium**, passing in the Cloud Service name to be **mariadbha** (or whatever name you want to be accessed through mariadbha.chinacloudapp.cn), setting the name of this machine to be **mariadb1**  and the username to be **azureuser**,  and enabling SSH access and passing the SSH certificate .pem file and replacing **/path/to/key.pem** with the path where you stored the generated .pem SSH key.
 
-	> [AZURE.NOTE] The commands below are split over multiple lines for clarity, but you should enter each as one line.
+	> [WACOM.NOTE] The commands below are split over multiple lines for clarity, but you should enter each as one line.
 
 		azure vm create
         --virtual-network-name mariadbvnet
@@ -363,7 +363,7 @@ You may want to take a look at [another way to cluster MySQL on Linux] and ways 
 [Galera]: http://galeracluster.com/products/
 [MariaDBs]: https://mariadb.org/en/about/
 [Azure CLI]: /documentation/articles/xplat-cli/
-[Azure CLI command reference]: /documentation/articles/virtual-machines-command-line-tools/
+[Azure CLI command reference]: /documentation/articles/command-line-tools/
 [create an SSH key for authentication]:http://www.jeff.wilcox.name/2013/06/secure-linux-vms-with-ssh-certificates/
 [performance tuning strategy]: /documentation/articles/virtual-machines-linux-optimize-mysql-perf/
 [optimize and test MySQL performance on Azure Linux VMs]:/documentation/articles/virtual-machines-linux-optimize-mysql-perf/

@@ -9,12 +9,22 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # Service-side authorization of users in Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+<!-- deleted by customization
+
+
 > [AZURE.SELECTOR-LIST (Platform | Backend)]
+-->
+<!-- keep by customization: begin -->
+> [AZURE.SELECTOR]
+<!-- keep by customization: end -->
 - [(Any | .NET)](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
 - [(Any | Javascript)](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
 
@@ -32,28 +42,25 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 
 2. In Visual Studio, expand the Controllers folder,  open **TodoItemController.cs** and add the following using statement:
 
-		using Microsoft.Azure.Mobile.Server.Security;
+		using Microsoft.WindowsAzure.Mobile.Service.Security;
 
 3. Locate the **PostTodoItem** method and add the following code at the beginning of the method.
 
 		// Get the logged in user
 		var currentUser = User as ServiceUser;
-
 		// Set the user ID on the item
 		item.UserId = currentUser.Id;
-
 	This code adds the user ID of the authenticated user to the item, before it is inserted into the TodoItem table.
 
-3. Locate the **GetAllTodoItems** method and replace the existing **return** statement with the following line of code:
+<!-- deleted by customization 3 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->. Locate the **GetAllTodoItems** method and replace the existing **return** statement with the following line of code:
 
 		// Get the logged in user
 		var currentUser = User as ServiceUser;
 
 		return Query().Where(todo => todo.UserId == currentUser.Id);
-
 	This query filters the returned TodoItem objects so that each user only receives the items that they inserted.
 
-4. Republish the mobile service project to Azure.
+<!-- deleted by customization 4 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. Republish the mobile service project to Azure.
 
 
 ## <a name="test-app"></a>Test the app
@@ -73,4 +80,4 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 [3]: ./media/mobile-services-dotnet-backend-ios-authorize-users-in-scripts/mobile-quickstart-startup-ios.png
 
 <!-- URLs. -->
-[Add Authentication to Existing Mobile Services App]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
+[Add Authentication to Existing Mobile Services App]: <!-- deleted by customization mobile-services-dotnet-backend-ios-get-started-users.md --><!-- keep by customization: begin --> /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users <!-- keep by customization: end -->

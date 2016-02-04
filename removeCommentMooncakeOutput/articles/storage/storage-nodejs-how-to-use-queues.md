@@ -3,13 +3,13 @@
 	description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Node.js." 
 	services="storage" 
 	documentationCenter="nodejs" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="storage"
-	ms.date="09/01/2015"
+<tags 
+	ms.service="storage" 
+	ms.date="12/01/2015" 
 	wacn.date=""/>
 
 
@@ -19,7 +19,7 @@
 
 ## Overview
 
-This guide shows you how to perform common scenarios using the Microsoft
+This guide shows you how to perform common scenarios using the Windows
 Azure Queue service. The samples are written using the Node.js
 API. The scenarios covered include **inserting**, **peeking**,
 **getting**, and **deleting** queue messages, as well as **creating and
@@ -56,7 +56,7 @@ communicate with the storage REST services.
 		+-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
 
 3.  You can manually run the **ls** command to verify that a
-    **node\_modules** folder was created. Inside that folder you will
+    **node_modules** folder was created. Inside that folder you will
     find the **azure-storage** package, which contains the libraries you need to
     access storage.
 
@@ -69,9 +69,9 @@ Using Notepad or another text editor, add the following to the top the
 
 ## Setup an Azure Storage Connection
 
-The azure module will read the environment variables AZURE\_STORAGE\_ACCOUNT and AZURE\_STORAGE\_ACCESS\_KEY, or AZURE\_STORAGE\_CONNECTION\_STRING for information required to connect to your Azure storage account. If these environment variables are not set, you must specify the account information when calling **createQueueService**.
+The azure module will read the environment variables AZURE_STORAGE_ACCOUNT and AZURE_STORAGE_ACCESS_KEY, or AZURE_STORAGE_CONNECTION_STRING for information required to connect to your Azure storage account. If these environment variables are not set, you must specify the account information when calling **createQueueService**.
 
-For an example of setting the environment variables in the management portal for an Azure Website, see [Node.js Web Application with Storage]
+For an example of setting the environment variables in the management portal for an Azure Website, see [Node.js Web Site with Storage]
 
 ## How To: Create a Queue
 
@@ -324,7 +324,6 @@ Once the ACL has been set, you can then create a SAS based on the ID for a polic
 Now that you've learned the basics of queue storage, follow these links
 to learn about more complex storage tasks.
 
--   See the MSDN Reference: [Storing and Accessing Data in Azure][].
 -   Visit the [Azure Storage Team Blog][].
 -   Visit the [Azure Storage SDK for Node][] repository on GitHub.
 
@@ -333,7 +332,7 @@ to learn about more complex storage tasks.
   [Azure Management Portal]: http://manage.windowsazure.cn
   [Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
   [Node.js Cloud Service with Storage]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
-  [Node.js Web Application with Storage]: /documentation/articles/storage-nodejs-use-table-storage-web-site
+  [Node.js Web Site with Storage]: /documentation/articles/storage-nodejs-use-table-storage-web-site
 
   
   [Queue1]: ./media/storage-nodejs-how-to-use-queues/queue1.png
@@ -343,7 +342,5 @@ to learn about more complex storage tasks.
   
   
   [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
- [Web Site with WebMatrix]: /documentation/articles/web-sites-nodejs-use-webmatrix
- 
+ [ Website with WebMatrix]: /documentation/articles/web-sites-nodejs-use-webmatrix

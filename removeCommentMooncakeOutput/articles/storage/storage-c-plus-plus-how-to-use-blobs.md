@@ -7,10 +7,10 @@
     manager="adinah" 
     editor=""/>
 
-<tags
-	ms.service="storage"
-	ms.date="09/23/2015"
-	wacn.date=""/>
+<tags 
+    ms.service="storage" 
+	ms.date="09/23/2015" 
+    wacn.date=""/>
 
 # How to use Blob Storage from C++  
 
@@ -237,4 +237,3 @@ Now that you've learned the basics of blob storage, follow these links to learn 
 
 
 
- 

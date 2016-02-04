@@ -331,7 +331,7 @@ $serviceBusRestProxy->deleteSubscription("mytopic", "mysubscription");
 
 Now that you've learned the basics of Service Bus queues, see [Queues, topics, and subscriptions][] for more information.
 
-[Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+[Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
 [sqlfilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
 [require-once]: http://php.net/require_once
 [Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas

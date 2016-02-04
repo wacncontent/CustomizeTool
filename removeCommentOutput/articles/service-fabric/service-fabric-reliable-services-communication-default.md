@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="required"
-   ms.date="08/27/2015"
-   ms.author="bharatn@microsoft.com"/>
+	ms.service="service-fabric"
+	ms.date="08/27/2015"
+	wacn.date=""/>
 
 # Default communication stack provided by Reliable Services Framework
 For service authors who are not tied to a particular implementation of communication stack(WebAPI, WCF etc), the framework provides Client and Service side communication pieces that can be used to setup communication between the Service and Client.
@@ -38,7 +34,7 @@ public class ServiceCommunicationListener<TServiceImplementation> : ICommunicati
 }
 
 ```
-The methods that the service service implements and wants to expose to its clients are defined as asynchronous methods in an interface which inherits from the `IService` interface. The service can then just instantiate the `ServiceCommunicationListener` object and return it in the [`CreateCommunicationListener` method](service-fabric-reliable-services-communication.md). For example, the HelloWorld service code to setup this communication stack may be defined as follows.
+The methods that the service service implements and wants to expose to its clients are defined as asynchronous methods in an interface which inherits from the `IService` interface. The service can then just instantiate the `ServiceCommunicationListener` object and return it in the [`CreateCommunicationListener` method](/documentation/articles/service-fabric-reliable-services-communication). For example, the HelloWorld service code to setup this communication stack may be defined as follows.
 
 ```csharp
 
@@ -72,7 +68,7 @@ public class HelloWorldService : StatelessService, IHelloWorld
 }
 
 ```
-> [AZURE.NOTE] The arguments and the return types in the Service Interface, for example the Message class above, are expected to be serializable by the .net [DataContractSerializer](https://msdn.microsoft.com/library/ms731923.aspx).
+> [AZURE.NOTE] The arguments and the return types in the Service Interface, for example the Message class above, are expected to be serializable by the .net [DataContractSerializer](https://msdn.microsoft.com/zh-cn/library/ms731923.aspx).
 
 
 ## Writing Clients to communicate with ServiceCommunicationListener

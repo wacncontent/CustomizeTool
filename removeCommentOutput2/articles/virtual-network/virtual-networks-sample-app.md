@@ -38,7 +38,7 @@ This script will;
 4.	Change the Default application pool to make file access easier
 5.	Set the Anonymous user to your admin account and password
 
-This PowerShell script should be run locally while RDP’d into IIS01.
+This PowerShell script should be run locally while RDP'd into IIS01.
 
 	# IIS Server Post Build Config Script
 	# Get Admin Account and Password
@@ -146,7 +146,7 @@ This script sets up the back end for this simple application. This script will;
 
 >[AZURE.IMPORTANT] **Best Practice**: Never turn off IE Enhanced Security on a production server, plus it's generally a bad idea to surf the web from a production server. Also, opening up file shares for anonymous access is a bad idea, but done here for simplicity.
 
-This PowerShell script should be run locally while RDP’d into AppVM01. PowerShell is required to be run as Administrator to ensure successful execution.
+This PowerShell script should be run locally while RDP'd into AppVM01. PowerShell is required to be run as Administrator to ensure successful execution.
 	
 	# AppVM01 Server Post Build Config Script
 	# PowerShell must be run as Administrator for Net Share commands to work

@@ -3,13 +3,13 @@
 	description="A tutorial that builds on the cloud service tutorial, and demonstrates how to use the Express module." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/01/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 
@@ -65,20 +65,20 @@ Perform the following steps to create a new cloud service project named 'express
 	![The output of the express command](./media/cloud-services-nodejs-develop-deploy-express-app/node23.png)
 
 
-5.  To install additional dependencies defined in the package.json file,
+3.  To install additional dependencies defined in the package.json file,
     enter the following command:
 
         PS C:\node\expressapp\WebRole1> npm install
 
 	![The output of the npm install command](./media/cloud-services-nodejs-develop-deploy-express-app/node26.png)
 
-6.  Use the following command to copy the **bin/www** file to **server.js**. This is so the cloud service can find the entry point for this application.
+4.  Use the following command to copy the **bin/www** file to **server.js**. This is so the cloud service can find the entry point for this application.
 
 		PS C:\node\expressapp\WebRole1> copy bin/www server.js
 
 	After this command completes, you should have a **server.js** file in the WebRole1 directory.
 
-7.  Modify the **server.js** to remove one of the '.' characters from the following line.
+5.  Modify the **server.js** to remove one of the '.' characters from the following line.
 
 		var app = require('../app');
 
@@ -88,7 +88,7 @@ Perform the following steps to create a new cloud service project named 'express
 
 	This change is required since we moved the file (formerly **bin/www**,) to the same directory as the app file being required. After making this change, save the **server.js** file.
 
-8.  Use the following command to run the application in the Azure emulator:
+6.  Use the following command to run the application in the Azure emulator:
 
         PS C:\node\expressapp\WebRole1> Start-AzureEmulator -launch
 
@@ -134,7 +134,7 @@ Once the deployment operation completes, your browser will open and display the 
 
 For more information, see the [Node.js Developer Center](/develop/nodejs/).
 
-  [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+  [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app/ 
   [Express]: http://expressjs.com/
   [http://jade-lang.com]: http://jade-lang.com
 

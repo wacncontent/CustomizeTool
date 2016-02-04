@@ -14,7 +14,7 @@
 
 
 # Learning Map for Azure Websites
-Test drive Azure Websites, quickly migrate your web assets to Azure Websites, and create a rich and smooth experience for your customers globally. Follow the guidance on this page for an effective learning path through Web Apps content. 
+Test drive Azure Websites, quickly migrate your web assets to Azure Websites, and create a rich and smooth experience for your customers globally. Follow the guidance on this page for an effective learning path through Web Sites content. 
 
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/websites-learning-map.svg" width="100%" height="100%">
 </object>

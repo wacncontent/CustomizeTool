@@ -55,7 +55,7 @@ Azure has a web interface called the [Management Portal](http://manage.windowsaz
 One of the most basic things a cloud platform does is execute applications. Azure provides these options: 
 
 1.	Virtual Machines gives you control over your own virtual machine, including the operating system. 
-2.	Websites offers a range of applications, frameworks, and templates for you to build large, scalable web applications and presence websites quickly, and then efficiently manage development, test, and operations.
+2.	Websites offers a range of applications, frameworks, and templates for you to build large, scalable web sites and presence websites quickly, and then efficiently manage development, test, and operations.
 3.	Cloud Services is a platform-as-a-service (PaaS) option tuned to create highly scalable and fault resistant applications, but with more flexibility than Websites. 
 
 Each of the Azure execution models has its own role to play. 
@@ -72,7 +72,7 @@ The ability to create a virtual machine on demand, whether from a standard image
 
 To create a VM, you specify which VHD to use and the VM's size.  You then pay for the time that the VM is running. You pay by the minute and only while it's running, though there is a minimal storage charge for keeping the VHD available. Azure offers a gallery of stock VHDs (called "images") that contain a bootable operating system to start from. These include Microsoft and partner options, such as Windows Server and Linux, SQL Server, Oracle and many more. You're free to create VHDs and images, and then upload them yourself. You can even upload VHDs that contain only data and then access them from your running VMs. 
 
-Wherever the VHD comes from, you can persistently store any changes made while a VM is running. The next time you create a VM from that VHD, things pick up where you left off. The VHDs that back the Virtual Machines are stored in Azure Storage blobs, which we talk about later.  That means you get redundancy to ensure your VMs won’t disappear due to hardware and disk failures. It's also possible to copy the changed VHD out of Azure, then run it locally. 
+Wherever the VHD comes from, you can persistently store any changes made while a VM is running. The next time you create a VM from that VHD, things pick up where you left off. The VHDs that back the Virtual Machines are stored in Azure Storage blobs, which we talk about later.  That means you get redundancy to ensure your VMs won't disappear due to hardware and disk failures. It's also possible to copy the changed VHD out of Azure, then run it locally. 
  
 Your application runs within one or more Virtual Machines, depending on how you created it before or decide to create it from scratch now. 
 
@@ -91,16 +91,16 @@ This quite general approach to cloud computing can be used to address many diffe
 ![Azure Websites](./media/intro-to-azure/AzureWebsitesIntroNew.png)   
  **Figure: Azure Websites runs a website application in the cloud without having to manage the underlying web server.**
 
-One of the most common things that people do in the cloud is run websites and web applications. Azure Virtual Machines allows this, but it still leaves you with the responsibility of administering one or more VMs and the underlying operating systems. Cloud services web roles can do this, but deploying and maintaining them still takes administrative work.  What if you just want a website where somebody else takes care of the administrative work for you?
+One of the most common things that people do in the cloud is run websites and web sites. Azure Virtual Machines allows this, but it still leaves you with the responsibility of administering one or more VMs and the underlying operating systems. Cloud services web roles can do this, but deploying and maintaining them still takes administrative work.  What if you just want a website where somebody else takes care of the administrative work for you?
 
 This is exactly what Azure Websites provides. This compute model offers a managed web environment using the Azure Management portal as well as APIs. You can move an existing website application into Azure Websites unchanged, or you can create a new one directly in the cloud. Once a website is running, you can add or remove instances dynamically, relying on Azure Websites to load balance requests across them. Azure Websites offers both a shared option, where your website runs in a virtual machine with other sites, and a standard option that allows a site to run in its own VM. The standard option also lets you increase the size (computing power) of your instances if needed.
 
-For development, Websites supports .NET, PHP, Node.js, Java and Python along with SQL Database and MySQL (from ClearDB, a Microsoft partner) for relational storage. It also provides built-in support for several popular applications, including WordPress, Joomla, and Drupal. The goal is to provide a low-cost, scalable, and broadly useful platform for creating websites and web applications in the public cloud.
+For development, Websites supports .NET, PHP, Node.js, Java and Python along with SQL Database and MySQL (from ClearDB, a Microsoft partner) for relational storage. It also provides built-in support for several popular applications, including WordPress, Joomla, and Drupal. The goal is to provide a low-cost, scalable, and broadly useful platform for creating websites and web sites in the public cloud.
 
 
 **WebSite Scenarios**
 
-Websites is intended to be useful for corporations, developers, and web design agencies. For corporations, it's an easy-to-manage, scalable, highly secure, and highly available solution for running presence websites. When you need to set up a Website, it’s best to start with Azure Websites and proceed to Cloud Services once you need a feature that’s not available in Websites. See the end of the "Compute" section for more links that can help you to choose between the options. 
+Websites is intended to be useful for corporations, developers, and web design agencies. For corporations, it's an easy-to-manage, scalable, highly secure, and highly available solution for running presence websites. When you need to set up a Website, it's best to start with Azure Websites and proceed to Cloud Services once you need a feature that's not available in Websites. See the end of the "Compute" section for more links that can help you to choose between the options. 
 
 ###Cloud Services###
 ![Azure Cloud Service](./media/intro-to-azure/CloudServicesIntroNew.png)   
@@ -108,17 +108,17 @@ Websites is intended to be useful for corporations, developers, and web design a
 
 Suppose you want to build a cloud application that can support lots of simultaneous users, doesn't require much administration, and never goes down. You might be an established software vendor, for example, that's decided to embrace Software as a Service (SaaS) by building a version of one of your applications in the cloud. Or you might be a start-up creating a consumer application that you expect will grow fast. If you're building on Azure, which execution model should you use?
 
-Azure Websites allows creating this kind of web application, but there are some constraints. You don't have administrative access, for example, which means that you can't install arbitrary software. Azure Virtual Machines gives you lots of flexibility, including administrative access, and you certainly can use it to build a very scalable application, but you'll have to handle many aspects of reliability and administration yourself. What you'd like is an option that gives you the control you need but also handles most of the work required for reliability and administration.
+Azure Websites allows creating this kind of web site, but there are some constraints. You don't have administrative access, for example, which means that you can't install arbitrary software. Azure Virtual Machines gives you lots of flexibility, including administrative access, and you certainly can use it to build a very scalable application, but you'll have to handle many aspects of reliability and administration yourself. What you'd like is an option that gives you the control you need but also handles most of the work required for reliability and administration.
 
 This is exactly what's provided by Azure Cloud Services. This technology is designed expressly to support scalable, reliable, and low-admin applications, and it's an example of what's commonly called Platform as a Service (PaaS). To use it, you create an application using the technology you choose, such as C#, Java, PHP, Python, Node.js, or something else. Your code then executes in virtual machines (referred to as instances) running a version of Windows Server. 
 
-But these VMs are distinct from the ones you create with Azure Virtual Machines. For one thing, Azure itself manages them, doing things like installing operating system patches and automatically rolling out new patched images. This implies that your application shouldn't maintain state in web or worker role instances; it should instead be kept in one of the Azure data management options described in the next section. Azure also monitors these VMs, restarting any that fail. You can set cloud services to automatically create more or fewer instances in response to demand. This allows you to handle increased usage, and then scale back so you aren’t paying as much when there is less usage. 
+But these VMs are distinct from the ones you create with Azure Virtual Machines. For one thing, Azure itself manages them, doing things like installing operating system patches and automatically rolling out new patched images. This implies that your application shouldn't maintain state in web or worker role instances; it should instead be kept in one of the Azure data management options described in the next section. Azure also monitors these VMs, restarting any that fail. You can set cloud services to automatically create more or fewer instances in response to demand. This allows you to handle increased usage, and then scale back so you aren't paying as much when there is less usage. 
 
 You have two roles to choose from when you create an instance, both based on Windows Server. The main difference between the two is that an instance of a web role runs IIS, while an instance of a worker role does not. Both are managed in the same way, however, and it's common for an application to use both. For example, a web role instance might accept requests from users, then pass them to a worker role instance for processing. To scale your application up or down, you can request that Azure create more instances of either role or shut down existing instances. And similar to Azure Virtual Machines, you're charged only for the time that each web or worker role instance is running. 
 
 **Cloud Services Scenarios**
 
-Cloud Services are ideal to support massive scale out when you need more control over the platform than provided by Azure Websites but don’t need control over the underlying operating system. 
+Cloud Services are ideal to support massive scale out when you need more control over the platform than provided by Azure Websites but don't need control over the underlying operating system. 
 
 ####Choosing a Compute Model####
 The page Azure Websites, Cloud Services and Virtual Machines comparison (/documentation/articles/choose-web-site-cloud-service-vm/ ) provides more detailed information on how to choose a Compute model.
@@ -197,7 +197,7 @@ Sometimes you want to move a lot of data into Azure. That would take a long time
 ![Azure File Service](./media/intro-to-azure/FileServiceIntroNew.png)    
 **Figure: Azure File Services provides SMB \\\\server\share paths for applications running in the cloud.** 
 
-On-premises, it’s common to use have large amounts of file storage accessible through the Server Message Block (SMB) protocol using a \\\\Server\share format. Azure now has a service that allows you to use this protocol in the cloud. Applications running in Azure can use it to share files between VMs using familiar file system APIs like ReadFile and WriteFile. In addition, the files can also be accessed at the same time via a REST interface, which allows you to access the shares from on-premises when you also set up a virtual network. Azure Files is built on top of the blob service, so it inherits the same availability, durability, scalability, and geo-redundancy built into Azure Storage. 
+On-premises, it's common to use have large amounts of file storage accessible through the Server Message Block (SMB) protocol using a \\\\Server\share format. Azure now has a service that allows you to use this protocol in the cloud. Applications running in Azure can use it to share files between VMs using familiar file system APIs like ReadFile and WriteFile. In addition, the files can also be accessed at the same time via a REST interface, which allows you to access the shares from on-premises when you also set up a virtual network. Azure Files is built on top of the blob service, so it inherits the same availability, durability, scalability, and geo-redundancy built into Azure Storage. 
 
 **Scenarios for Azure Files**
 
@@ -234,7 +234,7 @@ For more information about planning and creating a virtual network that works fo
 ![ExpressRoute](./media/intro-to-azure/ExpressRouteIntroNew.png)   
  **Figure: ExpressRoute uses an Azure Virtual Network, but routes connections through faster dedicated lines instead of the public Internet.**  
 
-If you need more bandwidth or security than an Azure Virtual Network connection can provide, you can look into ExpressRoute. In some cases, ExpressRoute can also save you money. You’ll still need a virtual network in Azure, but the link between Azure and your site uses a dedicated connection that does not go over the public Internet. In order to use this service, you’ll need to have an agreement with either a network service provider, or an exchange provider. 
+If you need more bandwidth or security than an Azure Virtual Network connection can provide, you can look into ExpressRoute. In some cases, ExpressRoute can also save you money. You'll still need a virtual network in Azure, but the link between Azure and your site uses a dedicated connection that does not go over the public Internet. In order to use this service, you'll need to have an agreement with either a network service provider, or an exchange provider. 
 
 Setting it up an ExpressRoute connection requires more time and planning, so you might want to start with a site-to-site VPN, then migrate to an ExpressRoute connection.
 
@@ -378,7 +378,7 @@ Notification Hubs is designed to work with any backend. You can use Azure Mobile
 **Notification Hub Scenarios**
 If you were writing a mobile game where players took turns, you may need to notify player 2 that player 1 finished her turn. If that's all you need to do, you could just use Mobile Services. But if you had 100,000 users player your game and you want to send a time sensitive free offer to everyone, Notification Hubs is the better choice.
 
-You can send breaking news, sporting events, and product announcement notifications to millions of users with low latency. Enterprises can notify their employees about new time sensitive communications, such as sales leads, so employees don’t have to constantly check email or other applications to stay informed. You can also send one-time-passwords required for multi-factor authentication.
+You can send breaking news, sporting events, and product announcement notifications to millions of users with low latency. Enterprises can notify their employees about new time sensitive communications, such as sales leads, so employees don't have to constantly check email or other applications to stay informed. You can also send one-time-passwords required for multi-factor authentication.
    
 
 
@@ -389,7 +389,7 @@ Every enterprise needs to backup and restore data. You can use Azure to backup a
 ###Site Recovery###
 
  
-Azure Site Recovery (formerly Hyper-V Recovery Manager) can help you protect important applications by coordinating the replication and recovery of Hyper-V images across sites. You can back up to your own secondary site, a hoster’s site, or use Azure and avoid the expense and complexity of building and managing your own secondary location. Azure encrypts data and communications and you have the option enable encryption for data at-rest too. 
+Azure Site Recovery (formerly Hyper-V Recovery Manager) can help you protect important applications by coordinating the replication and recovery of Hyper-V images across sites. You can back up to your own secondary site, a hoster's site, or use Azure and avoid the expense and complexity of building and managing your own secondary location. Azure encrypts data and communications and you have the option enable encryption for data at-rest too. 
 
 It monitors the health of your services continuously and helps automate the orderly recovery of services in the event of a site outage at the primary datacenter. Virtual machines can be brought up in an orchestrated fashion to help restore service quickly, even for complex multi-tier workloads.
 
@@ -462,7 +462,7 @@ Anytime your are setting up where there are many messages that are all important
 ![BizTalk Services](./media/intro-to-azure/BizTalkServicesIntroNew.png)   
  **Figure:BizTalk Services provides the ability to transform XML messages formats in the cloud.**
 
-Sometimes you need connect systems which communicate using different messaging formats. It’s common for business to have different database schemas and XML messaging formats, even when a common standard is available. Rather than write a lot of custom code, you can use BizTalk Server on-premises to integrate various systems.  Azure BizTalk Services provides the same type of service, but in the cloud. You can pay for only what you use and not worry about scale like you would have to on-premises.
+Sometimes you need connect systems which communicate using different messaging formats. It's common for business to have different database schemas and XML messaging formats, even when a common standard is available. Rather than write a lot of custom code, you can use BizTalk Server on-premises to integrate various systems.  Azure BizTalk Services provides the same type of service, but in the cloud. You can pay for only what you use and not worry about scale like you would have to on-premises.
  
 
 **BizTalk Services Scenarios**
@@ -477,7 +477,7 @@ Azure provides assistance for services that do not need to run all the time.
 ![Azure Scheduler](./media/intro-to-azure/SchedulerIntroNew.png)   
 **Figure: Azure Scheduler provides a way to schedule jobs at a specific time for a specific duration.**
 
-Sometimes applications only need to run at a certain time. On Azure, you can save money with this type of app instead of letting an application just keep running 24x7 waiting for data to process. Azure Scheduler allows you to schedule when an application should run on based on in interval of time or a calendar. It’s reliable and will verify that a process runs even if there are network, machine, and data center failures. You use the Scheduler REST API to manage these actions. 
+Sometimes applications only need to run at a certain time. On Azure, you can save money with this type of app instead of letting an application just keep running 24x7 waiting for data to process. Azure Scheduler allows you to schedule when an application should run on based on in interval of time or a calendar. It's reliable and will verify that a process runs even if there are network, machine, and data center failures. You use the Scheduler REST API to manage these actions. 
 
 When an scheduled alarm occurs, Scheduler sends HTTP or HTTPS messages to a specific endpoint or can put a message in a Storage Queue.  So you need to have your application either have an accessible endpoint or have it monitor a storage queue. Then once it gets the message, it can perform whatever action it's programmed to. 
 
@@ -486,7 +486,7 @@ When an scheduled alarm occurs, Scheduler sends HTTP or HTTPS messages to a spec
 - Recurring application actions: As an example, a service may periodically get data from twitter and gather the data into a regular feed.
 - Daily maintenance: Log processing or pruning, performing backups and other intermittently schedule tasks.
 - Tasks that run at night. 
-- Web applications tasks like daily pruning of logs, performing backups, and other maintenance tasks. An administrator may choose to backup her database at 1AM every day for the next 9 months, for example.
+- Web Sites tasks like daily pruning of logs, performing backups, and other maintenance tasks. An administrator may choose to backup her database at 1AM every day for the next 9 months, for example.
 
 The Scheduler API allows you to create, update, delete, view, and manage job collections and scheduled jobs programmatically.
 
@@ -508,7 +508,7 @@ Accessing data stored in any of Azure's data management services-SQL Database, T
 
 A Cloud Services application can store data in this cache, then retrieve it directly without needing to access persistent storage. The cache can be maintained inside your application's VMs or be provided by VMs dedicated solely to caching. In either case, the cache can be distributed, with the data it contains spread across multiple VMs in an Azure datacenter. 
 
-Azure has a number of different cache technologies that have shifted over time. In the order they were introduced, there is a shared, in-role, managed and Redis cache. The shared caching is an older technology and you shouldn’t create new implementations with it. The Managed Cache has the same features of the In-Role cache, but as managed service outside of the Azure Management Portal. The Redis Cache is in preview. The Redis implementation has the largest number of features and is recommended when you write new caching code. 
+Azure has a number of different cache technologies that have shifted over time. In the order they were introduced, there is a shared, in-role, managed and Redis cache. The shared caching is an older technology and you shouldn't create new implementations with it. The Managed Cache has the same features of the In-Role cache, but as managed service outside of the Azure Management Portal. The Redis Cache is in preview. The Redis implementation has the largest number of features and is recommended when you write new caching code. 
 
 
 **Azure Cache Scenarios**
@@ -551,7 +551,7 @@ HDinsight supports other components of the Hadoop ecosystem as well, including H
 
 One of the most attractive ways to use a cloud platform is to run high performance computing (HPC) and other "Big Compute" applications. Examples include specialized engineering applications built to use the industry-standard Message Passing Interface (MPI) as well as so-called embarrassingly parallel applications, such financial risk models.
 
-The essence of Big Compute is executing code on many machines at the same time. On Azure, this means running many virtual machines simultaneously, all working in parallel to solve some problem. Doing this requires some way to resources and to schedule applications, i.e., to distribute their work across these instances. Microsoft’s free HPC Pack and other compute cluster solutions can perform well in Azure, taking advantage of Azure compute and infrastructure services to add capacity on-demand to an on-premises compute cluster or run Big Compute applications entirely in the cloud.
+The essence of Big Compute is executing code on many machines at the same time. On Azure, this means running many virtual machines simultaneously, all working in parallel to solve some problem. Doing this requires some way to resources and to schedule applications, i.e., to distribute their work across these instances. Microsoft's free HPC Pack and other compute cluster solutions can perform well in Azure, taking advantage of Azure compute and infrastructure services to add capacity on-demand to an on-premises compute cluster or run Big Compute applications entirely in the cloud.
 
 Azure provides a range of VM instance sizes with different configurations of CPU cores, memory, disk capacity, and other characteristics to meet the requirements of different applications. The recently introduced A8 and A9 instances work well for many compute intensive workloads, and parallel MPI applications in particular, because they have high speed, multicore CPUs and large amounts of memory. In certain configurations the instances take advantage of a low-latency and high-throughput application network in the cloud that includes remote direct memory access (RDMA) technology for maximum efficiency of parallel MPI applications.
 

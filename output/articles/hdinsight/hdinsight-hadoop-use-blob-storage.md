@@ -87,14 +87,13 @@ To use blobs, you first create an [Azure Storage account][azure-storage-create].
 
 Wherever it lives, each blob you create belongs to a container in your Azure Storage account. This container may be an existing blob that was created outside of HDInsight, or it may be a container that is created for an HDInsight cluster.
 
-<!-- deleted by customization
 
 The default Blob container stores cluster specific information such as job history and logs. Don't share a default Blob container with multiple HDInsight clusters. This might corrupt job history, and the cluster will misbehave. It is recommended to use a different container for each cluster and put shared data on a linked storage account specified in deployment of all relevant clusters rather than the default storage account. For more information on configuring linked storage accounts, see [Create HDInsight clusters][hdinsight-creation]. However you can reuse a default storage container after the original HDInsight cluster has been deleted. For HBase clusters, you can actually retain the HBase table schema and data by create a new HBase cluster using the default blob storage container that is used by an HBase cluster that has been deleted.
 
 
-### Using the Azure preview portal
+### Using the Azure Management Portal
 
-When creating an HDInsight cluster from the preview portal, you have the options to use an existing storage account or create a new storage account:
+When creating an HDInsight cluster from the Portal, you have the options to use an existing storage account or create a new storage account:
 
 ![hdinsight hadoop creation data source](./media/hdinsight-hadoop-use-blob-storage/hdinsight.provision.data.source.png)
 
@@ -111,26 +110,6 @@ You will be prompted to specify the geographic region that the storage account w
 Once the storage account is created, use the following command to retrieve the storage account keys:
 
 	azure storage account keys list <storageaccountname>
--->
-<!-- keep by customization: begin -->
-### Using the Azure Management Portal
-
-When provisioning an HDInsight cluster from the Azure Management Portal, there are two options: **Quick Create** and **Custom Create**. The Quick Create option requires that the Azure Storage account is created beforehand. For instructions, see [How to Create a Storage Account][azure-storage-create].
-
-By using the Quick Create option, you can choose an existing storage account. The provision process creates a new container with the same name as the HDInsight cluster name. If a container with the same name already exists, <clusterName>-<x> will be used. For example, *myHDIcluster-1*. This container is used as the default file system.
-
-![Using Quick Create for a new Hadoop cluster in HDInsight in the Azure Management Portal.][img-hdi-quick-create]
-
-By using Custom Create, you have one of the following options for the default storage account:
-
-- Use existing storage
-- Create new storage
-- Use storage from another subscription
-
-You also have the option to create your own container or use an existing one.
-
-![Option to use an existing storage account for your HDInsight cluster.][img-hdi-custom-create-storage-account]
-<!-- keep by customization: end -->
 
 To create a container, use the following command:
 
@@ -303,15 +282,15 @@ For more information, see:
 * [Use Hive with HDInsight][hdinsight-use-hive]
 * [Use Pig with HDInsight][hdinsight-use-pig]
 
-[powershell-install]: /documentation/articles/install-configure-powershell
-[hdinsight-creation]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[powershell-install]: ../install-configure-powershell.md
+[hdinsight-creation]: hdinsight-provision-clusters-v1.md
+[hdinsight-get-started]: hdinsight-hadoop-tutorial-get-started-windows-v1.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
 
 [blob-storage-restAPI]: http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx
-[azure-storage-create]: /documentation/articles/storage-create-storage-account
+[azure-storage-create]: ../storage-create-storage-account.md
 
 [img-hdi-powershell-blobcommands]: ./media/hdinsight-hadoop-use-blob-storage/HDI.PowerShell.BlobCommands.png
 [img-hdi-quick-create]: ./media/hdinsight-hadoop-use-blob-storage/HDI.QuickCreateCluster.png

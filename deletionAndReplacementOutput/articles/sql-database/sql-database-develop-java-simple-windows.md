@@ -8,5 +8,5 @@ replaced by:
 
 		Management Portal](http://manage.windowsazure.cn/)
 
-reason: ()
+reason: (preview portal)
 

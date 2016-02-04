@@ -21,7 +21,7 @@ In this section, you'll modify the simulated device application to send interact
         }
 
     This method is very similar to the `SendDeviceToCloudMessagesAsync()` method that was created in the [Get started with IoT Hub], the only differences being that the `MessageId` system property, and a user property called `messageType` are now set.
-    The `MessageId` property is set to a globally unique id (guid), that will be used to deduplicate message receives. The `messageType` property is used to distinguish interactive from data point messages. This information is passed in message properties, instead that in the message body, so that the event processor in the back-end does not have to deserialize the whole message just to perform routing.
+    The `MessageId` property is set to a globally unique id (guid), that will be used to deduplicate message receives. The `messageType` property is used to distinguish interactive from data point messages. This information is passed in message properties, instead that in the message body, so that the event processor in the back end does not have to deserialize the whole message just to perform routing.
 
 > [AZURE.NOTE] It is important that the `MessageId`, used to deduplicate interactive messages, be created in the device, as intermittent network communications (or other failures) could result in multiple retrasmissions of the same message from the device. A semantic message id (e.g. a hash of the relevant message data fields) could also be used, as opposed to a guid.
 
@@ -32,7 +32,7 @@ In this section, you'll modify the simulated device application to send interact
 > [AZURE.NOTE] For simplicity's sake, this tutorial does not implement any retry policy. In production code, it is reccommended to implement retry policies (such as exponential backoff), as suggested in the MSDN article [Transient Fault Handling].
 
 <!-- Links -->
-[Get started with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-getstarted
+[Get started with IoT Hub]: iot-hub-csharp-csharp-getstarted.md
 [IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide#c2d
 
 <!-- Images -->

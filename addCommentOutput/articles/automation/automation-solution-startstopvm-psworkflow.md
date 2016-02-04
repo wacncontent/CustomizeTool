@@ -42,10 +42,13 @@ This solution consists of two PowerShell Workflow runbooks that you can download
 [AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
 <!-- keep by customization: end -->
 ## Installing the solution
+<!-- keep by customization: begin -->
+<a id="installing-the-solution"></a>
+<!-- keep by customization: end -->
 
 ### 1. Install the runbooks
 
-After downloading the runbooks, you can import them using the procedure in [Importing a Runbook](http://msdn.microsoft.com/zh-cn/library/dn643637.aspx#ImportRunbook).
+After downloading the runbooks, you can import them using the procedure in [Importing a Runbook](/documentation/articles/automation-creating-importing-runbook#ImportRunbook).
 
 ### 2. Review the description and requirements
 The runbooks include commented help text that includes a description and required assets.  You can also get the same information from this article. 
@@ -59,6 +62,9 @@ The runbooks require the following assets that you must create and populate with
 | Variable | AzureSubscriptionId | Contains the subscription ID of your Azure subscription. |
 
 ## Using the solution
+<!-- keep by customization: begin -->
+<a id="using-the-solution"></a>
+<!-- keep by customization: end -->
 
 ### Parameters
 
@@ -77,7 +83,7 @@ You can use any of the methods in [Starting a runbook in Azure Automation](/docu
 The following sample commands uses Windows PowerShell to run **StartAzureVMs** to start all virtual machines with the service name *MyVMService*.
 
 	$params = @{"ServiceName"="MyVMService"}
-	Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Start-AzureVMs" –Parameters $params
+	Start-AzureAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Start-AzureVMs" -Parameters $params
 
 ### Output
 

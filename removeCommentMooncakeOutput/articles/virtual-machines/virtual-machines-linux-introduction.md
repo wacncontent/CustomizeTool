@@ -10,14 +10,14 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="06/11/2015"
+	ms.date="11/13/2015"
 	wacn.date=""/>
 
 #Introduction to Linux on Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
-
 This topic provides an overview of some aspects of using Linux virtual machines in the Azure cloud. Deploying a Linux virtual machine is a straightforward process using an image from the gallery.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 ## Authentication: Usernames, Passwords and SSH Keys
 
@@ -89,7 +89,7 @@ Each virtual machine has a temporary, local *resource disk* attached. Because da
 On Linux, the resource disk is typically managed by the Azure Linux Agent and automatically mounted to **/mnt/resource** (or **/mnt** on Ubuntu images).
 
 
-	>[AZURE.NOTE] Note that the resource disk is a **temporary** disk, and might be deleted and reformatted when the VM is rebooted.
+>[AZURE.NOTE] Note that the resource disk is a **temporary** disk, and might be deleted and reformatted when the VM is rebooted.
 
 On Linux the data disk might be named by the kernel as `/dev/sdc`, and users will need to partition, format and mount that resource. This is covered step-by-step in the tutorial: [How to Attach a Data Disk to a Virtual Machine](/documentation/articles/virtual-machines-linux-how-to-attach-disk).
 

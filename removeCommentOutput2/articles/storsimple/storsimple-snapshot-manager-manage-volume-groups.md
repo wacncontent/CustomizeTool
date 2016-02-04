@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="StorSimple Snapshot Manager volume groups | Microsoft Azure"
+   pageTitle="StorSimple Snapshot Manager volume groups | Windows Azure"
    description="Describes how to use the StorSimple Snapshot Manager MMC snap-in to create and manage volume groups."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="10/12/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 # Use StorSimple Snapshot Manager to create and manage volume groups
 
@@ -52,7 +48,7 @@ Results column | Description
 Name           | The **Name** column contains the name of the volume group.
 Application    | The **Applications** column shows the number of VSS writers currently installed and running on the Windows host.
 Selected       | The **Selected** column shows the number of volumes that are contained in the volume group. A zero (0) indicates that no application is associated with the volumes in the volume group.
-Imported       | The **Imported** column shows the number of imported volumes. When set to **True**, this column indicates that a volume group was imported from the Microsoft Azure Management Portal and was not created in StorSimple Snapshot Manager.
+Imported       | The **Imported** column shows the number of imported volumes. When set to **True**, this column indicates that a volume group was imported from the Azure Management Portal and was not created in StorSimple Snapshot Manager.
  
 >[AZURE.NOTE] StorSimple Snapshot Manager volume groups are also displayed on the **Backup Policies** tab in the Azure Management Portal.
  
@@ -144,5 +140,5 @@ Use the following procedure to delete a volume group.
 
 ## Next steps
 
-- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple solution](storsimple-snapshot-manager-admin.md).
-- Learn how to [use StorSimple Snapshot Manager to create and manage backup policies](storsimple-snapshot-manager-manage-backup-policies.md).
+- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple solution](/documentation/articles/storsimple-snapshot-manager-admin).
+- Learn how to [use StorSimple Snapshot Manager to create and manage backup policies](/documentation/articles/storsimple-snapshot-manager-manage-backup-policies).

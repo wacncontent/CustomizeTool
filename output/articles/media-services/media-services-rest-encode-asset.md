@@ -22,9 +22,9 @@
 - [Portal](/documentation/articles/media-services-manage-content#encode)
 
 ##Overview
-In order to deliver digital video over the internet you must compress the media. Digital video files are quite large and may be too big to deliver over the internet or for your customers’ devices to display properly. Encoding is the process of compressing video and audio so your customers can view your media.
+In order to deliver digital video over the internet you must compress the media. Digital video files are quite large and may be too big to deliver over the internet or for your customersâ devices to display properly. Encoding is the process of compressing video and audio so your customers can view your media.
 
-Encoding jobs are one of the most common processing operations in Media Services. You create encoding jobs to convert media files from one encoding to another. When you encode, you can use the Media Services built-in Media Encoder. You can also use an encoder provided by a Media Services partner; third party encoders are available through the Azure Marketplace. You can specify the details of encoding tasks by using preset strings defined for your encoder, or by using preset configuration files. To see the types of presets that are available, see [Task Presets for Azure Media Services](https://msdn.microsoft.com/zh-cn/library/azure/dn619392.aspx). If you used a third party encoder, you should [validate your files](https://msdn.microsoft.com/zh-cn/library/azure/dn750842.aspx).
+Encoding jobs are one of the most common processing operations in Media Services. You create encoding jobs to convert media files from one encoding to another. When you encode, you can use the Media Services built-in Media Encoder. You can also use an encoder provided by a Media Services partner; third party encoders are available through the Azure gallery. You can specify the details of encoding tasks by using preset strings defined for your encoder, or by using preset configuration files. To see the types of presets that are available, see [Task Presets for Azure Media Services](https://msdn.microsoft.com/zh-cn/library/azure/dn619392.aspx). If you used a third party encoder, you should [validate your files](https://msdn.microsoft.com/zh-cn/library/azure/dn750842.aspx).
 
 
 Each Job can have one or more Tasks depending on the type of processing that you want to accomplish. Through the REST API, you can create Jobs and their related Tasks in one of two ways: 
@@ -253,6 +253,14 @@ If successful, the following response is returned:
 	. . . 
 
 
+
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 
 ##Next Steps

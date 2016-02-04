@@ -28,7 +28,7 @@
 5. Add the following code to the new controller. Replace `todolistContext` with the name of the DbContext for your data model, which should be the mobile service name appended with `Context`. Similarly, replace the schema name in the UPDATE statement with the name of your mobile service. This code uses the [Database Class](http://msdn.microsoft.com/zh-cn/library/system.data.entity.database.aspx) to access the **TodoItems** table directly to set the completed flag on all items. This method supports a POST request, and the number of changed rows is returned to the client as an integer value.
 
 
-	    // POST api/completeall        
+	    // POST api/completeall
         public async Task<MarkAllResult> Post()
         {
             using (todolistContext context = new todolistContext())
@@ -45,11 +45,11 @@
                 result.count = await database.ExecuteSqlCommandAsync(sql);
 
                 // Log the result.
-                Services.Log.Info(string.Format("{0} items set to 'complete'.", 
+                Services.Log.Info(string.Format("{0} items set to 'complete'.",
                     result.count.ToString()));
-                
+
                 return result;
             }
         }
 
-	> [AZURE.NOTE] With default permissions, anyone with the app key may call the custom API. However, the application key is not considered a secure credential because it may not be distributed or stored securely. Consider restricting access to only authenticated users for additional security.
+	> [AZURE.TIP] With default permissions, anyone with the app key may call the custom API. However, the application key is not considered a secure credential because it may not be distributed or stored securely. Consider restricting access to only authenticated users for additional security.

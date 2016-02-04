@@ -1,20 +1,16 @@
 
 <properties 
-    pageTitle="User Profile data in Azure RemoteApp | Microsoft Azure"
+    pageTitle="User Profile data in Azure RemoteApp | Windows Azure"
 	description="Learn how user data is stored and accessed in Azure RemoteApp"
 	services="remoteapp"
 	documentationCenter="" 
 	authors="lizap" 
 	manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="09/29/2015" 
-    ms.author="elizapo" />
+<tags
+	ms.service="remoteapp"
+	ms.date="10/28/2015"
+	wacn.date=""/>
 
 
 
@@ -23,7 +19,7 @@
 Azure RemoteApp saves user identity and customizations across devices and sessions. This user data is stored in a per-user per-collection disk, known as a user profile disk (UPD). The disk follows the user and ensures the user has a consistent experience, regardless of where they sign in. 
 saves 
 
-User profile disks are completely transparent to the user — users save documents to their Documents folder (on what appears to be a local drive) and change their app settings as usual. At the same time, all personal settings persist when connecting to Azure RemoteApp from any device. All the user sees is their data in the same place.
+User profile disks are completely transparent to the user â users save documents to their Documents folder (on what appears to be a local drive) and change their app settings as usual. At the same time, all personal settings persist when connecting to Azure RemoteApp from any device. All the user sees is their data in the same place.
 
 Each UPD has 50GB of persistent storage and contains both user data and application settings. 
 
@@ -31,12 +27,17 @@ Read on for specifics on user profile data.
 
 ## How can an admin get to the data?
 
-If you need to access the data for one of your users (for disaster recovery or if the user leaves the company), contact [Azure RemoteApp](mailto:remoteappforum@microsoft.com) and provide the subscription information for the collection and the user identity. The Azure RemoteApp team will provide you a URL where you can access the data - from there you can browse the location and retrieve any documents or files you need.
+If you need to access the data for one of your users (for disaster recovery or if the user leaves the company), contact [Azure RemoteApp](mailto:remoteappforum@microsoft.com) and provide the subscription information for the collection and the user identity. The Azure RemoteApp team will provide you a URL <!-- deleted by customization to --><!-- keep by customization: begin --> where you can access <!-- keep by customization: end --> the <!-- deleted by customization VHD. Download that VHD --><!-- keep by customization: begin --> data - from there you can browse the location <!-- keep by customization: end --> and retrieve any documents or files you need. <!-- deleted by customization Note that the VHD is 50GB, so it will take a bit to download it. -->
 
 
 ## Is the data backed up?
 
+<!-- deleted by customization
 Yes, we save a backup of the user data per geographic location. The data is read-only and can be accessed in the same way as the regular data would be (contact Azure RemoteApp to get it), if the primary data center is down. The data is copied real-time to the backup location and we do not keep copies of different versions. So, on data corruption, we will not be able to restore it to a previously known good version but if the primary data center is down, you will be able to get user data from the other location.
+-->
+<!-- keep by customization: begin -->
+Yes, we save a backup of the user data per geographic location. The data is read-only and can be accessed in the same way as the regular data would be (contact Azure RemoteApp to get), if the primary data center is down.
+<!-- keep by customization: end -->
 
 ## How do users see the UPD on the server side?
 
@@ -52,10 +53,15 @@ We also recommend that you use "cached" mode in Outlook and use "server/online" 
 Yes, Azure RemoteApp supports using shared data solutions - particularly OneDrive for Business and Dropbox. Note, however, that OneDrive Consumer (the personal version) and Box are not supported.
 
 ## What about redirection?
-You can configure Azure RemoteApp to let users access local devices by setting up [redirection](remoteapp-redirection.md). Local devices will then be able to access the data on the UPD.
+You can configure Azure RemoteApp to let users access local devices by setting up [redirection](/documentation/articles/remoteapp-redirection). Local devices will then be able to access the data on the UPD.
 
 ## Can I use my UPD as a network share?
+<!-- deleted by customization
 No. UPDs cannot be used as a network share. A UPD is only available to the user when the user is actively connected to Azure RemoteApp.
+-->
+<!-- keep by customization: begin -->
+No, because the UPD is not persistent. A UPD is only available when the user is actively connected to Azure RemoteApp.
+<!-- keep by customization: end -->
 
 ## If I delete a user from a collection, is their UPD deleted?
 
@@ -70,9 +76,11 @@ Yes, if you contact [Azure RemoteApp](mailto:remoteappforum@microsoft.com), we c
 ## Are UPDs available offline?
 
 Right now we do not provide offline access to UPDs, beyond the 10 hour access window described above. This means that we do not currently have a way to provide you with access for long enough to complete more complicated tasks, like running anti-virus software on the UPDs or accessing data for an audit.
+<!-- deleted by customization
 
 ## Do registry key settings persist?
 Yes, anything written to HKEY_Current_User is part of the UPD.
+-->
 
 ## Can I disable UPDs for a collection?
 
@@ -115,7 +123,7 @@ The scheduled task will launch your startup script, using the user's credentials
 
 ![Set the trigger for the task as "At log on"](./media/remoteapp-upd/upd3.png)
 
-You can also use [Group Policy-based startup scripts](https://technet.microsoft.com/library/cc779329%28v=ws.10%29.aspx). 
+You can also use [Group Policy-based startup scripts](https://technet.microsoft.com/zh-cn/library/cc779329%28v=ws.10%29.aspx). 
 
 ## What about placing a startup script in the Start menu? Would that work?
 

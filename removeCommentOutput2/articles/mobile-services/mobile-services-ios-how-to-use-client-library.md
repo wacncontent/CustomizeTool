@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # How to Use iOS Client Library for Azure Mobile Services
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
@@ -66,7 +71,7 @@ To filter using a predicate, use an `NSPredicate` and `readWithPredicate`. The f
 
 ```
 // Create a predicate that finds items where complete is false
-NSPredicate * predicate = [NSPredicate predicateWithFormat:@"complete == NO"];
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"complete == NO"];
 // Query the TodoItem table and update the items property with the results from the service
 [table readWithPredicate:predicate completion:^(MSQueryResult *result, NSError *error) {
 		if(error) {
@@ -150,12 +155,12 @@ In the following example, a simple function requests 5 records from the server a
 
             // Set a flag to keep track if there are any additional records we need to load
             self.moreResults = (self.loadedItems.count <= result.totalCount);
-        }
-    }];
+			}
+		}];
 }
 
 ```
-
+ 
 ## <a name="selecting"></a><a name="parameters"></a>How to: Limit Fields and Expand Query String Parameters with MSQuery
 
 To limit fields to be returned in a query, specify the names of the fields in the **selectFields** property. This returns only the text and completed fields:
@@ -316,16 +321,18 @@ The file [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/azu
 [Mobile Services Quick Start]: /documentation/articles/mobile-services-ios-get-started
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Authentication]: /documentation/articles/mobile-services-ios-get-started-users
+[Authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
 [iOS SDK]: https://developer.apple.com/xcode
 
 [Handling Expired Tokens]: http://go.microsoft.com/fwlink/p/?LinkId=301955
 [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
 [Permissions]: http://msdn.microsoft.com/zh-cn/library/azure/jj193161.aspx
 [Service-side Authorization]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
-[Dynamic Schema]: https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx
+[Dynamic schema]: https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx
 [Create a table]: http://msdn.microsoft.com/zh-cn/library/azure/jj193162.aspx
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Mobile_Tables
-[Conflict-Handler]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data#add-conflict-handling
+[CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tool/s#Mobile_Tables 
+[Conflict-Handler]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data/#add-conflict-handling
+ 
+

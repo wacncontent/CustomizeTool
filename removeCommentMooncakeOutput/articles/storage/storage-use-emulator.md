@@ -6,9 +6,9 @@
 	authors="tamram" 
 	manager="adinah" 
 	editor=""/>
-<tags
-	ms.service="storage"
-	ms.date="09/23/2015"
+<tags 
+	ms.service="storage" 
+	ms.date="09/23/2015" 
 	wacn.date=""/>
 
 # Use the Azure Storage Emulator for Development and Testing

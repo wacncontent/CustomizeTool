@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # Add Authentication to Existing App
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
@@ -67,11 +72,11 @@ Next, learn [how to use the user ID value to filter returned data](/documentatio
 
 
 <!-- URLs. -->
-[Service-side authorization of Mobile Services users]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
+[Service-side authorization of Mobile Services users]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization 
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Single sign-on for Windows Store apps by using Live Connect]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
+[Single sign-on for Windows Store apps by using Live Connect]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on 
 [Mobile Services Quick Start tutorial]: /documentation/articles/mobile-services-ios-get-started
 [Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-ios
 [Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios

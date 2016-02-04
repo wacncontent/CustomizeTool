@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Integrating your on-premises identities with Azure Active Directory. | Windows Azure"
+	pageTitle="Azure AD Connect: Integrating your on-premises identities with Azure Active Directory. | Windows Azure"
 	description="This is the Azure AD Connect that describes what it is and why you would use it."
 	services="active-directory"
 	documentationCenter=""
@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/04/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 # Integrating your on-premises identities with Azure Active Directory
-Azure AD Connect is the tool to integrate your on-premises identity system such as Windows Server Active Directory with Azure Active Directory and connect your users to Office 365, Azure and 1000’s of SaaS applications. This topic provides a comprehensive guide to prepare and deploy the necessary components for your end users to access cloud services with the same identity that they use today to access existing company apps.
+Azure AD Connect is the tool to integrate your on-premises identity system such as Windows Server Active Directory with Azure Active Directory and connect your users to Office 365, Azure and 1000âs of SaaS applications. This topic provides a comprehensive guide to prepare and deploy the necessary components for your end users to access cloud services with the same identity that they use today to access existing company apps.
 
 ![What is Azure AD Connect](./media/active-directory-aadconnect/arch.png)
 
@@ -45,6 +45,7 @@ You can find the download for Azure AD Connect on [Microsoft Download Center](ht
 
 | Solution | Scenario |
 | ----- | ----- |
+| Before you start | <li>[Azure AD Connect: Hardware and prerequisites](/documentation/articles/active-directory-aadconnect-prerequisites)</li> |
 | [Express settings](/documentation/articles/active-directory-aadconnect-get-started-express) | <li>Recommended and default option if you have a single forest AD.</li> <li>User sign in with the same password using password synchronization.</li>
 | [Customized settings](/documentation/articles/active-directory-aadconnect-get-started-custom) | <li>Used when you have multiple forests. Supports many on-premises [topologies](/documentation/articles/active-directory-aadconnect-topologies).</li> <li>Customize your sign-in option , such as ADFS for federation or use a 3rd party identity provider.</li> <li>Customize synchronization features, such as filtering and writeback.</li>
 | [Upgrade from DirSync](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started) | <li>If you have an existing DirSync server already running.</li>
@@ -57,7 +58,6 @@ You can find the download for Azure AD Connect on [Microsoft Download Center](ht
 
 | Topic |  |
 | --------- | --------- |
-| Hardware and prerequisites | [Azure AD Connect: Hardware and prerequisites](/documentation/articles/active-directory-aadconnect-prerequisites) |
 | Download Azure AD Connect | [Download Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) |
 | Install using Express settings | [Express installation of Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started-express) |
 | Install using Customized settings | [Custom installation of Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started-custom) |
@@ -74,6 +74,7 @@ You also want to prepare for [operational](/documentation/articles/active-direct
 | Design concepts | [Azure AD Connect design concepts](/documentation/articles/active-directory-aadconnect-design-concepts) |
 | Accounts used for installation | [More about Azure AD Connect credentials and permissions](/documentation/articles/active-directory-aadconnect-accounts-permissions) |
 | Operational planning | [Azure AD Connect sync: Operational tasks and considerations](/documentation/articles/active-directory-aadconnectsync-operations) |
+| User sign-in options | [Azure AD Connect User sign-in options](/documentation/articles/active-directory-aadconnect-user-signin) |
 
 ## Configure features
 Azure AD Connect comes with several features you can optionally turn on or are enabled by default. Some features might in some cases require additional configuration in certain scenarios and topologies.
@@ -86,7 +87,7 @@ Azure AD Connect comes with several features you can optionally turn on or are e
 
 [Device writeback](/documentation/articles/active-directory-aadconnect-get-started-custom-device-writeback) will allow a device registered in Azure AD to be written back to on-premises Active Directory so it can be used for conditional access.
 
-The [prevent accidental deletes](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes) feature is turned on by default and will protect your cloud directory from a lot of deletes at the same time. By default it will allow 500 deletes per run and this can be changed depending on your organization’s size.
+The [prevent accidental deletes](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes) feature is turned on by default and will protect your cloud directory from a lot of deletes at the same time. By default it will allow 500 deletes per run and this can be changed depending on your organizationâs size.
 
 ### Next steps to configure features
 
@@ -101,7 +102,7 @@ The [prevent accidental deletes](/documentation/articles/active-directory-aadcon
 ## Customize Azure AD Connect sync
 Azure AD Connect sync comes with a default configuration which is intended to work for most customers and topologies. But there are always situations where the default configuration will not work and must be adjusted. It is supported to make changes as documented in this section and linked topics.
 
-If you have not worked with a synchronization topology before you want to start to understand the basics and the terms used as described in the [technical concepts](/documentation/articles/active-directory-aadconnectsync-technical-concepts). Azure AD Connect is the evolution of MIIS2003, ILM2007, and FIM2010. Even if some things are identical, a lot has changed as well.
+If you have not worked with a synchronization topology before you want to start to understand the basics and the terms used as described in the [technical concepts](/documentation/articles/active-directory-aadconnect-technical-concepts). Azure AD Connect is the evolution of MIIS2003, ILM2007, and FIM2010. Even if some things are identical, a lot has changed as well.
 
 The [default configuration](/documentation/articles/active-directory-aadconnectsync-understanding-default-configuration) assumes there might be more than one forest in the configuration. In those topologies a user object might be represented as a contact in another forest. The user might also have a linked mailbox in another resource forest. The behavior of the default configuration is described in [users and contacts](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts).
 
@@ -111,12 +112,12 @@ The configuration model in sync is called [declarative provisioning](/documentat
 
 | Topic |  |
 | --------- | --------- |
-| Technical concepts | [Azure AD Connect sync: Technical Concepts](/documentation/articles/active-directory-aadconnectsync-technical-concepts) |
+| Technical concepts | [Azure AD Connect sync: Technical Concepts](/documentation/articles/active-directory-aadconnect-technical-concepts) |
 | Understanding the default configuration | [Azure AD Connect sync: Understanding the default configuration](/documentation/articles/active-directory-aadconnectsync-understanding-default-configuration) |
 | Understanding users and contacts | [Azure AD Connect sync: Understanding Users and Contacts](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts) |
 | Declarative provisioning | [Azure AD Connect Sync: Understanding Declarative Provisioning Expressions](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions) |
 | Declarative provisioning functions reference | [Azure AD Connect sync: Functions Reference](/documentation/articles/active-directory-aadconnectsync-functions-reference) |
-| Best practices | [Best practices for changing the default configuration](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration) |
+| Change the default configuration | [Best practices for changing the default configuration](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration) |
 
 ## More information and references
 
@@ -133,22 +134,4 @@ The configuration model in sync is called [declarative provisioning](/documentat
 
 
 Ignite 2015 presentation on extending your on-premises directories to the cloud.
-
-
-
-[Multi-forest Directory Sync with Single Sign-On Scenario](https://msdn.microsoft.com/zh-cn/library/azure/dn510976.aspx) - Integrate multiple directories with Azure AD.
-
-[Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health) - Monitor the health of your on-premises AD FS infrastructure.
-
-[Azure AD Connect FAQ](/documentation/articles/active-directory-aadconnect-faq) - Frequently asked questions around Azure AD Connect.
-
-
-
-
-
-
- 
-
-
-
 

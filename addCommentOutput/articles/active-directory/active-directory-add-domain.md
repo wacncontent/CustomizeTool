@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Add your own domain name to Azure AD | Windows Azure"
-	description="A topic that explains how to add your own domain name to Azure AD and related info."
+	pageTitle="Add your own domain name to Azure Active Directory | Windows Azure"
+	description="Explains how to add your own domain name to Azure Active Directory, and other related information."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/14/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
-# Add your own domain name to Azure AD
+# Add your own domain name to Azure Active Directory
 
-When you sign up for a Microsoft cloud service, you are issued a domain name that has the following format: contoso.partner.onmschina.cn. You can continue to use that initial domain name, or you can add your own custom domain name to the cloud service. This topic explains how to add your own domain name and related information.
+When you sign up for a <!-- deleted by customization Microsoft --> cloud service, you are issued a domain name that has the following format: contoso.partner.onmschina.cn. You can continue to use that initial domain name, or you can add your own custom domain name to the cloud service. This topic explains how to add your own domain name and related information <!-- deleted by customization to Azure Active Directory (Azure AD) -->.
 
 Office 365 users may be interested in these related topics:
 
@@ -34,16 +34,16 @@ After you choose the name to use with the cloud service during signup, such as c
 
 If your organization already has a custom domain name, as an administrator, you can add it to your Azure AD directory to use with all of the Microsoft online services that you have subscribed to. After you've added your domain name to Azure AD, you can start associating your domain name with your various cloud services.
 
-You can add up to 900 domain names to your Azure AD tenant by using, either:
+You can add up to 900 domain names to your Azure AD directory by using, either:
 
 - The Azure Management Portal, the Office 365 portal, or the Microsoft Intune portal.
-- The Azure Active Directory Module for Windows PowerShell. For more information about which cmdlet you can use for this, see [Manage domains in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn919677.aspx).
+- The Azure Active Directory Module for Windows PowerShell. For more information about which cmdlet you can use for this, see [Manage <!-- deleted by customization domains in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn919677.aspx) --><!-- keep by customization: begin --> domains](https://msdn.microsoft.com/zh-cn/library/azure/dn919677.aspx) <!-- keep by customization: end -->.
 
 You must have already registered a domain name and have the sign-in credentials needed for your domain name registrar (for example, Go Daddy or Register.com).
 
 You can add multiple domains to your directory. However, you can't add the same domain to different directories. So, for example, If you add your domain to your directory, you can't create another Azure AD directory and add the same domain name to it.
 
-If you plan to use single sign-on with the cloud service, we recommend that you help prepare your Active Directory environment by running the Microsoft Deployment Readiness Tool. This tool inspects your Active Directory environment and provides a report that includes information about whether you are ready to set up single sign-on. If not, it lists the changes you need to make to prepare for single sign-on. For example, it inspects whether your users have UPNs and if those UPNs are in the correct format. To download the tool, see [Microsoft Deployment Readiness Tool](https://community.office365.com/zh-cn/f/183/p/2285/8155).
+If you plan to use single sign-on with the cloud service, we recommend that you help prepare your Active Directory environment by running the Microsoft Deployment Readiness Tool. This tool inspects your Active Directory environment and provides a report that includes information about whether you are ready to set up single sign-on. If not, it lists the changes you need to make to prepare for single sign-on. For example, it inspects whether your users have UPNs and if those UPNs are in the correct format. To download the tool, see [Microsoft Deployment Readiness <!-- deleted by customization Tool](https://community.office365.com/zh-cn/f/183/p/2285/8155) --><!-- keep by customization: begin --> Tool](http://community.office365.com/zh-cn/f/183/t/2285.aspx#8155) <!-- keep by customization: end -->.
 
 > [AZURE.NOTE]
 > Using Office 365? Once you have set up your domain, you can start creating email addresses, Lync Online accounts, and distribution groups that use your custom domain name. You can also use your domain name for a public-facing website hosted on SharePoint Online.
@@ -54,7 +54,7 @@ If you plan to use single sign-on with the cloud service, we recommend that you 
 
 ### Add and verify a domain using the Azure Management Portal
 
-1. In the portal, click **Active Directory**, and then click on the name of your organization's directory.You can do one of the following:
+1. In the <!-- deleted by customization Azure Management Portal --><!-- keep by customization: begin --> portal <!-- keep by customization: end -->, click **Active Directory**, and then click on the name of your organization's directory.You can do one of the following:
     1. On the default directory page, click **Add Domain** in the **Improve user sign-in experience **section.
     2. Click **Domains** and then click either **Add a customer domain** or the **Add** button.
 2. On the **Add domain** page, type the domain name that you want to add and the do one of the following:
@@ -78,7 +78,7 @@ After you add and verify your custom domain name, the next step is to edit the D
 
 If you've just completed the **Add a domain** wizard, click **Configure DNS records**. Otherwise, follow these steps.
 
-1. In the portal, in the left pane, click **Domains**.
+1. In the <!-- deleted by customization Azure classc --> portal, in the left pane, click **Domains**.
 2. Depending on which portal you are using, click the domain name that you want to set up, and then click either **DNS settings** or **View DNS settings**. The **DNS settings** page lists the DNS records for the cloud service.
 
     If you want to configure a service that you don't see on the DNS settings tab, verify your domain services selections to make sure you've chosen that service for this domain name. To change the settings, for example, to add Lync Online, see Specify the services you'll use with your domain.
@@ -109,9 +109,9 @@ If you are using Microsoft Intune or the Azure Account Portal:
 
 4. From the table, copy or record the **Destination or Points to Address** information.
 
-If you are using the Management Portal:
+If you are using the <!-- deleted by customization Azure --> Management Portal:
 
-1. In the portal, click **Active Directory**, click the name of your directory, click **Domains**.
+1. In the <!-- deleted by customization Azure Management Portal --><!-- keep by customization: begin --> portal <!-- keep by customization: end -->, click **Active Directory**, click the name of your directory, <!-- deleted by customization and then --> click **Domains**.
 2. On the **Domains** page, in the list of domain names, click the domain that you want to verify, and then click **Verify**.
 2. On the **Verify** page, in the **Record Type** drop-down list, choose either **TXT record** or **MX record**.
 3. Copy or record the information under it.
@@ -142,7 +142,7 @@ After you create either the TXT record or the MX record and sign out of the webs
 
 After the record that you created for your domain has propagated successfully through the DNS system, do the following to finish verifying your domain with Azure AD.
 
-1. In the portal, click **Domains**.
+1. In Azure Active Directory in the Azure Management Portal, click **Domains**.
 2. In the **Domains** list, find the domain that you're verifying, and then based on the portal you are using, click either **Click to verify domain** or **Verify**.
 3. Follow the instructions provided to complete the verification process.
     - If domain verification succeeds, you will be notified that your domain has been added to your account.
@@ -156,7 +156,7 @@ After you've verified your domain, you can configure your domain to work with yo
 
 After you add your domain name to Azure AD, you can change the domain name that should show as the default when you create a new user account. To do this, follow these steps.
 
-1. On the portal page, in the top left corner, click your organization name.
+1. In the Azure Management <!-- deleted by customization Portal --><!-- keep by customization: begin --> portal <!-- keep by customization: end -->, in the top left corner, click your organization name.
 2. Click **Edit**.
 3. Choose a new default domain name, such as the custom domain name that you added.
 
@@ -165,14 +165,14 @@ After you add your domain name to Azure AD, you can change the domain name that 
 Before you remove a domain name, we recommend that you read the following information:
 
 - The original contoso.partner.onmschina.cn domain name that was provided for your directory when you signed up cannot be removed.
-- Any top-level domain that has subdomains associated with it cannot be removed until the subdomains have been removed. For example, you can't remove adatum.com if you have corp.adatum.com or another subdomain that uses the top-level domain name. For more information, see this [Support article](https://support.microsoft.com/kb/2787792/).
+- Any top-level domain that has subdomains associated with it cannot be removed until the subdomains have been removed. For example, you can't remove adatum.com if you have corp.adatum.com or another subdomain that uses the top-level domain name. For more information, see this [Support <!-- deleted by customization article](https://support.microsoft.com/kb/2787792/) --><!-- keep by customization: begin --> article](https://support.microsoft.com/zh-cn/kb/2787792/) <!-- keep by customization: end -->.
 - Have you activated directory synchronization? If so, a domain was automatically added to your account that looks similar to this: contoso.mail.partner.onmschina.cn. This domain name can't be removed.
 - Before you can remove a domain name, you must first remove the domain name from all user or email accounts associated with the domain. You can remove all of the accounts, or you can bulk edit user accounts to change their domain name information and email addresses. For more information, see [Create or edit users in Azure AD](/documentation/articles/active-directory-create-users).
 - If you are hosting a SharePoint Online site on a domain name that is being used for a SharePoint Online site collection, you must delete the site collection before you can remove the domain name.
 
 To remove a domain name:
 
-1. On the portal page, in the left pane, click **Domains**.
+1. In Azure AD in the Azure Management Portal, in the left pane, click **Domains**.
 2. On the **Domains** page, select the domain name that you want to remove, and then click **Remove domain**.
 3. On the **Remove domain** page, click **Yes**.
 
@@ -196,7 +196,7 @@ In addition, the settings information must be exactly correct on the domain regi
 
 ### I can't verify my domain name. How can I find out what's wrong?
 
-One way to track down issues is to use the domains troubleshooting wizard. To start the wizard, do the following: In the cloud service portal, on the Admin page, click **Domains**, and then double-click the domain name that you want to verify. Then, under **Troubleshooting**, click **Troubleshoot domain**.
+One way to track down issues is to use the domains troubleshooting wizard. To start the wizard, do the following: In the Azure Management <!-- deleted by customization Portal --><!-- keep by customization: begin --> portal <!-- keep by customization: end -->, on the Admin page, click **Domains**, and then double-click the domain name that you want to verify. Then, under **Troubleshooting**, click **Troubleshoot domain**.
 
 The troubleshooting wizard asks you for information about where you are in the verification process, and then provides you with information to help you complete the verification.
 
@@ -209,4 +209,4 @@ If you add your custom domain name to the cloud service after you have already a
 - [Azure AD Forum](https://social.msdn.microsoft.com/Forums/zh-cn/home)
 - [Stackoverflow](http://stackoverflow.com/questions/tagged/azure)
 - [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
-- [Manage domains in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn919677.aspx)
+- [Manage domains in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn919677.aspx)

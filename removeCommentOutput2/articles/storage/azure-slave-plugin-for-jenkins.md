@@ -5,11 +5,11 @@
 	documentationCenter="java"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe" />
+	editor="" />
 
 <tags
 	ms.service="storage"
-	ms.date="09/01/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 # How to use the Azure slave plug-in with Jenkins Continuous Integration

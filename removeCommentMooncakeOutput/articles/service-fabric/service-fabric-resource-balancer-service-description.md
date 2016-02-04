@@ -8,18 +8,14 @@
    editor=""/>
 
 <tags
-   ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/15/2015"
-   ms.author="masnider"/>
+	ms.service="Service-Fabric"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 # Service Description Overview
 
 ## Placement Constraints
-[Placement Constraints](../service-fabric-placement-constraint) on a service are the mechanism whereby a particular service instance selects the node properties that it requires. Just like node properties, they are key/value pairs which describe the property name and the service’s requirements for the value. Individual statements can be grouped together with simple Boolean logic to create the necessary constraint. Note that the Service Fabric Resource Balancer interprets the constraints.
+[Placement Constraints](/documentation/articles/service-fabric-placement-constraint) on a service are the mechanism whereby a particular service instance selects the node properties that it requires. Just like node properties, they are key/value pairs which describe the property name and the service's requirements for the value. Individual statements can be grouped together with simple Boolean logic to create the necessary constraint. Note that the Service Fabric Resource Balancer interprets the constraints.
 
 Service placement constraints can be defined either via the service or application manifest or directly in code.
 
@@ -132,9 +128,9 @@ The following diagram shows an example of default balancing of three stateful se
 Generally the default metrics are sufficient for many services and should be used unless there is a specific requirement for additional metrics or capabilities.
 
 ### Defining Custom Metrics
-If the default metrics are insufficient for a particular service, or that service has known requirements for requirements around a particular resource such as disk space or memory, custom medics should be used. Custom metrics are useful when a service has one or more resources that must be balanced well to prevent contention. When the use of those metrics can vary significantly between replicas within the cluster, for example, one Primary might be using 100 percent of the metric, while another may be using only 20 percent. It can also be useful to use custom metrics to capture any resource which is severely limited on a computer, such as memory, disk space, or connections. Additional custom metrics can sometimes be created, which capture or represent metrics that have no upper limits on nodes, but do represent work and resource consumption from the service’s perspective, for example, a "current outstanding transactions" metric. While there might not be a limit to this metric a "capacity" on a given node, there is still a performance benefit by ensuring that this metric is distributed evenly throughout the cluster.
+If the default metrics are insufficient for a particular service, or that service has known requirements for requirements around a particular resource such as disk space or memory, custom medics should be used. Custom metrics are useful when a service has one or more resources that must be balanced well to prevent contention. When the use of those metrics can vary significantly between replicas within the cluster, for example, one Primary might be using 100 percent of the metric, while another may be using only 20 percent. It can also be useful to use custom metrics to capture any resource which is severely limited on a computer, such as memory, disk space, or connections. Additional custom metrics can sometimes be created, which capture or represent metrics that have no upper limits on nodes, but do represent work and resource consumption from the service's perspective, for example, a "current outstanding transactions" metric. While there might not be a limit to this metric a "capacity" on a given node, there is still a performance benefit by ensuring that this metric is distributed evenly throughout the cluster.
 
-Note that if a service defines any custom metric, the service does not use the default system-provided metrics. The default metrics can still be used, but they must be explicitly re-included in the service’s list of metrics on creation.
+Note that if a service defines any custom metric, the service does not use the default system-provided metrics. The default metrics can still be used, but they must be explicitly re-included in the service's list of metrics on creation.
 
 ### Metric Names
 Custom metrics can be created merely by defining a Metric Name when you create a service. Note that the Service Fabric Resource Balancer associates metrics via their name, so if the metric is used as a capacity within node definitions or across services, then the metric names must match exactly so that the Service Fabric Resource Balancer can relate them.
@@ -153,7 +149,7 @@ This example shows how two different metric weight scenarios result in two diffe
 Note that the metric weight of Zero is provided for cases where a service tracks a metric but does not require balancing that is based on this metric. For example, consider a metric which has an explicit limit on several nodes, but for which "even utilization across nodes", which is what resource balancing normally guarantees is unimportant. For these sorts of metrics that do not require balancing, but require enforcement of set limits at nodes, the balancing weight of Zero can be defined. During runtime, the Service Fabric Resource Balancer enforces capacity, but does not attempt to balance the metric proactively even if the use of that metric is very imbalanced across nodes.
 
 ### Metric Default Load for a Primary or Secondary Role
-When you define a metric for a service, provide the expected consumption for that metric when the service is in either a Primary or Secondary role. This information not only helps the Resource Balancer to initially place the service in an efficient way, but can serve as a good approximation of actual service use of the metrics it is related to throughout its lifetime. The Service Fabric Resource Balancer automatically takes this metric consumption into account not just when placing your service, but any time it must move replicas around due to balancing or to other changes in the cluster. If a service’s load is fairly predictable and stable, then this means that by setting these values, the service can opt out of having to report load during runtime.
+When you define a metric for a service, provide the expected consumption for that metric when the service is in either a Primary or Secondary role. This information not only helps the Resource Balancer to initially place the service in an efficient way, but can serve as a good approximation of actual service use of the metrics it is related to throughout its lifetime. The Service Fabric Resource Balancer automatically takes this metric consumption into account not just when placing your service, but any time it must move replicas around due to balancing or to other changes in the cluster. If a service's load is fairly predictable and stable, then this means that by setting these values, the service can opt out of having to report load during runtime.
 
 The following code example shows a service which fully defines two custom metrics, one for memory usage and the other for disk space.
 
@@ -224,9 +220,9 @@ Because the default load values are not updated unless services specifically opt
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
 
-For more information: [Resource Balancer Architecture](service-fabric-resource-balancer-architecture.md), [Placement Constraints](service-fabric-placement-constraint.md)
+For more information: [Resource Balancer Architecture](/documentation/articles/service-fabric-resource-balancer-architecture), [Placement Constraints](/documentation/articles/service-fabric-placement-constraint)
 
-[Image1]: media/service-fabric-resource-balancer-service-description/PC.png
-[Image2]: media/service-fabric-resource-balancer-service-description/DM.png
+[Image1]: ./media/service-fabric-resource-balancer-service-description/PC.png
+[Image2]: ./media/service-fabric-resource-balancer-service-description/DM.png
 [Image3]: media/service-fabric-resource-balancer-service-description/MW.png
  

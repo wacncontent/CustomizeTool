@@ -8,21 +8,17 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/11/2015"
-   ms.author="vturecek"/>
+	ms.service="service-fabric"
+	ms.date="08/11/2015"
+	wacn.date=""/>
 
 # Notes on Service Fabric Reliable Actors type serialization
 
-There are few important aspects that needs to be kept in mind while defining the Actor's interface(s) and State: types need to be Data Contract serializable. More information about Data Contracts can be found on [MSDN](https://msdn.microsoft.com/library/ms731923.aspx).
+There are few important aspects that needs to be kept in mind while defining the Actor's interface(s) and State: types need to be Data Contract serializable. More information about Data Contracts can be found on [MSDN](https://msdn.microsoft.com/zh-cn/library/ms731923.aspx).
 
 ## Types used in Actor Interface(s)
 
-The arguments of all the methods and the result type of the task returned by each method defined in the [actor interface](service-fabric-reliable-actors-introduction.md#actors) need to be data contract serializable. This also applies to the arguments of methods defined in [actor event interfaces](service-fabric-reliable-actors-events.md#actor-events). (Actor event interface methods always return void).
+The arguments of all the methods and the result type of the task returned by each method defined in the [actor interface](/documentation/articles/service-fabric-reliable-actors-introduction#actors) need to be data contract serializable. This also applies to the arguments of methods defined in [actor event interfaces](/documentation/articles/service-fabric-reliable-actors-events#actor-events). (Actor event interface methods always return void).
 For instance, if the `IVoiceMail` interface defines a method as:
 
 ```csharp

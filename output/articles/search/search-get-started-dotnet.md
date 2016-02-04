@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with your first Azure Search application in .NET | Microsoft Azure"
+	pageTitle="Get started with your first Azure Search application in .NET | Windows Azure | Hosted cloud search service"
 	description="Tutorial on how to build a Visual Studio solution using the .NET client library from the Azure Search .NET SDK."
 	services="search"
 	documentationCenter=""
@@ -9,34 +9,30 @@
 
 <tags
 	ms.service="search"
-	ms.devlang="rest-api"
-	ms.workload="search"
-	ms.topic="hero-article"
-	ms.tgt_pltfrm="na"
-	ms.date="09/08/2015"
-	ms.author="heidist"/>
+	ms.date="11/05/2015"
+	wacn.date=""/>
 
 # Get started with your first Azure Search application in .NET
 
-Learn how to build a custom .NET search application in Visual Studio 2013 or later that uses Azure Search for its search experience. This tutorial uses the [Azure Search .NET SDK](https://msdn.microsoft.com/library/azure/dn951165.aspx) to build classes for the objects and operations used in this exercise, as well as the Azure Search service REST API.
+Learn how to build a custom .NET search application in Visual Studio 2013 or later that uses Azure Search, a cloud hosted search service on Windows Azure, for its search experience. This tutorial uses the [Azure Search .NET SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn951165.aspx) to build classes for the objects and operations used in this exercise, as well as the Azure Search service REST API.
 
-To run this sample, you need an Azure Search service, which you can sign up for in the [Azure portal](https://portal.azure.com).
+To run this sample, you need an Azure Search service, which you can sign up for in the [Azure Management Portal](https://manage.windowsazure.cn).
 
-> [AZURE.TIP] Download the source code for this tutorial at [Azure Search .NET Samples](http://go.microsoft.com/fwlink/p/?LinkId=530196). Learn how to set up connections and send requests in [How to use Azure Search from a .NET application](search-howto-dotnet-sdk.md).
+> [AZURE.TIP] Download the source code for this tutorial at [Azure Search .NET Samples](http://go.microsoft.com/fwlink/p/?LinkId=530196). Learn how to set up connections and send requests in [How to use Azure Search from a .NET application](/documentation/articles/search-howto-dotnet-sdk).
 
 ## About the data
 
 This sample application uses data from the [United States Geological Services (USGS)](http://geonames.usgs.gov/domestic/download_data.htm), filtered on the state of Rhode Island to reduce the dataset size. We'll use this data to build a search application that returns landmark buildings such as hospitals and schools, as well as geological features like streams, lakes, and summits.
 
-In this application, the **DataIndexer** program builds and loads the index using an [Indexer](https://msdn.microsoft.com/library/azure/dn798918.aspx) construct, retrieving the filtered USGS dataset from a public Azure SQL Database. Credentials and connection information to the online data source is provided in the program code. No further configuration is necessary.
+In this application, the **DataIndexer** program builds and loads the index using an [Indexer](https://msdn.microsoft.com/zh-cn/library/azure/dn798918.aspx) construct, retrieving the filtered USGS dataset from a public Azure SQL Database. Credentials and connection information to the online data source is provided in the program code. No further configuration is necessary.
 
-> [AZURE.NOTE] We applied a filter on this dataset to stay under the 10,000 document limit of the free pricing tier. If you use the standard tier, this limit does not apply. For details about capacity for each pricing tier, see [Limits and constraints](search-limits-quotas-capacity.md).
+> [AZURE.NOTE] We applied a filter on this dataset to stay under the 10,000 document limit of the free pricing tier. If you use the standard tier, this limit does not apply. For details about capacity for each pricing tier, see [Limits and constraints](/documentation/articles/search-limits-quotas-capacity).
 
 ## Create the Azure Search service
 
-1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
 
-2. In the Jumpbar, click **New** > **Data + Storage** > **Search**.
+2. In the Jumpbar, click **New** > **DATA SERVICE** > **Search**.
 
      ![][1]
 
@@ -44,7 +40,7 @@ In this application, the **DataIndexer** program builds and loads the index usin
 
      ![][2]
 
-	- **Service name** must be unique, lower-case, under 15 characters, with no spaces. This name becomes part of the endpoint of your Azure Search service. See [Naming Rules](https://msdn.microsoft.com/library/azure/dn857353.aspx) for more information about naming conventions.
+	- **Service name** must be unique, lower-case, under 15 characters, with no spaces. This name becomes part of the endpoint of your Azure Search service. See [Naming Rules](https://msdn.microsoft.com/zh-cn/library/azure/dn857353.aspx) for more information about naming conventions.
 
 	- **Pricing Tier** determines capacity and billing. Both tiers provide the same features, but at different resource levels.
 
@@ -79,13 +75,13 @@ After you create the service, return to the portal to get the URL or `api-key`. 
 This solution includes two projects:
 
 - **DataIndexer**, a Visual C# console application, used for loading data.
-- **SimpleSearchMVCApp**, a Visual C# ASP.NET MVC Web application, used to query and return search results.
+- **SimpleSearchMVCApp**, a Visual C# ASP.NET MVC web site, used to query and return search results.
 
 In this step, you'll create both projects.
 
 1. Start **Visual Studio** > **New Project** > **Visual C#** > **Console Application**.
 2. Name the project **DataIndexer** and then name the solution **AzureSearchDotNetDemo**.
-3. In Solution Explorer, on solution, right-click **Add** > **New Project** > **Visual C#** > **ASP.NET Web Application**.
+3. In Solution Explorer, on solution, right-click **Add** > **New Project** > **Visual C#** > **ASP.NET web site**.
 4. Name the project **SimpleSearchMVCApp**.
 5. In the New ASP.NET Project, choose the MVC template, and clear options to avoid creating program artifacts that you won't be using in this tutorial.
 
@@ -469,13 +465,13 @@ Code that calls the REST API should include a class that handles connections and
 		        private static void SyncDataFromAzureSQL()
 		        {
 		            // This will use the Azure Search Indexer to synchronize data from Azure SQL to Azure Search
-		            Uri _serviceUri = new Uri("https://" + ConfigurationManager.AppSettings["SearchServiceName"] + ".search.windows.net");
+		            Uri _serviceUri = new Uri("https://" + ConfigurationManager.AppSettings["SearchServiceName"] + ".search.chinacloudapi.cn");
 		            HttpClient _httpClient = new HttpClient();
 		            _httpClient.DefaultRequestHeaders.Add("api-key", ConfigurationManager.AppSettings["SearchServiceApiKey"]);
 
 		            Console.WriteLine("{0}", "Creating Data Source...\n");
 		            Uri uri = new Uri(_serviceUri, "datasources/usgs-datasource");
-		            string json = "{ 'name' : 'usgs-datasource','description' : 'USGS Dataset','type' : 'azuresql','credentials' : { 'connectionString' : 'Server=tcp:azs-playground.database.windows.net,1433;Database=usgs;User ID=reader;Password=EdrERBt3j6mZDP;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;' },'container' : { 'name' : 'GeoNamesRI' }} ";
+		            string json = "{ 'name' : 'usgs-datasource','description' : 'USGS Dataset','type' : 'azuresql','credentials' : { 'connectionString' : 'Server=tcp:azs-playground.database.chinacloudapi.cn,1433;Database=usgs;User ID=reader;Password=EdrERBt3j6mZDP;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;' },'container' : { 'name' : 'GeoNamesRI' }} ";
 		            HttpResponseMessage response = AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Put, uri, json);
 		            if (response.StatusCode != HttpStatusCode.Created && response.StatusCode != HttpStatusCode.NoContent)
 		            {
@@ -558,7 +554,7 @@ In the portal, you should see a new **geonames** index. It can take the portal s
 
 ## Modify SimpleSearchMVCApp
 
-**SimpleSearchMVC** is a web app that runs locally in IIS Express. It provides a search box and presents search results in a table.
+**SimpleSearchMVC** is a web site that runs locally in IIS Express. It provides a search box and presents search results in a table.
 
 Before you can run this program, you'll make three modifications:
 
@@ -775,7 +771,7 @@ This is the first Azure Search tutorial based on .NET and the USGS dataset. Over
 
 If you already have some background in Azure Search, you can use this sample as a springboard for trying suggesters (type-ahead or autocomplete queries), filters, and faceted navigation. You can also improve upon the search results page by adding counts and batching documents so that users can page through the results.
 
-New to Azure Search? We recommend trying other tutorials to develop an understanding of what you can create. Visit our [documentation page](http://azure.microsoft.com/documentation/services/search/) to find more resources. You can also view the links in our [Video and Tutorial list](search-video-demo-tutorial-list.md) to access more information.
+New to Azure Search? We recommend trying other tutorials to develop an understanding of what you can create. Visit our [documentation page](/documentation/services/search/) to find more resources. You can also view the links in our [Video and Tutorial list](/documentation/articles/search-video-demo-tutorial-list) to access more information.
 
 <!--Image references-->
 [1]: ./media/search-get-started-dotnet/create-search-portal-1.PNG

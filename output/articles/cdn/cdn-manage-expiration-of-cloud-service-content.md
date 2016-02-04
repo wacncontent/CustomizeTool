@@ -3,14 +3,13 @@
  description="" 
  services="cdn" 
  documentationCenter=".NET" 
- authors="zhangmanling" 
+ authors="camsoper" 
  manager="dwrede" 
  editor=""/>
-<tags 
- ms.service="cdn" 
-
- ms.date="09/01/2015" 
- wacn.date=""/>
+<tags
+	ms.service="cdn"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 #How to Manage Expiration of Cloud Service Content in the Azure Content Delivery Network (CDN)
 
@@ -45,5 +44,5 @@ For example, to cache content for one hour, add the following:
 
 ##See Also
 
-[How to Manage Expiration of Blob Content in the Azure Content Delivery Network (CDN)](/documentation/articles/cdn-manage-expiration-of-blob-content
+[How to Manage Expiration of Blob Content in the Azure Content Delivery Network (CDN)](./cdn-manage-expiration-of-blob-content.md
 ) 

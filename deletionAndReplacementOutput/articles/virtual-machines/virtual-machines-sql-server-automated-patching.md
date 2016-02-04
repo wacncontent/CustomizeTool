@@ -6,15 +6,3 @@ deleted:
 
 reason: ()
 
-replacement:
-
-deleted:
-
-		Portal](https://portal.azure.com/)
-
-replaced by:
-
-		Portal](https://manage.windowsazure.cn/)
-
-reason: ()
-

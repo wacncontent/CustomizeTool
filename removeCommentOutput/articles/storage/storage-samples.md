@@ -65,7 +65,7 @@ To explore the C++ samples, download the [C++ Storage Client Library](https://ww
 ### Java resources
 
 - [Source code for the Java storage client library](https://github.com/azure/azure-storage-java)
-- [Java Client Library Reference](http://dl.windowsazure.com/storage/javadoc/)
+- [Java Client Library Reference](http://azure.github.io/azure-storage-java/)
 
 ### Node.js resources
 

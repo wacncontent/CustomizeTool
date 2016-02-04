@@ -108,7 +108,7 @@ In order for the Usage Analytics feature to gather and analyze data, the Azure A
 
 ![AD FS audit logs](./media/active-directory-aadconnect-health-requirements/adfsaudit.png)
 
-> [AZURE.WARNING] If you have a group policy that is disabling AD FS auditing then the Azure AD Connect Health Agent will not be able to collect information. Ensure that you don’t have a group policy that may be disabling auditing.
+> [AZURE.WARNING] If you have a group policy that is disabling AD FS auditing then the Azure AD Connect Health Agent will not be able to collect information. Ensure that you don't have a group policy that may be disabling auditing.
 
 [//]: # (Start of Agent Proxy Configuration Section)
 

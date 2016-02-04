@@ -3,17 +3,17 @@
    description="Learn how to use Windows PowerShell scripts from Visual Studio to publish to development and test environments."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="09/08/2015"
+	ms.date="12/19/2015"
 	wacn.date=""/>
 
 # Using Windows PowerShell Scripts to Publish to Dev and Test Environments
 
-When you create a web application in Visual Studio, you can generate a Windows PowerShell script that you can use later to automate the publishing of your website to Azure as a Web App in Azure Websites or a virtual machine. You can edit and extend the Windows PowerShell script in the Visual Studio editor to suit your requirements, or integrate the script with existing build, test, and publishing scripts.
+When you create a web application in Visual Studio, you can generate a Windows PowerShell script that you can use later to automate the publishing of your website to Azure as a Web App in Azure or a virtual machine. You can edit and extend the Windows PowerShell script in the Visual Studio editor to suit your requirements, or integrate the script with existing build, test, and publishing scripts.
 
 Using these scripts, you can provision customized versions (also known as dev and test environments) of your site for temporary use. For example, you might set up a particular version of your website on an Azure virtual machine or on the staging slot on a website to run a test suite, reproduce a bug, test a bug fix, trial a proposed change, or set up a custom environment for a demo or presentation. After you've created a script that publishes your project, you can recreate identical environments by re-running the script as needed, or run the script with your own build of your web application to create a custom environment for testing.
 
@@ -33,7 +33,7 @@ Additional tools and resources for working with PowerShell in Visual Studio for 
 
 ## Generating the publish scripts
 
-You can generate the publish scripts for a virtual machine that hosts your website when you create a new project by following [these instructions](/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell). You can also [generate publish scripts for web apps in Azure Websites](/documentation/articles/web-sites-dotnet-get-started).
+You can generate the publish scripts for a virtual machine that hosts your website when you create a new project by following [these instructions](/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell). You can also [generate publish scripts for web apps in Azure](/documentation/articles/web-sites-dotnet-get-started).
 
 ## Scripts that Visual Studio generates
 
@@ -145,7 +145,7 @@ When you create a virtual machine, the JSON configuration file looks similar to 
 
 You can edit the JSON configuration to change what happens when you run the publish scripts. The `cloudService` and `virtualMachine` sections are required, but you can delete the `databases` section if you don't need it. The properties that are empty in the default configuration file that Visual Studio generates are optional; those that have values in the default configuration file are required.
 
-If you have a website that has multiple deployment environments (known as slots) instead of a single production site in Azure, you can include the slot name in the name of the website in the JSON configuration file. For example, if you have a website that's named **mysite** and a slot for it named **test** then the URI is mysite-test.chinacloudapp.cn, but the correct name to use in the configuration file is mysite(test). You can only do this if the website and slots already exist in your subscription. If they don't exist, create the website by running the script without specifying the slot, then create the slot in the Azure management portal, and thereafter run the script with the modified website name. For more information about deployment slots for web apps, see [Set up staging environments for web apps in Azure Websites](/documentation/articles/web-sites-staged-publishing).
+If you have a website that has multiple deployment environments (known as slots) instead of a single production site in Azure, you can include the slot name in the name of the website in the JSON configuration file. For example, if you have a website that's named **mysite** and a slot for it named **test** then the URI is mysite-test.chinacloudapp.cn, but the correct name to use in the configuration file is mysite(test). You can only do this if the website and slots already exist in your subscription. If they don't exist, create the website by running the script without specifying the slot, then create the slot in the Azure management portal, and thereafter run the script with the modified website name. For more information about deployment slots for web apps, see [Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing).
 
 ## How to run the publish scripts
 
@@ -173,21 +173,21 @@ If you have never run a Windows PowerShell script before, you must first set the
 
     Note that when you automate the script, this method of providing Azure credentials won't work. Instead, you should use the .publishsettings file to provide credentials. One time only, you use the command **Get-AzurePublishSettingsFile** to download the file from Azure, and thereafter use **Import-AzurePublishSettingsFile** to import the file. For detailed instructions, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
-1. (Optional) If you want to create Azure resources such as the virtual machine, database, and website without publishing your web application, use the **Publish-WebApplication.ps1** command with the **-Configuration** argument set to the JSON configuration file. This command line uses the JSON configuration file to determine which resources to create. Because it uses the default settings for other command-line arguments, it creates the resources, but doesn't publish your web application. The –Verbose option gives you more information about what's happening.
+1. (Optional) If you want to create Azure resources such as the virtual machine, database, and website without publishing your web application, use the **Publish-WebApplication.ps1** command with the **-Configuration** argument set to the JSON configuration file. This command line uses the JSON configuration file to determine which resources to create. Because it uses the default settings for other command-line arguments, it creates the resources, but doesn't publish your web application. The -Verbose option gives you more information about what's happening.
 
-    `Publish-WebApplication.ps1 -Verbose –Configuration C:\Path\WebProject-WAWS-dev.json`
+    `Publish-WebApplication.ps1 -Verbose -Configuration C:\Path\WebProject-WAWS-dev.json`
 
-1. Use the **Publish-WebApplication.ps1** command as shown in one of the following examples to invoke the script and publish your web application. If you need to override the default settings for any of the other arguments, such as the subscription name, publish package name, virtual machine credentials, or database server credentials, you can specify those parameters. Use the **–Verbose** option to see more information about the progress of the publishing process.
+1. Use the **Publish-WebApplication.ps1** command as shown in one of the following examples to invoke the script and publish your web application. If you need to override the default settings for any of the other arguments, such as the subscription name, publish package name, virtual machine credentials, or database server credentials, you can specify those parameters. Use the **-Verbose** option to see more information about the progress of the publishing process.
 
     ```
-    Publish-WebApplication.ps1 –Configuration C:\Path\WebProject-WAWS-dev-json `
-    –SubscriptionName Contoso `
+    Publish-WebApplication.ps1 -Configuration C:\Path\WebProject-WAWS-dev-json `
+    -SubscriptionName Contoso `
     -WebDeployPackage C:\Documents\Azure\ADWebApp.zip `
     -DatabaseServerPassword @{Name="dbServerName";Password="adminPassword"} `
     -Verbose
     ```
 
-    If you're creating a virtual machine, the command looks like the following. This example also shows how to specify the credentials for multiple databases. For the virtual machines that these scripts create, the SSL certificate is not from a trusted root authority. Therefore, you need to use the **–AllowUntrusted** option.
+    If you're creating a virtual machine, the command looks like the following. This example also shows how to specify the credentials for multiple databases. For the virtual machines that these scripts create, the SSL certificate is not from a trusted root authority. Therefore, you need to use the **-AllowUntrusted** option.
 
     ```
     Publish-WebApplication.ps1 `
@@ -267,11 +267,11 @@ To automate building your project, add code that calls MSBuild to `New-WebDeploy
         $projectName = (Get-Item $ProjectFile).BaseName
           
         #Construct the path to web deploy zip package
-        $DeployPackageDir =  '.\MSBuildOutputPath\_PublishedWebsites\{0}_Package\{0}.zip' -f $projectName
+        $DeployPackageDir =  '.\MSBuildOutputPath_PublishedWebsites\{0}_Package\{0}.zip' -f $projectName
           
           
         #Get the full path for the web deploy zip package. This is required for MSDeploy to work
-        $WebDeployPackage = Resolve-Path –LiteralPath $DeployPackageDir
+        $WebDeployPackage = Resolve-Path -LiteralPath $DeployPackageDir
           
         Write-VerboseWithTime 'Build-WebDeployPackage: End'
           

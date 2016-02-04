@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/15/2015"
-	wacn.date=""/> 
+	ms.date="12/07/2015"
+	wacn.date=""/>
 
 # Store your mobile service project code in source control
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 - [.NET backend](/documentation/articles/mobile-services-dotnet-backend-store-code-source-control)
@@ -56,7 +61,7 @@ Now that you have created your local repository, you can publish your .NET backe
 
 ##<a name="deploy-scripts"></a>Publish your project by using Git
 
-1. Create a new .NET backend mobile service project in Visual Studio 2013, or move an existing project into your new local repository.  
+1. Create a new .NET backend mobile service project in Visual Studio 2013, or move an existing project into your new local repository.
 
 	For a quick test, download and save the Mobile Services quickstart project to this folder.
 
@@ -91,7 +96,6 @@ Now, your mobile service project is maintained in source control, and you can pu
 <!-- URLs. -->
 [Git website]: http://git-scm.com
 [Source control]: http://msdn.microsoft.com/zh-cn/library/azure/c25aaede-c1f0-4004-8b78-113708761643
-[Installing Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
-[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
-[Azure Management Portal]: https://manage.windowsazure.cn/
-[How to make data model changes to a .NET backend mobile service]: /documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations
+[Installing Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
+[Get started with Mobile Services]: mobile-services-dotnet-backend-ios-get-started.md
+[How to make data model changes to a .NET backend mobile service]: mobile-services-dotnet-backend-how-to-use-code-first-migrations.md

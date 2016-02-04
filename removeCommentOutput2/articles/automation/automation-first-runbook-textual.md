@@ -1,6 +1,6 @@
 <properties
 	pageTitle="My first PowerShell Workflow runbook in Azure Automation | Windows Azure"
-	description="Tutorial that walks you through the creation, testing, and publishing of a simple text runbook using PowerShell Workflow.  Several concepts are covered such as authenticating to Azure resources and input parameters."
+	description="Tutorial that walks you through the creation, testing, and publishing of a simple text runbook using PowerShell Workflow."
 	services="automation"
 	documentationCenter=""
 	authors="bwren"
@@ -16,7 +16,7 @@
 # My first PowerShell Workflow runbook
 
 
-This tutorial walks you through the creation of a [PowerShell Workflow runbook](/documentation/articles/automation-runbook-types#powerShell-workflow-runbooks) in Azure Automation.  We'll start with a simple runbook that we'll test and publish while we explain how to track the status of the runbook job.  Then we'll modify the runbook to actually manage Azure resources, in this case starting an Azure virtual machine.  We'll then make the runbook more robust by adding runbook parameters.  
+This tutorial walks you through the creation of a PowerShell Workflow runbook in Azure Automation.  We'll start with a simple runbook that we'll test and publish while we explain how to track the status of the runbook job.  Then we'll modify the runbook to actually manage Azure resources, in this case starting an Azure virtual machine.  We'll then make the runbook more robust by adding runbook parameters.
 
 ## Prerequisites
 
@@ -75,12 +75,12 @@ We've tested and published our runbook, but so far it doesn't do anything useful
 3.  Click **Insert** > **Setting** > **Get Windows PowerShell Credential**, choose the credential you want.
 4.  If you don't have a credential, you can add one by clicking **Manage** > **Add Credential** to create one. For more information, see [Azure Active Directory user and Automation Credential asset](/documentation/articles/automation-configuring).
 5.  In front of **Get-AutomationPSCredential**, type *$Credential =* to assign the credential to a variable. 
-3.  On the next line, type *Add-AzureAccount -Credential $Credential –Environment AzureChinaCloud*.
+3.  On the next line, type *Add-AzureAccount -Credential $Credential -Environment AzureChinaCloud*.
 
 		workflow test
 		{
     		$Credential = Get-AutomationPSCredential -Name "<your credential>"
-    		Add-AzureAccount –Credential $Credential –Environment AzureChinaCloud
+    		Add-AzureAccount -Credential $Credential -Environment AzureChinaCloud
 		}
 
 3. Click **Test** and then **Yes** when prompted.
@@ -96,7 +96,7 @@ Now that our runbook is authenticating to our Azure subscription, we can manage 
 		workflow test
 		{
     		$Credential = Get-AutomationPSCredential -Name "<your credential>"
-    		Add-AzureAccount –Credential $Credential –Environment AzureChinaCloud
+    		Add-AzureAccount -Credential $Credential -Environment AzureChinaCloud
     		Start-AzureVM -Name "<your vm>" -ServiceName "<your vm service>"
 		}
 
@@ -108,7 +108,6 @@ Now that our runbook is authenticating to our Azure subscription, we can manage 
 Our runbook currently starts the virtual machine that we hardcoded in the runbook, but it would be more useful if we could specify the virtual machine when the runbook is started.  We will now add input parameters to the runbook to provide that functionality.
 
 1. Add parameters for *VMName* and *VMServiceName* to the runbook and use these variables with the **Start-AzureVM** cmdlet as in the following image. <br>
-
 		workflow test
 		{
     		Param (
@@ -117,7 +116,7 @@ Our runbook currently starts the virtual machine that we hardcoded in the runboo
     		)
     
     		$Credential = Get-AutomationPSCredential -Name "<your credential>"
-    		Add-AzureAccount –Credential $Credential –Environment AzureChinaCloud
+    		Add-AzureAccount -Credential $Credential -Environment AzureChinaCloud
     		Start-AzureVM -Name $VMName -ServiceName $VMServiceName
 		}
 
@@ -125,8 +124,8 @@ Our runbook currently starts the virtual machine that we hardcoded in the runboo
 11.  Close the Test pane.
 12.  Click **Publish** to publish the new version of the runbook.
 13.  Stop the virtual machine that you started in the previous step.
-13.  Click **Start** to start the runbook.  Type in the **VMName** and **VMServiceName** for the virtual machine that you're going to start.<br>
-
+13.  Click **Start** to start the runbook.  Type in the **VMName** and **VMServiceName** for the virtual machine that you're going to start. 
 14.  When the runbook completes, check that the virtual machine was started.
 
 
+- [My first PowerShell runbook](/documentation/articles/automation-first-runbook-textual-PowerShell)

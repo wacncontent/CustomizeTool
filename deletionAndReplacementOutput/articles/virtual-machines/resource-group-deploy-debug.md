@@ -4,25 +4,25 @@ deleted:
 
 		South
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		, South
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		East 2, China
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		, China North, China East,
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -56,7 +56,7 @@ deleted:
 		    China North
 		    China North
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -64,7 +64,7 @@ deleted:
 		            "China North",
 		            "West Europe",
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -73,7 +73,7 @@ deleted:
 		                "China North",
 		                "West Europe",
 
-reason: ()
+reason: (region diff)
 
 replacement:
 
@@ -85,7 +85,7 @@ replaced by:
 
 		North..
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -95,7 +95,7 @@ replaced by:
 
 		North,..
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -107,7 +107,7 @@ replaced by:
 		Microsoft.ApiManagement/service         {China East, China North... China East China North,...
 		    Microsoft.AppService/apiapps            {China East, China North... China East China North,...
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -117,5 +117,5 @@ replaced by:
 
 		"location": "China East,China North"
 
-reason: ()
+reason: (region diff)
 

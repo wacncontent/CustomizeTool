@@ -8,9 +8,9 @@
    editor="monicar"/>
 
 <tags
-	ms.service="sql-database"
-	ms.date="10/07/2015"
-	wacn.date=""/>
+   ms.service="sql-database"
+   ms.date="10/07/2015"
+   wacn.date=""/>
 
 # Designing cloud applications for business continuity using Geo-Replication
 
@@ -57,7 +57,7 @@ Once the outage is mitigated the secondary database will be automatically synchr
 
 The key **advantages** of this design pattern are:
 
-+ the SQL connection string is set during the application deployment in each region and it doesn’t change after failover
++ the SQL connection string is set during the application deployment in each region and it doesnât change after failover
 + the application's performance is not impacted by failover as the application and the database are always co-located 
 
 The main **tradeoff** is that the redundant application instance in the secondary region is only used for disaster recovery. 
@@ -91,7 +91,7 @@ In case of an outage in one of the secondary regions traffic manager will automa
 
 ![Figure 6](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern2-3.png)
 
-The key **advantage** of this this design pattern is that you can scale the application workload across multiple secondaries to achieve the optimal end user performance. The **tradeoffs** of this option are:
+The key **advantage** of this design pattern is that you can scale the application workload across multiple secondaries to achieve the optimal end user performance. The **tradeoffs** of this option are:
 
 + read-write connections between the application instances and database have varying latency and cost
 + application performance is impacted during the outage

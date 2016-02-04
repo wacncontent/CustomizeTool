@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/08/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 
@@ -36,7 +36,7 @@ Elastic database pools in Azure SQL Database enable SaaS ISVs to optimize the pr
 
 Elastic database pools are well suited for a large number of databases with specific utilization patterns. For a given database, this pattern is characterized by low average utilization with relatively infrequent utilization spikes.
 
-The more databases you can add to a pool the greater your savings become, but depending on your application utilization pattern, it is possible to see savings with as few as 2 S3 databases.  
+The more databases you can add to a pool the greater your savings become. Depending on your application utilization pattern, it is possible to see savings with as few as 2 S3 databases.  
 
 The following sections will help you understand how to assess if your specific collection of databases will benefit from using an elastic database pool. The examples use Standard elastic database pools but the same principles also apply to Basic and Premium pools.
 
@@ -139,7 +139,7 @@ For available sizes, see [eDTU and storage limits for elastic database pools and
 
 STA and DMVs provide different tooling options and capabilities for sizing an elastic database pool. Regardless of the tooling option used, the sizing estimate should only be used for initial assessment and creation of elastic database pools. Once a pool is created, its resource usage should be accurately monitored and the performance settings of the pool adjusted up and down as needed. 
 
-**STA**<br>STA is a built-in tool in [the portal](https://manage.windowsazure.cn) that automatically evaluates historical resource utilization of databases in an existing SQL Database server and recommends an appropriate elastic database pool configuration. For details, see [Elastic database pool pricing tier recommendations](/documentation/articles/sql-database-elastic-pool-portal#elastic-database-pool-pricing-tier-recommendations).
+**STA**<br>STA is a built-in tool in [the Azure Management Portal](https://manage.windowsazure.cn) that automatically evaluates historical resource utilization of databases in an existing SQL Database server and recommends an appropriate elastic database pool configuration. For details, see [Elastic database pool pricing tier recommendations](/documentation/articles/sql-database-elastic-pool-portal#elastic-database-pool-pricing-tier-recommendations).
 
 **DMV sizing tool**<br>DMV sizing tool is provided as a PowerShell script and enables customizing the sizing estimates of an elastic database pool for existing databases in a server. 
 
@@ -159,7 +159,7 @@ Select the tool that is appropriate for analyzing your specific application. The
 
 STA evaluates the utilization history of databases and recommends an elastic database pool when it is more cost effective than using performance levels for single databases. If a pool is recommended, the tool provides a list of recommended databases, and also the recommended amount of pool eDTUs and min/max eDTU settings for each elastic database. In order for a database to be considered as a candidate for a pool, it must exist for at least 7 days.
 
-STA is available in the preview portal when adding an elastic database pool to an existing server. If recommendations for an elastic database pool are available for that server, they are displayed in the “Elastic Database Pool’ creation page. Customers can always change the recommended configurations to create their own elastic database pool grouping. 
+STA is available in the portal when adding an elastic database pool to an existing server. If recommendations for an elastic database pool are available for that server, they are displayed in the "Elastic Database Pool' creation page. Customers can always change the recommended configurations to create their own elastic database pool grouping. 
 
 For details, see [Elastic database pool pricing tier recommendations](/documentation/articles/sql-database-elastic-pool-portal#elastic-database-pool-pricing-tier-recommendations)
 
@@ -204,7 +204,7 @@ If you need to exclude additional databases from the target server, you may chan
 
 The script needs an output database to store intermediate data for analysis. You can use a new or existing database. Although not technically required for the tool to run, the output database should be in a different server to avoid impacting the analysis outcome. Suggest the performance level of the output database to be at least S0 or higher. When collecting a long duration of data for a large number of databases, you may consider upgrading your output database to a higher performance level.
 
-The script needs you to provide the credentials to connect to the target server (the elastic database pool candidate) with full server name like “abcdef.database.chinacloudapi.cn”. Currently the script doesn’t support analyzing more than one server at a time.
+The script needs you to provide the credentials to connect to the target server (the elastic database pool candidate) with full server name like "abcdef.database.chinacloudapi.cn". Currently the script doesn't support analyzing more than one server at a time.
 
 
 After submitting values for the initial set of parameters, you are prompted to log on to your azure account. This is for logging on to your target server, not the output database server.

@@ -10,7 +10,7 @@
 <tags 
 	ms.service="app-service-web" 
 	ms.date="09/16/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="11/27/2015"/>
 	
 # 如何配置网站 #
 在 Azure 管理门户中，你可以更改网站的配置选项并链接到其他 Azure 资源，如数据库。
@@ -62,17 +62,17 @@
 
 ### 证书
 
-在“基本”或“标准”模式下，你可为自定义域上载 SSL 证书。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)。
+在“基本”或“标准”模式下，你可为自定义域上载 SSL 证书。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](href="/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/)。
 
 此处列出已上载的证书。在你上载某一证书后，可以将其分配给你的订阅和区域中的任何网站。通配符证书可用于接受此证书的域中的任何站点。仅当该证书不具有有效绑定关系时，才能删除证书。
 
 ### 域名
 
-查看或添加网站的其他域名。有关详细信息，请参阅[为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。
+查看或添加网站的其他域名。有关详细信息，请参阅[为 Azure 网站配置自定义域名](/zh-cm/documentation/articles/web-sites-custom-domain-name/)。
 
 ### SSL 绑定
 
-如果已上载 SSL 证书，可以将其绑定到自定义域名。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)
+如果已上载 SSL 证书，可以将其绑定到自定义域名。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](href="/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/)
 
 ### 部署
 
@@ -127,7 +127,7 @@
 
 选择“外接程序”<strong></strong>可从列表中选择分析外接程序，也可转到 Azure 应用商店选择一个。选择“自定义”<strong></strong>可从列表中选择 New Relic 之类的分析提供程序。如果你使用某一自定义提供程序，则必须在“提供程序密钥”<strong></strong>框中输入许可证密钥。
 
-有关 New Relic 与 Azure 网站配合使用的详细信息，请参阅 <a href="/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/">Azure 网站上的 New Relic 应用程序性能管理</a>。
+有关 New Relic 与 Azure 网站配合使用的详细信息，请参阅 <a href="/zh-cn/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/">Azure 网站上的 New Relic 应用程序性能管理</a>。
 
 ### 应用设置
 
@@ -150,7 +150,7 @@
 - SQL 数据库：SQLAZURECONNSTR\_
 - 自定义：CUSTOMCONNSTR\_
 
-例如，如果将 MySql 连接字符串命名为 connectionstring1，则将通过环境变量 <code>MYSQLCONNSTR_connectionString1</code> 访问该字符串。
+例如，如果将 MySql 连接字符串命名为 connectionstring1，则将通过环境变量 <code>MYSQLCONNSTR\_connectionString1</code> 访问该字符串。
 
 <strong>请注意</strong>：将数据库资源链接到网站时，也会创建连接字符串。在配置管理页上查看时，以此方式创建的连接字符串为只读形式。
 
@@ -196,7 +196,7 @@ Web 应用程序可能会使用根据 URL 路由的模块，而不是提供静�
 
 Azure 将使用指定的参数创建 SQL 数据库并将该数据库链接到网站。
 <!-- HOW TO: CONFIGURE A WEBSITE TO USE A MYSQL DATABASE -->
-##<a name="howtoconfigMySQL"></a>如何配置网站以使用 MySQL 数据库##
+<!--## <a name="howtoconfigMySQL"></a>如何配置网站以使用 MySQL 数据库##
 若要配置网站以使用 MySQL 数据库，请遵循与使用 SQL 数据库相同的步骤，但是在“链接资源”向导中，请选择“MySQL 数据库”，而不是“SQL 数据库”。
 
 或者，你也可以选择使用“自定义创建”选项来创建网站。在“数据库”下拉列表中，选择“新建 MySQL 数据库”或“使用现有的 MySQL 数据库”。-->

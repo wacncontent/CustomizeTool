@@ -62,7 +62,7 @@ The following code illustrates how to filter data by including a `where` clause 
 	    alert("Error: " + err);
 	});
 
-By adding calling `where` on the Query object and passing an object as a parameter, we are  instructing Mobile Services to return only the rows whose `complete` column contains the `false` value. Also, look at the request URI below, and notice that we are modifying the query string  itself:
+By calling `where` on the Query object and passing an object as a parameter, we are  instructing Mobile Services to return only the rows whose `complete` column contains the `false` value. Also, look at the request URI below, and notice that we are modifying the query string  itself:
 
 	GET /tables/todoitem?$filter=(complete+eq+false) HTTP/1.1
 
@@ -624,7 +624,7 @@ Filters are used for a lot more than customizing request headers. They can be us
 
 ##<a name="hostnames"></a>How to: Use cross-origin resource sharing
 
-To control which websites are allowed to interact with and send requests to your mobile service, make sure to add the host name of the website you use to host it to the Cross-Origin Resource Sharing (CORS) whitelist. For a JavaScript backend mobile service, you can configure the whitelist on the Configure tab in the [Azure Management portal](https://manage.windowsazure.cn). You can use wildcards if required. By default, new Mobile Services instruct browsers to permit access only from `localhost`, and Cross-Origin Resource Sharing (CORS) allows JavaScript code running in a browser on an external hostname to interact with your Mobile Service.  This configuration is not necessary for WinJS applications.
+To control which websites are allowed to interact with and send requests to your mobile service, make sure to add the host name of the website you use to host it to the Cross-Origin Resource Sharing (CORS) whitelist. For a JavaScript backend mobile service, you can configure the whitelist on the Configure tab in the [Azure Management Portal](https://manage.windowsazure.cn). You can use wildcards if required. By default, new Mobile Services instruct browsers to permit access only from `localhost`, and Cross-Origin Resource Sharing (CORS) allows JavaScript code running in a browser on an external hostname to interact with your Mobile Service.  This configuration is not necessary for WinJS applications.
 
 <!-- Anchors. -->
 [What is Mobile Services]: #what-is

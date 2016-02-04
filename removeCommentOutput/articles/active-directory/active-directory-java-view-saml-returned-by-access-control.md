@@ -176,7 +176,7 @@ Modify **index.jsp** to use the following code.
 ## Run the application
 
 1. Run your application in the computer emulator or deploy to Azure, using the steps documented at [How to Authenticate Web Users with Azure Access Control Service Using Eclipse][].
-2. Launch a browser and open your web application. After you log on to your application, you'll see SAML information, including the security assertion provided by the identity provider.
+2. Launch a browser and open your web site. After you log on to your application, you'll see SAML information, including the security assertion provided by the identity provider.
 
 ## Next steps
 
@@ -188,6 +188,6 @@ To further explore ACS's functionality and to experiment with more sophisticated
 [Run the application]: #run_application
 [Next steps]: #next_steps
 [Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
-[How to Authenticate Web Users with Azure Access Control Service Using Eclipse]: /documentation/articles/active-directory-java-authenticate-users-access-control-eclipse
+[How to Authenticate Web Users with Azure Access Control Service Using Eclipse]: ../active-directory-java-authenticate-users-access-control-eclipse
 [saml_output]: ./media/active-directory-java-view-saml-returned-by-access-control/SAML_Output.png
  

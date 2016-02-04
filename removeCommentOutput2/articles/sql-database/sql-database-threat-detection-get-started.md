@@ -1,6 +1,6 @@
 <properties
    pageTitle="Get started with SQL Database Threat Detection"
-   description="How to get started with SQL Database Threat Detection in the Azure Preview portal"
+   description="How to get started with SQL Database Threat Detection in the Azure Management Portal"
    services="sql-database"
    documentationCenter=""
    authors="ronitr"
@@ -27,7 +27,7 @@ For example, Threat Detection detects certain anomalous database activities indi
 
 ## Set up threat detection for your database
 
-1. Launch the Azure Preview portal at [https://manage.windowsazure.cn](https://manage.windowsazure.cn).
+1. Launch the Azure Management Portal at [https://manage.windowsazure.cn](https://manage.windowsazure.cn).
 
 2. Navigate to the configuration blade of the SQL Database you want to monitor. In the Settings blade, select **Auditing & Threat Detection**.
 

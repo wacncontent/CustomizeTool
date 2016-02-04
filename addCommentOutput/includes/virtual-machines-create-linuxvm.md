@@ -7,10 +7,8 @@
 3. Find out the Linux image that you want to load from the available images:
 
         azure vm image list | grep "Linux"
-<!-- deleted by customization
 
    In a Windows command-prompt window, use find instead of grep. 
--->
 
 4. Use `azure vm create` to create a new virtual machine with the Linux image from the above list. This step creates a new cloud service as well as a new storage account. You could also connect this virtual machine to an existing cloud service with a `-c` option. It also creates an SSH endpoint to login to the Linux virtual machine with the `-e` option.
 

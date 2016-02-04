@@ -6,7 +6,7 @@
  
    	This makes sure that your app can use a camera attached to the computer. Users will be requested to allow camera access the first time that the app is run.
 
-2. Open the MainPage.xaml file and replace the **StackPanel** element directly after the first **Task** element with the following code:
+1. Open the MainPage.xaml file and replace the **StackPanel** element directly after the first **Task** element with the following code:
 
         <StackPanel Orientation="Horizontal" Margin="72,0,0,0">
             <TextBox Name="TextInput" Margin="5" MaxHeight="40" MinWidth="300"></TextBox>
@@ -16,7 +16,7 @@
                     Click="ButtonSave_Click"/>
         </StackPanel>
 
-3. Replace the **StackPanel** element in the **DataTemplate** with the following code:
+2. Replace the **StackPanel** element in the **DataTemplate** with the following code:
 
         <StackPanel Orientation="Vertical">
             <CheckBox Name="CheckBoxComplete" IsChecked="{Binding Complete, Mode=TwoWay}" 
@@ -28,7 +28,7 @@
 
    	This adds an image to the **ItemTemplate** and sets its binding source as the URI of the uploaded image in the Blob Storage service.
 
-4. Open the MainPage.xaml.cs project file and add the following **using** statements:
+3. Open the MainPage.xaml.cs project file and add the following **using** statements:
 	
 		using Windows.Media.Capture;
 		using Windows.Storage;
@@ -36,7 +36,7 @@
 		using Microsoft.WindowsAzure.Storage.Auth;
 		using Microsoft.WindowsAzure.Storage.Blob;
     
-5. In the TodoItem class, add the following properties:
+4. In the TodoItem class, add the following properties:
 
         [JsonProperty(PropertyName = "containerName")]
         public string ContainerName { get; set; }
@@ -50,9 +50,9 @@
         [JsonProperty(PropertyName = "imageUri")]
         public string ImageUri { get; set; } 
 
-   	>[AZURE.NOTE]To add new properties to the TodoItem object in a JavaScript backend mobile service, you must have Dynamic Schema enabled in your mobile service. When Dynamic Schema is enabled, new columns are automatically added to the TodoItem table that map to these new properties. For a .NET backend mobile service, see the topic [How to make data model changes to a .NET backend mobile service](/documentation/articles/mobile-services/mobile-services-dotnet-backend-how-to-use-code-first-migrations.md).
+   	>[AZURE.NOTE]To add new properties to the TodoItem object in a JavaScript backend mobile service, you must have Dynamic Schema enabled in your mobile service. When Dynamic Schema is enabled, new columns are automatically added to the TodoItem table that map to these new properties. For a .NET backend mobile service, see the topic [How to make data model changes to a .NET backend mobile service](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations).
 
-6. In the MainPage class, add the following code:
+5. In the MainPage class, add the following code:
 
         // Use a StorageFile to hold the captured image for upload.
         StorageFile media = null;
@@ -67,7 +67,7 @@
 
   	This code displays the camera UI to capture an image, and saves the image to a storage file.
 
-7. Replace the existing `InsertTodoItem` method with the following code:
+6. Replace the existing `InsertTodoItem` method with the following code:
  
         private async void InsertTodoItem(TodoItem todoItem)
         {

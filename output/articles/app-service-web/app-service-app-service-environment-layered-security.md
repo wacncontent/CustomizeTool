@@ -1,8 +1,6 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
-	pageTitle="Layered Security Architecture with Azure Websites Environments" 
-	description="Implementing a layered security architecture with Azure Websites Environments." 
+	pageTitle="Layered Security Architecture with Azure Environments" 
+	description="Implementing a layered security architecture with Azure Environments." 
 	services="app-service" 
 	documentationCenter="" 
 	authors="stefsch" 
@@ -11,18 +9,18 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/13/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>	
 
-# Implementing a Layered Security Architecture with Azure Websites Environments
+# Implementing a Layered Security Architecture with Azure Environments
 
 ## Overview ##
  
-Since Azure Websites Environments provide an isolated runtime environment deployed into a virtual network, developers can create a layered security architecture providing differing levels of network access for each physical application tier.
+Since Azure Environments provide an isolated runtime environment deployed into a virtual network, developers can create a layered security architecture providing differing levels of network access for each physical application tier.
 
-A common desire is to hide API back-ends from general Internet access, and only allow APIs to be called by upstream web apps.  [Network security groups (NSGs)][NetworkSecurityGroups] can be used on subnets containing Azure Websites Environments to restrict public access to API applications.
+A common desire is to hide API back-ends from general Internet access, and only allow APIs to be called by upstream web apps.  [Network security groups (NSGs)][NetworkSecurityGroups] can be used on subnets containing Azure Environments to restrict public access to API applications.
 
-The diagram below shows an example architecture with a WebAPI based app deployed on an Azure Websites Environment.  Three separate web app instances, deployed on three separate Azure Websites Environments, make back-end calls to the same WebAPI app.
+The diagram below shows an example architecture with a WebAPI based app deployed on an Azure Environment.  Three separate web app instances, deployed on three separate Azure Environments, make back-end calls to the same WebAPI app.
 
 ![Conceptual Architecture][ConceptualArchitecture] 
 
@@ -31,32 +29,32 @@ The green plus signs indicate that the network security group on the subnet cont
 The remainder of this topic walks through the steps needed to configure the network security group on the subnet containing "apiase".
 
 ## Determining the Network Behavior ##
-In order to know what network security rules are needed, you need to determine which network clients will be allowed to reach the Azure Websites Environment containing the API app, and which clients will be blocked.
+In order to know what network security rules are needed, you need to determine which network clients will be allowed to reach the Azure Environment containing the API app, and which clients will be blocked.
 
-Since [network security groups (NSGs)][NetworkSecurityGroups] are applied to subnets, and Azure Websites Environments are deployed into subnets, the rules contained in an NSG apply to **all** apps running on an Azure Websites Environment.  Using the sample architecture for this article, once a network security group is applied to the subnet containing "apiase", all apps running on the "apiase" Azure Websites Environment will be protected by the same set of security rules. 
+Since [network security groups (NSGs)][NetworkSecurityGroups] are applied to subnets, and Azure Environments are deployed into subnets, the rules contained in an NSG apply to **all** apps running on an Azure Environment.  Using the sample architecture for this article, once a network security group is applied to the subnet containing "apiase", all apps running on the "apiase" Azure Environment will be protected by the same set of security rules. 
 
-- **Determine the outbound IP address of upstream callers:**  What is the IP address or addresses of the upstream callers?  These addresses will need to be explicitly allowed access in the NSG.  Since calls between Azure Websites Environments are considered "Internet" calls, this means the outbound IP address assigned to each of the three upstream Azure Websites Environments needs to be allowed access in the NSG for the "apiase" subnet.   For more details on determining the outbound IP address for apps running in an Azure Websites Environment see the [Network Architecture][NetworkArchitecture] Overview article.
-- **Will the back-end API app need to call itself?**  A sometimes overlooked and subtle point is the scenario where the back-end application needs to call itself.  If a back-end API application on an Azure Websites Environment needs to call itself, this is also treated as an "Internet" call.  In the sample architecture this requires allowing access from the outbound IP address of the "apiase" Azure Websites Environment as well.
+- **Determine the outbound IP address of upstream callers:**  What is the IP address or addresses of the upstream callers?  These addresses will need to be explicitly allowed access in the NSG.  Since calls between Azure Environments are considered "Internet" calls, this means the outbound IP address assigned to each of the three upstream Azure Environments needs to be allowed access in the NSG for the "apiase" subnet.   For more details on determining the outbound IP address for apps running in an Azure Environment see the [Network Architecture][NetworkArchitecture] Overview article.
+- **Will the back-end API app need to call itself?**  A sometimes overlooked and subtle point is the scenario where the back-end application needs to call itself.  If a back-end API application on an Azure Environment needs to call itself, this is also treated as an "Internet" call.  In the sample architecture this requires allowing access from the outbound IP address of the "apiase" Azure Environment as well.
 
 ## Setting up the Network Security Group ##
-Once the set of outbound IP addresses are known, the next step is to construct a network security group.  Since Azure Websites Environments are currently only supported in "v1" virtual networks, [NSG configuration][NetworkSecurityGroupsClassic] is accomplished using the classic NSG support in Powershell.
+Once the set of outbound IP addresses are known, the next step is to construct a network security group.  Since Azure Environments are currently only supported in "v1" virtual networks, [NSG configuration][NetworkSecurityGroupsClassic] is accomplished using the classic NSG support in Powershell.
 
 For the sample architecture, the environments are located in China East, so an empty NSG is created in that region:
 
     New-AzureNetworkSecurityGroup -Name "RestrictBackendApi" -Location "China East" -Label "Only allow web frontend and loopback traffic"
 
-First an explicit allow rule is added for the Azure management infrastructure as noted in the article on [inbound traffic][InboundTraffic] for Azure Websites Environments.
+First an explicit allow rule is added for the Azure management infrastructure as noted in the article on [inbound traffic][InboundTraffic] for Azure Environments.
 
     #Open ports for access by Azure management infrastructure
     Get-AzureNetworkSecurityGroup -Name "RestrictBackendApi" | Set-AzureNetworkSecurityRule -Name "ALLOW AzureMngmt" -Type Inbound -Priority 100 -Action Allow -SourceAddressPrefix 'INTERNET' -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '454-455' -Protocol TCP
     
-Next, two rules are added to allow HTTP and HTTPS calls from the first upstream Azure Websites Environment ("fe1ase").
+Next, two rules are added to allow HTTP and HTTPS calls from the first upstream Azure Environment ("fe1ase").
 
     #Grant access to requests from the first upstream web front-end
     Get-AzureNetworkSecurityGroup -Name "RestrictBackendApi" | Set-AzureNetworkSecurityRule -Name "ALLOW HTTP fe1ase" -Type Inbound -Priority 200 -Action Allow -SourceAddressPrefix '65.52.xx.xyz'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '80' -Protocol TCP
     Get-AzureNetworkSecurityGroup -Name "RestrictBackendApi" | Set-AzureNetworkSecurityRule -Name "ALLOW HTTPS fe1ase" -Type Inbound -Priority 300 -Action Allow -SourceAddressPrefix '65.52.xx.xyz'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '443' -Protocol TCP
 
-Rinse and repeat for the second and third upstream Azure Websites Environments ("fe2ase"and "fe3ase").
+Rinse and repeat for the second and third upstream Azure Environments ("fe2ase"and "fe3ase").
 
     #Grant access to requests from the second upstream web front-end
     Get-AzureNetworkSecurityGroup -Name "RestrictBackendApi" | Set-AzureNetworkSecurityRule -Name "ALLOW HTTP fe2ase" -Type Inbound -Priority 400 -Action Allow -SourceAddressPrefix '191.238.xyz.abc'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '80' -Protocol TCP
@@ -66,7 +64,7 @@ Rinse and repeat for the second and third upstream Azure Websites Environments (
     Get-AzureNetworkSecurityGroup -Name "RestrictBackendApi" | Set-AzureNetworkSecurityRule -Name "ALLOW HTTP fe3ase" -Type Inbound -Priority 600 -Action Allow -SourceAddressPrefix '23.98.abc.xyz'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '80' -Protocol TCP
     Get-AzureNetworkSecurityGroup -Name "RestrictBackendApi" | Set-AzureNetworkSecurityRule -Name "ALLOW HTTPS fe3ase" -Type Inbound -Priority 700 -Action Allow -SourceAddressPrefix '23.98.abc.xyz'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '443' -Protocol TCP
 
-Lastly, grant access to the outbound IP address of the back-end API's Azure Websites Environment so that it can call back into itself.
+Lastly, grant access to the outbound IP address of the back-end API's Azure Environment so that it can call back into itself.
 
     #Allow apps on the apiase environment to call back into itself
     Get-AzureNetworkSecurityGroup -Name "RestrictBackendApi" | Set-AzureNetworkSecurityRule -Name "ALLOW HTTP apiase" -Type Inbound -Priority 800 -Action Allow -SourceAddressPrefix '70.37.xyz.abc'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '80' -Protocol TCP
@@ -78,20 +76,20 @@ The full list of rules in the network security group are shown below.  Note how 
 
 ![NSG Configuration][NSGConfiguration] 
 
-The final step is to apply the NSG to the subnet that contains the "apiase" Azure Websites Environment.  
+The final step is to apply the NSG to the subnet that contains the "apiase" Azure Environment.  
 
      #Apply the NSG to the backend API subnet
     Get-AzureNetworkSecurityGroup -Name "RestrictBackendApi" | Set-AzureNetworkSecurityGroupToSubnet -VirtualNetworkName 'yourvnetnamehere' -SubnetName 'API-ASE-Subnet'
 
-With the NSG applied to the subnet, only the three upstream Azure Websites Environments, and the Azure Websites Environment containing the API back-end, are allowed to call into the "apiase" environment.
+With the NSG applied to the subnet, only the three upstream Azure Environments, and the Azure Environment containing the API back-end, are allowed to call into the "apiase" environment.
 
 
 ## Additional Links and Information ##
 Configuration [network security groups][NetworkSecurityGroupsClassic] on classic virtual networks. 
 
-Understanding [outbound IP addresses][NetworkArchitecture] and Azure Websites Environments.
+Understanding [outbound IP addresses][NetworkArchitecture] and Azure Environments.
 
-[Network ports][InboundTraffic] used by Azure Websites Environments.
+[Network ports][InboundTraffic] used by Azure Environments.
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 

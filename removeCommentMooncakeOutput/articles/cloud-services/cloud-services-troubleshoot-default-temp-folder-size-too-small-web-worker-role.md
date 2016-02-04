@@ -7,10 +7,10 @@
    manager="msmets"
    editor=""
    tags="top-support-issue"/>
-<tags
-	ms.service="cloud-services"
-	ms.date="10/14/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="cloud-services"
+   ms.date="10/14/2015"
+   wacn.date="" />
 
 # Default TEMP folder size is too small on a Cloud Service Web/Worker role
 
@@ -62,7 +62,7 @@ namespace WorkerRole1
             Environment.SetEnvironmentVariable("TMP", customTempLocalResourcePath);
             Environment.SetEnvironmentVariable("TEMP", customTempLocalResourcePath);
             
-            // The rest of your startup code goes here…
+            // The rest of your startup code goes hereâŚ
             
             return base.OnStart();
         }

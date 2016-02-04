@@ -7,14 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="azure-portal" 
-	ms.workload="multiple" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/16/2015" 
-	ms.author="adamab"/>
+<tags
+	ms.service="azure-portal"
+	ms.date="07/16/2015"
+	wacn.date=""/>
 
 # Related and linked resources in the tile gallery
 
@@ -36,11 +32,11 @@ management experiences as well.
 
 When you create resources through the portal or by deploying a template through Azure PowerShell or Azure CLI, links are 
 automatically created for some dependent resources. You can also programmatically link resources by using the 
-[Linked Resources REST API](https://msdn.microsoft.com/library/azure/mt238499.aspx) or by declaring the relationships in the template. 
-For a complete discussion of working with linked resources, see [Linking resources in Azure Resource Manager](../resource-group-link-resources.md).
+[Linked Resources REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt238499.aspx) or by declaring the relationships in the template. 
+For a complete discussion of working with linked resources, see [Linking resources in Azure Resource Manager](/documentation/articles/resource-group-link-resources).
 
 ## Next steps
 
-- If you need an introduction to writing Azure Resource Manager templates, see [Authoring templates](../resource-group-authoring-templates.md).
-- To dive into greater detail about creating links between resources, see [Linking resources in Azure Resource Manager](../resource-group-link-resources.md).
-- To understand more about working with resource groups through the preview portal, see [Using the Azure Preview Portal to manage your Azure resources](resource-group-portal.md).
+- If you need an introduction to writing Azure Resource Manager templates, see [Authoring templates](/documentation/articles/resource-group-authoring-templates).
+- To dive into greater detail about creating links between resources, see [Linking resources in Azure Resource Manager](/documentation/articles/resource-group-link-resources).
+- To understand more about working with resource groups through the preview portal, see [Using the Azure Preview Portal to manage your Azure resources](/documentation/articles/resource-group-portal).

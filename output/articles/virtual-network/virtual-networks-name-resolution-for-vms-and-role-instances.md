@@ -82,19 +82,19 @@ Not every DNS query needs to be sent across the network.  Client-side caching he
 The default Windows DNS Client has a DNS cache built-in.  Some Linux distros do not include caching by default, it is recommended that one be added to each Linux VM.  There are a number of different DNS caching packages available, e.g. dnsmasq, here are the steps to install dnsmasq on the most common distros:
 
 - **Ubuntu (uses resolvconf)**:
-	- just install the dnsmasq package (“sudo apt-get install dnsmasq”).
+	- just install the dnsmasq package ("sudo apt-get install dnsmasq").
 - **SUSE (uses netconf)**:
-	- install the dnsmasq package (“sudo zypper install dnsmasq”) 
-	- enable the dnsmasq service (“systemctl enable dnsmasq.service”) 
-	- start the dnsmasq service (“systemctl start dnsmasq.service”) 
-	- edit “/etc/sysconfig/network/config” and change NETCONFIG_DNS_FORWARDER="" to ”dnsmasq”
+	- install the dnsmasq package ("sudo zypper install dnsmasq") 
+	- enable the dnsmasq service ("systemctl enable dnsmasq.service") 
+	- start the dnsmasq service ("systemctl start dnsmasq.service") 
+	- edit "/etc/sysconfig/network/config" and change NETCONFIG_DNS_FORWARDER="" to "dnsmasq"
 	- update resolv.conf ("netconfig update") to set the cache as the local DNS resolver
 - **OpenLogic (uses NetworkManager)**:
-	- install the dnsmasq package (“sudo yum install dnsmasq”)
-	- enable the dnsmasq service (“systemctl enable dnsmasq.service”)
-	- start the dnsmasq service (“systemctl start dnsmasq.service”)
-	- add “prepend domain-name-servers 127.0.0.1;” to “/etc/dhclient-eth0.conf”
-	- restart the network service (“service network restart”) to set the cache as the local DNS resolver
+	- install the dnsmasq package ("sudo yum install dnsmasq")
+	- enable the dnsmasq service ("systemctl enable dnsmasq.service")
+	- start the dnsmasq service ("systemctl start dnsmasq.service")
+	- add "prepend domain-name-servers 127.0.0.1;" to "/etc/dhclient-eth0.conf"
+	- restart the network service ("service network restart") to set the cache as the local DNS resolver
 
 [AZURE.NOTE]: The 'dnsmasq' package is only one of the many DNS caches available for Linux.  Before using it, please check its suitability for your particular needs and that no other cache is installed.
 

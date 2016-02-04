@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/22/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Use Maven to build Java applications that use HBase with HDInsight (Hadoop)
@@ -25,7 +25,7 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
 * [Maven](http://maven.apache.org/)
 
-* [An Azure HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-get-started#create-hbase-cluster)
+* [An Azure HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1#create-hbase-cluster)
 
 ##Create the project
 
@@ -347,7 +347,7 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
 ##Upload the JAR file and start a job
 
-> [AZURE.NOTE] There are many ways to upload a file to your HDInsight cluster, as described in [Upload data for Hadoop jobs in HDInsight](/documentation/articles/hdinsight-upload-data). The following steps use [Azure PowerShell](/documentation/articles/install-configure-powershell).
+> [AZURE.NOTE] There are many ways to upload a file to your HDInsight cluster, as described in [Upload data for Hadoop jobs in HDInsight](/documentation/articles/hdinsight-upload-data). The following steps use [Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 1. After installing and configuring Azure PowerShell, create a new file named __hbase-runner.psm1__. Use the following as the contents of this file:
 

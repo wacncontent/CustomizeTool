@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Learn Node.js - DocumentDB Node.js Tutorial | Microsoft Azure" 
-	description="Learn Node.js! Tutorial explores how to use Microsoft Azure DocumentDB to store and access data from a Node.js Express web application hosted on Azure Websites." 
+	pageTitle="Learn Node.js - DocumentDB Node.js Tutorial | Windows Azure" 
+	description="Learn Node.js! Tutorial explores how to use Windows Azure DocumentDB to store and access data from a Node.js Express web site hosted on Azure Websites." 
 	keywords="Application development, database tutorial, learn node.js, node.js tutorial, documentdb, azure, Microsoft azure"
 	services="documentdb" 
 	documentationCenter="nodejs" 
@@ -8,22 +8,18 @@
 	manager="jhubbard" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="hero-article" 
-	ms.date="07/24/2015" 
-	ms.author="ryancraw"/>
+<tags
+	ms.service="documentdb"
+	ms.date="10/20/2015"
+	wacn.date=""/>
 
-# <a name="_Toc395783175"></a>Build a Node.js web application using DocumentDB
+# <a name="_Toc395783175"></a>Build a Node.js web site using DocumentDB
 
 > [AZURE.SELECTOR]
-- [.NET](documentdb-dotnet-application.md)
-- [Node.js](documentdb-nodejs-application.md)
-- [Java](documentdb-java-application.md)
-- [Python](documentdb-python-application.md)
+- [.NET](/documentation/articles/documentdb-dotnet-application)
+- [Node.js](/documentation/articles/documentdb-nodejs-application)
+- [Java](/documentation/articles/documentdb-java-application)
+- [Python](/documentation/articles/documentdb-python-application)
 
 This Node.js tutorial shows you how to use the Azure DocumentDB service to store and access data from a Node.js Express application hosted on Azure Websites.
 
@@ -34,7 +30,7 @@ We recommend getting started by watching the following video, where you will lea
 Then, return to this Node.js tutorial, where you'll learn the answers to the following questions:
 
 - How do I work with DocumentDB using the documentdb npm module?
-- How do I deploy the web application to Azure Websites?
+- How do I deploy the web site to Azure Websites?
 
 By following this database tutorial, you will build a simple web-based
 task-management application that allows creating, retrieving and
@@ -52,7 +48,7 @@ Don't have time to complete the tutorial and just want to get the complete solut
 Before following the instructions in this article, you should ensure
 that you have the following:
 
-- An active Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](../../pricing/free-trial/).
+- An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](../../pricing/1rmb-trial/).
 - [Node.js][] version v0.10.29 or higher.
 - [Express generator](http://www.expressjs.com/starter/generator.html) (you can install this via `npm install express-generator -g`)
 - [Git][].
@@ -61,9 +57,9 @@ that you have the following:
 
 Let's start by creating a DocumentDB account. If you already have an account, you can skip to [Step 2: Create a new Node.js application](#_Toc395783178).
 
-[AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
+[AZURE.INCLUDE [documentdb-create-dbaccount](../includes/documentdb-create-dbaccount.md)]
 
-[AZURE.INCLUDE [documentdb-keys](../../includes/documentdb-keys.md)]
+[AZURE.INCLUDE [documentdb-keys](../includes/documentdb-keys.md)]
 
 ## <a name="_Toc395783178"></a>Step 2: Learn to create a new Node.js application
 
@@ -112,7 +108,7 @@ which modules need to be installed on Azure to support your application. We stil
 
 ## <a name="_Toc395783180"></a>Step 4: Using the DocumentDB service in a node application
 
-That takes care of all the initial setup and configuration, now let’s get down to why we’re here, and that’s to write some code using Azure DocumentDB.
+That takes care of all the initial setup and configuration, now let's get down to why we're here, and that's to write some code using Azure DocumentDB.
 
 ### Create the model
 
@@ -192,7 +188,7 @@ That takes care of all the initial setup and configuration, now let’s get down
 		module.exports = DocDBUtils;
 
 > [AZURE.TIP] createCollection takes an optional requestOptions parameter that can be used to specify the Offer Type for the Collection. If no requestOptions.offerType value is supplied then the Collection will be created using the default Offer Type.
-> For more information on DocumentDB Offer Types please refer to [Performance levels in DocumentDB](documentdb-performance-levels.md) 
+> For more information on DocumentDB Offer Types please refer to [Performance levels in DocumentDB](/documentation/articles/documentdb-performance-levels) 
 		
 3. Save and close the **docdbUtils.js** file.
 
@@ -398,20 +394,20 @@ That takes care of all the initial setup and configuration, now let’s get down
 
 		var config = {}
 		
-		config.host = process.env.HOST || "[the URI value from the DocumentDB Keys blade on http://portal.azure.com]";
-		config.authKey = process.env.AUTH_KEY || "[the PRIMARY KEY value from the DocumentDB Keys blade on http://portal.azure.com]";
+		config.host = process.env.HOST || "[the URI value from the DocumentDB Keys blade on http://manage.windowsazure.cn]";
+		config.authKey = process.env.AUTH_KEY || "[the PRIMARY KEY value from the DocumentDB Keys blade on http://manage.windowsazure.cn]";
 		config.databaseId = "ToDoList";
 		config.collectionId = "Items";
 		
 		module.exports = config;
 
-3. In the **config.js** file, update the values of HOST and AUTH_KEY using the values found in the Keys blade of your DocumentDB account on the [Microsoft Azure Preview portal](http://portal.azure.com):
+3. In the **config.js** file, update the values of HOST and AUTH_KEY using the values found in the Keys blade of your DocumentDB account on the [Windows Azure Preview portal](http://manage.windowsazure.cn):
 
 4. Save and close the **config.js** file.
  
 ### Modify app.js
 
-1. In the project directory, open the **app.js** file. This file was created earlier when the Express web application was created.
+1. In the project directory, open the **app.js** file. This file was created earlier when the Express web site was created.
 2. Add the following code to the top of **app.js**
 	
 		var DocumentDBClient = require('documentdb').DocumentClient;
@@ -445,7 +441,7 @@ That takes care of all the initial setup and configuration, now let’s get down
  
 ## <a name="_Toc395783181"></a>Step 5: Build a user interface
 
-Now let’s turn our attention to building the user interface so a user can actually interact with our application. The Express application we created uses **Jade** as the view engine. For more information on Jade please refer to [http://jade-lang.com/](http://jade-lang.com/).
+Now let's turn our attention to building the user interface so a user can actually interact with our application. The Express application we created uses **Jade** as the view engine. For more information on Jade please refer to [http://jade-lang.com/](http://jade-lang.com/).
 
 1. The **layout.jade** file in the **views** directory is used as a global template for other **.jade** files. In this step you will modify it to use [Twitter Bootstrap](https://github.com/twbs/bootstrap), which is a toolkit that makes it easy to design a nice looking website. 
 2. Open the **layout.jade** file found in the **views** folder and replace the contents with the following;
@@ -559,11 +555,11 @@ and then click **Update tasks**.
 
 ## <a name="_Toc395783182"></a>Step 7: Deploy your application development project to Azure Websites
 
-1. If you haven't already, enable a git repository for your Azure Website. You can find instructions on how to do this [here](../web-sites-publish-source-control-git.md#step4).
+1. If you haven't already, enable a git repository for your Azure Website. You can find instructions on how to do this [here](/documentation/articles/web-sites-publish-source-control-git#step4).
 
 2. Add your Azure Website as a git remote.
 
-		git remote add azure https://username@your-azure-website.scm.azurewebsites.net:443/your-azure-website.git
+		git remote add azure https://username@your-azure-website.scm.chinacloudsites.cn:443/your-azure-website.git
 
 3. Deploy by pushing to the remote.
 

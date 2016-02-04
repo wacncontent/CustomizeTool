@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/08/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Develop Apache Storm topologies using Python on HDInsight
@@ -187,7 +187,7 @@ __To build an uberjar and deploy to HDInsight__, use the following steps:
 
 You can successfuly build the example Pyleus topologies, using the HDInsight head node as the build environment:
 
-1. When provisioning a new Storm on HDInsight cluster, you must ensure that Python Virtualenv is present on the cluster nodes. When creating a new Linux-based HDInsight cluster, use the following Script Action settings with [Cluster customization](/documentation/articles/hdinsight-hadoop-customize-cluster):
+1. When provisioning a new Storm on HDInsight cluster, you must ensure that Python Virtualenv is present on the cluster nodes. When creating a new Linux-based HDInsight cluster, use the following Script Action settings with [Cluster customization](/documentation/articles/hdinsight-hadoop-customize-cluster-v1):
 
     * __Name__: Just provide a friendly name here
     * __ Script URI__: Use `https://hditutorialdata.blob.core.windows.net/customizecluster/pythonvirtualenv.sh` as the value. This script will install Python Virtualenv on the nodes.
@@ -240,7 +240,7 @@ You can successfuly build the example Pyleus topologies, using the HDInsight hea
 
 > [AZURE.IMPORTANT] Streamparse relies on components that expect [Unix signals](https://en.wikipedia.org/wiki/Unix_signal), which are not available on Windows. Your development environment must be Linux, Unix, or OS X, and the HDInsight cluster must be Linux-based.
 
-1. When provisioning a new Storm on HDInsight cluster, you must ensure that Python Virtualenv is present on the cluster nodes. When creating a new Linux-based HDInsight cluster, use the following Script Action settings with [Cluster customization](/documentation/articles/hdinsight-hadoop-customize-cluster):
+1. When provisioning a new Storm on HDInsight cluster, you must ensure that Python Virtualenv is present on the cluster nodes. When creating a new Linux-based HDInsight cluster, use the following Script Action settings with [Cluster customization](/documentation/articles/hdinsight-hadoop-customize-cluster-v1):
 
     * __Name__: Just provide a friendly name here
     * __ Script URI__: Use `https://hditutorialdata.blob.core.windows.net/customizecluster/pythonvirtualenv.sh` as the value. This script will install Python Virtualenv on the nodes, as well as create directories used by Streamparse

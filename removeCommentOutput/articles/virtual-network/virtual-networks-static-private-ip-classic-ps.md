@@ -4,13 +4,13 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn"
    tags="azure-service-management"
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/08/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # How to set a static private IP address (classic) in PowerShell
@@ -28,7 +28,7 @@ The sample PowerShell commands below expect a simple environment already created
 ## How to verify if a specific IP address is available
 To verify if the IP address *192.168.1.101* is available in a vnet named *TestVnet*, run the following PowerShell command and verify the value for *IsAvailable*:
 
-	Test-AzureStaticVNetIP –VNetName TestVNet –IPAddress 192.168.1.101 
+	Test-AzureStaticVNetIP -VNetName TestVNet -IPAddress 192.168.1.101 
 
 Expected output:
 
@@ -45,9 +45,9 @@ The PowerShell script below creates a new cloud service named *TestService*, the
 	$image = Get-AzureVMImage|?{$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}
 	New-AzureVMConfig -Name DNS01 -InstanceSize Small -ImageName $image.ImageName `
 	| Add-AzureProvisioningConfig -Windows -AdminUsername adminuser -Password MyP@ssw0rd!! `
-	| Set-AzureSubnet –SubnetNames FrontEnd `
+	| Set-AzureSubnet -SubnetNames FrontEnd `
 	| Set-AzureStaticVNetIP -IPAddress 192.168.1.7 `
-	| New-AzureVM -ServiceName "TestService" –VNetName TestVNet
+	| New-AzureVM -ServiceName "TestService" -VNetName TestVNet
 
 Expected output:
 

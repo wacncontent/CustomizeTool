@@ -1,17 +1,3 @@
-updated docs: 12
-articles/app-service-web/automation-manage-web-app.md
-articles/app-service-web/web-sites-configure-ssl-certificate.md
-articles/app-service-web/web-sites-custom-domain-name.md
-articles/app-service-web/web-sites-deploy.md
-articles/app-service-web/web-sites-dotnet-get-started.md
-articles/app-service-web/web-sites-enable-diagnostic-log.md
-articles/app-service-web/web-sites-enterprise-offerings.md
-articles/app-service-web/web-sites-java-get-started.md
-articles/app-service-web/web-sites-manage-azure-website.md
-articles/app-service-web/web-sites-nodejs-chat-app-socketio.md
-articles/app-service-web/web-sites-php-enterprise-wordpress.md
-articles/app-service-web/websites-dotnet-webjobs-sdk-get-started.md
+updated docs: 0
 
-updated includes: 2
-includes/configure-ssl-web-site.md
-includes/custom-dns-web-site-understanding-dns-raw.md
+updated includes: 0

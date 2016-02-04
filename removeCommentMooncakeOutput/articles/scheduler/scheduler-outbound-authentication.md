@@ -6,10 +6,10 @@
  authors="krisragh" 
  manager="dwrede" 
  editor=""/>
-<tags
-	ms.service="scheduler"
-	ms.date="08/04/2015"
-	wacn.date=""/>
+<tags 
+ ms.service="scheduler" 
+ ms.date="12/04/2015" 
+ wacn.date=""/>
  
 # Scheduler Outbound Authentication
 
@@ -17,7 +17,7 @@ Scheduler jobs may need to call out to services that require authentication. Thi
 
 ## Adding and Removing Authentication
 
-Adding authentication to a Scheduler job is simple – add a JSON child element `authentication` to the `request` element when creating or updating a job. Secrets passed to the Scheduler service in a PUT, PATCH, or POST request – as part of the `authentication` object – are never returned in responses. In responses, secret information is set to null or may have a public token that represents the authenticated entity.
+Adding authentication to a Scheduler job is simple - add a JSON child element `authentication` to the `request` element when creating or updating a job. Secrets passed to the Scheduler service in a PUT, PATCH, or POST request - as part of the `authentication` object - are never returned in responses. In responses, secret information is set to null or may have a public token that represents the authenticated entity.
 
 To remove authentication, PUT or PATCH the job explicitly, setting the `authentication` object to null. You will not see any authentication properties back in response.
 
@@ -100,7 +100,7 @@ Once this request is sent, the response is as follows:
 	  "id": "testScheduler",
 	  "action": {
 		"request": {
-		  "uri": "https:\/\/management.core.chinacloudapi.cn\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
+		  "uri": "https://management.core.chinacloudapi.cn\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
 		  "method": "GET",
 		  "headers": {
 			"x-ms-version": "2013-03-01"
@@ -230,10 +230,14 @@ When adding authentication using the `ActiveDirectoryOAuth` model, specify the f
 |:--|:--|
 |_authentication (parent element)_ |Authentication object for using ActiveDirectoryOAuth authentication.|
 |_type_ |Required. Type of authentication. For ActiveDirectoryOAuth authentication, the value must be `ActiveDirectoryOAuth`.|
-|_tenant_ |Required. The tenant identifier is an ID that is used to identify the AD tenant.|
+|_tenant_ |Required. The tenant identifier for the Azure AD tenant.|
 |_audience_ |Required. This is set to https://management.core.chinacloudapi.cn/.|
 |_clientId_ |Required. Provide the client identifier for the Azure AD application.|
 |_secret_ |Required. Secret of the client that is requesting the token.|
+
+### Determining your Tenant Identifier
+
+You can find the tenant identifier for the Azure AD tenant by running `Get-AzureAccount` in Azure PowerShell.
 
 ## Response Body for ActiveDirectoryOAuth Authentication
 
@@ -243,7 +247,7 @@ When a request is sent with authentication info, the response contains the follo
 |:--|:--|
 |_authentication (parent element)_ |Authentication object for using ActiveDirectoryOAuth authentication.|
 |_type_ |Type of authentication. For ActiveDirectoryOAuth authentication, the value is `ActiveDirectoryOAuth`.|
-|_tenant_ |The tenant identifier used to identify the AD tenant.|
+|_tenant_ |The tenant identifier for the Azure AD tenant.|
 |_audience_ |This is set to https://management.core.chinacloudapi.cn/.|
 |_clientId_ |The client identifier for the Azure AD application.|
 
@@ -268,7 +272,7 @@ The following example request makes a PUT request that incorporates `ActiveDirec
 			"x-ms-version": "2013-03-01"
 		  },
 		  "authentication":{  
-			"tenant":"contoso.com",
+			"tenant":"01234567-89ab-cdef-0123-456789abcdef",
 			"audience":"https://management.core.chinacloudapi.cn/",
 			"clientId":"8a14db88-4d1a-46c7-8429-20323727dfab",
 			"secret": "&lt;secret-key&gt;",
@@ -306,7 +310,7 @@ Once this request is sent, the response is as follows:
 			"x-ms-version": "2013-03-01"
 		  },
 		  "authentication":{  
-			"tenant":"contoso.com",
+			"tenant":"01234567-89ab-cdef-0123-456789abcdef",
 			"audience":"https://management.core.chinacloudapi.cn/",
 			"clientId":"8a14db88-4d1a-46c7-8429-20323727dfab",
 			"type":"ActiveDirectoryOAuth"
@@ -329,22 +333,23 @@ Once this request is sent, the response is as follows:
 
 ## See Also
  
+
  [What is Scheduler?](/documentation/articles/scheduler-intro)
  
- [Scheduler Concepts, Terminology, and Entity Hierarchy](/documentation/articles/scheduler-concepts-terms)
+ [Azure Scheduler concepts, terminology, and entity hierarchy](/documentation/articles/scheduler-concepts-terms)
  
- [Get Started Using Scheduler in the Management Portal](/documentation/articles/scheduler-get-started-portal)
+ [Get started using Scheduler in the Management portal](/documentation/articles/scheduler-get-started-portal)
  
- [Plans and Billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
+ [Plans and billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
+ [Azure Scheduler REST API Reference](https://msdn.microsoft.com/zh-CN/library/dn528946)   
  
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
+ [Azure Scheduler PowerShell cmdlets reference](/documentation/articles/scheduler-powershell-reference)
+ [Azure Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
  
- [Scheduler REST API Reference](https://msdn.microsoft.com/zh-cn/library/dn528946)   
- 
- [Scheduler PowerShell Cmdlets Reference](/documentation/articles/scheduler-powershell-reference)
- 
- [Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
- 
- [Scheduler Limits, Defaults, and Error Codes](/documentation/articles/scheduler-limits-defaults-errors)
+ [AzureScheduler Limits, Defaults, and Error Codes](/documentation/articles/scheduler-limits-defaults-errors)
+
+
+  
+
  
   

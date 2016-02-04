@@ -7,28 +7,24 @@
 	services="azure-portal"
 documentationCenter=""/>
 
-<tags 
-	ms.service="azure-portal" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/08/2015" 
-	ms.author="stepsic"/>
+<tags
+	ms.service="azure-portal"
+	ms.date="09/08/2015"
+	wacn.date=""/>
 
 # Monitor service metrics
 
-All Azure services track key metrics that allow you to monitor the health, performance, availability and usage of your services. You can view these metrics in the Azure portal, and you can also use the [REST API](https://msdn.microsoft.com/library/azure/dn931930.aspx) or [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) to access the full set of metrics programmatically.
+All Azure services track key metrics that allow you to monitor the health, performance, availability and usage of your services. You can view these metrics in the Azure Management Portal, and you can also use the [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931930.aspx) or [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) to access the full set of metrics programmatically.
 
-For some services, you may need to turn on diagnostics in order to see any metrics. For others, such as virtual machines, you will get a basic set of metrics, but need to enable the full set high-frequency metrics. See [Enable monitoring and diagnostics](insights-how-to-use-diagnostics.md) to learn more.
+For some services, you may need to turn on diagnostics in order to see any metrics. For others, such as virtual machines, you will get a basic set of metrics, but need to enable the full set high-frequency metrics. See [Enable monitoring and diagnostics](/documentation/articles/insights-how-to-use-diagnostics) to learn more.
 
 ## Using monitoring charts 
 
 You can chart any of the metrics them over any time period you choose.
 
-1. In the [Azure Portal](https://portal.azure.com/), click **Browse**, and then a resource you're interested in monitoring.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Browse**, and then a resource you're interested in monitoring.
 
-2. The **Monitoring** section contains the most important metrics for each Azure resource. For example, a web app has **Requests and Errors**, where as a virtual machine would have **CPU percentage** and **Disk read and write**:
+2. The **Monitoring** section contains the most important metrics for each Azure resource. For example, a web site has **Requests and Errors**, where as a virtual machine would have **CPU percentage** and **Disk read and write**:
     ![Monitoring lens](./media/insights-how-to-customize-monitoring/Insights_MonitoringChart.png)
 
 3. Clicking on any chart will show you the **Metric** blade. On the blade, in addition to the graph, is a table that shows you aggregations of the metrics (such as average, minimum and maximum, over the time range you chose). Below that are the alert rules for the resource.
@@ -67,14 +63,14 @@ You can also see usage quotas on the blade for resources that have quotas:
 
 ![Usage](./media/insights-how-to-customize-monitoring/Insights_UsageChart.png)
 
-Like with metrics, you can use the [REST API](https://msdn.microsoft.com/library/azure/dn931963.aspx) or [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) to access the full set of usage quotas programmatically.
+Like with metrics, you can use the [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931963.aspx) or [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) to access the full set of usage quotas programmatically.
 
 ## Next steps
 
-* [Receive alert notifications](insights-receive-alert-notifications.md) whenever a metric crosses a threshold.
-* [Enable monitoring and diagnostics](insights-how-to-use-diagnostics.md) to collect detailed high-frequency metrics on your service.
-* [Scale instance count automatically](insights-how-to-scale.md) to make sure your service is available and responsive.
-* [Monitor application performance](insights-perf-analytics.md) if you want to understand exactly how your code is performing in the cloud.
-* Use [Application Insights for JavaScript apps and web pages](../app-insights-web-track-usage.md) to get client analytics about the browsers that visit a web page.
-* [Monitor availability and responsiveness of any web page](../app-insights-monitor-web-app-availability.md) with Application Insights so you can find out if your page is down.
+* [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) whenever a metric crosses a threshold.
+* [Enable monitoring and diagnostics](/documentation/articles/insights-how-to-use-diagnostics) to collect detailed high-frequency metrics on your service.
+* [Scale instance count automatically](/documentation/articles/insights-how-to-scale) to make sure your service is available and responsive.
+* [Monitor application performance](/documentation/articles/insights-perf-analytics) if you want to understand exactly how your code is performing in the cloud.
+* Use [Application Insights for JavaScript apps and web pages](/documentation/articles/app-insights-web-track-usage) to get client analytics about the browsers that visit a web page.
+* [Monitor availability and responsiveness of any web page](/documentation/articles/app-insights-monitor-web-app-availability) with Application Insights so you can find out if your page is down.
  

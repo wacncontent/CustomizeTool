@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Stream Analytics Query Patterns | Microsoft Azure"
+	pageTitle="Azure Stream Analytics Query Patterns | Windows Azure"
 	description="Common Azure Stream Analytics Query Patterns "
 	keywords="stream analytics, sample, query, language, guide, patterns"
 	services="stream-analytics"
@@ -10,18 +10,14 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="big-data"
-	ms.date="10/05/2015"
-	ms.author="jeffstok"/>
+	ms.date="11/06/2015"
+	wacn.date=""/>
 
 
 # Common Azure Stream Analytics Query Patterns  #
 
 ## Introduction ##
-Queries in Azure Stream Analytics are expressed in a SQL-like query language, which is documented [here](https://msdn.microsoft.com/library/azure/dn834998.aspx).  This document outlines solutions to several common query patterns based on real world scenarios.  It is a work in progress and will continue to be updated with new patterns on an ongoing basis.
+Queries in Azure Stream Analytics are expressed in a SQL-like query language, which is documented [here](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx).  This document outlines solutions to several common query patterns based on real world scenarios.  It is a work in progress and will continue to be updated with new patterns on an ongoing basis.
 
 ## Basics ##
 
@@ -54,7 +50,7 @@ e.g. Car weight is coming on the input stream as strings and needs to be convert
     	TumblingWindow(second, 10)
 
 **Explanation**:
-Use a CAST statement on the Weight field to specify its type (see the list of supported Data Types [here](https://msdn.microsoft.com/library/azure/dn835065.aspx)).
+Use a CAST statement on the Weight field to specify its type (see the list of supported Data Types [here](https://msdn.microsoft.com/zh-cn/library/azure/dn835065.aspx)).
 
 ## Using Like/Not like to do pattern matching ##
 **Description**: Check that a field value on the event matches a certain pattern
@@ -180,7 +176,7 @@ e.g. Analyze data for a threshold-based alert and archive all events to blob sto
 The INTO clause tells Stream Analytics which of the outputs to write the data from this statement.
 The first query is a pass-through of the data we received to an output that we named ArchiveOutput.
 The second query does some simple aggregation and filtering and sends the results to a downstream alerting system.
-*Note*: You can also reuse results of CTEs (i.e. WITH statements) in multiple output statements – this has the added benefit of opening less readers to the input source.
+*Note*: You can also reuse results of CTEs (i.e. WITH statements) in multiple output statements - this has the added benefit of opening less readers to the input source.
 e.g. 
 
 	WITH AllRedCars AS (
@@ -240,7 +236,7 @@ e.g. How many unique make of cars passed through the toll booth in a 2 second wi
 
 **Explanation:**
 We do an initial aggregation to get unique makes with their count over the window.
-We then do an aggregation of how many makes we got – given all unique values in a window get the same timestamp then the second aggregation window needs to be minimal to not aggregate 2 windows from the first step.
+We then do an aggregation of how many makes we got - given all unique values in a window get the same timestamp then the second aggregation window needs to be minimal to not aggregate 2 windows from the first step.
 
 ## Determine if a value has changed ##
 **Description**: Look at a previous value to determine if it is different than the current value
@@ -305,7 +301,7 @@ Use LAG to peek into the input stream one event back and get the Make value. The
 	WHERE 
 		IsFirst(minute, 10) = 1
 
-Now let’s change the problem and find first car of particular Make in every 10 minute interval.
+Now let's change the problem and find first car of particular Make in every 10 minute interval.
 
 | LicensePlate | Make | Time |
 | --- | --- | --- |
@@ -370,7 +366,7 @@ Now let’s change the problem and find first car of particular Make in every 10
 		AND Input.Time = LastInWindow.LastEventTime
 
 **Explanation**:
-There are two steps in the query – the first one finds latest timestamp in 10 minute windows. The second step joins results of the first query with original stream to find events matching last timestamps in each window. 
+There are two steps in the query - the first one finds latest timestamp in 10 minute windows. The second step joins results of the first query with original stream to find events matching last timestamps in each window. 
 
 ## Detect the absence of events ##
 **Description**: Check that a stream has no value that matches a certain criteria.
@@ -409,7 +405,7 @@ Use LAG to peek into the input stream one event back and get the Make value. The
 
 ## Detect duration of a condition ##
 **Description**: Find out how long a condition occurred for.
-e.g. Suppose that a bug that resulted in all cars having an incorrect (above 20,000 pounds) – we want to compute the duration of the bug.
+e.g. Suppose that a bug that resulted in all cars having an incorrect (above 20,000 pounds) - we want to compute the duration of the bug.
 
 **Input**:
 
@@ -466,13 +462,13 @@ Using what we learned on “LEFT Outer Join to include NULLs or to do absence of
 Composing those together and we get good -> bad -> good with no other good event in between. We can now compute the duration between the beginning and end good events which gives us the duration of the bug.
 
 ## Get help
-For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics)
+For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/home?forum=AzureStreamAnalytics)
 
 ## Next steps
 
-- [Introduction to Azure Stream Analytics](stream-analytics-introduction.md)
+- [Introduction to Azure Stream Analytics](/documentation/articles/stream-analytics-introduction)
 - [Get started using Azure Stream Analytics](../stream.analytics.get.started.md)
-- [Scale Azure Stream Analytics jobs](stream-analytics-scale-jobs.md)
-- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+- [Scale Azure Stream Analytics jobs](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
  

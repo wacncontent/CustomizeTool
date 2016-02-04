@@ -15,7 +15,7 @@
 
 To use SQL Server for data warehousing or transactional workloads in an Azure Virtual Machine, we recommend using one of the preconfigured virtual machine images in the Azure Virtual Machines Gallery. These images have been optimized based on the recommendations in [Performance Best Practices for SQL Server in Azure Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/dn133149.aspx).
 
-This article focuses on running these workloads on Azure Virtual Machines (this is also known as Infrastructure-as-a-Service or IaaS). You can also run data warehousing and transactional workloads as a service in Azure. For more information, see [Azure SQL Data Warehouse Preview](/documentation/services/sql-data-warehouse/) and [Azure SQL Database](/documentation/services/sql-databases/).
+This article focuses on running these workloads on Azure Virtual Machines (this is also known as Infrastructure-as-a-Service or IaaS). You can also run data warehousing and transactional workloads as a service in Azure. For more information, see [Azure SQL Data Warehouse Preview](/documentation/services/sql-data-warehouse/) and [Azure SQL Database](/documentation/services/sql-database/).
 
 ## What Preconfigured VM Images are Available?
 

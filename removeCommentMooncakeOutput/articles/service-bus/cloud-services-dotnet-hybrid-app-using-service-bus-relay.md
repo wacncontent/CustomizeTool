@@ -68,7 +68,7 @@ into your computer, even though your computer will almost certainly
 reside behind at least one firewall and a network address translation
 (NAT) layer.
 
-The following is a screen shot of the start page of the completed web application.
+The following is a screen shot of the start page of the completed web site.
 
 ![][1]
 
@@ -380,7 +380,7 @@ display data retrieved from your product service.
 2.  In Visual Studio, on the **File** menu, click **New**, and then
     click **Project**.
 
-3.  From **Installed Templates**, under **Visual C#**, click **ASP.NET Web Application**. Name the project **ProductsPortal**. Then
+3.  From **Installed Templates**, under **Visual C#**, click **ASP.NET Web Site**. Name the project **ProductsPortal**. Then
     click **OK**.
 
     ![][15]
@@ -396,7 +396,7 @@ display data retrieved from your product service.
 
     ![][17]
 
-### MODIFY THE WEB APPLICATION
+### MODIFY THE Web Site
 
 1.  In the Product.cs file in Visual Studio, replace the existing
     namespace definition with the following code:
@@ -504,7 +504,7 @@ Run the application to verify that it works.
 
     ##MAKE YOUR APPLICATION READY TO DEPLOY TO AZURE##
 
-    You can deploy your application to an Azure Cloud Service or to an Azure  Website. To learn more about the difference between  Websites and cloud services, see [Azure Execution Models][executionmodels]. To learn how to deploy the application to an Azure  Website, see [Deploying an ASP.NET Web Application to an Azure  Website](/documentation/articles/web-sites-dotnet-get-started/). This section contains detailed steps for deploying the application to an Azure Cloud Service.
+    You can deploy your application to an Azure Cloud Service or to an Azure  Website. To learn more about the difference between  Websites and cloud services, see [Azure Execution Models][executionmodels]. To learn how to deploy the application to an Azure  Website, see [Deploying an ASP.NET Web Site to an Azure  Website](/documentation/articles/web-sites-dotnet-get-started/). This section contains detailed steps for deploying the application to an Azure Cloud Service.
 
     To deploy your application to a cloud service, you'll add a cloud service project deployment project to the solution.
     The deployment project contains configuration

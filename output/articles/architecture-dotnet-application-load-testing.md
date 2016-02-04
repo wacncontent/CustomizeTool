@@ -2,7 +2,7 @@
 
 # Load Testing in Azure
 
-The cloud-based load testing service can load test your web applications. Use Visual Studio to create a load test to determine the capacity and performance of your web application-there's no need to use your own Azure VMs. Instead, you can let the [cloud-based load testing service](http://tfs.visualstudio.com/zh-cn/learn/load-testing) create these for you.
+The cloud-based load testing service can load test your web sites. Use Visual Studio to create a load test to determine the capacity and performance of your web site-there's no need to use your own Azure VMs. Instead, you can let the [cloud-based load testing service](http://tfs.visualstudio.com/zh-cn/learn/load-testing) create these for you.
 
 <!--links-->
 

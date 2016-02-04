@@ -4,17 +4,21 @@ deleted:
 
 		This article does not cover client certificate authentication; for information about that, see [How To Configure TLS Mutual Authentication for Web Apps](/documentation/articles/app-service-web-configure-tls-mutual-auth).
 
-reason: ()
+reason: (terminology: Azure App Service Web)
 
 deleted:
 
 		>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
-		
+
+reason: (“Try it now”)
+
+deleted:
+
 		## What's changed
 		* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 		* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-reason: ()
+reason: (terminology: Azure App Service Web, the new Ibiza portal)
 
 replacement:
 
@@ -48,7 +52,7 @@ replaced by:
 		
 		5. Click **Save**. When prompted, click **Yes**.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -98,5 +102,5 @@ replaced by:
 		
 		6. Click **Save** to save the changes and enable SSL.
 
-reason: ()
+reason: (the new Ibiza portal)
 

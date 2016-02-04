@@ -6,10 +6,10 @@
    authors="patshea123"
    manager="douge"
    editor="tlee" />
-<tags
-	ms.service="visual-studio-online"
-	ms.date="08/14/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="visual-studio-online"
+   ms.date="08/14/2015"
+   wacn.date="" />
 
 
 
@@ -63,5 +63,5 @@ You can continue to work in Visual Studio while the IntelliTrace logs are downlo
 
 ## See Also
 
-[Debugging Cloud Services](https://msdn.microsoft.com/zh-cn/library/ee405479.aspx)
+[Debugging Cloud Services](http://go.microsoft.com/fwlink/p/?LinkID=62304)
 

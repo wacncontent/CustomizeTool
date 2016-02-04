@@ -4,37 +4,31 @@ deleted:
 
 		[AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		> [AZURE.NOTE] The information in this article is specific to Windows-based HDInsight clusters. For a version of this article that is specific to Linux-based clusters, see [Customize HDInsight clusters using Script Action (Linux)](/documentation/articles/hdinsight-hadoop-customize-cluster)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		**Install Spark** | https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1. See [Install and use Spark on HDInsight clusters][hdinsight-install-spark].
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		, [Spark](http://spark.apache.org/)
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		- [Install and use Spark on HDInsight clusters][hdinsight-install-spark]
 
-reason: ()
-
-deleted:
-
-		[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
-
-reason: ()
+reason: (Spark managment)
 
 replacement:
 
@@ -46,7 +40,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -69,7 +63,7 @@ replaced by:
 		
 			![Use Script Action to customize a cluster](./media/hdinsight-hadoop-customize-cluster/HDI.CustomProvision.Page6.png "Use Script Action to customize a cluster")
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -290,5 +284,5 @@ replaced by:
 					...
 				};
 
-reason: ()
+reason: (Spark managment)
 

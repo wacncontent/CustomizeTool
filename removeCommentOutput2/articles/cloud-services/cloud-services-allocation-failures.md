@@ -22,7 +22,7 @@ When you deploy instances to a Cloud Service or add new web or worker role insta
 
 If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**.
 
-### Background – How allocation works
+### Background â How allocation works
 The servers in Azure datacenters are partitioned into clusters. A new cloud service allocation request is attempted in multiple clusters. When the first instance is deployed to a cloud service(in either staging or production), that cloud service gets pinned to a cluster. Any further deployments for the cloud service will happen in the same cluster. In this article, we'll refer to this as "pinned to a cluster". Diagram 1 below illustrates the case of a normal allocation which is attempted in multiple clusters; Diagram 2 illustrates the case of an allocation that's pinned to Cluster 2 because that's where the existing Cloud Service CS_1 is hosted.
 
 ![Allocation Diagram](./media/cloud-services-allocation-failure/Allocation1.png)
@@ -77,10 +77,10 @@ Here are the common allocation scenarios that cause an allocation request to be 
 
 4. Remove affinity group for new deployments - Affinity Groups are no longer recommended. Follow steps for #1 above to deploy a new cloud service. Ensure cloud service is not in an affinity group. 
 
-5. Convert to a Regional Virtual Network - See [How to migrate from Affinity Groups to a Regional Virtual Network (VNet)](/documentation/articles/virtual-networks-migrate-to-regional-vnet/).
+5. Convert to a Regional Virtual Network - See [How to migrate from Affinity Groups to a Regional Virtual Network (VNet)](/documentation/articles/virtual-networks-migrate-to-regional-vnet).
 
 ## Additional resources
 ### Contact Azure Customer Support
 
-If this article didn’t help to solve your Azure issue, browse the Azure forums on [MSDN and Stack Overflow](/support/forums/).
+If this article didnât help to solve your Azure issue, browse the Azure forums on [MSDN and Stack Overflow](/support/forums/).
 You can also file an Azure support incident about your issue. Go to the [Azure Support](/support/contact/) site and click Get Support. For information about using Azure Support, read the[ Windows Azure Support FAQ](/support/faq/).

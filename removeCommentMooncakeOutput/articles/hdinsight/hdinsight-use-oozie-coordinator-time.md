@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/28/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 
@@ -57,7 +57,7 @@ The workflow contains two actions:
 
 Before you begin this tutorial, you must have the following:
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell). To execute Windows PowerShell scripts, you must run Azure PowerShell as an administrator and set the execution policy to *RemoteSigned*. For more information, see [Run Windows PowerShell scripts][powershell-script].
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure). To execute Windows PowerShell scripts, you must run Azure PowerShell as an administrator and set the execution policy to *RemoteSigned*. For more information, see [Run Windows PowerShell scripts][powershell-script].
 - **An HDInsight cluster**. For information about creating an HDInsight cluster, see [Provision HDInsight clusters][hdinsight-provision], or [Get started with HDInsight][hdinsight-get-started]. You will need the following data to go through the tutorial:
 
 	<table border = "1">
@@ -698,24 +698,29 @@ In this tutorial, you learned how to define an Oozie workflow and an Oozie coord
 
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+
+
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
 [hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 [hdinsight-develop-java-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
+
+[sqldatabase-create-configue]: /documentation/articles/sql-database-get-started
 [sqldatabase-get-started]: /documentation/articles/sql-database-get-started
+
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
 [apache-oozie-332]: http://oozie.apache.org/docs/3.3.2/
@@ -724,7 +729,7 @@ In this tutorial, you learned how to define an Oozie workflow and an Oozie coord
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
+[powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 

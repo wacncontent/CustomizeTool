@@ -1,6 +1,6 @@
 <properties
-	pageTitle="App Model v2.0 .NET Web App | Windows Azure"
-	description="How to build a .NET MVC Web App that signs users in with both personal Microsoft Account and work or school accounts."
+	pageTitle="App Model v2.0 .NET web site | Windows Azure"
+	description="How to build a .NET MVC web site that signs users in with both personal Microsoft Account and work or school accounts."
 	services="active-directory"
 	documentationCenter=".net"
 	authors="dstrockis"
@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/11/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
-# App model v2.0 preview: Add sign-in to an .NET MVC web app
+# App model v2.0 preview: Add sign-in to an .NET MVC web site
 
-With the v2.0 app model, you can quickly add authentication to your web apps with support for both personal Microsoft accounts and work or school accounts.  In ASP.NET web apps, you can accomplish this using Microsoft's OWIN middleware included in .NET Framework 4.5.
+With the v2.0 app model, you can quickly add authentication to your web sites with support for both personal Microsoft accounts and work or school accounts.  In ASP.NET web sites, you can accomplish this using Microsoft's OWIN middleware included in .NET Framework 4.5.
 
   > [AZURE.NOTE]
     This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](/documentation/articles/active-directory-developers-guide).
@@ -60,17 +60,21 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 ```
 
 -	Add an "OWIN Startup Class" to the project called `Startup.cs`  Right click on the project --> **Add** --> **New Item** --> Search for "OWIN".  The OWIN middleware will invoke the `Configuration(...)` method when your app starts.
--	Change the class declaration to `public partial class Startup` - we've already implemented part of this class for you in another file.  In the `Configuration(...)` method, make a call to ConfigureAuth(...) to set up authentication for your web app  
+-	Change the class declaration to `public partial class Startup` - we've already implemented part of this class for you in another file.  In the `Configuration(...)` method, make a call to ConfigureAuth(...) to set up authentication for your web site  
 
 ```C#
-public partial class Startup
+[assembly: OwinStartup(typeof(Startup))]
+
+namespace TodoList_WebApp
 {
-    public void Configuration(IAppBuilder app)
-    {
-        ConfigureAuth(app);
-    }
-}
-```
+	public partial class Startup
+	{
+		public void Configuration(IAppBuilder app)
+		{
+			ConfigureAuth(app);
+		}
+	}
+}```
 
 -	Open the file `App_Start\Startup.Auth.cs` and implement the `ConfigureAuth(...)` method.  The parameters you provide in `OpenIdConnectAuthenticationOptions` will serve as coordinates for your app to communicate with Azure AD.  You'll also need to set up Cookie Authentication - the OpenID Connect middleware uses cookies underneath the covers.
 
@@ -130,7 +134,7 @@ public void SignIn()
     }
 }
 
-// BUGBUG: Ending a session with the v2.0 endpoint is not yet supported.  Here, we just end the session with the web app.  
+// BUGBUG: Ending a session with the v2.0 endpoint is not yet supported.  Here, we just end the session with the web site.  
 public void SignOut()
 {
     // Send an OpenID Connect sign-out request.
@@ -139,7 +143,7 @@ public void SignOut()
 }
 ```
 
--	Now, open <!-- deleted by customization `Views\Shared\_LoginPartial.cshtml` --><!-- keep by customization: begin --> `Views\Shared_LoginPartial.cshtml` <!-- keep by customization: end -->.  This is where you'll show the user your app's sign-in and sign-out links, and print out the user's name in a view.
+-	Now, open `Views\Shared\_LoginPartial.cshtml`.  This is where you'll show the user your app's sign-in and sign-out links, and print out the user's name in a view.
 
 ```HTML
 @if (Request.IsAuthenticated)
@@ -191,7 +195,7 @@ public ActionResult About()
 }
 ```
 
-Finally, build and run your app!   Sign in with either a personal Microsoft Account or a work or school account, and notice how the user's identity is reflected in the top navigation bar.  You now have a web app secured using industry standard protocols that can authenticate users with both their personal and work/school accounts.
+Finally, build and run your app!   Sign in with either a personal Microsoft Account or a work or school account, and notice how the user's identity is reflected in the top navigation bar.  You now have a web site secured using industry standard protocols that can authenticate users with both their personal and work/school accounts.
 
 For reference, the completed sample (without your configuration values) [is provided as a .zip here](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIdConnect-DotNet/archive/complete.zip), or you can clone it from GitHub:
 

@@ -14,7 +14,7 @@
 # How to Use the SendGrid Email Service from PHP
 
 This guide demonstrates how to perform common programming tasks with the SendGrid email service on Azure. The samples are written in PHP.
-The scenarios covered include **constructing email**, **sending email**, and **adding attachments**. For more information on SendGrid and sending email, see the [Next Steps](#next-steps) section.
+The scenarios covered include **constructing email**, **sending email**, and **adding attachments**. For more information on SendGrid and sending email, see the [Next <!-- deleted by customization Steps](#next-steps) --><!-- keep by customization: begin --> Steps][] <!-- keep by customization: end --> section.
 
 <!-- deleted by customization
 ## What is the SendGrid Email Service?
@@ -463,8 +463,11 @@ these links to learn more.
 -   SendGrid PHP library: <https://github.com/sendgrid/sendgrid-php>
 -   SendGrid special offer for Azure customers: <https://sendgrid.com/windowsazure.html>
 
+<!-- deleted by customization
 For more information, see also the [PHP Developer Center](/develop/php/).
 
+
+-->
 <!-- keep by customization: begin -->
   [Next Steps]: #bkmk_NextSteps
   [What is the SendGrid Email Service]: #bkmk_WhatIsSendGrid

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/16/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Run Hive queries with Hadoop on HDInsight using PowerShell
@@ -23,7 +23,7 @@ This document provides an example of using Azure PowerShell to run a MapReduce j
 
 To complete the steps in this article, you will need the following:
 
-- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based <!-- deleted by customization or Linux-based)** --><!-- keep by customization: begin --> )** <!-- keep by customization: end -->
+- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based or Linux-based)**
 
 - **A workstation with Azure PowerShell**. See [Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure)
 
@@ -47,18 +47,17 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 
 1. Using an editor, save the following code as **mapreducejob.ps1**. You must replace **CLUSTERNAME** with the name of your HDInsight cluster.
 
-		#Specify the values
-		$clusterName = "CLUSTERNAME"
-		$creds=Get-Credential
-        		
-		# Login to your Azure subscription
-		# Is there an active Azure subscription?
-		$sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
-		if(-not($sub))
-		{
-		    Login-AzureRmAccount
-		}
-        
+        #Specify the values
+        $clusterName = "CLUSTERNAME"
+                
+        # Login to your Azure subscription
+        # Is there an active Azure subscription?
+        $sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
+        if(-not($sub))
+        {
+            Login-AzureRmAccount
+        }
+
         #Get HTTPS/Admin credentials for submitting the job later
         $creds = Get-Credential
         #Get the cluster info so we can get the resource group, storage, etc.
@@ -76,39 +75,39 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
             -StorageAccountName $storageAccountName `
             -StorageAccountKey $storageAccountKey
             
-		#Define the MapReduce job
-		#NOTE: If using an HDInsight 2.0 cluster, use hadoop-examples.jar instead.
-		# -JarFile = the JAR containing the MapReduce application
-		# -ClassName = the class of the application
-		# -Arguments = The input file, and the output directory
-		$wordCountJobDefinition = New-AzureRmHDInsightMapReduceJobDefinition `
+        #Define the MapReduce job
+        #NOTE: If using an HDInsight 2.0 cluster, use hadoop-examples.jar instead.
+        # -JarFile = the JAR containing the MapReduce application
+        # -ClassName = the class of the application
+        # -Arguments = The input file, and the output directory
+        $wordCountJobDefinition = New-AzureRmHDInsightMapReduceJobDefinition `
             -JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" `
             -ClassName "wordcount" `
             -Arguments `
                 "wasb:///example/data/gutenberg/davinci.txt", `
                 "wasb:///example/data/WordCountOutput"
 
-		#Submit the job to the cluster
-		Write-Host "Start the MapReduce job..." -ForegroundColor Green
-		$wordCountJob = Start-AzureRmHDInsightJob `
+        #Submit the job to the cluster
+        Write-Host "Start the MapReduce job..." -ForegroundColor Green
+        $wordCountJob = Start-AzureRmHDInsightJob `
             -ClusterName $clusterName `
             -JobDefinition $wordCountJobDefinition `
             -HttpCredential $creds
 
-		#Wait for the job to complete
-		Write-Host "Wait for the job to complete..." -ForegroundColor Green
-		Wait-AzureRmHDInsightJob `
+        #Wait for the job to complete
+        Write-Host "Wait for the job to complete..." -ForegroundColor Green
+        Wait-AzureRmHDInsightJob `
             -ClusterName $clusterName `
             -JobId $wordCountJob.JobId `
             -HttpCredential $creds
         # Download the output
         Get-AzureStorageBlobContent `
-            -Blob example/data/WordCountOutput/* `
+            -Blob 'example/data/WordCountOutput/part-r-00000' `
             -Container $container `
             -Destination output.txt `
             -Context $context
-		# Print the output
-		Get-AzureRmHDInsightJobOutput `
+        # Print the output
+        Get-AzureRmHDInsightJobOutput `
             -Clustername $clusterName `
             -JobId $wordCountJob.JobId `
             -DefaultContainer $container `
@@ -158,7 +157,7 @@ If no information is returned when the job completes, an error may have occurred
             -DefaultContainer $container `
             -DefaultStorageAccountName $storageAccountName `
             -DefaultStorageAccountKey $storageAccountKey `
-            -HttpCredential $creds
+            -HttpCredential $creds `
             -DisplayOutputType StandardError
 
 This returns the information that was written to STDERR on the server when you ran the job, and it may help determine why the job is failing.

@@ -3,8 +3,8 @@
 	description="Learn how to use the New Relic service to manage and monitor your Azure application." 
 	services="" 
 	documentationCenter=".net" 
-	authors="stepsic-microsoft-com" 
-	manager="carolz" 
+	authors="nickfloyd" 
+	manager="timlt" 
 	editor=""/>
 
 <tags
@@ -111,7 +111,7 @@ To sign up for New Relic directly from the Azure Store, follow these three easy 
 
 
 **Note:** If this is your first time deploying this app to Azure, you will be prompted to enter your 
-Azure credentials. For more information, see <a href="/develop/net/tutorials/get-started/">Deploying an ASP.NET Web Application to an Azure Website</a>.
+Azure credentials. For more information, see <a href="/develop/net/tutorials/get-started/">Deploying an ASP.NET Web Site to an Azure Website</a>.
 
 ![publish settings](./media/store-new-relic-cloud-services-dotnet-application-performce-management/NewRelicAzureNuget10.png)
 

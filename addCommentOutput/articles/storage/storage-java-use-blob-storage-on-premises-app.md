@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="08/31/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # On-premises application with blob storage
@@ -63,14 +63,20 @@ Declare a class named **StorageSample**, and include the open bracket,
 Within the **StorageSample** class, declare a string variable that will
 contain the default endpoint protocol, your storage account name, and
 your storage access key, as specified in your Azure storage
-account. Replace the placeholder values **your\_account\_name** and
-**your\_account\_key** with your own account name and account key,
+account. Replace the placeholder values <!-- deleted by customization **your\_account\_name** --><!-- keep by customization: begin --> **your_account_name** <!-- keep by customization: end --> and
+<!-- deleted by customization **your\_account\_key** --><!-- keep by customization: begin --> **your_account_key** <!-- keep by customization: end --> with your own account name and account key,
 respectively.
 
     public static final String storageConnectionString =
            "DefaultEndpointsProtocol=http;" +
                "AccountName=your_account_name;" +
+<!-- deleted by customization
                "AccountKey=your_account_name";
+-->
+<!-- keep by customization: begin -->
+               "AccountKey=your_account_name;" +
+	       "EndpointSuffix=core.chinacloudapi.cn";
+<!-- keep by customization: end -->
 
 Add in your declaration for **main**, include a **try** block, and
 include the necessary open brackets, **{**.
@@ -253,8 +259,14 @@ Close **MakeHTMLPage** by inserting a close bracket: **}**
 Close **StorageSample** by inserting a close bracket: **}**
 
 The following is the complete code for this example. Remember to modify
+<!-- deleted by customization
 the placeholder values **your\_account\_name** and
 **your\_account\_key** to use your account name and account key,
+-->
+<!-- keep by customization: begin -->
+the placeholder values **your_account_name** and
+**your_account_key** to use your account name and account key,
+<!-- keep by customization: end -->
 respectively.
 
     import com.microsoft.azure.storage.*;
@@ -270,7 +282,13 @@ respectively.
         public static final String storageConnectionString =
                 "DefaultEndpointsProtocol=http;" +
                        "AccountName=your_account_name;" +
+<!-- deleted by customization
                        "AccountKey=your_account_name";
+-->
+<!-- keep by customization: begin -->
+                       "AccountKey=your_account_name;" +
+		       "EndpointSuffix=core.chinacloudapi.cn";
+<!-- keep by customization: end -->
 
         public static void main(String[] args) {
             try {
@@ -379,7 +397,13 @@ deletes the container named **gettingstarted**.
         public static final String storageConnectionString =
                 "DefaultEndpointsProtocol=http;" +
                    "AccountName=your_account_name;" +
+<!-- deleted by customization
                    "AccountKey=your_account_key";
+-->
+<!-- keep by customization: begin -->
+                   "AccountKey=your_account_key;" +
+		   "EndpointSuffix=core.chinacloudapi.cn";
+<!-- keep by customization: end -->
 
         public static void main(String[] args)
         {
@@ -429,17 +453,12 @@ Follow these links to learn more about more complex storage tasks.
   [How to Create a Storage Account]: /documentation/articles/storage-create-storage-account#create-a-storage-account
 <!-- deleted by customization
   [How to Manage Storage Accounts]: storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys
+  [How to Use the Blob Storage Service from Java]: storage-java-how-to-use-blob-storage.md
 -->
 <!-- keep by customization: begin -->
   [How to Manage Storage Accounts]: /documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys
-<!-- keep by customization: end -->
   [How to Use the Blob Storage Service from Java]: /documentation/articles/storage-java-how-to-use-blob-storage
-  [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
-<!-- deleted by customization
-  [Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
--->
-<!-- keep by customization: begin -->
-  [Azure Storage Client SDK Reference]: http://dl.windowsazure.cn/storage/javadoc/
 <!-- keep by customization: end -->
-  [Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+  [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
+  [Azure Storage Client SDK Reference]: http://azure.github.io/azure-storage-java/
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/

@@ -2,16 +2,6 @@ replacement:
 
 deleted:
 
-		[AZURE.TIP]
-
-replaced by:
-
-		[AZURE.NOTE]
-
-reason: ()
-
-deleted:
-
 		> [AZURE.NOTE] The [request](http://msdn.microsoft.com/zh-cn/library/azure/jj554218.aspx) and [response](http://msdn.microsoft.com/zh-cn/library/azure/dn303373.aspx) object supplied to custom API functions are implemented by the [Express.js library](http://go.microsoft.com/fwlink/p/?LinkId=309046).
 
 replaced by:

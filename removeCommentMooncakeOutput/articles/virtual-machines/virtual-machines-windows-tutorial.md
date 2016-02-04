@@ -3,7 +3,7 @@
 	description="Learn how to create an Azure virtual machine running Windows, using the Azure Marketplace in the Azure preview portal"
 	services="virtual-machines"
 	documentationCenter=""
-	authors="cynthn"
+	authors="KBDAzure"
 	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
@@ -15,7 +15,7 @@
 # Create a virtual machine running Windows in the Azure preview portal#
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](/documentation/articles/virtual-machines-windows-tutorial)
+- [Azure preview portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 - [Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 - [PowerShell: Resource Manager deployment](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 - [PowerShell: Classic deployment](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)

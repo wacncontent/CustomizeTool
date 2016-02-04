@@ -154,9 +154,9 @@ The following table maps the .NET property types to the Python property types.
 | Guid               | uuid                 | Proton-Python class                                                                                                                                                 |
 | string             | string               | -                                                                                                                                                                     |
 | DateTime           | timestamp            | Proton-Python class                                                                                                                                                 |
-| DateTimeOffset     | DescribedType        | DateTimeOffset.UtcTicks mapped to AMQP type:<type name=”datetime-offset” class=restricted source=”long”> <descriptor name=”com.microsoft:datetime-offset” /></type> |
-| TimeSpan           | DescribedType        | Timespan.Ticks mapped to AMQP type:<type name=”timespan” class=restricted source=”long”> <descriptor name=”com.microsoft:timespan” /></type>                        |
-| Uri                | DescribedType        | Uri.AbsoluteUri mapped to AMQP type:<type name=”uri” class=restricted source=”string”> <descriptor name=”com.microsoft:uri” /></type>                               |
+| DateTimeOffset     | DescribedType        | DateTimeOffset.UtcTicks mapped to AMQP type:<type name="datetime-offset" class=restricted source="long"> <descriptor name="com.microsoft:datetime-offset" /></type> |
+| TimeSpan           | DescribedType        | Timespan.Ticks mapped to AMQP type:<type name="timespan" class=restricted source="long"> <descriptor name="com.microsoft:timespan" /></type>                        |
+| Uri                | DescribedType        | Uri.AbsoluteUri mapped to AMQP type:<type name="uri" class=restricted source="string"> <descriptor name="com.microsoft:uri" /></type>                               |
 
 ### Standard properties
 
@@ -210,4 +210,4 @@ Ready to learn more? Visit the following links:
 [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 [AMQP in Service Bus for Windows Server]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
 
-[Service Bus AMQP overview]: /documentation/articles/service-bus-amqp-overview
+[Service Bus AMQP overview]: service-bus-amqp-overview.md

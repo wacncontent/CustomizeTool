@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="09/23/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 
@@ -58,7 +58,7 @@ To instantiate an Azure Table service client, you must first have a valid connec
 
 For accessing a live service:
 
-	DefaultEndpointsProtocol=[http|https];AccountName=[yourAccount];AccountKey=[yourKey]
+	DefaultEndpointsProtocol=[http|https];AccountName=[yourAccount];AccountKey=[yourKey];EndpointSuffix=core.chinacloudapi.cn
 
 For accessing the emulator storage:
 
@@ -109,7 +109,7 @@ For information about restrictions on table names, see [Understanding the Table 
 
 ## Add an entity to a table
 
-To add an entity to a table, create a new **Entity** object and pass it to **TableRestProxy->insertEntity**. Note that when you create an entity, you must specify a `PartitionKey` and `RowKey`. These are the unique identifiers for an entity and are values that can be queried much faster than other entity properties. The system uses `PartitionKey` to automatically distribute the table’s entities over many storage nodes. Entities with the same `PartitionKey` are stored on the same node. (Operations on multiple entities stored on the same node perform better than on entities stored across different nodes.) The `RowKey` is the unique ID of an entity within a partition.
+To add an entity to a table, create a new **Entity** object and pass it to **TableRestProxy->insertEntity**. Note that when you create an entity, you must specify a `PartitionKey` and `RowKey`. These are the unique identifiers for an entity and are values that can be queried much faster than other entity properties. The system uses `PartitionKey` to automatically distribute the tableâs entities over many storage nodes. Entities with the same `PartitionKey` are stored on the same node. (Operations on multiple entities stored on the same node perform better than on entities stored across different nodes.) The `RowKey` is the unique ID of an entity within a partition.
 
 	require_once 'vendor\autoload.php';
 
@@ -460,15 +460,13 @@ Finally, to delete a table, pass the table name to the **TableRestProxy->deleteT
 
 ## Next steps
 
-Now that you’ve learned the basics of the Azure Table service, follow these links to learn about more complex storage tasks.
+Now that youâve learned the basics of the Azure Table service, follow these links to learn about more complex storage tasks.
 
-- See the MSDN Reference: [Azure Storage](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
 - Visit the [Azure Storage team blog](http://blogs.msdn.com/b/windowsazurestorage/)
 
 For more information, see also the [PHP Developer Center](/develop/php/).
 
 [download]: /documentation/articles/php-download-sdk
-[Storing and accessing data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [require_once]: http://php.net/require_once
 [table-service-timeouts]: http://msdn.microsoft.com/zh-cn/library/azure/dd894042.aspx
 

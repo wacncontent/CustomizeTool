@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="11/18/2015"
 	wacn.date=""/>
 
 
@@ -18,6 +18,7 @@
 Azure Virtual Network allows you to extend your Hadoop solutions to incorporate on-premises resources such as SQL Server, or to create secure private networks between resources in the cloud.
 
 > [AZURE.NOTE] HDInsight does not support affinity-based Azure virtual networks. When using HDInsight, you must use location-based virtual networks.
+
 
 ##<a id="whatis"></a>What is Azure Virtual Network?
 
@@ -55,11 +56,11 @@ For more information on Virtual Network features, benefits, and capabilities, se
 
 > [AZURE.NOTE] You must create the Azure Virtual Network before provisioning an HDInsight cluster. For more information, see [Virtual Network configuration tasks](/documentation/services/networking/).
 >
-> Azure HDInsight supports only location-based virtual networks, and does not currently work with virtual networks based on affinity group.
+> Azure HDInsight supports only location-based virtual networks, and does not currently work with virtual networks based on affinity group. 
 >
-> It is highly recommended to designate a single subnet for each cluster.
+> It is highly recommended to designate a single subnet for each cluster. 
 
-For more information on provisioning an HDInsight cluster on a virtual network, see [Provisioning Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters).
+For more information on provisioning an HDInsight cluster on a virtual network, see [Provisioning Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1).
 
 ##<a id="tasks"></a>Tasks and information
 
@@ -161,7 +162,7 @@ The following examples demonstrate how to use HDInsight with Azure Virtual Netwo
 
 * [Analyze sensor data with Storm and HBase in HDInsight](/documentation/articles/hdinsight-storm-sensor-data-analysis) - Demonstrates how to configure a Storm and HBase cluster in a virtual network, as well as how to remotely write data to HBase from Storm.
 
-* [Provision Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters) - Provides information on provisioning Hadoop clusters, including information on using Azure Virtual Network.
+* [Provision Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) - Provides information on provisioning Hadoop clusters, including information on using Azure Virtual Network.
 
 * [Use Sqoop with Hadoop in HDInsight](/documentation/articles/hdinsight-use-sqoop) - Provides information on using Sqoop to transfer data with SQL Server over a virtual network.
 

@@ -3,13 +3,13 @@
 	description="Learn how to deploy your Azure application to a staging environment, then deploy to a production environment using Virtual IP (VIP) swap." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/08/2015"
+	ms.date="11/20/2015"
 	wacn.date=""/>
 
 

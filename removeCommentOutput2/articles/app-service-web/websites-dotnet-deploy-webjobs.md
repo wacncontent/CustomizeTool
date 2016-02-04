@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Deploy WebJobs using Visual Studio" 
-	description="Learn how to deploy Azure WebJobs to Azure Websites using Visual Studio." 
+	description="Learn how to deploy Azure WebJobs to Azure Web Apps using Visual Studio." 
 	services="app-service" 
 	documentationCenter="" 
 	authors="tdykstra" 
@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/22/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 # Deploy WebJobs using Visual Studio
 
 ## Overview
 
-This topic explains how to use Visual Studio to deploy a Console Application project to a web app in [Azure Websites](/documentation/services/web-sites/) as an [Azure WebJob](/documentation/articles/websites-webjobs-resources/). For information about how to deploy WebJobs by using the [Azure Management Portal](https://manage.windowsazure.cn/), see [Run Background tasks with WebJobs](/documentation/articles/web-sites-create-web-jobs).
+This topic explains how to use Visual Studio to deploy a Console Application project to a web app in [Azure Web App](/documentation/services/web-sites/) as an [Azure WebJob](/documentation/articles/websites-webjobs-resources/). For information about how to deploy WebJobs by using the [Azure Management Portal](https://manage.windowsazure.cn), see [Run Background tasks with WebJobs](/documentation/articles/web-sites-create-web-jobs).
 
 When Visual Studio deploys a WebJobs-enabled Console Application project, it performs two tasks:
 
@@ -96,8 +96,7 @@ To create a new WebJobs-enabled project, you can use the Console Application pro
 
 	Create a project that is configured to deploy automatically as a WebJob when a web project in the same solution is deployed. Use this option when you want to run your WebJob in the same web app in which you run the related web application.
 
-In the SDK 2.4 release, the WebJobs new-project template isn't much easier than creating a Console Application project and enabling WebJobs deployment. In the future, the WebJobs new-project template will be more convenient for [WebJobs SDK](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs) development, because it will automatically install the appropriate WebJobs SDK NuGet packages. Until then, you can configure a project to use the WebJobs SDK by installing the packages manually as shown in the [WebJobs SDK tutorial](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs). 
-
+> [AZURE.NOTE] The WebJobs new-project template automatically installs NuGet packages and includes code in *Program.cs* for the [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started). If you don't want to use the WebJobs SDK, or want to use a scheduled rather than continuous WebJob, remove or change the `host.RunAndBlock` statement in *Program.cs*.
 
 ### <a id="createnolink"></a> Use the WebJobs new-project template for an independent WebJob
   
@@ -131,7 +130,6 @@ For a scheduled WebJob (not for continuous WebJobs), Visual Studio creates an [A
 * The scheduler job is named *{webappname}-{webjobname}*. For example: MyWebApp-MyWebJob. 
  
 >[AZURE.NOTE]
-> 
 >* If you configure a **Recurring Job** and set recurrence frequency to a number of minutes, the Azure Scheduler service is not free. Other frequencies (hours, days, and so forth) are free.
 >* If you deploy a WebJob and then decide you want to change the type of WebJob and redeploy, you'll need to delete the webjobs-publish-settings.json file. This will make Visual Studio show the publishing options again, so you can change the type of WebJob.
 >* If you deploy a WebJob and later change the run mode from continuous to non-continuous or vice versa, Visual Studio creates a new WebJob in Azure when you redeploy. If you change other scheduling settings but leave run mode the same or switch between Scheduled and On Demand, Visual Studio updates the existing job rather than create a new one.
@@ -188,4 +186,3 @@ For an independent WebJob, the same **Publish Web** wizard that is used for web 
 ## <a id="nextsteps"></a>Next Steps
 
 This article has explained how to deploy WebJobs by using Visual Studio. For information about how to deploy Azure WebJobs from Visual Studio and by using a continuous delivery process, see [Azure WebJobs - Recommended Resources - Deployment](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/azure-webjobs-recommended-resources#deploying).
- 

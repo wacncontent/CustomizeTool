@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Run Pig jobs from a Remote Desktop connection

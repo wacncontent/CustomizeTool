@@ -15,7 +15,7 @@
 
 There are three traffic routing methods available in Traffic Manager. Each Traffic Manager profile can use only one traffic routing method at a time, although you can select a different traffic routing method for your profile at any time.
 
-It’s important to note that all traffic routing methods include endpoint monitoring. After you configure your Traffic Manager profile to specify the traffic routing method that best fits your requirements, configure your monitoring settings. When monitoring is correctly configured, Traffic Manager will monitor the state of your endpoints, consisting of cloud services and websites, and won’t send traffic to endpoints it thinks are unavailable. For information about Traffic Manager monitoring, see [About Traffic Manager Monitoring](/documentation/articles/traffic-manager-monitoring). 
+It's important to note that all traffic routing methods include endpoint monitoring. After you configure your Traffic Manager profile to specify the traffic routing method that best fits your requirements, configure your monitoring settings. When monitoring is correctly configured, Traffic Manager will monitor the state of your endpoints, consisting of cloud services and websites, and won't send traffic to endpoints it thinks are unavailable. For information about Traffic Manager monitoring, see [About Traffic Manager Monitoring](/documentation/articles/traffic-manager-monitoring). 
 
 The three Traffic Manager traffic routing methods are:
 
@@ -44,8 +44,8 @@ Figure 1 shows an example of the Failover traffic routing method for a set of en
 The following numbered steps correspond to the numbers in Figure 1.
 
 1. Traffic Manager receives an incoming request from a client through DNS and locates the profile.
-2. The profile contains an ordered list of endpoints. Traffic Manager checks which endpoint is first in the list. If the endpoint is online (based on the ongoing endpoint monitoring), it will specify that endpoint’s DNS name in the DNS response to the client. If the endpoint is offline, Traffic Manager determines the next online endpoint in the list. In this example CS-A is offline (unavailable), but CS-B is online (available).
-3. Traffic Manager returns CS-B’s domain name to the client's DNS server, which resolves the domain name to an IP address and sends it to the client.
+2. The profile contains an ordered list of endpoints. Traffic Manager checks which endpoint is first in the list. If the endpoint is online (based on the ongoing endpoint monitoring), it will specify that endpoint's DNS name in the DNS response to the client. If the endpoint is offline, Traffic Manager determines the next online endpoint in the list. In this example CS-A is offline (unavailable), but CS-B is online (available).
+3. Traffic Manager returns CS-B's domain name to the client's DNS server, which resolves the domain name to an IP address and sends it to the client.
 4. The client initiates traffic to CS-B.
 
 ### Round robin traffic routing method
@@ -103,7 +103,7 @@ The following numbered steps correspond to the numbers in Figure 4.
 2. Traffic Manager receives an incoming request from a client through its local DNS server and locates the profile.
 3. Traffic Manager locates the row in the Internet Latency Table for the IP address of the incoming DNS request. Because the user's local DNS server is performing an iterative DNS query to find the authoritative DNS server for the Traffic Manager profile name, the DNS query is sent from the IP address of the client's local DNS server.
 4. Traffic Manager locates the datacenter with the shortest time for the datacenters that host the endpoints defined in the profile. In this example, that is CS-B.
-5. Traffic Manager returns CS-B’s domain name to the client's local DNS server, which resolves the domain name to an IP address and sends it to the client.
+5. Traffic Manager returns CS-B's domain name to the client's local DNS server, which resolves the domain name to an IP address and sends it to the client.
 6. The client initiates traffic to CS-B.
 
 **Points to note:**

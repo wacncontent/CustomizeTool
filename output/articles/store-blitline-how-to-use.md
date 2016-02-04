@@ -15,24 +15,15 @@
 
 This guide will explain how to access Blitline services and how to submit jobs to Blitline.
 
-## Table of contents
-
-[What is Blitline?][]
-[What Blitline is NOT][]
-[Create a Blitline account][]
-[How to create a Blitline job][]
-[How to save an image to your Azure Storage][]
-[Next steps][]
-
-## <a id="whatis"></a>What is Blitline?
+## What is Blitline?
 
 Blitline is a cloud-based image processing service that provides enterprise level image processing at a fraction of the price that it would cost to build it yourself.
 
-The fact is that image processing has been done over and over again, usually rebuilt from the ground up for each and every website. We realize this because we’ve built them a million times too. One day we decided that perhaps it‘s time we just do it for everyone. We know how to do it, to do it fast and efficiently, and save everyone work in the meantime.
+The fact is that image processing has been done over and over again, usually rebuilt from the ground up for each and every website. We realize this because weâve built them a million times too. One day we decided that perhaps itâs time we just do it for everyone. We know how to do it, to do it fast and efficiently, and save everyone work in the meantime.
 
 For more information, see [http://www.blitline.com](http://www.blitline.com).
 
-## <a id="whatisnot"></a>What Blitline is NOT...
+## What Blitline is NOT...
 
 To clarify what Blitline is useful for, it is often easier to identify what Blitline does NOT do before moving forward.
 
@@ -44,11 +35,11 @@ To clarify what Blitline is useful for, it is often easier to identify what Blit
 
 - Blitline is massively parallel and does NOT do any synchronous processing. Meaning you must give us a postback_url and we can tell you when we are done processing.
 
-## <a id="createaccount"></a>Create a Blitline account
+## Create a Blitline account
 
 [AZURE.INCLUDE [blitline-signup](../includes/blitline-signup.md)]
 
-## <a id="createjob"></a>How to create a Blitline job
+## How to create a Blitline job
 
 Blitline uses JSON to define the actions you want to take on an image. This JSON is composed of a few simple fields.
 
@@ -93,7 +84,7 @@ You will get JSON back that looks something like this:
 This tells you that Blitline has recieved your request, it has put it in a processing queue, and when it has completed the image will be available at:
 **https://s3.amazonaws.com/dev.blitline/2011110722/YOUR\_APP\_ID/CK3f0xBF_2bV6wf7gEZE8w.jpg**
 
-## <a id="saveazure"></a>How to save an image to your Azure Storage account
+## How to save an image to your Azure Storage account
 
 If you have an Azure Storage account, you can easily have Blitline push the processed images into your Azure container. By adding an "azure_destination" you define the location and permissions for Blitline to push to.
 
@@ -129,7 +120,7 @@ Example:
 You can also read the latest edition of Blitline's Azure Storage docs [here](http://www.blitline.com/docs/azure_storage).
 
 
-## <a id="nextsteps"></a>Next Steps
+## Next Steps
 
 Visit blitline.com to read about all our other features:
 
@@ -137,12 +128,3 @@ Visit blitline.com to read about all our other features:
 * Blitline API Functions <http://www.blitline.com/docs/functions>
 * Blitline API Examples <http://www.blitline.com/docs/examples>
 * Third Part Nuget Library <http://nuget.org/packages/Blitline.Net>
-
-
-  [Next steps]: #nextsteps
-  [What is Blitline?]: #whatis
-  [What Blitline is NOT]: #whatisnot
-  [Create a Blitline account]: #createaccount
-  [How to create a Blitline job]: #createjob
-  [How to save an image to your Azure Storage]: #saveazure
-

@@ -1,6 +1,6 @@
 <properties
    pageTitle="Pricing tier recommendations for Azure SQL Database"
-   description="When changing pricing tiers in the Azure Management Portal, pricing tier recommendations are provided that recommend the tier that is best suited for running an existing Azure SQL Database’s workload."
+   description="When changing pricing tiers in the Azure Management Portal, pricing tier recommendations are provided that recommend the tier that is best suited for running an existing Azure SQL Databaseâs workload."
    services="sql-database"
    documentationCenter=""
    authors="stevestein"
@@ -14,7 +14,7 @@
 
 # SQL Database pricing tier recommendations
 
- When changing pricing tiers in the Azure Management Portal, pricing tier recommendations are provided that recommend the tier that is best suited for running an existing Azure SQL Database’s workload.
+ When changing pricing tiers in the Azure Management Portal, pricing tier recommendations are provided that recommend the tier that is best suited for running an existing Azure SQL Databaseâs workload.
 
 > [AZURE.NOTE] Pricing tier recommendations are only available for Web and Business databases.
 
@@ -23,7 +23,7 @@
 
 Azure analyzes current performance and feature requirements by assessing historical resource usage for a SQL Database. In addition, the minimum acceptable service tier is determined based on the size of the database, and enabled [business continuity](https://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx) features.
 
-This information is analyzed and the service tier and performance level that is best suited for running the database’s typical workload and maintaining it's current feature set is recommended.
+This information is analyzed and the service tier and performance level that is best suited for running the databaseâs typical workload and maintaining it's current feature set is recommended.
 
 - The service examines the previous 15 to 30 days of historical data (resource usage, database size, and database activity) and performs a comparison between the amount of resources consumed and the actual limitations of the currently available service tiers and performance levels.
 - Data is analyzed in 15 second intervals and each interval's resultset is categorized into the existing service tier and performance level that is best suited for handling that resultset's workload.

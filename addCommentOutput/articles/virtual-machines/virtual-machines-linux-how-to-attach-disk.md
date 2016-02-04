@@ -15,13 +15,8 @@
 
 # How to Attach a Data Disk to a Linux Virtual Machine
 
-<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers attaching a disk with the Azure Service Manager.
-<!-- keep by customization: end -->
 
 You can attach both empty disks and disks that contain data. In both cases, the disks are actually .vhd files that reside in an Azure storage account. Also in both cases, after you attach the disk, you'll need to initialize it so it's ready for use. This article refers to virtual machines created using the classic deployment model.
 
@@ -162,6 +157,9 @@ You can attach both empty disks and disks that contain data. In both cases, the 
 
 	If the `mount` command produces an error, check the /etc/fstab file for correct syntax. If additional data drives or partitions are created you will need to enter them into /etc/fstab separately as well.
 
+	You will need to make the drive writable by using these commands:
+		# cd /datadrive
+		# sudo chmod go+w /datadrive
 
 >[AZURE.NOTE] Subsequently removing a data disk without editing fstab could cause the VM to fail to boot. If this is a common occurrence, most distributions provide either the `nofail` and/or `nobootwait` fstab options that will allow a system to boot even if the disk fails to mount at boot time. Please consult your distribution's documentation for more information on these parameters.
 
@@ -173,5 +171,5 @@ You can attach both empty disks and disks that contain data. In both cases, the 
 [Using the Azure CLI with the Service Management API](/documentation/articles/virtual-machines-command-line-tools)
 
 <!--Link references-->
-[Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide
-[Logon]: /documentation/articles/virtual-machines-linux-how-to-log-on
+[Agent]: virtual-machines-linux-agent-user-guide.md
+[Logon]: virtual-machines-linux-how-to-log-on.md

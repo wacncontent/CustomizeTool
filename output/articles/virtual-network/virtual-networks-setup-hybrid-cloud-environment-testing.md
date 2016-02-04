@@ -56,8 +56,8 @@ Next, log on to DC1 with the CORP\User1 credentials. To configure the CORP domai
 
 	New-ADReplicationSite -Name "TestLab" 
 	New-ADReplicationSite -Name "TestVNET"
-	New-ADReplicationSubnet “Name "10.0.0.0/8" “Site "TestLab"
-	New-ADReplicationSubnet “Name "192.168.0.0/16" “Site "TestVNET
+	New-ADReplicationSubnet "Name "10.0.0.0/8" "Site "TestLab"
+	New-ADReplicationSubnet "Name "192.168.0.0/16" "Site "TestVNET
 
 This is your current configuration.
 
@@ -86,7 +86,7 @@ Use these commands at an administrator-level Windows PowerShell command prompt o
 	[IPAddress]$publicDNS="<Your ISP DNS server(s)>"
 	Rename-NetAdapter -Name $corpnetAdapterName -NewName Corpnet
 	Rename-NetAdapter -Name $internetAdapterName -NewName Internet
-	New-NetIPAddress -InterfaceAlias "Internet" -IPAddress $publicIP -PrefixLength $publicIPpreflength “DefaultGateway $publicDG
+	New-NetIPAddress -InterfaceAlias "Internet" -IPAddress $publicIP -PrefixLength $publicIPpreflength "DefaultGateway $publicDG
 	Set-DnsClientServerAddress -InterfaceAlias Internet -ServerAddresses $publicDNS
 	New-NetIPAddress -InterfaceAlias "Corpnet" -IPAddress 10.0.0.2 -AddressFamily IPv4 -PrefixLength 24
 	Set-DnsClientServerAddress -InterfaceAlias "Corpnet" -ServerAddresses 10.0.0.1
@@ -126,7 +126,7 @@ First, log on to the [Azure Management Portal](https://manage.windowsazure.cn/) 
 	- Click **Add Gateway Subnet**.
 11.	Click the Complete icon. Wait until the virtual network is created before continuing.
 
-Next, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell) to install Azure PowerShell on your local computer.
+Next, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) to install Azure PowerShell on your local computer.
 
 Next, create a new cloud service for the TestVNET virtual network. You must pick a unique name. For example, you could name it TestVNET-*UniqueSequence*, in which *UniqueSequence* is an abbreviation of your organization. For example, if your organization is named Tailspin Toys, you could name the cloud service TestVNET-Tailspin.
 

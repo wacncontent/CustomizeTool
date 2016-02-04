@@ -7,9 +7,9 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="08/08/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="11/15/2015" 
 	wacn.date=""/>
 
 #Register your apps for Twitter login with Mobile Services
@@ -18,17 +18,19 @@
 
 This topic shows you how to register your apps to be able to use Twitter to authenticate with Azure Mobile Services.
 
->[AZURE.NOTE] This tutorial is about [Azure Mobile Services](/home/features/mobile-services/), a solution to help you build scalable mobile applications for any platform. Mobile Services makes it easy to sync data, authenticate users, and send push notifications. This page supports the <a href="/documentation/articles/mobile-services-ios-get-started-users/">Get Started with Authentication</a> tutorial which shows how to log users into your app. If this is your first experience with Mobile Services, please complete the tutorial <a href="/documentation/articles/mobile-services-ios-get-started/">Get Started with Mobile Services</a>.
+>[AZURE.NOTE] This tutorial is about [Azure Mobile Services](/home/features/mobile-services/), a solution to help you build scalable mobile applications for any platform. Mobile Services makes it easy to sync data, authenticate users, and send push notifications. This page supports the [Add authentication to your app](/documentation/articles/mobile-services-ios-get-started-users) tutorial which shows how to sign users into your app. If this is your first experience with Mobile Services, please complete the tutorial [Get Started with Mobile Services](/documentation/articles/mobile-services-ios-get-started).
 
 To complete the procedure in this topic, you must have a Twitter account that has a verified email address. To create a new Twitter account, go to <a href="https://twitter.com/" target="_blank">twitter.com</a>.
 
-1. Navigate to the <a href="https://apps.twitter.com/" target="_blank">Twitter Developers</a> website, sign-in with your Twitter account credentials, and click **Create a new application**.
+1. Navigate to the [Twitter Developers](https://apps.twitter.com/) website, sign-in with your Twitter account credentials, and click **Create new app**.
 
-   	![][1]
+2. Type the **Name**, **Description**, and **Website** values for your app, then type one of the following URL formats in **Callback URL**.
+ 
+	+ **.NET backend**: `https://<mobile_service>.azure-mobile.cn/signin-twitter`
+	+ **JavaScript backend**: `https://<mobile_service>.azure-mobile.cn/login/twitter` 
 
-2. Type the **Name**, **Description**, and **Website** values for your app, then type the URL of your mobile service appended with the path _/login/twitter_ in **Callback URL**.
-
-	>[AZURE.NOTE]For a .NET backend mobile service published to Azure by using Visual Studio, the redirect URL is the URL of your mobile service appended with the path _signin-twitter_. In this example, our mobile service would have the Callback URL ```https://todolist.azure-mobile.cn/signin-twitter```.
+	 >[AZURE.NOTE]Make sure that you use the correct redirect URL path format for your type of Mobile Services backend. When this is incorrect, authentication will not succeed. 
+	&nbsp; 
 
    	![][2]
 
@@ -53,7 +55,7 @@ You are now ready to use a Twitter login for authentication in your app by provi
 <!-- URLs. -->
 
 [Twitter Developers]: https://apps.twitter.com/
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-dotnet/
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-users/
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn
  

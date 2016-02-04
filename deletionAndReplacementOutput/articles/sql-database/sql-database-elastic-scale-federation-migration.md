@@ -8,7 +8,7 @@ replaced by:
 
 		<a name="create-shard-map-manager"></a>Create
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -18,5 +18,5 @@ replaced by:
 
 		## <a name="Modify-the-Existing-Application"></a>Modify the existing application
 
-reason: ()
+reason: (inpage link)
 

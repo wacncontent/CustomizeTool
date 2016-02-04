@@ -6,7 +6,5 @@
 - [PHP](/documentation/articles/storage-php-how-to-use-blobs)
 - [Ruby](/documentation/articles/storage-ruby-how-to-use-blob-storage)
 - [Python](/documentation/articles/storage-python-how-to-use-blob-storage)
-<!-- deleted by customization
 - [iOS](/documentation/articles/storage-ios-how-to-use-blob-storage)
--->
 - [Xamarin](/documentation/articles/storage-xamarin-blob-storage)

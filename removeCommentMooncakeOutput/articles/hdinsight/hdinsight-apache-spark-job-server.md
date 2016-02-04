@@ -72,7 +72,7 @@ Example:
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/

@@ -1,13 +1,13 @@
 
 Follow these steps to create a new mobile service.
 
-1.	Log into the [Management Portal](https://manage.windowsazure.cn/). At the bottom of the navigation pane, click **+NEW**. Expand **Compute** and **Mobile Service**, then click **Create**.
+1.	Log into the [Azure Management Portal](https://manage.windowsazure.cn/). At the bottom of the navigation pane, click **+NEW**. Expand **Compute** and **Mobile Service**, then click **Create**.
 	
 	![](./media/mobile-services-dotnet-backend-create-new-service/mobile-create.png)
 
 	This displays the **Create a Mobile Service** dialog.
 
-2.	In the **Create a <!-- deleted by customization Mobile Service** --><!-- keep by customization: begin --> mobile service** <!-- keep by customization: end --> page, select **Create a free 20 MB SQL Database**, select **.NET** runtime, then type a subdomain name for the new mobile service in the **URL** textbox <!-- keep by customization: begin --> and wait for name verification <!-- keep by customization: end -->. <!-- deleted by customization Click --><!-- keep by customization: begin --> Once name verification completes, click <!-- keep by customization: end --> the right arrow button to go to the next page.
+2.	In the **Create a Mobile Service** page, select **Create a free 20 MB SQL Database**, select **.NET** runtime, then type a subdomain name for the new mobile service in the **URL** textbox. Click the right arrow button to go to the next page.
 <!-- deleted by customization
 	![](./media/mobile-services-dotnet-backend-create-new-service/mobile-create-page1.png)
 -->

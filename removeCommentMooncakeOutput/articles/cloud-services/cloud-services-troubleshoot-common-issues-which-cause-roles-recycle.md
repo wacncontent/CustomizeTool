@@ -7,10 +7,10 @@
    manager="msmets"
    editor=""
    tags="top-support-issue"/>
-<tags
-	ms.service="cloud-services"
-	ms.date="10/14/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="cloud-services"
+   ms.date="10/14/2015"
+   wacn.date="" />
 
 # Common issues which cause roles to recycle
 

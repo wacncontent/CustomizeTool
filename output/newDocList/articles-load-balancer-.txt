@@ -1,0 +1,37 @@
+new docs: 26, word count: {word_count_TODO}
+articles/load-balancer/load-balancer-arm-powershell.md
+articles/load-balancer/load-balancer-arm.md
+articles/load-balancer/load-balancer-configure-sqlao.md
+articles/load-balancer/load-balancer-distribution-mode.md
+articles/load-balancer/load-balancer-get-started-ilb-arm-cli.md
+articles/load-balancer/load-balancer-get-started-ilb-arm-ps.md
+articles/load-balancer/load-balancer-get-started-ilb-arm-template.md
+articles/load-balancer/load-balancer-get-started-ilb-classic-cli.md
+articles/load-balancer/load-balancer-get-started-ilb-classic-cloud.md
+articles/load-balancer/load-balancer-get-started-ilb-classic-ps.md
+articles/load-balancer/load-balancer-get-started-internet-arm-cli.md
+articles/load-balancer/load-balancer-get-started-internet-arm-ps.md
+articles/load-balancer/load-balancer-get-started-internet-arm-template.md
+articles/load-balancer/load-balancer-get-started-internet-classic-cli.md
+articles/load-balancer/load-balancer-get-started-internet-classic-cloud.md
+articles/load-balancer/load-balancer-get-started-internet-classic-portal.md
+articles/load-balancer/load-balancer-get-started-internet-classic-pportal.md
+articles/load-balancer/load-balancer-get-started-internet-classic-ps.md
+articles/load-balancer/load-balancer-internal-arm-powershell.md
+articles/load-balancer/load-balancer-internal-getstarted.md
+articles/load-balancer/load-balancer-internal-overview.md
+articles/load-balancer/load-balancer-internet-getstarted.md
+articles/load-balancer/load-balancer-internet-overview.md
+articles/load-balancer/load-balancer-multivip.md
+articles/load-balancer/load-balancer-overview.md
+articles/load-balancer/load-balancer-tcp-idle-timeout.md
+
+new includes: 8
+includes/load-balancer-get-started-ilb-arm-selectors-include.md
+includes/load-balancer-get-started-ilb-classic-selectors-include.md
+includes/load-balancer-get-started-ilb-intro-include.md
+includes/load-balancer-get-started-ilb-scenario-include.md
+includes/load-balancer-get-started-internet-arm-selectors-include.md
+includes/load-balancer-get-started-internet-classic-selectors-include.md
+includes/load-balancer-get-started-internet-intro-include.md
+includes/load-balancer-get-started-internet-scenario-include.md

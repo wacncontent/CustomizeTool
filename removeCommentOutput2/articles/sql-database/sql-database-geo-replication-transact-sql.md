@@ -17,7 +17,6 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](/documentation/articles/sql-database-geo-replication-portal)
 - [PowerShell](/documentation/articles/sql-database-geo-replication-powershell)
 - [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql)
 
@@ -223,7 +222,7 @@ However, because Point In Time Restore is not supported on the secondary databas
 > [AZURE.NOTE] If the command is issued when the both primary and secondary are online the old primary will become the new secondary but data synchronization will not be attempted. So some data loss may occur.
 
 
-If the primary database has multiple secondary databases, the command will succeed only on the secondary server on which the command was executed. However, the other secondaries will not know that the forced failover occurred. The user will have to manually repair this configuration using a “remove secondary” API and then reconfigure geo-replication on these additional secondaries.
+If the primary database has multiple secondary databases, the command will succeed only on the secondary server on which the command was executed. However, the other secondaries will not know that the forced failover occurred. The user will have to manually repair this configuration using a âremove secondaryâ API and then reconfigure geo-replication on these additional secondaries.
 
 Use the following steps to forcibly remove geo-replicated secondary from a geo-replication partnership.
 
@@ -255,7 +254,7 @@ Use the following steps to monitor a geo-replication partnership.
 5. Open the Databases folder, expand the **System Databases** folder, right-click on **MyDB**, and then click **New Query**.
 6. Use the following statement to show the replication lags and last replication time of my secondary databases of MyDB.
 
-        SELECT link_guid, partner_server, last_replication, replication_lag_sec FROM sys.dm_ replication_status
+        SELECT link_guid, partner_server, last_replication, replication_lag_sec FROM sys.dm_ replication_status 
 
 7. Click **Execute** to run the query.
 8. Use the following statement to show the most recent geo-replication operations associated with database MyDB.

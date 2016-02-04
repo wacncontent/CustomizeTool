@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Service Fabric Testability Scenarios: Service Communication" 
+   pageTitle="Testability: service communication | Windows Azure" 
    description="Service-to-service communication is a critical integration point of a Service Fabric application. This article discusses design consideration and testing techniques." 
    services="service-fabric" 
    documentationCenter=".net" 
@@ -8,15 +8,16 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA" 
-   ms.date="08/25/2015"
-   ms.author="vturecek"/>
+	ms.service="service-fabric"
+	ms.date="08/25/2015"
+	wacn.date=""/>
 
+<!-- deleted by customization
+# Service Fabric Testability scenarios: service communication
+-->
+<!-- keep by customization: begin -->
 # Service Fabric Testability Scenarios: Service Communication
+<!-- keep by customization: end -->
 
 Microservices and service-oriented architectural styles surface naturally in Service Fabric. In these types of distributed architectures, componentized microservice applications are typically composed of multiple services that need to talk to each other. Even in the simplest case, you generally have at least a stateless web service and a stateful data storage service that need to communicate.
 
@@ -97,6 +98,6 @@ In this example, we set `QuorumLossMode` to `PartialQuorumLoss` to indicate we w
 
 ## Next steps
 
-[Learn more about Testability Actions](service-fabric-testability-actions.md)
+[Learn more about Testability Actions](/documentation/articles/service-fabric-testability-actions)
 
-[Learn more about Testability Scenarios](service-fabric-testability-scenarios.md) 
+[Learn more about Testability Scenarios](/documentation/articles/service-fabric-testability-scenarios) 

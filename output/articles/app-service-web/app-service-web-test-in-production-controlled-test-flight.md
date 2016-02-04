@@ -1,8 +1,6 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-	pageTitle="Flighting deployment (beta testing) in Azure Websites"
-	description="Learn how to flight new features in your app or beta test your updates in this end-to-end tutorial. It brings together Azure Websites features like continuous publishing, slots, traffic routing, and Application Insights integration."
+	pageTitle="Flighting deployment (beta testing) in Azure Web App"
+	description="Learn how to flight new features in your app or beta test your updates in this end-to-end tutorial. It brings together Azure features like continuous publishing, slots, traffic routing, and Application Insights integration."
 	services="app-service\web"
 	documentationCenter=""
 	authors="cephalin"
@@ -13,9 +11,9 @@
 	ms.service="app-service-web"
 	ms.date="10/16/2015"
 	wacn.date=""/>
-# Flighting deployment (beta testing) in Azure Websites
+# Flighting deployment (beta testing) in Azure
 
-This tutorial shows you how to do *flighting deployments* by integrating the various capabilities of [Azure Websites](/documentation/services/web-sites/) and [Azure Application Insights](/home/features/application-insights/). 
+This tutorial shows you how to do *flighting deployments* by integrating the various capabilities of [Azure Web App](/documentation/services/web-sites/) and [Azure Application Insights](/home/features/application-insights/). 
 
 *Flighting* is a deployment process that validates a new feature or change with a limited number of real customers, and is a major testing in production 
 scenario. It is akin to beta testing and is sometimes known as "controlled test flight". Many large enterprises with a web presence use this approach to 
@@ -41,7 +39,7 @@ with Application Insights, but you can use New Relic or other technologies that 
 
 ## What you will do
 
-In this tutorial, you will learn how to bring the following scenarios together to test your Azure Websites app in production:
+In this tutorial, you will learn how to bring the following scenarios together to test your Azure Web App in production:
 
 - [Route production traffic](/documentation/articles/app-service-web-test-in-production-get-start) to your beta app
 - [Instrument your app](/documentation/articles/app-insights-web-track-usage) to obtain useful metrics
@@ -62,17 +60,17 @@ In this tutorial, you will learn how to bring the following scenarios together t
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
 > + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web Apps.
-> + You can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Your MSDN subscription gives you credits every month that you can use for paid Azure services.
+> + You can [activate Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Your Visual Studio subscription gives you credits every month that you can use for paid Azure services.
 >
-> If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+> If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 ## Set up your production web app
 
 >[AZURE.NOTE] The script used in this tutorial will automatically configure continuous publishing from your GitHub repository. This requires that your GitHub credentials are already stored in Azure, otherwise the scripted deployment will fail when attempting to configure source control settings for the web apps.
 >
->To store your GitHub credentials in Azure, create a web app in the [Azure preview portal](https://manage.windowsazure.cn) and [configure GitHub deployment](/documentation/articles/web-sites-publish-source-control#Step7). You only need to do this once.
+>To store your GitHub credentials in Azure, create a web app in the [Azure Management Portal](https://manage.windowsazure.cn) and [configure GitHub deployment](/documentation/articles/web-sites-publish-source-control#Step7). You only need to do this once.
 
-In a typical DevOps scenario, you have an application that’s running live in Azure, and you want to make changes to it through continuous publishing. In this scenario, you will deploy to production a template that you have developed and tested.
+In a typical DevOps scenario, you have an application that's running live in Azure, and you want to make changes to it through continuous publishing. In this scenario, you will deploy to production a template that you have developed and tested.
 
 1.	Create your own fork of the [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) repository. For information on creating your fork, see [Fork a Repo](https://help.github.com/articles/fork-a-repo/). Once your fork is created, you can see it in your browser.
 
@@ -85,7 +83,7 @@ In a typical DevOps scenario, you have an application that’s running live in A
 
 4.	Once you have your local clone, navigate to *&lt;repository_root>*\ARMTemplates, and run the deploy.ps1 script with a unique suffix, as shown below:
 
-        .\deploy.ps1 –RepoUrl https://github.com/<your_fork>/todoapp.git -ResourceGroupSuffix <your_suffix>
+        .\deploy.ps1 -RepoUrl https://github.com/<your_fork>/todoapp.git -ResourceGroupSuffix <your_suffix>
 
 4.	When prompted, type in the desired username and password for database access. Remember your database credentials because you will need to specify them again when updating the resource group.
 
@@ -94,12 +92,12 @@ In a typical DevOps scenario, you have an application that’s running live in A
 
 6.	Back in your Git Shell session, run:
 
-        .\swap –Name ToDoApp<your_suffix>
+        .\swap -Name ToDoApp<your_suffix>
 
 	![](./media/app-service-web-test-in-production-controlled-test-flight/00.2-swap-to-production.png)
 
-7.	When the script finishes, go back to browse to the frontend’s address (http://ToDoApp*&lt;your_suffix>*.chinacloudsites.cn/) to see the application running in production.
-5.	Log into the [Azure preview portal](https://manage.windowsazure.cn) and take a look at what’s created.
+7.	When the script finishes, go back to browse to the frontend's address (http://ToDoApp*&lt;your_suffix>*.chinacloudsites.cn/) to see the application running in production.
+5.	Log into the [Azure Management Portal](https://manage.windowsazure.cn) and take a look at what's created.
 
 	You should be able to see two web apps in the same resource group, one with the `Api` suffix in the name. If you look at the resource group view, you will also see the SQL Database and server, the App Service plan, and the staging slots for the web apps. Browse through the different resources and compare them with *&lt;repository_root>*\ARMTemplates\ProdAndStage.json to see how they are configured in the template.
 
@@ -112,7 +110,7 @@ You have set up the production app.  Now, let's imagine that you receive feedbac
 5. Open *&lt;repository_root>*\src\MultiChannelToDo.sln in Visual Studio.
 6. Restore all Nuget packages by right-clicking solution > **Manage NuGet Packages for Solution** > **Restore**.
 6. Right-click **MultiChannelToDo.Web** > **Add Application Insights Telemetry** > **Configure Settings** > Change resource group to ToDoApp*&lt;your_suffix>* > **Add Application Insights to Project**.
-7. In the Azure preview portal, open the blade for the **MultiChannelToDo.Web** Application Insight resource. Then in the **Application health** part, click **Learn how to collect browser page load data** > copy code.
+7. In the Azure Management Portal, open the blade for the **MultiChannelToDo.Web** Application Insight resource. Then in the **Application health** part, click **Learn how to collect browser page load data** > copy code.
 7. Add the copied JS instrumentation code to *&lt;repository_root>*\src\MultiChannelToDo.Web\app\Index.cshtml, just before the closing `<heading>` tag. It should contain the unique instrumentation key of your Application Insight resource.
 
         <script type="text/javascript">
@@ -145,7 +143,7 @@ You have set up the production app.  Now, let's imagine that you receive feedbac
 
 6.	Swap the deployed app changes to production:
 
-        .\swap –Name ToDoApp<your_suffix>
+        .\swap -Name ToDoApp<your_suffix>
 
 13. Browse to the Application Insights resource that you configured. Click Custom events.
 
@@ -181,7 +179,7 @@ This is a tangent since the scenario demonstrated in this tutorial only deals wi
 
 6.	Swap the deployed app changes to production:
 
-        .\swap –Name ToDoApp<your_suffix>
+        .\swap -Name ToDoApp<your_suffix>
 
 That's it!
 
@@ -294,7 +292,7 @@ Again, for completeness you will set up the server-side app. Unlike the client a
 
     Once the script finishes, all your resources in the original resource group are retained, but a new slot named "beta" is created in it with the same configuration as the "Staging" slot that was created in the beginning.
 
-    >[AZURE.NOTE] This method of creating different deployment environments is different from the method in [Agile software development with Azure Websites](/documentation/articles/app-service-agile-software-development). Here, you create deployment environments with deployment slots, where as there you create deployment environments with resource groups. Managing deployment environments with resource groups enables you to keep the production environment off-limits to developers, but it's not easy to do testing in production, which you can do easily with slots.
+    >[AZURE.NOTE] This method of creating different deployment environments is different from the method in [Agile software development with Azure Web App](/documentation/articles/app-service-agile-software-development). Here, you create deployment environments with deployment slots, where as there you create deployment environments with resource groups. Managing deployment environments with resource groups enables you to keep the production environment off-limits to developers, but it's not easy to do testing in production, which you can do easily with slots.
 
 If you wish, you can also create an alpha app by running
 
@@ -377,15 +375,15 @@ You're now ready to move your update to production. What's great is that now you
 
 ## Summary ##
 
-Azure Websites makes it easy for small- to medium-sized businesses to test their customer-facing apps in production, something that has been traditionally done in big enterprises. Hopefully, this tutorial has given you the knowledge you need to bring together Azure Websites and Application Insights to make possible flighting deployment, and even other test-in-production scenarios, in your DevOps world. 
+Azure makes it easy for small- to medium-sized businesses to test their customer-facing apps in production, something that has been traditionally done in big enterprises. Hopefully, this tutorial has given you the knowledge you need to bring together Azure and Application Insights to make possible flighting deployment, and even other test-in-production scenarios, in your DevOps world. 
 
 ## More resources ##
 
--   [Agile software development with Azure Websites](/documentation/articles/app-service-agile-software-development)
--   [Set up staging environments for web apps in Azure Websites](/documentation/articles/web-sites-staged-publishing)
+-   [Agile software development with Azure Web App](/documentation/articles/app-service-agile-software-development)
+-   [Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing)
 -	[Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably)
 -	[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
 -	[JSONLint - The JSON Validator](http://jsonlint.com/)
--	[Git Branching – Basic Branching and Merging](http://www.git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+-	[Git Branching - Basic Branching and Merging](http://www.git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 -	[Azure PowerShell](/documentation/articles/powershell-install-configure)
 -	[Project Kudu Wiki](https://github.com/projectkudu/kudu/wiki)

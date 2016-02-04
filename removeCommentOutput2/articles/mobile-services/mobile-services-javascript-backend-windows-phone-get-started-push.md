@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/14/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 
@@ -33,7 +33,7 @@ Before your app can receive push notifications, you must register a notification
 
         using Microsoft.Phone.Notification;
 
-3. Add the following to App.xaml.cs:
+2. Add the following to App.xaml.cs:
 	
         public static HttpNotificationChannel CurrentChannel { get; private set; }
 
@@ -62,15 +62,15 @@ Before your app can receive push notifications, you must register a notification
 
 	>[AZURE.NOTE]In this this tutorial, the mobile service sends a toast notification to the device. When you send a tile notification, you must instead call the **BindToShellTile** method on the channel.
 
-4. At the top of the **Application_Launching** event handler in App.xaml.cs, add the following call to the new **AcquirePushChannel** method:
+3. At the top of the **Application_Launching** event handler in App.xaml.cs, add the following call to the new **AcquirePushChannel** method:
 
         AcquirePushChannel();
 
 	This makes sure that registration is requested every time that the page is loaded. In your app, you may only want to make this registration periodically to ensure that the registration is current. 
 
-5. Press the **F5** key to run the app. A popup dialog with the registration key is displayed.
+4. Press the **F5** key to run the app. A popup dialog with the registration key is displayed.
   
-6.	In the Solution Explorer, expand **Properties**, open the WMAppManifest.xml file, click the **Capabilities** tab and make sure that the **ID___CAP___PUSH_NOTIFICATION** capability is checked.
+5.	In the Solution Explorer, expand **Properties**, open the WMAppManifest.xml file, click the **Capabilities** tab and make sure that the **ID___CAP___PUSH_NOTIFICATION** capability is checked.
 
    	![Enable notifications in VS](./media/mobile-services-javascript-backend-windows-phone-get-started-push/mobile-app-enable-push-wp8.png)
 
@@ -122,7 +122,7 @@ Finally, you must update the script registered to the insert operation on the To
 
     >[AZURE.NOTE] You may encounter a 401 Unauthorized RegistrationAuthorizationException when testing on the Windows Phone emulator. This can occur during the `RegisterNativeAsync()` call because of the way the Windows Phone emulator syncs it's clock with the host PC. It can result in a security token that will be rejected. To resolve this simply manually set the clock in the emulator before testing.
 
-5. In the app, enter the text "hello push" in the textbox, click **Save**, then immediately click the start button or back button to leave the app.
+2. In the app, enter the text "hello push" in the textbox, click **Save**, then immediately click the start button or back button to leave the app.
 
    	![Enter text into the app](./media/mobile-services-javascript-backend-windows-phone-get-started-push/mobile-quickstart-push3-wp8.png)
 
@@ -135,9 +135,6 @@ Finally, you must update the script registered to the insert operation on the To
 ## <a name="next-steps"> </a>Next steps
 
 This tutorial demonstrated the basics of enabling a Windows Store app to use Mobile Services and Notification Hubs to send push notifications. Next, consider completing one of the following tutorials:
-
-+ [Send push notifications to authenticated users](/documentation/articles/mobile-services-javascript-backend-windows-phone-push-notifications-app-users)
-	<br/>Learn how to use tags to send push notifications from your mobile service to only an authenticated user.
 
 + [Send broadcast notifications to subscribers](/documentation/articles/notification-hubs-windows-phone-send-breaking-news)
 	<br/>Learn how users can register and receive push notifications for categories they're interested in.
@@ -172,7 +169,7 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-windows-phone-get-started-data
+[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-windows-phone-get-started-data 
 [Get started with authentication]: /documentation/articles/mobile-services-windows-phone-get-started-users
 
 [Setting up an authenticated web service to send push notifications for Windows Phone]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx

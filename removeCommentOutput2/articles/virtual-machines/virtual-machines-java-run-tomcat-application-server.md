@@ -5,18 +5,17 @@
 	documentationCenter="java"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"
+	editor=""
     tags="azure-service-management" />
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/22/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 # How to run a Java application server on a virtual machine created with the classic deployment model
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model. 
-
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 With Azure, you can use a virtual machine to provide server capabilities. As an example, a virtual machine running on Azure can be configured to host a Java application server, such as Apache Tomcat. After you complete this guide, you will have an understanding of how to create a virtual machine running on Azure and configure it to run a Java application server.
 
@@ -60,7 +59,7 @@ Note that **JDK 6 Windows Server 2012** is available if you have legacy applicat
 
 ## To remotely sign in to your virtual machine
 
-1. Log on to the [Management portal](https://manage.windowsazure.cn).
+1. Log on to the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Click **Virtual machines**.
 3. Click the name of the virtual machine that you want to sign in to.
 4. After the virtual machine has started, a pop-up menu at the bottom of the page allows connections.
@@ -86,7 +85,7 @@ You should now see Tomcat running if you run the virtual machine's browser and o
 To see Tomcat running from external machines, you need to create an endpoint and open a port.
 
 ## To create an endpoint for your virtual machine
-1. Sign in to the [Management portal](https://manage.windowsazure.cn).
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Click **Virtual machines**.
 3. Click the name of the virtual machine that is running your Java application server.
 4. Click **Endpoints**.

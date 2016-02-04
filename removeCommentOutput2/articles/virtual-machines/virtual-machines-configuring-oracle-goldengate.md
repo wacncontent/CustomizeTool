@@ -10,9 +10,8 @@
 	ms.date="06/22/2015"
 	wacn.date=""/>
 
-	
-#Configuring Oracle GoldenGate for Azure
 
+#Configuring Oracle GoldenGate for Azure
 This tutorial demonstrates how to setup Oracle GoldenGate for Azure Virtual Machines environment for high availability and disaster recovery. The tutorial focuses on [bi-directional replication](http://docs.oracle.com/goldengate/1212/gg-winux/GWUAD/wu_about_gg.htm) for non-RAC Oracle databases and requires that both sites are active.
 
 Oracle GoldenGate supports data distribution and data integration. It enables you to set up a data distribution and data synchronization solution through the Oracle-Oracle replication configuration, and provides a flexible high availability solution. Oracle GoldenGate supplements Oracle Data Guard with its replication capabilities to enable enterprise-wide information distribution and zero-downtime upgrades and migrations. For detailed information, see [Using Oracle GoldenGate with Oracle Data Guard](http://docs.oracle.com/cd/E11882_01/server.112/e17157/unplanned.htm).
@@ -23,15 +22,15 @@ This tutorial assumes that you already have theoretical and practical knowledge 
 
 In addition, the tutorial assumes that you have already implemented the following prerequisites:
 
-- You’ve already reviewed the High Availability and Disaster Recovery Considerations section in the [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images) topic. Note that Azure supports standalone Oracle Database instances but not Oracle Real Application Clusters (Oracle RAC) currently.
+- You've already reviewed the High Availability and Disaster Recovery Considerations section in the [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images) topic. Note that Azure supports standalone Oracle Database instances but not Oracle Real Application Clusters (Oracle RAC) currently.
 
-- You’ve downloaded the Oracle GoldenGate software from the [Oracle Downloads](http://www.oracle.com/us/downloads/index.html) web site. You’ve selected the Product Pack Oracle Fusion Middleware – Data Integration. Then, you’ve selected Oracle GoldenGate on Oracle v11.2.1 Media Pack for Microsoft Windows x64 (64-bit) for an Oracle 11g database. Next, download Oracle GoldenGate V11.2.1.0.3 for Oracle 11g 64bit on Windows 2008 (64bit).
+- You've downloaded the Oracle GoldenGate software from the [Oracle Downloads](http://www.oracle.com/us/downloads/index.html) web site. You've selected the Product Pack Oracle Fusion Middleware - Data Integration. Then, you've selected Oracle GoldenGate on Oracle v11.2.1 Media Pack for Microsoft Windows x64 (64-bit) for an Oracle 11g database. Next, download Oracle GoldenGate V11.2.1.0.3 for Oracle 11g 64bit on Windows 2008 (64bit).
 
-- You have created two Virtual Machines (VMs) in Azure using the platform provided Oracle Enterprise Edition image on Windows Server. For information, see [Creating an Oracle Database 12c Virtual Machine in Azure](#z3dc8d3c097cf414e9048f7a89c026f80) and [Azure Virtual Machines](/documentation/services/virtual-machines/). Make sure that the Virtual Machines are in the [same cloud service](/documentation/articles/virtual-machines-load-balance) and in the same [Virtual Network](/documentation/services/networking/) to ensure they can access each other over the persistent private IP address.
+- You have created two Virtual Machines (VMs) in Azure using the platform provided Oracle Enterprise Edition image on Windows Server. For information, see [Creating an Oracle Database 12c Virtual Machine in Azure](#z3dc8d3c097cf414e9048f7a89c026f80) and [Azure Virtual Machines](http://www.windowsazure.cn/documentation/services/virtual-machines/). Make sure that the Virtual Machines are in the [same cloud service](/documentation/articles/virtual-machines-load-balance) and in the same [Virtual Network](http://www.windowsazure.cn/documentation/services/networking/) to ensure they can access each other over the persistent private IP address.
 
-- You’ve set the Virtual Machine names as “MachineGG1” for Site A and “MachineGG2” for Site B at the Azure Management Portal.
+- You've set the Virtual Machine names as “MachineGG1” for Site A and “MachineGG2” for Site B at the Azure Management Portal.
 
-- You’ve created test databases “TestGG1” on Site A and “TestGG2” on Site B.
+- You've created test databases “TestGG1” on Site A and “TestGG2” on Site B.
 
 - You log on to your Windows server as a member of the Administrators group or a member of the **ORA_DBA** group.
 
@@ -77,7 +76,7 @@ In this tutorial, you will:
 >
 >|                        | **Site A Database**              | **Site B Database**              |
 >|------------------------|----------------------------------|----------------------------------|
->| **Oracle Release**     | Oracle11g Release 2 – (11.2.0.1) | Oracle11g Release 2 – (11.2.0.1) |
+>| **Oracle Release**     | Oracle11g Release 2 - (11.2.0.1) | Oracle11g Release 2 - (11.2.0.1) |
 >| **Machine Name**       | MachineGG1                       | MachineGG2                       |
 >| **Operating System**   | Windows 2008 R2                  | Windows 2008 R2                  |
 >| **Oracle SID**         | TESTGG1                          | TESTGG2                          |
@@ -218,7 +217,7 @@ Then, run the following scripts:
 	 SQL> @ddl_pin ggate
 
 
-Oracle GoldenGate tool requires a table level login for DDL (data definition language) support. That’s why, enable supplemental logging at the table level by using the ADD TRANDATA command. Open up Oracle GoldenGate Command interpreter window, login to database, and then run the ADD TRANDATA command:
+Oracle GoldenGate tool requires a table level login for DDL (data definition language) support. That's why, enable supplemental logging at the table level by using the ADD TRANDATA command. Open up Oracle GoldenGate Command interpreter window, login to database, and then run the ADD TRANDATA command:
 
 	GGSCI 5> DBLOGIN USERID ggate, PASSWORD ggate
 
@@ -570,7 +569,7 @@ Remote Desktop to Site A. Open up SQL*Plus command window and run:
 	———
 	TESTGG
 
-	SQL> insert into inventory values  (100,’TV’,100,sysdate);
+	SQL> insert into inventory values  (100,'TV',100,sysdate);
 
 	1 row created.
 
@@ -589,12 +588,12 @@ Then, check if that row is replicated on Site B. To do this, remote desktop to S
 	SQL> select * from inventory;
 
 	PROD_ID PROD_CATEGORY QTY_IN_STOCK LAST_DML
-	———- ——————– ———— ———
+	———- ——————- ———— ———
 	100 TV 100 22-MAR-13
 
 Insert a new record at Site B:
 
-	SQL> insert into inventory  values  (101,’DVD’,10,sysdate);
+	SQL> insert into inventory  values  (101,'DVD',10,sysdate);
 	1 row created.
 
 	SQL> commit;
@@ -606,7 +605,7 @@ Remote desktop to Site A and check if the replication has taken place:
 	SQL> select * from inventory;
 
 	PROD_ID PROD_CATEGORY QTY_IN_STOCK LAST_DML
-	———- ——————– ———— ———
+	———- ——————- ———— ———
 	100 TV 100 22-MAR-13
 	101 DVD 10 22-MAR-13
 

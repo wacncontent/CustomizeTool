@@ -6,5 +6,5 @@ deleted:
 		
 		> [AZURE.VIDEO elastic-databases-helps-saas-developers-tame-explosive-growth]
 
-reason: ()
+reason: (video)
 

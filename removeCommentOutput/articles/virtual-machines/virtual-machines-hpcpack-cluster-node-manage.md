@@ -6,7 +6,7 @@
  authors="dlepow"
  manager="timlt"
  editor=""
- tags="azure-service-management"/>
+ tags="azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/28/2015"
@@ -30,21 +30,21 @@ run each of the scripts as an administrator.
 
 * **HPC Pack cluster in Azure VMs** - Create an HPC Pack cluster in the classic (Service Management) deployment model by using at least HPC Pack 2012 R2 Update 1. For example, you can automate the deployment by using the HPC Pack VM image in the Azure Marketplace and an Azure PowerShell script. For information and prerequisites, see [Create an HPC Cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script).
 
-* **Azure management certificate or publish settings file** - You need to do one of the following on the head node:
+* **Azure publish settings file or management certificate** - You need to do one of the following on the head node:
 
     * **Import the Azure publish settings file**. To do this, run the following Azure PowerShell cmdlets on the head node:
-        ```
-        Get-AzurePublishSettingsFile  
-Import-AzurePublishSettingsFile –PublishSettingsFile <publish settings file>
-        ```
+
+    ```
+    Get-AzurePublishSettingsFile 
+         
+    Import-AzurePublishSettingsFile -PublishSettingsFile <publish settings file>
+    ```
+    
     * **Configure the Azure management certificate on the head node**. If you have the .cer file, import it in the CurrentUser\My certificate store and then run the following Azure PowerShell cmdlet for your Azure environment (either AzureCloud or AzureChinaCloud):
 
     ```
     Set-AzureSubscription -SubscriptionName <Sub Name> -SubscriptionId <Sub ID> -Certificate (Get-Item Cert:\CurrentUser\My\<Cert Thrumbprint>) -Environment <AzureCloud | AzureChinaCloud>
     ```
-
-
-
 
 ## Add compute node VMs
 
@@ -61,7 +61,7 @@ Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
 
 * **ServiceName** - Name of the cloud service that new compute node VMs will be added to.
 
-* **ImageName** -Azure VM image name, which can be obtained through the AzurePortal or Azure PowerShell cmdlet **Get-AzureVMImage**. The image must meet the following requirements:
+* **ImageName** -Azure VM image name, which can be obtained through the Azure Management Portal or Azure PowerShell cmdlet **Get-AzureVMImage**. The image must meet the following requirements:
 
     1. A Windows operating system must be installed.
 
@@ -85,8 +85,8 @@ The following example adds 20 size Large compute node VMs in the cloud
 service hpcservice1, based on the VM image hpccnimage1.
 
 ```
-Add-HPCIaaSNode.ps1 –ServiceName hpcservice1 –ImageName hpccniamge1
-–Quantity 20 –InstanceSize Large –DomainUserName <username>
+Add-HPCIaaSNode.ps1 -ServiceName hpcservice1 -ImageName hpccniamge1
+-Quantity 20 -InstanceSize Large -DomainUserName <username>
 -DomainUserPassword <password>
 ```
 
@@ -123,7 +123,7 @@ The following example forces offline nodes with names beginning
 *HPCNode-CN-* and them removes the nodes and their associated disks.
 
 ```
-Remove-HPCIaaSNode.ps1 –Name HPCNodeCN-* –DeleteVHD -Force
+Remove-HPCIaaSNode.ps1 -Name HPCNodeCN-* -DeleteVHD -Force
 ```
 
 ## Start compute node VMs
@@ -148,7 +148,7 @@ Start-HPCIaaSNode.ps1 -Node <Object> [<CommonParameters>]
 The following example starts nodes with names beginning *HPCNode-CN-*.
 
 ```
-Start-HPCIaaSNode.ps1 –Name HPCNodeCN-*
+Start-HPCIaaSNode.ps1 -Name HPCNodeCN-*
 ```
 
 ## Stop compute node VMs
@@ -177,10 +177,10 @@ Stop-HPCIaaSNode.ps1 -Node <Object> [-Force] [<CommonParameters>]
 The following example forces offline nodes with names beginning
 *HPCNode-CN-* and then stops the nodes.
 
-Stop-HPCIaaSNode.ps1 –Name HPCNodeCN-* -Force
+Stop-HPCIaaSNode.ps1 -Name HPCNodeCN-* -Force
 
 ## Next steps
 
 * If you want a way to
 automatically grow or shrink the Azure computing resources according to
-the current workload of jobs and tasks on the cluster, see [Grow and shrink Azure compute resources in an HPC Pack cluste](/documentation/articles/virtual-machines-hpcpack-cluster-node-autogrowshrink).
+the current workload of jobs and tasks on the cluster, see [Grow and shrink Azure compute resources in an HPC Pack cluster](/documentation/articles/virtual-machines-hpcpack-cluster-node-autogrowshrink).

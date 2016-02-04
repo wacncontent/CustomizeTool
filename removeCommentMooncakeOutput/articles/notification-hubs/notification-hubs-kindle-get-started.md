@@ -9,12 +9,11 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="09/03/2015"
-	wacn.date=""/>
-
+	ms.date="11/04/2015"
+	wcdn.date=""/>
 # Get started with Notification Hubs for Kindle apps
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
+[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started)]
 
 ##Overview
 
@@ -52,7 +51,7 @@ This tutorial requires the following:
 
 ## Create an API key
 
-1. Open a command prompt with administrator privileges.
+1. Open a command prompt with Administrator privileges.
 2. Navigate to the Android SDK folder.
 3. Enter the following command:
 
@@ -96,11 +95,11 @@ Edit your app manifest to support ADM:
 		<uses-permission android:name="android.permission.INTERNET"/>
 
 		<uses-permission android:name="[YOUR PACKAGE NAME].permission.RECEIVE_ADM_MESSAGE" />
-
+ 
 		<!-- This permission allows your app access to receive push notifications
 		from ADM. -->
 		<uses-permission android:name="com.amazon.device.messaging.permission.RECEIVE" />
-
+ 
 		<!-- ADM uses WAKE_LOCK to keep the processor from sleeping when a message is received. -->
 		<uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -112,18 +111,18 @@ Edit your app manifest to support ADM:
 		<service
 		    android:name="[YOUR SERVICE NAME]"
 		    android:exported="false" />
-
+		 
 		<receiver
-		    android:name="[YOUR SERVICE NAME]$Receiver"
+		    android:name="[YOUR SERVICE NAME]$Receiver" />
 
 		    <!-- This permission ensures that only ADM can send your app registration broadcasts. -->
 		    android:permission="com.amazon.device.messaging.permission.SEND" >
-
+		 
 		    <!-- To interact with ADM, your app must listen for the following intents. -->
 		    <intent-filter>
 		  <action android:name="com.amazon.device.messaging.intent.REGISTRATION" />
 		  <action android:name="com.amazon.device.messaging.intent.RECEIVE" />
-
+		 
 		  <!-- Replace the name in the category tag with your app's package name. -->
 		  <category android:name="[YOUR PACKAGE NAME]" />
 		    </intent-filter>
@@ -162,7 +161,7 @@ Edit your app manifest to support ADM:
 		public MyADMMessageHandler() {
 				super("MyADMMessageHandler");
 			}
-
+	
 			public static class Receiver extends ADMMessageReceiver
     		{
         		public Receiver()
@@ -170,10 +169,10 @@ Edit your app manifest to support ADM:
             		super(MyADMMessageHandler.class);
         		}
     		}
-
+	
 			private void sendNotification(String msg) {
 				Context ctx = getApplicationContext();
-
+		
 	   		 mNotificationManager = (NotificationManager)
 	    			ctx.getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -182,7 +181,7 @@ Edit your app manifest to support ADM:
 
 	    	NotificationCompat.Builder mBuilder =
 	          	new NotificationCompat.Builder(ctx)
-	          	.setSmallIcon(R.drawable.ic_launcher)
+	          	.setSmallIcon(R.mipmap.ic_launcher)
 	          	.setContentTitle("Notification Hub Demo")
 	          	.setStyle(new NotificationCompat.BigTextStyle()
 	                     .bigText(msg))
@@ -193,10 +192,10 @@ Edit your app manifest to support ADM:
 		}
 
 4. Add the following code to the `OnMessage()` method:
-
+	
 		String nhMessage = intent.getExtras().getString("msg");
 		sendNotification(nhMessage);
-
+ 
 5. Add the following code to the `OnRegistered` method:
 
 			try {

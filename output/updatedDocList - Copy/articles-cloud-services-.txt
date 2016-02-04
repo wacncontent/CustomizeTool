@@ -1,0 +1,22 @@
+updated docs: 19
+articles/cloud-services/cloud-services-certs-create.md
+articles/cloud-services/cloud-services-configure-ssl-certificate-portal.md
+articles/cloud-services/cloud-services-configure-ssl-certificate.md
+articles/cloud-services/cloud-services-custom-domain-name-portal.md
+articles/cloud-services/cloud-services-custom-domain-name.md
+articles/cloud-services/cloud-services-dotnet-get-started.md
+articles/cloud-services/cloud-services-guestos-update-matrix.md
+articles/cloud-services/cloud-services-how-to-configure-portal.md
+articles/cloud-services/cloud-services-how-to-configure.md
+articles/cloud-services/cloud-services-how-to-create-deploy-portal.md
+articles/cloud-services/cloud-services-how-to-create-deploy.md
+articles/cloud-services/cloud-services-nodejs-chat-app-socketio.md
+articles/cloud-services/cloud-services-nodejs-develop-deploy-app.md
+articles/cloud-services/cloud-services-nodejs-develop-deploy-express-app.md
+articles/cloud-services/cloud-services-nodejs-enable-remote-desktop.md
+articles/cloud-services/cloud-services-nodejs-stage-application.md
+articles/cloud-services/cloud-services-powershell-create-cloud-container.md
+articles/cloud-services/cloud-services-troubleshoot-deployment-problems.md
+articles/cloud-services/storage-nodejs-use-table-storage-cloud-service-app.md
+
+updated includes: 0

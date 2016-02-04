@@ -1,20 +1,16 @@
 
-<properties 
-    pageTitle="Best practices for Azure RemoteApp clients"
-    description="Learn about best practices for using the RemoteApp clients" 
-    services="remoteapp" 
-    documentationCenter="" 
-    authors="lizap" 
+<properties
+    pageTitle="Best practices for Azure RemoteApp clients | Windows Azure"
+    description="Learn about best practices for using the RemoteApp clients"
+    services="remoteapp"
+    documentationCenter=""
+    authors="lizap"
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/12/2015" 
-    ms.author="elizapo" />
+<tags
+	ms.service="remoteapp"
+	ms.date="12/05/2015"
+	wacn.date=""/>
 
 
 
@@ -25,4 +21,3 @@ The following information can help you use Azure RemoteApp clients:
 - Always use the latest client. This ensures that the client version you are running has the latest bug fixes, improvements and features. You might need to sign up to automatically receive updates for the client in the appropriate Store.
 
 - RemoteApp will automatically log you off if you are inactive for a certain period of time. In order to prevent data loss, we recommend closing your applications when you finish using the service.
- 

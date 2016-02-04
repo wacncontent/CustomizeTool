@@ -129,7 +129,7 @@ The sign-in and sign-out URLs appear in the **SingleSignOnService** and **Single
 The following metadata shows a sample **PassiveResistorEndpoint** for a tenant-specific endpoint.
 
     <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-    …
+    âŚ
     <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.chinacloudapi.cn/contoso.partner.onmschina.cn/saml2" />
     <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https:// login.chinacloudapi.cn/contoso.partner.onmschina.cn /saml2" />
     </IDPSSODescriptor>
@@ -137,7 +137,7 @@ The following metadata shows a sample **PassiveResistorEndpoint** for a tenant-s
 Similarly the endpoints for the common SAML 2.0 protocol endpoints are published in the tenant-independent federation metadata, as shown in the following sample. 
 
     <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-    …
+    âŚ
     <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.chinacloudapi.cn/common/saml2" />
     <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.chinacloudapi.cn/common/saml2" />
     </IDPSSODescriptor>

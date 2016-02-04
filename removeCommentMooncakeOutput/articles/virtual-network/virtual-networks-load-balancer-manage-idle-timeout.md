@@ -43,7 +43,7 @@ Please download [the latest Azure PowerShell release](https://github.com/Azure/a
 
 ### Configure TCP timeout for your Instance-Level Public IP to 15 minutes
 
-    Set-AzurePublicIP –PublicIPName webip –VM MyVM -IdleTimeoutInMinutes 15
+    Set-AzurePublicIP -PublicIPName webip -VM MyVM -IdleTimeoutInMinutes 15
 
 IdleTimeoutInMinutes is optional. If not set, the default timeout is 4 minutes. Its value can now be set between 4 and 30 minutes.
 
@@ -53,7 +53,7 @@ IdleTimeoutInMinutes is optional. If not set, the default timeout is 4 minutes. 
 
 ### Retrieve your idle timeout configuration
 
-    PS C:\> Get-AzureVM –ServiceName “MyService” –Name “MyVM” | Get-AzureEndpoint
+    PS C:\> Get-AzureVM -ServiceName “MyService” -Name “MyVM” | Get-AzureEndpoint
     
     VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
     LBSetName : MyLoadBalancedSet

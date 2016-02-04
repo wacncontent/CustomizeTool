@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Create app passwords in the Azure portal for Azure Multi-Factor Authentication" 
-	description="This page shows users how they can create additional app passwords in the Azure portal." 
+	pageTitle="Create app passwords in the Azure Management Portal for Azure Multi-Factor Authentication" 
+	description="This page shows users how they can create additional app passwords in the Azure Management Portal." 
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -9,18 +9,14 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+	ms.date="11/19/2015" 
+	wacn.date=""/>
 
-# Create app passwords in the Azure portal for Azure Multi-Factor Authentication
+# Create app passwords in the Azure Management Portal for Azure Multi-Factor Authentication
 
-If you use multi-factor authentication with Azure you will want to create app passwords through the Azure portal.
+If you use multi-factor authentication with Azure you will want to create app passwords through the Azure Management Portal.
 
-## To create app passwords in the Azure portal
+## To create app passwords in the Azure Management Portal
 
 1. Sign-in to the Azure Management portal
 3. At the top, right-click on your user name and select Additional Security Verification.

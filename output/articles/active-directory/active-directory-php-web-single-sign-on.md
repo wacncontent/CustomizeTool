@@ -1,15 +1,15 @@
 <properties 
 	pageTitle="Single sign-on with Azure Active Directory (PHP)" 
-	description="Learn how to create a PHP web application that uses single sign-on with Azure Active Directory." 
+	description="Learn how to create a PHP web site that uses single sign-on with Azure Active Directory." 
 	services="active-directory" 
 	documentationCenter="php" 
 	authors="tfitzmac" 
 	manager="wpickett" 
 	editor="mollybos"/>
 
-<tags
-	ms.service="active-directory"
-	ms.date="07/17/2015"
+<tags 
+	ms.service="active-directory" 
+	ms.date="07/17/2015" 
 	wacn.date=""/>
 
 # Web Single Sign-On with PHP and Azure Active Directory
@@ -18,7 +18,7 @@
 
 This tutorial will show PHP developers how to leverage Azure Active Directory to enable single sign-on for users of Office 365 customers. You will learn how to:
 
-* Provision the web application in a customer's tenant
+* Provision the web site in a customer's tenant
 * Protect the application using WS-Federation
 
 ###Prerequisites
@@ -54,18 +54,18 @@ This step describes how to create a simple PHP application that will represent a
 
 7. Open **Internet Information Services (IIS) Manager** by typing *inetmgr* at the Run prompt and pressing Enter.
 
-8. In IIS Manager, expand the **Sites** folder in the left menu, right-click **Default Website**, then click **Add Application...**.
+8. In IIS Manager, expand the **Sites** folder in the left menu, right-click **Default  Website**, then click **Add Application...**.
 
 9. On the **Add Application** dialog, set the **Alias** value to *phpSample* and the **Physical path** to the file path where you created the PHP project.
 
 10. In Eclipse, from the **Run** menu, click **Run**.
 
-11. On the **Run PHP Web Application** menu, click **OK**.
+11. On the **Run PHP Web Site** menu, click **OK**.
 
 12. The **index.php** page will open in a new tab in Eclipse. The page should simply display the text: *Index Page*. 
 
 ## Step 2: Provision the Application in a Company's Directory Tenant
-This step describes how an administrator of an Azure Active Directory customer provisions the PHP application in their tenant and configures single sign-on. After this step is accomplished, the company's employees can authenticate to the web application using their Office 365 accounts.
+This step describes how an administrator of an Azure Active Directory customer provisions the PHP application in their tenant and configures single sign-on. After this step is accomplished, the company's employees can authenticate to the web site using their Office 365 accounts.
 
 The provisioning process begins by creating a new Service Principal for the application. Service Principals are used by Azure Active Directory to register and authenticate applications to the directory.
 
@@ -79,11 +79,11 @@ The provisioning process begins by creating a new Service Principal for the appl
 		Connect-MsolService
 5. Now you will create a new Service Principal for the application. Type the following command and press Enter:
 
-		New-MsolServicePrincipal -ServicePrincipalNames @("phpSample/localhost") -DisplayName "Federation Sample Website" -Type Symmetric -Usage Verify -StartDate "12/01/2012" -EndDate "12/01/2013" 
+		New-MsolServicePrincipal -ServicePrincipalNames @("phpSample/localhost") -DisplayName "Federation Sample  Website" -Type Symmetric -Usage Verify -StartDate "12/01/2012" -EndDate "12/01/2013" 
 This step will output information similar to the following:
 
 		The following symmetric key was created as one was not supplied qY+Drf20Zz+A4t2w e3PebCopoCugO76My+JMVsqNBFc=
-		DisplayName           : Federation Sample PHP Website
+		DisplayName           : Federation Sample PHP  Website
 		ServicePrincipalNames : {phpSample/localhost}
 		ObjectId              : 59cab09a-3f5d-4e86-999c-2e69f682d90d
 		AppPrincipalId        : 7829c758-2bef-43df-a685-717089474505
@@ -99,11 +99,11 @@ This step will output information similar to the following:
 
 6. The final step sets the reply URL for your application. The reply URL is where responses are sent following authentication attempts. Type the following commands and press enter:
 
-		$replyUrl = New-MsolServicePrincipalAddresses –Address "https://localhost/phpSample" 
+		$replyUrl = New-MsolServicePrincipalAddresses -Address "https://localhost/phpSample" 
 
-		Set-MsolServicePrincipal –AppPrincipalId "7829c758-2bef-43df-a685-717089474505" –Addresses $replyUrl 
+		Set-MsolServicePrincipal -AppPrincipalId "7829c758-2bef-43df-a685-717089474505" -Addresses $replyUrl 
 	
-The web application has now been provisioned in the directory and it can be used for web single sign-on by company employees.
+The web site has now been provisioned in the directory and it can be used for web single sign-on by company employees.
 
 ## Step 3: Protect the Application Using WS-Federation for Employee Sign In
 This step shows you how to add support for federated login using Windows Identity Foundation (WIF) and the simpleSAML.php libraries you downloaded with the sample code in the prerequisites. You will also add a login page and configure trust between the application and the directory tenant.
@@ -183,7 +183,7 @@ This step shows you how to add support for federated login using Windows Identit
 ## Summary
 This tutorial has shown you how to create and configure a single tenant PHP application that uses the single sign-on capabilities of Azure Active Directory.
 
-A sample that shows how to use Azure Active Directory and single sign-on for PHP websites is available at <https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/WAAD.WebSSO.PHP>.
+A sample that shows how to use Azure Active Directory and single sign-on for PHP  Websites is available at <https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/WAAD.WebSSO.PHP>.
 
 
 [Step 1: Create a PHP Application]: #createapp
@@ -191,11 +191,10 @@ A sample that shows how to use Azure Active Directory and single sign-on for PHP
 [Step 3: Protect the Application Using WS-Federation for Employee Sign In]: #protectapp
 [Summary]: #summary
 [Introduction]: #introduction
-[Developing Multi-Tenant Cloud Applications with Azure Active Directory]: http://g.microsoftonline.com/0AX00en/121
-[Windows Identity Foundation 3.5 SDK]: http://www.microsoft.com/download/details.aspx?id=4451
-[Windows Identity Foundation 1.0 Runtime]: http://www.microsoft.com/download/details.aspx?id=17331
+[Developing Multi-Tenant Cloud Applications with Azure Active Directory]: http://msdn.microsoft.com/zh-cn/library/azure/dn151789.aspx
+[Windows Identity Foundation 3.5 SDK]: http://www.microsoft.com/zh-cn/download/details.aspx?id=4451
+[Windows Identity Foundation 1.0 Runtime]: http://www.microsoft.com/zh-cn/download/details.aspx?id=17331
 [Office 365 Powershell Commandlets]: http://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx
-[ASP.NET MVC 3]: http://www.microsoft.com/download/details.aspx?id=4211
+[ASP.NET MVC 3]: http://www.microsoft.com/zh-cn/download/details.aspx?id=4211
 [Eclipse PDT 3.0.x All In Ones]: http://www.eclipse.org/pdt/downloads/
 [PHP Sample Code for Azure Active Directory]: https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/WAAD.WebSSO.PHP 
- 

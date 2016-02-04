@@ -24,7 +24,7 @@ Twilio is an API platform that makes it easy for developers to make and receive 
 
 ### Receiving Calls and Text Messages
 
-Twilio allows developers to [purchase programmable phone numbers][purchase_phone] which can be used to both send and receive calls and text messages.  When a Twilio number receives an inbound call or text, Twilio will send your web application an HTTP POST or GET request, asking you for instructions on how to handle the call or text.  Your server will respond to Twilio's HTTP request with [TwiML][twiml], a simple set of XML tags that contain instructions on how to handle a call or text.  We will see examples of TwiML in just a moment.
+Twilio allows developers to [purchase programmable phone numbers][purchase_phone] which can be used to both send and receive calls and text messages.  When a Twilio number receives an inbound call or text, Twilio will send your web site an HTTP POST or GET request, asking you for instructions on how to handle the call or text.  Your server will respond to Twilio's HTTP request with [TwiML][twiml], a simple set of XML tags that contain instructions on how to handle a call or text.  We will see examples of TwiML in just a moment.
 
 ### Making Calls and Sending Text Messages
 
@@ -47,7 +47,7 @@ Next, you will need to create a node.js website running on Azure.  [The official
 * Signing up for an Azure account, if you don't have one already
 * Using the Azure admin console to create a new website
 * Adding source control support (we will assume you used git)
-* Creating a file `server.js` with a simple node.js web application
+* Creating a file `server.js` with a simple node.js web site
 * Deploying this simple application to Azure
 
 <a id="twiliomodule"/>
@@ -96,7 +96,7 @@ Let's create a simple form that will place a call to a number we choose.  Open u
       http = require('http'), 
       twilio = require('twilio');
 
-    // Create Express web application
+    // Create Express web site
     var app = express();
 
     // Express configuration

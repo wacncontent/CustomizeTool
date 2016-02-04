@@ -82,7 +82,7 @@ To take advantage of dynamic packaging, you need to get at least one streaming u
 
 To change the number of streaming reserved units, do the following:
 
-1. In the [Management Portal](https://manage.windowsazure.cn/), click **Media Services**. Then, click the name of the media service.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Media Services**. Then, click the name of the media service.
 
 2. Select the STREAMING ENDPOINTS page. Then, click on the streaming endpoint that you want to modify.
 
@@ -102,7 +102,7 @@ To change the number of streaming reserved units, do the following:
  
 ##Create a CHANNEL
 
-1.	In the [Management Portal](http://manage.windowsazure.cn/), click Media Services and then click on the Media Services account name.
+1.	In the [Azure Management Portal](http://manage.windowsazure.cn/), click Media Services and then click on the Media Services account name.
 2.	Select the CHANNELS page.
 3.	Select Add+ to add a new channel.
 
@@ -132,7 +132,7 @@ On the **Encoding Preset** page, you can select system presets. Currently, the o
 
 ![standard3][standard3]
 
-On the **Channel Creation** page, you can define the IP addresses that are allowed to publish video to this channel. Allowed IP addresses can be specified as either a single IP address (e.g. ‘10.0.0.1’), an IP range using an IP address and a CIDR subnet mask (e.g. ‘10.0.0.1/22’), or an IP range using an IP address and a dotted decimal subnet mask (e.g. ‘10.0.0.1(255.255.252.0)’).
+On the **Channel Creation** page, you can define the IP addresses that are allowed to publish video to this channel. Allowed IP addresses can be specified as either a single IP address (e.g. '10.0.0.1'), an IP range using an IP address and a CIDR subnet mask (e.g. '10.0.0.1/22'), or an IP range using an IP address and a dotted decimal subnet mask (e.g. '10.0.0.1(255.255.252.0)').
 
 If no IP addresses are specified and there is no rule definition then no IP address will be allowed. To allow any IP address, create a rule and set 0.0.0.0/0.
 

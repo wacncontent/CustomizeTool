@@ -7,25 +7,25 @@
 	manager="stevenpo"
 	editor=""/>
 
-<tags
-	ms.service="active-directory"
-	ms.date="09/21/2015"
+<tags 
+	ms.service="active-directory" 
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
-# Manage passwords in Azure AD
+# Manage passwords in Azure Active Directory
 
-If you are an administrator, you can reset a user’s password in Azure in the Azure Management Portal. Click the name of your directory and on the Users page, click the name of the user and at the bottom of the portal click **Reset Password**.
+If you are an administrator, you can reset a userâs password in Azure Active Directory (Azure AD) in the Azure Management Portal. Click the name of your directory and on the Users page, click the name of the user and at the bottom of the portal click **Reset Password**.
 
-This rest of this topic covers the full set of password management capabilities that Azure Active Directory supports, including:
+This rest of this topic covers the full set of password management capabilities that Azure AD supports, including:
 
 - **Self-service password** change allows end users or administrators to change their expired or non-expired passwords without calling an administrator or helpdesk for support.
 - **Self-service password** reset allows end users or administrators to reset their passwords automatically without calling an administrator or helpdesk for support. Self-service password reset requires Azure AD Premium or Basic. For more information, see [Azure Active Directory editions](/documentation/articles/active-directory-editions).
-- **Administrator-initiated password reset** allows an administrator to reset an end user’s or another administrator’s password from within the Azure Management Portal.
-- **Password management activity reports** give administrators insights into password reset and registration activity occurring in their organization.
-- **Password writeback** allows management of on-premises passwords from the cloud so all of the above scenarios can be performed by, or on the behalf of, federated or password synchronized users. Password writeback requires Azure AD Premium. 
+- **Administrator-initiated password reset** allows an administrator to reset an end userâs or another administratorâs password from within the Azure Management Portal.
+- **Password management activity reports** give administrators insights into password reset and registration activity occurring in their organization. 
+- **Password writeback** allows management of on-premises passwords from the cloud so all of the above scenarios can be performed by, or on the behalf of, federated or password synchronized users. Password writeback requires Azure AD Premium. <!--For more information, see [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium).-->
 
-> [AZURE.NOTE]
-> Azure AD Premium is available for Chinese customers using the world wide instance of Azure AD. Azure AD Premium is not currently supported in the Windows Azure service operated by 21Vianet in China. For more information, contact us at the [Azure Active Directory Forum](http://feedback.azure.com/forums/169401-azure-active-directory).
+> [AZURE.NOTE] 
+> Azure AD Premium is available for Chinese customers using the world wide instance of Azure AD. Azure AD Premium is not currently supported in the Windows Azure service operated by 21Vianet in China. For more information, contact us at the [Azure Active Directory Forum](http://feedback.azure.com/forums/169401-azure-active-directory). 
 
 Use the following links to jump to the documentation you are most interested in:
 
@@ -37,7 +37,6 @@ Use the following links to jump to the documentation you are most interested in:
 - [Password writeback: how to configure Azure AD to manage on-premises passwords](/documentation/articles/active-directory-passwords-getting-started#enable-users-to-reset-or-change-their-ad-passwords)
 - [Troubleshooting Azure AD password management](/documentation/articles/active-directory-passwords-troubleshoot)
 - [FAQ for Azure AD password management](/documentation/articles/active-directory-passwords-faq)
-
 
 ## What's next
 

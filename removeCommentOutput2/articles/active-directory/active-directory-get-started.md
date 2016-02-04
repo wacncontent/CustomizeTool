@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/21/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 # How to get started using Azure AD
@@ -19,7 +19,9 @@
 [How does it work?](/documentation/articles/active-directory-works)<br>
 [Get started](/documentation/articles/active-directory-get-started)<br>
 [Next steps](/documentation/articles/active-directory-next-steps)<br>
-[Learn more](/documentation/articles/active-directory-learn-map)
+<![Learn more](/documentation/articles/active-directory-learn-map)
+
+[Learn more](/documentation/articles/active-directory-learn-map)<br> 
 
 
 Ready to get started? You should try out some of the really cool stuff we've released with Azure Active Directory. Use these capabilities to really add value to your organization's identity and access management. Read documentation to learn how to configure these features. Then see how you can start testing these capabilities by taking the first step and assigning trial licenses to administrators and users.

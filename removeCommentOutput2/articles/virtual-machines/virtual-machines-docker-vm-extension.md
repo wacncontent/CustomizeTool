@@ -16,7 +16,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)] 
 
-[Docker](https://www.docker.com/) is one of the most popular virtualization approaches that uses [Linux containers](http://en.wikipedia.org/wiki/LXC) rather than virtual machines as a way of isolating application data and computing on shared resources. You can use the [Azure Docker VM extension](https://github.com/Azure/azure-docker-extension/blob/master/README.md) to the [Azure Linux Agent](/documentation/articles/virtual-machines-linux-agent-user-guide) to create a Docker VM that hosts any number of containers for your applications on Azure.
+[Docker](https://www.docker.com/) is one of the most popular virtualization approaches that uses [Linux containers](http://zh.wikipedia.org/wiki/LXC) rather than virtual machines as a way of isolating application data and computing on shared resources. You can use the [Azure Docker VM extension](https://github.com/Azure/azure-docker-extension/blob/master/README.md) to the [Azure Linux Agent](/documentation/articles/virtual-machines-linux-agent-user-guide) to create a Docker VM that hosts any number of containers for your applications on Azure.
 
 This topic describes:
 
@@ -33,9 +33,9 @@ To create Docker-enabled VMs right now, see:
 To learn more about the extension and how it works, see the [Docker Extension User Guide](https://github.com/Azure/azure-docker-extension/blob/master/README.md).
 
 ## Docker and Linux Containers
-[Docker](https://www.docker.com/) is one of the most popular virtualization approaches that uses [Linux containers](http://en.wikipedia.org/wiki/LXC) rather than virtual machines as a way of isolating data and computing on shared resources and provides other services that enable you to build or assemble applications quickly and distribute them between other Docker containers.
+[Docker](https://www.docker.com/) is one of the most popular virtualization approaches that uses [Linux containers](http://zh.wikipedia.org/wiki/LXC) rather than virtual machines as a way of isolating data and computing on shared resources and provides other services that enable you to build or assemble applications quickly and distribute them between other Docker containers.
 
-Docker and Linux containers are not [Hypervisors](http://en.wikipedia.org/wiki/Hypervisor) such as Windows Hyper-V and [KVM](http://www.linux-kvm.org/page/Main_Page) on Linux (there are many other examples). Hypervisors virtualize the underlying operating system to enable complete operating systems (called *virtual machines*) to run inside the hypervisor as if they were an application.
+Docker and Linux containers are not [Hypervisors](http://zh.wikipedia.org/wiki/Hypervisor) such as Windows Hyper-V and [KVM](http://www.linux-kvm.org/page/Main_Page) on Linux (there are many other examples). Hypervisors virtualize the underlying operating system to enable complete operating systems (called *virtual machines*) to run inside the hypervisor as if they were an application.
 
 Docker and other *container* approaches have radically decreased both the start-up time consumed and processing and storage overhead required by using the process and file system isolation features of the Linux kernel to expose only kernel features to an otherwise isolated container.
 

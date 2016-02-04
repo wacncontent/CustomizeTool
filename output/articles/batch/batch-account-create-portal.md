@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Create an Azure Batch account | Windows Azure"
-	description="Learn how to create an Azure Batch account in the Azure preview portal to run large-scale parallel workloads in the cloud"
+	description="Learn how to create an Azure Batch account in the Azure Management Portal to run large-scale parallel workloads in the cloud"
 	services="batch"
 	documentationCenter=""
 	authors="dlepow"
@@ -9,20 +9,24 @@
 
 <tags
 	ms.service="batch"
-	ms.date="10/26/2015"
+	ms.date="11/10/2015"
 	wacn.date=""/>
 
 
 
-# Create and manage an Azure Batch account in the Azure preview portal
+# Create and manage an Azure Batch account in the Azure Management Portal
 
-This article shows you how to use the [Azure preview portal](https://manage.windowsazure.cn) to create and manage an Azure Batch account and settings such as account keys. You need a Batch account URL and an associated access key to authenticate all Batch API requests. And you associate all the Batch resources (such as pools, jobs, and tasks) for your Batch workload with a specific Batch account.  
+> [AZURE.SELECTOR]
+- [Azure Management Portal](/documentation/articles/batch-account-create-portal)
+- [Batch Management .NET](/documentation/articles/batch-management-dotnet)
+
+This article shows you how to use the [Azure Management Portal](https://manage.windowsazure.cn) to create and manage an Azure Batch account and settings such as account keys. You need a Batch account URL and an associated access key to authenticate all Batch API requests. And you associate all the Batch resources (such as pools, jobs, and tasks) for your Batch workload with a specific Batch account.  
 
 >[AZURE.NOTE] Currently the preview portal supports features for Batch account management and viewing some account resources. The full Batch features are available to developers through the Batch APIs.
 
 ## Create a Batch account
 
-1. Sign in to the [Azure preview portal](https://manage.windowsazure.cn).
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
 
 2. Click **New** > **Compute** > **Batch Service**.
 
@@ -64,11 +68,11 @@ To see and manage the access keys, click the key icon.
 
 * You can run multiple Batch workloads in a single Batch account, or distribute your workloads among Batch accounts in different Azure regions.
 
-* If you're running several large-scale Batch workloads, be aware of certain [Batch service quotas and limits](/documentation/articles/batch-quota-limit) that apply to your Azure subscription and each Batch account. Current quotas on a Batch account appear in the preview portal in the account properties.
+* If you're running several large-scale Batch workloads, be aware of certain [Batch service quotas and limits](/documentation/articles/batch-quota-limit) that apply to your Azure subscription and each Batch account. Current quotas on a Batch account appear in the portal in the account properties.
 
 ## Next steps
 
-* See [API basics for Azure Batch](/documentation/articles/batch-api-basics) to learn more about the Batch concepts.
+* See [Azure Batch feature overview](/documentation/articles/batch-api-basics) to learn more about the Batch concepts.
 
 * Get started developing your first application with the [Batch .NET client library](/documentation/articles/batch-dotnet-get-started).
 

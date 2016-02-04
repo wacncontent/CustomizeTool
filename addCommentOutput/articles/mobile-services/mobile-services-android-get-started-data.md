@@ -14,8 +14,11 @@
 
 # Add Mobile Services to an existing Android app (JavaScript backend)
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
 ## Summary
 
+<!-- deleted by customization
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
 
@@ -27,6 +30,7 @@
 <div class="dev-onpage-video-wrapper">
 <a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-With-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services" target="_blank" class="label">watch the tutorial</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-android-get-started-data-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-With-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">Play Video</span></a><span class="time">15:32</span></div>
 </div>
+-->
 
 
 <p>This tutorial helps you understand in more detail how Azure Mobile Services can store and retrieve data from an Android app. So it walks you through many of the steps that are already completed for you in the Mobile Services quickstart tutorial. If this is your first experience with Mobile Services, consider first completing the tutorial <a href="/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-android">Get started with Mobile Services</a>.</p>
@@ -35,7 +39,7 @@
 
 To complete this tutorial, you need the following:
 
-- an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=AED8DE357" target="_blank">Azure Trial</a>.
+- an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a <!-- deleted by customization href="/pricing/1rmb-trial/?WT.mc_id=AED8DE357" --><!-- keep by customization: begin --> href="/pricing/1rmb-trial/" <!-- keep by customization: end --> target="_blank">Azure Trial</a>.
 
 
 - the [Azure Mobile Services Android SDK];
@@ -51,11 +55,16 @@ To see the completed source code, go <a href="https://github.com/Azure/mobile-se
 
 [AZURE.INCLUDE [download-android-sample-code](../includes/download-android-sample-code.md)]
 
+<!-- deleted by customization
 ### Inspect and run the sample code
+-->
+<!-- keep by customization: begin -->
+###Inspect and run the sample code
+<!-- keep by customization: end -->
 
 [AZURE.INCLUDE [mobile-services-android-run-sample-code](../includes/mobile-services-android-run-sample-code.md)]
 
-## Create a new mobile service in the Management Portal
+## Create a new mobile service in the Azure Management Portal
 
 [AZURE.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
@@ -76,11 +85,11 @@ Now that the app has been updated to use Mobile Services for back end storage, y
 
 	This executes your app, built with the Android SDK, that uses the client library to send a query that returns items from your mobile service.
 
-5. As before, type meaningful text, then click **Add**.
+<!-- deleted by customization 5 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->. As before, type meaningful text, then click **Add**.
 
    	This sends a new item as an insert to the mobile service.
 
-3. In the [Management Portal], click **Mobile Services**, and then click your mobile service.
+3. In the [Azure Management Portal], click **Mobile Services**, and then click your mobile service.
 
 4. Click the **Data** tab, then click **Browse**.
 
@@ -92,21 +101,14 @@ This concludes the **Get started with data** tutorial for Android.
 
 ## Troubleshooting
 
+<!-- deleted by customization
 ### Verify Android SDK Version
+-->
+<!-- keep by customization: begin -->
+###Verify Android SDK Version
+<!-- keep by customization: end -->
 
 [AZURE.INCLUDE [Verify SDK](../includes/mobile-services-verify-android-sdk-version.md)]
-
-
-<!-- keep by customization: begin -->
-## Older Code Versions
-
-If you would like to see the Eclipse version of this tutorial, go to 
-[Get started with data using Eclipse](/documentation/articles/mobile-services-android-get-started-data-EC).
-
-To see a completed version of the source code in an Eclipse project, go <a href="https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithData/Android">here</a>.
-
-If you want to get the sample file used in the preceding version of the Azure Mobile Services Android SDK, you can get it [here](http://go.microsoft.com/fwlink/p/?LinkID=282122).
-<!-- keep by customization: end -->
 
 ## Next steps
 
@@ -146,18 +148,24 @@ Once you have completed the data series, try these other Android tutorials:
 
 
 <!-- URLs. -->
+<!-- deleted by customization
 [Validate and modify data with scripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
 [Refine queries with paging]: /develop/mobile/tutorials/add-paging-to-data-android
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-android
 [Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-android
-<!-- keep by customization: begin -->
-[Get started with data (Eclipse)]: /documentation/articles/mobile-services-android-get-started-data-EC/
-<!-- keep by customization: end -->
 [Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-android
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android
+-->
+<!-- keep by customization: begin -->
+[Validate and modify data with scripts]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[Refine queries with paging]: /documentation/articles/mobile-services-android-how-to-use-client-library
+[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started/
+[Get started with data]: /documentation/articles/mobile-services-android-get-started-data
+[Get started with authentication]: /documentation/articles/mobile-services-android-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
+<!-- keep by customization: end -->
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Management Portal]: https://manage.windowsazure.cn/
 [Azure Mobile Services Android SDK]: http://aka.ms/Iajk6q
 [GitHub]:  http://go.microsoft.com/fwlink/p/?LinkID=282122
 [Android SDK]: http://developer.android.com/sdk/index.html

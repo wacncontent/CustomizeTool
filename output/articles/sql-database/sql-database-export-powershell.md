@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/23/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 
@@ -18,7 +18,7 @@
 **Single database**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](/documentation/articles/sql-database-export)
+- [Azure Management Portal](/documentation/articles/sql-database-export)
 - [PowerShell](/documentation/articles/sql-database-export-powershell)
 
 
@@ -69,7 +69,7 @@ Replace the server and database names with the server and database that currentl
     $DatabaseName = "nameofdatabasetoexport"
     $BlobName = "filename.bacpac"
 
-In the [Azure Preview Portal](https://manage.windowsazure.cn) browse to your storage account to get these values. You can find the primary access key by clicking **All settings** and then **Keys** from your storage account's blade.
+In the [Azure Management Portal](https://manage.windowsazure.cn) browse to your storage account to get these values. You can find the primary access key by clicking **All settings** and then **Keys** from your storage account's blade.
 
     $StorageName = "storageaccountname"
     $ContainerName = "blobcontainername"
@@ -142,9 +142,4 @@ Running this command will prompt you for a password. Enter the admin password fo
 
 - [Business Continuity Overview](/documentation/articles/sql-database-business-continuity)
 - [Disaster Recovery Drills](/documentation/articles/sql-database-disaster-recovery-drills)
-<!-- deleted by customization
 - [SQL Database documentation](/documentation/services/sql-database/)
--->
-<!-- keep by customization: begin -->
-- [SQL Database documentation](/documentation/services/sql-databases/)
-<!-- keep by customization: end -->

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cdn"
-	ms.date="09/01/2015"
+	ms.date="12/08/2015"
 	wacn.date=""/>
 
 # Serve Content from Azure CDN in Your Web Application #
@@ -63,7 +63,7 @@ Let's get to it. Follow the steps below to start using the Azure CDN:
 
 	>[AZURE.NOTE] Note that I'm using China East as the region as it is far enough away for me to test my CDN from North America later.
 
-3. Once the new storage account's status is **Online**, create a new CDN endpoint that's tied to the storage account you created. Click **New > Azure Websites > CDN > Quick Create**. Select the storage account you created and click **Create**.
+3. Once the new storage account's status is **Online**, create a new CDN endpoint that's tied to the storage account you created. Click **New > Azure > CDN > Quick Create**. Select the storage account you created and click **Create**.
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-2.PNG)
 
@@ -145,7 +145,7 @@ In this section, you have learned how to create a CDN endpoint, upload content t
 <a name="upload"></a>
 ## Automate content upload from your ASP.NET application to your CDN endpoint ##
 
-If you want to easily upload all of the static content in your ASP.NET Web application to your CDN endpoint, or if your deploy your Web application using continuous delivery (for an example, see [Continuous Delivery for Cloud Services in Azure](/documentation/articles/cloud-services/cloud-services-dotnet-continuous-delivery)), you can use Azure PowerShell to automate the synchronization of the latest content files to Azure blobs every time you deploy your Web application. For example, you can run the script at [Upload Content Files from ASP.NET Application to Azure Blobs](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a) upload all the content files in an ASP.NET application. To use this script:
+If you want to easily upload all of the static content in your ASP.NET Web application to your CDN endpoint, or if your deploy your Web application using continuous delivery (for an example, see [Continuous Delivery for Cloud Services in Azure](/documentation/articles/cloud-services-dotnet-continuous-delivery)), you can use Azure PowerShell to automate the synchronization of the latest content files to Azure blobs every time you deploy your Web application. For example, you can run the script at [Upload Content Files from ASP.NET Application to Azure Blobs](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a) upload all the content files in an ASP.NET application. To use this script:
 
 4. From the **Start** menu, run **Windows Azure PowerShell**.
 5. In the Azure PowerShell window, run `Get-AzurePublishSettingsFile` to download a publish settings file for your Azure account.
@@ -181,7 +181,7 @@ For an example of integrating PowerShell scripts into your continuous delivery c
 <a name="update"></a>
 ## Configure the CDN cache to reflect the desired content update ##
 
-Now, suppose after you have uploaded the static files from your Web app in a blob container, you make a change to one of the files in your project and upload it to the blob container again. You may think that it's automatically updated to your CDN endpoint, but are actually puzzled why you don't see the update reflected when you access the content's CDN URL. 
+Now, suppose after you have uploaded the static files from your Web app in a blob container, you make a change to one of the files in your project and upload it to the blob container again. You may think that it's automatically updated to your CDN endpoint, but are actually puzzled why you don't see the update reflected when you access the content's CDN URL.
 
 The truth is that the CDN does indeed automatically update from your blob storage, but it does so by applying a default 7-day caching rule to the content. This means that once a CDN node pulls your content from blob storage, the same content is not refreshed until it expires in the cache.
 
@@ -244,19 +244,19 @@ If you change the assembly number as part of every publish cycle, then you can l
 
 ## What about bundled scripts and stylesheets in ASP.NET? ##
 
-With [Azure Websites](/documentation/services/web-sites/) and [Azure Cloud Services](/home/features/cloud-services/), you get the best Azure CDN integration with [ASP.NET bundling and minification](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification). 
+With [Azure Web Apps](/documentation/services/web-sites/) and [Azure Cloud Services](/home/features/cloud-services/), you get the best Azure CDN integration with [ASP.NET bundling and minification](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification).
 
-Integrating Azure Websites or Azure Cloud Services with Azure CDN gives you the following advantages:
+Integrating Azure or Azure Cloud Services with Azure CDN gives you the following advantages:
 
 - Integrate content deployment (images, scripts, and stylesheets) as part of your Azure web app's [continuous deployment](/documentation/articles/web-sites-publish-source-control) process
 - Easily upgrade your CDN-served NuGet packages, such as jQuery or Bootstrap versions 
 - Manage your Web application and your CDN-served content from the same Visual Studio interface
 
 For related tutorials, see:
-- [Use Azure CDN in Azure Websites](/documentation/articles/cdn-websites-with-cdn)
+- [Use Azure CDN in Azure Web App](/documentation/articles/cdn-websites-with-cdn)
 - [Integrate a cloud service with Azure CDN](/documentation/articles/cdn-cloud-service-with-cdn)
 
-Without integration with Azure Websites or Azure Cloud Services, it is possible to use Azure CDN for your script bundles, with the following caveats:
+Without integration with Azure Web Sites Web Apps or Azure Cloud Services, it is possible to use Azure CDN for your script bundles, with the following caveats:
 
 - You must manually upload the bundled scripts to blob storage. A programmatic solution is proposed at [stackoverflow](http://stackoverflow.com/a/13736433).
 - In your .cshtml files, transform the rendered script/CSS tags to use the Azure CDN. For example:
@@ -265,7 +265,7 @@ Without integration with Azure Websites or Azure Cloud Services, it is possible 
 
 ## More Information ##
 - [Overview of the Azure Content Delivery Network (CDN)](/documentation/articles/cdn-overview)
-- [Use Azure CDN in Azure Websites](/documentation/articles/cdn-websites-with-cdn)
+- [Use Azure CDN in Azure Web App](/documentation/articles/cdn-websites-with-cdn)
 - [Integrate a cloud service with Azure CDN](/documentation/articles/cdn-cloud-service-with-cdn)
 - [How to Map Content Delivery Network (CDN) Content to a Custom Domain](http://msdn.microsoft.com/zh-cn/library/azure/gg680307.aspx)
 - [Using CDN for Azure](/documentation/articles/cdn-how-to-use-cdn)

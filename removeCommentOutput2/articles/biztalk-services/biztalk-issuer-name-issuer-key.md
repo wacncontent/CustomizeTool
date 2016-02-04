@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Issuer Name and Issuer Key in BizTalk Services | Microsoft Azure" 
+	pageTitle="Issuer Name and Issuer Key in BizTalk Services | Windows Azure" 
 	description="Learn how to retrieve Issuer Name and Issuer Key for either Service Bus or Access Control (ACS) in BizTalk Services. MABS, WABS" 
 	services="biztalk-services" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="biztalk-services" 
-	ms.workload="integration" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/26/2015" 
-	ms.author="mandia"/>
+<tags
+	ms.service="biztalk-services"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 
 

@@ -7,14 +7,10 @@
 	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 # Remote Desktop Gateway and Azure Multi-Factor Authentication Server using RADIUS
 
@@ -38,7 +34,7 @@ The RD Gateway must be configured to send RADIUS authentication to an Azure Mult
 
 The RD Gateway uses NPS to send the RADIUS request to Azure Multi-Factor Authentication. A timeout must be changed to prevent the RD Gateway from timing out before multi-factor authentication has completed. Use the following procedure to configure NPS.
 
-1. In NPS, expand the RADIUS Clients and Server menu in the left column and click on Remote RADIUS Server Groups. Go into the properties of the TS GATEWAY SERVER GROUP. Edit the RADIUS Server(s) displayed and go to the Load Balancing tab. Change the “Number of seconds without response before request is considered dropped” and the “Number of seconds between requests when server is identified as unavailable” to 30-60 seconds. Click on the Authentication/Account tab and ensure that the RADIUS ports specified match the ports that the Multi-Factor Authentication Server will be listening on.
+1. In NPS, expand the RADIUS Clients and Server menu in the left column and click on Remote RADIUS Server Groups. Go into the properties of the TS GATEWAY SERVER GROUP. Edit the RADIUS Server(s) displayed and go to the Load Balancing tab. Change the "Number of seconds without response before request is considered dropped" and the "Number of seconds between requests when server is identified as unavailable" to 30-60 seconds. Click on the Authentication/Account tab and ensure that the RADIUS ports specified match the ports that the Multi-Factor Authentication Server will be listening on.
 2. NPS must also be configured to receive RADIUS authentications back from the Azure Multi-Factor Authentication Server. Click on RADIUS Clients in the left menu. Add the Azure Multi-Factor Authentication Server as a RADIUS client. Choose a Friendly name and specify a shared secret.
 3. Expand the Policies section in the left navigation and click on Connection Request Policies. It should contain a Connection Request Policy called TS GATEWAY AUTHORIZATION POLICY that was created when RD Gateway was configured. This policy forwards RADIUS requests to the Multi-Factor Authentication Server.
 4. Copy this policy to create a new one. In the new policy, add a condition that matches the Client Friendly Name with the Friendly name set in step 2 above for the Azure Multi-Factor Authentication Server RADIUS client. Change the Authentication Provider to Local Computer. This policy ensures that when a RADIUS request is received from the Azure Multi-Factor Authentication Server, the authentication occurs locally instead of sending a RADIUS request back to the Azure Multi-Factor Authentication Server which would result in a loop condition. To prevent the loop condition, this new policy must be ordered ABOVE the original policy that forwards to the Multi-Factor Authentication Server.

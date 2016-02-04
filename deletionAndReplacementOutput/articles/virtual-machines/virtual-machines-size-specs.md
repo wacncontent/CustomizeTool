@@ -10,23 +10,11 @@ deleted:
 		        Jan'16: US South Central, APAC East, APAC Southeast, Japan East, China East,
 		                Australia East, Australia Southeast, Brazil South
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		*   Dv2-series and D-series are ideal for applications that demand faster CPUs, better local disk performance, or have higher memory demands.  They offer a powerful combination for many enterprise-grade applications.
-
-reason: ()
-
-replacement:
-
-deleted:
-
-		Azure](https://azure.microsoft.com/zh-cn/documentation/articles/fundamentals-application-models/)
-
-replaced by:
-
-		Azure](/documentation/articles/fundamentals-application-models/)
 
 reason: ()
 

@@ -14,9 +14,14 @@
 
 # How to use the managed client library for Azure Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
+
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
-##Overview 
+##Overview
 
 This guide shows you how to perform common scenarios using the managed client library for Azure Mobile Services in Windows and Xamarin apps. The scenarios covered include querying for data, inserting, updating, and deleting data, authenticating users, and handling errors. If you are new to Mobile Services, you should consider first completing the [Mobile Services quickstart](/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started) tutorial.
 
@@ -77,7 +82,7 @@ This section describes how to issue queries to the mobile service, which include
 - [Select specific columns]
 - [Look up data by ID]
 
->[AZURE.NOTE] A server-driven page size is enforced to prevent all rows from being returned. This keeps default requests for large data sets from negatively impacting the service. To return more than 50 rows, use the `Take` method, as described in [Return data in pages].  
+>[AZURE.NOTE] A server-driven page size is enforced to prevent all rows from being returned. This keeps default requests for large data sets from negatively impacting the service. To return more than 50 rows, use the `Take` method, as described in [Return data in pages].
 
 ### <a name="filtering"></a>How to: Filter returned data
 
@@ -236,9 +241,9 @@ String IDs provide you with the following benefits:
 + Records are easier to merge from different tables or databases.
 + IDs values can integrate better with an application's logic.
 
-When a string ID value is not set on an inserted record, Mobile Services generates a unique value for the ID. You can use the `Guid.NewGuid()` method To generate your own ID values, either on the client or in a .NET mobile backend service. To learn more about generating GUIDs in a JavaScript backend mobile service, see [How to: Generate unique ID values](/documentation/articles/mobile-services-how-to-use-server-scripts#generate-guids).
+When a string ID value is not set on an inserted record, Mobile Services generates a unique value for the ID. You can use the `Guid.NewGuid()` method To generate your own ID values, either on the client or in a .NET mobile backend service. To learn more about generating GUIDs in a JavaScript backend mobile service, see [How to: Generate unique ID values](/documentation/articles/mobile-services-how-to-use-server-scripts/#generate-guids).
 
-You can also use integer IDs for your tables. To use an integer ID, you must create your table with the `mobile table create` command using the `--integerId` option. This command is used with the Command-line Interface (CLI) for Azure. For more information on using the CLI, see [CLI to manage Mobile Services tables](/documentation/articles/virtual-machines-command-line-tools#Mobile_Tables).
+You can also use integer IDs for your tables. To use an integer ID, you must create your table with the `mobile table create` command using the `--integerId` option. This command is used with the Command-line Interface (CLI) for Azure. For more information on using the CLI, see [CLI to manage Mobile Services tables](/documentation/articles/virtual-machines-command-line-tools/#Mobile_Tables).
 
 ##<a name="modifying"></a>How to: Modify data in a mobile service
 
@@ -288,30 +293,42 @@ Note that this a typed method call, which requires that the **MarkAllResult** re
 
 The Mobile Services client enables you to register for push notifications with Azure Notification Hubs. When registering, you obtain a handle that you obtain from the platform-specific Push Notification Service (PNS). You then provide this value along with any tags when you create the registration. The following code registers your Windows app for push notifications with the Windows Notification Service (WNS):
 
-		private async void InitNotificationsAsync()
-		{
-		    // Request a push notification channel.
-		    var channel =
-		        await PushNotificationChannelManager
-		            .CreatePushNotificationChannelForApplicationAsync();
+	private async void InitNotificationsAsync()
+	{
+	    // Request a push notification channel.
+	    var channel =
+	        await PushNotificationChannelManager
+	            .CreatePushNotificationChannelForApplicationAsync();
 
-		    // Register for notifications using the new channel and a tag collection.
-			var tags = new List<string>{ "mytag1", "mytag2"};
-		    await MobileService.GetPush().RegisterNativeAsync(channel.Uri, tags);
-		}
+	    // Register for notifications using the new channel and a tag collection.
+		var tags = new List<string>{ "mytag1", "mytag2"};
+	    await MobileService.GetPush().RegisterNativeAsync(channel.Uri, tags);
+	}
 
-Note that in this example, two tags are included with the registration. For more information on Windows apps, see [Add push notifications to your app](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push). 
+Note that in this example, two tags are included with the registration. For more information on Windows apps, see [Add push notifications to your app](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push).
 
-Xamarin apps require some additional code to be able to register a Xamarin app running on iOS or Android app with the Apple Push Notification Service (APNS) and Google Cloud Messaging (GCM) services, respectively. For more information see **Add push notifications to your app** ([Xamarin.iOS](/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push#add-push) | [Xamarin.Android](/documentation/articles/partner-xamarin-mobile-services-android-get-started-push#add-push)).
+Xamarin apps require some additional code to be able to register a Xamarin app running on iOS or Android app with the Apple Push Notification Service (APNS) and Google Cloud Messaging (GCM) services, respectively. For more information see **Add push notifications to your app** ([Xamarin.iOS](/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push/#add-push) | [Xamarin.Android](/documentation/articles/partner-xamarin-mobile-services-android-get-started-push/#add-push)).
 
 >[AZURE.NOTE]When you need to send notifications to specific registered users, it is important to require authentication before registration, and then verify that the user is authorized to register with a specific tag. For example, you must check to make sure a user doesn't register with a tag that is someone else's user ID. For more information, see [Send push notifications to authenticated users](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users).
 
+##<a name="pull-notifications"></a>How to: Use periodic notifications in a Windows app
+
+Windows supports period notifications (pull notifications) to update live tiles. With periodic notifications enabled, Windows will periodically access a custom API endpoint to update the app tile on the start menu. To use periodic notifications, you must [define a custom API](/documentation/articles/mobile-services-javascript-backend-define-custom-api) that returns XML data in a tile-specific format. For more information, see [Periodic notifications](https://msdn.microsoft.com/zh-cn/library/windows/apps/hh761461.aspx).
+
+The following example turns on period notifications to request tile template data from a *tiles* custom endpoint:
+
+    TileUpdateManager.CreateTileUpdaterForApplication().StartPeriodicUpdate(
+        new System.Uri(MobileService.ApplicationUri, "/api/tiles"),
+        PeriodicUpdateRecurrence.Hour
+    );
+
+Select a [PeriodicUpdateRecurrance](https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.notifications.periodicupdaterecurrence.aspx) value that best matches the update frequency of your data.
 
 ##<a name="optimisticconcurrency"></a>How to: Use Optimistic Concurrency
 
 Two or more clients may write changes to the same item, at the same time, in some scenarios. Without any conflict detection, the last write would overwrite any previous updates even if this was not the desired result. Optimistic Concurrency Control assumes that each transaction can commit and therefore does not use any resource locking. Before committing a transaction, optimistic concurrency control verifies that no other transaction has modified the data. If the data has been modified, the committing transaction is rolled back.
 
-Mobile Services supports optimistic concurrency control by tracking changes to each item using the `__version` system property column that is defined for each table created by Mobile Services. Each time a record is updated, Mobile Services sets the `__version` property for that record to a new value. During each update request, the `__version` property of the record included with the request is compared to the same property for the record on the server. If the version passed with the request does not match the server, then the Mobile Services .NET client library throws a `MobileServicePreconditionFailedException<T>`. The type included with the exception is the record from the server containing the server's version of the record. The application can then use this information to decide whether to execute the update request again with the correct `__version` value from the server to commit changes.  
+Mobile Services supports optimistic concurrency control by tracking changes to each item using the `__version` system property column that is defined for each table created by Mobile Services. Each time a record is updated, Mobile Services sets the `__version` property for that record to a new value. During each update request, the `__version` property of the record included with the request is compared to the same property for the record on the server. If the version passed with the request does not match the server, then the Mobile Services .NET client library throws a `MobileServicePreconditionFailedException<T>`. The type included with the exception is the record from the server containing the server's version of the record. The application can then use this information to decide whether to execute the update request again with the correct `__version` value from the server to commit changes.
 
 To enable optimistic concurrency the application defines a column on the table class for the `__version` system property. The following definition provides an example.
 
@@ -517,7 +534,7 @@ In the most simplified form, you can use the client flow as shown in this snippe
 
 To be able to authenticate users, you must register your app at the Microsoft account Developer Center. You must then connect this registration with your mobile service. Complete the steps in [Register your app to use a Microsoft account login](/documentation/articles/mobile-services-how-to-register-microsoft-authentication) to create a Microsoft account registration and connect it to your mobile service. If you have both Windows Store and Windows Phone 8/Silverlight versions of your app, register the Windows Store version first.
 
-The following code authenticates using Live SDK and uses the returned token to sign-in to your mobile service. 
+The following code authenticates using Live SDK and uses the returned token to sign-in to your mobile service.
 
 	private LiveConnectSession session;
  	//private static string clientId = "<microsoft-account-client-id>";
@@ -670,7 +687,7 @@ To support your specific app scenario, you might need to customize communication
 
     public class MyHandler : DelegatingHandler
     {
-        protected override async Task<HttpResponseMessage> 
+        protected override async Task<HttpResponseMessage>
             SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             // Add a custom header to the request.
@@ -738,7 +755,7 @@ This property converts all properties to lower case during serialization.
 [UserID]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid.aspx
 [MobileServiceAuthenticationToken]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Commands_to_manage_mobile_services
+[CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_mobile_services 
 [Optimistic Concurrency Tutorial]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts
 [MobileServiceClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
 

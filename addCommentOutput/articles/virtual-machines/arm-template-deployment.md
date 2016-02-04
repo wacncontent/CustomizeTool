@@ -13,22 +13,40 @@
 	ms.date="08/25/2015"
 	wacn.date=""/>
 
+<!-- deleted by customization
 # Deploy Azure resources using .NET libraries and a template
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
+-->
+<!-- keep by customization: begin -->
+# Deploy Azure Resources Using .NET Libraries and a Template
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the Resource Manager deployment model.
+<!-- keep by customization: end -->
 
 By using resource groups and templates, you're able to manage all of the resources that support your application together. This tutorial shows you how to use some of the available clients in the Azure Resource Management Library and how to build a template to deploy a virtual machine, virtual network, and storage account.
 
+<!-- deleted by customization
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [trial-note](../includes/free-trial-note.md)]
+<!-- keep by customization: end -->
 
 To complete this tutorial you also need:
 
 - [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
 - [Azure storage account](/documentation/articles/storage-create-storage-account)
+<!-- deleted by customization
 - [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) or [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)
 
 [AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
+-->
+<!-- keep by customization: begin -->
+- [Windows Management Framework 3.0](http://www.microsoft.com/zn-ch/download/details.aspx?id=34595) or [Windows Management Framework 4.0](http://www.microsoft.com/zh-cn/download/details.aspx?id=40855)
+- [Azure PowerShell](/documentation/aryicles/powershell-install-configure)
+<!-- keep by customization: end -->
 
 It takes about 30 minutes to do these steps.
 
@@ -36,15 +54,16 @@ It takes about 30 minutes to do these steps.
 
 To use Azure AD to authenticate requests to Azure Resource Manager, an application must be added to the Default Directory. Do the following to add an application:
 
-1. Open an Azure PowerShell command prompt, and then run this command and enter the credentials for your subscription when prompted:
+1. Open an Azure PowerShell command prompt, and then run this command <!-- deleted by customization and enter the credentials for your subscription when prompted -->:
 
+<!-- deleted by customization
 	    Login-AzureRmAccount
 
 2. Replace {password} in the following command with the one that you want to use and then run it to create the application:
 
 	    New-AzureRmADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
 
-	>[AZURE.NOTE] Take note of the application identifer that is returned after the application is created because you'll need it for the next step. You can also find the application identifier in the client id field of the application in the Active Directory section of the portal.
+	>[AZURE.NOTE] Take note of the application identifer that is returned after the application is created because you'll need it for the next step. You can also find the application identifier in the client id field of the application in the Active Directory section of the Azure Management Portal.
 
 3. Replace {application-id} with the identifier that you just recorded and then create the service principal for the application:
 
@@ -53,6 +72,32 @@ To use Azure AD to authenticate requests to Azure Resource Manager, an applicati
 4. Set the permission to use the application:
 
 	    New-AzureRmRoleAssignment -RoleDefinitionName Owner -ServicePrincipalName "https://myapp1.com"
+-->
+<!-- keep by customization: begin -->
+        Switch-AzureMode âName AzureResourceManager
+
+2. Set the Azure account that you want to use for this tutorial. Run this command and enter the credentials for your subscription when prompted:
+
+	    Add-AzureAccount
+
+3. Replace {password} in the following command with the one that you want to use and then run it to create the application:
+
+	    New-AzureADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
+
+4. Record the value the ApplicationId value in the response from the previous step. You will need it later in this tutorial:
+
+	![Create an AD application](./media/arm-template-deployment/azureapplicationid.png)
+
+	>[AZURE.NOTE] You can also find the application identifier in the client id field of the application in the Management Portal.
+
+5. Replace {application-id} with the identifier that you just recorded and then create the service principal for the application:
+
+        New-AzureADServicePrincipal -ApplicationId {application-id}
+
+6. Set the permission to use the application:
+
+	    New-AzureRoleAssignment -RoleDefinitionName Owner -ServicePrincipalName "https://myapp1.com"
+<!-- keep by customization: end -->
 
 ## Step 2: Create the Visual Studio project, the template file, and the parameters file
 
@@ -75,7 +120,7 @@ An Azure Resource Manager Template makes it possible for you to deploy and manag
             "contentVersion": "1.0.0.0",
         }
 
-6. [Parameters](/documentation/articles/resource-group-authoring-templates#parameters) are not always required, but they make template management easier. They describe the type of the value, the default value if needed, and possibly the allowed values of the parameter. For this tutorial, the parameters that are used to create a virtual machine, a storage account, and a virtual network are added to the template.
+6. <!-- deleted by customization [Parameters](/documentation/articles/resource-group-authoring-templates#parameters) --><!-- keep by customization: begin --> [Parameters](https://msdn.microsoft.com/zh-cn/library/azure/dn835138.aspx#parameters) <!-- keep by customization: end --> are not always required, but they make template management easier. They describe the type of the value, the default value if needed, and possibly the allowed values of the parameter. For this tutorial, the parameters that are used to create a virtual machine, a storage account, and a virtual network are added to the template.
 
     Add the parameters element and its child elements after the contentVersion element:
 
@@ -106,7 +151,7 @@ An Azure Resource Manager Template makes it possible for you to deploy and manag
           },
         }
 
-7.	[Variables](/documentation/articles/resource-group-authoring-templates#variables) can be used in a template to specify values that may change frequently or values that need to be created from a combination of parameter values.
+<!-- deleted by customization 7.	[Variables](/documentation/articles/resource-group-authoring-templates#variables) --><!-- keep by customization: begin --> 7.	[Variables](https://msdn.microsoft.com/zh-cn/library/azure/dn835138.aspx#variables) <!-- keep by customization: end --> can be used in a template to specify values that may change frequently or values that need to be created from a combination of parameter values.
 
     Add the variables element after the parameters section:
 
@@ -142,7 +187,7 @@ An Azure Resource Manager Template makes it possible for you to deploy and manag
           },
         }
 
-8.	[Resources](/documentation/articles/resource-group-authoring-templates#resources) such as the virtual machine, the virtual network, and the storage account are defined next in the template.
+<!-- deleted by customization 8.	[Resources](/documentation/articles/resource-group-authoring-templates#resources) --><!-- keep by customization: begin --> 8.	[Resources](https://msdn.microsoft.com/zh-cn/library/azure/dn835138.aspx#resources) <!-- keep by customization: end --> such as the virtual machine, the virtual network, and the storage account are defined next in the template.
 
     Add the resources section after the variables section:
 
@@ -294,7 +339,7 @@ To specify values for the resource parameters that were defined in the template,
           }
         }
 
-    >[AZURE.NOTE] Image vhd names change regularly in the image gallery, so you need to get a current image name to deploy the virtual machine. To do this, see [About images for virtual machines](/documentation/articles/virtual-machines-images/), and then replace {source-image-name} with the name of the vhd file that you want to use. For example,  "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201412.01-en.us-127GB.vhd". Replace {subscription-id} with the identifier of your subscription.
+    >[AZURE.NOTE] Image vhd names change regularly in the image gallery, so you need to get a current image name to deploy the virtual machine. To do this, see [About images for virtual <!-- deleted by customization machines](/documentation/articles/virtual-machines-images/) --><!-- keep by customization: begin --> machines](https://msdn.microsoft.com/zh-cn/library/azure/dn790330.aspx) <!-- keep by customization: end -->, and then replace {source-image-name} with the name of the vhd file that you want to use. For example,  "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201412.01-en.us-127GB.vhd". Replace {subscription-id} with the identifier of your subscription.
 
 
 4.	Save the parameters file that you created.
@@ -336,7 +381,12 @@ Now that the Azure Active Directory application is created and the authenticatio
         {
           ClientCredential cc = new ClientCredential("{application-id}", "{password}");
             var context = new AuthenticationContext("https://login.chinacloudapi.cn/{tenant-id}");
+<!-- deleted by customization
             var result = context.AcquireToken("https://manage.windowsazure.cn/", cc);
+-->
+<!-- keep by customization: begin -->
+            var result = context.AcquireToken("https://management.windowsazure.cn/", cc);
+<!-- keep by customization: end -->
           if (result == null)
           {
             throw new InvalidOperationException("Failed to obtain the JWT token");
@@ -413,7 +463,7 @@ Resources are always deployed from a template to a resource group. You use the [
 
 ##Step 6: Add the code to delete the resources
 
-Because you are charged for resources used in Azure, it is always a good practice to delete resources that are no longer needed. You don’t need to delete each resource separately from a resource group. You can delete the resource group and all of its resources will automatically be deleted.
+Because you are charged for resources used in Azure, it is always a good practice to delete resources that are no longer needed. You <!-- deleted by customization don't --><!-- keep by customization: begin --> donât <!-- keep by customization: end --> need to delete each resource separately from a resource group. You can delete the resource group and all of its resources will automatically be deleted.
 
 1.	Add the following method to the Program class to delete the resource group:
 
@@ -437,8 +487,8 @@ Because you are charged for resources used in Azure, it is always a good practic
 
 2.	Press **Enter** after each status code is returned to create each resource. After the virtual machine is created, do the next step before pressing Enter to delete all of the resources.
 
-	It should take about 5 minutes for this console application to run completely from start to finish. Before you press Enter to start deleting resources, you could take a few minutes to verify the creation of the resources in the Azure preview portal before you delete them.
+	It should take about 5 minutes for this console application to run completely from start to finish. Before you press Enter to start deleting resources, you could take a few minutes to verify the creation of the resources in the Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> preview portal <!-- keep by customization: end --> before you delete them.
 
-3. Browse to the Audit Logs in the Azure preview portal to see the status of the resources:
+3. Browse to the Audit Logs in the Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> preview portal <!-- keep by customization: end --> to see the status of the resources:
 
 	![Create an AD application](./media/arm-template-deployment/crpportal.png)

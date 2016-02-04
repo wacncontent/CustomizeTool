@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory Integration with Bonus.ly | Windows Azure" 
     description="Learn how to use Bonus.ly with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory Integration with Bonus.ly
@@ -133,7 +133,7 @@ In the case of Bonus.ly, provisioning is a manual task.
 
     ![Add User](./media/active-directory-saas-bonus-tutorial/IC781045.png "Add User")
 
-    1.  Type the “**Email**, **First name**, **Last name**” of a valid AAD account you want to provision into the related textboxes.
+    1.  Type the "**Email**, **First name**, **Last name**" of a valid AAD account you want to provision into the related textboxes.
     2.  Click **Save**.
 
     >[AZURE.NOTE] The AAD account holder will receive an email that includes a link to confirm the account before it becomes active.

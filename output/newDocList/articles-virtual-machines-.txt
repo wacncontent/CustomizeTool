@@ -1,10 +1,5 @@
-new docs: 7, word count: 17249
-articles/virtual-machines/virtual-machines-allocation-failure.md
-articles/virtual-machines/virtual-machines-extensions-diagnostics-windows-template.md
-articles/virtual-machines/virtual-machines-linux-capture-image-resource-manager.md
-articles/virtual-machines/virtual-machines-linux-create-upload-vhd-redhat.md
-articles/virtual-machines/virtual-machines-sql-server-azure-key-vault-integration.md
-articles/virtual-machines/virtual-machines-vmss-walkthrough.md
-articles/virtual-machines/virtual-machines-windows-use-ssh-key.md
+new docs: 0, word count: 508
 
-new includes: 0
+new includes: 2
+includes/virtual-machines-sql-server-connection-steps-classic-tcp-endpoint.md
+includes/virtual-machines-sql-server-connection-steps-classic.md

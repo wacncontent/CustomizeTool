@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Dashboard, Monitor, Scale, Configure, and Hybrid Connections in BizTalk Services | Microsoft Azure" 
+	pageTitle="Dashboard, Monitor, Scale, Configure, and Hybrid Connections in BizTalk Services | Windows Azure" 
 	description="Learn about the controls and monitor performance on the Management Portal tabs for BizTalk Services: Dashboard, Monitor, Scale, Configure, and Hybrid Connections. MABS, WABS" 
 	services="biztalk-services" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="biztalk-services" 
-	ms.workload="integration" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/26/2015" 
-	ms.author="mandia"/>
+<tags
+	ms.service="biztalk-services"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 
 
@@ -72,7 +68,7 @@ This is the same as <strong>Create partner agreements</strong> on the <strong>Qu
 <td><strong>Connection Information</strong> of the Access Control Namespace</td>
 <td>When you select Connection Information, then the Access Control Namespace, Default Issuer, and Default Key are displayed. You can copy these values.
 <br/><br/>
-You can also open the Access Control Management Portal. <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=285670">Create an Access control Namespace</a> provides more information on the Access Control Management Portal.</td>
+You can also open the Access Control Portal. <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=285670">Create an Access control Namespace</a> provides more information on the Access Control Portal.</td>
 </tr>
 
 <tr>
@@ -197,9 +193,9 @@ This is the same as <strong>Create partner agreements</strong> on the <strong>Qu
 <td><strong>Connection Information</strong> of the Access Control Namespace</td>
 <td>Displays the Access Control Namespace, Default Issuer, and Default Key values; which can be copied.
 <br/><br/>
-You can also open the Access Control Management Portal. This Access Control Management Portal is the same as using the Active Directory option in the left navigation pane.
+You can also open the Access Control Portal. This Access Control Portal is the same as using the Active Directory option in the left navigation pane.
 <br/><br/>
-<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=285670">Managing Your ACS Namespace</a> provides more information on the Access Control Management Portal.</td>
+<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=285670">Managing Your ACS Namespace</a> provides more information on the Access Control Portal.</td>
 </tr>
 <tr>
 <td><strong>Sync Keys</strong> in the Storage Account</td>
@@ -331,7 +327,7 @@ Does not apply to Hybrid Connections.
 
 Sets the Backup Status to None or Automatic. When set to None, no backups are automatically created. When set to Automatic, you configure the backup location, the frequency of the backup, and how long to keep the backup files. 
 
-[BizTalk Services: Backup and Restore](biztalk-backup-restore.md) provides the details. 
+[BizTalk Services: Backup and Restore](biztalk-backup-restore.md) provides the details.
 
 
 ## <a name="HybridConnections"></a>Hybrid Connections
@@ -349,14 +345,14 @@ To create or manage Hybrid Connections in Azure BizTalk Services, see [Hybrid Co
 Now that you're familiar with the different tabs, you can learn more about the Azure BizTalk Services features:
 
 - [BizTalk Services: Throttling](biztalk-throttling-thresholds.md)  
-- [BizTalk Services: Issuer Name and Issuer Key](biztalk-issuer-name-issuer-key.md)  
+- [BizTalk Services: Issuer Name and Issuer Key](biztalk-issuer-name-issuer-key.md)
 - [BizTalk Services: Backup and Restore](biztalk-backup-restore.md)
 
 ## See Also
 - [Hybrid Connections](integration-hybrid-connection-overview.md)  
-- [BizTalk Services: Developer, Basic, Standard and Premium Editions Chart](biztalk-editions-feature-chart.md)  
-- [BizTalk Services: Provisioning Using Azure Management Portal](biztalk-provision-services.md)  
-- [BizTalk Services: BizTalk Service State Chart](biztalk-service-state-chart.md)  
+- [BizTalk Services: Developer, Basic, Standard and Premium Editions Chart](biztalk-editions-feature-chart.md)
+- [BizTalk Services: Provisioning Using Azure Management Portal](biztalk-provision-services.md)
+- [BizTalk Services: BizTalk Service State Chart](biztalk-service-state-chart.md)
 - [How do I Start Using the Azure BizTalk Services SDK](http://go.microsoft.com/fwlink/p/?LinkID=302335)
 
 [QuickStart]: ./media/biztalk-dashboard-monitor-scale-tabs/QuickStartIcon.png

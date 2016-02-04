@@ -584,7 +584,7 @@ article.<a id="Ref" name="Ref"></a>
   [3]: ./media/application-model/application-model-6.jpg
   [4]: ./media/application-model/application-model-7.jpg
   
-  [Azure Pricing]: /pricing/calculator/
+  [Azure Pricing]: http://azure.microsoft.com/pricing/calculator/
   [Managing Certificates in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx
   [http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx]: http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx
   [http://msdn.microsoft.com/zh-cn/library/hh560567.aspx]: http://msdn.microsoft.com/zh-cn/library/hh560567.aspx

@@ -9,7 +9,7 @@
    tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/19/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Security Considerations for SQL Server in Azure Virtual Machines

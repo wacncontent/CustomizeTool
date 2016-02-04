@@ -1,4 +1,3 @@
-
 <properties
 	pageTitle="Setting up on-premises conditional access using Azure Active Directory Device Registration | Windows Azure"
 	description="A step-by-step guide to enable conditional access to on-premises applications using Active Directory Federation Service (AD FS) in Windows Server 2012 R2."
@@ -10,8 +9,9 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/19/2015"
+	ms.date="11/24/2015"
 	wacn.date=""/>
+
 
 # Setting up on-premises conditional access using Azure Active Directory Device Registration
 
@@ -72,8 +72,7 @@ Follow the checklist below to enable and configure the Azure Active Directory De
 | Enable Device Registration in your Azure Active Directory tenant to allow devices to join the workplace. By default, multi-factor authentication is not enabled for the service. However, multi-factor authentication is recommended when registering a device. Before enabling multi-factor authentication in ADRS, ensure that AD FS is configured for a multi-factor authentication provider. | [Enable Azure Active Directory Device Registration](/documentation/articles/active-directory-conditional-access-device-registration-overview)               |
 | Devices will discover your Azure Active Directory Device Registration Service by looking for well-known DNS records. You must configure your company DNS so that devices can discover your Azure Active Directory Device Registration Service.                                                                                                                                                   | [Configure Azure Active Directory Device Registration discovery.](/documentation/articles/active-directory-conditional-access-device-registration-overview) |
 
-##Part 2: Deploy and configure Windows Server 2012 R2 Active Directory Federation Services and set up a federation relationship with Azure Active Direct
-
+##Part 2: Deploy and configure Windows Server 2012 R2 Active Directory Federation Services and set up a federation relationship with Azure Active Direct 
 
 | Task                                                                                                                                                                                                                                                                                                                                                                                             | Reference                                                       |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|
@@ -123,7 +122,7 @@ This will help you integrate your Azure AD tenant with your local active directo
    
 
 
-## Upgrade your Active Directory Domain Services Schema
+## Upgrade your Active Directory Domain Services Schema 
 > [AZURE.NOTE]
 > Upgrading your Active Directory schema cannot be reversed. It is recommended that you first perform this in a test environment.
 

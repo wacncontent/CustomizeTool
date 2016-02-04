@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Get started with Azure Search | Microsoft Azure" 
-	description="Get started with Azure Search" 
+	pageTitle="Get started with Azure Search | Windows Azure | Hosted cloud search service" 
+	description="Get started with Azure Search, a cloud hosted search service on Windows Azure." 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
@@ -8,14 +8,10 @@
 	editor=""
     tags="azure-portal"/>
 
-<tags 
-	ms.service="search" 
-	ms.devlang="rest-api" 
-	ms.workload="search" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.date="07/08/2015" 
-	ms.author="heidist"/>
+<tags
+	ms.service="search"
+	ms.date="12/18/2015"
+	wacn.date=""/>
 
 # Get started with Azure Search
 
@@ -23,7 +19,7 @@ Microsoft Azure Search is a new service that allows you to embed search function
 
 This article gets you started with the Azure Search REST API. 
 
-An alternative approach for .NET developers is to use the Azure Search.NET SDK. See [Get started with Azure Search in .NET](search-get-started-dotnet.md) or [How to use the Azure Search .NET SDK](search-howto-dotnet-sdk.md) for details.
+An alternative approach for .NET developers is to use the Azure Search.NET SDK. See [Get started with Azure Search in.NET](search-get-started-dotnet.md) or [How to use the Azure Search .NET SDK](search-howto-dotnet-sdk.md) for details.
 
 
 > [AZURE.NOTE] Completing this tutorial requires an [Azure subscription](../includes/free-trial-note.md). If you aren't ready to sign up for a trial subscription, you can skip this tutorial and opt for [Try Azure App Service](https://tryappservice.azure.com/) instead. This alternative option gives you Azure Search with an ASP.NET Web app for free - one hour per session - no subscription required.
@@ -35,7 +31,7 @@ As an administrator, you can add Search service to an existing subscription at n
 
 Subscribers automatically get free access to a shared, multitenant Search service that you can use for learning purposes, proof-of-concept testing, or small development search projects. Sign up for the free version using these steps.
 
-1. Sign in to [Azure portal](https://portal.azure.com) using your existing subscription. Notice that this URL takes you to the Preview portal. Using the Preview portal is a requirement. 
+1. Sign in to [Azure portal](https://portal.azure.com) using your existing subscription. Notice that this URL takes you to the Portal. Using the Portal is a requirement.
 
 2. Click **New** at the top of the page.
  
@@ -51,7 +47,7 @@ Subscribers automatically get free access to a shared, multitenant Search servic
 
 	- Click the arrow in **Subscription** if you have multiple subscriptions and you want to use a different subscription for this search service.
 
-	- Click the arrow in **Location** to choose a data center region. In this preview, you can choose from West US, East US, North Europe, and Southeast Asia. Later, when other regions are online, choose one region for the service you are creating. Distributing resources across multiple data centers will not be a supported configuration for public preview.
+	- Click the arrow in **Location** to choose a data center region. In this preview, you can choose from West US, East US, NorthEurope, and Southeast Asia. Later, when other regions are online, choose one region for the service you are creating. Distributing resources across multiple data centers will not be a supported configuration for public preview.
 
 4. Click **CREATE** to provision the service. Notice that **CREATE** is enabled only after you fill in all required values. 
 
@@ -78,7 +74,7 @@ Setting up dedicated resources can take a while (15 minutes or longer).
 
 **Step 1 - Create a new service with Pricing Tier set to Standard**
 
-1. Sign in to [Azure portal](https://portal.azure.com) using your existing subscription. 
+1. Sign in to [Azure portal](https://portal.azure.com) using your existing subscription.
 
 2. Click **New** at the bottom of the page.
 
@@ -269,7 +265,7 @@ The response code should be 200, and the response output should look similar to 
  
    ![][19]
 
-The following example query is from the [Search Index operation (Azure Search API)](http://msdn.microsoft.com/library/dn798927.aspx) on MSDN. Many of the example queries in this topic include spaces, which are not allowed in Fiddler. Replace each space with a + character before pasting in the query string before attempting the query in Fiddler: 
+The following example query is from the [Search Index operation (Azure Search API)](http://msdn.microsoft.com/library/dn798927.aspx) on MSDN. Many of the example queries in this topic include spaces, which are not allowed in Fiddler. Replace each space with a + character before pasting in the query string before attempting the query in Fiddler:
 
 **Before spaces are replaced:**
 
@@ -310,7 +306,7 @@ You can also query the system to get document counts and storage consumption. On
 
 If you need a refresher on where to find the configuration pages, follow these steps to locate the service dashboard.
 
-1.	Sign in to [Azure portal](https://portal.azure.com) using your existing subscription. 
+1.	Sign in to [Azure portal](https://portal.azure.com) using your existing subscription.
 2.	Click **Home** and then click the tile for your Search service.
 
  	![][22]

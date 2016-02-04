@@ -66,7 +66,7 @@ A **Quick Glance** section which includes the following summary information and 
 
 
 ##Deployments##
- This tab appears only if you have set up deployment from source control. The **Deployments** management page provides a summary of all deployments made to the website using your publishing method of choice. If Git publishing has been configured for the website but no deployments have been made, the **Deployments** management page provides information describing how to use GIT to deploy your web application to the website.
+ This tab appears only if you have set up deployment from source control. The **Deployments** management page provides a summary of all deployments made to the website using your publishing method of choice. If Git publishing has been configured for the website but no deployments have been made, the **Deployments** management page provides information describing how to use GIT to deploy your web site.
 
 ##Monitor##
 The **Monitor** management page provides a chart that displays usage information for the website. By default this chart displays the same metrics as the chart on the **Dashboard** page as described above in the Dashboard section. The chart can also be configured to display the metrics HTTP Successes, HTTP Redirects, HTTP 401 errors, HTTP 403 errors, HTTP 404 errors and HTTP 406 errors. For more information about these metrics, see [How to Monitor Web Sites][Monitor].
@@ -125,7 +125,7 @@ There are two sets of FTP credentials that you can use, *deployment* credentials
 **Publishing profile credentials**
 
 - Associated with a single website. 
-- You don’t pick the username or password.
+- You donÂ’t pick the username or password.
 - Typically used for Web Deploy, but can also be used for FTP.
 
 
@@ -143,7 +143,7 @@ To set up deployment credentials:
 Note: In step 2, if you already have deployment credentials, the portal will say **Reset deployment credentials**. Click this to set a new password or change the user name.
 
 Deployment credentials are associated with a Microsoft account. If you change the username or password, the change applies to all websites associated with the account. If an Azure subscription has multiple administrators, each person has their own credentials. 
-The full FTP user name is “website\username”.  This is listed in the portal under **Quick Glance**, as **Deployment / FTP user**.
+The full FTP user name is Â“website\usernameÂ”.  This is listed in the portal under **Quick Glance**, as **Deployment / FTP user**.
 
 
 ### Using Publishing Profile Credentials

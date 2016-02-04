@@ -4,5 +4,5 @@ deleted:
 
 		- [SSH](/documentation/articles/hdinsight-hadoop-use-mapreduce-ssh)
 
-reason: ()
+reason: (Linux Support)
 

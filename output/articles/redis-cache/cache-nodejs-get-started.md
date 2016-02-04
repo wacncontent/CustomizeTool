@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cache"
-	ms.date="10/23/2015"
+	ms.date="12/03/2015"
 	wacn.date=""/>
 
 # How to use Azure Redis Cache with Node.js
@@ -35,34 +35,35 @@ This tutorial uses [node_redis](https://github.com/mranney/node_redis), but you 
 
 ## Create a Redis cache on Azure
 
-In the [Azure <!-- deleted by customization preview portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Management Portal Preview](https://manage.windowsazure.cn/) <!-- keep by customization: end -->, click **New**, **DATA SERVICE**, and select **Redis Cache**.
+In the [Azure Management Portal](https://manage.windowsazure.cn/), click **New**, **DATA SERVICE**, and select **Redis Cache**.
 
   ![][1]
 
-Enter a DNS hostname. It will have the form `<name>.redis.cache.chinacloudapi.cn`. Click **Create**.
+Enter a DNS hostname. It will have the form `<name>
+  .redis.cache.chinacloudapi.cn`. Click **Create**.
 
   ![][2]
 
 
-Once you create the cache, click on it in the <!-- deleted by customization preview portal --><!-- keep by customization: begin --> Azure Management Portal <!-- keep by customization: end --> to view the cache settings. Click the link under **Keys** and copy the primary key. You need this to authenticate requests.
+  Once you create the cache, [browse to it](/documentation/articles/cache-configure#configure-redis-cache-settings) to view the cache settings. Click the link under **Keys** and copy the primary key. You need this to authenticate requests.
 
   ![][4]
 
 
-## Enable the non-SSL endpoint
+  ## Enable the non-SSL endpoint
 
 
-Click the link under **Ports**, and click **No** for "Allow access only via SSL". This enables the non-SSL port for the cache. The node_redis client currently does not support SSL.
+  Click the link under **Ports**, and click **No** for "Allow access only via SSL". This enables the non-SSL port for the cache. The node_redis client currently does not support SSL.
 
   ![][3]
 
 
-## Add something to the cache and retrieve it
+  ## Add something to the cache and retrieve it
 
-	var redis = require("redis");
+  var redis = require("redis");
 
-    // Add your cache name and access key.
-	var client = redis.createClient(6379,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>' });
+  // Add your cache name and access key.
+  var client = redis.createClient(6379,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>' });
 
 	client.set("foo", "bar", function(err, reply) {
 	    console.log(reply);
@@ -91,4 +92,4 @@ Output:
 [3]: ./media/cache-nodejs-get-started/cache03.png
 [4]: ./media/cache-nodejs-get-started/cache04.png
 
-[Build a Node.js Chat Application with Socket.IO on an Azure Website]: /documentation/articles/web-sites-nodejs-chat-app-socketio
+[Build a Node.js Chat Application with Socket.IO on an Azure Website]: ../app-service-web/web-sites-nodejs-chat-app-socketio.md

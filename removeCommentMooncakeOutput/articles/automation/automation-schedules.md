@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="08/18/2015"
+	ms.date="10/26/2015"
 	wacn.date=""/>
 
 # Schedules in Azure Automation
@@ -48,7 +48,7 @@ The [New-AzureAutomationSchedule](http://msdn.microsoft.com/zh-cn/library/dn6902
 	$startTime = (Get-Date).Date.AddDays(1).AddHours(12)
 	$expiryTime = $startTime.AddYears(1)
 	
-	New-AzureAutomationSchedule –AutomationAccountName $automationAccountName –Name $scheduleName –StartTime $startTime –ExpiryTime $expiryTime –DayInterval 1
+	New-AzureAutomationSchedule -AutomationAccountName $automationAccountName -Name $scheduleName -StartTime $startTime -ExpiryTime $expiryTime -DayInterval 1
 
 
 ## See Also

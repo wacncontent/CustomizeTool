@@ -10,7 +10,7 @@
 <tags 
 	ms.service="app-service-web" 
 	ms.date="09/16/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="11/27/2015"/>
 
 # Azure 网站备份
 
@@ -158,11 +158,11 @@ Web Apps 可以备份以下信息：
 
 3. 使用 [ftp](/documentation/articles/web-sites-deploy#ftp) 或任何其他方法将此文件上载到站点的 `D:\home\site\wwwroot` 目录。如果你愿意，则可以直接在 `http://{yourapp}.scm.chinacloudsites.cn/DebugConsole` 中创建文件并在那里插入内容。
 
-4. 采用通常使用的相同方式运行备份，即[手动](#create-a-manual-backup)或[自动](#configure-automated-backups)。
+4. 采用通常使用的相同方式运行备份，即[手动](/documentation/articles/#create-a-manual-backup)或[自动](#configure-automated-backups)。
 
 现在，`_backup.filter` 中指定的所有文件和文件夹都会从备份中排除。在此示例中，日志文件和 2013 年以及 2014 年的映像文件以及 brand.png 将不再进行备份。
 
->[AZURE.NOTE]采用[还原定期备份](/documentation/articles/web-sites-restore)的相同方式还原站点的部分备份。还原过程会执行正确的操作。
+>[AZURE.NOTE]采用[还原定期备份](web-sites-restore)的相同方式还原站点的部分备份。还原过程会执行正确的操作。
 >
 >还原完整备份后，站点上的所有内容都被替换为备份中的任何内容。如果文件在站点上但不在备份中，则会将其删除。但是当部分备份还原时，位于其中一个黑名单目录或任何黑名单文件中的任何内容都保持不变。
 
@@ -199,7 +199,7 @@ Web 应用的数据库备份存储在 .zip 文件的根目录中。对于 SQL �
 ## 后续步骤
 有关从备份中还原 Azure 网站的信息，请参阅[还原 Azure 网站](/documentation/articles/web-sites-restore/)。
 
-若要开始使用 Azure，请参阅[ Windows Azure 免费试用版](/zh-cn/pricing/1rmb-trial/)。
+若要开始使用 Azure，请参阅 [Windows Azure 免费试用版](/zh-cn/pricing/1rmb-trial/)。
 
 
 <a name="moreaboutstorage"></a>
@@ -211,7 +211,7 @@ Web 应用的数据库备份存储在 .zip 文件的根目录中。对于 SQL �
 
 [如何监视存储帐户](/documentation/articles/storage-monitor-storage-account/)
 
-[了解 Windows Azure 存储计费](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx)
+[了解 Azure 存储计费](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx)
 
 <!-- IMAGES -->
 [ChooseBackupsPage]: ./media/web-sites-backup/01ChooseBackupsPage.png

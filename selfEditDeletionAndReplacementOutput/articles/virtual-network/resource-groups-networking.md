@@ -4,11 +4,11 @@ deleted:
 
 		- Preview Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		, "West Europe", "East Asia", "South East Asia"
 
-reason: ()
+reason: (region diff)
 

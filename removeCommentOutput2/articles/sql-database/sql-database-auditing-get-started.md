@@ -56,45 +56,6 @@ An auditing policy can be defined for a specific database or as a default server
 Before setting up auditing check if you are using a ["Downlevel Client"](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients).
 
 
-##<a id="subheading-2"></a>Set up auditing for your database
-
-1. Launch the [Azure Preview Portal](https://manage.windowsazure.cn) at https://manage.windowsazure.cn. Alternatively, you can also launch the [Classic Azure Management Portal](https://manage.windowsazure.cn/) at https://manage.windowsazure.cn/. Refer to details below.
-
-2. Navigate to the settings blade of the SQL Database / SQL Server you want to audit. In the Settings blade select **Auditing & Threat detection**.
-
-	![Navigation pane][1]
-
-3. In the auditing configuration blade, turn **ON** Auditing.
-
-4. Select **Storage Details** to open the Audit Logs Storage Blade. Select the Azure storage account where logs will be saved, and the retention period. **Tip:** Use the same storage account for all audited databases to get the most out of the auditing reports templates.
-
-	![Navigation pane][2]
-
-5. Click on **Audited Events** to customize which events to audit. In the **Logging by event** blade, click **Success** and **Failure** to log all events, or choose individual event categories.
-
-
-6. You can check the **Inherit Auditing settings from server** checkbox to designate that this database will be audited according to its server's settings. Once you check this option, you will see a link that allows you to view or modify the server auditing settings from this context.
-
-	![Navigation pane][3]
-
-7. Once you've configured your auditing settings, you can turn **ON** Threat Detection and configure the emails to receive security alerts. See the [Threat Detection Getting Started](/documentation/articles/sql-database-threat-detection-get-started) page for more details.
-
-8. Click **Save**.
-
-
-
-##<a id="subheading-3"></a>Analyze audit logs and reports
-
-Audit logs are aggregated in a collection of Store Tables with a **SQLDBAuditLogs** prefix in the Azure storage account you chose during setup. You can view log files using a tool such as [Azure Storage Explorer](http://azurestorageexplorer.codeplex.com/).
-
-A preconfigured report template is available as a [downloadable Excel spreadsheet](http://download.microsoft.com/download/D/8/D/D8D90BA1-977F-466B-A839-7823FF37FD02/01-Azure%20SQL%20DB%20Audit%20Logs%20Report%20Template.xlsx) to help you quickly analyze log data. To use the template on your audit logs, you need Excel 2013 or later and Power Query, which you can download [here](http://www.microsoft.com/download/details.aspx?id=39379).
-
-You can import your audit logs into the Excel template directly from your Azure storage account using Power Query. You can then explore your audit records and create dashboards and reports on top of the log data.
-
-
-![Navigation Pane][4]
-
-
 ##<a id="subheading-4"></a>Set up auditing for your database using the Classic Azure Management Portal
 
 1. Launch the [Classic Azure Management Portal](https://manage.windowsazure.cn/) at https://manage.windowsazure.cn/.

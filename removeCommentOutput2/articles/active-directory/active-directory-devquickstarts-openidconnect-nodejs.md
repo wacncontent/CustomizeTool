@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+	ms.date="11/19/2015"
 	wacn.date=""/>
 
 # Web App Sign In & Sign Out with Azure AD
@@ -83,7 +83,7 @@ var OIDCStrategy = require('passport-azure-ad').OIDCStrategy;
 // add a logger
 
 var log = bunyan.createLogger({
-    name: 'Microsoft OIDC Example Web Application'
+    name: 'Microsoft OIDC Example Web Site'
 });
 ```
 
@@ -127,11 +127,11 @@ passport.use(new OIDCStrategy({
   }
 ));
 ```
-Passport uses a similar pattern for all it’s Strategies (Twitter, Facebook, etc.) that all Strategy writers adhere to. Looking at the strategy you see we pass it a function() that has a token and a done as the parameters. The strategy will dutifully come back to us once it does all it’s work. Once it does we’ll want to store the user and stash the token so we won’t need to ask for it again.
+Passport uses a similar pattern for all it's Strategies (Twitter, Facebook, etc.) that all Strategy writers adhere to. Looking at the strategy you see we pass it a function() that has a token and a done as the parameters. The strategy will dutifully come back to us once it does all it's work. Once it does we'll want to store the user and stash the token so we won't need to ask for it again.
 
 
 > [AZURE.IMPORTANT] 
-The code above takes any user that happens to authenticate to our server. This is known as auto registration. In production servers you wouldn’t want to let anyone in without first having them go through a registration process you decide. This is usually the pattern you see in consumer apps who allow you to register with Facebook but then ask you to fill out additional information. If this wasn’t a sample application, we could have just extracted the email from the token object that is returned and then asked them to fill out additional information. Since this is a test server we simply add them to the in-memory database.
+The code above takes any user that happens to authenticate to our server. This is known as auto registration. In production servers you wouldn't want to let anyone in without first having them go through a registration process you decide. This is usually the pattern you see in consumer apps who allow you to register with Facebook but then ask you to fill out additional information. If this wasn't a sample application, we could have just extracted the email from the token object that is returned and then asked them to fill out additional information. Since this is a test server we simply add them to the in-memory database.
 
 - Next, let's add the methods that will allow us to keep track of the logged in users as required by Passport. This includes serializing and deserializing the user's information:
 
@@ -344,7 +344,6 @@ These simple routes will just pass along the request to our views, including the
 	<a href="/account">Account Info</a></br>
 	<a href="/logout">Log Out</a>
 <% } %>
-
 ```
 
 - Create the `/views/account.ejs` view under the root directory so that we can view additional information that `passport-azuread` has put in the user request.
@@ -364,7 +363,6 @@ These simple routes will just pass along the request to our views, including the
 <p></p>
 <a href="/logout">Log Out</a>
 <% } %>
-
 ```
 
 - Finally, let's make this look pretty by adding a layout. Create the '/views/layout.ejs' view under the root directory
@@ -391,7 +389,7 @@ These simple routes will just pass along the request to our views, including the
 		<% } %>
 		<%- body %>
 	</body>
-</html>```
+</html>``` 
 
 Finally, build and run your app! 
 

@@ -4,19 +4,19 @@ deleted:
 
 		or **Premium**
 
-reason: ()
+reason: (Premium mode)
 
 deleted:
 
 		[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
-reason: ()
+reason: (terminology: Azure App Service Web)
 
 deleted:
 
 		or **Premium**
 
-reason: ()
+reason: (Premium mode)
 
 deleted:
 
@@ -42,13 +42,13 @@ deleted:
 		
 		3. Execute a code push to that deployment slot. Auto Swap will happen after a short time and the update will be reflected at your target slot's URL.
 
-reason: ()
+reason: (auto swap)
 
 deleted:
 
 		>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
-reason: ()
+reason: (“Try it now”)
 
 deleted:
 
@@ -56,7 +56,7 @@ deleted:
 		* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 		* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-reason: ()
+reason: (terminology: Azure App Service Web, the new Ibiza portal)
 
 replacement:
 
@@ -68,7 +68,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -125,5 +125,5 @@ replaced by:
 			
 		5. Click the site URL in the dashboard view. Notice the the deployment slot has its own hostname and is also a live site. To limit public access to the deployment slot, see [Azure Web Sites – block web access to non-production deployment slots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/).
 
-reason: ()
+reason: (the new Ibiza portal)
 

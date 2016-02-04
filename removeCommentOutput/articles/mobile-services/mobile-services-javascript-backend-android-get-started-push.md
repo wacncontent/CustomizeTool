@@ -55,7 +55,7 @@ If you will be testing with an older device, then consult [Set Up Google Play Se
 [AZURE.INCLUDE [mobile-services-android-getting-started-with-push](../includes/mobile-services-android-getting-started-with-push.md)]
 
 
-## Update the registered insert script in the Management Portal
+## Update the registered insert script in the Azure Management Portal
 
 [AZURE.INCLUDE [mobile-services-javascript-backend-android-push-insert-script](../includes/mobile-services-javascript-backend-android-push-insert-script.md)]
 
@@ -140,19 +140,19 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 <!-- URLs. -->
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
-[Get started with authentication]: /documentation/articles/mobile-services-android-get-started-users
+[Get started with Mobile Services]: mobile-services-android-get-started.md
+[Get started with authentication]: mobile-services-android-get-started-users.md
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js
 [Push notifications to app users]: /develop/mobile/tutorials/push-notifications-to-users-js
 [Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-js
 [JavaScript and HTML]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js
 [Set Up Google Play Services SDK]: http://go.microsoft.com/fwlink/?LinkId=389801
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[How to use the Android client library for Mobile Services]: /documentation/articles/mobile-services-android-how-to-use-client-library
+[How to use the Android client library for Mobile Services]: mobile-services-android-how-to-use-client-library.md
 
 [gcm object]: https://msdn.microsoft.com/zh-cn/library/dn126137.aspx
 
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
-[What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
-[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-android-send-breaking-news
-[Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-android-send-localized-breaking-news
+[What are Notification Hubs?]: ../notification-hubs-overview.md
+[Send broadcast notifications to subscribers]: ../notification-hubs-android-send-breaking-news.md
+[Send template-based notifications to subscribers]: ../notification-hubs-android-send-localized-breaking-news.md

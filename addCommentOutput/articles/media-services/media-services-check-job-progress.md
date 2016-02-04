@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #How to: Check Job Progress
@@ -135,9 +135,9 @@ The code example in this section does the following:
 1. Waits for the job to get to the Finished state by checking the queue every 10 seconds. Deletes messages after they have been processed.
 1. Deletes the queue and the notification end point.
 
->[AZURE.NOTE]The recommended way to monitor a job’s state is by listening to notification messages, as shown in the following example.
+>[AZURE.NOTE]The recommended way to monitor a job's state is by listening to notification messages, as shown in the following example.
 >
->Alternatively, you could check on a job’s state by using the **IJob.State** property.  Note that a notification message about a job’s completion may arrive before the State on **IJob** is set to **Finished**. The **IJob.State**  property will reflect the accurate state with a slight delay.
+>Alternatively, you could check on a job's state by using the **IJob.State** property.  Note that a notification message about a job's completion may arrive before the State on **IJob** is set to **Finished**. The **IJob.State**  property will reflect the accurate state with a slight delay.
 
 	
 	using System;
@@ -425,13 +425,12 @@ The example above produced the following output. You values will vary.
 	State: Finished
 	
 <!-- deleted by customization
- 
+
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
 
-
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 -->

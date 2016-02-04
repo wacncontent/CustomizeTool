@@ -11,10 +11,13 @@
 
 <tags
 	ms.service="billing"
-	ms.date="10/21/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # How to cancel your Azure subscription
+
+>[AZURE.NOTE]If you cancelled your subscription by mistake and need to get it reactivated, you can contact [Microsoft Support](http://go.microsoft.com/fwlink/?linkid=544831&clcid=0x409) for assistance.
+
 If you cancel your subscription, all your services will be deleted immediately. Make sure you back up the data you want to save before you cancel.  
 
 1. Log on to the [Azure Account Portal](https://account.windowsazure.cn/subscriptions) as the Account Administrator.

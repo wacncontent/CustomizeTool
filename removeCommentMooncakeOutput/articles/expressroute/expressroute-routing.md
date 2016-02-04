@@ -7,14 +7,14 @@
    manager="carolz"
    editor=""/>
 <tags
-	ms.service="expressroute"
-	ms.date="10/06/2015"
-	wacn.date=""/>
+   ms.service="expressroute"
+   ms.date="10/06/2015"
+   wacn.date=""/>
 
 
 # ExpressRoute routing requirements  
 
-To connect to Microsoft cloud services using ExpressRoute, you’ll need to setup and manage routing. Some connectivity providers offer setting up and managing routing as a managed service. Check with your connectivity provider to see if they offer this service. If they don't, you must adhere to the requirements described below. 
+To connect to Microsoft cloud services using ExpressRoute, youâll need to setup and manage routing. Some connectivity providers offer setting up and managing routing as a managed service. Check with your connectivity provider to see if they offer this service. If they don't, you must adhere to the requirements described below. 
 
 Refer to the [Circuits and routing domains](/documentation/articles/expressroute-circuit-peerings) article for a description of the routing sessions that need to be setup in order to facilitate connectivity.
 
@@ -34,7 +34,7 @@ You can use either private IP addresses or public IP addresses to configure the 
  - If a /29 subnet is used, it will be split into two /30 subnets. 
 	 - The first /30 subnet will be used for the primary link and the second /30 subnet will be used for the secondary link.
 	 - For each of the /30 subnets, you must the first IP address of the /30 subnet on your router. Microsoft will use the second IP address of the /30 subnet to setup a BGP session.
-	 - You must setup both BGP sessions for our [availability SLA](http://azure.microsoft.com/support/legal/sla/) to be valid.  
+	 - You must setup both BGP sessions for our [availability SLA](/support/legal/sla/) to be valid.  
 
 #### Example for private peering
 
@@ -55,7 +55,7 @@ You must use public IP addresses that you own for setting up the BGP sessions. M
 - If a /29 subnet is used, it will be split into two /30 subnets. 
 	- The first /30 subnet will be used for the primary link and the second /30 subnet will be used for the secondary link.
 	- For each of the /30 subnets, you must use the first IP address of the /30 subnet on your router. Microsoft will use the second IP address of the /30 subnet to setup a BGP session.
-	- You must setup both BGP sessions for our [availability SLA](http://azure.microsoft.com/support/legal/sla/) to be valid.
+	- You must setup both BGP sessions for our [availability SLA](/support/legal/sla/) to be valid.
 
 Make sure that your IP address and AS number are registered to you in one of the registries listed below.
 
@@ -125,10 +125,10 @@ Microsoft will tag prefixes advertised through public peering and Microsoft peer
 | **South America** | Brazil South | 12076:3014 |
 | **Europe** | China North | 12076:3003 |
 |    | West Europe | 12076:3002 |
-| **Asia Pacific** | East Asia | 12076:3010 |
-|    | Southeast Asia | 12076:3011 |
+| **Asia Pacific** | China East | 12076:3010 |
+|    | China North | 12076:3011 |
 | **Japan** | Japan East | 12076:3012 |
-|    | Japan West | 12076:3013 |
+|    | China East | 12076:3013 |
 | **Australia** | Australia East | 12076:3015 |
 |    | Australia Southeast | 12076:3016 |
 | **India** | India South | 12076:3019 |
@@ -136,6 +136,8 @@ Microsoft will tag prefixes advertised through public peering and Microsoft peer
 |    | India Central | 12076:3017 |
 
 All routes advertised from Microsoft will be tagged with the appropriate community value. 
+
+>[AZURE.IMPORTANT] Global prefixes will be tagged with an appropriate community value and will be advertised only when ExpressRoute premium add-on is enabled.
 
 
 In addition to the above, Microsoft will also tag prefixes based on the service they belong to. This applies only to the Microsoft peering. The table below provides a mapping of service to BGP community value.
@@ -147,12 +149,11 @@ In addition to the above, Microsoft will also tag prefixes based on the service 
 | **Skype For Business** | 12076:5030 |
 | **CRM Online** | 12076:5040 |
 | **Other Office 365 Services** | 12076:5100 |
-| **Global prefixes / Anycast** | 12076:5200 |
 
 
 ### Manipulating routing preferences
 
-Microsoft does not honor any BGP community values that you set. You are required to setup a pair of BGP sessions per peering to ensure that the requirements for the [availability SLA](http://azure.microsoft.com/support/legal/sla/) are met. You can can, however, configure your network to prefer one link over the other by relying on standard BGP route manipulation techniques. You can apply different BGP local preferences to each link to favor one path over the other from your network to Microsoft. You can prepend the AS-PATH on route advertisements to influence traffic flow from Microsoft into your network.
+Microsoft does not honor any BGP community values that you set. You are required to setup a pair of BGP sessions per peering to ensure that the requirements for the [availability SLA](/support/legal/sla/) are met. You can can, however, configure your network to prefer one link over the other by relying on standard BGP route manipulation techniques. You can apply different BGP local preferences to each link to favor one path over the other from your network to Microsoft. You can prepend the AS-PATH on route advertisements to influence traffic flow from Microsoft into your network.
 
 ## Next steps
 

@@ -16,7 +16,7 @@
 # Create Windows virtual machines with Powershell and the classic deployment model 
 
 > [AZURE.SELECTOR]
-- [Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [Azure Management Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 - [Powershell - Windows](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 - [PowerShell - Linux](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
 
@@ -35,7 +35,7 @@ For the companion topic to configure Linux-based virtual machines, see [Use Azur
 
 ## Step 1: Install Azure PowerShell
 
-If you haven't done so already, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell) to install Azure PowerShell on your local computer. Then, open an Azure PowerShell command prompt.
+If you haven't done so already, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) to install Azure PowerShell on your local computer. Then, open an Azure PowerShell command prompt.
 
 ## Step 2: Set your subscription and storage account
 
@@ -43,7 +43,7 @@ Set your Azure subscription and storage account by running these commands at the
 
 	$subscr="<subscription name>"
 	$staccount="<storage account name>"
-	Select-AzureSubscription -SubscriptionName $subscr –Current
+	Select-AzureSubscription -SubscriptionName $subscr -Current
 	Set-AzureSubscription -SubscriptionName $subscr -CurrentStorageAccountName $staccount
 
 You can get the correct subscription name from the SubscriptionName property of the output of the **Get-AzureSubscription** command. You can get the correct storage account name from the Label property of the output of the **Get-AzureStorageAccount** command after you run the **Select-AzureSubscription** command.
@@ -105,8 +105,8 @@ Optionally, for a standalone Windows computer, specify the local administrator a
 
 Optionally, to add the Windows computer to an existing Active Directory domain, specify the local administrator account and password, the domain, and the name and password of a domain account.
 
-	$cred1=Get-Credential –Message "Type the name and password of the local administrator account."
-	$cred2=Get-Credential –Message "Now type the name (not including the domain) and password of an account that has permission to add the machine to the domain."
+	$cred1=Get-Credential -Message "Type the name and password of the local administrator account."
+	$cred2=Get-Credential -Message "Now type the name (not including the domain) and password of an account that has permission to add the machine to the domain."
 	$domaindns="<FQDN of the domain that the machine is joining>"
 	$domacctdomain="<domain of the account that has permission to add the machine to the domain>"
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain $domacctdomain -DomainUserName $cred2.GetNetworkCredential().Username -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain $domaindns
@@ -119,7 +119,7 @@ Optionally, assign the virtual machine a specific IP address, known as a static 
 
 You can verify that a specific IP address is available with:
 
-	Test-AzureStaticVNetIP –VNetName <VNet name> –IPAddress <IP address>
+	Test-AzureStaticVNetIP -VNetName <VNet name> -IPAddress <IP address>
 
 Optionally, assign the virtual machine to a specific subnet in an Azure virtual network.
 
@@ -142,8 +142,8 @@ Optionally, add the virtual machine to an existing load-balanced set for externa
 	$pubport=<port number of the external port>
 	$endpointname="<name of the endpoint>"
 	$lbsetname="<name of the existing load-balanced set>"
-	$probeprotocol="<Specify one: tcp, udp>"
-	$probeport=<TCP or UDP port number of probe traffic>
+	$probeprotocol="<Specify one: tcp, http>"
+	$probeport=<TCP or HTTP port number of probe traffic>
 	$probepath="<URL path for probe traffic>"
 	$vm1 | Add-AzureEndpoint -Name $endpointname -Protocol $prot -LocalPort $localport -PublicPort $pubport -LBSetName $lbsetname -ProbeProtocol $probeprotocol -ProbePort $probeport -ProbePath $probepath
 
@@ -151,15 +151,15 @@ Finally, choose one of these required command blocks for creating the virtual ma
 
 Option 1: Create the virtual machine in an existing cloud service.
 
-	New-AzureVM –ServiceName "<short name of the cloud service>" -VMs $vm1
+	New-AzureVM -ServiceName "<short name of the cloud service>" -VMs $vm1
 
-The short name of the cloud service is the name that appears in the list of Cloud Services in the Azure Management Portal or in the list of Resource Groups in the Azure Preview Portal.
+The short name of the cloud service is the name that appears in the list of Cloud Services in the Azure Management Portal or in the list of Resource Groups in the Azure Management Portal.
 
 Option 2: Create the virtual machine in an existing cloud service and virtual network.
 
 	$svcname="<short name of the cloud service>"
 	$vnetname="<name of the virtual network>"
-	New-AzureVM –ServiceName $svcname -VMs $vm1 -VNetName $vnetname
+	New-AzureVM -ServiceName $svcname -VMs $vm1 -VNetName $vnetname
 
 ## Step 5: Run your command set
 
@@ -211,7 +211,7 @@ Here is the corresponding Azure PowerShell command set to create this virtual ma
 
 	$svcname="Azure-TailspinToys"
 	$vnetname="AZDatacenter"
-	New-AzureVM –ServiceName $svcname -VMs $vm1 -VNetName $vnetname
+	New-AzureVM -ServiceName $svcname -VMs $vm1 -VNetName $vnetname
 
 ### Example 2
 
@@ -232,8 +232,8 @@ Here is the corresponding Azure PowerShell command set to create this virtual ma
 	$vmsize="Large"
 	$vm1=New-AzureVMConfig -Name $vmname -InstanceSize $vmsize -ImageName $image
 
-	$cred1=Get-Credential –Message "Type the name and password of the local administrator account."
-	$cred2=Get-Credential –Message "Now type the name (not including the domain) and password of an account that has permission to add the machine to the domain."
+	$cred1=Get-Credential -Message "Type the name and password of the local administrator account."
+	$cred2=Get-Credential -Message "Now type the name (not including the domain) and password of an account that has permission to add the machine to the domain."
 	$domaindns="corp.contoso.com"
 	$domacctdomain="CORP"
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain $domacctdomain -DomainUserName $cred2.GetNetworkCredential().Username -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain $domaindns
@@ -248,7 +248,7 @@ Here is the corresponding Azure PowerShell command set to create this virtual ma
 
 	$svcname="Azure-TailspinToys"
 	$vnetname="AZDatacenter"
-	New-AzureVM –ServiceName $svcname -VMs $vm1 -VNetName $vnetname
+	New-AzureVM -ServiceName $svcname -VMs $vm1 -VNetName $vnetname
 
 
 ## Additional resources
@@ -259,7 +259,7 @@ Here is the corresponding Azure PowerShell command set to create this virtual ma
 
 [Overview of Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx)
 
-[How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)
+[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
 
 
 

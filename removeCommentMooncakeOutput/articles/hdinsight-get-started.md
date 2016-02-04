@@ -21,10 +21,10 @@
 # Get started using Hadoop with Hive in HDInsight on Windows
 
 > [AZURE.SELECTOR]
-- [Windows](/documentation/articles/hdinsight-get-started)
+- [Windows](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 - [Linux](/documentation/articles/hdinsight-hadoop-linux-get-started)
 
-To get you started quickly using HDInsight, this tutorial shows you how to run a Hive query to extract meaningful information about mobile handset use from unstructured data in a Hadoop cluster. Then, you’ll analyze the results in Microsoft Excel.
+To get you started quickly using HDInsight, this tutorial shows you how to run a Hive query to extract meaningful information about mobile handset use from unstructured data in a Hadoop cluster. Then, youâll analyze the results in Microsoft Excel.
 
 
 > [AZURE.NOTE] If you are new to Hadoop and Big Data, you can read more about the terms [Apache Hadoop][apache-hadoop], [MapReduce][apache-mapreduce], [HDFS][apache-hdfs], and  [Hive][apache-hive]. To understand how HDInsight enables Hadoop in Azure, see [Introduction to Hadoop in HDInsight][hadoop-hdinsight-intro].
@@ -90,7 +90,7 @@ To simplify this tutorial, only the default blob and the default storage account
 
 4. Wait until the **STATUS** of the new storage account changes to **Online**.
 5. Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page.
-7. Make a note of the **STORAGE ACCOUNT NAME** and the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**—either of the keys work).  You will need them later in the tutorial.
+7. Make a note of the **STORAGE ACCOUNT NAME** and the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**âeither of the keys work).  You will need them later in the tutorial.
 
 
 For more information, see
@@ -252,16 +252,16 @@ In this tutorial, you learned how to provision a cluster with HDInsight, run a M
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
 
-[hdinsight-get-started-30]: /documentation/articles/hdinsight-get-started-30/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-get-started-30]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1-30/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
-[hdinsight-emulator]: /documentation/articles/hdinsight-get-started-emulator/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started/
 [hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
 [hadoop-hdinsight-intro]: /documentation/articles/hdinsight-hadoop-introduction/
@@ -278,12 +278,12 @@ In this tutorial, you learned how to provision a cluster with HDInsight, run a M
 [apache-hive]: https://cwiki.apache.org/confluence/display/Hive/Home%3bjsessionid=AF5B37E667D7DBA633313BB2280C9072
 [apache-mapreduce]: http://wiki.apache.org/hadoop/MapReduce
 [apache-hdfs]: http://hadoop.apache.org/docs/r1.0.4/hdfs_design.html
-[hdinsight-hbase-custom-provision]: /documentation/articles/hdinsight-hbase-get-started/
+[hdinsight-hbase-custom-provision]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
 
 
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[powershell-install-configure]: /documentation/articles/install-configure-powershell/
-[powershell-open]: /documentation/articles/install-configure-powershell/#Install
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
+[powershell-open]: /documentation/articles/powershell-install-configure/#Install
 
 
 [img-hdi-dashboard]: ./media/hdinsight-get-started/HDI.dashboard.png

@@ -4,13 +4,13 @@ deleted:
 
 		for Mac, Linux and Windows
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		* **Linux-based HDInsight**: Connect using SSH ([the SSH command](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix#connect-to-a-linux-based-hdinsight-cluster) or [PuTTY](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows#connect-to-a-linux-based-hdinsight-cluster))
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -22,5 +22,5 @@ deleted:
 		
 		For more information, see the [Azure Data Factory documentation](/documentation/services/data-factory/).
 
-reason: ()
+reason: ({data factory})
 

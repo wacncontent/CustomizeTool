@@ -36,11 +36,11 @@ To complete this tutorial, you need the following:
 
 ## Create a new universal Windows app
 
-Once you have created your mobile service, you can follow an easy quickstart in the Management Portal to either create a new universal Windows app or modify an existing Windows Store or Windows Phone app project to connect to your mobile service.
+Once you have created your mobile service, you can follow an easy quickstart in the Azure Management Portal to either create a new universal Windows app or modify an existing Windows Store or Windows Phone app project to connect to your mobile service.
 
 In this section you will create a new universal Windows app that is connected to your mobile service.
 
-1.  In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+1.  In the [Azure Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
 
 
 2. In the quickstart tab, click **Windows** under **Choose platform** and expand **Create a new Windows Store app**.
@@ -91,10 +91,10 @@ Now that you have completed the quickstart, learn how to perform additional impo
 
 
 <!-- URLs. -->
-[Get started with offline data sync]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
-[Get started with authentication]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
-[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+[Get started with offline data sync]: mobile-services-windows-store-dotnet-get-started-offline-data.md
+[Get started with authentication]: ../mobile-services-windows-store-dotnet-get-started-users.md
+[Get started with push notifications]: ../mobile-services-javascript-backend-windows-store-dotnet-get-started-push.md
 [Visual Studio 2013 Express for Windows]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn/
  

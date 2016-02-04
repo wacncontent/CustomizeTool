@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Tutorial - Get started with the Azure Batch .NET Library | Windows Azure"
+	pageTitle="Tutorial - Get Started with the Azure Batch .NET Library | Windows Azure"
 	description="Learn basic concepts about Azure Batch and how to develop for the Batch service with a simple scenario"
 	services="batch"
 	documentationCenter=".net"
@@ -22,9 +22,9 @@ Start working with the Azure Batch .NET Library by creating a console applicatio
 
 	- **Azure account** - You can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
 
-	- **Batch account** - See the **Batch Account** section of [Azure Batch technical overview](/documentation/articles/batch-technical-overview).
+	- **Batch account** - See [Create and manage an Azure Batch account](/documentation/articles/batch-account-create-portal).
 
-	- **Storage account** - See the **Create a storage account** section of [About Azure storage accounts](/documentation/articles/storage-create-storage-account). In this tutorial, you create a container in this account named **testcon1**.
+	- **Storage account** - See the **Create a storage account** section of [About Azure Storage Accounts](/documentation/articles/storage-create-storage-account). In this tutorial, you create a container in this account named **testcon1**.
 
 - A Visual Studio console application project:
 
@@ -38,7 +38,7 @@ Start working with the Azure Batch .NET Library by creating a console applicatio
 
 	2. Search online for **WindowsAzure.Storage** and then click **Install** to install the Azure Storage package and dependencies.
 
-> [AZURE.TIP] This tutorial makes use of some of the core Batch concepts discussed in [API basics for Azure Batch](/documentation/articles/batch-api-basics), highly recommended reading for those new to Batch.
+> [AZURE.TIP] This tutorial makes use of some of the core Batch concepts discussed in [Azure Batch feature overview](/documentation/articles/batch-api-basics), highly recommended reading for those new to Batch.
 
 ## Step 1: Create and upload the support files
 
@@ -153,7 +153,7 @@ To learn more about Blob storage, see [How to use Blob storage from .NET](/docum
 
 3. Create a new text file named **taskdata3.txt**, copy the following text to it, and then save the file.
 
-	Azure Web Sites provide a scalable, reliable, and easy-to-use environment for hosting web applications. Select from a range of frameworks and templates to create a web site in seconds. Use any tool or OS to develop your site with .NET, PHP, Node.js or Python. Choose from a variety of source control options including TFS, GitHub, and BitBucket to set up continuous integration and develop as a team. Expand your site functionality over time by leveraging additional Azure managed services like storage, CDN, and SQL Database.
+	Azure Web Sites provide a scalable, reliable, and easy-to-use environment for hosting web sites. Select from a range of frameworks and templates to create a web site in seconds. Use any tool or OS to develop your site with .NET, PHP, Node.js or Python. Choose from a variety of source control options including TFS, GitHub, and BitBucket to set up continuous integration and develop as a team. Expand your site functionality over time by leveraging additional Azure managed services like storage, CDN, and SQL Database.
 
 ### Upload the files to the Storage container
 
@@ -161,26 +161,26 @@ To learn more about Blob storage, see [How to use Blob storage from .NET](/docum
 
 		static void CreateFiles()
 		{
-			CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-				ConfigurationManager.AppSettings["StorageConnectionString"]);
-			CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
-			CloudBlobContainer container = blobClient.GetContainerReference("testcon1");
+		  CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+			ConfigurationManager.AppSettings["StorageConnectionString"]);
+		  CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+		  CloudBlobContainer container = blobClient.GetContainerReference("testcon1");
 
-			CloudBlockBlob taskData1 = container.GetBlockBlobReference("taskdata1");
-			CloudBlockBlob taskData2 = container.GetBlockBlobReference("taskdata2");
-			CloudBlockBlob taskData3 = container.GetBlockBlobReference("taskdata3");
-			taskData1.UploadFromFile("..\\..\\taskdata1.txt", FileMode.Open);
-			taskData2.UploadFromFile("..\\..\\taskdata2.txt", FileMode.Open);
-			taskData3.UploadFromFile("..\\..\\taskdata3.txt", FileMode.Open);
+		  CloudBlockBlob taskData1 = container.GetBlockBlobReference("taskdata1");
+		  CloudBlockBlob taskData2 = container.GetBlockBlobReference("taskdata2");
+		  CloudBlockBlob taskData3 = container.GetBlockBlobReference("taskdata3");
+		  taskData1.UploadFromFile("..\\..\\taskdata1.txt", FileMode.Open);
+		  taskData2.UploadFromFile("..\\..\\taskdata2.txt", FileMode.Open);
+	  	taskData3.UploadFromFile("..\\..\\taskdata3.txt", FileMode.Open);
 
 			CloudBlockBlob storageassembly = container.GetBlockBlobReference("Microsoft.WindowsAzure.Storage.dll");
 			storageassembly.UploadFromFile("Microsoft.WindowsAzure.Storage.dll", FileMode.Open);
 
 			CloudBlockBlob dataprocessor = container.GetBlockBlobReference("ProcessTaskData.exe");
-			dataprocessor.UploadFromFile("..\\..\\..\\ProcessTaskData\\bin\\debug\\ProcessTaskData.exe", FileMode.Open);
+		  dataprocessor.UploadFromFile("..\\..\\..\\ProcessTaskData\\bin\\debug\\ProcessTaskData.exe", FileMode.Open);
 
-			Console.WriteLine("Uploaded the files. Press Enter to continue.");
-			Console.ReadLine();
+		  Console.WriteLine("Uploaded the files. Press Enter to continue.");
+		  Console.ReadLine();
 		}
 
 2. Add this code to Main that calls the method you just added:
@@ -191,7 +191,7 @@ To learn more about Blob storage, see [How to use Blob storage from .NET](/docum
 
 ## Step 2. Add a pool to your Batch account
 
-A pool of compute nodes is the first set of resources that you must create when you want to run tasks.
+A pool of compute nodes is the first set of resources that you must create when you want to run tasks.  
 
 1.	Add these using directives to the top of Program.cs in the GettingStarted project:
 
@@ -204,7 +204,7 @@ A pool of compute nodes is the first set of resources that you must create when 
 			BatchSharedKeyCredentials cred = new BatchSharedKeyCredentials("[account-url]", "[account-name]", "[account-key]");
 			BatchClient client = BatchClient.Open(cred);
 
-	Replace the bracketed values with those associated with your Batch account, each of which can be found in the [Azure Preview portal](https://manage.windowsazure.cn). To locate these values, log in to the [Azure Preview portal](https://manage.windowsazure.cn) and:
+	Replace the bracketed values with those associated with your Batch account, each of which can be found in the [Azure Management portal](https://manage.windowsazure.cn). To locate these values, log in to the [Azure Management portal](https://manage.windowsazure.cn) and:
 
 	- **[account-name]** - Click **Batch Accounts**, select the Batch account you created earlier
 	- **[account-url]** - Within the Batch account blade, click **Properties** > **URL**
@@ -222,7 +222,7 @@ A pool of compute nodes is the first set of resources that you must create when 
 			  newPool.Commit();
 			  Console.WriteLine("Created the pool. Press Enter to continue.");
 			  Console.ReadLine();
-		  	}
+		  }
 
 4. Add this code to Main that calls the method you just added:
 

@@ -3,12 +3,12 @@
    description="Learn how to add new roles to your Azure cloud service project or remove existing roles from it by using Visual Studio."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="09/08/2015"
+	ms.date="12/19/2015"
 	wacn.date=""/>
 
 # Managing roles in the Azure cloud services projects with Visual Studio
@@ -27,7 +27,7 @@ In the **Roles** node of the cloud service project in Solution Explorer, open th
 
 ## Removing and adding roles in your cloud service
 
-If you remove a role from your cloud service project but later decide to add the role back to the project, only the role declaration and basic attributes, such as endpoints and diagnostics information, are added. No additional resources or references are added to the ServiceDefinition.csdef file or to the ServiceConfiguration.cscfg file. If you want to add this information, you’ll have to manually add it back into these files.
+If you remove a role from your cloud service project but later decide to add the role back to the project, only the role declaration and basic attributes, such as endpoints and diagnostics information, are added. No additional resources or references are added to the ServiceDefinition.csdef file or to the ServiceConfiguration.cscfg file. If you want to add this information, youâll have to manually add it back into these files.
 
 For example, you might remove a web service role and later you decide to add this role back into your solution. If you do this, an error will occur. To prevent this error, you have to add the `<LocalResources>` element shown in the following XML back into the ServiceDefinition.csdef file. Use the name of the web service role that you added back into the project as part of the name attribute for the **<LocalStorage>** element. In this example the name of the web service role is **WCFServiceWebRole1**.
 

@@ -9,10 +9,10 @@
 	tags=""/>
 
 
-<tags
-	ms.service="sql-database"
-	ms.date="10/13/2015"
-	wacn.date=""/>
+<tags 
+	ms.service="sql-database" 
+	ms.date="10/13/2015" 
+	wacn.date="09/15/2015"/>
 
 
 # Extended events in SQL Database
@@ -40,7 +40,7 @@ This topic explains how the implementation of extended events in Azure SQL Datab
 This topic assumes you already have some knowledge of:
 
 
-- [Azure SQL Database service](/home/features/sql-database/).
+- [Azure SQL Database service](/documentation/services/sql-databases/).
 
 
 - [Extended events](http://msdn.microsoft.com/zh-cn/library/bb630282.aspx) in Microsoft SQL Server.

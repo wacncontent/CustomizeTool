@@ -7,13 +7,16 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="07/21/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="11/10/2015" 
 	wacn.date=""/>
 
 # Add Mobile Services to an existing app
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
 ##Overview
@@ -30,7 +33,7 @@ The mobile service that you will create in this tutorial is a .NET backend mobil
 
 To complete this tutorial, you need the following:
 
-* An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-universal-dotnet-get-started-data%2F).
+* An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
 * <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" target="_blank">Visual Studio 2013</a> (Update 3 or a later version). 
 
 ##Download the GetStartedWithData project
@@ -63,7 +66,7 @@ At this point, both the Windows Store and Windows Phone Store apps are connected
 
 ##Update the app to use the mobile service
 
-In this section you will update the universal Windows app to use the mobile service as a backend service for the application. You only need to make changes to the MainPage.xaml.cs project file in the GetStartedWithData.Shared project folder. 
+In this section you will update the universal Windows app to use the mobile service as a backend service for the application. You only need to make changes to the MainPage.cs project file in the GetStartedWithData.Shared project folder. 
 
 [AZURE.INCLUDE [mobile-services-windows-dotnet-update-data-app](../includes/mobile-services-windows-dotnet-update-data-app.md)]
 
@@ -97,15 +100,15 @@ This tutorial demonstrated the basics of enabling a universal Windows app projec
 
 * [Mobile Services C# How-to Conceptual Reference](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
   <br/>Learn more about how to use Mobile Services with .NET.
-
+  
 
 <!-- Images. -->
 
 
 
 <!-- URLs. -->
-[Validate and modify data with scripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
-[Refine queries with paging]: /develop/mobile/tutorials/add-paging-to-data-dotnet
+[Validate and modify data with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts
+[Refine queries with paging]: /documentation/articles/mobile-services-windows-store-dotnet-add-paging-data
 [Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
@@ -113,9 +116,8 @@ This tutorial demonstrated the basics of enabling a universal Windows app projec
 [Get started with offline data sync]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
 [Developer Code Samples site]:  https://code.msdn.microsoft.com:443/Get-Started-with-Data-in-0e863e57
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [MobileServiceClient class]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
-  
+ 

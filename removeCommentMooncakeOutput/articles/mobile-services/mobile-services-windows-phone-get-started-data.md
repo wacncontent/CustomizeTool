@@ -7,28 +7,28 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="07/25/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="11/11/2015" 
 	wacn.date=""/>
 
 
 # Add Mobile Services to an existing app
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
 ##Overview
 
 This topic shows you how to use Azure Mobile Services to leverage data in a Windows Phone 8 app. In this tutorial, you will download an app that stores data in memory, create a new mobile service, integrate the mobile service with the app, and then login to the Azure Management Portal to view changes to data made when running the app.
 
-You can also see Nick Harris demonstrate this in the following video:
->[AZURE.VIDEO mobile-get-started-with-data-windows-phone]
-
 ##Prerequisites 
 
 + Visual Studio 2012 Express for Windows Phone 8 and the [Windows Phone 8 SDK] running on Windows 8. To complete this tutorial to create a Windows Phone 8.1 app, you must use Visual Studio 2013 Update 2, or a later version. 
 
-+ An Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A756A2826&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Farticles%2Fdocumentation%2Fmobile-services-windows-phone-get-started-data%2F).
++ An Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/>Azure Trial</a>.
 
 ##<a name="download-app"></a>Download the GetStartedWithData project
 
@@ -50,7 +50,7 @@ This tutorial is built on the [GetStartedWithData app][Developer Code Samples si
 
    	Notice that the saved text is displayed in the list below.
 
-##<a name="create-service"></a>Create a new mobile service in the Management Portal
+##<a name="create-service"></a>Create a new mobile service in the Azure Management Portal
 
 [AZURE.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
@@ -70,7 +70,7 @@ Now that your mobile service is ready, you can update the app to store items in 
 
   	This adds the Mobile Services client library to the project.
 
-3. In the Management Portal, click **Mobile Services**, and then click the mobile service you just created.
+3. In the [Azure Management Portal], click **Mobile Services**, and then click the mobile service you just created.
 
 4. Click the **Dashboard** tab and make a note of the **Site URL**, then click **Manage keys** and make a note of the **Application key**.
 
@@ -91,12 +91,12 @@ Now that your mobile service is ready, you can update the app to store items in 
 
   	This creates a new instance of **MobileServiceClient** that is used to access your mobile service.
 
-6. In the file MainPage.xaml.cs, add or uncomment the following `using` statements:
+6. In the file MainPage.cs, add or uncomment the following `using` statements:
 
        	using Microsoft.WindowsAzure.MobileServices;
 		using Newtonsoft.Json;
 
-7. In this same file, replace the **TodoItem** class definition with the following code:
+7. In this DataModel folder, replace the **TodoItem** class definition with the following code:
 
         public class TodoItem
         {
@@ -109,7 +109,7 @@ Now that your mobile service is ready, you can update the app to store items in 
             public bool Complete { get; set; }
         }
 
-7. Comment the line that defines the existing **items** collection, then uncomment the following lines:
+9. Comment the line that defines the existing **items** collection, then uncomment the following lines:
 
         private MobileServiceCollection<TodoItem, TodoItem> items;
         private IMobileServiceTable<TodoItem> todoTable = 
@@ -117,19 +117,19 @@ Now that your mobile service is ready, you can update the app to store items in 
 
    	This code creates a mobile services-aware binding collection (**items**) and a proxy class for the SQL Database table **TodoItem** (**todoTable**). 
 
-7. In the **InsertTodoItem** method, remove the line of code that sets the **TodoItem**.**Id** property, add the **async** modifier to the method, and uncomment the following line of code:
+10. In the **InsertTodoItem** method, remove the line of code that sets the **TodoItem**.**Id** property, add the **async** modifier to the method, and uncomment the following line of code:
 
         await todoTable.InsertAsync(todoItem);
 
   	This code inserts a new item into the table.
 
-8. In the **RefreshTodoItems** method, add the **async** modifier to the method, then uncomment the following line of code:
+11. In the **RefreshTodoItems** method, add the **async** modifier to the method, then uncomment the following line of code:
 
         items = await todoTable.ToCollectionAsync();
 
    	This sets the binding to the collection of items in the todoTable, which contains all TodoItem objects returned from the mobile service. 
 
-9. In the **UpdateCheckedTodoItem** method, add the **async** modifier to the method, and uncomment the following line of code:
+12. In the **UpdateCheckedTodoItem** method, add the **async** modifier to the method, and uncomment the following line of code:
 
          await todoTable.UpdateAsync(item);
 
@@ -145,7 +145,7 @@ Now that the app has been updated to use Mobile Services for backend storage, it
 
    	This sends a new item as an insert to the mobile service.
 
-3. In the [Management Portal], click **Mobile Services**, and then click your mobile service.
+3. In the [Azure Management Portal], click **Mobile Services**, and then click your mobile service.
 
 4. Click the **Data** tab, then click **Browse**.
 
@@ -164,7 +164,7 @@ This tutorial demonstrated the basics of enabling a Windows Phone 8 app to work 
 
 * [Add push notifications to your app](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push) 
   <br/>Learn how to send a very basic push notification to your app with Mobile Services.
-
+ 
 * [Mobile Services C# How-to Conceptual Reference](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
   <br/>Learn more about how to use Mobile Services with .NET.
  
@@ -185,7 +185,6 @@ This tutorial demonstrated the basics of enabling a Windows Phone 8 app to work 
 <!-- URLs. -->
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Management Portal]: https://manage.windowsazure.cn/
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268374
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268375
 [Developer Code Samples site]:  http://go.microsoft.com/fwlink/p/?LinkId=271146

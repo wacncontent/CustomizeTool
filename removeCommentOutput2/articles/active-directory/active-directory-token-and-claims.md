@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/17/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 # Supported Token and Claim Types
@@ -418,4 +418,4 @@ In addition to claims, the token includes a version number in **ver** and **appi
 
 ##See Also
 
-[Azure Active Directory Authentication Protocols](https://msdn.microsoft.com/zh-cn/library/azure/dn151124.aspx)
+[Azure Active Directory Authentication Protocols](/documentation/articles/active-directory-authentication-protocols)

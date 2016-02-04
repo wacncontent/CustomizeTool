@@ -15,39 +15,39 @@ deleted:
 		
 		[Learn more about performance tracking with Application Insights](/documentation/articles/insights-perf-analytics)
 
-reason: ()
+reason: ({application insight})
 
 deleted:
 
 		> [AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
-		
+
+reason: (“Try it now”)
+
+deleted:
+
 		## What's changed
 		* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 		* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-reason: ()
+reason: (terminology: Azure App Service Web, the new Ibiza portal)
+
+deleted:
+
+		[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
+
+reason: (terminology: Azure App Service Web)
 
 replacement:
 
 deleted:
 
 		This article uses the [Azure preview portal](https://manage.windowsazure.cn/), Azure PowerShell, and the Azure Command-Line Interface (Azure CLI) to work with diagnostic logs. For information on working with diagnostic logs using Visual Studio, see [Troubleshooting Azure in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio).
-		
-		[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
 replaced by:
 
 		This article uses the [Azure Management Portal](https://manage.windowsazure.cn/), Azure PowerShell, and the Azure Command-Line Interface (Azure CLI) to work with diagnostic logs. For information on working with diagnostic logs using Visual Studio, see [Troubleshooting Azure in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio).
-		##Table of Contents##
-		
-		- [What is: Web Site diagnostics?](#whatisdiag)
-		- [How to: Enable diagnostics](#enablediag)
-		- [How to: Download logs](#download)
-		- [How to: Stream logs](#streamlogs)
-		- [How to: Understand diagnostics logs](#understandlogs)
-		- [Next Steps](#nextsteps)
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -68,5 +68,5 @@ replaced by:
 		
 		When enabling **site diagnostics**, you must select **storage** or **file system** for **web server logging**. Selecting **storage** allows you to select a storage account, and then a blob container that the logs will be written to. All other logs for **site diagnostics** are written to the file system only.
 
-reason: ()
+reason: (the new Ibiza portal)
 

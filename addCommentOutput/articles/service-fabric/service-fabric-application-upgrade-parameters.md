@@ -1,25 +1,26 @@
 
 <properties
-   pageTitle="Service Fabric Application Upgrade: Upgrade Parameters"
-   description="This article describes the various parameters related to upgrading a Service Fabric application."
+   pageTitle="Application upgrade: upgrade parameters | Windows Azure"
+   description="Describes parameters related to upgrading a Service Fabric application, including health checks to perform and policies to automatically undo the upgrade."
    services="service-fabric"
    documentationCenter=".net"
    authors="mani-ramaswamy"
-   manager="samgeo"
+   manager="timlt"
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="07/17/2015"
-   ms.author="subramar"/>
+	ms.service="service-fabric"
+	ms.date="07/17/2015"
+	wacn.date=""/>
 
 
 
+<!-- deleted by customization
+# Application upgrade parameters
+-->
+<!-- keep by customization: begin -->
 # Application Upgrade Parameters
+<!-- keep by customization: end -->
 
 This article describes the various parameters that apply during the upgrade of a Service Fabric application.  The parameters include the name and version of the application, and are knobs that control the timeouts and health checks that are applied during the upgrade and specify the policies must be applied when an upgrade fails.
 
@@ -55,7 +56,7 @@ The health evaluation criteria are optional. If the health evaluation criteria a
 | Parameter | Description |
 | --- | --- |
 | ConsiderWarningAsError | Default value is False. Treat the warning health events for the application as error when evaluating the health of the application during upgrade. By default, Service Fabric does not evaluate warning health events to be a failure (error), so the upgrade can proceed even if there are warning events.   |
-| MaxPercentUnhealthyDeployedApplications | Default and recommended value is 0. Specify the maximum number of deployed applications (see the [Health section](service-fabric-health-introduction.md))that can be unhealthy before the application is consider unhealthy and fail the upgrade. This is the health of the application packaged that is on the node, hence this is useful to detect immediate issue during upgrade, and where the application package deployed on the node is unhealthy (crashing and etc). In a typical case, the replicas of the application will get load balanced to the other node, hence makes the application appear healthy, thus allowing upgrade to proceed. By specifying a strict MaxPercentUnhealthyDeployedApplications health, Service Fabric can detect a problem with the application package fast and result in a fail fast upgrade. |
+| MaxPercentUnhealthyDeployedApplications | Default and recommended value is 0. Specify the maximum number of deployed applications (see the [Health section](/documentation/articles/service-fabric-health-introduction))that can be unhealthy before the application is consider unhealthy and fail the upgrade. This is the health of the application packaged that is on the node, hence this is useful to detect immediate issue during upgrade, and where the application package deployed on the node is unhealthy (crashing and etc). In a typical case, the replicas of the application will get load balanced to the other node, hence makes the application appear healthy, thus allowing upgrade to proceed. By specifying a strict MaxPercentUnhealthyDeployedApplications health, Service Fabric can detect a problem with the application package fast and result in a fail fast upgrade. |
 | MaxPercentUnhealthyServices | Default and recommended value is 0. Specify the maximum number of services in the application instance can be unhealthy before the application is consider unhealthy and fails the upgrade. |
 | MaxPercentUnhealthyPartitionsPerService | Default and recommended value is 0. Specify the maximum number of partitions in a service can be unhealthy before the service is considered unhealthy. |
 | MaxPercentUnhealthyReplicasPerPartition | Default and recommended value is 0. Specify the maximum number of replicas in partition that be unhealthy before the partition is consider unhealthy. |
@@ -71,11 +72,11 @@ The MaxPercentUnhealthyServices, MaxPercentUnhealthyPartitionsPerService and Max
 ## Next steps
 
 
-[Upgrade Tutorial](service-fabric-application-upgrade-tutorial.md)
+[Upgrade Tutorial](/documentation/articles/service-fabric-application-upgrade-tutorial)
 
-[Advanced Topics](service-fabric-application-upgrade-advanced.md)
+[Advanced Topics](/documentation/articles/service-fabric-application-upgrade-advanced)
 
-[Troubleshooting Application Upgrade ](service-fabric-application-upgrade-troubleshooting.md)
+[Troubleshooting Application Upgrade ](/documentation/articles/service-fabric-application-upgrade-troubleshooting)
 
-[Data Serialization](service-fabric-application-upgrade-data-serialization.md)
+[Data Serialization](/documentation/articles/service-fabric-application-upgrade-data-serialization)
  

@@ -16,6 +16,8 @@
 
 # Planned maintenance for Azure virtual machines
 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+
 ## Why Azure performs planned maintenance
 
 Windows Azure periodically performs updates across the globe to improve the reliability, performance, and security of the host infrastructure that underlies virtual machines. Many of these updates are performed without any impact to your virtual machines or Cloud Services, including memory-preserving updates.
@@ -111,5 +113,5 @@ For example, during a planned maintenance, Azure will not roll out an update to 
 
 
 <!--Link references-->
-[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-tutorial
-[Understand planned versus unplanned maintenance]: /documentation/articles/virtual-machines-manage-availability#Understand-planned-versus-unplanned-maintenance
+[Virtual Machines Manage Availability]: virtual-machines-windows-tutorial.md
+[Understand planned versus unplanned maintenance]: virtual-machines-manage-availability.md#Understand-planned-versus-unplanned-maintenance/

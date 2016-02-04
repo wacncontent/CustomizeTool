@@ -8,7 +8,7 @@ replaced by:
 
 		**SERVICE_NOT_AVAILABLE**
 
-reason: ()
+reason: (escape policy)
 
 deleted:
 
@@ -18,5 +18,5 @@ replaced by:
 
 		**AUTHENTICATION_FAILED**
 
-reason: ()
+reason: (escape policy)
 

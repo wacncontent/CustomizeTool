@@ -1,4 +1,4 @@
-<!--author=SharS last changed: 9/17/15-->
+<!--author=SharS last changed: 12/01/15-->
 
 ### To configure and register the device
 
@@ -126,7 +126,7 @@
 
 16. Exit the serial console.
 
-17. Return to the Government Portal, and complete the following steps:
+17. Return to the Azure Government Portal, and complete the following steps:
   1. Double-click your StorSimple Manager service to access the **Quick Start** page.
   2. Click **View connected devices**.
   3. On the **Devices** page, verify that the device has successfully connected to the service by looking up the status. The device status should be **Online**.

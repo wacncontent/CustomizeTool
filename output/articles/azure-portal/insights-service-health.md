@@ -7,22 +7,18 @@
 	services="azure-portal" 
 	documentationCenter="na"/>
 
-<tags 
-	ms.service="azure-portal" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/08/2015" 
-	ms.author="stepsic"/>
+<tags
+	ms.service="azure-portal"
+	ms.date="09/08/2015"
+	wacn.date=""/>
 
 # Track service health
 
-Azure publicizes each time there is a service interruption or performance degradation. You can browse these events in the Azure portal, and you can also use the [REST API](https://msdn.microsoft.com/library/azure/dn931927.aspx) or [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) to access the full set of events programmatically.
+Azure publicizes each time there is a service interruption or performance degradation. You can browse these events in the Azure Management Portal, and you can also use the [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931927.aspx) or [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) to access the full set of events programmatically.
 
 ## See the service health by region
 
-1. Sign in to the [Azure Portal](https://portal.azure.com/).
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 2. On **Home** you should see a tile called **Service health**
     ![Home](./media/insights-service-health/Insights_Home.png)
@@ -53,7 +49,7 @@ Azure publicizes each time there is a service interruption or performance degrad
    
 ## Next steps
 
-* [Receive alert notifications](insights-receive-alert-notifications.md) whenever an event happens.
-* [Monitor service metrics](insights-how-to-customize-monitoring.md) to make sure your service is available and responsive.
-* [Monitor availability and responsiveness of any web page](../app-insights-monitor-web-app-availability.md) with Application Insights so you can find out if your page is down.
+* [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) whenever an event happens.
+* [Monitor service metrics](/documentation/articles/insights-how-to-customize-monitoring) to make sure your service is available and responsive.
+* [Monitor availability and responsiveness of any web page](/documentation/articles/app-insights-monitor-web-app-availability) with Application Insights so you can find out if your page is down.
  

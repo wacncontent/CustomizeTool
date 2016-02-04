@@ -7,10 +7,11 @@
 	manager="sendgrid" 
 	editor="mollybos"/>
 
-<tags
-	ms.service="multiple"
-	ms.date="10/30/2014"
+<tags 
+	ms.service="multiple" 
+	ms.date="10/30/2014" 
 	wacn.date=""/>
+
 # How to Send Email Using SendGrid from Java
 
 This guide demonstrates how to perform common programming tasks with the
@@ -18,7 +19,7 @@ SendGrid email service on Azure. The samples are written in
 Java. The scenarios covered include **constructing email**, **sending
 email**, **adding attachments**, **using filters**, and **updating
 properties**. For more information on SendGrid and sending email, see
-the [Next steps](#next-steps) section.
+the [Next steps][] section.
 
 ## Table of Contents
 
@@ -183,7 +184,7 @@ see [Filter Settings][].
         	{\"enable\":1,\"text/html\": 
 			\"<html><b>Thank you</b> for your business.</html>\"}}}}");
 
--   Another example of a filter is click tracking. Let’s say that your
+-   Another example of a filter is click tracking. Let's say that your
     email text contains a hyperlink, such as the following, and you want
     to track the click rate:
 
@@ -228,7 +229,7 @@ details, see the [SendGrid API documentation][].
 
 ## <a name="bkmk_NextSteps"> </a>Next steps
 
-Now that you’ve learned the basics of the SendGrid Email service, follow
+Now that you've learned the basics of the SendGrid Email service, follow
 these links to learn more.
 
 * Sample that demonstrates using SendGrid in an Azure deployment: [How to send email using SendGrid from Java in an Azure deployment](/documentation/articles/store-sendgrid-java-how-to-send-email-example)

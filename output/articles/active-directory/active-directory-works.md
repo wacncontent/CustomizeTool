@@ -1,6 +1,6 @@
 <properties
-	pageTitle="How does Azure AD work?"
-	description="Azure AD creates an identity landscape that is yours in the cloud. It can be connected to your on-premises identity system or used independently."
+	pageTitle="How does Azure Active Directory work? | Windows Azure"
+	description="Azure Active Directory creates an identity landscape that is yours in the cloud. It can be connected to your on-premises identity system or used independently."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
@@ -9,13 +9,12 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/21/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 
 
 # How does Azure Active Directory work?
-
 
 ###Other articles on this topic
 [What is Azure AD?](/documentation/articles/active-directory-whatis)<br>
@@ -25,7 +24,7 @@
 [Learn more](/documentation/articles/active-directory-learn-map)
 
 
-Azure AD creates an identity landscape that is yours in the cloud. It can be connected to your on-premises identity system or used independently.
+Azure Active Directory (Azure AD) creates an identity landscape that is yours in the cloud. It can be connected to your on-premises identity system or used independently.
 
 You can think of an account in Azure AD as your driver's license for the cloud: it's your unique ID for accessing services online. In that sense, Azure AD works like your own private registrar in the cloud for those driver's licenses.  It enables identities to be used anywhere in the cloud, and improves mobility for users who access resources on-premises.
 

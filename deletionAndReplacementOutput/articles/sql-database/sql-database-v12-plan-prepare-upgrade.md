@@ -8,7 +8,7 @@ replaced by:
 
 		A new [Windows Azure Management Portal](http://manage.windowsazure.cn/) is available to support your upgrade to V12.
 
-reason: ()
+reason: (preview portal)
 
 deleted:
 
@@ -18,7 +18,7 @@ replaced by:
 
 		[Windows Azure Management Portal](http://manage.windowsazure.cn/)
 
-reason: ()
+reason: (preview portal)
 
 deleted:
 
@@ -28,5 +28,5 @@ replaced by:
 
 		[Windows Azure Management Portal](http://manage.windowsazure.cn/)
 
-reason: ()
+reason: (preview portal)
 

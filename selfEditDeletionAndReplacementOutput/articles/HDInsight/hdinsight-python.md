@@ -12,13 +12,13 @@ deleted:
 			FROM hivesampletable
 			ORDER BY clientid LIMIT 50;
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		If you are using a Linux-based HDInsight cluster, use the **SSH** steps below.
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -43,5 +43,5 @@ deleted:
 		
 		After uploading the files, use the following steps to run the Hive and Pig jobs.
 
-reason: ()
+reason: (Linux Support)
 

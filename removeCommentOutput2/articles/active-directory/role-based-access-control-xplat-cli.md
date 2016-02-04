@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/14/2015"
+	ms.date="01/04/2016"
 	wacn.date=""/>
 
 # Managing Role-Based Access Control with the Azure Command-Line Interface (Azure CLI) #

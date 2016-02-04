@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/29/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Create a Web App plus Redis Cache using a template
@@ -28,9 +28,6 @@ In this template, you will deploy:
 - Azure Web App
 - Azure Redis Cache.
 
-To run the deployment automatically, click the following button:
-
-![Deploy to Azure](http://azuredeploy.net/deploybutton.png) 
 
 ## Parameters to specify
 
@@ -116,7 +113,7 @@ Notice that the web app is configured with app setting properties that enable it
 
 ### PowerShell
 
-    New-AzureResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-with-redis-cache/azuredeploy.json -ResourceGroupName ExampleDeployGroup
+    New-AzureRmResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-with-redis-cache/azuredeploy.json -ResourceGroupName ExampleDeployGroup
 
 ### Azure CLI
 

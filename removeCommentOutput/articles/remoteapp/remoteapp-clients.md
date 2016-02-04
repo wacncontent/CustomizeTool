@@ -1,6 +1,6 @@
 
 <properties
-    pageTitle="Accessing your apps from any device | Microsoft Azure"
+    pageTitle="Accessing your apps from any device | Windows Azure"
     description="Learn what clients are supported for Azure RemoteApp and how to access your apps."
     services="remoteapp"
 	documentationCenter=""
@@ -8,13 +8,9 @@
     manager="mbaldwin" />
 
 <tags
-    ms.service="remoteapp"
-    ms.workload="compute"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="article"
-    ms.date="10/10/2015"
-    ms.author="elizapo" />
+	ms.service="remoteapp"
+	ms.date="10/10/2015"
+	wacn.date=""/>
 
 
 
@@ -48,7 +44,7 @@ You can access RemoteApp using the steps below if your device is running one of 
 
 ## Downloading the client
 
-No matter what platform you are using, the client you need to access RemoteApp can be found on the [Remote Desktop client download](https://www.remoteapp.windowsazure.com/ClientDownload/AllClients.aspx) page.
+No matter what platform you are using, the client you need to access RemoteApp can be found on the [Remote Desktop client download](https://www.remoteapp.windowsazure.cn/ClientDownload/AllClients.aspx) page.
 
 Clicking the different links will either directly start downloading the client or will send you to the client download page in the app store for that platform. Install the client by following the instructions on the screen.
 
@@ -78,7 +74,7 @@ Once you have installed the Microsoft Remote Desktop app from the Google Play st
 
 	![Connection Center with a feed](./media/remoteapp-clients/Android5.png)
 
-6. If you do not have an invitation yet, you can still try out the service. To do so, tap **Go to free trial** when prompted.
+6. If you do not have an invitation yet, you can still try out the service. To do so, tap **Go to trial** when prompted.
 
 	![Demo feed prompt](./media/remoteapp-clients/Android6.png)
 
@@ -106,7 +102,7 @@ Once you have installed the Microsoft Remote Desktop app from the App store, you
 
 	![Connection Center with a feed](./media/remoteapp-clients/IOS4.png)
 
-5. If you do not have an invitation yet, you can still try out the service. To do so, tap **Go to free trial** when prompted.
+5. If you do not have an invitation yet, you can still try out the service. To do so, tap **Go to trial** when prompted.
 
 	![Demo feed prompt](./media/remoteapp-clients/IOS5.png)
 
@@ -138,7 +134,7 @@ Once you have installed the Microsoft Remote Desktop app from the App store, you
 
 	![Connection Center with a feed](./media/remoteapp-clients/Mac5.png)
 
-6. If you do not have an invitation yet, you can still try out the service. To do so, click **Go to free trial** when prompted.
+6. If you do not have an invitation yet, you can still try out the service. To do so, click **Go to trial** when prompted.
 
 	![Demo feed prompt](./media/remoteapp-clients/Mac6.png)
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle=".NET web app in Azure Websites with New Relic application performance management" 
+	pageTitle=".NET web site in Azure Websites with New Relic application performance management" 
 	description="Learn how to use New Relic's performance monitoring for ASP.NET applications running on Azure Websites." 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -14,10 +14,10 @@
 
 
 
-# .NET web app in Azure Websites with New Relic application performance management
+# .NET web site in Azure Websites with New Relic application performance management
 
 This guide describes how to add New Relic's world-class performance
-monitoring to your web app in [Azure Websites](/documentation/services/web-sites/). We'll cover the fast and simple
+monitoring to your web site in [Azure Websites](/documentation/services/web-sites/). We'll cover the fast and simple
 process to add New Relic to your application and introduce you to some of
 New Relic's features. For more information about using New Relic, see [Using New Relic](#using-new-relic).
 
@@ -53,7 +53,7 @@ To sign up for New Relic directly from the Azure Marketplace, follow these four 
 
 ## Step 1. Create a New Relic account
 
-1. Log in to the [Azure preview portal](https://manage.windowsazure.cn) and click **New** in the corner.
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn) and click **New** in the corner.
 3. Click **Developer services** > **New Relic APM**.
 4. Configure your New Relic account by specifying the following, then click **Create**.
 	- **Name**
@@ -65,32 +65,32 @@ To sign up for New Relic directly from the Azure Marketplace, follow these four 
 
 11. After you click **Create**, your New Relic account will begin the creation process. You can monitor the status by clicking the **Notifications** button. Once it is created, the New Relic account's blade will be displayed.
 
-12. To retrieve your New Relic license key, look at the **Essentials** panel at the top of the blade. Your Web Apps instance will automatically register this license key in its app settings when you integrate your web app with the New Relic account.
+12. To retrieve your New Relic license key, look at the **Essentials** panel at the top of the blade. Your web sites instance will automatically register this license key in its app settings when you integrate your web site with the New Relic account.
 
-## Step 2: Configure New Relic integration for your web app
+## Step 2: Configure New Relic integration for your web site
 
-1. Open your web app's blade in the [Azure preview portal](https://manage.windowsazure.cn).
+1. Open your web site's blade in the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Click the "..." menu at the top of the blade and select **Add tiles**.
-3. On the **Monitoring** tab select **Application summary** and drag it to where you want the tile to appear on your web app's blade.
+3. On the **Monitoring** tab select **Application summary** and drag it to where you want the tile to appear on your web site's blade.
 4. Click Done to finish adding tiles.
 5. Click the **Application monitoring** tile and select **New Relic**.
 6. Select the account that you created in the previous step, then click **OK**. 
 
 	![](./media/store-new-relic-web-sites-dotnet-application-performance-management/configure-new-relic-integration.png)
 
-	Once the save operation has completed, click **Configure** in the web app's blade, then click **Application settings**. You should see the **NEWRELIC\_LICENSEKEY** setting added to the **App settings** section of the blade to support New Relic:
+	Once the save operation has completed, click **Configure** in the web site's blade, then click **Application settings**. You should see the **NEWRELIC\_LICENSEKEY** setting added to the **App settings** section of the blade to support New Relic:
 
-	>[AZURE.NOTE] It may take up to 30 seconds for the new app setting to take effect. To force the settings to take effect immediately, restart the web app.
+	>[AZURE.NOTE] It may take up to 30 seconds for the new app setting to take effect. To force the settings to take effect immediately, restart the web site.
 
-## Step 3: Publish the ASP.NET web app
+## Step 3: Publish the ASP.NET web site
 
-Using Visual Studio, publish your web app. If you have previously published your web app, publish it again so that the Web Apps instance would add the required New Relic NuGet package to enable New Relic monitoring.
+Using Visual Studio, publish your web site. If you have previously published your web site, publish it again so that the web sites instance would add the required New Relic NuGet package to enable New Relic monitoring.
 
 ## Step 4. Check out your application's performance in New Relic.
 
 To view your New Relic dashboard:
 
-2. Open your web app's blade in the [Azure preview portal](https://manage.windowsazure.cn).
+2. Open your web site's blade in the [Azure Management Portal](https://manage.windowsazure.cn).
 3. Click **Application monitoring** > **application name** > **View at New Relic**.
 
 	![](./media/store-new-relic-web-sites-dotnet-application-performance-management/view-new-relic-data.png)
@@ -169,14 +169,18 @@ Overview of the New Relic UI, setting user rights and profiles, using standard f
 browsers to load your webpages, where they come from, and what browsers they use
  * [Finding Help](https://docs.newrelic.com/docs/accounts-partnerships/education/getting-started-new-relic/finding-help): Resources available through New Relic's online Help Center
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the Azure Management Portal to the Azure preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
 
+<!-- deleted by customization
+[vswebsite]: web-sites-dotnet-get-started.md
+-->
+<!-- keep by customization: begin -->
 [vswebsite]: /documentation/articles/web-sites-dotnet-get-started
+<!-- keep by customization: end -->
 
 [wmnugetbutton]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetbutton.png
 [wmnugetgallery]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetgallery.png

@@ -5,11 +5,11 @@
 	documentationCenter="python"
 	authors="emgerner-msft"
 	manager="wpickett"
-	editor=""/>
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="08/25/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # How to use Azure Blob storage from Python
@@ -113,12 +113,11 @@ Finally, to delete a blob, call **delete_blob**.
 Now that you have learned the basics of Blob storage, follow these links
 to learn about more complex storage tasks.
 
--   See the MSDN Reference: [Storing and Accessing Data in Azure][]
--   Visit the [Azure Storage Team Blog][]
+- Visit the [Azure Storage Team Blog][]
+- [Transfer data with the AzCopy command-line utility](/documentation/articles/storage-use-azcopy)
 
 For more information, see also the [Python Developer Center](/develop/python/).
 
-[Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
 [Python Azure package]: https://pypi.python.org/pypi/azure
 [Python Azure Storage package]: https://pypi.python.org/pypi/azure-storage  

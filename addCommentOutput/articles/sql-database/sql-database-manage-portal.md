@@ -17,26 +17,25 @@
 
 
 > [AZURE.SELECTOR]
+<!-- deleted by customization
+- [Azure Management Portal](/documentation/articles/sql-database-manage-portal)
+-->
+<!-- keep by customization: begin -->
 - [Azure Preview Portal](/documentation/articles/sql-database-manage-portal)
+<!-- keep by customization: end -->
 - [SSMS](/documentation/articles/sql-database-manage-azure-ssms)
 - [PowerShell](/documentation/articles/sql-database-command-line-tools)
 
-The [Azure management portal][Management Portal] allows you to create, monitor and manage Azure SQL databases and servers. This article will highlight the database operations that can be accomplished using the management portal.
-<!-- deleted by customization
+The [Azure <!-- deleted by customization Management Portal][Management --><!-- keep by customization: begin --> management portal][Management <!-- keep by customization: end --> Portal] allows you to create, monitor and manage Azure SQL databases and servers. This article will highlight the database operations that can be accomplished using the <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> management portal <!-- keep by customization: end -->.
 
->[AZURE.NOTE] If you are unfamiliar with the Azure management portal, this [video tour provides a quick overview][Azure Management Portal Tour] of its general features and concepts.
-
-![Database Overview](./media/sql-database-manage-portal/sqldatabase_annotated.png)
--->
-<!-- keep by customization: begin -->
+>[AZURE.NOTE] If you are unfamiliar with the Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> management portal <!-- keep by customization: end -->, this [video tour provides a quick overview][Azure Management Portal Tour] of its general features and concepts.
 
 ![Database Overview](./media/sql-database-manage-portal/sqldatabase_annotated.png)
-<!-- keep by customization: end -->
 
 ## 1. Database management actions
 ![Db management actions](./media/sql-database-manage-portal/sqldatabase_actions.png)
 
-The Azure management portal provides a set of common database actions accessible at the top of a database blade. You can restore a database to a previous point in time, open a database in Visual Studio, copy a database to a new server, and export the database to an Azure storage account. 
+The Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> management portal <!-- keep by customization: end --> provides a set of common database actions accessible at the top of a database blade. You can restore a database to a previous point in time, open a database in Visual Studio, copy a database to a new server, and export the database to an Azure storage account.
 
 - [Restoring a SQL database](/documentation/articles/sql-database-point-in-time-restore-tutorial-management-portal)
 - [Open a SQL database in Visual Studio](/documentation/articles/sql-database-connect-query)
@@ -47,7 +46,7 @@ The Azure management portal provides a set of common database actions accessible
 
 Azure SQL databases by default feature monitoring charts for Database Throughput Unit (DTU), database size, and connection health. These monitoring charts can be customized and extended to additionally chart CPU percentage, Data IO percentage, Deadlocks, Log IO percentage or even the percentage of requests blocked by firewall. More information on how to customize monitoring charts can be found [here][Azure part monitoring].
 
-Additionally, alert rules can be setup to monitor a specified metric and alert a designated administrator and co-administrator when pre-set thresholds are reached. More information on how to setup alert rules in the Azure management portal can be found [here][Azure part monitoring].
+Additionally, alert rules can be setup to monitor a specified metric and alert a designated administrator and co-administrator when pre-set thresholds are reached. More information on how to setup alert rules in the Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> management portal <!-- keep by customization: end --> can be found [here][Azure part monitoring].
 
 ## 3. Database security & auditing
 ![Database security](./media/sql-database-manage-portal/sqldatabase_security.png)
@@ -64,7 +63,7 @@ Azure SQL databases can also be configured to mask sensitive data to non-privile
 ## 4. Geo-replication
 ![Geo-replication](./media/sql-database-manage-portal/sqldatabase_georeplication.png)
 
-Azure SQL databases can be configured to asynchronously replicate committed transactions to a secondary database. The geo-replication part on the management portal allows you to select the Azure region you would like the secondary database to reside in. 
+Azure SQL databases can be configured to asynchronously replicate committed transactions to a secondary database. The geo-replication part on the <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> management portal <!-- keep by customization: end --> allows you to select the Azure region you would like the secondary database to reside in.
 
 - [Geo-Replication](https://msdn.microsoft.com/zh-cn/library/azure/dn783447.aspx)
 
@@ -79,11 +78,21 @@ Azure SQL databases can be configured to asynchronously replicate committed tran
   
   [Azure Management Portal Tour]: https://go.microsoft.com/fwlink/?LinkID=522341
   [Management Portal]: https://manage.windowsazure.cn
+<!-- deleted by customization
+  [Azure part monitoring]: ../documentdb-monitor-accounts.md
+-->
+<!-- keep by customization: begin -->
   [Azure part monitoring]: /documentation/articles/documentdb-monitor-accounts
+<!-- keep by customization: end -->
   [AzureDb management overview]: http://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database/
+<!-- deleted by customization
   [Introducing SQL Database]: /documentation/services/sql-databases
+-->
+<!-- keep by customization: begin -->
+  [Introducing SQL Database]: /services/sql-database
+<!-- keep by customization: end -->
   [Database geo-replication]: http://azure.microsoft.com/blog/2014/07/12/spotlight-on-sql-database-active-geo-replication/
-  [Managing Azure SQL Database using SQL Server Management Studio]: /documentation/articles/sql-database-manage-azure-ssms
+  [Managing Azure SQL Database using SQL Server Management Studio]: sql-database-manage-azure-ssms.md
   [Monitoring SQL Database using Dynamic Management Views]: http://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx
   [Transact-SQL Reference (SQL Database)]: http://msdn.microsoft.com/zh-cn/library/bb510741(v=sql.120).aspx
   [AzureDb Auditing]: /documentation/articles/sql-database-auditing-get-started/

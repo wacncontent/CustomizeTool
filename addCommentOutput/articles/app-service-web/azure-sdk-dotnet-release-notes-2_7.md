@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="08/26/2015"
+	ms.date="11/18/2015"
 	wacn.date=""/>
 
 
@@ -67,7 +67,7 @@ In this release the following updates were made to Web Tools Extensions. For mor
 
 ####Known issues
 
-Web App deployment slot nodes don’t appear under the Slots node in Server Explorer, and Web App deployment slot child nodes don’t load under Cloud Explorer. This issue has been resolved and prepared for the next SDK release. 
+web site deployment slot nodes don't appear under the Slots node in Server Explorer, and web site deployment slot child nodes don't load under Cloud Explorer. This issue has been resolved and prepared for the next SDK release. 
 
 
 ###<a id="cloud_explorer"></a>Cloud Explorer for Visual Studio 2015
@@ -84,7 +84,7 @@ Cloud explorer supports the following:
 - Quick switching of the account to use when enumerating resources (use Settings command on toolbar) 
 - Filtering of subscriptions to use when enumerating resources (use Settings command on toolbar) 
 <!-- deleted by customization
-- Deep links to the Azure Preview Portal for management of resources and resource groups 
+- Deep links to the Azure Management Portal for management of resources and resource groups 
 -->
  
  
@@ -92,14 +92,14 @@ Cloud explorer supports the following:
 
 The Azure Resource Manager Tools have been updated to work with Role Based Access Control (RBAC) and new subscription types.  Included with these changes is the ability to use new storage accounts, in addition to classic storage, to store artifacts during deployment.  
 
-If you’re using an Azure Resource Group project from a previous version of the SDK with the SDK 2.7, a new deployment script is needed to deploy using a new storage account instead of classic storage.  You will be prompted before changes are made to your project to add the new script.  The old script will be renamed and you will need to manually make any modifications to the new script.
+If you're using an Azure Resource Group project from a previous version of the SDK with the SDK 2.7, a new deployment script is needed to deploy using a new storage account instead of classic storage.  You will be prompted before changes are made to your project to add the new script.  The old script will be renamed and you will need to manually make any modifications to the new script.
  
  
 ###Storage Explorer Tools 
 
 - Support for viewing Append Blobs. More info in [this blog post](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/13/introducing-azure-storage-append-blob.aspx). 
-<!-- deleted by customization
 - Support for viewing Premium Storage accounts through Server Explorer. Server Explorer will only display page blobs for premium storage accounts as they are the only supported type for premium storage accounts.
+<!-- deleted by customization
 
 ###Azure Data Factory Tools for Visual Studio 
 
@@ -129,9 +129,9 @@ For more detailed explanation about HDInsight tools updates, see [this blog](htt
 	To enable you to view the grammar errors instantly, the Hive Error Marker feature was added. Also, error messages were enhanced and you can now see detailed grammar errors instantly (until this release, you had to submit a Hive script to the cluster and wait for some time before getting details about your error message).  
 - Storm Topology Graph (a new feature)
 
-	Visualizing is very important when you want to see if your topology is working as expected. In this release we added visualization for Storm graphs. You can visualize the important metrics for your topology (for example, a color indicates weather a certain Bolt is “busy” or not). You can also double click the Bolt/Spout to view more details.
+	Visualizing is very important when you want to see if your topology is working as expected. In this release we added visualization for Storm graphs. You can visualize the important metrics for your topology (for example, a color indicates weather a certain Bolt is <!-- deleted by customization “busy” --><!-- keep by customization: begin --> âbusyâ <!-- keep by customization: end --> or not). You can also double click the Bolt/Spout to view more details.
 
-- Support for HDInsight clusters that were created in new Azure Management Portal (a bug fix)
+- Support for HDInsight clusters that were created in the Azure Management Portal (a bug fix)
 
 	You can now use Visual Studio to view and submit jobs to all your HDInsight clusters no matter where the cluster were created.
 

@@ -21,8 +21,8 @@ This guide provides C# code samples that show how to read and write Azure storag
 The guide assumes you know [how to create a WebJob project in Visual Studio with connection strings that point to your storage account](/documentation/articles/websites-dotnet-webjobs-sdk-get-started).
 		
 Some of the code snippets show the `Table` attribute used in functions that are [called manually](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#manual), that is, not by using one of the trigger attributes. 
-
 <!-- keep by customization: begin -->
+
 ## Table of contents
 
 -   [How to add entities to a table](#ingress)
@@ -33,6 +33,7 @@ Some of the code snippets show the `Table` attribute used in functions that are 
 -   [Related topics covered by the queues how-to article](#queues)
 -   [Next steps](#nextsteps)
 <!-- keep by customization: end -->
+
 ## <a id="ingress"></a> How to add entities to a table
 
 To add entities to a table, use the `Table` attribute with an `ICollector<T>` or `IAsyncCollector<T>` parameter where `T` specifies the schema of the entities you want to add. The attribute constructor takes a string parameter that specifies the name of the table. 

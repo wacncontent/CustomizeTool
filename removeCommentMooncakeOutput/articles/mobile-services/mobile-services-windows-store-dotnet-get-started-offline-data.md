@@ -7,18 +7,23 @@
 	editor="" 
 	services="mobile-services"/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="07/23/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="11/06/2015" 
 	wacn.date=""/>
 
 # Using offline data sync in Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
 
 This tutorial shows you how to add offline support to a Windows Universal Store app using Azure Mobile Services. Offline support will allow you to interact with a local database when your app is in an offline scenario. Once your app is online with the backend database, you sync your local changes using the offline features. 
 
-In this tutorial, you update the Universal app project from the [Get started with Mobile Services] tutorial to support the offline features of Azure Mobile Services. Then you will add data in a disconnected offline scenario, sync those items to the online database, and then log in to the Azure Management Portal to view changes to data made when running the app.
+
+
+In this tutorial, you update the Universal app project from the [Get started with Mobile Services] tutorial to support the offline features of Azure Mobile Services. Then you will add data in a disconnected offline scenario, sync those items to the online database, and then log in to the [Azure Management Portal] to view changes to data made when running the app.
 
 >[AZURE.NOTE] This tutorial is intended to help you better understand how Mobile Services enables you to use Azure to store and retrieve data in a Windows Store app. If this is your first experience with Mobile Services, you should complete the tutorial [Get started with Mobile Services] first.
 
@@ -30,8 +35,8 @@ This tutorial requires the following:
 * Completion of the [Get started with Mobile Services].
 * [Azure Mobile Services SDK version 1.3.0 (or later)][Mobile Services SDK Nuget]
 * [Azure Mobile Services SQLite Store version 1.0.0 (or later)][SQLite store nuget]
-* [SQLite for Windows 8.1](www.sqlite.org/downloads)
-* An Azure account. If you don't have an account, you can sign up for an Azure trial. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28).
+* [SQLite for Windows 8.1](http://www.sqlite.org/download.html)
+* An Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/). 
 
 ## <a name="enable-offline-app"></a>Update the app to support offline features
 
@@ -55,7 +60,7 @@ Azure Mobile Services offline features allow you to interact with a local databa
 
     ![][2]
 
-2. In Solution Explorer, right click **References** for the Windows 8.1 Runtime and Windows Phone 8.1 platform projects and ensure there is a reference to SQLite, which is located in the **Extensions** section. 
+3. In Solution Explorer, right click **References** for the Windows 8.1 Runtime and Windows Phone 8.1 platform projects and ensure there is a reference to SQLite, which is located in the **Extensions** section. 
 
     ![][1]
     </br>
@@ -67,7 +72,7 @@ Azure Mobile Services offline features allow you to interact with a local databa
 
     **Windows Phone 8.1**
 
-3. The SQLite Runtime requires you to change the processor architecture of the project being built to **x86**, **x64**, or **ARM**. **Any CPU** is not supported. In Solution Explorer, click the Solution at the top, then change the processor architecture drop down box to one of the supported settings that you want to test.
+4. The SQLite Runtime requires you to change the processor architecture of the project being built to **x86**, **x64**, or **ARM**. **Any CPU** is not supported. In Solution Explorer, click the Solution at the top, then change the processor architecture drop down box to one of the supported settings that you want to test.
 
     ![][13]
 
@@ -205,7 +210,7 @@ In this section you reconnect the app to the mobile service. This simulates the 
 
 2. Press the **F5** key to rebuild and run the app. Notice that the data looks the same as the offline scenario even though the app is now connected to the mobile service. This is because this app always works with the `IMobileServiceSyncTable` that is pointed to the local store.
 
-3. Log into the Windows Azure Management portal and look at the database for your mobile service. If your service uses the JavaScript backend for mobile services, you can browse the data from the **Data** tab of the mobile service. 
+3. Log into the [Azure Management Portal] and look at the database for your mobile service. If your service uses the JavaScript backend for mobile services, you can browse the data from the **Data** tab of the mobile service.
 
     If you are using the .NET backend for your mobile service, in Visual Studio go to **Server Explorer** -> **Azure** -> **SQL Databases**. Right click your database and select **Open in SQL Server Object Explorer**.
 
@@ -269,4 +274,4 @@ In this section you reconnect the app to the mobile service. This simulates the 
 
 [Mobile Services SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
- 
+[Azure Management Portal]: https://manage.windowsazure.cn

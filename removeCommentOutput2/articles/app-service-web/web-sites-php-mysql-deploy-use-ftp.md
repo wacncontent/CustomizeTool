@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Create a PHP-MySQL web app in Azure Websites and deploy using FTP" 
+	pageTitle="Create a PHP-MySQL web app in Azure and deploy using FTP" 
 	description="A tutorial that demonstrates how to create a PHP web app that stores data in MySQL and use FTP deployment to Azure." 
 	services="app-service\web" 
 	documentationCenter="php" 
@@ -13,7 +13,7 @@
 	wacn.date=""/>
 
 
-#Create a PHP-MySQL web app in Azure Websites and deploy using FTP
+#Create a PHP-MySQL web app in Azure and deploy using FTP
 
 > [AZURE.SELECTOR]
 - [.Net](/documentation/articles/web-sites-dotnet-get-started)
@@ -35,30 +35,31 @@ By following this tutorial, you will build a simple registration web app in PHP.
 ![Azure PHP Web Site][running-app]
 
 
+
 ##Create a web app and set up FTP publishing
 
 Follow these steps to create a web app and a MySQL database:
 
 1. Login to the [Azure Management Portal][management-portal].
-2. Click the **+ New** icon on the bottom left of the portal.
+2. Click the **+ New** icon on the bottom left of the Azure Management Portal.
 
 	![Create New Azure Web Site][new-website]
 
-3. Click ** Website**, then **CUSTOM CREATE**.
+3. Click ** web site**, then **CUSTOM CREATE**.
 
 	![Custom Create a new  Website][custom-create]
 	
 	Enter a value for **URL**, select **Create a New MySQL Database** from the **DATABASE** dropdown,  and select the data center for your  Website in the **REGION** dropdown. Click the arrow at the bottom of the dialog.
 
-	![Fill in  Website details][ Website-details]
+	![Fill in  Website details][Website-details]
 
-4. Enter a value for the **NAME** of your database, select the data center for your database in the **REGION** dropdown, and check the box that indicates you agree with the legal terms. Click the checkmark at the bottom of the dialog.
+4. Click **New** --> **Storage** --> **MYSQL DATABASE ON AZURE** --> **Quick Create**, to create a MYSQL Database for your web site.
 
 	![Create new MySQL database][new-mysql-db]
 
-	When the  Website has been created you will see the text **Creation of  Website ‘[SITENAME]’ completed successfully**. Now, you can enable FTP publishing.
+	When the  Website has been created you will see the text **Creation of  Website '[SITENAME]' completed successfully**. Now, you can enable FTP publishing.
 
-5. Click the name of the  Website displayed in the list of  Websites to open the  Website’s **QUICKSTART** dashboard.
+5. Click the name of the  Website displayed in the list of  Websites to open the  Website's **QUICKSTART** dashboard.
 
 	![Open  Website dashboard][go-to-dashboard]
 
@@ -217,31 +218,15 @@ You can now browse to [http://localhost/registration/index.php][localhost-index]
 
 To connect to the MySQL database that is running in Web Apps, your will need the connection information. To get MySQL connection information, follow these steps:
 
-1. From your resource group, click the database:
+1. In Azure Management Portal, click **MYSQL DATABASE ON AZURE**, and open your MYSQL database server. In **Dashboard** page, under **quick glance**, you can get your host and port.
 
-	![Select database][select-database]
+	![connection][connection-string-info]
 
-2. From the database sumamry, select **Properties**.
+2. In **Account** page, you can get all account name, and reset password.
 
-    ![Select properties][select-properties]
-	
-2. Make note of the values for `Database`, `Host`, `User Id`, and `Password`.
+3. in **Database** page, you can get all Database under this MYSQL Database Server.
 
-    ![Note properties][note-properties]
-
-3. From your web app, click the **Download publish profile** link at the bottom right corner of the page:
-
-	![Download publish profile][download-publish-profile]
-
-4. Open the `.publishsettings` file in an XML editor. 
-
-3. Find the `<publishProfile >` element with `publishMethod="FTP"` that looks similar to this:
-
-		<publishProfile publishMethod="FTP" publishUrl="ftp://[mysite].chinacloudsites.cn/site/wwwroot" ftpPassiveMode="True" userName="[username]" userPWD="[password]" destinationAppUrl="http://[name].chinacloudsites.cn" 
-			...
-		</publishProfile>
-	
-Make note of the `publishUrl`, `userName`, and `userPWD` attributes.
+	The Data source would be `tcp:<your MYSQL server name>.database.chinacloudapi.cn,<port>`
 
 ##Publish your app
 
@@ -276,10 +261,10 @@ After uploading both `index.php` and `createtable.php`, browse to **http://[site
 [localhost-createtable]: http://localhost/tasklist/createtable.php
 [localhost-index]: http://localhost/tasklist/index.php
 [running-app]: ./media/web-sites-php-mysql-deploy-use-ftp/running_app_2.png
-[new-website]: ./media/web-sites-php-mysql-deploy-use-ftp/new_website2.png
-[custom-create]: ./media/web-sites-php-mysql-deploy-use-ftp/create_web_mysql.png
+[new-website]: ./media/web-sites-php-mysql-deploy-use-ftp/new_website.jpg
+[custom-create]: ./media/web-sites-php-mysql-deploy-use-ftp/custom_create.png
 [website-details]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/website_details.jpg
-[new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-ftp/create_db.png
+[new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-ftp/new_mysql_db.jpg
 [go-to-webapp]: ./media/web-sites-php-mysql-deploy-use-ftp/select_webapp.png
 [set-deployment-credentials]: ./media/web-sites-php-mysql-deploy-use-ftp/set_credentials.png
 [portal-ftp-username-password]: ./media/web-sites-php-mysql-deploy-use-ftp/save_credentials.png

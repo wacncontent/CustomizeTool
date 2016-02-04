@@ -1,12 +1,24 @@
-<properties pageTitle="Tutorial: Configuring Workday for Inbound Synchronization | Windows Azure" description="Learn how to use Inbound Synchronization with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Configuring Workday for Inbound Synchronization | Windows Azure" 
+    description="Learn how to use Inbound Synchronization with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags
+	ms.service="active-directory"
+	ms.date="10/22/2015"
+	wacn.date=""/>
+
 #Tutorial: Configuring Workday for Inbound Synchronization
 >[AZURE.NOTE]Azure Active Directory (AD) Premium is available for customers in China using the worldwide instance of Azure AD.    
 Azure AD Premium is not currently supported in the Windows Azure service operated by 21Vianet in China.    
+<!-- keep by customization: begin -->
 
 &nbsp;  
 
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=330042).    
+<!-- keep by customization: end -->
 
 The objective of this tutorial is to show you the steps you need to perform in Workday and Windows Azure AD to import people from Workday to Windows Azure AD.    
  The scenario outlined in this tutorial assumes that you already have the following items:  
@@ -59,7 +71,7 @@ The objective of this section is to outline how to enable the application integr
 	![create user](./media/active-directory-saas-inbound-synchronization-tutorial/IC750979.png "create user")  
 
 2.  Complete the Create Integration System User task by supplying a user name and password for a new Integration System User.  Leave the Require New Password at Next Sign In option unchecked, because this user will be logging on programmatically.    
-    Leave the Session Timeout Minutes with its default value of 0, which will prevent the user’s sessions from timing out prematurely.    
+    Leave the Session Timeout Minutes with its default value of 0, which will prevent the <!-- deleted by customization user's --><!-- keep by customization: begin --> user’s <!-- keep by customization: end --> sessions from timing out prematurely.
 
 	![Create Integration System User](./media/active-directory-saas-inbound-synchronization-tutorial/IC750980.png "Create Integration System User")  
 

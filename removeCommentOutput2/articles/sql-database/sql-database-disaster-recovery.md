@@ -47,8 +47,8 @@ Use the Azure Management Portal to terminate the continuous copy relationship wi
 ###PowerShell
 Use PowerShell to initiate failover to Geo-Replicated secondary database by using the [Set-AzureRMSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt619393.aspx) cmdlet.
 		
-		$database = Get-AzureRMSqlDatabase –DatabaseName "mydb” –ResourceGroupName "rg2” –ServerName "srv2”
-		$database | Set-AzureRMSqlDatabaseSecondary –Failover -AllowDataLoss
+		$database = Get-AzureRMSqlDatabase -DatabaseName "mydb” -ResourceGroupName "rg2” -ServerName "srv2”
+		$database | Set-AzureRMSqlDatabaseSecondary -Failover -AllowDataLoss
 
 ###REST API 
 Use REST to programmatically initiate failover to a secondary database.
@@ -59,6 +59,8 @@ Use REST to programmatically initiate failover to a secondary database.
 ## Recover using Geo-Restore
 
 In the event of an outage of a database, you can recover your database from its latest geo redundant backup using Geo-Restore. 
+
+> [AZURE.NOTE] Recovering a database creates a new database. It is important to make sure the server you are recovering to has enough DTU capacity for the new database. You can request an increase of this quota by [contacting support](http://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/).
 
 ###Azure Management Portal
 To restore a SQL Database using Geo-Restore in the Azure Management Portal, use the following steps.
@@ -72,9 +74,9 @@ To restore a SQL Database using Geo-Restore in the Azure Management Portal, use 
 ###PowerShell 
 To restore a SQL Database using Geo-Restore with PowerShell, start a Geo-Restore request with the [start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-cn/library/azure/dn720224.aspx) cmdlet.
 
-		$Database = Get-AzureSqlRecoverableDatabase -ServerName "ServerName" –DatabaseName “DatabaseToBeRecovered"
-		$RecoveryRequest = Start-AzureSqlDatabaseRecovery -SourceDatabase $Database –TargetDatabaseName “NewDatabaseName” –TargetServerName “TargetServerName”
-		Get-AzureSqlDatabaseOperation –ServerName "TargetServerName" –OperationGuid $RecoveryRequest.RequestID
+		$Database = Get-AzureSqlRecoverableDatabase -ServerName "ServerName" -DatabaseName “DatabaseToBeRecovered"
+		$RecoveryRequest = Start-AzureSqlDatabaseRecovery -SourceDatabase $Database -TargetDatabaseName “NewDatabaseName” -TargetServerName “TargetServerName”
+		Get-AzureSqlDatabaseOperation -ServerName "TargetServerName" -OperationGuid $RecoveryRequest.RequestID
 
 ###REST API 
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="PHP on Windows to SQL DB | Windows Azure"
+	pageTitle="Connect to SQL Database by using PHP on Windows"
 	description="Presents a sample PHP program that connects to Azure SQL Database from a Windows client, and provides links to the necessary software components needed by the client."
 	services="sql-database"
 	documentationCenter=""
@@ -10,14 +10,20 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/20/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 
 # Connect to SQL Database by using PHP on Windows
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+> [AZURE.SELECTOR]
+- [C#](/documentation/articles/sql-database-develop-dotnet-simple)
+- [PHP](/documentation/articles/sql-database-develop-php-simple-windows)
+- [Python](/documentation/articles/sql-database-develop-python-simple-windows)
+- [Ruby](/documentation/articles/sql-database-develop-ruby-simple-windows)
+- [Java](/documentation/articles/sql-database-develop-java-simple-windows)
+- [Node.js](/documentation/articles/sql-database-develop-nodejs-simple-windows)
 
 
 This topic illustrates how you can connect to Azure SQL Database from a client application written in PHP that runs on Windows.
@@ -25,14 +31,17 @@ This topic illustrates how you can connect to Azure SQL Database from a client a
 
 [AZURE.INCLUDE [sql-database-develop-includes-prerequisites-php-windows](../includes/sql-database-develop-includes-prerequisites-php-windows.md)]
 
+### A SQL database
 
-## Create a database and retrieve your connection string
-
-
-See the [Getting Started Topic](/documentation/articles/sql-database-get-started) to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**. 
+See the [getting started page](/documentation/articles/sql-database-get-started) to learn how to create a sample database.  It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**.
 
 
-## Connect to your SQL Database database
+## Step 1: Get Connection Details
+
+[AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../includes/sql-database-include-connection-string-details-20-portalshots.md)]
+
+
+## Step 2:  Connect
 
 
 This **OpenConnection** function is called near the top in all of the functions that follow.
@@ -56,9 +65,9 @@ This **OpenConnection** function is called near the top in all of the functions 
 	}
 
 
-## Execute a query and retrieve the result set
+## Step 3:  Execute query
 
-The [sqlsrv_query()](http://php.net/manual/en/function.sqlsrv-query.php) function can be used to retrieve a result set from a query against SQL Database. This function essentially accepts any query and the connection object and returns a result set which can be iterated over with the use of [sqlsrv_fetch_array()](http://php.net/manual/en/function.sqlsrv-fetch-array.php).
+The <!-- deleted by customization [sqlsrv_query()](http://php.net/manual/en/function.sqlsrv-query.php) --><!-- keep by customization: begin --> [sqlsrv_query()](http://php.net/manual/zh/function.sqlsrv-query.php) <!-- keep by customization: end --> function can be used to retrieve a result set from a query against SQL Database. This function essentially accepts any query and the connection object and returns a result set which can be iterated over with the use of [sqlsrv_fetch_array()](http://php.net/manual/en/function.sqlsrv-fetch-array.php).
 
 	function ReadData()
 	{
@@ -84,12 +93,11 @@ The [sqlsrv_query()](http://php.net/manual/en/function.sqlsrv-query.php) functio
 			echo("Error!");
 		}
 	}
-	
-
-## Insert a row, pass parameters, and retrieve the generated primary key
 
 
-In SQL Database the [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) property and the [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) object can be used to auto-generate [primary key](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx) values. 
+## Step 4:  Insert a row
+
+In this example you will see how to execute an [INSERT](https://msdn.microsoft.com/zh-cn/library/ms174335.aspx) statement safely, pass parameters which protect your application from [SQL injection](https://technet.microsoft.com/zh-cn/library/ms161953(v=sql.105).aspx) vulnerability, and retrieve the auto-generated [Primary Key](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx) value.  
 
 
 	function InsertData()
@@ -103,7 +111,7 @@ In SQL Database the [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775
 			$insertReview = sqlsrv_query($conn, $tsql);
 			if($insertReview == FALSE)
 				die(FormatErrors( sqlsrv_errors()));
-			echo "Product Key inserted is :";	
+			echo "Product Key inserted is :";
 			while($row = sqlsrv_fetch_array($insertReview, SQLSRV_FETCH_ASSOC))
 			{   
 				echo($row['ProductID']);
@@ -117,7 +125,7 @@ In SQL Database the [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775
 		}
 	}
 
-## Transactions
+## Step 5:  Rollback a transaction
 
 
 This code example demonstrates the use of transactions in which you:
@@ -138,14 +146,14 @@ This code example demonstrates the use of transactions in which you:
 			if (sqlsrv_begin_transaction($conn) == FALSE)
 				die(FormatErrors(sqlsrv_errors()));
 
-			$tsql1 = "INSERT INTO SalesLT.SalesOrderDetail (SalesOrderID,OrderQty,ProductID,UnitPrice) 
+			$tsql1 = "INSERT INTO SalesLT.SalesOrderDetail (SalesOrderID,OrderQty,ProductID,UnitPrice)
 			VALUES (71774, 22, 709, 33)";
 			$stmt1 = sqlsrv_query($conn, $tsql1);
-			
+
 			/* Set up and execute the second query. */
 			$tsql2 = "UPDATE SalesLT.SalesOrderDetail SET OrderQty = (OrderQty + 1) WHERE ProductID = 709";
 			$stmt2 = sqlsrv_query( $conn, $tsql2);
-			
+
 			/* If both queries were successful, commit the transaction. */
 			/* Otherwise, rollback the transaction. */
 			if($stmt1 && $stmt2)
@@ -169,9 +177,7 @@ This code example demonstrates the use of transactions in which you:
 	}
 
 
-## Further reading
+## Next steps
 
 
 For more information regarding PHP installation and usage, see [Accessing SQL Server Databases with PHP](http://technet.microsoft.com/zh-cn/library/cc793139.aspx).
-
- 

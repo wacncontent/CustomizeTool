@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create Azure BizTalk Services in the Azure portal | Microsoft Azure"
-	description="Learn how to provision or create Azure BizTalk Services in the Azure portal; MABS, WABS"
+	pageTitle="Create Azure BizTalk Services in the Azure Management Portal | Windows Azure"
+	description="Learn how to provision or create Azure BizTalk Services in the Azure Management Portal; MABS, WABS"
 	services="biztalk-services"
 	documentationCenter=""
 	authors="MandiOhlinger"
@@ -9,25 +9,30 @@
 
 <tags
 	ms.service="biztalk-services"
-	ms.workload="integration"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="hero-article"
 	ms.date="08/26/2015"
-	ms.author="mandia"/>
+	wacn.date=""/>
 
 
 
+<!-- deleted by customization
+# Create BizTalk Services using the Azure Management Portal
+
+This article shows how to create Azure BizTalk Services in the Azure Management Portal.
+
+> [AZURE.TIP] To sign in to the Azure Management Portal, you need an Azure account and Azure subscription. If you don't have an account, you can create a  trial account within a few minutes. See [Azure  Trial](http://go.microsoft.com/fwlink/p/?LinkID=239738).
+-->
+<!-- keep by customization: begin -->
 # Create BizTalk Services using the Azure portal
 
 This article shows how to create Azure BizTalk Services in the Azure portal.
 
 > [AZURE.TIP] To sign in to the Azure portal, you need an Azure account and Azure subscription. If you don't have an account, you can create a free trial account within a few minutes. See [Azure Free Trial](http://go.microsoft.com/fwlink/p/?LinkID=239738).
+<!-- keep by customization: end -->
 
 ## Create a BizTalk Service
 Depending on the Edition you choose, not all BizTalk Service settings may be available.
 
-1. Sign in to the [Azure portal](http://go.microsoft.com/fwlink/p/?LinkID=213885).
+1. Sign in to the [Azure <!-- deleted by customization Management Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> portal](http://go.microsoft.com/fwlink/p/?LinkID=213885) <!-- keep by customization: end -->.
 2. In the bottom navigation pane, select **NEW**:  
 ![Select the New button][NEWButton]
 
@@ -40,9 +45,16 @@ Depending on the Edition you choose, not all BizTalk Service settings may be ava
 	<tr>
 	<td><strong>BizTalk service name</strong></td>
 	<td>You can enter any name but be specific. Some examples include:<br/><br/>
+<!-- deleted by customization
+	<em>mycompany</em>.biztalk.chinacloudapi.cn<br/>
+	<em>mycompanymyapplication</em>.biztalk.chinacloudapi.cn<br/>
+	<!-- deleted by customization <em>myapplication</em>.biztalk.chinacloudapi.cn<br/><br/>".biztalk.chinacloudapi.cn" --><!-- keep by customization: begin --> <em>myapplication</em>.biztalk.windows.net<br/><br/>".biztalk.windows.net" <!-- keep by customization: end --> is automatically added to the name you enter. This creates a URL that is used to access your BizTalk Service, like <!-- deleted by customization <strong>https://<em>myapplication</em>.biztalk.chinacloudapi.cn</strong> --><!-- keep by customization: begin --> <strong>https://<em>myapplication</em>.biztalk.windows.net</strong> <!-- keep by customization: end -->.
+-->
+<!-- keep by customization: begin -->
 	<em>mycompany</em>.biztalk.windows.net<br/>
 	<em>mycompanymyapplication</em>.biztalk.windows.net<br/>
-	<em>myapplication</em>.biztalk.windows.net<br/><br/>".biztalk.windows.net" is automatically added to the name you enter. This creates a URL that is used to access your BizTalk Service, like <strong>https://<em>myapplication</em>.biztalk.windows.net</strong>.
+	<!-- deleted by customization <em>myapplication</em>.biztalk.chinacloudapi.cn<br/><br/>".biztalk.chinacloudapi.cn" --><!-- keep by customization: begin --> <em>myapplication</em>.biztalk.windows.net<br/><br/>".biztalk.windows.net" <!-- keep by customization: end --> is automatically added to the name you enter. This creates a URL that is used to access your BizTalk Service, like <!-- deleted by customization <strong>https://<em>myapplication</em>.biztalk.chinacloudapi.cn</strong> --><!-- keep by customization: begin --> <strong>https://<em>myapplication</em>.biztalk.windows.net</strong> <!-- keep by customization: end -->.
+<!-- keep by customization: end -->
 	</td>
 	</tr>
 	<tr>
@@ -56,7 +68,7 @@ Depending on the Edition you choose, not all BizTalk Service settings may be ava
 	</tr>
 	<tr>
 	<td><strong>Domain URL</strong></td>
-	<td><strong>Optional</strong>. By default, the domain URL is <em>YourBizTalkServiceName</em>.biztalk.windows.net. A custom domain can also be entered. For example, if your domain is <em>contoso</em>, you can enter: <br/><br/>
+	<td><strong>Optional</strong>. By default, the domain URL is <!-- deleted by customization <em>YourBizTalkServiceName</em>.biztalk.chinacloudapi.cn --><!-- keep by customization: begin --> <em>YourBizTalkServiceName</em>.biztalk.windows.net <!-- keep by customization: end -->. A custom domain can also be entered. For example, if your domain is <em>contoso</em>, you can enter: <br/><br/>
 	<em>MyCompany</em>.contoso.com<br/>
 	<em>MyCompanyMyApplication</em>.contoso.com<br/>
 	<em>MyApplication</em>.contoso.com<br/>
@@ -112,9 +124,9 @@ Select the NEXT arrow.
 Select the check mark to complete the wizard. The progress icon appears:  
 ![Progress icon displays when complete][ProgressComplete]
 
-When complete, the Azure BizTalk Service is created and ready for your applications. The default settings are sufficient. If you want to change the default settings, select **BIZTALK SERVICES** in the left navigation pane, and then select your BizTalk Service. Additional settings are displayed in the [Dashboard, Monitor, and Scale tabs](biztalk-dashboard-monitor-scale-tabs.md) at the top.
+When complete, the Azure BizTalk Service is created and ready for your applications. The default settings are sufficient. If you want to change the default settings, select **BIZTALK SERVICES** in the left navigation pane, and then select your BizTalk Service. Additional settings are displayed in the [Dashboard, Monitor, and Scale <!-- deleted by customization tabs](/documentation/articles/biztalk-dashboard-monitor-scale-tabs) --><!-- keep by customization: begin --> tabs](biztalk-dashboard-monitor-scale-tabs.md) <!-- keep by customization: end --> at the top.
 
-Depending on the state of the BizTalk Service, there are some operations that cannot be completed. For a list of these operations, go to [BizTalk Services State Chart](biztalk-service-state-chart.md).
+Depending on the state of the BizTalk Service, there are some operations that cannot be completed. For a list of these operations, go to [BizTalk Services State <!-- deleted by customization Chart](/documentation/articles/biztalk-service-state-chart) --><!-- keep by customization: begin --> Chart](biztalk-service-state-chart.md) <!-- keep by customization: end -->.
 
 
 ## Post-provisioning steps
@@ -126,7 +138,7 @@ Depending on the state of the BizTalk Service, there are some operations that ca
 #### <a name="InstallCert"></a>Install the certificate on a local computer
 As part of BizTalk Service provisioning, a self-signed certificate is created and associated with your BizTalk Service subscription. You must download this certificate and install it on computers from where you either deploy BizTalk Service applications or send messages to a BizTalk Service endpoint.
 
-1. Sign in to the [Azure portal](http://go.microsoft.com/fwlink/p/?LinkID=213885).
+1. Sign in to the [Azure <!-- deleted by customization Management Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> portal](http://go.microsoft.com/fwlink/p/?LinkID=213885) <!-- keep by customization: end -->.
 2. Select **BIZTALK SERVICES** in the left navigation pane, and then select your BizTalk Service subscription.
 3. Select the **Dashboard** tab.
 4. Select **Download SSL Certificate**:  
@@ -141,7 +153,7 @@ The self-signed certificate that is automatically created when creating BizTalk 
 
 #### <a name="ACS"></a>Get the Access Control namespace
 
-1. Sign in to the [Azure portal](http://go.microsoft.com/fwlink/p/?LinkID=213885).
+1. Sign in to the [Azure <!-- deleted by customization Management Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> portal](http://go.microsoft.com/fwlink/p/?LinkID=213885) <!-- keep by customization: end -->.
 2. Select **BIZTALK SERVICES** in the left navigation pane, and then select your BizTalk Service.
 3. In the task bar, select **Connection Information**:  
 ![Select Connection Information][ACSConnectInfo]
@@ -159,7 +171,7 @@ The Access Control service identity is a set of credentials that allow applicati
 
 > [AZURE.IMPORTANT] The BizTalk Service uses **Owner** for the default service identity and the **Password** value. If you use the Symmetric Key value instead of the Password value, the following error may occur.<br/><br/>*Could not connect to the Access Control Management Service account with the specified credentials*
 
-[Managing Your ACS Namespace](https://msdn.microsoft.com/library/azure/hh674478.aspx) lists some guidelines and recommendations.
+[Managing Your ACS <!-- deleted by customization Namespace](https://msdn.microsoft.com/zh-cn/library/azure/hh674478.aspx) --><!-- keep by customization: begin --> Namespace](https://msdn.microsoft.com/library/azure/hh674478.aspx) <!-- keep by customization: end --> lists some guidelines and recommendations.
 
 ## Requirements explained
 
@@ -171,11 +183,11 @@ These requirements do not apply to the Free Edition.
 </tr>
 <tr>
 <td>Azure subscription</td>
-<td>The subscription determines who can sign in to the Azure portal. The Account holder creates the subscription at <a HREF="https://account.windowsazure.com/Subscriptions"> Azure Subscriptions</a>.
+<td>The subscription determines who can sign in to the Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> portal <!-- keep by customization: end -->. The Account holder creates the subscription at <a <!-- deleted by customization HREF="https://account.windowsazure.cn/Subscriptions"> --><!-- keep by customization: begin --> HREF="https://account.windowsazure.com/Subscriptions"> <!-- keep by customization: end --> Azure Subscriptions</a>.
 <br/><br/>
-The Azure account can have multiple subscriptions and can be managed by anyone who is permitted. For example, your Azure account holder creates a subscription named <em>BizTalkServiceSubscription</em> and gives the BizTalk Administrators within your company (for example, ContosoBTSAdmins@live.com) access to this subscription. In this scenario, the BizTalk Administrators sign in to the Azure portal and have full Administrator rights to all the hosted services in the subscription, including Azure BizTalk Services. The BizTalk Administrators are not the Azure account holders and therefore don't have access to any billing information.
+The Azure account can have multiple subscriptions and can be managed by anyone who is permitted. For example, your Azure account holder creates a subscription named <em>BizTalkServiceSubscription</em> and gives the BizTalk Administrators within your company (for example, ContosoBTSAdmins@live.com) access to this subscription. In this scenario, the BizTalk Administrators sign in to the Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> portal <!-- keep by customization: end --> and have full Administrator rights to all the hosted services in the subscription, including Azure BizTalk Services. The BizTalk Administrators are not the Azure account holders and therefore don't have access to any billing information.
 <br/><br/>
-<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=267577"> Manage Subscriptions and Storage Accounts in the Azure portal</a> provides more information.
+<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=267577"> Manage Subscriptions and Storage Accounts in the Azure <!-- deleted by customization Management Portal</a> --><!-- keep by customization: begin --> portal</a> <!-- keep by customization: end --> provides more information.
 </td>
 </tr>
 <tr>
@@ -204,7 +216,7 @@ The SQL Database scale is automatically configured. Typically, the default scale
 <td>Gives access to tables, blobs, and queues used by your BizTalk Service to save the following:
 
 <ul>
-<li>Log files that monitor the BizTalk Service. The monitoring output is also displayed in the **Monitoring** tab in the Azure portal.</li>
+<li>Log files that monitor the BizTalk Service. The monitoring output is also displayed in the **Monitoring** tab in the Azure <!-- deleted by customization Management Portal.</li> --><!-- keep by customization: begin --> portal.</li> <!-- keep by customization: end -->
 <li>When creating an X12 or AS2 agreement between partners, you can enable the Archiving feature to store message properties. This data is saved in the Storage account.</li>
 </ul>
 <br/>
@@ -253,21 +265,35 @@ When you create an Azure BizTalk Service, the **Hybrid Connections** tab is avai
 
 Hybrid Connections are used to connect an Azure website or Azure mobile service to any on-premises resource that uses a static TCP port, such as SQL Server, MySQL, HTTP Web APIs, Mobile Services, and most custom Web Services.  Hybrid Connections and the BizTalk Adapter Service are different. The BizTalk Adapter Service is used to connect Azure BizTalk Services to an on-premises Line of Business (LOB) system.
 
- See [Hybrid Connections](integration-hybrid-connection-overview.md) to learn more, including creating and managing Hybrid Connections.
+ See [Hybrid <!-- deleted by customization Connections](/documentation/articles/integration-hybrid-connection-overview) --><!-- keep by customization: begin --> Connections](integration-hybrid-connection-overview.md) <!-- keep by customization: end --> to learn more, including creating and managing Hybrid Connections.
 
 
 ## Next steps
 
-Now that a BizTalk Service is created, familiarize yourself with the different [BizTalk Services: Dashboard, Monitor and Scale tabs](biztalk-dashboard-monitor-scale-tabs.md). Your BizTalk Service is ready for your applications. To start creating applications, go to [Azure BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=235197).
+Now that a BizTalk Service is created, familiarize yourself with the different [BizTalk Services: Dashboard, Monitor and Scale <!-- deleted by customization tabs](/documentation/articles/biztalk-dashboard-monitor-scale-tabs) --><!-- keep by customization: begin --> tabs](biztalk-dashboard-monitor-scale-tabs.md) <!-- keep by customization: end -->. Your BizTalk Service is ready for your applications. To start creating applications, go to [Azure BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=235197).
 
 ## See also
+<!-- deleted by customization
+- [BizTalk Services: Editions Chart](/documentation/articles/biztalk-editions-feature-chart)<br/>
+- [BizTalk Services: State Chart](/documentation/articles/biztalk-service-state-chart)<br/>
+- [BizTalk Services: Backup and Restore](/documentation/articles/biztalk-backup-restore)<br/>
+- [BizTalk Services: Throttling](/documentation/articles/biztalk-throttling-thresholds)<br/>
+- [BizTalk Services: Issuer Name and Issuer <!-- deleted by customization Key](/documentation/articles/biztalk-issuer-name-issuer-key)<br/> --><!-- keep by customization: begin --> Key](biztalk-issuer-name-issuer-key.md)<br/> <!-- keep by customization: end -->
+-->
+<!-- keep by customization: begin -->
 - [BizTalk Services: Editions Chart](biztalk-editions-feature-chart.md)<br/>
 - [BizTalk Services: State Chart](biztalk-service-state-chart.md)<br/>
 - [BizTalk Services: Backup and Restore](biztalk-backup-restore.md)<br/>
 - [BizTalk Services: Throttling](biztalk-throttling-thresholds.md)<br/>
-- [BizTalk Services: Issuer Name and Issuer Key](biztalk-issuer-name-issuer-key.md)<br/>
+- [BizTalk Services: Issuer Name and Issuer <!-- deleted by customization Key](/documentation/articles/biztalk-issuer-name-issuer-key)<br/> --><!-- keep by customization: begin --> Key](biztalk-issuer-name-issuer-key.md)<br/> <!-- keep by customization: end -->
+<!-- keep by customization: end -->
 - [How do I Start Using the Azure BizTalk Services SDK](http://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
+<!-- deleted by customization
+- [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview)
+-->
+<!-- keep by customization: begin -->
 - [Hybrid Connections](integration-hybrid-connection-overview.md)
+<!-- keep by customization: end -->
 
 [NewBizTalkService]: ./media/biztalk-provision-services/WABS_NewBizTalkService.png
 [NEWButton]: ./media/biztalk-provision-services/WABS_New.png

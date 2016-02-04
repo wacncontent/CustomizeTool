@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use an HTML client | Windows Azure"
+	pageTitle="How to use an HTML client with Azure Mobile Services | Windows Azure"
 	description="Learn how to use an HTML client for Azure Mobile Services."
 	services="mobile-services"
 	documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/24/2015"
+	ms.date="10/23/2015"
 	wacn.date=""/>
 
 # How to use an HTML/JavaScript client for Azure Mobile Services
@@ -62,7 +62,7 @@ The following code illustrates how to filter data by including a `where` clause 
 	    alert("Error: " + err);
 	});
 
-By adding calling `where` on the Query object and passing an object as a parameter, we are  instructing Mobile Services to return only the rows whose `complete` column contains the `false` value. Also, look at the request URI below, and notice that we are modifying the query string  itself:
+By calling `where` on the Query object and passing an object as a parameter, we are  instructing Mobile Services to return only the rows whose `complete` column contains the `false` value. Also, look at the request URI below, and notice that we are modifying the query string  itself:
 
 	GET /tables/todoitem?$filter=(complete+eq+false) HTTP/1.1
 
@@ -291,9 +291,9 @@ String IDs provide you with the following benefits:
 + Records are easier to merge from different tables or databases.
 + IDs values can integrate better with an application's logic.
 
-When a string ID value is not already set on an inserted record, Mobile Services generates a unique value for the ID. For more information on how to generate your own ID values, either on the client or in a .NET backend, see [How to: Generate unique ID values](/documentation/articles/mobile-services-how-to-use-server-scripts#generate-guids).
+When a string ID value is not already set on an inserted record, Mobile Services generates a unique value for the ID. For more information on how to generate your own ID values, either on the client or in a .NET backend, see [How to: Generate unique ID <!-- deleted by customization values](/documentation/articles/mobile-services-how-to-use-server-scripts#generate-guids) --><!-- keep by customization: begin --> values](/documentation/articles/mobile-services-how-to-use-server-scripts/#generate-guids) <!-- keep by customization: end -->.
 
-You can also use integer IDs for your tables. To use an integer ID, you must create your table with the `mobile table create` command using the `--integerId` option. This command is used with the Command-line Interface (CLI) for Azure. For more information on using the CLI, see [CLI to manage Mobile Services tables](/documentation/articles/virtual-machines-command-line-tools#Mobile_Tables).
+You can also use integer IDs for your tables. To use an integer ID, you must create your table with the `mobile table create` command using the `--integerId` option. This command is used with the Command-line Interface (CLI) for Azure. For more information on using the CLI, see [CLI to manage Mobile Services <!-- deleted by customization tables](/documentation/articles/virtual-machines-command-line-tools#Mobile_Tables) --><!-- keep by customization: begin --> tables](/documentation/articles/virtual-machines-command-line-tools/#Mobile_Tables) <!-- keep by customization: end -->.
 
 ##<a name="modifying"></a>How to: Modify data in a mobile service
 
@@ -504,7 +504,7 @@ The following example shows how to use the Live SDK with WinJS APIs to provide a
 	authenticate();
 
 This initializes the Live Connect client, sends a new login request to Microsoft account, sends the returned authentication token to Mobile Services, and then displays information about the signed-in user. The app does not start until authentication succeeds.
-
+<!--- //this guidance may be bad from an XSS vulnerability standpoint. We need to find better guidance for this
 ###Caching the authentication token
 In some cases, the call to the login method can be avoided after the first time the user authenticates. We can use [sessionStorage] or [localStorage] to cache the current user identity the first time they log in and every subsequent time we check whether we already have the user identity in our cache. If the cache is empty or calls fail (meaning the current login session has expired), we still need to go through the login process.
 
@@ -521,6 +521,7 @@ In some cases, the call to the login method can be avoided after the first time 
      // Log out
     client.logout();
     sessionStorage.loggedInUser = null;
+-->
 
 ##<a name="push-notifications"></a>How to: Register for push notifications
 
@@ -623,7 +624,7 @@ Filters are used for a lot more than customizing request headers. They can be us
 
 ##<a name="hostnames"></a>How to: Use cross-origin resource sharing
 
-To control which websites are allowed to interact with and send requests to your mobile service, make sure to add the host name of the website you use to host it to the Cross-Origin Resource Sharing (CORS) whitelist. For a JavaScript backend mobile service, you can configure the whitelist on the Configure tab in the [Azure Management portal](https://manage.windowsazure.cn). You can use wildcards if required. By default, new Mobile Services instruct browsers to permit access only from `localhost`, and Cross-Origin Resource Sharing (CORS) allows JavaScript code running in a browser on an external hostname to interact with your Mobile Service.  This configuration is not necessary for WinJS applications.
+To control which websites are allowed to interact with and send requests to your mobile service, make sure to add the host name of the website you use to host it to the Cross-Origin Resource Sharing (CORS) whitelist. For a JavaScript backend mobile service, you can configure the whitelist on the Configure tab in the [Azure Management Portal](https://manage.windowsazure.cn). You can use wildcards if required. By default, new Mobile Services instruct browsers to permit access only from `localhost`, and Cross-Origin Resource Sharing (CORS) allows JavaScript code running in a browser on an external hostname to interact with your Mobile Service.  This configuration is not necessary for WinJS applications.
 
 <!-- Anchors. -->
 [What is Mobile Services]: #what-is

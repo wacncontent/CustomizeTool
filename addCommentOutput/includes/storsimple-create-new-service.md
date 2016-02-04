@@ -1,10 +1,12 @@
 <!-- deleted by customization
-<!--author=alkohli last changed: 9/17/15-->
+<!--author=alkohli last changed: 12/1/15-->
 
 
 #### To create a new service
 
-1. Using your Microsoft account credentials, log on to the Management Portal at this URL: [http://azure.microsoft.com/](http://azure.microsoft.com/).
+1. Using your Microsoft account credentials, log on to the Azure Management Portal at this URL: [http://azure.microsoft.com/](http://azure.microsoft.com/).
+
+2. In the Azure Management Portal, click **New** > **Data Services** > **StorSimple Manager** > **Quick Create**.
 -->
 <!-- keep by customization: begin -->
 <properties 
@@ -24,9 +26,9 @@
 ### To create a new service
 
 1. Use your Microsoft account credentials to log on to the Windows Azure Management Portal here: [Azure Management Portal](https://manage.windowsazure.cn/).
-<!-- keep by customization: end -->
 
-2. In the Management Portal, click **New** > **Data Services** > **StorSimple Manager** > **Quick Create**.
+2. In the  Management Portal, click **New** > **Data Services** > **StorSimple Manager** > **Quick Create**.
+<!-- keep by customization: end -->
 
 3. In the form that is displayed, do the following:
   1. Supply a unique **Name** for your service. This is a friendly name that can be used to identify the service. The name can have between 2 and 50 characters that can be letters, numbers, and hyphens. The name must start and end with a letter or a number.
@@ -34,7 +36,7 @@
   2. Supply a **Location** for your service. In general, choose a Location closest to the geographical region where you want to deploy your device. You may also want to factor in the following: 
 	 
 		- If you have existing workloads in Azure that you also intend to deploy with your StorSimple device, you should use that datacenter.
-		- Your StorSimple Manager service and Azure storage can be in two separate locations. In such a case, you are required to create the StorSimple Manager and Azure storage account separately. To create an Azure storage account, go to the Azure Storage service in the Management Portal and follow the steps in [Create an Azure Storage account](/documentation/articles/storage-create-storage-account#create-a-storage-account). After you create this account, add it to the StorSimple Manager service by following the steps in [Configure a new storage account for the service](/documentation/articles/storsimple-deployment-walkthrough#configure-a-new-storage-account-for-the-service).
+		- Your StorSimple Manager service and Azure storage can be in two separate locations. In such a case, you are required to create the StorSimple Manager and Azure storage account separately. To create an Azure storage account, go to the Azure Storage service in the Azure Management Portal and follow the steps in [Create an Azure Storage account](/documentation/articles/storage-create-storage-account#create-a-storage-account). After you create this account, add it to the StorSimple Manager service by following the steps in [Configure a new storage account for the service](/documentation/articles/storsimple-deployment-walkthrough#configure-a-new-storage-account-for-the-service).
 		 
 -->
 <!-- keep by customization: begin -->

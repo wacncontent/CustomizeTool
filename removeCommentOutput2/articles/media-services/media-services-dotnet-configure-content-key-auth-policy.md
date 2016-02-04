@@ -47,7 +47,7 @@ For more information, see
 - Upload and encode your assets using **AssetCreationOptions.StorageEncrypted** option.
 - If you plan to have multiple content keys that require the same policy configuration, it is strongly recommended to create a single authorization policy and reuse it with multiple content keys.
 - The Key Delivery service caches ContentKeyAuthorizationPolicy and its related objects (policy options and restrictions) for 15 minutes.  If you create a ContentKeyAuthorizationPolicy and specify to use a “Token” restriction, then test it, and then update the policy to “Open” restriction, it will take roughly 15 minutes before the policy switches to the “Open” version of the policy.
-- If you add or update your asset’s delivery policy, you must delete an existing locator (if any) and create a new locator.
+- If you add or update your asset's delivery policy, you must delete an existing locator (if any) and create a new locator.
 
 
 ##AES-128 Dynamic Encryption 
@@ -99,7 +99,7 @@ The following example creates an open authorization policy and adds it to the co
 
 This section describes how to create a content key authorization policy and associate it with the content key. The authorization policy describes what authorization requirements must be met to determine if the user is authorized to receive the key (for example, does the “verification key” list contain the key that the token was signed with).
 
-To configure the token restriction option, you need to use an XML to describe the token’s authorization requirements. The token restriction configuration XML must conform to the following XML schema.
+To configure the token restriction option, you need to use an XML to describe the token's authorization requirements. The token restriction configuration XML must conform to the following XML schema.
 
 ####<a id="schema"></a>Token restriction schema
 	
@@ -281,7 +281,7 @@ The following example creates an open authorization policy and adds it to the co
 
 ###Token Restriction
 
-To configure the token restriction option, you need to use an XML to describe the token’s authorization requirements. The token restriction configuration XML must conform to the XML schema shown in [this](#schema) section.
+To configure the token restriction option, you need to use an XML to describe the token's authorization requirements. The token restriction configuration XML must conform to the XML schema shown in [this](#schema) section.
 	
 	public static string AddTokenRestrictedAuthorizationPolicy(IContentKey contentKey)
 	{
@@ -375,7 +375,7 @@ To configure the token restriction option, you need to use an XML to describe th
         // any restrictions that must be put in place when using a given output.
         // For example, if the DigitalVideoOnlyContentRestriction is enabled, 
         //then the DRM runtime will only allow the video to be displayed over digital outputs 
-        //(analog video outputs won’t be allowed to pass the content).
+        //(analog video outputs won't be allowed to pass the content).
 
         //IMPORTANT: These types of restrictions can be very powerful but can also affect the consumer experience. 
         // If the output protections are configured too restrictive, 

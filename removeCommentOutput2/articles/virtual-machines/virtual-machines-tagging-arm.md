@@ -15,13 +15,16 @@
 
 # How to Tag a Virtual Machine in Azure
 
-This article describes different ways to tag a virtual machine in Azure. Tags are user-defined Key/Value pairs which can be placed directly on a resource or a resource group. Azure currently supports up to 15 tags per resource and resource group. Tags may be placed on a resource at the time of creation or added to an existing resource.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
+
+This article describes different ways to tag a virtual machine in Azure through the Azure Resource Manager. Tags are user-defined Key/Value pairs which can be placed directly on a resource or a resource group. Azure currently supports up to 15 tags per resource and resource group. Tags may be placed on a resource at the time of creation or added to an existing resource. Please note, tags are supported for resources created via the Azure Resource Manager only.
 
 ## Tagging a Virtual Machine through Templates
 
-First, let’s look at tagging through templates. [This template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm) places tags on the following resources: Compute (Virtual Machine), Storage (Storage Account), and Network (Public IP Address, Virtual Network, and Network Interface).
+First, let's look at tagging through templates. [This template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm) places tags on the following resources: Compute (Virtual Machine), Storage (Storage Account), and Network (Public IP Address, Virtual Network, and Network Interface).
 
-Click the **Deploy to Azure** button from the [template link](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm). This will navigate to the [Azure Preview Portal](http://manage.windowsazure.cn/) where you can deploy this template.
+Click the **Deploy to Azure** button from the [template link](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm). This will navigate to the [Azure Preview Portal](https://manage.windowsazure.cn) where you can deploy this template.
 
 ![Simple deployment with Tags](./media/virtual-machines-tagging-arm/deploy-to-azure-tags.png)
 
@@ -136,14 +139,14 @@ Tagging is also supported for resources that are already created through the Azu
 
 Unlike PowerShell, if you are adding tags to a resource that already contains tags, you do not need to specify all tags (old and new) before using the `azure vm set` command. Instead, this command allows you to append a tag to your resource. To add a new VM tag through the Azure CLI, you can use the `azure vm set` command along with the tag parameter **-t**:
 
-        azure vm set -g MyResourceGroup -n MyVM –t myNewTagName1=myNewTagValue1;myNewTagName2=myNewTagValue2
+        azure vm set -g MyResourceGroup -n MyVM -t myNewTagName1=myNewTagValue1;myNewTagName2=myNewTagValue2
 
-To remove all tags, you can use the **–T** parameter in the `azure vm set` command.
+To remove all tags, you can use the **-T** parameter in the `azure vm set` command.
 
-        azure vm set – g MyResourceGroup –n MyVM -T
+        azure vm set - g MyResourceGroup -n MyVM -T
 
 
-Now that we have applied tags to our resources via PowerShell, Azure CLI, and the Portal, let’s take a look at the usage details to see the tags in the billing portal.
+Now that we have applied tags to our resources via PowerShell, Azure CLI, and the Portal, let's take a look at the usage details to see the tags in the billing portal.
 
 
 ## Viewing your tags in the usage details
@@ -175,10 +178,10 @@ By analyzing these tags along with usage, organizations will be able to gain new
 
 
 
-[PowerShell environment with Azure Resource Manager]: /documentation/articles/powershell-azure-resource-manager
+[PowerShell environment with Azure Resource Manager]: ../powershell-azure-resource-manager.md
 [Azure Resource Cmdlets]: https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx
 [Azure CLI environment]: /documentation/articles/xplat-cli-azure-resource-manager
-[Azure Resource Manager Overview]: /documentation/articles/resource-group-overview
-[Using Tags to organize your Azure Resources]: /documentation/articles/resource-group-using-tags
-[Understanding your Azure Bill]: /documentation/articles/billing-understand-your-bill
-[Gain insights into your Windows Azure resource consumption]: /documentation/articles/billing-usage-rate-card-overview
+[Azure Resource Manager Overview]: ../documentation/articles/resource-group-overview
+[Using Tags to organize your Azure Resources]: ../resource-group-using-tags.md
+[Understanding your Azure Bill]: ../billing-understand-your-bill.md
+[Gain insights into your Windows Azure resource consumption]: ../billing-usage-rate-card-overview.md

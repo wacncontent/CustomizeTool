@@ -38,6 +38,7 @@ The numbers below are an approximation.
 - CPU consumption: ~1% increase
 - Memory consumption: Up to 10 % of the total system memory
 - Network Bandwidth Usage: ~1 MB / 1000 ADFS requests
+
 >[AZURE.NOTE]In the event of the agent being unable to communicate to Azure, the agent will store the data locally, up to a defined maximum limit. Once the agent reaches the limit, if the agent has not been able to upload the data to the service, the new ADFS transactions will overwrite any “cached” transactions on a “least recently serviced” basis.
 
 - Local buffer storage for AD Health Agent: ~20 MB
@@ -93,6 +94,7 @@ You will need to have TCP/UDP ports 80, 443 and 5671 open for the Azure AD Conne
 ## Related links
 
 * [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health)
-* [Azure AD Connect Health Agent Installation for AD FS](/documentation/articles/active-directory-aadconnect-health-agent-install-adfs)
-* [Using Azure AD Connect Health with AD FS](/documentation/articles/active-directory-aadconnect-health-adfs)
+* [Azure AD Connect Health Agent Installation](/documentation/articles/active-directory-aadconnect-health-agent-install)
 * [Azure AD Connect Health Operations](/documentation/articles/active-directory-aadconnect-health-operations)
+* [Using Azure AD Connect Health with AD FS](/documentation/articles/active-directory-aadconnect-health-adfs)
+* [Using Azure AD Connect Health for sync](/documentation/articles/active-directory-aadconnect-health-sync)

@@ -29,6 +29,4 @@ where _subscription id or name_ is either the subscription id or the subscriptio
 
 Before you can use the xplat-cli with Resource Manager templates and deploy Azure resources and workloads using resource groups, you will need an account with Azure (of course). If you do not have an account, you can get a [free Azure trial here](/pricing/1rmb-trial/).
 
-If you don't already have an Azure account but you do have a subscription to MSDN subscription, you can get free Azure credits by activating your [MSDN subscriber benefits here](/pricing/member-offers/msdn-benefits-details/) -- or you can use the free account. Either will work for Azure access. 
-
-
+ If you don't already have an Azure account but you do have a subscription to MSDN subscription, you can get free Azure credits by activating your [MSDN subscriber benefits here](/pricing/member-offers/msdn-benefits-details/) -- or you can use the free account. Either will work for Azure access.

@@ -39,6 +39,8 @@ AMQP 1.0 is an efficient, reliable, wire-level messaging protocol that you can u
 
 ## AMQP 1.0 is a Standard (with a capital 'S')
 
+AMQP 1.0 is an international standard, approved by ISO and IEC as ISO/IEC 19464:2014.
+
 AMQP 1.0 has been in development since 2008 by a core group of more than 20 companies, both technology suppliers and end-user firms. During that time, user firms have contributed their real-world business requirements and the technology vendors have evolved the protocol to meet those requirements. Throughout the process, vendors have participated in workshops in which they collaborated to validate the interoperability between their implementations.
 
 In October 2011, the development work transitioned to a technical committee within the Organization for the Advancement of Structured Information Standards (OASIS) and the OASIS AMQP 1.0 Standard was released in October 2012. The following firms participated in the technical committee during the development of the standard:
@@ -94,9 +96,9 @@ Ready to learn more? Visit the following links:
 - [AMQP in Service Bus for Windows Server]
 
 [0]: ./media/service-bus-amqp-overview/service-bus-amqp-1.png
-[Using Service Bus from .NET with AMQP]: /documentation/articles/service-bus-amqp-dotnet
-[Using Service Bus from Java with AMQP]: /documentation/articles/service-bus-amqp-java
-[Using Service Bus from Python with AMQP]: /documentation/articles/service-bus-amqp-python
-[Using Service Bus from PHP with AMQP]: /documentation/articles/service-bus-amqp-php
-[Installing Apache Qpid Proton-C on an Azure Linux VM]: /documentation/articles/service-bus-amqp-apache
+[Using Service Bus from .NET with AMQP]: service-bus-amqp-dotnet.md
+[Using Service Bus from Java with AMQP]: service-bus-amqp-java.md
+[Using Service Bus from Python with AMQP]: service-bus-amqp-python.md
+[Using Service Bus from PHP with AMQP]: service-bus-amqp-php.md
+[Installing Apache Qpid Proton-C on an Azure Linux VM]: service-bus-amqp-apache.md
 [AMQP in Service Bus for Windows Server]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx

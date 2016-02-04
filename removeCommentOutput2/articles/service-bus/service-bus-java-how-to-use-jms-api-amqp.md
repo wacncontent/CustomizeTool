@@ -23,9 +23,8 @@ This article explains how to use the Service Bus brokered messaging features (qu
 
 ## Get started with Service Bus
 
-This guide assumes that you already have a Service Bus namespace containing a queue named "queue1." If you do not, then you can create the namespace and queue using the [Azure Management Portal](http://manage.windowsazure.cn). For more information about how to create Service Bus namespaces and queues, see [How to use Service Bus queues](/documentation/articles/service-bus-dotnet-how-to-use-queues).
-
-> [AZURE.NOTE] Partitioned queues and topics also support AMQP. For more information, see [Partitioned messaging entities](/documentation/articles/service-bus-partitioning) and [AMQP 1.0 support for Service Bus partitioned queues and topics](/documentation/articles/service-bus-partitioned-queues-and-topics-amqp-overview).
+This guide assumes that you already have a Service Bus namespace containing a queue named "queue1." If you do not, then you can create the namespace and queue using the [Azure Management Portal](http://manage.windowsazure.cn). For more information about how to create Service Bus namespaces and queues, see [How to Use Service Bus Queues](/documentation/articles/service-bus-dotnet-how-to-use-queues).
+> [AZURE.NOTE] Partitioned queues and topics also support AMQP. For more information, see [Partitioned messaging entities](/documenatation/articles/service-bus-partitioning) and [AMQP 1.0 support for Service Bus partitioned queues and topics](/documenatation/articles/service-bus-partitioned-queues-and-topics-amqp-overview).
 
 ## Downloading the AMQP 1.0 JMS client library
 
@@ -102,7 +101,7 @@ Where **[jndi\_name]** and **[physical\_name]** have the following meanings:
 - **[jndi_name]**: The logical name of the destination. This is the name that will be resolved in the Java application using the JNDI IntialContext.lookup() method.
 - **[physical_name]**: The name of the Service Bus entity to which the application sends or receives messages.
 
-> [AZURE.NOTE] When receiving from a Service Bus topic subscription, the physical name specified in JNDI should be the name of the topic. The subscription name is provided when the durable subscription is created in the JMS application code. The [Service Bus AMQP 1.0 Developer's Guide](/documentation/articles/service-bus-amqp-dotnet) provides more details on working with Service Bus topic subscriptions from JMS.
+> [AZURE.NOTE] When receiving from a Service Bus topic subscription, the physical name specified in JNDI should be the name of the topic. The subscription name is provided when the durable subscription is created in the JMS application code. The [Service Bus AMQP 1.0 Developer's Guide](/documenatation/articles/service-bus-amqp-dotnet) provides more details on working with Service Bus topic subscriptions from JMS.
 
 ### Write the JMS application
 
@@ -119,7 +118,7 @@ env.put(Context.PROVIDER_URL, "servicebus.properties");
 InitialContext context = new InitialContext(env);
 ``` 
 
-### A simple JMS application using a Service Bus queue
+### A simple JMS application using a Service Bus Queue 
 
 The following example program sends JMS TextMessages to a Service Bus queue with the JNDI logical name of QUEUE, and receives the messages back.
 
@@ -237,13 +236,13 @@ Received message with JMSMessageID = ID:956102171969368961
 exit
 ```
 
-## Cross-platform messaging between JMS and .NET
+##Cross-platform messaging between JMS and .NET
 
 This guide showed how to send and receive messages to and from Service Bus using JMS. However, one of the key benefits of AMQP 1.0 is that it enables applications to be built from components written in different languages, with messages exchanged reliably and at full fidelity.
 
 Using the sample JMS application described above and a similar .NET application taken from a companion guide, [How to use AMQP 1.0 with the .NET Service Bus .NET API](/documentation/articles/service-bus-dotnet-advanced-message-queuing), you can exchange messages between .NET and Java. 
 
-For more information about the details of cross-platform messaging using Service Bus and AMQP 1.0, see the [Service Bus AMQP 1.0 Developer's Guide](/documentation/articles/service-bus-amqp-dotnet).
+For more information about the details of cross-platform messaging using Service Bus and AMQP 1.0, see the [Service Bus AMQP 1.0 Developer's Guide](/documenatation/articles/service-bus-amqp-dotnet).
 
 ### JMS to .NET
 
@@ -321,14 +320,14 @@ The following restrictions exist when using JMS over AMQP 1.0 with Service Bus, 
 
 This how-to guide showed how to use Service Bus brokered messaging features (queues and publish/subscribe topics) from Java using the popular JMS API and AMQP 1.0.
 
-You can also use Service Bus AMQP 1.0 from other languages, including .NET, C, Python, and PHP. Components built using these different languages can exchange messages reliably and at full fidelity using the AMQP 1.0 support in Service Bus. For more information, see the [Service Bus AMQP 1.0 Developer's Guide](/documentation/articles/service-bus-amqp-dotnet).
+You can also use Service Bus AMQP 1.0 from other languages, including .NET, C, Python, and PHP. Components built using these different languages can exchange messages reliably and at full fidelity using the AMQP 1.0 support in Service Bus. For more information, see the [Service Bus AMQP 1.0 Developer's Guide](/documenatation/articles/service-bus-amqp-dotnet).
 
 ## Next steps
 
 * [AMQP 1.0 support in Azure Service Bus](/documentation/articles/service-bus-amqp-overview)
 * [How to use AMQP 1.0 with the Service Bus .NET API](/documentation/articles/service-bus-dotnet-advanced-message-queuing)
-* [Service Bus AMQP 1.0 Developer's Guide](/documentation/articles/service-bus-amqp-dotnet)
-* [How to use Service Bus queues](/documentation/articles/service-bus-dotnet-how-to-use-queues)
+* [Service Bus AMQP 1.0 Developer's Guide](/documenatation/articles/service-bus-amqp-dotnet)
+* [How to Use Service Bus Queues](/documentation/articles/service-bus-dotnet-how-to-use-queues)
 * [Java Developer Center](/develop/java/).
 
 

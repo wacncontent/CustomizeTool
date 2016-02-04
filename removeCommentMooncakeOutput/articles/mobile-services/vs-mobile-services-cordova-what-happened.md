@@ -3,13 +3,13 @@
 	description="Describes what happened to your Azure Cordova project after adding Azure Mobile Services by using Visual Studio Connected Services " 
 	services="mobile-services" 
 	documentationCenter="na" 
-	authors="patshea123" 
+	authors="TomArcher" 
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="09/17/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="09/17/2015" 
 	wacn.date=""/>
 
 # What happened to my Azure Cordova project after adding Azure Mobile Services by using Visual Studio Connected Services?
@@ -24,7 +24,7 @@ The Azure Mobile Service Client plugin included with all Multi-Device Hybrid App
   
 ##Connection string values for Mobile Services
 
-Under `services\mobileServices\settings`, a new JavaScript (.js) file with a **MobileServiceClient** was generated containing the selected mobile service’s application URL and application key. The file contains the initialization of a mobile service client object, similar to the following code.
+Under `services\mobileServices\settings`, a new JavaScript (.js) file with a **MobileServiceClient** was generated containing the selected mobile serviceâs application URL and application key. The file contains the initialization of a mobile service client object, similar to the following code.
 
 	var mobileServiceClient;
 	document.addEventListener("deviceready", function() {
@@ -33,4 +33,4 @@ Under `services\mobileServices\settings`, a new JavaScript (.js) file with a **M
 	        "<insert your key>"
 	    );
 
-[Learn more about mobile services](/documentation/services/mobile-services/) 
+[Learn more about mobile services](/documentation/services/mobile-services) 

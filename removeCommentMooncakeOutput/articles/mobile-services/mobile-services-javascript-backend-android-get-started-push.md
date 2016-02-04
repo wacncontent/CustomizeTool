@@ -9,8 +9,8 @@
 	manager="dwrede"
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
+<tags 
+	ms.service="mobile-services" 
 	ms.date="10/06/2015"
 	wacn.date=""/>
 
@@ -30,19 +30,19 @@ This topic shows how to use Azure Mobile Services to send push notifications to 
 ## Sample code
 To see the completed source code go [here](https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithPush).
 
-##<a id="register"></a>Enable Google Cloud Messaging
+## Enable Google Cloud Messaging
 
 [AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../includes/mobile-services-enable-google-cloud-messaging.md)]
 
-##<a id="configure"></a>Configure Mobile Services to send push requests
+## Configure Mobile Services to send push requests
 
 [AZURE.INCLUDE [mobile-services-android-configure-push](../includes/mobile-services-android-configure-push.md)]
 
-##<a id="add-push"></a>Add push notifications to your app
+## Add push notifications to your app
 
 
 
-Your next step is to install Google Play services. Google Cloud Messaging has some minimum API level requirements for development and testing, which the **minSdkVersion** property in the Manifest must conform to.
+Your next step is to install Google Play services. Google Cloud Messaging has some minimum API level requirements for development and testing, which the **minSdkVersion** property in the Manifest must conform to. 
 
 If you will be testing with an older device, then consult [Set Up Google Play Services SDK] to determine how low you can set this value, and set it appropriately.
 
@@ -55,12 +55,12 @@ If you will be testing with an older device, then consult [Set Up Google Play Se
 [AZURE.INCLUDE [mobile-services-android-getting-started-with-push](../includes/mobile-services-android-getting-started-with-push.md)]
 
 
-##<a id="update-scripts"></a>Update the registered insert script in the Management Portal
+## Update the registered insert script in the Azure Management Portal
 
 [AZURE.INCLUDE [mobile-services-javascript-backend-android-push-insert-script](../includes/mobile-services-javascript-backend-android-push-insert-script.md)]
 
 
-##<a id="test"></a>Test push notifications in your app
+## Test push notifications in your app
 
 You can test the app by directly attaching an Android phone with a USB cable, or by using a virtual device in the emulator.
 
@@ -117,7 +117,7 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
   <br/>Learn more about how Notification Hubs works to deliver notifications to your apps across all major client platforms.
 
 * [Debug Notification Hubs applications](https://msdn.microsoft.com/zh-cn/library/dn530751.aspx)
-  </br>Get guidance troubleshooting and debugging Notification Hubs solutions.
+  </br>Get guidance troubleshooting and debugging Notification Hubs solutions. 
 
 * [How to use the Android client library for Mobile Services]
   <br/>Learn more about how to use Mobile Services with Android.
@@ -143,16 +143,18 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 [Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
 [Get started with authentication]: /documentation/articles/mobile-services-android-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js
-[Push notifications to app users]: /develop/mobile/tutorials/push-notifications-to-users-js
-[Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-js
+[Push notifications to app users]: /documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push
+[Authorize users with scripts]: /documentation/articles/mobile-services-windows-store-javascript-authorize-users-in-scripts
 [JavaScript and HTML]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js
 [Set Up Google Play Services SDK]: http://go.microsoft.com/fwlink/?LinkId=389801
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [How to use the Android client library for Mobile Services]: /documentation/articles/mobile-services-android-how-to-use-client-library
-
 [gcm object]: https://msdn.microsoft.com/zh-cn/library/dn126137.aspx
 
-[Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
+[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
+
+
 [What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
 [Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-android-send-breaking-news
 [Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-android-send-localized-breaking-news
+

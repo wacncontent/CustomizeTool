@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Enabling device writeback in Azure AD Connect | Windows Azure"
+	pageTitle="Azure AD Connect: Enabling device writeback | Windows Azure"
 	description="This document details how to enable device writeback using Azure AD Connect"
 	services="active-directory"
 	documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/12/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 # Enabling device writeback in Azure AD Connect
@@ -20,7 +20,11 @@ Enable conditional access based on devices to ADFS (2012 R2 or higher) protected
 
 This provides additional security and assurance that access to applications is granted only to trusted devices. For more information on conditional access, see [Managing Risk with Conditional Access](/documentation/articles/active-directory-conditional-access) and [Setting up On-premises Conditional Access using Azure Active Directory Device Registration](https://msdn.microsoft.com/zh-cn/library/azure/dn788908.aspx).
 
->[AZURE.NOTE] A subscription to Office 365 or Azure AD Premium is required when using devices registered in Azure Active Directory Device Registration service conditional access policies. This includes policies enforced by Active Directory Federation Services (AD FS) to on-premises resources.
+>[AZURE.NOTE] A subscription to Azure AD Premium is required for device writeback.
+
+.
+
+>[AZURE.IMPORTANT] Devices must be located in the same forest as the users. Since devices must be written back to a single forest, this feature does not currently support a deployment with multiple user forests.
 
 ## Part 1: Install Azure AD Connect
 1. Install Azure AD Connect using Custom or Express settings. The recommendation is to start with having all users and groups successfully synchronized before you enable device writeback.
@@ -32,13 +36,13 @@ Use the following steps to prepare for using device writeback.
 
 2.	If the Active Directory PowerShell module is NOT installed. Install it using the following command:
 
-	`Install-WindowsFeature –Name AD-DOMAIN-Services –IncludeManagementTools`
+	`Install-WindowsFeature -Name AD-DOMAIN-Services -IncludeManagementTools`
 
 3.	With enterprise admin credentials, run the following commands and then exit PowerShell.
 
 	`Import-Module 'C:\Program Files\Microsoft Azure Active Directory Connect\AdPrep\AdSyncPrep.psm1'`
 
-	`Initialize-ADSyncDeviceWriteback {Optional:–DomainName [name] Optional:-AdConnectorAccount [account]}`
+	`Initialize-ADSyncDeviceWriteback {Optional:-DomainName [name] Optional:-AdConnectorAccount [account]}`
 
 
 ![Powershell](./media/active-directory-aadconnect-get-started-custom-device-writeback/powershell.png)

@@ -19,7 +19,7 @@ The error messages itemized in this topic are provided to help the users of Hado
 
 ## <a id="hdi-error-codes"></a>HDInsight error codes
 
-The errors a user can encounter in Azure PowerShell or in the Management Portal are listed alphabetically by name below. The errors are in turn linked to an entry in the [Discription and Mitigation of Errors](#discription-mitigation-errors) section that provide the following information for the error:
+The errors a user can encounter in Azure PowerShell or in the Portal are listed alphabetically by name below. The errors are in turn linked to an entry in the [Discription and Mitigation of Errors](#discription-mitigation-errors) section that provide the following information for the error:
 
 - **Description**: the error message users see
 - **Mitigation**: what steps can be taken to recover from the error.
@@ -83,7 +83,7 @@ The errors a user can encounter in Azure PowerShell or in the Management Portal 
 
 ### <a id="AzureRegionNotSupported"></a>AzureRegionNotSupported
 - **Description**: Could not create cluster in region *nameOfYourRegion*. Use a valid HDInsight region and retry request.
-- **Mitigation**: Customer should create the cluster region that currently supports them: China North, China East.  
+- **Mitigation**: Customer should create the cluster region that currently supports them: China North, China East.
 
 ### <a id="ClusterContainerRecordNotFound"></a>ClusterContainerRecordNotFound
 - **Description**: The server could not find the requested cluster record.  
@@ -95,7 +95,7 @@ The errors a user can encounter in Azure PowerShell or in the Management Portal 
 
 ### <a id="ClusterNameUnavailable"></a>ClusterNameUnavailable
 - **Description**: Cluster name *yourClusterName* is unavailable. Please pick another name.  
-- **Mitigation**: The user should specify a clustername that is unique and does not exist and retry. If the user is using the preview portal, the UI will notify them if a cluster name is already being used during the create steps.
+- **Mitigation**: The user should specify a clustername that is unique and does not exist and retry. If the user is using the Portal, the UI will notify them if a cluster name is already being used during the create steps.
 
 
 ### <a id="ClusterPasswordInvalid"></a>ClusterPasswordInvalid
@@ -262,6 +262,6 @@ The errors a user can encounter in Azure PowerShell or in the Management Portal 
 
 * [Azure HDInsight SDK documentation][hdinsight-sdk-documentation]
 
-[hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
+[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 [image-hdi-debugging-error-messages-portal]: ./media/hdinsight-debug-jobs/hdi-debug-errormessages-portal.png

@@ -1,7 +1,19 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Slack | Windows Azure" description="Learn how to use Slack with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory integration with Slack | Windows Azure" 
+    description="Learn how to use Slack with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags
+	ms.service="active-directory"
+	ms.date="10/22/2015"
+	wacn.date=""/>
+
 #Tutorial: Azure Active Directory integration with Slack
+<!-- keep by customization: begin -->
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=536424).
+<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Slack.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -9,7 +21,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A Slack single sign-on enabled subscription
   
-After completing this tutorial, the Azure AD users you have assigned to Slack will be able to single sign into the application at your Slack company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to Slack will be able to single sign into the application at your Slack company site (service provider initiated sign on), or using the [Introduction to the Access <!-- deleted by customization Panel](/documentation/articles/active-directory-saas-access-panel-introduction). --><!-- keep by customization: begin --> Panel](https://msdn.microsoft.com/zh-cn/library/dn308586) <!-- keep by customization: end -->
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -99,7 +111,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
     4.  Open your base-64 encoded certificate in notepad, copy the content of it into your clipboard, and then paste it to the **Public Certificate** textbox.
     5.  Deselect **Allow users to change their email address**.
     6.  Select **Allow users to choose their own username**.
-    7.  As **Authentication for your team must be used by**, select **It’s optional**.
+    7.  As **Authentication for your team must be used by**, select <!-- deleted by customization **It's --><!-- keep by customization: begin --> **It’s <!-- keep by customization: end --> optional**.
     8.  Click **Save Configuration**.
 
 9.  On the Azure AD portal, select the single sign-on configuration confirmation, and then click **Complete** to close the **Configure Single Sign On** dialog.
@@ -129,4 +141,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-slack-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).

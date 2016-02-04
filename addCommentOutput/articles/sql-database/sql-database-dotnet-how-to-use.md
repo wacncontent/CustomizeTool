@@ -128,7 +128,7 @@ This section shows how to connect to SQL Database instance using different
 
 
 If you choose to use Visual Studio and your configuration doesn't
-include an Azure web application as a front-end, there are no
+include an Azure <!-- deleted by customization web site --><!-- keep by customization: begin --> Website <!-- keep by customization: end --> as a front-end, there are no
 additional tools or SDKs needed to be installed on the development
 computer. You can just start developing your application.
 
@@ -237,5 +237,4 @@ For more information, see [EntityClient Provider for the Entity Framework](http:
 
 ## Next Steps
 
-Now that you have learned the basics of connecting to SQL Database, see [Development: How-to Topics (SQL Database)](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
- 
+Now that you have learned the basics of connecting to SQL Database, see [Development: How-to Topics (SQL <!-- deleted by customization Database)](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx) --><!-- keep by customization: begin --> Database)](http://msdn.microsoft.com//zh-cn/library/azure/ee621787.aspx) <!-- keep by customization: end -->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="How to search StackExchange data using Azure Search | Microsoft Azure"
-	description="Learn how to perform REST searches using Azure Search."
+	pageTitle="How to search StackExchange data using Azure Search | Windows Azure | Hosted cloud search service"
+	description="Learn how to perform REST searches using Azure Search, a cloud hosted search service on Windows Azure."
 	services="search"
 	documentationCenter=""
 	authors="liamca"
@@ -9,22 +9,18 @@
 
 <tags
 	ms.service="search"
-	ms.devlang="rest-api"
-	ms.workload="search"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.date="10/15/2015"
-	ms.author="liamca"/>
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
 # How to search StackExchange data using Azure Search
 
-This article is a walkthrough that highlights some of the core full-text search capabilities that can done with [Azure Search](https://azure.microsoft.com/en-us/services/search/).  It leverages data that Stack Exchange made [available](https://archive.org/details/stackexchange) for Creative Commons usage with the following [attribution](http://blog.stackoverflow.com/2009/06/attribution-required/).
+This article is a walkthrough that highlights some of the core full-text search capabilities that can done with [Azure Search](https://azure.microsoft.com/services/search/).  It leverages data that Stack Exchange made [available](https://archive.org/details/stackexchange) for Creative Commons usage with the following [attribution](http://blog.stackoverflow.com/2009/06/attribution-required/).
 
 ## Getting started
 
 To highlight some of these capabilities, I have created an Azure Search index for you to play with that contains data from Programmer StackExchange as of Oct 14, 2015. NOTE: I will also show how to create your own Azure Search index with this data later on.  
 
-Let’s start with a really simple full text search query where the users might type the word “azure” to find any StackExchange posts relating to Azure.  Give this a try by clicking on this link to see it in action:
+Let's start with a really simple full text search query where the users might type the word “azure” to find any StackExchange posts relating to Azure.  Give this a try by clicking on this link to see it in action:
 
 > [http://fiddle.jshell.net/liamca/gkvfLe6s/1/?index=stackexchange&apikey=252044BE3886FE4A8E3BAA4F595114BB&query=api-version=2015-02-28%26search=azure](http://fiddle.jshell.net/liamca/gkvfLe6s/?index=stackexchange&apikey=252044BE3886FE4A8E3BAA4F595114BB&query=api-version=2015-02-28%26search=azure)
 
@@ -42,11 +38,11 @@ In this example we will search “azure” but return the facet counts for the t
 
 > <http://fiddle.jshell.net/liamca/gkvfLe6s/1/?index=stackexchange&apikey=252044BE3886FE4A8E3BAA4F595114BB&query=api-version=2015-02-28%26search=azure%26$filter=tagsCollection/any(t:+t+eq+'architecture')%26$orderby=viewCount+desc>
 
--	`Spelling Mistakes`: Our new (preview) support for [Lucene Query Expressions](https://msdn.microsoft.com/library/mt589323.aspx) also allows you to do some pretty fancy queries such as fuzzy matching of results and limiting search to specific fields.  This example searches the title field for the word “visualize” but the ~ indicates fuzzy matching which means that results like visualise and visualizing will also be returned.
+-	`Spelling Mistakes`: Our new (preview) support for [Lucene Query Expressions](https://msdn.microsoft.com/zh-cn/library/mt589323.aspx) also allows you to do some pretty fancy queries such as fuzzy matching of results and limiting search to specific fields.  This example searches the title field for the word “visualize” but the ~ indicates fuzzy matching which means that results like visualise and visualizing will also be returned.
 
 > <http://fiddle.jshell.net/liamca/gkvfLe6s/1/?index=stackexchange&apikey=252044BE3886FE4A8E3BAA4F595114BB&query=api-version=2015-02-28&search%3Dtitle%3Avisualise~%26querytype%3Dfull%26searchMode%3Dall%26%24select%3Dtitle>
 
--	`Scoring and Tuning`: [Scoring Profiles](https://msdn.microsoft.com/library/azure/dn798928.aspx) are extremely helpful in helping you tune the results that are returned by the search service.  In fact, now we can also use [Lucene Query Expressions](https://msdn.microsoft.com/library/mt589323.aspx) to apply scoring to individual fields and terms on the fly.  For example, if we wanted to search for the words “visualize” or “chart” in the title field, yet give more weighting to items that have the word “chart” in them, we could do this:
+-	`Scoring and Tuning`: [Scoring Profiles](https://msdn.microsoft.com/zh-cn/library/azure/dn798928.aspx) are extremely helpful in helping you tune the results that are returned by the search service.  In fact, now we can also use [Lucene Query Expressions](https://msdn.microsoft.com/zh-cn/library/mt589323.aspx) to apply scoring to individual fields and terms on the fly.  For example, if we wanted to search for the words “visualize” or “chart” in the title field, yet give more weighting to items that have the word “chart” in them, we could do this:
 
 > <http://fiddle.jshell.net/liamca/gkvfLe6s/1/?index=stackexchange&apikey=252044BE3886FE4A8E3BAA4F595114BB&query=api-version=2015-02-28-Preview%26search%3Dtitle%3Avisualise+OR+title%3Achart%5E3+%26querytype%3Dfull%26searchMode%3Dall%26%24select%3Dtitle>
 
@@ -58,7 +54,7 @@ In this example we will search “azure” but return the facet counts for the t
 
 Other things you might want to play with include:
 
--	[`Suggestions`](https://msdn.microsoft.com/library/azure/mt131377.aspx): As the users type in to the search box, it will be convenient to use fields like Title, Tags and UserName’s for autocompletion.  
+-	[`Suggestions`](https://msdn.microsoft.com/zh-cn/library/azure/mt131377.aspx): As the users type in to the search box, it will be convenient to use fields like Title, Tags and UserName's for autocompletion.  
 
 -	`Recommendations`: Often you will need tools like Apache Mahout or Azure Machine Learning to help you create recommendations that allow you to show similar questions users might be interested in viewing, but luckily this dataset already has some recommendations.
 
@@ -67,7 +63,7 @@ Feel free to play with this JSFiddle page to try different types of queries.  If
 ## How was this Azure Search Index created?
 
 Brent did a lot of the hard work already by showing how to stage the data into a SQL database.  If you want to walk through this process of staging the data yourself, please check out his [tutorial here](http://www.brentozar.com/archive/2014/01/how-to-query-the-stackexchange-databases/).  Otherwise, you can either simply leverage the Azure SQL database I already pre-populated with some data from Oct 15, 2015, or you can try the Azure Search index I created.  The details of this are outlined below in the “Importing Data from Staged Azure SQL Database” section.  
-The only thing I did beyond what Brent outlined was to create a View in my Azure SQL database which will be used by the [Azure Search Indexer](https://msdn.microsoft.com/library/azure/dn946891.aspx) to crawl and ingest data from a group of tables that I am interested in using.  Here is how this View is defined.
+The only thing I did beyond what Brent outlined was to create a View in my Azure SQL database which will be used by the [Azure Search Indexer](https://msdn.microsoft.com/zh-cn/library/azure/dn946891.aspx) to crawl and ingest data from a group of tables that I am interested in using.  Here is how this View is defined.
 
     CREATE VIEW StackExchangeSearchData as
     SELECT
@@ -106,7 +102,7 @@ The only thing I did beyond what Brent outlined was to create a View in my Azure
       on PA.[OwnerUserId] = PUA.Id
       WHERE PQ.PostTypeId = 1
 
-Once this is done, you can then use the [Azure Portal](https://portal.azure.com) to “Import Data” from the above Azure SQL View which will then create an Azure Search index based on the schema of the fields in the View.  If you would like to use the Azure SQL database that I have staged, here is the Read-Only connection string that you can use:
+Once this is done, you can then use the [Azure Management Portal](https://manage.windowsazure.cn) to “Import Data” from the above Azure SQL View which will then create an Azure Search index based on the schema of the fields in the View.  If you would like to use the Azure SQL database that I have staged, here is the Read-Only connection string that you can use:
 
-    Server=tcp:azs-playground.database.windows.net,1433;Database=StackExchange;User ID=reader@azs-playground;
+    Server=tcp:azs-playground.database.chinacloudapi.cn,1433;Database=StackExchange;User ID=reader@azs-playground;
     Password=EdrERBt3j6mZDP;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;

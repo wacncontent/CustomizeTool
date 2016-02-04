@@ -1,15 +1,15 @@
 <properties
-                pageTitle="What is Azure Active Directory?"
-                description="Use Azure Active Directory to extend your existing on-premises identities into the cloud or develop Azure AD integrated applications."
-                services="active-directory"
-                documentationCenter=""
-                authors="markusvi"
-                manager="stevenpo"
-                editor=""/>
+    pageTitle="What is Azure Active Directory?"
+    description="Use Azure Active Directory to extend your existing on-premises identities into the cloud or develop Azure AD integrated applications."
+    services="active-directory"
+    documentationCenter=""
+    authors="markusvi"
+    manager="stevenpo"
+    editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/30/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 
@@ -19,7 +19,7 @@
 
 
 
-Azure Active Directory (Azure AD) is Microsoft’s multi-tenant cloud based directory and identity management service.
+Azure Active Directory (Azure AD) is Microsoft's multi-tenant cloud based directory and identity management service.
 
 For IT Admins, Azure AD provides an affordable, easy to use solution to give employees and business partners single sign-on (SSO) access to [thousands of cloud SaaS Applications](http://blogs.technet.com/b/ad/archive/2014/09/03/50-saas-apps-now-support-federation-with-azure-ad.aspx) like Office365, Salesforce.com, DropBox, and Concur.
 
@@ -41,7 +41,7 @@ If you are an Office365, Azure or Dynamics CRM Online customer, you might not re
 
 ## How reliable is Azure AD?
 
-The multi-tenant, geo-distributed, high availability design of Azure AD means that you can rely on it for your most critical business needs. Running out of 28 data centers around the world with automated failover, you’ll have the comfort of knowing that Azure AD is highly reliable and that even if a data center goes down, copies of your directory data are live in at least two more regionally dispersed data centers and available for instant access.
+The multi-tenant, geo-distributed, high availability design of Azure AD means that you can rely on it for your most critical business needs. Running out of 28 data centers around the world with automated failover, you'll have the comfort of knowing that Azure AD is highly reliable and that even if a data center goes down, copies of your directory data are live in at least two more regionally dispersed data centers and available for instant access.
 
 For more details, see [Service Level Agreements](https://azure.microsoft.com/support/legal/sla/).
 
@@ -51,7 +51,7 @@ For more details, see [Service Level Agreements](https://azure.microsoft.com/sup
 
 Your organization can use Azure AD to improve employee productivity, streamline IT processes, improve security and cut costs in many ways:
 
--	Quickly adopt cloud services, providing employees and partners with an easy single-sign on experience powered by Azure AD’s fully automated SaaS app access management and provisioning services capabilities.
+-	Quickly adopt cloud services, providing employees and partners with an easy single-sign on experience powered by Azure AD's fully automated SaaS app access management and provisioning services capabilities.
 -	Empower employees with access to world class cloud apps and service and self-services capabilities from wherever they need to work on the devices they love to use.
 -	Easily and securely manage employee and vendor access to your corporate social media accounts.
 -	Improve application security with Azure AD multifactor authentication and conditional access.
@@ -67,16 +67,16 @@ Your organization can use Azure AD to improve employee productivity, streamline 
 ## How can I get started?
 -	If you are an IT admin:
  - [Try it out!](https://azure.microsoft.com/trial/get-started-active-directory/) - you can sign up for a free 30 trial today and deploy your first cloud solution in under 5 minutes using this link
- - Read our “Getting started with Azure AD” for tips and tricks on getting an Azure AD tenant up and running fast
+ - Read our "Getting started with Azure AD" for tips and tricks on getting an Azure AD tenant up and running fast
 -	If you are a developer:
  - Check out our [Developers Guide](/documentation/articles/active-directory-developers-guide) to Azure Active Directory 
- - [Start a trial](https://azure.microsoft.com/trial/get-started-active-directory/) – sign up for a free 30 day trial today and get started integrating your app with Azure AD
+ - [Start a trial](https://azure.microsoft.com/trial/get-started-active-directory/) - sign up for a free 30 day trial today and get started integrating your app with Azure AD
 
 
 
 ## Where can I learn more?
 
-We have a ton of great resources online to help you learn all about Azure AD. Here’s a list of great articles to get you started:
+We have a ton of great resources online to help you learn all about Azure AD. Here's a list of great articles to get you started:
 
 
 - [Enabling your directory for hybrid management with Azure AD Connect](/documentation/articles/active-directory-aadconnect)

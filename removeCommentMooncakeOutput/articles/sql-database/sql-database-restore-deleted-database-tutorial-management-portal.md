@@ -8,9 +8,9 @@
    editor="v-romcal"/>
 
 <tags
-	ms.service="sql-database"
-	ms.date="07/24/2015"
-	wacn.date=""/>
+   ms.service="sql-database"
+   ms.date="07/24/2015"
+   wacn.date=""/>
 
 # Restore a deleted Azure SQL database in the Azure Management Portal
 
@@ -20,7 +20,7 @@
 
 ## Overview
 
-This tutorial shows you how to restore a deleted Azure SQL database in the [Azure Management Portal](http://manage.windowsazure.cn). You can restore a database that was deleted during its retention period to the point it was deleted. The retention period is determined by the service tier of the database.
+This tutorial shows you how to restore a deleted Azure SQL database in the [Azure Management Portal](http://manage.windowsazure.cn/). You can restore a database that was deleted during its retention period to the point it was deleted. The retention period is determined by the service tier of the database.
 
 Restoring a deleted Azure SQL database creates a new database. The service automatically selects the service tier based on the backup used at the restore point. Make sure you have available quota on the logical server to create another database. If you'd like to request an increased quota, contact [Azure Support](/support/contact/).
 
@@ -37,9 +37,11 @@ Restoring a deleted Azure SQL database creates a new database. The service autom
 * Web and Business Edition service tiers don't support restoring a deleted SQL database.
  
 	* If you have a Web or Business Edition database you can use database copy to get a transactional-consistent copy of your database, and then export the copied database to a Windows Azure storage account. For more information, see [How to: Use Database Copy (Azure SQL Database)](http://msdn.microsoft.com/zh-cn/library/azure/ff951631.aspx) and [How to: Use the Import and Export Service in Azure SQL Database](http://msdn.microsoft.com/zh-cn/library/azure/hh335292.aspx).
-	* Web and Business Editions will be retired September 2015. For more information, see [Web and Business Edition Sunset FAQ](http://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx).
+	* Web and Business Editions will be retired September 2015. For more information, see [Web and Business Edition Sunset FAQ](/documentation/articles/sql-database-web-business-sunset-faq/).
 
 ## How to: Restore a deleted Azure SQL database in the Azure Management Portal
+
+<!--<iframe src="http://channel9.msdn.com/Blogs/Windows-Azure/Restore-a-Deleted-SQL-Database/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>-->
 
 1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn) using your Microsoft account.
 
@@ -65,4 +67,4 @@ For more information, see the following:
 
 [Azure SQL Database Business Continuity](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)
 
-[Azure SQL Database Backup and Restore](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx) 
+[Azure SQL Database Backup and Restore](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)

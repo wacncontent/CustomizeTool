@@ -35,7 +35,7 @@ At a high level, the flow is as follows:
 	- The device contacts the back-end requesting the secure payload.
 	- The app can show the payload as a notification on the device.
 
-It is important to note that in the preceding flow (and in this tutorial), we assume that the device stores an authentication token in local storage, after the user logs in. This guarantees a completely seamless experience, as the device can retrieve the notification’s secure payload using this token. If your application does not store authentication tokens on the device, or if these tokens can be expired, the device app, upon receiving the notification should display a generic notification prompting the user to launch the app. The app then authenticates the user and shows the notification payload.
+It is important to note that in the preceding flow (and in this tutorial), we assume that the device stores an authentication token in local storage, after the user logs in. This guarantees a completely seamless experience, as the device can retrieve the notificationâs secure payload using this token. If your application does not store authentication tokens on the device, or if these tokens can be expired, the device app, upon receiving the notification should display a generic notification prompting the user to launch the app. The app then authenticates the user and shows the notification payload.
 
 This Secure Push tutorial shows how to send a push notification securely. The tutorial builds on the [Notify Users](/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users) tutorial, so you should complete the steps in that tutorial first.
 

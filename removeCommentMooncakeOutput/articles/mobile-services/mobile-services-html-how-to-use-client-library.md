@@ -7,9 +7,9 @@
 	manager="dwrede"
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="09/24/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="10/23/2015"
 	wacn.date=""/>
 
 # How to use an HTML/JavaScript client for Azure Mobile Services
@@ -30,7 +30,7 @@ The way that you add a reference to the Mobile Services client depends on your a
 
         <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.7.min.js"></script>
 
-- For a Windows Store app written in JavaScript/HTML, add the **WindowsAzure.MobileServices.WinJS** NuGet package to your project.
+- For a Windows Store app written in JavaScript/HTML, add the **WindowsAzure.MobileServices.WinJS** NuGet package to your project. 
 
 - For a PhoneGap or Cordova app, add the [Mobile Services plugin](https://github.com/Azure/azure-mobile-services-cordova) to your project. This plugin supports [push notifications](#push-notifications).
 
@@ -62,7 +62,7 @@ The following code illustrates how to filter data by including a `where` clause 
 	    alert("Error: " + err);
 	});
 
-By adding calling `where` on the Query object and passing an object as a parameter, we are  instructing Mobile Services to return only the rows whose `complete` column contains the `false` value. Also, look at the request URI below, and notice that we are modifying the query string  itself:
+By calling `where` on the Query object and passing an object as a parameter, we are  instructing Mobile Services to return only the rows whose `complete` column contains the `false` value. Also, look at the request URI below, and notice that we are modifying the query string  itself:
 
 	GET /tables/todoitem?$filter=(complete+eq+false) HTTP/1.1
 
@@ -160,7 +160,7 @@ It is possible to combine `where` with `orderBy`, `take`, and `skip`. See the ne
 
 The following code illustrates how to sort data by including an `orderBy` or `orderByDescending` function in the query. It returns items from `todoItemTable` sorted ascending by the `text` field. By default, the server returns only the first 50 elements.
 
-> [AZURE.NOTE] A server-driven page size us used by default to prevent all elements from being returned. This keeps default requests for large data sets from negatively impacting the service.
+> [AZURE.NOTE] A server-driven page size us used by default to prevent all elements from being returned. This keeps default requests for large data sets from negatively impacting the service. 
 You may increase the number of items to be returned by calling `take` as described in the next section. `todoItemTable` is the reference to the mobile service table that we created previously.
 
 	var ascendingSortedTable = todoItemTable.orderBy("text").read().done(function (results) {
@@ -279,10 +279,10 @@ This inserts data from the supplied JSON object into the table. You can also spe
 
 Mobile Services supports unique custom string values for the table's **id** column. This allows applications to use custom values such as email addresses or user names for the ID. For example, the following code inserts a new item as a JSON object, where the unique ID is an email address:
 
-	todoItemTable.insert({
-	   id: "myemail@domain.com",
-	   text: "New Item",
-	   complete: false
+			todoItemTable.insert({
+			   id: "myemail@domain.com",
+			   text: "New Item",
+			   complete: false
 	});
 
 String IDs provide you with the following benefits:
@@ -291,73 +291,73 @@ String IDs provide you with the following benefits:
 + Records are easier to merge from different tables or databases.
 + IDs values can integrate better with an application's logic.
 
-When a string ID value is not already set on an inserted record, Mobile Services generates a unique value for the ID. For more information on how to generate your own ID values, either on the client or in a .NET backend, see [How to: Generate unique ID values](/documentation/articles/mobile-services-how-to-use-server-scripts#generate-guids).
+When a string ID value is not already set on an inserted record, Mobile Services generates a unique value for the ID. For more information on how to generate your own ID values, either on the client or in a .NET backend, see [How to: Generate unique ID values](/documentation/articles/mobile-services-how-to-use-server-scripts/#generate-guids). 
 
-You can also use integer IDs for your tables. To use an integer ID, you must create your table with the `mobile table create` command using the `--integerId` option. This command is used with the Command-line Interface (CLI) for Azure. For more information on using the CLI, see [CLI to manage Mobile Services tables](/documentation/articles/virtual-machines-command-line-tools#Mobile_Tables).
+You can also use integer IDs for your tables. To use an integer ID, you must create your table with the `mobile table create` command using the `--integerId` option. This command is used with the Command-line Interface (CLI) for Azure. For more information on using the CLI, see [CLI to manage Mobile Services tables](/documentation/articles/virtual-machines-command-line-tools/#Mobile_Tables).
 
 ##<a name="modifying"></a>How to: Modify data in a mobile service
 
 The following code illustrates how to update data in a table. The client requests that a row of data be updated by sending a PATCH request to the mobile service. The request body contains the specific fields to be updated, as a JSON object. It updates an existing item in the table `todoItemTable`.
 
-	todoItemTable.update({
-	   id: idToUpdate,
-	   text: newText
-	})
+			todoItemTable.update({
+			   id: idToUpdate,
+			   text: newText
+			})
 
 The first parameter specifies the instance to update in the table, as specified by its ID.
 
 You can also specify a callback function to be invoked when the update is complete:
 
-	todoItemTable.update({
-	   id: idToUpdate,
-	   text: newText
-	}).done(function (result) {
-	   alert(JSON.stringify(result));
-	}, function (err) {
-	   alert("Error: " + err);
-	});
+			todoItemTable.update({
+			   id: idToUpdate,
+			   text: newText
+			}).done(function (result) {
+			   alert(JSON.stringify(result));
+			}, function (err) {
+			   alert("Error: " + err);
+			});
 
 ##<a name="deleting"></a>How to: Delete data in a mobile service
 
 The following code illustrates how to delete data from a table. The client requests that a row of data be deleted by sending a DELETE request to the mobile service. It deletes an existing item in the table todoItemTable.
 
-	todoItemTable.del({
-	   id: idToDelete
-	})
+			todoItemTable.del({
+			   id: idToDelete
+			})
 
 The first parameter specifies the instance to delete in the table, as specified by its ID.
 
 You can also specify a callback function to be invoked when the delete is complete:
 
-	todoItemTable.del({
-	   id: idToDelete
-	}).done(function () {
-	   /* Do something */
-	}, function (err) {
-	   alert("Error: " + err);
-	});
+			todoItemTable.del({
+			   id: idToDelete
+			}).done(function () {
+			   /* Do something */
+			}, function (err) {
+			   alert("Error: " + err);
+			});
 
 ##<a name="binding"></a>How to: Display data in the user interface
 
 This section shows how to display returned data objects using UI elements. To query items in `todoItemTable` and display it in a very simple list, you can run the following example code. No selection, filtering or sorting of any kind is done.
 
-	var query = todoItemTable;
+			var query = todoItemTable;
 
-	query.read().then(function (todoItems) {
-	   // The space specified by 'placeToInsert' is an unordered list element <ul> ... </ul>
-	   var listOfItems = document.getElementById('placeToInsert');
-	   for (var i = 0; i < todoItems.length; i++) {
-	      var li = document.createElement('li');
-	      var div = document.createElement('div');
-	      div.innerText = todoItems[i].text;
-	      li.appendChild(div);
-	      listOfItems.appendChild(li);
-	   }
-	}).read().done(function (results) {
-	   alert(JSON.stringify(results));
-	}, function (err) {
-	   alert("Error: " + err);
-	});
+			query.read().then(function (todoItems) {
+			   // The space specified by 'placeToInsert' is an unordered list element <ul> ... </ul>
+			   var listOfItems = document.getElementById('placeToInsert');
+			   for (var i = 0; i < todoItems.length; i++) {
+			      var li = document.createElement('li');
+			      var div = document.createElement('div');
+			      div.innerText = todoItems[i].text;
+			      li.appendChild(div);
+			      listOfItems.appendChild(li);
+			   }
+			}).read().done(function (results) {
+			   alert(JSON.stringify(results));
+			}, function (err) {
+			   alert("Error: " + err);
+			});
 
 In a Windows Store app, the results of a query can be used to create a [WinJS.Binding.List] object, which can be bound as the data source for a [ListView] object. For more information, see [Data binding (Windows Store apps using JavaScript and HTML)].
 
@@ -399,11 +399,11 @@ you must register your app with your identity provider. Then in your mobile serv
 
 Once you have registered your identity provider, simply call the [LoginAsync method] with the [MobileServiceAuthenticationProvider] value of your provider. For example, to login with Facebook use the following code.
 
-	client.login("facebook").done(function (results) {
-	     alert("You are now logged in as: " + results.userId);
-	}, function (err) {
-	     alert("Error: " + err);
-	});
+		client.login("facebook").done(function (results) {
+		     alert("You are now logged in as: " + results.userId);
+		}, function (err) {
+		     alert("Error: " + err);
+		});
 
 If you are using an identity provider other than Facebook, change the value passed to the `login` method above to one of the following: `microsoftaccount`, `facebook`, `twitter`, `google`, or `windowsazureactivedirectory`.
 
@@ -431,17 +431,17 @@ Twitter cannot be used for client authentication at this time.
 ####Microsoft Account basic example
 The following example uses the Live SDK, which supports single-sign-on for Windows Store apps by using Microsoft Account:
 
-	WL.login({ scope: "wl.basic"}).then(function (result) {
-	      client.login(
-	            "microsoftaccount",
-	            {"authenticationToken": result.session.authentication_token})
-	      .done(function(results){
-	            alert("You are now logged in as: " + results.userId);
-	      },
-	      function(error){
-	            alert("Error: " + err);
-	      });
-	});
+		WL.login({ scope: "wl.basic"}).then(function (result) {
+		      client.login(
+		            "microsoftaccount",
+		            {"authenticationToken": result.session.authentication_token})
+		      .done(function(results){
+		            alert("You are now logged in as: " + results.userId);
+		      },
+		      function(error){
+		            alert("Error: " + err);
+		      });
+		});
 
 This simplified example gets a token from Live Connect, which is supplied to Mobile Services by calling the [login] function.
 
@@ -504,7 +504,7 @@ The following example shows how to use the Live SDK with WinJS APIs to provide a
 	authenticate();
 
 This initializes the Live Connect client, sends a new login request to Microsoft account, sends the returned authentication token to Mobile Services, and then displays information about the signed-in user. The app does not start until authentication succeeds.
-
+<!--- //this guidance may be bad from an XSS vulnerability standpoint. We need to find better guidance for this
 ###Caching the authentication token
 In some cases, the call to the login method can be avoided after the first time the user authenticates. We can use [sessionStorage] or [localStorage] to cache the current user identity the first time they log in and every subsequent time we check whether we already have the user identity in our cache. If the cache is empty or calls fail (meaning the current login session has expired), we still need to go through the login process.
 
@@ -521,6 +521,7 @@ In some cases, the call to the login method can be avoided after the first time 
      // Log out
     client.logout();
     sessionStorage.loggedInUser = null;
+-->
 
 ##<a name="push-notifications"></a>How to: Register for push notifications
 
@@ -534,36 +535,36 @@ There are several ways to encounter, validate, and work around errors in Mobile 
 
 As an example, server scripts are registered in a mobile service and can be used to perform a wide range of operations on data being inserted and updated, including validation and data modification. Imagine defining and registering a server script that validate and modify data, like so:
 
-	function insert(item, user, request) {
-	   if (item.text.length > 10) {
-		  request.respond(statusCodes.BAD_REQUEST, { error: "Text cannot exceed 10 characters" });
-	   } else {
-	      request.execute();
-	   }
-	}
+			function insert(item, user, request) {
+			   if (item.text.length > 10) {
+				  request.respond(statusCodes.BAD_REQUEST, { error: "Text cannot exceed 10 characters" });
+			   } else {
+			      request.execute();
+			   }
+			}
 
 This server-side script validates the length of string data sent to the mobile service and rejects strings that are too long, in this case longer than 10 characters.
 
 Now that the mobile service is validating data and sending error responses on the server-side, you can update your HTML app to be able to handle error responses from validation.
 
-	todoItemTable.insert({
-	   text: itemText,
-	   complete: false
-	})
-	   .then(function (results) {
-	   alert(JSON.stringify(results));
-	}, function (error) {
-	   alert(JSON.parse(error.request.responseText).error);
-	});
+		todoItemTable.insert({
+		   text: itemText,
+		   complete: false
+		})
+		   .then(function (results) {
+		   alert(JSON.stringify(results));
+		}, function (error) {
+		   alert(JSON.parse(error.request.responseText).error);
+		});
 
 
 To tease this out even further, you pass in the error handler as the second argument each time you perform data access:
 
-	function handleError(message) {
-	   if (window.console && window.console.error) {
-	      window.console.error(message);
-	   }
-	}
+			function handleError(message) {
+			   if (window.console && window.console.error) {
+			      window.console.error(message);
+			   }
+			}
 
 	client.getTable("tablename").read()
 		.then(function (data) { /* do something */ }, handleError);
@@ -574,56 +575,56 @@ Promises provide a mechanism to schedule work to be done on a value that has not
 
 The `done` promise is executed as soon as the function provided to it has either successfully completed or has gotten an error. Unlike the `then` promise, it is guaranteed to throw any error that is not handled inside the function, and after the handlers have finished executing, this function throws any error that would have been returned from then as a promise in the error state. For more information, see [done].
 
-	promise.done(onComplete, onError);
+			promise.done(onComplete, onError);
 
 Like so:
 
-	var query = todoItemTable;
-	query.read().done(function (results) {
-	   alert(JSON.stringify(results));
-	}, function (err) {
-	   alert("Error: " + err);
-	});
+			var query = todoItemTable;
+			query.read().done(function (results) {
+			   alert(JSON.stringify(results));
+			}, function (err) {
+			   alert("Error: " + err);
+			});
 
 The `then` promise is the same as the as the `done` promise, but unlike the `then` promise, `done` is guaranteed to throw any error that is not handled inside the function. If you do not provide an error handler to `then` and the operation has an error, it does not throw an exception but rather returns a promise in the error state. For more information, see [then].
 
-	promise.then(onComplete, onError).done( /* Your success and error handlers */ );
+			promise.then(onComplete, onError).done( /* Your success and error handlers */ );
 
 Like so:
 
-	var query = todoItemTable;
-	query.read().done(function (results) {
-	   alert(JSON.stringify(results));
-	}, function (err) {
-	   alert("Error: " + err);
-	});
+			var query = todoItemTable;
+			query.read().done(function (results) {
+			   alert(JSON.stringify(results));
+			}, function (err) {
+			   alert("Error: " + err);
+			});
 
 You can use promises in a number of different ways. You can chain promise operations by calling `then` or `done` on the promise that is returned by the previous `then` function. Use `then` for an intermediate stage of the operation (for example `.then().then()`), and `done` for the final stage of the operation (for example `.then().then().done()`).  You can chain multiple `then` functions, because `then` returns a promise. You cannot chain more than one `done` method, because it returns undefined. [Learn more about the  differences between then and done].
 
-	todoItemTable.insert({
-	   text: "foo"
-	}).then(function (inserted) {
-	   inserted.newField = 123;
-	   return todoItemTable.update(inserted);
-	}).done(function (insertedAndUpdated) {
-	   alert(JSON.stringify(insertedAndUpdated));
-	})
+ 			todoItemTable.insert({
+ 			   text: "foo"
+ 			}).then(function (inserted) {
+ 			   inserted.newField = 123;
+ 			   return todoItemTable.update(inserted);
+ 			}).done(function (insertedAndUpdated) {
+ 			   alert(JSON.stringify(insertedAndUpdated));
+ 			})
 
 ##<a name="customizing"></a>How to: Customize client request headers
 
 You can send custom request headers using the `withFilter` function, reading and writing arbitrary properties of the request about to be sent within the filter. You may want to add such a custom HTTP header if a server-side script needs it or may be enhanced by it.
 
-	var client = new WindowsAzure.MobileServiceClient('https://your-app-url', 'your-key')
-	   .withFilter(function (request, next, callback) {
-	   request.headers.MyCustomHttpHeader = "Some value";
-	   next(request, callback);
-	});
+			var client = new WindowsAzure.MobileServiceClient('https://your-app-url', 'your-key')
+			   .withFilter(function (request, next, callback) {
+			   request.headers.MyCustomHttpHeader = "Some value";
+			   next(request, callback);
+			});
 
 Filters are used for a lot more than customizing request headers. They can be used to examine or change requests, examine or change  responses, bypass networking calls, send multiple calls, etc.
 
 ##<a name="hostnames"></a>How to: Use cross-origin resource sharing
 
-To control which websites are allowed to interact with and send requests to your mobile service, make sure to add the host name of the website you use to host it to the Cross-Origin Resource Sharing (CORS) whitelist. For a JavaScript backend mobile service, you can configure the whitelist on the Configure tab in the [Azure Management portal](https://manage.windowsazure.cn). You can use wildcards if required. By default, new Mobile Services instruct browsers to permit access only from `localhost`, and Cross-Origin Resource Sharing (CORS) allows JavaScript code running in a browser on an external hostname to interact with your Mobile Service.  This configuration is not necessary for WinJS applications.
+To control which websites are allowed to interact with and send requests to your mobile service, make sure to add the host name of the website you use to host it to the Cross-Origin Resource Sharing (CORS) whitelist. For a JavaScript backend mobile service, you can configure the whitelist on the Configure tab in the [Azure Management Portal](https://manage.windowsazure.cn). You can use wildcards if required. By default, new Mobile Services instruct browsers to permit access only from `localhost`, and Cross-Origin Resource Sharing (CORS) allows JavaScript code running in a browser on an external hostname to interact with your Mobile Service.  This configuration is not necessary for WinJS applications.
 
 <!-- Anchors. -->
 [What is Mobile Services]: #what-is

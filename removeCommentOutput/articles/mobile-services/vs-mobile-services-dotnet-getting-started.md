@@ -3,7 +3,7 @@
 	description="How to get started with Azure Mobile Services in a Visual Studio .NET project"
 	services="mobile-services"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
 	editor=""/>
 
@@ -13,6 +13,11 @@
 	wacn.date=""/>
 
 # Getting Started with Mobile Services (.NET Projects)
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 > - [Getting Started](/documentation/articles/vs-mobile-services-dotnet-getting-started)

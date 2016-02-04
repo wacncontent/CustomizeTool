@@ -5,12 +5,12 @@
 	services=""
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"
+	editor=""
 	tags="mysql"/>
 
 <tags
 	ms.service="multiple"
-	ms.date="08/31/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 #How to Create a MySQL Database in Azure

@@ -167,16 +167,16 @@ There are more detailed examples available on these blogs posts:
 - [How to create a Service Bus Namespace and an Event Hub using a PowerShell script](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
 
 Some ready-made scripts are also available for download:
-- [Service Bus PowerShell Scripts](https://code.msdn.microsoft.com/Service-Bus-PowerShell-a46b7059)
+- [Service Bus PowerShell Scripts](https://code.msdn.microsoft.com/windowsazure/Service-Bus-PowerShell-a46b7059)
 
 <!--Link references-->
-[Purchase Options]: /pricing/overview/
-[Member Offers]: /pricing/member-offers/
+[Purchase Options]: http://azure.microsoft.com/zh-cn/pricing/overview/
+[Member Offers]: http://azure.microsoft.com/zh-cn/pricing/member-offers/
 [Trial]: /pricing/1rmb-trial/
-[Install and configure Azure PowerShell]: /documentation/articles/install-configure-powershell
+[Install and configure Azure PowerShell]: /documentation/articles/powershell-install-configure
 [Service Bus NuGet package]: http://www.nuget.org/packages/WindowsAzure.ServiceBus/
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx
 [New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx
 [Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/zh-cn/library/azure/dn495113.aspx
-[.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.aspx
+[.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
 [NamespaceManager]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx

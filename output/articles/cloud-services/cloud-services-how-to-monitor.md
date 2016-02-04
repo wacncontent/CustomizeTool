@@ -19,7 +19,7 @@
 
 You can monitor key performance metrics for your cloud services in the Azure Management Portal. You can set the level of monitoring to minimal and verbose for each service role, and can customize the monitoring displays. Verbose monitoring data is stored in a storage account, which you can access outside the portal. 
 
-Monitoring displays in the Management Portal are highly configurable. You can choose the metrics you want to monitor in the metrics list on the **Monitor** page, and you can choose which metrics to plot in metrics charts on the **Monitor** page and the dashboard. 
+Monitoring displays in the Azure Management Portal are highly configurable. You can choose the metrics you want to monitor in the metrics list on the **Monitor** page, and you can choose which metrics to plot in metrics charts on the **Monitor** page and the dashboard. 
 
 ##Concepts##
 
@@ -34,7 +34,7 @@ Note that enabling verbose monitoring will increase your storage costs related t
 
 ##How to: Configure monitoring for cloud services##
 
-Use the following procedures to configure verbose or minimal monitoring in the Management Portal. 
+Use the following procedures to configure verbose or minimal monitoring in the Azure Management Portal. 
 
 ###Before you begin###
 
@@ -58,13 +58,13 @@ Ensure that the diagnostics connection string is present in the Role configurati
 
 ###To change the monitoring level to verbose or minimal###
 
-1. In the [Management Portal](https://manage.windowsazure.cn/), open the **Configure** page for the cloud service deployment.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), open the **Configure** page for the cloud service deployment.
 
 2. In **Level**, click **Verbose** or **Minimal**. 
 
 3. Click **Save**.
 
-After you turn on verbose monitoring, you should start seeing the monitoring data in the Management Portal within the hour.
+After you turn on verbose monitoring, you should start seeing the monitoring data in the Azure Management Portal within the hour.
 
 The raw performance counter data and aggregated monitoring data are stored in the storage account in tables qualified by the deployment ID for the roles. 
 
@@ -74,9 +74,9 @@ You can receive alerts based on your cloud service monitoring metrics. On the **
 
 ##How to: Add metrics to the metrics table##
 
-1. In the [Management Portal](http://manage.windowsazure.cn/), open the **Monitor** page for the cloud service.
+1. In the [Azure Management Portal](http://manage.windowsazure.cn/), open the **Monitor** page for the cloud service.
 
-	By default, the metrics table displays a subset of the available metrics. The illustration shows the default verbose metrics for a cloud service, which is limited to the Memory\Available MBytes performance counter, with data aggregated at the role level. Use **Add Metrics** to select additional aggregate and role-level metrics to monitor in the Management Portal.
+	By default, the metrics table displays a subset of the available metrics. The illustration shows the default verbose metrics for a cloud service, which is limited to the Memory\Available MBytes performance counter, with data aggregated at the role level. Use **Add Metrics** to select additional aggregate and role-level metrics to monitor in the Azure Management Portal.
 
 	![Verbose display](./media/cloud-services-how-to-monitor/CloudServices_DefaultVerboseDisplay.png)
  
@@ -130,7 +130,7 @@ To display the custom performance counters in the portal you need to update the 
 	</PerformanceCounterConfiguration>
 	```
 4. Save the changes and upload the configuration file back to the same location overwriting the existing file in the blob.
-5. Toggle to Verbose mode in the management portal configuration. If you were in Verbose mode already you will have to toggle to minimal and back to verbose.
+5. Toggle to Verbose mode in the Azure Management Portal configuration. If you were in Verbose mode already you will have to toggle to minimal and back to verbose.
 6. The custom performance counter will now be available in the **Add Metrics** dialog box. 
 
 ##How to: Customize the metrics chart##
@@ -164,7 +164,7 @@ To display the custom performance counters in the portal you need to update the 
 
 4. Choose 1 hour, 24 hours, or 7 days of data to display.
 
-##How to: Access verbose monitoring data outside the Management Portal##
+##How to: Access verbose monitoring data outside the Azure Management Portal##
 
 Verbose monitoring data is stored in tables in the storage accounts that you specify for each role. For each cloud service deployment, six tables are created for the role. Two tables are created for each (5 minutes, 1 hour, and 12 hours). One of these tables stores role-level aggregations; the other table stores aggregations for role instances. 
 

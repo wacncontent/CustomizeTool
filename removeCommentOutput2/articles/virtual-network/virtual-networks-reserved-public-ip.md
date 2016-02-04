@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="11/11/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # Reserved IP Overview
@@ -19,7 +19,7 @@ To prevent IP addresses from changing, you can reserve an IP address. Reserved I
 ## When do I need a reserved IP?
 - **You want to ensure that the IP is reserved in your subscription**. If you want to reserve an IP address that will not be released from your subscription under any circumstance, you should use a reserved public IP.  
 - **You want your IP to stay with your cloud service even across stopped or deallocated state (VMs)**. If you want your service to be accessed by using an IP address that will not change even when VMs in the cloud service are stop or deallocated.
-- **You want to ensure that outbound traffic from Azure uses a predictable IP address**. You may have your on-premises firewall configured to allow only traffic from specific IP addresses. By reserving an IP, you will know the source IP address and won’t have to update your firewall rules due to an IP change.
+- **You want to ensure that outbound traffic from Azure uses a predictable IP address**. You may have your on-premises firewall configured to allow only traffic from specific IP addresses. By reserving an IP, you will know the source IP address and won't have to update your firewall rules due to an IP change.
 
 ## FAQ
 1. Can I use a reserved IP for all Azure services?  
@@ -37,7 +37,7 @@ To prevent IP addresses from changing, you can reserve an IP address. Reserved I
 
 Before you can use reserved IPs, you must add it to your subscription. To create a reserved IP from the pool of public IP addresses available in the *China North* location, run the following PowerShell command:
 
-	New-AzureReservedIP –ReservedIPName MyReservedIP –Location “China North”
+	New-AzureReservedIP -ReservedIPName MyReservedIP -Location "China North"
 
 Notice, however, that you cannot specify what IP is being reserved. To view what IP addresses are reserved in your subscription, run the following PowerShell command, and notice the values for *ReservedIPName* and *Address*:
 
@@ -63,13 +63,13 @@ Once an IP is reserved, it remains associated to your subscription until you del
 ## How to associate a reserved IP to a new cloud service
 The script below creates a new reserved IP, then associates it to a new cloud service named *TestService*.
 
-	New-AzureReservedIP –ReservedIPName MyReservedIP –Location “China North”
+	New-AzureReservedIP -ReservedIPName MyReservedIP -Location "China North"
 	$image = Get-AzureVMImage|?{$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}
 	New-AzureVMConfig -Name TestVM -InstanceSize Small -ImageName $image.ImageName `
 	| Add-AzureProvisioningConfig -Windows -AdminUsername adminuser -Password MyP@ssw0rd!! `
 	| New-AzureVM -ServiceName TestService -ReservedIPName MyReservedIP -Location "China North"
 
->[AZURE.NOTE] When you create a reserved IP to use with a cloud service, you’ll still need to refer to the VM by using *VIP:&lt;port number>* for inbound communication. Reserving an IP does not mean you can connect to the VM directly. The reserved IP is assigned to the cloud service that the VM has been deployed to. If you want to connect to a VM by IP directly, you have to configure an instance-level public IP. An instance-level public IP is a type of public IP (called a ILPIP) that is assigned directly to your VM. It cannot be reserved. See [Instance-level Public IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip) for more information.
+>[AZURE.NOTE] When you create a reserved IP to use with a cloud service, you'll still need to refer to the VM by using *VIP:&lt;port number>* for inbound communication. Reserving an IP does not mean you can connect to the VM directly. The reserved IP is assigned to the cloud service that the VM has been deployed to. If you want to connect to a VM by IP directly, you have to configure an instance-level public IP. An instance-level public IP is a type of public IP (called a ILPIP) that is assigned directly to your VM. It cannot be reserved. See [Instance-level Public IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip) for more information.
 
 ## How to remove a reserved IP from a running deployment
 To remove the reserved IP added to the new service created in the script above, run the following PowerShell command:

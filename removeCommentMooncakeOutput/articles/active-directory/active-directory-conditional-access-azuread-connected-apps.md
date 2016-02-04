@@ -16,7 +16,7 @@
 
 The Azure Conditional Access for SaaS apps is available for public preview. The preview allows you to configure per-application multi-factor authentication access rules and the ability to block access for users not on a trusted network. 
 
-You can apply the multi-factor authentication rules to all users that are assigned to the application, or only for users within specified security groups. Users may be excluded from the multi-factor authentication requirement if they are accessing the application from an IP address that in inside the organization’s network.
+You can apply the multi-factor authentication rules to all users that are assigned to the application, or only for users within specified security groups. Users may be excluded from the multi-factor authentication requirement if they are accessing the application from an IP address that in inside the organizationâs network.
 These capabilities will be available to customers that have purchased an Azure Active Directory Premium license.
 
 ## Scenario prerequisites
@@ -77,7 +77,7 @@ Configure federation services to provide multi-factor authentication
 
 For federated tenants, multi-factor authentication (MFA) may performed by Azure Active Directory or by the on-premises AD FS server.
 
-By default, MFA will occur at a page hosted by Azure Active Directory. In order to configure MFA on-premises, the –SupportsMFA property must be set to true in Azure Active Directory, by using the Azure AD module for Windows PowerShell.
+By default, MFA will occur at a page hosted by Azure Active Directory. In order to configure MFA on-premises, the âSupportsMFA property must be set to true in Azure Active Directory, by using the Azure AD module for Windows PowerShell.
 
 The following example shows how to enable on-premises MFA by using the [Set-MsolDomainFederationSettings cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn194088.aspx) on the contoso.com tenant:
 

@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Work.com
@@ -80,7 +80,7 @@ As part of this procedure, you are required to upload a certificate to Work.com.
 
     ![My Domain](./media/active-directory-saas-work-com-tutorial/IC767825.png "My Domain")
 
-4.  To verify that your domain has been setup correctly, make sure that it is in “**Step 4 Deployed to Users**” and review your “**My Domain Settings**”.
+4.  To verify that your domain has been setup correctly, make sure that it is in "**Step 4 Deployed to Users**" and review your "**My Domain Settings**".
 
     ![Doman Deployed to User](./media/active-directory-saas-work-com-tutorial/IC784377.png "Doman Deployed to User")
 
@@ -94,7 +94,7 @@ As part of this procedure, you are required to upload a certificate to Work.com.
 
     ![Configure Single Sign-On](./media/active-directory-saas-work-com-tutorial/IC794110.png "Configure Single Sign-On")
 
-8.  On the **Configure App URL** page, in the **Work.com Sign On URL** textbox, type the URL used by your users to sign on to your Work.com application (e.g.:” *http://company.my.salesforce.com*”), and then click **Next**: 
+8.  On the **Configure App URL** page, in the **Work.com Sign On URL** textbox, type the URL used by your users to sign on to your Work.com application (e.g.:" *http://company.my.salesforce.com*"), and then click **Next**: 
 
     ![Configure App URL](./media/active-directory-saas-work-com-tutorial/IC794111.png "Configure App URL")
 

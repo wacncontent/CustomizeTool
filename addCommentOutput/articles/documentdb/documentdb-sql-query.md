@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="SQL Queries on a DocumentDB Database – Query SQL | Microsoft Azure" 
-	description="Learn how DocumentDB supports SQL queries over hierarchical JSON documents for automatic indexing. Discover a SQL query database environment that’s truly schema-free." 
+	pageTitle="SQL Queries on a DocumentDB Database - Query SQL | Windows Azure" 
+	description="Learn how DocumentDB supports SQL queries over hierarchical JSON documents for automatic indexing. Discover a SQL query database environment that's truly schema-free." 
 	keywords="Query database, sql queries, sql query, structured query language, documentdb, azure, Microsoft azure"
 	services="documentdb" 
 	documentationCenter="" 
@@ -8,22 +8,18 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/13/2015" 
-	ms.author="mimig"/>
+<tags
+	ms.service="documentdb"
+	ms.date="11/10/2015"
+	wacn.date=""/>
 
 # SQL query within DocumentDB
-Microsoft Azure DocumentDB supports querying documents using SQL (Structured Query Language) over hierarchical JSON documents. DocumentDB is truly schema-free. By virtue of its commitment to the JSON data model directly within the database engine, it provides automatic indexing of JSON documents without requiring explicit schema or creation of secondary indexes. 
+<!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure DocumentDB supports querying documents using SQL (Structured Query Language) over hierarchical JSON documents. DocumentDB is truly schema-free. By virtue of its commitment to the JSON data model directly within the database engine, it provides automatic indexing of JSON documents without requiring explicit schema or creation of secondary indexes.
 
 While designing the query language for DocumentDB we had two goals in mind:
 
--	**Embrace SQL** – Instead of inventing a new query language, we wanted to embrace SQL. After all, SQL is one of the most familiar and popular query languages. DocumentDB SQL provides a formal programming model for rich queries over JSON documents.
--	**Extend SQL** – As a JSON document database capable of executing JavaScript directly in the database engine, we wanted to use JavaScript's programming model as the foundation for our query language. The DocumentDB SQL is rooted in JavaScript's type system, expression evaluation, and function invocation. This in-turn provides a natural programming model for relational projections, hierarchical navigation across JSON documents, self joins, and invocation of user defined functions (UDFs) written entirely in JavaScript, among other features. 
+<!-- deleted by customization -	Instead --><!-- keep by customization: begin --> -	**Embrace SQL** – Instead <!-- keep by customization: end --> of inventing a new query language, we wanted to <!-- deleted by customization support --><!-- keep by customization: begin --> embrace <!-- keep by customization: end --> SQL. <!-- keep by customization: begin --> After all, <!-- keep by customization: end --> SQL is one of the most familiar and popular query languages. DocumentDB SQL provides a formal programming model for rich queries over JSON documents.
+<!-- deleted by customization -	As --><!-- keep by customization: begin --> -	**Extend SQL** – As <!-- keep by customization: end --> a JSON document database capable of executing JavaScript directly in the database engine, we wanted to use JavaScript's programming model as the foundation for our query language. The DocumentDB SQL is rooted in JavaScript's type system, expression evaluation, and function invocation. This in-turn provides a natural programming model for relational projections, hierarchical navigation across JSON documents, self joins, <!-- deleted by customization spatial queries, --> and invocation of user defined functions (UDFs) written entirely in JavaScript, among other features.
 
 We believe that these capabilities are key to reducing the friction between the application and the database and are crucial for developer productivity.
 
@@ -58,7 +54,7 @@ Here we have a simple JSON document for the Andersen family, the parents, childr
 	}
 
 
-Here's a second document with one subtle difference – `givenName` and `familyName` are used instead of `firstName` and `lastName`.
+Here's a second document with one subtle difference <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> `givenName` and `familyName` are used instead of `firstName` and `lastName`.
 
 **Document**  
 
@@ -167,7 +163,7 @@ We would like to draw attention to a few noteworthy aspects of the DocumentDB qu
 
 Before we get into the DocumentDB SQL grammar, it is worth exploring the indexing design in DocumentDB. 
 
-The purpose of database indexes is to serve queries in their various forms and shapes with minimum resource consumption (like CPU and input/output) while providing good throughput and low latency. Often, the choice of the right index for querying a database requires much planning and experimentation. This approach poses a challenge for schema-less databases where the data doesn’t conform to a strict schema and evolves rapidly. 
+The purpose of database indexes is to serve queries in their various forms and shapes with minimum resource consumption (like CPU and input/output) while providing good throughput and low latency. Often, the choice of the right index for querying a database requires much planning and experimentation. This approach poses a challenge for schema-less databases where the data <!-- deleted by customization doesn't --><!-- keep by customization: begin --> doesn’t <!-- keep by customization: end --> conform to a strict schema and evolves rapidly.
 
 Therefore, when we designed the DocumentDB indexing subsystem, we set the following goals:
 
@@ -181,7 +177,7 @@ Therefore, when we designed the DocumentDB indexing subsystem, we set the follow
 
 -	Storage efficiency: For cost effectiveness, the on-disk storage overhead of the index is bounded and predictable. This is crucial because DocumentDB allows the developer to make cost based tradeoffs between index overhead in relation to the query performance.  
 
-Refer to the [DocumentDB samples](https://github.com/Azure/azure-documentdb-net) on MSDN for samples showing how to configure the indexing policy for a collection. Let’s now get into the details of the DocumentDB SQL grammar.
+Refer to the [DocumentDB samples](https://github.com/Azure/azure-documentdb-net) on MSDN for samples showing how to configure the indexing policy for a collection. <!-- deleted by customization Let's --><!-- keep by customization: begin --> Let’s <!-- keep by customization: end --> now get into the details of the DocumentDB SQL grammar.
 
 
 ## Basics of a DocumentDB SQL query
@@ -189,7 +185,10 @@ Every query consists of a SELECT clause and optional FROM and WHERE clauses per 
     
     SELECT <select_list> 
     [FROM <from_specification>] 
-    [WHERE <filter_condition>]    
+    [WHERE <filter_condition>]
+<!-- deleted by customization
+    [ORDER BY <sort_specification]    
+-->
 
 
 ## FROM clause
@@ -243,7 +242,7 @@ The source can also be reduced to a smaller subset. For instance, to enumerating
 	  ]
 	]
 
-While the above example used an array as the source, an object could also be used as the source, which is what's shown in the following example. Any valid JSON value (not undefined) that can be found in the source will be considered for inclusion in the result of the query. If some families don’t have an `address.state` value, they will be excluded in the query result.
+While the above example used an array as the source, an object could also be used as the source, which is what's shown in the following example. Any valid JSON value (not undefined) that can be found in the source will be considered for inclusion in the result of the query. If some families <!-- deleted by customization don't --><!-- keep by customization: begin --> don’t <!-- keep by customization: end --> have an `address.state` value, they will be excluded in the query result.
 
 **Query**
 
@@ -306,7 +305,7 @@ The following binary operators are currently supported and can be used in querie
 </tr>
 </table>  
 
-Let’s take a look at some queries using binary operators.
+<!-- deleted by customization Let's --><!-- keep by customization: begin --> Let’s <!-- keep by customization: end --> take a look at some queries using binary operators.
 
 	SELECT * 
 	FROM Families.children[0] c
@@ -558,7 +557,7 @@ For other comparison operators such as >, >=, !=, < and <=, the following rules 
 If the result of the scalar expression in the filter is Undefined, the corresponding document would not be included in the result, since Undefined doesn't logically equate to "true".
 
 ### BETWEEN keyword
-You can also use the BETWEEN keyword to express queries against ranges of values like in ANSI SQL. BETWEEN can be used against any JSON primitive type (numbers, strings, Booleans and nulls). 
+You can also use the BETWEEN keyword to express queries against ranges of values like in ANSI SQL. BETWEEN can be used against <!-- keep by customization: begin --> any JSON primitive type (numbers, <!-- keep by customization: end --> strings <!-- deleted by customization or numbers --><!-- keep by customization: begin -->, Booleans and nulls) <!-- keep by customization: end -->.
 
 For example, this query returns all family documents in which the first child's grade is between 1-5 (both inclusive). 
 
@@ -573,7 +572,7 @@ Unlike in ANSI-SQL, you can also use the BETWEEN clause in the FROM clause like 
 
 For faster query execution times, remember to create an indexing policy that uses a range index type against any numeric properties/paths that are filtered in the BETWEEN clause. 
 
-The main difference between using BETWEEN in DocumentDB and ANSI SQL is that you can express range queries against properties of mixed types – for example, you might have "grade" be a number (5) in some documents and strings in others ("grade4"). In these cases, like in JavaScript, a comparison between two different types results in "undefined", and the document will be skipped.
+The main difference between using BETWEEN in DocumentDB and ANSI SQL is that you can express range queries against properties of mixed types <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> for example, you might have "grade" be a number (5) in some documents and strings in others ("grade4"). In these cases, like in JavaScript, a comparison between two different types results in "undefined", and the document will be skipped.
 
 ### Logical (AND, OR and NOT) operators
 Logical operators operate on Boolean values. The logical truth tables for these operators are shown in the following tables.
@@ -609,7 +608,7 @@ This example returns all documents where the state is any of the specified value
     FROM Families 
     WHERE Families.address.state IN ("NY", "WA", "CA", "PA", "OH", "OR", "MI", "WI", "MN", "FL")
 
-IN is equivalent to chaining multiple OR clauses, however since it can be served using a single index, DocumentDB supports a higher [limit](documentdb-limits.md) for the number of arguments specified within an IN clause.  
+IN is equivalent to chaining multiple OR clauses, however since it can be served using a single index, DocumentDB supports a higher <!-- deleted by customization [limit](/documentation/articles/documentdb-limits) --><!-- keep by customization: begin --> [limit](documentdb-limits.md) <!-- keep by customization: end --> for the number of arguments specified within an IN clause.
 
 ### Ternary (?) and Coalesce (??) operators
 The Ternary and Coalesce operators can be used to build conditional expressions, similar to popular programming languages like C# and JavaScript. 
@@ -897,7 +896,7 @@ The special operator (*) is supported to project the document as-is. When used, 
 	}]
 
 ## ORDER BY clause
-Like in ANSI-SQL, you can include an optional Order By clause while querying. The clause can include an optional ASC/DESC argument to specify the order in which results must be retrieved. For a more detailed look at Order By, refer to [DocumentDB Order By Walkthrough](documentdb-orderby.md).
+Like in ANSI-SQL, you can include an optional Order By clause while querying. The clause can include an optional ASC/DESC argument to specify the order in which results must be retrieved. For a more detailed look at Order By, refer to [DocumentDB Order By <!-- deleted by customization Walkthrough](/documentation/articles/documentdb-orderby) --><!-- keep by customization: begin --> Walkthrough](documentdb-orderby.md) <!-- keep by customization: end -->.
 
 For example, here's a query that retrieves families in order of the resident city's name.
 
@@ -1248,7 +1247,12 @@ To expand on the power of UDFs, let's look at another example with conditional l
 	       		        return 520;
 	       		    case 'NY':
 	       		        return 410;
+<!-- deleted by customization
+	       		    case 'Shanghai':
+-->
+<!-- keep by customization: begin -->
 	       		    case 'Chicago':
+<!-- keep by customization: end -->
 	       		        return 673;
 	       		    default:
 	       		        return -1;
@@ -1341,10 +1345,10 @@ DocumentDB also supports a number of built-in functions for common operations, t
 </tr>
 </table>  
 
-If you’re currently using a user defined function (UDF) for which a built-in function is now available, you should use the corresponding built-in function as it is going to be quicker to run and more efficiently. 
+If <!-- deleted by customization you're --><!-- keep by customization: begin --> you’re <!-- keep by customization: end --> currently using a user defined function (UDF) for which a built-in function is now available, you should use the corresponding built-in function as it is going to be quicker to run and more efficiently.
 
 ### Mathematical functions
-The mathematical functions each perform a calculation, usually based on input values that are provided as arguments, and return a numeric value. Here’s a table of supported built-in mathematical functions.
+The mathematical functions each perform a calculation, usually based on input values that are provided as arguments, and return a numeric value. <!-- deleted by customization Here's --><!-- keep by customization: begin --> Here’s <!-- keep by customization: end --> a table of supported built-in mathematical functions.
 
 <table>
 <tr>
@@ -1352,96 +1356,211 @@ The mathematical functions each perform a calculation, usually based on input va
 <td><strong>Description</strong></td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_abs">ABS (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_abs">ABS (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the absolute (positive) value of the specified numeric expression.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_ceiling">CEILING (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_ceiling">CEILING (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the smallest integer value greater than, or equal to, the specified numeric expression.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_floor">FLOOR (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_floor">FLOOR (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the largest integer less than or equal to the specified numeric expression.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_exp">EXP (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_exp">EXP (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the exponent of the specified numeric expression.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_log">LOG (num_expr [,base])</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_log">LOG (num_expr [,base])</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the natural logarithm of the specified numeric expression, or the logarithm using the specified base</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_log10">LOG10 (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_log10">LOG10 (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the base-10 logarithmic value of the specified numeric expression.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_round">ROUND (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_round">ROUND (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns a numeric value, rounded to the closest integer value.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_trunc">TRUNC (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_trunc">TRUNC (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns a numeric value, truncated to the closest integer value.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_sqrt">SQRT (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_sqrt">SQRT (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the square root of the specified numeric expression.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_square">SQUARE (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_square">SQUARE (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the square of the specified numeric expression.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_power">POWER (num_expr, num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_power">POWER (num_expr, num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the power of the specified numeric expression to the value specifed.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_sign">SIGN (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_sign">SIGN (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the sign value (-1, 0, 1) of the specified numeric expression.</td>
 </tr>
 <tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_acos">ACOS (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_acos">ACOS (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the angle, in radians, whose cosine is the specified numeric expression; also called arccosine.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_asin">ASIN (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_asin">ASIN (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the angle, in radians, whose sine is the specified numeric expression. This is also called arcsine.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_atan">ATAN (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_atan">ATAN (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the angle, in radians, whose tangent is the specified numeric expression. This is also called arctangent.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_atn2">ATN2 (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_atn2">ATN2 (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the angle, in radians, between the positive x-axis and the ray from the origin to the point (y, x), where x and y are the values of the two specified float expressions.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_cos">COS (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_cos">COS (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the trigonometric cosine of the specified angle, in radians, in the specified expression.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_cot">COT (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_cot">COT (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the trigonometric cotangent of the specified angle, in radians, in the specified numeric expression.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_degrees">DEGREES (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_degrees">DEGREES (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the corresponding angle in degrees for an angle specified in radians.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_pi">PI ()</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_pi">PI ()</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the constant value of PI.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_radians">RADIANS (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_radians">RADIANS (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns radians when a numeric expression, in degrees, is entered.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_sin">SIN (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_sin">SIN (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the trigonometric sine of the specified angle, in radians, in the specified expression.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_tan">TAN (num_expr)</a></td>	
+-->
+<!-- keep by customization: begin -->
 <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_tan">TAN (num_expr)</a></td>	
+<!-- keep by customization: end -->
 <td>Returns the tangent of the input expression, in the specified expression.</td>
 </tr>
 
@@ -1457,10 +1576,10 @@ For example, you can now run queries like the following:
 
     [4]
 
-The main difference between DocumentDB’s functions compared to ANSI SQL is that they are designed to work well with schema-less and mixed schema data. For example, if you have a document where the Size property is missing, or has a non-numeric value like “unknown”, then the document is skipped over, instead of returning an error.
+The main difference between <!-- deleted by customization DocumentDB's --><!-- keep by customization: begin --> DocumentDB’s <!-- keep by customization: end --> functions compared to ANSI SQL is that they are designed to work well with schema-less and mixed schema data. For example, if you have a document where the Size property is missing, or has a non-numeric value like “unknown”, then the document is skipped over, instead of returning an error.
 
 ### Type checking functions
-The type checking functions allow you to check the type of an expression within SQL queries. Type checking functions can be used to determine the type of properties within documents on the fly when it is variable or unknown. Here’s a table of supported built-in type checking functions.
+The type checking functions allow you to check the type of an expression within SQL queries. Type checking functions can be used to determine the type of properties within documents on the fly when it is variable or unknown. <!-- deleted by customization Here's --><!-- keep by customization: begin --> Here’s <!-- keep by customization: end --> a table of supported built-in type checking functions.
 
 <table>
 <tr>
@@ -1468,35 +1587,75 @@ The type checking functions allow you to check the type of an expression within 
   <td><strong>Description</strong></td>
 </tr>
 <tr>
+<!-- deleted by customization
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_array">IS_ARRAY (expr)</a></td>
+-->
+<!-- keep by customization: begin -->
   <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_array">IS_ARRAY (expr)</a></td>
+<!-- keep by customization: end -->
   <td>Returns a Boolean indicating if the type of the value is an array.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_bool">IS_BOOL (expr)</a></td>
+-->
+<!-- keep by customization: begin -->
   <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_bool">IS_BOOL (expr)</a></td>
+<!-- keep by customization: end -->
   <td>Returns a Boolean indicating if the type of the value is a Boolean.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_null">IS_NULL (expr)</a></td>
+-->
+<!-- keep by customization: begin -->
   <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_null">IS_NULL (expr)</a></td>
+<!-- keep by customization: end -->
   <td>Returns a Boolean indicating if the type of the value is null.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_number">IS_NUMBER (expr)</a></td>
+-->
+<!-- keep by customization: begin -->
   <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_number">IS_NUMBER (expr)</a></td>
+<!-- keep by customization: end -->
   <td>Returns a Boolean indicating if the type of the value is a number.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_object">IS_OBJECT (expr)</a></td>
+-->
+<!-- keep by customization: begin -->
   <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_object">IS_OBJECT (expr)</a></td>
+<!-- keep by customization: end -->
   <td>Returns a Boolean indicating if the type of the value is a JSON object.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_string">IS_STRING (expr)</a></td>
+-->
+<!-- keep by customization: begin -->
   <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_string">IS_STRING (expr)</a></td>
+<!-- keep by customization: end -->
   <td>Returns a Boolean indicating if the type of the value is a string.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_defined">IS_DEFINED (expr)</a></td>
+-->
+<!-- keep by customization: begin -->
   <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_defined">IS_DEFINED (expr)</a></td>
+<!-- keep by customization: end -->
   <td>Returns a Boolean indicating if the property has been assigned a value.</td>
 </tr>
 <tr>
+<!-- deleted by customization
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_primitive">IS_PRIMITIVE (expr)</a></td>
+-->
+<!-- keep by customization: begin -->
   <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_primitive">IS_PRIMITIVE (expr)</a></td>
+<!-- keep by customization: end -->
   <td>Returns a Boolean indicating if the type of the value is a string, number, Boolean or null.</td>
 </tr>
 
@@ -1517,22 +1676,22 @@ The following scalar functions perform an operation on a string input value and 
 
 Usage|Description
 ---|---
-[LENGTH (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_length)|Returns the number of characters of the specified string expression
-[CONCAT (str_expr, str_expr [, str_expr])](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_concat)|Returns a string that is the result of concatenating two or more string values.
-[SUBSTRING (str_expr, num_expr, num_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_substring)|Returns part of a string expression.
-[STARTSWITH (str_expr, str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_startswith)|Returns a Boolean indicating whether the first string expression ends with the second
-[ENDSWITH (str_expr, str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_endswith)|Returns a Boolean indicating whether the first string expression ends with the second
-[CONTAINS (str_expr, str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_contains)|Returns a Boolean indicating whether the first string expression contains the second.
-[INDEX_OF (str_expr, str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_index_of)|Returns the starting position of the first occurrence of the second string expression within the first specified string expression, or -1 if the string is not found.
-[LEFT (str_expr, num_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_left)|Returns the left part of a string with the specified number of characters.
-[RIGHT (str_expr, num_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_right)|Returns the right part of a string with the specified number of characters.
-[LTRIM (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_ltrim)|Returns a string expression after it removes leading blanks.
-[RTRIM (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_rtrim)|Returns a string expression after truncating all trailing blanks.
-[LOWER (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_lower)|Returns a string expression after converting uppercase character data to lowercase.
-[UPPER (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_upper)|Returns a string expression after converting lowercase character data to uppercase.
-[REPLACE (str_expr, str_expr, str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_replace)|Replaces all occurrences of a specified string value with another string value.
-[REPLICATE (str_expr, num_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_replicate)|Repeats a string value a specified number of times.
-[REVERSE (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_reverse)|Returns the reverse order of a string value.
+[LENGTH <!-- deleted by customization (str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_length)|Returns --><!-- keep by customization: begin --> (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_length)|Returns <!-- keep by customization: end --> the number of characters of the specified string expression
+[CONCAT (str_expr, str_expr [, <!-- deleted by customization str_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_concat)|Returns --><!-- keep by customization: begin --> str_expr])](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_concat)|Returns <!-- keep by customization: end --> a string that is the result of concatenating two or more string values.
+[SUBSTRING (str_expr, num_expr, <!-- deleted by customization num_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_substring)|Returns --><!-- keep by customization: begin --> num_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_substring)|Returns <!-- keep by customization: end --> part of a string expression.
+[STARTSWITH (str_expr, <!-- deleted by customization str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_startswith)|Returns --><!-- keep by customization: begin --> str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_startswith)|Returns <!-- keep by customization: end --> a Boolean indicating whether the first string expression ends with the second
+[ENDSWITH (str_expr, <!-- deleted by customization str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_endswith)|Returns --><!-- keep by customization: begin --> str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_endswith)|Returns <!-- keep by customization: end --> a Boolean indicating whether the first string expression ends with the second
+[CONTAINS (str_expr, <!-- deleted by customization str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_contains)|Returns --><!-- keep by customization: begin --> str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_contains)|Returns <!-- keep by customization: end --> a Boolean indicating whether the first string expression contains the second.
+[INDEX_OF (str_expr, <!-- deleted by customization str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_index_of)|Returns --><!-- keep by customization: begin --> str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_index_of)|Returns <!-- keep by customization: end --> the starting position of the first occurrence of the second string expression within the first specified string expression, or -1 if the string is not found.
+[LEFT (str_expr, <!-- deleted by customization num_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_left)|Returns --><!-- keep by customization: begin --> num_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_left)|Returns <!-- keep by customization: end --> the left part of a string with the specified number of characters.
+[RIGHT (str_expr, <!-- deleted by customization num_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_right)|Returns --><!-- keep by customization: begin --> num_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_right)|Returns <!-- keep by customization: end --> the right part of a string with the specified number of characters.
+[LTRIM <!-- deleted by customization (str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_ltrim)|Returns --><!-- keep by customization: begin --> (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_ltrim)|Returns <!-- keep by customization: end --> a string expression after it removes leading blanks.
+[RTRIM <!-- deleted by customization (str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_rtrim)|Returns --><!-- keep by customization: begin --> (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_rtrim)|Returns <!-- keep by customization: end --> a string expression after truncating all trailing blanks.
+[LOWER <!-- deleted by customization (str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_lower)|Returns --><!-- keep by customization: begin --> (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_lower)|Returns <!-- keep by customization: end --> a string expression after converting uppercase character data to lowercase.
+[UPPER <!-- deleted by customization (str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_upper)|Returns --><!-- keep by customization: begin --> (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_upper)|Returns <!-- keep by customization: end --> a string expression after converting lowercase character data to uppercase.
+[REPLACE (str_expr, str_expr, <!-- deleted by customization str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_replace)|Replaces --><!-- keep by customization: begin --> str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_replace)|Replaces <!-- keep by customization: end --> all occurrences of a specified string value with another string value.
+[REPLICATE (str_expr, <!-- deleted by customization num_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_replicate)|Repeats --><!-- keep by customization: begin --> num_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_replicate)|Repeats <!-- keep by customization: end --> a string value a specified number of times.
+[REVERSE <!-- deleted by customization (str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_reverse)|Returns --><!-- keep by customization: begin --> (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_reverse)|Returns <!-- keep by customization: end --> the reverse order of a string value.
 
 Using these functions, you can now run queries like the following. For example, you can return the family name in uppercase as follows:
 
@@ -1587,10 +1746,10 @@ The following scalar functions perform an operation on an array input value and 
 
 Usage|Description
 ---|---
-[ARRAY_LENGTH (arr_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_length)|Returns the number of elements of the specified array expression.
-[ARRAY_CONCAT (arr_expr, arr_expr [, arr_expr])](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_concat)|Returns an array that is the result of concatenating two or more array values.
-[ARRAY_CONTAINS (arr_expr, expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_contains)|Returns a Boolean indicating whether the array contains the specified value.
-[ARRAY_SLICE (arr_expr, num_expr [, num_expr])](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_slice)|Returns part of an array expression.
+[ARRAY_LENGTH <!-- deleted by customization (arr_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_length)|Returns --><!-- keep by customization: begin --> (arr_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_length)|Returns <!-- keep by customization: end --> the number of elements of the specified array expression.
+[ARRAY_CONCAT (arr_expr, arr_expr [, <!-- deleted by customization arr_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_concat)|Returns --><!-- keep by customization: begin --> arr_expr])](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_concat)|Returns <!-- keep by customization: end --> an array that is the result of concatenating two or more array values.
+[ARRAY_CONTAINS (arr_expr, <!-- deleted by customization expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_contains)|Returns --><!-- keep by customization: begin --> expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_contains)|Returns <!-- keep by customization: end --> a Boolean indicating whether the array contains the specified value.
+[ARRAY_SLICE (arr_expr, num_expr [, <!-- deleted by customization num_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_slice)|Returns --><!-- keep by customization: begin --> num_expr])](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_slice)|Returns <!-- keep by customization: end --> part of an array expression.
 
 Array functions can be used to manipulate arrays within JSON. For example, here's a query that returns all documents where one of the parents is "Robin Wakefield". 
 
@@ -1628,7 +1787,7 @@ That wraps up built-in functions, and the SQL grammar for DocumentDB. Now let's 
 
 ### Spatial functions
 
-DocumentDB supports the following Open Geospatial Consortium (OGC) built-in functions for geospatial querying. For more details on geospatial support in DocumentDB, please see [Working with geospatial data in Azure DocumentDB](documentdb-geospatial.md). 
+DocumentDB supports the following Open Geospatial Consortium (OGC) built-in functions for geospatial querying. For more details on geospatial support in DocumentDB, please see [Working with geospatial data in Azure <!-- deleted by customization DocumentDB](/documentation/articles/documentdb-geospatial) --><!-- keep by customization: begin --> DocumentDB](documentdb-geospatial.md) <!-- keep by customization: end -->.
 
 <table>
 <tr>
@@ -1667,11 +1826,11 @@ Spatial functions can be used to perform proximity querries against spatial data
       "id": "WakefieldFamily"
     }]
 
-If you include spatial indexing in your indexing policy, then "distance queries" will be served efficiently through the index. For more details on spatial indexing, please see the section below. If you don't have a spatial index for the specified paths, you can still perform spatial queries by specifying `x-ms-documentdb-query-enable-scan` request header with the value set to "true". In .NET, this can be done by passing the optional **FeedOptions** argument to queries with [EnableScanInQuery](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery) set to true. 
+If you include spatial indexing in your indexing policy, then "distance queries" will be served efficiently through the index. For more details on spatial indexing, please see the section below. If you don't have a spatial index for the specified paths, you can still perform spatial queries by specifying `x-ms-documentdb-query-enable-scan` request header with the value set to "true". In .NET, this can be done by passing the optional **FeedOptions** argument to queries with <!-- deleted by customization [EnableScanInQuery](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery) --><!-- keep by customization: begin --> [EnableScanInQuery](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery) <!-- keep by customization: end --> set to true.
 
 ST_WITHIN can be used to check if a point lies within a polygon. Commonly polygons are used to represent boundaries like zip codes, state boundaries, or natural formations. Again if you include spatial indexing in your indexing policy, then "within" queries will be served efficiently through the index. 
 
-Polygon arguments in ST_WITHIN can contain only a single ring, i.e. the polygons must not contain holes in them. Check the [DocumentDB limits](documentdb-limits.md) for the maximum number of points allowed in a polygon for an ST_WITHIN query.
+Polygon arguments in ST_WITHIN can contain only a single ring, i.e. the polygons must not contain holes in them. Check the [DocumentDB <!-- deleted by customization limits](/documentation/articles/documentdb-limits) --><!-- keep by customization: begin --> limits](documentdb-limits.md) <!-- keep by customization: end --> for the maximum number of points allowed in a polygon for an ST_WITHIN query.
 
 **Query**
 
@@ -1815,11 +1974,11 @@ The mapping between .NET objects and JSON documents is natural - each data membe
 ### LINQ to SQL translation
 The DocumentDB query provider performs a best effort mapping from a LINQ query into a DocumentDB SQL query. In the following description, we assume the reader has a basic familiarity of LINQ.
 
-First, for the type system, we support all JSON primitive types – numeric types, boolean, string, and null. Only these JSON types are supported. The following scalar expressions are supported.
+First, for the type system, we support all JSON primitive types <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> numeric types, boolean, string, and null. Only these JSON types are supported. The following scalar expressions are supported.
 
--	Constant values – these includes constant values of the primitive data types at the time the query is evaluated.
+-	Constant values <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> these includes constant values of the primitive data types at the time the query is evaluated.
 
--	Property/array index expressions – these expressions refer to the property of an object or an array element.
+-	Property/array index expressions <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> these expressions refer to the property of an object or an array element.
 
 		family.Id;
 		family.children[0].familyName;
@@ -2314,7 +2473,12 @@ The following example show how to use the queryDocuments in the JavaScript serve
 5.	ANSI SQL 2011 [http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
 6.	JSON [http://json.org/](http://json.org/)
 7.	Javascript Specification [http://www.ecma-international.org/publications/standards/Ecma-262.htm](http://www.ecma-international.org/publications/standards/Ecma-262.htm) 
+<!-- deleted by customization
+8.	LINQ [http://msdn.microsoft.com/zh-cn/library/bb308959.aspx](http://msdn.microsoft.com/zh-cn/library/bb308959.aspx) 
+-->
+<!-- keep by customization: begin -->
 8.	LINQ [http://msdn.microsoft.com/library/bb308959.aspx](http://msdn.microsoft.com/library/bb308959.aspx) 
+<!-- keep by customization: end -->
 9.	Query evaluation techniques for large databases [http://dl.acm.org/citation.cfm?id=152611](http://dl.acm.org/citation.cfm?id=152611)
 10.	Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994
 11.	Lu, Ooi, Tan, Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994.

@@ -7,23 +7,24 @@
 	editor="" 
 	services="mobile-services"/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="07/23/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="11/12/2015" 
 	wacn.date=""/>
 
 
 # Handling conflicts with offline data sync in Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../includes/mobile-services-selector-offline-conflicts.md)]
 
 ##Overview
 
 This topic shows you how to synchronize data and handle conflicts when using the offline capabilities of Azure Mobile Services.
 
-If you prefer to watch a video, the clip below follows the same steps as this tutorial.
 
-> [AZURE.VIDEO build-offline-apps-with-mobile-services]
 
 In this tutorial, you download a universal Windows C# solution for an app that supports handling offline synchronization conflicts. You will integrate a mobile service with the app, and then run the Windows Store 8.1 and Windows Phone 8.1 clients to generate a sync conflict and resolve it.
 
@@ -60,7 +61,7 @@ Note that the app is not yet connected to any mobile service, so the buttons **P
 
 Now it's time to test the app against Mobile Services.
 
-1. In the Azure Management Portal, find your mobile service's application key by clicking **Manage Keys** on the command bar of the **Dashboard** tab. Copy the **Application Key**.
+1. In the [Azure Management Portal], find your mobile service's application key by clicking **Manage Keys** on the command bar of the **Dashboard** tab. Copy the **Application Key**.
 
 2. In Solution Explorer for Visual Studio, open the App.xaml.cs file in the client sample project. Change the initialization of the **MobileServiceClient** to use your mobile service URL and application key:
 
@@ -105,7 +106,7 @@ The following steps show the Windows Phone 8.1 and Windows Store 8.1 clients run
 
 
 
-##Review of the code for handling sync conflicts
+## Review of the code for handling sync conflicts
 
 In order to use the offline features for Mobile Services, you must include the version column in both your local database and your data transfer object. This is accomplished by updating the `TodoItem` class the following member:
 
@@ -151,11 +152,10 @@ When a push is canceled, `PushAsync` will throw a `MobileServicePushFailedExcept
 
 <!-- URLs -->
 [Handling conflicts code sample]: http://go.microsoft.com/fwlink/?LinkId=394787
-[Get started with Mobile Services]: /documentation/articles/mobile-services-windows-store-get-started
+[Get started with Mobile Services]: /documentation/articles/mobile-services-windows-store-get-started/
 [Get started with offline data]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [SQLite for Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Handling Database Conflicts]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts#test-app
+[Handling Database Conflicts]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/#test-app
 [Mobile Services Samples GitHub Repository]: http://go.microsoft.com/fwlink/?LinkId=512865
 [Todo Offline Mobile Services sample]: http://go.microsoft.com/fwlink/?LinkId=512866
- 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/20/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 #Implementing Failover Streaming Scenario
@@ -183,7 +183,7 @@ In this section you will create and set up a C# Console Application project.
 		        CopyBlobsFromDifferentStorage(containerName, targetContainerName, StorageNameSource, StorageKeySource, StorageNameTarget, StorageKeyTarget);
 		
 		
-		        // 6.Use the CreateFileInfos Media Services REST API to automatically generate all the IAssetFile’s for the target asset. 
+		        // 6.Use the CreateFileInfos Media Services REST API to automatically generate all the IAssetFile's for the target asset. 
 		        //      This API call is not supported in the current Media Services SDK for .NET. 
 		        CreateFileInfosForAssetWithRest(_contextTarget, targetAsset, MediaServicesAccountNameTarget, MediaServicesAccountKeyTarget);
 		
@@ -311,6 +311,8 @@ In this section you will create and set up a C# Console Application project.
 		    IAssetFile manifestFile = GetPrimaryFile(assetToStream);
 		
 		    // Create a 30-day readonly access policy. 
+        	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
+        
 		    IAccessPolicy policy = context.AccessPolicies.Create("Streaming policy",
 		        TimeSpan.FromDays(30),
 		        AccessPermissions.Read);
@@ -392,7 +394,8 @@ In this section you will create and set up a C# Console Application project.
 		    if (!string.IsNullOrEmpty(acsToken))
 		    {
 		        var asset = context.Assets.Where(a => a.Id == targetAssetId).FirstOrDefault();
-		
+
+            	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
 		        var accessPolicy = context.AccessPolicies.Create("RestTest", TimeSpan.FromDays(100),
 		                                                            AccessPermissions.Read);
 		        if (asset != null)
@@ -956,3 +959,12 @@ In this section you will create and set up a C# Console Application project.
 ##Next Steps
 
 You can now use a traffic manager to route requests between the two data centers and thus failover in the case of any outages.
+
+
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

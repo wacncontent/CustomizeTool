@@ -25,5 +25,5 @@ replaced by:
 		* [Whats Next with Azure AD Connect](/documentation/articles/active-directory-aadconnect-whats-next)
 		* [Azure AD Connect on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn832695.aspx)
 
-reason: ()
+reason: (video)
 

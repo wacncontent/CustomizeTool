@@ -1,5 +1,3 @@
 > [AZURE.SELECTOR]
-- [.NET](/storage-dotnet-how-to-use-files)
-- [Java](/storage-java-how-to-use-file-storage)
-
-
+- [.NET](/documentation/articles/storage-dotnet-how-to-use-files)
+- [Java](/documentation/articles/storage-java-how-to-use-file-storage)

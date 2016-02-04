@@ -5,5 +5,5 @@
 - [SSH](/documentation/articles/hdinsight-hadoop-use-pig-ssh)
 -->
 - [Remote Desktop](/documentation/articles/hdinsight-hadoop-use-pig-remote-desktop)
-- [.NET](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk)
+- [.NET](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1)
 - [Curl](/documentation/articles/hdinsight-hadoop-use-pig-curl)

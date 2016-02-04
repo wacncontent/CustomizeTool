@@ -10,15 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/11/2015"
+	ms.date="11/09/2015"
 	wacn.date=""/>
 
 # Line of Business Application Workload Phase 5: Create the availability group and add the application databases
-<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
-
--->
 
 In this final phase of deploying a high-availability line of business application in Azure infrastructure services, you create a new SQL Server AlwaysOn Availability Group and add the databases of the application.
 
@@ -68,7 +65,7 @@ Use these steps to restore a database.
 2.	From the Start screen, type **SQL Studio**, and then click **SQL Server Management Studio**.
 3.	Click **Connect**.
 4.	In the left pane, right-click **Databases**, and then click **Restore Database**.
-5.	In the **Source** section, select **Device**, and click the ellipses (…) button
+5.	In the **Source** section, select **Device**, and click the ellipses (âŚ) button
 6.	In **Select backup devices**, click **Add**.
 7.	In **Backup file location**, type **\\[machineName]\backup**, press **Enter**, select **[databaseName].bak**, and then click **OK** twice. You should now see the full backup and the log backup in the **Backup sets to restore** section.
 8.	Under **Select a page**, click **Options**. In the **Restore options** section, in **Recovery state**, select **RESTORE WITH NORECOVERY**, and then click **OK**. 
@@ -114,6 +111,12 @@ You can optionally create a listener configuration for the AlwaysOn Availability
 
 Once the listener is configured, you need to configure all the web server virtual machines to use the listener, instead of the name of the first SQL server in the cluster. Rather than using a new DNS name and record that maps to the virtual IP address of the internal load balancing instance, configure the web server virtual machines to use a SQL Alias. For details and steps, see [SQL Alias for SharePoint](http://blogs.msdn.com/b/priyo/archive/2013/09/13/sql-alias-for-sharepoint.aspx).
 
+<!-- deleted by customization
+## Next step
+
+- See these [guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines) if you are deploying your own IT workload in Azure.
+-->
+<!-- keep by customization: begin -->
 ## Additional resources
 
 [Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview)
@@ -125,3 +128,4 @@ Once the listener is configured, you need to configure all the web server virtua
 [Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
 [Azure Infrastructure Services Workload: SharePoint Server 2013 farm](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
+<!-- keep by customization: end -->

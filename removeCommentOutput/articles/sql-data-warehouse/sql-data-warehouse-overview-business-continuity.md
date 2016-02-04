@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Planning for business continuity in SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Planning for business continuity in SQL Data Warehouse | Windows Azure"
    description="Overview of business continuity in SQL Data Warehouse. "
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="sahajs"/>
+	ms.service="sql-data-warehouse"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 
 # Planning for business Continuity in SQL Data Warehouse
@@ -66,15 +62,15 @@ To learn about the business continuity features of other SQL Database editions, 
 <!--Article references-->
 [business continuity overview]: ../sql-database/sql-database-business-continuity.md
 [Finalize a recovered database]: ../sql-database/sql-database-recovered-finalize.md
-[Azure storage redundancy options]: storage-redundancy/#read-access-geo-redundant-storage-ra-grs.md
+[Azure storage redundancy options]: /documentation/articles/storage-redundancy#read-access-geo-redundant-storage-ra-grs.md
 [SQL Database business continuity overview]: ../sql-database/sql-database-business-continuity.md
 [Recover from user error]: sql-data-warehouse-business-continuity-recover-from-user-error.md
 
 <!--MSDN references-->
-[Create database restore request]: http://msdn.microsoft.com/library/azure/dn509571.aspx
-[Database operation status]: http://msdn.microsoft.com/library/azure/dn720371.aspx
-[Get restorable dropped database]: http://msdn.microsoft.com/library/azure/dn509574.aspx
-[List restorable dropped databases]: http://msdn.microsoft.com/library/azure/dn509562.aspx
+[Create database restore request]: http://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx
+[Database operation status]: http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx
+[Get restorable dropped database]: http://msdn.microsoft.com/zh-cn/library/azure/dn509574.aspx
+[List restorable dropped databases]: http://msdn.microsoft.com/zh-cn/library/azure/dn509562.aspx
 
 <!--Other Web references-->
 

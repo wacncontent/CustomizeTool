@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/09/2015"
+	ms.date="11/09/2015"
 	wacn.date=""/>
 
 
@@ -76,7 +76,7 @@ Some of the salient features of the HDInsight platform include:
 
 - **Apache Phoenix** - Apache Phoenix is a Structured Query Language (SQL) query layer over HBase. It supports a limited subset of the SQL query language specification, including support of secondary indexes. It is delivered as a client-embedded Java Database Connectivity (JDBC) driver that targets low-latency queries over HBase data. Apache Phoenix takes your SQL query, compiles it into a series of HBase scans and coprocessors calls, and produces regular JDBC result sets. Apache Phoenix is a relational database layer over HBase. It is delivered as a client-embedded JDBC driver that targets low-latency queries over HBase data. Apache Phoenix takes your SQL query, compiles it into a series of HBase scans, and orchestrates the running of those scans to produce regular JDBC result sets.
 
-- **Cluster Dashboard** - A new web application that is deployed to your HDInsight cluster. Use it to run Hive queries, check job logs, and browse Azure Blob storage. The URL used to access the web application is <*ClusterName*>.azurehdinsight.cn.
+- **Cluster Dashboard** - A new web site that is deployed to your HDInsight cluster. Use it to run Hive queries, check job logs, and browse Azure Blob storage. The URL used to access the web site is <*ClusterName*>.azurehdinsight.cn.
 
 - **Microsoft Avro Library** - This library implements the Apache Avro data serialization system for the Microsoft .NET environment. Apache Avro provides a compact binary data interchange format for serialization. It uses JavaScript Object Notation (JSON) to define a language-agnostic schema that underwrites language interoperability. Data serialized in one language can be read in another. Currently C, C++, C#, Java, PHP, Python, and Ruby are supported. The Apache Avro serialization format is widely used in Azure HDInsight to represent complex data structures within a Hadoop MapReduce job.
 
@@ -99,7 +99,7 @@ Some of the salient features of the HDInsight platform include:
 The following table lists the versions of HDInsight currently available, the corresponding Hortonworks Data Platform versions that they use, and their release dates. When known, their support expiration and deprecation dates are also provided. Please note the following:
 
 * Highly available clusters with two head nodes are deployed by default for HDInsight 2.1 and above. They are not available for HDInsight 1.6 clusters.
-* Once the support has expired for a particular version, it may not be available through the Azure Management Portal. The following table indicates which versions are available on the Azure Management Portal. Cluster versions will continue to be available using the `Version` parameter in the Windows PowerShell [New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) command and the .NET SDK until its deprecation date.
+* Once the support has expired for a particular version, it may not be available through the Azure Management Portal. The following table indicates which versions are available on the Azure Management Portal. Cluster versions will continue to be available using the `Version` parameter in the Windows PowerShell [New-AzureRmHDInsightCluster](https://msdn.microsoft.com/zh-cn/library/mt619331.aspx) command and the .NET SDK until its deprecation date.
 
 <table border="1">
 <tr><th>HDInsight Version</th><th>HDP Version</a><th>High Availability</th></th><th>Release Date</th><th>Available on Azure Management Portal</th><th>Support Expiration Date</th><th>Deprecation Date</th></tr>
@@ -145,9 +145,9 @@ The **Deprecation Date** is the date after which the cluster version cannot be c
 
 [wa-forums]: /support/forums/
 
-[connect-excel-with-hive-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+[connect-excel-with-hive-ODBC]: hdinsight-connect-excel-hive-ODBC-driver.md
 
-[hdp-2-2]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.2.0/HDP_2.2.0_Release_Notes_20141202_version/index.html
+[hdp-2-2]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.2.0/bk_HDP_RelNotes/content/ch_relnotes_v220.html
 
 [hdp-2-1-7]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.7-Win/bk_releasenotes_HDP-Win/content/ch_relnotes-HDP-2.1.7.html
 

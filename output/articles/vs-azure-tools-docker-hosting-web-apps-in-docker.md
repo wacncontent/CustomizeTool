@@ -3,12 +3,12 @@
    description="Learn how to use Visual Studio to host a web app in a Docker container."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="08/20/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 # Hosting Web Apps in Docker
@@ -141,7 +141,7 @@ The procedure below is for communicating with a Docker host that's been deployed
     Set DOCKER_TLS_VERIFY=1
     ```
 
-    Invoking these commands prevents you from having to add `–H (Host) tcp://<NameofAzureVM>.chinacloudapp.cn:2376` and `--TLSVERIFY` to every command you issue.
+    Invoking these commands prevents you from having to add `-H (Host) tcp://<NameofAzureVM>.chinacloudapp.cn:2376` and `--TLSVERIFY` to every command you issue.
 
 1. Now you can issue commands like these to test whether the Docker host is present and functioning. 
 
@@ -149,7 +149,7 @@ The procedure below is for communicating with a Docker host that's been deployed
     |---|---|
     |`docker info`|Get Docker version info.|
     |`docker ps`|Get a list of running containers.|
-    |`docker ps –a`|Get a list of containers, including ones that are stopped.|
+    |`docker ps -a`|Get a list of containers, including ones that are stopped.|
     |`docker logs <Docker container name>`|Get a log for the specified container.|
     |`docker images`|Get a list of images.|
 

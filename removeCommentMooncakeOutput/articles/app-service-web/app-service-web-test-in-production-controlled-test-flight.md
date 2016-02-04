@@ -61,18 +61,18 @@ In this tutorial, you will learn how to bring the following scenarios together t
 	-	[PowerShell](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
-> + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web Apps.
-> + You can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Your MSDN subscription gives you credits every month that you can use for paid Azure services.
+> + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as web sites.
+> + You can [activate Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Your Visual Studio subscription gives you credits every month that you can use for paid Azure services.
 >
-> If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+> If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 
-## Set up your production web app
+## Set up your production web site
 
->[AZURE.NOTE] The script used in this tutorial will automatically configure continuous publishing from your GitHub repository. This requires that your GitHub credentials are already stored in Azure, otherwise the scripted deployment will fail when attempting to configure source control settings for the web apps.
+>[AZURE.NOTE] The script used in this tutorial will automatically configure continuous publishing from your GitHub repository. This requires that your GitHub credentials are already stored in Azure, otherwise the scripted deployment will fail when attempting to configure source control settings for the web sites.
 >
->To store your GitHub credentials in Azure, create a web app in the [Azure preview portal](https://manage.windowsazure.cn) and [configure GitHub deployment](/documentation/articles/web-sites-publish-source-control#Step7). You only need to do this once.
+>To store your GitHub credentials in Azure, create a web site in the [Azure Management Portal](https://manage.windowsazure.cn) and [configure GitHub deployment](/documentation/articles/web-sites-publish-source-control#Step7). You only need to do this once.
 
-In a typical DevOps scenario, you have an application that’s running live in Azure, and you want to make changes to it through continuous publishing. In this scenario, you will deploy to production a template that you have developed and tested.
+In a typical DevOps scenario, you have an application that's running live in Azure, and you want to make changes to it through continuous publishing. In this scenario, you will deploy to production a template that you have developed and tested.
 
 1.	Create your own fork of the [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) repository. For information on creating your fork, see [Fork a Repo](https://help.github.com/articles/fork-a-repo/). Once your fork is created, you can see it in your browser.
 
@@ -85,7 +85,7 @@ In a typical DevOps scenario, you have an application that’s running live in A
 
 4.	Once you have your local clone, navigate to *&lt;repository_root>*\ARMTemplates, and run the deploy.ps1 script with a unique suffix, as shown below:
 
-        .\deploy.ps1 –RepoUrl https://github.com/<your_fork>/todoapp.git -ResourceGroupSuffix <your_suffix>
+        .\deploy.ps1 -RepoUrl https://github.com/<your_fork>/todoapp.git -ResourceGroupSuffix <your_suffix>
 
 4.	When prompted, type in the desired username and password for database access. Remember your database credentials because you will need to specify them again when updating the resource group.
 
@@ -94,14 +94,14 @@ In a typical DevOps scenario, you have an application that’s running live in A
 
 6.	Back in your Git Shell session, run:
 
-        .\swap –Name ToDoApp<your_suffix>
+        .\swap -Name ToDoApp<your_suffix>
 
 	![](./media/app-service-web-test-in-production-controlled-test-flight/00.2-swap-to-production.png)
 
-7.	When the script finishes, go back to browse to the frontend’s address (http://ToDoApp*&lt;your_suffix>*.chinacloudsites.cn/) to see the application running in production.
-5.	Log into the [Azure preview portal](https://manage.windowsazure.cn) and take a look at what’s created.
+7.	When the script finishes, go back to browse to the frontend's address (http://ToDoApp*&lt;your_suffix>*.chinacloudsites.cn/) to see the application running in production.
+5.	Log into the [Azure Management Portal](https://manage.windowsazure.cn) and take a look at what's created.
 
-	You should be able to see two web apps in the same resource group, one with the `Api` suffix in the name. If you look at the resource group view, you will also see the SQL Database and server, the App Service plan, and the staging slots for the web apps. Browse through the different resources and compare them with *&lt;repository_root>*\ARMTemplates\ProdAndStage.json to see how they are configured in the template.
+	You should be able to see two web sites in the same resource group, one with the `Api` suffix in the name. If you look at the resource group view, you will also see the SQL Database and server, the App Service plan, and the staging slots for the web sites. Browse through the different resources and compare them with *&lt;repository_root>*\ARMTemplates\ProdAndStage.json to see how they are configured in the template.
 
 	![](./media/app-service-web-test-in-production-controlled-test-flight/00.3-resource-group-view.png)
 
@@ -112,7 +112,7 @@ You have set up the production app.  Now, let's imagine that you receive feedbac
 5. Open *&lt;repository_root>*\src\MultiChannelToDo.sln in Visual Studio.
 6. Restore all Nuget packages by right-clicking solution > **Manage NuGet Packages for Solution** > **Restore**.
 6. Right-click **MultiChannelToDo.Web** > **Add Application Insights Telemetry** > **Configure Settings** > Change resource group to ToDoApp*&lt;your_suffix>* > **Add Application Insights to Project**.
-7. In the Azure preview portal, open the blade for the **MultiChannelToDo.Web** Application Insight resource. Then in the **Application health** part, click **Learn how to collect browser page load data** > copy code.
+7. In the Azure Management Portal, open the blade for the **MultiChannelToDo.Web** Application Insight resource. Then in the **Application health** part, click **Learn how to collect browser page load data** > copy code.
 7. Add the copied JS instrumentation code to *&lt;repository_root>*\src\MultiChannelToDo.Web\app\Index.cshtml, just before the closing `<heading>` tag. It should contain the unique instrumentation key of your Application Insight resource.
 
         <script type="text/javascript">
@@ -135,7 +135,7 @@ You have set up the production app.  Now, let's imagine that you receive feedbac
             });
         </script>
 
-    This JavaScript snippet sends a custom event to Application Insights every time a user clicks anywhere in the web app.
+    This JavaScript snippet sends a custom event to Application Insights every time a user clicks anywhere in the web site.
 
 12. In Git Shell, commit and push your changes to your fork in GitHub. Then, wait for clients to refresh browser.
 
@@ -145,7 +145,7 @@ You have set up the production app.  Now, let's imagine that you receive feedbac
 
 6.	Swap the deployed app changes to production:
 
-        .\swap –Name ToDoApp<your_suffix>
+        .\swap -Name ToDoApp<your_suffix>
 
 13. Browse to the Application Insights resource that you configured. Click Custom events.
 
@@ -181,7 +181,7 @@ This is a tangent since the scenario demonstrated in this tutorial only deals wi
 
 6.	Swap the deployed app changes to production:
 
-        .\swap –Name ToDoApp<your_suffix>
+        .\swap -Name ToDoApp<your_suffix>
 
 That's it!
 
@@ -209,14 +209,14 @@ Since you're gathering data on client behavior, you will [add a telemetry initia
 
     This initializer code causes the `appInsights` object to add the a custom property called `Environment` to every piece of telemetry it sends.
 
-2. Next, add this custom property as a [slot setting](/documentation/articles/web-sites-staged-publishing#AboutConfiguration) for your web app in Azure. To do this, run the following commands in your Git Shell session.
+2. Next, add this custom property as a [slot setting](/documentation/articles/web-sites-staged-publishing#AboutConfiguration) for your web site in Azure. To do this, run the following commands in your Git Shell session.
 
         $app = Get-AzureWebsite -Name todoapp<your_suffix> -Slot production
         $app.AppSettings.Add("environment", "Production")
         $app.SlotStickyAppSettingNames.Add("environment")
         $app | Set-AzureWebsite -Name todoapp<your_suffix> -Slot production
 
-    The Web.config in your project already defines the `environment` app setting. With this setting, when you test the app locally, your metrics will be tagged with `VS Debugger`. However, when you push your changes to Azure, Azure will find and use the `environment` app setting in the web app's configuration instead, and your metrics will be tagged with `Production`.
+    The Web.config in your project already defines the `environment` app setting. With this setting, when you test the app locally, your metrics will be tagged with `VS Debugger`. However, when you push your changes to Azure, Azure will find and use the `environment` app setting in the web site's configuration instead, and your metrics will be tagged with `Production`.
 
 3. Commit and push your code changes to your fork on GitHub, and then wait for your users to use the new app (need to refresh the browser). It takes about 15 minutes for the new property to show up in your Application Insights `MultiChannelToDo.Web` resource.
 
@@ -382,10 +382,10 @@ Azure Websites makes it easy for small- to medium-sized businesses to test their
 ## More resources ##
 
 -   [Agile software development with Azure Websites](/documentation/articles/app-service-agile-software-development)
--   [Set up staging environments for web apps in Azure Websites](/documentation/articles/web-sites-staged-publishing)
+-   [Set up staging environments for web sites in Azure Websites](/documentation/articles/web-sites-staged-publishing)
 -	[Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably)
 -	[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
 -	[JSONLint - The JSON Validator](http://jsonlint.com/)
--	[Git Branching – Basic Branching and Merging](http://www.git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+-	[Git Branching - Basic Branching and Merging](http://www.git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 -	[Azure PowerShell](/documentation/articles/powershell-install-configure)
 -	[Project Kudu Wiki](https://github.com/projectkudu/kudu/wiki)

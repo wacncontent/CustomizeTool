@@ -1,7 +1,7 @@
 <properties 
-	pageTitle="Web Application Development with ASP.NET MVC using DocumentDB | Microsoft Azure" 
-	description="Learn how to use DocumentDB with .NET to build a To Do List web application. You'll store and access data from an ASP.NET MVC web application hosted on Azure Websites." 
-	keywords="Github, visual studio, web application development, application development, database tutorial, mvc applications, json data, documentdb, azure, Microsoft azure"
+	pageTitle="ASP.NET MVC tutorial for DocumentDB: web site Development | Windows Azure" 
+	description="Complete this ASP.NET MVC tutorial to create an MVC web site using DocumentDB. You'll store JSON and access data from a todo app hosted on Azure Websites." 
+	keywords="asp.net mvc tutorial, web site development, mvc web site, asp net mvc tutorial step by step"
 	services="documentdb" 
 	documentationCenter=".net" 
 	authors="ryancrawcour" 
@@ -9,28 +9,24 @@
 	editor="cgronlun"/>
 
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="hero-article" 
-	ms.date="07/24/2015" 
-	ms.author="ryancraw"/>
+<tags
+	ms.service="documentdb"
+	ms.date="11/18/2015"
+	wacn.date=""/>
 
-#<a name="_Toc395809351"></a>Web application development with ASP.NET MVC using DocumentDB
+#<a name="_Toc395809351"></a>web site development with ASP.NET MVC using DocumentDB
 
 > [AZURE.SELECTOR]
-- [.NET](documentdb-dotnet-application.md)
-- [Node.js](documentdb-nodejs-application.md)
-- [Java](documentdb-java-application.md)
-- [Python](documentdb-python-application.md) 
+- [.NET](/documentation/articles/documentdb-dotnet-application)
+- [Node.js](/documentation/articles/documentdb-nodejs-application)
+- [Java](/documentation/articles/documentdb-java-application)
+- [Python](/documentation/articles/documentdb-python-application) 
 
-To highlight how you can efficiently leverage Azure DocumentDB to store and query JSON documents, this article provides an end-to-end walk-through showing you how to build a todo list web application using Azure DocumentDB. The tasks will be stored as JSON documents in Azure DocumentDB.
+To highlight how you can efficiently leverage Azure DocumentDB to store and query JSON documents, this article provides an end-to-end walk-through showing you how to build a todo app using Azure DocumentDB. The tasks will be stored as JSON documents in Azure DocumentDB.
 
-![Screen shot of the todo list web application created by this tutorial](./media/documentdb-dotnet-application/image1.png)
+![Screen shot of the todo list MVC web site created by this tutorial - ASP NET MVC tutorial step by step](./media/documentdb-dotnet-application/asp-net-mvc-tutorial-image1.png)
 
-This walk-through shows you how to use the DocumentDB service provided by Azure to store and access data from an ASP.NET MVC web application hosted on Azure.
+This walk-through shows you how to use the DocumentDB service provided by Azure to store and access data from an ASP.NET MVC web site hosted on Azure.
 
 > [AZURE.TIP] This tutorial assumes that you have prior experience using ASP.NET MVC and Azure Websites. If you are new to ASP.NET or the [prerequisite tools](#_Toc395637760), we recommend downloading the complete sample project from [GitHub][] and following the instructions in this sample. Once you have it built, you can review this article to gain insight on the code in the context of the project.
 
@@ -38,7 +34,7 @@ This walk-through shows you how to use the DocumentDB service provided by Azure 
 
 Before following the instructions in this article, you should ensure that you have the following:
 
-- An active Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Azure Free Trial](../../pricing/free-trial/).
+- An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](../../pricing/1rmb-trial/).
 - [Visual Studio 2013](http://www.visualstudio.com/) Update 4 or higher.
 - Azure SDK for .NET version 2.5.1 or higher, available through the [Microsoft Web Platform Installer][].
 
@@ -48,9 +44,9 @@ All the screen shots in this article have been taken using Visual Studio 2013 wi
 
 Let's start by creating a DocumentDB account. If you already have an account, you can skip to [Create a new ASP.NET MVC application](#_Toc395637762).
 
-[AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
+[AZURE.INCLUDE [documentdb-create-dbaccount](../includes/documentdb-create-dbaccount.md)]
 
-[AZURE.INCLUDE [documentdb-keys](../../includes/documentdb-keys.md)]
+[AZURE.INCLUDE [documentdb-keys](../includes/documentdb-keys.md)]
 
 <br/>
 We will now walk through how to create a new ASP.NET MVC application from the ground-up. 
@@ -62,9 +58,9 @@ Now that you have an account, let's create our new ASP.NET project.
 1. In Visual Studio, on the **File** menu, point to **New**, and then click **Project**.
 
    	The **New Project** dialog box appears.
-2. In the **Project types** pane, expand **Templates**, **Visual C#**, **Web**, and then select **ASP.NET Web Application**.
+2. In the **Project types** pane, expand **Templates**, **Visual C#**, **Web**, and then select **ASP.NET web site**.
 
-  	![Screen shot of the New Project dialog box with the ASP.NET Web Application project type highlighted](./media/documentdb-dotnet-application/image10.png)
+  	![Screen shot of the New Project dialog box with the ASP.NET web site project type highlighted](./media/documentdb-dotnet-application/asp-net-mvc-tutorial-image10.png)
 
 3. In the **Name** box, type the name of the project. This tutorial uses the name "todo". If you choose to use something other than this, then wherever this tutorial talks about the todo namespace, you need to adjust the provided code samples to use whatever you named your application. 
 
@@ -72,7 +68,7 @@ Now that you have an account, let's create our new ASP.NET project.
 
   	The **New ASP.NET Project** dialog box appears.
 
-  	![Screen shot of the New ASP.NET Project dialog box with the MVC application template highlighted and the Host in the cloud box checked](./media/documentdb-dotnet-application/image11.png)
+  	![Screen shot of the New ASP.NET Project dialog box with the MVC application template highlighted and the Host in the cloud box checked](./media/documentdb-dotnet-application/asp-net-mvc-tutorial-image11.png)
 
 5. In the templates pane, select **MVC**.
 
@@ -82,32 +78,32 @@ Now that you have an account, let's create our new ASP.NET project.
 
 8. If you chose to host this in the cloud you will see at least one additional screen asking you to login to your Azure account and provide some values for your new website. Supply all the additional values and continue. 
 
-  	I haven't chosen a "Database server" here because we're not using an Azure SQL Database Server here, we're going to be creating a new Azure DocumentDB account later on in the Azure Preview portal.
+  	I haven't chosen a "Database server" here because we're not using an Azure SQL Database Server here, we're going to be creating a new Azure DocumentDB account later on in the Azure Management Portal.
 
-	For more information about choosing an **App Service plan** and **Resource group**, see [Azure App Service plans in-depth overview](azure-web-sites-web-hosting-plans-in-depth-overview.md).
+	For more information about choosing an **App Service plan** and **Resource group**, see [App Service plans in-depth overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview).
 
-  	![Screen shot of the Configure Microsoft Azure Website dialog box](./media/documentdb-dotnet-application/image11_1.png)
+  	![Screen shot of the Configure Windows Azure Website dialog box](./media/documentdb-dotnet-application/image11_1.png)
 
 9. Once Visual Studio has finished creating the boilerplate MVC application you have an empty ASP.NET application that you can run locally.
 
 	We'll skip running the project locally because I'm sure we've all seen the ASP.NET "Hello World" application. Let's go straight to adding DocumentDB to this project and building our application.
 
-## <a name="_Toc395637767"></a>Step 3: Add DocumentDB to your web application project
+## <a name="_Toc395637767"></a>Step 3: Add DocumentDB to your MVC web site project
 
 Now that we have most of the ASP.NET MVC plumbing that we need for
-this solution, let's get to the real purpose of this tutorial, adding Azure DocumentDB to our web application.
+this solution, let's get to the real purpose of this tutorial, adding Azure DocumentDB to our MVC web site.
 
 1. The DocumentDB .NET SDK is packaged and distributed as a NuGet package. To get the NuGet package in Visual Studio, use the NuGet package manager in Visual Studio by right-clicking on the project in **Solution Explorer** and then clicking **Manage NuGet Packages**.
 
-  	![Sreen shot of the right-click options for the web application project in Solution Explorer, with Manage NuGet Packages highlighted.](./media/documentdb-dotnet-application/image21.png)
+  	![Sreen shot of the right-click options for the web site project in Solution Explorer, with Manage NuGet Packages highlighted.](./media/documentdb-dotnet-application/image21.png)
 
     The **Manage NuGet Packages** dialog box appears.
 
 2. In the **Search Online** box, type ***Azure DocumentDB***. 
     
-    From the results, install the **Microsoft Azure DocumentDB Client Library** package. This will download and install the DocumentDB package as well as all dependencies, like Newtonsoft.Json.
+    From the results, install the **Windows Azure DocumentDB Client Library** package. This will download and install the DocumentDB package as well as all dependencies, like Newtonsoft.Json.
 
-  	![Sreen shot of the Manage NuGet Packages window, with the Microsoft Azure DocumentDB Client Library highlighted](./media/documentdb-dotnet-application/nuget.png)
+  	![Sreen shot of the Manage NuGet Packages window, with the Windows Azure DocumentDB Client Library highlighted](./media/documentdb-dotnet-application/nuget.png)
 
   	Alternatively you can use the Package Manager Console to install the package. To do so, on the **Tools** menu, click **NuGet Package Manager**, and then click **Package Manager Console**. At the prompt, type the following.
 
@@ -257,7 +253,7 @@ In this section, we'll add code to handle the following:
 - [Adding Items](#_Toc395637771).
 - [Editing Items](#_Toc395637772).
 
-### <a name="_Toc395637770"></a>Listing incomplete Items in your web application
+### <a name="_Toc395637770"></a>Listing incomplete Items in your MVC web site
 
 The first thing to do here is add a class that contains all the logic to connect to and use DocumentDB. For this tutorial we'll encapsulate all this logic in to a repository class called DocumentDBRepository. 
 
@@ -399,16 +395,16 @@ The first thing to do here is add a class that contains all the logic to connect
     	    }
     	}
 
-	> [AZURE.TIP] When creating a new DocumentCollection you can supply an optional RequestOptions parameter of OfferType, which allows you to specify the performance level of the new collection. If this parameter is not passed the default offer type will be used. For more on DocumentDB offer types please refer to [DocumentDB Performance Levels](documentdb-performance-levels.md)
+	> [AZURE.TIP] When creating a new DocumentCollection you can supply an optional RequestOptions parameter of OfferType, which allows you to specify the performance level of the new collection. If this parameter is not passed the default offer type will be used. For more on DocumentDB offer types please refer to [DocumentDB Performance Levels](/documentation/articles/documentdb-performance-levels)
 
 3. We're reading some values from configuration, so open the **Web.config** file of your application and add the following lines under the `<AppSettings>` section.
 	
-    	<add key="endpoint" value="enter the URI from the Keys blade of the Azure Preview portal"/>
-    	<add key="authKey" value="enter the PRIMARY KEY, or the SECONDARY KEY, from the Keys blade of the Azure  Preview portal"/>
+    	<add key="endpoint" value="enter the URI from the Keys blade of the Azure Management Portal"/>
+    	<add key="authKey" value="enter the PRIMARY KEY, or the SECONDARY KEY, from the Keys blade of the Azure  Portal"/>
     	<add key="database" value="ToDoList"/>
     	<add key="collection" value="Items"/>
 	
-4. Now, update the values for *endpoint* and *authKey* using the Keys blade of the Azure Preview portal. Use the **URI** from the Keys blade as the value of the endpoint setting, and use the **PRIMARY KEY**, or **SECONDARY KEY** from the Keys blade as the value of the authKey setting.
+4. Now, update the values for *endpoint* and *authKey* using the Keys blade of the Azure Management Portal. Use the **URI** from the Keys blade as the value of the endpoint setting, and use the **PRIMARY KEY**, or **SECONDARY KEY** from the Keys blade as the value of the authKey setting.
 
 
     That takes care of wiring up the DocumentDB repository, now let's add our application logic.
@@ -460,7 +456,7 @@ Now if you run the application, it will call into your **ItemController** which 
 
 If you build and run this project now, you should now see something that looks this.    
 
-![Screen shot of the todo list web application created by this database tutorial](./media/documentdb-dotnet-application/image23.png)
+![Screen shot of the todo list web site created by this database tutorial](./media/documentdb-dotnet-application/image23.png)
 
 ### <a name="_Toc395637771"></a>Adding Items
 
@@ -573,7 +569,7 @@ There is one last thing for us to do, and that is to add the ability to edit **I
  	   	}
 		
 	
-	The first method handles the Http GET that happens when the user clicks on the **Edit** link from the **Index** view. This method fetches a [**Document**](http://msdn.microsoft.com/library/azure/microsoft.azure.documents.document.aspx) from DocumentDB and passes it to the **Edit** view.
+	The first method handles the Http GET that happens when the user clicks on the **Edit** link from the **Index** view. This method fetches a [**Document**](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.document.aspx) from DocumentDB and passes it to the **Edit** view.
 
 	The **Edit** view will then do an Http POST to the **IndexController**. 
 	
@@ -587,7 +583,7 @@ To test the application on your local machine, do the following:
 
 1. Hit F5 in Visual Studio to build the application in debug mode. It should build the application and launch a browser with the empty grid page we saw before:
 
-	![Screen shot of the todo list web application created by this database tutorial](./media/documentdb-dotnet-application/image24.png)
+	![Screen shot of the todo list web site created by this database tutorial](./media/documentdb-dotnet-application/image24.png)
 
 	If you run into errors at this point, you can compare your code against the sample project on [GitHub][]
 
@@ -609,7 +605,7 @@ To test the application on your local machine, do the following:
 
 ##<a name="_Toc395637774"></a>Step 7: Deploy the application to Azure Websites
 
-Now that you have the complete application working correctly with DocumentDB we're going to deploy this web app to Azure Websites. If you selected **Host in the cloud** when you created the empty ASP.NET MVC project then Visual Studio makes this really easy and does most of the work for you. 
+Now that you have the complete application working correctly with DocumentDB we're going to deploy this web site to Azure Websites. If you selected **Host in the cloud** when you created the empty ASP.NET MVC project then Visual Studio makes this really easy and does most of the work for you. 
 
 1. To publish this application all you need to do is right-click on the project in **Solution Explorer** and click **Publish**.
 
@@ -617,15 +613,15 @@ Now that you have the complete application working correctly with DocumentDB we'
 
 2. Everything should already be configured according to your credentials; in fact the website has already been created in Azure for you at the **Destination URL** shown, all you need to do is click **Publish**.
 
-    ![Screen shot of the Publish Web dialog box in Visual Studio](./media/documentdb-dotnet-application/image29.png)
+    ![Screen shot of the Publish Web dialog box in Visual Studio - ASP NET MVC tutorial step by step](./media/documentdb-dotnet-application/image29.png)
 
-In a few seconds, Visual Studio will finish publishing your web application and launch a browser where you can see your handy work running in Azure!
+In a few seconds, Visual Studio will finish publishing your web site and launch a browser where you can see your handy work running in Azure!
 
 ##<a name="_Toc395637775"></a>Next steps
 
-Congratulations! You just built your first ASP.NET MVC application using Azure DocumentDB and published it to Azure Websites. The source code for the complete application, including the detail and delete functionality that were not included in this tutorial can be downloaded or cloned from [GitHub][]. So if you're interested in adding that to your app, grab the code and add it to this app.
+Congratulations! You just built your first ASP.NET MVC web site using Azure DocumentDB and published it to Azure Websites. The source code for the complete application, including the detail and delete functionality that were not included in this tutorial can be downloaded or cloned from [GitHub][]. So if you're interested in adding that to your app, grab the code and add it to this app.
 
-To add additional functionality to your application, review the APIs available in the [Document DB .NET Library](http://msdn.microsoft.com/library/azure/dn783362.aspx) and feel free to contribute to the DocumentDB .NET Library on [GitHub][]. 
+To add additional functionality to your application, review the APIs available in the [Document DB .NET Library](https://msdn.microsoft.com/zh-cn/library/azure/dn948556.aspx) and feel free to contribute to the DocumentDB .NET Library on [GitHub][]. 
 
 
 [\*]: https://microsoft.sharepoint.com/teams/DocDB/Shared%20Documents/Documentation/Docs.LatestVersions/PicExportError

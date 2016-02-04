@@ -3,13 +3,13 @@
 	description="Learn how to use Amazon Web Services (AWS) with Azure Active Directory to enable single sign-on, automated provisioning, and more!"
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
+	authors="jeevansd"
 	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/30/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 
@@ -37,7 +37,7 @@ To configure Azure AD integration with Amazon Web Service (AWS), you need the fo
 To test the steps in this tutorial, you should follow these recommendations:
 
 - You should not use your production environment, unless this is necessary.
-- If you don't have an Azure AD trial environment, you can get a one-month trial [here](https://azure.microsoft.com/pricing/1rmb-trial/). 
+- If you don't have an Azure AD trial environment, you can get a one-month trial <!-- deleted by customization [here](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> [here](https://azure.microsoft.com/pricing/1rmb-trial/) <!-- keep by customization: end -->.
 
  
 ## Scenario Description
@@ -215,7 +215,7 @@ The following screenshot shows an example for this.
 
      a. In the **Attribute Name** textbox, type **https://aws.amazon.com/SAML/Attributes/RoleSessionName**.
 
-     b. In the **Attribute Value** textbox, type **mail**.
+     b. In the **Attribute Value** textbox, type **userprincipalname**.
 
      c. Click **Complete** to close the **Add User Attribute** dialog.
 
@@ -291,7 +291,7 @@ The objective of this section is to create a user called Britta Simon in Amazon 
 5. On the Create User dialog, perform the following steps: 
 <br><br>![Configure Single Sign-On][30]<br>
 
-     a. In the **Enter User Names** textboxes, type Brita Simon's user name in Azure AD.
+     a. In the **Enter User Names** textboxes, type Brita Simon's user name (userprincipalname) in Azure AD.
 
      b. Click **Create**.
 

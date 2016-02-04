@@ -8,7 +8,7 @@ replaced by:
 
 		## <a name = "denial-of-service-prevention"></a>Denial of service prevention
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -18,7 +18,7 @@ replaced by:
 
 		## <a name="create-pfx-for-self-signed-cert"></a>Create PFX file for self-signed SSL certificate
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -28,5 +28,5 @@ replaced by:
 
 		## <a name="upload-certificate"></a>Upload certificate
 
-reason: ()
+reason: (inpage link)
 

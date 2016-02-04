@@ -4,13 +4,13 @@ deleted:
 
 		or Linux
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		[Provision Linux-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters) or
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -58,5 +58,5 @@ deleted:
 		        wrotefootnote   1
 		        wrought 7
 
-reason: ()
+reason: (Linux Support)
 

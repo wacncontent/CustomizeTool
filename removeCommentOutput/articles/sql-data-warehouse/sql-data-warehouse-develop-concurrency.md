@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Concurrency and workload management in SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Concurrency and workload management in SQL Data Warehouse | Windows Azure"
    description="Understand concurrency and workload management in Azure SQL Data Warehouse for developing solutions."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor="jrowlandjones"/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+	ms.service="sql-data-warehouse"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # Concurrency and workload management in SQL Data Warehouse
 To deliver predictable performance at scale SQL Data Warehouse implements mechanisms for managing both workload concurrency and computational resource assignment.
@@ -449,7 +445,7 @@ For more development tips, see [development overview][].
 [development overview]: sql-data-warehouse-overview-develop.md
 
 <!--MSDN references-->
-[Managing Databases and Logins in Azure SQL Database]:https://msdn.microsoft.com/en-us/library/azure/ee336235.aspx
+[Managing Databases and Logins in Azure SQL Database]:https://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx
 
 <!--Other Web references-->
 

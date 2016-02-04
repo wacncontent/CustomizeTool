@@ -29,7 +29,7 @@ The **Premium** tier provides resource isolation at the CPU and memory layer so 
 
 Note that the standard base charge is charged only once per month per Azure subscription. This means that after you create a single Standard or Premium tier Service Bus namespace, you will be able to create as many additional Standard or Premium tier namespaces as you want under that same Azure subscription, without incurring additional base charges.
 
-All existing Service Bus namespaces created prior to November 1, 2014 were automatically placed into the Standard tier. This ensures that you continue to have access to all features currently available with Service Bus. Subsequently, you can use the Azure Management Portal to downgrade to the Basic tier if desired.
+All existing Service Bus namespaces created prior to November 1, 2014 were automatically placed into the Standard tier. This ensures that you continue to have access to all features currently available with Service Bus. Subsequently, you can use the [Azure Management Portal][] to downgrade to the Basic tier if desired.
 
 The following table summarizes the functional differences between the Basic and Standard/Premium tiers.
 
@@ -143,3 +143,4 @@ Yes. There are no connection charges for sending events using HTTP, regardless o
 
 [Service Bus Pricing FAQ](/documentation/articles/service-bus-pricing-faq)
 
+[Azure Management Portal]: http://manage.windowsazure.cn

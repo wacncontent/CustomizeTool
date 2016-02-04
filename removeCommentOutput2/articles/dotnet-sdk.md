@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="06/11/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 # What is the Azure SDK for .NET?
@@ -99,7 +99,7 @@ HDInsight tools in Server Explorer enable you to navigate Hive databases and lin
 
 ###<a id="mobile">Windows Azure Mobile App SDK
 
-Tools for working with [Azure Websites Mobile Apps](/documentation/articles/app-service-mobile-value-prop-preview).
+Tools for working with [Azure Mobile Apps](/documentation/articles/app-service-mobile-value-prop-preview).
 
 ###<a id="ps"></a>Windows Azure PowerShell
 

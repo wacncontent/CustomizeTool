@@ -6,7 +6,7 @@ deleted:
 		>
 		> If you are using a Linux, OS X, or Unix client and a Linux-based HDInsight server, see [Use Sqoop with Hadoop in HDInsight (SSH)](/documentation/articles/hdinsight-use-sqoop)
 
-reason: ()
+reason: (Linux Support)
 
 replacement:
 
@@ -18,7 +18,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -28,7 +28,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -38,7 +38,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -48,7 +48,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -58,7 +58,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -68,5 +68,5 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 

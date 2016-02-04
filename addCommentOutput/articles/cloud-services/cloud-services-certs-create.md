@@ -12,7 +12,12 @@
 	ms.date="10/09/2015"
 	wacn.date=""/>
 
+<!-- deleted by customization
 # Certificates overview for Azure Cloud Services
+-->
+<!-- keep by customization: begin -->
+# Certificates Overview for Azure Cloud Services
+<!-- keep by customization: end -->
 Certificates are used in Azure for cloud services ([service certificates](#what-are-service-certificates)) and for authenticating with the management API ([management certificates](#what-are-management-certificates)). This topic gives a general overview of both certificate types, how to [create](#create) them, and how to [deploy](#deploy) them to Azure.
 
 Certificates used in Azure are x.509 v3 certificates and can be signed by another trusted certificate or they can be self-signed. A self-signed certificate is signed by its own creator, and because of this, are not trusted by default. Most browsers can ignore this. Self-signed certificates should only be used by yourself when developing and testing your cloud services. 
@@ -22,7 +27,7 @@ Certificates used by Azure can contain a private or a public key. Certificates h
 ## What are service certificates?
 Service certificates are attached to cloud services and enable secure communication to and from the service. For example, if you deployed a web role, you would want to supply a certificate that can authenticate an exposed HTTPS endpoint. Service certificates, defined in your service definition, are automatically deployed to the virtual machine that is running an instance of your role. 
 
-You can upload service certificates to Management Portal either using the Management Portal or by using the Service Management API. Service certificates are associated with a specific cloud service and assigned to a deployment in the service definition file.
+You can upload service certificates to <!-- deleted by customization Azure --> Management Portal either using the <!-- deleted by customization Azure --> Management Portal or by using the Service Management API. Service certificates are associated with a specific cloud service and assigned to a deployment in the service definition file.
 
 Service certificates can be managed separately from your services, and may be managed by different individuals. For example, a developer may upload a service package that refers to a certificate that an IT manager has previously uploaded to Azure. An IT manager can manage and renew that certificate changing the configuration of the service without needing to upload a new service package. This is possible because the logical name for the certificate and its store name and location are specified in the service definition file, while the certificate thumbprint is specified in the service configuration file. To update the certificate, it's only necessary to upload a new certificate and change the thumbprint value in the service configuration file.
 
@@ -32,7 +37,7 @@ Management certificates allow you to authenticate with the Service Management AP
 >[AZURE.WARNING] Be careful! These types of certificates allow anyone who authenticates with them to manage the subscription they are associated with. 
 
 ### Limitations
-There is a limit of 100 management certificates per subscription. There is also a limit of 100 management certificates for all subscriptions under a specific service administrator’s user ID. If the user ID for the account administrator has already been used to add 100 management certificates and there is a need for more certificates, you can add a co-administrator to add the additional certificates. 
+There is a limit of 100 management certificates per subscription. There is also a limit of 100 management certificates for all subscriptions under a specific service administratorâs user ID. If the user ID for the account administrator has already been used to add 100 management certificates and there is a need for more certificates, you can add a co-administrator to add the additional certificates. 
 
 Before adding more than 100 certificates, see if you can reuse an existing certificate. Using co-administrators adds potentially unneeded complexity to your certificate management process.
 
@@ -63,15 +68,15 @@ This utility is installed with Visual Studio 2013/2015. It is a console utility 
 There are many pages on the internet that cover how to do this with IIS. [Here](https://www.sslshopper.com/article-how-to-create-a-self-signed-certificate-in-iis-7.html) is a great one I found that I think explains it well. 
 
 ### Java
-You can use Java to [create a certificate](/documentation/articles/java-create-azure-website-using-java-sdk#create-a-certificate).
+You can use Java to [create a <!-- deleted by customization certificate](/documentation/articles/java-create-azure-website-using-java-sdk#create-a-certificate) --><!-- keep by customization: begin --> certificate](/documentation/articles/java-create-azure-website-using-java-sdk/#create-a-certificate) <!-- keep by customization: end -->.
 
 ### Linux
 [This](/documentation/articles/virtual-machines-linux-use-ssh-key) article describes how to create certificates with SSH.
 
 ## Next steps
 
-[Upload your service certificate to the Azure Management Portal](/documentation/articles/cloud-services-configure-ssl-certificate) (or the [Preview Portal](/documentation/articles/cloud-services-configure-ssl-certificate-portal)) and [configure them](/documentation/articles/cloud-services-xml-certs) for the cloud service.
+[Upload your service certificate to the Azure Management Portal](/documentation/articles/cloud-services-configure-ssl-certificate) (or the <!-- deleted by customization [Azure Management --><!-- keep by customization: begin --> [Preview <!-- keep by customization: end --> Portal](/documentation/articles/cloud-services-configure-ssl-certificate-portal)) and [configure them](/documentation/articles/cloud-services-xml-certs) for the cloud service.
 
 Upload a [management API certificate](/documentation/articles/azure-api-management-certs) to the Azure Management Portal.
 
->[AZURE.NOTE] The Azure Preview Portal does not use management certificates to access the API but instead uses user accounts.
+>[AZURE.NOTE] The Azure <!-- deleted by customization Management --><!-- keep by customization: begin --> Preview <!-- keep by customization: end --> Portal does not use management certificates to access the API but instead uses user accounts.

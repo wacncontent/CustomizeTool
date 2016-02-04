@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="08/26/2015"
+	ms.date="11/18/2015"
 	wacn.date=""/>
 
 
@@ -57,17 +57,17 @@ In this release the following updates were made. These updates are in preview. F
 - Old **Storm** project must be upgraded when using this version of the tools. For more information, see [this blog](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 - Visual Studio Web Express is no longer supported. For more information, see [this blog](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 
-###Azure Websites Tools
+###Azure Tools
 
 In this release the following updates were made to Web Tools Extensions. For more information see [this](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)  blog. 
 
 - Support for DreamSpark accounts added
 - Full change to Azure Tools made to support the new Azure Resource Management APIs
-- Support for Azure Websites added to [Cloud Explorer](/documentation/articles/azure-sdk-dot-net-release-notes-2_7#cloud_explorer)
+- Support for Azure added to [Cloud Explorer](/documentation/articles/azure-sdk-dot-net-release-notes-2_7#cloud_explorer)
 
 ####Known issues
 
-Web App deployment slot nodes don’t appear under the Slots node in Server Explorer, and Web App deployment slot child nodes don’t load under Cloud Explorer. This issue has been resolved and prepared for the next SDK release. 
+Web App deployment slot nodes don't appear under the Slots node in Server Explorer, and Web App deployment slot child nodes don't load under Cloud Explorer. This issue has been resolved and prepared for the next SDK release. 
 
 
 ###<a id="cloud_explorer"></a>Cloud Explorer for Visual Studio 2015
@@ -83,18 +83,32 @@ Cloud explorer supports the following:
 - Integrated Properties panel which shows developer-focused properties commonly needed during dev/test 
 - Quick switching of the account to use when enumerating resources (use Settings command on toolbar) 
 - Filtering of subscriptions to use when enumerating resources (use Settings command on toolbar) 
+- Deep links to the Azure Management Portal for management of resources and resource groups 
  
  
 ###Azure Resource Manager Tools 
 
 The Azure Resource Manager Tools have been updated to work with Role Based Access Control (RBAC) and new subscription types.  Included with these changes is the ability to use new storage accounts, in addition to classic storage, to store artifacts during deployment.  
 
-If you’re using an Azure Resource Group project from a previous version of the SDK with the SDK 2.7, a new deployment script is needed to deploy using a new storage account instead of classic storage.  You will be prompted before changes are made to your project to add the new script.  The old script will be renamed and you will need to manually make any modifications to the new script.
+If you're using an Azure Resource Group project from a previous version of the SDK with the SDK 2.7, a new deployment script is needed to deploy using a new storage account instead of classic storage.  You will be prompted before changes are made to your project to add the new script.  The old script will be renamed and you will need to manually make any modifications to the new script.
  
  
 ###Storage Explorer Tools 
 
 - Support for viewing Append Blobs. More info in [this blog post](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/13/introducing-azure-storage-append-blob.aspx). 
+- Support for viewing Premium Storage accounts through Server Explorer. Server Explorer will only display page blobs for premium storage accounts as they are the only supported type for premium storage accounts.
+
+###Azure Data Factory Tools for Visual Studio 
+
+Introducing **Azure Data Factory Tools** for Visual Studio. Below are the enabled features. See [this blog](/documentation/services/data-factory/) for more information.
+
+- **Template based authoring**: Select use-cased based templates, data movement templates or data processing templates to deploy an end-to-end data integration solution and get started hands-on quickly with Data Factory. 
+- **Integration with Solution Explorer for authoring and deploying Data Factory entities**: Create & deploy pipelines and related entities as Visual Studio projects. 
+- **Integration with Diagram view for visual interaction while authoring**: Visually author pipelines and datasets with aid from the Diagram view. 
+- **Integration with Server explorer for browsing and interaction with already deployed entities**: Leverage the Server Explorer to browse already deployed data factories and corresponding entities. Import a deployed data factory or any entity (Pipeline, Linked Service, Datasets) into your project. 
+- **JSON editing with schema validation and rich intellisense**: Efficiently configure and edit JSON documents of Data Factory entities with rich intellisense and schema validation 
+- **Multi-Environment publishing**: Publish authored pipelines to dev, test or Prod environment by creating separate config files for each environment.
+- **Pig, Hive and .Net based Data Processing Support**: Support for Pig and Hive Scripts in Data Factory project. Support for referencing C# Project for managing .Net Activity.
 
 ##Azure SDK for .NET 2.7.1
 
@@ -111,9 +125,9 @@ For more detailed explanation about HDInsight tools updates, see [this blog](htt
 	To enable you to view the grammar errors instantly, the Hive Error Marker feature was added. Also, error messages were enhanced and you can now see detailed grammar errors instantly (until this release, you had to submit a Hive script to the cluster and wait for some time before getting details about your error message).  
 - Storm Topology Graph (a new feature)
 
-	Visualizing is very important when you want to see if your topology is working as expected. In this release we added visualization for Storm graphs. You can visualize the important metrics for your topology (for example, a color indicates weather a certain Bolt is “busy” or not). You can also double click the Bolt/Spout to view more details.
+	Visualizing is very important when you want to see if your topology is working as expected. In this release we added visualization for Storm graphs. You can visualize the important metrics for your topology (for example, a color indicates weather a certain Bolt is "busy" or not). You can also double click the Bolt/Spout to view more details.
 
-- Support for HDInsight clusters that were created in new Azure Management Portal (a bug fix)
+- Support for HDInsight clusters that were created in the Azure Management Portal (a bug fix)
 
 	You can now use Visual Studio to view and submit jobs to all your HDInsight clusters no matter where the cluster were created.
 

@@ -4,7 +4,7 @@ deleted:
 
 		, including Windows, Mac, and Linux
 
-reason: ()
+reason: (Linux Support)
 
 replacement:
 
@@ -16,7 +16,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -26,7 +26,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -36,5 +36,5 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 

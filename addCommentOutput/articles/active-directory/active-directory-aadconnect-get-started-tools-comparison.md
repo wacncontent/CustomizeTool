@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Directory integration tools comparison | Windows Azure"
+	pageTitle="Azure AD Connect: Directory integration tools comparison | Windows Azure"
 	description="This is page will provide you with comprehensive tables that compare the various directory integration tools."
 	services="active-directory"
 	documentationCenter=""
@@ -19,7 +19,6 @@ Over the years the directory integration tools have grown and evolved.  This doc
 >[AZURE.NOTE] Azure AD Connect incorporates the components and functionality previously released as Dirsync and AAD Sync. These tools are no longer being released individually, and all future improvements will be included in updates to Azure AD Connect, so that you always know where to get the most current functionality.
 >
 >Currently Dirsync is still supported, however at some point in the future it will be deprecated. Once it is deprecated, it will only be supported for a period of time.  After this period of time support for Dirsync will end.
-
 
 Use the following key for each of the tables.
 
@@ -80,7 +79,7 @@ PP = Public Preview</br>
 Feature  | Azure Active Directory Connect | Azure Active Directory Synchronization Services | Azure Active Directory Synchronization Tool (DirSync) | Forefront Identity Manager 2010 R2 (FIM)  
 :-------- |:--------:|:--------:|:--------:|:--------:|
 Filter on Domains and Organizational Units | ● | ● | ● | ●  
-Filter on objects’ attribute values | ● | ● | ● | ●
+Filter on objects' attribute values | ● | ● | ● | ●
 Allow minimal set of attributes to be synchronized (MinSync) | ● | ● |  |
 Allow different service templates to be applied for attribute flows |●  | ● |  |
 Allow removing attributes from flowing from AD to Azure AD | ● | ● |  |  

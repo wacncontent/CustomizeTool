@@ -14,15 +14,15 @@ editor=""/>
 # How to update a cloud service
 
 ## Overview
-At 10,000 feet, updating a cloud service, including both its roles and guest OS, is a three step process. First, the binaries and configuration files for the new cloud service or OS version must be uploaded. Next, Azure reserves compute and network resources for the cloud service based on the requirements of the new cloud service version. Finally, Azure performs a rolling upgrade to incrementally update the tenant to the new version or guest OS, while preserving your availability. This article discusses the details of this last step – the rolling upgrade.
+At 10,000 feet, updating a cloud service, including both its roles and guest OS, is a three step process. First, the binaries and configuration files for the new cloud service or OS version must be uploaded. Next, Azure reserves compute and network resources for the cloud service based on the requirements of the new cloud service version. Finally, Azure performs a rolling upgrade to incrementally update the tenant to the new version or guest OS, while preserving your availability. This article discusses the details of this last step - the rolling upgrade.
 
 ## Update an Azure Service
 
 Azure organizes your role instances into logical groupings called upgrade domains (UD). Upgrade domains (UD) are logical sets of role instances that are updated as a group.  Azure updates a cloud service one UD at a time, which allows instances in other UDs to continue serving traffic.
 
-The default number of upgrade domains is 5. You can specify a different number of upgrade domains by including the upgradeDomainCount attribute in the service’s definition file (.csdef). For more information about the upgradeDomainCount attribute, see [WebRole Schema](https://msdn.microsoft.com/zh-cn/library/azure/gg557553.aspx) or [WorkerRole Schema](https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx).
+The default number of upgrade domains is 5. You can specify a different number of upgrade domains by including the upgradeDomainCount attribute in the service's definition file (.csdef). For more information about the upgradeDomainCount attribute, see [WebRole Schema](https://msdn.microsoft.com/zh-cn/library/azure/gg557553.aspx) or [WorkerRole Schema](https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx).
 
-When you perform an in-place update of one or more roles in your service, Azure updates sets of role instances according to the upgrade domain to which they belong. Azure updates all of the instances in a given upgrade domain – stopping them, updating them, bringing them back on-line – then moves onto the next domain. By stopping only the instances running in the current upgrade domain, Azure makes sure that an update occurs with the least possible impact to the running service. For more information, see [How the update proceeds](https://msdn.microsoft.com/zh-cn/library/azure/Hh472157.aspx#proceed) later in this article.
+When you perform an in-place update of one or more roles in your service, Azure updates sets of role instances according to the upgrade domain to which they belong. Azure updates all of the instances in a given upgrade domain - stopping them, updating them, bringing them back on-line - then moves onto the next domain. By stopping only the instances running in the current upgrade domain, Azure makes sure that an update occurs with the least possible impact to the running service. For more information, see [How the update proceeds](https://msdn.microsoft.com/zh-cn/library/azure/Hh472157.aspx#proceed) later in this article.
 
 > [AZURE.NOTE] While the terms **update** and **upgrade** have slightly different meaning in the context Azure, they can be used interchangeably for the processes and descriptions of the features in this document.
 
@@ -109,11 +109,11 @@ This next diagram illustrates how the update proceeds if you are upgrading only 
 -   D: Destroyed
 -   E: Destroyed
 
->Note that, in the above list, the E: drive represents the role’s root drive, and should not be hard-coded. Instead, use the %RoleRoot% environment variable to represent the drive.
+>Note that, in the above list, the E: drive represents the role's root drive, and should not be hard-coded. Instead, use the %RoleRoot% environment variable to represent the drive.
 
 >To minimize the downtime when upgrading a single-instance service, deploy a new multi-instance service to the staging server and perform a VIP swap.
 
-During an automatic update, the Azure Fabric Controller periodically evaluates the health of the cloud service to determine when it’s safe to walk the next UD. This health evaluation is performed on a per-role basis and considers only instances in the latest version (i.e. instances from UDs that have already been walked). It verifies that a minimum number of role instances, for each role, have achieved a satisfactory terminal state.
+During an automatic update, the Azure Fabric Controller periodically evaluates the health of the cloud service to determine when it's safe to walk the next UD. This health evaluation is performed on a per-role basis and considers only instances in the latest version (i.e. instances from UDs that have already been walked). It verifies that a minimum number of role instances, for each role, have achieved a satisfactory terminal state.
 
 ### Role Instance Start Timeout 
 The Fabric Controller will wait 30 minutes for each role instance to reach a Started state. If the timeout duration elapses, the Fabric Controller will continue walking to the next role instance. 
@@ -135,7 +135,7 @@ This functionally is provided by the following features:
     1.  The Locked element allows you to detect when a mutating operation can be invoked on a given deployment.
     2.  The RollbackAllowed element allows you to detect when the [Rollback Update Or Upgrade](https://msdn.microsoft.com/zh-cn/library/azure/hh403977.aspx) operation can be called on a given deployment.
 
-    In order to perform a rollback, you do not have to check both the Locked and the RollbackAllowed elements. It suffices to confirm that RollbackAllowed is set to true. These elements are only returned if these methods are invoked by using the request header set to “x-ms-version: 2011-10-01” or a later version. For more information about versioning headers, see [Service Management Versioning](https://msdn.microsoft.com/zh-cn/library/azure/gg592580.aspx).
+    In order to perform a rollback, you do not have to check both the Locked and the RollbackAllowed elements. It suffices to confirm that RollbackAllowed is set to true. These elements are only returned if these methods are invoked by using the request header set to "x-ms-version: 2011-10-01" or a later version. For more information about versioning headers, see [Service Management Versioning](https://msdn.microsoft.com/zh-cn/library/azure/gg592580.aspx).
 
 There are some situations where a rollback of an update or upgrade is not supported, these are as follows:
 
@@ -158,7 +158,7 @@ The mutating operations are as follows: [Change Deployment Configuration](https:
 
 Two operations, [Get Deployment](https://msdn.microsoft.com/zh-cn/library/azure/ee460804.aspx) and [Get Cloud Service Properties](https://msdn.microsoft.com/zh-cn/library/azure/ee460806.aspx), return the Locked flag which can be examined to determine whether a mutating operation can be invoked on a given deployment.
 
-In order to call the version of these methods which returns the Locked flag, you must set request header to “x-ms-version: 2011-10-01” or a later. For more information about versioning headers, see [Service Management Versioning](https://msdn.microsoft.com/zh-cn/library/azure/gg592580.aspx).
+In order to call the version of these methods which returns the Locked flag, you must set request header to "x-ms-version: 2011-10-01" or a later. For more information about versioning headers, see [Service Management Versioning](https://msdn.microsoft.com/zh-cn/library/azure/gg592580.aspx).
 
 ## Distribution of roles across upgrade domains
 Azure distributes instances of a role evenly across a set number of upgrade domains, which can be configured as part of the service definition (.csdef) file. The max number of upgrade domains is 20 and the default is 5. For more information about how to modify the service definition file, see [Azure Service Definition Schema (.csdef File)](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx).

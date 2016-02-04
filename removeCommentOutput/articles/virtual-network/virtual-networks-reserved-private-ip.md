@@ -4,22 +4,22 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="08/17/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # How to Set a Static Internal Private IP
-In most cases, you won’t need to specify a static internal IP address for your virtual machine. VMs in a virtual network will automatically receive an internal IP address from a range that you specify. But in certain cases, specifying a static IP address for a particular VM makes sense. For example, if your VM is going to run DNS or will be a domain controller. 
+In most cases, you won't need to specify a static internal IP address for your virtual machine. VMs in a virtual network will automatically receive an internal IP address from a range that you specify. But in certain cases, specifying a static IP address for a particular VM makes sense. For example, if your VM is going to run DNS or will be a domain controller. 
 
 >[AZURE.NOTE] A static internal IP address stays with the VM even through a stop/deprovision state. 
 
 ## How to verify if a specific IP address is available
 To verify if the IP address *10.0.0.7* is available in a vnet named *TestVnet*, run the following PowerShell command and verify the value for *IsAvailable*:
 
-	Test-AzureStaticVNetIP –VNetName TestVNet –IPAddress 10.0.0.7 
+	Test-AzureStaticVNetIP -VNetName TestVNet -IPAddress 10.0.0.7 
 
 	IsAvailable          : True
 	AvailableAddresses   : {}
@@ -36,9 +36,9 @@ The PowerShell script below creates a new cloud service named *TestService*, the
 	$image = Get-AzureVMImage|?{$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}
 	New-AzureVMConfig -Name TestVM -InstanceSize Small -ImageName $image.ImageName `
 	| Add-AzureProvisioningConfig -Windows -AdminUsername adminuser -Password MyP@ssw0rd!! `
-	| Set-AzureSubnet –SubnetNames Subnet-1 `
+	| Set-AzureSubnet -SubnetNames Subnet-1 `
 	| Set-AzureStaticVNetIP -IPAddress 10.0.0.7 `
-	| New-AzureVM -ServiceName "TestService" –VNetName TestVnet
+	| New-AzureVM -ServiceName "TestService" -VNetName TestVnet
 
 ## How to retrieve static internal IP information for a VM
 To view the static internal IP information for the VM created with the script above, run the following PowerShell command and observe the values for *IpAddress*:

@@ -4,11 +4,11 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/04/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # How to move a VM or role instance to a different subnet
@@ -21,8 +21,8 @@ Why move VMs to another subnet? Subnet migration is useful when the older subnet
 
 To move a VM, run the Set-AzureSubnet PowerShell cmdlet, using the example below as a template. In the example below, we are moving TestVM from its present subnet, to Subnet-2. Be sure to edit the example to reflect your environment. Note that whenever you run the Update-AzureVM cmdlet as part of a procedure, it will restart your VM as part of the update process.
 
-	Get-AzureVM –ServiceName TestVMCloud –Name TestVM `
-	| Set-AzureSubnet –SubnetNames Subnet-2 `
+	Get-AzureVM -ServiceName TestVMCloud -Name TestVM `
+	| Set-AzureSubnet -SubnetNames Subnet-2 `
 	| Update-AzureVM
 
 If you specified a static DIP for your VM, you'll have to clear that setting before you can move the VM to a new subnet. In that case, use the following:

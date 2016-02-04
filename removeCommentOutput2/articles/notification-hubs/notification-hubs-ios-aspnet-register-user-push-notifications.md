@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="09/24/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Register the current user for push notifications by using ASP.NET
@@ -107,7 +107,7 @@ This topic shows you how to request push notification registration with Azure No
 
 	This sets the device token for the request.
 
-	> [AZURE.NOTE] At this point, there should not be any other code in this method. If you already have a call to the **registerNativeWithDeviceToken** method that was added when you completed the [Get Started with Notification Hubs](/manage/services/notification-hubs/get-started-notification-hubs-ios/%20target="_blank") tutorial, you must comment-out or remove that call.
+	> [AZURE.NOTE] At this point, there should not be any other code in this method. If you already have a call to the **registerNativeWithDeviceToken** method that was added when you completed the [Get Started with Notification Hubs](/documentation/articles/notification-hubs-ios-get-started) tutorial, you must comment-out or remove that call.
 
 10.	In the PushToUserAppDelegate.m file, add the following handler method:
 
@@ -194,8 +194,8 @@ This topic shows you how to request push notification registration with Azure No
 
 		    // build auth string
 		    NSString* authString = [NSString stringWithFormat:@"%@:%@", self.User.text, self.Password.text];
-
-		    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://nhnotifyuser.chinacloudsites.cn/api/register"]];
+		    
+		    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://nhnotifyuser.azure Websites.net/api/register"]];
 		    [request setHTTPMethod:@"POST"];
 		    [request setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
 		    [request addValue:[@([json lengthOfBytesUsingEncoding:NSUTF8StringEncoding]) description] forHTTPHeaderField:@"Content-Length"];

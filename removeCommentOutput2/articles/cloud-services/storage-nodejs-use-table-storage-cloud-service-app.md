@@ -3,26 +3,21 @@
 	description="A tutorial that builds on the Web App with Express tutorial by adding Azure Storage services and the Azure module." 
 	services="cloud-services, storage" 
 	documentationCenter="nodejs" 
-	authors="TomArcher" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/01/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
-
-
-
-
-
-# Node.js Web Application using Storage
+# Node.js Web Site using Storage
 
 ## Overview
 
 In this tutorial, you will extend the application created in the
-[Node.js Web Application using Express] tutorial by using the Microsoft
+[Node.js Web Site using Express] tutorial by using the Windows
 Azure Client Libraries for Node.js to work with data management services. You
 will extend your application to create a web-based task-list application
 that you can deploy to Azure. The task list allows a user to
@@ -88,7 +83,7 @@ and add them to the web.config settings:
 
 ### Install additional modules
 
-2. Use the following command to install the [azure], [node-uuid], [nconf] and [async] modules locally as well as to save an entry for them to the **package.json** file:
+1. Use the following command to install the [azure], [node-uuid], [nconf] and [async] modules locally as well as to save an entry for them to the **package.json** file:
 
 		PS C:\node\tasklist\WebRole1> npm install azure-storage node-uuid async nconf --save
 
@@ -97,19 +92,19 @@ and add them to the web.config settings:
 		node-uuid@1.4.1 node_modules\node-uuid
 
 		nconf@0.6.9 node_modules\nconf
-		©À©¤©¤ ini@1.1.0
-		©À©¤©¤ async@0.2.9
-		©¸©¤©¤ optimist@0.6.0 (wordwrap@0.0.2, minimist@0.0.8)
+		+-- ini@1.1.0
+		+-- async@0.2.9
+		+-- optimist@0.6.0 (wordwrap@0.0.2, minimist@0.0.8)
 
         azure-storage@0.1.0 node_modules\azure-storage
-		©À©¤©¤ extend@1.2.1
-		©À©¤©¤ xmlbuilder@0.4.3
-		©À©¤©¤ mime@1.2.11
-		©À©¤©¤ underscore@1.4.4
-		©À©¤©¤ validator@3.1.0
-		©À©¤©¤ node-uuid@1.4.1
-		©À©¤©¤ xml2js@0.2.7 (sax@0.5.2)
-		©¸©¤©¤ request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
+		+-- extend@1.2.1
+		+-- xmlbuilder@0.4.3
+		+-- mime@1.2.11
+		+-- underscore@1.4.4
+		+-- validator@3.1.0
+		+-- node-uuid@1.4.1
+		+-- xml2js@0.2.7 (sax@0.5.2)
+		+-- request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
 
 ##Using the Table service in a node application
 
@@ -211,7 +206,7 @@ In this section you will extend the basic application created by the **express**
 		  this.task = task;
 		}
 
-2. Continue adding to the **tasklist.js** file by adding the methods used to **showTasks**, **addTask**, and **completeTasks**:
+3. Continue adding to the **tasklist.js** file by adding the methods used to **showTasks**, **addTask**, and **completeTasks**:
 
 		TaskList.prototype = {
 		  showTasks: function(req, res) {
@@ -255,7 +250,7 @@ In this section you will extend the basic application created by the **express**
 		  }
 		}
 
-3. Save the **tasklist.js** file.
+4. Save the **tasklist.js** file.
 
 ### Modify app.js
 
@@ -411,7 +406,7 @@ The following steps show you how to stop and delete your application.
 
 	Stopping the service may take several minutes. When the service is stopped, you receive a message indicating that it has stopped.
 
-3.  To delete the service, call the following cmdlet:
+2.  To delete the service, call the following cmdlet:
 
         PS C:\node\tasklist\WebRole1> Remove-AzureService contosotasklist
 
@@ -419,8 +414,7 @@ The following steps show you how to stop and delete your application.
 
 	Deleting the service may take several minutes. After the service has been deleted you receive a message indicating that the service was deleted.
 
-  [Node.js Web Application using Express]: /develop/nodejs/tutorials/web-app-with-express/
+  [Node.js Web Site using Express]: /develop/nodejs/tutorials/web-app-with-express/
   [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
- 
+  [Node.js Web Site]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
  

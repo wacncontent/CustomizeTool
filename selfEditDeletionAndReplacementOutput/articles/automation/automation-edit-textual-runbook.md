@@ -2,27 +2,35 @@ deletion:
 
 deleted:
 
-		For [variable assets](/documentation/articles/variable-assets), select either **Add "Get Variable" to canvas** or **Add "Set Variable" to canvas** depending on whether you want to get or set the variable.
+		- [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)
 
-reason: ()
+reason: (Graphical Runbook)
 
 deleted:
 
-		- [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)
+		To work with [Graphical Runbooks](/documentation/articles/automation-runbook-types#graphical-runbooks), see [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro).
 
-reason: ()
+reason: (Graphical Runbook)
 
 replacement:
 
 deleted:
 
-		To work with [Graphical Runbooks](/documentation/articles/automation-runbook-types#graphical-runbooks), see [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro).
-		
-		## To edit a runbook with the Azure preview portal
+		preview portal
 
 replaced by:
 
-		## To edit a runbook with the Azure Management Portal
+		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
+
+deleted:
+
+		For [variable assets](/documentation/articles/variable-assets), select either **Add "Get Variable" to canvas** or **Add "Set Variable" to canvas** depending on whether you want to get or set the variable.
+
+replaced by:
+
+		For variable assets, select either **Add "Get Variable" to canvas** or **Add "Set Variable" to canvas** depending on whether you want to get or set the variable.
+
+reason: (broken link)
 

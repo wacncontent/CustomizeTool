@@ -1,7 +1,19 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Directions on Microsoft | Windows Azure" description="Learn how to use Directions on Microsoft with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory integration with Directions on Microsoft | Windows Azure" 
+    description="Learn how to use Directions on Microsoft with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags
+	ms.service="active-directory"
+	ms.date="10/22/2015"
+	wacn.date=""/>
+
 #Tutorial: Azure Active Directory integration with Directions on Microsoft
+<!-- keep by customization: begin -->
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=533728).
+<!-- keep by customization: end -->
 
 The objective of this tutorial is to show the integration of Azure Active Directory and Directions on Microsoft.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -9,7 +21,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A Directions on Microsoft subscription
 
-If you don’t have a federated Directions on Microsoft subscription yet, email a request to “*service@DirectionsOnMicrosoft.com*”.
+If you <!-- deleted by customization don't --><!-- keep by customization: begin --> don’t <!-- keep by customization: end --> have a federated Directions on Microsoft subscription yet, email a request to “*service@DirectionsOnMicrosoft.com*”.
 
 After completing this tutorial, the Azure Active Directory users you have assigned to Directions on Microsoft will be able to single sign into the application using single sign-on.
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Fiddler to evaluate and test Azure Search REST APIs | Microsoft Azure"
+	pageTitle="How to use Fiddler to evaluate and test Azure Search REST APIs | Windows Azure | Hosted cloud search service"
 	description="Use Fiddler for a code-free approach to verifying Azure Search availability and trying out the REST APIs."
 	services="search"
 	documentationCenter=""
@@ -9,20 +9,21 @@
 
 <tags
 	ms.service="search"
-	ms.devlang="rest-api"
-	ms.workload="search"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
-	ms.date="07/08/2015"
-	ms.author="heidist"/>
+	ms.date="12/18/2015"
+	wacn.date=""/>
 
 # Use Fiddler to evaluate and test Azure Search REST APIs
+> [AZURE.SELECTOR]
+- [Overview](/documentation/articles/search-query-overview)
+- [Fiddler](/documentation/articles/search-fiddler)
+- [.NET](/documentation/articles/search-query-dotnet)
+- [REST](/documentation/articles/search-query-rest-api)
 
-This article explains how to use Fiddler, available as a [free download from Telerik](http://www.telerik.com/fiddler), to issue HTTP requests to and view responses using the Azure Search REST API, without having to write any code. Azure Search service REST APIs are documented on [MSDN](https://msdn.microsoft.com/library/azure/dn798935.aspx).
+This article explains how to use Fiddler, available as a [free download from Telerik](http://www.telerik.com/fiddler), to issue HTTP requests to and view responses using the Azure Search REST API, without having to write any code. Azure Search is fully-managed, hosted cloud search service on Windows Azure, easily programmable through .NET and REST APIs. The Azure Search service REST APIs are documented on [MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx).
 
 In the following steps, you'll create an index, upload documents, query the index, and then query the system for service information.
 
-To complete these steps, you will need an Azure Search service and `api-key`. See [Create an Azure Search service in the portal](search-create-service-portal.md) for instructions on how to get started.
+To complete these steps, you will need an Azure Search service and `api-key`. See [Create an Azure Search service in the portal](/documentation/articles/search-create-service-portal) for instructions on how to get started.
 
 ## Create an index
 
@@ -37,16 +38,16 @@ To complete these steps, you will need an Azure Search service and `api-key`. Se
 3. Enter a URL that specifies the service URL, request attributes, and the api-version. A few pointers to keep in mind:
    + Use HTTPS as the prefix.
    + Request attribute is "/indexes/hotels". This tells Search to create an index named 'hotels'.
-   + Api-version is lowercase, specified as "?api-version=2015-02-28". API versions are important because Azure Search deploys updates regularly. On rare occasions, a service update may introduce a breaking change to the API. Using API versions, you can continue to use your existing version and upgrade to the newer one when it is convenient.
+   + Api-version is lowercase, specified as "?api-version=2015-02-28". API versions are important because Azure Search deploys updates regularly. On rare occasions, a service update may introduce a breaking change to the API. For this reason, Azure Search requires an api-version on each request so that you are in full control over which one is used.
 
     The full URL should look similar to the following example.
 
-         https://my-app.search.windows.net/indexes/hotels?api-version=2015-02-28
+         https://my-app.search.chinacloudapi.cn/indexes/hotels?api-version=2015-02-28
 
 4.	Specify the request header, replacing the host and api-key with values that are valid for your service.
 
         User-Agent: Fiddler
-        host: my-app.search.windows.net
+        host: my-app.search.chinacloudapi.cn
         content-type: application/json
         api-key: 1111222233334444
 
@@ -57,7 +58,7 @@ To complete these steps, you will need an Azure Search service and `api-key`. Se
         "fields": [
           {"name": "hotelId", "type": "Edm.String", "key":true, "searchable": false},
           {"name": "baseRate", "type": "Edm.Double"},
-          {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false,},
+          {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false},
           {"name": "hotelName", "type": "Edm.String"},
           {"name": "category", "type": "Edm.String"},
           {"name": "tags", "type": "Collection(Edm.String)"},
@@ -85,12 +86,12 @@ On the **Composer** tab, your request to post documents will look like the follo
 
 2.	Enter a URL that starts with HTTPS, followed by your service URL, followed by "/indexes/<'indexname'>/docs/index?api-version=2015-02-28". The full URL should look similar to the following example.
 
-        https://my-app.search.windows.net/indexes/hotels/docs/index?api-version=2015-02-28
+        https://my-app.search.chinacloudapi.cn/indexes/hotels/docs/index?api-version=2015-02-28
 
 3.	Request Header should be the same as before. Remember that you replaced the host and api-key with values that are valid for your service.
 
         User-Agent: Fiddler
-        host: my-app.search.windows.net
+        host: my-app.search.chinacloudapi.cn
         content-type: application/json
         api-key: 1111222233334444
 
@@ -171,14 +172,14 @@ Now that an index and documents are loaded, you can issue queries against them. 
 
 2.	Enter a URL that starts with HTTPS, followed by your service URL, followed by "/indexes/<'indexname'>/docs?", followed by query parameters. By way of example, use the following URL, replacing the sample host name with one that is valid for your service.
 
-        https://my-app.search.windows.net/indexes/hotels/docs?search=motel&facet=category&facet=rating,values:1|2|3|4|5&api-version=2015-02-28
+        https://my-app.search.chinacloudapi.cn/indexes/hotels/docs?search=motel&facet=category&facet=rating,values:1|2|3|4|5&api-version=2015-02-28
 
-    This query searches on the term “motel” and retrieves facet categories for ratings.
+    This query searches on the term âmotelâ and retrieves facet categories for ratings.
 
 3.	Request Header should be the same as before. Remember that you replaced the host and api-key with values that are valid for your service.
 
         User-Agent: Fiddler
-        host: my-app.search.windows.net
+        host: my-app.search.chinacloudapi.cn
         content-type: application/json
         api-key: 1111222233334444
 
@@ -186,7 +187,7 @@ The response code should be 200, and the response output should look similar to 
 
    ![][4]
 
-The following example query is from the [Search Index operation (Azure Search API)](http://msdn.microsoft.com/library/dn798927.aspx) on MSDN. Many of the example queries in this topic include spaces, which are not allowed in Fiddler. Replace each space with a + character before pasting in the query string before attempting the query in Fiddler.
+The following example query is from the [Search Index operation (Azure Search API)](http://msdn.microsoft.com/zh-cn/library/dn798927.aspx) on MSDN. Many of the example queries in this topic include spaces, which are not allowed in Fiddler. Replace each space with a + character before pasting in the query string before attempting the query in Fiddler.
 
 **Before spaces are replaced:**
 
@@ -206,12 +207,12 @@ You can also query the system to get document counts and storage consumption. On
 
 2.	Enter a URL that includes your service URL, followed by "/indexes/hotels/stats?api-version=2015-02-28":
 
-        https://my-app.search.windows.net/indexes/hotels/stats?api-version=2015-02-28
+        https://my-app.search.chinacloudapi.cn/indexes/hotels/stats?api-version=2015-02-28
 
 3.	Specify the request header, replacing the host and api-key with values that are valid for your service.
 
         User-Agent: Fiddler
-        host: my-app.search.windows.net
+        host: my-app.search.chinacloudapi.cn
         content-type: application/json
         api-key: 1111222233334444
 
@@ -223,10 +224,8 @@ You can also query the system to get document counts and storage consumption. On
 
 ## Next steps
 
-The following links provide additional information for a no-code approach to managing and using Azure Search.
+See [Manage your Search service on Azure](/documentation/articles/search-manage) for a no-code approach to managing and using Azure Search.
 
--  [Manage your Search service on Azure](search-manage.md)
--  [How to use Chrome Postman with Azure Search](search-chrome-postman.md)
 
 <!--Image References-->
 [1]: ./media/search-fiddler/AzureSearch_Fiddler1_PutIndex.png

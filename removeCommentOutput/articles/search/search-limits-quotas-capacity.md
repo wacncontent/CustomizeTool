@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Service limits in Azure Search | Microsoft Azure"
-	description="Azure Search limits used in capacity planning and maximum limits on requests and reponses."
+	pageTitle="Service limits in Azure Search | Windows Azure | Hosted cloud search service"
+	description="Service limits used in capacity planning and maximum limits on requests and reponses for Azure Search, a hosted cloud search service."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="search"
-	ms.devlang="NA"
-	ms.workload="search"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.date="08/18/2015"
-	ms.author="heidist"/>
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
 # Service limits in Azure Search
 
@@ -39,12 +35,13 @@ Maximum search units|N/A
 Maximum number of indexers|3
 Maximum number of Indexer data sources|3
 Maximum number of indexed documents per indexer invocation|10,000
+Maximum Indexer running time|3 minutes
 
 Notice that there are no quotas or maximum limits associated with queries. Queries-per-second (QPS) are variable, depending on available bandwidth and competition for system resources. The Azure compute and storage resources backing your shared service are shared by multiple subscribers, so QPS for your solution will vary depending on how many other workloads are running at the same time.
 
 ## Maximum limits for a standard (dedicated) Search service
 
-Under the Standard pricing tier, a dedicated Search service stores only your data, and runs only your workloads. Unlike the shared service, the resource allocation for a dedicated Search service is adjustable, scaling to whatever level you need. You can independently set the resource levels for partitions (to scale up storage) and replicas (to provide high availability and scale up QPS and indexing performance). See [Manage your search solution](search-manage.md) for insights into different resource configurations.
+Under the Standard pricing tier, a dedicated Search service stores only your data, and runs only your workloads. Unlike the shared service, the resource allocation for a dedicated Search service is adjustable, scaling to whatever level you need. You can independently set the resource levels for partitions (to scale up storage) and replicas (to provide high availability and scale up QPS and indexing performance). See [Manage your search solution](/documentation/articles/search-manage) for insights into different resource configurations.
 
 The following table is a list of upper limits, but you should review the matrix chart further on to understand capacity in terms of allowable [combinations of partitions and replicas](#chart).
 
@@ -55,7 +52,7 @@ Maximum number of fields per index|1000
 Maximum document count|15 million per partition
 Maximum storage size|25 GB per partition
 Maximum partitions|12 per Search service
-Maximum replicas|6 per Search service
+Maximum replicas|12 per Search service
 Maximum search units|36 per Search service
 Maximum search services|12 per Azure subscription
 Maximum number of indexers|50 per Search service
@@ -84,6 +81,7 @@ Additional capacity is calculated as partitions multiplied by replicas, yielding
 The following table is a chart that lists replicas on the vertical axis, and partitions on the horizontal axis. The intersection shows the number of search units required to support each combination, subject to the 36 search unit (SU) limit per service. For example, if you want 6 replicas and 2 partitions, this configuration would require 12 search units. To use 4 replicas and 2 partitions, you would need 8 search units. As a general rule, most search applications tend to need more replicas than partitions.
 
 <table cellspacing="0" border="1">
+<tr><td><b>12 replicas</b></td><td>12 SU</td><td>24 SU</td><td>36 SU</td><td>N/A</td><td>N/A</td><td>N/A</td></tr>
 <tr><td><b>6 replicas</b></td><td>6 SU</td><td>12 SU</td><td>18 SU</td><td>24 SU</td><td>36 SU</td><td>N/A</td></tr>
 <tr><td><b>5 replicas</b></td><td>5 SU</td><td>10 SU</td><td>15 SU</td><td>20 SU</td><td>30 SU</td><td>N/A</td></tr>
 <tr><td><b>4 replicas</b></td><td>4 SU</td><td>8 SU</td><td>12 SU</td><td>16 SU</td><td>24 SU</td><td>N/A </td></tr>
@@ -93,9 +91,9 @@ The following table is a chart that lists replicas on the vertical axis, and par
 <tr><td>N/A</td><td><b>1 Partition</b></td><td><b>2 Partitions</b></td><td><b>3 Partitions</b></td><td><b>4 Partitions</b></td><td><b>6 Partitions</b></td><td><b>12 Partitions</b></td></tr>
 </table>
 
-Search units, pricing, and capacity are explained in detail on the Azure web site. See [Pricing Details](http://azure.microsoft.com/pricing/details/search/) for more information.
+Search units, pricing, and capacity are explained in detail on the Azure web site. See [Pricing Details](/home/features/search/#price) for more information.
 
-> [AZURE.NOTE] The number of partitions you choose must evenly divide into 12 (specifically, 1, 2, 3, 4, 6, 12). This is because Azure Search pre-divides each index into 12 shards so that it can be spread across partitions. For example, if your service has three partitions and you create a new index, each partition will contain 4 shards of the index. How Azure Search shards an index is an implementation detail, subject to change in future release. Although the number is 12 today, you shouldn't expect that number to always be 12 in the future.
+> [AZURE.NOTE] The number of replicas and partitions must evenly divide into 12 (specifically, 1, 2, 3, 4, 6, 12). This is because Azure Search pre-divides each index into 12 shards so that it can be spread across partitions. For example, if your service has three partitions and you create a new index, each partition will contain 4 shards of the index. How Azure Search shards an index is an implementation detail, subject to change in future release. Although the number is 12 today, you shouldn't expect that number to always be 12 in the future.
 
 ## Choose a combination of partitions and replicas for high availability
 
@@ -110,11 +108,11 @@ General recommendations for high availability are:
 
 Currently, there is no built-in mechanism for disaster recovery. Adding partitions or replicas would be the wrong strategy for meeting disaster recovery objectives. Instead, you might consider adding redundancy at the service level. For a deeper discussion of the workarounds, see [this forum post](https://social.msdn.microsoft.com/Forums/ee108a26-00c5-49f6-b1ff-64c66c8b828a/dr-and-high-availability-for-azure-search?forum=azuresearch).
 
-> [AZURE.NOTE] Recall that service level agreements and scalability are features of the standard service. The free service is offered at a fixed resource level, with replicas and partitions shared by multiple subscribers. If you started with the free service and now want to upgrade, you will need to create a new Azure Search service at the standard level and then reload indexes and data to the new service. See [Create an Azure Search service in the portal](search-create-portal.md) for instructions on service provisioning.
+> [AZURE.NOTE] Recall that service level agreements and scalability are features of the standard service. The free service is offered at a fixed resource level, with replicas and partitions shared by multiple subscribers. If you started with the free service and now want to upgrade, you will need to create a new Azure Search service at the standard level and then reload indexes and data to the new service. See [Create an Azure Search service in the portal](/documentation/articles/search-create-portal) for instructions on service provisioning.
 
 ## API-key limits
 
-Api-keys are used for service authentication. There are two types. Admin keys are specified in the request header. Query keys are specified on the URL. See [Manage your search service on Microsoft Azure](search-manage.md) for details about key management.
+Api-keys are used for service authentication. There are two types. Admin keys are specified in the request header. Query keys are specified on the URL. See [Manage your search service on Windows Azure](/documentation/articles/search-manage) for details about key management.
 
 - Maximum of 2 admin keys per service
 - Maximum of 50 query keys per service

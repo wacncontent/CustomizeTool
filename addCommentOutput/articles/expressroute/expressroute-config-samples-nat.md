@@ -33,10 +33,20 @@ Router configuration samples below apply to Azure Public and Microsoft peerings.
       network-object <IP> <Subnet_Mask>
     
     object-group network on-prem-range-1
+<!-- deleted by customization
+      network-object <IP> <Subnet-Mask>
+-->
+<!-- keep by customization: begin -->
       network-object <IP> <Subnet_Mask>
+<!-- keep by customization: end -->
     
     object-group network on-prem-range-2
+<!-- deleted by customization
+      network-object <IP> <Subnet-Mask>
+-->
+<!-- keep by customization: begin -->
       network-object <IP> <Subnet_Mask>
+<!-- keep by customization: end -->
     
     object-group network on-prem
       network-object object on-prem-range-1
@@ -44,6 +54,36 @@ Router configuration samples below apply to Azure Public and Microsoft peerings.
     
     nat (outside,inside) source dynamic on-prem pat-pool MSFT-PAT destination static MSFT-Range MSFT-Range
 
+<!-- deleted by customization
+### PAT configuration for traffic from Microsoft to customer network
+
+#### Interfaces and Direction:
+	Source Interface (where the traffic enters the ASA): inside
+	Destination Interface (where the traffic exits the ASA): outside
+
+#### Configuration:
+NAT Pool:
+
+	object network outbound-PAT
+		host <NAT-IP>
+
+Target Server:
+
+	object network Customer-Network
+		network-object <IP> <Subnet-Mask>
+
+Object Group for Customer IP Addresses
+
+	object-group network MSFT-Network-1
+		network-object <MSFT-IP> <Subnet-Mask>
+	
+	object-group network MSFT-PAT-Networks
+		network-object object MSFT-Network-1
+
+NAT Commands:
+
+	nat (inside,outside) source dynamic MSFT-PAT-Networks pat-pool outbound-PAT destination static Customer-Network Customer-Network
+-->
 
 
 ## Juniper MX series routers 
@@ -60,7 +100,12 @@ Router configuration samples below apply to Azure Public and Microsoft peerings.
 	        unit 100 {
 	            vlan-id 100;
 	            family inet {
+<!-- deleted by customization
+	                address <IP-Address/Subnet-mask>;
+-->
+<!-- keep by customization: begin -->
 	                address <IP_Address/Subnet_mask>;
+<!-- keep by customization: end -->
 	            }
 	        }
 	    }
@@ -74,7 +119,12 @@ Router configuration samples below apply to Azure Public and Microsoft peerings.
 	            description "To Microsoft via Edge Router";
 	            vlan-id 100;
 	            family inet {
+<!-- deleted by customization
+	                address <IP-Address/Subnet-mask>;
+-->
+<!-- keep by customization: begin -->
 	                address <IP_Address/Subnet_mask>;
+<!-- keep by customization: end -->
 	            }
 	        }
 	    }
@@ -159,49 +209,101 @@ Router configuration samples below apply to Azure Public and Microsoft peerings.
 		security {
 		    nat {
 		        source {
+<!-- deleted by customization
+		            pool SNAT-To-ExpressRoute {
+-->
+<!-- keep by customization: begin -->
 		            pool SNAT_To_ExpressRoute {
+<!-- keep by customization: end -->
 		                routing-instance {
+<!-- deleted by customization
+		                    External-ExpressRoute;
+-->
+<!-- keep by customization: begin -->
 		                    External_ExpressRoute;
+<!-- keep by customization: end -->
 		                }
 		                address {
+<!-- deleted by customization
+		                    <NAT-IP-address/Subnet-mask>;
+-->
+<!-- keep by customization: begin -->
 		                    <NAT_IP_address/Subnet_mask>;
+<!-- keep by customization: end -->
 		                }
 		            }
+<!-- deleted by customization
+		            pool SNAT-From-ExpressRoute {
+-->
+<!-- keep by customization: begin -->
 		            pool SNAT_From_ExpressRoute {
+<!-- keep by customization: end -->
 		                routing-instance {
 		                    Internal;
 		                }
 		                address {
+<!-- deleted by customization
+		                    <NAT-IP-address/Subnet-mask>;
+-->
+<!-- keep by customization: begin -->
 		                    <NAT_IP_address/Subnet_mask>;
+<!-- keep by customization: end -->
 		                }
 		            }
 		            rule-set Outbound_NAT {
 		                from routing-instance Internal;
+<!-- deleted by customization
+		                to routing-instance External-ExpressRoute;
+		                rule SNAT-Out {
+-->
+<!-- keep by customization: begin -->
 		                to routing-instance External_ExpressRoute;
 		                rule SNAT_Out {
+<!-- keep by customization: end -->
 		                    match {
 		                        source-address 0.0.0.0/0;
 		                    }
 		                    then {
 		                        source-nat {
 		                            pool {
+<!-- deleted by customization
+		                                SNAT-To-ExpressRoute;
+-->
+<!-- keep by customization: begin -->
 		                                SNAT_To_ExpressRoute;
+<!-- keep by customization: end -->
 		                            }
 		                        }
 		                    }
 		                }
 		            }
+<!-- deleted by customization
+		            rule-set Inbound-NAT {
+		                from routing-instance External-ExpressRoute;
+-->
+<!-- keep by customization: begin -->
 		            rule-set Inbound_NAT {
 		                from routing-instance External_ExpressRoute;
+<!-- keep by customization: end -->
 		                to routing-instance Internal;
+<!-- deleted by customization
+		                rule SNAT-In {
+-->
+<!-- keep by customization: begin -->
 		                rule SNAT_In {
+<!-- keep by customization: end -->
 		                    match {
 		                        source-address 0.0.0.0/0;
 		                    }
 		                    then {
 		                        source-nat {
 		                            pool {
+<!-- deleted by customization
+		                                SNAT-From-ExpressRoute;
+-->
+<!-- keep by customization: begin -->
 		                                SNAT_From_ExpressRoute;
+<!-- keep by customization: end -->
 		                            }
 		                        }
 		                    }
@@ -219,12 +321,24 @@ Refer to samples in [Routing configuration samples ](/documentation/articles/exp
 ### 6. Create policies
 
 	routing-options {
+<!-- deleted by customization
+	    	      autonomous-system <Customer-ASN>;
+-->
+<!-- keep by customization: begin -->
 	    	      autonomous-system <Customer_ASN>;
+<!-- keep by customization: end -->
 	}
 	policy-options {
+<!-- deleted by customization
+	    prefix-list Microsoft-Prefixes {
+	        <IP-Address/Subnet-Mask;
+	        <IP-Address/Subnet-Mask;
+-->
+<!-- keep by customization: begin -->
 	    prefix-list Microsoft_Prefixes {
 	        <IP_Address/Subnet_Mask;
 	        <IP_Address/Subnet_Mask;
+<!-- keep by customization: end -->
 	    }
 	    prefix-list private-ranges {
 	        10.0.0.0/8;
@@ -232,18 +346,39 @@ Refer to samples in [Routing configuration samples ](/documentation/articles/exp
 	        192.168.0.0/16;
 	        100.64.0.0/10;
 	    }
+<!-- deleted by customization
+	    policy-statement Advertise-NAT-Pools {
+-->
+<!-- keep by customization: begin -->
 	    policy-statement Advertise_NAT_Pools {
+<!-- keep by customization: end -->
 	        from {
 	            protocol static;
+<!-- deleted by customization
+	            route-filter <NAT-Pool-Address/Subnet-mask> prefix-length-range /32-/32;
+-->
+<!-- keep by customization: begin -->
 	            route-filter <NAT_Pool_Address/Subnet_mask> prefix-length-range /32-/32;
+<!-- keep by customization: end -->
 	        }
 	        then accept;
 	    }
+<!-- deleted by customization
+	    policy-statement Accept-from-Microsoft {
+-->
+<!-- keep by customization: begin -->
 	    policy-statement Accept_from_Microsoft {
+<!-- keep by customization: end -->
 	        term 1 {
 	            from {
+<!-- deleted by customization
+	                instance External-ExpressRoute;
+	                prefix-list-filter Microsoft-Prefixes orlonger;
+-->
+<!-- keep by customization: begin -->
 	                instance External_ExpressRoute;
 	                prefix-list-filter Microsoft_Prefixes orlonger;
+<!-- keep by customization: end -->
 	            }
 	            then accept;
 	        }
@@ -251,7 +386,12 @@ Refer to samples in [Routing configuration samples ](/documentation/articles/exp
 	            then reject;
 	        }
 	    }
+<!-- deleted by customization
+	    policy-statement Accept-from-Internal {
+-->
+<!-- keep by customization: begin -->
 	    policy-statement Accept_from_Internal {
+<!-- keep by customization: end -->
 	        term no-private {
 	            from {
 	                instance Internal;
@@ -277,35 +417,77 @@ Refer to samples in [Routing configuration samples ](/documentation/articles/exp
 	        interface reth0.100;
 	        routing-options {
 	            static {
+<!-- deleted by customization
+	                route <NAT-Pool-IP-Address/Subnet-mask> discard;
+-->
+<!-- keep by customization: begin -->
 	                route <NAT_Pool_IP_Address/Subnet_mask> discard;
+<!-- keep by customization: end -->
 	            }
+<!-- deleted by customization
+	            instance-import Accept-from-Microsoft;
+-->
+<!-- keep by customization: begin -->
 	            instance-import Accept_from_Microsoft;
+<!-- keep by customization: end -->
 	        }
 	        protocols {
 	            bgp {
 	                group customer {
+<!-- deleted by customization
+	                    export <Advertise-NAT-Pools>;
+	                    peer-as <Customer-ASN-1>;
+	                    neighbor <BGP-Neighbor-IP-Address>;
+	                }
+	            }
+-->
+<!-- keep by customization: begin -->
 	                    export <Advertise_NAT_Pools>;
 	                    peer-as <Customer_ASN_1>;
 	                    neighbor <BGP_Neighbor_IP_Address>;
 	                }
-	            }
+<!-- keep by customization: end -->
 	        }
 	    }
+<!-- deleted by customization
+	    External-ExpressRoute {
+-->
+<!-- keep by customization: begin -->
+	    }
 	    External_ExpressRoute {
+<!-- keep by customization: end -->
 	        instance-type virtual-router;
 	        interface reth1.100;
 	        routing-options {
 	            static {
+<!-- deleted by customization
+	                route <NAT-Pool-IP-Address/Subnet-mask> discard;
+-->
+<!-- keep by customization: begin -->
 	                route <NAT_Pool_IP_Address/Subnet_mask> discard;
+<!-- keep by customization: end -->
 	            }
+<!-- deleted by customization
+	            instance-import Accept-from-Internal;
+-->
+<!-- keep by customization: begin -->
 	            instance-import Accept_from_Internal;
+<!-- keep by customization: end -->
 	        }
 	        protocols {
 	            bgp {
+<!-- deleted by customization
+	                group edge-router {
+	                    export <Advertise-NAT-Pools>;
+	                    peer-as <Customer-Public-ASN>;
+	                    neighbor <BGP-Neighbor-IP-Address>;
+-->
+<!-- keep by customization: begin -->
 	                group edge_router {
 	                    export <Advertise_NAT_Pools>;
 	                    peer-as <Customer_Public_ASN>;
 	                    neighbor <BGP_Neighbor_IP_Address>;
+<!-- keep by customization: end -->
 	                }
 	            }
 	        }
@@ -315,4 +497,3 @@ Refer to samples in [Routing configuration samples ](/documentation/articles/exp
 ## Next steps
 
 See the [ExpressRoute FAQ](/documentation/articles/expressroute-faqs) for more details.
-

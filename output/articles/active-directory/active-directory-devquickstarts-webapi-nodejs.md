@@ -49,9 +49,9 @@ To enable your app to authenticate users, you'll first need to register a new ap
 - Click the **Applications** tab, and click add in the bottom drawer.
 - Follow the prompts and create a new **Web Application and/or WebAPI**.
     - The **name** of the application will describe your application to end-users
-    -	The **Sign-On URL** is the base URL of your app.  The skeleton’s default is `https://localhost:8888`.
+    -	The **Sign-On URL** is the base URL of your app.  The skeleton's default is `https://localhost:8888`.
     - The **App ID URI** is a unique identifier for your application.  The convention is to use `https://<tenant-domain>/<app-name>`, e.g. `https://contoso.partner.onmschina.cn/my-first-aad-app`
-- Once you’ve completed registration, AAD will assign your app a unique client identifier.  You’ll need this value in the next sections, so copy it from the Configure tab.
+- Once you've completed registration, AAD will assign your app a unique client identifier.  You'll need this value in the next sections, so copy it from the Configure tab.
 
 ## Step 3: Download node.js for your platform
 To successfully use this sample, you must have a working installation of Node.js.

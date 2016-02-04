@@ -5,8 +5,8 @@
   services="storage" 
   documentationCenter="" 
   authors="tamram" 
-  manager="adinah" 
-  editor=""/>
+  manager="carmonm" 
+  editor="tysonn"/>
 
 <tags 
   ms.service="storage" 
@@ -14,10 +14,10 @@
   ms.tgt_pltfrm="na" 
   ms.devlang="na" 
   ms.topic="article" 
-  ms.date="10/20/2015" 
+  ms.date="01/05/2016" 
   ms.author="tamram"/>
 
-# Azure Storage replication
+# Azure Storage Replication
 
 The data in your Windows Azure storage account is always replicated to ensure durability and high availability, meeting the [Azure Storage SLA](/support/legal/sla/) even in the face of transient hardware failures.
 
@@ -31,7 +31,7 @@ When you create a storage account, you must select one of the following replicat
 The following table provides a quick overview of the differences between LRS, ZRS, GRS, and RA-GRS, while subsequent sections address each type of replication in more detail.
 
 
-|Replication strategy|LRS|ZRS|GRS|RA-GRS
+|Replication Strategy|LRS|ZRS|GRS|RA-GRS 
 |--------------------|---|---|---|------
 |Data is replicated across multiple facilities.|No|Yes|Yes|Yes|
 |Data can be read from the secondary location as well as from the primary location.|No|No|No|Yes
@@ -74,19 +74,15 @@ When you create a storage account, you select the primary region for the account
 | ---------------   |----------------
 |China North   |China East
 |China East   |China North
-|India South        |India Central
-|India Central      |India South
-  
-
 ## Read-access geo-redundant storage
 
 Read-access geo-redundant storage (RA-GRS) maximizes availability for your storage account, by providing read-only access to the data in the secondary location, in addition to the replication across two regions provided by GRS. In the event that data becomes unavailable in the primary region, your application can read data from the secondary region.
 
-When you enable read-only access to your data in the secondary region, your data is available on a secondary endpoint, in addition to the primary endpoint for your storage account. The secondary endpoint is similar to the primary endpoint, but appends the suffix `–secondary` to the account name. For example, if your primary endpoint for the Blob service is `myaccount.blob.core.chinacloudapi.cn`, then your secondary endpoint is `myaccount-secondary.blob.core.chinacloudapi.cn`. The access keys for your storage account are the same for both the primary and secondary endpoints.
+When you enable read-only access to your data in the secondary region, your data is available on a secondary endpoint, in addition to the primary endpoint for your storage account. The secondary endpoint is similar to the primary endpoint, but appends the suffix `-secondary` to the account name. For example, if your primary endpoint for the Blob service is `myaccount.blob.core.chinacloudapi.cn`, then your secondary endpoint is `myaccount-secondary.blob.core.chinacloudapi.cn`. The access keys for your storage account are the same for both the primary and secondary endpoints.
 
 ## Next steps
 
-- [Azure Storage scalability and performance targets](/documentation/articles/storage-scalability-targets)
-- [Windows Azure Storage redundancy options and read access geo redundant storage ](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)  
+- [Azure Storage Scalability and Performance Targets](/documentation/articles/storage-scalability-targets) 
+- [Windows Azure Storage Redundancy Options and Read Access Geo Redundant Storage ](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)  
 - [Windows Azure Storage Emulator 3.1 with RA-GRS ](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/08/microsoft-azure-storage-emulator-3-1-with-ra-grs.aspx)
 - [Azure Storage SOSP Paper](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)  

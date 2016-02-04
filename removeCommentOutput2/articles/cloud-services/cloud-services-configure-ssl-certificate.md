@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Configure SSL for a cloud service | Windows Azure" 
+	pageTitle="Configure SSL for a cloud service (classic) | Windows Azure" 
 	description="Learn how to specify an HTTPS endpoint for a web role and how to upload an SSL certificate to secure your application." 
 	services="cloud-services" 
 	documentationCenter=".net" 
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/22/2015"
+	ms.date="01/15/2016"
 	wacn.date=""/>
 
 
@@ -18,12 +18,13 @@
 # Configuring SSL for an application in Azure
 
 > [AZURE.SELECTOR]
+- [Azure Management Portal](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
 - [Azure Management Portal](/documentation/articles/cloud-services-configure-ssl-certificate)
 - [Azure Preview Portal](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
 
 Secure Socket Layer (SSL) encryption is the most commonly used method of securing data sent across the internet. This common task discusses how to specify an HTTPS endpoint for a web role and how to upload an SSL certificate to secure your application.
 
-> [AZURE.NOTE] The procedures in this task apply to Azure Cloud Services; for Websites, see [Configuring an SSL certificate for an Azure website](/documentation/articles/web-sites-configure-ssl-certificate).
+> [AZURE.NOTE] The procedures in this task apply to Azure Cloud Services; for Azure Web App, see [this](/documentation/articles/web-sites-configure-ssl-certificate).
 
 This task will use a production deployment; information on using a staging deployment is provided at the end of this topic.
 
@@ -66,7 +67,7 @@ Your application must be configured to use the certificate, and an HTTPS endpoin
         ...
         </WebRole>
 
-    The **Certificates** section defines the name of our certificate, its location, and the name of the store where it is located. We have chosen to store the certificate in the CA (Certificate Authority)tore, but you can choose other options as well. See [How to associate a certificate with a service][] for more information.
+    The **Certificates** section defines the name of our certificate, its location, and the name of the store where it is located.
 
 2.  In your service definition file, add an **InputEndpoint** element
     within the **Endpoints** section to enable HTTPS:
@@ -126,7 +127,7 @@ certificate information you just inserted.
 
 Your deployment package has been updated to use the certificate, and an
 HTTPS endpoint has been added. Now you can upload the package and
-certificate to Azure with the Management Portal.
+certificate to with the Azure Management Portal.
 
 1. Log into the [Azure Management Portal][]. 
 2. Click on **Cloud Services** on the left-side navigation pane.

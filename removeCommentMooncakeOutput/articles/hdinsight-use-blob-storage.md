@@ -24,7 +24,7 @@ Low-cost Azure Blob storage is a robust, general-purpose, Hadoop-compatible stor
 
 Storing data in Azure Blob storage enables you to safely delete the HDInsight clusters that are used for computation without losing user data. 
 
-> [AZURE.NOTE]	The *asv://* syntax is not supported in HDInsight version 3.0 clusters. This means that any jobs submitted to an HDInsight version 3.0 cluster that explicitly use the “asv://” syntax will fail. The *wasb://* syntax should be used instead. Also, jobs submitted to any HDInsight version 3.0 clusters that are created with an existing metastore that contains explicit references to resources that use the asv:// syntax will fail. These metastores need to be re-created using the wasb:// syntax to address resources.
+> [AZURE.NOTE]	The *asv://* syntax is not supported in HDInsight version 3.0 clusters. This means that any jobs submitted to an HDInsight version 3.0 cluster that explicitly use the âasv://â syntax will fail. The *wasb://* syntax should be used instead. Also, jobs submitted to any HDInsight version 3.0 clusters that are created with an existing metastore that contains explicit references to resources that use the asv:// syntax will fail. These metastores need to be re-created using the wasb:// syntax to address resources.
 
 > HDInsight currently only supports block blobs.
 
@@ -284,14 +284,14 @@ To learn more, see the following articles:
 * [Use Hive with HDInsight][hdinsight-use-hive]
 * [Use Pig with HDInsight][hdinsight-use-pig]
 
-[Powershell-install]: /documentation/articles/install-configure-powershell/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
+[Powershell-install]: /documentation/articles/powershell-install-configure/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 
-[Powershell-install]: /documentation/articles/install-configure-powershell/
+[Powershell-install]: /documentation/articles/powershell-install-configure/
 [blob-storage-restAPI]: http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx
 [azure-storage-create]: /documentation/articles/storage-create-storage-account/
 

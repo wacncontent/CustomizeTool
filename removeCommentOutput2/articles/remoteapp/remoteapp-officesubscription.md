@@ -1,20 +1,16 @@
 
 <properties 
-    pageTitle="How to use your Office 365 subscription with Azure RemoteApp | Microsoft Azure"
+    pageTitle="How to use your Office 365 subscription with Azure RemoteApp | Windows Azure"
 	description="Learn how you can use your Office 365 subscription in Azure RemoteApp to share Office apps."
 	services="remoteapp"
 	documentationCenter="" 
 	authors="piotrci" 
 	manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="09/24/2015" 
-    ms.author="elizapo" />
+<tags
+	ms.service="remoteapp"
+	ms.date="12/14/2015"
+	wacn.date=""/>
 
 
 
@@ -22,11 +18,14 @@
 
 Did you know that you can use your existing Office 365 subscription in Azure RemoteApp to share Office apps from the cloud? Read on for information on your Office 365 + Azure RemoteApp options, including links to articles about Office 365 that help you make the most of your subscription.
 
+## How do I use Office 365 accounts for Azure RemoteApp?
+Check out Peter's new article for all the information: [How to use Azure RemoteApp with Office 365 user accounts](/documentation/articles/remoteapp-o365user)
+
 ## Can I use my Office 365 subscription to run Office applications in Azure RemoteApp?
 
 Yes! In fact, using your Office 365 subscription is the only way to bring your Office applications to Azure RemoteApp.
 
-(Note: If your Azure RemoteApp deployment is delivered by a hosting partner, they may be able to provide you with Office licenses based on a [Service Provider Licensing Agreement](http://www.microsoft.com/en-us/Licensing/licensing-programs/spla-program.aspx))
+(Note: If your Azure RemoteApp deployment is delivered by a hosting partner, they may be able to provide you with Office licenses based on a [Service Provider Licensing Agreement](http://www.microsoft.com/en-us/Licensing/licensing-programs/spla-program.aspx)) 
 
 
 The great thing about your Office 365 subscription is that it lets you use the same user license on many different platforms and environments, including the Azure cloud. When you use Office applications in Azure RemoteApp you don't need to purchase additional licenses or configure your existing licenses in any special way. All you need is an Office 365 subscription that includes [Office 365 ProPlus](https://technet.microsoft.com/library/Gg702619.aspx).
@@ -74,7 +73,7 @@ The easiest way to deploy Office 365 ProPlus to a collection is to [start with o
 
 ### Use a custom image
 
-You can always create a custom image - you can create an [Azure VM](remoteapp-image-on-azurevm.md) or [create the image locally](remoteapp-create-custom-image.md) and upload it to Azure. In either case, make sure you install Office 365 ProPlus using the shared computer activation node. Use the [Office Deployment Tool](http://blogs.technet.com/b/odsupport/archive/2014/07/11/using-the-office-deployment-tool.aspx) and follow the [instructions](https://technet.microsoft.com/library/Dn782858.aspx) for installation.  
+You can always create a custom image - you can create an [Azure VM](remoteapp-image-on-azurevm.md) or [create the image locally](remoteapp-create-custom-image.md) and upload it to Azure. In either case, make sure you install Office 365 ProPlus using the shared computer activation node. Use the [Office Deployment Tool](http://blogs.technet.com/b/odsupport/archive/2014/07/11/using-the-office-deployment-tool.aspx) and follow the [instructions](https://technet.microsoft.com/library/Dn782858.aspx) for installation.
 
 ### Disable automatic updates for Office 365 ProPlus in your custom image - IMPORTANT
 
@@ -116,6 +115,6 @@ With this option, you use standard Windows tools to apply updates to the image. 
 
 Need more information about using the Office Deployment Tool for updates?
 
-- [Deploy Click-to-Run for Office 365 products by using the Office Deployment Tool](https://technet.microsoft.com/library/JJ219423.aspx)
+- [Deploy Click-to-Run for Office 365 products by using the Office Deployment Tool](https://technet.microsoft.com/library/JJ219423.aspx) 
 - [Deploying and Updating Office 365 ProPlus Using the Office Deployment Tool](https://channel9.msdn.com/Events/Ignite/2015/BRK3168) (video)
-- [Configure update settings for Office 365 ProPlus](https://technet.microsoft.com/library/dn761708.aspx)
+- [Configure update settings for Office 365 ProPlus](https://technet.microsoft.com/library/dn761708.aspx) 

@@ -1,14 +1,14 @@
 <properties 
-   pageTitle="Publish Azure Application Wizard"
+   pageTitle="Publish Azure Application Wizard | Windows Azure"
    description="Publish Azure Application Wizard"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="08/24/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 # Publish Azure Application Wizard
@@ -21,19 +21,19 @@ After you develop a web application in Visual Studio, you can publish that appli
 
 ## Prerequisites
 
-Before you can publish your web application to Azure, you need to have a Microsoft account and an Azure subscription, and you have to associate your web application with an Azure cloud service. If you’ve already completed these tasks, you can skip to the next section.
+Before you can publish your web application to Azure, you need to have a Microsoft account and an Azure subscription, and you have to associate your web application with an Azure cloud service. If you've already completed these tasks, you can skip to the next section.
 
 1. Get a Microsoft account and an Azure subscription. You can try a free one month free Azure subscription [here](/pricing/1rmb-trial/)
 
 1. Create a cloud service and a storage account on Azure. You can do this from Server Explorer in Visual Studio, or by using the [Azure Management portal](https://manage.windowsazure.cn/). For more information about how to set up your Azure environment, see [Setting Up Services Required to Publish a Cloud Service from Visual Studio](/documentation/articles/vs-azure-tools-publish-azure-application-wizard).
 
-1. Enable your web application for Azure. To enable your web application to be published to Azure from Visual Studio, you’ll need to associate it with an Azure cloud service project in Visual Studio. To create the associated cloud service project, open the shortcut menu for the project for your web application, and then choose Convert, **Convert to Azure Cloud Service Project**.
+1. Enable your web application for Azure. To enable your web application to be published to Azure from Visual Studio, you'll need to associate it with an Azure cloud service project in Visual Studio. To create the associated cloud service project, open the shortcut menu for the project for your web application, and then choose Convert, **Convert to Azure Cloud Service Project**.
 
 1. After the cloud service project is added to your solution, open the same shortcut menu again and then choose **Publish**. For more information about how to enable applications for Azure, see [How to: Migrate and Publish a Web Application to an Azure Cloud Service from Visual Studio](https://msdn.microsoft.com/zh-cn/library/azure/hh420322.aspx).
 
 >[AZURE.NOTE] Be sure to start Visual Studio with administrator credentials (Run As Administrator).
 
-1. When you’re ready to publish your application, open the shortcut menu for the Azure cloud service project, and then choose **Publish**. The following steps show the Publish Azure Application wizard.
+1. When you're ready to publish your application, open the shortcut menu for the Azure cloud service project, and then choose **Publish**. The following steps show the Publish Azure Application wizard.
 
 ## Choosing Your Subscription
 
@@ -57,7 +57,7 @@ Before you can publish your web application to Azure, you need to have a Microso
 
     If there aren't any cloud services in your subscription, you need to create a cloud service in Azure to host your project. The **Create Cloud Service and Storage Account** dialog box appears.
 
-    Specify a new name for the cloud service. The name must be unique in Azure. Then specify a region or affinity group for a data center that’s near you or most of your clients. This name is also used for a new storage account that Azure creates for your cloud service.
+    Specify a new name for the cloud service. The name must be unique in Azure. Then specify a region or affinity group for a data center that's near you or most of your clients. This name is also used for a new storage account that Azure creates for your cloud service.
 
 1. Modify any settings you want for this deployment and then publish it by choosing the **Publish** button (The next section provides more details about the various settings). To review the settings before publishing, choose the **Next** button.
 

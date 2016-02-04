@@ -8,9 +8,9 @@
 	manager="lwelicki" 
 	editor=""/>
 
-<tags
-	ms.service="multiple"
-	ms.date="07/23/2015"
+<tags 
+	ms.service="multiple" 
+	ms.date="07/23/2015" 
 	wacn.date=""/>
 
 #Supported browsers and devices

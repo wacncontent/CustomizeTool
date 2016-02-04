@@ -1,18 +1,19 @@
-<properties
-	pageTitle="Azure Notification Hubs Notify Users"
-	description="Learn how to send secure push notifications in Azure. Code samples written in C# using the .NET API."
-	documentationCenter="windows"
-	authors="wesmc7777"
-	manager="dwrede"
-	services="notification-hubs"
+<properties 
+	pageTitle="Azure Notification Hubs Notify Users with .NET backend"
+	description="Learn how to send secure push notifications in Azure. Code samples written in C# using the .NET API." 
+	documentationCenter="windows" 
+	authors="wesmc7777" 
+	manager="dwrede" 
+	services="notification-hubs" 
 	editor=""/>
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="10/15/2015"
+
+	ms.date="11/09/2015"
 	wacn.date=""/>
 
-#Azure Notification Hubs Notify Users
+#Azure Notification Hubs Notify Users with .NET backend
 
 [AZURE.INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
@@ -21,7 +22,7 @@
 
 Push notification support in Azure enables you to access an easy-to-use, multiplatform, and scaled-out push infrastructure, which greatly simplifies the implementation of push notifications for both consumer and enterprise applications for mobile platforms. This tutorial shows you how to use Azure Notification Hubs to send push notifications to a specific app user on a specific device. An ASP.NET WebAPI backend is used to authenticate clients. Using the authenticated client user, and tag will be automatically added by the backend to notification registration. This tag will be used to send by the backend to generate notifications for a specific user. For more information on registering for notifications using an app backend, see the guidance topic [Registering from your app backend](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx). This tutorial builds on the notification hub and project that you created in the [Get started with Notification Hubs] tutorial.
 
-This tutorial is also the prerequisite to the [Secure Push] tutorial. After you have completed the steps in this tutorial, you can proceed to the [Secure Push] tutorial, which shows how to modify the code in this tutorial to send a push notification securely.
+This tutorial is also the prerequisite to the [Secure Push] tutorial. After you have completed the steps in this tutorial, you can proceed to the [Secure Push] tutorial, which shows how to modify the code in this tutorial to send a push notification securely. 
 
 
 
@@ -107,7 +108,7 @@ In this section, you update the code in the project you completed for the [Get s
                     <TextBlock Grid.Row="2" Grid.ColumnSpan="3" Text="Password" FontSize="24" Margin="20,0,20,0" />
                     <PasswordBox Name="PasswordTextBox" Grid.Row="3" Grid.ColumnSpan="3" Margin="20,0,20,0"/>
 
-                    <Button Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    <Button Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" 
                                 Content="1. Login and register" Click="LoginAndRegisterClick" Margin="0,0,0,20"/>
 
                     <ToggleButton Name="toggleWNS" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Content="WNS" IsChecked="True" />
@@ -143,12 +144,12 @@ In this section, you update the code in the project you completed for the [Get s
 
 
 
-13. Add the code below to the MainPage class in **MainPage.xaml.cs** for the **(Windows 8.1)** and **(Windows Phone 8.1)** projects.
-
-	The `PushClick` method is the click handler for the **Send Push** button. It calls the backend to trigger a notification to all devices with a username tag that matches the `to_tag` parameter. The notification message is sent as JSON content in the request body.
+13. Add the code below to the MainPage class in **MainPage.xaml.cs** for the **(Windows 8.1)** and **(Windows Phone 8.1)** projects. 
+ 
+	The `PushClick` method is the click handler for the **Send Push** button. It calls the backend to trigger a notification to all devices with a username tag that matches the `to_tag` parameter. The notification message is sent as JSON content in the request body. 
 
 	The `LoginAndRegisterClick` method is the click handler for the **Log in and register** button. It stores the basic authentication token in local storage (note that this represents any token your authentication scheme uses), then uses `RegisterClient` to register for notifications using the backend.
-
+	
 
         private async void PushClick(object sender, RoutedEventArgs e)
         {
@@ -200,6 +201,8 @@ In this section, you update the code in the project you completed for the [Get s
             // The tag passed here can be whatever other tags you may want to use.
             try
             {
+				// The device handle used will be different depending on the device and PNS. 
+				// Windows devices use the channel uri as the PNS handle.
                 await new RegisterClient(BACKEND_ENDPOINT).RegisterAsync(channel.Uri, new string[] { "myTag" });
 
                 var dialog = new MessageDialog("Registered as: " + UsernameTextBox.Text);
@@ -233,8 +236,8 @@ In this section, you update the code in the project you completed for the [Get s
             //InitNotificationsAsync();
 
 
-15. In Solution Explorer, right-click the **Shared** project, then click **Add**, and then click **Class**. Name the class **RegisterClient.cs**, then click **OK** to generate the class.
-
+15. In Solution Explorer, right-click the **Shared** project, then click **Add**, and then click **Class**. Name the class **RegisterClient.cs**, then click **OK** to generate the class. 
+	
 	This class will wrap the REST calls required to contact the app backend, in order to register for push notifications. It also locally stores the *registrationIds* created by the Notification Hub as detailed in [Registering from your app backend](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx). Note that it uses an authorization token stored in local storage when you click the **Log in and register** button.
 
 
@@ -289,6 +292,7 @@ In this section, you update the code in the project you completed for the [Get s
             if (statusCode != HttpStatusCode.Accepted)
             {
                 // log or throw
+				throw new System.Net.WebException(statusCode.ToString());
             }
         }
 
@@ -325,7 +329,7 @@ In this section, you update the code in the project you completed for the [Get s
                     }
                     else
                     {
-                        throw new Exception();
+						throw new System.Net.WebException(response.StatusCode.ToString());
                     }
                 }
             }
@@ -334,7 +338,7 @@ In this section, you update the code in the project you completed for the [Get s
         }
 
 18. Save all your changes.
-
+		
 
 ## Testing the Application
 
@@ -353,12 +357,12 @@ In this section, you update the code in the project you completed for the [Get s
     ![][16]
 
 6. Only the devices that have registered with the matching username tag receive the notification message.
-
-	![][15]
-
+	
+	![][15] 
+ 
 ## Next Steps
 
-* If you want to segment your users by interest groups, see [Use Notification Hubs to send breaking news].
+* If you want to segment your users by interest groups, see [Use Notification Hubs to send breaking news]. 
 * To learn more about how to use Notification Hubs, see [Notification Hubs Guidance].
 
 
@@ -378,4 +382,4 @@ In this section, you update the code in the project you completed for the [Get s
 [Get started with Notification Hubs]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [Secure Push]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push
 [Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
-[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
+[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx 

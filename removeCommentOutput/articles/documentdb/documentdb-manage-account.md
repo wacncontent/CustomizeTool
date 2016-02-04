@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Manage a DocumentDB account via the Azure preview portal | Microsoft Azure" 
+	pageTitle="Manage a DocumentDB account via the Azure preview portal | Windows Azure" 
 	description="Learn how to manage your DocumentDB account via the Azure preview portal. Find a guide on using the Azure Preview Portal to view, copy, delete and access accounts." 
 	keywords="Azure preview portal, documentdb, azure, Microsoft azure"
 	services="documentdb" 
@@ -8,14 +8,10 @@
 	manager="jhubbard" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/28/2015" 
-	ms.author="anhoh"/>
+<tags
+	ms.service="documentdb"
+	ms.date="10/22/2015"
+	wacn.date=""/>
 
 # How to manage a DocumentDB account in the Azure preview portal
 
@@ -28,16 +24,16 @@ account is accessed. By providing two access keys, DocumentDB enables
 you to regenerate the keys with no interruption to your DocumentDB
 account.
 
-In the [Microsoft Azure Preview portal](https://portal.azure.com/),
+In the [Windows Azure Preview portal](https://manage.windowsazure.cn/),
 access the **Keys** part from your **DocumentDB Account** blade to view,
 copy, and regenerate the access keys that are used to access your
 DocumentDB account.
 
-![Azure preview portal screenshot, Keys blade](media/documentdb-manage-account/keys.png)
+![Azure preview portal screenshot, Keys blade](./media/documentdb-manage-account/keys.png)
 
 ### View and copy an access key in the Azure preview portal
 
-1.      In the [Azure Preview portal](https://portal.azure.com/), access your DocumentDB account. 
+1.      In the [Azure Preview portal](https://manage.windowsazure.cn/), access your DocumentDB account. 
 
 2.      In the **Summary** lens, click **Keys**.
 
@@ -65,7 +61,7 @@ your keys. The following steps outline the process involved in rolling your keys
 secondary access key of the DocumentDB account.
 
 2.      Regenerate the primary access key for your DocumentDB account.
-In the  [Azure Preview portal](https://portal.azure.com/),
+In the [Azure Preview portal](https://manage.windowsazure.cn/),
 access your DocumentDB account.
 
 3.      In the Summary lens, click **Keys**.
@@ -92,12 +88,12 @@ return the value that was last written.
 
 - **Bounded Staleness** consistency guarantees that reads are
 not too out-of-date. It specifically guarantees that the reads are no
-more than K versions older than the last written version. 
+more than *K* versions older than the last written version. 
 
 - **Session** consistency guarantees monotonic reads (you never
 read old data, then new, then old again), monotonic writes (writes are
 ordered), and that you read the most recent writes within any single
-client’s viewpoint.
+client's viewpoint.
 
 - **Eventual** consistency guarantees that read operations
 always read a valid subset of writes and will eventually converge.
@@ -109,7 +105,7 @@ Level](http://go.microsoft.com/fwlink/p/?LinkId=402365) section.*
 
 ### To specify the default consistency for a DocumentDB account
 
-1.      In the [Azure Preview portal](https://portal.azure.com/), access your DocumentDB account. 
+1.      In the [Azure Preview portal](https://manage.windowsazure.cn/), access your DocumentDB account. 
 
 2.      In the **Configuration** lens, click **Default Consistency**.
 
@@ -125,7 +121,7 @@ level you want for your DocumentDB account.
 5.      The progress of the operation may be monitored via the Azure Preview portal Notifications hub.
 
 *Note that it can take several minutes before a change to the default
-consistency setting takes affect across your DocumentDB account.*
+consistency setting takes effect across your DocumentDB account.*
 
 ## <a id="delete"></a> How to: Delete a DocumentDB account in the Azure preview portal
 To remove a DocumentDB account from the Azure preview portal that you are no longer using, use the
@@ -133,7 +129,7 @@ To remove a DocumentDB account from the Azure preview portal that you are no lon
 
 ![How to delete a DocumentDB account in the Azure preview portal](./media/documentdb-manage-account/image009.png)
 
-1.      In the [Azure Preview portal](https://portal.azure.com/), access the DocumentDB Account you
+1.      In the [Azure Preview portal](https://manage.windowsazure.cn/), access the DocumentDB Account you
 wish to delete. 
 
 2.      On the **DocumentDB Account** blade, click the **Delete** command.

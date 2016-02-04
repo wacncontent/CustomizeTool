@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/28/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -65,6 +65,15 @@ The following diagram shows the major parts of the AMS platform that are involve
 For more information, see [Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders
 ](/documentation/articles/media-services-manage-channels-overview). 
 
+
+
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 ##Related topics
 

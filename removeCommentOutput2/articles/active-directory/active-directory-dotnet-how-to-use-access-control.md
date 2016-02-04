@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/02/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -93,7 +93,7 @@ To complete the tasks in this guide, you will need the following:
 To use Active Directory Access Control in Azure, create an Access Control namespace. The namespace provides a unique scope for
 addressing ACS resources within your application.
 
-1.  Log into the [Azure Management Portal][] (https://manage.WindowsAzure.com).
+1.  Log into the [Azure Management Portal][] (https://manage.WindowsAzure.cn).
 
 2.  Click **Active Directory**.  
 
@@ -298,7 +298,7 @@ When you select the Use Azure Access Control option and then run your applicatio
 
 You can review and change these configuration settings in the ACS Management Portal. Use the following steps to review the changes in the portal.
 
-1.	Log into the Windows [Azure Management Portal](http://manage.WindowsAzure.com).
+1.	Log into the Windows [Azure Management Portal](http://manage.windowsazure.cn).
 
 2.	Click **Active Directory**.
 
@@ -374,15 +374,15 @@ To further explore ACS functionality and to experiment with more scenarios, see 
   [Create an Access Control Namespace]: #create-namespace
   [Integrate your Web Application with ACS]: #Identity-Access
   [Test the Integration with ACS]: #Test-ACS
-  [View the Application in the ACS Management Portal]: /documentation/articles/acs-portal
+  [View the Application in the ACS Management Portal]: acs-portal
   [Add an Identity Provider]: #add-IP
   [What's Next]: #whats-next
   [vcsb]: #bkmk_viewClaims
   [vpp]: #bkmk_VP
 
-  [Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
+  [Access Control Service 2.0]: http://msdn.microsoft.com/zh-cn/library/hh147631.aspx
   [Identity and Access Tool]: http://go.microsoft.com/fwlink/?LinkID=245849
-  [Azure Management Portal]: http://manage.WindowsAzure.com
+  [Azure Management Portal]: http://manage.windowsazure.cn
 
   [0]: ./media/active-directory-dotnet-how-to-use-access-control/acs-01.png
   [1]: ./media/active-directory-dotnet-how-to-use-access-control/acsCreateNamespace.png

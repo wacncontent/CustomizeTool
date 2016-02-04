@@ -58,11 +58,11 @@ Microsoft provides the following utilities to work with Azure Blob storage:
 
 The Azure CLI is a cross-platform tool that allows you to manage Azure services. Use the following steps to upload data to Azure Blob storage:
 
-1. [Install and configure the Azure CLI ](/documentation/articles/xplat-cli-install).
+1. [Install and configure the Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install).
 
 2. Open a command prompt, bash, or other shell, and use the following to authenticate to your Azure subscription.
 
-		azure login
+		azure login -e AzureChinaCloud
 
 	When prompted, enter the user name and password for your subscription.
 
@@ -92,9 +92,9 @@ The Azure CLI is a cross-platform tool that allows you to manage Azure services.
 
 > [AZURE.NOTE] If you will always be working with the same storage account, you can set the following environment variables instead of specifying the account and key for every command:
 >
-> * **AZURE_STORAGE_ACCOUNT**: The storage account name
+> * **AZURE\_STORAGE\_ACCOUNT**: The storage account name
 >
-> * **AZURE_STORAGE_ACCESS_KEY**: The storage account key
+> * **AZURE\_STORAGE\_ACCESS\_KEY**: The storage account key
 
 ###<a id="powershell"></a>Azure PowerShell
 
@@ -247,18 +247,26 @@ Now that you understand how to get data into HDInsight, read the following artic
 [azure-create-storage-account]: /documentation/articles/storage-create-storage-account
 [azure-azcopy-download]: /documentation/articles/storage-use-azcopy
 [azure-azcopy]: /documentation/articles/storage-use-azcopy
+
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[sqldatabase-create-configure]: /documentation/articles/sql-database-create-configure
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+
+[sqldatabase-create-configure]: /documentation/articles/sql-database-get-started
+
 [apache-sqoop-guide]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
 [Powershell-install-configure]: /documentation/articles/powershell-install-configure
+
 [azurecli]: /documentation/articles/xplat-cli-install
+
+
 [image-azure-storage-explorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png
 [image-ase-addaccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png

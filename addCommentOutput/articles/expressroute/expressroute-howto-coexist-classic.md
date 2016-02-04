@@ -1,6 +1,6 @@
 <properties
    pageTitle="Configure Expressroute and site-to-site VPN connections that can coexist | Windows Azure"
-   description="This tutorial walks you through configuring ExpressRoute and a site-to-site VPN connection that can coexist."
+   description="This article walks you through configuring ExpressRoute and a site-to-site VPN connection that can coexist."
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
@@ -9,7 +9,7 @@
    tags="azure-service-management"/>
 <tags
 	ms.service="expressroute"
-	ms.date="09/22/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # Configure ExpressRoute and site-to-site VPN connections to coexist for a VNet
@@ -25,6 +25,7 @@ ExpressRoute circuits must be pre-configured before you follow the instructions 
 
 - **Transit routing is not supported:** You cannot route (via Azure) between your local network connected via site-to-site VPN and your local network connected via ExpressRoute.
 - **Point-to-site is not supported:** You can't enable point-to-site VPN connections to the same VNet that is connected to ExpressRoute. Point-to-site VPN and ExpressRoute cannot coexist for the same VNet.
+- **Forced tunneling cannot be enabled on the site-to-site VPN gateway:** You can only "force" all Internet-bound traffic back to your on-premises network via ExpressRoute. 
 - **Only standard or high performance gateways:** You must use a standard or high performance gateway for both the ExpressRoute gateway and the site-to-site VPN gateway. See [Gateway SKUs](/documentation/articles/vpn-gateway-about-vpngateways) for information about gateway SKUs.
 - **Static route requirement:** If your local network is connected to both ExpressRoute and a site-to-site VPN, you must have a static route configured in your local network to route the site-to-site VPN connection to the public Internet.
 - **ExpressRoute gateway must be configured first:** You must create the ExpressRoute gateway first before you add the site-to-site VPN gateway.
@@ -49,7 +50,7 @@ There are two different sets of procedures to choose from in order to configure 
 
 - **Create a new virtual network and connections that coexist:**
 	
-	If you don鈥檛 already have a virtual network, this procedure will walk you through creating a new virtual network and creating new ExpressRoute and site-to-site VPN connections. To configure, follow the steps in the article section **Create a new virtual network with both ExpressRoute and site-to-site connectivity**.
+	If you don't already have a virtual network, this procedure will walk you through creating a new virtual network and creating new ExpressRoute and site-to-site VPN connections. To configure, follow the steps in the article section **Create a new virtual network with both ExpressRoute and site-to-site connectivity**.
 
 - **Configure your existing virtual network for coexisting connections:**
 
@@ -64,7 +65,7 @@ This procedure will walk you through creating a VNet and create site-to-site and
 
 1. Verify that you have the latest version of the PowerShell cmdlets. You can download and install the latest PowerShell cmdlets from the PowerShell section of the [Download page](/downloads/).
 
-2. Create a schema for your virtual network. For more information about working with the network configuration file, see [Configure a Virtual Network using a network configuration file](/documentation/articles/virtual-networks-create-vnet-classic-portal#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal). For more information about the configuration schema, see [Azure Virtual Network configuration schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx).
+2. Create a schema for your virtual network. For more information about working with the network configuration file, see [Configure a Virtual Network using a network configuration <!-- deleted by customization file](/documentation/articles/virtual-networks-create-vnet-classic-portal) --><!-- keep by customization: begin --> file](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal) <!-- keep by customization: end -->. For more information about the configuration schema, see [Azure Virtual Network configuration schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx).
 
 	When you create your schema, make sure you use the following values:
 
@@ -135,9 +136,9 @@ This procedure will walk you through creating a VNet and create site-to-site and
 		OperationId          : 42773656-85e1-a6b6-8705-35473f1e6f6a
 		OperationStatus      : Succeeded
 
-7. Create a local site VPN gateway entity. This command doesn鈥檛 configure your on-premises VPN gateway. Rather, it allows you to provide the local gateway settings, such as the public IP and the on-premises address space, so that the Azure VPN gateway can connect to it.
+7. Create a local site VPN gateway entity. This command doesn't configure your on-premises VPN gateway. Rather, it allows you to provide the local gateway settings, such as the public IP and the on-premises address space, so that the Azure VPN gateway can connect to it.
 
-	> [AZURE.IMPORTANT] The local site for the site-to-site VPN is not defined in the netcfg. Instead, you must use this cmdlet to specify the local site parameters. You cannot define it using the Management Portal or the netcfg file.
+	> [AZURE.IMPORTANT] The local site for the site-to-site VPN is not defined in the netcfg. Instead, you must use this cmdlet to specify the local site parameters. You cannot define it using the <!-- deleted by customization Azure --> Management Portal or the netcfg file.
 
 	Use the following sample, replacing the values with your own.
 
@@ -178,19 +179,26 @@ If you have an existing virtual network connected via either ExpressRoute or sit
 
 2. Delete the existing site-to-site VPN gateway. Use the following cmdlet, replacing the values with your own.
 
-	`Remove-AzureVNetGateway 鈥揤netName MyAzureVNET`
+	`Remove-AzureVNetGateway -VnetName MyAzureVNET`
 
-2. Export the virtual network schema. Use the following PowerShell cmdlet, replacing the values with your own.
+<!-- deleted by customization 2 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. Export the virtual network schema. Use the following PowerShell cmdlet, replacing the values with your own.
 
-	`Get-AzureVNetConfig 鈥揈xportToFile 鈥淐:\NetworkConfig.xml鈥漙
+<!-- deleted by customization
+	`Get-AzureVNetConfig -ExportToFile “C:\NetworkConfig.xml”`
 
-3. Edit the network configuration file schema so that the gateway subnet is /27 or a shorter prefix (such as /26 or /25). See the following example. For more information about working with the network configuration file, see [Configure a Virtual Network using a network configuration file](/documentation/articles/virtual-networks-create-vnet-classic-portal#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal). For more information about the configuration schema, see [Azure Virtual Network configuration schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx).
+3. Edit the network configuration file schema so that the gateway subnet is /27 or a shorter prefix (such as /26 or /25). See the following example. For more information about working with the network configuration file, see [Configure a Virtual Network using a network configuration file](/documentation/articles/virtual-networks-create-vnet-classic-portal). For more information about the configuration schema, see [Azure Virtual Network configuration schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx).
+-->
+<!-- keep by customization: begin -->
+	`Get-AzureVNetConfig -ExportToFile "C:\NetworkConfig.xml"`
+
+4. Edit the network configuration file schema so that the gateway subnet is /27 or a shorter prefix (such as /26 or /25). See the following example. For more information about working with the network configuration file, see [Configure a Virtual Network using a network configuration file](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal). For more information about the configuration schema, see [Azure Virtual Network configuration schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx).
+<!-- keep by customization: end -->
 
           <Subnet name="GatewaySubnet">
             <AddressPrefix>10.17.159.224/27</AddressPrefix>
           </Subnet>
 
-4. If your previous gateway was a site-to-site VPN, you must also change the connection type to **Dedicated**.
+<!-- deleted by customization 4 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->. If your previous gateway was a site-to-site VPN, you must also change the connection type to **Dedicated**.
 
 		         <Gateway>
 		          <ConnectionsToLocalNetwork>
@@ -200,7 +208,7 @@ If you have an existing virtual network connected via either ExpressRoute or sit
 		          </ConnectionsToLocalNetwork>
 		        </Gateway>
 
-5. At this point, you'll have a VNet with no gateways. To create new gateways and complete your connections, you can proceed with **Step 3** in this section of this article, [Create a new virtual network with both ExpressRoute and site-to-site connectivity](#create-a-new-virtual-network-with-both-expressroute-and-site-to-site-connectivity).
+<!-- deleted by customization 5 --><!-- keep by customization: begin --> 6 <!-- keep by customization: end -->. At this point, you'll have a VNet with no gateways. To create new gateways and complete your connections, you can proceed with **Step <!-- deleted by customization 4** --><!-- keep by customization: begin --> 3** <!-- keep by customization: end --> in this section of this article, [Create a new virtual network with both ExpressRoute and site-to-site connectivity](#create-a-new-virtual-network-with-both-expressroute-and-site-to-site-connectivity).
 
 ## Next steps
 

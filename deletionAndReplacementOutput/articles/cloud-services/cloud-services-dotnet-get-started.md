@@ -18,25 +18,3 @@ deleted:
 
 reason: ()
 
-replacement:
-
-deleted:
-
-		website](/home/features/web-site/)
-
-replaced by:
-
-		Website](/home/features/web-site/)
-
-reason: ()
-
-deleted:
-
-		virtual machines comparison](/documentation/articles/choose-web-site-cloud-service-vm)
-
-replaced by:
-
-		Virtual Machines Comparison](/documentation/articles/choose-web-site-cloud-service-vm)
-
-reason: ()
-

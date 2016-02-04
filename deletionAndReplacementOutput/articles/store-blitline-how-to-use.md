@@ -17,7 +17,7 @@ replaced by:
 		
 		## <a id="whatis"></a>What is Blitline?
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -27,7 +27,7 @@ replaced by:
 
 		## <a id="whatisnot"></a>What Blitline is NOT...
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -37,7 +37,7 @@ replaced by:
 
 		## <a id="createaccount"></a>Create a Blitline account
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -47,7 +47,7 @@ replaced by:
 
 		## <a id="createjob"></a>How to create a Blitline job
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -57,7 +57,7 @@ replaced by:
 
 		<a id="saveazure"></a>How
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -67,5 +67,5 @@ replaced by:
 
 		## <a id="nextsteps"></a>Next Steps
 
-reason: ()
+reason: (inpage link)
 

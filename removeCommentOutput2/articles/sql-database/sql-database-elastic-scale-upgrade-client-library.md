@@ -18,7 +18,7 @@ New versions of the [Elastic Database client library](/documentation/articles/sq
 
 Rebuild your application with the new library, as well as change your existing Shard Map Manager metadata stored in your Azure SQL Databases to support new features.
 
-Performing these steps in order ensures that old versions of the client library are no longer present in your environment when metadata objects are updated, which means that old-version metadata objects won’t be created after upgrade.   
+Performing these steps in order ensures that old versions of the client library are no longer present in your environment when metadata objects are updated, which means that old-version metadata objects won't be created after upgrade.   
 
 ## Upgrade steps
 
@@ -77,13 +77,13 @@ These techniques for metadata upgrades can be applied multiple times without har
 * General availability release
 * Added support for Datetime types as sharding keys
 
-**Version 0.8 – March 2015**
+**Version 0.8 - March 2015**
 
 * Async support added for data-dependent routing with the new ShardMap.OpenConnectionForKeyAsync methods. 
 * Public KeyType property added to ShardMap 
 * Added improvements supporting database restore and disaster recovery scenarios for shards 
 
-**Version 0.7 – October 2014** 
+**Version 0.7 - October 2014** 
 
 Initial Preview version 
 

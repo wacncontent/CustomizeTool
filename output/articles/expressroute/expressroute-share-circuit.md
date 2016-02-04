@@ -55,7 +55,7 @@ The circuit owner has the power to modify and revoke authorizations at any time.
 
 1. The administrator of the authorized subscription runs the following cmdlet to complete the link operation.
 
-		PS C:\> New-AzureDedicatedCircuitLink –servicekey 6ed7e310-1a02-4261-915f-6ccfedc416f1 –VnetName 'SalesVNET1' 
+		PS C:\> New-AzureDedicatedCircuitLink âservicekey 6ed7e310-1a02-4261-915f-6ccfedc416f1 âVnetName 'SalesVNET1' 
 		
 			State VnetName 
 			----- -------- 

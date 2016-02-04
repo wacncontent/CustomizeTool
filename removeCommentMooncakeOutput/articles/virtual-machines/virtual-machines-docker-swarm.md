@@ -9,9 +9,9 @@
    editor="tysonn"/>
 
 <tags
-	ms.service="virtual-machines"
-	ms.date="09/22/2015"
-	wacn.date=""/>
+   ms.service="virtual-machines"
+   ms.date="09/22/2015"
+   wacn.date=""/>
 
 # How to use docker with swarm
 
@@ -128,8 +128,9 @@ and then you can list out your nodes in your cluster:
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
 
-Go run things on your swarm. To look for inspiration, see [https://github.com/docker/swarm/](https://github.com/docker/swarm/).
+Go run things on your swarm. To look for inspiration, see [https://github.com/docker/swarm/](https://github.com/docker/swarm/), or perhaps a [video](https://www.youtube.com/watch?v=EC25ARhZ5bI).
 
 <!-- links -->
 
-[docker-machine-azure]: /documentation/articles/virtual-machines-docker-machine
+[docker-machine-azure]: virtual-machines-docker-machine.md
+ 

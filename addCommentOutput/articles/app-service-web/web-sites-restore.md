@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Restore a web app in Azure Websites" 
-	description="Learn how to restore your web app from a backup." 
+	pageTitle="Restore an app in Azure Websites" 
+	description="Learn how to restore your app from a backup." 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
@@ -9,24 +9,27 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/16/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
-# Restore a web app in Azure Websites
-
-This article shows you how to restore a web app that you have previously backed up by using the [Azure Websites](/documentation/services/web-sites/) Backup feature. For more information, see [Azure Websites Backups](/documentation/articles/web-sites-backup). 
-
 <!-- deleted by customization
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
+# Restore an app in Azure Websites
 
--->
-The Web Apps Restore feature lets you restore your web app on-demand to a previous state, or create a new web app based on one of your original web app's backups. Creating a new web app that runs in parallel to the latest version can be useful for A/B testing.
+This article shows you how to restore an Azure Websites app that you have previously backed up by using the [Azure Websites](/documentation/services/web-sites) Backup feature. For more information, see [Azure Websites Backups](/documentation/articles/web-sites-backup).
 
-The Web Apps Restore feature, available on the **Backups** blade in the [Azure <!-- deleted by customization preview portal](http://manage.windowsazure.cn) --><!-- keep by customization: begin --> Management Portal](http://manage.windowsazure.cn) <!-- keep by customization: end -->, is available only in Standard and Premium modes. For information about scaling your app using Standard or Premium mode, see [Scale a web app in Azure Websites](/documentation/articles/web-sites-scale).
-<!-- deleted by customization
-Note that the Premium mode allows a greater number of daily backups to be performed over the Standard mode.
+The Azure Websites Restore feature lets you restore your app with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new app based on one of your original app's backup. Creating a new app that runs in parallel to the latest version can be useful for A/B testing.
+
+The Azure Websites Restore feature, available on the **Backups** blade in the [Azure Management Portal](http://manage.windowsazure.cn), is available only in Standard and Premium pricing tiers. For information about scaling your app using Standard or Premium tier, see [Scale an app in Azure Websites](/documentation/articles/web-sites-scale). Note that the Premium tier allows a greater number of daily backups to be performed over the Standard tier.
 -->
 <!-- keep by customization: begin -->
+# Restore a web site in Azure Websites
+
+This article shows you how to restore an Azure Website that you have previously backed up by using the [Azure Websites](/documentation/services/web-sites) Backup feature. For more information, see [Azure Websites Backups](/documentation/articles/web-sites-backup).
+
+The Azure Websites Restore feature lets you restore your web site with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new web site based on one of your original web site's backup. Creating a new web site that runs in parallel to the latest version can be useful for A/B testing.
+
+The Azure Websites Restore feature, available on the **Backups** blade in the [Azure Management Portal](http://manage.windowsazure.cn), is available only in Standard  pricing tiers. For information about scaling your app using Standard  tier, see [Scale a web site in Azure Websites](/documentation/articles/web-sites-scale). 
+
 ##In this article
 - [To Restore an Azure  Website from a previously made backup](#PreviousBackup)
 - [To Restore an Azure  Website directly from a storage account](#StorageAccount)
@@ -35,23 +38,38 @@ Note that the Premium mode allows a greater number of daily backups to be perfor
 <!-- keep by customization: end -->
 
 <a name="PreviousBackup"></a>
-## To Restore a web app from a previously made backup
 <!-- deleted by customization
+## To Restore an app from a previously made backup
 
-1. On the **Settings** blade of your web app in the Azure Management Portal, click the **Backups** option to display the **Backups** blade. Scroll in this blade and select one of the backup item based on the **BACKUP TIME** and the **STATUS** from the backup list.
+1. On the **Settings** blade of your app in the Azure Management Portal, click **Backups** to display the **Backups** blade. Then click **Restore Now** in the command bar. 
 	
-	![Choose backup source][ChooseBackupSource]
-	
-2. Select **Restore Now** at the top of the **Backups** blade. 
-
 	![Choose restore now][ChooseRestoreNow]
 
-3. In the **Restore** blade, to restore the existing web app, verify all the displayed details and then click **OK**. 
+3. In the **Restore** blade, first select the backup source. 
+
+	![](./media/web-sites-restore/021ChooseSource.png)
 	
-You can also restore your web app to a new web app by selecting the **WEB APP** part from the **Restore** blade and selecting the **Create a new web app** part.
+	The **App backup** option shows you all the backups that are created directly by the app itself, since these are the only ones that the apps are aware of. You can easily select one. 
+	The **Storage** option lets you select the actual backup ZIP file from the storage account and container that's configured in your **Backups** blade. If there are backup files from any other apps in 
+	the container, then you can select them to restore as well.  
+
+4. Then, specify the destination for the app restore in **Restore destination**.
+
+	![](./media/web-sites-restore/022ChooseDestination.png)
 	
+	>[AZURE.WARNING] If you choose **Overwrite**, all data related to your existing app will be erased. Before you click **OK**,
+	make sure that it is exactly what you want to do.
+	
+	You can select **Existing App** to restore the app backup to another app in the same resoure group. Before you use this option, 
+	you should have already created another app in your resource group with mirroring database configuration to the one defined
+	in the app backup. 
+	
+5. Click **OK**.
+
 -->
 <!-- keep by customization: begin -->
+## To Restore a web site from a previously made backup
+
 1. On the **Backups** tab, click **Restore Now** in the command bar at the bottom of the portal page. The **Restore Now** dialog box appears.
 	
 	![Choose backup source][ChooseBackupSource]
@@ -81,9 +99,9 @@ You can also restore your web app to a new web app by selecting the **WEB APP** 
 4. In the list, select the container and display the blade that shows a list of file names, along with the size of each file.
 	
 5. By selecting a file, you can either choose to **Download** or **Delete** the file. Note that there are two primary file types, .zip files and .xml files. 
-
 -->
 <!-- keep by customization: begin -->
+
 1. On the **Backups** tab, click **Restore Now** in the command bar at the bottom of the portal page. The **Restore Now** dialog box appears.
 	
 	![Choose backup source][ChooseBackupSource]
@@ -141,26 +159,27 @@ You can also restore your web app to a new web app by selecting the **WEB APP** 
 	
 	![Restored Contoso  Website][RestoredContoso Website]
 <!-- keep by customization: end -->
+
 <a name="OperationLogs"></a>
 ## View the Audit Logs
 <!-- deleted by customization
 	
-1. To see details about the success or failure of the web app restore operation, select the **Audit Log** part of the main **Browse** blade. 
+1. To see details about the success or failure of the app restore operation, select the **Audit Log** part of the main **Browse** blade. 
 	
 	The **Audio log** blade displays all of your operations, along with level, status, resource, and time details.
 	
-2. Scroll the blade to find operations related to your web app.
+2. Scroll the blade to find operations related to your app.
 3. To view additional details about an operation, select the operation in the list.
 	
 The details blade will display the available information related to the operation.
 	
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 	
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 -->
 <!-- keep by customization: begin -->
+
 1. To see details about the success or failure of the  Website restore operation, go to the  Website's Dashboard tab. In the **Quick Glance** section, under **Management Services**, click **Operation Logs**.
 	
 	![Dashboard - Operation Logs Link][DashboardOperationLogsLink]
@@ -182,7 +201,6 @@ The details blade will display the available information related to the operatio
 <!-- keep by customization: begin -->
 [RestoredContoso Website]: ./media/web-sites-restore/09RestoredContosoWebsite.png
 <!-- keep by customization: end -->
-[ChooseBackupSource]: ./media/web-sites-restore/01ChooseBackupSource.png
 [ChooseRestoreNow]: ./media/web-sites-restore/02ChooseRestoreNow.png
 [ViewContainers]: ./media/web-sites-restore/03ViewContainers.png
 [StorageAccountFile]: ./media/web-sites-restore/02StorageAccountFile.png

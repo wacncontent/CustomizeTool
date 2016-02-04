@@ -69,7 +69,7 @@ The namespace you created takes a moment to activate, and will then appear in th
 
 In order to perform management operations, such as creating a queue on
 the new namespace, you must obtain the management credentials for the
-namespace. You can obtain these credentials from the Azure Management Portal.
+namespace. You can obtain these credentials from the portal.
 
 ###To obtain management credentials from the portal
 

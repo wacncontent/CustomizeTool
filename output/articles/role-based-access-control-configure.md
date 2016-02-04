@@ -14,7 +14,7 @@
 
 # Role-based access control in the Windows Azure Management Portal 
 
-We’ve added support for role-based access control (RBAC) in the Windows Azure Management Portal to help organizations meet their access management requirements simply and precisely. The [blog post](http://go.microsoft.com/fwlink/?LinkId=511576) will give you a quick introduction of the feature and get you started. This topic describes the concepts in detail and covers additional use cases.
+We've added support for role-based access control (RBAC) in the Windows Azure Management Portal to help organizations meet their access management requirements simply and precisely. The [blog post](http://go.microsoft.com/fwlink/?LinkId=511576) will give you a quick introduction of the feature and get you started. This topic describes the concepts in detail and covers additional use cases.
 
 
 ## RBAC in Azure
@@ -37,7 +37,7 @@ Access is granted to Azure AD users and services by assigning the appropriate ro
 
 Roles can be assigned to the following types of Azure AD security principals:
 
-+ **Users**: roles can be assigned to organizational users that are in the Azure AD with which the Azure subscription is associated. Roles can also be assigned to external Microsoft account users (such as joe@outlook.com) by using the Invite action to assign the user to a role in the Azure Management Portal. Assigning a role to an external Microsoft account user causes a guest account to be created in the Azure AD for it. If this guest account is disabled in the directory, the external user won’t be allowed to access any Azure resource that the user has been granted access to.
++ **Users**: roles can be assigned to organizational users that are in the Azure AD with which the Azure subscription is associated. Roles can also be assigned to external Microsoft account users (such as joe@outlook.com) by using the Invite action to assign the user to a role in the Azure Management Portal. Assigning a role to an external Microsoft account user causes a guest account to be created in the Azure AD for it. If this guest account is disabled in the directory, the external user won't be allowed to access any Azure resource that the user has been granted access to.
 + **Groups**: roles can be assigned to Azure AD security groups. A user is automatically granted access to a resource if the user becomes a member of a group that has access. The user also automatically loses access to the resource after getting removed from the group. Managing access via groups by assigning roles to groups and adding users to those groups is the best practice, instead of assigning roles directly to users. Azure RBAC does not allow assigning roles to distribution lists.
 	The ability to assign roles to groups lets an organization extend its existing access control model from its on-premises directory to the cloud, so security groups that are already established to control access on-premises can be re-used to control access to resources in the Azure Management Portal. For more information about different options for synchronizing users and groups from an on-premises directory, see [Directory integration](http://technet.microsoft.com/zh-cn/library/jj573653.aspx). Azure AD Premium also offers a [delegated group management feature](http://msdn.microsoft.com/zh-cn/library/azure/dn641267.aspx) with which the ability to create and manage groups can be delegated to non-administrator users from Azure AD.
 + **Service principals**: service identities are represented as service principals in the directory. They authenticate with Azure AD and securely communicate with one another. Services can be granted access to Azure resources by assigning roles via the Azure module for Windows PowerShell to the Azure AD service principal representing that service.
@@ -53,7 +53,7 @@ Access does not need to be granted to the entire subscription. Roles can also be
 Subscription administrator and co-admins will continue to have full access to the Azure Management Portals and management APIs. In the RBAC model, they are assigned the Owner role at the subscription level.  
 However, the new RBAC model is supported only by the Azure Management Portal and Azure Resource Manager APIs. Users and services that are assigned RBAC roles cannot access the Azure Management Portal and the Service Management APIs. Adding a user to the Owner role of a subscription in the Azure Management Portal does not make that user a co-administrator of the subscription in the full Azure Management Portal.
 
-If you wish to grant access to a user to an Azure Resource that isn’t yet available to be managed via the Azure Management Portal, you should add them to the subscription co-administrators using the Azure Management Portal. Service Bus and StorSimple are examples of resources that cannot be managed by using RBAC today.
+If you wish to grant access to a user to an Azure Resource that isn't yet available to be managed via the Azure Management Portal, you should add them to the subscription co-administrators using the Azure Management Portal. Service Bus and StorSimple are examples of resources that cannot be managed by using RBAC today.
 
 ## Authorization for management versus data operations
 
@@ -61,7 +61,7 @@ Role-based access control is supported only for management operations of the Azu
 
 ## How to add and remove access
 
-Let’s take a look at an example of how a resource owner in an organization can manage access. In this scenario, you have multiple people working on a variety of test and production projects that are built using Azure resources. You want to follow best practices for granting access. Users should have access to all resources that they need, but no additional access. You want to re-use all the investments you have made in processes and tooling to use security groups that are mastered in an on-premises Active Directory. These sections cover how you set up access to these resources:
+Let's take a look at an example of how a resource owner in an organization can manage access. In this scenario, you have multiple people working on a variety of test and production projects that are built using Azure resources. You want to follow best practices for granting access. Users should have access to all resources that they need, but no additional access. You want to re-use all the investments you have made in processes and tooling to use security groups that are mastered in an on-premises Active Directory. These sections cover how you set up access to these resources:
 
 * [Add access](#add-access)
 * [Remove access](#remove-access)
@@ -73,12 +73,12 @@ Here is a summary of the access requirements and how they are set up in Azure.
 
 User/Group  | Access requirement  | role and scope for access
 ------------- | -------------  | ------------
-All of Jill Santos’ team  | Read all Azure resources  | Add the AD group that represents Jill Santos’ team to Reader role for the Azure subscription
-All of Jill Santos’ team  | Create and manage all resources in the Test resource group  | Add the AD group that represents Jill Santos’ team to Contributor role for the Test resource group
+All of Jill Santos' team  | Read all Azure resources  | Add the AD group that represents Jill Santos' team to Reader role for the Azure subscription
+All of Jill Santos' team  | Create and manage all resources in the Test resource group  | Add the AD group that represents Jill Santos' team to Contributor role for the Test resource group
 Brock  | Create and manage all resources in the Prod resource group  | Add Brock to Contributor role for the Prod resource group
 
 
-First, let’s add Read access for all resources of the subscription. Click **Browse > Everything > Subscriptions**.
+First, let's add Read access for all resources of the subscription. Click **Browse > Everything > Subscriptions**.
 
 ![][3]
 
@@ -90,7 +90,7 @@ Then add the same team to the Contributor role of the Test resource group. Click
 
 ![][5]
 
-To add Brock to the Contributor role of the Prod resource group, click the resource group click **Contributor > Add** and type Brock’s name.
+To add Brock to the Contributor role of the Prod resource group, click the resource group click **Contributor > Add** and type Brock's name.
 
 ![][6]
 
@@ -102,7 +102,7 @@ For more information about using Windows PowerShell to add and remove access, se
 
 ### Remove access
 
-You can also remove assignments easily. Let’s say you want to remove a user named Brad Adams from the Reader role for a resource group named TestDB. Open the resource group blade, click **Reader > Brad Adams > Remove**.
+You can also remove assignments easily. Let's say you want to remove a user named Brad Adams from the Reader role for a resource group named TestDB. Open the resource group blade, click **Reader > Brad Adams > Remove**.
 
 ![][7]
 
@@ -129,7 +129,7 @@ By default, guests cannot enumerate the contents of the directory, so they do no
 
 The ability for guests to see limited details of a user or group allows them to invite other people and see some details of people with whom they are collaborating.  
 
-Let’s step through the process to add access for an external user. We’ll add an external user to the same Reader role for TestDB resource group so that user can help debug an error. Open the resource group blade, click **Reader > Add > Invite** and type the email address of the user you want to add.
+Let's step through the process to add access for an external user. We'll add an external user to the same Reader role for TestDB resource group so that user can help debug an error. Open the resource group blade, click **Reader > Add > Invite** and type the email address of the user you want to add.
 
 ![][9]
 
@@ -145,7 +145,7 @@ For example, to retrieve the list of role assignment changes for an entire subsc
 
 `Switch-AzureMode -name AzureResourceManager`
 
-`Get-AzureSubscriptionIdLog –DetailedOutput -StartTime '06-15-15' -EndTime '06-29-15'`
+`Get-AzureSubscriptionIdLog -DetailedOutput -StartTime '06-15-15' -EndTime '06-29-15'`
 
 Role assignment changes are captured in events where the ResourceProviderName is `Microsoft.Authorization`.  The actual detail of the assignment is captured in the event detail: what principal was assigned, to what role, for what scope.  Role assignment changes are visible when browsing audit logs in the portal, but the portal does not show the event detail. To view event detail, you must use Azure PowerShell.
 
@@ -289,7 +289,7 @@ function Get-ResourceDetails($resourceId)
     $resourceDetails
 }
 ```
-Next, here’s some sample Azure PowerShell code to map a RoleDefinitionId to a role’s display name:
+Next, here's some sample Azure PowerShell code to map a RoleDefinitionId to a role's display name:
 
 ```
 
@@ -433,7 +433,7 @@ If you encounter a problem when you use role based access control feature, see [
 
 ## Built-in roles
 
-Azure role-based access control comes with the following built-in roles that can be assigned to users, groups, and services. You can’t modify the definition of built-in roles. In an upcoming release of Azure RBAC, you will be able to define custom roles by composing a set of actions from a list of available actions that can be performed on Azure resources.
+Azure role-based access control comes with the following built-in roles that can be assigned to users, groups, and services. You can't modify the definition of built-in roles. In an upcoming release of Azure RBAC, you will be able to define custom roles by composing a set of actions from a list of available actions that can be performed on Azure resources.
 
 Click the corresponding link to see the **actions** and **not actions** properties of a role definition. The **actions** property specifies the allowed actions on Azure resources. Action strings can use wildcard characters. The **not actions** property of a role definition specifies the actions that must be excluded from the allowed actions.
 
@@ -452,14 +452,14 @@ Role name  | Description
 [Owner](#owner) | Owner can manage everything, including access.
 [Reader](#reader) | Readers can view everything, but can't make changes.
 [Redis Cache Contributor](#redis-cache-contributor) | Lets you manage Redis caches, but not access to them.
-[SQL DB Contributor](#sql-db-contributor) | Lets you manage SQL databases, but not access to them. Also, you can’t manage their security-related policies or their parent SQL servers.
+[SQL DB Contributor](#sql-db-contributor) | Lets you manage SQL databases, but not access to them. Also, you can't manage their security-related policies or their parent SQL servers.
 [SQL Security Manager](#sql-security-manager) | Lets you manage the security-related policies of SQL servers and databases, but not access to them.
 [SQL Server Contributor](#sql-server-contributor) | Lets you manage SQL servers and databases, but not access to them, and not their security-related policies.
 [Scheduler Job Collections Contributor](#scheduler-job-collections-contributor) | Lets you manage Scheduler job collections, but not access to them.
 [Search Service Contributor](#search-service-contributor) | Lets you manage Search services, but not access to them.
 [Storage Account Contributor](#storage-account-contributor) | Lets you manage storage accounts, but not access to them.
 [User Access Administrator](#user-access-administrator) | Lets you manage user access to Azure resources.
-[Virtual Machine Contributor](#virtual-machine-contributor) | Lets you manage virtual machines, but not access to them, and not the virtual network or storage account they’re connected to.
+[Virtual Machine Contributor](#virtual-machine-contributor) | Lets you manage virtual machines, but not access to them, and not the virtual network or storage account they're connected to.
 [Virtual Network Contributor](#virtual-network-contributor) | Lets you manage virtual networks, but not access to them.
 [Web Plan Contributor](#web-plan-contributor) | Lets you manage the web plans for websites, but not access to them.
 [Website Contributor](#website-contributor) | Lets you manage websites (not web plans), but not access to them.
@@ -611,11 +611,11 @@ Role name  | Description
 </tr>
 <tr>
 <td>Microsoft.Authorization/*/Write</td>
-<td>Can’t Create Roles and Role Assignments </td>
+<td>Can't Create Roles and Role Assignments </td>
 </tr>
 <tr>
 <td>Microsoft.Authorization/*/Delete</td>
-<td>Can’t Delete Roles and Role Assignments</td>
+<td>Can't Delete Roles and Role Assignments</td>
 </tr>
 </table>
 
@@ -764,7 +764,7 @@ Role name  | Description
 </tr>
 <tr>
 <td>*/read</td>
-<td>Read Resources of All Types. Can’t read secrets though.</td>
+<td>Read Resources of All Types. Can't read secrets though.</td>
 </tr>
 </table>
 
@@ -844,19 +844,19 @@ Role name  | Description
 </tr>
 <tr>
 <td>Microsoft.Sql/servers/databases/auditingPolicies/*</td>
-<td>Can’t Manage SQL Database Auditing Policies</td>
+<td>Can't Manage SQL Database Auditing Policies</td>
 </tr>
 <tr>
 <td>Microsoft.Sql/servers/databases/connectionPolicies/*</td>
-<td>Can’t Manage SQL Database Connection Policies</td>
+<td>Can't Manage SQL Database Connection Policies</td>
 </tr>
 <tr>
 <td>Microsoft.Sql/servers/databases/dataMaskingPolicies/*</td>
-<td>Can’t Manage SQL Database Data Masking Policies</td>
+<td>Can't Manage SQL Database Data Masking Policies</td>
 </tr>
 <tr>
 <td>Microsoft.Sql/servers/databases/securityMetrics/*</td>
-<td>Can’t Manage SQL Database Security Metrics</td>
+<td>Can't Manage SQL Database Security Metrics</td>
 </tr>
 </table>
 
@@ -959,23 +959,23 @@ Role name  | Description
 </tr>
 <tr>
 <td>Microsoft.Sql/servers/auditingPolicies/*</td>
-<td>Can’t Manage SQL Server Auditing Policies</td>
+<td>Can't Manage SQL Server Auditing Policies</td>
 </tr>
 <tr>
 <td>Microsoft.Sql/servers/databases/auditingPolicies/*</td>
-<td>Can’t Manage SQL Database Auditing Policies</td>
+<td>Can't Manage SQL Database Auditing Policies</td>
 </tr>
 <tr>
 <td>Microsoft.Sql/servers/databases/connectionPolicies/*</td>
-<td>Can’t Manage SQL Database Connection Policies</td>
+<td>Can't Manage SQL Database Connection Policies</td>
 </tr>
 <tr>
 <td>Microsoft.Sql/servers/databases/dataMaskingPolicies/*</td>
-<td>Can’t Manage SQL Database Data Masking Policies</td>
+<td>Can't Manage SQL Database Data Masking Policies</td>
 </tr>
 <tr>
 <td>Microsoft.Sql/servers/databases/securityMetrics/*</td>
-<td>Can’t Manage SQL Database Security Metrics</td>
+<td>Can't Manage SQL Database Security Metrics</td>
 </tr>
 </table>
 

@@ -14,10 +14,13 @@
 
 # <a name="getting-started"> </a>Get started with Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
->[AZURE.TIP] If you are new to mobile development using Windows Azure, [get started with Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-xamarin-android-get-started-preview) instead of Azure Mobile Services; this gives you [additional advantages](/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services-preview).
+>[AZURE.TIP] If you are new to mobile development using Windows Azure, [get started with Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-xamarin-android-get-started-preview) instead of Azure Mobile Services; Mobile Apps gives you [additional advantages](/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services-preview).
 
 This tutorial shows you how to add a cloud-based backend service to a Xamarin Android app using Azure Mobile Services. In this tutorial, you will create both a new mobile service and a simple _To do list_ app that stores app data in the new mobile service. The mobile service that you will create uses the supported .NET languages using Visual Studio for server-side business logic and to manage the mobile service. To create a mobile service that lets you write your server-side business logic in JavaScript, see the [JavaScript backend version] of this topic.
 
@@ -29,8 +32,13 @@ A screenshot from the completed app is below:
 
 Completing this tutorial is a prerequisite for all other Mobile Services tutorials for Xamarin Android apps.
 
->[AZURE.NOTE]To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-xamarin-android-get-started).  
+<!-- deleted by customization
+>[AZURE.NOTE]To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-xamarin-android-get-started).
 >This tutorial requires [Visual Studio Professional 2013](https://www.visualstudio.com/downloads/download-visual-studio-vs). A trial version is available.
+-->
+<!-- keep by customization: begin -->
+>[AZURE.NOTE]To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see <a href="/pricing/1rmb-trial">Azure Trial</a>.<br />This tutorial requires <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" target="_blank">Visual Studio Professional 2013</a>. A trial version is available.
+<!-- keep by customization: end -->
 
 ## Create a new mobile service
 
@@ -38,11 +46,11 @@ Completing this tutorial is a prerequisite for all other Mobile Services tutoria
 
 ## Create a new Xamarin Android app
 
-Once you have created your mobile service, you can follow an easy quickstart in the Management Portal to either create a new app or modify an existing app to connect to your mobile service.
+Once you have created your mobile service, you can follow an easy quickstart in the Azure Management Portal to either create a new app or modify an existing app to connect to your mobile service.
 
 In this section you will download a new Xamarin Android app and a service project for your mobile service.
 
-1. In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+1. In the [Azure Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
 
 2. In the quickstart tab, click **Xamarin** under **Choose platform** and expand **Create a new Xamarin app**.
 
@@ -52,7 +60,7 @@ In this section you will download a new Xamarin Android app and a service projec
 
   	![][7]
 
-3. If you haven't already done so, download and install [Visual Studio Professional 2013](https://www.visualstudio.com/downloads/download-visual-studio-vs) on your local computer or virtual machine.  
+3. If you haven't already done so, download and install [Visual Studio Professional 2013](https://www.visualstudio.com/downloads/download-visual-studio-vs) on your local computer or virtual machine.
 
 4. If you haven't already done so, download and install [Xamarin Studio] or Xamarin for Visual Studio.
 
@@ -88,7 +96,6 @@ The final stage of this tutorial is to build and run your new app.
 
 	> [AZURE.NOTE]
    	> You can review the code that accesses your mobile service to query and insert data, which is found in the ToDoActivity.cs C# file.
-
 ## Next Steps
 Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services:
 
@@ -122,15 +129,32 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [10]: ./media/mobile-services-dotnet-backend-xamarin-android-get-started/mobile-quickstart-startup-android.png
 
 <!-- URLs. -->
-[Get started with offline data sync]: /documentation/articles/mobile-services-xamarin-android-get-started-offline-data
+[Get started with offline data sync]: <!-- deleted by customization mobile-services-xamarin-android-get-started-offline-data.md --><!-- keep by customization: begin --> /documentation/articles/mobile-services-xamarin-android-get-started-offline-data <!-- keep by customization: end -->
+<!-- deleted by customization
+[Get started with authentication]: mobile-services-dotnet-backend-xamarin-android-get-started-users.md
+[Get started with push notifications]: mobile-services-dotnet-backend-xamarin-android-get-started-push.md
+-->
+<!-- keep by customization: begin -->
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-push
+<!-- keep by customization: end -->
 [Visual Studio Professional 2013]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
+<!-- deleted by customization
+[JavaScript and HTML]: mobile-services-win8-javascript/
+-->
+<!-- keep by customization: begin -->
 [JavaScript and HTML]: /documentation/articles/mobile-services-win8-javascript
-[Management Portal]: https://manage.windowsazure.cn/
+<!-- keep by customization: end -->
+[Azure Management Portal]: https://manage.windowsazure.cn/
+<!-- deleted by customization
+[JavaScript backend version]: mobile-services-android-get-started.md
+[Troubleshoot a Mobile Services .NET backend]: mobile-services-dotnet-backend-how-to-troubleshoot.md
+-->
+<!-- keep by customization: begin -->
 [JavaScript backend version]: /documentation/articles/mobile-services-android-get-started
 [Troubleshoot a Mobile Services .NET backend]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
+<!-- keep by customization: end -->
 
 
 [Xamarin Studio]: http://xamarin.com/download

@@ -3,17 +3,17 @@
    description="Describes how to configure diagnostics information for debugging Azure cloude services and virtual machines (VMs) in Visual Studio."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="09/08/2015"
+	ms.date="12/19/2015"
 	wacn.date=""/>
 
 # Configuring Diagnostics for Azure Cloud Services and Virtual Machines
 
-When you need to troubleshoot an Azure cloud service or Azure virtual machine, you can configure Azure diagnostics more easily by using Visual Studio. Azure diagnostics captures system data and logging data on the virtual machines and virtual machine instances that run your cloud service and transfers that data into a storage account of your choice. See [Enable diagnostics logging for web apps in Azure Websites](/documentation/articles/web-sites-enable-diagnostic-log) for more information about diagnostics logging in Azure.
+When you need to troubleshoot an Azure cloud service or Azure virtual machine, you can configure Azure diagnostics more easily by using Visual Studio. Azure diagnostics captures system data and logging data on the virtual machines and virtual machine instances that run your cloud service and transfers that data into a storage account of your choice. See [Enable diagnostics logging for web sites in Azure Websites](/documentation/articles/web-sites-enable-diagnostic-log) for more information about diagnostics logging in Azure.
 
 This topic shows you how to enable and configure Azure diagnostics in Visual Studio, both before and after deployment, as well as in Azure virtual machines. It also shows you how to select the types of diagnostics information to collect and how to view the information after it's collected.
 
@@ -63,13 +63,13 @@ For example, suppose you select this checkbox and the diagnostics connection str
 
 If you're upgrading your project from Azure SDK 2.4 to Azure SDK 2.5 or later, you should bear in mind the following diagnostics functionality differences.
 
-- **Configuration APIs are deprecated** – Programmatic configuration of diagnostics is available in Azure SDK 2.4 or earlier versions, but is deprecated in Azure SDK 2.5 and later. If your diagnostics configuration is currently defined in code, you'll need to reconfigure those settings from scratch in the migrated project in order for diagnostics to keep working. The diagnostics configuration file for Azure SDK 2.4 is diagnostics.wadcfg, and diagnostics.wadcfgx for Azure SDK 2.5 and later.
+- **Configuration APIs are deprecated** - Programmatic configuration of diagnostics is available in Azure SDK 2.4 or earlier versions, but is deprecated in Azure SDK 2.5 and later. If your diagnostics configuration is currently defined in code, you'll need to reconfigure those settings from scratch in the migrated project in order for diagnostics to keep working. The diagnostics configuration file for Azure SDK 2.4 is diagnostics.wadcfg, and diagnostics.wadcfgx for Azure SDK 2.5 and later.
 
 - **Diagnostics for cloud service applications can only be configured at the role level, not at the instance level.**
 
-- **Every time you deploy your app, the diagnostics configuration is updated** – This can cause parity issues if you change your diagnostics configuration from Server Explorer and then redeploy your app.
+- **Every time you deploy your app, the diagnostics configuration is updated** - This can cause parity issues if you change your diagnostics configuration from Server Explorer and then redeploy your app.
 
-- **In Azure SDK 2.5 and later, crash dumps are configured in the diagnostics configuration file, not in code** – If you have crash dumps configured in code, you'll have to manually transfer the configuration from code to the configuration file, because the crash dumps aren't transferred during the migration to Azure SDK 2.6.
+- **In Azure SDK 2.5 and later, crash dumps are configured in the diagnostics configuration file, not in code** - If you have crash dumps configured in code, you'll have to manually transfer the configuration from code to the configuration file, because the crash dumps aren't transferred during the migration to Azure SDK 2.6.
 
 ## Enable diagnostics in cloud service projects before deploying them
 
@@ -77,7 +77,7 @@ In Visual Studio, you can choose to collect diagnostics data for roles that run 
 
 ### To enable diagnostics in Visual Studio before deployment
 
-1. On the shortcut menu for the role that interests you, choose **Properties**, and then choose the **Configuration** tab in the role’s **Properties** window.
+1. On the shortcut menu for the role that interests you, choose **Properties**, and then choose the **Configuration** tab in the role's **Properties** window.
 
 1. In the **Diagnostics** section, make sure that the **Enable Diagnostics** check box is selected.
 
@@ -97,7 +97,7 @@ In Visual Studio, you can choose to collect diagnostics data for roles that run 
 
   - If you choose the Manually entered credentials option, you're prompted to enter the name and key of the Azure account you want to use.
 
-1. Choose the **Configure** button to view the **Diagnostics configuration** dialog box.Each tab (except for **General** and **Log Directories**) represents a diagnostic data source that you can collect. The default tab, **General**, offers you the following diagnostics data collection options: **Errors only**, **All information**, and **Custom plan**. The default option, **Errors only**, takes the least amount of storage because it doesn’t transfer warnings or tracing messages. The All information option transfers the most information and is, therefore, the most expensive option in terms of storage.
+1. Choose the **Configure** button to view the **Diagnostics configuration** dialog box.Each tab (except for **General** and **Log Directories**) represents a diagnostic data source that you can collect. The default tab, **General**, offers you the following diagnostics data collection options: **Errors only**, **All information**, and **Custom plan**. The default option, **Errors only**, takes the least amount of storage because it doesn't transfer warnings or tracing messages. The All information option transfers the most information and is, therefore, the most expensive option in terms of storage.
 
     ![Enable Azure diagnostics and configuration](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC758144.png)
 
@@ -107,7 +107,7 @@ In Visual Studio, you can choose to collect diagnostics data for roles that run 
 
 1. On each tab of diagnostics data you want to collect, select its **Enable Transfer of <log type>** check box.For example, if you want to collect application logs, select the **Enable transfer of Application Logs** check box on the **Application Logs** tab. Also, specify any other information required by each diagnostics data type. See the section **Configure diagnostics data sources** later in this topic for configuration information on each tab.
 
-1. After you’ve enabled collection of all the diagnostics data you want, choose the **OK** button.
+1. After you've enabled collection of all the diagnostics data you want, choose the **OK** button.
 
 1. Run your Azure cloud service project in Visual Studio as usual. As you use your application, the log information that you enabled is saved to the Azure storage account you specified.
 
@@ -139,7 +139,7 @@ In Visual Studio, you can choose to collect diagnostics data for Azure virtual m
 
     ![Enable Azure diagnostics and configuration](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC758144.png)
 
-    The default tab, **General**, offers you the following diagnostics data collection options: **Errors only**, **All information**, and **Custom plan**. The default option, **Errors only**, takes the least amount of storage because it doesn’t transfer warnings or tracing messages. The **All information** option transfers the most information and is, therefore, the most expensive option in terms of storage.
+    The default tab, **General**, offers you the following diagnostics data collection options: **Errors only**, **All information**, and **Custom plan**. The default option, **Errors only**, takes the least amount of storage because it doesn't transfer warnings or tracing messages. The **All information** option transfers the most information and is, therefore, the most expensive option in terms of storage.
 
 1. For this example, select the **Custom plan** option so you can customize the data collected.
 
@@ -149,7 +149,7 @@ In Visual Studio, you can choose to collect diagnostics data for Azure virtual m
 
     For example, if you want to collect application logs, select the **Enable transfer of Application Logs** check box on the **Application Logs** tab. Also, specify any other information required by each diagnostics data type. See the section **Configure diagnostics data sources** later in this topic for configuration information on each tab.
 
-1. After you’ve enabled collection of all the diagnostics data you want, choose the **OK** button.
+1. After you've enabled collection of all the diagnostics data you want, choose the **OK** button.
 
 1. Save the updated project.
 
@@ -161,11 +161,11 @@ After you enable diagnostics data collection, you can choose exactly what data s
 
 ### Application logs
 
-**Application logs** contain diagnostics information produced by a web application. If you want to capture application logs, select the **Enable transfer of Application Logs** check box. You can increase or decrease the number of minutes when the application logs are transferred to your storage account by changing the **Transfer Period (min)** value. You can also change the amount of information captured in the log by setting the Log level value. For example, you can choose **Verbose** to get more information or choose **Critical** to capture only critical errors. If you have a specific diagnostics provider that emits application logs, you can capture them by adding the provider’s GUID to the **Provider GUID** box.
+**Application logs** contain diagnostics information produced by a web site. If you want to capture application logs, select the **Enable transfer of Application Logs** check box. You can increase or decrease the number of minutes when the application logs are transferred to your storage account by changing the **Transfer Period (min)** value. You can also change the amount of information captured in the log by setting the Log level value. For example, you can choose **Verbose** to get more information or choose **Critical** to capture only critical errors. If you have a specific diagnostics provider that emits application logs, you can capture them by adding the provider's GUID to the **Provider GUID** box.
 
   ![Application Logs](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC758145.png)
 
-  See [Enable diagnostics logging for web apps in Azure Websites](/documentation/articles/web-sites-enable-diagnostic-log) for more information about application logs.
+  See [Enable diagnostics logging for web sites in Azure Websites](/documentation/articles/web-sites-enable-diagnostic-log) for more information about application logs.
 
 ### Windows event logs
 
@@ -189,7 +189,7 @@ Performance counter information can help you locate system bottlenecks and fine-
 
   ![Performance Counters](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC758147.png)
 
-To track a performance counter that isn’t listed, enter it by using the suggested syntax and then choose the **Add** button. The operating system on the virtual machine determines which performance counters you can track. For more information about syntax, see [Specifying a Counter Path](https://msdn.microsoft.com/zh-cn/library/windows/desktop/aa373193.aspx).
+To track a performance counter that isn't listed, enter it by using the suggested syntax and then choose the **Add** button. The operating system on the virtual machine determines which performance counters you can track. For more information about syntax, see [Specifying a Counter Path](https://msdn.microsoft.com/zh-cn/library/windows/desktop/aa373193.aspx).
 
 ### Infrastructure logs
 
@@ -231,7 +231,7 @@ The processes currently being tracked are listed. Select the check boxes for the
 
 ## View the diagnostics data
 
-After you’ve collected the diagnostics data for a cloud service or a virtual machine, you can view it.
+After you've collected the diagnostics data for a cloud service or a virtual machine, you can view it.
 
 ### To view cloud service diagnostics data
 
@@ -257,17 +257,17 @@ After you’ve collected the diagnostics data for a cloud service or a virtual m
     |---|---|---|
     |Application Logs|Logs that your code generates by calling methods of the System.Diagnostics.Trace class.|WADLogsTable|
     |Event Logs|This data is from the Windows event logs on the virtual machines. Windows stores information in these logs, but applications and services also use them to report errors or log information.|WADWindowsEventLogsTable|
-    |Performance Counters|You can collect data on any performance counter that’s available on the virtual machine. The operating system provides performance counters, which include many statistics such as memory usage and processor time.|WADPerformanceCountersTable|
+    |Performance Counters|You can collect data on any performance counter that's available on the virtual machine. The operating system provides performance counters, which include many statistics such as memory usage and processor time.|WADPerformanceCountersTable|
     |Infrastructure Logs|These logs are generated from the diagnostics infrastructure itself.|WADDiagnosticInfrastructureLogsTable|
     |IIS Logs|These logs record web requests. If your cloud service gets a significant amount of traffic, these logs can be quite lengthy, so you should collect and store this data only when you need it.|You can find failed-request logs in the blob container under wad-iis-failedreqlogs under a path for that deployment, role, and instance. You can find complete logs under wad-iis-logfiles. Entries for each file are made in the WADDirectories table.|
-    |Crash dumps|This information provides binary images of your cloud service’s process (typically a worker role).|wad-crush-dumps blob container|
+    |Crash dumps|This information provides binary images of your cloud service's process (typically a worker role).|wad-crush-dumps blob container|
     |Custom log files|Logs of data that you predefined.|You can specify in code the location of custom log files in your storage account. For example, you can specify a custom blob container.|
 
 1. If data of any type is truncated, you can try increasing the buffer for that data type or shortening the interval between transfers of data from the virtual machine to your storage account.
 
 1. (optional) Purge data from the storage account occasionally to reduce overall storage costs.
 
-1. When you do a full deployment, the diagnostics.cscfg file (.wadcfgx for Azure SDK 2.5) is updated in Azure, and your cloud service picks up any changes to your diagnostics configuration. If you, instead, update an existing deployment, the .cscfg file isn’t updated in Azure. You can still change diagnostics settings, though, by following the steps in the next section. For more information about performing a full deployment and updating an existing deployment, see [Publish Azure Application Wizard](/documentation/articles/vs-azure-tools-publish-azure-application-wizard).
+1. When you do a full deployment, the diagnostics.cscfg file (.wadcfgx for Azure SDK 2.5) is updated in Azure, and your cloud service picks up any changes to your diagnostics configuration. If you, instead, update an existing deployment, the .cscfg file isn't updated in Azure. You can still change diagnostics settings, though, by following the steps in the next section. For more information about performing a full deployment and updating an existing deployment, see [Publish Azure Application Wizard](/documentation/articles/vs-azure-tools-publish-azure-application-wizard).
 
 ### To view virtual machine diagnostics data
 
@@ -307,7 +307,7 @@ If you experience problems with your cloud service projects, such as a role that
 
 **What is the buffer size, and how large should it be?**
 
-On each virtual machine instance, quotas limit how much diagnostic data can be stored on the local file system. In addition, you specify a buffer size for each type of diagnostic data that's available. This buffer size acts like an individual quota for that type of data. By checking the bottom of the dialog box, you can determine the overall quota and the amount of memory that remains. If you specify larger buffers or more types of data, you'll approach the overall quota. You can change the overall quota by modifying the diagnostics.wadcfg/.wadcfgx configuration file. The diagnostics data is stored on the same filesystem as your application’s data, so if your application uses a lot of disk space, you shouldn’t increase the overall diagnostics quota.
+On each virtual machine instance, quotas limit how much diagnostic data can be stored on the local file system. In addition, you specify a buffer size for each type of diagnostic data that's available. This buffer size acts like an individual quota for that type of data. By checking the bottom of the dialog box, you can determine the overall quota and the amount of memory that remains. If you specify larger buffers or more types of data, you'll approach the overall quota. You can change the overall quota by modifying the diagnostics.wadcfg/.wadcfgx configuration file. The diagnostics data is stored on the same filesystem as your application's data, so if your application uses a lot of disk space, you shouldn't increase the overall diagnostics quota.
 
 **What is the transfer period, and how long should it be?**
 
@@ -325,15 +325,15 @@ The time stamps are in the local time zone of the data center that hosts your cl
 
 **How do I manage costs when collecting diagnostic information?**
 
-The default settings (**Log level** set to **Error** and **Transfer period** set to **1 minute**) are designed to minimize cost. Your compute costs will increase if you collect more diagnostic data or decrease the transfer period. Don’t collect more data than you need, and don’t forget to disable data collection when you no longer need it. You can always enable it again, even at runtime, as shown in the previous section.
+The default settings (**Log level** set to **Error** and **Transfer period** set to **1 minute**) are designed to minimize cost. Your compute costs will increase if you collect more diagnostic data or decrease the transfer period. Don't collect more data than you need, and don't forget to disable data collection when you no longer need it. You can always enable it again, even at runtime, as shown in the previous section.
 
 **How do I collect failed-request logs from IIS?**
 
-By default, IIS doesn’t collect failed-request logs. You can configure IIS to collect them if you edit the web.config file for your web role.
+By default, IIS doesn't collect failed-request logs. You can configure IIS to collect them if you edit the web.config file for your web role.
 
-**I’m not getting trace information from RoleEntryPoint methods like OnStart. What’s wrong?**
+**I'm not getting trace information from RoleEntryPoint methods like OnStart. What's wrong?**
 
-The methods of RoleEntryPoint are called in the context of WAIISHost.exe, not IIS. Therefore, the configuration information in web.config that normally enables tracing doesn’t apply. To resolve this issue, add a .config file to your web role project, and name the file to match the output assembly that contains the RoleEntryPoint code. In the default web role project, the name of the .config file would be WAIISHost.exe.config. Then add the following lines to this file:
+The methods of RoleEntryPoint are called in the context of WAIISHost.exe, not IIS. Therefore, the configuration information in web.config that normally enables tracing doesn't apply. To resolve this issue, add a .config file to your web role project, and name the file to match the output assembly that contains the RoleEntryPoint code. In the default web role project, the name of the .config file would be WAIISHost.exe.config. Then add the following lines to this file:
 
 ```
 <system.diagnostics>
@@ -351,4 +351,4 @@ Now, in the **Properties** window, set the **Copy to Output Directory** property
 
 ## Next steps
 
-To learn more about diagnostics logging in Azure, see [Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics) and [Enable diagnostics logging for web apps in Azure Websites](/documentation/articles/web-sites-enable-diagnostic-log).
+To learn more about diagnostics logging in Azure, see [Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics) and [Enable diagnostics logging for web sites in Azure Websites](/documentation/articles/web-sites-enable-diagnostic-log).

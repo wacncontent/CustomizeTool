@@ -126,7 +126,7 @@ First, log on to the [Azure Management Portal](https://manage.windowsazure.cn/) 
 	- Click **Add Gateway Subnet**.
 11.	Click the Complete icon. Wait until the virtual network is created before continuing.
 
-Next, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell) to install Azure PowerShell on your local computer.
+Next, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) to install Azure PowerShell on your local computer.
 
 Next, create a new cloud service for the TestVNET virtual network. You must pick a unique name. For example, you could name it TestVNET-*UniqueSequence*, in which *UniqueSequence* is an abbreviation of your organization. For example, if your organization is named Tailspin Toys, you could name the cloud service TestVNET-Tailspin.
 

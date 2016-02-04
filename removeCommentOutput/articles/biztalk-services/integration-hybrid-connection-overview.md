@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Hybrid Connections overview | Microsoft Azure"
+	pageTitle="Hybrid Connections overview | Windows Azure"
 	description="Learn about Hybrid Connections, including security, TCP ports, and supported configurations. MABS, WABS."
 	services="biztalk-services"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="biztalk-services"
-	ms.workload="integration"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
 	ms.date="09/08/2015"
-	ms.author="mandia"/>
+	wacn.date=""/>
 
 
 # Hybrid Connections overview
@@ -23,22 +19,22 @@ This article introduces Hybrid Connections, lists the supported configurations, 
 
 ## What is a hybrid connection
 
-Hybrid Connections are a feature of Azure BizTalk Services. Hybrid Connections provide an easy and convenient way to connect the Web Apps feature in Azure App Service (formerly Websites) and the Mobile Apps feature in Azure App Service (formerly Mobile Services) to on-premises resources behind your firewall.
+Hybrid Connections are a feature of Azure BizTalk Services. Hybrid Connections provide an easy and convenient way to connect the web sites feature in Azure Websites (formerly Websites) and the Mobile Apps feature in Azure Websites (formerly Mobile Services) to on-premises resources behind your firewall.
 
 ![Hybrid Connections][HCImage]
 
 Hybrid Connections benefits include:
 
-- Web Apps and Mobile Apps can access existing on-premises data and services securely.
-- Multiple Web Apps or Mobile Apps can share a Hybrid Connection to access an on-premises resource.
+- web sites and Mobile Apps can access existing on-premises data and services securely.
+- Multiple web sites or Mobile Apps can share a Hybrid Connection to access an on-premises resource.
 - Minimal TCP ports are required to access your network.
 - Applications using Hybrid Connections access only the specific on-premises resource that is published through the Hybrid Connection.
 - Can connect to any on-premises resource that uses a static TCP port, such as SQL Server, MySQL, HTTP Web APIs, and most custom Web Services.
 
 	> [AZURE.NOTE] TCP-based services that use dynamic ports (such as FTP Passive Mode or Extended Passive Mode) are currently not supported.
 
-- Can be used with all frameworks supported by Web Apps (.NET, PHP, Java, Python, Node.js) and Mobile Apps (Node.js, .NET).
-- Web Apps and Mobile Apps can access on-premises resources in exactly the same way as if the Web or Mobile App is located on your local network. For example, the same connection string used on-premises can also be used on Azure.
+- Can be used with all frameworks supported by web sites (.NET, PHP, Java, Python, Node.js) and Mobile Apps (Node.js, .NET).
+- web sites and Mobile Apps can access on-premises resources in exactly the same way as if the Web or Mobile App is located on your local network. For example, the same connection string used on-premises can also be used on Azure.
 
 
 Hybrid Connections also provide enterprise administrators with control and visibility into the corporate resources accessed by hybrid applications, including:
@@ -72,7 +68,7 @@ Hybrid Connections use Shared Access Signature (SAS) authorization to secure the
 
 Hybrid Connections provide for seamless and secure distribution of the keys to the applications and the on-premises Hybrid Connection Manager.
 
-See [Create and Manage Hybrid Connections](integration-hybrid-connection-create-manage.md).
+See [Create and Manage Hybrid Connections](/documentation/articles/integration-hybrid-connection-create-manage).
 
 *Application authorization is separate from the Hybrid Connection*. Any appropriate authorization method can be used. The authorization method depends on the end-to-end authorization methods supported across the Azure cloud and the on-premises components. For example, your Azure application accesses an on-premises SQL Server. In this scenario, SQL Authorization may be the authorization method that is supported end-to-end.
 
@@ -91,18 +87,18 @@ Port | Why you need it
 
 ## Next steps
 
-[Create and manage Hybrid Connections](integration-hybrid-connection-create-manage.md)<br/>
-[Connect an Azure website to an on-premises resource](../web-sites-hybrid-connection-get-started.md)<br/>
-[Connect to on-premises SQL Server from an Azure web app](../web-sites-hybrid-connection-connect-on-premises-sql-server.md)<br/>
-[Azure Mobile Services and Hybrid Connections](../mobile-services-dotnet-backend-hybrid-connections-get-started.md)
+[Create and manage Hybrid Connections](/documentation/articles/integration-hybrid-connection-create-manage)<br/>
+[Connect an Azure website to an on-premises resource](/documentation/articles/web-sites-hybrid-connection-get-started)<br/>
+[Connect to on-premises SQL Server from an Azure web site](/documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server)<br/>
+[Azure Mobile Services and Hybrid Connections](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started)
 
 
 ## See Also
 
-[REST API for Managing BizTalk Services on Microsoft Azure](http://msdn.microsoft.com/library/azure/dn232347.aspx)
-[BizTalk Services: Editions Chart](biztalk-editions-feature-chart.md)<br/>
-[Create a BizTalk Service using Azure portal](biztalk-provision-services.md)<br/>
-[BizTalk Services: Dashboard, Monitor and Scale tabs](biztalk-dashboard-monitor-scale-tabs.md)<br/>
+[REST API for Managing BizTalk Services on Windows Azure](http://msdn.microsoft.com/zh-cn/library/azure/dn232347.aspx)
+[BizTalk Services: Editions Chart](/documentation/articles/biztalk-editions-feature-chart)<br/>
+[Create a BizTalk Service using Azure Management Portal](/documentation/articles/biztalk-provision-services)<br/>
+[BizTalk Services: Dashboard, Monitor and Scale tabs](/documentation/articles/biztalk-dashboard-monitor-scale-tabs)<br/>
 
 [HCImage]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionImage.png
 [HybridConnectionTab]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionTab.png

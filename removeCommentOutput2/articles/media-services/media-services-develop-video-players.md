@@ -29,9 +29,9 @@ Windows Azure Media Services allows for content to be served up with DASH, Smoot
 For more information:
 
 - [Azure Media Player](/documentation/services/media-services/)
-- [Azure Media Player Documentation](http://amp.azure.net/libs/amp/latest/docs/) 
+- [Azure Media Player Documentation](http://amp.chinacloudapi.cn/libs/amp/latest/docs/) 
 - [Azure Media Player Getting Started Blog](http://azure.microsoft.com/blog/2015/04/15/announcing-azure-media-player)
-- [Sign up to stay up to date with the latest from Azure Media Player](http://amp.azure.net/signup/)
+- [Sign up to stay up to date with the latest from Azure Media Player](http://amp.chinacloudapi.cn/signup/) 
 - [Add new feature requests, ideas, feedback](http://aka.ms/ampuservoice ) 
 
 
@@ -44,7 +44,7 @@ You can also use any of the following SDKs:
 - [Microsoft Media Platform: Player Framework](http://playerframework.codeplex.com/) 
 - [HTML5 Player Framework Documentation](http://playerframework.codeplex.com/wikipage?title=HTML5%20Player&referringTitle=Documentation) 
 - [Microsoft Smooth Streaming Plugin for OSMF](https://www.microsoft.com/download/details.aspx?id=36057) 
-- [Licensing Microsoft® Smooth Streaming Client Porting Kit](http://aka.ms/sspk) 
+- [Licensing MicrosoftÂŽ Smooth Streaming Client Porting Kit](/documentation/articles/media-services-sspk)
 - [XBOX Video Application Development](http://xbox.create.msdn.com/) 
  
 
@@ -52,15 +52,15 @@ You can also use any of the following SDKs:
 
 Azure Media Services provides support for ad insertion through the Windows Media Platform: Player Frameworks. Player frameworks with ad support are available for Windows 8, Silverlight, Windows Phone 8, and iOS devices. Each player framework contains sample code that shows you how to implement a player application. There are three different kinds of ads you can insert into your media:
 
-Linear – full frame ads that pause the main video
+Linear - full frame ads that pause the main video
 
-Nonlinear – overlay ads that are displayed as the main video is playing, usually a logo or other static image placed within the player
+Nonlinear - overlay ads that are displayed as the main video is playing, usually a logo or other static image placed within the player
 
-Companion – ads that are displayed outside of the player
+Companion - ads that are displayed outside of the player
 
-Ads can be placed at any point in the main video’s time line. You must tell the player when to play the ad and which ads to play. This is done using a set of standard XML-based files: Video Ad Service Template (VAST), Digital Video Multiple Ad Playlist (VMAP), Media Abstract Sequencing Template (MAST), and Digital Video Player Ad Interface Definition (VPAID). VAST files specify what ads to display. VMAP files specify when to play various ads and contain VAST XML. MAST files are another way to sequence ads which also can contain VAST XML. VPAID files define an interface between the video player and the ad or ad server. For more information, see [Inserting Ads](https://msdn.microsoft.com/zh-cn/library/dn387398.aspx).
+Ads can be placed at any point in the main video's time line. You must tell the player when to play the ad and which ads to play. This is done using a set of standard XML-based files: Video Ad Service Template (VAST), Digital Video Multiple Ad Playlist (VMAP), Media Abstract Sequencing Template (MAST), and Digital Video Player Ad Interface Definition (VPAID). VAST files specify what ads to display. VMAP files specify when to play various ads and contain VAST XML. MAST files are another way to sequence ads which also can contain VAST XML. VPAID files define an interface between the video player and the ad or ad server. For more information, see [Inserting Ads](https://msdn.microsoft.com/zh-cn/library/dn387398.aspx).
 
-For information about closed captioning and ads support in Live streaming videos, see [Supported Closed Captioning and Ad Insertion Standards](https://msdn.microsoft.com/zh-cn/library/c49e0b4d-357e-4cca-95e5-2288924d1ff3#caption_ad).
+For information about closed captioning and ads support in Live streaming videos, see [Supported Closed Captioning and Ad Insertion Standards](/documentation/articles/media-services-manage-channels-overview#closed-captioning-and-ad-insertion).
 
 
 [AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

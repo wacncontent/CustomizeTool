@@ -10,9 +10,12 @@ tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines"
 	ms.date="06/22/2015"
-	wacn.date=""/>
+	wacn.date="" />
 
 #Miscellaneous considerations for Oracle virtual machine images
+
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 This article covers considerations for Oracle virtual machines in Azure, which are based on Oracle software images provided by Microsoft, with Windows Server as the operating system.  
@@ -85,15 +88,15 @@ With Oracle Data Guard, high availability can be achieved with a primary databas
 
 For related information, see KB article **860340.1** at <http://support.oracle.com>.
 
--  **Dynamic clustering and load balancing limitations.** Suppose you want to use a dynamic cluster in WebLogic Server and expose it through a single, public load-balanced endpoint in Azure. This can be done as long as you use a fixed port number for each of the managed servers (not dynamically assigned from a range) and do not start more managed servers than there are machines the administrator is tracking (that is, no more than one managed server per virtual machine). If your configuration results in more WebLogic servers being started than there are virtual machines (that is, where multiple WebLogic Server instances will share the same virtual machine), then it will not be possible for more than one of those instances of WebLogic Server servers to bind to a given port number – the others on that virtual machine will fail.
+-  **Dynamic clustering and load balancing limitations.** Suppose you want to use a dynamic cluster in WebLogic Server and expose it through a single, public load-balanced endpoint in Azure. This can be done as long as you use a fixed port number for each of the managed servers (not dynamically assigned from a range) and do not start more managed servers than there are machines the administrator is tracking (that is, no more than one managed server per virtual machine). If your configuration results in more WebLogic servers being started than there are virtual machines (that is, where multiple WebLogic Server instances will share the same virtual machine), then it will not be possible for more than one of those instances of WebLogic Server servers to bind to a given port number - the others on that virtual machine will fail.
 
 	On the other hand, if you configure the admin server to automatically assign unique port numbers to its managed servers, then load balancing is not possible because Azure does not support mapping from a single public port to multiple private ports, as would be required for this configuration.
 
--  **Multiple instances of Weblogic Server on a virtual machine.** Depending on your deployment’s requirements, you might consider the option of running multiple instances of WebLogic Server on the same virtual machine, if the virtual machine is large enough. For example, on a medium size virtual machine, which contains two cores, you could choose to run two instances of WebLogic Server. Note however that we still recommend that you avoid introducing single points of failure into your architecture, which would be the case if you used just one virtual machine that is running multiple instances of WebLogic Server. Using at least two virtual machines could be a better approach, and each of those virtual machines could then run multiple instances of WebLogic Server. Each of these instances of WebLogic Server could still be part of the same cluster. Note, however, it is currently not possible to use Azure to load-balance endpoints that are exposed by such WebLogic Server deployments within the same virtual machine, because Azure load balancer requires the load-balanced servers to be distributed among unique virtual machines.
+-  **Multiple instances of Weblogic Server on a virtual machine.** Depending on your deployment's requirements, you might consider the option of running multiple instances of WebLogic Server on the same virtual machine, if the virtual machine is large enough. For example, on a medium size virtual machine, which contains two cores, you could choose to run two instances of WebLogic Server. Note however that we still recommend that you avoid introducing single points of failure into your architecture, which would be the case if you used just one virtual machine that is running multiple instances of WebLogic Server. Using at least two virtual machines could be a better approach, and each of those virtual machines could then run multiple instances of WebLogic Server. Each of these instances of WebLogic Server could still be part of the same cluster. Note, however, it is currently not possible to use Azure to load-balance endpoints that are exposed by such WebLogic Server deployments within the same virtual machine, because Azure load balancer requires the load-balanced servers to be distributed among unique virtual machines.
 
 ##Oracle JDK virtual machine images
 
--  **JDK 6 and 7 latest updates.** While we recommend to use the latest public, supported version of Java (currently Java 8), Azure also makes JDK 6 and 7 images available. This is intended for legacy applications that are not yet ready to be upgraded to JDK 8. While updates to previous JDK images might no longer be available to the general public, given the Microsoft partnership with Oracle, the JDK 6 and 7 images provided by Azure are intended to contain a more recent non-public update that is normally offered by Oracle to only a select group of Oracle’s supported customers. New versions of the JDK images will be made available over time with updated releases of JDK 6 and 7.
+-  **JDK 6 and 7 latest updates.** While we recommend to use the latest public, supported version of Java (currently Java 8), Azure also makes JDK 6 and 7 images available. This is intended for legacy applications that are not yet ready to be upgraded to JDK 8. While updates to previous JDK images might no longer be available to the general public, given the Microsoft partnership with Oracle, the JDK 6 and 7 images provided by Azure are intended to contain a more recent non-public update that is normally offered by Oracle to only a select group of Oracle's supported customers. New versions of the JDK images will be made available over time with updated releases of JDK 6 and 7.
 
 	Note that the JDK available in this JDK 6 and 7 images, and the virtual machines and images derived from them, can only be used within Azure.
 

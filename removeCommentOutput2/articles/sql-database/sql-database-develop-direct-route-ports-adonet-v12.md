@@ -110,4 +110,3 @@ The client connection differences between SQL Database V11 and V12 are highlight
 
 - [Connecting to SQL Database: Links, Best Practices and Design Guidelines](/documentation/articles/sql-database-connect-central-recommendations)
 
-

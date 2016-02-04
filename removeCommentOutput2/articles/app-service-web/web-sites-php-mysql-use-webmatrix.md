@@ -36,8 +36,6 @@ By following this tutorial, you will build a simple Tasklist web application in 
 ![Azure PHP Web Site][running-app]
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
-<!-- deleted by customization
- -->
 ##Prerequisites
 
 1. [Download][tasklist-mysql-download] the Tasklist application files. The Tasklist application is a simple PHP application that allows you to add, mark complete, and delete items from a task list. Task list items are stored in a MySQL database. The application consists of these files:
@@ -59,7 +57,6 @@ By following this tutorial, you will build a simple Tasklist web application in 
 ## Create a web app and MySQL database
 
 Follow these steps to create a web app and a MySQL database:
-<!-- keep by customization: begin -->
 1. Login to the [Management Portal][Azure-portal].
 1. Click the **+ New** icon on the bottom left of the portal.
 
@@ -96,7 +93,7 @@ Follow these steps to create a web app and a MySQL database:
 8. Scroll down to the **connection strings** section. The values for `Database`, `Data Source`, `User Id`, and `Password` are (respectively) the database name, server name, user name, and user password. Make note of the database connection information as it will be needed later.
 
 	![Connection string][ConnectionString]
-<!-- keep by customization: end -->
+	
 ## Create your application in WebMatrix
 
 In the next few steps you will develop the Tasklist application by adding the files you downloaded earlier and making a few modifications. You could, however, add your own existing files or create new files.
@@ -199,8 +196,6 @@ You can easily modify your application by editing the local copy of the site you
 ## Next Steps
 
 * [WebMatrix web site](http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200106398)
-<!-- deleted by customization
- -->
 [install-mysql]: http://dev.mysql.com/doc/refman/5.6/en/installing.html
 [running-app]: ./media/web-sites-php-mysql-use-webmatrix/tasklist_app_windows.png
 [tasklist-mysql-download]: http://go.microsoft.com/fwlink/?LinkId=252506

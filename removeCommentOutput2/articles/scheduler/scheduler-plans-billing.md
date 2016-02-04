@@ -8,14 +8,14 @@
  editor=""/>
 <tags
 	ms.service="scheduler"
-	ms.date="08/04/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
  
 # Plans and Billing in Azure Scheduler
 
 ## Job Collection Plans
 
-Job collections are the billable entity in Azure Scheduler. Job collections contain a number of jobs and come in three plans – Free, Standard, and Premium – that are described below.
+Job collections are the billable entity in Azure Scheduler. Job collections contain a number of jobs and come in three plans - Free, Standard, and Premium - that are described below.
 
 |**Job Collection Plan**|**Max # of Jobs per Job Collection**|**Max Recurrence**|**Max Job Collections per Subscription**|**Limits**|
 |:---|:---|:---|:---|:---|
@@ -40,13 +40,13 @@ If you have one standard job collection and one premium job collection, you are 
 
 ## Standard Billable Units
 
-A standard billable unit can include up to 10 standard job collections. Since a standard job collection can have up to 50 jobs per job collection, one standard billing unit allows a subscription to have up to 500 jobs – up to almost 22 million job executions per month.
+A standard billable unit can include up to 10 standard job collections. Since a standard job collection can have up to 50 jobs per job collection, one standard billing unit allows a subscription to have up to 500 jobs - up to almost 22 million job executions per month.
 
 If you have between 1 and 10 standard job collections, you'll be billed for 1 standard billing unit. If you have between 11 and 20 standard job collections, you'll be billed for 2 standard billing units. If you have between 21 and 30 standard job collections, you'll be billed for 3 standard billing units, and so on.
 
 ## Premium Billable Units
 
-A premium billable unit can include up to 10,000 premium job collections. Since a premium job collection can have up to 50 jobs per job collection, one premium billing unit allows a subscription to have up to 500,000 jobs – up to almost 22 billion job executions per month.
+A premium billable unit can include up to 10,000 premium job collections. Since a premium job collection can have up to 50 jobs per job collection, one premium billing unit allows a subscription to have up to 500,000 jobs - up to almost 22 billion job executions per month.
 
 If you have between 1 and 10,000 premium job collections, you'll be billed for 1 premium billing unit. If you have between 10,001 and 20,000 premium job collections, you'll be billed for 2 premium billing units, and so on.
 
@@ -56,7 +56,7 @@ Thus, premium job collections have the same functionality as the standard job co
 
 Job collections are always active unless your entire subscription has gone into some temporary disabled state due to billing issues. The only way to ensure that a job collection is not billed is to either set it to the _Free_ plan or to delete the job collection.
 
-Although you may disable all jobs within a job collection in a single operation, it does not change the billing status of the job collection – the job collection will _still_ be billed. Similarly, empty job collections are considered active and will be billed. 
+Although you may disable all jobs within a job collection in a single operation, it does not change the billing status of the job collection - the job collection will _still_ be billed. Similarly, empty job collections are considered active and will be billed. 
 
 ## Pricing
 
@@ -64,21 +64,22 @@ For pricing details, please see [Scheduler Pricing](/home/features/scheduler/#pr
 
 ## See Also
  
+
  [What is Scheduler?](/documentation/articles/scheduler-intro)
- 
- [Scheduler Concepts, Terminology, and Entity Hierarchy](/documentation/articles/scheduler-concepts-terms)
+ [Azure Scheduler Concepts, Terminology, and Entity Hierarchy](/documentation/articles/scheduler-concepts-terms)
 
  [Get Started Using Scheduler in the Management Portal](/documentation/articles/scheduler-get-started-portal)
 
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
+ [Azure Scheduler REST API Reference](https://msdn.microsoft.com/zh-CN/library/dn528946)   
 
- [Scheduler REST API Reference](https://msdn.microsoft.com/zh-cn/library/dn528946)   
-
- [Scheduler PowerShell Cmdlets Reference](/documentation/articles/scheduler-powershell-reference)
+ [Azure Scheduler PowerShell Cmdlets Reference](/documentation/articles/scheduler-powershell-reference)
  
- [Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
+ [Azure Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
 
- [Scheduler Limits, Defaults, and Error Codes](/documentation/articles/scheduler-limits-defaults-errors)
+ [Azure Scheduler Limits, Defaults, and Error Codes](/documentation/articles/scheduler-limits-defaults-errors)
 
- [Scheduler Outbound Authentication](/documentation/articles/scheduler-outbound-authentication)
+ [Azure Scheduler Outbound Authentication](/documentation/articles/scheduler-outbound-authentication)
+ 
+  
+
   

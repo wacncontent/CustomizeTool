@@ -4,20 +4,16 @@
    services="service-fabric"
    documentationCenter=".net"
    authors="BharatNarasimman"
-   manager="vipulm"
+   manager="timlt"
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="required"
-   ms.date="08/27/2015"
-   ms.author="bharatn@microsoft.com"/>
+	ms.service="service-fabric"
+	ms.date="08/27/2015"
+	wacn.date=""/>
 
 # WCF based communication stack for Reliable Services
-Reliable services framework allows Service authors to decide the communication stack they want to use for their service. They can plugin the communication stack of their choice via the `ICommunicationListener` returned from the [`CreateCommunicationListener`](../service-fabric-reliable-service-communication.md) method. The framework provides a WCF based implementation of the communication stack, for service authors who want to use WCF based communication.
+Reliable services framework allows Service authors to decide the communication stack they want to use for their service. They can plugin the communication stack of their choice via the `ICommunicationListener` returned from the [`CreateCommunicationListener`](/documentation/articles/service-fabric-reliable-service-communication) method. The framework provides a WCF based implementation of the communication stack, for service authors who want to use WCF based communication.
 
 ## WCF Communication Listener
 The WCF specific implementation of `ICommunicationListener` is provided by the `WcfCommunicationListener` class.
@@ -50,7 +46,7 @@ protected override ICommunicationListener CreateCommunicationListener()
 ```
 
 ## Writing clients for WCF communication stack
-For writing clients to communicate with services using WCF, the framework provides `WcfClientCommunicationFactory`, which is the WCF specific implementation of [`ClientCommunicationFactoryBase`](../service-fabric-reliable-service-communication.md).
+For writing clients to communicate with services using WCF, the framework provides `WcfClientCommunicationFactory`, which is the WCF specific implementation of [`ClientCommunicationFactoryBase`](/documentation/articles/service-fabric-reliable-service-communication).
 
 ```csharp
 
@@ -111,5 +107,4 @@ var result = calculatorServicePartitionClient.InvokeWithRetryAsync(
     client => client.Channel.AddAsync(2, 3)).Result;
 
 
-```
- 
+```

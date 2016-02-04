@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/06/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Role based access control troubleshooting
@@ -23,13 +23,13 @@ This document will let you know what to expect when using some of the roles in t
 * Contributor
 * Reader
 
-Owners and contributors will have full access to the management experience, the difference being that a contributor can’t give access to other users or groups. Things get a little more interesting with the reader role, so that’s where we’ll spend some time. [See this article](/documentation/articles/role-based-access-control-configure) for details on how exactly to grant access.
+Owners and contributors will have full access to the management experience, the difference being that a contributor can't give access to other users or groups. Things get a little more interesting with the reader role, so that's where we'll spend some time. [See this article](/documentation/articles/role-based-access-control-configure) for details on how exactly to grant access.
 
 ## Azure Websites workloads
 
 ### Having read-access only
 
-If you grant a user, or yourself only have, read access to a single web app, then there may be some features that are disabled that you might not expect. The following management capabilities require **write** access to a web app (either Contributor or Owner), and won’t be available in any read only scenario.
+If you grant a user, or yourself only have, read access to a single web site, then there may be some features that are disabled that you might not expect. The following management capabilities require **write** access to a web site (either Contributor or Owner), and won't be available in any read only scenario.
 
 1. Commands (e.g. start, stop, etc.)
 2. Changing settings like general configuration, scale settings, backup settings, and monitoring settings.
@@ -42,18 +42,18 @@ If you grant a user, or yourself only have, read access to a single web app, the
 9. Web tests
 10. Virtual network (only visible to a reader if a virtual network has previously been configured by a user with write access).
 
-If you can't access any of these tiles, you'll need to have Contributor access to the web app.
+If you can't access any of these tiles, you'll need to have Contributor access to the web site.
 
 ### Dealing with related resources
 
-Web apps are complicated by the presence of a few different resources that interplay. Here is a typical resource group with a couple websites:
+web sites are complicated by the presence of a few different resources that interplay. Here is a typical resource group with a couple websites:
 
-![Web app resource group](./media/role-based-access-control-troubleshooting/website-resource-model.png)
+![web site resource group](./media/role-based-access-control-troubleshooting/website-resource-model.png)
 
 As a result, if you grant someone access to just the website, much functionality on the website blade will be completely disabled.
 
 1. These items require access to the **App Service plan** that corresponds to your website:  
-    * Viewing the web app’s pricing tier (e.g. Free or Standard).
+    * Viewing the web site's pricing tier (e.g. Free or Standard).
     * Scale configuration (i.e. # of instances, virtual machine size, autoscale settings).
     * Quotas (e.g. Storage, bandwidth, CPU).
 2. These items require access to the whole **Resource group** that contains your website:  
@@ -65,7 +65,7 @@ As a result, if you grant someone access to just the website, much functionality
 
 ## Virtual machine workloads
 
-Much like with web apps, some features on the virtual machine blade require write access to the virtual machine, or to other resources in the resource group.
+Much like with web sites, some features on the virtual machine blade require write access to the virtual machine, or to other resources in the resource group.
 
 Virtual machines have these related resources:
 * Domain names

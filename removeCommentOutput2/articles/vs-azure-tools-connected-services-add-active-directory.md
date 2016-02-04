@@ -3,24 +3,20 @@
    description="Add an Azure Active Directory by using the Visual Studio Add Connected Services dialog box"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="patshea123"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
-<tags 
-   ms.service="visual-studio-online""
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="visual-studio-online"
-   ms.date="08/12/2015"
-   ms.author="patshea" />
+   editor="" />
+<tags
+	ms.service="visual-studio-online"
+	ms.date="12/16/2015"
+	wacn.date=""/>
 
 # Adding an Azure Active Directory by using Connected Services in Visual Studio 
 
 ##Overview
 By using Azure Active Directory (Azure AD), you can support Single Sign-On (SSO) for ASP.NET MVC web applications, or AD Authentication in Web API services. With Azure AD Authentication, your users can use their accounts from Azure AD to connect to your web applications. The advantages of Azure AD Authentication with Web API include enhanced data security when exposing an API from a web application. With Azure AD, you do not have to manage a separate authentication system with its own account and user management.
 
-## Supported Project Types
+## Supported project pypes
 
 You can use the Connected Services dialog to connect to Azure AD in the following project types.
 
@@ -31,7 +27,7 @@ You can use the Connected Services dialog to connect to Azure AD in the followin
 
 ### Connect to Azure AD using the Connected Services dialog
 
-1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a [trial](/pricing/1rmb-trial/).
+1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a [trial](/pricing/1rmb-trial).
 
 1. In Visual Studio, open the shortcut menu of the **References** node in your project and choose **Add Connected Services**.
 1. Select **Azure AD Authentication** and then choose **Configure**.
@@ -44,7 +40,7 @@ You can use the Connected Services dialog to connect to Azure AD in the followin
 
     ![Configure Azure AD in the wizard](./media/vs-azure-tools-connected-services-add-active-directory/configure-azure-ad-wizard-1.png)
 
-1.  On the second page, select a domain from the **Domain** drop-down list. The list of domains contains all domains accessible by the accounts listed in the Account Settings dialog. As an alternative, you can enter a domain name if you don’t find the one you’re looking for, such as mydomain.partner.onmschina.cn. You can choose the option to create a new Azure AD app or use the settings from an existing Azure AD app. 
+1.  On the second page, select a domain from the **Domain** drop-down list. The list of domains contains all domains accessible by the accounts listed in the Account Settings dialog. As an alternative, you can enter a domain name if you don't find the one you're looking for, such as mydomain.partner.onmschina.cn. You can choose the option to create a new Azure AD app or use the settings from an existing Azure AD app. 
 
     ![Configure Azure AD in the wizard](./media/vs-azure-tools-connected-services-add-active-directory/configure-azure-ad-wizard-2.png)
 
@@ -55,7 +51,9 @@ You can use the Connected Services dialog to connect to Azure AD in the followin
 
 1. Choose the **Finish** button. The dialog adds the necessary configuration code and references to enable your project for Azure AD authentication. You can see the AD domain on the Azure Management Portal.
 
-1. Review the Getting Started page that appears in your browser for ideas on next steps, and the What Happened page to see how your project was modified. If you want to check that everything worked, open one of the modified configuration files and verify that the settings mentioned in What Happened are there. For example, the main web.config in an ASP.NET MVC project will have these settings added:
+    ![Find the domain in the Azure Management Portal](./media/vs-azure-tools-connected-services-add-active-directory/IC765882.png)
+
+1. Review the Getting Started page that appears in your browser for ideas on next steps, and the What Happened page to see how your project was modified.If you want to check that everything worked, open one of the modified configuration files and verify that the settings mentioned in What Happened are there. For example, the main web.config in an ASP.NET MVC project will have these settings added:
 
         <appSettings> 
             <add key="ida:ClientId" value="ClientId from the new Azure AD App" />
@@ -67,7 +65,7 @@ You can use the Connected Services dialog to connect to Azure AD in the followin
 
 ## How your project is modified
 
-When you run the wizard, Visual Studio adds Azure AD and associated references to your project. Configuration files and code files in your project are also modified to add support for Azure AD. The specific modifications that Visual Studio makes depend on the project type. For detailed information about how ASP.NET MVC projects are modified, see [What happened– MVC Projects](/documentation/articles/vs-active-directory-dotnet-getting-started/). For Web API projects, see [What happened – Web API Projects](/documentation/articles/vs-active-directory-webapi-getting-started/).
+When you run the wizard, Visual Studio adds Azure AD and associated references to your project. Configuration files and code files in your project are also modified to add support for Azure AD. The specific modifications that Visual Studio makes depend on the project type. For detailed information about how ASP.NET MVC projects are modified, see [What happened- MVC Projects](/documentation/articles/vs-active-directory-dotnet-getting-started/). For Web API projects, see [What happened - Web API Projects](/documentation/articles/vs-active-directory-webapi-getting-started/).
 
 ##Next steps
 

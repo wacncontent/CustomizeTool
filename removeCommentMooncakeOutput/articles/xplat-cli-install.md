@@ -17,7 +17,8 @@
 
 This article describes how to install the Azure Command-Line Interface (Azure CLI). The Azure CLI provides a set of open-source shell-based commands for creating and managing resources in Windows Azure.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating and managing resources with the Resource Manager deployment model or the classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+
 
 The Azure CLI is written in JavaScript, and requires [Node.js](https://nodejs.org). It is implemented using the [Azure SDK for Node](https://github.com/azure/azure-sdk-for-node), and released under an Apache 2.0 license. The project repository is located at [https://github.com/azure/azure-xplat-cli](https://github.com/azure/azure-xplat-cli).
 
@@ -40,7 +41,7 @@ The following installer packages are available:
 
 * [Windows installer][windows-installer]
 
-* [OS X installer](http://azuresdkscu.blob.core.chinacloudapi.cn/downloads04/azure-cli.0.9.10.dmg)
+* [OS X installer](http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.dmg)
 
 * [Linux installer][linux-installer]
 
@@ -77,7 +78,7 @@ Installing node.js on RPM-based distributions requires enabling the EPEL reposit
 
 	su -
 	yum update [enter]
-	yum upgrade –y [enter]
+	yum upgrade ây [enter]
 	yum install epel-release [enter]
 	yum install nodejs [enter]
 	yum install npm [enter]
@@ -113,7 +114,7 @@ At the end of the installation, you should see something similar to the followin
 	|-- kuduscript@0.1.2 (commander@1.1.1, streamline@0.4.11)
 	|-- azure@0.7.13 (dateformat@1.0.2-1.2.3, envconf@0.0.4, mpns@2.0.1, mime@1.2.10, validator@1.4.0, xml2js@0.2.8, wns@0.5.3, request@2.25.0)
 
->[AZURE.NOTE] For Linux systems, you can also install the Azure CLI by building it from the [source](http://azuresdkscu.blob.core.chinacloudapi.cn/downloads04/azure-cli.0.9.10.tar.gz). For more information on building from source, see the INSTALL file included in the archive.
+>[AZURE.NOTE] For Linux systems, you can also install the Azure CLI by building it from the [source](http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.tar.gz). For more information on building from source, see the INSTALL file included in the archive.
 
 ## Using a Docker container
 
@@ -146,8 +147,9 @@ Now you are ready! Next you can [connect to your Azure subscription from the Azu
 
 
 
-[mac-installer]: http://azuresdkscu.blob.core.chinacloudapi.cn/downloads04/azure-cli.0.9.10.dmg
+[mac-installer]: http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.dmg
 [windows-installer]: http://go.microsoft.com/?linkid=9828653&clcid=0x409
-[linux-installer]: http://azuresdkscu.blob.core.chinacloudapi.cn/downloads04/azure-cli.0.9.10.tar.gz
-[cliasm]: /documentation/articles/virtual-machines-command-line-tools
-[cliarm]: /documentation/articles/xplat-cli-azure-resource-manager
+[linux-installer]: http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.tar.gz
+[cliasm]: virtual-machines/virtual-machines-command-line-tools.md
+[cliarm]: virtual-machines/xplat-cli-azure-resource-manager.md
+

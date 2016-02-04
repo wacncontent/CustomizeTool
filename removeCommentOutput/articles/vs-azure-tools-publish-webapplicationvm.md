@@ -1,11 +1,11 @@
 <properties
    pageTitle="Publish-WebApplicationVM | Windows Azure"
-   description="Learn how to deploy a web application to a virtual machine. This script creates the required resources in your Azure subscription if they don't exist."
+   description="Learn how to deploy a web site to a virtual machine. This script creates the required resources in your Azure subscription if they don't exist."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
 	ms.date="09/30/2015"
@@ -13,11 +13,11 @@
 
 # Publish-WebApplicationVM (Windows PowerShell script)
 
-Deploys a web application to a virtual machine. The script creates the required resources in your Azure subscription if they don't exist.
+Deploys a web site to a virtual machine. The script creates the required resources in your Azure subscription if they don't exist.
 
 ```
 Publish-WebApplicationVM
-–Configuration <configuration>
+âConfiguration <configuration>
 -SubscriptionName <subscriptionName>
 -WebDeployPackage <packageName>
 -VMPassword @{Name = "name"; Password = "password")

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/14/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Create Linux-based clusters in HDInsight using cURL and the Azure REST API
@@ -18,6 +18,10 @@
 [AZURE.INCLUDE [selector](../includes/hdinsight-create-linux-cluster-selector.md)]
 
 The Azure REST API allows you to perform management operations on services hosted in the Azure platform, including the creation of new resources such as Linux-based HDInsight clusters. In this document, you will learn how to create Azure Resource Manager templates to configure an HDInsight cluster and associated storage, then use cURL to deploy the template to the Azure REST API to create a new HDInsight cluster.
+
+> [AZURE.IMPORTANT] The steps in this document use the default number of worker nodes (4) for an HDInsight cluster. If you plan on more than 32 worker nodes, either at cluster creation or by scaling the cluster after creation, then you must select a head node size with at least 8 cores and 14GB ram.
+>
+> For more information on node sizes and associated costs, see [HDInsight pricing](/home/features/hdinsight/#price).
 
 ##Prerequisites
 
@@ -266,7 +270,7 @@ Follow the steps documented in [Connect to an Azure subscription from the Azure 
 > * Application ID - returned when creating the service principal
 > * Password for the service principal - used when creating the service principal
 
-Follow the steps in the _Authenticate service principal with a password - Azure CLI_ section of the [Authenticating a service principal with Azure Resource <!-- deleted by customization Manager](/documentation/articles/resource-group-authenticate-service-principal/#authenticate-service-principal-with-password---azure-cli) --><!-- keep by customization: begin --> Manager](/documentation/articles/resource-group-authenticate-service-principal#authenticate-service-principal-with-password---azure-cli) <!-- keep by customization: end --> document. This will create a new service principal that can be used to authenticate the cluster creation request.
+Follow the steps in the _Authenticate service principal with a password - Azure CLI_ section of the [Authenticating a service principal with Azure Resource Manager](/documentation/articles/resource-group-authenticate-service-principal/#authenticate-service-principal-with-password---azure-cli) document. This will create a new service principal that can be used to authenticate the cluster creation request.
 
 ##Get an authentication token
 
@@ -298,7 +302,7 @@ Use the following to create a new resource group. You must create the group firs
         -H "Content-Type: application/json" \
         -d $'{
     "location": "DATACENTERLOCATION"
-    }’
+    }'
 
 If this request is successful, you will receive a 200 series response and the response body will contain a JSON document containing information about the group. The `"provisioningState"` element will contain a value of `"Succeeded"`.
 
@@ -348,11 +352,11 @@ Now that you have successfully created an HDInsight cluster, use the following t
 
 ###HBase clusters
 
-* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-stared-linux)
+* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1-linux)
 * [Develop Java applications for HBase on HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux)
 
 ###Storm clusters
 
 * [Develop Java topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology)
-* [Use Python components in Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-python)
+* [Use Python components in Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-python-topology)
 * [Deploy and monitor topologies with Storm on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)

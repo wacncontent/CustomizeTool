@@ -1,25 +1,21 @@
 <properties 
-   pageTitle="StorSimple Snapshot Manager backup policies | Microsoft Azure"
+   pageTitle="StorSimple Snapshot Manager backup policies | Windows Azure"
    description="Describes how to use the StorSimple Snapshot Manager MMC snap-in to create and manage the backup policies that control scheduled backups."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/15/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 # Use StorSimple Snapshot Manager to create and manage backup policies
 
 ## Overview
 
-A backup policy creates a schedule for backing up volume data locally or in the cloud. When you create a backup policy, you can also specify a retention policy. (You can retain a maximum of 64 snapshots.) For more information about backup policies, see [Backup types and backup policies](storsimple-what-is-snapshot-manager.md#backup-types-and-backup-policies).
+A backup policy creates a schedule for backing up volume data locally or in the cloud. When you create a backup policy, you can also specify a retention policy. (You can retain a maximum of 64 snapshots.) For more information about backup policies, see [Backup types and backup policies](/documentation/articles/storsimple-what-is-snapshot-manager#backup-types-and-backup-policies).
 
 This tutorial explains how to:
 
@@ -71,17 +67,17 @@ Use the following procedure to create a new backup policy.
 
 After you create a backup policy, the following information appears in the **Results** pane:
 
-- **Name** – the name of backup policy.
+- **Name** - the name of backup policy.
 
-- **Type** – local snapshot or cloud snapshot.
+- **Type** - local snapshot or cloud snapshot.
 
-- **Volume Group** – the volume group associated with the policy.
+- **Volume Group** - the volume group associated with the policy.
 
-- **Retention** – the number of snapshots retained; the maximum is 64.
+- **Retention** - the number of snapshots retained; the maximum is 64.
 
-- **Created** – the date that this policy was created.
+- **Created** - the date that this policy was created.
 
-- **Enabled** – whether the policy is currently in effect: **True** indicates that it is in effect; **False** indicates that it is not in effect. 
+- **Enabled** - whether the policy is currently in effect: **True** indicates that it is in effect; **False** indicates that it is not in effect. 
 
 ## Edit a backup policy
 
@@ -117,5 +113,5 @@ e
 
 ## Next steps
 
-- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple solution](storsimple-snapshot-manager-admin.md).
-- Learn how to [use StorSimple Snapshot Manager to view and manage backup jobs](storsimple-snapshot-manager-manage-backup-jobs.md).
+- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple solution](/documentation/articles/storsimple-snapshot-manager-admin).
+- Learn how to [use StorSimple Snapshot Manager to view and manage backup jobs](/documentation/articles/storsimple-snapshot-manager-manage-backup-jobs).

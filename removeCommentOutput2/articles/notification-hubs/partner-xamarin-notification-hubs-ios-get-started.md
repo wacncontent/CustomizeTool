@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="11/03/2015"
+	ms.date="11/17/2015"
 	wacn.date=""/>
 
 # Get started with Notification Hubs
@@ -183,7 +183,7 @@ Your notification hub is now configured to work with APNS, and you have the conn
 ## Sending Notifications
 
 
-You can test receiving notifications in your app by sending notifications in the Azure Management Portal via the debug tab on the notification hub, as shown in the screen below.
+You can test receiving notifications in your app by sending notifications in the [Azure Management Portal] via the debug tab on the notification hub, as shown in the screen below.
 
 ![](./media/notification-hubs-ios-get-started/notification-hubs-debug-hub-ios.png)
 

@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="service-bus"
-	ms.date="09/16/2015"
+	ms.date="12/28/2015"
 	wacn.date=""/>
 
 # Create applications that use Service Bus topics and subscriptions
@@ -47,7 +47,7 @@ With this configuration, each message from the POS terminals is made available t
 
 ### Create the topic and subscriptions
 
-Management operations for Service Bus messaging entities (queues and publish/subscribe topics) are performed via the [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) class. Appropriate credentials are required in order to create a [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) instance for a particular namespace. Service Bus uses a [Shared Access Signature (SAS)](/documentation/articles/service-bus-sas-overview) based security model. The [TokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.aspx) class represents a security token provider with built-in factory methods returning some well-known token providers. We’ll use a [CreateSharedAccessSignatureTokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.createsharedaccesssignaturetokenprovider.aspx) method to hold the SAS credentials. The [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) instance is then constructed with the base address of the Service Bus namespace and the token provider.
+Management operations for Service Bus messaging entities (queues and publish/subscribe topics) are performed via the [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) class. Appropriate credentials are required in order to create a [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) instance for a particular namespace. Service Bus uses a [Shared Access Signature (SAS)](/documentation/articles/service-bus-sas-overview) based security model. The [TokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.aspx) class represents a security token provider with built-in factory methods returning some well-known token providers. We'll use a [CreateSharedAccessSignatureTokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.createsharedaccesssignaturetokenprovider.aspx) method to hold the SAS credentials. The [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) instance is then constructed with the base address of the Service Bus namespace and the token provider.
 
 The [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) class provides methods to create, enumerate and delete messaging entities. The code that is shown here shows how the [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) instance is created and used to create the **DataCollectionTopic** topic.
 
@@ -134,14 +134,14 @@ With this subscription filter, only messages that have the **StoreName** propert
 
 All of the reasons to use queuing described in [Create applications that use Service Bus queues](/documentation/articles/service-bus-create-queues) also apply to topics, specifically:
 
-- Temporal decoupling – message producers and consumers do not have to be online at the same time.
+- Temporal decoupling - message producers and consumers do not have to be online at the same time.
 
-- Load leveling – peaks in load are smoothed out by the topic enabling consuming applications to be provisioned for average load instead of peak load.
+- Load leveling - peaks in load are smoothed out by the topic enabling consuming applications to be provisioned for average load instead of peak load.
 
-- Load balancing – similar to a queue, you can have multiple competing consumers listening on a single subscription, with each message handed off to only one of the consumers, thereby balancing load.
+- Load balancing - similar to a queue, you can have multiple competing consumers listening on a single subscription, with each message handed off to only one of the consumers, thereby balancing load.
 
-- Loose coupling – you can evolve the messaging network without affecting existing endpoints; for example, adding subscriptions or changing filters to a topic to allow for new consumers.
+- Loose coupling - you can evolve the messaging network without affecting existing endpoints; for example, adding subscriptions or changing filters to a topic to allow for new consumers.
 
 ## Next steps
 
-See [Create applications that use Service Bus topics and subscriptions](/documentation/articles/service-bus-create-topics-subscriptions) to see how to use queues in the POS retail scenario.
+See [Create applications that use Service Bus queues](/documentation/articles/service-bus-create-queues) for information about how to use queues in the POS retail scenario.

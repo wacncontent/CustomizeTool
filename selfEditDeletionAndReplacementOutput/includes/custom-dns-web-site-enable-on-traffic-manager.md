@@ -22,5 +22,5 @@ deleted:
 		
 		At this point, you should be able to enter the Traffic Manager domain name (contoso.trafficmanager.cn) name in your browser and see that it successfully takes you to your web app.
 
-reason: ()
+reason: (the new Ibiza portal)
 

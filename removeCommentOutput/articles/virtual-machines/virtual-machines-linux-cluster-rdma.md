@@ -32,7 +32,7 @@ Following are methods you can use to create a Linux RDMA cluster either with or 
 
 * **Azure CLI scripts** - As shown in the steps in the rest of this article, use the [Azure Command Line Interface](/documentation/articles/xplat-cli-install) (CLI) for Mac, Linux, and Windows to script the deployement of a virtual network and the other necessary components to create a Linux cluster. The CLI in the classic (Service Management) deployment mode creates the cluster nodes serially, so if you are deploying many compute nodes it might take several minutes to complete the deployment.
 
-* **Azure Resource Manager templates** - By creating a straightforward Azure Resource Manager JSON template file and running Azure CLI commands for Resource Manager or by using the Azure Preview Portal, deploy multiple A8 and A9 Linux VMs as well as define virtual networks, static IP addresses, DNS settings, and other resources to create a compute cluster that can take advantage of the RDMA network to run MPI workloads. You can [create your own template](/documentation/articles/resource-group-authoring-templates), or check the [Azure Quickstart Templates page](https://azure.microsoft.com/documentation/templates/) for templates contributed by Microsoft or the community to deploy the solution you want. Resource Manager templates generally provide the fastest and most reliable way to deploy a Linux cluster.
+* **Azure Resource Manager templates** - By creating a straightforward Azure Resource Manager JSON template file and running Azure CLI commands for Resource Manager or by using the Azure Management Portal, deploy multiple A8 and A9 Linux VMs as well as define virtual networks, static IP addresses, DNS settings, and other resources to create a compute cluster that can take advantage of the RDMA network to run MPI workloads. You can [create your own template](/documentation/articles/resource-group-authoring-templates), or check the [Azure Quickstart Templates page](https://azure.microsoft.com/documentation/templates/) for templates contributed by Microsoft or the community to deploy the solution you want. Resource Manager templates generally provide the fastest and most reliable way to deploy a Linux cluster.
 
 ## Deployment in Azure Service Management with Azure CLI scripts
 
@@ -201,13 +201,13 @@ azure network vnet create -l "China North" -e 10.32.0.0 -i 16 <network-name>
 # Create a cloud service. All the A8 and A9 instances need to be in the same cloud service for Linux RDMA to work across InfiniBand.
 # Note: The current maximum number of VMs in a cloud service is 50. If you need to provision more than 50 VMs in the same cloud service in your cluster, contact Azure Support.
 
-azure service create <cloud-service-name> --location "China North" –s <subscription-ID>
+azure service create <cloud-service-name> --location "China North" -s <subscription-ID>
 
 # Define a prefix naming scheme for compute nodes, e.g., cluster11, cluster12, etc.
 
 vmname=cluster
 
-# Define a prefix for external port numbers. If you want to turn off external ports and use only internal ports to communicate between compute nodes via port 22, don’t use this option. Since port numbers up to 10000 are reserved, use numbers after 10000. Leave external port on for rank 0 and head node.
+# Define a prefix for external port numbers. If you want to turn off external ports and use only internal ports to communicate between compute nodes via port 22, don't use this option. Since port numbers up to 10000 are reserved, use numbers after 10000. Leave external port on for rank 0 and head node.
 
 portnumber=101
 
@@ -232,7 +232,7 @@ export I_MPI_FABRICS=shm:dapl
 
 # THIS IS A MANDATORY ENVIRONMENT VARIABLEAND MUST BE SET BEFORE RUNNING ANY JOB
 # Setting the variable to shm:dapl gives best performance for some applications
-# If your application doesn’t take advantage of shared memory and MPI together, then set only dapl
+# If your application doesn't take advantage of shared memory and MPI together, then set only dapl
 
 export I_MPI_DAPL_PROVIDER=ofa-v2-ib0
 

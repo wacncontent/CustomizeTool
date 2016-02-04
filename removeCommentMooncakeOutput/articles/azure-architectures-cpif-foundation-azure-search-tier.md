@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-	ms.service="cloud-services"
-	ms.date="03/25/2015"
-	wacn.date=""/>
+   ms.service="multiple"
+   ms.date="03/25/2015"
+   wacn.date=""/>
 
 # Azure Search Tier (Azure Architecture Patterns)
 
@@ -22,7 +22,7 @@ The **Azure Search Tier** pattern is part of the **Foundation** area, which is d
 
 ##  Azure Search Tier
 
-The Azure Search Tier design pattern details the Azure features and services required to deliver search services that can provide predictable performance and high availability across geographic boundaries and provides an architectural pattern for using Azure Search in delivering a search Solution.  Azure Search is a “search-as-a-service” built within Windows Azure that allows developers to incorporate search capabilities into applications without having to deploy, manage or maintain infrastructure services to provide this capability to applications. The purpose of this pattern is to provide a repeatable solution intended for use in different situations and design. 
+The Azure Search Tier design pattern details the Azure features and services required to deliver search services that can provide predictable performance and high availability across geographic boundaries and provides an architectural pattern for using Azure Search in delivering a search Solution.  Azure Search is a âsearch-as-a-serviceâ built within Windows Azure that allows developers to incorporate search capabilities into applications without having to deploy, manage or maintain infrastructure services to provide this capability to applications. The purpose of this pattern is to provide a repeatable solution intended for use in different situations and design. 
 
 ## Architectural Pattern Overview 
 

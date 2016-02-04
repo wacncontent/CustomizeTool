@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="09/22/2015"
+	ms.date="12/14/2015"
 	wacn.date=""/>
 
 # How to use Azure Service Bus with the WebJobs SDK
@@ -22,12 +22,17 @@ The guide assumes you know [how to create a WebJob project in Visual Studio with
 
 The code snippets only show functions, not the code that creates the `JobHost` object as in this example:
 
-		static void Main(string[] args)
-		{
-		    JobHost host = new JobHost();
-		    host.RunAndBlock();
-		}
-		
+```
+public class Program
+{
+   public static void Main()
+   {
+      JobHostConfiguration config = new JobHostConfiguration();
+      config.UseServiceBus();
+      JobHost host = new JobHost(config);
+      host.RunAndBlock();
+   }
+}
 ## Table of contents
 
 -   [Prerequisites](#prerequisites)
@@ -36,6 +41,10 @@ The code snippets only show functions, not the code that creates the `JobHost` o
 -   [How to work with Service Bus topics](#topics)
 -   [Related topics covered by the storage queues article](#queues)
 -   [Next steps](#nextsteps)
+```
+
+A [complete Service Bus code example](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/ServiceBus/Program.cs) is in the azure-webjobs-sdk-samples repository on GitHub.com.
+
 ## <a id="prerequisites"></a> Prerequisites
 
 To work with Service Bus you have to install the [Microsoft.Azure.WebJobs.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus/) NuGet package in addition to the other WebJobs SDK packages. 
@@ -149,6 +158,17 @@ To write a function that the SDK calls when a message is received on a Service B
 		}
 
 To create a message on a topic, use the `ServiceBus` attribute with a topic name the same way you use it with a queue name.
+
+## Features added in release 1.1
+
+The following features were added in release 1.1:
+
+* Allow deep customization of message processing via `ServiceBusConfiguration.MessagingProvider`.
+* `MessagingProvider` supports customization of the Service Bus `MessagingFactory` and `NamespaceManager`.
+* A `MessageProcessor` strategy pattern allows you to specify a processor per queue/topic.
+* Message processing concurrency is supported by default. 
+* Easy customization of `OnMessageOptions` via `ServiceBusConfiguration.MessageOptions`.
+* Allow [AccessRights](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/ServiceBus/Functions.cs#L71) to be specified on `ServiceBusTriggerAttribute`/`ServiceBusAttribute` (for scenarios where you might not have Manage rights). 
 
 ## <a id="queues"></a>Related topics covered by the storage queues how-to article
 

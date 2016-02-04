@@ -8,7 +8,7 @@ manager="timlt"
 editor=""/>
 <tags
 	ms.service="cloud-services"
-	ms.date="09/08/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 

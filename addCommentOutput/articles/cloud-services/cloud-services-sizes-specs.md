@@ -10,7 +10,6 @@
 	ms.service="cloud-services"
 	ms.date="09/14/2015"
 	wacn.date=""/>
-
 # Sizes for Cloud Services
 
 This topic describes the available sizes and options for Cloud Service role instances (web roles and worker roles). It also provides deployment considerations to be aware of when planning to use these resources.
@@ -25,15 +24,13 @@ The following considerations might help you decide on a size:
 
 * D-series VM instances are designed to run applications that demand higher compute power and temporary disk performance. D-series VMs provide faster processors, a higher memory-to-core ratio, and a solid-state drive (SSD) for the temporary disk. For details, see the announcement on the Azure blog, [New D-Series Virtual Machine Sizes](http://azure.microsoft.com/blog/2014/09/22/new-d-series-virtual-machine-sizes/).  
 
-*   Dv2-series, a follow-on to the original D-series, features a more powerful CPU. The Dv2-series CPU is about 35% faster than the D-series CPU. It is based on the latest generation 2.4 GHz Intel Xeon庐 E5-2673 v3 (Haswell) processor, and with the Intel Turbo Boost Technology 2.0, can go up to 3.2 GHz. The Dv2-series has the same memory and disk configurations as the D-series.
-<!-- deleted by customization
+*   Dv2-series, a follow-on to the original D-series, features a more powerful CPU. The Dv2-series CPU is about 35% faster than the D-series CPU. It is based on the latest generation 2.4 GHz Intel <!-- deleted by customization XeonÂŽ --><!-- keep by customization: begin --> XeonŽ <!-- keep by customization: end --> E5-2673 v3 (Haswell) processor, and with the Intel Turbo Boost Technology 2.0, can go up to 3.2 GHz. The Dv2-series has the same memory and disk configurations as the D-series.
 
     Dv2-series regional availability will be based on this schedule:
         Oct'15: China East 2, US Central, US North Central, US West
         Nov'15: China East, Europe North, Europe West
         Jan'16: US South Central, APAC East, APAC Southeast, Japan East, China East,
                 Australia East, Australia Southeast, Brazil South
--->
 
 * Web roles and worker roles require more temporary disk space than Azure Virtual Machines because of system requirements. The system files reserve 4 GB of space for the Windows page file, and 2 GB of space for the Windows dump file.  
 
@@ -84,7 +81,7 @@ Here is an example for setting the role size to be small for a Web Role instance
 
 
     <WebRole name="WebRole1" vmsize="Small">
-    鈥?
+    <!-- deleted by customization âŚ -->
     </WebRole>
 
 Ensure that the local resource size specified is less than or equal to the max local resource size in the table above.

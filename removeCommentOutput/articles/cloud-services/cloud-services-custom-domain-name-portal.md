@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Configure a custom domain name in Cloud Services (preview portal) | Windows Azure"
-	description="Learn how to expose your Azure application or data to the internet on a custom domain by configuring DNS settings.  These examples use the Azure preview portal."
+	pageTitle="Configure a custom domain name in Cloud Services  | Windows Azure"
+	description="Learn how to expose your Azure application or data to the internet on a custom domain by configuring DNS settings.  These examples use the Azure Management Portal."
 	services="cloud-services"
 	documentationCenter=".net"
 	authors="Thraka"
@@ -16,7 +16,7 @@
 
 > [AZURE.SELECTOR]
 - [Azure Management Portal](/documentation/articles/cloud-services-custom-domain-name)
-- [Azure Preview Portal](/documentation/articles/cloud-services-custom-domain-name-portal)
+- [Azure Management Portal](/documentation/articles/cloud-services-custom-domain-name-portal)
 
 When you create a Cloud Service, Azure assigns it to a subdomain of **chinacloudapp.cn**. For example, if your Cloud Service is named "contoso", your users will be able to access your application on a URL like http://contoso.chinacloudapp.cn. Azure also assigns a virtual IP address.
 
@@ -25,7 +25,7 @@ However, you can also expose your application on your own domain name, such as *
 Do you already undestand what CNAME and A records are? [Jump past the explaination](#add-a-cname-record-for-your-custom-domain).
 
 > [AZURE.NOTE]
-> The procedures in this task apply to Azure Cloud Services. For Websites, see [Configuring a Custom Domain Name for an Azure Websites Web App](/documentation/articles/web-sites-custom-domain-name). For storage accounts, see [Configuring a Custom Domain Name for an Azure Storage Account](/documentation/articles/storage-custom-domain-name).
+> The procedures in this task apply to Azure Cloud Services. For Websites, see [Configuring a Custom Domain Name for an Azure Websites](/documentation/articles/web-sites-custom-domain-name). For storage accounts, see [Configuring a Custom Domain Name for an Azure Storage Account](/documentation/articles/storage-custom-domain-name).
 
 <p/>
 
@@ -59,13 +59,13 @@ To create a CNAME record, you must add a new entry in the DNS table for your cus
 
 1. Use one of these methods to find the **.chinacloudapp.cn** domain name assigned to your cloud service.
 
-    * Login to the [Azure Preview Portal], select your cloud service, look at the **Essentials** section and then find the **Site URL** entry.
+    * Login to the [Azure Management Portal], select your cloud service, look at the **Essentials** section and then find the **Site URL** entry.
 
         ![quick glance section showing the site URL][csurl]
             
         **OR**
   
-    * Install and configure [Azure Powershell](/documentation/articles/install-configure-powershell), and then use the following command:
+    * Install and configure [Azure Powershell](/documentation/articles/powershell-install-configure), and then use the following command:
 
         ```powershell
         Get-AzureDeployment -ServiceName yourservicename | Select Url
@@ -101,13 +101,13 @@ To create an A record, you must first find the virtual IP address of your cloud 
 
 1. Use one of the following methods to get the IP address of your cloud service.
 
-    * Login to the [Azure Preview Portal], select your cloud service, look at the **Essentials** section and then find the **Public IP addresses** entry.
+    * Login to the [Azure Management Portal], select your cloud service, look at the **Essentials** section and then find the **Public IP addresses** entry.
 
         ![quick glance section showing the VIP][vip]
 
         **OR**
 
-    * Install and configure [Azure Powershell](/documentation/articles/install-configure-powershell), and then use the following command:
+    * Install and configure [Azure Powershell](/documentation/articles/powershell-install-configure), and then use the following command:
 
         ```powershell
         get-azurevm -servicename yourservicename | get-azureendpoint -VM {$_.VM} | select Vip
@@ -150,7 +150,7 @@ This example demonstrates creating an A record for the root domain. If you wish 
 [Expose Your Data on a Custom Domain]: #access-data
 [VIP swaps]: http://msdn.microsoft.com/zh-cn/library/ee517253.aspx
 [Create a CNAME record that associates the subdomain with the storage account]: #create-cname
-[Azure Preview Portal]: https://manage.windowsazure.cn
+[Azure Management Portal]: https://manage.windowsazure.cn
 [vip]: ./media/cloud-services-custom-domain-name-portal/csvip.png
 [csurl]: ./media/cloud-services-custom-domain-name-portal/csurl.png
  

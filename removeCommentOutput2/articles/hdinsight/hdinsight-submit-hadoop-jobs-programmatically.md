@@ -17,12 +17,17 @@
 
 Learn how to use Azure PowerShell to submit MapReduce and Hive jobs, and how to use the HDInsight .NET SDK to submit MapReduce, Hadoop streaming, and Hive jobs.
 
+> [AZURE.NOTE] The steps in this article must be performed from a Windows client. For information on using a Linux, OS X, or Unix client to work with MapReduce, Hive, or Pig on HDInsight, see the following articles and select either the **SSH** or **Curl** links within each:
+> - [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
+> - [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+> - [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+
 ##Prerequisites
 
 Before you begin this article, you must have the following:
 
-* **An Azure HDInsight cluster**. For instructions, see [Get started with HDInsight][hdinsight-get-started] or [Create Hadoop clusters in HDInsight][hdinsight-provision].
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
+- **An Azure HDInsight cluster**. For instructions, see [Get started with HDInsight][hdinsight-get-started] or [Create Hadoop clusters in HDInsight][hdinsight-provision].
+- **A workstation with Azure PowerShell**. See [Install Azure PowerShell 1.0 and greater](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater).
 
 ##Submit MapReduce jobs using PowerShell
 
@@ -43,7 +48,7 @@ See [Use Sqoop with HDInsight][hdinsight-use-sqoop].
 ##Submit Hive/Pig/Sqoop jobs using HDInsight .NET SDK
 The HDInsight .NET SDK provides .NET client libraries, which makes it easier to work with HDInsight clusters from .NET. 
 
-**To Submit jobs**
+**<a name="mapreduce-sdk"></a> To Submit jobs**
 
 1. Create a C# console application in Visual Studio.
 2. From the Nuget Package Manager Console, run the following command.
@@ -202,7 +207,7 @@ The HDInsight .NET SDK provides .NET client libraries, which makes it easier to 
 						return null;
 					}
 		
-					return string.Join("&define=", defines.Select(x => x.Key + "%3D" + x.Value).ToArray());
+					return "&define=" + string.Join("&define=", defines.Select(x => x.Key + "%3D" + x.Value).ToArray());
 				}
 				private static string ConvertArgsToString(List<string> args)
 				{
@@ -238,18 +243,18 @@ In this article, you have learned several ways to create an HDInsight cluster. T
 
 [hdinsight-visual-studio-tools]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [image-hdi-gettingstarted-runmrjob]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.RunMRJob.png
 [image-hdi-gettingstarted-mrjoboutput]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.MRJobOutput.png

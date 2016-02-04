@@ -173,7 +173,7 @@ Some ready-made scripts are also available for download:
 [Purchase Options]: /pricing/overview/
 [Member Offers]: /pricing/member-offers/
 [Trial]: /pricing/1rmb-trial/
-[Install and configure Azure PowerShell]: /documentation/articles/install-configure-powershell
+[Install and configure Azure PowerShell]: ../install-configure-powershell.md
 [Service Bus NuGet package]: http://www.nuget.org/packages/WindowsAzure.ServiceBus/
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx
 [New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx

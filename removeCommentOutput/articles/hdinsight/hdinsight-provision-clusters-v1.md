@@ -18,7 +18,7 @@ Learn how to plan for provision HDInsight clusters.
 
 [AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
-* [Provision Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters) 
+* [Provision Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) 
 
 **Prerequisites:**
 
@@ -96,7 +96,7 @@ Before you begin the instructions in this article, you must have the following:
 	- Worker node (at least 1 node)
 	- Zookeeper nodes (3 nodes) (Free for A1 Zookeepers)
 
-	Customers are billed for the usage of those nodes for the duration of the cluster’s life. Billing starts once a cluster is created and stops when the cluster is deleted (clusters can’t be de-allocated or put on hold). The cluster size affects the cluster price. For learning purposes, it is recommended to use 1 data node. For more information about HDInsight pricing, see [HDInsight pricing](/home/features/hdinsight/#price).
+	Customers are billed for the usage of those nodes for the duration of the clusterâs life. Billing starts once a cluster is created and stops when the cluster is deleted (clusters canât be de-allocated or put on hold). The cluster size affects the cluster price. For learning purposes, it is recommended to use 1 data node. For more information about HDInsight pricing, see [HDInsight pricing](/home/features/hdinsight/#price).
 
 
 	>[AZURE.NOTE] The cluster size limit varies among Azure subscriptions. Contact billing support to increase the limit.
@@ -142,7 +142,7 @@ Before you begin the instructions in this article, you must have the following:
 	
 	>[AZURE.WARNING] Don't share one Blob storage container for multiple clusters. This is not supported. 
 	
-	For more information on using secondary Blob stores, see [Using Azure Blob Storage with HDInsight](/documentation/articles/hdinsight-use-blob-storage).
+	For more information on using secondary Blob stores, see [Using Azure Blob Storage with HDInsight](/documentation/articles/hdinsight-hadoop-use-blob-storage).
 
 - **Hive/Oozie metastore**
 
@@ -206,7 +206,7 @@ For more information, see Azim Uddin's blog titled [Customizing HDInsight Cluste
 
 ### Customize clusters using Script action
 
-You can install additional components or customize cluster configuration by using scripts during provisioning. Such scripts are invoked via **Script Action**, which is a configuration option that can be used from the Azure Management Portal, HDInsight Windows PowerShell cmdlets, or the HDInsight .NET SDK. For more information, see [Customize HDInsight cluster using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster).
+You can install additional components or customize cluster configuration by using scripts during provisioning. Such scripts are invoked via **Script Action**, which is a configuration option that can be used from the Azure Management Portal, HDInsight Windows PowerShell cmdlets, or the HDInsight .NET SDK. For more information, see [Customize HDInsight cluster using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1).
 
 
 ### Use Azure virtual networks
@@ -291,7 +291,7 @@ You can refer to the [basic configuration options], and the [advanced configurat
 	- Default Container
 	- Additional Storage Accounts
 
-8. On the **Script Actions** page, click **add script action** to provide details about the custom script that you want to run to customize a cluster, as the cluster is being created. For more information, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster).
+8. On the **Script Actions** page, click **add script action** to provide details about the custom script that you want to run to customize a cluster, as the cluster is being created. For more information, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1).
 
 	- Name: Specify a name for the script action
 	- Script URI: Specify the Uniform Resource Identifier (URI) to the script that is invoked to customize the cluster.
@@ -301,7 +301,7 @@ You can refer to the [basic configuration options], and the [advanced configurat
 	You can add more than one script action to install multiple components on the cluster. After you have added the scripts, click the check mark to start provisioning the cluster.
 
 ### Use Azure PowerShell
-Azure PowerShell is a powerful scripting environment that you can use to control and automate the deployment and management of your workloads in Azure. This section provides instructions on how to provision an HDInsight cluster by using Azure PowerShell. For information on configuring a workstation to run HDInsight Windows PowerShell cmdlets, see [Install and configure Azure PowerShell](/documentation/articles/install-configure-powershell). For more information on using Azure PowerShell with HDInsight, see [Administer HDInsight using PowerShell](/documentation/articles/hdinsight-administer-use-powershell). For the list of the HDInsight Windows PowerShell cmdlets, see [HDInsight cmdlet reference](https://msdn.microsoft.com/zh-cn/library/azure/dn858087.aspx).
+Azure PowerShell is a powerful scripting environment that you can use to control and automate the deployment and management of your workloads in Azure. This section provides instructions on how to provision an HDInsight cluster by using Azure PowerShell. For information on configuring a workstation to run HDInsight Windows PowerShell cmdlets, see [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). For more information on using Azure PowerShell with HDInsight, see [Administer HDInsight using PowerShell](/documentation/articles/hdinsight-administer-use-powershell). For the list of the HDInsight Windows PowerShell cmdlets, see [HDInsight cmdlet reference](https://msdn.microsoft.com/zh-cn/library/azure/dn858087.aspx).
 
 > [AZURE.NOTE] While the scripts in this section can be used to configure an HDInsight cluster on an Azure virtual network, they will not create an Azure virtual network. For information on creating an Azure virtual network, see [Virtual Network configuration tasks](/home/features/virtual-machines/).
 
@@ -496,7 +496,7 @@ Before using Azure CLI, you must configure connectivity between your workstation
 
 		azure account download
 
-	![HDI.Linux.CLIAccountDownloadImport](./media/hdinsight-provision-clusters/HDI.Linux.CLIAccountDownloadImport.png)
+	![HDI.Linux.CLIAccountDownloadImport](./media/hdinsight-provision-clusters-v1/HDI.Linux.CLIAccountDownloadImport.png)
 
 	The command launches the webpage to download the publish settings file from. If the webpage does not open, click the link in the terminal window to open the browser page and log in to the portal.
 
@@ -807,7 +807,7 @@ While the application is open in Visual Studio, press **F5** to run the applicat
 ##<a id="nextsteps"></a> Next steps
 In this article, you have learned several ways to provision an HDInsight cluster. To learn more, see the following articles:
 
-* [Get started with Azure HDInsight](/documentation/articles/hdinsight-get-started) - Learn how to start working with your HDInsight cluster
+* [Get started with Azure HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1) - Learn how to start working with your HDInsight cluster
 * [Use Sqoop with HDInsight](/documentation/articles/hdinsight-use-sqoop) - Learn how to copy data between HDInsight and SQL Database or SQL Server
 * [Administer HDInsight using PowerShell](/documentation/articles/hdinsight-administer-use-powershell) - Learn how to work with HDInsight by using Azure PowerShell
 * [Submit Hadoop jobs programmatically](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically) - Learn how to programmatically submit jobs to HDInsight

@@ -40,4 +40,9 @@ It is always a good practice to validate the length of data that is submitted by
 
 
 <!-- URLs. -->
-[Getting Started]: <!-- deleted by customization /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started --><!-- keep by customization: begin --> /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/ <!-- keep by customization: end -->
+<!-- deleted by customization
+[Getting Started]: ../articles/mobile-services/mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
+-->
+<!-- keep by customization: begin -->
+[Getting Started]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/
+<!-- keep by customization: end -->

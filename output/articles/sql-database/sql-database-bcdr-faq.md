@@ -15,7 +15,7 @@
 # Business Continuity FAQ
 
 ## 1.	What happen to my restore point retention period when I downgrade/upgrade by service tier?
-After downgrading to a lower performance tier, the restore point’s retention period is immediately truncated to the retention period of the performance tier of the current DB. 
+After downgrading to a lower performance tier, the restore pointâs retention period is immediately truncated to the retention period of the performance tier of the current DB. 
 
 If the DB service tier is upgraded, the retention period will begin extending only after the DB is upgraded. 
 
@@ -38,7 +38,7 @@ No.
 
 ## 6.	How do I find out the available restore point available for my database?
 
-For recovery from user error – The current time is the latest restore point available. To find out the oldest available restore point, use [Get Database](https://msdn.microsoft.com/zh-cn/library/dn505708.aspx) (*RecoveryPeriodStartDate*) to get the oldest restore point (non Geo-replicated restore point).
+For recovery from user error â The current time is the latest restore point available. To find out the oldest available restore point, use [Get Database](https://msdn.microsoft.com/zh-cn/library/dn505708.aspx) (*RecoveryPeriodStartDate*) to get the oldest restore point (non Geo-replicated restore point).
 
 For recovery from outage - Use the [Get Recoverable Database](https://msdn.microsoft.com/zh-cn/library/dn800985.aspx) (*LastAvailableBackupDate*) to get the latest Geo-replicated restore point.
 

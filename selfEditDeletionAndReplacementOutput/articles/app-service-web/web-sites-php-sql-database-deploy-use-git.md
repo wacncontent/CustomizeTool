@@ -4,7 +4,15 @@ deleted:
 
 		>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
-reason: ()
+reason: (“Try it now”)
+
+deleted:
+
+		## What's changed
+		* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+		* For a guide to the change of the portal to the preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+
+reason: (terminology: Azure App Service Web, the new Ibiza portal)
 
 replacement:
 
@@ -16,7 +24,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -88,7 +96,7 @@ replaced by:
 		
 			![Git instructions][git-instructions]
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -112,31 +120,5 @@ replaced by:
 			
 		3. From the **PHP** section of the resulting dialog, make note of the values for `SERVER`, `DATABASE`, and `USERNAME`.
 
-reason: ()
-
-deleted:
-
-		## What's changed
-		* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-		* For a guide to the change of the portal to the preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
-
-replaced by:
-
-		[running-app]: ./media/web-sites-php-sql-database-deploy-use-git/running_app_3.png
-		[new- Website]: ./media/web-sites-php-sql-database-deploy-use-git/new_Website.jpg
-		[custom-create]: ./media/web-sites-php-sql-database-deploy-use-git/custom_create.png
-		[website-details-sqlazure]: ./media/web-sites-php-sql-database-deploy-use-git/createphpgitsite.png
-		[database-settings]: ./media/web-sites-php-sql-database-deploy-use-git/setupdb.png
-		[create-server]: ./media/web-sites-php-sql-database-deploy-use-git/create_server.jpg
-		[go-to-dashboard]: ./media/web-sites-php-sql-database-deploy-use-git/viewdeploy.png
-		[setup-git-publishing]: ./media/web-sites-php-sql-database-deploy-use-git/setup_git_publishing.png
-		[credentials]: ./media/web-sites-php-sql-database-deploy-use-git/git-deployment-credentials.png
-		[git-instructions]: ./media/web-sites-php-sql-database-deploy-use-git/gitsettings.png
-		[linked-resources]: ./media/web-sites-php-sql-database-deploy-use-git/linked_resources.jpg
-		[connection-string]: ./media/web-sites-php-sql-database-deploy-use-git/connection_string.jpg
-		[management-portal]: https://manage.windowsazure.cn/
-		[sql-database-editions]: http://msdn.microsoft.com/zh-cn/library/azure/ee621788.aspx
-		[where-is-code]: ./media/web-sites-php-sql-database-deploy-use-git/setupgit.png
-
-reason: ()
+reason: (the new Ibiza portal)
 

@@ -193,9 +193,9 @@ For additional information about Twilio, see [https://www.twilio.com/docs][twili
 [twimlet_message_url]: http://twimlets.com/message
 [twiml]: http://www.twilio.com/docs/api/twiml
 [twilio_api_service]: http://api.twilio.com
-[add_ca_cert]: /documentation/articles/java-add-certificate-ca-store
+[add_ca_cert]: java-add-certificate-ca-store.md
 [azure_java_eclipse_hello_world]: http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx
-[howto_twilio_voice_sms_java]: /documentation/articles/partner-twilio-java-how-to-use-voice-sms
+[howto_twilio_voice_sms_java]: partner-twilio-java-how-to-use-voice-sms.md
 [howto_blob_storage_java]: /develop/java/how-to-guides/blob-storage/
 [howto_sql_azure_java]: http://msdn.microsoft.com/zh-cn/library/azure/hh749029.aspx
 [azure_runtime_jsp]: http://msdn.microsoft.com/zh-cn/library/azure/hh690948.aspx

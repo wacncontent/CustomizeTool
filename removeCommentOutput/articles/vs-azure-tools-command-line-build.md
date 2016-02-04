@@ -1,14 +1,14 @@
 <properties
-   pageTitle="Command-line build for Azure"
+   pageTitle="Command-line build for Azure | Windows Azure"
    description="Command-line build for Azure"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="08/24/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 # Command-Line Build for Azure

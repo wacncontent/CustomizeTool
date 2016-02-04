@@ -10,12 +10,13 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="09/16/2015"
-	wacn.date="10/22/2015"/>
+	wacn.date="11/27/2015"/>
 # 为 Azure 网站配置自定义域名
 
 > [AZURE.SELECTOR]
 - [Web Apps with External Domains](/documentation/articles/web-sites-custom-domain-name/)
 - [Web Apps with Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name/)
+- [GoDaddy](/documentation/articles/web-sites-godaddy-custom-domain-name/)
 
 [WACOM.INCLUDE [websites-cloud-services-css-guided-walkthrough](../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
@@ -68,7 +69,7 @@
 
 1.	在你的浏览器中，打开 [Azure 管理门户](https://manage.windowsazure.cn)。
 2.	在“网站”选项卡中，单击站点的名称并选择“仪表板”。
-3.	从页面底部选择“管理域”。（如果此选项已禁用，请确保你使用的模式为“共享”、“基本”或“标准”。有关详细信息，请参阅[如何缩放网站](http://www.windowsazure.cn/documentation/articles/web-sites-scale/)。） 
+3.	从页面底部选择“管理域”。（如果此选项已禁用，请确保你使用的模式为“共享”、“基本”或“标准”。有关详细信息，请参阅[如何缩放网站](http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-scale/)。） 
 
 	![](./media/web-sites-custom-domain-name/dncmntask-cname-6.png)
 
@@ -112,6 +113,7 @@
 - **contoso.com** 映射到 127.0.0.1。
 - **www.contoso.com** 映射到 **contoso.chinacloudsites.cn**。
 
+>[AZURE.NOTE]可以使用 Azure DNS 为你的 Web 应用托管必要的域记录。若要在 Azure DNS 中配置你的自定义域并创建记录，请参阅[为 Web 应用创建自定义 DNS 记录](/documentation/articles/dns-web-sites-custom-domain)。
 
 <a name="awverify" /></a>
 ## 创建 awverify 记录（仅 A 记录）
@@ -128,6 +130,9 @@
 [WACOM.INCLUDE [模式](../includes/custom-dns-web-site-enable-on-web-site.md)]
 
 
+## 后续步骤
+
+有关详细信息，请参阅：[Azure DNS 入门](/documentation/articles/dns-getstarted-create-dnszone)和[将域委托到 Azure DNS](/documentation/articles/dns-domain-delegation) 
 
 <!-- Anchors. -->
 [概述]: #overview

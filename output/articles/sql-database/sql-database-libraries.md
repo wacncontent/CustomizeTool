@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/04/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Connection libraries for SQL Database and SQL Server
@@ -31,7 +31,7 @@ The following table displays libraries that are released by Microsoft. The **Lib
 
 ### ODBC support
 
-When using the data source name (DSN) wizard to define a data source for Azure SQL Database, click the **With SQL Server Authentication using a login ID and password entered by the user** option and select the **Connect to SQL Server to obtain default settings for the additional configuration options**. Enter your user name and password to connect to your Azure SQL Database server as **Login ID** and **Password**. Clear the **Connect to SQL Server to obtain default settings…** checkbox. Click **Change the default database to:** and enter the name of your Azure SQL Database even if it does not show up in the list. Note that the wizard lists several languages in the **Change the language of SQL Server system messages to:** list.
+When using the data source name (DSN) wizard to define a data source for Azure SQL Database, click the **With SQL Server Authentication using a login ID and password entered by the user** option and select the **Connect to SQL Server to obtain default settings for the additional configuration options**. Enter your user name and password to connect to your Azure SQL Database server as **Login ID** and **Password**. Clear the **Connect to SQL Server to obtain default settingsâŚ** checkbox. Click **Change the default database to:** and enter the name of your Azure SQL Database even if it does not show up in the list. Note that the wizard lists several languages in the **Change the language of SQL Server system messages to:** list.
 
 In this release, Windows Azure SQL Database supports only English, so select English as a language. Windows Azure SQL Database does not support **Mirror Server** or **Attach Database**, so leave those items empty. Click **Test Connection**.
 

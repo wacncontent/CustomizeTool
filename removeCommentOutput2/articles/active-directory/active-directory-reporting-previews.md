@@ -9,10 +9,12 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/09/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Azure Active Directory Report Previews
+
+*This documentation is part of the [Azure Active Directory Reporting Guide](/documentation/articles/active-directory-reporting-guide).*
 
 Report                                                  | Availability
 ------------------------------------------------------- | --------------------

@@ -1,19 +1,15 @@
 <properties
-   pageTitle="Manage your StorSimple volumes | Microsoft Azure"
+   pageTitle="Manage your StorSimple volumes | Windows Azure"
    description="Explains how to add, modify, monitor, and delete StorSimple volumes, and how to take them offline if necessary."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/15/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 # Use the StorSimple Manager service to manage volumes
 
@@ -21,7 +17,7 @@
 
 This tutorial explains how to use the StorSimple Manager service to create and manage volumes on the StorSimple device and StorSimple virtual device.
 
-The StorSimple Manager service is an extension of the Azure Portal that lets you manage your StorSimple solution from a single web interface. In addition to managing volumes, you can use the StorSimple Manager service to create and manage StorSimple services, view and manage devices, view alerts, and view and manage backup policies and the backup catalog.
+The StorSimple Manager service is an extension of the Azure Management Portal that lets you manage your StorSimple solution from a single web interface. In addition to managing volumes, you can use the StorSimple Manager service to create and manage StorSimple services, view and manage devices, view alerts, and view and manage backup policies and the backup catalog.
 
 > [AZURE.NOTE] Azure StorSimple can create thinly provisioned volumes only. You cannot create fully provisioned or partially provisioned volumes on an Azure StorSimple system.
 >
@@ -29,21 +25,21 @@ The StorSimple Manager service is an extension of the Azure Portal that lets you
 
 ## The Volumes page
 
-The **Volumes** page allows you to manage the storage volumes that are provisioned on the Microsoft Azure StorSimple device for your initiators (servers). It displays the list of volumes on your StorSimple device.
+The **Volumes** page allows you to manage the storage volumes that are provisioned on the Windows Azure StorSimple device for your initiators (servers). It displays the list of volumes on your StorSimple device.
 
  ![Volumes page](./media/storsimple-manage-volumes/HCS_VolumesPage.png)
 
 A volume consists of a series of attributes:
 
-- **Name** – A descriptive name that must be unique and helps identify the volume. This name is also used in monitoring reports when you filter on a specific volume.
+- **Name** - A descriptive name that must be unique and helps identify the volume. This name is also used in monitoring reports when you filter on a specific volume.
 
-- **Status** – Can be online or offline. If a volume if offline, it is not visible to initiators (servers) that are allowed access to use the volume.
+- **Status** - Can be online or offline. If a volume if offline, it is not visible to initiators (servers) that are allowed access to use the volume.
 
-- **Capacity** – Specifies how large the volume is, as perceived by the initiator (server). Capacity specifies the total amount of data that can be stored by the initiator (server). Volumes are thinly provisioned, and data is deduplicated. This implies that your device doesn’t pre-allocate physical storage capacity internally or on the cloud according to configured volume capacity. The volume capacity is allocated and consumed on demand.
+- **Capacity** - Specifies how large the volume is, as perceived by the initiator (server). Capacity specifies the total amount of data that can be stored by the initiator (server). Volumes are thinly provisioned, and data is deduplicated. This implies that your device doesn't pre-allocate physical storage capacity internally or on the cloud according to configured volume capacity. The volume capacity is allocated and consumed on demand.
 
-- **Access** – Specifies the initiators (servers) that are allowed access to this volume. Initiators that are not members of access control record (ACR) that is associated with the volume will not see the volume.
+- **Access** - Specifies the initiators (servers) that are allowed access to this volume. Initiators that are not members of access control record (ACR) that is associated with the volume will not see the volume.
 
-- **Monitoring** – Specifies whether or not a volume is being monitored. A volume will have monitoring enabled by default when it is created. Monitoring will, however, be disabled for a volume clone. To enable monitoring for a volume, follow the instructions in Monitor a volume.
+- **Monitoring** - Specifies whether or not a volume is being monitored. A volume will have monitoring enabled by default when it is created. Monitoring will, however, be disabled for a volume clone. To enable monitoring for a volume, follow the instructions in Monitor a volume.
 
 The most common tasks associated with a volume are:
 
@@ -55,7 +51,7 @@ The most common tasks associated with a volume are:
 
 ## Add a volume
 
-You [created a volume](storsimple-deployment-walkthrough-u1.md#step-6-create-a-volume) during deployment of your StorSimple solution. Adding a volume is a similar procedure.
+You [created a volume](/documentation/articles/storsimple-deployment-walkthrough-u1#step-6-create-a-volume) during deployment of your StorSimple solution. Adding a volume is a similar procedure.
 
 ### To add a volume
 
@@ -190,7 +186,7 @@ Perform the following steps to enable or disable monitoring for a volume.
 
 ## Next steps
 
-- Learn how to [clone a StorSimple volume](storsimple-clone-volume.md).
-- Learn how to [use the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+- Learn how to [clone a StorSimple volume](/documentation/articles/storsimple-clone-volume).
+- Learn how to [use the StorSimple Manager service to administer your StorSimple device](/documentation/articles/storsimple-manager-service-administration).
 
  

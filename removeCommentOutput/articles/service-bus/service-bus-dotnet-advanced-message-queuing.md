@@ -59,7 +59,7 @@ The value of the **Microsoft.ServiceBus.ConnectionString** setting is the Servic
 Endpoint=sb://[namespace].servicebus.chinacloudapi.cn;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp
 ```
 
-Where `[namespace]` and `[SAS key]` are obtained from the Azure Management Portal. For more information, see [How to Use Service Bus Queues][].
+Where `[namespace]` and `[SAS key]` are obtained from the [Azure Management Portal][]. For more information, see [How to use Service Bus queues][].
 
 When using AMQP, the connection string is appended with `;TransportType=Amqp`, which tells the client library to make its connection to Service Bus using AMQP 1.0.
 
@@ -318,3 +318,4 @@ Now that you've read an overview of Service Bus and AMQP with .NET, see the foll
 * [How to use the Java Message Service (JMS) API with Service Bus & AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)
 * [How to Use Service Bus Queues](/documentation/articles/service-bus-dotnet-how-to-use-queues)
  
+[Azure Management Portal]: http://manage.windowsazure.cn

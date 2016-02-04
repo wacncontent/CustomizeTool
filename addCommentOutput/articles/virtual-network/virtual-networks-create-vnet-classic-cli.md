@@ -4,13 +4,13 @@
    services="virtual-network"
    documentationCenter=""
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor=""
-   tags="classic"/>
+   tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-network"
-	ms.date="08/21/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Create a virtual network (classic) by using the Azure CLI

@@ -1,20 +1,16 @@
    <properties
-   pageTitle="Load data into SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Load data into SQL Data Warehouse | Windows Azure"
    description="Learn the common scenarios for data loading in SQL Data Warehouse"
    services="sql-data-warehouse"
    documentationCenter="NA"
    authors="lodipalm"
    manager="barbkess"
-   editor="jrowlandjones"/>
+   editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="lodipalm;barbkess"/>
+	ms.service="sql-data-warehouse"
+	ms.date="12/17/2015"
+	wacn.date=""/>
 
 # Load data into SQL Data Warehouse
 SQL Data Warehouse presents numerous options for loading data including:
@@ -90,7 +86,7 @@ Now that your data resides in Azure storage blobs, we will import it into your S
 
 3. **Create an external file format.**  External file formats are reusable as well, you will only need to create one if you are uploading a new type of file. 
 
-4. **Create an external data source.**  When pointing at a storage account, an external data source can be used when loading from the same container. For your 'LOCATION' parameter, use a location of the format: 'wasbs://mycontainer@ test.blob.core.windows.net/path'.
+4. **Create an external data source.**  When pointing at a storage account, an external data source can be used when loading from the same container. For your 'LOCATION' parameter, use a location of the format: 'wasbs://mycontainer@ test.blob.core.chinacloudapi.cn/path'.
 
 ```
 -- Creating master key
@@ -151,7 +147,8 @@ WITH
 CREATE TABLE <Table Name> 
 WITH 
 (
-	CLUSTERED COLUMNSTORE INDEX
+	CLUSTERED COLUMNSTORE INDEX,
+	DISTRIBUTION = <HASH(<Column Name>)>/<ROUND_ROBIN>
 )
 AS 
 SELECT  * 
@@ -163,6 +160,16 @@ Note that you can also load a subsection of the rows from a table using a more d
 
 In addition to the `CREATE TABLE...AS SELECT` statement, you can also load data from external tables into pre-existing tables with a 'INSERT...INTO' statement.
 
+##  Create Statistics on your newly loaded data 
+
+Azure SQL Data Warehouse does not yet support auto create or auto update statistics.  In order to get the best performance from your queries, it's important that statistics be created on all columns of all tables after the first load or any substantial changes occur in the data.  For a detailed explanation of statistics, see the [Statistics][] topic in the Develop group of topics.  Below is a quick example of how to create statistics on the tabled loaded in this example.
+
+
+```
+create statistics [<name>] on [<Table Name>] ([<Column Name>]);
+create statistics [<another name>] on [<Table Name>] ([<Another Column Name>]);
+```
+
 ## Next steps
 For more development tips, see the [development overview][].
 
@@ -170,21 +177,22 @@ For more development tips, see the [development overview][].
 
 <!--Article references-->
 [Load data with bcp]: sql-data-warehouse-load-with-bcp.md
-[Load with PolyBase]: sql-data-warehouse-load-with-polybase.md
+[Load with PolyBase]: sql-data-warehouse-get-started-load-with-polybase.md
 [solution partners]: sql-data-warehouse-solution-partners.md
 [development overview]: sql-data-warehouse-overview-develop.md
 [Migrate schema]: sql-data-warehouse-migrate-schema.md
 [Migrate code]: sql-data-warehouse-migrate-code.md
+[Statistics]: sql-data-warehouse-develop-statistics.md
 
 <!--MSDN references-->
-[supported source/sink]: https://msdn.microsoft.com/library/dn894007.aspx
-[copy activity]: https://msdn.microsoft.com/library/dn835035.aspx
-[SQL Server destination adapter]: https://msdn.microsoft.com/library/ms141237.aspx
-[SSIS]: https://msdn.microsoft.com/library/ms141026.aspx
+[supported source/sink]: https://msdn.microsoft.com/zh-cn/library/dn894007.aspx
+[copy activity]: https://msdn.microsoft.com/zh-cn/library/dn835035.aspx
+[SQL Server destination adapter]: https://msdn.microsoft.com/zh-cn/library/ms141237.aspx
+[SSIS]: https://msdn.microsoft.com/zh-cn/library/ms141026.aspx
 
 <!--Other Web references-->
-[AZCopy Installation Instructions]:https://azure.microsoft.com/en-us/documentation/articles/storage-use-azcopy/
-[Microsoft Command Line Utilities for SQL Server]:http://www.microsoft.com/en-us/download/details.aspx?id=36433
-[Import/Export]: https://azure.microsoft.com/en-us/documentation/articles/storage-import-export-service/
-[Azure Storage Documentation]:https://azure.microsoft.com/en-us/documentation/articles/storage-create-storage-account/
-[ExpressRoute documentation]:http://azure.microsoft.com/en-us/documentation/services/expressroute/
+[AZCopy Installation Instructions]:/documentation/articles/storage-use-azcopy/
+[Microsoft Command Line Utilities for SQL Server]:http://www.microsoft.com/download/details.aspx?id=36433
+[Import/Export]: /documentation/articles/storage-import-export-service/
+[Azure Storage Documentation]:h/documentation/articles/storage-create-storage-account/
+[ExpressRoute documentation]:/documentation/services/expressroute/

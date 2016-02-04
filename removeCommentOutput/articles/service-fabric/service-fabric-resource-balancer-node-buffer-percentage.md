@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/03/2015"
-   ms.author="masnider"/>
+	ms.service="Service-Fabric"
+	ms.date="09/03/2015"
+	wacn.date=""/>
 
 # Node Buffer Percentage Overview
 
@@ -44,5 +40,5 @@ If the value is not specified in this section, 0 as default value will be used.
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
 
-For more information: [Resource Balancer Architecture](service-fabric-resource-balancer-architecture.md)
+For more information: [Resource Balancer Architecture](/documentation/articles/service-fabric-resource-balancer-architecture)
  

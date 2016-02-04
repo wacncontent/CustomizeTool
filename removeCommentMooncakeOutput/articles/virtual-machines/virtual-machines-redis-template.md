@@ -5,11 +5,11 @@
 	documentationCenter=""
 	authors="timwieman"
 	manager="timlt"
-	editor="tysonn"
-	tags="azure-resource-manager"/>
+	editor="tysonn"/>
 
 <tags
 	ms.service="virtual-machines"
+	
 	ms.date="05/04/2015"
 	wacn.date=""/>
 
@@ -267,7 +267,7 @@ $folderName="<folder name, such as C:\Azure\Templates\RedisCluster>"
 $templateFile= $folderName + "\azuredeploy.json"
 $templateParameterFile= $folderName + "\azuredeploy-parameters.json"
 
-New-AzureResourceGroup –Name $RGName –Location $locName
+New-AzureResourceGroup -Name $RGName -Location $locName
 
 New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateParameterFile $templateParameterFile -TemplateFile $templateFile
 ```
@@ -280,7 +280,7 @@ When deploying, please keep in mind that a new Azure Storage account needs to be
 
 During the deployment, you will see something like this:
 
-	PS C:\> New-AzureResourceGroup –Name $RGName –Location $locName
+	PS C:\> New-AzureResourceGroup -Name $RGName -Location $locName
 
 	ResourceGroupName : TestRG
 	Location          : chinanorth
@@ -351,7 +351,7 @@ To do that, go to the [Azure Management Portal](https://manage.windowsazure.cn),
 If you need to remove this resource group and all of its resources (the Storage account, virtual machine, and virtual network) after testing, use this command:
 
 ```powershell
-Remove-AzureResourceGroup –Name "<resource group name>"
+Remove-AzureResourceGroup -Name "<resource group name>"
 ```
 
 ### Step 3-b: Deploy a Redis cluster by using a template via the Azure CLI
@@ -376,7 +376,7 @@ azure group deployment list TestRG
 
 ## A tour of the Redis cluster template structure and file organization
 
-In order to create a robust and reusable approach to Resource Manager template design, additional thinking is required to organize the series of complex and interrelated tasks required during deployment of a complex solution like Redis Cluster. By leveraging Resource Manager template linking capabilities, resource looping, and script execution through related extensions, it’s possible to implement a modular approach that can be reused with virtually any complex template-based deployment.
+In order to create a robust and reusable approach to Resource Manager template design, additional thinking is required to organize the series of complex and interrelated tasks required during deployment of a complex solution like Redis Cluster. By leveraging Resource Manager template linking capabilities, resource looping, and script execution through related extensions, it's possible to implement a modular approach that can be reused with virtually any complex template-based deployment.
 
 This diagram describes the relationships between all files downloaded from GitHub for this deployment:
 
@@ -484,7 +484,7 @@ If you want to customize the size of the Redis Cluster deployment, then you can 
 
 Note:  The `totalMemberCountExcludingLast` and `totalMemberCount` properties are needed because the template language currently does not have “math” operations.
 
-More information regarding the template language can be found in MSDN at [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).
+More information regarding the template language can be found in MSDN at [Azure Resource Manager Template Language](https://msdn.microsoft.com/zh-cn/library/azure/dn835138.aspx).
 
 ### "resources" section
 
@@ -520,11 +520,11 @@ From this first example it is clear how azuredeploy.json in this scenario has be
 
 In particular, the following linked templates will be used for this deployment:
 
-- **shared-resource.json**: contains the definition of all resources that will be shared across the deployment. Examples are Storage accounts used to store a VM’s OS disks, virtual networks, and availability sets.
+- **shared-resource.json**: contains the definition of all resources that will be shared across the deployment. Examples are Storage accounts used to store a VM's OS disks, virtual networks, and availability sets.
 - **jumpbox-resources.json**: deploys the “jump box” VM and all related resources, such as network interface, public IP address, and the input endpoint used to SSH into the environment.
 - **node-resources.json**: deploys all Redis Cluster node VMs and connected resources (network adapters, private IPs, etc.). This template also deploys VM extensions (custom scripts for Linux) and invokes a bash script to physically install and set up Redis on each node.  The script to invoke is passed to this template in the `machineSettings` parameter of the `commandToExecute` property.  All but one of the Redis Cluster nodes can be deployed and scripted in parallel.  One node needs to be saved until the end because the Redis Cluster setup can be run on only one node, and it must be done after all of the nodes are running the Redis server.  This is why the script to execute is passed to this template; the last node needs to run a slightly different script that will not only install the Redis server, but also set up the Redis cluster.
 
-Let’s drill down into *how* this last template, node-resources.json, is used, as it is one of the most interesting from a template development perspective. One important concept to highlight is how a single template file can deploy multiple copies of a single resource type, and for each instance, it can set unique values for required settings. This concept is known as **resource looping**.
+Let's drill down into *how* this last template, node-resources.json, is used, as it is one of the most interesting from a template development perspective. One important concept to highlight is how a single template file can deploy multiple copies of a single resource type, and for each instance, it can set unique values for required settings. This concept is known as **resource looping**.
 
 When node-resources.json is invoked from within the main azuredeploy.json file, it is invoked from inside a resource that uses the `copy` element to create a loop of sorts. A resource that uses the `copy` element will “copy” itself for the number of times specified in the `count` parameter of the `copy` element. For all settings where it is necessary to specify unique values between different instances of the deployed resource, the **copyindex()** function can be used to obtain a numeric value indicating the current index in that particular resource loop creation. In the following fragment from azuredeploy.json, you can see this concept applied to multiple VMs being created for the Redis Cluster nodes:
 
@@ -624,7 +624,7 @@ As was previously mentioned, the last node needs to wait for provisioning until 
 
 Notice how the `lastnode-resources` resource passes a slightly different `machineSettings.commandToExecute` to the linked template. This is because for the last node, in addition to the installed Redis server, it needs to call a script to set up the Redis cluster (which must be done only once after all the Redis servers are up and running).
 
-Another interesting fragment to explore is the one related to the `CustomScriptForLinux` VM extensions. These are installed as a separate type of resource, with a dependency on each cluster node. In this case, this is used to install and set up Redis on each VM node. Let’s look at a snippet from the node-resources.json template that uses these:
+Another interesting fragment to explore is the one related to the `CustomScriptForLinux` VM extensions. These are installed as a separate type of resource, with a dependency on each cluster node. In this case, this is used to install and set up Redis on each VM node. Let's look at a snippet from the node-resources.json template that uses these:
 
 ```json
 {
@@ -661,4 +661,4 @@ In essence, this approach suggests to:
 - For identical members of a group of resources (nodes in a cluster, etc.), create specific templates that leverage resource looping in order to deploy multiple instances with unique properties.
 - For all post-deployment tasks (product installation, configurations, etc.), leverage script deployment extensions and create scripts specific to each technology.
 
-For more information, see [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).
+For more information, see [Azure Resource Manager Template Language](https://msdn.microsoft.com/zh-cn/library/azure/dn835138.aspx).

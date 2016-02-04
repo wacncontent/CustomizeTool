@@ -14,8 +14,7 @@
 
 # Set up a Linux RDMA cluster to run MPI applications
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
-
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
 
 This article shows you how to set up a Linux RDMA cluster in Azure with [size A8 and A9 virtual machines](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs) to run parallel Message Passing Interface (MPI) applications. When you configure size A8 and A9 Linux-based VMs to run a supported MPI implementation, MPI applications communicate efficiently over a low latency, high throughput network in Azure that is based on remote direct memory access (RDMA) technology.
 
@@ -32,7 +31,7 @@ Following are methods you can use to create a Linux RDMA cluster either with or 
 
 * **Azure CLI scripts** - As shown in the steps in the rest of this article, use the [Azure Command Line Interface](/documentation/articles/xplat-cli-install) (CLI) for Mac, Linux, and Windows to script the deployement of a virtual network and the other necessary components to create a Linux cluster. The CLI in the classic (Service Management) deployment mode creates the cluster nodes serially, so if you are deploying many compute nodes it might take several minutes to complete the deployment.
 
-* **Azure Resource Manager templates** - By creating a straightforward Azure Resource Manager JSON template file and running Azure CLI commands for Resource Manager or by using the Azure Preview Portal, deploy multiple A8 and A9 Linux VMs as well as define virtual networks, static IP addresses, DNS settings, and other resources to create a compute cluster that can take advantage of the RDMA network to run MPI workloads. You can [create your own template](/documentation/articles/resource-group-authoring-templates), or check the [Azure Quickstart Templates page](https://azure.microsoft.com/documentation/templates/) for templates contributed by Microsoft or the community to deploy the solution you want. Resource Manager templates generally provide the fastest and most reliable way to deploy a Linux cluster.
+* **Azure Resource Manager templates** - By creating a straightforward Azure Resource Manager JSON template file and running Azure CLI commands for Resource Manager or by using the Azure Management Portal, deploy multiple A8 and A9 Linux VMs as well as define virtual networks, static IP addresses, DNS settings, and other resources to create a compute cluster that can take advantage of the RDMA network to run MPI workloads. You can [create your own template](/documentation/articles/resource-group-authoring-templates), or check the [Azure Quickstart Templates page](https://azure.microsoft.com/documentation/templates/) for templates contributed by Microsoft or the community to deploy the solution you want. Resource Manager templates generally provide the fastest and most reliable way to deploy a Linux cluster.
 
 ## Deployment in Azure Service Management with Azure CLI scripts
 
@@ -188,65 +187,65 @@ After you run these commands, the VM image is captured for your use and the VM i
 Modify the following Bash script with appropriate values for your environment, and run it from your client computer. Because the Service Management deployment method deploys the VMs serially, it takes a few minutes to deploy the 8 A9 VMs suggested in this script.
 
 ```
-#!/bin/bash -x
-# Script to create a compute cluster without a scheduler in a VNet in Azure
-# Create a custom private network in Azure
-# Replace 10.32.0.0 with your virtual network address space
-# Replace <network-name> with your network identifier
-# Select a region where A8 and A9 VMs are available, such as China North
-# See Azure Pricing pages for prices and availability of A8 and A9 VMs
-
-azure network vnet create -l "China North" -e 10.32.0.0 -i 16 <network-name>
-
-# Create a cloud service. All the A8 and A9 instances need to be in the same cloud service for Linux RDMA to work across InfiniBand.
-# Note: The current maximum number of VMs in a cloud service is 50. If you need to provision more than 50 VMs in the same cloud service in your cluster, contact Azure Support.
-
-azure service create <cloud-service-name> --location "China North" –s <subscription-ID>
-
-# Define a prefix naming scheme for compute nodes, e.g., cluster11, cluster12, etc.
-
-vmname=cluster
-
-# Define a prefix for external port numbers. If you want to turn off external ports and use only internal ports to communicate between compute nodes via port 22, don’t use this option. Since port numbers up to 10000 are reserved, use numbers after 10000. Leave external port on for rank 0 and head node.
-
-portnumber=101
-
-# In this cluster there will be 8 size A9 nodes, named cluster11 to cluster18. Specify your captured image in <image-name>. Specify the username and password you used when creating the SSH keys.
-
-for (( i=11; i<19; i++ )); do
-        azure vm create -g <username> -p <password> -c <cloud-service-name> -z A9 -n $vmname$i -e $portnumber$i -w <network-name> -b Subnet-1 <image-name>
-done
-
-# Save this script with a name like makecluster.sh and run it in your shell environnment to provision your cluster
+	#!/bin/bash -x
+	# Script to create a compute cluster without a scheduler in a VNet in Azure
+	# Create a custom private network in Azure
+	# Replace 10.32.0.0 with your virtual network address space
+	# Replace <network-name> with your network identifier
+	# Select a region where A8 and A9 VMs are available, such as China North
+	# See Azure Pricing pages for prices and availability of A8 and A9 VMs
+	
+	azure network vnet create -l "China North" -e 10.32.0.0 -i 16 <network-name>
+	
+	# Create a cloud service. All the A8 and A9 instances need to be in the same cloud service for Linux RDMA to work across InfiniBand.
+	# Note: The current maximum number of VMs in a cloud service is 50. If you need to provision more than 50 VMs in the same cloud service in your cluster, contact Azure Support.
+	
+	azure service create <cloud-service-name> --location "China North" -s <subscription-ID>
+	
+	# Define a prefix naming scheme for compute nodes, e.g., cluster11, cluster12, etc.
+	
+	vmname=cluster
+	
+	# Define a prefix for external port numbers. If you want to turn off external ports and use only internal ports to communicate between compute nodes via port 22, don't use this option. Since port numbers up to 10000 are reserved, use numbers after 10000. Leave external port on for rank 0 and head node.
+	
+	portnumber=101
+	
+	# In this cluster there will be 8 size A9 nodes, named cluster11 to cluster18. Specify your captured image in <image-name>. Specify the username and password you used when creating the SSH keys.
+	
+	for (( i=11; i<19; i++ )); do
+	        azure vm create -g <username> -p <password> -c <cloud-service-name> -z A9 -n $vmname$i -e $portnumber$i -w <network-name> -b Subnet-1 <image-name>
+	done
+	
+	# Save this script with a name like makecluster.sh and run it in your shell environnment to provision your cluster
 ```
 ## Configure and run Intel MPI
 
 To run MPI applications on Azure Linux RDMA, you need to configure certain environment variables specific to Intel MPI. Here is a sample Bash script to configure the variables and run an application.
 
 ```
-#!/bin/bash -x
-
-source /opt/intel/impi_latest/bin64/mpivars.sh
-
-export I_MPI_FABRICS=shm:dapl
-
-# THIS IS A MANDATORY ENVIRONMENT VARIABLEAND MUST BE SET BEFORE RUNNING ANY JOB
-# Setting the variable to shm:dapl gives best performance for some applications
-# If your application doesn’t take advantage of shared memory and MPI together, then set only dapl
-
-export I_MPI_DAPL_PROVIDER=ofa-v2-ib0
-
-# THIS IS A MANDATORY ENVIRONMENT VARIABLE AND MUST BE SET BEFORE RUNNING ANY JOB
-
-export I_MPI_DYNAMIC_CONNECTION=0
-
-# THIS IS A MANDATORY ENVIRONMENT VARIABLE AND MUST BE SET BEFORE RUNNING ANY JOB
-
-# Command line to run the job
-
-mpirun -n <number-of-cores> -ppn <core-per-node> -hostfile <hostfilename>  /path <path to the application exe> <arguments specific to the application>
-
-#end
+	#!/bin/bash -x
+	
+	source /opt/intel/impi_latest/bin64/mpivars.sh
+	
+	export I_MPI_FABRICS=shm:dapl
+	
+	# THIS IS A MANDATORY ENVIRONMENT VARIABLEAND MUST BE SET BEFORE RUNNING ANY JOB
+	# Setting the variable to shm:dapl gives best performance for some applications
+	# If your application doesn't take advantage of shared memory and MPI together, then set only dapl
+	
+	export I_MPI_DAPL_PROVIDER=ofa-v2-ib0
+	
+	# THIS IS A MANDATORY ENVIRONMENT VARIABLE AND MUST BE SET BEFORE RUNNING ANY JOB
+	
+	export I_MPI_DYNAMIC_CONNECTION=0
+	
+	# THIS IS A MANDATORY ENVIRONMENT VARIABLE AND MUST BE SET BEFORE RUNNING ANY JOB
+	
+	# Command line to run the job
+	
+	mpirun -n <number-of-cores> -ppn <core-per-node> -hostfile <hostfilename>  /path <path to the application exe> <arguments specific to the application>
+	
+	#end
 ```
 
 The format of the host file is as follows. Add one line for each node in your cluster. Specify private IP addresses from the VNet defined earlier, not DNS names. For example, for two hosts with IP addresses 10.32.0.1 and 10.32.0.2 the file contains the following:
@@ -283,45 +282,45 @@ cluster12
 The following Intel MPI command verifies the cluster configuration and connection to the RDMA network by using a pingpong benchmark.
 
 ```
-/opt/intel/impi_latest/bin64/mpirun -hosts <host1>,<host2> -ppn 1 -n 2 -env I_MPI_FABRICS=dapl -env I_MPI_DAPL_PROVIDER=ofa-v2-ib0 -env I_MPI_DYNAMIC_CONNECTION=0 /opt/intel/impi_latest/bin64/IMB-MPI1 pingpong
+	/opt/intel/impi_latest/bin64/mpirun -hosts <host1>,<host2> -ppn 1 -n 2 -env I_MPI_FABRICS=dapl -env I_MPI_DAPL_PROVIDER=ofa-v2-ib0 -env I_MPI_DYNAMIC_CONNECTION=0 /opt/intel/impi_latest/bin64/IMB-MPI1 pingpong
 ```
 
 You should see output similar to the following on a working cluster with two nodes. On the Azure RDMA network, latency at or below 3 microseconds is expected for message sizes up to 512 bytes.
 
 ```
-#------------------------------------------------------------
-#    Intel (R) MPI Benchmarks 4.0 Update 1, MPI-1 part
-#------------------------------------------------------------
-# Date                  : Fri Jul 17 23:16:46 2015
-# Machine               : x86_64
-# System                : Linux
-# Release               : 3.12.39-44-default
-# Version               : #5 SMP Thu Jun 25 22:45:24 UTC 2015
-# MPI Version           : 3.0
-# MPI Thread Environment:
-# New default behavior from Version 3.2 on:
-# the number of iterations per message size is cut down
-# dynamically when a certain run time (per message size sample)
-# is expected to be exceeded. Time limit is defined by variable
-# "SECS_PER_SAMPLE" (=> IMB_settings.h)
-# or through the flag => -time
-
-# Calling sequence was:
-# /opt/intel/impi_latest/bin64/IMB-MPI1 pingpong
-# Minimum message length in bytes:   0
-# Maximum message length in bytes:   4194304
-#
-# MPI_Datatype                   :   MPI_BYTE
-# MPI_Datatype for reductions    :   MPI_FLOAT
-# MPI_Op                         :   MPI_SUM
-#
-#
-# List of Benchmarks to run:
-# PingPong
-#---------------------------------------------------
-# Benchmarking PingPong
-# #processes = 2
-#---------------------------------------------------
+	#------------------------------------------------------------
+	#    Intel (R) MPI Benchmarks 4.0 Update 1, MPI-1 part
+	#------------------------------------------------------------
+	# Date                  : Fri Jul 17 23:16:46 2015
+	# Machine               : x86_64
+	# System                : Linux
+	# Release               : 3.12.39-44-default
+	# Version               : #5 SMP Thu Jun 25 22:45:24 UTC 2015
+	# MPI Version           : 3.0
+	# MPI Thread Environment:
+	# New default behavior from Version 3.2 on:
+	# the number of iterations per message size is cut down
+	# dynamically when a certain run time (per message size sample)
+	# is expected to be exceeded. Time limit is defined by variable
+	# "SECS_PER_SAMPLE" (=> IMB_settings.h)
+	# or through the flag => -time
+	
+	# Calling sequence was:
+	# /opt/intel/impi_latest/bin64/IMB-MPI1 pingpong
+	# Minimum message length in bytes:   0
+	# Maximum message length in bytes:   4194304
+	#
+	# MPI_Datatype                   :   MPI_BYTE
+	# MPI_Datatype for reductions    :   MPI_FLOAT
+	# MPI_Op                         :   MPI_SUM
+	#
+	#
+	# List of Benchmarks to run:
+	# PingPong
+	#---------------------------------------------------
+	# Benchmarking PingPong
+	# #processes = 2
+	#---------------------------------------------------
        #bytes #repetitions      t[usec]   Mbytes/sec
             0         1000         2.23         0.00
             1         1000         2.26         0.42
@@ -348,7 +347,7 @@ You should see output similar to the following on a working cluster with two nod
       2097152           20       543.37      3680.71
       4194304           10      1082.94      3693.63
 
-# All processes entering MPI_Finalize
+	# All processes entering MPI_Finalize
 
 ```
 

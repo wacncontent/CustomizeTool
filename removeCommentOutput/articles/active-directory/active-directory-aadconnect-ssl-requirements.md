@@ -14,11 +14,11 @@
 
 # Azure AD Connect - SSL Certificate Requirements
 
-**Important:** it’s strongly recommended to use the same SSL certificate across all nodes of your AD FS farm as well as all Web Application proxy servers.
+**Important:** it's strongly recommended to use the same SSL certificate across all nodes of your AD FS farm as well as all web site proxy servers.
 
 - This certificate must be an X509 certificate.
 - You can use a self-signed certificate on federation servers in a test lab environment; however, for a production environment, we recommend that you obtain the certificate from a public CA.
-	- If using a certificate that is not publicly trusted, ensure that the certificate installed on each Web Application Proxy server is trusted on both the local server and on all federation servers
+	- If using a certificate that is not publicly trusted, ensure that the certificate installed on each web site Proxy server is trusted on both the local server and on all federation servers
 - Certificates based on CryptoAPI next generation (CNG) keys and key storage providers are not supported.  This means you must use a certificate based on a CSP (cryptographic service provider) and not a KSP (key storage provider).
 - The identity of the certificate must match the federation service name (for example, fs.contoso.com).
 	- The identity is either a subject alternative name (SAN) extension of type dNSName or, if there are no SAN entries, the subject name specified as a common name.  

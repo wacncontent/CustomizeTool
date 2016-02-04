@@ -6,10 +6,11 @@
     authors="tamram" 
     manager="carolz" 
     editor=""/>
-<tags
-	ms.service="storage"
-	ms.date="09/23/2015"
-	wacn.date=""/>
+<tags 
+    ms.service="storage" 
+   
+    ms.date="09/23/2015" 
+    wacn.date=""/>
 
 # List Azure Storage Resources in C++
 
@@ -126,13 +127,13 @@ Then you should modify your code to use the segmented listing APIs:
 
 By specifying the *max_results* parameter of the segment, you can balance between the numbers of requests and memory usage to meet performance considerations for your application.
 
-Additionally, if you’re using segmented listing APIs, but store the data in a local collection in a "greedy" style, we also strongly recommend that you refactor your code to handle storing data in a local collection carefully at scale.
+Additionally, if youâre using segmented listing APIs, but store the data in a local collection in a "greedy" style, we also strongly recommend that you refactor your code to handle storing data in a local collection carefully at scale.
 
 ## Lazy listing
 
 Although greedy listing raised potential issues, it is convenient if there are not too many objects in the container.
 
-If you’re also using C# or Oracle Java SDKs, you should be familiar with the Enumerable programming model, which offers a lazy-style listing, where the data at a certain offset is only fetched if it is required. In C++, the iterator-based template also provides a similar approach.
+If youâre also using C# or Oracle Java SDKs, you should be familiar with the Enumerable programming model, which offers a lazy-style listing, where the data at a certain offset is only fetched if it is required. In C++, the iterator-based template also provides a similar approach.
 
 A typical lazy listing API, using **list_blobs** as an example, looks like this:
 
@@ -178,4 +179,4 @@ For more information about Azure Storage and Client Library for C++, see the fol
 -	[How to use Queue Storage from C++](/documentation/articles/storage-c-plus-plus-how-to-use-queues)
 -	[Azure Storage Client Library for C++ API documentation.](http://azure.github.io/azure-storage-cpp/)
 -	[Azure Storage Team Blog](http://blogs.msdn.com/b/windowsazurestorage/)
--	[Azure Storage Documentation](/documentation/services/storage/)
+-	[Azure Storage Documentation](http://www.windowsazure.cn/documentation/services/storage/)

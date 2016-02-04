@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Using Docker VM Extension for Linux | Windows Azure"
 	description="Describes Docker and the Azure Virtual Machines extensions, and how to create Azure Virtual Machines that are docker hosts using the Azure CLI in classic deployment model."
@@ -19,7 +21,7 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
-[Docker](https://www.docker.com/) is one of the most popular virtualization approaches that uses [Linux containers](http://en.wikipedia.org/wiki/LXC) rather than virtual machines as a way of isolating data and computing on shared resources. You can use the Docker VM extension managed by [Azure Linux Agent] to create a Docker VM that hosts any number of containers for your applications on Azure.
+[Docker](https://www.docker.com/) is one of the most popular virtualization approaches that uses [Linux containers](http://zh.wikipedia.org/wiki/LXC) rather than virtual machines as a way of isolating data and computing on shared resources. You can use the Docker VM extension managed by [Azure Linux Agent] to create a Docker VM that hosts any number of containers for your applications on Azure.
 
 > [AZURE.NOTE] This topic describes how to create a Docker VM from the Azure Management Portal. To see how to create a Docker VM at the command line, see [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]. To see a high-level discussion of containers and their advantages, see the [Docker High Level Whiteboard](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard).
 
@@ -137,7 +139,8 @@ You are ready to go to the [Docker User Guide] and use your Docker VM. If you wa
 
 <!--Link references-->
 [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]: /documentation/articles/virtual-machines-docker-with-xplat-cli/
-[Azure Linux Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide
-[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
+[Azure Linux Agent]: virtual-machines-linux-agent-user-guide.md
+[Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
+
 [Running Docker with https]: http://docs.docker.com/articles/https/
 [Docker User Guide]: https://docs.docker.com/userguide/

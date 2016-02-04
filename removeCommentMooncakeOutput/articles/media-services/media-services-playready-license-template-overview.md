@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 #Media Services PlayReady License Template Overview
@@ -47,7 +47,7 @@ The XML conforms to the PlayReady license template XML schema defined in the Pla
 
 Media Services also defines a set of .NET classes that could be used to serialized and deserialized to and from the XML. For description of main classes, see [Media Services .NET classes](/documentation/articles/media-services-playready-license-template-overview#classes). that are used to configure license templates.
 
-For an end-to-end example that uses .NET classes to configure the PlayReady license template, see [Using PlayReady Dynamic Encryption and License Delivery Service](https://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx).
+For an end-to-end example that uses .NET classes to configure the PlayReady license template, see [Using PlayReady Dynamic Encryption and License Delivery Service](/documentation/articles/media-services-protect-with-drm).
 
 ##<a id="classes"></a>Media Services .NET classes that are used to configure license templates
 
@@ -59,7 +59,7 @@ The [MediaServicesLicenseTemplateSerializer](https://msdn.microsoft.com/zh-cn/li
 
 [PlayReadyLicenseResponseTemplate](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.contentkeyauthorization.playreadylicenseresponsetemplate.aspx) - This class represents the template for the response sent back to the end user. It contains a field for a custom data string between the license server and the application (may be useful for custom app logic) as well as a list of one or more license templates.
 
-This is the “top level” class in the template hierarchy. Meaning that the response template includes a list of license templates and the license templates include (directly or indirectly) all of the other classes that make up the template data to be serialized.
+This is the âtop levelâ class in the template hierarchy. Meaning that the response template includes a list of license templates and the license templates include (directly or indirectly) all of the other classes that make up the template data to be serialized.
 
 
 ###PlayReadyLicenseTemplate
@@ -69,7 +69,7 @@ This is the “top level” class in the template hierarchy. Meaning that the re
 
 ###<a id="PlayReadyPlayRight"></a>PlayReadyPlayRight
 
-[PlayReadyPlayRight](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.contentkeyauthorization.playreadyplayright.aspx) - This class represents the PlayRight of a PlayReady license. It grants the user the ability to playback the content subject to the zero or more restrictions configured in the license and on the PlayRight itself (for playback specific policy). Much of the policy on the PlayRight has to do with output restrictions which control the types of outputs that the content can be played over and any restrictions that must be put in place when using a given output. For example, if the DigitalVideoOnlyContentRestriction is enabled, then the DRM runtime will only allow the video to be displayed over digital outputs (analog video outputs won’t be allowed to pass the content).
+[PlayReadyPlayRight](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.contentkeyauthorization.playreadyplayright.aspx) - This class represents the PlayRight of a PlayReady license. It grants the user the ability to playback the content subject to the zero or more restrictions configured in the license and on the PlayRight itself (for playback specific policy). Much of the policy on the PlayRight has to do with output restrictions which control the types of outputs that the content can be played over and any restrictions that must be put in place when using a given output. For example, if the DigitalVideoOnlyContentRestriction is enabled, then the DRM runtime will only allow the video to be displayed over digital outputs (analog video outputs won't be allowed to pass the content).
 
 >[AZURE.IMPORTANT]These types of restrictions can be very powerful but can also affect the consumer experience. If the output protections are configured too restrictive, the content might be unplayable on some clients. For more information, see the PlayReady Compliance Rules document.
 
@@ -297,4 +297,5 @@ For an example of what protection levels Silverlight supports, see: [Silverlight
 	  </xs:complexType>
 	  <xs:element name="ScmsRestriction" nillable="true" type="tns:ScmsRestriction" />
 	</xs:schema>
+
 

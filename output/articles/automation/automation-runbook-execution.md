@@ -16,7 +16,7 @@
 
 When you start a runbook in Azure Automation, a job is created. A job is a single execution instance of a runbook. An Azure Automation worker is assigned to run each job. While workers are shared by multiple Azure accounts, jobs from different Automation accounts are isolated from one another. You do not have control over which worker will service the request for your job.  A single runbook can have multiple jobs running at one time. When you view the list of runbooks in the Azure Management Portal, it will list the status of the last job that was started for each runbook. You can view the list of jobs for each runbook in order to track the status of each. For a description of the different job statuses, see [Job Statuses](#job-statuses).
 
-The following diagram shows the lifecycle of a runbook job for <!-- deleted by customization [Graphical runbooks](/documentation/articles/automation-runbook-types#graphical-runbooks) and --> [PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks).
+The following diagram shows the lifecycle of a runbook job for [Graphical runbooks](/documentation/articles/automation-runbook-types#graphical-runbooks) and [PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks).
 
 ![Job Statuses - PowerShell Workflow](./media/automation-runbook-execution/job-statuses.png)
 
@@ -34,7 +34,7 @@ The following table describes the different statuses that are possible for a job
 | Status| Description|
 |:---|:---|
 |Completed|The job completed successfully.|
-|Failed| For <!-- deleted by customization [Graphical and --><!-- keep by customization: begin --> [ <!-- keep by customization: end --> PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types), the runbook failed to compile.  For [PowerShell Script runbooks](/documentation/articles/automation-runbook-types), the runbook failed to start or the job encountered an exception. |
+|Failed| For [Graphical and PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types), the runbook failed to compile.  For [PowerShell Script runbooks](/documentation/articles/automation-runbook-types), the runbook failed to start or the job encountered an exception. |
 |Failed, waiting for resources|The job failed because it reached the [fair share](#fairshare) limit three times and started from the same checkpoint or from the start of the runbook each time.|
 |Queued|The job is waiting for resources on an Automation worker to come available so that it can be started.|
 |Starting|The job has been assigned to a worker, and the system is in the process of starting it.|
@@ -43,8 +43,8 @@ The following table describes the different statuses that are possible for a job
 |Running, waiting for resources|The job has been unloaded because it reached the [fair share](#fairshare) limit. It will resume shortly from its last checkpoint.|
 |Stopped|The job was stopped by the user before it was completed.|
 |Stopping|The system is in the process of stopping the job.|
-|Suspended|The job was suspended by the user, by the system, or by a command in the runbook. A job that is suspended can be started again and will resume from its last checkpoint or from the beginning of the runbook if it has no checkpoints. The runbook will only be suspended by the system in the case of an exception. By default, ErrorActionPreference is set to **Continue** meaning that the job will keep running on an error. If this preference variable is set to **Stop** then the job will suspend on an error.  Applies to <!-- deleted by customization [Graphical and --><!-- keep by customization: begin --> [ <!-- keep by customization: end --> PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types) only.|
-|Suspending|The system is attempting to suspend the job at the request of the user. The runbook must reach its next checkpoint before it can be suspended. If it has already passed its last checkpoint, then it will complete before it can be suspended.  Applies to <!-- deleted by customization [Graphical and --><!-- keep by customization: begin --> [ <!-- keep by customization: end --> PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types) only.|
+|Suspended|The job was suspended by the user, by the system, or by a command in the runbook. A job that is suspended can be started again and will resume from its last checkpoint or from the beginning of the runbook if it has no checkpoints. The runbook will only be suspended by the system in the case of an exception. By default, ErrorActionPreference is set to **Continue** meaning that the job will keep running on an error. If this preference variable is set to **Stop** then the job will suspend on an error.  Applies to [Graphical and PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types) only.|
+|Suspending|The system is attempting to suspend the job at the request of the user. The runbook must reach its next checkpoint before it can be suspended. If it has already passed its last checkpoint, then it will complete before it can be suspended.  Applies to [Graphical and PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types) only.|
 
 ## Viewing job status using the Azure Management Portal
 
@@ -80,14 +80,14 @@ You can use the following steps to view the jobs for a runbook.
 
 ## Retrieving job status using Windows PowerShell
 
-You can use the [Get-AzureAutomationJob](http://msdn.microsoft.com/zh-cn/library/azure/dn690263.aspx) to retrieve the jobs created for a runbook and the details of a particular job. If you start a runbook with Windows PowerShell using [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690259.aspx), then it will return the resulting job. Use [Get-AzureAutomationJob](http://msdn.microsoft.com/zh-cn/library/azure/dn690263.aspx)Output to get a job’s output.
+You can use the [Get-AzureAutomationJob](http://msdn.microsoft.com/zh-cn/library/azure/dn690263.aspx) to retrieve the jobs created for a runbook and the details of a particular job. If you start a runbook with Windows PowerShell using [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690259.aspx), then it will return the resulting job. Use [Get-AzureAutomationJob](http://msdn.microsoft.com/zh-cn/library/azure/dn690263.aspx)Output to get a job's output.
 
-The following sample commands retrieves the last job for a sample runbook and displays it’s status, the values provide for the runbook parameters, and the output from the job.
+The following sample commands retrieves the last job for a sample runbook and displays it's status, the values provide for the runbook parameters, and the output from the job.
 
-	$job = (Get-AzureAutomationJob –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" | sort LastModifiedDate –desc)[0]
+	$job = (Get-AzureAutomationJob -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" | sort LastModifiedDate -desc)[0]
 	$job.Status
 	$job.JobParameters
-	Get-AzureAutomationJobOutput –AutomationAccountName "MyAutomationAccount" -Id $job.Id –Stream Output
+	Get-AzureAutomationJobOutput -AutomationAccountName "MyAutomationAccount" -Id $job.Id -Stream Output
 
 ## Fair share
 

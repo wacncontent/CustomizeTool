@@ -76,7 +76,7 @@ The Azure module reads the environment variables AZURE\_SERVICEBUS\_NAMESPACE an
 
 For an example of setting the environment variables in a configuration file for an Azure Cloud Service, see [Node.js Cloud Service with Storage][].
 
-For an example of setting the environment variables in the management portal for an Azure Website, see [Node.js Web Application with Storage][].
+For an example of setting the environment variables in the [Azure Management Portal][] for an Azure Website, see [Node.js web site with Storage][].
 
 ## Create a topic
 
@@ -400,7 +400,7 @@ delivery attempts.
 ## Delete topics and subscriptions
 
 Topics and subscriptions are persistent, and must be explicitly deleted
-either through the Azure Management portal or programmatically.
+either through the [Azure Management Portal][] or programmatically.
 The following example demonstrates how to delete the topic named `MyTopic`:
 
     serviceBusService.deleteTopic('MyTopic', function (error) {
@@ -424,17 +424,35 @@ following example shows how to delete a subscription named
 
 Now that you've learned the basics of Service Bus topics, follow these links to learn more.
 
+<!-- deleted by customization
 -   See [Queues, topics, and subscriptions][].
+-->
+<!-- keep by customization: begin -->
+-   See [Queues, Topics, and Subscriptions][].
+<!-- keep by customization: end -->
 -   API reference for [SqlFilter][].
 -   Visit the [Azure SDK for Node][] repository on GitHub.
 
   [Azure SDK for Node]: https://github.com/WindowsAzure/azure-sdk-for-node
   [Azure Management Portal]: http://manage.windowsazure.cn
   [SqlFilter.SqlExpression]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
-  [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+<!-- deleted by customization
+  [Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
+-->
+<!-- keep by customization: begin -->
+  [Queues, Topics, and Subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+<!-- keep by customization: end -->
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
-  [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
-  [Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
-  [Node.js Cloud Service with Storage]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
-  [Node.js Web Application with Storage]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
+<!-- deleted by customization
+  [Node.js Cloud Service]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
+  [Create and deploy a Node.js application to an Azure Web Site]: ../app-service-web/web-sites-nodejs-develop-deploy-mac.md
+  [Node.js Cloud Service with Storage]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
+  [Node.js web site with Storage]: ../cloud-services/storage-nodejs-use-table-storage-cloud-service-app.md
+-->
+<!-- keep by customization: begin -->
+  [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app/
+  [Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/app-service-web/web-sites-nodejs-develop-deploy-mac
+  [Node.js Cloud Service with Storage]: /documentation/articles/cloud-services/cloud-services-nodejs-develop-deploy-app
+  [Node.js web site with Storage]: /documentation/articles/cloud-services/storage-nodejs-use-table-storage-cloud-service-app
+<!-- keep by customization: end -->
  

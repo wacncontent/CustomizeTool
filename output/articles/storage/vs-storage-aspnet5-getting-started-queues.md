@@ -3,23 +3,16 @@
 	description="How to get started using Azure queue storage in an ASP.NET 5 project in Visual Studio"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Get started with queue storage and Visual Studio connected services (ASP.NET 5)
-
-> [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-aspnet5-getting-started-queues)
-> - [What happened](/documentation/articles/vs-storage-aspnet5-what-happened)
-> - [Blobs](/documentation/articles/vs-storage-aspnet5-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-aspnet5-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-aspnet5-getting-started-tables)
 
 ##Overview
 
@@ -60,12 +53,12 @@ To access queues in ASP.NET 5 projects, you need to include the following items 
 3. Get a **CloudQueueClient** object to reference the queue objects in your storage account.  
 
 	    // Create the table client.
-    	CloudQuecClient queueClient = storageAccount.CreateCloudTableClient();
+    	CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
 4. Get a **CloudQueue** object to reference a specific queue.
 
     	// Get a reference to a table named "messageQueue"
-	    CloudTable messageQueue = queueClient.GetQueueReference("messageQueue");
+	    CloudQueue messageQueue = queueClient.GetQueueReference("messageQueue");
 
 
 **NOTE:** Use all of the above code in front of the code in the following samples.

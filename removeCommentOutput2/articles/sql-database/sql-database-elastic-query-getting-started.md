@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Getting started with elastic database query | Windows Azure"
+	pageTitle="Getting started with elastic queries for sharding (horizontal partitioning) | Windows Azure"
 	description="how to use cross database database queries"
 	services="sql-database"
 	documentationCenter=""  
@@ -24,7 +24,7 @@ Download and run the [Getting started with Elastic Database tools sample](/docum
 
 Here you will create a shard map manager along with several shards, followed by insertion of data into the shards. If you happen to already have shards setup with sharded data in them, you can skip the following steps and move to the next section.
 
-1. Build and run the **Getting started with Elastic Database tools** sample application. Follow the steps until step 7 in the section [Download and run the sample app](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools). At the end of Step 7, you will see the following command prompt:
+1. Build and run the **Getting started with Elastic Database tools** sample application. Follow the steps until step 7 in the section [Download and run the sample app](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools). At the end of Step 7, you will see the following command prompt:
 
 	![command prompt][1]
 
@@ -39,12 +39,12 @@ Here you will create a shard map manager along with several shards, followed by 
 
 ## Create an elastic query database
 
-1. Open the [Azure preview portal](https://manage.windowsazure.cn) and log in.
-2. Create a new Azure SQL database in the same server as your shard setup. Name the database "ElasticDBQuery." For a pricing tier, you must select one of the premium offers. The Elastic Database query is currently available only on the premium tier.
+1. Open the [Azure Management Portal](https://manage.windowsazure.cn) and log in.
+2. Create a new Azure SQL database in the same server as your shard setup. Name the database "ElasticDBQuery." 
 
 	![Azure Management Portal and pricing tier][3]
 
-	Note: you can use an existing premium database. If you can do so, it must not be one of the shards that you would like to execute your queries on. This database will be used for creating the metadata objects for an elastic database query.
+	Note: you can use an existing database. If you can do so, it must not be one of the shards that you would like to execute your queries on. This database will be used for creating the metadata objects for an elastic database query.
 
 
 ## Create database objects
@@ -62,7 +62,7 @@ These are used to connect to the shard map manager and the shards:
 		WITH IDENTITY = '<username>',
 		SECRET = '<password>';
 
-	"username" and "password" should be the same as login information used in step 6 of [Download and run the sample app](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools) in [Getting started with elastic database tools](/documentation/articles/sql-database-elastic-scale-get-started).
+	"username" and "password" should be the same as login information used in step 6 of [Download and run the sample app](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools) in [Getting started with elastic database tools](/documentation/articles/sql-database-elastic-scale-get-started).
 
 ### External data sources
 
@@ -120,12 +120,12 @@ You will notice that the query aggregates results from all the shards and gives 
 All the rows from **Customers** table, stored in different shards populate the Excel sheet.
 
 ## Next steps
-You can now use Excel’s powerful data visualization functions. You can use the connection string with your server name, database name and credentials to connect your BI and data integration tools to the elastic query database. Make sure that SQL Server is supported as a data source for your tool. You can refer to the elastic query database and external tables just like any other SQL Server database and SQL Server tables that you would connect to with your tool.
+You can now use Excelâs powerful data visualization functions. You can use the connection string with your server name, database name and credentials to connect your BI and data integration tools to the elastic query database. Make sure that SQL Server is supported as a data source for your tool. You can refer to the elastic query database and external tables just like any other SQL Server database and SQL Server tables that you would connect to with your tool.
 
 ### Cost
-There is no additional charge for using the Elastic Database Query feature. However, at this time this feature is available only on premium databases as an end point, but the shards can be of any service tier.
+There is no additional charge for using the Elastic Database Query feature. 
 
-For pricing information see [SQL Database Pricing Details](/home/features/sql-database/#price).
+For pricing information see [SQL Database Pricing Details](http://www.windowsazure.cn/home/features/sql-database/#price).
 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]

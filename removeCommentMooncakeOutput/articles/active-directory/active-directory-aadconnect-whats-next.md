@@ -1,23 +1,23 @@
-<properties
-	pageTitle="Managing Azure AD Connect | Windows Azure"
-	description="Learn how to extend the default configuration and operational tasks for Azure AD Connect."
-	services="active-directory"
-	documentationCenter=""
-	authors="billmath"
-	manager="stevenpo"
+<properties 
+	pageTitle="Azure AD Connect: Next steps and how to manage Azure AD Connect | Windows Azure"
+	description="Learn how to extend the default configuration and operational tasks for Azure AD Connect." 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="billmath" 
+	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags
-	ms.service="active-directory"
+<tags 
+	ms.service="active-directory" 
 	ms.date="10/01/2015"
 	wacn.date=""/>
 
-# Managing Azure AD Connect
+# Next steps and how to manage Azure AD Connect
 The following are advanced operational topics that allow you to customize Azure Active Directory Connect to meet your organization's needs and requirements.  
 
 ## Assigning licenses to Azure AD Premium and Enterprise Mobility users
 
-Now that your users have been synchronized to the cloud, you will need to assign them a license so they can get going with cloud apps such as Office 365.
+Now that your users have been synchronized to the cloud, you will need to assign them a license so they can get going with cloud apps such as Office 365. 
 
 ### To assign an Azure AD Premium or Enterprise Mobility Suite License
 --------------------------------------------------------------------------------
@@ -34,6 +34,7 @@ If you want to check on the status of a synchronization you can do this by check
 
 ### To verify the scheduled synchronization task
 --------------------------------------------------------------------------------
+
 1. Sign-in to the Azure Management Portal as an Administrator.
 2. On the left, select **Active Directory**.
 3. On the Active Directory page, double-click on the directory that has the users you wish to enable.
@@ -48,6 +49,8 @@ If you need to run a synchronization task you can do this by running through the
 <center>![Cloud](./media/active-directory-aadconnect-whats-next/startsynch.png)</center>
 
 
+
+
 ## Additional tasks available in Azure AD Connect
 After your initial installation of Azure AD Connect, you can always start the wizard again from the Azure AD Connect start page or desktop shortcut.  You will notice that going through the wizard again provides some new options in the form of Additional tasks.  
 
@@ -56,7 +59,7 @@ The following table provides a summary of these tasks and a brief description on
 ![Join Rule](./media/active-directory-aadconnect-whats-next/addtasks.png)
 
 
-Additional Task | Description
+Additional Task | Description 
 ------------- | ------------- |
 View the selected scenario  |Allows you to view your current Azure AD Connect solution.  This includes general settings, synchronized directories, synch settings, etc.
 Customize Synchronization options | Allows you to change the current configuration including adding additional Active Directory forests to the configuration or enabling sync options such as user, group, device or password write-back.
@@ -64,3 +67,5 @@ Enable Staging Mode |  This allows you to stage information that will later be s
 
 ## Next steps
 Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).
+
+ 

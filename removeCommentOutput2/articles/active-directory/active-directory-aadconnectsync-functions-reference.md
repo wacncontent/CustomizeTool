@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure AD Connect sync: Functions Reference | Windows Azure"
-	description="Reference of declarative provisioning expressions in Azure AD Connect Sync."
+	description="Reference of declarative provisioning expressions in Azure AD Connect sync."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+	ms.date="01/13/2016"
 	wacn.date=""/>
 
 
@@ -26,18 +26,18 @@ An error is thrown if the type does not match.
 
 The types are expressed with the following syntax:
 
-- **bin** – Binary
-- **bool** – Boolean
-- **dt** – UTC Date/Time
-- **enum** – Enumeration of known constants
-- **exp** – Expression, which is expected to evaluate to a Boolean
-- **mvbin** – Multi Valued Binary
-- **mvstr** – Multi Valued Reference
-- **num** – Numeric
-- **ref** – Single Valued Reference
-- **str** – Single Valued String
-- **var** – A variant of (almost) any other type
-- **void** – doesn’t return a value
+- **bin** - Binary
+- **bool** - Boolean
+- **dt** - UTC Date/Time
+- **enum** - Enumeration of known constants
+- **exp** - Expression, which is expected to evaluate to a Boolean
+- **mvbin** - Multi Valued Binary
+- **mvstr** - Multi Valued Reference
+- **num** - Numeric
+- **ref** - Single Valued Reference
+- **str** - Single Valued String
+- **var** - A variant of (almost) any other type
+- **void** - doesn't return a value
 
 
 
@@ -56,7 +56,7 @@ The types are expressed with the following syntax:
 
 [DNComponent](#dncomponent)  &nbsp;&nbsp;&nbsp;&nbsp; [DNComponentRev](#dncomponentrev) &nbsp;&nbsp;&nbsp;&nbsp; [EscapeDNComponent](#escapedncomponent)
 
-**Insprection:**
+**Evaluation:**
 
 [IsBitSet](#isbitset)  &nbsp;&nbsp;&nbsp;&nbsp; [IsDate](#isdate) &nbsp;&nbsp;&nbsp;&nbsp; [IsEmpty](#isempty)
 &nbsp;&nbsp;&nbsp;&nbsp; [IsGuid](#isguid) &nbsp;&nbsp;&nbsp;&nbsp; [IsNull](#isnull) &nbsp;&nbsp;&nbsp;&nbsp; [IsNullOrEmpty](#isnullorempty) &nbsp;&nbsp;&nbsp;&nbsp; [IsNumeric](#isnumeric)  &nbsp;&nbsp;&nbsp;&nbsp; [IsPresent](#ispresent) &nbsp;&nbsp;&nbsp;&nbsp; [IsString](#isstring)
@@ -87,7 +87,7 @@ The BitAnd function sets specified bits on a value.
 **Syntax:**<br>
 `num BitAnd(num value1, num value2)`
 
-- value1, value2: numeric values which should be AND’ed together
+- value1, value2: numeric values which should be AND'ed together
 
 **Remarks:**<br>
 This function converts both parameters to the binary representation and sets a bit to:
@@ -110,7 +110,7 @@ The BitOr function sets specified bits on a value.
 **Syntax:** <br>
 `num BitOr(num value1, num value2)`
 
-- value1, value2: numeric values that should be OR’ed together
+- value1, value2: numeric values that should be OR'ed together
 
 **Remarks:** <br>
 This function converts both parameters to the binary representation and sets a bit to 1 if one or both of the corresponding bits in mask and flag are 1, and to 0 if both of the corresponding bits are 0. <br>
@@ -153,7 +153,7 @@ The returned string is always in UTC.
 
 **Example:**<br>
 `CDate([employeeStartTime])` <br>
-Returns a DateTime based on the employee’s start time
+Returns a DateTime based on the employee's start time
 
 `CDate("2013-01-10 4:00 PM -8")` <br>
 Returns a DateTime representing "2013-01-11 12:00 AM"
@@ -377,7 +377,7 @@ Adds 3 months and returns a DateTime representing "2001-04-01”
 ### DateFromNum
 
 **Description:** <br>
-The DateFromNum function converts a value in AD’s date format to a DateTime type.
+The DateFromNum function converts a value in AD's date format to a DateTime type.
 
 **Syntax:** <br>
 `dt DateFromNum(num value)`
@@ -421,7 +421,7 @@ The DNComponentRev function returns the value of a specified DN component going 
 
 - dn: the reference attribute to interpret
 - ComponentNumber - The component in the DN to return
-- Options: DC – Ignore all components with “dc=”
+- Options: DC - Ignore all components with “dc=”
 
 **Example:** <br>
 `If dn is “cn=Joe,ou=Atlanta,ou=GA,ou=US, dc=contoso,dc=com” then DNComponentRev([dn],3)` <br>  `DNComponentRev([dn],1,”DC”)` <br>
@@ -515,7 +515,7 @@ The IIF function returns one of a set of possible values based on a specified co
 
 **Example:** <br>
 `IIF([employeeType]=“Intern”,”t-“&[alias],[alias])` <br>
-Returns the alias of a user with “t-“ added to the beginning of it if the user is an intern, else returns the user’s alias as is.
+Returns the alias of a user with “t-“ added to the beginning of it if the user is an intern, else returns the user's alias as is.
 
 
 
@@ -926,7 +926,7 @@ The Now function returns a DateTime specifying the current date and time, accord
 ### NumFromDate
 
 **Description:** <br>
-The NumFromDate function returns a date in AD’s date format.
+The NumFromDate function returns a date in AD's date format.
 
 **Syntax:** <br>
 `num NumFromDate(dt value)`
@@ -1069,9 +1069,9 @@ The Replace function replaces all occurrences of a string to another string.
 **Remarks:** <br>
 The function recognizes the following special monikers:
 
-- \n – New Line
-- \r – Carriage Return
-- \t – Tab
+- \n - New Line
+- \r - Carriage Return
+- \t - Tab
 
 
 **Example:** <br>
@@ -1110,12 +1110,12 @@ The format is {source1}:{target1},{source2}:{target2},{sourceN},{targetN} where 
 
 
 **Example:** <br>
-'%ReplaceString% = ’:,Å:A,Ä:A,Ö:O,å:a,ä:a,ö,o'
+'%ReplaceString% = ':,Å:A,Ä:A,Ö:O,å:a,ä:a,ö,o'
 
 `ReplaceChars(”Räksmörgås”,%ReplaceString%)` <br>
 Returns Raksmorgas
 
-`ReplaceChars(“O’Neil”,%ReplaceString%)` <br>
+`ReplaceChars(“O'Neil”,%ReplaceString%)` <br>
 Returns “ONeil”, the single tick is defined to be removed.
 
 

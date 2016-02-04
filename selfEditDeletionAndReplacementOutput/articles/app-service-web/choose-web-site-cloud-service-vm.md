@@ -60,13 +60,6 @@ deleted:
 
 reason: (broken link)
 
-deleted:
-
-		[azurestore]: http://azure.microsoft.com/gallery/store/
-		  [scripting]: http://azure.microsoft.com/documentation/scripts/?services=web-sites
-
-reason: (website gallery and market place, broken link)
-
 replacement:
 
 deleted:

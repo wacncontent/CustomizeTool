@@ -1,21 +1,21 @@
 <properties 
-	pageTitle="SQL Database downlevel clients support for auditing and Dynamic Data Masking | Windows Azure" 
-	description="Learn about SQL Database downlevel clients support for auditing and Dynamic Data Masking." 
+	pageTitle="SQL Database downlevel clients support for Auditing| Windows Azure" 
+	description="Learn about SQL Database downlevel clients support for Auditing." 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="nadavhelfman" 
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags
+<tags 
 	ms.service="sql-database"
-	ms.date="09/01/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
  
-# SQL Database -  Downlevel clients support for auditing and Dynamic Data Masking 
+# SQL Database -  Downlevel clients support for Auditing
 
 
-[Auditing](/documentation/articles/sql-database-auditing-get-started) and [Dynamic Data Masking](/documentation/articles/sql-database-dynamic-data-masking-get-started) work with SQL clients that support TDS redirection. 
+[Auditing](/documentation/articles/sql-database-auditing-get-started) works automatically with SQL clients that support TDS redirection. 
 
 Any client which implements TDS 7.4 should also support redirection. Exceptions to this include JDBC 4.0 in which the redirection feature is not fully supported and Tedious for Node.JS in which redirection was not implemented.
 
@@ -32,6 +32,5 @@ A partial list of "Downlevel clients" includes:
 - JDBC (while JDBC does support TDS 7.4, the TDS redirection feature is not fully supported)
 - Tedious (for Node.JS)
 
-**Remark:** The above server FDQN modification may be useful also for applying a SQL Server Level Auditing policy without a need for a configuration step in each database (Temporary mitigation).     
+**Remark:** The above server FDQN modification may be useful also for applying a SQL Server Level Auditing policy without a need for a configuration step in each database (Temporary mitigation).
 
- 

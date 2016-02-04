@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-	ms.service="billing"
-	ms.date="09/21/2015"
-	wacn.date=""/>
+   ms.service="billing"
+   ms.date="09/21/2015"
+   wacn.date=""/>
 
 # Transferring an Azure subscription
 
@@ -21,7 +21,7 @@ Do you:
 - Want to move your Azure subscription from one directory to another?
 - Have Azure and Office 365 in different tenants and want to consolidate?
 
-If your account is in the US, you can now do this easily in the Windows Azure Account Center- for Pay-As-You-Go subscriptions.  We’ve added the ability to transfer your subscription to another user. In other words, you can now change the account admin on any Pay-As-You-Go subscription that you own.
+If your account is in the US, you can now do this easily in the Windows Azure Account Center- for Pay-As-You-Go subscriptions.  We've added the ability to transfer your subscription to another user. In other words, you can now change the account admin on any Pay-As-You-Go subscription that you own.
 
 ## How to transfer an Azure subscription
 
@@ -56,7 +56,7 @@ If your account is in the US, you can now do this easily in the Windows Azure Ac
 
     There is no impact to the service. This effectively cancels the
     subscription under the current Account Administrator and creates a
-    new one under the recipient’s account, but associates the underlying
+    new one under the recipient's account, but associates the underlying
     Azure services with the new subscription. The subscription ID
     remains the same.
 
@@ -83,7 +83,7 @@ If your account is in the US, you can now do this easily in the Windows Azure Ac
     does the recipient pay for the entire billing cycle?**
 
     The sender is responsible for payment for any usage that was reported up to the point that the transfer is completed. The recipient is responsible for usage reported from the time of
-    transfer onwards. There may be some usage that took place before transfer but was reported afterwards. This will be included in the recipient’s bill.
+    transfer onwards. There may be some usage that took place before transfer but was reported afterwards. This will be included in the recipient's bill.
 
 -   **Does the recipient have access to usage and billing history?**
 
@@ -91,16 +91,16 @@ If your account is in the US, you can now do this easily in the Windows Azure Ac
 
 -   **Can the offer be changed during a transfer?**
 
-    The offer must remain the same. To change your offer, you must [contact Support](https://manage.windowsazure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+    The offer must remain the same. To change your offer, you must [contact Support](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 -   **Can I transfer a subscription to a user account in another
     country?**
 
-    No, at this time this is not supported. The recipient’s user account must be in the same country.
+    No, at this time this is not supported. The recipient's user account must be in the same country.
 
 -   **Can the recipient use a different payment mechanism?**
 
-    Yes, and in fact you can use this mechanism to change the payment method on your subscription from invoice to credit card. Just transfer to another account you own, and enter your credit card while receiving the subscription. There are limitations here: now the subscription billing history is split across two accounts. But the advantage is that you can do this without having to [contact Support](https://manage.windowsazure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+    Yes, and in fact you can use this mechanism to change the payment method on your subscription from invoice to credit card. Just transfer to another account you own, and enter your credit card while receiving the subscription. There are limitations here: now the subscription billing history is split across two accounts. But the advantage is that you can do this without having to [contact Support](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 ## Next steps after accepting ownership of a subscription
 
@@ -111,4 +111,4 @@ If your account is in the US, you can now do this easily in the Windows Azure Ac
     -	Access keys for services like Storage. For more information, see [View, copy, and regenerate storage access keys](/documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys)
     -	Remote Access credentials for services like Azure Virtual Machines
 4. Update billing alerts for this subscription, at the [Azure Account Center](https://account.windowsazure.cn/Subscriptions)  [Learn more](/documentation/articles/azure-billing-set-up-alerts/)
-5. 	If you’re working with a partner, consider updating the partner ID on this subscription. You can do this in the [Azure Account Center](https://account.windowsazure.cn/Subscriptions).
+5. 	If you're working with a partner, consider updating the partner ID on this subscription. You can do this in the [Azure Account Center](https://account.windowsazure.cn/Subscriptions).

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/11/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # Learn Hadoop by using the HDInsight Getting Started Gallery
@@ -25,16 +25,7 @@ The HDInsight Getting Started Gallery provides an easy and quick way learn Hadoo
 	- Website log analysis
 	- Mahout movie recommendation
 
-[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
-
-* [Learn Hadoop by using the HDInsight Getting Started Gallery](/documentation/articles/hdinsight-learn-hadoop-use-sample-gallery)
-
-
 ![HDInsight Hadoop, Storm, and HBase Getting Started Gallery solutions including sample data.][hdinsight.sample.gallery]
-
-The following video clip shows how to run the Twitter trend analysis sample:
-
-<center><a href="https://www.youtube.com/embed/7ePbHot1SN4">https://www.youtube.com/embed/7ePbHot1SN4></a></center>
 
 
 **To run a sample from the Getting Started Gallery**

@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Testability Action | Microsoft Azure"
-   description="This article talks about the testability actions found in Microsoft Azure Service Fabric."
+   pageTitle="Testability Action | Windows Azure"
+   description="This article talks about the testability actions found in Windows Azure Service Fabric."
    services="service-fabric"
    documentationCenter=".net"
    authors="heeldin"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/31/2015"
-   ms.author="heeldin;motanv"/>
+	ms.service="service-fabric"
+	ms.date="08/31/2015"
+	wacn.date=""/>
 
 # Testability actions
 In order to simulate an unreliable infrastructure, Service Fabric provides developers with ways to simulate various real world failures and state transitions. These are exposed as Testability actions. The actions are the low level APIs that cause a specific fault injection, state transition or validation. Combining these actions, a service developer can write comprehensive test scenarios for your services.
@@ -87,7 +83,7 @@ Restart-ServiceFabricNode -NodeName $nodeName -CompletionMode DoNotVerify
 
 The following screenshot shows the **Restart-ServiceFabricNode** Testability command in action.
 
-![](media/service-fabric-testability-actions/Restart-ServiceFabricNode.png)
+![](./media/service-fabric-testability-actions/Restart-ServiceFabricNode.png)
 
 The output of the first *Get-ServiceFabricNode* (a cmdlet from the ServiceFabric PowerShell module) shows that the local cluster has five nodes: Node.1 to Node.5; then after executing the Testability action (cmdlet) **Restart-ServiceFabricNode** on the node, named Node.4, we see that the node's uptime has been reset.
 
@@ -216,7 +212,6 @@ Guid partitionIdGuid = new Guid("8fb7ebcc-56ee-4862-9cc0-7c6421e68829");
 PartitionSelector partitionSelector = PartitionSelector.PartitionIdOf(serviceName, partitionIdGuid);
 long replicaId = 130559876481875498;
 
-
 ```csharp
 // Select Random replica
 ReplicaSelector randomReplicaSelector = ReplicaSelector.RandomOf(partitionSelector);
@@ -233,8 +228,7 @@ ReplicaSelector secondaryReplicaSelector = ReplicaSelector.RandomSecondaryOf(par
 
 ## Next Steps
 
-- [Testability Scenarios](service-fabric-testability-scenarios.md)
+- [Testability Scenarios](/documentation/articles/service-fabric-testability-scenarios)
 - How to test your service
-   - [Simulate failures during service workloads](service-fabric-testability-workload-tests.md)
-   - [Service to service communication failures](service-fabric-testability-scenarios-service-communication.md)
- 
+   - [Simulate failures during service workloads](/documentation/articles/service-fabric-testability-workload-tests)
+   - [Service to service communication failures](/documentation/articles/service-fabric-testability-scenarios-service-communication)

@@ -5,11 +5,5 @@ deleted:
 		- [Analyze Twitter sentiment with HBase in HDInsight][hbase-twitter-sentiment]:
 		Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sentiment_analysis) of big data by using HBase in a Hadoop cluster in HDInsight.
 
-reason: ()
-
-deleted:
-
-		[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
-
-reason: ()
+reason: (google facebook twitter)
 

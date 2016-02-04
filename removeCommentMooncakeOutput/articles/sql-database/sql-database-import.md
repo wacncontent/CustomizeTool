@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/13/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 
@@ -19,10 +19,12 @@
 **Single database**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](/documentation/articles/sql-database-import)
+- [Azure Management Portal](/documentation/articles/sql-database-import)
 - [PowerShell](/documentation/articles/sql-database-import-powershell)
+- [SSMS](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-ssms)
+- [SqlPackage](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage)
 
-This article provides directions for creating a new Azure SQL database from a BACPAC file using the [Azure preview portal](https://manage.windowsazure.cn).
+This article provides directions for creating a new Azure SQL database from a BACPAC file using the [Azure Management Portal](https://manage.windowsazure.cn).
 
 A BACPAC is a .bacpac file that contains a database schema and data. For details, see Backup Package (.bacpac) in [Data-tier Applications](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx).
 
@@ -43,7 +45,7 @@ To import a SQL database from a .bacpac you need the following:
 
 Open the SQL Server blade for the database you want to import:
 
-1.	Go to the [Azure Preview Portal](https//:portal.azure.com).
+1.	Go to the [Azure Management Portal](https://manage.windowsazure.cn).
 2.	Click **BROWSE ALL**.
 3.	Click **SQL servers**.
 2.	Click the server to restore the database into.
@@ -96,7 +98,7 @@ Clicking **Create** submits an import database request to the service. Depending
 
 ## Additional resources
 
-- [SQL Database documentation](/documentation/services/sql-databases/)
+- [SQL Database documentation](/documentation/services/sql-databases)
 
 
 <!--Image references-->

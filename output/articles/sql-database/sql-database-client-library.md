@@ -9,13 +9,13 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/25/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Create and manage SQL Database with C&#x23;
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](/documentation/articles/sql-database-elastic-pool-portal)
+- [Azure Management Portal](/documentation/articles/sql-database-elastic-pool-portal)
 - [C#](/documentation/articles/sql-database-client-library)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
 
@@ -40,9 +40,9 @@ If you do not have an Azure subscription, simply click **FREE TRIAL** at the top
 
 Get the required management libraries by installing the following packages using the [package manager console](http://docs.nuget.org/Consume/Package-Manager-Console):
 
-    PM> Install-Package Microsoft.Azure.Management.Sql –Pre
-    PM> Install-Package Microsoft.Azure.Management.Resources –Pre
-    PM> Install-Package Microsoft.Azure.Common.Authentication –Pre
+    PM> Install-Package Microsoft.Azure.Management.Sql -Pre
+    PM> Install-Package Microsoft.Azure.Management.Resources -Pre
+    PM> Install-Package Microsoft.Azure.Common.Authentication -Pre
 
 
 ## Configure authentication with Azure Active Directory
@@ -51,7 +51,7 @@ You must first enable your application to access the REST API by setting up the 
 
 The [Azure Resource Manager REST APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx) use Azure Active Directory for authentication rather than the certificates used by the earlier Azure Service Management REST APIs. 
 
-To authenticate your client application based on the current user you must first register your application in the AAD domain associated with the subscription under which the Azure resources have been created. If your Azure subscription was created with a Microsoft account rather than a work or school account you will already have a default AAD domain. Registering the application can be done in the [management portal](https://manage.windowsazure.cn/). 
+To authenticate your client application based on the current user you must first register your application in the AAD domain associated with the subscription under which the Azure resources have been created. If your Azure subscription was created with a Microsoft account rather than a work or school account you will already have a default AAD domain. Registering the application can be done in the [Management Portal](https://manage.windowsazure.cn/). 
 
 To create a new application and register it in the correct active directory do the following:
 
@@ -777,7 +777,7 @@ To delete a resource group:
 
 ## Additional Resources
 
-[SQL Database](/documentation/services/sql-databases/)
+[SQL Database](/documentation/services/sql-database/)
 
 [Azure Resource Management APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
 

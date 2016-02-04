@@ -83,8 +83,14 @@ await client.SendAsync(data);
 // Create the Event Hub client
 EventHubClient eventHubClient = EventHubClient.Create(EventHubName);
 
+<!-- deleted by customization
+// Get the default consumer group
+EventHubConsumerGroup defaultConsumerGroup = eventHubClient.GetDefaultConsumerGroup();
+-->
+<!-- keep by customization: begin -->
 // Get the default subscriber group
 EventHubSubscriberGroup defaultSubscriberGroup = eventHubClient.GetDefaultSubscriberGroup();
+<!-- keep by customization: end -->
 
 // All messages
 EventHubReceiver consumer = await defaultConsumerGroup.CreateReceiverAsync(shardId: index);
@@ -127,7 +133,7 @@ EventProcessorHost host = new EventProcessorHost(WorkerName, EventHubName, defau
 host.UnregisterEventProcessorAsync().Wait();   
 ```
 
-The [IEventProcessor](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.ieventprocessor.aspx) interface is defined as follows:
+The <!-- deleted by customization [IEventProcessor](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.ieventprocessor.aspx) --><!-- keep by customization: begin --> [IEventProcessor](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.ieventprocessor.aspx) <!-- keep by customization: end --> interface is defined as follows:
 
 ```
 public class SimpleEventProcessor : IEventProcessor

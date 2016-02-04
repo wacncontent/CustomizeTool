@@ -3,13 +3,13 @@
 	description="Learn how to use Azure Notification Hubs from a Python back-end." 
 	services="notification-hubs" 
 	documentationCenter="" 
-	authors="ysxu" 
+	authors="wesmc7777"
 	manager="dwrede" 
 	editor=""/>
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="07/17/2015"
+	ms.date="11/01/2015"
 	wacn.date=""/>
 
 # How to use Notification Hubs from Python
@@ -38,6 +38,7 @@ You can find all the code available in the [Python REST wrapper sample].
 
 For example, to create a client:
 
+	isDebug = True
 	hub = NotificationHub("myConnectionString", "myNotificationHubName", isDebug)
 	
 To send a Windows toast notification:
@@ -200,6 +201,48 @@ Now with this class, we can write the send notification methods inside of the **
             headers.update(notification.headers)
 
         self.make_http_request(url, payload_to_send, headers)
+
+	def send_apple_notification(self, payload, tags=""):
+        nh = Notification("apple", payload)
+        self.send_notification(nh, tags)
+
+    def send_gcm_notification(self, payload, tags=""):
+        nh = Notification("gcm", payload)
+        self.send_notification(nh, tags)
+
+    def send_adm_notification(self, payload, tags=""):
+        nh = Notification("adm", payload)
+        self.send_notification(nh, tags)
+
+    def send_baidu_notification(self, payload, tags=""):
+        nh = Notification("baidu", payload)
+        self.send_notification(nh, tags)
+
+    def send_mpns_notification(self, payload, tags=""):
+        nh = Notification("windowsphone", payload)
+
+        if "<wp:Toast>" in payload:
+            nh.headers = {'X-WindowsPhone-Target': 'toast', 'X-NotificationClass': '2'}
+        elif "<wp:Tile>" in payload:
+            nh.headers = {'X-WindowsPhone-Target': 'tile', 'X-NotificationClass': '1'}
+
+        self.send_notification(nh, tags)
+
+    def send_windows_notification(self, payload, tags=""):
+        nh = Notification("windows", payload)
+
+        if "<toast>" in payload:
+            nh.headers = {'X-WNS-Type': 'wns/toast'}
+        elif "<tile>" in payload:
+            nh.headers = {'X-WNS-Type': 'wns/tile'}
+        elif "<badge>" in payload:
+            nh.headers = {'X-WNS-Type': 'wns/badge'}
+
+        self.send_notification(nh, tags)
+
+    def send_template_notification(self, properties, tags=""):
+        nh = Notification("template", properties)
+        self.send_notification(nh, tags)
 
 The above methods send an HTTP POST request to the /messages endpoint of your notification hub, with the correct body and headers to send the notification.
 

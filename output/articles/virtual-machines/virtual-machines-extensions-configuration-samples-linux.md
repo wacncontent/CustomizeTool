@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Sample configuration for Linux VM extensions | Windows Azure"
    description="Sample configuration for authoring templates with extensions for Linux VMs"
@@ -15,12 +17,19 @@
 
 # Linux VM extension configuration samples
 
+> [AZURE.SELECTOR]
+- [PowerShell - Template](/documentation/articles/virtual-machines-extensions-configuration-samples-windows)
+- [CLI - Template](/documentation/articles/virtual-machines-extensions-configuration-samples-linux)
+
+<br> 
+
+
 This article provides sample configuration for configuring Azure VM extensions for Linux VMs.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
-To learn more about these extensions click here : [Azure VM Extensions Overview.](https://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
+To learn more about these extensions click here : [Azure VM Extensions Overview.](/documentation/articles/virtual-machines-extensions-features)
 
 To learn more about authoring extension templates click here : [Authoring Extension Templates.](/documentation/articles/virtual-machines-extensions-authoring-templates)
 

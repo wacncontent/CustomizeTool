@@ -8,7 +8,7 @@
  editor=""/>
 <tags
 	ms.service="scheduler"
-	ms.date="07/28/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Scheduler Limits, Defaults, and Error Codes
@@ -27,14 +27,14 @@ If a request is consistently failing and you have verified that the request is p
 
 In addition to standard HTTP status codes, the Azure Scheduler REST API returns extended error codes and error messages. The extended codes do not replace the standard HTTP status codes, but provide additional, actionable information that can be used in conjunction with the standard HTTP status codes.
 
-For example, an HTTP 404 error can occur for numerous reasons, so having the additional information in the extended message can assist with problem resolution. For more information on the standard HTTP codes returned by the REST API, see [Service Management Status and Error Codes](https://msdn.microsoft.com/zh-cn/library/azure/ee460801.aspx). REST API operations for the Service Management API return standard HTTP status codes, as defined in the[HTTP/1.1 Status Code Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). The following table describes common errors that may be returned by the service.
+For example, an HTTP 404 error can occur for numerous reasons, so having the additional information in the extended message can assist with problem resolution. For more information on the standard HTTP codes returned by the REST API, see[Service Management Status and Error Codes](https://msdn.microsoft.com/zh-CN/library/azure/ee460801.aspx). REST API operations for the Service Management API return standard HTTP status codes, as defined in the[HTTP/1.1 Status Code Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). The following table describes common errors that may be returned by the service.
 
 |Error code|HTTP status code|User message|
 |----|----|----|
 |MissingOrIncorrectVersionHeader|Bad Request (400)|The versioning header is not specified or was specified incorrectly.|
-|InvalidXmlRequest|Bad Request (400)|The request body’s XML was invalid or not correctly specified.|
+|InvalidXmlRequest|Bad Request (400)|The request bodyâs XML was invalid or not correctly specified.|
 |MissingOrInvalidRequiredQueryParameter|Bad Request (400)|A required query parameter was not specified for this request or was specified incorrectly.|
-|InvalidHttpVerb|Bad Request (400)|The HTTP verb specified was not recognized by the server or isn’t valid for this resource.|
+|InvalidHttpVerb|Bad Request (400)|The HTTP verb specified was not recognized by the server or isnât valid for this resource.|
 |AuthenticationFailed|Forbidden (403)|The server failed to authenticate the request. Verify that the certificate is valid and is associated with this subscription.|
 |ResourceNotFound|Not Found (404)|The specified resource does not exist.|
 |InternalError|Internal Server Error (500)|The server encountered an internal error. Please retry the request.|
@@ -55,16 +55,21 @@ API operations may also return additional error information that is defined by t
 
 ## See Also
 
- [Scheduler Concepts, Terminology, and Entity Hierarchy](/documentation/articles/scheduler-concepts-terms)
 
- [Get Started Using Scheduler in the Management Portal](/documentation/articles/scheduler-get-started-portal)
+ [What is Scheduler?](/documentation/articles/scheduler-intro)
+ 
+ [Azure Scheduler concepts, terminology, and entity hierarchy](/documentation/articles/scheduler-concepts-terms)
+ 
+ [Get started using Scheduler in the Azure Management Portal](/documentation/articles/scheduler-get-started-portal)
+ 
+ [Plans and billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
+ 
+ [Azure Scheduler REST API Reference](https://msdn.microsoft.com/zh-CN/library/dn528946)   
+ 
+ [Azure Scheduler PowerShell cmdlets reference](/documentation/articles/scheduler-powershell-reference)
+ [Azure Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
+ 
+ [Azure Scheduler Outbound Authentication](/documentation/articles/scheduler-outbound-authentication)
 
- [Plans and Billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
+ 
 
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](/documentation/articles/scheduler-advanced-complexity)
-
- [Scheduler REST API Reference](https://msdn.microsoft.com/zh-cn/library/dn528946)
-
- [Scheduler High-Availability and Reliability](/documentation/articles/scheduler-high-availability-reliability)
-
- [Scheduler Outbound Authentication](/documentation/articles/scheduler-outbound-authentication)

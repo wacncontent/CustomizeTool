@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="automation"
-	ms.date="09/08/2015"
+	ms.date="12/08/2015"
 	wacn.date=""/>
 
 
@@ -84,7 +84,7 @@ The runbook is first imported in Draft mode. This means you can continue to do w
 
 9.	Click **AUTHOR**, and then click **DRAFT**.  
 
-	You can modify the contents of a runbook in Draft mode. For this runbook, you don’t need to make any modifications.
+	You can modify the contents of a runbook in Draft mode. For this runbook, you donât need to make any modifications.
 
 	![Author Draft](./media/automation-create-runbook-from-samples/automation_08_AuthorDraft.png)  
 

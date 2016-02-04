@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="HBase tutorial: Get started with HBase in Hadoop | Windows Azure"
 	description="Follow this HBase tutorial to get started using Apache HBase with Hadoop in HDInsight. Create tables from the HBase shell and query them using Hive."
@@ -10,33 +12,31 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/28/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 
 
-# HBase tutorial: Get started using Apache HBase with Hadoop in HDInsight
+# HBase tutorial: Get started using Apache HBase with Hadoop in HDInsight (Windows)
 
-Learn how to provision an HBase cluster in HDInsight, create HBase tables, and query the tables by using Hive. For general HBase information, see [HDInsight HBase overview][hdinsight-hbase-overview].
+Learn how to create HBase clusters in HDInsight, create HBase tables, and query the tables by using Apache Hive. For general HBase information, see [HDInsight HBase overview][hdinsight-hbase-overview].
 
-* [HBase tutorial: Get started using Apache HBase with Hadoop in HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
-
-> [AZURE.NOTE] 
->
+> [AZURE.NOTE]
 > HBase (version 0.98.0) on Windows-based HDInsight is only available for use with HDInsight 3.1 clusters (based on Apache Hadoop and YARN 2.4.0). For version information, see [What's new in the Hadoop cluster versions provided by HDInsight?][hdinsight-versions]
 
-##Prerequisites
+###Prerequisites
 
 Before you begin this HBase tutorial, you must have the following:
 
 - **A Windows Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-- **A workstation** with Visual Studio 2013: For instructions, see [Install Visual Studio](http://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx).
+- **A workstation** with Visual Studio 2013 or greater: For instructions, see [Install Visual Studio](http://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx).
 
-## Provision an HBase cluster
+##<a name="create-hbase-cluster"></a> Create HBase cluster
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
-**To provision an HBase cluster by using the Azure Management Portal**
+**To create an HBase cluster by using the Azure Management Portal**
+
 1. Sign in to the [Azure Management Portal][azure-management-portal].
 2. Click **NEW** in the lower left, and then click **DATA SERVICES** > **HDINSIGHT** > **HBASE**.
 
@@ -49,17 +49,23 @@ Before you begin this HBase tutorial, you must have the following:
 
 	An Azure storage account is required using the default HBase provision process. For instructions, see [How To Create a Storage Account][azure-create-storageaccount]. The custom create option gives the option to create a storage account with the cluster provision process.  
 
-		> [AZURE.WARNING] For high availability of HBase services, you must provision a cluster that contains at least **three** nodes. This ensures that, if one node goes down, the HBase data regions are available on other nodes.
+		> [AZURE.WARNING] For high availability of HBase services, you must create a cluster that contains at least **three** nodes. This ensures that, if one node goes down, the HBase data regions are available on other nodes.
 
 4. Click the checkmark icon in the lower right to create the HBase cluster.
->[AZURE.NOTE] After an HBase cluster is deleted, you can create another HBase cluster by using the same default blob container. The new cluster will pick up the HBase tables you created in the original cluster.
+>[AZURE.NOTE] After an HBase cluster is deleted, you can create another HBase cluster by using the same default storage account and the default blob container. The new cluster will pick up the HBase tables you created in the original cluster.
 
 ## Use the HBase shell
-This section describes how to use the HBase shell to create HBase tables, add rows, and list rows. Here is the data you will use:
+Currently, there are two way to access HBase. This section covers using the HBase shell. The next section covers using the .NET SDK.
 
-![hdinsight hbase table data][img-hbase-sample-data-tabular]
+For most people, data appears in the tabular format:
 
-To access the HBase shell, you must first enable Remote Desktop Protocol (RDP), and then make an RDP connection to the HBase cluster. For instructions, see [Manage Hadoop clusters in HDInsight using the Azure Management Portal][hdinsight-manage-portal].
+![hdinsight hbase tabular data][img-hbase-sample-data-tabular]
+
+In HBase which is an implementation of BigTable, the same data looks like:
+
+![hdinsight hbase bigtable data][img-hbase-sample-data-bigtable]
+
+It'll make more sense after you finish the next procedure.  
 
 **To use the HBase shell**
 
@@ -134,27 +140,19 @@ You can create a text file and upload the file to your own storage account if yo
 
 5. You can open the HBase shell, and use the scan command to list the table content.
 
-## Check cluster status
-
-HBase in HDInsight ships with a Web UI for monitoring clusters. Using the Web UI, you can request statistics or information about regions.
-
-To open the Web UI, you must RDP into the cluster, and then click the HMaster Info Web UI shortcut on your desktop, or use the following URL in a web browser:
-
-	http://zookeeper[0-2]: master-status
-In a high availability cluster, you'll find a link to the current active HBase master node that is hosting the Web UI.
-
 
 
 ## Use Hive to query HBase tables
 
-You can query data in HBase tables by using Hive. This section creates a Hive table that maps to the HBase table and uses it to query the data in your HBase table.
+You can query data stored in HBase by using Hive. This section creates a Hive table that maps to the HBase table and uses it to query the data in your HBase table.
 
 **To open the cluster dashboard**
+
 1. Sign in to the [Azure Management Portal][azure-management-portal].
 2. Click **HDINSIGHT** in the left pane. You will see a list of clusters, including the one you created earlier in this tutorial.
 3. Click the cluster name where you want to run the Hive job.
 4. Click **QUERY CONSOLE** at the bottom of the page to open the cluster dashboard. It opens a webpage in a different browser tab.
-5. Enter the Hadoop user account user name and password. The default user name is **admin** and the password is what you entered during the provisioning process. A new browser tab opens.
+5. Enter the Hadoop user account user name and password. The default user name is **admin** and the password is what you entered during the creation process. A new browser tab opens.
 6. Click **Hive Editor** at the top of the page. The Hive Editor looks like this:
 
 	![HDInsight cluster dashboard.][img-hdinsight-hbase-hive-editor]
@@ -273,6 +271,17 @@ You must download the HBase REST API client library for .NET from GitHub and bui
 7. Set the first three variables in the **Main** function.
 8. Press **F5** to run the application.
 
+## Check cluster status
+
+HBase in HDInsight ships with a Web UI for monitoring clusters. Using the Web UI, you can request statistics or information about regions.
+
+To open the Web UI, you must RDP into the cluster, and then click the HMaster Info Web UI shortcut on your desktop, or use the following URL in a web browser:
+
+	http://zookeeper[0-2]:60010/master-status
+
+In a high availability cluster, you'll find a link to the current active HBase master node that is hosting the Web UI.
+
+
 
 
 ## What's next?
@@ -282,7 +291,7 @@ For more information, see:
 
 - [HDInsight HBase overview][hdinsight-hbase-overview].
 HBase is an Apache, open-source, NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semistructured data.
-- [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet].
+- [Create HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet-v1].
 With virtual network integration, HBase clusters can be deployed to the same virtual network as your applications so that applications can communicate with HBase directly.
 - [Configure HBase replication in HDInsight](/documentation/articles/hdinsight-hbase-geo-replication). Learn how to configure HBase replication across two Azure datacenters.
 
@@ -297,7 +306,7 @@ With virtual network integration, HBase clusters can be deployed to the same vir
 
 
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
-[hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
@@ -305,9 +314,9 @@ With virtual network integration, HBase clusters can be deployed to the same vir
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
 
-[img-hdinsight-hbase-cluster-quick-create]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-quick-create.png
-[img-hdinsight-hbase-hive-editor]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-hive-editor.png
-[img-hdinsight-hbase-file-browser]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-file-browser.png
-[img-hbase-shell]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-shell.png
-[img-hbase-sample-data-tabular]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-contacts-tabular.png
-[img-hbase-sample-data-bigtable]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-contacts-bigtable.png
+[img-hdinsight-hbase-cluster-quick-create]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-quick-create.png
+[img-hdinsight-hbase-hive-editor]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-hive-editor.png
+[img-hdinsight-hbase-file-browser]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-file-browser.png
+[img-hbase-shell]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-shell.png
+[img-hbase-sample-data-tabular]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-contacts-tabular.png
+[img-hbase-sample-data-bigtable]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-contacts-bigtable.png

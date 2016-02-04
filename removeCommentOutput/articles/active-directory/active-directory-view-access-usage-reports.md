@@ -1,6 +1,6 @@
 <properties
 	pageTitle="View your access and usage reports | Windows Azure"
-	description="Explains how to view access and usage reports to gain insight into the integrity and security of your organization’s directory."
+	description="Explains how to view access and usage reports to gain insight into the integrity and security of your organization's directory."
 	services="active-directory"
 	documentationCenter=""
 	authors="kenhoff"
@@ -9,20 +9,23 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/21/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
+
 
 # View your access and usage reports
 
-You can use Azure Active Directory's access and usage reports to gain visibility into the integrity and security of your organization’s directory. With this information, a directory admin can better determine where possible security risks may lie so that they can adequately plan to mitigate those risks.
+*This documentation is part of the [Azure Active Directory Reporting Guide](/documentation/articles/active-directory-reporting-guide).*
+
+You can use Azure Active Directory's access and usage reports to gain visibility into the integrity and security of your organization's directory. With this information, a directory admin can better determine where possible security risks may lie so that they can adequately plan to mitigate those risks.
 
 In the Azure Management Portal, reports are categorized in the following ways:
 
-- Anomaly reports – Contain sign in events that we found to be anomalous. Our goal is to make you aware of such activity and enable you to be able to make a determination about whether an event is suspicious.
-- Integrated Application reports – Provides insights into how cloud applications are being used in your organization. Azure Active Directory offers integration with thousands of cloud applications.
-- Error reports – Indicate errors that may occur when provisioning accounts to external applications.
-- User-specific reports – Display device/sign in activity data for a specific user.
-- Activity logs – Contain a record of all audited events within the last 24 hours, last 7 days, or last 30 days, as well as group activity changes, and password reset and registration activity.
+- Anomaly reports - Contain sign in events that we found to be anomalous. Our goal is to make you aware of such activity and enable you to be able to make a determination about whether an event is suspicious.
+- Integrated Application reports - Provides insights into how cloud applications are being used in your organization. Azure Active Directory offers integration with thousands of cloud applications.
+- Error reports - Indicate errors that may occur when provisioning accounts to external applications.
+- User-specific reports - Display device/sign in activity data for a specific user.
+- Activity logs - Contain a record of all audited events within the last 24 hours, last 7 days, or last 30 days, as well as group activity changes, and password reset and registration activity.
 
 > [AZURE.NOTE]
 >
@@ -39,7 +42,7 @@ In the Azure Management Portal, reports are categorized in the following ways:
 |	[Sign ins from multiple geographies](/documentation/articles/active-directory-reporting-sign-ins-from-multiple-geographies)	|	May indicate that multiple users are signing in with the same account.						|
 |	[Sign ins from IP addresses with suspicious activity](/documentation/articles/active-directory-reporting-sign-ins-from-ip-addresses-with-suspicious-activity)	|	May indicate a successful sign in after a sustained intrusion attempt.						|
 |	[Sign ins from possibly infected devices](/documentation/articles/active-directory-reporting-sign-ins-from-possibly-infected-devices)				|	May indicate an attempt to sign in from possibly infected devices.							|
-|	[Irregular sign in activity](/documentation/articles/active-directory-reporting-irregular-sign-in-activity)							|	May indicate events anomalous to users’ sign in patterns.									|
+|	[Irregular sign in activity](/documentation/articles/active-directory-reporting-irregular-sign-in-activity)							|	May indicate events anomalous to users' sign in patterns.									|
 |	[Users with anomalous sign in activity](/documentation/articles/active-directory-reporting-users-with-anomalous-sign-in-activity)				|	Indicates users whose accounts may have been compromised.									|
 |	Users with leaked credentials						|	Users with leaked credentials																|
 |	**Activity logs**
@@ -51,8 +54,8 @@ In the Azure Management Portal, reports are categorized in the following ways:
 |	Application usage									|	Provides a usage summary for all SaaS applications integrated with your directory.			|
 |	Account provisioning activity						|	Provides a history of attempts to provision accounts to external applications.				|
 |	Password rollover status							|	Provides a detailed overview of automatic password rollover status of SaaS applications.	|
-|	Account provisioning errors							|	Indicates an impact to users’ access to external applications.								|
-|	**Rights managment**
+|	Account provisioning errors							|	Indicates an impact to users' access to external applications.								|
+|	**Rights management**
 |	RMS usage											|	Provides a summary for Rights Management usage												|
 |	Most active RMS users								|	Lists top 1000 active users who accessed RMS-protected files								|
 |	RMS device usage									|	Lists devices used for accessing RMS-protected files										|
@@ -163,6 +166,10 @@ In the Azure Management Portal, reports are categorized in the following ways:
 | :-------------     | :-------        |
 | Use this report when you want to see usage for all the SaaS applications in your directory. This report is based on the number of times users have clicked on the application in the Access Panel. | Directory > Reports tab |
 
+This report includes sign ins to _all_ applications that your directory has access to, including pre-integrated Microsoft applications.
+
+Pre-integrated Microsoft applications include Office 365, Sharepoint, the Azure Management Portal, and others.
+
 ![Application usage summary](./media/active-directory-view-access-usage-reports/applicationUsage.PNG)
 
 
@@ -243,11 +250,11 @@ If you suspect that a user account may be compromised or any kind of suspicious 
 
 - Contact the user to verify the activity
 - Reset the user's password
-- [Enable multi-factor authentication](https://msdn.microsoft.com/zh-cn/library/azure/7a9c56cf-72f1-4797-8e86-a9a2d9569ef6) for additional security
+- [Enable multi-factor authentication](/documentation/articles/multi-factor-authentication-get-started) for additional security
 
 ## View or download a report
 
-1. In the Azure Management Portal, click **Active Directory**, click the name of your organization’s directory, and then click **Reports**.
+1. In the Azure Management Portal, click **Active Directory**, click the name of your organization's directory, and then click **Reports**.
 2. On the Reports page, click the report you want to view and/or download.
 
     > [AZURE.NOTE] If this is the first time you have used the reporting feature of Azure Active Directory, you will see a message to Opt In. If you agree, click the check mark icon to continue.

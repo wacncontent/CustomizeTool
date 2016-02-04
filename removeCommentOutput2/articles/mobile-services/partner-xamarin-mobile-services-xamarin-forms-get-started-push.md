@@ -13,11 +13,16 @@
 	wacn.date=""/>
 
 # Add push notifications to your Xamarin.Forms app
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 ##Overview
 
-This tutorial shows you how to use Azure Mobile Services to send push notifications to the iOS, Android, and Windows Phone app of your Xamarin.Forms solution. Start by creating a mobile service. Then, you'll download a starter sample, register with the appropriate push notification services, and add code to the solution to receive notifications from those services. 
+This tutorial shows you how to use Azure Mobile Services to send push notifications to the iOS, Android, and Windows Phone app of your Xamarin.Forms solution. Start by creating a mobile service. Then, you'll download a starter sample, register with the appropriate push notification services, and add code to the solution to receive notifications from those services.
 
 When you complete this tutorial, your mobile service will send a push notification each time a user adds a task in one of the apps. You can find the completed sample here: [Completed Xamarin.Forms Azure Push Notification Sample].
 
@@ -43,9 +48,9 @@ In this topic:
 
 [AZURE.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
-To be able to store app data in the new mobile service, you must first create a new table.  
+To be able to store app data in the new mobile service, you must first create a new table.
 
-1. In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+1. In the Azure Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
 
 2. Click the **Data** tab, then click **+Create**.
 
@@ -57,7 +62,7 @@ To be able to store app data in the new mobile service, you must first create a 
 
     ![][124]
 
-  	This creates a new storage table **TodoItem** with the default permissions set, which means that any user of the app can access and change data in the table. 
+  	This creates a new storage table **TodoItem** with the default permissions set, which means that any user of the app can access and change data in the table.
 
     > [AZURE.NOTE] The same table name is used in Mobile Services quickstart. However, each table is created in a schema that is specific to a given mobile service. This is to prevent data collisions when multiple mobile services use the same database.
 
@@ -65,7 +70,7 @@ To be able to store app data in the new mobile service, you must first create a 
 
 5. Click the **Columns** tab and verify that there is only a single **id** column, which is automatically created for you.
 
-  	This is the minimum requirement for a table in Mobile Services. 
+  	This is the minimum requirement for a table in Mobile Services.
 
     > [AZURE.NOTE] When dynamic schema is enabled on your mobile service, new columns are created automatically when JSON objects are sent to the mobile service by an insert or update operation.
 
@@ -73,10 +78,10 @@ You are now ready to use the new mobile service as data storage for the app.
 
 ## <a name="download-starter-sample"></a>Download and Configure the Starter Sample
 We'll add push notifications to an existing sample.
-  
+
 1. Download the following sample: [Xamarin.Forms Azure Push Notification Starter Sample].
 
-2. In the Management Portal, click **Mobile Services**, and then click the mobile service. Click the **Dashboard** tab and make a note of the **Site URL**. Then click **Manage Keys** and make a note of the **Application Key**. You'll need these values when you access the mobile service from your app code.
+2. In the [Azure Management Portal], click **Mobile Services**, and then click the mobile service. Click the **Dashboard** tab and make a note of the **Site URL**. Then click **Manage Keys** and make a note of the **Application Key**. You'll need these values when you access the mobile service from your app code.
 
 3. In the  **ToDoAzure(Portable)** project of the solution, open the **Constants.cs** file, replace `ApplicationURL` and `ApplicationKey` with the site URL and application key you obtained in the previous step.
 
@@ -118,7 +123,7 @@ To be able to send push notifications to an iOS app from mobile services, you mu
 
     ![][102]
 
-2. Type a name for your app in **Description**, enter and remember the unique **Bundle Identifier**, check the "Push Notifications" option in the "Azure Websites" section, and then click **Continue**. This example uses the ID **MobileServices.Quickstart** but you may not reuse this same ID, as app IDs must be unique across all users. As such, it is recommended that you append your full name or initials after the app name.
+2. Type a name for your app in **Description**, enter and remember the unique **Bundle Identifier**, check the "Push Notifications" option in the "Azure Web App" section, and then click **Continue**. This example uses the ID **MobileServices.Quickstart** but you may not reuse this same ID, as app IDs must be unique across all users. As such, it is recommended that you append your full name or initials after the app name.
 
     ![][103]
 
@@ -152,7 +157,7 @@ To be able to send push notifications to an iOS app from mobile services, you mu
 
 6. After the certificate is created by the portal, click the **Download** button, and click **Done**.
 
-    ![][111]  
+    ![][111]
 
     This downloads the signing certificate and saves it to your computer in your Downloads folder.
 
@@ -260,19 +265,19 @@ Your mobile service is now configured to work with APNS.
             global::Xamarin.Forms.Forms.Init();
             instance = this;
             CurrentPlatform.Init();
-            
+
             todoItemManager = new ToDoItemManager();
             App.SetTodoItemManager(todoItemManager);
 
 
             UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
             UIApplication.SharedApplication.RegisterForRemoteNotifications();
-            
+
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);
         }
 
-6. In **AppDelegate**, override the **RegisteredForRemoteNotifications** event:
+2. In **AppDelegate**, override the **RegisteredForRemoteNotifications** event:
 
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
         {
@@ -285,7 +290,7 @@ Your mobile service is now configured to work with APNS.
 
             // Register for push with Mobile Services
             IEnumerable<string> tag = new List<string>() { "uniqueTag" };
-            
+
             const string template = "{\"aps\":{\"alert\":\"$(message)\"}}";
 
             var expiryDate = DateTime.Now.AddDays(90).ToString
@@ -296,7 +301,7 @@ Your mobile service is now configured to work with APNS.
             push.RegisterTemplateAsync(_deviceToken, template, expiryDate, "myTemplate", tag)
         }
 
-7. In **AppDelegate**, override the **ReceivedRemoteNotification** event:
+3. In **AppDelegate**, override the **ReceivedRemoteNotification** event:
 
         public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
         {
@@ -313,9 +318,9 @@ Your mobile service is now configured to work with APNS.
 
 Your app is now updated to support push notifications.
 
-### <a name="update-scripts"></a>Update the registered insert script in the Management Portal
+### <a name="update-scripts"></a>Update the registered insert script in the Azure Management Portal
 
-1. In the Management Portal, click the **Data** tab and then click the **TodoItem** table.
+1. In the Azure Management Portal, click the **Data** tab and then click the **TodoItem** table.
 
     ![][21]
 
@@ -330,26 +335,26 @@ Your app is now updated to support push notifications.
           function insert(item, user, request) {
           // Execute the request and send notifications.
              request.execute({
-             success: function() {                      
+             success: function() {
               // Create a template-based payload.
-              var payload = '{ "message" : "New item added: ' + item.text + '" }';            
+              var payload = '{ "message" : "New item added: ' + item.text + '" }';
 
               // Write the default response and send a notification
-              // to all platforms.            
-              push.send(null, payload, {               
+              // to all platforms.
+              push.send(null, payload, {
                   success: function(pushResponse){
                   console.log("Sent push:", pushResponse);
                   // Send the default response.
                   request.respond();
-                  },              
+                  },
                   error: function (pushResponse) {
                       console.log("Error Sending push:", pushResponse);
                        // Send the an error response.
                       request.respond(500, { error: pushResponse });
-                      }           
-               });                 
+                      }
+               });
               }
-           });   
+           });
           }
 
     This registers a new insert script, which sends a push notification (the inserted text) to the device provided in the insert request.
@@ -362,7 +367,7 @@ Your app is now updated to support push notifications.
 
    >[AZURE.NOTE] You must explicitly accept push notifications from your app. This request only occurs the first time that the app runs.
 
-2. In the app, click the **Add** button, add a task title and then click the **Save** button. 
+2. In the app, click the **Add** button, add a task title and then click the **Save** button.
 
 3. Verify that a notification is received, then click **OK** to dismiss the notification.
 
@@ -383,9 +388,9 @@ You'll add push notifications to the Android app by using the Google Cloud Messa
 
 ###<a id="update-scripts"></a>Update the registered insert script to send notifications
 
->[AZURE.NOTE] The following steps show you how to update the script registered to the insert operation on the TodoItem table in the Azure Management Portal. You can also access and edit this mobile service script directly in Visual Studio, in the Azure node of Server Explorer. 
+>[AZURE.NOTE] The following steps show you how to update the script registered to the insert operation on the TodoItem table in the Azure Management Portal. You can also access and edit this mobile service script directly in Visual Studio, in the Azure node of Server Explorer.
 
-In the Management Portal, click the **Data** tab and then click the **TodoItem** table.
+In the [Azure Management Portal], click the **Data** tab and then click the **TodoItem** table.
 
    ![][21]
 
@@ -400,26 +405,26 @@ In the Management Portal, click the **Data** tab and then click the **TodoItem**
           function insert(item, user, request) {
           // Execute the request and send notifications.
              request.execute({
-             success: function() {                      
+             success: function() {
               // Create a template-based payload.
-              var payload = '{ "message" : "New item added: ' + item.text + '" }';            
+              var payload = '{ "message" : "New item added: ' + item.text + '" }';
 
               // Write the default response and send a notification
-              // to all platforms.            
-              push.send(null, payload, {               
+              // to all platforms.
+              push.send(null, payload, {
                   success: function(pushResponse){
                   console.log("Sent push:", pushResponse);
                   // Send the default response.
                   request.respond();
-                  },              
+                  },
                   error: function (pushResponse) {
                       console.log("Error Sending push:", pushResponse);
                        // Send the an error response.
                       request.respond(500, { error: pushResponse });
-                      }           
-               });                 
+                      }
+               });
               }
-           });   
+           });
           }
 
 
@@ -430,17 +435,17 @@ In the Management Portal, click the **Data** tab and then click the **TodoItem**
 
 ###<a id="configure-app"></a>Configure the existing project for push notifications
 
-1. In the Solution view, expand the **Components** folder in the Xamarin.Android app and make sure that Azure Mobile Services package is installed. 
+1. In the Solution view, expand the **Components** folder in the Xamarin.Android app and make sure that Azure Mobile Services package is installed.
 
-2. Right-click the **Components** folder, click  **Get More Components...**, search for the **Google Cloud Messaging Client** component and add it to the project. 
+2. Right-click the **Components** folder, click  **Get More Components...**, search for the **Google Cloud Messaging Client** component and add it to the project.
 
-1. Open the MainActivity.cs project file and add the following using statement to the class:
+3. Open the MainActivity.cs project file and add the following using statement to the class:
 
 		using Gcm.Client;
 
 
 4.	In the **MainActivity** class, add the following code to the **OnCreate** method, after the call to the **LoadApplication** method:
-            
+
             try
             {
                 // Check to ensure everything's setup right
@@ -464,14 +469,14 @@ Your **MainActivity** is now prepared for adding push notifications.
 
 ###<a id="add-push"></a>Add push notifications code to your app
 
-5. In the ToDoAzure.Droid project, create a new class in the project called `GcmService`.
+1. In the ToDoAzure.Droid project, create a new class in the project called `GcmService`.
 
-5. Add the following using statements to **GcmService** class:
+2. Add the following using statements to **GcmService** class:
 
 		using Gcm.Client;
 		using Microsoft.WindowsAzure.MobileServices;
 
-6. Add the following permission requests between the **using** statements and the **namespace** declaration:
+3. Add the following permission requests between the **using** statements and the **namespace** declaration:
 
 		[assembly: Permission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
         [assembly: UsesPermission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
@@ -482,8 +487,8 @@ Your **MainActivity** is now prepared for adding push notifications.
         [assembly: UsesPermission(Name = "android.permission.INTERNET")]
         [assembly: UsesPermission(Name = "android.permission.WAKE_LOCK")]
 
-7. In the **GcmService.cs** project file, add the following class:
- 
+4. In the **GcmService.cs** project file, add the following class:
+
         [BroadcastReceiver(Permission = Gcm.Client.Constants.PERMISSION_GCM_INTENTS)]
         [IntentFilter(new string[] { Gcm.Client.Constants.INTENT_FROM_GCM_MESSAGE }, Categories = new string[] { "@PACKAGE_NAME@" })]
         [IntentFilter(new string[] { Gcm.Client.Constants.INTENT_FROM_GCM_REGISTRATION_CALLBACK }, Categories = new string[] { "@PACKAGE_NAME@" })]
@@ -491,15 +496,15 @@ Your **MainActivity** is now prepared for adding push notifications.
 
         public class PushHandlerBroadcastReceiver : GcmBroadcastReceiverBase<GcmService>
         {
-        
+
             public static string[] SENDER_IDS = new string[] { "<PROJECT_NUMBER>" };
 
         }
 
-	In the above code, you must replace _`<PROJECT_NUMBER>`_ with the project number assigned by Google when you provisioned your app in the Google developer portal. 
+	In the above code, you must replace _`<PROJECT_NUMBER>`_ with the project number assigned by Google when you provisioned your app in the Google developer portal.
 
-8. In the GcmService.cs project file, add the following code that defines the **GcmService** class:
- 
+5. In the GcmService.cs project file, add the following code that defines the **GcmService** class:
+
          [Service]
          public class GcmService : GcmServiceBase
          {
@@ -514,7 +519,7 @@ Your **MainActivity** is now prepared for adding push notifications.
 
 	>[AZURE.NOTE]The **GcmServiceBase** class implements the **OnRegistered()**, **OnUnRegistered()**, **OnMessage()** and **OnError()** methods. You must override these methods in the **GcmService** class.
 
-5. Add the following code to the **GcmService** class that overrides the **OnRegistered** event handler. 
+6. Add the following code to the **GcmService** class that overrides the **OnRegistered** event handler.
 
         protected override void OnRegistered(Context context, string registrationId)
         {
@@ -524,7 +529,7 @@ Your **MainActivity** is now prepared for adding push notifications.
             createNotification("GcmService Registered...", "The device has been Registered, Tap to View!");
 
             MobileServiceClient client =  MainActivity.DefaultService.todoItemManager.GetClient;
-            
+
             var push = client.GetPush();
 
             MainActivity.DefaultService.RunOnUiThread(() => Register(push, null));
@@ -547,7 +552,7 @@ Your **MainActivity** is now prepared for adding push notifications.
 
 	This method uses the returned GCM registration ID to register with Azure for push notifications.
 
-10. Override the **OnMessage** method in **GcmService** with the following code:
+7. Override the **OnMessage** method in **GcmService** with the following code:
 
         protected override void OnMessage(Context context, Intent intent)
         {
@@ -607,7 +612,7 @@ Your **MainActivity** is now prepared for adding push notifications.
             notificationManager.Notify(1, notification);
         }
 
-12. Add the following method overrides for **OnUnRegistered()** and **OnError()**, which are required for the project to compile.
+8. Add the following method overrides for **OnUnRegistered()** and **OnError()**, which are required for the project to compile.
 
         protected override void OnError(Context context, string errorId)
         {
@@ -634,15 +639,15 @@ When you run this app in the emulator, make sure that you use an Android Virtual
 
   The app retrieves the *registrationId* from GCM and registers with the Notification Hub.
 
-1. In the app, add a new task.
+4. In the app, add a new task.
 
-2. Swipe down from the top of the screen to open the device's Notification Center to see the notification.
+5. Swipe down from the top of the screen to open the device's Notification Center to see the notification.
 
 	![][127]
 
 ## <a name="Windows"></a>Add push notifications to the Xamarin.Forms.Windows app
 
-This section shows you how to use Azure Mobile Services to send push notifications to the Windows Phone Silverlight app that is included in your Xamarin.Forms solution. 
+This section shows you how to use Azure Mobile Services to send push notifications to the Windows Phone Silverlight app that is included in your Xamarin.Forms solution.
 
 ###<a id="update-app"></a> Update the app to register for notifications
 
@@ -652,8 +657,8 @@ Before your app can receive push notifications, you must register a notification
 
         using Microsoft.Phone.Notification;
 
-3. Add the following to App.xaml.cs:
-	
+2. Add the following to App.xaml.cs:
+
         public static HttpNotificationChannel CurrentChannel { get; private set; }
 
         private void AcquirePushChannel()
@@ -685,25 +690,24 @@ Before your app can receive push notifications, you must register a notification
 
 	>[AZURE.NOTE]In this this tutorial, the mobile service sends a toast notification to the device. When you send a tile notification, you must instead call the **BindToShellTile** method on the channel.
 
-4. At the top of the **Application_Launching** event handler in App.xaml.cs, add the following call to the new **AcquirePushChannel** method:
+3. At the top of the **Application_Launching** event handler in App.xaml.cs, add the following call to the new **AcquirePushChannel** method:
 
         AcquirePushChannel();
 
-	This makes sure that registration is requested every time that the page is loaded. In your app, you may only want to make this registration periodically to ensure that the registration is current. 
+	This makes sure that registration is requested every time that the page is loaded. In your app, you may only want to make this registration periodically to ensure that the registration is current.
 
-5. Press the **F5** key to run the app. A popup dialog with the registration key is displayed.
   
-6.	In the Solution Explorer, expand **Properties**, open the WMAppManifest.xml file, click the **Capabilities** tab and make sure that the **ID___CAP___PUSH_NOTIFICATION** capability is checked.
+5.	In the Solution Explorer, expand **Properties**, open the WMAppManifest.xml file, click the **Capabilities** tab and make sure that the **ID___CAP___PUSH_NOTIFICATION** capability is checked.
 
    	![Enable notifications in VS](./media/partner-xamarin-mobile-services-xamarin-forms-get-started-push/mobile-app-enable-push-wp8.png)
 
-   	This makes sure that your app can raise toast notifications. 
+   	This makes sure that your app can raise toast notifications.
 
 ###<a id="update-scripts"></a> Update server scripts to send push notifications
 
 Finally, you must update the script registered to the insert operation on the TodoItem table to send notifications.
 
-1. In the Management Portal, click the **Data** tab and then click the **TodoItem** table.
+1. In the [Azure Management Portal], click the **Data** tab and then click the **TodoItem** table.
 
     ![][21]
 
@@ -714,36 +718,36 @@ Finally, you must update the script registered to the insert operation on the To
     This displays the function that is invoked when an insert occurs in the **TodoItem** table.
 
 3. Replace the insert function with the following code, and then click **Save**:
-          
+
           function insert(item, user, request) {
           // Execute the request and send notifications.
              request.execute({
-             success: function() {                      
+             success: function() {
               // Create a template-based payload.
-              var payload = '{ "message" : "New item added: ' + item.text + '" }';            
+              var payload = '{ "message" : "New item added: ' + item.text + '" }';
 
               // Write the default response and send a notification
-              // to all platforms.            
-              push.send(null, payload, {               
+              // to all platforms.
+              push.send(null, payload, {
                   success: function(pushResponse){
                   console.log("Sent push:", pushResponse);
                   // Send the default response.
                   request.respond();
-                  },              
+                  },
                   error: function (pushResponse) {
                       console.log("Error Sending push:", pushResponse);
                        // Send the an error response.
                       request.respond(500, { error: pushResponse });
-                      }           
-               });                 
+                      }
+               });
               }
-           });   
+           });
           }
 
 
     This registers a new insert script, which sends a push notification (the inserted text) to the device provided in the insert request.
 
-3. Click the **Push** tab, check **Enable unauthenticated push notifications**, then click **Save**.
+4. Click the **Push** tab, check **Enable unauthenticated push notifications**, then click **Save**.
 
 	This enables the mobile service to connect to MPNS in unauthenticated mode to send push notifications.
 
@@ -755,14 +759,14 @@ Finally, you must update the script registered to the insert operation on the To
 
     >[AZURE.NOTE] You may encounter a 401 Unauthorized RegistrationAuthorizationException when testing on the Windows Phone emulator. This can occur during the `RegisterNativeAsync()` call because of the way the Windows Phone emulator syncs it's clock with the host PC. It can result in a security token that will be rejected. To resolve this simply manually set the clock in the emulator before testing.
 
-5. In the app, create a new task with the title **Hello push**, then immediately click the start button or back button to leave the app.
+2. In the app, create a new task with the title **Hello push**, then immediately click the start button or back button to leave the app.
 
   	This sends an insert request to the mobile service to store the added item. Notice that the device receives a toast notification that says **hello push**.
 
 	![Toast notification received](./media/partner-xamarin-mobile-services-xamarin-forms-get-started-push/mobile-quickstart-push5-wp8.png)
 
 	>[AZURE.NOTE]You will not receive the notification when you are still in the app. To receive a toast notification while the app is active, you must handle the [ShellToastNotificationReceived](http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/microsoft.phone.notification.httpnotificationchannel.shelltoastnotificationreceived(v=vs.105).aspx) event.
-   
+
 <!-- Anchors. -->
 [Generate the certificate signing request]: #certificates
 [Register your app and enable push notifications]: #register
@@ -840,4 +844,3 @@ Finally, you must update the script registered to the insert operation on the To
 [Google Cloud Messaging Client Component]: http://components.xamarin.com/view/GCMClient/
 [Xamarin.Forms Azure Push Notification Starter Sample]: https://github.com/Azure/mobile-services-samples/tree/master/TodoListXamarinForms
 [Completed Xamarin.Forms Azure Push Notification Sample]: https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithPushXamarinForms
- 

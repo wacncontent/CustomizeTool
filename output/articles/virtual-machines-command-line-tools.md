@@ -11,7 +11,7 @@
 
 This tool provides functionality for creating, deploying, and managing virtual machines, websites and Azure Mobile Services from Mac and Linux desktops. This functionality is similar to that provided by the Windows PowerShell cmdlets that are installed with the Azure SDKs for .NET, Node.JS, and PHP.
 
-To install the tool on a Mac, download and run the [Azure SDK installer](http://azuresdkscu.blob.core.chinacloudapi.cn/downloads04/azure-cli.0.9.10.dmg).
+To install the tool on a Mac, download and run the [Azure SDK installer](http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.dmg).
 
 To install the tool on Linux, install the latest version of Node.JS and then use NPM to install:
 

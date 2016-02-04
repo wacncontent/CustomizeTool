@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="08/18/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="11/27/2015"/>
 
 
 
@@ -25,8 +25,9 @@
 
 各位冒险家，大家好！ 欢迎使用 MongoDB 即服务。在本教程中你将：
 
+1. [设置数据库][provision] - Azure 应用商店 [MongoLab](http://mongolab.com) 外接程序将为你提供一个托管在 Azure 云中并由 MongoLab 的云数据库平台管理的 MongoDB 数据库。
 2. [创建应用][create] - 它将是一个简单的 Node.js 应用，用于维护任务列表。
-3. [部署应用][deploy] - 通过将一些配置联系在一起，我们轻而易举就能将代码推送到 [Azure 网站](/documentation/services/web-sites/)。
+3. [部署应用][deploy] - 通过将一些配置联系在一起，我们轻而易举就能将代码推送到 [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714)。
 4. [管理数据库][manage] - 最后，我们将向你演示 MongoLab 基于 Web 的数据库管理门户，在此你可轻松搜索、显示和修改数据。
 
 在本教程的任意时间，如有任何问题，请随时发送电子邮件至 [support@mongolab.com](mailto:support@mongolab.com)。
@@ -37,14 +38,42 @@
 
 * [Git]
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
-<a name="provision"></a>
+## 快速启动
+如果你比较熟悉 Azure 应用商店，请使用本节快速入门。否则，请继续执行下面的[设置数据库][provision]。
+
+1. 通过单击“新建” > “应用商店”打开 Azure 应用商店。  
+<!-- ![Store][button-store] -->
+2. 单击 **MongoLab** 外接程序。![MongoLab][entry-mongolab]
+3. 在“外接程序”列表中，单击你的 **MongoLab** 外接程序，然后单击“连接信息”。![ConnectionInfoButton][button-connectioninfo]  
+4. 将 **MONGOLAB\_URI** 复制到剪贴板。![ConnectionInfoScreen][screen-connectioninfo]
+
+	>[AZURE.NOTE]此 URI 包含您的数据库用户名称和密码。将其视为敏感信息而不共享它。
+
+5. 在 Azure App Service 中，将值添加到 Web 应用“配置”菜单中的“连接字符串”列表：![WebAppConnectionStrings][focus-website-connectinfo]
+6. 对于“名称”，请输入 **MONGOLAB\_URI**。
+7. 对于“值”，请粘贴我们在前一部分中获得的连接字符串。
+8. 在“类型”下拉列表中选择“自定义”（而不是默认的“SQLAzure”）。
+9. 运行 `npm install mongoose`，以获取 Mongoose（一个 MongoDB node 驱动程序）。
+10. 在代码中设置挂钩以便从环境变量获得 MongoLab 连接 URI 并连接：
+
+        var mongoose = require('mongoose');  
+ 		...
+ 		var connectionString = process.env.CUSTOMCONNSTR_MONGOLAB_URI
+ 		...
+ 		mongoose.connect(connectionString);
+
+注意：Azure 会向最初声明的连接字符串添加 **CUSTOMCONNSTR\_** 前缀，这正是代码引用 **CUSTOMCONNSTR\_MONGOLAB\_URI** 而不是 **MONGOLAB\_URI** 的原因。
+
+现在，开始完整教程...
+
+<a name="provision">
 ## 设置数据库
 
-[AZURE.INCLUDE [howto-provision-mongolab](../includes/howto-provision-mongolab.md)]
+[AZURE.INCLUDE [howto-provision-mongolab](../../includes/howto-provision-mongolab.md)]
 
-<a name="create"></a>
+<a name="create">
 ## 创建应用程序
 
 在本节中，你将使用 Node.js、Express 和 MongoDB 设置你的开发环境以及为基本任务列表 Web 应用程序布置代码。[Express] 为 node 提供视图控制器框架，而 [Mongoose] 是用于在 node 中与 MongoDB 通信的驱动程序。
@@ -375,7 +404,7 @@
 
 	npm install azure-cli -g
 
-如果你已从 <a href="/develop/nodejs/">Azure 开发人员中心</a>安装了 <strong>Azure SDK for Node.js</strong>，则应该已安装了 Azure CLI。有关详细信息，请参阅 <a href="/documentation/articles/virtual-machines-command-line-tools">Azure CLI</a>。
+如果你已从 <a href="/develop/nodejs/">Azure 开发人员中心</a>安装了 <strong>Azure SDK for Node.js</strong>，则应该已安装了 Azure CLI。有关详细信息，请参阅 <a href="../virtual-machines-command-line-tools.md">Azure CLI</a>。
 
 虽然 Azure CLI 主要针对 Mac 和 Linux 用户而创建，但它们基于 Node.js，应该可在能够运行 Node 的任何系统上使用。
 
@@ -434,10 +463,10 @@
 		info:   Executing `git init`
 		info:   Creating default web.config file
 		info:   Creating a new web site
-		info:   Created web site at  mongodbtasklist.chinacloudsites.cn
+		info:   Created web site at  mongodbtasklist.azurewebsites.net
 		info:   Initializing repository
 		info:   Repository initialized
-		info:   Executing `git remote add azure http://gitusername@myuniquewebappname.chinacloudsites.cn/mongodbtasklist.git`
+		info:   Executing `git remote add azure http://gitusername@myuniquewebappname.azurewebsites.net/mongodbtasklist.git`
 		info:   site create command OK
 
 8. 使用以下命令将文件添加然后提交到你的本地 Git 存储库：
@@ -466,35 +495,40 @@
 		...
 		remote: Deploying Web.config to enable Node.js activation.
 		remote: Deployment successful.
-		To https://username@mongodbtasklist.chinacloudsites.cn/MongoDBTasklist.git
+		To https://username@mongodbtasklist.azurewebsites.net/MongoDBTasklist.git
  		 * [new branch]      master -> master
 
 即将完成！
 
 ### 配置环境
-还记得代码中的 process.env.CUSTOMCONNSTR\_MONGOLAB_URI 吗？ 我们需要使用你在配置 MongoLab 数据库期间提供给 Azure 的值填充该环境变量。
+还记得代码中的 process.env.CUSTOMCONNSTR\_MONGOLAB\_URI 吗？ 我们需要使用你在配置 MongoLab 数据库期间提供给 Azure 的值填充该环境变量。
 
 #### 获取 MongoLab 连接字符串
 
-[AZURE.INCLUDE [howto-get-connectioninfo-mongolab](../includes/howto-get-connectioninfo-mongolab.md)]
+[AZURE.INCLUDE [howto-get-connectioninfo-mongolab](../../includes/howto-get-connectioninfo-mongolab.md)]
 
 #### 将连接字符串添加到 Web 应用的环境变量中
 
-[AZURE.INCLUDE [howto-save-connectioninfo-mongolab](../includes/howto-save-connectioninfo-mongolab.md)]
+[AZURE.INCLUDE [howto-save-connectioninfo-mongolab](../../includes/howto-save-connectioninfo-mongolab.md)]
 
 ## 成功！
 
-从你的项目目录运行 `azure site browse`，以便自动打开浏览器，或者打开浏览器并手动导航到你的 Web 应用 URL (myuniquewebappname.chinacloudsites.cn)：
+从你的项目目录运行 `azure site browse`，以便自动打开浏览器，或者打开浏览器并手动导航到你的 Web 应用 URL (myuniquewebappname.azurewebsites.net)：
 
 ![显示空白 tasklist 的网页][node-mongo-finished]
 
-<a name="manage"></a>
+<a name="manage">
 ## 管理数据库
 
-[AZURE.INCLUDE [howto-access-mongolab-ui](../includes/howto-access-mongolab-ui.md)]
+[AZURE.INCLUDE [howto-access-mongolab-ui](../../includes/howto-access-mongolab-ui.md)]
 
 祝贺你！ 你刚刚启动了由 MongoLab 托管的 MongoDB 数据库提供支持的 Node.js 应用程序！ 现在，你拥有了一个 MongoLab 数据库，如有任何关于你的数据库的问题或疑虑，或者要获得有关 MongoDB 或 Node 驱动程序本身的帮助，请联系 [support@mongolab.com](mailto:support@mongolab.com)。祝您好运！
 
+## 发生的更改
+* 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
+
+>[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
 
 
 [screen-mongolab-websitedashboard]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/screen-mongolab-websitedashboard.png
@@ -518,10 +552,10 @@
 [Git remote]: http://git-scm.com/docs/git-remote
 [azure-sdk-for-node]: https://github.com/WindowsAzure/azure-sdk-for-node
 [iisnode.yml]: https://github.com/WindowsAzure/iisnode/blob/master/src/samples/configuration/iisnode.yml
-[Azure CLI]: /documentation/articles/virtual-machines-command-line-tools
+[Azure CLI]: ../virtual-machines-command-line-tools.md
 [Azure Developer Center]: /develop/nodejs/
 [Create and deploy a Node.js application to Azure Web Sites]: /develop/nodejs/tutorials/create-a-website-(mac)/
-[Continuous deployment using GIT in Azure App Service]: /documentation/articles/web-sites-publish-source-control
+[Continuous deployment using GIT in Azure App Service]: web-sites-publish-source-control.md
 [MongoLab]: http://mongolab.com
 [Node.js Web Application with Storage on MongoDB (Virtual Machine)]: /develop/nodejs/tutorials/website-with-mongodb-(mac)/
 [node-mongo-finished]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/todo_list_noframe.png

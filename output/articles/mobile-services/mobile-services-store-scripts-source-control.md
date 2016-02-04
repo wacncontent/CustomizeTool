@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/15/2015"
-	wacn.date=""/> 
+	ms.date="12/07/2015"
+	wacn.date=""/>
 
 # Store your mobile service project code in source control
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 - [.NET backend](/documentation/articles/mobile-services-dotnet-backend-store-code-source-control)
@@ -90,7 +95,7 @@ Now that you have created your local repository, you can make changes to server 
 
 	You should see a series of commands that indicates that the commit is deployed to the mobile service.
 
-6. Back in the Management Portal, click the **Data** tab, then click the **TodoItem** table, click  **Script**, then select the **Insert** operation. Notice that the displayed insert operation script is the same as the JavaScript code that you just uploaded to the repository.
+6. Back in the [Azure Management Portal], click the **Data** tab, then click the **TodoItem** table, click  **Script**, then select the **Insert** operation. Notice that the displayed insert operation script is the same as the JavaScript code that you just uploaded to the repository.
 
 ##<a name="use-npm"></a>Leverage shared code and Node.js modules in your server scripts
 
@@ -144,9 +149,9 @@ Now that you have completed this tutorial you know how to store your scripts in 
 <!-- URLs. -->
 [Git website]: http://git-scm.com
 [Source control]: http://msdn.microsoft.com/zh-cn/library/azure/c25aaede-c1f0-4004-8b78-113708761643
-[Installing Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
-[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
-[Work with server scripts in Mobile Services]: /documentation/articles/mobile-services-how-to-use-server-scripts
+[Installing Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
+[Get started with Mobile Services]: mobile-services-ios-get-started.md
+[Work with server scripts in Mobile Services]: mobile-services-how-to-use-server-scripts.md
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Modules]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid

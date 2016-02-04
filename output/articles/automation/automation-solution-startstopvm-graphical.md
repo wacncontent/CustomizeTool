@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Starting and stopping virtual machines - Graph | Windows Azure"
 	description="PowerShell Workflow version of Azure Automation solution including runbooks to start and stop classic virtual machines."
@@ -75,7 +73,7 @@ You can use any of the methods in [Starting a runbook in Azure Automation](/docu
 The following sample commands uses Windows PowerShell to run **StartAzureClassicVM** to start all virtual machines with the service name *MyVMService*.
 
 	$params = @{"ServiceName"="MyVMService"}
-	Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "StartAzureClassicVM" –Parameters $params
+	Start-AzureAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "StartAzureClassicVM" -Parameters $params
 
 ### Output
 

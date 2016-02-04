@@ -78,7 +78,7 @@ To send push notifications to Windows Store apps from Mobile Services, you must 
 
 1. Log on to the [Azure Management Portal], and click **NEW** at the bottom of the screen.
 
-2. Click on **App Services**, then **Service Bus**, then **Notification Hub**, then **Quick Create**.
+2. Click on **Azure Websitess**, then **Service Bus**, then **Notification Hub**, then **Quick Create**.
 
    	![][7]
 

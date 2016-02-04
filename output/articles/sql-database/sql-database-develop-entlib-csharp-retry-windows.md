@@ -1,4 +1,4 @@
-<properties 
+<properties
 	pageTitle="EntLib retry to connect to SQL Database | Windows Azure"
 	description="Enterprise Library is designed to ease several tasks for client programs of cloud services, including the integration of retry logic for transient faults."
 	services="sql-database"
@@ -10,11 +10,13 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/16/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 
 # Code sample: Retry logic from Enterprise Library 6, in C&#x23; for connecting to SQL Database
+
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)] 
 
 
 This topic presents a complete code sample that demonstrates the Enterprise Library(EntLib).  EntLib eases many tasks for client programs that interact with cloud services such as Azure SQL Database. Our sample focuses on the important task of including retry logic for transient faults.
@@ -25,7 +27,11 @@ EntLib classes are designed to distinguish two categories of run time errors:
 - Errors which will never self-correct, such as a misspelled server name.
 - Transient faults, such as the server suspending for several seconds its acceptance of new connections, while the Azure system load balances.
 
+
 Enterprise Library 6 (EntLib60) is the latest version, and was released in April 2013.
+
+- Microsoft has released the source code to the public.
+- Microsoft has no plans to further maintain the source code.
 
 
 ## Prerequisites
@@ -75,7 +81,7 @@ EntLib60 has several .DLL assembly files whose names start with the same prefix 
 ## How EntLib classes fit together
 
 
-EntLib classes are used to construct other EntLib classes. In this code sample, the construction and use sequence is as listed next: 
+EntLib classes are used to construct other EntLib classes. In this code sample, the construction and use sequence is as listed next:
 
 
 1. Construct an **ExponentialBackoff** object.
@@ -298,12 +304,12 @@ SELECT TOP 3
 ## Related links
 
 
-- Numerous links to further information is provided in: 
-[Enterprise Library 6 – April 2013](http://msdn.microsoft.com/zh-cn/library/dn169621.aspx)
+- Numerous links to further information is provided in:
+[Enterprise Library 6 â April 2013](http://msdn.microsoft.com/zh-cn/library/dn169621.aspx)
  - This topic has a button at its top that offers to [download the EntLib60 source code](http://go.microsoft.com/fwlink/p/?LinkID=290898), if you are curious to see the source code.
 
 
-- Free ebook in .PDF format from Microsoft: 
+- Free ebook in .PDF format from Microsoft:
 [Developer's Guide to Microsoft Enterprise Library, 2nd Edition](http://www.microsoft.com/download/details.aspx?id=41145).
 
 
@@ -317,4 +323,3 @@ SELECT TOP 3
 
 
 - [Client quick-start code samples to SQL Database](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
-

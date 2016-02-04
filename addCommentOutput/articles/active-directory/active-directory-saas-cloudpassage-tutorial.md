@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/26/2015"
+	ms.date="10/30/2015"
 	wacn.date=""/>
 
 
@@ -37,7 +37,12 @@ To configure Azure AD integration with CloudPassage, you need the following item
 To test the steps in this tutorial, you should follow these recommendations:
 
 - You should not use your production environment, unless this is necessary.
+<!-- deleted by customization
 - If you don't have an Azure AD test environment, you can get a free one-month Azure trial subscription [here](/pricing/1rmb-trial/). 
+-->
+<!-- keep by customization: begin -->
+- If you don't have an Azure AD test environment, you can get a free one-month Azure trial subscription <!-- deleted by customization [here](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> [here](https://azure.microsoft.com/pricing/1rmb-trial/) <!-- keep by customization: end -->.
+<!-- keep by customization: end -->
 
  
 ## Scenario Description

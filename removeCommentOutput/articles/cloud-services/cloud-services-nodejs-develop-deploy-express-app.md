@@ -1,15 +1,15 @@
 <properties 
-	pageTitle="Web App with Express (Node.js) | Windows Azure" 
+	pageTitle="web site with Express (Node.js) | Windows Azure" 
 	description="A tutorial that builds on the cloud service tutorial, and demonstrates how to use the Express module." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/01/2015"
+	ms.date="11/20/2015"
 	wacn.date=""/>
 
 
@@ -17,12 +17,12 @@
 
 
 
-# Build a Node.js web application using Express on an Azure Cloud Service
+# Build a Node.js web site using Express on an Azure Cloud Service
 
 Node.js includes a minimal set of functionality in the core runtime.
 Developers often use 3rd party modules to provide additional
 functionality when developing a Node.js application. In this tutorial
-you will create a new application using the [Express][] module, which provides an MVC framework for creating Node.js web applications.
+you will create a new application using the [Express][] module, which provides an MVC framework for creating Node.js web sites.
 
 A screenshot of the completed application is below:
 
@@ -134,7 +134,7 @@ Once the deployment operation completes, your browser will open and display the 
 
 For more information, see the [Node.js Developer Center](/develop/nodejs/).
 
-  [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+  [Node.js web site]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
   [Express]: http://expressjs.com/
   [http://jade-lang.com]: http://jade-lang.com
 

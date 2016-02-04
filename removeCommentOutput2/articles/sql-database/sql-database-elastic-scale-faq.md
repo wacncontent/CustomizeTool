@@ -18,7 +18,7 @@
 
 The schema info object is only used to split merge scenarios. If an application is inherently single-tenant, then it does not require the Split Merge tool and thus there is no need to populate the schema info object.
 
-#### I’ve provisioned a database and I already have a Shard Map Manager, how do I register this new database as a shard?
+#### I've provisioned a database and I already have a Shard Map Manager, how do I register this new database as a shard?
 
 Please see **[Adding a shard to an application using the elastic database client library](/documentation/articles/sql-database-elastic-scale-add-a-shard)**. 
 

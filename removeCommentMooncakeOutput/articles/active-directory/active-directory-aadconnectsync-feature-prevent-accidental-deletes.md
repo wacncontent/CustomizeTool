@@ -4,12 +4,12 @@
    services="active-directory"
    documentationCenter=""
    authors="AndKjell"
-   manager="StevenPo"
+   manager="msStevenPo"
    editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+	ms.date="09/09/2015"
 	wacn.date=""/>
 
 # Prevent accidental deletes
@@ -17,7 +17,7 @@ This topic describes the prevent accidental deletes (preventing accidental delet
 
 When installing Azure AD Connect, prevent accidental deletes will be enabled by default and configured to not allow an export with more than 500 deletes. This feature is designed to protect you from accidental configuration changes and changes to your on-premises directory which would effect a large number of users.
 
-The default value of 500 objects can be changed with PowerShell using `Enable-ADSyncExportDeletionThreshold`. You should configure this value to fit your organization’s size. Since the sync scheduler will run every 3 hours, the value is the number of deletes seen within 3 hours.
+The default value of 500 objects can be changed with PowerShell using `Enable-ADSyncExportDeletionThreshold`. You should configure this value to fit your organizationâs size. Since the sync scheduler will run every 3 hours, the value is the number of deletes seen within 3 hours.
 
 With this feature enabled, if there are too many deletes staged to be exported to Azure AD, the export will not continue and you will receive an email like this:
 
@@ -40,6 +40,5 @@ If all the deletes are desired, then do the following:
 3. To re-enable the protection run the PowerShell cmdlet: `Enable-ADSyncExportDeletionThreshold`
 
 ## Next steps
-Learn more about the [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis) configuration.
 
-Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).
+To learn more on the configuration for Azure AD Connect sync, see [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis).

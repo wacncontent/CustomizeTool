@@ -11,7 +11,7 @@
 	ms.date="10/09/2015"
 	wacn.date=""/>
 
-# What is the Cloud Service model and how do I package it?
+# What is the Cloud Service <!-- deleted by customization model --><!-- keep by customization: begin --> Model <!-- keep by customization: end --> and how do I package it?
 A cloud service is created from three components, the service definition _(.csdef)_, the service config _(.cscfg)_, and a service package _(.cspkg)_. Both the **ServiceDefinition.csdef** and **ServiceConfig.cscfg** files are XML-based and describe the structure of the cloud service and how it's configured; collectively called the model. The **ServicePackage.cspkg** is a zip file that is generated from the **ServiceDefinition.csdef** and among other things, contains all of the required binary-based dependencies. Azure creates a cloud service from both the **ServicePackage.cspkg** and the **ServiceConfig.cscfg**.
 
 Once the cloud service is running in Azure, you can reconfigure it through the **ServiceConfig.cscfg** file, but you cannot alter the definition.
@@ -83,7 +83,7 @@ The **ServiceDefinition.csdef** file specifies the settings that are used by Azu
 You can refer to the [Service Definition Schema][] for a better understanding of the XML schema used here, however, here is a quick explanation of some of the elements:
 
 >**Sites**  
->Contains the definitions for websites or web applications that are hosted in IIS7.
+>Contains the definitions for websites or web sites that are hosted in IIS7.
 >
 >**InputEndpoints**  
 >Contains the definitions for endpoints that are used to contact the cloud service.
@@ -152,7 +152,7 @@ You can refer to the [Service Configuration Schema](https://msdn.microsoft.com/z
 ## Defining ports for role instances
 Azure allows only one entry point to a web role. This means that all traffic occurs through one IP address. You can configure your websites to share a port by configuring the host header to direct the request to the correct location. You can also configure your applications to listen to well-known ports on the IP address.
 
-The following sample shows the configuration for a web role with a website and web application. The website is configured as the default entry location on port 80, and the web applications are configured to receive requests from an alternate host header that is called “mail.mysite.chinacloudapp.cn”.
+The following sample shows the configuration for a web role with a website and web site. The website is configured as the default entry location on port 80, and the web sites are configured to receive requests from an alternate host header that is called “mail.mysite.chinacloudapp.cn”.
 
 ```xml
 <WebRole>
@@ -277,9 +277,15 @@ I am using Visual Studio and I want to...
 * [Setup remote desktop for a cloud service instance][vs_remote]
 
 
+<!-- deleted by customization
+[deploy]: cloud-services-how-to-create-deploy-portal.md
+[remotedesktop]: cloud-services-role-enable-remote-desktop.md
+-->
+<!-- keep by customization: begin -->
 [deploy]: /documentation/articles/cloud-services-how-to-create-deploy-portal
 [remotedesktop]: /documentation/articles/cloud-services-role-enable-remote-desktop
+<!-- keep by customization: end -->
 [vs_remote]: https://msdn.microsoft.com/zh-cn/library/gg443832.aspx
 [vs_deploy]: https://msdn.microsoft.com/zh-cn/library/ee460772.aspx
 [vs_reconfigure]: https://msdn.microsoft.com/zh-cn/library/ee405486.aspx
-[vs_create]: https://msdn.microsoft.com/zh-cn/library/ee405487.aspx
+[vs_create]: https://msdn.microsoft.com/zh-cn/library/ee405487.aspx

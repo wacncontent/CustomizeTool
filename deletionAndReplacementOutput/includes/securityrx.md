@@ -12,16 +12,6 @@ reason: ()
 
 deleted:
 
-		## Azure SQL Database Identity and Access Scenarios
-
-replaced by:
-
-		##Azure SQL Database Identity and Access Scenarios
-
-reason: ()
-
-deleted:
-
 		![][15]
 		
 		

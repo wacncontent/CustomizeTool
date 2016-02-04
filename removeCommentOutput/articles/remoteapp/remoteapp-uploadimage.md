@@ -7,14 +7,10 @@
     authors="ericorman" 
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/12/2015" 
-    ms.author="ericor" />
+<tags
+	ms.service="remoteapp"
+	ms.date="08/12/2015"
+	wacn.date=""/>
 
 
 
@@ -25,8 +21,8 @@ Now that you have created your custom template image or have updated it with cha
 
 ## Before you start
 
-1.      Verify your custom image meets the [image requirements](remoteapp-imagereqs.md) and [application requirements](remoteapp-appreqs.md).
-2.      Install the [Azure PowerShell module](../install-configure-powershell.md).
+1.      Verify your custom image meets the [image requirements](/documentation/articles/remoteapp-imagereqs) and [application requirements](/documentation/articles/remoteapp-appreqs).
+2.      Install the [Azure PowerShell module](/documentation/articles/powershell-install-configure).
 
 ## Step by step on how to upload custom image
 

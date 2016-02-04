@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Azure Resource Manager Architecture | Windows Azure"
    description="Learn about the architecture of Resource Manager and the relationships between the compute, network, and storage resource providers."
@@ -9,13 +11,13 @@
    tags="azure-resource-manager,azure-service-management"/>
 
 <tags
-	ms.service="azure-resource-manager"
-	ms.date="08/25/2015"
+	ms.service="virtual-machines"
+	ms.date="01/07/2016"
 	wacn.date=""/>
 
 # Azure Resource Manager Architecture
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
 
@@ -69,12 +71,4 @@ You can also see the componentization and dependent relationships between resour
 
 ## Next steps
 
-[Deploy and Manage Virtual Machines using Azure Resource Manager Templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
-
-[Deploy and Manage Azure Virtual Machines using Resource Manager Templates and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
-
-## Additional resources
-
-[Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
-
-[Azure Resource Manager Overview](/documentation/articles/resource-group-overview)
+Learn about the resources that can be deployed with the resource manager deployment model by reviewing [Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm).

@@ -1,15 +1,15 @@
 <properties 
-	pageTitle="Adding a shard using elastic database tools" 
+	pageTitle="Adding a shard using elastic database tools | Windows Azure" 
 	description="How to use Elastic Scale APIs to add new shards to a shard set." 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh" 
+	authors="ddove" 
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/24/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # Adding a shard using Elastic Database tools
@@ -44,7 +44,7 @@ In some circumstances, you may have already mapped a range to a shard and partia
 
 ### Example: splitting a range and assigning the empty portion to a newly-added shard
 
-A database named “sample_shard_2” and all necessary schema objects inside of it have been created.  
+A database named âsample_shard_2â and all necessary schema objects inside of it have been created.  
 
  
     // sm is a RangeShardMap object.

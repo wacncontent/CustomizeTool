@@ -52,7 +52,7 @@ The easiest way to register multiple Azure Websites endpoints, all running in th
 
 The first step is to create an Azure Traffic Manager profile.  The code below shows how the profile was created for the sample app:
 
-    $profile = New-AzureTrafficManagerProfile –Name scalableasedemo -ResourceGroupName yourRGNameHere -TrafficRoutingMethod Weighted -RelativeDnsName scalable-ase-demo -Ttl 30 -MonitorProtocol HTTP -MonitorPort 80 -MonitorPath "/"
+    $profile = New-AzureTrafficManagerProfile -Name scalableasedemo -ResourceGroupName yourRGNameHere -TrafficRoutingMethod Weighted -RelativeDnsName scalable-ase-demo -Ttl 30 -MonitorProtocol HTTP -MonitorPort 80 -MonitorPath "/"
 
 Notice how the *RelativeDnsName* parameter was set to *scalable-ase-demo*.  This is how the domain name *scalable-ase-demo.trafficmanager.cn* is created and associated with a Traffic Manager profile.
 
@@ -60,11 +60,11 @@ The *TrafficRoutingMethod* parameter defines the load balancing policy Traffic M
 
 With the profile created, each app instance is added to the profile as an *external endpoint*.  The code below shows the Urls for each of the three app instances being added to the profile.
 
-    Add-AzureTrafficManagerEndpointConfig –EndpointName webfrontend1 –TrafficManagerProfile $profile –Type ExternalEndpoints –Target webfrontend1.fe1ase.p.chinacloudsites.cn –EndpointStatus Enabled –Weight 10
-    Add-AzureTrafficManagerEndpointConfig –EndpointName webfrontend2 –TrafficManagerProfile $profile –Type ExternalEndpoints –Target webfrontend2.fe2ase.p.chinacloudsites.cn –EndpointStatus Enabled –Weight 10
-    Add-AzureTrafficManagerEndpointConfig –EndpointName webfrontend3 –TrafficManagerProfile $profile –Type ExternalEndpoints –Target webfrontend3.fe3ase.p.chinacloudsites.cn –EndpointStatus Enabled –Weight 10
+    Add-AzureTrafficManagerEndpointConfig -EndpointName webfrontend1 -TrafficManagerProfile $profile -Type ExternalEndpoints -Target webfrontend1.fe1ase.p.chinacloudsites.cn -EndpointStatus Enabled -Weight 10
+    Add-AzureTrafficManagerEndpointConfig -EndpointName webfrontend2 -TrafficManagerProfile $profile -Type ExternalEndpoints -Target webfrontend2.fe2ase.p.chinacloudsites.cn -EndpointStatus Enabled -Weight 10
+    Add-AzureTrafficManagerEndpointConfig -EndpointName webfrontend3 -TrafficManagerProfile $profile -Type ExternalEndpoints -Target webfrontend3.fe3ase.p.chinacloudsites.cn -EndpointStatus Enabled -Weight 10
     
-    Set-AzureTrafficManagerProfile –TrafficManagerProfile $profile
+    Set-AzureTrafficManagerProfile -TrafficManagerProfile $profile
 
 Notice how there is one call to *Add-AzureTrafficManagerEndpointConfig* for each individual app instance.  The *Target* parameter in each Powershell command points at the fully qualified domain name (FQDN) of each of the three deployed app instances. The different FQDNs are the values that will be used to walk the DNS CNAME chain for *scalable-ase-demo.trafficmanager.cn* in order to spread traffic load across all endpoints registered in the Traffic Manager profile.
 

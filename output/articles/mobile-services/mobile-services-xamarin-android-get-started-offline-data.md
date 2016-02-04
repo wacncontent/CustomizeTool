@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/25/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Using offline data sync in Mobile Services
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
 
@@ -127,9 +132,9 @@ In this section you will reconnect the app to the mobile service. This simulates
 
 2. Rebuild and run the app. Notice that the data looks the same as the offline scenario even though the app is now connected to the mobile service. This is because this app always uses the `IMobileServiceSyncTable` that is pointed to the local store.
 
-3. Log into the Windows Azure Management portal and look at the database for your mobile service. If your service uses the JavaScript backend, you can browse the data from the **Data** tab of the mobile service.
+3. Log into the [Azure Management Portal] and look at the database for your mobile service. If your service uses the JavaScript backend, you can browse the data from the **Data** tab of the mobile service.
 
-    If you are using the .NET backend for your mobile service, in Visual Studio go to **Server Explorer** -> **Azure** -> **SQL Databases**. Right click your database and select **Open in SQL Server Object Explorer**.
+    If you are using the .NET backend for your mobile service, in Visual Studio go to **Server Explorer** > **Azure** > **SQL Databases**. Right click your database and select **Open in SQL Server Object Explorer**.
 
     Notice the data has *not* been synchronized between the database and the local store.
 
@@ -156,14 +161,14 @@ In this section you will reconnect the app to the mobile service. This simulates
 
 
 <!-- URLs. -->
-[Handling conflicts with offline support for Mobile Services]: /documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data
-[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
-[How to use the Xamarin Component client for Azure Mobile Services]: /documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library
-[Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
+[Handling conflicts with offline support for Mobile Services]: mobile-services-windows-store-dotnet-handling-conflicts-offline-data.md
+[Get started with Mobile Services]: mobile-services-android-get-started.md
+[How to use the Xamarin Component client for Azure Mobile Services]: partner-xamarin-mobile-services-how-to-use-client-library.md
+[Soft Delete]: mobile-services-using-soft-delete.md
 
 [Mobile Services SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
 [Xamarin Studio]: http://xamarin.com/download
 [Xamarin extension]: http://xamarin.com/visual-studio
 [NuGet Addin for Xamarin]: https://github.com/mrward/monodevelop-nuget-addin
- 
+[Azure Management Portal]: https://manage.windowsazure.cn

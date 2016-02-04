@@ -6,7 +6,7 @@
     documentationCenter="na" manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with ScreenSteps
@@ -137,7 +137,7 @@ In the case of **ScreenSteps**, provisioning is a manual task.
 
 5.  From the **User Role** list, select a role for your user.
 
-6.  In the User Role section, Type the “**First name**, **Last name**, **Email**, **Login**, **Password** and **Password Confirmation**” of a valid AAD account you want to provision into the related textboxes.
+6.  In the User Role section, Type the "**First name**, **Last name**, **Email**, **Login**, **Password** and **Password Confirmation**" of a valid AAD account you want to provision into the related textboxes.
 
     ![New user](./media/active-directory-saas-screensteps-tutorial/IC778546.png "New user")
 

@@ -37,4 +37,3 @@
   You will return to the device **Quick Start** page.
 
  > [AZURE.NOTE] You can modify all the other device settings at any time by accessing the **Configure** page.
-

@@ -1,4 +1,6 @@
-new docs: 1, word count: 1317
-articles/app-service-web/web-sites-dotnet-entity-framework-row-level-security.md
+new docs: 3, word count: 2581
+articles/app-service-web/app-service-web-app-cloning.md
+articles/app-service-web/app-service-web-app-powerhell-ssl-binding.md
+articles/app-service-web/app-service-web-arm-with-msdeploy-provision.md
 
 new includes: 0

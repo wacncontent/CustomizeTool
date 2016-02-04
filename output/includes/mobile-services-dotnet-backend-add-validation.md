@@ -29,9 +29,9 @@ It is always a good practice to validate the length of data that is submitted by
 
    	![](./media/mobile-services-dotnet-backend-add-validation/mobile-services-build-dotnet-service.png)
 
-5. Right click the service project and click **Publish**. Publish the mobile service to your Windows Azure account using the publishing settings you previously used in the [Getting Started] or [Get started with data](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/)  tutorial.
+5. Right click the service project and click **Publish**. Publish the mobile service to your Windows Azure account using the publishing settings you previously used in the [Getting Started] or [Get started with data](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data)  tutorial.
  
-     >[AZURE.NOTE] You can alternatively test with the service hosted locally in IIS Express. For more information see the [Get started with data](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/) tutorial.
+     >[AZURE.NOTE] You can alternatively test with the service hosted locally in IIS Express. For more information see the [Get started with data](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data) tutorial.
 
     ![](./media/mobile-services-dotnet-backend-add-validation/mobile-services-publish-dotnet-service.png)
 
@@ -40,4 +40,4 @@ It is always a good practice to validate the length of data that is submitted by
 
 
 <!-- URLs. -->
-[Getting Started]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/
+[Getting Started]: ../articles/mobile-services/mobile-services-dotnet-backend-windows-store-dotnet-get-started.md

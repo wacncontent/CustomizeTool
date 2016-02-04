@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory integration with Kontiki | Windows Azure" 
     description="Learn how to use Kontiki with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Kontiki
@@ -73,7 +73,7 @@ The objective of this section is to outline how to enable users to authenticate 
 
     ![Configure Single SignOn](./media/active-directory-saas-kontiki-tutorial/IC790239.png "Configure Single SignOn")
 
-3.  On the **Configure App URL** page, in the **Kontiki Sign On URL** textbox, type the URL used by your users to sign on to Kontiki (e.g.: “*https://company.mc.eval.kontiki.com/*"), and then click **Next**.
+3.  On the **Configure App URL** page, in the **Kontiki Sign On URL** textbox, type the URL used by your users to sign on to Kontiki (e.g.: "*https://company.mc.eval.kontiki.com/*"), and then click **Next**.
 
     ![Configure App URL](./media/active-directory-saas-kontiki-tutorial/IC790240.png "Configure App URL")
 

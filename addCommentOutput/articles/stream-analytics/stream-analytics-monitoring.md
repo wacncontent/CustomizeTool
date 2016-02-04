@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Understanding Stream Analytics Job Monitoring | Microsoft Azure" 
+	pageTitle="Understanding Stream Analytics Job Monitoring | Windows Azure" 
 	description="Understanding Stream Analytics Job Monitoring" 
 	keywords="big data analytics,cloud service,internet of things,managed service,stream processing,streaming analytics,streaming data"
 	services="stream-analytics" 
@@ -8,24 +8,21 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="stream-analytics" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="data-services" 
-	ms.date="09/29/2015" 
-	ms.author="jeffstok"/>
+<tags
+	ms.service="stream-analytics"
+	ms.date="11/10/2015"
+	wacn.date=""/>
 
 # Understanding Stream Analytics job monitoring
 
 ## Monitor page
 
-The Azure Management portal and Azure preview portal both surface key performance metrics that can be used to monitor and troubleshoot your job.  
+The Azure Management portal <!-- deleted by customization and Azure preview portal both surface --><!-- keep by customization: begin --> surfaces <!-- keep by customization: end --> key performance metrics that can be used to monitor and troubleshoot your job.
 
 In the Azure Management portal, click on the **Monitor** tab of a running Stream Analytics job to see these metrics. There is a delay of at the most 1 minute in the performance metrics showing up in the Monitor page.  
 
   ![Monitoring Dashboard](./media/stream-analytics-monitoring/01-stream-analytics-monitoring.png)  
+<!-- deleted by customization
 
 In the Azure preview portal, browse to the Stream Analytics job you are interested in seeing metrics for and view the **Monitoring** section.  
 
@@ -34,6 +31,7 @@ In the Azure preview portal, browse to the Stream Analytics job you are interest
 The first time a Stream Analytics job is created in a region, you will need to configure Diagnostics for that region. To do this, click anywhere in the **Monitoring** section and the **Diagnostics** blade will appear. Here you can enable diagnostics and specify a storage account for monitoring data.  
 
   ![Azure preview portal Configure Diagnostics](./media/stream-analytics-monitoring/07-stream-analytics-monitoring.png)  
+-->
 
 ## Metrics available for Stream Analytics  
 
@@ -61,16 +59,18 @@ To change the time range the metrics chart displays, select 1 hour, 24 hours, or
   ![Time Scale](./media/stream-analytics-monitoring/03-stream-analytics-monitoring.png)  
 
 You can set rules that can notify you by email in case the job crosses a defined threshold. 
+<!-- deleted by customization
 
 ## Customizing Monitoring in the Azure Preview portal ##
 
-You can adjust the type of chart, metrics shown, and time range in the Edit Chart settings. For details, see [How to Customize Monitoring](./azure-portal/insights-how-to-customize-monitoring.md).
+You can adjust the type of chart, metrics shown, and time range in the Edit Chart settings. For details, see [How to Customize Monitoring](/documentation/articles/insights-how-to-customize-monitoring).
 
   ![Azure preview portal Time Scale](./media/stream-analytics-monitoring/08-stream-analytics-monitoring.png)  
+-->
 
 ## Job status
 
-The status of Stream Analytics jobs can be viewed in the Azure portal where you see a list of jobs. You can see the list of jobs by clicking the Stream Analytics icon in the Azure Portal.
+The status of Stream Analytics jobs can be viewed in the Azure Management Portal where you see a list of jobs. You can see the list of jobs by clicking the Stream Analytics icon in the Azure Management Portal.
 
 | Status | Definition |
 |--------|------------|
@@ -94,12 +94,12 @@ Clicking on the input or output resource provides detailed diagnostic informatio
   ![Diagnostics](./media/stream-analytics-monitoring/05-stream-analytics-monitoring.png)  
 
 ## Get help
-For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics)
+For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/home?forum=AzureStreamAnalytics)
 
 ## Next steps
 
-- [Introduction to Azure Stream Analytics](stream-analytics-introduction.md)
-- [Get started using Azure Stream Analytics](stream-analytics-get-started.md)
-- [Scale Azure Stream Analytics jobs](stream-analytics-scale-jobs.md)
-- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+- [Introduction to Azure Stream Analytics](/documentation/articles/stream-analytics-introduction)
+- [Get started using Azure Stream Analytics](/documentation/articles/stream-analytics-get-started)
+- [Scale Azure Stream Analytics jobs](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)

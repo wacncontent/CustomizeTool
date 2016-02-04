@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/10/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 
@@ -23,7 +23,7 @@ This topic shows you how to define a custom API endpoint in a JavaScript backend
 
 [AZURE.INCLUDE [mobile-services-create-custom-api](../includes/mobile-services-create-custom-api.md)]
 
-For information on how to invoke a custom API in your app using a Mobile Services client library, see [Call a custom API](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library#custom-api) in the client SDK reference.
+For information on how to invoke a custom API in your app using a Mobile Services client library, see [Call a custom <!-- deleted by customization API](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library#custom-api) --><!-- keep by customization: begin --> API](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/#custom-api) <!-- keep by customization: end --> in the client SDK reference.
 
 
 <!-- Anchors. -->

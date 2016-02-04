@@ -14,7 +14,7 @@
 
 # Azure AD service limits and restrictions
 
-If you’re looking for the full set of Windows Azure service limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits).
+If youâre looking for the full set of Windows Azure service limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits).
 
 [AZURE.INCLUDE [AAD-service-limits](../includes/active-directory-service-limits-include.md)]
 

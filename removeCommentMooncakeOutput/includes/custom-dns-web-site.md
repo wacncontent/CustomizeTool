@@ -302,6 +302,7 @@ Once configuration has completed, the custom domain name will be listed in the *
 [trafficmanager]: /documentation/articles/web-sites-traffic-manager
 [addendpoint]: /documentation/articles/traffic-manager-endpoints
 [createprofile]: /documentation/articles/traffic-manager-manage-profiles
+
 <!-- images -->
 
 [setcname1]: ../media/dncmntask-cname-5.png

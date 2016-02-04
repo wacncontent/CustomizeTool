@@ -12,7 +12,12 @@
 	ms.date="10/15/2015"
 	wacn.date=""/>
 
+<!-- deleted by customization
 # Service Bus Premium and Standard messaging tiers 
+-->
+<!-- keep by customization: begin -->
+# Service Bus Premium and Standard Messaging Tiers 
+<!-- keep by customization: end -->
 
 Service Bus brokered messaging, which includes messaging entities such as queues and topics, combines enterprise messaging capabilities with rich publish-subscribe semantics at cloud scale. Service Bus brokered messaging is used as the communication backbone for many sophisticated cloud solutions.
 

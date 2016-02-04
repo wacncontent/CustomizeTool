@@ -1,20 +1,16 @@
 <properties 
-	pageTitle="Get started with Azure Search Management REST API" 
-	description="Get started with Azure Search Management REST API" 
+	pageTitle="Get started with Azure Search Management REST API | Windows Azure | Hosted cloud search service" 
+	description="Administer your hosted cloud Azure Search service using a Management REST API" 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
 	manager="mblythe" 
 	editor=""/>
 
-<tags 
-	ms.service="search" 
-	ms.devlang="rest-api" 
-	ms.workload="search" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.date="09/08/2015" 
-	ms.author="heidist"/>
+<tags
+	ms.service="search"
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
 # Get started with Azure Search Management REST API
 
@@ -39,11 +35,11 @@ You can find the client application on Codeplex at [Azure Search Management API 
 
 ##Configure the application
 
-Before you can run the sample application, you must enable authentication so that requests sent from the client application to the resource manager endpoint can be accepted. The authentication requirement originates with the [Azure Resource Manager](http://msdn.microsoft.com/library/azure/dn790568.aspx), which is the basis for all portal-related operations requested via an API, including those related to Search service management. The service management API for Azure Search is simply an extension of the Azure Resource Manager, and thus inherits its dependencies.  
+Before you can run the sample application, you must enable authentication so that requests sent from the client application to the resource manager endpoint can be accepted. The authentication requirement originates with the [Azure Resource <!-- deleted by customization Manager](http://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx) --><!-- keep by customization: begin --> Manager](http://msdn.microsoft.com/library/azure/dn790568.aspx) <!-- keep by customization: end -->, which is the basis for all portal-related operations requested via an API, including those related to Search service management. The service management API for Azure Search is simply an extension of the Azure Resource Manager, and thus inherits its dependencies.
 
 Azure Resource Manager requires Azure Active Directory service as its identity provider. 
 
-To obtain an access token that will allow requests to reach the resource manager, the client application includes a code segment that calls Active Directory. The code segment, plus the prerequisite steps to using the code segment, were borrowed from this article: [Authenticating Azure Resource Manager requests](http://msdn.microsoft.com/library/azure/dn790557.aspx).
+To obtain an access token that will allow requests to reach the resource manager, the client application includes a code segment that calls Active Directory. The code segment, plus the prerequisite steps to using the code segment, were borrowed from this article: [Authenticating Azure Resource Manager <!-- deleted by customization requests](http://msdn.microsoft.com/zh-cn/library/azure/dn790557.aspx) --><!-- keep by customization: begin --> requests](http://msdn.microsoft.com/library/azure/dn790557.aspx) <!-- keep by customization: end -->.
 
 You can follow the instructions in the above link, or use the steps in this document if you prefer to go through the tutorial step by step.
 
@@ -54,15 +50,15 @@ In this section, you will perform the following tasks:
 1. Configure the AD application by registering details about the sample client application you downloaded
 1. Load the sample client application with values it will use to gain authorization for its requests
 
-> [AZURE.NOTE] These links provide background on using Azure Active Directory for authenticating client requests to the resource manager: [Azure Resource Manager](http://msdn.microsoft.com/library/azure/dn790568.aspx), [Authenticating Azure Resource Manager requests](http://msdn.microsoft.com/library/azure/dn790557.aspx), and [Azure Active Directory](http://msdn.microsoft.com/library/azure/jj673460.aspx).
+> [AZURE.NOTE] These links provide background on using Azure Active Directory for authenticating client requests to the resource manager: [Azure Resource <!-- deleted by customization Manager](http://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx) --><!-- keep by customization: begin --> Manager](http://msdn.microsoft.com/library/azure/dn790568.aspx) <!-- keep by customization: end -->, [Authenticating Azure Resource Manager <!-- deleted by customization requests](http://msdn.microsoft.com/zh-cn/library/azure/dn790557.aspx) --><!-- keep by customization: begin --> requests](http://msdn.microsoft.com/library/azure/dn790557.aspx) <!-- keep by customization: end -->, and [Azure Active <!-- deleted by customization Directory](http://msdn.microsoft.com/zh-cn/library/azure/jj673460.aspx) --><!-- keep by customization: begin --> Directory](http://msdn.microsoft.com/library/azure/jj673460.aspx) <!-- keep by customization: end -->.
 
 ###Create an Active Directory Service
 
-1. Sign in to the [Azure Management Portal](https://manage.windowsazure.com).
+1. Sign in to the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.com) <!-- keep by customization: end -->.
 
 2. Scroll down the left navigation pane and click **Active Directory**.
 
-4. Click **NEW** to open **App Services** | **Active Directory**. In this step, you are creating a new Active Directory service. This service will host the AD application that you'll define a few steps from now. Creating a new service helps isolate the tutorial from other applications you might already be hosting in Azure.
+4. Click **NEW** to open <!-- deleted by customization **Azure Websitess** --><!-- keep by customization: begin --> **App Services** <!-- keep by customization: end --> | **Active Directory**. In this step, you are creating a new Active Directory service. This service will host the AD application that you'll define a few steps from now. Creating a new service helps isolate the tutorial from other applications you might already be hosting in Azure.
 
 5. Click **Directory** | **Custom Create**.
 
@@ -84,7 +80,7 @@ In this section, you will perform the following tasks:
  
 5. Enter a name, such as "Azure-Search-Manager".
 
-6. Choose **Native client application** for application type. This is correct for the sample application; it happens to be a Windows client (console) application, not a web application.
+6. Choose **Native client application** for application type. This is correct for the sample application; it happens to be a Windows client (console) application, not a web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end -->.
 
      ![][7]
  
@@ -139,7 +135,7 @@ If you have not yet [downloaded the sample application from Codeplex](https://az
 	- Copy the OAUTH 2.0 Authorization Endpoint at the bottom of the list. 
 	- Paste the endpoint into TenantID, trimming the value of all URI parameters except the tenant ID.
 
-    Given "https://login.windows.net/55e324c7-1656-4afe-8dc3-43efcd4ffa50/oauth2/authorize?api-version=1.0", delete everything except "55e324c7-1656-4afe-8dc3-43efcd4ffa50".
+    Given <!-- deleted by customization "https://login.chinacloudapi.cn/55e324c7-1656-4afe-8dc3-43efcd4ffa50/oauth2/authorize?api-version=1.0" --><!-- keep by customization: begin --> "https://login.windows.net/55e324c7-1656-4afe-8dc3-43efcd4ffa50/oauth2/authorize?api-version=1.0" <!-- keep by customization: end -->, delete everything except "55e324c7-1656-4afe-8dc3-43efcd4ffa50".
 
 	![][10]
 
@@ -159,15 +155,15 @@ The sample application creates a free Azure Search service for an existing Azure
 
 1. Open Program.cs from the Solution Explorer and go to the Main(string[] void) function. 
  
-3. Notice that **ExecuteArmRequest** is used to execute requests against the Azure Resource Manager endpoint, `https://management.azure.com/subscriptions` for a specified `subscriptionID`. This method is used throughout the program to perform operations using the Azure Resource Manager API or Search management API.
+3. Notice that **ExecuteArmRequest** is used to execute requests against the Azure Resource Manager endpoint, <!-- deleted by customization `https://manage.windowsazure.cn/subscriptions` --><!-- keep by customization: begin --> `https://management.azure.com/subscriptions` <!-- keep by customization: end --> for a specified `subscriptionID`. This method is used throughout the program to perform operations using the Azure Resource Manager API or Search management API.
 
-3. Requests to Azure Resource Manager must be authenticated and authorized. This is accomplished using the **GetAuthorizationHeader** method, called by the **ExecuteArmRequest**  method, borrowed from [Authenticating Azure Resource Manager requests](http://msdn.microsoft.com/library/azure/dn790557.aspx). Notice that **GetAuthorizationHeader** calls `https://management.core.windows.net` to get an access token.
+3. Requests to Azure Resource Manager must be authenticated and authorized. This is accomplished using the **GetAuthorizationHeader** method, called by the **ExecuteArmRequest**  method, borrowed from [Authenticating Azure Resource Manager <!-- deleted by customization requests](http://msdn.microsoft.com/zh-cn/library/azure/dn790557.aspx) --><!-- keep by customization: begin --> requests](http://msdn.microsoft.com/library/azure/dn790557.aspx) <!-- keep by customization: end -->. Notice that **GetAuthorizationHeader** calls <!-- deleted by customization `https://management.core.chinacloudapi.cn` --><!-- keep by customization: begin --> `https://management.core.windows.net` <!-- keep by customization: end --> to get an access token.
 
 4. You are prompted to sign in with a user name and password that is valid for your subscription.
 
 5. Next, a new Azure Search service is registered with the Azure Resource Manager provider. Again, this is the **ExecuteArmRequest** method, used this time to create the Search service on Azure for your subscription via `providers/Microsoft.Search/register`. 
 
-6. The remainder of the program uses the [Azure Search Management REST API](http://msdn.microsoft.com/library/dn832684.aspx). Notice that the `api-version` for this API is different from the Azure Resource Manager api-version. For example, `/listAdminKeys?api-version=2014-07-31-Preview` shows the `api-version` of the Azure Search Management REST API.
+6. The remainder of the program uses the [Azure Search Management REST <!-- deleted by customization API](http://msdn.microsoft.com/zh-cn/library/dn832684.aspx) --><!-- keep by customization: begin --> API](http://msdn.microsoft.com/library/dn832684.aspx) <!-- keep by customization: end -->. Notice that the `api-version` for this API is different from the Azure Resource Manager api-version. For example, `/listAdminKeys?api-version=2014-07-31-Preview` shows the `api-version` of the Azure Search Management REST API.
 
 	The next series of operations retrieve the service definition you just created, the admin api-keys, regenerates and retrieves keys, changes the replica and parition, and finally deletes the service.
 
@@ -179,8 +175,8 @@ The sample application creates a free Azure Search service for an existing Azure
 
 After having completed this tutorial, you might want to learn more about service management or authentication with Active Directory service:
 
-- Learn more about integrating a client application with Active Directory. See [Integrating Applications in Azure Active Directory](http://msdn.microsoft.com/library/azure/dn151122.aspx).
-- Learn about other service management operations in Azure. See [Managing Your Services](http://msdn.microsoft.com/library/azure/dn578292.aspx).
+- Learn more about integrating a client application with Active Directory. See [Integrating Applications in Azure Active <!-- deleted by customization Directory](http://msdn.microsoft.com/zh-cn/library/azure/dn151122.aspx) --><!-- keep by customization: begin --> Directory](http://msdn.microsoft.com/library/azure/dn151122.aspx) <!-- keep by customization: end -->.
+- Learn about other service management operations in Azure. See [Managing Your <!-- deleted by customization Services](http://msdn.microsoft.com/zh-cn/library/azure/dn578292.aspx) --><!-- keep by customization: begin --> Services](http://msdn.microsoft.com/library/azure/dn578292.aspx) <!-- keep by customization: end -->.
 
 <!--Anchors-->
 [Download the sample application]: #Download
@@ -197,7 +193,7 @@ After having completed this tutorial, you might want to learn more about service
 [10]: ./media/search-get-started-management-api/Azure-Search-MGMT-AD-OAuthEndpoint.PNG
 
 <!--Link references-->
-[Manage your search solution in Microsoft Azure]: search-manage.md
+[Manage your search solution in <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure]: search-manage.md
 [Azure Search development workflow]: search-workflow.md
 [Create your first azure search solution]: search-create-first-solution.md
 [Create a geospatial search app using Azure Search]: search-create-geospatial.md

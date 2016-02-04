@@ -12,7 +12,7 @@ can best protect your cloud applications.
 An application's security is a function of its surface. The more surface
 that the application exposes the greater the security concerns. For
 example, an application that runs as an unattended batch process exposes
-less, from a security perspective, than a publically available website.
+less, from a security perspective, than a <!-- deleted by customization publicly --><!-- keep by customization: begin --> publically <!-- keep by customization: end --> available website.
 
 When you move to the cloud you gain a certain peace of mind about
 infrastructure and networking since these are managed in data centers
@@ -224,8 +224,8 @@ application.
     scenario you need securely access Azure Service Bus queues.
 -   **In-Memory Cache Identity and Access Scenarios.**In this scenario
     you need to securely access data managed by in-memory cache.
--   **Azure Marketplace Identity and Access Scenarios.**In this
-    scenario you need to securely access Azure Marketplace
+-   **Azure gallery Identity and Access Scenarios.**In this
+    scenario you need to securely access Azure gallery
     datasets.
 
 ##Azure Identity and Access Scenarios
@@ -413,7 +413,12 @@ several caveats:
     the token "manually" since there is no need to handle redirects in
     this case.
 
+<!-- deleted by customization
 ![ASP.NET Web Application][08]
+-->
+<!-- keep by customization: begin -->
+![ASP.NET Web Site][08]
+<!-- keep by customization: end -->
 
 Refer to the following resources to implement this scenario:
 
@@ -532,7 +537,13 @@ Refer to the following resources to solve this scenario
 -   [Shared Access Signatures Are Easy These Days](http://blog.smarx.com/posts/shared-access-signatures-are-easy-these-days)
 
 
+<!-- deleted by customization
+## Azure SQL Database Identity and Access Scenarios
+
+-->
+<!-- keep by customization: begin -->
 ##Azure SQL Database Identity and Access Scenarios
+<!-- keep by customization: end -->
 
 SQL Database only supports SQL Server Authentication. Windows
 Authentication (integrated security) is not supported. Users must
@@ -540,6 +551,23 @@ provide credentials (login and password) every time they connect to a
 SQL Database. Pay special attention when managing your username and
 password to avoid information disclosure.
 
+<!-- deleted by customization
+
+![][15]
+
+
+To solve this scenario, refer to the following Help topic:<br/>
+[Azure SQL Database Development: How-to Topics](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
+
+
+Or refer to one of its many child topics, some of which are:
+
+
+- [How to: Connect to SQL Database Using sqlcmd](http://msdn.microsoft.com/zh-cn/library/azure/ee336280.aspx)
+- [Code sample: Retry logic for connecting to Azure SQL Database with ADO.NET](http://msdn.microsoft.com/zh-cn/library/azure/ee336243.aspx)
+- [How to: Connect to SQL Database Using PHP](http://msdn.microsoft.com/zh-cn/library/azure/ff394110.aspx)
+-->
+<!-- keep by customization: begin -->
 ![][15]
 
 Refer to the following resources to solve this scenario:
@@ -550,8 +578,18 @@ Refer to the following resources to solve this scenario:
 -   [How to: Connect to SQL Database Through ASP.NET](http://msdn.microsoft.com/zh-cn/library/azure/ee621781.aspx)
 -   [How to: Connect to SQL Database Through WCF Data Services](http://msdn.microsoft.com/zh-cn/library/azure/ee621789.aspx)
 -  [ How to: Connect to SQL Database Using PHP](http://msdn.microsoft.com/zh-cn/library/azure/ff394110.aspx)
--   [How to: Connect to SQL Database Using JDBC](http://msdn.microsoft.com/zh-cn/library/azure/gg715284.aspx)
+<!-- keep by customization: end -->
+- [How to: Connect to SQL Database Using JDBC](http://msdn.microsoft.com/zh-cn/library/azure/gg715284.aspx)
+<!-- deleted by customization
+
+
+Or refer to:<br/>
+[Azure SQL Database Security Guidelines and Limitations](http://msdn.microsoft.com/zh-cn/library/azure/ff394108.aspx#authentication)
+
+-->
+<!-- keep by customization: begin -->
 -   [How to: Connect to SQL Database Using the ADO.NET Entity Framework](http://msdn.microsoft.com/zh-cn/library/azure/ff951633.aspx)
+<!-- keep by customization: end -->
 
 ##Azure Service Bus Identity and Access Scenarios
 
@@ -592,9 +630,9 @@ Refer to the following resources to solve this scenario:
 -   [Azure Service Bus and Caching Samples](http://msdn.microsoft.com/zh-cn/library/ee706741.aspx) (Caching Samples
     section)
 
-##Azure Marketplace Identity and Access Scenarios
+##Azure gallery Identity and Access Scenarios
 
-Every access to an Azure Marketplace dataset, whether free or
+Every access to an Azure gallery dataset, whether free or
 paid, must authenticate the user before access is granted. When you
 create an application the authentication process must be included in
 your code. Consider the following common scenarios:
@@ -636,7 +674,7 @@ Refer to the following resources to solve this scenario:
 In this scenario you are building an application that accesses the
 Marketplace API. The Marketplace API requires authentication to
 successfully accomplish calls to it. The application is deployed to
-Azure Marketplace.
+Azure gallery.
 
 ![][20]
 
@@ -646,7 +684,7 @@ authentication implementation.
 Refer to the following resources to solve this scenario:
 
 -   [Download the App Publishing Kit](http://download.microsoft.com/download/F/5/F/F5FD7C12-87FD-4A57-8D04-243AC6EF6C43/AppPublishingKitOct2011.zip)
--   [Introduction to Azure Marketplace for Applications](https://datamarket.azure.com/)
+-   [Introduction to Azure gallery for Applications](https://datamarket.azure.com/)
 
 ##Security Knobs
 
@@ -658,7 +696,12 @@ for these technologies when designing and deploying your application.
 
 The following are key security knobs of WIF. The information below is a
 digest from [WIF Design Considerations](http://msdn.microsoft.com/zh-cn/library/ee517298.aspx) and [Windows Identity Foundation
+<!-- deleted by customization
 (WIF) Security for ASP.NET Web Applications - Threats & Countermeasures](http://blogs.msdn.com/b/alikl/archive/2010/12/02/windows-identity-foundation-wif-security-for-asp-net-web-applications-threats-amp-countermeasures.aspx)
+-->
+<!-- keep by customization: begin -->
+(WIF) Security for ASP.NET Web Sites - Threats & Countermeasures](http://blogs.msdn.com/b/alikl/archive/2010/12/02/windows-identity-foundation-wif-security-for-asp-net-web-applications-threats-amp-countermeasures.aspx)
+<!-- keep by customization: end -->
 .
 
 -   **IssuerNameRegistry**. Specifies trusted Security Token Services

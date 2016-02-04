@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/11/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # Learn Hadoop by using the HDInsight Getting Started Gallery
@@ -60,6 +60,6 @@ Other ways to learn about HDInsight include:
 [hdinsight.twitter.sample]: ./media/hdinsight-learn-hadoop-use-sample-gallery/HDInsight-Twitter-Trend-Analysis-sample.png
 
 <!--Link references-->
-[hdinsight.learn.map]: /documentation/articles/hdinsight-learn-map
+[hdinsight.learn.map]: hdinsight-learn-map.md
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
 [azure.portal]:https://manage.windowsazure.cn

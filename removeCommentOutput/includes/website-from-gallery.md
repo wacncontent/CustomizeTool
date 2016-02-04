@@ -1,19 +1,19 @@
-The Azure Marketplace makes available a wide range of popular web apps developed by Microsoft, third party companies, and open source software initiatives. Web apps created from the Azure Marketplace do not require installation of any software other than the browser used to connect to the [Azure Preview Portal](https://manage.windowsazure.cn/). 
+The Azure Marketplace makes available a wide range of popular web sites developed by Microsoft, third party companies, and open source software initiatives. web sites created from the Azure Marketplace do not require installation of any software other than the browser used to connect to the [Azure Preview Portal](https://manage.windowsazure.cn/). 
 
 In this tutorial, you'll learn:
 
-- How to create a new web app through the Azure Marketplace.
+- How to create a new web site through the Azure Marketplace.
 
-- How to deploy the web app through the Azure Preview Portal.
+- How to deploy the web site through the Azure Preview Portal.
  
 You'll build a WordPress blog that uses a default template. The following illustration shows the completed application:
 
 
 ![Wordpress blog][13]
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 
-## Create a web app in the portal
+## Create a web site in the portal
 
 1. Log in to the Azure Preview Portal.
 
@@ -31,7 +31,7 @@ You'll build a WordPress blog that uses a default template. The following illust
 	
 5. After reading the description of the WordPress app, select **Create**.
 
-6. Click on **Web app**, and provide the required values for configuring your web app.
+6. Click on **Web Apps**, and provide the required values for configuring your web site.
 	
     ![configure your app][8]
 
@@ -45,27 +45,27 @@ You'll build a WordPress blog that uses a default template. The following illust
 
 8. If necessary, click **SUBSCRIPTION**, and specify the subscription to use. 
 
-7. When you have finished defining the web app, click **Create**, and wait while the new web app is created.
+7. When you have finished defining the web site, click **Create**, and wait while the new web site is created.
 
-   When the app has been created, you will see the resource group containing web app and database.
+   When the app has been created, you will see the resource group containing web site and database.
 
    ![show group][resourcegroup]
 
-## Launch and manage your WordPress web app
+## Launch and manage your WordPress web site
 	
-1. Click on your new web app to see details about your app.
+1. Click on your new web site to see details about your app.
 
     ![launch dashboard][10]
 
-2. On the **Essentials** page, click either **Browse** or the link under **Url** to open the web app's welcome page.
+2. On the **Essentials** page, click either **Browse** or the link under **Url** to open the web site's welcome page.
 
     ![site URL][browse]
 
-3. If you have not installed WordPress, enter the appropriate configuration information required by WordPress and click **Install WordPress** to finalize configuration and open the web app's login page.
+3. If you have not installed WordPress, enter the appropriate configuration information required by WordPress and click **Install WordPress** to finalize configuration and open the web site's login page.
 
 4. Click **Login** and enter your credentials.  
 
-5. You'll have a new WordPress web app that looks similar to the web app below.    
+5. You'll have a new WordPress web site that looks similar to the web site below.    
 
 	![your WordPress site][13]
 

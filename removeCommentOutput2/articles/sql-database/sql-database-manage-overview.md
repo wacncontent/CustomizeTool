@@ -21,7 +21,7 @@ This topic explores and compares tools and options for managing SQL Databases so
 ## Azure Management Portal
 
 
-The [Azure Management Portal](http://manage.windowsazure.cn) is a web-based management portal where you can create, update, and delete Azure SQL Databases and logical servers and monitor database resources. This tool is great is if you're just getting started with Azure, managing a small number of databases, or need to quickly do something. 
+The [Azure Management Portal](https://manage.windowsazure.cn) is a web-based management portal where you can create, update, and delete Azure SQL Databases and logical servers and monitor database resources . This tool is great is if you're just getting started with Azure, managing a small number of databases, or need to quickly do something.
 
 For more in-depth information about using the portal see [Manage SQL Databases using the Azure Management Portal](/documentation/articles/sql-database-manage-portal).
 
@@ -39,3 +39,4 @@ You can use command line tools such as PowerShell to manage Azure SQL Databases 
 
 For more information on managing your Azure SQL Databases with command line tools, [click here](/documentation/articles/sql-database-command-line-tools)
  
+

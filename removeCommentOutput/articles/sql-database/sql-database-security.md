@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/13/2015"
+	ms.date="10/21/2015"
 	wacn.date=""/>
 
 
@@ -73,7 +73,7 @@ There are ways to further limit what a user can do with Azure SQL Database:
 * [Data Masking](/documentation/articles/sql-database-dynamic-data-masking-get-started) can be used to limit exposure of sensitive data.
 * [Stored procedures](https://msdn.microsoft.com/zh-cn/library/ms190782) can be used to limit the actions that can be taken on the database.
 
-Managing databases and logical servers from the Azure Management Portal or using the Azure Resource Manager API is controlled by your portal user account's role assignments. For more information on this topic, see [Role-based access control in Azure Preview portal](/documentation/articles/role-based-access-control-configure).
+Managing databases and logical servers from the Azure Management Portal or using the Azure Resource Manager API is controlled by your portal user account's role assignments. For more information on this topic, see [Role-based access control in Azure Management Portal](/documentation/articles/role-based-access-control-configure).
 
 
 ## Encryption
@@ -92,7 +92,7 @@ For other ways to encrypt your data secrets, consider:
 
 * [Cell-level encryption](https://msdn.microsoft.com/zh-cn/library/ms179331.aspx) to encrypt specific columns or even cells of data with different encryption keys.
 * If you need a Hardware Security Module or central management of your encryption key hierarchy, consider using [Azure Key Vault with SQL Server in an Azure VM](http://blogs.technet.com/b/kv/archive/2015/01/12/using-the-key-vault-for-sql-server-encryption.aspx).
-
+* [Always Encrypted](https://msdn.microsoft.com/zh-cn/library/mt163865.aspx) (in preview) makes encryption transparent to applications and allows clients to encrypt sensitive data inside client applications without sharing the encryption keys with SQL Database.
 
 ## Auditing
 

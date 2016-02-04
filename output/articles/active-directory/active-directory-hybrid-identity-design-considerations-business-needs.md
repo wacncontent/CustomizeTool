@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure Active Directory ybrid identity design considerations - determine identity requirements | Windows Azure"
-	description="Identify the company’s business needs that will lead you to define the requirements for the hybrid identity design."
+	pageTitle="Azure Active Directory hybrid identity design considerations - determine identity requirements | Windows Azure"
+	description="Identify the company's business needs that will lead you to define the requirements for the hybrid identity design."
 	documentationCenter=""
 	services="active-directory"
 	authors="billmath"
@@ -9,19 +9,19 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/11/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Determine identity requirements for your hybrid identity solution
 The first step in designing a hybrid identity solution is to determine the requirements for the business organization that will be leveraging this solution.  Hybrid identity starts as a supporting role (it supports all other cloud solutions by providing authentication) and goes on to provide new and interesting capabilities that unlock new workloads for users.  These workloads or services that you wish to adopt for your users will dictate the requirements for the hybrid identity design.  These services and workloads need to leverage hybrid identity both on-premises and in the cloud.  
 
-You need to go over these key aspects of the business to understand what it is a requirement now and what the company plans for the future. If you don’t have the visibility of the long term strategy for hybrid identity design, chances are that your solution will not be scalable as the business needs grow and change.   T he diagram below shows an example of a hybrid identity architecture and the workloads that are being unlocked for users. This is just an example of all the new possibilities that can be unlocked and delivered with a solid hybrid identity strategy. 
+You need to go over these key aspects of the business to understand what it is a requirement now and what the company plans for the future. If you don't have the visibility of the long term strategy for hybrid identity design, chances are that your solution will not be scalable as the business needs grow and change.   T he diagram below shows an example of a hybrid identity architecture and the workloads that are being unlocked for users. This is just an example of all the new possibilities that can be unlocked and delivered with a solid hybrid identity strategy. 
  
 Some components that are part of the hybrid identity architecture
 ![](./media/hybrid-id-design-considerations/hybrid-identity-architechture.png)
 
 ## Determine business needs
-Each company will have different requirements, even if these companies are part of the same industry, the real business requirements might vary. You can still leverage best practices from the industry, but ultimately it is the company’s business needs that will lead you to define the requirements for the hybrid identity design. 
+Each company will have different requirements, even if these companies are part of the same industry, the real business requirements might vary. You can still leverage best practices from the industry, but ultimately it is the company's business needs that will lead you to define the requirements for the hybrid identity design. 
 
 Make sure to answer the following questions to identify your business needs:
 
@@ -31,8 +31,8 @@ Make sure to answer the following questions to identify your business needs:
   - Are your users more mobile and demanding IT to create exceptions into your DMZ to allow different type of traffic to access different resources?
   - Does your company have legacy apps that needed to be published to these modern users but are not easy to rewrite?
   - Does your company need to accomplish all these tasks and bring it under control at the same time?
-- Is your company looking to secure users’ identities and reduce risk by bringing new tools that leverage the expertise of Microsoft’s Azure security expertise on-premises?
-- Is your company trying to get rid of the dreaded “external” accounts on premises and move them to the cloud where they are no longer a dormant threat inside your on-premises environment?
+- Is your company looking to secure users' identities and reduce risk by bringing new tools that leverage the expertise of Microsoft's Azure security expertise on-premises?
+- Is your company trying to get rid of the dreaded "external" accounts on premises and move them to the cloud where they are no longer a dormant threat inside your on-premises environment?
 
 ## Analyze on-premises identity infrastructure
 Now that you have an idea regarding your company business requirements, you need to evaluate your on-premises identity infrastructure. This evaluation is important for defining the technical requirements to integrate your current identity solution to the cloud identity management system. Make sure to answer the following questions:
@@ -48,10 +48,10 @@ You also need to be aware of the cloud services that your company might have. Pe
 
 
 >[AZURE.NOTE]
-If you don’t have an accurate mapping of all your apps and cloud services, you can use the Cloud App Discovery tool. This tool can provide your IT department with visibility into all your organization’s business and consumer cloud apps. That makes it easier than ever to discover shadow IT in your organization, including details on usage patterns and any users accessing your cloud applications. To access this tool go to [https://appdiscovery.azure.com](https://appdiscovery.azure.com/)
+If you don't have an accurate mapping of all your apps and cloud services, you can use the Cloud App Discovery tool. This tool can provide your IT department with visibility into all your organization's business and consumer cloud apps. That makes it easier than ever to discover shadow IT in your organization, including details on usage patterns and any users accessing your cloud applications. To access this tool go to [https://appdiscovery.azure.com](https://appdiscovery.azure.com/)
 
 ## Evaluate identity integration requirements
-Next, you need to evaluate the identity integration requirements. This evaluation is important to define the technical requirements for how users will authenticate, how the organization’s presence will look in the cloud, how the organization will allow authorization and what the user experience is going to be. Make sure to answer the following questions:
+Next, you need to evaluate the identity integration requirements. This evaluation is important to define the technical requirements for how users will authenticate, how the organization's presence will look in the cloud, how the organization will allow authorization and what the user experience is going to be. Make sure to answer the following questions:
 
 - Will your organization be using federation, standard authentication or both?
 - Is federation a requirement?  Because of the following:

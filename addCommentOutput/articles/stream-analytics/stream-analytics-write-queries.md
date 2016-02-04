@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Write Queries | Microsoft Azure" 
+	pageTitle="Write Queries | Windows Azure" 
 	description="Write Queries learning path segment."
 	documentationCenter=""
 	services="stream-analytics"
@@ -7,33 +7,31 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="stream-analytics" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="data-services" 
-	ms.date="09/29/2015" 
-	ms.author="jeffstok"/>
+<tags
+	ms.service="stream-analytics"
+	ms.date="11/06/2015"
+	wacn.date=""/>
 
 # Write Queries
 
-Stream processing logic in Azure Stream Analytics is implemented as a "standing query" that is defined before a job starts and executed on data as it reaches the job. The data transformation is expressed in a SQL-like query language, which is largely a subset of T-SQL with some added language extensions like [Windowing](https://msdn.microsoft.com/library/azure/dn835019.aspx) used to express temporal semantics.  
+Stream processing logic in Azure Stream Analytics is implemented as a "standing query" that is defined before a job starts and executed on data as it reaches the job. The data transformation is expressed in a SQL-like query language, which is largely a subset of T-SQL with some added language extensions like [Windowing](https://msdn.microsoft.com/zh-cn/library/azure/dn835019.aspx) used to express temporal semantics.  
 
 ## To author a Stream Analytics query: ##
 
 1. In your Stream Analytics Job in the Azure Management portal, click **Query**.
 
     ![Select Query](./media/stream-analytics-write-queries/1-stream-analytics-write-queries.png)  
+<!-- deleted by customization
 
     In the Azure preview portal, click **Query**.
 
     ![Select Query Preview](./media/stream-analytics-write-queries/query-preview-portal.png)  
+-->
 
 2.	New jobs have a query template to help get you started. The query template performs a "pass-through" query that projects all fields from input events into the output.  
 
-    - If you have defined at least one input and output for your job, you can replace the placeholder "[YourOutputAlias]" and "[YourInputAlias]" fields with the aliases of the input and output that you wish use first. In addition, you can still author and test your query in the Azure portal without defining inputs and outputs on the job.
-    - If you wish to perform more processing than a simple pass-through, you can edit the query definition. To get started with query authoring, take a look at some common query patterns are captured [here](stream-analytics-query-patterns).  
+    - If you have defined at least one input and output for your job, you can replace the placeholder "[YourOutputAlias]" and "[YourInputAlias]" fields with the aliases of the input and output that you wish use first. In addition, you can still author and test your query in the Azure Management Portal without defining inputs and outputs on the job.
+    - If you wish to perform more processing than a simple pass-through, you can edit the query definition. To get started with query authoring, take a look at some common query patterns are captured [here](/documentation/articles/stream-analytics-query-patterns).  
   
     ![Query Window](./media/stream-analytics-write-queries/2-stream-analytics-write-queries.png)  
 
@@ -60,12 +58,12 @@ You can test that your query behaves as expected by running it in the browser ov
     ![Query Summary](./media/stream-analytics-write-queries/6-stream-analytics-write-queries.png)  
 
 ## Get help
-For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics)
+For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/home?forum=AzureStreamAnalytics)
 
 ## Next steps
 
-- [Introduction to Azure Stream Analytics](stream-analytics-introduction.md)
-- [Get started using Azure Stream Analytics](stream-analytics-get-started.md)
-- [Scale Azure Stream Analytics jobs](stream-analytics-scale-jobs.md)
-- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+- [Introduction to Azure Stream Analytics](/documentation/articles/stream-analytics-introduction)
+- [Get started using Azure Stream Analytics](/documentation/articles/stream-analytics-get-started)
+- [Scale Azure Stream Analytics jobs](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)

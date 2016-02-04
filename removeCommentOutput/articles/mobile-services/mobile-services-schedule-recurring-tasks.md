@@ -9,16 +9,21 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/14/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Schedule recurring jobs in Mobile Services
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 - [.NET backend](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
 - [Javascript backend](/documentation/articles/mobile-services-schedule-recurring-tasks)
 
-This topic shows you how to use the job scheduler functionality in the Management Portal to define server script code that is executed based on a schedule that you define. In this case, the script periodically check with a remote service, in this case Twitter, and stores the results in a new table. Some other periodic tasks that can be scheduled include:
+This topic shows you how to use the job scheduler functionality in the Azure Management Portal to define server script code that is executed based on a schedule that you define. In this case, the script periodically check with a remote service, in this case Twitter, and stores the results in a new table. Some other periodic tasks that can be scheduled include:
 
 + Archiving old or duplicate data records.
 + Requesting and storing external data, such as tweets, RSS entries, and location information.
@@ -34,11 +39,11 @@ This tutorial shows you how to use the job scheduler to create a scheduled job t
 
 Next, you need to create a new table in which to store tweets.
 
-2. In the Management Portal, click the **Data** tab for your mobile service, then click **+Create**.
+2. In the [Azure Management Portal], click the **Data** tab for your mobile service, then click **+Create**.
 
 3. In **Table name** type _Updates_, then click the check button.
 
-##<a name="add-job"></a>Create a new scheduled job  
+##<a name="add-job"></a>Create a new scheduled job
 
 Now, you can create the scheduled job that accesses Twitter and stores tweet data in the new Updates table.
 

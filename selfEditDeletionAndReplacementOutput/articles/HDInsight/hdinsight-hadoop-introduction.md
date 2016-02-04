@@ -4,79 +4,43 @@ deleted:
 
 		Ambari,
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		Linux and
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		either **Linux** or
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		* **HDInsight on Linux** - A Hadoop cluster on Ubuntu. Use this if you are familiar with Linux or Unix, are migrating from an existing Linux-based Hadoop solution, or want easy integration with Hadoop ecosystem components built for Linux.
 
-reason: ()
-
-deleted:
-
-		Hadoop on Linux |
-
-reason: ()
-
-deleted:
-
-		-------------------|
-
-reason: ()
-
-deleted:
-
-		Ubuntu 12.04 Long Term Support (LTS) |
-
-reason: ()
-
-deleted:
-
-		Hadoop, HBase, Storm |
-
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		Azure preview portal,
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		Azure preview portal,
 
-reason: ()
-
-deleted:
-
-		Ambari |
-
-reason: ()
-
-deleted:
-
-		Secure Shell (SSH), REST API, ODBC, JDBC |
-
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		Spark,
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
@@ -100,7 +64,7 @@ deleted:
 		
 		For information on developing your own Script Actions, see [Script Action development with HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux).
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -108,7 +72,7 @@ deleted:
 		
 			> [AZURE.NOTE] Only a subset of the Ambari REST API is provided for Windows-based HDInsight clusters.
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -118,7 +82,7 @@ deleted:
 		
 		See [Manage HDInsight clusters using Ambari](/documentation/articles/hdinsight-hadoop-manage-ambari) (Linux only), [Monitor Hadoop clusters in HDInsight using the Ambari API](/documentation/articles/hdinsight-monitor-use-ambari-api), and <a target="_blank" href="https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md">Apache Ambari API reference</a>.
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -136,5 +100,5 @@ deleted:
 		
 		* [Manage HDInsight clusters using Ambari](/documentation/articles/hdinsight-hadoop-manage-ambari): Learn how to monitor and manage your Linux-based Hadoop on HDInsight cluster by using Ambari Web, or the Ambari REST API.
 
-reason: ()
+reason: (Linux Support)
 

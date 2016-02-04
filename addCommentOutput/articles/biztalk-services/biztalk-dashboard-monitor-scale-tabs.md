@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Dashboard, Monitor, Scale, Configure, and Hybrid Connections in BizTalk Services | Microsoft Azure" 
+	pageTitle="Dashboard, Monitor, Scale, Configure, and Hybrid Connections in BizTalk Services | Windows Azure" 
 	description="Learn about the controls and monitor performance on the Management Portal tabs for BizTalk Services: Dashboard, Monitor, Scale, Configure, and Hybrid Connections. MABS, WABS" 
 	services="biztalk-services" 
 	documentationCenter="" 
@@ -7,14 +7,10 @@
 	manager="dwrede" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="biztalk-services" 
-	ms.workload="integration" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/26/2015" 
-	ms.author="mandia"/>
+<tags
+	ms.service="biztalk-services"
+	ms.date="08/26/2015"
+	wacn.date=""/>
 
 
 
@@ -50,7 +46,7 @@ Depending on the BizTalk Services Edition, all options listed may not be availab
 
 <tr>
         <td><strong>Learn more about BizTalk Services</strong></td>
-        <td>Go to the <a HREF="http://azure.microsoft.com/documentation/services/biztalk-services/">learning center</a> to learn more about Azure BizTalk Services.</td>
+        <td>Go to the <a <!-- deleted by customization HREF="/documentation/services/biztalk-services/">learning --><!-- keep by customization: begin --> HREF="http://azure.microsoft.com/documentation/services/biztalk-services/">learning <!-- keep by customization: end --> center</a> to learn more about Azure BizTalk Services.</td>
 </tr>
 </table>
 
@@ -319,11 +315,11 @@ In a Request-Reply scenario, the metric is incremented when the route destinatio
 ## Scale
 In the Scale tab, you can add or subtract the number of units used by your BizTalk Service. By default, there is one Unit configured. Additional Units can be added to scale your BizTalk Service. When you increase the scale, you are increasing throughput. The amount of resources also increases, including deployed bridges, agreements, LOB connections, and processing power. For example, you increase the scale from 1 Unit to 2 Units. In this situation, you can deploy double the number of bridges, double the agreements, double the LOB connections, and double the processing power.
 
-Some BizTalk editions do not offer a scale option. In this situation, one Unit is permitted. To determine how many units your edition can be scaled, refer to [BizTalk Services: Editions Chart](biztalk-editions-feature-chart.md).
+Some BizTalk editions do not offer a scale option. In this situation, one Unit is permitted. To determine how many units your edition can be scaled, refer to [BizTalk Services: Editions <!-- deleted by customization Chart](/documentation/articles/biztalk-editions-feature-chart) --><!-- keep by customization: begin --> Chart](biztalk-editions-feature-chart.md) <!-- keep by customization: end -->.
 
 Increasing the number of units may impact pricing. If you increase the Units, selecting **Save** displays a message that tells you if billing is impacted. You then choose to continue. When you increase the number of Units, the BizTalk Service status changes from Active to Updating. In the Updating state, your BizTalk Service continues to run.
 
-[BizTalk Services: Editions Chart](biztalk-editions-feature-chart.md) defines a "Unit".
+[BizTalk Services: Editions <!-- deleted by customization Chart](/documentation/articles/biztalk-editions-feature-chart) --><!-- keep by customization: begin --> Chart](biztalk-editions-feature-chart.md) <!-- keep by customization: end --> defines a "Unit".
 
 
 ## Configure
@@ -331,7 +327,7 @@ Does not apply to Hybrid Connections.
 
 Sets the Backup Status to None or Automatic. When set to None, no backups are automatically created. When set to Automatic, you configure the backup location, the frequency of the backup, and how long to keep the backup files. 
 
-[BizTalk Services: Backup and Restore](biztalk-backup-restore.md) provides the details. 
+[BizTalk Services: Backup and <!-- deleted by customization Restore](/documentation/articles/biztalk-backup-restore) --><!-- keep by customization: begin --> Restore](biztalk-backup-restore.md) <!-- keep by customization: end --> provides the details.
 
 
 ## <a name="HybridConnections"></a>Hybrid Connections
@@ -339,24 +335,39 @@ Hybrid Connections connect an Azure application, like Websites or Mobile Service
 
 To create Hybrid Connections in Azure Websites, see [Hybrid Connection: Connect an Azure Web Site to an On-Premises Resource](http://go.microsoft.com/fwlink/p/?LinkId=397538).
 
-To use Hybrid Connections in Azure Mobile Services, see [Azure Mobile Services and Hybrid Connections](../mobile-services-dotnet-backend-hybrid-connections-get-started.md).
+To use Hybrid Connections in Azure Mobile Services, see [Azure Mobile Services and Hybrid <!-- deleted by customization Connections](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started) --><!-- keep by customization: begin --> Connections](../mobile-services-dotnet-backend-hybrid-connections-get-started.md) <!-- keep by customization: end -->.
 
-To create or manage Hybrid Connections in Azure BizTalk Services, see [Hybrid Connections](integration-hybrid-connection-overview.md).
+To create or manage Hybrid Connections in Azure BizTalk Services, see [Hybrid <!-- deleted by customization Connections](/documentation/articles/integration-hybrid-connection-overview) --><!-- keep by customization: begin --> Connections](integration-hybrid-connection-overview.md) <!-- keep by customization: end -->.
 
 
 
 ## Next
 Now that you're familiar with the different tabs, you can learn more about the Azure BizTalk Services features:
 
+<!-- deleted by customization
+- [BizTalk Services: Throttling](/documentation/articles/biztalk-throttling-thresholds)  
+- [BizTalk Services: Issuer Name and Issuer Key](/documentation/articles/biztalk-issuer-name-issuer-key)
+- [BizTalk Services: Backup and Restore](/documentation/articles/biztalk-backup-restore)
+-->
+<!-- keep by customization: begin -->
 - [BizTalk Services: Throttling](biztalk-throttling-thresholds.md)  
-- [BizTalk Services: Issuer Name and Issuer Key](biztalk-issuer-name-issuer-key.md)  
+- [BizTalk Services: Issuer Name and Issuer Key](biztalk-issuer-name-issuer-key.md)
 - [BizTalk Services: Backup and Restore](biztalk-backup-restore.md)
+<!-- keep by customization: end -->
 
 ## See Also
+<!-- deleted by customization
+- [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview)  
+- [BizTalk Services: Developer, Basic, Standard and Premium Editions Chart](/documentation/articles/biztalk-editions-feature-chart)
+- [BizTalk Services: Provisioning Using Azure Management Portal](/documentation/articles/biztalk-provision-services)
+- [BizTalk Services: BizTalk Service State Chart](/documentation/articles/biztalk-service-state-chart)
+-->
+<!-- keep by customization: begin -->
 - [Hybrid Connections](integration-hybrid-connection-overview.md)  
-- [BizTalk Services: Developer, Basic, Standard and Premium Editions Chart](biztalk-editions-feature-chart.md)  
-- [BizTalk Services: Provisioning Using Azure Management Portal](biztalk-provision-services.md)  
-- [BizTalk Services: BizTalk Service State Chart](biztalk-service-state-chart.md)  
+- [BizTalk Services: Developer, Basic, Standard and Premium Editions Chart](biztalk-editions-feature-chart.md)
+- [BizTalk Services: Provisioning Using Azure Management Portal](biztalk-provision-services.md)
+- [BizTalk Services: BizTalk Service State Chart](biztalk-service-state-chart.md)
+<!-- keep by customization: end -->
 - [How do I Start Using the Azure BizTalk Services SDK](http://go.microsoft.com/fwlink/p/?LinkID=302335)
 
 [QuickStart]: ./media/biztalk-dashboard-monitor-scale-tabs/QuickStartIcon.png

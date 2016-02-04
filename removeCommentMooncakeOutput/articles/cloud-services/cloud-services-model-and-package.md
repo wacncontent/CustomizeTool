@@ -6,12 +6,12 @@
     authors="Thraka"
     manager="timlt"
     editor=""/>
-<tags
-	ms.service="cloud-services"
-	ms.date="10/09/2015"
-	wacn.date=""/>
+<tags 
+    ms.service="cloud-services"  
+    ms.date="10/09/2015"
+    wacn.date=""/>
 
-# What is the Cloud Service model and how do I package it?
+# What is the Cloud Service Model and how do I package it?
 A cloud service is created from three components, the service definition _(.csdef)_, the service config _(.cscfg)_, and a service package _(.cspkg)_. Both the **ServiceDefinition.csdef** and **ServiceConfig.cscfg** files are XML-based and describe the structure of the cloud service and how it's configured; collectively called the model. The **ServicePackage.cspkg** is a zip file that is generated from the **ServiceDefinition.csdef** and among other things, contains all of the required binary-based dependencies. Azure creates a cloud service from both the **ServicePackage.cspkg** and the **ServiceConfig.cscfg**.
 
 Once the cloud service is running in Azure, you can reconfigure it through the **ServiceConfig.cscfg** file, but you cannot alter the definition.
@@ -20,7 +20,7 @@ Once the cloud service is running in Azure, you can reconfigure it through the *
 
 * I want to know more about the [ServiceDefinition.csdef](#csdef) and [ServiceConfig.cscfg](#cscfg) files.
 * I already know about that, give me [some examples](#next-steps) on what I can configure.
-* I want to create the [ServicePackage.cspkg](#cspkg).
+* I want to create the [ServicePackage.cspkg](#cspkg). 
 * I am using Visual Studio and I want to...
     * [Create a new cloud service][vs_create]
     * [Reconfigure an existing cloud service][vs_reconfigure]
@@ -83,7 +83,7 @@ The **ServiceDefinition.csdef** file specifies the settings that are used by Azu
 You can refer to the [Service Definition Schema][] for a better understanding of the XML schema used here, however, here is a quick explanation of some of the elements:
 
 >**Sites**  
->Contains the definitions for websites or web applications that are hosted in IIS7.
+>Contains the definitions for websites or web sites that are hosted in IIS7.
 >
 >**InputEndpoints**  
 >Contains the definitions for endpoints that are used to contact the cloud service.
@@ -135,7 +135,7 @@ The service configuration file is not packaged with the application, but is uplo
 You can refer to the [Service Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx) for better understanding the XML schema used here, however, here is a quick explanation of the elements:
 
 >**Instances**  
->Configures the number of running instances for the role. To prevent your cloud service from potentially becoming unavailable during upgrades, it is recommend that you deploy more than one instance of your web-facing roles. By doing this, you are adhering to the guidelines in the [Azure Compute Service Level Agreement (SLA)](/support/legal/sla/), which guarantees 99.95% external connectivity for Internet-facing roles when two or more role instances are deployed for a service.
+>Configures the number of running instances for the role. To prevent your cloud service from potentially becoming unavailable during upgrades, it is recommend that you deploy more than one instance of your web-facing roles. By doing this, you are adhering to the guidelines in the [Azure Compute Service Level Agreement (SLA)](/support/legal/sla/), which guarantees 99.95% external connectivity for Internet-facing roles when two or more role instances are deployed for a service. 
 
 >**ConfigurationSettings**  
 >Configures the settings for the running instances for a role. The name of the `<Setting>` elements must match the setting definitions in the service definition file.
@@ -152,7 +152,7 @@ You can refer to the [Service Configuration Schema](https://msdn.microsoft.com/z
 ## Defining ports for role instances
 Azure allows only one entry point to a web role. This means that all traffic occurs through one IP address. You can configure your websites to share a port by configuring the host header to direct the request to the correct location. You can also configure your applications to listen to well-known ports on the IP address.
 
-The following sample shows the configuration for a web role with a website and web application. The website is configured as the default entry location on port 80, and the web applications are configured to receive requests from an alternate host header that is called “mail.mysite.chinacloudapp.cn”.
+The following sample shows the configuration for a web role with a website and web site. The website is configured as the default entry location on port 80, and the web sites are configured to receive requests from an alternate host header that is called “mail.mysite.chinacloudapp.cn”.
 
 ```xml
 <WebRole>
@@ -211,7 +211,7 @@ Occurs after the configuration change is applied to a specified instance of a ro
 
 <a name="cspkg"></a>
 ## ServicePackage.cspkg
-To deploy an application as a cloud service in Azure, you must first package the application in the appropriate format. You can use the **CSPack** command-line tool (installed with the [Azure SDK](/downloads/)) to create the package file as an alternative to Visual Studio.
+To deploy an application as a cloud service in Azure, you must first package the application in the appropriate format. You can use the **CSPack** command-line tool (installed with the [Azure SDK](/downloads/)) to create the package file as an alternative to Visual Studio. 
 
 **CSPack** uses the contents of the service definition file and service configuration file to define the contents of the package. **CSPack** generates an application package file (.cspkg) that you can upload to Azure by using the [Azure Management Portal](/documentation/articles/cloud-services-how-to-create-deploy#how-to-deploy-a-cloud-service). By default, the package is named `[ServiceDefinitionFileName].cspkg`, but you can specify a different name by using the `/out` option of **CSPack**.
 

@@ -7,16 +7,20 @@
 	authors="lindydonna"
 	editor=""/>
 
+
 <tags
 	ms.service="mobile-services"
-	ms.date="08/18/2015"
+	ms.date="11/30/2015"
 	wacn.date=""/>
 
 # Add authentication to your Mobile Services app
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
-This topic shows you how to authenticate users in Azure Mobile Services from your app.  In this tutorial, you add authentication to the quickstart project using an identity provider that is supported by Mobile Services. After being successfully authenticated and authorized by Mobile Services, the user ID value is displayed.  
+This topic shows you how to authenticate users in Azure Mobile Services from your app.  In this tutorial, you add authentication to the quickstart project using an identity provider that is supported by Mobile Services. After being successfully authenticated and authorized by Mobile Services, the user ID value is displayed.
 
 This tutorial walks you through these basic steps to enable authentication in your app:
 
@@ -38,17 +42,16 @@ Completing this tutorial requires [Xamarin.iOS], XCode 6.0 and iOS 7.0 or later 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 
-3. In Xcode, open the project that you created when you completed the tutorial [Get started with Mobile Services].
+<!-- deleted by customization 3 --><!-- keep by customization: begin --> 1 <!-- keep by customization: end -->. In Xcode, open the project that you created when you completed the tutorial [Get started with Mobile Services].
 
-4. Press the **Run** button to build the project and start the app in the iPhone emulator; verify that an unhandled exception with a status code of 401 (Unauthorized) is raised after the app starts.
-
+<!-- deleted by customization 4 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->. Press the **Run** button to build the project and start the app in the iPhone emulator; verify that an unhandled exception with a status code of 401 (Unauthorized) is raised after the app starts.
    	This happens because the app attempts to access Mobile Services as an unauthenticated user, but the _TodoItem_ table now requires authentication.
 
 Next, you will update the app to authenticate users before requesting resources from the mobile service.
 
 ##<a name="add-authentication"></a>Add authentication to the app
 
-1. Open the **ToDoService** project file and add the following variables
+1. Open the **QSToDoService** project file and add the following variables
 
 		// Mobile Service logged in user
 		private MobileServiceUser user;
@@ -77,7 +80,6 @@ Next, you will update the app to authenticate users before requesting resources 
             // Create an MSTable instance to allow us to work with the ToDoItem table
             todoTable = client.GetSyncTable<ToDoItem>();
         }
-
 4. Create a new asynchronous public method named **LoginAndGetData** defined as:
 
         public async Task LoginAndGetData(MonoTouch.UIKit.UIViewController view)
@@ -92,21 +94,36 @@ Next, you will update the app to authenticate users before requesting resources 
         {
             base.ViewDidAppear(animated);
 
+<!-- deleted by customization
+            if (QSTodoService.DefaultService.User == null)
+-->
+<!-- keep by customization: begin -->
             if (QSToDoService.DefaultService.User == null)
+<!-- keep by customization: end -->
             {
+<!-- deleted by customization
+                await QSTodoService.DefaultService.LoginAndGetData(this);
+-->
+<!-- keep by customization: begin -->
                 await QSToDoService.DefaultService.LoginAndGetData(this);
+<!-- keep by customization: end -->
             }
 
+<!-- deleted by customization
+            if (QSTodoService.DefaultService.User == null)
+-->
+<!-- keep by customization: begin -->
             if (QSToDoService.DefaultService.User == null)
+<!-- keep by customization: end -->
             {
                 // TODO:: show error
                 return;
             }
 
-            RefreshAsync();
+
+            await RefreshAsync();
         }
 6. Remove the original call to **RefreshAsync** from **TodoListViewController.ViewDidLoad**.
-
 7. Press the **Run** button to build the project, start the app in the iPhone emulator, then log-on with your chosen identity provider.
 
    	When you are successfully logged-in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
@@ -136,12 +153,21 @@ In the next tutorial, [Authorize users with scripts], you will take the user ID 
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
+<!-- deleted by customization
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-xamarin-ios
 [Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-xamarin-ios
 [Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-xamarin-ios
 [Get started with push notifications]: /develop/mobile/tutorials/-get-started-with-push-xamarin-ios
 [Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios
+-->
+<!-- keep by customization: begin -->
+[Get started with Mobile Services]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started
+[Get started with data]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-data
+[Get started with authentication]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-users
+[Get started with push notifications]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-push
+[Authorize users with scripts]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
+<!-- keep by customization: end -->
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331328
 [Xamarin.iOS]: http://xamarin.com/download

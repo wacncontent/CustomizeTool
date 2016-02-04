@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+	ms.date="07/17/2015"
 	wacn.date=""/>
 
 # Getting Started With WEB-API for Node
@@ -21,7 +21,7 @@ This walkthrough will give you  a quick and easy way to set up a REST API Servic
 By the end of this walk-through, you should be able to build a running REST API server with the following features:
 
 * A node.js server running an REST API interface with JSON using MongoDB as persistant storage
-* REST APIs leveraging OAuth2 API protection with Bearer tokens using Azure Active Directory
+* REST APIs leveraging OAuth2 API protection with Bearner tokens using Azure Active Directory
 
 
 We've released all of the source code for this running example in GitHub under an Apache 2.0 license, so feel free to clone (or even better, fork!) and provide feedback and pull requests.
@@ -47,11 +47,11 @@ To enable your app to authenticate users, you'll first need to register a new ap
 - In the left hand nav, click on **Active Directory**.
 - Select the tenant where you wish to register the application.
 - Click the **Applications** tab, and click add in the bottom drawer.
-- Follow the prompts and create a new **Web Application and/or WebAPI**.
+- Follow the prompts and create a new **Web Site and/or WebAPI**.
     - The **name** of the application will describe your application to end-users
-    -	The **Sign-On URL** is the base URL of your app.  The skeleton’s default is `https://localhost:8888`.
+    - The **Sign-On URL** is the base URL of your app.  The skeleton's default is `https://localhost:8888`.
     - The **App ID URI** is a unique identifier for your application.  The convention is to use `https://<tenant-domain>/<app-name>`, e.g. `https://contoso.partner.onmschina.cn/my-first-aad-app`
-- Once you’ve completed registration, AAD will assign your app a unique client identifier.  You’ll need this value in the next sections, so copy it from the Configure tab.
+- Once you've completed registration, AAD will assign your app a unique client identifier.  You'll need this value in the next sections, so copy it from the Configure tab.
 
 ## Step 3: Download node.js for your platform
 To successfully use this sample, you must have a working installation of Node.js.
@@ -139,7 +139,7 @@ The output of this command should appear similar to the following:
 
 ## Step 6: Install Passport.js in to your Web API
 
-[Passport](http://passportjs.org/) is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Azure Active Directory. We will install this module and then add the Azure Active Directory strategy plug-in.
+[Passport](http://passportjs.org/) is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web site. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Azure Active Directory. We will install this module and then add the Azure Active Directory strategy plug-in.
 
 From the command-line, change directories to the azuread directory.
 
@@ -263,7 +263,7 @@ Create a `config.js` file in our favorite editor and add the following informati
     mongoose_auth_local: 'mongodb://localhost/tasklist', // Your mongo auth uri goes here
     openid_configuration: 'https://login.chinacloudapi.cn/common/.well-known/openid-configuration', // For using Microsoft you should never need to change this.
     openid_keys: 'https://login.chinacloudapi.cn/common/discovery/keys', // For using Microsoft you should never need to change this. If absent will attempt to get from openid_configuration
-}
+	}
 
 ```
 
@@ -280,22 +280,22 @@ We need to read these values from the Config file you just created across our ap
 
 From the command-line, change directories to the **azuread** folder if not already there:
 
-`cd azuread`
+	cd azuread
 
 Open your `server.js` file in our favorite editor and add the following information:
 
-```Javascript
-var config = require('./config');
-```
+	Javascript
+	var config = require('./config');
+
 Then, add a new section to `server.js` with the following code:
 
-```Javascript
-/**
-* Setup some configuration
-*/
-var mongoose = require('mongoose/');
-var serverPort = process.env.PORT || 8888;
-var serverURI = ( process.env.PORT ) ? config.creds.mongoose_auth_mongohq : config.creds.mongoose_auth_local;
+	Javascript
+	/**
+	* Setup some configuration
+	*/
+	var mongoose = require('mongoose/');
+	var serverPort = process.env.PORT || 8888;
+	var serverURI = ( process.env.PORT ) ? 	config.creds.mongoose_auth_mongohq : 	config.creds.mongoose_auth_local;
 
 ```
 ## Step 13: Create a metadata.js helper file to aid in parsing metadata/tokens
@@ -306,74 +306,74 @@ Since the goal is to keep only application logic in the server.js file, it makes
 
 From the command-line, change directories to the **azuread** folder if not already there:
 
-`cd azuread`
+	cd azuread
 
 Create a `metadata.js` file in our favorite editor and add the following information:
 
 ```Javascript
 
-'use strict';
+	'use strict';
 
-var xml2js = require('xml2js');
-var request = require('request');
-var aadutils = require('./aadutils');
-var async = require('async');
+	var xml2js = require('xml2js');
+	var request = require('request');
+	var aadutils = require('./aadutils');
+	var async = require('async');
 
-// Logging
+	// Logging
 
-var bunyan = require('bunyan');
-var log = bunyan.createLogger({name: 'Microsoft OpenID Connect Passport Strategy'});
+	var bunyan = require('bunyan');
+	var log = bunyan.createLogger({name: 'Microsoft OpenID Connect Passport Strategy'});
 
-var Metadata = function (url, authtype) {
-
-
-  if(!url) {
-    throw new Error("Metadata: url is a required argument");
-  }
-  if(!authtype) {
-    throw new Error('OIDCBearerStrategy requires an authentication type specified to metadata parser. Valid types are saml, wsfed, or odic"');
-  }
-
-  this.url = url;
-  this.metadata = null;
-  this.authtype = authtype;
-  log.info(authtype, 'Metadata requested for authentication type');
-};
-
-Object.defineProperty(Metadata, 'url', {
-  get: function () {
-    return this.url;
-  }
-});
-
-Object.defineProperty(Metadata, 'saml', {
-  get: function () {
-    return this.saml;
-  }
-});
-
-Object.defineProperty(Metadata, 'wsfed', {
-  get: function () {
-    return this.wsfed;
-  }
-});
-
-Object.defineProperty(Metadata, 'oidc', {
-  get: function () {
-    return this.oidc;
-  }
-});
+	var Metadata = function (url, authtype) {
 
 
-Object.defineProperty(Metadata, 'metadata', {
-  get: function () {
-    return this.metadata;
-  }
-});
+  	if(!url) {
+		throw new Error("Metadata: url is a required argument");
+  	}
+  	if(!authtype) {
+    	throw new Error('OIDCBearerStrategy requires an authentication type specified to metadata parser. Valid types are saml, wsfed, or odic"');
+  	}
 
-Metadata.prototype.updateSamlMetadata = function(doc, next) {
-  log.info('Request to update the SAML Metadata');
-  try {
+  	this.url = url;
+  	this.metadata = null;
+  	this.authtype = authtype;
+  	log.info(authtype, 'Metadata requested for authentication type');
+	};
+
+	Object.defineProperty(Metadata, 'url', {
+  	get: function () {
+    	return this.url;
+  	}
+	});
+
+	Object.defineProperty(Metadata, 'saml', {
+  	get: function () {
+    	return this.saml;
+  	}
+	});
+
+	Object.defineProperty(Metadata, 'wsfed', {
+  	get: function () {
+    	return this.wsfed;
+  	}
+	});
+
+	Object.defineProperty(Metadata, 'oidc', {
+  	get: function () {
+    	return this.oidc;
+  	}
+	});
+
+
+	Object.defineProperty(Metadata, 'metadata', {
+  	get: function () {
+    	return this.metadata;
+  	}
+	});
+
+	Metadata.prototype.updateSamlMetadata = function(doc, next) {
+  	log.info('Request to update the SAML Metadata');
+  	try {
 
     this.saml = {};
 
@@ -391,15 +391,15 @@ Metadata.prototype.updateSamlMetadata = function(doc, next) {
       this.saml.certs.push(keyDescriptor[j].KeyInfo[0].X509Data[0].X509Certificate[0]);
     }
     next(null);
-  } catch (e) {
-    next(new Error('Invalid SAMLP Federation Metadata ' + e.message));
-  }
-};
+  	} catch (e) {
+    	next(new Error('Invalid SAMLP Federation Metadata ' + e.message));
+  	}
+	};
 
-Metadata.prototype.updateOidcMetadata = function(doc, next) {
-  log.info('Request to update the Open ID Connect Metadata');
-  try {
-    this.oidc = {};
+	Metadata.prototype.updateOidcMetadata = function(doc, next) {
+  	log.info('Request to update the Open ID Connect Metadata');
+  	try {
+    	this.oidc = {};
 
     var issuer = doc['issuer'];
     var keyDescriptor = aadutils.getElement(idp[0], 'keys');
@@ -410,24 +410,24 @@ Metadata.prototype.updateOidcMetadata = function(doc, next) {
       this.oidc.certs.push(keyDescriptor[j].KeyInfo[0].X509Data[0].X509Certificate[0]);
     }
     next(null);
-  } catch (e) {
-    next(new Error('Invalid Open ID Connect Federation Metadata ' + e.message));
-  }
-};
+  	} catch (e) {
+    	next(new Error('Invalid Open ID Connect Federation Metadata ' + e.message));
+  	}
+	};
 
 
-Metadata.prototype.updateWsfedMetadata = function(doc, next) {
-  log.info('Request to update the WS Federation Metadata');
-  try {
-    this.wsfed = {};
-    var entity = aadutils.getElement(doc, 'EntityDescriptor');
-    var roles = aadutils.getElement(entity, 'RoleDescriptor');
-    for(var i = 0; i < roles.length; i++) {
-      var role = roles[i];
-      if(role['fed:SecurityTokenServiceEndpoint']) {
-        var endpoint = role['fed:SecurityTokenServiceEndpoint'];
-        var endPointReference = aadutils.getFirstElement(endpoint[0],'EndpointReference');
-        this.wsfed.loginEndpoint = aadutils.getFirstElement(endPointReference,'Address');
+	Metadata.prototype.updateWsfedMetadata = function(doc, next) {
+  	log.info('Request to update the WS Federation Metadata');
+  	try {
+    	this.wsfed = {};
+    	var entity = aadutils.getElement(doc, 'EntityDescriptor');
+    	var roles = aadutils.getElement(entity, 'RoleDescriptor');
+    	for(var i = 0; i < roles.length; i++) {
+      	var role = roles[i];
+      	if(role['fed:SecurityTokenServiceEndpoint']) {
+        	var endpoint = role['fed:SecurityTokenServiceEndpoint'];
+        	var endPointReference = aadutils.getFirstElement(endpoint[0],'EndpointReference');
+        	this.wsfed.loginEndpoint = aadutils.getFirstElement(endPointReference,'Address');
 
         var keyDescriptor = aadutils.getElement(role, 'KeyDescriptor');
         // copy the x509 certs from the metadata
@@ -440,30 +440,30 @@ Metadata.prototype.updateWsfedMetadata = function(doc, next) {
     }
 
     return next(null);
-  } catch (e) {
-    next(new Error('Invalid WSFED Federation Metadata ' + e.message));
-  }
-};
+  	} catch (e) {
+    	next(new Error('Invalid WSFED Federation Metadata ' + e.message));
+  	}
+	};
 
-Metadata.prototype.fetch = function(callback) {
-  var self = this;
-  log.info("Fetching metadata from the provided metadata URL: " + self.url);
-  async.waterfall([
-    // fetch the Federation metadata for the AAD tenant
-    function(next){
-      request(self.url, function (err, response, body) {
-        if(err) {
-          next(err);
-        } else if(response.statusCode !== 200) {
-          next(new Error("Error:" + response.statusCode +  " Cannot get AAD Federation metadata from " + self.url));
-        } else {
-          log.info(body, "retreived");
-          next(null, body);
-        }
-      });
-    },
-    function(body, next){
-      // parse the AAD Federation metadata xml
+	Metadata.prototype.fetch = function(callback) {
+  	var self = this;
+  	log.info("Fetching metadata from the provided metadata URL: " + self.url);
+  	async.waterfall([
+    	// fetch the Federation metadata for the AAD tenant
+    	function(next){
+      	request(self.url, function (err, response, body) {
+        	if(err) {
+          	next(err);
+        	} else if(response.statusCode !== 200) {
+          	next(new Error("Error:" + response.statusCode +  " Cannot get AAD Federation metadata from " + self.url));
+        	} else {
+          	log.info(body, "retreived");
+          	next(null, body);
+        	}
+      	});
+    	},
+    	function(body, next){
+      	// parse the AAD Federation metadata xml
 
       if(self.authtype == "saml" || self.authtype == "wsfed") {
       log.info(body, "Parsing XML retreived from the endpoint");
@@ -502,11 +502,11 @@ Metadata.prototype.fetch = function(callback) {
       if(self.authtype = "oidc") {
       self.updateOidcMetadata(self.metadata, next);
     }},
-  ], function (err) {
-    // return err or success (err === null) to callback
-    callback(err);
-  });
-};
+  	], function (err) {
+    	// return err or success (err === null) to callback
+    	callback(err);
+  	});
+	};
 
 exports.Metadata = Metadata;
 ```
@@ -582,14 +582,14 @@ Below the code you wrote above, add the following code:
 / Here we create a schema to store our tasks. Pretty simple schema for now.
 */
 
-var TaskSchema = new Schema({
-  owner: String,
-  task: String,
-  completed: Boolean,
-  date: Date
-});
+	var TaskSchema = new Schema({
+  	owner: String,
+  	task: String,
+  	completed: Boolean,
+  	date: Date
+	});
 
-// Use the schema to register a model
+	// Use the schema to register a model
 
 mongoose.model('Task', TaskSchema);
 var Task = mongoose.model('Task');
@@ -609,21 +609,20 @@ A typical pattern for a Restify Route is:
 ```Javascript
 function createObject(req, res, next) {
 
-// do work on Object
+	// do work on Object
 
- _object.name = req.params.object; // passed value is in req.params under object
+ 	_object.name = req.params.object; // passed value is in req.params under object
 
- ///...
+ 	///...
 
-return next(); // keep the server going
-}
+	return next(); // keep the server going
+	}
 
-....
+	....
 
-server.post('/service/:add/:object', createObject); // calls createObject on routes that match this.
+	server.post('/service/:add/:object', createObject); // calls createObject on routes that match this.
 
 ```
-
 
 This is the pattern at the most basic level. Resitfy (and Express) provide much deeper functionaltiy such as defining application types and doing complex routing across different endpoints. For our purposes, we will keep these routes very simply.
 
@@ -639,21 +638,21 @@ Open your `server.js` file in our favorite editor and add the following informat
 
 ```Javascript
 
-/**
- *
- * APIs
- */
+	/**
+ 	*
+ 	* APIs
+ 	*/
 
-function createTask(req, res, next) {
+	function createTask(req, res, next) {
 
 	// Resitify currently has a bug which doesn't allow you to set default headers
   	// This headers comply with CORS and allow us to mongodbServer our response to any origin
 
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  	res.header("Access-Control-Allow-Origin", "*");
+  	res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
     // Create a new task model, fill it up and save it to Mongodb
-  var _task = new Task();
+  	var _task = new Task();
 
         if (!req.params.task) {
                 req.log.warn('createTask: missing task');
@@ -662,11 +661,11 @@ function createTask(req, res, next) {
         }
 
 
-  _task.owner = req.params.owner;
-   _task.task = req.params.task;
-   _task.date = new Date();
+  	_task.owner = req.params.owner;
+   	_task.task = req.params.task;
+   	_task.date = new Date();
 
-  _task.save(function (err) {
+  	_task.save(function (err) {
   	if (err) {
         req.log.warn(err, 'createTask: unable to save');
         next(err);
@@ -674,17 +673,17 @@ function createTask(req, res, next) {
     res.send(201, _task);
 
 			}
-  });
+  	});
 
-  return next();
+  	return next();
 
-}
+	}
 
 
-/**
- * Deletes a Task by name
- */
-function removeTask(req, res, next) {
+	/**
+ 	* Deletes a Task by name
+ 	*/
+	function removeTask(req, res, next) {
 
         Task.remove( { task:req.params.task }, function (err) {
                 if (err) {
@@ -697,25 +696,25 @@ function removeTask(req, res, next) {
                         next();
                 }
         });
-}
+	}
 
-/**
- * Deletes all Tasks. A wipe
- */
-function removeAll(req, res, next) {
+	/**
+ 	* Deletes all Tasks. A wipe
+ 	*/
+	function removeAll(req, res, next) {
         Task.remove();
         res.send(204);
         return next();
-}    });
-}
+	}    });
+	}
 
 
-/**
- *
- *
- *
- */
-function getTask(req, res, next) {
+	/**
+ 	*
+ 	*
+ 	*
+ 	*/
+	function getTask(req, res, next) {
 
 
         Task.find(req.params.name, function (err, data) {
@@ -729,24 +728,24 @@ function getTask(req, res, next) {
         });
 
         return next();
-}
+	}
 
 
-/**
- * Simple returns the list of TODOs that were loaded.
- *
- */
+	/**
+ 	* Simple returns the list of TODOs that were loaded.
+ 	*
+ 	*/
 
-function listTasks(req, res, next) {
-  // Resitify currently has a bug which doesn't allow you to set default headers
-  // This headers comply with CORS and allow us to mongodbServer our response to any origin
+	function listTasks(req, res, next) {
+  	// Resitify currently has a bug which doesn't allow you to set default headers
+  	// This headers comply with CORS and allow us to mongodbServer our response to any origin
 
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  	res.header("Access-Control-Allow-Origin", "*");
+  	res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
-  console.log("server getTasks");
+  	console.log("server getTasks");
 
-  Task.find().limit(20).sort('date').exec(function (err,data) {
+  	Task.find().limit(20).sort('date').exec(function (err,data) {
 
     if (err)
       return next(err);
@@ -766,7 +765,7 @@ function listTasks(req, res, next) {
         res.json(data);
 
         }
-  });
+  	});
 
   return next();
 }
@@ -781,46 +780,46 @@ Add the following code underneath the code you've written above:
 ```Javascript
 ///--- Errors for communicating something interesting back to the client
 
-function MissingTaskError() {
-        restify.RestError.call(this, {
-                statusCode: 409,
-                restCode: 'MissingTask',
-                message: '"task" is a required parameter',
-                constructorOpt: MissingTaskError
-        });
+	function MissingTaskError() {
+        	restify.RestError.call(this, {
+                	statusCode: 409,
+                	restCode: 'MissingTask',
+                	message: '"task" is a required parameter',
+                	constructorOpt: MissingTaskError
+        	});
 
-        this.name = 'MissingTaskError';
-}
-util.inherits(MissingTaskError, restify.RestError);
-
-
-function TaskExistsError(name) {
-        assert.string(name, 'name');
-
-        restify.RestError.call(this, {
-                statusCode: 409,
-                restCode: 'TaskExists',
-                message: name + ' already exists',
-                constructorOpt: TaskExistsError
-        });
-
-        this.name = 'TaskExistsError';
-}
-util.inherits(TaskExistsError, restify.RestError);
+        	this.name = 'MissingTaskError';
+	}
+	util.inherits(MissingTaskError, restify.RestError);
 
 
-function TaskNotFoundError(name) {
-        assert.string(name, 'name');
+	function TaskExistsError(name) {
+        	assert.string(name, 'name');
 
-        restify.RestError.call(this, {
-                statusCode: 404,
-                restCode: 'TaskNotFound',
-                message: name + ' was not found',
-                constructorOpt: TaskNotFoundError
-        });
+        	restify.RestError.call(this, {
+                	statusCode: 409,
+                	restCode: 'TaskExists',
+                	message: name + ' already exists',
+                	constructorOpt: TaskExistsError
+        	});
 
-        this.name = 'TaskNotFoundError';
-}
+        	this.name = 'TaskExistsError';
+	}
+	util.inherits(TaskExistsError, restify.RestError);
+
+
+	function TaskNotFoundError(name) {
+        	assert.string(name, 'name');
+
+        	restify.RestError.call(this, {
+                	statusCode: 404,
+                	restCode: 'TaskNotFound',
+                	message: name + ' was not found',
+                	constructorOpt: TaskNotFoundError
+        	});
+
+        	this.name = 'TaskNotFoundError';
+	}
 
 util.inherits(TaskNotFoundError, restify.RestError);
 ```
@@ -838,110 +837,110 @@ Restify (and Express) have a lot of deep customization you can do for a REST API
  */
 
 
-var server = restify.createServer({
-        name: "Azure Active Directroy TODO Server",
-    version: "1.0.0",
-    formatters: {
-        'application/json': function(req, res, body){
-            if(req.params.callback){
-                var callbackFunctionName = req.params.callback.replace(/[^A-Za-z0-9_\.]/g, '');
-                return callbackFunctionName + "(" + JSON.stringify(body) + ");";
-            } else {
-                return JSON.stringify(body);
-            }
-        },
-        'text/html': function(req, res, body){
-            if (body instanceof Error)
-                        return body.stack;
+	var server = restify.createServer({
+        	name: "Azure Active Directroy TODO Server",
+    	version: "1.0.0",
+    	formatters: {
+        	'application/json': function(req, res, body){
+            	if(req.params.callback){
+                	var callbackFunctionName = req.params.callback.replace(/[^A-Za-z0-9_\.]/g, '');
+                	return callbackFunctionName + "(" + JSON.stringify(body) + ");";
+            	} else {
+                	return JSON.stringify(body);
+            	}
+        	},
+        	'text/html': function(req, res, body){
+            	if (body instanceof Error)
+                        	return body.stack;
 
-                      if (Buffer.isBuffer(body))
-                        return body.toString('base64');
+                      	if (Buffer.isBuffer(body))
+                        	return body.toString('base64');
 
-                return util.inspect(body);
-        },
-        'application/x-www-form-urlencoded': function(req, res, body){
-            if (body instanceof Error) {
-                    res.statusCode = body.statusCode || 500;
-                    body = body.message;
-            } else if (typeof (body) === 'object') {
-                body = body.task || JSON.stringify(body);
-            } else {
-                body = body.toString();
-            }
+                	return util.inspect(body);
+        	},
+        	'application/x-www-form-urlencoded': function(req, res, body){
+            	if (body instanceof Error) {
+                    	res.statusCode = body.statusCode || 500;
+                    	body = body.message;
+            	} else if (typeof (body) === 'object') {
+                	body = body.task || JSON.stringify(body);
+            	} else {
+                	body = body.toString();
+            	}
 
-        res.setHeader('Content-Length', Buffer.byteLength(body));
-        return (body);
-        }
-    }
-});
+        	res.setHeader('Content-Length', Buffer.byteLength(body));
+        	return (body);
+        	}
+    	}
+	});
 
-        // Ensure we don't drop data on uploads
-        server.pre(restify.pre.pause());
+        	// Ensure we don't drop data on uploads
+        	server.pre(restify.pre.pause());
 
-        // Clean up sloppy paths like //todo//////1//
-        server.pre(restify.pre.sanitizePath());
+        	// Clean up sloppy paths like //todo//////1//
+        	server.pre(restify.pre.sanitizePath());
 
-        // Handles annoying user agents (curl)
-        server.pre(restify.pre.userAgentConnection());
+        	// Handles annoying user agents (curl)
+        	server.pre(restify.pre.userAgentConnection());
 
-        // Set a per request bunyan logger (with requestid filled in)
-        server.use(restify.requestLogger());
+        	// Set a per request bunyan logger (with requestid filled in)
+        	server.use(restify.requestLogger());
 
-        // Allow 5 requests/second by IP, and burst to 10
-        server.use(restify.throttle({
-                burst: 10,
-                rate: 5,
-                ip: true,
-        }));
+        	// Allow 5 requests/second by IP, and burst to 10
+        	server.use(restify.throttle({
+                	burst: 10,
+                	rate: 5,
+                	ip: true,
+        	}));
 
-        // Use the common stuff you probably want
-        server.use(restify.acceptParser(server.acceptable));
-        server.use(restify.dateParser());
-        server.use(restify.queryParser());
-        server.use(restify.gzipResponse());
+        	// Use the common stuff you probably want
+        	server.use(restify.acceptParser(server.acceptable));
+        	server.use(restify.dateParser());
+        	server.use(restify.queryParser());
+        	server.use(restify.gzipResponse());
 
-        // This lets us push JSON to the REST API endpoint as well. Maps x: y as /name:value
+        	// This lets us push JSON to the REST API endpoint as well. Maps x: y as /name:value
 
-        server.use(restify.bodyParser({ mapParams: false }));
+        	server.use(restify.bodyParser({ mapParams: false }));
 
-        /// Now the real handlers. Here we just CRUD
+        	/// Now the real handlers. Here we just CRUD
 
-        server.get('/tasks', listTasks);
-        server.head('/tasks', listTasks);
-        server.get('/tasks/:name', getTask);
-        server.head('/tasks/:name', getTask);
-        server.post('/tasks/:name/:task', createTask);
-        server.del('/tasks/:name/:task', removeTask);
-        server.del('/tasks/:name', removeTask);
-        server.del('/tasks', removeAll, function respond(req, res, next) { res.send(204); next(); });
+        	server.get('/tasks', listTasks);
+        	server.head('/tasks', listTasks);
+        	server.get('/tasks/:name', getTask);
+        	server.head('/tasks/:name', getTask);
+        	server.post('/tasks/:name/:task', createTask);
+        	server.del('/tasks/:name/:task', removeTask);
+        	server.del('/tasks/:name', removeTask);
+        	server.del('/tasks', removeAll, function respond(req, res, next) { res.send(204); next(); });
 
 
-        // Register a default '/' handler
+        	// Register a default '/' handler
 
-        server.get('/', function root(req, res, next) {
-                var routes = [
-                        'GET     /',
-                        'POST    /tasks/:name/:task',
-                        'GET     /tasks',
-                        'PUT     /tasks/:name',
-                        'GET     /tasks/:name',
-                        'DELETE  /tasks/:name/:task'
-                ];
-                res.send(200, routes);
-                next();
-        });
+        	server.get('/', function root(req, res, next) {
+                	var routes = [
+                        	'GET     /',
+                        	'POST    /tasks/:name/:task',
+                        	'GET     /tasks',
+                        	'PUT     /tasks/:name',
+                        	'GET     /tasks/:name',
+                        	'DELETE  /tasks/:name/:task'
+                	];
+                	res.send(200, routes);
+                	next();
+        	});
 
-  server.listen(serverPort, function() {
+  	server.listen(serverPort, function() {
 
-  var consoleMessage = '\n Azure Active Directory Tutorial'
-  consoleMessage += '\n +++++++++++++++++++++++++++++++++++++++++++++++++++++'
-  consoleMessage += '\n %s server is listening at %s';
-  consoleMessage += '\n Open your browser to %s/tasks\n';
-  consoleMessage += '+++++++++++++++++++++++++++++++++++++++++++++++++++++ \n'
-  consoleMessage += '\n !!! why not try a $curl -isS %s | json to get some ideas? \n'
-  consoleMessage += '+++++++++++++++++++++++++++++++++++++++++++++++++++++ \n\n'  
+  	var consoleMessage = '\n Azure Active Directory Tutorial'
+  	consoleMessage += '\n +++++++++++++++++++++++++++++++++++++++++++++++++++++'
+  	consoleMessage += '\n %s server is listening at %s';
+  	consoleMessage += '\n Open your browser to %s/tasks\n';
+  	consoleMessage += '+++++++++++++++++++++++++++++++++++++++++++++++++++++ \n'
+  	consoleMessage += '\n !!! why not try a $curl -isS %s | json to get some ideas? \n'
+  	consoleMessage += '+++++++++++++++++++++++++++++++++++++++++++++++++++++ \n\n'  
 
-  console.log(consoleMessage, server.name, server.url, server.url, server.url);
+  	console.log(consoleMessage, server.name, server.url, server.url, server.url);
 
 });
 ```
@@ -1048,23 +1047,23 @@ Here we use the specific OAuth2 parameters we added to the config.js file. If ou
 // Now our own handlers for authentication/authorization
 // Here we only use Oauth2 from Passport.js
 
-passport.use('provider', new OAuth2Strategy({
-    authorizationURL: authEndpoint,
-    tokenURL: tokenEndpoint,
-    clientID: clientID,
-    clientSecret: clientSecret,
-    callbackURL: callbackURL
-  },
-  function(accessToken, refreshToken, profile, done) {
-    User.findOrCreate({ UserId: profile.id }, function(err, user) {
-      done(err, user);
-    });
-  }
-));
+	passport.use('provider', new OAuth2Strategy({
+    	authorizationURL: authEndpoint,
+    	tokenURL: tokenEndpoint,
+    	clientID: clientID,
+    	clientSecret: clientSecret,
+    	callbackURL: callbackURL
+  	},
+  	function(accessToken, refreshToken, profile, done) {
+    	User.findOrCreate({ UserId: profile.id }, 	function(err, user) {
+      	done(err, user);
+    	});
+  	}
+	));
 
-// Let's start using Passport.js
+	// Let's start using Passport.js
 
-server.use(passport.initialize());
+	server.use(passport.initialize());
 
 ```
 ### Step 4: Add Routes for OAuth authentication
@@ -1074,15 +1073,15 @@ server.use(passport.initialize());
 // complete, the provider will redirect the user back to the application at
 //     /auth/provider/callback
 
-server.get('/auth/provider', passport.authenticate('provider'));
+	server.get('/auth/provider', passport.authenticate('provider'));
 
-// The OAuth 2.0 provider has redirected the user back to the application.
-// Finish the authentication process by attempting to obtain an access
-// token.  If authorization was granted, the user will be logged in.
-// Otherwise, authentication has failed.
+	// The OAuth 2.0 provider has redirected the user back to the application.
+	// Finish the authentication process by attempting to obtain an access
+	// token.  If authorization was granted, the user will be logged in.
+	// Otherwise, authentication has failed.
 
-server.get('/auth/provider/callback',
-  passport.authenticate('provider', { successRedirect: '/',
+	server.get('/auth/provider/callback',
+  	passport.authenticate('provider', { successRedirect: '/',
                                       failureRedirect: '/login' }));
 ```
 
@@ -1095,12 +1094,12 @@ server.get('/auth/provider/callback',
 //   the request will proceed.  Otherwise, the user will be redirected to the
 //   login page.
 
-var ensureAuthenticated = function(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect('/login');
-};
+	var ensureAuthenticated = function(req, res, next) {
+  	if (req.isAuthenticated()) {
+    	return next();
+  	}
+  	res.redirect('/login');
+	};
 
 ```
 
@@ -1173,6 +1172,4 @@ Simply clone down to your developer machine and configure as stated in the Walkt
 [ADAL for Android](https://github.com/MSOpenTech/azure-activedirectory-library-for-android)
 
 [ADAL for .Net](http://msdn.microsoft.com/zh-cn/library/azure/jj573266.aspx)
-
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
- 
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]

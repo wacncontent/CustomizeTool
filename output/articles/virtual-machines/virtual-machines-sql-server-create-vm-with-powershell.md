@@ -1,34 +1,35 @@
-<properties 
+<properties
 	pageTitle="Create a SQL Server Virtual Machine in PowerShell | Windows Azure"
 	description="Provides steps and PowerShell scripts for creating an Azure VM with SQL Server virtual machine gallery images."
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar" 
-	tags="azure-service-management"
-	 />
+	editor="monicar"
+	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/26/2015"
+	ms.date="01/06/2015"
 	wacn.date=""/>
 
 # Create a SQL Server Virtual Machine in Azure (PowerShell)
 
 > [AZURE.SELECTOR]
-- [Portal](/documentation/articles/virtual-machines-provision-sql-server)
+- [Management Portal](/documentation/articles/virtual-machines-provision-sql-server)
 - [PowerShell](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
+
 
 ## Overview
 
 This article provides steps for how to create a SQL Server virtual machine in Azure by using the PowerShell cmdlets.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model. If you want to create a SQL Server virtual machine with Resource Manager in PowerShell, see the generic instructions for resource manager VMs in the following topic: [Create and preconfigure a Windows Virtual Machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+
 
 ## Install and Configure PowerShell
 
-1. If you do not have an Azure account, visit [Azure trial](/pricing/1rmb-trial/). 
- 
+1. If you do not have an Azure account, visit [Azure trial](/pricing/1rmb-trial/).
+
 2. [Install the latest Azure PowerShell cmdlets](/documentation/articles/powershell-install-configure#how-to-install-azure-powershell).
 
 3. [Connect PowerShell with your Azure subscription](/documentation/articles/powershell-install-configure#how-to-connect-to-your-subscription).
@@ -52,10 +53,10 @@ Your SQL Server Virtual Machine will be hosted in a cloud service that resides a
 
 		(Get-AzureSubscription).SubscriptionName
 
-1. Assign your target Azure subscription to the **$subscr** variable. Then set this as your current Azure subscription. 
+1. Assign your target Azure subscription to the **$subscr** variable. Then set this as your current Azure subscription.
 
 		$subscr="<subscription name>"
-		Select-AzureSubscription -SubscriptionName $subscr –Current
+		Select-AzureSubscription -SubscriptionName $subscr -Current
 
 1. Then check for existing storage accounts. The following script displays all storage accounts that exist in your chosen region:
 
@@ -104,7 +105,7 @@ Finally, create the virtual machine with PowerShell:
 
 4. Run the following script to create the virtual machine.
 
-		New-AzureVM –ServiceName $svcname -VMs $vm1
+		New-AzureVM -ServiceName $svcname -VMs $vm1
 
 >[AZURE.NOTE] For additional explanation and configuration options, see the **Build your command set** section in [Use Azure PowerShell to create and preconfigure Windows-based Virtual Machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms).
 
@@ -119,30 +120,30 @@ The following script provides and example of a complete script that creates a **
 	$family="SQL Server 2014 SP1 Enterprise on Windows Server 2012 R2"
 	$svcname = "mycloudservice"
 	$vmname="myvirtualmachine"
-	$vmsize="A5" 
-	
+	$vmsize="A5"
+
 	# Set the current subscription and storage account
 	# Comment out the New-AzureStorageAccount line if the account already exists
-	Select-AzureSubscription -SubscriptionName $subscr –Current
+	Select-AzureSubscription -SubscriptionName $subscr -Current
 	New-AzureStorageAccount -StorageAccountName $staccount -Location $dcLocation
 	Set-AzureSubscription -SubscriptionName $subscr -CurrentStorageAccountName $staccount
-	
+
 	# Select the most recent VM image in this image family:
 	$image=Get-AzureVMImage | where { $_.ImageFamily -eq $family } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
-	
+
 	# Create the new cloud service; comment out this line if cloud service exists already:
 	New-AzureService -ServiceName $svcname -Label $svcname -Location $dcLocation
-	
+
 	# Create the VM config:
 	$vm1=New-AzureVMConfig -Name $vmname -InstanceSize $vmsize -ImageName $image
-	
+
 	# Set administrator credentials:
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account."
 	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
-	
+
 	# Create the SQL Server VM:
-	New-AzureVM –ServiceName $svcname -VMs $vm1
-	 
+	New-AzureVM -ServiceName $svcname -VMs $vm1
+
 
 ## Connect with remote desktop
 

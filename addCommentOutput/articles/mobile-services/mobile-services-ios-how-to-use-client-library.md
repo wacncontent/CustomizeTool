@@ -14,6 +14,9 @@
 
 # How to Use iOS Client Library for Azure Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
 This guide teaches you to perform common scenarios using the Azure Mobile Services [iOS SDK]. If you are new to Mobile Services, first complete [Mobile Services Quick Start] to configure your account, create a table, and create a mobile service.
@@ -66,7 +69,12 @@ To filter using a predicate, use an `NSPredicate` and `readWithPredicate`. The f
 
 ```
 // Create a predicate that finds items where complete is false
+<!-- deleted by customization
 NSPredicate * predicate = [NSPredicate predicateWithFormat:@"complete == NO"];
+-->
+<!-- keep by customization: begin -->
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"complete == NO"];
+<!-- keep by customization: end -->
 // Query the TodoItem table and update the items property with the results from the service
 [table readWithPredicate:predicate completion:^(MSQueryResult *result, NSError *error) {
 		if(error) {
@@ -150,12 +158,24 @@ In the following example, a simple function requests 5 records from the server a
 
             // Set a flag to keep track if there are any additional records we need to load
             self.moreResults = (self.loadedItems.count <= result.totalCount);
+<!-- deleted by customization
         }
     }];
+-->
+<!-- keep by customization: begin -->
+			}
+		}];
+<!-- keep by customization: end -->
 }
-
+<!-- deleted by customization
 ```
 
+-->
+<!-- keep by customization: begin -->
+
+```
+ 
+<!-- keep by customization: end -->
 ## <a name="selecting"></a><a name="parameters"></a>How to: Limit Fields and Expand Query String Parameters with MSQuery
 
 To limit fields to be returned in a query, specify the names of the fields in the **selectFields** property. This returns only the text and completed fields:
@@ -251,7 +271,6 @@ Azure Mobile Services supports two authentication workflows:
 - **Server-managed Login**: Azure Mobile Services manages the login process on behalf of your app. It displays a provider-specific login page and authenticates with the chosen provider.
 
 - **Client-managed Login**: The _app_ requests a token from the identity provider and presents this token to Azure Mobile Services for authentication.
-
 When authentication succeeds, you get back a user object with a user ID value and the auth token. To use this user ID to authorize users, see [Service-side Authorization]. To restrict table access to only authenticated users, see [Permissions].
 
 ### Server-managed Login
@@ -265,7 +284,6 @@ Here is how you can add server-managed login to the [Mobile Services Quick Start
 You may do the login process outside the Mobile Services client, either to enable single sign-on or if your app contacts the identity provider directly. In such cases, you can log in to Mobile Services by providing a token obtained independently from a supported identity provider.
 
 The following example uses the [Live Connect SDK] to enable single sign-on for iOS apps. It assumes that you have a **LiveConnectClient** instance named `liveClient` in the controller and the user is logged in.
-
 ```
 	[client loginWithProvider:@"microsoftaccount"
 		token:@{@"authenticationToken" : self.liveClient.session.authenticationToken}
@@ -313,19 +331,43 @@ The file [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/azu
 <!-- Images. -->
 
 <!-- URLs. -->
+<!-- deleted by customization
+[Mobile Services Quick Start]: mobile-services-ios-get-started.md
+[Get started with Mobile Services]: mobile-services-ios-get-started.md
+-->
+<!-- keep by customization: begin -->
 [Mobile Services Quick Start]: /documentation/articles/mobile-services-ios-get-started
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
+<!-- keep by customization: end -->
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
+<!-- deleted by customization
 [Authentication]: /documentation/articles/mobile-services-ios-get-started-users
+-->
+<!-- keep by customization: begin -->
+[Authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
+<!-- keep by customization: end -->
 [iOS SDK]: https://developer.apple.com/xcode
 
 [Handling Expired Tokens]: http://go.microsoft.com/fwlink/p/?LinkId=301955
 [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
 [Permissions]: http://msdn.microsoft.com/zh-cn/library/azure/jj193161.aspx
-[Service-side Authorization]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
+<!-- deleted by customization
+[Service-side Authorization]:
+mobile-services-javascript-backend-service-side-authorization.md
 [Dynamic Schema]: https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx
+-->
+<!-- keep by customization: begin -->
+[Service-side Authorization]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
+[Dynamic schema]: https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx
+<!-- keep by customization: end -->
 [Create a table]: http://msdn.microsoft.com/zh-cn/library/azure/jj193162.aspx
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Mobile_Tables
+[CLI to manage Mobile Services tables]: <!-- deleted by customization /documentation/articles/virtual-machines-command-line-tools#Mobile_Tables --><!-- keep by customization: begin --> /documentation/articles/virtual-machines-command-line-tool/s#Mobile_Tables <!-- keep by customization: end -->
+<!-- deleted by customization
 [Conflict-Handler]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data#add-conflict-handling
+-->
+<!-- keep by customization: begin -->
+[Conflict-Handler]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data/#add-conflict-handling
+ 
+<!-- keep by customization: end -->

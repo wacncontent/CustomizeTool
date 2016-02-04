@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Configure web apps in Azure Websites" 
-	description="How to configure a web app in Azure Websites" 
+	pageTitle="Configure web apps in Azure" 
+	description="How to configure a web app in Azure" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="erikre" 
@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/16/2015"
+	ms.date="12/08/2015"
 	wacn.date=""/>
 
 
-# Configure web apps in Azure Websites #
+# Configure web apps in Azure #
 In the Azure Management Portal, you can change the configuration options for websites and link to other Azure resources, such as a database.
 
 ## Table of Contents ##
@@ -114,14 +114,17 @@ To view your uploaded certificates, click **Configure** > **SSL Bindings**.
 
 ### Domain names
 
-Add custom domain names for your web app. For more information, see [Configure a custom domain name for a web app in Azure Websites](/documentation/articles/web-sites-custom-domain-name).
+Add custom domain names for your web app. For more information, see [Configure a custom domain name for a web app in Azure](/documentation/articles/web-sites-custom-domain-name).
+
 To view your domain names, click **Configure** > **Domain Names**.
+
 ### Deployments
 
-- Set up continuous deployment. See [Using Git to deploy Web Apps in Azure Websites](/documentation/articles/web-sites-publish-source-control)
-- Deployment slots. See [Deploy to Staging Environments for Web Apps in Azure Websites](/documentation/articles/web-sites-staged-publishing)
+- Set up continuous deployment. See [Using Git to deploy Web Apps in Azure](/documentation/articles/web-sites-publish-source-control)
+- Deployment slots. See [Deploy to Staging Environments for Web Apps in Azure](/documentation/articles/web-sites-staged-publishing)
 
 To view your deployment slots, click **Configure** > **Deployment**.
+
 
 ### Monitoring
 
@@ -133,6 +136,6 @@ For more information, see [How to: Monitor web endpoint status](/documentation/a
 
 - [Configure a custom domain name](/documentation/articles/web-sites-custom-domain-name)
 - [Enable HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)
-- [Scale a web app in Azure Websites](/documentation/articles/web-sites-scale)
-- [Monitoring basics for Web Apps in Azure Websites](/documentation/articles/web-sites-monitor)
+- [Scale a web app in Azure](/documentation/articles/web-sites-scale)
+- [Monitoring basics for Web Apps in Azure](/documentation/articles/web-sites-monitor)
  

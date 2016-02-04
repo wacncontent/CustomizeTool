@@ -4,13 +4,13 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-service-management"
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="10/06/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 #Control routing and use virtual appliances (classic) using PowerShell
@@ -23,7 +23,7 @@
 
 [AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../includes/virtual-network-create-udr-scenario-include.md)]
 
-The sample Azure CLI commands below expect a simple environment already created based on the scenario above. If you want to run the commands as they are displayed in this document, create the environment shown in [create a VNet (classic) using PowerShell](/documentation/articles/virtual-networks-create-vnet-classic-ps).
+The sample Azure PowerShell commands below expect a simple environment already created based on the scenario above. If you want to run the commands as they are displayed in this document, create the environment shown in [create a VNet (classic) using PowerShell](/documentation/articles/virtual-networks-create-vnet-classic-ps).
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../includes/azure-ps-prerequisites-include.md)]
 

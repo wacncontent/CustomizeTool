@@ -1,17 +1,27 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Replicon | Windows Azure" description="Learn how to use Replicon with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties 
+    pageTitle="Tutorial: Azure Active Directory integration with Replicon | Windows Azure" 
+    description="Learn how to use Replicon with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="08/01/2015"
+	ms.date="10/22/2015"
 	wacn.date=""/>
+
 #Tutorial: Azure Active Directory integration with Replicon
->[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/92adef1d-8eb8-4c86-9900-f16b34b384f3/tutorial-azure-ad-integration-with-replicon?forum=WindowsAzureAD).
+<!-- keep by customization: begin -->
+>[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=525008).
+<!-- keep by customization: end -->
+<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Replicon. The scenario outlined in this tutorial assumes that you already have the following items:
 
 -   A valid Azure subscription
 -   A Replicon tenant
   
-After completing this tutorial, the Azure AD users you have assigned to Replicon will be able to single sign into the application at your Replicon company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to Replicon will be able to single sign into the application at your Replicon company site (service provider initiated sign on), or using the [Introduction to the Access <!-- keep by customization: begin --><!-- deleted by customization <!-- keep by customization: end --> Panel](/documentation/articles/active-directory-saas-access-panel-introduction). <!-- keep by customization: begin --> --><!-- keep by customization: begin --> Panel](https://msdn.microsoft.com/zh-cn/library/dn308586) <!-- keep by customization: end --><!-- keep by customization: end -->
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -122,7 +132,12 @@ In the case of Replicon, provisioning is a manual task.
 
     1.  In the **Login Name** textbox, type the Azure AD email address of the Azure AD user you want to provision.
     2.  As **Authentication Type**, select **SSO**.
-    3.  In the **Department** textbox, type the user’s department.
+<!-- deleted by customization
+    3.  In the **Department** textbox, type the user's department.
+-->
+<!-- keep by customization: begin -->
+    3.  In the **Department** textbox, type the <!-- deleted by customization user's --><!-- keep by customization: begin --> user’s <!-- keep by customization: end --> department.
+<!-- keep by customization: end -->
     4.  As **Employee Type**, select **Administrator**.
     5.  Click **Save User Profile**.
 
@@ -144,4 +159,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-replicon-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).

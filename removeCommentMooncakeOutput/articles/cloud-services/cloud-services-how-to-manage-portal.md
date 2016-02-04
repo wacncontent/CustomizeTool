@@ -7,8 +7,8 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags
-	ms.service="cloud-services"
+<tags 
+	ms.service="cloud-services" 
 	ms.date="09/22/2015"
 	wacn.date=""/>
 
@@ -17,7 +17,7 @@
 
 > [AZURE.SELECTOR]
 - [Azure Management Portal](/documentation/articles/cloud-services-how-to-manage)
-- [Azure Preview Portal](/documentation/articles/cloud-services-how-to-manage-portal)
+- [Azure Management Portal](/documentation/articles/cloud-services-how-to-manage-portal)
 
 In the **Cloud Services** area of the Azure Preview Portal, you can update a service role or a deployment, promote a staged deployment to production, link resources to your cloud service so that you can see the resource dependencies and scale the resources together, and delete a cloud service or a deployment.
 
@@ -26,7 +26,7 @@ In the **Cloud Services** area of the Azure Preview Portal, you can update a ser
 
 If you need to update the application code for your cloud service, use **Update** on the cloud service blade. You can update a single role or all roles. You'll need to upload a new service package and service configuration file.
 
-1. In the [Azure Preview Portal][], select the cloud service you want to update. This opens the cloud service instance blade.
+1. In the [Azure Management Portal][], select the cloud service you want to update. This opens the cloud service instance blade.
 
 2. In the blade, click the **Update** button.
 
@@ -46,7 +46,7 @@ If you need to update the application code for your cloud service, use **Update*
 
 	Azure can only guarantee 99.95 percent service availability during a cloud service update if each role has at least two role instances (virtual machines). That enables one virtual machine to process client requests while the other is being updated.
 
-8. Click **OK** to begin updating the service.
+7. Click **OK** to begin updating the service.
 
 
 
@@ -56,7 +56,7 @@ Use **Swap** to promote a staging deployment of a cloud service to production. W
 
 You can swap deployments from the **Cloud Services** page or the dashboard.
 
-1. In the [Azure Preview Portal][], select the cloud service you want to update. This opens the cloud service instance blade.
+1. In the [Azure Management Portal][], select the cloud service you want to update. This opens the cloud service instance blade.
 
 2. In the blade, click the **Swap** button.
 
@@ -84,7 +84,7 @@ To save compute costs, you can delete your staging deployment after you verify t
 
 Use the following procedure to delete a deployment or your cloud service. 
 
-1. In the [Azure Preview Portal][], select the cloud service you want to delete. This opens the cloud service instance blade.
+1. In the [Azure Management Portal][], select the cloud service you want to delete. This opens the cloud service instance blade.
 
 2. In the blade, click the **Delete** button.
 
@@ -101,8 +101,7 @@ Use the following procedure to delete a deployment or your cloud service.
 > [AZURE.NOTE]
 > If verbose monitoring is configured for your cloud service, Azure does not delete the monitoring data from your storage account when you delete the cloud service. You will need to delete the data manually. For information about where to find the metrics tables, see [this](/documentation/articles/cloud-services-how-to-monitor) article.
 
-[Azure Preview Portal]: https://manage.windowsazure.cn
-
+[Azure Management Portal]: https://manage.windowsazure.cn
 ## Next steps
 
 * [General configuration of your cloud service](/documentation/articles/cloud-services-how-to-configure-portal).

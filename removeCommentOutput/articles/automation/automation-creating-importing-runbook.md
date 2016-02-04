@@ -23,7 +23,7 @@ You can create a new runbook in Azure Automation using one of the Azure Manageme
 
 You can only work with [PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks) in the Azure Management Portal.
 
-1. In the Azure Management Portal, click, **New**, **App Services**, **Automation**, **Runbook**, **Quick Create**.
+1. In the Azure Management Portal, click, **New**, **Azure Websitess**, **Automation**, **Runbook**, **Quick Create**.
 2. Enter the required information, and then click **Create**. The runbook name must start with a letter and can have letters, numbers, underscores, and dashes.
 3. If you want to edit the runbook now, then click **Edit Runbook**. Otherwise, click **OK**.
 4. Your new runbook will appear on the **Runbooks** tab.
@@ -46,7 +46,7 @@ The following sample commands show how to create a new empty runbook.
 
     $automationAccountName = "MyAutomationAccount"
     $runbookName = "Sample-TestRunbook"
-    New-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName 
+    New-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName 
 
 ## Importing a runbook from a file into Azure Automation
 
@@ -89,8 +89,8 @@ The following sample commands show how to import a script file into an existing 
     $runbookName = "Sample-TestRunbook"
     $scriptPath = "c:\runbooks\Sample-TestRunbook.ps1"
 
-    Set-AzureAutomationRunbookDefinition –AutomationAccountName $automationAccountName –Name $runbookName –Path $ scriptPath -Overwrite
-    Publish-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName
+    Set-AzureAutomationRunbookDefinition -AutomationAccountName $automationAccountName -Name $runbookName -Path $ scriptPath -Overwrite
+    Publish-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName
 
 
 ## Publishing a runbook
@@ -117,7 +117,7 @@ You can use the [Publish-AzureAutomationRunbook](https://msdn.microsoft.com/zh-c
 	$automationAccountName = "MyAutomationAccount"
 	$runbookName = "Sample-TestRunbook"
 	
-	Publish-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName
+	Publish-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName
 
 
 

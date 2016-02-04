@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/20/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 
@@ -46,7 +46,7 @@ The Access Panel allows users to edit some of their profile settings, including 
 Users access the Access Panel by visiting the following URL in a web browser: <br> 
 **http://myapps.microsoft.com**
 
-If you have custom branding configured for your sign-in page, you can load this branding by default by appending your organization’s domain to the end of the URL: <br> 
+If you have custom branding configured for your sign-in page, you can load this branding by default by appending your organization’s domain to the end of the URL: <br>
 **http://myapps.microsoft.com/contosobuild.com**
 
 In this case, any active or verified domain name that has been configured under the Domains tab of your directory in the Azure management portal may be used, as illustrated in the screenshot below.

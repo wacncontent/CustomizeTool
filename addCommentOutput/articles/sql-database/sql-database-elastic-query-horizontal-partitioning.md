@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Elastic queries for horizontal partitioning | Windows Azure"
+    pageTitle="Elastic database queries for sharding (horizontal partitioning) | Windows Azure"
     description="how to set up elastic queries over hotizontal partitions"    
     services="sql-database"
     documentationCenter=""  
@@ -11,7 +11,7 @@
 	ms.date="10/15/2015"
 	wacn.date=""/>
 
-# Elastic queries for horizontal partitioning
+# Elastic database queries for sharding (horizontal partitioning)
 
 This document explains how to setup elastic database queries for horizontal partitioning scenarios and how to perform your queries. For a definition of the horizontal partitioning scenario, see the [elastic database query overview (preview)](/documentation/articles/sql-database-elastic-query-overview).
 
@@ -35,9 +35,9 @@ Defining the database objects for elastic database query relies on the following
 
 A credential represents the user ID and password that elastic query will use to connect to your remote databases in Azure SQL DB. To create the required master key and credential use the following syntax: 
 
-    CREATE MASTER KEY ENCRYPTION BY PASSWORD = ’password’;
-    CREATE DATABASE SCOPED CREDENTIAL <credential_name>  WITH IDENTITY = ‘<username>’,  
-    SECRET = ‘<password>’
+    CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'password';
+    CREATE DATABASE SCOPED CREDENTIAL <credential_name>  WITH IDENTITY = '<username>',  
+    SECRET = '<password>'
     [;]
 
 Or to drop the credential and key:
@@ -56,9 +56,9 @@ Provide the information about your shard map and your data tier by defining an e
 	CREATE EXTERNAL DATA SOURCE <data_source_name> WITH                               	           
 			(TYPE = SHARD_MAP_MANAGER,
                    	LOCATION = '<fully_qualified_server_name>',
-			DATABASE_NAME = ‘<shardmap_database_name>',
+			DATABASE_NAME = '<shardmap_database_name>',
 			CREDENTIAL = <credential_name>, 
-			SHARD_MAP_NAME = ‘<shardmapname>’ 
+			SHARD_MAP_NAME = '<shardmapname>' 
                    ) [;] 
  
 or to drop an external data source: 
@@ -116,7 +116,7 @@ The DATA\_SOURCE clause defines the external data source (a shard map in the cas
 
 The SCHEMA\_NAME and OBJECT_NAME clauses provide the ability to map the external table definition to a table in a different schema on the shard, or a to a table with a different name, respectively. If omitted, the schema of the remote object is assumed to be “dbo” and its name is assumed to be identical to the external table name being defined.  
 
-The SCHEMA\_NAME and OBJECT\_NAME clauses are particularly useful if the name of your remote table is already taken in the database where you want to create the external table. An example for this problem is when you want to define an external table to get an aggregate view of catalog views or DMVs on your scaled out data tier. Since catalog views and DMVs already exist locally, you cannot use their names for the external table definition. Instead, use a different name and use the catalog view’s or the DMV’s name in the SCHEMA_NAME and/or OBJECT_NAME clauses. (See the example below.) 
+The SCHEMA\_NAME and <!-- deleted by customization OBJECT\_NAME --><!-- keep by customization: begin --> OBJECT_NAME <!-- keep by customization: end --> clauses are particularly useful if the name of your remote table is already taken in the database where you want to create the external table. An example for this problem is when you want to define an external table to get an aggregate view of catalog views or DMVs on your scaled out data tier. Since catalog views and DMVs already exist locally, you cannot use their names for the external table definition. Instead, use a different name and use the catalog view's or the DMV's name in the SCHEMA_NAME and/or OBJECT_NAME clauses. (See the example below.)
 
 The DISTRIBUTION clause specifies the data distribution used for this table:  
 
@@ -124,7 +124,7 @@ The DISTRIBUTION clause specifies the data distribution used for this table:
 
 * REPLICATED means that identical copies of the table are present on each database in your shard map. Azure SQL DB does not maintain the copies of the table. It is your responsibility to ensure that the replica are identical across the databases. 
 
-* ROUND\_ROBIN means that the table is distributed using horizontal partitioning. However, an application dependent distribution has been used.  
+* <!-- deleted by customization ROUND\_ROBIN --><!-- keep by customization: begin --> ROUND_ROBIN <!-- keep by customization: end --> means that the table is distributed using horizontal partitioning. However, an application dependent distribution has been used.
 
 The query processor utilizes the information provided in the DISTRIBUTION clause to build the most efficient query plans.
 
@@ -199,14 +199,14 @@ Elastic query also introduces a stored procedure that provides direct access to 
 *  Parameter declaration (nvarchar) - optional: String with data type definitions for the parameters used in the Query parameter (like sp_executesql). 
 *  Parameter value list - optional: Comma-separated list of parameter values (like sp_executesql)  
 
-sp\_execute\_fanout uses the shard map information provided in the invocation parameters to execute the given T-SQL statement on all shards registered with the shard map. Any results are merged using UNION ALL semantics. The result also includes the additional ‘virtual’ column with the shard name. 
+<!-- deleted by customization sp\_execute\_fanout --><!-- keep by customization: begin --> sp\_execute_fanout <!-- keep by customization: end --> uses the shard map information provided in the invocation parameters to execute the given T-SQL statement on all shards registered with the shard map. Any results are merged using UNION ALL semantics. The result also includes the additional 'virtual' column with the shard name.
 
 Note that the same credentials are used to connect to the shard map database and to the shards. 
 
 Example: 
 
 	sp_execute_fanout 
-		’myserver.database.chinacloudapi.cn', 
+		'myserver.database.chinacloudapi.cn', 
 		N'ShardMapDb', 
 		N'myuser', 
 		N'MyPwd', 

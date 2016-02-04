@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Python web apps with Bottle in Azure" 
-	description="A tutorial that introduces you to running a Python web app in Azure Websites." 
+	pageTitle="Python web sites with Bottle in Azure" 
+	description="A tutorial that introduces you to running a Python web site in Azure Websites." 
 	services="app-service\web" 
 	documentationCenter="python" 
 	tags="python"
@@ -10,21 +10,20 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/30/2015"
+	ms.date="11/17/2015"
 	wacn.date=""/>
 
 
-# Creating web apps with Bottle in Azure
+# Creating web sites with Bottle in Azure
 
-This tutorial describes how to get started running Python in Azure Websites. Web Apps provides limited free hosting and rapid deployment, and you can use Python! As your app grows, you can switch to paid hosting, and you can also integrate with all of the other Azure services.
+This tutorial describes how to get started running Python in Azure Websites. web sites provides limited free hosting and rapid deployment, and you can use Python! As your app grows, you can switch to paid hosting, and you can also integrate with all of the other Azure services.
 
-You will create a web app using the Bottle web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app) and [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app)). You will create the web app from the Azure Marketplace, set up Git deployment, and clone the repository locally. Then you will run the web app locally, make changes, commit and push them to [Azure Websites](/documentation/services/web-sites/). The tutorial shows how to do this from Windows or Mac/Linux.
+You will create a web site using the Bottle web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app) and [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app)). You will create the web site from the Azure Marketplace, set up Git deployment, and clone the repository locally. Then you will run the web site locally, make changes, commit and push them to [Azure Websites](/documentation/services/web-sites/). The tutorial shows how to do this from Windows or Mac/Linux.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+
 <!-- deleted by customization
-
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
-
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 -->
 <!-- keep by customization: begin -->
 + [Prerequisites](#prerequisites)
@@ -39,13 +38,14 @@ You will create a web app using the Bottle web framework (see alternate versions
 + [Troubleshooting - Virtual Environment](#troubleshooting-virtual-environment)
 + [Next steps](#next-steps)
 <!-- keep by customization: end -->
+
 ## Prerequisites
 
 - Windows, Mac or Linux
 - Python 2.7 or 3.4
 - setuptools, pip, virtualenv (Python 2.7 only)
 - Git
-- [Python Tools 2.2 for Visual <!-- deleted by customization Studio][] (PTVS) --><!-- keep by customization: begin --> Studio][](PTVS) <!-- keep by customization: end --> - Note: this is optional
+- [Python Tools 2.2 for Visual Studio][] (PTVS) - Note: this is optional
 
 **Note**: TFS publishing is currently not supported for Python projects.
 
@@ -62,13 +62,13 @@ We also recommend installing [Python Tools 2.2 for Visual Studio]. This is optio
 You should have Python and Git already installed, but make sure you have either Python 2.7 or 3.4.
 
 
-## Web app creation on the Azure <!-- deleted by customization Preview --><!-- keep by customization: begin --> Management <!-- keep by customization: end --> Portal
+## web site creation on the Azure Management Portal
 
-The first step in creating your app is to create the web app via the [Azure <!-- deleted by customization Preview --><!-- keep by customization: begin --> Management <!-- keep by customization: end --> Portal](https://manage.windowsazure.cn).
+The first step in creating your app is to create the web site via the [Azure Management Portal](https://manage.windowsazure.cn).  
+
 <!-- deleted by customization
-
-1. Log into the Azure Preview Portal and click the **NEW** button in the bottom left corner. 
-2. Click **Web + Mobile** > **Azure Marketplace** > **Web Apps**.
+1. Log into the Azure Management Portal and click the **NEW** button in the bottom left corner. 
+2. Click **Web + Mobile**.
 3. In the search box, type "python".
 4. In the search results, select **Bottle**, then click **Create**.
 5. Configure the new Bottle app, such as creating a new App Service plan and a new resource group for it. Then, click **Create**.
@@ -78,8 +78,9 @@ The first step in creating your app is to create the web app via the [Azure <!--
 1. Click **New** at the bottom of the page, then click **Compute**, ** Website**, and **Quick Create**. Provide a **URL** for your  Website and select the **Region** for your  Website. Finally, click **Create  Website**.
 
     ![Select Quick Create  Website](./media/web-sites-php-create-web-sites/select-quickcreate-Website.png)
+
 <!-- keep by customization: end -->
-6. Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
+6. Configure Git publishing for your newly created web site by following the instructions at [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
  
 ## Application Overview
 
@@ -138,20 +139,20 @@ IIS configuration file. Created from web.x.y.config on every deployment.
 
     \env\
 
-Python virtual environment. Created during deployment if a compatible virtual environment doesn't already exist on the web app.  Packages listed in requirements.txt are pip installed, but pip will skip installation if the packages are already installed.
+Python virtual environment. Created during deployment if a compatible virtual environment doesn't already exist on the web site.  Packages listed in requirements.txt are pip installed, but pip will skip installation if the packages are already installed.
 
-The next 3 sections describe how to proceed with the web app development under 3 different environments:
+The next 3 sections describe how to proceed with the web site development under 3 different environments:
 
 - Windows, with Python Tools for Visual Studio
 - Windows, with command line
 - Mac/Linux, with command line
 
 
-## Web App development - Windows - Python Tools for Visual Studio
+## web site development - Windows - Python Tools for Visual Studio
 
 ### Clone the repository
 
-First, clone the repository using the url provided on the Azure Preview Portal. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
+First, clone the repository using the url provided on the Azure Management Portal. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
 
 Open the solution file (.sln) that is included in the root of the repository.
 
@@ -163,7 +164,7 @@ Now we'll create a virtual environment for local development. Right-click on **P
 
 - Make sure the name of the environment is `env`.
 
-- Select the base interpreter. Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the <!-- deleted by customization **Application Settings** blade of your web app in the Azure Preview Portal) --><!-- keep by customization: begin --> site configuration page) <!-- keep by customization: end -->.
+- Select the base interpreter. Make sure to use the same version of Python that is selected for your web site (in runtime.txt or the <!-- deleted by customization **Application Settings** blade of your web --> site in the Azure Management Portal).
 
 - Make sure the option to download and install packages is checked.
 
@@ -214,11 +215,11 @@ Visual Studio doesn't show the progress of the deployment. If you'd like to revi
 Browse to the Azure URL to view your changes.
 
 
-## Web app development - Windows - Command Line
+## web site development - Windows - Command Line
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure <!-- deleted by customization Preview --><!-- keep by customization: begin --> Management <!-- keep by customization: end --> Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -228,7 +229,7 @@ First, clone the repository using the URL provided on the Azure <!-- deleted by 
 
 We'll create a new virtual environment for development purposes (do not add it to the repository). Virtual environments in Python are not relocatable, so every developer working on the application will create their own locally.
 
-Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the <!-- deleted by customization Application Settings blade for your web app in the Azure Preview Portal) --><!-- keep by customization: begin --> site configuration page) <!-- keep by customization: end -->
+Make sure to use the same version of Python that is selected for your web site (in runtime.txt or the <!-- deleted by customization Application Settings blade for your web --> site in the Azure Management Portal)
 
 For Python 2.7:
 
@@ -293,11 +294,11 @@ You will see the output of the deployment script, including virtual environment 
 Browse to the Azure URL to view your changes.
 
 
-## Web app development - Mac/Linux - command line
+## web site development - Mac/Linux - command line
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure <!-- deleted by customization Preview --><!-- keep by customization: begin --> Management <!-- keep by customization: end --> Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -307,7 +308,7 @@ First, clone the repository using the URL provided on the Azure <!-- deleted by 
 
 We'll create a new virtual environment for development purposes (do not add it to the repository). Virtual environments in Python are not relocatable, so every developer working on the application will create their own locally.
 
-Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the <!-- deleted by customization Application Settings blade of your web app in the Azure Preview Portal) --><!-- keep by customization: begin --> site configuration page) <!-- keep by customization: end -->.
+Make sure to use the same version of Python that is selected for your web site (in runtime.txt or the <!-- deleted by customization Application Settings blade of your web --> site in the Azure Management Portal).
 
 For Python 2.7:
 
@@ -316,6 +317,8 @@ For Python 2.7:
 For Python 3.4:
 
     python -m venv env
+or
+	pyvenv env
 
 Install any external packages required by your application. You can use the requirements.txt file at the root of the repository to install the packages in your virtual environment:
 
@@ -393,17 +396,16 @@ For information on using Azure Table Storage and MongoDB:
 
 - [Bottle and MongoDB on Azure with Python Tools for Visual Studio]
 - [Bottle and Azure Table Storage on Azure with Python Tools for Visual Studio]
-<!-- deleted by customization
 
+<!-- deleted by customization
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+
 -->
 
-
 <!--Link references-->
-[Bottle and MongoDB on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-bottle-table-storage
-[Bottle and Azure Table Storage on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-bottle-table-storage
+[Bottle and MongoDB on Azure with Python Tools for Visual Studio]: <!-- deleted by customization web-sites-python-ptvs-bottle-table-storage.md --><!-- keep by customization: begin --> /documentation/articles/web-sites-python-ptvs-bottle-table-storage <!-- keep by customization: end -->
+[Bottle and Azure Table Storage on Azure with Python Tools for Visual Studio]: <!-- deleted by customization web-sites-python-ptvs-bottle-table-storage.md --><!-- keep by customization: begin --> /documentation/articles/web-sites-python-ptvs-bottle-table-storage <!-- keep by customization: end -->
 
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281

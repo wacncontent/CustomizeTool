@@ -92,10 +92,9 @@ Skip steps 1-3 if you created a console app when you completed [Get started with
 [16]: ./media/notification-hubs-back-end/notification-hub-scheduler2.png
 
 <!-- URLs. -->
-[get-started]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
-[Use Notification Hubs to send notifications to users]: /documentation/articles/tutorial-notify-users-mobileservices
+[get-started]: ../articles/notification-hubs/notification-hubs-windows-store-dotnet-get-started.md
+[Use Notification Hubs to send notifications to users]: ../articles/tutorial-notify-users-mobileservices.md
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
-[Azure Management Portal]: https://manage.windowsazure.cn/
 [wns object]: https://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/zh-cn/library/jj927172.aspx

@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Debugging your Service Fabric Application in Visual Studio using F5"
-   description="Improve the reliability and performance of your services using Visual Studio and a local development cluster."
+   pageTitle="Debug your application in Visual Studio | Windows Azure"
+   description="Improve the reliability and performance of your services by developing and debugging them in Visual Studio and a local development cluster."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
@@ -8,19 +8,15 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/26/2015"
-   ms.author="jesseb"/>
+	ms.service="service-fabric"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
-# Debugging your Service Fabric Application in Visual Studio using F5
+# Debugging your Service Fabric application using Visual Studio
 
 You can save time and money by deploying and debugging your Service Fabric application in a local computer development cluster. Visual Studio can deploy the application to the local cluster and automatically connect the debugger to all instances of your application.
 
-1. Start a local development cluster by following the steps in [setting up your Service Fabric development environment](service-fabric-get-started.md).
+1. Start a local development cluster by following the steps in [setting up your Service Fabric development environment](/documentation/articles/service-fabric-get-started).
 
 2. Press **F5** or click **Debug** > **Start Debugging**
 
@@ -55,8 +51,8 @@ You can save time and money by deploying and debugging your Service Fabric appli
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
 
-- [Test a Service Fabric service](service-fabric-test-your-service-index.md).
-- [Managing your Service Fabric applications in Visual Studio](service-fabric-manage-application-in-visual-studio.md).
+- [Test a Service Fabric service](/documentation/articles/service-fabric-test-your-service-index).
+- [Managing your Service Fabric applications in Visual Studio](/documentation/articles/service-fabric-manage-application-in-visual-studio).
 
 <!--Image references-->
 [startdebugging]: ./media/service-fabric-debugging-your-application/startdebugging.png

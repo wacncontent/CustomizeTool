@@ -9,15 +9,15 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+	ms.date="07/17/2015"
 	wacn.date=""/>
 
 
 # Integrate Azure AD into a Windows Desktop WPF App
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher)]
 
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide)]
 
 If you're developing a desktop application, Azure AD makes it simple and straightforward for you to authenticate your users with their Active Directory accounts.  It also enables your application to securely consume any web API protected by Azure AD, such as the Office 365 APIs or the Azure API.
 
@@ -83,22 +83,22 @@ private void Search(object sender, RoutedEventArgs e)
 {
     ...
 
-    // Get an Access Token for the Graph API
-    AuthenticationResult result = null;
-    try
-    {
-        result = authContext.AcquireToken(graphResourceId, clientId, redirectUri);
-        UserNameLabel.Content = result.UserInfo.DisplayableId;
-        SignOutButton.Visibility = Visibility.Visible;
-    }
-    catch (AdalException ex)
-    {
-        // An unexpected error occurred, or user canceled the sign in.
-        if (ex.ErrorCode != "access_denied")
-            MessageBox.Show(ex.Message);
+    		// Get an Access Token for the Graph API
+    		AuthenticationResult result = null;
+    		try
+    		{
+        		result = authContext.AcquireToken(graphResourceId, clientId, redirectUri);
+        		UserNameLabel.Content = result.UserInfo.DisplayableId;
+        		SignOutButton.Visibility = Visibility.Visible;
+    		}
+    		catch (AdalException ex)
+    		{
+        		// An unexpected error occurred, or user canceled the sign in.
+        		if (ex.ErrorCode != "access_denied")
+            		MessageBox.Show(ex.Message);
 
-        return;
-    }
+        		return;
+    		}
 
     ...
 }
@@ -125,25 +125,25 @@ public MainWindow()
 {
     InitializeComponent();
 
-    authContext = new AuthenticationContext(authority, new FileCache());
+    		authContext = new AuthenticationContext(authority, new FileCache());
 
-    // As the application starts, try to get an access token without prompting the user.  If one exists, show the user as signed in.
-    AuthenticationResult result = null;
-    try
-    {
-        result = authContext.AcquireToken(graphResourceId, clientId, redirectUri, PromptBehavior.Never);
-    }
-    catch (AdalException ex)
-    {
-        if (ex.ErrorCode != "user_interaction_required")
-        {
-            // An unexpected error occurred.
-            MessageBox.Show(ex.Message);
-        }
+    		// As the application starts, try to get an access token without prompting the user.  If one exists, show the user as signed in.
+    		AuthenticationResult result = null;
+    		try
+    		{
+        		result = authContext.AcquireToken(graphResourceId, clientId, redirectUri, PromptBehavior.Never);
+    		}
+    		catch (AdalException ex)
+    		{
+        		if (ex.ErrorCode != "user_interaction_required")
+        		{
+            		// An unexpected error occurred.
+            		MessageBox.Show(ex.Message);
+        		}
 
-        // If user interaction is required, proceed to main page without singing the user in.
-        return;
-    }
+        		// If user interaction is required, proceed to main page without singing the user in.
+        		return;
+    		}
 
     // A valid token is in the cache
     SignOutButton.Visibility = Visibility.Visible;
@@ -159,5 +159,5 @@ For reference, the completed sample (without your configuration values) is provi
 
 [Secure a .NET Web API with Azure AD >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]
  

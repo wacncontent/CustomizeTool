@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="DocumentDB limits and quotas | Microsoft Azure" 
+	pageTitle="DocumentDB limits and quotas | Windows Azure" 
 	description="Learn about the limits and quota enforcements of DocumentDB. Review quotas for using the Azure database services."
 	keywords="Quotas, database, documentdb, azure, Microsoft azure"
 	services="documentdb" 
@@ -8,18 +8,14 @@
 	editor="cgronlun" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/23/2015" 
-	ms.author="mimig"/>
+<tags
+	ms.service="documentdb"
+	ms.date="09/23/2015"
+	wacn.date=""/>
 
 
 # DocumentDB limits and quotas
 
 The following table describes the limits and quota enforcements of DocumentDB. 
 
-[AZURE.INCLUDE [azure-documentdb-limits](../../includes/azure-documentdb-limits.md)]
+[AZURE.INCLUDE [azure-documentdb-limits](../includes/azure-documentdb-limits.md)]

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="11/03/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 
@@ -21,6 +21,8 @@ These release notes summarize changes from previous releases and known issues.
 
 - [Currently Known Issues](#issues)
 - [REST API Version History](#rest_version_history)
+- [December 2015 Release](#dec_changes_15)
+- [November 2015 Release](#nov_changes_15)
 - [October 2015 Release](#oct_changes_15)
 - [September 2015 Release](#september_changes_15)
 - [August 2015 Release](#august_changes_15)
@@ -56,7 +58,7 @@ These release notes summarize changes from previous releases and known issues.
 Issue|Description
 ---|---
 Several common HTTP headers are not provided in the REST API.|If you develop Media Services applications using the REST API, you find that some common HTTP header fields (including CLIENT-REQUEST-ID, REQUEST-ID, and RETURN-CLIENT-REQUEST-ID) are not supported. The headers will be added in a future update.
-Encoding an asset with a file name that contains escape characters (for example, %20) fails with “MediaProcessor : File not found.”|Names of files that are going to be added to an asset and then encoded should only contain alphanumeric characters and spaces. The issue will be fixed in a future update.
+Encoding an asset with a file name that contains escape characters (for example, %20) fails with "MediaProcessor : File not found."|Names of files that are going to be added to an asset and then encoded should only contain alphanumeric characters and spaces. The issue will be fixed in a future update.
 The ListBlobs method that is part of the Azure Storage SDK version 3.x fails.|Media Services generates SAS URLs based on the [2012-02-12](http://msdn.microsoft.com/zh-cn/library/azure/dn592123.aspx) version. If you want to use Azure Storage SDK to list blobs in a blob container, use the [CloudBlobContainer.ListBlobs](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.listblobs.aspx) method that is part of Azure Storage SDK version 2.x. The ListBlobs method that is part of the Azure Storage SDK version 3.x will fail.
 Media Services throttling mechanism restricts the resource usage for applications that make excessive request to the service. The service may return the Service Unavailable (503) HTTP status code.|For more information, see the description of the 503 HTTP status code in the [Azure Media Services Error Codes](http://msdn.microsoft.com/zh-cn/library/azure/dn168949.aspx) topic.
 
@@ -70,6 +72,25 @@ Media Services objects in the SDK cannot be serialized and as a result do not wo
 ##<a id="rest_version_history"></a>REST API Version History
 
 For information about the Media Services REST API version history, see [Azure Media Services REST API Reference].
+
+##<a id="dec_changes_15"></a>December 2015 Release
+
+The Azure SDK team published a new release of the [Azure SDK for PHP](http://github.com/Azure/azure-sdk-for-php) package that contains updates and new features for Windows Azure Media Services. In particular, the Azure Media Services SDK for PHP now supports the latest [content protection](/documentation/articles/media-services-content-protection-overview) features: dynamic encryption with AES and DRM (PlayReady and Widevine) with and without Token restriction. It also supports scaling [Encoding Units](/documentation/articles/media-services-dotnet-encoding-units).
+
+For more information, see:
+
+- The [Windows Azure Media Services SDK for PHP](http://southworks.com/blog/2015/12/09/new-microsoft-azure-media-services-sdk-for-php-release-available-with-new-features-and-samples/) blog.
+- The following [code samples](http://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices) to help get you started quickly:
+	- **vodworkflow_aes.php**: This is a PHP file that shows how to use AES-128 Dynamic Encryption and Key Delivery Service. It is based on the .NET sample explained in [this](/documentation/articles/media-services-protect-with-aes128) article.
+	- **vodworkflow_aes.php**: This is a PHP file that shows how to use PlayReady Dynamic Encryption and License Delivery Service. It is based on the .NET sample explained in [this](/documentation/articles/media-services-protect-with-drm) article.
+	- **scale_encoding_units.php**: This is a PHP file that shows how to scale encoding reserved unit.
+
+
+##<a id="nov_changes_15"></a>November 2015 Release
+
+Azure Media Services now offers Google Widevine license delivery service in the cloud. For more details, refer to [this announcement blog](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/). Also, see [this tutorial](/documentation/articles/media-services-protect-with-drm) and [GitHub repository](http://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-drm). 
+
+Note that Widevine license delivery services provided by Azure Media Sevices is in preview. For more information see [this blog](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/).
 
 ##<a id="oct_changes_15"></a>October 2015 Release
 
@@ -211,13 +232,13 @@ This release marked the default Microsoft.WindowsAzure.MediaServices.Client.Cont
 - Added CORS support for key delivery service.
 - Performance improvements of querying authorization policy options were done.
 - In China data center, the [Key Delivery URL](http://msdn.microsoft.com/zh-cn/library/azure/ef4dfeeb-48ae-4596-ab28-44d6b36d8769#get_delivery_service_url) is now per customer (just like in other data centers).
-- Added HLS auto target duration. When doing live streaming, HLS is always packaged dynamically. By default, Media Services automatically calculates HLS segment packaging ratio (FragmentsPerSegment) based on the keyframe interval (KeyFrameInterval ), also referred to as Group of Pictures – GOP, that is received from the Live encoder. For more information, see [Working with Azure Media Services Live Streaming].
+- Added HLS auto target duration. When doing live streaming, HLS is always packaged dynamically. By default, Media Services automatically calculates HLS segment packaging ratio (FragmentsPerSegment) based on the keyframe interval (KeyFrameInterval ), also referred to as Group of Pictures - GOP, that is received from the Live encoder. For more information, see [Working with Azure Media Services Live Streaming].
  
 ###Media Services .NET SDK Updates
 
 - [Azure Media Services .NET SDK](http://www.nuget.org/packages/windowsazure.mediaservices/) is now version 3.1.0.0.
 - Upgraded the .Net SDK dependency to .NET 4.5 Framework.
-- Added a new API that enables you to update encoding reserved units. For more information, see [Updating Reserved Unit Type and Increasing Encoding RUs using .NET](http://msdn.microsoft.com/zh-cn/library/azure/jj129582.aspx).
+- Added a new API that enables you to update encoding reserved units. For more information, see [Updating Reserved Unit Type and Increasing Encoding RUs using .NET](/documentation/articles/media-services-dotnet-encoding-units).
 - Added JWT (JSON Web Token) support for token authentication. For more information, see [JWT token Authentication in Azure Media Services and Dynamic Encryption](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/).
 - Added relative offsets for BeginDate and ExpirationDate in the PlayReady license template.
 
@@ -227,7 +248,7 @@ This release marked the default Microsoft.WindowsAzure.MediaServices.Client.Cont
 - Media Services now enables you to ingest a live Smooth Streaming (FMP4) content over an SSL connection. To ingest over SSL, make sure to update the ingest URL to HTTPS.  For more information about live streaming, see [Working with Azure Media Services Live Streaming].
 - Note that currently, you cannot ingest an RTMP live stream over an SSL connection.
 - You can also stream your content over an SSL connection. To do this, make sure your streaming URLs start with HTTPS.
-- Note that you can only stream over SSL if the streaming endpoint from which you deliver your content was created after September 10th, 2014. If your streaming URLs are based on the streaming endpoints created after September 10th, the URL contains “streaming.mediaservices.chinacloudapi.cn” (the new format). Streaming URLs that contain “origin.mediaservices.chinacloudapi.cn” (the old format) do not support SSL. If your URL is in the old format and you want to be able to stream over SSL, [create a new streaming endpoint](/documentation/articles/media-services-manage-origins). Use URLs created based on the new streaming endpoint to stream your content over SSL.
+- Note that you can only stream over SSL if the streaming endpoint from which you deliver your content was created after September 10th, 2014. If your streaming URLs are based on the streaming endpoints created after September 10th, the URL contains "streaming.mediaservices.chinacloudapi.cn" (the new format). Streaming URLs that contain "origin.mediaservices.chinacloudapi.cn" (the old format) do not support SSL. If your URL is in the old format and you want to be able to stream over SSL, [create a new streaming endpoint](/documentation/articles/media-services-manage-origins). Use URLs created based on the new streaming endpoint to stream your content over SSL.
    
 ##<a id="october_changes_14"></a>October 2014 Release
 
@@ -264,15 +285,15 @@ Media Services SDK for .NET is now version 3.0.0.7
 ### <a id="sept_14_breaking_changes"></a>Breaking Changes
 
 * **Origin** was renamed to [StreamingEndpoint].
-* A change in the default behavior when using the **Azure Management Portal** to encode and then publish MP4 files. 
+* A change in the default behavior when using the **Azure Management Portal** to encode and then publish MP4 files.
 
-	Previously, when using the Management Portal to publish a single-file MP4 video asset a SAS URL would be created (SAS URLs allow you to download the video from a blob storage). Currently, when you use the Management Portal to encode and then publish a single-file MP4 video asset, the generated URL points to an Azure Media Services streaming endpoint.  This change does not affect MP4 videos that are directly uploaded to Media Services and published without being encoded by Azure Media Services.
-	
-	Currently, you have the following two options to solve the problem. 
-	
-	* Enable streaming units and use dynamic packaging to stream the .mp4 asset as a smooth streaming presentation.
-	
-	* Create a SAS url to download (or progressively play) the .mp4. For more information about how to create a SAS locator, see [Delivering Content]. 
+Previously, when using the Azure Management Portal to publish a single-file MP4 video asset a SAS URL would be created (SAS URLs allow you to download the video from a blob storage). Currently, when you use the Azure Management Portal to encode and then publish a single-file MP4 video asset, the generated URL points to an Azure Media Services streaming endpoint.  This change does not affect MP4 videos that are directly uploaded to Media Services and published without being encoded by Azure Media Services.
+
+Currently, you have the following two options to solve the problem.
+
+* Enable streaming units and use dynamic packaging to stream the .mp4 asset as a smooth streaming presentation.
+
+* Create a SAS url to download (or progressively play) the .mp4. For more information about how to create a SAS locator, see [Delivering Content].
 
 
 ### <a id="sept_14_GA_changes"></a>New features\scenarios that are part of GA release
@@ -289,7 +310,7 @@ Media Services SDK for .NET is now version 3.0.0.7
 	
 	* The ownership of the domain name must be validated by Azure Media Services. To validate the domain, create a CName that maps <MediaServicesAccountId>.<parent domain> to verifydns.<mediaservices-dns-zone>. 
 	
-	* You must create another CName  that maps the custom host name (for example,  sports.contoso.com) to your Media Services StreamingEndpont’s host name (for example,  amstest.streaming.mediaservices.chinacloudapi.cn).
+	* You must create another CName  that maps the custom host name (for example,  sports.contoso.com) to your Media Services StreamingEndpont's host name (for example,  amstest.streaming.mediaservices.chinacloudapi.cn).
 
 
 	For more information, see the **CustomHostNames** property in the [StreamingEndpoint] topic.
@@ -319,9 +340,9 @@ When you encode an asset, an output asset is produced upon completion of the enc
 
 The following bug fixes were made for the Azure Media Services Packager and Encryptor:
 
-* Only audio plays back when transmuxing a live archive asset to HTTP Live Streaming – this has been fixed and now both audio and video are played.
+* Only audio plays back when transmuxing a live archive asset to HTTP Live Streaming - this has been fixed and now both audio and video are played.
 
-* When packaging an asset to HTTP Live Streaming and AES 128-bit envelope encryption, the packaged streams do not play back on Android devices – this bug has been fixed and the packaged stream plays back on Android devices that support HTTP Live Streaming.
+* When packaging an asset to HTTP Live Streaming and AES 128-bit envelope encryption, the packaged streams do not play back on Android devices - this bug has been fixed and the packaged stream plays back on Android devices that support HTTP Live Streaming.
 
 ##<a id="may_changes_14"></a>May 2014 Release
 
@@ -387,7 +408,7 @@ The following changes were made in 3.0.0.3:
 
 The latest version of the Media Services SDK is now 3.0.0.0. You can download the latest package from Nuget or get the bits from [GitHub].
 
-Starting with the Media Services SDK version 3.0.0.0, you can reuse the [Azure Active Directory Access Control Service (ACS)] tokens. For more information, see the “Reusing Access Control Service Tokens” section in the [Connecting to Media Services with the Media Services SDK for .NET] topic.
+Starting with the Media Services SDK version 3.0.0.0, you can reuse the [Azure Active Directory Access Control Service (ACS)] tokens. For more information, see the "Reusing Access Control Service Tokens" section in the [Connecting to Media Services with the Media Services SDK for .NET] topic.
 
 ### <a name="dec_13_donnet_ext_changes"></a>Azure Media Services .NET SDK Extensions 2.0.0.0
 
@@ -411,15 +432,15 @@ The following Media Services PowerShell cmdlets are now included in [azure-sdk-t
 
 * New-AzureMediaServicesAccount 
 
-	For example, `New-AzureMediaServicesAccount -Name “MediaAccountName” -Location “Region” -StorageAccountName “StorageAccountName”`.
+	For example, `New-AzureMediaServicesAccount -Name "MediaAccountName" -Location "Region" -StorageAccountName "StorageAccountName"`.
 
 * New-AzureMediaServicesKey 
 
-	For example, `New-AzureMediaServicesKey -Name “MediaAccountName” -KeyType Secondary -Force`.
+	For example, `New-AzureMediaServicesKey -Name "MediaAccountName" -KeyType Secondary -Force`.
 
 * Remove-AzureMediaServicesAccount 
 
-	For example, `Remove-AzureMediaServicesAccount -Name “MediaAccountName” -Force`.
+	For example, `Remove-AzureMediaServicesAccount -Name "MediaAccountName" -Force`.
 
 ##<a id="june_changes_13"></a>June 2013 Release
 
@@ -562,14 +583,12 @@ The following functionality was new in the November release of the SDK.
 	Asynchronous support has been added to all methods.
 
 
-<!-- deleted by customization
 ##Media Services learning paths
 
 [AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
 ##Provide feedback
 
--->
 [AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 
@@ -584,31 +603,29 @@ The following functionality was new in the November release of the SDK.
 [Input Metadata]: http://msdn.microsoft.com/zh-cn/library/azure/dn783120.aspx
 [Output Metadata]: http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx
 [Delivering Content]: http://msdn.microsoft.com/zh-cn/library/azure/hh973618.aspx
-[Indexing Media Files with Azure Media Indexer]: http://msdn.microsoft.com/zh-cn/library/azure/dn783455.aspx
+[Indexing Media Files with Azure Media Indexer]: /documentation/articles/media-services-index-content
 [StreamingEndpoint]: http://msdn.microsoft.com/zh-cn/library/azure/dn783468.aspx
-[Working with Azure Media Services Live Streaming]: http://msdn.microsoft.com/zh-cn/library/azure/dn783466.aspx
-[Using AES-128 Dynamic Encryption and Key Delivery Service]: http://msdn.microsoft.com/zh-cn/library/azure/dn783457.aspx
-[Using PlayReady Dynamic Encryption and License Delivery Service]: http://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx
-<!-- deleted by customization
+[Working with Azure Media Services Live Streaming]: /documentation/articles/media-services-manage-channels-overview
+[Using AES-128 Dynamic Encryption and Key Delivery Service]: /documentation/articles/media-services-protect-with-aes128
+[Using PlayReady Dynamic Encryption and License Delivery Service]: /documentation/articles/media-services-protect-with-drm
 [Preview features]: http://azure.microsoft.com/services/preview/
--->
 [Media Services PlayReady License Template Overview]: http://msdn.microsoft.com/zh-cn/library/azure/dn783459.aspx
-[Streaming Storage Encrypted Content]: http://msdn.microsoft.com/zh-cn/library/azure/dn783451.aspx
+[Streaming Storage Encrypted Content]: /documentation/articles/media-services-dotnet-configure-asset-delivery-policy
 [Azure Management Portal]: https://manage.windowsazure.cn
-[Dynamic Packaging]: http://msdn.microsoft.com/zh-cn/library/azure/jj889436.aspx
+[Dynamic Packaging]: /documentation/articles/media-services-dynamic-packaging-overview
 [Nick Drouin's Blog]: http://blog-ndrouin.chinacloudsites.cn/hls-v3-new-old-thing/
-[Protecting Smooth Stream with PlayReady]: http://msdn.microsoft.com/zh-cn/library/azure/dn189154.aspx
+[Protecting Smooth Stream with PlayReady]: /documentation/articles/media-services-static-packaging
 [Retry Logic in the Media Services SDK for .NET]: http://msdn.microsoft.com/zh-cn/library/azure/dn745650.aspx
 [Grass Valley Announces EDIUS 7 Streaming Through the Cloud]: http://www.streamingmedia.com/Producer/Articles/ReadArticle.aspx?ArticleID=96351&utm_source=dlvr.it&utm_medium=twitter
-[Controlling Media Service Encoder Output Filenames]: http://msdn.microsoft.com/zh-cn/library/azure/dn303341.aspx
-[Creating Overlays]: http://msdn.microsoft.com/zh-cn/library/azure/dn640496.aspx
-[Stitching Video Segments]: http://msdn.microsoft.com/zh-cn/library/azure/dn640504.aspx
+[Controlling Media Service Encoder Output Filenames]: /documentation/articles/media-services-azure-media-customize-ame-presets
+[Creating Overlays]: /documentation/articles/media-services-azure-media-customize-ame-presets
+[Stitching Video Segments]: /documentation/articles/media-services-azure-media-customize-ame-presets
 [Azure Media Services .NET SDK 3.0.0.1 and 3.0.0.2 releases]: http://www.gtrifonov.com/2014/02/07/windows-azure-media-services-.net-sdk-3.0.0.2-release/
 [Azure Active Directory Access Control Service (ACS)]: http://msdn.microsoft.com/zh-cn/library/hh147631.aspx
-[Connecting to Media Services with the Media Services SDK for .NET]: http://msdn.microsoft.com/zh-cn/library/azure/jj129571.aspx
+[Connecting to Media Services with the Media Services SDK for .NET]: /documentation/articles/media-services-dotnet-connect_programmatically
 [Azure Media Services .NET SDK Extensions]: https://github.com/Azure/azure-sdk-for-media-services-extensions/tree/dev
 [azure-sdk-tools]: https://github.com/Azure/azure-sdk-tools
 [GitHub]: https://github.com/Azure/azure-sdk-for-media-services
-[Managing Media Services Assets across Multiple Storage Accounts]: http://msdn.microsoft.com/zh-cn/library/azure/dn271889.aspx
-[Handling Media Services Job Notifications]: http://msdn.microsoft.com/zh-cn/library/azure/dn261241.aspx
+[Managing Media Services Assets across Multiple Storage Accounts]: /documentation/articles/meda-services-managing-multiple-storage-accounts
+[Handling Media Services Job Notifications]: /documentation/articles/media-services-check-job-progress#check_progress_with_queues
  

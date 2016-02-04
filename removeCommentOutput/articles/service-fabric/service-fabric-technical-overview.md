@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Technical Overview"
-   description="A technical overview of Service Fabric. Discusses key concepts and architectural overview"
+   pageTitle="Service Fabric technical overview | Windows Azure"
+   description="A technical overview of Service Fabric. Discusses key concepts and architectural overview."
    services="service-fabric"
    documentationCenter=".net"
    authors="msfussell"
@@ -8,13 +8,9 @@
    editor="chackdan;subramar"/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/25/2015"
-   ms.author="mfussell"/>
+	ms.service="service-fabric"
+	ms.date="08/25/2015"
+	wacn.date=""/>
 
 # Technical overview of Service Fabric
 
@@ -26,7 +22,7 @@ Service Fabric is a distributed systems platform that makes it easy to build sca
 
 **Node** - An addressable unit in a cluster. Nodes have characteristics such as placement properties and unique IDs. Nodes can join a cluster and correlate to an operating system instance with Fabric.exe running.
 
-**Application / Application Type** - A collection of (micro)services. Think of an application type as a container for one or more service types.  Please refer to the [Application Model](service-fabric-application-model.md) article to understand how a cluster (which itself consists of multiple nodes) may consist of multiple ApplicationTypes.
+**Application / Application Type** - A collection of (micro)services. Think of an application type as a container for one or more service types.  Please refer to the [Application Model](/documentation/articles/service-fabric-application-model) article to understand how a cluster (which itself consists of multiple nodes) may consist of multiple ApplicationTypes.
 
 **Service / Service Type** - Code and configuration that performs a standalone function (it can start and run independently), for example, a queue service or database service. An ApplicationType may consist of one ore more ServiceTypes. There are two kinds of services types:
 
@@ -50,6 +46,6 @@ Service Fabric is a distributed systems platform that makes it easy to build sca
 ## Next steps
 To learn more about Service Fabric, see:
 
-- [Application Model](service-fabric-application-model.md)
-- [Application Scenarios](service-fabric-application-scenarios.md)
+- [Application Model](/documentation/articles/service-fabric-application-model)
+- [Application Scenarios](/documentation/articles/service-fabric-application-scenarios)
  

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Comparison: Apache Storm vs. Azure Stream Analytics | Microsoft Azure"
+	pageTitle="Comparison: Apache Storm vs. Azure Stream Analytics | Windows Azure"
 	description="Learn how to use Stream Analytics for real-time Twitter sentiment analysis. Step-by-step guidance from event generation to data on a live dashboard."
 	keywords="real-time twitter,sentiment analysis,social media analysis,social media analytics tools"
 	services="stream-analytics"
@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="big-data"
-	ms.date="10/13/2015"
-	ms.author="jeffstok"/>
+	ms.date="11/06/2015"
+	wacn.date=""/>
 
 # Comparison of Apache Storm and Azure Stream Analytics #
 
@@ -124,7 +120,7 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
                     Stream Analytics is priced by volume of data processed and the number of streaming units (per hour the job is running) required.
                 </p>
                 <p>
-                    <a href="http://azure.microsoft.com/en-us/pricing/details/stream-analytics/">Further pricing information can be found here.</a>
+                    <a href="http://azure.microsoft.com/home/features/stream-analytics/#price">Further pricing information can be found here.</a>
                 </p>
             </td>
             <td width="246" valign="top">
@@ -132,7 +128,7 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
                     For Apache Storm on HDInsight, the unit of purchase is cluster-based, and is charged based on the time the cluster is running, independent of jobs deployed.
                 </p>
                 <p>
-                    <a href="http://azure.microsoft.com/en-us/pricing/details/hdinsight/">Further pricing information can be found here.</a>
+                    <a href="http://azure.microsoft.com/home/features/hdinsight/#price">Further pricing information can be found here.</a>
                 </p>
             </td>
         </tr>
@@ -200,7 +196,7 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
             </td>
             <td width="204" valign="top">
                 <p>
-                    Interactive authoring and debugging experience through Azure Portal on sample data.
+                    Interactive authoring and debugging experience through Azure Management Portal on sample data.
                 </p>
             </td>
             <td width="246" valign="top">
@@ -377,7 +373,7 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
                     <strong>Job Deployment model</strong>
                 </p>
                 <p>
-                    - <strong>Azure Portal</strong>
+                    - <strong>Azure Management Portal</strong>
                 </p>
                 <p>
                     - <strong>Visual Studio</strong>
@@ -388,12 +384,12 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
             </td>
             <td width="204" valign="top">
                 <p>
-                    Deployment is implemented via Azure Portal, PowerShell and REST APIs.
+                    Deployment is implemented via Azure Management Portal, PowerShell and REST APIs.
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
-                    Depolyment is implemented via Azure Portal, PowerShell, Visual Studio and REST APIs.
+                    Depolyment is implemented via Azure Management Portal, PowerShell, Visual Studio and REST APIs.
                 </p>
             </td>
         </tr>
@@ -405,7 +401,7 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
             </td>
             <td width="204" valign="top">
                 <p>
-                    Monitoring is implemented via Azure Portal and REST APIs.
+                    Monitoring is implemented via Azure Management Portal and REST APIs.
                 </p>
                 <p>
                     The user may also configure Azure alerts.
@@ -491,7 +487,7 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
         <tr>
             <td width="174" valign="top">
                 <p>
-                    <strong>Business continuity through a Highly Available Service with guaranteed SLA’s</strong>
+                    <strong>Business continuity through a Highly Available Service with guaranteed SLAâs</strong>
                 </p>
             </td>
             <td width="204" valign="top">

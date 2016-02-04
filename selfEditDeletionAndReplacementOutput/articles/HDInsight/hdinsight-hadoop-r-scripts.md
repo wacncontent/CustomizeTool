@@ -4,43 +4,37 @@ deleted:
 
 		For information on using R with a Linux-based cluster, see [Install and use R on HDinsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-r-scripts-linux).
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		, Spark
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		- [Install and use R on HDinsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-r-scripts-linux)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		- [Install and use R on HDinsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-r-scripts-linux)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		- [Install and use Spark on HDInsight clusters][hdinsight-install-spark]: Script Action sample about installing Spark
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-linux): Script Action sample about installing Solr.
 
-reason: ()
-
-deleted:
-
-		[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install-linux
-
-reason: ()
+reason: (Linux Support)
 
 replacement:
 
@@ -52,7 +46,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -64,7 +58,7 @@ replaced by:
 		1. Start provisioning a cluster by using the **CUSTOM CREATE** option, as described at [Provisioning a cluster using custom options](/documentation/articles/hdinsight-provision-clusters#portal). 
 		2. On the **Script Actions** page of the wizard, click **Add script action** to provide details about the script actions, as follows:
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -74,7 +68,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -144,7 +138,7 @@ replaced by:
 		
 		When prompted, enter the credentials for the cluster. It can take several minutes before the cluster is created.
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
@@ -276,5 +270,5 @@ replaced by:
 		
 		Provide a cluster name and press ENTER to provision a cluster with R installed.
 
-reason: ()
+reason: (Spark managment)
 

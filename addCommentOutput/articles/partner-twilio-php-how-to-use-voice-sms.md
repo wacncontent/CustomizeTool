@@ -194,7 +194,7 @@ As you can see from the example above, the TwiML response is simply an XML docum
 
 For more information about TwiML, see [https://www.twilio.com/docs/api/twiml][twiml_reference]. 
 
-Once you have your PHP page set up to provide TwiML responses, use the URL of the PHP page as the URL passed into the  `Services_Twilio->account->calls->create`  method. For example, if you have a Web application named **MyTwiML** deployed to an Azure hosted service, and the name of the PHP page is **mytwiml.php**, the URL can be passed to  **Services_Twilio->account->calls->create**  as shown in the following example:
+Once you have your PHP page set up to provide TwiML responses, use the URL of the PHP page as the URL passed into the  `Services_Twilio->account->calls->create`  method. For example, if you have a <!-- deleted by customization web site --><!-- keep by customization: begin --> Web Site <!-- keep by customization: end --> named **MyTwiML** deployed to an Azure hosted service, and the name of the PHP page is **mytwiml.php**, the URL can be passed to  **Services_Twilio->account->calls->create**  as shown in the following example:
 
 	require_once 'Services/Twilio.php';
 
@@ -241,7 +241,7 @@ Now that you've learned the basics of the Twilio service, follow these links to 
 [twilio_github_readme]: https://github.com/twilio/twilio-php/blob/master/README.md
 [ssl_validation]: http://readthedocs.org/docs/twilio-php/en/latest/usage/rest.html
 [twilio_api_service]: https://api.twilio.com
-[howto_phonecall_php]: /documentation/articles/partner-twilio-php-make-phone-call
+[howto_phonecall_php]: partner-twilio-php-make-phone-call.md
 [twilio_voice_request]: https://www.twilio.com/docs/api/twiml/twilio_request
 [twilio_sms_request]: https://www.twilio.com/docs/api/twiml/sms/twilio_request
 [misc_role_config_settings]: http://msdn.microsoft.com/zh-cn/library/azure/hh690945.aspx

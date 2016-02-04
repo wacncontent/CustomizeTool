@@ -157,6 +157,9 @@ You can attach both empty disks and disks that contain data. In both cases, the 
 
 	If the `mount` command produces an error, check the /etc/fstab file for correct syntax. If additional data drives or partitions are created you will need to enter them into /etc/fstab separately as well.
 
+	You will need to make the drive writable by using these commands:
+		# cd /datadrive
+		# sudo chmod go+w /datadrive
 
 >[AZURE.NOTE] Subsequently removing a data disk without editing fstab could cause the VM to fail to boot. If this is a common occurrence, most distributions provide either the `nofail` and/or `nobootwait` fstab options that will allow a system to boot even if the disk fails to mount at boot time. Please consult your distribution's documentation for more information on these parameters.
 
@@ -168,5 +171,5 @@ You can attach both empty disks and disks that contain data. In both cases, the 
 [Using the Azure CLI with the Service Management API](/documentation/articles/virtual-machines-command-line-tools)
 
 <!--Link references-->
-[Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide
-[Logon]: /documentation/articles/virtual-machines-linux-how-to-log-on
+[Agent]: virtual-machines-linux-agent-user-guide.md
+[Logon]: virtual-machines-linux-how-to-log-on.md

@@ -16,7 +16,7 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](/documentation/articles/sql-database-upgrade-server-portal)
+- [Azure Management Portal](/documentation/articles/sql-database-upgrade-server-portal)
 - [PowerShell](/documentation/articles/sql-database-upgrade-server-powershell)
 
 
@@ -39,7 +39,7 @@ Note that your databases will remain online and continue to work throughout the 
 
 Upgrading to SQL Database V12 cannot be undone. After an upgrade the server cannot be reverted to V11. 
 
-After upgrading to V12, [service tier recommendations](/documentation/articles/sql-database-service-tier-advisor) and [elastic pool recommendations](/documentation/articles/sql-database-elastic-pool-portal#step-2-choose-a-pricing-tier) will not immediately be available until the service has time to evaluate your workloads on the new server. V11 server recommendation history does not apply to V12 servers so it is not retained.  
+After upgrading to V12, [service tier recommendations](/documentation/articles/sql-database-service-tier-advisor) and [elastic pool recommendations](/documentation/articles/sql-database-elastic-pool-portal/#step-2-choose-a-pricing-tier) will not immediately be available until the service has time to evaluate your workloads on the new server. V11 server recommendation history does not apply to V12 servers so it is not retained.
 
 ## Prepare to upgrade
 
@@ -79,7 +79,7 @@ To get the recommendation for the server upgrade run the following cmdlet:
 
     $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName “resourcegroup1” -ServerName “server1” 
 
-For more information, see [Azure SQL Database elastic database pool recommendations](/documentation/articles/sql-database-elastic-pool-portal#elastic-database-pool-pricing-tier-recommendations) and [Azure SQL Database picing tier recommendations](/documentation/articles/sql-database-service-tier-advisor). 
+For more information, see [Azure SQL Database elastic database pool recommendations](/documentation/articles/sql-database-elastic-pool-portal/#elastic-database-pool-pricing-tier-recommendations) and [Azure SQL Database picing tier recommendations](/documentation/articles/sql-database-service-tier-advisor).
 
 
 
@@ -150,7 +150,7 @@ ElasticPoolCollection and DatabaseCollection parameters are optional:
      
     # Starting the upgrade
     #
-    Start-AzureRmSqlServerUpgrade –ResourceGroupName resourcegroup1 –ServerName server1 -Version 12.0 -DatabaseCollection @($databaseMap1, $databaseMap2) -ElasticPoolCollection @($elasticPool) 
+    Start-AzureRmSqlServerUpgrade -ResourceGroupName resourcegroup1 -ServerName server1 -Version 12.0 -DatabaseCollection @($databaseMap1, $databaseMap2) -ElasticPoolCollection @($elasticPool) 
 
     
 
@@ -159,7 +159,7 @@ ElasticPoolCollection and DatabaseCollection parameters are optional:
 
 After upgrading, it is recommended to monitor the database actively to ensure applications are running at the desired performance and optimize usage as needed. 
 
-In addition to monitoring individual databases you can monitor elastic database pools [using the portal](/documentation/articles/sql-database-elastic-pool-portal#monitor-and-manage-an-elastic-database-pool) or with [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell#monitoring-elastic-databases-and-elastic-database-pools) 
+In addition to monitoring individual databases you can monitor elastic database pools [using the portal](/documentation/articles/sql-database-elastic-pool-portal/#monitor-and-manage-an-elastic-database-pool) or with [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell/#monitoring-elastic-databases-and-elastic-database-pools) 
 
 
 **Resource consumption data:** For Basic, Standard, and Premium databases resource consumption data is available through the [sys.dm_ db_ resource_stats](http://msdn.microsoft.com/zh-cn/library/azure/dn800981.aspx) DMV in the user database. This DMV provides near real time resource consumption information at 15 second granularity for the previous hour of operation. The DTU percentage consumption for an interval is computed as the maximum percentage consumption of the CPU, IO and log dimensions. Here is a query to compute the average DTU percentage consumption over the last hour:
@@ -176,7 +176,7 @@ In addition to monitoring individual databases you can monitor elastic database 
 Additional monitoring information:
 
 - [Azure SQL Database performance guidance for single databases](http://msdn.microsoft.com/zh-cn/library/azure/dn369873.aspx).
-- [Price and performance considerations for an elastic database pool](sql-database=elastic-pool-guidance.md).
+- [Price and performance considerations for an elastic database pool](/documentation/articles/sql-database=elastic-pool-guidance).
 - [Monitoring Azure SQL Database using dynamic management views](/documentation/articles/sql-database-monitoring-with-dmvs)
 
 

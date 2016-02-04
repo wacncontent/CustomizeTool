@@ -1,25 +1,21 @@
 <properties 
-   pageTitle="Hardware for StorSimple 10 GbE interfaces | Microsoft Azure"
+   pageTitle="Hardware for StorSimple 10 GbE interfaces | Windows Azure"
    description="Describes the supported small form-factor pluggable (SFP) transceivers, cables, and switches for the 10 GbE network interfaces on your StorSimple device."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/27/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="08/27/2015"
+	wacn.date=""/>
 
 # Supported hardware for the 10 GbE network interfaces on your StorSimple device
 
 ## Overview
 
-This article provides information about supplementary hardware that works with your Microsoft Azure StorSimple device.
+This article provides information about supplementary hardware that works with your <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple device.
 
 ## List of supported devices
 
@@ -110,4 +106,4 @@ The following table lists the switches supported by Mellanox. These have not bee
 
 ## Next steps
 
-[Learn more about StorSimple hardware components and status](storsimple-monitor-hardware-status.md).
+[Learn more about StorSimple hardware components and <!-- deleted by customization status](/documentation/articles/storsimple-monitor-hardware-status) --><!-- keep by customization: begin --> status](storsimple-monitor-hardware-status.md) <!-- keep by customization: end -->.

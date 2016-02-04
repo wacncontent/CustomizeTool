@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Access Hadoop YARN application logs on Linux-based HDInsight | Windows Azure"
 	description="Learn how to access YARN application logs on a Linux-based HDInsight (Hadoop) cluster using both the command-line and a web browser."
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/19/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Access YARN application logs on Linux-based HDInsight

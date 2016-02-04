@@ -19,7 +19,7 @@ This guide will explain how to access Blitline services and how to submit jobs t
 
 Blitline is a cloud-based image processing service that provides enterprise level image processing at a fraction of the price that it would cost to build it yourself.
 
-The fact is that image processing has been done over and over again, usually rebuilt from the ground up for each and every website. We realize this because we’ve built them a million times too. One day we decided that perhaps it‘s time we just do it for everyone. We know how to do it, to do it fast and efficiently, and save everyone work in the meantime.
+The fact is that image processing has been done over and over again, usually rebuilt from the ground up for each and every website. We realize this because weâve built them a million times too. One day we decided that perhaps itâs time we just do it for everyone. We know how to do it, to do it fast and efficiently, and save everyone work in the meantime.
 
 For more information, see [http://www.blitline.com](http://www.blitline.com).
 

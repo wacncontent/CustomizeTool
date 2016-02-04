@@ -58,7 +58,7 @@ In the above diagram:
 ## Calls Between Azure Websites Environments ##
 A more complex scenario can occur if you deploy multiple Azure Websites Environments in the same virtual network, and make outbound calls from one Azure Websites Environment to another Azure Websites Environment.  These types of cross Azure Websites Environment calls will also be treated as "Internet" calls.
 
-The following diagram shows an example of a layered architecture with apps on one Azure Websites Environment (e.g. "Front door" web apps) calling apps on a second Azure Websites Environment (e.g. internal back-end API apps not intended to be accessible from the Internet). 
+The following diagram shows an example of a layered architecture with apps on one Azure Websites Environment (e.g. "Front door" web sites) calling apps on a second Azure Websites Environment (e.g. internal back-end API apps not intended to be accessible from the Internet). 
 
 ![Calls Between Azure Websites Environments][CallsBetweenAppServiceEnvironments] 
 

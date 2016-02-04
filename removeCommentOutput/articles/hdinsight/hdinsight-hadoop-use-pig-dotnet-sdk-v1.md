@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Run Pig jobs using the .NET SDK for Hadoop in HDInsight
@@ -22,7 +22,7 @@ The HDInsight .NET SDK provides .NET client libraries that makes it easier to wo
 
 [AZURE.INCLUDE [azure-preview-portal](../includes/hdinsight-azure-portal.md)]
 
-* [Run Pig jobs using the .NET SDK for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk)
+* [Run Pig jobs using the .NET SDK for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1)
 
 ##<a id="prereq"></a>Prerequisites
 

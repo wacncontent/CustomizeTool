@@ -8,7 +8,7 @@
  editor=""
  tags="azure-service-management"/>
 <tags
-	ms.service="virtual-machines"
+ms.service="virtual-machines"
 	ms.date="09/28/2015"
 	wacn.date=""/>
 
@@ -35,7 +35,7 @@ run each of the scripts as an administrator.
     * **Import the Azure publish settings file**. To do this, run the following Azure PowerShell cmdlets on the head node:
         ```
         Get-AzurePublishSettingsFile  
-Import-AzurePublishSettingsFile –PublishSettingsFile <publish settings file>
+Import-AzurePublishSettingsFile -PublishSettingsFile <publish settings file>
         ```
     * **Configure the Azure management certificate on the head node**. If you have the .cer file, import it in the CurrentUser\My certificate store and then run the following Azure PowerShell cmdlet for your Azure environment (either AzureCloud or AzureChinaCloud):
 
@@ -77,7 +77,7 @@ Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
 
 * **DomainUserPassword*** Password of the domain user
 
-* **NodeNameSeries** (optional) 0 Naming pattern for the compute nodes. format must be &lt;*Root\_Name*&gt;&lt;*Start\_Number*&gt;%. For example, MyCN%10% means a series of the compute node names starting from MyCN11. If not specified, the script uses the configured node naming series in the HPC cluster.
+* **NodeNameSeries** (optional) 0 Naming pattern for the compute nodes. format must be &lt;*Root_Name*&gt;&lt;*Start_Number*&gt;%. For example, MyCN%10% means a series of the compute node names starting from MyCN11. If not specified, the script uses the configured node naming series in the HPC cluster.
 
 ### Example
 
@@ -85,8 +85,8 @@ The following example adds 20 size Large compute node VMs in the cloud
 service hpcservice1, based on the VM image hpccnimage1.
 
 ```
-Add-HPCIaaSNode.ps1 –ServiceName hpcservice1 –ImageName hpccniamge1
-–Quantity 20 –InstanceSize Large –DomainUserName <username>
+Add-HPCIaaSNode.ps1 -ServiceName hpcservice1 -ImageName hpccniamge1
+-Quantity 20 -InstanceSize Large -DomainUserName <username>
 -DomainUserPassword <password>
 ```
 
@@ -123,7 +123,7 @@ The following example forces offline nodes with names beginning
 *HPCNode-CN-* and them removes the nodes and their associated disks.
 
 ```
-Remove-HPCIaaSNode.ps1 –Name HPCNodeCN-* –DeleteVHD -Force
+Remove-HPCIaaSNode.ps1 -Name HPCNodeCN-* -DeleteVHD -Force
 ```
 
 ## Start compute node VMs
@@ -148,7 +148,7 @@ Start-HPCIaaSNode.ps1 -Node <Object> [<CommonParameters>]
 The following example starts nodes with names beginning *HPCNode-CN-*.
 
 ```
-Start-HPCIaaSNode.ps1 –Name HPCNodeCN-*
+Start-HPCIaaSNode.ps1 -Name HPCNodeCN-*
 ```
 
 ## Stop compute node VMs
@@ -177,7 +177,7 @@ Stop-HPCIaaSNode.ps1 -Node <Object> [-Force] [<CommonParameters>]
 The following example forces offline nodes with names beginning
 *HPCNode-CN-* and then stops the nodes.
 
-Stop-HPCIaaSNode.ps1 –Name HPCNodeCN-* -Force
+Stop-HPCIaaSNode.ps1 -Name HPCNodeCN-* -Force
 
 ## Next steps
 

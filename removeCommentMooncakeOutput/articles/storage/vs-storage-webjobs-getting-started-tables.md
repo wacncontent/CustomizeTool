@@ -3,25 +3,17 @@
 	description="How to get started using Azure Table storage in an Azure WebJobs project in Visual Studio after connecting to a storage account using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
-<tags
-	ms.service="storage"
-	ms.date="09/03/2015"
+<tags 
+	ms.service="storage" 
+
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Getting Started with Azure Storage (Azure WebJob Projects)
-
-> [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-webjobs-getting-started-tables)
-> - [What happened](/documentation/articles/vs-storage-webjobs-what-happened)
-> - [Blobs](/documentation/articles/vs-storage-webjobs-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-webjobs-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-webjobs-getting-started-tables)
-
-
 
 ## Overview
 
@@ -30,7 +22,7 @@ This article provides C# code samples that show show how to use the Azure WebJob
 The Azure Table storage service enables you to store large amounts of structured data. The service is a NoSQL datastore that accepts authenticated calls from inside and outside the Azure cloud. Azure tables are ideal for storing structured, non-relational data.  See [How to use Table Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-tables#create-a-table "How to use Table Storage from .NET") for more information.
 
 
-Some of the code snippets show the **Table** attribute used in functions that are [called manually](/documentation/articles/vs-storage-webjobs-getting-started-blobs#manual), that is, not by using one of the trigger attributes.
+Some of the code snippets show the **Table** attribute used in functions that are [called manually](/documentation/articles/vs-storage-webjobs-getting-started-blobs#manual), that is, not by using one of the trigger attributes. 
 
 ## How to add entities to a table
 
@@ -147,14 +139,15 @@ The following code sample uses a **CloudTable** object to add a single entity to
 		    tableBinding.Execute(insertOperation);
 		}
 
-For more information about how to use the **CloudTable** object, see [How to use Table Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-tables).
+For more information about how to use the **CloudTable** object, see [How to use Table Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-tables). 
 
 ## Related topics covered by the queues how-to article
 
-For information about how to handle table processing triggered by a queue message, or for WebJobs SDK scenarios not specific to table processing, see [How to use Azure queue storage with the WebJobs SDK](/documentation/articles/vs-storage-webjobs-getting-started-queues).
+For information about how to handle table processing triggered by a queue message, or for WebJobs SDK scenarios not specific to table processing, see [How to use Azure queue storage with the WebJobs SDK](/documentation/articles/vs-storage-webjobs-getting-started-queues). 
 
 
 
 ## Next steps
 
-This article has provided code samples that show how to handle common scenarios for working with Azure tables. For more information about how to use Azure WebJobs and the WebJobs SDK, see [Azure WebJobs Recommended Resources](/documentation/articles/websites-webjobs-resources/).
+This article has provided code samples that show how to handle common scenarios for working with Azure tables. For more information about how to use Azure WebJobs and the WebJobs SDK, see [Azure WebJobs Recommended Resources](/documentation/articles/websites-webjobs-resources).
+ 

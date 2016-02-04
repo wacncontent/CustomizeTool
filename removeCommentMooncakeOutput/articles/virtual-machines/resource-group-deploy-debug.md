@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-	ms.service="azure-resource-manager"
-	ms.date="10/14/2015"
-	wacn.date=""/>
+   ms.service="azure-resource-manager"
+   ms.date="10/14/2015"
+   wacn.date=""/>
 
 # Troubleshooting resource group deployments in Azure
 
@@ -204,9 +204,9 @@ For versions of PowerShell prior to 1.0 Preview, you can see the full list of re
 
     Name                                    Locations                               LocationsString
     ----                                    ---------                               ---------------
-    ResourceGroup                           {China East, China North... China East China North,...
-    Microsoft.ApiManagement/service         {China East, China North... China East China North,...
-    Microsoft.AppService/apiapps            {China East, China North... China East China North,...
+    ResourceGroup                           {China East, china North... China East China North,...
+    Microsoft.ApiManagement/service         {China East, china North... China East China North,...
+    Microsoft.AppService/apiapps            {China East, china North... China East China North,...
     ...
 
 You can specify a particular type of resource with:
@@ -217,6 +217,8 @@ You can specify a particular type of resource with:
     ----                                                        ---------------
     Microsoft.Compute/virtualMachines                           China East, China North
 
+
+
 ### Azure CLI
 
 For Azure CLI, you can use **azure location list**. Because the list of locations can be long, and there are many providers, you can use tools to examine providers and locations before you use a location that isn't available yet. The following script uses **jq** to discover the locations where the resource provider for Azure virtual machines is available.
@@ -224,7 +226,7 @@ For Azure CLI, you can use **azure location list**. Because the list of location
     azure location list --json | jq '.[] | select(.name == "Microsoft.Compute/virtualMachines")'
     {
       "name": "Microsoft.Compute/virtualMachines",
-      "location": "China East,China North"
+      "location": "China East,China East 2,China North,China North,China East,China North,West Europe,China East,China North,Japan East,China East"
     }
 
 ### REST API
@@ -343,8 +345,8 @@ Again, if you want more information about providers, including their regional av
                 "2014-02-14"
               ],
               "locations": [
-                "China North",
-                "China East"
+                "China East",
+                "China North"
               ],
               "properties": {},
               "name": "service"

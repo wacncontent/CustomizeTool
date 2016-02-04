@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/14/2015"
+	ms.date="11/24/2015"
 	wacn.date=""/>
 
 # Automatic device registration with Azure Active Directory for Windows Domain-Joined Devices
@@ -26,11 +26,11 @@ Deploy AD FS and connect to Azure Active Directory using Azure Active Directory 
 ----------------------------------------------------------------------------------------------
 1. Use Azure Active Directory Connect to deploy Active Directory Federation Services (AD FS) with Windows Server 2012 R2 and set up a federation relationship with Azure Active Directory.
 2. Configure an additional Azure Active Directory relying party trust claim rule.
-3. Open the AD FS management console and navigate to **AD FS**>**Trust Relationships>Relying Party Trusts**. Right-click on the Microsoft Office 365 Identity Platform relying party trust object and select **Edit Claim Rules…**
+3. Open the AD FS management console and navigate to **AD FS**>**Trust Relationships>Relying Party Trusts**. Right-click on the Microsoft Office 365 Identity Platform relying party trust object and select **Edit Claim RulesâŚ**
 4. On the **Issuance Transform Rules** tab, select **Add Rule**.
 5. Select **Send Claims Using a Custom Rule** from the **Claim rule** template drop down box. Select **Next**.
 6. Type *Auth Method Claim Rule* in the **Claim rule name:** text box.
-7. Type the following claim rule in the **Claim rule:** text box****
+7. Type the following claim rule in the **Claim rule:** text box**** 
 
         c:[Type == "http://schemas.microsoft.com/claims/authnmethodsreferences"]
         => issue(claim = c);
@@ -54,9 +54,9 @@ AD FS Global Authentication Policy
 Internet Explorer Configuration
 ------------------------------------------------------------------------------
 1. Configure the following settings on Internet Explorer on your Windows devices for the Local intranet security zone:
-    * Don’t prompt for client certificate selection when only one certificate exists:  **Enable**
+    * Donât prompt for client certificate selection when only one certificate exists:  **Enable**
     * Allow scripting:  **Enable**
-    * Automatic logon only in Intranet zone:  **Checked**
+* Automatic logon only in Intranet zone:  **Checked**
 
 These are the default settings for the Internet Explorer Local intranet security zone. You can view or manage these settings in Internet Explorer by navigating to **Internet Options** > **Security** > Local intranet > Custom level. You can also configure these settings using Active Directory Group Policy.
 

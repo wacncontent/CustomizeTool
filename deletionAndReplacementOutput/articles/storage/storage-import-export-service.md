@@ -9,17 +9,5 @@ deleted:
 			- China East
 			- China North
 
-reason: ()
-
-replacement:
-
-deleted:
-
-		Terms](/legal/services-terms/)
-
-replaced by:
-
-		Terms](/support/legal/services-terms/)
-
-reason: ()
+reason: (region diff)
 

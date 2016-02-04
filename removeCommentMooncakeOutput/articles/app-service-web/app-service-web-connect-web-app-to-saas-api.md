@@ -1,8 +1,8 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Connect a web app to an API app in Azure Websites" 
-	description="This tutorial shows you how to consume an API app from an ASP.NET web app hosted in Azure Websites." 
+	pageTitle="Connect a web site to an API app in Azure Websites" 
+	description="This tutorial shows you how to consume an API app from an ASP.NET web site hosted in Azure Websites." 
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="syntaxc4" 
@@ -14,9 +14,9 @@
 	ms.date="09/15/2015"
 	wacn.date=""/>
 
-# Connect a web app to an API app in Azure Websites
+# Connect a web site to an API app in Azure Websites
 
-This tutorial shows how to consume an API app from an ASP.NET web app hosted in [Azure Websites](/documentation/articles/app-service).
+This tutorial shows how to consume an API app from an ASP.NET web site hosted in [Azure Websites](/documentation/articles/app-service).
 
 ## Prerequisites
 
@@ -28,21 +28,21 @@ This tutorial builds upon the series from the API App tutorials:
 
 ## Make the API app publicly accessible
 
-In the [Azure preview portal](https://manage.windowsazure.cn/), select the API app. Click on the **Settings** button in the command bar. In the **Application Settings** blade, change the **Access Level** to **Public (anonymous)**.
+In the [Azure Management Portal](https://manage.windowsazure.cn/), select the API app. Click on the **Settings** button in the command bar. In the **Application Settings** blade, change the **Access Level** to **Public (anonymous)**.
 
 ![](./media/app-service-web-connect-web-app-to-saas-api/4-5-Change-Access-Level-To-Public.png)
 
 ## Create an ASP.NET MVC Application in Visual Studio
 
-1. Open Visual Studio. Use the **New Project** dialogue to add a new **ASP.NET Web Application**. Click **OK**.
+1. Open Visual Studio. Use the **New Project** dialogue to add a new **ASP.NET web site**. Click **OK**.
 
-	![File > New > Web > ASP.NET Web Application](./media/app-service-web-connect-web-app-to-saas-api/1-Create-New-MVC-App-For-Consumption.png)
+	![File > New > Web > ASP.NET web site](./media/app-service-web-connect-web-app-to-saas-api/1-Create-New-MVC-App-For-Consumption.png)
 
 1. Select the **MVC** template. Click **Change Authentication**, then select **No Authentication**, and then click **OK** twice.
 
 	![New ASP.NET Application](./media/app-service-web-connect-web-app-to-saas-api/2-Change-Auth-To-No-Auth.png)
 
-1. In Solution Explorer, right-click the newly created Web Application project and select **Add Azure App Reference**.
+1. In Solution Explorer, right-click the newly created web site project and select **Add Azure App Reference**.
 
 	![Add Azure API App Reference...](./media/app-service-web-connect-web-app-to-saas-api/3-Add-Azure-API-App-SDK.png)
 
@@ -83,13 +83,10 @@ In the [Azure preview portal](https://manage.windowsazure.cn/), select the API a
 
 	![Contact.cshtml Code Updates](./media/app-service-web-connect-web-app-to-saas-api/6-Update-View-To-Reflect-Changes.png)
 
-## Deploy the web application to Web Apps in Azure Websites
+## Deploy the web site to web sites in Azure Websites
 
-Follow the instructions available at [How to Deploy an Azure web app](/documentation/articles/web-sites-deploy).
+Follow the instructions available at [How to Deploy an Azure web site](/documentation/articles/web-sites-deploy).
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 
-## What's changed
-* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
  

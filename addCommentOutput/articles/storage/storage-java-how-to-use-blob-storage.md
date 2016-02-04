@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="08/31/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # How to use Blob storage from Java
@@ -48,13 +48,19 @@ Add the following import statements to the top of the Java file where you want t
 ## Set up an Azure Storage connection string
 
 An Azure Storage client uses a storage connection string to store
-endpoints and credentials for accessing data management services. When running in a client application, you must provide the storage connection string in the following format, using the name of your storage account and the Primary access key for the storage account listed in the Azure Management Portal for the *AccountName* and *AccountKey* values. The following example shows how you can declare a static field to hold the connection string.
+endpoints and credentials for accessing data management services. When running in a client application, you must provide the storage connection string in the following format, using the name of your storage account and the Primary access key for the storage account listed in the <!-- deleted by customization [Azure Management Portal](portal.azure.com) --><!-- keep by customization: begin --> [Management portal](https://manage.windowsazure.cn) <!-- keep by customization: end --> for the *AccountName* and *AccountKey* values. The following example shows how you can declare a static field to hold the connection string.
 
     // Define the connection-string with your values
     public static final String storageConnectionString =
         "DefaultEndpointsProtocol=http;" +
         "AccountName=your_storage_account;" +
+<!-- deleted by customization
         "AccountKey=your_storage_account_key";
+-->
+<!-- keep by customization: begin -->
+        "AccountKey=your_storage_account_key;" +
+	"EndpointSuffix=core.chinacloudapi.cn";
+<!-- keep by customization: end -->
 
 In an application running within a role in Windows Azure, this string can be stored in the service configuration file, *ServiceConfiguration.cscfg*, and can be accessed with a call to the **RoleEnvironment.getConfigurationSettings** method. The followng example gets the connection string from a **Setting** element named *StorageConnectionString* in the service configuration file.
 
@@ -269,11 +275,6 @@ For more information, see also the [Java Developer Center](/develop/java/).
 [Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-<!-- deleted by customization
-[Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
--->
-<!-- keep by customization: begin -->
-[Azure Storage Client SDK Reference]: http://dl.windowsazure.cn/storage/javadoc/
-<!-- keep by customization: end -->
-[Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+[Azure Storage Client SDK Reference]: http://azure.github.io/azure-storage-java/
+[Azure Storage REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/

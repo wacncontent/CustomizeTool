@@ -130,22 +130,22 @@ For `hadb02`, you have two options. You can install mysql-server now, which will
 
     sudo apt-get install mysql-server
     sudo service mysql stop
-    sudo rm –rf /var/lib/mysql/*
+    sudo rm -rf /var/lib/mysql/*
 
 The second option is to failover to `hadb02` and then install mysql-server there (installation scripts will notice the existing installation and won't touch it)
 
 On `hadb01`:
 
-    sudo drbdadm secondary –force r0
+    sudo drbdadm secondary -force r0
 
 On `hadb02`:
 
-    sudo drbdadm primary –force r0
+    sudo drbdadm primary -force r0
     sudo apt-get install mysql-server
 
 If you don't plan to failover DRBD now, the first option is easier although arguably less elegant. After you set this up, you can start working on your MySQL database. On `hadb02` (or whichever one of the servers is active, according to DRBD):
 
-    mysql –u root –p
+    mysql -u root -p
     CREATE DATABASE azureha;
     CREATE TABLE things ( id SERIAL, name VARCHAR(255) );
     INSERT INTO things VALUES (1, "Yet another entity");
@@ -167,7 +167,7 @@ At this moment we have everything we need for a manual operation of the cluster.
 
 Tests can be performed from an outside machine, by using any MySQL client, as well as applications (for example, phpMyAdmin running as an Azure Website) In this case we used MySQL's command line tool on another Linux box:
 
-    mysql azureha –u root –h hadb.chinacloudapp.cn –e "select * from things;"
+    mysql azureha -u root -h hadb.chinacloudapp.cn -e "select * from things;"
 
 ### Manually failing over
 
@@ -243,7 +243,7 @@ We copy this configuration file in both VMs and start Corosync in both nodes:
 
 Shortly after starting the service the cluster should be established in the current ring and quorum should be constituted. We can check this functionality by reviewing logs or:
 
-    sudo corosync-quorumtool –l
+    sudo corosync-quorumtool -l
 
 An output similar to the image below should follow:
 
@@ -303,7 +303,7 @@ Also, make sure that Pacemaker starts at boot in both nodes:
 
     sudo update-rc.d pacemaker defaults
 
-After a few seconds, and using `sudo crm_mon –L`, verify that one of your nodes has become the master for the cluster, and is running all the resources. You can use mount and ps to check that the resources are running.
+After a few seconds, and using `sudo crm_mon -L`, verify that one of your nodes has become the master for the cluster, and is running all the resources. You can use mount and ps to check that the resources are running.
 
 The following screenshot shows `crm_mon` with one node stopped (exit using Control-C)
 

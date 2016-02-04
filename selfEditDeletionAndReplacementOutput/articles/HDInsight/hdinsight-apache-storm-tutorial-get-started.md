@@ -3,20 +3,20 @@ deletion:
 deleted:
 
 		[AZURE.INCLUDE [preview portal](../includes/hdinsight-azure-preview-portal.md)]
-		
-		* [Apache Storm Tutorial: Get started with the Storm Starter samples for big data analytics on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
-		
-		   
-		
+
+reason: (the new Ibiza portal)
+
+deleted:
+
 		> [AZURE.NOTE] The steps in this article create a Windows-based HDInsight cluster. For steps to create a Linux-based Storm on HDInsight cluster, see [Apache Storm tutorial: Get started with the Storm Starter sample using data analytics on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		[preview-portal]: https://manage.windowsazure.cn/
 
-reason: ()
+reason: (the new Ibiza portal)
 
 replacement:
 
@@ -115,7 +115,7 @@ replaced by:
 		
 		5. Finally, select the checkmark beside **CREATE HDINSIGHT CLUSTER** to create the cluster.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -129,5 +129,5 @@ replaced by:
 		
 		![Azure Management Portal with Storm Dashboard link](./media/hdinsight-apache-storm-tutorial-get-started/dashboard-link.png)
 
-reason: ()
+reason: (the new Ibiza portal)
 

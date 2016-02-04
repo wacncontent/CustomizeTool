@@ -17,11 +17,11 @@
 
 <!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
 -->
 <!-- keep by customization: begin -->
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating resources with the classic deployment model.
 <!-- keep by customization: end -->
-
 
 An availability set helps keep your virtual machines available during downtime, such as during maintenance. Placing two or more similarly configured virtual machines in an availability set creates the redundancy needed to maintain availability of the applications or services that your virtual machine runs. For details about how this works, see [Manage the availability of virtual machines] [].
 
@@ -38,9 +38,16 @@ You can put virtual machines into an availability set by using one of two option
 
 You can use either the Azure Management Portal or Azure PowerShell commands to do this.
 
+<!-- deleted by customization
+To use the Azure Management Portal:
+
+1. If you haven't already done so, sign in to the Azure Management Portal.
+-->
+<!-- keep by customization: begin -->
 To use the portal:
 
 1. If you haven't already done so, sign in to the [portal](http://manage.windowsazure.cn).
+<!-- keep by customization: end -->
 
 2. On the command bar, click **New**.
 
@@ -73,10 +80,10 @@ To use Azure PowerShell commands to create an Azure virtual machine and add it t
 
 ## <a id="addmachine"> </a>Option 2: Add an existing virtual machine to an availability set##
 
-In the portal, you can add existing virtual machines to an existing availability set
+In the <!-- deleted by customization Azure Management Portal --><!-- keep by customization: begin --> portal <!-- keep by customization: end -->, you can add existing virtual machines to an existing availability set
  or create a new one for them. (Keep in mind that the virtual machines in the same availability set must belong to the same cloud service.) The steps are almost the same. With Azure PowerShell, you can add the virtual machine to an existing availability set.
 
-1. If you have not already done so, sign in to the [portal](http://manage.windowsazure.cn).
+1. If you have not already done so, sign in to the <!-- deleted by customization Azure Management Portal --><!-- keep by customization: begin --> [portal](http://manage.windowsazure.cn) <!-- keep by customization: end -->.
 
 2. On the command bar, click **Virtual Machines**.
 
@@ -108,8 +115,15 @@ To use Azure PowerShell commands, open an administrator-level Azure PowerShell s
 [Option 1: Create a virtual machine and an availability set at the same time]: #createset
 [Option 2: Add an existing virtual machine to an availability set]: #addmachine
 
-[Load balancing for Azure infrastructure services]: /documentation/articles/virtual-machines-load-balance
-[Manage the availability of virtual machines]: /documentation/articles/virtual-machines-manage-availability
-[Create a virtual machine running Windows]: /documentation/articles/virtual-machines-windows-tutorial
+[Load balancing for Azure infrastructure services]: <!-- deleted by customization virtual-machines-load-balance.md --><!-- keep by customization: begin --> /documentation/articles/virtual-machines-load-balance <!-- keep by customization: end -->
+[Manage the availability of virtual machines]: <!-- deleted by customization virtual-machines-manage-availability.md --><!-- keep by customization: begin --> /documentation/articles/virtual-machines-manage-availability <!-- keep by customization: end -->
+<!-- deleted by customization
+[Create a virtual machine running Windows]: virtual-machines-windows-tutorial.md
+[Virtual Network overview]: virtual-networks-overview.md
+[Articles for virtual machines in Service Management]: virtual-machines-service-management-articles.md
+-->
+<!-- keep by customization: begin -->
+[Create a virtual machine running Windows]:/documentation/articles/virtual-machines-windows-tutorial-classic-portal
 [Virtual Network overview]: /documentation/articles/virtual-networks-overview
 [Articles for virtual machines in Service Management]: /documentation/articles/virtual-machines-service-management-articles
+<!-- keep by customization: end -->

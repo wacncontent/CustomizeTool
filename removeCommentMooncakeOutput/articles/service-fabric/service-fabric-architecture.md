@@ -8,13 +8,9 @@
    editor="rishirsinha"/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/26/2015"
-   ms.author="rsinha"/>
+	ms.service="service-fabric"
+	ms.date="08/26/2015"
+	wacn.date=""/>
 
 # Service Fabric Architecture
 
@@ -27,7 +23,7 @@ Service Fabric, like any platform is built through many sub-systems. These subsy
 
 The following picture shows the architecture and major subsystems of Service Fabric.
 
-![](media/service-fabric-architecture/service-fabric-architecture.png)
+![](./media/service-fabric-architecture/service-fabric-architecture.png)
 
 In a distributed system, the ability to securely communicate between different nodes is crucial. At the bottom of the stack is transport subsystem, which provides the ability to securely communicate between the different nodes. Above the transport subsystem lies the federation subsystem, which clusters the different nodes into a single entity (named clusters) so that the system can detect failures, perform leader election and route consistenty. The reliability subsystem, layered on top of the federation subsystem is responsible for the high reliability of Service Fabric services through mechanisms such as replication, resource management and failover management. The federation subsystem also underlies the Hosting subsystem, which manages the lifecycle of an application on a single node. The cluster management subsystem manages the multi-machine lifecycle of applications and services. The testability subsystem allows the application developer to test their services through simulated faults before deploying applications and services to production environments.  Service Fabric also provides the ability to resolve service locations through its communication subsystem. The application programming model exposed to developers is layered on top of these susbsystems.
 

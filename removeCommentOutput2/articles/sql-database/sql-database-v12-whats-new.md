@@ -91,6 +91,8 @@ Security is a primary concern for anyone who runs their business in the cloud. T
 - [Contained databases](http://msdn.microsoft.com/zh-cn/library/ff929188.aspx)
 - [Application roles](http://msdn.microsoft.com/zh-cn/library/ms190998.aspx) managed with GRANT, DENY, REVOKE
 - [Transparent Data Encryption](http://msdn.microsoft.com/zh-cn/library/0bf7e8ff-1416-4923-9c4c-49341e208c62.aspx) (TDE)
+- [Connecting to SQL Database By Using Azure Active Directory Authentication](/documentation/articles/sql-database-aad-authentication)
+ - SQL Database now supports Azure Active Directory authentication, a mechanism of connecting to SQL Database by using identities in Azure Active Directory (Azure AD). With Azure Active Directory authentication you can centrally manage the identities of database users and other Microsoft services in one central location.
 - [Always Encrypted](https://msdn.microsoft.com/zh-cn/library/mt163865.aspx) (in preview) makes encryption transparent to applications and allows clients to encrypt sensitive data inside client applications without sharing the encryption keys with SQL Database.
 
 
@@ -127,7 +129,7 @@ There are many good reasons why customers should upgrade now to Azure SQL Databa
 One easy way to see if you have a database or logical server running on an earlier version of the SQL Database service is to do the following:
 
 
-1. Go to the [Azure Management Portal](http://manage.windowsazure.cn/).
+1. Go to the [Azure Management Portal](http://manage.windowsazure.cn).
 2. Click **Browse**.
 3. Click **SQL Servers**.
 4. The icon next to your server or database tells the story:
@@ -154,4 +156,3 @@ If you are not yet running on V12, you can upgrade your logical server by follow
 - By July 31, 2015, all regions had been promoted to General Availability (GA).
 - V12 was released in December 2014, but only at the status of Preview.
 
-[Supplemental Terms of Use for Windows Azure Previews](http://azure.microsoft.com/support/legal/preview-supplemental-terms/).

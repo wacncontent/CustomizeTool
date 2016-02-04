@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="Working with Geospatial data in Azure DocumentDB | Microsoft Azure" 
+    pageTitle="Working with Geospatial data in Azure DocumentDB | Windows Azure" 
     description="Understand how to create, index and query spatial objects with Azure DocumentDB." 
     services="documentdb" 
     documentationCenter="" 
@@ -7,18 +7,14 @@
     manager="jhubbard" 
     editor="monicar"/>
 
-<tags 
-    ms.service="documentdb" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.tgt_pltfrm="na" 
-    ms.workload="data-services" 
-    ms.date="08/11/2015" 
-    ms.author="arramac"/>
+<tags
+	ms.service="documentdb"
+	ms.date="10/27/2015"
+	wacn.date=""/>
     
 # Working with Geospatial data in Azure DocumentDB
 
-This article is an introduction to the geospatial functionality in [Azure DocumentDB](http://azure.microsoft.com/services/documentdb/). After reading this, you will be able to answer the following questions:
+This article is an introduction to the geospatial functionality in [Azure <!-- deleted by customization DocumentDB](/home/features/documentdb/) --><!-- keep by customization: begin --> DocumentDB](http://azure.microsoft.com/services/documentdb/) <!-- keep by customization: end -->. After reading this, you will be able to answer the following questions:
 
 - How do I store spatial data in Azure DocumentDB?
 - How can I query geospatial data in Azure DocumentDB in SQL and LINQ?
@@ -31,7 +27,7 @@ Please see this [Github project](https://github.com/Azure/azure-documentdb-net/t
 Spatial data describes the position and shape of objects in space. In most applications, these correspond to objects on the earth, i.e. geospatial data. Spatial data can be used to represent the location of a person, a place of interest, or the boundary of a city, or a lake. Common use cases often involve proximity queries, for e.g., "find all coffee shops near my current location". 
 
 ### GeoJSON
-DocumentDB supports indexing and querying of geospatial data that's represented using the [GeoJSON specification](http://geojson.org/geojson-spec.html). GeoJSON data structures are always valid JSON objects, so they can be stored and queried using DocumentDB without any specialized tools or libraries. The DocumentDB SDKs provide helper classes and methods that make it easy to work with spatial data. 
+DocumentDB supports indexing and querying of geospatial <!-- deleted by customization point --> data that's represented using the [GeoJSON specification](http://geojson.org/geojson-spec.html). GeoJSON data structures are always valid JSON objects, so they can be stored and queried using DocumentDB without any specialized tools or libraries. The DocumentDB SDKs provide helper classes and methods that make it easy to work with spatial data.
 
 ### Points, Linestrings and Polygons
 A **Point** denotes a single position in space. In geospatial data, a point represents the exact location, which could be a street address of a grocery store, a kiosk, an automobile or a city.  A point is represented in GeoJSON (and DocumentDB) using its coordinate pair or longitude and latitude. Here's an example JSON for a point.
@@ -81,7 +77,7 @@ In addition to points, GeoJSON also supports LineStrings and Polygons. **LineStr
 >
 >Points within a polygon must be specified in counter-clockwise order. A polygon specified in clockwise order represents the inverse of the region within it.
 
-In addition to Point, LineString and Polygon, GeoJSON also specifies the representation for how to group multiple geospatial locations, as well as how to associate arbitrary properties with geolocation as a **Feature**. Since these objects are valid JSON, they can all be stored and processed in DocumentDB.
+In addition to Point, LineString and Polygon, GeoJSON also specifies the representation for how to group multiple geospatial locations, as well as how to associate arbitrary properties with geolocation as a **Feature**. Since these objects are valid JSON, they can all be stored and processed in DocumentDB. <!-- deleted by customization However DocumentDB only supports automatic indexing of points. -->
 
 ### Coordinate Reference Systems
 
@@ -131,14 +127,14 @@ If you're working with the .NET (or Java) SDKs, you can use the new Point and Po
             Location = new Point (-122.12, 47.66) 
         });
 
-If you don't have the latitude and longitude information, but have the physical addresses or location name like city or country, you can look up the actual coordinates by using a geocoding service like Bing Maps REST Services. Learn more about Bing Maps geocoding [here](https://msdn.microsoft.com/library/ff701713.aspx).
+If you don't have the latitude and longitude information, but have the physical addresses or location name like city or country, you can look up the actual coordinates by using a geocoding service like Bing Maps REST Services. Learn more about Bing Maps geocoding <!-- deleted by customization [here](https://msdn.microsoft.com/zh-cn/library/ff701713.aspx) --><!-- keep by customization: begin --> [here](https://msdn.microsoft.com/library/ff701713.aspx) <!-- keep by customization: end -->.
 
 ## Querying Spatial Types
 
 Now that we've taken a look at how to insert geospatial data, let's take a look at how to query this data using DocumentDB using SQL and LINQ.
 
 ### Spatial SQL Built-in functions
-DocumentDB supports the following Open Geospatial Consortium (OGC) built-in functions for geospatial querying. For more details on the complete set of built-in functions in the SQL language, please refer to [Query DocumentDB](documentdb-sql-query.md).
+DocumentDB supports the following Open Geospatial Consortium (OGC) built-in functions for geospatial querying. For more details on the complete set of built-in functions in the SQL language, please refer to [Query <!-- deleted by customization DocumentDB](/documentation/articles/documentdb-sql-query) --><!-- keep by customization: begin --> DocumentDB](documentdb-sql-query.md) <!-- keep by customization: end -->.
 
 <table>
 <tr>
@@ -177,11 +173,11 @@ Spatial functions can be used to perform proximity querries against spatial data
       "id": "WakefieldFamily"
     }]
 
-If you include spatial indexing in your indexing policy, then "distance queries" will be served efficiently through the index. For more details on spatial indexing, please see the section below. If you don't have a spatial index for the specified paths, you can still perform spatial queries by specifying `x-ms-documentdb-query-enable-scan` request header with the value set to "true". In .NET, this can be done by passing the optional **FeedOptions** argument to queries with [EnableScanInQuery](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery) set to true. 
+If you include spatial indexing in your indexing policy, then "distance queries" will be served efficiently through the index. For more details on spatial indexing, please see the section below. If you don't have a spatial index for the specified paths, you can still perform spatial queries by specifying `x-ms-documentdb-query-enable-scan` request header with the value set to "true". In .NET, this can be done by passing the optional **FeedOptions** argument to queries with <!-- deleted by customization [EnableScanInQuery](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery) --><!-- keep by customization: begin --> [EnableScanInQuery](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery) <!-- keep by customization: end --> set to true.
 
 ST_WITHIN can be used to check if a point lies within a polygon. Commonly polygons are used to represent boundaries like zip codes, state boundaries, or natural formations. Again if you include spatial indexing in your indexing policy, then "within" queries will be served efficiently through the index. 
 
-Polygon arguments in ST_WITHIN can contain only a single ring, i.e. the polygons must not contain holes in them. Check the [DocumentDB limits](documentdb-limits.md) for the maximum number of points allowed in a polygon for an ST_WITHIN query.
+Polygon arguments in ST_WITHIN can contain only a single ring, i.e. the polygons must not contain holes in them. Check the [DocumentDB <!-- deleted by customization limits](/documentation/articles/documentdb-limits) --><!-- keep by customization: begin --> limits](documentdb-limits.md) <!-- keep by customization: end --> for the maximum number of points allowed in a polygon for an ST_WITHIN query.
 
 **Query**
 
@@ -270,7 +266,7 @@ Now that we've taken a look at how to query documents using LINQ and SQL, let's 
 
 ## Indexing
 
-As we described in the [Schema Agnostic Indexing with Azure DocumentDB](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) paper, we designed DocumentDB’s database engine to be truly schema agnostic and provide first class support for JSON. The write optimized database engine of DocumentDB now also natively understands spatial data represented in the GeoJSON standard.
+As we described in the [Schema Agnostic Indexing with Azure DocumentDB](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) paper, we designed <!-- deleted by customization DocumentDBâs --><!-- keep by customization: begin --> DocumentDB’s <!-- keep by customization: end --> database engine to be truly schema agnostic and provide first class support for JSON. The write optimized database engine of DocumentDB now also natively understands spatial data represented in the GeoJSON standard.
 
 In a nutshell, the geometry is projected from geodetic coordinates onto a 2D plane then divided progressively into cells using a **quadtree**. These cells are mapped to 1D based on the location of the cell within a **Hilbert space filling curve**, which preserves locality of points. Additionally when location data is indexed, it goes through a process known as **tessellation**, i.e. all the cells that intersect a location are identified and stored as keys in the DocumentDB index. At query time, arguments like points and polygons are also tessellated to extract the relevant cell ID ranges, then used to retrieve data from the index.
 
@@ -352,5 +348,11 @@ Now that you've learnt about how to get started with geospatial support in Docum
 
 - Start coding with the [Geospatial .NET code samples on Github](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/Queries.Spatial)
 - Get hands on with geospatial querying at the [DocumentDB Query Playground](http://www.documentdb.com/sql/demo#geospatial)
+<!-- deleted by customization
+- Learn more about [DocumentDB Query](/documentation/articles/documentdb-sql-query)
+- Learn more about [DocumentDB Indexing Policies](/documentation/articles/documentdb-indexing-policies)
+-->
+<!-- keep by customization: begin -->
 - Learn more about [DocumentDB Query](documentdb-sql-query.md)
 - Learn more about [DocumentDB Indexing Policies](documentdb-indexing-policies.md)
+<!-- keep by customization: end -->

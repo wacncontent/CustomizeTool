@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/03/2015"
+	ms.date="11/02/2015"
 	wacn.date=""/>
 
 #Run Hive queries using PowerShell
@@ -20,16 +20,14 @@
 > [AZURE.NOTE] This document does not provide a detailed description of what the HiveQL statements that are used in the examples do. For information on the HiveQL that is used in this example, see [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive).
 
 
-<a id="prereq"></a>
-**Prerequisites**
+**<a id="prereq"></a> Prerequisites**
 
 To complete the steps in this article, you will need the following.
 
-- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based )**
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
+- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based )** 
+- **A workstation with Azure PowerShell**. See [Install Azure PowerShell 1.0 and greater](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater).
 
-<a id="powershell"></a>
-##Run Hive queries using Azure PowerShell
+##<a id="powershell"></a> Run Hive queries using Azure PowerShell
 
 Azure PowerShell provides *cmdlets* that allow you to remotely run Hive queries on HDInsight. Internally, this is accomplished by using REST calls to [WebHCat](https://cwiki.apache.org/confluence/display/Hive/WebHCat) (formerly called Templeton) running on the HDInsight cluster.
 
@@ -94,10 +92,13 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 		Write-Host "Display the standard output..." -ForegroundColor Green
 		Get-AzureHDInsightJobOutput -ClusterName $clusterName -JobId $hiveJob.JobId -StandardOutput 
 
+            
 2. Open a new **Azure PowerShell** command prompt. Change directories to the location of the **hivejob.ps1** file, then use the following command to run the script:
 
 		.\hivejob.ps1
 
+    When the script runs, you will be prompted to enter the HTTPS/Admin account credentials for your cluster. You may also be prompted to login to your Azure subscription.
+    
 7. When the job completes, it should return information similar to the following:
 
 		Display the standard output...
@@ -105,7 +106,7 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 
 4. As mentioned earlier, **Invoke-Hive** can be used to run a query and wait for the response. Use the following commands, and replace **CLUSTERNAME** with the name of your cluster:
 
-		Use-AzureHDInsightCluster CLUSTERNAME
+        Use-AzureHDInsightCluster CLUSTERNAME
 		Invoke-Hive -Query @"
 		CREATE TABLE IF NOT EXISTS errorLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) STORED AS ORC;
 		INSERT OVERWRITE TABLE errorLogs SELECT t1, t2, t3, t4, t5, t6, t7 FROM log4jLogs WHERE t4 = '[ERROR]';
@@ -124,8 +125,7 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 	>
 	> For more information about **Here-Strings**, see <a href="http://technet.microsoft.com/zh-cn/library/ee692792.aspx" target="_blank">Using Windows PowerShell Here-Strings</a>.
 
-<a id="troubleshooting"></a>
-##Troubleshooting
+##<a id="troubleshooting"></a> Troubleshooting
 
 If no information is returned when the job completes, an error may have occurred during processing. To view error information for this job, add the following to the end of the **hivejob.ps1** file, save it, and then run it again.
 
@@ -135,13 +135,11 @@ If no information is returned when the job completes, an error may have occurred
 
 This returns the information that is written to STDERR on the server when you ran the job, and it may help determine why the job is failing.
 
-<a id="summary"></a>
-##Summary
+##<a id="summary"></a> Summary
 
 As you can see, Azure PowerShell provides an easy way to run Hive queries in an HDInsight cluster, monitor the job status, and retrieve the output.
 
-<a id="nextsteps"></a>
-##Next steps
+##<a id="nextsteps"></a> Next steps
 
 For general information about Hive in HDInsight:
 

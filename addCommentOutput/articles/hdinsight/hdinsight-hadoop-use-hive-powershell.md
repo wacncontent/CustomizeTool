@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/03/2015"
+	ms.date="11/02/2015"
 	wacn.date=""/>
 
 #Run Hive queries using PowerShell
@@ -24,38 +24,47 @@ This document provides an example of using Azure PowerShell in the Azure Resourc
 > [AZURE.NOTE] This document does not provide a detailed description of what the HiveQL statements that are used in the examples do. For information on the HiveQL that is used in this example, see [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive).
 
 
-<!-- keep by customization: begin -->
-<a id="prereq"></a>
-<!-- keep by customization: end -->
+<!-- deleted by customization
 **Prerequisites**
+-->
+<!-- keep by customization: begin -->
+**<a id="prereq"></a> Prerequisites**
+<!-- keep by customization: end -->
 
 To complete the steps in this article, you will need the following.
 
 - **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based <!-- deleted by customization or Linux-based)** --><!-- keep by customization: begin --> )** <!-- keep by customization: end -->
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install Azure PowerShell 1.0 and greater](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater).
 
-<!-- keep by customization: begin -->
-<a id="powershell"></a>
-<!-- keep by customization: end -->
+<!-- deleted by customization
 ##Run Hive queries using Azure PowerShell
+-->
+<!-- keep by customization: begin -->
+##<a id="powershell"></a> Run Hive queries using Azure PowerShell
+<!-- keep by customization: end -->
 
 Azure PowerShell provides *cmdlets* that allow you to remotely run Hive queries on HDInsight. Internally, this is accomplished by using REST calls to [WebHCat](https://cwiki.apache.org/confluence/display/Hive/WebHCat) (formerly called Templeton) running on the HDInsight cluster.
 
 The following cmdlets are used when running Hive queries in a remote HDInsight cluster:
 
-* **Add-AzureAccount**: Authenticates Azure PowerShell to your Azure subscription
+* <!-- deleted by customization **Add-AzureRmAccount** --><!-- keep by customization: begin --> **Add-AzureAccount** <!-- keep by customization: end -->: Authenticates Azure PowerShell to your Azure subscription
 
-* **New-AzureHDInsightHiveJobDefinition**: Creates a new *job definition* by using the specified HiveQL statements
+* <!-- deleted by customization **New-AzureRmHDInsightHiveJobDefinition** --><!-- keep by customization: begin --> **New-AzureHDInsightHiveJobDefinition** <!-- keep by customization: end -->: Creates a new *job definition* by using the specified HiveQL statements
 
-* **Start-AzureHDInsightJob**: Sends the job definition to HDInsight, starts the job, and returns a *job* object that can be used to check the status of the job
+* <!-- deleted by customization **Start-AzureRmHDInsightJob** --><!-- keep by customization: begin --> **Start-AzureHDInsightJob** <!-- keep by customization: end -->: Sends the job definition to HDInsight, starts the job, and returns a *job* object that can be used to check the status of the job
 
-* **Wait-AzureHDInsightJob**: Uses the job object to check the status of the job. It will wait until the job completes or the wait time is exceeded.
+* <!-- deleted by customization **Wait-AzureRmHDInsightJob** --><!-- keep by customization: begin --> **Wait-AzureHDInsightJob** <!-- keep by customization: end -->: Uses the job object to check the status of the job. It will wait until the job completes or the wait time is exceeded.
 
-* **Get-AzureHDInsightJobOutput**: Used to retrieve the output of the job
+* <!-- deleted by customization **Get-AzureRmHDInsightJobOutput** --><!-- keep by customization: begin --> **Get-AzureHDInsightJobOutput** <!-- keep by customization: end -->: Used to retrieve the output of the job
 
-* **Invoke-AzureHDInsightHiveJob**: Used to run HiveQL statements. This will block the query completes, then returns the results
+* <!-- deleted by customization **Invoke-AzureRmHDInsightHiveJob** --><!-- keep by customization: begin --> **Invoke-AzureHDInsightHiveJob** <!-- keep by customization: end -->: Used to run HiveQL statements. This will block the query completes, then returns the results
 
+<!-- deleted by customization
+* **Use-AzureRmHDInsightCluster**: Sets the current cluster to use for the **Invoke-AzureRmHDInsightHiveJob** command
+-->
+<!-- keep by customization: begin -->
 * **Use-AzureHDInsightCluster**: Sets the current cluster to use for the **Invoke-Hive** command
+<!-- keep by customization: end -->
 
 The following steps demonstrate how to use these cmdlets to run a job in your HDInsight cluster:
 
@@ -63,6 +72,11 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 
 		#Specify the values
 		$clusterName = "CLUSTERNAME"
+<!-- deleted by customization
+		$creds=Get-Credential
+        		
+-->
+<!-- keep by customization: begin -->
 		$resourceGroupName = "RESOURCEGROUPNAME"
 		$httpUsername = "HTTPUSERNAME"
 		$httpUserPassword  = "HTTPUSERPASSWORD"
@@ -70,12 +84,23 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 		# Switch to the ARM mode
 		Switch-AzureMode -Name AzureResourceManager
 		
+<!-- keep by customization: end -->
 		# Login to your Azure subscription
 		# Is there an active Azure subscription?
+<!-- deleted by customization
+		$sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
+-->
+<!-- keep by customization: begin -->
 		$sub = Get-AzureSubscription -ErrorAction SilentlyContinue
+<!-- keep by customization: end -->
 		if(-not($sub))
 		{
+<!-- deleted by customization
+		    Add-AzureRmAccount
+-->
+<!-- keep by customization: begin -->
 		    Add-AzureAccount
+<!-- keep by customization: end -->
 		}
 
 		#HiveQL
@@ -84,28 +109,67 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 				       "SELECT * FROM log4jLogs WHERE t4 = '[ERROR]';"
 
 		#Create an HDInsight Hive job definition
+<!-- deleted by customization
+		$hiveJobDefinition = New-AzureRmHDInsightHiveJobDefinition -Query $queryString 
+-->
+<!-- keep by customization: begin -->
 		$hiveJobDefinition = New-AzureHDInsightHiveJobDefinition -Query $queryString 
+<!-- keep by customization: end -->
 
 		#Submit the job to the cluster
 		Write-Host "Start the Hive job..." -ForegroundColor Green
 
+<!-- deleted by customization
+		$hiveJob = Start-AzureRmHDInsightJob -ClusterName $clusterName -JobDefinition $hiveJobDefinition -ClusterCredential $creds
+-->
+<!-- keep by customization: begin -->
 		$passwd = ConvertTo-SecureString $httpUserPassword -AsPlainText -Force
 		$creds = New-Object System.Management.Automation.PSCredential ($httpUsername, $passwd)
 		$hiveJob = Start-AzureHDInsightJob -ResourceGroupName $resourceGroupName -ClusterName $clusterName -JobDefinition $hiveJobDefinition -ClusterCredential $creds
+<!-- keep by customization: end -->
 
 
 		#Wait for the Hive job to complete
 		Write-Host "Wait for the job to complete..." -ForegroundColor Green
+<!-- deleted by customization
+		Wait-AzureRmHDInsightJob -ClusterName $clusterName -JobId $hiveJob.JobId -ClusterCredential $creds
+
+        #Get the cluster info so we can get the resource group, storage, etc.
+        $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+        $resourceGroup = $clusterInfo.ResourceGroup
+        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+        $container=$clusterInfo.DefaultStorageContainer
+        $storageAccountKey=Get-AzureRmStorageAccountKey `
+            -Name $storageAccountName `
+            -ResourceGroupName $resourceGroup `
+            | %{ $_.Key1 }
+-->
+<!-- keep by customization: begin -->
 		Wait-AzureHDInsightJob -ResourceGroupName $resourceGroupName -ClusterName $clusterName -JobId $hiveJob.JobId -ClusterCredential $creds
 
+<!-- keep by customization: end -->
 		# Print the output
 		Write-Host "Display the standard output..." -ForegroundColor Green
+<!-- deleted by customization
+		Get-AzureRmHDInsightJobOutput `
+            -Clustername $clusterName `
+            -JobId $hiveJob.JobId `
+            -DefaultContainer $container `
+            -DefaultStorageAccountName $storageAccountName `
+            -DefaultStorageAccountKey $storageAccountKey `
+            -HttpCredential $creds
+-->
+<!-- keep by customization: begin -->
 		Get-AzureHDInsightJobOutput -ClusterName $clusterName -JobId $hiveJob.JobId -StandardOutput 
 
+<!-- keep by customization: end -->
+            
 2. Open a new **Azure PowerShell** command prompt. Change directories to the location of the **hivejob.ps1** file, then use the following command to run the script:
 
 		.\hivejob.ps1
 
+    When the script runs, you will be prompted to enter the HTTPS/Admin account credentials for your cluster. You may also be prompted to login to your Azure subscription.
+    
 7. When the job completes, it should return information similar to the following:
 
 		Display the standard output...
@@ -113,12 +177,33 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 
 4. As mentioned earlier, **Invoke-Hive** can be used to run a query and wait for the response. Use the following commands, and replace **CLUSTERNAME** with the name of your cluster:
 
-		Use-AzureHDInsightCluster CLUSTERNAME
+<!-- deleted by customization
+        Use-AzureRmHDInsightCluster -ClusterName $clusterName
+        #Get the cluster info so we can get the resource group, storage, etc.
+        $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+        $resourceGroup = $clusterInfo.ResourceGroup
+        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+        $container=$clusterInfo.DefaultStorageContainer
+        $storageAccountKey=Get-AzureRmStorageAccountKey `
+            -Name $storageAccountName `
+            -ResourceGroupName $resourceGroup `
+            | %{ $_.Key1 }
+        Invoke-AzureRmHDInsightHiveJob `
+            -StatusFolder "wasb:///example/statusout" `
+            -DefaultContainer $container `
+            -DefaultStorageAccountName $storageAccountName `
+            -DefaultStorageAccountKey $storageAccountKey `
+            -Query @"
+        CREATE TABLE IF NOT EXISTS errorLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) STORED AS ORC;
+-->
+<!-- keep by customization: begin -->
+        Use-AzureHDInsightCluster CLUSTERNAME
 		Invoke-Hive -Query @"
 		CREATE TABLE IF NOT EXISTS errorLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) STORED AS ORC;
-		INSERT OVERWRITE TABLE errorLogs SELECT t1, t2, t3, t4, t5, t6, t7 FROM log4jLogs WHERE t4 = '[ERROR]';
-		SELECT * FROM errorLogs;
-		"@
+<!-- keep by customization: end -->
+        INSERT OVERWRITE TABLE errorLogs SELECT t1, t2, t3, t4, t5, t6, t7 FROM log4jLogs WHERE t4 = '[ERROR]';
+        SELECT * FROM errorLogs;
+        "@
 
 	The output will look like the following:
 
@@ -128,34 +213,57 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 
 	> [AZURE.NOTE] For longer HiveQL queries, you can use the Azure PowerShell **Here-Strings** cmdlet or HiveQL script files. The following snippet shows how to use the **Invoke-Hive** cmdlet to run a HiveQL script file. The HiveQL script file must be uploaded to wasb://.
 	>
+<!-- deleted by customization
+	> `Invoke-AzureRmHDInsightHiveJob -File "wasb://<ContainerName>@<StorageAccountName>/<Path>/query.hql"`
+-->
+<!-- keep by customization: begin -->
 	> `Invoke-Hive -File "wasb://<ContainerName>@<StorageAccountName>/<Path>/query.hql"`
+<!-- keep by customization: end -->
 	>
 	> For more information about **Here-Strings**, see <a href="http://technet.microsoft.com/zh-cn/library/ee692792.aspx" target="_blank">Using Windows PowerShell Here-Strings</a>.
 
-<!-- keep by customization: begin -->
-<a id="troubleshooting"></a>
-<!-- keep by customization: end -->
+<!-- deleted by customization
 ##Troubleshooting
+-->
+<!-- keep by customization: begin -->
+##<a id="troubleshooting"></a> Troubleshooting
+<!-- keep by customization: end -->
 
 If no information is returned when the job completes, an error may have occurred during processing. To view error information for this job, add the following to the end of the **hivejob.ps1** file, save it, and then run it again.
 
 	# Print the output of the Hive job.
+<!-- deleted by customization
+	Get-AzureRmHDInsightJobOutput `
+            -Clustername $clusterName `
+            -JobId $job.JobId `
+            -DefaultContainer $container `
+            -DefaultStorageAccountName $storageAccountName `
+            -DefaultStorageAccountKey $storageAccountKey `
+            -HttpCredential $creds `
+            -DisplayOutputType StandardError
+-->
+<!-- keep by customization: begin -->
 	Write-Host "Display the standard output ..." -ForegroundColor Green
 	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $hiveJob.JobId -StandardError
+<!-- keep by customization: end -->
 
 This returns the information that is written to STDERR on the server when you ran the job, and it may help determine why the job is failing.
 
-<!-- keep by customization: begin -->
-<a id="summary"></a>
-<!-- keep by customization: end -->
+<!-- deleted by customization
 ##Summary
+-->
+<!-- keep by customization: begin -->
+##<a id="summary"></a> Summary
+<!-- keep by customization: end -->
 
 As you can see, Azure PowerShell provides an easy way to run Hive queries in an HDInsight cluster, monitor the job status, and retrieve the output.
 
-<!-- keep by customization: begin -->
-<a id="nextsteps"></a>
-<!-- keep by customization: end -->
+<!-- deleted by customization
 ##Next steps
+-->
+<!-- keep by customization: begin -->
+##<a id="nextsteps"></a> Next steps
+<!-- keep by customization: end -->
 
 For general information about Hive in HDInsight:
 

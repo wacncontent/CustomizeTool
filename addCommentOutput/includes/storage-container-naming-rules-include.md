@@ -2,8 +2,6 @@ Every blob in Azure storage must reside in a container. The container forms part
 
 	https://storagesample.blob.core.chinacloudapi.cn/mycontainer/blob1.txt
 	https://storagesample.blob.core.chinacloudapi.cn/mycontainer/photos/myphoto.jpg
-<!-- deleted by customization
-
 A container name must be a valid DNS name, conforming to the following naming rules:
 
 1. Container names must start with a letter or number, and can contain only letters, numbers, and the dash (-) character.
@@ -12,9 +10,3 @@ A container name must be a valid DNS name, conforming to the following naming ru
 1. Container names must be from 3 through 63 characters long.
 
 > [AZURE.IMPORTANT] Note that the name of a container must always be lowercase. If you include an upper-case letter in a container name, or otherwise violate the container naming rules, you may receive a 400 error (Bad Request). 
--->
-<!-- keep by customization: begin -->
- 
-> [AZURE.IMPORTANT] Note that the name of a container must always be lowercase. If you include an upper-case letter in a container name, or otherwise violate the container naming rules, you may receive a 400 error (Bad Request). For rules on naming containers, see [Naming and Referencing Containers, Blobs, and Metadata](https://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx).
-
-<!-- keep by customization: end -->

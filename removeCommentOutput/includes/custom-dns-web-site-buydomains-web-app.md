@@ -1,8 +1,8 @@
-If you want a domain, you can buy domains on [Azure Management Portal](https://manage.windowsazure.cn) directly. Use the following steps to buy domain names and assign to your web app.
+If you want a domain, you can buy domains on [Azure Management Portal](https://manage.windowsazure.cn) directly. Use the following steps to buy domain names and assign to your web site.
 
 1. In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
 
-2. In the **Web Apps** tab, click the name of your web app, select **Settings**, and then select **Custom domains and SSL**
+2. In the **Web Apps** tab, click the name of your web site, select **Settings**, and then select **Custom domains and SSL**
 
 	![](./media/custom-dns-web-site/dncmntask-cname-6.png)
 
@@ -24,10 +24,10 @@ If you want a domain, you can buy domains on [Azure Management Portal](https://m
 
   ![](./media/custom-dns-web-site/dncmntask-cname-buydomains-5.png)
 
-7. If you successfully ordered a domain, you can manage the domain and assign to your web app. Click the **"..."** at the right side of your domain. Then you can **Cancel purchase** or **Manage domain**. Click **Manage domain**, then we can bind **subdomain** to our web app on **Manage domain** blade.
+7. If you successfully ordered a domain, you can manage the domain and assign to your web site. Click the **"..."** at the right side of your domain. Then you can **Cancel purchase** or **Manage domain**. Click **Manage domain**, then we can bind **subdomain** to our web site on **Manage domain** blade.
 
 	![](./media/custom-dns-web-site/dncmntask-cname-buydomains-6.png)
 
-	Once configuration has completed, the custom domain name will be listed in the **Hostname bindings** section of your web app.
+	Once configuration has completed, the custom domain name will be listed in the **Hostname bindings** section of your web site.
 
-At this point, you should be able to enter the custom domain name in your browser and see that it successfully takes you to your web app.
+At this point, you should be able to enter the custom domain name in your browser and see that it successfully takes you to your web site.

@@ -9,12 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+	ms.date="11/19/2015" 
+	wacn.date=""/>
 
 #Choose the multi-factor security solution for you
 
@@ -65,7 +61,7 @@ Phone call as second factor | ● | ●
 One-way SMS as second factor | ● | ●
 Two-way SMS as second factor |  | ● 
 Hardware Tokens as second factor |  | ● 
-App passwords for clients that don’t support MFA | ● |  
+App passwords for clients that don't support MFA | ● |  
 Admin control over authentication methods |  | ● 
 PIN mode |  | ●
 Fraud alert | ● | ●
@@ -90,5 +86,5 @@ Now that we have determined whether to use cloud multi-factor authentication or 
 
 **Additional Resources**
 
-* [For Users](multi-factor-authentication-end-user.md)
-* [Azure Multi-Factor Authentication on MSDN](https://msdn.microsoft.com/library/azure/dn249471.aspx) 
+* [For Users](/documentation/articles/multi-factor-authentication-end-user)
+* [Azure Multi-Factor Authentication on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn249471.aspx) 

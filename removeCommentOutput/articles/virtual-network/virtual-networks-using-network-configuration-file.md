@@ -4,12 +4,12 @@
 	services="virtual-network" 
 	documentationCenter="" 
 	authors="telmosampaio" 
-	manager="carolz" 
+	manager="carmonm" 
 	editor="tysonn"/>
 
 <tags
 	ms.service="virtual-network"
-	ms.date="08/10/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Configure a virtual network using a network configuration file

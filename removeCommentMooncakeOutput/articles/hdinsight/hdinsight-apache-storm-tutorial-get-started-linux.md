@@ -11,9 +11,9 @@
 	editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="10/09/2015"
-   wacn.date=""/>
+	ms.service="hdinsight"
+	ms.date="12/04/2015"
+	wacn.date=""/>
 
 
 # Apache Storm tutorial: Get started with the Storm Starter samples for big data analytics on HDInsight
@@ -120,7 +120,7 @@ The [storm-starter](https://github.com/apache/storm/tree/master/examples/storm-s
 
 2. Use the following command to start an example topology:
 
-        storm jar storm jar /usr/hdp/current/storm-client/contrib/storm-starter/storm-starter-topologies-0.9.3.2.2.4.9-1.jar storm.starter.WordCountTopology wordcount
+        storm jar /usr/hdp/current/storm-client/contrib/storm-starter/storm-starter-topologies-0.9.3.2.2.4.9-1.jar storm.starter.WordCountTopology wordcount
 		
 	> [AZURE.NOTE] The `0.9.3.2.2.4.9-1` portion of the file name may change as HDinsight is updated with newer versions of Storm.
 
@@ -228,5 +228,5 @@ In this Apache Storm tutorial, you used the Storm Starter to learn how to create
 [stormstarter]: https://github.com/apache/storm/tree/master/examples/storm-starter
 [stormjavadocs]: https://storm.incubator.apache.org/apidocs/
 [azureportal]: https://manage.windowsazure.cn/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[preview-portal]: https://manage.windowsazure.cn
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[preview-portal]: https://manage.windowsazure.cn/

@@ -3,13 +3,13 @@
 	description="The active directory connection wizard detected an incompatible authentication type" 
 	services="active-directory" 
 	documentationCenter="" 
-	authors="patshea123" 
+	authors="TomArcher" 
 	manager="douge" 
-	editor="tglee"/>
+	editor=""/>
   
-<tags
-	ms.service="active-directory"
-	ms.date="07/22/2015"
+<tags 
+	ms.service="active-directory"  
+	ms.date="12/10/2015" 
 	wacn.date=""/>
 
 # Error During Authentication Detection
@@ -18,11 +18,11 @@ While detecting previous authentication code, the wizard detected an incompatibl
 
 ##What is being checked?
 
-**Note:** In order to correctly detect previous authentication code in a project, the project must be built.  If you encountered this error and you don't have previous authentication code in your project, rebuild and try again.
+**Note:** In order to correctly detect previous authentication code in a project, the project must be built.  If you encountered this error and you don't have a previous authentication code in your project, rebuild and try again.
 
 ###Project Types
 
-The wizard checks which type of project you’re developing so it can inject the right authentication logic into the project.  If there is any controller that derives from `ApiController` in the project, it will be considered a WebAPI project.  If there are only controllers that derive from `MVC.Controller` in the project, it will be considered an MVC project.  Anything else is considered not supported by the wizard.  WebForms projects are not currently supported.
+The wizard checks which type of project youâre developing so it can inject the right authentication logic into the project.  If there is any controller that derives from `ApiController` in the project, the project will be considered a WebAPI project.  If there are only controllers that derive from `MVC.Controller` in the project, the project will be considered an MVC project.  Anything else is not supported by the wizard.  WebForms projects are not currently supported.
 
 ###Compatible Authentication Code
 
@@ -52,7 +52,7 @@ Finally, the wizard attempts to detect versions of authentication code that have
 
 To detect Windows Authentication in an MVC project, the wizard looks for the `authentication` element from your **web.config** file.
 
-<PRE class="prettyprint">
+<pre>
 	&lt;configuration&gt;
 	    &lt;system.web&gt;
 	        <span style="background-color: yellow">&lt;authentication mode="Windows" /&gt;</span>
@@ -62,7 +62,7 @@ To detect Windows Authentication in an MVC project, the wizard looks for the `au
 
 To detect Windows Authentication in a Web API project, the wizard looks for the `IISExpressWindowsAuthentication` element from your project's **.csproj** file:
 
-<PRE class="prettyprint">
+<pre>
 	&lt;Project&gt;
 	    &lt;PropertyGroup&gt;
 	        <span style="background-color: yellow">&lt;IISExpressWindowsAuthentication&gt;enabled&lt;/IISExpressWindowsAuthentication&gt;</span>
@@ -72,7 +72,7 @@ To detect Windows Authentication in a Web API project, the wizard looks for the 
 
 To detect Individual User Accounts authentication, the wizard looks for the package element from your **Packages.config** file.
 
-<PRE class="prettyprint">
+<pre>
 	&lt;packages&gt;
 	    <span style="background-color: yellow">&lt;package id="Microsoft.AspNet.Identity.EntityFramework" version="2.1.0" targetFramework="net45" /&gt;</span>
 	&lt;/packages&gt;
@@ -80,7 +80,7 @@ To detect Individual User Accounts authentication, the wizard looks for the pack
 
 To detect an old form of Organizational Account authentication, the wizard looks for the following element from **web.config**:
 
-<PRE class="prettyprint">
+<pre>
 	&lt;configuration&gt;
 	    &lt;appSettings&gt;
 	        <span style="background-color: yellow">&lt;add key="ida:Realm" value="***" /&gt;</span>

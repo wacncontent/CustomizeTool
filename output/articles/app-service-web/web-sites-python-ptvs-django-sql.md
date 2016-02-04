@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Django and SQL Database on Azure with Python Tools 2.2 for Visual Studio" 
-	description="Learn how to use the Python Tools for Visual Studio to create a Django web app that stores data in a SQL database instance and deploy it to Azure Websites." 
+	description="Learn how to use the Python Tools for Visual Studio to create a Django web app that stores data in a SQL database instance and deploy it to Azure Web Apps." 
 	services="app-service\web" 
 	tags="python"
 	documentationCenter="python" 
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/30/2015"
+	ms.date="11/13/2015"
 	wacn.date=""/>
 
 
@@ -18,20 +18,12 @@
 
 # Django and SQL Database on Azure with Python Tools 2.2 for Visual Studio 
 
-In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates. 
+In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates. This tutorial is also available as a [video](https://www.youtube.com/watch?v=ZwcoGcIeHF4).
 
-We'll learn how to use a SQL database hosted on Azure, how to configure the web app to use a SQL database, and how to publish the web app to [Azure Websites](/documentation/services/web-sites/).
+We'll learn how to use a SQL database hosted on Azure, how to configure the web app to use a SQL database, and how to publish the web app to [Azure Web Apps](/documentation/services/web-sites/).
 
-See the [Python Developer Center] for more articles that cover development of Azure Websites with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Websites, the steps are similar when developing [Azure Cloud Services].
+See the [Python Developer Center] for more articles that cover development of Azure Web Apps with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Web App, the steps are similar when developing [Azure Cloud Services].
 
-+ [Prerequisites](#prerequisites)
-+ [Create the Project](#create-the-project)
-+ [Create a SQL Database](#create-a-sql-database)
-+ [Configure the Project](#configure-the-project)
-+ [Publish to an Azure Website](#publish-to-an-azure-website)
-+ [Next steps](#next-steps)
-
-<a name="prerequisites"></a>
 ## Prerequisites
 
  - Visual Studio 2013 or 2015
@@ -41,6 +33,8 @@ See the [Python Developer Center] for more articles that cover development of Az
  - [Python 2.7 32-bit]
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 ## Create the Project
 
@@ -143,7 +137,7 @@ Edit the definition of `DATABASES` to use the values above.
 
 1.  In Solution Explorer, under **Python Environments**, right-click on the virtual environment and select **Install Python Package**.
 
-1.  Install the package `pyodbc` using **easy_install**.
+1.  Install the package `pyodbc` using **pip**.
 
   	![Install Python Package Dialog](./media/web-sites-python-ptvs-django-sql/PollsDjangoSqlInstallPackagePyodbc.png)
 
@@ -160,9 +154,9 @@ Edit the definition of `DATABASES` to use the values above.
 1.  Run the application with `F5`. Polls that are created with **Create Sample Polls** and the data submitted by voting will be serialized in the SQL database.
 
 
-## Publish the web app to Azure Websites
+## Publish the web app to Azure
 
-The Azure .NET SDK provides an easy way to deploy your web web app to Azure Websites.
+The Azure .NET SDK provides an easy way to deploy your web web app to Azure Web Apps.
 
 1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
@@ -200,10 +194,13 @@ Follow these links to learn more about Python Tools for Visual Studio, Django an
 - [Django Documentation]
 - [SQL Database]
 
+## What's changed
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
-[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
+[Azure Cloud Services]: ../cloud-services-python-ptvs.md
 
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn

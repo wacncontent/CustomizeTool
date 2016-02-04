@@ -4,11 +4,11 @@
 	services="storage" 
 	documentationCenter="" 
 	authors="tamram" 
-	manager="adinah" 
-	editor=""/>
+	manager="carmonm" 
+	editor="tysonn"/>
 <tags
 	ms.service="storage"
-	ms.date="09/23/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 # Use the Azure Storage Emulator for Development and Testing

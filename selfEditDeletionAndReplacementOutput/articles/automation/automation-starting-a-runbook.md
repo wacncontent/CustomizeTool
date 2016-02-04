@@ -13,6 +13,11 @@ deleted:
 		   </ul>
 		  </td>
 		 </tr>
+
+reason: (Graphical Runbook)
+
+deleted:
+
 		 <tr>
 		  <td><a href="/documentation/articles/automation-webhooks/">Respond to Azure Alert</a></td>
 		  <td>
@@ -25,7 +30,7 @@ deleted:
 		  </td>
 		 </tr>
 
-reason: ()
+reason: (Webhook)
 
 deleted:
 
@@ -37,5 +42,5 @@ deleted:
 		1. If the runbook has no parameters, you will be prompted to confirm whether you want to start it.  If the runbook has parameters, the **Start Runbook** blade will be opened so you can provide parameter values. See [Runbook Parameters](#Runbook-parameters) below for further details on parameters.
 		3. The **Job** blade is opened so that you can track the job's status.
 
-reason: ()
+reason: (the new Ibiza portal)
 

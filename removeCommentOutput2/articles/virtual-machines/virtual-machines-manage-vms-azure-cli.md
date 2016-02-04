@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Manage virtual machines with the CLI | Windows Azure"
    description="Automate the management of your Azure Resource Manager VMs by using the Azure Command-Line Interface (CLI)."

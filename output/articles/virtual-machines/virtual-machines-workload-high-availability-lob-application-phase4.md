@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Line of business application Phase 4 | Windows Azure" 
 	description="Create the web servers and load your line of business application on them in Phase 4 of the line of business application in Azure." 
@@ -14,11 +16,8 @@
 	wacn.date=""/>
 
 # Line of Business Application Workload Phase 4: Configure web servers
-<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
- 
--->
 
 In this phase of deploying a high availability line of business application in Azure infrastructure services, you build out the web servers and load your line of business application on them.
 
@@ -27,19 +26,27 @@ You must complete this phase before moving on to [Phase 5](/documentation/articl
 ## Create the web server virtual machines in Azure
 
 There are two web server virtual machines, on which you can deploy ASP.NET applications or older applications that can be hosted by Internet Information Services (IIS) 8 in Windows Server 2012 R2.
-<!-- deleted by customization
-
-> [AZURE.NOTE] This article contains commands for Azure PowerShell Preview 1.0. To run these commands in Azure PowerShell 0.9.8 and prior versions, replace all instances of "-AzureRM" with "-Azure" and add the **Switch-AzureMode AzureResourceManager** command before you execute any commands. For more information, see [Azure PowerShell 1.0 Preview](https://azure.microsoft.com/blog/azps-1-0-pre/).
--->
 
 First, you configure internal load balancing so that Azure distributes the client traffic to the line of business application evenly among the two web servers. This requires you to specify an internal load balancing instance consisting of a name and its own IP address, assigned from the subnet address space that you assigned to your Azure virtual network. 
 
-Fill in the variables and run the following set of commands:
+> [AZURE.NOTE] The following command sets use Azure PowerShell 1.0 and later. For more information, see [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/).
+
+Specify the values for the variables, removing the < and > characters. Note that the following Azure PowerShell command sets use values from the following tables:
+
+- Table M, for your virtual machines
+- Table V, for your virtual network settings
+- Table S, for your subnet
+- Table ST, for your storage accounts
+- Table A, for your availability sets
+
+Recall that you defined Table M in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2) and Tables V, S, ST, and A in [Phase 1](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1).
+
+When you have supplied all the proper values, run the resulting block at the Azure PowerShell command prompt.
 
 	# Set up key variables
 	$rgName="<resource group name>"
 	$locName="<Azure location of your resource group>"
-	$vnetName="<Table V – Item 1 – Value column>"
+	$vnetName="<Table V - Item 1 - Value column>"
 	$privIP="<available IP address on the subnet>"
 	$vnet=Get-AzureRMVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
 
@@ -53,15 +60,7 @@ Fill in the variables and run the following set of commands:
 
 Next, add a DNS address record to your organization's internal DNS infrastructure that resolves the fully qualified domain name of the line of business application (such as lobapp.corp.contoso.com) to the IP address assigned to the internal load balancer (the value of $privIP in the preceding Azure PowerShell command block).
 
-Next, use the following block of PowerShell commands to create the virtual machines for the two web servers. Note that this PowerShell command set uses values from the following tables:
-
-- Table M, for your virtual machines
-- Table V, for your virtual network settings
-- Table S, for your subnet
-- Table ST, for your storage accounts
-- Table A, for your availability sets
-
-Recall that you defined Table M in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2) and Tables V, S, ST, and A in [Phase 1](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1).
+Next, use the following block of PowerShell commands to create the virtual machines for the two web servers. 
 
 When you have supplied all the proper values, run the resulting block at the Azure PowerShell prompt.
 
@@ -71,19 +70,19 @@ When you have supplied all the proper values, run the resulting block at the Azu
 	$webLB=Get-AzureRMLoadBalancer -ResourceGroupName $rgName -Name "WebServersInAzure"	
 	
 	# Use the standard storage account
-	$saName="<Table ST – Item 2 – Storage account name column>"
+	$saName="<Table ST - Item 2 - Storage account name column>"
 
-	$vnetName="<Table V – Item 1 – Value column>"
+	$vnetName="<Table V - Item 1 - Value column>"
 	$beSubnetName="<Table S - Item 2 - Name column>"
-	$avName="<Table A – Item 3 – Availability set name column>"
+	$avName="<Table A - Item 3 - Availability set name column>"
 	$vnet=Get-AzureRMVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
 	$backendSubnet=Get-AzureRMVirtualNetworkSubnetConfig -Name $beSubnetName -VirtualNetwork $vnet
 	
 	# Create the first web server virtual machine
-	$vmName="<Table M – Item 6 - Virtual machine name column>"
-	$vmSize="<Table M – Item 6 - Minimum size column>"
+	$vmName="<Table M - Item 6 - Virtual machine name column>"
+	$vmSize="<Table M - Item 6 - Minimum size column>"
 	$nic=New-AzureRMNetworkInterface -Name ($vmName + "-NIC") -ResourceGroupName $rgName -Location $locName -Subnet $backendSubnet -LoadBalancerBackendAddressPool $webLB.BackendAddressPools[0]
-	$avSet=Get-AzureRMAvailabilitySet -Name $avName –ResourceGroupName $rgName 
+	$avSet=Get-AzureRMAvailabilitySet -Name $avName -ResourceGroupName $rgName 
 	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the first web server." 
 	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
@@ -95,11 +94,11 @@ When you have supplied all the proper values, run the resulting block at the Azu
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 	
 	# Create the second web server virtual machine
-	$vmName="<Table M – Item 7 - Virtual machine name column>"
-	$vmSize="<Table M – Item 7 - Minimum size column>"
+	$vmName="<Table M - Item 7 - Virtual machine name column>"
+	$vmSize="<Table M - Item 7 - Minimum size column>"
 	$nic=New-AzureRMNetworkInterface -Name ($vmName + "-NIC") -ResourceGroupName $rgName -Location $locName -Subnet $backendSubnet -LoadBalancerBackendAddressPool $webLB.BackendAddressPools[0]
 	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
-	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the second second SQL Server computer." 
+	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the second SQL Server computer." 
 	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
 	$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
 	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
@@ -108,10 +107,8 @@ When you have supplied all the proper values, run the resulting block at the Azu
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-<!-- deleted by customization
-> [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure Preview portal. The **Connect** button will be unavailable when you view the properties of the virtual machine.
+> [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure Management Portal. The **Connect** button will be unavailable when you view the properties of the virtual machine.
 
--->
 Use the remote desktop client of your choice and create a remote desktop connection to each web server virtual machine. Use its intranet DNS or computer name and the credentials of the local administrator account.
 
 Next, for each web server virtual machine, join them to the appropriate Active Directory domain with these commands at the Windows PowerShell prompt.
@@ -151,16 +148,4 @@ This diagram is the configuration resulting from the successful completion of th
 
 ## Next Step
 
-To continue with the configuration of this workload, go to [Phase 5: Create the availability group and add the application databases](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase5).
-
-## Additional Resources
-
-[Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview)
-
-[Line of Business Applications architecture blueprint](http://msdn.microsoft.com/dn630664)
-
-[Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
-
-[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
-
-[Azure Infrastructure Services Workload: SharePoint Server 2013 farm](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
+- Use [Phase 5](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase5) to complete the configuration of this workload.

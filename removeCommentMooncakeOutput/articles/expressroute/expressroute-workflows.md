@@ -7,9 +7,9 @@
    manager="carolz"
    editor="" />
 <tags
-	ms.service="expressroute"
-	ms.date="10/12/2015"
-	wacn.date=""/>
+   ms.service="expressroute"
+   ms.date="10/12/2015"
+   wacn.date=""/>
 
 # ExpressRoute workflows for circuit provisioning and circuit states
 This page walks you through the service provisioning and routing configuration workflows at a high level. 
@@ -82,7 +82,7 @@ Provisioned and Enabled is the only state the circuit can be in for you to be ab
 
 You will see the ExpressRoute circuit in the state described below as soon as you run the PowerShell cmdlet to delete the ExpressRoute circuit.
 
-	ServiceProviderProvisioningState : Provisioning
+	ServiceProviderProvisioningState : Provisioned
 	Status                           : Disabling
 
 You must reach out to your connectivity provider to deprovision the ExpressRoute circuit. **Important:** Microsoft will continue to bill the circuit until you run the PowerShell cmdlet to deprovision the circuit.

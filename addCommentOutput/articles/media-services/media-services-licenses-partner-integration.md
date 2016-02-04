@@ -18,13 +18,13 @@
 
 Windows Azure Media Services enables you to deliver MPEG-DASH protected with Widevine DRM, which is encrypted per the Common Encryption (CENC) specification.
 
->[AZURE.NOTE] Currently, Media Services does not provide a Widevine license server. You can use the following AMS partners to help you deliver Widevine licenses: <!-- deleted by customization [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), --> [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/)
+Starting with the Media Services .NET SDK version 3.5.2, Media Services enables you to configure Widevine license template and get Widevine licenses. You can also use the following AMS partners to help you deliver Widevine licenses: <!-- deleted by customization [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), --> [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
 
 ##castLabs
 
 You can use [castLabs](http://castlabs.com/company/partners/azure/) to deliver Widevine licenses. For more information, see [Using castLabs to deliver DRM licenses to Azure Media Services](/documentation/articles/media-services-castlabs-integration)
-
 <!-- deleted by customization
+
 ##Axinom
 
 You can use [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/) to deliver Widevine licenses. For more information, see [Using Axinom to deliver DRM licenses to Azure Media Services](/documentation/articles/media-services-axinom-integration)
@@ -32,15 +32,16 @@ You can use [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/) to deliver W
 
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 -->
 
 ##See also
 
 [Using PlayReady and/or Widevine dynamic common encryption](/documentation/articles/media-services-protect-with-drm)
 
-[Mingfei’s blog](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/)
+[Mingfei's blog](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/)
 

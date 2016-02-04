@@ -1,15 +1,15 @@
 <properties
 	pageTitle="How to use Blob storage from Node.js | Windows Azure"
-	description="Learn how to use the Azure Blob service to upload, download, list, and delete blob content. Samples are written in Node.js."
+	description="Learn how to use Blob storage to upload, download, list, and delete blob content. Samples are written in Node.js."
 	services="storage"
 	documentationCenter="nodejs"
-	authors="MikeWasson"
+	authors="rmcmurray"
 	manager="wpickett"
-	editor=""/>
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/01/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 
@@ -20,7 +20,7 @@
 
 ## Overview
 
-This article shows you how to perform common scenarios using the Azure Blob service. The samples are written via the Node.js API. The scenarios covered include how to upload, list, download, and delete blobs.
+This article shows you how to perform common scenarios using Blob storage. The samples are written via the Node.js API. The scenarios covered include how to upload, list, download, and delete blobs.
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
 
@@ -63,7 +63,7 @@ Using Notepad or another text editor, add the following to the top of the **serv
 
 The Azure module will read the environment variables `AZURE_STORAGE_ACCOUNT` and `AZURE_STORAGE_ACCESS_KEY`, or `AZURE_STORAGE_CONNECTION_STRING`, for information required to connect to your Azure storage account. If these environment variables are not set, you must specify the account information when calling **createBlobService**.
 
-For an example of setting the environment variables in the Azure Management Portal for an Azure web app, see [Node.js Web Application with Storage]
+For an example of setting the environment variables in the [Azure Management Portal](portal.azure.com) for an Azure web app, see [Node.js Web Application with Storage]
 
 ## Create a container
 
@@ -197,7 +197,7 @@ The `result` contains an `entries` collection, which is an array of objects that
 
 To download data from a blob, use the following:
 
-* **getBlobToFile** - writes the blob contents to file
+* **getBlobToLocalFile** - writes the blob contents to file
 
 * **getBlobToStream** - writes the blob contents to a stream
 
@@ -357,19 +357,18 @@ Once the ACL is set, you can then create shared access signatures based on the I
 For more information, see the following resources.
 
 -   [Azure Storage SDK for Node API Reference][]
--   MSDN Reference: [Storing and accessing data in Azure][]
 -   [Azure Storage Team Blog][]
 -   [Azure Storage SDK for Node][] repository on GitHub
 -   [Node.js Developer Center](/develop/nodejs/)
+-   [Transfer data with the AzCopy command-line utility](/documentation/articles/storage-use-azcopy)
 
 [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
 [Create and deploy a Node.js application to an Azure Web Site]: /develop/nodejs/tutorials/create-a-website-(mac)/
-[Node.js Cloud Service with Storage]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
-[Node.js Web Application with Storage]: /documentation/articles/storage-nodejs-use-table-storage-web-site
-[Web app with WebMatrix]: /documentation/articles/web-sites-nodejs-use-webmatrix
+[Node.js Cloud Service with Storage]: ../storage-nodejs-use-table-storage-cloud-service-app.md
+[Node.js Web Application with Storage]: ../storage-nodejs-use-table-storage-web-site.md
+[Web app with WebMatrix]: ../web-sites-nodejs-use-webmatrix.md
 [Using the REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx
-[Azure Management Portal]: http://manage.windowsazure.cn
-[Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
-[Storing and accessing data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+[Azure Management Portal]: portal.azure.com
+[Node.js Cloud Service]: ../cloud-services-nodejs-develop-deploy-app.md
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
-[Azure Storage SDK for Node API Reference]: http://dl.windowsazure.cn/nodestoragedocs/index.html
+[Azure Storage SDK for Node API Reference]: http://dl.windowsazure.com/nodestoragedocs/index.html

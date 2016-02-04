@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory integration with Clever | Windows Azure" 
     description="Learn how to use Clever with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Clever
@@ -116,12 +116,7 @@ The following screenshot shows an example for this.
 
 	|Attribute Name|Attribute Value|
     |---|---|
-<!-- deleted by customization
     |clever.student.credentials.district\_username|User.userprincipalname|
--->
-<!-- keep by customization: begin -->
-    |clever.student.credentials.district_username|User.userprincipalname|
-<!-- keep by customization: end -->
 
     1.  For each data row in the table above, click **add user attribute**.
     2.  In the **Attribute Name** textbox, type the attribute name shown for that row.

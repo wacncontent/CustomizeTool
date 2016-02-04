@@ -1,15 +1,15 @@
 <properties
-	title="Elastic database Split-Merge tool tutorial"
 	pageTitle="Elastic database Split-Merge tool tutorial | Windows Azure"
 	description="Splitting and Merging with elastic database tools"
-	metaKeywords="elastic database tools, split and merge, Azure SQL Database sharding, elastic scale, splitting and merging elastic databases"
-	services="sql-database" documentationCenter=""  
+	services="sql-database"  
+	documentationCenter=""
+	authors="sidneyh"
 	manager="jeffreyg"
-	authors="sidneyh"/>
+	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/14/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Elastic database Split-Merge tool tutorial
@@ -30,16 +30,9 @@ The steps above download the Split-Merge files to the current directory. The fil
 
     ![Allowed services][1]
 
-<!-- deleted by customization
-3. Create an Azure Storage account that will be used for diagnostics output. Go to the Azure preview portal. In the left bar, click **New**, click **DATA SERVICE**, then **Storage**.
+3. Create an Azure Storage account that will be used for diagnostics output. Go to the Azure Management Portal. In the left bar, click **New**, click **DATA SERVICE**, then **Storage**.
 
-4. Create an Azure Cloud Service that will contain your Split-Merge service.  Go to the Azure preview portal. In the left bar, click **New**, then **Compute**, **Cloud Service**, and **Create**. 
--->
-<!-- keep by customization: begin -->
-3. Create an Azure Storage account that will be used for diagnostics output. Go to the [Azure Management Portal](https://manage.windowsazure.cn). At the bottom left, click **New**, click **Data Services**, **Storage**, then **Quick Create**. 
-
-4. Create an Azure Cloud Service that will contain your Split-Merge service.  Go to the [Azure Management Portal](https://manage.windowsazure.cn). On the bottom left, click **New**, then **Compute**, **Cloud Service**, and **Quick Create**. 
-<!-- keep by customization: end -->
+4. Create an Azure Cloud Service that will contain your Split-Merge service.  Go to the Azure Management Portal. In the left bar, click **New**, then **Compute**, **Cloud Service**, and **Create**. 
 
 
 ## Configuring your Split-Merge service
@@ -64,7 +57,7 @@ The steps above download the Split-Merge files to the current directory. The fil
 ### Configuring security
 For detailed instructions to configure the security of the service, refer to the [Split-Merge security configuration](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration).
 
-For the purposes of  a simple test deployment suitable to complete this tutorial, a minimal set of configuration steps will be performed to get the service up and running. These steps enable only the one machine/account executing them to communicate with the service.
+For the purposes of a simple test deployment for this tutorial, a minimal set of configuration steps will be performed to get the service up and running. These steps enable only the one machine/account executing them to communicate with the service.
 
 ### Creating a self-signed certificate
 
@@ -95,12 +88,7 @@ Execute the following command from the same window where makecert was executed; 
 
 ### Upload the PFX file to the cloud service
 
-<!-- deleted by customization
-Go to the [Azure preview portal](https://manage.windowsazure.cn).
--->
-<!-- keep by customization: begin -->
 Go to the [Azure Management Portal](https://manage.windowsazure.cn).
-<!-- keep by customization: end -->
 
 1. Select **Cloud Services**.
 2. Select the cloud service you created above for the Split/Merge service.
@@ -174,9 +162,9 @@ The script files included are:
 
 1. **SetupSampleSplitMergeEnvironment.ps1** - sets up a test data tier for Split/Merge (see table below for detailed description)
 2. **ExecuteSampleSplitMerge.ps1** - executes test operations on the test data tier (see table below for detailed description)
-3. **GetMappings.ps1** – top-level sample script that prints out the current state of the shard mappings.
-4. **ShardManagement.psm1**  – helper script that wraps the ShardManagement API
-5. **SqlDatabaseHelpers.psm1** – helper script for creating and managing SQL databases
+3. **GetMappings.ps1** - top-level sample script that prints out the current state of the shard mappings.
+4. **ShardManagement.psm1**  - helper script that wraps the ShardManagement API
+5. **SqlDatabaseHelpers.psm1** - helper script for creating and managing SQL databases
 
 <table style="width:100%">
   <tr>
@@ -262,13 +250,13 @@ The script files included are:
             -SplitMergeServiceEndpoint 'https://mysplitmergeservice.chinacloudapp.cn' `
             -CertificateThumbprint '0123456789abcdef0123456789abcdef01234567'
 
-    If you receive the below error, it is most likely a problem with your Web endpoint’s certificate. Try connecting to the Web endpoint with your favorite Web browser and check if there is a certificate error.
+    If you receive the below error, it is most likely a problem with your Web endpoint's certificate. Try connecting to the Web endpoint with your favorite Web browser and check if there is a certificate error.
 
         Invoke-WebRequest : The underlying connection was closed: Could not establish trust relationship for the SSL/TLSsecure channel.
 
     If it succeeded, the output should look like the below:
 
-        > .\ExecuteSampleSplitMerge.ps1 -UserName 'mysqluser' -Password 'MySqlPassw0rd' -ShardMapManagerServerName 'abcdefghij.database.chinacloudapi.cn' -SplitMergeServiceEndpoint 'http://mysplitmergeservice.chinacloudapp.cn' –CertificateThumbprint 0123456789abcdef0123456789abcdef01234567
+        > .\ExecuteSampleSplitMerge.ps1 -UserName 'mysqluser' -Password 'MySqlPassw0rd' -ShardMapManagerServerName 'abcdefghij.database.chinacloudapi.cn' -SplitMergeServiceEndpoint 'http://mysplitmergeservice.chinacloudapp.cn' -CertificateThumbprint 0123456789abcdef0123456789abcdef01234567
         Sending split request
         Began split operation with id dc68dfa0-e22b-4823-886a-9bdc903c80f3
         Polling split-merge request status. Press Ctrl-C to end
@@ -310,8 +298,8 @@ The Split-Merge service can move data in both sharded tables and reference table
 
 In order to perform a split-merge operation, you must declare the sharded tables and reference tables that you want to have moved. This is accomplished with the **SchemaInfo** API. This API is in the **Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.Schema** namespace.
 
-1.    For each sharded table, create a **ShardedTableInfo** object describing the table’s parent schema name (optional, defaults to “dbo”), the table name, and the column name in that table that contains the sharding key.
-2.    For each reference table, create a **ReferenceTableInfo** object describing the table’s parent schema name (optional, defaults to “dbo”) and the table name.
+1.    For each sharded table, create a **ShardedTableInfo** object describing the table's parent schema name (optional, defaults to “dbo”), the table name, and the column name in that table that contains the sharding key.
+2.    For each reference table, create a **ReferenceTableInfo** object describing the table's parent schema name (optional, defaults to “dbo”) and the table name.
 3.    Add the above TableInfo objects to a new **SchemaInfo** object.
 4.    Get a reference to a **ShardMapManager** object, and call **GetSchemaInfoCollection**.
 5.    Add the **SchemaInfo** to the **SchemaInfoCollection**, providing the shard map name.

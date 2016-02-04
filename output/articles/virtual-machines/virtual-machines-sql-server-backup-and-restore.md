@@ -14,8 +14,6 @@
 	wacn.date=""/>
 
 # Backup and Restore for SQL Server in Azure Virtual Machines
-<!-- deleted by customization
--->
 
 ## Overview
 

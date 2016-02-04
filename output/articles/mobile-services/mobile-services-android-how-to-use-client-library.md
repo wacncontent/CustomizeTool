@@ -15,6 +15,10 @@
 
 # How to use the Android client library for Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
 This guide shows you how to perform common scenarios using the Android client for Azure Mobile Services.  The scenarios covered include querying for data; inserting, updating, and deleting data, authenticating users, handling errors, and customizing the client.
@@ -44,7 +48,7 @@ The corresponding typed client side object is the following:
 When dynamic schema is enabled, Azure Mobile Services automatically generates new columns based on the object in the insert or update request. For more information, see [Dynamic schema](https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx).
 
 ##<a name="create-client"></a>How to: Create the Mobile Services client
-The following code creates the [MobileServiceClient](http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) object that is used to access your mobile service. The code goes in the `onCreate` method of the Activity class specified in *AndroidManifest.xml* as a **MAIN** action and **LAUNCHER** category.
+The following code creates the [MobileServiceClient](http://azure.github.io/azure-storage-android/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) object that is used to access your mobile service. The code goes in the `onCreate` method of the Activity class specified in *AndroidManifest.xml* as a **MAIN** action and **LAUNCHER** category.
 
 		MobileServiceClient mClient = new MobileServiceClient(
 				"MobileServiceUrl", // Replace with the above Site URL
@@ -57,7 +61,7 @@ In the code above, replace `MobileServiceUrl` and `AppKey` with the mobile servi
 
 The easiest way to query or modify data in the mobile service is by using the *typed programming model*, since Java is a strongly typed language (later on we will discuss the *untyped* model). This model provides seamless serialization and deserialization to JSON using the [gson](http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html) library when sending data between the client and the mobile service: the developer doesn't have to do anything, the framework handles it all.
 
-The first thing you do to query or modify data is to create a [MobileServiceTable](http://go.microsoft.com/fwlink/p/?LinkId=296835) object by calling the **getTable** method on the [**MobileServiceClient**](http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html).  We will look at two overloads of this method:
+The first thing you do to query or modify data is to create a [MobileServiceTable](http://go.microsoft.com/fwlink/p/?LinkId=296835) object by calling the **getTable** method on the [**MobileServiceClient**](http://azure.github.io/azure-storage-android/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html).  We will look at two overloads of this method:
 
 	public class MobileServiceClient {
 	    public <E> MobileServiceTable<E> getTable(Class<E> clazz);
@@ -129,7 +133,7 @@ The following code returns all items from the *ToDoItem* table whose *complete* 
                     final MobileServiceList<ToDoItem> result =
 						mToDoTable.where().field("complete").eq(false).execute().get();
 					for (ToDoItem item : result) {
-                		Log.i(TAG, "Read object with ID " + item.id);  
+                		Log.i(TAG, "Read object with ID " + item.id);
 					}
                 } catch (Exception exception) {
                     createAndShowDialog(exception, "Error");
@@ -367,7 +371,7 @@ The following code shows how to delete data from a table. It deletes an existing
 	}
 
 
-The following code illustrates another way to do this. It deletes an existing item in the ToDoItem table by specifying the value of the id field of the row to delete (assumed to equal "2FA404AB-E458-44CD-BC1B-3BC847EF0902"). In an actual app you would pick up the ID somehow and pass it in as a variable. Here, to simplify testing, you can go into the Azure Mobile Services portal for your service, click **Data** and copy an ID that you wish to test with.
+The following code illustrates another way to do this. It deletes an existing item in the ToDoItem table by specifying the value of the id field of the row to delete (assumed to equal "2FA404AB-E458-44CD-BC1B-3BC847EF0902"). In an actual app you would pick up the ID somehow and pass it in as a variable. Here, to simplify testing, you can go to your service in the Azure Management Portal, click **Data** and copy an ID that you wish to test with.
 
     public void deleteItem(View view) {
 
@@ -392,7 +396,7 @@ The following code illustrates another way to do this. It deletes an existing it
     }
 
 ##<a name="lookup"></a>How to: Look up a specific item
-Sometimes you want to look up a specific item by its *id*, unlike querying where you typically get a collection of items that satisfy some criteria. The following code shows how to do this, for an *id* value of `0380BAFB-BCFF-443C-B7D5-30199F730335`. In an actual app you would pick up the ID somehow and pass it in as a variable. Here, to simplify testing, you can go to the Azure Mobile Services portal for your service, click the **Data** tab and copy an ID that you wish to test with.
+Sometimes you want to look up a specific item by its *id*, unlike querying where you typically get a collection of items that satisfy some criteria. The following code shows how to do this, for an *id* value of `0380BAFB-BCFF-443C-B7D5-30199F730335`. In an actual app you would pick up the ID somehow and pass it in as a variable. Here, to simplify testing, you can go to your service in the Azure Management Portal, click the **Data** tab and copy an ID that you wish to test with.
 
     /**
      * Lookup specific item from table and UI
@@ -927,5 +931,5 @@ This general method can be used whenever we have a complex object that is not au
 
 
 <!-- URLs. -->
-[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
+[Get started with Mobile Services]: mobile-services-android-get-started.md
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set

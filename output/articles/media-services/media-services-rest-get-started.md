@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/18/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 #Get started with delivering content on demand using REST API
@@ -43,7 +43,7 @@ The following tasks are shown in this quickstart.
 
 ## <a id="create_ams"></a>Create a Media Services account using Portal
 
-1. In the [Management Portal][], click **New**, click **Media Service**, and then click **Quick Create**.
+1. In the [Azure Management Portal][], click **New**, click **Media Service**, and then click **Quick Create**.
    
 	![Media Services Quick Create](./media/media-services-rest-get-started/wams-QuickCreate.png)
 
@@ -223,7 +223,7 @@ One of the values that you have to provide when creating an asset is asset creat
 	If you plan to deliver an MP4 using progressive download, use this option. 
 - **StorageEncrypted** = **1** - Encrypts your clear content locally using AES-256 bit encryption and then uploads it to Azure Storage where it is stored encrypted at rest. Assets protected with Storage Encryption are automatically unencrypted and placed in an encrypted file system prior to encoding, and optionally re-encrypted prior to uploading back as a new output asset. The primary use case for Storage Encryption is when you want to secure your high quality input media files with strong encryption at rest on disk.
 - **CommonEncryptionProtected** = **2** - Use this option if you are uploading content that has already been encrypted and protected with Common Encryption or PlayReady DRM (for example, Smooth Streaming protected with PlayReady DRM).
-- **EnvelopeEncryptionProtected** = **4** – Use this option if you are uploading HLS encrypted with AES. Note that the files must have been encoded and encrypted by Transform Manager.
+- **EnvelopeEncryptionProtected** = **4** â Use this option if you are uploading HLS encrypted with AES. Note that the files must have been encoded and encrypted by Transform Manager.
 
 ### Create an asset
 
@@ -1186,9 +1186,15 @@ To stream you video, use [Azure Media Services Player](http://amsplayer.azureweb
 To test progressive download, paste a URL into a browser (for example, IE, Chrome, Safari).
 
 
-##Next Steps
+##Next Steps: Media Services learning paths
 
-### Looking for something else?
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
+## Looking for something else?
 
 If this topic didn't contain what you were expecting, is missing something, or in some other way didn't meet your needs, please provide us with you feedback using the Disqus thread below.
 
@@ -1199,7 +1205,7 @@ If this topic didn't contain what you were expecting, is missing something, or i
 
 
 <!-- URLs. -->
-  [Management Portal]: http://manage.windowsazure.cn/
+  [Azure Management Portal]: http://manage.windowsazure.cn/
 
 
- 
+

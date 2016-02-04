@@ -1,14 +1,14 @@
 <properties
    pageTitle="Troubleshooting Docker Client Errors on Windows Using Visual Studio | Windows Azure"
-   description="Troubleshoot problems you encounter when using Visual Studio to create and deploy web apps to Docker on Windows by using Visual Studio."
+   description="Troubleshoot problems you encounter when using Visual Studio to create and deploy web sites to Docker on Windows by using Visual Studio."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="08/20/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 # Troubleshooting Docker Errors
@@ -60,7 +60,7 @@ After creating a VM, sometimes the PowerShell window does not close automaticall
 
 Q: How do I create a new Docker-enabled Linux machine in Azure using the Visual Studio tools?
 
-A: See [Hosting Web Apps in Docker](/documentation/articles/vs-azure-tools-docker-hosting-web-apps-in-docker) for information on how to do this.
+A: See [Hosting web sites in Docker](/documentation/articles/vs-azure-tools-docker-hosting-web-apps-in-docker) for information on how to do this.
 
 Q:  What Visual Studio project templates are supported for publishing to a Linux Docker container?
 
@@ -70,7 +70,7 @@ A:  Visual Studio currently supports the C# Console Application (Package) and C#
 
 - Web API
 
-- Web Application
+- web site
 
 Q:  How do I publish my ASP.NET 5 web or console project to Docker using MSBUILD from the command line?
 
@@ -88,7 +88,7 @@ A:  Use the following PowerShell command:
 
 Q:  I have my own Linux server with Docker installed, how do I specify this in the **Web Publish** dialog?
 
-A:  See the section **Provide a Custom Docker Host** in the topic, [Hosting Web Apps in Docker](/documentation/articles/vs-azure-tools-docker-hosting-web-apps-in-docker).
+A:  See the section **Provide a Custom Docker Host** in the topic, [Hosting web sites in Docker](/documentation/articles/vs-azure-tools-docker-hosting-web-apps-in-docker).
 
 Q:  I'm using my own Linux server with Docker installed. How do I generate keys and certificates in order to configure authentication using TLS?
 

@@ -4,13 +4,13 @@ deleted:
 
 		West Europe, China North,
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		, Southeast Asia, East Asia, Japan West, Japan East
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -21,5 +21,5 @@ deleted:
 		- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 		- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
-reason: ()
+reason: (broken link)
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Cloud App Discovery Security and Privacy Considerations"
+	pageTitle="Cloud App Discovery Security and Privacy Considerations | Windows Azure"
 	description="This topic describes the security and privacy considerations related to Cloud App Discovery."
 	services="active-directory"
 	documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/03/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Cloud App Discovery Security and Privacy Considerations
@@ -41,7 +41,7 @@ The following sections follow the flow of information and describe how it is sec
 
 ## Collecting data from your organization
 
-In order to use Azure Active Directory’s Cloud App discovery feature to get insights into the applications used by employees in your organization, you need to first deploy the Azure AD Cloud App Discovery endpoint agent to machines in your organization.
+In order to use Azure Active Directory's Cloud App discovery feature to get insights into the applications used by employees in your organization, you need to first deploy the Azure AD Cloud App Discovery endpoint agent to machines in your organization.
 
 Administrators of the Azure Active Directory tenant (or their delegate) can download the agent installation package from the Azure Management Portal. The agent can either be manually installed or installed across multiple machines in the organization using SCCM or Group Policy.
 
@@ -50,17 +50,17 @@ For further instructions on deployment options, see [Cloud App Discovery Group P
 
 ### Data collected by the agent
 
-The information outlined in the list below is collected by the agent when a connection is made to a Web application. The information is only collected for those applications that the administrator has configured for discovery. <br>
+The information outlined in the list below is collected by the agent when a connection is made to a web site. The information is only collected for those applications that the administrator has configured for discovery. <br>
 You can edit the list of cloud apps that the agent monitors through the Cloud App Discovery blade in the Microsoft [Azure Management Portal](https://manage.windowsazure.cn), under **Settings**->**Data Collection**->**App Collection list**. For more details, see [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx)
 <br>
 **Information Category**: User information <br>
 **Description**: <br>
-The Windows user name of the process that made a request to the target Web application (e.g.: DOMAIN\username) as well as the Windows Security Identifier (SID) of the user.
+The Windows user name of the process that made a request to the target web site (e.g.: DOMAIN\username) as well as the Windows Security Identifier (SID) of the user.
 
 
 **Information Category**: Process information <br>
 **Description**: <br>
-The name of the process that made the request to the target Web application (e.g.: “iexplore.exe”)
+The name of the process that made the request to the target web site (e.g.: “iexplore.exe”)
 
 **Information Category**: Machine information <br>
 **Description**: <br>
@@ -102,7 +102,7 @@ The following HTTP information:
 
 
 > [AZURE.NOTE] The HTTP information above is collected for all non-encrypted connections.
- For TLS connections, this information is only captured when the ‘Deep Inspection’ setting is turned on in the portal. The setting is ‘ON’ by default.
+ For TLS connections, this information is only captured when the 'Deep Inspection' setting is turned on in the portal. The setting is 'ON' by default.
 For more details, see below, and [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx)
 
 
@@ -145,12 +145,12 @@ As we mentioned earlier, administrators can configure the agent to monitor data 
 
 While the end-to-end secure encrypted channel provided by TLS enables important security and privacy protection, the protocol is often abused for malicious or nefarious purposes. So much so, in fact, that TLS is often referred to as the “universal firewall-bypass protocol”. The root of the problem is that most firewalls are unable to inspect TLS communication because the application-layer data is encrypted with SSL. Knowing this, attackers frequently leverage TLS to deliver malicious payloads to a user confident that even the most intelligent application-layer firewalls are completely blind to TLS and must simply relay TLS communication between hosts. End users frequently leverage TLS to bypass access controls enforced by their corporate firewalls and proxy servers, using it to connect to public proxies and for tunneling non-TLS protocols through the firewall that might otherwise be blocked by policy.
 
-Deep inspection allows the Cloud App Discovery agent to act as a trusted man-in-the-middle. When a client request is made to access an HTTPS protected resource, the Endpoint Agent driver intercepts the connection and establishes a new connection to the destination server to retrieves its SSL certificate on behalf of the client. The agent then verifies that the certificate can be trusted (by checking that it was not revoked, and performing other certificate checks), and if these pass, the Endpoint Agent then copies the information from the server certificate and creates its own server certificate -- known as an interception certificate -- using that information. The interception certificate is signed on-the-fly by the endpoint agent with a root certificate, which is installed in the Windows trusted certificate store. This self-signed root certificate is marked non-exportable and is ACL’d to administrators. It is intended to never leave the machine on which it was created. When the end-user’s client application receives the interception certificate, it will trust it because it can successfully validate the certificate chain all the way to the root certificate. This process is mostly transparent from an end-user’s point of view with a few caveats as described below.
+Deep inspection allows the Cloud App Discovery agent to act as a trusted man-in-the-middle. When a client request is made to access an HTTPS protected resource, the Endpoint Agent driver intercepts the connection and establishes a new connection to the destination server to retrieves its SSL certificate on behalf of the client. The agent then verifies that the certificate can be trusted (by checking that it was not revoked, and performing other certificate checks), and if these pass, the Endpoint Agent then copies the information from the server certificate and creates its own server certificate -- known as an interception certificate -- using that information. The interception certificate is signed on-the-fly by the endpoint agent with a root certificate, which is installed in the Windows trusted certificate store. This self-signed root certificate is marked non-exportable and is ACL'd to administrators. It is intended to never leave the machine on which it was created. When the end-user's client application receives the interception certificate, it will trust it because it can successfully validate the certificate chain all the way to the root certificate. This process is mostly transparent from an end-user's point of view with a few caveats as described below.
 
 By enabling deep inspection, the Cloud App Discovery Endpoint Agent can decrypt and inspect TLS encrypted communications, allowing the service to reduce noise and provide insights about the usage of the encrypted cloud apps.
 
 #### A word of caution
-Before turning on deep inspection, it is strongly suggested that you communicate your intentions to your legal and HR departments and obtain their consent. Inspecting end user’s private encrypted communications can be a sensitive subject, for obvious reasons. Before a production roll-out of deep inspection, make certain that your corporate security and acceptable use policies have been updated to indicate that encrypted communication will be inspected. User notification and exemption of sites deemed sensitive (e.g. banking and medical sites) may also be necessary if you configure Cloud App Discovery to monitor them. As mentioned above, administrators can use the Cloud App Discovery portal to choose whether to notify users of the data collection by the agent, and whether to require user consent before the agent starts collecting user data.
+Before turning on deep inspection, it is strongly suggested that you communicate your intentions to your legal and HR departments and obtain their consent. Inspecting end user's private encrypted communications can be a sensitive subject, for obvious reasons. Before a production roll-out of deep inspection, make certain that your corporate security and acceptable use policies have been updated to indicate that encrypted communication will be inspected. User notification and exemption of sites deemed sensitive (e.g. banking and medical sites) may also be necessary if you configure Cloud App Discovery to monitor them. As mentioned above, administrators can use the Cloud App Discovery portal to choose whether to notify users of the data collection by the agent, and whether to require user consent before the agent starts collecting user data.
 
 ### Known issues and drawbacks
 There are a few cases where TLS interception may impact the end user experience:
@@ -176,7 +176,7 @@ The agent automatically attempts to resend the cached metadata until it has succ
 ## Receiving the data at the service end
 
 The agents authenticate to the Cloud App Discovery service using the machine specific client authentication certificate referenced above and forwards data over an encrypted channel. <br>
-The Cloud App Discovery service’s analytics pipeline processes metadata for each customer separately by logically partitioning it through all stages of the analytics pipeline.
+The Cloud App Discovery service's analytics pipeline processes metadata for each customer separately by logically partitioning it through all stages of the analytics pipeline.
 The analyzed metadata drives the various reports in the portal.
 
 The unprocessed metadata and the analyzed metadata are stored for up to 180 days. In addition, customers can choose to capture the analyzed metadata in an Azure blob storage account of their choosing.

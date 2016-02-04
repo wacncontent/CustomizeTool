@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Performance and scale overview | Microsoft Azure"
+   pageTitle="Performance and scale overview | Windows Azure"
    description="Introduction to the performance and scale features of SQL Data Warehouse."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,16 +8,12 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="barbkess;JRJ@BigBangData.co.uk;mausher;nicw"/>
+	ms.service="sql-data-warehouse"
+	ms.date="11/23/2015"
+	wacn.date=""/>
 
 # Performance and scale overview
-By putting your Data Warehouse in the cloud, you no longer have to deal with low-level hardware issues.  Gone are the days where you need to research what type of processors, how much memory or what type of storage you need to have great performance in your data warehouse.  Instead, SQL Data Warehouse asks you this question: how fast do you want to process your data? 
+By putting your Data Warehouse in the cloud, you no longer have to deal with low-level hardware issues. Gone are the days where you need to research what type of analyze ors, how much memory or what type of storage you need to have great performance in your data warehouse. Instead, SQL Data Warehouse asks you this question: how fast do you want to analyze your data?
 
 SQL Data Warehouse is a cloud based, distributed database platform that's designed to deliver great performance at scale where you are in full control of the resources used to resolve your queries. By simply adjusting the number of data warehouse units allocated to your data warehouse you can elastically scale the size of your warehouse resources in seconds. As a distributed, scale out platform, SQL Data Warehouse enables your data warehouse to process significant data volumes efficiently and effectively whilst leaving you in complete control of the cost of the solution.
 
@@ -33,7 +29,7 @@ We will continuously work toward these goals during the preview to satisfy them 
 >[AZURE.NOTE] The sections below describe the Azure SQL Data Warehouse service at the Public Preview launch. This information will be continuously updated during the preview as the service is enhanced towards GA. 
 
 ## Data protection
-SQL Data Warehouse stores all data in Azure Storage using geo-redundant blobs. Three synchronous copies of the data are maintained in the local Azure region to guarantee transparent data protection in case of localized failures (e.g. storage drive failures). In addition, three more asynchronous copies are maintained in a remote Azure region to guarantee data protection in case of regional failures (disaster recovery). Local and remote regions are paired to maintain acceptable synchronization latencies (e.g. East US and West US).
+SQL Data Warehouse stores all data in Azure Storage using geo-redundant blobs. Three synchronous copies of the data are maintained in the local Azure region to guarantee transparent data protection in case of localized failures (e.g. storage drive failures). In addition, three more asynchronous copies are maintained in a remote Azure region to guarantee data protection in case of regional failures (disaster recovery). Local and remote regions are paired to maintain acceptable synchronization latencies (e.g. China East and China North).
 
 ## Database restore
 SQL Data Warehouse backs up all data every 4 hours using Azure Storage Snapshots. These snapshots are maintained for 7 days free of charge. This allows restoring the data to up to 42 points in time within the past 7 days up to the time when the last snapshot was taken. During the preview, the ability to specify different retention values will be introduced. Data can be restored from a snapshot using PowerShell or REST APIs. Snapshots are asynchronously copied to a remote Azure region for added recoverability in case of regional failures (disaster recovery). 

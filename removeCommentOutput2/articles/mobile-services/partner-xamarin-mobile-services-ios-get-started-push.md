@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/18/2015"
+	ms.date="12/03/2015"
 	wacn.date=""/>
 
 # Add push notifications to your Mobile Services app
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
@@ -61,16 +66,16 @@ To be able to send push notifications to an iOS app from mobile services, you mu
 
     ![][102]
 
-2. Type a name for your app in **Description**, enter and remember the unique **Bundle Identifier**, check the "Push Notifications" option in the "Azure Websites" section, and then click **Continue**. This example uses the ID **MobileServices.Quickstart** but you may not reuse this same ID, as app IDs must be unique across all users. As such, it is recommended that you append your full name or initials after the app name.
+2. Type a name for your app in **Description**, enter and remember the unique **Bundle Identifier**, check the "Push Notifications" option in the "Azure Web App" section, and then click **Continue**. This example uses the ID **MobileServices.Quickstart** but you may not reuse this same ID, as app IDs must be unique across all users. As such, it is recommended that you append your full name or initials after the app name.
 
     ![][103]
 
     This generates your app ID and requests you to **Submit** the information. Click **Submit**.
-
+   
     ![][104]
-
+   
     Once you click **Submit**, you will see the **Registration complete** screen, as shown below. Click **Done**.
-
+   
     ![][105]
 
 3. Locate the app ID that you just created, and click on its row.
@@ -78,9 +83,9 @@ To be able to send push notifications to an iOS app from mobile services, you mu
     ![][106]
 
     Clicking on the app ID will display details on the app and app ID. Click the **Settings** button.
-
+   
     ![][107]
-
+   
 4. Scroll to the bottom of the screen, and click the **Create Certificate...** button under the section **Development Push SSL Certificate**.
 
     ![][108]
@@ -94,8 +99,8 @@ To be able to send push notifications to an iOS app from mobile services, you mu
     ![][110]
 
 6. After the certificate is created by the portal, click the **Download** button, and click **Done**.
-
-    ![][111]  
+ 
+    ![][111]
 
     This downloads the signing certificate and saves it to your computer in your Downloads folder.
 
@@ -130,7 +135,7 @@ Later, you will use this certificate to generate a .p12 file and upload it to Mo
     ![][114]
 
 5. Next, select the **Devices** to use for testing, and click **Continue**.
-
+  
     ![][115]
 
 6. Finally, pick a name for the profile in **Profile Name**, click **Generate**, and click **Done**.
@@ -258,27 +263,27 @@ Your mobile service is now configured to work with APNS.
             }
         }
 
-8. In **TodoListViewController**, modify the **OnAdd** action to get the device token stored in **AppDelegeate**, and store it into the **TodoItem** being added.
+8. In **QSTodoListViewController**, modify the **OnAdd** action to get the device token stored in **AppDelegeate**, and store it into the **TodoItem** being added.
 
         string deviceToken = ((AppDelegate)UIApplication.SharedApplication.Delegate).DeviceToken;
 
         var newItem = new TodoItem()
-        {
-            Text = itemText.Text,
-            Complete = false,
+			{
+				Text = itemText.Text, 
+				Complete = false,
             DeviceToken = deviceToken
         };
 
 Your app is now updated to support push notifications.
 
-## <a name="update-scripts"></a>Update the registered insert script in the Management Portal
+## <a name="update-scripts"></a>Update the registered insert script in the Azure Management Portal
 
-1. In the Management Portal, click the **Data** tab and then click the **TodoItem** table.
+1. In the [Azure Management Portal], click the **Data** tab and then click the **TodoItem** table.
 
     ![][21]
 
 2. In **todoitem**, click the **Script** tab and select **Insert**.
-
+   
     ![][22]
 
     This displays the function that is invoked when an insert occurs in the **TodoItem** table.

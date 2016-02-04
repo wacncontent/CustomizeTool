@@ -76,7 +76,7 @@ Microsoft accounts (for example outlook.com, hotmail.com, live.com) or other gue
 - Only an Azure Active Directory administrator can initially connect to the Azure SQL Server using an Azure Active Directory account. The Active Directory administrator can configure subsequent Azure Active Directory database users.
 - We recommend setting the connection timeout to 30 seconds.
 - Some tools like BI and Excel are not supported.
-- Azure Active Directory authentication only supports the **.NET Framework Data Provider for SqlServer** (at least version .NET Framework 4.6). Therefor Management Studio (available with SQL Server 2016) and data-tier applications (DAC and .bacpac) can connect, but **sqlcmd.exe** cannot connect because **sqlcmd** uses the ODBC provider.
+- Azure Active Directory authentication only supports the **.NET Framework Data Provider for SqlServer** (at least version .NET Framework 4.6). <!-- deleted by customization Therefore --><!-- keep by customization: begin --> Therefor <!-- keep by customization: end --> Management Studio (available with SQL Server 2016) and data-tier applications (DAC and .bacpac) can connect, but **sqlcmd.exe** cannot connect because **sqlcmd** uses the ODBC provider.
 - Two-factor authentication or other forms of interactive authentication are not supported.
 
 
@@ -133,7 +133,7 @@ Each Azure SQL Server starts with a single server administrator account which is
 
 ### Provision an Azure Active Directory administrator for your Azure SQL Server by using the Azure Management Portal 
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn/), in the upper-right corner, click your connection to drop down a list of possible Active Directories. Choose the correct Active Directory as the default Azure AD. This step links the subscription association with Active Directory with Azure SQL Database making sure that the same subscription is used for both Azure AD and SQL Server.
+1. In the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->, in the upper-right corner, click your connection to drop down a list of possible Active Directories. Choose the correct Active Directory as the default Azure AD. This step links the subscription association with Active Directory with Azure SQL Database making sure that the same subscription is used for both Azure AD and SQL Server.
 
 	![choose-ad][8]
 2. In the left banner select **SQL servers**, select your **SQL server**, and then in the **SQL Server** blade, at the top click **Settings**.
@@ -148,47 +148,74 @@ Each Azure SQL Server starts with a single server administrator account which is
 
 	The process of changing the administrator may take several minutes. Then the new administrator will appear in the **Active Directory admin** box.
 
+<!-- deleted by customization
+> [AZURE.NOTE] When setting up the Azure AD admin the new admin name (user or group) cannot already be present in the master database as a SQL Server authentication login. If present, the Azure AD admin setup will fail; rolling back its creation and indicating that such an admin (name) already exists. Since such a SQL Server authentication login is not part of the Azure AD, any effort to connect to the server using Azure AD authentication will fail.
+
+-->
 To later remove an Admin, at the top of the **Active Directory admin** blade, click **Remove admin**.
 
 ### Provision an Azure AD administrator for Azure SQL Server by using PowerShell 
 
+<!-- deleted by customization
+
+
+To run PowerShell cmdlets, you need to have Azure PowerShell installed and running <!-- keep by customization: begin -->, and due to the removal of Switch-AzureMode, you should download and install the latest Azure PowerShell by running the [Microsoft Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) <!-- keep by customization: end -->. For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+-->
+<!-- keep by customization: begin -->
 > [AZURE.IMPORTANT] Starting with the release of Azure PowerShell 1.0 Preview, the Switch-AzureMode cmdlet is no longer required, and cmdlets that were in the Azure ResourceManger module have been renamed. The examples in this article use the new PowerShell 1.0 Preview naming convention. For detailed information, see [Deprecation of Switch-AzureMode in Azure PowerShell](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
 
 
-To run PowerShell cmdlets, you need to have Azure PowerShell installed and running, and due to the removal of Switch-AzureMode, you should download and install the latest Azure PowerShell by running the [Microsoft Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409). For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+To run PowerShell cmdlets, you need to have Azure PowerShell installed and running <!-- keep by customization: begin -->, and due to the removal of Switch-AzureMode, you should download and install the latest Azure PowerShell by running the [Microsoft Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) <!-- keep by customization: end -->. For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+<!-- keep by customization: end -->
 
 To provision an Azure AD admin you must execute the following Azure PowerShell commands:
 
+<!-- deleted by customization
+- Add-AzureRmAccount
+- Select-AzureRmSubscription
+-->
+<!-- keep by customization: begin -->
 - Add-AzureAccount
 - Select-AzureSubscription
+<!-- keep by customization: end -->
 
 
 Cmdlets used to provision and manage Azure AD admin:
 
 | Cmdlet name                                       | Description                                                                                                     |
 |---------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| [Set-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt603544.aspx)    | Provisions an Azure Active Directory administrator for Azure SQL Server. (Must be from the current subscription.) |
-| [Remove-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt619340.aspx) | Removes an Azure Active Directory administrator for Azure SQL Server. |
-| [Get-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt603737.aspx)    | Returns information about an Azure Active Directory administrator currently configured for the Azure SQL Server. |
+| <!-- deleted by customization [Set-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt603544.aspx) --><!-- keep by customization: begin --> [Set-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt603544.aspx) <!-- keep by customization: end -->    | Provisions an Azure Active Directory administrator for Azure SQL Server. (Must be from the current subscription.) |
+| <!-- deleted by customization [Remove-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt619340.aspx) --><!-- keep by customization: begin --> [Remove-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt619340.aspx) <!-- keep by customization: end --> | Removes an Azure Active Directory administrator for Azure SQL Server. |
+| <!-- deleted by customization [Get-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt603737.aspx) --><!-- keep by customization: begin --> [Get-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt603737.aspx) <!-- keep by customization: end -->    | Returns information about an Azure Active Directory administrator currently configured for the Azure SQL Server. |
 
-Use PowerShell command get-help to see more details for each of these commands, for example ``get-help Set-AzureRMSqlServerActiveDirectoryAdministrator``.
+Use PowerShell command get-help to see more details for each of these commands, for example ``get-help <!-- deleted by customization Set-AzureRmSqlServerActiveDirectoryAdministrator`` --><!-- keep by customization: begin --> Set-AzureRMSqlServerActiveDirectoryAdministrator`` <!-- keep by customization: end -->.
 
 The following script provisions an Azure AD administrator group named **DBA_Group** (object id `40b79501-b343-44ed-9ce7-da4c8cc7353f`) for the **demo_server** server in a resource group named **Group-23**:
 
 ```
-Set-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" 
-–ServerName "demo_server" -DisplayName "DBA_Group"
+<!-- deleted by customization
+Set-AzureRmSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" 
+-->
+<!-- keep by customization: begin -->
+Set-AzureRMSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" 
+<!-- keep by customization: end -->
+-ServerName "demo_server" -DisplayName "DBA_Group"
 ```
 
 The **DisplayName** input parameter accepts either the Azure AD display name or the User Principal Name. For example ``DisplayName="John Smith"`` and ``DisplayName="johns@contoso.com"``. For Azure AD groups only the Azure AD display name is supported.
 
-> [AZURE.NOTE] The Azure PowerShell  command ```Set-AzureRMSqlServerActiveDirectoryAdministrator``` will not prevent you from provisioning Azure AD admins for unsupported users. An unsupported user can be provisioned, but will not be able to connect to a database. (See the list of supported admins in **Azure AD Features and Limitations** above.)
+> [AZURE.NOTE] The Azure PowerShell  command <!-- deleted by customization ```Set-AzureRmSqlServerActiveDirectoryAdministrator``` --><!-- keep by customization: begin --> ```Set-AzureRMSqlServerActiveDirectoryAdministrator``` <!-- keep by customization: end --> will not prevent you from provisioning Azure AD admins for unsupported users. An unsupported user can be provisioned, but will not be able to connect to a database. (See the list of supported admins in **Azure AD Features and Limitations** above.)
 
 The following example uses the optional **ObjectID**:
 
 ```
-Set-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" 
-–ServerName "demo_server" -DisplayName "DBA_Group" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353f"
+<!-- deleted by customization
+Set-AzureRmSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" 
+-->
+<!-- keep by customization: begin -->
+Set-AzureRMSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" 
+<!-- keep by customization: end -->
+-ServerName "demo_server" -DisplayName "DBA_Group" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353f"
 ```
 
 > [AZURE.NOTE] The Azure AD **ObjectID** is required when the **DisplayName** is not unique. To retrieve the **ObjectID** and **DisplayName** values, use the Active Directory section of Azure Management Portal, and view the properties of a user or group.
@@ -196,12 +223,22 @@ Set-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23"
 The following example returns information about the current Azure AD admin for Azure SQL Server:
 
 ```
-Get-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" –ServerName "demo_server" | Format-List
+<!-- deleted by customization
+Get-AzureRmSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -ServerName "demo_server" | Format-List
+-->
+<!-- keep by customization: begin -->
+Get-AzureRMSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -ServerName "demo_server" | Format-List
+<!-- keep by customization: end -->
 ```
 
 The following example removes an Azure AD administrator:
 ```
-Remove-AzureRMSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" –ServerName "demo_server"
+<!-- deleted by customization
+Remove-AzureRmSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -ServerName "demo_server"
+-->
+<!-- keep by customization: begin -->
+Remove-AzureRMSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -ServerName "demo_server"
+<!-- keep by customization: end -->
 ```
 
 ## 5. Configure your client computers
@@ -288,7 +325,7 @@ Azure Active Directory authentication supports the following methods of connecti
 
 ### 7.1. Connecting using integrated (Windows) authentication
  
-To use integrated Windows authentication, your domain’s Active Directory must be federated with Azure Active Directory and your client application (or a service) connecting to the database must be running on a domain-joined machine under a user’s domain credentials.
+To use integrated Windows authentication, your domain's Active Directory must be federated with Azure Active Directory and your client application (or a service) connecting to the database must be running on a domain-joined machine under a user's domain credentials.
 
 To connect to a database using integrated authentication and an Azure AD identity, the Authentication keyword in the database connection string must be set to Active Directory Integrated. The following C# code sample uses ADO .NET.
 

@@ -7,7 +7,8 @@
    manager="jeffreyg"
    editor=""/>
 
-<tags   ms.service="sql-database"
+<tags
+   ms.service="sql-database"
    ms.date="08/24/2015"
    wacn.date=""/>
 
@@ -29,7 +30,7 @@ Use the latest version of Microsoft SQL Server Management Studio for SQL Server 
 
 ##Using SSMS to Deploy to Azure SQL Database
 1.	Provision a logical server using the Azure Management Portal.
-2.	Locate the source database in the SSMS Object Explorer and execute the task, **Export Data-tier Application…**
+2.	Locate the source database in the SSMS Object Explorer and execute the task, **Export Data-tier ApplicationâŚ**
 
 	![Deploy to Azure from Tasks menu](./media/sql-database-migrate-ssms/02MigrateusingSSMS.png)
 
@@ -45,7 +46,7 @@ Depending on the size and complexity of the database, deployment may take from a
 The deployment process can be broken into two steps: export and import. In the first step, a BACPAC file is created which is then used as input in the second step.
 
 1.	Provision a logical server using the Azure Management Portal.
-2.	Locate the source database in the SSMS Object Explorer and select the task, **Deploy Database to Azure SQL Database…**
+2.	Locate the source database in the SSMS Object Explorer and select the task, **Deploy Database to Azure SQL DatabaseâŚ**
 
 	![Export a data-tier application from the Tasks menu](./media/sql-database-migrate-ssms/04MigrateusingSSMS.png)
 

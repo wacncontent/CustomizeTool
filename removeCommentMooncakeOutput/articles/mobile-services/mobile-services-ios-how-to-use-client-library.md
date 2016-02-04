@@ -14,6 +14,9 @@
 
 # How to Use iOS Client Library for Azure Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
 This guide teaches you to perform common scenarios using the Azure Mobile Services [iOS SDK]. If you are new to Mobile Services, first complete [Mobile Services Quick Start] to configure your account, create a table, and create a mobile service.
@@ -49,13 +52,13 @@ To create a database query, query the `MSTable` object. The following query gets
 ```
 [table readWithCompletion:^(MSQueryResult *result, NSError *error) {
 		if(error) { // error is nil if no error occured
-				NSLog(@"ERROR %@", error);
+			NSLog(@"ERROR %@", error);
 		} else {
 				for(NSDictionary *item in result.items) { // items is NSArray of records that match query
-						NSLog(@"Todo Item: %@", [item objectForKey:@"text"]);
-				}
+				NSLog(@"Todo Item: %@", [item objectForKey:@"text"]);
+			}
 		}
-}];
+	}];
 ```
 
 ##<a name="filtering"></a>How to: Filter Returned Data
@@ -66,17 +69,17 @@ To filter using a predicate, use an `NSPredicate` and `readWithPredicate`. The f
 
 ```
 // Create a predicate that finds items where complete is false
-NSPredicate * predicate = [NSPredicate predicateWithFormat:@"complete == NO"];
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"complete == NO"];
 // Query the TodoItem table and update the items property with the results from the service
 [table readWithPredicate:predicate completion:^(MSQueryResult *result, NSError *error) {
 		if(error) {
-				NSLog(@"ERROR %@", error);
+			NSLog(@"ERROR %@", error);
 		} else {
 				for(NSDictionary *item in result.items) {
-						NSLog(@"Todo Item: %@", [item objectForKey:@"text"]);
-				}
+				NSLog(@"Todo Item: %@", [item objectForKey:@"text"]);
+			}
 		}
-}];
+	}];
 ```
 
 ##<a name="query-object"></a>How to: Use MSQuery
@@ -112,7 +115,7 @@ To sort results, let's look at an example. To first ascendingly by field `text` 
 						NSLog(@"Todo Item: %@", [item objectForKey:@"text"]);
 				}
 		}
-}];
+	}];
 ```
 
 ## <a name="paging"></a>How to: Return Data in Pages with MSQuery
@@ -138,24 +141,24 @@ In the following example, a simple function requests 5 records from the server a
 {
     MSQuery *query = [self.table query];
 
-    query.includeTotalCount = YES;
+		query.includeTotalCount = YES;
     query.fetchLimit = 5;
-    query.fetchOffset = self.loadedItems.count;
+		query.fetchOffset = self.loadedItems.count;
 
 
     [query readWithCompletion:^(MSQueryResult *result, NSError *error) {
-        if(!error) {
-            // Add the items to our local copy
+			if(!error) {
+				// Add the items to our local copy
             [self.loadedItems addObjectsFromArray:result.items];
 
             // Set a flag to keep track if there are any additional records we need to load
             self.moreResults = (self.loadedItems.count <= result.totalCount);
-        }
-    }];
-}
+			}
+		}];
+	}
 
 ```
-
+ 
 ## <a name="selecting"></a><a name="parameters"></a>How to: Limit Fields and Expand Query String Parameters with MSQuery
 
 To limit fields to be returned in a query, specify the names of the fields in the **selectFields** property. This returns only the text and completed fields:
@@ -183,13 +186,13 @@ If `id` is not provided, the backend automatically generates a new unique ID. Pr
 	NSDictionary *newItem = @{@"id": @"custom-id", @"text": @"my new item", @"complete" : @NO};
 	[self.table insert:newItem completion:^(NSDictionary *result, NSError *error) {
 		// The result contains the new item that was inserted,
-		// depending on your server scripts it may have additional or modified
+		// depending on your server scripts it may have additional or modified 
 		// data compared to what was passed to the server.
 		if(error) {
 				NSLog(@"ERROR %@", error);
 		} else {
 						NSLog(@"Todo Item: %@", [result objectForKey:@"text"]);
-		}
+	}
 	}];
 ```
 
@@ -251,7 +254,7 @@ Azure Mobile Services supports two authentication workflows:
 - **Server-managed Login**: Azure Mobile Services manages the login process on behalf of your app. It displays a provider-specific login page and authenticates with the chosen provider.
 
 - **Client-managed Login**: The _app_ requests a token from the identity provider and presents this token to Azure Mobile Services for authentication.
-
+		
 When authentication succeeds, you get back a user object with a user ID value and the auth token. To use this user ID to authorize users, see [Service-side Authorization]. To restrict table access to only authenticated users, see [Permissions].
 
 ### Server-managed Login
@@ -265,9 +268,9 @@ Here is how you can add server-managed login to the [Mobile Services Quick Start
 You may do the login process outside the Mobile Services client, either to enable single sign-on or if your app contacts the identity provider directly. In such cases, you can log in to Mobile Services by providing a token obtained independently from a supported identity provider.
 
 The following example uses the [Live Connect SDK] to enable single sign-on for iOS apps. It assumes that you have a **LiveConnectClient** instance named `liveClient` in the controller and the user is logged in.
-
+	
 ```
-	[client loginWithProvider:@"microsoftaccount"
+	[client loginWithProvider:@"microsoftaccount" 
 		token:@{@"authenticationToken" : self.liveClient.session.authenticationToken}
 		completion:^(MSUser *user, NSError *error) {
 				// Handle success and errors
@@ -303,7 +306,7 @@ The file [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/azu
 [Cache authentication tokens]: #caching-tokens
 [How to: Upload images and large files]: #blobs
 [How to: Handle errors]: #errors
-[How to: Design unit tests]: #unit-testing
+[How to: Design unit tests]: #unit-testing 
 [How to: Customize the client]: #customizing
 [Customize request headers]: #custom-headers
 [Customize data type serialization]: #custom-serialization
@@ -316,16 +319,17 @@ The file [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/azu
 [Mobile Services Quick Start]: /documentation/articles/mobile-services-ios-get-started
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Authentication]: /documentation/articles/mobile-services-ios-get-started-users
+[Authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
 [iOS SDK]: https://developer.apple.com/xcode
 
 [Handling Expired Tokens]: http://go.microsoft.com/fwlink/p/?LinkId=301955
 [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
 [Permissions]: http://msdn.microsoft.com/zh-cn/library/azure/jj193161.aspx
 [Service-side Authorization]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
-[Dynamic Schema]: https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx
+[Dynamic schema]: https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx
 [Create a table]: http://msdn.microsoft.com/zh-cn/library/azure/jj193162.aspx
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Mobile_Tables
-[Conflict-Handler]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data#add-conflict-handling
+[CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tool/s#Mobile_Tables
+[Conflict-Handler]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data/#add-conflict-handling
+ 

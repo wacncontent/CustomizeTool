@@ -15,23 +15,4 @@ replaced by:
 
 reason: ()
 
-deleted:
-
-		pricing](/home/features//#price)
-
-replaced by:
-
-		pricing](/home/features/#storage)
-
-reason: ()
-
-deleted:
-
-		details](/home/features/data-transfers/#price)
-
-replaced by:
-
-		details](http:/#price/azure.microsoft.com/home/features/data-transfers/#price)
-
-reason: ()
 

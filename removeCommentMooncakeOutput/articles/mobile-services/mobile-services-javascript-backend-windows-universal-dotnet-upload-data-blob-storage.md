@@ -7,9 +7,9 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="07/13/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="11/16/2015" 
 	wacn.date=""/>
 
 # Upload images to Azure Blob storage by using Mobile Services
@@ -34,7 +34,7 @@ This tutorial requires the following:
 
 This tutorial is based on the Mobile Services quickstart. Before you start this tutorial, you must first complete [Get started with Mobile Services]. 
 
-##Update the registered insert script in the Management Portal
+##Update the registered insert script in the Azure Management Portal
 
 [AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 
@@ -76,7 +76,7 @@ Now that you have been able to securely upload images by integrating your mobile
 [Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn
 [How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866 
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library

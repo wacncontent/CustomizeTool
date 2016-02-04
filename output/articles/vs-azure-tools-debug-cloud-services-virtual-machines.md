@@ -25,7 +25,7 @@ The emulator simulates the Azure Compute service and runs in your local environm
 
 ### To debug your cloud service on your local computer
 
-1. On the menu bar, choose **Debug**, **Start Debugging** to run your Azure cloud service project. As an alternative, you can press F5. You’ll see a message that the Compute Emulator is starting. When the emulator starts, the system tray icon confirms it.
+1. On the menu bar, choose **Debug**, **Start Debugging** to run your Azure cloud service project. As an alternative, you can press F5. Youâll see a message that the Compute Emulator is starting. When the emulator starts, the system tray icon confirms it.
 
     ![Azure emulator in the system tray](./media/vs-azure-tools-debug-cloud-services-virtual-machines/IC783828.png)
 
@@ -154,7 +154,7 @@ Visual Studio ASP.NET projects offer an option to create a handy virtual machine
 
 
 
-1. After the virtual machine is fully configured, select the virtual machine’s node in Server Explorer.
+1. After the virtual machine is fully configured, select the virtual machineâs node in Server Explorer.
 
 1. Open the context menu and click **Enable Debugging**. When asked if you're sure if you want to enable debugging on the virtual machine, click **Yes**. 
 

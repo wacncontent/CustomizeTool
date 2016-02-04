@@ -4,7 +4,7 @@ deleted:
 
 		- [Azure preview portal](/documentation/articles/virtual-machines-windows-tutorial)
 
-reason: ()
+reason: (preview portal)
 
 deleted:
 
@@ -20,7 +20,7 @@ deleted:
 		
 		[AZURE.VIDEO creating-a-windows-vm-on-microsoft-azure-classic-portal]
 
-reason: ()
+reason: (video)
 
 replacement:
 

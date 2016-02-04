@@ -1,0 +1,14 @@
+new docs: 3, word count: {word_count_TODO}
+articles/virtual-machines/virtual-machines-sql-server-connectivity-resource-manager.md
+articles/virtual-machines/virtual-machines-sql-server-provision-resource-manager.md
+articles/virtual-machines/virtual-machines-vmss-walkthrough-cli.md
+
+new includes: 8
+includes/virtual-machines-sql-server-akv-next-steps.md
+includes/virtual-machines-sql-server-akv-prepare.md
+includes/virtual-machines-sql-server-connection-steps-classic-tcp-endpoint.md
+includes/virtual-machines-sql-server-connection-steps-classic.md
+includes/virtual-machines-sql-server-connection-steps-resource-manager-nsg-rule.md
+includes/virtual-machines-sql-server-connection-steps-resource-manager.md
+includes/virtual-machines-vmss-preview-cli-include.md
+includes/virtual-machines-vmss-preview-ps-include.md

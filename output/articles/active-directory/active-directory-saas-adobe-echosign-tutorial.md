@@ -1,12 +1,13 @@
 <properties 
     pageTitle="Tutorial: Azure Active Directory integration with Adobe EchoSign | Windows Azure" 
     description="Learn how to use Adobe EchoSign with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
-    services="active-directory" authors="markusvi"  
+    services="active-directory" 
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Adobe EchoSign

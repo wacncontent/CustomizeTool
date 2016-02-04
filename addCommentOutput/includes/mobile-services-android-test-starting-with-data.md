@@ -8,14 +8,14 @@ Now that the app has been updated to use Mobile Services for back end storage, y
 
    	This sends a new item as an insert to the mobile service.
 
-    You can restart the app to see that the changes were persisted to the database in Azure. You can also examine the database using the Azure Management portal:  the next two steps do this to view the changes in your database.
+    You can restart the app to see that the changes were persisted to the database in Azure. You can also examine the database using the Azure Management <!-- deleted by customization Portal --><!-- keep by customization: begin --> portal <!-- keep by customization: end -->:  the next two steps do this to view the changes in your database.
 
 
-<!-- deleted by customization 4 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. In the Azure Management Portal, click manage for the database associated with your mobile service.
+4. In the [Azure Management Portal](https://manage.windowsazure.cn/), click manage for the database associated with your mobile service.
 
     ![](./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/manage-sql-azure-database.png)
 
-<!-- deleted by customization 5 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->. In the Management portal execute a query to view the changes made by the Windows Store app. Your query will be similar to the following query but use your database name instead of `todolist`.
+5. In the Azure Management Portal execute a query to view the changes made by the Windows Store app. Your query will be similar to the following query but use your database name instead of `todolist`.
 
         SELECT * FROM [todolist].[todoitems]
 

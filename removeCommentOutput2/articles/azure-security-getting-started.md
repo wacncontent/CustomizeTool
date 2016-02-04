@@ -9,16 +9,16 @@
 
 <tags
 	ms.service="azure-security"
-	ms.date="10/28/2015"
+	ms.date="12/10/2015"
 	wacn.date=""/>
 
 #Getting started with Windows Azure security
 
-When you build or migrate IT assets to a cloud provider, you are relying on that organization’s abilities to protect the applications and data you entrust to their services and the security controls they provide you to control the security of your cloud-based assets. 
+When you build or migrate IT assets to a cloud provider, you are relying on that organization's abilities to protect the applications and data you entrust to their services and the security controls they provide you to control the security of your cloud-based assets. 
 
-Azure’s infrastructure is designed from the facility to applications for hosting millions of customers simultaneously, and providing a trustworthy foundation upon which businesses’ can meet their security needs. In addition, Azure provides you with a wide array of configurable security options and the ability to control them so that you can customize security to meet the unique requirements for your deployments.
+Azure's infrastructure is designed from the facility to applications for hosting millions of customers simultaneously, and providing a trustworthy foundation upon which businesses' can meet their security needs. In addition, Azure provides you with a wide array of configurable security options and the ability to control them so that you can customize security to meet the unique requirements for your deployments.
 
-In this overview article on Azure security, we’ll look at:
+In this overview article on Azure security, we'll look at:
 
 -   Azure services and features you can use to help secure your services and data within Azure
 
@@ -71,7 +71,7 @@ Other capabilities in Azure that will assist you to keep your data secure includ
 
 -   [Azure RMS](https://technet.microsoft.com/zh-cn/library/jj585026.aspx) (with the [RMS SDK](https://msdn.microsoft.com/zh-cn/library/dn758244.aspx) provides file and data-level encryption and data leak prevention through policy-based access management.
 
--   Azure supports [table-level and column-level encryption (TDE/CLE)](http://blogs.msdn.com/b/sqlsecurity/archive/2015/05/12/recommendations-for-using-cell-level-encryption-in-azure-sql-database.aspx) in SQL Server Virtual Machines, and supports third-party on-premises key management servers in customers’ datacenters.
+-   Azure supports [table-level and column-level encryption (TDE/CLE)](http://blogs.msdn.com/b/sqlsecurity/archive/2015/05/12/recommendations-for-using-cell-level-encryption-in-azure-sql-database.aspx) in SQL Server Virtual Machines, and supports third-party on-premises key management servers in customers' datacenters.
 
 -   Storage Account Keys, Shared Access Signatures, management certificates, and other keys are unique to each Azure tenant.
 
@@ -85,7 +85,7 @@ The Azure platform uses a virtualized environment. User instances operate as sta
 
 Ring 0 is the most privileged and 3 is the least. The guest OS runs in a lesser-privileged Ring 1 and applications in the last privileged Ring 3. This virtualization of physical resources leads to a clear separation between guest OS and hypervisor, resulting in additional security separation between the two.
 
-Azure’s Hypervisor acts like a micro-kernel and passes all hardware access requests from guest VMs to the host for processing using a shared-memory interface called VMBus. This prevents users from obtaining raw read/write/execute access to the system and mitigates the risk of sharing system resources.
+Azure's Hypervisor acts like a micro-kernel and passes all hardware access requests from guest VMs to the host for processing using a shared-memory interface called VMBus. This prevents users from obtaining raw read/write/execute access to the system and mitigates the risk of sharing system resources.
 
 ![Microsoft Antimalware in Azure](./media/azure-security-getting-started\sec-azgsfig2.PNG)
 
@@ -95,9 +95,9 @@ Azure uses a hypervisor firewall (packet filter), which is implemented in the hy
 
 There are two categories of rules that are programmed here:
 
--   **Machine Configuration or Infrastructure Rules**: By default, all communication is blocked. There are exceptions to allow a VM to send and receive DHCP and DNS traffic. VMs can also send traffic to the “public” internet and send traffic to other VMs within the cluster and OS Activation server. The VMs’ allowed list of outgoing destinations does not include Azure router subnets, Azure management back end, and other Microsoft properties.
+-   **Machine Configuration or Infrastructure Rules**: By default, all communication is blocked. There are exceptions to allow a VM to send and receive DHCP and DNS traffic. VMs can also send traffic to the “public” internet and send traffic to other VMs within the cluster and OS Activation server. The VMs' allowed list of outgoing destinations does not include Azure router subnets, Azure management back end, and other Microsoft properties.
 
--   **Role Configuration File**: This defines the inbound ACLs based on the tenants’ service model. For example, if a tenant has a Web front-end on port 80 on a certain VM, then Azure opens TCP port 80 to all IPs if you’re configuring an endpoint in the [Azure Service Management](/documentation/articles/resource-manager-deployment-model) model. If the VM has a backend or worker role running, then we open the worker role only to the VM within the same tenant.
+-   **Role Configuration File**: This defines the inbound ACLs based on the tenants' service model. For example, if a tenant has a Web front-end on port 80 on a certain VM, then Azure opens TCP port 80 to all IPs if you're configuring an endpoint in the [Azure Service Management](/documentation/articles/resource-manager-deployment-model) model. If the VM has a backend or worker role running, then we open the worker role only to the VM within the same tenant.
 
 ##Isolation
 
@@ -157,13 +157,13 @@ You can use the following Azure Virtual Network technologies to help secure comm
 
 -   [**Endpoint** ACLs](/documentation/articles/virtual-machines-set-up-endpoints). You can control which machines are allowed inbound connections from the Internet to a virtual machine on your Azure Virtual Network by defining endpoint ACLs.
 
--   [**Partner network security solutions**](https://azure.microsoft.com/marketplace/). There are a number of partner network security solution that you can access from the Azure Marketplace.
+-   [**Partner network security solutions**](https://azure.microsoft.com/marketplace/). There are a number of partner network security solution that you can access from the Azure gallery.
 
 ### How Azure implements virtual networks and firewall
 
-Azure implements packet-filtering firewalls on all host and guest VMs by default. Windows OS images from the Azure Gallery also have Windows Firewall enabled by default. Load balancers at the perimeter of Azure’s public facing networks control communications based on IP ACLs managed by customer administrators.
+Azure implements packet-filtering firewalls on all host and guest VMs by default. Windows OS images from the Azure Gallery also have Windows Firewall enabled by default. Load balancers at the perimeter of Azure's public facing networks control communications based on IP ACLs managed by customer administrators.
 
-If Azure moves a customer’s data as part of normal operations or during a disaster, it does so over private, encrypted communications channels. Other capabilities leveraged by Azure to use in virtual networks and firewall are:
+If Azure moves a customer's data as part of normal operations or during a disaster, it does so over private, encrypted communications channels. Other capabilities leveraged by Azure to use in virtual networks and firewall are:
 
 -   **Native Host Firewall**: Azure fabric and storage run on a native OS which has no hypervisor and hence the windows firewall is configured with the above two sets of rules. Storage runs native to optimize performance.
 
@@ -177,7 +177,7 @@ If Azure moves a customer’s data as part of normal operations or during a disa
 
 ##Secure Remote Access
 
-Data stored in the cloud must have sufficient safeguards enabled to prevent exploits and maintain confidentiality and integrity while in-transit. This includes network controls that tie in with an organization’s policy-based, auditable identity and access management mechanisms.
+Data stored in the cloud must have sufficient safeguards enabled to prevent exploits and maintain confidentiality and integrity while in-transit. This includes network controls that tie in with an organization's policy-based, auditable identity and access management mechanisms.
 
 Built-in cryptographic technology enables you to encrypt communications within and between deployments, between Azure regions, and from Azure to on-premises datacenters. Administrator access to virtual machines through [remote desktop sessions](/documentation/articles/virtual-machines-log-on-windows-server), [remote Windows PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2013/09/07/weekend-scripter-remoting-the-cloud-with-windows-azure-and-powershell.aspx), and the [Azure Management Portal](https://azure.microsoft.com/en-ushttps://manage.windowsazure.cn) is always encrypted.
 
@@ -187,7 +187,7 @@ To securely extend your on-premises datacenter to the cloud, Azure provides both
 
 Connections to Azure Management Portal must always be authenticated and they require SSL/TLS. You can configure management certificates to enable secure management. Industry standard secure protocols such as [SSTP](https://technet.microsoft.com/magazine/2007.06.cableguy.aspx) and [IPsec](https://en.wikipedia.org/wiki/IPsec) are fully supported.
 
-[Azure ExpressRoute](/documentation/articles/expressroute-introduction) lets you create private connections between Azure datacenters and infrastructure that’s on your premises or in a co-location environment. ExpressRoute connections do not go over the public Internet. They offer more reliability, faster speeds, lower latencies and higher security than typical Internet-based links. In some cases, using ExpressRoute connections to transfer data between on-premises and Azure can also yield significant cost benefits.
+[Azure ExpressRoute](/documentation/articles/expressroute-introduction) lets you create private connections between Azure datacenters and infrastructure that's on your premises or in a co-location environment. ExpressRoute connections do not go over the public Internet. They offer more reliability, faster speeds, lower latencies and higher security than typical Internet-based links. In some cases, using ExpressRoute connections to transfer data between on-premises and Azure can also yield significant cost benefits.
 
 ##Logging and monitoring
 
@@ -199,7 +199,7 @@ Audit logs recording privileged user access and activities, authorized and unaut
 
 ### How Azure implements logging and monitoring
 
-Azure deploys Management Agents (MA) and Azure Security Monitor (ASM) agents to each compute, storage, or fabric node under management whether they are native or virtual. Each Management Agent is configured to authenticate to a service team storage account with a certificate obtained from the Azure certificate store and forward pre-configured diagnostic and event data to the storage account. These agents are not deployed to customers’ virtual machines.
+Azure deploys Management Agents (MA) and Azure Security Monitor (ASM) agents to each compute, storage, or fabric node under management whether they are native or virtual. Each Management Agent is configured to authenticate to a service team storage account with a certificate obtained from the Azure certificate store and forward pre-configured diagnostic and event data to the storage account. These agents are not deployed to customers' virtual machines.
 
 Azure administrators access logs through a web portal for authenticated and controlled access to the logs. An administrator can parse, filter, correlate, and analyze logs. The Azure service team storage accounts for logs are protected from direct administrator access to help prevent against log tampering.
 
@@ -223,13 +223,13 @@ Azure has security controls in place to implement threat mitigation and also to 
 
 -   You have the option to deploy 3rd-party security solutions within your subscriptions, such as web application firewalls from [Barracuda](https://techlib.barracuda.com/ng54/deployonazure).
 
--   Microsoft’s approach to penetration-testing includes “[Red-Teaming](http://download.microsoft.com/download/C/1/9/C1990DBA-502F-4C2A-848D-392B93D9B9C3/Microsoft_Enterprise_Cloud_Red_Teaming.pdf)”, which involves Microsoft security professionals attacking (non-customer) live production systems in Azure to test defenses against real-world, advanced persistent threats.
+-   Microsoft's approach to penetration-testing includes “[Red-Teaming](http://download.microsoft.com/download/C/1/9/C1990DBA-502F-4C2A-848D-392B93D9B9C3/Microsoft_Enterprise_Cloud_Red_Teaming.pdf)”, which involves Microsoft security professionals attacking (non-customer) live production systems in Azure to test defenses against real-world, advanced persistent threats.
 
 -   Integrated deployment systems manage the distribution and installation of security patches across the Azure platform.
 
 ##Next Steps
 
-[Azure Trust Center](https://azure.microsoft.com/support/trust-center/)
+[Azure Trust Center](/support/trust-center/)
 
 [Azure Security Team Blog](http://blogs.msdn.com/b/azuresecurity/)
 

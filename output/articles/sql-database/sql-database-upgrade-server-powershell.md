@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="11/11/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Upgrade to Azure SQL Database V12 using PowerShell
 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](/documentation/articles/sql-database-upgrade-server-portal)
+- [Azure Management Portal](/documentation/articles/sql-database-upgrade-server-portal)
 - [PowerShell](/documentation/articles/sql-database-upgrade-server-powershell)
 
 
@@ -52,9 +52,7 @@ After upgrading to V12, [service tier recommendations](/documentation/articles/s
 
 To upgrade a server to V12 with PowerShell, you need to have Azure PowerShell installed and running, and  depending on the version you may need to switch it into resource manager mode to access the Azure Resource Manager PowerShell Cmdlets. 
 
-> [AZURE.IMPORTANT] Starting with the release of Azure PowerShell 1.0 Preview, the Switch-AzureMode cmdlet is no longer available, and cmdlets that were in the Azure ResourceManger module have been renamed. The examples in this article use the new PowerShell 1.0 Preview naming convention. For detailed information, see [Deprecation of Switch-AzureMode in Azure PowerShell](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
-
-To run PowerShell cmdlets, you need to have Azure PowerShell installed and running, and due to the removal of Switch-AzureMode, you should download and install the latest Azure PowerShell by running the [Microsoft Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409). For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+To run PowerShell cmdlets, you need to have Azure PowerShell installed and running. For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 
 ## Configure your credentials and select your subscription
@@ -77,7 +75,7 @@ The following commands will be run against the subscription you just selected ab
 
 To get the recommendation for the server upgrade run the following cmdlet: 
 
-    $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName “resourcegroup1” -ServerName “server1” 
+    $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName "resourcegroup1" -ServerName "server1" 
 
 For more information, see [Azure SQL Database elastic database pool recommendations](/documentation/articles/sql-database-elastic-pool-portal#elastic-database-pool-pricing-tier-recommendations) and [Azure SQL Database picing tier recommendations](/documentation/articles/sql-database-service-tier-advisor). 
 
@@ -87,7 +85,7 @@ For more information, see [Azure SQL Database elastic database pool recommendati
 
 To start the upgrade of the server run the following cmdlet: 
 
-    Start-AzureRmSqlServerUpgrade -ResourceGroupName “resourcegroup1” -ServerName “server1” -ServerVersion 12.0 -DatabaseCollection $hint.Databases -ElasticPoolCollection $hint.ElasticPools  
+    Start-AzureRmSqlServerUpgrade -ResourceGroupName "resourcegroup1" -ServerName "server1" -ServerVersion 12.0 -DatabaseCollection $hint.Databases -ElasticPoolCollection $hint.ElasticPools  
 
 
 When you run this command upgrade process will begin. You can customize the output of the recommendation and provide the edited recommendation to this cmdlet. 
@@ -132,7 +130,7 @@ ElasticPoolCollection and DatabaseCollection parameters are optional:
     $elasticPool.DatabaseDtuMin = 0 
     $elasticPool.Dtu = 800 
     $elasticPool.Edition = "Standard" 
-    $elasticPool.DatabaseCollection = ("DB1", “DB2”, “DB3”, “DB4”) 
+    $elasticPool.DatabaseCollection = ("DB1", "DB2", "DB3", "DB4") 
     $elasticPool.Name = "elasticpool_1" 
     $elasticPool.StorageMb = 800 
      
@@ -150,7 +148,7 @@ ElasticPoolCollection and DatabaseCollection parameters are optional:
      
     # Starting the upgrade
     #
-    Start-AzureRmSqlServerUpgrade –ResourceGroupName resourcegroup1 –ServerName server1 -Version 12.0 -DatabaseCollection @($databaseMap1, $databaseMap2) -ElasticPoolCollection @($elasticPool) 
+    Start-AzureRmSqlServerUpgrade -ResourceGroupName resourcegroup1 -ServerName server1 -Version 12.0 -DatabaseCollection @($databaseMap1, $databaseMap2) -ElasticPoolCollection @($elasticPool) 
 
     
 
@@ -183,7 +181,7 @@ Additional monitoring information:
 
 **Alerts:** Set up 'Alerts' in the Azure Management Portal to notify you when the DTU consumption for an upgraded database approaches certain high level. Database alerts can be setup in the Azure Management Portal for various performance metrics like DTU, CPU, IO, and Log. Browse to your database and select **Alert rules** in the **Settings** blade.
 
-For example, you can set up an email alert on “DTU Percentage” if the average DTU percentage value exceeds 75% over the last 5 minutes. Refer to [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) to learn more about how to configure alert notifications.
+For example, you can set up an email alert on "DTU Percentage" if the average DTU percentage value exceeds 75% over the last 5 minutes. Refer to [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) to learn more about how to configure alert notifications.
 
 
 

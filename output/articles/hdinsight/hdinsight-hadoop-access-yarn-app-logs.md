@@ -20,6 +20,8 @@ This topic explains how to programmatically enumerate the YARN (Yet Another Reso
   1. The generic application history server on HDInsight clusters is enabled. It is a component within the YARN Timeline Server that handles the storage and retrieval of generic information about completed applications.
   2. APIs in the Azure HDInsight .NET SDK are available to programmatically enumerate applications that have run on your clusters and to download the relevant application-specific or container-specific logs (in plain text) to help with debugging any application problems that occur.
 
+> [AZURE.NOTE] The information in this document applies only to Windows-based HDInsight clusters. For information on accessing YARN logs on Linux-based HDInsight clusters, see [Access YARN application logs on Linux-based Hadoop on HDInsight](/documentation/articles/hdinsight-hadoop-access-yarn-app-logs-linux)
+
 ## Prerequisites
 
 The Azure HDInsight SDK is required to use the code presented in this topic in a .NET Framework application. The most recently published build of the SDK is available at [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started).

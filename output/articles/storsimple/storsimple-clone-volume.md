@@ -1,21 +1,19 @@
 <properties
-   pageTitle="Clone your StorSimple volume | Microsoft Azure"
+   pageTitle="Clone your StorSimple volume | Windows Azure"
    description="Describes the different clone types and when to use them, and explains how you can use a backup set to clone an individual volume."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="10/12/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/14/2015"
+	wacn.date=""/>
 
 # Use the StorSimple Manager service to clone a volume
+
+[AZURE.INCLUDE [storsimple-version-selector-clone-volume](../includes/storsimple-version-selector-clone-volume.md)]
 
 ## Overview
 
@@ -69,7 +67,7 @@ This clone is now a regular volume, and any operation that is possible on a volu
 
 You can clone a specific volume from a backup set. A clone created in this way is a *transient* clone. The transient clone will have references to the original volume and will use that volume to read while writing locally. This could result in slow performance, especially if the cloned volume is large.
 
-After you take a cloud snapshot of a transient clone, the resulting clone will be a *permanent* clone. The permanent clone is independent and doesn’t have any references to the original volume that it was cloned from. For faster performance, we recommend that you create permanent clones. 
+After you take a cloud snapshot of a transient clone, the resulting clone will be a *permanent* clone. The permanent clone is independent and doesnât have any references to the original volume that it was cloned from. For faster performance, we recommend that you create permanent clones. 
 
 ## Scenarios for transient and permanent clones
 
@@ -88,8 +86,8 @@ To watch a video that demonstrates how you can use the clone and restore feature
 You need to verify a testing bug in the production environment. You create a clone of the volume in the production environment. For increased performance, you need to take a cloud snapshot of this clone. The cloned volume is now independent, which results in faster performance. In this scenario, a permanent clone is used.
 
 ## Next steps
-- Learn how to [restore a StorSimple volume from a backup set](storsimple-restore-from-backup-set.md).
+- Learn how to [restore a StorSimple volume from a backup set](/documentation/articles/storsimple-restore-from-backup-set).
 
-- Learn how to [use the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+- Learn how to [use the StorSimple Manager service to administer your StorSimple device](/documentation/articles/storsimple-manager-service-administration).
 
  

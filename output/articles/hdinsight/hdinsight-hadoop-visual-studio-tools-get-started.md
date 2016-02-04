@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/21/2015"
+	ms.date="11/30/2015"
 	wacn.date=""/>
 
 # Get started using Visual Studio Hadoop tools for HDInsight to run a Hive query
@@ -22,8 +22,10 @@ Learn how to use HDInsight Tools for Visual Studio to connect to HDInsight clust
 
 To complete this tutorial and use the Hadoop tools in Visual Studio, you'll need the following:
 
-- An Azure HDInsight cluster: Windows-based cluster will work with the steps in this document. See one of the following for information on creating a cluster:
-	- [Get started using Windows-based HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows)
+- An Azure HDInsight cluster: Either a Linux-based or Windows-based cluster will work with the steps in this document. See one of the following for information on creating a cluster:
+
+	- [Get started using Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
+	- [Get started using Windows-based HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 
 - A workstation with the following software:
 
@@ -49,7 +51,7 @@ HDInsight Tools for Visual Studio and Microsoft Hive ODBC Driver are packaged wi
 ## Connect to Azure subscriptions
 The HDInsight Tools for Visual Studio allows you to connect to your HDInsight clusters, perform some basic management operations, and run Hive queries.
 
->[AZURE.NOTE] For information on connecting to HDInsight Emulator, see [Get started with the HDInsight Emulator](/documentation/articles/hdinsight-get-started-emulator#vstools).
+>[AZURE.NOTE] For information on connecting to HDInsight Emulator, see [Get started with the HDInsight Emulator](/documentation/articles/hdinsight-hadoop-emulator-get-started#vstools).
 
 >[AZURE.NOTE] For information on connecting to a generic Hadoop cluster (preview), see [Write and submit Hive queries using Visual Studio](http://blogs.msdn.com/b/xiaoyong/archive/2015/05/04/how-to-write-and-submit-hive-queries-using-visual-studio.aspx).
 
@@ -88,7 +90,7 @@ From Server Explorer, you can see the default storage account and any linked sto
 
 It is time consuming to test Hive script against an HDInsight cluster. It could take several minutes or more. HDInsight Tools for Visual Studio is capable of validating Hive script locally without connecting to a live cluster.
 
-HDInsight Tools for Visual Studio also enables users to see what’s inside the Hive job by collecting and surfacing the YARN logs of certain Hive jobs.
+HDInsight Tools for Visual Studio also enables users to see what's inside the Hive job by collecting and surfacing the YARN logs of certain Hive jobs.
 
 ### View the **hivesampletable**
 All HDInsight clusters come with a sample Hive table called *hivesampletable*. We'll use this table to show you how to list Hive tables, view the table schemas, and list the rows in the Hive table.
@@ -164,7 +166,7 @@ There are two ways to create and run Hive queries:
 ### View Hive jobs
 You can view job queries, job output, job logs, and Yarn logs for Hive jobs. For more information, see the previous screenshot.
 
-The most recent release of the tool allows you to see what’s inside your Hive jobs by collecting and surfacing  YARN logs. A YARN log can help you investigating performance issues. For more information about how HDInsight collects YARN logs, see [Access HDInsight Application Logs Programmatically][hdinsight.access.application.logs].
+The most recent release of the tool allows you to see what's inside your Hive jobs by collecting and surfacing  YARN logs. A YARN log can help you investigating performance issues. For more information about how HDInsight collects YARN logs, see [Access HDInsight Application Logs Programmatically][hdinsight.access.application.logs].
 
 **To view Hive jobs**
 
@@ -174,15 +176,51 @@ The most recent release of the tool allows you to see what’s inside your Hive 
 
 	![Hadoop tools: HDInsight Visual Studio Tools view Hive jobs][12]
 
+### Faster path Hive execution via HiveServer2
+
+>[AZURE.NOTE] This feature only works on HDInsight cluster version 3.2 and newer.
+
+The HDInsight Tools used to submit Hive jobs via WebHCat (also known as Templeton). It took a long time to return job details and error information.
+In order to solve this performance issue, the HDInsight Tools executes Hive jobs directly in the cluster through HiveServer2, so that it bypasses RDP/SSH. 
+In addition to better performance, users can also view Hive on Tez graphs, and the Task details.
+
+For HDInsight cluster version 3.2 or later, you can see a **Execute via HiveServer2** button:
+
+![hdinsight visual studio tools execute via hiveserver2](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.execute.via.hiveserver2.png)
+
+And you can see the logs streamed back in realtime and see the job graphs if the Hive query is executed in Tez.
+ 
+![hdinsight visual studio tools fast path hive execution](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.fast.path.hive.execution.png)
+
+**Difference between executing queries via HiveServer2 and Submitting Queries via WebHCat**
+
+Even though executing queries via HiveServer2 has many performance benefits, it has several limitations. Some of the limitations are not suitable for production usage. The following table shows the differences:
+
+| |Executing via HiveServer2 |Submitting via WebHCat|
+|---|---|---|
+|Execute queries|Eliminates the overhead in WebHCat (which launches a MapReduce Job named "TempletonControllerJob").|As long as a query is executed via WebHCat, WebHCat will launch a MapReduce job which introduces additional latency.|
+|Stream logs back|In near real-time.|The job execution logs are available only when the job is finished.|
+|View job history|If a query is executed via HiveServer2, it's job history (job log, job output) is not preserved. The application can be viewed in YARN UI with limited information.|If a query is executed via WebHCat, it's job history (job log, job output) is preserved and can be viewed using Visual Studio/HDInsight SDK/PowerShell. |
+|Close window| 	Executing via HiveServer2 is a "synchronous" way so you must keep the windows open; if the windows are closed then the query execution will be cancelled.|Submitting via WebHCat is a "asynchronous" way so you can submit the query via WebHCat and close Visual Studio. You can come back and see the results at any time.|
+
+
 ### Tez Hive job performance graph
 
 The HDInsight Visual Studio Tools support showing performance graphs for the Hive jobs ran by the Tez execution engine. For information on enabling Tez, see [use Hive in HDInsight][hdinsight.hive]. After you submit a Hive job in Visual Studio, Visual Studio shows you the graph when the job is completed.  You might need to click the **Refresh** button to get the latest job status.
 
-> [AZURE.NOTE] This feature is only available for HDInsight cluster version above 3.2.4.593, and can only work for completed jobs. This works for both Windows clusters.
+> [AZURE.NOTE] This feature is only available for HDInsight cluster version above 3.2.4.593, and can only work for completed jobs. This works for both Windows and Linux based clusters.
 
 ![hadoop hive tez performance graph](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.hive.tez.performance.graph.png)
 
 To help you understand your Hive query better, the tool add the Hive Operator view in this release. You just need to double click on the vertices of the job graph and you can see all the operators inside the vertex. You can also hover on a particular operator to view more details of this operator.
+
+### Task execution view for Hive on Tez jobs
+
+The Task execution view for Hive on Tez jobs can be used to get structured & visualized information for Hive jobs, and get more job details. When 
+there are performance issues, you can use the view to get further details. For example, how each task operates and the detailed information about each task 
+(data read/write, schedule/start/end time, etc.), so that you can tune job configurations or system architecture based on the visualized information.
+
+![hdinsight visual studio tools task execution view](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.task.execution.view.png)
 
 ## Run Pig scripts
 
@@ -194,6 +232,7 @@ In this article, you learned how to connect to HDInsight clusters from Visual St
 - [Use Hadoop Hive in HDInsight][hdinsight.hive]
 - [Get started using Hadoop in HDInsight][hdinsight.get.started]
 - [Submit Hadoop jobs in HDInsight][hdinsight.submit.jobs]
+- [Analyze Twitter data with Hadoop in HDInsight][hdinsight.analyze.twitter.data]
 
 
 <!--Anchors-->
@@ -219,11 +258,13 @@ In this article, you learned how to connect to HDInsight clusters from Visual St
 
 
 <!--Link references-->
-[hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight.get.started]: /documentation/articles/hdinsight-get-started
-[hdinsight.hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight.storm.visual.studio.tools]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology
-[hdinsight.access.application.logs]: /documentation/articles/hdinsight-hadoop-access-yarn-app-logs
+[hdinsight-provision]: ../hdinsight/hdinsight-provision-clusters-v1.md
+[hdinsight.introduction]: ../hdinsight-introduction.md
+[hdinsight.get.started]: ../hdinsight-get-started.md
+[hdinsight.hive]: ../hdinsight/hdinsight-use-hive.md
+[hdinsight.submit.jobs]: ../hdinsight/hdinsight-submit-hadoop-jobs-programmatically.md
+[hdinsight.analyze.twitter.data]: ../hdinsight/hdinsight-analyze-twitter-data.md
+[hdinsight.storm.visual.studio.tools]: ../hdinsight/hdinsight-storm-develop-csharp-visual-studio-topology.md
+[hdinsight.access.application.logs]: ../hdinsight/hdinsight-hadoop-access-yarn-app-logs.md
+
 [apache.hive]: http://hive.apache.org

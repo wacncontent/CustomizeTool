@@ -6,15 +6,3 @@ deleted:
 
 reason: ()
 
-replacement:
-
-deleted:
-
-		[azure.com](https://azure.microsoft.com)
-
-replaced by:
-
-		[azure.com](https://www.windowsazure.cn)
-
-reason: ()
-

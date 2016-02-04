@@ -1,6 +1,6 @@
 <properties
-	pageTitle="View, edit, create, and upload JSON documents using the DocumentDB Document Explorer | Microsoft Azure"
-	description="Learn about the DocumentDB Document Explorer, an Azure Preview portal tool to view, edit, create, and upload JSON documents with DocumentDB."
+	pageTitle="View, edit, create, and upload JSON documents using the DocumentDB Document Explorer | Windows Azure"
+	description="Learn about the DocumentDB Document Explorer, an Azure Management Portal tool to view, edit, create, and upload JSON documents with DocumentDB."
 	services="documentdb"
 	authors="AndrewHoh"
 	manager="jhubbard"
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="documentdb"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article" 
-	ms.date="09/09/2015"
-	ms.author="anhoh"/>
+	ms.date="10/26/2015"
+	wacn.date=""/>
 
 # View, edit, create, and upload JSON documents using the DocumentDB Document Explorer #
 
-This article provides an overview of the [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/) Document Explorer, an Azure Preview portal tool that enables you to view, edit, create, and upload JSON documents with DocumentDB.
+This article provides an overview of the [Windows Azure DocumentDB](/home/features/documentdb/) Document Explorer, an Azure Management Portal tool that enables you to view, edit, create, and upload JSON documents with DocumentDB.
 
 By completing this tutorial, you'll be able to answer the following questions:  
 
@@ -58,7 +54,7 @@ Document Explorer allows you to easily create, edit and delete documents.
 
 	> [AZURE.NOTE] If you do not provide an "id" property, then Document Explorer automatically adds an id property and generates a GUID as the id value.
 
-- If you already have data from JSON files, MongoDB, SQL Server, CSV files, Azure Table storage, Amazon DynamoDB, HBase, or from other DocumentDB collections, you can use DocumentDB's [data migration tool](documentdb-import-data.md) to quickly import your data.
+- If you already have data from JSON files, MongoDB, SQL Server, CSV files, Azure Table storage, Amazon DynamoDB, HBase, or from other DocumentDB collections, you can use DocumentDB's [data migration tool](/documentation/articles/documentdb-import-data) to quickly import your data.
 
 - To edit an existing document, simply select it in Document Explorer, edit the document as you see fit, and click the **Save** command.
 
@@ -95,7 +91,7 @@ Document Explorer supports a number of navigation options and advanced settings.
 	![Screenshot of Document Explorer Settings Blade](./media/documentdb-view-JSON-document-explorer/documentexplorersettings.png)
 
 
-2. On the Settings blade, you can adjust the number of items to return per page as well as provide a WHERE clause to load matching documents in the Document Explorer grid.  Read more about the DocumentDB SQL grammar [here](documentdb-sql-query.md).
+2. On the Settings blade, you can adjust the number of items to return per page as well as provide a WHERE clause to load matching documents in the Document Explorer grid.  Read more about the DocumentDB SQL grammar [here](/documentation/articles/documentdb-sql-query).
 
 	![Screenshot of Document Explorer Settings Blade](./media/documentdb-view-JSON-document-explorer/documentexplorersettings2.png)
 
@@ -141,5 +137,6 @@ Document Explorer supports bulk ingestion of one or more existing JSON documents
 ##<a name="NextSteps"></a>Next steps
 
 - To learn more about DocumentDB, click [here](http://azure.com/docdb).
+- To get started with code, click [here](/documentation/articles/documentdb-get-started).
 
  

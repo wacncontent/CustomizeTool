@@ -7,14 +7,10 @@
 	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 # Configuring Azure Multi-Factor Authentication
 
@@ -26,7 +22,7 @@ Feature| Description| What is covered
 [One-time bypass](#one-time-bypass) |A one-time bypass allows a user to authenticate a single time by "bypassing" multi-factor authentication.|How to setup and configure a one-time bypass
 [Custom Voice Messages](#custom-voice-messages) |Custom voice messages allow you to use your own recordings or greetings with multi-factor authentication. |How to setup and configure custom greetings and messages
 [Caching](#caching)|Caching allows you to set a specific time period so that subsequent authentication attempts succeed automatically. |How to setup and configure authentication caching.
-[Trusted IPs](#trusted-ips)|Trusted IPs is a feature of multi-factor authentication that allows administrators of a managed or federated tenant the ability to bypass multi-factor authentication for users that are signing in from the company’s local intranet.|Configure and setup IP addresses that are exempt for multi-factor authentication	
+[Trusted IPs](#trusted-ips)|Trusted IPs is a feature of multi-factor authentication that allows administrators of a managed or federated tenant the ability to bypass multi-factor authentication for users that are signing in from the company's local intranet.|Configure and setup IP addresses that are exempt for multi-factor authentication	
 [App Passwords](#app-passwords)|App passwords allows an application that is not mfa aware to bypass multi-factor authentication and continue working.|Information about app passwords.
 [Suspend Multi-Factor Authentication for remembered devices and browsers (Public Preview)](#suspend-multi-factor-authentication-for-remembered-devices-and-browsers-public-preview)|Allows you to suspend MFA for a set number of days after a user has successfully signed in using MFA.|Information about enabling this feature and setting up the number of days.
 
@@ -94,7 +90,7 @@ A one-time bypass allows a user to authenticate a single time by "bypassing" mul
 <center>![Cloud](./media/multi-factor-authentication-whats-next/create1.png)</center>
 
 <li>On the One-Time Bypass page, click New One-Time Bypass.</li>
-<li>Enter the user’s username, the number of seconds that the bypass will exist, the reason for the bypass and click Bypass.</li>
+<li>Enter the user's username, the number of seconds that the bypass will exist, the reason for the bypass and click Bypass.</li>
 
 <center>![Cloud](./media/multi-factor-authentication-whats-next/create2.png)</center>
 
@@ -183,15 +179,15 @@ Caching allows you to set a specific time period so that subsequent authenticati
 
 ## Trusted IPs
 
-Trusted IPs is a feature of multi-factor authentication that allows administrators of a managed or federated tenant the ability to bypass multi-factor authentication for users that are signing in from the company’s local intranet. The features are available for Azure AD tenants that have Azure AD Premium, Enterprise Mobility Suite or Azure Multi-Factor Authentication licenses.
+Trusted IPs is a feature of multi-factor authentication that allows administrators of a managed or federated tenant the ability to bypass multi-factor authentication for users that are signing in from the company's local intranet. The features are available for Azure AD tenants that have Azure AD Premium, Enterprise Mobility Suite or Azure Multi-Factor Authentication licenses.
 
  
 Type of Azure AD Tenant| Available Trusted IP options
 :------------- | :------------- | 
-Managed|Specific IP address ranges – Administrators can specify a range of IP addresses that can bypass multi-factor authentication for users that are signing in from the company’s intranet..
-Federated|<li>All Federated Users - All federated users who are signing-in from inside the organization will bypass multi-factor authentication using a claim issued by AD FS.</li><li>Specific IP address ranges – Administrators can specify a range of IP addresses that can bypass multi-factor authentication for users that are signing in from the company’s intranet.
+Managed|Specific IP address ranges - Administrators can specify a range of IP addresses that can bypass multi-factor authentication for users that are signing in from the company's intranet..
+Federated|<li>All Federated Users - All federated users who are signing-in from inside the organization will bypass multi-factor authentication using a claim issued by AD FS.</li><li>Specific IP address ranges - Administrators can specify a range of IP addresses that can bypass multi-factor authentication for users that are signing in from the company's intranet.
 
-This bypass only works from inside a company’s intranet. So for example, if you only selected all federated users, and a user signs in from outside the company’s intranet, that user will have to authenticate using multi-factor authentication even if the user presents an AD FS claim. The following table describes when multi-factor authentication and app passwords are required inside your corpnet and outside your corpnet when Trusted IPs is enabled.
+This bypass only works from inside a company's intranet. So for example, if you only selected all federated users, and a user signs in from outside the company's intranet, that user will have to authenticate using multi-factor authentication even if the user presents an AD FS claim. The following table describes when multi-factor authentication and app passwords are required inside your corpnet and outside your corpnet when Trusted IPs is enabled.
 
 
 |Trusted IPs enabled| Trusted IPs disabled
@@ -212,9 +208,9 @@ Outside corpnet|For browser flows, multi-factor authentication required.|For bro
 <li>In the multi-factor authentication section, click Manage service settings.</li>
 <li>On the Service Settings page, under Trusted IPs, select either:
 <ul>
-<li>For requests from federated users originating from my intranet – All federated users who are signing in from the corporate network will bypass multi-factor authentication using a claim issued by AD FS. 
+<li>For requests from federated users originating from my intranet - All federated users who are signing in from the corporate network will bypass multi-factor authentication using a claim issued by AD FS. 
 
-<li>For requests from a specific range of public IPs – enter the IP addresses in the boxes provided using CIDR notation. For example: xxx.xxx.xxx.0/24 for IP addresses in the range xxx.xxx.xxx.1 – xxx.xxx.xxx.254, or xxx.xxx.xxx.xxx/32 for a single IP address. You can enter up to 12 IP address ranges.</li></ul>
+<li>For requests from a specific range of public IPs - enter the IP addresses in the boxes provided using CIDR notation. For example: xxx.xxx.xxx.0/24 for IP addresses in the range xxx.xxx.xxx.1 - xxx.xxx.xxx.254, or xxx.xxx.xxx.xxx/32 for a single IP address. You can enter up to 12 IP address ranges.</li></ul>
 
 
 <center>![Cloud](./media/multi-factor-authentication-whats-next/trustedips.png)</center>
@@ -281,7 +277,7 @@ For example, suppose you have an architecture that consists of the following:
 
  In these instances, you must do the following:
 
-- When signing-in to Lync, use your organizations’ username and password.
+- When signing-in to Lync, use your organizations' username and password.
 - When attempting to access the address book via an Outlook client that connects to Exchange online, use an app password.
 
 ### Allowing app password creation
@@ -304,7 +300,7 @@ By default, users cannot create app passwords.  This feature must be enabled.  T
 ### Creating app passwords
 Users can create app passwords during their initial registration.  They are given an option at the end of the registration process that allows them to create them.
 
-Additionally users can also create app passwords later on by changing their settings in the Azure Portal, the Office 365 portal or by 
+Additionally users can also create app passwords later on by changing their settings in the Azure Management Portal, the Office 365 portal or by 
 
 ### To create app passwords in the Office 365 portal
 --------------------------------------------------------------------------------
@@ -322,7 +318,7 @@ Additionally users can also create app passwords later on by changing their sett
 <center>![Cloud](./media/multi-factor-authentication-whats-next/security.png)</center>
 
 
-### To create app passwords in the Azure portal
+### To create app passwords in the Azure Management Portal
 --------------------------------------------------------------------------------
 1. Sign-in to the Azure Management portal
 3. At the top, right-click on your user name and select Additional Security Verification.

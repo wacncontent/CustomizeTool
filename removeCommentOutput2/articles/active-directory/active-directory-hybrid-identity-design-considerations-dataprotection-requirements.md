@@ -26,7 +26,7 @@ When planning your hybrid identity solution you must understand the data protect
 Once you finish planning for data security, review [Determine multi-factor authentication requirements](/documentation/articles/active-directory-hybrid-identity-design-considerations-multifactor-auth-requirements) to ensure that your selections regarding multi-factor authentication requirements were not affected by the decisions you made in this section.
 
 ## Determine data protection requirements
-In the age of mobility, most companies have a common goal: enable their users to be productive on their mobile devices while on-premises or remotely from anywhere in order to increase productivity. While this could be a common goal, companies that have such requirement will also be concern regarding the amount of threats that must be mitigated in order to keep company’s data secure and maintain user’s privacy. Each company might have different requirements in this regard; different compliance rules that will vary according to which industry the company is acting will lead to different design decisions. 
+In the age of mobility, most companies have a common goal: enable their users to be productive on their mobile devices while on-premises or remotely from anywhere in order to increase productivity. While this could be a common goal, companies that have such requirement will also be concern regarding the amount of threats that must be mitigated in order to keep company's data secure and maintain user's privacy. Each company might have different requirements in this regard; different compliance rules that will vary according to which industry the company is acting will lead to different design decisions. 
 
 However, there are some security aspects that should be explored and validated, regardless of the industry, which are explained in the next section.
 
@@ -43,7 +43,7 @@ In the above diagram, the identity component will be the first one to be verifie
 3. Data protection while at rest on-premises.
 4. Data protection while at rest in the cloud.
 
-Although the technical controls that will enable IT to protect the data itself on each one of those phases are not directly offered by the hybrid identity solution, it is necessary that the hybrid identity solution is capable of leveraging both on-premises and cloud identity management resources to identify the user before grant access to the data. When planning your hybrid identity solution ensure that the following questions are answered according to your organization’s requirements:
+Although the technical controls that will enable IT to protect the data itself on each one of those phases are not directly offered by the hybrid identity solution, it is necessary that the hybrid identity solution is capable of leveraging both on-premises and cloud identity management resources to identify the user before grant access to the data. When planning your hybrid identity solution ensure that the following questions are answered according to your organization's requirements:
 
 ## Data protection at rest
 Regardless of where the data is at rest (device, cloud or on-premises), it is important to perform an assessment to understand the organization needs in this regard. For this area, ensure that the following questions are asked:
@@ -51,7 +51,7 @@ Regardless of where the data is at rest (device, cloud or on-premises), it is im
 - Does your company need to protect data at rest?
  - If yes, is the hybrid identity solution able to integrate with your current on-premises infrastructure?
  - If yes, is the hybrid identity solution able to integrate with your workloads located in the cloud?
-- Is the cloud identity management able to protect the user’s credentials and other data stored in the cloud?
+- Is the cloud identity management able to protect the user's credentials and other data stored in the cloud?
 
 ## Data protection in transit
 Data in transit between the device and the datacenter or between the device and the cloud must be protected. However, being in-transit does not necessarily mean a communications process with a component outside of your cloud service; it moves internally, also, such as between two virtual networks. For this area, ensure that the following questions are asked:

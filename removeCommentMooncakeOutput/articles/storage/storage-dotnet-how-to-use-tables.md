@@ -19,10 +19,10 @@
 
 ## Overview
 
-This article will show you how to perform common scenarios by using the
+This guide will show you how to perform common scenarios by using the
 Azure Table storage service. The samples are written in C\# code
-and use the Azure Storage Client Library for .NET. The scenarios covered include creating and
-deleting a table, as well as working with table entities.
+and use the Azure Storage Client Library for .NET. The scenarios covered include **creating and
+deleting a table**, as well as **working with table entities**.
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -38,7 +38,7 @@ deleting a table, as well as working with table entities.
 
 ### Namespace declarations
 Add the following code namespace declarations to the top of any C\# file
-in which you wish to programmatically access Azure Storage.
+in which you wish to programmatically access Azure Storage:
 
     using Microsoft.WindowsAzure.Storage;
 	using Microsoft.WindowsAzure.Storage.Auth;
@@ -52,7 +52,7 @@ Make sure you reference the `Microsoft.WindowsAzure.Storage.dll` assembly.
 
 A **CloudTableClient** object lets you get reference objects for tables
 and entities. The following code creates a **CloudTableClient** object
-and uses it to create a new table. All code in this article assumes that
+and uses it to create a new table. All code in this guide assumes that
 the application being built is an Azure Cloud Services project and
 uses a storage connection string stored in the Azure application's service configuration.
 
@@ -96,7 +96,7 @@ Also, your entity type *must* expose a parameter-less constructor.
     }
 
 Table operations that involve entities are performed via the **CloudTable**
-object that you created earlier in the "Create a table" section. The operation to be performed
+object that you created in "How to: Create a Table."  The operation to be performed
 is represented by a **TableOperation** object.  The following code example shows the creation of the **CloudTable** object and then a **CustomerEntity** object.  To prepare the operation, a **TableOperation** object is created to insert the customer entity into the table.  Finally, the operation is executed by calling **CloudTable.Execute**.
 
     // Retrieve the storage account from the connection string.
@@ -208,7 +208,7 @@ prints the query results.
     // Create the table client.
     CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-    // Create the CloudTable object that represents the "people" table.
+    //Create the CloudTable object that represents the "people" table.
     CloudTable table = tableClient.GetTableReference("people");
 
 	// Create the table query.
@@ -371,7 +371,7 @@ also **EntityResolver**. You can learn more about projection on the [Introducing
     // Create the table client.
     CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-    // Create the CloudTable that represents the "people" table.
+    //Create the CloudTable that represents the "people" table.
     CloudTable table = tableClient.GetTableReference("people");
 
     // Define the query, and select only the Email property.
@@ -398,7 +398,7 @@ retrieves and deletes a customer entity.
     // Create the table client.
     CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-    // Create the CloudTable that represents the "people" table.
+    //Create the CloudTable that represents the "people" table.
     CloudTable table = tableClient.GetTableReference("people");
 
     // Create a retrieve operation that expects a customer entity.
@@ -437,7 +437,7 @@ period of time following the deletion.
     // Create the table client.
     CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-    // Create the CloudTable that represents the "people" table.
+    //Create the CloudTable that represents the "people" table.
     CloudTable table = tableClient.GetTableReference("people");
 
     // Delete the table it if exists.
@@ -483,7 +483,7 @@ to learn about more complex storage tasks:
   </ul>
 </li>
 <li>Learn about more advanced tasks you can perform with Azure Storage by reviewing <a href="http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx">Azure Storage documentation</a>.</li>
-<li>Learn how to simplify the code you write to work with Azure Storage by using the <a href="/documentation/articles/websites-dotnet-webjobs-sdk">Azure WebJobs SDK</a>.</li>
+<li>Learn how to simplify the code you write to work with Azure Storage by using the <a href="/documentation/articles/websites-dotnet-webjobs-sdk/">Azure WebJobs SDK</a>.</li>
 <li>View more feature guides to learn about additional options for storing data in Azure:
   <ul>
     <li>Use <a href="/documentation/articles/storage-dotnet-how-to-use-blobs/">Blob storage</a> to store unstructured data.</li>

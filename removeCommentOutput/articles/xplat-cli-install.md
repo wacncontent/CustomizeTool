@@ -78,7 +78,7 @@ Installing node.js on RPM-based distributions requires enabling the EPEL reposit
 
 	su -
 	yum update [enter]
-	yum upgrade –y [enter]
+	yum upgrade ây [enter]
 	yum install epel-release [enter]
 	yum install nodejs [enter]
 	yum install npm [enter]
@@ -150,6 +150,6 @@ Now you are ready! Next you can [connect to your Azure subscription from the Azu
 [mac-installer]: http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.dmg
 [windows-installer]: http://go.microsoft.com/?linkid=9828653&clcid=0x409
 [linux-installer]: http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.tar.gz
-[cliasm]: /documentation/articles/virtual-machines-command-line-tools
-[cliarm]: /documentation/articles/xplat-cli-azure-resource-manager
+[cliasm]: virtual-machines/virtual-machines-command-line-tools.md
+[cliarm]: virtual-machines/xplat-cli-azure-resource-manager.md
 

@@ -1,15 +1,15 @@
 <properties 
-	pageTitle="Get Started with Azure Active Directory and Visual Studio connected services (WebApi projects) |Windows Azure" 
+	pageTitle="Get Started with Azure Active Directory and Visual Studio connected services (WebApi projects) | Windows Azure" 
 	description="How to get started using Azure Active Directory in WebApi projects after connecting to or creating an Azure AD using Visual Studio connected services" 
-    services="active-directory"
+  services="active-directory"
 	documentationCenter="" 
-	authors="patshea123" 
+	authors="TomArcher" 
 	manager="douge" 
-	editor="tglee"/>
+	editor=""/>
   
 <tags
 	ms.service="active-directory"
-	ms.date="09/03/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 # Get Started with Azure Active Directory and Visual Studio connected services (WebApi projects)

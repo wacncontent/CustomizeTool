@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Web app with table storage (Node.js) | Windows Azure" 
-	description="A tutorial that builds on the Web App with Express tutorial by adding Azure Storage services and the Azure module." 
+	pageTitle="web site with table storage (Node.js) | Windows Azure" 
+	description="A tutorial that builds on the web site with Express tutorial by adding Azure Storage services and the Azure module." 
 	services="cloud-services, storage" 
 	documentationCenter="nodejs" 
 	authors="TomArcher" 
@@ -17,12 +17,12 @@
 
 
 
-# Node.js Web Application using Storage
+# Node.js web site using Storage
 
 ## Overview
 
 In this tutorial, you will extend the application created in the
-[Node.js Web Application using Express] tutorial by using the Microsoft
+[Node.js web site using Express] tutorial by using the Microsoft
 Azure Client Libraries for Node.js to work with data management services. You
 will extend your application to create a web-based task-list application
 that you can deploy to Azure. The task list allows a user to
@@ -36,7 +36,7 @@ services from the APIs included in the Azure SDK for Node.js or
 via REST APIs. For more information, see [Storing and Accessing Data in Azure].
 
 This tutorial assumes that you have completed the [Node.js Web
-Application] and [Node.js with Express][Node.js Web Application using Express] tutorials.
+Application] and [Node.js with Express][Node.js web site using Express] tutorials.
 
 You will learn:
 
@@ -419,8 +419,8 @@ The following steps show you how to stop and delete your application.
 
 	Deleting the service may take several minutes. After the service has been deleted you receive a message indicating that the service was deleted.
 
-  [Node.js Web Application using Express]: /develop/nodejs/tutorials/web-app-with-express/
+  [Node.js web site using Express]: /develop/nodejs/tutorials/web-app-with-express/
   [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+  [Node.js web site]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
  
  

@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Restore a StorSimple volume from backup | Microsoft Azure"
+   pageTitle="Restore a StorSimple volume from backup | Windows Azure"
    description="Explains how to use the StorSimple Manager service Backup Catalog page to restore a StorSimple volume from a backup set."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/15/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 # Restore a StorSimple volume from a backup set
 
@@ -29,17 +25,17 @@ This tutorial explains how to use the **Backup Catalog** page to restore your de
 
 The **Backup Catalog** page provides a query that helps you to narrow your backup set selection. You can filter the backup sets that are retrieved based on the following parameters:
 
-- **Device** – The device on which the backup set was created.
-- **Backup policy** or **volume** – The backup policy or volume associated with this backup set.
-- **From** and **To** – The date and time range when the backup set was created.
+- **Device** - The device on which the backup set was created.
+- **Backup policy** or **volume** - The backup policy or volume associated with this backup set.
+- **From** and **To** - The date and time range when the backup set was created.
 
 The filtered backup sets are then tabulated based on the following attributes:
 
-- **Name** – The name of the backup policy or volume associated with the backup set.
-- **Size** – The actual size of the backup set.
-- **Created on** – The date and time when the backups were created. 
-- **Type** – Backup sets can be local snapshots or cloud snapshots. A local snapshot is a backup of all your volume data stored locally on the device, whereas a cloud snapshot refers to the backup of volume data residing in the cloud. Local snapshots provide faster access, whereas cloud snapshots are chosen for data resiliency.
-- **Initiated by** – The backups can be initiated automatically according to a schedule or manually by a user. (You can use a backup policy to schedule backups. Alternatively, you can use the **Take backup** option to take an interactive backup.)
+- **Name** - The name of the backup policy or volume associated with the backup set.
+- **Size** - The actual size of the backup set.
+- **Created on** - The date and time when the backups were created. 
+- **Type** - Backup sets can be local snapshots or cloud snapshots. A local snapshot is a backup of all your volume data stored locally on the device, whereas a cloud snapshot refers to the backup of volume data residing in the cloud. Local snapshots provide faster access, whereas cloud snapshots are chosen for data resiliency.
+- **Initiated by** - The backups can be initiated automatically according to a schedule or manually by a user. (You can use a backup policy to schedule backups. Alternatively, you can use the **Take backup** option to take an interactive backup.)
 
 ## How to restore your StorSimple volume from a backup
 
@@ -62,7 +58,7 @@ You can use the **Backup Catalog** page to restore your StorSimple volume from a
  
     The backups associated with the selected volume or backup policy should appear in the list of backup sets.
 
-3. Expand the backup set to view the associated volumes. These volumes must be taken offline on the host and device before you can restore them. Access the volumes on the **Volume Containers** page, and then follow the steps in [Take a volume offline](storsimple-manage-volumes.md#take-a-volume-offline) to take them offline.
+3. Expand the backup set to view the associated volumes. These volumes must be taken offline on the host and device before you can restore them. Access the volumes on the **Volume Containers** page, and then follow the steps in [Take a volume offline](/documentation/articles/storsimple-manage-volumes#take-a-volume-offline) to take them offline.
 
     >  [AZURE.IMPORTANT] Make sure that you have taken the volumes offline on the host first, before you take the volumes offline on the device. If you do not take the volumes offline on the host, it could potentially lead to data corruption.
 
@@ -84,6 +80,6 @@ To watch a video that demonstrates how you can use the clone and restore feature
 
 ## Next steps
 
-- Learn how to [Manage StorSimple volumes](storsimple-manage-volumes.md).
+- Learn how to [Manage StorSimple volumes](/documentation/articles/storsimple-manage-volumes).
 
-- Learn how to [use the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+- Learn how to [use the StorSimple Manager service to administer your StorSimple device](/documentation/articles/storsimple-manager-service-administration).

@@ -7,9 +7,10 @@
 	manager="wpickett" 
 	editor="jimbe" />
 
-<tags
-	ms.service="storage"
-	ms.date="09/01/2015"
+<tags 
+	ms.service="storage" 
+
+	ms.date="10/26/2015" 
 	wacn.date=""/>
 
 # How to use File Storage from Java
@@ -44,7 +45,8 @@ To use File storage, you need to connect to your Azure storage account. The firs
 	public static final String storageConnectionString = 
 	    "DefaultEndpointsProtocol=http;" + 
 	    "AccountName=your_storage_account_name;" + 
-	    "AccountKey=your_storage_account_key";
+	    "AccountKey=your_storage_account_key;" +
+	    "EndpointSuffix=core.Chinacloudapi.cn";
 
 > [AZURE.NOTE] Replace your_storage_account_name and your_storage_account_key with the actual values for your storage account.
 
@@ -209,10 +211,10 @@ If you would like to learn more about other Azure storage APIs, follow these lin
 - [Azure Storage REST API]
 - [Azure Storage Team Blog]
 
-[Azure SDK for Java]: /develop/java/
+[Azure SDK for Java]: http://azure.microsoft.com/zh-cn/develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
+[Azure Storage Client SDK Reference]: http://azure.github.io/azure-storage-java/
 [Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
  

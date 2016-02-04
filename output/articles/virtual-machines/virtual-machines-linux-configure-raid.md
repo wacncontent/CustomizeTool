@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/29/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 
@@ -19,7 +19,7 @@
 # Configure Software RAID on Linux
 It's a common scenario to use software RAID on Linux virtual machines in Azure to present multiple attached data disks as a single RAID device. Typically this can be used to improve performance and allow for improved throughput compared to using just a single disk.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
  
 
 ## Attaching data disks

@@ -8,12 +8,12 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="11/12/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Add, disable, enable or delete endpoints
 
-The Web Apps feature in Azure Websites already provides failover and round-robin traffic routing functionality for websites within a datacenter, regardless of the website mode. Azure Traffic Manager allows you to specify failover and round-robin traffic routing for websites and cloud services in different datacenters. The first step necessary to provide that functionality is to add the cloud service or website endpoint to Traffic Manager.
+The Web Apps feature in Azure already provides failover and round-robin traffic routing functionality for websites within a datacenter, regardless of the website mode. Azure Traffic Manager allows you to specify failover and round-robin traffic routing for websites and cloud services in different datacenters. The first step necessary to provide that functionality is to add the cloud service or website endpoint to Traffic Manager.
 
 >[AZURE.NOTE] You cannot add external locations or Traffic Manager profiles as endpoints using the Azure Management Portal. You must use the REST API [Create Definition](https://msdn.microsoft.com/zh-cn/library/azure/hh758257.aspx) or Windows PowerShell [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-cn/library/dn690257.aspx).
 
@@ -70,4 +70,3 @@ You can also disable individual endpoints that are part of a Traffic Manager pro
 [Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded)
 
 [Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
-

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Use Hive with Hadoop in HDInsight with SSH
@@ -111,7 +111,7 @@ For information on other ways you can work with Hadoop on HDInsight:
 
 * [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
-[hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
+[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
@@ -119,26 +119,24 @@ For information on other ways you can work with Hadoop on HDInsight:
 
 [apache-tez]: http://tez.apache.org
 [apache-hive]: http://hive.apache.org/
-[apache-log4j]: http://en.wikipedia.org/wiki/Log4j
+[apache-log4j]: http://zh.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-use-oozie]: hdinsight-use-oozie.md
+[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data.md
 
 [putty]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 
 
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
-[image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png
+
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
-[image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
+

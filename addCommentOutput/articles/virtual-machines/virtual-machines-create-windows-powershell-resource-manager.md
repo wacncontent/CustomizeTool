@@ -15,7 +15,7 @@
 
 # Create a Windows VM with Resource Manager and PowerShell
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-create-windows-powershell-service-manager).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms).
 
 This topic describes how to quickly create a Windows-based Azure virtual machine using Azure Resource Manager and PowerShell.
 
@@ -40,7 +40,7 @@ Next, if you have multiple Azure subscriptions, you need to set your Azure subsc
 Now, replace everything within the quotes, including the < and > characters, with the correct subscription name and run these commands.
 
 	$subscrName="<subscription name>"
-	Select-AzureRmSubscription -SubscriptionName $subscrName –Current
+	Select-AzureRmSubscription -SubscriptionName $subscrName âCurrent
 
 Next, you need to create a storage account. You must pick a unique name that contains only lowercase letters and numbers. You can test for the uniqueness of the storage account name with this command.
 
@@ -127,8 +127,8 @@ Here is an example of you might see:
 
 [Create a Windows virtual machine with a Resource Manager template and PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template-simple)
 
-[Create a Windows virtual machine with PowerShell and Azure Service Management](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
+[Create Windows virtual machines with Powershell and the classic deployment model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
 [Virtual machines documentation](/documentation/services/virtual-machines/)
 
-[How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)
+[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)

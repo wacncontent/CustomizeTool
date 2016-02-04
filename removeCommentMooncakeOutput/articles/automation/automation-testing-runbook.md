@@ -12,19 +12,12 @@
 	wacn.date=""/>
 
 # Testing a runbook in Azure Automation
-When you test a runbook, the [Draft version](/documentation/articles/automation-creating-importing-runbook#publishing-a-runbook) is executed and any actions that it performs are completed. No job history is created, but the [Output](/documentation/articles/automation-runbook-output-and-messages#output-stream) and [Warning and Error](/documentation/articles/automation-runbook-output-and-messages#message-streams) streams are displayed in the Test output Pane. Messages to the [Verbose Stream](/documentation/articles/automation-runbook-output-and-messages#message-streams) are displayed in the Output Pane only if the [$VerbosePreference variable](/documentation/articles/automation-runbook-output-and-messages#preference-variables) is set to Continue.
+When you test a runbook, the [Draft version](/documentation/articles/automation-creating-importing-runbook#publishing-a-runbook) is executed and any actions that it performs are completed. No job history is created, but the [Output](/documentation/articles/automation-runbook-output-and-messages#output-stream) and [Warning and Error](/documentation/articles/automation-runbook-output-and-messages#message-streams) streams are displayed in the Test output Pane. Messages to the [Verbose Stream](/documentation/articles/automation-runbook-output-and-messages#verbose-streams) are displayed in the Output Pane only if the [$VerbosePreference variable](/documentation/articles/automation-runbook-output-and-messages#preference-variables) is set to Continue.
 
 Even though the draft version is being run, the runbook still executes the workflow normally and performs any actions against resources in the environment. For this reason, you should only test runbooks at non-production resources.
 
-The procedure to test each [type of runbook](/documentation/articles/automation-runbook-types) is the same.  
-
-
-
 
 ## To test a runbook in the Azure Management Portal
-
-You can only work with [PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks) in the Azure Management Portal.
-
 
 1. [Open the Draft version of the runbook](/documentation/articles/automation-edit-textual-runbook#to-edit-a-runbook-with-the-azure-portal).
 2. Click the **Test** button to start the test.  If the runbook has parameters, you will receive a dialog box to provide values to be used for the test.

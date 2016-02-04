@@ -15,7 +15,7 @@
 # Introduction to Azure Websites Environment
 
 ## Overview ##
-An Azure Websites Environment is a [Premium][PremiumTier] service plan option of Azure Websites that provides a fully isolated and dedicated environment for securely running Azure Websites apps at high scale, including [Web Apps][WebApps], [Mobile Apps][MobileApps], and [API Apps][APIApps].  
+An Azure Websites Environment is a [Premium][PremiumTier] service plan option of Azure Websites that provides a fully isolated and dedicated environment for securely running Azure Websites apps at high scale, including [web sites][WebApps], [Mobile Apps][MobileApps], and [API Apps][APIApps].  
 
 Azure Websites Environments are ideal for application workloads requiring:
 
@@ -31,6 +31,8 @@ For an overview of how Azure Websites Environments enable high scale and secure 
 For a deep-dive on horizontally scaling using multiple Azure Websites Environments see the article on how to setup a [geo-distributed app footprint][GeodistributedAppFootprint].
 
 To see how the security architecture shown in the AzureCon Deep Dive was configured, see the article on implementing a [layered security architecture](/documentation/articles/app-service-app-service-environment-layered-security) with Azure Websites Environments.
+
+Apps running on Azure Websites Environments can have their access gated by upstream devices such as web site firewalls (WAF).  The article on [configuring a WAF for Azure Websites Environments](/documentation/articles/app-service-app-service-environment-web-application-firewall) covers this scenario. 
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
@@ -52,7 +54,7 @@ For details on the available compute resource sizes supported in an Azure Websit
 ## Virtual Network Support ##
 An Azure Websites Environment can either be created in a pre-existing regional classic "v1" virtual network, or a new regional classic "v1" virtual network ([more info on virtual networks][MoreInfoOnVirtualNetworks]).  Since an Azure Websites Environment always exists in a regional virtual network, and more precisely within a subnet of a regional virtual network, you can leverage the security features of virtual networks to control both inbound and outbound network communications.  
 
-You can use [network security groups][NetworkSecurityGroups] to restrict inbound network communications to the subnet where an Azure Websites Environment resides.  This allows you to run apps behind upstream devices and services such as web application firewalls, and network SaaS providers.  
+You can use [network security groups][NetworkSecurityGroups] to restrict inbound network communications to the subnet where an Azure Websites Environment resides.  This allows you to run apps behind upstream devices and services such as web site firewalls, and network SaaS providers.  
 
 Apps also frequently need to access corporate resources such as internal databases and web services.  A common approach is to make these endpoints available only to internal network traffic flowing within an Azure virtual network.  Once an Azure Websites Environment is joined to the same virtual network as the internal services, apps running in the environment can access them, including endpoints reachable via [Site-to-Site][SiteToSite] and [Azure ExpressRoute][ExpressRoute] connections.
 
@@ -75,10 +77,9 @@ For details on using an Azure Websites Environment with ExpressRoute, see the fo
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
 
 <!-- LINKS -->
-[PremiumTier]: /home/features/app-service/#price
+[PremiumTier]: /home/features/web-site/#price
 [MoreInfoOnVirtualNetworks]: /documentation/articles/virtual-networks-faq/
 [AppServicePlan]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
-[Azure preview portal]: http://manage.windowsazure.cn
 [HowToCreateAnAppServiceEnvironment]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
 [AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
 [WebApps]: /documentation/articles/app-service-web-overview/
@@ -95,7 +96,7 @@ For details on using an Azure Websites Environment with ExpressRoute, see the fo
 [SecurelyConnectingToBackends]:  /documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/
 [NetworkArchitectureOverview]:  /documentation/articles/app-service-app-service-environment-network-architecture-overview/
 [NetworkConfigDetailsForExpressRoute]:  /documentation/articles/app-service-app-service-environment-network-configuration-expressroute/
-[AppServicePricing]: /home/features/app-service/#price 
+[AppServicePricing]: /home/features/web-site/#price 
 
 <!-- IMAGES -->
 

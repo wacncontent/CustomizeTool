@@ -9,9 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="09/24/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
-
 # Register the current user for push notifications by using ASP.NET
 
 > [AZURE.SELECTOR]
@@ -76,10 +75,10 @@ This topic shows you how to request push notification registration with Azure No
 			        [defaults setObject:_installationId forKey:@"PushToUserInstallationId"];
 			        [defaults synchronize];
 			    }
-
+			    
 			    return self;
 			}
-
+			
 			- (NSString*)getDeviceTokenInHex {
 			    const unsigned *tokenBytes = [[self deviceToken] bytes];
 			    NSString *hexToken = [NSString stringWithFormat:@"%08X%08X%08X%08X%08X%08X%08X%08X",
@@ -94,23 +93,23 @@ This topic shows you how to request push notification registration with Azure No
 		@property (strong, nonatomic) DeviceInfo* deviceInfo;
 
 8. In the **didFinishLaunchingWithOptions** method in PushToUserAppDelegate.m, add the following code:
-
+	
 		self.deviceInfo = [[DeviceInfo alloc] init];
-
+		
 		[[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
 
 	The first line initializes the **DeviceInfo** singleton. The second line starts the registration for push notifications, which is already present is you have already completed the [Get Started with Notification Hubs] tutorial.
-
+	
 9. In PushToUserAppDelegate.m, implement the method **didRegisterForRemoteNotificationsWithDeviceToken** in your AppDelegate and add the following code:
 
 		self.deviceInfo.deviceToken = deviceToken;
 
 	This sets the device token for the request.
 
-	> [AZURE.NOTE] At this point, there should not be any other code in this method. If you already have a call to the **registerNativeWithDeviceToken** method that was added when you completed the [Get Started with Notification Hubs](/manage/services/notification-hubs/get-started-notification-hubs-ios/%20target="_blank") tutorial, you must comment-out or remove that call.
+	> [AZURE.NOTE] At this point, there should not be any other code in this method. If you already have a call to the **registerNativeWithDeviceToken** method that was added when you completed the [Get Started with Notification Hubs](/documentation/articles/notification-hubs-ios-get-started) tutorial, you must comment-out or remove that call.
 
 10.	In the PushToUserAppDelegate.m file, add the following handler method:
-
+	
 		- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
 		    NSLog(@"%@", userInfo);
 		    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:
@@ -122,26 +121,26 @@ This topic shows you how to request push notification registration with Azure No
 	 This method displays an alert in the UI when your app receives notifications while it is running.
 
 9. Open the PushToUserViewController.m file, and return the keyboard in the following implementation:
-
+	
 		- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
 		    if (theTextField == self.User || theTextField == self.Password) {
 		        [theTextField resignFirstResponder];
 		    }
 		    return YES;
 		}
-
+	
 9. In the **viewDidLoad** method in the PushToUserViewController.m file, initialize the installationId label as follows:
-
+				
 		DeviceInfo* deviceInfo = [(PushToUserAppDelegate*)[[UIApplication sharedApplication]delegate] deviceInfo];
 		Self.installationId.text = deviceInfo.installationId;
-
+    		
 10. Add the following properties in interface in PushToUserViewController.m:
-
+    
 		@property (readonly) NSOperationQueue* downloadQueue;
 		- (NSString*)base64forData:(NSData*)theData;
-
+			
 11. Then, add the following implementation:
-
+		
 			- (NSOperationQueue *)downloadQueue {
 			    if (!_downloadQueue) {
 			        _downloadQueue = [[NSOperationQueue alloc] init];
@@ -150,58 +149,58 @@ This topic shows you how to request push notification registration with Azure No
 			    }
 			    return _downloadQueue;
 			}
-
+			
 			// base64 encoding
 			- (NSString*)base64forData:(NSData*)theData
 			{
 			    const uint8_t* input = (const uint8_t*)[theData bytes];
 			    NSInteger length = [theData length];
-
+			    
 			    static char table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-
+			    
 			    NSMutableData* data = [NSMutableData dataWithLength:((length + 2) / 3) * 4];
 			    uint8_t* output = (uint8_t*)data.mutableBytes;
-
+			    
 			    NSInteger i;
 			    for (i=0; i < length; i += 3) {
 			        NSInteger value = 0;
 			        NSInteger j;
 			        for (j = i; j < (i + 3); j++) {
 			            value <<= 8;
-
+			            
 			            if (j < length) {
 			                value |= (0xFF & input[j]);
 			            }
 			        }
-
+			        
 			        NSInteger theIndex = (i / 3) * 4;
 			        output[theIndex + 0] =                    table[(value >> 18) & 0x3F];
 			        output[theIndex + 1] =                    table[(value >> 12) & 0x3F];
 			        output[theIndex + 2] = (i + 1) < length ? table[(value >> 6)  & 0x3F] : '=';
 			        output[theIndex + 3] = (i + 2) < length ? table[(value >> 0)  & 0x3F] : '=';
 			    }
-
+			    
 			    return [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 			}
 
-
+	
 12. Copy the following code into the **login** handler method created by XCode:
 
 			DeviceInfo* deviceInfo = [(PushToUserAppDelegate*)[[UIApplication sharedApplication]delegate] deviceInfo];
-
+    
 		    // build JSON
 		    NSString* json = [NSString stringWithFormat:@"{\"platform\":\"ios\", \"instId\":\"%@\", \"deviceToken\":\"%@\"}", deviceInfo.installationId, [deviceInfo getDeviceTokenInHex]];
-
+		    
 		    // build auth string
 		    NSString* authString = [NSString stringWithFormat:@"%@:%@", self.User.text, self.Password.text];
-
-		    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://nhnotifyuser.chinacloudsites.cn/api/register"]];
+		    
+		    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://nhnotifyuser.azure Websites.net/api/register"]];
 		    [request setHTTPMethod:@"POST"];
 		    [request setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
 		    [request addValue:[@([json lengthOfBytesUsingEncoding:NSUTF8StringEncoding]) description] forHTTPHeaderField:@"Content-Length"];
 		    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 		    [request addValue:[NSString stringWithFormat:@"Basic %@",[self base64forData:[authString dataUsingEncoding:NSUTF8StringEncoding]]] forHTTPHeaderField:@"Authorization"];
-
+		    
 		    // connect with POST
 		    [NSURLConnection sendAsynchronousRequest:request queue:[self downloadQueue] completionHandler:^(NSURLResponse* response, NSData* data, NSError* error) {
 		        // add UIAlert depending on response.

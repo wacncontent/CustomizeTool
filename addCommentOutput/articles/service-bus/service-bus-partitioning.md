@@ -123,7 +123,12 @@ In its current implementation, Service Bus imposes the following limitations on 
 
 See the discussion of AMQP 1.0 support for Service Bus partitioned queues and topics (coming soon!) to learn more about paritioning messaging entities. 
 
+<!-- deleted by customization
+  [Service Bus Architecture]: service-bus-architecture.md
+-->
+<!-- keep by customization: begin -->
   [Service Bus Architecture]: /documentation/articles/service-bus-architecture
+<!-- keep by customization: end -->
   [Azure Management Portal]: http://manage.windowsazure.cn
   [QueueDescription.EnablePartitioning]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx
   [TopicDescription.EnablePartitioning]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.enablepartitioning.aspx
@@ -138,4 +143,4 @@ See the discussion of AMQP 1.0 support for Service Bus partitioned queues and to
   [MessagingFactorySettings.OperationTimeout]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx
   [OperationTimeout]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx
   [QueueDescription.ForwardTo]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.forwardto.aspx
-  [AMQP 1.0 support for Service Bus partitioned queues and topics]: /documentation/articles/service-bus-partitioned-entities-amqp-overview
+  [AMQP 1.0 support for Service Bus partitioned queues and topics]: <!-- deleted by customization service-bus-partitioned-entities-amqp-overview.md --><!-- keep by customization: begin --> /documentation/articles/service-bus-partitioned-entities-amqp-overview <!-- keep by customization: end -->

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Analyze real-time Twitter sentiment with HBase | Windows Azure" 
 	description="Learn how to do real-time sentiment analysis of big data from Twitter using HBase in an HDInsight (Hadoop) cluster." 
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/09/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # Analyze real-time Twitter sentiment with HBase in HDInsight
@@ -1313,7 +1311,7 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 - [Develop Java MapReduce programs for HDInsight][hdinsight-develop-mapreduce]
 
 
-[hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
 [website-get-started]: /documentation/articles/web-sites-dotnet-get-started
 
 
@@ -1328,7 +1326,7 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 [hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
 [hdinsight-analyze-twitter-data]: /documentation/articles/hdinsight-analyze-twitter-data
-[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
 
 
 
@@ -1342,14 +1340,14 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-install]: /documentation/articles/install-configure-powershell
-[powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
+[powershell-install]: /documentation/articles/powershell-install-configure
+[powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-storage-powershell]: /documentation/articles/hdinsight-use-blob-storage#powershell
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-storage-powershell]: /documentation/articles/hdinsight-hadoop-use-blob-storage#powershell
 [hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 [hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver

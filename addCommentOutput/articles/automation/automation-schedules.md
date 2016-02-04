@@ -8,12 +8,16 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="08/18/2015"
+	ms.date="10/26/2015"
 	wacn.date=""/>
 
 # Schedules in Azure Automation
 
 Automation Schedules are used to schedule runbooks to run automatically.  This could be either a single date and time for the runbook to run once.  Or it could be a recurring schedule to start the runbook multiple times.  Schedules are typically not accessed from runbooks.
+<!-- deleted by customization
+
+>[AZURE.NOTE]  Schedules do not currently support Azure Automation DSC configurations.
+-->
 
 ## Windows PowerShell Cmdlets
 
@@ -57,9 +61,8 @@ The [New-AzureAutomationSchedule](http://msdn.microsoft.com/zh-cn/library/dn6902
 	$startTime = (Get-Date).Date.AddDays(1).AddHours(12)
 	$expiryTime = $startTime.AddYears(1)
 	
-	New-AzureAutomationSchedule –AutomationAccountName $automationAccountName –Name $scheduleName –StartTime $startTime –ExpiryTime $expiryTime –DayInterval 1
+	New-AzureAutomationSchedule -AutomationAccountName $automationAccountName -Name $scheduleName -StartTime $startTime -ExpiryTime $expiryTime -DayInterval 1
 
 
 ## See Also
-- [Scheduling a runbook in Azure Automation](/documentation/articles/automation-scheduling-a-runbook)
- 
+- [Scheduling a runbook in Azure Automation](/documentation/articles/automation-scheduling-a-runbook)

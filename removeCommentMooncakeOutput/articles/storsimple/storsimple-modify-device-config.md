@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Modify the StorSimple device configuration | Microsoft Azure" 
+   pageTitle="Modify the StorSimple device configuration | Windows Azure" 
    description="Describes how to use the StorSimple Manager service to reconfigure a StorSimple device that has already been deployed." 
    services="storsimple" 
    documentationCenter="NA" 
@@ -8,19 +8,15 @@
    editor=""/>
 
 <tags
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD" 
-   ms.date="09/15/2015"
-   ms.author="v-sharos@microsoft.com"/>
+	ms.service="storsimple"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 # Use the StorSimple Manager service to modify your StorSimple device configuration
 
 ## Overview 
 
-The Management Portal **Configure** page contains all the device parameters that you can reconfigure on a StorSimple device that is managed by a StorSimple Manager service. This tutorial explains how you can use the **Configure** page to perform the following device-level tasks:
+The Azure Management Portal **Configure** page contains all the device parameters that you can reconfigure on a StorSimple device that is managed by a StorSimple Manager service. This tutorial explains how you can use the **Configure** page to perform the following device-level tasks:
 
 - Modify device settings 
 - Modify time settings 
@@ -34,18 +30,18 @@ The device settings include the friendly name of the device and the device descr
 
 A StorSimple device that is connected to the StorSimple Manager service is assigned a default name. The default name typically reflects the serial number of the device. For example, a default device name that is 15 characters long, such as 8600-SHX0991003G44HT, indicates the following:
 
-- **8600**  – Indicates the device model.
-- **SHX** – Indicates the manufacturing site.
+- **8600**  - Indicates the device model.
+- **SHX** - Indicates the manufacturing site.
 - **0991003** - Indicates a specific product.
 - **G44HT**- The last 5 digits are incremented to create unique serial numbers. This might not be a sequential set.
 
-You can use the Management Portal to change the device name and assign it a unique friendly name of your choice. The friendly name can contain any characters and can be a maximum of 64 characters long.
+You can use the Azure Management Portal to change the device name and assign it a unique friendly name of your choice. The friendly name can contain any characters and can be a maximum of 64 characters long.
 
 You can also specify a device description. A device description usually helps identify the owner and the physical location of the device. The description field must contain fewer than 256 characters.
  
 ## Modify time settings
 
-Your device must synchronize time in order to authenticate with your cloud storage service provider. Select your time zone from the drop-down list, and specify up to two Network Time Protocol (NTP) servers. The primary NTP server is required and is specified when you use Windows PowerShell for StorSimple to configure your device. You can specify the default Windows Server **time.windows.com** as your NTP server. You can view the primary NTP server configuration through the Management Portal, but you must use the Windows PowerShell interface to change it.
+Your device must synchronize time in order to authenticate with your cloud storage service provider. Select your time zone from the drop-down list, and specify up to two Network Time Protocol (NTP) servers. The primary NTP server is required and is specified when you use Windows PowerShell for StorSimple to configure your device. You can specify the default Windows Server **time.windows.com** as your NTP server. You can view the primary NTP server configuration through the Azure Management Portal, but you must use the Windows PowerShell interface to change it.
 
 The secondary NTP server configuration is optional. You can use the Management Portal to configure a secondary NTP server. 
 
@@ -61,13 +57,13 @@ If the device is deployed in a different time zone, the device time zone will ch
 
 A DNS server is used when your device attempts to communicate with your cloud storage service provider. For high availability, you are required to configure both the primary and the secondary DNS servers during the initial device deployment. To reconfigure the primary DNS server, you will need to use the Windows PowerShell interface on your StorSimple device.
 
-To modify the secondary DNS server, you can use the Management Portal.
+To modify the secondary DNS server, you can use the Azure Management Portal.
 
 <!-- If a secondary DNS server is not configured, you will not be able to create volume containers or provision volumes on the device.-->
 
 ## Modify network interfaces
 
-Your device has six device network interfaces, four of which are 1 GbE and two of which are 10 GbE. These interfaces are labeled as DATA 0 – DATA 5. DATA 0, DATA 1, DATA 4, and DATA 5 are 1 GbE, whereas DATA 2 and DATA 3 are 10 GbE network interfaces.
+Your device has six device network interfaces, four of which are 1 GbE and two of which are 10 GbE. These interfaces are labeled as DATA 0 - DATA 5. DATA 0, DATA 1, DATA 4, and DATA 5 are 1 GbE, whereas DATA 2 and DATA 3 are 10 GbE network interfaces.
 
 Configure **Network Interface Settings** for each of the interfaces to be used. To ensure high availability, we recommend that you have at least two iSCSI interfaces and two cloud-enabled interfaces on your device. We recommend but do not require that unused interfaces be disabled.
 
@@ -81,28 +77,28 @@ In StorSimple 8000 Series Update 1, the routing metric of DATA 0 is set to the l
 
 For each network interface, the following parameters are displayed:
 
-- **Speed** – Not a user-configurable parameter. DATA 0, DATA 1, DATA 4, and DATA 5 are always 1 GbE, whereas DATA 2 and DATA 3 are 10 GbE interfaces.
+- **Speed** - Not a user-configurable parameter. DATA 0, DATA 1, DATA 4, and DATA 5 are always 1 GbE, whereas DATA 2 and DATA 3 are 10 GbE interfaces.
 
      >[AZURE.NOTE] Speed and duplex are always auto-negotiated. Jumbo frames are not supported.
  
-- **Interface state** – An interface can be enabled or disabled. If enabled, the device will attempt to use the interface. We recommend that only those interfaces that are connected to the network and used be enabled. Disable any interfaces that you are not using.
+- **Interface state** - An interface can be enabled or disabled. If enabled, the device will attempt to use the interface. We recommend that only those interfaces that are connected to the network and used be enabled. Disable any interfaces that you are not using.
 
-- **Interface type** – This parameter allows you to isolate iSCSI traffic from cloud storage traffic. This parameter can be one of the following:
+- **Interface type** - This parameter allows you to isolate iSCSI traffic from cloud storage traffic. This parameter can be one of the following:
 
-    - **Cloud enabled** – when enabled, the device will use this interface to communicate with the cloud.
-    - **iSCSI enabled** – when enabled, the device will use this interface to communicate with the iSCSI host.
+    - **Cloud enabled** - when enabled, the device will use this interface to communicate with the cloud.
+    - **iSCSI enabled** - when enabled, the device will use this interface to communicate with the iSCSI host.
 
     We recommend that you isolate iSCSI traffic from cloud storage traffic. Also note if your host is within the same subnet as your device, you do not need to assign a gateway; however, if your host is in a different subnet than your device, you will need to assign a gateway.
 
-- **IP address** – This can be IPv4 or IPv6 or both. Both the IPv4 and IPv6 address families are supported for the device network interfaces. When using IPv4, specify a 32-bit IP address (*xxx.xxx.xxx.xxx*) in dot-decimal notation. When using IPv6, simply supply a 4-digit prefix, and a 128-bit address will be generated automatically for your device network interface based on that prefix.
+- **IP address** - This can be IPv4 or IPv6 or both. Both the IPv4 and IPv6 address families are supported for the device network interfaces. When using IPv4, specify a 32-bit IP address (*xxx.xxx.xxx.xxx*) in dot-decimal notation. When using IPv6, simply supply a 4-digit prefix, and a 128-bit address will be generated automatically for your device network interface based on that prefix.
 
-- **Subnet** – This refers to the subnet mask and is configured via the Windows PowerShell interface.
+- **Subnet** - This refers to the subnet mask and is configured via the Windows PowerShell interface.
 
-- **Gateway** – This is the default gateway that should be used by this interface when it attempts to communicate with nodes that are not within the same IP address space (subnet). The default gateway must be in the same address space (subnet) as the interface IP address, as determined by the subnet mask.
+- **Gateway** - This is the default gateway that should be used by this interface when it attempts to communicate with nodes that are not within the same IP address space (subnet). The default gateway must be in the same address space (subnet) as the interface IP address, as determined by the subnet mask.
 
-- **Fixed IP address** – This field is available only while you configure the DATA 0 interface. For operations such as updates or troubleshooting the device, you may need to connect directly to the device controller. The fixed IP address can be used to access both the active and the passive controller on your device.
+- **Fixed IP address** - This field is available only while you configure the DATA 0 interface. For operations such as updates or troubleshooting the device, you may need to connect directly to the device controller. The fixed IP address can be used to access both the active and the passive controller on your device.
 
-You can reconfigure Controller 0 and Controller 1 through the Management Portal.
+You can reconfigure Controller 0 and Controller 1 through the Azure Management Portal.
 
 >[AZURE.NOTE] 
 >
@@ -124,7 +120,7 @@ Perform the following steps to swap or reassign the VIPs for any of the network 
 
 ## Next steps
 
-- Learn how to [configure MPIO for your StorSimple device](storsimple-configure-mpio-windows-server.md).
+- Learn how to [configure MPIO for your StorSimple device](/documentation/articles/storsimple-configure-mpio-windows-server).
 
-- Learn how to [use the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+- Learn how to [use the StorSimple Manager service to administer your StorSimple device](/documentation/articles/storsimple-manager-service-administration).
      

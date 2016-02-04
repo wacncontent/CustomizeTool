@@ -28,7 +28,7 @@ You must have the following:
 
 - An Azure subscription. See [Get Azure trial](/pricing/1rmb-trial/).
 - An Apache Spark cluster. For instructions, see [Provision Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-provision-clusters).
-- An [Azure Event Hub](/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted).
+- An [Azure Event Hub](/documentation/articles/event-hubs-csharp-ephcs-getstarted).
 - A workstation with Microsoft Visual Studio 2013. For instructions, see [Install Visual Studio](https://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx).
 
 ##<a name="createeventhub"></a>Create Azure Event Hub
@@ -88,7 +88,7 @@ For instructions on how to allocate resources in a Spark cluster, see [Manage re
 
 ### Create a streaming application using Zeppelin
 
-1. From the [Azure Preview Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
+1. From the [Azure Management Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
 
 2. From the Spark cluster blade, click **Quick Links**, and then from the **Cluster Dashboard** blade, click **Zeppelin Notebook**. If prompted, enter the admin credentials for the cluster.
 
@@ -180,12 +180,12 @@ Instructions on how to perform these steps and a sample streaming application ca
 * [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager)
 
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-versions]: ../hdinsight-component-versioning/
+[hdinsight-upload-data]: ../hdinsight-upload-data/
+[hdinsight-storage]: ../hdinsight-use-blob-storage/
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-create-storageaccount]: ../storage-create-storage-account/ 

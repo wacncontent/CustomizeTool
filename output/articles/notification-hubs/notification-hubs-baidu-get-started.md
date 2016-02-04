@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="11/03/2015"
+	ms.date="11/25/2015"
 	wacn.date=""/>
 
 # Get started with Notification Hubs using Baidu
@@ -183,7 +183,7 @@ You will see the **保存成功！** (**Successfully saved!**) message.
 
     ![][26]
 
-5. Download and unzip the [Mobile Services Android SDK], open the **notificationhubs** folder, copy the **notification-hubs-x.y.jar** file to the **libs** folder of your Eclipse project, and refresh the *libs* folder.
+5. Download the notification-hubs-0.4.jar file from the **Files** tab of the [Notification-Hubs-Android-SDK on Bintray](https://bintray.com/microsoftazuremobile/SDK/Notification-Hubs-Android-SDK/0.4). Add the file to the **libs** folder of your Eclipse project, and refresh the *libs* folder.
 
 6. Download and unzip the [Baidu Push Android SDK], open the **libs** folder, and then copy the **pushservice-x.y.z** jar file and the **armeabi** & **mips** folders in the **libs** folder of your Android application.
 
@@ -455,7 +455,7 @@ To test this app with the emulator, on the Eclipse top toolbar, click **Run**, a
 
 The app retrieves the 'userId' and 'channelId' from the Baidu Push notification service and registers with the notification hub.
 
-To send a test notification you can use the debug tab of the portal. If you built the .NET console application for Visual Studio, just press the F5 key in Visual Studio to run the application. The application will send a notification that will appear in the top notification area of your device or emulator.
+To send a test notification you can use the debug tab of the Azure Management Portal. If you built the .NET console application for Visual Studio, just press the F5 key in Visual Studio to run the application. The application will send a notification that will appear in the top notification area of your device or emulator.
 
 
 <!-- Images. -->

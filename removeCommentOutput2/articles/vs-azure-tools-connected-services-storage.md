@@ -3,12 +3,12 @@
    description="Add Azure Storage to your app by using the Visual Studio Add Connected Services dialog box"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="patshea123"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
 	ms.service="visual-studio-online"
-	ms.date="08/12/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Adding Azure storage by using Visual Studio Connected Services
@@ -34,13 +34,13 @@ You can use the Connected Services dialog to connect to Azure Storage in the fol
 
 ## Connect to Azure Storage using the Connected Services dialog
 
-1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a [trial](/pricing/1rmb-trial/). Once you have an Azure account, you can create storage accounts, create mobile services, and configure Azure Active Directory.
+1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a [trial](/pricing/1rmb-trial). Once you have an Azure account, you can create storage accounts, create mobile services, and configure Azure Active Directory.
 
 1. Open your project in Visual Studio, open the context menu for the **References** node in Solution Explorer, and then choose **Add Connected Service**.
 
     ![Adding a connected service](./media/vs-azure-tools-connected-services-storage/IC796702.png)
 
-1. In the **Add Connected Service** dialog box, choose **Azure Storage**, and then choose the **Configure** button. You may be prompted to log into Azure if you haven't already done so.
+1. In the **Add Connected Service** dialog box, choose **Azure Storage**, and then choose the **Configure** button.You may be prompted to log into Azure if you haven't already done so.
 
     ![Add Connected Service dialog box - Storage](./media/vs-azure-tools-connected-services-storage/IC796703.png)
 
@@ -72,11 +72,10 @@ You can use the Connected Services dialog to connect to Azure Storage in the fol
 
 When you finish the dialog, Visual Studio adds references and modifies certain configuration files. The specific changes depend on the project type. 
 
- - For ASP.NET projects, see [What happened – ASP.NET Projects](/documentation/articles/vs-storage-aspnet-getting-started-blobs/). 
- - For ASP.NET 5 projects, see [What happened – ASP.NET 5 Projects](/documentation/articles/vs-storage-aspnet5-getting-started-blobs/). 
- - For cloud service projects (web roles and worker roles), see [What happened – Cloud Service projects](/documentation/articles/vs-storage-cloud-services-getting-started-blobs/).
- - For WebJob projects, see [What
-happened - WebJob projects](/documentation/articles/vs-storage-webjobs-what-happened).
+ - For ASP.NET projects, see [What happened - ASP.NET Projects](/documentation/articles/vs-storage-aspnet-getting-started-blobs/). 
+ - For ASP.NET 5 projects, see [What happened - ASP.NET 5 Projects](/documentation/articles/vs-storage-aspnet5-getting-started-blobs/). 
+ - For cloud service projects (web roles and worker roles), see [What happened - Cloud Service projects](https://azure.microsoft.com/zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-blobs/). 
+ - For WebJob projects, see [What happened - WebJob projects](/documentation/articles/vs-storage-webjobs-what-happened).
 
 ## Next steps
 

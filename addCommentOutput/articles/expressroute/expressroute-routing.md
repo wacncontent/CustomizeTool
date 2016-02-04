@@ -14,7 +14,7 @@
 
 # ExpressRoute routing requirements  
 
-To connect to Microsoft cloud services using ExpressRoute, you’ll need to setup and manage routing. Some connectivity providers offer setting up and managing routing as a managed service. Check with your connectivity provider to see if they offer this service. If they don't, you must adhere to the requirements described below. 
+To connect to Microsoft cloud services using ExpressRoute, youâll need to setup and manage routing. Some connectivity providers offer setting up and managing routing as a managed service. Check with your connectivity provider to see if they offer this service. If they don't, you must adhere to the requirements described below. 
 
 Refer to the [Circuits and routing domains](/documentation/articles/expressroute-circuit-peerings) article for a description of the routing sessions that need to be setup in order to facilitate connectivity.
 
@@ -116,6 +116,33 @@ Microsoft will tag prefixes advertised through public peering and Microsoft peer
 
 | **Geopolitical Region** | **Windows Azure region (Same applies to Office 365)** | **BGP community value** |
 |---|---|---|
+<!-- deleted by customization
+| **North America** |    | 12076:51201 |
+|    | China East | 12076:51004 |
+|    | China East 2 | 12076:51005 |
+|    | China North | 12076:51006 |
+|    | China North | 12076:51007 |
+|    | China East | 12076:51008 |
+|    | China North | 12076:51009 |
+| **South America** |  | 12076:51202 |
+|    | Brazil South | 12076:51014 |
+| **Europe** |    | 12076:51203 |
+|    | China North | 12076:51003 |
+|    | West Europe | 12076:51002 |
+| **Asia Pacific** |    | 12076:51204 |
+|    | China East | 12076:51010 |
+|    | China North | 12076:51011 |
+| **Japan** | Japan East | 12076:51012 |
+|    | China East | 12076:51013 |
+| **Australia** | Australia East | 12076:51015 |
+|    | Australia Southeast | 12076:51016 |
+| **India** | India South | 12076:51019 |
+|    | India West | 12076:51018 |
+|    | India Central | 12076:51017 |
+| **Global** | **Only supported and published when premium add-on is enabled** | 12076:51000 |
+| **Anycast** |   | 12076:51250 |
+-->
+<!-- keep by customization: begin -->
 | **US** |	China East | 12076:3004 |
 |    | China East 2 | 12076:3005 |
 |    | China North | 12076:3006 |
@@ -134,8 +161,11 @@ Microsoft will tag prefixes advertised through public peering and Microsoft peer
 | **India** | India South | 12076:3019 |
 |    | India West | 12076:3018 |
 |    | India Central | 12076:3017 |
+<!-- keep by customization: end -->
 
 All routes advertised from Microsoft will be tagged with the appropriate community value. 
+
+>[AZURE.IMPORTANT] Global prefixes will be tagged with an appropriate community value and will be advertised only when ExpressRoute premium add-on is enabled.
 
 
 In addition to the above, Microsoft will also tag prefixes based on the service they belong to. This applies only to the Microsoft peering. The table below provides a mapping of service to BGP community value.
@@ -147,7 +177,6 @@ In addition to the above, Microsoft will also tag prefixes based on the service 
 | **Skype For Business** | 12076:5030 |
 | **CRM Online** | 12076:5040 |
 | **Other Office 365 Services** | 12076:5100 |
-| **Global prefixes / Anycast** | 12076:5200 |
 
 
 ### Manipulating routing preferences

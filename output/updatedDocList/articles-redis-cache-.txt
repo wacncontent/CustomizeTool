@@ -1,6 +1,3 @@
-updated docs: 3
-articles/redis-cache/cache-faq.md
-articles/redis-cache/cache-redis-cache-arm-provision.md
-articles/redis-cache/cache-web-app-arm-with-redis-cache-provision.md
+updated docs: 0
 
 updated includes: 0

@@ -4,11 +4,11 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/22/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # What is an endpoint Access Control List (ACLs)?
@@ -51,7 +51,7 @@ You can selectively permit or deny network traffic for a virtual machine input e
 
 Points to consider:
 
-1. **No ACL –** By default when an endpoint is created, we permit all for the endpoint.
+1. **No ACL -** By default when an endpoint is created, we permit all for the endpoint.
 
 1. **Permit -** When you add one or more "permit" ranges, you are denying all other ranges by default. Only packets from the permitted IP range will be able to communicate with the virtual machine endpoint.
 
@@ -67,7 +67,7 @@ Network ACLs can be set up on specific virtual machine endpoints. For example, y
 
 In the example below, if you want to allow access to the RDP endpoint only from two public IPv4 address ranges (65.0.0.0/8, and 159.0.0.0/8), you can achieve this by specifying two *Permit* rules. In this case, since RDP is created by default for a virtual machine, you may want to lock down access to the RDP port based on a remote subnet. The example below shows a way to grant access to public virtual IPs (VIPs) of a certain range to permit access for RDP. All other remote IPs are denied. This works because network ACLs can be set up for a specific virtual machine endpoint and access is denied by default.
 
-**Example – Multiple rules**
+**Example - Multiple rules**
 
 | **Rule #** | **Remote Subnet** | **Endpoint** | **Permit/Deny** |
 |--------|---------------|----------|-------------|
@@ -78,7 +78,7 @@ In the example below, if you want to allow access to the RDP endpoint only from 
 
 Because multiple rules can be specified for an endpoint, there must be a way to organize rules in order to determine which rule takes precedence. The rule order specifies precedence. Network ACLs follow a *lowest takes precedence* rule order. In the example below, the endpoint on port 80 is selectively granted access to only certain IP address ranges. To configure this, we have a deny rule (Rule \# 100) for addresses in the 175.1.0.1/24 space. A second rule is then specified with precedence 200 that permits access to all other addresses under 175.0.0.0/8.
 
-**Example – Rule precedence**
+**Example - Rule precedence**
 
 | **Rule #** | **Remote Subnet** | **Endpoint** | **Permit/Deny** |
 |--------|---------------|----------|-------------|

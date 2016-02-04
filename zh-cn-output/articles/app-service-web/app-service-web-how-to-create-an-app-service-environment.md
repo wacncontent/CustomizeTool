@@ -10,7 +10,7 @@
 <tags 
 	ms.service="app-service-web" 
 	ms.date="04/27/2015" 
-	wacn.date=""/>
+	wacn.date="11/27/2015"/>
 
 # 如何创建 App Service 环境 #
 
@@ -35,7 +35,7 @@ ASE 功能实质上是将 Azure App Service 部署到客户的 VNET。若要执�
 ### 快速创建 ###
 进入创建 UI 后，只需输入部署的名称即可快速创建 ASE。这将依次创建具有 512 个地址的 VNET、该 VNET 中具有 256 个地址的子网、辅助池 1 中具有 2 个前端和 2 个辅助角色的 ASE 环境。请务必选择想要系统所在的位置和想要它所处的订阅。可使用 ASE 来托管内容的唯一帐户必须位于用于创建它的订阅中。
 
-为 ASE 指定的名称将用于在 ASE 中创建的 Web 应用。如果 ASE 名称为 appsvcenvdemo，则域名称将为 *appsvcenvdemo.p.chinacloudsites.cn*。因此，如果创建了名为 mytestapp 的 Web 应用，则可在 *mytestapp.appsvcenvdemo.p.chinacloudsites.cn* 中访问它。不能在名称中使用空白区域。如果在名称中使用大写字符，域名将为该名称的全小写形式。
+为 ASE 指定的名称将用于在 ASE 中创建的 Web 应用。如果 ASE 名称为 appsvcenvdemo，则域名称将为 *appsvcenvdemo.p.azurewebsites.net*。因此，如果创建了名为 mytestapp 的 Web 应用，则可在 *mytestapp.appsvcenvdemo.p.azurewebsites.net* 中访问它。不能在名称中使用空白区域。如果在名称中使用大写字符，域名将为该名称的全小写形式。
 
 
 ![][1]
@@ -136,6 +136,6 @@ App Service 环境的定价针对已分配的计算资源。你为分配到 App 
 <!--Links-->
 [WhatisASE]: /documentation/articles/app-service-app-service-environment-intro
 [ASEConfig]: /documentation/articles/app-service-web-configure-an-app-service-environment
-[AzureAppService]: /documentation/articles/app-service-value-prop-what-is
+[AzureAppService]: /documentation/services/web-sites
 
 <!---HONumber=67-->

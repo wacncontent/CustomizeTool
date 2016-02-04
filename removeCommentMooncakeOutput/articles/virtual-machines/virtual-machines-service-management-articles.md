@@ -14,7 +14,9 @@
 	wacn.date=""/>
 
 # Articles for virtual machines in Service Management
-This is a list of articles for working with virtual machines in Azure Service Management. For new deployments, we recommend the use of Azure Resource Manager–based virtual machines and other resources. For an explanation of the advantages of Resource Manager, see [Azure compute, network, and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm).
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
 
 ## Get started
 
@@ -32,7 +34,7 @@ This is a list of articles for working with virtual machines in Azure Service Ma
 
 [Use Azure PowerShell to create and preconfigure Windows-based virtual machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
-[Create and manage a Windows-based virtual machine by using Azure PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
+[Create Windows virtual machines with Powershell and the classic deployment model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
 [Creating a custom VM running Linux by using the Azure Command-Line Interface (Azure CLI)](/documentation/articles/virtual-machines-linux-create-custom)
 

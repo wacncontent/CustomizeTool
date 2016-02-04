@@ -1,6 +1,6 @@
 <properties 
-    pageTitle="Configure geo-replication for Azure SQL Database with the Azure preview portal | Windows Azure" 
-    description="Configure geo-replication for Azure SQL Database using the Azure preview portal" 
+    pageTitle="Configure geo-replication for Azure SQL Database with the Azure Management Portal | Windows Azure" 
+    description="Configure geo-replication for Azure SQL Database using the Azure Management Portal" 
     services="sql-database" 
     documentationCenter="" 
     authors="stevestein" 
@@ -9,19 +9,19 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="11/10/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
-# Configure geo-replication for Azure SQL Database with the Azure preview portal
+# Configure geo-replication for Azure SQL Database with the Azure Management Portal
 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](/documentation/articles/sql-database-geo-replication-portal)
+- [Azure Management Portal](/documentation/articles/sql-database-geo-replication-portal)
 - [PowerShell](/documentation/articles/sql-database-geo-replication-powershell)
 - [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql)
 
 
-This article shows you how to configure geo-replication for SQL Database with the [Azure preview portal](https://manage.windowsazure.cn).
+This article shows you how to configure geo-replication for SQL Database with the [Azure Management Portal](https://manage.windowsazure.cn).
 
 Geo-replication enables creating up to 4 replica (secondary) databases in different data center locations (regions). Secondary databases are available in the case of a data center outage or the inability to connect to the primary database.
 
@@ -53,7 +53,7 @@ After the secondary is created and seeded, data will begin replicating from the 
 
 ### Add secondary
 
-1. In the [Azure preview portal](https://manage.windowsazure.cn) browse to the database that you want to setup for geo-replication.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn) browse to the database that you want to setup for geo-replication.
 2. On the SQL Database blade, select **All settings** > **Geo-Replication**.
 3. Select the region to create the secondary database. Premium databases can use any region for a secondary, Standard databases must use the recommended region:
 
@@ -86,7 +86,7 @@ After the secondary is created and seeded, data will begin replicating from the 
 
 The operation permanently terminates the replication to the secondary database and change the role of the secondary to a regular read-write database. If the connectivity to the secondary database is broken the command succeeds but the secondary will not become read-write until after connectivity is restored.  
 
-1. In the [Azure preview portal](https://manage.windowsazure.cn) browse to the primary database in the geo-replication partnership.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn) browse to the primary database in the geo-replication partnership.
 2. On the SQL Database blade, select **All settings** > **Geo-Replication**.
 3. In the **SECONDARIES** list select the database you want to remove from the geo-replication partnership.
 4. Click **Stop Replication**.
@@ -105,7 +105,7 @@ The operation permanently terminates the replication to the secondary database a
 
 The secondary database can be switched to become the primary.  
 
-1. In the [Azure preview portal](https://manage.windowsazure.cn) browse to the primary database in the geo-replication partnership.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn) browse to the primary database in the geo-replication partnership.
 2. On the SQL Database blade, select **All settings** > **Geo-Replication**.
 3. In the **SECONDARIES** list, select the database you want to become the new primary.
 4. Click **Failover**.
@@ -130,10 +130,10 @@ For planned failover, this sequence guarantees that no data loss will occur. The
 
 ## Additional resources
 
-- [Spotlight on new geo-replication capabilities](https://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication)
+- [Spotlight on new geo-replication capabilities](http://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication)
 - [Designing cloud applications for business continuity using geo-replication](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery)
 - [Business Continuity Overview](/documentation/articles/sql-database-business-continuity)
-- [SQL Database documentation](/documentation/services/sql-database/)
+- [SQL Database documentation](/documentation/services/sql-databases)
 
 
 <!--Image references-->

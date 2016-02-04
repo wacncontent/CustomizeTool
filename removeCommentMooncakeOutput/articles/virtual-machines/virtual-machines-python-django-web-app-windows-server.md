@@ -1,27 +1,24 @@
 <properties
-	pageTitle="Python web app with Django | Windows Azure"
-	description="This tutorial teaches you how to host a Django-based website on Azure using a Windows Server 2012 R2 Datacenter virtual machine using the classic deployment model."
+	pageTitle="Python web site with Django | Windows Azure"
+	description="A tutorial that teaches you how to host a Django-based website on Azure using a Windows Server 2012 R2 Datacenter virtual machine."
 	services="virtual-machines"
 	documentationCenter="python"
 	authors="huguesv"
 	manager="wpickett"
-	editor=""
-	tags="azure-service-management"/>
+	editor=""/>
 
 
-<tags
-	ms.service="virtual-machines"
-	ms.date="08/04/2015"
+<tags 
+	ms.service="virtual-machines" 
+	ms.date="08/04/2015" 
 	wacn.date=""/>
 
 
-# Django Hello World web application on a Windows Server VM
 
-> [AZURE.SELECTOR]
-- [Windows](/documentation/articles/virtual-machines-python-django-web-app-windows-server)
-- [Mac/Linux](/documentation/articles/virtual-machines-python-django-web-app-linux)
 
-<br>
+# Django Hello World web site
+
+<div class="dev-center-tutorial-selector sublanding"><a href="/develop/python/tutorials/web-app-with-django/" title="Windows" class="current">Windows</a><a href="/develop/python/tutorials/django-hello-world-(maclinux)/" title="MacLinux">Mac/Linux</a></div>
 
 This tutorial describes how to host a Django-based website on Microsoft
 Azure using a Windows Server virtual machine. This tutorial assumes you have no prior experience using Azure. After completing this tutorial, you will have a Django-based application up and running in the cloud.

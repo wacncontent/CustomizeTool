@@ -3,13 +3,13 @@
 	description="Learn what the Azure Content Delivery Network (CDN) is and how to use it to deliver high-bandwidth content by caching blobs and static content." 
 	services="cdn" 
 	documentationCenter=".NET" 
-	authors="zhangmanling" 
+	authors="camsoper" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags
 	ms.service="cdn"
-	ms.date="09/01/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 #Overview of the Azure Content Delivery Network (CDN)
@@ -32,7 +32,7 @@ The benefits of using the CDN to cache Azure data include:
 
 >[AZURE.IMPORTANT] When you create or enable a CDN endpoint, it may take up to 60 minutes to propagate worldwide.
  
-When a request for an object is first made to the CDN, the object is retrieved directly from the Blob service or from the cloud service. When a request is made using the CDN syntax, the request is redirected to the CDN endpoint closest to the location from which the request was made to provide access to the object. If the object is not found at that endpoint, then it is retrieved from the service and cached at the endpoint, where a time-to-live (TTL) setting is maintained for the cached object.
+When a request for an object is first made to the CDN, the object is retrieved directly from the object's source origin location.  This origin can be an Azure storage account, web app, cloud service, or any custom origin that accepts public web requests.  When a request is made using the CDN syntax, the request is redirected to the CDN endpoint closest to the location from which the request was made to provide access to the object. If the object is not found at that endpoint, then it is retrieved from the service and cached at the endpoint, where a time-to-live (TTL) setting is maintained for the cached object.
  
 ##Caching content from Azure storage
 
@@ -109,3 +109,4 @@ You can map the CDN HTTP endpoint to a custom domain name and use that name to r
 For more information on mapping a custom domain, see [How to Map Content Delivery Network (CDN) Content to a Custom Domain](http://msdn.microsoft.com/zh-cn/library/azure/gg680307.aspx).
 
  
+

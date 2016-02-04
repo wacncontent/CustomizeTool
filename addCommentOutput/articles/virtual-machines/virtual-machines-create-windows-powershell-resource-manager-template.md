@@ -14,6 +14,19 @@
 	wacn.date=""/>
 
 # Create a Windows virtual machine with a Resource Manager template
+<!-- deleted by customization
+
+> [AZURE.SELECTOR]
+- [Azure Management Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [Azure PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
+- [Azure PowerShell - Template](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template)
+- [Azure Management Portal - Linux](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
+- [Azure CLI](/documentation/articles/virtual-machines-linux-tutorial)
+
+<br>
+
+
+-->
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
 
@@ -216,7 +229,7 @@ Fill in an Azure deployment name, resource group name, and Azure datacenter loca
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as China North>"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
-	New-AzureRmResourceGroup –Name $RGName –Location $locName
+	New-AzureRmResourceGroup -Name $RGName -Location $locName
 	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 When you run the **New-AzureRmResourceGroupDeployment** command, you will be prompted to supply the values of parameters in the "parameters" section of the JSON file. When you have specified all the parameter values, the command creates the resource group and the virtual machine.
@@ -227,7 +240,7 @@ Here is an example.
 	$RGName="TestRG"
 	$locname="China North"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
-	New-AzureRmResourceGroup –Name $RGName –Location $locName
+	New-AzureRmResourceGroup -Name $RGName -Location $locName
 	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 You will see something like this:
@@ -278,8 +291,13 @@ You now have a new Windows virtual machine named MyWindowsVM in your new resourc
 
 [Create a Windows virtual machine with Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager)
 
+<!-- deleted by customization
+[Create Windows virtual machines with Powershell and the classic deployment model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
+-->
+<!-- keep by customization: begin -->
 [Create a Windows virtual machine with PowerShell and Azure Service Manager](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
+<!-- keep by customization: end -->
 
 [Virtual machines documentation](/documentation/services/virtual-machines/)
 
-[How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)
+[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)

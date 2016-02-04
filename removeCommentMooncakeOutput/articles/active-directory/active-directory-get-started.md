@@ -1,29 +1,30 @@
-<properties
-	pageTitle="How to get started using Azure AD"
-	description="Covers how to sign up for Azure and first steps you can try with Azure AD."
-	services="active-directory"
-	documentationCenter=""
-	authors="curtand"
+<properties 
+	pageTitle="How to get started using Azure AD" 
+	description="Covers how to sign up for Azure and first steps you can try with Azure AD." 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="curtand" 
 	manager="stevenpo"
 	editor=""/>
 
-<tags
-	ms.service="active-directory"
+<tags 
+	ms.service="active-directory" 
 	ms.date="09/21/2015"
-	wacn.date=""/>
+	wacn.date="" />
 
 # How to get started using Azure AD
 
 ###Other articles on this topic
 [What is Azure AD?](/documentation/articles/active-directory-whatis)<br>
+
 [How does it work?](/documentation/articles/active-directory-works)<br>
 [Get started](/documentation/articles/active-directory-get-started)<br>
 [Next steps](/documentation/articles/active-directory-next-steps)<br>
-[Learn more](/documentation/articles/active-directory-learn-map)
+
+[Learn more](/documentation/articles/active-directory-learn-map)<br>
 
 
 Ready to get started? You should try out some of the really cool stuff we've released with Azure Active Directory. Use these capabilities to really add value to your organization's identity and access management. Read documentation to learn how to configure these features. Then see how you can start testing these capabilities by taking the first step and assigning trial licenses to administrators and users.
-
 
 > [AZURE.NOTE] Azure AD is available to everyone for free. Sign up now for an Azure trial subscription and your directory will be waiting for you. The directory is yours whether you buy anything or not. [Try Azure AD now](http://azure.microsoft.com/trial/get-started-active-directory/)
 
@@ -43,3 +44,4 @@ Azure AD provides a number of reports for administrators. Even more reports are 
 
 * [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
 * [Azure Identity](/documentation/articles/fundamentals-identity)
+

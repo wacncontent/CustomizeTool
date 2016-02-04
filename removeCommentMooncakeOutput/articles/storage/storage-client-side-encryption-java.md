@@ -7,9 +7,9 @@
 	manager="carolz" 
 	editor=""/>
 
-<tags
-	ms.service="storage"
-	ms.date="10/07/2015"
+<tags 
+	ms.service="storage" 
+	ms.date="10/07/2015" 
 	wacn.date=""/>
 
 
@@ -42,7 +42,7 @@ Decryption via the envelope technique works in the following way:
 
 2.	The client library downloads the encrypted data along with any encryption material that is stored on the service.  
 
-3.	The wrapped content encryption key (CEK) is then unwrapped (decrypted) using the key encryption key (KEK). Here again, the client library does not have access to KEK. It simply invokes the custom or Key Vault provider’s unwrapping algorithm.  
+3.	The wrapped content encryption key (CEK) is then unwrapped (decrypted) using the key encryption key (KEK). Here again, the client library does not have access to KEK. It simply invokes the custom or Key Vault provider's unwrapping algorithm.  
 
 4.	The content encryption key (CEK) is then used to decrypt the encrypted user data.
 
@@ -99,7 +99,7 @@ In batch operations, the same KEK will be used across all the rows in that batch
 To perform query operations, you must specify a key resolver that is able to resolve all the keys in the result set. If an entity contained in the query result cannot be resolved to a provider, the client library will throw an error. For any query that performs server side projections, the client library will add the special encryption metadata properties (_ClientEncryptionMetadata1 and _ClientEncryptionMetadata2) by default to the selected columns.
 
 ## Azure Key Vault  
-Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud applications and services. By using Azure Key Vault, users can encrypt keys and secrets (such as authentication keys, storage account keys, data encryption keys, .PFX files, and passwords) by using keys that are protected by hardware security modules (HSMs). For more information, see [What is Azure Key Vault?](/documentation/articles/key-vault-whatis).
+Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud applications and services. By using Azure Key Vault, users can encrypt keys and secrets (such as authentication keys, storage account keys, data encryption keys, .PFX files, and passwords) by using keys that are protected by hardware security modules (HSMs). For more information, see [What is Azure Key Vault?](/documemtation/articles/key-vault-whatis).
 
 The storage client library uses the Key Vault core library in order to provide a common framework across Azure for managing keys. Users also get the additional benefit of using the Key Vault extensions library. The extensions library provides useful functionality around simple and seamless Symmetric/RSA local and cloud key providers as well as with aggregation and caching.
 
@@ -186,7 +186,7 @@ Create a **QueueEncryptionPolicy** object and set it in the request options (per
 	CloudQueueMessage retrMessage = queue.retrieveMessage(30, options, null);
 
 ### Table service encryption  
-In addition to creating an encryption policy and setting it on request options, you must either specify an **EncryptionResolver** in **TableRequestOptions**, or set the [Encrypt] attribute on the entity’s getter and setter.
+In addition to creating an encryption policy and setting it on request options, you must either specify an **EncryptionResolver** in **TableRequestOptions**, or set the [Encrypt] attribute on the entity's getter and setter.
 
 ### Using the resolver  
 

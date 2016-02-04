@@ -17,5 +17,5 @@ replaced by:
 
 		1. Go to the [Azure Management Portal](http://manage.windowsazure.cn/).
 
-reason: ()
+reason: (preview portal)
 

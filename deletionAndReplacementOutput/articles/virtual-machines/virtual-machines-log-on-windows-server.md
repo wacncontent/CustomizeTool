@@ -15,5 +15,5 @@ replaced by:
 
 		[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers managing resources with the classic deployment model.
 
-reason: ()
+reason: (video)
 

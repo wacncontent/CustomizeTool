@@ -2,13 +2,11 @@ deletion:
 
 deleted:
 
-		[
+		[suspended](/documentation/articles/suspending-a-workflow)
 
-reason: ()
+replaced by:
 
-deleted:
+		suspended
 
-		](/documentation/articles/suspending-a-workflow)
-
-reason: ()
+reason: (broken link)
 

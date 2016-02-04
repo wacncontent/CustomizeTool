@@ -10,21 +10,20 @@
 	
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/01/2015"
+	ms.date="11/13/2015"
 	wacn.date=""/>
 
 # Performance best practices for SQL Server in Azure Virtual Machines
-
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
- 
 
 ## Overview
 
 This topic provides best practices for optimizing SQL Server performance in Windows Azure Virtual Machine. While running SQL Server in Azure Virtual Machines, we recommend that you continue using the same database performance tuning options that are applicable to SQL Server in on-premises server environment. However, the performance of a relational database in a public cloud depends on many factors such as the size of a virtual machine, and the configuration of the data disks.
 
-When creating SQL Server images, consider using the [new Portal](https://manage.windowsazure.cn) to take advantage of features, such as the default use of Premium Storage, and other options, such as Automated Patching, Automated Backup, and AlwaysOn configurations.
+When creating SQL Server images, consider using the Azure Management Portal to take advantage of features, such as the default use of Premium Storage, and other options, such as Automated Patching, Automated Backup, and AlwaysOn configurations.
 
->[AZURE.NOTE] This paper is focused on getting the best performance for SQL Server on Azure VMs. If your workload is less demanding, you might not require every optimization listed below. Consider your performance needs and workload patterns as you evaluate these recommendations.
+This paper is focused on getting the best performance for SQL Server on Azure VMs. If your workload is less demanding, you might not require every optimization listed below. Consider your performance needs and workload patterns as you evaluate these recommendations.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 ## Quick check list
 
@@ -42,7 +41,7 @@ For more information, please follow the guidelines provided in the following sub
 
 ## Virtual machine size and storage account considerations
 
-For performance sensitive applications, it’s recommended that you use the following virtual machines sizes:
+For performance sensitive applications, it's recommended that you use the following virtual machines sizes:
 
 - **SQL Server Enterprise Edition**: DS3 or higher
 
@@ -92,7 +91,7 @@ Only store TempDB and/or Buffer Pool Extensions on the **D** drive when using th
 
 - Consider compressing any data files when transferring in/out of Azure.
 
-- Consider enabling instant file initialization to reduce the time that is required for initial file allocation. To take advantage of instant file initialization, you grant the SQL Server (MSSQLSERVER) service account with SE_MANAGE_VOLUME_NAME and add it to the **Perform Volume Maintenance Tasks** security policy. If you are using a SQL Server platform image for Azure, the default service account (NT Service\MSSQLSERVER) isn’t added to the **Perform Volume Maintenance Tasks** security policy. In other words, instant file initialization is not enabled in a SQL Server Azure platform image. After adding the SQL Server service account to the **Perform Volume Maintenance Tasks** security policy, restart the SQL Server service. There could be security considerations for using this feature. For more information, see [Database File Initialization](https://msdn.microsoft.com/zh-cn/library/ms175935.aspx).
+- Consider enabling instant file initialization to reduce the time that is required for initial file allocation. To take advantage of instant file initialization, you grant the SQL Server (MSSQLSERVER) service account with SE_MANAGE_VOLUME_NAME and add it to the **Perform Volume Maintenance Tasks** security policy. If you are using a SQL Server platform image for Azure, the default service account (NT Service\MSSQLSERVER) isn't added to the **Perform Volume Maintenance Tasks** security policy. In other words, instant file initialization is not enabled in a SQL Server Azure platform image. After adding the SQL Server service account to the **Perform Volume Maintenance Tasks** security policy, restart the SQL Server service. There could be security considerations for using this feature. For more information, see [Database File Initialization](https://msdn.microsoft.com/zh-cn/library/ms175935.aspx).
 
 - **autogrow** is considered to be merely a contingency for unexpected growth. Do not manage your data and log growth on a day-to-day basis with autogrow. If autogrow is used, pre-grow the file using the Size switch.
 

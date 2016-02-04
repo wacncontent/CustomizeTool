@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/11/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # App model v2.0 preview: Secure an MVC web API
@@ -19,12 +19,12 @@ With the v2.0 app model, you can protecet a Web API using [OAuth 2.0](/documenta
 > [AZURE.NOTE]
 This information applies to the v2.0 app model public preview.  For instructions on how to integrate with the generally available Azure AD service, please refer to the [Azure Active Directory Developer Guide](/documentation/articles/active-directory-developers-guide).
 
-In ASP.NET web APIs, you can accomplish this using Microsoft’s OWIN middleware included in .NET Framework 4.5.  Here we’ll use OWIN to build a "To Do List" MVC Web API that:
+In ASP.NET web APIs, you can accomplish this using Microsoft's OWIN middleware included in .NET Framework 4.5.  Here we'll use OWIN to build a "To Do List" MVC Web API that:
 - Allows clients to create and read tasks from a user's To-Do list.
 -	Designates which API's are protected.
 -	Validates that the Web API calls contain a valid Access Token.
 
-In order to do this, you’ll need to:
+In order to do this, you'll need to:
 
 1. Register an app with Azure AD
 2. Set up your app to use the OWIN authentication pipeline.
@@ -50,7 +50,7 @@ This visual studio solution also contains a "TodoListClient", which is a simple 
 
 ## 2. Set up your app to use the OWIN authentication pipeline
 
-Now that you’ve registered an app, you need to set up your app to communicate with the v2.0 endpoint in order to validate incoming requests & tokens.
+Now that you've registered an app, you need to set up your app to communicate with the v2.0 endpoint in order to validate incoming requests & tokens.
 
 -	To begin, open the solution and add the OWIN middleware NuGet packages to the TodoListService project using the Package Manager Console.
 
@@ -60,8 +60,8 @@ PM> Install-Package Microsoft.Owin.Security.Jwt -ProjectName TodoListService
 PM> Install-Package Microsoft.Owin.Host.SystemWeb -ProjectName TodoListService
 ```
 
--	Add an OWIN Startup class to the TodoListService project called `Startup.cs`.  Right click on the project --> **Add** --> **New Item** --> Search for “OWIN”.  The OWIN middleware will invoke the `Configuration(…)` method when your app starts.
--	Change the class declaration to `public partial class Startup` - we’ve already implemented part of this class for you in another file.  In the `Configuration(…)` method, make a call to ConfgureAuth(…) to set up authentication for your web app.
+-	Add an OWIN Startup class to the TodoListService project called `Startup.cs`.  Right click on the project --> **Add** --> **New Item** --> Search for "OWIN".  The OWIN middleware will invoke the `Configuration(…)` method when your app starts.
+-	Change the class declaration to `public partial class Startup` - we've already implemented part of this class for you in another file.  In the `Configuration(…)` method, make a call to ConfgureAuth(…) to set up authentication for your web app.
 
 ```C#
 public partial class Startup

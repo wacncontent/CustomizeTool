@@ -1,21 +1,19 @@
 <properties 
-   pageTitle="Deploy StorSimple device in Government Portal | Microsoft Azure"
+   pageTitle="Deploy StorSimple device in Government Portal | Windows Azure"
    description="Describes the steps and best practices for deploying the StorSimple Update 1 device and service in the Azure Government portal."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/17/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/09/2015"
+	wacn.date=""/>
 
 # Deploy your on-premises StorSimple device in the Government Portal
+
+[AZURE.INCLUDE [storsimple-version-selector-deploy-gov](../includes/storsimple-version-selector-deploy-gov.md)]
 
 ## Overview
 
@@ -23,8 +21,8 @@ Welcome to Microsoft Azure StorSimple device deployment. These deployment tutori
 
 The information in these tutorials assumes that you have reviewed the safety precautions, and unpacked, racked, and cabled your StorSimple device. If you still need to perform those tasks, start with reviewing the [safety precautions](storsimple-safety.md). Depending on your device model, you can then unpack, rack mount, and cable by following the instructions in:
 
-- [Unpack, rack mount, and cable your 8100](storsimple-8100-hardware-installation.md)
-- [Unpack, rack mount, and cable your 8600](storsimple-8600-hardware-installation.md)
+- [Unpack, rack mount, and cable your 8100](/documentation/articles/storsimple-8100-hardware-installation)
+- [Unpack, rack mount, and cable your 8600](/documentation/articles/storsimple-8600-hardware-installation)
 
 You will need administrator privileges to complete the setup and configuration process. We recommend that you review the configuration checklist before you begin. The deployment and configuration process can take some time to complete.
 
@@ -123,8 +121,8 @@ Before configuring the device, make sure that:
 
 - Your device is fully unpacked, mounted on a rack and fully cabled for power, network, and serial access as described in:
 
-	-  [Unpack, rack mount, and cable your 8100 device](storsimple-8100-hardware-installation.md)
-	-  [Unpack, rack mount, and cable your 8600 device](storsimple-8600-hardware-installation.md)
+-  [Unpack, rack mount, and cable your 8100 device](/documentation/articles/storsimple-8100-hardware-installation)
+	-  [Unpack, rack mount, and cable your 8600 device](/documentation/articles/storsimple-8600-hardware-installation)
 
 
 ### For the network in the datacenter
@@ -150,7 +148,7 @@ A StorSimple Manager service can manage multiple StorSimple devices. Perform the
 
 ## Step 2: Get the service registration key
 
-After the StorSimple Manager service is up and running, you will need to get the service registration key. This key is used to register and connect your StorSimple device with the service.
+After the StorSimple Manager service is up and running, you will need to get the service registration key. This key is used to register and connect your StorSimple device to the service.
 
 Perform the following steps in the Government Portal.
 
@@ -201,7 +199,7 @@ Perform these steps on your Windows Server host.
 
 > - For MPIO and iSCSI installation and configuration instructions on Windows Server host, go to [Configure MPIO for your StorSimple device](storsimple-configure-mpio-windows-server.md). These will also include the steps to mount, initialize and format StorSimple volumes.
 
-> - For MPIO and iSCSI installation and configuration instructions on a Linux host, go to [Configure MPIO for your StorSimple Linux host](storsimple-configure-mpio-linux.md)
+> - For MPIO and iSCSI installation and configuration instructions on a Linux host, go to [Configure MPIO for your StorSimple Linux host](storsimple-configure-mpio-linux.md) 
 
 If you decide not to configure MPIO, perform the following steps to mount, initialize, and format your StorSimple volumes on a Windows Server host.
 
@@ -232,7 +230,7 @@ Perform the following steps in the Government Portal, on the **StorSimple Manage
 
 To connect to Windows PowerShell for StorSimple, you need to use terminal emulation software such as PuTTY. You can use PuTTY when you access the device directly through the serial console or by opening a telnet session from a remote computer.
 
-[AZURE.INCLUDE [Use PuTTY to connect to the device serial console](../../includes/storsimple-use-putty.md)]
+[AZURE.INCLUDE [Use PuTTY to connect to the device serial console](../../includes/storsimple-use-putty.md)] 
 
 ## Scan for and apply updates
 

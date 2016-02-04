@@ -1,15 +1,15 @@
 <properties
     pageTitle="How to use the Azure slave plug-in with Jenkins Continuous Integration | Windows Azure"
     description="Describes how to use the Azure slave plug-in with Jenkins Continuous Integration."
-	services="storage"
-	documentationCenter="java"
-	authors="rmcmurray"
-	manager="wpickett"
+	services="storage" 
+	documentationCenter="java" 
+	authors="rmcmurray" 
+	manager="wpickett" 
 	editor="jimbe" />
 
 <tags
-	ms.service="storage"
-	ms.date="09/01/2015"
+	ms.service="storage" 
+	ms.date="11/19/2015"
 	wacn.date=""/>
 
 # How to use the Azure slave plug-in with Jenkins Continuous Integration

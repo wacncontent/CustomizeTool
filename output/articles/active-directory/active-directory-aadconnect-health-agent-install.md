@@ -108,7 +108,7 @@ In order for the Usage Analytics feature to gather and analyze data, the Azure A
 
 ![AD FS audit logs](./media/active-directory-aadconnect-health-requirements/adfsaudit.png)
 
-> [AZURE.WARNING] If you have a group policy that is disabling AD FS auditing then the Azure AD Connect Health Agent will not be able to collect information. Ensure that you don’t have a group policy that may be disabling auditing.
+> [AZURE.WARNING] If you have a group policy that is disabling AD FS auditing then the Azure AD Connect Health Agent will not be able to collect information. Ensure that you don't have a group policy that may be disabling auditing.
 
 [//]: # (Start of Agent Proxy Configuration Section)
 
@@ -131,7 +131,7 @@ To verify the agent has been installed, open services and look for the following
 You can configure Azure AD Connect Health Agents to work with an HTTP Proxy.
 
 >[AZURE.NOTE]
-- Using “Netsh WinHttp set ProxyServerAddress” will not work as the agent uses System.Net to make web requests instead of Microsoft Windows HTTP Services.
+- Using "Netsh WinHttp set ProxyServerAddress" will not work as the agent uses System.Net to make web requests instead of Microsoft Windows HTTP Services.
 - The configured Http Proxy address will be used to pass-through encrypted Https messages.
 - Authenticated proxies (using HTTPBasic) are not supported.
 

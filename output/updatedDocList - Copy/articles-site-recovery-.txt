@@ -1,0 +1,5 @@
+updated docs: 2
+articles/site-recovery/site-recovery-vmm-san.md
+articles/site-recovery/site-recovery-vmm-to-vmm.md
+
+updated includes: 0

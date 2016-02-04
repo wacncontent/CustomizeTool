@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Node.js web app on Azure with MongoDB in a Virtual Machine"
+	pageTitle="Create a Node.js web site on Azure with MongoDB in a Virtual Machine"
 	description="How to use MongoDB to store data in a Node.js application hosted on Azure."
 	tags="azure-portal"
 	services="app-service\web, virtual-machines"
@@ -14,7 +14,7 @@
 	wacn.date=""/>
 
 
-# Create a Node.js web app on Azure with MongoDB in a Virtual Machine
+# Create a Node.js web site on Azure with MongoDB in a Virtual Machine
 
 This tutorial shows you how to use [MongoDB] hosted on an Azure Virtual Machine to store data, and access the data from a [node] application hosted in an Azure  Website. [MongoDB] is a popular open source, high performance NoSQL database.
 
@@ -143,7 +143,7 @@ In this section you will create a new Node application on your development envir
 		├── mkdirp@0.3.5
 		└── commander@1.3.2 (keypress@0.1.0)                                                                         
  
-	> [AZURE.NOTE] The '-g' parameter used when installing the express module installs it globally. This is done so that we can access the ___express___ command to generate web app scaffolding without having to type in additional path information.
+	> [AZURE.NOTE] The '-g' parameter used when installing the express module installs it globally. This is done so that we can access the ___express___ command to generate web site scaffolding without having to type in additional path information.
 
 4. To create the scaffolding which will be used for this application, use the **express** command:
 
@@ -537,7 +537,7 @@ This will create a new application setting for the  Website, which will be used 
 
 ##Next steps
 
-While the steps in this article describe using MongoDB to store information, you can also use the Azure Table Service. See [Node.js Web Application with the Azure Table Service] for more information.
+While the steps in this article describe using MongoDB to store information, you can also use the Azure Table Service. See [Node.js web site with the Azure Table Service] for more information.
 
 To learn how to use a hosted instance of MongoDB provided by MongoLab, see [Create a Node.js Application on Azure with MongoDB using the MongoLab Add-On](/documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb).
 
@@ -564,7 +564,7 @@ To learn how to secure MongoDB, see [MongoDB Security][mongosecurity].
 [Create and deploy a Node.js application to Azure  Websites]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
 [Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control
 [Installing MongoDB on a Linux Virtual machine]: /zh-cn/documentation/article/virtual-machines-install-mongodb-centos-linux/
-[Node.js Web Application with the Azure Table Service]: /documentation/articles/storage-nodejs-use-table-storage-web-site
+[Node.js web site with the Azure Table Service]: /documentation/articles/storage-nodejs-use-table-storage-web-site
 [node-mongo-finished]: ./media/web-sites-nodejs-store-data-mongodb/todo_list_empty.png
 [node-mongo-express-results]: ./media/store-mongodb-web-sites-nodejs-use-mac/express_output.png
 [node-mongo-add-item]: ./media/store-mongodb-web-sites-nodejs-use-mac/todo_add_item.png

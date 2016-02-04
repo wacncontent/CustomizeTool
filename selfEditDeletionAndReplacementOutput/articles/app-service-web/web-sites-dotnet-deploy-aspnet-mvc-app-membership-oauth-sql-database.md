@@ -10,19 +10,19 @@ deleted:
 
 		[activate your MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or
 
-reason: (“Try it now”)
+reason: (MSDN subscriber)
 
 deleted:
 
 		>[AZURE.NOTE] For detailed instructions on how to use the Google and Facebook developer portal sites, this tutorial links to tutorials on the ASP.NET site. However, Google and Facebook change their sites more frequently than those tutorials are updated, and they are now out of date. If you have trouble following the directions, see the featured Disqus comment at the end of this tutorial for a list of what has changed.
 
-reason: (google, facebook, twitter)
+reason: (google facebook twitter)
 
 deleted:
 
 		This tutorial was written by [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) with assistance from Tom Dykstra and Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)).
 
-reason: (google, facebook, twitter)
+reason: (google facebook twitter)
 
 deleted:
 

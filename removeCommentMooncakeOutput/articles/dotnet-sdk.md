@@ -7,9 +7,9 @@
 	editor="mollybos" 
 	services=""/>
 
-<tags
-	ms.service="multiple"
-	ms.date="06/11/2015"
+<tags 
+	ms.service="multiple" 
+	ms.date="06/11/2015" 
 	wacn.date=""/>
 
 # What is the Azure SDK for .NET?

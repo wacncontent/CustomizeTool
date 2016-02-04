@@ -9,17 +9,12 @@
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/19/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # Use PowerShell to Create an Azure VM With a Native Mode Report Server
 
-<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model. 
-<!-- keep by customization: end -->
  
 
 This topic describes and walks you through the deployment and configuration of a SQL Server Reporting Services native mode report server in an Azure Virtual Machine. The steps in this document use a combination of manual steps to create the virtual machine and a Windows PowerShell script to configure Reporting Services on the VM. The configuration script includes opening a firewall port for HTTP or HTTPs.
@@ -44,7 +39,7 @@ This topic describes and walks you through the deployment and configuration of a
 
 ## Step 1: Provision an Azure Virtual Machine
 
-1. Browse to the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Browse to the Azure Management Portal.
 
 1. Click **Virtual Machines** in the left pane.
 
@@ -58,11 +53,11 @@ This topic describes and walks you through the deployment and configuration of a
 
 	![new vm from gallery](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC692020.gif)
 
-1. Click **SQL Server 2014 RTM Standard – Windows Server 2012 R2** and then click the arrow to continue.
+1. Click **SQL Server 2014 RTM Standard - Windows Server 2012 R2** and then click the arrow to continue.
 
 	![next](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC692021.gif)
 
-	If you need the Reporting Services data driven subscriptions feature, choose **SQL Server 2014 RTM Enterprise – Windows Server 2012 R2**. For more information on SQL Server editions and feature support, see [Features Supported by the Editions of SQL Server 2012](https://msdn.microsoft.com/zh-cn/library/cc645993.aspx#Reporting).
+	If you need the Reporting Services data driven subscriptions feature, choose **SQL Server 2014 RTM Enterprise - Windows Server 2012 R2**. For more information on SQL Server editions and feature support, see [Features Supported by the Editions of SQL Server 2012](https://msdn.microsoft.com/zh-cn/library/cc645993.aspx#Reporting).
 
 1. On the **Virtual machine configuration** page, edit the following fields:
 									
@@ -100,7 +95,7 @@ This topic describes and walks you through the deployment and configuration of a
 	
 	- Click next . ![next](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC692021.gif)
 
-1. On the last page of the wizard, keep the default **Install the VM agent** selected. The steps in this topic do not utilize the VM agent but if you plan to keep this VM, the VM agent and extensions will allow you to enhance he CM.  For more information on the VM agent, see [VM Agent and Extensions – Part <!-- deleted by customization 1](http://azure.microsoft.com/blog/2014/04/11/vm-agent-and-extensions-part-1/) --><!-- keep by customization: begin --> 1](http://www.windowsazure.cnblog/2014/04/11/vm-agent-and-extensions-part-1/) <!-- keep by customization: end -->. One of the default extensions installed ad running is the “BGINFO” extension that displays on the VM desktop, system information such as internal IP and free drive space.
+1. On the last page of the wizard, keep the default **Install the VM agent** selected. The steps in this topic do not utilize the VM agent but if you plan to keep this VM, the VM agent and extensions will allow you to enhance he CM.  For more information on the VM agent, see [VM Agent and Extensions - Part 1](http://azure.microsoft.com/blog/2014/04/11/vm-agent-and-extensions-part-1/). One of the default extensions installed ad running is the “BGINFO” extension that displays on the VM desktop, system information such as internal IP and free drive space.
 
 1. Click complete . ![ok](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC660122.gif)
 
@@ -144,7 +139,7 @@ A self-signed certificate was created on the VM when the VM was provisioned. The
 
 1. To trust the root CA of the certificate on the Local VM, add the certificate to the **Trusted Root Certification Authorities**. The following is a summary of the steps required. For detailed steps on how to trust the CA, see [Install a Server Certificate](https://technet.microsoft.com/zh-cn/library/cc740068).
 
-	1. From the Azure Management portal, select the VM and click connect. Depending on your browser configuration, you may be prompted to save an .rdp file for connecting to the VM.
+	1. From the Azure Management Portal, select the VM and click connect. Depending on your browser configuration, you may be prompted to save an .rdp file for connecting to the VM.
 	
 		![connect to azure virtual machine](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif) Use the user VM name, user name and password you configured when you created the VM. 
 	
@@ -186,7 +181,7 @@ This section walks you through configuring the VM as a Reporting Services native
 
 - Use Configuration Manager to Configure the Report Server.
 
-For more detailed steps, see the section [Connect to the Virtual Machine and Start the Reporting Services Configuration Manager](/documentation/articles/virtual-machines-sql-server-business-intelligence#connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager).
+For more detailed steps, see the section [Connect to the Virtual Machine and Start the Reporting Services Configuration <!-- deleted by customization Manager](/documentation/articles/virtual-machines-sql-server-business-intelligence#connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager) --><!-- keep by customization: begin --> Manager](/documentation/articles/virtual-machines-sql-server-business-intelligence/#connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager) <!-- keep by customization: end -->.
 
 **Authentication Note:** Windows authentication is the recommended authentication method and it is the default Reporting Services authentication. Only users that are configured on the VM can access Reporting Services and assigned to Reporting Services roles.
 
@@ -194,7 +189,7 @@ For more detailed steps, see the section [Connect to the Virtual Machine and Sta
 
 To use the Windows PowerShell script to configure the report server, complete the following steps. The configuration includes HTTP, not HTTPS:
 
-1. From the Azure Management portal, select the VM and click connect. Depending on your browser configuration, you may be prompted to save an .rdp file for connecting to the VM.
+1. From the Azure Management Portal, select the VM and click connect. Depending on your browser configuration, you may be prompted to save an .rdp file for connecting to the VM.
 
 	![connect to azure virtual machine](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif) Use the user VM name, user name and password you configured when you created the VM. 
 
@@ -315,7 +310,7 @@ To use the Windows PowerShell script to configure the report server, complete th
 		write-host -foregroundcolor DarkGray $time
 		
 		## Open Firewall port for $HTTPport
-		    New-NetFirewallRule -DisplayName “Report Server (TCP on port $HTTPport)” -Direction Inbound –Protocol TCP –LocalPort $HTTPport
+		    New-NetFirewallRule -DisplayName “Report Server (TCP on port $HTTPport)” -Direction Inbound -Protocol TCP -LocalPort $HTTPport
 		    write-host "Added rule Report Server (TCP on port $HTTPport) in Windows Firewall"
 		
 		write-host 'Operations completed, Report Server is ready'
@@ -335,7 +330,7 @@ To use the Windows PowerShell script to configure the report server, complete th
 
 To use Windows PowerShell to configure the report server, complete the following steps. The configuration includes HTTPS, not HTTP.
 
-1. From the Azure Management portal, select the VM and click connect. Depending on your browser configuration, you may be prompted to save an .rdp file for connecting to the VM.
+1. From the Azure Management Portal, select the VM and click connect. Depending on your browser configuration, you may be prompted to save an .rdp file for connecting to the VM.
 
 	![connect to azure virtual machine](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif) Use the user VM name, user name and password you configured when you created the VM. 
 
@@ -500,7 +495,7 @@ To use Windows PowerShell to configure the report server, complete the following
 		write-host -foregroundcolor DarkGray $time
 		
 		## Open Firewall port for $httpsport
-		    New-NetFirewallRule -DisplayName “Report Server (TCP on port $httpsport)” -Direction Inbound –Protocol TCP –LocalPort $httpsport
+		    New-NetFirewallRule -DisplayName “Report Server (TCP on port $httpsport)” -Direction Inbound -Protocol TCP -LocalPort $httpsport
 		    write-host "Added rule Report Server (TCP on port $httpsport) in Windows Firewall"
 		
 		write-host 'Operations completed, Report Server is ready'
@@ -538,7 +533,7 @@ To use Windows PowerShell to configure the report server, complete the following
 
 	- The script is configured for a wild card certificate $DNSName="+". If you do no want to configure for a wildcard certificate binding, comment out $DNSName="+" and enable the following line, the full $DNSNAme reference, ##$DNSName="$server.chinacloudapp.cn".
 
-		Change the $DNSName value if you do not want to use the virtual machine’s DNS name for Reporting Services. If you use the parameter, the certificate must also use this name and you register the name globally on a DNS server.
+		Change the $DNSName value if you do not want to use the virtual machine's DNS name for Reporting Services. If you use the parameter, the certificate must also use this name and you register the name globally on a DNS server.
 
 1. The script is currently configured for  Reporting Services. If you want to run the script for  Reporting Services, modify the version portion of the path to the namespace to “v11”, on the Get-WmiObject statement.
 
@@ -558,11 +553,11 @@ The result will include the following:
 
 If you do not want to run the PowerShell script to configure the report server, follow the steps in this section to use the Reporting Services native mode configuration manager to configure the report server.
 
-1. From the Azure Management portal, select the VM and click connect. Use the user name and password you configured when you created the VM.
+1. From the Azure Management Portal, select the VM and click connect. Use the user name and password you configured when you created the VM.
 
 	![connect to azure virtual machine](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif)
 
-1. Run Windows update and install updates to the VM. If a restart of the VM is required, restart the VM and reconnect to the VM from the Azure Management portal.
+1. Run Windows update and install updates to the VM. If a restart of the VM is required, restart the VM and reconnect to the VM from the Azure Management Portal.
 
 1. From the Start menu on the VM, type **Reporting Services** and open **Reporting Services Configuration Manager**.
 
@@ -584,7 +579,7 @@ If you do not want to run the PowerShell script to configure the report server, 
 	
 	1. Click **Create a new report server database** and then click **Next**.
 	
-	1. Leave the default **Server Name**: as the VM name and leave the default **Authentication Type** as **Current User** – **Integrated Security**. Click **Next**.
+	1. Leave the default **Server Name**: as the VM name and leave the default **Authentication Type** as **Current User** - **Integrated Security**. Click **Next**.
 	
 	1. Leave the default **Database Name** as **ReportServer** and click **Next**.
 	
@@ -602,7 +597,7 @@ If you do not want to run the PowerShell script to configure the report server, 
 
 >[AZURE.NOTE] If you used one of the scripts to configure the report server, you can skip this section. The script included a step to open the firewall port. The default was port 80 for HTTP and port 443 for HTTPS.
 
-To connect remotely to Report Manager or the Report Server on the virtual machine, a TCP Endpoint is required on the VM. It is required to open the same port in the VM’s firewall. The endpoint was created when the VM was provisioned.
+To connect remotely to Report Manager or the Report Server on the virtual machine, a TCP Endpoint is required on the VM. It is required to open the same port in the VM's firewall. The endpoint was created when the VM was provisioned.
 
 This section provides basic information on how to open the firewall port. For more information, see [Configure a Firewall for Report Server Access](https://technet.microsoft.com/zh-cn/library/bb934283.aspx)
 
@@ -614,7 +609,7 @@ If you configured a private port for HTTPS other than 443, modify the following 
 
 1. If you used a port other than 443 when you configured the HTTPS endpoint on the VM, update the port in the following command and then run the command:
 
-		New-NetFirewallRule -DisplayName “Report Server (TCP on port 443)” -Direction Inbound –Protocol TCP –LocalPort 443
+		New-NetFirewallRule -DisplayName “Report Server (TCP on port 443)” -Direction Inbound -Protocol TCP -LocalPort 443
 
 1. When the command completes, **Ok** is displayed in the command prompt.
 
@@ -656,7 +651,7 @@ After configuring and verifying the report server, a common administrative task 
 
 The following table summarizes some of the options available to publish existing reports from an on-premises computer to the report server hosted on the Windows Azure Virtual Machine:
 
-- **RS.exe script**: Use RS.exe script to copy report items from and existing report server to your Windows Azure Virtual Machine. For more information, see the section “Native mode to Native Mode – Windows Azure Virtual Machine” in [Sample Reporting Services rs.exe Script to Migrate Content between Report Servers](https://msdn.microsoft.com/zh-cn/library/dn531017.aspx).
+- **RS.exe script**: Use RS.exe script to copy report items from and existing report server to your Windows Azure Virtual Machine. For more information, see the section “Native mode to Native Mode - Windows Azure Virtual Machine” in [Sample Reporting Services rs.exe Script to Migrate Content between Report Servers](https://msdn.microsoft.com/zh-cn/library/dn531017.aspx).
 
 - **Report Builder**: The virtual machine includes the click-once version of Microsoft SQL Server Report Builder. To start Report builder the first time on the virtual machine:
 
@@ -684,7 +679,7 @@ The following table summarizes some of the options available to publish existing
 
 ## Minimize cost if you are not using the VM
 
->[AZURE.NOTE] To minimize charges for your Azure Virtual Machines when not in use, shut down the VM from the Azure Management portal. If you use the Windows power options inside a VM to shut down the VM, you are still charged the same amount for the VM. To reduce charges, you need to shut down the VM in the Azure Management Portal. If you no longer need the VM, remember to delete the VM and the associated .vhd files to avoid storage charges.For more information, see the FAQ section at [Virtual Machines Pricing Details](/home/features/virtual-machines/#price).
+>[AZURE.NOTE] To minimize charges for your Azure Virtual Machines when not in use, shut down the VM from the Azure Management Portal. If you use the Windows power options inside a VM to shut down the VM, you are still charged the same amount for the VM. To reduce charges, you need to shut down the VM in the Azure Management Portal. If you no longer need the VM, remember to delete the VM and the associated .vhd files to avoid storage charges.For more information, see the FAQ section at [Virtual Machines Pricing Details](/home/features/virtual-machines/#price).
 
 ## More Information
 

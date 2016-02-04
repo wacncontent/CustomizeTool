@@ -10,14 +10,14 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="03/24/2015"
-	wacn.date=""/>
+	wacn.date="11/27/2015"/>
 
 
 #Web Apps 概述
 
-[App Service](/documentation/services/web-sites/) 是一个完全托管平台，专业开发人员可通过它在 Web、移动和集成方案中实现一系列丰富功能。通过使用 Azure App Service，快速创建和部署可与你的业务一起缩放的任务关键 Web 应用。
+[App Service](http://go.microsoft.com/fwlink/?LinkId=529714) 是一个完全托管平台，专业开发人员可通过它在 Web、移动和集成方案中实现一系列丰富功能。通过使用 Azure App Service，快速创建和部署可与你的业务一起缩放的任务关键 Web 应用。
 
-利用 [App Service Web Apps](/documentation/services/web-sites/) 的功能使用你熟悉和依赖的语言和框架，将你的应用程序快速部署到 Azure 云，并持续改进你的代码而无需再考虑基础结构。
+利用 [App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714) 的功能使用你熟悉和依赖的语言和框架，将你的应用程序快速部署到 Azure 云，并持续改进你的代码而无需再考虑基础结构。
 
 ![Web 应用商店](./media/app-service-web-overview/marketplace.png)
 
@@ -48,13 +48,13 @@ Azure App Service Web Apps 是一个完全托管平台，凭借这一平台，�
 
 有关 Azure App Service 平台的详细信息，请参阅 [Azure App Service][appservice]。
 
->[AZURE.NOTE]如果你想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](https://tryappservice.azure.com/)，你可以通过该网站在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+>[AZURE.NOTE]如果你想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，你可以通过该网站在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
 
 ## 发生的更改
-* 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](/documentation/services/web-sites/)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](https://manage.windowsazure.cn/)
+* 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
 
-[appservice]: /documentation/articles/app-service-value-prop-what-is
+[appservice]: /documentation/services/web-sites
 [create]: /documentation/articles/web-sites-dotnet-get-started
 [Webjobs]: /documentation/articles/websites-dotnet-webjobs-sdk-get-started
 [Slots]: /documentation/articles/web-sites-staged-publishing

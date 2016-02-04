@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="11/08/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 
@@ -20,11 +20,14 @@
 - [.NET](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
 
+>[AZURE.NOTE]
+> To complete this tutorial, you need an Azure account. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F). 
+
 ##Overview
 
 This tutorial walks you through the steps of creating a **Channel** that receives a single-bitrate live stream and encodes it to multi-bitrate stream.
 
->[AZURE.NOTE]For more conceptual information related to Channels that are enabled for live encoding, see [Working with Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream](/documentation/articles/media-services-manage-live-encoder-enabled-channels).
+For more conceptual information related to Channels that are enabled for live encoding, see [Working with Channels that Perform Live Encoding from a Single-bitrate to Multi-bitrate Stream](/documentation/articles/media-services-manage-live-encoder-enabled-channels).
 
 
 ##Common Live Streaming Scenario
@@ -35,7 +38,7 @@ The following steps describe tasks involved in creating common live streaming ap
 
 1. Connect a video camera to a computer. Launch and configure an on-premises live encoder that can output a single bitrate stream in one of the following protocols: RTMP, Smooth Streaming, or RTP (MPEG-TS). For more information, see [Azure Media Services RTMP Support and Live Encoders](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/).
 
-	This step could also be performed after you create your Channel. 
+	This step could also be performed after you create your Channel.
 
 1. Create and start a Channel.
 
@@ -49,9 +52,9 @@ The following steps describe tasks involved in creating common live streaming ap
 
 2. Create an asset.
 3. If you want for the asset to be dynamically encrypted during playback, do the following:
-	1. Create a content key.
-	1. Configure the content key's authorization policy.
-	1. Configure asset delivery policy (used by dynamic packaging and dynamic encryption).
+1. Create a content key.
+1. Configure the content key's authorization policy.
+1. Configure asset delivery policy (used by dynamic packaging and dynamic encryption).
 3. Create a program and specify to use the asset that you created.
 1. Publish the asset associated with the program by creating an OnDemand locator.
 
@@ -62,7 +65,7 @@ The following steps describe tasks involved in creating common live streaming ap
 1. Stop the program whenever you want to stop streaming and archiving the event.
 1. Delete the Program (and optionally delete the asset).
 
-##In this topic
+## What you'll learn
 
 This topic shows you how to execute different operations on channels and programs using Media Services .NET SDK. Because many operations are long-running .NET APIs that manage long running operations are used.
 
@@ -78,6 +81,18 @@ The topic shows how to do the following:
 1. Clean up your channel and all the associated resources.
 
 
+##Prerequisites
+
+The following are required to complete the tutorial.
+
+- To complete this tutorial, you need an Azure account. 
+	
+	If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F). You get credits that can be used to try out paid Azure services. Even after the credits are used up, you can keep the account and use free Azure services and features, such as the Web Apps feature in Azure Web App.
+- A Media Services account. To create a Media Services account, see [Create Account](/documentation/articles/media-services-create-account).
+- Visual Studio 2010 SP1 (Professional, Premium, Ultimate, or Express) or later versions.
+- You must use Media Services .NET SDK version 3.2.0.0 or newer.
+- A webcam and an encoder that can send a single bitrate live stream.
+
 ##Considerations
 
 - Currently, the max recommended duration of a live event is 8 hours. Please contact amslived at WindowsAzure.cn if you need to run a Channel for longer periods of time.
@@ -87,15 +102,6 @@ The topic shows how to do the following:
 
 Get and run a sample from [here](http://azure.microsoft.com/documentation/samples/media-services-dotnet-encode-live-stream-with-ams-clear/).
 
-##Prerequisites
-The following are required to complete the tutorial.
-
-- To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes.
-For details, see [Azure Trial](/pricing/1rmb-trial/).
-- A Media Services account. To create a Media Services account, see [Create Account](/documentation/articles/media-services-create-account).
-- Visual Studio 2010 SP1 or higher.
-- You must use Media Services .NET SDK version 3.2.0.0 or newer.
-- A webcam and an encoder that can send a single bitrate live stream.
 
 ##Set up for development with Media Services SDK for .NET
 
@@ -105,12 +111,12 @@ For details, see [Azure Trial](/pricing/1rmb-trial/).
 ##Connect to Media Services
 As a best practice, you should use an app.config file to store the Media Services name and account key.
 
->[AZURE.NOTE]To find the Name and Key values, go to the Azure Management Portal, select your Media Service account, and click on the “MANAGE KEYS” icon on the bottom of the portal window. Clicking on the icon next to each text box copies the value to the system clipboard.
+>[AZURE.NOTE]To find the Name and Key values, go to the Azure Management Portal, select your Media Service account, and click on the âMANAGE KEYSâ icon on the bottom of the portal window. Clicking on the icon next to each text box copies the value to the system clipboard.
 
 Add the appSettings section to the app.config file, and set the values for your Media Services account name and account key.
 
 
-	<?xml version="1.0"?>
+<?xml version="1.0"?>
 	<configuration>
 	  <appSettings>
 	      <add key="MediaServicesAccountName" value="YouMediaServicesAccountName" />
@@ -337,6 +343,7 @@ Add the appSettings section to the app.config file, and set the values for your 
 	        /// <returns></returns>
 	        public static ILocator CreateLocatorForAsset(IAsset asset, TimeSpan ArchiveWindowLength)
 	        {
+             	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
 	            var locator = _context.Locators.CreateLocator
 	                (
 	                    LocatorType.OnDemandOrigin,
@@ -507,14 +514,12 @@ Add the appSettings section to the app.config file, and set the values for your 
 	}	
 
 
-<!-- deleted by customization
 ##Next steps: Media Services learning paths
 
 [AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
 ##Provide feedback
 
--->
 [AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 ### Looking for something else?

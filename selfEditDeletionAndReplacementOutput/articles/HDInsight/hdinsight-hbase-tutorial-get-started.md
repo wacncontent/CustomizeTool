@@ -4,26 +4,20 @@ deleted:
 
 		[AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		The information in this document is specific to Windows-based HDInsight clusters. For information on using Linux-based clusters, see [hdinsight-hbase-tutorial-get-started-linux.md).
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		- [Analyze Twitter sentiment with HBase in HDInsight][hbase-twitter-sentiment].
 		Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sentiment_analysis) of big data by using HBase in a Hadoop cluster in HDInsight.
 
-reason: ()
-
-deleted:
-
-		[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
-
-reason: ()
+reason: (google facebook twitter)
 
 replacement:
 
@@ -68,7 +62,7 @@ replaced by:
 		
 		4. Click the checkmark icon in the lower right to create the HBase cluster.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -92,7 +86,7 @@ replaced by:
 		
 		To access the HBase shell, you must first enable Remote Desktop Protocol (RDP), and then make an RDP connection to the HBase cluster. For instructions, see [Manage Hadoop clusters in HDInsight using the Azure Management Portal][hdinsight-manage-portal].
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -105,5 +99,5 @@ replaced by:
 		3. Click the cluster name where you want to run the Hive job.
 		4. Click **QUERY CONSOLE** at the bottom of the page to open the cluster dashboard. It opens a webpage in a different browser tab.
 
-reason: ()
+reason: (the new Ibiza portal)
 

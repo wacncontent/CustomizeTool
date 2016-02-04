@@ -9,11 +9,16 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/28/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 
 # Add Push Notifications to iOS App and .NET Backend
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 

@@ -1,86 +1,90 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="为 App Service 环境配置 Web 应用程序防火墙 (WAF)" 
-	description="了解如何在 App Service 环境的前面配置 Web 应用程序防火墙。" 
+	pageTitle="Configuring a Web Site Firewall (WAF) for Azure Websites Environment" 
+	description="Learn how to configure a web site firewall in front of your Azure Websites Environment." 
 	services="app-service\web" 
 	documentationCenter="" 
 	authors="naziml" 
 	manager="wpickett" 
-	editor=""/>
+	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service-web"  
-	ms.date="07/02/2015" 
-	wacn.date=""/>	
+<tags
+	ms.service="app-service"
+	ms.date="09/15/2015"
+	wacn.date="11/27/2015"/>	
 
-# 为 App Service 环境配置 Web 应用程序防火墙 (WAF)
+# Configuring a Web Site Firewall (WAF) for Azure Websites Environment
 
-## 概述 ##
-[Azure 应用商店](http://azure.microsoft.com/marketplace/partners/barracudanetworks/waf-byol/)中的 Web 应用程序防火墙（如 [Barracuda WAF for Azure](https://www.barracuda.com/programs/azure)）可以通过检查入站 Web 流量来阻止 SQL 注入、跨站脚本、恶意上载和应用程序 DDoS 及其他攻击，从而帮助保护 Web 应用程序的安全。它还会检查后端 Web 服务器的响应，实现针对数据丢失预防 (DLP)。与隔离功能以及 App Service 环境提供的附加缩放相结合，它可以提供一个理想的环境，用于托管需要承受恶意请求和大量流量的业务关键型 Web 应用程序。
+## Overview ##
+Web Site firewalls like the [Barracuda WAF for Azure](https://www.barracuda.com/programs/azure) that is available on the [Azure Marketplace](http://azure.microsoft.com/marketplace/partners/barracudanetworks/waf-byol/) helps secure your web sites by inspecting inbound web traffic to block SQL injections, Cross-Site Scripting, malware uploads & application DDoS and other attacks. It also inspects the responses from the back-end web servers for Data Loss Prevention (DLP). Combined with the isolation and additional scaling provided by Azure Websites Environments, this provides an ideal environment to host business critical web sites that need to withstand malicious requests and high volume traffic.
 
-## 设置 ##
-在本文中，我们将配置受多个 Barracuda WAF 负载平衡实例保护的 App Service 环境，只让来自 WAF 的流量到达该 App Service 环境，而且无法从外围网络访问该环境。在 Barracuda WAF 实例的前面，我们还部署了 Azure 流量管理器，用于在 Azure 数据中心和区域进行负载平衡。高级设置示意图如下所示。
++[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
-![体系结构][Architecture]
+## Setup ##
+For this document we will configure our Azure Websites Environment behind multiple load balanced instances of Barracuda WAF so that only traffic from the WAF can reach the Azure Websites Environment and it will not be accessible from the DMZ. We will also have Azure Traffic Manager in front of our Barracuda WAF instances to load balance across Azure data centers and regions. A high level diagram of the setup would look like what is shown below.
 
-## 配置 App Service 环境 ##
-若要配置 App Service 环境，请参阅有关该主题的[文档](/documentation/articles/app-service-web-how-to-create-an-app-service-environment)。创建 App Service 环境后，可在此环境中创建 [Web Apps](/documentation/articles/app-service-web-overview)、[API Apps](/documentation/articles/app-service-api-apps-why-best-platform) 和 [Mobile Apps](/documentation/articles/app-service-mobile-value-prop-preview)，这些应用将受下一部分中配置的 WAF 保护。
+![Architecture][Architecture] 
 
-## 配置 Barracuda WAF 云服务 ##
-Barracuda 提供了有关在 Azure 中的虚拟机上部署其 WAF 的[详细文章](https://techlib.barracuda.com/WAF/AzureDeploy)。但是，由于我们想要冗余，但不想要造成单一故障点，因此可以在遵循这些说明时，将至少两个 WAF 实例 VM 部署到相同的云服务。
+## Configuring your Azure Websites Environment ##
+To configure an Azure Websites Environment refer to [our documentation](/documentation/articles/app-service-web-how-to-create-an-app-service-environment) on the subject. Once you have an Azure Websites Environment created, you can create [Web Sites](/home/features/web-site/), [API Apps](/documentation/articles/app-service-api-apps-why-best-platform) and [Mobile Apps](/documentation/articles/app-service-mobile-value-prop-preview) in this environment that will all be protected behind the WAF we configure in the next section.
 
-### 将终结点添加云服务 ###
-云服务中有两个以上的 WAF VM 实例之后，即可使用 [Azure 门户](https://manage.windowsazure.cn)添加应用程序使用的 HTTP 和 HTTPS 终结点，如下图所示。
+## Configuring your Barracuda WAF Cloud Service ##
+Barracuda has a [detailed article](https://techlib.barracuda.com/WAF/AzureDeploy) on deploying its WAF on a virtual machine in Azure. But because we want redundancy and not introduce a single point of failure, you want to deploy at least 2 WAF instance VMs into the same Cloud Service when following these instructions.
 
-![配置终结点][ConfigureEndpoint]
+### Adding Endpoints to Cloud Service ###
+Once you have 2 or more WAF VM instances in your Cloud Service you can use the [Azure Management Portal](https://manage.windowsazure.cn) to add HTTP and HTTPS endpoints that are used by your application as shown in the image below.
 
-如果你的应用程序使用其他终结点，则还要确保将这些终结点添加到此列表中。
+![Configure Endpoint][ConfigureEndpoint]
 
-### 通过管理门户配置 Barracuda WAF ###
-Barracuda WAF 使用 TCP 端口 8000 通过其管理门户进行配置。由于我们有多个 WAF VM 实例，因此需要针对每个 VM 实例重复这些步骤。
+If your applications use other endpoints, make sure to add those to this list as well. 
+
+### Configuring Barracuda WAF through its Managment Portal ###
+Barracuda WAF uses TCP Port 8000 for configuration through its management portal. Since we have multiple instances of the WAF VMs you will need to repeat the steps here for each VM instance. 
 
 
-> 注意：完成 WAF 配置后，从所有 WAF VM 中删除 TCP/8000 终结点，以保护 WAF 的安全。
+> Note: Once you are done with WAF configuration, remove the TCP/8000 endpoint from all your WAF VMs to keep your WAF secure.
 
-若要配置 Barracuda WAF，请按下图所示添加管理终结点。
+Add the management endpoint as shown in the image below to configure your Barracuda WAF.
 
-![添加管理终结点][AddManagementEndpoint]
+![Add Management Endpoint][AddManagementEndpoint]
  
-使用浏览器浏览到云服务上的管理终结点。如果你的云服务名为 test.chinacloudapp.cn，则浏览到 http://test.chinacloudapp.cn:8000 即可访问此终结点。你应会看到与下面类似的登录页，在此页上，可以使用你在 WAF VM 设置阶段指定的凭据登录。
+Use a browser to browse to the management endpoint on your Cloud Service. If your Cloud Service is called test.chinacloudapp.cn, you would access this endpoint by browsing to http://test.chinacloudapp.cn:8000. You should see a login page like below that you can login using credentials you specified in the WAF VM setup phase.
 
-![管理登录页][ManagementLoginPage]
+![Management Login Page][ManagementLoginPage]
 
-登录之后，应会出现下图中所示的仪表板，其中显示了有关 WAF 保护的基本统计信息。
+Once you login you should see a dashboard as the one in the image below that will present basic statistics about the WAF protection.
 
-![管理仪表板][ManagementDashboard]
+![Management Dashboard][ManagementDashboard]
 
-单击“服务”选项卡可以根据 WAF 保护的服务配置 WAF。有关配置 Barracuda WAF 的详细信息，请查阅[相关文档](https://techlib.barracuda.com/waf/getstarted1)。在以下示例中，已配置处理 HTTP 和 HTTPS 流量的 Azure Web 应用。
+Clicking on the Services tab will let you configure your WAF for services it is protecting. For more details on configuring your Barracuda WAF you can consult [their documentation](https://techlib.barracuda.com/waf/getstarted1). In the example below an Azure Website serving traffic on HTTP and HTTPS has been configured.
 
-![管理添加服务][ManagementAddServices]
+![Management Add Services][ManagementAddServices]
 
-> 注意：根据应用程序的配置方式与 App Service 环境中正在使用的功能，你需要转发非 80 和 443 TCP 端口的流量（例如，如果你为 Web 应用设置了 IP SSL）。有关 App Service 环境中使用的网络端口的列表，请参阅[控制入站流量文档](/documentation/articles/app-service-app-service-environment-control-inbound-traffic)中的“网络端口”部分。
+> Note: Depending on how your applications are configured and what features are being used in your Azure Websites Environment, you will need to forward traffic for TCP ports other than 80 and 443, e.g. if you have IP SSL setup for a Web Site. For a list of network ports used in Azure Websites Environments, please refer to [Control Inbound Traffic documentation's](/documentation/articles/app-service-app-service-environment-control-inbound-traffic) Network Ports section.
 
-## 配置 Windows Azure 流量管理器（可选） ##
-如果多个区域中都有你的应用程序，则你可以使用 [Azure 流量管理器](/documentation/articles/traffic-manager)对这些区域进行负载平衡。为此，你可以使用流量管理器配置文件中 WAF 的云服务名称在 [Azure 门户](https://manage.windowsazure.cn)中添加终结点，如下图所示。
+## Configuring Windows Azure Traffic Manager (OPTIONAL) ##
+If your application is available in multiple regions, then you would want to load balance them behind [Azure Traffic Manager](/documentation/articles/traffic-manager). To do so you can add and endpoint in the [Azure Management Portal](https://manage.azure.com) using the Cloud Service name for your WAF in the Traffic Manager profile as shown in the image below. 
 
-![流量管理器终结点][TrafficManagerEndpoint]
+![Traffic Manager Endpoint][TrafficManagerEndpoint]
 
-如果你的应用程序需要身份验证，请确保有某个资源不需要任何身份验证，使流量管理器能够 ping 出应用程序的可用性。可以在 [Azure 门户](https://manage.windowsazure.cn)的“配置”部分下配置 URL，如下所示。
+If your application requires authentication, ensure you have some resource that doesn't require any authentication for Traffic Manager to ping for the availability of your application. You can configure the URL under the Configure section on the [Azure Management Portal](https://manage.azure.com) as shown below.
 
-![配置流量管理器][ConfigureTrafficManager]
+![Configure Traffic Manager][ConfigureTrafficManager]
 
-若要将流量管理器 ping 从 WAF 转发给应用程序，需要在 Barracuda WAF 上设置网站转换，以将流量转发给应用程序，如以下示例中所示。
+To forward the Traffic Manager pings from your WAF to your application, you need to setup Website Translations on your Barracuda WAF to forward traffic to your application as shown in the example below.
 
-![网站转换][WebsiteTranslations]
+![Website Translations][WebsiteTranslations]
 
-## 使用网络资源组保护发往 App Service 环境的流量##
-有关使用云服务的 VIP 地址只限制从 WAF 流入 App Service 环境的流量的详细信息，请遵循[控制入站流量文档](/documentation/articles/app-service-app-service-environment-control-inbound-traffic)。以下是针对 TCP 端口 80 运行此任务的示例 Powershell 命令。
+## Securing Traffic to Azure Websites Environment Using Network Resource Groups##
+Follow the [Control Inbound Traffic documentation](/documentation/articles/app-service-app-service-environment-control-inbound-traffic) for details on restricting traffic to your Azure Websites Environment from the WAF only by using the VIP address of your Cloud Service. Here's a sample Powershell command for performing this task for TCP port 80.
 
 
     Get-AzureNetworkSecurityGroup -Name "RestrictWestUSAppAccess" | Set-AzureNetworkSecurityRule -Name "ALLOW HTTP Barracuda" -Type Inbound -Priority 201 -Action Allow -SourceAddressPrefix '191.0.0.1'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '80' -Protocol TCP
 
-将 SourceAddressPrefix 替换为 WAF 云服务的虚拟 IP 地址 (VIP)。
+Replace the SourceAddressPrefix with the Virtual IP Address (VIP) of your WAF's Cloud Service.
 
-> 注意：删除并重新创建云服务之后，云服务的 VIP 会发生变化。在这样做之后，请务必更新网络资源组中的 IP 地址。
+> Note: The VIP of your Cloud Service will change when you delete and re-create the Cloud Service. Make sure to update the IP address in the Network Resource group once you do so. 
  
 <!-- IMAGES -->
 [Architecture]: ./media/app-service-app-service-environment-web-application-firewall/Architecture.png
@@ -92,5 +96,3 @@ Barracuda WAF 使用 TCP 端口 8000 通过其管理门户进行配置。由于�
 [TrafficManagerEndpoint]: ./media/app-service-app-service-environment-web-application-firewall/TrafficManagerEndpoint.png
 [ConfigureTrafficManager]: ./media/app-service-app-service-environment-web-application-firewall/ConfigureTrafficManager.png
 [WebsiteTranslations]: ./media/app-service-app-service-environment-web-application-firewall/WebsiteTranslations.png
-
-<!---HONumber=66-->

@@ -13,13 +13,18 @@
 	wacn.date=""/>
 
 # Automated Patching for SQL Server in Azure Virtual Machines
-## Configure Automated Patching in the Portal
 
-You can use the [Azure Preview Portal](https://portal.azure.com/) to configure Automated Patching when you create a new SQL Server Virtual Machine. 
+Automated Patching establishes a maintenance window for an Azure Virtual Machine running SQL Server 2012 or 2014. Automated Updates can only be installed during this maintenance window. For SQL Server, this ensures that system updates and any associated restarts occur at the best possible time for the database. It depends on the SQL Server IaaS Agent.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+## Configure Automated Patching in the Azure Management Portal
+
+You can use the [Azure Management Portal](https://portal.azure.com/) to configure Automated Patching when you create a new SQL Server Virtual Machine. 
 
 >[AZURE.NOTE] Automated Patching relies on the SQL Server IaaS Agent. To install and configure the agent, you must have the Azure VM Agent running on the target virtual machine. Newer virtual machine gallery images have this option enabled by default, but the Azure VM Agent might be missing on existing VMs. If you are using your own VM image, you will also need to install the SQL Server IaaS Agent. For more information, see [VM Agent and Extensions](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/).
 
-The following portal screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED PATCHING**.
+The following Azure Management Portal screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED PATCHING**.
 
 ![SQL Automatic Patching in Azure Management Portal](./media/virtual-machines-sql-server-automated-patching/IC778484.jpg)
 
@@ -27,7 +32,7 @@ For existing SQL Server 2012 or 2014 virtual machines, select the **Auto patchin
 
 ![Automated Patching Configuration in Azure Management Portal](./media/virtual-machines-sql-server-automated-patching/IC792132.jpg)
 
->[AZURE.NOTE] When you enable Automated Patching for the first time, Azure configures the SQL Server IaaS Agent in the background. During this time, the portal will not show that Automated Patching is configured. Wait several minutes for the agent to be installed, configured. After that the portal will reflect the new settings.
+>[AZURE.NOTE] When you enable Automated Patching for the first time, Azure configures the SQL Server IaaS Agent in the background. During this time, the Azure Management Portal will not show that Automated Patching is configured. Wait several minutes for the agent to be installed, configured. After that the Azure Management Portal will reflect the new settings.
 
 ## Configure Automated Patching with PowerShell
 
@@ -60,7 +65,7 @@ If you want to disable the SQL Server IaaS Agent for Automated Backup and Patchi
 
 To uninstall the SQL Server IaaS Agent, use the following syntax:
 
-    Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension –Uninstall | Update-AzureVM
+    Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -Uninstall | Update-AzureVM
 
 You can also uninstall the extension using the **Remove-AzureVMSqlServerExtension** command:
 

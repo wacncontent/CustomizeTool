@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Understanding Site to Azure Protection" 
+	pageTitle="Understanding Hyper-V replication with Azure Site Recovery | Windows Azure" 
 	description="Use this article to understand the technical concepts which helps you successfully install, configure, and manage Azure Site Recovery." 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="09/01/2015"
+	ms.date="12/14/2015"
 	wacn.date=""/>
 
 
-# Understanding Hyper-V or VMM site to Azure protection
+# Understanding Hyper-V replication with Azure Site Recovery
 
 This article describes the technical concepts which helps you successfully configure and manage Hyper-V site or VMM site to Azure protection using Azure Site Recovery.
 
@@ -25,7 +25,7 @@ As part of setting up DR between on-premises & Azure; Azure Site Recovery Provid
 
 ![VMM Site Deployment for replication between on-premises & Azure](./media/site-recovery-understanding-site-to-azure-protection/image00.png)
 
-Hyper-V Site deployment is same as that of VMM Deployment – only difference being Provider & Agent gets installed on the Hyper-V host itself.
+Hyper-V Site deployment is same as that of VMM Deployment â only difference being Provider & Agent gets installed on the Hyper-V host itself.
 
 ## Understanding the workflows
 

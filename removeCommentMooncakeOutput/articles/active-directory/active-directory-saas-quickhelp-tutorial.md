@@ -3,13 +3,13 @@
 	description="Learn how to configure single sign-on between Azure Active Directory and QuickHelp."
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
-	manager="stevenpo"
+	authors="jeevansd"
+	manager="prasannas"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/16/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 
@@ -37,12 +37,12 @@ To configure Azure AD integration with QuickHelp, you need the following items:
 To test the steps in this tutorial, you should follow these recommendations:
 
 - You should not use your production environment, unless this is necessary.
-- If you don't have an Azure AD trial environment, you can get a one-month trial [here](https://azure.microsoft.com/pricing/1rmb-trial/). 
+- If you don't have an Azure AD trial environment, you can get a one-month trial <!-- deleted by customization [here](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> [here](https://azure.microsoft.com/pricing/1rmb-trial/) <!-- keep by customization: end -->.
 
  
 ## Scenario Description
 The objective of this tutorial is to enable you to test Azure AD single sign-on in a test environment. <br>
-The scenario outlined in this tutorial consists of three main building blocks:
+The scenario outlined in this tutorial consists of <!-- deleted by customization two --><!-- keep by customization: begin --> three <!-- keep by customization: end --> main building blocks:
 
 1. Adding QuickHelp from the gallery 
 2. Configuring and testing Azure AD single sign-on
@@ -73,14 +73,16 @@ To configure the integration of QuickHelp into Azure AD, you need to add QuickHe
 ##  Configuring and testing Azure AD single sign-on
 The objective of this section is to show you how to configure and test Azure AD single sign-on with QuickHelp based on a test user called "Britta Simon".
 
+<!-- keep by customization: begin -->
 For single sign-on to work, Azure AD needs to know what the counterpart user in QuickHelp to an user in Azure AD is. In other words, a link relationship between an Azure AD user and the related user in QuickHelp needs to be established.<br>
 This link relationship is established by assigning the value of the **user name** in Azure AD as the value of the **Username** in QuickHelp.
  
+<!-- keep by customization: end -->
 To configure and test Azure AD single sign-on with QuickHelp, you need to complete the following building blocks:
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-single-sign-on)** - to enable your users to use this feature.
 2. **[Creating an Azure AD test user](#creating-an-azure-ad-test-user)** - to test Azure AD single sign-on with Britta Simon.
-4. **[Creating a QuickHelp test user](#creating-a-halogen-software-test-user)** - to have a counterpart of Britta Simon in QuickHelp that is linked to the Azure AD representation of her.
+4. **[Creating a QuickHelp test <!-- deleted by customization user](#creating-a-quickhelp-test-user)** --><!-- keep by customization: begin --> user](#creating-a-halogen-software-test-user)** <!-- keep by customization: end --> - to have a counterpart of Britta Simon in QuickHelp that is linked to the Azure AD representation of her.
 5. **[Assigning the Azure AD test user](#assigning-the-azure-ad-test-user)** - to enable Britta Simon to use Azure AD single sign-on.
 5. **[Testing Single Sign-On](#testing-single-sign-on)** - to verify whether the configuration works.
 
@@ -99,13 +101,15 @@ The objective of this section is to enable Azure AD single sign-on in the Azure 
 3. On the **Configure App Settings** dialog page, perform the following steps:
 <br><br>![Configure App Settings][8] <br>
  
-     a. In the **Sign On URL** textbox, type the URL used by your users to sign-on to your QuickHelp site (e.g.:* https://quickhelp.com/bsiazure/#/home/assignedContent*).
+     a. In the **Sign On URL** textbox, type the URL used by your users to sign-on to your QuickHelp site (e.g.:* <!-- deleted by customization https://quickhelp.com/bsiazure/*) --><!-- keep by customization: begin --> https://quickhelp.com/bsiazure/#/home/assignedContent*) <!-- keep by customization: end -->.
 
      > [AZURE.NOTE] Please contact your QuickHelp support team if you don't know the value of the Sign On URL.
 
      b. Click **Next**.
 
+<!-- keep by customization: begin -->
 4. Download the **QuickHelp** metadata file and saved it on your computer: [https://quickhelp.blob.core.chinacloudapi.cn/metadata/QuickhelpSamlMetadataBS.xml](https://quickhelp.blob.core.chinacloudapi.cn/metadata/QuickhelpSamlMetadataBS.xml).
+<!-- keep by customization: end -->
  
 4. On the **Configure single sign-on at QuickHelp** page, perform the following steps:click **Download metadata**, and then save the metadata file locally on your computer.
 <br><br>![What is Azure AD Connect][9] <br>
@@ -131,6 +135,20 @@ The objective of this section is to enable Azure AD single sign-on in the Azure 
     b. To upload your downloaded Azure metadata file, click **Browse**, navigate to the file, end then click **Upload Metadata**.
 
     d. In the **Email** textbox, type **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress**.
+<!-- deleted by customization
+
+    e. In the **First Name** textbox, **type http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname**.
+
+    f. In the **Last Name** textbox, **type http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname**
+
+    g. In the **Action Bar**, click **Save**.
+
+
+
+
+
+
+-->
 
 6. On the Azure AD portal, select the single sign-on configuration confirmation, and then click **Next**. 
 <br><br>![What is Azure AD Connect][10]<br>
@@ -191,7 +209,14 @@ In the Users list, select **Britta Simon**.<br><br>![Create Azure AD User][20]<b
 ### Creating a QuickHelp test user
 
 The objective of this section is to create a user called Britta Simon in QuickHelp.
+<!-- deleted by customization
+For single sign-on to work, Azure AD needs to know what the counterpart user in QuickHelp to an user in Azure AD is. In other words, a link relationship between an Azure AD user and the related user in QuickHelp needs to be established.
 
+QuickHelp supports just-in-time provisioning. This means, if required, a user account is automatically created in QuickHelp and the account is linked to the Azure AD account.
+
+There is no action item for you in this section.
+-->
+<!-- keep by customization: begin -->
 In this tutorial, new users are imported from a CSV file with the following structure:
 
 |FirstName|LastName|Email|Department|Title|
@@ -229,6 +254,7 @@ You need to create a CSV File with this structure that has as values the values 
 If Britta was successfully imported, you can see her in the list of users. 
 <br><br>![Create a QuickHelp test user][28]<br>
 
+<!-- keep by customization: end -->
 
 
 ### Assigning the Azure AD test user

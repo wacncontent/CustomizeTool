@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Deploy an existing application in Azure Service Fabric | Microsoft Azure"
+   pageTitle="Deploy an existing application in Azure Service Fabric | Windows Azure"
    description="Walkthrough on how to package an existing application so it can be deployed on an Azure Service Fabric cluster"
    services="service-fabric"
    documentationCenter=".net"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/09/2015"
-   ms.author="claudioc"/>
+	ms.service="service-fabric"
+	ms.date="09/09/2015"
+	wacn.date=""/>
 
 # Deploy an existing application in Azure Service Fabric
 
@@ -296,7 +292,7 @@ In the `applicationmanifest.xml` file you can specify how you want the applicati
 
 * `InstanceCount`: is used to specify how many instances of the service should be launched in the Service Fabric cluster. You can set the `InstanceCount` value depending on the type of application that you are deploying. The two most common scenarios are:
 
-	* `InstanCount = "1"`: in this case only one instance of the service will be deployed on the cluster. Service Fabric's scheduler determines on which node the service is going to be deployed. A single instance count also makes sense for applications that require a different configuration if they run on multiple instances. In that case it is easier to define multiple services in the same application manifest file and use `InstanceCount = "1"`. So the end result will be to have multiple instances of the same service but each with a specific configuration. A value of `InstanceCount` greater than one makes sense only if the goal is to have multiple instance of the exact same configuration.
+	* `InstanceCount = "1"`: in this case only one instance of the service will be deployed on the cluster. Service Fabric's scheduler determines on which node the service is going to be deployed. A single instance count also makes sense for applications that require a different configuration if they run on multiple instances. In that case it is easier to define multiple services in the same application manifest file and use `InstanceCount = "1"`. So the end result will be to have multiple instances of the same service but each with a specific configuration. A value of `InstanceCount` greater than one makes sense only if the goal is to have multiple instance of the exact same configuration.
 
 	* `InstanceCount ="-1"`: in this case one instance of the service will be deployed on every node in the Service Fabric cluster. The end result will be having one (and only one) instance of the service for each node in the cluster. This is a useful configuration for front-end applications (ex. a REST endpoint) because client applications just need to 'connect' to any of the node in the cluster in order to use the endpoint. This configuration can also be used when, for instance, all nodes of the Service Fabric cluster are connected to a load balancer so client traffic can be distributed across the service running on all nodes in the cluster.
 
@@ -347,7 +343,7 @@ Note: This example shows the case of a single instance of the service running in
 ## What's next
 We are working on a tools that can be used to package an existing application simply by pointing it at the root of the directory structure of the app. The tool takes care of generate the manifest files and configure the basic settings that are required to 'transform' the application in a Service Fabric service.
 
-See [this](service-fabric-develop-your-service-index.md) if you want more information about how to develop a traditional Service Fabric app.
+See [this](/documentation/articles/service-fabric-develop-your-service-index) if you want more information about how to develop a traditional Service Fabric app.
 
 [1]: ./media/service-fabric-deploy-existing-app/directory-structure-1.png
 [2]: ./media/service-fabric-deploy-existing-app/directory-structure-2.png

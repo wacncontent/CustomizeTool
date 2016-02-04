@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory integration with Adaptive Suite | Windows Azure"
     description="Learn how to use Adaptive Suite with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Adaptive Suite
@@ -77,7 +77,7 @@ If you are not familiar with this procedure, see [How to retrieve a certificate'
 
 3.  On the **Configure App Settings** page, in the **Reply URL** textbox, type your URL using the following pattern "*https://login.adaptiveinsights.com:443/samlsso/RlJFRVRSSUFMMTI3MTE=*", and then click **Next**.
 
-    >[AZURE.NOTE] You can get this value from the Adaptive Suite’s **SAML SSO Settings** page.
+    >[AZURE.NOTE] You can get this value from the Adaptive Suite's **SAML SSO Settings** page.
 
     ![Configure App Settings](./media/active-directory-saas-adaptive-suite-tutorial/IC805642.png "Configure App Settings")
 
@@ -104,7 +104,7 @@ If you are not familiar with this procedure, see [How to retrieve a certificate'
     3.  In the Azure Management Portal, on the **Configure single sign-on at Adaptive Suite** dialog page, copy the **SAML SSO URL** value, and then paste it into the **Identity provider SSO URL** textbox.
     4.  In the Azure Management Portal, on the **Configure single sign-on at Adaptive Suite** dialog page, copy the **SAML SSO URL** value, and then paste it into the **Custom logout URL** textbox.
     5.  To upload your downloaded certificate, click **Choose file**.
-    6.  As **SAML user id**, select **User’s Adaptive Insights user name**.
+    6.  As **SAML user id**, select **User's Adaptive Insights user name**.
     7.  As **SAML user id location**, select **User id in NameID of Subject**.
     8.  As **SAML NameID format**, select **Email address**.
     9.  As **Enable SAML**, select **Allow SAML SSO and direct Adaptive Insights login**.

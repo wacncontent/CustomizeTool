@@ -42,7 +42,7 @@ This article shows how to create a virtual machine based on a Microsoft-provided
 
 	c. Do not add any endpoints at this time.
 
-9.	Choose or create a resource group. For more information, see [Using the Azure Preview Portal to manage your Azure resources](/documentation/articles/resource-group-portal).
+9.	Choose or create a resource group. For more information, see [Using the Azure Management Portal to manage your Azure resources](/documentation/articles/resource-group-portal).
 
 10. Choose a **Subscription**.
 

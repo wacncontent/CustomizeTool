@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/06/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 # Get started with Mobile Services
@@ -23,8 +23,8 @@ This tutorial shows you how to add a cloud-based backend service to a Windows St
 
 To complete this tutorial, you need the following:
 
-* An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
-* [Visual Studio 2013 Express for Windows]
+* An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fzh-cn%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
+* [Visual Studio 2013 Express for Windows] 
 
 ## Create a new mobile service
 
@@ -32,9 +32,9 @@ To complete this tutorial, you need the following:
 
 ## Create a new Windows Store app
 
-Once you have created your mobile service, you can follow an easy quickstart in the Management Portal to create a new Windows Store 8.1 JavaScript app that connects to your mobile service.
+Once you have created your mobile service, you can follow an easy quickstart in the Azure Management Portal to create a new Windows Store 8.1 JavaScript app that connects to your mobile service.
 
-1.  In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+1.  In the [Azure Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
 
 
 2. In the quickstart tab, click **Windows** under **Choose platform** and expand **Create a new Windows Store app**.
@@ -43,7 +43,7 @@ Once you have created your mobile service, you can follow an easy quickstart in 
 
 4. Click **Create TodoItem table** to create a table to store app data.
 
-5. Under **Download and run your app**, select a language for your app, then click **Download**.
+5. Under **Download and run your app**, select a language for your app, then click **Download**. 
 
   	This downloads the project for the sample *To do list* application that is connected to your mobile service. Save the compressed project file to your local computer, and make a note of where you save it.
 
@@ -61,11 +61,11 @@ The final stage of this tutorial is to build and run your new app.
 
 4. (Optional) Run the app again, and notice that data saved from the previous step is loaded from the mobile service after the app starts.
  
-4. Back in the Management Portal, click the **Data** tab and then click the **TodoItems** table.
+4. Back in the [Azure Management Portal], click the **Data** tab and then click the **TodoItems** table.
 
    	This lets you browse the data inserted by the app into the table.
 
->[AZURE.NOTE] You can review the code that accesses your mobile service to query and insert data, which is found in the default.js file.
+>[AZURE.NOTE]You can review the code that accesses your mobile service to query and insert data, which is found in the default.js file.
 
 ## Next Steps
 Now that you have completed the quickstart, learn how to work with the [Mobile Services client for HTML/JavaScript](/documentation/articles/mobile-services-html-how-to-use-client-library). 
@@ -83,4 +83,4 @@ Now that you have completed the quickstart, learn how to work with the [Mobile S
 <!-- URLs. -->
 [Visual Studio 2013 Express for Windows]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn/

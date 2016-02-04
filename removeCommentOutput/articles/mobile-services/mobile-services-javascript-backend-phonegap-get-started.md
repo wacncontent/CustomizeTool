@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/05/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 # Get started with Mobile Services
@@ -48,7 +48,7 @@ Completing this tutorial requires the following:
 
 In this section you will create a new PhoneGap app that is connected to your mobile service.
 
-1.  In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+1.  In the [Azure Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
 
 2. In the quickstart tab, click **PhoneGap** under **Choose platform** and expand **Create a new PhoneGap app**.
 
@@ -109,7 +109,7 @@ The final stage of this tutorial is to build and run your new app.
 
 	> [AZURE.IMPORTANT] Changes to this platform project will be overwritten if the main project is rebuilt with the PhoneGap tools. Instead, make changes in the project's root www directory as outlined in the section below.
 
-4. Back in the Management Portal, click the **Data** tab and then click the **TodoItem** table.
+4. Back in the [Azure Management Portal], click the **Data** tab and then click the **TodoItem** table.
 
 	![](./media/mobile-services-javascript-backend-phonegap-get-started/mobile-data-tab.png)
 
@@ -170,9 +170,9 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [4]: ./media/mobile-services-javascript-backend-phonegap-get-started/mobile-portal-quickstart-android.png
 
 <!-- URLs. -->
-[Add authentication to your app]: /documentation/articles/mobile-services-html-get-started-users
+[Add authentication to your app]: mobile-services-html-get-started-users.md
 [Android SDK]: http://developer.android.com/sdk/index.html
-[Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [Visual Studio 2012 Express for Windows Phone]: https://www.visualstudio.com/downloads/download-visual-studio-vs
  

@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="StorSimple system limits | Microsoft Azure"
+   pageTitle="StorSimple system limits | Windows Azure"
    description="Describes system limits and recommended sizes for StorSimple 8000 series components and connections."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/28/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/15/2015"
+	wacn.date=""/>
 
 # StorSimple system limits
 
@@ -26,3 +22,4 @@ StorSimple provides scalable and flexible storage for your datacenter. However, 
 ## Next steps
 
 Review the [StorSimple system requirements](storsimple-system-requirements.md). 
+

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Runbook and module galleries for Azure Automation"
+	pageTitle="Runbook and module galleries for Azure Automation | Windows Azure"
 	description="Runbooks and modules from Microsoft and the community are available for you to install and use in your Azure Automation environment.  This article describes how you can access these resources and to contribute your runbooks to the gallery."
 	services="automation"
 	documentationCenter=""
@@ -28,10 +28,10 @@ You can only import directly from the Runbook Gallery using the Azure Management
 
 ### To import a runbook from the Runbook Gallery with the Azure Management Portal
 
-1. In the Azure Management portal, click, **New**, **App Services**, **Automation**, **Runbook**, **From Gallery**.
+1. In the Azure Management portal, click, **New**, **Azure Websitess**, **Automation**, **Runbook**, **From Gallery**.
 2. Select a category to view related runbooks, and select a runbook to view its details. When you select the runbook you want, click the right arrow button.<br>
 ![Runbook gallery](./media/automation-runbook-gallery/runbook-gallery.png)
-3. Review the contents of the runbook and note any requirements in the description. Click the right arrow button when you’re done.
+3. Review the contents of the runbook and note any requirements in the description. Click the right arrow button when you're done.
 4. Enter the runbook details and then click the checkmark button. The runbook name will already be filled in.
 5. The runbook will appear on the **Runbooks** tab for the Automation Account.
 
@@ -58,9 +58,11 @@ Microsoft encourages you to add runbooks to the Runbook Gallery that you think w
 
 - The upload must be a single .ps1 or .graphrunbook file.  If the runbook requires any modules, child runbooks, or assets, then you should list those in the description of the submission and in the comments section of the runbook.  If you have a solution requiring multiple runbooks, then upload each separately and list the names of the related runbooks in each of their descriptions. Make sure that you use the same tags so that they will show up in the same category. A user will have to read the description to know that other runbooks are required the solution to work.
 
+- Insert either a PowerShell or PowerShell Workflow code snippet into the description using **Insert code section** icon. 
+
 - The Summary for the upload will be displayed in the Runbook Gallery results so you should provide detailed information that will help a user identify the functionality of the runbook.
 
-- You should assign one to three of the following Tags to the upload.  The runbook will be listed in the wizard under the categories that match its tags.  Any tags not on this list will be ignored by the wizard. If you don’t specify any matching tags, the runbook will be listed under the Other category.
+- You should assign one to three of the following Tags to the upload.  The runbook will be listed in the wizard under the categories that match its tags.  Any tags not on this list will be ignored by the wizard. If you don't specify any matching tags, the runbook will be listed under the Other category.
 
  - Backup
  - Capacity Management
@@ -75,7 +77,7 @@ Microsoft encourages you to add runbooks to the Runbook Gallery that you think w
  - VM Lifecycle Management
 
 
-- Automation updates the Gallery once an hour, so you won’t see your contributions immediately.  If you don’t see your runbook in the gallery after an hour, check the requirements in the [Adding a Runbook to the Runbook Gallery](#AddRunbook) section.
+- Automation updates the Gallery once an hour, so you won't see your contributions immediately.  If you don't see your runbook in the gallery after an hour, check the requirements in the [Adding a Runbook to the Runbook Gallery](#AddRunbook) section.
 
 ## Modules in PowerShell Gallery
 
@@ -102,7 +104,7 @@ PowerShell modules contain cmdlets that you can use in your runbooks, and existi
 
 ## Requesting a runbook or module
 
-You can send requests to [User Voice](http://feedback.azure.com/forums/246290-azure-automation).  If you need help writing a runbook or have a question about PowerShell, post a question to our [forum](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchsen-US/home?forum=azureautomation&filter=alltypes&sort=lastpostdesc).
+You can send requests to [User Voice](/product-feedback).  If you need help writing a runbook or have a question about PowerShell, post a question to our [forum](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchsen-US/home?forum=azureautomation&filter=alltypes&sort=lastpostdesc).
 
 ## Related articles
 

@@ -16,16 +16,6 @@ replacement:
 
 deleted:
 
-		machines](/documentation/services/virtual-machines)**<br/><br/>
-
-replaced by:
-
-		machines](http://www.windowsazure.cn/documentation/services/virtual-machines)**<br/><br/>
-
-reason: ()
-
-deleted:
-
 		supply or from the [Azure Marketplace](https://azure.microsoft.com/marketplace/)<br/><br/>•
 
 replaced by:

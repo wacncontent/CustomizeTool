@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="10/23/2015"
+	ms.date="12/14/2015"
 	wacn.date=""/>
 
 # Get started with Notification Hubs for Windows Phone
@@ -88,7 +88,12 @@ Your hub is now created and configured to send unauthenticated notification for 
         channel.ChannelUriUpdated += new EventHandler<NotificationChannelUriEventArgs>(async (o, args) =>
         {
             var hub = new NotificationHub("<hub name>", "<connection string>");
-            await hub.RegisterNativeAsync(args.ChannelUri.ToString());
+            var result = await hub.RegisterNativeAsync(args.ChannelUri.ToString());
+
+            System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                MessageBox.Show("Registration :" + result.RegistrationId, "Registered", MessageBoxButton.OK);
+            });
         });
 
     Make sure to insert the name of your hub and the connection string called **DefaultListenSharedAccessSignature** that you obtained in the previous section.
@@ -100,11 +105,14 @@ Your hub is now created and configured to send unauthenticated notification for 
 
    	![][14]
 
+
    	This ensures that your app can receive push notifications.
 
 7. Press the F5 key to run the app.
 
 	A registration message is displayed.
+
+8. Close the app.  You must close the app to receive the toast notification.
 
 ##Send the notification from your backend
 
@@ -187,11 +195,9 @@ In this simple example, you broadcasted notifications to all your Windows Phone 
 
 <!-- URLs. -->
 [Visual Studio 2012 Express for Windows Phone]: https://www.visualstudio.com/downloads/download-visual-studio-vs
-[Azure Management Portal]: https://manage.windowsazure.cn/
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [MPNS authenticated mode]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx
-[Use Notification Hubs to push notifications to users]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
-[Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-windows-phone-send-breaking-news
+[Use Notification Hubs to push notifications to users]: notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
+[Use Notification Hubs to send breaking news]: notification-hubs-windows-phone-send-breaking-news.md
 [toast catalog]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/jj662938(v=vs.105).aspx
 [tile catalog]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/hh202948(v=vs.105).aspx
-[Notification Hub - WP Silverlight tutorial]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp

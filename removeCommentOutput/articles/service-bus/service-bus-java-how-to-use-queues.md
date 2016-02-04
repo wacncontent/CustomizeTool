@@ -248,6 +248,5 @@ For more information, see the [Java Developer Center](/develop/java/).
 
   [Azure SDK for Java]: /develop/java/
   [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
-  [Azure Management Portal]: http://manage.windowsazure.cn/
-  [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+  [Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx

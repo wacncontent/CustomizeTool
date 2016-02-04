@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 #Run Pig jobs with Hadoop on HDInsight by using Curl
@@ -29,7 +29,12 @@ Curl is used to demonstrate how you can interact with HDInsight by using raw HTT
 
 To complete the steps in this article, you will need the following:
 
-* An Azure HDInsight (Hadoop on HDInsight) cluster <!-- deleted by customization (Linux-based or --><!-- keep by customization: begin --> ( <!-- keep by customization: end --> Windows-based)
+<!-- deleted by customization
+* An Azure HDInsight (Hadoop on HDInsight) cluster (Linux-based or Windows-based)
+-->
+<!-- keep by customization: begin -->
+* An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based)
+<!-- keep by customization: end -->
 
 * [Curl](http://curl.haxx.se/)
 
@@ -88,7 +93,7 @@ To complete the steps in this article, you will need the following:
 
 When the state of the job has changed to **SUCCEEDED**, you can retrieve the results of the job from Azure Blob storage. The `statusdir` parameter passed with the query contains the location of the output file; in this case, **wasb:///example/pigcurl**. This address stores the output of the job in the **example/pigcurl** directory in the default storage container used by your HDInsight cluster.
 
-You can list and download these files by using the [Azure CLI <!-- deleted by customization for Mac, Linux and Windows](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> ](/documentation/articles/xplat-cli-install) <!-- keep by customization: end -->. For example, to list files in **example/pigcurl**, use the following command:
+You can list and download these files by using the [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install). For example, to list files in **example/pigcurl**, use the following command:
 
 	azure storage blob list <container-name> example/pigcurl
 
@@ -96,7 +101,7 @@ To download a file, use the following:
 
 	azure storage blob download <container-name> <blob-name> <destination-file>
 
-> [AZURE.NOTE] You must specify the storage account name that contains the blob by using the `-a` and `-k` parameters, or set the <!-- deleted by customization **AZURE\_STORAGE\_ACCOUNT** --><!-- keep by customization: begin --> **AZURE_STORAGE_ACCOUNT** <!-- keep by customization: end --> and <!-- deleted by customization **AZURE\_STORAGE\_ACCESS\_KEY** --><!-- keep by customization: begin --> **AZURE_STORAGE_ACCESS_KEY** <!-- keep by customization: end --> environment variables.
+> [AZURE.NOTE] You must specify the storage account name that contains the blob by using the `-a` and `-k` parameters, or set the **AZURE\_STORAGE\_ACCOUNT** and **AZURE\_STORAGE\_ACCESS\_KEY** environment variables.
 
 ##<a id="summary"></a>Summary
 

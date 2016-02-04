@@ -1,24 +1,20 @@
 <properties 
-   pageTitle="Install your StorSimple 8600 device | Microsoft Azure"
+   pageTitle="Install your StorSimple 8600 device | Windows Azure"
    description="Describes how to unpack, rack mount, and cable your StorSimple 8600 device before you deploy and configure the software."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="10/13/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Unpack, rack-mount, and cable your StorSimple 8600 device
 
 ## Overview
-Your Microsoft Azure StorSimple 8600 is a dual enclosure device and consists of a primary and an EBOD enclosure. This tutorial explains how to unpack, rack-mount, and cable the StorSimple 8600 device hardware before you configure the StorSimple software.
+Your Windows Azure StorSimple 8600 is a dual enclosure device and consists of a primary and an EBOD enclosure. This tutorial explains how to unpack, rack-mount, and cable the StorSimple 8600 device hardware before you configure the StorSimple software.
 
 ## Unpack your StorSimple 8600 device
 
@@ -38,7 +34,7 @@ Next, complete the following steps to unpack your device.
 
 #### To unpack your device
 
-1. Inspect the box and the packaging foam for crushes, cuts, water damage, or any other obvious damage. If the box or packaging is severely damaged, do not open the box. Please [contact Microsoft Support](storsimple-contact-microsoft-support.md) to help you assess whether the device is in good working order.
+1. Inspect the box and the packaging foam for crushes, cuts, water damage, or any other obvious damage. If the box or packaging is severely damaged, do not open the box. Please [contact Microsoft Support](/documentation/articles/storsimple-contact-microsoft-support) to help you assess whether the device is in good working order.
 
 2. Open the outer box and then take out the two boxes corresponding to primary and EBOD enclosures. You can now unpack the primary and EBOD enclosures. The following figure shows the unpacked view of one of the enclosures.
 
@@ -68,7 +64,7 @@ Next, complete the following steps to unpack your device.
   - 2 rack mount kits (4 side rails with mounting hardware, 2 each for the primary enclosure and EBOD enclosure), 1 in each box
   - Getting started documentation
 
-    If you did not receive any of the items listed above, [contact Microsoft Support](storsimple-contact-microsoft-support.md).  
+    If you did not receive any of the items listed above, [contact Microsoft Support](/documentation/articles/storsimple-contact-microsoft-support).  
 
 The next step is to rack-mount your device. 
 
@@ -108,7 +104,7 @@ A set of mounting rails will be provided for use with the 19-inch rack cabinet. 
 
 #### To install the EBOD enclosure on the rails
 
-2. Perform this step only if inner rails are not installed on your device. Typically, the inner rails are installed at the factory. If rails are not installed, then install the left-rail and right-rail slides to the sides of the enclosure chassis. They attach using six metric screws on each side. To help with orientation, the rail slides are marked **LH – Front** and **RH – Front**, and the end that is affixed towards the rear of the enclosure has a tapered end.
+2. Perform this step only if inner rails are not installed on your device. Typically, the inner rails are installed at the factory. If rails are not installed, then install the left-rail and right-rail slides to the sides of the enclosure chassis. They attach using six metric screws on each side. To help with orientation, the rail slides are marked **LH - Front** and **RH - Front**, and the end that is affixed towards the rear of the enclosure has a tapered end.
 
     ![Attaching rail slides to enclosure chassis](./media/storsimple-8600-hardware-installation/HCSAttachingRailSlidestoEnclosureChassis.png) 
 
@@ -196,7 +192,7 @@ Before you begin to cable your device, you will need:
 - Provided serial cables
 - Serial-USB converter with the appropriate driver installed on your PC (if needed)
 - Provided 4 QSFP-to-SFP+ adapters for use with 10 GbE network interfaces
-- [Supported hardware for 10 GbE network interfaces on your StorSimple device](storsimple-supported-hardware-for-10-gbe-network-interfaces.md) 
+- [Supported hardware for 10 GbE network interfaces on your StorSimple device](/documentation/articles/storsimple-supported-hardware-for-10-gbe-network-interfaces) 
 
 ### SAS and Power cabling
 
@@ -204,9 +200,9 @@ Your device has both a primary enclosure and an EBOD enclosure. This requires th
 
 When setting up this device for the first time, perform the steps for SAS cabling first and then complete the steps for power cabling.
 
-[AZURE.INCLUDE [storsimple-cable-8600-for-SAS](../../includes/storsimple-sas-cable-8600.md)]
+[AZURE.INCLUDE [storsimple-cable-8600-for-SAS](../includes/storsimple-sas-cable-8600.md)]
 
-[AZURE.INCLUDE [storsimple-cable-8600-for-power](../../includes/storsimple-cable-8600-for-power.md)]
+[AZURE.INCLUDE [storsimple-cable-8600-for-power](../includes/storsimple-cable-8600-for-power.md)]
 
 ### Network cabling
 
@@ -262,9 +258,9 @@ Keep in mind for high availability and performance:
 
 - When possible, configure a pair of network interface for cloud access (1 GbE) and another pair for iSCSI (10 GbE recommended) on each controller. 
 
-- When possible, connect network interfaces from each controller to two different switches to ensure availability against a switch failure. The figure illustrates the two 10 GbE network interfaces, DATA 2 and DATA 3, from each controller connected to two different switches. For more information, refer to the **Network interfaces** under the [High availability requirements for your StorSimple device](storsimple-system-requirements/#high-availability-requirements-for-storsimple.md).
+- When possible, connect network interfaces from each controller to two different switches to ensure availability against a switch failure. The figure illustrates the two 10 GbE network interfaces, DATA 2 and DATA 3, from each controller connected to two different switches. For more information, refer to the **Network interfaces** under the [High availability requirements for your StorSimple device](/documentation/articles/storsimple-system-requirements#high-availability-requirements-for-storsimple.md).
 
->[AZURE.NOTE] If using SFP+ transceivers with your 10 GbE network interfaces, use the provided QSFP-SFP+ adapters. More information on [Supported hardware for 10 GbE network interfaces on your StorSimple device](storsimple-supported-hardware-for-10-gbe-network-interfaces.md)
+>[AZURE.NOTE] If using SFP+ transceivers with your 10 GbE network interfaces, use the provided QSFP-SFP+ adapters. More information on [Supported hardware for 10 GbE network interfaces on your StorSimple device](/documentation/articles/storsimple-supported-hardware-for-10-gbe-network-interfaces)
 
 ### Serial port cabling
 
@@ -295,5 +291,5 @@ You have completed cabling your device for power, network access, and serial con
 
 ## Next steps
 
-You are now ready to [deploy and configure your on-premises StorSimple device](storsimple-deployment-walkthrough.md) 
+You are now ready to [deploy and configure your on-premises StorSimple device](/documentation/articles/storsimple-deployment-walkthrough) 
  

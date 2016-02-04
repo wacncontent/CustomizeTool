@@ -1,14 +1,14 @@
 <properties
-   pageTitle="How to manage service configurations and profiles"
+   pageTitle="How to manage service configurations and profiles | Windows Azure"
    description="Learn how to work with service configurations and profiles configuration files| which store settings for the deployment environments and publish settings for cloud services."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="08/13/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 # How to manage service configurations and profiles
@@ -25,7 +25,7 @@ You can add, delete, rename, and modify these service configurations based on yo
 
 ![Manage Service Configurations](./media/vs-azure-tools-service-configurations-and-profiles-how-to-manage/manage-service-config.png)
 
-You can also open the **Manage Configurations** dialog box from the role’s property pages. To open the properties for a role in your Azure project, open the shortcut menu for that role, and then choose **Properties**. On the **Settings** tab, expand the **Service Configuration** list, and then click **Manage** to open the **Manage Configurations** dialog box.
+You can also open the **Manage Configurations** dialog box from the role's property pages. To open the properties for a role in your Azure project, open the shortcut menu for that role, and then choose **Properties**. On the **Settings** tab, expand the **Service Configuration** list, and then click **Manage** to open the **Manage Configurations** dialog box.
 
 ### To add a service configuration
 
@@ -121,8 +121,8 @@ When you run the wizard for the first time, a default profile is created. Visual
 
 1. After you finish changing the settings, click **Next** to go back to the **Settings** page.
 
-1. (Optional) Click **Publish** to publish the cloud service using the new settings. If you don’t want to publish your cloud service at this time, and you close the Publish Wizard, Visual Studio asks you if you want to save the changes to the profile.
+1. (Optional) Click **Publish** to publish the cloud service using the new settings. If you don't want to publish your cloud service at this time, and you close the Publish Wizard, Visual Studio asks you if you want to save the changes to the profile.
 
 ## Next steps
 
-To learn about configuring other parts of your Azure project from Visual Studio, see [Configuring an Azure Project](/documentation/articles/vs-azure-tools-configuring-an-azure-project/) 
+To learn about configuring other parts of your Azure project from Visual Studio, see [Configuring an Azure Project](https://azure.microsoft.com/zh-cn/documentation/articles/vs-azure-tools-configuring-an-azure-project/)

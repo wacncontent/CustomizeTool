@@ -8,13 +8,9 @@
    editor="rishirsinha"/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/26/2015"
-   ms.author="rsinha"/>
+	ms.service="service-fabric"
+	ms.date="08/26/2015"
+	wacn.date=""/>
 
 # Service Fabric Architecture
 
@@ -27,7 +23,7 @@ Service Fabric, like any platform is built through many sub-systems. These subsy
 
 The following picture shows the architecture and major subsystems of Service Fabric.
 
-![](media/service-fabric-architecture/service-fabric-architecture.png)
+![](./media/service-fabric-architecture/service-fabric-architecture.png)
 
 In a distributed system, the ability to securely communicate between different nodes is crucial. At the bottom of the stack is transport subsystem, which provides the ability to securely communicate between the different nodes. Above the transport subsystem lies the federation subsystem, which clusters the different nodes into a single entity (named clusters) so that the system can detect failures, perform leader election and route consistenty. The reliability subsystem, layered on top of the federation subsystem is responsible for the high reliability of Service Fabric services through mechanisms such as replication, resource management and failover management. The federation subsystem also underlies the Hosting subsystem, which manages the lifecycle of an application on a single node. The cluster management subsystem manages the multi-machine lifecycle of applications and services. The testability subsystem allows the application developer to test their services through simulated faults before deploying applications and services to production environments.  Service Fabric also provides the ability to resolve service locations through its communication subsystem. The application programming model exposed to developers is layered on top of these susbsystems.
 
@@ -59,5 +55,4 @@ The cluster manager informs the hosting subsystem (running on each node) which s
 This subsystem provides reliable messaging within the cluster and service discovery through the Naming service. The Naming service resolves service names to a location in the cluster and allows users to manage service names and properties. Using the Naming service, clients can securely communicate with any node in the cluster to resolve a service name and retrieve service metadata. Using a simple Naming Client API, users of Service Fabric can develop services and clients capable of resolving the current network location despite node dynamism or size of the cluster.
 
 ## Testability subsystem
-Testability is a suite of tools specifically designed for testing services built on  Service Fabric. The tools allow the developer to easily induce meaningful faults and run test scenarios to exercise and validate the numerous different states and transitions a service will experience throughout its lifetime, all in a controlled and safe manner. Testability also provides a mechanism to run long running tests that can iterate through various possible failures without losing availability providing users with a Test In Production environment.
- 
+Testability is a suite of tools specifically designed for testing services built on  Service Fabric. The tools allow the developer to easily induce meaningful faults and run test scenarios to exercise and validate the numerous different states and transitions a service will experience throughout its lifetime, all in a controlled and safe manner. Testability also provides a mechanism to run long running tests that can iterate through various possible failures without losing availability providing users with a Test In Production environment.

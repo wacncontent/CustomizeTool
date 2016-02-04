@@ -1,303 +1,305 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="按可预见的方式在 Azure 中设置和部署微服务"
-	description="了解如何使用 JSON 资源组模板和 PowerShell 脚本以一种可预见的方式，在 Azure App Service 中将由微服务构成的应用程序设置并部署为单个单元。"
-	services="app-service\web"
+	pageTitle="Provision and deploy microservices predictably in Azure"
+	description="Learn how to deploy an application composed of microservices in Azure Websites as a single unit and in a predictable manner using JSON resource group templates and PowerShell scripting."
+	services="app-service"
 	documentationCenter=""
 	authors="cephalin"
 	manager="wpickett"
-	editor=""/>
+	editor="jimbe"/>
 
 <tags
-	ms.service="app-service-web"
-	ms.date="07/08/2015"
-	wacn.date=""/>
+	ms.service="app-service"
+	ms.date="10/16/2015"
+	wacn.date="11/27/2015"/>
 
 
-# 按可预见的方式在 Azure 中设置和部署微服务 #
+# Provision and deploy microservices predictably in Azure #
 
-本教程演示如何通过使用 JSON 资源组模板和 PowerShell 脚本以一种可预见的方式，在 [Azure App Service](/home/features/app-service/) 中将由[微服务](https://en.wikipedia.org/wiki/Microservices)构成的应用程序设置并部署为单个单元。
+This tutorial shows how to provision and deploy an application composed of [microservices](https://en.wikipedia.org/wiki/Microservices) in [Azure Websites](/home/features/app-service/) as a single unit and in a predictable manner using JSON resource group templates and PowerShell scripting. 
 
-在设置和部署由高度分离的微服务构成的高扩展性应用程序时，可重复性和可预见性对成功至关重要。[Azure App Service](/home/features/app-service/) 使你能够创建包括 Web 应用、移动应用、API 应用和逻辑应用在内的微服务。[Azure 资源管理器](/documentation/articles/resource-group-overview)使你能够将所有微服务作为一个单元与资源依赖项（如数据库和源代码管理设置）一起进行管理。现在，你还可以使用 JSON 模板和简单的 PowerShell 脚本部署此类应用程序。
+When provisioning and deploying high-scale applications that are composed of highly decoupled microservices, repeatability and predictability are crucial to success. [Azure Websites](/home/features/app-service/) enables you to create microservices that include web sites, mobile apps, API apps, and logic apps. [Azure Resource Manager](/documentation/articles/resource-group-overview) enables you to manage all the microservices as a unit, together with resource dependencies such as database and source control settings. Now, you can also deploy such an application using JSON templates and simple PowerShell scripting. 
 
-## 执行的操作 ##
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
-在教程中，你将部署的应用程序包括：
+## What you will do ##
 
--	两个 Web 应用（即两个微服务）
--	后端 SQL 数据库
--	应用设置、连接字符串和源代码管理
--	Application Insights、警报和自动缩放设置
+In the tutorial, you will deploy an application that includes:
 
-## 将使用的工具 ##
+-	Two web sites (i.e. two microservices)
+-	A backend SQL Database
+-	App settings, connection strings, and source control
+-	Application insights, alerts, autoscaling settings
 
-在本教程中，你将使用以下工具。由于对工具的讨论并不全面，我将坚持使用端到端方案，并只为你提供每个方案的简要介绍及在哪里可找到它的详细信息。
+## Tools you will use ##
 
-### Azure 资源管理器模板 (JSON) ###
+In this tutorial, you will use the following tools. Since it’s not comprehensive discussion on tools, I’m going to stick to the end-to-end scenario and just give you a brief intro to each, and where you can find more information on it. 
+
+### Azure Resource Manager templates (JSON) ###
  
-例如，每当在 Azure App Service 中创建 Web 应用时，Azure 资源管理器都将使用 JSON 模板来创建具有组件资源的整个资源组。<!-- A complex template from the [Azure Marketplace](/marketplace) like the [Scalable WordPress](/marketplace/partners/wordpress/scalablewordpress/) app can include the MySQL database, storage accounts, the App Service plan, the web app itself, alert rules, app settings, autoscale settings, and more, and all these templates are available to you through PowerShell. For information on how to download and use these templates, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).-->
+Every time you create a web site in Azure Websites, for example, Azure Resource Manager uses a JSON template to create the entire resource group with the component resources. A complex template from the [Azure Marketplace](/marketplace) like the [Scalable WordPress](/marketplace/partners/wordpress/scalablewordpress/) app can include the MySQL database, storage accounts, the App Service plan, the web site itself, alert rules, app settings, autoscale settings, and more, and all these templates are available to you through PowerShell. For information on how to download and use these templates, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
 
-有关 Azure 资源管理器模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
+For more information on the Azure Resource Manager templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
 
 ### Azure SDK 2.6 for Visual Studio ###
 
-最新的 SDK 包含对 JSON 编辑器中资源管理器模板支持的改进。可以使用它快速从头开始创建资源组模板，或打开现有 JSON 模板（例如下载的库模板）以进行修改、填充参数文件，甚至直接从 Azure 资源组解决方案部署资源组。
+The newest SDK contains improvements to the Resource Manager template support in the JSON editor. You can use this to quickly create a resource group template from scratch or open an existing JSON template (such as a downloaded gallery template) for modification, populate the parameters file, and even deploy the resource group directly from an Azure Resource Group solution.
 
-有关详细信息，请参阅 [Azure SDK 2.6 for Visual Studio](/blog/2015/04/29/announcing-the-azure-sdk-2-6-for-net/)。
+For more information, see [Azure SDK 2.6 for Visual Studio](/blog/2015/04/29/announcing-the-azure-sdk-2-6-for-net/).
 
-### Azure PowerShell 0.8.0 或更高版本 ###
+### Azure PowerShell 0.8.0 or later ###
 
-从版本 0.8.0 开始，Azure PowerShell 安装除了包括 Azure 模块外还包括 Azure 资源管理器模块。此新模块使你能够编写资源组部署的脚本。
+Beginning in version 0.8.0, the Azure PowerShell installation includes the Azure Resource Manager module in addition to the Azure module. This new module enables you to script the deployment of resource groups.
 
-有关详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)
+For more information, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager)
 
-### Azure 资源管理器 ###
+### Azure Resource Explorer ###
 
-此[预览工具](https://resources.azure.com)使你能够浏览订阅中所有资源组的 JSON 定义和独立资源。在工具中，可编辑资源的 JSON 定义、删除资源的整个层次结构及创建新资源。此工具中随时可用的信息对模板创作非常有帮助，因为它将显示需要为特定类型的资源设置的属性、正确值等。甚至可在 [Azure 门户](https://manage.windowsazure.cn)中创建资源组，然后在资源管理器工具中检查其 JSON 定义以帮助模板化资源组。
+This [preview tool](https://resources.azure.com) enables you to explore the JSON definitions of all the resource groups in your subscription and the individual resources. In the tool, you can edit the JSON definitions of a resource, delete an entire hierarchy of resources, and create new resources.  The information readily available in this tool is very helpful for template authoring because it shows you what properties you need to set for a particular type of resource, the correct values, etc. You can even create your resource group in the [Azure preview portal](https://manage.windowsazure.cn), then inspect its JSON definitions in the explorer tool to help you templatize the resource group.
 
-### 部署到 Azure 按钮 ###
+### Deploy to Azure button ###
 
-如果你将 GitHub 用于源代码管理，则可将一个[“部署到 Azure”按钮](/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/)放入 README.MD，这将对 Azure 启用统包部署 UI。可为任何简单的 Web 应用执行此操作，同时可扩展这一操作，通过将 azuredeploy.json 文件放入存储库根来实现对整个资源组的部署。“部署到 Azure ”按钮将使用此包含资源组模板的 JSON 文件来创建资源组。有关示例，请参阅将在本教程中使用的 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 示例。
+If you use GitHub for source control, you can put a [Deploy to Azure button](/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/) into your README.MD, which enables a turn-key deployment UI to Azure. While you can do this for any simple web site, you can extend this to enable deploying an entire resource group by putting an azuredeploy.json file in the repository root. This JSON file, which contains the resource group template, will be used by the Deploy to Azure button to create the resource group. For an example, see the [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) sample, which you will use in this tutorial.
 
-## 获取示例资源组模板 ##
+## Get the sample resource group template ##
 
-现在让我们开始吧。
+So now let’s get right to it.
 
-1. 	导航到 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) App Service 示例。
+1. 	Navigate to the [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) Azure Websites sample.
 
-2.	 在 readme.md 中，单击“部署到 Azure”。
+2.	 In readme.md, click **Deploy to Azure**.
  
-3.	你将会转到 [deploy-to-azure](https://deploy.azure.com) 站点并需要输入部署参数。请注意大多数字段将填充以存储库名称和某些随机字符串。可以更改所有字段（如果你想），但唯一一项必须输入的内容是 SQL Server 管理登录名和密码，然后单击“下一步”。
+3.	You’re taken to the [deploy-to-azure](https://deploy.azure.com) site and asked to input deployment parameters. Notice that most of the fields are populated with the repository name and some random strings for you. You can change all the fields if you want, but the only things you have to enter are the SQL Server administrative login and the password, then click **Next**.
  
 	![](./media/app-service-deploy-complex-application-predictably/gettemplate-1-deploybuttonui.png)
 
-4.	接下来，单击“部署”以启动部署进程。一旦进程运行至完成，则单击 http://todoapp*XXXX*.azure.websites.net 链接以浏览部署的应用程序。
+4.	Next, click **Deploy** to start the deployment process. Once the process runs to completion, click the http://todoapp*XXXX*.azure.websites.net link to browse the deployed application. 
 
 	![](./media/app-service-deploy-complex-application-predictably/gettemplate-2-deployprogress.png)
 
-	当你首次浏览到 UI 时它的显示会慢些，因为应用刚刚启动，但应确信它是一个功能齐全运行正常的应用程序。
+	The UI would be a little slow when you first browse to it because the apps are just starting up, but convince yourself that it’s a fully-functional application.
 
-5.	返回到“部署”页，单击“管理”链接以查看 Azure 预览门户中的新应用程序。
+5.	Back in the Deploy page, click the **Manage** link to see the new application in the Azure preview portal.
 
-6.	在“必备”下拉列表中，单击资源组链接。还要注意，Web 应用已连接到“外部项目”下的 GitHub 存储库。
+6.	In the **Essentials** dropdown, click the resource group link. Note also that the web site is already connected to the GitHub repository under **External Project**. 
 
 	![](./media/app-service-deploy-complex-application-predictably/gettemplate-3-portalresourcegroup.png)
  
-7.	在资源组边栏选项卡中，请注意资源组中已存在两个 Web 应用和一个 SQL 数据库。
+7.	In the resource group blade, note that there are already two web sites and one SQL Database in the resource group.
 
 	![](./media/app-service-deploy-complex-application-predictably/gettemplate-4-portalresourcegroupclicked.png)
  
-你刚才在几分钟内看到的全部内容就是一个经过完全部署的两个微服务的应用程序，以及所有组件、依赖项、设置、数据库和连续发布，均由 Azure 资源管理器中的自动化协调所设置。所有这一切均是通过两项内容完成：
+Everything that you just saw in a few short minutes is a fully deployed two-microservice application, with all the components, dependencies, settings, database, and continuous publishing, set up by an automated orchestration in Azure Resource Manager. All this was done by two things:
 
--	“部署到 Azure”按钮
--	存储库根中的 azuredeploy.json
+-	The Deploy to Azure button
+-	azuredeploy.json in the repo root
 
-可数十、数百或数千次地部署此同一的应用程序，并且每次都具有完全相同的配置。这种方法的可重复性和可预见性使你能够轻松、自信地部署高扩展性应用程序。
+You can deploy this same application tens, hundreds, or thousands of times and have the exact same configuration every time. The repeatability and the predictability of this approach enables you to deploy high-scale applications with ease and confidence.
 
-## 检查（或编辑）AZUREDEPLOY.JSON ##
+## Examine (or edit) AZUREDEPLOY.JSON ##
 
-现在让我们看看如何设置 GitHub 存储库。你将使用 Azure.NET SDK 中的 JSON 编辑器，所以如果你尚未安装 [Azure.NET SDK 2.6](/downloads/)，请立刻安装。
+Now let’s look at how the GitHub repository was set up. You will be using the JSON editor in the Azure .NET SDK, so if you haven’t already installed [Azure .NET SDK 2.6](/downloads/), do it now.
 
-1.	使用你最喜欢的 git 工具克隆 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 存储库。在下面的屏幕快照中，我将在 Visual Studio 2013 的团队资源管理器中执行此操作。
+1.	Clone the [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) repository using your favorite git tool. In the screenshot below, I’m doing this in the Team Explorer in Visual Studio 2013.
 
 	![](./media/app-service-deploy-complex-application-predictably/examinejson-1-vsclone.png)
 
-2.	在 Visual Studio 中从存储库根打开 azuredeploy.json。如果没有看到“JSON 概要”窗格，则需要安装 Azure.NET SDK。
+2.	From the repository root, open azuredeploy.json in Visual Studio. If you don’t see the JSON Outline pane, you need to install Azure .NET SDK.
 
 	![](./media/app-service-deploy-complex-application-predictably/examinejson-2-vsjsoneditor.png)
 
-我不打算介绍 JSON 格式的每个细节，但[更多资源](#resources)部分包含可用于进行资源组模板语言学习的链接。在这里，我只打算向你展示有趣的功能，可帮助你开始制作自己的自定义模板来部署应用。
+I’m not going to describe every detail of the JSON format, but the [More Resources](#resources) section has links for learning the resource group template language. Here, I’m just going to show you the interesting features that can help you get started in making your own custom template for app deployment.
 
 ### Parameters ###
 
-看一看参数部分，你将看到这些参数大都是**“部署到 Azure”**按钮提示你输入的内容。**“部署到 Azure“**按钮背后的站点将使用 azuredeploy.json 中定义的参数填充 UI。这些参数用于整个资源定义，例如资源名称、属性值等。
+Take a look at the parameters section to see that most of these parameters are what the **Deploy to Azure** button prompts you to input. The site behind the **Deploy to Azure** button populates the input UI using the parameters defined in azuredeploy.json. These parameters are used throughout the resource definitions, such as resource names, property values, etc.
 
-### 资源 ###
+### Resources ###
 
-在资源节点中，可以看到定义了 4 个顶级资源，包括一个 SQL Server 实例、一个 App Service 计划和两个 Web 应用。
+In the resources node, you can see that 4 top-level resources are defined, including a SQL Server instance, an App Service plan, and two web sites. 
 
-#### App Service 计划 ####
+#### App Service plan ####
 
-让我们以 JSON 中简单的根级别资源开始。在“JSON 概要”中，单击名为 **[hostingPlanName]** 的 App Service 计划以突出显示相应的 JSON 代码。
+Let’s start with a simple root-level resource in the JSON. In the JSON Outline, click the App Service plan named **[hostingPlanName]** to highlight the corresponding JSON code. 
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-3-appserviceplan.png)
 
-请注意，`type` 元素指定 App Service 计划（很久很久以前它被称之为服务器场）的字符串，而其他元素和属性使用 JSON 文件中定义的参数填写，并且此资源不具有任何嵌套的资源。
+Note that the `type` element specifies the string for an App Service plan (it was called a server farm a long, long time ago), and other elements and properties are filled in using the parameters defined in the JSON file, and this resource doesn’t have any nested resources.
 
->[AZURE.NOTE]另请注意，`apiVersion` 的值会告知 Azure 哪个版本的 REST API 将与 JSON 资源定义一起使用，并且会影响资源在 `{}` 内应采用的格式化方式。
+>[AZURE.NOTE] Note also that the value of `apiVersion` tells Azure which version of the REST API to use the JSON resource definition with, and it can affect how the resource should be formatted inside the `{}`. 
 
 #### SQL Server ####
 
-接下来，在“JSON 概要”中单击名为“SQLServer”的 SQL Server 资源。
+Next, click on the SQL Server resource named **SQLServer** in the JSON Outline.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-4-sqlserver.png)
  
-请注意以下有关突出显示的 JSON 代码的内容：
+Note the following about the highlighted JSON code:
 
--	使用参数可确保已创建资源的命名和配置方式使其与其他资源保持一致。
--	SQLServer 资源具有两个嵌套的资源，而每个具有不同的 `type` 值。
--	`“resources”: […]` 内（其中定义了数据库和防火墙规则）的嵌套资源具有 `dependsOn` 元素，后者指定根级别 SQLServer 资源的资源 ID。这将告知 Azure 资源管理器：“创建此资源之前，另一个资源必须已经存在；如果在模板中定义另一个资源，则先创建一个。”
+-	The use of parameters ensures that the created resources are named and configured in a way that makes them consistent with one another.
+-	The SQLServer resource has two nested resources, each has a different value for `type`.
+-	The nested resources inside `“resources”: […]`, where the database and the firewall rules are defined, have a `dependsOn` element that specifies the resource ID of the root-level SQLServer resource. This tells Azure Resource Manager, “before you create this resource, that other resource must already exist; and if that other resource is defined in the template, then create that one first”.
 
-	>[AZURE.NOTE]有关如何使用 `resourceId()` 函数的详细信息，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)。
+	>[AZURE.NOTE] For detailed information on how to use the `resourceId()` function, see [Azure Resource Manager Template Functions](/documentation/articles/resource-group-template-functions).
 
--	`dependsOn` 元素的影响在于让 Azure 资源管理器能够知道哪些资源可以并行创建，哪些资源必须按顺序创建。
+-	The effect of the `dependsOn` element is that Azure Resource Manager can know which resources can be created in parallel and which resources must be created sequentially. 
 
-#### Web 应用 ####
+#### Web Site ####
 
-现在，让我们继续，看看实际的 Web 应用本身，这更加复杂。在“JSON 概要”中单击“[variables(‘apiSiteName’)]”Web 应用以突出显示其 JSON 代码。你会注意到内容正在变得更加有趣。为此，我将一个一个地讨论功能：
+Now, let’s move on to the actual web sites themselves, which are more complicated. Click the [variables(‘apiSiteName’)] web site in the JSON Outline to highlight its JSON code. You’ll notice that things are getting much more interesting. For this purpose, I’ll talk about the features one by one:
 
-##### 根资源 #####
+##### Root resource #####
 
-Web 应用取决于两个不同的资源。这意味着只有在创建 App Service 计划和 SQL Server 实例后，Azure 资源管理器才将创建 Web 应用。
+The web site depends on two different resources. This means that Azure Resource Manager will create the web site only after both the App Service plan and the SQL Server instance are created.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-5-webapproot.png)
 
-##### 应用设置 #####
+##### App settings #####
 
-应用设置也被定义为嵌套资源。
+The app settings are also defined as a nested resource.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-6-webappsettings.png)
 
-在 `config/appsettings` 的 `properties` 元素中，具有两个 `“<name>” : “<value>”` 格式的应用设置。
+In the `properties` element for `config/appsettings`, you have two app settings in the format `“<name>” : “<value>”`.
 
--	`PROJECT` 是 [KUDU 设置](https://github.com/projectkudu/kudu/wiki/Customizing-deployments)，它告诉 Azure 部署在多项目的 Visual Studio 解决方案中使用哪个项目。稍后我将向你演示如何配置源代码管理，但由于 ToDoApp 代码位于多项目 Visual Studio 解决方案中，我们需要此设置。
--	`clientUrl` 只是应用程序代码使用的应用设置。
+-	`PROJECT` is a [KUDU setting](https://github.com/projectkudu/kudu/wiki/Customizing-deployments) that tells Azure deployment which project to use in a multi-project Visual Studio solution. I will show you later how source control is configured, but since the ToDoApp code is in a multi-project Visual Studio solution, we need this setting.
+-	`clientUrl` is simply an app setting that the application code uses.
 
-##### 连接字符串 #####
+##### Connection strings #####
 
-连接字符串也被定义为嵌套资源。
+The connection strings are also defined as a nested resource.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-7-webappconnstr.png)
 
-在 `config/connectionstrings` 的 `properties` 元素中，每个连接字符串也定义为具有特定的 `“<name>” : {“value”: “…”, “type”: “…”}` 格式的 name:value 对。对于 `type` 元素，可能的值为 `MySql`、`SQLServer`、`SQLAzure` 和 `Custom`。
+In the `properties` element for `config/connectionstrings`, each connection string is also defined as a name:value pair, with the specific format of `“<name>” : {“value”: “…”, “type”: “…”}`. For the `type` element, possible values are `MySql`, `SQLServer`, `SQLAzure`, and `Custom`.
 
->[AZURE.TIP]若要获取连接字符串类型的最终列表，请在 Azure PowerShell 中运行以下命令：[Enum]::GetNames("Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.DatabaseType")
+>[AZURE.TIP] For a definitive list of the connection string types, run the following command in Azure PowerShell:
+	\[Enum]::GetNames("Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.DatabaseType")
     
-##### 源代码管理 #####
+##### Source control #####
 
-源代码管理设置也被定义为嵌套资源。Azure 资源管理器使用此资源来配置连续发布（稍后请参阅 `IsManualIntegration` 上的注意事项），并且还可在 JSON 文件的处理过程中自动启动应用程序代码的部署。
+The source control settings are also defined as a nested resource. Azure Resource Manager uses this resource to configure continuous publishing (see caveat on `IsManualIntegration` later) and also to kick off the deployment of application code automatically during the processing of the JSON file.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-8-webappsourcecontrol.png)
 
-`RepoUrl` 和 `branch` 应该是非常直观的，且应指向 Git 存储库和分支（从其发布）的名称。同样，这些由输入参数定义。
+`RepoUrl` and `branch` should be pretty intuitive and should point to the Git repository and the name of the branch to publish from. Again, these are defined by input parameters. 
 
-请注意，在 `dependsOn` 元素中，除 Web 应用资源本身外，`sourcecontrols/web` 也取决于 `config/appsettings` 和 `config/connectionstrings`。这是因为一旦配置 `sourcecontrols/web` 后，Azure 部署进程将自动尝试部署、构建和启动应用程序代码。因此，插入此依赖项可帮助你确保在运行应用程序代码之前，应用程序有权访问所需的应用设置和连接字符串。[要执行的操作：需要验证这是否属实。]
+Note in the `dependsOn` element that, in addition to the web site resource itself, `sourcecontrols/web` also depends on `config/appsettings` and `config/connectionstrings`. This is because once `sourcecontrols/web` is configured, the Azure deployment process will automatically attempt to deploy, build, and start the application code. Therefore, inserting this dependency helps you make sure that the application has access to the required app settings and connection strings before the application code is run. [TODO: need to verify if this is true.]
 
->[AZURE.NOTE]另请注意，`IsManualIntegration` 设置为 `true`。此属性在本教程中是必需的，因为你实际上并不拥有 GitHub 存储库，因此不能实际授权 Azure 配置从 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 的连续发布（即将自动存储库更新推送到 Azure）。只有当之前已在 [Azure 门户](https://manage.windowsazure.cn)中配置了所有者的 GitHub 凭据时，才可将默认值 `false` 用于指定的存储库。换言之，如果之前已在 [Azure 门户](https://manage.windowsazure.cn)中使用用户凭据为任何应用将源代码管理设置到 GitHub 或 BitBucket，则 Azure 将记住凭据并在将来每当从 GitHub 或 BitBucket 部署任何应用时使用这些凭据。但是，如果还没有完成此操作，在 Azure 资源管理器尝试配置 Web 应用的源代码管理设置时 JSON 模板的部署将失败，因为它不能使用存储库所有者的凭据登录到 GitHub 或 BitBucket。
+>[AZURE.NOTE] Note also that `IsManualIntegration` is set to `true`. This property is necessary in this tutorial because you do not actually own the GitHub repository, and thus cannot actually grant permission to Azure to configure continuous publishing from [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) (i.e. push automatic repository updates to Azure). You can use the default value `false` for the specified repository only if you have configured the owner’s GitHub credentials in the [Azure preview portal](https://manage.windowsazure.cn) before. In other words, if you have set up source control to GitHub or BitBucket for any app in the [Azure preview portal](https://manage.windowsazure.cn) previously, using your user credentials, then Azure will remember the credentials and use them whenever you deploy any app from GitHub or BitBucket in the future. However, if you haven’t done this already, deployment of the JSON template will fail when Azure Resource Manager tries to configure the web site’s source control settings because it cannot log into GitHub or BitBucket with the repository owner’s credentials.
 
-## 将 JSON 模板与已部署的资源组进行比较 ##
+## Compare the JSON template with deployed resource group ##
 
-在这里，你可在 [Azure 门户](https://manage.windowsazure.cn)中浏览所有的 Web 应用边栏选项卡，但存在另一个同样有用的工具。转到 [Azure 资源管理器](https://resources.azure.com)预览工具，它将为你提供订阅中所有资源组的 JSON 表示形式，因为它们实际存在于 Azure 后端。还可看到 Azure 中资源组的 JSON 层次结构如何与用于创建它的模板文件中的层次结构相对应。
+Here, you can go through all the web site’s blades in the [preview portal](https://manage.windowsazure.cn), but there’s another tool that’s just as useful, if not more. Go to the [Azure Resource Explorer](https://resources.azure.com) preview tool, which gives you a JSON representation of all the resource groups in your subscriptions, as they actually exist in the Azure backend. You can also see how the resource group’s JSON hierarchy in Azure corresponds with the hierarchy in the template file that’s used to create it.
 
-例如，当我转到 [Azure 资源管理器](https://resources.azure.com)工具并在浏览器中展开节点时，我可以看到资源组和收集在其各自资源类型下的根级别资源。
+For example, when I go to the [Azure Resource Explorer](https://resources.azure.com) tool and expand the nodes in the explorer, I can see the resource group and the root-level resources that are collected under their respective resource types.
 
 ![](./media/app-service-deploy-complex-application-predictably/ARM-1-treeview.png)
 
-如果你深入了解 Web 应用，应能够看到类似于以下屏幕快照的 Web 应用配置详细信息：
+If you drill down to a web site, you should be able to see web site configuration details similar to the below screenshot:
 
 ![](./media/app-service-deploy-complex-application-predictably/ARM-2-jsonview.png)
 
-再次重申，嵌套资源具有的层次结构应非常类似于 JSON 模板文件中的层次结构，且你应看到应用设置、连接字符串等正确反映在 JSON 窗格中。如果此处的设置不存在，则可能指示 JSON 文件存在问题，你可借此排查 JSON 模板文件的问题。
+Again, the nested resources should have a hierarchy very similar to those in your JSON template file, and you should see the app settings, connection strings, etc., properly reflected in the JSON pane. The absence of settings here may indicate an issue with your JSON file and can help you troubleshoot your JSON template file.
 
-## 自己部署资源组模板 ##
+## Deploy the resource group template yourself ##
 
-“部署到 Azure”按钮太好用了，但是只有当你已将 azuredeploy.json 推送到 GitHub 时，它才允许你部署 azuredeploy.json 中的资源组模板。Azure.NET SDK 还提供了工具，使你能够直接从本地计算机部署任何 JSON 模板文件。为此，请执行以下步骤：
+The **Deploy to Azure** button is great, but it allows you to deploy the resource group template in azuredeploy.json only if you have already pushed azuredeploy.json to GitHub. The Azure .NET SDK also provides the tools for you to deploy any JSON template file directly from your local machine. To do this, follow the steps below:
 
-1.	在 Visual Studio 中，单击“文件”>“新建”>“项目”。
+1.	In Visual Studio, click **File** > **New** > **Project**.
 
-2.	单击“Visual C#”>“云”>“Azure 资源组”，然后单击“确定”。
+2.	Click **Visual C#** > **Cloud** > **Azure Resource Group**, then click **OK**.
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-1-vsproject.png)
 
-3.	在“选择 Azure 模板”中，选择“空白模板”，然后单击“确定”。
+3.	In **Select Azure Template**, select **Blank Template** and click **OK**.
 
-4.	将 azuredeploy.json 拖动到新项目的“模板”文件夹。
+4.	Drag azuredeploy.json into the **Template** folder of your new project.
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-2-copyjson.png)
 
-5.	从解决方案资源管理器中打开复制的 azuredeploy.json。
+5.	From Solution Explorer, open the copied azuredeploy.json.
 
-6.	为了演示，让我们通过单击“添加资源”，将一些标准 Application Insight 资源添加到我们的 JSON 文件。如果你只对部署 JSON 文件感兴趣，请跳至部署步骤。
+6.	Just for the sake of the demonstration, let’s add some standard Application Insight resources to our JSON file, by clicking **Add Resource**. If you’re just interested in deploying the JSON file, skip to the deploy steps.
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-3-newresource.png)
 
-7.	选择“适用于 Web 应用的 Application Insights”，确保选择了现有 App Service 计划和 Web 应用，然后单击“添加”。
+7.	Select **Application Insights for Web Sites**, then make sure an existing App Service plan and web site is selected, and then click **Add**.
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-4-newappinsight.png)
 
-	现在你将能够看到几个新资源在 App Service 计划或 Web 应用上具有依赖项，具体取决于该资源及它的作用。这些资源不由其现有定义启用，而你将要对此进行更改。
+	You’ll now be able to see several new resources that, depending on the resource and what it does, have dependencies on either the App Service plan or the web site. These resources are not enabled by their existing definition and you’re going to change that.
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-5-appinsightresources.png)
  
-8.	在“JSON 概要”中，单击“appInsights AutoScale”以突出显示其 JSON 代码。这是针对你 App Service 计划的缩放设置。
+8.	In the JSON Outline, click **appInsights AutoScale** to highlight its JSON code. This is the scaling setting for your App Service plan.
 
-9.	在突出显示的 JSON 代码中，找到 `location` 和 `enabled` 属性并对其进行如下设置。
+9.	In the highlighted JSON code, locate the `location` and `enabled` properties and set them as shown below.
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-6-autoscalesettings.png)
 
-10.	在“JSON 概要”中，单击“CPUHigh appInsights”以突出显示其 JSON 代码。这是一个警报。
+10.	In the JSON Outline, click **CPUHigh appInsights** to highlight its JSON code. This is an alert.
 
-11.	找到 `location` 和 `isEnabled` 属性并对其进行如下设置。对其他三个警报（紫色警报）执行相同的操作。
+11.	Locate the `location` and `isEnabled` properties and set them as shown below. Do the same for the other three alerts (purple bulbs).
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-7-alerts.png)
 
-12.	你现在可以开始部署了。右键单击该项目，并选择“部署”>“新建部署”。
+12.	You’re now ready to deploy. Right-click the project and select **Deploy** > **New Deployment**.
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-8-newdeployment.png)
 
-13.	如果你尚未执行该操作，则登录到 Azure 帐户。
+13.	Log into your Azure account if you haven’t already done so.
 
-14.	在订阅中选择现有资源组或创建一个新资源组，选择“azuredeploy.json”，然后单击“编辑参数”。
+14.	Select an existing resource group in your subscription or create a new one, select **azuredeploy.json**, and then click **Edit Parameters**.
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-9-deployconfig.png)
 
-	现在你将能够在一张不错的表中编辑在模板文件中定义的所有参数。定义默认值的参数将已具有其默认值，并且定义允许值的列表的参数将显示为下拉列表。
+	You’ll now be able to edit all the parameters defined in the template file in a nice table. Parameters that define defaults will already have their default values, and parameters that define a list of allowed values will be shown as dropdowns.
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-10-parametereditor.png)
 
-15.	填写所有空参数，并使用 **repoUrl** 中的 [ToDoApp 的 GitHub 存储库地址](https://github.com/azure-appservice-samples/ToDoApp.git)。然后单击“保存”。
+15.	Fill in all the empty parameters, and use the [GitHub repo address for ToDoApp](https://github.com/azure-appservice-samples/ToDoApp.git) in **repoUrl**. Then, click **Save**.
  
 	![](./media/app-service-deploy-complex-application-predictably/deploy-11-parametereditorfilled.png)
 
-	>[AZURE.NOTE]自动缩放是**标准**层或更高层中提供的一项功能，而计划级别警报是**基本**层或更高层中提供的功能，你需要将 **sku** 参数设置为**标准**或**高级**，使所有新 App Insights 资源亮起。
+	>[AZURE.NOTE] Autoscaling is a feature offered in **Standard** tier or higher, and plan-level alerts are features offered in **Basic** tier or higher, you’ll need to set the **sku** parameter to **Standard** or **Premium** in order to see all your new App Insights resources light up.
 	
-16.	单击“部署”。如果选择了“保存密码”，密码将**以纯文本格式**保存在参数文件中。否则，你将需要在部署过程中输入数据库密码。
+16.	Click **Deploy**. If you selected **Save passwords**, the password will be saved in the parameter file **in plain text**. Otherwise, you’ll be asked to input the database password during the deployment process.
 
-就这么简单！ 现在只需转到 [Azure 门户](https://manage.windowsazure.cn)和 [Azure 资源管理器](https://resources.azure.com)工具，便可看到添加到 JSON 部署的应用程序中的新警报和自动缩放设置。
+That’s it! Now you just need to go to the [preview portal](https://manage.windowsazure.cn) and the [Azure Resource Explorer](https://resources.azure.com) tool to see the new alerts and autoscale settings added to your JSON deployed application.
 
-这部分中的步骤主要完成了以下内容：
+Your steps in this section mainly accomplished the following:
 
-1.	准备模板文件
-2.	创建参数文件以搭配模板文件
-3.	使用参数文件部署模板文件
+1.	Prepared the template file
+2.	Created a parameter file to go with the template file
+3.	Deployed the template file with the parameter file
 
-最后一步通过 PowerShell cmdlet 轻松完成。若要查看当 Visual Studio 部署应用程序时所执行的操作，请打开 Scripts\\Deploy-AzureResourceGroup.ps1。存在大量的代码，但我只将突使用参数文件部署模板文件所需的相关代码。
+The last step is easily done by a PowerShell cmdlet. To see what Visual Studio did when it deployed your application, open Scripts\Deploy-AzureResourceGroup.ps1. There’s a lot of code there, but I’m just going to highlight all the pertinent code you need to deploy the template file with the parameter file.
 
 ![](./media/app-service-deploy-complex-application-predictably/deploy-12-powershellsnippet.png)
 
-最后一个 cmdlet，`New-AzureResourceGroup`，实际执行了该操作。所有这一切向你展示了，借助工具可相对简单地以可预见的方式部署云应用程序。每当你使用相同的参数文件在相同的模板上运行该 cmdlet 时，都将获得相同的结果。
+The last cmdlet, `New-AzureResourceGroup`, is the one that actually performs the action. All this should demonstrate to you that, with the help of tooling, it is relatively straightforward to deploy your cloud application predictably. Every time you run the cmdlet on the same template with the same parameter file, you’re going to get the same result.
 
-## 摘要 ##
+## Summary ##
 
-在 DevOps 中，可重复性和可预见性对成功部署由微服务构成的高扩展性应用程序至关重要。在本教程中，你已经通过使用 Azure 资源管理器模板将一个由两个微服务构成的应用程序作为单个资源组部署到 Azure。但愿这已为你提供所需的知识，使你能够在 Azure 中开始将应用程序转换为模板，并且能够以可预见的方式设置和部署它。
+In DevOps, repeatability and predictability are keys to any successful deployment of a high-scale application composed of microservices. In this tutorial, you have deployed a two-microservice application to Azure as a single resource group using the Azure Resource Manager template. Hopefully, it has given you the knowledge you need in order to start converting your application in Azure into a template and can provision and deploy it predictably. 
 
-## 后续步骤 ##
+## Next Steps ##
 
-了解如何[轻松地应用敏捷方法和连续发布微服务应用程序](/documentation/articles/app-service-agile-software-development)。
+Find out how to [apply agile methodologies and continuously publish your microservices application with ease](/documentation/articles/app-service-agile-software-development) and advanced deployment techniques like [flighting deployment](/documentation/articles/app-service-web-test-in-production-controlled-test-flight) easily.
 
-<a name="resources">
-## 更多资源 ##
+<a name="resources"></a>
+## More resources ##
 
-
--	[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
--	[Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)
--	[高级模板操作](/documentation/articles/resource-group-advanced-template)
--	[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)
--	[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)
--	[Azure 中的资源组部署疑难解答](/documentation/articles/resource-group-deploy-debug)
+-	[Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates)
+-	[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
+-	[Azure Resource Manager Template Functions](/documentation/articles/resource-group-template-functions)
+-	[Deploy an application with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy)
+-	[Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager)
+-	[Troubleshooting Resource Group Deployments in Azure](/documentation/articles/resource-group-deploy-debug)
 
 
 
 
  
-
-<!---HONumber=67-->

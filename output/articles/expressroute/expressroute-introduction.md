@@ -33,7 +33,7 @@ See the [ExpressRoute FAQ](/documentation/articles/expressroute-faqs) for more d
 
 You can create a connection between your on-premises network and the Microsoft cloud in three different ways
 
-1. **Co-located at a cloud exchange.** If you are co-located in a facility with a cloud exchange, you can order virtual cross-connections to the Microsoft cloud through the co-location provider’s Ethernet exchange. Co-location providers can offer either Layer 2 cross-connections, or managed Layer 3 cross-connections between your infrastructure in the co-location facility and the Microsoft cloud.
+1. **Co-located at a cloud exchange.** If you are co-located in a facility with a cloud exchange, you can order virtual cross-connections to the Microsoft cloud through the co-location providerâs Ethernet exchange. Co-location providers can offer either Layer 2 cross-connections, or managed Layer 3 cross-connections between your infrastructure in the co-location facility and the Microsoft cloud.
 2.	**Point-to-point Ethernet connections.** You can connect your on-premises datacenters/offices to the Microsoft cloud through point-to-point Ethernet links. Point-to-point Ethernet providers can offer Layer 2 connections, or managed Layer 3 connections between your site and the Microsoft cloud.
 3.	**Any-to-any (IPVPN) networks.** You can integrate your WAN with the Microsoft cloud. IPVPN providers (typically MPLS VPN) offer any-to-any connectivity between your branch offices and datacenters. The Microsoft cloud can be interconnected to your WAN to make it look just like any other branch office. WAN providers typically offer managed Layer 3 connectivity.
 
@@ -51,7 +51,7 @@ Microsoft uses industry standard dynamic routing protocol (BGP) to exchange rout
 
 ### Redundancy
 
-Each ExpressRoute circuit consists of two connections to two Microsoft Enterprise edge routers (MSEEs) from the connectivity provider / your network edge. Microsoft will require dual BGP connection from the connectivity provider / your side – one to each MSEE. You may choose not to deploy redundant devices / Ethernet circuits at your end. However, connectivity providers use redundant devices to ensure that your connections are handed off to Microsoft in a redundant manner. A redundant Layer 3 connectivity configuration is a requirement for our [SLA](/support/legal/sla/) to be valid. 
+Each ExpressRoute circuit consists of two connections to two Microsoft Enterprise edge routers (MSEEs) from the connectivity provider / your network edge. Microsoft will require dual BGP connection from the connectivity provider / your side â one to each MSEE. You may choose not to deploy redundant devices / Ethernet circuits at your end. However, connectivity providers use redundant devices to ensure that your connections are handed off to Microsoft in a redundant manner. A redundant Layer 3 connectivity configuration is a requirement for our [SLA](/support/legal/sla/) to be valid. 
 
 ### Connectivity to Microsoft cloud services
 
@@ -59,7 +59,7 @@ ExpressRoute connections enable access to the following services.
 
 - Windows Azure services
 - Microsoft Office 365 services
-- Microsoft CRM Online services (coming soon) 
+- Microsoft CRM Online services 
  
 You can visit the [ExpressRoute FAQ](/documentation/articles/expressroute-faqs) page for a detailed list of services supported over ExpressRoute.
 

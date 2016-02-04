@@ -8,7 +8,7 @@
    editor="tysonn" /> 
 <tags
 	ms.service="service-bus"
-	ms.date="09/18/2015"
+	ms.date="12/28/2015"
 	wacn.date=""/>
 
 # Paired Namespace implementation details and cost implications
@@ -18,7 +18,7 @@ The [PairNamespaceAsync][] method, using a [SendAvailabilityPairedNamespaceOptio
 -   Creation of backlog queues.
 -   Creation of a [MessageSender][] object that talks to queues or topics.
 -   When a messaging entity becomes unavailable, sends ping messages to the entity in an attempt to detect when that entity becomes available again.
--   Optionally creates of a set of “message pumps” that move messages from the backlog queues to the primary queues.
+-   Optionally creates of a set of âmessage pumpsâ that move messages from the backlog queues to the primary queues.
 -   Coordinates closing/faulting of the primary and secondary [MessagingFactory][] instances.
 
 At a high level, the feature works as follows: when the primary entity is healthy, no behavior changes occur. When the [FailoverInterval][] duration elapses, and the primary entity sees no successful sends after a non-transient [MessagingException][] or a [TimeoutException][], the following behavior occurs:
@@ -113,9 +113,6 @@ See [Asynchronous messaging patterns and high availability] for a detailed discu
   [MessagingException]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingexception.aspx
   [TimeoutException]: https://msdn.microsoft.com/zh-cn/library/azure/system.timeoutexception.aspx
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
-  [0]: ./media/service-bus-paired-namespaces/IC673405.png
-  [1]: ./media/service-bus-paired-namespaces/IC673406.png
-  [2]: ./media/service-bus-paired-namespaces/IC673407.png
   [QueueDescription]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.aspx
   [TimeSpan]: https://msdn.microsoft.com/zh-cn/library/azure/system.timespan.aspx
   [PingPrimaryInterval]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sendavailabilitypairednamespaceoptions.pingprimaryinterval.aspx
@@ -123,4 +120,7 @@ See [Asynchronous messaging patterns and high availability] for a detailed discu
   [TopicClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx
   [ContentType]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.contenttype.aspx
   [TimeToLive]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx
-  [Asynchronous messaging patterns and high availability]: /documentation/articles/service-bus-async-messaging
+  [Asynchronous messaging patterns and high availability]: service-bus-async-messaging.md
+  [0]: ./media/service-bus-paired-namespaces/IC673405.png
+  [1]: ./media/service-bus-paired-namespaces/IC673406.png
+  [2]: ./media/service-bus-paired-namespaces/IC673407.png

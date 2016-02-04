@@ -9,11 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/15/2015"
-	wacn.date=""/> 
+	ms.date="12/07/2015"
+	wacn.date=""/>
 
 # Store your mobile service project code in source control
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 > [AZURE.SELECTOR]
 - [.NET backend](/documentation/articles/mobile-services-dotnet-backend-store-code-source-control)
 - [Javascript backend](/documentation/articles/mobile-services-store-scripts-source-control)
@@ -72,13 +75,11 @@ Now that you have created your local repository, you can make changes to server 
 		    request.execute();
 		    console.log(JSON.stringify(item, null, 4));
 		}
-
 	This code simply writes the inserted item to the log. If this file already contains code, simply add some valid JavaScript code to this file, such as a call to `console.log()`, then save your changes.
 
 3. In the Git command prompt, type the following command to start tracking the new script file:
 
 		$ git add .
-
 
 4. Type the following command to commit changes:
 
@@ -87,10 +88,9 @@ Now that you have created your local repository, you can make changes to server 
 5. Type the following command to upload the changes to the remote repository:
 
 		$ git push origin master
-
 	You should see a series of commands that indicates that the commit is deployed to the mobile service.
 
-6. Back in the Management Portal, click the **Data** tab, then click the **TodoItem** table, click  **Script**, then select the **Insert** operation. Notice that the displayed insert operation script is the same as the JavaScript code that you just uploaded to the repository.
+6. Back in the [Azure Management Portal], click the **Data** tab, then click the **TodoItem** table, click  **Script**, then select the **Insert** operation. Notice that the displayed insert operation script is the same as the JavaScript code that you just uploaded to the repository.
 
 ##<a name="use-npm"></a>Leverage shared code and Node.js modules in your server scripts
 
@@ -98,13 +98,13 @@ Mobile Services provides access to the full set of core Node.js modules, which y
 
 The recommended way to add Node.js modules to your mobile service is by adding references to the service's package.json file. Next, you will add the [node-uuid] Node.js module to your mobile service by updating the package.json file. When the update is pushed to Azure, the mobile service is restarted and the module is installed. This module is then used to generate a new GUID value for the **uuid** property on inserted items.
 
-2. Navigate to the `.\service` folder of your local Git repository, and open the package.json file in a text editor, and add the following field to the **dependencies** object:
+<!-- deleted by customization 2 --><!-- keep by customization: begin --> 1 <!-- keep by customization: end -->. Navigate to the `.\service` folder of your local Git repository, and open the package.json file in a text editor, and add the following field to the **dependencies** object:
 
 		"node-uuid": "~1.4.3"
 
 	>[AZURE.NOTE]This update to the package.json file will cause a restart in your mobile service after the commit is pushed.
 
-4. Now browse to the .\service\table subfolder, open the todoitem.insert.js file and modify it as follows:
+<!-- deleted by customization 4 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->. Now browse to the .\service\table subfolder, open the todoitem.insert.js file and modify it as follows:
 
 		function insert(item, user, request) {
 		    var uuid = require('node-uuid');
@@ -115,12 +115,11 @@ The recommended way to add Node.js modules to your mobile service is by adding r
 
 	This code adds a uuid column to the table, populating it with unique GUID identifiers.
 
-5. As in the previous section, type the following command in the Git command prompt:
+<!-- deleted by customization 5 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. As in the previous section, type the following command in the Git command prompt:
 
 		$ git add .
 		$ git commit -m "added node-uuid module"
 		$ git push origin master
-
 	This adds the new file, commits your changes, and pushes the new node-uuid module and changes to the todoitem.insert.js script to your mobile service.
 
 ## <a name="next-steps"> </a>Next steps
@@ -144,9 +143,15 @@ Now that you have completed this tutorial you know how to store your scripts in 
 <!-- URLs. -->
 [Git website]: http://git-scm.com
 [Source control]: http://msdn.microsoft.com/zh-cn/library/azure/c25aaede-c1f0-4004-8b78-113708761643
-[Installing Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
+[Installing Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
+<!-- deleted by customization
+[Get started with Mobile Services]: mobile-services-ios-get-started.md
+[Work with server scripts in Mobile Services]: mobile-services-how-to-use-server-scripts.md
+-->
+<!-- keep by customization: begin -->
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Work with server scripts in Mobile Services]: /documentation/articles/mobile-services-how-to-use-server-scripts
+<!-- keep by customization: end -->
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Modules]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid

@@ -1,20 +1,16 @@
 <properties
-   pageTitle="Service Fabric programming models | Microsoft Azure"
+   pageTitle="Service Fabric programming models | Windows Azure"
    description="Service Fabric offers two frameworks for building services: the actor framework and the services framework. They offer distinct trade-offs in simplicity and control."
    services="service-fabric"
    documentationCenter=".net"
    authors="seanmck"
-   manager="coreysa"
+   manager="timlt"
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotNet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="10/15/2015"
-   ms.author="seanmck"/>
+	ms.service="service-fabric"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 # Choose a framework for your service
 
@@ -33,5 +29,5 @@ Keep in mind that it is perfectly reasonable to use different frameworks for dif
 
 ## Next steps
 
-- [Learn more about the Reliable Actors APIs](service-fabric-reliable-actors-introduction.md)
-- [Learn more about the Reliable Services APIs](../Service-Fabric/service-fabric-reliable-services-introduction.md)
+- [Learn more about the Reliable Actors APIs](/documentation/articles/service-fabric-reliable-actors-introduction)
+- [Learn more about the Reliable Services APIs](/documentation/articles/service-fabric-reliable-services-introduction)

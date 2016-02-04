@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 
@@ -36,11 +36,11 @@ You must have the following to successfully complete this Apache Storm tutorial:
 
 Storm on HDInsight uses Azure Blob storage for storing log files and topologies submitted to the cluster. Use the following steps to create an Azure Storage account for use with your cluster:
 
-1. Sign in to the [Azure Preview Portal][preview-portal].
+1. Sign in to the [Azure Management Portal][preview-portal].
 
 2. Select **NEW**, select __Data Analytics__, and then select __HDInsight__
 
-	![Creating a new cluster in the Azure Preview Portal](./media/hdinsight-apache-storm-tutorial-get-started/new-cluster.png)
+	![Creating a new cluster in the Azure Management Portal](./media/hdinsight-apache-storm-tutorial-get-started/new-cluster.png)
 
 3. Enter a __Cluster Name__, then select __Storm__ for the __Cluster Type__. A green check will appear beside the __Cluster Name__ if it is available.
 
@@ -118,7 +118,7 @@ The [storm-starter](https://github.com/apache/storm/tree/master/examples/storm-s
 
 2. Use the following command to start an example topology:
 
-        storm jar storm jar /usr/hdp/current/storm-client/contrib/storm-starter/storm-starter-topologies-0.9.3.2.2.4.9-1.jar storm.starter.WordCountTopology wordcount
+        storm jar /usr/hdp/current/storm-client/contrib/storm-starter/storm-starter-topologies-0.9.3.2.2.4.9-1.jar storm.starter.WordCountTopology wordcount
 		
 	> [AZURE.NOTE] The `0.9.3.2.2.4.9-1` portion of the file name may change as HDinsight is updated with newer versions of Storm.
 
@@ -226,5 +226,5 @@ In this Apache Storm tutorial, you used the Storm Starter to learn how to create
 [stormstarter]: https://github.com/apache/storm/tree/master/examples/storm-starter
 [stormjavadocs]: https://storm.incubator.apache.org/apidocs/
 [azureportal]: https://manage.windowsazure.cn/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
 [preview-portal]: https://manage.windowsazure.cn/

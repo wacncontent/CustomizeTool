@@ -71,15 +71,15 @@ The following articles discuss the different ways applications integrate with Az
 - [Integrating SaaS applications tutorials list](/documentation/articles/active-directory-saas-tutorial-list)
 
 ## Managing access to applications
-The following articles describe ways you can manage access to applications once they have been integrated with Azure AD using Azure AD Connectors and Azure AD in the Azure Management Portal.
+The following articles describe ways you can manage access to applications once they have been integrated with Azure AD using Azure AD Connectors and Azure AD.
 
 - [Managing access to apps using Azure AD](/documentation/articles/active-directory-managing-access-to-apps)
 - [Automating with Azure AD Connectors](/documentation/articles/active-directory-saas-app-provisioning)
-- [Assigning users to an application](/documentation/articles/active-directory-applications-guiding-developers-assigning-users) with the Azure Management Portal.
-- [Assigning groups to an application](/documentation/articles/active-directory-applications-guiding-developers-assigning-groups) with the Azure Management Portal.
+- [Assigning users to an application](/documentation/articles/active-directory-applications-guiding-developers-assigning-users)
+- [Assigning groups to an application](/documentation/articles/active-directory-applications-guiding-developers-assigning-groups)
 - [Sharing accounts](/documentation/articles/active-directory-sharing-accounts)
 
 ## Integrating custom applications
 If you are writing a new application and want to assist developers in leveraging the power Azure AD, see [Guiding developers](/documentation/articles/active-directory-applications-guiding-developers-for-lob-applications).
 
-If you want to add your custom application to the Azure Application Gallery, see [“Bring your own app” with Azure AD Self-Service SAML configuration](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx).
+If you want to add your custom application to the Azure Application Gallery, see [âBring your own appâ with Azure AD Self-Service SAML configuration](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx).

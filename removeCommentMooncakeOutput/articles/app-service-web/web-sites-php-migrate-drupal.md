@@ -62,7 +62,7 @@ Save the **settings.php** file. Now you are ready to deploy.
 
 The last step is to deploy your code to Azure  Websites using Git or FTP.
 
-If you are using FTP, get the FTP hostname and username from you  Website’s dashboard. Then, use any FTP client to upload the Drupal files to the **/site/wwwroot** folder of the remote site.
+If you are using FTP, get the FTP hostname and username from you  Websiteâs dashboard. Then, use any FTP client to upload the Drupal files to the **/site/wwwroot** folder of the remote site.
 
 If you are using Git, you should have set up a Git repository in the previous steps. You must install Git on your local machine. Then, follow the instructions provided after you created the repository.
 

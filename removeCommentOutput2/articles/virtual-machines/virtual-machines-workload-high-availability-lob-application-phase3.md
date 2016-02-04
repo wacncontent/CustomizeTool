@@ -15,12 +15,13 @@
 
 # Line of Business Application Workload Phase 3: Configure SQL Server infrastructure
 
-In this phase of deploying a a high-availability line of business application in Azure infrastructure services, you configure the two computers running SQL Server and the cluster majority node computer, and then combine them into a Windows Server cluster. 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
+In this phase of deploying a high-availability line of business application in Azure infrastructure services, you configure the two computers running SQL Server and the cluster majority node computer, and then combine them into a Windows Server cluster. 
 
 You must complete this phase before moving on to [Phase 4](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase4). See [Deploy a High-Availability Line of Business Application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview) for all of the phases.
 
-<!> [AZURE.NOTE] This article contains commands for Azure PowerShell Preview 1.0. To run these commands in Azure PowerShell 0.9.8 and prior versions, replace all instances of "-AzureRM" with "-Azure" and add the **Switch-AzureMode AzureResourceManager** command before you execute any commands. For more information, see [Azure PowerShell 1.0 Preview](https://azure.microsoft.com/blog/azps-1-0-pre/).
-> [AZURE.NOTE] These instructions use a SQL Server image in the Azure image gallery and you are charged ongoing costs for the use of the SQL Server license. It is also possible to create virtual machines in Azure and install your own SQL Server licenses, but those instructions are not included here.
+> [AZURE.NOTE] This article contains commands for Azure PowerShell Preview 1.0. To run these commands in Azure PowerShell 0.9.8 and prior versions, replace all instances of "-AzureRM" with "-Azure" and add the **Switch-AzureMode AzureResourceManager** command before you execute any commands. For more information, see [Azure PowerShell 1.0 Preview](https://azure.microsoft.com/blog/azps-1-0-pre/).
 
 ## Create the SQL Server cluster virtual machines in Azure
 
@@ -42,16 +43,16 @@ When you have supplied all the proper values, run the resulting block at the Azu
 	$rgName="<your resource group name>"
 	$locName="<Azure location of your resource group>"
 	# Change to the premium storage account
-	$saName="<Table ST – Item 1 – Storage account name column>"
-	$vnetName="<Table V – Item 1 – Value column>"
-	$avName="<Table A – Item 2 – Availability set name column>"
+	$saName="<Table ST - Item 1 - Storage account name column>"
+	$vnetName="<Table V - Item 1 - Value column>"
+	$avName="<Table A - Item 2 - Availability set name column>"
 	
 	# Create the first SQL server
-	$vmName="<Table M – Item 3 - Virtual machine name column>"
-	$vmSize="<Table M – Item 3 - Minimum size column>"
+	$vmName="<Table M - Item 3 - Virtual machine name column>"
+	$vmSize="<Table M - Item 3 - Minimum size column>"
 	$vnet=Get-AzureRMVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
 	$nic=New-AzureRMNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id
-	$avSet=Get-AzureRMAvailabilitySet –Name $avName –ResourceGroupName $rgName 
+	$avSet=Get-AzureRMAvailabilitySet -Name $avName -ResourceGroupName $rgName 
 	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
 	
 	$diskSize=<size of the extra disk for SQL data in GB>
@@ -70,8 +71,8 @@ When you have supplied all the proper values, run the resulting block at the Azu
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 	
 	# Create the second SQL Server virtual machine
-	$vmName="<Table M – Item 4 - Virtual machine name column>"
-	$vmSize="<Table M – Item 4 - Minimum size column>"
+	$vmName="<Table M - Item 4 - Virtual machine name column>"
+	$vmSize="<Table M - Item 4 - Minimum size column>"
 	$nic=New-AzureRMNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id
 	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
 	
@@ -90,11 +91,11 @@ When you have supplied all the proper values, run the resulting block at the Azu
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 	
 	# Change to the standard storage account
-	$saName="<Table ST – Item 2 – Storage account name column>"
+	$saName="<Table ST - Item 2 - Storage account name column>"
 	
 	# Create the cluster majority node server
-	$vmName="<Table M – Item 5 - Virtual machine name column>"
-	$vmSize="<Table M – Item 5 - Minimum size column>"
+	$vmName="<Table M - Item 5 - Virtual machine name column>"
+	$vmSize="<Table M - Item 5 - Minimum size column>"
 	$nic=New-AzureRMNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id
 	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the cluster majority node server." 
@@ -105,6 +106,8 @@ When you have supplied all the proper values, run the resulting block at the Azu
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-OSDisk.vhd"
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
+
+> [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure Preview portal. The **Connect** button will be unavailable when you view the properties of the virtual machine. Use the Remote Desktop Connection accessory or another Remote Desktop tool to connect to the virtual machine using its private IP address or intranet DNS name.
 
 ## Configure the computers running SQL Server
 
@@ -167,7 +170,7 @@ Use the following procedure twice, once for each SQL server, to allow remote des
 
 The SQL Server service requires a port that clients use to access the database server. It also needs ports to connect with the SQL Server Management Studio and to manage the high-availability group. Next, run the following command at an administrator-level Windows PowerShell prompt twice, once for each SQL Server virtual machine, to add a firewall rule that allows this type of inbound traffic.
 
-	New-NetFirewallRule -DisplayName "SQL Server ports 1433, 1434, and 5022" -Direction Inbound –Protocol TCP –LocalPort 1433,1434,5022 -Action Allow
+	New-NetFirewallRule -DisplayName "SQL Server ports 1433, 1434, and 5022" -Direction Inbound -Protocol TCP -LocalPort 1433,1434,5022 -Action Allow
 
 For each of the SQL Server virtual machines, sign out as the local administrator. 
 
@@ -238,7 +241,7 @@ Use these steps to enable AlwaysOn Availability Groups on SQL Server.
 2.	On the Start screen, type **SQL Server Configuration**, and then click **SQL Server Configuration Manager**.
 3.	In the left pane, click **SQL Server Services**.
 4.	In the contents pane, double-click **SQL Server (MSSQLSERVER)**.
-5.	In **SQL Server (MSSQLSERVER) Properties**, click the **AlwaysOn High Availability** tab, select **Enable AlwaysOn Availability Group**s, click **Apply**, and then click **OK** when prompted. Do not close the properties window yet. 
+5.	In **SQL Server (MSSQLSERVER) Properties**, click the **AlwaysOn High Availability** tab, select **Enable AlwaysOn Availability Group**s, click **Apply**, and then click **OK** when prompted. Do not close the properties window yet.
 6.	Click the virtual-machines-manage-availability tab, then type [Domain]**\sqlservice** in **Account Name**. Type the sqlservice account password in **Password** and **Confirm password**, and then click **OK**.
 7.	In the message window, click **Yes** to restart the SQL Server service.
 8.	Log on to the secondary SQL Server virtual machine with the sqladmin account and repeat steps 2 through 7. 

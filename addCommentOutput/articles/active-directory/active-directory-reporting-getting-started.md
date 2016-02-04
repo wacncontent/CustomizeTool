@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Reporting: Getting started"
+   pageTitle="Azure Active Directory Reporting: Getting started | Windows Azure"
    description="Lists the various available reports in Azure Active Directory reporting"
    services="active-directory"
    documentationCenter=""
@@ -9,14 +9,19 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/21/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
+<!-- deleted by customization
+# Getting started with Azure Active Directory Reporting
+-->
+<!-- keep by customization: begin -->
 # Getting started with Azure AD Reporting
+<!-- keep by customization: end -->
 
 ## What it is
 
-Azure Active Directory includes security, activity, and audit reports for your directory. Here's a list of the reports included:
+Azure Active Directory <!-- deleted by customization (Azure AD) --> includes security, activity, and audit reports for your directory. Here's a list of the reports included:
 
 ### Security reports
 

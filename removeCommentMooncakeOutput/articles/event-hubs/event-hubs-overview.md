@@ -6,10 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="" />
-<tags
-	ms.service="event-hubs"
-	ms.date="09/30/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="event-hubs"
+   ms.date="09/30/2015"
+   wacn.date="" />
 
 # Azure Event Hubs overview
 
@@ -158,7 +158,7 @@ Now that you've learned about Event Hubs concepts, you can move on to the follow
 - A complete [sample application that uses Event Hubs].
 - A [queued messaging solution] using Service Bus queues.
 
-[Event Hubs tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted
+[Event Hubs tutorial]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started
 [sample application that uses Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[queued messaging solution]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
+[queued messaging solution]: /documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues
  

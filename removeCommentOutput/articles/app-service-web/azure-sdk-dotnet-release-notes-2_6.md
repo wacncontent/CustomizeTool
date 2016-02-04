@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="08/08/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 
@@ -54,9 +54,11 @@ With Azure SDK 2.6 you can develop cloud service applications (PaaS) targeting .
 
 - **In-Role Cache** was updated to use **Microsoft Azure Storage SDK** version 4.3. Until now, the **In-Role Cache** was using Azure Storage SDK version 1.7.
 
-	Customers using Azure SDK 2.5 or below should update to Azure SDK 2.6 and move to the new version of Azure Storage SDK. Note that Azure Storage version 2011-08-18 will be removed on December 9th, 2015. For more details read [this announcement](http://azure.microsoft.com/blog/2014/08/04/microsoft-azure-storage-service-version-removal/). 
+	Customers using Azure SDK 2.5 or below should update to Azure SDK 2.6 and move to the new version of Azure Storage SDK. 
 
-	For more information, see [In-Role Cache for Azure Cache](https://msdn.microsoft.com/zh-cn/library/azure/dn386103.aspx).
+	At this time Azure Storage version 2011-08-18 is scheduled to be removed August 1, 2016. Any migrations of In-Role Cache from Azure SDK 2.5 or below to 2.6 must be complete by this time. For more information on the retirement of Azure Storage version 2011-08-18, see [Windows Azure Storage Service Version Removal Update: Extension to 2016](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/10/19/microsoft-azure-storage-service-version-removal-update-extension-to-2016.aspx).
+
+>[AZURE.IMPORTANT]We're announcing the November 30, 2016, retirement for Azure Managed Cache Service and Azure In-Role Cache. We recommend that you migrate to Azure Redis Cache in preparation for this retirement. For more information on dates and migration guidance, see [Which Azure Cache offering is right for me?](/documentation/articles/cache-faq#which-azure-cache-offering-is-right-for-me)
 
 ##Azure Websites Tools
 
@@ -65,7 +67,7 @@ The following items were updated in the Azure SDK 2.6 release.
 - Azure publishing enhanced to include Azure API Apps as a deployment target.
 - API Apps provisioning functionality to enable users with API App creation and provisioning functionality.
 - Server Explorer changed to reflect new Azure Websites node, with Web, Mobile, and API apps grouped by Resource Group.
-- Add Azure API App Client gesture added to most C# projects that will enable automatic generation of Swagger-enabled API Apps running in a user’s Azure subscription.
+- Add Azure API App Client gesture added to most C# projects that will enable automatic generation of Swagger-enabled API Apps running in a user's Azure subscription.
 - API Apps tooling and Azure Websites nodes in Server Explorer are available in Visual Studio 2013 only. 
 
 ##Azure Resource Manager Tools updates
@@ -94,7 +96,7 @@ The Diagnostics storage account can now be specified in the service configuratio
 	- Universal App could not be loaded in Visual Studio 2015 when Azure SDK 2.6 was installed on the machine.
 	- Debugging a Cloud Service project would fail in Visual Studio 2013 and Visual Studio 2015 where Visual Studio becomes unresponsive and crashes while displaying a dialog box with the message "Configuring diagnostics for emulator".
 	
-	An update to Azure SDK 2.6 was released on 5/18/2015. The updated version is 2.6.30508.1601; it contains fixes for two issues described above. You can identify the build of the SDK from Control Panel -> Programs and Features -> Microsoft Azure Tools for Microsoft Visual Studio 2013 – v 2.6. The Version column will display the build number.
+	An update to Azure SDK 2.6 was released on 5/18/2015. The updated version is 2.6.30508.1601; it contains fixes for two issues described above. You can identify the build of the SDK from Control Panel -> Programs and Features -> Microsoft Azure Tools for Microsoft Visual Studio 2013 - v 2.6. The Version column will display the build number.
 
 	If you are still facing the above issues, install the latest version of the Azure 2.6 SDK for [VS 2012](http://go.microsoft.com/fwlink/p/?linkid=323511&clcid=0x409), [VS 2013](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) or [VS 2015](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409).
  

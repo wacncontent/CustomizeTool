@@ -3,19 +3,18 @@
 	description="The Country Filtering feature uses country codes to define the countries from which a request will be allowed or blocked for a secured directory." 
 	services="cdn" 
 	documentationCenter=".NET" 
-	authors="juliako" 
+	authors="camsoper" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="cdn" 
-
-	ms.date="09/01/2015" 
+<tags
+	ms.service="cdn"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 #Country codes
 
-The **Country Filtering** feature uses country codes to define the countries from which a request will be allowed or blocked for a secured directory. The table that follows contains all the country codes. If you specify “EU” (Europe) or "AP" (Asia/Pacific), a subset of IP addresses that originate from any country in that regions will be blocked or allowed. For details on how to use the country filtering feature, see [How to restrict access to your content by country](/documentation/articles/cdn-restrict-access-by-country).
+The **Country Filtering** feature uses country codes to define the countries from which a request will be allowed or blocked for a secured directory. The table that follows contains all the country codes. If you specify "EU" (Europe) or "AP" (Asia/Pacific), a subset of IP addresses that originate from any country in that regions will be blocked or allowed. For details on how to use the country filtering feature, see [How to restrict access to your content by country](/documentation/articles/cdn-restrict-access-by-country).
 
 | Code         | Country                                      | Additional Information                                                                                                                                                                                                                               
 |--------------|----------------------------------------------|------------------------------------------------------|

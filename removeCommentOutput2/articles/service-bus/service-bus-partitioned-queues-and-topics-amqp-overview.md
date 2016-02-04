@@ -30,7 +30,7 @@ A partitioned queue further increases the availability, reliability, and through
 
 ### Create partitioned queues
 
-You can create a partitioned queue using the Azure Management Portal and the Service Bus SDK. To create a partitioned queue, set the [EnablePartitioning](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx) property to **true** in the [QueueDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.aspx) instance. The following code shows how to create a partitioned queue using the Service Bus SDK. 
+You can create a partitioned queue using the [Azure Management Portal][] and the Service Bus SDK. To create a partitioned queue, set the [EnablePartitioning](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx) property to **true** in the [QueueDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.aspx) instance. The following code shows how to create a partitioned queue using the Service Bus SDK. 
  
 ```
 // Create partitioned queue
@@ -68,7 +68,7 @@ A partitioned topic further increases the availability, reliability, and through
 
 ### Create partitioned topics
 
-A partitioned topic can be created through the Azure Management Portal and the Service Bus SDK. To create a partitioned topic, set the [EnablePartitioning](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.enablepartitioning.aspx) property to **true** in the [TopicDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.aspx) instance. The following code shows how to create a patitioned topic using the Service Bus SDK.
+A partitioned topic can be created through the [Azure Management Portal][] and the Service Bus SDK. To create a partitioned topic, set the [EnablePartitioning](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.enablepartitioning.aspx) property to **true** in the [TopicDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.aspx) instance. The following code shows how to create a patitioned topic using the Service Bus SDK.
 	
 ```
 // Create partitioned topic
@@ -112,3 +112,4 @@ See the following additional information to learn more about partitioning messag
 *    [How to use the Java Message Service (JMS) API with Service Bus and AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)
 *    [How to use AMQP 1.0 with the Service Bus .NET API](/documentation/articles/service-bus-dotnet-advanced-message-queuing)
 
+[Azure Management Portal]: http://manage.windowsazure.cn

@@ -6,13 +6,13 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn"
    tags="azure-resource-manager"
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/16/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # How to manage NSGs using the preview portal

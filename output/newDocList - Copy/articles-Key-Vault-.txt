@@ -1,0 +1,4 @@
+new docs: 1, word count: {word_count_TODO}
+articles/Key-Vault/key-vault-logging.md
+
+new includes: 0

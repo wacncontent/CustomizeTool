@@ -1,10 +1,19 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Adobe EchoSign | Windows Azure" description="Learn how to use Adobe EchoSign with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties 
+    pageTitle="Tutorial: Azure Active Directory integration with Adobe EchoSign | Windows Azure" 
+    description="Learn how to use Adobe EchoSign with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
+    services="active-directory" authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="08/01/2015"
+	ms.date="10/22/2015"
 	wacn.date=""/>
+
 #Tutorial: Azure Active Directory integration with Adobe EchoSign
+<!-- keep by customization: begin -->
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=528195).
+<!-- keep by customization: end -->
+<!-- keep by customization: end -->
 
 The objective of this tutorial is to show the integration of Azure and Adobe EchoSign.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -12,7 +21,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   An Adobe EchoSign single sign on enabled subscription
 
-After completing this tutorial, the Azure AD users you have assigned to Adobe EchoSign will be able to single sign into the application at your Adobe EchoSign company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to Adobe EchoSign will be able to single sign into the application at your Adobe EchoSign company site (service provider initiated sign on), or using the [Introduction to the Access <!-- keep by customization: begin --><!-- deleted by customization <!-- keep by customization: end --> Panel](/documentation/articles/active-directory-saas-access-panel-introduction). <!-- keep by customization: begin --> --><!-- keep by customization: begin --> Panel](https://msdn.microsoft.com/zh-cn/library/dn308586) <!-- keep by customization: end --><!-- keep by customization: end -->
 
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -147,4 +156,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-adobe-echosign-tutorial/IC767830.png "Yes")
 
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access <!-- keep by customization: begin --><!-- deleted by customization <!-- keep by customization: end --> Panel](/documentation/articles/active-directory-saas-access-panel-introduction) <!-- keep by customization: begin --> --><!-- keep by customization: begin --> Panel](https://msdn.microsoft.com/zh-cn/library/dn308586) <!-- keep by customization: end --><!-- keep by customization: end -->.

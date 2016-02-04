@@ -356,9 +356,9 @@ In this section, you update the code in the project you completed for the [Get s
     ![][16]
 
 6. Only the devices that have registered with the matching username tag receive the notification message.
-
+	
 	![][15]
-
+ 
 ## Next Steps
 
 * If you want to segment your users by interest groups, see [Use Notification Hubs to send breaking news].

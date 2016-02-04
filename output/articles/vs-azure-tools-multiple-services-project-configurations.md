@@ -1,14 +1,14 @@
 <properties
-   pageTitle="Configuring your Azure project using multiple service configurations"
+   pageTitle="Configuring your Azure project using multiple service configurations | Windows Azure"
    description="Learn how to configure an Azure cloud service project by changing the ServiceDefinition.csdef and ServiceConfiguration.cscfg files."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="09/29/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 # Configuring Your Azure Project Using Multiple Service Configurations
@@ -59,7 +59,7 @@ On the **Settings** page, you can add configuration settings for your service. C
 
 ### Configuring a connection string to a storage account
 
-A connection string is a configuration setting that provides connection and authentication information for the storage emulator or for an Azure storage account. Whenever your code must access Azure storage services data – that is, blob, queue, or table data – from code running in a role, you will have to define a connection string for that storage account.
+A connection string is a configuration setting that provides connection and authentication information for the storage emulator or for an Azure storage account. Whenever your code must access Azure storage services data - that is, blob, queue, or table data - from code running in a role, you will have to define a connection string for that storage account.
 
 A connection string that points to an Azure storage account must use a defined format. For information about how to create connection strings, see [Configure Azure Storage Connection Strings](/documentation/articles/storage-configure-connection-string).
 

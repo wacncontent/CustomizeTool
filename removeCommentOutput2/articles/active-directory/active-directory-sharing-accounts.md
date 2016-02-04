@@ -44,19 +44,17 @@ Azure AD supports shared accounts for any Enterprise Mobility Suite (EMS), Premi
 
 Azure AD features that enable account sharing include:
 
-- [Password single sign-on](/documentation/articles/active-directory-passwords-getting-started)
+- [Password single sign-on](/documentation/articles/active-directory-appssoaccess-whatis#password-based-single-sign-on)
 - Password single sign-on agent
 - [Group assignment](/documentation/articles/active-directory-accessmanagement-self-service-group-management)
 - Custom Password apps
 - [App usage dashboard/reports](/documentation/articles/active-directory-passwords-get-insights)
 - End user access portals
 - [App proxy](/documentation/articles/active-directory-application-proxy-get-started)
-- [Active Directory Marketplace](http://azure.microsoft.com/home/features/identity/all/)
 
 ## Sharing an account
 To use Azure AD to share an account you will need to:
 
-- Add an application [app gallery](https://azure.microsoft.com/home/features/identity/) or [custom application](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx)
 - Configure the application for password Single Sign-On (SSO)
 - Use [group based assignment](/documentation/articles/active-directory-accessmanagement-group-saasapps) and select the option to enter a shared credential
 - Optional: in some applications, such as Facebook, Twitter, or LinkedIn, you can enable the option for [Azure AD automated password roll-over](http://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx)

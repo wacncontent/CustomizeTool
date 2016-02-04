@@ -9,10 +9,12 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/29/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Azure Active Directory Reporting Search
+
+*This documentation is part of the [Azure Active Directory Reporting Guide](/documentation/articles/active-directory-reporting-guide).*
 
 Azure Active Directory provides directory admins the ability to search for user security, activity, and audit events across multiple reports.
 

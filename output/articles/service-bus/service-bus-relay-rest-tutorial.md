@@ -15,7 +15,7 @@
 
 This tutorial describes how to build a simple Service Bus host application that exposes a REST-based interface. REST enables a web client, such as a web browser, to access the Service Bus APIs through HTTP requests.
 
-This tutorial uses the Windows Communication Foundation (WCF) REST programming model to construct a REST service on Service Bus. For more information, see [WCF REST Programming Model](https://msdn.microsoft.com/zh-cn/library/bb412169.aspx) and [Designing and Implementing Services](https://msdn.microsoft.com/zh-cn/library/ms729746.aspx) in the WCF documentation.
+This tutorial uses the Windows Communication Foundation (WCF) REST programming model to construct a REST service on Service Bus. For more information, seeÂ [WCF REST Programming Model](https://msdn.microsoft.com/zh-cn/library/bb412169.aspx) and [Designing and Implementing Services](https://msdn.microsoft.com/zh-cn/library/ms729746.aspx) in the WCF documentation.
 
 ## Step 1: Sign up for an Azure account
 
@@ -23,9 +23,9 @@ The first step is to create a service namespace, and to obtain a Shared Access S
 
 ### To create a service namespace and obtain a SAS key
 
-1. To create a namespace in the Azure Management Portal, follow the steps in [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/zh-cn/library/hh690931.aspx).
+1. To create a namespace in the [Azure Management Portal][], follow the steps in [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/zh-cn/library/hh690931.aspx).
 
-2. In the main window of the Azure Management Portal, click the name of the service namespace you created in the previous step.
+2. In the main window of the portal, click the name of the service namespace you created in the previous step.
 
 3. Click **Configure** to view the shared access policies for the namespace.
 
@@ -296,7 +296,7 @@ As with the previous steps, there is very little difference between implementing
 
 	This step configures a service that uses the previously defined default **webHttpRelayBinding**. It also uses the default **sbTokenProvider**, which is defined in the next step.
 
-6. After the `<services>` element, create a `<behaviors>` element with the following content, replacing "SAS_KEY" with the *Shared Access Signature* (SAS) key you obtained from the Azure Management Portal in Step 1.
+6. After the `<services>` element, create a `<behaviors>` element with the following content, replacing "SAS_KEY" with the *Shared Access Signature* (SAS) key you obtained from the [Azure Management Portal][] in Step 1.
 
 	```
 	<behaviors>
@@ -577,3 +577,5 @@ Now that you've built an application that uses the Service Bus relay service, se
 - [Azure Service Bus architectural overview](/documentation/articles/service-bus-fundamentals-hybrid-solutions#relays)
 
 - [How to Use the Service Bus Relay Service](/documentation/articles/service-bus-dotnet-how-to-use-relay)
+
+[Azure Management Portal]: http://manage.windowsazure.cn

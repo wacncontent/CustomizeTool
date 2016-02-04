@@ -7,9 +7,9 @@
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags
-	ms.service="sql-database"
-	ms.date="07/07/2015"
+<tags 
+	ms.service="sql-database" 
+	ms.date="07/07/2015" 
 	wacn.date=""/>
 
 
@@ -128,7 +128,7 @@ This section shows how to connect to SQL Database instance using different
 
 
 If you choose to use Visual Studio and your configuration doesn't
-include an Azure web application as a front-end, there are no
+include an Azure Website as a front-end, there are no
 additional tools or SDKs needed to be installed on the development
 computer. You can just start developing your application.
 
@@ -237,5 +237,5 @@ For more information, see [EntityClient Provider for the Entity Framework](http:
 
 ## Next Steps
 
-Now that you have learned the basics of connecting to SQL Database, see [Development: How-to Topics (SQL Database)](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
+Now that you have learned the basics of connecting to SQL Database, see [Development: How-to Topics (SQL Database)](http://msdn.microsoft.com//zh-cn/library/azure/ee621787.aspx)
  

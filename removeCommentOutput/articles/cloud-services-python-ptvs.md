@@ -30,12 +30,12 @@ This article provides an overview of using Python web and worker roles using [Py
 
 ## What are Python web and worker roles?
 
-Azure provides three compute models for running applications: [Web Apps feature in Azure Websites][execution model-web sites], [Azure Virtual Machines][execution model-vms], and [Azure Cloud Services][execution model-cloud services]. All three models support Python. Cloud Services, which include web and worker roles, provide *Platform as a Service (PaaS)*. Within a cloud service, a web role provides a dedicated Internet Information Services (IIS) web server to host front-end web applications, while a worker role can run asynchronous, long-running or perpetual tasks independent of user interaction or input.
+Azure provides three compute models for running applications: [web sites feature in Azure Websites][execution model-web sites], [Azure Virtual Machines][execution model-vms], and [Azure Cloud Services][execution model-cloud services]. All three models support Python. Cloud Services, which include web and worker roles, provide *Platform as a Service (PaaS)*. Within a cloud service, a web role provides a dedicated Internet Information Services (IIS) web server to host front-end web sites, while a worker role can run asynchronous, long-running or perpetual tasks independent of user interaction or input.
 
 For more information, see [What is a Cloud Service?].
 
 > [AZURE.NOTE] *Looking to build a simple website?*
-If your scenario involves just a simple website front-end, consider using the lightweight Web Apps feature in Azure Websites. You can easily upgrade to a Cloud Service as your website grows and your requirements change. See the <a href="/develop/python/">Python Developer Center</a> for articles that cover development of the Web Apps feature in Azure Websites.
+If your scenario involves just a simple website front-end, consider using the lightweight web sites feature in Azure Websites. You can easily upgrade to a Cloud Service as your website grows and your requirements change. See the <a href="/develop/python/">Python Developer Center</a> for articles that cover development of the web sites feature in Azure Websites.
 <br />
 
 
@@ -118,11 +118,11 @@ For more details about using Azure services from your web and worker roles, such
 [execution model-cloud services]: fundamentals-application-models.md#CloudServices
 [Python Developer Center]: /develop/python/
 
-[Blob Service]: /documentation/articles/storage-python-how-to-use-blob-storage
-[Queue Service]: /documentation/articles/storage-python-how-to-use-queue-storage
-[Table Service]: /documentation/articles/storage-python-how-to-use-table-storage
-[Service Bus Queues]: /documentation/articles/service-bus-python-how-to-use-queues
-[Service Bus Topics]: /documentation/articles/service-bus-python-how-to-use-topics-subscriptions
+[Blob Service]: storage-python-how-to-use-blob-storage.md
+[Queue Service]: storage-python-how-to-use-queue-storage.md
+[Table Service]: storage-python-how-to-use-table-storage.md
+[Service Bus Queues]: service-bus-python-how-to-use-queues.md
+[Service Bus Topics]: service-bus-python-how-to-use-topics-subscriptions.md
 
 
 <!--External Link references-->

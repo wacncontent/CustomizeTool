@@ -1,7 +1,7 @@
 <properties
-    pageTitle="Python Flask Web Application Development with DocumentDB | Microsoft Azure"
-    description="Review a database tutorial on using DocumentDB to store and access data from a Python Flask web application hosted on Azure. Find application development solutions." 
-	keywords="Application development, database tutorial, python flask, python web application, python web development, documentdb, azure, Microsoft azure"
+    pageTitle="Python Flask web site Development with DocumentDB | Windows Azure"
+    description="Review a database tutorial on using DocumentDB to store and access data from a Python Flask web site hosted on Azure. Find application development solutions." 
+	keywords="Application development, database tutorial, python flask, python web site, python web development, documentdb, azure, Microsoft azure"
     services="documentdb"
     documentationCenter="python"
     authors="ryancrawcour"
@@ -9,28 +9,37 @@
     editor="cgronlun"/>
 
 <tags
-    ms.service="documentdb"
-    ms.workload="data-management"
-    ms.tgt_pltfrm="na"
-    ms.devlang="python"
-    ms.topic="hero-article"
-    ms.date="09/21/2015"
-    ms.author="ryancraw"/>
+	ms.service="documentdb"
+	ms.date="09/21/2015"
+	wacn.date=""/>
 
+<!-- deleted by customization
+# Python Flask web site Development with DocumentDB
+-->
+<!-- keep by customization: begin -->
 # Python Flask Web Application Development with DocumentDB
+<!-- keep by customization: end -->
 
 > [AZURE.SELECTOR]
+<!-- deleted by customization
+- [.NET](/documentation/articles/documentdb-dotnet-application)
+- [Node.js](/documentation/articles/documentdb-nodejs-application)
+- [Java](/documentation/articles/documentdb-java-application)
+- [Python](/documentation/articles/documentdb-python-application)
+-->
+<!-- keep by customization: begin -->
 - [.NET](documentdb-dotnet-application.md)
 - [Node.js](documentdb-nodejs-application.md)
 - [Java](documentdb-java-application.md)
 - [Python](documentdb-python-application.md)
+<!-- keep by customization: end -->
 
 To highlight how customers can efficiently leverage Azure DocumentDB to
-store and query JSON documents, this document provides an end-to-end Python web application
-tutorial showing how to build a voting web application using Azure DocumentDB.
+store and query JSON documents, this document provides an end-to-end Python web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end -->
+tutorial showing how to build a voting web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end --> using Azure DocumentDB.
 
 This tutorial shows you how to use the DocumentDB service provided by
-Azure to store and access data from a Python web application hosted on
+Azure to store and access data from a Python web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end --> hosted on
 Azure and presumes that you have some prior experience using Python and
 Azure websites.
 
@@ -38,13 +47,13 @@ This database tutorial covers:
 
 1. Creating and provisioning a DocumentDB account.
 2. Creating a Python MVC application.
-3. Connecting to and using Azure DocumentDB from your web application.
-4. Deploying the web application to Azure Websites.
+3. Connecting to and using Azure DocumentDB from your web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end -->.
+4. Deploying the web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end --> to Azure Websites.
 
 By following this tutorial, you will build a simple voting
 application that allows you to vote for a poll.
 
-![Screen shot of the todo list web application created by this database tutorial](./media/documentdb-python-application/image1.png)
+![Screen shot of the todo list web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end --> created by this database tutorial](./media/documentdb-python-application/image1.png)
 
 
 ## Database tutorial prerequisites
@@ -61,21 +70,28 @@ that you have the following installed:
 
 ## Step 1: Create a DocumentDB database account
 
-Let's start by creating a DocumentDB account. If you already have an account, you can skip to [Step 2: Create a new Python Flask web application](#Step-2:-Create-a-new-Python-Flask-Web-Application).
+Let's start by creating a DocumentDB account. If you already have an account, you can skip to [Step 2: Create a new Python Flask web <!-- deleted by customization site](#Step-2:-Create-a-new-Python-Flask-Web-Application) --><!-- keep by customization: begin --> application](#Step-2:-Create-a-new-Python-Flask-Web-Application) <!-- keep by customization: end -->.
 
+<!-- deleted by customization
+[AZURE.INCLUDE [documentdb-create-dbaccount](../includes/documentdb-create-dbaccount.md)]
+
+[AZURE.INCLUDE [documentdb-keys](../includes/documentdb-keys.md)]
+-->
+<!-- keep by customization: begin -->
 [AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
 [AZURE.INCLUDE [documentdb-keys](../../includes/documentdb-keys.md)]
+<!-- keep by customization: end -->
 
 <br/>
-We will now walk through how to create a new Python Flask web application from the ground up.
+We will now walk through how to create a new Python Flask web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end --> from the ground up.
 
-## Step 2: Create a new Python Flask web application
+## Step 2: Create a new Python Flask web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end -->
 
 1. Open Visual Studio, click **File** -\> **New Project** -\> **Python** -\>, **Flask Web
 Project**, and then create a new project with the name **tutorial**.
 
-	For those new to Python Flask, it is a web application development framework that helps us build web applications in Python faster. [Click here to access Flask tutorials][].
+	For those new to Python Flask, it is a web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end --> development framework that helps us build web <!-- deleted by customization sites --><!-- keep by customization: begin --> applications <!-- keep by customization: end --> in Python faster. [Click here to access Flask tutorials][].
 
 	![Screen shot of the New Project window in Visual Studio with Python highlighted on the left, Python Flask Web Project selected in the middle, and the name tutorial in the Name box](./media/documentdb-python-application/image9.png)
 
@@ -85,7 +101,7 @@ install external packages. Click **Install into a virtual environment**. Be sure
 	![Screen shot of the database tutorial - Python Tools for Visual Studio window](./media/documentdb-python-application/image10.png)
 
 
-## Step 3: Modify the Python Flask web application
+## Step 3: Modify the Python Flask web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end -->
 
 ### Add Python Flask packages to your project
 
@@ -186,7 +202,7 @@ database used by the form. Do not delete any of the existing code in
             	year=datetime.now().year,
             	message='You just created a new database, collection, and document.  Your old votes have been deleted')
 
-> [AZURE.TIP] The **CreateCollection** method takes an optional **RequestOptions** as the third parameter. This can be used to specify the Offer Type for the collection. If no offerType value is supplied, then the collection will be created using the default Offer Type. For more information on DocumentDB Offer Types, see [Performance levels in DocumentDB](documentdb-performance-levels.md).
+> [AZURE.TIP] The **CreateCollection** method takes an optional **RequestOptions** as the third parameter. This can be used to specify the Offer Type for the collection. If no offerType value is supplied, then the collection will be created using the default Offer Type. For more information on DocumentDB Offer Types, see [Performance levels in <!-- deleted by customization DocumentDB](/documentation/articles/documentdb-performance-levels) --><!-- keep by customization: begin --> DocumentDB](documentdb-performance-levels.md) <!-- keep by customization: end -->.
 >
 ### Read database, collection, document, and submit form
 
@@ -338,7 +354,7 @@ Explorer should look.
 	![Screen shot of the Visual Studio Solution Explorer window](./media/documentdb-python-application/image15.png)
 
 
-## Step 4: Run your web application locally
+## Step 4: Run your web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end --> locally
 
 1. Press F5 or click the **Run** button in Visual Studio, and you should see the
 following on your screen.
@@ -347,24 +363,24 @@ following on your screen.
 
 2. Click **Create/Clear the Voting Database** to generate the database.
 
-	![Screen shot of the Create Page of the web application – development details](./media/documentdb-python-application/image17.png)
+	![Screen shot of the Create Page of the web <!-- deleted by customization site â --><!-- keep by customization: begin --> application – <!-- keep by customization: end --> development details](./media/documentdb-python-application/image17.png)
 
 3. Then, click **Vote** and select your option.
 
-	![Screen shot of the web application with a voting question posed](./media/documentdb-python-application/image18.png)
+	![Screen shot of the web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end --> with a voting question posed](./media/documentdb-python-application/image18.png)
 
 4. For every vote you cast, it increments the appropriate counter.
 
 	![Screen shot of the Results of the vote page shown](./media/documentdb-python-application/image19.png)
 
 
-## Step 5: Deploy the web application to Azure Websites
+## Step 5: Deploy the web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end --> to Azure Websites
 
 Now that you have the complete application working correctly against
 DocumentDB, we're going to deploy this to Azure Websites.
 
 1. Right-click the project in Solution Explorer (make sure you're not still running it
-locally) and select **Publish**.  Then, select **Microsoft Azure Websites**.
+locally) and select **Publish**.  Then, select <!-- deleted by customization **Windows --><!-- keep by customization: begin --> **Microsoft <!-- keep by customization: end --> Azure Websites**.
 
  	![Screen shot of the tutorial selected in Solution Explorer, with the Publish option highlighted](./media/documentdb-python-application/image20.png)
 
@@ -378,12 +394,12 @@ running in Azure!
 
 ## Next steps
 
-Congratulations! You have just completed your first Python web application using
+Congratulations! You have just completed your first Python web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end --> using
 Azure DocumentDB and published it to Azure Websites.
 
 We update and improve this topic frequently based on your feedback.  Once you've completed the tutorial, please using the voting buttons at the top and bottom of this page, and be sure to include your feedback on what improvements you want to see made. If you'd like us to contact you directly, feel free to include your email address in your comments.
 
-To add additional functionality to your web application, review the APIs available in the [DocumentDB Python SDK](https://pypi.python.org/pypi/pydocumentdb).
+To add additional functionality to your web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end -->, review the APIs available in the [DocumentDB Python SDK](https://pypi.python.org/pypi/pydocumentdb).
 
 For more information, see the [Python Developer Center](/develop/python/).
 
@@ -395,4 +411,9 @@ For more information, see the [Python Developer Center](/develop/python/).
   [2]: https://www.python.org/downloads/windows/
   [3]: http://aka.ms/vcpython27
   [Microsoft Web Platform Installer]: http://www.microsoft.com/web/downloads/platform.aspx
+<!-- deleted by customization
+  [Azure Management Portal]: http://manage.windowsazure.cn
+-->
+<!-- keep by customization: begin -->
   [Azure portal]: http://portal.azure.com
+<!-- keep by customization: end -->

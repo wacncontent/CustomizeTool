@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Upgrade to Azure SQL Database V12 using the Azure preview portal | Windows Azure" 
-	description="Explains how to upgrade to Azure SQL Database V12 including how to upgrade Web and Business databases, and how to upgrade a V11 server migrating its databases directly into an elastic database pool using the Azure preview portal." 
+	pageTitle="Upgrade to Azure SQL Database V12 using the Azure Management Portal | Windows Azure" 
+	description="Explains how to upgrade to Azure SQL Database V12 including how to upgrade Web and Business databases, and how to upgrade a V11 server migrating its databases directly into an elastic database pool using the Azure Management Portal." 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="stevestein" 
@@ -13,11 +13,11 @@
 	wacn.date=""/>
 
 
-# Upgrade to Azure SQL Database V12 using the Azure preview portal
+# Upgrade to Azure SQL Database V12 using the Azure Management Portal
 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](/documentation/articles/sql-database-upgrade-server-portal)
+- [Azure Management Portal](/documentation/articles/sql-database-upgrade-server-portal)
 - [PowerShell](/documentation/articles/sql-database-upgrade-server-powershell)
 
 
@@ -38,7 +38,7 @@ Note that your databases will remain online and continue to work throughout the 
 
 Upgrading to SQL Database V12 cannot be undone. After an upgrade the server cannot be reverted to V11. 
 
-After upgrading to V12, [service tier recommendations](/documentation/articles/sql-database-service-tier-advisor) and [elastic pool recommendations](/documentation/articles/sql-database-elastic-pool-portal#step-2-choose-a-pricing-tier) will not immediately be available until the service has time to evaluate your workloads on the new server. V11 server recommendation history does not apply to V12 servers so it is not retained.  
+After upgrading to V12, [service tier recommendations](/documentation/articles/sql-database-service-tier-advisor) and [elastic pool recommendations](/documentation/articles/sql-database-elastic-pool-portal/#step-2-choose-a-pricing-tier) will not immediately be available until the service has time to evaluate your workloads on the new server. V11 server recommendation history does not apply to V12 servers so it is not retained.
 
 
 ## Prepare to upgrade
@@ -51,7 +51,7 @@ After upgrading to V12, [service tier recommendations](/documentation/articles/s
 
 ## Start the upgrade
 
-1. In the [Azure Preview Portal](http://manage.windowsazure.cn/) browse to the server you want to upgrade by selecting **BROWSE ALL** > **SQL servers**, and selecting the desired server.
+1. In the [Azure Management Portal](http://manage.windowsazure.cn) browse to the server you want to upgrade by selecting **BROWSE ALL** > **SQL servers**, and selecting the desired server.
 2. Select **Latest SQL database update**, then select **Upgrade this server**.
 
       ![upgrade server][1]
@@ -60,7 +60,7 @@ After upgrading to V12, [service tier recommendations](/documentation/articles/s
 
 If your server has any Web or Business databases you must upgrade them. During the process of upgrading to SQL Database V12 you will update all Web and Business databases to a new service tier.    
 
-To assist you with upgrading, the SQL Database service recommends an appropriate service tier and performance level (pricing tier) for each database. The service recommends the best tier for running your existing database’s workload by analyzing the historical usage for your database. 
+To assist you with upgrading, the SQL Database service recommends an appropriate service tier and performance level (pricing tier) for each database. The service recommends the best tier for running your existing databaseâs workload by analyzing the historical usage for your database. 
     
 3. In the **Upgrade this server** blade select each database to review and select the recommended pricing tier to upgrade to. You can always browse the available pricing tiers and select the one that suits your environment best.
 
@@ -96,11 +96,11 @@ After all databases on the server are eligible you are ready to start the upgrad
 
 ## Move your databases into an elastic database pool
 
-In the [Azure preview portal](https://manage.windowsazure.cn/) browse to the V12 server and click **Add pool**.
+In the [Azure Management Portal](https://manage.windowsazure.cn) browse to the V12 server and click **Add pool**.
 
 -or-
 
-If you see a message saying **Click here to view the recommended elastic database pools for this server**, click it to easily create a pool that is optimized for your server's databases. For details, see [Recommended elastic database pools](/documentation/articles/sql-database-elastic-pool-portal#recommended-elastic-database-pools).
+If you see a message saying **Click here to view the recommended elastic database pools for this server**, click it to easily create a pool that is optimized for your server's databases. For details, see [Recommended elastic database pools](/documentation/articles/sql-database-elastic-pool-portal/#recommended-elastic-database-pools).
 
 ![Add pool to a server][7]
    
@@ -111,7 +111,7 @@ Follow the directions in the [Create an elastic database pool](/documentation/ar
 
 After upgrading, it is recommended to monitor the database actively to ensure applications are running at the desired performance and optimize usage as needed. 
 
-In addition to monitoring individual databases you can monitor elastic database pools [using the portal](/documentation/articles/sql-database-elastic-pool-portal#monitor-and-manage-an-elastic-database-pool) or with [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell#monitoring-elastic-databases-and-elastic-database-pools) 
+In addition to monitoring individual databases you can monitor elastic database pools [using the portal](/documentation/articles/sql-database-elastic-pool-portal/#monitor-and-manage-an-elastic-database-pool) or with [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell/#monitoring-elastic-databases-and-elastic-database-pools) 
 
 
 **Resource consumption data:** For Basic, Standard, and Premium databases resource consumption data is available through the [sys.dm_ db_ resource_stats](http://msdn.microsoft.com/zh-cn/library/azure/dn800981.aspx) DMV in the user database. This DMV provides near real time resource consumption information at 15 second granularity for the previous hour of operation. The DTU percentage consumption for an interval is computed as the maximum percentage consumption of the CPU, IO and log dimensions. Here is a query to compute the average DTU percentage consumption over the last hour:
@@ -128,7 +128,7 @@ In addition to monitoring individual databases you can monitor elastic database 
 Additional monitoring information:
 
 - [Azure SQL Database performance guidance for single databases](http://msdn.microsoft.com/zh-cn/library/azure/dn369873.aspx).
-- [Price and performance considerations for an elastic database pool](sql-database=elastic-pool-guidance.md).
+- [Price and performance considerations for an elastic database pool](/documentation/articles/sql-database=elastic-pool-guidance).
 - [Monitoring Azure SQL Database using dynamic management views](/documentation/articles/sql-database-monitoring-with-dmvs)
 
 
@@ -136,7 +136,7 @@ Additional monitoring information:
 
 **Alerts:** Set up 'Alerts' in the Azure Management Portal to notify you when the DTU consumption for an upgraded database approaches certain high level. Database alerts can be setup in the Azure Management Portal for various performance metrics like DTU, CPU, IO, and Log. Browse to your database and select **Alert rules** in the **Settings** blade.
 
-For example, you can set up an email alert on “DTU Percentage” if the average DTU percentage value exceeds 75% over the last 5 minutes. Refer to [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) to learn more about how to configure alert notifications.
+For example, you can set up an email alert on âDTU Percentageâ if the average DTU percentage value exceeds 75% over the last 5 minutes. Refer to [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) to learn more about how to configure alert notifications.
 
 
 
@@ -144,7 +144,7 @@ For example, you can set up an email alert on “DTU Percentage” if the averag
 
 ## Next Steps
 
-- [Check for elastic database pool recommendations](/documentation/articles/sql-database-elastic-pool-portal#recommended-elastic-database-pools).
+- [Check for elastic database pool recommendations](/documentation/articles/sql-database-elastic-pool-portal/#recommended-elastic-database-pools).
 - [Create an elastic database pool](/documentation/articles/sql-database-elastic-pool-portal) and add some or all of your databases into a pool.
 - [Change the service tier and performance level of your database](/documentation/articles/sql-database-scale-up).
 

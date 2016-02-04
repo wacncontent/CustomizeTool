@@ -1,15 +1,15 @@
 <properties
 	pageTitle="Create a Node.js chat application with Socket.IO in Azure Websites"
-	description="A tutorial that demonstrates using socket.io in a node.js web app hosted on Azure."
+	description="A tutorial that demonstrates using socket.io in a node.js web site hosted on Azure."
 	services="app-service\web"
 	documentationCenter="nodejs"
-	authors="MikeWasson"
+	authors="rmcmurray"
 	manager="wpickett"
-	editor="mollybos"/>
+	editor=""/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="07/02/2015"
+	ms.date="11/20/2015"
 	wacn.date=""/>
 
 
@@ -17,7 +17,7 @@
 
 # Create a Node.js chat application with Socket.IO in Azure Websites
 
-Socket.IO provides real-time communication between your node.js server and clients using WebSockets. It also supports fallback to other transports (such as long polling) that work with older browsers. This tutorial will walk you through hosting a Socket.IO based chat application as an Azure web app, and show you how to [scale](#scale-out) the application using [Azure Redis Cache](/documentation/services/cache). For more information on Socket.IO, see [http://socket.io/][socketio].
+Socket.IO provides real-time communication between your node.js server and clients using WebSockets. It also supports fallback to other transports (such as long polling) that work with older browsers. This tutorial will walk you through hosting a Socket.IO based chat application as an Azure web site, and show you how to [scale](#scale-out) the application using [Azure Redis Cache](/documentation/services/redis-cache). For more information on Socket.IO, see [http://socket.io/][socketio].
 
 > [AZURE.NOTE] The procedures in this task apply to [Azure Websites](/documentation/services/web-sites/); for Cloud Services, see <a href="/documentation/articles/cloud-services-nodejs-chat-app-socketio/">Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service</a>.
 
@@ -63,9 +63,9 @@ and add it to the project you previously created.
 
     This will install the modules into a subfolder named **node_modules**.
 
-## Create an Azure Web App
+## Create an Azure web site
 
-Follow these steps to create an Azure web app, enable Git publishing, and then enable WebSocket support for the web app.
+Follow these steps to create an Azure web site, enable Git publishing, and then enable WebSocket support for the web site.
 
 > [AZURE.NOTE] To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=A7171371E" target="_blank">Azure Trial</a>.
 
@@ -76,22 +76,22 @@ Follow these steps to create an Azure web app, enable Git publishing, and then e
 		azure site deployment user set [username] [password]
 
 
-3. Change to the **\\node\chat** directory and use the following command to create a new Azure web app and a local Git repository. This command also creates a Git remote named 'azure'.
+3. Change to the **\\node\chat** directory and use the following command to create a new Azure web site and a local Git repository. This command also creates a Git remote named 'azure'.
 
 		azure site create mysitename --git
 
-	You must replace 'mysitename' with a unique name for your web app.
+	You must replace 'mysitename' with a unique name for your web site.
 
 2. Commit the existing files to the local repository by using the following commands:
 
 		git add .
 		git commit -m "Initial commit"
 
-3. Push the files to the Azure Web Apps repository with the following command:
+3. Push the files to the Azure web sites repository with the following command:
 
 		git push azure master
 
-	When prompted, enter your credentials from step 2. You will receive status messages as modules are imported on the server. Once this process has completed, the application will be hosted on your Azure web app.
+	When prompted, enter your credentials from step 2. You will receive status messages as modules are imported on the server. Once this process has completed, the application will be hosted on your Azure web site.
 
  	> [AZURE.NOTE] During module installation, you may notice errors that 'The imported project ... was not found'. These can safely be ignored.
 
@@ -99,21 +99,21 @@ Follow these steps to create an Azure web app, enable Git publishing, and then e
 
 		azure site set -w
 
-	If prompted, enter the name of the web app.
+	If prompted, enter the name of the web site.
 
 	>[AZURE.NOTE]
 	>The 'azure site set -w' command will work only with version 0.7.4 or higher of the Azure Command-Line Interface. You can also enable WebSocket support using the [Azure Management Portal](https://manage.windowsazure.cn).
-	>
 <!-- deleted by customization
-	>To enable WebSockets using the Azure Management Portal, click the web app from the Web Apps blade, click **All settings** > **Application settings**. Under **Web Sockets**, click **On**. Then click **Save**.
+	>
+	>To enable WebSockets using the Azure Management Portal, click the web site from the web sites blade, click **All settings** > **Application settings**. Under **Web Sockets**, click **On**. Then click **Save**.
 
 -->
 <!-- keep by customization: begin -->
 	>To enable WebSockets using the [Azure Management Portal](https://manage.windowsazure.cn), select the Configure page for your  Website, select 'ON' for the Web Sockets entry, and then click Save.
-	>	
 	>![websockets](./media/web-sites-nodejs-chat-app-socketio/websockets.png)
+	
 <!-- keep by customization: end -->
-5. To view the web app on Azure, use the following command to launch your web browser and navigate to the hosted web app:
+5. To view the web site on Azure, use the following command to launch your web browser and navigate to the hosted web site:
 
 		azure site browse
 
@@ -123,11 +123,11 @@ Your app is now running on Azure, and can relay chat messages between different 
 
 Socket.IO applications can be scaled out by using an __adapter__ to distribute messages and events between multiple application instances. While there are several adapters available, the [socket.io-redis](https://github.com/automattic/socket.io-redis) adapter can be easily used with the Azure Redis Cache feature.
 
-> [AZURE.NOTE] An additional requirement for scaling out a Socket.IO solution is support for sticky sessions. Sticky sessions are enabled by default for Azure Web Apps through Azure Request Routing. For more information, see [Instance Affinity in Azure Web Sites](http://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)
+> [AZURE.NOTE] An additional requirement for scaling out a Socket.IO solution is support for sticky sessions. Sticky sessions are enabled by default for Azure web sites through Azure Request Routing. For more information, see [Instance Affinity in Azure Web Sites](http://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)
 
 ###Create a Redis cache
 
-Perform the steps in [Create a cache in Azure Redis Cache](https://msdn.microsoft.com/zh-cn/library/dn690516.aspx) to create a new cache.
+Perform the steps in [Create a cache in Azure Redis Cache](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache) to create a new cache.
 
 > [AZURE.NOTE] Save the __Host name__ and __Primary key__ for your cache, as these will be needed in the next steps.
 
@@ -153,7 +153,7 @@ Perform the steps in [Create a cache in Azure Redis Cache](https://msdn.microsof
 
 	> [AZURE.NOTE] While the __socket.io-redis__ adapter can communicate directly to Redis, the current version does not support the authentication required by Azure Redis cache. So the initial connection is created using the __redis__ module, then the client is passed to the __socket.io-redis__ adapter.
 	>
-	> While Azure Redis Cache supports secure connections using port 6380, the modules used in this example do not support secure connections as of 7/14/2014. The above code uses the default, unsecure port of 6380.
+	> While Azure Redis Cache supports secure connections using port 6380, the modules used in this example do not support secure connections as of 7/14/2014. The above code uses the default, unsecure port of 6379.
 
 3. Save the modified __app.js__
 
@@ -171,13 +171,13 @@ Once the changes have been pushed to the server, you can scale your site across 
 
 Where __#__ is the number of instances to create.
 
-You can connect to your web app from multiple browsers or computers to verify that messages are correctly sent to all clients.
+You can connect to your web site from multiple browsers or computers to verify that messages are correctly sent to all clients.
 
 ## Troubleshooting
 
 ###Connection limits
 
-Azure Web Apps is available in multiple SKUs, which determine the resources available to your site. This includes the number of allowed WebSocket connections. For more information, see the [Web Apps Pricing page][pricing].
+Azure web sites is available in multiple SKUs, which determine the resources available to your site. This includes the number of allowed WebSocket connections. For more information, see the [web sites Pricing page][pricing].
 
 ###Messages aren't being sent using WebSockets
 
@@ -207,15 +207,15 @@ If client browsers keep falling back to long polling instead of using WebSockets
 
 * **Verify web.config settings**
 
-	Azure web apps that host Node.js applications use the **web.config** file to route incoming requests to the Node.js application. For WebSockets to function correctly with Node.js applications, the **web.config** must contain the following entry.
+	Azure web sites that host Node.js applications use the **web.config** file to route incoming requests to the Node.js application. For WebSockets to function correctly with Node.js applications, the **web.config** must contain the following entry.
 
 		<webSocket enabled="false"/>
 
 	This disables the IIS WebSockets module, which includes its own implementation of WebSockets and conflicts with Node.js specific WebSocket modules such as Socket.IO. If this line is not present, or is set to `true`, this may be the reason that the WebSocket transport is not working for your application.
 
-	Normally, Node.js applications do not include a **web.config** file, so Azure Websites will automatically generate one for Node.js applications when they are deployed. Since this file is automatically generated on the server, you must use the FTP or FTPS URL for your website to view this file. You can find the FTP and FTPS URLs for your site in the Azure Management portal by selecting your website, and then the **Dashboard** link. The URLs are displayed in the **quick glance** section.
+	Normally, Node.js applications do not include a **web.config** file, so Azure Websites will automatically generate one for Node.js applications when they are deployed. Since this file is automatically generated on the server, you must use the FTP or FTPS URL for your website to view this file. You can find the FTP and FTPS URLs for your site in the Management Portal by selecting your web site, and then the **Dashboard** link. The URLs are displayed in the **quick glance** section.
 
-	> [AZURE.NOTE] The **web.config** file is only generated by Azure Websites if your application does not provide one. If you provide a **web.config** file in the root of your application project, it will be used by Azure Web Apps.
+	> [AZURE.NOTE] The **web.config** file is only generated by Azure Websites if your application does not provide one. If you provide a **web.config** file in the root of your application project, it will be used by Azure web sites.
 
 	If the entry is not present, or is set to a value of `true`, then you should create a **web.config** in the root of your Node.js application and specify a value of `false`.  For reference, the below is a default **web.config** for an application that uses **app.js** as the entry point.
 
@@ -232,7 +232,7 @@ If client browsers keep falling back to long polling instead of using WebSockets
 		    <!-- Visit http://blogs.msdn.com/b/windowsazure/archive/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites.aspx for more information on WebSocket support -->
 		    <webSocket enabled="false" />
 		    <handlers>
-		      <!-- Indicates that the server.js file is a node.js web app to be handled by the iisnode module -->
+		      <!-- Indicates that the server.js file is a node.js web site to be handled by the iisnode module -->
 		      <add name="iisnode" path="app.js" verb="*" modules="iisnode"/>
 		    </handlers>
 		    <rewrite>
@@ -247,7 +247,7 @@ If client browsers keep falling back to long polling instead of using WebSockets
 		          <action type="Rewrite" url="public{REQUEST_URI}"/>
 		        </rule>
 
-		        <!-- All other URLs are mapped to the node.js web app entry point -->
+		        <!-- All other URLs are mapped to the node.js web site entry point -->
 		        <rule name="DynamicContent">
 		          <conditions>
 		            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="True"/>
@@ -271,14 +271,14 @@ If client browsers keep falling back to long polling instead of using WebSockets
 	If your application uses an entry point other than **app.js**, you must replace all occurrences of **app.js** with the correct entry point. For example, replacing **app.js** with **server.js**.
 
 <!-- deleted by customization
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 
 -->
 ##Next steps
 
-In this tutorial you learned how to create a chat application hosted in an Azure web app. You can also host this application as an Azure Cloud Service. For steps on how to accomplish this, see [Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service][cloudservice].
-<!-- deleted by customization
+In this tutorial you learned how to create a chat application hosted in an Azure web site. You can also host this application as an Azure Cloud Service. For steps on how to accomplish this, see [Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service][cloudservice].
 
+<!-- deleted by customization
 For more information, see also the [Node.js Developer Center](/develop/nodejs/).
 
 ## What's changed

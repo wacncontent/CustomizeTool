@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Install your StorSimple 8600 device | Microsoft Azure"
+   pageTitle="Install your StorSimple 8600 device | Windows Azure"
    description="Describes how to unpack, rack mount, and cable your StorSimple 8600 device before you deploy and configure the software."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="10/13/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/01/2015"
+	wacn.date=""/>
 
 # Unpack, rack-mount, and cable your StorSimple 8600 device
 
@@ -68,7 +64,7 @@ Next, complete the following steps to unpack your device.
   - 2 rack mount kits (4 side rails with mounting hardware, 2 each for the primary enclosure and EBOD enclosure), 1 in each box
   - Getting started documentation
 
-    If you did not receive any of the items listed above, [contact Microsoft Support](storsimple-contact-microsoft-support.md).  
+    If you did not receive any of the items listed above, [contact Microsoft Support](storsimple-contact-microsoft-support.md).
 
 The next step is to rack-mount your device. 
 
@@ -108,7 +104,7 @@ A set of mounting rails will be provided for use with the 19-inch rack cabinet. 
 
 #### To install the EBOD enclosure on the rails
 
-2. Perform this step only if inner rails are not installed on your device. Typically, the inner rails are installed at the factory. If rails are not installed, then install the left-rail and right-rail slides to the sides of the enclosure chassis. They attach using six metric screws on each side. To help with orientation, the rail slides are marked **LH – Front** and **RH – Front**, and the end that is affixed towards the rear of the enclosure has a tapered end.
+2. Perform this step only if inner rails are not installed on your device. Typically, the inner rails are installed at the factory. If rails are not installed, then install the left– rail and right– rail slides to the sides of the enclosure chassis. They attach using six metric screws on each side. To help with orientation, the rail slides are marked **LH - Front** and **RH - Front**, and the end that is affixed towards the rear of the enclosure has a tapered end.
 
     ![Attaching rail slides to enclosure chassis](./media/storsimple-8600-hardware-installation/HCSAttachingRailSlidestoEnclosureChassis.png) 
 
@@ -253,7 +249,7 @@ H,I  | Hosts (for example, file servers)
 When cabling the device, the minimum configuration requires:
 
 
-- At least two network interfaces connected on each controller with one for cloud access and one for iSCSI. The DATA 0 port is automatically enabled and configured via the serial console of the device. Apart from DATA 0, another data port also needs to be configured through the Management Portal. In this case, connect DATA 0 port to the primary LAN (network with Internet access). The other data ports can be connected to SAN/iSCSI LAN (VLAN) segment of the network, depending on the intended role.
+- At least two network interfaces connected on each controller with one for cloud access and one for iSCSI. The DATA 0 port is automatically enabled and configured via the serial console of the device. Apart from DATA 0, another data port also needs to be configured through the Azure Management Portal. In this case, connect DATA 0 port to the primary LAN (network with Internet access). The other data ports can be connected to SAN/iSCSI LAN (VLAN) segment of the network, depending on the intended role.
 
 - Identical interfaces on each controller connected to the same network to ensure availability if a controller failover occurs. For instance, if you choose to connect DATA 0 and DATA 3 for one of the controllers, you need to connect the corresponding DATA 0 and DATA 3 on the other controller.
 	
@@ -264,7 +260,7 @@ Keep in mind for high availability and performance:
 
 - When possible, connect network interfaces from each controller to two different switches to ensure availability against a switch failure. The figure illustrates the two 10 GbE network interfaces, DATA 2 and DATA 3, from each controller connected to two different switches. For more information, refer to the **Network interfaces** under the [High availability requirements for your StorSimple device](storsimple-system-requirements/#high-availability-requirements-for-storsimple.md).
 
->[AZURE.NOTE] If using SFP+ transceivers with your 10 GbE network interfaces, use the provided QSFP-SFP+ adapters. More information on [Supported hardware for 10 GbE network interfaces on your StorSimple device](storsimple-supported-hardware-for-10-gbe-network-interfaces.md)
+>[AZURE.NOTE] If using SFP+ transceivers with your 10 GbE network interfaces, use the provided QSFP-SFP+ adapters. More information on [Supported hardware for 10 GbE network interfaces on your StorSimple device](storsimple-supported-hardware-for-10-gbe-network-interfaces.md) 
 
 ### Serial port cabling
 

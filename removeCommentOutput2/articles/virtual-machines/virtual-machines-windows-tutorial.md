@@ -1,6 +1,9 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Create a virtual machine running Windows in the Azure preview portal | Windows Azure"
-	description="Learn how to create an Azure virtual machine running Windows, using the Azure Marketplace in the Azure preview portal"
+	pageTitle="Create a virtual machine running Windows in the Azure Management Portal | Windows Azure"
+	description="Learn how to create an Azure VM or virtual computer running Windows by using the Azure gallery in the Azure Management Portal"
+	keywords="azure vm,create a virtual machine,virtual computer,setting up a virtual machine"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -9,13 +12,13 @@
 	tags="azure-resource-manager"/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/14/2015"
+	ms.date="01/07/2016"
 	wacn.date=""/>
 
-# Create a virtual machine running Windows in the Azure preview portal#
+# Create a virtual machine running Windows in the Azure preview portal# 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](/documentation/articles/virtual-machines-windows-tutorial)
+- [Azure preview portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 - [Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 - [PowerShell: Resource Manager deployment](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 - [PowerShell: Classic deployment](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
@@ -44,12 +47,11 @@ This tutorial uses the Resource Manager deployment model to create the virtual m
 
 After you select the image, you can use Azure's default settings for most of the configuration and quickly create the virtual machine.
 
-1. On the **Create virtual machine** blade, click **Basics**. Enter a **Name** you want for the virtual machine, the administrative **User name**, and a strong **Password**. If you have more than one subscription, specify the one for the new virtual machine, as well as a new or existing **Resource group** and an Azure datacenter **Location**.
+1. On the **Create virtual machine** blade, click **Basics**.
 
 	![Configure VM basics](./media/virtual-machines-windows-tutorial/create_vm_basics.PNG)
 
-	>[AZURE.NOTE]**User name** refers to the administrative account that you'll use to manage the server. Create a password that's hard for others to guess but that you can remember. **You'll need the user name and password to log on to the virtual machine**.
-
+	
 2. Click **Size** and select an appropriate virtual machine size for your needs. Each size specifies the number of compute cores, memory, and other features, such as support for Premium Storage, which will affect the price. Azure recommends certain sizes automatically depending on the image you choose.
 
 	![Configure VM size](./media/virtual-machines-windows-tutorial/create_vm_size.PNG)
@@ -64,7 +66,7 @@ After you select the image, you can use Azure's default settings for most of the
 
 	![Configure VM settings](./media/virtual-machines-windows-tutorial/create_vm_summary.PNG)
 
-8. While Azure creates the virtual machine, you can track the progress in **Notifications**, in the Hub menu. After Azure creates the virtual machine, you'll see it on your Startboard unless you cleared **Pin to Startboard** in the **Create virtual machine** blade.
+8. While Azure creates the virtual machine, you can track the progress under **Virtual Machines** in the hub menu. 
 
 ## Log on to the virtual machine
 
@@ -74,7 +76,7 @@ After you create the virtual machine, you'll want to log on to it so you can man
 
 1. If you haven't already done so, sign in to the [portal](https://manage.windowsazure.cn).
 
-2. Click your virtual machine on the Startboard. If you need to find it, click **Browse All** > **Recent** or **Browse All** > **Virtual machines**. Then, select your virtual machine from the list.
+2. Click your virtual machine on the dashboard or click on Virtual Machines and select it from the list.
 
 3. On the virtual machine blade, click **Connect**.
 
@@ -88,9 +90,9 @@ After you create the virtual machine, you'll want to log on to it so you can man
 
 7. Click **Yes** to verify the identity of the virtual machine.
 
-	You can now work with the virtual machine just as you would with any other server.
+You can now work with the virtual machine just as you would with any other server.
 
 ## Next steps
 
 * Use Azure PowerShell and the Azure CLI to [find and select virtual machine images](/documentation/articles/resource-groups-vm-searching).
-* Automate virtual machine and workload deployment and management using [Azure Resource Manager](/documentation/articles/virtual-machines-how-to-automate-azure-resource-manager).
+* Automate virtual machine and workload deployment and management using [Azure Resource Manager templates](http://azure.microsoft.com/documentation/templates/).

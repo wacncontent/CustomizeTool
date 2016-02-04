@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Configure Azure Key Vault Integration for SQL Server on Azure VMs"
-	description="Learn how to automate the configuration of SQL Server encryption for use with Azure Key Vault. This topic explains how to use Azure Key Vault Integration with SQL Server virtual machines." 
+	pageTitle="Configure Azure Key Vault Integration for SQL Server on Azure VMs (Classic Deployment)"
+	description="Learn how to automate the configuration of SQL Server encryption for use with Azure Key Vault. This topic explains how to use Azure Key Vault Integration with SQL Server virtual machines create in the classic deployment model." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="rothja" 
@@ -10,13 +10,15 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/23/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
-# Configure Azure Key Vault Integration for SQL Server on Azure VMs
+# Configure Azure Key Vault Integration for SQL Server on Azure VMs 
 
 ## Overview
 There are multiple SQL Server encryption features, such as [transparent data encryption (TDE)](https://msdn.microsoft.com/zh-cn/library/bb934049.aspx), [column level encryption (CLE)](https://msdn.microsoft.com/zh-cn/library/ms173744.aspx), and [backup encryption](https://msdn.microsoft.com/zh-cn/library/dn449489.aspx). These forms of encryption require you to manage and store the cryptographic keys you use for encryption. The Azure Key Vault (AKV) service is designed to improve the security and management of these keys in a secure and highly available location. The [SQL Server Connector](http://www.microsoft.com/download/details.aspx?id=45344) enables SQL Server to use these keys from Azure Key Vault.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 If you running SQL Server with on-premises machines, there are [steps you can follow to access Azure Key Vault from your on-premises SQL Server machine](https://msdn.microsoft.com/zh-cn/library/dn198405.aspx). But for SQL Server in Azure VMs, you can save time by using the *Azure Key Vault Integration* feature. With a few Azure PowerShell cmdlets to enable this feature, you can automate the configuration necessary for a SQL VM to access your key vault.
 
@@ -50,7 +52,7 @@ Next, register an application with AAD. This will give you a Service Principal a
 ### Create a key vault
 In order to use Azure Key Vault to store the keys you will use for encryption in your VM, you need access to a key vault. If you have not already set up your key vault, create one by following the steps in the [Getting Started with Azure Key Vault](/documentation/articles/key-vault-get-started) topic. Before completing these steps, note that there is some information you need to collect during this set up that is needed later when you enable Azure Key Vault Integration on your SQL VM.
 
-When you get to the Create a key vault step, note the returned **vaultUri** property, which is the key vault URL. In the example provided in that step, shown below, the key vault name is ContosoKeyVault, therefore the key vault URL would be https://contosokeyvault.vault.azure.net/.
+When you get to the Create a key vault step, note the returned **vaultUri** property, which is the key vault URL. In the example provided in that step, shown below, the key vault name is ContosoKeyVault, therefore the key vault URL would be https://contosokeyvault.vault.chinacloudapi.cn/.
 
 ![Azure Active Directory Secret](./media/virtual-machines-sql-server-azure-key-vault-integration/new-azurekeyvault.png)
  
@@ -64,7 +66,7 @@ The following table lists the parameters required to run the PowerShell script i
 
 |Parameter|Description|Example|
 |---|---|---|
-|**$akvURL**|**The key vault URL**|"https://contosokeyvault.vault.azure.net/"|
+|**$akvURL**|**The key vault URL**|"https://contosokeyvault.vault.chinacloudapi.cn/"|
 |**$spName**|**Service Principal name**|"fde2b411-33d5-4e11-af04eb07b669ccf2"|
 |**$spSecret**|**Service Principal secret**|"9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM="|
 |**$credName**|**Credential name**: AKV Integration creates a credential within SQL Server, allowing the VM to have access to the key vault. Choose a name for this credential.|"mycred1"|
@@ -76,7 +78,7 @@ The **New-AzureVMSqlServerKeyVaultCredentialConfig** cmdlet creates a configurat
 
 1. In Azure PowerShell, first configure the input parameters with your specific values as described in the previous sections of this topic. The following script is an example.
 	
-		$akvURL = "https://contosokeyvault.vault.azure.net/"
+		$akvURL = "https://contosokeyvault.vault.chinacloudapi.cn/"
 		$spName = "fde2b411-33d5-4e11-af04eb07b669ccf2"
 		$spSecret = "9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM="
 		$credName = "mycred1"
@@ -86,7 +88,7 @@ The **New-AzureVMSqlServerKeyVaultCredentialConfig** cmdlet creates a configurat
 	
 		$secureakv =  $spSecret | ConvertTo-SecureString -AsPlainText -Force
 		$akvs = New-AzureVMSqlServerKeyVaultCredentialConfig -Enable -CredentialName $credname -AzureKeyVaultUrl $akvURL -ServicePrincipalName $spName -ServicePrincipalSecret $secureakv
-		Get-AzureVM –ServiceName $serviceName –Name $vmName | Set-AzureVMSqlServerExtension –KeyVaultCredentialSettings $akvs | Update-AzureVM
+		Get-AzureVM -ServiceName $serviceName -Name $vmName | Set-AzureVMSqlServerExtension -KeyVaultCredentialSettings $akvs | Update-AzureVM
 
 The SQL IaaS Agent Extension will update the SQL VM with this new configuration.
 
@@ -186,3 +188,5 @@ This script creates a symmetric key protected by the asymmetric key in the key v
 For more information on how to use these encryption features, see [Using EKM with SQL Server Encryption Features](https://msdn.microsoft.com/zh-cn/library/dn198405.aspx#UsesOfEKM).
 
 Note that the steps in this article assume that you already have SQL Server running on an Azure virtual machine. If not, see [Provision a SQL Server virtual machine in Azure](/documentation/articles/virtual-machines-provision-sql-server). For other guidance on running SQL Server on Azure VMs, see [SQL Server on Azure Virtual Machines overview](/documentation/articles/virtual-machines-sql-server-infrastructure-services).
+
+

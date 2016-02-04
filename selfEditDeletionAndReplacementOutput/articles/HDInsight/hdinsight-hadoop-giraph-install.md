@@ -4,43 +4,37 @@ deleted:
 
 		For information on using Giraph with a Linux-based cluster, see [Install Giraph on HDInsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-giraph-install-linux).
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		, Spark
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		- [Install Giraph on HDInsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-giraph-install-linux)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		[AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		- [Install Giraph on HDInsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-giraph-install-linux)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		- [Install and use Spark on HDInsight clusters][hdinsight-install-spark]: Script Action sample about installing Spark.
 
-reason: ()
-
-deleted:
-
-		[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
-
-reason: ()
+reason: (Spark managment)
 
 replacement:
 
@@ -111,7 +105,7 @@ replaced by:
 		
 		When prompted, enter the credentials for the cluster. It can take several minutes before the cluster is created.
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
@@ -240,5 +234,5 @@ replaced by:
 		
 		Provide a cluster name and press ENTER to provision a cluster with Giraph installed.
 
-reason: ()
+reason: (Spark managment)
 

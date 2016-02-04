@@ -3,19 +3,19 @@
 	 description="This topic shows how to enable the Content Delivery Network (CDN) for Azure." 
 	 services="cdn" 
 	 documentationCenter="" 
-	 authors="zhangmanling" 
+	 authors="camsoper" 
 	 manager="dwrede" 
 	 editor=""/>
 <tags
 	ms.service="cdn"
-	ms.date="09/01/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 
 
 #How to Enable Content Delivery Network (CDN)  for Azure  
 
-CDN can be enabled for your origin via Azure Management Portal. The current available origin type includes: Web Apps, storage, Cloud Services. You can also enable CDN for your Azure Media Services Streaming endpoint. Once you enable a CDN endpoint for your origin, all publicly available objects are eligible for CDN edge caching.
+CDN can be enabled for your origin via Azure Management Portal. The current available origin type includes: Web Sites, storage, Cloud Services. You can also enable CDN for your Azure Media Services Streaming endpoint. Once you enable a CDN endpoint for your origin, all publicly available objects are eligible for CDN edge caching.
 
 Note that now you can also create a custom origin and it does not have to be Azure.
 

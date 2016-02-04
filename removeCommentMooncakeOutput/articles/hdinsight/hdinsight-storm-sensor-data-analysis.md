@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Analyze sensor data with Apache Storm, Event Hub, and HBase in HDInsight (Hadoop)
@@ -20,7 +20,7 @@ Learn how to use Apache Storm on HDInsight to process sensor data from Azure Eve
 
 * An Azure subscription. See [Get Azure trial](/pricing/1rmb-trial/).
 
-* An [Apache Storm on HDInsight cluster](/documentation/articles/hdinsight-storm-getting-started)
+* An [Apache Storm on HDInsight cluster](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 
 * [Node.js](http://nodejs.org/): Used for the web dashboard and to send sensor data to Event Hub.
 
@@ -176,13 +176,13 @@ Open the **Config.properties** file and add the information you previously used 
 
 Before testing, you must start the dashboard to view the output of the topology and generate data to store in Event Hub.
 
-### Start the web application
+### Start the web site
 
-1. Open a new command prompt or terminal, and change directories to the **hdinsight-eventhub-example/dashboard**, then use the following command to install the dependencies needed by the web application:
+1. Open a new command prompt or terminal, and change directories to the **hdinsight-eventhub-example/dashboard**, then use the following command to install the dependencies needed by the web site:
 
 		npm install
 
-2. Use the following command to start the web application:
+2. Use the following command to start the web site:
 
 		node server.js
 

@@ -2,15 +2,16 @@
     pageTitle="Tutorial: Azure Active Directory integration with New Relic | Windows Azure" 
     description="Learn how to use New Relic with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with New Relic
+>[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=536553).
   
 The objective of this tutorial is to show how to set up single sign-on between Azure Active Directory and New Relic.
   
@@ -147,7 +148,7 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-new-relic-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).
 
 
 

@@ -3,13 +3,13 @@
 	description="Learn how to enable remote-desktop access for the virtual machines hosting your Azure Node.js application." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/01/2015"
+	ms.date="11/20/2015"
 	wacn.date=""/>
 
 
@@ -25,7 +25,7 @@ application.
 
 ## Prerequisites
 
-- Install and configure [Azure Powershell](/documentation/articles/install-configure-powershell).
+- Install and configure [Azure Powershell](/documentation/articles/powershell-install-configure).
 - Deploy a Node.js app to an Azure Cloud Service. For more information, see [Build and deploy a Node.js application to an Azure Cloud Service](/documentation/articles/cloud-services-nodejs-develop-deploy-app).
 
 
@@ -49,7 +49,7 @@ service configuration (.cscfg) files.
 
 	![enable-azureserviceprojectremotedesktop][enable-rdp]
 
-3.  Enter the following PowerShell cmdlet to publish the changes:
+<!-- deleted by customization 3 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->.  Enter the following PowerShell cmdlet to publish the changes:
 
     	Publish-AzureServiceProject
 
@@ -62,22 +62,22 @@ the role instance.
 
 1.  In the [Azure Management Portal], select **Cloud Services** and then select your service.
 
-	![azure management portal][cloud-services]
+	![Azure Management Portal][cloud-services]
 
 2.  Click **Instances**, and then click **Production** or **Staging** to see the instances for your service. Select an instance and then click **Connect** at the bottom of the page.
 
     ![The instances page][3]
 
-2.  When you click **Connect**, the web browser prompts you to save an
+<!-- deleted by customization 2 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->.  When you click **Connect**, the web browser prompts you to save an
     .rdp file. Open this file. (For example, if you're using Internet Explorer, click **Open**.)
 
     ![prompt to open or save the .rdp file][4]
 
-3.  When the file is opened, the following security prompt appears:
+<!-- deleted by customization 3 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->.  When the file is opened, the following security prompt appears:
 
     ![Windows security prompt][5]
 
-4.  Click **Connect**, and a security prompt will appear for entering
+<!-- deleted by customization 4 --><!-- keep by customization: begin --> 5 <!-- keep by customization: end -->.  Click **Connect**, and a security prompt will appear for entering
     credentials to access the instance. Enter the password you created
     in [Step 1][Step 1: Configure the service for Remote Desktop access using Azure PowerShell], and then click **OK**.
 
@@ -120,5 +120,4 @@ instances in the cloud, disable remote desktop access using [Azure PowerShell].
   [7]: ./media/cloud-services-nodejs-enable-remote-desktop/remote-desktop-14.png
   
   [Remotely Accessing Role Instances in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/hh124107.aspx
-  [Using Remote Desktop with Azure Roles]: http://msdn.microsoft.com/zh-cn/library/azure/gg443832.aspx
- 
+  [Using Remote Desktop with Azure Roles]: http://msdn.microsoft.com/zh-cn/library/azure/gg443832.aspx

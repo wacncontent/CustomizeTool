@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-	ms.service="service-bus"
-	ms.date="08/14/2015"
-	wacn.date=""/>
+   ms.service="service-bus"
+   ms.date="12/09/2015"
+   wacn.date=""/>
 
 # Use PowerShell to manage Service Bus and Event Hubs resources
 
@@ -21,9 +21,9 @@ Windows Azure PowerShell is a scripting environment that you can use to control 
 Before you begin, you'll need the following:
 
 - An Azure subscription. Azure is a subscription-based platform. For more
-information about obtaining a subscription, see [Purchase Options], [Member Offers], or [Trial].
+information about obtaining a subscription, see [Purchase Options][], [Member Offers][], or [Trial][].
 
-- A computer with Azure PowerShell. For instructions, see [Install and configure Azure PowerShell]
+- A computer with Azure PowerShell. For instructions, see [Install and configure Azure PowerShell][].
 
 - A general understanding of PowerShell scripts, NuGet packages, and the .NET Framework.
 
@@ -80,26 +80,26 @@ This part of the script does the following:
 3. If the namespace is not found, it creates the namespace and then retrieves the newly created namespace.
 
 	``` powershell
+		
+		$Namespace = "MyServiceBusNS"
+		$Location = "China East"
+		
+		# Query to see if the namespace currently exists
+		$CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
 
-	$Namespace = "MyServiceBusNS"
-	$Location = "China North"
-
-	# Query to see if the namespace currently exists
-	$CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
-
-	# Check if the namespace already exists or needs to be created
-	if ($CurrentNamespace)
-	{
-	    Write-Output "The namespace [$Namespace] already exists in the [$($CurrentNamespace.Region)] region."
-	}
-	else
-	{
-	    Write-Host "The [$Namespace] namespace does not exist."
-	    Write-Output "Creating the [$Namespace] namespace in the [$Location] region..."
-	    New-AzureSBNamespace -Name $Namespace -Location $Location -CreateACSNamespace false -NamespaceType Messaging
-	    $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
-	    Write-Host "The [$Namespace] namespace in the [$Location] region has been successfully created."
-	}
+		# Check if the namespace already exists or needs to be created
+		if ($CurrentNamespace)
+		{
+		    Write-Output "The namespace [$Namespace] already exists in the [$($CurrentNamespace.Region)] region."
+		}
+		else
+		{
+		    Write-Host "The [$Namespace] namespace does not exist."
+		    Write-Output "Creating the [$Namespace] namespace in the [$Location] region..."
+		    New-AzureSBNamespace -Name $Namespace -Location $Location -CreateACSNamespace false -NamespaceType Messaging
+		    $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
+		    Write-Host "The [$Namespace] namespace in the [$Location] region has been successfully created."
+		}
 	```
 To provision other Service Bus entities, create an instance of the `NamespaceManager` object from the SDK. You can use the [Get-AzureSBAuthorizationRule] cmdlet to retrieve an authorization rule that's used to provide a connection string. This example stores a reference to the `NamespaceManager` instance in the `$NamespaceManager` variable. The script later uses `$NamespaceManager` to provision other entities.
 
@@ -250,24 +250,24 @@ To create a queue or topic, perform a namespace check as in the previous section
 
 ## Next steps
 
-This article provides you with a basic outline for provisioning Service Bus entities using PowerShell. Although there are a limited number of PowerShell cmdlets available for managing Service Bus messaging entities, by referencing the Microsoft.ServiceBus.dll assembly, virtually any operation you can perform using the .NET client libraries you can also perform in a PowerShell script.
+This article provided you with a basic outline for provisioning Service Bus entities using PowerShell. Although there are a limited number of PowerShell cmdlets available for managing Service Bus messaging entities, by referencing the Microsoft.ServiceBus.dll assembly, virtually any operation you can perform using the .NET client libraries you can also perform in a PowerShell script.
 
-There are more detailed examples available on these blogs posts:
+There are more detailed examples available on these blog posts:
 
 - [How to create Service Bus queues, topics and subscriptions using a PowerShell script](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
 - [How to create a Service Bus Namespace and an Event Hub using a PowerShell script](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
 
-Some ready-made script are also available for download:
+Some ready-made scripts are also available for download:
 - [Service Bus PowerShell Scripts](https://code.msdn.microsoft.com/windowsazure/Service-Bus-PowerShell-a46b7059)
 
 <!--Anchors-->
 
 [Purchase Options]: /pricing/overview/
-[Member Offers]: /pricing/member-offers/
+[Member Offers]: http://azure.microsoft.com/zh-cn/pricing/member-offers/
 [Trial]: /pricing/1rmb-trial/
 [Service Bus NuGet package]: http://www.nuget.org/packages/WindowsAzure.ServiceBus/
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx
 [New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx
 [Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/zh-cn/library/azure/dn495113.aspx
 [.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
-[Install and configure Azure PowerShell]: /documentation/articles/install-configure-powershell
+[Install and configure Azure PowerShell]: /documentation/articles/powershell-install-configure

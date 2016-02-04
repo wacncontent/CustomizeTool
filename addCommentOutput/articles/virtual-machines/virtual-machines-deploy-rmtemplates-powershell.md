@@ -16,9 +16,19 @@
 # Manage virtual machines using Azure Resource Manager and PowerShell
 
 > [AZURE.SELECTOR]
-- [Preview Portal](/documentation/articles/virtual-machines-windows-tutorial)
+<!-- deleted by customization
+- [Azure PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
+-->
+<!-- keep by customization: begin -->
+- [Preview Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 - [PowerShell - Windows](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
+<!-- keep by customization: end -->
 - [Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
+<!-- deleted by customization
+
+<br> 
+
+-->
 
 Using Azure PowerShell and Resource Manager templates provides you with a lot of power and flexibility when managing resources in Windows Azure. You can use the tasks in this article to create and manage virtual machine resources.
 
@@ -116,15 +126,13 @@ It returns something like this:
 
 	Outputs           :
 
-<!-- deleted by customization
 If you would like to see a video of this task being done, take a look at this:
 
 [AZURE.VIDEO deploy-a-windows-virtual-machine-with-azure-resource-manager-templates-and-powershell]
--->
 
 ## <a id="customvm"></a>TASK: Create a virtual machine with a specialized disk
 
-This task uses a template from the template gallery. To learn more about the template, see [Create a VM from a specialized VHD <!-- deleted by customization disk](https://azure.microsoft.com/documentation/templates/201-vm-from-specialized-vhd/) --><!-- keep by customization: begin --> disk](https://www.windowsazure.cn/documentation/templates/201-vm-from-specialized-vhd/) <!-- keep by customization: end -->.
+This task uses a template from the template gallery. To learn more about the template, see [Create a VM from a specialized VHD disk](https://azure.microsoft.com/documentation/templates/201-vm-from-specialized-vhd/).
 
 In the following command, replace *deployment name* with the name that you want to use for the deployment and *resource group name* with the name of the existing resource group, and then run it:
 
@@ -147,15 +155,13 @@ You're prompted to supply the values of parameters in the **parameters** section
 
 > [AZURE.NOTE] The example shown above uses a vhd file that exists in the saacct storage account. The name of the disk was provided as a parameter to the template.
 
-<!-- deleted by customization
 If you would like to see a video of this task being done, take a look at this:
 
 [AZURE.VIDEO create-a-custom-virtual-machine-image-in-azure-resource-manager-with-powershell]
 
--->
 ## <a id="multivm"></a>TASK: Create a multiple virtual machines in a virtual network with an external load balancer
 
-This task uses a template from the template gallery. To learn more about the template, see [Create a VM from a specialized VHD <!-- deleted by customization disk](https://azure.microsoft.com/documentation/templates/201-2-vms-loadbalancer-lbrules/) --><!-- keep by customization: begin --> disk](https://www.windowsazure.cn/documentation/templates/201-2-vms-loadbalancer-lbrules/) <!-- keep by customization: end -->.
+This task uses a template from the template gallery. To learn more about the template, see [Create a VM from a specialized VHD disk](https://azure.microsoft.com/documentation/templates/201-2-vms-loadbalancer-lbrules/).
 
 ![](./media/virtual-machines-deploy-rmtemplates-powershell/multivmextlb.png)
 
@@ -176,11 +182,9 @@ You're prompted to supply the values of parameters in the **parameters** section
 	vmNamePrefix: WEBFARM
 	...
 
-<!-- deleted by customization
 If you would like to see a video of this task being done, take a look at this:
 
 [AZURE.VIDEO deploy-multi-vm-app-with-a-virtual-network-and-load-balancer-in-azure-resource-manager]
--->
 
 ## <a id="removerg"></a>TASK: Remove a resource group
 
@@ -267,11 +271,9 @@ It returns something like this:
 	Tags                     : {}
 	Type                     : Microsoft.Compute/virtualMachines
 
-<!-- deleted by customization
 If you would like to see a video of this task being done, take a look at this:
 
 [AZURE.VIDEO displaying-information-about-a-virtual-machine-in-microsoft-azure-with-powershell]
--->
 
 ## <a id="start"></a>TASK: Start a virtual machine
 
@@ -290,12 +292,10 @@ It returns something like this:
 	RequestId           : aac41de1-b85d-4429-9a3d-040b922d2e6d
 	StatusCode          : OK
 
-<!-- deleted by customization
 If you would like to see a video of this task being done, take a look at this:
 
 [AZURE.VIDEO start-stop-restart-and-delete-vms-in-microsoft-azure-with-powershell]
 
--->
 ## <a id="stop"></a>TASK: Stop a virtual machine
 
 In the following command, replace *resource group name* with the name of the resource group that contains the virtual machine and *VM name* with the name of the machine, and then run it:
@@ -319,12 +319,10 @@ It returns something like this:
 	RequestId           : 5cc9ddba-0643-4b5e-82b6-287b321394ee
 	StatusCode          : OK
 
-<!-- deleted by customization
 If you would like to see a video of this task being done, take a look at this:
 
 [AZURE.VIDEO start-stop-restart-and-delete-vms-in-microsoft-azure-with-powershell]
 
--->
 ## <a id="restart"></a>TASK: Restart a virtual machine
 
 In the following command, replace *resource group name* with the name of the resource group that contains the virtual machine and *VM name* with the name of the machine, and then run it:
@@ -342,17 +340,15 @@ It returns something like this:
 	RequestId           : 7dac33e3-0164-4a08-be33-96205284cb0b
 	StatusCode          : OK
 
-<!-- deleted by customization
 If you would like to see a video of this task being done, take a look at this:
 
 [AZURE.VIDEO start-stop-restart-and-delete-vms-in-microsoft-azure-with-powershell]
 
--->
 ## <a id="delete"></a>TASK: Delete a virtual machine
 
 In the following command, replace *resource group name* with the name of the resource group that contains the virtual machine and *VM name* with the name of the machine, and then run it:  
 
-	Remove-AzureRmVM -ResourceGroupName "resource group name" –Name "VM name"
+	Remove-AzureRmVM -ResourceGroupName "resource group name" âName "VM name"
 
 > [AZURE.NOTE] You can use the **-Force** parameter to skip the confirmation prompt.
 
@@ -373,19 +369,12 @@ It returns something like this:
 	RequestId           : 6a30d2e0-63ca-43cf-975b-058631e048e7
 	StatusCode          : OK
 
-<!-- deleted by customization
 If you would like to see a video of this task being done, take a look at this:
 
 [AZURE.VIDEO start-stop-restart-and-delete-vms-in-microsoft-azure-with-powershell]
 
--->
 ## Additional resources
-<!-- deleted by customization
 [Azure Quickstart Templates](http://azure.microsoft.com/documentation/templates/) and [App Frameworks](/documentation/articles/virtual-machines-app-frameworks)
--->
-<!-- keep by customization: begin -->
-[Azure Quickstart Templates](http://www.windowsazure.cn/documentation/templates/) and [App Frameworks](/documentation/articles/virtual-machines-app-frameworks)
-<!-- keep by customization: end -->
 
 [Azure compute, network and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 

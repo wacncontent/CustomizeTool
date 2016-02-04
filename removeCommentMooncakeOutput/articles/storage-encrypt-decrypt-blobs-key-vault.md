@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-	ms.service="storage"
-	ms.date="06/17/2015"
-	wacn.date=""/>
+   ms.service="storage"
+   ms.date="06/17/2015"
+   wacn.date=""/>
 
 # Encrypt and decrypt blobs in Windows Azure Storage using Azure Key Vault
 
@@ -148,7 +148,7 @@ Add the following code to encrypt a blob and upload it to your Azure storage acc
 	// Retrieve the key that you created previously.
 	// The IKey that is returned here is an RsaKey.
 	// Remember that we used the names contosokeyvault and testrsakey1.
-    var rsa = cloudResolver.ResolveKeyAsync("https://contosokeyvault.vault.azure.net/keys/TestRSAKey1", CancellationToken.None).GetAwaiter().GetResult();
+    var rsa = cloudResolver.ResolveKeyAsync("https://contosokeyvault.vault.chinacloudapi.cn/keys/TestRSAKey1", CancellationToken.None).GetAwaiter().GetResult();
 
 
 	// Now you simply use the RSA key to encrypt by setting it in the BlobEncryptionPolicy. 
@@ -214,7 +214,7 @@ Here is an example in PowerShell of creating a secret in Key Vault that can be u
 In your console application, you can use the same call as before to retrieve this secret as a SymmetricKey.
 
 	SymmetricKey sec = (SymmetricKey) cloudResolver.ResolveKeyAsync(
-    	"https://contosokeyvault.vault.azure.net/secrets/TestSecret2/", 
+    	"https://contosokeyvault.vault.chinacloudapi.cn/secrets/TestSecret2/", 
         CancellationToken.None).GetAwaiter().GetResult();
 
 That's it. Enjoy!

@@ -1,20 +1,16 @@
 <properties 
-   pageTitle="StorSimple system requirements | Microsoft Azure" 
-   description="Describes system requirements and best practices for software,  high availability, and networking for an Azure StorSimple solution." 
+   pageTitle="StorSimple system requirements | Windows Azure" 
+   description="Describes software, networking, and high availability requirements and best practices for a Windows Azure StorSimple solution." 
    services="storsimple" 
    documentationCenter="NA" 
    authors="alkohli" 
-   manager="carolz" 
+   manager="carmonm" 
    editor=""/>
 
 <tags
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD" 
-   ms.date="09/24/2015"
-   ms.author="alkohli"/>
+	ms.service="storsimple"
+	ms.date="12/18/2015"
+	wacn.date=""/>
 
 # StorSimple software, high availability, and networking requirements
 
@@ -42,7 +38,7 @@ The following software requirements are for the storage clients that access your
 
 ## High availability requirements for StorSimple
 
-The hardware platform that is included with the StorSimple solution has enterprise-grade availability and reliability features that provide a foundation for a highly available, fault-tolerant storage infrastructure in your datacenter. However, there are requirements and best practices that you should comply with to help ensure the availability of your Azure StorSimple solution. Before you deploy Azure StorSimple, carefully review the following requirements and best practices for the StorSimple device and connected host computers.
+The hardware platform that is included with the StorSimple solution has enterprise-grade availability and reliability features that provide a foundation for a highly available, fault-tolerant storage infrastructure in your datacenter. However, there are requirements and best practices that you should comply with to help ensure the availability of your StorSimple solution. Before you deploy StorSimple, carefully review the following requirements and best practices for the StorSimple device and connected host computers.
 
 ### High availability requirements and procedures for your StorSimple device
 
@@ -50,14 +46,11 @@ Review the following information carefully to ensure the high availability of yo
 
 #### Power and Cooling Modules (PCMs)
 
-StorSimple devices include redundant, hot-swappable PCMs. Each PCM has enough capacity to provide service for the entire chassis. To ensure high availability, both PCMs must be installed. 
+StorSimple devices include redundant, hot-swappable PCMs. Each PCM has enough capacity to provide service for the entire chassis. To ensure high availability, both PCMs must be installed.
 
 - Connect your PCMs to different power sources to provide availability if a power source fails.
-
 - If a PCM fails, request a replacement immediately.
-
 - Remove a failed PCM only when you have the replacement and are ready to install it.
-
 - Do not remove both PCMs concurrently. The PCM module includes the battery. Removing both of the PCMs will result in a no battery-protected shutdown.
 
 #### Controller modules
@@ -72,11 +65,11 @@ StorSimple devices include redundant, hot-swappable controller modules. The cont
 
 - Make sure that the network connections to both controller modules are identical, and the connected network interfaces have an identical network configuration.
 
-- If a controller module fails or needs replacement, make sure that the other controller module is in an active state before replacing the failed controller module.
+- If a controller module fails or needs replacement, make sure that the other controller module is in an active state before replacing the failed controller module. 
 
 - Do not remove both controller modules at the same time.
 
-- If a controller failover is in progress, do not shut down the standby controller module or remove it from the chassis.
+-  If a controller failover is in progress, do not shut down the standby controller module or remove it from the chassis.
 
 - After a controller failover, wait at least five minutes before removing either controller module. 
 
@@ -106,7 +99,7 @@ StorSimple devices include solid state disks (SSDs) and hard disk drives (HDDs) 
 
 - If an SSD or HDD fails, request a replacement immediately.
 
-- If an SSD or HDD fails or requires replacement, make sure that you remove only the SSD or HDD that requires replacement.
+- If an SSD or HDD fails or requires replacement, make sure that you remove only the SSD or HDD that requires replacement. 
 
 - Do not remove more than one SSD or HDD from the system at any point in time.
 
@@ -122,7 +115,7 @@ StorSimple device model 8600 includes an Extended Bunch of Disks (EBOD) enclosur
 
 - If an EBOD enclosure controller module or an HDD fails, request a replacement immediately.
 
-- If an EBOD enclosure controller module fails, make sure that the other controller module is active before you replace the failed module.
+- If an EBOD enclosure controller module fails, make sure that the other controller module is active before you replace the failed module. 
 
 - If an HDD fails or requires replacement, make sure that you remove only the HDD that requires replacement. Do not remove an HDD until there is an indication that the disks and the array are healthy.
 

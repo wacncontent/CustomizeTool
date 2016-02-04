@@ -7,13 +7,13 @@ deleted:
 			  5) China East
 			  6) China North
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		data:    West Europe
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -21,20 +21,20 @@ deleted:
 			data:    China North
 			data:    China East
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		info:    China North
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		data:    China East         China East
 			data:    West Europe       West Europe
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -43,5 +43,5 @@ deleted:
 			data:    China North           China North
 			data:    China East  China East
 
-reason: ()
+reason: (region diff)
 

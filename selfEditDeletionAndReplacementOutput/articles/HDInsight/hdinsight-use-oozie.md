@@ -4,13 +4,7 @@ deleted:
 
 		To learn Azure Data Factory, see [Use Pig and Hive with Data Factory][azure-data-factory-pig-hive].
 
-reason: ()
-
-deleted:
-
-		[azure-data-factory-pig-hive]: /documentation/articles/data-factory-pig-hive-activities
-
-reason: ()
+reason: ({data factory})
 
 replacement:
 
@@ -22,7 +16,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -32,5 +26,5 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 

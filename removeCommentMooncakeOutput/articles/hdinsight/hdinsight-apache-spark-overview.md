@@ -96,4 +96,4 @@ Spark in HDInsight also provides an [ODBC driver](http://go.microsoft.com/fwlink
 * [Submit jobs remotely to an Apache Spark cluster on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-job-server)
 
 
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage

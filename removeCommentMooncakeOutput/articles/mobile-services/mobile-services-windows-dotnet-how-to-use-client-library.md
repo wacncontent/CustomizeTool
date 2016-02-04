@@ -1,15 +1,15 @@
-<properties
-	pageTitle="Working with the Mobile Services .NET Client Library"
-	description="Learn how to use an .NET client for Azure Mobile Services."
-	services="mobile-services"
-	documentationCenter="windows"
-	authors="ggailey777"
-	manager="dwrede"
+<properties 
+	pageTitle="Working with the Mobile Services .NET Client Library" 
+	description="Learn how to use an .NET client for Azure Mobile Services." 
+	services="mobile-services" 
+	documentationCenter="windows" 
+	authors="ggailey777" 
+	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="08/18/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="08/18/2015" 
 	wacn.date=""/>
 
 # How to use a .NET client for Azure Mobile Services
@@ -58,7 +58,7 @@ In the code above, replace `AppUrl` and `AppKey` with the mobile service URL and
 
 ##<a name="instantiating"></a>How to: Create a table reference
 
-All of the code that accesses or modifies data in the Mobile Services table calls functions on the `MobileServiceTable` object. You get a reference to the table by calling the [GetTable](http://msdn.microsoft.com/zh-cn/library/azure/jj554275.aspx) function on an instance of the `MobileServiceClient`.
+All of the code that accesses or modifies data in the Mobile Services table calls functions on the `MobileServiceTable` object. You get a reference to the table by calling the [GetTable](http://msdn.microsoft.com/zh-cn/library/azure/jj554275.aspx) function on an instance of the `MobileServiceClient`. 
 
     IMobileServiceTable<TodoItem> todoTable =
 		client.GetTable<TodoItem>();
@@ -105,9 +105,9 @@ The function which is passed to the `Where` method can have an arbitrary number 
 	   .ToListAsync();
 
 Would be roughly translated (for the same request shown before) as
-
-	SELECT *
-	FROM TodoItem
+			
+	SELECT * 
+	FROM TodoItem 
 	WHERE ISNULL(complete, 0) = 0
 	      AND ISNULL(text, 0) = 0
 
@@ -126,25 +126,25 @@ The `where` clause supports operations that be translated into the Mobile Servic
 
 ### <a name="sorting"></a>How to: Sort returned data
 
-The following code illustrates how to sort data by including an `OrderBy` or `OrderByDescending` function in the query. It returns items from `todoTable` sorted ascending by the `Text` field.
+The following code illustrates how to sort data by including an `OrderBy` or `OrderByDescending` function in the query. It returns items from `todoTable` sorted ascending by the `Text` field. 
 
 	// Sort items in ascending order by Text field
 	MobileServiceTableQuery<TodoItem> query = todoTable
-					.OrderBy(todoItem => todoItem.Text)
+					.OrderBy(todoItem => todoItem.Text)       
  	List<TodoItem> items = await query.ToListAsync();
 
 	// Sort items in descending order by Text field
 	MobileServiceTableQuery<TodoItem> query = todoTable
-					.OrderByDescending(todoItem => todoItem.Text)
- 	List<TodoItem> items = await query.ToListAsync();
+					.OrderByDescending(todoItem => todoItem.Text)       
+ 	List<TodoItem> items = await query.ToListAsync();			
 
 ### <a name="paging"></a>How to: Return data in pages
 
-By default, the server returns only the first 50 rows. You can increase the number of returned rows by calling the [Take] method. Use `Take` along with the [Skip] method to request a specific "page" of the total dataset returned by the query. The following query, when executed, returns the top three items in the table.
+By default, the server returns only the first 50 rows. You can increase the number of returned rows by calling the [Take] method. Use `Take` along with the [Skip] method to request a specific "page" of the total dataset returned by the query. The following query, when executed, returns the top three items in the table. 
 
 	// Define a filtered query that returns the top 3 items.
 	MobileServiceTableQuery<TodoItem> query = todoTable
-					.Take(3);
+					.Take(3);                              
 	List<TodoItem> items = await query.ToListAsync();
 
 The following revised query skips the first three results and returns the next three after that. This is effectively the second "page" of data, where the page size is three items.
@@ -152,14 +152,14 @@ The following revised query skips the first three results and returns the next t
 	// Define a filtered query that skips the top 3 items and returns the next 3 items.
 	MobileServiceTableQuery<TodoItem> query = todoTable
 					.Skip(3)
-					.Take(3);
+					.Take(3);                              
 	List<TodoItem> items = await query.ToListAsync();
-
+			
 You can also use the [IncludeTotalCount] method to ensure that the query will get the total count for <i>all</i> the records that would have been returned, ignoring any take paging/limit clause specified:
 
 	query = query.IncludeTotalCount();
 
-This is a simplified scenario of passing hard-coded paging values to the `Take` and `Skip` methods. In a real-world app, you can use queries similar to the above with a pager control or comparable UI to let users navigate to previous and next pages.
+This is a simplified scenario of passing hard-coded paging values to the `Take` and `Skip` methods. In a real-world app, you can use queries similar to the above with a pager control or comparable UI to let users navigate to previous and next pages. 
 
 ####Paging considerations for a .NET backend mobile service
 
@@ -176,12 +176,12 @@ You can specify which set of properties to include in the results by adding a `S
 	MobileServiceTableQuery<TodoItem> query = todoTable
 					.Select(todoItem => todoItem.Text);
 	List<string> items = await query.ToListAsync();
-
+	
 	// Select multiple fields -- both Complete and Text info
 	MobileServiceTableQuery<TodoItem> query = todoTable
 					.Select(todoItem => string.Format("{0} -- {1}", todoItem.Text.PadRight(30), todoItem.Complete ? "Now complete!" : "Incomplete!"));
 	List<string> items = await query.ToListAsync();
-
+			
 All the functions described so far are additive, so we can just keep calling them and we'll each time affect more of the query. One more example:
 
 	MobileServiceTableQuery<TodoItem> query = todoTable
@@ -190,10 +190,10 @@ All the functions described so far are additive, so we can just keep calling the
 					.Skip(3).
 					.Take(3);
 	List<string> items = await query.ToListAsync();
-
+	
 ### <a name="lookingup"></a>How to: Look up data by ID
 
-The `LookupAsync` function can be used to look up objects from the database with a particular ID.
+The `LookupAsync` function can be used to look up objects from the database with a particular ID. 
 
 	// This query filters out the item with the ID of 37BBF396-11F0-4B39-85C8-B319C729AF6D
 	TodoItem item = await todoTable.LookupAsync("37BBF396-11F0-4B39-85C8-B319C729AF6D");
@@ -210,23 +210,23 @@ If a unique custom ID value is not included in the `todoItem` passed to the `tod
 
 To insert untyped data, you may take advantage of Json.NET as shown below.
 
-	JObject jo = new JObject();
-	jo.Add("Text", "Hello World");
+	JObject jo = new JObject(); 
+	jo.Add("Text", "Hello World"); 
 	jo.Add("Complete", false);
 	var inserted = await table.InsertAsync(jo);
 
 Here is an example using an email address as a unique string id.
 
-	JObject jo = new JObject();
-	jo.Add("id", "myemail@emaildomain.com");
-	jo.Add("Text", "Hello World");
+	JObject jo = new JObject(); 
+	jo.Add("id", "myemail@emaildomain.com"); 
+	jo.Add("Text", "Hello World"); 
 	jo.Add("Complete", false);
 	var inserted = await table.InsertAsync(jo);
 
 
 ###Working with ID values
 
-Mobile Services supports unique custom string values for the table's **id** column. This allows applications to use custom values such as email addresses or user names for the ID.
+Mobile Services supports unique custom string values for the table's **id** column. This allows applications to use custom values such as email addresses or user names for the ID. 
 
 String IDs provide you with the following benefits:
 
@@ -234,9 +234,9 @@ String IDs provide you with the following benefits:
 + Records are easier to merge from different tables or databases.
 + IDs values can integrate better with an application's logic.
 
-When a string ID value is not set on an inserted record, Mobile Services generates a unique value for the ID. You can use the `Guid.NewGuid()` method To generate your own ID values, either on the client or in a .NET mobile backend service. To learn more about generating GUIDs in a JavaScript backend mobile service, see [How to: Generate unique ID values](/documentation/articles/mobile-services-how-to-use-server-scripts#generate-guids).
+When a string ID value is not set on an inserted record, Mobile Services generates a unique value for the ID. You can use the `Guid.NewGuid()` method To generate your own ID values, either on the client or in a .NET mobile backend service. To learn more about generating GUIDs in a JavaScript backend mobile service, see [How to: Generate unique ID values](/documentation/articles/mobile-services-how-to-use-server-scripts/#generate-guids). 
 
-You can also use integer IDs for your tables. To use an integer ID, you must create your table with the `mobile table create` command using the `--integerId` option. This command is used with the Command-line Interface (CLI) for Azure. For more information on using the CLI, see [CLI to manage Mobile Services tables](/documentation/articles/virtual-machines-command-line-tools#Mobile_Tables).
+You can also use integer IDs for your tables. To use an integer ID, you must create your table with the `mobile table create` command using the `--integerId` option. This command is used with the Command-line Interface (CLI) for Azure. For more information on using the CLI, see [CLI to manage Mobile Services tables](/documentation/articles/virtual-machines-command-line-tools/#Mobile_Tables).
 
 ##<a name="modifying"></a>How to: Modify data in a mobile service
 
@@ -247,9 +247,9 @@ The following code illustrates how to update an existing instance with the same 
 
 To insert untyped data, you may take advantage of Json.NET like so. Note that when making an update, an ID must be specified, as that is how the mobile service identifies which instance to update. The ID can be obtained from the result of the `InsertAsync` call.
 
-	JObject jo = new JObject();
+	JObject jo = new JObject(); 
 	jo.Add("Id", "37BBF396-11F0-4B39-85C8-B319C729AF6D");
-	jo.Add("Text", "Hello World");
+	jo.Add("Text", "Hello World"); 
 	jo.Add("Complete", false);
 	var inserted = await table.UpdateAsync(jo);
 
@@ -292,7 +292,7 @@ The Mobile Services client enables you to register for push notifications with A
 		    var channel =
 		        await PushNotificationChannelManager
 		            .CreatePushNotificationChannelForApplicationAsync();
-
+		
 		    // Register for notifications using the new channel and a tag collection.
 			var tags = new List<string>{ "mytag1", "mytag2"};
 		    await MobileService.GetPush().RegisterNativeAsync(channel.Uri, tags);
@@ -329,7 +329,7 @@ To enable optimistic concurrency the application defines a column on the table c
 
 Applications using untyped tables enable optimistic concurrency by setting the `Version` flag on the `SystemProperties` of the table as follows.
 
-	//Enable optimistic concurrency by retrieving __version
+	//Enable optimistic concurrency by retrieving __version 
 	todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 
 
@@ -337,8 +337,8 @@ The following code shows how to resolve a write conflict once detected. The corr
 
 	private async void UpdateToDoItem(TodoItem item)
 	{
-    	MobileServicePreconditionFailedException<TodoItem> exception = null;
-
+    	MobileServicePreconditionFailedException<TodoItem> exception = null;         
+		
 	    try
     	{
 	        //update at the remote table
@@ -348,7 +348,7 @@ The following code shows how to resolve a write conflict once detected. The corr
 	    {
         	exception = writeException;
 	    }
-
+		
     	if (exception != null)
     	{
 			// Conflict detected, the item has changed since the last query
@@ -361,32 +361,32 @@ The following code shows how to resolve a write conflict once detected. The corr
 	private async Task ResolveConflict(TodoItem localItem, TodoItem serverItem)
 	{
     	//Ask user to choose the resoltion between versions
-	    MessageDialog msgDialog = new MessageDialog(String.Format("Server Text: \"{0}\" \nLocal Text: \"{1}\"\n",
-        	                                        serverItem.Text, localItem.Text),
+	    MessageDialog msgDialog = new MessageDialog(String.Format("Server Text: \"{0}\" \nLocal Text: \"{1}\"\n", 
+        	                                        serverItem.Text, localItem.Text), 
                                                 	"CONFLICT DETECTED - Select a resolution:");
 
 	    UICommand localBtn = new UICommand("Commit Local Text");
     	UICommand ServerBtn = new UICommand("Leave Server Text");
     	msgDialog.Commands.Add(localBtn);
-	    msgDialog.Commands.Add(ServerBtn);
+	    msgDialog.Commands.Add(ServerBtn);          
 
     	localBtn.Invoked = async (IUICommand command) =>
 	    {
-        	// To resolve the conflict, update the version of the
+        	// To resolve the conflict, update the version of the 
 	        // item being committed. Otherwise, you will keep
         	// catching a MobileServicePreConditionFailedException.
-	        localItem.Version = serverItem.Version;
+	        localItem.Version = serverItem.Version;             
 
-    	    // Updating recursively here just in case another
+    	    // Updating recursively here just in case another 
         	// change happened while the user was making a decision
 	        UpdateToDoItem(localItem);
-    	};
-
+    	};          
+		
 	    ServerBtn.Invoked = async (IUICommand command) =>
     	{
 	        RefreshTodoItems();
-    	};
-
+    	};          
+		
 	    await msgDialog.ShowAsync();
 	}
 
@@ -596,7 +596,7 @@ For Windows Phone apps, you may encrypt and cache data using the [ProtectedData]
 
 ##<a name="errors"></a>How to: Handle errors
 
-There are several ways to encounter, validate, and work around errors in Mobile Services.
+There are several ways to encounter, validate, and work around errors in Mobile Services. 
 
 As an example, server scripts are registered in a mobile service and can be used to perform a wide range of operations on data being inserted and updated, including validation and data modification. Imagine defining and registering a server script that validate and modify data, like so:
 
@@ -646,7 +646,7 @@ The value returned by `MobileServiceClient.GetTable` and the queries are interfa
 
 ##<a name="customizing"></a>How to: Customize the client
 
-This section shows ways in which you can customize the request headers and customize the serialization of JSON objects in the response.
+This section shows ways in which you can customize the request headers and customize the serialization of JSON objects in the response. 
 
 ### <a name="headers"></a>How to: Customize request headers
 
@@ -663,7 +663,7 @@ To support your specific app scenario, you might need to customize communication
 		var newItem = new TodoItem { Text = "Hello world", Complete = false };
 		await table.InsertAsync(newItem);
 	}
-
+			 
 	public class MyHandler : DelegatingHandler
 	{
 		protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
@@ -679,9 +679,9 @@ This code adds a new **x-my-header** header in the request and arbitrarily sets 
 
 ### <a name="serialization"></a>How to: Customize serialization
 
-The Mobile Services client library uses Json.NET to convert a JSON response into .NET objects on the client. You can configure the behavior of this serialization between .NET types and JSON in the messages. The [MobileServiceClient](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx) class exposes a `SerializerSettings` property of type [JsonSerializerSettings](http://james.newtonking.com/projects/json/help/?topic=html/T_Newtonsoft_Json_JsonSerializerSettings.htm)
+The Mobile Services client library uses Json.NET to convert a JSON response into .NET objects on the client. You can configure the behavior of this serialization between .NET types and JSON in the messages.The [MobileServiceClient](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx) class exposes a `SerializerSettings` property of type [JsonSerializerSettings](http://james.newtonking.com/projects/json/help/?topic=html/T_Newtonsoft_Json_JsonSerializerSettings.htm)
 
-Using this property, you may set one of the many Json.NET properties, such as the following:
+Using this property, you may set one of the many Json.NET properties, such as the following: 
 
 	var settings = new JsonSerializerSettings();
 	settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
@@ -707,7 +707,7 @@ This property converts all properties to lower case during serialization.
 [How to: Use Optimistic Concurrency]: #optimisticconcurrency
 [How to: Authenticate users]: #authentication
 [How to: Handle errors]: #errors
-[How to: Design unit tests]: #unit-testing
+[How to: Design unit tests]: #unit-testing 
 [How to: Query data from a mobile service]: #querying
 [How to: Customize the client]: #customizing
 [How to: Work with untyped data]: #untyped
@@ -734,9 +734,9 @@ This property converts all properties to lower case during serialization.
 [CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Commands_to_manage_mobile_services
 [Optimistic Concurrency Tutorial]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts
 
-[IncludeTotalCount]: http://msdn.microsoft.com/zh-cn/library/azure/dn250560.aspx
+[IncludeTotalCount]: http://msdn.microsoft.com/zh-cn/library/azure/dn250560.aspx 
 [Skip]: http://msdn.microsoft.com/zh-cn/library/azure/dn250573.aspx
-[Take]: http://msdn.microsoft.com/zh-cn/library/azure/dn250574.aspx
+[Take]: http://msdn.microsoft.com/zh-cn/library/azure/dn250574.aspx 
 [Fiddler]: http://www.telerik.com/fiddler
 [Custom API in Azure Mobile Services Client SDKs]: http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx
 [InvokeApiAsync]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx

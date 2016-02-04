@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Panorama9
@@ -75,7 +75,7 @@ If you are not familiar with this procedure, see [How to retrieve a certificate'
 
     ![Configure Single Sign-On](./media/active-directory-saas-panorama9-tutorial/IC790020.png "Configure Single Sign-On")
 
-3.  On the **Configure App URL** page, in the **Panorama9 Sign On URL** textbox, type your URL used by your users to sign in to Panorama9 (e.g.: “*https://dashboard.panorama9.com/saml/access/3262*"), and then click **Next**.
+3.  On the **Configure App URL** page, in the **Panorama9 Sign On URL** textbox, type your URL used by your users to sign in to Panorama9 (e.g.: "*https://dashboard.panorama9.com/saml/access/3262*"), and then click **Next**.
 
     ![Configure App URL](./media/active-directory-saas-panorama9-tutorial/IC790021.png "Configure App URL")
 

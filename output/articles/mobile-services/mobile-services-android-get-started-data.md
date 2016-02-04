@@ -14,6 +14,8 @@
 
 # Add Mobile Services to an existing Android app (JavaScript backend)
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
 ## Summary
 
 <div class="dev-onpage-video-clear clearfix">
@@ -55,7 +57,7 @@ To see the completed source code, go <a href="https://github.com/Azure/mobile-se
 
 [AZURE.INCLUDE [mobile-services-android-run-sample-code](../includes/mobile-services-android-run-sample-code.md)]
 
-## Create a new mobile service in the Management Portal
+## Create a new mobile service in the Azure Management Portal
 
 [AZURE.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
@@ -80,7 +82,7 @@ Now that the app has been updated to use Mobile Services for back end storage, y
 
    	This sends a new item as an insert to the mobile service.
 
-3. In the [Management Portal], click **Mobile Services**, and then click your mobile service.
+3. In the [Azure Management Portal], click **Mobile Services**, and then click your mobile service.
 
 4. Click the **Data** tab, then click **Browse**.
 
@@ -97,14 +99,6 @@ This concludes the **Get started with data** tutorial for Android.
 [AZURE.INCLUDE [Verify SDK](../includes/mobile-services-verify-android-sdk-version.md)]
 
 
-## Older Code Versions
-
-If you would like to see the Eclipse version of this tutorial, go to 
-[Get started with data using Eclipse](/documentation/articles/mobile-services-android-get-started-data-EC).
-
-To see a completed version of the source code in an Eclipse project, go <a href="https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithData/Android">here</a>.
-
-If you want to get the sample file used in the preceding version of the Azure Mobile Services Android SDK, you can get it [here](http://go.microsoft.com/fwlink/p/?LinkID=282122).
 
 ## Next steps
 
@@ -148,12 +142,10 @@ Once you have completed the data series, try these other Android tutorials:
 [Refine queries with paging]: /develop/mobile/tutorials/add-paging-to-data-android
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-android
 [Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-android
-[Get started with data (Eclipse)]: /documentation/articles/mobile-services-android-get-started-data-EC/
 [Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-android
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Management Portal]: https://manage.windowsazure.cn/
 [Azure Mobile Services Android SDK]: http://aka.ms/Iajk6q
 [GitHub]:  http://go.microsoft.com/fwlink/p/?LinkID=282122
 [Android SDK]: http://developer.android.com/sdk/index.html

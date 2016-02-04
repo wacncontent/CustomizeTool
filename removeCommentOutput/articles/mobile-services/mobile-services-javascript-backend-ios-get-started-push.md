@@ -29,7 +29,7 @@ This topic shows you how to add push notifications to the [quickstart project](/
 
 ## <a id="update-scripts"></a>Update Backend Script to Send Push Notifications
 
-* In the Management Portal, click the **Data** tab and then click **TodoItem**. In **TodoItem**, click the **Script** tab and select **Insert**. This displays the function that is invoked when an insert occurs in the **TodoItem** table.
+* In the [Azure Management Portal], click the **Data** tab and then click **TodoItem**. In **TodoItem**, click the **Script** tab and select **Insert**. This displays the function that is invoked when an insert occurs in the **TodoItem** table.
 
 * Replace the insert function with the following code, and then click **Save**.  This registers a new insert script, which uses the [apns object] to send a push notification (the inserted text) to the device provided in the insert request. This script delays sending the notification to give you time to close the app to receive a push notification.
 
@@ -100,15 +100,15 @@ This topic shows you how to add push notifications to the [quickstart project](/
 [iOS Provisioning Portal]: https://idmsa.apple.com/IDMSWebAuth/login?&appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2F%2Faccount%2Foverview.action
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple Push Notification Service]: https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html
-[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
-[Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users
+[Get started with Mobile Services]: mobile-services-ios-get-started.md
+[Get started with authentication]: mobile-services-ios-get-started-users.md
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
 
-[Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users
-[What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
-[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-breaking-news
-[Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news
-[Mobile Services Objective-C how-to conceptual reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[Send push notifications to authenticated users]: mobile-services-javascript-backend-ios-push-notifications-app-users.md
+[What are Notification Hubs?]: ../notification-hubs-overview.md
+[Send broadcast notifications to subscribers]: ../notification-hubs-ios-send-breaking-news.md
+[Send template-based notifications to subscribers]: ../notification-hubs-ios-send-localized-breaking-news.md
+[Mobile Services Objective-C how-to conceptual reference]: mobile-services-windows-dotnet-how-to-use-client-library.md

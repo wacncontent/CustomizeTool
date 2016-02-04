@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="11/02/2015"
 	wacn.date=""/>
 
 
@@ -29,10 +29,15 @@ Windows Azure Media Services allows for content to be served up with DASH, Smoot
 For more information:
 
 - [Azure Media Player](/documentation/services/media-services/)
+<!-- deleted by customization
 - [Azure Media Player Documentation](http://amp.azure.net/libs/amp/latest/docs/) 
+-->
+<!-- keep by customization: begin -->
+- [Azure Media Player Documentation](http://amp.chinacloudapi.cn/libs/amp/latest/docs/) 
+<!-- keep by customization: end -->
 - [Azure Media Player Getting Started Blog](http://azure.microsoft.com/blog/2015/04/15/announcing-azure-media-player)
-- [Sign up to stay up to date with the latest from Azure Media Player](http://amp.azure.net/signup/)
-- [Add new feature requests, ideas, feedback](http://feedback.azure.com/forums/293565-azure-media-player/filters/my_feedback) 
+- [Sign up to stay up to date with the latest from Azure Media <!-- deleted by customization Player](http://amp.azure.net/signup/) --><!-- keep by customization: begin --> Player](http://amp.chinacloudapi.cn/signup/) <!-- keep by customization: end -->
+- [Add new feature requests, ideas, feedback](http://aka.ms/ampuservoice ) 
 
 
 ##Other Tools for Creating Player Applications
@@ -44,7 +49,7 @@ You can also use any of the following SDKs:
 - [Microsoft Media Platform: Player Framework](http://playerframework.codeplex.com/) 
 - [HTML5 Player Framework Documentation](http://playerframework.codeplex.com/wikipage?title=HTML5%20Player&referringTitle=Documentation) 
 - [Microsoft Smooth Streaming Plugin for OSMF](https://www.microsoft.com/download/details.aspx?id=36057) 
-- [Licensing Microsoft® Smooth Streaming Client Porting Kit](https://www.microsoft.com/mediaplatform/sspk.aspx) 
+- [Licensing <!-- deleted by customization Microsoft® --><!-- keep by customization: begin --> MicrosoftÂŽ <!-- keep by customization: end --> Smooth Streaming Client Porting Kit](/documentation/articles/media-services-sspk)
 - [XBOX Video Application Development](http://xbox.create.msdn.com/) 
  
 
@@ -52,26 +57,26 @@ You can also use any of the following SDKs:
 
 Azure Media Services provides support for ad insertion through the Windows Media Platform: Player Frameworks. Player frameworks with ad support are available for Windows 8, Silverlight, Windows Phone 8, and iOS devices. Each player framework contains sample code that shows you how to implement a player application. There are three different kinds of ads you can insert into your media:
 
-Linear – full frame ads that pause the main video
+Linear - full frame ads that pause the main video
 
-Nonlinear – overlay ads that are displayed as the main video is playing, usually a logo or other static image placed within the player
+Nonlinear - overlay ads that are displayed as the main video is playing, usually a logo or other static image placed within the player
 
-Companion – ads that are displayed outside of the player
+Companion - ads that are displayed outside of the player
 
-Ads can be placed at any point in the main video’s time line. You must tell the player when to play the ad and which ads to play. This is done using a set of standard XML-based files: Video Ad Service Template (VAST), Digital Video Multiple Ad Playlist (VMAP), Media Abstract Sequencing Template (MAST), and Digital Video Player Ad Interface Definition (VPAID). VAST files specify what ads to display. VMAP files specify when to play various ads and contain VAST XML. MAST files are another way to sequence ads which also can contain VAST XML. VPAID files define an interface between the video player and the ad or ad server. For more information, see [Inserting Ads](https://msdn.microsoft.com/zh-cn/library/dn387398.aspx).
+Ads can be placed at any point in the main video's time line. You must tell the player when to play the ad and which ads to play. This is done using a set of standard XML-based files: Video Ad Service Template (VAST), Digital Video Multiple Ad Playlist (VMAP), Media Abstract Sequencing Template (MAST), and Digital Video Player Ad Interface Definition (VPAID). VAST files specify what ads to display. VMAP files specify when to play various ads and contain VAST XML. MAST files are another way to sequence ads which also can contain VAST XML. VPAID files define an interface between the video player and the ad or ad server. For more information, see [Inserting Ads](https://msdn.microsoft.com/zh-cn/library/dn387398.aspx).
 
-For information about closed captioning and ads support in Live streaming videos, see [Supported Closed Captioning and Ad Insertion Standards](https://msdn.microsoft.com/zh-cn/library/c49e0b4d-357e-4cca-95e5-2288924d1ff3#caption_ad).
+For information about closed captioning and ads support in Live streaming videos, see [Supported Closed Captioning and Ad Insertion Standards](/documentation/articles/media-services-manage-channels-overview#closed-captioning-and-ad-insertion).
 
 
 <!-- deleted by customization
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
 
 -->
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 ##See Also
 

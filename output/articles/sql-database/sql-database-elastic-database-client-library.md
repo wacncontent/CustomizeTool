@@ -14,7 +14,7 @@
 
 # Elastic Database client library overview
 
-The **Elastic Database client library** helps you easily develop sharded applications using hundreds—or even thousands—of Azure SQL databases hosted on Windows Azure. Such designs are commonly used for Software as a Service (SaaS) applications, which are typically single tenant architectures--where each tenant is provisioned with a database. Building and managing such an application is a goal of the library. 
+The **Elastic Database client library** helps you easily develop sharded applications using hundredsâor even thousandsâof Azure SQL databases hosted on Windows Azure. Such designs are commonly used for Software as a Service (SaaS) applications, which are typically single tenant architectures--where each tenant is provisioned with a database. Building and managing such an application is a goal of the library. 
 
 Elastic Database client library is now available as open source software on [GitHub](https://github.com/Azure/elastic-db-tools). To install the library, see [Windows Azure SQL Database: Elastic Scale](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/). The client library is part of Elastic Database tools which is specifically an [Elastic Database feature](/documentation/articles/sql-database-elastic-scale-introduction). 
 
@@ -42,10 +42,8 @@ To install the library, go to [Elastic Database Client Library]( http://www.nuge
 
 For instructions on using the split-merge tool, see the [split-merge tool overview](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge).
 
-<!-- deleted by customization
 [Elastic database client library is now open sourced!](http://azure.microsoft.com/blog/elastic-database-client-library-is-now-open-sourced/)
 
--->
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

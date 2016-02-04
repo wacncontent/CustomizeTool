@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="09/24/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 #Azure Notification Hubs Rich Push
@@ -67,7 +67,7 @@ At a high level:
             public NotificationHubClient Hub { get; set; }
 
             private Notifications() {
-                // Placeholders: replace with the connection string (with full access) for your notification hub and the hub name from the Azure Management Portal
+                // Placeholders: replace with the connection string (with full access) for your notification hub and the hub name from the Azure Classics Portal
                 Hub = NotificationHubClient.CreateClientFromConnectionString("{conn string with full access}",  "{hub name}");
             }
 

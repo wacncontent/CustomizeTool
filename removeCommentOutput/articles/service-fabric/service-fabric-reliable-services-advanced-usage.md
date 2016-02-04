@@ -8,19 +8,15 @@
    editor="masnider"/>
 
 <tags
-   ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/26/2015"
-   ms.author="jesseb"/>
+	ms.service="Service-Fabric"
+	ms.date="08/26/2015"
+	wacn.date=""/>
 
 # Advanced usage of the Reliable Services programming model
-Service Fabric simplifies writing and managing reliable stateless and stateful services. This guide will talk about advanced usages of the Reliable Services programming model to gain more control and flexibility over your services. Prior to reading this guide, familiarize yourself with [the Reliable Services programming model](service-fabric-reliable-services-introduction.md).
+Service Fabric simplifies writing and managing reliable stateless and stateful services. This guide will talk about advanced usages of the Reliable Services programming model to gain more control and flexibility over your services. Prior to reading this guide, familiarize yourself with [the Reliable Services programming model](/documentation/articles/service-fabric-reliable-services-introduction).
 
 ## Stateless Service base classes
-The StatelessService base class provides CreateCommunicationListener() and RunAsync(), which is sufficient for the majority of stateless services. The StatelessServiceBase class underlies StatelessService and exposes additional service lifecycle events. You can derive from StatelessServiceBase if you need additional control or flexibility. See the developer reference documentation on [StatelessService](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.services.statelessservice.aspx) and [StatelessServiceBase](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.services.statelessservicebase.aspx) for more information.
+The StatelessService base class provides CreateCommunicationListener() and RunAsync(), which is sufficient for the majority of stateless services. The StatelessServiceBase class underlies StatelessService and exposes additional service lifecycle events. You can derive from StatelessServiceBase if you need additional control or flexibility. See the developer reference documentation on [StatelessService](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicefabric.services.statelessservice.aspx) and [StatelessServiceBase](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicefabric.services.statelessservicebase.aspx) for more information.
 
 - `void OnInitialize(StatelessServiceInitializiationParameters)`
     OnInitialize is the first method called by Service Fabric. Service initialization information is provided such as the service name, partition id, instance id, and code package information. No complex processing should be done here. Lengthy initialization should be done in OnOpenAsync.
@@ -35,7 +31,7 @@ The StatelessService base class provides CreateCommunicationListener() and RunAs
     OnAbort is called when the stateless service instance is being forcefully shutdown. This is generally called when a permanent fault is detected on the node, or when Service Fabric cannot reliably manage the service instance's lifecycle due to internal failures.
 
 ## Stateful Service base classes
-The StatefulService base class should be sufficient for most stateful services. Similar to stateless services, the StatefulServiceBase class underlies StatefulService and exposes additional service lifecycle events. Additionally, it allows you to provide a custom reliable state provider and optionally support communication listeners on Secondaries. You can derive from StatefulServiceBase if you need additional control or flexibility. See the developer reference documentation on [StatefulService](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.services.statefulservice.aspx) and [StatefulServiceBase](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.services.statefulservicebase.aspx) for more information.
+The StatefulService base class should be sufficient for most stateful services. Similar to stateless services, the StatefulServiceBase class underlies StatefulService and exposes additional service lifecycle events. Additionally, it allows you to provide a custom reliable state provider and optionally support communication listeners on Secondaries. You can derive from StatefulServiceBase if you need additional control or flexibility. See the developer reference documentation on [StatefulService](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicefabric.services.statefulservice.aspx) and [StatefulServiceBase](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicefabric.services.statefulservicebase.aspx) for more information.
 
 - `Task OnChangeRoleAsync(ReplicaRole, CancellationToken)`
     OnChangeRoleAsync is called when the stateful service is changing roles, for example to Primary or Secondary. Primary replicas are given write status (are allowed to create and write to the reliable collections), while Secondary replicas are given read status (can only read from existing reliable collections). You can start or update the background tasks in response to role changes, such as performing read-only validation, report generation, or data mining on a Secondary.
@@ -58,10 +54,10 @@ StatefulServiceBase also provides the same four lifecycle events as StatelessSer
 ## Next steps
 For more advanced topics related to Service Fabric, see the following articles.
 
-- [Configuring Stateful Reliable Services](service-fabric-reliable-services-configuration.md)
+- [Configuring Stateful Reliable Services](/documentation/articles/service-fabric-reliable-services-configuration)
 
-- [Service Fabric Health Introduction](service-fabric-health-introduction.md)
+- [Service Fabric Health Introduction](/documentation/articles/service-fabric-health-introduction)
 
-- [Using System health reports for troubleshooting](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
+- [Using System health reports for troubleshooting](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports)
 
-- [Placement Constraints Overview](service-fabric-placement-constraint.md)
+- [Placement Constraints Overview](/documentation/articles/service-fabric-placement-constraint)

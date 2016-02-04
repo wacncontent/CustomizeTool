@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 
@@ -50,6 +50,7 @@ Build Streaming URLs
 	{
 	
 	    // Create a 30-day readonly access policy. 
+      	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.
 	    IAccessPolicy policy = _context.AccessPolicies.Create("Streaming policy",
 	        TimeSpan.FromDays(30),
 	        AccessPermissions.Read);
@@ -154,7 +155,15 @@ The following code calls .NET SDK extensions methods that create a locator and g
 	Console.WriteLine(mpegDashUri);
 
 
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 ##See Also
 
 [Download assets](/documentation/articles/media-services-deliver-asset-download)
+[Configure asset delivery policy](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy)

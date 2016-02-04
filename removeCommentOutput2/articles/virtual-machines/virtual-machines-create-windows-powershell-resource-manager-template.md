@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Create a VM with a template | Windows Azure"
 	description="Use a Resource Manager template to easily create a new Windows virtual machine with PowerShell."
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/08/2015"
+	ms.date="01/07/2016"
 	wacn.date=""/>
 
 # Create a Windows virtual machine with a Resource Manager template
@@ -216,7 +218,7 @@ Fill in an Azure deployment name, resource group name, and Azure datacenter loca
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as China North>"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
-	New-AzureRmResourceGroup –Name $RGName –Location $locName
+	New-AzureRmResourceGroup -Name $RGName -Location $locName
 	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 When you run the **New-AzureRmResourceGroupDeployment** command, you will be prompted to supply the values of parameters in the "parameters" section of the JSON file. When you have specified all the parameter values, the command creates the resource group and the virtual machine.
@@ -227,7 +229,7 @@ Here is an example.
 	$RGName="TestRG"
 	$locname="China North"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
-	New-AzureRmResourceGroup –Name $RGName –Location $locName
+	New-AzureRmResourceGroup -Name $RGName -Location $locName
 	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 You will see something like this:
@@ -270,16 +272,7 @@ You will see something like this:
 
 You now have a new Windows virtual machine named MyWindowsVM in your new resource group.
 
-## Additional resources
+## Next Steps
 
-[Azure compute, network, and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
-
-[Azure Resource Manager overview](/documentation/articles/resource-group-overview)
-
-[Create a Windows virtual machine with Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager)
-
+Learn how to manage the virtual machine that you just created by reviewing [Manage virtual machines using Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell).
 [Create a Windows virtual machine with PowerShell and Azure Service Manager](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
-
-[Virtual machines documentation](/documentation/services/virtual-machines/)
-
-[How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)

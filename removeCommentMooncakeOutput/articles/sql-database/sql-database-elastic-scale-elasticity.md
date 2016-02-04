@@ -7,16 +7,16 @@
 	authors="sidneyh" 
 	editor=""/>
 
-<tags
-	ms.service="sql-database"
-	ms.date="09/22/2015"
+<tags 
+	ms.service="sql-database" 
+	ms.date="09/22/2015" 
 	wacn.date=""/>
 
 # Shard elasticity 
 
 **Shard elasticity** enables application developers to dynamically grow and shrink database resources according to need, enabling one to optimize the performance of their applications, and also to minimize costs. The combination of the **Elastic Database tools** for Azure SQL Database along with the [Basic, Standard, and Premium service tiers](/documentation/articles/sql-database-service-tiers) provides very compelling elasticity scenarios.  Elastic database tools enable horizontal scaling - a design pattern in which databases (also [known as "shards”](/documentation/articles/sql-database-elastic-scale-glossary)) are added or removed from a shard set to grow or shrink capacity. Similarly, the SQL Database service tiers provide **vertical scaling** capabilities in that a single database's resources can scale up or down to appropriately match demand.  Together, the vertical scaling of a single shard and the horizontal scaling of many shards, affords application developers a very flexible environment that can scale to meet performance, capacity and cost-optimization needs.
 
-With the newly introduced **elastic database pools** capability, vertical scaling is even simpler to achieve. Pools allow an individual database’s resource consumption to grow or shrink *automatically* within a budget shared among the entire pool. For applications that choose not to take advantage of elastic database pools, this article will describe other techniques for implementing policy-based mechanics for managing vertical scaling, as well as some common scenarios for automating horizontal scaling operations.
+With the newly introduced **elastic database pools** capability, vertical scaling is even simpler to achieve. Pools allow an individual database's resource consumption to grow or shrink *automatically* within a budget shared among the entire pool. For applications that choose not to take advantage of elastic database pools, this article will describe other techniques for implementing policy-based mechanics for managing vertical scaling, as well as some common scenarios for automating horizontal scaling operations.
 
 ## Horizontal scaling example: concert spike
 
@@ -30,7 +30,7 @@ A canonical scenario for vertical scaling is an application that uses a **shard 
 
 To ingest telemetry data at high loads, it is better to employ a higher service tier. In other words, a Premium database is better than a Basic database. Once the database reaches its capacity, it switches from ingestion to analysis and reporting. For that, the Standard tier's performance is equal to the task. Thus one can vertically scale down the service tier on shards (other than the most recently created one) in order to fit the lower performance requirements for older data. 
 
-Vertical scaling can also be used to increase the performance of a single database in order to achieve increased performance. An example is a tax filing application. At filing time, it is better to keep a single customer’s data all on the same database and increase the performance of that shard. Depending on the application, vertically scaling up and down resources is advantageous to optimize for both cost and performance requirements. 
+Vertical scaling can also be used to increase the performance of a single database in order to achieve increased performance. An example is a tax filing application. At filing time, it is better to keep a single customer's data all on the same database and increase the performance of that shard. Depending on the application, vertically scaling up and down resources is advantageous to optimize for both cost and performance requirements. 
 
 Together, both horizontal and vertical scaling of the database tier are at the core of application scalability and shard elasticity. 
 
@@ -54,7 +54,7 @@ In the context of Azure SQL DB, there are a handful of key sources that can be l
 1. **Performance telemetry** is exposed in five-minute durations in the **sys.resource_stats** view 
 2. Hourly **database capacity telemetry** is exposed via the **sys.resource_usage** view.  
 
-One can analyze the performance resources usage by querying the master DB using the following query where ‘Shard_20140623’ is the name of the targeted database. 
+One can analyze the performance resources usage by querying the master DB using the following query where 'Shard_20140623' is the name of the targeted database. 
 
     SELECT TOP 10 *  
     FROM sys.resource_stats  
@@ -134,7 +134,7 @@ The example depicted in the figure below highlights two elastic scale scenarios:
 
 To horizontally scale, a rule (based on date or database size) is used to provision a new shard and register it with the shard map, thus growing the database tier horizontally. Secondly, to scale vertically, a second rule is implemented in which any shard that is older than one day is downgraded from Premium Edition to a Standard or Basic Edition. 
 
-Consider the telemetry scenario again: the application shards by date. It collects telemetry data continuously, requiring a high performance edition at loading time, but lower performance as the data ages. The current day’s data [Tnow] is written to a high performance database (Premium). Once the clock strikes midnight, the previous day’s shard (now [T-1]) is no longer be used for ingestion. The current data is ingested by the current [Tnow]. In advance of the next day, a new shard must be provisioned and registered with the shard map ([T+1]).  
+Consider the telemetry scenario again: the application shards by date. It collects telemetry data continuously, requiring a high performance edition at loading time, but lower performance as the data ages. The current day's data [Tnow] is written to a high performance database (Premium). Once the clock strikes midnight, the previous day's shard (now [T-1]) is no longer be used for ingestion. The current data is ingested by the current [Tnow]. In advance of the next day, a new shard must be provisioned and registered with the shard map ([T+1]).  
 
 This can be done by either provisioning a new shard in advance of every new day or by provisioning a new shard when the current shard ([Tnow]) nears its maximum capacity. Using either of these methods preserves the data locality for all telemetry written for a particular day. Per-hour sharding could also be applied for finer granularity. Once a new shard is provisioned, and because [T-1] is used for querying and reporting, it is desirable to reduce the performance level of the database reduce costs. As the content in DBs age, the performance tier can be further reduced and/or the content of the DBs can be archived to Azure Storage or deleted depending on the application. 
 

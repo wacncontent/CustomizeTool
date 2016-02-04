@@ -8,7 +8,7 @@
    editor=""/>
 
 <tags
-	ms.service="cloud-services"
+	ms.service="multiple"
 	ms.date="03/25/2015"
 	wacn.date=""/>
 
@@ -29,7 +29,7 @@ For the purposes of this design pattern a web tier is defined as a tier of servi
 
 ## Architectural Pattern Overview 
 
-This document describes a pattern for providing access to web services or web server content over multiple geographies for the purposes of availability and redundancy.  Critical services are illustrated below without attention to web platform constraints or development methodology within the web service itself.  There are two variations to this pattern – one which hosts the web content or services on virtual machines (using Azure supported operating systems and families) and one which uses Azure Websites.  The diagram below is a simple illustration of the relevant services and how they are used as part of this pattern using the example of virtual machines.   
+This document describes a pattern for providing access to web services or web server content over multiple geographies for the purposes of availability and redundancy.  Critical services are illustrated below without attention to web platform constraints or development methodology within the web service itself.  There are two variations to this pattern â one which hosts the web content or services on virtual machines (using Azure supported operating systems and families) and one which uses Azure Websites.  The diagram below is a simple illustration of the relevant services and how they are used as part of this pattern using the example of virtual machines.   
 
 ##  Additional Resources
 [Global Load Balanced Web Tier (pdf)](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-2c3c663a) 

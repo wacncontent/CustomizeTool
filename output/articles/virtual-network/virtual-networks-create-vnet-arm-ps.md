@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="10/21/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Create a virtual network by using PowerShell

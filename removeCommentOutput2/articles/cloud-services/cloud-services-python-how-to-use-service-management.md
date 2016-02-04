@@ -14,7 +14,7 @@
 
 # How to use Service Management from Python
 
-This guide will show you how to programmatically perform common service management tasks from Python. The **ServiceManagementService** class in the [Azure SDK for Python](/documentation/articles/python-how-to-install) supports programmatic access to much of the service management-related functionality that is available in the [management portal][management-portal] (such as **creating, updating, and deleting cloud services, deployments, data management services and virtual machines**). This functionality can be useful in building applications that need programmatic access to service management.
+This guide will show you how to programmatically perform common service management tasks from Python. The **ServiceManagementService** class in the [Azure SDK for Python][download-SDK-Python] supports programmatic access to much of the service management-related functionality that is available in the [management portal][management-portal] (such as **creating, updating, and deleting cloud services, deployments, data management services and virtual machines**). This functionality can be useful in building applications that need programmatic access to service management.
 
 > [AZURE.NOTE] Service Management API is being replaced with the new Resource Management API, currently available in a preview release.  See the [Azure Resource Management documentation](http://azure-sdk-for-python.readthedocs.org/) for details on using the new Resource Management API from Python.
 
@@ -94,7 +94,7 @@ To list the locations that are available for hosting services, use the **list\_l
 
 When you create a cloud service or storage service you will need to provide a valid location. The **list\_locations** method will always return an up-to-date list of the currently available locations. As of this writing, the available locations are:
 
-- China East
+- China East 
 - China North
 
 ## <a name="CreateCloudService"> </a>How to: Create a cloud service
@@ -109,7 +109,7 @@ When you create an application and run it in Azure, the code and configuration t
 	name = 'myhostedservice'
 	label = 'myhostedservice'
 	desc = 'my hosted service'
-	location = 'China North'
+	location = 'China East'
 
 	sms.create_hosted_service(name, label, desc, location)
 
@@ -163,7 +163,7 @@ A [storage service](/documentation/articles/storage-create-storage-account) give
 
 	name = 'mystorageaccount'
 	label = 'mystorageaccount'
-	location = 'China North'
+	location = 'China East'
 	desc = 'My storage account description.'
 
 	result = sms.create_storage_account(name, desc, label, location=location)
@@ -282,7 +282,7 @@ To create a virtual machine, you first need to create a [cloud service](#CreateC
 	sms = ServiceManagementService(subscription_id, certificate_path)
 
 	name = 'myvm'
-	location = 'China North'
+	location = 'China East'
 
 	#Set the location
 	sms.create_hosted_service(service_name=name,
@@ -290,7 +290,7 @@ To create a virtual machine, you first need to create a [cloud service](#CreateC
 		location=location)
 
 	# Name of an os image as returned by list_os_images
-	image_name = 'OpenLogic__OpenLogic-CentOS-62-20120531-en-us-30GB.vhd'
+	image_name = 'OpenLogic__OpenLogic-CentOS-62-20120531-zh-cn-30GB.vhd'
 
 	# Destination storage account container/blob where the VM disk
 	# will be created
@@ -417,5 +417,16 @@ For more information, see the [Python Developer Center](/develop/python/).
 [svc-mgmt-rest-api]: http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
 
 
-[cloud service]:/documentation/services/cloud-services/
-
+[download-SDK-Python]: /documentation/articles/python-how-to-install/
+[cloud service]:/documentation/articles/cloud-services-what-is
+[service package]: http://msdn.microsoft.com/zh-cn/library/azure/jj155995.aspx
+[Azure PowerShell cmdlets]: /documentation/articles/powershell-install-configure/
+[cspack commandline tool]: http://msdn.microsoft.com/zh-cn/library/azure/gg432988.aspx
+[Deploying an Azure Service]: http://msdn.microsoft.com/zh-cn/library/azure/gg433027.aspx
+[storage service]: /documentation/articles/storage-introduction/
+[azure-blobs]: /documentation/articles/storage-python-how-to-use-blob-storage/
+[azure-tables]: /documentation/articles/storage-python-how-to-use-table-storage/
+[azure-queues]: /documentation/articles/storage-python-how-to-use-queue-storage/
+[Azure Service Configuration Schema (.cscfg)]: http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx
+[Cloud Services]: http://msdn.microsoft.com/zh-cn/library/azure/jj155995.aspx
+[Virtual Machines]: http://msdn.microsoft.com/zh-cn/library/azure/jj156003.aspx

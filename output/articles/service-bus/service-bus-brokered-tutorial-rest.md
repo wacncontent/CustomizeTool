@@ -23,7 +23,7 @@ The first step is to create a service namespace, and to obtain a [Shared Access 
 
 1. For complete information about how to create a service namespace, see the topic [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/zh-cn/library/azure/hh690931.aspx) in the [Managing Service Bus Service Namespaces](https://msdn.microsoft.com/zh-cn/library/azure/hh690928.aspx) section.
 
-1. In the main window of the Azure Management Portal, click the name of the namespace you created in the previous step.
+1. In the main window of the [Azure Management Portal][], click the name of the namespace you created in the previous step.
 
 1. Click the **Configure** tab.
 
@@ -179,7 +179,8 @@ The next step is to write a method that uses the REST-style HTTP PUT command to 
 Paste the following code directly after the `GetSASToken()` code you added in the previous step:
 
 ```
-// Uses HTTP PUT to create the queueprivatestaticstring CreateQueue(string queueName, string token)
+// Uses HTTP PUT to create the queue
+private static string CreateQueue(string queueName, string token)
 {
     // Create the URI of the new queue, note that this uses the HTTPS schemestring queueAddress = baseAddress + queueName;
     WebClient webClient = new WebClient();
@@ -206,7 +207,8 @@ In this step, you add a method that uses the REST-style HTTP POST command to sen
 
 	```
 	// Sends a message to the "queueName" queue, given the name and the value to enqueue
-	// Uses an HTTP POST request.privatestaticvoid SendMessage(string queueName, string body)
+	// Uses an HTTP POST request.
+	private static void SendMessage(string queueName, string body)
 	{
 	    string fullAddress = baseAddress + queueName + "/messages" + "?timeout=60&api-version=2013-08 ";
 	    Console.WriteLine("\nSending message {0} - to address {1}", body, fullAddress);
@@ -514,9 +516,9 @@ namespace Microsoft.ServiceBus.Samples
             Console.WriteLine("\nSending message {0} - to address {1}", body, fullAddress);
             WebClient webClient = new WebClient();
             webClient.Headers[HttpRequestHeader.Authorization] = token;
-            // Add brokered message properties “TimeToLive” and “Label”.
+            // Add brokered message properties "TimeToLive" and "Label".
             webClient.Headers.Add("BrokerProperties", "{ \"TimeToLive\":30, \"Label\":\"M1\"}");
-            // Add custom properties “Priority” and “Customer”.
+            // Add custom properties "Priority" and "Customer".
             webClient.Headers.Add("Priority", "High");
             webClient.Headers.Add("Customer", "12345");
             webClient.UploadData(fullAddress, "POST", Encoding.UTF8.GetBytes(body));
@@ -624,3 +626,5 @@ See the following articles to learn more:
 - [Service Bus messaging overview](/documentation/articles/service-bus-messaging-overview)
 - [Azure Service Bus fundamentals](/documentation/articles/fundamentals-service-bus-hybrid-solutions)
 - [Service Bus relay REST tutorial](/documentation/articles/service-bus-relay-rest-tutorial)
+
+[Azure Management Portal]: http://manage.windowsazure.cn

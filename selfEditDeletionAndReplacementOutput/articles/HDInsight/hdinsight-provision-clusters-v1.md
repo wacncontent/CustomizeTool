@@ -4,13 +4,13 @@ deleted:
 
 		- **HDInsight on Linux (Ubuntu 12.04 LTS for Linux) (Preview)**: HDInsight provides the option of configuring Linux clusters on Azure. Configure a Linux cluster if you are familiar with Linux or Unix, migrating from an existing Linux-based Hadoop solution, or want easy integration with Hadoop ecosystem components built for Linux. For more information, see [Get started with Hadoop on Linux in HDInsight](/documentation/articles/hdinsight-hadoop-linux-get-started).
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		- Spark clusters (preview): for in-memory processing, interactive queries, stream, and machines learning workloads.
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
@@ -21,37 +21,37 @@ deleted:
 			- Worker node (at least 1 node)
 			- Zookeeper nodes (3 nodes) (Free for A1 Zookeepers)
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		- SSH User (Linux clusters): Is used to connect to the cluster using SSH. You can create additional SSH user accounts after the cluster is created by following the steps in [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix).
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		, including Windows, Mac and Linux
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		for Mac, Linux and Windows
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		Linux and
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		- [Set up the Azure CLI for Linux](#clilin)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -100,23 +100,11 @@ deleted:
 		
 				azure account import <path/to/the/file>
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		**East Asia**, **Southeast Asia**, **China North**, **West Europe**, **China East**, **China North**,
 
-reason: ()
-
-replacement:
-
-deleted:
-
-		two operating systems:
-
-replaced by:
-
-		operating system:
-
-reason: ()
+reason: (region diff)
 

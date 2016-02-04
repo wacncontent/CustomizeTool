@@ -32,7 +32,7 @@ Your application may need to store data. To set this up, you attach a data disk 
 
 On Linux, the Resource Disk is typically managed by the Azure Linux Agent and automatically mounted to **/mnt/resource** (or **/mnt** on Ubuntu images). On the other hand, on Linux the data disk might be named by the kernel as `/dev/sdc`, and users will need to partition, format and mount that resource. Please see the [Azure Linux Agent User Guide](/documentation/articles/virtual-machines-linux-agent-user-guide) for more information.
 
->[AZURE.NOTE] Don’t store data on the resource disk. This disk provides temporary storage for applications and processes and is used to store data that you don’t need to keep, such as swap files. Data disks reside Azure Storage as .vhd files in page blobs and provide storage redundancy to protect your data. For details, see [About Disks and Images in Azure](http://msdn.microsoft.com/zh-cn/library/jj672979.aspx).
+>[AZURE.NOTE] Donât store data on the resource disk. This disk provides temporary storage for applications and processes and is used to store data that you donât need to keep, such as swap files. Data disks reside Azure Storage as .vhd files in page blobs and provide storage redundancy to protect your data. For details, see [About Disks and Images in Azure](http://msdn.microsoft.com/zh-cn/library/jj672979.aspx).
 
 1. If you have not already done so, sign in to the Azure Management Portal.
 

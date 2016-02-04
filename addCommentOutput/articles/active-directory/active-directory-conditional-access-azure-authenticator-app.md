@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/19/2015"
+	ms.date="11/24/2015"
 	wacn.date=""/>
 
 # Azure Authenticator for Android
@@ -99,7 +99,7 @@ You can remove the work account you created at any time as follows:
 **To delete the work account from the Settings menu**
 
 1. From the accounts manager, select **Work account**.
-2. On the Work Account screen, in **General Settings**, select **Account Settings – Leave your workplace network**.
+2. On the Work Account screen, in **General Settings**, select **Account Settings - Leave your workplace network**.
 3. Select **Leave** on the **Workplace Join** screen.
 4. Click **OK** when the message “Are you sure you want to leave workplace” is displayed.
 5. This ensures that you have deleted your work account from your workplace.
@@ -115,4 +115,4 @@ On a Samsung Android device, device administrator privileges must be removed as 
 
 ##Troubleshooting
 
-If you see the  **Keystore Error**, this could be because you don’t have the lock screen set up with a PIN. To work around this issue, uninstall the Azure Authenticator app, configure a PIN for your lock screen, and reinstall the app.
+If you see the  **Keystore Error**, this could be because you don't have the lock screen set up with a PIN. To work around this issue, uninstall the Azure Authenticator app, configure a PIN for your lock screen, and reinstall the app.

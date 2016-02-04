@@ -43,7 +43,7 @@ Registering an application allows any user to do the following:
 
 > [AZURE.NOTE]By default, any member can register an application. To learn how to restrict permissions for registering applications to specific members, please refer to the document [How applications are added to Azure AD
 
-Here’s what you, the global administrator, will need to do to help developers to make their application ready for production:
+Here's what you, the global administrator, will need to do to help developers to make their application ready for production:
 
 - Configure Access Rules (access policy/MFA)
 - Configure the app to require user assignment and assign users
@@ -57,19 +57,19 @@ As we mentioned earlier please refer to the following article to learn more abou
 
 ## Configure the app to require user assignment and assign users
 
-By default, user assignment is not required in order for them to access an application. However, if the application exposes roles or if you want the application to appear on a user’s access panel, you should require user assignment, and assign users and or groups.
+By default, user assignment is not required in order for them to access an application. However, if the application exposes roles or if you want the application to appear on a user's access panel, you should require user assignment, and assign users and or groups.
 
 [Requiring user assignment](/documentation/articles/active-directory-applications-guiding-developers-requiring-user-assignment)
 
-If you’re an Azure AD Premium or Enterprise Mobility Suite (EMS) subscriber, we strongly recommend leveraging groups. Assigning groups to the application allows you to delegate on-going access management to the owner of the group. You can create the group or if you prefer ask the responsible party in your organization to create the group using your group management facility.
+If you're an Azure AD Premium or Enterprise Mobility Suite (EMS) subscriber, we strongly recommend leveraging groups. Assigning groups to the application allows you to delegate on-going access management to the owner of the group. You can create the group or if you prefer ask the responsible party in your organization to create the group using your group management facility.
 
 - [Assigning users to an application](/documentation/articles/active-directory-applications-guiding-developers-assigning-users)
 - [Assigning groups to an application](/documentation/articles/active-directory-applications-guiding-developers-assigning-groups)
 
 ## Suppressing user consent
 
-By default, the user will need to consent to the permission that’s required in order to sign in. The consent experience, being asked to grant to permissions to an application, can be disconcerting for users who are unfamiliar with needing to make such a decision.
+By default, the user will need to consent to the permission that's required in order to sign in. The consent experience, being asked to grant to permissions to an application, can be disconcerting for users who are unfamiliar with needing to make such a decision.
 
-For applications that you trust, it’s possible for you to consent to application on behalf of all of the users in your organization.
+For applications that you trust, it's possible for you to consent to application on behalf of all of the users in your organization.
 
 For more information about user consent and the consent experience in Azure, see [Integrating Applications with Azure Active Directory](/documentation/articles/active-directory-integrating-applications)

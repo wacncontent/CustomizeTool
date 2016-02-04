@@ -3,19 +3,19 @@
    description="Provides information about what Microsoft will support as regards to the Azure Guest OS used by Cloud Services." 
    services="cloud-services" 
    documentationCenter="na" 
-   authors="Thraka" 
+   authors="yuemlu" 
    manager="timlt" 
    editor=""/>
 
 <tags
-	ms.service="cloud-services"
-	ms.date="08/18/2015"
-	wacn.date=""/>
+   ms.service="cloud-services"
+   ms.date="12/07/2015" 
+   wacn.date=""/>
 
 # Azure Guest OS supportability and retirement policy
-The information on this page relates to the Azure Guest operating system ([Guest OS](https://msdn.microsoft.com/zh-cn/library/azure/ff729422.aspx)) for Cloud Services worker and web roles (PaaS). It does not apply to Virtual Machines (IaaS). 
+The information on this page relates to the Azure Guest operating system ([Guest OS](/documentation/articles/cloud-services-guestos-update-matrix)) for Cloud Services worker and web roles (PaaS). It does not apply to Virtual Machines (IaaS). 
 
-Microsoft has a published [support policy for the Guest OS](http://support.microsoft.com/gp/azure-cloud-lifecycle-faq). The page you are reading now describes how the policy is implemented.
+Microsoft has a published [support policy for the Guest OS](http://support.microsoft.com/zh-cn/gp/azure-cloud-lifecycle-faq). The page you are reading now describes how the policy is implemented.
 
 The policy is 
 
@@ -41,7 +41,7 @@ Once the retirement is announced, customers have a 12 month "transition" period 
 A gradual retirement process will begin 6 months into the transition period. During this time:
 
 1. Microsoft will notify customers of the retirement. 
-2. The newer version of the Azure SDK won’t support the retired Guest OS family.
+2. The newer version of the Azure SDK wonÄ‡ÂŠÂ° support the retired Guest OS family.
 3. New deployments and redeployments of Cloud Services will not be allowed on the retired family
 
 Microsoft will continue to introduce new Guest OS version incorporating the latest MSRC updates until the last day of the transition period, known as the "expiration date". At that time, the any Cloud Services still running will be unsupported under the Azure SLA. Microsoft has the discretion to force upgrade, delete or stop those services after that date.
@@ -63,7 +63,7 @@ These periods may be made longer at Microsoft's discretion to ease customer tran
 
 ### Notifications during retirement 
 
-* **Family retirement** <br>Microsoft will use blog posts and management portal notification. Customers who are still using a retired Guest OS family will be notified through direct communication (email, portal messages, phone call) to assigned service administrators. All changes will be posted to this page and the RSS feed listed at the beginning of this page. 
+* **Family retirement** <br>Microsoft will use blog posts and Azure Management Portal notification. Customers who are still using a retired Guest OS family will be notified through direct communication (email, portal messages, phone call) to assigned service administrators. All changes will be posted to this page and the RSS feed listed at the beginning of this page. 
 
 
 * **Version Retirement** <br>All changes will be posted to this page and the RSS feed listed at the beginning of this page, including the release, disabled and expiration dates. Services admins will receive emails if they have deployments running on a disabled Guest OS version or family. The timing of these emails can vary. Generally they are at least a month before disablement, though this timing is not an official SLA. 
@@ -77,11 +77,11 @@ You should use latest Guest OS family for designing your Cloud Services.
 
 1. Start planning your migration to a newer family early. 
 2. Set up temporary test deployments to test your Cloud Service running on the new family. 
-3. [Set your Guest OS version](https://msdn.microsoft.com/zh-cn/library/azure/gg433101.aspx) to "Automatic" (osVersion=* in the [.CSCFG](https://msdn.microsoft.com/zh-cn/library/azure/gg456324.aspx) file) so the migration to new Guest OS versions occurs automatically.
+3. Set your Guest OS version to **Automatic** (osVersion=* in the [.cscfg](/documentation/articles/cloud-services-model-and-package/#cscfg) file) so the migration to new Guest OS versions occurs automatically.
 
-**What if my web application requires deeper integration with the OS?**
+**What if my web site requires deeper integration with the OS?**
 
-If your web application architecture requires deeper dependency on the underlying operating system, use platform supported capabilities such as "[Startup Tasks](https://msdn.microsoft.com/zh-cn/library/azure/gg456327.aspx)" or other extensibility mechanisms which may exist in the future. Alternatively, you can also use [Azure Virtual Machines](http://azure.microsoft.com/documentation/scenarios/virtual-machines/) (IaaS – Infrastructure as a Service), where you are responsible for maintaining the underlying operating system.
+If your web site architecture requires deeper dependency on the underlying operating system, use platform supported capabilities such as [startup tasks](/documentation/articles/cloud-services-startup-tasks) or other extensibility mechanisms which may exist in the future. Alternatively, you can also use [Azure Virtual Machines](http://azure.microsoft.com/documentation/scenarios/virtual-machines/) (IaaS ?Infrastructure as a Service), where you are responsible for maintaining the underlying operating system.
  
 ## Next steps
 Review the latest [Guest OS releases](/documentation/articles/cloud-services-guestos-update-matrix).

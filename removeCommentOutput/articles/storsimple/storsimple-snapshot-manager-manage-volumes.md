@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="StorSimple Snapshot Manager and volumes | Microsoft Azure"
+   pageTitle="StorSimple Snapshot Manager and volumes | Windows Azure"
    description="Describes how to use the StorSimple Snapshot Manager MMC snap-in to view and manage volumes and to configure backups."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="10/15/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 # Use StorSimple Snapshot Manager to view and manage volumes
 
@@ -21,7 +17,7 @@
 
 You can use the StorSimple Snapshot Manager **Volumes** node (on the **Scope** pane) to select volumes and view information about them. The volumes are presented as drives that correspond to the volumes mounted by the host. The **Volumes** node shows local volumes and volume types that are supported by Azure StorSimple, including volumes discovered through the use of iSCSI and a device. 
 
-For more information about supported volumes, go to [Support for multiple volume types](storsimple-what-is-snapshot-manager.md#support-for-multiple-volume-types).
+For more information about supported volumes, go to [Support for multiple volume types](/documentation/articles/storsimple-what-is-snapshot-manager#support-for-multiple-volume-types).
 
 ![Volume list in Results pane](./media/storsimple-snapshot-manager-manage-volumes/HCS_SSM_Volume_node.png)
 
@@ -39,13 +35,13 @@ This tutorial explains how you can mount, initialize, and format volumes and the
  
 ## Mount volumes
 
-Use the following procedure to mount, initialize, and format Azure StorSimple volumes. This procedure uses Disk Management, a system utility for managing hard disks and the volumes or partitions that they contain. For more information about Disk Management, go to [Disk Management](https://technet.microsoft.com/library/cc770943.aspx) on the Microsoft TechNet website.
+Use the following procedure to mount, initialize, and format Azure StorSimple volumes. This procedure uses Disk Management, a system utility for managing hard disks and the volumes or partitions that they contain. For more information about Disk Management, go to [Disk Management](https://technet.microsoft.com/zh-cn/library/cc770943.aspx) on the Microsoft TechNet website.
 
 #### To mount volumes
 
 1. On your host computer, start the Microsoft iSCSI initiator.
 
-2. Supply one of the interface IP addresses as the target portal or discovery IP address, and connect to the device. After the device is connected, the volumes will be accessible to your Windows system. For more information about using the Microsoft iSCSI initiator, go to the section “Connecting to an iSCSI target device” in [Installing and Configuring Microsoft iSCSI Initiator][1].
+2. Supply one of the interface IP addresses as the target portal or discovery IP address, and connect to the device. After the device is connected, the volumes will be accessible to your Windows system. For more information about using the Microsoft iSCSI initiator, go to the section âConnecting to an iSCSI target deviceâ in [Installing and Configuring Microsoft iSCSI Initiator][1].
 
 3. Use any of the following options to start Disk Management:
 
@@ -85,7 +81,7 @@ Use the following procedure to mount, initialize, and format Azure StorSimple vo
       - Specify a 64 KB allocation unit size.
       - Perform a quick format.
 
-7. Format multi-partition volumes. For instructions, go to the section, "Partitions and Volumes" in [Implementing Disk Management](https://msdn.microsoft.com/library/dd163556.aspx).
+7. Format multi-partition volumes. For instructions, go to the section, "Partitions and Volumes" in [Implementing Disk Management](https://msdn.microsoft.com/zh-cn/library/dd163556.aspx).
 
 ## View information about your volumes
 
@@ -153,9 +149,9 @@ Use the following procedure to configure a backup of a basic volume, and then ei
 
 Before you begin:
 
-- Make sure that the StorSimple device and host computer are configured correctly. For more information, go to [Deploy your on-premises StorSimple device](storsimple-deployment-walkthrough.md).
+- Make sure that the StorSimple device and host computer are configured correctly. For more information, go to [Deploy your on-premises StorSimple device](/documentation/articles/storsimple-deployment-walkthrough).
 
-- Install and configure StorSimple Snapshot Manager. For more information, go to [Deploy StorSimple Snapshot Manager](storsimple-snapshot-manager-deployment.md).
+- Install and configure StorSimple Snapshot Manager. For more information, go to [Deploy StorSimple Snapshot Manager](/documentation/articles/storsimple-snapshot-manager-deployment).
 
 #### To configure backup of a basic volume
 
@@ -195,15 +191,15 @@ Complete the following steps to configure backup of a dynamic mirrored volume:
 
 Before you begin:
 
-- Make sure that the StorSimple device and host computer are configured correctly. For more information, go to [Deploy your on-premises StorSimple device](storsimple-deployment-walkthrough.md).
+- Make sure that the StorSimple device and host computer are configured correctly. For more information, go to [Deploy your on-premises StorSimple device](/documentation/articles/storsimple-deployment-walkthrough).
 
-- Install and configure StorSimple Snapshot Manager. For more information, go to [Deploy StorSimple Snapshot Manager](storsimple-snapshot-manager-deployment.md).
+- Install and configure StorSimple Snapshot Manager. For more information, go to [Deploy StorSimple Snapshot Manager](/documentation/articles/storsimple-snapshot-manager-deployment).
 
 - Configure two volumes on the StorSimple device. (In the examples, the available volumes are **Disk 1** and **Disk 2**.) 
 
 ### Step 1: Use Disk Management to create a dynamic mirrored volume
 
-Disk Management is a system utility for managing hard disks and the volumes or partitions that they contain. For more information about Disk Management, go to [Disk Management](https://technet.microsoft.com/library/cc770943.aspx) on the Microsoft TechNet website.
+Disk Management is a system utility for managing hard disks and the volumes or partitions that they contain. For more information about Disk Management, go to [Disk Management](https://technet.microsoft.com/zh-cn/library/cc770943.aspx) on the Microsoft TechNet website.
 
 #### To create a dynamic mirrored volume
 
@@ -265,8 +261,8 @@ Use the following procedure to configure a dynamic mirrored volume, and then eit
 
 ## Next steps
 
-- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple solution](storsimple-snapshot-manager-admin.md).
-- Learn how to [use StorSimple Snapshot Manager to create and manage volume groups](storsimple-snapshot-manager-manage-volume-groups.md).
+- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple solution](/documentation/articles/storsimple-snapshot-manager-admin).
+- Learn how to [use StorSimple Snapshot Manager to create and manage volume groups](/documentation/articles/storsimple-snapshot-manager-manage-volume-groups).
 
 <!--Reference links-->
-[1]: https://msdn.microsoft.com/library/ee338480(v=ws.10).aspx
+[1]: https://msdn.microsoft.com/zh-cn/library/ee338480(v=ws.10).aspx

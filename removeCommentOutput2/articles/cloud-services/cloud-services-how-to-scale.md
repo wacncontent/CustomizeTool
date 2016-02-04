@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/08/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 
@@ -30,7 +30,7 @@ You should consider the following information before you configure scaling for y
 
 - You must create a queue and associate it with a role or availability set before you can scale an application based on a message threshold. For more information, see [How to use the Queue Storage Service](/documentation/articles/storage-dotnet-how-to-use-queues).
 
-- You can scale resources that are linked to your cloud service. For more information about linking resources, see [How to: Link a resource to a cloud service](/documentation/articles/cloud-services-how-to-manage#how-to-link-a-resource-to-a-cloud-service).
+- You can scale resources that are linked to your cloud service. For more information about linking resources, see [How to: Link a resource to a cloud service](/documentation/articles/cloud-services-how-to-manage/#how-to-link-a-resource-to-a-cloud-service).
 
 - To enable high availability of your application, you should ensure that it is deployed with two or more role instances or Virtual Machines. For more information, see [Service Level Agreements](/support/legal/sla/).
 
@@ -39,7 +39,7 @@ You should consider the following information before you configure scaling for y
 
 On the Scale page, you can manually increase or decrease the number of running instances in a cloud service.
 
-1. In the [Management Portal](https://manage.windowsazure.cn/), click **Cloud Services**, and then click the name of the cloud service to open the dashboard.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Cloud Services**, and then click the name of the cloud service to open the dashboard.
 
 2. Click **Scale**. Automatic scaling is disabled by default for all roles, which means that you can manually change the number of instances that are used by your application.
 
@@ -70,7 +70,7 @@ On the Scale page, you can configure your cloud service to automatically increas
 
 ## Average CPU usage
 
-1. In the [Management Portal](https://manage.windowsazure.cn/), click **Cloud Services**, and then click the name of the cloud service to open the dashboard.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Cloud Services**, and then click the name of the cloud service to open the dashboard.
 
 2. Click **Scale**.
 
@@ -122,7 +122,7 @@ On the Scale page, you can configure your cloud service to automatically increas
 
 ## Queue messages
 
-1. In the [Management Portal](https://manage.windowsazure.cn/), click **Cloud Services**, and then click the name of the cloud service to open the dashboard.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Cloud Services**, and then click the name of the cloud service to open the dashboard.
 2. Click **Scale**.
 3. Scroll to the section for the role or availability set, and then click **Queue**. This enables automatic scaling of your application based on a target number of queue messages.
 
@@ -176,7 +176,7 @@ On the Scale page, you can configure your cloud service to automatically increas
 
 Often when you scale a role, it's beneficial to scale the database that the application is using also. If you link the database to the cloud service, you change the SQL Database edition and resize the database on the Scale page.
 
-1. In the [Management Portal](https://manage.windowsazure.cn/), click **Cloud Services**, and then click the name of the cloud service to open the dashboard.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Cloud Services**, and then click the name of the cloud service to open the dashboard.
 2. Click **Scale**.
 3. In the Linked Resources section, select the edition to use for the database.
 
@@ -195,7 +195,7 @@ You can schedule automatic scaling of your application by configuring schedules 
 
 **Note:** Schedules are currently not available for applications that use Virtual Machines.
 
-1. In the [Management Portal](https://manage.windowsazure.cn/), click **Cloud Services**, and then click the name of the cloud service to open the dashboard.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Cloud Services**, and then click the name of the cloud service to open the dashboard.
 2. Click **Scale**.
 3. On the Scale page, click **set up schedule times**.
 

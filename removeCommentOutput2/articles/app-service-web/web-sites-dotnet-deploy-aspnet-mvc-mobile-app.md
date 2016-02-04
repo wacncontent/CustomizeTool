@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Deploy an ASP.NET MVC 5 mobile web app in Azure Websites" 
-	description="A tutorial that teaches you how to deploy a web app to Azure Websites using mobile features in ASP.NET MVC 5 web application." 
+	pageTitle="Deploy an ASP.NET MVC 5 mobile web app in Azure" 
+	description="A tutorial that teaches you how to deploy a web app to Azure using mobile features in ASP.NET MVC 5 web application." 
 	services="app-service" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/16/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 
-# Deploy an ASP.NET MVC 5 mobile web app in Azure Websites
+# Deploy an ASP.NET MVC 5 mobile web app in Azure
 
 This tutorial will teach you the basics of how to build an ASP.NET MVC 5
-web app that is mobile-friendly and deploy it to Azure Websites. For this tutorial, you need 
+web app that is mobile-friendly and deploy it to Azure Web App. For this tutorial, you need 
 [Visual Studio Express 2013 for Web][Visual Studio Express 2013]
 or the professional edition of Visual Studio if you already
 have that. You can use [Visual Studio 2015] but the screen shots will be different and you must use the ASP.NET 4.x templates.
@@ -40,7 +40,7 @@ application. 
 
 Here's what you'll learn:
 
--	How to use Visual Studio 2013 to publish your web application directly to a web app in Azure Websites.
+-	How to use Visual Studio 2013 to publish your web application directly to a web app in Azure.
 -   How the ASP.NET MVC 5 templates use the CSS Bootstrap framework to
     improve display on mobile devices
 -   How to create mobile-specific views to target specific mobile
@@ -60,7 +60,7 @@ work:
 
 -   Browser Emulator in [Internet Explorer 11 F12 developer tools][EmulatorIE11] (used in all mobile
     browser screenshots). It has user agent string presets for Windows Phone 8, Windows Phone 7, and Apple iPad.
--	Browser Emulator in [Google Chrome DevTools][EmulatorChrome]. It contains presets for numerous Android devices, as well as Apple iPhone, Apple iPad, and Amazon Kindle Fire. It also emulates touch events.
+-	Browser Emulator in Google Chrome DevTools. It contains presets for numerous Android devices, as well as Apple iPhone, Apple iPad, and Amazon Kindle Fire. It also emulates touch events.
 -   [Opera Mobile Emulator][EmulatorOpera]
 
 Visual Studio projects with C\# source code are available to accompany
@@ -83,39 +83,27 @@ this topic:
 
 1.	Download the conference-listing application [starter project][StarterProject].
 
-2. 	Then in Windows Explorer, right-click the Mvc5Mobile.zip file and choose *Properties*.
+2. 	Then in Windows Explorer, right-click the downloaded ZIP file and choose *Properties*.
 
-3. 	In the **Mvc5Mobile.zip Properties** dialog box,
+3. 	In the **Properties** dialog box,
 choose the **Unblock** button. (Unblocking prevents a security warning
 that occurs when you try to use a *.zip* file that you've downloaded
 from the web.)
 
-4.	Right-click the *Mvc5Mobile.zip* file and select **Extract All** to
+4.	Right-click the ZIP file and select **Extract All** to
 unzip the file. 
 
-5. 	In Visual Studio, open the *Mvc5Mobile.sln* file.
+5. 	In Visual Studio, open the *C#\Mvc5Mobile.sln* file.
+
+6.	Log into the [Management Portal](https://manage.windowsazure.cn/), and click an exited website or create a new website.
+
+7.	In the **Dashboard**, under ther **Quick Glance**, *Download the publish profile*
 
 6.  In Solution Explorer, right-click the project and click **Publish**.
 
 	![][DeployClickPublish]
 
-7.	In Publish Web, click **Windows Azure Web Apps**.
-
-	![][DeployClickWebSites]
-
-8.	Click **Sign in**.
-
-	![][DeploySignIn]
-
-9.	Follow the prompts to log into your Azure account.
-
-11. The Select Existing Web App dialog should now show you as signed in. Click **New**.
-
-	![][DeployNewWebsite]  
-
-12. In the **Web App name** field, specify a unique app name prefix. Your fully-qualified web app name will be *&lt;prefix>*.chinacloudsites.cn. Also, configure the **App Service plan**, **Resource group**, and **Region** fields. Then, click **Create**.
-
-	![][DeploySiteSettings]
+7.	In Publish Web, click **Import**, and choose the publish profile downloaded above.
 
 13.	The Publish Web dialog will be filled with the settings for your new web app. Click **Publish**.
 
@@ -133,7 +121,7 @@ image below shows the *AllTags* view in portrait mode (from choosing
 
 	![][AllTags]
 
->[AZURE.NOTE] While you can debug your MVC 5 application from within Visual Studio, you can publish your web app to Azure again to verify the live web app directly from your mobile browser or a browser emulator.
+>[AZURE.TIP] While you can debug your MVC 5 application from within Visual Studio, you can publish your web app to Azure again to verify the live web app directly from your mobile browser or a browser emulator.
 
 The display is very readable on a mobile device. You can also already
 see some of the visual effects applied by the Bootstrap CSS framework.
@@ -233,7 +221,7 @@ emulator. The mobile browser emulator shows the two changes you made
 
 ![][AllTagsMobile_LayoutMobile]
 
-In contrast, the desktop display has not changed (with titles from from *\_Layout.cshtml* and 
+In contrast, the desktop display has not changed (with titles from *\_Layout.cshtml* and 
 *AllTags.cshtml*).
 
 ![][AllTagsMobile_LayoutMobileDesktop]
@@ -392,7 +380,7 @@ navigate the long list of speakers. Bootstrap doesn't provide a
 search filter functionality out-of-the-box, but you can add it with a
 few lines of code. You will first add a search box to the view, then
 hook up with the JavaScript code for the filter function. In
-*Views\\Home\\AllSpeakers.cshtml*, add a \<form\> tag just after the \<h2\> tag, as shown below:
+*Views\\Home\\AllSpeakers.cshtml*, add a <form\> tag just after the <h2\> tag, as shown below:
 
     @model IEnumerable<string>
 
@@ -697,7 +685,7 @@ changes that you just made:
 This tutorial has shown you how to use ASP.NET MVC 5 to develop
 mobile-friendly Web applications. These include:
 
--	Deploy an ASP.NET MVC 5 application to an Azure Websites web app
+-	Deploy an ASP.NET MVC 5 application to an Azure web app
 -   Use Bootstrap to create responsive web layout in your MVC 5
     application
 -   Override layout, views, and partial views, both globally and for an

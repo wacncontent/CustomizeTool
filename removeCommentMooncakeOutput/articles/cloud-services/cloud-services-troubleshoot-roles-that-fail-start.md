@@ -7,10 +7,10 @@
    manager="msmets"
    editor=""
    tags="top-support-issue"/>
-<tags
-	ms.service="cloud-services"
-	ms.date="10/14/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="cloud-services"
+   ms.date="10/14/2015"
+   wacn.date="" />
 
 # Common steps in troubleshooting Cloud Service roles that fail to start
 
@@ -29,7 +29,7 @@ Unresponsive roles and roles that are cycling between **initializing**, **busy**
 **Symptom:**  Symptoms of missing DLLs or assemblies can be:
 
 - Your role instance is cycling between **initializing** / **busy** / **stopping**
-- Your role instance has moved to **ready** but navigating to your web application the page does not come up
+- Your role instance has moved to **ready** but navigating to your web site the page does not come up
 
 Resolution:  There are three recommended methods for investigating these issues.
 
@@ -83,7 +83,7 @@ You can use remote desktop to access the role and view more complete errors remo
 
 9. Open Internet Explorer.
 
-10. Type the address and the name of the web application. For example, `http://<IPV4 Address>/default.aspx`.
+10. Type the address and the name of the web site. For example, `http://<IPV4 Address>/default.aspx`.
 
 Navigating to the web site will return more explicit error messages.
 
@@ -91,7 +91,7 @@ Navigating to the web site will return more explicit error messages.
 
 * Description: An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
 
-* Exception Details: System.IO.FIleNotFoundException: Could not load file or assembly ‘Microsoft.WindowsAzure.StorageClient, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf856ad364e35’ or one of its dependencies. The system cannot find the file specified.
+* Exception Details: System.IO.FIleNotFoundException: Could not load file or assembly 'Microsoft.WindowsAzure.StorageClient, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf856ad364e35' or one of its dependencies. The system cannot find the file specified.
 
 For example:
 

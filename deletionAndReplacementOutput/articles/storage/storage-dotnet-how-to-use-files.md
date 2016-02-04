@@ -4,7 +4,7 @@ deleted:
 
 		the Azure preview portal,
 
-reason: ()
+reason: (preview portal)
 
 deleted:
 
@@ -17,17 +17,5 @@ deleted:
 		- Adjust the share size quota
 		- Get the `net use` command to use to mount the file share from a Windows client
 
-reason: ()
-
-replacement:
-
-deleted:
-
-		available](https://azure.microsoft.com/zh-cn/blog/)
-
-replaced by:
-
-		available](/blog/)
-
-reason: ()
+reason: (preview portal)
 

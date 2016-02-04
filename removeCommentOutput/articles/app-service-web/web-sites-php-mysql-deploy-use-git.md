@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create a PHP-MySQL web app in Azure Websites and deploy using Git"
-	description="A tutorial that demonstrates how to create a PHP web app that stores data in MySQL and use Git deployment to Azure."
+	pageTitle="Create a PHP-MySQL web site in Azure Websites and deploy using Git"
+	description="A tutorial that demonstrates how to create a PHP web site that stores data in MySQL and use Git deployment to Azure."
 	services="app-service\web"
 	documentationCenter="php"
 	authors="tfitzmac"
@@ -10,10 +10,10 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/03/2015"
+	ms.date="11/19/2015"
 	wacn.date=""/>
 
-#Create a PHP-MySQL web app in Azure Websites and deploy using Git
+#Create a PHP-MySQL web site in Azure Websites and deploy using Git
 
 > [AZURE.SELECTOR]
 - [.Net](/documentation/articles/web-sites-dotnet-get-started)
@@ -23,50 +23,48 @@
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
 - [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-This tutorial shows you how to create a PHP-MySQL web app and how to deploy it to [Azure Websites](/documentation/services/web-sites/) using Git. You will use [PHP][install-php], the MySQL Command-Line Tool (part of [MySQL][install-mysql]), a web server, and [Git][install-git] installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP/MySQL web app running in Azure.
+This tutorial shows you how to create a PHP-MySQL web site and how to deploy it to [Azure Websites](/documentation/services/web-sites/) using Git. You will use [PHP][install-php], the MySQL Command-Line Tool (part of [MySQL][install-mysql]), and [Git][install-git] installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP/MySQL web site running in Azure.
 
 You will learn:
 
-* How to create a web app and a MySQL database using the [Azure Management Portal](https://manage.windowsazure.cn/). Because PHP is enabled in [Azure Websites](/documentation/services/web-sites/) by default, nothing special is required to run your PHP code.
+* How to create a web site and a MySQL database using the [Azure Management Portal](https://manage.windowsazure.cn). Because PHP is enabled in [Azure Websites](/documentation/services/web-sites/) by default, nothing special is required to run your PHP code.
 * How to publish and re-publish your application to Azure using Git.
 
-By following this tutorial, you will build a simple registration web app in PHP. The application will be hosted in Web Apps. A screenshot of the completed application is below:
+By following this tutorial, you will build a simple registration web site in PHP. The application will be hosted in web sites. A screenshot of the completed application is below:
 
 ![Azure PHP web site][running-app]
 
 ##Set up the development environment
 
-This tutorial assumes you have [PHP][install-php], the MySQL Command-Line Tool (part of [MySQL][install-mysql]), a web server, and [Git][install-git] installed on your computer.
+This tutorial assumes you have [PHP][install-php], the MySQL Command-Line Tool (part of [MySQL][install-mysql]), and [Git][install-git] installed on your computer.
 
-> [AZURE.NOTE]
-> If you are performing this tutorial on Windows, you can set up your machine for PHP and automatically configure IIS (the built-in web server in Windows) by installing the <a href="http://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/azurephpsdk.appids">Azure SDK for PHP</a>.
 
-##<a id="create-web-site-and-set-up-git"></a>Create a web app and set up Git publishing
+##<a id="create-web-site-and-set-up-git"></a>Create a web site and set up Git publishing
 
-Follow these steps to create a web app and a MySQL database:
+Follow these steps to create a web site and a MySQL database:
 
 1. Login to the [Azure Management Portal][management-portal].
 2. Click the **New** icon.
 
-3. Click **Web + Mobile**, then **Azure Marketplace**. 
+3. Click **See All** next to **Marketplace**. 
 
-4. Click **Web Apps**, then **Web app + MySQL**. Then, click **Create**.
+4. Click **Web + Mobile**, then **web site + MySQL**. Then, click **Create**.
 
 4. Enter a valid name for your resource group.
 
     ![Set resource group name][resource-group]
 
-5. Enter values for your new web app.
+5. Enter values for your new web site.
 
-    ![Create web app][new-web-app]
+    ![Create web site][new-web-app]
 
 6. Enter values for your new database, including agreeing to the legal terms.
 
 	![Create new MySQL database][new-mysql-db]
 
-7. When the web app has been created, you will see the new resource group. Click the name of the web app to configure its settings.
+7. When the web site has been created, you will see the new web site blade.
 
-7. Click **Set up continuous deployment**.
+7. In **Settings** click on **Continuous Deployment**, then click on _Configure required settings_.
 
 	![Set up Git publishing][setup-publishing]
 
@@ -82,13 +80,13 @@ Follow these steps to create a web app and a MySQL database:
 
 ##Get remote MySQL connection information
 
-To connect to the MySQL database that is running in Web Apps, your will need the connection information. To get MySQL connection information, follow these steps:
+To connect to the MySQL database that is running in web sites, your will need the connection information. To get MySQL connection information, follow these steps:
 
 1. From your resource group, click the database:
 
 	![Select database][select-database]
 
-2. From the database sumamry, select **Properties**.
+2. From the database **Settings**, select **Properties**.
 
     ![Select properties][select-properties]
 
@@ -98,13 +96,13 @@ To connect to the MySQL database that is running in Web Apps, your will need the
 
 ##Build and test your app locally
 
-Now that you have created a web app, you can develop your application locally, then deploy it after testing.
+Now that you have created a web site, you can develop your application locally, then deploy it after testing.
 
 The Registration application is a simple PHP application that allows you to register for an event by providing your name and email address. Information about previous registrants is displayed in a table. Registration information is stored in a MySQL database. The application consists of one file (copy/paste code available below):
 
 * **index.php**: Displays a form for registration and a table containing registrant information.
 
-To build and run the application locally, follow the steps below. Note that these steps assume you have PHP, the MySQL Command-Line Tool (part of MySQL), and a web server set up on your local machine, and that you have enabled the [PDO extension for MySQL][pdo-mysql].
+To build and run the application locally, follow the steps below. Note that these steps assume you have the PHP and MySQL Command-Line Tool (part of MySQL) set up on your local machine, and that you have enabled the [PDO extension for MySQL][pdo-mysql].
 
 1. Connect to the remote MySQL server, using the value for `Data Source`, `User Id`, `Password`, and `Database` that you retrieved earlier:
 
@@ -116,9 +114,9 @@ To build and run the application locally, follow the steps below. Note that thes
 
 3. Paste in the following `CREATE TABLE` command to create the `registration_tbl` table in your database:
 
-		mysql> CREATE TABLE registration_tbl(id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(30), email VARCHAR(30), date DATE);
+		CREATE TABLE registration_tbl(id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(30), email VARCHAR(30), date DATE);
 
-4. In your web server's root directory, create a folder called `registration` and create a file in it called `index.php`.
+4. In the root of your local application folder create **index.php** file.
 
 5. Open the **index.php** file in a text editor or IDE and add the following code, and complete the necessary changes marked with `//TODO:` comments.
 
@@ -151,7 +149,7 @@ To build and run the application locally, follow the steps below. Note that thes
 		<?php
 			// DB connection info
 			//TODO: Update the values for $host, $user, $pwd, and $db
-			//using the values you retrieved earlier from the portal.
+			//using the values you retrieved earlier from the Azure Management Portal.
 			$host = "value of Data Source";
 			$user = "value of User Id";
 			$pwd = "value of Password";
@@ -207,17 +205,21 @@ To build and run the application locally, follow the steps below. Note that thes
 		</body>
 		</html>
 
-You can now browse to **http://localhost/registration/index.php** to test the application.
+4.  In a terminal go to your application folder and type the following command:
+
+		php -S localhost:8000
+
+You can now browse to **http://localhost:8000/** to test the application.
 
 
 ##Publish your app
 
-After you have tested your app locally, you can publish it to Web Apps using Git. You will initialize your local Git repository and publish the application.
+After you have tested your app locally, you can publish it to web sites using Git. You will initialize your local Git repository and publish the application.
 
 > [AZURE.NOTE]
-> These are the same steps shown in the portal at the end of the Create a web app and Set up Git Publishing section above.
+> These are the same steps shown in the Azure Management Portal at the end of the Create a web site and Set up Git Publishing section above.
 
-1. (Optional)  If you've forgotten or misplaced your Git remote repostitory URL, navigate to the web app properties on the portal.
+1. (Optional)  If you've forgotten or misplaced your Git remote repostitory URL, navigate to the web site properties on the Azure Management Portal.
 
 1. Open GitBash (or a terminal, if Git is in your `PATH`), change directories to the root directory of your application, and run the following commands:
 
@@ -256,7 +258,7 @@ To publish changes to your app, follow these steps:
 
 	![Azure PHP web site][running-app]
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 
 ## Next steps
 
@@ -264,7 +266,6 @@ For more information, see the [PHP Developer Center](/develop/php/).
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
 [install-php]: http://www.php.net/manual/en/install.php
 [install-SQLExpress]: http://www.microsoft.com/download/details.aspx?id=29062

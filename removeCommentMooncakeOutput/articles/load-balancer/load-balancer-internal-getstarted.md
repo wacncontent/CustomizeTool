@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Get started with Internal Load Balancer | Microsoft Azure"
+   pageTitle="Get started with Internal Load Balancer | Windows Azure"
    description="Configure Internal Load Balancer and how to implement for virtual machines and cloud deployments."
    services="load-balancer"
    documentationCenter="na"
@@ -7,21 +7,18 @@
    manager="adinah"
    editor="tysonn" />
 <tags
-   ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/01/2015"
-   ms.author="joaoma" />
+	ms.service="load-balancer"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 # Get started configuring an internal load balancer
 
 > [AZURE.SELECTOR]
-- [Azure Classic steps](load-balancer-internal-getstarted.md)
-- [Resource Manager PowerShell steps](load-balancer-internal-arm-powershell.md)
+- [Azure Classic steps](/documentation/articles/load-balancer-internal-getstarted)
+- [Resource Manager PowerShell steps](/documentation/articles/load-balancer-internal-arm-powershell)
 
-Azure Internal Load Balancing (ILB) provides load balancing between virtual machines that reside inside a cloud service or a virtual network with a regional scope. For information about the use and configuration of virtual networks with a regional scope, see [Regional Virtual Networks](virtual-networks-migrate-to-regional-vnet.md). Existing virtual networks that have been configured for an affinity group cannot use ILB.
+Azure Internal Load Balancing (ILB) provides load balancing between virtual machines that reside inside a cloud service or a virtual network with a regional scope. For information about the use and configuration of virtual networks with a regional scope, see [Regional Virtual Networks](/documentation/articles/virtual-networks-migrate-to-regional-vnet). Existing virtual networks that have been configured for an affinity group cannot use ILB.
+
 
 ## To create an internal load-balanced set for virtual machines
 
@@ -42,7 +39,7 @@ For an existing cloud service or a cloud service deployed under a regional virtu
 	$subnet="<Name of the subnet within your virtual network>"
 	$IP="<The IPv4 address to use on the subnet-optional>"
 
-	Add-AzureInternalLoadBalancer -ServiceName $svc -InternalLoadBalancerName $ilb –SubnetName $subnet –StaticVNetIPAddress $IP
+	Add-AzureInternalLoadBalancer -ServiceName $svc -InternalLoadBalancerName $ilb -SubnetName $subnet -StaticVNetIPAddress $IP
 
 
 To use these commands, fill in the values and remove the < and >. Here is an example:
@@ -51,7 +48,7 @@ To use these commands, fill in the values and remove the < and >. Here is an exa
 	$ilb="SQL-BE"
 	$subnet="Farm1"
 	$IP="192.168.98.10"
-	Add-AzureInternalLoadBalancer -ServiceName $svc -InternalLoadBalancerName $ilb –SubnetName $subnet –StaticVNetIPAddress $IP
+	Add-AzureInternalLoadBalancer -ServiceName $svc -InternalLoadBalancerName $ilb -SubnetName $subnet -StaticVNetIPAddress $IP
 
 
 ### Step 2: Add endpoints to the Internal Load Balancing instance
@@ -66,11 +63,11 @@ For existing virtual machines, you can add endpoints to the Internal Load Balanc
 	$locport=<local port number>
 	$pubport=<public port number>
 	$ilb="<Name of your ILB instance>"
-	Get-AzureVM –ServiceName $svc –Name $vmname | Add-AzureEndpoint -Name $epname -LbsetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport –DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
+	Get-AzureVM -ServiceName $svc -Name $vmname | Add-AzureEndpoint -Name $epname -LbsetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport -DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
 
 To use these commands, fill in the values and remove the < and >.
 
-Note that this use of the [Add-AzureEndpoint](https://msdn.microsoft.com/library/dn495300.aspx) Windows PowerShell cmdlet uses the DefaultProbe parameter set. For more information on additional parameter sets, see [Add-AzureEndpoint](https://msdn.microsoft.com/library/dn495300.aspx).
+Note that this use of the [Add-AzureEndpoint](https://msdn.microsoft.com/zh-cn/library/dn495300.aspx) Windows PowerShell cmdlet uses the DefaultProbe parameter set. For more information on additional parameter sets, see [Add-AzureEndpoint](https://msdn.microsoft.com/zh-cn/library/dn495300.aspx).
 
 Here is an example:
 
@@ -82,7 +79,7 @@ Here is an example:
 	$locport=1433
 	$pubport=1433
 	$ilb="SQL ILB"
-	Get-AzureVM –ServiceName $svc –Name $vmname | Add-AzureEndpoint -Name $epname -Lbset $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport –DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
+	Get-AzureVM -ServiceName $svc -Name $vmname | Add-AzureEndpoint -Name $epname -Lbset $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport -DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
 
 
 ### Step 3: Configure your servers to send their traffic to the new Internal Load Balancing endpoint
@@ -104,7 +101,7 @@ To use these commands, fill in the values and remove the < and >. Here is an exa
 
 From the display of the Get-AzureInternalLoadBalancer command, note the IP address and make the necessary changes to your servers or DNS records to ensure that traffic gets sent to the VIP.
 
->[AZURE.NOTE] The Microsoft Azure platform uses a static, publicly routable IPv4 address for a variety of administrative scenarios. The IP address is 168.63.129.16. This IP address should not be blocked by any firewalls, because it can cause unexpected behavior.
+>[AZURE.NOTE] The Windows Azure platform uses a static, publicly routable IPv4 address for a variety of administrative scenarios. The IP address is 168.63.129.16. This IP address should not be blocked by any firewalls, because it can cause unexpected behavior.
 >With respect to Azure Internal Load Balancing, this IP address is used by monitoring probes from the load balancer to determine the health state for virtual machines in a load balanced set. If a Network Security Group is used to restrict traffic to Azure virtual machines in an internally load-balanced set or is applied to a Virtual Network Subnet, ensure that a Network Security Rule is added to allow traffic from 168.63.129.16.
 
 
@@ -141,15 +138,15 @@ The following commands configure a new Internal Load Balancing instance named PA
 	$epname="DBTIER1"
 	$lbsetname="SQL-LB"
 	$vmname="PARTNER-SQL-1"
-	Get-AzureVM –ServiceName $svc –Name $vmname | Add-AzureEndpoint -Name $epname -LbSetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport –DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
+	Get-AzureVM -ServiceName $svc -Name $vmname | Add-AzureEndpoint -Name $epname -LbSetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport -DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
 
 	$epname="DBTIER2"
 	$vmname="PARTNER-SQL-2"
-	Get-AzureVM –ServiceName $svc –Name $vmname | Add-AzureEndpoint -Name $epname -LbSetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport –DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
+	Get-AzureVM -ServiceName $svc -Name $vmname | Add-AzureEndpoint -Name $epname -LbSetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport -DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
 
 	$epname="DBTIER3"
 	$vmname="PARTNER-SQL-3"
-	Get-AzureVM –ServiceName $svc –Name $vmname | Add-AzureEndpoint -Name $epname -LbSetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport –DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
+	Get-AzureVM -ServiceName $svc -Name $vmname | Add-AzureEndpoint -Name $epname -LbSetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport -DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
 
 Next, Contoso determined the VIP of the PARTNER-DBTIER instance of Internal Load Balancing with the following command:
 
@@ -182,7 +179,7 @@ The following commands create an Internal Load Balancing instance named LEGAL-IL
 	$ilb="LEGAL-ILB"
 	$subnet="LOB-LEGAL"
 	$IP="198.168.99.145"
-	Add-AzureInternalLoadBalancer –ServiceName $svc -InternalLoadBalancerName $ilb –SubnetName $subnet –StaticVNetIPAddress $IP
+	Add-AzureInternalLoadBalancer -ServiceName $svc -InternalLoadBalancerName $ilb -SubnetName $subnet -StaticVNetIPAddress $IP
 
 	$prot="tcp"
 	$locport=80
@@ -190,15 +187,15 @@ The following commands create an Internal Load Balancing instance named LEGAL-IL
 	$epname="LOB1"
 	$lbsetname="LOB-LB"
 	$vmname="LEGAL-1"
-	Get-AzureVM –ServiceName $svc –Name $vmname | Add-AzureEndpoint -Name $epname-LbSetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport –DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
+	Get-AzureVM -ServiceName $svc -Name $vmname | Add-AzureEndpoint -Name $epname-LbSetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport -DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
 
 	$epname="LOB2"
 	$vmname="LEGAL2"
-	Get-AzureVM –ServiceName $svc –Name $vmname | Add-AzureEndpoint -Name $epname -LbSetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport –DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
+	Get-AzureVM -ServiceName $svc -Name $vmname | Add-AzureEndpoint -Name $epname -LbSetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport -DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
 
 	$epname="LOB3"
 	$vmname="LEGAL3"
-	Get-AzureVM –ServiceName $svc –Name $vmname | Add-AzureEndpoint -Name $epname -LbSetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport –DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
+	Get-AzureVM -ServiceName $svc -Name $vmname | Add-AzureEndpoint -Name $epname -LbSetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport -DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
 
 
 Next, Contoso configured the DNS A record for the legalnet.corp.contoso.com name to use 198.168.99.145.
@@ -216,11 +213,11 @@ Here is an example:
 	$vmname="LOB-WEB1"
 	$adminuser="Lando"
 	$adminpw="Platform327"
-	$regionname="North Central US"
+	$regionname="China North"
 
 	$myilbconfig=New-AzureInternalLoadBalancerConfig -InternalLoadBalancerName $ilb -SubnetName $subnet
 	$images = Get-AzureVMImage
-	New-AzureVMConfig -Name $vmname -InstanceSize Small -ImageName $images[50].ImageName | Add-AzureProvisioningConfig -Windows -AdminUsername $adminuser -Password $adminpw | New-AzureVM -ServiceName $svc -InternalLoadBalancerConfig $myilbconfig -Location $regionname –VNetName $vnet
+	New-AzureVMConfig -Name $vmname -InstanceSize Small -ImageName $images[50].ImageName | Add-AzureProvisioningConfig -Windows -AdminUsername $adminuser -Password $adminpw | New-AzureVM -ServiceName $svc -InternalLoadBalancerConfig $myilbconfig -Location $regionname -VNetName $vnet
 
 ## To configure Internal Load Balancing for cloud services
 
@@ -257,7 +254,7 @@ Let's add the values for the network configuration file to show how it will look
 	  </LoadBalancers>
 	</NetworkConfiguration>
 
-For more information about the load balancer schema, see [Add load balancer](https://msdn.microsoft.com/library/azure/dn722411.aspx).
+For more information about the load balancer schema, see [Add load balancer](https://msdn.microsoft.com/zh-cn/library/azure/dn722411.aspx).
 
 ### Step 2
 
@@ -329,6 +326,6 @@ To obtain additional information about Internal Load Balancing cmdlets, run the 
 
 ## See also
 
-[Configure a load balancer distribution mode](load-balancer-distribution-mode.md)
+[Configure a load balancer distribution mode](/documentation/articles/load-balancer-distribution-mode)
 
-[Configure idle TCP timeout settings for your load balancer](load-balancer-tcp-idle-timeout.md)
+[Configure idle TCP timeout settings for your load balancer](/documentation/articles/load-balancer-tcp-idle-timeout)

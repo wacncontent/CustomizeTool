@@ -1,25 +1,21 @@
 <properties
-   pageTitle="Set up your development environment | Microsoft Azure"
+   pageTitle="Set up your development environment | Windows Azure"
    description="Install the runtime, SDK, and tools and create a local development cluster. After completing this setup, you will be ready to build applications."
    services="service-fabric"
    documentationCenter=".net"
    authors="seanmck"
-   manager="coreysa"
+   manager="timlt"
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotNet"
-   ms.topic="hero-article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="10/15/2015"
-   ms.author="seanmck"/>
+	ms.service="service-fabric"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
 # Prepare your development environment
  In order to build and run [Service Fabric applications][1] on your development machine, you need to install the runtime, SDK, tools, and set up a local cluster.
 
- > [AZURE.NOTE] These instructions are intended for setting up new machines. If you have installed a previous version of Service Fabric, please follow the [instructions to update your development environment](service-fabric-update-your-development-environment.md).
+ > [AZURE.NOTE] These instructions are intended for setting up new machines. If you have installed a previous version of Service Fabric, please follow the [instructions to update your development environment](/documentation/articles/service-fabric-update-your-development-environment).
 
 ## Prerequisites
 ### Supported Operating System versions
@@ -91,17 +87,17 @@ You can check that your cluster was created successfully using the Service Fabri
 
 3. Ensure that the Application and Node views are green.
 
-If any element is not green or you see an error, wait a few moments and click the refresh button. If you still have issues, check out the [setup troubleshooting steps](service-fabric-troubleshoot-local-cluster-setup.md).
+If any element is not green or you see an error, wait a few moments and click the refresh button. If you still have issues, check out the [setup troubleshooting steps](/documentation/articles/service-fabric-troubleshoot-local-cluster-setup).
 
 ## Next steps
 Now that your development environment is set up, you can start building and running apps.
 
-- [Learn about the programming models: Reliable Actors and Reliable Services](service-fabric-choose-framework.md)
-- [Get started with the Reliable Services API](service-fabric-reliable-services-quick-start.md)
-- [Get started with the Reliable Actors API](service-fabric-reliable-actors-get-started.md)
+- [Learn about the programming models: Reliable Actors and Reliable Services](/documentation/articles/service-fabric-choose-framework)
+- [Get started with the Reliable Services API](/documentation/articles/service-fabric-reliable-services-quick-start)
+- [Get started with the Reliable Actors API](/documentation/articles/service-fabric-reliable-actors-get-started)
 - [Check out the Service Fabric samples on GitHub](https://github.com/azure/servicefabric-samples)
-- [Visualize your cluster using Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)
+- [Visualize your cluster using Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster)
 
-[1]: http://azure.microsoft.com/en-us/campaigns/service-fabric/ "Service Fabric campaign page"
+[1]: http://azure.microsoft.com/campaigns/service-fabric/ "Service Fabric campaign page"
 [2]: http://go.microsoft.com/fwlink/?LinkId=517106 "VS RC"
 [3]:http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric "WebPI link"

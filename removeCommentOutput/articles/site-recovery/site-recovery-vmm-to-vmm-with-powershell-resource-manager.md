@@ -22,7 +22,7 @@ Azure Site Recovery contributes to your business continuity and disaster recover
 
 Azure PowerShell is a module that provides cmdlets to manage Azure through Windows PowerShell. It can work with two types of modules - the Azure Profile module, or the Azure Resource Manager (ARM) module. 
 
-This article describes how to use Windows PowerShell® together with ARM to deploy Azure Site Recovery to configure and orchestrate virtual machine protection between two VMM sites. Virtual machines running on Hyper-V host servers that are located in VMM private clouds in a primary site will replicate and fail over to a secondary VMM site using Hyper-V Replica.
+This article describes how to use Windows PowerShellÂŽ together with ARM to deploy Azure Site Recovery to configure and orchestrate virtual machine protection between two VMM sites. Virtual machines running on Hyper-V host servers that are located in VMM private clouds in a primary site will replicate and fail over to a secondary VMM site using Hyper-V Replica.
 
 You don't need to be a PowerShell expert to use this article, but it does assume that you understand the basic concepts, such as modules, cmdlets, and sessions. For more information about Windows PowerShell, see [Getting Started with Windows PowerShell](http://technet.microsoft.com/zh-cn/library/hh857337.aspx).
 - Read more about [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
@@ -42,7 +42,7 @@ Make sure you have these prerequisites in place:
 	- One or more virtual machines on the source Hyper-V server.
 	- Learn more about setting up VMM clouds:
 
-		- [What’s New in Private Cloud with System Center 2012 R2 VMM](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/MDC-B357#fbid=dfgvHAmYryA) and in [VMM 2012 and the clouds](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html).
+		- [Whatâs New in Private Cloud with System Center 2012 R2 VMM](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/MDC-B357#fbid=dfgvHAmYryA) and in [VMM 2012 and the clouds](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html).
 		- [Configuring the VMM cloud fabric](https://msdn.microsoft.com/zh-cn/library/azure/dn469075.aspx#BKMK_Fabric)
 		- [Creating a private cloud in VMM](https://technet.microsoft.com/zh-cn/library/jj860425.aspx) and [Walkthrough: Creating private clouds with System Center 2012 SP1 VMM](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx).
 - One or more Hyper-V servers running at least Windows Server 2012 with Hyper-V role with the latest updates installed. The server or cluster must be included in a VMM cloud.

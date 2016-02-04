@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # Add Authentication to Existing Azure Mobile Services app
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
@@ -50,12 +55,12 @@ In the next tutorial, [Service-side authorization of Mobile Services users], you
 [Storing authentication tokens in your app]:#store-authentication
 
 <!-- URLs. -->
-[Service-side authorization of Mobile Services users]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization
+[Service-side authorization of Mobile Services users]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization 
 [Mobile Services Quick Start tutorial]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
 [Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Mobile Services .NET How-to Conceptual Reference]: /develop/mobile/how-to-guides/work-with-net-client-library
+[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication

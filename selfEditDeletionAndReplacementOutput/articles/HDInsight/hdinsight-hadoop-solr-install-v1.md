@@ -4,39 +4,43 @@ deleted:
 
 		For information on using Solr with a Linux-based cluster, see [Install and use Solr on HDinsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-solr-install-linux).
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		, Spark
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install): install Solr on HDInsight cluster using the Azure Preview Portal
+
+reason: (the new Ibiza portal)
+
+deleted:
+
 		- [Install and use Solr on HDinsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-solr-install-linux)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install): install Solr on HDInsight cluster using the Azure Preview Portal
+
+reason: (the new Ibiza portal)
+
+deleted:
+
 		- [Install and use Solr on HDinsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-solr-install-linux)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		- [Install and use Spark on HDInsight clusters][hdinsight-install-spark]: Script Action sample about installing Spark
 
-reason: ()
-
-deleted:
-
-		[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
-
-reason: ()
+reason: (Spark managment)
 
 replacement:
 
@@ -53,7 +57,7 @@ replaced by:
 		
 		A sample script to install Solr on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1). This section provides instructions on how to use the sample script while provisioning the cluster by using the Azure Management Portal.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -124,7 +128,7 @@ replaced by:
 		
 		<a name="usingSDK"></a>
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
@@ -254,5 +258,5 @@ replaced by:
 		
 		Provide a cluster name and press ENTER to provision a cluster with Solr installed.
 
-reason: ()
+reason: (Spark managment)
 

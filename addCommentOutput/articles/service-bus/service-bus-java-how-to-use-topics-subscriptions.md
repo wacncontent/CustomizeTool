@@ -315,12 +315,17 @@ with the topic. Subscriptions can also be deleted independently.
 
 ## Next Steps
 
+<!-- deleted by customization
 Now that you've learned the basics of Service Bus queues, see [Service Bus queues, topics, and subscriptions][] for more information.
+-->
+<!-- keep by customization: begin -->
+Now that you've learned the basics of Service Bus queues, see [Service Bus Queues, Topics, and Subscriptions][] for more information.
+<!-- keep by customization: end -->
 
   [Azure SDK for Java]: /develop/java/
   [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
-  [Azure Management Portal]: http://manage.windowsazure.cn/
-  [Service Bus queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+  [Azure Management Portal]: <!-- deleted by customization http://manage.windowsazure.cn/ --><!-- keep by customization: begin --> http://manage.windowsazure.cn <!-- keep by customization: end -->
+  [Service Bus queues, topics, and subscriptions]: <!-- deleted by customization service-bus-queues-topics-subscriptions.md --><!-- keep by customization: begin --> /documentation/articles/service-bus-queues-topics-subscriptions <!-- keep by customization: end -->
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx 
   [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx

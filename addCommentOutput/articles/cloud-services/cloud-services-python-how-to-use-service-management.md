@@ -9,15 +9,18 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="03/11/2015"
+	ms.date="11/03/2015"
 	wacn.date=""/>
 
 # How to use Service Management from Python
 
-This guide will show you how to programmatically perform common service management tasks from Python. The **ServiceManagementService** class in the [Azure SDK for Python][download-SDK-Python] supports programmatic access to much of the service management-related functionality that is available in the [management portal][management-portal] (such as **creating, updating, and deleting cloud services, deployments, data management services and virtual machines**). This functionality can be useful in building applications that need programmatic access to service management.
+This guide will show you how to programmatically perform common service management tasks from Python. The **ServiceManagementService** class in the [Azure SDK for <!-- deleted by customization Python](/documentation/articles/python-how-to-install) --><!-- keep by customization: begin --> Python][download-SDK-Python] <!-- keep by customization: end --> supports programmatic access to much of the service management-related functionality that is available in the <!-- deleted by customization [Azure Management Portal][management-portal] --><!-- keep by customization: begin --> [management portal][management-portal] <!-- keep by customization: end --> (such as **creating, updating, and deleting cloud services, deployments, data management services and virtual machines**). This functionality can be useful in building applications that need programmatic access to service management.
+
+> [AZURE.NOTE] Service Management API is being replaced with the new Resource Management API, currently available in a preview release.  See the [Azure Resource Management documentation](http://azure-sdk-for-python.readthedocs.org/) for details on using the new Resource Management API from Python.
+
 
 ## <a name="WhatIs"> </a>What is Service Management
-The Service Management API provides programmatic access to much of the service management functionality available through the [management portal][management-portal]. The Azure SDK for Python allows you to manage your cloud services and storage accounts.
+The Service Management API provides programmatic access to much of the service management functionality available through the <!-- deleted by customization [Azure Management Portal][management-portal] --><!-- keep by customization: begin --> [management portal][management-portal] <!-- keep by customization: end -->. The Azure SDK for Python allows you to manage your cloud services and storage accounts.
 
 To use the Service Management API, you will need to [create an Azure account](/pricing/1rmb-trial/).
 
@@ -25,7 +28,7 @@ To use the Service Management API, you will need to [create an Azure account](/p
 The Azure SDK for Python wraps the [Azure Service Management API][svc-mgmt-rest-api], which is a REST API. All API operations are performed over SSL and mutually authenticated using X.509 v3 certificates. The management service may be accessed from within a service running in Azure, or directly over the Internet from any application that can send an HTTPS request and receive an HTTPS response.
 
 ## <a name="Connect"> </a>How to: Connect to service management
-To connect to the Service Management endpoint, you need your Azure subscription ID and a valid management certificate. You can obtain your subscription ID through the [management portal][management-portal].
+To connect to the Service Management endpoint, you need your Azure subscription ID and a valid management certificate. You can obtain your subscription ID through the <!-- deleted by customization [Azure Management Portal][management-portal] --><!-- keep by customization: begin --> [management portal][management-portal] <!-- keep by customization: end -->.
 
 > [AZURE.NOTE] Since Azure SDK for Python v0.8.0, it is now possible to use certificates created with OpenSSL when running on Windows.  This requires Python 2.7.4 or later. We recommend users to use OpenSSL instead of .pfx, since support for .pfx certificates will likely be removed in the future.
 
@@ -38,9 +41,9 @@ To create the `.cer` certificate, execute this:
 
 	`openssl x509 -inform pem -in mycert.pem -outform der -out mycert.cer`
 
-For more information about Azure certificates, see [Managing Certificates in Azure](http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx). For a complete description of OpenSSL parameters, see the documentation at [http://www.openssl.org/docs/apps/openssl.html](http://www.openssl.org/docs/apps/openssl.html).
+For more information about Azure certificates, see [Certificates Overview for Azure Cloud Services](/documentation/articles/cloud-services-certs-create). For a complete description of OpenSSL parameters, see the documentation at [http://www.openssl.org/docs/apps/openssl.html](http://www.openssl.org/docs/apps/openssl.html).
 
-After you have created these files, you will need to upload the `.cer` file to Azure via the "Upload" action of the "Settings" tab of the [management portal][management-portal], and you will need to make note of where you saved the `.pem` file.
+After you have created these files, you will need to upload the `.cer` file to Azure via the "Upload" action of the "Settings" tab of the <!-- deleted by customization [Azure Management Portal][management-portal] --><!-- keep by customization: begin --> [management portal][management-portal] <!-- keep by customization: end -->, and you will need to make note of where you saved the `.pem` file.
 
 After you have obtained your subscription ID, created a certificate, and uploaded the `.cer` file to Azure, you can connect to the Azure management endpoint by passing the subscription id and the path to the `.pem` file to **ServiceManagementService**:
 
@@ -60,9 +63,9 @@ You can create a self-signed management certificate on your machine using `makec
 
     makecert -sky exchange -r -n "CN=AzureCertificate" -pe -a sha1 -len 2048 -ss My "AzureCertificate.cer"
 
-The command will create the `.cer` file, and install it in the **Personal** certificate store. For more details, see [Create and Upload a Management Certificate for <!-- deleted by customization Azure](http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx) --><!-- keep by customization: begin --> Azure](/documentation/articles/cloud-services-certs-create/) <!-- keep by customization: end -->.
+The command will create the `.cer` file, and install it in the **Personal** certificate store. For more details, see [Certificates Overview for Azure Cloud Services](/documentation/articles/cloud-services-certs-create).
 
-After you have created the certificate, you will need to upload the `.cer` file to Azure via the "Upload" action of the "Settings" tab of the [management portal][management-portal].
+After you have created the certificate, you will need to upload the `.cer` file to Azure via the "Upload" action of the "Settings" tab of the <!-- deleted by customization [Azure Management Portal][management-portal] --><!-- keep by customization: begin --> [management portal][management-portal] <!-- keep by customization: end -->.
 
 After you have obtained your subscription ID, created a certificate, and uploaded the `.cer` file to Azure, you can connect to the Azure management endpoint by passing the subscription id and the location of the certificate in your **Personal** certificate store to **ServiceManagementService** (again, replace *AzureCertificate* with the name of your certificate):
 
@@ -91,14 +94,15 @@ To list the locations that are available for hosting services, use the **list\_l
 
 When you create a cloud service or storage service you will need to provide a valid location. The **list\_locations** method will always return an up-to-date list of the currently available locations. As of this writing, the available locations are:
 
+<!-- deleted by customization - West Europe -->
+<!-- keep by customization: begin -->
+- China East 
+<!-- keep by customization: end -->
+- China North
 <!-- deleted by customization
-- West Europe
 - China North
-- China North
--->
 - China East
 - China North
-<!-- deleted by customization
 - China North
 - China East
 - China North
@@ -122,7 +126,12 @@ When you create an application and run it in Azure, the code and configuration t
 	name = 'myhostedservice'
 	label = 'myhostedservice'
 	desc = 'my hosted service'
+<!-- deleted by customization
 	location = 'China North'
+-->
+<!-- keep by customization: begin -->
+	location = 'China East'
+<!-- keep by customization: end -->
 
 	sms.create_hosted_service(name, label, desc, location)
 
@@ -167,7 +176,7 @@ To delete a deployment, use the **delete\_deployment** method. The following exa
 
 ## <a name="CreateStorageService"> </a>How to: Create a storage service
 
-A [storage service] gives you access to Azure [Blobs][azure-blobs], [Tables][azure-tables], and [Queues][azure-queues]. To create a storage service, you need a name for the service (between 3 and 24 lowercase characters and unique within Azure), a description, a label (up to 100 characters, automatically encoded to base64), and a location. The following example shows how to create a storage service by specifying a location.
+A [storage service](/documentation/articles/storage-create-storage-account) gives you access to Azure [Blobs](/documentation/articles/storage-python-how-to-use-blob-storage), [Tables](/documentation/articles/storage-python-how-to-use-table-storage), and [Queues](/documentation/articles/storage-python-how-to-use-queue-storage). To create a storage service, you need a name for the service (between 3 and 24 lowercase characters and unique within Azure), a description, a label (up to 100 characters, automatically encoded to base64), and a location. The following example shows how to create a storage service by specifying a location.
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -176,7 +185,12 @@ A [storage service] gives you access to Azure [Blobs][azure-blobs], [Tables][azu
 
 	name = 'mystorageaccount'
 	label = 'mystorageaccount'
+<!-- deleted by customization
 	location = 'China North'
+-->
+<!-- keep by customization: begin -->
+	location = 'China East'
+<!-- keep by customization: end -->
 	desc = 'My storage account description.'
 
 	result = sms.create_storage_account(name, desc, label, location=location)
@@ -295,7 +309,12 @@ To create a virtual machine, you first need to create a [cloud service](#CreateC
 	sms = ServiceManagementService(subscription_id, certificate_path)
 
 	name = 'myvm'
+<!-- deleted by customization
 	location = 'China North'
+-->
+<!-- keep by customization: begin -->
+	location = 'China East'
+<!-- keep by customization: end -->
 
 	#Set the location
 	sms.create_hosted_service(service_name=name,
@@ -303,7 +322,12 @@ To create a virtual machine, you first need to create a [cloud service](#CreateC
 		location=location)
 
 	# Name of an os image as returned by list_os_images
+<!-- deleted by customization
 	image_name = 'OpenLogic__OpenLogic-CentOS-62-20120531-en-us-30GB.vhd'
+-->
+<!-- keep by customization: begin -->
+	image_name = 'OpenLogic__OpenLogic-CentOS-62-20120531-zh-cn-30GB.vhd'
+<!-- keep by customization: end -->
 
 	# Destination storage account container/blob where the VM disk
 	# will be created
@@ -404,7 +428,7 @@ To learn more about how to capture a Windows Virtual Machine, see [How to Captur
 
 ## <a name="What's Next"> </a>Next Steps
 
-Now that you've learned the basics of service management, you can access the [Complete API reference documentation for the Azure Python SDK](http://azure-sdk-for-python.readthedocs.org/en/documentation/index.html) and perform complex tasks easily to manage your python application.
+Now that you've learned the basics of service management, you can access the [Complete API reference documentation for the Azure Python SDK](http://azure-sdk-for-python.readthedocs.org/) and perform complex tasks easily to manage your python application.
 
 For more information, see the [Python Developer Center](/develop/python/).
 
@@ -430,17 +454,21 @@ For more information, see the [Python Developer Center](/develop/python/).
 [svc-mgmt-rest-api]: http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
 
 
-[download-SDK-Python]: /develop/python/common-tasks/install-python/
-[cloud service]:http://windowsazure.cn/documentation/articles/cloud-services-what-is
+<!-- deleted by customization
+[cloud service]:/documentation/services/cloud-services/
+-->
+<!-- keep by customization: begin -->
+[download-SDK-Python]: /documentation/articles/python-how-to-install/
+[cloud service]:/documentation/articles/cloud-services-what-is
 [service package]: http://msdn.microsoft.com/zh-cn/library/azure/jj155995.aspx
-[Azure PowerShell cmdlets]: /develop/php/how-to-guides/powershell-cmdlets/
+[Azure PowerShell cmdlets]: /documentation/articles/powershell-install-configure/
 [cspack commandline tool]: http://msdn.microsoft.com/zh-cn/library/azure/gg432988.aspx
 [Deploying an Azure Service]: http://msdn.microsoft.com/zh-cn/library/azure/gg433027.aspx
-[storage service]: https://azure.microsoft.com/manage/services/storage/what-is-a-storage-account/
-[azure-blobs]: /develop/python/how-to-guides/blob-service/
-[azure-tables]: /develop/python/how-to-guides/table-service/
-[azure-queues]: /develop/python/how-to-guides/queue-service/
+[storage service]: /documentation/articles/storage-introduction/
+[azure-blobs]: /documentation/articles/storage-python-how-to-use-blob-storage/
+[azure-tables]: /documentation/articles/storage-python-how-to-use-table-storage/
+[azure-queues]: /documentation/articles/storage-python-how-to-use-queue-storage/
 [Azure Service Configuration Schema (.cscfg)]: http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx
 [Cloud Services]: http://msdn.microsoft.com/zh-cn/library/azure/jj155995.aspx
 [Virtual Machines]: http://msdn.microsoft.com/zh-cn/library/azure/jj156003.aspx
- 
+<!-- keep by customization: end -->

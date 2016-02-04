@@ -1,6 +1,6 @@
 <properties
 	pageTitle="WordPress on Ubuntu with ARM template | Windows Azure"
-	description="Easily deploy a single WordPress server running Ubuntu using a Resource Manager Template and the Azure Preview Portal, Azure PowerShell, or the Azure CLI."
+	description="Easily deploy a single WordPress server running Ubuntu using a Resource Manager Template and the Azure Management Portal, Azure PowerShell, or the Azure CLI."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="davidmu1"
@@ -14,22 +14,29 @@
 	wacn.date=""/>
 
 # Deploy a WordPress server on Ubuntu with an Azure Resource Manager template
-<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
--->
 
 Use the instructions in this article to deploy a WordPress server running on Ubuntu using a Resource Manager template. This template creates a single virtual machine in a new virtual network.
 
 ![](./media/virtual-machines-workload-template-wordpress/one-server-wordpress.png)
 
-You can run the template with the Azure Preview portal, Azure PowerShell, or the Azure CLI.
+You can run the template with the Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> Preview portal <!-- keep by customization: end -->, Azure PowerShell, or the Azure CLI.
 
-## Azure Preview portal
+<!-- deleted by customization
+## Azure Management Portal
 
-To deploy this workload using a Resource Manager template and the Azure Preview portal, click [here](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fwordpress-single-vm-ubuntu%2Fazuredeploy.json).
+To deploy this workload using a Resource Manager template and the Azure Management Portal, click [here](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fwordpress-single-vm-ubuntu%2Fazuredeploy.json).
 
 ![](./media/virtual-machines-workload-template-wordpress/azure-portal-template.png)
+-->
+<!-- keep by customization: begin -->
+## Azure Preview portal
+
+To deploy this workload using a Resource Manager template and the Azure Preview portal, click [here](https://manage.windowsazure.cn#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fwordpress-single-vm-ubuntu%2Fazuredeploy.json).
+
+![](./media/virtual-machines-workload-template-wordpress/azure-portal-template.png)
+<!-- keep by customization: end -->
 
 1.	For the **Template** pane, click **Save**.
 2.	Click **Parameters**. On the **Parameters** pane, enter new values, select from allowed values, or accept default values, and then click **OK**.
@@ -43,12 +50,7 @@ Depending on the template, it can take some time for Azure to build the workload
 
 ## Azure PowerShell
 
-<!-- deleted by customization
 [AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
--->
-<!-- keep by customization: begin -->
-Before you begin, make sure you have the right version of Azure PowerShell installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click [here](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/#setting-up-powershell-for-resource-manager-templates).
-<!-- keep by customization: end -->
 
 Fill in an Azure deployment name, a new Resource Group name, and an Azure datacenter location in the following set of commands. Remove everything within the quotes, including the < and > characters.
 
@@ -107,4 +109,4 @@ When the template execution is complete, you now have WordPress server running o
 
 [Virtual machines documentation](/documentation/services/virtual-machines/)
 
-[How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)
+[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)

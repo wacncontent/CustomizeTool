@@ -5,11 +5,11 @@
 	documentationCenter="ruby" 
 	authors="tfitzmac" 
 	manager="wpickett" 
-	editor=""/>
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/23/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 
@@ -32,7 +32,7 @@ queues**.
 ## Create a Ruby Application
 
 Create a Ruby application. For instructions, 
-see [Create a Ruby Application on Azure](/develop/ruby/tutorials/web-app-with-linux-vm/).
+see [Create a Ruby Application on Azure](/documentation/articles/virtual-machines-ruby-rails-web-app-linux).
 
 ## Configure Your Application to Access Storage
 
@@ -52,7 +52,7 @@ Use your favorite text editor, add the following to the top of the Ruby file whe
 
 ## Setup an Azure Storage Connection
 
-The azure module will read the environment variables **AZURE\_STORAGE\_ACCOUNT** and **AZURE\_STORAGE\_ACCESS_KEY** 
+The azure module will read the environment variables **AZURE_STORAGE_ACCOUNT** and **AZURE_STORAGE_ACCESS_KEY** 
 for information required to connect to your Azure storage account. If these environment variables are not set, 
 you must specify the account information before using **Azure::QueueService** with the following code:
 
@@ -88,7 +88,7 @@ To insert a message into a queue, use the **create_message()** method to create 
 
 ## How To: Peek at the Next Message
 
-You can peek at the message in the front of a queue without removing it from the queue by calling the **peek\_messages()** method. By default, **peek\_messages()** peeks at a single message. You can also specify how many messages you want to peek.
+You can peek at the message in the front of a queue without removing it from the queue by calling the **peek_messages()** method. By default, **peek_messages()** peeks at a single message. You can also specify how many messages you want to peek.
 
 	result = azure_queue_service.peek_messages("test-queue",
 	  {:number_of_messages => 10})
@@ -97,11 +97,11 @@ You can peek at the message in the front of a queue without removing it from the
 
 You can remove a message from a queue in two steps.
 
-1. When you call **list\_messages()**, you get the next message in a queue by default. You can also specify how many messages you want to get. The messages returned from **list\_messages()** becomes invisible to any other code reading messages from this queue. You pass in the visibility timeout in seconds as a parameter.
+1. When you call **list_messages()**, you get the next message in a queue by default. You can also specify how many messages you want to get. The messages returned from **list_messages()** becomes invisible to any other code reading messages from this queue. You pass in the visibility timeout in seconds as a parameter.
 
 2. To finish removing the message from the queue, you must also call **delete_message()**.
 
-This two-step process of removing a message assures that when your code fails to process a message due to hardware or software failure, another instance of your code can get the same message and try again. Your code calls **delete\_message()** right after the message has been processed.
+This two-step process of removing a message assures that when your code fails to process a message due to hardware or software failure, another instance of your code can get the same message and try again. Your code calls **delete_message()** right after the message has been processed.
 
 	messages = azure_queue_service.list_messages("test-queue", 30)
 	azure_queue_service.delete_message("test-queue", 
@@ -124,7 +124,7 @@ There are two ways you can customize message retrieval from a queue.
 
 2. You can set a longer or shorter invisibility timeout, allowing your code more or less time to fully process each message.
 
-The following code example uses the **list\_messages()** method to get 15 messages in one call. Then it prints and deletes each message. It also sets the invisibility timeout to five minutes for each message.
+The following code example uses the **list_messages()** method to get 15 messages in one call. Then it prints and deletes each message. It also sets the invisibility timeout to five minutes for each message.
 
 	azure_queue_service.list_messages("test-queue", 300
 	  {:number_of_messages => 15}).each do |m|
@@ -134,14 +134,14 @@ The following code example uses the **list\_messages()** method to get 15 messag
 
 ## How To: Get the Queue Length
 
-You can get an estimation of the number of messages in the queue. The **get\_queue\_metadata()** method asks the queue service to return the approximate message count and metadata about the queue.
+You can get an estimation of the number of messages in the queue. The **get_queue_metadata()** method asks the queue service to return the approximate message count and metadata about the queue.
 
 	message_count, metadata = azure_queue_service.get_queue_metadata(
 	  "test-queue")
 
 ## How To: Delete a Queue
 
-To delete a queue and all the messages contained in it, call the **delete\_queue()** method on the queue object.
+To delete a queue and all the messages contained in it, call the **delete_queue()** method on the queue object.
 
 	azure_queue_service.delete_queue("test-queue")
 
@@ -149,9 +149,8 @@ To delete a queue and all the messages contained in it, call the **delete\_queue
 
 Now that you've learned the basics of queue storage, follow these links to learn about more complex storage tasks.
 
-- See the MSDN Reference: [Azure Storage](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
 - Visit the [Azure Storage Team Blog](http://blogs.msdn.com/b/windowsazurestorage/)
 - Visit the [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) repository on GitHub
 
-For a comparision between the Azure Queue Service discussed in this article and Azure Service Bus Queues discussed in the [How to use Service Bus Queues](/develop/ruby/how-to-guides/service-bus-queues/) article, see [Azure Queues and Azure Service Bus Queues - Compared and Contrasted](http://msdn.microsoft.com/zh-cn/library/azure/hh767287.aspx)
+For a comparision between the Azure Queue Service discussed in this article and Azure Service Bus Queues discussed in the [How to use Service Bus Queues](/documentation/articles/service-bus-ruby-how-to-use-queues) article, see [Azure Queues and Azure Service Bus Queues - Compared and Contrasted](http://msdn.microsoft.com/zh-cn/library/azure/hh767287.aspx)
  

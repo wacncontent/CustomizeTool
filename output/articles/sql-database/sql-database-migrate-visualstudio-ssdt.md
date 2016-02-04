@@ -23,7 +23,7 @@ Use the [lastest SQL Server Data Tools for Visual Studio](https://msdn.microsoft
 With this option:
 
  - SQL Server Data Tools for Visual Studio ("SSDT") is first used to create a database project from the source database. 
- - The project’s target platform is then set to Azure SQL Database V12 and the project is built to identify all compatibility issues. 
+ - The project's target platform is then set to Azure SQL Database V12 and the project is built to identify all compatibility issues. 
  - Once the project builds successfully, the schema is published back to a copy of the source database (do not overwrite the source database).
  - The data compare feature in SSDT is then used to compare the source database to the newly created Azure SQL compatible database and then update the new database with data from the source database. 
  - The updated database is then deployed to Azure using SSMS, either directly or by exporting and then importing a BACPAC file.
@@ -63,7 +63,7 @@ With this option:
 	![alt text](./media/sql-database-migrate-visualstudio-ssdt/09MigrateSSDT.png)
  
 9.	When the database is free of errors right click on the project and select **Publish** to build and publish the database to a copy of the source database (it is highly recommended to use a copy, at least initially). 
- - Before you publish, depending on the source SQL Server version (earlier than SQL Server 2014), you may need to reset the project’s target platform to enable deployment. 
+ - Before you publish, depending on the source SQL Server version (earlier than SQL Server 2014), you may need to reset the project's target platform to enable deployment. 
  - If you are migrating an older SQL Server database you must not introduce any features into the project that are not supported in the source SQL Server unless you first migrate the database to a newer version of SQL Server. 
 
 	![alt text](./media/sql-database-migrate-visualstudio-ssdt/10MigrateSSDT.png)

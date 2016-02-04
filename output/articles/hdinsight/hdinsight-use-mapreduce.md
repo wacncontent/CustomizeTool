@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/06/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 # Use MapReduce in Hadoop on HDInsight
@@ -51,10 +51,8 @@ For more information, see [Hadoop Streaming](http://hadoop.apache.org/docs/r1.2.
 For examples of using Hadoop streaming with HDInsight, see the following:
 
 * [Develop C# Hadoop streaming programs](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs)
-<!-- deleted by customization
 
 * [Develop Python MapReduce jobs](/documentation/articles/hdinsight-hadoop-streaming-python)
--->
 
 ##<a id="data"></a>About the sample data
 
@@ -154,15 +152,9 @@ HDInsight can run HiveQL jobs by using a variety of methods. Use the following t
 
 | **Use this**...                                                    | **...to do this**                                       | ...with this **cluster operating system** | ...from this **client operating system** |
 |:-------------------------------------------------------------------|:--------------------------------------------------------|:------------------------------------------|:-----------------------------------------|
-<!-- deleted by customization
 | [SSH](/documentation/articles/hdinsight-hadoop-use-mapreduce-ssh)                       | Use the Hadoop command through **SSH**                  | Linux                                     | Linux, Unix, Mac OS X, or Windows        |
 | [Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl)                     | Submit the job remotely by using **REST**               | Linux or Windows                          | Linux, Unix, Mac OS X, or Windows        |
 | [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell) | Submit the job remotely by using **Windows PowerShell** | Linux or Windows                          | Windows                                  |
--->
-<!-- keep by customization: begin -->
-| [Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl)                     | Submit the job remotely by using **REST**               | Windows                          | Windows        |
-| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell) | Submit the job remotely by using **Windows PowerShell** |  Windows                          | Windows                                  |
-<!-- keep by customization: end -->
 | [Remote Desktop](/documentation/articles/hdinsight-hadoop-use-mapreduce-remote-desktop)    | Use the Hadoop command through **Remote Desktop**       | Windows                                   | Windows                                  |
 
 ##<a id="nextsteps"></a>Next steps
@@ -170,14 +162,12 @@ HDInsight can run HiveQL jobs by using a variety of methods. Use the following t
 Although MapReduce provides powerful diagnostic abilities, it can be a bit challenging to master. There are several Java-based frameworks that make it easier to define MapReduce applications, as well as technologies such as Pig and Hive, which provide an easier way to work with data in HDInsight. To learn more, see the following articles:
 
 * [Develop Java MapReduce programs for HDInsight](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
-<!-- deleted by customization
 
 * [Develop Python streaming MapReduce programs for HDInsight](/documentation/articles/hdinsight-hadoop-streaming-python)
 
 * [Develop C# Hadoop streaming MapReduce programs for HDInsight][hdinsight-develop-streaming]
 
 * [Develop Scalding MapReduce jobs with Apache Hadoop on HDInsight](/documentation/articles/hdinsight-hadoop-mapreduce-scalding)
--->
 
 * [Use Hive with HDInsight][hdinsight-use-hive]
 
@@ -186,15 +176,15 @@ Although MapReduce provides powerful diagnostic abilities, it can be a bit chall
 * [Run the HDInsight Samples][hdinsight-samples]
 
 
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-develop-mapreduce-jobs]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-samples]: /documentation/articles/hdinsight-run-samples
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-develop-mapreduce-jobs]: hdinsight-develop-deploy-java-mapreduce.md
+[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-samples]: hdinsight-run-samples.md
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
 
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: ../powershell-install-configure.md
 
 [image-hdi-wordcountdiagram]: ./media/hdinsight-use-mapreduce/HDI.WordCountDiagram.gif

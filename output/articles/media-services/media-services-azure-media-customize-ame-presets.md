@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 #Manipulate encoding tasks by customizing task presets 
@@ -30,10 +30,10 @@ Audio Bitrate - the bitrate used when encoding the audio, specified in kbps
 
 - Audio Codec the codec used for encoding audio, valid values are: AAC, WMA, and DDP
 - Channel Count the number of audio channels encoded, valid values are: 1, 2, or 6
-- Default extension – the default file extension 
-- Language the BCP-47 language code representing the language used in the audio. This currently defaults to “und”. 
+- Default extension - the default file extension 
+- Language the BCP-47 language code representing the language used in the audio. This currently defaults to "und". 
 - Original File Name the name of the file uploaded into Azure Storage
-- StreamId – the stream ID as defined by the streamID attribute of the <StreamInfo> element in the preset file 
+- StreamId - the stream ID as defined by the streamID attribute of the <StreamInfo> element in the preset file 
 - Video Codec the codec used for encoding, valid values are: H264 and VC1
 - Video Bitrate the bitrate used when encoding the video, specified in kbps
 
@@ -131,7 +131,7 @@ Example 2:
 		OverlayStartTime="00:00:05"
 		OverlayEndTime="00:00:10.2120000">
 
-The location and size of the video overlay is controlled by the OverlayRect attribute. The content that is to be overlaid will be re-sized to fit this rectangle. Opacity is controlled by the OverlayOpacity attribute. Valid values are 0.0 – 1.0, where 1.0 is 100% opaque. The overlay will be displayed at the time specified by the OverlayStartTime attribute and will end at the time specified by the OverlayEndTime attribute. Both OverlayStartTime and OverlayEndTime should fall within the timeline of the source video. For more information about each overlay-specific attribute, please see Azure Media Encoder Schemas.
+The location and size of the video overlay is controlled by the OverlayRect attribute. The content that is to be overlaid will be re-sized to fit this rectangle. Opacity is controlled by the OverlayOpacity attribute. Valid values are 0.0 - 1.0, where 1.0 is 100% opaque. The overlay will be displayed at the time specified by the OverlayStartTime attribute and will end at the time specified by the OverlayEndTime attribute. Both OverlayStartTime and OverlayEndTime should fall within the timeline of the source video. For more information about each overlay-specific attribute, please see Azure Media Encoder Schemas.
 
 ###Presets for Audio Overlays
 
@@ -139,7 +139,7 @@ Audio overlays can be any supported audio file format, for example. For a comple
 
 	<MediaFile
 		...
-		AudioOverlayFileName="%1%" <!-- or AudioOverlayFileName=”audioOverlay.mp3” for overlays from a single asset -->
+		AudioOverlayFileName="%1%" <!-- or AudioOverlayFileName="audioOverlay.mp3" for overlays from a single asset -->
 		AudioOverlayLoop="True"
 		AudioOverlayLoopingGap="00:00:00"
 		AudioOverlayLayoutMode="Custom"
@@ -149,7 +149,7 @@ Audio overlays can be any supported audio file format, for example. For a comple
 		AudioOverlayFadeInDuration="00:00:00"
 		AudioOverlayFadeOutDuration="00:00:00">
 
-For audio overlays stored in multiple assets, the audio overlay filename is specified in the AudioOverlayFileName attribute using %n% syntax, where n is the zero-based index of the collection of input assets to the encoding Task. For audio overlays stored in a single asset the overlay filename is specified directly in the AudioOverlayFileName attribute. The AudioOverlayLayoutMode determines when the audio overlay will be presented. When set to “WholeSequence” the audio track will be presented during the entire duration of the video. When set to “Custom” the AudioOverlayStartTime and AudioOverlayEndTime attributes determine when the audio overlay begins and ends. Both OverlayStartTime and OverlayEndTime should fall within the timeline of the source video. For more information on all of the audio overlay attributes, see the Azure Media Encoder Schemas. Audio overlays can be combined with video overlays as shown in the following preset snippet:
+For audio overlays stored in multiple assets, the audio overlay filename is specified in the AudioOverlayFileName attribute using %n% syntax, where n is the zero-based index of the collection of input assets to the encoding Task. For audio overlays stored in a single asset the overlay filename is specified directly in the AudioOverlayFileName attribute. The AudioOverlayLayoutMode determines when the audio overlay will be presented. When set to "WholeSequence" the audio track will be presented during the entire duration of the video. When set to "Custom" the AudioOverlayStartTime and AudioOverlayEndTime attributes determine when the audio overlay begins and ends. Both OverlayStartTime and OverlayEndTime should fall within the timeline of the source video. For more information on all of the audio overlay attributes, see the Azure Media Encoder Schemas. Audio overlays can be combined with video overlays as shown in the following preset snippet:
 	
 	<MediaFile
 	    DeinterlaceMode="AutoPixelAdaptive"
@@ -240,7 +240,7 @@ When editing the Preset string, you must ensure the following:
 
 - For video/image overlays, the overlay rectangle must fit entirely within the dimensions of the source video
 - The start and end time of the overlays should be within the timeline of the source video
-- If the preset XML contains a reference to ?OverlayFileName=”%n%”, then the InputAssets collection for the Tasks should contain at least n+1 Assets
+- If the preset XML contains a reference to ?OverlayFileName="%n%", then the InputAssets collection for the Tasks should contain at least n+1 Assets
 
 
 
@@ -387,7 +387,7 @@ This snippet loads each asset sequentially for simplicity. In production environ
 
 ###Stitching Videos from a Single Asset
 
-When stitching videos within a single asset, each video must have a unique name. The videos are specified using the MediaFile attribute using the filename as the attribute’s value. For example:
+When stitching videos within a single asset, each video must have a unique name. The videos are specified using the MediaFile attribute using the filename as the attribute's value. For example:
 	
 	<MediaFile
 	    DeinterlaceMode="AutoPixelAdaptive"
@@ -503,6 +503,14 @@ To prevent the amplification of background noise, do the following:
 		// Launch the job. 
 		job.Submit();
 
+
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 ##See Also
 

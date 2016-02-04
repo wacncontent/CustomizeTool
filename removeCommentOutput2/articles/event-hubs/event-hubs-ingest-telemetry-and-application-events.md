@@ -19,16 +19,15 @@ Modern applications create a large amount of information while they are running.
 
 ## Explore
 - [Event Hubs](/documentation/articles/event-hubs-overview)
-- [Event Hubs pricing details](/home/features/event-hubs/#price)
+- [Event Hubs pricing details](http://www.windowsazure.cn/home/features/event-hubs/#price)
 - [Event Hubs availability and support FAQ](/documentation/articles/event-hubs-availability-and-support-faq)
 - [Event sourcing pattern](http://msdn.microsoft.com/zh-cn/library/dn589792.aspx)
  
 ## Build
 - [Event Hubs REST API reference](https://msdn.microsoft.com/zh-cn/library/azure/dn790674.aspx)
-- [Event Hubs code samples](https://code.msdn.microsoft.com/site/search?query=event%20hubs&f%5B0%5D.Value=event%20hubs&f%5B0%5D.Type=SearchText&ac=5)
+- [Event Hubs code samples](https://code.msdn.microsoft.com/windowsazure/site/search?query=event%20hubs&f%5B0%5D.Value=event%20hubs&f%5B0%5D.Type=SearchText&ac=5)
  
 ## Related services
-- [Service Bus](/home/features/service-bus/)
-- [Azure Storage](/home/features/storage/)
-- [HDInsight](/home/features/hdinsight/)
+- [Azure Storage](http://www.windowsazure.cn/documentation/services/storage/)
+- [HDInsight](http://www.windowsazure.cn/documentation/services/hdinsight/)
  

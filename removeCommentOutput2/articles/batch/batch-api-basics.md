@@ -1,6 +1,6 @@
 <properties
-	pageTitle="API basics for Azure Batch | Windows Azure"
-	description="Learn the basic concepts of the Batch service and its APIs from a developer's standpoint."
+	pageTitle="Azure Batch feature overview | Windows Azure"
+	description="Learn the features of the Batch service and its APIs from a development standpoint."
 	services="batch"
 	documentationCenter=".net"
 	authors="yidingzhou"
@@ -9,14 +9,15 @@
 
 <tags
 	ms.service="batch"
-	ms.date="10/15/2015"
+	ms.date="11/19/2015"
 	wacn.date=""/>
-
-# API basics for Azure Batch
+	
+<!--The next line, with one pound sign at the beginning, is the page title--> 
+# Overview of Azure Batch features
 
 This article provides a basic overview of the core API features of the Azure Batch service. Whether developing a distributed computational solution using the [Batch REST][batch_rest_api] or [Batch .NET][batch_net_api] APIs, you will use many of the entities and features discussed below.
 
-> [AZURE.TIP] For a higher level technical overview of Batch, please see the [Azure Batch technical overview](/documentation/articles/batch-technical-overview).
+> [AZURE.TIP] For a higher level technical overview of Batch, please see the [Azure Batch basics](/documentation/articles/batch-technical-overview).
 
 ## <a name="workflow"></a>Workflow of the Batch service
 
@@ -95,7 +96,7 @@ When you create a pool, you can specify the following attributes:
 - **Operating system family** and **version** that runs on the nodes
 	- As with worker roles within Cloud Services, the *OS Family* and *OS Version* can be specified (for more information on worker roles, see the [Tell me about cloud services][about_cloud_services] section in *Compute Hosting Options Provided by Azure*).
 	- The OS Family also determines which versions of .NET are installed with the OS.
-	- As with worker roles, it is recommended that `*` be specified for the OS Version so that the nodes are automatically upgraded, and there is no work required to cater to newly released versions. The primary use case for picking a specific OS version is to ensure that application compatibility is maintained, allowing backward compatibility testing to be performed before allowing the version to be updated. Once validated, the OS version for the pool can be updated and the new OS image installed–any running task will be interrupted and re-queued.
+	- As with worker roles, it is recommended that `*` be specified for the OS Version so that the nodes are automatically upgraded, and there is no work required to cater to newly released versions. The primary use case for picking a specific OS version is to ensure that application compatibility is maintained, allowing backward compatibility testing to be performed before allowing the version to be updated. Once validated, the OS version for the pool can be updated and the new OS image installed-any running task will be interrupted and re-queued.
 
 - **Target number of nodes** that should be available for the pool
 
@@ -123,7 +124,7 @@ A job is a collection of tasks, and specifies how computation is performed on co
 - Job **constraints** specify certain limits for your jobs.
 	- A **maximum wallclock time** can be set for jobs. If the jobs runs for longer than the maximum wallclock time specified, then the job and all associated tasks will be ended.
 	- Azure Batch can detect tasks that fail and retry the tasks. The **maximum number of task retries** can be specified as a constraint, including whether a task is always or never retried. Retrying a task means that the task is re-queued to be run again.
-- Tasks can be added to the job by your client application, or a [Job Manager task](#jobmanagertask) may be specified. A job manager task uses the Batch API and contains the information necessary to create the required tasks for a job, with the task being run on one of the compute nodes within the pool. The job manager task is handled specifically by Batch–it is queued as soon as the job is created, and restarted if it fails. A Job Manager task is required for jobs created by a job schedule as it is the only way to define the tasks before the job is instantiated. More information on job manager tasks appears below.
+- Tasks can be added to the job by your client application, or a [Job Manager task](#jobmanagertask) may be specified. A job manager task uses the Batch API and contains the information necessary to create the required tasks for a job, with the task being run on one of the compute nodes within the pool. The job manager task is handled specifically by Batch-it is queued as soon as the job is created, and restarted if it fails. A Job Manager task is required for jobs created by a job schedule as it is the only way to define the tasks before the job is instantiated. More information on job manager tasks appears below.
 
 
 ### <a name="task"></a>Task
@@ -199,9 +200,9 @@ The Batch service exposes a portion of the file system on a node as the "root di
 
 The root directory contains the following directory structure:
 
-- **Shared** – This location is a shared directory for all tasks that run on a node, regardless of job. On the node, the shared directory is accessed via  `%AZ_BATCH_NODE_SHARED_DIR%`. This directory provides read/write access to all tasks that execute on the node. Tasks can create, read, update, and delete files in this directory.
+- **Shared** - This location is a shared directory for all tasks that run on a node, regardless of job. On the node, the shared directory is accessed via  `%AZ_BATCH_NODE_SHARED_DIR%`. This directory provides read/write access to all tasks that execute on the node. Tasks can create, read, update, and delete files in this directory.
 
-- **Startup** – This location is used by a start task as its working directory. All of the files that are downloaded by the Batch service to launch the start task are also stored under this directory. On the node, the start directory is available via the `%AZ_BATCH_NODE_START_DIR%` environment variable. The start task can create, read, update, and delete files under this directory, and this directory can be used by start tasks to configure the operating system.
+- **Startup** - This location is used by a start task as its working directory. All of the files that are downloaded by the Batch service to launch the start task are also stored under this directory. On the node, the start directory is available via the `%AZ_BATCH_NODE_START_DIR%` environment variable. The start task can create, read, update, and delete files under this directory, and this directory can be used by start tasks to configure the operating system.
 
 - **Tasks** - A directory is created for each task that runs on the node, accessed via `%AZ_BATCH_TASK_DIR%`. Within each task directory, the Batch service creates a working directory (`wd`) whose unique path is specified by the `%AZ_BATCH_TASK_WORKING_DIR%` environment variable. This directory provides read/write access to the task. The task can create, read, update, and delete files under this directory, and this directory is retained based on the *RetentionTime* constraint specified for the task.
   - `stdout.txt` and `stderr.txt` - These files are written to the task folder during the execution of the task.
@@ -228,11 +229,11 @@ The automatic scaling of an application is done by specifying a set of scaling f
 
 A scaling formula can be based on the following metrics:
 
-- **Time metrics** – Based on statistics collected every five minutes in the specified number of hours.
+- **Time metrics** - Based on statistics collected every five minutes in the specified number of hours.
 
-- **Resource metrics** – Based on CPU usage, bandwidth usage, memory usage, and number of nodes.
+- **Resource metrics** - Based on CPU usage, bandwidth usage, memory usage, and number of nodes.
 
-- **Task metrics** – Based on the status of tasks, such as Active, Pending, and Completed.
+- **Task metrics** - Based on the status of tasks, such as Active, Pending, and Completed.
 
 For more information about automatically scaling an application, see [Automatically scale compute nodes in an Azure Batch pool](/documentation/articles/batch-automatic-scaling).
 

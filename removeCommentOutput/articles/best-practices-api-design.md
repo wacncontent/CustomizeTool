@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="best-practice"
-	ms.date="04/28/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 # API design guidance
@@ -34,7 +34,7 @@ The purpose of this guidance is to describe the issues that you should consider 
 
 In his dissertation in 2000, Roy Fielding proposed an alternative architectural approach to structuring the operations exposed by web services; REST. REST is an architectural style for building distributed systems based on hypermedia. A primary advantage of the REST model is that it is based on open standards and does not bind the implementation of the model or the client applications that access it to any specific implementation. For example, a REST web service could be implemented by using the Microsoft ASP.NET Web API, and client applications could be developed by using any language and toolset that can generate HTTP requests and parse HTTP responses.
 
-> [AZURE.NOTE]: REST is actually independent of any underlying protocol and is not necessarily tied to HTTP. However, most common implementations of systems that are based on REST utilize HTTP as the application protocol for sending and receiving requests. This document focusses on mapping REST principles to systems designed to operate using HTTP.
+> [AZURE.NOTE]: REST is actually independent of any underlying protocol and is not necessarily tied to HTTP. However, most common implementations of systems that are based on REST utilize HTTP as the application protocol for sending and receiving requests. This document focuses on mapping REST principles to systems designed to operate using HTTP.
 
 The REST model uses a navigational scheme to represent objects and services over a network (referred to as _resources_). Many systems that implement REST typically use the HTTP protocol to transmit requests to access these resources. In these systems, a client application submits a request in the form of a URI that identifies a resource, and an HTTP method (the most common being GET, POST, PUT, or DELETE) that indicates the operation to be performed on that resource.  The body of the HTTP request contains the data required to perform the operation. The important point to understand is that REST defines a stateless request model. HTTP requests should be independent and may occur in any order, so attempting to retain transient state information between requests is not feasible.  The only place where information is stored is in the resources themselves, and each request should be an atomic operation. Effectively, a REST model implements a finite state machine where a request transitions a resource from one well-defined non-transient state to another.
 
@@ -47,14 +47,14 @@ GET http://adventure-works.com/orders HTTP/1.1
 ...
 ```
 
-The response shown below encodes the orders as an XML list structure. The list contains 7 orders:
+The response shown below encodes the orders as a JSON list structure:
 
 ```HTTP
 HTTP/1.1 200 OK
 ...
 Date: Fri, 22 Aug 2014 08:49:02 GMT
 Content-Length: ...
-<OrderList xmlns:i="..." xmlns="..."><Order><OrderID>1</OrderID><OrderValue>99.90</OrderValue><ProductID>1</ProductID><Quantity>1</Quantity></Order><Order><OrderID>2</OrderID><OrderValue>10.00</OrderValue><ProductID>4</ProductID><Quantity>2</Quantity></Order><Order><OrderID>3</OrderID><OrderValue>16.60</OrderValue><ProductID>2</ProductID><Quantity>4</Quantity></Order><Order><OrderID>4</OrderID><OrderValue>25.90</OrderValue><ProductID>3</ProductID><Quantity>1</Quantity></Order><Order><OrderID>7</OrderID><OrderValue>99.90</OrderValue><ProductID>1</ProductID><Quantity>1</Quantity></Order></OrderList>
+[{"orderId":1,"orderValue":99.90,"productId":1,"quantity":1},{"orderId":2,"orderValue":10.00,"productId":4,"quantity":2},{"orderId":3,"orderValue":16.60,"productId":2,"quantity":4},{"orderId":4,"orderValue":25.90,"productId":3,"quantity":1},{"orderId":5,"orderValue":99.90,"productId":1,"quantity":1}]
 ```
 To fetch an individual order requires specifying the identifier for the order from the _orders_ resource, such as _/orders/2_:
 
@@ -68,11 +68,10 @@ HTTP/1.1 200 OK
 ...
 Date: Fri, 22 Aug 2014 08:49:02 GMT
 Content-Length: ...
-<Order xmlns:i="..." xmlns="...">
-<OrderID>2</OrderID><OrderValue>10.00</OrderValue><ProductID>4</ProductID><Quantity>2</Quantity></Order>
+{"orderId":2,"orderValue":10.00,"productId":4,"quantity":2}
 ```
 
-> [AZURE.NOTE] For simplicity, these examples show the information in responses being returned as XML text data. However, there is no reason why resources should not contain any other type of data supported by HTTP, such as binary or encrypted information; the content-type in the HTTP response should specify the type. Also, a REST model may be able to return the same data in different formats, such as XML or JSON. In this case, the web service should be able to perform content negotiation with the client making the request. The request can include an _Accept_ header which specifies the preferred format that the client would like to receive and the web service should attempt to honor this format if at all possible.
+> [AZURE.NOTE] For simplicity, these examples show the information in responses being returned as JSON text data. However, there is no reason why resources should not contain any other type of data supported by HTTP, such as binary or encrypted information; the content-type in the HTTP response should specify the type. Also, a REST model may be able to return the same data in different formats, such as XML or JSON. In this case, the web service should be able to perform content negotiation with the client making the request. The request can include an _Accept_ header which specifies the preferred format that the client would like to receive and the web service should attempt to honor this format if at all possible.
 
 Notice that the response from a REST request makes use of the standard HTTP status codes. For example, a request that returns valid data should include the HTTP response code 200 (OK), while a request that fails to find or delete a specified resource should return a response that includes the HTTP status code 404 (Not Found).
 
@@ -90,7 +89,7 @@ Focus on the business entities that the web API exposes. For example, in a web A
 
 > [AZURE.TIP] Avoid designing a REST interface that mirrors or depends on the internal structure of the data that it exposes. REST is about more than implementing simple CRUD (Create, Retrieve, Update, Delete) operations over separate tables in a relational database. The purpose of REST is to map business entities and the operations that an application can perform on these entities to the physical implementation of these entities, but a client should not be exposed to these physical details.
 
-Individual business entities rarely exist in isolation (although some singleton objects may exist), but instead tend to be grouped together into collections. In REST terms, each entity and each collection are resources. In a RESTful web API, each collection has its own URI within the web service, and performing an HTTP GET request over a URI for a collection retrieves a list of items in that collection. Each individual item also has its own URI, and an application can submit another HTTP GET request using that URI to retrieve the details of that item. You should organize the URIs for collections and items in a hierarchical manner. In the ecommerce system, the URI _/customers_ denotes the customer’s collection, and _/customers/5_ retrieves the details for the single customer with the ID 5 from this collection. This approach helps to keep the web API intuitive.
+Individual business entities rarely exist in isolation (although some singleton objects may exist), but instead tend to be grouped together into collections. In REST terms, each entity and each collection are resources. In a RESTful web API, each collection has its own URI within the web service, and performing an HTTP GET request over a URI for a collection retrieves a list of items in that collection. Each individual item also has its own URI, and an application can submit another HTTP GET request using that URI to retrieve the details of that item. You should organize the URIs for collections and items in a hierarchical manner. In the ecommerce system, the URI _/customers_ denotes the customer's collection, and _/customers/5_ retrieves the details for the single customer with the ID 5 from this collection. This approach helps to keep the web API intuitive.
 
 > [AZURE.TIP] Adopt a consistent naming convention in URIs; in general it helps to use plural nouns for URIs that reference collections.
 
@@ -162,10 +161,10 @@ Content-Type: application/json; charset=utf-8
 ...
 Date: Fri, 22 Aug 2014 09:18:37 GMT
 Content-Length: ...
-{"OrderID":2,"ProductID":4,"Quantity":2,"OrderValue":10.00}
+{"orderID":2,"productID":4,"quantity":2,"orderValue":10.00}
 ```
 
-If the web server does not support the requested media type, it can send the data in a different format. IN all cases it must specify the media type (such as _text/xml_) in the Content-Type header. It is the responsibility of the client application to parse the response message and interpret the results in the message body appropriately.
+If the web server does not support the requested media type, it can send the data in a different format. IN all cases it must specify the media type (such as _application/json_) in the Content-Type header. It is the responsibility of the client application to parse the response message and interpret the results in the message body appropriately.
 
 Note that in this example, the web server successfully retrieves the requested data and indicates success by passing back a status code of 200 in the response header. If no matching data is found, it should instead return a status code of 404 (not found) and the body of the response message can contain additional information. The format of this information is specified by the Content-Type header, as shown in the following example:
 
@@ -185,7 +184,7 @@ Content-Type: application/json; charset=utf-8
 ...
 Date: Fri, 22 Aug 2014 09:18:37 GMT
 Content-Length: ...
-{"Message":"No such order"}
+{"message":"No such order"}
 ```
 
 When an application sends an HTTP PUT request to update a resource, it specifies the URI of the resource and provides the data to be modified in the body of the request message. It should also specify the format of this data by using the Content-Type header. A common format used for text-based information is _application/x-www-form-urlencoded_, which comprises a set of name/value pairs separated by the & character. The next example shows an HTTP PUT request that modifies the information in order 1:
@@ -225,7 +224,7 @@ Content-Type: application/x-www-form-urlencoded
 ...
 Date: Fri, 22 Aug 2014 09:18:37 GMT
 Content-Length: ...
-ProductID=5&Quantity=15&OrderValue=400
+productID=5&quantity=15&orderValue=400
 ```
 
 If the request is successful, the web server should respond with a message code with HTTP status code 201 (Created). The Location header should contain the URI of the newly created resource, and the body of the response should contain a copy of the new resource; the Content-Type header specifies the format of this data:
@@ -238,7 +237,7 @@ Location: http://adventure-works.com/orders/99
 ...
 Date: Fri, 22 Aug 2014 09:18:37 GMT
 Content-Length: ...
-{"OrderID":99,"ProductID":5,"Quantity":15,"OrderValue":400}
+{"orderID":99,"productID":5,"quantity":15,"orderValue":400}
 ```
 
 > [AZURE.TIP] If the data provided by a PUT or POST request is invalid, the web server should respond with a message with HTTP status code 400 (Bad Request). The body of this message can contain additional information about the problem with the request and the formats expected, or it can contain a link to a URL that provides more details.
@@ -285,7 +284,7 @@ You can extend this approach to limit (project) the fields returned if a single 
 A single resource may contain large binary fields, such as files or images. To overcome the transmission problems caused by unreliable and intermittent connections and to improve response times, consider providing operations that enable such resources to be retrieved in chunks by the client application. To do this, the web API should support the Accept-Ranges header for GET requests for large resources, and ideally implement HTTP HEAD requests for these resources. The Accept-Ranges header indicates that the GET operation supports partial results, and that a client application can submit GET requests that return a subset of a resource specified as a range of bytes. A HEAD request is similar to a GET request except that it only returns a header that describes the resource and an empty message body. A client application can issue a HEAD request to determine whether to fetch a resource by using partial GET requests. The following example shows a HEAD request that obtains information about a product image:
 
 ```HTTP
-HEAD http://adventure-works.com/products/10?fields=ProductImage HTTP/1.1
+HEAD http://adventure-works.com/products/10?fields=productImage HTTP/1.1
 ...
 ```
 
@@ -303,7 +302,7 @@ Content-Length: 4580
 The client application can use this information to construct a series of GET operations to retrieve the image in smaller chunks. The first request fetches the first 2500 bytes by using the Range header:
 
 ```HTTP
-GET http://adventure-works.com/products/10?fields=ProductImage HTTP/1.1
+GET http://adventure-works.com/products/10?fields=productImage HTTP/1.1
 Range: bytes=0-2499
 ...
 ```
@@ -324,7 +323,7 @@ _{binary data not shown}_
 A subsequent request from the client application can retrieve the remainder of the resource by using an appropriate Range header:
 
 ```HTTP
-GET http://adventure-works.com/products/10?fields=ProductImage HTTP/1.1
+GET http://adventure-works.com/products/10?fields=productImage HTTP/1.1
 Range: bytes=2500-
 ...
 ```
@@ -355,7 +354,7 @@ Accept: application/json
 ...
 ```
 
-The body of the response message contains a `Links` array (highlighted in the code example) that specifies the nature of the relationship (_Customer_), the URI of the customer (_http://adventure-works.com/customers/3_), how to retrieve the details of this customer (_GET_), and the MIME types that the web server supports for retrieving this information (_text/xml_ and _application/json_). This is all the information that a client application needs to be able to fetch the details of the customer. Additionally, the Links array also includes links for the other operations that can be performed, such as PUT (to modify the customer, together with the format that the web server expects the client to provide), and DELETE.
+The body of the response message contains a `links` array (highlighted in the code example) that specifies the nature of the relationship (_Customer_), the URI of the customer (_http://adventure-works.com/customers/3_), how to retrieve the details of this customer (_GET_), and the MIME types that the web server supports for retrieving this information (_text/xml_ and _application/json_). This is all the information that a client application needs to be able to fetch the details of the customer. Additionally, the Links array also includes links for the other operations that can be performed, such as PUT (to modify the customer, together with the format that the web server expects the client to provide), and DELETE.
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -363,8 +362,8 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-{"OrderID":3,"ProductID":2,"Quantity":4,"OrderValue":16.60,"Links":[(some links omitted){"Relationship":"customer","HRef":" http://adventure-works.com/customers/3", "Action":"GET","LinkedResourceMIMETypes":["text/xml","application/json"]},{"Relationship":"
-customer","HRef":" http://adventure-works.com /customers/3", "Action":"PUT","LinkedResourceMIMETypes":["application/x-www-form-urlencoded"]},{"Relationship":"customer","HRef":" http://adventure-works.com /customers/3","Action":"DELETE","LinkedResourceMIMETypes":[]}]}
+{"orderID":3,"productID":2,"quantity":4,"orderValue":16.60,"links":[(some links omitted){"rel":"customer","href":" http://adventure-works.com/customers/3", "action":"GET","types":["text/xml","application/json"]},{"rel":"
+customer","href":" http://adventure-works.com /customers/3", "action":"PUT","types":["application/x-www-form-urlencoded"]},{"rel":"customer","href":" http://adventure-works.com /customers/3","action":"DELETE","types":[]}]}
 ```
 
 For completeness, the Links array should also include self-referencing information pertaining to the resource that has been retrieved. These links have been omitted from the previous example, but are highlighted in the following code. Notice that in these links, the relationship _self_ has been used to indicate that this is a reference to the resource being returned by the operation:
@@ -375,8 +374,8 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-{"OrderID":3,"ProductID":2,"Quantity":4,"OrderValue":16.60,"Links":[{"Relationship":"self","HRef":" http://adventure-works.com/orders/3", "Action":"GET","LinkedResourceMIMETypes":["text/xml","application/json"]},{"Relationship":" self","HRef":" http://adventure-works.com /orders/3", "Action":"PUT","LinkedResourceMIMETypes":["application/x-www-form-urlencoded"]},{"Relationship":"self","HRef":" http://adventure-works.com /orders/3", "Action":"DELETE","LinkedResourceMIMETypes":[]},{"Relationship":"customer",
-"HRef":" http://adventure-works.com /customers/3", "Action":"GET","LinkedResourceMIMETypes":["text/xml","application/json"]},{"Relationship":" customer" (customer links omitted)}]}
+{"orderID":3,"productID":2,"quantity":4,"orderValue":16.60,"links":[{"rel":"self","href":" http://adventure-works.com/orders/3", "action":"GET","types":["text/xml","application/json"]},{"rel":" self","href":" http://adventure-works.com /orders/3", "action":"PUT","types":["application/x-www-form-urlencoded"]},{"rel":"self","href":" http://adventure-works.com /orders/3", "action":"DELETE","types":[]},{"rel":"customer",
+"href":" http://adventure-works.com /customers/3", "action":"GET","types":["text/xml","application/json"]},{"rel":" customer" (customer links omitted)}]}
 ```
 
 For this approach to be effective, client applications must be prepared to retrieve and parse this additional information.
@@ -391,7 +390,7 @@ Versioning enables a web API to indicate the features and resources that it expo
 
 This is the simplest approach, and may be acceptable for some internal APIs. Big changes could be represented as new resources or new links.  Adding content to existing resources might not present a breaking change as client applications that are not expecting to see this content will simply ignore it.
 
-For example, a request to the URI _http://adventure-works.com/customers/3_ should return the details of a single customer containing `Id`, `Name`, and `Address` fields expected by the client application:
+For example, a request to the URI _http://adventure-works.com/customers/3_ should return the details of a single customer containing `id`, `name`, and `address` fields expected by the client application:
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -399,7 +398,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","Address":"1 Microsoft Way Redmond WA 98053"}]
+{"id":3,"name":"Contoso LLC","address":"1 Microsoft Way Redmond WA 98053"}
 ```
 
 > [AZURE.NOTE] For the purposes of simplicity and clarity, the example responses shown in this section do not include HATEOAS links.
@@ -412,7 +411,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","DateCreated":"2014-09-04T12:11:38.0376089Z","Address":"1 Microsoft Way Redmond WA 98053"}]
+{"id":3,"name":"Contoso LLC","dateCreated":"2014-09-04T12:11:38.0376089Z","address":"1 Microsoft Way Redmond WA 98053"}
 ```
 
 Existing client applications might continue functioning correctly if they are capable of ignoring unrecognized fields, while new client applications can be designed to handle this new field. However, if more radical changes to the schema of resources occur (such as removing or renaming fields) or the relationships between resources change then these may constitute breaking changes that prevent existing client applications from functioning correctly. In these situations you should consider one of the following approaches.
@@ -421,7 +420,7 @@ Existing client applications might continue functioning correctly if they are ca
 
 Each time you modify the web API or change the schema of resources, you add a version number to the URI for each resource. The previously existing URIs should continue to operate as before, returning resources that conform to their original schema.
 
-Extending the previous example, if the `Address` field is restructured into sub-fields containing each constituent part of the address (such as `StreetAddress`, `City`, `State`, and `ZipCode`), this version of the resource could be exposed through a URI containing a version number, such as http://adventure-works.com/v2/customers/3:
+Extending the previous example, if the `address` field is restructured into sub-fields containing each constituent part of the address (such as `streetAddress`, `city`, `state`, and `zipCode`), this version of the resource could be exposed through a URI containing a version number, such as http://adventure-works.com/v2/customers/3:
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -429,10 +428,10 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","DateCreated":"2014-09-04T12:11:38.0376089Z","Address":{"StreetAddress":"1 Microsoft Way","City":"Redmond","State":"WA","ZipCode":98053}}]
+{"id":3,"name":"Contoso LLC","dateCreated":"2014-09-04T12:11:38.0376089Z","address":{"streetAddress":"1 Microsoft Way","city":"Redmond","state":"WA","zipCode":98053}}
 ```
 
-This versioning mechanism is very simple but depends on the server routing the request to the appropriate endpoint. However, it can become unwieldy as the web API matures through several iterations and the server has to support a number of different versions. Also, from a purist’s point of view, in all cases the client applications are fetching the same data (customer 3), so the URI should not really be different depending on the version. This scheme also complicates implementation of HATEOAS as all links will need to include the version number in their URIs.
+This versioning mechanism is very simple but depends on the server routing the request to the appropriate endpoint. However, it can become unwieldy as the web API matures through several iterations and the server has to support a number of different versions. Also, from a purist's point of view, in all cases the client applications are fetching the same data (customer 3), so the URI should not really be different depending on the version. This scheme also complicates implementation of HATEOAS as all links will need to include the version number in their URIs.
 
 ### Query string versioning
 
@@ -440,7 +439,7 @@ Rather than providing multiple URIs, you can specify the version of the resource
 
 This approach has the semantic advantage that the same resource is always retrieved from the same URI, but it depends on the code that handles the request to parse the query string and send back the appropriate HTTP response. This approach also suffers from the same complications for implementing HATEOAS as the URI versioning mechanism.
 
-> [AZURE.NOTE] Some older web browsers and web proxies will not cache responses for requests that include a query string in the URL. This can have an adverse impact on performance for web applications that use a web API and that run from within such a web browser.
+> [AZURE.NOTE] Some older web browsers and web proxies will not cache responses for requests that include a query string in the URL. This can have an adverse impact on performance for web sites that use a web API and that run from within such a web browser.
 
 ### Header versioning
 
@@ -461,7 +460,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","Address":"1 Microsoft Way Redmond WA 98053"}]
+{"id":3,"name":"Contoso LLC","address":"1 Microsoft Way Redmond WA 98053"}
 ```
 
 Version 2:
@@ -479,7 +478,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","DateCreated":"2014-09-04T12:11:38.0376089Z","Address":{"StreetAddress":"1 Microsoft Way","City":"Redmond","State":"WA","ZipCode":98053}}]
+{"id":3,"name":"Contoso LLC","dateCreated":"2014-09-04T12:11:38.0376089Z","address":{"streetAddress":"1 Microsoft Way","city":"Redmond","state":"WA","zipCode":98053}}
 ```
 
 Note that as with the previous two approaches, implementing HATEOAS requires including the appropriate custom header in any links.
@@ -503,7 +502,7 @@ HTTP/1.1 200 OK
 Content-Type: application/vnd.adventure-works.v1+json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","Address":"1 Microsoft Way Redmond WA 98053"}]
+{"id":3,"name":"Contoso LLC","address":"1 Microsoft Way Redmond WA 98053"}
 ```
 
 If the Accept header does not specify any known media types, the web server could generate an HTTP 406 (Not Acceptable) response message or return a message with a default media type.

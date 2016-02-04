@@ -1,41 +1,48 @@
-<properties 
-	pageTitle="Connect to SQL Database by using Java with JDBC on Windows" 
+<properties
+	pageTitle="Connect to SQL Database by using Java with JDBC on Windows"
 	description="Presents a Java code sample you can use to connect to Azure SQL Database. The sample uses JDBC, and it runs on a Windows client computer."
-	services="sql-database" 
-	documentationCenter="" 
-	authors="LuisBosquez" 
-	manager="jeffreyg" 
+	services="sql-database"
+	documentationCenter=""
+	authors="LuisBosquez"
+	manager="jeffreyg"
 	editor="genemi"/>
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="09/28/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 
 # Connect to SQL Database by using Java with JDBC on Windows
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+> [AZURE.SELECTOR]
+- [C#](/documentation/articles/sql-database-develop-dotnet-simple)
+- [PHP](/documentation/articles/sql-database-develop-php-simple-windows)
+- [Python](/documentation/articles/sql-database-develop-python-simple-windows)
+- [Ruby](/documentation/articles/sql-database-develop-ruby-simple-windows)
+- [Java](/documentation/articles/sql-database-develop-java-simple-windows)
+- [Node.js](/documentation/articles/sql-database-develop-nodejs-simple-windows)
 
 
 This topic presents a Java code sample that you can use to connect to Azure SQL Database. The Java sample relies on the Java Development Kit (JDK) version 1.8. The sample connects to an Azure SQL Database by using the JDBC driver.
 
 
-## Requirements
+## Prerequisites
 
+### Drivers and Libraries
 
-- [Microsoft JDBC Driver for SQL Server - SQL JDBC 4](http://www.microsoft.com/download/details.aspx?displaylang=en&id=11774).
+- [Microsoft JDBC Driver for SQL Server - SQL JDBC <!-- deleted by customization 4](http://www.microsoft.com/download/details.aspx?displaylang=en&id=11774) --><!-- keep by customization: begin --> 4](http://www.microsoft.com/zh-cn/download/details.aspx?displaylang=en&id=11774) <!-- keep by customization: end -->.
 - Any operating system platform that runs [Java Development Kit 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
-- An existing database on SQL Azure. See the [Get Started topic](/documentation/articles/sql-database-get-started) to learn how to create a sample database and retrieve your connection string.
 
+### A SQL database
 
-## Test environment
+See the [getting started page](/documentation/articles/sql-database-get-started) to learn how to create a database.  
 
+### A SQL table
 
 The Java code example in this topic assumes the following test table already exists in your Azure SQL Database database.
-
 
 <!--
 Could this instead be a #tempPerson table, so that the Java code sample could be fully self-sufficient and be runnable (with automatic cleanup)?
@@ -51,17 +58,13 @@ Could this instead be a #tempPerson table, so that the Java code sample could be
 	);
 
 
-## Connection string for your SQL Database
+## Step 1: Get Connection String
+
+[AZURE.INCLUDE [sql-database-include-connection-string-jdbc-20-portalshots](../includes/sql-database-include-connection-string-jdbc-20-portalshots.md)]
+> [AZURE.NOTE] If you are using the JTDS JDBC driver, then you will need to add "ssl=require" to the URL of the connection string and you need to set the following option for the JVM "-Djsse.enableCBCProtection=false". This JVM option disables a fix for a security vulnerability, so make sure you understand what risk is involved before setting this option.
 
 
-The code sample creates a `Connection` object by using a connection string. You can find the connection string by using the [Azure <!-- deleted by customization preview portal](http://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Management Portal](http://manage.windowsazure.cn/) <!-- keep by customization: end -->. For details about finding the connection string, see [Create your first Azure SQL Database](/documentation/articles/sql-database-get-started).
-
-
-> [AZURE.NOTE] JTDS JDBC driver
-> If you are using the JTDS JDBC driver, then you will need to add "ssl=require" to the URL of the connection string and you need to set the following option for the JVM "-Djsse.enableCBCProtection=false". This JVM option disables a fix for a security vulnerability, so make sure you understand what risk is involved before setting this option. 
-
-
-## Java code sample
+## Step 2:  Compile Java code sample
 
 
 The section contains the bulk of the Java code sample. It has comments indicating where you would copy-and-paste the smaller Java segments that are presented in subsequent sections. The sample in this section could compile and run even without the copy-and-pastes near the comments, but it would only connect and then end. The comments you will find are the following:
@@ -77,36 +80,36 @@ Here next is the bulk of the Java code sample. The sample includes the `main` fu
 
 	import java.sql.*;
 	import com.microsoft.sqlserver.jdbc.*;
-	
+
 	public class SQLDatabaseTest {
-	
+
 		public static void main(String[] args) {
 			String connectionString =
-				"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433;" 
+				"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433;"
 				+ "database=your_database;"
 				+ "user=your_user@your_server;"
-				+ "password={your_password};"
+				+ "password=your_password;"
 				+ "encrypt=true;"
 				+ "trustServerCertificate=false;"
 				+ "hostNameInCertificate=*.database.chinacloudapi.cn;"
-				+ "loginTimeout=30;"; 
-	
+				+ "loginTimeout=30;";
+
 			// Declare the JDBC objects.
 			Connection connection = null;
 			Statement statement = null;
 			ResultSet resultSet = null;
 			PreparedStatement prepsInsertPerson = null;
 			PreparedStatement prepsUpdateAge = null;
-	
+
 			try {
 				connection = DriverManager.getConnection(connectionString);
-	
+
 				// INSERT two rows into the table.
 				// ...
-	
+
 				// TRANSACTION and commit for an UPDATE.
 				// ...
-	
+
 				// SELECT rows from the table.
 				// ...
 			}
@@ -134,7 +137,7 @@ Of course, to actually run the preceding Java code sample, you would have to put
 - your_password
 
 
-## INSERT two rows into the table
+## Step 3: Insert rows
 
 
 This Java segment issues a Transact-SQL INSERT statement to insert two rows into the Person table. The general sequence is as follows:
@@ -154,7 +157,7 @@ Copy-and-paste this short Java segment into the primary code sample where you se
 	String insertSql = "INSERT INTO Person (firstName, lastName, age) VALUES "
 		+ "('Bill', 'Gates', 59), "
 		+ "('Steve', 'Ballmer', 59);";
-	
+
 	prepsInsertPerson = connection.prepareStatement(
 		insertSql,
 		Statement.RETURN_GENERATED_KEYS);
@@ -167,8 +170,7 @@ Copy-and-paste this short Java segment into the primary code sample where you se
 	}
 
 
-## TRANSACTION and commit for an UPDATE
-
+## Step 4: Commit a transaction
 
 The following segment of Java code issues a Transact-SQL UPDATE statement to increase the `age` value for every row in the person table. The general sequence is as follows:
 
@@ -183,22 +185,22 @@ Copy-and-paste this short Java segment into the primary code sample where you se
 
 	// Set AutoCommit value to false to execute a single transaction at a time.
 	connection.setAutoCommit(false);
-	
+
 	// Write the SQL Update instruction and get the PreparedStatement object.
 	String transactionSql = "UPDATE Person SET Person.age = Person.age + 1;";
 	prepsUpdateAge = connection.prepareStatement(transactionSql);
-	
+
 	// Execute the statement.
 	prepsUpdateAge.executeUpdate();
-	
+
 	//Commit the transaction.
 	connection.commit();
-	
+
 	// Return the AutoCommit value to true.
 	connection.setAutoCommit(true);
 
 
-## SELECT rows from a table
+## Step 4: Execute a query
 
 
 This Java segment executes a Transact-SQL SELECT statement to see all the updated rows from the Person table. The general sequence is as follows:
@@ -216,7 +218,7 @@ Copy-and-paste this short Java segment into the primary code sample where you se
 	String selectSql = "SELECT firstName, lastName, age FROM dbo.Person";
 	statement = connection.createStatement();
 	resultSet = statement.executeQuery(selectSql);
-	
+
 	// Iterate through the result set and print the attributes.
 	while (resultSet.next()) {
 		System.out.println(resultSet.getString(2) + " "
@@ -226,4 +228,3 @@ Copy-and-paste this short Java segment into the primary code sample where you se
 ## Next steps
 
 For more information, see the [Java Developer Center](/develop/java/).
-

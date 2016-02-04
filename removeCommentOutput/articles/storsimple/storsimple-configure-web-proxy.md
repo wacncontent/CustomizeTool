@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Set up web proxy for a StorSimple device | Microsoft Azure"
+   pageTitle="Set up web proxy for a StorSimple device | Windows Azure"
    description="Learn how to use Windows PowerShell for StorSimple to configure web proxy settings for your StorSimple device."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/15/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 # Configure web proxy for your StorSimple device
 
@@ -27,7 +23,7 @@ Web proxy is an optional configuration for your StorSimple device. You can confi
 
 2. You then enable the configured web proxy settings via Windows PowerShell for StorSimple cmdlets.
 
-After the web proxy configuration is complete, you can view the configured web proxy settings in both the Microsoft Azure StorSimple Manager service and the Windows PowerShell for StorSimple. 
+After the web proxy configuration is complete, you can view the configured web proxy settings in both the Windows Azure StorSimple Manager service and the Windows PowerShell for StorSimple. 
 
 After reading this tutorial, you will be able to:
 
@@ -147,6 +143,6 @@ If the web proxy settings have been configured incorrectly, error messages will 
 
 ## Next Steps
 
-- If you experience any issues while deploying your device or configuring web proxy settings, refer to [Troubleshoot your StorSimple device deployment](storsimple-troubleshoot-deployment.md).
+- If you experience any issues while deploying your device or configuring web proxy settings, refer to [Troubleshoot your StorSimple device deployment](/documentation/articles/storsimple-troubleshoot-deployment).
 
-- To learn how to use the StorSimple Manager service, go to [Use the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+- To learn how to use the StorSimple Manager service, go to [Use the StorSimple Manager service to administer your StorSimple device](/documentation/articles/storsimple-manager-service-administration).

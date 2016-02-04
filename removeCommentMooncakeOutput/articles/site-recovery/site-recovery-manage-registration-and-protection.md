@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage registration and protection" 
+	pageTitle="Unregister servers and disable protection | Windows Azure" 
 	description="Azure Site Recovery coordinates the replication, failover and recovery of virtual machines located on on-premises servers to Azure or a secondary datacenter. Use this article to unregister servers from a Site Recovery vault, and to disable protection for virtual machines and physical servers." 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -7,12 +7,12 @@
 	manager="jwhit" 
 	editor=""/>
 
-<tags
-	ms.service="site-recovery"
-	ms.date="10/07/2015"
+<tags 
+	ms.service="site-recovery" 
+	ms.date="12/14/2015" 
 	wacn.date=""/>
 
-# Manage registration and protection
+# Unregister servers and disable protection
 
 This article describes how to unregister servers from the Site Recovery vault and how to disable protection for virtual machines protected by Site Recovery. If you have any questions after reading this article post them on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
@@ -21,8 +21,8 @@ This article describes how to unregister servers from the Site Recovery vault an
 You unregister a VMM server from a vault by deleting the server on the **Servers** tab in the Azure Site Recovery portal. Note that:
 
 -  **Connected VMM server**: We recommend you unregister the VMM server when it's connected to Azure. This ensures that settings on the on-premise VMM server, and the VMM servers associated with it (VMM servers that contain clouds that are mapped to clouds on the server you want to delete) are cleaned up properly. We recommend you only remove an unconnected server if there's a permanent issue with connectivity.
-- **Unconnected VMM server**: If the VMM server isn’t connected when you delete it you’ll need to run a script manually to perform the cleanup. The script is available in the [Microsoft gallery](https://gallery.technet.microsoft.com/scriptcenter/Cleanup-Script-for-Windows-95101439). Note the VMM ID of the server in order to complete the manual cleanup process.
-- **VMM server in cluster**: If you need to unregister a VMM server that’s deployed in a cluster do the following:
+- **Unconnected VMM server**: If the VMM server isn't connected when you delete it you'll need to run a script manually to perform the cleanup. The script is available in the [Microsoft gallery](https://gallery.technet.microsoft.com/scriptcenter/Cleanup-Script-for-Windows-95101439). Note the VMM ID of the server in order to complete the manual cleanup process.
+- **VMM server in cluster**: If you need to unregister a VMM server that's deployed in a cluster do the following:
 
 	- If the server's connected, delete the connected VMM server on the **Servers** tab. To uninstall the Provider on the server, log in on every cluster node and uninstall it from the Control Panel. Run the cleanup script referenced in the previous section on all passive nodes in the cluster to delete registration entries.
 	- If the server isn't connected you'll need to run the cleanup script on all cluster nodes.
@@ -48,7 +48,7 @@ On VMM servers that have clouds that are paired with clouds on the server you're
 When Azure Site Recovery is deployed to protect virtual machines located on a Hyper-V server in a Hyper-V site (with no VMM server) you can unregister a Hyper-V server from a vault as follows:
 
 1. Disable protection for virtual machines located on the Hyper-V server.
-2. On the **Servers** tab in the Azure Site Recovery portal, select the server > Delete. The server doesn’t have to be connected to Azure when you do this.
+2. On the **Servers** tab in the Azure Site Recovery portal, select the server > Delete. The server doesn't have to be connected to Azure when you do this.
 3. Run the following script to clean up settings on the server and unregister it from the vault. 
 
 	    pushd .
@@ -142,7 +142,7 @@ If you want to stop protecting a Hyper-V virtual machine you'll need to remove p
 2. On the **Confirm Removal of Virtual Machine** page you have a couple of options:
 
 	- **Disable protection**—If you enable and save this option the virtual machine will no longer be protected by Site Recovery. Protection settings for the virtual machine will be cleaned up automatically.
-	- **Remove from the vault**—If you select this option the virtual machine will be removed only from the Site Recovery vault. On-premises protection settings for the virtual machine won’t be affected. You'll need to clean up settings manually to remove protection settings and remove the virtual machine from the Azure subscription and remove protection settings you’ll need to clean them up manually using the instructions below.
+	- **Remove from the vault**—If you select this option the virtual machine will be removed only from the Site Recovery vault. On-premises protection settings for the virtual machine won't be affected. You'll need to clean up settings manually to remove protection settings and remove the virtual machine from the Azure subscription and remove protection settings you'll need to clean them up manually using the instructions below.
 
 If you select to delete the virtual machine and its hard disks they will be removed from the target location.
 
@@ -161,9 +161,9 @@ If you selected **Stop managing the virtual machine**, manually clean up setting
 	    Remove-SCVirtualMachine -VM $vm -Force
 
 3. On the secondary VMM server, after you run the script refresh the virtual machines on the Hyper-V host server so that the secondary virtual machine gets re-detected in the VMM console.
-4. The above steps will clear the replication settings only VMM server. If you want to remove virtual machine replication for the virtual machine. You’ll need to do the below steps on both the primary and secondary virtual machines. Run the below script to remove replication and replace SQLVM1 with the name of your virtual machine.
+4. The above steps will clear the replication settings only VMM server. If you want to remove virtual machine replication for the virtual machine. You'll need to do the below steps on both the primary and secondary virtual machines. Run the below script to remove replication and replace SQLVM1 with the name of your virtual machine.
 
-	    Remove-VMReplication –VMName “SQLVM1”
+	    Remove-VMReplication -VMName “SQLVM1”
 
 
 ### Clean up protection settings manually (between on-premises VMM sites and Azure)
@@ -206,7 +206,7 @@ If you want to stop protecting a VMware virtual machine or a physical server you
 			- You mustn't uninstall the Mobility service from the virtual machine.
 	
 	- **Disable protection**—If you enable and save this option the machine will no longer be protected by Site Recovery. Protection settings for the machine will be cleaned up automatically.
-	- **Remove from the vault**—If you select this option the machine will be removed only from the Site Recovery vault. On-premises protection settings for the machine won’t be affected. To remove settings on the machine and to remove the virtual machine from the Azure subscription and you’ll need to clean the settings up by uninstalling the Mobility service.
+	- **Remove from the vault**—If you select this option the machine will be removed only from the Site Recovery vault. On-premises protection settings for the machine won't be affected. To remove settings on the machine and to remove the virtual machine from the Azure subscription and you'll need to clean the settings up by uninstalling the Mobility service.
 		![Remove options](./media/site-recovery-manage-registration-and-protection/RegistrationProtection_RemoveVM.png)
 
 

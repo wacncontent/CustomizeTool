@@ -22,12 +22,6 @@ This tutorial will show you how to connect your Google Apps environment to your 
 
 2. You must have a valid tenant for [Google Apps for Work](https://www.google.com/work/apps/) or [Google Apps for Education](https://www.google.com/edu/products/productivity-tools/). You may use a trial account for either service.
 
-##Video tutorial
-
-How to Enable Single Sign-On to Google Apps in 2 Minutes:
-
-> [AZURE.VIDEO enable-single-sign-on-to-google-apps-in-2-minutes-with-azure-ad]
-
 ##Step 1: Add Google Apps to your Directory
 
 1. In the [Azure Management Portal](https://manage.windowsazure.cn), on the left navigation pane, click **Active Directory**.

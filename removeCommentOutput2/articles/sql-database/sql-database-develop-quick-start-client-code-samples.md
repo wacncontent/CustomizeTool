@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/29/2015"
+	ms.date="01/10/2016"
 	wacn.date=""/>
 
 
@@ -47,7 +47,7 @@ This section provides links to code sample topics for client programs that run o
 | Language | Short sample | Retry sample | Relational to object |
 | :-- | :-- | :-- | :-- |
 | Node.js | [Tedious](/documentation/articles/sql-database-develop-nodejs-simple-linux) | . | . |
-| Python | [FreeTDS, pymssql](/documentation/articles/sql-database-develop-python-simple-unbutu-linux) | . | . |
+| Python | [FreeTDS, pymssql](/documentation/articles/sql-database-develop-python-simple-ubuntu-linux) | . | . |
 | Ruby | [FreeTDS, TinyTDS](/documentation/articles/sql-database-develop-ruby-simple-linux) | . | . |
 
 
@@ -82,9 +82,11 @@ This section provides links to code sample topics for client programs that run o
 ## See also
 
 
-- [Downloads for SDKs and tools, for numerous languages and platforms](/downloads/#cmd-line-tools)
+- [Downloads for SDKs and tools, for numerous languages and platforms](http://azure.microsoft.com/ZH-CN/downloads/#cmd-line-tools) 
 - [Connection Libraries for SQL Database and SQL Server](/documentation/articles/sql-database-libraries)
 - [List of numeric codes for transient errors](/documentation/articles/sql-database-develop-error-messages#bkmk_connection_errors)<br/>&nbsp;
-- [Azure SQL Database Development: How-to Topics](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
+- [Azure SQL Database Development: How-to Topics](https://msdn.microsoft.com/zh-CN/library/azure/ee621787.aspx) 
 - [Connecting to SQL Database: Links, Best Practices and Design Guidelines](/documentation/articles/sql-database-connect-central-recommendations)
 - [Create your first Azure SQL Database](/documentation/articles/sql-database-get-started)
+- [Entity Framework 6 here, EF 7 on GitHub](http://entityframework.codeplex.com/)
+

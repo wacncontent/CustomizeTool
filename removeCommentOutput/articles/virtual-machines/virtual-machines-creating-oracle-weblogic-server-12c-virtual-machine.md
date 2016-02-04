@@ -157,7 +157,7 @@ The following example shows you how you can create a Virtual Machine based on a 
 
 	2.	Click **Windows Start**, type **Windows Firewall with Advanced Security**, and then click the **Windows Firewall with Advanced Security** icon. This opens the **Windows Firewall with Advanced Security** management console.
 
-	3.	Within the firewall management console, click **Inbound Rules** in the left hand pane (if you don’t see **Inbound Rules**, expand the top node in the left hand pane), and then click New Rule in the right hand pane.
+	3.	Within the firewall management console, click **Inbound Rules** in the left hand pane (if you don't see **Inbound Rules**, expand the top node in the left hand pane), and then click New Rule in the right hand pane.
 
 	4.	For **Rule Type**, select **Port** and click **Next**.
 
@@ -173,7 +173,7 @@ The following example shows you how you can create a Virtual Machine based on a 
 
 
 ##Additional resources
-Now that you’ve set up your Virtual Machine running Oracle WebLogic Server, see the following topics for additional information.
+Now that you've set up your Virtual Machine running Oracle WebLogic Server, see the following topics for additional information.
 
 -	[Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
 

@@ -34,7 +34,7 @@ Custom Script Extension for Windows allows you to execute Powershell scripts on 
 ## Custom Script Extension Scenarios:
 
  ### Upload files to the default container:
-If you have your scripts in the storage container of the default account of your subscription, then the cmdlet snippet below shows how you can run them on the VM. The ContainerName in the sample below is where you upload the scripts to. The default storage account can be verified by using the cmdlet ‘Get-AzureSubscription –Default’
+If you have your scripts in the storage container of the default account of your subscription, then the cmdlet snippet below shows how you can run them on the VM. The ContainerName in the sample below is where you upload the scripts to. The default storage account can be verified by using the cmdlet 'Get-AzureSubscription -Default'
 
 Note: This use case creates a new VM but the same operations can be done on an existing VM as well.
 
@@ -53,7 +53,7 @@ Note: This use case creates a new VM but the same operations can be done on an e
 
 ### Upload files to a non default storage containers.
 
-This use case shows how to use a non-default storage either within the same subscription or in a different subscription for uploading scripts/files. Here we’ll use an existing VM but the same operations can be done while creating a new VM.
+This use case shows how to use a non-default storage either within the same subscription or in a different subscription for uploading scripts/files. Here we'll use an existing VM but the same operations can be done while creating a new VM.
 
         Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileName 'file1.ps1','file2.ps1' -Run 'file.ps1' | Update-AzureVM
   ### Upload scripts to multiple containers across different storage accounts.

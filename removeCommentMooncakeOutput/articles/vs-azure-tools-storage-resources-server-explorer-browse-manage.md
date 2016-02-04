@@ -7,13 +7,13 @@
    manager="douge"
    editor="tlee" />
 <tags
-	ms.service="storage"
-	ms.date="08/24/2015"
-	wacn.date=""/>
+   ms.service="storage"
+   ms.date="08/24/2015"
+   wacn.date="" />
 
 # Browsing and Managing Storage Resources with Server Explorer
 
-If you've installed the Azure Tools for Microsoft Visual Studio, you can view blob, queue, and table data from your storage accounts for Azure. The Azure Storage node in Server Explorer shows data that’s in your local storage emulator account and your other Azure storage accounts.
+If you've installed the Azure Tools for Microsoft Visual Studio, you can view blob, queue, and table data from your storage accounts for Azure. The Azure Storage node in Server Explorer shows data that's in your local storage emulator account and your other Azure storage accounts.
 
 To view Server Explorer in Visual Studio, on the menu bar, choose **View**, **Server Explorer**. The storage node shows all of the storage accounts that exist under each Azure subscription/certificate you're connected to. If your storage account doesn't appear, you can add it by following the instructions [later in this topic](#add-storage-accounts-by-using-server-explorer).
 
@@ -24,9 +24,9 @@ Starting in Azure SDK 2.7, you can also use the new Cloud Explorer to view and m
 
 Server Explorer automatically shows a list of blobs, queues, and tables in your storage emulator account. The storage emulator account is listed in Server Explorer under the Storage node as the **Development** node.
 
-To see the storage emulator account’s resources, expand the **Development** node. If the storage emulator hasn’t been started when you expand the **Development** node, it will automatically start. This can take several seconds. You can continue to work in other areas of Visual Studio while the storage emulator starts.
+To see the storage emulator account's resources, expand the **Development** node. If the storage emulator hasn't been started when you expand the **Development** node, it will automatically start. This can take several seconds. You can continue to work in other areas of Visual Studio while the storage emulator starts.
 
-To view resources in a storage account, expand the storage account’s node in Server Explorer. The following sub-nodes appear:
+To view resources in a storage account, expand the storage account's node in Server Explorer. The following sub-nodes appear:
 
 - Blobs
 
@@ -70,7 +70,7 @@ The Blobs node displays a list of containers for the selected storage account. B
 
     - Delete a blob
 
-      >[AZURE.NOTE] Deleting a file from a blob container doesn’t delete the underlying file; it only removes it from the blob container.
+      >[AZURE.NOTE] Deleting a file from a blob container doesn't delete the underlying file; it only removes it from the blob container.
 
     - Open a blob
 
@@ -84,17 +84,17 @@ The Blobs node displays a list of containers for the selected storage account. B
 
 1. In the **Upload New File** dialog box, choose the **Browse** button to specify the file you want to upload, and then enter a folder name in the **Folder (optional)** box.
 
-    You can add subfolders in container folders by following the same procedure. If you don’t specify a folder name, the file will be uploaded to the top level of the blob container.The file appears in the specified folder in the container.
+    You can add subfolders in container folders by following the same procedure. If you don't specify a folder name, the file will be uploaded to the top level of the blob container.The file appears in the specified folder in the container.
 
     ![Folder added to a blob container](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC766038.png)
 
-1. Double-click the folder or press ENTER to see the contents of the folder. When you’re in the container’s folder, you can navigate back to the root of the container by choosing the **Open Parent Directory** (up arrow) button.
+1. Double-click the folder or press ENTER to see the contents of the folder. When you're in the container's folder, you can navigate back to the root of the container by choosing the **Open Parent Directory** (up arrow) button.
 
 ### To delete a container folder
 
  - Delete all of the files in the folder
 
-    >[AZURE.NOTE] Because folders in blob containers are virtual folders, you can’t create an empty folder, nor can you delete a folder to delete its file contents. You have to delete the entire contents of a folder to delete the folder.
+    >[AZURE.NOTE] Because folders in blob containers are virtual folders, you can't create an empty folder, nor can you delete a folder to delete its file contents. You have to delete the entire contents of a folder to delete the folder.
 
 ### To filter blobs in a container
 
@@ -105,7 +105,7 @@ For example, if you enter the prefix `hello` in the filter text box and then cho
 ![VST_SE_FilterBlobs](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC519076.png)
 
 
->[AZURE.NOTE] The filter field is case-sensitive and doesn’t support filtering with wildcard characters. Blobs can only be filtered by prefix. The prefix may include a delimiter if you are using a delimiter to organize blobs in a virtual hierarchy. For example, filtering on the prefix HelloFabric/ returns all blobs beginning with that string.
+>[AZURE.NOTE] The filter field is case-sensitive and doesn't support filtering with wildcard characters. Blobs can only be filtered by prefix. The prefix may include a delimiter if you are using a delimiter to organize blobs in a virtual hierarchy. For example, filtering on the prefix HelloFabric/ returns all blobs beginning with that string.
 
 ### To download blob data
 
@@ -113,7 +113,7 @@ For example, if you enter the prefix `hello` in the filter text box and then cho
 
     The progress of a blob download appears in the **Azure Activity Log** window.
 
-    The blob opens in the default editor for that file type. If the operating system recognizes the file type, the file opens in a locally installed application; otherwise, you're prompted to choose an application that’s appropriate for the file type of the blob. The local file that’s created when you download a blob is marked as read-only.
+    The blob opens in the default editor for that file type. If the operating system recognizes the file type, the file opens in a locally installed application; otherwise, you're prompted to choose an application that's appropriate for the file type of the blob. The local file that's created when you download a blob is marked as read-only.
 
     Blob data is cached locally and checked against the blob's last modified time in the Blob service. If the blob has been updated since it was last downloaded, it will be downloaded again; otherwise the blob will be loaded from the local disk. By default a blob is downloaded to a temporary directory. To download blobs to a specific directory, open the shortcut menu for the selected blob names and choose **Save As**. When you save a blob in this manner, the blob file is not opened, and the local file is created with read-write attributes.
 
@@ -125,11 +125,11 @@ For example, if you enter the prefix `hello` in the filter text box and then cho
 
 ### To view logs transferred to blobs
 
-- If you are using Azure Diagnostics to log data from your Azure application and you have transferred logs to your storage account, you’ll see containers that were created by Azure for these logs. Viewing these logs in Server Explorer is an easy way to identify problems with your application, especially if it’s been deployed to Azure. For more information about Azure Diagnostics, see [Collect Logging Data by Using Azure Diagnostics](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx).
+- If you are using Azure Diagnostics to log data from your Azure application and you have transferred logs to your storage account, you'll see containers that were created by Azure for these logs. Viewing these logs in Server Explorer is an easy way to identify problems with your application, especially if it's been deployed to Azure. For more information about Azure Diagnostics, see [Collect Logging Data by Using Azure Diagnostics](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx).
 
 ### To get the URL for a blob
 
-- Open the blob’s shortcut menu and then choose **Copy URL**.
+- Open the blob's shortcut menu and then choose **Copy URL**.
 
 ### To edit a blob
 
@@ -189,12 +189,12 @@ The table is organized by entities (shown in rows) and properties (shown in colu
 
     ![Add or Edit a Table Entity](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC656238.png)
 
-    Entities in a single table aren’t required to have the same set of properties (columns). Keep in mind the following restrictions on viewing and editing table data.
-    - You can’t view or edit binary data (type byte[]), but you can store it in a table.
+    Entities in a single table aren't required to have the same set of properties (columns). Keep in mind the following restrictions on viewing and editing table data.
+    - You can't view or edit binary data (type byte[]), but you can store it in a table.
 
-    - You can’t edit the **PartitionKey** or **RowKey** values, because table storage in Azure doesn't support that operation.
+    - You can't edit the **PartitionKey** or **RowKey** values, because table storage in Azure doesn't support that operation.
 
-    - You can’t create a property called Timestamp, Azure Storage services use a property with that name.
+    - You can't create a property called Timestamp, Azure Storage services use a property with that name.
 
     - If you enter a DateTime value, you must follow a format that's appropriate to the region and language settings of your computer (for example, MM/DD/YYYY HH:MM:SS [AM|PM] for U.S. English).
 
@@ -216,13 +216,13 @@ You can customize the set of entities that appear in a table if you use the quer
 
 1. To open the query builder, open a table for viewing.
 
-1. Choose the rightmost button on the table view’s toolbar.
+1. Choose the rightmost button on the table view's toolbar.
 
     The **Query Builder** dialog box appears. The following illustration shows a query that's being built in the query builder.
 
     ![Query Builder](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC652231.png)
 
-1. When you’re done building the query, close the dialog box. The resulting text form of the query appears in a text box as a WCF Data Services filter.
+1. When you're done building the query, close the dialog box. The resulting text form of the query appears in a text box as a WCF Data Services filter.
 
 1. To run the query, choose the green triangle icon.
 
@@ -234,7 +234,7 @@ You can customize the set of entities that appear in a table if you use the quer
 
 ## Refresh Storage Data
 
-When Server Explorer connects to or gets data from a storage account, it might take up to a minute for the operation to complete. If it can’t connect, the operation might time out. While data is retrieved, you can continue to work in other parts of Visual Studio. To cancel the operation if it’s taking too long, choose the **Stop Refresh** button on the Server Explorer toolbar.
+When Server Explorer connects to or gets data from a storage account, it might take up to a minute for the operation to complete. If it can't connect, the operation might time out. While data is retrieved, you can continue to work in other parts of Visual Studio. To cancel the operation if it's taking too long, choose the **Stop Refresh** button on the Server Explorer toolbar.
 
 ### To refresh blob container data
 
@@ -304,7 +304,7 @@ There are two ways to add storage accounts by using Server Explorer. You can cre
 
 - In Server Explorer, open the shortcut menu for the account name, and then choose **Delete**. If you delete a storage account, any saved key information for that account is also removed.
 
-    >[AZURE.NOTE] If you delete a storage account from Server Explorer, it doesn’t affect your storage account or any data that it contains; it simply removes the reference from Server Explorer. To permanently delete a storage account, use the Azure Management Portal.
+    >[AZURE.NOTE] If you delete a storage account from Server Explorer, it doesn't affect your storage account or any data that it contains; it simply removes the reference from Server Explorer. To permanently delete a storage account, use the Azure Management Portal.
 
 ## Next steps
 

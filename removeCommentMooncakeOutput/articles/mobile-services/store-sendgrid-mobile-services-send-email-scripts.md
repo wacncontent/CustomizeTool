@@ -7,13 +7,18 @@
 	manager="sendgrid" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="07/31/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="11/30/2015" 
 	wacn.date=""/>
 
 
 # Send email from Mobile Services with SendGrid
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 This topic shows you how can add email functionality to your mobile service. In this tutorial you add server side scripts to send email using SendGrid. When complete, your mobile service will send an email each time a record is inserted.
 
@@ -35,7 +40,7 @@ This tutorial is based on the Mobile Services quickstart. Before you start this 
 
 1. Log on to the [Azure Management Portal], click **Mobile Services**, and then click your mobile service.
 
-2. In the Management Portal, click the **Data** tab and then click the **TodoItem** table. 
+2. In the Azure Management Portal, click the **Data** tab and then click the **TodoItem** table.
 
 	![][1]
 
@@ -126,7 +131,7 @@ these links to learn more about SendGrid.
 [4]: ./media/store-sendgrid-mobile-services-send-email-scripts/mobile-receive-email.png
 
 <!-- URLs. -->
-[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
 [sign up page]: https://sendgrid.com/windowsazure.html
 [Multiple User Credentials page]: https://sendgrid.com/credentials
 [Azure Management Portal]: https://manage.windowsazure.cn/

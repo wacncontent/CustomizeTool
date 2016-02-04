@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Site Recovery storage mapping | Windows Azure"
-	description="Azure Site Recovery coordinates the replication, failover, and recovery of virtual machines and physical servers located on-premises to Azure or to a secondary on-premises site."
+	pageTitle="Map storage in Azure Site Recovery for Hyper-V virtual machine replication between on-premises datacenters | Windows Azure"
+	description="Prepare storage mapping for Hyper-V virtual machine replication between two on-premises datacenters with Azure Site Recovery."
 	services="site-recovery"
 	documentationCenter=""
 	authors="rayne-wiselman"
@@ -9,51 +9,44 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="10/07/2015"
+	ms.date="12/14/2015"
 	wacn.date=""/>
 
 
-# Azure Site Recovery storage mapping
+# Prepare storage mapping for Hyper-V virtual machine replication between two on-premises datacenters with Azure Site Recovery
 
 
-Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover, and recovery of virtual machines and physical servers. Read about possible deployment scenarios in the [Site Recovery overview](/documentation/articles/site-recovery-overview).
+Azure Site Recovery contributes to your business continuity and disaster recovery (BCDR) strategy by orchestrating replication, failover, and recovery of virtual machines and physical servers. This article describes storage mapping, which helps you make optimal use of storage when you're using Site Recovery to replicate Hyper-V virtual machines between two on-premises datacenters.
 
-
-## About this article
-
-Storage mapping is an important element of your Site Recovery deployment. It ensures you make optimal use of storage. This article describes storage mapping and provides a couple of examples to help you understand how storage mapping works.
-
-
-Post any questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
+After reading this article post any questions on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=hypervrecovmgr).
 
 ## Overview
 
-The way in which you set up storage mapping depends on your Site Recovery deployment scenario.
+Storage mapping is only relevant when you're replicating Hyper-V virtual machines that are located in VMM clouds from a primary datacenter to a secondary datacenter using Hyper-V Replica or SAN replication, as follows:
 
 
-
-- **On-premises to on-premises (replicate with Hyper-V Replica)**—Map storage classifications on a source and target VMM servers to do the following:
+- **On-premises to on-premises replication with Hyper-V Replica)**—You set up storage mapping by mapping storage classifications on a source and target VMM servers to do the following:
 
 	- **Identify target storage for replica virtual machines**—Virtual machines will be replicated to a storage target (SMB share or cluster shared volumes (CSVs)) that you choose.
 	- **Replica virtual machine placement**—Storage mapping is used to optimally place replica virtual machines on Hyper-V host servers. Replica virtual machines will be placed on hosts that can access the mapped storage classification.
-	- **No storage mapping**—If you don’t configure storage mapping, virtual machines will be replicated to the default storage location specified on the Hyper-V host server associated with the replica virtual machine.
+	- **No storage mapping**—If you don't configure storage mapping, virtual machines will be replicated to the default storage location specified on the Hyper-V host server associated with the replica virtual machine.
 
-- **On-premises to on-premises (replicate with SAN)**—Maps storage arrays pools on a source and target VMM servers to do the following:
-	- **Identify target storage pools**—Storage mapping ensures that LUNs in a replication group are replicated to the mapped target storage pool.
+- **On-premises to on-premises replication with SAN**—You set up storage mapping by mapping storage arrays pools on a source and target VMM servers.
+	- **Specify pool**—Specifies which secondary storage pool receives replication data from the primary pool.
+	- **Identify target storage pools**—Ensures that LUNs in a source replication group are replicated to mapped target storage pool of your choice.
 
+## Set up storage classifications for Hyper-V replication
 
+When you're using Hyper-V Replica to replicate with Site Recovery,  you map between storage classifications on source and target VMM servers, or on a single VMM server if two sites are managed by the same VMM server. Note that:
 
-## Storage classifications
-
-You map between storage classifications on source and target VMM servers, or on a single VMM server if two sites are managed by the same VMM server. When mapping is configured correctly and replication is enabled, a virtual machine’s virtual hard disk at the primary location will be replicated to storage in the mapped target location. Note that:
-
+- When mapping is configured correctly and replication is enabled, a virtual machine's virtual hard disk at the primary location will be replicated to storage in the mapped target location.
 - Storage classifications must be available to the host groups located in source and target clouds.
-- Classifications don’t need to have the same type of storage. For example, you can map a source classification that contains SMB shares to a target classification that contains CSVs.
+- Classifications don't need to have the same type of storage. For example, you can map a source classification that contains SMB shares to a target classification that contains CSVs.
 - Read more in [How to create storage classifications in VMM](https://technet.microsoft.com/zh-cn/library/gg610685.aspx).
 
 ## Example
 
-If classifications are configured correctly in VMM when you select the source and target VMM server during storage mapping, the source and target classifications will be displayed. Here’s an example of storage files shares and classifications for an organization with two locations in Beijing and Shanghai.
+If classifications are configured correctly in VMM when you select the source and target VMM server during storage mapping, the source and target classifications will be displayed. Here's an example of storage files shares and classifications for an organization with two locations in Beijing and Shanghai.
 
 **Location** | **VMM server** | **File share (source)** | **Classification (source)** | **Mapped to** | **File share (target)**
 ---|---|--- |---|---|---
@@ -101,4 +94,4 @@ VM5 | C:\ClusterStorage\SourceVolume3 | N/A | No mapping, so the default storage
 
 ## Next steps
 
-Now that you have a better understanding of storage mapping, start reading the [best practices](/documentation/articles/site-recovery-best-practices) to prepare for deployment.
+Now that you have a better understanding of storage mapping, [get ready to deploy Azure Site Recovery](/documentation/articles/site-recovery-best-practices).

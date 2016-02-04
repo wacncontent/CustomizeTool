@@ -1,11 +1,3 @@
-updated docs: 8
-articles/backup/backup-azure-backup-windows-server.md
-articles/backup/backup-azure-manage-vms.md
-articles/backup/backup-azure-restore-vms.md
-articles/backup/backup-azure-restore-windows-server.md
-articles/backup/backup-azure-vms-introduction.md
-articles/backup/backup-azure-vms-troubleshoot.md
-articles/backup/backup-azure-vms.md
-articles/backup/backup-configure-vault.md
+updated docs: 0
 
 updated includes: 0

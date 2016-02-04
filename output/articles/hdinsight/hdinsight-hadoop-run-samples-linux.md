@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/29/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 
@@ -24,7 +24,7 @@ Linux-based HDInsight clusters provide a set of MapReduce samples that can be us
 
 ##Prerequisites
 
-- **An Azure subscription**: <!-- deleted by customization See [Get Azure trial](/pricing/1rmb-trial/) -->
+- **An Azure subscription**: See [Get Azure trial](/pricing/1rmb-trial/)
 
 - **A Linux-based HDInsight cluster**: See [Get started using Hadoop with Hive in HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
 
@@ -158,7 +158,7 @@ The results should appear similar to the following:
     1 8 5 7 3 9 2 6 4
     2 6 3 1 4 5 9 7 8
 
-## Pi (π)
+## Pi (Ď)
 
 The pi sample uses a statistical (quasi-Monte Carlo) method to estimate the value of pi. Points placed at random inside of a unit square also fall within a circle inscribed within that square with a probability equal to the area of the circle, pi/4. The value of pi can be estimated from the value of 4R, where R is the ratio of the number of points that are inside the circle to the total number of points that are within the square. The larger the sample of points used, the better the estimate is.
 
@@ -218,23 +218,16 @@ From this article, you learned how to run the samples included with the Linux-ba
 
 
 
-[hdinsight-errors]: /documentation/articles/hdinsight-debug-jobs
-[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-errors]: hdinsight-debug-jobs.md
+[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
 [hdinsight-sdk-documentation]: https://msdn.microsoft.com/zh-cn/library/azure/dn479185.aspx
 
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction
+[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
+[hdinsight-introduction]: hdinsight-hadoop-introduction.md
 
 
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-samples]: hdinsight-run-samples.md
 
-[hdinsight-samples]: /documentation/articles/hdinsight-run-samples
-[hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
-[hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming
-[hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator
-[hdinsight-sample-wordcount]: /documentation/articles/hdinsight-sample-wordcount
-
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-pig]: hdinsight-use-pig.md

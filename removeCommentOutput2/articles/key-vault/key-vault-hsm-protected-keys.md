@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to generate and transfer HSM-protected keys for Azure Key Vault | Microsoft Azure"
+	pageTitle="How to generate and transfer HSM-protected keys for Azure Key Vault | Windows Azure"
 	description="Use this article to help you plan for, generate, and then transfer your own HSM-protected keys to use with Azure Key Vault."
 	services="key-vault"
 	documentationCenter=""
@@ -9,23 +9,19 @@
 
 <tags
 	ms.service="key-vault"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article" 
-	ms.date="09/18/2015"
-	ms.author="cabailey"/>
+	ms.date="01/08/2016"
+	wacn.date=""/>
 #How to generate and transfer HSM-protected keys for Azure Key Vault
 
 ##Introduction
 
 For added assurance, when you use Azure Key Vault, you can import or generate keys in hardware security modules (HSMs) that never leave the HSM boundary. This scenario is often referred to as *bring your own key*, or BYOK. The HSMs are FIPS 140-2 Level 2 validated. Azure Key Vault uses Thales nShield family of HSMs to protect your keys.
 
-Use the information in this topic to help you plan for, generate and then transfer your own HSM-protected keys to use with Azure Key Vault. 
+Use the information in this topic to help you plan for, generate and then transfer your own HSM-protected keys to use with Azure Key Vault.
 
->[AZURE.NOTE] For more information about Azure Key Vault, see [What is Azure Key Vault?](key-vault-whatis.md)  
+>[AZURE.NOTE] For more information about Azure Key Vault, see [What is Azure Key Vault?](/documentation/articles/key-vault-whatis)  
 >
->For a getting started tutorial, which includes creating a key vault for HSM-protected keys, see [Get started with Azure Key Vault](key-vault-get-started.md).
+>For a getting started tutorial, which includes creating a key vault for HSM-protected keys, see [Get started with Azure Key Vault](/documentation/articles/key-vault-get-started).
 
 More information about generating and transferring an HSM-protected key over the Internet:
 
@@ -45,7 +41,7 @@ More information about generating and transferring an HSM-protected key over the
 
 Thales e-Security is a leading global provider of data encryption and cyber security solutions to the financial services, high technology, manufacturing, government, and technology sectors. With a 40-year track record of protecting corporate and government information, Thales solutions are used by four of the five largest energy and aerospace companies, 22 NATO countries, and secure more than 80 per cent of worldwide payment transactions.
 
-Microsoft has collaborated with Thales to enhance the state of art for HSMs. These enhancements enable you to get the typical benefits of hosted services without relinquishing control over your keys. Specifically, these enhancements let Microsoft manage the HSMs so that you do not have to. As a cloud service, Azure Key Vault scales up at short notice to meet your organization’s usage spikes. At the same time, your key is protected inside Microsoft’s HSMs: You retain control over the key lifecycle because you generate the key and transfer it to Microsoft’s HSMs.
+Microsoft has collaborated with Thales to enhance the state of art for HSMs. These enhancements enable you to get the typical benefits of hosted services without relinquishing control over your keys. Specifically, these enhancements let Microsoft manage the HSMs so that you do not have to. As a cloud service, Azure Key Vault scales up at short notice to meet your organization's usage spikes. At the same time, your key is protected inside Microsoft's HSMs: You retain control over the key lifecycle because you generate the key and transfer it to Microsoft's HSMs.
 
 ##Implementing bring your own key (BYOK) for Azure Key Vault
 
@@ -58,14 +54,14 @@ See the following table for a list of prerequisites for bring your own key (BYOK
 
 |Requirement|More information|
 |---|---|
-|A subscription to Azure|To create an Azure Key Vault, you need an Azure subscription: [Sign up for free trial](http://azure.microsoft.com/pricing/free-trial/)|
-|An Azure Key Vault that supports HSMs|For more information about the service tiers and capabilities for Azure Key Vault, see the [Azure Key Vault Pricing](http://azure.microsoft.com/pricing/details/key-vault/) website.|
+|A subscription to Azure|To create an Azure Key Vault, you need an Azure subscription: [Sign up for trial](/pricing/1rmb-trial/)|
+|An Azure Key Vault that supports HSMs|For more information about the service tiers and capabilities for Azure Key Vault, see the [Azure Key Vault Pricing](/home/features/key-vault/#price) website.|
 |Thales HSM, smartcards, and support software|You must have access to a Thales Hardware Security Module and basic operational knowledge of Thales HSMs. See [Thales Hardware Security Module](https://www.thales-esecurity.com/msrms/buy) for the list of compatible models, or to purchase an HSM if you do not have one.|
 |The following hardware and software:<ol><li>An offline x64 workstation with a minimum Windows operation system of Windows 7 and Thales nShield software that is at least version 11.50.<br/><br/>If this workstation runs Windows 7, you must [install Microsoft .NET Framework 4.5](http://download.microsoft.com/download/b/a/4/ba4a7e71-2906-4b2d-a0e1-80cf16844f5f/dotnetfx45_full_x86_x64.exe).</li><li>A workstation that is connected to the Internet and has a minimum Windows operation system of Windows 7.</li><li>A USB drive or other portable storage device that has at least 16 MB free space.</li></ol>|For security reasons, we recommend that the first workstation is not connected to a network. However, this is not programmatically enforced.<br/><br/>Note that in the instructions that follow, this workstation is referred to as the disconnected workstation.</p></blockquote><br/>In addition, if your tenant key is for a production network, we recommend that you use a second, separate workstation to download the toolset and upload the tenant key. But for testing purposes, you can use the same workstation as the first one.<br/><br/>Note that in the instructions that follow, this second workstation is referred to as the Internet-connected workstation.</p></blockquote><br/>|
 
 ##Generate and transfer your key to Azure Key Vault HSM
 
-You will use the following 5 steps to generate and transfer your key to an Azure Key Vault HSM: 
+You will use the following 5 steps to generate and transfer your key to an Azure Key Vault HSM:
 
 - [Step 1: Prepare your Internet-connected workstation](#step-1-prepare-your-internet-connected-workstation)
 - [Step 2: Prepare your disconnected workstation](#step-2-prepare-your-disconnected-workstation)
@@ -81,14 +77,14 @@ For this first step, do the following procedures on your workstation that is con
 
 From the Internet-connected workstation, download and install the Azure PowerShell module that includes the cmdlets to manage Azure Key Vault. This requires a minimum version of  0.8.13.
 
-For installation instructions, see [How to install and configure Azure PowerShell](../powershell-install-configure.md).
+For installation instructions, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 ###Step 1.2: Get your Azure subscription ID
 
 Start an Azure PowerShell session and sign in to your Azure account by using the following command:
 
 		Add-AzureAccount
-In the pop-up browser window, enter your Azure account user name and password. Then, use the [Get-AzureSubscription](https://msdn.microsoft.com/library/azure/dn790366.aspx) command:
+In the pop-up browser window, enter your Azure account user name and password. Then, use the [Get-AzureSubscription](https://msdn.microsoft.com/zh-cn/library/azure/dn790366.aspx) command:
 
 		Get-AzureSubscription
 From the output, locate the ID for the subscription you will use for Azure Key Vault. You will need this subscription ID later.
@@ -108,7 +104,7 @@ Go to the Microsoft Download Center and [download the Azure Key Vault BYOK tools
 |Japan|KeyVault-BYOK-Tools-Japan.zip|DB512CD9472FDE2FD610522847DF05E4D7CD49A296EE4A2DD74D43626624A113|
 |Australia|KeyVault-BYOK-Tools-Australia.zip|8EBC69E58E809A67C036B50BB4F1130411AD87A7464E0D61A9E993C797915967|
 
-To validate the integrity of your downloaded BYOK toolset, from your Azure PowerShell session, use the [Get-FileHash](https://technet.microsoft.com/library/dn520872.aspx) cmdlet.
+To validate the integrity of your downloaded BYOK toolset, from your Azure PowerShell session, use the [Get-FileHash](https://technet.microsoft.com/zh-cn/library/dn520872.aspx) cmdlet.
 
 	Get-FileHash KeyVault-BYOK-Tools-*.zip
 
@@ -129,7 +125,7 @@ For this second step, do the following procedures on the workstation that is not
 
 ###Step 2.1: Prepare the disconnected workstation with Thales HSM
 
-Install the nCipher (Thales) support software on a Windows computer, and then attach a Thales HSM to that computer. 
+Install the nCipher (Thales) support software on a Windows computer, and then attach a Thales HSM to that computer.
 
 Ensure that the Thales tools are in your path (**%nfast_home%\bin** and **%nfast_home%\python\bin**). For example, type the following:
 
@@ -155,7 +151,7 @@ Start a command prompt and run the Thales new-world program.
 
 	new-world.exe --initialize --cipher-suite=DLf1024s160mRijndael --module=1 --acs-quorum=2/3
 
-This program creates a **Security World** file at %NFAST_KMDATA%\local\world, which corresponds to the C:\ProgramData\nCipher\Key Management Data\local folder. You can use different values for the quorum but in our example, you’re prompted to enter three blank cards and pins for each one. Then, any two cards will give full access to the security world. These cards become the **Administrator Card Set** for the new security world. 
+This program creates a **Security World** file at %NFAST_KMDATA%\local\world, which corresponds to the C:\ProgramData\nCipher\Key Management Data\local folder. You can use different values for the quorum but in our example, you're prompted to enter three blank cards and pins for each one. Then, any two cards will give full access to the security world. These cards become the **Administrator Card Set** for the new security world.
 
 Then do the following:
 
@@ -169,7 +165,7 @@ This step is optional but recommended so that you can validate the following:
 - The hash of the Security World that is included in the toolset has been generated in a genuine Thales HSM.
 - The Key Exchange Key is non-exportable.
 
->[AZURE.NOTE]To validate the downloaded package, the HSM must be connected, powered on, and must have a security world on it (such as the one you’ve just created).
+>[AZURE.NOTE]To validate the downloaded package, the HSM must be connected, powered on, and must have a security world on it (such as the one you've just created).
 
 To validate the downloaded package:
 
@@ -194,12 +190,12 @@ To validate the downloaded package:
 			python verifykeypackage.py -k BYOK-KEK-pkg-AUS-1 -w BYOK-SecurityWorld-pkg-AUS-1
 
 	>[AZURE.TIP]The Thales software includes python at %NFAST_HOME%\python\bin
-	
+
 2.	Confirm that you see the following, which indicates successful validation: **Result: SUCCESS**
 
 This script validates the signer chain up to the Thales root key. The hash of this root key is embedded in the script and its value should be **59178a47 de508c3f 291277ee 184f46c4 f1d9c639**. You can also confirm this value separately by visiting the [Thales website](http://www.thalesesec.com/).
 
-You’re now ready to create a new key.
+You're now ready to create a new key.
 
 ###Step 3.3: Create a new key
 
@@ -215,7 +211,7 @@ When you run this command, use these instructions:
 
 - The pubexp is left blank (default) in this example, but you can specify specific values. For more information, see the Thales documentation.
 
-This command creates a Tokenized Key file in your %NFAST_KMDATA%\local folder with a name starting with **key_simple_** followed by the ident that was specified in the command. For example: **key_simple_contosokey**. This file contains an encrypted key. 
+This command creates a Tokenized Key file in your %NFAST_KMDATA%\local folder with a name starting with **key_simple_** followed by the ident that was specified in the command. For example: **key_simple_contosokey**. This file contains an encrypted key.
 
 Back up this Tokenized Key File in a safe location.
 
@@ -268,7 +264,7 @@ Optionally, run the Thales utilities to confirm the minimal permissions on the n
 		"%nfast_home%\bin\kmfile-dump.exe" "%NFAST_KMDATA%\local\key_xferacld_contosokey"
 When you run these command, replace contosokey with the same value you specified in **Step 3.3: Create a new key** from the [Generate your key](#step-3-generate-your-key) step.
 
-###Step 4.3: Encrypt your key by using Microsoft’s Key Exchange Key
+###Step 4.3: Encrypt your key by using Microsoft's Key Exchange Key
 
 Run one of the following commands, depending on your region:
 
@@ -301,13 +297,13 @@ When you run this command, use these instructions:
 
 When this completes successfully it displays **Result: SUCCESS** and there will be a new file in the current folder that has the following name: TransferPackage-*ContosoFirstHSMkey*.byok
 
-###Step 4.4: Copy your key transfer package to the Internet-connected workstation 
+###Step 4.4: Copy your key transfer package to the Internet-connected workstation
 
 Use a USB drive or other portable storage to copy the output file from the previous step (KeyTransferPackage-ContosoFirstHSMkey.byok) to your Internet-connected workstation.
 
 ##Step 5: Transfer your key to Azure Key Vault
 
-For this final step, on the Internet-connected workstation, use the [Add-AzureKeyVaultKey](https://msdn.microsoft.com/library/azure/dn868048.aspx) cmdlet to upload the key transfer package that you copied from the disconnected workstation to the Azure Key Vault HSM:
+For this final step, on the Internet-connected workstation, use the [Add-AzureKeyVaultKey](https://msdn.microsoft.com/zh-cn/library/azure/dn868048.aspx) cmdlet to upload the key transfer package that you copied from the disconnected workstation to the Azure Key Vault HSM:
 
 	Add-AzureKeyVaultKey -VaultName 'ContosoKeyVaultHSM' -Name 'ContosoFirstHSMkey' -KeyFilePath 'c:\TransferPackage-ContosoFirstHSMkey.byok' -Destination 'HSM'
 
@@ -315,4 +311,4 @@ If the upload is successful, you see displayed the properties of the key that yo
 
 ##Next steps
 
-You can now use this HSM-protected key in your key vault. For more information, see the **If you want to use a hardware security module (HSM)** section in the [Getting started with Azure Key Vault](key-vault-get-started.md) tutorial.
+You can now use this HSM-protected key in your key vault. For more information, see the **If you want to use a hardware security module (HSM)** section in the [Getting started with Azure Key Vault](/documentation/articles/key-vault-get-started) tutorial.

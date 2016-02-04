@@ -5,11 +5,11 @@
 	documentationCenter="ruby"
 	authors="tfitzmac"
 	manager="wpickett"
-	editor=""/>
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/23/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 
@@ -28,7 +28,7 @@ This guide shows you how to perform common scenarios using the Azure Table servi
 ## Create a Ruby application
 
 For instructions how to create a Ruby application,
-see [Create a Ruby application in Azure](/develop/ruby/tutorials/web-app-with-linux-vm/).
+see [Create a Ruby application in Azure](/documentation/articles/virtual-machines-ruby-rails-web-app-linux).
 
 ## Configure your application to access Storage
 
@@ -48,16 +48,16 @@ Use your favorite text editor, add the following to the top of the Ruby file whe
 
 ## Set up an Azure Storage connection
 
-The azure module will read the environment variables **AZURE\_STORAGE\_ACCOUNT** and **AZURE\_STORAGE\_ACCESS\_KEY** for information required to connect to your Azure Storage account. If these environment variables are not set, you must specify the account information before using **Azure::TableService** with the following code:
+The azure module will read the environment variables **AZURE_STORAGE_ACCOUNT** and **AZURE_STORAGE_ACCESS_KEY** for information required to connect to your Azure Storage account. If these environment variables are not set, you must specify the account information before using **Azure::TableService** with the following code:
 
 	Azure.config.storage_account_name = "<your azure storage account>"
 	Azure.config.storage_access_key = "<your azure storage access key>"
 
 To obtain these values:
 
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn/).
+1. Log into the [Azure Management Portal](https://manage.windowsazure.cn/).
 
-2. Navigate to the storage account you want to use.
+2. Navigate to your storage account.
 
 3. Click **MANAGE KEYS** at the bottom of the navigation pane.
 
@@ -65,7 +65,7 @@ To obtain these values:
 
 ## Create a table
 
-The **Azure::TableService** object lets you work with tables and entities. To create a table, use the **create\_table()** method. The following example creates a table or print out the error if there is any.
+The **Azure::TableService** object lets you work with tables and entities. To create a table, use the **create_table()** method. The following example creates a table or print out the error if there is any.
 
 	azure_table_service = Azure::TableService.new
 	begin
@@ -91,17 +91,17 @@ There are multiple methods available to update an existing entity:
 * **insert\_or\_merge\_entity():** Updates an existing entity by replacing it. If no entity exists, a new one will be inserted:
 * **insert\_or\_replace\_entity():** Updates an existing entity by merging new property values into the existing entity. If no entity exists, a new one will be inserted.
 
-The following example demonstrates updating an entity using **update\_entity()**:
+The following example demonstrates updating an entity using **update_entity()**:
 
 	entity = { "content" => "test entity with updated content",
 	  :PartitionKey => "test-partition-key", :RowKey => "1" }
 	azure_table_service.update_entity("testtable", entity)
 
-With **update\_entity()** and **merge\_entity()**, if the entity that you are updating doesn't exist then the update operation will fail. Therefore if you wish to store an entity regardless of whether it already exists, you should instead use **insert\_or\_replace\_entity()** or **insert\_or\_merge\_entity()**.
+With **update_entity()** and **merge_entity()**, if the entity that you are updating doesn't exist then the update operation will fail. Therefore if you wish to store an entity regardless of whether it already exists, you should instead use **insert_or_replace_entity()** or **insert_or_merge_entity()**.
 
 ## Work with groups of entities
 
-Sometimes it makes sense to submit multiple operations together in a batch to ensure atomic processing by the server. To accomplish that, you first create a **Batch** object and then use the **execute\_batch()** method on **TableService**. The following example demonstrates submitting two entities with RowKey 2 and 3 in a batch. Notice that it only works for entities with the same PartitionKey.
+Sometimes it makes sense to submit multiple operations together in a batch to ensure atomic processing by the server. To accomplish that, you first create a **Batch** object and then use the **execute_batch()** method on **TableService**. The following example demonstrates submitting two entities with RowKey 2 and 3 in a batch. Notice that it only works for entities with the same PartitionKey.
 
 	azure_table_service = Azure::TableService.new
 	batch = Azure::Storage::Table::Batch.new("testtable",
@@ -113,14 +113,14 @@ Sometimes it makes sense to submit multiple operations together in a batch to en
 
 ## Query for an entity
 
-To query an entity in a table, use the **get\_entity()** method, by passing the table name, **PartitionKey** and **RowKey**.
+To query an entity in a table, use the **get_entity()** method, by passing the table name, **PartitionKey** and **RowKey**.
 
 	result = azure_table_service.get_entity("testtable", "test-partition-key",
 	  "1")
 
 ## Query a set of entities
 
-To query a set of entities in a table, create a query hash object and use the **query\_entities()** method. The following example demonstrates getting all the entities with the same **PartitionKey**:
+To query a set of entities in a table, create a query hash object and use the **query_entities()** method. The following example demonstrates getting all the entities with the same **PartitionKey**:
 
 	query = { :filter => "PartitionKey eq 'test-partition-key'" }
 	result, token = azure_table_service.query_entities("testtable", query)
@@ -137,13 +137,13 @@ A query to a table can retrieve just a few properties from an entity. This techn
 
 ## Delete an entity
 
-To delete an entity, use the **delete\_entity()** method. You need to pass in the name of the table which contains the entity, the PartitionKey and RowKey of the entity.
+To delete an entity, use the **delete_entity()** method. You need to pas in the name of the table which contains the entity, the PartitionKey and RowKey of the entity.
 
 		azure_table_service.delete_entity("testtable", "test-partition-key", "1")
 
 ## Delete a table
 
-To delete a table, use the **delete\_table()** method and pass in the name of the table you want to delete.
+To delete a table, use the **delete_table()** method and pass in the name of the table you want to delete.
 
 		azure_table_service.delete_table("testtable")
 
@@ -151,6 +151,5 @@ To delete a table, use the **delete\_table()** method and pass in the name of th
 
 To learn about more complex storage tasks, follow these links:
 
-- MSDN Reference: [Azure Storage](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
 - [Azure Storage Team Blog](http://blogs.msdn.com/b/windowsazurestorage/)
 - [Azure SDK for Ruby](http://github.com/WindowsAzure/azure-sdk-for-ruby) repository on GitHub

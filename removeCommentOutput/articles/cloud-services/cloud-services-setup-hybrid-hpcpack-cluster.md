@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="dlepow"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-service-management,hpc-pack"/>
 
 <tags
 	ms.service="cloud-services"
@@ -13,7 +14,7 @@
 	wacn.date=""/>
 
 
-# Set up a Hybrid Compute Cluster with Microsoft HPC Pack
+# Set up a hybrid compute cluster with Microsoft HPC Pack
 This tutorial shows you how to use Microsoft HPC Pack 2012 R2 and Azure to set up a small, hybrid high performance computing (HPC) cluster. The cluster will consist of an on-premises head node (a computer running the Windows Server operating system and HPC Pack) and some compute nodes you deploy on-demand as worker role instances in an Azure cloud service. You can then run compute jobs on the hybrid cluster.
 
 ![Hybrid HPC cluster][Overview]
@@ -292,7 +293,7 @@ After you try out the cluster, you can use HPC Cluster Manager to stop the Azure
 
 	![Not Deployed Nodes][stop_node4]
 
-4. To confirm that the role instances are no longer running in Azure, in the [Management Portal](https://manage.windowsazure.cn), click **Cloud Services**, click the name of your cloud service, and then click **Instances**. No instances will be deployed in the production environment.
+4. To confirm that the role instances are no longer running in Azure, in the [portal](https://manage.windowsazure.cn), click **Cloud Services**, click the name of your cloud service, and then click **Instances**. No instances will be deployed in the production environment.
 
 	![No Instances][view_instances2]
 

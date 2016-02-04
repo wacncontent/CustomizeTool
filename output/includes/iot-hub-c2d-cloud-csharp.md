@@ -18,7 +18,7 @@ In this section, you'll write a Windows console app that sends cloud-to-device m
 
 		using Microsoft.Azure.Devices;
 
-5. Add the following fields to the **Program** class, substituting the placeholder values with the name of the IoT hub and the IoT hub connection string from [Get started with IoT Hub]:
+5. Add the following fields to the **Program** class, substituting the placeholder value with the IoT hub connection string from [Get started with IoT Hub]:
 
 		static ServiceClient serviceClient;
         static string connectionString = "{iot hub connection string}";
@@ -95,7 +95,7 @@ In this section, you will modify the **SendCloudToDevice** app to request feedba
 [IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide#c2d
 [Azure IoT - Service SDK NuGet package]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
-[Get started with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-getstarted
+[Get started with IoT Hub]: iot-hub-csharp-csharp-getstarted.md
 
 <!-- Images -->
 [20]: ./media/iot-hub-c2d-cloud-csharp/create-identity-csharp1.png

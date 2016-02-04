@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Configure SSL for a cloud service (preview portal) | Windows Azure" 
-	description="Learn how to specify an HTTPS endpoint for a web role and how to upload an SSL certificate to secure your application. These examples use the Azure preview portal." 
+	pageTitle="Configure SSL for a cloud service  | Windows Azure" 
+	description="Learn how to specify an HTTPS endpoint for a web role and how to upload an SSL certificate to secure your application. These examples use the Azure Management Portal." 
 	services="cloud-services" 
 	documentationCenter=".net" 
 	authors="Thraka" 
@@ -14,12 +14,11 @@
 
 
 
-
 # Configuring SSL for an application in Azure
 
 > [AZURE.SELECTOR]
 - [Azure Management Portal](/documentation/articles/cloud-services-configure-ssl-certificate)
-- [Azure Preview Portal](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
+- [Azure Management Portal](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
 
 Secure Socket Layer (SSL) encryption is the most commonly used method of securing data sent across the internet. This common task discusses how to specify an HTTPS endpoint for a web role and how to upload an SSL certificate to secure your application.
 
@@ -164,8 +163,9 @@ connect to it using HTTPS.
       
     >Create a certificate with the common name (CN) equal to the GUID-based URL (for example, **328187776e774ceda8fc57609d404462.chinacloudapp.cn**), use the portal to add the certificate to your staged cloud service, add the certificate information to your CSDEF and CSCFG files, repackage your application, and update your staged deployment to use the new package and CSCFG file.
 
-[Azure Management Portal]: http://manage.windowsazure.cn/
-
+<!-- keep by customization: begin -->
+[Azure Management Portal]: https://manage.windowsazure.cn
+<!-- keep by customization: end -->
 ## Next steps
 
 * [General configuration of your cloud service](/documentation/articles/cloud-services-how-to-configure-portal).

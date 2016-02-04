@@ -20,9 +20,9 @@ To create a service namespace:
 
 1.  Log on to the [Azure Management Portal][].
 
-2.  In the left navigation pane of the Management Portal, click **Service Bus**.
+2.  In the left navigation pane of the portal, click **Service Bus**.
 
-3.  In the lower pane of the Management Portal, click **Create**.
+3.  In the lower pane of the portal, click **Create**.
 	![](./media/howto-service-bus-queues/sb-queues-03.png)
 
 4.  In the **Add a new namespace** dialog, enter a namespace name. The system immediately checks to see if the name is available.   
@@ -36,7 +36,7 @@ To create a service namespace:
 
 	![](./media/howto-service-bus-queues/getting-started-multi-tier-27.png)
 
-The namespace you created takes a moment to activate, and will then appear in the management portal. Wait until the namespace status is **Active** before continuing.
+The namespace you created takes a moment to activate, and will then appear in the Azure Management Portal. Wait until the namespace status is **Active** before continuing.
 
 ## Obtain the default management credentials for the namespace
 

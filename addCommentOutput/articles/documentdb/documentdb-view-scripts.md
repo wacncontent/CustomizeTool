@@ -1,5 +1,5 @@
 <properties
-	pageTitle="View stored procedures, triggers, and user-defined functions using the DocumentDB Script Explorer | Microsoft Azure"
+	pageTitle="View stored procedures, triggers, and user-defined functions using the DocumentDB Script Explorer | Windows Azure"
 	description="Learn about the DocumentDB Script Explorer, an Azure Preview portal tool to view DocumentDB server-side programming artifacts including stored procedures, triggers, and user-defined functions."
 	services="documentdb"
 	authors="AndrewHoh"
@@ -9,16 +9,12 @@
 
 <tags
 	ms.service="documentdb"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article" 
 	ms.date="09/02/2015"
-	ms.author="anhoh"/>
+	wacn.date=""/>
 
 # View, edit, and create stored procedures, triggers, and user-defined functions using the DocumentDB Script Explorer
 
-This article provides an overview of the [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/) Script Explorer, an Azure Preview portal tool that enables you to view DocumentDB server-side programming artifacts including stored procedures, triggers, and user-defined functions.  Read more about DocumentDB server-side programming [here](documentdb-programming.md).
+This article provides an overview of the <!-- deleted by customization [Windows --><!-- keep by customization: begin --> [Microsoft <!-- keep by customization: end --> Azure <!-- deleted by customization DocumentDB](/home/features/documentdb/) --><!-- keep by customization: begin --> DocumentDB](http://azure.microsoft.com/services/documentdb/) <!-- keep by customization: end --> Script Explorer, an Azure Preview portal tool that enables you to view DocumentDB server-side programming artifacts including stored procedures, triggers, and user-defined functions.  Read more about DocumentDB server-side programming <!-- deleted by customization [here](/documentation/articles/documentdb-programming) --><!-- keep by customization: begin --> [here](documentdb-programming.md) <!-- keep by customization: end -->.
 
 By completing this tutorial, you'll be able to answer the following questions:  
 

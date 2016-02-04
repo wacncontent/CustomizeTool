@@ -6,7 +6,7 @@
 	authors="crwilcox"
 	manager="wpickett"
 	editor=""
-	tags=“azure-service-management,azure-resource-manager"/>
+	tags="azure-service-management,azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -238,7 +238,7 @@ can be shared with other Jupyter users.  The Jupyter Notebook can be used as a
 local application, but it is ideally suited for cloud deployments on Azure
 
 The core features of Jupyter are also available inside Visual Studio via the
-[Python Tools for Visual Studio][](PTVS). PTVS is a free and open-source plug-in
+[Python Tools for Visual Studio][] (PTVS). PTVS is a free and open-source plug-in
 from Microsoft that turns Visual Studio into an advanced Python development
 environment that includes an advanced editor with IntelliSense, debugging,
 profiling and parallel computing integration.

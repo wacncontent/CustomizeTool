@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/13/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 # Import a BACPAC file to create a new Azure SQL database using PowerShell
@@ -17,9 +17,10 @@
 **Single database**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](/documentation/articles/sql-database-import)
+- [Azure Management Portal](/documentation/articles/sql-database-import)
 - [PowerShell](/documentation/articles/sql-database-import-powershell)
-
+- [SSMS](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-ssms)
+- [SqlPackage](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage)
 
 This article provides directions for creating an Azure SQL database by importing a BACPAC with PowerShell.
 
@@ -70,7 +71,7 @@ The database name is the name you want for the new database.
     $DatabaseName = "databasename"
 
 
-The following variables are from the storage account where your BACPAC is located. In the [Azure Preview Portal](https://manage.windowsazure.cn) browse to your storage account to get these values. You can find the primary access key by clicking **All settings** and then **Keys** from your storage account's blade.
+The following variables are from the storage account where your BACPAC is located. In the [Azure Management Portal](https://manage.windowsazure.cn) browse to your storage account to get these values. You can find the primary access key by clicking **All settings** and then **Keys** from your storage account's blade.
 
 The blob name is the name of an existing .bacpac file that you want to create the database from. You need to include the .bacpac extension.
 
@@ -150,5 +151,5 @@ Running this command will prompt you for a password. Enter the admin login and p
 - [SQL Database documentation](/documentation/services/sql-database/)
 -->
 <!-- keep by customization: begin -->
-- [SQL Database documentation](/documentation/services/sql-databases/)
+- [SQL Database documentation](/documentation/services/sql-databases)
 <!-- keep by customization: end -->

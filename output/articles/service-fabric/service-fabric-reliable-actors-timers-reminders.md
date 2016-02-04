@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/05/2015"
-   ms.author="amanbha"/>
+	ms.service="service-fabric"
+	ms.date="08/05/2015"
+	wacn.date=""/>
 
 
 # Actor Timers
@@ -23,11 +19,11 @@ Actor timers provide a simple wrapper around .NET timers such that the callback 
 Actors can use the `RegisterTimer` and `UnregisterTimer` methods on their base class to register and unregister their timers. The example below shows the use of timer APIs. The APIs are very similar to the .NET timer. In the example below when the timer is due the `MoveObject` method will be called by the Actors runtime and it is guaranteed to respect the turn-based concurrency, which means that no other actor methods or timer/reminder callbacks will be in progress until this callback completes execution.
 
 ```csharp
-class VisualObjectActor : Actor<VisualObject>, IVisualObject
+class VisualObjectActor : StatefulActor<VisualObject>, IVisualObject
 {
     private IActorTimer _updateTimer;
 
-    public override Task OnActivateAsync()
+    protected override Task OnActivateAsync()
     {
         ...
 
@@ -40,7 +36,7 @@ class VisualObjectActor : Actor<VisualObject>, IVisualObject
         return base.OnActivateAsync();
     }
 
-    public override Task OnDeactivateAsync()
+    protected override Task OnDeactivateAsync()
     {
         if (_updateTimer != null)
         {
@@ -53,16 +49,16 @@ class VisualObjectActor : Actor<VisualObject>, IVisualObject
     private Task MoveObject(object state)
     {
         ...
-        return TaskDone.Done;
+        return Task.FromResult(true);
     }
 }
 ```
 
 The next period of the timer starts after the callback completes execution. This implies that the timer is stopped while the callback is executing and is started when the callback has completed.
 
-The Actors runtime saves the actor state when the callback completes if the Actor is a stateful actor like in the example above. If an error occurs in saving the state, that actor object will be deactivated and a new instance will be activated. A callback method that does not modify the actor state can be registered as a read-only timer callback by specifying the Readonly attribute on the timer callback, as described in the section on [readonly methods](service-fabric-reliable-actors-introduction.md#readonly-methods).
+The Actors runtime saves the actor state when the callback completes if the Actor is a stateful actor like in the example above. If an error occurs in saving the state, that actor object will be deactivated and a new instance will be activated. A callback method that does not modify the actor state can be registered as a read-only timer callback by specifying the Readonly attribute on the timer callback, as described in the section on [readonly methods](/documentation/articles/service-fabric-reliable-actors-introduction#readonly-methods).
 
-All timers are stopped when the actor is deactivated as part of garbage collection and no timer callbacks are invoked after that. Also, the Actors runtime does not retain any information about the timers that were running before deactivation. It is up to the actor to register any timers that it needs when it is reactivated in the future. For more information, please see the section on [actor garbage collection](service-fabric-reliable-actors-lifecycle.md).
+All timers are stopped when the actor is deactivated as part of garbage collection and no timer callbacks are invoked after that. Also, the Actors runtime does not retain any information about the timers that were running before deactivation. It is up to the actor to register any timers that it needs when it is reactivated in the future. For more information, please see the section on [actor garbage collection](/documentation/articles/service-fabric-reliable-actors-lifecycle).
 
 ## Actor Reminders
 Reminders are a mechanism to trigger persistent callbacks on an Actor at specified times. Their functionality is similar to timers, but unlike timers reminders are triggered under all circumstances until the Reminder is explicitly unregistered by the Actor. Specifically, reminders are triggered across actor deactivations and failovers because the Actors runtime persists information about the actor's reminders.
@@ -87,7 +83,7 @@ In the example above, `"Pay cell phone bill"` is the reminder name, which is a s
 Actors that use reminders must implement `IRemindable` interface, as shown in the example below.
 
 ```csharp
-public class ToDoListActor : Actor<ToDoList>, IToDoListActor, IRemindable
+public class ToDoListActor : StatefulActor<ToDoList>, IToDoListActor, IRemindable
 {
     public Task ReceiveReminderAsync(string reminderName, byte[] context, TimeSpan dueTime, TimeSpan period)
     {

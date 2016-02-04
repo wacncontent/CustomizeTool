@@ -3,18 +3,16 @@ deletion:
 deleted:
 
 		>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
-		
+
+reason: (“Try it now”)
+
+deleted:
+
 		## What's changed
 		* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 		* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-reason: ()
-
-deleted:
-
-		[website-from-gallery]: /develop/php/tutorials/website-from-gallery/
-
-reason: ()
+reason: (terminology: Azure App Service Web, the new Ibiza portal)
 
 replacement:
 
@@ -30,5 +28,5 @@ replaced by:
 		
 		The *Manage custom domains* dialog show pop up. This is where you will input all the domains which you wish to assign to your  Website. If a domain is not listed here, it will not be available for mapping inside WordPress, regardless of how the domain DNS is setup.
 
-reason: ()
+reason: (the new Ibiza portal)
 

@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/14/2015"
+	ms.date="11/16/2015"
 	wacn.date=""/>
 
 # Business Continuity Overview
 
-Business continuity is about designing, deploying and running your application in a way that it is resilient to planned or unplanned disruptive events that result in permanent or temporary loss of the application’s ability to conduct its business function. The unplanned events range from human errors to permanent or temporary outages to regional disasters that could cause wide scale loss of facility in a particular Azure region. The planned events include application redeployment to a different region, application upgrades etc. The goal of business continuity is for your application to continue to function during these events with minimal impact on the business function. 
+Business continuity is about designing, deploying and running your application in a way that it is resilient to planned or unplanned disruptive events that result in permanent or temporary loss of the application's ability to conduct its business function. The unplanned events range from human errors to permanent or temporary outages to regional disasters that could cause wide scale loss of facility in a particular Azure region. The planned events include application redeployment to a different region, application upgrades etc. The goal of business continuity is for your application to continue to function during these events with minimal impact on the business function. 
 
 To discuss the business continuity solutions there are several concepts you need be familiar with.
 
@@ -22,9 +22,9 @@ To discuss the business continuity solutions there are several concepts you need
 
 **Estimated Recovery Time (ERT):** The estimated duration for the database to be fully available after a restore or failover request.
 
-**Recovery time objective (RTO)** – maximum acceptable time before the application fully recovers after the disruptive event. RTO measures the maximum loss of availability during the failures.
+**Recovery time objective (RTO)** - maximum acceptable time before the application fully recovers after the disruptive event. RTO measures the maximum loss of availability during the failures.
 
-**Recovery point objective (RPO)** – maximum amount of last updates (time interval) the application can lose by the moment it fully recovers after the disruptive event. RPO measures the maximum loss of data during the failures.
+**Recovery point objective (RPO)** - maximum amount of last updates (time interval) the application can lose by the moment it fully recovers after the disruptive event. RPO measures the maximum loss of data during the failures.
 
 
 ## Business continuity scenarios
@@ -45,7 +45,7 @@ I am running my application in production and receive an alert suggesting that t
 
 ###Perform disaster recovery drill
 
-Because the recovery from an outage will relocate the application’s data tier to a different region I want to periodically test the recovery process and evaluate its impact on the application to stay prepared.
+Because the recovery from an outage will relocate the application's data tier to a different region I want to periodically test the recovery process and evaluate its impact on the application to stay prepared.
 
 ###Application upgrade without downtime
 
@@ -64,6 +64,9 @@ The following table shows the differences of the business continuity features ac
 
 These features are provided to address the scenarios listed earlier. Please refer to the [Design for business continuity](/documentation/articles/sql-database-business-continuity-design) section for guidance how to select the specific feature. 
 
+> [AZURE.NOTE]: The ERT and RPO values are engineering goals and provide guidance only. They are not part of [SLA for SQL <!-- deleted by customization Database](https://azure.microsoft.com/support/legal/sla/sql-database/v1_0/) --><!-- keep by customization: begin --> Database](/support/legal/sla/) <!-- keep by customization: end -->
+
+
 ###Point In Time Restore
 
 Point In Time Restore is designed to return your database to an earlier point in time. It uses the database backups, incremental backups and transaction log backups that the service automatically maintains for every user database. This capability is available for  all service tiers. You can go back 7 days with Basic, 14 days with Standard, and 35 days with Premium. Refer to [Recover from human error](/documentation/articles/sql-database-user-error-recovery) for details of how to use Point In Time Restore.
@@ -74,11 +77,11 @@ Geo-Restore is also available with Basic, Standard, and Premium databases. It pr
 
 ###Standard Geo-Replication
 
-Standard Geo-Replication is available for Standard and Premium databases. It’s designed for applications that can use the capacity of standard service tier but have more aggressive recovery requirements than Geo-Restore can offer. When the primary database fails you can initiate failover to a non-readable secondary database stored in the DR paired region. Refer to [Design for business continuity](/documentation/articles/sql-database-business-continuity-design) for details on how to configure Geo-Replication and to [Recover from an outage](/documentation/articles/sql-database-disaster-recovery) for details of how to failover to the secondary database.
+Standard Geo-Replication is available for Standard and Premium databases. It's designed for applications that can use the capacity of standard service tier but have more aggressive recovery requirements than Geo-Restore can offer. When the primary database fails you can initiate failover to a non-readable secondary database stored in the DR paired region. Refer to [Design for business continuity](/documentation/articles/sql-database-business-continuity-design) for details on how to configure Geo-Replication and to [Recover from an outage](/documentation/articles/sql-database-disaster-recovery) for details of how to failover to the secondary database.
 
 ###Active Geo-Replication
 
-Active Geo-Replication is available for Premium databases. It’s designed for write-intensive applications with the most aggressive recovery requirements. Using Active Geo-Replication, you can create up to four readable secondaries on servers in different regions. You can initiate failover to any of the secondaries in the same way as Standard Geo-Replication.  In addition, Active Geo-Replication can be used to support the application upgrade or relocation scenarios, as well as load balancing for read-only workloads. Refer to [Design for business continuity](/documentation/articles/sql-database-business-continuity-design) for details on how to configure Geo-Replication and to [Recover from an outage](/documentation/articles/sql-database-disaster-recovery) for details of how to failover to the secondary database. Refer to [Application upgrade without downtime](/documentation/articles/sql-database-business-continuity-application-upgrade) for details on how to implement the application upgrade without downtime.
+Active Geo-Replication is available for Premium databases. It's designed for write-intensive applications with the most aggressive recovery requirements. Using Active Geo-Replication, you can create up to four readable secondaries on servers in different regions. You can initiate failover to any of the secondaries in the same way as Standard Geo-Replication.  In addition, Active Geo-Replication can be used to support the application upgrade or relocation scenarios, as well as load balancing for read-only workloads. Refer to [Design for business continuity](/documentation/articles/sql-database-business-continuity-design) for details on how to configure Geo-Replication and to [Recover from an outage](/documentation/articles/sql-database-disaster-recovery) for details of how to failover to the secondary database. Refer to [Application upgrade without downtime](/documentation/articles/sql-database-business-continuity-application-upgrade) for details on how to implement the application upgrade without downtime.
 
 
 

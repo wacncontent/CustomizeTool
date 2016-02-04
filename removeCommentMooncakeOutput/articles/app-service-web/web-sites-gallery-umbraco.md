@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Create an Umbraco web app from the Marketplace in Windows Azure" 
+	pageTitle="Create an Umbraco web site from the Marketplace in Windows Azure" 
 	description="Create an Umbraco content management system and deploy to Azure Websites." 
 	tags="azure-portal"
 	services="app-service\web" 
@@ -15,18 +15,18 @@
 	ms.date="08/03/2015"
 	wacn.date=""/>
 
-#Create an Umbraco web app from the Marketplace in Windows Azure#
+#Create an Umbraco web site from the Marketplace in Windows Azure#
 
-Umbraco CMS is a fully-featured open source content management system that can be used to create a variety of applications from small to complex. The Azure Marketplace provides a wide range of popular web applications developed by Microsoft, third party companies, and open source software initiatives. The gallery allows you to create an Umbraco CMS app in just a few minutes by either applying the starter kits or by integrating your own design. 
+Umbraco CMS is a fully-featured open source content management system that can be used to create a variety of applications from small to complex. The Azure Marketplace provides a wide range of popular web sites developed by Microsoft, third party companies, and open source software initiatives. The gallery allows you to create an Umbraco CMS app in just a few minutes by either applying the starter kits or by integrating your own design. 
 
-This article showcases the Azure preview portal, which greatly simplifies resource management. The Azure preview portal is designed to speed your software delivery process by placing cross-platform tools, technologies, and services from Microsoft and its partners in a single workspace. Instead of using standalone resources like [Azure Websites](/documentation/services/web-sites/) Web Apps, Visual Studio Projects, or databases, you can create, manage, and analyze your entire application as a single resource group. 
+This article showcases the Azure preview portal, which greatly simplifies resource management. The Azure preview portal is designed to speed your software delivery process by placing cross-platform tools, technologies, and services from Microsoft and its partners in a single workspace. Instead of using standalone resources like [Azure Websites](/documentation/services/web-sites/) web sites, Visual Studio Projects, or databases, you can create, manage, and analyze your entire application as a single resource group. 
 
 In this tutorial, you'll learn:
 
-- How to create a new web app through the Markeplace using the Azure preview portal
+- How to create a new web site through the Markeplace using the Azure preview portal
 - How to build a blog website by using Umbraco CMS 
 
-##Create a web app from the Marketplace in the Azure preview portal
+##Create a web site from the Marketplace in the Azure preview portal
 
 1. Login to the [Azure preview portal](https://manage.windowsazure.cn/).
 
@@ -34,9 +34,9 @@ In this tutorial, you'll learn:
 	
 3. In the **Marketplace** , select the **Web + Mobile** tab, and then select **Umbraco CMS**.
 	
-4. To create a new Umbraco CMS web app, click **Create**.
+4. To create a new Umbraco CMS web site, click **Create**.
 	
-5. The next step is to configure all the resources associated with Umbraco CMS. In this case, the resources are a web app and a SQL Server database. First, select **Web app** to configure the web app settings such as the **URL**, **App Service Plan**, **Web App Settings**, and **Location**. 
+5. The next step is to configure all the resources associated with Umbraco CMS. In this case, the resources are a web site and a SQL Server database. First, select **Web Apps** to configure the web site settings such as the **URL**, **App Service Plan**, **web site Settings**, and **Location**. 
 	
 	![Configure resources][04AppSettings]
 	
@@ -44,23 +44,23 @@ In this tutorial, you'll learn:
 	
 	![Create a SQL Server on Azure][05NewServer]
 	
-7. Now that the web app and the database are configured, you can start deploying the application by clicking **Create** on the bottom of the first **Umbraco CMS** blade seen in the previous image.
+7. Now that the web site and the database are configured, you can start deploying the application by clicking **Create** on the bottom of the first **Umbraco CMS** blade seen in the previous image.
 	
 	![Click Create][06UmbracoCMSGroup]
 	
-After the deployment is completed, the portal will display the blade for your Umbraco CMS web app's resource group. In the **Summary** section, click the web app name to see the properties of your web app. Also in the **Summary** section, you can select the database resource to see the properties of the associated database.
+After the deployment is completed, the portal will display the blade for your Umbraco CMS web site's resource group. In the **Summary** section, click the web site name to see the properties of your web site. Also in the **Summary** section, you can select the database resource to see the properties of the associated database.
 
-## Launch and configure your Umbraco CMS web app ##
+## Launch and configure your Umbraco CMS web site ##
 
-1. On the details blade for your web app, click **Browse** to browse your web app.
+1. On the details blade for your web site, click **Browse** to browse your web site.
 	
 	![Browse to your site][08UmbracoCMSGroupRunning]
 	
-2. When you browse the web app, Umbraco CMS initiates its installer wizard. Enter the information requested, and then click **Customize**.
+2. When you browse the web site, Umbraco CMS initiates its installer wizard. Enter the information requested, and then click **Customize**.
 	
 	![Install Umbraco wizard][09InstallUmbraco7]
 	
-3. Enter your connection and authentication details for the database that Umbraco will use. Select **Microsoft SQL Azure** for the database type.  You can obtain the connection string for your database from the **Site Settings** section of your web app.
+3. Enter your connection and authentication details for the database that Umbraco will use. Select **Microsoft SQL Azure** for the database type.  You can obtain the connection string for your database from the **Site Settings** section of your web site.
 	
 	![Configure your database][10ConfigureYourDatabase] 
 	
@@ -80,12 +80,12 @@ After the deployment is completed, the portal will display the blade for your Um
 	
 	![Enter a title and some content][16EnterAName]
 	
-8. Wait while your page is published. When publishing completes, you will receive a small alert on the bottom right of your screen. You can now browse the new content on your web app. 
+8. Wait while your page is published. When publishing completes, you will receive a small alert on the bottom right of your screen. You can now browse the new content on your web site. 
 	
 	![Published web site page][17MyPage]
 	
 
-That’s it! You've successfully created a blog web app using Umbraco CMS, in just a few minutes. 
+Thatâs it! You've successfully created a blog web site using Umbraco CMS, in just a few minutes. 
 
 ##Additional Resources
 
@@ -103,7 +103,7 @@ That’s it! You've successfully created a blog web app using Umbraco CMS, in ju
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the portal to the preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 
 
 <!-- IMAGES -->

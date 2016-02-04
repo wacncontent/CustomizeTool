@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Manage statistics in SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Manage statistics in SQL Data Warehouse | Windows Azure"
    description="Tips for managing statistics in Azure SQL Data Warehouse for developing solutions."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/26/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+	ms.service="sql-data-warehouse"
+	ms.date="12/11/2015"
+	wacn.date=""/>
 
 # Manage statistics in SQL Data Warehouse
  SQL Data Warehouse uses statistics to assess the cost of different ways to perform a distributed query. When statistics are accurate, the query optimizer can generate high quality query plans that improve query performance.
@@ -383,7 +379,7 @@ JOIN    sys.types           AS ty ON    co.[user_type_id]   = ty.[user_type_id]
 JOIN    sys.tables          AS tb ON  co.[object_id]        = tb.[object_id]
 JOIN    sys.schemas         AS sm ON  tb.[schema_id]        = sm.[schema_id]
 WHERE   1=1 
-AND     sts.[user_created] = 1
+AND     st.[user_created] = 1
 ;
 ```
 
@@ -443,20 +439,20 @@ For more development tips, see [SQL Data Warehouse development overview][].
 <!--Image references-->
 
 <!--Link references--In actual articles, you only need a single period before the slash.-->
-[SQL Data Warehouse development overview]:  ./sql-data-warehouse-overview-develop/
-[temporary tables]:     ./sql-data-warehouse-develop-temporary-tables/
+[SQL Data Warehouse development overview]: ./sql-data-warehouse-overview-develop.md
+[temporary tables]: ./sql-data-warehouse-develop-temporary-tables.md
 
 <!-- External Links -->
-[Cardinality Estimation]:https://msdn.microsoft.com/library/dn600374.aspx
-[CREATE STATISTICS]:https://msdn.microsoft.com/library/ms188038.aspx
-[DBCC SHOW_STATISTICS]:https://msdn.microsoft.com/library/ms174384.aspx
-[Statistics]:https://msdn.microsoft.com/library/ms190397.aspx
-[STATS_DATE]:https://msdn.microsoft.com/library/ms190330.aspx
-[sys.columns]:https://msdn.microsoft.com/library/ms176106.aspx
-[sys.objects]:https://msdn.microsoft.com/library/ms190324.aspx
-[sys.schemas]:https://msdn.microsoft.com/library/ms190324.aspx
-[sys.stats]:https://msdn.microsoft.com/library/ms177623.aspx
-[sys.stats_columns]:https://msdn.microsoft.com/library/ms187340.aspx
-[sys.tables]:https://msdn.microsoft.com/library/ms187406.aspx
-[sys.table_types]:https://msdn.microsoft.com/library/bb510623.aspx
-[UPDATE STATISTICS]:https://msdn.microsoft.com/library/ms187348.aspx
+[Cardinality Estimation]:https://msdn.microsoft.com/zh-cn/library/dn600374.aspx
+[CREATE STATISTICS]:https://msdn.microsoft.com/zh-cn/library/ms188038.aspx
+[DBCC SHOW_STATISTICS]:https://msdn.microsoft.com/zh-cn/library/ms174384.aspx
+[Statistics]:https://msdn.microsoft.com/zh-cn/library/ms190397.aspx
+[STATS_DATE]:https://msdn.microsoft.com/zh-cn/library/ms190330.aspx
+[sys.columns]:https://msdn.microsoft.com/zh-cn/library/ms176106.aspx
+[sys.objects]:https://msdn.microsoft.com/zh-cn/library/ms190324.aspx
+[sys.schemas]:https://msdn.microsoft.com/zh-cn/library/ms190324.aspx
+[sys.stats]:https://msdn.microsoft.com/zh-cn/library/ms177623.aspx
+[sys.stats_columns]:https://msdn.microsoft.com/zh-cn/library/ms187340.aspx
+[sys.tables]:https://msdn.microsoft.com/zh-cn/library/ms187406.aspx
+[sys.table_types]:https://msdn.microsoft.com/zh-cn/library/bb510623.aspx
+[UPDATE STATISTICS]:https://msdn.microsoft.com/zh-cn/library/ms187348.aspx

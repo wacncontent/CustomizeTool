@@ -3,39 +3,39 @@
 	description="How to manage concurrency for the Blob, Queue, Table, and File services" 
 	services="storage" 
 	documentationCenter="" 
-	authors="jasonnewyork" 
-	manager="tadb" 
+	authors="tamram" 
+	manager="adinah" 
 	editor=""/>
 
-<tags
-	ms.service="storage"
-	ms.date="09/03/2015"
+<tags 
+	ms.service="storage" 
+	ms.date="09/03/2015" 
 	wacn.date=""/>
 
-# Managing Concurrency in Windows Azure Storage
+#Managing Concurrency in Windows Azure Storage
 
 ## Overview 
 
 Modern Internet based applications usually have multiple users viewing and updating data simultaneously. This requires application developers to think carefully about how to provide a predictable experience to their end users, particularly for scenarios where multiple users can update the same data. There are three main data concurrency strategies developers will typically consider:  
 
 
-1.	Optimistic concurrency – An application performing an update will as part of its update verify if the data has changed since the application last read that data. For example, if two users viewing a wiki page make an update to the same page then the wiki platform must ensure that the second update does not overwrite the first update – and that both users understand whether their update was successful or not. This strategy is most often used in web applications.
-2.	Pessimistic concurrency – An application looking to perform an update will take a lock on an object preventing other users from updating the data until the lock is released. For example, in a master/slave data replication scenario where only the master will perform updates the master will typically hold an exclusive lock for an extended period of time on the data to ensure no one else can update it.
-3.	Last writer wins – An approach that allows any update operations to proceed without verifying if any other application has updated the data since the application first read the data. This strategy (or lack of a formal strategy) is usually used where data is partitioned in such a way that there is no likelihood that multiple users will access the same data. It can also be useful where short-lived data streams are being processed.  
+1.	Optimistic concurrency - An application performing an update will as part of its update verify if the data has changed since the application last read that data. For example, if two users viewing a wiki page make an update to the same page then the wiki platform must ensure that the second update does not overwrite the first update - and that both users understand whether their update was successful or not. This strategy is most often used in web sites.
+2.	Pessimistic concurrency - An application looking to perform an update will take a lock on an object preventing other users from updating the data until the lock is released. For example, in a master/slave data replication scenario where only the master will perform updates the master will typically hold an exclusive lock for an extended period of time on the data to ensure no one else can update it.
+3.	Last writer wins - An approach that allows any update operations to proceed without verifying if any other application has updated the data since the application first read the data. This strategy (or lack of a formal strategy) is usually used where data is partitioned in such a way that there is no likelihood that multiple users will access the same data. It can also be useful where short-lived data streams are being processed.  
 
 This article provides an overview of how the Azure Storage platform simplifies development by providing first class support for all three of these concurrency strategies.  
 
-## Azure Storage – Simplifies Cloud Development
+## Azure Storage - Simplifies Cloud Development
 The Azure storage service supports all three strategies, although it is distinctive in its ability to provide full support for optimistic and pessimistic concurrency because it was designed to embrace a strong consistency model which guarantees that when the Storage service commits a data insert or update operation all further accesses to that data will see the latest update. Storage platforms that use an eventual consistency model have a lag between when a write is performed by one user and when the updated data can be seen by other users thus complicating development of client applications in order to prevent inconsistencies from affecting end users.  
 
-In addition to selecting an appropriate concurrency strategy developers should also be aware of how a storage platform isolates changes – particularly changes to the same object across transactions. The Azure storage service uses snapshot isolation to allow read operations to happen concurrently with write operations within a single partition. Unlike other isolation levels, snapshot isolation guarantees that all reads see a consistent snapshot of the data even while updates are occurring – essentially by returning the last committed values while an update transaction is being processed.  
+In addition to selecting an appropriate concurrency strategy developers should also be aware of how a storage platform isolates changes - particularly changes to the same object across transactions. The Azure storage service uses snapshot isolation to allow read operations to happen concurrently with write operations within a single partition. Unlike other isolation levels, snapshot isolation guarantees that all reads see a consistent snapshot of the data even while updates are occurring - essentially by returning the last committed values while an update transaction is being processed.  
 
 ## Managing Concurrency in the Blob Service
 You can opt to use either optimistic or pessimistic concurrency models to manage access to blobs and containers in the blob service. If you do not explicitly specify a strategy last writes wins is the default.  
 
 ### Optimistic concurrency for blobs and containers  
 
-The Storage service assigns an identifier to every object stored. This identifier is updated every time an update operation is performed on an object. The identifier is returned to the client as part of an HTTP GET response using the ETag (entity tag) header that is defined within the HTTP protocol. A user performing an update on such an object can send in the original ETag along with a conditional header to ensure that an update will only occur if a certain condition has been met – in this case the condition is an “If-Match” header which requires the Storage Service to ensure the value of the ETag specified in the update request is the same as that stored in the Storage Service.  
+The Storage service assigns an identifier to every object stored. This identifier is updated every time an update operation is performed on an object. The identifier is returned to the client as part of an HTTP GET response using the ETag (entity tag) header that is defined within the HTTP protocol. A user performing an update on such an object can send in the original ETag along with a conditional header to ensure that an update will only occur if a certain condition has been met - in this case the condition is an “If-Match” header which requires the Storage Service to ensure the value of the ETag specified in the update request is the same as that stored in the Storage Service.  
 
 The outline of this process is as follows:  
 
@@ -78,7 +78,7 @@ The following C# snippet (using the Client Storage Library 4.2.0) shows a simple
 	        throw;
 	}  
 
-The Storage Service also includes support for additional conditional headers such as **If-Modified-Since**, **If-Unmodified-Since** and **If-None-Match** as well as combinations thereof. For more information see [Specifying Conditional Headers for Blob Service Operations](http://msdn.microsoft.com/zh-cn/library/azure/dd179371.aspx) on MSDN.  
+The Storage Service also includes support for additional conditional headers such as **If-Modified-Since**, **If-Unmodified-Since** and **If-None-Match** as well as combinations thereof. For more information see [Specifying Conditional Headers for Blob Service Operations](http://msdn.microsoft.com/zh-cn/library/dd179371.aspx) on MSDN.  
 
 The following table summarizes the container operations that accept conditional headers such as **If-Match** in the request and that return an ETag value in the response.  
 
@@ -217,7 +217,7 @@ The following C# snippet shows a customer entity that was previously either crea
 	catch (StorageException ex)
 	{
 	    if (ex.RequestInformation.HttpStatusCode == 412)
-	        Console.WriteLine("Optimistic concurrency violation – entity has changed since it was retrieved.");
+	        Console.WriteLine("Optimistic concurrency violation - entity has changed since it was retrieved.");
 	    else
 	        throw; 
 	}  
@@ -257,7 +257,7 @@ For more information see:
 - [Get Messages](http://msdn.microsoft.com/zh-cn/library/azure/dd179474.aspx)  
 
 ## Managing Concurrency in the File Service
-The file service can be accessed using two different protocol endpoints – SMB and REST. The REST service does not have support for either optimistic locking or pessimistic locking and all updates will follow a last writer wins strategy. SMB clients that mount file shares can leverage file system locking mechanisms to manage access to shared files – including the ability to perform pessimistic locking. When an SMB client opens a file, it specifies both the file access and share mode. Setting a File Access option of "Write" or "Read/Write" along with a File Share mode of "None" will result in the file being locked by an SMB client until the file is closed. If REST operation is attempted on a file where an SMB client has the file locked the REST service will return status code 409 (Conflict) with error code SharingViolation.  
+The file service can be accessed using two different protocol endpoints - SMB and REST. The REST service does not have support for either optimistic locking or pessimistic locking and all updates will follow a last writer wins strategy. SMB clients that mount file shares can leverage file system locking mechanisms to manage access to shared files - including the ability to perform pessimistic locking. When an SMB client opens a file, it specifies both the file access and share mode. Setting a File Access option of "Write" or "Read/Write" along with a File Share mode of "None" will result in the file being locked by an SMB client until the file is closed. If REST operation is attempted on a file where an SMB client has the file locked the REST service will return status code 409 (Conflict) with error code SharingViolation.  
 
 When an SMB client opens a file for delete, it marks the file as pending delete until all other SMB client open handles on that file are closed. While a file is marked as pending delete, any REST operation on that file will return status code 409 (Conflict) with error code SMBDeletePending. Status code 404 (Not Found) is not returned since it is possible for the SMB client to remove the pending deletion flag prior to closing the file. In other words, status code 404 (Not Found) is only expected when the file has been removed. Note that while a file is in a SMB pending delete state, it will not be included in the List Files results.Also note that the REST Delete File and REST Delete Directory operations are committed atomically and do not result in pending delete state.  
 
@@ -275,8 +275,8 @@ For the complete sample application referenced in this blog:
 For more information on Azure Storage see:  
 
 - [Windows Azure Storage Home Page](/home/features/storage/)
-- [Introduction to Azure Storage](/documentation/articles/storage-introduction)
+- [Introduction to Azure Storage](//documentation/articles/storage-introduction)
 - Storage Getting Started for [Blob](/documentation/articles/storage-dotnet-how-to-use-blobs), [Table](/documentation/articles/storage-dotnet-how-to-use-tables) and [Queues](/documentation/articles/storage-dotnet-how-to-use-queues)
-- Storage Architecture – [Windows Azure Storage : A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
+- Storage Architecture - [Windows Azure Storage : A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
  

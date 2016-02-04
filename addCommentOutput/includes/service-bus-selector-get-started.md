@@ -8,7 +8,7 @@
 - [(C | Apache Storm)](../articles/service-bus-event-hubs-c-storm-getstarted.md)
 -->
 <!-- keep by customization: begin -->
-- [(C# | EventProcessorHost C#)](/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted/)
+- [(C# | EventProcessorHost C#)](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)
 - [(C# | Apache Storm)](/documentation/articles/service-bus-event-hubs-csharp-storm-getstarted/)
 - [(Java | EventProcessorHost C#)](/documentation/articles/service-bus-event-hubs-java-ephcs-getstarted/)
 - [(Java | Apache Storm)](/documentation/articles/service-bus-event-hubs-java-storm-getstarted/)

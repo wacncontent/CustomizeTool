@@ -18,15 +18,15 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
-If you can't connect to a Linux virtual machine because of a forgotten password, an incorrect Secure Shell (SSH) key, or a problem with the SSH configuration, use the Azure Preview Portal or the  VMAccessForLinux extension to reset the password or SSH key or fix the SSH configuration. Note that this article applies to the virtual machines created using the **Classic** deployment model.
+If you can't connect to a Linux virtual machine because of a forgotten password, an incorrect Secure Shell (SSH) key, or a problem with the SSH configuration, use the Azure Management Portal or the  VMAccessForLinux extension to reset the password or SSH key or fix the SSH configuration. Note that this article applies to the virtual machines created using the **Classic** deployment model.
 
-## Azure Preview Portal
+## Azure Management Portal
 
-To reset the SSH configuration in the [Azure Preview Portal](https://manage.windowsazure.cn), click **Browse** > **Virtual machines** > *your Linux virtual machine* > **Reset Remote Access**. Here is an example.
+To reset the SSH configuration in the [Azure Management Portal](https://manage.windowsazure.cn), click **Browse** > **Virtual machines** > *your Linux virtual machine* > **Reset Remote Access**. Here is an example.
 
 ![](./media/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/Portal-RDP-Reset-Linux.png)
 
-To reset the name and password of the user account with sudo privileges or the SSH public key in the [Azure Preview Portal](https://manage.windowsazure.cn), click **Browse** > **Virtual machines** > *your Linux virtual machine* > **All settings** > **Password reset**. Here is an example.
+To reset the name and password of the user account with sudo privileges or the SSH public key in the [Azure Management Portal](https://manage.windowsazure.cn), click **Browse** > **Virtual machines** > *your Linux virtual machine* > **All settings** > **Password reset**. Here is an example.
 
 ![](./media/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/Portal-PW-Reset-Linux.png)
 
@@ -46,7 +46,7 @@ The VMAccess extension doesn't need to be installed before you can use it. As lo
 
 ## Use the Azure CLI
 
-With the Azure CLI, you will be able to use the **azure** command from your command-line interface (Bash, Terminal, Command prompt) to access commands. Run **azure vm extension set –help** for detailed extension usage.
+With the Azure CLI, you will be able to use the **azure** command from your command-line interface (Bash, Terminal, Command prompt) to access commands. Run **azure vm extension set -help** for detailed extension usage.
 
 With the Azure CLI, you can do the following tasks:
 
@@ -70,7 +70,7 @@ Step 1: Create a file named PrivateConf.json with these contents, substituting f
 
 Step 2: Run this command, substituting the name of your virtual machine for "vmname".
 
-	azure vm extension set vmname VMAccessForLinux Microsoft.OSTCExtensions 1.* –-private-config-path PrivateConf.json
+	azure vm extension set vmname VMAccessForLinux Microsoft.OSTCExtensions 1.* --private-config-path PrivateConf.json
 
 ### <a name="sshkeyresetcli"></a>Reset the SSH key
 
@@ -257,7 +257,7 @@ To display the status of the VMAccess extension, run this command.
 
 
 <!--Link references-->
-[Azure Linux Agent User Guide]: /documentation/articles/virtual-machines-linux-agent-user-guide
-[How to install and configure Azure PowerShell]: /documentation/articles/install-configure-powershell
-[Azure VM Extensions and Features]: http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx
+[Azure Linux Agent User Guide]: virtual-machines-linux-agent-user-guide.md
+[How to install and configure Azure PowerShell]: ../install-configure-powershell.md
+[Azure VM Extensions and Features]: virtual-machines-extensions-features.md
 [Connect to an Azure virtual machine with RDP or SSH]: http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx

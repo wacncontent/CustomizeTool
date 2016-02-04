@@ -13,7 +13,7 @@
 
 #  Configure an ExpressRoute connection through an Exchange Provider
 
-To configure your ExpressRoute connection through an exchange provider, you’ll need to complete multiple steps in the proper order. These instructions will help you do the following:
+To configure your ExpressRoute connection through an exchange provider, you'll need to complete multiple steps in the proper order. These instructions will help you do the following:
 
 - Create and Manage ExpressRoute circuits
 - Configure BGP peering for ExpressRoute circuits
@@ -35,7 +35,7 @@ Before you begin configuration, verify that you have met the following prerequis
 	- MD5 hash if you need an authenticated BGP session
 	- VLAN IDs on which traffic will be sent. You will need 2 VLAN IDs for each circuit: one for virtual networks and the other for services hosted on public IP addresses.
 	- [Autonomous System (AS) Numbers](http://www.iana.org/assignments/as-numbers/as-numbers.xhtml) for your network.
-	- Two 1 Gbps / 10 Gbps cross-connects to the Exchange provider’s Ethernet Exchange.
+	- Two 1 Gbps / 10 Gbps cross-connects to the Exchange provider's Ethernet Exchange.
 	- A pair of routers capable of supporting BGP for routing
 
 ##  Deployment workflow
@@ -54,7 +54,7 @@ Windows PowerShell is a powerful scripting environment that you can use to contr
 
 2. **Get the list of providers, locations, and bandwidths supported.**
 
-	Before creating a circuit you will need a list of service providers, supported locations, and bandwidth options for each location. The following PowerShell cmdlet returns this information which you’ll use in later steps.
+	Before creating a circuit you will need a list of service providers, supported locations, and bandwidth options for each location. The following PowerShell cmdlet returns this information which you'll use in later steps.
 
     	PS C:\> Get-AzureDedicatedCircuitServiceProvider
 		**The information returned will look similar to the example below:**
@@ -154,19 +154,19 @@ Windows PowerShell is a powerful scripting environment that you can use to contr
 		$VLAN = <your vlan ID>
 
 		#Create a new bgp peering session
-		New-AzureBGPPeering -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN VlanId $VLAN –AccessType Private
+		New-AzureBGPPeering -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN VlanId $VLAN -AccessType Private
 		#Get BGP parameters and Azure ASN
-		Get-AzureBGPPeering -ServiceKey $ServiceKey –AccessType Private
+		Get-AzureBGPPeering -ServiceKey $ServiceKey -AccessType Private
 		#Update BGP peering config
-		Set-AzureBGPPeering  -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN -VlanId $VLAN –AccessType Private
+		Set-AzureBGPPeering  -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN -VlanId $VLAN -AccessType Private
 		#Removing BGP peering config
-		Remove-AzureBGPPeering -ServiceKey $ServiceKey –AccessType Private
+		Remove-AzureBGPPeering -ServiceKey $ServiceKey -AccessType Private
 
 	You can get routing information for a circuit using Get-AzureBGPPeering by providing the service key. You can also update the BGP settings using Set-AzureBGPPeering. The BGP session will not come up when this command is run. The circuit must be linked with at least one VNet to get the BGP session up.
 
-	The response below will provide you with the information that you will need for the next steps. Use the peer ASN to configure BGP on your router’s VRFs.
+	The response below will provide you with the information that you will need for the next steps. Use the peer ASN to configure BGP on your router's VRFs.
 
-		PS C:\> New-AzureBGPPeering -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN -VlanId $VLAN –AccessType Private
+		PS C:\> New-AzureBGPPeering -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN -VlanId $VLAN -AccessType Private
 
 		AzureAsn            : 12076
 		PeerAsn             : 65001
@@ -189,19 +189,19 @@ Windows PowerShell is a powerful scripting environment that you can use to contr
 		$VLAN = <your vlan ID>
 
 		#Create a new bgp peering session
-		New-AzureBGPPeering -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN -VlanId $VLAN –AccessType Public
+		New-AzureBGPPeering -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN -VlanId $VLAN -AccessType Public
 		#Get BGP parameters and Azure ASN
-		Get-AzureBGPPeering -ServiceKey $ServiceKey –AccessType Public
+		Get-AzureBGPPeering -ServiceKey $ServiceKey -AccessType Public
 		#Update BGP peering config
-		Set-AzureBGPPeering  -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN -VlanId $VLAN –AccessType Public
+		Set-AzureBGPPeering  -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN -VlanId $VLAN -AccessType Public
 		#Removing BGP peering config
-		Remove-AzureBGPPeering -ServiceKey $ServiceKey –AccessType Public
+		Remove-AzureBGPPeering -ServiceKey $ServiceKey -AccessType Public
 
 	You can get routing information for a circuit using Get-AzureBGPPeering by providing the service key. You can also update the BGP settings using Set-AzureBGPPeering. The BGP session will not come up when this command is run. The circuit must be linked with at least one VNet to get the BGP session up.
 
-	The response below will provide you with the information that you will need for the next steps. Use the peer ASN to configure BGP on your router’s VRFs.
+	The response below will provide you with the information that you will need for the next steps. Use the peer ASN to configure BGP on your router's VRFs.
 
-		PS C:\> New-AzureBGPPeering -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN -VlanId $VLAN –AccessType Private
+		PS C:\> New-AzureBGPPeering -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN -VlanId $VLAN -AccessType Private
 
 		AzureAsn            : 12076
 		PeerAsn             : 65001

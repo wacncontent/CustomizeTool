@@ -27,7 +27,7 @@ Replace this comment with the following line inside the `@interface` declaration
 ```
 
 
-* In the Management Portal, click **Mobile Services**, and then click the mobile service. Click the **Dashboard** tab and make a note of the **Site URL**. Then click **Manage Keys** and make a note of the **Application Key**. You will need these values when accessing the mobile service from your app code.
+* In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Mobile Services**, and then click the mobile service. Click the **Dashboard** tab and make a note of the **Site URL**. Then click **Manage Keys** and make a note of the **Application Key**. You will need these values when accessing the mobile service from your app code.
 
 
 * In **TodoService.m**, locate the following line:
@@ -88,14 +88,15 @@ self.items = [results mutableCopy];
 
 * Locate the **addItem** method, and replace its body with the following code. This code sends an insert request to the mobile service.
 
-        // Insert the item into the TodoItem table and add to the items array on completion
-        [self.table insert:item completion:^(NSDictionary *result, NSError *error) {
-            NSUInteger index = [items count];
-            [(NSMutableArray *)items insertObject:item atIndex:index];
+```
+// Insert the item into the TodoItem table and add to the items array on completion
+[self.table insert:item completion:^(NSDictionary *result, NSError *error) {
+    NSUInteger index = [items count];
+    [(NSMutableArray *)items insertObject:item atIndex:index];
 
-            // Let the caller know that we finished
-            completion(index);
-        }];
+    // Let the caller know that we finished
+    completion(index);
+}];
 ```
 
 
@@ -111,10 +112,10 @@ Replace the body of the method, from that point to the end of the method, with t
 // Update the item in the TodoItem table and remove from the items array on completion
 [self.table update:mutable completion:^(NSDictionary *item, NSError *error) {
 
-            // Get a fresh index in case the list has changed
-            NSUInteger index = [items indexOfObjectIdenticalTo:mutable];
+    // Get a fresh index in case the list has changed
+    NSUInteger index = [items indexOfObjectIdenticalTo:mutable];
 
-            [mutableItems removeObjectAtIndex:index];
+    [mutableItems removeObjectAtIndex:index];
 
     // Let the caller know that we have finished
     completion(index);
@@ -132,14 +133,14 @@ Replace the body of the method, from that point to the end of the method, with t
         return;
     }
 
-          NSDictionary *item = @{ @"text" : itemText.text, @"complete" : @NO };
-          UITableView *view = self.tableView;
-          [self.todoService addItem:item completion:^(NSUInteger index)
-          {
-              NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-              [view insertRowsAtIndexPaths:@[ indexPath ]
-                          withRowAnimation:UITableViewRowAnimationTop];
-          }];
+    NSDictionary *item = @{ @"text" : itemText.text, @"complete" : @NO };
+    UITableView *view = self.tableView;
+    [self.todoService addItem:item completion:^(NSUInteger index)
+    {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+        [view insertRowsAtIndexPaths:@[ indexPath ]
+                    withRowAnimation:UITableViewRowAnimationTop];
+    }];
 
     itemText.text = @"";
 }

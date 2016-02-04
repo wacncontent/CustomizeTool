@@ -4,19 +4,19 @@ deleted:
 
 		[AZURE.INCLUDE [preview-portal](../includes/hdinsight-azure-preview-portal.md)]
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		> [AZURE.NOTE] Linux-based HDInsight clusters have Tez enabled by default.
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		- [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data)
 
-reason: ()
+reason: (google facebook twitter)
 
 replacement:
 
@@ -40,5 +40,5 @@ replaced by:
 		2. If you already have a cluster up and running, you can also increase the scale without deleting and recreating the cluster. This is shown below.
 		![scaleout_1][image-hdi-optimize-hive-scaleout_2]
 
-reason: ()
+reason: (the new Ibiza portal)
 

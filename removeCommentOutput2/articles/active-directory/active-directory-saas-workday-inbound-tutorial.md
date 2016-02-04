@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 
@@ -85,7 +85,7 @@ The objective of this section is to outline how to enable the application integr
 
 
 2. Complete the **Create Integration System User** task by supplying a user name and password for a new Integration System User.  Leave the Require New Password at Next Sign In option unchecked, because this user will be logging on programmatically. <br>
-Leave the Session Timeout Minutes with its default value of 0, which will prevent the user’s sessions from timing out prematurely. <br><br>   ![Create Integration System User](./media/active-directory-saas-workday-inbound-tutorial/IC750980.png "Create Integration System User")
+Leave the Session Timeout Minutes with its default value of 0, which will prevent the userâs sessions from timing out prematurely. <br><br>   ![Create Integration System User](./media/active-directory-saas-workday-inbound-tutorial/IC750980.png "Create Integration System User")
  
 
 
@@ -99,7 +99,7 @@ For the scenario outlined in this tutorial, you need to create an unconstrained 
 1. Enter create security group in the search box, and then click **Create Security Group**. <br><br>   ![CreateSecurity Group](./media/active-directory-saas-workday-inbound-tutorial/IC750981.png "CreateSecurity Group")
  
 
-2. Complete the Create Security Group task.  Select Integration System Security Group—Unconstrained from the Type of Tenanted Security Group dropdown, to create a security group to which members will be explicitly added. <br><br>   ![CreateSecurity Group](./media/active-directory-saas-workday-inbound-tutorial/IC750982.png "CreateSecurity Group")
+2. Complete the Create Security Group task.  Select Integration System Security GroupâUnconstrained from the Type of Tenanted Security Group dropdown, to create a security group to which members will be explicitly added. <br><br>   ![CreateSecurity Group](./media/active-directory-saas-workday-inbound-tutorial/IC750982.png "CreateSecurity Group")
  
 
 

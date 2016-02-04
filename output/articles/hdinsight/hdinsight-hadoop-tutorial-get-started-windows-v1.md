@@ -10,23 +10,33 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/07/2015"
+	ms.date="11/29/2015"
 	wacn.date=""/>
 
 
 # Hadoop tutorial: Get started with Hadoop and a Hive query in HDInsight on Windows
 
+> [AZURE.SELECTOR]
+- [Windows](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
+- [Linux](/documentation/articles/hdinsight-hadoop-linux-get-started)
+
 To help you learn Hadoop on Windows and start using HDInsight, this tutorial shows you how to run a Hive query on unstructured data in a Hadoop cluster and then analyze the results in Microsoft Excel.
 
 [AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
-* [Get started with Hadoop in HDInsight on Windows](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows)
+* [Get started with Hadoop in HDInsight on Windows](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 
 ## What does this Hadoop tutorial accomplish?
 
 Assume you have a large unstructured data set and you want to run a Hive query on it to extract some meaningful information. That's exactly what we are going to do in this tutorial. Here's how we achieve this:
 
    !["Hadoop tutorial: Create an account; provision a Hadoop cluster; submit a Hive query; analyze data in Excel.][image-hdi-getstarted-flow]
+
+Watch a demo video of this tutorial to learn Hadoop on HDInsight:
+
+![Video of a first Hadoop tutorial: Submit a Hive query on a Hadoop cluster, and analyze results in Excel.][img-hdi-getstarted-video]
+
+**[Watch the Hadoop tutorial for HDInsight on YouTube](https://www.youtube.com/watch?v=Y4aNjnoeaHA&list=PLDrz-Fkcb9WWdY-Yp6D4fTC1ll_3lU-QS)**
 
 
 In conjunction with the general availability of Azure HDInsight, Microsoft also provides HDInsight Emulator for Azure, formerly known as *Microsoft HDInsight Developer Preview*. The Emulator targets developer scenarios and only supports single-node deployments. For information about using HDInsight Emulator, see [Get Started with the HDInsight Emulator][hdinsight-emulator].
@@ -62,13 +72,13 @@ This tutorial uses only the default blob and the default storage account.
 
 	![Azure Management Portal where you can use Quick Create to set up a new storage account.][image-hdi-storageaccount-quickcreate]
 
->[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster. These are:  **China North**, **China East**.
+>[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster. These are:  **China East**, **China North**, **China North**, **West Europe**, **China East**, **China North**, **China North**, **China East**.
 
-Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**—either of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount] .
+Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**âeither of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount] .
 
 ##<a name="provision"></a>Provision a Hadoop cluster
 
-When you provision a cluster, you provision Azure compute resources that contain Hadoop and related applications. In this section, you provision an HDInsight version 3.1 cluster, which is based on Hadoop version 2.4. You can also create Hadoop clusters for other versions by using the Azure Management Portal, HDInsight PowerShell cmdlets, or the HDInsight .NET SDK. For instructions, see [Provision HDInsight clusters using custom options][hdinsight-provision]. For information about HDInsight versions and their SLAs, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning).
+When you provision a cluster, you provision Azure compute resources that contain Hadoop and related applications. In this section, you provision an HDInsight version 3.1 cluster, which is based on Hadoop version 2.4. You can also create Hadoop clusters for other versions by using the Azure Management Portal, HDInsight PowerShell cmdlets, or the HDInsight .NET SDK. For instructions, see [Provision HDInsight clusters using custom options][hdinsight-provision]. For information about HDInsight versions and their SLAs, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1).
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
@@ -119,6 +129,7 @@ Sample | What does it do?
 ------ | ---------------
 [Sensor data analysis][hdinsight-sensor-data-sample] | Learn how to use HDInsight to process historical data that is produced by heating, ventilation, and air conditioning (HVAC) systems to identify systems that are not able to reliably maintain a set temperature.
 [Website log analysis][hdinsight-weblogs-sample] | Learn how to use HDInsight to analyze website log files to get insight into the frequency of visits to the website in a day from external websites, and a summary of website errors that the users experience.
+[Twitter trend analysis](/documentation/articles/hdinsight-analyze-twitter-data) | Learn how to use HDInsight to analyze trends in Twitter.
 
 
 
@@ -152,7 +163,7 @@ Now that you have provisioned an HDInsight cluster, the next step is to run a Hi
 
     ![Job Start Time listed in the Job History tab of the HDInsight cluster dashboard.][img-hdi-dashboard-query-select-result-output]
 
-    The page also shows the **Job Output** and the **Job Log**. You also have the option to download the output file (_stdout) and the log file \(_stderr).
+    The page also shows the **Job Output** and the **Job Log**. You also have the option to download the output file (\_stdout) and the log file \(_stderr).
 
 
 **To browse to the output file**
@@ -209,35 +220,42 @@ In this Hadoop tutorial, you learned how to provision a Hadoop cluster on Window
 - [Develop Java MapReduce programs for HDInsight][hdinsight-develop-mapreduce]
 
 
-[1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
-[hadoop-hdinsight-intro]: /documentation/articles/hdinsight-hadoop-introduction
-[hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
-[hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
+[1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started.md
+
+[hdinsight-versions]: hdinsight-component-versioning-v1.md
+
+
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-use-oozie]: hdinsight-use-oozie.md
+[hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
+[hdinsight-emulator]: hdinsight-hadoop-emulator-get-started.md
+[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
+[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
+[hadoop-hdinsight-intro]: hdinsight-hadoop-introduction.md
+[hdinsight-weblogs-sample]: hdinsight-hive-analyze-website-log.md
+[hdinsight-sensor-data-sample]: hdinsight-hive-analyze-sensor-data.md
+
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-create-storageaccount]: ../storage-create-storage-account.md
+
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-hive]: https://cwiki.apache.org/confluence/display/Hive/Home%3bjsessionid=AF5B37E667D7DBA633313BB2280C9072
 [apache-mapreduce]: http://wiki.apache.org/hadoop/MapReduce
 [apache-hdfs]: http://hadoop.apache.org/docs/r1.0.4/hdfs_design.html
-[hdinsight-hbase-custom-provision]: /documentation/articles/hdinsight-hbase-tutorial-get-started
+[hdinsight-hbase-custom-provision]: hdinsight-hbase-tutorial-get-started-v1.md
+
+
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
-[powershell-open]: /documentation/articles/install-configure-powershell#Install
+[powershell-install-configure]: ../install-configure-powershell.md
+[powershell-open]: /documentation/articles/powershell-install-configure#Install
 
 
 [img-hdi-dashboard]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.png

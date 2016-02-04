@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Active Directory hybrid identity design considerations- determine multi-factor authentication requirements"
+	pageTitle="Azure Active Directory hybrid identity design considerations - determine multi-factor authentication requirements"
 	description="With Conditional access control, Azure Active Directory checks the specific conditions you pick when authenticating the user and before allowing access to the application. Once those conditions are met, the user is authenticated and allowed access to the application."
 	documentationCenter=""
 	services="active-directory"
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/11/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Determine multi-factor authentication requirements for your hybrid identity solution
@@ -30,9 +30,9 @@ If yes, what type of remote access?You also need to evaluate where the users who
 
 - Where are the users going to be located?
 - Can they be located anywhere?
-- Does your company want to establish restrictions according to the user’s location?
+- Does your company want to establish restrictions according to the userâs location?
 
-Once you understand these requirements, it is important to also evaluate the user’s requirements for multi-factor authentication. This evaluation is important because it will define the requirements for rolling out multi-factor authentication. Make sure to answer the following questions:
+Once you understand these requirements, it is important to also evaluate the userâs requirements for multi-factor authentication. This evaluation is important because it will define the requirements for rolling out multi-factor authentication. Make sure to answer the following questions:
 
 - Are the users familiar with multi-factor authentication?
 - Will some uses be required to provide additional authentication?  

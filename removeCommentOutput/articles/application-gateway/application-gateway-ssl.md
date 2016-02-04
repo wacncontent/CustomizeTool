@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Configure Application Gateway for SSL offload | Windows Azure"
-   description="This article provides instructions to configure SSL offload on an Azure Application Gateway."
+   pageTitle="Configure an application gateway for SSL offload using classic deployment| Windows Azure"
+   description="This article provides instructions to create an application gateway with SSL offload using Azure classic deployment model."
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
@@ -8,12 +8,19 @@
    editor="tysonn"/>
 <tags
 	ms.service="application-gateway"
-	ms.date="09/25/2015"
+	ms.date="10/28/2015"
 	wacn.date=""/>
 
-# Configure an Application Gateway for SSL offload
+# Configure an application gateway for SSL offload using classic deployment model 
 
-Application Gateway can be configured to terminate the SSL session at the gateway, which can avoid costly SSL decryption on the web farm. SSL offload also simplifies the frontend server setup and management of the application.
+> [AZURE.SELECTOR]
+-[Azure Classic Powershell](/documentation/articles/application-gateway-ssl)
+-[Azure Resource Manager Powershell](/documentation/articles/application-gateway-ssl-arm)
+
+Application Gateway can be configured to terminate the SSL session at the gateway to avoid costly SSL decryption task to happen at the web farm. SSL offload also simplifies the front end server setup and management of the web site.
+
+>[AZURE.IMPORTANT] Before you work with Azure resources, it's important to understand that Azure currently has two deployment models: Resource Manager, and classic deployment model. Make sure you understand [deployment models and tools](/documentation/articles/azure-classic-rm) before working with any Azure resource. You can view the documentation for different tools by clicking the tabs at the top of this article.This document will cover creating an application gateway using Azure classic deployment model . To use the Azure Resource Manager version, go to [Configure application gateway SSL offload using Azure Resource Manager](/documentation/articles/application-gateway-ssl-arm).
+
 
 ## Before you begin
 
@@ -21,7 +28,7 @@ Application Gateway can be configured to terminate the SSL session at the gatewa
 2. Verify that you have a working virtual network with a valid subnet.
 3. Verify that you have backend servers either in the virtual network, or with a public IP/VIP assigned.
 
-To configure SSL offload on an Application Gateway, do the following steps in the order listed.
+To configure SSL offload on an application gateway, do the following steps in the order listed.
 
 1. [Create a new application gateway](#create-a-new-application-gateway)
 2. [Upload SSL certificates](#upload-ssl-certificates) 
@@ -103,15 +110,15 @@ An application gateway configuration consists of multiple values. The values can
 
 The values are:
  
-- **Backend server pool:** The list of IP addresses of the backend servers. The IP addresses listed should either belong to the VNet subnet, or should be a public IP/VIP. 
-- **Backend server pool settings:** Every pool has settings like port, protocol, and cookie based affinity. These settings are tied to a pool and are applied to all servers within the pool.
-- **Frontend Port:** This port is the public port opened on the application gateway. Traffic hits this port, and then gets redirected to one of the backend servers.
-- **Listener:** The listener has a frontend port, a protocol (Http or Https, these are case-sensitive), and the SSL certificate name (if configuring SSL offload). 
-- **Rule:** The rule binds the listener and the backend server pool and defines which backend server pool the traffic should be directed to when it hits a particular listener. Currently, only the *basic* rule is supported. The *basic* rule is round-robin load distribution.
+- **Back end server pool:** The list of IP addresses of the back end servers. The IP addresses listed should either belong to the VNet subnet, or should be a public IP/VIP. 
+- **Back end server pool settings:** Every pool has settings like port, protocol, and cookie based affinity. These settings are tied to a pool and are applied to all servers within the pool.
+- **Front end Port:** This port is the public port opened on the application gateway. Traffic hits this port, and then gets redirected to one of the back end servers.
+- **Listener:** The listener has a front end port, a protocol (Http or Https, these are case-sensitive), and the SSL certificate name (if configuring SSL offload). 
+- **Rule:** The rule binds the listener and the back end server pool and defines which back end server pool the traffic should be directed to when it hits a particular listener. Currently, only the *basic* rule is supported. The *basic* rule is round-robin load distribution.
 
 **Additional configuration notes:**
 
-For SSL certificates configuration, the protocol in **HttpListener** should change to *Https* (case sensitive). The **SslCert** element needs to be added to **HttpListener** with the value set to the same name as used in upload of SSL certificates section above. The frontend port should be updated to 443.
+For SSL certificates configuration, the protocol in **HttpListener** should change to *Https* (case sensitive). The **SslCert** element needs to be added to **HttpListener** with the value set to the same name as used in upload of SSL certificates section above. The front end port should be updated to 443.
 
 **To enable cookie based affinity**: An application gateway can be configured to ensure that request from a client session is always directed to the same VM in the web farm. This is done by injection of a session cookie which allows the gateway to direct traffic appropriately. To enable cookie based affinity, set **CookieBasedAffinity** to *Enabled* in the **BackendHttpSettings** element. 
 

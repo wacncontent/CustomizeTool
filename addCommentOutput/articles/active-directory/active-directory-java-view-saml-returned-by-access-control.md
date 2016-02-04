@@ -23,13 +23,13 @@ For more information on ACS, see the [Next steps](#next_steps) section.
 > [AZURE.NOTE]
 > The Azure Access Services Control Filter is a community technology preview. As pre-release software, it is not formally supported by Microsoft.
 
-<!-- deleted by customization
 ## Prerequisites
--->
-<!-- keep by customization: begin -->
-## <a name="pre"></a>Prerequisites
-<!-- keep by customization: end -->
 
+<!-- keep by customization: begin -->
+
+## <a name="pre"></a>Prerequisites
+
+<!-- keep by customization: end -->
 To complete the tasks in this guide, complete the sample at [How to Authenticate Web Users with Azure Access Control Service Using Eclipse][] and use it as the starting point for this tutorial.
 
 ## <!-- deleted by customization Add --><!-- keep by customization: begin --> <a name="add_library"></a>Add <!-- keep by customization: end --> the JspWriter library to your build path and deployment assembly
@@ -191,7 +191,7 @@ Modify **index.jsp** to use the following code.
 <!-- keep by customization: end -->
 
 1. Run your application in the computer emulator or deploy to Azure, using the steps documented at [How to Authenticate Web Users with Azure Access Control Service Using Eclipse][].
-2. Launch a browser and open your web application. After you log on to your application, you'll see SAML information, including the security assertion provided by the identity provider.
+2. Launch a browser and open your web site. After you log on to your application, you'll see SAML information, including the security assertion provided by the identity provider.
 
 <!-- deleted by customization
 ## Next steps
@@ -207,7 +207,12 @@ To further explore ACS's functionality and to experiment with more sophisticated
 [Add the JspWriter library to your build path and deployment assembly]: #add_library
 [Run the application]: #run_application
 [Next steps]: #next_steps
+<!-- deleted by customization
 [Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
+[How to Authenticate Web Users with Azure Access Control Service Using Eclipse]: ../active-directory-java-authenticate-users-access-control-eclipse
+-->
+<!-- keep by customization: begin -->
+[Access Control Service 2.0]: http://msdn.microsoft.com/zh-cn/library/hh147631.aspx
 [How to Authenticate Web Users with Azure Access Control Service Using Eclipse]: /documentation/articles/active-directory-java-authenticate-users-access-control-eclipse
-[saml_output]: ./media/active-directory-java-view-saml-returned-by-access-control/SAML_Output.png
- 
+<!-- keep by customization: end -->
+[saml_output]: ./media/active-directory-java-view-saml-returned-by-access-control/SAML_Output.png

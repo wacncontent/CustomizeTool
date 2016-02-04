@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Learn about features in BizTalk Services editions | Microsoft Azure"
+	pageTitle="Learn about features in BizTalk Services editions | Windows Azure"
 	description="Compare the capabilities of the BizTalk Services editions: Free, Developer, Basic, Standard, and Premium. MABS, WABS."
 	services="biztalk-services"
 	documentationCenter=""
@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="biztalk-services"
-	ms.workload="integration"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
 	ms.date="09/08/2015"
-	ms.author="mandia"/>
+	wacn.date=""/>
 
 
 # BizTalk Services: Editions chart
@@ -60,7 +56,7 @@ The following table lists the differences.
 
 <tr>
 <td><strong>Starting price</strong></td>
-<td colspan="5"><a HREF="http://go.microsoft.com/fwlink/p/?LinkID=304011"> Azure BizTalk Services Pricing</a> <br/><br/> <a HREF="http://azure.microsoft.com/pricing/calculator/?scenario=full"> Azure Pricing Calculator</a></td>
+<td colspan="5"><a HREF="http://go.microsoft.com/fwlink/p/?LinkID=304011"> Azure BizTalk Services Pricing</a> <br/><br/> <a HREF="/pricing/calculator/?scenario=full"> Azure Pricing Calculator</a></td>
 </tr>
 <tr>
 <td><strong>Default minimum configuration</strong></td>
@@ -214,18 +210,18 @@ BizTalk Services provides a true Platform-as-a-Service (PaaS) architecture for b
 
 - No need to manage or patch virtual machines.
 - Microsoft ensures availability.
-- You control scale on-demand by simply requesting more or less capacity through the Azure portal.
+- You control scale on-demand by simply requesting more or less capacity through the Azure Management Portal.
 
 BizTalk Server on Azure Virtual Machines provides an Infrastructure-as-a-Service (IaaS) architecture. You  create virtual machines and configure them exactly like your on-premises environment, making it easier to run existing applications in the cloud with no code changes. With IaaS, you are still responsible for configuring the virtual machines,  managing the virtual machines (for example, installing software and OS patches), and  architecting the application for high availability.
 
 If you are looking at building new integration solutions that minimize your infrastructure management effort, use BizTalk Services. If you are looking to quickly migrate your existing BizTalk solutions or looking for an on-demand environment to develop and test BizTalk Server applications, use BizTalk Server on an Azure Virtual Machine.
 
 #### What is the difference between BizTalk Adapter Service and Hybrid Connections?
-The BizTalk Adapter Service is used by an Azure BizTalk Service. The BizTalk Adapter Service uses the BizTalk Adapter Pack to connect to an on-premises Line of Business (LOB) system. A Hybrid Connection provides an easy and convenient way to connect Azure applications, like the Web Apps feature in Azure App Service and Azure Mobile Services, to an on-premises resource.
+The BizTalk Adapter Service is used by an Azure BizTalk Service. The BizTalk Adapter Service uses the BizTalk Adapter Pack to connect to an on-premises Line of Business (LOB) system. A Hybrid Connection provides an easy and convenient way to connect Azure applications, like the web sites feature in Azure Websites and Azure Mobile Services, to an on-premises resource.
 
 #### What does "Hybrid Connection Data Transfer (GB) per unit" mean? Is this per minute/hour/day/week/month? What happens when the limit is reached?
 
-The Hybrid Connection cost per unit depends on the BizTalk Services edition. Simply put, costs  depend on how much data you transfer. For example, transferring 10 GB data daily costs less than transferring 100 GB daily. Use the [Pricing Calculator](http://azure.microsoft.com/pricing/calculator/?scenario=full) for BizTalk Services to determine specific costs. Typically, the limits are enforced daily. If you exceed the limit, any overage is charged at the rate of $1 per GB.
+The Hybrid Connection cost per unit depends on the BizTalk Services edition. Simply put, costs  depend on how much data you transfer. For example, transferring 10 GB data daily costs less than transferring 100 GB daily. Use the [Pricing Calculator](/pricing/calculator/?scenario=full) for BizTalk Services to determine specific costs. Typically, the limits are enforced daily. If you exceed the limit, any overage is charged at the rate of $1 per GB.
 
 #### When I create an agreement in BizTalk Services, why does the number of bridges go up by two instead of just one?
 
@@ -237,7 +233,7 @@ You are not able to deploy any new bridges or create any new agreements. To depl
 
 #### How do I migrate from one tier of BizTalk Services to another?
 
-Use the backup and restore flow for migrating from one tier to another. Only some migration paths are supported. Refer to [BizTalk Services: Backup and Restore](biztalk-backup-restore.md) for more details about the supported migration paths.
+Use the backup and restore flow for migrating from one tier to another. Only some migration paths are supported. Refer to [BizTalk Services: Backup and Restore](/documentation/articles/biztalk-backup-restore) for more details about the supported migration paths.
 
 #### Is the BizTalk Adapter Service included in the service? How do I receive the software?
 
@@ -245,13 +241,13 @@ Yes, the BizTalk Adapter Service with the BizTalk Adapter Pack are included with
 
 ## Next steps
 
-To create Azure BizTalk Services in the Azure portal, go to [BizTalk Services: Provisioning using the Azure portal](biztalk-provision-services.md). To start creating applications, go to [Azure BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=235197).
+To create Azure BizTalk Services in the Azure Management Portal, go to [BizTalk Services: Provisioning using the Azure Management Portal](/documentation/articles/biztalk-provision-services). To start creating applications, go to [Azure BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=235197).
 
 ## Additional resources
-- [BizTalk Services: Provisioning using the Azure portal](biztalk-provision-services.md)<br/>
-- [BizTalk Services: Provisioning Status Chart](biztalk-service-state-chart.md)<br/>
-- [BizTalk Services: Dashboard, Monitor and Scale tabs](biztalk-dashboard-monitor-scale-tabs.md)<br/>
-- [BizTalk Services: Backup and restore](biztalk-backup-restore.md)<br/>
-- [BizTalk Services: Throttling](biztalk-throttling-thresholds.md)<br/>
-- [BizTalk Services: Issuer Name and Issuer Key](biztalk-issuer-name-issuer-key.md)<br/>
+- [BizTalk Services: Provisioning using the Azure Management Portal](/documentation/articles/biztalk-provision-services)<br/>
+- [BizTalk Services: Provisioning Status Chart](/documentation/articles/biztalk-service-state-chart)<br/>
+- [BizTalk Services: Dashboard, Monitor and Scale tabs](/documentation/articles/biztalk-dashboard-monitor-scale-tabs)<br/>
+- [BizTalk Services: Backup and restore](/documentation/articles/biztalk-backup-restore)<br/>
+- [BizTalk Services: Throttling](/documentation/articles/biztalk-throttling-thresholds)<br/>
+- [BizTalk Services: Issuer Name and Issuer Key](/documentation/articles/biztalk-issuer-name-issuer-key)<br/>
 - [How do I Start Using the Azure BizTalk Services SDK](http://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>

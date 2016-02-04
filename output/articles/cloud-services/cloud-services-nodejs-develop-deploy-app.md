@@ -3,13 +3,13 @@
 	description="Learn how to create a simple Node.js web application and deploy it to an Azure cloud service."
 	services="cloud-services"
 	documentationCenter="nodejs"
-	authors="MikeWasson"
+	authors="rmcmurray"
 	manager="wpickett"
 	editor=""/>
 
 <tags
 	ms.service="cloud-services"
-	ms.date="08/31/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 
@@ -27,7 +27,7 @@ provide a robust dedicated virtual machine for hosting each role reliably.
 
 For more information on Cloud Services, and how they compare to Azure Websites and Virtual machines, see [Azure Websites, Cloud Services and Virtual Machines comparison](/documentation/articles/choose-web-site-cloud-service-vm).
 
->[AZURE.TIP] Looking to build a simple website? If your scenario involves just a simple website front-end, consider <a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac/">using a lightweight web app.</a> You can easily upgrade to a Cloud Service as your web app grows and your requirements change.
+>[AZURE.TIP] Looking to build a simple website? If your scenario involves just a simple website front-end, consider <a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac">using a lightweight web app.</a> You can easily upgrade to a Cloud Service as your web app grows and your requirements change.
 
 
 By following this tutorial, you will build a simple web application hosted inside a web role. You
@@ -42,7 +42,7 @@ The application is a simple "hello world" application:
 
 > [AZURE.NOTE] This tutorial uses Azure PowerShell, which requires Windows.
 
-- Install and configure [Azure Powershell](/documentation/articles/install-configure-powershell).
+- Install and configure [Azure Powershell](/documentation/articles/powershell-install-configure).
 - Download and install the [Azure SDK for .NET 2.7](http://www.microsoft.com/download/details.aspx?id=48178). In the install setup, select:
     - MicrosoftAzureAuthoringTools
     - MicrosoftAzureComputeEmulator

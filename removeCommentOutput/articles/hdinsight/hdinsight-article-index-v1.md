@@ -1,6 +1,6 @@
 <properties
    pageTitle="HDInsight article index for Azure Management Portal | Windows Azure"
-   description="An index page with links to articles about HDInsight on the Azure Management Portal. Microsoft recommends the Azure preview portal for new Hadoop clusters on HDInsight."
+   description="An index page with links to articles about HDInsight on the Azure Management Portal. Microsoft recommends the Azure Management Portal for new Hadoop clusters on HDInsight."
    services="hdinsight"
    documentationCenter="na"
    authors="cjgronlund"
@@ -19,18 +19,18 @@ Use this index page to find articles covering HDInsight on the [Azure Management
 
 > [AZURE.IMPORTANT]  This documentation index page is for customers who already have solutions deployed to the current Azure Management Portal.
 >
-> Microsoft recommends using the **Azure preview portal** for new HDInsight clusters:
+> Microsoft recommends using the **Azure Management Portal** for new HDInsight clusters:
 >
-> * [Go to HDInsight preview portal documentation](/documentation/services/hdinsight/)
-> * [Go to the Azure preview portal](https://manage.windowsazure.cn/)
+> * [Go to HDInsight Portal documentation](/documentation/services/hdinsight/)
+> * [Go to the Azure Management Portal](https://manage.windowsazure.cn/)
 >
-> For an explanation of the advantages of the preview portal, see [DevOps just got a whole lot more awesome](https://manage.windowsazure.cn).
+> For an explanation of the advantages of the Portal, see [DevOps just got a whole lot more awesome](https://manage.windowsazure.cn).
 >
-> HDInsight on the Azure Management Portal will not receive upgrades after July 2015 and is replaced by the Azure preview portal.
+> HDInsight on the Azure Management Portal will not receive upgrades after July 2015 and is replaced by the Azure Management Portal.
 
 ## Get started
 
-If you're new to Hadoop on HDInsight, go to the [HDInsight documentation page](/documentation/services/hdinsight/) to get started with the Azure preview portal.
+If you're new to Hadoop on HDInsight, go to the [HDInsight documentation page](/documentation/services/hdinsight/) to get started with the Azure Management Portal.
 
 ## Linux
 
@@ -54,7 +54,7 @@ For a complete set of articles about using Linux and Linux clusters, go to the [
 * [Serialize data in Hadoop with the Microsoft Avro Library](/documentation/articles/hdinsight-dotnet-avro-serialization)
 * [Process and analyze JSON documents using Hive](/documentation/articles/hdinsight-using-json-in-hive)
 * [Use Python with Hive and Pig](/documentation/articles/hdinsight-python)
-* [Optimize Hive queries for Hadoop](hdinsight-hadoop-optimize-hive-query–v1.md)
+* [Optimize Hive queries for Hadoop](hdinsight-hadoop-optimize-hive-query-v1âv1.md)
 * [Run Pig jobs using the .NET SDK for Hadoop](hdinsight-hadoop-use-pig-dotnet-sdk-v1.md )
 * [Use C# user-defined functions with Hive and Pig streaming](/documentation/articles/hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
 * [Develop C# Hadoop streaming programs](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs)
@@ -77,7 +77,7 @@ For a complete set of articles about using Linux and Linux clusters, go to the [
 
 ## Apache Spark
 
-For articles about using native Apache Spark clusters in the Azure preview portal, go to the [HDInsight documentation page](/documentation/services/hdinsight/).
+For articles about using native Apache Spark clusters in the Azure Management Portal, go to the [HDInsight documentation page](/documentation/services/hdinsight/).
 
 * [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview)
 * [Install and use Spark on Hadoop clusters](/documentation/articles/hdinsight-hadoop-spark-install)
@@ -110,7 +110,7 @@ For articles about using native Apache Spark clusters in the Azure preview porta
 ## Operations
 
 * [Provision clusters on Windows](/documentation/articles/hdinsight-provision-clusters-v1)
-* [Provision HBase clusters on Azure Virtual Network](/documentation/articles/hdinsight-hbase-provision-vnet)
+* [Provision HBase clusters on Azure Virtual Network](/documentation/articles/hdinsight-hbase-provision-vnet-v1)
 * [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)
 * [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability)
 

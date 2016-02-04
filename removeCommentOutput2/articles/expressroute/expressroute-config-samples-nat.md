@@ -288,7 +288,6 @@ Refer to samples in [Routing configuration samples ](/documentation/articles/exp
 	                    peer-as <Customer_ASN_1>;
 	                    neighbor <BGP_Neighbor_IP_Address>;
 	                }
-	            }
 	        }
 	    }
 	    External_ExpressRoute {
@@ -315,4 +314,3 @@ Refer to samples in [Routing configuration samples ](/documentation/articles/exp
 ## Next steps
 
 See the [ExpressRoute FAQ](/documentation/articles/expressroute-faqs) for more details.
-

@@ -34,7 +34,7 @@ Management credentials are used to create a [**ShardMapManager**](https://msdn.m
 
 The variable **smmAdminConnectionString** is a connection string that contains the management credentials. The user ID and password provides read/write access to both shard map database and individual shards. The management connection string also includes the server name and database name to identify the global shard map database. Here is a typical connection string for that purpose:
 
-	 "Server=<yourserver>.database.chinacloudapi.cn;Database=<yourdatabase>;User ID=<yourmgmtusername>;Password=<yourmgmtpassword>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;” 
+	 "Server=<yourserver>.database.chinacloudapi.cn;Database=<yourdatabase>;User ID=<yourmgmtusername>;Password=<yourmgmtpassword>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" 
 
 Do not use values in the form of "username@server"—instead just use the "username" value.  This is because credentials must work against both the shard map manager database and individual shards, which may be on different servers.
 
@@ -59,14 +59,14 @@ Additional credentials are needed when using the [**OpenConnectionForKey**](http
 
 In this example, **smmUserConnectionString** holds the connection string for the user credentials. For Azure SQL DB, here is a typical connection string for user credentials: 
 
-	"User ID=<yourusername>; Password=<youruserpassword>; Trusted_Connection=False; Encrypt=True; Connection Timeout=30;”  
+	"User ID=<yourusername>; Password=<youruserpassword>; Trusted_Connection=False; Encrypt=True; Connection Timeout=30;"  
 
 As with the admin credentials, do not values in the form of "username@server". Instead, just use "username".  Also note that the connection string does not contain a server name and database name. That is because the **OpenConnectionForKey** call will automatically direct the connection to the correct shard based on the key. Hence, the database name and server name are not provided. 
 
 ## See also
 [Managing databases and logins in Azure SQL Database](/documentation/articles/sql-database-manage-logins)
 
-[How to add a users to an elastic database pool](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs)
+[Securing your SQL Database](/documentation/articles/sql-database-security)
 
 [Getting started with Elastic Database jobs](/documentation/articles/sql-database-elastic-jobs-getting-started)
 

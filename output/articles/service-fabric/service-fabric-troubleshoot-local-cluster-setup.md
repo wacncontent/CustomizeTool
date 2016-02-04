@@ -1,20 +1,16 @@
 <properties
-   pageTitle="Troubleshoot your local Service Fabric cluster setup | Microsoft Azure"
+   pageTitle="Troubleshoot your local Service Fabric cluster setup | Windows Azure"
    description="This article covers a set of suggestions for troubleshooting your local development cluster"
    services="service-fabric"
    documentationCenter=".net"
    authors="seanmck"
-   manager="coreysa"
+   manager="timlt"
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotNet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="10/13/2015"
-   ms.author="seanmck"/>
+	ms.service="service-fabric"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Troubleshoot your local development cluster setup
 
@@ -83,5 +79,5 @@ Ensure that you do not have any service projects set as startup projects in your
 
 ## Next steps
 
-- [Understand and troubleshoot your cluster with system health reports](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
-- [Visualizing your cluster with Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)
+- [Understand and troubleshoot your cluster with system health reports](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports)
+- [Visualizing your cluster with Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster)

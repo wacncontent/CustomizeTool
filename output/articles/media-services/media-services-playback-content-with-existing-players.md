@@ -75,7 +75,6 @@ To test HLS URLs you can also use:
 
 For information about how to develop your own players, see [Developing video players](/documentation/articles/media-services-develop-video-players)
 
-<!-- deleted by customization
 
 
 
@@ -83,7 +82,6 @@ For information about how to develop your own players, see [Developing video pla
 
 [AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
--->
 ##Provide feedback
 
 [AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

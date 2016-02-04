@@ -1,15 +1,15 @@
-<properties
-	pageTitle="Learn More: Azure AD Password Management | Windows Azure"
-	description="Advanced topics on Azure AD Password Management, including how password writeback works, password writeback security, how the password reset portal works, and what data is used by password reset."
-	services="active-directory"
-	documentationCenter=""
-	authors="asteen"
-	manager="kbrint"
+<properties 
+	pageTitle="Learn More: Azure AD Password Management | Windows Azure" 
+	description="Advanced topics on Azure AD Password Management, including how password writeback works, password writeback security, how the password reset portal works, and what data is used by password reset." 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="asteen" 
+	manager="kbrint" 
 	editor="billmath"/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/18/2015"
+	ms.date="11/16/2015"
 	wacn.date=""/>
 
 # Learn more about Password Management
@@ -21,25 +21,26 @@ If you have already deployed Password Management, or are just looking to learn m
   - [Password writeback security model](#password-writeback-security-model)
 * [**How does the password reset portal work?**](#how-does-the-password-reset-portal-work)
   - [What data is used by password reset?](#what-data-is-used-by-password-reset)
+  - [How to access password reset data for your users](#how-to-access-password-reset-data-for-your-users)
 
 ## Password writeback overview
-Password writeback is an [Azure Active Directory Connect](/documentation/articles/active-directory-aadconnect) component that can be enabled and used by the current subscribers of Azure Active Directory Premium. For more information, see [Azure Active Directory Editions](/documentation/articles/active-directory-editions).
+Password writeback is an [Azure Active Directory Connect](/documentation/articles/active-directory-aadconnect) component that can be enabled and used by the current subscribers of Azure Active Directory Premium. For more information, see [Azure Active Directory Editions](/documentation/articles/active-directory-editions). 
 
 Password writeback allows you to configure your cloud tenant to write passwords back to you on-premises Active Directory.  It obviates you from having to set up and manage a complicated on-premises self-service password reset solution, and it provides a convenient cloud-based way for your users to reset their on-premises passwords wherever they are.  Read on for some of the key features of password writeback:
 
 - **Zero delay feedback.**  Password writeback is a synchronous operation.  Your users will be notified immediately if their password did not meet policy or was not able to be reset or changed for any reason.
 - **Supports resetting passwords for users using AD FS or other federation technologies.**  With password writeback, as long as the federated user accounts are synchronized into your Azure AD tenant, they will be able to manage their on-premises AD passwords from the cloud.
-- **Supports resetting passwords for users using password hash sync.** When the password reset service detects that a synchronized user account is enabled for password hash sync, we reset both this account’s on-premises and cloud password simultaneously.
-- **Supports changing passwords from the access panel and Office 365.**  When federated or password sync’d users come to change their expired or non-expired passwords, we’ll write those passwords back to your local AD environment.
-- **Supports writing back passwords when an admin reset them from the** [**Azure Management Portal**](https://manage.windowsazure.cn).  Whenever an admin resets a user’s password in the [Azure Management Portal](https://manage.windowsazure.cn), if that user is federated or password sync’d, we’ll set the password the admin selects on your local AD, as well.  This is currently not supported in the Office Admin Portal.
+- **Supports resetting passwords for users using password hash sync.** When the password reset service detects that a synchronized user account is enabled for password hash sync, we reset both this account's on-premises and cloud password simultaneously.
+- **Supports changing passwords from the access panel and Office 365.**  When federated or password sync'd users come to change their expired or non-expired passwords, we'll write those passwords back to your local AD environment.
+- **Supports writing back passwords when an admin reset them from the** [**Azure Management Portal**](https://manage.windowsazure.cn).  Whenever an admin resets a user's password in the [Azure Management Portal](https://manage.windowsazure.cn), if that user is federated or password sync'd, we'll set the password the admin selects on your local AD, as well.  This is currently not supported in the Office Admin Portal.
 - **Enforces your on-premises AD password policies.**  When a user resets his/her password, we make sure that it meets your on-premises AD policy before committing it to that directory.  This includes history, complexity, age, password filters, and any other password restrictions you have defined in your local AD.
-- **Doesn’t require any inbound firewall rules.**  Password writeback uses an Azure Service Bus relay as an underlying communication channel, meaning that you do not have to open any inbound ports on your firewall for this feature to work.
+- **Doesn't require any inbound firewall rules.**  Password writeback uses an Azure Service Bus relay as an underlying communication channel, meaning that you do not have to open any inbound ports on your firewall for this feature to work.
 - **Is not supported for user accounts that exist within protected groups in your on-premises Active Directory.** For more information about protected groups, see [Protected Accounts and Groups in Active Directory](https://technet.microsoft.com/zh-cn/library/dn535499.aspx).
 
 ### How password writeback works
 Password writeback has three main components:
 
-- Password Reset cloud service (this is also integrated into Azure AD’s password change pages)
+- Password Reset cloud service (this is also integrated into Azure AD's password change pages)
 - Tenant-specific Azure Service Bus relay
 - On-prem password reset endpoint
 
@@ -47,7 +48,7 @@ They fit together as described in the below diagram:
 
   ![][001]
 
-When a federated or password hash sync’d user comes to reset or change his or her password in the cloud, the following occurs:
+When a federated or password hash sync'd user comes to reset or change his or her password in the cloud, the following occurs:
 
 1.	We check to see what type of password the user has.  If we see the password is managed on premises, then we ensure the writeback service is up and running.  If it is, we let the user proceed, if it is not, we tell the user that their password cannot be reset here.
 2.	Next, the user passes the appropriate authentication gates and reaches the reset password screen.
@@ -68,15 +69,15 @@ The table below describes which scenarios are supported for which versions of ou
 ### Password writeback security model
 Password writeback is a highly secure and robust service.  In order to ensure your information is protected, we enable a 4-tiered security model that is described below.
 
-- **Tenant specific service-bus relay** – When you set up the service, we set up a tenant-specific service bus relay that is protected by a randomly generated strong password that Microsoft never has access to.
-- **Locked down, cryptographically strong, password encryption key** – After the service bus relay is created, we create a strong symmetric key which we use to encrypt the password as it comes over the wire.  This key lives only in your tenant's secret store in the cloud, which is heavily locked down and audited, just like any password in the directory.
-- **Industry standard TLS** – When a password reset or change operation occurs in the cloud, we take the plaintext password and encrypt it with your public key.  We then plop that into an HTTPS message which is sent over an encrypted channel using Microsoft’s SSL certs to your service bus relay.  After that message arrives into Service Bus, your on-prem agent wakes up, authenticates to Service Bus using the strong password that had been previously generated, picks up the encrypted message, decrypts it using the private key we generated, and then attempts to set the password through the AD DS SetPassword API.  This step is what allows us to enforce your AD on-prem password policy (complexity, age, history, filters, etc) in the cloud.
-- **Message expiration policies** – Finally, if for some reason the message sits in Service Bus because your on-prem service is down, it will be timed out and removed after several minutes in order to increase security even further.
+- **Tenant specific service-bus relay** - When you set up the service, we set up a tenant-specific service bus relay that is protected by a randomly generated strong password that Microsoft never has access to.
+- **Locked down, cryptographically strong, password encryption key** - After the service bus relay is created, we create a strong symmetric key which we use to encrypt the password as it comes over the wire.  This key lives only in your company's secret store in the cloud, which is heavily locked down and audited, just like any password in the directory.
+- **Industry standard TLS** - When a password reset or change operation occurs in the cloud, we take the plaintext password and encrypt it with your public key.  We then plop that into an HTTPS message which is sent over an encrypted channel using Microsoft's SSL certs to your service bus relay.  After that message arrives into Service Bus, your on-prem agent wakes up, authenticates to Service Bus using the strong password that had been previously generated, picks up the encrypted message, decrypts it using the private key we generated, and then attempts to set the password through the AD DS SetPassword API.  This step is what allows us to enforce your AD on-prem password policy (complexity, age, history, filters, etc) in the cloud.
+- **Message expiration policies** - Finally, if for some reason the message sits in Service Bus because your on-prem service is down, it will be timed out and removed after several minutes in order to increase security even further.
 
 ## How does the password reset portal work?
-When a user navigates to the password reset portal, a workflow is kicked off to determine if that user account is valid, what organization that users belongs to, where that user’s password is managed, and whether or not the user is licensed to use the feature.  Read through the steps below to learn about the logic behind the password reset page.
+When a user navigates to the password reset portal, a workflow is kicked off to determine if that user account is valid, what organization that users belongs to, where that user's password is managed, and whether or not the user is licensed to use the feature.  Read through the steps below to learn about the logic behind the password reset page.
 
-1.	User clicks on the Can’t access your account link or goes directly to [https://passwordreset.microsoftonline.com](https://passwordreset.microsoftonline.com).
+1.	User clicks on the Can't access your account link or goes directly to [https://passwordreset.microsoftonline.com](https://passwordreset.microsoftonline.com).
 2.	User enters a user id and passes a captcha.
 3.	Azure AD verifies if the user is able to use this feature by doing the following:
     - Checks that the user has this feature enabled and an Azure AD license assigned.
@@ -86,9 +87,9 @@ When a user navigates to the password reset portal, a workflow is kicked off to 
           - If the user is not configured, then the user is advised to contact his or her administrator to reset his or her password.
         - If the policy requires two challenges, then it is ensured that the user has the appropriate data defined for at least two of the challenges enabled by the administrator policy.
           - If the user is not configured, then we the user is advised to contact his or her administrator to reset his or her password.
-    - Checks whether or not the user’s password is managed on premises (federated or password hash sync’d).
-       - If writeback is deployed and the user’s password is managed on premises, then the user is allowed to proceed to authenticate and reset his or her password.
-       - If writeback is not deployed and the user’s password is managed on premises, then the user is asked to contact his or her administrator to reset his or her password.
+    - Checks whether or not the user's password is managed on premises (federated or password hash sync'd).
+       - If writeback is deployed and the user's password is managed on premises, then the user is allowed to proceed to authenticate and reset his or her password.
+       - If writeback is not deployed and the user's password is managed on premises, then the user is asked to contact his or her administrator to reset his or her password.
 4.	If it is determined that the user is able to successfully reset his or her password, then the user is guided through the reset process.
 
 Learn more about how to deploy password writeback at [Getting Started: Azure AD Password Management](/documentation/articles/active-directory-passwords-getting-started).
@@ -257,22 +258,117 @@ The following table outlines where and how this data is used during password res
           </tr>
         </tbody></table>
 
-<br/>
-<br/>
-<br/>
+###How to access password reset data for your users
+####Data settable via synchronization
+The following fields can be synchronized from on-premises:
 
-**Additional Resources**
+* Mobile Phone
+* Office Phone
 
+####Data settable with Azure AD PowerShell
+The following fields are accessible with Azure AD PowerShell & the Graph API:
 
-* [What is Password Management](/documentation/articles/active-directory-passwords)
-* [How Password Management works](/documentation/articles/active-directory-passwords-how-it-works)
-* [Getting started with Password Mangement](/documentation/articles/active-directory-passwords-getting-started)
-* [Customize Password Management](/documentation/articles/active-directory-passwords-customize)
-* [Password Management Best Practices](/documentation/articles/active-directory-passwords-best-practices)
-* [How to get Operational Insights with Password Management Reports](/documentation/articles/active-directory-passwords-get-insights)
-* [Password Management FAQ](/documentation/articles/active-directory-passwords-faq)
-* [Troubleshoot Password Management](/documentation/articles/active-directory-passwords-troubleshoot)
-* [Password Management on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)
+* Alternate Email
+* Mobile Phone
+* Office Phone
+* Authentication Phone
+* Authentication Email
+
+####Data settable with registration UI only
+The following fields are only accessible via the SSPR registration UI (https://aka.ms/ssprsetup):
+
+* Security Questions and Answers
+
+####What happens when a user registers?
+When a user registers, the registration page will **always** set the following fields:
+
+* Authentication Phone
+* Authentication Email
+* Security Questions and Answers
+
+If you have provided a value for **Mobile Phone** or **Alternate Email**, users can immediately use those to reset their passwords, even if they haven't registered for the service.  In addition, users will see those values when registering for the first time, and modify them if they wish.  However, after they successfully register, these values will be persisted in the **Authentication Phone** and **Authentication Email** fields, respectively.
+
+This can be a useful way to unblock large numbers of users to use SSPR while still allowing users to validate this information through the registration process.
+
+####Setting password reset data with PowerShell
+You can set values for the following fields with Azure AD PowerShell.
+
+* Alternate Email
+* Mobile Phone
+* Office Phone
+
+To get started, you'll first need to [download and install the Azure AD PowerShell module](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx#bkmk_installmodule).  Once you have it installed, you can follow the steps below to configure each field.
+
+#####Alternate Email
+```
+Connect-MsolService
+Set-MsolUser -UserPrincipalName user@domain.com -AlternateEmailAddresses @("email@domain.com")
+```
+
+#####Mobile Phone
+```
+Connect-MsolService
+Set-MsolUser -UserPrincipalName user@domain.com -MobilePhone "+1 1234567890"
+```
+
+#####Office Phone
+```
+Connect-MsolService
+Set-MsolUser -UserPrincipalName user@domain.com -PhoneNumber "+1 1234567890"
+```
+
+####Reading password reset data with PowerShell
+You can read values for the following fields with Azure AD PowerShell.
+
+* Alternate Email
+* Mobile Phone
+* Office Phone
+* Authentication Phone
+* Authentication Email
+
+To get started, you'll first need to [download and install the Azure AD PowerShell module](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx#bkmk_installmodule).  Once you have it installed, you can follow the steps below to configure each field.
+
+#####Alternate Email
+```
+Connect-MsolService
+Get-MsolUser -UserPrincipalName user@domain.com | select AlternateEmailAddresses
+```
+
+#####Mobile Phone
+```
+Connect-MsolService
+Get-MsolUser -UserPrincipalName user@domain.com | select MobilePhone
+```
+
+#####Office Phone
+```
+Connect-MsolService
+Get-MsolUser -UserPrincipalName user@domain.com | select PhoneNumber
+```
+
+#####Authentication Phone
+```
+Connect-MsolService
+Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthenticationUserDetails | select PhoneNumber
+```
+
+#####Authentication Email
+```
+Connect-MsolService
+Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthenticationUserDetails | select Email
+```
+
+## Links to password reset documentation
+Below are links to all of the Azure AD Password Reset documentation pages: 
+
+* [**Reset your own password**](/documentation/articles/active-directory-passwords-update-your-own-password) - learn about how to reset or change your own password as a user of the system
+* [**How it works**](/documentation/articles/active-directory-passwords-how-it-works) - learn about the six different components of the service and what each does
+* [**Getting started**](/documentation/articles/active-directory-passwords-getting-started) - learn how to allow you users to reset and change their cloud or on-premises passwords
+* [**Customize**](/documentation/articles/active-directory-passwords-customize) - learn how to customize the look & feel and behavior of the service to your organization's needs
+* [**Best practices**](/documentation/articles/active-directory-passwords-best-practices) - learn how to quickly deploy and effectively manage passwords in your organization
+* [**Get insights**](/documentation/articles/active-directory-passwords-get-insights) - learn about our integrated reporting capabilities
+* [**FAQ**](/documentation/articles/active-directory-passwords-faq) - get answers to frequently asked questions
+* [**Troubleshooting**](/documentation/articles/active-directory-passwords-troubleshoot) - learn how to quickly troubleshoot problems with the service
 
 
 

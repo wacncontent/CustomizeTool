@@ -25,13 +25,13 @@ All of the topics in this section assume that you are using Visual Studio as the
 
 ## Sign up for an Account
 
-The first step is to create a Service Bus service namespace, and to obtain a Shared Access Signature (SAS) key. A service namespace provides an application boundary for each application exposed through the Service Bus. The combination of service namespace and SAS key provides a credential for the Service Bus to authenticate access to an application.
+The first step is to create a Service BusÂ service namespace, and to obtain a Shared Access Signature (SAS) key. A service namespace provides an application boundary for each application exposed through the Service Bus. The combination of service namespace and SAS key provides a credential for the Service Bus to authenticate access to an application.
 
 To create a namespace, follow the steps outlined in [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/zh-cn/library/hh690931.aspx).
 
 >[AZURE.NOTE] You do not have to use the same namespace for both client and service applications.
 
-1. In the main window of the Azure Management Portal, click the name of the service namespace you created in the previous step.
+1. In the main window of the [Azure Management Portal][], click the name of the service namespace you created in the previous step.
 
 2. Click **Configure** to view the default shared access policies for your service namespace.
 
@@ -838,3 +838,5 @@ To learn more about Service Bus, see the following topics.
 - [Service Bus messaging overview](/documentation/articles/service-bus-messaging-overview)
 - [Service Bus fundamentals](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 - [Service Bus architecture](/documentation/articles/service-bus-architecture)
+
+[Azure Management Portal]: http://manage.windowsazure.cn

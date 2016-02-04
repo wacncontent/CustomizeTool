@@ -14,7 +14,7 @@
 # Viewing the status of a runbook job in Azure Automation
 
 
-When you start a runbook in Azure Automation, a job is created. A job is a single execution instance of a runbook. A single runbook may have multiple jobs, each with their own set of values for the runbook’s parameters. There are multiple ways to check the status of a particular job and all of the jobs for one or more runbooks.
+When you start a runbook in Azure Automation, a job is created. A job is a single execution instance of a runbook. A single runbook may have multiple jobs, each with their own set of values for the runbook's parameters. There are multiple ways to check the status of a particular job and all of the jobs for one or more runbooks.
 
 ## Job statuses
 
@@ -69,14 +69,14 @@ You can use the following steps to view the jobs for a runbook.
 
 ## Retrieving job status using Windows PowerShell
 
-You can use the [Get-AzureAutomationJob](https://msdn.microsoft.com/zh-CN/library/azure/dn690263.aspx) to retrieve the jobs created for a runbook and the details of a particular job. If you start a runbook with Windows PowerShell using [Start-AzureAutomationRunbook](https://msdn.microsoft.com/zh-CN/library/azure/dn690259.aspx), then it will return the resulting job. Use [Get-AzureAutomationJob](https://msdn.microsoft.com/zh-CN/library/azure/dn690263.aspx)Output to get a job’s output.
+You can use the [Get-AzureAutomationJob](https://msdn.microsoft.com/zh-CN/library/azure/dn690263.aspx) to retrieve the jobs created for a runbook and the details of a particular job. If you start a runbook with Windows PowerShell using [Start-AzureAutomationRunbook](https://msdn.microsoft.com/zh-CN/library/azure/dn690259.aspx), then it will return the resulting job. Use [Get-AzureAutomationJob](https://msdn.microsoft.com/zh-CN/library/azure/dn690263.aspx)Output to get a job's output.
 
-The following sample commands retrieves the last job for a sample runbook and displays it’s status, the values provide for the runbook parameters, and the output from the job.
+The following sample commands retrieves the last job for a sample runbook and displays it's status, the values provide for the runbook parameters, and the output from the job.
 
-	$job = (Get-AzureAutomationJob –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" | sort LastModifiedDate –desc)[0]
+	$job = (Get-AzureAutomationJob -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" | sort LastModifiedDate -desc)[0]
 	$job.Status
 	$job.JobParameters
-	Get-AzureAutomationJobOutput –AutomationAccountName "MyAutomationAccount" -Id $job.Id –Stream Output
+	Get-AzureAutomationJobOutput -AutomationAccountName "MyAutomationAccount" -Id $job.Id -Stream Output
 
 ## Related articles
 

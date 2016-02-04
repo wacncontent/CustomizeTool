@@ -1,24 +1,34 @@
-<properties 
-   pageTitle="Try Azure App Service with Azure Search" 
-   description="Try Azure Search for free, up to one hour, using the TryAzureAppService template." 
-   services="search" 
-   documentationCenter="" 
-   authors="HeidiSteen" 
-   manager="mblythe" 
+<properties
+   pageTitle="Try Azure Search for free with Azure Websites | Windows Azure"
+   description="Try Azure Search for free, up to one hour, using the Azure Websites template."
+   services="search"
+   documentationCenter=""
+   authors="HeidiSteen"
+   manager="mblythe"
    editor=""/>
 
 <tags
-   ms.service="search"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="search" 
-   ms.date="07/13/2015"
-   ms.author="heidist"/>
+	ms.service="search"
+	ms.date="07/13/2015"
+	wacn.date=""/>
 
+<!-- deleted by customization
+# Try Azure Search for free with Azure Websites
+
+[Azure Websites](https://tryappservice.azure.com/) is a new, entirely free way to test-drive selected Azure Services, including Azure Search, for up to one hour with no Azure subscription sign-up required.
+
+The site gives you several templates to choose from. When you select the ASP.NET template that includes Azure Search, you gain one hour of access to a fully functional web site, backed by the services you selected. You won't be able to update or delete any of the data managed by Azure Search - but you can execute queries and make any number of code changes that reshapes the user experience. If the session expires before you're done exploring, you can always start over with another session, or move on to a trial or full subscription if your goal is to create or load an index directly.
+
+On the [Azure Websites](https://tryappservice.azure.com/) site, Azure Search is part of the web site template - providing a rich, full-text search experience along with a slew of search-centric features available only in this service on the Azure platform.
+
+Although other Azure services such as SQL Database offer full-text search, a service like Azure Search gives you tuning control, pagination and counts, hit highlighting, auto-complete query suggestions, natural language support, faceted navigation, filtering and more. As several of our [samples](https://github.com/Azure-Samples?utf8=%E2%9C%93&query=search) demonstrate, it's possible to develop a full-featured search-based application using just Azure Search and ASP.NET.
+
+As part of the [Azure Websites](https://tryappservice.azure.com/) offering, the Azure Search service you'll use has already been created for your and is ready to receive search queries. You cannot upload or use your own index or data. The data you'll work with is from the [United States Geological Survey (USGS)](http://geonames.usgs.gov/domestic/download_data.htm), consisting of about 3 million rows of landmarks, historical sites, buildings, and other landmark features across the US.
+-->
+<!-- keep by customization: begin -->
 # Try Azure App Service with Azure Search
 
-[Try Azure App Service](https://tryappservice.azure.com/) is a new, entirely free way to test-drive selected Azure Services, including Azure Search, for up to one hour with no Azure subscription sign-up required. 
+[Try Azure App Service](https://tryappservice.azure.com/) is a new, entirely free way to test-drive selected Azure Services, including Azure Search, for up to one hour with no Azure subscription sign-up required.
 
 The site gives you several templates to choose from. When you select the ASP.NET template that includes Azure Search, you gain one hour of access to a fully functional web site, backed by the services you selected. You won't be able to update or delete any of the data managed by Azure Search – but you can execute queries and make any number of code changes that reshapes the user experience. If the session expires before you’re done exploring, you can always start over with another session, or move on to a trial or full subscription if your goal is to create or load an index directly.
 
@@ -27,11 +37,20 @@ On the [Try Azure App Service](https://tryappservice.azure.com/) site, Azure Sea
 Although other Azure services such as SQL Database offer full-text search, a service like Azure Search gives you tuning control, pagination and counts, hit highlighting, auto-complete query suggestions, natural language support, faceted navigation, filtering and more. As several of our [samples](https://github.com/AzureSearch) demonstrate, it’s possible to develop a full-featured search-based application using just Azure Search and ASP.NET.
 
 As part of the [Try Azure App Service](https://tryappservice.azure.com/) offering, the Azure Search service you’ll use is read-only – which means you will need to use the search corpus provided in the session. You cannot upload or use your own index or data. The data you’ll work with is from the [United States Geological Survey (USGS)](), consisting of about 3 million rows of landmarks, historical sites, buildings, and other landmark features across the US.
+<!-- keep by customization: end -->
 
-To help you get the most out of your one hour session, the following instructions will walk you through queries and code. 
+To help you get the most out of your one hour session, the following instructions will walk you through queries and code.
 
-Before moving ahead, you might want to take a few minutes review a few key points about the code, service, and searchable data. Having a little background could prove useful if you’re not already familiar with Azure Search. 
+Before moving ahead, you might want to take a few minutes review a few key points about the code, service, and searchable data. Having a little background could prove useful if <!-- deleted by customization you're --><!-- keep by customization: begin --> you’re <!-- keep by customization: end --> not already familiar with Azure Search.
 
+<!-- deleted by customization
+## Facts about the code and Azure Search
+
+Azure Search is a fully managed Platform as a Service [PaaS](https://en.wikipedia.org/wiki/Platform_as_a_service) service that makes it easy for developers to integrate great search experiences in web and mobile applications. Data used in search operations is stored with your search service in Azure, where proximity of data to operations ensures low latency and consistent search behaviors. Drilling into this a bit further:
+
+- Searchable data is stored in an index managed by Azure Search
+-->
+<!-- keep by customization: begin -->
 ##Facts about the code and Azure Search
 
 Azure Search is a service-plus-data [PaaS](https://en.wikipedia.org/wiki/Platform_as_a_service) offering, consisting of a fully managed search service, plus searchable data that you upload when using an unconstrained instance of Azure Search (i.e., when you are not using the Try Azure App Service option).
@@ -40,20 +59,41 @@ Data used in search operations is stored with your search service in Azure, wher
 
 - Search data is stored in an index managed by Azure Search, populated by documents, one document per searchable item. 
 - Most indexes are loaded from a single dataset, prepared in advance by you to include only those fields that are useful in the context of search operations. 
+<!-- keep by customization: end -->
 - The schema that defines your index is user-defined and will specify searchable fields, non-searchable fields that could be useful in a filter expression, and constructs like scoring profiles for tuning results.
+<!-- deleted by customization
+- A search index contains one or more documents (which are similar to a row in a table) which are both searchable and retrievable
+- Most indexes are loaded from a single dataset, prepared in advance by you to include only those fields that are useful in the context of search operations.
+- Data can be auto-loaded by an Indexer (supported for Azure SQL Database or Azure DocumentDB only), or pushed to a search index via one of the Azure Search APIs. When you use the API, you can push data from any data source, as long as it's in JSON format.
+
+In the [Azure Websites](https://tryappservice.azure.com/) option, the "ASP.NET + Azure Search Site" template provides source code for the web site, modifiable in Visual Studio Online (available as a part of the one-hour session). No separate development tools are required to view or change the code.
+
+Code is written in C#, using the [Azure Search .NET client library](https://msdn.microsoft.com/zh-cn/library/dn951165.aspx) to execute queries against the index, provide faceted navigation, and display counts and search results in a web page.
+-->
+<!-- keep by customization: begin -->
 - Data can be auto-loaded by an Indexer (supported for Azure SQL Database or Azure DocumentDB only), or pushed to a search index via one of the Azure Search APIs. When you use the API, you can push data from any data source, as long as it’s in JSON format.
 
 In the [Try Azure App Service](https://tryappservice.azure.com/) option, the ASP.NET + Azure Search Site template provides source code for the Web application, modifiable in Visual Studio Online (available as a part of the one-hour session). No separate development tools are required to view or change the code.
 
 Code is written in C#, using the [Azure Search .NET client library](https://msdn.microsoft.com/library/dn951165.aspx) to execute queries against the index, provide faceted navigation, and display counts and search results in a web page.
+<!-- keep by customization: end -->
 
 Other code, not included in the template, was used to build and load the USGS search index. Because the service is read-only, all operations requiring write-access had to be completed in advance. You can see a [copy of the schema](#schema) used to build the schema at the end of this article.
 
+<!-- deleted by customization
+## Get started
+
+If you haven't started your 1-hour session yet, follow these steps to get started.
+
+1. Go to [https://tryappservice.azure.com](https://tryappservice.azure.com/) and scroll down to select **Web Apps**.
+-->
+<!-- keep by customization: begin -->
 ##Get started
 
 If you haven’t started your 1-hour session yet, follow these steps to get started.
 
-1. Go to [https://tryappservice.azure.com](https://tryappservice.azure.com/) and scroll down to select **Web App**. 
+1. Go to [https://tryappservice.azure.com](https://tryappservice.azure.com/) and scroll down to select **Web App**.
+<!-- keep by customization: end -->
 2. Click **Next**.
 3. Choose the **ASP.NET + Azure Search Site** template.
 
@@ -64,11 +104,11 @@ If you haven’t started your 1-hour session yet, follow these steps to get star
 
     ![][2]
 
-6. Wait while the site is provisioned. When it’s ready, you will see a page similar to this one. Each page shows a running clock so that you always know how much time you have left.
+6. Wait while the site is provisioned. When <!-- deleted by customization it's --><!-- keep by customization: begin --> it’s <!-- keep by customization: end --> ready, you will see a page similar to this one. Each page shows a running clock so that you always know how much time you have left.
 
     ![][3]
 
-7. Choose **Edit with Visual Studio Online** to view the solution and browse the site. 
+7. Choose **Edit with Visual Studio Online** to view the solution and browse the site.
 9. In Visual Studio Online, expand the session options at the top of the page, and then click **Browse Web Site**.
 
     ![][4]
@@ -82,8 +122,15 @@ If you haven’t started your 1-hour session yet, follow these steps to get star
     ![][6]
 
 
+<!-- deleted by customization
+## What to do first
+
+Since the search index is fully operational, a good first step is to try out a few queries. Azure
+-->
+<!-- keep by customization: begin -->
 ##What to do first
 Since the search index is fully operational, a good first step is to try out a few queries. Azure 
+<!-- keep by customization: end -->
 Search supports all of the standard search operators (+, -, |), quotation marks for literal matches, wildcard (*), and precedence operators. You can review the query syntax reference for the full list of operators.
 
 - Start with a wildcard search by adding an asterisk (`*`). This tells you how many documents are found in the index: 2,262,578.
@@ -92,14 +139,21 @@ Search supports all of the standard search operators (+, -, |), quotation marks 
 
     ![][7]
 
-Ready to move on? Let’s change a few lines of code to see the impact on full-text search operations.
+Ready to move on? <!-- deleted by customization Let's --><!-- keep by customization: begin --> Let’s <!-- keep by customization: end --> change a few lines of code to see the impact on full-text search operations.
 
+<!-- deleted by customization
+## Change searchMode.All
+
+Azure Search has a configurable **searchMode** property that you can use to control search operator behavior. Valid values for this property are `Any` (default) or `All`. See [Simple Query Syntax](https://msdn.microsoft.com/zh-cn/library/dn798920.aspx) for more guidance on setting these options.
+-->
+<!-- keep by customization: begin -->
 ##Change searchMode.All
 
 Azure Search has a configurable **searchMode** property that you can use to control search operator behavior. Valid values for this property are `Any` (default) or `All`. See [Simple Query Syntax](https://msdn.microsoft.com/library/dn798920.aspx) for more guidance on setting these options.
+<!-- keep by customization: end -->
 
 - **searchMode.Any** stipulates that any match on a search term is sufficient to include an item in the search results. If your search phrase is `Yellowstone visitor center`, then any document containing any of these terms is included in the search results. This mode is biased towards *recall*.
-- **searchModel.All**, used in this sample, requires that all of the specified terms be present in the document. This mode is more stringent than **searchMode.Any**, but if you favor *precision* over recall, it is probably the right choice for your application. 
+- **searchModel.All**, used in this sample, requires that all of the specified terms be present in the document. This mode is more stringent than **searchMode.Any**, but if you favor *precision* over recall, it is probably the right choice for your application.
 
 > [AZURE.NOTE] **searchMode.Any** works best when query construction consists mostly of phrases, with minimal use of operators. A general rule of thumb is that people searching consumer applications, such as e-commerce sites, tend to use just terms, whereas people searching on content or data are more likely to include operators in the search phrase. If you believe searches are likely to include operators, particularly the `NOT (-)` operator, start with **searchModel.All**. In contrast, your other choice, **searchMode.Any** will `OR` the `NOT` operator with other search terms, which can dramatically expand rather than trim results. The example below can help you understand the difference.
 
@@ -116,24 +170,41 @@ In this task, you will change the **searchMode** and compare search outcomes bas
 3. In the jump bar to the right, click **Run**.
 
     ![][10]
+<!-- deleted by customization
+In the rebuilt application window, enter a search term that you've used before, such as `Yellowstone +center +building -ND`, and compare the before-and-after results of changes to **searchMode**.
+
+It's a pretty big difference. Instead of seven search results, you get over two million.
+
+   ![][11]
+The behavior you're observing is due to the inclusion `NOT` operator (in this case, "-ND"), which is *OR'd* rather than *AND'd* when **searchMode** is set to `Any`.
+-->
+<!-- keep by customization: begin -->
  
 In the rebuilt application window, enter a search term that you’ve used before, such as `Yellowstone +center +building -ND`, and compare the before-and-after results of changes to **searchMode**.
 
-It’s a pretty big difference. Instead of seven search results, you get over two million. 
+It’s a pretty big difference. Instead of seven search results, you get over two million.
 
    ![][11]
  
 The behavior you’re observing is due to the inclusion `NOT` operator (in this case, "-ND"), which is *OR'd* rather than *AND'd* when **searchMode** is set to `Any`.
+<!-- keep by customization: end -->
 
 Given this configuration, the search results include hits for the search terms `Yellowstone`, `center`, and `building`, but also every document that is `NOT North Dakota`. Since there are only 13,081 documents containing the phrase `North Dakota`, almost all of the dataset is returned.
 
-Admittedly, this is perhaps an unlikely scenario, but it illustrates the effects of **searchMode** on search phrases that include the `NOT` operator, so it’s useful to understand why the behavior occurs and how to change it if this is not what you want.
+Admittedly, this is perhaps an unlikely scenario, but it illustrates the effects of **searchMode** on search phrases that include the `NOT` operator, so <!-- deleted by customization it's --><!-- keep by customization: begin --> it’s <!-- keep by customization: end --> useful to understand why the behavior occurs and how to change it if this is not what you want.
 
 To continue with this tutorial, revert **searchMode** back to its original value (set to `All` on line 39), run the program, and use the rebuilt app for the remaining tasks.
+<!-- deleted by customization
+## Add a global filter for Washington State
+
+Normally, if you wanted to search over a subset of available data, you would set the filter at the data source when importing data. For learning purposes, working with read-only data, we'll set the filter in our application to return just the documents that include Washington State.
+-->
+<!-- keep by customization: begin -->
  
 ##Add a global filter for Washington State
 
 Normally, if you wanted to search over a subset of available data, you would set the filter at the data source when importing data. For learning purposes, working with read-only data, we’ll set the filter in our application to return just the documents that include Washington State.
+<!-- keep by customization: end -->
 
 1. Open Search.cshtml, find the **SearchParameters** code block (starting on line 36) and add a comment line plus filter.
 
@@ -141,7 +212,7 @@ Normally, if you wanted to search over a subset of available data, you would set
         {
             //Add a filter for _Washington State
             Filter = "STATE_ALPHA eq 'WA'",
-            // Specify whether Any or All of the search terms 
+            // Specify whether Any or All of the search terms
             SearchMode = SearchMode.All,
             // Include a count of results in the query result
             IncludeTotalResultCount = true,
@@ -152,7 +223,7 @@ Normally, if you wanted to search over a subset of available data, you would set
         };
 
 
-Filters are specified using OData syntax and are frequently used with faceted navigation or included in the query string to constrain the query. See [OData Filter Syntax](https://msdn.microsoft.com/library/azure/dn798921.aspx) for more information.
+Filters are specified using OData syntax and are frequently used with faceted navigation or included in the query string to constrain the query. See [OData Filter <!-- deleted by customization Syntax](https://msdn.microsoft.com/zh-cn/library/azure/dn798921.aspx) --><!-- keep by customization: begin --> Syntax](https://msdn.microsoft.com/library/azure/dn798921.aspx) <!-- keep by customization: end --> for more information.
 
 2. Click **Run**.
 
@@ -162,11 +233,16 @@ Filters are specified using OData syntax and are frequently used with faceted na
 
    ![][12]
 
+<!-- deleted by customization
+## Add hit highlighting
+-->
+<!-- keep by customization: begin -->
 ##Add Hit Highlighting
+<!-- keep by customization: end -->
 
-Now that you have made a series of one-line code changes, you might want to try deeper modifications that require code changes in multiple places. The following version of **Search.cshtml** can be pasted right over the Search.cshtml file in your current session. 
+Now that you have made a series of one-line code changes, you might want to try deeper modifications that require code changes in multiple places. The following version of **Search.cshtml** can be pasted right over the Search.cshtml file in your current session.
 
-The following code adds hit-highlighting. Notice the new properties declared in the [SearchParameters](https://msdn.microsoft.com/library/microsoft.azure.search.models.searchparameters_properties.aspx). There is also a new function that iterates over the collection of results to get the documents that need highlighting, plus HTML that renders the result. 
+The following code adds hit-highlighting. Notice the new properties declared in the <!-- deleted by customization [SearchParameters](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.search.models.searchparameters_properties.aspx) --><!-- keep by customization: begin --> [SearchParameters](https://msdn.microsoft.com/library/microsoft.azure.search.models.searchparameters_properties.aspx) <!-- keep by customization: end -->. There is also a new function that iterates over the collection of results to get the documents that need highlighting, plus HTML that renders the result.
 
 When you run this code sample, search term inputs that have a corresponding match in specified fields are highlighted in bold font.
 
@@ -175,34 +251,26 @@ When you run this code sample, search term inputs that have a corresponding matc
 You might want to save a copy of the original **Search.cshtml** file to see how both versions compare.
 
 > [AZURE.NOTE] Comments have been trimmed to reduce the size of the file.
- 
     @using System.Collections.Specialized
     @using System.Configuration
     @using Microsoft.Azure.Search
     @using Microsoft.Azure.Search.Models
-    
     @{
     Layout = "~/_SiteLayout.cshtml";
     }
-    
     @{
     // This modified search.cshtml file adds hit-highlighting
-    
     string searchText = Request.Unvalidated["q"];
     string filterExpression = Request.Unvalidated["filter"];
-    
     DocumentSearchResponse response = null;
     if (!string.IsNullOrEmpty(searchText))
     {
     searchText = searchText.Trim();
-    
     // Retrieve search service name and an api key from configuration
     string searchServiceName = ConfigurationManager.AppSettings["SearchServiceName"];
     string apiKey = ConfigurationManager.AppSettings["SearchServiceApiKey"];
-    
     var searchClient = new SearchServiceClient(searchServiceName, new SearchCredentials(apiKey));
     var indexClient = searchClient.Indexes.GetClient("geonames");
-    
     // Set the Search parameters used when executing the search request
     var sp = new SearchParameters
     {
@@ -219,7 +287,6 @@ You might want to save a copy of the original **Search.cshtml** file to see how 
     HighlightPreTag = "<b>",
     HighlightPostTag = "</b>",
     };
-    
     if (!string.IsNullOrEmpty(filterExpression))
     {
     // Add a search filter that will limit the search terms based on a specified expression.
@@ -227,12 +294,10 @@ You might want to save a copy of the original **Search.cshtml** file to see how 
     // but limited based on the chosen facet value to further refine results
     sp.Filter = filterExpression;
     }
-    
     // Execute the search query based on the specified search text and search parameters
     response = indexClient.Documents.Search(searchText, sp);
     }
     }
-    
     @functions
     {
     private string GetFacetQueryString(string facetKey, string facetValue)
@@ -241,7 +306,6 @@ You might want to save a copy of the original **Search.cshtml** file to see how 
     queryString["filter"] = string.Format("{0} eq '{1}'", HttpUtility.UrlEncode(facetKey), HttpUtility.UrlEncode(facetValue));
     return queryString.ToString();
     }
-    
     private HtmlString RenderHitHighlightedString(SearchResult item, string fieldName)
     {
     if (item.Highlights != null && item.Highlights.ContainsKey(fieldName))
@@ -252,7 +316,6 @@ You might want to save a copy of the original **Search.cshtml** file to see how 
     return new HtmlString(item.Document[fieldName].ToString());
     }
     }
-    
     <!-- Form to allow user to enter search terms -->
     <form class="form-inline" role="search">
     <div class="form-group">
@@ -290,7 +353,6 @@ You might want to save a copy of the original **Search.cshtml** file to see how 
     </div>
     <div class="col-xs-12 col-sm-6 col-md-10">
     <p style="padding-top:20px">1 - @response.Results.Count of @response.Count results for "@searchText"</p>
-    
     <ul class="list-unstyled">
     <!-- Cycle through the search results -->
     @foreach (var item in response.Results)
@@ -309,6 +371,20 @@ You might want to save a copy of the original **Search.cshtml** file to see how 
     }
 
 
+<!-- deleted by customization
+## Next steps
+
+Using the read-only service provided in [Try Azure Websites](https://tryappservice.azure.com/) site, you have seen the query syntax and full-text search in action, learned about searchMode and filters, and added hit-highlighting to your search application. As your next step, consider moving on to creating and updating indexes. This adds the ability to:
+
+- [Define scoring profiles](https://msdn.microsoft.com/zh-cn/library/dn798928.aspx) used for tuning search scores so that high-value items show up first.
+- [Define Suggesters](https://msdn.microsoft.com/zh-cn/library/mt131377.aspx) that add auto-complete or type-ahead query suggestions in response to user input.
+- [Define indexers](https://msdn.microsoft.com/zh-cn/library/dn946891.aspx) that update your index automatically whenever the data source is Azure SQL Database or Azure DocumentDB.
+
+To perform all these tasks, you'll need an Azure subscription so that you can create and populate indexes in a service. For more information about how to sign up for a  trial, visit [https://azure.microsoft.com/pricing/1rmb-trial](/pricing/1rmb-trial/).
+
+To learn more about Azure Search, visit our [documentation page](/documentation/services/search/) on [http://azure.microsoft.com](http://azure.microsoft.com) or check out any number of [samples and videos](/documentation/articles/search-video-demo-tutorial-list) that explore the full range of Azure Search functionality.
+-->
+<!-- keep by customization: begin -->
 ##Next steps
 
 Using the read-only service provided in [Try Azure App Service](https://tryappservice.azure.com/) site, you have seen the query syntax and full-text search in action, learned about searchMode and filters, and added hit-highlighting to your search application. As your next step, consider moving on to creating and updating indexes. This adds the ability to:
@@ -320,18 +396,36 @@ Using the read-only service provided in [Try Azure App Service](https://tryappse
 To perform all these tasks, you’ll need an Azure subscription so that you can create and populate indexes in a service. For more information about how to sign up for a free trial, visit [https://azure.microsoft.com/pricing/free-trial](https://azure.microsoft.com/pricing/free-trial/).
 
 To learn more about Azure Search, visit our [documentation page](http://azure.microsoft.com/documentation/services/search/) on [http://azure.microsoft.com](http://azure.microsoft.com) or check out any number of [samples and videos](search-video-demo-tutorial-list.md) that explore the full range of Azure Search functionality.
+<!-- keep by customization: end -->
 
 <a name="Schema"></a>
+<!-- deleted by customization
+## About the schema
+-->
+<!-- keep by customization: begin -->
 ##About the schema
+<!-- keep by customization: end -->
 
 The following screenshot shows the schema used to create the index used in this template.
+<!-- deleted by customization
+   ![][13]
+
+### Schema.json file
+-->
+<!-- keep by customization: begin -->
  
    ![][13]
 
 ###Schema.json file
+<!-- keep by customization: end -->
 
     {
+<!-- deleted by customization
+      "@odata.context": "https://tryappservice.search.chinacloudapi.cn/$metadata#indexes/$entity",
+-->
+<!-- keep by customization: begin -->
       "@odata.context": "https://tryappservice.search.windows.net/$metadata#indexes/$entity",
+<!-- keep by customization: end -->
       "name": "geonames",
       "fields": [
     {
@@ -490,7 +584,6 @@ The following screenshot shows the schema used to create the index used in this 
     }
       ],
       "scoringProfiles": [
-    
       ],
       "defaultScoringProfile": null,
       "corsOptions": {
@@ -513,7 +606,6 @@ The following screenshot shows the schema used to create the index used in this 
       ]
     }
 
-
 <!--Image references-->
 [1]: ./media/search-tryappservice/AzSearch-TryAppService-TemplateTile.png
 [2]: ./media/search-tryappservice/AzSearch-TryAppService-LoginAccount.png
@@ -528,4 +620,4 @@ The following screenshot shows the schema used to create the index used in this 
 [11]: ./media/search-tryappservice/AzSearch-TryAppService-searchmodeany.png
 [12]: ./media/search-tryappservice/AzSearch-TryAppService-searchmodeWAState.png
 [13]: ./media/search-tryappservice/AzSearch-TryAppService-Schema.png
-[14]: ./media/search-tryappservice/AzSearch-TryAppService-HitHighlight.png
+[14]: ./media/search-tryappservice/AzSearch-TryAppService-HitHighlight.png

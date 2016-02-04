@@ -40,7 +40,7 @@ JMS uses the Java Naming and Directory Interface (JNDI) to create a separation b
 The Qpid Properties File JNDI Provider is configured using a properties file of the following format:
 
 ```
-# servicebus.properties – sample JNDI configuration
+# servicebus.properties - sample JNDI configuration
 
 # Register a ConnectionFactory in JNDI using the form:
 # connectionfactory.[jndi_name] = [ConnectionURL]
@@ -78,9 +78,9 @@ Where `[namespace]`, `[username]`, and `[password]` have the following meanings:
 
 | Name          | Meaning                                                                        |   |   |   |   |
 |---------------|--------------------------------------------------------------------------------|---|---|---|---|
-| `[namespace]` | The Service Bus namespace obtained from the Azure Management Portal.                      |   |   |   |   |
-| `[username]`  | The Service Bus issuer name obtained from the Azure Management Portal.                    |   |   |   |   |
-| `[password]`  | URL-encoded form of the Service Bus issuer key obtained from the Azure Management Portal. |   |   |   |   |
+| `[namespace]` | The Service Bus namespace obtained from the [Azure Management Portal][].                      |   |   |   |   |
+| `[username]`  | The Service Bus issuer name obtained from the [Azure Management Portal][].                    |   |   |   |   |
+| `[password]`  | URL-encoded form of the Service Bus issuer key obtained from the [Azure Management Portal][]. |   |   |   |   |
 
 > [AZURE.NOTE] You must URL-encode the password manually. A useful URL encoding utility is available at [http://www.w3schools.com/tags/ref_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp).
 
@@ -439,4 +439,5 @@ Ready to learn more? Visit the following links:
 [AMQP in Service Bus for Windows Server]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
 [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
-[Service Bus AMQP overview]: /documentation/articles/service-bus-amqp-overview
+[Service Bus AMQP overview]: service-bus-amqp-overview.md
+[Azure Management Portal]: http://manage.windowsazure.cn

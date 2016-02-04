@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect features in preview | Windows Azure"
+   pageTitle="Azure AD Connect: Features in preview | Windows Azure"
    description="This topic describes in more detail features which are in preview in Azure AD Connect."
    services="active-directory"
    documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # More details about features in preview
@@ -23,7 +23,7 @@ User writeback is in early preview. It can only be used when Azure AD is the sou
 > [AZURE.IMPORTANT] This feature should only be tested in a test environment and should not be used in an Azure AD directory used for production usage.
 
 ## Group writeback
-The option for group writeback in optional features will allow you to writeback “Office 365 Groups” to a forest with Exchange installed. This is a new group type which is always mastered in the cloud. You can find this in outlook.office365.com or on myapps.microsoft.com as shown here:
+The option for group writeback in optional features will allow you to writeback âOffice 365 Groupsâ to a forest with Exchange installed. This is a new group type which is always mastered in the cloud. You can find this in outlook.office365.com or on myapps.microsoft.com as shown here:
 
 
 ![Sync Filtering](./media/active-directory-aadconnect-feature-preview/office365.png)

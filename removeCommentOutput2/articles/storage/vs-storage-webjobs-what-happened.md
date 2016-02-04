@@ -1,23 +1,18 @@
 <properties
 	pageTitle="What happened to my WebJob project (Visual Studio Azure Storage connected service)? | Windows Azure"
-	description="Describes what happened in a Azure WebJob project after connecting to a storage account using Visual Studio connected services" 
+	description="Describes what happened in a Azure WebJob project after connecting to a storage account using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # What happened to my WebJob project (Visual Studio Azure Storage connected service)?
-
-> [AZURE.SELECTOR]
-> - [Getting Started](/documentation/articles/vs-storage-webjobs-getting-started-blobs)
-> - [What Happened](/documentation/articles/vs-storage-webjobs-what-happened)
-
 
 ## References Added
 
@@ -36,4 +31,4 @@ This package adds the following .NET references:
 ## Connection string for Azure Storage added
 In the App.config file of your project, the **AzureWebJobsStorage** and **AzureWebJobsDashboard** entries were updated with the selected storage account's connection string and key.
 
-For more information, see [Azure WebJobs Recommended Resources](/documentation/articles/websites-webjobs-resources/).
+For more information, see [Azure WebJobs Recommended Resources](/documentation/articles/websites-webjobs-resources).

@@ -132,5 +132,5 @@ Go run things on your swarm. To look for inspiration, see [https://github.com/do
 
 <!-- links -->
 
-[docker-machine-azure]: /documentation/articles/virtual-machines-docker-machine
+[docker-machine-azure]: virtual-machines-docker-machine.md
  

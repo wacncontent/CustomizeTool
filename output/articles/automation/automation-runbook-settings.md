@@ -48,10 +48,10 @@ The following sample commands show how to set the properties for a runbook. This
 
 	$automationAccountName = "MyAutomationAccount"
 	$runbookName = "Sample-TestRunbook"
-	$tags = (Get-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName).Tags
+	$tags = (Get-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName).Tags
 	$tags += "Tag1,Tag2,Tag3"
-	Set-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName –LogVerbose $true –Tags $tags
+	Set-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName -LogVerbose $true -Tags $tags
 
 ## Related articles
 - [Runbook Output and Messages](/documentation/articles/automation-runbook-output-and-messages) 
-- [Creating or Importing a Runbook](https://msdn.microsoft.com/zh-cn/library/dn643637.aspx) 
+- [Creating or Importing a Runbook](/documentation/articles/automation-creating-importing-runbook) 

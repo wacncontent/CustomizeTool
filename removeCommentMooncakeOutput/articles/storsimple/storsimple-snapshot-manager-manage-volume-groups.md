@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="StorSimple Snapshot Manager volume groups | Microsoft Azure"
+   pageTitle="StorSimple Snapshot Manager volume groups | Windows Azure"
    description="Describes how to use the StorSimple Snapshot Manager MMC snap-in to create and manage volume groups."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="10/12/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 # Use StorSimple Snapshot Manager to create and manage volume groups
 
@@ -21,7 +17,7 @@
 
 You can use the **Volume Groups** node on the **Scope** pane to assign volumes to volume groups, view information about a volume group, schedule backups, and edit volume groups. 
 
-Volume groups are pools of related volumes used to ensure that backups are application-consistent. For more information, see [Volumes and volume groups](storsimple-what-is-snapshot-manager.md#volumes-and-volume-groups) and [Integration with Windows Volume Shadow Copy Service](storsimple-what-is-snapshot-manager.md#integration-with-windows-volume-shadow-copy-service).
+Volume groups are pools of related volumes used to ensure that backups are application-consistent. For more information, see [Volumes and volume groups](/documentation/articles/storsimple-what-is-snapshot-manager#volumes-and-volume-groups) and [Integration with Windows Volume Shadow Copy Service](/documentation/articles/storsimple-what-is-snapshot-manager#integration-with-windows-volume-shadow-copy-service).
 
 >[AZURE.IMPORTANT] 
 >
@@ -52,7 +48,7 @@ Results column | Description
 Name           | The **Name** column contains the name of the volume group.
 Application    | The **Applications** column shows the number of VSS writers currently installed and running on the Windows host.
 Selected       | The **Selected** column shows the number of volumes that are contained in the volume group. A zero (0) indicates that no application is associated with the volumes in the volume group.
-Imported       | The **Imported** column shows the number of imported volumes. When set to **True**, this column indicates that a volume group was imported from the Microsoft Azure Management Portal and was not created in StorSimple Snapshot Manager.
+Imported       | The **Imported** column shows the number of imported volumes. When set to **True**, this column indicates that a volume group was imported from the Azure Management Portal and was not created in StorSimple Snapshot Manager.
  
 >[AZURE.NOTE] StorSimple Snapshot Manager volume groups are also displayed on the **Backup Policies** tab in the Azure Management Portal.
  
@@ -78,7 +74,7 @@ Use the following procedure to create a volume group.
 
     2. In the **Applications** box, select applications associated with the volumes that you will be adding to the volume group. 
 
-        The **Applications** box lists only those applications that use Azure StorSimple volumes and have VSS writers enabled for them. A VSS writer is enabled only if all the volumes that the writer is aware of are Azure StorSimple volumes. If the Applications box is empty, then no applications that use Azure StorSimple volumes and have supported VSS writers are installed. (Currently, Azure StorSimple supports Microsoft Exchange and SQL Server.) For more information about VSS writers, see [Integration with Windows Volume Shadow Copy Service](storsimple-what-is-snapshot-manager.md#integration-with-windows-volume-shadow-copy-service).
+        The **Applications** box lists only those applications that use Azure StorSimple volumes and have VSS writers enabled for them. A VSS writer is enabled only if all the volumes that the writer is aware of are Azure StorSimple volumes. If the Applications box is empty, then no applications that use Azure StorSimple volumes and have supported VSS writers are installed. (Currently, Azure StorSimple supports Microsoft Exchange and SQL Server.) For more information about VSS writers, see [Integration with Windows Volume Shadow Copy Service](/documentation/articles/storsimple-what-is-snapshot-manager#integration-with-windows-volume-shadow-copy-service).
 
         If you select an application, all volumes associated with it are automatically selected. Conversely, if you select volumes associated with a specific application, the application is automatically selected in the **Applications** box. 
 
@@ -144,5 +140,5 @@ Use the following procedure to delete a volume group.
 
 ## Next steps
 
-- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple solution](storsimple-snapshot-manager-admin.md).
-- Learn how to [use StorSimple Snapshot Manager to create and manage backup policies](storsimple-snapshot-manager-manage-backup-policies.md).
+- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple solution](/documentation/articles/storsimple-snapshot-manager-admin).
+- Learn how to [use StorSimple Snapshot Manager to create and manage backup policies](/documentation/articles/storsimple-snapshot-manager-manage-backup-policies).

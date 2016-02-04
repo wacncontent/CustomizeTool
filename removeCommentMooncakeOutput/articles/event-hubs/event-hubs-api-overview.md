@@ -6,10 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="" />
-<tags
-	ms.service="event-hubs"
-	ms.date="10/14/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="event-hubs"
+   ms.date="10/14/2015"
+   wacn.date="" />
 
 # Event Hubs API overview
 
@@ -127,7 +127,7 @@ EventProcessorHost host = new EventProcessorHost(WorkerName, EventHubName, defau
 host.UnregisterEventProcessorAsync().Wait();   
 ```
 
-The [IEventProcessor](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.ieventprocessor.aspx) interface is defined as follows:
+The [IEventProcessor](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.ieventprocessor.aspx) interface is defined as follows:
 
 ```
 public class SimpleEventProcessor : IEventProcessor

@@ -18,11 +18,11 @@ Cloudyn, a Microsoft development partner and a leading provider of cloud managem
 
 ## Introduction 
 
-The so-called “multiplication” of data from the Usage API with data from the RateCard API (usage [units] price[$unit] = Detailed Usage and Cost) creates the most granular, accurate and reliable billing information available for Azure today.
+The so-called "multiplication" of data from the Usage API with data from the RateCard API (usage [units] price[$unit] = Detailed Usage and Cost) creates the most granular, accurate and reliable billing information available for Azure today.
 
 ![ITFM Overview][1]
 
-Consuming these APIs provides key information on customers’ usage and costs, allowing Cloudyn to analyze customer accounts in a simple, programmatic manner, and to perform various ITFM tasks for its customers. 
+Consuming these APIs provides key information on customers' usage and costs, allowing Cloudyn to analyze customer accounts in a simple, programmatic manner, and to perform various ITFM tasks for its customers. 
 
 ## Integrating Cloudyn with the RateCard and Usage APIs
 The RateCard API requires several input parameters -- like region info, currency and locale -- but the most important one is OfferDurableID, which specifies the type of Azure offering the customer is using (Pay-as-you-Go, legacy 6 and 12-month commitment plans, MSDN offers, MPN offers, promotional offers and others). The OfferDurableID can be found in the [Azure Usage and Billing portal](https://account.windowsazure.cn/Subscriptions), under the "Offer ID" for the given subscription. 
@@ -40,17 +40,17 @@ Common Cloudyn ITFM use cases enabled by usage and RateCard APIs include:
 
 ![Cost Analysis Pie Chart][3]
 
-+ **Cost Allocation 360** - Enables finance and IT managers to uncover the actual cost breakdown, drivers and trends of their cloud deployment. It further allows managers to easily associate deployment expenses with business units, departments, regions, and more, providing unprecedented insights into cloud costs, and facilitating enterprise chargebacks and showbacks. The Azure Usage and RateCard APIs serve as input to Cloudyn’s cost allocation engine, which complements the APIs by defining methods and business logic for allocating untagged or untaggable resources.
++ **Cost Allocation 360** - Enables finance and IT managers to uncover the actual cost breakdown, drivers and trends of their cloud deployment. It further allows managers to easily associate deployment expenses with business units, departments, regions, and more, providing unprecedented insights into cloud costs, and facilitating enterprise chargebacks and showbacks. The Azure Usage and RateCard APIs serve as input to Cloudyn's cost allocation engine, which complements the APIs by defining methods and business logic for allocating untagged or untaggable resources.
 
 ![Cost Allocation 360 Chart][4]
 
-+ **Cost-Effective Sizing** - Provides right-sizing recommendations for underutilized virtual machines, thus reducing the customer’s expenses on oversized or over-provisioned machines. It does so by examining virtual machine CPU and RAM metrics (via Performance API), hours of run-time (via Usage API) and cost (via RateCard API). Cloudyn then provides right-sizing recommendations based on underutilized CPU or RAM resources (Performance), and calculates estimated savings by multiplying the price delta (RateCard) between the VMs by the actual time-utilization (Usage) of the underutilized machine. 
++ **Cost-Effective Sizing** - Provides right-sizing recommendations for underutilized virtual machines, thus reducing the customer's expenses on oversized or over-provisioned machines. It does so by examining virtual machine CPU and RAM metrics (via Performance API), hours of run-time (via Usage API) and cost (via RateCard API). Cloudyn then provides right-sizing recommendations based on underutilized CPU or RAM resources (Performance), and calculates estimated savings by multiplying the price delta (RateCard) between the VMs by the actual time-utilization (Usage) of the underutilized machine. 
 
 ![Cost Effective Sizing][5]
 
 + **Cloud Porting Recommendations** - Provides financial advice on cloud porting. It examines a user's current costs of cloud resources which are deployed on major cloud vendors, and compares it to the cost of an equivalent deployment on Azure. It then provides granular, per-resource, financially-based porting recommendations to Azure. After assessing the equivalent deployment required on Azure (based on performance metrics and user preferences), Cloudyn uses the RateCard API to evaluate the cost of the equivalent deployment on Azure.
 
-+ **Performance Reports** - Enabled by Azure’s performance API, these reports provide an array of features from CPU and RAM utilization to optimization recommendations. Below is an instance utilization report example, presenting instance breakdown by average CPU utilization.
++ **Performance Reports** - Enabled by Azure's performance API, these reports provide an array of features from CPU and RAM utilization to optimization recommendations. Below is an instance utilization report example, presenting instance breakdown by average CPU utilization.
 
 ![Performance Reports][6]
 

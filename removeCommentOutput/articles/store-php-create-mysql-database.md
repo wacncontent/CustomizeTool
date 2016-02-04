@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="08/31/2015"
+	ms.date="11/19/2015"
 	wacn.date=""/>
 
 #How to Create a MySQL Database in Azure

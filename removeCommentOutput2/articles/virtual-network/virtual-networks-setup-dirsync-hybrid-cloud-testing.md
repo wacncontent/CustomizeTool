@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="11/13/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # Set up Office 365 Directory Synchronization (DirSync) in a hybrid cloud for testing

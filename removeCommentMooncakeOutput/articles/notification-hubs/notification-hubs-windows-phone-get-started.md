@@ -9,9 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="09/08/2015"
+	ms.date="12/14/2015"
 	wacn.date=""/>
-
 # Get started with Notification Hubs for Windows Phone
 
 [AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
@@ -37,33 +36,16 @@ Completing this tutorial is a prerequisite for all other Notification Hubs tutor
 
 ##Create your notification hub
 
-1. Sign in to the [Azure Management Portal], and then click **+NEW** at the bottom of the screen.
+[AZURE.INCLUDE [notification-hubs-portal-create-new-hub](../includes/notification-hubs-portal-create-new-hub.md)]
 
-2. Click **App Services**, click **Service Bus**, click **Notification Hub**, and then click **Quick Create**.
+<ol start="7">
+<li><p>Click the <b>Configure</b> tab, and then click the <b>Enable unauthenticated push notifications</b> check box in the <b>Windows Phone notification settings</b> section.</p>
+</li>
+</ol>
 
-   	![][7]
+&emsp;&emsp;![](./media/notification-hubs-windows-phone-get-started/notification-hub-pushauth.png)
 
-3. Type a name for your notification hub, select your desired region, and then click **Create a New Notification Hub**.
-
-   	![][8]
-
-4. Click the namespace that you just created (usually ***notification hub name*-ns**), and then click the **Configure** tab at the top.
-
-   	![][9]
-
-5. Click the **Notification Hubs** tab at the top, and then click the notification hub that you just created.
-
-   	![][10]
-
-6. Click **Connection Information** at the bottom. Take note of the two connection strings.
-
-   	![][12]
-
-7. Click the **Configure** tab, and then click the **Enable unauthenticated push notifications** check box in the **Windows Phone notification settings** section.
-
-   	![][15]
-
-You now have the connection strings that are required to register your Windows Phone 8 app and send notifications.
+Your hub is now created and configured to send unauthenticated notification for Windows Phone.
 
 > [AZURE.NOTE] This tutorial uses MPNS in unauthenticated mode. MPNS unauthenticated mode comes with restrictions on notifications that you can send to each channel. Notification Hubs supports [MPNS authenticated mode](http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099.aspx) by allowing you to upload your certificate.
 
@@ -105,7 +87,12 @@ You now have the connection strings that are required to register your Windows P
         channel.ChannelUriUpdated += new EventHandler<NotificationChannelUriEventArgs>(async (o, args) =>
         {
             var hub = new NotificationHub("<hub name>", "<connection string>");
-            await hub.RegisterNativeAsync(args.ChannelUri.ToString());
+            var result = await hub.RegisterNativeAsync(args.ChannelUri.ToString());
+
+            System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                MessageBox.Show("Registration :" + result.RegistrationId, "Registered", MessageBoxButton.OK);
+            });
         });
 
     Make sure to insert the name of your hub and the connection string called **DefaultListenSharedAccessSignature** that you obtained in the previous section.
@@ -123,6 +110,8 @@ You now have the connection strings that are required to register your Windows P
 
 	A registration message is displayed.
 
+8. Close the app.  You must close the app to receive the toast notification.
+
 ##Send the notification from your backend
 
 You can send notifications by using Notification Hubs from any backend via the <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx">REST interface</a>. In this tutorial, you send notifications by using a .NET console application. For an example of how to send notifications from an Azure Mobile Services backend that's integrated with Notification Hubs, see "Get started with push notifications in Mobile Services" ([.NET backend](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push) | [JavaScript backend](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push)).  For an example of how to send notifications by using the REST APIs, see "How to use Notification Hubs from Java/PHP" ([Java](/documentation/articles/notification-hubs-java-backend-how-to) | [PHP](/documentation/articles/notification-hubs-php-backend-how-to)).
@@ -133,7 +122,7 @@ You can send notifications by using Notification Hubs from any backend via the <
 
 	This adds a new Visual C# console application to the solution. You can also do this in a separate solution.
 
-4. Right-click the , click **Tools**, click **Library Package Manager**, and then click **Package Manager Console**.
+4. Click **Tools**, click **Library Package Manager**, and then click **Package Manager Console**.
 
 	This displays the Package Manager Console.
 
@@ -204,11 +193,9 @@ In this simple example, you broadcasted notifications to all your Windows Phone 
 
 <!-- URLs. -->
 [Visual Studio 2012 Express for Windows Phone]: https://www.visualstudio.com/downloads/download-visual-studio-vs
-[Azure Management Portal]: https://manage.windowsazure.cn/
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [MPNS authenticated mode]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx
-[Use Notification Hubs to push notifications to users]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
-[Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-windows-phone-send-breaking-news
+[Use Notification Hubs to push notifications to users]: notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
+[Use Notification Hubs to send breaking news]: notification-hubs-windows-phone-send-breaking-news.md
 [toast catalog]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/jj662938(v=vs.105).aspx
 [tile catalog]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/hh202948(v=vs.105).aspx
-[Notification Hub - WP Silverlight tutorial]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Connect to Hive on Azure HDInsight using the Hive JDBC driver
@@ -58,6 +58,10 @@ Once the connection is established, you can run queries against Hive. For exampl
 ##Example Java project
 
 An example of using a Java client to query Hive on HDInsight is available at [https://github.com/Blackmist/hdinsight-hive-jdbc](https://github.com/Blackmist/hdinsight-hive-jdbc). Follow the instructions in the repository to build and run the sample.
+<!-- keep by customization: begin -->
+
+>[AZURE.NOTE] This sample is written for Global Azure. For Azure china, you need to replace "azurehdinsight.cn" by "azurehdinsight.cn" in the connection String.
+<!-- keep by customization: end -->
 
 ##Next steps
 

@@ -3,27 +3,15 @@
 	description="How to get started with Azure Table storage in an ASP.NET 5 project in Visual Studio after connecting to a storage account using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
-
 # How to get started with Azure Table storage and Visual Studio connected services
-
-> [AZURE.SELECTOR]
-> - [Getting Started](/documentation/articles/vs-storage-aspnet5-getting-started-tables)
-> - [What Happened](/documentation/articles/vs-storage-aspnet5-what-happened)
-<!-- deleted by customization
-
-> [AZURE.SELECTOR]
--->
-> - [Blobs](/documentation/articles/vs-storage-aspnet5-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-aspnet5-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-aspnet5-getting-started-tables)
 
 ## Overview
 
@@ -37,7 +25,7 @@ For more general information about using Azure Table storage, see [How to use Ta
 
 To get started, you first need to create a table in your storage account. We'll show you how to create an Azure table in code. We'll also show you how to perform basic table and entity operations, such as adding, modifying, reading and reading table entities. The samples are written in C\# code and use the Azure Storage Client Library for .NET.
 
-**NOTE** - Some of the APIs that perform calls out to Azure storage in ASP.NET 5 are asynchronous. See [Asynchronous Programming with Async and Await](http://msdn.microsoft.com/zh-cn/library/hh191443.aspx) for more information. The code below assumes Async programming methods are being used.
+<!-- deleted by customization **NOTE** - --><!-- keep by customization: begin --> **NOTE:** <!-- keep by customization: end --> Some of the APIs that perform calls out to Azure storage in ASP.NET 5 are asynchronous. See [Asynchronous Programming with Async and Await](http://msdn.microsoft.com/zh-cn/library/hh191443.aspx) for more information. The code below assumes Async programming methods are being used.
 
 ## Access tables in code
 
@@ -208,12 +196,3 @@ You can delete an entity after you find it. The following code looks for a custo
 ## Next steps
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]
-
-<!-- keep by customization: begin -->
-
-[Learn more about Azure Storage](http://www.windowsazure.cn/documentation/services/storage/)
-See also [Browsing Storage Resources in Server Explorer](http://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx) and [ASP.NET 5](http://www.asp.net/vnext).
- 
-
-
-<!-- keep by customization: end -->

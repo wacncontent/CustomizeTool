@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Deploy and manage VM with templates | Windows Azure"
 	description="Deploy and manage the most common configurations for Azure virtual machines using Resource Manager templates and Azure CLI."
@@ -14,6 +16,10 @@
 	wacn.date=""/>
 
 # Deploy and manage virtual machines by using Azure Resource Manager templates and the Azure CLI
+
+> [AZURE.SELECTOR]
+- [PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
+- [CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
 
 This article shows you how to use Azure Resource Manager templates and the Azure CLI to do the following common tasks for deploying and managing Azure virtual machines. For more templates you can use, see [Azure Quickstart templates](http://azure.microsoft.com/documentation/templates/) and [Application frameworks using templates](/documentation/articles/virtual-machines-app-frameworks).
 
@@ -50,12 +56,7 @@ You can also run Azure CLI as a Docker container by using the following [Docker 
 
 ### Set your Azure account and subscription
 
-<!-- deleted by customization
 If you don't already have an Azure subscription but you do have an MSDN subscription, you can activate your [MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/). Or you can sign up for a [trial](/pricing/1rmb-trial/).
--->
-<!-- keep by customization: begin -->
-If you don't already have an Azure subscription, you can sign up for a [trial](/pricing/1rmb-trial/).
-<!-- keep by customization: end -->
 
 Now [log in to your Azure account interactively](/documentation/articles/xplat-cli-connect#use-the-log-in-method) by typing `azure login` and following the prompts for an interactive login experience to your Azure account. 
 
@@ -159,62 +160,32 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     info:    Using the VM Size "Standard_A1"
     info:    The [OS, Data] Disk or image configuration requires storage account
     + Retrieving storage accounts
-    info:    Could not find any storage accounts in the region <!-- deleted by customization "chinanorth" --><!-- keep by customization: begin --> "chinanorths" <!-- keep by customization: end -->, trying to create new one
+    info:    Could not find any storage accounts in the region "chinanorth", trying to create new one
     + Creating storage account "cli9fd3fce49e9a9b3d14302" in "chinanorth"
     + Looking up the storage account cli9fd3fce49e9a9b3d14302
-<!-- deleted by customization
     + Looking up the NIC "coreo-westu-1430261891570-nic"
     info:    An nic with given name "coreo-westu-1430261891570-nic" not found, creating a new one
     + Looking up the virtual network "coreo-westu-1430261891570-vnet"
--->
-<!-- keep by customization: begin -->
-    + Looking up the NIC "coreo-chinanorth-1430261891570-nic"
-    info:    An nic with given name "coreo-chinanorth-1430261891570-nic" not found, creating a new one
-    + Looking up the virtual network "coreo-chinanorth-1430261891570-vnet"
-<!-- keep by customization: end -->
     info:    Preparing to create new virtual network and subnet
-<!-- deleted by customization
     / Creating a new virtual network "coreo-westu-1430261891570-vnet" [address prefix: "10.0.0.0/16"] with subnet "coreo-westu-1430261891570-sne+" [address prefix: "10.0.1.0/24"]
     + Looking up the virtual network "coreo-westu-1430261891570-vnet"
     + Looking up the subnet "coreo-westu-1430261891570-snet" under the virtual network "coreo-westu-1430261891570-vnet"
--->
-<!-- keep by customization: begin -->
-    / Creating a new virtual network "coreo-chinanorth-1430261891570-vnet" [address prefix: "10.0.0.0/16"] with subnet "coreo-chinanorth-1430261891570-sne+" [address prefix: "10.0.1.0/24"]
-    + Looking up the virtual network "coreo-chinanorth-1430261891570-vnet"
-    + Looking up the subnet "coreo-chinanorth-1430261891570-snet" under the virtual network "coreo-chinanorth-1430261891570-vnet"
-<!-- keep by customization: end -->
     info:    Found public ip parameters, trying to setup PublicIP profile
-<!-- deleted by customization
     + Looking up the public ip "coreo-westu-1430261891570-pip"
     info:    PublicIP with given name "coreo-westu-1430261891570-pip" not found, creating a new one
     + Creating public ip "coreo-westu-1430261891570-pip"
     + Looking up the public ip "coreo-westu-1430261891570-pip"
     + Creating NIC "coreo-westu-1430261891570-nic"
     + Looking up the NIC "coreo-westu-1430261891570-nic"
--->
-<!-- keep by customization: begin -->
-    + Looking up the public ip "coreo-chinanorth-1430261891570-pip"
-    info:    PublicIP with given name "coreo-chinanorth-1430261891570-pip" not found, creating a new one
-    + Creating public ip "coreo-chinanorth-1430261891570-pip"
-    + Looking up the public ip "coreo-chinanorth-1430261891570-pip"
-    + Creating NIC "coreo-chinanorth-1430261891570-nic"
-    + Looking up the NIC "coreo-chinanorth-1430261891570-nic"
-<!-- keep by customization: end -->
     + Creating VM "coreos"
     + Looking up the VM "coreos"
-<!-- deleted by customization
     + Looking up the NIC "coreo-westu-1430261891570-nic"
     + Looking up the public ip "coreo-westu-1430261891570-pip"
--->
-<!-- keep by customization: begin -->
-    + Looking up the NIC "coreo-chinanorth-1430261891570-nic"
-    + Looking up the public ip "coreo-chinanorth-1430261891570-pip"
-<!-- keep by customization: end -->
     data:    Id                              :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Compute/virtualMachines/coreos
     data:    ProvisioningState               :Succeeded
     data:    Name                            :coreos
     data:    Location                        :chinanorth
-    data:    FQDN                            <!-- deleted by customization :coreo-westu-1430261891570-pip.chinanorth.chinacloudapp.cn --><!-- keep by customization: begin --> :coreo-chinanorth-1430261891570-pip.chinanorth.chinacloudapp.cn <!-- keep by customization: end -->
+    data:    FQDN                            :coreo-westu-1430261891570-pip.chinanorth.chinacloudapp.cn
     data:    Type                            :Microsoft.Compute/virtualMachines
     data:
     data:    Hardware Profile:
@@ -244,16 +215,16 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     data:    Network Profile:
     data:      Network Interfaces:
     data:        Network Interface #1:
-    data:          Id                        <!-- deleted by customization :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Network/networkInterfaces/coreo-westu-1430261891570-nic --><!-- keep by customization: begin --> :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Network/networkInterfaces/coreo-chinanorth-1430261891570-nic <!-- keep by customization: end -->
+    data:          Id                        :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Network/networkInterfaces/coreo-westu-1430261891570-nic
     data:          Primary                   :true
     data:          MAC Address               :00-0D-3A-30-72-E3
     data:          Provisioning State        :Succeeded
-    data:          Name                      <!-- deleted by customization :coreo-westu-1430261891570-nic --><!-- keep by customization: begin --> :coreo-chinanorth-1430261891570-nic <!-- keep by customization: end -->
+    data:          Name                      :coreo-westu-1430261891570-nic
     data:          Location                  :chinanorth
     data:            Private IP alloc-method :Dynamic
     data:            Private IP address      :10.0.1.4
     data:            Public IP address       :104.40.24.124
-    data:            FQDN                    <!-- deleted by customization :coreo-westu-1430261891570-pip.chinanorth.chinacloudapp.cn --><!-- keep by customization: begin --> :coreo-chinanorth-1430261891570-pip.chinanorth.chinacloudapp.cn <!-- keep by customization: end -->
+    data:            FQDN                    :coreo-westu-1430261891570-pip.chinanorth.chinacloudapp.cn
     info:    vm quick-create command OK
 
 And away you go with your new VM.
@@ -798,7 +769,7 @@ Follow these steps to deploy a multi-VM application that uses a virtual network 
 
 ### Step 1: Examine the JSON file for the template
 
-Here are the contents of the JSON file for the template. If you want the most recent version, it's located [here](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json). This topic uses the `--template-uri` switch to call in the template, but you can also use the `--template-file` switch to pass a local version.
+Here are the contents of the JSON file for the template. If you want the most recent version, it's located [at the Github repository for templates](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json). This topic uses the `--template-uri` switch to call in the template, but you can also use the `--template-file` switch to pass a local version.
 
 
     {

@@ -8,9 +8,9 @@
    editor="v-romcal"/>
 
 <tags
-	ms.service="sql-database"
-	ms.date="07/24/2015"
-	wacn.date=""/>
+   ms.service="sql-database"
+   ms.date="07/24/2015"
+   wacn.date=""/>
 
 # Recover an Azure SQL database using Geo-Restore in the Azure Management Portal
 
@@ -20,7 +20,7 @@
 
 ## Overview
 
-This tutorial shows you how to recover an Azure SQL database using Geo-Restore in the [Azure Management Portal](http://manage.windowsazure.cn). Geo-Restore is the core disaster recovery protection included for all Basic, Standard, and Premium Azure SQL Databases service tiers.
+This tutorial shows you how to recover an Azure SQL database using Geo-Restore in the [Azure Management Portal](http://manage.windowsazure.cn/). Geo-Restore is the core disaster recovery protection included for all Basic, Standard, and Premium Azure SQL Databases service tiers.
 
 ## Restrictions and Security
 
@@ -36,9 +36,11 @@ This tutorial shows you how to recover an Azure SQL database using Geo-Restore i
  
 	* If you have a Web or Business Edition database you can use database copy to get a transactional-consistent copy of your database, and then export the copied database to a Windows Azure storage account. For more information, see [How to: Use Database Copy (Azure SQL Database)](http://msdn.microsoft.com/zh-cn/library/azure/ff951631.aspx) and [How to: Use the Import and Export Service in Azure SQL Database](http://msdn.microsoft.com/zh-cn/library/azure/hh335292.aspx).
 
-	* Web and Business Editions will be retired September 2015. For more information, see [Web and Business Edition Sunset FAQ](http://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx).
+	* Web and Business Editions will be retired September 2015. For more information, see [Web and Business Edition Sunset FAQ](/documentation/articles/sql-database-web-business-sunset-faq/).
 
 ## How to: Recover an Azure SQL database using Geo-Restore in the Azure Management Portal
+
+<!--<iframe src="http://channel9.msdn.com/Blogs/Windows-Azure/Restore-a-SQL-Database-Using-Geo-Restore/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>-->
 
 1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn) using your Microsoft account and select **SQL Databases**.
 

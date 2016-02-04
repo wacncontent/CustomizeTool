@@ -33,7 +33,7 @@ This table provides additional privacy information for the Windows Azure Site Re
 	<td><p>Register server with service so that virtual machines can be protected</p></td>
 	<td><p>After registering a service the Service collects process and transmits this information:</p>
 		<ul>
-			<li>Management certificate information from the VMM server that’s designated to provide disaster recovery using the Service name of the VMM server</li>
+			<li>Management certificate information from the VMM server that's designated to provide disaster recovery using the Service name of the VMM server</li>
 			<li>The name of virtual machine clouds on your VMM server</li>
 		</ul>
 </td>
@@ -45,7 +45,7 @@ This table provides additional privacy information for the Windows Azure Site Re
 			<li>Cloud names from the VMM server—The cloud name is required when using the Service cloud pairing/unpairing feature described below. When you decide to pair your cloud from a primary data center with another cloud in the recovery data center, the names of all the clouds from the recovery data center are presented.</li>
 		</ul>
 </td>
-	<td><p>This information is an essential part of the Service registration process because it helps you and the Service to identify the VMM server for which you want to provide Azure Site Recovery protection, as well as to identify the correct registered VMM server. If you don’t want to send this information to the Service, do not use this Service. If you register your server and then later want to unregister it, you can do so by deleting the VMM server information from the Service portal (which is the Azure Management Portal).</p></td>
+	<td><p>This information is an essential part of the Service registration process because it helps you and the Service to identify the VMM server for which you want to provide Azure Site Recovery protection, as well as to identify the correct registered VMM server. If you don't want to send this information to the Service, do not use this Service. If you register your server and then later want to unregister it, you can do so by deleting the VMM server information from the Service portal (which is the Azure Management Portal).</p></td>
 </tr>
 
 <tr>
@@ -55,7 +55,7 @@ This table provides additional privacy information for the Windows Azure Site Re
 	</td>
 	<td><p>The Service uses the above information to populate the virtual machine information on your Service portal.</p>
 	</td>
-	<td><p>This is an essential part of the service and can’t be turned off. If you don’t want this information sent to the Service, don’t enable Azure Site Recovery protection for any virtual machines. Note that all data sent by the Provider to the Service is sent over HTTPS.</p></td>
+	<td><p>This is an essential part of the service and can't be turned off. If you don't want this information sent to the Service, don't enable Azure Site Recovery protection for any virtual machines. Note that all data sent by the Provider to the Service is sent over HTTPS.</p></td>
 </tr>
 <tr>
 	<td><p><b>Recovery plan</b></p></td>
@@ -68,7 +68,7 @@ This table provides additional privacy information for the Windows Azure Site Re
 	</td>
 	<td><p>The metadata described above is used to build the recovery plan in your Service portal.</p>
 	</td>
-	<td><p>This is an essential part of the service and can’t be turned off. If you don’t want this information sent to the Service, don’t build Recovery Plans in this Service.</p></td>
+	<td><p>This is an essential part of the service and can't be turned off. If you don't want this information sent to the Service, don't build Recovery Plans in this Service.</p></td>
 </tr>
 <tr>
 	<td><p><b>Network mapping</b></p></td>
@@ -77,7 +77,7 @@ This table provides additional privacy information for the Windows Azure Site Re
 	</td>
 	<td><p>The Service uses the metadata to populate your Service portal where you can map the network information.</p>
 	</td>
-	<td><p>This is an essential part of the Service and can’t be turned off. If you don’t want this information sent to the Service, don’t use the network mapping feature.</p></td>
+	<td><p>This is an essential part of the Service and can't be turned off. If you don't want this information sent to the Service, don't use the network mapping feature.</p></td>
 </tr>
 <tr>
 	<td><p><b>Failed - planned, unplanned, text</b></p></td>
@@ -94,7 +94,7 @@ This table provides additional privacy information for the Windows Azure Site Re
 			<li>Cloud names from the VMM server—The cloud name is required when using the Service cloud pairing/unpairing feature described below. When you decide to pair your cloud from a primary data center with another cloud in the recovery data center, the names of all the clouds from the recovery data center are presented.</li>
 		</ul>
 	</td>
-	<td><p>This is an essential part of the service and can’t be turned off. If you don’t want this information sent to the Service, don’t use this Service.</p></td>
+	<td><p>This is an essential part of the service and can't be turned off. If you don't want this information sent to the Service, don't use this Service.</p></td>
 </tr>
 </table>
 

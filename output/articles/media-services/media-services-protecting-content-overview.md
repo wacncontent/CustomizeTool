@@ -8,7 +8,7 @@
 	documentationCenter=""/>
 
 <tags 
-wacn.date="05/15/2015"
+wacn.date=""
 
 	ms.service="media-services" 
 	ms.workload="media" 
@@ -49,13 +49,13 @@ Depending on the type of content you want to upload, store, and deliver, Media S
 
 If you plan to deliver an MP4 using progressive download, use this option to upload your content.
 
-**StorageEncrypted** – Use this option to encrypt your clear content locally using AES 256 bit encryption and then upload it to Azure Storage where it is stored encrypted at rest. Assets protected with storage encryption are automatically unencrypted and placed in an encrypted file system prior to encoding, and optionally re-encrypted prior to uploading back as a new output asset. The primary use case for storage encryption is when you want to secure your high quality input media files with strong encryption at rest on disk. 
+**StorageEncrypted** - Use this option to encrypt your clear content locally using AES 256 bit encryption and then upload it to Azure Storage where it is stored encrypted at rest. Assets protected with storage encryption are automatically unencrypted and placed in an encrypted file system prior to encoding, and optionally re-encrypted prior to uploading back as a new output asset. The primary use case for storage encryption is when you want to secure your high quality input media files with strong encryption at rest on disk. 
 
-In order to deliver a storage encrypted asset, you must configure the asset’s delivery policy so Media Services knows how you want to deliver your content. Before your asset can be streamed, the streaming server removes the storage encryption and streams your content using the specified delivery policy (for example, AES, PlayReady, or no encryption). 
+In order to deliver a storage encrypted asset, you must configure the asset's delivery policy so Media Services knows how you want to deliver your content. Before your asset can be streamed, the streaming server removes the storage encryption and streams your content using the specified delivery policy (for example, AES, PlayReady, or no encryption). 
 
 **CommonEncryptionProtected** - Use this option if you want to encrypt (or upload already encrypted) content with Common Encryption or PlayReady DRM (for example, Smooth Streaming protected with PlayReady DRM).
 
-**EnvelopeEncryptionProtected** – Use this option if you want to protect (or upload already protected) HTTP Live Streaming (HLS) encrypted with Advanced Encryption Standard (AES). Note that if you are uploading HLS already encrypted with AES, it must have been encrypted by Transform Manager.
+**EnvelopeEncryptionProtected** - Use this option if you want to protect (or upload already protected) HTTP Live Streaming (HLS) encrypted with Advanced Encryption Standard (AES). Note that if you are uploading HLS already encrypted with AES, it must have been encrypted by Transform Manager.
 
 ###Dynamic encryption
 
@@ -99,29 +99,45 @@ For an overview about streaming endpoints and information on how to manage them,
 
 Upload your files using **Azure Management Portal**, **.NET** or **REST API**.
 
-[AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files)]
-
+<div class="technical-azure-selector">
+<a href="/documentation/articles/media-services-manage-content">Portal</a>
+<a href="/documentation/articles/media-services-dotnet-upload-files">.NET</a>
+<a href="/documentation/articles/media-services-rest-upload-files">REST API</a>
+</div>
 ###Encoding assets
 
 Encode with **Azure Media Encoder** using **Azure Management Portal**, **.NET**, or **REST API**.
  
-[AZURE.INCLUDE [media-services-selector-encode](../includes/media-services-selector-encode)]
-
+<div class="technical-azure-selector">
+<a href="/documentation/articles/media-services-manage-content#encode">Portal</a>
+<a href="/documentation/articles/media-services-dotnet-encode-asset">.NET</a>
+<a href="/documentation/articles/media-services-rest-encode-asset">REST API</a>
+</div>
 ###Creating content key
 
 Create a content key with which you want to encrypt your asset using **.NET** or **REST API**.
 
-[AZURE.INCLUDE [media-services-selector-create-contentkey](../includes/media-services-selector-create-contentkey)]
-
+<div class="technical-azure-selector">
+<a href="/documentation/articles/media-services-dotnet-create-contentkey">.NET</a>
+<a href="/documentation/articles/media-services-rest-create-contentkey">REST API</a>
+<a href="https://github.com/southworkscom/azure-sdk-for-media-services-java-samples">Java</a>
+</div>
 ###Configuring content key authorization policy 
 
 Configure content protection and key authorization policy using **.NET** or **REST API**.
 
-[AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../includes/media-services-selector-content-key-auth-policy)]
-
+<div class="technical-azure-selector">
+<a href="/documentation/articles/media-services-portal-configure-content-key-auth-policy">Portal</a>
+<a href="/documentation/articles/media-services-dotnet-configure-content-key-auth-policy">.NET</a>
+<a href="/documentation/articles/media-services-rest-configure-content-key-auth-policy">REST API</a>
+<a href="https://github.com/southworkscom/azure-sdk-for-media-services-java-samples">Java</a>
+</div>
 ###Configuring asset delivery policy
 
 Configure asset delivery policy using **.NET** or **REST API**.
 
-[AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy)]
-
+<div class="technical-azure-selector">
+<a href="/documentation/articles/media-services-dotnet-configure-asset-delivery-policy">.NET</a>
+<a href="/documentation/articles/media-services-rest-configure-asset-delivery-policy">REST API</a>
+<a href="https://github.com/southworkscom/azure-sdk-for-media-services-java-samples">Java</a>
+</div>

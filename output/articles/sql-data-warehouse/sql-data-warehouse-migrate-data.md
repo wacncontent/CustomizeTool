@@ -1,20 +1,16 @@
 <properties
-   pageTitle="Migrate your data to SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Migrate your data to SQL Data Warehouse | Windows Azure"
    description="Tips for migrating your data to Azure SQL Data Warehouse for developing solutions."
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="jrowlandjones"
-   manager="barbkess"
+   authors="barbkess"
+   manager="jhubbard"
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+	ms.service="sql-data-warehouse"
+	ms.date="12/17/2015"
+	wacn.date=""/>
 
 # Migrate Your Data
 The primary objective when migrating data is to populate your SQLDW database. This process can be achieved in a number of ways. ADF Copy, SSIS and bcp can all be used to achieve this goal. However, as the amount of data increases you should think about breaking down the data migration process into steps. This affords you the opportunity to optimize each step both for performance and for resilience to ensure a smooth data migration.
@@ -32,7 +28,7 @@ PolyBase also provides a very high performance option for loading the data. Howe
 
 Head over to the following article for some great [ADF Copy examples].
 
-## Integration Services ##
+##Â Integration Services ##
 Integration Services (SSIS) is a powerful and flexible Extract Transform and Load (ETL) tool that supports complex workflows, data transformation, and several data loading options. Use SSIS to simply transfer data to Azure or as part of a broader migration.
 
 > [AZURE.NOTE] SSIS can export to UTF-8 without the byte order mark in the file. To configure this you must first use the derived column component to convert the character data in the data flow to use the 65001 UTF-8 code page. Once the columns have been converted, write the data to the flat file destination adapter ensuring that 65001 has also been selected as the code page for the file.
@@ -138,7 +134,7 @@ To use AZCopy you will first need to download and install it. There is a [produc
 To upload a file from your file system you will need a command like the one below:
 
 ```
-AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:key /Pattern:abc.txt
+AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /DestKey:key /Pattern:abc.txt
 ```
 
 A high level process summary could be:
@@ -180,7 +176,7 @@ For more development tips, see [development overview][].
 [Migrate your solution to SQL Data Warehouse]: sql-data-warehouse-overview-migrate.md
 [SQL Data Warehouse development overview]: sql-data-warehouse-overview-develop.md
 [Use bcp to load data into SQL Data Warehouse]: sql-data-warehouse-load-with-bcp.md
-[Use PolyBase to load data into SQL Data Warehouse]: sql-data-warehouse-load-with-polybase.md
+[Use PolyBase to load data into SQL Data Warehouse]: sql-data-warehouse-get-started-load-with-polybase.md
 
 
 <!--MSDN references-->
@@ -188,10 +184,10 @@ For more development tips, see [development overview][].
 <!--Other Web references-->
 [Azure Data Factory]: http://azure.microsoft.com/services/data-factory/
 [ExpressRoute]: http://azure.microsoft.com/services/expressroute/
-[ExpressRoute documentation]: http://azure.microsoft.com/documentation/services/expressroute/
+[ExpressRoute documentation]: /documentation/services/expressroute/
 
-[production version]: http://aka.ms/downloadazcopy/
-[preview version]: http://aka.ms/downloadazcopypr/
-[ADO.NET destination adapter]: https://msdn.microsoft.com/en-us/library/bb934041.aspx
-[SSIS documentation]: https://msdn.microsoft.com/en-us/library/ms141026.aspx
+[production version]: http://az635501.vo.msecnd.net/azcopy-3-2-0/MicrosoftAzureStorageTools.msi/
+[preview version]: http://az635501.vo.msecnd.net/azcopy-4-2-0-preview/MicrosoftAzureStorageTools.msi/
+[ADO.NET destination adapter]: https://msdn.microsoft.com/zh-cn/library/bb934041.aspx
+[SSIS documentation]: https://msdn.microsoft.com/zh-cn/library/ms141026.aspx
 

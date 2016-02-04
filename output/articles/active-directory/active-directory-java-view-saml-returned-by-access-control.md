@@ -5,11 +5,11 @@
     documentationCenter="java"
     authors="rmcmurray"
     manager="wpickett"
-    editor="jimbe" />
+    editor="" />
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/12/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 # How to view SAML returned by the Azure Access Control Service
@@ -23,11 +23,11 @@ For more information on ACS, see the [Next steps](#next_steps) section.
 > [AZURE.NOTE]
 > The Azure Access Services Control Filter is a community technology preview. As pre-release software, it is not formally supported by Microsoft.
 
-## <a name="pre"></a>Prerequisites
+## Prerequisites
 
 To complete the tasks in this guide, complete the sample at [How to Authenticate Web Users with Azure Access Control Service Using Eclipse][] and use it as the starting point for this tutorial.
 
-## <a name="add_library"></a>Add the JspWriter library to your build path and deployment assembly
+## Add the JspWriter library to your build path and deployment assembly
 
 Add the library that contains the **javax.servlet.jsp.JspWriter** class to your build path and deployment assembly. If you are using Tomcat, the library is **jsp-api.jar**, which is located in the Apache **lib** folder.
 
@@ -39,7 +39,7 @@ Add the library that contains the **javax.servlet.jsp.JspWriter** class to your 
 6. Select the appropriate library and click **Finish**.
 7. Click **OK** to close the **Properties for MyACSHelloWorld** dialog.
 
-## <a name="modify_jsp"></a>Modify the JSP file to display SAML
+## Modify the JSP file to display SAML
 
 Modify **index.jsp** to use the following code.
 
@@ -173,12 +173,12 @@ Modify **index.jsp** to use the following code.
 	</body>
 	</html>
 
-## <a name="run_application"></a>Run the application
+## Run the application
 
 1. Run your application in the computer emulator or deploy to Azure, using the steps documented at [How to Authenticate Web Users with Azure Access Control Service Using Eclipse][].
 2. Launch a browser and open your web application. After you log on to your application, you'll see SAML information, including the security assertion provided by the identity provider.
 
-## <a name="next_steps"></a>Next steps
+## Next steps
 
 To further explore ACS's functionality and to experiment with more sophisticated scenarios, see [Access Control Service 2.0][].
 
@@ -188,6 +188,6 @@ To further explore ACS's functionality and to experiment with more sophisticated
 [Run the application]: #run_application
 [Next steps]: #next_steps
 [Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
-[How to Authenticate Web Users with Azure Access Control Service Using Eclipse]: /documentation/articles/active-directory-java-authenticate-users-access-control-eclipse
+[How to Authenticate Web Users with Azure Access Control Service Using Eclipse]: ../active-directory-java-authenticate-users-access-control-eclipse
 [saml_output]: ./media/active-directory-java-view-saml-returned-by-access-control/SAML_Output.png
  

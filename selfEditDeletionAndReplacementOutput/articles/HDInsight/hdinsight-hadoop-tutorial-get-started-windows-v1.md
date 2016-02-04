@@ -6,7 +6,7 @@ deleted:
 		- [Windows](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 		- [Linux](/documentation/articles/hdinsight-hadoop-linux-get-started)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -16,17 +16,17 @@ deleted:
 		
 		**[Watch the Hadoop tutorial for HDInsight on YouTube](https://www.youtube.com/watch?v=Y4aNjnoeaHA&list=PLDrz-Fkcb9WWdY-Yp6D4fTC1ll_3lU-QS)**
 
-reason: ()
+reason: (video)
 
 deleted:
 
 		**East Asia**, **Southeast Asia**, **China North**, **West Europe**, **China East**, **China North**,
 
-reason: ()
+reason: (region)
 
 deleted:
 
 		[Twitter trend analysis](/documentation/articles/hdinsight-analyze-twitter-data) | Learn how to use HDInsight to analyze trends in Twitter.
 
-reason: ()
+reason: (google facebook twitter)
 

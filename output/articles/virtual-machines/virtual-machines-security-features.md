@@ -15,7 +15,7 @@
  
 ##Run anti-virus/antimalware
 
-Azure offers several options for anti-virus/antimalware solutions, but it’s up to you to manage it. For example, you’ll need to decide when to run scans and install updates. You can add anti-virus support when you create the virtual machine, or at a later point. Currently three solutions are offered as security extensions, which can be installed on both new and existing virtual machines:
+Azure offers several options for anti-virus/antimalware solutions, but it's up to you to manage it. For example, you'll need to decide when to run scans and install updates. You can add anti-virus support when you create the virtual machine, or at a later point. Currently three solutions are offered as security extensions, which can be installed on both new and existing virtual machines:
 
 - [How to install and configure Symantec Endpoint Protection on an Azure VM](/documentation/articles/virtual-machines-install-symantec/)
 - [How to install and configure Trend Micro Deep Security as a Service on an Azure VM](/documentation/articles/virtual-machines-install-trend/)

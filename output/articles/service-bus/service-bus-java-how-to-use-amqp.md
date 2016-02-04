@@ -16,7 +16,7 @@
 
 The Advanced Message Queuing Protocol (AMQP) 1.0 is an efficient, reliable, wire-level messaging protocol that you can use to build robust, cross-platform, messaging applications. AMQP 1.0 support was added to Azure Service Bus in October 2012 and transitioned to General Availability (GA) in May 2013.
 
-The addition of AMQP 1.0 means that it’s now possible to leverage the queuing and publish/subscribe brokered messaging features of Service Bus from a range of platforms using an efficient binary protocol. Furthermore, you can build applications comprised of components built using a mix of languages, frameworks and operating systems.
+The addition of AMQP 1.0 means that it's now possible to leverage the queuing and publish/subscribe brokered messaging features of Service Bus from a range of platforms using an efficient binary protocol. Furthermore, you can build applications comprised of components built using a mix of languages, frameworks and operating systems.
 
 This how-to guide explains how to use the Service Bus brokered messaging features (queues and publish/subscribe topics) from Java applications using the popular Java Message Service (JMS) API standard.
 
@@ -42,7 +42,7 @@ You must add the following four JAR files from the Apache Qpid JMS AMQP 1.0 dist
 JMS uses the Java Naming and Directory Interface (JNDI) to create a separation between logical names and physical names. Two types of JMS objects are resolved using JNDI: ConnectionFactory and Destination. JNDI uses a provider model into which you can plug different directory services to handle name resolution duties. The Apache Qpid JMS AMQP 1.0 library comes with a simple properties file-based JNDI Provider that is configured using a properties file of the following format:
 
 ```
-# servicebus.properties – sample JNDI configuration
+# servicebus.properties - sample JNDI configuration
 	
 # Register a ConnectionFactory in JNDI using the form:
 # connectionfactory.[jndi_name] = [ConnectionURL]
@@ -247,7 +247,7 @@ For more information about the details of cross-platform messaging using Service
 To demonstrate JMS to .NET messaging:
 
 * Start the .NET sample application without any command-line arguments.
-* Start the Java sample application with the “sendonly” command-line argument. In this mode, the application will not receive messages from the queue, it will only send.
+* Start the Java sample application with the "sendonly" command-line argument. In this mode, the application will not receive messages from the queue, it will only send.
 * Press **Enter** a few times in the Java application console, which will cause messages to be sent.
 * These messages are received by the .NET application.
 
@@ -277,7 +277,7 @@ exit
 
 To demonstrate .NET to JMS messaging:
 
-* Start the .NET sample application with the “sendonly” command-line argument. In this mode, the application will not receive messages from the queue, it will only send.
+* Start the .NET sample application with the "sendonly" command-line argument. In this mode, the application will not receive messages from the queue, it will only send.
 * Start the Java sample application without any command-line arguments.
 * Press **Enter** a few times in the .NET application console, which will cause messages to be sent.
 * These messages are received by the Java application.

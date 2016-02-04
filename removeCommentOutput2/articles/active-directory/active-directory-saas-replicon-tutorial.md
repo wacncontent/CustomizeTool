@@ -7,17 +7,18 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Replicon
+>[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=525008).
   
 The objective of this tutorial is to show the integration of Azure and Replicon. The scenario outlined in this tutorial assumes that you already have the following items:
 
 -   A valid Azure subscription
 -   A Replicon tenant
   
-After completing this tutorial, the Azure AD users you have assigned to Replicon will be able to single sign into the application at your Replicon company site (service provider initiated sign on), or using the [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).
+After completing this tutorial, the Azure AD users you have assigned to Replicon will be able to single sign into the application at your Replicon company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586) 
   
 The scenario outlined in this tutorial consists of the following building blocks:
 

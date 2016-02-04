@@ -74,9 +74,15 @@ To see a list of options for `account` commands, use the `-help` option:
 
 After importing your publish settings, you should delete the `.publishsettings` file for security reasons.
 
+> [AZURE.NOTE] When you import publish settings, credentials for accessing your Azure subscription are stored inside your `user` folder. Your `user` folder is protected by your operating system. However, it is recommended that you take additional steps to encrypt your `user` folder. You can do so in the following ways:    
+<!>
+> - On Windows, modify the folder properties or use BitLocker.
+> - On Mac, turn on FileVault for the folder.
+> - On Ubuntu, use the Encrypted Home directory feature. Other Linux distributions offer equivalent features.
+<!-- keep by customization: begin -->
 <div class="dev-callout"> 
 <b>Note</b> 
-<p>When you import publish settings, credentials for accessing your Azure subscription are stored inside your <code>user</code> folder. Your <code>user</code> folder is protected by your operating system. However, it is recommended that you take additional steps to encrypt your <code>user</code> folder. You can do so in the following ways:</p>
+<!-- keep by customization: begin --> <p>When <!-- keep by customization: end --> you import publish settings, credentials for accessing your Azure subscription are stored inside your <!-- keep by customization: begin --> <code>user</code> <!-- keep by customization: end --> folder. Your <!-- keep by customization: begin --> <code>user</code> <!-- keep by customization: end --> folder is protected by your operating system. However, it is recommended that you take additional steps to encrypt your <!-- keep by customization: begin --> <code>user</code> <!-- keep by customization: end --> folder. You can do so in the following <!-- keep by customization: begin --> ways:</p> <!-- keep by customization: end -->
 
 <ul>
 <li>On Windows, modify the folder properties or use BitLocker.</li>
@@ -85,6 +91,7 @@ After importing your publish settings, you should delete the `.publishsettings` 
 </ul>
 
 </div>
+<!-- keep by customization: end -->
 
 You are now ready to being creating and managing Azure Websites and Azure Virtual Machines.  
 
@@ -221,7 +228,7 @@ For a complete list of commands for creating and managing virtual machines, use 
 <!-- LINKS -->
 [nodejs-org]: http://nodejs.org/
 [install-node-linux]: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
-[mac-installer]: http://azuresdkscu.blob.core.chinacloudapi.cn/downloads04/azure-cli.0.9.10.dmg
+[mac-installer]: http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.dmg
 [windows-installer]: http://go.microsoft.com/fwlink/?LinkID=275464
 [reference-docs]: http://go.microsoft.com/fwlink/?LinkId=252246
 [windowsazuredotcom]: http://azure.microsoft.com

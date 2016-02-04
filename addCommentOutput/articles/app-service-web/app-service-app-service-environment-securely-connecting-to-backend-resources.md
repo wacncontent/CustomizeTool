@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/11/2015"
+	ms.date="12/08/2015"
 	wacn.date=""/>	
 
 # Securely Connecting to Backend Resources from an Azure Websites Environment #
@@ -17,7 +17,7 @@
 ## Overview ##
 Since an Azure Websites Environment is always created in a subnet of a regional classic "v1" [virtual network][virtualnetwork], outbound connections from an Azure Websites Environment to other backend resources can flow exclusively over the virtual network.  
 
-**Note:**  An Azure Websites Environment cannot be created in a "v2" virtual network.
+**Note:**  An Azure Websites Environment cannot be created in a "v2" ARM-managed virtual network.
 
 For example, there may be a SQL Server running on a cluster of virtual machines with port 1433 locked down.  The endpoint may be ACLd to only allow access from other resources on the same virtual network.  
 

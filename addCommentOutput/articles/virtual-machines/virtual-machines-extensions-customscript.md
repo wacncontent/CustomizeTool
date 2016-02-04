@@ -20,8 +20,13 @@ This article gives an overview of using the Custom Script extension on Windows V
 Virtual machine (VM) extensions are built by Microsoft and trusted third-party publishers to extend the functionality of the VM. For an overview of VM extensions, see
 [Azure VM extensions and features](/documentation/articles/virtual-machines-extensions-features).
 
+<!-- deleted by customization
 Link:
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model. You can also create a resource with the [Resource Manager deployment model](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
+<!-- keep by customization: end -->
 
 
 ## Custom Script extension overview
@@ -30,7 +35,7 @@ Custom Script extension for Windows allows you to run PowerShell scripts on a re
 
 ### Prerequistes for running Custom Script Extension
 
-1. Install Azure PowerShell cmdlets version 0.8.0 or later from <a <!-- deleted by customization href="http://azure.microsoft.com/downloads" --><!-- keep by customization: begin --> href="/downloads" <!-- keep by customization: end --> target="_blank">here</a>.
+1. Install Azure PowerShell cmdlets version 0.8.0 or later from <a <!-- deleted by customization href="http://azure.microsoft.com/downloads" --><!-- keep by customization: begin --> href="http://www.windowsazure.cn/downloads" <!-- keep by customization: end --> target="_blank">here</a>.
 2. If the scripts are run on an existing VM, make sure VM Agent is enabled on the VM, if not follow this <a href="https://msdn.microsoft.com/zh-cn/library/azure/dn832621.aspx" target="_blank">article</a> to install one.
 3. Upload the scripts that you want to run on the VM to Azure Storage. The scripts can come from a single container or multiple storage containers.
 4. The script should be authored in such a way that the entry script, which is started by the extension, starts other scripts.
@@ -39,7 +44,7 @@ Custom Script extension for Windows allows you to run PowerShell scripts on a re
 
 ### Upload files to the default container
 
-If you have your scripts in the storage container of the default account of your subscription, then the following example shows how you can run them on the VM. The ContainerName is where you upload the scripts to. The default storage account can be verified by using the **Get-AzureSubscription –Default** command.
+If you have your scripts in the storage container of the default account of your subscription, then the following example shows how you can run them on the VM. The ContainerName is where you upload the scripts to. The default storage account can be verified by using the **Get-AzureSubscription âDefault** command.
 
 The following example creates a new VM, but the same scenario can be run on an existing VM as well.
 
@@ -58,7 +63,7 @@ The following example creates a new VM, but the same scenario can be run on an e
 
 ### Upload files to a non-default storage container
 
-This scenario shows how to use a non-default storage either within the same subscription or in a different subscription for uploading scripts and files. Here we’ll use an existing VM but the same operations can be done while creating a new VM.
+This scenario shows how to use a non-default storage either within the same subscription or in a different subscription for uploading scripts and files. Here weâll use an existing VM but the same operations can be done while creating a new VM.
 
         Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileName 'file1.ps1','file2.ps1' -Run 'file.ps1' | Update-AzureVM
 
@@ -69,11 +74,20 @@ This scenario shows how to use a non-default storage either within the same subs
       Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileUri $fileUrl1, $fileUrl2 -Run 'file.ps1' | Update-AzureVM
 
 
-### Add Custom Script extension from the portal
+<!-- deleted by customization
+### Add Custom Script extension from the Azure Management Portal
 
-Browse to the VM in the <a href="https://manage.windowsazure.cn/ " target="_blank">Azure preview portal </a> and add the extension by specifying the script file to run.
+Browse to the VM in the <a href="https://manage.windowsazure.cn/ " target="_blank">Azure Management Portal </a> and add the extension by specifying the script file to run.
 
   ![][5]
+-->
+<!-- keep by customization: begin -->
+### Add Custom Script extension from the portal
+
+Browse to the VM in the <a href="https://management.windowsazure.cn/ " target="_blank">Azure preview portal </a> and add the extension by specifying the script file to run.
+
+  ![][5]
+<!-- keep by customization: end -->
 
 
 ### Uninstalling Custom Script extension
@@ -84,7 +98,12 @@ Custom Script Extension can be uninstalled from the VM using the following comma
 
 ### Using Custom Script extension with templates
 
-To learn about using Custom Script extension with templates, see the documentation [here](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
+<!-- deleted by customization
+To learn about using Custom Script extension with Azure Resource Manager templates, see the documentation [here](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
+-->
+<!-- keep by customization: begin -->
+To learn about using Custom Script extension with templates, see the documentation [here](/documentation/articles/virtual-machines-extensions-customscript -with template).
+<!-- keep by customization: end -->
 
 <!--Image references-->
 [5]: ./media/virtual-machines-extensions-customscript/addcse.png

@@ -3,13 +3,13 @@
 	description="Learn how to use the Azure Content Delivery Network (CDN) to deliver high-bandwidth content by caching blobs and static content." 
 	services="cdn" 
 	documentationCenter=".net" 
-	authors="zhangmanling" 
+	authors="camsoper" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags
 	ms.service="cdn"
-	ms.date="09/01/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 
@@ -20,9 +20,9 @@ CDN node locations, see [Azure CDN Node Locations].
 
 The benefits of using CDN to cache Azure data include:
 
--   Better performance and user experience for end users who are far from a content source, and are using applications where many 'internet trips' are required to load content
--   Large distributed scale to better handle instantaneous high load, say, at the start of an event such as a product launch
--   By distributing user requests and serving content from global edge POPs, less traffic is sent to origin thus offload the origin.
+- Better performance and user experience for end users who are far from a content source, and are using applications where many 'internet trips' are required to load content
+- Large distributed scale to better handle instantaneous high load, say, at the start of an event such as a product launch
+- By distributing user requests and serving content from global edge POPs, less traffic is sent to origin thus offload the origin.
 
 Existing CDN customers can now use the Azure CDN in the [Azure Management Portal]. The CDN is an add-on feature to your subscription and has a separate [billing plan].
 

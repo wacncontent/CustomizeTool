@@ -8,8 +8,8 @@
 	editor="jimbe" />
 
 <tags
-	ms.service="storage"
-	ms.date="09/01/2015"
+	ms.service="storage" 
+	ms.date="11/19/2015" 
 	wacn.date=""/>
 
 #How to use the Azure slave plugin with Hudson Continuous Integration

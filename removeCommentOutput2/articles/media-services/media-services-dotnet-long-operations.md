@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -39,7 +39,7 @@ The example also shows how the client might use this class.
 
 	/// <summary> 
 	/// The ChannelOperations class only implements 
-	/// the Channel’s creation operation. 
+	/// the Channel's creation operation. 
 	/// </summary> 
 	public class ChannelOperations
 	{

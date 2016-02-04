@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="StorSimple failover and disaster recovery | Microsoft Azure"
+   pageTitle="StorSimple failover and disaster recovery | Windows Azure"
    description="Learn how to fail over your StorSimple device to itself, another physical device, or a virtual device."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/14/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/14/2015"
+	wacn.date=""/>
 
 # Failover and disaster recovery for your StorSimple device
 
@@ -78,7 +74,7 @@ Perform the following steps if you only have a single device and need to perform
 
 1. Take cloud snapshots of all the volumes in your device.
 
-1. Reset your device to factory defaults. Follow the detailed instructions in [how to reset a StorSimple device to factory default settings](storsimple-manage-device-controller.md#reset-the-device-to-factory-default-settings).
+1. Reset your device to factory defaults. Follow the detailed instructions in [how to reset a StorSimple device to factory default settings](/documentation/articles/storsimple-manage-device-controller#reset-the-device-to-factory-default-settings).
 
 1. Configure your device and register it again with your StorSimple Manager service.
 
@@ -145,8 +141,8 @@ If there are StorSimple devices that were registered just before a disaster occu
 
 After you have performed a failover, you may need to:
 
-- [Deactivate your StorSimple device](storsimple-deactivate-and-delete-device.md#deactivate-a-device)
-- [Delete your StorSimple device](storsimple-deactivate-and-delete-device.md#delete-a-device)
+- [Deactivate your StorSimple device](/documentation/articles/storsimple-deactivate-and-delete-device#deactivate-a-device)
+- [Delete your StorSimple device](/documentation/articles/storsimple-deactivate-and-delete-device#delete-a-device)
 
-For information about how to use the StorSimple Manager service, go to [Use the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+For information about how to use the StorSimple Manager service, go to [Use the StorSimple Manager service to administer your StorSimple device](/documentation/articles/storsimple-manager-service-administration).
  

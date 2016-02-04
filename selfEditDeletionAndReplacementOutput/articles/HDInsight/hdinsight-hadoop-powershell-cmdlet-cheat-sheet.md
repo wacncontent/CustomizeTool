@@ -6,5 +6,5 @@ deleted:
 		
 		* [Learning path for HDInsight](http://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/)
 
-reason: ()
+reason: (broken link)
 

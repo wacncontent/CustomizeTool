@@ -67,7 +67,7 @@ Note that the execution of the PowerShell example scripts will result in the cre
 
 * SetupShardedEnvironment runbook creates the shard map manager on a Basic database ($0.0069/hour) and provisions the first shard on a Basic database ($0.0069/hour) as well. 
 
-* Both ProvisionBySize and ProvisionByDate runbooks will provision a Standard S0 database ($0.0208/hour).  To counter act these costs, if run in conjunction with the ReduceServiceTier runbook, the service tier of the newly provisioned database will be reduced from a Standard S0 ($0.0208/hour) to a Basic ($0.0069/hour) after a day’s time. 
+* Both ProvisionBySize and ProvisionByDate runbooks will provision a Standard S0 database ($0.0208/hour).  To counter act these costs, if run in conjunction with the ReduceServiceTier runbook, the service tier of the newly provisioned database will be reduced from a Standard S0 ($0.0208/hour) to a Basic ($0.0069/hour) after a day's time. 
 
 Lastly, within the scope of the provided examples, the use of [Azure Automation](/documentation/services/automation/) currently will not incur any charges to the subscription owner.  Please see the [Azure Automation pricing page](/home/features/automation/#price) for more details. 
 

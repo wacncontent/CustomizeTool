@@ -23,7 +23,7 @@ Enable Multi-Factor Authentication for Azure AD identities, and users will be pr
 
 <h3>Securing on-premises resources and Active Directory</h3>
 
-Enable Multi-Factor Authentication for your on-premise resources such as IIS and Active Directory using the Azure Multi-Factor Authentication Server.  The Azure Multi-Factor Authentication Server allows the administrator integrate with IIS authentication to secure Microsoft IIS web applications, RADIUS authentication, LDAP authentication, and Windows authentication.  [Learn more](http://msdn.microsoft.com/zh-cn/library/dn249467.aspx)
+Enable Multi-Factor Authentication for your on-premise resources such as IIS and Active Directory using the Azure Multi-Factor Authentication Server.  The Azure Multi-Factor Authentication Server allows the administrator integrate with IIS authentication to secure Microsoft IIS web sites, RADIUS authentication, LDAP authentication, and Windows authentication.  [Learn more](http://msdn.microsoft.com/zh-cn/library/dn249467.aspx)
 <h3>Securing custom applications</h3>
 
 An SDK enables direct integration with your cloud services. Build Active Authentication phone call and text message verification into your application's sign-in or transaction processes and leverage your application's existing user database. [Learn more](http://msdn.microsoft.com/zh-cn/library/dn249464.aspx)

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a SQL Data Warehouse with TSQL | Microsoft Azure"
+	pageTitle="Create a SQL Data Warehouse with TSQL | Windows Azure"
 	description="Learn how to create an Azure SQL Data Warehouse with TSQL"
 	services="sql-data-warehouse"
 	documentationCenter="NA"
@@ -9,20 +9,16 @@
 	tags="azure-sql-data-warehouse"/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="10/08/2015"
-   ms.author="lodipalm"/>
+	ms.service="sql-data-warehouse"
+	ms.date="10/21/2015"
+	wacn.date=""/>
 
 # Create a SQL Data Warehouse database by using Transact-SQL (TSQL)
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](sql-data-warehouse-get-started-provision.md)
-- [TSQL](sql-data-warehouse-get-started-create-database-tsql.md)
-- [PowerShell](sql-data-warehouse-get-started-provision-powershell.md)
+- [Azure Management Portal](/documentation/articles/sql-data-warehouse-get-started-provision)
+- [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-database-tsql)
+- [PowerShell](/documentation/articles/sql-data-warehouse-get-started-provision-powershell)
 
 This article will show you how to create a SQL Data Warehouse database by using Transact-SQL (TSQL). 
 
@@ -32,7 +28,7 @@ To complete the steps in this article you need the following:
 
 - An Azure subscription. If you need an Azure subscription simply click **FREE TRIAL** at the top of this page, and then come back to finish this article.
 - Visual Studio. For a free copy of Visual Studio, see the [Visual Studio Downloads](https://www.visualstudio.com/downloads/download-visual-studio-vs) page.
-- A V12 logical SQL server. You will need a V12 SQL server to create SQL Data Warehouse.  If you don't have a V12 logical SQL server, [Azure preview portal tutorial][] shows you how to create one.
+- A V12 logical SQL server. You will need a V12 SQL server to create SQL Data Warehouse.  If you don't have a V12 logical SQL server, [Azure Management Portal tutorial][] shows you how to create one.
 
 ## Create a database with Visual Studio
 
@@ -44,7 +40,7 @@ This article will not cover how to correctly set-up and connect using Visual Stu
 
 You can also create a SQL Data Warehouse by opening the command line and running the following:
 
-        sqlcmd -S <Server Name>.database.windows.net -I -U <User> -P <Password> -Q "CREATE DATABASE <Name> (EDITION='datawarehouse', SERVICE_OBJECTIVE = '<Compute Size - DW####>', MAXSIZE= <Storage Size - #### GB>)"
+        sqlcmd -S <Server Name>.database.chinacloudapi.cn -I -U <User> -P <Password> -Q "CREATE DATABASE <Name> (EDITION='datawarehouse', SERVICE_OBJECTIVE = '<Compute Size - DW####>', MAXSIZE= <Storage Size - #### GB>)"
 
 When running the above TSQL Statements note the MAXSIZE and SERVICE_OBJECTIVE parameters, these will dictate the initial storage size and compute allotted to your Data Warehouse instance.  MAXSIZE will accept the following sizes and we suggest choosing a large size to allow room for growth: 250 GB, 500 GB, 750 GB, 1024 GB, 5120 GB, 10240 GB, 20480 GB, 30720 GB, 40960 GB, 51200 GB.  
 
@@ -53,10 +49,10 @@ SERVICE_OBJECTIVE will indicate the number of DWUs that your instance will start
 ## Next steps
 After your SQL Data Warehouse has finished provisioning you can [load sample data][] or check out how to [develop][], [load][], or [migrate][].
 
-[Azure preview portal tutorial]: ./sql-data-warehouse-get-started-provision.md
-[connect and query]: ./sql-data-warehouse-get-started-connect-query.md
-[migrate]:https://azure.microsoft.com/en-us/documentation/articles/sql-data-warehouse-overview-migrate/
-[develop]:https://azure.microsoft.com/en-us/documentation/articles/sql-data-warehouse-overview-develop/
-[load]:https://azure.microsoft.com/en-us/documentation/articles/sql-data-warehouse-overview-load/
-[load sample data]: https://azure.microsoft.com/en-us/documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
-[pricing page]:https://azure.microsoft.com/en-us/pricing/details/sql-data-warehouse/
+[Azure Management Portal tutorial]: ./sql-data-warehouse-get-started-provision.md
+[connect and query]: ./sql-data-warehouse-get-started-connect.md
+[migrate]: ./sql-data-warehouse-overview-migrate.md
+[develop]: ./sql-data-warehouse-overview-develop.md
+[load]: ./sql-data-warehouse-overview-load.md
+[load sample data]: ./sql-data-warehouse-get-started-manually-load-samples.md
+[pricing page]: /home/features/sql-data-warehouse/#price

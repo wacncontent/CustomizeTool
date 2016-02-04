@@ -26,7 +26,7 @@ In the default configuration delivered by Azure AD Connect Sync, the following a
 
 1. Users have only one enabled account and the forest where this account is located is used to federate the user.
 2. Users have only one mailbox.
-3. The forest that hosts a user’s mailbox has the best data quality for attributes visible in the Exchange Global Address List (GAL). If there is no mailbox on the user, then any forest can be used to contribute these attribute values.
+3. The forest that hosts a userâs mailbox has the best data quality for attributes visible in the Exchange Global Address List (GAL). If there is no mailbox on the user, then any forest can be used to contribute these attribute values.
 
 
 The objective of this topic is to cover some common scenarios and how they are represented in the sync service of Azure AD Connect Sync:

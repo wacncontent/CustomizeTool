@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Replicon
@@ -128,7 +128,7 @@ In the case of Replicon, provisioning is a manual task.
 
     1.  In the **Login Name** textbox, type the Azure AD email address of the Azure AD user you want to provision.
     2.  As **Authentication Type**, select **SSO**.
-    3.  In the **Department** textbox, type the user’s department.
+    3.  In the **Department** textbox, type the user's department.
     4.  As **Employee Type**, select **Administrator**.
     5.  Click **Save User Profile**.
 

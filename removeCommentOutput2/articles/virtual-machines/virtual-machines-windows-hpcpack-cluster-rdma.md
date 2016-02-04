@@ -6,7 +6,7 @@
  authors="dlepow"
  manager="timlt"
  editor=""
- tags="azure-service-management"/>
+ tags="azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/28/2015"
@@ -26,7 +26,7 @@ This article shows you how to set up a Windows RDMA cluster in Azure with [Micro
 If you want to run MPI workloads on Linux VMs that access the Azure RDMA network, see [Set up a Linux RDMA cluster to run MPI applications](/documentation/articles/virtual-machines-linux-cluster-rdma).
 
 ## Windows HPC cluster deployment options
-Microsoft HPC Pack is a recommended tool to create Windows Server–based HPC clusters in Azure. When used with A8 and A9 instances, HPC Pack provides an efficient way to run Windows-based MPI applications that access the RDMA network in Azure. HPC Pack includes a runtime environment for the Microsoft implementation of the Message Passing Interface for Windows.
+Microsoft HPC Pack is a recommended tool to create Windows Server-based HPC clusters in Azure. When used with A8 and A9 instances, HPC Pack provides an efficient way to run Windows-based MPI applications that access the RDMA network in Azure. HPC Pack includes a runtime environment for the Microsoft implementation of the Message Passing Interface for Windows.
 
 This article introduces two scenarios to deploy clustered A8 and A9
 instances with Microsoft HPC Pack.
@@ -75,7 +75,7 @@ in an Azure VM.
 
 6. **Create a new cloud service and a storage account**
 
-    Use the Azure Management Portal to create a cloud service and a storage account for the deployment in a region where the compute intensive instances are available. (Don’t associate the cloud service and storage account with an existing affinity group used for other deployments.)
+    Use the Azure Management Portal to create a cloud service and a storage account for the deployment in a region where the compute intensive instances are available. (Don't associate the cloud service and storage account with an existing affinity group used for other deployments.)
 
 7. **Create an Azure node template**
 
@@ -173,7 +173,7 @@ command.
 
 This example assumes you added Azure nodes in a “burst to Azure”
 configuration ([Scenario 1](#scenario-1.-deploy-compute-intensive-worker-role-instances-(PaaS)) in this articles). If you deployed HPC Pack on a cluster of Azure VMs,
-you’ll need to modify the command syntax to specify a different node
+you'll need to modify the command syntax to specify a different node
 group and set additional environment variables to direct network traffic
 to the RDMA network.
 
@@ -194,7 +194,7 @@ To run mpipingpong on the cluster:
     If you deployed the HPC Pack cluster deployed on Azure VMs, specify a node group that contains compute node VMs deployed in a single cloud service, and modify the **mpiexec** command as follows:
 
   ```
-  job submit /nodegroup:vmcomputenodes /numnodes:4 mpiexec -c 1 -affinity -env MSMPI_DISABLE_SOCK 1 -env MSMPI_PRECONNECT all -env MPICH_NETMASK 172.16.0.0/255.255.0.0 mpipingpong -p 1:100000 -op -s nul
+  job submit /nodegroup:vmcomputenodes /numnodes:4 mpiexec -c 1 -affinity -env MSMPI\_DISABLE\_SOCK 1 -env MSMPI\_PRECONNECT all -env MPICH_NETMASK 172.16.0.0/255.255.0.0 mpipingpong -p 1:100000 -op -s nul
   ```
 
 3. When the job completes, to view the output (in this case, the output of task 1 of the job), type the following

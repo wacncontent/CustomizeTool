@@ -45,7 +45,7 @@ To create a CNAME record, you must add a new entry in the DNS table for your cus
 
   		  ![quick glance section showing the site URL][csurl]
 
-  * Install and configure [Azure Powershell](/documentation/articles/install-configure-powershell), and then use the following command:
+  * Install and configure [Azure Powershell](/documentation/articles/powershell-install-configure), and then use the following command:
 
     Get-AzureDeployment -ServiceName yourservicename | Select Url
 
@@ -90,7 +90,7 @@ To create an A record, you must first find the virtual IP address of your cloud 
 
    		 ![quick glance section showing the VIP][vip]
 
-  * Install and configure [Azure Powershell](/documentation/articles/install-configure-powershell), and then use the following command:
+  * Install and configure [Azure Powershell](/documentation/articles/powershell-install-configure), and then use the following command:
 
       get-azurevm -servicename yourservicename | get-azureendpoint -VM {$_.VM} | select Vip
 

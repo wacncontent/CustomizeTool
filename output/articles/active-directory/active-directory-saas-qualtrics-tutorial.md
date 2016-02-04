@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Qualtrics
@@ -73,7 +73,7 @@ The objective of this section is to outline how to enable users to authenticate 
 
     ![Configure Single Sign-On](./media/active-directory-saas-qualtrics-tutorial/IC789546.png "Configure Single Sign-On")
 
-3.  On the **Configure App URL** page, in the **Qualtrics Sign On URL** textbox, type your URL (e.g.: “*https://ssotest2ut1.qualtrics.com*"), and then click **Next**.
+3.  On the **Configure App URL** page, in the **Qualtrics Sign On URL** textbox, type your URL (e.g.: "*https://ssotest2ut1.qualtrics.com*"), and then click **Next**.
 
     ![Configure App URL](./media/active-directory-saas-qualtrics-tutorial/IC789547.png "Configure App URL")
 

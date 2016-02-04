@@ -3,26 +3,36 @@
 	description="Learn what the Azure Content Delivery Network (CDN) is and how to use it to deliver high-bandwidth content by caching blobs and static content." 
 	services="cdn" 
 	documentationCenter=".NET" 
-	authors="zhangmanling" 
+	authors="camsoper" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags
 	ms.service="cdn"
-	ms.date="09/01/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
+<!-- deleted by customization
+# Overview of the Azure Content Delivery Network (CDN)
+-->
+<!-- keep by customization: begin -->
 #Overview of the Azure Content Delivery Network (CDN)
+<!-- keep by customization: end -->
 
 The Azure Content Delivery Network (CDN) caches Azure blobs and static content used by cloud services at strategically placed locations to provide maximum bandwidth for delivering content to users. 
 
 If you are an existing CDN customer, you can now manage your CDN endpoints through the [Windows Azure Management Portal](https://manage.windowsazure.cn). 
 
 
->[AZURE.NOTE] Azure CDN has a separate [billing <!-- deleted by customization plan](http://www.microsoft.com/windowsazure/pricing/) --><!-- keep by customization: begin --> plan](http://www.windowsazure.cn/pricing/) <!-- keep by customization: end --> from Azure Storage or Azure Cloud Services.
+<!-- deleted by customization
+The CDN offers developers a global solution for delivering high-bandwidth content by caching the content at physical nodes across the world. For a current list of CDN node locations, see [Azure Content Delivery Network (CDN) POP Locations](/documentation/articles/cdn-pop-locations).
+-->
+<!-- keep by customization: begin -->
+>[AZURE.NOTE] Azure CDN has a separate [billing plan](http://www.windowsazure.cn/pricing/) from Azure Storage or Azure Cloud Services.
  
 
 The CDN offers developers a global solution for delivering high-bandwidth content by caching the content at physical nodes across the world. For a current list of CDN node locations, see [Azure Content Delivery Network (CDN) POP Locations](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx).
+<!-- keep by customization: end -->
 
 The benefits of using the CDN to cache Azure data include:
 
@@ -30,13 +40,42 @@ The benefits of using the CDN to cache Azure data include:
 - Large distributed scale to better handle instantaneous high load, like at the start of a product launch event. 
 
 
->[AZURE.IMPORTANT] When you create or enable a CDN endpoint, it may take up to 60 minutes to propagate worldwide.
+>[AZURE.IMPORTANT] When you create or enable a CDN endpoint, it may take up to <!-- deleted by customization 90 --><!-- keep by customization: begin --> 60 <!-- keep by customization: end --> minutes to propagate worldwide.
  
-When a request for an object is first made to the CDN, the object is retrieved directly from the Blob service or from the cloud service. When a request is made using the CDN syntax, the request is redirected to the CDN endpoint closest to the location from which the request was made to provide access to the object. If the object is not found at that endpoint, then it is retrieved from the service and cached at the endpoint, where a time-to-live (TTL) setting is maintained for the cached object.
+When a request for an object is first made to the CDN, the object is retrieved directly from the <!-- deleted by customization object's source origin location.  This origin can be an Azure storage account, web site, --><!-- keep by customization: begin --> Blob service or from the <!-- keep by customization: end --> cloud service <!-- deleted by customization, or any custom origin that accepts public web requests -->. <!-- deleted by customization  --> When a request is made using the CDN syntax, the request is redirected to the CDN endpoint closest to the location from which the request was made to provide access to the object. If the object is not found at that endpoint, then it is retrieved from the service and cached at the endpoint, where a time-to-live (TTL) setting is maintained for the cached object.
+<!-- deleted by customization
+
+## Standard features
+
+The Standard CDN tier includes these features:
+
+- Easy integration with Azure services such as [Storage](/documentation/articles/cdn-create-a-storage-account-with-cdn), web sites, and Media Services
+- [Query string caching](/documentation/articles/cdn-query-string)
+- [Custom domain name support](/documentation/articles/cdn-map-content-to-custom-domain)
+- [Country filtering](/documentation/articles/cdn-restrict-access-by-country)
+- [Core analytics](/documentation/articles/cdn-analyze-usage-patterns)
+- [Custom content origins](/documentation/articles/cdn-map-content-to-custom-domain)
+- [HTTPS support](/documentation/articles/cdn-how-to-use-cdn#accessing-cached-content-over-https)
+- Load balancing
+- DDOS protection
+- [Fast purge](/documentation/articles/cdn-purge-endpoint)
+- [Management via REST API](https://msdn.microsoft.com/zh-cn/library/mt634456.aspx)
+
+
+## Premium features
+
+The Premium CDN tier includes all of the features of the Standard tier, plus these additional features:
+
+- [Customizable, rule-based content delivery engine](/documentation/articles/cdn-rules-engine)
+- [Advanced HTTP reports](/documentation/articles/cdn-advanced-http-reports)
+- [Real-time stats](/documentation/articles/cdn-read-time-stats)
+
+-->
+<!-- keep by customization: begin -->
  
 ##Caching content from Azure storage
 
-Once the CDN is enabled on a Azure storage account, any blobs that are in public containers and are available for anonymous access will be cached via the CDN. Only blobs that are publicly available can be cached with the Azure CDN. To make a blob publicly available for anonymous access, you must denote its container as public. Once you do so, all blobs within that container will be available for anonymous read access. You have the option of making container data public as well, or restricting access only to the blobs within it. See [Restrict Access to Containers and <!-- deleted by customization Blobs](/documentation/articles/storage-manage-access-to-resources) --><!-- keep by customization: begin --> Blobs](http://msdn.microsoft.com/zh-cn//library/azure/dd179354.aspx) <!-- keep by customization: end --> for information on managing access control for containers and blobs.
+Once the CDN is enabled on a Azure storage account, any blobs that are in public containers and are available for anonymous access will be cached via the CDN. Only blobs that are publicly available can be cached with the Azure CDN. To make a blob publicly available for anonymous access, you must denote its container as public. Once you do so, all blobs within that container will be available for anonymous read access. You have the option of making container data public as well, or restricting access only to the blobs within it. See [Restrict Access to Containers and Blobs](http://msdn.microsoft.com/zh-cn//library/azure/dd179354.aspx) for information on managing access control for containers and blobs.
 
 For best performance, use CDN edge caching for delivering blobs less than 10 GB in size.
 
@@ -109,3 +148,4 @@ You can map the CDN HTTP endpoint to a custom domain name and use that name to r
 For more information on mapping a custom domain, see [How to Map Content Delivery Network (CDN) Content to a Custom Domain](http://msdn.microsoft.com/zh-cn/library/azure/gg680307.aspx).
 
  
+<!-- keep by customization: end -->

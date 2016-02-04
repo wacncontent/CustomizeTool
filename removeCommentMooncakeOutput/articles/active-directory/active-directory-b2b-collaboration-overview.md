@@ -8,13 +8,13 @@
    editor=""/>
 
 <tags
-	ms.service="active-directory"
-	ms.date="09/17/2015"
-	wacn.date=""/>
+   ms.service="active-directory"
+   ms.date="10/27/2015"
+   wacn.date=""/>
 
-# Azure Active Directory B2B collaboration
+# Azure Active Directory  (Azure AD) B2B collaboration
 
-Azure Active Directory B2B collaboration lets you enable access to your corporate applications from partner-managed identities. You can create cross-company relationships by inviting and authorizing users from partner companies to access your resources. Complexity is reduced because each company federates once with Azure Active Directory (Azure AD) and each user is represented by a single Azure AD account. Security is increased because access is revoked when partner users are terminated from their organizations, and unintended access via membership in internal directories is prevented. For business partners who don't already have Azure AD, B2B collaboration has a streamlined sign-up experience to provide Azure AD accounts to your business partners.
+Azure AD B2B collaboration lets you enable access to your corporate applications from partner-managed identities. You can create cross-company relationships by inviting and authorizing users from partner companies to access your resources. Complexity is reduced because each company federates once with Azure Active Directory and each user is represented by a single Azure AD account. Security is increased because access is revoked when partner users are terminated from their organizations, and unintended access via membership in internal directories is prevented. For business partners who don't already have Azure AD, B2B collaboration has a streamlined sign-up experience to provide Azure AD accounts to your business partners.
 
 -   Your business partners use their own sign-in credentials, which frees you from managing an external partner directory, and from the need to remove access when users leave the partner organization.
 
@@ -24,7 +24,7 @@ Azure Active Directory B2B collaboration lets you enable access to your corporat
 
 B2B collaboration simplifies management and improves security of partner access to corporate resources including SaaS apps such as Office 365, Salesforce, Azure Services, and every mobile, cloud and on-premises claims-aware application. B2B collaboration enables partners manage their own accounts and enterprises can apply security policies to partner access.
 
-Azure Active Directory B2B collaboration is easy to configure with simplified sign-up for partners of all sizes even if they don’t have their own Azure Active Directory via an email-verified process. It is also easy to maintain with no external directories or per partner federation configurations.
+Azure Active Directory B2B collaboration is easy to configure with simplified sign-up for partners of all sizes even if they don't have their own Azure Active Directory via an email-verified process. It is also easy to maintain with no external directories or per partner federation configurations.
 
 The process:
 
@@ -49,7 +49,7 @@ The CSV file follows the format below. Add all required commas even if you don't
 **Email:** Email address for invited user.<br/>
 **DisplayName:** Display name for invited user (typically, first and last name).<br/>
 **InviteAppID:**  The ID for the application to use for branding the email invite and acceptance pages.<br/>
-**InviteReplyURL:** URL to which to direct an invited user after invite acceptance. This should be a company-specific URL (such as [*contoso.my.salesforce.com*](http://contoso.my.salesforce.com/)). If this optional field is not specified, the inviting company's Access Panel URL is generated (this URL is of the form  `https://account.activedirectory.windowsazure.cn/applications/default.aspx?tenantId=<TenantID>`).<br/>
+**InviteReplyURL:** URL to which to direct an invited user after invite acceptance. This should be a company-specific URL (such as [*contoso.my.salesforce.com*](http://contoso.my.salesforce.com/)).<br/>
 **InviteAppResources:** AppIDs to which applications can assign users. AppIDs are retrievable by calling `Get-MsolServicePrincipal | fl DisplayName, AppPrincipalId`<br/>
 **InviteGroupResources:** ObjectIDs for groups to add user to. ObjectIDs are retrievable by calling `Get-MsolGroup | fl DisplayName, ObjectId`<br/>
 **InviteContactUsUrl:** "Contact Us" URL to include in email invitations in case the invited user wants to contact your organization.<br/>
@@ -63,3 +63,13 @@ wharp@contoso.com,Walter Harp,cd3ed3de-93ee-400b-8b19-b61ef44a0f29,/home/feature
 jsmith@contoso.com,Jeff Smith,cd3ed3de-93ee-400b-8b19-b61ef44a0f29,/home/features/identity/,,,/home/features/identity/
 bsmith@contoso.com,Ben Smith,cd3ed3de-93ee-400b-8b19-b61ef44a0f29,/home/features/identity/,,,/home/features/identity/
 ```
+## Next steps
+Browse our other articles on Azure B2B collaboration
+
+- [What is Azure AD B2B collaboration?](/documentation/articles/active-directory-b2b-what-is-azure-ad-b2b)
+- [How it works](/documentation/articles/active-directory-b2b-how-it-works)
+- [Detailed walkthrough](/documentation/articles/active-directory-b2b-detailed-walkthrough)
+- [CSV file format reference](/documentation/articles/active-directory-b2b-references-csv-file-format)
+- [External user token format](/documentation/articles/active-directory-b2b-references-external-user-token-format)
+- [External user object attribute changes](/documentation/articles/active-directory-b2b-references-external-user-object-attribute-changes)
+- [Current preview limitations](/documentation/articles/active-directory-b2b-current-preview-limitations)

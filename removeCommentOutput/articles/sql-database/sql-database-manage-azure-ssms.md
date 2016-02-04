@@ -17,7 +17,7 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](/documentation/articles/sql-database-manage-portal)
+- [Azure Management Portal](/documentation/articles/sql-database-manage-portal)
 - [SSMS](/documentation/articles/sql-database-manage-azure-ssms)
 - [PowerShell](/documentation/articles/sql-database-command-line-tools)
 

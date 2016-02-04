@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Manage a Service Fabric service | Microsoft Azure"
+   pageTitle="Manage a Service Fabric service | Windows Azure"
    description="Conceptual information and tutorials that help you understand how to manage a Service Fabric service."
    services="service-fabric"
    documentationCenter=".net"
@@ -8,43 +8,55 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="10/13/2015"
-   ms.author="ryanwi"/>
+	ms.service="service-fabric"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Manage a Service Fabric service
 This page has links to overview and conceptual articles and tutorial to help you learn to manage a Service Fabric service.
 
+<!-- keep by customization: begin -->
+- [Application Lifecycle](/documentation/articles/service-fabric-application-lifecycle)
+- [Visualizing your cluster using Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster)
+- [Secure replication traffic of stateful services](/documentation/articles/service-fabric-replication-security)
+
+<!-- keep by customization: end -->
 ## Package, deploy and remove an application
 The following topics discuss the Service Fabric application model as well as how to package and deploy your applications.
 
-- [Application Model](service-fabric-application-model.md)
-- [Application Lifecycle](service-fabric-application-lifecycle.md)
-- [Service Manifest Resources](service-fabric-service-manifest-resources.md)
-- [Package an Application](service-fabric-application-model.md)
-- [Deploy and Remove an Application](service-fabric-deploy-remove-applications.md)
-- [Deploy an existing application](service-fabric-deploy-existing-app.md)
-- [Managing your Service Fabric applications in Visual Studio](service-fabric-manage-application-in-visual-studio.md)
+- [Application Model](/documentation/articles/service-fabric-application-model)
+<!-- deleted by customization
+- [Application Lifecycle](/documentation/articles/service-fabric-application-lifecycle)
+-->
+- [Service Manifest Resources](/documentation/articles/service-fabric-service-manifest-resources)
+- [Package an Application](/documentation/articles/service-fabric-application-model)
+- [Deploy and Remove an Application](/documentation/articles/service-fabric-deploy-remove-applications)
+- [Deploy an existing application](/documentation/articles/service-fabric-deploy-existing-app)
+- [Managing your Service Fabric applications in Visual Studio](/documentation/articles/service-fabric-manage-application-in-visual-studio)
 
 ## Upgrade an application
 Read the following to learn how to upgrade an application:
 
-- [Service Fabric Application Upgrade](service-fabric-application-upgrade.md)
-- [Upgrade Parameters](service-fabric-application-upgrade-parameters.md)
-- [Advanced Topics](service-fabric-application-upgrade-advanced.md)
-- [Troubleshooting Application Upgrade Failures](service-fabric-application-upgrade-troubleshooting.md)
-- [Application Upgrade Walkthrough](service-fabric-application-upgrade-tutorial.md)
-- [Service Fabric Application Upgrade: Data Serialization](service-fabric-application-upgrade-data-serialization.md)
+- [Service Fabric Application Upgrade](/documentation/articles/service-fabric-application-upgrade)
+- [Upgrade Parameters](/documentation/articles/service-fabric-application-upgrade-parameters)
+- [Advanced Topics](/documentation/articles/service-fabric-application-upgrade-advanced)
+- [Troubleshooting Application Upgrade Failures](/documentation/articles/service-fabric-application-upgrade-troubleshooting)
+<!-- deleted by customization
+- [Application Upgrade Walkthrough](/documentation/articles/service-fabric-application-upgrade-tutorial)
+-->
+<!-- keep by customization: begin -->
+- [Application Upgrade Tutorial/Walkthrough](/documentation/articles/service-fabric-application-upgrade-tutorial)
+<!-- keep by customization: end -->
+- [Service Fabric Application Upgrade: Data Serialization](/documentation/articles/service-fabric-application-upgrade-data-serialization)
 
 ## Scale and partition applications services
 The following articles describe scaling and partitioning:
 
-- [Partitioning Service Fabric services](service-fabric-concepts-partitioning.md)
-- [Scaling Service Fabric Applications](service-fabric-concepts-scalability.md)
+- [Partitioning Service Fabric services](/documentation/articles/service-fabric-concepts-partitioning)
+- [Scaling Service Fabric Applications](/documentation/articles/service-fabric-concepts-scalability)
+<!-- deleted by customization
 
 ## Manage a cluster
-- [Visualizing your cluster using Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)
+- [Visualizing your cluster using Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster)
+
+-->

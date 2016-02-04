@@ -54,10 +54,15 @@ In both cases, you can retrieve your connection string using the `CloudConfigura
 
 ### Configure your connection string when using Cloud Services
 
-The service configuration mechanism is unique to Azure Cloud Services projects and enables you to dynamically change configuration settings from the Azure Management Portal without redeploying your application. For example, add a `Setting` label to your service definition (***.csdef**) file, as shown in the next example.
+The service configuration mechanism is unique to Azure Cloud Services projects and enables you to dynamically change configuration settings from the [Azure Management Portal][] without redeploying your application. For example, add a `Setting` label to your service definition (***.csdef**) file, as shown in the next example.
 
 ```
+<!-- deleted by customization
 <ServiceDefinition name="Azure1">
+-->
+<!-- keep by customization: begin -->
+<ServiceDefinition name="WindowsAzure1">
+<!-- keep by customization: end -->
 ...
     <WebRole name="MyRole" vmsize="Small">
         <ConfigurationSettings>
@@ -71,7 +76,12 @@ The service configuration mechanism is unique to Azure Cloud Services projects a
 You then specify values in the service configuration (.cscfg) file.
 
 ```
+<!-- deleted by customization
 <ServiceConfiguration serviceName="Azure1">
+-->
+<!-- keep by customization: begin -->
+<ServiceConfiguration serviceName="WindowsAzure1">
+<!-- keep by customization: end -->
 ...
     <Role name="MyRole">
         <ConfigurationSettings>
@@ -207,7 +217,7 @@ Now when a message is sent to `TestTopic`, it is always delivered to receivers s
 
 ## Send messages to a topic
 
-To send a message to a Service Bus topic, your application creates a [TopicClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx) object using the connection string.
+To send a message to a Service Bus topic, your application creates a <!-- deleted by customization [TopicClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx) --><!-- keep by customization: begin --> [`TopicClient`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx) <!-- keep by customization: end --> object using the connection string.
 
 The following code demonstrates how to create a [TopicClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx) object for the **TestTopic** topic created earlier using the [`CreateFromConnectionString`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.createfromconnectionstring.aspx) API call.
 
@@ -330,8 +340,8 @@ Now that you've learned the basics of Service Bus topics and subscriptions, foll
 
   [7]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/getting-started-multi-tier-13.png
 
-  [Queues, Topics, and Subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+  [Queues, Topics, and Subscriptions]: <!-- deleted by customization service-bus-queues-topics-subscriptions.md --><!-- keep by customization: begin --> /documentation/articles/service-bus-queues-topics-subscriptions <!-- keep by customization: end -->
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
   [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
-  [Service Bus Brokered Messaging .NET Tutorial]: /documentation/articles/service-bus-brokered-tutorial-dotnet
+  [Service Bus Brokered Messaging .NET Tutorial]: <!-- deleted by customization service-bus-brokered-tutorial-dotnet.md --><!-- keep by customization: begin --> /documentation/articles/service-bus-brokered-tutorial-dotnet <!-- keep by customization: end -->
   [Azure Samples]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2

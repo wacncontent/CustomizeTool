@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/04/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Connection libraries for SQL Database and SQL Server
@@ -31,7 +31,7 @@ The following table displays libraries that are released by Microsoft. The **Lib
 
 ### ODBC support
 
-When using the data source name (DSN) wizard to define a data source for Azure SQL Database, click the **With SQL Server Authentication using a login ID and password entered by the user** option and select the **Connect to SQL Server to obtain default settings for the additional configuration options**. Enter your user name and password to connect to your Azure SQL Database server as **Login ID** and **Password**. Clear the **Connect to SQL Server to obtain default settings…** checkbox. Click **Change the default database to:** and enter the name of your Azure SQL Database even if it does not show up in the list. Note that the wizard lists several languages in the **Change the language of SQL Server system messages to:** list.
+When using the data source name (DSN) wizard to define a data source for Azure SQL Database, click the **With SQL Server Authentication using a login ID and password entered by the user** option and select the **Connect to SQL Server to obtain default settings for the additional configuration options**. Enter your user name and password to connect to your Azure SQL Database server as **Login ID** and **Password**. Clear the **Connect to SQL Server to obtain default settingsâŚ** checkbox. Click **Change the default database to:** and enter the name of your Azure SQL Database even if it does not show up in the list. Note that the wizard lists several languages in the **Change the language of SQL Server system messages to:** list.
 
 In this release, Windows Azure SQL Database supports only English, so select English as a language. Windows Azure SQL Database does not support **Mirror Server** or **Attach Database**, so leave those items empty. Click **Test Connection**.
 
@@ -44,22 +44,22 @@ The Microsoft OLE DB Provider for DB2 Version 5.0 (Data Provider) lets you creat
 For more information, see:
 
 - [Microsoft OLE DB Provider for DB2 Version 5.0](http://msdn.microsoft.com/zh-cn/library/dn745875.aspx)
-- [Microsoft OLEDB Provider for DB2 v4.0 for Microsoft SQL Server 2012](http://www.microsoft.com/download/details.aspx?id=29100)
+- [Microsoft OLEDB Provider for DB2 v4.0 for Microsoft SQL Server 2012](http://www.microsoft.com/zh-cn/download/details.aspx?id=29100) 
 
 ## Third party libraries
 
 > [AZURE.IMPORTANT] The following table displays libraries that are released by third parties under third party license terms. You are responsible for verifying and complying with the relevant third party licenses in order to use these libraries. You bear the risk of using these libraries. Microsoft makes no warranties, express or implied, with respect to the information provided here and has merely provided the information as a matter of convenience to the users. Nothing herein implies any kind of endorsement by Microsoft.
-<br/><br/>It is up to the public community of developers to update and maintain the information that is in this "Third party libraries" section, by using the [azure-content](http://github.com/Azure/azure-content/) repository owned by **Azure** on GitHub.com. Microsoft encourages developers to update this section. Microsoft personnel do *not* intend to maintain the information that is in this section, partly because other people are more expert with each particular third party library than we are.  Thank you.
+<br/><br/>It is up to the public community of developers to update and maintain the information that is in this "Third party libraries" section, by using the [azure-content](http://github.com/Azure/azure-content) repository owned by **Azure** on GitHub.com. Microsoft encourages developers to update this section. Microsoft personnel do *not* intend to maintain the information that is in this section, partly because other people are more expert with each particular third party library than we are.  Thank you.
 
 The following table displays libraries that are released by third parties such as other companies or by the community. Libraries released by Microsoft are restricted to the earlier section in this topic.
 
 | Platform | Libraries |
 | :-- | :-- |
-| Python | [pymssql *(org, stable)*](http://pymssql.org/en/stable/)<br/><br/>[pymssql *(org)*](http://pymssql.org/) |
+| Python | [pymssql *(org, stable)*](http://pymssql.org/en/stable)<br/><br/>[pymssql *(org)*](http://pymssql.org) |
 | Node.js | [Tedious *(npmjs)*](http://www.npmjs.com/package/tedious) |
 | Node.js | [Node-MSSQL *(github, patriksimek)*](https://github.com/patriksimek/node-mssql)<br/><br/>[Node-MSSQL *(npmjs)*](https://www.npmjs.com/package/node-mssql)<br/><br/>[Node-MSSQL-Connector *(npmjs)*](https://www.npmjs.com/package/node-mssql-connector) |
-| Node.js | [Edge.js *(github com, tjanczuk)*](https://github.com/tjanczuk/edge)<br/><br/>[Edge.js *(tjanczuk, github io)*](http://tjanczuk.github.io/edge/) |
-| . | [FreeTDS *(org)*](http://www.freetds.org/) |
+| Node.js | [Edge.js *(github com, tjanczuk)*](https://github.com/tjanczuk/edge)<br/><br/>[Edge.js *(tjanczuk, github io)*](http://tjanczuk.github.io/edge) |
+| . | [FreeTDS *(org)*](http://www.freetds.org) |
 
 <!--
 https://en.wikipedia.org/wiki/Draft:Microsoft_SQL_Server_Libraries/Drivers

@@ -107,6 +107,12 @@ Now that you have learned the basics of Service Bus queues, follow these links t
 
 [Azure Management Portal]: http://manage.windowsazure.cn
 [Python Azure package]: https://pypi.python.org/pypi/azure  
-[Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+<!-- deleted by customization
+[Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
 [Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas
+-->
+<!-- keep by customization: begin -->
+[Queues, Topics, and Subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas
+<!-- keep by customization: end -->
  

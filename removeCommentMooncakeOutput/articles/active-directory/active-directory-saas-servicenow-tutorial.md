@@ -1,7 +1,19 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with ServiceNow | Windows Azure" description="Learn how to use ServiceNow with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory integration with ServiceNow | Windows Azure" 
+    description="Learn how to use ServiceNow with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
+    services="active-directory" 
+    authors="MarkusVi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags
+	ms.service="active-directory"
+	ms.date="11/02/2015"
+	wacn.date=""/>
+
 #Tutorial: Azure Active Directory integration with ServiceNow
+<!-- keep by customization: begin -->
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=521880).
+<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and ServiceNow.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -66,14 +78,153 @@ As part of this procedure, you are required to upload a base-64 encoded certific
 
     ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC749324.png "Configure single sign-on")
 
+<!-- deleted by customization
+3.  On the **Configure App Settings** page, perform the following steps:
+
+    ![Configure app URL](./media/active-directory-saas-servicenow-tutorial/IC769497.png "Configure app URL")
+
+    a. in the **ServiceNow Sign On URL** textbox, type your URL used by your users to sign-on to your ServiceNow application (e.g.: *https://\<InstanceName\>.service-now.com*).
+
+    b. In the **Issuer URL** textbox,type your URL used by your users to sign-on to your ServiceNow application (e.g.: *https://\<InstanceName\>.service-now.com*).
+
+    c. Click **Next**
+
+4.  On the **Auto configure single sign-on** page, click **Manually configure the application for single sign-on**, and then click **Next**.
+
+    ![Configure app URL](./media/active-directory-saas-servicenow-tutorial/IC7694971.png "Configure app URL")
+
+
+
+-->
+<!-- keep by customization: begin -->
 3.  On the **Configure App URL** page, in the **ServiceNow Sign In URL** textbox, type your URL using the following pattern "*https://<InstanceName>.servicenow.com*", and then click **Next**.
 
     ![Configure app URL](./media/active-directory-saas-servicenow-tutorial/IC769497.png "Configure app URL")
 
+<!-- keep by customization: end -->
 4.  On the **Configure single sign-on at ServiceNow** page, click **Download certificate**, save the certificate file locally on your computer, and then click **Next**.
 
     ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC749325.png "Configure single sign-on")
 
+<!-- deleted by customization
+1. Sign-on to your ServiceNow application as an administrator.
+
+2. In the navigation pane on the left side, click **Properties**.  
+
+    ![Configure app URL](./media/active-directory-saas-servicenow-tutorial/IC7694980.png "Configure app URL")
+
+
+3. On the **Multiple Provider SSO Properties** dialog, perform the following steps:
+
+    ![Configure app URL](./media/active-directory-saas-servicenow-tutorial/IC7694981.png "Configure app URL")
+
+    a. As **Enable multiple provider SSO**, select **Yes**.
+
+    b. As **Enable debug logging got the multiple provider SSO integration**, select **Yes**.
+
+    c. In **The field on the user table that...** textbox, type **user_name**.
+
+    d. Click **Save**.
+
+
+
+1. In the navigation pane on the left side, click **x509 Certificates**.
+
+    ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC7694973.png "Configure single sign-on")
+
+
+1. On the **X.509 Certificates** dialog, click **New**.
+
+    ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC7694974.png "Configure single sign-on")
+
+
+1. On the **X.509 Certificates** dialog, perform the following steps:
+
+    ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC7694975.png "Configure single sign-on")
+
+    a. Click **New**.
+
+    b. In the **Name** textbox, type a name for your configuration (e.g.: **TestSAML2.0**).
+
+    c. Select **Active**.
+
+    d. As **Format**, select **PEM**.
+
+    e. As **Type**, select **Trust Store Cert**.
+
+    f. Create a Base-64 encoded file from your downloaded certificate.
+    > [AZURE.NOTE] For more details, see [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o).
+    
+    g. Open your base-64 encoded certificate in notepad, copy the content of it into your clipboard, and then paste it to the **PEM Certificate** textbox.
+
+    h. Click **Update**.
+
+
+1. In the navigation pane on the left side, click **Identity Providers**.
+
+    ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC7694976.png "Configure single sign-on")
+
+1. On the **Identity Providers** dialog, click **New**:
+
+    ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC7694977.png "Configure single sign-on")
+
+
+1. On the **Identity Providers** dialog, click **SAML2 Update1?**:
+
+    ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC7694978.png "Configure single sign-on")
+
+
+1. On the SAML2 Update1 Properties dialog, perform the following steps:
+
+    ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC7694982.png "Configure single sign-on")
+
+
+    a. in the **Name** textbox, type a name for your configuration (e.g.: **SAML 2.0**).
+
+    b. In the **User Field** textbox, type **email**. 
+
+    c. In the Azure AD portal, copy the **Identity Provider ID** value, and then paste it into the **Identity Provider URL** textbox.
+
+    d. In the Azure AD portal, copy the **Authentication Request URL** value, and then paste it into the **Identity Provider's AuthnRequest** textbox.
+
+    e. In the Azure AD portal, copy the **Single Sign-Out Service URL** value, and then paste it into the **Identity Provider's SingleLogoutRequest** textbox.
+
+    f. In the **ServiceNow Homepage** textbox, type the URL of your ServiceNow instance homepage.
+
+    > [AZURE.NOTE] The ServiceNow instance homepage is a concatenation of your **ServieNow tenant URL** and **/navpage.do** (e.g.: *https://fabrikam.service-now.com/navpage.do*).
+ 
+
+    g. In the **Entity ID / Issuer** textbox, type the URL of your ServiceNow tenant.
+
+    h. In the **Audience URL** textbox, type the URL of your ServiceNow tenant. 
+
+    i. In the **Protocol Binding for the IDP's SingleLogoutRequest** textbox, type **urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect**.
+
+    j. In the NameID Policy textbox, type **urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified**.
+
+    k. Deselect **Create an AuthnContextClass**.
+
+    l. In the **AuthnContextClassRef Method**, type **http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password**.
+
+    m. In **Clock Skew** textbox, type **60**.
+
+    n. As **Single Sign On Script**, select **MultiSSO_SAML2_Update1**.
+
+    o. As **x509 Certificate**, select the certificate you have created in the previous step.
+
+    p. Click **Submit**. 
+
+
+
+6. On the Azure AD portal, select the single sign-on configuration confirmation, and then click **Next**. 
+
+    ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC7694990.png "Configure single sign-on")
+
+7. On the **Single sign-on confirmation** page, click **Complete**.
+ 
+    ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC7694991.png "Configure single sign-on")
+-->
+<!-- keep by customization: begin -->
 5.  In your ServiceNow tenant, on the navigation bar at the left side, click **Properties** to open the **SAML 2.0 Single Sign on properties** page.
 
 
@@ -137,7 +288,7 @@ As part of this procedure, you are required to upload a base-64 encoded certific
 
      11.3. Select **Active**.
 
-     11.4. As **Format**, select **PEM**.
+    11.4. As **Format**, select **PEM**.
 
      11.5. Create a Base-64 encoded file from your downloaded certificate.  > [AZURE.NOTE] For more details, see [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o).
 
@@ -147,10 +298,11 @@ As part of this procedure, you are required to upload a base-64 encoded certific
 
      11.8. Click **Submit**.
 
-
+    
 
 12. On the Azure AD portal, select the single sign-on configuration confirmation, and then click Complete to close the Configure Single Sign On dialog. <br><br> ![Configure single sign-on](./media/active-directory-saas-servicenow-tutorial/IC749326.png "Configure single sign-on")
 
+<!-- keep by customization: end -->
 
 
 

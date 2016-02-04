@@ -3,7 +3,7 @@
    description="This article contains multiple topics for managing an Azure Automation environment.  Currently includes Data Retention and Backing up Azure Automation Disaster Recovery in Azure Automation."
    services="automation"
    documentationCenter=""
-   authors="bwren"
+   authors="SnehaGunda"
    manager="stevenka"
    editor="tysonn" />
 <tags
@@ -17,7 +17,7 @@ This article contains multiple topics for managing an Azure Automation environme
 
 ## Data retention
 
-When you delete a resource in Azure Automation, it is retained for 90 days for auditing purposes before being removed permanently.  You can’t see or use the resource during this time.  This policy also applies to resources that belong to an automation account that is deleted.
+When you delete a resource in Azure Automation, it is retained for 90 days for auditing purposes before being removed permanently.  You can't see or use the resource during this time.  This policy also applies to resources that belong to an automation account that is deleted.
 
 Azure Automation automatically deletes and permanently removes jobs older than 90 days.
 
@@ -42,7 +42,7 @@ When you delete an automation account in Windows Azure, all objects in the accou
 
 ### Runbooks
 
-You can export your runbooks to script files using either the Azure Management Portal or the [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690269.aspx) cmdlet in Windows PowerShell.  These script files can be imported into another automation account as discussed in [Creating or Importing a Runbook](https://msdn.microsoft.com/zh-cn/library/dn643637.aspx).
+You can export your runbooks to script files using either the Azure Management Portal or the [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690269.aspx) cmdlet in Windows PowerShell.  These script files can be imported into another automation account as discussed in [Creating or Importing a Runbook](/documentation/articles/automation-creating-importing-runbook).
 
 
 ### Integration modules
@@ -55,7 +55,7 @@ You cannot export [assets](https://msdn.microsoft.com/zh-cn/library/dn939988.asp
 
 You can use [Azure cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690262.aspx) to retrieve details of unencrypted assets and either save them for future reference or create equivalent assets in another automation account.
 
-You cannot retrieve the value for encrypted variables or the password field of credentials using cmdlets.  If you don't know these values, then you can retrieve them from a runbook using the [Get-AutomationVariable](https://msdn.microsoft.com/zh-cn/library/dn940012.aspx) and [Get-AutomationPSCredential](https://msdn.microsoft.com/zh-cn/library/dn940015.aspx) activities.
+You cannot retrieve the value for encrypted variables or the password field of credentials using cmdlets.  If you don't know these values, then you can retrieve them from a runbook using the [Get-AutomationVariable](/documentation/articles/automation-variables) and [Get-AutomationPSCredential](/documentation/articles/automation-credentials) activities.
 
 You cannot export certificates from Azure Automation.  You must ensure that any certificates are available outside of Azure.
 
@@ -74,12 +74,10 @@ The following table shows the available primary and secondary region pairings.
 |Primary            |Secondary
 | ---------------   |----------------
 |China East   |China North
-<!-- deleted by customization
 |China East 2          |China North
 |West Europe        |China North
 |South China East    |China East
 |Japan East         |China East
--->
 
 In the unlikely event that a primary region data is lost, Microsoft attempts to recover it. If the primary data cannot be recovered, then geo-failover is performed and the affected customers will be notified about this through their subscription.
 

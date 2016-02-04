@@ -7,20 +7,25 @@
    manager="carolz"
    editor=""
    tags="azure-service-management"/>
-<tags
-	ms.service="expressroute"
-	ms.date="09/21/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="expressroute"
+   ms.date="11/02/2015"
+   wacn.date="" />
 
 # Linking VNets to ExpressRoute circuits
 
-This article give you an overview of how to link virtual networks (VNets) to ExpressRoute circuits. Virtual networks can either be in the same subscription, or be part of another subscription. This article applies to VNets deployed using the classic deployment model.
+> [AZURE.SELECTOR]
+- [PowerShell - Classic](/documentation/articles/expressroute-howto-linkvnet-classic)
+- [PowerShell - Resource Manager] (/documentation/articles/expressroute-howto-linkvnet-arm)  
+- [Template - Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection)
 
->[AZURE.IMPORTANT] It's important to know that Azure currently works with two deployment models: Resource Manager, and classic. Before you begin your configuration, make sure that you understand the deployment models and tools. For information about the deployment models, see [Azure deployment models](/documentation/articles/azure-classic-rm)
+This article gives you an overview of how to link virtual networks (VNets) to ExpressRoute circuits. Virtual networks can either be in the same subscription, or be part of another subscription. This article applies to VNets deployed using the Classic deployment model. If you want to link a virtual network that was deployed using the Azure Resource Manager deployment method, you can do so by using a template. See the tab above to navigate to the template.
+
+[AZURE.INCLUDE [vpn-gateway-sm-rm](../includes/vpn-gateway-sm-rm-include.md)] 
 
 ## Configuration prerequisites
 
-- You will need the latest version of the Azure PowerShell modules. You can download the latest PowerShell module from the PowerShell section of the [Azure Downloads page](/downloads). Follow the instructions on the [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) page for step-by-step guidance on how to configure your computer to use the Azure PowerShell modules.
+- You will need the latest version of the Azure PowerShell modules. You can download the latest PowerShell module from the PowerShell section of the [Azure Downloads page](/downloads/). Follow the instructions on the [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) page for step-by-step guidance on how to configure your computer to use the Azure PowerShell modules. 
 - Make sure that you have reviewed the [prerequisites](/documentation/articles/expressroute-prerequisites) page, the  [routing requirements](/documentation/articles/expressroute-routing) page and the [workflows](/documentation/articles/expressroute-workflows) page before you begin configuration.
 - You must have an active ExpressRoute circuit. 
 	- Follow the instructions to [create an ExpressRoute circuit](/documentation/articles/expressroute-howto-circuit-classic) and have the circuit enabled by your connectivity provider. 
@@ -131,7 +136,7 @@ The circuit user can review authorizations using the following cmdlet.
 
 The circuit user can run the following cmdlet to redeem a link authorization.
 
-	PS C:\> New-AzureDedicatedCircuitLink –servicekey "&&&&&&&&&&&&&&&&&&&&&&&&&&" –VnetName 'SalesVNET1' 
+	PS C:\> New-AzureDedicatedCircuitLink -servicekey "&&&&&&&&&&&&&&&&&&&&&&&&&&" -VnetName 'SalesVNET1' 
 		
 	State VnetName 
 	----- -------- 

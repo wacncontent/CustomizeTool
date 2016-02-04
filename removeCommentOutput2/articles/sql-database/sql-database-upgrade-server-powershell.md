@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="11/11/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Upgrade to Azure SQL Database V12 using PowerShell
 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](/documentation/articles/sql-database-upgrade-server-portal)
+- [Azure Management Portal](/documentation/articles/sql-database-upgrade-server-portal)
 - [PowerShell](/documentation/articles/sql-database-upgrade-server-powershell)
 
 
@@ -39,7 +39,7 @@ Note that your databases will remain online and continue to work throughout the 
 
 Upgrading to SQL Database V12 cannot be undone. After an upgrade the server cannot be reverted to V11. 
 
-After upgrading to V12, [service tier recommendations](/documentation/articles/sql-database-service-tier-advisor) and [elastic pool recommendations](/documentation/articles/sql-database-elastic-pool-portal#step-2-choose-a-pricing-tier) will not immediately be available until the service has time to evaluate your workloads on the new server. V11 server recommendation history does not apply to V12 servers so it is not retained.  
+After upgrading to V12, [service tier recommendations](/documentation/articles/sql-database-service-tier-advisor) and [elastic pool recommendations](/documentation/articles/sql-database-elastic-pool-portal/#step-2-choose-a-pricing-tier) will not immediately be available until the service has time to evaluate your workloads on the new server. V11 server recommendation history does not apply to V12 servers so it is not retained.
 
 ## Prepare to upgrade
 
@@ -52,9 +52,7 @@ After upgrading to V12, [service tier recommendations](/documentation/articles/s
 
 To upgrade a server to V12 with PowerShell, you need to have Azure PowerShell installed and running, and  depending on the version you may need to switch it into resource manager mode to access the Azure Resource Manager PowerShell Cmdlets. 
 
-> [AZURE.IMPORTANT] Starting with the release of Azure PowerShell 1.0 Preview, the Switch-AzureMode cmdlet is no longer available, and cmdlets that were in the Azure ResourceManger module have been renamed. The examples in this article use the new PowerShell 1.0 Preview naming convention. For detailed information, see [Deprecation of Switch-AzureMode in Azure PowerShell](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
-
-To run PowerShell cmdlets, you need to have Azure PowerShell installed and running, and due to the removal of Switch-AzureMode, you should download and install the latest Azure PowerShell by running the [Microsoft Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409). For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+To run PowerShell cmdlets, you need to have Azure PowerShell installed and running. For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 
 ## Configure your credentials and select your subscription
@@ -79,7 +77,7 @@ To get the recommendation for the server upgrade run the following cmdlet:
 
     $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName “resourcegroup1” -ServerName “server1” 
 
-For more information, see [Azure SQL Database elastic database pool recommendations](/documentation/articles/sql-database-elastic-pool-portal#elastic-database-pool-pricing-tier-recommendations) and [Azure SQL Database picing tier recommendations](/documentation/articles/sql-database-service-tier-advisor). 
+For more information, see [Azure SQL Database elastic database pool recommendations](/documentation/articles/sql-database-elastic-pool-portal/#elastic-database-pool-pricing-tier-recommendations) and [Azure SQL Database picing tier recommendations](/documentation/articles/sql-database-service-tier-advisor).
 
 
 
@@ -150,7 +148,7 @@ ElasticPoolCollection and DatabaseCollection parameters are optional:
      
     # Starting the upgrade
     #
-    Start-AzureRmSqlServerUpgrade –ResourceGroupName resourcegroup1 –ServerName server1 -Version 12.0 -DatabaseCollection @($databaseMap1, $databaseMap2) -ElasticPoolCollection @($elasticPool) 
+    Start-AzureRmSqlServerUpgrade -ResourceGroupName resourcegroup1 -ServerName server1 -Version 12.0 -DatabaseCollection @($databaseMap1, $databaseMap2) -ElasticPoolCollection @($elasticPool) 
 
     
 
@@ -159,7 +157,7 @@ ElasticPoolCollection and DatabaseCollection parameters are optional:
 
 After upgrading, it is recommended to monitor the database actively to ensure applications are running at the desired performance and optimize usage as needed. 
 
-In addition to monitoring individual databases you can monitor elastic database pools [using the portal](/documentation/articles/sql-database-elastic-pool-portal#monitor-and-manage-an-elastic-database-pool) or with [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell#monitoring-elastic-databases-and-elastic-database-pools) 
+In addition to monitoring individual databases you can monitor elastic database pools [using the portal](/documentation/articles/sql-database-elastic-pool-portal/#monitor-and-manage-an-elastic-database-pool) or with [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell/#monitoring-elastic-databases-and-elastic-database-pools) 
 
 
 **Resource consumption data:** For Basic, Standard, and Premium databases resource consumption data is available through the [sys.dm_ db_ resource_stats](http://msdn.microsoft.com/zh-cn/library/azure/dn800981.aspx) DMV in the user database. This DMV provides near real time resource consumption information at 15 second granularity for the previous hour of operation. The DTU percentage consumption for an interval is computed as the maximum percentage consumption of the CPU, IO and log dimensions. Here is a query to compute the average DTU percentage consumption over the last hour:
@@ -176,7 +174,7 @@ In addition to monitoring individual databases you can monitor elastic database 
 Additional monitoring information:
 
 - [Azure SQL Database performance guidance for single databases](http://msdn.microsoft.com/zh-cn/library/azure/dn369873.aspx).
-- [Price and performance considerations for an elastic database pool](sql-database=elastic-pool-guidance.md).
+- [Price and performance considerations for an elastic database pool](/documentation/articles/sql-database=elastic-pool-guidance).
 - [Monitoring Azure SQL Database using dynamic management views](/documentation/articles/sql-database-monitoring-with-dmvs)
 
 

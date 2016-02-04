@@ -39,4 +39,4 @@ Single Sign-On and AD FS| Domain admin permissions in the domain in which your f
 * [Permissions for Exchange Hybrid](https://msdn.microsoft.com/zh-cn/library/azure/dn757602.aspx#exchange)
 * [Permissions for password writeback](https://msdn.microsoft.com/zh-cn/library/azure/dn757602.aspx#pwriteback)
 * [Custom installation of Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started-custom)
-* [Azure AD Connect on MSDN](/documentation/articles/active-directory-aadconnect)
+* [Azure AD Connect on MSDN](/documentation/articles/active-directory-aadconnect)

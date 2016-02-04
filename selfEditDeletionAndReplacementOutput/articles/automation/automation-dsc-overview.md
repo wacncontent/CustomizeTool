@@ -6,7 +6,7 @@ deleted:
 		
 		> [AZURE.VIDEO microsoft-ignite-2015-heterogeneous-configuration-management-using-microsoft-azure-automation]
 
-reason: ()
+reason: (video)
 
 deleted:
 
@@ -14,5 +14,5 @@ deleted:
 		
 		- When onboarding an Azure VM for management with Azure Automation DSC using `Register-AzureAutomationDscNode`, `Set-AzureVMExtension`, or the Azure Automation DSC VM extension in the Azure preview portal, it could take up to an hour for the VM to show up as a DSC node in Azure Automation. This is due to the installation of Windows Management Framework 5.0 on the VM by the Azure VM DSC extension, which is required to onboard the VM to Azure Automation DSC.
 
-reason: ()
+reason: (DSC)
 

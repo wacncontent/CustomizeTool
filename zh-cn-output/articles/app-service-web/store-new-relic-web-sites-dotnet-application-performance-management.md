@@ -10,13 +10,13 @@
 <tags 
 	ms.service="app-service-web" 	
 	ms.date="07/30/2015" 
-	wacn.date="10/03/2015"/>
+	wacn.date="11/27/2015"/>
 
 
 
 # 在 Azure App Service 中的 .NET Web 应用上使用 New Relic 应用程序性能管理
 
-本指南介绍如何向 [Azure App Service](/documentation/services/web-sites/) 中的 Web 应用添加 New Relic 的一流性能监视。我们将介绍向您的应用程序中添加 New Relic 的快速且简单的过程，并向您介绍 New Relic 的一些功能。有关使用 New Relic 的更多信息，请参阅[使用 New Relic](#using-new-relic)。
+本指南介绍如何向 [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) 中的 Web 应用添加 New Relic 的一流性能监视。我们将介绍向您的应用程序中添加 New Relic 的快速且简单的过程，并向您介绍 New Relic 的一些功能。有关使用 New Relic 的更多信息，请参阅[使用 New Relic](#using-new-relic)。
 
 ## 什么是 New Relic？
 
@@ -64,7 +64,7 @@ New Relic 可与 Azure Web 角色、辅助角色和 Azure App Service 无缝集�
 
 	![](./media/store-new-relic-web-sites-dotnet-application-performance-management/configure-new-relic-integration.png)
 
-	完成保存操作后，在 Web 应用的边栏选项卡中单击“所有设置”，然后单击“应用程序设置”。你应会看到 **NEWRELIC_LICENSEKEY** 设置已添加到边栏选项卡的“应用设置”部分，以支持 New Relic：
+	完成保存操作后，在 Web 应用的边栏选项卡中单击“所有设置”，然后单击“应用程序设置”。你应会看到 **NEWRELIC\_LICENSEKEY** 设置已添加到边栏选项卡的“应用设置”部分，以支持 New Relic：
 
 	>[AZURE.NOTE] 新的应用设置最多可能需要 30 秒的时间才能生效。若要强制使设置立即生效，请重新启动 Web 应用。
 
@@ -151,13 +151,13 @@ New Relic 可与 Azure Web 角色、辅助角色和 Azure App Service 无缝集�
  * [应用程序概览](https://newrelic.com/docs/site/applications-overview)：使用 New Relic 的“应用程序概览”仪表板时的特性和功能
  * [Apdex](https://newrelic.com/docs/site/apdex)：概述 Apdex 如何衡量最终用户对你的应用程序的满意度
  * [实时用户监视](https://newrelic.com/docs/features/real-user-monitoring)：概述 RUM 如何详细记录你的用户的浏览器加载你的网页所需的时间、这些用户所在的位置以及他们使用的浏览器
- * [查找帮助](https://docs.newrelic.com/docs/accounts-partnerships/education/getting-started-new-relic/finding-help)：通过 New Relic 的联机帮助中心提供的资源
+ * [查找帮助](https://newrelic.com/docs/site/finding-help)：通过 New Relic 的联机帮助中心提供的资源
 
->[AZURE.NOTE] 如果你想要在注册帐户之前开始使用 Azure App Service，请转到[试用 App Service](https://tryappservice.azure.com/)，你可以通过该网站在 App Service 中创建一个生存期较短的入门站点。你不需要使用信用卡，也不需要做出承诺。
+>[AZURE.NOTE] 如果你想要在注册帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，你可以通过该网站在 App Service 中创建一个生存期较短的入门站点。你不需要使用信用卡，也不需要做出承诺。
 
 ## 发生的更改
-* 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](/documentation/services/web-sites/)
-* 有关从 Azure 门户更改为 Azure 预览门户的指南，请参阅：[有关在预览门户中导航的参考](https://manage.windowsazure.cn/)
+* 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
+* 有关从 Azure 门户更改为 Azure 预览门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 
 [webmatrixwebsite]: /documentation/articles/web-sites-dotnet-using-webmatrix

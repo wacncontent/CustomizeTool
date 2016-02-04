@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Get started with SQL Data Warehouse database auditing | Microsoft Azure" 
+	pageTitle="Get started with SQL Data Warehouse database auditing | Windows Azure" 
 	description="Get started with SQL Data Warehouse database auditing" 
 	services="sql-data-warehouse" 
 	documentationCenter="" 
@@ -7,21 +7,17 @@
 	manager="" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-data-warehouse" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/06/2015" 
-	ms.author="twounder"/>
+<tags
+	ms.service="sql-data-warehouse"
+	ms.date="10/06/2015"
+	wacn.date=""/>
  
 # Get started with SQL Data Warehouse database auditing 
 <p> Azure SQL Data Warehouse Auditing tracks database events and writes audited events to an audit log in your Azure Storage account.
 
 Auditing can help you maintain regulatory compliance, understand  database activity, and gain insight into discrepancies and anomalies that could indicate business concerns or suspected security violations. 
 
-Auditing tools enable and facilitate adherence to compliance standards but don't guarantee compliance. For more information about Azure programs that support standards compliance, see the <a href="http://azure.microsoft.com/support/trust-center/compliance/" target="_blank">Azure Trust Center</a>.
+Auditing tools enable and facilitate adherence to compliance standards but don't guarantee compliance. For more information about Azure programs that support standards compliance, see the <a href="/support/trust-center/compliance/" target="_blank">Azure Trust Center</a>.
 
 + [Database Auditing basics] 
 + [Set up auditing for your database]
@@ -48,18 +44,18 @@ You can configure auditing for the following event categories:
 
 For each Event Category, Auditing of **Success** and **Failure** operations are configured separately.
 
-For further details about the activities and events audited, see the <a href="http://go.microsoft.com/fwlink/?LinkId=506733" target="_blank">Audit Log Format Reference (doc file download)</a>. 
+For further details about the activities and events audited, see the <a href="http://download.microsoft.com/download/D/8/D/D8D90BA1-977F-466B-A839-7823FF37FD02/03-Azure%20SQL%20DB%20Audit%20Logs%20Format%20Specification.docx" target="_blank">Audit Log Format Reference (doc file download)</a>. 
 
 Audit logs are stored in your Azure storage account. You can define an audit log retention period.
 
 An auditing policy can be defined for a specific database or as a default server policy. A default server auditing policy will apply to all databases on a server which do not have a specific overriding database auditing policy defined.
 
-Before setting up audit auditing check if you are using a ["Downlevel Client"](sql-data-warehouse-auditing-downlevel-clients.md).
+Before setting up audit auditing check if you are using a ["Downlevel Client"](/documentation/articles/sql-data-warehouse-auditing-downlevel-clients).
 
 
 ##<a id="subheading-2"></a>Set up auditing for your database
 
-1. Launch the <a href="https://portal.azure.com" target="_blank">Azure Preview Portal</a>.
+1. Launch the <a href="https://manage.windowsazure.cn" target="_blank">Azure Management Portal</a>.
 
 2. navigate to the configuration blade of the SQL Data Warehouse database / SQL Server you want to audit. Click the **Settings** button on top and then, in the Setting blade, and select **Auditing**.
 
@@ -83,7 +79,7 @@ Before setting up audit auditing check if you are using a ["Downlevel Client"](s
 7. Under **LOGGING BY EVENT**, click **SUCCESS** and **FAILURE** to log all events, or choose individual event categories.
 
 
-8. If you are configuring Auditing for a database, you may need to alter the connection string of your client to ensure data auditing is correctly captured. Check the [Modify Server FDQN in the connection string](sql-data-warehouse-auditing-downlevel-clients.md) topic for downlevel client connections.
+8. If you are configuring Auditing for a database, you may need to alter the connection string of your client to ensure data auditing is correctly captured. Check the [Modify Server FDQN in the connection string](/documentation/articles/sql-data-warehouse-auditing-downlevel-clients) topic for downlevel client connections.
 
 9. Click **OK**.
 
@@ -92,7 +88,7 @@ Before setting up audit auditing check if you are using a ["Downlevel Client"](s
 
 Audit logs are aggregated in a collection of Store Tables with a **SQLDBAuditLogs** prefix in the Azure storage account you chose during setup. You can view log files using a tool such as <a href="http://azurestorageexplorer.codeplex.com/" target="_blank">Azure Storage Explorer</a>.
 
-A preconfigured dashboard report template is available as a <a href="http://go.microsoft.com/fwlink/?LinkId=403540" target="_blank">downloadable Excel spreadsheet</a> to help you quickly analyze log data. To use the template on your audit logs, you need Excel 2013 or later and Power Query, which you can download <a href="http://www.microsoft.com/download/details.aspx?id=39379">here</a>. 
+A preconfigured dashboard report template is available as a <a href="http://download.microsoft.com/download/D/8/D/D8D90BA1-977F-466B-A839-7823FF37FD02/01-Azure%20SQL%20DB%20Audit%20Logs%20Report%20Template.xlsx" target="_blank">downloadable Excel spreadsheet</a> to help you quickly analyze log data. To use the template on your audit logs, you need Excel 2013 or later and Power Query, which you can download <a href="http://www.microsoft.com/download/details.aspx?id=39379">here</a>. 
 
 The template has fictional sample data in it, and you can set up Power Query to import your audit log directly from your Azure storage account. 
 
@@ -102,7 +98,7 @@ For more detailed instructions on working with the report template, read the <a 
 
 
 ##<a id="subheading-4">Practices for usage in production</a>
-The description in this section refers to screen captures above. Either <a href="https://portal.azure.com" target="_blank">Azure Preview Portal</a> or <a href= "https://manage.windowsazure.com/" target="_bank">Classic Azure Portal</a> may be used.
+The description in this section refers to screen captures above. Either <a href="https://manage.windowsazure.cn" target="_blank">Azure Management Portal</a> or <a href= "https://manage.windowsazure.cn/" target="_bank">Classic Azure Management Portal</a> may be used.
  
 
 ##<a id="subheading-5"></a>Storage Key Regeneration
@@ -121,7 +117,7 @@ In production you are likely to refresh your storage keys periodically. When ref
 ##<a id="subheading-6"></a>Automation
 There are several PowerShell cmdlets you can use to configure auditing in Azure SQL Database. To access the auditing cmdlets you must be running PowerShell in Azure Resource Manager mode.
 
-> [AZURE.NOTE] The  [Azure Resource Manager](https://msdn.microsoft.com/library/dn654592.aspx) module is currently in preview. It might not provide the same management capabilities as the Azure module.
+> [AZURE.NOTE] The  [Azure Resource Manager](https://msdn.microsoft.com/zh-cn/library/dn654592.aspx) module is currently in preview. It might not provide the same management capabilities as the Azure module.
 
 When you are in Azure Resource Manager mode, run `Get-Command *AzureSql*` to list the available cmdlets.
 

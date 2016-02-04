@@ -14,7 +14,7 @@
 
 #Encoding your media with Dolby Digital Plus
 
-The Azure Media Encoder supports **Dolby® Digital Plus** encoding. Dolby® Digital Plus, or Enhanced AC-3 (E-AC-3), is an advanced surround sound audio codec designed specifically for evolving media. From home theaters and PCs to mobile phones and online streaming, Dolby Digital Plus defines high-fidelity audio. You’ll get the renowned Dolby cinema experience from all your entertainment. Dolby Digital Plus is based on core Dolby Digital technologies, the established standard for cinema, broadcast, and home theater surround sound. As mobile devices proliferate, Dolby Digital Plus is also emerging as the standard for mobile entertainment. Its advanced new technologies for audio enhancement deliver even better sound quality and additional bandwidth savings. You get great content with fewer interruptions, even when bandwidth is limited.
+The Azure Media Encoder supports **Dolby® Digital Plus** encoding. Dolby® Digital Plus, or Enhanced AC-3 (E-AC-3), is an advanced surround sound audio codec designed specifically for evolving media. From home theaters and PCs to mobile phones and online streaming, Dolby Digital Plus defines high-fidelity audio. You'll get the renowned Dolby cinema experience from all your entertainment. Dolby Digital Plus is based on core Dolby Digital technologies, the established standard for cinema, broadcast, and home theater surround sound. As mobile devices proliferate, Dolby Digital Plus is also emerging as the standard for mobile entertainment. Its advanced new technologies for audio enhancement deliver even better sound quality and additional bandwidth savings. You get great content with fewer interruptions, even when bandwidth is limited.
 
 
 ##Set up Azure Media Encoder to encode with Dolby Digital Plus
@@ -537,7 +537,7 @@ The following configuration will generate the following outputs:
 
 ##Creating Commercial Encoding Services
 
-Some customers may wish to build a commercial encoding service on top of Azure Media Services. If you are creating such a ‘build-on’ service it is important that all Dolby Digital Plus encoding parameters are available. Please ensure that all the parameters within the <DolbyDigitalPlusAudioProfile> tag are exposed and configurable by the end-user. Please contact prolicensingsupport@dolby.com for guidance on making these parameters available.
+Some customers may wish to build a commercial encoding service on top of Azure Media Services. If you are creating such a 'build-on' service it is important that all Dolby Digital Plus encoding parameters are available. Please ensure that all the parameters within the <DolbyDigitalPlusAudioProfile> tag are exposed and configurable by the end-user. Please contact prolicensingsupport@dolby.com for guidance on making these parameters available.
 
 ##Using Dolby Professional Loudness Metering (DPLM) Support
 
@@ -606,7 +606,7 @@ The **ITU** has recently released an update titled BS.1770-3, which is equivalen
 
 ###SpeechThreshold Attribute
 
-Specifies a speech threshold used by DPLM to produce an integrated loudness result (for example, selecting between speech gating, level gating, and no gating). The speech threshold setting range is from 0% to 100%, in 1% increments. This parameter has an effect only when DPLM is configured in a mode that utilizes Dialogue Intelligence, which means it can only be specified if Mode is set to ITU_R_BS_1770_2_DI or ITU_R_BS_1770_1_DI. The default value, when Mode is either ITU_R_BS_1770_2_DI or ITU_R_BS_1770_1_DI, is 20%. Values for this attribute must be set in the range 0, 1 – 100.
+Specifies a speech threshold used by DPLM to produce an integrated loudness result (for example, selecting between speech gating, level gating, and no gating). The speech threshold setting range is from 0% to 100%, in 1% increments. This parameter has an effect only when DPLM is configured in a mode that utilizes Dialogue Intelligence, which means it can only be specified if Mode is set to ITU_R_BS_1770_2_DI or ITU_R_BS_1770_1_DI. The default value, when Mode is either ITU_R_BS_1770_2_DI or ITU_R_BS_1770_1_DI, is 20%. Values for this attribute must be set in the range 0, 1 - 100.
 
 ###TruePeakDCBlock Attribute
 
@@ -638,9 +638,9 @@ Each attribute is described below.
 
 **IntegratedLoudness** - The integrated loudness as measured by DPLM, in the range -70 to +10 LKFS/dBFS (where dBFS is used only when Mode is set to LEQA_DI).
 
-**IntegratedLoudnessGatingMethod** - Valid values are: 0 – None/Ungated; 1 – Speech Gated; 2 – Level Gated.
+**IntegratedLoudnessGatingMethod** - Valid values are: 0 - None/Ungated; 1 - Speech Gated; 2 - Level Gated.
 
-**IntegratedLoudnessSpeechPercentage** - This result contains the percentage of the input media’s timeline where speech is detected. Values range from 0% to 100%.
+**IntegratedLoudnessSpeechPercentage** - This result contains the percentage of the input media's timeline where speech is detected. Values range from 0% to 100%.
 
 **SamplePeak** - This result contains the largest absolute sample value in any channel since the metering was reset, and ranges from -70 to +10 dBFS.
 
@@ -650,10 +650,9 @@ Each attribute is described below.
 <!-- deleted by customization
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
 
-
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 -->

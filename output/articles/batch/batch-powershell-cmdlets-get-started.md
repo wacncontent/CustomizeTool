@@ -39,13 +39,13 @@ For detailed cmdlet syntax, type `get-help <Cmdlet_name>` or see the [Azure Batc
 **New-AzureRmBatchAccount** creates a new Batch account in a specified resource group. If you don't already have a resource group, create one by running the [New-AzureRmResourceGroup](https://msdn.microsoft.com/zh-cn/library/azure/mt603739.aspx) cmdlet, specifying one of the Azure regions in the **Location** parameter, such as "China North". For example:
 
 ```
-New-AzureRmResourceGroup –Name MyBatchResourceGroup –location "China North"
+New-AzureRmResourceGroup -Name MyBatchResourceGroup -location "China North"
 ```
 
 Then, create a new Batch account account in the resource group, also specifying an account name for <*account_name*> and a location where the Batch service is available. Creating the account can take several minutes to complete. For example:
 
 ```
-New-AzureRmBatchAccount –AccountName <account_name> –Location "China North" –ResourceGroupName MyBatchResourceGroup
+New-AzureRmBatchAccount -AccountName <account_name> -Location "China North" -ResourceGroupName MyBatchResourceGroup
 ```
 
 > [AZURE.NOTE] The Batch account name must be unique to Azure, contain between 3 and 24 characters, and use lowercase letters and numbers only.
@@ -54,7 +54,7 @@ New-AzureRmBatchAccount –AccountName <account_name> –Location "China North" 
 **Get-AzureRmBatchAccountKeys** shows the access keys associated with an Azure Batch account. For example, run the following to get the primary and secondary keys of the account you created.
 
 ```
-$Account = Get-AzureBatchAccountKeys –AccountName <accountname>
+$Account = Get-AzureBatchAccountKeys -AccountName <accountname>
 
 $Account.PrimaryAccountKey
 
@@ -91,7 +91,7 @@ $context = Get-AzureRmBatchAccountKeys -AccountName <account_name>
 
 You pass this context into cmdlets that interact with the Batch service by using the **BatchContext** parameter.
 
-> [AZURE.NOTE] By default, the account's primary key is used for authentication, but you can explicitly select the key to use by changing your BatchAccountContext object’s **KeyInUse** property: `$context.KeyInUse = "Secondary"`.
+> [AZURE.NOTE] By default, the account's primary key is used for authentication, but you can explicitly select the key to use by changing your BatchAccountContext object's **KeyInUse** property: `$context.KeyInUse = "Secondary"`.
 
 
 ### Query for data
@@ -103,7 +103,7 @@ Get-AzureBatchPool -BatchContext $context
 ```
 ### Use an OData filter
 
-You can supply an OData filter using the **Filter** parameter to find only the objects you’re interested in. For example, you can find all pools with ids starting with “myPool”:
+You can supply an OData filter using the **Filter** parameter to find only the objects you're interested in. For example, you can find all pools with ids starting with "myPool":
 
 ```
 $filter = "startswith(id,'myPool')"
@@ -111,7 +111,7 @@ $filter = "startswith(id,'myPool')"
 Get-AzureBatchPool -Filter $filter -BatchContext $context
 ```
 
-This method is not as flexible as using “Where-Object” in a local pipeline. However, the query gets sent to the Batch service directly so that all filtering happens on the server side, saving Internet bandwidth.
+This method is not as flexible as using "Where-Object" in a local pipeline. However, the query gets sent to the Batch service directly so that all filtering happens on the server side, saving Internet bandwidth.
 
 ### Use the Id parameter
 

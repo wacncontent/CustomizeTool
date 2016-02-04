@@ -43,7 +43,7 @@ Remember that elastic database transactions do not require installing MSDTC. Ins
 
 ###	Multi-database applications
 
-The following sample code uses the familiar programming experience with .NET System.Transactions. The TransactionScope class establishes an ambient transaction in .NET. (An “ambient transaction” is one that lives in the current thread.) All connections opened within the TransactionScope participate in the transaction. If different databases participate, the transaction is automatically elevated to a distributed transaction. The outcome of the transaction is controlled by setting the scope to complete to indicate a commit.
+The following sample code uses the familiar programming experience with .NET System.Transactions. The TransactionScope class establishes an ambient transaction in .NET. (An âambient transactionâ is one that lives in the current thread.) All connections opened within the TransactionScope participate in the transaction. If different databases participate, the transaction is automatically elevated to a distributed transaction. The outcome of the transaction is controlled by setting the scope to complete to indicate a commit.
 
 	using (var scope = new TransactionScope())
 	{
@@ -95,7 +95,7 @@ The following code sample illustrates this approach. It assumes that a variable 
 
 ## Setup for Azure worker roles
 
-You can automate the installation and deployment of the .NET version and libraries needed for elastic database transactions to Azure (into the guest OS of your cloud service). For Azure worker roles, use the startup tasks. The concepts and steps are documented in [Install .NET on a Cloud Service Role](/documentation/articles/cloud-services-dotnet-install-dotnet/).  
+You can automate the installation and deployment of the .NET version and libraries needed for elastic database transactions to Azure (into the guest OS of your cloud service). For Azure worker roles, use the startup tasks. The concepts and steps are documented in [Install .NET on a Cloud Service Role](/documentation/articles/cloud-services-dotnet-install-dotnet/).
 
 Note that the installer for .NET 4.6.1 requires more temporary storage during the bootstrapping process on Azure cloud services than the installer for .NET 4.6. To ensure a successful installation, you need to increase temporary storage for your Azure cloud service in your ServiceDefinition.csdef file in the LocalResources section and the environment settings of your startup task, as shown in the following sample:
 
@@ -124,9 +124,9 @@ Use Dynamic Management Views (DMVs) in SQL DB to monitor status and progress of 
  
 These DMVs are particularly useful:
 
-* **sys.dm\_tran\_active\_transactions**: Lists currently active transactions and their status. The UOW (Unit Of Work) column can identify the different child transactions that belong to the same distributed transaction. All transactions within the same distributed transaction carry the same UOW value. See the [DMV documentation](https://msdn.microsoft.com/zh-cn/library/ms174302.aspx) for more details.
-* **sys.dm\_tran\_database\_transactions**: Provides additional information about transactions, such as placement of the transaction in the log. See the [DMV documentation](https://msdn.microsoft.com/zh-cn/library/ms186957.aspx) for more details.
-* **sys.dm\_tran\_locks**: Provides information about the locks that are currently held by ongoing transactions. See the [DMV documentation](https://msdn.microsoft.com/zh-cn/library/ms190345.aspx) for more details.
+* **sys.dm\_tran\_active_transactions**: Lists currently active transactions and their status. The UOW (Unit Of Work) column can identify the different child transactions that belong to the same distributed transaction. All transactions within the same distributed transaction carry the same UOW value. See the [DMV documentation](https://msdn.microsoft.com/zh-cn/library/ms174302.aspx) for more details.
+* **sys.dm\_tran\_database_transactions**: Provides additional information about transactions, such as placement of the transaction in the log. See the [DMV documentation](https://msdn.microsoft.com/zh-cn/library/ms186957.aspx) for more details.
+* **sys.dm\_tran_locks**: Provides information about the locks that are currently held by ongoing transactions. See the [DMV documentation](https://msdn.microsoft.com/zh-cn/library/ms190345.aspx) for more details.
 
 ## Limitations 
 

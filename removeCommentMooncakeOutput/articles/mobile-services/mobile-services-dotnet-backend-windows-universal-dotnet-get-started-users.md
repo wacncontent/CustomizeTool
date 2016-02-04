@@ -7,13 +7,16 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="10/05/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="11/23/2015"
 	wacn.date=""/>
 
 # Add authentication to your Mobile Services app 
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 ## Overview
@@ -38,7 +41,7 @@ This tutorial is based on the Mobile Services quickstart. You must also first co
 
 &nbsp;&nbsp;7. In the shared project, open the App.xaml.cs project file, locate the definition for the [MobileServiceClient](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx), and make sure that it is configured to connect to the mobile service running in Azure.
 
->[AZURE.NOTE]When you use Visual Studio tools to connect your app to a Mobile Service, the tool generate two sets of **MobileServiceClient** definitions, one for each client platform. This is a good time to simplify the generated code by unifying the `#if...#endif` wrapped **MobileServiceClient** definitions into a single unwrapped definition used by both versions of the app. You won't need to do this when you downloaded the quickstart app from the Azure Management portal.
+>[AZURE.NOTE]When you use Visual Studio tools to connect your app to a Mobile Service, the tool generate two sets of **MobileServiceClient** definitions, one for each client platform. This is a good time to simplify the generated code by unifying the `#if...#endif` wrapped **MobileServiceClient** definitions into a single unwrapped definition used by both versions of the app. You won't need to do this when you downloaded the quickstart app from the [Azure Management Portal].
 
 &nbsp;&nbsp;8. Press the F5 key to run the Windows store app, and verify that an unhandled exception with a status code of 401 (Unauthorized) is raised after the app starts.
    
@@ -54,7 +57,11 @@ Next, you will update the app to authenticate users before requesting resources 
 
 ##<a name="tokens"></a>Store the authorization tokens on the client
 
-[AZURE.INCLUDE [mobile-services-windows-store-dotnet-authenticate-app-with-token](../includes/mobile-services-windows-store-dotnet-authenticate-app-with-token.md)] 
+The previous example showed a standard sign-in, which requires the client to contact both the identity provider and the mobile service every time that the app starts. Not only is this method inefficient, you can run into usage-related issues should many customers try to start your app at the same time. A better approach is to cache the authorization token returned by Mobile Services and try to use this first before using a provider-based sign-in.
+
+>[AZURE.NOTE]You can cache the token issued by Mobile Services regardless of whether you are using client-managed or service-managed authentication. This tutorial uses service-managed authentication.
+
+[AZURE.INCLUDE [mobile-windows-universal-dotnet-authenticate-app-with-token](../includes/mobile-windows-universal-dotnet-authenticate-app-with-token.md)]
 
 
 ## <a name="next-steps"> </a>Next steps
@@ -91,4 +98,3 @@ You can get additional user data maintained by the identity provider in your mob
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
- 

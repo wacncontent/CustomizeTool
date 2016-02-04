@@ -9,19 +9,19 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
+	ms.date="10/29/2015"
 	wacn.date=""/>
 
 #Overview and Comparison of Azure On Demand Media Encoders
 
 ##Encoding overview
 
-Azure Media Services provides multiple options for the encoding of media in the cloud. 
+Azure Media Services provides multiple options for the encoding of media in the cloud.
 
-When starting out with Media Services, it is important to understand the difference between codecs and file formats. 
+When starting out with Media Services, it is important to understand the difference between codecs and file formats.
 Codecs are the software that implements the compression/decompression algorithms whereas file formats are containers that hold the compressed video.
 
-Media Services provides dynamic packaging which allows you to deliver your adaptive bitrate MP4 or Smooth Streaming encoded content in streaming formats supported by Media Services (MPEG DASH, HLS, Smooth Streaming, HDS) without you having to re-package into these streaming formats. 
+Media Services provides dynamic packaging which allows you to deliver your adaptive bitrate MP4 or Smooth Streaming encoded content in streaming formats supported by Media Services (MPEG DASH, HLS, Smooth Streaming, HDS) without you having to re-package into these streaming formats.
 
 To take advantage of [dynamic packaging](/documentation/articles/media-services-dynamic-packaging-overview), you need to do the following:
 
@@ -31,7 +31,7 @@ To take advantage of [dynamic packaging](/documentation/articles/media-services-
 Media Services supports the following on demand encoders that are described in this article:
 
 - **Media Encoder Standard**
-- **Azure Media Encoder** 
+- **Azure Media Encoder**
 - **Media Encoder Premium Workflow**
 
 This article gives a brief overview of on demand media encoders and provides links to articles that give more detailed information. The topic also provides comparison of the encoders.
@@ -163,6 +163,7 @@ AVI (Uncompressed 8bit/10bit)|Yes|Yes	|Yes
 Smooth Streaming File Format (PIFF 1.3)|Yes|Yes|No
 [Microsoft Digital Video Recording(DVR-MS)](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dd692984)|Yes|No|No
 Matroska/WebM				|Yes|No|No
+QuickTime (.mov) |Yes|No|No
 
 ###Input Video Codecs
 
@@ -177,7 +178,13 @@ MPEG-1												|Yes|Yes|Yes
 Windows Media Video/VC-1							|Yes|Yes|Yes
 Canopus HQ/HQX										|No|Yes|No
 MPEG-4 Part 2										|Yes|No|No
-[Theora](https://en.wikipedia.org/wiki/Theora)		|Yes|No|No
+[Theora](https://zh.wikipedia.org/wiki/Theora)		|Yes|No|No
+Apple ProRes 422	|Yes|No|No
+Apple ProRes 422 LT	|Yes|No|No
+Apple ProRes 422 HQ |Yes|No|No
+Apple ProRes Proxy|Yes|No|No
+Apple ProRes 4444 |Yes|No|No
+Apple ProRes 4444 XQ |Yes|No|No
 
 ###Input Audio Codecs
 
@@ -192,8 +199,8 @@ MPEG Layer 2|Yes|Yes|Yes
 MP3 (MPEG-1 Audio Layer 3)|Yes|Yes|Yes
 Windows Media Audio|Yes|Yes|Yes
 WAV/PCM|Yes|Yes|Yes
-[FLAC](https://en.wikipedia.org/wiki/FLAC)</a>|Yes|No|No
-[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) |Yes|No|No
+[FLAC](https://zh.wikipedia.org/wiki/FLAC)</a>|Yes|No|No
+[Opus](https://zh.wikipedia.org/wiki/Opus_codec |Yes|No|No
 [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a>|Yes|No|No
 
 
@@ -236,12 +243,16 @@ MP3 (MPEG-1 Audio Layer 3)|No|No|Yes
 Windows Media Audio|No|Yes|Yes
 
 
+
+
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
 
 ##Related articles
 

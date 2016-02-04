@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/07/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # <a name="getting-started"> </a>Get started with Mobile Services
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
@@ -31,9 +36,9 @@ In this tutorial, you will create both a new mobile service and a simple _To do 
 
 ## Create a new iOS app
 
-You can follow an easy Quick Start in the Management Portal to create a new app connected to your mobile service:
+You can follow an easy Quick Start in the Azure Management Portal to create a new app connected to your mobile service:
 
-1. In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+1. In the [Azure Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
 
 2. In the Quick Start tab, click **iOS** under **Choose a platform** and expand **Create a new iOS app**. This displays the steps to create an iOS app connected to your mobile service.
 
@@ -46,7 +51,7 @@ You can follow an easy Quick Start in the Management Portal to create a new app 
 [AZURE.INCLUDE [mobile-services-ios-run-app](../includes/mobile-services-ios-run-app.md)]
 
 <ol start="4">
-<li><p>Back in the Management Portal, click the **DATA** tab and then click the **TodoItem** table. This lets you browse the data inserted by the app into the table.<p></li></ol></p>
+<li><p>Back in the [Azure Management Portal], click the **DATA** tab and then click the **TodoItem** table. This lets you browse the data inserted by the app into the table.<p></li></ol></p>
 
 ## <a name="next-steps"> </a>Next Steps
 Learn how to perform additional important tasks in Mobile Services:
@@ -80,12 +85,12 @@ Learn how to perform additional important tasks in Mobile Services:
 
 
 <!-- URLs. -->
-[Get started with offline data sync]: /documentation/articles/mobile-services-ios-get-started-offline-data
-[Add authentication to an existing app]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
-[Add push notifications to an existing app]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
+[Get started with offline data sync]: mobile-services-ios-get-started-offline-data.md
+[Add authentication to an existing app]: mobile-services-dotnet-backend-ios-get-started-users.md
+[Add push notifications to an existing app]: mobile-services-dotnet-backend-ios-get-started-push.md
 
 
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[.NET backend version]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
+[.NET backend version]: mobile-services-dotnet-backend-ios-get-started.md

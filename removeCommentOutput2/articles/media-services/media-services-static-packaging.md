@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/10/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -19,7 +19,7 @@
 
 ## Overview
 
-In order to deliver digital video over the internet you must compress the media. Digital video files are quite large and may be too big to deliver over the internet or for your customers’ devices to display properly. Encoding is the process of compressing video and audio so your customers can view your media. Once a video has been encoded it can be placed into different file containers. The process of placing encoded media into a container is called packaging. For example, you can take an MP4 file and convert it into Smooth Streaming or HLS content by using the Azure Media Packager. For more information, see [Encoding versus Packaging](http://blog-ndrouin.chinacloudsites.cn/streaming-media-terminology-explained/).
+In order to deliver digital video over the internet you must compress the media. Digital video files are quite large and may be too big to deliver over the internet or for your customers' devices to display properly. Encoding is the process of compressing video and audio so your customers can view your media. Once a video has been encoded it can be placed into different file containers. The process of placing encoded media into a container is called packaging. For example, you can take an MP4 file and convert it into Smooth Streaming or HLS content by using the Azure Media Packager. For more information, see [Encoding versus Packaging](http://blog-ndrouin.chinacloudsites.cn/streaming-media-terminology-explained/).
 
 Media Services supports dynamic and static packaging. When using static packaging you need to create a copy of your content in each format required by your customers. With dynamic packaging all you need is to create an asset that contains a set of adaptive bitrate MP4 or Smooth Streaming files. Then, based on the specified format in the manifest or fragment request, the On-Demand Streaming server will ensure that your users receive the stream in the protocol they have chosen. As a result, you only need to store and pay for the files in single storage format and Media Services service will build and serve the appropriate response based on requests from a client.
 
@@ -40,7 +40,7 @@ You can also use static packaging to perform the following tasks. However it is 
 
 If you want to use a set of adaptive bitrate (multi-bitrate) MP4 files that were not encoded with Media Services Encoder, you should validate your files before further processing. The Media Services Packager can validate an asset that contains a set of MP4 files and check whether the asset can be packaged to Smooth Streaming or HLS. If the validation task fails, the job that was processing the task will complete with an error. The XML that defines the preset for the validation task can be found in the [Task Preset for Azure Media Packager](http://msdn.microsoft.com/zh-cn/library/azure/hh973635.aspx) topic.
 
->[AZURE.NOTE]Use the Media Services Encoder to produce or the Media Services Packager to validate your content in order to avoid runtime issues. If the On-Demand Streaming server is not able to parse your source files at runtime, you will receive HTTP 1.1 error “415 Unsupported Media Type”. Repeatedly causing the server to fail to parse your source files affects performance of the On-Demand Streaming server and may reduce the bandwidth available to serving other requests. Azure Media Services offers a Service Level Agreement (SLA) on its On-Demand Streaming services; however, this SLA cannot be honored if the server is misused in the fashion described above.
+>[AZURE.NOTE]Use the Media Services Encoder to produce or the Media Services Packager to validate your content in order to avoid runtime issues. If the On-Demand Streaming server is not able to parse your source files at runtime, you will receive HTTP 1.1 error â415 Unsupported Media Typeâ. Repeatedly causing the server to fail to parse your source files affects performance of the On-Demand Streaming server and may reduce the bandwidth available to serving other requests. Azure Media Services offers a Service Level Agreement (SLA) on its On-Demand Streaming services; however, this SLA cannot be honored if the server is misused in the fashion described above.
 
 This section shows how to process the validation task. It also shows how to see the status and the error message of the job that completes with JobStatus.Error.
 
@@ -50,7 +50,7 @@ To validate your MP4 files with Media Services Packager, you must create your ow
 	<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 	<smil xmlns="http://www.w3.org/2001/SMIL20/Language">
 	  <head>
-	<!-- Tells the server that these input files are MP4s – specific to Dynamic Packaging -->
+	<!-- Tells the server that these input files are MP4s - specific to Dynamic Packaging -->
 	    <meta name="formats" content="mp4" /> 
 	  </head>
 	  <body>
@@ -594,7 +594,7 @@ The example defines the UpdatePlayReadyConfigurationXMLFile method that you can 
 	            // Note that the configuration defined in MediaEncryptor_PlayReadyProtection.xml
 	            // is using keySeedValue. It is recommended that you do this only for testing 
 	            // and not in production. For more information, see 
-	            // http://msdn.microsoft.com/zh-cn/library/azure/dn189154.aspx.
+	            // http://www.windowsazure.cn/documentation/articles/media-services-static-packaging.
 	            //
 	            string configPlayReady = File.ReadAllText(Path.Combine(_configurationXMLFiles,
 	                                        @"MediaEncryptor_PlayReadyProtection.xml"));
@@ -1346,7 +1346,7 @@ Make sure to update the following code to point to the folder where your input M
 	            // Note that the configuration defined in MediaEncryptor_PlayReadyProtection.xml
 	            // is using keySeedValue. It is recommended that you do this only for testing 
 	            // and not in production. For more information, see 
-	            // http://msdn.microsoft.com/zh-cn/library/azure/dn189154.aspx.
+	            // http://www.windowsazure.cn/documentation/articles/media-services-static-packaging.
 	            //
 	            string configPlayReady = File.ReadAllText(Path.Combine(_configurationXMLFiles,
 	                                        @"MediaEncryptor_PlayReadyProtection.xml"));

@@ -8,18 +8,14 @@
  editor=""/>
 <tags
 	ms.service="scheduler"
-	ms.date="08/18/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Get started using Azure Scheduler in the Azure Management Portal
 
-## Configure Scheduler using the Azure Management Portal to quickly and easily create jobs
-
-To complete this tutorial, you need an Azure account that has the Azure Scheduler feature enabled. If you don't have an account, you can create a trial account in just a couple of minutes. For details, refer to [Azure Trial](/pricing/1rmb-trial/).
-
 ## Get started
 
-It's easy to create jobs and job collections on Azure Scheduler using the Azure Management Portal. This tutorial walks you through the creation of the job collection you will use to store jobs, the creation of a job in a job collection, and an overview of the job monitoring and management tasks available through the portal. You need prior experience with Azure to use this tutorial.
+It's easy to create jobs and job collections on Azure Scheduler. This tutorial walks you through the creation of the job collection you will use to store jobs, the creation of a job in a job collection, and an overview of the job monitoring and management tasks available. You need prior experience with Azure to use this tutorial.
 
 The first time you open the Azure Management Portal, you are automatically placed at the **ALL ITEMS** tab. The columns in the **ALL ITEMS** tab can be sorted. To view your Scheduler jobs and job collections, click the **SCHEDULER** tab.
 
@@ -29,15 +25,15 @@ The first time you open the Azure Management Portal, you are automatically place
 
 1.  Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).  
 
-2.  Click **App Services** > **Create New** > **Scheduler**, and then click **Custom Create**. <br /><br /> ![][2]
+2.  Click **Azure Websitess** > **Create New** > **Scheduler**, and then click **Custom Create**. <br /><br /> ![][2]
 
-3.  In **Job Collection**, select the name of the existing job collection under the **Job Collection** drop-down. If you don’t have an existing job collection you’d like to add the job to, select **Create New** and enter a name to identify your new job collection.<br /><br /> ![][3]
+3.  In **Job Collection**, select the name of the existing job collection under the **Job Collection** drop-down. If you don't have an existing job collection you'd like to add the job to, select **Create New** and enter a name to identify your new job collection.<br /><br /> ![][3]
 
 4.  In **Region**, select the geographic region for the job collection.  
 
-5.  Click the arrow key to create the job collection and move to the next stage – creating a job.
+5.  Click the arrow key to create the job collection and move to the next stage - creating a job.
 
-6.  Let’s create a job that simply hits http://www.microsoft.com/ with a GET request. In the **Job action** screen, define the following values for the requested form fields:  
+6.  Let's create a job that simply hits http://www.microsoft.com/ with a GET request. In the **Job action** screen, define the following values for the requested form fields:  
 
     1.  **Name:** ` getmicrosoft`  
 
@@ -49,7 +45,7 @@ The first time you open the Azure Management Portal, you are automatically place
 
    	![][4]
 
-7.  After you create a job, define a schedule. The job could be defined as a one-time job, but let’s pick a recurrence schedule. Some screenshots in this tutorial show a recurrence of 1 minute for only illustrative purposes, but pick a recurrence of 12 hours.  
+7.  After you create a job, define a schedule. The job could be defined as a one-time job, but let's pick a recurrence schedule. Some screenshots in this tutorial show a recurrence of 1 minute for only illustrative purposes, but pick a recurrence of 12 hours.  
 
     1.  **Recur Every:** ` 12 Hours`  
 
@@ -208,7 +204,7 @@ The following counters and metrics are available:
 
 ### Configure a job
 
-Clicking on a job in the **Jobs** screen allows you to configure that job. This lets you configure additional advanced settings beyond what’s available in the quick-create wizard. To configure a job, click the right arrow next to the job’s name in the **Jobs** screen.
+Clicking on a job in the **Jobs** screen allows you to configure that job. This lets you configure additional advanced settings beyond what's available in the quick-create wizard. To configure a job, click the right arrow next to the job's name in the **Jobs** screen.
 
 The job configuration page lets you update job settings. The job config page is shown below for HTTP and HTTPS jobs. For HTTP and HTTPS job action types, you may change the method to any allowed HTTP verb. You may also add, delete, or change the headers and basic authentication information.
 

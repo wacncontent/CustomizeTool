@@ -1,5 +1,5 @@
-> [AZURE.SELECTOR-LIST (Platform | Backend )]
 <!-- deleted by customization
+> [AZURE.SELECTOR-LIST (Platform | Backend )]
 - [(iOS | .NET)](../articles/mobile-services-dotnet-backend-ios-get-started-users.md)
 - [(iOS | JavaScript)](../articles/mobile-services-ios-get-started-users.md)
 - [(Windows 8.x Store C# | .NET)](../articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users.md)
@@ -13,14 +13,12 @@
 - [(HTML | Javascript)](../articles/mobile-services-html-get-started-users.md)
 -->
 <!-- keep by customization: begin -->
+> [AZURE.SELECTOR]
 - [(iOS | .NET)](/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/)
 - [(iOS | JavaScript)](/documentation/articles/mobile-services-ios-get-started-users/)
 - [(Windows Store C# | .NET)](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/)
 - [(Windows Store C# | Javascript)](/documentation/articles/mobile-services-windows-store-dotnet-get-started-users/)
-- [(Windows Store JavaScript | Javascript)](/documentation/articles/mobile-services-windows-store-javascript-get-started-users/)
-- [(Windows Phone | .NET)](/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users/)
 - [(Windows Phone | Javascript)](/documentation/articles/mobile-services-windows-phone-get-started-users/)
-- [(Android | .NET)](/documentation/articles/mobile-services-dotnet-backend-android-get-started-users/)
 - [(Android | Javascript)](/documentation/articles/mobile-services-android-get-started-users/)
 - [(Xamarin iOS | .NET)](/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started-users/)
 - [(Xamarin iOS | Javascript)](/documentation/articles/partner-xamarin-mobile-services-ios-get-started-users/)

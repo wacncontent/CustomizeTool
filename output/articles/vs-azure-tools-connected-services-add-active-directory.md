@@ -3,12 +3,12 @@
    description="Add an Azure Active Directory by using the Visual Studio Add Connected Services dialog box"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="patshea123"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
-	ms.service="visual-studio-online""
-	ms.date="08/12/2015"
+	ms.service="visual-studio-online"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Adding an Azure Active Directory by using Connected Services in Visual Studio 
@@ -27,7 +27,7 @@ You can use the Connected Services dialog to connect to Azure AD in the followin
 
 ### Connect to Azure AD using the Connected Services dialog
 
-1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a [trial](/pricing/1rmb-trial/).
+1. Make sure you have an Azure account. If you don't have an Azure account, you can sign up for a [trial](/pricing/1rmb-trial).
 
 1. In Visual Studio, open the shortcut menu of the **References** node in your project and choose **Add Connected Services**.
 1. Select **Azure AD Authentication** and then choose **Configure**.
@@ -40,7 +40,7 @@ You can use the Connected Services dialog to connect to Azure AD in the followin
 
     ![Configure Azure AD in the wizard](./media/vs-azure-tools-connected-services-add-active-directory/configure-azure-ad-wizard-1.png)
 
-1.  On the second page, select a domain from the **Domain** drop-down list. The list of domains contains all domains accessible by the accounts listed in the Account Settings dialog. As an alternative, you can enter a domain name if you don’t find the one you’re looking for, such as mydomain.partner.onmschina.cn. You can choose the option to create a new Azure AD app or use the settings from an existing Azure AD app. 
+1.  On the second page, select a domain from the **Domain** drop-down list. The list of domains contains all domains accessible by the accounts listed in the Account Settings dialog. As an alternative, you can enter a domain name if you don't find the one you're looking for, such as mydomain.partner.onmschina.cn. You can choose the option to create a new Azure AD app or use the settings from an existing Azure AD app. 
 
     ![Configure Azure AD in the wizard](./media/vs-azure-tools-connected-services-add-active-directory/configure-azure-ad-wizard-2.png)
 
@@ -63,7 +63,7 @@ You can use the Connected Services dialog to connect to Azure AD in the followin
 
 ## How your project is modified
 
-When you run the wizard, Visual Studio adds Azure AD and associated references to your project. Configuration files and code files in your project are also modified to add support for Azure AD. The specific modifications that Visual Studio makes depend on the project type. For detailed information about how ASP.NET MVC projects are modified, see [What happened– MVC Projects](/documentation/articles/vs-active-directory-dotnet-getting-started/). For Web API projects, see [What happened – Web API Projects](/documentation/articles/vs-active-directory-webapi-getting-started/).
+When you run the wizard, Visual Studio adds Azure AD and associated references to your project. Configuration files and code files in your project are also modified to add support for Azure AD. The specific modifications that Visual Studio makes depend on the project type. For detailed information about how ASP.NET MVC projects are modified, see [What happened- MVC Projects](/documentation/articles/vs-active-directory-dotnet-getting-started/). For Web API projects, see [What happened - Web API Projects](/documentation/articles/vs-active-directory-webapi-getting-started/).
 
 ##Next steps
 

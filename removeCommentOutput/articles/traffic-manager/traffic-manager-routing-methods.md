@@ -4,22 +4,22 @@
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Traffic Manager routing methods
 
 There are three traffic routing methods available in Traffic Manager. Each Traffic Manager profile can use only one traffic routing method at a time, although you can select a different traffic routing method for your profile at any time.
 
-It’s important to note that all traffic routing methods include endpoint monitoring. After you configure your Traffic Manager profile to specify the traffic routing method that best fits your requirements, configure your monitoring settings. When monitoring is correctly configured, Traffic Manager will monitor the state of your endpoints, consisting of cloud services and websites, and won’t send traffic to endpoints it thinks are unavailable. For information about Traffic Manager monitoring, see [About Traffic Manager Monitoring](/documentation/articles/traffic-manager-monitoring). 
+It's important to note that all traffic routing methods include endpoint monitoring. After you configure your Traffic Manager profile to specify the traffic routing method that best fits your requirements, configure your monitoring settings. When monitoring is correctly configured, Traffic Manager will monitor the state of your endpoints, consisting of cloud services and websites, and won't send traffic to endpoints it thinks are unavailable. For information about Traffic Manager monitoring, see [About Traffic Manager Monitoring](/documentation/articles/traffic-manager-monitoring). 
 
 The three Traffic Manager traffic routing methods are:
 
-- **Failover**: Select Failover when you have endpoints in the same or different Azure datacenters (known as regions in the Management Portal) and want to use a primary endpoint for all traffic, but provide backups in case the primary or the backup endpoints are unavailable. For more information, see [Failover traffic routing method](#failover-traffic-routing-method).
+- **Failover**: Select Failover when you have endpoints in the same or different Azure datacenters (known as regions in the Azure Management Portal) and want to use a primary endpoint for all traffic, but provide backups in case the primary or the backup endpoints are unavailable. For more information, see [Failover traffic routing method](#failover-traffic-routing-method).
 
 - **Round Robin**: Select Round Robin when you want to distribute load across a set of endpoints in the same datacenter or across different datacenters. For more information, see [Round Robin traffic routing method](#round-robin-traffic-routing-method).
 
@@ -33,7 +33,7 @@ Note that Azure Websites already provides failover and round-robin traffic routi
 
 Often an organization wants to provide reliability for its services. It does this by providing backup services in case their primary service goes down. A common pattern for service failover is to provide a set of identical endpoints and send traffic to a primary service, with a list of one or more backups. If the primary service is not available, requesting clients are referred to the next in order. If both the first and second services in the list are not available, the traffic goes to the third and so on.
 
-When configuring the Failover traffic routing method, the order of the selected endpoints is important. Using the Management Portal, you can configure the failover order on the Configuration page for the profile.
+When configuring the Failover traffic routing method, the order of the selected endpoints is important. Using the Azure Management Portal, you can configure the failover order on the Configuration page for the profile.
 
 Figure 1 shows an example of the Failover traffic routing method for a set of endpoints.
 
@@ -44,8 +44,8 @@ Figure 1 shows an example of the Failover traffic routing method for a set of en
 The following numbered steps correspond to the numbers in Figure 1.
 
 1. Traffic Manager receives an incoming request from a client through DNS and locates the profile.
-2. The profile contains an ordered list of endpoints. Traffic Manager checks which endpoint is first in the list. If the endpoint is online (based on the ongoing endpoint monitoring), it will specify that endpoint’s DNS name in the DNS response to the client. If the endpoint is offline, Traffic Manager determines the next online endpoint in the list. In this example CS-A is offline (unavailable), but CS-B is online (available).
-3. Traffic Manager returns CS-B’s domain name to the client's DNS server, which resolves the domain name to an IP address and sends it to the client.
+2. The profile contains an ordered list of endpoints. Traffic Manager checks which endpoint is first in the list. If the endpoint is online (based on the ongoing endpoint monitoring), it will specify that endpoint's DNS name in the DNS response to the client. If the endpoint is offline, Traffic Manager determines the next online endpoint in the list. In this example CS-A is offline (unavailable), but CS-B is online (available).
+3. Traffic Manager returns CS-B's domain name to the client's DNS server, which resolves the domain name to an IP address and sends it to the client.
 4. The client initiates traffic to CS-B.
 
 ## Round robin traffic routing method
@@ -77,7 +77,7 @@ Round Robin weighted traffic routing allows you to distribute load to various en
 - Application migration to Azure: Create a profile with both Azure and external endpoints, and specify the weight of traffic that is routed to each endpoint.
 - Cloud-bursting for additional capacity: Quickly expand an on-premises deployment into the cloud by putting it behind a Traffic Manager profile. When you need extra capacity in the cloud, you can add or enable more endpoints and specify what portion of traffic goes to each endpoint.
 
-At this time, you cannot use the Management Portal to configure weighted traffic routing. Azure provides programmatic access to this method using the associated Service Management REST API and Azure PowerShell cmdlets.
+At this time, you cannot use the Azure Management Portal to configure weighted traffic routing. Azure provides programmatic access to this method using the associated Service Management REST API and Azure PowerShell cmdlets.
 
 For information about using the REST APIs, see [Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx).
 
@@ -103,7 +103,7 @@ The following numbered steps correspond to the numbers in Figure 4.
 2. Traffic Manager receives an incoming request from a client through its local DNS server and locates the profile.
 3. Traffic Manager locates the row in the Internet Latency Table for the IP address of the incoming DNS request. Because the user's local DNS server is performing an iterative DNS query to find the authoritative DNS server for the Traffic Manager profile name, the DNS query is sent from the IP address of the client's local DNS server.
 4. Traffic Manager locates the datacenter with the shortest time for the datacenters that host the endpoints defined in the profile. In this example, that is CS-B.
-5. Traffic Manager returns CS-B’s domain name to the client's local DNS server, which resolves the domain name to an IP address and sends it to the client.
+5. Traffic Manager returns CS-B's domain name to the client's local DNS server, which resolves the domain name to an IP address and sends it to the client.
 6. The client initiates traffic to CS-B.
 
 **Points to note:**
@@ -119,16 +119,9 @@ If you want the figures in this topic as PowerPoint sides for your own presentat
 
 ## Next steps
 
-[What is Traffic Manager?](/documentation/articles/traffic-manager-overview)
+[Traffic Manager monitoring](/documentation/articles/traffic-manager-monitoring)
 
-[About Traffic Manager Monitoring](/documentation/articles/traffic-manager-monitoring)
+[Create a profile](/documentation/articles/traffic-manager-manage-profiles)
 
-[Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
-
-[Cloud Services](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)
-
-[Websites](/home/features/web-site/)
-
-[Azure Traffic Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
-
+[Add an endpoint](/documentation/articles/traffic-manager-endpoints)
  

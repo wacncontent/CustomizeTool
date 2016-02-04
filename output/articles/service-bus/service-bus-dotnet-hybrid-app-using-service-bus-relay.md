@@ -104,14 +104,14 @@ To begin using Service Bus features in Azure, you must first create a service na
 
 You can manage namespaces and Service Bus messaging entities using either the [Azure Management Portal][] or the Visual Studio Server Explorer, but you can only create new namespaces from within the portal.
 
-### To create a namespace using the portal:
+### Create a namespace using the Azure Management Portal:
 
 1.  Sign in to the [Azure Management Portal][].
 
-2.  In the left navigation pane of the Azure Management Portal, click
+2.  In the left navigation pane of the portal, click
     **Service Bus**.
 
-3.  In the lower pane of the Azure Management Portal, click **Create**.
+3.  In the lower pane of the portal, click **Create**.
 
     ![][5]
 
@@ -630,7 +630,7 @@ virtual machine server time for hosting these web role instances.
 The following steps show you how to stop and delete your
 application.
 
-1.  Sign in to the [Azure Management Portal], click **Cloud Services**, then click the name of your service.
+1.  Sign in to the [Azure Management Portal][], click **Cloud Services**, then click the name of your service.
 
 2.  Click the **Dashboard** tab, and then click **Stop** to temporarily suspend your application. You will be able to start it again by clicking **Start**. Click **Delete** to completely remove your application from Azure with no ability to restore it.
 
@@ -696,5 +696,5 @@ To learn more about Service Bus, see the following resources:
   [45]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-web-45.png
 
   [sbwacom]: /documentation/services/service-bus/  
-  [sbwacomqhowto]: /documentation/articles/service-bus-dotnet-how-to-use-queues
-  [executionmodels]: /documentation/articles/fundamentals-application-models
+  [sbwacomqhowto]: service-bus-dotnet-how-to-use-queues.md
+  [executionmodels]: ../cloud-services/fundamentals-application-models.md

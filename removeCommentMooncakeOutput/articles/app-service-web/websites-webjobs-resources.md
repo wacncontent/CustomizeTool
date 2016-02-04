@@ -72,16 +72,16 @@ See also the following sections on [Deploying WebJobs](#deploy) and [Testing and
 
 ##<a name="scale"></a>Scaling WebJobs
 
-* [Scaling Your Web Application with Azure Websites](http://msdn.microsoft.com/magazine/dn786914.aspx)
-* [Azure Websites: Architecting Massive-Scale Ready-For-Business Web Apps](https://channel9.msdn.com/Events/Build/2014/3-626). Covers scaling of web apps with WebJobs, including the WebJobs SDK.
+* [Scaling Your web site with Azure Websites](http://msdn.microsoft.com/magazine/dn786914.aspx)
+* [Azure Websites: Architecting Massive-Scale Ready-For-Business web sites](https://channel9.msdn.com/Events/Build/2014/3-626). Covers scaling of web sites with WebJobs, including the WebJobs SDK.
 
 ##<a name="additional"></a>Additional WebJobs resources
 
-* [Azure WebJobs GA blog post by Magnus Mårtensson](http://magnusmartensson.com/azure-webjobs-ga)
+* [Azure WebJobs GA blog post by Magnus MĂĽrtensson](http://magnusmartensson.com/azure-webjobs-ga)
 * [Running Powershell Web Jobs on Azure Websites](http://blogs.msdn.com/b/nicktrog/archive/2014/01/22/running-powershell-web-jobs-on-azure-websites.aspx)
 * [Getting notified when your Azure triggered WebJobs completes](http://blog.amitapple.com/post/2014/03/webjobs-notification/)
-* [Simple Web App Backup retention policy with WebJobs](http://azure.microsoft.com/blog/2014/04/28/simple-web-site-backup-retention-policy-with-webjobs/)
-* [Azure Web Apps and Cloud Services Slow on First Request](http://wp.sjkp.dk/windows-azure-websites-and-cloud-services-slow-on-first-request/). Shows how to use WebJobs to simulate the AlwaysOn feature that is only available for the Standard pricing tier.
+* [Simple web site Backup retention policy with WebJobs](http://azure.microsoft.com/blog/2014/04/28/simple-web-site-backup-retention-policy-with-webjobs/)
+* [Azure web sites and Cloud Services Slow on First Request](http://wp.sjkp.dk/windows-azure-websites-and-cloud-services-slow-on-first-request/). Shows how to use WebJobs to simulate the AlwaysOn feature that is only available for the Standard pricing tier.
 * [WebJobs Graceful Shutdown](http://blog.amitapple.com/post/2014/05/webjobs-graceful-shutdown/#.U72Il_5OWUl). For WebJobs SDK graceful shutdown, see [Graceful shutdown](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#graceful).)
 * [Automating Backups with Azure WebJobs & AzCopy](http://markjbrown.com/azure-webjobs-azcopy/)
 
@@ -97,14 +97,14 @@ See also the following sections on [Deploying WebJobs](#deploy) and [Testing and
 ##<a name="samples"></a>Sample WebJob applications
 
 * [Sample applications provided by the WebJobs team on GitHub](https://github.com/azure/azure-webjobs-sdk-samples)
-* [Simple Azure Web App with WebJobs Backend using the WebJobs SDK](http://code.msdn.microsoft.com/Simple-Azure-Website-with-b4391eeb)
+* [Simple Azure web site with WebJobs Backend using the WebJobs SDK](http://code.msdn.microsoft.com/Simple-Azure-Website-with-b4391eeb)
 * [SiteMonitR](http://code.msdn.microsoft.com/SiteMonitR-dd4fcf77). Demonstrates use of scheduled and event-driven WebJobs. See the blog post [Rebuilding the SiteMonitR using Azure WebJobs SDK](http://www.bradygaster.com/post/rebuilding-the-sitemonitr-using-windows-azure-webjobs).
 
 ##<a name="blogs"></a>Blogs
 
 * [Azure blog](/blog)
 * [Amit Apple's blog](http://blog.amitapple.com/). Focuses on WebJobs (not the SDK).
-* [Magnus Mårtensson's blog](http://magnusmartensson.com/)
+* [Magnus MĂĽrtensson's blog](http://magnusmartensson.com/)
 
 ##<a name="gethelp"></a>Getting help with WebJobs
 
@@ -112,5 +112,5 @@ See also the following sections on [Deploying WebJobs](#deploy) and [Testing and
 * [StackOverflow for the WebJobs SDK](http://stackoverflow.com/questions/tagged/azure-webjobssdk)
 * [Azure and ASP.NET forum](http://forums.asp.net/1247.aspx)
 * [Azure Websites forum](http://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs)
-* [Azure Web Apps User Voice site](/product-feedback)
+* [Azure web sites User Voice site](/product-feedback)
  

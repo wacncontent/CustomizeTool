@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory Integration with ArcGIS | Windows Azure" 
     description="Learn how to use ArcGIS with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory Integration with ArcGIS
@@ -98,7 +98,7 @@ The objective of this section is to outline how to enable users to authenticate 
 
     ![Set Identity Provider](./media/active-directory-saas-arcgis-tutorial/IC784745.png "Set Identity Provider")
 
-    1.  In the Name textbox, type your organization’s name.
+    1.  In the Name textbox, type your organization's name.
     2.  For **Metadata for the Enterprise Identity Provider will be supplied using**, select **A File**.
     3.  To upload your downloaded metadata file, click **Choose file**.
     4.  Click **Set Identity Provider**.

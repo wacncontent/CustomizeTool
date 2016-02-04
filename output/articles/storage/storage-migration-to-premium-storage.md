@@ -5,11 +5,11 @@
     documentationCenter="na"
     authors="ms-prkhad"
     manager=""
-    editor=""/>
+    editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="11/04/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 
@@ -17,7 +17,7 @@
 
 ## Overview
 
-Azure Premium Storage delivers high-performance, low-latency disk support for virtual machines running I/O-intensive workloads. Virtual machine (VM) disks that use Premium Storage store data on solid state drives (SSDs). You can migrate your application's VM disks to Azure Premium Storage to take advantage of the speed and performance of these disks. 
+Azure Premium Storage delivers high-performance, low-latency disk support for virtual machines running I/O-intensive workloads. Virtual machine (VM) disks that use Premium Storage store data on solid state drives (SSDs). You can migrate your application's VM disks to Azure Premium Storage to take advantage of the speed and performance of these disks.
 
 An Azure VM supports attaching several Premium Storage disks, so that your applications can have up to 64 TB of storage per VM. With Premium Storage, your applications can achieve 80,000 IOPS (input/output operations per second) per VM and 2000 MB per second disk throughput per VM with extremely low latencies for read operations.
 
@@ -39,14 +39,14 @@ Follow the steps specified in the relevant section depending on your scenario.
 ## Migrating VMs from other platforms to Azure Premium Storage
 
 ### Prerequisites
-- You will need an Azure subscription. If you don’t have one, you can create a one month [trial](/pricing/1rmb-trial/) subscription or visit [Azure Pricing](/pricing/) for more options.
+- You will need an Azure subscription. If you don't have one, you can create a one month [trial](/pricing/1rmb-trial/) subscription or visit [Azure Pricing](/pricing/) for more options.
 - To execute PowerShell cmdlets you will need the Windows Azure PowerShell module. See [Windows Azure Downloads](/downloads/) to download the module.
 - When you plan to use Azure VMs running on Premium Storage, you need to use the DS-series or GS-series VMs. You can use both Standard and Premium Storage disks with DS-series VMs. Premium storage disks will be available with more VM types in the future. For more information on all available Azure VM disk types and sizes, see [Virtual Machine and Cloud Service Sizes for Azure](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx).
 
 ### Considerations
 
 #### VM sizes
-The Azure VM size specifications are listed in [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs/). Review the performance characteristics of virtual machines that work with Premium Storage and choose the most appropriate VM size that best suits your workload. Make sure that there is sufficient bandwidth available on your VM to drive the disk traffic.
+The Azure VM size specifications are listed in [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs). Review the performance characteristics of virtual machines that work with Premium Storage and choose the most appropriate VM size that best suits your workload. Make sure that there is sufficient bandwidth available on your VM to drive the disk traffic.
 
 
 #### Disk sizes
@@ -60,7 +60,7 @@ There are three types of disks that can be used with your VM and each has specif
 
 #### Storage Account Scalability Targets
 
-Premium Storage accounts have following scalability targets in addition to the [Azure Storage Scalability and Performance <!-- deleted by customization Targets](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx) --><!-- keep by customization: begin --> Targets](/documentation/articles/storage-scalability-targets) <!-- keep by customization: end -->. If your application requirements exceed the scalability targets of a single storage account, build your application to use multiple storage accounts, and partition your data across those storage accounts.
+Premium Storage accounts have following scalability targets in addition to the [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx). If your application requirements exceed the scalability targets of a single storage account, build your application to use multiple storage accounts, and partition your data across those storage accounts.
 
 |Total Account Capacity|Total Bandwidth for a Locally Redundant Storage Account|
 |:--|:---|
@@ -72,7 +72,7 @@ For the more information on Premium Storage specifications, check out [Scalabili
 Depending on your workload, determine if additional data disks are necessary for your VM. You can attach several persistent data disks to your VM. If needed, you can stripe across the disks to increase the capacity and performance of the volume. If you stripe Premium Storage data disks using [Storage Spaces](http://technet.microsoft.com/zh-cn/library/hh831739.aspx), you should configure it with one column for each disk that is used. Otherwise, overall performance of the striped volume may be lower than expected due to uneven distribution of traffic across the disks. For Linux VMs you can use the *mdadm* utility to achieve the same. See article [Configure Software RAID on Linux](/documentation/articles/virtual-machines-linux-configure-raid) for details.
 
 #### Disk Caching Policy
-By default, disk caching policy is *Read-Only* for all the Premium data disks, and *Read-Write* for the Premium operating system disk attached to the VM. This configuration setting is recommended to achieve the optimal performance for your application’s IOs. For write-heavy or write-only data disks (such as SQL Server log files), disable disk caching so that you can achieve better application performance. The cache settings for existing data disks can be updated using Azure Management Portal or the *-HostCaching* parameter of the *Set-AzureDataDisk* cmdlet.
+By default, disk caching policy is *Read-Only* for all the Premium data disks, and *Read-Write* for the Premium operating system disk attached to the VM. This configuration setting is recommended to achieve the optimal performance for your application's IOs. For write-heavy or write-only data disks (such as SQL Server log files), disable disk caching so that you can achieve better application performance. The cache settings for existing data disks can be updated using [Azure Management Portal](portal.azure.com) or the *-HostCaching* parameter of the *Set-AzureDataDisk* cmdlet.
 
 #### Location
 Pick a location where Azure Premium Storage is available. See [Azure Services by Region](http://azure.microsoft.com/regions/#services) for up to date information on available locations. VMs located in the same region as the Storage account that stores the disks for VM, will give superior performance than if they are in separate regions.
@@ -154,7 +154,7 @@ Below we describe some scenarios for copying your VHD.
 If you are migrating VHD from a Standard Azure storage account to a Premium Azure storage account, you must copy the source path of VHD container, the VHD file name and the storage account key of the source storage account.
 
 1. Go to **Azure Management Portal > Virtual Machines > Disks**.
-2. Copy and save the VHD’s container URL from the Location column. The container URL will be similar to `https://myaccount.blob.core.chinacloudapi.cn/mycontainer/`.
+2. Copy and save the VHD's container URL from the Location column. The container URL will be similar to `https://myaccount.blob.core.chinacloudapi.cn/mycontainer/`.
 
 #### Copy VHD from non-Azure Cloud
 
@@ -196,11 +196,11 @@ Using AzCopy you can easily upload the VHD over the Internet. Depending on the s
 For details on using AzCopy tool, see [Getting Started with the AzCopy Command-Line Utility](/documentation/articles/storage-use-azcopy).
 
 ### Copy a VHD with PowerShell
-You can also copy the VHD file using the PowerShell cmdlet Start-AzureStorageBlobCopy. Use the following command on Azure PowerShell to copy VHD. Replace the values in <> with corresponding values from your source and destination storage account. To use this command, you must have a container called vhds in your destination storage account. If the container doesn’t exist, create one before running the command.
+You can also copy the VHD file using the PowerShell cmdlet Start-AzureStorageBlobCopy. Use the following command on Azure PowerShell to copy VHD. Replace the values in <> with corresponding values from your source and destination storage account. To use this command, you must have a container called vhds in your destination storage account. If the container doesn't exist, create one before running the command.
 
     $sourceBlobUri = "https://sourceaccount.blob.core.chinacloudapi.cn/vhds/myvhd.vhd"
-    $sourceContext = New-AzureStorageContext  –StorageAccountName <source-account> -StorageAccountKey <source-account-key>
-    $destinationContext = New-AzureStorageContext  –StorageAccountName <dest-account> -StorageAccountKey <dest-account-key>
+    $sourceContext = New-AzureStorageContext  -StorageAccountName <source-account> -StorageAccountKey <source-account-key>
+    $destinationContext = New-AzureStorageContext  -StorageAccountName <dest-account> -StorageAccountKey <dest-account-key>
     Start-AzureStorageBlobCopy -srcUri $sourceBlobUri -SrcContext $sourceContext -DestContainer "vhds" -DestBlob "myvhd.vhd" -DestContext $destinationContext
 
 ### Other options for uploading a VHD
@@ -272,11 +272,11 @@ Next, depending on your scenario, create the Azure VM instance from either the O
 
 Create the one or more new DS Series Azure VM instances using the **Azure OS Image** that you registered. Specify this OS Image name in the VM configuration when creating new VM as shown below.
 
-	$OSImage = Get-AzureVMImage –ImageName "OSImageName"
+	$OSImage = Get-AzureVMImage -ImageName "OSImageName"
 
-	$vm = New-AzureVMConfig -Name $vmName –InstanceSize $vmSize -ImageName $OSImage.ImageName
+	$vm = New-AzureVMConfig -Name $vmName -InstanceSize $vmSize -ImageName $OSImage.ImageName
 
-	Add-AzureProvisioningConfig -Windows –AdminUserName $adminUser -Password $adminPassword –VM $vm
+	Add-AzureProvisioningConfig -Windows -AdminUserName $adminUser -Password $adminPassword -VM $vm
 
 	New-AzureVM -ServiceName $serviceName -VM $vm
 
@@ -284,11 +284,11 @@ Create the one or more new DS Series Azure VM instances using the **Azure OS Ima
 
 Create a new DS series Azure VM instance using the **Azure OS Disk** that you registered. Specify this OS Disk name in the VM configuration when creating the new VM as shown below.
 
-	$OSDisk = Get-AzureDisk –DiskName "OSDisk"
+	$OSDisk = Get-AzureDisk -DiskName "OSDisk"
 
 	$vm = New-AzureVMConfig -Name $vmName -InstanceSize $vmSize -DiskName $OSDisk.DiskName
 
-	New-AzureVM -ServiceName $serviceName –VM $vm
+	New-AzureVM -ServiceName $serviceName -VM $vm
 
 Specify other Azure VM information, such as a cloud service, region, storage account, availability set, and caching policy. Note that the VM instance must be co-located with associated operating system or data disks, so the selected cloud service, region, and storage account must all be in the same location as the underlying VHDs of those disks.
 
@@ -300,7 +300,7 @@ Use following PowerShell cmdlet to attach data disk to the new VM and specify th
 
 	$vm = Get-AzureVM -ServiceName $serviceName -Name $vmName
 
-	Add-AzureDataDisk -ImportFrom -DiskName "DataDisk" -LUN 0 –HostCaching ReadOnly –VM $vm
+	Add-AzureDataDisk -ImportFrom -DiskName "DataDisk" -LUN 0 -HostCaching ReadOnly -VM $vm
 
 	Update-AzureVM  -VM $vm
 
@@ -315,7 +315,7 @@ If you currently have an Azure VM that uses Standard Storage disks, follow the p
 In addition, please refer to the previous section on Considerations for understanding various optimizations you can do for Premium Storage. Depending on the optimizations that are applicable to your applications, the migration process may fall into one of the migration scenarios below.
 
 ### A Simple Migration
-In this simple scenario, you are looking to preserve your configuration as is while migrating from Standard Storage to Premium Storage. Here you’ll move each of your disks as is and then convert the VM as well.
+In this simple scenario, you are looking to preserve your configuration as is while migrating from Standard Storage to Premium Storage. Here you'll move each of your disks as is and then convert the VM as well.
 Benefit of this is the ease of migration; and the downside is, the resulting configuration may not be optimized for the lowest cost.
 
 #### Preparation
@@ -334,20 +334,20 @@ Benefit of this is the ease of migration; and the downside is, the resulting con
   Refer to the earlier sections on [Copy a VHD with AzCopy](#copy-a-vhd-with-azcopy) or [Copy a VHD with PowerShell](#copy-a-vhd-with-powershell) for the commands.
 
 3.	Verify if the copying is complete. Wait until all the disks are copied. Once all the disks are copied over, you are ready to proceed to the next steps, for creating the new VM.
-4.	Create a new OS Disk using the OS disk VHD blob that you copied in Premium Storage account. You can do this using “Add-AzureDisk” PowerShell cmdlet.
+4.	Create a new OS Disk using the OS disk VHD blob that you copied in Premium Storage account. You can do this using "Add-AzureDisk" PowerShell cmdlet.
 
     Sample script:
           Add-AzureDisk -DiskName "NewOSDisk1" -MediaLocation "https://newpremiumstorageaccount.blob.core.chinacloudapi.cn/vhds/MyOSDisk.vhd" -OS "Windows"
 5. Next, create your DS series VM (or GS series) using the above OS disk and the data disks.
 
     Sample script to create a new cloud service and a new VM within that service:
-        New-AzureService -ServiceName “NewServiceName” -Location “China East 2"
+        New-AzureService -ServiceName "NewServiceName" -Location "China East 2"
 
-        New-AzureVMConfig -Name "NewDSVMName" -InstanceSize "Standard_DS2" -DiskName "NewOSDisk1" | Add-AzureProvisioningConfig -Windows | Add-AzureDataDisk -LUN 0 -DiskLabel "DataDisk1" -ImportFrom -MediaLocation "https://newpremiumstorageaccount.blob.core.chinacloudapi.cn/vhds/Disk1.vhd" | Add-AzureDataDisk -LUN 1 -DiskLabel "DataDisk2" -ImportFrom -MediaLocation https://newpremiumstorageaccount.blob.core.chinacloudapi.cn/vhds/Disk2.vhd | New-AzureVM -ServiceName "NewServiceName" –Location “China East 2”
+        New-AzureVMConfig -Name "NewDSVMName" -InstanceSize "Standard_DS2" -DiskName "NewOSDisk1" | Add-AzureProvisioningConfig -Windows | Add-AzureDataDisk -LUN 0 -DiskLabel "DataDisk1" -ImportFrom -MediaLocation "https://newpremiumstorageaccount.blob.core.chinacloudapi.cn/vhds/Disk1.vhd" | Add-AzureDataDisk -LUN 1 -DiskLabel "DataDisk2" -ImportFrom -MediaLocation https://newpremiumstorageaccount.blob.core.chinacloudapi.cn/vhds/Disk2.vhd | New-AzureVM -ServiceName "NewServiceName" -Location "China East 2"
 
 6.	Once the new VM is up and running, access it using the same login id and password is as the original VM, and verify that everything is working as expected. All the settings, including the striped volumes would be present in the new VM.
 
-7.	Last step is to plan backup and maintenance schedule for the new VM based on the application’s needs.
+7.	Last step is to plan backup and maintenance schedule for the new VM based on the application's needs.
 
 ### Automation
 If you have multiple VMs to migrate, automation through PowerShell scripts will be helpful. Following is a sample script that automates the migration of a VM. Note that below script is only an example and there are few assumptions made about the current VM disks. You may need to update the script to match with your specific scenario.
@@ -365,14 +365,14 @@ If you have multiple VMs to migrate, automation through PowerShell scripts will 
     .Terms of Use
     Copyright © 2015 Microsoft Corporation.  All rights reserved.
 
-    THIS CODE AND ANY ASSOCIATED INFORMATION ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND,
+    THIS CODE AND ANY ASSOCIATED INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND,
     EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY
     AND/OR FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK OF USE, INABILITY TO USE, OR
     RESULTS FROM THE USE OF THIS CODE REMAINS WITH THE USER.
 
     .Example (Save this script as Migrate-AzureVM.ps1)
 
-    .\Migrate-AzureVM.ps1 -SourceServiceName CurrentServiceName -SourceVMName CurrentVMName –DestStorageAccount newpremiumstorageaccount -DestServiceName NewServiceName -DestVMName NewDSVMName -DestVMSize "Standard_DS2" –Location “China North”
+    .\Migrate-AzureVM.ps1 -SourceServiceName CurrentServiceName -SourceVMName CurrentVMName -DestStorageAccount newpremiumstorageaccount -DestServiceName NewServiceName -DestVMName NewDSVMName -DestVMSize "Standard_DS2" -Location "China North"
 
     .Link
     To find more information about how to set up Azure PowerShell, refer to the following links.
@@ -478,7 +478,7 @@ If you have multiple VMs to migrate, automation through PowerShell scripts will 
     #  Azure does not support live migration at this time..
     #######################################################################
 
-    if (($sourceVM = Get-AzureVM –ServiceName $SourceServiceName –Name $SourceVMName) -eq $null)
+    if (($sourceVM = Get-AzureVM -ServiceName $SourceServiceName -Name $SourceVMName) -eq $null)
     {
         Write-Host "[ERROR] - The source VM doesn't exist in the current subscription. Exiting." -ForegroundColor Red
         Exit
@@ -487,18 +487,18 @@ If you have multiple VMs to migrate, automation through PowerShell scripts will 
     # check if VM is shut down
     if ( $sourceVM.Status -notmatch "Stopped" )
     {
-        Write-Host "[Warning] - Stopping the VM is a required step so that the file system is consistent when you do the copy operation. Azure does not support live migration at this time. If you’d like to create a VM from a generalized image, sys-prep the Virtual Machine before stopping it." -ForegroundColor Yellow
+        Write-Host "[Warning] - Stopping the VM is a required step so that the file system is consistent when you do the copy operation. Azure does not support live migration at this time. If you'd like to create a VM from a generalized image, sys-prep the Virtual Machine before stopping it." -ForegroundColor Yellow
         $ContinueAnswer = Read-Host "`n`tDo you wish to stop $SourceVMName now? Input 'N' if you want to shut down the vm mannually and come back later.(Y/N)"
         If ($ContinueAnswer -ne "Y") { Write-Host "`n Exiting." -ForegroundColor Red;Exit }
         $sourceVM | Stop-AzureVM
 
         # wait until the VM is shut down
-        $VMStatus = (Get-AzureVM –ServiceName $SourceServiceName –Name $vmName).Status
+        $VMStatus = (Get-AzureVM -ServiceName $SourceServiceName -Name $vmName).Status
         while ($VMStatus -notmatch "Stopped")
         {
             Write-Host "`n[Status] - Waiting VM $vmName to shut down" -ForegroundColor Green
             Sleep -Seconds 5
-            $VMStatus = (Get-AzureVM –ServiceName $SourceServiceName –Name $vmName).Status
+            $VMStatus = (Get-AzureVM -ServiceName $SourceServiceName -Name $vmName).Status
         }
     }
 
@@ -523,11 +523,11 @@ If you have multiple VMs to migrate, automation through PowerShell scripts will 
     # Get source storage account information, not considering the data disks and os disks are in different accounts
     $sourceStorageAccountName = $sourceOSDisk.MediaLink.Host -split "\." | select -First 1
     $sourceStorageKey = (Get-AzureStorageKey -StorageAccountName $sourceStorageAccountName).Primary
-    $sourceContext = New-AzureStorageContext –StorageAccountName $sourceStorageAccountName -StorageAccountKey $sourceStorageKey
+    $sourceContext = New-AzureStorageContext -StorageAccountName $sourceStorageAccountName -StorageAccountKey $sourceStorageKey
 
     # Create destination context
     $destStorageKey = (Get-AzureStorageKey -StorageAccountName $DestStorageAccount).Primary
-    $destContext = New-AzureStorageContext –StorageAccountName $DestStorageAccount -StorageAccountKey $destStorageKey
+    $destContext = New-AzureStorageContext -StorageAccountName $DestStorageAccount -StorageAccountKey $destStorageKey
 
     # Create a container of vhds if it doesn't exist
     if ((Get-AzureStorageContainer -Context $destContext -Name vhds -ErrorAction SilentlyContinue) -eq $null)

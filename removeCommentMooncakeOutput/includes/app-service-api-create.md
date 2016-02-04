@@ -2,7 +2,7 @@
 
 2. Select **File > New > Project**.
 
-3. Select the **ASP.NET Web Application** template.
+3. Select the **ASP.NET web site** template.
 
 4. Make sure that the **Add Application Insights to Project** check box is cleared.
 

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/30/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Correlate events over time with Storm and HBase on HDInsight

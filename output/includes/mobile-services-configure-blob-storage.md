@@ -1,8 +1,8 @@
 A new insert script is registered that generates an SAS when a new Todo item is inserted.
 
-0. If you haven't yet created your storage account, see [How To Create a Storage Account](/documentation/articles//storage-create-storage-account).
+0. If you haven't yet created your storage account, see [How To Create a Storage Account](/documentation/articles/storage-create-storage-account).
 
-1. In the Management Portal, click **Storage**, click the storage account, then click **Manage Keys**. 
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Storage**, click the storage account, then click **Manage Keys**. 
 
 2. Make a note of the **Storage Account Name** and **Access Key**.
 
@@ -19,10 +19,9 @@ A new insert script is registered that generates an SAS when a new Todo item is 
 
 4. In the Configure tab, make sure that [Dynamic schema](http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7) is enabled. You need dynamic schema enabled to be able to add new columns to the TodoItem table. Dynamic schema should not be enabled in any production service.
 
-5. Click the **Data** tab and then click the **TodoItem** table. 
+4. Click the **Data** tab and then click the **TodoItem** table. 
 
-
-6.  In **todoitem**, click the **Script** tab and select **Insert**, replace the insert function with the following code, then click **Save**:
+5.  In **todoitem**, click the **Script** tab and select **Insert**, replace the insert function with the following code, then click **Save**:
 
 		var azure = require('azure');
 		var qs = require('querystring');
@@ -79,7 +78,7 @@ A new insert script is registered that generates an SAS when a new Todo item is 
 
    	This replaces the function that is invoked when an insert occurs in the TodoItem table with a new script. This new script generates a new SAS for the insert, which is valid for 5 minutes, and assigns the value of the generated SAS to the `sasQueryString` property of the returned item. The `imageUri` property is also set to the resource path of the new BLOB to enable image display during binding in the client UI.
 
-	>[AZURE.NOTE] This code creates an SAS for an individual BLOB. If you need to upload multiple blobs to a container using the same SAS, you can instead call the [generateSharedAccessSignature method](http://dl.windowsazure.cn/nodedocs/BlobService.html#generateSharedAccessSignature)</a> with an empty blob resource name, like this: 
+	>[AZURE.NOTE] This code creates an SAS for an individual BLOB. If you need to upload multiple blobs to a container using the same SAS, you can instead call the [generateSharedAccessSignature method](http://dl.windowsazure.com/nodedocs/BlobService.html#generateSharedAccessSignature)</a> with an empty blob resource name, like this: 
 	>                 
 	>     blobService.generateSharedAccessSignature(containerName, '', sharedAccessPolicy);
 

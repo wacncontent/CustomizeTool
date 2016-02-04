@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="09/01/2015"
+	ms.date="11/19/2015"
 	wacn.date=""/>
 
 # How to use the Azure slave plug-in with Jenkins Continuous Integration

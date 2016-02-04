@@ -6,29 +6,15 @@ deleted:
 		* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 		* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-reason: ()
-
-replacement:
+reason: (terminology: Azure App Service Web, the new Ibiza portal)
 
 deleted:
 
 		>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
-replaced by:
+reason: (“Try it now”)
 
-		+ [Prerequisites](#prerequisites)
-		+ [Website Creation on Portal](#website-creation-on-portal)
-		+ [Application Overview](#application-overview)
-		+ Website Development
-		  + [Windows - Python Tools for Visual Studio](#website-development-windows-ptvs)
-		  + [Windows - Command Line](#website-development-windows-command-line)
-		  + [Mac/Linux - Command Line](#website-development-mac-linux-command-line)
-		+ [Troubleshooting - Deployment](#troubleshooting-deployment)
-		+ [Troubleshooting - Package Installation](#troubleshooting-package-installation)
-		+ [Troubleshooting - Virtual Environment](#troubleshooting-virtual-environment)
-		+ [Next steps](#next-steps)
-
-reason: ()
+replacement:
 
 deleted:
 
@@ -38,7 +24,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -48,7 +34,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -65,7 +51,7 @@ replaced by:
 		
 		    ![Select Quick Create  Website](./media/web-sites-php-create-web-sites/select-quickcreate-Website.png)
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -75,7 +61,7 @@ replaced by:
 
 		site configuration page
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -85,7 +71,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -95,7 +81,7 @@ replaced by:
 
 		site configuration page
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -105,7 +91,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -115,5 +101,5 @@ replaced by:
 
 		site configuration page
 
-reason: ()
+reason: (the new Ibiza portal)
 

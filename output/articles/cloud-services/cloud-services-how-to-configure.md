@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/22/2015"
+	ms.date="01/15/2016"
 	wacn.date=""/>
 
 
@@ -18,8 +18,8 @@
 # How to Configure Cloud Services
 
 > [AZURE.SELECTOR]
+- [Azure Management Portal](/documentation/articles/cloud-services-how-to-configure-portal)
 - [Azure Management Portal](/documentation/articles/cloud-services-how-to-configure)
-- [Azure Preview Portal](/documentation/articles/cloud-services-how-to-configure-portal)
 
 You can configure the most commonly used settings for a cloud service in the Azure Management Portal. Or, if you like to update your configuration files directly, download a service configuration file to update, and then upload the updated file and update the cloud service with the configuration changes. Either way, the configuration updates are pushed out to all role instances.
 

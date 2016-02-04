@@ -7,9 +7,9 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="azure-resource-manager"
-	ms.date="10/16/2015"
+<tags 
+	ms.service="azure-resource-manager" 
+	ms.date="12/08/2015" 
 	wacn.date=""/>
 
 # Using Azure PowerShell with Azure Resource Manager
@@ -20,7 +20,7 @@
 
 Azure Resource Manager introduces an entirely new way of thinking about your Azure resources. Instead of creating and managing individual resources, you begin by imagining an entire solution, such as a blog, a photo gallery, a SharePoint portal, or a wiki. You use a template -- a declarative representation of the solution --  to create a resource group that contains all of the resources you need to support the solution. Then, you manage and deploy that resource group as a logical unit. 
 
-In this tutorial, you learn how to use Azure PowerShell with Azure Resource Manager. It walks you through the process of creating and deploying a resource group for an Azure-hosted web app with a SQL database, complete with all of the resources that you need to support it.
+In this tutorial, you learn how to use Azure PowerShell with Azure Resource Manager. It walks you through the process of creating and deploying a resource group for an Azure-hosted web site with a SQL database, complete with all of the resources that you need to support it.
 
 ## Prerequisites
 
@@ -29,22 +29,21 @@ To complete this tutorial, you need:
 - An Azure account
   + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F): You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites. Your credit card will never be charged, unless you explicitly change your settings and ask to be charged.
   
-- Azure PowerShell
-
-[AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
+  + You can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F): Your MSDN subscription gives you credits every month that you can use for paid Azure services.
+- Azure PowerShell 1.0. For information about this release and how to install it, see [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/).
 
 This tutorial is designed for PowerShell beginners, but it assumes that you understand the basic concepts, such as modules, cmdlets, and sessions. For more information about Windows PowerShell, see [Getting Started with Windows PowerShell](http://technet.microsoft.com/zh-cn/library/hh857337.aspx).
 
 ## What you will deploy
 
-In this tutorial, you will use Azure PowerShell to deploy a web app and a SQL database. However, this web app and SQL database solution is made up of several resource types that work together. The actual resources you will 
+In this tutorial, you will use Azure PowerShell to deploy a web site and a SQL database. However, this web site and SQL database solution is made up of several resource types that work together. The actual resources you will 
 deploy are:
 
 - SQL server - to host the database
 - SQL database - to store the data
-- Firewall rules - to allow the web app to connect to the database
-- App Service plan - for defining the capabilities and cost of the web app
-- Web site - for running the web app
+- Firewall rules - to allow the web site to connect to the database
+- App Service plan - for defining the capabilities and cost of the web site
+- Web site - for running the web site
 - Web config - for storing the connection string to the database 
 
 ## Get help for cmdlets
@@ -79,7 +78,7 @@ To get full help for a cmdlet, type a command with the format:
 
 Before working on your solution, you must login to your account.
 
-To login to your Azure account, use the **Login-AzureRmAccount** cmdlet. In versions of Azure PowerShell prior to 1.0 Preview, use the **Add-AzureAccount** command.
+To login to your Azure account, use the **Login-AzureRmAccount** cmdlet.
 
     PS C:\> Login-AzureRmAccount
 
@@ -92,7 +91,7 @@ The account settings expire, so you need to refresh them occasionally. To refres
 ## Get resource type locations
 
 When deploying a resource you must specify where you would like to host the resource.  Not every region supports 
-every resource type. Before deploying your web app and SQL database, you must figure out which regions support those types. 
+every resource type. Before deploying your web site and SQL database, you must figure out which regions support those types. 
 A resource group can contain resources that are located in different regions; however, whenever possible, you should create resources in the same location to optimize performance. In particular, you will want to make sure that 
 your database is in the same location as the app accessing it. 
 
@@ -115,9 +114,9 @@ You can get more details about a provider by specifying that namespace:
 
     ProviderNamespace RegistrationState ResourceTypes                                 Locations
     ----------------- ----------------- -------------                                 ---------
-    Microsoft.Sql     Registered        {operations}                                  {China North, China East
-    Microsoft.Sql     Registered        {locations}                                   {China North, China East
-    Microsoft.Sql     Registered        {locations/capabilities}                      {China North, China East
+    Microsoft.Sql     Registered        {operations}                                  {China East 2, China East, Cent...
+    Microsoft.Sql     Registered        {locations}                                   {China East 2, China East, Cent...
+    Microsoft.Sql     Registered        {locations/capabilities}                      {China East 2, China East, Cent...
     ...
 
 To limit your output to the supported locations for a specific type of of resource, such as web sites, use:
@@ -126,23 +125,45 @@ To limit your output to the supported locations for a specific type of of resour
     
 The output will be similar to:
 
+    Brazil South
+    China East
+    China East
+    Japan East
     China East
     China North
+    China North
+    China East
+    West Europe
+    China North
+    China North
+    China North
+    China East 2
 
 The locations you see might be slightly different than the previous results. The results could be different because an administrator in your organization has created a policy that limits which regions can be used in your subscription or there may be restrictions related to tax policies in your home country.
 
 Let's run the same command for the database:
 
     PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Sql).ResourceTypes | Where-Object ResourceTypeName -eq servers).Locations
+    China East 2
     China East
     China North
+    China North
+    China North
+    China East
+    China East
+    China North
+    China East
+    Japan East
+    China North
+    West Europe
+    Brazil South
 
 It looks like these resources are available in many regions. For this topic, we will use **China North**, but you can specify any of the supported regions.
 
 ## Create a resource group
 
 This section of the tutorial guides you through the process of creating a resource group. The resource group will serve as a container for all of the resources in your solution that share the same lifecycle. 
-Later in the tutorial, you will deploy the web app and SQL database to this resource group.
+Later in the tutorial, you will deploy the web site and SQL database to this resource group.
 
 To create a resource group, use the **New-AzureRmResourceGroup** cmdlet.
 
@@ -325,7 +346,9 @@ You have your resource group and you have your template, so you are now ready to
 
     PS C:\> New-AzureRmResourceGroupDeployment -ResourceGroupName TestRG1 -TemplateFile c:\Azure\Templates\azuredeploy.json
 
-You specify the resource group and the location of the template. If your template is not local, you could use the -TemplateUri parameter and specify a URI for the template. 
+You specify the resource group and the location of the template. If your template is not local, you could use the **-TemplateUri** parameter and specify a URI for the template. You can set the 
+**-Mode** parameter to either **Incremental** or **Complete**. By default, Resource Manager performs an incremental update during deployment; therefore, it is not essential to set **-Mode** when you want **Incremental**. 
+To understand the differences between these deployment modes, see [Deploy an application with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy). 
 
 ###Dynamic Template Parameters
 
@@ -379,9 +402,9 @@ After creating a resource group, you can use the cmdlets in the Resource Manager
 		
 		...
 
-- To get the resources in the resource group, use the **Get-AzureRmResource** cmdlet and its ResourceGroupName parameter. Without parameters, Get-AzureRmResource gets all resources in your Azure subscription.
+- To get the resources in the resource group, use the **Find-AzureRmResource** cmdlet and its **ResourceGroupNameContains** parameter. Without parameters, Find-AzureRmResource gets all resources in your Azure subscription.
 
-		PS C:\> Get-AzureRmResource -ResourceGroupName TestRG1
+		PS C:\> Find-AzureRmResource -ResourceGroupNameContains TestRG1
 		
 		Name              : exampleserver
                 ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG1/providers/Microsoft.Sql/servers/tfserver10

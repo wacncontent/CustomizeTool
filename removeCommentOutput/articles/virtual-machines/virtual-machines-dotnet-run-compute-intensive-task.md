@@ -6,7 +6,7 @@
 	authors="wadepickett"
 	manager="wpickett"
 	editor="mollybos"
-	tags=“azure-service-management"/>
+	tags=âazure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"

@@ -4,19 +4,19 @@ deleted:
 
 		[AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		- **HDInsight on Linux (Ubuntu 12.04 LTS for Linux) (Preview)**: HDInsight provides the option of configuring Linux clusters on Azure. Configure a Linux cluster if you are familiar with Linux or Unix, migrating from an existing Linux-based Hadoop solution, or want easy integration with Hadoop ecosystem components built for Linux. For more information, see [Get started with Hadoop on Linux in HDInsight](/documentation/articles/hdinsight-hadoop-linux-get-started).
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		- Spark clusters (preview): for in-memory processing, interactive queries, stream, and machines learning workloads.
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
@@ -27,13 +27,13 @@ deleted:
 			- Worker node (at least 1 node)
 			- Zookeeper nodes (3 nodes) (Free for A1 Zookeepers)
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		- SSH User (Linux clusters): Is used to connect to the cluster using SSH. You can create additional SSH user accounts after the cluster is created by following the steps in [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix).
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -75,7 +75,7 @@ deleted:
 		
 		For deploying an ARM template using other methods, see [Deploy an application with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy).
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -144,7 +144,7 @@ deleted:
 			        }
 			      }
 
-reason: ()
+reason: (Linux Support)
 
 replacement:
 
@@ -156,7 +156,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -166,7 +166,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -179,14 +179,11 @@ replaced by:
 		## Create using the Management Portal
 		
 		HDInsight clusters use an Azure Blob storage container as the default file system. An Azure Storage account located on the same data center is required before you can create an HDInsight cluster. For more information, see [Use Azure Blob Storage with HDInsight](/documentation/articles/hdinsight-use-blob-storage). For details on creating an Azure Storage account, see [How to Create a Storage Account](/documentation/articles/storage-create-storage-account).
-		
-		
-		> [AZURE.NOTE] Currently, only the **China North**, and **China East** regions can host HDInsight clusters.
-		
-		**To create an HDInsight cluster**
-		
-		<!-- deleted by customization
-		
+
+reason: (the new Ibiza portal)
+
+deleted:
+
 		1. Sign in to the [Azure preview portal][azure-preview-portal].
 		2. Click **NEW**, Click **Data Analytics**, and then click **HDInsight**.
 		
@@ -285,10 +282,9 @@ replaced by:
 				> [AZURE.IMPORTANT] This _only_ affects access and permissions to this cluster in the preview portal, and has no effect on who can connect to or submit jobs to the HDInsight cluster.
 				
 			* **Tags** (![tag icon](./media/hdinsight-provision-clusters/tags.png)): Tags allows you to set key/value pairs to define a custom taxonomy of your cloud services. For example, you may create a key named __project__, and then use a common value for all services associated with a specific project.
-		
-		
-		-->
-		<!-- keep by customization: begin -->
+
+replaced by:
+
 		1. Sign in to the [Azure Management Portal][azure-management-portal].
 		2. Click **+ NEW** on the bottom of the page, click **DATA SERVICES**, click **HDINSIGHT**, and then click **CUSTOM CREATE**.
 		3. On the **Cluster Details** page, type or choose the following values:
@@ -413,5 +409,5 @@ replaced by:
 		
 			You can add more than one script action to install multiple components on the cluster. After you have added the scripts, click the check mark to start provisioning the cluster.
 
-reason: ()
+reason: (the new Ibiza portal)
 

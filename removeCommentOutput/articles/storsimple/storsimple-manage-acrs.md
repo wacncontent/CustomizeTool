@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Manage access control records in StorSimple | Microsoft Azure"
+   pageTitle="Manage access control records in StorSimple | Windows Azure"
    description="Describes how to use access control records (ACRs) to determine which hosts can connect to a volume on the StorSimple device."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/15/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 # Use the StorSimple Manager service to manage access control records
 
@@ -90,6 +86,6 @@ Perform the following steps to delete an access control record.
 
 ## Next steps
 
-- Learn more about [managing StorSimple volumes](storsimple-manage-volumes.md).
-- Learn more about [using the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+- Learn more about [managing StorSimple volumes](/documentation/articles/storsimple-manage-volumes).
+- Learn more about [using the StorSimple Manager service to administer your StorSimple device](/documentation/articles/storsimple-manager-service-administration).
  

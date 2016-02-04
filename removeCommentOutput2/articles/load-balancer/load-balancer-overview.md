@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Azure Load Balancer overview | Microsoft Azure"
+   pageTitle="Azure Load Balancer overview | Windows Azure"
    description="Overview of Azure load balancer features, architecture and implementation. It helps to understand how load balancer works and leverage it for the cloud"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
    manager="adinah"
    editor="tysonn" />
-<tags 
-   ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/16/2015"
-   ms.author="joaoma" />
+<tags
+	ms.service="load-balancer"
+	ms.date="12/09/2015"
+	wacn.date=""/>
 
 
 # Load Balancer Overview 
@@ -21,10 +17,43 @@ Azure load balancer delivers high availability and network performance to your a
  
 It can be configured to:
 
-- Load balance incoming Internet traffic to virtual machines. We refer it as [Internet facing load balancing](load-balancer-internet-overview.md).
-- Load balance traffic between virtual machines in a Virtual Network, between virtual machines in cloud services or between on-premises computers and virtual machines in a cross-premises virtual network. We refer it as [internal load balancing (ILB)](load-balancer-internal-overview.md).
+- Load balance incoming Internet traffic to virtual machines. We refer it as [Internet facing load balancing](/documentation/articles/load-balancer-overview).
+- Load balance traffic between virtual machines in a Virtual Network, between virtual machines in cloud services or between on-premises computers and virtual machines in a cross-premises virtual network. We refer it as [internal load balancing (ILB)](/documentation/articles/load-balancer-internal-overview).
 - 	Forward external traffic to a specific Virtual Machine instance
 
+## Understanding Azure load balancer in Azure classic and Azure Resource Manager (ARM)
+
+All resources in the cloud need a public IP address to be reachable from Internet. The cloud infrastructure in Windows Azure will use non-routable IP addresses within its resources and will use network address translation (NAT) with public IP addresses to communicate to Internet.
+
+There are 2 deployment models in Windows Azure and their load balancer implementations:
+
+ 
+### Azure classic
+
+Azure classic is the first deployment model implemented in Windows Azure. In this model, a public IP address and a FQDN is assigned to a cloud service, and virtual machines deployed within a cloud service boundary can be grouped to use a load balancer. The load balancer will do port translation and load balance the network traffic, leveraging the public IP address for the cloud service.
+
+In a classic deployment model, port translation is done by using endpoints which are a one to one relationship between the public assigned port of the public IP address and the local port assigned to send traffic to a specific virtual machine.
+
+Load balancing is done by using load balancer set endpoints. Those endpoints are a one to many relationship between the public IP address to local ports assigned all virtual machines in the set which will respond for the load balanced network traffic. 
+
+The domain label for the public IP address which a load balancer would use in this deployment model would be `<cloud service name>.chinacloudapp.cn`.
+
+This is a graphic representation of a load balancer in a classic deployment model:
+![hash based load balancer](./media/load-balancer-overview/asm-lb.png)
+
+### Azure Resource Manager
+ 
+The concept of load balancer changes on Azure Resource Manager (ARM) because there is no need of a cloud service to create a load balancer.
+
+In ARM, a public IP address is its own resource and can be associated to a domain label or DNS name. The public IP in this case is associated to the load balancer resource so load balancer rules, inbound NAT rules will use the public IP address as its internet endpoint for the resources receiving load balanced network traffic. 
+
+A network Interface (NIC) resource holds the IP address configuration (private or public IP) for a virtual machine. Once a NIC is added to a load balancer back end IP address pool, the load balancer will start sending load balanced network traffic based on the load balanced rules created.
+
+An availability set is the grouping method used to add virtual machines to the load balancer. The availability set guarantees the virtual machines won't reside in the same physical hardware and in case of any failure related to the physical cloud infrastructure making sure the load balancer will always have a virtual machine receiving load balanced network traffic.
+
+This is a graphic representation of a load balancer in Azure Resource Manager (ARM):
+
+![hash based load balancer](./media/load-balancer-overview/arm-lb.png)
 
 ## Load Balancer features
 
@@ -33,7 +62,7 @@ It can be configured to:
 Azure Load Balancer uses a hash based distribution algorithm. By default it uses is a 5 tuple (source IP, source port, destination IP, destination port, protocol type) hash to map traffic to available servers. It provides stickiness only within a transport session. Packets in the same TCP or UDP session will be directed to the same datacenter IP (DIP) instance behind the load balanced endpoint. When the client closes and re-opens the connection or starts a new session from the same source IP, the source port changes. This may cause the traffic to go to a different DIP endpoint.
 
 
-For more details on [Load Balancing distribution mode](load-balancer-distribution-mode.md)
+For more details on [Load Balancing distribution mode](/documentation/articles/load-balancer-distribution-mode)
 
 ![hash based load balancer](./media/load-balancer-overview/load-balancer-distribution.png)
 
@@ -62,7 +91,7 @@ There are three types of probes supported:
 
 - TCP custom probes. TCP probes rely on successful TCP session establishment to a defined probe port.
 
-For more information, see [load balancer health probe](https://msdn.microsoft.com/library/azure/jj151530.aspx).
+For more information, see [load balancer health probe](https://msdn.microsoft.com/zh-cn/library/azure/jj151530.aspx).
 
 ### Source NAT (SNAT)
 
@@ -75,8 +104,6 @@ All outbound traffic to Internet originating from your service is Source NATed (
 
 Azure Load balancer configuration supports full cone NAT for UDP. Full cone NAT is a type of NAT where the port allows inbound connections from any external host (in response to an outbound request).
 
-![snat](./media/load-balancer-overview/load-balancer-snat.png)
-
 
 >[AZURE.NOTE]Note that for each new outbound connection initiated by a VM, an outbound port is also allocated by Azure Load Balancer. The external host will see traffic coming as VIP: allocated port.  If your scenarios require large number of outbound connections, it is recommended that the VMs uses Instance-Level public IPs so that it has dedicated outbound IP for Source Network Address Translation (SNAT). This will reduce the risk of port exhaustion. 
 >
@@ -85,17 +112,17 @@ Azure Load balancer configuration supports full cone NAT for UDP. Full cone NAT 
 
 **Support for multiple load balanced IP for Virtual machines**
 
-You can get more than one load balanced public IP address assigned to a set of Virtual machines. With this ability you can host multiple SSL websites and/or multiple SQL Always on Availability group listeners on the same set of Virtual machines. See more at [multiple VIP's per cloud service](load-balancer-multivip.md)
+You can get more than one load balanced public IP address assigned to a set of Virtual machines. With this ability you can host multiple SSL websites and/or multiple SQL Always on Availability group listeners on the same set of Virtual machines. See more at [multiple VIP's per cloud service](/documentation/articles/load-balancer-multivip)
 
 **Template-based deployments using Azure Resource Manager (public preview)** 
-Azure Resource Manager (ARM) is the new management framework for services in Azure. Azure Load Balancer can now be managed using Azure Resource Manager-based APIs and tools. To learn more about Azure Resource Manager, see [Iaas just got easier with Azure Resource Manager](http://azure.microsoft.com/blog/2015/04/29/iaas-just-got-easier-again/)
+Azure Resource Manager (ARM) is the new management framework for services in Azure. Azure Load Balancer can now be managed using Azure Resource Manager-based APIs and tools. To learn more about Azure Resource Manager, see [Iaas just got easier with Azure Resource Manager](http://www.windowsazure.cn/blog/2015/04/29/iaas-just-got-easier-again/)
 
 
 ## Next Steps
 
-[Internet facing load balancer overview](load-balancer-internet-overview.md)
+[Internet facing load balancer overview](/documentation/articles/load-balancer-internet-overview)
 
-[Internal load balancer overview](load-balancer-internal-overview.md)
+[Internal load balancer overview](/documentation/articles/load-balancer-internal-overview)
 
-[Get started - Internet facing load balancer](load-balancer-internet-getstarted.md)
+[Get started - Internet facing load balancer](/documentation/articles/load-balancer-internet-getstarted)
  

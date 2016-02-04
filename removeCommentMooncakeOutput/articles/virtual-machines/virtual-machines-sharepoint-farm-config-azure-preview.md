@@ -12,8 +12,10 @@
 	ms.date="10/05/2015"
 	wacn.date=""/>
 
-
 # SharePoint Server Farm configuration details
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+ 
 
 SharePoint Server Farm is a feature of the Azure preview portal that automatically creates a preconfigured SharePoint Server 2013 farm for you. There are two farm configurations:
 
@@ -22,7 +24,7 @@ SharePoint Server Farm is a feature of the Azure preview portal that automatical
 
 The following sections provide configuration details for each farm.
 
-For additional information, see [SharePoint Server Farm](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview).
+For additional information, see [SharePoint Server Farm](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview/).
 
 ## Basic SharePoint farm
 

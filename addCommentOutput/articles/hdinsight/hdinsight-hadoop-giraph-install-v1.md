@@ -19,20 +19,22 @@ Learn how to customize Windows based HDInsight cluster with Giraph using Script 
 You can install Giraph on any type of cluster (Hadoop, Storm, <!-- deleted by customization HBase, Spark) --><!-- keep by customization: begin --> HBase) <!-- keep by customization: end --> on Azure HDInsight by using *Script Action*. A sample script to install Giraph on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1). The sample script works only with HDInsight cluster version 3.1. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning).
 
 **Related articles**
-<!-- deleted by customization
 
-- [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install): install Giraph using the Azure Preview Portal
+<!-- deleted by customization
+- [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install): install Giraph using the Azure Management Portal
 - [Install Giraph on HDInsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-giraph-install-linux)
 -->
-- [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters): general information on creating HDInsight clusters.
+- [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1): general information on creating HDInsight clusters.
 - [Customize HDInsight cluster using Script Action][hdinsight-cluster-customize]: general information on customizing HDInsight clusters using Script Action.
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions).
 
 
-<!-- keep by customization: begin -->
-<a name="whatis"></a>
-<!-- keep by customization: end -->
+<!-- deleted by customization
 ## What is Giraph?
+-->
+<!-- keep by customization: begin -->
+##<a name="whatis"></a> What is Giraph?
+<!-- keep by customization: end -->
 
 <a href="http://giraph.apache.org/" target="_blank">Apache Giraph</a> allows you to perform graph processing by using Hadoop, and can be used with Azure HDInsight. Graphs model relationships between objects, such as the connections between routers on a large network like the Internet, or relationships between people on social networks (sometimes referred to as a social graph). Graph processing allows you to reason about the relationships between objects in a graph, such as:
 
@@ -40,16 +42,18 @@ You can install Giraph on any type of cluster (Hadoop, Storm, <!-- deleted by cu
 - Identifying the shortest route between two computers in a network.
 - Calculating the page rank of webpages.
    
-<!-- keep by customization: begin -->
-<a name="install"></a>
-<!-- keep by customization: end -->
+<!-- deleted by customization
 ## Install Giraph using portal
+-->
+<!-- keep by customization: begin -->
+##<a name="install"></a> Install Giraph using portal
+<!-- keep by customization: end -->
 
 [AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
 * [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install)
 
-1. Start creating a cluster by using the **CUSTOM CREATE** option, as described at [Create Hadoop clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters#portal). 
+1. Start creating a cluster by using the **CUSTOM CREATE** option, as described at [Create Hadoop clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters-v1#portal). 
 2. On the **Script Actions** page of the wizard, click **add script action** to provide details about the script action, as shown below:
 
 	![Use Script Action to customize a cluster](./media/hdinsight-hadoop-giraph-install-v1/hdi-script-action-giraph.png "Use Script Action to customize a cluster")
@@ -84,12 +88,7 @@ We use the SimpleShortestPathsComputation example to demonstrate the basic <a hr
 
 	Upload the tiny_graph.txt file to the primary storage for your HDInsight cluster. For instructions on how to upload data, see [Upload data for Hadoop jobs in HDInsight](/documentation/articles/hdinsight-upload-data).
 
-<!-- deleted by customization
 	This data describes a relationship between objects in a directed graph, by using the format [source\_id, source\_value,[[dest\_id], [edge\_value],...]]. Each line represents a relationship between a **source\_id** object and one or more **dest\_id** objects. The **edge\_value** (or weight) can be thought of as the strength or distance of the connection between **source_id** and **dest\_id**.
--->
-<!-- keep by customization: begin -->
-	This data describes a relationship between objects in a directed graph, by using the format [source_id, source_value,[[dest_id], [edge_value],...]]. Each line represents a relationship between a **source_id** object and one or more **dest_id** objects. The **edge_value** (or weight) can be thought of as the strength or distance of the connection between **source_id** and **dest_id**.
-<!-- keep by customization: end -->
 
 	Drawn out, and using the value (or weight) as the distance between objects, the above data might look like this:
 
@@ -172,224 +171,45 @@ We use the SimpleShortestPathsComputation example to demonstrate the basic <a hr
 
 
 ## Install Giraph using Aure PowerShell
-<!-- deleted by customization
 
-See [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster#call_scripts_using_powershell).  The sample demonstrates how to install Spark using Azure PowerShell. You need to customize the script to use [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1).
--->
-<!-- keep by customization: begin -->
-In this section, we use the **<a href = "http://msdn.microsoft.com/zh-cn/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet to invoke scripts by using Script Action to customize a cluster. Before proceeding, make sure you have installed and configured Azure PowerShell. For information on configuring a workstation to run Azure Powershell cmdlets for HDInsight, see [Install and configure Azure PowerShell][powershell-install].
-
-Perform the following steps:
-
-1. Open an Azure PowerShell window and declare the following variables:
-
-		# Provide values for these variables
-		$subscriptionName = "<SubscriptionName>"		# Name of the Azure subscription
-		$clusterName = "<HDInsightClusterName>"			# HDInsight cluster name
-		$storageAccountName = "<StorageAccountName>"	# Azure Storage account that hosts the default container
-		$storageAccountKey = "<StorageAccountKey>"      # Key for the Storage account
-		$containerName = $clusterName
-		$location = "<MicrosoftDataCenter>"				# Location of the HDInsight cluster. It must be in the same data center as the Storage account.
-		$clusterNodes = <ClusterSizeInNumbers>			# Number of nodes in the HDInsight cluster
-		$version = "<HDInsightClusterVersion>"          # For example, "3.1"
-	
-2. Specify the configuration values, such as nodes in the cluster and the default storage to be used:
-
-		# Specify the configuration options
-		Select-AzureSubscription $subscriptionName
-		$config = New-AzureHDInsightClusterConfig -ClusterSizeInNodes $clusterNodes
-		$config.DefaultStorageAccount.StorageAccountName="$storageAccountName.blob.core.chinacloudapi.cn"
-		$config.DefaultStorageAccount.StorageAccountKey=$storageAccountKey
-		$config.DefaultStorageAccount.StorageContainerName=$containerName
-	
-3. Use the **Add-AzureHDInsightScriptAction** cmdlet to add a script action to the cluster configuration. Later, when the cluster is being created, the script action gets executed. 
-
-		# Add a script action to the cluster configuration
-		$config = Add-AzureHDInsightScriptAction -Config $config -Name "Install Giraph" -ClusterRoleCollection HeadNode -Uri https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1
-
-	The **Add-AzureHDInsightScriptAction** cmdlet takes the following parameters:
-
-	<table style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse;">
-	<tr>
-	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Parameter</th>
-	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:550px; padding-left:5px; padding-right:5px;">Definition</th></tr>
-	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Config</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">Configuration object to which script action information is added.</td></tr>
-	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name of the script action.</td></tr>
-	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">ClusterRoleCollection</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Nodes on which the customization script is run. The valid values are HeadNode (to install on the head node) or DataNode (to install on all the data nodes). You can use either or both values.</td></tr>
-	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Uri</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">URI to the script that is executed.</td></tr>
-	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Parameters</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Parameters required by the script. The sample script used in this topic does not require any parameters, and hence you do not see this parameter in the snippet above.
-	</td></tr>
-	</table>
-	
-4. Finally, start provisioning a customized cluster with Giraph installed:  
-	
-		# Start provisioning a cluster with Giraph installed
-		New-AzureHDInsightCluster -Config $config -Name $clusterName -Location $location -Version $version 
-
-When prompted, enter the credentials for the cluster. It can take several minutes before the cluster is created.
-<!-- keep by customization: end -->
+See [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1#call_scripts_using_powershell).  The sample demonstrates how to install Spark using Azure PowerShell. You need to customize the script to use [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1).
 
 ## Install Giraph using .NET SDK
-<!-- deleted by customization
 
-See [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster#call_scripts_using_azure_powershell). The sample demonstrates how to install Spark using the .NET SDK. You need to customize the script to use [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1).
+See [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1#call_scripts_using_azure_powershell). The sample demonstrates how to install Spark using the .NET SDK. You need to customize the script to use [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1).
 
--->
-<!-- keep by customization: begin -->
-The HDInsight .NET SDK provides .NET client libraries that make it easier to work with HDInsight from a .NET Framework application. This section provides instructions on how to use Script Action from the SDK to provision a cluster that has Giraph installed. The following procedures must be performed:
-
-- Install the HDInsight .NET SDK
-- Create a self-signed certificate
-- Create a console application
-- Run the application
-
-
-**To install the HDInsight .NET SDK**
-
-You can install the latest published build of the SDK from [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started). The instructions will be shown in the next procedure.
-
-**To create a self-signed certificate**
-
-Create a self-signed certificate, install it on your workstation, and upload it to your Azure subscription. For instructions, see [Create a self-signed certificate](/documentation/articles/hdinsight-administer-use-management-portal-v1#cert). 
-
-
-**To create a Visual Studio application**
-
-1. Open Visual Studio 2013.
-
-2. From the **File** menu, click **New**, and then click **Project**.
-
-3. From **New Project**, type or select the following values:
-	
-	<table style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse;">
-	<tr>
-	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Property</th>
-	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Value</th></tr>
-	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Category</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">Templates/Visual C#/Windows</td></tr>
-	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Template</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Console Application</td></tr>
-	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">CreateGiraphCluster</td></tr>
-	</table>
-
-4. Click **OK** to create the project.
-
-5. From the **Tools** menu, click **Nuget Package Manager**, and then click **Package Manager Console**.
-
-6. Run the following command in the console to install the package:
-
-		Install-Package Microsoft.WindowsAzure.Management.HDInsight
-
-	This command adds the .NET libraries and references to them from the current Visual Studio project.
-
-7. From Solution Explorer, double-click **Program.cs** to open it.
-
-8. Add the following using statements to the top of the file:
-
-		using System.Security.Cryptography.X509Certificates;
-		using Microsoft.WindowsAzure.Management.HDInsight;
-		using Microsoft.WindowsAzure.Management.HDInsight.ClusterProvisioning;
-		using Microsoft.WindowsAzure.Management.HDInsight.Framework.Logging;
-	
-9. In the Main() function, copy and paste the following code, and provide values for the variables:
-		
-        var clusterName = args[0];
-
-        // Provide values for the variables
-        string thumbprint = "<CertificateThumbprint>";  
-        string subscriptionId = "<AzureSubscriptionID>";
-        string location = "<MicrosoftDataCenterLocation>";
-        string storageaccountname = "<AzureStorageAccountName>.blob.core.chinacloudapi.cn";
-        string storageaccountkey = "<AzureStorageAccountKey>";
-        string username = "<HDInsightUsername>";
-        string password = "<HDInsightUserPassword>";
-        int clustersize = <NumberOfNodesInTheCluster>;
-
-        // Provide the certificate thumbprint to retrieve the certificate from the certificate store 
-        X509Store store = new X509Store();
-        store.Open(OpenFlags.ReadOnly);
-        X509Certificate2 cert = store.Certificates.Cast<X509Certificate2>().First(item => item.Thumbprint == thumbprint);
-
-        // Create an HDInsight client object
-        HDInsightCertificateCredential creds = new HDInsightCertificateCredential(new Guid(subscriptionId), cert);
-        var client = HDInsightClient.Connect(creds);
-		client.IgnoreSslErrors = true;
-        
-        // Provide the cluster information
-		var clusterInfo = new ClusterCreateParameters()
-        {
-            Name = clusterName,
-            Location = location,
-            DefaultStorageAccountName = storageaccountname,
-            DefaultStorageAccountKey = storageaccountkey,
-            DefaultStorageContainer = clusterName,
-            UserName = username,
-            Password = password,
-            ClusterSizeInNodes = clustersize,
-            Version = "3.1"
-        };        
-
-10. Append the following code to the Main() function to use the [ScriptAction](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.management.hdinsight.clusterprovisioning.data.scriptaction.aspx) class to invoke a custom script to install Giraph:
-
-		// Add the script action to install Giraph
-        clusterInfo.ConfigActions.Add(new ScriptAction(
-          "Install Giraph", // Name of the config action
-          new ClusterNodeType[] { ClusterNodeType.HeadNode }, // List of nodes to install Giraph on
-          new Uri("https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1"), // Location of the script to install Giraph
-		  null //Because the script used does not require any parameters
-        ));
-
-11. Finally, create the cluster:
-
-		client.CreateCluster(clusterInfo);
-
-12. Save changes to the application and build the solution. 
-
-**To run the application**
-
-Open an Azure PowerShell console, navigate to the location where you saved the Visual Studio project, navigate to the \bin\debug directory within the project, and then run the following command:
-
-	.\CreateGiraphCluster <cluster-name>
-
-Provide a cluster name and press ENTER to provision a cluster with Giraph installed.
-<!-- keep by customization: end -->
 
 ## See also
-<!-- deleted by customization
 
-- [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install): install Giraph using the Azure Preview Portal
+<!-- deleted by customization
+- [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install): install Giraph using the Azure Management Portal
 - [Install Giraph on HDInsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-giraph-install-linux)
 -->
-- [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters): general information on creating HDInsight clusters.
+- [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1): general information on creating HDInsight clusters.
 - [Customize HDInsight cluster using Script Action][hdinsight-cluster-customize]: general information on customizing HDInsight clusters using Script Action.
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions).
 <!-- deleted by customization
 - [Install and use Spark on HDInsight clusters][hdinsight-install-spark]: Script Action sample about installing Spark.
 -->
 - [Install R on HDInsight clusters][hdinsight-install-r]: Script Action sample about installing R.
-- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install): Script Action sample about installing Solr.
+- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1): Script Action sample about installing Solr.
 
 [tools]: https://github.com/Blackmist/hdinsight-tools
+<!-- deleted by customization
 [aps]: /documentation/articles/install-configure-powershell/
 
-[powershell-install]: /documentation/articles/powershell-install-configure
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
-<!-- deleted by customization
-[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
+[powershell-install]: ../powershell-install-configure.md
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-install-r]: hdinsight-hadoop-r-scripts.md
+[hdinsight-install-spark]: hdinsight-hadoop-spark-install.md
+[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
 -->
-[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
+<!-- keep by customization: begin -->
+[aps]: /documentation/articles/powershell-install-configure/
+
+[powershell-install]: /documentation/articles/powershell-install-configure
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+<!-- keep by customization: end -->
+ 

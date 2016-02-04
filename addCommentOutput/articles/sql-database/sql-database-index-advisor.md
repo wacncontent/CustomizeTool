@@ -9,21 +9,21 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="09/22/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # SQL Database Index Advisor
 
 The Azure SQL Database Index Advisor recommends new indexes for your existing SQL Databases that can improve current query performance.
 
-The SQL Database service assesses index performance by analyzing historical resource usage for a SQL Database and the indexes that are best suited for running the database’s typical workload are recommended.
+The SQL Database service assesses index performance by analyzing historical resource usage for a SQL Database and the indexes that are best suited for running the databaseâs typical workload are recommended.
 
-Index advisor makes index management easier by providing recommendations on which indexes to create. For V12 servers, Index advisor can also create and validate indexes with just a few clicks in the [Azure Preview Portal](https://manage.windowsazure.cn/). After the index is created, the SQL Database service analyzes performance of the database workload and provides details of the impact of the new index. If the analysis determines that a recommended index has a negative impact on performance, then the index is reverted automatically.
+Index advisor makes index management easier by providing recommendations on which indexes to create. For V12 servers, Index advisor can also create and validate indexes with just a few clicks in the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->. After the index is created, the SQL Database service analyzes performance of the database workload and provides details of the impact of the new index. If the analysis determines that a recommended index has a negative impact on performance, then the index is reverted automatically.
 
 Index advisor allows you to spend less time tuning your database performance.
 
 
-> [AZURE.NOTE] Index Advisor is currently in preview and is only available in the [Azure Preview Portal](https://manage.windowsazure.cn/).
+> [AZURE.NOTE] Index Advisor is currently in preview and is only available in the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->.
 
 
 ## Preview considerations
@@ -53,11 +53,11 @@ Index Advisor is easy to use. To simplify index management for your database fol
 
 ## Review Recommended Indexes
 
-Index advisor provides a list of index recommendations on the database blade in the [Azure Preview Portal](https://manage.windowsazure.cn/). The top selected recommendations are shown for each table in the selected database where creating a new index may provide performance gains.
+Index advisor provides a list of index recommendations on the database blade in the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->. The top selected recommendations are shown for each table in the selected database where creating a new index may provide performance gains.
 
 ### To review currently available index recommendations:
 
-1. Sign in to the [Azure Preview Portal](https://manage.windowsazure.cn/).
+1. Sign in to the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->.
 2. Click **BROWSE** in the left menu.
 3. Click **SQL databases** in the **Browse** blade.
 4. On the **SQL databases** blade, click the database that you want to review recommended indexes for.

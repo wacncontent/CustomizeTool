@@ -10,13 +10,10 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/01/2015"
+	ms.date="11/12/2015"
 	wacn.date=""/>
 
 # SQL Server on Azure Virtual Machines overview
-
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
-
 
 ## Getting started
 You can host [SQL Server on Azure Virtual Machines](/home/features/virtual-machines/sql-server/) in a variety of configurations, ranging from a single database server to a multi-machine configuration using AlwaysOn Availability Groups and an Azure Virtual Network.
@@ -28,6 +25,8 @@ To create a SQL Server virtual machine in Azure, you must first obtain an Azure 
 ### Deploy a SQL Server instance on a single VM
 
 After signing up for a subscription, the easiest way to deploy a SQL Server virtual machine in Azure is to [provision a SQL Server machine gallery image in the Azure Management Portal](/documentation/articles/virtual-machines-provision-sql-server). Those images include licensing of SQL Server in the pricing for the VM.
+
+>[AZURE.NOTE] Use the [new Portal](https://manage.windowsazure.cn) to provision and manage SQL Server Virtual Machines. It defaults to using Premium Storage and offers Automated Patching, Automated Backup, and AlwaysOn configurations.
 
 The following table provides a matrix of available SQL Server images in the virtual machine gallery.
 
@@ -41,13 +40,14 @@ The following table provides a matrix of available SQL Server images in the virt
 |SQL Server 2014 SP1|Windows Server 2012 R2|Enterprise, Standard, Web|
 |SQL Server 2016 CTP|Windows Server 2012 R2|Evaluation|
 
->[AZURE.NOTE] The virtual machines gallery images for data warehousing and transactional workloads (not shown above) are deprecated and will be removed from the gallery soon. Please use the standard images in the previous table and optimize performance for your specific workload by following the recommendations in [Performance best practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices). 
+>[AZURE.NOTE] The virtual machines gallery images for data warehousing and transactional workloads (not shown above) are deprecated and will be removed from the gallery soon. Please use the standard images in the previous table and optimize performance for your specific workload.
 
-In addition to these preconfigured images, you can also [create an Azure virtual machine](/documentation/articles/virtual-machines-windows-tutorial) without SQL Server pre-installed. You can install any instance of SQL Server for which you have a license. You migrate your license to Azure for running SQL Server in an Azure Virtual Machine using [License Mobility through Software Assurance on Azure](/pricing/license-mobility/). In this scenario, you only pay for Azure compute and storage [costs](/home/features/virtual-machines/#price) associated with the virtual machine.
+In addition to these preconfigured images, you can also [create an Azure virtual machine](/documentation/articles/virtual-machines-windows-tutorial-classic-portal) without SQL Server pre-installed. You can install any instance of SQL Server for which you have a license. You migrate your license to Azure for running SQL Server in an Azure Virtual Machine using [License Mobility through Software Assurance on Azure](/pricing/license-mobility/). In this scenario, you only pay for Azure compute and storage [costs](/home/features/virtual-machines/#price) associated with the virtual machine.
 
-During these early stages of provisioning and configuring, common tasks include:
+In order to determine the best virtual machine configuration settings for your SQL Server image, review the [Performance best practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices). For production workloads, **DS3** is the minimum recommended virtual machine size for SQL Server Enterprise edition, and **DS2** is the minimum recommended virtual machine size for Standard edition.
 
-- [Review performance best practices for SQL Server in Azure VMs](/documentation/articles/virtual-machines-sql-server-performance-best-practices)
+In addition to reviewing performance best practices, other initial tasks include the following:
+
 - [Review security best practices for SQL Server in Azure VMs](/documentation/articles/virtual-machines-sql-server-security-considerations)
 - [Set up connectivity](/documentation/articles/virtual-machines-sql-server-connectivity)
 
@@ -128,7 +128,7 @@ The following database engine settings are configured. For more settings, examin
 
 ### Customer Experience Improvement Program (CEIP)
 
-The [Customer Experience Improvement Program (CEIP)](https://technet.microsoft.com/zh-cn/library/cc730757.aspx) is enabled. You can disable the CEIP by using the SQL Server Error and Usage Reporting utility. To launch the SQL Server Error and Usage Reporting utility; on the Start menu, click All Programs, click Microsoft SQL Server version, click Configuration Tools, and then click SQL Server Error and Usage Reporting. If you do not want to use an instance of SQL Server with CEIP enabled, you might also consider deploying your own virtual machine image to Azure.  For more information, see [Creating and Uploading a Virtual Hard Disk that Contains the Windows Server Operating System](/documentation/articles/virtual-machines-create-upload-vhd-windows-server).
+The [Customer Experience Improvement Program (CEIP)](https://technet.microsoft.com/zh-cn/library/cc730757.aspx) is enabled. You can disable the CEIP by using the SQL Server Error and Usage Reporting utility. To launch the SQL Server Error and Usage Reporting utility; on the Start menu, click All Programs, click Microsoft SQL Server version, click Configuration Tools, and then click SQL Server Error and Usage Reporting. If you do not want to use an instance of SQL Server with CEIP enabled, you might also consider deploying your own virtual machine image to Azure.Â  For more information, see [Creating and Uploading a Virtual Hard Disk that Contains the Windows Server Operating System](/documentation/articles/virtual-machines-create-upload-vhd-windows-server).
 
 ## Run SQL Server setup from the platform-provided SQL Server image
 

@@ -65,7 +65,7 @@ While each workload can differ, the purpose of the service tiers is to provide h
 ### Basic service tier use cases:
 
 - **Getting started with Azure SQL Database**: Applications in development often don't need high performance levels. Basic databases provide an ideal environment of database development at a low price point.
-- **Database with a single user**: Applications that associate a single user with a database normally don’t have high requirements concurrency and performance. For applications with these requirements are candidates for the Basic service tier.
+- **Database with a single user**: Applications that associate a single user with a database normally don't have high requirements concurrency and performance. For applications with these requirements are candidates for the Basic service tier.
 
 ### Standard service tier use cases:
 
@@ -192,7 +192,7 @@ The following graph shows the CPU resource utilization for Premium database with
 
 ![SQL DB resource utilization](./media/sql-database-performance-guidance/sql_db_resource_utilization.png)
 
-From the data, this database currently has peak CPU load of just over 50% CPU utilization relative to the P2 performance level (mid-day on Tuesday). If CPU was the dominant factor in the application’s resource profile, then you may decide that the P2 is the right performance level to guarantee that the workload always fits. If an application expects growth over time, then it makes sense to allow for some extra resource buffer so that the application does not ever hit the ceiling. This will help avoid customer-visible errors caused by the database not having enough power to process requests effectively, especially in latency-sensitive environments (like a database supporting an application that paints web pages based on the results of database calls). 
+From the data, this database currently has peak CPU load of just over 50% CPU utilization relative to the P2 performance level (mid-day on Tuesday). If CPU was the dominant factor in the application's resource profile, then you may decide that the P2 is the right performance level to guarantee that the workload always fits. If an application expects growth over time, then it makes sense to allow for some extra resource buffer so that the application does not ever hit the ceiling. This will help avoid customer-visible errors caused by the database not having enough power to process requests effectively, especially in latency-sensitive environments (like a database supporting an application that paints web pages based on the results of database calls). 
 
 It is worth noting that other application types may interpret the same graph differently. For example, if an application tried to process payroll data each day and had the same chart, this kind of "batch job" model might do just fine in a P1 performance level. The P1 performance level has 100 DTUs compared to the 200 DTUs of the P2 performance level. That means that the P1 performance level provides half the performance of the P2 performance level. So 50% of CPU utilization in P2 equals 100% CPU utilization in P1. As long as the application does not have timeouts, it may not matter if a big job takes 2 hours or 2.5 hours to complete as long as it gets done today. An application in this category can probably just use a P1 performance level. You can take advantage of the fact that there are periods of time during the day where resource usage is lower, meaning that any "big peak" might spill over into one of the troughs later in the day. The P1 performance level might be great for such an application (and save it money) as long as the jobs can complete on-time each day.
 
@@ -213,7 +213,7 @@ The following example demonstrate different ways that you can understand the res
 
 >[AZURE.NOTE] Some of the columns of **sys.resource_stats** have changed in current V12 databases, so the sample queries in the following examples might generate errors. Future updates to this topic will provide new versions of the queries that addresses this issue.
 
-1. For example, to look at past week’s resource usage for database, "userdb1", you can run following query.
+1. For example, to look at past week's resource usage for database, "userdb1", you can run following query.
 	
 		SELECT * 
 		FROM sys.resource_stats 
@@ -262,7 +262,7 @@ The following example demonstrate different ways that you can understand the res
 	
 		SELECT 
 		(COUNT(database_name) - SUM(CASE WHEN avg_cpu_percent >= 100 THEN 1 ELSE 0 END) * 1.0) / COUNT(database_name) AS 'CPU Fit Percent'
-		,(COUNT(database_name) - SUM(CASE WHEN avg_log_write_percent >= 100 THEN 1 ELSE 0 END) * 1.0) / COUNT(database_name) AS 'Log Write Fit Percent’
+		,(COUNT(database_name) - SUM(CASE WHEN avg_log_write_percent >= 100 THEN 1 ELSE 0 END) * 1.0) / COUNT(database_name) AS 'Log Write Fit Percent'
 		,(COUNT(database_name) - SUM(CASE WHEN avg_physical_data_read_percent >= 100 THEN 1 ELSE 0 END) * 1.0) / COUNT(database_name) AS 'Physical Data Read Fit Percent'
 		FROM sys.resource_stats
 		WHERE database_name = 'userdb1' AND start_time > DATEADD(day, -7, GETDATE());
@@ -359,7 +359,7 @@ The key insight is that the IO capacity of a shared, commodity system is general
 ### Query tuning/hinting
 The Query Optimizer within Azure SQL Database is very similar to the traditional SQL Server Query Optimizer. Many of the best practices for tuning queries and understanding the reasoning model limitations for the Query Optimizer apply to Azure SQL Database as well. Tuning queries in Azure SQL Database can have the added benefit of reducing the aggregate resource demands and allow an application to run at lower cost than an un-tuned equivalent because it can run in a lower performance level.
 
-One common example seen in SQL Server that also applies to Azure SQL Database relates to how parameters are "sniffed" during compilation to try to create a more optimal plan. Parameter sniffing is a process by with the query optimizer considers the current value of a parameter when compiling a query in the hopes of generating a more optimal query plan. While this strategy can often lead to a query plan that is significantly faster than a plan compiled without knowledge of parameter values, the current SQL Server/Azure SQL Database behavior is imperfect – there are cases when the parameter is not sniffed, and there are cases where the parameter is sniffed but the generated plan is suboptimal for the full set of parameter values in a workload. Microsoft includes query hints (directives) to allow you to specify intent more deliberately and override the default behavior for parameter sniffing. Often, using hints can fix cases where the default SQL Server/Azure SQL Database behavior is imperfect for a given customer workload.
+One common example seen in SQL Server that also applies to Azure SQL Database relates to how parameters are "sniffed" during compilation to try to create a more optimal plan. Parameter sniffing is a process by with the query optimizer considers the current value of a parameter when compiling a query in the hopes of generating a more optimal query plan. While this strategy can often lead to a query plan that is significantly faster than a plan compiled without knowledge of parameter values, the current SQL Server/Azure SQL Database behavior is imperfect - there are cases when the parameter is not sniffed, and there are cases where the parameter is sniffed but the generated plan is suboptimal for the full set of parameter values in a workload. Microsoft includes query hints (directives) to allow you to specify intent more deliberately and override the default behavior for parameter sniffing. Often, using hints can fix cases where the default SQL Server/Azure SQL Database behavior is imperfect for a given customer workload.
 
 The following example demonstrates how the query processor can generate a plan that is sub-optimal for both performance and resource requirements and how using a query hint can reduce query run-time and resource requirements on Azure SQL Database.
 
@@ -419,7 +419,7 @@ The setup code creates a table that contains skewed data distribution. The optim
 	    SET @i += 1;
 	END
 
-**Example (part 2 – please wait 10 minutes before trying this part so that it is obviously different in the resulting telemetry data):**
+**Example (part 2 - please wait 10 minutes before trying this part so that it is obviously different in the resulting telemetry data):**
 
 	EXEC psp2 @param2=1;
 	TRUNCATE TABLE t1;
@@ -438,11 +438,11 @@ Each part of this example attempts to run a parameterized insert statement 1000 
 
 Because we executed the procedure with the value 1, the resulting plan was optimal for 1 but sub-optimal for all other values in the table. The resulting behavior is likely not the desired behavior if you pick each plan randomly, as the plan will perform more slowly and take more resources to execute.
 
-Running the test with "SET STATISTICS IO ON" shows the logical scan work done in this example under the covers – you can see that there are 1148 reads done by the plan (which is inefficient if the average case is to return just one row).
+Running the test with "SET STATISTICS IO ON" shows the logical scan work done in this example under the covers - you can see that there are 1148 reads done by the plan (which is inefficient if the average case is to return just one row).
 
 ![Query Tuning](./media/sql-database-performance-guidance/query_tuning_2.png)
 
-The second part of the example uses a query hint to tell the optimizer to use a specific value during the compilation process. In this case, it forces the query processor to ignore the value passed as the parameter and instead to assume an "UNKNOWN”, meaning a value that has the average frequency in the table (ignoring skew). The resulting plan is a seek based plan which will be faster and use fewer resources, on average, than the plan from part 1 of the example.
+The second part of the example uses a query hint to tell the optimizer to use a specific value during the compilation process. In this case, it forces the query processor to ignore the value passed as the parameter and instead to assume an "UNKNOWN", meaning a value that has the average frequency in the table (ignoring skew). The resulting plan is a seek based plan which will be faster and use fewer resources, on average, than the plan from part 1 of the example.
 
 ![Query Tuning](./media/sql-database-performance-guidance/query_tuning_3.png)
 
@@ -485,4 +485,4 @@ Some database applications contain read-heavy workloads. It is possible to utili
 
 ## Conclusion
 
-The service tiers in Azure SQL Database empower you to raise the bar on the types of applications you build in the cloud. When combined with diligent application tuning, you can get powerful and predictable performance for your application. This document outlines recommended techniques to optimize a database’s resource consumption to fit nicely into one of the performance levels. Tuning is an ongoing exercise in the cloud model, and the service tiers and their performance levels allow administrators to maximize performance while minimizing costs on the Windows Azure platform.
+The service tiers in Azure SQL Database empower you to raise the bar on the types of applications you build in the cloud. When combined with diligent application tuning, you can get powerful and predictable performance for your application. This document outlines recommended techniques to optimize a database's resource consumption to fit nicely into one of the performance levels. Tuning is an ongoing exercise in the cloud model, and the service tiers and their performance levels allow administrators to maximize performance while minimizing costs on the Windows Azure platform.

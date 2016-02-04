@@ -8,7 +8,7 @@ deleted:
 		
 		[AZURE.VIDEO resource-groups-vm-searching-cli]
 
-reason: ()
+reason: (video)
 
 replacement:
 

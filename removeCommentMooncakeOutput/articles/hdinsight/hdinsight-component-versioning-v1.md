@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/09/2015"
+	ms.date="11/09/2015"
 	wacn.date=""/>
 
 
@@ -38,7 +38,7 @@ Azure HDInsight supports multiple Hadoop cluster versions that can be deployed a
 
 **Get current component version information**
 
-The component versions associated with HDInsight cluster versions may change in future updates to HDInsight. One way to determine the available components and to verify which versions are being used for a cluster is to use the Ambari REST API. The **GetComponentInformation** command can be used to retrieve information about a service component. For details, see the [Ambari documentation][ambari-docs]. Another way to obtain this information is to log in to a cluster by using Remote Desktop and examine the contents of the "C:\apps\dist\" directory directly.
+The component versions associated with HDInsight cluster versions may change in future updates to HDInsight. One way to obtain this information is to log in to a cluster by using Remote Desktop and examine the contents of the "C:\apps\dist\" directory directly.
 
 
 **Release notes**
@@ -67,7 +67,7 @@ Some of the salient features of the HDInsight platform include:
 
 - **Apache Phoenix** - Apache Phoenix is a Structured Query Language (SQL) query layer over HBase. It supports a limited subset of the SQL query language specification, including support of secondary indexes. It is delivered as a client-embedded Java Database Connectivity (JDBC) driver that targets low-latency queries over HBase data. Apache Phoenix takes your SQL query, compiles it into a series of HBase scans and coprocessors calls, and produces regular JDBC result sets. Apache Phoenix is a relational database layer over HBase. It is delivered as a client-embedded JDBC driver that targets low-latency queries over HBase data. Apache Phoenix takes your SQL query, compiles it into a series of HBase scans, and orchestrates the running of those scans to produce regular JDBC result sets.
 
-- **Cluster Dashboard** - A new web application that is deployed to your HDInsight cluster. Use it to run Hive queries, check job logs, and browse Azure Blob storage. The URL used to access the web application is <*ClusterName*>.azurehdinsight.cn.
+- **Cluster Dashboard** - A new web site that is deployed to your HDInsight cluster. Use it to run Hive queries, check job logs, and browse Azure Blob storage. The URL used to access the web site is <*ClusterName*>.azurehdinsight.cn.
 
 - **Microsoft Avro Library** - This library implements the Apache Avro data serialization system for the Microsoft .NET environment. Apache Avro provides a compact binary data interchange format for serialization. It uses JavaScript Object Notation (JSON) to define a language-agnostic schema that underwrites language interoperability. Data serialized in one language can be read in another. Currently C, C++, C#, Java, PHP, Python, and Ruby are supported. The Apache Avro serialization format is widely used in Azure HDInsight to represent complex data structures within a Hadoop MapReduce job.
 
@@ -79,7 +79,7 @@ Some of the salient features of the HDInsight platform include:
 
 - **Hive performance** - Order-of-magnitude improvements to Hive query response times (up to 40x) and to data compression (up to 80%) using the **Optimized Row Columnar** (ORC) format.
 
-- **Pig, Sqoop, Oozie, Ambari** - Component version upgrades for HDInsight cluster version 3.0 (HDP 2.0/Hadoop 2.2) that provide parity with HDInsight cluster version 2.1 (HDP 1.3/Hadoop 1.2). See the version table below for specifics.
+- **Pig, Sqoop, Oozie** - Component version upgrades for HDInsight cluster version 3.0 (HDP 2.0/Hadoop 2.2) that provide parity with HDInsight cluster version 2.1 (HDP 1.3/Hadoop 1.2). See the version table below for specifics.
 
 - **Mahout** - This library of scalable machine-learning algorithms is pre-installed on HDInsight 3.1 (and above) Hadoop clusters. So you can run Mahout jobs without the need for any additional cluster configuration.
 
@@ -90,7 +90,7 @@ Some of the salient features of the HDInsight platform include:
 The following table lists the versions of HDInsight currently available, the corresponding Hortonworks Data Platform versions that they use, and their release dates. When known, their support expiration and deprecation dates are also provided. Please note the following:
 
 * Highly available clusters with two head nodes are deployed by default for HDInsight 2.1 and above. They are not available for HDInsight 1.6 clusters.
-* Once the support has expired for a particular version, it may not be available through the Azure Management Portal. The following table indicates which versions are available on the Azure Management Portal. Cluster versions will continue to be available using the `Version` parameter in the Windows PowerShell [New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) command and the .NET SDK until its deprecation date.
+* Once the support has expired for a particular version, it may not be available through the Azure Management Portal. The following table indicates which versions are available on the Azure Management Portal. Cluster versions will continue to be available using the `Version` parameter in the Windows PowerShell [New-AzureRmHDInsightCluster](https://msdn.microsoft.com/zh-cn/library/mt619331.aspx) command and the .NET SDK until its deprecation date.
 
 <table border="1">
 <tr><th>HDInsight Version</th><th>HDP Version</a><th>High Availability</th></th><th>Release Date</th><th>Available on Azure Management Portal</th><th>Support Expiration Date</th><th>Deprecation Date</th></tr>
@@ -120,7 +120,7 @@ The **Deprecation Date** is the date after which the cluster version cannot be c
 
 * HDInsight cluster version 3.2 uses a Hadoop distribution that is based on [Hortonworks Data Platform 2.2][hdp-2-2].
 
-	* Release notes for specific Apache components - [Hive 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310843&version=12326450), [Pig 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310730&version=12326954), [HBase 0.98.4](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310753&version=12326810), [Phoenix 4.2.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12315120&version=12327581), [M/R 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310941&version=12327180), [HDFS 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310942&version=12327181), [YARN 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12313722&version=12327197), [Common](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310240&version=12327179), [Tez 0.5.2](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314426&version=12328742), [Ambari 2.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12312020&version=12327486), [Storm 0.9.3](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314820&version=12327112), [Oozie 4.1.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12324960&projectId=12311620).
+	* Release notes for specific Apache components - [Hive 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310843&version=12326450), [Pig 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310730&version=12326954), [HBase 0.98.4](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310753&version=12326810), [Phoenix 4.2.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12315120&version=12327581), [M/R 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310941&version=12327180), [HDFS 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310942&version=12327181), [YARN 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12313722&version=12327197), [Common](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310240&version=12327179), [Tez 0.5.2](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314426&version=12328742), [Storm 0.9.3](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314820&version=12327112), [Oozie 4.1.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12324960&projectId=12311620).
 
 
 * HDInsight cluster version 3.1 uses a Hadoop distribution that is based on [Hortonworks Data Platform 2.1.7][hdp-2-1-7]. This is the **default** Hadoop cluster created when using the Azure HDInsight portal after 11/7/2014. HDInsight 3.1 clusters created before 11/7/2014 were based on the [Hortonworks Data Platform 2.1.1][hdp-2-1-1].
@@ -137,7 +137,8 @@ The **Deprecation Date** is the date after which the cluster version cannot be c
 [wa-forums]: /support/forums/
 
 [connect-excel-with-hive-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
-[hdp-2-2]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.2.0/HDP_2.2.0_Release_Notes_20141202_version/index.html
+
+[hdp-2-2]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.2.0/bk_HDP_RelNotes/content/ch_relnotes_v220.html
 
 [hdp-2-1-7]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.7-Win/bk_releasenotes_HDP-Win/content/ch_relnotes-HDP-2.1.7.html
 
@@ -148,7 +149,5 @@ The **Deprecation Date** is the date after which the cluster version cannot be c
 [hdp-1-3-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-1.3.0/bk_releasenotes_hdp_1.x/content/ch_relnotes-hdp1.3.0_1.html
 
 [hdp-1-1-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-Win-1.1/bk_releasenotes_HDP-Win/content/ch_relnotes-hdp-win-1.1.0_1.html
-
-[ambari-docs]: https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md
 
 [zookeeper]: http://zookeeper.apache.org/

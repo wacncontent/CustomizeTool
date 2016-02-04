@@ -10,7 +10,7 @@ deleted:
 		2. In the **Type** dropdown, select the type of connection you want to create.  The form will present the properties for that particular type.
 		1. Complete the form and click **Create** to save the new connection.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -29,12 +29,14 @@ deleted:
 		The image below shows the same example as above but uses the **SpecifyConnectionFields** parameter set that expects the AccountSid and AuthToken parameters to be specified individually as opposed to using a connection object for authentication.  In this case, fields of the connection are specified instead of the object itself.  
 		
 		![](./media/automation-connections/get-connection-properties.png)
-		
-		
-		
+
+reason: (Graphical Runbook)
+
+deleted:
+
 		## Related articles
 		
 		- [Links in graphical authoring](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
 
-reason: ()
+reason: (Graphical Runbook)
 

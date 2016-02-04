@@ -4,13 +4,13 @@ deleted:
 
 		[AZURE.INCLUDE [azure-portal](../includes/hdinsight-azure-portal.md)]
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		(either Windows or Linux-based)
 
-reason: ()
+reason: (Linux Support)
 
 replacement:
 
@@ -30,5 +30,5 @@ replaced by:
 		
 		3. In the information presented on the right of the page, find the subscription you wish to use and note the value in the **Subscription ID** column.
 
-reason: ()
+reason: (the new Ibiza portal)
 

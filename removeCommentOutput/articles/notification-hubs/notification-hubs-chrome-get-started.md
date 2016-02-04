@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="09/03/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 # Get started with Notification Hubs for Chrome apps
@@ -20,7 +20,7 @@ This topic shows you how to use Azure Notification Hubs to send push notificatio
 
 One of the key benefits of using Chrome App notifications is that the notifications show up within the context of the Google Chrome browser. You don't need to have the Chrome App running or open in the browser (though the Chrome browser itself must be running). You also get a consolidated view of all your notifications in the Chrome Notifications window.
 
->[AZURE.NOTE] This is not a generic in-browser push notification and is specific to Chrome Apps—see [Chrome Apps Overview] for details. Chrome Apps were previously known as "Packaged Apps" and are different from simpler "Hosted Apps". See [Installable Web Apps] for the difference. Chrome Apps can also run on mobile (Android and iOS) via Apache Cordova. See [Chrome Apps on Mobile] to learn more.
+>[AZURE.NOTE] This is not a generic in-browser push notification and is specific to Chrome Appsâsee [Chrome Apps Overview] for details. Chrome Apps were previously known as "Packaged Apps" and are different from simpler "Hosted Apps". See [Installable web sites] for the difference. Chrome Apps can also run on mobile (Android and iOS) via Apache Cordova. See [Chrome Apps on Mobile] to learn more.
 
 In this tutorial, we will create a Chrome app that receives push notifications by using Google Cloud Messaging (GCM). When you complete the tutorial, you will be able to broadcast push notifications to all the Chrome users who have installed this Chrome App.
 
@@ -64,7 +64,7 @@ Be sure to follow along with the tutorials in the "Next steps" section to see ho
 
 1. Sign in to the [Azure Management Portal], and then click **+ NEW** at the bottom left of the screen.
 
-2. Click **App Services** > **Service Bus** > **Notification Hub** > **Quick Create**. Type a name for your notification hub, select your desired region, and then click **Create a new Notification Hub**.
+2. Click **Azure Websitess** > **Service Bus** > **Notification Hub** > **Quick Create**. Type a name for your notification hub, select your desired region, and then click **Create a new Notification Hub**.
 
    	![][6]
 
@@ -398,7 +398,7 @@ You should see the following view for your folder at the end of this:
 
    	![][19]
 
-5. Enter your **Notification Hub Name** and the **DefaultListenSharedAccessSignature** that you obtained from the Azure Management Portal earlier, and click **Register with Azure Notification Hub**. You must see the message **Notification Hub Registration successful!** and the details of the registration response, which contains the Azure Notification Hubs registration ID.
+5. Enter your **Notification Hub Name** and the **DefaultListenSharedAccessSignature** that you obtained from the portal earlier, and click **Register with Azure Notification Hub**. You must see the message **Notification Hub Registration successful!** and the details of the registration response, which contains the Azure Notification Hubs registration ID.
 
    	![][20]  
 
@@ -415,13 +415,13 @@ For an example of how to send notifications by using the REST APIs, see "How to 
 
 3. In the console window, execute the following command:
 
-        Install-Package WindowsAzure.ServiceBus
+        Install-Package Microsoft.Azure.NotificationHubs
 
    	This adds a reference to the Azure Service Bus SDK with the <a href="http://nuget.org/packages/  WindowsAzure.ServiceBus/">WindowsAzure.ServiceBus NuGet package</a>.
 
 4. Open the file **Program.cs** and add the following `using` statement:
 
-        using Microsoft.ServiceBus.Notifications;
+        using Microsoft.Azure.NotificationHubs;
 
 5. In the **Program** class, add the following method:
 
@@ -485,11 +485,11 @@ To target specific users, refer to the tutorial [Azure Notification Hubs Notify 
 [Notification Hubs Overview]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Chrome Apps Overview]: https://developer.chrome.com/apps/about_apps
 [Chrome App GCM Sample]: https://github.com/GoogleChrome/chrome-app-samples/tree/master/samples/gcm-notifications
-[Installable Web Apps]: https://developers.google.com/chrome/apps/docs/
+[Installable web sites]: https://developers.google.com/chrome/apps/docs/
 [Chrome Apps on Mobile]: https://developer.chrome.com/apps/chrome_apps_on_mobile
 [Create Registration NH REST API]: http://msdn.microsoft.com/zh-cn/library/azure/dn223265.aspx
 [crypto-js library]: http://code.google.com/p/crypto-js/
 [GCM with Chrome Apps]: https://developer.chrome.com/apps/cloudMessaging
 [Google Cloud Messaging for Chrome]: https://developer.chrome.com/apps/cloudMessagingV1
-[Azure Notification Hubs Notify Users]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
-[Azure Notification Hubs breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
+[Azure Notification Hubs Notify Users]: notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
+[Azure Notification Hubs breaking news]: notification-hubs-windows-store-dotnet-send-breaking-news.md

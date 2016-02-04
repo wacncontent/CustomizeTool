@@ -4,7 +4,7 @@ deleted:
 
 		[hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-use-hive-sensor-data-analysis
 
-reason: ()
+reason: (broken link)
 
 replacement:
 
@@ -18,5 +18,5 @@ replaced by:
 
 		1. From the Azure Management Portal, click the cluster on which you want to run the sample, and then click **Query Console** at the bottom. Alternatively, you can directly open the Query Console by using the following URL:
 
-reason: ()
+reason: (the new Ibiza portal)
 

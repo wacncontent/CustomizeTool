@@ -9,9 +9,9 @@
    tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines"
-	ms.date="09/01/2015"
-	wacn.date=""/>
+   ms.service="virtual-machines"
+   ms.date="09/01/2015"
+   wacn.date=""/>
 
 # Authoring Azure Resource Manager Templates with VM Extensions.
 

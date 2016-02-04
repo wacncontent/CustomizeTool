@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/26/2015"
-   ms.author="aprameyr"/>
+	ms.service="service-fabric"
+	ms.date="08/26/2015"
+	wacn.date=""/>
 
 # Service State
 **Service State** is the data the service requires in order to function. It is the data structures and variables that the service reads and writes in order to do work.
@@ -34,9 +30,8 @@ State can also be co-located with the code that manipulates this code. Stateful 
 
 For information on Service Fabric concepts, see the following:
 
-- [Availability of Service Fabric Services](service-fabric-availability-services.md)
+- [Availability of Service Fabric Services](/documentation/articles/service-fabric-availability-services)
 
-- [Scalability of Service Fabric Services](service-fabric-concepts-scalability.md)
+- [Scalability of Service Fabric Services](/documentation/articles/service-fabric-concepts-scalability)
 
-- [Partitioning Service Fabric Services](service-fabric-concepts-partitioning.md)
- 
+- [Partitioning Service Fabric Services](/documentation/articles/service-fabric-concepts-partitioning)

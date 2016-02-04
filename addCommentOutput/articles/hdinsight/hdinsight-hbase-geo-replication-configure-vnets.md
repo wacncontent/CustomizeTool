@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/08/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # Configure a VPN connection between two Azure virtual networks  
@@ -26,17 +26,22 @@ Azure virtual network site-to-site connectivity uses a VPN gateway to provide a 
 - Cross subscription, inter-organization communication in Azure
 
 For more information, see [Configure a VNet to VNet connection](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection). 
-<!-- deleted by customization
 
+<!-- deleted by customization
 To see it on video:
 
 > [AZURE.VIDEO configure-the-vpn-connectivity-between-two-azure-virtual-networks]
--->
 
+-->
 This tutorial is a part of the [series][hdinsight-hbase-replication] on creating HBase geo-replication. 
 
 - Configure a VPN connectivity between two virtual networks (this tutorial)
+<!-- deleted by customization
+- [Configure DNS for the virtual networks][hdinsight-hbase-geo-replication-dns]
+-->
+<!-- keep by customization: begin -->
 - [Configure DNS for the virtual networks] [hdinsight-hbase-geo-replication-DNS]
+<!-- keep by customization: end -->
 - [Configure HBase geo replication][hdinsight-hbase-geo-replication]
 
 The following diagram illustrates the two virtual networks you will create in this tutorial:
@@ -49,7 +54,7 @@ Before you begin this tutorial, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install and use Azure <!-- deleted by customization PowerShell](/documentation/articles/install-configure-powershell) --><!-- keep by customization: begin --> PowerShell](/documentation/articles/powershell-install-configure) <!-- keep by customization: end -->.
 
 	Before running PowerShell scripts, make sure you are connected to your Azure subscription using the following cmdlet:
 
@@ -135,7 +140,7 @@ Before you begin this tutorial, you must have the following:
 
 ###Create local networks
 
-When you create a VNet to VNet configuration, you need to configure each VNet to identify each other as a local network site. In this section, you’ll configure each VNet as a local network. The local networks share the same IP address spaces with the corresponding VNet.
+When you create a VNet to VNet configuration, you need to configure each VNet to identify each other as a local network site. In this section, <!-- deleted by customization youâll --><!-- keep by customization: begin --> you'll <!-- keep by customization: end --> configure each VNet as a local network. The local networks share the same IP address spaces with the corresponding VNet.
 
 ![Configure Azure VPN site-to-site configuration - azure local networks][img-vnet-lnet-diagram]
 
@@ -148,7 +153,7 @@ When you create a VNet to VNet configuration, you need to configure each VNet to
 	- **NAME**: Contoso-LNet-CN
 	- **VPN DEVICE IP ADDRESS**: 192.168.0.1 (this address will be updated later)
 
-		Typically, you’d use the actual external IP address for a VPN device. For VNet to VNet configurations, you will use the VPN gateway IP address. Given that you have not created the VPN gateways for the two VNets yet, you enter an arbitary IP address and come back to fix it.
+		Typically, <!-- deleted by customization youâd --><!-- keep by customization: begin --> you'd <!-- keep by customization: end --> use the actual external IP address for a VPN device. For VNet to VNet configurations, you will use the VPN gateway IP address. Given that you have not created the VPN gateways for the two VNets yet, you enter an arbitary IP address and come back to fix it.
 4.	Enter:
 
 	- **ADDRESS SPACE STARTING IP:** 10.1.0.0
@@ -247,16 +252,39 @@ In this tutorial you have learned how to configure a VPN connection between two 
 
 
 
+<!-- deleted by customization
+[hdinsight-hbase-geo-replication-dns]: hdinsight-hbase-geo-replication-configure-dns.md
+[hdinsight-hbase-geo-replication]: hdinsight-hbase-geo-replication.md
+-->
+<!-- keep by customization: begin -->
 [hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
 [hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication
+<!-- keep by customization: end -->
+
+
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-portal]: https://manage.windowsazure.cn
 
-[powershell-install]: /documentation/articles/install-configure-powershell
+<!-- deleted by customization
+[powershell-install]: ../install-configure-powershell
+
+
+
+[hdinsight-hbase-replication]: ../hdinsight-hbase-geo-replication/
+[hdinsight-hbase-dns]: ../hdinsight-hbase-geo-replication-configure-DNS/
+-->
+<!-- keep by customization: begin -->
+[powershell-install]: /documentation/articles/powershell-install-configure
+
+
+
 [hdinsight-hbase-replication]: /documentation/articles/hdinsight-hbase-geo-replication
 [hdinsight-hbase-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
+<!-- keep by customization: end -->
+
+
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.diagram.png
 [img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.LNet.diagram.png
 [img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.status.png 

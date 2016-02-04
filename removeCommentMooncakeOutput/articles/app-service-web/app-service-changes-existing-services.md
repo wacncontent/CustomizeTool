@@ -26,9 +26,9 @@ This article outlines the changes to existing Azure services as part of the chan
 
 [Azure Websites](/home/features/app-service/) is a new and unique cloud service that enables developers to create web and mobile apps for any platform and any device. Azure Websites is an integrated solution designed to streamline repeated coding functions, integrate with enterprise and SaaS systems, and automate business processes while meeting your needs for security, reliability, and scalability.
 
-Azure Websites brings together the following existing Azure services - [Websites](/home/features/websites/), [Mobile Services](/home/features/mobile-services/), and [Biztalk Services](/home/features/biztalk-services/) into a single combined service, while adding powerful new capabilities.  Azure Websites allows you to host the following app types: 
+Azure Websites brings together the following existing Azure services - [Websites](/home/features/web-site/), [Mobile Services](/home/features/mobile-services/), and [Biztalk Services](/home/features/biztalk-services/) into a single combined service, while adding powerful new capabilities.  Azure Websites allows you to host the following app types: 
 
--   Web Apps
+-   web sites
 -   Mobile Apps
 -   API Apps
 -   Logic Apps
@@ -46,13 +46,13 @@ The following table explains how existing Azure services map to Azure Websites a
 <tbody>
 <tr class="odd">
 <td align="left">Azure Websites</td>
-<td align="left">Web Apps</td>
-<td align="left"><li>For Azure Websites, Azure Websites is strictly limited to changing the name  Websites to Web Apps.
-<p><li>All your existing instances of Websites are now Web Apps in Azure Websites.</p>
-<p><li>You can access your existing websites via the <a href="https://manage.windowsazure.cn/">Azure Management Portal</a>, where you will find all your existing sites under <em>Web Apps</em>.</p>
+<td align="left">web sites</td>
+<td align="left"><li>For Azure Websites, Azure Websites is strictly limited to changing the name  Websites to web sites.
+<p><li>All your existing instances of Websites are now web sites in Azure Websites.</p>
+<p><li>You can access your existing websites via the <a href="https://manage.windowsazure.cn/">Azure Management Portal</a>, where you will find all your existing sites under <em>web sites</em>.</p>
 <p><li><em>Web Hosting Plan</em> is now <em>App Service Plan</em>. An <em>App Service Plan</em> can host any app type of Azure Websites, such as Web, Mobile, Logic, or API apps.</p>
 <p><li>Azure Websites is in General Availability.</p>
-<p><li><a href="/home/features/app-service/web/">Learn more about Web Apps</a>.</p></td>
+<p><li><a href="/home/features/web-site/">Learn more about web sites</a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left">Azure Mobile Services</td>

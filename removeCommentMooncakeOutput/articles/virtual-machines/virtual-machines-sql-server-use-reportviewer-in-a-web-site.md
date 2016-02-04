@@ -7,18 +7,19 @@
 	manager="jeffreyg"
 	editor="monicar" 
 	tags="azure-service-management" />
-<tags
+<tags 
 	ms.service="virtual-machines"
-	ms.date="08/19/2015"
-	wacn.date=""/>
+	ms.date="12/11/2015"
+	wacn.date="" />
 
 # Use ReportViewer in a Web Site Hosted in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model. 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
-You can build a Windows Azure Web site with the Visual Studio ReportViewer control that displays a report stored on an Windows Azure Virtual Machine. The ReportViewer control is in a Web application that you build using the ASP.NET Web application template.
 
->[AZURE.IMPORTANT] The ASP.NET MVC Web Application templates do not support the ReportViewer control.
+You can build a Windows Azure Web site with the Visual Studio ReportViewer control that displays a report stored on an Windows Azure Virtual Machine. The ReportViewer control is in a Web Site that you build using the ASP.NET Web Site template.
+
+>[AZURE.IMPORTANT] The ASP.NET MVC web site templates do not support the ReportViewer control.
 
 To incorporate ReportViewer into your Windows Azure Web site, you need to complete the following tasks.
 
@@ -26,7 +27,7 @@ To incorporate ReportViewer into your Windows Azure Web site, you need to comple
 
 - **Configure** Authentication and Authorization
 
-- **Publish** the ASP.NET Web application to Azure
+- **Publish** the ASP.NET web site to Azure
 
 ## Prerequisites
 
@@ -50,7 +51,7 @@ In remote processing mode, the ReportViewer control uses the following assemblie
 
 ### To add a reference to Microsoft.ReportViewer.Common
 
-- Right-click your project’s **References** node and select **Add Reference**, select the assembly in the .NET tab, and click **OK**.
+- Right-click your project's **References** node and select **Add Reference**, select the assembly in the .NET tab, and click **OK**.
 
 ### To make the assemblies locally accessible by your ASP.NET application
 
@@ -86,9 +87,9 @@ In remote processing mode, the ReportViewer control uses the following assemblie
 
 The ReportViewer needs to use proper credentials to authenticate with the report server, and the credentials must be authorized by the report server to access the reports you want. For information on authentication, see the white paper [Reporting Services report viewer control and Windows Azure virtual machine based report servers](https://msdn.microsoft.com/zh-cn/library/azure/dn753698.aspx).
 
-## Publish the ASP.NET Web application to Azure
+## Publish the ASP.NET web site to Azure
 
-For instructions on publishing an ASP.NET Web application to Azure, see [How to: Migrate and Publish a Web Application to Azure from Visual Studio](https://msdn.microsoft.com/zh-cn/library/azure/hh420322.aspx) and [Get started with Web Apps and ASP.NET](/documentation/articles/web-sites-dotnet-get-started).
+For instructions on publishing an ASP.NET web site to Azure, see [How to: Migrate and Publish a web site to Azure from Visual Studio](/documentation/articles/vs-azure-tools-migrate-publish-web-app-to-cloud-service) and [Get started with web sites and ASP.NET](/documentation/articles/web-sites-dotnet-get-started).
 
 >[AZURE.IMPORTANT] If the Add Azure Deployment Project or Add Azure Cloud Service Project command does not appear in the shortcut menu in Solution Explorer, you may need to change the Target framework for the project to .NET Framework 4.
 >

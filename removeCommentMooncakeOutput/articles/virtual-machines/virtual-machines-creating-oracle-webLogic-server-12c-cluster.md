@@ -6,7 +6,7 @@ The following example shows you how you can create an Oracle WebLogic Server clu
 Each instance in a WebLogic Server cluster must be running the same version of Oracle WebLogic Server. This example uses WebLogic Server 12c Enterprise Edition.
 
 ##Create Virtual Machines to use in the cluster
-You’ll create a Virtual Machine to use as the cluster administration server, and you’ll create additional Virtual Machines to use as part of the cluster.
+You'll create a Virtual Machine to use as the cluster administration server, and you'll create additional Virtual Machines to use as part of the cluster.
 
 ### Create a Virtual Machine to use as the administration server
 
@@ -149,7 +149,7 @@ Create additional Virtual Machines, which will be managed by the administration 
 
 	1. While still logged in to your Virtual Machine, click **Windows Start,** type **Windows Firewall with Advanced Security,** and then click the **Windows Firewall with Advanced Security** icon. This opens the **Windows Firewall with Advanced Security** management console.
 
-	2. Within the firewall management console, click **Inbound Rules** in the left hand pane (if you don’t see **Inbound Rules,** expand the top node in the left hand pane), and then click **New Rule** in the right hand pane.
+	2. Within the firewall management console, click **Inbound Rules** in the left hand pane (if you don't see **Inbound Rules,** expand the top node in the left hand pane), and then click **New Rule** in the right hand pane.
 
 	3. For **Rule Type,** select **Port** and click **Next.**
 
@@ -235,7 +235,7 @@ Create additional Virtual Machines, which will be managed by the administration 
 
 ##Deploying an application to the cluster
 
-At this point, you could deploy your application using the following steps. Let’s assume that you’re deploying the Oracle shoppingcart application, available for download at <http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war>.
+At this point, you could deploy your application using the following steps. Let's assume that you're deploying the Oracle shoppingcart application, available for download at <http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war>.
 
 1. Log in to your Virtual Machine that is serving as the admin for the WebLogic Server cluster (for example, **MYVM1-ADMIN**). 
 
@@ -298,7 +298,7 @@ For example:
 
 ## Additional Resources
 
-Now that you’ve set up your cluster running Oracle WebLogic Server, see the following topics for additional information.
+Now that you've set up your cluster running Oracle WebLogic Server, see the following topics for additional information.
 
 - [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
 

@@ -40,11 +40,11 @@ Before you install Azure AD Connect, there are a few things that you will need.
 If you intend to use the SSO with AD FS option you will also need the following:
 
 - Local administrator credentials on your intended federation servers.
-- Local administrator credentials on any workgroup (non-domain joined) servers on which you intend to deploy the Web Application Proxy role.
+- Local administrator credentials on any workgroup (non-domain joined) servers on which you intend to deploy the Web Site Proxy role.
 - A Windows Server 2012 R2 server for the federation server.
-- A Windows Server 2012 R2 server for the Web Application Proxy.
+- A Windows Server 2012 R2 server for the Web Site Proxy.
 -  a .pfx file with one SSL certificate for your intended federation service name, such as fs.contoso.com.
-- the machine on which you execute the wizard must be able to connect to any other machines on which you want to install AD FS or Web Application Proxy via Windows Remote Management.
+- the machine on which you execute the wizard must be able to connect to any other machines on which you want to install AD FS or Web Site Proxy via Windows Remote Management.
 
 
 ## Installing Azure AD Connect

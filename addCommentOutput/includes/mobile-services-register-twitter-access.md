@@ -15,7 +15,7 @@ The new Twitter v1.1 APIs requires your app to authenticate before accessing res
 	+ **Access token**
 	+ **Access token secret**
 
-4. Log on to the [Azure Management Portal], click **Mobile Services**, and then click your mobile service.
+4. Log on to the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal] <!-- keep by customization: end -->, click **Mobile Services**, and then click your mobile service.
 
 5. Click the **Identity** tab, enter the **Consumer key** and **Consumer secret** values obtained from Twitter, and click **Save**. 
 
@@ -32,7 +32,12 @@ The new Twitter v1.1 APIs requires your app to authenticate before accessing res
 
 <!-- URLs. -->
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
+<!-- deleted by customization
+[Register your apps for Twitter login with Mobile Services]: ../articles/mobile-services/mobile-services-how-to-register-twitter-authentication.md
+-->
+<!-- keep by customization: begin -->
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Register your apps for Twitter login with Mobile Services]: <!-- deleted by customization /documentation/articles/mobile-services-how-to-register-twitter-authentication --><!-- keep by customization: begin --> /documentation/articles//mobile-services-how-to-register-twitter-authentication <!-- keep by customization: end -->
+[Register your apps for Twitter login with Mobile Services]: /documentation/articles//mobile-services-how-to-register-twitter-authentication
+<!-- keep by customization: end -->
 [Twitter Developers]: https://apps.twitter.com/
 [App settings]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

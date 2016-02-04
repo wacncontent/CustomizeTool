@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="StorSimple 8000 Series Update 1.2 release notes | Microsoft Azure"
+   pageTitle="StorSimple 8000 Series Update 1.2 release notes | Windows Azure"
    description="Describes the new features, issues, and workarounds for StorSimple 8000 Series Update 1.2."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
    manager="carolz"
    editor="" />
- <tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/09/2015"
-   ms.author="alkohli" />
+ <tags
+	ms.service="storsimple"
+	ms.date="10/20/2015"
+	wacn.date=""/>
 
 # StorSimple 8000 Series Update 1.2 release notes  
 
@@ -21,7 +17,7 @@
 
 The following release notes describe the new features and identify the critical open issues for StorSimple 8000 Series Update 1.2. They also contain a list of the StorSimple software, driver and disk firmware updates included in this release. 
 
-Update 1.2 can be applied to any StorSimple device running Release (GA), Update 0.1, Update 0.2, or Update 0.3 software. Update 1.2 is not available if your device is running Update 1 or Update 1.1. If your device is running Release (GA), please [contact Microsoft Support](storsimple-contact-microsoft-support.md) to assist you with installing this update.
+Update 1.2 can be applied to any StorSimple device running Release (GA), Update 0.1, Update 0.2, or Update 0.3 software. Update 1.2 is not available if your device is running Update 1 or Update 1.1. If your device is running Release (GA), please [contact Microsoft <!-- deleted by customization Support](/documentation/articles/storsimple-contact-microsoft-support) --><!-- keep by customization: begin --> Support](storsimple-contact-microsoft-support.md) <!-- keep by customization: end --> to assist you with installing this update.
 
 The following table lists the device software versions corresponding to Updates 1, 1.1, and 1.2.
 
@@ -31,12 +27,12 @@ The following table lists the device software versions corresponding to Updates 
 | Update 1.1          | 6.3.9600.17521                        |
 | Update 1.0          | 6.3.9600.17491                        |
 
-Please review the information contained in the release notes before you deploy the update in your StorSimple solution. For more information, see how to [install Update 1.2 on your StorSimple device](storsimple-install-update-1.md). 
+Please review the information contained in the release notes before you deploy the update in your StorSimple solution. For more information, see how to [install Update 1.2 on your StorSimple <!-- deleted by customization device](/documentation/articles/storsimple-install-update-1) --><!-- keep by customization: begin --> device](storsimple-install-update-1.md) <!-- keep by customization: end -->.
 
 >[AZURE.IMPORTANT]
 > 
 - It takes approximately 5-10 hours to install this update (including the Windows Updates). 
-- Update 1.2 has software, LSI driver and disk firmware updates. To install, follow the instructions in [install Update 1.2 on your StorSimple device](storsimple-install-update-1.md).
+- Update 1.2 has software, LSI driver and disk firmware updates. To install, follow the instructions in [install Update 1.2 on your StorSimple <!-- deleted by customization device](/documentation/articles/storsimple-install-update-1) --><!-- keep by customization: begin --> device](storsimple-install-update-1.md) <!-- keep by customization: end -->.
 - For new releases, you may not see updates immediately because we do a phased rollout of the updates. Scan for updates in a few days again as these will become available soon.
 
 
@@ -44,22 +40,22 @@ Please review the information contained in the release notes before you deploy t
 
 These features were first released with Update 1 that was made available to a limited set of users. With the Update 1.2 release, most of the StorSimple users would see the following new features and improvements:
 
-- **Migration from 5000-7000 series to 8000 series devices** – This release introduces a new migration feature that allows the StorSimple 5000-7000 series appliance users to migrate their data to a StorSimple 8000 series physical appliance or an 1100 virtual appliance. The migration feature has two key value propositions:                                                                  
+- **Migration from 5000-7000 series to 8000 series devices** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> This release introduces a new migration feature that allows the StorSimple 5000-7000 series appliance users to migrate their data to a StorSimple 8000 series physical appliance or an 1100 virtual appliance. The migration feature has two key value propositions:
 
     - **Business continuity**, by enabling migration of existing data on 5000-7000 series appliances to 8000 series appliances.
     - **Improved feature offerings of the 8000 series appliances**, such as efficient centralized management of multiple appliances through StorSimple Manager service, better class of hardware and updated firmware, virtual appliances, data mobility, and features in the future roadmap.
 
     Refer to the [migration guide](http://www.microsoft.com/download/details.aspx?id=47322) for details on how to migrate a StorSimple 5000-7000 series to an 8000 series device. 
 
-- **Availability in the Azure Government Portal** – StorSimple is now available in the Azure Government portal. See how to [deploy a StorSimple device in the Azure Government Portal](storsimple-deployment-walkthrough-gov.md).
+- **Availability in the Azure Government Portal** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> StorSimple is now available in the Azure Government portal. See how to [deploy a StorSimple device in the Azure Government <!-- deleted by customization Portal](/documentation/articles/storsimple-deployment-walkthrough-gov) --><!-- keep by customization: begin --> Portal](storsimple-deployment-walkthrough-gov.md) <!-- keep by customization: end -->.
 
-- **Support for other cloud service providers** – The other cloud service providers supported are Amazon S3, Amazon S3 with RRS, HP, and OpenStack (beta).
+- **Support for other cloud service providers** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The other cloud service providers supported are Amazon S3, Amazon S3 with RRS, HP, and OpenStack (beta).
 
-- **Update to latest Storage APIs** – With this release, StorSimple has been updated to the latest Azure Storage service APIs. StorSimple 8000 series devices that are running  pre-Update 1 software versions (Release, 0.1, 0.2, and 0.3) are using versions of the Azure Storage Service APIs older than February 12, 2012. As stated in the [announcement about removal of Storage service versions](http://azure.microsoft.com/blog/2014/08/04/microsoft-azure-storage-service-version-removal/), by December 10, 2015, these APIs will be deprecated. It is imperative that you apply the StorSimple 8000 Series Update 1 prior to December 9, 2015. If you fail to do so, StorSimple devices will stop functioning correctly.
+- **Update to latest Storage APIs** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> With this release, StorSimple has been updated to the latest Azure Storage service APIs. StorSimple 8000 series devices that are runningpre-Update 1 software versions (Release, 0.1, 0.2, and 0.3) are using versions of the Azure Storage Service APIs older than <!-- deleted by customization July 17 --><!-- keep by customization: begin --> February 12 <!-- keep by customization: end -->, <!-- deleted by customization 2009 --><!-- keep by customization: begin --> 2012 <!-- keep by customization: end -->. As stated in the <!-- deleted by customization updated --> [announcement about removal of Storage service <!-- deleted by customization versions](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/10/19/microsoft-azure-storage-service-version-removal-update-extension-to-2016.aspx) --><!-- keep by customization: begin --> versions](http://azure.microsoft.com/blog/2014/08/04/microsoft-azure-storage-service-version-removal/) <!-- keep by customization: end -->, by <!-- deleted by customization August 1 --><!-- keep by customization: begin --> December 10 <!-- keep by customization: end -->, <!-- deleted by customization 2016 --><!-- keep by customization: begin --> 2015 <!-- keep by customization: end -->, these APIs will be deprecated. It is imperative that you apply the StorSimple 8000 Series Update 1 prior to <!-- deleted by customization August 1 --><!-- keep by customization: begin --> December 9 <!-- keep by customization: end -->, <!-- deleted by customization 2016 --><!-- keep by customization: begin --> 2015 <!-- keep by customization: end -->. If you fail to do so, StorSimple devices will stop functioning correctly.
 
-- **Support for Zone Redundant Storage (ZRS)** – With the upgrade to the latest version of the Storage APIs, the StorSimple 8000 series will support Zone Redundant Storage (ZRS) in addition to Locally Redundant Storage (LRS) and Geo-redundant Storage (GRS). Refer to this [article on Azure Storage redundancy options](../storage/storage-redundancy.md) for ZRS details.
+- **Support for Zone Redundant Storage (ZRS)** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> With the upgrade to the latest version of the Storage APIs, the StorSimple 8000 series will support Zone Redundant Storage (ZRS) in addition to Locally Redundant Storage (LRS) and Geo-redundant Storage (GRS). Refer to this [article on Azure Storage redundancy <!-- deleted by customization options](/documentation/articles/storage-redundancy) --><!-- keep by customization: begin --> options](../storage/storage-redundancy.md) <!-- keep by customization: end --> for ZRS details.
 
-- **Enhanced initial deployment and update experience** – In this release, the installation and update processes have been enhanced. The installation through the setup wizard is improved to provide feedback to the user if the network configuration and firewall settings are incorrect. Additional diagnostic cmdlets have been provided to help you with troubleshooting networking of the device. See  the [troubleshooting deployment article](storsimple-troubleshoot-deployment.md) for more information about the new diagnostic cmdlets used for troubleshooting.
+- **Enhanced initial deployment and update experience** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> In this release, the installation and update processes have been enhanced. The installation through the setup wizard is improved to provide feedback to the user if the network configuration and firewall settings are incorrect. Additional diagnostic cmdlets have been provided to help you with troubleshooting networking of the device. See  the [troubleshooting deployment <!-- deleted by customization article](/documentation/articles/storsimple-troubleshoot-deployment) --><!-- keep by customization: begin --> article](storsimple-troubleshoot-deployment.md) <!-- keep by customization: end --> for more information about the new diagnostic cmdlets used for troubleshooting.
 
 ## Issues fixed in Update 1.2
 
@@ -89,11 +85,11 @@ The following table provides a summary of known issues in this release.
 | No. | Feature | Issue | Comments/workaround | Applies to physical device | Applies to virtual device |
 |-----|---------|-------|----------------------------|----------------------------|---------------------------|
 | 1 | Disk quorum | In rare instances, if the majority of disks in the EBOD enclosure of an 8600 device are disconnected resulting in no disk quorum, then the storage pool will be offline. It will stay offline even if the disks are reconnected. | You will need to reboot the device. If the issue persists, please contact Microsoft Support for next steps. | Yes | No |
-| 2 | Incorrect controller ID | When a controller replacement is performed, controller 0 may show up as controller 1. During controller replacement, when the image is loaded from the peer node, the controller ID can show up initially as the peer controller’s ID. In rare instances, this behavior may also be seen after a system reboot. | No user action is required. This situation will resolve itself after the controller replacement is complete. | Yes | No |
+| 2 | Incorrect controller ID | When a controller replacement is performed, controller 0 may show up as controller 1. During controller replacement, when the image is loaded from the peer node, the controller ID can show up initially as the peer <!-- deleted by customization controller's --><!-- keep by customization: begin --> controller’s <!-- keep by customization: end --> ID. In rare instances, this behavior may also be seen after a system reboot. | No user action is required. This situation will resolve itself after the controller replacement is complete. | Yes | No |
 | 3 | Storage accounts | Using the Storage service to delete the storage account is an unsupported scenario. This will lead to a situation in which user data cannot be retrieved. | Yes | Yes |
 | 4 | Device failover | Multiple failovers of a volume container from the same source device to different target devices is not supported. Failover from a single dead device to multiple devices will make the volume containers on the first failed over device lose data ownership. After such a failover, these volume containers will appear or behave differently when you view them in the Management Portal. | | Yes | No |
 | 5 | Installation | During StorSimple Adapter for SharePoint installation, you need to provide a device IP in order for the install to finish successfully.	| | Yes | No |
-| 6 | Web proxy | If your web proxy configuration has HTTPS as the specified protocol, then your device-to-service communication will be affected and the device will go offline. Support packages will also be generated in the process, consuming significant resources on your device. | Make sure that the web proxy URL has HTTP as the specified protocol. For more information, go to [Configure web proxy for your device](storsimple-configure-web-proxy.md). | Yes | No |
+| 6 | Web proxy | If your web proxy configuration has HTTPS as the specified protocol, then your device-to-service communication will be affected and the device will go offline. Support packages will also be generated in the process, consuming significant resources on your device. | Make sure that the web proxy URL has HTTP as the specified protocol. For more information, go to [Configure web proxy for your <!-- deleted by customization device](/documentation/articles/storsimple-configure-web-proxy) --><!-- keep by customization: begin --> device](storsimple-configure-web-proxy.md) <!-- keep by customization: end -->. | Yes | No |
 | 7 | Web proxy | If you configure and enable web proxy on a registered device, then you will need to restart the active controller on your device. | | Yes | No |
 | 8 | High cloud latency and high I/O workload | When your StorSimple device encounters a combination of very high cloud latencies (order of seconds) and high I/O workload, the device volumes go into a degraded state and the I/Os may fail with a "device not ready" error. | You will need to manually reboot the device controllers or perform a device failover to recover from this situation. | Yes | No |
 | 9 | Azure PowerShell | When you use the StorSimple cmdlet **Get-AzureStorSimpleStorageAccountCredential &#124; Select-Object -First 1 -Wait** to select the first object so that you can create a new **VolumeContainer** object, the cmdlet returns all the objects. | Wrap the cmdlet in parentheses as follows: **(Get-Azure-StorSimpleStorageAccountCredential) &#124; Select-Object -First 1 -Wait** | Yes | Yes |
@@ -111,9 +107,9 @@ If patch update 1.2 is applied to a physical device (running versions prior to U
 
 This release updates the driver and the disk firmware on your device.
  
-- For more information about the SAS controller update, see [Update 1 for LSI SAS controllers in Microsoft Azure StorSimple Appliance](https://support.microsoft.com/kb/3043005). 
+- For more information about the SAS controller update, see [Update 1 for LSI SAS controllers in <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple Appliance](https://support.microsoft.com/kb/3043005).
 
-- For more information about the disk firmware update, see [Disk firmware Update 1 for Microsoft Azure StorSimple Appliance](https://support.microsoft.com/kb/3063416).
+- For more information about the disk firmware update, see [Disk firmware Update 1 for <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple Appliance](https://support.microsoft.com/kb/3063416).
  
 ## Virtual device updates in Update 1.2
 
@@ -121,5 +117,5 @@ This update cannot be applied to the virtual device. New virtual devices will ne
 
 ## Next steps
 
-- [Install Update 1.2 on your device](storsimple-install-update-1.md).
+- [Install Update 1.2 on your <!-- deleted by customization device](/documentation/articles/storsimple-install-update-1) --><!-- keep by customization: begin --> device](storsimple-install-update-1.md) <!-- keep by customization: end -->.
  

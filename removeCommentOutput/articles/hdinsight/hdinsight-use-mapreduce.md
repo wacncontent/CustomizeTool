@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 # Use MapReduce in Hadoop on HDInsight
@@ -176,15 +176,15 @@ Although MapReduce provides powerful diagnostic abilities, it can be a bit chall
 * [Run the HDInsight Samples][hdinsight-samples]
 
 
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-develop-mapreduce-jobs]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-samples]: /documentation/articles/hdinsight-run-samples
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-develop-mapreduce-jobs]: hdinsight-develop-deploy-java-mapreduce.md
+[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-samples]: hdinsight-run-samples.md
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
 
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: ../powershell-install-configure.md
 
 [image-hdi-wordcountdiagram]: ./media/hdinsight-use-mapreduce/HDI.WordCountDiagram.gif

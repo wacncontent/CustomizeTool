@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Capture a Linux VM to use as a template | Windows Azure"
 	description="Learn how to capture an image of a Linux-based Azure virtual machine (VM) created with the Azure Resource Manager deployment model."
@@ -69,15 +71,15 @@ To perform other customizations, you'll need to connect to the VM using an SSH c
 
 7. Stop the VM which you already deprovisioned by using the following command:
 
-	`azure vm stop –g <your-resource-group-name> -n <your-virtual-machine-name>`
+	`azure vm stop -g <your-resource-group-name> -n <your-virtual-machine-name>`
 
 8. Generalize the VM with the following command:
 
-	`azure vm generalize –g <your-resource-group-name> -n <your-virtual-machine-name>`
+	`azure vm generalize -g <your-resource-group-name> -n <your-virtual-machine-name>`
 
 9. Now capture the image and a local file template with the following command:
 
-	`azure vm capture –g <your-resource-group-name> -n <your-virtual-machine-name> -p <your-vhd-name-prefix> -t <your-template-file-name.json>`
+	`azure vm capture -g <your-resource-group-name> -n <your-virtual-machine-name> -p <your-vhd-name-prefix> -t <your-template-file-name.json>`
 
 	This command creates a generalized OS image, using the VHD name prefix you specify for the VM disks. The image VHD files get created by default in the same storage account that the original VM used. The **-t** option creates a local JSON file template you can use to create a new VM from the image.
 
@@ -113,7 +115,7 @@ The **Id** in the output is a string similar to this.
 ### Create a new deployment
 Now run the following command to create your VM from the captured VM image and the template JSON file you saved.
 
-	azure group deployment create –g <your-new-resource-group-name> -n <your-new-deployment-name> -f <your-template-file-name.json>
+	azure group deployment create -g <your-new-resource-group-name> -n <your-new-deployment-name> -f <your-template-file-name.json>
 
 You are prompted to supply a new VM name, the admin user name and password, and the Id of the NIC you created previously.
 
@@ -172,7 +174,7 @@ Use the captured image and template to deploy additional VMs using the steps out
 * Create a new NIC in either the same or a different virtual network
 * Create a deployment in the resource group in which you set up the virtual network, using the modified template JSON file
 
-If you want the network set up automatically when you create a VM from the image, use the [101-vm-from-user-image template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image) from GitHub. This template creates a VM from your custom image and the necessary virtual network, public IP address, and NIC resources. For a walkthrough of using the template in the Azure preview portal, see [How to create a virtual machine from a custom image using an ARM template](http://codeisahighway.com/how-to-create-a-virtual-machine-from-a-custom-image-using-an-arm-template/).
+If you want the network set up automatically when you create a VM from the image, use the [101-vm-from-user-image template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image) from GitHub. This template creates a VM from your custom image and the necessary virtual network, public IP address, and NIC resources. For a walkthrough of using the template in the Azure Management Portal, see [How to create a virtual machine from a custom image using an ARM template](http://codeisahighway.com/how-to-create-a-virtual-machine-from-a-custom-image-using-an-arm-template/).
 
 ## Use the azure vm create command
 

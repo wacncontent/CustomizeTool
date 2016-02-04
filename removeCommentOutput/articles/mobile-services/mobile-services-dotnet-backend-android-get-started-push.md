@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
+	ms.date="12/06/2015"
 	wacn.date=""/>
 
 # Add push notifications to your Mobile Services app
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
@@ -85,7 +90,7 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
   </br>Get guidance troubleshooting and debugging Notification Hubs solutions.
 
 * [How to use the Android client library for Mobile Services]
-  <br/>Learn more about how to use Mobile Services with Android.  
+  <br/>Learn more about how to use Mobile Services with Android.
 
 <!-- Anchors. -->
 
@@ -103,14 +108,12 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 <!-- Images. -->
 
 <!-- URLs. -->
-[Get started with push notifications (Eclipse)]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push-ec
-[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
-[Management Portal]: https://manage.windowsazure.cn/
+[Get started with push notifications (Eclipse)]: mobile-services-dotnet-backend-android-get-started-push-ec.md
+[Get started with Mobile Services]: mobile-services-dotnet-backend-android-get-started.md
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
 
-[How to use the Android client library for Mobile Services]: /documentation/articles/mobile-services-android-how-to-use-client-library
+[How to use the Android client library for Mobile Services]: mobile-services-android-how-to-use-client-library.md
 
-[What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
-[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
-[Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[What are Notification Hubs?]: ../notification-hubs-overview.md
+[Send broadcast notifications to subscribers]: ../notification-hubs-windows-store-dotnet-send-breaking-news.md
+[Send template-based notifications to subscribers]: ../notification-hubs-windows-store-dotnet-send-localized-breaking-news.md

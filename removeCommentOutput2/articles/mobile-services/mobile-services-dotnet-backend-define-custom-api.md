@@ -9,11 +9,16 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/10/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 
 # How to: define a custom API endpoint in a .NET backend mobile service
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 - [JavaScript backend](/documentation/articles/mobile-services-javascript-backend-define-custom-api)
@@ -23,7 +28,7 @@ This topic shows you how to define a custom API endpoint in a .NET backend mobil
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-create-custom-api](../includes/mobile-services-dotnet-backend-create-custom-api.md)]
 
-For information on how to invoke a custom API in your app using a Mobile Services client library, see [Call a custom API](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library#custom-api) in the client SDK reference.
+For information on how to invoke a custom API in your app using a Mobile Services client library, see [Call a custom API](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/#custom-api) in the client SDK reference.
 
 
 <!-- Anchors. -->

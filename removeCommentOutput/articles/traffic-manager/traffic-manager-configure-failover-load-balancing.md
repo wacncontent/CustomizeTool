@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Configure Failover routing method
@@ -19,8 +19,8 @@ Note that Azure Websites already provides failover traffic routing method functi
 
 ## To configure failover traffic routing method:
 
-1. In the Management Portal, in the left pane, click the **Traffic Manager** icon to open the Traffic Manager pane. If you have not yet created your Traffic Manager profile, see [Manage Traffic Manager Profiles](/documentation/articles/traffic-manager-manage-profiles) for steps to create a basic Traffic Manager profile.
-2. On the Traffic Manager pane in the Management Portal, locate the Traffic Manager profile that contains the settings that you want to modify, and then click the arrow to the right of the profile name. This will open the settings page for the profile.
+1. In the Azure Management Portal, in the left pane, click the **Traffic Manager** icon to open the Traffic Manager pane. If you have not yet created your Traffic Manager profile, see [Manage Traffic Manager Profiles](/documentation/articles/traffic-manager-manage-profiles) for steps to create a basic Traffic Manager profile.
+2. On the Traffic Manager pane in the Azure Management Portal, locate the Traffic Manager profile that contains the settings that you want to modify, and then click the arrow to the right of the profile name. This will open the settings page for the profile.
 3. On your profile page, click **Endpoints** at the top of the page and verify that the both cloud services and websites (endpoints) that you want to include in your configuration are present. For steps to add or remove endpoints, see [Manage Endpoints in Traffic Manager](/documentation/articles/traffic-manager-endpoints).
 4. On your profile page, click **Configure** at the top to open the configuration page.
 5. For **traffic routing method settings**, verify that the traffic routing method is **Failover**. If it is not, click **Failover** from the dropdown list.

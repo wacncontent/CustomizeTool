@@ -1,6 +1,8 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="在 Azure App Service 中创建具有移动客户端和 Web 客户端的应用"
-	description="在 Azure App Service 中创建同时具有网站和移动客户端的多通道应用。"
+	pageTitle="Create an app with a mobile and web client in Azure Websites | Windows Azure"
+	description="Create a multi-channel app with both a website and mobile client in Azure Websites."
 	services="app-service\web"
 	documentationCenter=".net"
 	authors="lindydonna"
@@ -8,13 +10,10 @@
 	editor=""/>
 
 <tags
-	ms.service="app-service-web"
-	ms.date="03/24/2015"
-	wacn.date=""/>
+	ms.service="app-service"
+	ms.date="09/15/2015"
+	wacn.date="11/27/2015"/>
 
-# 在 Azure App Service 中创建具有移动客户端和 Web 客户端的应用
+# Create an app with a mobile and web client in Azure Websites
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-web-and-mobile](../includes/app-service-mobile-dotnet-backend-web-and-mobile.md)]
- 
-
-<!---HONumber=67-->

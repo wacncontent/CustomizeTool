@@ -9,11 +9,13 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="10/14/2015"
+	ms.date="01/13/2015"
 	wacn.date=""/>
 
 # How to use Azure PowerShell Command to create an empty Cloud Service container
-1. Install Windows Azure PowerShell cmdlet from [download Azure PowerShell](http://go.microsoft.com/?linkid=9811175&clcid=0x409). For further instruction installing Azure PowerShell cmdlet and connecting to you Azure subscription, please refer to [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+1. Install Windows Azure PowerShell cmdlet from [download Azure PowerShell](http://aka.ms/webpi-azps). Open PowerShell command prompt. Use [Add-AzureAccount](https://msdn.microsoft.com/zh-cn/library/dn495128.aspx) to sign in
+
+> [AZURE.NOTE] For further instruction installing Azure PowerShell cmdlet and connecting to you Azure subscription, please refer to [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 2. **New-AzureService** is the cmdlet to create an empty Cloud Service container.
 

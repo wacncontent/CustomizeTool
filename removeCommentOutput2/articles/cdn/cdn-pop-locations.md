@@ -3,13 +3,13 @@
 	description="This topic lists Azure Content Delivery Network (CDN) POP locations." 
 	services="cdn" 
 	documentationCenter="" 
-	authors="Juliako" 
+	authors="camsoper" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags
 	ms.service="cdn"
-	ms.date="09/01/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 
@@ -60,7 +60,6 @@ This topic lists current Windows Azure CDN point of presence (POP) locations.
 - Seoul
 - Singapore
 - Tokyo
-
 
 ##Australia
 

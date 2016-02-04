@@ -1,28 +1,24 @@
 <properties 
-	pageTitle="How to page search results in Azure Search" 
-	description="Pagination in Azure Search" 
+	pageTitle="How to page search results in Azure Search | Windows Azure | Hosted cloud search service" 
+	description="Pagination in Azure Search, a hosted cloud search service on Windows Azure." 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
 	manager="mblythe" 
 	editor=""/>
 
-<tags 
-	ms.service="search" 
-	ms.devlang="rest-api" 
-	ms.workload="search" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.date="09/08/2015" 
-	ms.author="heidist"/>
+<tags
+	ms.service="search"
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
 #How to page search results in Azure Search#
 
 This article provides guidance on how to use the Azure Search Service REST API to implement standard elements of a search results page, such as total counts, document retrieval, sort orders, and navigation.
  
-In every case mentioned below, page-related options that contribute data or information to your search results page are specified through the [Search Document](http://msdn.microsoft.com/library/azure/dn798927.aspx) requests sent to your Azure Search Service. Requests include a GET command, path, and query parameters that inform the service what is being requested, and how to formulate the response.
+In every case mentioned below, page-related options that contribute data or information to your search results page are specified through the [Search <!-- deleted by customization Document](http://msdn.microsoft.com/zh-cn/library/azure/dn798927.aspx) --><!-- keep by customization: begin --> Document](http://msdn.microsoft.com/library/azure/dn798927.aspx) <!-- keep by customization: end --> requests sent to your Azure Search Service. Requests include a GET command, path, and query parameters that inform the service what is being requested, and how to formulate the response.
 
-> [AZURE.NOTE] A valid request includes a number of elements, such as a service URL and path, HTTP verb, `api-version`, and so on. For brevity, we trimmed the examples to highlight just the syntax that is relevant to pagination. Please see the [Azure Search Service REST API](http://msdn.microsoft.com/library/azure/dn798935.aspx) documentation for details about request syntax.
+> [AZURE.NOTE] A valid request includes a number of elements, such as a service URL and path, HTTP verb, `api-version`, and so on. For brevity, we trimmed the examples to highlight just the syntax that is relevant to pagination. Please see the [Azure Search Service REST <!-- deleted by customization API](http://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](http://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end --> documentation for details about request syntax.
 
 ## Total hits and Page Counts ##
 
@@ -60,7 +56,7 @@ To return a subset of fields for a tiled layout:
 
 Images and media files are not directly searchable and should be stored in another storage platform, such as Azure Blob storage, to reduce costs. In the index and documents, define a field that stores the URL address of the external content. You can then use the field as an image reference. The URL to the image should be in the document.
 
-To retrieve a product description page for an **onClick** event, use [Lookup Document](http://msdn.microsoft.com/library/azure/dn798929.aspx) to pass in the key of the document to retrieve. The data type of the key is `Edm.String`. In this example, it is *246810*. 
+To retrieve a product description page for an **onClick** event, use [Lookup <!-- deleted by customization Document](http://msdn.microsoft.com/zh-cn/library/azure/dn798929.aspx) --><!-- keep by customization: begin --> Document](http://msdn.microsoft.com/library/azure/dn798929.aspx) <!-- keep by customization: end --> to pass in the key of the document to retrieve. The data type of the key is `Edm.String`. In this example, it is *246810*.
    
     	GET /indexes/onlineCatalog/docs/246810
 
@@ -82,11 +78,11 @@ You would create a method that accepts the selected sort option as input, and re
 
  ![][5]
  
-> [AZURE.NOTE] While the default scoring is sufficient for many scenarios, we recommend basing relevance on a custom scoring profile instead. A custom scoring profile gives you a way to boost items that are more beneficial to your business. See [Add a scoring profile](http://msdn.microsoft.com/library/azure/dn798928.aspx) for more information. 
+> [AZURE.NOTE] While the default scoring is sufficient for many scenarios, we recommend basing relevance on a custom scoring profile instead. A custom scoring profile gives you a way to boost items that are more beneficial to your business. See [Add a scoring <!-- deleted by customization profile](http://msdn.microsoft.com/zh-cn/library/azure/dn798928.aspx) --><!-- keep by customization: begin --> profile](http://msdn.microsoft.com/library/azure/dn798928.aspx) <!-- keep by customization: end --> for more information.
 
 ## Faceted navigation ##
 
-Search navigation is common on a results page, often located at the side or top of a page. In Azure Search, faceted navigation provides self-directed search based on predefined filters. See [Faceted navigation in Azure Search](search-faceted-navigation.md) for details.
+Search navigation is common on a results page, often located at the side or top of a page. In Azure Search, faceted navigation provides self-directed search based on predefined filters. See [Faceted navigation in Azure <!-- deleted by customization Search](/documentation/articles/search-faceted-navigation) --><!-- keep by customization: begin --> Search](search-faceted-navigation.md) <!-- keep by customization: end --> for details.
 
 ## Filters at the page level ##
 
@@ -94,17 +90,33 @@ If your solution design included dedicated search pages for specific types of co
 
 You can send a filter with or without a search expression. For example, the following request will filter on brand name, returning only those documents that match it.
 
+<!-- deleted by customization
+    	GET /indexes/onlineCatalog/docs?$filter=brandname eq 'Microsoft' and category eq 'Games'
+
+See [Search Documents (Azure Search API)](http://msdn.microsoft.com/zh-cn/library/azure/dn798927.aspx) for more information about `$filter` expressions.
+-->
+<!-- keep by customization: begin -->
     	GET /indexes/onlineCatalog/docs?$filter=brandname eq ‘Microsoft’ and category eq ‘Games’
 
 See [Search Documents (Azure Search API)](http://msdn.microsoft.com/library/azure/dn798927.aspx) for more information about `$filter` expressions.
+<!-- keep by customization: end -->
 
 ## See Also ##
 
+<!-- deleted by customization
+- [Azure Search Service REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx)
+- [Index Operations](http://msdn.microsoft.com/zh-cn/library/azure/dn798918.aspx)
+- [Document Operations](http://msdn.microsoft.com/zh-cn/library/azure/dn800962.aspx)
+- [Video and tutorials about Azure Search](/documentation/articles/search-video-demo-tutorial-list)
+- [Faceted Navigation in Azure Search](/documentation/articles/search-faceted-navigation)
+-->
+<!-- keep by customization: begin -->
 - [Azure Search Service REST API](http://msdn.microsoft.com/library/azure/dn798935.aspx)
 - [Index Operations](http://msdn.microsoft.com/library/azure/dn798918.aspx)
 - [Document Operations](http://msdn.microsoft.com/library/azure/dn800962.aspx)
 - [Video and tutorials about Azure Search](search-video-demo-tutorial-list.md)
 - [Faceted Navigation in Azure Search](search-faceted-navigation.md)
+<!-- keep by customization: end -->
 
 
 <!--Image references-->

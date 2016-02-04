@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Getting Started with Microsoft Azure Service Fabric Reliable Services"
-   description="How to create a Service Fabric Application with stateless and stateful services."
+   pageTitle="Getting started with reliable services | Windows Azure"
+   description="Introduction to creating a Windows Azure Service Fabric application with stateless and stateful services."
    services="service-fabric"
    documentationCenter=".net"
    authors="vturecek"
@@ -8,35 +8,31 @@
    editor="jessebenson"/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="07/23/2015"
-   ms.author="vturecek"/>
+	ms.service="service-fabric"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
-# Getting Started with Microsoft Azure Service Fabric Reliable Services
+# Getting started with Windows Azure Service Fabric reliable services
 
-A Service Fabric Application contains one or more services that run your code. This tutorial walks you through the steps of creating both stateless and stateful "Hello World" Service Fabric Applications using the [*Reliable Services* programming model](../Service-Fabric/service-fabric-reliable-services-introduction.md).
+A Service Fabric application contains one or more services that run your code. This tutorial walks you through the steps of creating both stateless and stateful "Hello World" Service Fabric applications using the [*Reliable Services* programming model](/documentation/articles/service-fabric-reliable-services-introduction).
 
 A stateless service is the type of service that mostly exists in cloud applications today. The service is considered stateless because the service itself does not contain data that needs to be stored reliably or made highly available - in other words, if an instance of a stateless service shuts down, all of its internal state is lost. In these types of services, state must be persisted to an external store, such as Azure Tables or a SQL database, to be made highly-available and reliable.
 
-Service Fabric introduces a new kind of service that is stateful: A service that can maintain state reliably within the service itself, co-located with the code that's using it. Your state is  made highly available by Service Fabric without the need to persist state to an external store.
+Service Fabric introduces a new kind of service that is stateful: a service that can maintain state reliably within the service itself, co-located with the code that's using it. Your state is made highly available by Service Fabric without the need to persist state to an external store.
 
 In this tutorial, you'll implement both a stateless service and a stateful service that keeps an internal counter. In the stateless service, the value of the counter is lost when the service restarts or moves. However, in the stateful service, the counter state is made reliable by Service Fabric so that if the service execution is interrupted for any reason in the middle of counting, it can pick up right where it left off.
 
-## Create a Stateless Service
+## Create a stateless service
 
 Let's start with a stateless service.
 
-Launch Visual Studio 2015 RC as **Administrator**, and create a new **Service Fabric Application** Project named *HelloWorld*:
+Launch Visual Studio 2015 RC as **Administrator**, and create a new **Service Fabric Application** project named *HelloWorld*:
 
-![Use the New Project dialog to create a new Service Fabric Application](media/service-fabric-reliable-services-quick-start/hello-stateless-NewProject.png)
+![Use the New Project dialog to create a new Service Fabric application](./media/service-fabric-reliable-services-quick-start/hello-stateless-NewProject.png)
 
 Then create a **Stateless Service** project named *HelloWorldStateless*:
 
-![In the second dialog, create a stateless service](media/service-fabric-reliable-services-quick-start/hello-stateless-NewProject2.png)
+![In the second dialog, create a stateless service](./media/service-fabric-reliable-services-quick-start/hello-stateless-NewProject2.png)
 
 Your solution now contains 2 projects:
 
@@ -71,7 +67,7 @@ protected override ICommunicationListener CreateCommunicationListener()
 In this tutorial, we will focus on the `RunAsync()` entry point method where you can immediately start running your code.
 The project template includes an example implementation of `RunAsync()` that increments a rolling count.
 
-> [AZURE.NOTE] For details on working with a communication stack, check out [Getting Started with Microsoft Azure Service Fabric Web API Services with OWIN self-host](service-fabric-reliable-services-communication-webapi.md)
+> [AZURE.NOTE] For details on working with a communication stack, check out [Getting Started with Windows Azure Service Fabric Web API Services with OWIN self-host](/documentation/articles/service-fabric-reliable-services-communication-webapi)
 
 
 ### RunAsync
@@ -101,19 +97,19 @@ This orchestration is managed by the system in the interest of keeping your serv
 
 `RunAsync()` is executed in its own **Task**. Note that in the code snippet above we jump right into a **while** loop; there is no need to schedule a separate task for your workload. Cancellation of your workload is a cooperative effort orchestrated by the provided cancellation token. The system will wait for your task to end (either by successful completion, cancellation, or faulted) before it moves on. It is **important** to honor the cancellation token, finish up any work, and exit `RunAsync()` as quickly as possible when cancellation is requested by the system.
 
-In the this stateless service example, the count is stored in a local variable. But because this is a stateless service, the value that's being stored only exists for the current lifecycle of the service instance that it's in. When the service moves or restarts, the value is lost.
+In this stateless service example, the count is stored in a local variable. But because this is a stateless service, the value that's being stored only exists for the current lifecycle of the service instance that it's in. When the service moves or restarts, the value is lost.
 
-## Create a Stateful Service
+## Create a stateful service
 
 To convert our counter value from stateless to highly-available and persistent, even when the service moves or restarts, we need a stateful service.
 
 In the same **HelloWorld** application, add a new service by right-clicking on the application project and selecting **New Fabric Service**.
 
-![Add a service to your Service Fabric application](media/service-fabric-reliable-services-quick-start/hello-stateful-NewService.png)
+![Add a service to your Service Fabric application](./media/service-fabric-reliable-services-quick-start/hello-stateful-NewService.png)
 
 Select **Service Fabric Stateful Service** and name it "HelloWorldStateful". Click **Add**.
 
-![Use the New Project dialog to create a new Service Fabric Stateful Service](media/service-fabric-reliable-services-quick-start/hello-stateful-NewProject.png)
+![Use the New Project dialog to create a new Service Fabric stateful service](./media/service-fabric-reliable-services-quick-start/hello-stateful-NewProject.png)
 
 Your application should now have two services: the stateless service *HelloWorld* and the stateful service *HelloWorldStateful*.
 
@@ -155,11 +151,11 @@ A stateful service has the same entry points as a stateless service. The main di
 var myDictionary = await this.StateManager.GetOrAddAsync<IReliableDictionary<string, long>>("myDictionary");
 ```
 
-**IReliableDictionary** is a dictionary implementation that lets you reliably store state in the service. This is part of Service Fabric's built-in [Reliable Collections](service-fabric-reliable-services-reliable-collections.md). With Service Fabric and Reliable Collections, you can now store data directly in your service without the need for an external persistent store, making your data highly-available. Service Fabric accomplishes this by creating and managing multiple *replicas* of your service for you while providing an API that abstracts away the complexities of managing those replicas and their state transitions.
+**IReliableDictionary** is a dictionary implementation that lets you reliably store state in the service. This is part of Service Fabric's built-in [Reliable Collections](/documentation/articles/service-fabric-reliable-services-reliable-collections). With Service Fabric and Reliable Collections, you can now store data directly in your service without the need for an external persistent store, making your data highly-available. Service Fabric accomplishes this by creating and managing multiple *replicas* of your service for you while providing an API that abstracts away the complexities of managing those replicas and their state transitions.
 
 Reliable Collections can store any .NET type - including your custom types - with a couple of caveats:
 
- 1. Service Fabric makes your state highly-available by *replicating* state across nodes and storing it to local disk. This means everything that is stored in a Reliable Collection must be *serializable*. By default, Reliable Collections use [DataContract](https://msdn.microsoft.com/library/system.runtime.serialization.datacontractattribute%28v=vs.110%29.aspx) for serialization, so it's important to make sure your types are [supported by the Data Contract Serializer](https://msdn.microsoft.com/library/ms731923%28v=vs.110%29.aspx) when using the default serializer.
+ 1. Service Fabric makes your state highly-available by *replicating* state across nodes and storing it to local disk. This means everything that is stored in a Reliable Collection must be *serializable*. By default, Reliable Collections use [DataContract](https://msdn.microsoft.com/zh-cn/library/system.runtime.serialization.datacontractattribute%28v=vs.110%29.aspx) for serialization, so it's important to make sure your types are [supported by the Data Contract Serializer](https://msdn.microsoft.com/zh-cn/library/ms731923%28v=vs.110%29.aspx) when using the default serializer.
 
  2. Objects are replicated for high-availability when you commit a transaction on a Reliable Collection. Objects stored in Reliable Collections are kept in local memory in your service, which means you have a local reference to the object.
 
@@ -190,19 +186,19 @@ Back to the *HelloWorld* application. You can now build and deploy your services
 
 Once the services are running, you can see the generated ETW events in a **Diagnostic Events** window. Note that there are events displayed from both the stateless service and the stateful service in the application. You can pause the stream by clicking the *Pause* button, and then examine message details by expanding a message.
 
->[AZURE.NOTE] Before running the application, make sure you have a local development cluster running. Check out the [Getting Started Guide](service-fabric-get-started.md) to get your local environment set up.
+>[AZURE.NOTE] Before running the application, make sure you have a local development cluster running. Check out the [Getting Started Guide](/documentation/articles/service-fabric-get-started) to get your local environment set up.
 
-![View diagnostic events in Visual Studio](media/service-fabric-reliable-services-quick-start/hello-stateful-Output.png)
+![View diagnostic events in Visual Studio](./media/service-fabric-reliable-services-quick-start/hello-stateful-Output.png)
 
 
 ## Next Steps
 
-[Debugging your Service Fabric Application in Visual Studio](service-fabric-debugging-your-application.md)
+[Debugging your Service Fabric Application in Visual Studio](/documentation/articles/service-fabric-debugging-your-application)
 
-[Getting Started with Microsoft Azure Service Fabric Web API Services with OWIN self-host](service-fabric-reliable-services-communication-webapi.md)
+[Getting Started with Windows Azure Service Fabric Web API Services with OWIN self-host](/documentation/articles/service-fabric-reliable-services-communication-webapi)
 
-[Learn more about Reliable Collections](service-fabric-reliable-services-reliable-collections.md)
+[Learn more about Reliable Collections](/documentation/articles/service-fabric-reliable-services-reliable-collections)
 
-[Manage a Service Fabric service](service-fabric-manage-your-service-index.md)
+[Manage a Service Fabric service](/documentation/articles/service-fabric-manage-your-service-index)
 
-[Developer reference for Reliable Services](https://msdn.microsoft.com/library/azure/dn706529.aspx)
+[Developer reference for Reliable Services](https://msdn.microsoft.com/zh-cn/library/azure/dn706529.aspx)

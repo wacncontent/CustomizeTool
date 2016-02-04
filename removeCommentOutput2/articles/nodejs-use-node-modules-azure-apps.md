@@ -1,8 +1,8 @@
-<properties pageTitle="Working with Node.js Modules" description="Learn how to work with Node.js modules when using Azure Web Sites or Cloud Services." services="" documentationCenter="nodejs" authors="MikeWasson" manager="wpickett" editor="mollybos"/>
+<properties pageTitle="Working with Node.js Modules" description="Learn how to work with Node.js modules when using Azure Web Sites or Cloud Services." services="" documentationCenter="nodejs" authors="rmcmurray" manager="wpickett" editor=""/>
 
 <tags
 	ms.service="multiple"
-	ms.date="08/31/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 
@@ -59,7 +59,7 @@ One potential problem with the **package.json** file is that it only specifies t
 
 The **npm-shrinkwrap.json** file is an attempt to address the module versioning limitations of the **package.json** file. While the **package.json** file only includes versions for the top level modules, the **npm-shrinkwrap.json** file contains the version requirements for the full module dependency chain.
 
-When your application is ready for production, you can lock-down version requirements and create an **npm-shrinkwrap.json** file by using the **npm shrinkwrap** command. This will use the versions currently installed in the **node\_modules** folder, and record these to the **npm-shrinkwrap.json** file. After the application has been deployed to the hosting environment, the **npm install** command is used to parse the **npm-shrinkwrap.json** file and install all the dependencies listed. For more information, see [npm-install](https://npmjs.org/doc/install.html).
+When your application is ready for production, you can lock-down version requirements and create an **npm-shrinkwrap.json** file by using the **npm shrinkwrap** command. This will use the versions currently installed in the **node_modules** folder, and record these to the **npm-shrinkwrap.json** file. After the application has been deployed to the hosting environment, the **npm install** command is used to parse the **npm-shrinkwrap.json** file and install all the dependencies listed. For more information, see [npm-install](https://npmjs.org/doc/install.html).
 
 > [AZURE.NOTE]
 >When deploying to an Azure Webite, if your <b>npm-shrinkwrap.json</b> file references a native module you will see an error similar to the following when publishing the application using Git:
@@ -75,10 +75,10 @@ Now that you understand how to use Node.js modules with Azure, learn how to [spe
 
 For more information, see the [Node.js Developer Center](/develop/nodejs/).
 
-[specify the Node.js version]: /documentation/articles/nodejs-specify-node-version-azure-apps
-[How to use the Azure Command-Line Interface for Mac and Linux]: /documentation/articles/xplat-cli-install
-[build and deploy a Node.js Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
-[Node.js Web Application with Storage on MongoDB (MongoLab)]: /documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb
-[Publishing with Git]: /documentation/articles/web-sites-publish-source-control
-[Build and deploy a Node.js application to an Azure Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+[specify the Node.js version]: nodejs-specify-node-version-azure-apps.md
+[How to use the Azure Command-Line Interface for Mac and Linux]: xplat-cli-install.md
+[build and deploy a Node.js Web Site]: web-sites-nodejs-develop-deploy-mac.md
+[Node.js Web Application with Storage on MongoDB (MongoLab)]: store-mongolab-web-sites-nodejs-store-data-mongodb.md
+[Publishing with Git]: web-sites-publish-source-control.md
+[Build and deploy a Node.js application to an Azure Cloud Service]: cloud-services-nodejs-develop-deploy-app.md
 [Custom Website Deployment Scripts with Kudu]: /documentation/videos/custom-web-site-deployment-scripts-with-kudu/

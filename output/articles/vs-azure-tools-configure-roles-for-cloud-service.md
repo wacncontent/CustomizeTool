@@ -3,12 +3,12 @@
    description="Learn how to set up and configure roles for Azure cloud services by using Visual Studio."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="09/08/2015"
+	ms.date="12/19/2015"
 	wacn.date=""/>
 
 # Configure the Roles for an Azure Cloud Service with Visual Studio
@@ -171,7 +171,7 @@ By using a different value for each service configuration, you do not have to us
 
     ```
     var settingValue = RoleEnvironment.GetConfigurationSettingValue("MySetting");
-    if (settingValue == “ThisValue”)
+    if (settingValue == "ThisValue")
     {
     // Perform these lines of code
     }
@@ -179,7 +179,7 @@ By using a different value for each service configuration, you do not have to us
 
 ## Manage local storage for each role instance
 
-You can add local file system storage for each instance of a role. You can store local data here that does not need to be accessed by other roles. Any data that you do not need to save into table, blob, or SQL Database storage can be stored in here. For example, you could use this local storage to cache data that might need to be used again. This stored data can’t be accessed by other instances of a role. For more information about local storage resources, see [Configure Local Storage Resources](/documentation/articles/cloud-services-configure-local-storage-resources).
+You can add local file system storage for each instance of a role. You can store local data here that does not need to be accessed by other roles. Any data that you do not need to save into table, blob, or SQL Database storage can be stored in here. For example, you could use this local storage to cache data that might need to be used again. This stored data can't be accessed by other instances of a role. For more information about local storage resources, see [Configure Local Storage Resources](/documentation/articles/cloud-services-configure-local-storage-resources).
 
 Local storage settings apply to all service configurations. You can only add, remove, or modify local storage for all service configurations.
 
@@ -305,7 +305,7 @@ The resources required for each virtual machine in Azure affects the cost of run
 
 ## Manage endpoints and certificates for your roles
 
-You configure networking endpoints by specifying the protocol, the port number, and, for HTTPS, the SSL certificate information. Releases before June 2012 support HTTP, HTTPS, and TCP. The June 2012 release supports those protocols and UDP. You can’t use UDP for input endpoints in the compute emulator. You can use that protocol only for internal endpoints.
+You configure networking endpoints by specifying the protocol, the port number, and, for HTTPS, the SSL certificate information. Releases before June 2012 support HTTP, HTTPS, and TCP. The June 2012 release supports those protocols and UDP. You can't use UDP for input endpoints in the compute emulator. You can use that protocol only for internal endpoints.
 
 To improve the security of your Azure cloud service, you can create endpoints that use the HTTPS protocol. For example, if you have a cloud service that is used by customers to purchase orders, you want to make sure that their information is secure by using SSL.
 

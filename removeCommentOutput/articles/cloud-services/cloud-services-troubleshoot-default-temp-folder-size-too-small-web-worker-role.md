@@ -3,7 +3,7 @@
    description="A cloud service role has a limited amount of space for the TEMP folder. This article provides some suggestions on how to avoid running out of space."
    services="cloud-services"
    documentationCenter=""
-   authors="Thraka"
+   authors="dalechen"
    manager="msmets"
    editor=""
    tags="top-support-issue"/>
@@ -62,7 +62,7 @@ namespace WorkerRole1
             Environment.SetEnvironmentVariable("TMP", customTempLocalResourcePath);
             Environment.SetEnvironmentVariable("TEMP", customTempLocalResourcePath);
             
-            // The rest of your startup code goes here…
+            // The rest of your startup code goes hereâŚ
             
             return base.OnStart();
         }

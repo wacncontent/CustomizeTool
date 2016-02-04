@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Convert WordPress to Multisite in Azure Websites" 
+	pageTitle="Convert WordPress to Multisite in Azure Web App" 
 	description="Learn how to take an existing WordPress web app created through the gallery in Azure and convert it to WordPress Multisite" 
 	services="app-service\web" 
 	documentationCenter="php" 
@@ -14,7 +14,7 @@
 
 
 
-# Convert WordPress to Multisite in Azure Websites
+# Convert WordPress to Multisite in Azure
 
 ## Overview
 
@@ -50,7 +50,7 @@ Log in to the *wp-admin* area of your web app and you should see a new item unde
 
 ![Network Setup Screen][wordpress-network-setup]
 
-This tutorial uses the *Sub-directories* site schema because it should always work, and we will be setting up custom domains for each subsite later in the tutorial. However, it should be possible to setup a subdomain install if you map a domain through the [Azure Management Portal](https://manage.windowsazure.cn/) and setup wildcard DNS properly.
+This tutorial uses the *Sub-directories* site schema because it should always work, and we will be setting up custom domains for each subsite later in the tutorial. However, it should be possible to setup a subdomain install if you map a domain through the [Azure Management Portal](https://manage.windowsazure.cn) and setup wildcard DNS properly.
 
 For more information on sub-domain vs sub-directory setups see the [Types of multisite network][wordpress-codex-types-of-networks] article on the WordPress Codex.
 
@@ -72,7 +72,7 @@ The [WordPress MU Domain Mapping][wordpress-plugin-wordpress-mu-domain-mapping] 
 
 ## Enable domain mapping to the web app
 
-The **Free** [Azure Websites](/documentation/services/web-sites/) plan mode does not support adding custom domains to Web Apps. You will need to switch to **Shared** or **Standard** mode. To do this:
+The **Free** [Azure Web App](/documentation/services/web-sites/) plan mode does not support adding custom domains to Web Apps. You will need to switch to **Shared** or **Standard** mode. To do this:
 
 * Log in to the Azure Management Portal and locate your web app. 
 * Click on the **Scale** tab in the main content area

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Best practices for changing the default configuration | Windows Azure | Windows Azure"
-	description="Provides best practices for changing the default configuration of Azure AD Connect sync."
+	pageTitle="Best practices for changing the default configuration | Windows Azure"
+	description="Provides best practices for changing the default configuration of Azure AD Coenncet Sync."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
@@ -9,11 +9,12 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+
+	ms.date="08/25/2015"
 	wacn.date=""/>
 
 
-# Azure AD Connect sync: Best practices for changing the default configuration
+# Azure AD Connect Sync: Best practices for changing the default configuration
 
 The purpose of this topic is to describe supported and unsupported changes to Azure AD Connect sync.
 
@@ -51,9 +52,17 @@ When you need to change the default configuration, do the following:
 
 
 
-## Next steps
-Learn more about the [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis) configuration.
+**Other important notes:**
 
-Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).
+- If you have attribute based filtering and password synchronization configured, make sure that only objects that are synchronized to Azure AD are in the scope of password synchronization. 
 
+
+
+
+
+## Additional Resources
+
+* [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
+* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
+ 
 <!--Image references-->

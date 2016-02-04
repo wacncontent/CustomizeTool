@@ -1,5 +1,5 @@
 > [AZURE.SELECTOR-LIST (Language | Backend )]
-- [(C# | EventProcessorHost C#)](/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted/)
+- [(C# | EventProcessorHost C#)](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)
 - [(C# | Apache Storm)](/documentation/articles/service-bus-event-hubs-csharp-storm-getstarted/)
 - [(Java | EventProcessorHost C#)](/documentation/articles/service-bus-event-hubs-java-ephcs-getstarted/)
 - [(Java | Apache Storm)](/documentation/articles/service-bus-event-hubs-java-storm-getstarted/)

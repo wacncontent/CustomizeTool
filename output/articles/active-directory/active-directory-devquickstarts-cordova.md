@@ -27,7 +27,7 @@ In this tutorial we will use the Apache Cordova plugin for Active Directory Auth
 -	Use that token to invoke the Graph API to query that directory and display the results  
 -	Leverage the ADAL token cache for minimizing the authentication prompts for the user.
 
-In order to do this, you’ll need to:
+In order to do this, you'll need to:
 
 2. Register an application with Azure AD
 2. Add code to your app to request tokens
@@ -60,7 +60,7 @@ Each target platform has different prerequisites.
 	- [Visual Studio 2013 for Windows with Update 2 or later](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-8) (Express or another version).
 - To build and run for iOS
 	-   Xcode 5.x or greater. Download it at http://developer.apple.com/downloads or the [Mac App Store](http://itunes.apple.com/us/app/xcode/id497799835?mt=12)
-	-   [ios-sim](https://www.npmjs.org/package/ios-sim) – allows you to launch iOS apps into the iOS Simulator from the command line (can be easily installed via the terminal: `npm install -g ios-sim`)
+	-   [ios-sim](https://www.npmjs.org/package/ios-sim) - allows you to launch iOS apps into the iOS Simulator from the command line (can be easily installed via the terminal: `npm install -g ios-sim`)
 
 - To build and run application for Android
 	- Install [Java Development Kit (JDK) 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) or later. Make sure `JAVA_HOME` (Environment Variable) is correctly set according to JDK installation path (for example C:\Program Files\Java\jdk1.7.0_75).
@@ -83,11 +83,11 @@ Azure AD will only issue tokens to known applications. Before you can use Azure 
 - In the left hand nav, click on Active Directory
 - Select the tenant where you wish to register the application
 - Click the Applications tab, and click add in the bottom drawer.
-- Follow the prompts and create a new “Native Client Application”
+- Follow the prompts and create a new "Native Client Application"
     - The name of the application will describe your application to end-users
-    -	The “Redirect URI” is the URI used to return tokens to your app. Enter `http://MyDirectorySearcherApp`.
+    -	The "Redirect URI" is the URI used to return tokens to your app. Enter `http://MyDirectorySearcherApp`.
 
-Once you’ve completed registration, AAD will assign your app a unique client identifier.  You’ll need this value in the next sections: you can find it in the Configure tab of the newly created app.
+Once you've completed registration, AAD will assign your app a unique client identifier.  You'll need this value in the next sections: you can find it in the Configure tab of the newly created app.
 
 ## *2. Clone the repositories required for the tutorial*
 

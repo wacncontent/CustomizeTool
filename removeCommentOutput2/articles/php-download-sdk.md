@@ -2,14 +2,14 @@
 	pageTitle="Download the Azure SDK for PHP"
 	description="Learn how to download and install the Azure SDK for PHP."
 	documentationCenter="php"
-	services=""
+	services="app-service\web"
 	authors="tfitzmac"
 	manager="wpickett"
 	editor=""/>
 
 <tags
-	ms.service="multiple"
-	ms.date="08/31/2015"
+	ms.service="app-service-web"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 #Download the Azure SDK for PHP
@@ -27,8 +27,7 @@ The sections below describe how to download and install the components described
 
 The instructions in this topic assume that you have [PHP][install-php] installed.
 
-> [AZURE.NOTE]
-> You must have PHP 5.3 or higher to use the PHP client libraries for Azure.
+> [AZURE.NOTE] You must have PHP 5.3 or higher to use the PHP client libraries for Azure.
 
 ##PHP client libraries for Azure
 
@@ -41,8 +40,7 @@ For information about how to use the PHP Client Libraries for Azure, see [How to
 1. [Install Git][install-git].
 
 
-	> [AZURE.NOTE]
-	> On Windows, you will also need to add the Git executable to your PATH environment variable.
+	> [AZURE.NOTE] On Windows, you will also need to add the Git executable to your PATH environment variable.
 
 2. Create a file named **composer.json** in the root of your project and add the following code to it:
 
@@ -87,8 +85,7 @@ To download and install the PHP Client Libraries for Azure manually, follow thes
 
 1. Download a .zip archive that contains the libraries from [GitHub][php-sdk-github]. Alternatively, fork the repository and clone it to your local machine. (The latter option requires a GitHub account and having Git installed locally.)
 
-	> [AZURE.NOTE]
-	> The PHP Client Libraries for Azure have a dependency on the [HTTP_Request2](http://pear.php.net/package/HTTP_Request2), [Mail_mime](http://pear.php.net/package/Mail_mime), and [Mail_mimeDecode](http://pear.php.net/package/Mail_mimeDecode) PEAR packages. The recommended way to resolve these dependencies is to install these packages using the [PEAR package manager](http://pear.php.net/manual/en/installation.php)
+	> [AZURE.NOTE] The PHP Client Libraries for Azure have a dependency on the [HTTP_Request2](http://pear.php.net/package/HTTP_Request2), [Mail_mime](http://pear.php.net/package/Mail_mime), and [Mail_mimeDecode](http://pear.php.net/package/Mail_mimeDecode) PEAR packages. The recommended way to resolve these dependencies is to install these packages using the [PEAR package manager](http://pear.php.net/manual/en/installation.php)
 
 2. Copy the `WindowsAzure` directory of the downloaded archive to your application directory structure and reference classes from your application.
 
@@ -120,11 +117,11 @@ For more information, see the [PHP Developer Center](/develop/php/).
 [nodejs-org]: http://nodejs.org/
 [install-node-linux]: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
 [download-wpi]: http://go.microsoft.com/fwlink/?LinkId=253447
-[mac-installer]: http://azuresdkscu.blob.core.chinacloudapi.cn/downloads04/azure-cli.0.9.10.dmg
+[mac-installer]: http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.dmg
 [blob-service]: http://go.microsoft.com/fwlink/?LinkId=252714
 [table-service]: http://go.microsoft.com/fwlink/?LinkId=252715
 [queue-service]: http://go.microsoft.com/fwlink/?LinkId=252716
 [azure cli]: http://go.microsoft.com/fwlink/?LinkId=252717
 [powershell-tools]: http://go.microsoft.com/fwlink/?LinkId=252718
 [php-sdk-github]: http://go.microsoft.com/fwlink/?LinkId=252719
-[install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
+[install-git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git

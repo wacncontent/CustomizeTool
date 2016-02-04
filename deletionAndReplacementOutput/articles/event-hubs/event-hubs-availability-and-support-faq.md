@@ -13,5 +13,5 @@ replaced by:
 
 		|China|China East, China North|
 
-reason: ()
+reason: (region diff)
 

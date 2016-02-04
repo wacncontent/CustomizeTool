@@ -1,5 +1,5 @@
 <properties
-   pageTitle="User-defined schemas in SQL Data Warehouse | Microsoft Azure"
+   pageTitle="User-defined schemas in SQL Data Warehouse | Windows Azure"
    description="Tips for using Transact-SQL schemas in Azure SQL Data Warehouse for developing solutions."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+	ms.service="sql-data-warehouse"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # User-defined schemas in SQL Data Warehouse
 

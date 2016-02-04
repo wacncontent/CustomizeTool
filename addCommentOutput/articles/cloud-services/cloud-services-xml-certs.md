@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="07/24/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 

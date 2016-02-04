@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory integration with Jobscience | Windows Azure" 
     description="Learn how to use Jobscience with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Jobscience
@@ -77,7 +77,7 @@ If you are not familiar with this procedure, see [How to retrieve a certificate'
 
     ![My Domain](./media/active-directory-saas-jobscience-tutorial/IC767825.png "My Domain")
 
-4.  To verify that your domain has been setup correctly, make sure that it is in “**Step 4 Deployed to Users**” and review your “**My Domain Settings**”.
+4.  To verify that your domain has been setup correctly, make sure that it is in "**Step 4 Deployed to Users**" and review your "**My Domain Settings**".
 
     ![Doman Deployed to User](./media/active-directory-saas-jobscience-tutorial/IC784377.png "Doman Deployed to User")
 

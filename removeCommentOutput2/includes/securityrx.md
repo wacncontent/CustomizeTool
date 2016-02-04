@@ -224,8 +224,8 @@ application.
     scenario you need securely access Azure Service Bus queues.
 -   **In-Memory Cache Identity and Access Scenarios.**In this scenario
     you need to securely access data managed by in-memory cache.
--   **Azure Marketplace Identity and Access Scenarios.**In this
-    scenario you need to securely access Azure Marketplace
+-   **Azure gallery Identity and Access Scenarios.**In this
+    scenario you need to securely access Azure gallery
     datasets.
 
 ##Azure Identity and Access Scenarios
@@ -413,7 +413,7 @@ several caveats:
     the token "manually" since there is no need to handle redirects in
     this case.
 
-![ASP.NET Web Application][08]
+![ASP.NET Web Site][08]
 
 Refer to the following resources to implement this scenario:
 
@@ -592,9 +592,9 @@ Refer to the following resources to solve this scenario:
 -   [Azure Service Bus and Caching Samples](http://msdn.microsoft.com/zh-cn/library/ee706741.aspx) (Caching Samples
     section)
 
-##Azure Marketplace Identity and Access Scenarios
+##Azure gallery Identity and Access Scenarios
 
-Every access to an Azure Marketplace dataset, whether free or
+Every access to an Azure gallery dataset, whether free or
 paid, must authenticate the user before access is granted. When you
 create an application the authentication process must be included in
 your code. Consider the following common scenarios:
@@ -636,7 +636,7 @@ Refer to the following resources to solve this scenario:
 In this scenario you are building an application that accesses the
 Marketplace API. The Marketplace API requires authentication to
 successfully accomplish calls to it. The application is deployed to
-Azure Marketplace.
+Azure gallery.
 
 ![][20]
 
@@ -646,7 +646,7 @@ authentication implementation.
 Refer to the following resources to solve this scenario:
 
 -   [Download the App Publishing Kit](http://download.microsoft.com/download/F/5/F/F5FD7C12-87FD-4A57-8D04-243AC6EF6C43/AppPublishingKitOct2011.zip)
--   [Introduction to Azure Marketplace for Applications](https://datamarket.azure.com/)
+-   [Introduction to Azure gallery for Applications](https://datamarket.azure.com/)
 
 ##Security Knobs
 
@@ -658,7 +658,7 @@ for these technologies when designing and deploying your application.
 
 The following are key security knobs of WIF. The information below is a
 digest from [WIF Design Considerations](http://msdn.microsoft.com/zh-cn/library/ee517298.aspx) and [Windows Identity Foundation
-(WIF) Security for ASP.NET Web Applications - Threats & Countermeasures](http://blogs.msdn.com/b/alikl/archive/2010/12/02/windows-identity-foundation-wif-security-for-asp-net-web-applications-threats-amp-countermeasures.aspx)
+(WIF) Security for ASP.NET Web Sites - Threats & Countermeasures](http://blogs.msdn.com/b/alikl/archive/2010/12/02/windows-identity-foundation-wif-security-for-asp-net-web-applications-threats-amp-countermeasures.aspx)
 .
 
 -   **IssuerNameRegistry**. Specifies trusted Security Token Services

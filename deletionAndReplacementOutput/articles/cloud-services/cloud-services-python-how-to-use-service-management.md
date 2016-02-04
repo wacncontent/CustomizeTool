@@ -6,7 +6,7 @@ deleted:
 		- China North
 		- China North
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -20,17 +20,5 @@ deleted:
 		- Australia East
 		- Australia Southeast
 
-reason: ()
-
-replacement:
-
-deleted:
-
-		Azure](http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx)
-
-replaced by:
-
-		Azure](/documentation/articles/cloud-services-certs-create/)
-
-reason: ()
+reason: (region diff)
 

@@ -6,11 +6,11 @@
  authors="dlepow"
  manager="timlt"
  editor=""
- tags="azure-service-management"/>
+ tags="azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/28/2015"
-	wacn.date=""/>
+ 	ms.date="09/28/2015"
+	wacn.date="" />
 
 # Automatically scale Azure compute resources up and down in an HPC Pack cluster according to the cluster workload
 
@@ -30,7 +30,7 @@ HPC Pack.
 service to automatically grow and shrink Azure burst nodes or
 Azure VM compute nodes. Configure the service with a setting in the [HPC
 Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script) or manually set the **AutoGrowShrink** cluster
-property. See [What’s New in Microsoft HPC Pack 2012 R2 Update
+property. See [What's New in Microsoft HPC Pack 2012 R2 Update
 2](https://technet.microsoft.com/zh-cn/library/mt269417.aspx).
 
 ## Prerequisites
@@ -65,7 +65,7 @@ AzureAutoGrowShrink.ps1
 
  * **NodeType** - The type of node  to grow and shrink. Supported values are:
 
-     * **AzureNodes** – for Azure PaaS (burst) nodes in an on-premises or Azure IaaS cluster.
+     * **AzureNodes** - for Azure PaaS (burst) nodes in an on-premises or Azure IaaS cluster.
 
      * **ComputeNodes** - for compute node VMs only in an Azure IaaS cluster.
 

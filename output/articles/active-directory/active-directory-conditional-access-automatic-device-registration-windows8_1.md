@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/12/2015"
+	ms.date="11/24/2015"
 	wacn.date=""/>
 
 # Configure automatic device registration for Windows 8.1 domain joined devices
@@ -50,4 +50,10 @@ The Windows Event Log on the Windows 8.1 machine will display messages related t
 
 ##Additional details
 
-The Group Policy enables a Scheduled Task on the system that runs in the user’s context and is triggered on user sign-in. The task will silently register the user and device with Azure AD after the sign-in is complete. The Scheduled Task can be found on Windows 8.1 devices in the Task Scheduler Library under **Microsoft** > **Windows** > **Workplace Join**. The task will run and register any and all Active Directory users that sign-into. 
+The Group Policy enables a Scheduled Task on the system that runs in the userâs context and is triggered on user sign-in. The task will silently register the user and device with Azure AD after the sign-in is complete. The Scheduled Task can be found on Windows 8.1 devices in the Task Scheduler Library under **Microsoft** > **Windows** > **Workplace Join**. The task will run and register any and all Active Directory users that sign-into. 
+
+## Additional topics
+- [Azure Active Directory Device Registration overview](/documentation/articles/active-directory-conditional-access-device-registration-overview)
+- [Automatic device registration with Azure Active Directory for Windows Domain-Joined Devices](/documentation/articles/active-directory-conditional-access-automatic-device-registration)
+- [Configure automatic device registration for Windows 7 domain joined devices](/documentation/articles/active-directory-conditional-access-automatic-device-registration-windows7)
+

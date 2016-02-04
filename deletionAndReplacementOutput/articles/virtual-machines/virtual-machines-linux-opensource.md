@@ -84,17 +84,5 @@ deleted:
 		12. Azure Automation
 			- [Video: How to Use Azure Automation with Linux VMs](http://channel9.msdn.com/Shows/Azure-Friday/Azure-Automation-104-managing-Linux-and-creating-Modules-with-Joe-Levy)
 
-reason: ()
-
-replacement:
-
-deleted:
-
-		Java](http://dl.windowsazure.com/javadoc/)
-
-replaced by:
-
-		Java](http://azure.github.io/azure-sdk-for-java/)
-
-reason: ()
+reason: (video)
 

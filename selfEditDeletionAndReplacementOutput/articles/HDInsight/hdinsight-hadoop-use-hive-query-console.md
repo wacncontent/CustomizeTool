@@ -8,5 +8,5 @@ replaced by:
 
 		1. Open the <a href="https://manage.windowsazure.cn" target="_blank">Azure Management Portal</a> and select your HDInsight cluster. From the bottom of the page, select **Query Console**. When prompted, enter the username and password that you used when you created the cluster.
 
-reason: ()
+reason: (the new Ibiza portal)
 

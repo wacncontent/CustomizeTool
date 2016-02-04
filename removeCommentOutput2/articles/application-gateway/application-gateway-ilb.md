@@ -206,5 +206,5 @@ Use the `Get-AzureApplicationGateway` cmdlet to check the status of gateway. If 
 
 If you want more information about load balancing options in general, see:
 
-- [Azure Load Balancer](/documentation/services/load-balancer/)
+<!--- [Azure Load Balancer](/documentation/services/load-balancer/)-->
 - [Azure Traffic Manager](/documentation/services/traffic-manager/)

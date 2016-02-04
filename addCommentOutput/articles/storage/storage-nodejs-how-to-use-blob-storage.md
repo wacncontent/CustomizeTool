@@ -3,13 +3,13 @@
 	description="Learn how to use the Azure Blob service to upload, download, list, and delete blob content. Samples are written in Node.js."
 	services="storage"
 	documentationCenter="nodejs"
-	authors="MikeWasson"
+	authors="rmcmurray"
 	manager="wpickett"
 	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/01/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 
@@ -28,7 +28,7 @@ This article shows you how to perform common scenarios using the Azure Blob serv
 
 ## Create a Node.js application
 
-For instructions on how to create a Node.js application, see [Create and deploy a Node.js application to an Azure website], [Node.js Cloud Service][Node.js Cloud Service] (using Windows PowerShell), or [Web app with WebMatrix].
+For instructions on how to create a Node.js application, see [Create and deploy a Node.js application to an Azure website], [Node.js Cloud Service][Node.js Cloud Service] (using Windows PowerShell), or <!-- deleted by customization [web site --><!-- keep by customization: begin --> [Web Site <!-- keep by customization: end --> with WebMatrix].
 
 ## Configure your application to access storage
 
@@ -51,7 +51,7 @@ To use Azure storage, you need the Azure Storage SDK for Node.js, which includes
 		+-- xml2js@0.2.7 (sax@0.5.2)
 		+-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
 
-3.  You can manually run the **ls** command to verify that a **node\_modules** folder was created. Inside that folder, find the **azure-storage** package, which contains the libraries that you need to access storage.
+3.  You can manually run the **ls** command to verify that a <!-- deleted by customization **node\_modules** --><!-- keep by customization: begin --> **node_modules** <!-- keep by customization: end --> folder was created. Inside that folder, find the **azure-storage** package, which contains the libraries that you need to access storage.
 
 ### Import the package
 
@@ -63,7 +63,12 @@ Using Notepad or another text editor, add the following to the top of the **serv
 
 The Azure module will read the environment variables `AZURE_STORAGE_ACCOUNT` and `AZURE_STORAGE_ACCESS_KEY`, or `AZURE_STORAGE_CONNECTION_STRING`, for information required to connect to your Azure storage account. If these environment variables are not set, you must specify the account information when calling **createBlobService**.
 
-For an example of setting the environment variables in the Azure Management Portal for an Azure web app, see [Node.js Web Application with Storage]
+<!-- deleted by customization
+For an example of setting the environment variables in the [Azure Management Portal](portal.azure.com) for an Azure web site, see [Node.js web site with Storage]
+-->
+<!-- keep by customization: begin -->
+For an example of setting the environment variables in the management portal for an Azure Website, see [Node.js Web Site with Storage]
+<!-- keep by customization: end -->
 
 ## Create a container
 
@@ -75,7 +80,7 @@ The **BlobService** object lets you work with containers and blobs. The followin
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
 
-To create a new container, use **createContainerIfNotExists**. The following code example creates a new container named 'mycontainer':
+To create a new container, use **createContainerIfNotExists**. The following code example creates a new container named 'mycontainer' <!-- deleted by customization: -->
 
 	blobSvc.createContainerIfNotExists('mycontainer', function(error, result, response){
       if(!error){
@@ -197,7 +202,7 @@ The `result` contains an `entries` collection, which is an array of objects that
 
 To download data from a blob, use the following:
 
-* **getBlobToFile** - writes the blob contents to file
+* **getBlobToLocalFile** - writes the blob contents to file
 
 * **getBlobToStream** - writes the blob contents to a stream
 
@@ -357,19 +362,28 @@ Once the ACL is set, you can then create shared access signatures based on the I
 For more information, see the following resources.
 
 -   [Azure Storage SDK for Node API Reference][]
--   MSDN Reference: [Storing and accessing data in Azure][]
 -   [Azure Storage Team Blog][]
 -   [Azure Storage SDK for Node][] repository on GitHub
 -   [Node.js Developer Center](/develop/nodejs/)
+-   [Transfer data with the AzCopy command-line utility](/documentation/articles/storage-use-azcopy)
 
 [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
-[Create and deploy a Node.js application to an Azure Web Site]: /develop/nodejs/tutorials/create-a-website-(mac)/
-[Node.js Cloud Service with Storage]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
-[Node.js Web Application with Storage]: /documentation/articles/storage-nodejs-use-table-storage-web-site
-[Web app with WebMatrix]: /documentation/articles/web-sites-nodejs-use-webmatrix
+[Create and deploy a Node.js application to an Azure Web Site]: <!-- deleted by customization /develop/nodejs/tutorials/create-a-website-(mac)/ --><!-- keep by customization: begin --> /documentation/articles/web-sites-nodejs-develop-deploy-mac <!-- keep by customization: end -->
+<!-- deleted by customization
+[Node.js Cloud Service with Storage]: ../storage-nodejs-use-table-storage-cloud-service-app.md
+[Node.js web site with Storage]: ../storage-nodejs-use-table-storage-web-site.md
+[web site with WebMatrix]: ../web-sites-nodejs-use-webmatrix.md
 [Using the REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx
+[Azure Management Portal]: portal.azure.com
+[Node.js Cloud Service]: ../cloud-services-nodejs-develop-deploy-app.md
+-->
+<!-- keep by customization: begin -->
+[Node.js Cloud Service with Storage]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
+[Node.js Web Site with Storage]: /documentation/articles/storage-nodejs-use-table-storage-web-site
+[Web Site with WebMatrix]: /documentation/articles/web-sites-nodejs-use-webmatrix
+[using the REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx
 [Azure Management Portal]: http://manage.windowsazure.cn
 [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
-[Storing and accessing data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+<!-- keep by customization: end -->
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
-[Azure Storage SDK for Node API Reference]: <!-- deleted by customization http://dl.windowsazure.com/nodestoragedocs/index.html --><!-- keep by customization: begin --> http://dl.windowsazure.cn/nodestoragedocs/index.html <!-- keep by customization: end -->
+[Azure Storage SDK for Node API Reference]: http://dl.windowsazure.com/nodestoragedocs/index.html

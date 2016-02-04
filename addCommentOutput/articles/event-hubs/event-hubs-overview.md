@@ -13,7 +13,7 @@
 
 # Azure Event Hubs overview
 
-Many modern solutions intend to provide adaptive customer experiences or to improve products through continuous feedback and automated telemetry. Such solutions are faced with the challenge of how to securely and reliably process very large amounts of information from many concurrent publishers. Windows Azure Event Hubs is a managed platform service that provides a foundation for large-scale data intake in a broad variety of scenarios. Examples of such scenarios are behavior tracking in mobile apps, traffic information from web farms, in-game event capture in console games, or telemetry data collected from industrial machines or connected vehicles. The common role that Event Hubs plays in solution architectures is that it acts as the "front door" for an event pipeline, often called an *event ingestor*. An event ingestor is a component or service that sits between event producers and event consumers to decouple the production of an event stream from the consumption of those events.
+Many modern solutions intend to provide adaptive customer experiences or to improve products through continuous feedback and automated telemetry. Such solutions are faced with the challenge of how to securely and reliably process very large amounts of information from many concurrent publishers. Windows Azure Event Hubs is a managed platform service that provides a foundation for large-scale data intake in a broad variety of scenarios. Examples of such scenarios are behavior tracking in mobile apps, traffic information from web farms, in-game event capture in console games, or telemetry data collected from industrial machines or connected vehicles. The common role that Event Hubs plays in solution architectures is that it acts as the "front door" for an event pipeline, often called an *event ingestor*. An event ingestor is a component or service that sits between event <!-- deleted by customization publishers --><!-- keep by customization: begin --> producers <!-- keep by customization: end --> and event consumers to decouple the production of an event stream from the consumption of those events.
 
 ![Event Hubs](./media/event-hubs-overview/IC759856.png)
 
@@ -128,7 +128,7 @@ The throughput capacity of Event Hubs is controlled by throughput units. Through
 
 - Egress: Up to 2MB per second.
 
-Ingress is throttled to the amount of capacity provided by the number of throughput units purchased. Sending data above this amount results in a "quota exceeded" exception. This amount is either 1 MB per second or 1000 events per second, whichever comes first. Egress does not produce throttling exceptions, but is limited to the amount of data transfer provided for by the purchased throughput units: 2 MB per second per throughput unit. If you receive publishing rate exceptions or are expecting to see higher egress be sure to check how many throughput units you have purchased for the namespace in which the Event Hub was created. To obtain more throughput units, you can adjust the setting on the **Namespaces** page on the **Scale** tab in the Azure management portal. You can also change this setting using the Azure APIs.
+Ingress is throttled to the amount of capacity provided by the number of throughput units purchased. Sending data above this amount results in a "quota exceeded" exception. This amount is either 1 MB per second or 1000 events per second, whichever comes first. Egress does not produce throttling exceptions, but is limited to the amount of data transfer provided for by the purchased throughput units: 2 MB per second per throughput unit. If you receive publishing rate exceptions or are expecting to see higher egress be sure to check how many throughput units you have purchased for the namespace in which the Event Hub was created. To obtain more throughput units, you can adjust the setting on the **Namespaces** page on the **Scale** tab in the <!-- deleted by customization [Azure Management Portal][] --><!-- keep by customization: begin --> Azure management portal <!-- keep by customization: end -->. You can also change this setting using the Azure APIs.
 
 While partitions are a data organization concept, throughput units are purely a capacity concept. Throughput units are billed per hour and are pre-purchased. Once purchased, throughput units are billed for a minimum of one hour. Up to 20 throughput units can be purchased for a Service Bus namespace, and there is an Azure account limit of 20 throughput units. These throughput units are shared across all Event Hubs in a given namespace.
 
@@ -140,7 +140,7 @@ For detailed pricing information, see [Event Hubs Pricing](/home/features/event-
 
 ### Publisher policy
 
-Event Hubs enables granular control over event producers through *publisher policies*. Publisher policies are a set of run-time features designed to facilitate large numbers of independent event producers. With publisher policies, each publisher uses its own unique identifier when publishing events to an Event Hub, using the following mechanism:
+Event Hubs enables granular control over event <!-- deleted by customization publishers --><!-- keep by customization: begin --> producers <!-- keep by customization: end --> through *publisher policies*. Publisher policies are a set of run-time features designed to facilitate large numbers of independent event <!-- deleted by customization publishers --><!-- keep by customization: begin --> producers <!-- keep by customization: end -->. With publisher policies, each publisher uses its own unique identifier when publishing events to an Event Hub, using the following mechanism:
 
 	//<my namespace>.servicebus.chinacloudapi.cn/<event hub name>/publishers/<my publisher name>
 
@@ -158,7 +158,19 @@ Now that you've learned about Event Hubs concepts, you can move on to the follow
 - A complete [sample application that uses Event Hubs].
 - A [queued messaging solution] using Service Bus queues.
 
-[Event Hubs tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted
+<!-- deleted by customization
+[Azure Management Portal]: http://manage.windowsazure.cn
+[Event Hubs tutorial]: event-hubs-csharp-ephcs-getstarted.md
+-->
+<!-- keep by customization: begin -->
+[Event Hubs tutorial]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started
+<!-- keep by customization: end -->
 [sample application that uses Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[queued messaging solution]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
+<!-- deleted by customization
+[queued messaging solution]: ../service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
+
+-->
+<!-- keep by customization: begin -->
+[queued messaging solution]: /documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues
  
+<!-- keep by customization: end -->

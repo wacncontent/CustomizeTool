@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Sorting DocumentDB data using Order By | Microsoft Azure" 
+	pageTitle="Sorting DocumentDB data using Order By | Windows Azure" 
 	description="Learn how to use ORDER BY in DocumentDB queries in LINQ and SQL, and how to specify an indexing policy for ORDER BY queries." 
 	services="documentdb" 
 	authors="arramac" 
@@ -7,17 +7,13 @@
 	editor="cgronlun" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/19/2015" 
-	ms.author="arramac"/>
+<tags
+	ms.service="documentdb"
+	ms.date="10/20/2015"
+	wacn.date=""/>
 
 # Sorting DocumentDB data using Order By
-Microsoft Azure DocumentDB supports querying documents using SQL over JSON documents. Query results can be ordered using the ORDER BY clause in SQL query statements.
+Windows Azure DocumentDB supports querying documents using SQL over JSON documents. Query results can be ordered using the ORDER BY clause in SQL query statements.
 
 After reading this article, you'll be able to answer the following questions: 
 
@@ -27,7 +23,7 @@ After reading this article, you'll be able to answer the following questions:
 
 [Samples](#samples) and an [FAQ](#faq) are also provided.
 
-For a complete reference on SQL querying, see the [DocumentDB Query tutorial](documentdb-sql-query.md).
+For a complete reference on SQL querying, see the [DocumentDB Query tutorial](/documentation/articles/documentdb-sql-query).
 
 ## How to Query with Order By
 Like in ANSI-SQL, you can now include an optional Order By clause in SQL statements when querying DocumentDB. The clause can include an optional ASC/DESC argument to specify the order in which results must be retrieved. 
@@ -83,7 +79,7 @@ Recall that DocumentDB supports two kinds of indexes (Hash and Range), which can
 >
 >Prior to REST API version 2015-06-03, the default collection indexing policy was Hash for both strings and numbers. This has been changed to Hash for strings, and Range for numbers. 
 
-For more details see [DocumentDB indexing policies](documentdb-indexing-policies.md).
+For more details see [DocumentDB indexing policies](/documentation/articles/documentdb-indexing-policies).
 
 ### Indexing for Order By against all properties
 Here's how you can create a collection with "All Range" indexing for Order By against any/all numeric or string properties that appear within JSON documents within it. Here, "/*" represents all JSON properties/paths within the collection, and -1 represents the maximum precision.
@@ -131,7 +127,7 @@ Take a look at this [Github samples project](https://github.com/Azure/azure-docu
 
 Future service updates will expand on the Order By support introduced here. We are working on the following additions and will prioritize the release of these improvements based on your feedback:
 
-- Dynamic Indexing Policies: Support to modify indexing policy after collection creation and in the Azure Portal
+- Dynamic Indexing Policies: Support to modify indexing policy after collection creation and in the Azure Management Portal
 - Support for Compound Indexes for more efficient Order By and Order By on multiple properties.
 
 ## FAQ
@@ -152,7 +148,7 @@ The indexing storage overhead will be proportionate to the number of properties.
 
 **How do I query my existing data in DocumentDB using Order By?**
 
-This will be supported with the availability of the  Dynamic Indexing Policies improvement mentioned in the [What's Coming Next](what's-coming-next) section. In order to do this today, you have to export your data and re-import into a new DocumentDB collection created with a Range/Order By Index. The DocumentDB Import Tool can be used to migrate your data between collections. 
+In order to sort query results using Order By, you must modify the indexing policy of the collection to use a Range index type against the property used to sort. See [Modifying Indexing Policy](/documentation/articles/documentdb-indexing-policies#modifying-the-indexing-policy-of-a-collection). 
 
 **What are the current limitations of Order By?**
 
@@ -171,9 +167,9 @@ You cannot perform the following:
 Fork the [Github samples project](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/Queries.OrderBy) and start ordering your data! 
 
 ## References
-* [DocumentDB Query Reference](documentdb-sql-query.md)
-* [DocumentDB Indexing Policy Reference](documentdb-indexing-policies.md)
-* [DocumentDB SQL Reference](https://msdn.microsoft.com/library/azure/dn782250.aspx)
+* [DocumentDB Query Reference](/documentation/articles/documentdb-sql-query)
+* [DocumentDB Indexing Policy Reference](/documentation/articles/documentdb-indexing-policies)
+* [DocumentDB SQL Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)
 * [DocumentDB Order By Samples](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/Queries.OrderBy)
  
 

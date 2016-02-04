@@ -176,7 +176,7 @@ Test your deployment to simulate your failover and recovery mechanism in an isol
 3. You can track failover progress and status on the **Job** tab.
 4. When the failover reaches the **Complete testing** phase , complete the verification as follows:
 	- After failover view the replica virtual machine in the Azure Management Portal. Verify that the virtual machine starts successfully.
-	- If you’re set up to access virtual machines from your on-premises network you can initiate a Remote Desktop connection to the virtual machine.
+	- If you're set up to access virtual machines from your on-premises network you can initiate a Remote Desktop connection to the virtual machine.
 	- Click **Complete the test** to finish it.
 	- Click **Notes** to record and save any observations associated with the test failover.
 	- Click **The test failover is complete**. Clean up the test environment to automatically power off and delete the test virtual machine.

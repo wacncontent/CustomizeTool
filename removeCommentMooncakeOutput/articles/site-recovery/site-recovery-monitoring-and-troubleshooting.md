@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Monitoring and Troubleshooting Guide for VMM and Hyper-V Site Protection" 
+	pageTitle="Monitor and troubleshoot protection for virtual machines and physical servers | Windows Auzre" 
 	description="Azure Site Recovery coordinates the replication, failover and recovery of virtual machines located on on-premises servers to Azure or a secondary datacenter. Use this article to monitor and troubleshoot  VMM or Hyper-V Site protection." 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -7,12 +7,12 @@
 	manager="mkjain" 
 	editor=""/>
 
-<tags
-	ms.service="site-recovery"
-	ms.date="09/01/2015"
+<tags 
+	ms.service="site-recovery" 
+	ms.date="12/14/2015" 
 	wacn.date=""/>
 	
-# Monitor and troubleshoot protection for VMware, VMM, Hyper-V and Physical sites
+# Monitor and troubleshoot protection for virtual machines and physical servers
 
 This Monitoring and Troubleshooting Guide enables you to learn tracking the replication health and troubleshooting techniques for Azure Site Recovery.
 
@@ -32,12 +32,15 @@ As part of setting up DR between two on-premises location; Azure Site Recovery P
 ### VMM Site Deployment for replication between on-premises & Azure.
 
 As part of setting up DR between on-premises & Azure; Azure Site Recovery Provider needs to be downloaded and installed on the VMM server along with Azure Recovery Services Agent which needs to be installed on each Hyper-V host. Refer [Understanding Site to Azure Protection](/documentation/articles/site-recovery-understanding-site-to-azure-protection) for more information.
+Recovery Provider needs to be downloaded and installed on the VMM server
+along with Azure Recovery Services Agent which needs to be installed on
+each Hyper-V host.
 
 ![VMM Site Deployment for replication between on-premises & Azure](./media/site-recovery-monitoring-and-troubleshooting/image2.png)
 
 ### Hyper-V Site Deployment for replication between on-premises & Azure
 
-This is same as that of VMM Deployment – only difference being Provider & Agent gets installed on the Hyper-V host itself. Refer [Understanding Site to Azure Protection](/documentation/articles/site-recovery-understanding-site-to-azure-protection) for more information.
+This is same as that of VMM Deployment - only difference being Provider & Agent gets installed on the Hyper-V host itself. Refer [Understanding Site to Azure Protection](/documentation/articles/site-recovery-understanding-site-to-azure-protection) for more information.
 
 ## Monitor configuration, protection and recovery operations
 
@@ -53,11 +56,11 @@ The error details will help you identify possible cause and recommendation for t
 
 ![Monitor configuration, protection and recovery operations](./media/site-recovery-monitoring-and-troubleshooting/image5.png)
 
-In the above case there seems to be another operation which is in progress because of which Protection configuration is failing. Ensure that you resolve the issue as per the recommendation – there-after click RESART to re-initiate the operation.
+In the above case there seems to be another operation which is in progress because of which Protection configuration is failing. Ensure that you resolve the issue as per the recommendation - there-after click RESART to re-initiate the operation.
 
 ![Monitor configuration, protection and recovery operations](./media/site-recovery-monitoring-and-troubleshooting/image6.png)
 
-Option to RESTART is not available for all operations – for those which doesn’t have the RESTART option navigate back to the object and redo the operation once again. Every JOB can be cancelled at any point of time while in-progress using the CANCEL button.
+Option to RESTART is not available for all operations - for those which doesn't have the RESTART option navigate back to the object and redo the operation once again. Every JOB can be cancelled at any point of time while in-progress using the CANCEL button.
 
 ![Monitor configuration, protection and recovery operations](./media/site-recovery-monitoring-and-troubleshooting/image7.png)
 
@@ -71,7 +74,7 @@ There-after select the protected entity under the respective cloud or the protec
 
 ![Monitor replication health for virtual machine](./media/site-recovery-monitoring-and-troubleshooting/image9.png)
 
-As shown above in-case the virtual machine HEALTH is critical – you can click the ERROR DETAILS button on the bottom to see the error. Based on the “Possible causes” and “Recommendation” mentioned resolve the issue.
+As shown above in-case the virtual machine HEALTH is critical - you can click the ERROR DETAILS button on the bottom to see the error. Based on the “Possible causes” and “Recommendation” mentioned resolve the issue.
 
 ![Monitor replication health for virtual machine](./media/site-recovery-monitoring-and-troubleshooting/image10.png)
 
@@ -86,7 +89,7 @@ machine and see the replication health.
 
 ![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-monitoring-and-troubleshooting/image12.png)
 
-In this case *Replication Health* is being indicated as Critical – *View
+In this case *Replication Health* is being indicated as Critical - *View
 Replication Health* to see the details.
 
 ![Troubleshoot on-premises Hyper-V issues](./media/site-recovery-monitoring-and-troubleshooting/image13.png)
@@ -155,9 +158,9 @@ URL at <http://aka.ms/getazuresupport>
 
 ## KB Articles
 
--   [How to preserve the drive letter for protected virtual machines that are failed over or migrated to Azure](http://support.microsoft.com/kb/3031135)
--   [How to manage on-premises to Azure protection network bandwidth usage](https://support.microsoft.com/kb/3056159)
--   [ASR: "The cluster resource could not be found" error when you try to enable protection for a virtual  machine](http://support.microsoft.com/kb/3010979)
+-   [How to preserve the drive letter for protected virtual machines that are failed over or migrated to Azure](http://support.microsoft.com/zh-cn/kb/3031135)
+-   [How to manage on-premises to Azure protection network bandwidth usage](https://support.microsoft.com/zh-cn/kb/3056159)
+-   [ASR: "The cluster resource could not be found" error when you try to enable protection for a virtual  machine](http://support.microsoft.com/zh-cn/kb/3010979)
 -   [Understand & Troubleshoot Hyper-V Replica Guide](http://www.microsoft.com/en-in/download/details.aspx?id=29016) 
 
 ## Common ASR errors and their resolutions
@@ -170,7 +173,7 @@ Below are the common errors that you may hit and their resolutions. Each of the 
 
 ### Setup
 -   [The VMM server cannot be registered due to an internal error. Please refer to the jobs view in the Site Recovery Portal for more details on the error. Run Setup again to register the server.](http://social.technet.microsoft.com/wiki/contents/articles/25570.the-vmm-server-cannot-be-registered-due-to-an-internal-error-please-refer-to-the-jobs-view-in-the-site-recovery-portal-for-more-details-on-the-error-run-setup-again-to-register-the-server.aspx)
--   [A connection can’t be established to the Hyper-V Recovery Manager vault. Verify the proxy settings or try again later.](http://social.technet.microsoft.com/wiki/contents/articles/25571.a-connection-cant-be-established-to-the-hyper-v-recovery-manager-vault-verify-the-proxy-settings-or-try-again-later.aspx)
+-   [A connection can't be established to the Hyper-V Recovery Manager vault. Verify the proxy settings or try again later.](http://social.technet.microsoft.com/wiki/contents/articles/25571.a-connection-cant-be-established-to-the-hyper-v-recovery-manager-vault-verify-the-proxy-settings-or-try-again-later.aspx)
 
 ### Configuration
 -   [Unable to create Protection Group: An error occurred while retrieving the list of servers.](http://blogs.technet.com/b/somaning/archive/2015/08/12/unable-to-create-the-protection-group-in-azure-site-recovery-portal.aspx)

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="09/16/2015"
+	ms.date="12/08/2015"
 	wacn.date=""/>
 
 
@@ -18,19 +18,19 @@
 
 This topic explains how to use the Azure Redis Cache Service for session state.
 
-If your ASP.NET web app uses session state, you will need to configure an external session state provider (either the Redis Cache Service or a SQL Server session state provider). If you use session state, and don't use an external provider, you will be limited to one instance of your web app. The Redis Cache Service is the fastest and simplest to enable.
-
+If your ASP.NET web site uses session state, you will need to configure an external session state provider (either the Redis Cache Service or a SQL Server session state provider). If you use session state, and don't use an external provider, you will be limited to one instance of your web site. The Redis Cache Service is the fastest and simplest to enable.
 
 The basic steps to use the Cache Service (Preview) for session state caching include:
 
 * [Create the cache.](#createcache)
-* [Add the RedisSessionStateProvider NuGet package to your web app.](#configureproject)
+* [Add the RedisSessionStateProvider NuGet package to your web site.](#configureproject)
 * [Modify the web.config file.](#configurewebconfig)
 * [Use the Session object to store and retrieve cached items.](#usesessionobject)
+
 ##<a id="createcache"></a>Create the Cache
 Follow [these directions](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#create-cache) to create the cache.
 
-##<a id="configureproject"></a>Add the RedisSessionStateProvider NuGet package to your web app
+##<a id="configureproject"></a>Add the RedisSessionStateProvider NuGet package to your web site
 Install the NuGet `RedisSessionStateProvider` package.  Use the following command to install from the package manager console (**Tools** > **NuGet Package Manager** > **Package Manager Console**):
 
   `PM> Install-Package Microsoft.Web.RedisSessionStateProvider`
@@ -87,7 +87,7 @@ The following code retrieves this value from session state.
     if (objValue != null)
        strValue = (string)objValue;	
 
-You can also use the Redis Cache to cache objects in your web app. For more info, see [MVC movie app with Azure Redis Cache in 15 minutes](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/).
+You can also use the Redis Cache to cache objects in your web site. For more info, see [MVC movie app with Azure Redis Cache in 15 minutes](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/).
 For more details about how to use ASP.NET session state, see [ASP.NET Session State Overview][].
   
   [installed the latest]: /downloads/?sdk=net  

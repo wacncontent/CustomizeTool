@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure ActiveDirectory integration with SuccessFactors
@@ -112,7 +112,7 @@ To get single sign-on configured, you will have to contact your SuccessFactors s
 In order to enable Azure AD users to log into SuccessFactors, they must be provisioned into SuccessFactors.  
 In the case of SuccessFactors, provisioning is a manual task.
   
-To get users created in SuccessFactors, you need to contact the SuccessFactors’ support team.
+To get users created in SuccessFactors, you need to contact the SuccessFactors' support team.
 
 ##Assigning users
   

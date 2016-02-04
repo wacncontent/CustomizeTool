@@ -4,17 +4,27 @@ deleted:
 
 		[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
-reason: ()
+reason: (terminology: Azure App Service Web)
 
 deleted:
 
 		>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
-			
+
+reason: (“Try it now”)
+
+deleted:
+
 		## What's changed
 		* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 		* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-reason: ()
+reason: (terminology: Azure App Service Web, the new Ibiza portal)
+
+deleted:
+
+		Note that the Premium mode allows a greater number of daily backups to be performed over the Standard mode.
+
+reason: (Premium mode)
 
 replacement:
 
@@ -26,21 +36,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
-
-deleted:
-
-		Note that the Premium mode allows a greater number of daily backups to be performed over the Standard mode.
-
-replaced by:
-
-		##In this article
-		- [To Restore an Azure  Website from a previously made backup](#PreviousBackup)
-		- [To Restore an Azure  Website directly from a storage account](#StorageAccount)
-		- [Choose Your  Website Restore Settings and Start the Restore Operation](#RestoreSettings)
-		- [View the Operation Logs](#OperationLogs)
-
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -66,7 +62,7 @@ replaced by:
 		3. Select the date of the backup that you want to restore, and then click the right arrow to continue.
 		4. Follow the steps in the [Choose Your  Website Restore Settings](#RestoreSettings) section later in this article.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -111,7 +107,7 @@ replaced by:
 			
 		7. Continue with the section that follows, [Choose Your  Website Restore Settings and Start the Restore Operation](#RestoreSettings).
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -142,5 +138,5 @@ replaced by:
 			
 			![Operation Details][OperationDetails]
 
-reason: ()
+reason: (the new Ibiza portal)
 

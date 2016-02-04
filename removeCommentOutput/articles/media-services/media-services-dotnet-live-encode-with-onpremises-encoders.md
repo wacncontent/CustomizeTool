@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 #How to perform live encoding with on-premises encoders
@@ -36,8 +36,8 @@ The following code example demonstrates how to achieve the following tasks:
 - Connect to Media Services
 - Create a channel
 - Update the channel
-- Retrieve the channel’s input endpoint. The input endpoint should be provided to the on-premises live encoder. The live encoder converts signals from the camera to streams that are sent to the channel’s input (ingest) endpoint.
-- Retrieve the channel’s preview endpoint
+- Retrieve the channel's input endpoint. The input endpoint should be provided to the on-premises live encoder. The live encoder converts signals from the camera to streams that are sent to the channel's input (ingest) endpoint.
+- Retrieve the channel's preview endpoint
 - Create and start a program
 - Create a locator needed to access the program
 - Create and start a StreamingEndpoint
@@ -107,7 +107,7 @@ For information on how to configure a live encoder, see [Azure Media Services RT
 		
 		        public static IChannel CreateAndStartChannel()
 		        {
-					//If you want to change the Smooth fragments to HLS segment ratio, you would set the ChannelCreationOptions’s Output property.
+					//If you want to change the Smooth fragments to HLS segment ratio, you would set the ChannelCreationOptions's Output property.
 	
 		            IChannel channel = _context.Channels.Create(
 		                new ChannelCreationOptions
@@ -210,6 +210,8 @@ For information on how to configure a live encoder, see [Azure Media Services RT
 		
 		        public static ILocator CreateLocatorForAsset(IAsset asset, TimeSpan ArchiveWindowLength)
 		        {
+                	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
+
 		            var locator = _context.Locators.CreateLocator
 		                (
 		                    LocatorType.OnDemandOrigin,
@@ -371,10 +373,10 @@ For information on how to configure a live encoder, see [Azure Media Services RT
 		    }
 		}
 
-
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

@@ -4,7 +4,7 @@ deleted:
 
 		>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required, no commitments.
 
-reason: ()
+reason: (“Try it now”)
 
 replacement:
 
@@ -67,19 +67,5 @@ replaced by:
 		
 			![Create publishing credentials][portal-git-username-password]
 
-reason: ()
-
-deleted:
-
-		## Next steps
-		
-		For more information, see the [PHP Developer Center](/develop/php/).
-
-replaced by:
-
-		[go-to-dashboard]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/go_to_dashboard.png
-		[reset-deployment-credentials]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/reset-deployment-credentials.png
-		[portal-git-username-password]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/git-deployment-credentials.png
-
-reason: ()
+reason: (the new Ibiza portal)
 

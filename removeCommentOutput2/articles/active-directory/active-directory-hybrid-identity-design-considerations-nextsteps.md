@@ -13,7 +13,7 @@
 	wacn.date=""/>
 
 #Azure Active Directory hybrid identity design considerations- next steps
-Now that you’ve completed defining your requirements and examining all the options for your mobile device management solution, you’re ready to take the next steps for deploying the supporting infrastructure that’s right for you and your organization.
+Now that you've completed defining your requirements and examining all the options for your mobile device management solution, you're ready to take the next steps for deploying the supporting infrastructure that's right for you and your organization.
 
 ##Hybrid identity solutions
 -Leveraging specific solution scenarios that fit your needs is a great way to review and plan for the details of deploying a mobile device management infrastructure. The following solutions outline several of the most common mobile device management scenarios:
@@ -26,8 +26,8 @@ Now that you’ve completed defining your requirements and examining all the opt
 Conceptual and procedural planning, deployment, and administration content are useful when implementing your mobile device management solution:
 
 - [Microsoft System Center](https://technet.microsoft.com/zh-cn/library/cc507089.aspx) solutions can help you capture and aggregate knowledge about your infrastructure, policies, processes, and best practices so that your IT staff can build manageable systems and automate operations.
-- [Microsoft Intune](https://technet.microsoft.com/zh-cn/library/jj676587.aspx) is a cloud-based device management service that helps you to manage your computers and mobile devices and to secure your company’s information.
-- [MDM for Office 365](https://technet.microsoft.com/zh-cn/library/ms.o365.cc.devicepolicy.aspx) allows you to manage and secure mobile devices when they're connected to your Office 365 organization. You can use MDM for Office 365 to set device security policies and access rules, and to wipe mobile devices if they’re lost or stolen.
+- [Microsoft Intune](https://technet.microsoft.com/zh-cn/library/jj676587.aspx) is a cloud-based device management service that helps you to manage your computers and mobile devices and to secure your company's information.
+- [MDM for Office 365](https://technet.microsoft.com/zh-cn/library/ms.o365.cc.devicepolicy.aspx) allows you to manage and secure mobile devices when they're connected to your Office 365 organization. You can use MDM for Office 365 to set device security policies and access rules, and to wipe mobile devices if they're lost or stolen.
 
 ## Hybrid identity resources
 Monitoring the following resources often provides the latest news and updates on mobile device management solutions:

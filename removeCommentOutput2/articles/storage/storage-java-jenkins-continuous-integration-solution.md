@@ -5,18 +5,18 @@
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="10/12/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 # Using Azure Storage with a Jenkins Continuous Integration solution
 
 ## Overview
 
-The following information shows how to use the Azure Blob service as a repository of build artifacts created by a Jenkins Continuous Integration (CI) solution, or as a source of downloadable files to be used in a build process. One of the scenarios where you would find this useful is when you're coding in an agile development environment (using Java or other languages), builds are running based on continuous integration, and you need a repository for your build artifacts, so that you could, for example, share them with other organization members, your customers, or maintain an archive. Another scenario is when your build job itself requires other files, for example, dependencies to download as part of the build input.
+The following information shows how to use Blob storage as a repository of build artifacts created by a Jenkins Continuous Integration (CI) solution, or as a source of downloadable files to be used in a build process. One of the scenarios where you would find this useful is when you're coding in an agile development environment (using Java or other languages), builds are running based on continuous integration, and you need a repository for your build artifacts, so that you could, for example, share them with other organization members, your customers, or maintain an archive. Another scenario is when your build job itself requires other files, for example, dependencies to download as part of the build input.
 
 In this tutorial you will be using the Azure Storage Plugin for Jenkins CI made available by Microsoft.
 
@@ -78,7 +78,7 @@ To use the Blob service with Jenkins, you'll need to install the Azure Storage p
 3. In the **Windows Azure Storage Account Configuration** section:
     1. Enter your storage account name, which you can obtain from the Azure Management Portal, <https://manage.windowsazure.cn>.
     2. Enter your storage account key, also obtainable from the Azure Management Portal.
-    3. Use the default value for **Blob Service Endpoint URL** if you are using the public Azure cloud. If you are using a different Azure cloud, use the endpoint as specified in the Azure management portal for your storage account. 
+    3. Use the default value for **Blob Service Endpoint URL** if you are using the public Azure cloud. If you are using a different Azure cloud, use the endpoint as specified in the Azure management portal for your storage account.
     4. Click **Validate storage credentials** to validate your storage account. 
     5. [Optional] If you have additional storage accounts that you want made available to your Jenkins CI, click **Add more Storage Accounts**.
     6. Click **Save** to save your settings.
@@ -106,7 +106,7 @@ For instruction purposes, first we'll need to create a job that will create seve
     
     Below the **Command** section where you entered a script for **Execute Windows batch command** is a link to the environment variables recognized by Jenkins. Click that link to learn the environment variable names and descriptions. Note that environment variables that contain special characters, such as the **BUILD_URL** environment variable, are not allowed as a container name or common virtual path.
 
-8. Click **Make new container public by default** for this example. (If you want to use a private container, you'll need to create a shared access signature to allow access. That is beyond the scope of this topic. You can learn more about shared access signatures at [Creating a Shared Access Signature](http://go.microsoft.com/fwlink/?LinkId=279889).)
+8. Click **Make new container public by default** for this example. (If you want to use a private container, you'll need to create a shared access signature to allow access. That is beyond the scope of this topic. You can learn more about shared access signatures at [Creating a Shared Access Signature](http://msdn.microsoft.com/zh-cn/library/azure/jj721951.aspx).) 
 9. [Optional] Click **Clean container before uploading** if you want the container to be cleared of contents before build artifacts are uploaded (leave it unchecked if you do not want to clean the contents of the container).
 10. For **List of Artifacts to upload**, enter **text/*.txt**.
 11. For **Common virtual path for uploaded artifacts**, for purposes of this tutorial, enter **${BUILD\_ID}/${BUILD\_NUMBER}**.

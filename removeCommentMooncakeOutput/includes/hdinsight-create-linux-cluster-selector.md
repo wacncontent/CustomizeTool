@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 > [AZURE.SELECTOR]
-- [Overview](/documentation/articles/hdinsight-provision-clusters)
+- [Overview](/documentation/articles/hdinsight-provision-clusters-v1)
 - [Azure preview portal](/documentation/articles/hdinsight-hadoop-create-linux-clusters-portal)
 - [Azure CLI](/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-cli)
 - [Azure PowerShell](/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell)

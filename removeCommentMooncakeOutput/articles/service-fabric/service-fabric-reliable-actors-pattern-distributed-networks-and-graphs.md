@@ -1,6 +1,6 @@
-﻿<properties
-   pageTitle="Azure Service Fabric Actors Distributed Networks and Graphs design pattern"
-   description="Design pattern on how Service Fabric Actors can be used to model application as distributed networks and graphs"
+<properties
+   pageTitle="Distributed networks and graphs pattern | Windows Azure"
+   description="Design pattern on how Service Fabric Reliable Actors can be used to model applications as distributed networks and graphs."
    services="service-fabric"
    documentationCenter=".net"
    authors="vturecek"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/11/2015"
-   ms.author="vturecek"/>
+	ms.service="service-fabric"
+	ms.date="09/29/2015"
+	wacn.date=""/>
 
 # Reliable Actors design pattern: distributed networks and graphs
 Service Fabric Reliable Actors is a natural fit for modeling complex solutions involving relations and modeling those relations as objects.  
@@ -27,7 +23,7 @@ The Actor model provides flexibility to approach the materialization problem. We
 ![][2]
 
 
-## Smart Cache code sample – Social Network Friends Feed (event time)
+## Smart Cache code sample - Social Network Friends Feed (event time)
 
 Sample code populating Friends Feed:
 
@@ -58,7 +54,7 @@ Public class SocialPersonState
     public SocialStatus _lastStatus; // this is my last update
 }
 
-public class SocialPerson : Actor, ISocialPerson
+public class SocialPerson : StatefulActor<SocialPersonState>, ISocialPerson
 {
     public override Task ActivateAsync()
     {
@@ -126,9 +122,9 @@ public class SocialPerson : Actor, ISocialPerson
 Alternatively we can model our Actors to fan out and compile the Friends Feed at the query timer, in other words when the user asks for their friends feed. Another method we can use is materializing the Friends Feed on a timer, for example, every 5 minutes. Or, we can optimize the model and combine both event time and query time processing with a timer-based model depending on user habits, such as how often they login or post an update.
 When modelling an actor in a social network, one should also consider “super users,” users with millions of followers. Developers should model the state and behaviour of such users differently to meet the demand.
 Similarly, if we want to model an activity that connects many user actors to a single activity actor (hub and spoke) that can be done as well. Group chat or game hosting scenarios are two examples.
-Let’s take the group chat example; a set of participants create a group chat actor that can distribute messages from one participant to the group as in the example below:
+Let's take the group chat example; a set of participants create a group chat actor that can distribute messages from one participant to the group as in the example below:
 
-## Smart Cache code sample – GroupChat
+## Smart Cache code sample - GroupChat
 
 ```csharp
 public interface IGroupChat : IActor
@@ -148,7 +144,7 @@ public class GroupChatParticipantState
     public List<GroupChatMessage> _messages;
 }
 
-public class GroupChatParticipant : Actor<GroupChatParticipantState>, IGroupParticipant
+public class GroupChatParticipant : StatefulActor<GroupChatParticipantState>, IGroupParticipant
 {
     public Task SendMessageAsync(string message)
     {
@@ -174,7 +170,7 @@ public class GroupChatState
 }
 
 
-public class GroupChat : Actor<GroupChatState>, IGroupChat
+public class GroupChat : StatefulActor<GroupChatState>, IGroupChat
 {
 
 public Task PublishMessageAsync(long participantId, string message)
@@ -209,19 +205,19 @@ public Task PublishMessageAsync(long participantId, string message)
 All it really does is leverage Reliable Actors' ability to allow any actor to address any other actor in the cluster by id and communicate with it without needing to worry about placement, addressing, caching, messaging, serialization, or routing.
 
 ## Next Steps
-[Pattern: Smart Cache](service-fabric-reliable-actors-pattern-smart-cache.md)
+[Pattern: Smart Cache](/documentation/articles/service-fabric-reliable-actors-pattern-smart-cache)
 
-[Pattern: Resource Governance](service-fabric-reliable-actors-pattern-resource-governance.md)
+[Pattern: Resource Governance](/documentation/articles/service-fabric-reliable-actors-pattern-resource-governance)
 
-[Pattern: Stateful Service Composition](service-fabric-reliable-actors-pattern-stateful-service-composition.md)
+[Pattern: Stateful Service Composition](/documentation/articles/service-fabric-reliable-actors-pattern-stateful-service-composition)
 
-[Pattern: Internet of Things](service-fabric-reliable-actors-pattern-internet-of-things.md)
+[Pattern: Internet of Things](/documentation/articles/service-fabric-reliable-actors-pattern-internet-of-things)
 
-[Pattern: Distributed Computation](service-fabric-reliable-actors-pattern-distributed-computation.md)
+[Pattern: Distributed Computation](/documentation/articles/service-fabric-reliable-actors-pattern-distributed-computation)
 
-[Some Anti-patterns](service-fabric-reliable-actors-anti-patterns.md)
+[Some Anti-patterns](/documentation/articles/service-fabric-reliable-actors-anti-patterns)
 
-[Introduction to Service Fabric Actors](service-fabric-reliable-actors-introduction.md)
+[Introduction to Service Fabric Actors](/documentation/articles/service-fabric-reliable-actors-introduction)
 
 
 <!--Image references-->

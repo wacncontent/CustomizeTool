@@ -10,15 +10,13 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/11/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 # Line of Business Application Workload Phase 2: Configure domain controllers
-<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
  
--->
 
 In this phase of deploying a high-availability line of business application in Azure infrastructure services, you configure two replica domain controllers in the Azure Virtual Network so that client web requests for web resources can be authenticated locally within the Azure virtual network, rather than sending that authentication traffic across the connection to your on-premises network. 
 
@@ -30,19 +28,26 @@ First, you need to fill out the **Virtual machine name** column of Table M and m
 
 Item | Virtual machine name | Gallery image | Minimum size 
 --- | --- | --- | --- 
-1. | ______________ (first domain controller, example DC1) | Windows Server 2012 R2 Datacenter | Standard_D1
-2. | ______________ (second domain controller, example DC2) | Windows Server 2012 R2 Datacenter | Standard_D1
-3. | ______________ (primary database server, example SQL1) | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | 	Standard_DS4
-4. | ______________ (secondary database server, example SQL2) | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | 	Standard_DS4
-5. | ______________ (majority node witness for the cluster, example MN1) | Windows Server 2012 R2 Datacenter | Standard_D1
+1. | ______________ (first domain controller, example DC1) | Windows Server 2012 R2 Datacenter | <!-- deleted by customization Standard_D2 --><!-- keep by customization: begin --> Standard_D1 <!-- keep by customization: end -->
+2. | ______________ (second domain controller, example DC2) | Windows Server 2012 R2 Datacenter | <!-- deleted by customization Standard_D2 --><!-- keep by customization: begin --> Standard_D1 <!-- keep by customization: end -->
+3. | ______________ (primary database server, example SQL1) | Microsoft SQL Server 2014 Enterprise - Windows Server 2012 R2 | 	Standard_DS4
+4. | ______________ (secondary database server, example SQL2) | Microsoft SQL Server 2014 Enterprise - Windows Server 2012 R2 | 	Standard_DS4
+5. | ______________ (majority node for the cluster, example MN1) | Windows Server 2012 R2 Datacenter | Standard_D1
 6. | ______________ (first web server, example WEB1) | Windows Server 2012 R2 Datacenter | Standard_D3
 7. | ______________ (second web server, example WEB2) | Windows Server 2012 R2 Datacenter | Standard_D3
 
-**Table M – Virtual machines for the high-availability line of business application in Azure**
+**Table M - Virtual machines for the high-availability line of business application in Azure**
 
+<!-- deleted by customization
+For the complete list of virtual machine sizes, see [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs).
+
+Use the following block of Azure PowerShell commands to create the virtual machines for the two domain controllers. Specify the values for the variables, removing the < and > characters. Note that this PowerShell command block uses values from the following:
+-->
+<!-- keep by customization: begin -->
 For the complete list of virtual machine sizes, see [Virtual Machine and Cloud Service Sizes for Azure](https://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx).
 
 Use the following block of Azure PowerShell commands to create the virtual machines for the two domain controllers. Specify the values for the variables, removing the < and > characters. Note that this PowerShell command set uses values from the following:
+<!-- keep by customization: end -->
 
 - Table M, for your virtual machines
 - Table V, for your virtual network settings
@@ -51,72 +56,70 @@ Use the following block of Azure PowerShell commands to create the virtual machi
 - Table A, for your availability sets
 
 Recall that you defined Tables V, S, ST, and A in [Phase 1: Configure Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1).
-<!-- deleted by customization
 
-> [AZURE.NOTE] This article contains commands for versions of Azure PowerShell up to *but not including* versions 1.0.0 and later. You can check your version of Azure PowerShell with the **Get-Module azure | format-table version** command. The Azure PowerShell command blocks in this article are in the process of being tested and updated to support the new cmdlets in Azure PowerShell versions 1.0.0 and later. Thank you for your patience.
+<!-- deleted by customization
+> [AZURE.NOTE] The following command sets use Azure PowerShell 1.0 and later. For more information, see [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/).
 -->
+<!-- keep by customization: begin -->
+> [AZURE.NOTE] This article contains commands for Azure PowerShell Preview 1.0. To run these commands in Azure PowerShell 0.9.8 and prior versions, replace all instances of "-AzureRM" with "-Azure" and add the **Switch-AzureMode AzureResourceManager** command before you execute any commands. For more information, see [Azure PowerShell 1.0 Preview](https://azure.microsoft.com/blog/azps-1-0-pre/).
+<!-- keep by customization: end -->
 
 When you have supplied all the proper values, run the resulting block at the Azure PowerShell prompt.
 
-	# Set up subscription and key variables
-	$subscr="<name of the Azure subscription>"
-	Set-AzureSubscription -SubscriptionName $subscr
-	Switch-AzureMode AzureResourceManager
+	# Set up key variables
 	$rgName="<resource group name>"
 	$locName="<Azure location of your resource group>"
-	$saName="<Table ST – Item 2 – Storage account name column>"
-	$vnetName="<Table V – Item 1 – Value column>"
-	$avName="<Table A – Item 1 – Availability set name column>"
+	$saName="<Table ST - Item 2 - Storage account name column>"
+	$vnetName="<Table V - Item 1 - Value column>"
+	$avName="<Table A - Item 1 - Availability set name column>"
 	
 	# Create the first domain controller
-	$vmName="<Table M – Item 1 - Virtual machine name column>"
-	$vmSize="<Table M – Item 1 - Minimum size column>"
-	$staticIP="<Table V – Item 6 - Value column>"
-	$vnet=Get-AzurevirtualNetwork -Name $vnetName -ResourceGroupName $rgName
-	$nic=New-AzureNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id -PrivateIpAddress $staticIP
-	$avSet=Get-AzureAvailabilitySet –Name $avName –ResourceGroupName $rgName 
-	$vm=New-AzureVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
+	$vmName="<Table M - Item 1 - Virtual machine name column>"
+	$vmSize="<Table M - Item 1 - Minimum size column>"
+	$staticIP="<Table V - Item 6 - Value column>"
+	$vnet=Get-AzureRMVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
+	$nic=New-AzureRMNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id -PrivateIpAddress $staticIP
+	$avSet=Get-AzureRMAvailabilitySet -Name $avName -ResourceGroupName $rgName 
+	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
 	
 	$diskSize=<size of the extra disk for AD DS data in GB>
-	$storageAcc=Get-AzureStorageAccount -ResourceGroupName $rgName -Name $saName
+	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$vhdURI=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-ADDSDisk.vhd"
-	Add-AzureVMDataDisk -VM $vm -Name "ADDSData" -DiskSizeInGB $diskSize -VhdUri $vhdURI  -CreateOption empty
+	Add-AzureRMVMDataDisk -VM $vm -Name "ADDSData" -DiskSizeInGB $diskSize -VhdUri $vhdURI  -CreateOption empty
 	
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the first domain controller." 
-	$vm=Set-AzureVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-	$vm=Set-AzureVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
-	$vm=Add-AzureVMNetworkInterface -VM $vm -Id $nic.Id
-	$storageAcc=Get-AzureStorageAccount -ResourceGroupName $rgName -Name $saName
+	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
+	$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
+	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
+	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-OSDisk.vhd"
-	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
-	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
+	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
+	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 	
 	# Create the second domain controller
-	$vmName="<Table M – Item 2 - Virtual machine name column>"
-	$vmSize="<Table M – Item 2 - Minimum size column>"
-	$staticIP="<Table V – Item 7 - Value column>"
-	$vnet=Get-AzurevirtualNetwork -Name $vnetName -ResourceGroupName $rgName
-	$nic=New-AzureNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id -PrivateIpAddress $staticIP
-	$avSet=Get-AzureAvailabilitySet –Name $avName –ResourceGroupName $rgName 
-	$vm=New-AzureVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
+	$vmName="<Table M - Item 2 - Virtual machine name column>"
+	$vmSize="<Table M - Item 2 - Minimum size column>"
+	$staticIP="<Table V - Item 7 - Value column>"
+	$vnet=Get-AzureRMVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
+	$nic=New-AzureRMNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id -PrivateIpAddress $staticIP
+	$avSet=Get-AzureRMAvailabilitySet -Name $avName -ResourceGroupName $rgName 
+	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
 	
 	$diskSize=<size of the extra disk for AD DS data in GB>
-	$storageAcc=Get-AzureStorageAccount -ResourceGroupName $rgName -Name $saName
+	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$vhdURI=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-ADDSDisk.vhd"
-	Add-AzureVMDataDisk -VM $vm -Name "ADDSData" -DiskSizeInGB $diskSize -VhdUri $vhdURI  -CreateOption empty
+	Add-AzureRMVMDataDisk -VM $vm -Name "ADDSData" -DiskSizeInGB $diskSize -VhdUri $vhdURI  -CreateOption empty
 	
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the second domain controller." 
-	$vm=Set-AzureVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-	$vm=Set-AzureVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
-	$vm=Add-AzureVMNetworkInterface -VM $vm -Id $nic.Id
-	$storageAcc=Get-AzureStorageAccount -ResourceGroupName $rgName -Name $saName
+	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
+	$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
+	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
+	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-OSDisk.vhd"
-	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
-	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
-<!-- deleted by customization
+	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
+	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-> [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure Preview portal. The **Connect** button will be unavailable when you view the properties of the virtual machine. Use the Remote Desktop Connection accessory or another Remote Desktop tool to connect to the virtual machine using its private IP address or intranet DNS name.
--->
+> [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> Preview portal <!-- keep by customization: end -->. The **Connect** button will be unavailable when you view the properties of the virtual machine. Use the Remote Desktop Connection accessory or another Remote Desktop tool to connect to the virtual machine using its private IP address or intranet DNS name.
 
 ## Configure the first domain controller
 
@@ -150,7 +153,7 @@ Next, from the Windows PowerShell command prompt on the first domain controller,
 
 	$domname="<DNS domain name of the domain for which this computer will be a domain controller>"
 	Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
-	Install-ADDSDomainController -InstallDns –DomainName $domname  -DatabasePath "F:\NTDS" -SysvolPath "F:\SYSVOL" -LogPath "F:\Logs"
+	Install-ADDSDomainController -InstallDns -DomainName $domname  -DatabasePath "F:\NTDS" -SysvolPath "F:\SYSVOL" -LogPath "F:\Logs"
 
 You will be prompted to supply the credentials of a domain administrator account. The computer will restart.
 
@@ -164,32 +167,47 @@ Next, from the Windows PowerShell prompt on the second domain controller, run th
 
 	$domname="<DNS domain name of the domain for which this computer will be a domain controller>"
 	Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
-	Install-ADDSDomainController -InstallDns –DomainName $domname  -DatabasePath "F:\NTDS" -SysvolPath "F:\SYSVOL" -LogPath "F:\Logs"
+	Install-ADDSDomainController -InstallDns -DomainName $domname  -DatabasePath "F:\NTDS" -SysvolPath "F:\SYSVOL" -LogPath "F:\Logs"
 
 You will be prompted to supply the credentials of a domain administrator account. The computer will restart.
 
 Next, you need to update the DNS servers for your virtual network so that Azure assigns virtual machines the IP addresses of the two new domain controllers to use as their DNS servers. Note that this procedure uses values from Table V (for your virtual network settings) and Table M (for your virtual machines).
 
-1.	In the left pane of the [Azure Preview portal](https://manage.windowsazure.cn/), click **Browse all > Virtual networks**, and then click the name of your virtual network (Table V – Item 1 – Value column).
+1.	In the left pane of the <!-- deleted by customization Azure Management Portal --><!-- keep by customization: begin --> [Azure Preview portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->, click <!-- deleted by customization **Virtual --><!-- keep by customization: begin --> **Browse all > Virtual <!-- keep by customization: end --> networks**, and then click the name of your virtual network (Table V - Item 1 - Value column).
+<!-- deleted by customization
+2.	On the **Settings** pane, click **DNS servers**.
+3.	On the **DNS servers** pane, type the following:
+-->
+<!-- keep by customization: begin -->
 2.	On the pane for your virtual network, click **All settings**.
 3.	On the **Settings** pane, click **DNS servers**.
 4.	On the **DNS servers** pane, type the following:
-	- For **Primary DNS server**: Table V – Item 6 – Value column
-	- For **Secondary DNS server**: Table V – Item 7 – Value column
+<!-- keep by customization: end -->
+	- For **Primary DNS server**: Table V - Item 6 - Value column
+	- For **Secondary DNS server**: Table V - Item 7 - Value column
+<!-- deleted by customization
+4.	In the left pane of the Azure Management Portal, click **Virtual machines**.
+5.	In the **Virtual machines pane**, click the name of your first domain controller (Table M - Item 1 - Virtual machine name column).
+6.	On the pane for the virtual machine, click **Restart**.
+7.	When the first domain controller is started, click the name of your second domain controller on the **Virtual machines** pane (Table M - Item 2 - Virtual machine name column).
+8.	On the pane for the virtual machine, click **Restart**. Wait until the second domain controller is started.
+-->
+<!-- keep by customization: begin -->
 5.	In the left pane of the Azure Preview portal, click **Browse all > Virtual machines**.
-6.	In the **Virtual machines pane**, click the name of your first domain controller (Table M – Item 1 - Virtual machine name column).
+6.	In the **Virtual machines pane**, click the name of your first domain controller (Table M - Item 1 - Virtual machine name column).
 7.	On the pane for the virtual machine, click **Restart**.
-8.	When the first domain controller is started, click the name of your second domain controller on the **Virtual machines** pane (Table M – Item 2 - Virtual machine name column).
+8.	When the first domain controller is started, click the name of your second domain controller on the **Virtual machines** pane (Table M - Item 2 - Virtual machine name column).
 9.	On the pane for the virtual machine, click **Restart**. Wait until the second domain controller is started.
+<!-- keep by customization: end -->
 
 Note that we restart the two domain controllers so that they are not configured with the on-premises DNS servers as DNS servers. Because they are both DNS servers themselves, they were automatically configured with the on-premises DNS servers as DNS forwarders when they were promoted to domain controllers.
 
 Next, we need to create an Active Directory replication site to ensure that servers in the Azure virtual network use the local domain controllers. Log on to the primary domain controller with a domain administrator account and run the following commands from an administrator-level Windows PowerShell prompt:
 
-	$vnet="<Table V – Item 1 – Value column>"
-	$vnetSpace="<Table V – Item 5 – Value column>"
+	$vnet="<Table V - Item 1 - Value column>"
+	$vnetSpace="<Table V - Item 5 - Value column>"
 	New-ADReplicationSite -Name $vnet 
-	New-ADReplicationSubnet –Name $vnetSpace –Site $vnet
+	New-ADReplicationSubnet -Name $vnetSpace -Site $vnet
 
 Next, add a user account to manage the SQL Server virtual machines.
 
@@ -201,6 +219,11 @@ This diagram shows the configuration resulting from the successful completion of
 
 ## Next step
 
+<!-- deleted by customization
+- Use [Phase 3](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase3) to continue with the configuration of this workload.
+
+-->
+<!-- keep by customization: begin -->
 To continue with the configuration of this workload, go to [Phase 3: Configure SQL Server infrastructure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase3).
 
 ## Additional resources
@@ -214,3 +237,4 @@ To continue with the configuration of this workload, go to [Phase 3: Configure S
 [Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
 [Azure Infrastructure Services Workload: SharePoint Server 2013 farm](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
+<!-- keep by customization: end -->

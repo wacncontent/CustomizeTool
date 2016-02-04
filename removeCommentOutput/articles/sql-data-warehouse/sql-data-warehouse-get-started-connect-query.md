@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Get started: Connect to Azure SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Get started: Connect to Azure SQL Data Warehouse | Windows Azure"
    description="Get started with connecting to SQL Data Warehouse and running some queries."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,19 +8,15 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="10/07/2015"
-   ms.author="twounder"/>
+	ms.service="sql-data-warehouse"
+	ms.date="10/20/2015"
+	wacn.date=""/>
 
 # Connect and query with Visual Studio
 
 > [AZURE.SELECTOR]
-- [Visual Studio](sql-data-warehouse-get-started-connect-query.md)
-- [SQLCMD](sql-data-warehouse-get-started-connect-query-sqlcmd.md)
+- [Visual Studio](/documentation/articles/sql-data-warehouse-get-started-connect)
+- [SQLCMD](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd)
 
 This walkthrough shows you how to connect and query an Azure SQL Data Warehouse database in just a few minutes by using Visual Studio. In this walkthrough, you will:
 
@@ -30,13 +26,13 @@ This walkthrough shows you how to connect and query an Azure SQL Data Warehouse 
 
 ## Prerequisites
 
-+ Visual Studio 2013/2015 - To download and install Visual Studio 2015 and/or SSDT, see [Install Visual Studio and SSDT](sql-data-warehouse-install-visual-studio.md)
++ Visual Studio 2013/2015 - To download and install Visual Studio 2015 and/or SSDT, see [Install Visual Studio and SSDT](/documentation/articles/sql-data-warehouse-install-visual-studio)
 
 ## Get your fully qualified Azure SQL server name
 
-To connect to your database you need the full name  of the server (***servername**.database.windows.net*) that contains the database you want to connect to.
+To connect to your database you need the full name  of the server (***servername**.database.chinacloudapi.cn*) that contains the database you want to connect to.
 
-1. Go to the [Azure preview portal](https://portal.azure.com).
+1. Go to the [Azure preview portal](https://manage.windowsazure.cn).
 2. Browse to the database you want to connect to.
 3. Locate the full server name (we'll use this in the steps below):
 

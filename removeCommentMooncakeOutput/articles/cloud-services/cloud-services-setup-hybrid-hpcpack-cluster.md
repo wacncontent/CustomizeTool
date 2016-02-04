@@ -26,7 +26,7 @@ This tutorial assumes no prior experience with compute clusters or HPC Pack. It 
 
 ## Prerequisites
 
->[AZURE.NOTE]To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Create an Azure account](/pricing/1rmb-trial/).
+>[AZURE.NOTE]To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Create an Azure account](/develop/php/).
 
 In addition, you need the following for this tutorial.
 
@@ -88,7 +88,7 @@ Use the [Azure Management Portal](https://manage.windowsazure.cn) to perform the
 - Create an Azure cloud service in which Azure nodes (worker role instances) will run
 
 - Create an Azure storage account
-
+	
 	>[AZURE.NOTE]Also make a note of your Azure subscription ID, which you will need later. Find this in your Azure <a href="[https://account.windowsazure.cn/Subscriptions">account information</a>.
 
 ### <a>Upload the default management certificate</a>

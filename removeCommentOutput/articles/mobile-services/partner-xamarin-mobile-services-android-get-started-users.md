@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/18/2015"
+	ms.date="11/30/2015"
 	wacn.date=""/>
 
 # Add authentication to your Mobile Services app
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
@@ -38,9 +43,9 @@ Completing this tutorial requires Xamarin.Android and Android SDK 4.2 or a later
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 
-3. In Eclipse, open the project that you created when you completed the tutorial [Get started with Mobile Services].
+3. In Xamarin Studio, open the project that you created when you completed the tutorial [Get started with Mobile Services].
 
-4. From the **Run** menu, then click **Run** to start the app; verify that an unhandled exception with a status code of 401 (Unauthorized) is raised after the app starts.
+4. From the **Run** menu, click **Start debugging** to start the app; verify that an unhandled exception with a status code of 401 (Unauthorized) is raised after the app starts.
 
 	 This happens because the app attempts to access Mobile Services as an unauthenticated user, but the _TodoItem_ table now requires authentication.
 
@@ -50,7 +55,7 @@ Next, you will update the app to authenticate users before requesting resources 
 
 1. Add the following property to the **ToDoActivity** class:
 
-		private MobileServiceUser user;
+		privateÂ MobileServiceUserÂ user;
 
 2. Add the following method to the **ToDoActivity** class:
 
@@ -85,7 +90,7 @@ Next, you will update the app to authenticate users before requesting resources 
             await InitLocalStoreAsync();
 
             // Get the Mobile Service Table instance to use
-            toDoTable = client.GetTable<ToDoItem>();
+            toDoTable = client.GetSyncTable<ToDoItem>();
 
             textNewToDo = FindViewById<EditText>(Resource.Id.textNewToDo);
 
@@ -103,7 +108,7 @@ Next, you will update the app to authenticate users before requesting resources 
 		await CreateTable();
 
 
-6. From the **Run** menu, then click **Run** to start the app and sign in with your chosen identity provider.
+6. From the **Run** menu, click **Start debugging** to start the app and sign in with your chosen identity provider.
 
    	When you are successfully logged-in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
 
@@ -129,6 +134,6 @@ In the next tutorial, [Authorize users with scripts], you will take the user ID 
 [15]: ./media/partner-xamarin-mobile-services-android-get-started-users/mobile-portal-change-table-perms.png
 
 <!-- URLs. -->
-[Authorize users with scripts]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Get started with Mobile Services]: partner-xamarin-mobile-services-android-get-started.md
+[Authorize users with scripts]: mobile-services-javascript-backend-service-side-authorization.md
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331328

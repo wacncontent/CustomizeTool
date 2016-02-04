@@ -41,7 +41,7 @@ To run the C# code sample, you must have:
 - Visual Studio 2013 update 4 (or later). Microsoft now provides Visual Studio Community for *free*.
  - [Visual Studio Community, download](http://www.visualstudio.com/products/visual-studio-community-vs)
  - [More options for free Visual Studio](http://www.visualstudio.com/products/free-developer-offers-vs.aspx)
- - Or, let the [step](#InstallVSForFree) later in this topic describe how the [Azure preview portal](http://manage.windowsazure.cn/) guides you to the install of Visual Studio.
+ - Or, let the [step](#InstallVSForFree) later in this topic describe how the [Azure Management Portal](https://manage.windowsazure.cn) guides you to the install of Visual Studio.
 
 
 <a name="InstallVSForFree" id="InstallVSForFree"></a>
@@ -54,13 +54,13 @@ To run the C# code sample, you must have:
 If you need to install Visual Studio, you can:
 
 - Install Visual Studio Community for free by navigating your browser to Visual Studio product webpages that provide free downloads and other options; or
-- Let the [Azure preview portal](http://manage.windowsazure.cn/) guide you to the download webpage, which described next.
+- Let the [Azure Management Portal](https://manage.windowsazure.cn) guide you to the download webpage, which described next.
 
 
-### Visual Studio through the Azure preview portal
+### Visual Studio through the Azure Management Portal
 
 
-1. Login through the [Azure preview portal](http://manage.windowsazure.cn/), http://manage.windowsazure.cn/.
+1. Login through the [Azure Management Portal](https://manage.windowsazure.cn), https://manage.windowsazure.cn.
 
 2. Click **BROWSE* ALL** > **SQL databases**. A blade opens that searches for databases.
 
@@ -122,7 +122,7 @@ Our C# sample uses the .NET Framework assembly **System.Configuration.dll**, so 
 ## Step 4: Get the connection string
 
 
-Use the [Azure preview portal](http://manage.windowsazure.cn/) to copy the connection string for your database.
+Use the [Azure Management Portal](https://manage.windowsazure.cn) to copy the connection string for your database.
 
 Your first use will be to connect Visual Studio to your Azure SQL Database **AdventureWorksLT** database.
 
@@ -311,7 +311,7 @@ We try to keep the C# sample short. Yet we added code to read a config file to h
 Your client C# program cannot connect to Azure SQL Database until the IP address of the client computer has been added in the SQL Database firewall. Your program will fail with a handy error message that states the necessary IP address.
 
 
-You can use the [Azure preview portal](http://manage.windowsazure.cn/) to add the IP address.
+You can use the [Azure Management Portal](https://manage.windowsazure.cn) to add the IP address.
 
 
 

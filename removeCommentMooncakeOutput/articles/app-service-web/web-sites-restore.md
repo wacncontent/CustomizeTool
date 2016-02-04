@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Restore a web app in Azure Websites" 
-	description="Learn how to restore your web app from a backup." 
+	pageTitle="Restore a web site in Azure Websites" 
+	description="Learn how to restore your web site from a backup." 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
@@ -9,16 +9,17 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/16/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
-# Restore a web app in Azure Websites
+# Restore a web site in Azure Websites
 
-This article shows you how to restore a web app that you have previously backed up by using the [Azure Websites](/documentation/services/web-sites/) Backup feature. For more information, see [Azure Websites Backups](/documentation/articles/web-sites-backup). 
+This article shows you how to restore an Azure Website that you have previously backed up by using the [Azure Websites](/documentation/services/web-sites) Backup feature. For more information, see [Azure Websites Backups](/documentation/articles/web-sites-backup). 
 
-The Web Apps Restore feature lets you restore your web app on-demand to a previous state, or create a new web app based on one of your original web app's backups. Creating a new web app that runs in parallel to the latest version can be useful for A/B testing.
+The Azure Websites Restore feature lets you restore your web site with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new web site based on one of your original web site's backup. Creating a new web site that runs in parallel to the latest version can be useful for A/B testing.
 
-The Web Apps Restore feature, available on the **Backups** blade in the [Azure Management Portal](http://manage.windowsazure.cn), is available only in Standard and Premium modes. For information about scaling your app using Standard or Premium mode, see [Scale a web app in Azure Websites](/documentation/articles/web-sites-scale). 
+The Azure Websites Restore feature, available on the **Backups** blade in the [Azure Management Portal](http://manage.windowsazure.cn), is available only in Standard pricing tiers. For information about scaling your app using Standard tier, see [Scale a web site in Azure Websites](/documentation/articles/web-sites-scale).
+
 ##In this article
 - [To Restore an Azure  Website from a previously made backup](#PreviousBackup)
 - [To Restore an Azure  Website directly from a storage account](#StorageAccount)
@@ -26,7 +27,8 @@ The Web Apps Restore feature, available on the **Backups** blade in the [Azure M
 - [View the Operation Logs](#OperationLogs)
 
 <a name="PreviousBackup"></a>
-## To Restore a web app from a previously made backup
+## To Restore a web site from a previously made backup
+
 1. On the **Backups** tab, click **Restore Now** in the command bar at the bottom of the portal page. The **Restore Now** dialog box appears.
 	
 	![Choose backup source][ChooseBackupSource]
@@ -36,6 +38,7 @@ The Web Apps Restore feature, available on the **Backups** blade in the [Azure M
 4. Follow the steps in the [Choose Your  Website Restore Settings](#RestoreSettings) section later in this article.
 <a name="StorageAccount"></a>
 ## Download or delete a backup from a storage account
+
 1. On the **Backups** tab, click **Restore Now** in the command bar at the bottom of the portal page. The **Restore Now** dialog box appears.
 	
 	![Choose backup source][ChooseBackupSource]
@@ -92,8 +95,10 @@ The Web Apps Restore feature, available on the **Backups** blade in the [Azure M
 5. Click the check mark to start the restore operation. When it completes, the new  Website instance (if that is the restore option you chose) will be visible in the list of  Websites in the portal.
 	
 	![Restored Contoso  Website][RestoredContoso Website]
+
 <a name="OperationLogs"></a>
 ## View the Audit Logs
+
 1. To see details about the success or failure of the  Website restore operation, go to the  Website's Dashboard tab. In the **Quick Glance** section, under **Management Services**, click **Operation Logs**.
 	
 	![Dashboard - Operation Logs Link][DashboardOperationLogsLink]
@@ -112,7 +117,6 @@ The Web Apps Restore feature, available on the **Backups** blade in the [Azure M
 
 <!-- IMAGES -->
 [RestoredContoso Website]: ./media/web-sites-restore/09RestoredContosoWebsite.png
-[ChooseBackupSource]: ./media/web-sites-restore/01ChooseBackupSource.png
 [ChooseRestoreNow]: ./media/web-sites-restore/02ChooseRestoreNow.png
 [ViewContainers]: ./media/web-sites-restore/03ViewContainers.png
 [StorageAccountFile]: ./media/web-sites-restore/02StorageAccountFile.png

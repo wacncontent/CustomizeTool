@@ -2,19 +2,24 @@
     pageTitle="Tutorial: Azure Active Directory integration with Citrix GoToMeeting | Windows Azure" 
     description="Learn how to use Citrix GoToMeeting with Azure Active Directory to enable single sign-on, automated provisioning, and more!." 
     services="active-directory" 
-    authors="MarkusVi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/01/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Citrix GoToMeeting  
 Applies To: Azure
 
+<!-- deleted by customization
+>[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/8d4839f0-adfc-4fcf-9005-7fb8fe0c7adb/tutorial-azure-ad-integration-with-citrix-gotomeeting?forum=WindowsAzureAD).
+-->
+<!-- keep by customization: begin -->
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=522412).
+<!-- keep by customization: end -->
 
 The objective of this tutorial is to show the integration of Azure and Citrix GoToMeeting. The scenario outlined in this tutorial assumes that you already have the following items:
 

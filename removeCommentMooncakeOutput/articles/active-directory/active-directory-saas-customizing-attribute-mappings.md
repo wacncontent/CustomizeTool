@@ -1,15 +1,15 @@
 <properties
-	pageTitle="Customizing Attribute Mappings"
+	pageTitle="Customizing Attribute Mappings | Windows Azure"
 	description="Learn what attribute mappings for SaaS apps in Azure Active Directory are how you can modify them to address your business needs."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
-	manager="swadhwa"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/27/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 
@@ -18,7 +18,7 @@
 
 Windows Azure AD provides support for user provisioning to third-party SaaS applications such as Salesforce, Google Apps and others. If you have user provisioning for a third party SaaS application enabled, the Azure Management Portal controls its attribute values in form of a configuration called “attribute mapping”.
 
-There is a preconfigured set of attribute mappings between Azure AD user objects and each SaaS app’s user objects. Some apps manage other types of objects, such as Groups or Contacts. <br> 
+There is a preconfigured set of attribute mappings between Azure AD user objects and each SaaS <!-- deleted by customization app's --><!-- keep by customization: begin --> app’s <!-- keep by customization: end --> user objects. Some apps manage other types of objects, such as Groups or Contacts. <br>
  You can customize the default attribute mappings according to your business needs. This means, you can change or delete existing attribute mappings or create new attribute mappings.
 
 In the Azure AD portal, you can access this feature by clicking Attributes in the toolbar of a SaaS application.
@@ -62,10 +62,10 @@ To modify an existing attribute mapping, just select the mapping, and then click
 With attribute mappings, you control how attributes are populated in a third party SaaS application. 
 There are four different mapping types supported:
 
-- **Direct** – the target attribute is populated with the value of an attribute of the linked object in Azure AD.
+<!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> **Direct** - the target attribute is populated with the value of an attribute of the linked object in Azure AD.
 
 
-- **Constant** – the target attribute is populated with a specific string you have specified.
+<!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> **Constant** - the target attribute is populated with a specific string you have specified.
 
 
 - **Expression** - the target attribute is populated based on the result of a script-like expression. 

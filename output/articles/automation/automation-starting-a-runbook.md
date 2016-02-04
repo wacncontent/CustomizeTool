@@ -57,7 +57,6 @@ The following table will help you determine the method to start a runbook in Azu
   </td>
  </tr>
  <tr>
-<!-- deleted by customization
   <td><a href="/documentation/articles/automation-webhooks/">Webhook</a></td>
   <td>
    <ul>
@@ -80,7 +79,6 @@ The following table will help you determine the method to start a runbook in Azu
   </td>
  </tr>
  <tr>
--->
   <td><a href="/documentation/articles/automation-scheduling-a-runbook">Schedule</a></td>
   <td>
    <ul>
@@ -111,8 +109,7 @@ The following table will help you determine the method to start a runbook in Azu
 1. Select the **Runbooks** tab.
 1. Select a runbook, and then click **Start**.
 1. If the runbook has parameters, you will be prompted to provide values with a text box for each parameter. See [Runbook Parameters](#Runbook-parameters) below for further details on parameters.
-1. Either select **View Job** next to the **Starting** runbook message or select the **Jobs** tab for the runbook to view the runbook job’s status.
-<!-- deleted by customization
+1. Either select **View Job** next to the **Starting** runbook message or select the **Jobs** tab for the runbook to view the runbook job's status.
 
 ## Starting a runbook with the Azure preview portal
 
@@ -121,32 +118,31 @@ The following table will help you determine the method to start a runbook in Azu
 2. Click **Start**.
 1. If the runbook has no parameters, you will be prompted to confirm whether you want to start it.  If the runbook has parameters, the **Start Runbook** blade will be opened so you can provide parameter values. See [Runbook Parameters](#Runbook-parameters) below for further details on parameters.
 3. The **Job** blade is opened so that you can track the job's status.
--->
 
 
 ## Starting a runbook with Windows PowerShell
 
 You can use the [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690259.aspx) to start a runbook with Windows PowerShell. The following sample code starts a runbook called Test-Runbook.
 
-	Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook"
+	Start-AzureAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook"
 
 Start-AzureAutomationRunbook returns a job object that you can use to track its status once the runbook is started. You can then use this job object with [Get-AzureAutomationJob](http://msdn.microsoft.com/zh-cn/library/azure/dn690263.aspx) to determine the status of the job and [Get-AzureAutomationJobOutput](http://msdn.microsoft.com/zh-cn/library/azure/dn690268.aspx) to get its output. The following sample code starts a runbook called Test-Runbook, waits until it has completed, and then displays its output.
 
-	$job = Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook"
+	$job = Start-AzureAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook"
 	
 	$doLoop = $true
 	While ($doLoop) {
-	   $job = Get-AzureAutomationJob –AutomationAccountName "MyAutomationAccount" -Id $job.Id
+	   $job = Get-AzureAutomationJob -AutomationAccountName "MyAutomationAccount" -Id $job.Id
 	   $status = $job.Status
 	   $doLoop = (($status -ne "Completed") -and ($status -ne "Failed") -and ($status -ne "Suspended") -and ($status -ne "Stopped") 
 	}
 	
-	Get-AzureAutomationJobOutput –AutomationAccountName "MyAutomationAccount" -Id $job.Id –Stream Output
+	Get-AzureAutomationJobOutput -AutomationAccountName "MyAutomationAccount" -Id $job.Id -Stream Output
 
 If the runbook requires parameters, then you must provide them as a [hashtable](http://technet.microsoft.com/zh-cn/library/hh847780.aspx) where the key of the hashtable matches the parameter name and the value is the parameter value. The following example shows how to start a runbook with two string parameters named FirstName and LastName, an integer named RepeatCount, and a boolean parameter named Show. For additional information on parameters, see [Runbook Parameters](#Runbook-parameters) below.
 
 	$params = @{"FirstName"="Joe";"LastName"="Smith";"RepeatCount"=2;"Show"=$true}
-	Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" –Parameters $params
+	Start-AzureAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" -Parameters $params
 
 ## Runbook parameters
 

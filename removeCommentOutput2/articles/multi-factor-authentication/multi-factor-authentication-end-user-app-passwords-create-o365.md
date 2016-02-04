@@ -7,18 +7,14 @@
 	manager="stevenp" 
 	editor="curtland"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 # Create or delete app passwords in the Office 365 portal for Azure Multi-Factor Authentication
 
-If you use multi-factor authentication with Office 365 you will want to create and delete app passwords through the Office 365 portal.
+If you use multi-factor authentication with Office 365 you will want to create app passwords through the Office 365 portal.
 
 ## To create app passwords in the Office 365 portal
 --------------------------------------------------------------------------------

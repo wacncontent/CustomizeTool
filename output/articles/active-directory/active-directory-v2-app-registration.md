@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/10/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # App model v2.0 preview: How to register an app with Microsoft

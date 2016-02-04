@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 #Introduction to Apache Storm on HDInsight: Real-time analytics for Hadoop
@@ -213,4 +213,4 @@ Learn more about real-time analytics solutions with Apache Storm in HDInsight:
 [stormtrident]: https://storm.incubator.apache.org/documentation/Trident-API-Overview.html
 [samoa]: http://yahooeng.tumblr.com/post/65453012905/introducing-samoa-an-open-source-platform-for-mining
 [apachetutorial]: https://storm.incubator.apache.org/documentation/Tutorial.html
-[gettingstarted]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started
+[gettingstarted]: hdinsight-apache-storm-tutorial-get-started.md

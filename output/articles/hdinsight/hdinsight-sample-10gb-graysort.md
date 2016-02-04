@@ -37,8 +37,8 @@ The input and output format, used by all three applications, reads and writes th
 **Prerequisites:**
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-- **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters).
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
+- **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters-v1).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 
 
@@ -417,8 +417,9 @@ For tutorials that guide you through running other samples and that provide inst
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
+
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples
 [hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
 [hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming

@@ -4,7 +4,7 @@ deleted:
 
 		There are some projects that attempt to overcome these shortcomings, such as [Pyleus](https://github.com/Yelp/pyleus) and [Streamparse](https://github.com/Parsely/streamparse). While both of these can be ran on Linux-based HDInsight clusters, they are not the primary focus of this document as they require customizations during cluster setup and are not fully tested on HDInsight clusters. Notes on using these frameworks with HDInsight are included at the end of this document.
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -12,13 +12,13 @@ deleted:
 		
 		        Once the file has finished uploading, connect to the cluster using SSH and start the topology using `storm jar WordCount-1.0-SNAPSHOT.jar com.microsoft.example.WordCount wordcount`
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		(SSH session to a Linux cluster for example,)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -39,13 +39,13 @@ deleted:
 		        
 		                storm jar wordcount-1.0-SNAPSHOT.jar wordcount.core wordcount
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		(SSH session to a Linux cluster,)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -103,7 +103,7 @@ deleted:
 		        pyleus list -n localhost
 		        pyleus kill -n localhost word_count
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -224,11 +224,11 @@ deleted:
 		    
 		    This will connect to the HDInsight cluster, deploy the topology and any Python dependencies, then start the topology.
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		* [How to use Python for streaming MapReduce jobs](/documentation/articles/hdinsight-hadoop-streaming-python)
 
-reason: ()
+reason: (Linux Support)
 

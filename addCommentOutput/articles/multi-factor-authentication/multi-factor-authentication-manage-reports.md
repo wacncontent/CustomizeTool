@@ -7,14 +7,10 @@
 	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 # Reports in Azure Multi-Factor Authentication
 
@@ -33,7 +29,12 @@ Queued|Lists reports queued for processing and their status. A link to download 
 
 ## To view reports
 
+<!-- deleted by customization
 1. Log on to [http://azure.microsoft.com](http://azure.microsoft.com)
+-->
+<!-- keep by customization: begin -->
+1. Log on to [http://www.windowsazure.cn](http://www.windowsazure.cn)
+<!-- keep by customization: end -->
 2. On the left, select Active Directory.
 3. At the top select Multi-Factor Auth Providers. This will bring up a list of your Multi-Factor Auth Providers.
 4. If you have more than one Multi-Factor Auth Provider, select the one you wish to view the fraud alert report and click Manage at the bottom of the page. If you have only one, just click Manage. This will open the Azure Multi-Factor Authentication Management Portal.
@@ -46,6 +47,6 @@ Queued|Lists reports queued for processing and their status. A link to download 
 
 **Additional Resources**
 
-* [For Users](multi-factor-authentication-end-user.md)
-* [Azure Multi-Factor Authentication on MSDN](https://msdn.microsoft.com/library/azure/dn249471.aspx)
+* [For Users](/documentation/articles/multi-factor-authentication-end-user)
+* [Azure Multi-Factor Authentication on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn249471.aspx)
  

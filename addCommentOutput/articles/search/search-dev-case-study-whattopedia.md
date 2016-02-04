@@ -1,36 +1,32 @@
 <properties 
-	pageTitle="Azure Search Developer Case Study: How WhatToPedia built an infomedia portal on Microsoft Azure" 
-	description="Learn how to build an information portal and meta search engine using Search service on Microsoft Azure" 
+	pageTitle="Azure Search Developer Case Study: How WhatToPedia built an infomedia portal on Windows Azure | Windows Azure | Hosted cloud search service" 
+	description="Learn how to build an information portal and meta search engine using Azure Search, a cloud hosted search service for developers." 
 	services="search, sql-database,  storage, web-sites" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
 	manager="mblythe"/>
 
-<tags 
-	ms.service="search" 
-	ms.devlang="NA" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="search" 
-	ms.date="07/08/2015" 
-	ms.author="heidist"/>
+<tags
+	ms.service="search"
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
 # Azure Search Developer Case Study
 
-## How [WhatToPedia.com](http://whattopedia.com/) built an infomedia portal on Microsoft Azure
+## How [WhatToPedia.com](http://whattopedia.com/) built an infomedia portal on <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure
 
  ![][6]  &nbsp;&nbsp;&nbsp;  <font size="9">The big idea</font> 
 
 
 Our idea is to build an information portal that helps shoppers connect with retailers through a highly-relevant, scoped-search experience, similar to how travel portals match tourists up with the hotels, restaurants, and entertainment when in uncharted territory. 
 
-The portal we envision will deliver an exceptionally high-quality search experience over retailer data in a given market, helping shoppers find stores based on location and other amenities the retailer provides. We will seed the search engine with an initial dataset, but deeper value will be built over time, with the help of retailer subscribers who post information about their business. Promotions, new merchandise, popular brands, in-house specialty services -– all are examples of data that adds value to our site. This data is self-reported and integrated into the search corpus, once the retailer signs up as a subscriber. Advertising, plus the subscription model, provide the revenue stream for our new business.
+The portal we envision will deliver an exceptionally high-quality search experience over retailer data in a given market, helping shoppers find stores based on location and other amenities the retailer provides. We will seed the search engine with an initial dataset, but deeper value will be built over time, with the help of retailer subscribers who post information about their business. Promotions, new merchandise, popular brands, in-house specialty services <!-- deleted by customization -- --><!-- keep by customization: begin --> -– <!-- keep by customization: end --> all are examples of data that adds value to our site. This data is self-reported and integrated into the search corpus, once the retailer signs up as a subscriber. Advertising, plus the subscription model, provide the revenue stream for our new business.
 
 Search will be the predominant user interaction model, on a pure cloud platform. For purposes of scale and low-costs, almost everything we do, from the portal experience to source control, will be through an online service. Using a search engine that provides the features we need out of the box, we can create a search application quickly, without having to build and manage a search engine ourselves.
 
 ## What we built
 
-WhatToPedia is a start-up infomedia company. We built [WhatToPedia.com](http://whattopedia.com/) –- currently in test-market in northern Europe with a go-live date of February 2, 2015. Our customer base is primarily brick-and-mortar shops who need an affordable online presence that is easy to manage and maintain.
+WhatToPedia is a start-up infomedia company. We built [WhatToPedia.com](http://whattopedia.com/) <!-- deleted by customization -- --><!-- keep by customization: begin --> –- <!-- keep by customization: end --> currently in test-market in northern Europe with a go-live date of February 2, 2015. Our customer base is primarily brick-and-mortar shops who need an affordable online presence that is easy to manage and maintain.
 
 Our task is to attract shoppers through a great online search experience, boosting results based on city or neighborhood, brands, store names, or store types. Attracting shoppers has a ripple effect, motivating retailers to subscribe to our portal site. Subscriptions are fee-based, at an affordable rate.
 
@@ -52,12 +48,24 @@ Our vision was to build a complete infrastructure based on cloud services only. 
  
 ### High-level components
 
-We built a business, not just a site. Supporting the entire effort required a full range of tools and applications. We adopted Visual Studio and Visual Studio Online for development, Team Foundation Service (TFS) Online for source control and scrum management, Office 365 for communication and collaboration, and of course Microsoft Azure for all site-related operations and storage. With Visual Studio, the IDE provided direct provisioning to Azure, with integration to TFS Online providing an additional productivity boost.
+We built a business, not just a site. Supporting the entire effort required a full range of tools and applications. We adopted Visual Studio and Visual Studio Online for development, Team Foundation Service (TFS) Online for source control and scrum management, Office 365 for communication and collaboration, and of course <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure for all site-related operations and storage. With Visual Studio, the IDE provided direct provisioning to Azure, with integration to TFS Online providing an additional productivity boost.
 
 The diagram below illustrates the high-level components used in the WhatToPedia infrastructure.
 
    ![][8]
 
+<!-- deleted by customization
+### How we use Windows Azure
+
+Looking at the green boxes in the previous diagram, you'll see that the WhatToPedia solution is built on these services:
+
+- [Azure Search](/home/features/search/)
+- [Azure Websites using MVC 4](/home/features/web-site/)
+- [Azure WebJobs for scheduled tasks](/documentation/articles/websites-webjobs-resources)
+- [Azure SQL Database](/documentation/services/sql-databases/)
+- [Azure BLOB Storage](/home/features/storage/)
+-->
+<!-- keep by customization: begin -->
 ### How we use Microsoft Azure
 
 Looking at the green boxes in the previous diagram, you’ll see that the WhatToPedia solution is built on these services:
@@ -67,13 +75,14 @@ Looking at the green boxes in the previous diagram, you’ll see that the WhatTo
 - [Azure WebJobs for scheduled tasks](../websites-webjobs-resources.md)
 - [Azure SQL Database](http://azure.microsoft.com/services/sql-database/)
 - [Azure BLOB Storage](http://azure.microsoft.com/services/storage/)
+<!-- keep by customization: end -->
 - [SendGrid Email Delivery](http://azure.microsoft.com/marketplace/partners/sendgrid/sendgrid-azure/)
 
 The very heart of the solution is data and search. The flow of data from the Reseller provider to the end customer is illustrated below:
 
   ![][9]
 
-Primary data storage is the reseller and accounting data in Azure SQL Database. This consists of the initial dataset, plus retailer-specific data added over time. We’re using an Azure WebJob to post updates from SQL Database to the search corpus in Azure Search.
+Primary data storage is the reseller and accounting data in Azure SQL Database. This consists of the initial dataset, plus retailer-specific data added over time. <!-- deleted by customization We're --><!-- keep by customization: begin --> We’re <!-- keep by customization: end --> using an Azure WebJob to post updates from SQL Database to the search corpus in Azure Search.
 
 ### Presentation layer
 
@@ -83,12 +92,12 @@ The portal is an Azure Website, implemented in MVC 4 and [Twitter Bootstrap](htt
 
 Shoppers browse the site anonymously. As such, there are no login requirements for shoppers, nor do we store any consumer data. 
 
-Retailers are a different story. Here, we store public-facing profile information, billing information, and media content that they want to expose on the site. Every retailer who subscribes to the site get a user login, used to authenticate the user prior to making updates to the subscriber’s profile.  We securely store all subscriber data in Azure SQL Database and Azure BLOB storage.
-We opted for an authentication model based on .NET forms-based authentication. We chose this approach for its simplicity; we didn’t need the roles, UI support and other extraneous features that come with other approaches. 
+Retailers are a different story. Here, we store public-facing profile information, billing information, and media content that they want to expose on the site. Every retailer who subscribes to the site get a user login, used to authenticate the user prior to making updates to the <!-- deleted by customization subscriber's --><!-- keep by customization: begin --> subscriber’s <!-- keep by customization: end --> profile.  We securely store all subscriber data in Azure SQL Database and Azure BLOB storage.
+We opted for an authentication model based on .NET forms-based authentication. We chose this approach for its simplicity; we <!-- deleted by customization didn't --><!-- keep by customization: begin --> didn’t <!-- keep by customization: end --> need the roles, UI support and other extraneous features that come with other approaches.
 
 To ensure that retailers only see the data that belongs to them, we created a retailer ID for each retailer that is subsequently used on all read and write operations involving retailer-specific data. With this approach, we found that we did not need to grant database permissions to individual retailers. All retailers interact with the system under a single database role, with the retailer ID as our data isolation technique.
 
-Because our business is all about the downstream effects (driving more business to retailers, creating incentive to advertise and subscribe), we can draw the line at handling purchases over the web. As such, you won’t find a shopping cart on our site, which simplifies our security requirements. 
+Because our business is all about the downstream effects (driving more business to retailers, creating incentive to advertise and subscribe), we can draw the line at handling purchases over the web. As such, you <!-- deleted by customization won't --><!-- keep by customization: begin --> won’t <!-- keep by customization: end --> find a shopping cart on our site, which simplifies our security requirements.
 
 Another simplification we employed was to outsource our billing and accounts payable operations. By routing customer payment information directly to a third-party ([SveaWebPay](http://www.sveawebpay.se/)), we reduce the risks associating with storing and protecting sensitive data in our data stores. 
 
@@ -111,21 +120,28 @@ This is how we built the prototype.
 
 **Configure Azure Search Service**
 
-1. Login to Azure portal and added the Search service to our subscription. We used the shared version (free with our subscription).
+1. Login to Azure <!-- deleted by customization Management Portal --><!-- keep by customization: begin --> portal <!-- keep by customization: end --> and added the Search service to our subscription. We used the shared version (free with our subscription).
 2. Create an index. For the prototype, we used the portal UI to define the search fields and create the scoring profiles. Our scoring profile is based on location data: country | city |address (see: Add scoring profiles).
-3. Copy the service URL and admin api-key to our configuration files. This key is on the Search service page in the portal, and it’s used to authenticate to the service.
+3. Copy the service URL and admin api-key to our configuration files. This key is on the Search service page in the portal, and <!-- deleted by customization it's --><!-- keep by customization: begin --> it’s <!-- keep by customization: end --> used to authenticate to the service.
 	
-**Develop a Search Indexer Job – Windows Console**
+**Develop a Search Indexer Job <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> Windows Console**
 
 1. Read all resellers from database.
-2. Call the Azure Search Service API to upload resellers one by one (see: http://msdn.microsoft.com/library/azure/dn798930.aspx).
-3. Set a property in database that reseller is indexed for incremental indexing. We did this by adding an ‘indexer’ field that stores the index status of each profile (indexed or not). 
+2. Call the Azure Search Service API to upload resellers one by one (see: <!-- deleted by customization http://msdn.microsoft.com/zh-cn/library/azure/dn798930.aspx) --><!-- keep by customization: begin --> http://msdn.microsoft.com/library/azure/dn798930.aspx) <!-- keep by customization: end -->.
+3. Set a property in database that reseller is indexed for incremental indexing. We did this by adding an <!-- deleted by customization 'indexer' --><!-- keep by customization: begin --> ‘indexer’ <!-- keep by customization: end --> field that stores the index status of each profile (indexed or not).
 
 See the appendix for the code snippet that builds the indexer job.
 
+<!-- deleted by customization
+**Develop a Search Web Portal - MVC**
+
+1. Call Azure Search Service to get all documents from search (see: http://msdn.microsoft.com/zh-cn/library/azure/dn798927.aspx)
+-->
+<!-- keep by customization: begin -->
 **Develop a Search Web Portal – MVC**
 
 1. Call Azure Search Service to get all documents from search (see: http://msdn.microsoft.com/library/azure/dn798927.aspx)
+<!-- keep by customization: end -->
 2. Extract following from the search service response (by using json.net http://james.newtonking.com/json)
    - Results
    - Facets
@@ -135,7 +151,7 @@ See the appendix for the code snippet that builds the indexer job.
 This is the code we used to get the results from Azure Search:
 
     string requestUrl = 
-    string.Format("https://{0}.search.windows.net/indexes/profiles/docs?searchMode=all&$count=true&search={1}&facet=city,count:20&facet=category&$top=10&$skip={2}&api-version=2014-07-31-Preview{3}", Config.SearchServiceName, EscapeODataString(q), skip, filter);
+    <!-- deleted by customization string.Format("https://{0}.search.chinacloudapi.cn/indexes/profiles/docs?searchMode=all&$count=true&search={1}&facet=city,count:20&facet=category&$top=10&$skip={2}&api-version=2014-07-31-Preview{3}" --><!-- keep by customization: begin --> string.Format("https://{0}.search.windows.net/indexes/profiles/docs?searchMode=all&$count=true&search={1}&facet=city,count:20&facet=category&$top=10&$skip={2}&api-version=2014-07-31-Preview{3}" <!-- keep by customization: end -->, Config.SearchServiceName, EscapeODataString(q), skip, filter);
       var response = client.GetAsync(requestUrl).Result; //  + Uri.EscapeDataString("hennes")
       response.EnsureSuccessStatusCode();
      dynamic json = JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result);
@@ -157,7 +173,7 @@ Each of the documents has a hidden property called "cities" built on the collect
 
 ###Data storage
 
-All data (profile, subscription, and accounting) is stored in SQL Database. All media files are stored in Azure BLOB storage, including images and videos provided by the retailer. Using separate BLOB storage isolates the effects of uploading files; files are never co-mingled with the website, so we don’t need to rebuild the site whenever we add files.
+All data (profile, subscription, and accounting) is stored in SQL Database. All media files are stored in Azure BLOB storage, including images and videos provided by the retailer. Using separate BLOB storage isolates the effects of uploading files; files are never co-mingled with the website, so we <!-- deleted by customization don't --><!-- keep by customization: begin --> don’t <!-- keep by customization: end --> need to rebuild the site whenever we add files.
 
 An important benefit of our storage design is that multiple developers can share a single development storage. One of the requirements for the WhatToPedia project was to be able to create a development environment within 15 minutes, including reseller data, images, and videos. By getting the latest data from TFS Online, running a SQL script, and running the import job, a complete environment can be stood up in no time at all. This practice also improves the staging process.
 
@@ -165,7 +181,7 @@ An important benefit of our storage design is that multiple developers can share
 
 We use Azure WebJobs to update data to the index. By creating a search indexer job, the indexing part was very easy to integrate into our solution. The only code change we made was to accommodate the indexer job was to add an `Indexed` field to our data model to indicate the index state. Whenever a new profile is added or updated, the `Indexed` field is set to false. The same applies if the retailer changes his or her profile data through the portal.  
 
-The job looks for all rows having `Indexed` set to false. When it finds the row, the document is posted to Azure Search, and then the `Indexed` field is set to true. We didn’t have to plan for adding versus updating data because the Azure Search service actually takes care of this. If you add a document that is already present, the service will do an update automatically.
+The job looks for all rows having `Indexed` set to false. When it finds the row, the document is posted to Azure Search, and then the `Indexed` field is set to true. We <!-- deleted by customization didn't --><!-- keep by customization: begin --> didn’t <!-- keep by customization: end --> have to plan for adding versus updating data because the Azure Search service actually takes care of this. If you add a document that is already present, the service will do an update automatically.
 
 All web jobs have been developed as console applications that can be uploaded to Azure web sites as ZIP files, unzipped, and then scheduled.
 
@@ -180,7 +196,7 @@ We designed a multi-tiered backup strategy to recover from a range of scenarios,
 
 First, by keeping the web site source code in TFS Online, we know that if the site goes down, we can rebuild it by republishing from TFS. 
 
-Subscriber data in Azure SQL Database is the most sensitive asset. We back this up using the built-in feature (see [Azure SQL Database Backup and Restore](http://msdn.microsoft.com/library/azure/jj650016.aspx)). The backup schedule is full database backup once a week, differential database backups once a day, and transaction log backups every 5 minutes.  Given the size of the data, this solution is more than adequate for our immediate and projected data volumes.
+Subscriber data in Azure SQL Database is the most sensitive asset. We back this up using the built-in feature (see [Azure SQL Database Backup and <!-- deleted by customization Restore](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)) --><!-- keep by customization: begin --> Restore](http://msdn.microsoft.com/library/azure/jj650016.aspx)) <!-- keep by customization: end -->. The backup schedule is full database backup once a week, differential database backups once a day, and transaction log backups every 5 minutes.  Given the size of the data, this solution is more than adequate for our immediate and projected data volumes.
 
 Third, we store image and video files in Azure BLOB storage. We are still evaluating the ultimate backup plan for this data, considering Cloudberry Explorer for Azure as a potential solution. For now, we use a WebJob to copy images and videos to another location.
 
@@ -190,7 +206,7 @@ Because we already had data, it was easy to establish proof-of-concept. Within h
 
 The biggest surprise for us was how fast we could learn Azure Search, and how much we got back. Literally, we established proof-of-concept in a few hours (see the note below), replacing 500 lines of code with 3 lines of code in the front end application (plus a new WebJob), and getting better results. 
 
-Previously, our code implemented paging, counts, and other behaviors that are standard to search. Using Azure Search, the results we get back include the search hits, facets, paging data, counts -- all the stuff we needed and were having to supply ourselves. It also included boosting and built-in faceted navigation, which we didn’t have in our original solution.
+Previously, our code implemented paging, counts, and other behaviors that are standard to search. Using Azure Search, the results we get back include the search hits, facets, paging data, counts -- all the stuff we needed and were having to supply ourselves. It also included boosting and built-in faceted navigation, which we <!-- deleted by customization didn't --><!-- keep by customization: begin --> didn’t <!-- keep by customization: end --> have in our original solution.
 
 The greatest challenge during implementation was that it was a Preview version and finding information and shared experiences was difficult. Once we connected a few dots, we found that using Azure Search Service was pretty simple due to its REST API and JSON data format. We could call the framework directly from most open source plugins like JQuery JSON.Net, and we could use tools like Fiddler for fast experimentation and debugging. 
 
@@ -200,11 +216,11 @@ The greatest challenge during implementation was that it was a Preview version a
 
 One of our learnings during the proof-of-concept was to plan facets carefully upfront. After loading a lot of data into the solution, we saw that the sheer volume of facets was too high to present to the users. 
 
-We solved this by constraining the facet count parameter. The count parameter imposes a hard limit on the number of facets returned to the user. A link that includes a discussion of the count parameter can be found [here](search-faceted-navigation.md).
+We solved this by constraining the facet count parameter. The count parameter imposes a hard limit on the number of facets returned to the user. A link that includes a discussion of the count parameter can be found <!-- deleted by customization [here](/documentation/articles/search-faceted-navigation) --><!-- keep by customization: begin --> [here](search-faceted-navigation.md) <!-- keep by customization: end -->.
 
 ###WebJobs for scheduling tasks
 
-Azure Search wasn’t the only pleasant surprise for us. We discovered that using WebJobs to automate our data load operations to Azure Search was vastly superior to our previous approach, which entailed using a dedicated VM running Windows Scheduler, with scheduled tasks for updating the search index. WebJobs was simpler to configure and easier to debug, and of course much cheaper than having to pay for a dedicated VM.
+Azure Search <!-- deleted by customization wasn't --><!-- keep by customization: begin --> wasn’t <!-- keep by customization: end --> the only pleasant surprise for us. We discovered that using WebJobs to automate our data load operations to Azure Search was vastly superior to our previous approach, which entailed using a dedicated VM running Windows Scheduler, with scheduled tasks for updating the search index. WebJobs was simpler to configure and easier to debug, and of course much cheaper than having to pay for a dedicated VM.
 
 ###Azure BLOB Storage Explorer for updating images
 
@@ -218,8 +234,14 @@ We hope you found this case study useful. If you go on to use Azure Search, I re
 
 - [MSDN forum dedicated to Azure Search](https://social.msdn.microsoft.com/forums/azure/home?forum=azuresearch)
 - [StackOverflow also has a tag](http://stackoverflow.com/questions/tagged/azure-search)
+<!-- deleted by customization
+- [Documentation page on Azure.com](/documentation/services/search/)
+- [Azure Search documentation on MSDN](http://msdn.microsoft.com/zh-cn/library/azure/dn798933.aspx)
+-->
+<!-- keep by customization: begin -->
 - [Documentation page on Azure.com](http://azure.microsoft.com/documentation/services/search/)
 - [Azure Search documentation on MSDN](http://msdn.microsoft.com/library/azure/dn798933.aspx)
+<!-- keep by customization: end -->
 
 
 ##Appendix: Search Indexer WebJob
@@ -328,7 +350,7 @@ The following code builds the indexer mentioned in the section on building the p
                     },
                     };
 
-                    var response = client.PostAsync("https://" + serviceName + ".search.windows.net/indexes/profiles/docs/index?api-version=2014-10-20-Preview", new StringContent(JsonConvert.SerializeObject(batch), Encoding.UTF8, "application/json")).Result;
+                    var response = client.PostAsync("https://" + serviceName + <!-- deleted by customization ".search.chinacloudapi.cn/indexes/profiles/docs/index?api-version=2014-10-20-Preview" --><!-- keep by customization: begin --> ".search.windows.net/indexes/profiles/docs/index?api-version=2014-10-20-Preview" <!-- keep by customization: end -->, new StringContent(JsonConvert.SerializeObject(batch), Encoding.UTF8, "application/json")).Result;
                     response.EnsureSuccessStatusCode();
 
                     db.Entry(profile).State = System.Data.Entity.EntityState.Modified;
@@ -382,9 +404,9 @@ The following code builds the indexer mentioned in the section on building the p
                 }
             };
 
-            var url = "https://" + ServiceName + ".search.windows.net/indexes/?api-version=2014-10-20-Preview";
+            var url = "https://" + ServiceName + <!-- deleted by customization ".search.chinacloudapi.cn/indexes/?api-version=2014-10-20-Preview" --><!-- keep by customization: begin --> ".search.windows.net/indexes/?api-version=2014-10-20-Preview" <!-- keep by customization: end -->;
 
-            var deleteUrl = "https://" + ServiceName + ".search.windows.net/indexes/profiles?api-version=2014-10-20-Preview";
+            var deleteUrl = "https://" + ServiceName + <!-- deleted by customization ".search.chinacloudapi.cn/indexes/profiles?api-version=2014-10-20-Preview" --><!-- keep by customization: begin --> ".search.windows.net/indexes/profiles?api-version=2014-10-20-Preview" <!-- keep by customization: end -->;
 
             try
             {

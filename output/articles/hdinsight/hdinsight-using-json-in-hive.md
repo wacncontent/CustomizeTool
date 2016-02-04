@@ -93,13 +93,13 @@ Here is the output of the SELECT statement:
 
 Hive provides three different mechanisms to run queries on JSON documents:
 
-- use the GET_JSON_OBJECT UDF (User Defined Function)
+- use the GET\_JSON\_OBJECT UDF (User Defined Function)
 - use the JSON_TUPLE UDF
 - use custom SerDe
 - write you own UDF using Python or other languages. See [this article][hdinsight-python] on running your own Python code with Hive. 
 
-### Use the GET_JSON_OBJECT UDF
-Hive provides a built-in UDF called [get json object](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-get_json_object) which can perform JSON querying during run time. This method takes two arguments – the table name and method name which has the flattened JSON document and the JSON field that needs to be parsed. Let’s look at an example to see how this UDF works.
+### Use the GET\_JSON_OBJECT UDF
+Hive provides a built-in UDF called [get json object](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-get_json_object) which can perform JSON querying during run time. This method takes two arguments - the table name and method name which has the flattened JSON document and the JSON field that needs to be parsed. Let's look at an example to see how this UDF works.
 
 Get the first name and last name for each student
 
@@ -115,7 +115,7 @@ Here is the output when running this query in console window.
 There are a few limitations of the get-json_object UDF. 
 
 - Because each field in the query requires re-parsing the query, it affects the performance.
-- GET_JSON_OBJECT() returns the string representation of an array. To convert this to a Hive array, you will have to use regular expressions to replace the square brackets ‘[‘ and ‘]’ and then also call split to get the array.
+- GET\_JSON_OBJECT() returns the string representation of an array. To convert this to a Hive array, you will have to use regular expressions to replace the square brackets '[' and ']' and then also call split to get the array.
 
 
 This is why the Hive wiki recommends using json_tuple.  
@@ -133,7 +133,7 @@ The output of this script in the Hive console:
 
 ![json_tuple UDF][image-hdi-hivejson-jsontuple]
 
-JSON_TUPLE uses the [lateral view](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView) syntax in Hive which allows json_tuple to create a virtual table by applying the UDT function to each row of the original table.  Complex JSONs become too unwieldy because of the repeated use of LATERAL VIEW. Furthermore, JSON_TUPLE cannot handle nested JSONs.
+JSON\_TUPLE uses the [lateral view](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView) syntax in Hive which allows json\_tuple to create a virtual table by applying the UDT function to each row of the original table.  Complex JSONs become too unwieldy because of the repeated use of LATERAL VIEW. Furthermore, JSON_TUPLE cannot handle nested JSONs.
 
 
 ###Use custom SerDe
@@ -160,15 +160,15 @@ SerDe is the best choice for parsing nested JSON documents, it allows you to def
 
 	![Setting up Maven][image-hdi-hivejson-maven]
 
-3. Clone the project from [Hive-JSON-SerDe](https://github.com/sheetaldolas/Hive-JSON-Serde/tree/master) github site. You can do this by clicking on the “Download Zip” button as shown in the screenshot below.
+3. Clone the project from [Hive-JSON-SerDe](https://github.com/sheetaldolas/Hive-JSON-Serde/tree/master) github site. You can do this by clicking on the "Download Zip" button as shown in the screenshot below.
 
 	![Cloning the project][image-hdi-hivejson-serde]
 
-4: Go to the folder where you have downloaded this package and  type “mvn package”. This should create the necessary jar files that you can then copy over to the cluster. 
+4: Go to the folder where you have downloaded this package and  type "mvn package". This should create the necessary jar files that you can then copy over to the cluster. 
 
 5: Go to the target folder under the root folder where you downloaded the package. Upload the json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar file to head-node of your cluster. I usually put it under the hive binary folder: C:\apps\dist\hive-0.13.0.2.1.11.0-2316\bin or something similar.
  
-6: In the hive prompt, type “add jar /path/to/json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar”. Since in my case, the jar is in the C:\apps\dist\hive-0.13.x\bin folder, I can directly add the jar with the name as shown below:
+6: In the hive prompt, type "add jar /path/to/json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar". Since in my case, the jar is in the C:\apps\dist\hive-0.13.x\bin folder, I can directly add the jar with the name as shown below:
 
     add jar json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar;
 
@@ -237,14 +237,17 @@ If you want to skil malformed JSON, then as explained in the [wiki page](https:/
 
 
 ##Summary
-In conclusion, the type of JSON operator in Hive that you choose depends on your scenario. If you have a simple JSON document and you only have one field to look up on – you can choose to use the Hive UDF get\_json\_object. If you have more than one keys to look up on then you can use json_tuple. If you have a nested document, then you should use the JSON SerDe.
+In conclusion, the type of JSON operator in Hive that you choose depends on your scenario. If you have a simple JSON document and you only have one field to look up on - you can choose to use the Hive UDF get\_json\_object. If you have more than one keys to look up on then you can use json_tuple. If you have a nested document, then you should use the JSON SerDe.
 
 For other related articles, see
 
 - [Use Hive and HiveQL with Hadoop in HDInsight to analyze a sample Apache log4j file](/documentation/articles/hdinsight-use-hive)
 - [Analyze flight delay data by using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data)
+- [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data)
+- [Run a Hadoop job using DocumentDB and HDInsight](/documentation/articles/documentdb-run-hadoop-with-hdinsight)
 
-[hdinsight-python]: /documentation/articles/hdinsight-python
+[hdinsight-python]: hdinsight-python.md
+
 [image-hdi-hivejson-flatten]: ./media/hdinsight-using-json-in-hive/flatten.png
 [image-hdi-hivejson-getjsonobject]: ./media/hdinsight-using-json-in-hive/getjsonobject.png
 [image-hdi-hivejson-jsontuple]: ./media/hdinsight-using-json-in-hive/jsontuple.png

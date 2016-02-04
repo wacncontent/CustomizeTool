@@ -1,25 +1,21 @@
 <properties 
-   pageTitle="View and manage StorSimple alerts | Microsoft Azure"
+   pageTitle="View and manage StorSimple alerts | Windows Azure"
    description="Describes StorSimple alert conditions and severity, how to configure alert notifications, and how to use the StorSimple Manager service to manage alerts."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/15/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 # Use the StorSimple Manager service to view and manage StorSimple alerts
 
 ## Overview
 
-The **Alerts** tab in the StorSimple Manager service provides a way for you to review and clear StorSimple device–related alerts on a real-time basis. From this tab, you can centrally monitor the health of your StorSimple devices and the overall Microsoft Azure StorSimple solution.
+The **Alerts** tab in the StorSimple Manager service provides a way for you to review and clear StorSimple <!-- deleted by customization device-related --><!-- keep by customization: begin --> device–related <!-- keep by customization: end --> alerts on a real-time basis. From this tab, you can centrally monitor the health of your StorSimple devices and the overall <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple solution.
 
 This tutorial describes common alert conditions, alert severity levels, and how to configure alert notifications. Additionally, it includes alert quick reference tables, which enable you to quickly locate a specific alert and respond appropriately.
 
@@ -29,11 +25,11 @@ This tutorial describes common alert conditions, alert severity levels, and how 
 
 Your StorSimple device generates alerts in response to a variety of conditions. The following are the most common types of alert conditions:
 
-- **Hardware issues** – These alerts tell you about the health of your hardware. They let you know if firmware upgrades are needed, if a network interface has issues, or if there is a problem with one of your data drives.
+- **Hardware issues** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> These alerts tell you about the health of your hardware. They let you know if firmware upgrades are needed, if a network interface has issues, or if there is a problem with one of your data drives.
 
-- **Connectivity issues** – These alerts occur when there is difficulty in transferring data between data sources. Communication issues can occur during transfer of data to and from the Azure storage account or due to lack of connectivity between the devices and the StorSimple Manager service. They can occur during configuration, backup, or restore processes. Communication issues are some of the hardest to fix because there are so many points of failure. You should always first verify that network connectivity and Internet access are available before continuing on to more advanced troubleshooting.
+- **Connectivity issues** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> These alerts occur when there is difficulty in transferring data between data sources. Communication issues can occur during transfer of data to and from the Azure storage account or due to lack of connectivity between the devices and the StorSimple Manager service. They can occur during configuration, backup, or restore processes. Communication issues are some of the hardest to fix because there are so many points of failure. You should always first verify that network connectivity and Internet access are available before continuing on to more advanced troubleshooting.
 
-- **Performance issues** – These alerts are caused when your system isn’t performing optimally, such as when it is under a heavy load.
+- **Performance issues** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> These alerts are caused when your system <!-- deleted by customization isn't --><!-- keep by customization: begin --> isn’t <!-- keep by customization: end --> performing optimally, such as when it is under a heavy load.
 
 In addition, you might see alerts related to security, updates, or job failures.
 
@@ -41,11 +37,11 @@ In addition, you might see alerts related to security, updates, or job failures.
 
 Alerts have different severity levels, depending on the impact that the alert situation will have and the need for a response to the alert. The severity levels are:
 
-- **Critical** – This alert is in response to a condition that is affecting the successful performance of your system. Action is required to ensure that the StorSimple service is not interrupted.
+- **Critical** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> This alert is in response to a condition that is affecting the successful performance of your system. Action is required to ensure that the StorSimple service is not interrupted.
 
-- **Warning** – This condition could become critical if not resolved. You should investigate the situation and take any action required to clear the issue.
+- **Warning** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> This condition could become critical if not resolved. You should investigate the situation and take any action required to clear the issue.
 
-- **Information** – This alert contains information that can be useful in tracking and managing your system.
+- **Information** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> This alert contains information that can be useful in tracking and managing your system.
 
 ## Configure alert settings
 
@@ -53,7 +49,7 @@ You can choose whether you want to be notified by email of alert conditions for 
 
 >[AZURE.NOTE] You can enter a maximum of 20 email addresses per device.
 
-After you enable email notification for a device, members of the notification list will receive an email message each time a critical alert occurs. The messages will be sent from *storsimple-alerts-noreply@mail.windowsazure.com* and will describe the alert condition. Recipients can click **Unsubscribe** to remove themselves from the email notification list.
+After you enable email notification for a device, members of the notification list will receive an email message each time a critical alert occurs. The messages will be sent from <!-- deleted by customization *storsimple-alerts-noreply@mail.windowsazure.cn* --><!-- keep by customization: begin --> *storsimple-alerts-noreply@mail.windowsazure.com* <!-- keep by customization: end --> and will describe the alert condition. Recipients can click **Unsubscribe** to remove themselves from the email notification list.
 
 #### To enable email notification of alerts for a device
 
@@ -101,17 +97,17 @@ When you click **Clear**, you will have the opportunity to provide comments abou
 
 You may find it more efficient to run reports on alerts so that you can review and clear them in groups. Additionally, the **Alerts** tab can display up to 250 alerts. If you have exceeded that number of alerts, not all alerts will be displayed in the default view. You can combine the following fields to customize which alerts are displayed:
 
-- **Status** – You can display either **Active** or **Cleared** alerts. Active alerts are still being triggered on your system, while cleared alerts have been either manually cleared by an administrator or programmatically cleared because the system updated the alert condition with new information.
+- **Status** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> You can display either **Active** or **Cleared** alerts. Active alerts are still being triggered on your system, while cleared alerts have been either manually cleared by an administrator or programmatically cleared because the system updated the alert condition with new information.
 
-- **Severity** – You can display alerts of all severity levels (critical, warning, information), or just a certain severity, such as only critical alerts.
+- **Severity** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> You can display alerts of all severity levels (critical, warning, information), or just a certain severity, such as only critical alerts.
 
-- **Source** – You can display alerts from all sources, or limit the alerts to those that come from either the service or one or all of the devices.
+- **Source** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> You can display alerts from all sources, or limit the alerts to those that come from either the service or one or all of the devices.
 
-- **Time range** – By specifying the **From** and **To** dates and time stamps, you can look at alerts during the time period that you are interested in.
+- **Time range** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> By specifying the **From** and **To** dates and time stamps, you can look at alerts during the time period that you are interested in.
 
 ## Alerts quick reference
 
-The following tables list some of the Microsoft Azure StorSimple alerts that you might encounter, as well as additional information and recommendations where available. StorSimple device alerts fall into one of the following categories:
+The following tables list some of the <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple alerts that you might encounter, as well as additional information and recommendations where available. StorSimple device alerts fall into one of the following categories:
 
 - [Cloud connectivity alerts](#cloud-connectivity-alerts)
 
@@ -151,7 +147,7 @@ If cloud connectivity fails on your StorSimple production device, then depending
 	Depending on the amount of data on the local tiers of your device, the writes will also continue to occur for the first few hours after the disruption in the cloud connectivity. The writes will then slow down and eventually start to fail if the cloud connectivity is disrupted for several hours. 
 
  
-- **For the data in the cloud**: For most cloud connectivity errors, an error is returned. Once the connectivity is restored, the IOs are resumed without the user having to bring the volume online. In rare instances, user intervention may be required to bring back the volume online from the Azure Portal. 
+- **For the data in the cloud**: For most cloud connectivity errors, an error is returned. Once the connectivity is restored, the IOs are resumed without the user having to bring the volume online. In rare instances, user intervention may be required to bring back the volume online from the Azure <!-- deleted by customization Management --> Portal.
  
 - **For cloud snapshots in progress**: The operation is retried a few times within 4-5 hours and if the connectivity is not restored, the cloud snapshots will fail.
 
@@ -172,7 +168,7 @@ If cloud connectivity fails on your StorSimple production device, then depending
 |Alert text|Event|More information / recommended actions|
 |:---|:---|:---|
 |Recovery operations could not restore all of the settings for this service. Device configuration data is in an inconsistent state for some devices.|Data inconsistency detected after disaster recovery.|Encrypted data on the service is not synchronized with that on the device. Authorize the device <*device name*> from StorSimple Manager to start the synchronization process. Use the Windows PowerShell Interface for StorSimple to run the `Restore-HcsmEncryptedServiceData` on device <*device name*> cmdlet, providing the old password as an input to this cmdlet to restore the security profile. Then run the `Invoke-HcsmServiceDataEncryptionKeyChange` cmdlet to update the service data encryption key. After you have taken appropriate action, please clear this alert from the alerts page.|
-|The service has failed over to a secondary data center due to an unexpected failure.|Other/unknown cause.|You need to verify your configuration settings in StorSimple Manager to continue. After you have taken appropriate action, please clear this alert from the alerts page. For more information about StorSimple Manager see the [Use StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).|
+|The service has failed over to a secondary data center due to an unexpected failure.|Other/unknown cause.|You need to verify your configuration settings in StorSimple Manager to continue. After you have taken appropriate action, please clear this alert from the alerts page. For more information about StorSimple Manager see the [Use StorSimple Manager service to administer your StorSimple <!-- deleted by customization device](/documentation/articles/storsimple-manager-service-administration).| --><!-- keep by customization: begin --> device](storsimple-manager-service-administration.md).| <!-- keep by customization: end -->
 
 ### Hardware alerts
 
@@ -231,5 +227,11 @@ If cloud connectivity fails on your StorSimple production device, then depending
 
 ## Next steps
 
+<!-- deleted by customization
+- Learn more about [StorSimple errors](/documentation/articles/storsimple-troubleshoot-operational-device).
+- Learn more about [using the StorSimple Manager service to administer your StorSimple device](/documentation/articles/storsimple-manager-service-administration).
+-->
+<!-- keep by customization: begin -->
 - Learn more about [StorSimple errors](storsimple-troubleshoot-operational-device.md).
 - Learn more about [using the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+<!-- keep by customization: end -->

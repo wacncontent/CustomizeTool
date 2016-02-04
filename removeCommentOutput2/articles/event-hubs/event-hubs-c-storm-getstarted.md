@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get Started with Event Hubs"
+	pageTitle="Get Started with Event Hubs with C and Apache Storm | Windows Azure"
 	description="Follow this tutorial to get started using Azure Event Hubs; sending events in C and receiving them in an Apache Storm cluster."
 	services="event-hubs"
 	documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="09/01/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # Get started with Event Hubs
@@ -30,7 +30,7 @@ In order to complete this tutorial you will need the following:
 
 + A Java development environment configured to run [Maven](http://maven.apache.org/). For this tutorial, we will assume [Eclipse](https://www.eclipse.org/).
 
-+ An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
++ An active Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/).
 
 ## Create an Event Hub
 
@@ -40,7 +40,7 @@ In order to complete this tutorial you will need the following:
 
 	![][1]
 
-3. Type a name for your Even Hub, select your desired region, and then click **Create a new Event Hub**.
+3. Type a name for your Event Hub, select your desired region, and then click **Create a new Event Hub**.
 
 	![][2]
 
@@ -82,8 +82,8 @@ Now you are ready to run the applications.
 
 The following resources are available for developing applications integrating Event Hubs and Storm.
 
-- [Analyzing sensor data with Storm and HDInsight] is a full scenario tutorial using Event Hubs, Storm, and HBase to ingest sensor data in an Hadoop cluster.
-- [Develop streaming data processing applications with SCP.NET and C# on Storm and HDInsight] is a tutorial on how to write Storm pipelines using C#.
+- [Analyzing sensor data with Storm and HDInsight][] is a full scenario tutorial using Event Hubs, Storm, and HBase to ingest sensor data in an Hadoop cluster.
+- [Develop streaming data processing applications with SCP.NET and C# on Storm and HDInsight][] is a tutorial on how to write Storm pipelines using C#.
 
 <!-- Images. -->
 [1]: ./media/event-hubs-c-storm-getstarted/create-event-hub1.png

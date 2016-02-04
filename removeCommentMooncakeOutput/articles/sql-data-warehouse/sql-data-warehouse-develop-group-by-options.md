@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Group by options in SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Group by options in SQL Data Warehouse | Windows Azure"
    description="Tips for implementing group by options in Azure SQL Data Warehouse for developing solutions."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+	ms.service="sql-data-warehouse"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # Group by options in SQL Data Warehouse
 
@@ -180,13 +176,13 @@ By breaking the code up into sections and generating a looping construct the cod
 For more development tips, see [development overview][].
 
 <!--Image references-->
-[1]: media/sql-data-warehouse-develop-group-by-options/sql-data-warehouse-develop-group-by-cube.png
+[1]: ./media/sql-data-warehouse-develop-group-by-options/sql-data-warehouse-develop-group-by-cube.png
 
 <!--Article references-->
 [development overview]: sql-data-warehouse-overview-develop.md
 
 <!--MSDN references-->
-[GROUP BY]: https://msdn.microsoft.com/en-us/library/ms177673.aspx
+[GROUP BY]: https://msdn.microsoft.com/zh-cn/library/ms177673.aspx
 
 
 <!--Other Web references-->

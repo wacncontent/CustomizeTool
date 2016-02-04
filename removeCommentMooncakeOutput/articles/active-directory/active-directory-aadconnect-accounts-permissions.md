@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-	ms.service="active-directory"
-	ms.date="10/13/2015"
-	wacn.date=""/>
+   ms.service="active-directory"  
+   ms.date="12/16/2015"
+   wacn.date=""/>
 
 
 # Accounts and permissions required for Azure AD Connect
@@ -19,7 +19,7 @@ The Azure AD Connect installation wizard offers two different paths:
 
 - In Express Settings, we require more privileges so that we can setup your configuration easily, without requiring you to create users or configure permissions separately.
 
-- In Custom Settings we offer you more choices and options, but there are some situations in which you’ll need to ensure you have the correct permissions yourself.
+- In Custom Settings we offer you more choices and options, but there are some situations in which youâll need to ensure you have the correct permissions yourself.
 
 ## Related documentation
 If you did not read the documentation on [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect), the following table provides links to related topics.
@@ -56,7 +56,7 @@ Install synchronization services, Service account option | AD or local user acco
 Connect to Azure AD|Azure AD directory credentials| Global administrator role in Azure AD| <li>Enabling sync in the Azure AD directory.</li>  <li>Creation of the [Azure AD account](#azure-ad-service-account) that will be used for on-going sync operations in Azure AD.</li>
 Connect your directories|On-premises Active Directory credentials for each forest that will be connected to Azure AD | The permissions will depend on which features you enable and can be found in [Create the AD DS account](#create-the-ad-ds-account) |This account is used to read and write directory information during synchronization.
 AD FS Servers|For each server in the list, the wizard collects credentials if the logon credentials of the user running the wizard are insufficient to connect|Domain Administrator|Installation and configuration of the AD FS server role.
-Web application proxy servers |For each server in the list, the wizard collects credentials if the logon credentials of the user running the wizard are insufficient to connect|Local admin on the target machine|Installation and configuration of WAP server role.
+web site proxy servers |For each server in the list, the wizard collects credentials if the logon credentials of the user running the wizard are insufficient to connect|Local admin on the target machine|Installation and configuration of WAP server role.
 Proxy trust credentials |Federation service trust credentials (the credentials the proxy will use to enroll for a trust certificate from the FS |Domain account that is a local administrator of the AD FS server|Inital enrollment of FS-WAP trust certificate.
 AD FS Service Account page, "Use a domain user account option"|AD user account credentials|Domain user|The AD user account whose credentials are provided will be used as the logon account of the AD FS service.
 
@@ -73,6 +73,14 @@ Which permissions you require depends on the optional features you enable. If yo
 | Device writeback | Permissions granted with a PowerShell script as described in [device writeback](/documentation/articles/active-directory-aadconnect-get-started-custom-device-writeback).|
 | Group writeback | Read, Create, Update, and Delete group objects in the OU where the distributions groups should be located.|
 
+## Upgrade
+When you upgrade from one version of Azure AD Connect to a new release, you will need the following permissions:
+
+| Principal | Permissions required | Used for |
+| ---- | ---- | ---- |
+| User running the installation wizard | Administrator of the local server | Update binaries. |
+| User running the installation wizard | Member of ADSyncAdmins | Make changes to Sync Rules and other configuration. |
+| User running the installation wizard | If using a full SQL server: DBO (or similar) of the sync engine database | Make database level changes, such as updating tables with new columns. |
 
 ## More about the created accounts
 
@@ -82,12 +90,14 @@ If you use express settings, then an account will be created in Active Directory
 
 ![AD account](./media/active-directory-aadconnect-accounts-permissions/adsyncserviceaccount.png)
 
-### Azure AD Connect sync service account
-A local service account is created by the installation wizard (unless you specify the account to use in custom settings). The account will be prefixed **AAD_** and is used for the actual sync service to run as. If you install Azure AD Connect on a Domain Controller, the account is created in the domain. If you use a SQL server on a remote server, the account must be located in the domain.
+### Azure AD Connect sync service accounts
+Two local service accounts are created by the installation wizard (unless you specify the account to use in custom settings). The account prefixed **AAD_** is used for the actual sync service to run as. If you install Azure AD Connect on a Domain Controller, the accounts are created in the domain. If you use a SQL server on a remote server, the **AAD_** service account must be located in the domain. The account prefixed **AADSyncSched_** is used for the scheduled task which is running the sync engine.
 
 ![Sync Service Account](./media/active-directory-aadconnect-accounts-permissions/syncserviceaccount.png)
 
-The account is created with a long complex password which does not expire. This account will be used by Windows to store the encryption keys so the password for this account should not be reset or changed.
+The accounts are created with a long complex password which does not expire.
+
+For the sync engine service account, this account will be used by Windows to store the encryption keys so the password for this account should not be reset or changed.
 
 If you use a full SQL Server then the service account will be the DBO of the created database for the sync engine. The service will not function as intended with any other permissions. A SQL login will also be created.
 

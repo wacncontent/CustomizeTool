@@ -15,11 +15,12 @@
 
 # How to reset a password or the Remote Desktop service for a Windows VM
 
-If you can't connect to a Windows virtual machine because of a forgotten password or a problem with the Remote Desktop service configuration, use the Azure preview portal or the VMAccess extension to reset the local administrator password or reset the Remote Desktop service configuration.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
-> [AZURE.NOTE] This article does not apply to virtual machines created in Azure Resource Manager.
 
-## Preview portal
+If you can't connect to a Windows virtual machine because of a forgotten password or a problem with the Remote Desktop service configuration, use the Azure Management Portal or the VMAccess extension to reset the local administrator password or reset the Remote Desktop service configuration.
+
+##  portal
 
 To reset the Remote Desktop service in the [preview portal](https://manage.windowsazure.cn), click **Browse all** > **Virtual machines (classic)** > *your Windows virtual machine* > **Reset Remote Access**. The following page appears.
 
@@ -67,8 +68,8 @@ Now, you can do these tasks:
 
 Add the current local administrator account name and the new password, and then run the following commands.
 
-	$cred=Get-Credential –Message "Type the name of the current local administrator account and the new password."
-	Set-AzureVMAccessExtension –vm $vm -UserName $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password  | Update-AzureVM
+	$cred=Get-Credential -Message "Type the name of the current local administrator account and the new password."
+	Set-AzureVMAccessExtension -vm $vm -UserName $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password  | Update-AzureVM
 
 - If you type a different name than the current account, the VMAccess extension renames the local administrator account, assigns the password to that account, and issues a Remote Desktop log off.
 - If the local administrator account is disabled, the VMAccess extension enables it.
@@ -79,7 +80,7 @@ These commands also reset the Remote Desktop service configuration.
 
 To reset the Remote Desktop service configuration, run the following command.
 
-	Set-AzureVMAccessExtension –vm $vm | Update-AzureVM
+	Set-AzureVMAccessExtension -vm $vm | Update-AzureVM
 
 The VMAccess extension runs these two commands on the virtual machine:
 

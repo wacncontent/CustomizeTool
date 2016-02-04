@@ -9,19 +9,19 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/29/2015"
+	ms.date="01/05/2015"
 	wacn.date=""/>
 
 #Overview and Comparison of Azure On Demand Media Encoders
 
 ##Encoding overview
 
-Azure Media Services provides multiple options for the encoding of media in the cloud. 
+Azure Media Services provides multiple options for the encoding of media in the cloud.
 
-When starting out with Media Services, it is important to understand the difference between codecs and file formats. 
+When starting out with Media Services, it is important to understand the difference between codecs and file formats.
 Codecs are the software that implements the compression/decompression algorithms whereas file formats are containers that hold the compressed video.
 
-Media Services provides dynamic packaging which allows you to deliver your adaptive bitrate MP4 or Smooth Streaming encoded content in streaming formats supported by Media Services (MPEG DASH, HLS, Smooth Streaming, HDS) without you having to re-package into these streaming formats. 
+Media Services provides dynamic packaging which allows you to deliver your adaptive bitrate MP4 or Smooth Streaming encoded content in streaming formats supported by Media Services (MPEG DASH, HLS, Smooth Streaming, HDS) without you having to re-package into these streaming formats.
 
 To take advantage of [dynamic packaging](/documentation/articles/media-services-dynamic-packaging-overview), you need to do the following:
 
@@ -31,7 +31,7 @@ To take advantage of [dynamic packaging](/documentation/articles/media-services-
 Media Services supports the following on demand encoders that are described in this article:
 
 - **Media Encoder Standard**
-- **Azure Media Encoder** 
+- **Azure Media Encoder**
 
 This article gives a brief overview of on demand media encoders and provides links to articles that give more detailed information. The topic also provides comparison of the encoders.
 
@@ -68,13 +68,17 @@ The encoders input metadata is described [here](http://msdn.microsoft.com/zh-cn/
 
 The encoders output metadata is described [here](http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx).
 
-###Thumbnail
+###Generate thumbnails
 
-For information on how to generate thumbnails, see [How to generate thumbnails using Media Encoder Standard](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes).
+For information, see [How to generate thumbnails using Media Encoder Standard](/documentation/articles/media-services-custom-mes-presets-with-dotnet#thumbnails).
 
-###Audio and/or video overlays
+###Trim videos (clipping)
 
-Currently, not supported.
+For information, see [How to trim videos using Media Encoder Standard](/documentation/articles/media-services-custom-mes-presets-with-dotnet#trim_video).
+
+###Create overlays
+
+For information, see [How to create overlays using Media Encoder Standard](/documentation/articles/media-services-custom-mes-presets-with-dotnet#overlay).
 
 ###See also
 
@@ -176,7 +180,7 @@ MPEG-1												|Yes|Yes|Yes
 Windows Media Video/VC-1							|Yes|Yes|Yes
 Canopus HQ/HQX										|No|Yes|No
 MPEG-4 Part 2										|Yes|No|No
-[Theora](https://en.wikipedia.org/wiki/Theora)		|Yes|No|No
+[Theora](https://zh.wikipedia.org/wiki/Theora)		|Yes|No|No
 Apple ProRes 422	|Yes|No|No
 Apple ProRes 422 LT	|Yes|No|No
 Apple ProRes 422 HQ |Yes|No|No
@@ -197,8 +201,8 @@ MPEG Layer 2|Yes|Yes|Yes
 MP3 (MPEG-1 Audio Layer 3)|Yes|Yes|Yes
 Windows Media Audio|Yes|Yes|Yes
 WAV/PCM|Yes|Yes|Yes
-[FLAC](https://en.wikipedia.org/wiki/FLAC)</a>|Yes|No|No
-[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) |Yes|No|No
+[FLAC](https://zh.wikipedia.org/wiki/FLAC)</a>|Yes|No|No
+[Opus](https://en.wikipedia.org/wiki/Opus_codec) |Yes|No|No
 [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a>|Yes|No|No
 
 
@@ -241,19 +245,15 @@ MP3 (MPEG-1 Audio Layer 3)|No|No|Yes
 Windows Media Audio|No|Yes|Yes
 
 
+##Error codes  
 
+The following table lists error codes that could be returned in case an error was encountered during the encoding task execution.  To get error details in your .NET code, use the [ErrorDetails](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mediaservices.client.errordetail.aspx) class. To get error details in your REST code, use the [ErrorDetail](https://msdn.microsoft.com/zh-cn/library/jj853026.aspx) REST API.
 
-##Media Services learning paths
-
-[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
-
-##Provide feedback
-
-[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 
 ##Related articles
 
+- [Perform advanced encoding tasks by customizing Media Encoder Standard presets](/documentation/articles/media-services-custom-mes-presets-with-dotnet)
 - [Quotas and Limitations](/documentation/articles/media-services-quotas-and-limitations)
 
  

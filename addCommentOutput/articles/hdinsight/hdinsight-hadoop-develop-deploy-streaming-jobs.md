@@ -32,10 +32,12 @@ This tutorial shows you how to:
 - Run the same MapReduce job on Azure HDInsight
 - Retrieve the results of the MapReduce job
 
-<!-- keep by customization: begin -->
-<a name="prerequisites"></a>
-<!-- keep by customization: end -->
+<!-- deleted by customization
 ##Prerequisites
+-->
+<!-- keep by customization: begin -->
+##<a name="prerequisites"></a> Prerequisites
+<!-- keep by customization: end -->
 
 Before you begin this tutorial, you must have done the following:
 
@@ -44,10 +46,12 @@ Before you begin this tutorial, you must have done the following:
 - Obtain an Azure subscription. For instructions, see [Purchase Options][azure-purchase-options], <!-- deleted by customization [Member Offers][azure-member-offers], or --> [Trial][azure-trial].
 
 
-<!-- keep by customization: begin -->
-<a name="develop"></a>
-<!-- keep by customization: end -->
+<!-- deleted by customization
 ##Develop a word-count Hadoop streaming program in C&#35;
+-->
+<!-- keep by customization: begin -->
+##<a name="develop"></a> Develop a word-count Hadoop streaming program in C&#35;
+<!-- keep by customization: end -->
 
 The word-count solution contains two console application projects: mapper and reducer. The mapper application streams each word into the console, and the reducer application counts the number of words that are streamed from a document. Both the mapper and the reducer read characters, line by line, from the standard input stream (stdin) and write to the standard output stream (stdout).
 
@@ -160,10 +164,12 @@ The mapper and reducer executables are located at:
 - C:\Tutorials\WordCount\WordCountReducer\bin\Debug\WordCountReducer.exe
 
 
-<!-- keep by customization: begin -->
-<a name="test"></a>
-<!-- keep by customization: end -->
+<!-- deleted by customization
 ##Test the program on the emulator
+-->
+<!-- keep by customization: begin -->
+##<a name="test"></a> Test the program on the emulator
+<!-- keep by customization: end -->
 
 Do the following to test the program on the HDInsight Emulator:
 
@@ -295,10 +301,12 @@ This tutorial uses the .txt files located in the %hadoop_home% directory.
 
 	You can append "|more" at the end of the command to get the page view.
 
-<!-- keep by customization: begin -->
-<a id="upload"></a>
-<!-- keep by customization: end -->
+<!-- deleted by customization
 ##Upload data to Azure Blob storage
+-->
+<!-- keep by customization: begin -->
+##<a id="upload"></a>Upload data to Azure Blob storage
+<!-- keep by customization: end -->
 Azure HDInsight uses Azure Blob storage as the default file system. You can configure an HDInsight cluster to use additional Blob storage for the data files. In this section, you will create an Azure Storage account and upload the data files to the Blob storage. The data files are the .txt files in the %hadoop_home%\share\doc\hadoop\common directory.
 
 
@@ -322,7 +330,7 @@ Azure HDInsight uses Azure Blob storage as the default file system. You can conf
 
 		# Create a Blob storage container
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-		$destContext = New-AzureStorageContext –StorageAccountName $storageAccountName –StorageAccountKey $storageAccountKey  
+		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 		New-AzureStorageContainer -Name $containerName -Context $destContext
 
 4. Run the following commands to verify the Storage account and the container:
@@ -387,10 +395,12 @@ Azure HDInsight uses Azure Blob storage as the default file system. You can conf
 	You shall see both application files listed there.
 
 
-<!-- keep by customization: begin -->
-<a name="run"></a>
-<!-- keep by customization: end -->
+<!-- deleted by customization
 ##Run the MapReduce job on Azure HDInsight
+-->
+<!-- keep by customization: begin -->
+##<a name="run"></a>Run the MapReduce job on Azure HDInsight
+<!-- keep by customization: end -->
 
 This section provides an Azure PowerShell script that performs all the tasks related to running a MapReduce job. The list of tasks includes:
 
@@ -450,7 +460,7 @@ This section provides an Azure PowerShell script that performs all the tasks rel
 		#====== CREATE A BLOB STORAGE CONTAINER ======
 		Write-Host "Create a Blob storage container" -ForegroundColor Green
 		$storageAccountKey_Default = Get-AzureStorageKey $storageAccountName_Default | %{ $_.Primary }
-		$destContext = New-AzureStorageContext –StorageAccountName $storageAccountName_Default –StorageAccountKey $storageAccountKey_Default
+		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName_Default -StorageAccountKey $storageAccountKey_Default
 
 		New-AzureStorageContainer -Name $containerName_Default -Context $destContext
 
@@ -506,10 +516,12 @@ This section provides an Azure PowerShell script that performs all the tasks rel
 For an HDInsight .NET SDK sample on submitting Hadoop streaming jobs, see [Submit Hadoop jobs programmatically][hdinsight-submit-jobs].
 
 
-<!-- keep by customization: begin -->
-<a name="retrieve"></a>
-<!-- keep by customization: end -->
+<!-- deleted by customization
 ##Retrieve the MapReduce job output
+-->
+<!-- keep by customization: begin -->
+##<a name="retrieve"></a> Retrieve the MapReduce job output
+<!-- keep by customization: end -->
 This section shows you how to download and display the output. For information on displaying the results in Excel, see [Connect Excel to HDInsight with the Microsoft Hive ODBC Driver][hdinsight-ODBC] and [Connect Excel to HDInsight with Power Query][hdinsight-power-query].
 
 
@@ -527,22 +539,24 @@ This section shows you how to download and display the output. For information o
 
 		Select-AzureSubscription $subscriptionName
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-		$storageContext = New-AzureStorageContext –StorageAccountName $storageAccountName –StorageAccountKey $storageAccountKey  
+		$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 
 4. Run the following commands to download and display the output:
 
 		Get-AzureStorageBlobContent -Container $ContainerName -Blob $blobName -Context $storageContext -Force
 		cat "./$blobName" | findstr "there"
-<!-- keep by customization: begin -->
-<a id="nextsteps"></a>
-<!-- keep by customization: end -->
 
 
 
+<!-- deleted by customization
 ##Next steps
+-->
+<!-- keep by customization: begin -->
+##<a id="nextsteps"></a> Next steps
+<!-- keep by customization: end -->
 In this tutorial, you have learned how to develop a Hadoop streaming MapReduce job, how to test the application on the HDInsight Emulator, and how to write an Azure PowerShell script to provision an HDInsight cluster and run a MapReduce job on the cluster. To learn more, see the following articles:
 
-- [Get started with Azure HDInsight](/documentation/articles/hdinsight-get-started)
+- [Get started with Azure HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 - [Get started with the HDInsight Emulator][hdinsight-get-started-emulator]
 - [Develop Java MapReduce programs for HDInsight][hdinsight-develop-mapreduce]
 - [Use Azure Blob storage with HDInsight][hdinsight-storage]
@@ -557,17 +571,46 @@ In this tutorial, you have learned how to develop a Hadoop streaming MapReduce j
 -->
 [azure-trial]: /pricing/1rmb-trial/
 
+<!-- deleted by customization
+[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
+[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
+
+[hdinsight-get-started-emulator]: ../hdinsight-get-started-emulator.md
+-->
+<!-- keep by customization: begin -->
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator
-[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-get-started-emulator#blobstorage
+
+[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
+<!-- keep by customization: end -->
+[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-hadoop-emulator-get-started#blobstorage
+<!-- deleted by customization
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
+
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver.md
+[hdinsight-power-query]: hdinsight-connect-excel-power-query.md
+-->
+<!-- keep by customization: begin -->
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+<!-- keep by customization: end -->
+
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
+<!-- deleted by customization
+[powershell-install]: ../powershell-install-configure.md
+-->
+<!-- keep by customization: begin -->
 [powershell-install]: /documentation/articles/powershell-install-configure
+<!-- keep by customization: end -->
+
 [image-hdi-wordcountdiagram]: ./media/hdinsight-hadoop-develop-deploy-streaming-jobs/HDI.WordCountDiagram.gif "MapReduce wordcount application flow"

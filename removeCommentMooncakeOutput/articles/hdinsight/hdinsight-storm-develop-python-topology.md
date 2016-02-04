@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/08/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Develop Apache Storm topologies using Python on HDInsight

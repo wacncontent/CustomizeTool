@@ -40,7 +40,7 @@ Functionality within the Azure Management Portal enables SAs that are signed in 
 In the simple case, an organization (such as Contoso) will enforce billing and access control across the same set of subscriptions. That is, the directory is associated to subscriptions that are owned by a single Azure Account. Upon successful login to the Azure Management Portal, users see two collections of resources (depicted in orange in the previous illustration):
 
 
-- Directories where their user account exists (sourced or added as a foreign principal). Note that the directory used for login isn’t relevant to this computation, so your directories will always be shown regardless of where you logged in.
+- Directories where their user account exists (sourced or added as a foreign principal). Note that the directory used for login isnât relevant to this computation, so your directories will always be shown regardless of where you logged in.
 
 - Resources that are part of subscriptions that are associated with the directory used for login AND which the user can access (where they are an SA or CA).
 

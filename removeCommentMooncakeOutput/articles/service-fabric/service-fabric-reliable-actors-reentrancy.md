@@ -5,16 +5,12 @@
    documentationCenter=".net"
    authors="jessebenson"
    manager="timlt"
-   editor=""/>
+   editor="vturecek"/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/05/2015"
-   ms.author="amanbha"/>
+	ms.service="service-fabric"
+	ms.date="11/14/2015"
+	wacn.date=""/>
 
 
 # Reliable Actor Reentrancy
@@ -34,7 +30,7 @@ The following code shows actor class that sets the reentrancy mode to `Reentranc
 
 ```csharp
 [Reentrant(ReentrancyMode.Disallowed)]
-class VoicemailBoxActor : Actor<VoicemailBox>, IVoicemailBoxActor
+class VoicemailBoxActor : StatefulActor<VoicemailBox>, IVoicemailBoxActor
 {
     ...
 }

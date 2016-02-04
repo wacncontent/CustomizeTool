@@ -8,13 +8,13 @@ deleted:
 		
 			Spark can also be added using Script Action.  Script action adds either Spark 1.2.0 to HDInsight 3.2 cluster or Spark 1.0.2 to HDInsight 3.1 cluster. For more information, see [Install and use Spark on HDInsight Hadoop clusters](/documentation/articles/hdinsight-hadoop-spark-install).
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		- **HDInsight on Linux** - Azure HDInsight provides the option of provisioning Hadoop clusters that run on Linux (Ubuntu) virtual machines (VMs). You can use this option if you are familiar with Linux or Unix, are migrating from an existing Linux-based Hadoop solution, or want easy integration with Hadoop ecosystem components built for Linux. You can provision an HDInsight cluster on Linux from a client computer running Windows or Linux by using the Azure preview portal, the Azure CLI, or the HDInsight .NET SDK (Windows only).
 
-reason: ()
+reason: (Linux Support)
 
 replacement:
 
@@ -26,7 +26,7 @@ replaced by:
 
 		"Version" parameter
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -36,7 +36,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -46,5 +46,5 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 

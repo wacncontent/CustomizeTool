@@ -529,7 +529,7 @@ You can delete an affinity group by passing the group name to the **deleteAffini
 [ListHostedServicesResult]: https://github.com/WindowsAzure/azure-sdk-for-php/blob/master/WindowsAzure/ServiceManagement/Models/ListHostedServicesResult.php
 
 [service package]: http://msdn.microsoft.com/zh-cn/library/azure/gg433093
-[Azure PowerShell cmdlets]: /documentation/articles/install-configure-powershell
+[Azure PowerShell cmdlets]: /documentation/articles/powershell-install-configure
 [cspack commandline tool]: http://msdn.microsoft.com/zh-cn/library/azure/gg432988.aspx
 [GetDeploymentOptions]: https://github.com/WindowsAzure/azure-sdk-for-php/blob/master/WindowsAzure/ServiceManagement/Models/GetDeploymentOptions.php
 [ListHostedServicesResult]: https://github.com/WindowsAzure/azure-sdk-for-php/blob/master/WindowsAzure/ServiceManagement/Models/GetDeploymentOptions.php

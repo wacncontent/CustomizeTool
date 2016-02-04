@@ -4,14 +4,14 @@
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
-# Testing Traffic Manager Settings
+# Test your Traffic Manager settings
 
 The best way to test your Traffic Manager settings is to set up a number of clients and then bring the endpoints, consisting of cloud services and websites, in your profile down one at a time. The following tips will help you test your Traffic Manager profile.
 
@@ -39,7 +39,7 @@ The best way to test your Traffic Manager settings is to set up a number of clie
 2. Use a single client.
 3. Request DNS resolution for your company domain name using the Nslookup.exe tool or a similar utility.
 4. Ensure that the resolved IP address your obtain is for your primary endpoint
-5. Bring your primary endpoint down or remove the monitoring file so that Traffic Manager thinks it’s down.
+5. Bring your primary endpoint down or remove the monitoring file so that Traffic Manager thinks it's down.
 6. Wait for the DNS Time-to-Live (TTL) of the Traffic Manager profile plus an additional 2 minutes. For example, if your DNS TTL is 300 seconds (5 minutes), you must wait for 7 minutes.
 7. Flush your DNS client cache and request DNS resolution. In Windows, you can flush your DNS cache with the ipconfig /flushdns command issued at a command or Windows PowerShell prompt.
 8. Ensure that the IP address you obtain is for your secondary endpoint.
@@ -57,22 +57,15 @@ The best way to test your Traffic Manager settings is to set up a number of clie
 
 To effectively test a performance traffic routing method, you must have clients located in different parts of the world. You could create clients in Azure that will attempt to call your services via your company domain name. Alternatively, if your corporation is global, you can remotely log into clients in other parts of the world and test from those clients.
 
-There are free web-based DNS lookup and dig services available. Some of these give you the ability to check DNS name resolution from various locations. Do a search on “DNS lookup” for examples. Another option is to use a third-party solution like Gomez or Keynote to confirm that your profiles are distributing traffic as expected.
+There are free web-based DNS lookup and dig services available. Some of these give you the ability to check DNS name resolution from various locations. Do a search on <!-- deleted by customization “DNS lookup” --><!-- keep by customization: begin --> âDNS lookupâ <!-- keep by customization: end --> for examples. Another option is to use a third-party solution like Gomez or Keynote to confirm that your profiles are distributing traffic as expected.
 
-## See Also
+## Next steps
 
-[About Traffic Manager traffic routing Methods](/documentation/articles/traffic-manager-load-balancing-methods)
+[Traffic Manager performance considerations](/documentation/articles/traffic-manager-performance-considerations)
 
-[Traffic Manager - Disable, enable or delete a profile](/documentation/articles/disable-enable-or-delete-a-profile)
+[Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded)
 
-[Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint)
 
-[What is Traffic Manager?](/documentation/articles/traffic-manager-overview)
 
-[Cloud Services](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)
-
-[Websites](/home/features/web-site/)
-
-[Operations for Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
 
  

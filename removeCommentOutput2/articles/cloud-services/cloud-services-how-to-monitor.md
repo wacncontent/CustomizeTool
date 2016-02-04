@@ -19,7 +19,7 @@
 
 You can monitor key performance metrics for your cloud services in the Azure Management Portal. You can set the level of monitoring to minimal and verbose for each service role, and can customize the monitoring displays. Verbose monitoring data is stored in a storage account, which you can access outside the portal. 
 
-Monitoring displays in the Management Portal are highly configurable. You can choose the metrics you want to monitor in the metrics list on the **Monitor** page, and you can choose which metrics to plot in metrics charts on the **Monitor** page and the dashboard. 
+Monitoring displays in the Management Portal are highly configurable. You can choose the metrics you want to monitor in the metrics list on the **Monitor** page, and you can choose which metrics to plot in metrics charts on the **Monitor** page and the dashboard.
 
 ##Concepts##
 
@@ -34,7 +34,7 @@ Note that enabling verbose monitoring will increase your storage costs related t
 
 ##How to: Configure monitoring for cloud services##
 
-Use the following procedures to configure verbose or minimal monitoring in the Management Portal. 
+Use the following procedures to configure verbose or minimal monitoring in the Management Portal.
 
 ###Before you begin###
 
@@ -70,7 +70,7 @@ The raw performance counter data and aggregated monitoring data are stored in th
 
 ##How to: Receive alerts for cloud service metrics##
 
-You can receive alerts based on your cloud service monitoring metrics. On the **Management Services** page of the Azure Management Portal, you can create a rule to trigger an alert when the metric you choose reaches a value that you specify. You can also choose to have email sent when the alert is triggered. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure](https://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx).
+You can receive alerts based on your cloud service monitoring metrics. On the **Management Services** page of the Azure Management Portal, you can create a rule to trigger an alert when the metric you choose reaches a value that you specify. You can also choose to have email sent when the alert is triggered. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure](/documentation/articles/insights-receive-alert-notification).
 
 ##How to: Add metrics to the metrics table##
 

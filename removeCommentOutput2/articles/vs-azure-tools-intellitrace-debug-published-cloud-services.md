@@ -3,12 +3,12 @@
    description="Debugging a published cloud service with IntelliTrace and Visual Studio"
    services="visual-studio-online"
    documentationCenter="n/a"
-   authors="patshea123"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
 	ms.service="visual-studio-online"
-	ms.date="08/14/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 
@@ -63,5 +63,5 @@ You can continue to work in Visual Studio while the IntelliTrace logs are downlo
 
 ## See Also
 
-[Debugging Cloud Services](https://msdn.microsoft.com/zh-cn/library/ee405479.aspx)
+[Debugging Cloud Services](http://go.microsoft.com/fwlink/p/?LinkID=62304)
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get Started with Event Hubs"
+	pageTitle="Get Started with Event Hubs in C and C# | Windows Azure"
 	description="Follow this tutorial to get started using Azure Event Hubs; sending events in C and receiving hem in C# using the EventProcessorHost."
 	services="event-hubs"
 	documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="09/01/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # Get started with Event Hubs
@@ -20,9 +20,9 @@
 
 Event Hubs is a highly scalable ingestion system that can intake millions of events per second, enabling an application to process and analyze the massive amounts of data produced by your connected devices and applications. Once collected into Event Hubs, you can transform and store data using any real-time analytics provider or storage cluster.
 
-For more information, please see [Event Hubs Overview].
+For more information, please see [Event Hubs Overview][].
 
-In this tutorial, you will learn how to ingest messages into an Event Hub using a console application in C, and to retrieve them in parallel using the C# [Event Processor Host] library.
+In this tutorial, you will learn how to ingest messages into an Event Hub using a console application in C, and to retrieve them in parallel using the C# [Event Processor Host][] library.
 
 In order to complete this tutorial you will need the following:
 
@@ -34,9 +34,9 @@ In order to complete this tutorial you will need the following:
 
 ## Create an Event Hub
 
-1. Log on to the [Azure Management Portal], and click **NEW** at the bottom of the screen.
+1. Log on to the [Azure Management Portal][], and click **NEW** at the bottom of the screen.
 
-2. Click **App Services**, then **Service Bus**, then **Event Hub**, then **Quick Create**.
+2. Click **Azure Websitess**, then **Service Bus**, then **Event Hub**, then **Quick Create**.
 
    	![][1]
 
@@ -75,11 +75,11 @@ Your Event Hub is now created, and you have the connection strings you need to s
 
 Now you are ready to run the applications.
 
-1.	Run the **Receiver** project from Visual Studio, then wait for it to start the receivers for all the partitions.
+1.	Run the **Receiver** project from within Visual Studio, then wait for it to start the receivers for all the partitions.
 
    	![][21]
 
-2.	Run the **sender** program, and see the events appear in the receiver window.
+2.	Run the **Sender** program, and see the events appear in the receiver window.
 
    	![][24]
 
@@ -87,10 +87,10 @@ Now you are ready to run the applications.
 
 Now that you've built a working application that creates an Event Hub and sends and receives data, you can move on to the following scenarios:
 
-- A complete [sample application that uses Event Hubs].
-- The [Scale out Event Processing with Event Hubs] sample.
-- A [queued messaging solution] using Service Bus queues.
-- [Event Hubs overview]
+- A complete [sample application that uses Event Hubs][].
+- The [Scale out Event Processing with Event Hubs][] sample.
+- A [queued messaging solution][] using Service Bus queues.
+- [Event Hubs overview][]
 
 <!-- Images. -->
 [1]: ./media/event-hubs-c-ephcs-getstarted/create-event-hub1.png
@@ -108,7 +108,7 @@ Now that you've built a working application that creates an Event Hub and sends 
 <!-- Links -->
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[Event Hubs overview]: /documentation/articles/event-hubs-overview
-[sample application that uses Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[Scale out Event Processing with Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
-[queued messaging solution]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
+[Event Hubs overview]: event-hubs-overview.md
+[sample application that uses Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
+[Scale out Event Processing with Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
+[queued messaging solution]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cache"
-	ms.date="08/18/2015"
+	ms.date="12/03/2015"
 	wacn.date=""/>
 
 # How to Use Azure Managed Cache Service
@@ -21,7 +21,7 @@ objects from the cache, storing ASP.NET session state in the cache**,
 and **enabling ASP.NET page output caching using the cache**. For more
 information on using Azure Cache, refer to the [Next Steps][] section.
 
->For guidance on choosing the right Azure Cache offering for your application, see [Which Azure Cache offering is right for me?][].
+>[AZURE.IMPORTANT]Weâre announcing the November 30, 2016, retirement for Azure Managed Cache Service and Azure In-Role Cache. We recommend that you migrate to Azure Redis Cache in preparation for this retirement. For more information on dates and migration guidance, see [Which Azure Cache offering is right for me?](/documentation/articles/cache-faq#which-azure-cache-offering-is-right-for-me)
 
 <a name="what-is"></a>
 ## What is Azure Managed Cache Service?
@@ -32,7 +32,7 @@ Azure Managed Cache Service includes the following
 features:
 
 -   Pre-built ASP.NET providers for session state and page output
-    caching, enabling acceleration of web applications without having to
+    caching, enabling acceleration of web sites without having to
     modify application code.
 -   Caches any serializable managed object - for example: CLR objects, rows, XML,
     binary data.
@@ -130,7 +130,7 @@ You can monitor the creation progress in the Azure PowerShell window. Once the c
 <a name="enable-caching"></a>
 ## Configure the cache
 
-The **Configure** tab for Cache in the Management Portal is where you configure the options for your cache. Each cache has a **default** named cache, and the Standard and Premium cache offerings support up to nine additional named caches, for a total of ten. Each named cache has its own set of options which allow you to configure your cache in a highly flexible manner.
+The **Configure** tab for Cache in the Azure Management Portal is where you configure the options for your cache. Each cache has a **default** named cache, and the Standard and Premium cache offerings support up to nine additional named caches, for a total of ten. Each named cache has its own set of options which allow you to configure your cache in a highly flexible manner.
 
 ![NamedCaches][NamedCaches]
 
@@ -230,11 +230,11 @@ These new sections include references to a **dataCacheClients** element, which i
 
 After the configuration is added, replace the following two items in the newly added configuration.
 
-1. Replace **[Cache role name or Service Endpoint]** with the endpoint, which is displayed on the Dashboard in the Management Portal.
+1. Replace **[Cache role name or Service Endpoint]** with the endpoint, which is displayed on the Dashboard in the Azure Management Portal.
 
 	![Endpoint][Endpoint]
 
-2. Uncomment the securityProperties section, and replace **[Authentication Key]** with the authentication key, which can be found in the Management Portal by clicking **Manage Keys** from the cache dashboard.
+2. Uncomment the securityProperties section, and replace **[Authentication Key]** with the authentication key, which can be found in the Azure Management Portal by clicking **Manage Keys** from the cache dashboard.
 
 	![AccessKeys][AccessKeys]
 
@@ -349,7 +349,7 @@ if it does not exist, or replaces the object if it does exist.
 <a name="specify-expiration"></a>
 ## How To: Specify the Expiration of an Object in the Cache
 
-By default items in the cache expire 10 minutes after they are placed in the cache. This can be configured in the **Time (min)** setting on the Configure tab for Cache in the Management Portal.
+By default items in the cache expire 10 minutes after they are placed in the cache. This can be configured in the **Time (min)** setting on the Configure tab for Cache in the Azure Management Portal.
 
 ![NamedCaches][NamedCaches]
 
@@ -501,7 +501,6 @@ follow these links to learn how to do more complex caching tasks.
 [Troubleshooting and Diagnostics]: http://go.microsoft.com/fwlink/?LinkId=320839
 [NuGet Package Manager Installation]: http://go.microsoft.com/fwlink/?LinkId=240311
 [Cache Pricing Details]: /home/features/cache/#price
-[Management Portal]: https://manage.windowsazure.cn/
 [Cache offerings]: http://go.microsoft.com/fwlink/?LinkId=317277
 [Capacity planning]: http://go.microsoft.com/fwlink/?LinkId=320167
 [Expiration and Eviction]: http://go.microsoft.com/fwlink/?LinkId=317278
@@ -515,5 +514,5 @@ follow these links to learn how to do more complex caching tasks.
 [Add-AzureAccount]: http://msdn.microsoft.com/zh-cn/library/dn495128.aspx
 [Select-AzureSubscription]: http://msdn.microsoft.com/zh-cn/library/dn495203.aspx
 
-[Which Azure Cache offering is right for me?]: http://msdn.microsoft.com/zh-cn/library/azure/dn766201.aspx
+[Which Azure Cache offering is right for me?]: /documentation/articles/cache-faq#which-azure-cache-offering-is-right-for-me
  

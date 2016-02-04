@@ -48,7 +48,7 @@ You can view AMS learning paths here:
 To start using Azure Media Services, you should have the following:
  
 3. An Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
-2. An Azure Media Services account. Use Azure Management Portal, .NET, or REST API to create Azure Media Services account. For more information, see [Create Account](/documentation/articles/media-services-create-account).
+2. An Azure Media Services account. Use the Azure Management Portal, .NET, or REST API to create Azure Media Services account. For more information, see [Create Account](/documentation/articles/media-services-create-account).
 3. (Optional) Set up development environment. Choose .NET or REST API for your development environment. For more information, see [Set up environment](/documentation/articles/media-services-dotnet-how-to-use). 
 
 	Also, learn how to connect  programmatically [Connect](/documentation/articles/media-services-dotnet-connect_programmatically).
@@ -211,6 +211,12 @@ You can also scale your Media Services account by adding storage accounts to it.
 [Downloadable eBook](https://www.microsoft.com/download/details.aspx?id=42629)
 
 
+<!-- deleted by customization
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
+-->
 ##Service Level Agreement (SLA)
 
 - For Media Services Encoding, we guarantee 99.9% availability of REST API transactions.

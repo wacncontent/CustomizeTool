@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Authoring Templates with Azure VM Extensions | Windows Azure"
    description="Learn more about authoring Templates with Extensions"

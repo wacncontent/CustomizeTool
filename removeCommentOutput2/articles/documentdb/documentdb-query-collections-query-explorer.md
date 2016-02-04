@@ -1,24 +1,20 @@
 <properties 
-	pageTitle="Create, edit, and run SQL queries against a DocumentDB collection using Query Explorer | Microsoft Azure" 
-	description="Learn about the DocumentDB Query Explorer, an Azure Preview portal tool to create, edit, and run SQL queries against a DocumentDB collection." 
+	pageTitle="Create, edit, and run SQL queries against a DocumentDB collection using Query Explorer | Windows Azure" 
+	description="Learn about the DocumentDB Query Explorer, an Azure Management Portal tool to create, edit, and run SQL queries against a DocumentDB collection." 
 	services="documentdb" 
 	authors="AndrewHoh" 
 	manager="jhubbard" 
 	editor="monicar" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article"
-	ms.date="09/08/2015" 
-	ms.author="anhoh"/>
+<tags
+	ms.service="documentdb"
+	ms.date="12/01/2015"
+	wacn.date=""/>
 
 # Create, edit, and run SQL queries against a DocumentDB collection using Query Explorer #
 
-This article provides an overview of the [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/) Query Explorer, a Microsoft Azure Preview portal tool that enables you to create, edit, and run queries against a DocumentDB collection. 
+This article provides an overview of the [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/) Query Explorer, a Microsoft Azure Management Portal tool that enables you to create, edit, and run queries against a DocumentDB collection.
 
 By completing this tutorial, you'll be able to answer the following questions:  
 

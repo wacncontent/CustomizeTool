@@ -3,13 +3,13 @@
 	description="Learn how to configure single sign-on between Azure Active Directory and DocuSign."
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
+	authors="jeevansd"
 	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/06/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 

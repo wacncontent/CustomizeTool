@@ -11,13 +11,15 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/11/2015"
+	ms.date="12/08/2015"
 	wacn.date=""/>	
 
 # How To Control Inbound Traffic to an Azure Websites Environment
 
 ## Overview ##
 An Azure Websites Environment is always created in a subnet of a regional classic "v1" [virtual network][virtualnetwork].  A new regional classic "v1" virtual network and new subnet can be defined at the time an Azure Websites Environment is created.  Alternatively, an Azure Websites Environment can be created in a pre-existing regional classic "v1" virtual network and pre-existing subnet.  For more details on creating an Azure Websites Environment see [How To Create an Azure Websites Environment][HowToCreateAnAppServiceEnvironment].
+
+**Note:**  An Azure Websites Environment cannot be created in a "v2" ARM-managed virtual network.
 
 An Azure Websites Environment must always be created within a subnet because a subnet provides a network boundary which can be used to lock down inbound traffic behind upstream devices and services such that HTTP and HTTPS traffic is only accepted from specific upstream IP addresses.
 
@@ -43,16 +45,27 @@ The following is a list of ports used by an Azure Websites Environment:
 - 4020: Used for remote debugging with Visual Studio 2015.  This port can be safely blocked if the feature is not being used.
 
 ## Outbound Connectivity and DNS Requirements ##
-Note that for an Azure Websites Environment to function properly, it also requires outbound access to Azure Storage worldwide as well as Sql Database in the same Azure region.  If outbound Internet access is blocked in the virtual network, Azure Websites Environments will not be able to access these Azure endpoints.
+For an Azure Websites Environment to function properly, it requires outbound access to Azure Storage worldwide as well as Sql Database in the same Azure region.  If outbound Internet access is blocked in the virtual network, Azure Websites Environments will not be able to access these Azure endpoints.
 
-Customer may also have custom DNS servers configured in the virtual network.  Azure Websites Environments need to be able to resolve Azure endpoints under *.database.chinacloudapi.cn, *.file.core.chinacloudapi.cn and *.blob.core.chinacloudapi.cn.  
+Azure Websites Environments also require a valid DNS infrastructure configured for the virtual network.  If for any reason the DNS configuration is changed after an Azure Websites Environment has been created, developers can force an Azure Websites Environment to pick up the new DNS configuration.  Triggering a rolling environment reboot using the "Restart" icon located at the top of the Azure Websites Environment management blade in the [new management portal][NewPortal] will cause the environment to pick up the new DNS configuration.
+
+The following list details the connectivity and DNS requirements for an Azure Websites Environment:
+
+-  Outbound network connectivity to Azure Storage endpoints worldwide.  This includes endpoints located in the same region as the Azure Websites Environment, as well as storage endpoints located in **other** Azure regions.  Azure Storage endpoints resolve under the following DNS domains: *table.core.chinacloudapi.cn*, *blob.core.chinacloudapi.cn*, *queue.core.chinacloudapi.cn* and *file.core.chinacloudapi.cn*.  
+-  Outbound network connectivity to Sql DB endpoints located in the same region as the Azure Websites Environment.  SQl DB endpoints resolve under the following domain:  *database.chinacloudapi.cn*.
+-  Outbound network connectivity to the Azure management plane endpoints (both ASM and ARM endpoints).  This includes outbound connectivity to both *management.core.chinacloudapi.cn* and *management.azure.com*. 
+-  Outbound network connectivity to *ocsp.msocsp.com*.  This is needed to support SSL functionality.
+-  The DNS configuration for the virtual network must be capable of resolving all of the endpoints and domains mentioned in the earlier points.  If these endpoints cannot be resolved, Azure Websites Environment creation attempts will fail, and existing Azure Websites Environments will be marked as unhealthy.
+-  If a custom DNS server exists on the other end of a VPN gateway, the DNS server must be reachable from the subnet containing the Azure Websites Environment. 
+-  The outbound network path cannot travel through internal corporate proxies, nor can it be force tunneled to on-premises.  Doing so changes the effective NAT address of outbound network traffic from the Azure Websites Environment.  Changing the NAT address of an Azure Websites Environment's outbound network traffic will cause connectivity failures to many of the endpoints listed above.  This results in failed Azure Websites Environment creation attempts, as well as previously healthy Azure Websites Environments being marked as unhealthy.  
+-  Inbound network access to required ports for Azure Websites Environments must be allowed as described in this [article](/documentation/articles/app-service-app-service-environment-control-inbound-traffic).
 
 It is also recommended that any custom DNS servers on the vnet be setup ahead of time prior to creating an Azure Websites Environment.  If a virtual network's DNS configuration is changed while an Azure Websites Environment is being created, that will result in the Azure Websites Environment creation process failing.  In a similar vein, if a custom DNS server exists on the other end of a VPN gateway, and the DNS server is unreachable or unavailable, the Azure Websites Environment creation process will also fail.
 
 ## Creating a Network Security Group ##
 For full details on how network security groups work see the following [information][NetworkSecurityGroups].  The details below touch on highlights of network security groups, with a focus on configuring and applying a network security group to a subnet that contains an Azure Websites Environment.
 
-**Note:** Network security groups can only be configured using the Powershell cmdlets described below.  Network security groups cannot be configured graphically using the new portal (portal.azure.com) because the new portal only allows graphical configuration of NSGs associated with "v2" virtual networks.  However, Azure Websites Environments currently only work with classic "v1" virtual networks.  As a result only Powershell cmdlets can be used to configure network security groups associated with "v1" virtual networks.
+**Note:** Network security groups can only be configured using the Powershell cmdlets described below.  Network security groups cannot be configured graphically using the [Azure Management Portal](portal.azure.com) because the Azure Management Portal only allows graphical configuration of NSGs associated with "v2" virtual networks.  However, Azure Websites Environments currently only work with classic "v1" virtual networks.  As a result only Powershell cmdlets can be used to configure network security groups associated with "v1" virtual networks.
 
 Network security groups are first created as a standalone entity associated with a subscription. Since network security groups are created in an Azure region, ensure that the network security group is created in the same region as the Azure Websites Environment.
 
@@ -68,7 +81,7 @@ The example below shows a rule that explicitly grants access to the management p
     Get-AzureNetworkSecurityGroup -Name "testNSGexample" | Set-AzureNetworkSecurityRule -Name "ALLOW AzureMngmt" -Type Inbound -Priority 100 -Action Allow -SourceAddressPrefix 'INTERNET'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '454-455' -Protocol TCP
     
 
-When locking down access to port 80 and 443 to "hide" an Azure Websites Environment behind upstream devices or services, you will need to know the upstream IP address.  For example, if you are using a web application firewall (WAF), the WAF will have its own IP address (or addresses) which it uses when proxying traffic to a downstream Azure Websites Environment.  You will need to use this IP address in the *SourceAddressPrefix* parameter of a network security rule.
+When locking down access to port 80 and 443 to "hide" an Azure Websites Environment behind upstream devices or services, you will need to know the upstream IP address.  For example, if you are using a web site firewall (WAF), the WAF will have its own IP address (or addresses) which it uses when proxying traffic to a downstream Azure Websites Environment.  You will need to use this IP address in the *SourceAddressPrefix* parameter of a network security rule.
 
 In the example below, inbound traffic from a specific upstream IP address is explicitly allowed.  The address *1.2.3.4* is used as a placeholder for the IP address of an upstream WAF.  Change the value to match the address used by your upstream device or service.
 
@@ -128,7 +141,8 @@ For more information about the Azure Websites platform, see [Azure Websites][Azu
 [NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
 [AzureAppService]: /documentation/services/web-sites/
 [IntroToAppServiceEnvironment]:  /documentation/articles/app-service-app-service-environment-intro/
-[SecurelyConnecttoBackend]:  /documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/ 
+[SecurelyConnecttoBackend]:  /documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/
+[NewPortal]:  https://manage.windowsazure.cn  
 
 <!-- IMAGES -->
  

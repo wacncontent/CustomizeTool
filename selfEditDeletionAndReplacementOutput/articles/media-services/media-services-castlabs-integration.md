@@ -6,7 +6,7 @@ deleted:
 		- [Axinom](/documentation/articles/media-services-axinom-integration)
 		- [castLabs](/documentation/articles/media-services-castlabs-integration)
 
-reason: ()
+reason: (Axinom integration)
 
 deleted:
 
@@ -17,5 +17,5 @@ deleted:
 		- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 		- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
-reason: ()
+reason: (broken link)
 

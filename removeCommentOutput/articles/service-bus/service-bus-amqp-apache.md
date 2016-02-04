@@ -25,7 +25,7 @@ After provisioning, the portal displays the following:
 
 ![Proton on a Azure Linux VM][1]
 
-In order to log on to the computer, you must know the endpoint port for SSH. You can obtain this value from the portal by selecting the newly created VM and clicking on the **Endpoints** tab. The following screen shot shows that the public SSH port for this computer is 57146.
+In order to log on to the computer, you must know the endpoint port for SSH. You can obtain this value from the [Azure Management Portal][] by selecting the newly created VM and clicking on the **Endpoints** tab. The following screen shot shows that the public SSH port for this computer is 57146.
 
 ![Proton on a Azure Linux VM][2]
 
@@ -62,7 +62,7 @@ For the Python and PHP apps, this example uses the Proton client libraries from 
 		Connecting to www.bizdirusa.com|205.186.175.195|:80... connected. 
 		HTTP request sent, awaiting response... 200 OK 
 		Length: 456693 (446K) [application/x-gzip] 
-		Saving to: âqpid-proton-0.4.tar.gzâ
+		Saving to: Ă˘qpid-proton-0.4.tar.gzĂ˘
 
 		100%[======================================\>] 456,693 --.-K/s in 0.06s
 
@@ -102,7 +102,7 @@ Ready to learn more? Visit the following links:
 
 - [Service Bus AMQP overview]
 
-[Service Bus AMQP overview]: /documentation/articles/service-bus-amqp-overview
+[Service Bus AMQP overview]: service-bus-amqp-overview.md
 [0]: ./media/service-bus-amqp-apache/amqp-apache-1.png
 [1]: ./media/service-bus-amqp-apache/amqp-apache-2.png
 [2]: ./media/service-bus-amqp-apache/amqp-apache-3.png

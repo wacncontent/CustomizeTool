@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/10/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -19,7 +19,7 @@
 
 ## Overview
 
-In order to deliver digital video over the internet you must compress the media. Digital video files are quite large and may be too big to deliver over the internet or for your customers’ devices to display properly. Encoding is the process of compressing video and audio so your customers can view your media. Once a video has been encoded it can be placed into different file containers. The process of placing encoded media into a container is called packaging. For example, you can take an MP4 file and convert it into Smooth Streaming or HLS content by using the Azure Media Packager. For more information, see [Encoding versus Packaging](http://blog-ndrouin.chinacloudsites.cn/streaming-media-terminology-explained/).
+In order to deliver digital video over the internet you must compress the media. Digital video files are quite large and may be too big to deliver over the internet or for your customers' devices to display properly. Encoding is the process of compressing video and audio so your customers can view your media. Once a video has been encoded it can be placed into different file containers. The process of placing encoded media into a container is called packaging. For example, you can take an MP4 file and convert it into Smooth Streaming or HLS content by using the Azure Media Packager. For more information, see [Encoding versus Packaging](http://blog-ndrouin.chinacloudsites.cn/streaming-media-terminology-explained/).
 
 Media Services supports dynamic and static packaging. When using static packaging you need to create a copy of your content in each format required by your customers. With dynamic packaging all you need is to create an asset that contains a set of adaptive bitrate MP4 or Smooth Streaming files. Then, based on the specified format in the manifest or fragment request, the On-Demand Streaming server will ensure that your users receive the stream in the protocol they have chosen. As a result, you only need to store and pay for the files in single storage format and Media Services service will build and serve the appropriate response based on requests from a client.
 
@@ -50,7 +50,7 @@ To validate your MP4 files with Media Services Packager, you must create your ow
 	<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 	<smil xmlns="http://www.w3.org/2001/SMIL20/Language">
 	  <head>
-	<!-- Tells the server that these input files are MP4s – specific to Dynamic Packaging -->
+	<!-- Tells the server that these input files are MP4s - specific to Dynamic Packaging -->
 	    <meta name="formats" content="mp4" /> 
 	  </head>
 	  <body>
@@ -1439,7 +1439,8 @@ Make sure to update the following code to point to the folder where your input M
 
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

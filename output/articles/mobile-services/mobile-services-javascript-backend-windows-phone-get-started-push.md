@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/14/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 
@@ -136,9 +136,6 @@ Finally, you must update the script registered to the insert operation on the To
 
 This tutorial demonstrated the basics of enabling a Windows Store app to use Mobile Services and Notification Hubs to send push notifications. Next, consider completing one of the following tutorials:
 
-+ [Send push notifications to authenticated users](/documentation/articles/mobile-services-javascript-backend-windows-phone-push-notifications-app-users)
-	<br/>Learn how to use tags to send push notifications from your mobile service to only an authenticated user.
-
 + [Send broadcast notifications to subscribers](/documentation/articles/notification-hubs-windows-phone-send-breaking-news)
 	<br/>Learn how users can register and receive push notifications for categories they're interested in.
 
@@ -172,14 +169,14 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-windows-phone-get-started-data
-[Get started with authentication]: /documentation/articles/mobile-services-windows-phone-get-started-users
+[Add Mobile Services to an existing app]: mobile-services-windows-phone-get-started-data.md
+[Get started with authentication]: mobile-services-windows-phone-get-started-users.md
 
 [Setting up an authenticated web service to send push notifications for Windows Phone]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx
 
-[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
-[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
+[Mobile Services .NET How-to Conceptual Reference]: mobile-services-windows-dotnet-how-to-use-client-library.md
 
-[What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
+[What are Notification Hubs?]: ../notification-hubs-overview.md
 
  

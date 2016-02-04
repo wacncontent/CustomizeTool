@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/07/2015"
+	ms.date="11/29/2015"
 	wacn.date=""/>
 
 
@@ -24,7 +24,7 @@ To help you learn Hadoop on Windows and start using HDInsight, this tutorial sho
 
 [AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
-* [Get started with Hadoop in HDInsight on Windows](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows)
+* [Get started with Hadoop in HDInsight on Windows](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 
 ## What does this Hadoop tutorial accomplish?
 
@@ -74,7 +74,7 @@ This tutorial uses only the default blob and the default storage account.
 
 >[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster. These are:  **China East**, **China North**, **China North**, **West Europe**, **China East**, **China North**, **China North**, **China East**.
 
-Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**—either of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount] .
+Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**âeither of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount] .
 
 ##<a name="provision"></a>Provision a Hadoop cluster
 
@@ -220,42 +220,42 @@ In this Hadoop tutorial, you learned how to provision a Hadoop cluster on Window
 - [Develop Java MapReduce programs for HDInsight][hdinsight-develop-mapreduce]
 
 
-[1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
+[1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started.md
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-versions]: hdinsight-component-versioning.md
 
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
-[hadoop-hdinsight-intro]: /documentation/articles/hdinsight-hadoop-introduction
-[hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
-[hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-use-oozie]: hdinsight-use-oozie.md
+[hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
+[hdinsight-emulator]: hdinsight-hadoop-emulator-get-started.md
+[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
+[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
+[hadoop-hdinsight-intro]: hdinsight-hadoop-introduction.md
+[hdinsight-weblogs-sample]: hdinsight-hive-analyze-website-log.md
+[hdinsight-sensor-data-sample]: hdinsight-hive-analyze-sensor-data.md
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-create-storageaccount]: ../storage-create-storage-account.md
 
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-hive]: https://cwiki.apache.org/confluence/display/Hive/Home%3bjsessionid=AF5B37E667D7DBA633313BB2280C9072
 [apache-mapreduce]: http://wiki.apache.org/hadoop/MapReduce
 [apache-hdfs]: http://hadoop.apache.org/docs/r1.0.4/hdfs_design.html
-[hdinsight-hbase-custom-provision]: /documentation/articles/hdinsight-hbase-tutorial-get-started
+[hdinsight-hbase-custom-provision]: hdinsight-hbase-tutorial-get-started-v1.md
 
 
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
-[powershell-open]: /documentation/articles/install-configure-powershell#Install
+[powershell-install-configure]: ../install-configure-powershell.md
+[powershell-open]: /documentation/articles/powershell-install-configure#Install
 
 
 [img-hdi-dashboard]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.png

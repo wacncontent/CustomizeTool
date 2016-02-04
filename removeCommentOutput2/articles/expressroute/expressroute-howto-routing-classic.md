@@ -24,7 +24,7 @@ This article walks you through the steps to create and manage routing configurat
 
 ## Configuration prerequisites
 
-- You will need the latest version of the Azure PowerShell modules. You can download the latest PowerShell module from the PowerShell section of the [Azure Downloads page](http://azure.microsoft.com/downloads). Follow the instructions in the [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) page for step-by-step guidance on how to configure your computer to use the Azure PowerShell modules. 
+- You will need the latest version of the Azure PowerShell modules. You can download the latest PowerShell module from the PowerShell section of the [Azure Downloads page](/downloads/). Follow the instructions in the [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) page for step-by-step guidance on how to configure your computer to use the Azure PowerShell modules.
 - Make sure that you have reviewed the [prerequisites](/documentation/articles/expressroute-prerequisites) page, [routing requirements](/documentation/articles/expressroute-routing) page and the [workflows](/documentation/articles/expressroute-workflows) page before you begin configuration.
 - You must have an active ExpressRoute circuit. Follow the instructions to [create an ExpressRoute circuit](/documentation/articles/expressroute-howto-circuit-classic) and have the circuit enabled by your connectivity provider before you proceed. The ExpressRoute circuit must be in a provisioned and enabled state for you to be able to run the cmdlets described below.
 

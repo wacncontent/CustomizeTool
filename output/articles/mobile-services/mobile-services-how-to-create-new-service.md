@@ -29,9 +29,9 @@ This topic shows you how to use the [Azure Management Portal][Management Portal]
 
 
 <!-- URLs. -->
-[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-phonegap-get-started
+[Get started with Mobile Services]: mobile-services-javascript-backend-phonegap-get-started
 [Visual Studio 2012 Express for Windows Phone]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=268375
 
 [Management Portal]: https://manage.windowsazure.cn/
-[.NET backend version]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started
+[.NET backend version]: mobile-services-dotnet-backend-windows-phone-get-started

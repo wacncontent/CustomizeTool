@@ -2,7 +2,7 @@
 
 When copying data into SQL Server or Azure SQL/SQL Server Database, a user specified stored procedure could be configured and invoked with additional parameters. 
 
-A stored procedure can be leveraged when built-in copy mechanisms do not serve the purpose. This is typically leveraged when extra processing (merging columns, looking up additional values, insertion into multiple tables…) needs to be done before the final insertion of source data in the destination table. 
+A stored procedure can be leveraged when built-in copy mechanisms do not serve the purpose. This is typically leveraged when extra processing (merging columns, looking up additional values, insertion into multiple tablesâŚ) needs to be done before the final insertion of source data in the destination table. 
 
 You may invoke a stored procedure of choice. The following sample shows how to use a stored procedure to do a simple insertion into a table in the database. 
 

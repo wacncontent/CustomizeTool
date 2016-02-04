@@ -1,30 +1,26 @@
 <properties 
-	pageTitle="How to implement faceted navigation in Azure Search" 
-	description="Faceted navigation in Azure Search" 
+	pageTitle="How to implement faceted navigation in Azure Search | Windows Azure | Hosted cloud search service" 
+	description="Add Faceted navigation to applications that integrate with Azure Search, a cloud hosted search service on Windows Azure." 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
 	manager="mblythe" 
 	editor=""/>
 
-<tags 
-	ms.service="search" 
-	ms.devlang="rest-api" 
-	ms.workload="search" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.date="07/07/2015" 
-	ms.author="heidist"/>
+<tags
+	ms.service="search"
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
 #How to implement faceted navigation in Azure Search
 
-Faceted navigation is a filtering mechanism that provides self-directed drilldown navigation in search applications. While the term ‘faceted navigation’ might be unfamiliar, it’s almost a given that you have used one before. As the following example shows, faceted navigation is nothing more than the categories used to filter results.
+Faceted navigation is a filtering mechanism that provides self-directed drilldown navigation in search applications. While the term <!-- deleted by customization 'faceted navigation' --><!-- keep by customization: begin --> ‘faceted navigation’ <!-- keep by customization: end --> might be unfamiliar, <!-- deleted by customization it's --><!-- keep by customization: begin --> it’s <!-- keep by customization: end --> almost a given that you have used one before. As the following example shows, faceted navigation is nothing more than the categories used to filter results.
 
 ## What it looks like
 
  ![][1]
   
-Facets can help you find what you are looking for, while ensuring that you won’t get zero results. As a developer, facets let you expose the most useful search criteria for navigating your search corpus. In online retail applications, faceted navigation is often built over brands, departments (kid’s shoes), size, price, popularity, and ratings. 
+Facets can help you find what you are looking for, while ensuring that you <!-- deleted by customization won't --><!-- keep by customization: begin --> won’t <!-- keep by customization: end --> get zero results. As a developer, facets let you expose the most useful search criteria for navigating your search corpus. In online retail applications, faceted navigation is often built over brands, departments <!-- deleted by customization (kid's --><!-- keep by customization: begin --> (kid’s <!-- keep by customization: end --> shoes), size, price, popularity, and ratings.
 
 Implementing faceted navigation differs across search technologies and can be very complex. 
 In Azure Search, faceted navigation is built at query time, using attributed fields previously specified in your schema. In the queries that your application builds, a query must send *facet query parameters* in order to receive the available facet filter values for that document result set. To actually trim the document result set, the application must apply a `$filter` expression.
@@ -52,11 +48,11 @@ The most effective search applications have multiple interaction models besides 
 
 ##Know the fundamentals
 
-If you are new to search development, the best way to think of faceted navigation is that it shows the possibilities for self-directed search. It’s a type of drill-down search experience, based on predefined filters, used for quickly narrowing down search results through point-and-click actions. 
+If you are new to search development, the best way to think of faceted navigation is that it shows the possibilities for self-directed search. <!-- deleted by customization It's --><!-- keep by customization: begin --> It’s <!-- keep by customization: end --> a type of drill-down search experience, based on predefined filters, used for quickly narrowing down search results through point-and-click actions.
 
 **Interaction Model**
 
-The search experience for faceted navigation is iterative, so let’s start by understanding it as a sequence of queries that unfold in response to user actions.
+The search experience for faceted navigation is iterative, so <!-- deleted by customization let's --><!-- keep by customization: begin --> let’s <!-- keep by customization: end --> start by understanding it as a sequence of queries that unfold in response to user actions.
 
 The starting point is an application page that provides faceted navigation, typically placed on the periphery. Faceted navigation is often a tree structure, with checkboxes for each value, or clickable text. 
 
@@ -76,7 +72,7 @@ In application code, the pattern is to use facet query parameters to return the 
 
 **Query Basics in Azure Search**
 
-In Azure Search, a request is specified through one or more query parameters (see [Search Documents](http://msdn.microsoft.com/library/azure/dn798927.aspx) for a description of each one). None of the query parameters are required, but you must have at least one in order for a query to be valid.
+In Azure Search, a request is specified through one or more query parameters (see [Search <!-- deleted by customization Documents](http://msdn.microsoft.com/zh-cn/library/azure/dn798927.aspx) --><!-- keep by customization: begin --> Documents](http://msdn.microsoft.com/library/azure/dn798927.aspx) <!-- keep by customization: end --> for a description of each one). None of the query parameters are required, but you must have at least one in order for a query to be valid.
 
 Precision, generally understood as the ability to filter out irrelevant hits, is achieved through one or both of these expressions:
 
@@ -90,11 +86,20 @@ Complex search expressions will decrease the performance of the query. Where pos
 
 To better understand how a filter adds more precision, compare a complex search expression to one that includes a filter expression:
 
+<!-- deleted by customization
+- `GET /indexes/hotel/docs?search=lodging budget +Seattle -motel +parking`
+
+- `GET /indexes/hotel/docs?search=lodging&$filter=City eq 'Seattle' and Parking and Type ne 'motel'`
+
+Although both queries are valid, the second is superior if you're looking for non-motels with parking in Seattle. The first query relies on those specific words being mentioned or not mentioned in string fields like Name, Description, and any other field containing searchable data. The second query looks for precise matches on structured data and is likely to be much more accurate.
+-->
+<!-- keep by customization: begin -->
 - `GET /indexes/hotel/docs?search=lodging budget +Seattle –motel +parking`
 
 - `GET /indexes/hotel/docs?search=lodging&$filter=City eq ‘Seattle’ and Parking and Type ne ‘motel’`
 
 Although both queries are valid, the second is superior if you’re looking for non-motels with parking in Seattle. The first query relies on those specific words being mentioned or not mentioned in string fields like Name, Description, and any other field containing searchable data. The second query looks for precise matches on structured data and is likely to be much more accurate.
+<!-- keep by customization: end -->
 
 In applications that include faceted navigation, you will want to be sure that each user action over a faceted navigation structure is accompanied by a narrowing of search results, achieved through a filter expression.
 
@@ -113,7 +118,7 @@ Azure Search returns the search results, per the term(s) entered by the user, al
 
 The presentation layer in your code provides the user experience. It should list the constituent parts of the faceted navigation, such as the label, values, check boxes, and the count. The Azure Search REST API is platform agnostic, so use whatever language and platform you want. The important thing is to include UI elements that support incremental refresh, with updated UI state as each additional facet is selected. 
 
-In the following sections, we’ll take a closer look at how to build each part, starting with the presentation layer.
+In the following sections, <!-- deleted by customization we'll --><!-- keep by customization: begin --> we’ll <!-- keep by customization: end --> take a closer look at how to build each part, starting with the presentation layer.
 
 <a name="presentationlayer"></a>
 ##Build the presentation layer
@@ -122,7 +127,7 @@ Working back from the presentation layer can help you uncover requirements that 
 
 In terms of faceted navigation, your web or application page displays the faceted navigation structure, detects user input on the page, and inserts the changed elements. 
 
-For web applications, AJAX is commonly used in the presentation layer because it allows you to refresh incremental changes. You could also use ASP.NET MVC or any other visualization platform that can connect to an Azure Search service over HTTP. The sample application referenced throughout this article -- **AdventureWorks Catalog** – happens to be an ASP.NET MVC application.
+For web <!-- deleted by customization sites --><!-- keep by customization: begin --> applications <!-- keep by customization: end -->, AJAX is commonly used in the presentation layer because it allows you to refresh incremental changes. You could also use ASP.NET MVC or any other visualization platform that can connect to an Azure Search service over HTTP. The sample application referenced throughout this article -- **AdventureWorks Catalog** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> happens to be an ASP.NET MVC application.
 
 The following example, taken from the **index.cshtml** file of the sample application, builds a dynamic HTML structure for displaying faceted navigation in your search results page. In the sample, faceted navigation is built into the search results page, and appears after the user has submitted a search term.
 
@@ -137,7 +142,7 @@ Notice that each facet has a label (Colors, Categories, Prices), a binding to a 
 ##Build the index
 
 Faceting is enabled on a field-by-field basis in the index, via this index attribute: `"Facetable": true`.  
-All field types that could possibly be used in faceted navigation are `Facetable` by default. Such field types include `Edm.String`, `Edm.DateTimeOffset`, and all the numeric field types (essentially, all field types are facetable except `Edm.GeographyPoint`, which can’t be used in faceted navigation). 
+All field types that could possibly be used in faceted navigation are `Facetable` by default. Such field types include `Edm.String`, `Edm.DateTimeOffset`, and all the numeric field types (essentially, all field types are facetable except `Edm.GeographyPoint`, which <!-- deleted by customization can't --><!-- keep by customization: begin --> can’t <!-- keep by customization: end --> be used in faceted navigation).
 
 When building an index, a best practice for faceted navigation is to explicitly turn faceting off for fields that should never be used as a facet.  In particular, string fields for singleton values, such as an ID or product name, should be set to `"Facetable": false` to prevent their accidental (and ineffective) use in a faceted navigation.
 
@@ -145,7 +150,7 @@ Following is the schema for the AdventureWorks Catalog sample app (trimmed of so
 
  ![][3]
  
-Note that `Facetable` is turned off for string fields that shouldn’t be used as facets, such as an ID or name. Turning faceting off where you don’t need it helps keep the size of the index small, and generally improves performance.
+Note that `Facetable` is turned off for string fields that <!-- deleted by customization shouldn't --><!-- keep by customization: begin --> shouldn’t <!-- keep by customization: end --> be used as facets, such as an ID or name. Turning faceting off where you <!-- deleted by customization don't --><!-- keep by customization: begin --> don’t <!-- keep by customization: end --> need it helps keep the size of the index small, and generally improves performance.
 
 > [AZURE.TIP] As a best practice, include the full set of index attributes for each field. Although `Facetable` is on by default for almost all fields, purposely setting each attribute can help you think through the implications of each schema decision. 
 
@@ -168,7 +173,7 @@ As you can imagine, diligence in preparing the data is an essential aspect of ef
 <a name="buildquery"></a>
 ##Build the query
 
-The code that you write for building queries should specify all parts of a valid query, including search expressions, facets, filters, scoring profiles– anything used to formulate a request. In this section, we’ll explore where facets fit into a query, and how filters are used with facets to deliver a reduced result set.
+The code that you write for building queries should specify all parts of a valid query, including search expressions, facets, filters, scoring <!-- deleted by customization profiles- --><!-- keep by customization: begin --> profiles– <!-- keep by customization: end --> anything used to formulate a request. In this section, <!-- deleted by customization we'll --><!-- keep by customization: begin --> we’ll <!-- keep by customization: end --> explore where facets fit into a query, and how filters are used with facets to deliver a reduced result set.
 
 An example is often a good place to begin. The following example, taken from the **CatalogSearch.cs** file, builds a request that creates facet navigation based on Color, Category, and Price. 
 
@@ -176,18 +181,18 @@ Notice that facets are integral in this sample application. The search experienc
 
   ![][4]
  
-A facet query parameter is set to a field and depending on the data type, can be further parameterized by comma-delimited list that includes `count:<integer>`, `sort:<>`, `intervals:<integer>`, and  `values:<list>`. A values list is supported for numeric data when setting up ranges. See [Search Documents (Azure Search API)](http://msdn.microsoft.com/library/azure/dn798927.aspx) for usage details.
+A facet query parameter is set to a field and depending on the data type, can be further parameterized by comma-delimited list that includes `count:<integer>`, `sort:<>`, `intervals:<integer>`, and  `values:<list>`. A values list is supported for numeric data when setting up ranges. See [Search Documents (Azure Search <!-- deleted by customization API)](http://msdn.microsoft.com/zh-cn/library/azure/dn798927.aspx) --><!-- keep by customization: begin --> API)](http://msdn.microsoft.com/library/azure/dn798927.aspx) <!-- keep by customization: end --> for usage details.
 
 Along with facets, the request formulated by your application should also build filters to narrow down the set of candidate documents based on a facet value selection. For a bike store, faceted navigation provides clues to questions like "What colors, manufacturers, and types of bikes are available", while filtering answers questions like "Which exact bikes are red, mountain bikes, in this price range".
 
-When a user clicks "Red" to indicate that only Red products should be shown, the next query the application sends would include `$filter=Color eq ‘Red’`.
+When a user clicks "Red" to indicate that only Red products should be shown, the next query the application sends would include `$filter=Color eq <!-- deleted by customization 'Red'` --><!-- keep by customization: begin --> ‘Red’` <!-- keep by customization: end -->.
 
 ## Best practices for faceted navigation
 
 The following list summarizes a few best practices.
 
 - **Precision**<br/>
-Use filters. If you rely on just search expressions alone, stemming could cause a document to be returned that doesn’t have the precise facet value in any of its fields. 
+Use filters. If you rely on just search expressions alone, stemming could cause a document to be returned that <!-- deleted by customization doesn't --><!-- keep by customization: begin --> doesn’t <!-- keep by customization: end --> have the precise facet value in any of its fields.
 
 - **Target fields**<br/>
 In faceted drill down, you typically want to only include documents that have the facet value in a specific (faceted) field, not anywhere across all searchable fields. Adding a filter reinforces the target field by directing the service to search only in the faceted field for a matching value.
@@ -245,12 +250,12 @@ In presentation code, you should see a count parameter on the facet, used to dis
 In a facet query, you can set count to a value.  The default is 10, but you can set it higher or lower. Setting `count:12` gets the top 12 matches in facet results by document count.
 
 - "`@odata.count`"<br/>
-In the query response, this value indicates the number of matching items in the search results. On average, it’s larger than the sum of all facet results combined, due to the presence of items that match the search term, but have no facet value matches.
+In the query response, this value indicates the number of matching items in the search results. On average, <!-- deleted by customization it's --><!-- keep by customization: begin --> it’s <!-- keep by customization: end --> larger than the sum of all facet results combined, due to the presence of items that match the search term, but have no facet value matches.
 
 
 **Levels in faceted navigation** 
 
-As noted, there is no direct support for nesting facets in a hierarchy. Out of the box, faceted navigation only supports one level of filters. However, workarounds do exist. You can encode a hierarchical facet structure in a `Collection(Edm.String)` with one entry point per hierarchy. Implementing this workaround is beyond the scope of this article, but you can read about collections in [OData by Example](http://msdn.microsoft.com/library/ff478141.aspx). 
+As noted, there is no direct support for nesting facets in a hierarchy. Out of the box, faceted navigation only supports one level of filters. However, workarounds do exist. You can encode a hierarchical facet structure in a `Collection(Edm.String)` with one entry point per hierarchy. Implementing this workaround is beyond the scope of this article, but you can read about collections in [OData by <!-- deleted by customization Example](http://msdn.microsoft.com/zh-cn/library/ff478141.aspx) --><!-- keep by customization: begin --> Example](http://msdn.microsoft.com/library/ff478141.aspx) <!-- keep by customization: end -->.
 
 **Validate fields**
 
@@ -258,7 +263,7 @@ If you build the list of facets dynamically based on untrusted user input, you s
 
 **Counts in facet results**
 
-When adding a filter to a faceted query, you might want to retain the facet statement (for example, `facet=Rating&$filter=Rating ge 4`). Technically, facet=Rating isn’t needed, but keeping it returns the counts of facet values for ratings 4 and higher. For example, if a user clicks "4" and the query includes a filter for greater or equal to "4", counts are returned for each rating that is 4 and up.  
+When adding a filter to a faceted query, you might want to retain the facet statement (for example, `facet=Rating&$filter=Rating ge 4`). Technically, facet=Rating <!-- deleted by customization isn't --><!-- keep by customization: begin --> isn’t <!-- keep by customization: end --> needed, but keeping it returns the counts of facet values for ratings 4 and higher. For example, if a user clicks "4" and the query includes a filter for greater or equal to "4", counts are returned for each rating that is 4 and up.
 
 **Sharding implications on facet counts**
 
@@ -271,9 +276,9 @@ Although this behavior could change at any time, if you encounter this behavior 
 <a name="rangefacets"></a>
 ##Facet navigation based on a range values
 
-Faceting over ranges is a common search application requirement. Ranges are supported for numeric data and DateTime values. You can read more about each approach in [Search Documents (Azure Search API)](http://msdn.microsoft.com/library/azure/dn798927.aspx).
+Faceting over ranges is a common search application requirement. Ranges are supported for numeric data and DateTime values. You can read more about each approach in [Search Documents (Azure Search <!-- deleted by customization API)](http://msdn.microsoft.com/zh-cn/library/azure/dn798927.aspx) --><!-- keep by customization: begin --> API)](http://msdn.microsoft.com/library/azure/dn798927.aspx) <!-- keep by customization: end -->.
 
-Azure Search simplifies range construction by providing two approaches for computing a range. For both approaches, Azure Search creates the appropriate ranges given the inputs you’ve provided. For instance, if you specify range values of 10|20|30, it will automatically create ranges of 0 -10, 10-20, 20-30. The sample application removes any intervals that are empty. 
+Azure Search simplifies range construction by providing two approaches for computing a range. For both approaches, Azure Search creates the appropriate ranges given the inputs <!-- deleted by customization you've --><!-- keep by customization: begin --> you’ve <!-- keep by customization: end --> provided. For instance, if you specify range values of 10|20|30, it will automatically create ranges of 0 -10, 10-20, 20-30. The sample application removes any intervals that are empty.
 
 **Approach 1: Use the interval parameter**<br/>
 To set price facets in $10 increments, you would specify: `&facet=price,interval:10`
@@ -301,7 +306,7 @@ In the sample application, the filter expression uses **priceFrom** and **priceT
 <a name="geofacets"></a> 
 ##Filtered navigation based on GeoPoints
 
-It’s common to see filters that help you choose a store, restaurant, or destination based on its proximity to your current location. While this type of filter might look like faceted navigation, it’s actually just a filter. We mention it here for those of you who are specifically looking for implementation advice for that particular design problem.
+<!-- deleted by customization It's --><!-- keep by customization: begin --> It’s <!-- keep by customization: end --> common to see filters that help you choose a store, restaurant, or destination based on its proximity to your current location. While this type of filter might look like faceted navigation, <!-- deleted by customization it's --><!-- keep by customization: begin --> it’s <!-- keep by customization: end --> actually just a filter. We mention it here for those of you who are specifically looking for implementation advice for that particular design problem.
 
 There are two Geospatial functions in Azure Search, **geo.distance** and **geo.intersects**.
 
@@ -309,14 +314,14 @@ There are two Geospatial functions in Azure Search, **geo.distance** and **geo.i
 
 - The **geo.intersects** function returns true if a given point is within a given polygon, where the point is a field and the polygon is specified as a constant list of coordinates passed as part of the filter.
 
-You can find filter examples in [OData expression syntax (Azure Search)](http://msdn.microsoft.com/library/azure/dn798921.aspx). To learn more about geospatial search, see [Create a geospatial search application in Azure Search](search-create-geospatial.md).
+You can find filter examples in [OData expression syntax (Azure <!-- deleted by customization Search)](http://msdn.microsoft.com/zh-cn/library/azure/dn798921.aspx) --><!-- keep by customization: begin --> Search)](http://msdn.microsoft.com/library/azure/dn798921.aspx) <!-- keep by customization: end -->. To learn more about geospatial search, see [Create a geospatial search application in Azure <!-- deleted by customization Search](/documentation/articles/search-create-geospatial) --><!-- keep by customization: begin --> Search](search-create-geospatial.md) <!-- keep by customization: end -->.
 
 <a name="tryitout"></a>
 ##Try it out
 
 Azure Search Adventure Works Demo on Codeplex contains the examples referenced in this article. As you work with search results, watch the URL for changes in query construction. This application happens to append facets to the URI as you select each one.
 
-1.	Configure the sample application (see [Create your first application for instructions](search-create-first-solution.md)). 
+1.	Configure the sample application (see [Create your first application for <!-- deleted by customization instructions](/documentation/articles/search-create-first-solution)) --><!-- keep by customization: begin --> instructions](search-create-first-solution.md)) <!-- keep by customization: end -->.
 
 	Notice the schema that is defined in the Program.cs file of the CatalogIndexer project. It specifies facetable fields for color, listPrice, size, weight, categoryName, and modelName.  Only a few of these (color, listPrice, categoryName) are actually implemented in faceted navigation.
 
@@ -377,11 +382,21 @@ For more insights on design principles for faceted navigation, we recommend the 
 [Designing for Faceted Search]: http://www.uie.com/articles/faceted_search/
 [Design Patterns: Faceted Navigation]: http://alistapart.com/article/design-patterns-faceted-navigation
 [Create your first application]: search-create-first-solution.md
+<!-- deleted by customization
+[OData expression syntax (Azure Search)]: http://msdn.microsoft.com/zh-cn/library/azure/dn798921.aspx
+-->
+<!-- keep by customization: begin -->
 [OData expression syntax (Azure Search)]: http://msdn.microsoft.com/library/azure/dn798921.aspx
+<!-- keep by customization: end -->
 [Create a geospatial search application in Azure Search]: search-create-geospatial.md
 [Azure Search Adventure Works Demo]: https://azuresearchadventureworksdemo.codeplex.com/
 [http://www.odata.org/documentation/odata-version-2-0/overview/]: http://www.odata.org/documentation/odata-version-2-0/overview/ 
 [Faceting on Azure Search forum post]: ../faceting-on-azure-search.md?forum=azuresearch
+<!-- deleted by customization
+[Search Documents (Azure Search API)]: http://msdn.microsoft.com/zh-cn/library/azure/dn798927.aspx
+-->
+<!-- keep by customization: begin -->
 [Search Documents (Azure Search API)]: http://msdn.microsoft.com/library/azure/dn798927.aspx
+<!-- keep by customization: end -->
 
  

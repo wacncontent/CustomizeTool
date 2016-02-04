@@ -4,7 +4,7 @@ deleted:
 
 		| [Graphical](#graphical-runbooks) | Based on Windows PowerShell Workflow and created and edited completely in graphical editor in Azure Management Portal. |
 
-reason: ()
+reason: (Graphical Runbook)
 
 deleted:
 
@@ -20,35 +20,35 @@ deleted:
 		- Use [parallel processing](/documentation/articles/automation-powershell-workflow#parallel-processing) to perform mulitple activities in parallel.
 		- Can include other Graphical runbooks and PowerShell Workflow runbooks as child runbooks to create high level workflows.
 
-reason: ()
+reason: (Graphical Runbook)
 
 deleted:
 
 		Graphical runbooks and
 
-reason: ()
+reason: (Graphical Runbook)
 
 deleted:
 
 		Graphical or
 
-reason: ()
+reason: (Graphical Runbook)
 
 deleted:
 
 		- Can't run runbooks on [Hybrid Runbook Worker](/documentation/articles/automation-hybrid-runbook-worker).
 
-reason: ()
+reason: (Hybrid Runbook)
 
 deleted:
 
 		and Graphical runbooks
 
-reason: ()
+reason: (Graphical Runbook)
 
 deleted:
 
 		- [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)
 
-reason: ()
+reason: (Graphical Runbook)
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/06/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 # <a name="getting-started"> </a>Get started with Mobile Services
@@ -27,8 +27,8 @@ In this tutorial, you will create both a new mobile service and a simple *To do 
 
 To complete this tutorial, you need the following:
 
-* An active Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
-* [Visual Studio 2013 Express for Windows]
+* An active Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/zh-cn/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fzh-cn%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
+* [Visual Studio 2013 Express for Windows] 
 
 ## Create a new mobile service
 
@@ -36,13 +36,13 @@ To complete this tutorial, you need the following:
 
 ## Create a new universal Windows app
 
-Once you have created your mobile service, you can follow an easy quickstart in the Management Portal to either create a new universal Windows app or modify an existing Windows Store or Windows Phone app project to connect to your mobile service.
+Once you have created your mobile service, you can follow an easy quickstart in the Azure Management Portal to either create a new universal Windows app or modify an existing Windows Store or Windows Phone app project to connect to your mobile service.
 
 In this section you will create a new universal Windows app that is connected to your mobile service.
 
-1.  In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+1.  In the [Azure Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
 
-
+   
 2. In the quickstart tab, click **Windows** under **Choose platform** and expand **Create a new Windows Store app**.
 
    	This displays the three easy steps to create a Windows Store app connected to your mobile service.
@@ -53,7 +53,7 @@ In this section you will create a new universal Windows app that is connected to
 
 4. Click **Create TodoItem table** to create a table to store app data.
 
-5. Under **Download and run your app**, select a language for your app, then click **Download**.
+5. Under **Download and run your app**, select a language for your app, then click **Download**. 
 
   	This downloads the project for the sample *To do list* application that is connected to your mobile service. Save the compressed project file to your local computer, and make a note of where you save it.
 
@@ -64,7 +64,7 @@ In this section you will create a new universal Windows app that is connected to
 >[AZURE.NOTE]You can review the code that accesses your mobile service to query and insert data, which is found in the MainPage.xaml.cs file.
 
 ## Next Steps
-Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services:
+Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services: 
 
 * [Get started with offline data sync]  
   Learn how to use offline data sync to make your app responsive and robust.
@@ -96,5 +96,5 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
 [Visual Studio 2013 Express for Windows]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn/
  

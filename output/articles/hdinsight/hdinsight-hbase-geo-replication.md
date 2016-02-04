@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/08/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # Configure HBase geo-replication in HDInsight
@@ -45,7 +45,7 @@ Before you begin this tutorial, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell). To execute PowerShell scripts, you must run Azure PowerShell as administrator and set the execution policy to *RemoteSigned*. See Using the Set-ExecutionPolicy cmdlet.
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure). To execute PowerShell scripts, you must run Azure PowerShell as administrator and set the execution policy to *RemoteSigned*. See Using the Set-ExecutionPolicy cmdlet.
 
 - **Two Azure virtual network with VPN connectivity and with DNS configured**.  For instructions, see [Configure a VPN connection between two Azure virtual networks][hdinsight-hbase-replication-vnet], and [Configure DNS between two Azure virtual networks][hdinsight-hbase-replication-dns].
 
@@ -170,11 +170,11 @@ To configure conditional forwarder, you need to know the domain suffixes of the 
 5.	Right-click **Conditional Forwarders**, and then click **New Conditional Forwarder**. 
 5.	Enter the following information:
 	- **DNS Domain**: enter the DNS suffix of the Contoso-HBase-US. For example: Contoso-HBase-US.f5.internal.chinacloudapp.cn.
-	- **IP addresses of the master servers**: enter 10.2.0.4, which is the Contoso-DNS-CE’s IP address. Please verify the IP. Your DNS server can have a different IP address.
-6.	Press **ENTER**, and then click **OK**.  Now you will be able to resolve the Contoso-DNS-CE’s IP address from Contoso-DNS-CN.
+	- **IP addresses of the master servers**: enter 10.2.0.4, which is the Contoso-DNS-CE's IP address. Please verify the IP. Your DNS server can have a different IP address.
+6.	Press **ENTER**, and then click **OK**.  Now you will be able to resolve the Contoso-DNS-CE's IP address from Contoso-DNS-CN.
 7.	Repeat the steps to add a DNS conditional forwarder to the DNS service on the Contoso-DNS-CE virtual machine with the following values:
 	- **DNS Domain**: enter the DNS suffix of the Contoso-HBase-EU. 
-	- **IP addresses of the master servers**: enter 10.2.0.4, which is the Contoso-DNS-CN’s IP address.
+	- **IP addresses of the master servers**: enter 10.2.0.4, which is the Contoso-DNS-CN's IP address.
 
 **To test domain name resolution**
 
@@ -286,19 +286,24 @@ In this tutorial, you have learned how to configure HBase replication across two
 - [HDInsight documentation](/documentation/services/hdinsight/)
 - [Get started with Apache HBase in HDInsight][hdinsight-hbase-get-started]
 - [HDInsight HBase overview][hdinsight-hbase-overview]
-- [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet]
+- [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet-v1]
+- [Analyze real-time Twitter sentiment with HBase][hdinsight-hbase-twitter-sentiment]
 - [Analyzing sensor data with Storm and HBase in HDInsight (Hadoop)][hdinsight-sensor-data]
 
-[hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
+[hdinsight-hbase-geo-replication-vnet]: hdinsight-hbase-geo-replication-configure-VNets.md
+[hdinsight-hbase-geo-replication-dns]: ../hdinsight-hbase-geo-replication-configure-VNet.md
+
+
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication/HDInsight.HBase.Replication.Network.diagram.png
 
-[powershell-install]: /documentation/articles/install-configure-powershell
-[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
-[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-hbase-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
-[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
-[hdinsight-sensor-data]: /documentation/articles/hdinsight-storm-sensor-data-analysis
-[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
-[hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
-[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
+[powershell-install]: ../install-configure-powershell.md
+[hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md
+[hdinsight-manage-portal]: hdinsight-administer-use-management-portal-v1
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-hbase-replication-vnet]: hdinsight-hbase-geo-replication-configure-VNets.md
+[hdinsight-hbase-replication-dns]: hdinsight-hbase-geo-replication-configure-DNS.md
+[hdinsight-hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
+[hdinsight-sensor-data]: hdinsight-storm-sensor-data-analysis.md
+[hdinsight-hbase-overview]: hdinsight-hbase-overview.md
+[hdinsight-hbase-provision-vnet-v1]: hdinsight-hbase-provision-vnet-v1.md
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1

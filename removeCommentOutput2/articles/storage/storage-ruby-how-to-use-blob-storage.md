@@ -1,15 +1,15 @@
 <properties
 	pageTitle="How to use Blob storage from Ruby | Windows Azure"
-	description="Learn how to use the Azure Blob service to upload, download, list, and delete blob content. Samples written in Ruby."
+	description="Learn how to use Blob storage to upload, download, list, and delete blob content. Samples written in Ruby."
 	services="storage"
 	documentationCenter="ruby"
 	authors="tfitzmac"
 	manager="wpickett"
-	editor=""/>
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/01/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 
@@ -19,7 +19,7 @@
 
 ## Overview
 
-This guide will show you how to perform common scenarios using the Azure Blob service. The samples are written using the Ruby API. The scenarios covered include **uploading, listing, downloading,** and **deleting** blobs.
+This guide will show you how to perform common scenarios using Blob storage. The samples are written using the Ruby API. The scenarios covered include **uploading, listing, downloading,** and **deleting** blobs.
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
 
@@ -28,7 +28,7 @@ This guide will show you how to perform common scenarios using the Azure Blob se
 ## Create a Ruby application
 
 Create a Ruby application. For instructions,
-see [Create a Ruby application on Azure](/develop/ruby/tutorials/web-app-with-linux-vm/).
+see [Create a Ruby application on Azure](/documentation/articles/virtual-machines-ruby-rails-web-app-linux).
 
 ## Configure your application to access Storage
 
@@ -48,8 +48,8 @@ Using your favorite text editor, add the following to the top of the Ruby file w
 
 ## Setup an Azure Storage Connection
 
-The azure module will read the environment variables **AZURE\_STORAGE\_ACCOUNT** and **AZURE\_STORAGE\_ACCESS_KEY**
-for information required to connect to your Azure storage account. If these environment variables are not set, you must specify the account information before using **Azure::BlobService** with the following code:
+The azure module will read the environment variables **AZURE_STORAGE_ACCOUNT** and **AZURE_STORAGE_ACCESS_KEY**
+for information required to connect to your Azure storage account. If these environment variables are not set, you must specify the account information before using **Azure::Blob::BlobService** with the following code:
 
 	Azure.config.storage_account_name = "<your azure storage account>"
 	Azure.config.storage_access_key = "<your azure storage access key>"
@@ -57,8 +57,8 @@ for information required to connect to your Azure storage account. If these envi
 
 To obtain these values:
 
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn/).
-2. Navigate to the storage account you want to use.
+1. Log into the [Azure Management Portal](https://manage.windowsazure.cn/).
+2. Navigate to the storage account you want to use 
 3. Click **MANAGE KEYS** at the bottom of the navigation pane.
 4. In the pop up dialog, you'll see the storage account name, primary access key and secondary access key. For access key, you can use either the primary one or the secondary one.
 
@@ -66,11 +66,11 @@ To obtain these values:
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
 
-The **Azure::BlobService** object lets you work with containers and blobs. To create a container, use the **create\_container()** method.
+The **Azure::Blob::BlobService** object lets you work with containers and blobs. To create a container, use the **create_container()** method.
 
 The following code example creates a container or print out the error if there is any.
 
-	azure_blob_service = Azure::BlobService.new
+	azure_blob_service = Azure::Blob::BlobService.new
 	begin
 	  container = azure_blob_service.create_container("test-container")
 	rescue
@@ -79,19 +79,19 @@ The following code example creates a container or print out the error if there i
 
 If you want to make the files in the container public, you can set the container's permissions.
 
-You can just modify the <strong>create\_container()</strong> call to pass the **:public\_access\_level** option:
+You can just modify the <strong>create_container()</strong> call to pass the **:public_access_level** option:
 
 	container = azure_blob_service.create_container("test-container",
 	  :public_access_level => "<public access level>")
 
 
-Valid values for the **:public\_access\_level** option are:
+Valid values for the **:public_access_level** option are:
 
 * **blob:** Specifies full public read access for container and blob data. Clients can enumerate blobs within the container via anonymous request, but cannot enumerate containers within the storage account.
 
 * **container:** Specifies public read access for blobs. Blob data within this container can be read via anonymous request, but container data is not available. Clients cannot enumerate blobs within the container via anonymous request.
 
-Alternatively, you can modify the public access level of a container by using **set\_container\_acl()** method to specify the public access level.
+Alternatively, you can modify the public access level of a container by using **set_container_acl()** method to specify the public access level.
 
 The following code example changes the public access level to **container**:
 
@@ -99,7 +99,7 @@ The following code example changes the public access level to **container**:
 
 ## Upload a blob into a container
 
-To upload content to a blob, use the **create\_block\_blob()** method to create the blob, use a file or string as the content of the blob.
+To upload content to a blob, use the **create_block_blob()** method to create the blob, use a file or string as the content of the blob.
 
 The following code uploads the file **test.png** as a new blob named "image-blob" in the container.
 
@@ -111,7 +111,7 @@ The following code uploads the file **test.png** as a new blob named "image-blob
 ## List the blobs in a container
 
 To list the containers, use **list_containers()** method.
-To list the blobs within a container, use **list\_blobs()** method.
+To list the blobs within a container, use **list_blobs()** method.
 
 This outputs the urls of all the blobs in all the containers for the account.
 
@@ -125,15 +125,15 @@ This outputs the urls of all the blobs in all the containers for the account.
 
 ## Download blobs
 
-To download blobs, use the **get\_blob()** method to retrieve the contents.
+To download blobs, use the **get_blob()** method to retrieve the contents.
 
-The following code example demonstrates using **get\_blob()** to download the contents of "image-blob" and write it to a local file.
+The following code example demonstrates using **get_blob()** to download the contents of "image-blob" and write it to a local file.
 
 	blob, content = azure_blob_service.get_blob(container.name,"image-blob")
 	File.open("download.png","wb") {|f| f.write(content)}
 
 ## Delete a Blob
-Finally, to delete a blob, use the **delete\_blob()** method. The following code example demonstrates how to delete a blob.
+Finally, to delete a blob, use the **delete_blob()** method. The following code example demonstrates how to delete a blob.
 
 	azure_blob_service.delete_blob(container.name, "image-blob")
 
@@ -141,6 +141,6 @@ Finally, to delete a blob, use the **delete\_blob()** method. The following code
 
 To learn about more complex storage tasks, follow these links:
 
-- MSDN Reference: [Azure Storage](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
 - [Azure Storage Team Blog](http://blogs.msdn.com/b/windowsazurestorage/)
 - [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) repository on GitHub
+- [Transfer data with the AzCopy command-line utility](/documentation/articles/storage-use-azcopy)

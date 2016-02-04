@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Use Active Directory for authentication in Azure Websites" 
-	description="Learn the different authentication and authorization options for line-of-business applications that are deployed to Azure Websites" 
+	pageTitle="Use Active Directory for authentication in Azure Web App" 
+	description="Learn the different authentication and authorization options for line-of-business applications that are deployed to Azure Web Apps" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/29/2015"
+	ms.date="12/10/2015"
 	wacn.date=""/>
 
-# Use Active Directory for authentication in Azure Websites #
+# Use Active Directory for authentication in Azure Web App#
 
-[Azure Websites](/documentation/services/web-sites/) enables enterprise line-of-business application scenarios by supporting single sign-on (SSO) of users whether they access the application from your on-premises environment or the public internet. It can be integrated with [Azure Active Directory](/home/features/identity/) (AAD) or an on-premises secure token service (STS), such as Active Directory Federation Services (AD FS), to authenticate your internal Active Directory (AD) users and authorize them properly.
+[Azure Web Apps](/documentation/services/web-sites/) enables enterprise line-of-business application scenarios by supporting single sign-on (SSO) of users whether they access the application from your on-premises environment or the public internet. It can be integrated with [Azure Active Directory](/home/features/identity/) (AAD) or an on-premises secure token service (STS), such as Active Directory Federation Services (AD FS), to authenticate your internal Active Directory (AD) users and authorize them properly.
 
 ## Zero-friction authentication and authorization ##
 
@@ -33,7 +33,7 @@ In many scenarios, you want to customize the authentication and authorization be
 	-	Azure AD with directory sync from your on-premises AD domain enables a smooth SSO experience to your web app when AD users access from the intranet and the internet. From the intranet, AD users can automatically access the web app through Integrated Authentication. From the internet, AD users can log into the web app using their Windows credentials.
 	-	Provides SSO to [all applications supported by Azure AD](/home/features/identity/), including Azure, Office 365, Dynamics CRM Online, Microsoft Intune, and thousands of non-Microsoft cloud applications. 
 	-	Azure AD delegates management of [relying party](http://en.wikipedia.org/wiki/Relying_party) applications to non-administrator roles, while application access to sensitive directory data must still be configured by global administrators.
-	-	Sends a general-purpose set of claim types for all relying party applications. For the list of claim types, see [Supported Token and Claim Types](http://msdn.microsoft.com/zh-cn/library/azure/dn195587.aspx). Claims are not customizable.
+	-	Sends a general-purpose set of claim types for all relying party applications. For the list of claim types, see [Supported Token and Claim Types](/documentation/articles/active-directory-token-and-claims/). Claims are not customizable.
 	-	[Azure AD Graph API](http://msdn.microsoft.com/zh-cn/library/azure/hh974476.aspx) enables application access to directory data in Azure AD.
 -	[On-premises secure token service (STS), such as AD FS](/documentation/articles/web-sites-dotnet-lob-application-adfs) - You can implement authentication and authorization for your web app with an on-premises STS like AD FS. Using on-premises AD FS has the following characteristics:
 	-	AD FS topology must be deployed on-premises, with cost and management overhead.

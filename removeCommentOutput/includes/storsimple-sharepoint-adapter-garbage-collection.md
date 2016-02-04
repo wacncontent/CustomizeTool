@@ -24,7 +24,7 @@ In this procedure, you will:
 
     `<add name=”RBSMaintainerConnectionWSSContent” connectionString="Data Source=SHRPT13-SQL12\SHRPT13;Initial Catalog=WSS_Content;Integrated Security=True;Application Name=&quot;Remote Blob Storage Maintainer for WSS_Content&quot;" providerName="System.Data.SqlClient" />`
 
-6. Use `aspnet_regiis –pef connectionStrings` to re-encrypt the web.config file. 
+6. Use `aspnet_regiis -pef connectionStrings` to re-encrypt the web.config file. 
 
 7. Rename web.config to Microsoft.Data.SqlRemoteBlobs.Maintainer.exe.config. 
 
@@ -34,13 +34,13 @@ In this procedure, you will:
 
        `use WSS_Content`
 
-       `exec mssqlrbs.rbs_sp_set_config_value ‘garbage_collection_time_window’ , ’time 00:00:00’`
+       `exec mssqlrbs.rbs_sp_set_config_value 'garbage_collection_time_window' , 'time 00:00:00'`
 
-       `exec mssqlrbs.rbs_sp_set_config_value ‘delete_scan_period’ , ’time 00:00:00’`
+       `exec mssqlrbs.rbs_sp_set_config_value 'delete_scan_period' , 'time 00:00:00'`
 
-2. On the web front-end server, under **Central Administration**, edit the **Web Application General Settings** for the desired content database to temporarily disable the Recycle Bin. This action will also empty the Recycle Bin for any related site collections. To do this, click **Central Administration** -> **Application Management** -> **Web Applications (Manage web applications)** -> **SharePoint - 80** -> **General Application Settings**. Set the **Recycle Bin Status** to **OFF**.
+2. On the web front-end server, under **Central Administration**, edit the **web site General Settings** for the desired content database to temporarily disable the Recycle Bin. This action will also empty the Recycle Bin for any related site collections. To do this, click **Central Administration** -> **Application Management** -> **web sites (Manage web sites)** -> **SharePoint - 80** -> **General Application Settings**. Set the **Recycle Bin Status** to **OFF**.
 
-    ![Web Application General Settings](./media/storsimple-sharepoint-adapter-garbage-collection/HCS_WebApplicationGeneralSettings-include.png)
+    ![web site General Settings](./media/storsimple-sharepoint-adapter-garbage-collection/HCS_WebApplicationGeneralSettings-include.png)
 
 #### To run the Maintainer
 
@@ -56,10 +56,10 @@ In this procedure, you will:
 
       `use WSS_Content`
 
-      `exec mssqlrbs.rbs_sp_set_config_value ‘garbage_collection_time_window’ , ‘days 30’`
+      `exec mssqlrbs.rbs_sp_set_config_value 'garbage_collection_time_window' , 'days 30'`
 
-      `exec mssqlrbs.rbs_sp_set_config_value ‘delete_scan_period’ , ’days 30’`
+      `exec mssqlrbs.rbs_sp_set_config_value 'delete_scan_period' , 'days 30'`
 
-      `exec mssqlrbs.rbs_sp_set_config_value ‘orphan_scan_period’ , ’days 30’`
+      `exec mssqlrbs.rbs_sp_set_config_value 'orphan_scan_period' , 'days 30'`
 
-2. On the web front-end server, in **Central Administration**, edit the **Web Application General Settings** for the desired content database to re-enable the Recycle Bin. To do this, click **Central Administration** -> **Application Management** -> **Web Applications (Manage web applications)** -> **SharePoint - 80** -> **General Application Settings**. Set the Recycle Bin Status to **ON**.
+2. On the web front-end server, in **Central Administration**, edit the **web site General Settings** for the desired content database to re-enable the Recycle Bin. To do this, click **Central Administration** -> **Application Management** -> **web sites (Manage web sites)** -> **SharePoint - 80** -> **General Application Settings**. Set the Recycle Bin Status to **ON**.

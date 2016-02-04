@@ -39,7 +39,7 @@ Custom Script extension for Windows allows you to run PowerShell scripts on a re
 
 ### Upload files to the default container
 
-If you have your scripts in the storage container of the default account of your subscription, then the following example shows how you can run them on the VM. The ContainerName is where you upload the scripts to. The default storage account can be verified by using the **Get-AzureSubscription –Default** command.
+If you have your scripts in the storage container of the default account of your subscription, then the following example shows how you can run them on the VM. The ContainerName is where you upload the scripts to. The default storage account can be verified by using the **Get-AzureSubscription âDefault** command.
 
 The following example creates a new VM, but the same scenario can be run on an existing VM as well.
 
@@ -58,7 +58,7 @@ The following example creates a new VM, but the same scenario can be run on an e
 
 ### Upload files to a non-default storage container
 
-This scenario shows how to use a non-default storage either within the same subscription or in a different subscription for uploading scripts and files. Here we’ll use an existing VM but the same operations can be done while creating a new VM.
+This scenario shows how to use a non-default storage either within the same subscription or in a different subscription for uploading scripts and files. Here weâll use an existing VM but the same operations can be done while creating a new VM.
 
         Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileName 'file1.ps1','file2.ps1' -Run 'file.ps1' | Update-AzureVM
 
@@ -69,9 +69,9 @@ This scenario shows how to use a non-default storage either within the same subs
       Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileUri $fileUrl1, $fileUrl2 -Run 'file.ps1' | Update-AzureVM
 
 
-### Add Custom Script extension from the portal
+### Add Custom Script extension from the Azure Management Portal
 
-Browse to the VM in the <a href="https://manage.windowsazure.cn/ " target="_blank">Azure preview portal </a> and add the extension by specifying the script file to run.
+Browse to the VM in the <a href="https://manage.windowsazure.cn/ " target="_blank">Azure Management Portal </a> and add the extension by specifying the script file to run.
 
   ![][5]
 
@@ -84,7 +84,7 @@ Custom Script Extension can be uninstalled from the VM using the following comma
 
 ### Using Custom Script extension with templates
 
-To learn about using Custom Script extension with templates, see the documentation [here](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
+To learn about using Custom Script extension with Azure Resource Manager templates, see the documentation [here](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
 
 <!--Image references-->
 [5]: ./media/virtual-machines-extensions-customscript/addcse.png

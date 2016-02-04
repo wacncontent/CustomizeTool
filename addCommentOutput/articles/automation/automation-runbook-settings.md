@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="07/22/2015"
+	ms.date="10/22/2015"
 	wacn.date=""/>
 
 # Runbook settings
@@ -23,11 +23,11 @@ You cannot change the name of a runbook after it has been created. The Descripti
 
 ### Tags
 
-Tags allow you to assign distinct words and phrases to help identify a runbook. For example, when you submit a runbook to the [Runbook Gallery](https://msdn.microsoft.com/zh-cn/library/dn781422.aspx), you specify particular tags to identify which categories the runbook should be listed in. You can specify multiple tags for a runbook by separating them with commas.
+Tags allow you to assign distinct words and phrases to help identify a runbook. For example, when you submit a runbook to the [Runbook <!-- deleted by customization Gallery](https://msdn.microsoft.com/zh-cn/library/dn781422.aspx) --><!-- keep by customization: begin --> Gallery](/documentation/articles/automation-runbook-gallery) <!-- keep by customization: end -->, you specify particular tags to identify which categories the runbook should be listed in. You can specify multiple tags for a runbook by separating them with commas.
 
 ### Logging
 
-By default, Verbose and Progress records are not written to job history. You can change the settings for a particular runbook to log these records. For more information on these records, see [Runbook Output and Messages](https://msdn.microsoft.com/zh-cn/library/dn879148.aspx).
+By default, Verbose and Progress records are not written to job history. You can change the settings for a particular runbook to log these records. For more information on these records, see [Runbook Output and <!-- deleted by customization Messages](https://msdn.microsoft.com/zh-cn/library/dn879148.aspx) --><!-- keep by customization: begin --> Messages](/documentation/articles/automation-runbook-output-and-messages) <!-- keep by customization: end -->.
 
 ## Changing runbook settings
 
@@ -48,10 +48,10 @@ The following sample commands show how to set the properties for a runbook. This
 
 	$automationAccountName = "MyAutomationAccount"
 	$runbookName = "Sample-TestRunbook"
-	$tags = (Get-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName).Tags
+	$tags = (Get-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName).Tags
 	$tags += "Tag1,Tag2,Tag3"
-	Set-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName –LogVerbose $true –Tags $tags
+	Set-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName -LogVerbose $true -Tags $tags
 
 ## Related articles
 - [Runbook Output and Messages](/documentation/articles/automation-runbook-output-and-messages) 
-- [Creating or Importing a Runbook](https://msdn.microsoft.com/zh-cn/library/dn643637.aspx) 
+- [Creating or Importing a Runbook](/documentation/articles/automation-creating-importing-runbook) 

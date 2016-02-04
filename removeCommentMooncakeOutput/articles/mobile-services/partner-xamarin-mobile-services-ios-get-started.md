@@ -9,11 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/06/2015"
+	ms.date="11/05/2015"
 	wacn.date=""/>
 
 # <a name="getting-started"> </a>Get started with Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
@@ -33,7 +36,7 @@ A screenshot from the completed app is below:
 
 Completing this tutorial requires XCode and [Xamarin Studio] for OS X or the Xamarin Visual Studio plug-in for Visual Studio on Windows. The sample will run on iOS 5.0 and newer.
 
-> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/).
+> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial).
 
 ## <a name="create-new-service"> </a>Create a new mobile service
 
@@ -41,11 +44,11 @@ Completing this tutorial requires XCode and [Xamarin Studio] for OS X or the Xam
 
 ## Create a new Xamarin.iOS app
 
-Once you have created your mobile service, you can follow an easy quickstart in the Management Portal to either create a new app or modify an existing app to connect to your mobile service.
+Once you have created your mobile service, you can follow an easy quickstart in the Azure Management Portal to either create a new app or modify an existing app to connect to your mobile service.
 
 In this section you will create a new Xamarin.iOS app that is connected to your mobile service.
 
-1.  In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+1.  In the [Azure Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
 
 2. In the quickstart tab, click **Xamarin.iOS** under **Choose platform** and expand **Create a new Xamarin.iOS app**.
 
@@ -59,7 +62,7 @@ In this section you will create a new Xamarin.iOS app that is connected to your 
 
 4. Click **Create TodoItems table** to create a table to store app data.
 
-5. Under **Download and run app**, click **Download**.
+5. Under **Download and run app**, click **Download**. 
 
 	This downloads the project for the sample _To do list_ application that is connected to your mobile service and references the Azure Mobile Services component for Xamarin.iOS. Save the compressed project file to your local computer, and make a note of where you saved it.
 
@@ -83,7 +86,7 @@ The final stage of this tutorial is to build and run your new app.
 
 	> [AZURE.NOTE] You can review the code that accesses your mobile service to query and insert data, which is found in the TodoService.cs C# file.
 
-4. Back in the Management Portal, click the **Data** tab and then click the **TodoItems** table.
+4. Back in the [Azure Management Portal], click the **Data** tab and then click the **TodoItems** table.
 
 	![][11]
 
@@ -93,7 +96,7 @@ The final stage of this tutorial is to build and run your new app.
 
 
 ## Next Steps
-Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services:
+Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services: 
 
 * [Get started with offline data sync]  
   Learn how the quickstart uses offline data sync to make the app responsive and robust.
@@ -135,4 +138,4 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [Xamarin Studio]: http://xamarin.com/download
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
-[Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn/

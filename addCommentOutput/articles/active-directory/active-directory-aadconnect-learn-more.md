@@ -62,6 +62,4 @@ Watch this video to learn how easy it is to extend your on-premises Active Direc
 * [Getting started with Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started)
 * [Whats Next with Azure AD Connect](/documentation/articles/active-directory-aadconnect-whats-next)
 * [Azure AD Connect on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn832695.aspx)
-
-
 <!-- keep by customization: end -->

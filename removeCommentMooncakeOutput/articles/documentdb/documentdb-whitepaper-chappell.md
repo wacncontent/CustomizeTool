@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Introducing DocumentDB - A NoSQL Database for Microsoft Azure | Microsoft Azure" 
+	pageTitle="Introducing DocumentDB - A NoSQL Database for Windows Azure | Windows Azure" 
 	description="Download a whitepaper by David Chappell about DocumentDB, a managed NoSQL database on Azure." 
 	services="documentdb" 
 	documentationCenter="" 
@@ -7,16 +7,12 @@
 	manager="jhubbard" 
 	editor=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/06/2015" 
-	ms.author="mimig"/>
+<tags
+	ms.service="documentdb"
+	ms.date="11/06/2015"
+	wacn.date=""/>
 
-# Introducing DocumentDB - A NoSQL Database for Microsoft Azure 
+# Introducing DocumentDB - A NoSQL Database for Windows Azure 
 
 Not sure if DocumentDB is right for your application or data? Want to learn about how JSON data is stored and accessed in DocumentDB? If so, this introductory whitepaper by David Chappell is a good place to start. It discusses how you can benefit from the flexibility that schema-free JSON data provides, enabling you to handle changes to data structure effortlessly. 
 
@@ -28,5 +24,5 @@ The whitepaper also walks you through the following:
  - Choosing a consistency option to meet the reliability and performance needs of your application.
  - Selecting a pricing option based on your throughput requirements.
 
-**PDF Download:** [Introducing DocumentDB - A NoSQL Database for Microsoft Azure](http://go.microsoft.com/fwlink/?LinkId=511318)
+**PDF Download:** [Introducing DocumentDB - A NoSQL Database for Windows Azure](http://go.microsoft.com/fwlink/?LinkId=511318)
  

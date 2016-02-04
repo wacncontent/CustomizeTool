@@ -22,9 +22,9 @@
 
 ##Overview
 
-Azure Media Services (AMS) has added Google Widevine dynamic protection (see [Mingfei’s blog](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/) for details). In addition, Azure Media Player (AMP) has also added Widevine support (see [AMP document](http://amp.azure.net/libs/amp/latest/docs/) for details). This is a major accomplishment in streaming DASH content protected by CENC with multi-native-DRM (PlayReady and Widevine) on modern browsers equipped with MSE and EME.
+Azure Media Services (AMS) has added Google Widevine dynamic protection (see [Mingfei's blog](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/) for details). In addition, Azure Media Player (AMP) has also added Widevine support (see [AMP document](http://amp.chinacloudapi.cn/libs/amp/latest/docs/) for details). This is a major accomplishment in streaming DASH content protected by CENC with multi-native-DRM (PlayReady and Widevine) on modern browsers equipped with MSE and EME.
 
->[AZURE.NOTE] Currently, Media Services does not provide a Widevine license server. You can use the following AMS partners to help you deliver Widevine licenses: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
+Starting with the Media Services .NET SDK version 3.5.2, Media Services enables you to configure Widevine license template and get Widevine licenses. You can also use the following AMS partners to help you deliver Widevine licenses: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
 
 This article describes how to integrate and test Widevine license server managed by Axinom. Specifically, it covers:  
 
@@ -38,14 +38,14 @@ The complete system and the flow of content key, key ID, key seed, JTW token and
 
 ##Content Protection
 
-For configuring dynamic protection and key delivery policy, please see Mingfei’s blog: [How to configure Widevine packaging with Azure Media Services](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services).
+For configuring dynamic protection and key delivery policy, please see Mingfei's blog: [How to configure Widevine packaging with Azure Media Services](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services).
 
 You can configure dynamic CENC protection with multi-DRM for DASH streaming having both of the following:
 
 1. PlayReady protection for MS Edge and IE11, that could have a token authorization restrictions. The token restricted policy must be accompanied by a token issued by a Secure Token Service (STS), such as Azure Active Directory;
 1. Widevine protection for Chrome, it can require token authentication with token issued by another STS. 
 
-Please see [JWT Token Generation](/documentation/articles/media-services-axinom-integration#jwt-token-generation) section for why Azure Active Directory cannot be used as an STS for Axinom’s Widevine license server.
+Please see [JWT Token Generation](/documentation/articles/media-services-axinom-integration#jwt-token-generation) section for why Azure Active Directory cannot be used as an STS for Axinom's Widevine license server.
 
 ###Considerations
 
@@ -55,12 +55,12 @@ Please see [JWT Token Generation](/documentation/articles/media-services-axinom-
 ##Azure Media Player Preparation
 
 AMP v1.4.0 supports playback of AMS content that is dynamically packaged with both PlayReady and Widevine DRM.
-If Widevine license server does not require token authentication, there is nothing additional you need to do to test a DASH content protected by Widevine. For an example, the AMP team provides a simple [sample](http://amp.azure.net/libs/amp/latest/samples/dynamic_multiDRM_PlayReadyWidevine_notoken.html), where you can see it working in Edge and IE11 with PlayReady and Chrome with Widevine.
+If Widevine license server does not require token authentication, there is nothing additional you need to do to test a DASH content protected by Widevine. For an example, the AMP team provides a simple [sample](http://amp.chinacloudapi.cn/libs/amp/latest/samples/dynamic_multiDRM_PlayReadyWidevine_notoken.html), where you can see it working in Edge and IE11 with PlayReady and Chrome with Widevine.
 The Widevine license server provided by Axinom requires JWT token authentication. The JWT token needs to be submitted with license request through an HTTP header “X-AxDRM-Message”. For this purpose, you need to add the following javascript in the web page hosting AMP before setting the source:
 
 	<script>AzureHtml5JS.KeySystem.WidevineCustomAuthorizationHeader = "X-AxDRM-Message"</script>
 
-The rest of AMP code is standard AMP API as in AMP document [here](http://amp.azure.net/libs/amp/latest/docs/).
+The rest of AMP code is standard AMP API as in AMP document [here](http://amp.chinacloudapi.cn/libs/amp/latest/docs/).
 
 Note that the above javascript for setting custom authorization header is still a short term approach before the official long term approach in AMP is released.
 
@@ -71,7 +71,7 @@ Axinom Widevine license server for testing requires JWT token authentication. In
 Unfortunately, Azure AD can only issue JWT tokens with primitive types. Similarly, .NET Framework API (System.IdentityModel.Tokens.SecurityTokenHandler and JwtPayload) only allows you to input complex object type as claims. However, the claims are still serialized as string. Therefore we cannot use any of the two for generating the JWT token for Widevine license request.
 
 
-John Sheehan’s [JWT Nuget package](https://www.nuget.org/packages/JWT) meets the needs so we are going to use this Nuget package.
+John Sheehan's [JWT Nuget package](https://www.nuget.org/packages/JWT) meets the needs so we are going to use this Nuget package.
 
 Below is the code for generating JWT token with the needed claims as required by Axinom Widevine license server for testing:
 
@@ -196,12 +196,14 @@ Key seed|Must be used to generate content key with any given content key ID (see
 Widevine License acquisition URL|Must be used in configuring asset delivery policy for DASH streaming (see  [this](/documentation/articles/media-services-axinom-integration#content-protection) section ).
 Content Key ID|Must be included as part of the value of Entitlement Message claim of JWT token (see [this](/documentation/articles/media-services-axinom-integration#jwt-token-generation) section). 
 
+
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 ###Acknowledgments 
 

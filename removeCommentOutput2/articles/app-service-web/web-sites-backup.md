@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Back up a web app in Azure Websites" 
-	description="Learn how to create backups of your web apps in Azure Websites." 
+	pageTitle="Back up a web app in Azure" 
+	description="Learn how to create backups of your web apps in Azure." 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
@@ -9,18 +9,17 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/16/2015"
+	ms.date="01/07/2015"
 	wacn.date=""/>
 
-# Back up a web app in Azure Websites
+# Back up a web app in Azure
 
 
-The Backup and Restore feature in [Azure Websites](/documentation/services/web-sites/) lets you easily create web app backups manually or automatically. You can restore your web app to a previous state, or create a new web app based on one of your original app's backups. 
+The Backup and Restore feature in [Azure Web Apps](/documentation/services/web-sites/) lets you easily create web app backups manually or automatically. You can restore your web app to a previous state, or create a new web app based on one of your original app's backups. 
 
 For information on restoring an Azure web app from backup, see [Restore a web app](/documentation/articles/web-sites-restore).
 ##In this article
 
-- [Automatic and Easy Backup (Video)](#video)
 - [What Gets Backed Up](#whatsbackedup)
 - [Requirements and Restrictions](#requirements)
 - [To Create a Manual Backup](#manualbackup)
@@ -36,7 +35,7 @@ Web Apps can back up the following information:
 
 * Web app configuration
 * Web app file content
-* Any SQL Server or MySQL databases connected to your app (you can choose which ones to include in the backup)
+* Any Azure SQL atabases or MySQL databases connected to your app (you can choose which ones to include in the backup)
 
 This information is backed up to the Azure storage account and container that you specify. 
 
@@ -45,10 +44,11 @@ This information is backed up to the Azure storage account and container that yo
 <a name="requirements"></a>
 ## Requirements and restrictions
 
-* The Backup and Restore feature requires the site to be in Standard mode. For more information about scaling your web app to use Standard mode, see [Scale a web app in Azure Websites](/documentation/articles/web-sites-scale). 
+* The Backup and Restore feature requires the App Service plan to be in the Standard tier. For more information about scaling your App Service plan to use a higher tier, see [Scale a web app in Azure](/documentation/articles/web-sites-scale). 
 
 * The Backup and Restore feature requires an Azure storage account and container that must belong to the same subscription as the web app that you are going to back up. If you do not yet have a storage account, you can create one by clicking the **Storage** button (grid icon) in the left pane of the Azure Management Portal, and then choosing **New** in the command bar at the bottom. For more information on Azure storage accounts, see the [links](#moreaboutstorage) at the end of this article.
-* The Backup and Restore feature supports up to 10GB of website and database content. An error will be indicated in the Operation Logs if the backup feature cannot proceed because the payload exceeds this limit. 
+
+* The Backup and Restore feature supports up to 10GB of website and database content. An error will be indicated if the backup feature cannot proceed because the payload exceeds this limit. 
 
 <a name="manualbackup"></a>
 ## Create a manual backup
@@ -114,7 +114,7 @@ You can make a manual backup at any time. During Preview, no more than 2 manual 
 ## Notes
 
 * Make sure that you set up the connection strings for each of your databases properly on the **Web app settings** blade within **Settings** of the web app so that the Backup and Restore feature can include your databases.
-* Although you can back up more than one web app to the same storage account, for ease of maintenance, consider creating a separate storage account for each web app.
+
 
 <a name="partialbackups"></a>
 ## Backup just part of your web app
@@ -176,43 +176,13 @@ The database backup for the web app is stored in the root of the .zip file. For 
 
 > [AZURE.WARNING] Altering any of the files in your **websitebackups** container can cause the backup to become invalid and therefore non-restorable.
 
-<a name="bestpractices"></a>
-##Best Practices
-
-In the event of a failure or natural disaster, you want to make sure sure you're prepared beforehand by having an existing backup and restore strategy.
-
-Your backup strategy should be similar to the following:
-
--	Take at least one full backup of your web app.
--	Take partial backups of your web app after you have a full backup.
-
-Your restore strategy should be similar to the following:
- 
--	Create a [staging slot](/documentation/articles/web-sites-staged-publishing) for your web app.
--	Restore the full backup of the web app on the staging slot.
--	Restore the latest partial backup on top of the full backup restore, also on the staging slot.
--	Test the restore to see that the staging app works properly.
--	[Swap](/documentation/articles/web-sites-staged-publishing#Swap) the staged web app into the production slot.
-
->[AZURE.NOTE] Always test your restore process. For more information, see [Very Good Thing](http://axcient.com/blog/one-thing-can-derail-disaster-recovery-plan/). For example, certain blogging platforms, such as [Ghost](https://ghost.org/), have explicit caveats on how they behave during a backup. By testing your restore process, you can catch these caveats when you're not yet struck by a failure or disaster.
-
 <a name="nextsteps"></a>
 ## Next Steps
-For information on restoring web app from backup, see [Restore a web app in Azure Websites](/documentation/articles/web-sites-restore).
+For information on restoring web app from backup, see [Restore a web app in Azure](/documentation/articles/web-sites-restore). You can also backup and restore Azure Web Apps
+using REST API (see [Use REST to back up and restore Azure Web Apps](/documentation/articles/websites-csm-backup)).
 
 To get started with Azure, see [Windows Azure Trial](/pricing/1rmb-trial/).
 
-
-<a name="moreaboutstorage"></a>
-### More about storage accounts
-
-[What is a Storage Account?](/documentation/articles/storage-whatis-account)
-
-[How to: Create a storage account](/documentation/articles/storage-create-storage-account)
-
-[How To Monitor a Storage Account](/documentation/articles/storage-monitor-storage-account)
-
-[Understanding Azure Storage Billing](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx)
 
 <!-- IMAGES -->
 [ChooseBackupsPage]: ./media/web-sites-backup/01ChooseBackupsPage.png

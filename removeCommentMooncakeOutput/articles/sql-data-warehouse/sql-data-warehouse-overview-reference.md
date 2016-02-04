@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL Data Warehouse reference topics | Microsoft Azure"
+   pageTitle="SQL Data Warehouse reference topics | Windows Azure"
    description="Reference content links for SQL Data Warehouse."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="barbkess"/>
+	ms.service="sql-data-warehouse"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # Reference topics for SQL Data Warehouse
 

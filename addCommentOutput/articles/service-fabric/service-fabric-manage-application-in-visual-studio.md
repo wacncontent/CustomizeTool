@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Managing your Service Fabric applications in Visual Studio"
-   description="You can manage your Microsoft Azure Service Fabric applications and services through Visual Studio."
+   pageTitle="Manage your applications in Visual Studio | Windows Azure"
+   description="Use Visual Studio to create, develop, package, deploy, and debug your Service Fabric applications and services."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
@@ -8,25 +8,32 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/05/2015"
-   ms.author="jesseb"/>
+	ms.service="service-fabric"
+	ms.date="10/15/2015"
+	wacn.date=""/>
 
+<!-- deleted by customization
+# Use Visual Studio to simplify writing and managing your Service Fabric applications
+
+You can manage your  Service Fabric applications and services through Visual Studio. Once you've [setup your development environment](/documentation/articles/service-fabric-setup-your-development-environment), you can use Visual Studio to create Service Fabric applications, add services, or package, register, and deploy applications in your local development cluster.
+
+To manage your  application, in the Solution Explorer right-click on your application project.
+
+![Manage your Service Fabric application by right-clicking on the Application project][manageservicefabric]
+-->
+<!-- keep by customization: begin -->
 # Managing your Service Fabric applications in Visual Studio
 
-You can manage your Microsoft Azure Service Fabric applications and services through Visual Studio. Once you've [setup your development environment](../service-fabric-setup-your-development-environment), you can use Visual Studio to create Service Fabric applications, add services, or package, register, and deploy applications in your local development cluster.
+You can manage your Windows Azure Service Fabric applications and services through Visual Studio. Once you've [setup your development environment](/documentation/articles/service-fabric-setup-your-development-environment), you can use Visual Studio to create Service Fabric applications, add services, or package, register, and deploy applications in your local development cluster.
 
 To manage your Service Fabric application, in the Solution Explorer right-click on your application project.
 
 ![Manage your Service Fabric application by right-clicking on the Application project][manageservicefabric]
+<!-- keep by customization: end -->
 
 ## Deploying your Service Fabric application
 
-Deploying a Service Fabric application combines the following steps into one simple operation.
+Deploying <!-- deleted by customization an --><!-- keep by customization: begin --> a Service Fabric <!-- keep by customization: end --> application combines the following steps into one simple operation.
 
 1. Creating the application package
 2. Uploading the application package to the image store
@@ -43,7 +50,7 @@ You can add new Fabric Services to your application to extend its functionality.
 
 ![Add a new Fabric Service to your application][newservice]
 
-Select a Service Fabric project type to add to your application, and specify a name for the service.  See [choosing a framework for your service](service-fabric-choose-framework.md) to help decide which service type to use.
+Select a Service Fabric project type to add to your application, and specify a name for the service.  See [choosing a framework for your service](/documentation/articles/service-fabric-choose-framework) to help decide which service type to use.
 
 ![Select a Fabric Service project type to add to your application][addserviceproject]
 
@@ -68,10 +75,10 @@ You can remove an application from your local cluster using Server Explorer.  Th
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
 
-- [Service Fabric application model](service-fabric-application-model.md)
-- [Service Fabric application deployment](service-fabric-deploy-remove-applications.md)
-- [Debugging your Service Fabric application](service-fabric-debugging-your-application.md)
-- [Visualizing your cluster using Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)
+- [Service Fabric application model](/documentation/articles/service-fabric-application-model)
+- [Service Fabric application deployment](/documentation/articles/service-fabric-deploy-remove-applications)
+- [Debugging your Service Fabric application](/documentation/articles/service-fabric-debugging-your-application)
+- [Visualizing your cluster using Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster)
 
 <!--Image references-->
 [addserviceproject]:./media/service-fabric-manage-application-in-visual-studio/addserviceproject.png

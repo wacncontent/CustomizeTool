@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Introduction to Service Fabric Health Monitoring"
-   description="This article describes the Azure Service Fabric Health Monitoring model, including health entities, reporting and evaluation."
+   pageTitle="Health Monitoring in Service Fabric | Windows Azure"
+   description="An introduction to Azure Service Fabric Health Monitoring model, which provides monitoring of the cluster and its applications and services."
    services="service-fabric"
    documentationCenter=".net"
    authors="oanapl"
@@ -8,20 +8,16 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/03/2015"
-   ms.author="oanapl"/>
+	ms.service="service-fabric"
+	ms.date="10/23/2015"
+	wacn.date=""/>
 
 # Introduction to Service Fabric Health Monitoring
 Service Fabric introduces a health model that provides rich, flexible and extensible health evaluation and reporting. This includes near real-time monitoring of the state of the cluster and of the services running in it. You  can easily obtain the health information and take actions to correct potential issues before they cascade and cause massive outages. The typical model is that services send reports based on their local view and the information is aggregated to provide an overall cluster level view.
 
 Service Fabric components use this health model to report their current state. And you can use the same mechanism to report health from your applications. The quality and richness of health reporting specific to your custom conditions will determine how easily you will be able to detect and fix issues for your running application.
 
-> [AZURE.NOTE] We started the Health subsystem as a need for monitored upgrades. Service Fabric provides monitored upgrades that know how to upgrade a cluster or an application with no down time, minimum to no user intervention and with full cluster and application availability. To do this, the upgrade checks health based on configured upgrade policies and allows upgrade to proceed only when health respects desired thresholds. Otherwise, the upgrade is either automatically rolled back or paused to give administrators a chance to fix the issues. To learn more about application upgrades see [this article](service-fabric-application-upgrade.md).
+> [AZURE.NOTE] We started the Health subsystem as a need for monitored upgrades. Service Fabric provides monitored upgrades that know how to upgrade a cluster or an application with no down time, minimum to no user intervention and with full cluster and application availability. To do this, the upgrade checks health based on configured upgrade policies and allows upgrade to proceed only when health respects desired thresholds. Otherwise, the upgrade is either automatically rolled back or paused to give administrators a chance to fix the issues. To learn more about application upgrades see [this article](/documentation/articles/service-fabric-application-upgrade).
 
 ## Health Store
 The Health Store keeps health related information about entities in the cluster for easy retrieval and evaluation. It is implemented as a Service Fabric persisted stateful service to ensure high availability and scalability. It is part of the fabric:/System application and is available as soon as the cluster is up and running.
@@ -29,7 +25,7 @@ The Health Store keeps health related information about entities in the cluster 
 ## Health entities and hierarchy
 The health entities are organized in a logical hierarchy that captures interactions and dependencies between different entities. The entities and the hierarchy are automatically built by the Health Store based on reports received from the Service Fabric components.
 
-The health entities mirror the Service Fabric entities (eg. health application entity matches an application instance deployed in the cluster, health node entity matches a Service Fabric cluster node). The health hierarchy captures the interactions of the system entities and is the basis for advanced health evaluation. You can learn about the key Service Fabric concepts at [Service Fabric technical overview](service-fabric-technical-overview.md). For more on application, go to [Service Fabric application model](service-fabric-application-model.md).
+The health entities mirror the Service Fabric entities (eg. health application entity matches an application instance deployed in the cluster, health node entity matches a Service Fabric cluster node). The health hierarchy captures the interactions of the system entities and is the basis for advanced health evaluation. You can learn about the key Service Fabric concepts at [Service Fabric technical overview](/documentation/articles/service-fabric-technical-overview). For more on application, go to [Service Fabric application model](/documentation/articles/service-fabric-application-model).
 
 The health entities and hierarchy allow for effective reporting, debugging and monitoring of the cluster and applications. The health model allows an accurate, **granular** representation of the health of the many moving pieces in the cluster.
 
@@ -201,7 +197,7 @@ The health reports for each of the entities in the cluster contain the following
 
 - SourceId. A string that uniquely identifies the reporter of the health event.
 
-- Entity identifier. Identifies the entity on which the report is applied on. It differs based on the [entity type](service-fabric-health-introduction.md#health-entities-and-hierarchy):
+- Entity identifier. Identifies the entity on which the report is applied on. It differs based on the [entity type](/documentation/articles/service-fabric-health-introduction#health-entities-and-hierarchy):
 
   - Cluster: none
 
@@ -223,7 +219,7 @@ The health reports for each of the entities in the cluster contain the following
 
 - Description. A string that allows the reporter to provide detail information about the health event. SourceId, Property and HealthState should fully describe the report. The description adds human readable information about the report to make it easier for administrators and users to understand.
 
-- HealthState. An [enumeration](service-fabric-health-introduction.md#health-states) that describes the health state of the report. The accepted values are OK, Warning, and Error.
+- HealthState. An [enumeration](/documentation/articles/service-fabric-health-introduction#health-states) that describes the health state of the report. The accepted values are OK, Warning, and Error.
 
 - TimeToLive. A timespan that indicates how long the health report is valid. Coupled with RemoveWhenExpired, it lets the HealthStore know how to evaluate expired events. By default, the value is infinite and the report is valid forever.
 
@@ -234,7 +230,7 @@ The health reports for each of the entities in the cluster contain the following
 The SourceId, entity identifier, Property and HealthState are required for every health report. The SourceId string is not allowed to start with prefix "System.", which is reserved for System reports. For the same entity, there is only one report for the same source and property; if multiple reports are generated for the same source and property, they override each other, either on health client side (if they are batched) or on the health store side. The replacement is done based on sequence number: newer reports (with higher sequence number) replace older reports.
 
 ### Health events
-Internally, the Health Store keeps health events, which contain all the information from the reports plus additional metadata, such as time the report was given to the health client and time it was modified on the server side. The health events are returned by the [health queries](service-fabric-view-entities-aggregated-health.md#health-queries).
+Internally, the Health Store keeps health events, which contain all the information from the reports plus additional metadata, such as time the report was given to the health client and time it was modified on the server side. The health events are returned by the [health queries](/documentation/articles/service-fabric-view-entities-aggregated-health#health-queries).
 
 The added metadata contains:
 
@@ -259,7 +255,7 @@ The state transition fields can be used for smarter alerting or "historical" hea
 The following example sends a health report through Powershell on the application named fabric:/WordCount from the source MyWatchdog. The health report contains information about the health property Availability in an Error health state, with infinite TTL. Then it queries the application health, which will return aggregated health state error and the reported health event as part of the list of health events.
 
 ```powershell
-PS C:\> Send-ServiceFabricApplicationHealthReport –ApplicationName fabric:/WordCount –SourceId "MyWatchdog" –HealthProperty "Availability" –HealthState Error
+PS C:\> Send-ServiceFabricApplicationHealthReport -ApplicationName fabric:/WordCount -SourceId "MyWatchdog" -HealthProperty "Availability" -HealthState Error
 
 PS C:\> Get-ServiceFabricApplicationHealth fabric:/WordCount
 
@@ -330,13 +326,13 @@ Other systems have a single centralized service at the cluster level parsing all
 The health model is heavily used for monitoring and diagnosis, for evaluating the cluster and application health, and for monitored upgrades. Other services use the health data to perform automatic repairs, to build cluster health history and to issue alerts on certain conditions.
 
 ## Next steps
-[How to view Service Fabric health reports](service-fabric-view-entities-aggregated-health.md)
+[How to view Service Fabric health reports](/documentation/articles/service-fabric-view-entities-aggregated-health)
 
-[Using System health reports for troubleshooting](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
+[Using System health reports for troubleshooting](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports)
 
-[Adding custom Service Fabric health reports](service-fabric-report-health.md)
+[Adding custom Service Fabric health reports](/documentation/articles/service-fabric-report-health)
 
-[How to Monitor and Diagnose Services locally](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md)
+[How to Monitor and Diagnose Services locally](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally)
 
-[Service Fabric Application Upgrade](service-fabric-application-upgrade.md)
+[Service Fabric Application Upgrade](/documentation/articles/service-fabric-application-upgrade)
  

@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="09/30/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 
@@ -37,7 +37,7 @@ This topic presents a two-phase code sample:
 ## Prerequisites
 
 
-- An Azure account and subscription. You can sign up for a [trial](/pricing/1rmb-trial/).
+- An Azure account and subscription. You can sign up for a <!-- deleted by customization [trial](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> [trial](/pricing/1rmb-trial) <!-- keep by customization: end -->.
 
 
 - Any database you can create a table in.
@@ -328,7 +328,7 @@ GO
 ------  Create credential (your Azure Storage container must already exist).
 
 
-IF EXISTS
+IF NOT EXISTS
 	(SELECT * FROM sys.symmetric_keys
 		WHERE symmetric_key_id = 101)
 BEGIN

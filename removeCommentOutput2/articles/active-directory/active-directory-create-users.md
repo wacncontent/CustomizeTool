@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create or edit users in Azure AD"
-	description="A topic that explains how to create or edit user accounts in Azure AD."
+	pageTitle="Create or edit users in Azure Active Directory | Windows Azure"
+	description="Explains how to create or edit user accounts in Azure Active Directory."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
@@ -9,23 +9,23 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/21/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 # Create or edit users in Azure AD
 
-You have to create an account for every user who will access a Microsoft cloud service. You can also change user accounts or delete them when they’re no longer needed. By default, users do not have administrator permissions, but you can optionally assign them.
+You have to create an account in Azure Active Directory (Azure AD) for every user who will access a Microsoft cloud service. You can also change user accounts or delete them when they're no longer needed. By default, users do not have administrator permissions, but you can optionally assign them.
 
 ## Create a user
 
-1. Click **Active Directory**, and then click on the name of your organization’s directory.
+1. Click **Active Directory**, and then click the name of your organization's directory.
 2. On the **Users** page, click **Add User**.
 3. On the **Tell us about this user** page, for **Type of User**, select either:
-	1. **New user in your organization** – Indicates that you want a new user account to be created and managed within your directory.
-	2. **User with an existing Microsoft account** – Indicates that you want to add an existing Microsoft account to your directory in order to collaborate on Azure resources with a co-administrator who accesses Azure with a Microsoft account.
-	3. **User in another Azure AD directory** – Indicates that you want to add a user account to your directory that is sourced from another Azure AD directory. You need to be a member of the other directory to select a user in it.
+	1. **New user in your organization** - Indicates that you want a new user account to be created and managed within your directory.
+	2. **User with an existing Microsoft account** - Indicates that you want to add an existing Microsoft account to your directory in order to collaborate on Azure resources with a co-administrator who accesses Azure with a Microsoft account.
+	3. **User in another Azure AD directory** - Indicates that you want to add a user account to your directory that is sourced from another Azure AD directory. You need to be a member of the other directory to select a user in it.
 4. Depending on the option you selected, type either a user name, or Microsoft account name that this user will sign in with.
-5. On the user **Profile** page, provide a user’s first and last name, a user friendly name, and a user role from the Roles drop-down menu. For more information about user and administrator roles, see [Assigning administrator roles in Azure AD](/documentation/articles/active-directory-assign-admin-roles). Specify whether to **Enable Multi-Factor Authentication**.
+5. On the user **Profile** page, provide a user's first and last name, a user friendly name, and a user role from the Roles drop-down menu. For more information about user and administrator roles, see [Assigning administrator roles in Azure AD](/documentation/articles/active-directory-assign-admin-roles). Specify whether to **Enable Multi-Factor Authentication**.
 6. On the **Get temporary password** page, click **Create**.
 
 If your organization uses more than one domain, you should know about the following issues when you create a user account:
@@ -39,13 +39,13 @@ If the user that you are trying to edit is synchronized with your on-premises Ac
 
 To edit a user in the Azure Management Portal:
 
-1. Click **Active Directory**, and then click on the name of your organization’s directory.
+1. Click **Active Directory**, and then click on the name of your organization's directory.
 2. On the **Users** page, click on the display name of the user you want to edit.
 3. Complete your changes, and then click **Save**.
 
 ## Reset a user's password
 
-1. Click **Active Directory**, and then click on the name of your organization’s directory.
+1. Click **Active Directory**, and then click the name of your organization's directory.
 2. On the **Users** page, click on the display name of the user you want to edit.
 3. At the bottom of the portal, click **Reset Password**.
 4. In the reset password dialog, click **reset**.

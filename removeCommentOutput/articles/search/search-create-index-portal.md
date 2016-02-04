@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create an Azure Search index in the portal | Microsoft Azure"
-	description="Add an index to Azure Search service by filling in field definitions in the Azure portal"
+	pageTitle="Create an Azure Search index in the portal | Windows Azure | Hosted cloud search service"
+	description="Add an index to Azure Search, a cloud hosted search service, by filling in field definitions in the Azure Management Portal."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -10,20 +10,21 @@
 
 <tags
 	ms.service="search"
-	ms.devlang="rest-api"
-	ms.workload="search"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
-	ms.date="09/08/2015"
-	ms.author="heidist"/>
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
-# Create an Azure Search index in the Azure portal
+# Create an Azure Search index in the Azure Management Portal
+> [AZURE.SELECTOR]
+- [Overview](/documentation/articles/search-what-is-an-index)
+- [Portal](/documentation/articles/search-create-index-portal)
+- [.NET](/documentation/articles/search-create-index-dotnet)
+- [REST API](/documentation/articles/search-create-index-rest-api)
 
-You can quickly prototype an index in Azure Search by creating one in the Azure portal. Using the portal is great for proof-of-concept testing, but you can also use it to view schema definitions and resource usage for any index deployed to your service.
+You can quickly prototype an index in Azure Search by creating one in the Azure Management Portal. Using the portal is great for proof-of-concept testing, but you can also use it to view schema definitions and resource usage for any index deployed to your service.
 
-To complete this task, make sure you have an Azure Search service that's ready to go. See [Create an Azure Search service in the portal](search-create-service-portal.md) if you need help setting it up.
+To complete this task, make sure you have an Azure Search service that's ready to go. See [Create an Azure Search service in the portal](/documentation/articles/search-create-service-portal) if you need help setting it up.
 
-1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
 
 2. Open the service dashboard of your Azure Search service. Here are a few ways to find the dashboard.
 	- In the Jumpbar, click **Home**. The home page has tiles for every service in your subscription. Click the tile to open the service dashboard.
@@ -63,7 +64,7 @@ In Azure Search, index attributes such as searchable, facetable, and filterable 
 
 The portal is different. In the portal, search behaviors are off by default so that you can select all of the behaviors that apply, on a field by field basis.
 
-1. Click **Add/Edit fields** to add more fields. In this exercise, we'll recreate the *hotels* index described in the article [How to use Fiddler with Azure Search](search-fiddler.md).
+1. Click **Add/Edit fields** to add more fields. In this exercise, we'll recreate the *hotels* index described in the article [How to use Fiddler with Azure Search](/documentation/articles/search-fiddler).
 
 	![][4]
 
@@ -71,7 +72,7 @@ The portal is different. In the portal, search behaviors are off by default so t
 
 	![][5]
 
-	Review [Naming rules](https://msdn.microsoft.com/library/azure/dn857353.aspx) and [Supported data types](https://msdn.microsoft.com/library/azure/dn798938.aspx) for reference information on field names and types.
+	Review [Naming rules](https://msdn.microsoft.com/zh-cn/library/azure/dn857353.aspx) and [Supported data types](https://msdn.microsoft.com/zh-cn/library/azure/dn798938.aspx) for reference information on field names and types.
 
     Index attributes consist of the following items:
 
@@ -89,9 +90,9 @@ The portal is different. In the portal, search behaviors are off by default so t
 
 ## Next steps
 
-Although the index is defined, it won't be ready to use until you load documents. Assuming that you're recreating the Hotels index, used for testing purposes, you can easily load the small number of documents for that index in [Fiddler](search-fiddler.md), using the instructions in the Load Documents section of [How to use Fiddler with Azure Search](search-fiddler.md). You can then follow the remaining steps in that article to run some queries.
+Although the index is defined, it won't be ready to use until you load documents. Assuming that you're recreating the Hotels index, used for testing purposes, you can easily load the small number of documents for that index in [Fiddler](/documentation/articles/search-fiddler), using the instructions in the Load Documents section of [How to use Fiddler with Azure Search](/documentation/articles/search-fiddler). You can then follow the remaining steps in that article to run some queries.
 
-Once you are comfortable with the basic index, consider adding a language analyzer or suggester to add multilanguage support or type-ahead suggestions. Both features are specified in the index schema. See [Language Support](https://msdn.microsoft.com/elibrary/azure/dn879793.aspx) and [Create Index](https://msdn.microsoft.com/library/azure/dn798941.aspx) for more information.
+Once you are comfortable with the basic index, consider adding a language analyzer or suggester to add multilanguage support or type-ahead suggestions. Both features are specified in the index schema. See [Language Support](https://msdn.microsoft.com/elibrary/azure/dn879793.aspx) and [Create Index](https://msdn.microsoft.com/zh-cn/library/azure/dn798941.aspx) for more information.
 
 <!--Image references-->
 [1]: ./media/search-create-index-portal/AzureSearch-PortalIndex-1.PNG

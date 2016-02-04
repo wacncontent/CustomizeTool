@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="Using tags to organize your Azure resources | Windows Azure"
 	description="Shows how to apply tags to organize resources for billing and managing."
 	services="azure-resource-manager"
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="11/11/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 
@@ -47,9 +47,9 @@ The following example shows a storage account with a tag.
         }
     ]
 
-## Tags in the preview portal
+## Tags in the portal
 
-Tagging resources and resource groups in the preview portal is easy. Use the Browse hub to navigate to the resource or resource group you’d like to tag and click the Tags part in the Overview section at the top of the blade.
+Tagging resources and resource groups in the portal is easy. Use the Browse hub to navigate to the resource or resource group youâd like to tag and click the Tags part in the Overview section at the top of the blade.
 
 ![Tags part on resource and resource group blades](./media/resource-group-using-tags/tag-icon.png)
 
@@ -67,12 +67,7 @@ Pin the most important tags to your Startboard for quick access and you're ready
 
 ## Tagging with PowerShell
 
-If you have not previously used Azure PowerShell with Resource Manager, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
-For the purposes of this article, we'll assume you've already added an account and selected a subscription with the resources you want to tag.
-
-Tagging is only available for resources and resource groups available from [Resource Manager](http://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx), so the next thing we need to do is switch to use Resource Manager.
-
-    Switch-AzureMode AzureResourceManager
+[AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
 
 Tags exist directly on resources and resource groups, so to see what tags are already applied, we can simply get a resource or resource group with **Get-AzureRmResource** or **Get-AzureRmResourceGroup**. Let's start with a resource group.
 
@@ -95,7 +90,7 @@ Tags exist directly on resources and resource groups, so to see what tags are al
                     LongHttpQueue ExamplePlan        microsoft.insights/alertrules         chinaeast
                     ServerErrors tag-demo-site       microsoft.insights/alertrules         chinaeast
                     ExamplePlan-tag-demo             microsoft.insights/autoscalesettings  chinaeast
-tag-demo-site                    microsoft.insights/components         centralus
+                    tag-demo-site                    microsoft.insights/components         centralus
                     ExamplePlan                      Microsoft.Web/serverFarms             southcentralus
                     tag-demo-site                    Microsoft.Web/sites                   southcentralus
 
@@ -132,7 +127,15 @@ Tags are updated as a whole, so if you are adding one tag to a resource that's a
 
 To remove one or more tags, simply save the array without the ones you want to remove.
 
-The process is the same for resources, except you'll use the `Get-AzureResource` and `Set-AzureResource` cmdlets. To get resources or resource groups with a specific tag, use `Get-AzureResource` or `Get-AzureResourceGroup` cmdlet with the `-Tag` parameter.
+The process is the same for resources, except you'll use the **Get-AzureRmResource** and **Set-AzureRmResource** cmdlets. 
+
+To get resource groups with a specific tag, use **Find-AzureRmResourceGroup** cmdlet with the **-Tag** parameter.
+
+    PS C:\> Find-AzureRmResourceGroup -Tag @{ Name="env"; Value="demo" } | %{ $_.ResourceGroupName }
+    rbacdemo-group
+    tag-demo
+
+For Azure PowerShell versions earlier than 1.0, use the following commands to get resources with a specific tag.
 
     PS C:\> Get-AzureResourceGroup -Tag @{ Name="env"; Value="demo" } | %{ $_.ResourceGroupName }
     rbacdemo-group
@@ -177,4 +180,4 @@ When you download the usage CSV for services that support tags with billing, the
 - You can apply restrictions and conventions across your subscription with customized policies. The policy you define could require that a particular tag be set for all resources. For more information, see [Use Policy to manage resources and control access](/documentation/articles/resource-manager-policy).
 - For an introduction to using Azure PowerShell when deploying resources, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
 - For an introduction to using Azure CLI when deploying resources, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management](/documentation/articles/xplat-cli-azure-resource-manager).
-- For an introduction to using the preview portal, see [Using the Azure preview portal to manage your Azure resources](/documentation/articles/resource-group-portal)  
+- For an introduction to using the portal, see [Using the Azure Management Portal to manage your Azure resources](/documentation/articles/resource-group-portal)  

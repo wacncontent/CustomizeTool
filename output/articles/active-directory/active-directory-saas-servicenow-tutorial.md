@@ -237,7 +237,7 @@ Configure User Provisioning
 
      2.5. Click the **Next** button to open the **Next steps** page.
 
-     2.6. If you want to provision all users to this application, select “**Automatically provision all user accounts in the directory to this application**”. <br><br> ![Next Steps](./media/active-directory-saas-servicenow-tutorial/IC698804.png "Next Steps")
+     2.6. If you want to provision all users to this application, select "**Automatically provision all user accounts in the directory to this application**". <br><br> ![Next Steps](./media/active-directory-saas-servicenow-tutorial/IC698804.png "Next Steps")
 
      2.7. On the **Next steps** page, click **Complete** to save your configuration.
 

@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory integration with Onit | Windows Azure" 
     description="Learn how to use Onit with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Onit
@@ -101,7 +101,7 @@ The following screenshot shows an example for this.
 
     ![Configure Single Sign-On](./media/active-directory-saas-onit-tutorial/IC791171.png "Configure Single Sign-On")
 
-7.  On the **Configure App URL** page, in the **Onit Sign On URL** textbox, type the URL used by your users to sign on to your Onit application (e.g.: "*https://ms-sso-test.onit.com*”), and then click **Next**.
+7.  On the **Configure App URL** page, in the **Onit Sign On URL** textbox, type the URL used by your users to sign on to your Onit application (e.g.: "*https://ms-sso-test.onit.com*"), and then click **Next**.
 
     ![Configure App URL](./media/active-directory-saas-onit-tutorial/IC791172.png "Configure App URL")
 

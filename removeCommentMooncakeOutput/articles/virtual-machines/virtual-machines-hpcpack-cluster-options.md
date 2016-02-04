@@ -6,11 +6,11 @@
  authors="dlepow"
  manager="timlt"
  editor=""
- tags="azure-resource-manager,azure-service-management"/>
+ tags="azure-resource-manager,azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/08/2015"
-	wacn.date=""/>
+ 	ms.date="10/08/2015"
+	wacn.date="09/15/2015"/>
 
 # Options to create and manage a high peformance computing (HPC) cluster in Azure with Microsoft HPC Pack
 
@@ -18,8 +18,6 @@
 
 
 Take advantage of Microsoft HPC Pack and Azure compute and infrastructure services to create and manage a cloud-based high performance computing (HPC) cluster. [HPC Pack](https://technet.microsoft.com/zh-cn/library/jj899572.aspx) is Microsoft's free HPC solution built on Windows Azure and Windows Server technologies and supports both Windows and Linux HPC workloads. A cloud-based HPC Pack cluster provides a cluster administrator or independent software vendor (ISV) a flexible, scalable platform to run compute-intensive applications while reducing investment in an on-premises compute cluster infrastructure.
-
-<!-- Take advantage of automated tools for HPC Pack cluster deployment in Azure VMs, including an HPC Pack image that can be used with either Azure quickstart templates or Azure PowerShell scripts, or deploy your cluster manually in the Azure Management Portal.-->
 
 
 ## Run an HPC Pack cluster in Azure VMs

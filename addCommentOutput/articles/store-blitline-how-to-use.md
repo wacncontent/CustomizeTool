@@ -33,7 +33,7 @@ This guide will explain how to access Blitline services and how to submit jobs t
 
 Blitline is a cloud-based image processing service that provides enterprise level image processing at a fraction of the price that it would cost to build it yourself.
 
-The fact is that image processing has been done over and over again, usually rebuilt from the ground up for each and every website. We realize this because we’ve built them a million times too. One day we decided that perhaps it‘s time we just do it for everyone. We know how to do it, to do it fast and efficiently, and save everyone work in the meantime.
+The fact is that image processing has been done over and over again, usually rebuilt from the ground up for each and every website. We realize this because weâve built them a million times too. One day we decided that perhaps itâs time we just do it for everyone. We know how to do it, to do it fast and efficiently, and save everyone work in the meantime.
 
 For more information, see [http://www.blitline.com](http://www.blitline.com).
 
@@ -137,7 +137,12 @@ Here is an example:
 
 By filling in the CAPITALIZED values with your own, you can submit this JSON to http://api.blitline.com/job and the "src" image will be processed with a blur filter and then pushed to you Azure destination.
 
+<!-- deleted by customization
 ###Please note:
+-->
+<!-- keep by customization: begin -->
+<h3>Please note:</h3>
+<!-- keep by customization: end -->
 
 The SAS must contain the entire SAS url, including the filename of the destination file.
 
@@ -162,8 +167,8 @@ Visit blitline.com to read about all our other features:
 * Blitline API Functions <http://www.blitline.com/docs/functions>
 * Blitline API Examples <http://www.blitline.com/docs/examples>
 * Third Part Nuget Library <http://nuget.org/packages/Blitline.Net>
-
 <!-- keep by customization: begin -->
+
 
   [Next steps]: #nextsteps
   [What is Blitline?]: #whatis
@@ -171,6 +176,5 @@ Visit blitline.com to read about all our other features:
   [Create a Blitline account]: #createaccount
   [How to create a Blitline job]: #createjob
   [How to save an image to your Azure Storage]: #saveazure
-
 
 <!-- keep by customization: end -->

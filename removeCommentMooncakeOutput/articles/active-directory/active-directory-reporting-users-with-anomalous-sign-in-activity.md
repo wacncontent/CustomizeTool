@@ -3,8 +3,8 @@
 	description="A report that indicates all user accounts for which anomalous sign in activity has been identified."
 	services="active-directory"
 	documentationCenter=""
-	authors="SSalahAhmed"
-	manager="gchander"
+	authors="kenhoff"
+	manager="ilanas"
 	editor=""/>
 
 <tags

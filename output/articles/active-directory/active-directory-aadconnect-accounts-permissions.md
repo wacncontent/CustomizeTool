@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect accounts and permissions | Windows Azure"
+   pageTitle="Azure AD Connect: Accounts and permissions | Windows Azure"
    description="This topic describes the accounts used and created and permissions required."
    services="active-directory"
    documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/02/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 
@@ -19,7 +19,7 @@ The Azure AD Connect installation wizard offers two different paths:
 
 - In Express Settings, we require more privileges so that we can setup your configuration easily, without requiring you to create users or configure permissions separately.
 
-- In Custom Settings we offer you more choices and options, but there are some situations in which you’ll need to ensure you have the correct permissions yourself.
+- In Custom Settings we offer you more choices and options, but there are some situations in which youâll need to ensure you have the correct permissions yourself.
 
 ## Related documentation
 If you did not read the documentation on [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect), the following table provides links to related topics.

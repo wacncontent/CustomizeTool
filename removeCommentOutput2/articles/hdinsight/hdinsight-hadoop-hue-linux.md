@@ -32,9 +32,9 @@ Hue is a set of Web applications used to interact with a Hadoop cluster. You can
 
 The [https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/install-hue-uber-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/install-hue-uber-v01.sh) script action is used to install Hue on an HDInsight cluster. This section provides instructions about how to use the script when provisioning the cluster using the Azure Management Portal.
 
-> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster).
+> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster-v1).
 
-1. Start provisioning a cluster by using the steps in [Provision HDInsight clusters on Linux](/documentation/articles/hdinsight-provision-clusters#portal), but do not complete provisioning.
+1. Start provisioning a cluster by using the steps in [Provision HDInsight clusters on Linux](/documentation/articles/hdinsight-provision-clusters-v1#portal), but do not complete provisioning.
 
 	> [AZURE.NOTE] To install Hue on HDInsight clusters, the recommended headnode size is at least A4 (8 cores, 14 GB memory).
 
@@ -47,26 +47,31 @@ The [https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/inst
 	* __HEAD__: Check this option
 	* __WORKER__: Leave this blank.
 	* __ZOOKEEPER__: Leave this blank.
-	* __PARAMETERS__: The script expects the **cluster admin password** as a parameter. This is the password you specified while provisioning the cluster. You must specify the passwordwithin single quotes. 
+	* __PARAMETERS__: The script expects the **cluster admin password** as a parameter. This is the password you specified while provisioning the cluster. Important considerations while providing the password:
+		* If the cluster username is "admin", you only need to specify the password within single quotes.
+		* If the cluster username is anything other than "admin", you must specify the paramter as `-u [username] [password in single quotes]`
 
 3. At the bottom of the **Script Actions**, use the **Select** button to save the configuration. Finally, use the **Select** button at the bottom of the **Optional Configuration** blade to save the optional configuration information.
 
-4. Continue provisioning the cluster as described in [Provision HDInsight clusters on Linux](/documentation/articles/hdinsight-provision-clusters#portal).
+4. Continue provisioning the cluster as described in [Provision HDInsight clusters on Linux](/documentation/articles/hdinsight-provision-clusters-v1#portal).
 
 ## Use Hue with HDInsight clusters
 
 SSH Tunneling is the only way to access Hue on the cluster once it is running. Tunneling via SSH allows the traffic to go directly to the headnode of the cluster where Hue is running. After the cluster has finished provisioning, use the following steps to use Hue on an HDInsight Linux cluster.
 
-> [AZURE.NOTE] The instructions below assume that you have a Firefox Web browser with [FoxyProxy](https://addons.mozilla.org/firefox/addon/foxyproxy-standard/) extension installed.
+1. Use the information in [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel) to create an SSH tunnel from your client system to the HDInsight cluster, and then configure your Web browser to use the SSH tunnel as a proxy.
 
-1. Enable SSH tunneling from your desktop computer and configure your Firefox Web browser to use the SSH tunnel. While configuring tunneling, use a port other than port 8888.
+2. Once you have created an SSH tunnel and configured your browser to proxy traffic through it, you must find the host name of the head node. Use the following steps to get this information from Ambari:
 
-	* For instructions on enabling SSH tunneling from a Linux computer, see [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel#usessh).
-	* For instructions on enabling SSH tunneling from a Windows computer, see [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel#useputty).
+    1. In a browser, go to https://CLUSTERNAME.azurehdinsight.cn. When prompted, use the Admin username and password to authenticate to the site.
+    
+    2. From the menu at the top of the page, select __Hosts__.
+    
+    3. Select the entry that begins with __hn0__. When the page opens, the host name will be displayed at the top. The format of the host name is __hn0-CLUSTERNAME.randomcharacters.cx.internal.chinacloudapp.cn__. This is the host name you must use when connecting to Hue.
 
-	Keep the PuTTY session running.
- 
-2. From your computer, use the Firefox Web browser with FoxyProxy configured to launch the Hue portal at http://headnode0:8888. When you log in for the first time, you are prompted to create an account to log into the Hue portal. The credentials you specify here will be limited to the portal and are not related to the admin or SSH user credentials you specified while provision the cluster.
+2. Once you have created an SSH tunnel and configured your browser to proxy traffic through it, use the browser to open the Hue portal at http://HOSTNAME:8888. Replace HOSTNAME with the name you obtained from Ambari in the previous step.
+
+    > [AZURE.NOTE] When you log in for the first time, you will be prompted to create an account to log into the Hue portal. The credentials you specify here will be limited to the portal and are not related to the admin or SSH user credentials you specified while provision the cluster.
 
 	![Login to the Hue portal](./media/hdinsight-hadoop-hue-linux/HDI.Hue.Portal.Login.png "Specify credentials for Hue portal")
 
@@ -117,13 +122,13 @@ SSH Tunneling is the only way to access Hue on the cluster once it is running. T
 
 - [Install and use Spark on HDInsight clusters](/documentation/articles/hdinsight-hadoop-spark-install-linux) for  instructions about how to use cluster customization to install and use Spark on HDInsight Hadoop clusters. Spark is an open-source parallel processing framework that supports in-memory processing to boost the performance of big data analytic applications.
 
-- [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-linux). Use cluster customization to install Giraph on HDInsight Hadoop clusters. Giraph allows you to perform graph processing using Hadoop, and it can be used with Azure HDInsight.
+- [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1-linux). Use cluster customization to install Giraph on HDInsight Hadoop clusters. Giraph allows you to perform graph processing using Hadoop, and it can be used with Azure HDInsight.
 
-- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-linux). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on stored data.
+- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on stored data.
 
 - [Install R on HDInsight clusters](/documentation/articles/hdinsight-hadoop-r-scripts-linux). Use cluster customization to install R on HDInsight Hadoop clusters. R is an open-source language and environment for statistical computing. It provides hundreds of built-in statistical functions and its own programming language that combines aspects of functional and object-oriented programming. It also provides extensive graphical capabilities.
 
-[powershell-install-configure]: /documentation/articles/install-configure-powershell-linux
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-linux
-[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
+[powershell-install-configure]: /documentation/articles/powershell-install-configure-linux
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1-linux
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
 [hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install-linux

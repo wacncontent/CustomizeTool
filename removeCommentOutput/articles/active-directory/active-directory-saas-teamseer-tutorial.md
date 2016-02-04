@@ -1,10 +1,15 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with TeamSeer | Windows Azure" description="Learn how to use TeamSeer with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties 
+    pageTitle="Tutorial: Azure Active Directory integration with TeamSeer | Windows Azure" 
+    description="Learn how to use TeamSeer with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="08/01/2015"
+	ms.date="10/22/2015"
 	wacn.date=""/>
+
 #Tutorial: Azure Active Directory integration with TeamSeer
->[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/214594bd-f43c-41d0-958c-af7723a1a2aa/tutorial-azure-active-directory-integration-with-teamseer?forum=WindowsAzureAD).
   
 The objective of this tutorial is to show the integration of Azure and TeamSeer.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -12,7 +17,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A TeamSeer tenant
   
-After completing this tutorial, the Azure AD users you have assigned to TeamSeer will be able to single sign into the application at your TeamSeer company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to TeamSeer will be able to single sign into the application at your TeamSeer company site (service provider initiated sign on), or using the [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -108,7 +113,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![SAML Settings](./media/active-directory-saas-teamseer-tutorial/IC789638.png "SAML Settings")
 
-    1.  In the **Test Email Addresses**, type the test user’s email address.
+    1.  In the **Test Email Addresses**, type the test user's email address.
     2.  In the **Issuer** textbox, type the Issuer URL of the service provider.
     3.  Click **Save**.
 
@@ -159,4 +164,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-teamseer-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).

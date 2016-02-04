@@ -6,14 +6,10 @@
     authors="lizap" 
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/10/2015" 
-    ms.author="elizapo" />
+<tags
+	ms.service="remoteapp"
+	ms.date="08/10/2015"
+	wacn.date=""/>
 
 # Using redirection in Azure RemoteApp
 
@@ -40,7 +36,7 @@ Two redirection options are disabled by default:
 - USB redirection: You can use the USB devices attached to your local computer within the remote session.
 
 ## Change your redirection settings in RemoteApp
-You can change the device redirection settings for a collection by using the Microsoft Azure PowerShell with SDK. After you install the new PowerShell and SDK, first configure it to manage your subscription as described in [How to install and configure Azure PowerShell](../powershell-install-configure.md).
+You can change the device redirection settings for a collection by using the Windows Azure PowerShell with SDK. After you install the new PowerShell and SDK, first configure it to manage your subscription as described in [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 Then use a command similar to the following to set the custom RDP properties:
 
@@ -57,7 +53,7 @@ When you set custom properties you must specify all custom properties each time;
 ### Common examples
 Use the following cmdlet to enable drive redirection:  
 
-	Set-AzureRemoteAppCollection -CollectionName <collection name>  -CustomRdpProperty "drivestoredirect:s:*”
+	Set-AzureRemoteAppCollection -CollectionName <collection name>  -CustomRdpProperty "drivestoredirect:s:*â
 
 Use this cmdlet to enable both USB and Drive redirection: 
 
@@ -65,9 +61,9 @@ Use this cmdlet to enable both USB and Drive redirection:
 
 Use this cmdlet to disable clipboard sharing:  
 
-	Set-AzureRemoteAppCollection -CollectionName <collection name>  -CustomRdpProperty "redirectclipboard:i:0”
+	Set-AzureRemoteAppCollection -CollectionName <collection name>  -CustomRdpProperty "redirectclipboard:i:0â
 
-> [AZURE.IMPORTANT] Be sure to completely log off all users in the collection (and not just disconnect them) before you test the change. To ensure users are completely logged off, go to the **Sessions** tab in the collection in the Azure portal and log off any users who are disconnected or signed in. Sometimes it can take several seconds for the local drives to show in Explorer within the session.
+> [AZURE.IMPORTANT] Be sure to completely log off all users in the collection (and not just disconnect them) before you test the change. To ensure users are completely logged off, go to the **Sessions** tab in the collection in the Azure Management Portal and log off any users who are disconnected or signed in. Sometimes it can take several seconds for the local drives to show in Explorer within the session.
 
 ## Change USB redirection settings on your Windows client
 

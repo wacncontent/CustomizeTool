@@ -50,7 +50,7 @@ Azure customers can unlock 25,000 free emails each month. These 25,000 free mont
 
 	![sendgrid-connection-info][sendgrid-connection-info]
 
-	To set your email deliverability settings, click the **Manage** button. This will open the Sendgrid.com web interface where you can login and open your SendGrid Control Panel. 
+	To set your email deliverability settings, click the **Manage** button. This will <!-- deleted by customization redirect to --><!-- keep by customization: begin --> open the Sendgrid.com web interface where you can login and open <!-- keep by customization: end --> your SendGrid Control Panel.
 
 	![sendgrid-control-panel][sendgrid-control-panel]
 

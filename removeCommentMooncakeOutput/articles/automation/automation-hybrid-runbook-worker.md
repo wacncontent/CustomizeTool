@@ -77,7 +77,7 @@ Open a PowerShell session in Administrator mode and run the following commands t
 
 Then run the **Add-HybridRunbookWorker** cmdlet using the following syntax:
 
-	Add-HybridRunbookWorker –Name <String> -EndPoint <Url> -Token <String>
+	Add-HybridRunbookWorker -Name <String> -EndPoint <Url> -Token <String>
 
 You can get the information required for this cmdlet from the  **Manage Keys** blade in the Azure preview portal.  Open this blade by clicking the key icon on the Elements panel for the automation account.
 
@@ -106,7 +106,7 @@ When you start a runbook in the Azure preview portal, you will be presented with
 
 Use the **RunOn** parameter  You could use the following command to start a runbook named Test-Runbook on a Hybrid Runbook Worker Group named MyHybridGroup using Windows PowerShell.
 
-	Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" -RunOn "MyHybridGroup"
+	Start-AzureAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" -RunOn "MyHybridGroup"
 
 >[AZURE.NOTE] The **RunOn** parameter was added to the **Start-AzureAutomationRunbook** cmdlet in version 0.9.1 of Windows Azure PowerShell.  You should [download the latest version](http://azure.microsoft.com/downloads) if you have an earlier one installed.  You only need to install this version on a workstation where you will be starting the runbook from Windows PowerShell.  You do not need to install it on the worker computer unless you intend to start runbooks from that computer.  You cannot currently start a runbook on a Hybrid Runbook Worker from another runbook since this would require the latest version of Azure Powershell to be installed in your Automation account.  The latest version will be automatically updated in Azure Automation and automatically pushed down to the workers soon.
 
@@ -160,5 +160,5 @@ You can use the following criteria to determine whether Azure Automation with Hy
 ## Related articles
 
 - [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook)
-- [Editing a Runbook in Azure Automation](https://msdn.microsoft.com/zh-cn/library/dn879137.aspx)
+- [Editing a Runbook in Azure Automation](/documentation/articles/automation-edit-textual-runbook)
  

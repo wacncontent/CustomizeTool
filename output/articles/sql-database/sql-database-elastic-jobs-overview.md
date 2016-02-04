@@ -49,7 +49,7 @@ For instructions on installation, go to [Installing the Elastic Database job com
 ## Elastic Database jobs: end-to-end 
 1.	Install the **Elastic Database jobs** components. For more information, see [Installing Elastic Database jobs](/documentation/articles/sql-database-elastic-jobs-service-installation). If the installation fails, see [how to uninstall](/documentation/articles/sql-database-elastic-jobs-uninstall).
 2.	Use the PowerShell APIs to access more functionality, for example creating custom-defined database collections, adding schedules and/or gathering results sets. Use the portal for simple installation and creation/monitoring of jobs limited to execution against a **Elastic Database pool**. 
-3.	Create encrypted credentials for job execution and [add the user (or role) to each database in the group](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs).
+3.	Create encrypted credentials for job execution and [add the user (or role) to each database in the group](/documentation/articles/sql-database-security).
 4.	Create an idempotent T-SQL script that can be run against every database in the group. 
 5.	Follow these steps to create jobs using the Azure Management Portal: [Creating and managing Elastic Database jobs](/documentation/articles/sql-database-elastic-jobs-create-and-manage). 
 6.	Or use PowerShell scripts: [Create and manage a SQL Database elastic database jobs using PowerShell (preview)](/documentation/articles/sql-database-elastic-jobs-powershell).
@@ -100,25 +100,20 @@ The following components work together to create an Azure Cloud service that ena
 There are multiple types of job tasks that carry out execution of jobs:
 
 * ShardMapRefresh: Queries the shard map to determine all the databases used as shards
-* ScriptSplit: Splits the script across ‘GO’ statements into batches
+* ScriptSplit: Splits the script across 'GO' statements into batches
 * ExpandJob: Creates child jobs for each database from a job that targets a group of databases
 * ScriptExecution: Executes a script against a particular database using defined credentials
 * Dacpac: Applies a DACPAC to a particular database using particular credentials
 
 ## End-to-End job execution work-flow
 1.	Using either the Portal or the PowerShell API, a job is inserted into the  **control database**. The job requests execution of a Transact-SQL script against a group of databases using specific credentials.
-2.	The controller identifies the new job. Job tasks are created and executed to split the script and to refresh the group’s databases. Lastly, a new job is created and executed to expand the job and create new child jobs where each child job is specified to execute the Transact-SQL script against an individual database in the group.
+2.	The controller identifies the new job. Job tasks are created and executed to split the script and to refresh the group's databases. Lastly, a new job is created and executed to expand the job and create new child jobs where each child job is specified to execute the Transact-SQL script against an individual database in the group.
 3.	The controller identifies the created child jobs. For each job, the controller creates and triggers a job task to execute the script against a database. 
 4.	After all job tasks have completed, the controller updates the jobs to a completed state. 
 At any point during job execution, the PowerShell API can be used to view the current state of job execution. All times returned by the PowerShell APIs are represented in UTC. If desired, a cancellation request can be initiated to stop a job. 
 
 ## Next steps
-<!-- deleted by customization
-[Install the components](/documentation/articles/sql-database-elastic-jobs-service-installation), then [create and add a log in to each database in the group of databases](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs). To further understand job creation and management, see [creating and managing elastic database jobs](/documentation/articles/sql-database-elastic-jobs-create-and-manage).
--->
-<!-- keep by customization: begin -->
-[Install the components](/documentation/articles/sql-database-elastic-jobs-service-installation), then [create and add a log in to each database in the pool](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs).
-<!-- keep by customization: end -->
+[Install the components](/documentation/articles/sql-database-elastic-jobs-service-installation), then [create and add a log in to each database in the group of databases](/documentation/articles/sql-database-security). To further understand job creation and management, see [creating and managing elastic database jobs](/documentation/articles/sql-database-elastic-jobs-create-and-manage).
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

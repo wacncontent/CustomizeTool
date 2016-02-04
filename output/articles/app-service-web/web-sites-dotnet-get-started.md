@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create an ASP.NET web app in Azure Websites | Windows Azure"
-	description="This tutorial shows you how to create an ASP.NET web project in Visual Studio 2013 and deploy it to a web app in Azure Websites."
+	pageTitle="Create an ASP.NET web app in Azure | Windows Azure"
+	description="This tutorial shows you how to create an ASP.NET web project in Visual Studio 2013 and deploy it to a web app in Azure."
 	services="app-service\web"
 	documentationCenter=".net"
 	authors="tdykstra"
@@ -9,10 +9,10 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="10/16/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
-# Create an ASP.NET web app in Azure Websites
+# Create an ASP.NET web app in Azure
 
 > [AZURE.SELECTOR]
 - [.Net](/documentation/articles/web-sites-dotnet-get-started)
@@ -24,7 +24,7 @@
 
 ## Overview
 
-This tutorial shows how to deploy an ASP.NET web application to a [web app in Azure Websites](/home/features/web-site/) by using Visual Studio 2015 or Visual Studio 2013. The tutorial assumes that you are an ASP.NET developer who has no prior experience with using Azure. On completing the tutorial, you'll have a simple web application up and running in the cloud.
+This tutorial shows how to deploy an ASP.NET web application to a [web app in Azure](/home/features/web-site) by using Visual Studio 2015 or Visual Studio 2013. The tutorial assumes that you are an ASP.NET developer who has no prior experience with using Azure. On completing the tutorial, you'll have a simple web application up and running in the cloud.
 
 The following illustration shows the completed application:
 
@@ -33,12 +33,12 @@ The following illustration shows the completed application:
 You'll learn:
 
 * How to prepare your machine for Azure development by installing the [Azure SDK for .NET](/documentation/articles/dotnet-sdk).
-* How to set up Visual Studio to create a new Azure Websites web app while it creates an ASP.NET MVC 5 web project.
-* How to deploy a web project to an Azure Websites web app by using Visual Studio.
+* How to set up Visual Studio to create a new Azure web app while it creates an ASP.NET MVC 5 web project.
+* How to deploy a web project to an Azure web app by using Visual Studio.
 * How to use Visual Studio **Server Explorer** to open remote files and start a remote debug session. 
 * How to use the [Azure Management Portal](https://manage.windowsazure.cn) to monitor and manage your web app.
 
-> [AZURE.NOTE] This tutorial is about using ASP.NET with Azure Websites; it doesn't teach how to develop an ASP.NET web application. For an introduction to ASP.NET MVC 5, see [Getting Started with ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started) on the [ASP.NET](http://asp.net/) site. For links to other articles that go into more depth about how to use Azure Websites, see the [Next steps](#next-steps) section.
+> [AZURE.NOTE] This tutorial is about using ASP.NET with Azure Web App; it doesn't teach how to develop an ASP.NET web application. For an introduction to ASP.NET MVC 5, see [Getting Started with ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started) on the [ASP.NET](http://asp.net/) site. For links to other articles that go into more depth about how to use Azure Web App, see the [Next steps](#next-steps) section.
 > 
 > Help us shape the scope and approach of this tutorial -- if there are other topics you'd like to see covered here in a getting-started tutorial leave feedback in a [Disqus comment](#comments) at the end of the tutorial.
 
@@ -46,22 +46,20 @@ You'll learn:
 
 You need an Azure account to complete this tutorial. You can:
 
-* [Open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F). You get credits that can be used to try out paid Azure services. Even after the credits are used up, you can keep the account and use free Azure services and features, such as the Web Apps feature in Azure Websites.
-<!-- deleted by customization
-* [Activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). Your MSDN subscription gives you credits every month that you can use for paid Azure services.
+* [Open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F). You get credits that can be used to try out paid Azure services. Even after the credits are used up, you can keep the account and use free Azure services and features, such as the Web Apps feature in Azure Web App.
+* [Activate Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). Your Visual Studio subscription gives you credits every month that you can use for paid Azure services.
 
-If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azure Websites—no credit card required, and no commitments.
+If you want to get started with Azure before you sign up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azureâno credit card required, and no commitments.
 
 In the following video, Scott Hanselman shows how easy it is to sign up for a trial of Windows Azure. (Duration: 1:58)
 
 > [AZURE.VIDEO sign-up-for-microsoft-azure]
--->
 
 [AZURE.INCLUDE [install-sdk-2015-2013](../includes/install-sdk-2015-2013.md)]
 
 ## Create a project and a web app
 
-Your first step is to create a web project in Visual Studio and a web app in Azure Websites. When that's done, you'll deploy the project to the web app to make it available on the Internet. 
+Your first step is to create a web project in Visual Studio and a web app in Azure. When that's done, you'll deploy the project to the web app to make it available on the Internet. 
 
 The diagram illustrates what you're doing in the create and deploy steps.
 
@@ -77,10 +75,8 @@ The diagram illustrates what you're doing in the create and deploy steps.
 
 3. Make sure that **.NET Framework 4.5.2** is selected as the target framework.
 
-<!-- deleted by customization
 4.  [Azure Application Insights](/documentation/articles/app-insights-overview) monitors your web app for availability, performance, and usage. Clear the **Add Application Insights to Project** check box if you don't want to try it.
 
--->
 4. Name the application **MyExample**.
 
 5. Click **OK**.
@@ -109,41 +105,28 @@ The diagram illustrates what you're doing in the create and deploy steps.
 
 5. If you haven't already signed in to Azure, Visual Studio prompts you to do so. Sign in with the ID and password of the account that you use to manage your Azure subscription.
 
-	When you're signed in, the **Configure Windows Azure Web App Settings** dialog box asks you what resources you want to create.
+	When you're signed in, the **Create Azure Web App** dialog box asks you what resources you want to create.
 
 	![Signed in to Azure](./media/web-sites-dotnet-get-started/configuresitesettings.png)
-<!-- deleted by customization
 
-3. In the **Configure Windows Azure Web App Settings** dialog box, enter a **Web App name** that is unique in the *chinacloudsites.cn* domain. For example, you can name it MyExample with numbers to the right to make it unique, such as MyExample810. If a default web name is created for you, it will be unique and you can use that.
+3. In the **Create Azure Web App** dialog box, enter a **Web App name** that is unique in the *chinacloudsites.cn* domain. For example, you can name it MyExample with numbers to the right to make it unique, such as MyExample810. If a default web name is created for you, it will be unique and you can use that.
 
 	If someone else has already used the name that you enter, you'll see a red exclamation mark to the right instead of a green check mark, and you'll need to enter a different name.
 
 	Azure will use this name as the prefix for your application's URL. The complete URL will consist of this name plus *.chinacloudsites.cn* (as shown next to the **Web App name** text box). For example, if the name is `MyExample810`, the URL will be `MyExample810.chinacloudsites.cn`. The URL has to be unique.
 
-4. In the **App Service plan** drop-down, select **Create new App Service plan**.
+4. Next to the **App Service plan** drop-down, click the **New...** button.
 
 	The [Next steps](#next-steps) section has links to information about App Service plans.
 
 5. Enter **MyExamplePlan**, or another name if you prefer, for the plan name.
 
-6. In the **Resource group** drop-down, select **Create new resource group**.
+6. In the **Resource group** drop-down, type the name of your new resource group.
 
 	The [Next steps](#next-steps) section has links to information about resource groups.
 
 5. Enter **MyExampleGroup**, or another name if you prefer, for the resource group name.
 
--->
-<!-- keep by customization: begin -->
-6. In the **Sign in to Azure** dialog box, enter the ID and password of the account that you use to manage your Azure subscription.
-	
-	When you're signed in, the **Configure Azure Site Settings** dialog box asks you what resources you want to create.
-
-	![Signed in to Azure](./media/web-sites-dotnet-get-started/configuresitesettings.png)
-
-3. Visual Studio provides a default **Site name**, which Azure will use as the prefix for your application's URL. If you prefer, enter a different site name.
-
-	The complete URL will consist of what you enter here plus *chinacloudsites.cn* (as shown next to the **Site name** text box). For example, if the site name is `MyExample6442`, the URL will be `MyExample6442.chinacloudsites.cn`. The URL has to be unique. If someone else has already used the one you entered, you'll see a red exclamation mark to the right instead of a green check mark, and you'll need to enter a different site name.
-<!-- keep by customization: end -->
 5. In the **Region** drop-down list, choose the location that is closest to you.
 
 	This setting specifies which Azure datacenter your web app will run in. For this tutorial, you can select any region and it won't make a noticeable difference. But for a production web app, you want your web server to be as close as possible to the browsers that are accessing your site in order to minimize [latency](http://www.bing.com/search?q=web%20latency%20introduction&qs=n&form=QBRE&pq=web%20latency%20introduction&sc=1-24&sp=-1&sk=&cvid=eefff99dfc864d25a75a83740f1e0090).
@@ -162,7 +145,7 @@ The diagram illustrates what you're doing in the create and deploy steps.
 
 	![Solution Explorer](./media/web-sites-dotnet-get-started/solutionexplorer.png)
 
-	The **Azure Websites Activity** window shows that the web app has been created.
+	The **Azure Activity** window shows that the web app has been created.
 
 	![Web app created](./media/web-sites-dotnet-get-started/GS13sitecreated1.png)
 
@@ -175,7 +158,6 @@ The diagram illustrates what you're doing in the create and deploy steps.
 In this section you deploy web project to the web app, as illustrated in step 2 of the diagram.
 
 ![Create and deploy](./media/web-sites-dotnet-get-started/Create_App.png)
-<!-- deleted by customization
 
 1. In **Solution Explorer**, right-click the project, and choose **Publish**.
 
@@ -183,16 +165,6 @@ In this section you deploy web project to the web app, as illustrated in step 2 
 
 	In a few seconds, the **Publish Web** wizard appears. The wizard opens to a *publish profile* that has settings for deploying the web project to the new web app. If you wanted to deploy to a different web app, you could click the **Profile** tab to create a different profile. For this tutorial, you'll accept the settings that deploy to the web app that you created earlier.
 
--->
-<!-- keep by customization: begin -->
-7. In the **Azure Websites Activity** window, click **Publish MyExample to this Web App now**.
-
-	![Web app created](./media/web-sites-dotnet-get-started/GS13sitecreated.png)
-
-	In a few seconds, the **Publish Web** wizard appears.
-
-	Settings that Visual Studio needs to deploy your project to Azure have been saved in a *publish profile*. You can use the wizard to review and change those settings.
-<!-- keep by customization: end -->
 8. On the **Connection** tab of the **Publish Web** wizard, click **Next**.
 
 	![Successfully validated connection](./media/web-sites-dotnet-get-started/GS13ValidateConnection.png)
@@ -213,7 +185,7 @@ In this section you deploy web project to the web app, as illustrated in step 2 
 
 	When you click **Publish** Visual Studio begins the process of copying the files to the Azure server.
 
-	The **Output** and **Azure Websites Activity** windows show what deployment actions were taken and report successful completion of the deployment.
+	The **Output** and **Azure Activity** windows show what deployment actions were taken and report successful completion of the deployment.
 
 	![Output window reporting successful deployment](./media/web-sites-dotnet-get-started/PublishOutput.png)
 
@@ -231,13 +203,13 @@ In this section you deploy web project to the web app, as illustrated in step 2 
 
 When you're testing and debugging a web app, you can do quick temporary changes on the remote site by opening and editing files in **Server Explorer**.
 
-1.  In **Server Explorer**, navigate to **Azure > Azure Websites > MyExampleGroup**, and then expand the node for your web app.
+1.  In **Server Explorer**, navigate to **Azure > Azure > MyExampleGroup**, and then expand the node for your web app.
 
 2. Expand **Files > Views > Home**, and then double-click the *Index.cshtml* file.
 
 	![](./media/web-sites-dotnet-get-started/indexfileinse.png)
 
-3. Change `<h1>ASP.NET</h1>` to `<h1>Azure Websites</h1>`.
+3. Change `<h1>ASP.NET</h1>` to `<h1>Azure Web App</h1>`.
 
 4. Save the file.
 
@@ -249,7 +221,7 @@ This change is now in the deployed site but not the local project. If you redepl
 
 This feature is handy for [temporarily turning off customErrors in the Web.config file in order to get a detailed error message](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio).
 
-In **Server Explorer** you can also right-click the web app node and get access to web app settings in a Visual Studio window, start a remote debugging session, and view application logs in real time as the application writes them.
+In **Server Explorer** you can also right-click the Azure node and get access to web app settings in a Visual Studio window, start a remote debugging session, and view application logs in real time as the application writes them.
 
 ![](./media/web-sites-dotnet-get-started/sewebappmenu.png)
 
@@ -257,18 +229,17 @@ For more information, see [Troubleshooting Azure web apps in Visual Studio](/doc
 
 ## Monitor and manage the web app in the Azure Management Portal
 
-The [Azure Management Portal](/home/features/management-portal/) is a web interface that you can use to manage and monitor your Azure services, such as the web app that you just created. In this section of the tutorial, you look at some of what you can do in the portal.
+The [Azure Management Portal](/home/features/management-portal/) is a web interface that you can use to manage and monitor your Azure services, such as the web app that you just created. In this section of the tutorial, you look at some of what you can do in the Portal.
 
 1. In your browser, go to [https://manage.windowsazure.cn](https://manage.windowsazure.cn), and sign in with your Azure credentials.
-<!-- deleted by customization
 
-2. Click **Web Apps**, and then click the name of your web app.
+2. Click **App Services**, and then click the name of your web app.
 
 	The **Web app** blade displays an overview of settings and usage statistics for your web app.
 
 	![Web app blade](./media/web-sites-dotnet-get-started/portaldashboard.png)
 
-	At this point, your web app hasn't had much traffic and may not show anything in the graph. If you browse to your application, refresh the page a few times, and then refresh the portal page, you'll see some statistics show up.
+	At this point, your web app hasn't had much traffic and may not show anything in the graph. If you browse to your application, refresh the page a few times, and then refresh the Portal page, you'll see some statistics show up.
 
 3. Click **Settings** to see more options for configuring your web app.
 
@@ -278,47 +249,17 @@ The [Azure Management Portal](/home/features/management-portal/) is a web interf
 
 	![](./media/web-sites-dotnet-get-started/portalconfigure1.png)
 
-4. Click **Application settings** to see an example of the kinds of settings that you can configure in the portal.
+4. Click **Application settings** to see an example of the kinds of settings that you can configure in the Portal.
 
 	For example, you can control the .NET version that's used for the web app, enable features such as [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/), and set [connection string values](/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/).
 
 	![Portal web app configure tab](./media/web-sites-dotnet-get-started/portalconfigure2.png)
 
--->
-<!-- keep by customization: begin -->
-	The portal displays a list of your Azure services.
-
-2. Click the name of your website.
-
-	![Portal home page with new web site called out](./media/web-sites-dotnet-get-started-vs2013/portalhome.png)
-  
-3. Click the **Dashboard** tab.
-
-	The **Dashboard** tab displays an overview of usage statistics and link for a number of commonly used site management functions. Under **Quick Glance** you'll also find a link to your application's home page.
-
-	![Portal web site dashboard tab](./media/web-sites-dotnet-get-started-vs2013/portaldashboard.png)
-  
-	At this point your site hasn't had much traffic and may not show anything in the graph. If you browse to your application, refresh the page a few times, and then refresh the portal **Dashboard** page, you'll see some statistics show up. You can click the **Monitor** tab for more details.
-
-4. Click the **Configure** tab.
-
-	The [Configure](/documentation/articles/web-sites-configure//) tab enables you to control the .NET version used for the site, enable features such as [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/) and [diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log), set [connection string values](http://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/), and more. 
-
-	![Portal web site configure tab](./media/web-sites-dotnet-get-started-vs2013/portalconfigure.png)
-  
-5. Click the **Scale** tab.
-
-	For the paid tiers of the  Websites service, the [Scale](/documentation/articles/web-sites-scale) tab enables you to control the size and number of machines that service your web application in order to handle variations in traffic.
-
-	You can scale manually or configure criteria or schedules for automatic scaling.
-
-	![Portal website scale tab](./media/web-sites-dotnet-get-started-vs2013/portalscale.png)
-<!-- keep by customization: end -->
-These are just a few of the portal's features. You can create new web apps, delete existing web apps, stop and restart web apps, and manage other kinds of Azure services, such as databases and virtual machines.  
+These are just a few of the Portal's features. You can create new web apps, delete existing web apps, stop and restart web apps, and manage other kinds of Azure services, such as databases and virtual machines.  
 
 ## Next steps
 
-In this tutorial, you've seen how to create a simple web application and deploy it to an Azure web app. Here are some related topics and resources for learning more about web apps in Azure Websites:
+In this tutorial, you've seen how to create a simple web application and deploy it to an Azure web app. Here are some related topics and resources for learning more about web apps in Azure:
 
 * How to add database and authorization functionality
 
@@ -338,23 +279,20 @@ In this tutorial, you've seen how to create a simple web application and deploy 
 
 	For information about how to use SSL and your own domain (for example, www.contoso.com instead of contoso.chinacloudsites.cn), see the following resources:
 
-	* [Configure a custom domain name in Azure Websites](/documentation/articles/web-sites-custom-domain-name)
+	* [Configure a custom domain name in Azure Web App](/documentation/articles/web-sites-custom-domain-name)
 	* [Enable HTTPS for an Azure website](/documentation/articles/web-sites-configure-ssl-certificate)
 
 * How to add real-time features such as chat
 
 	If your web app will include real-time features (such as a chat service, a game, or a stock ticker), you can get the best performance by using [ASP.NET SignalR](http://www.asp.net/signalr) with the [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/) transport method. For more information, see [Using SignalR with Azure web apps](http://www.asp.net/signalr/overview/signalr-20/getting-started-with-signalr-20/using-signalr-with-windows-azure-web-sites).
 
-* How to choose between Azure Websites, Azure Cloud Services, and Azure Virtual Machines for web applications
+* How to choose between Azure Web App, Azure Cloud Services, and Azure Virtual Machines for web applications
 
-	In Azure, you can run web applications in Azure Websites as shown in this tutorial, or in Cloud Services or in Virtual Machines. For more information, see [Azure web apps, cloud services, and VMs: When to use which?](/documentation/articles/choose-web-site-cloud-service-vm/).
+	In Azure, you can run web applications in Azure Web Apps as shown in this tutorial, or in Cloud Services or in Virtual Machines. For more information, see [Azure web apps, cloud services, and VMs: When to use which?](/documentation/articles/choose-web-site-cloud-service-vm/).
 
 * [How to choose or create an App Service plan](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview)
 
-<!-- deleted by customization
 * [How to choose or create a resource group](/documentation/articles/azure-preview-portal-using-resource-groups)
 
 ## What's changed
-* For a guide to the change from Websites to Azure Websites, see [Azure Websites and existing Azure services](/documentation/services/web-sites/).
-* For a guide to the change from the Azure Management Portal to the preview portal, see [Reference for navigating the Azure Management Portal](https://manage.windowsazure.cn/).
--->
+* For a guide to the change from Websites to Azure Web App, see [Azure and existing Azure services](/documentation/services/web-sites/).

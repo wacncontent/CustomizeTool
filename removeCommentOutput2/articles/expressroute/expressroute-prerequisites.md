@@ -12,9 +12,9 @@
 	wacn.date=""/>
 
 
-# ExpressRoute prerequisites   
+# ExpressRoute Prerequisites  
 
-To connect to Microsoft cloud services using ExpressRoute, you’ll need to verify that the following requirements listed in the sections below have been met.
+To connect to Microsoft cloud services using ExpressRoute, you'll need to verify that the following requirements listed in the sections below have been met.
 
 ## Account requirements
 
@@ -36,7 +36,7 @@ Refer to the connectivity models section for details on connectivity models. Cus
 ## Redundancy requirements for connectivity
 
 There are no redundancy requirements on physical connectivity between the customer infrastructure and the service provider infrastructure. 
-Microsoft does require redundancy in Layer 3. Microsoft does require redundant routing to be setup between Microsoft’s edge and the customer’s network through the service provider for each of the peerings to be enabled. If routing sessions are not configured in a redundant manner, the service availability SLA will be void.
+Microsoft does require redundancy in Layer 3. Microsoft does require redundant routing to be setup between Microsoft's edge and the customer's network through the service provider for each of the peerings to be enabled. If routing sessions are not configured in a redundant manner, the service availability SLA will be void.
 
 ## IP addresses and routing considerations
 
@@ -56,7 +56,7 @@ Refer to [ExpressRoute NAT requirements](/documentation/articles/expressroute-na
 Review the following resources for more information about Office 365 requirements.
 
 - [Network planning and performance tuning for Office 365](https://support.office.com/zh-cn/article/Network-planning-and-performance-tuning-for-Office-365-e5f1228c-da3c-4654-bf16-d163daee8848)
-- [Office 365 network traffic management](https://msft.spoppe.com/teams/cpub/teams/IW_Admin/modsquad/_layouts/15/WopiFrame.aspx?sourcedoc=%7b23f09224-0668-4476-8627-aaff30931439%7d&action=edit&source=https%3A%2F%2Fmsft%2Espoppe%2Ecom%2Fteams%2Fcpub%2Fteams%2FIW%5FAdmin%2Fmodsquad%2FSitePages%2FHome%2Easpx)
+- [Office 365 network traffic management](https://support.office.com/article/Office-365-network-traffic-management-e1da26c6-2d39-4379-af6f-4da213218408)
 - Refer to the [ExpressRoute Quality of Service (QoS) requirements](/documentation/articles/expressroute-qos) article for detailed guidance on QoS requirements and configurations. Check with your connectivity provider to see if they offer multiple classes of service for your VPN. 
 
 ## Next steps
@@ -67,5 +67,5 @@ Review the following resources for more information about Office 365 requirement
 - Configure your ExpressRoute connection.
 	- [Create an ExpressRoute circuit](/documentation/articles/expressroute-howto-circuit-classic)
 	- [Configure routing](/documentation/articles/expressroute-howto-routing-classic)
-	- [Link a VNet to an ExpressRoute circuit](/documentation/articles/expressroute-howto-linkvnet-classic)
+	- [Link a VNet to an ExpressRoute circuit](/documentation/articles/expressroute-howto-linkvnet-classic 
 

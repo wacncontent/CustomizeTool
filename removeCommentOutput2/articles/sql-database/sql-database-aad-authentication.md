@@ -133,7 +133,7 @@ Each Azure SQL Server starts with a single server administrator account which is
 
 ### Provision an Azure Active Directory administrator for your Azure SQL Server by using the Azure Management Portal 
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn/), in the upper-right corner, click your connection to drop down a list of possible Active Directories. Choose the correct Active Directory as the default Azure AD. This step links the subscription association with Active Directory with Azure SQL Database making sure that the same subscription is used for both Azure AD and SQL Server.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn), in the upper-right corner, click your connection to drop down a list of possible Active Directories. Choose the correct Active Directory as the default Azure AD. This step links the subscription association with Active Directory with Azure SQL Database making sure that the same subscription is used for both Azure AD and SQL Server.
 
 	![choose-ad][8]
 2. In the left banner select **SQL servers**, select your **SQL server**, and then in the **SQL Server** blade, at the top click **Settings**.
@@ -167,17 +167,17 @@ Cmdlets used to provision and manage Azure AD admin:
 
 | Cmdlet name                                       | Description                                                                                                     |
 |---------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| [Set-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt603544.aspx)    | Provisions an Azure Active Directory administrator for Azure SQL Server. (Must be from the current subscription.) |
-| [Remove-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt619340.aspx) | Removes an Azure Active Directory administrator for Azure SQL Server. |
-| [Get-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt603737.aspx)    | Returns information about an Azure Active Directory administrator currently configured for the Azure SQL Server. |
+| [Set-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt603544.aspx)    | Provisions an Azure Active Directory administrator for Azure SQL Server. (Must be from the current subscription.) |
+| [Remove-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt619340.aspx) | Removes an Azure Active Directory administrator for Azure SQL Server. |
+| [Get-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt603737.aspx)    | Returns information about an Azure Active Directory administrator currently configured for the Azure SQL Server. |
 
 Use PowerShell command get-help to see more details for each of these commands, for example ``get-help Set-AzureRMSqlServerActiveDirectoryAdministrator``.
 
 The following script provisions an Azure AD administrator group named **DBA_Group** (object id `40b79501-b343-44ed-9ce7-da4c8cc7353f`) for the **demo_server** server in a resource group named **Group-23**:
 
 ```
-Set-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" 
-–ServerName "demo_server" -DisplayName "DBA_Group"
+Set-AzureRMSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" 
+-ServerName "demo_server" -DisplayName "DBA_Group"
 ```
 
 The **DisplayName** input parameter accepts either the Azure AD display name or the User Principal Name. For example ``DisplayName="John Smith"`` and ``DisplayName="johns@contoso.com"``. For Azure AD groups only the Azure AD display name is supported.
@@ -187,8 +187,8 @@ The **DisplayName** input parameter accepts either the Azure AD display name or 
 The following example uses the optional **ObjectID**:
 
 ```
-Set-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" 
-–ServerName "demo_server" -DisplayName "DBA_Group" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353f"
+Set-AzureRMSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" 
+-ServerName "demo_server" -DisplayName "DBA_Group" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353f"
 ```
 
 > [AZURE.NOTE] The Azure AD **ObjectID** is required when the **DisplayName** is not unique. To retrieve the **ObjectID** and **DisplayName** values, use the Active Directory section of Azure Management Portal, and view the properties of a user or group.
@@ -196,12 +196,12 @@ Set-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23"
 The following example returns information about the current Azure AD admin for Azure SQL Server:
 
 ```
-Get-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" –ServerName "demo_server" | Format-List
+Get-AzureRMSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -ServerName "demo_server" | Format-List
 ```
 
 The following example removes an Azure AD administrator:
 ```
-Remove-AzureRMSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" –ServerName "demo_server"
+Remove-AzureRMSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -ServerName "demo_server"
 ```
 
 ## 5. Configure your client computers
@@ -288,7 +288,7 @@ Azure Active Directory authentication supports the following methods of connecti
 
 ### 7.1. Connecting using integrated (Windows) authentication
  
-To use integrated Windows authentication, your domain’s Active Directory must be federated with Azure Active Directory and your client application (or a service) connecting to the database must be running on a domain-joined machine under a user’s domain credentials.
+To use integrated Windows authentication, your domain's Active Directory must be federated with Azure Active Directory and your client application (or a service) connecting to the database must be running on a domain-joined machine under a user's domain credentials.
 
 To connect to a database using integrated authentication and an Azure AD identity, the Authentication keyword in the database connection string must be set to Active Directory Integrated. The following C# code sample uses ADO .NET.
 

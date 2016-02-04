@@ -8,7 +8,7 @@
  editor=""/>
 <tags
 	ms.service="scheduler"
-	ms.date="08/04/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Scheduler concepts, terminology, + entity hierarchy
@@ -20,7 +20,7 @@ The following table describes the main resources exposed or used by the Schedule
 |Resource | Description |
 |---|---|
 |**Cloud service**|Conceptually, a cloud service represents an application. A subscription may have several cloud services.|
-|**Job collection**|A job collection contains a group of jobs and maintains settings, quotas, and throttles that are shared by jobs within the collection. A job collection is created by a subscription owner and groups jobs together based on usage or application boundaries. It’s constrained to one region. It also allows the enforcement of quotas to constrain the usage of all jobs in that collection. The quotas include MaxJobs and MaxRecurrence.|
+|**Job collection**|A job collection contains a group of jobs and maintains settings, quotas, and throttles that are shared by jobs within the collection. A job collection is created by a subscription owner and groups jobs together based on usage or application boundaries. It's constrained to one region. It also allows the enforcement of quotas to constrain the usage of all jobs in that collection. The quotas include MaxJobs and MaxRecurrence.|
 |**Job**|A job defines a single recurrent action, with simple or complex strategies for execution. Actions may include HTTP requests or storage queue requests.|
 |**Job history**|A job history represents details for an execution of a job. It contains success vs. failure, as well as any response details.|
 
@@ -119,7 +119,7 @@ As seen in the sample scheduled job above, a job definition has several parts:
 
 - Retry policy (“retryPolicy”)  
 
-Let’s examine each of these in detail:
+Let's examine each of these in detail:
 
 ## startTime
 
@@ -143,7 +143,7 @@ The action in the example above is an HTTP action. Below is an example of a stor
 			},
 	}
 
-The “errorAction” is the error handler, the action invoked when the primary action fails. You can use this variable to call an error-handling endpoint or send a user notification. This can be used for reaching a secondary endpoint in the case that the primary is not available (e.g., in the case of a disaster at the endpoint’s site) or can be used for notifying an error handling endpoint. Just like the primary action, the error action can be simple or composite logic based on other actions. To learn how to create a SAS token, refer to [Create and Use a Shared Access Signature](https://msdn.microsoft.com/zh-cn/library/azure/jj721951.aspx).
+The “errorAction” is the error handler, the action invoked when the primary action fails. You can use this variable to call an error-handling endpoint or send a user notification. This can be used for reaching a secondary endpoint in the case that the primary is not available (e.g., in the case of a disaster at the endpoint's site) or can be used for notifying an error handling endpoint. Just like the primary action, the error action can be simple or composite logic based on other actions. To learn how to create a SAS token, refer to [Create and Use a Shared Access Signature](https://msdn.microsoft.com/zh-cn/library/azure/jj721951.aspx).
 
 ## recurrence
 
@@ -171,7 +171,7 @@ Completed and faulted jobs are deleted after 60 days.
 
 ## status
 
-Once a Scheduler job has started, information will be returned about the current status of the job. This object is not settable by the user—it’s set by the system. However, it is included in the job object (rather than a separate linked resource) so that one can obtain the status of a job easily.
+Once a Scheduler job has started, information will be returned about the current status of the job. This object is not settable by the user—it's set by the system. However, it is included in the job object (rather than a separate linked resource) so that one can obtain the status of a job easily.
 
 Job status includes the time of the previous execution (if any), the time of the next scheduled execution (for in-progress jobs), and the execution count of the job.
 
@@ -186,8 +186,8 @@ The retry interval, specified with the **retryInterval** object, is the interval
 ## See also
 
  [What is Scheduler?](/documentation/articles/scheduler-intro)
-
- [Get started using Azure Scheduler in the Azure Management Portal](/documentation/articles/scheduler-get-started-portal)
+ 
+ [Get started using Scheduler in the Azure Management Portal](/documentation/articles/scheduler-get-started-portal)
 
  [Plans and billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
 

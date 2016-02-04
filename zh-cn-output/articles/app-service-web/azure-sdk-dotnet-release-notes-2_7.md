@@ -11,7 +11,7 @@
 <tags
    ms.service="app-service"
    ms.date="08/26/2015"
-   wacn.date="10/22/2015"/>
+   wacn.date="11/27/2015"/>
 
 
 # Azure SDK for .NET 2.7 和 .NET 2.7.1 发行说明
@@ -24,7 +24,7 @@
 
 只有 Visual Studio 2015 和 Visual Studio 2013 才支持 Azure SDK 2.7。[Azure SDK 2.6](/downloads/) 是 Visual Studio 2012 支持的最后一个 SDK。
 
-有关此版本的详细信息，请参阅 [Azure SDK 2.7 通告文章](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)和 [Azure SDK 2.7.1 通告文章](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-7-1-for-net/)。
+有关此版本的详细信息，请参阅 [Azure SDK 2.7 通告文章](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)和 [Azure SDK 2.7.1 通告文章](http://go.microsoft.com/fwlink/?LinkId=623850)。
 
 ## Azure SDK for .NET 2.7
 
@@ -45,7 +45,7 @@
 
 ### HDInsight 工具 
 
-此版本做了以下更新。这些更新目前以预览版提供。有关详细信息，请参阅[此博客](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
+此版本做了以下更新。这些更新目前以预览版提供。有关详细信息，请参阅[此博客](http://go.microsoft.com/fwlink/?LinkId=619108)。
 
 - 为 Tez 上的 Hive 作业绘制 Hive 图形
 - 完全支持 Hive DML IntelliSense
@@ -54,8 +54,8 @@
 
 #### 重大变化
 
-- 使用此版本的工具时，必须先升级旧的 **Storm** 项目。有关详细信息，请参阅[此博客](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
-- 不再支持 Visual Studio Web Express。有关详细信息，请参阅[此博客](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
+- 使用此版本的工具时，必须先升级旧的 **Storm** 项目。有关详细信息，请参阅[此博客](http://go.microsoft.com/fwlink/?LinkId=619108)。
+- 不再支持 Visual Studio Web Express。有关详细信息，请参阅[此博客](http://go.microsoft.com/fwlink/?LinkId=619108)。
 
 ### Azure 网站工具
 
@@ -63,7 +63,7 @@
 
 - 添加了对 DreamSpark 帐户的支持
 - 对 Azure 工具做了全面的更改，以支持新的 Azure 资源管理 API
-- 在[云资源管理器](/documentation/articles/azure-sdk-dotnet-release-notes-2_7#cloud_explorer)中添加了对 Azure 网站的支持
+- 在[云资源管理器](/documentation/articles/azure-sdk-dot-net-release-notes-2_7#cloud_explorer)中添加了对 Azure 网站的支持
 
 #### 已知问题
 
@@ -96,10 +96,10 @@ Azure 资源管理器工具已更新为使用基于角色的访问控制 (RBAC) 
 ### 存储资源管理器工具 
 
 - 支持查看附加 Blob。有关详细信息，请参阅[此博客文章](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/13/introducing-azure-storage-append-blob.aspx)。 
-<!-- deleted by customization
+
 ### 适用于 Visual Studio 的 Azure 数据工厂工具 
 
-即将引入适用于 Visual Studio 的 **Azure 数据工厂工具**。以下是启用的功能。有关详细信息，请参阅[此博客](https://azure.microsoft.com/services/data-factory/)。
+即将引入适用于 Visual Studio 的 **Azure 数据工厂工具**。以下是启用的功能。有关详细信息，请参阅[此博客](http://go.microsoft.com/fwlink/?LinkId=617530)。
 
 - **基于模板的创作**：选择基于用例的模板、数据移动模板或数据处理模板，以部署端到端数据集成解决方案，以及快速开始使用数据工厂。 
 - **与解决方案资源管理器集成，方便创作和部署数据工厂实体**：创建和部署管道与相关实体作为 Visual Studio 项目。 
@@ -108,13 +108,13 @@ Azure 资源管理器工具已更新为使用基于角色的访问控制 (RBAC) 
 - **使用架构验证与丰富智能感知进行 JSON 编辑**：使用丰富智能感知与架构验证，有效地配置和编辑数据工厂实体的 JSON 文档 
 - **多环境发布**：通过为每个环境创建不同的配置文件，将创作的管道发布到开发、测试或生产环境。
 - **支持基于 Pig、Hive 和 .Net 的数据处理**：支持在数据工厂项目中使用 Pig 和 Hive 脚本。支持引用 C# 项目来管理 .Net 活动。
--->
+
 ## Azure SDK for .NET 2.7.1
 
 以下部分包含的更新是 Azure SDK for .NET 2.7.1 发行版中引入的。
 ### HDInsight 工具 
 
-有关 HDInsight 工具更新的更多详细说明，请参阅[此博客](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-7-1-for-net/)。
+有关 HDInsight 工具更新的更多详细说明，请参阅[此博客](http://go.microsoft.com/fwlink/?LinkId=623831)。
 
 - Hive 作业运算符视图（新功能）
 
@@ -134,7 +134,7 @@ Azure 资源管理器工具已更新为使用基于角色的访问控制 (RBAC) 
 
 	我们改进了 IntelliSense，添加了更多用户友好建议。例如，现在还可以在 IntelliSense 中提供表别名建议，方便你撰写查询。此外，我们还改进了 Hive 元数据加载，只需数秒即可列出 Hive 源存储中的所有数据库、表和列。
 
-有关 HDInsight 工具更新的更多详细说明，请参阅[此博客](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-7-1-for-net/)。
+有关 HDInsight 工具更新的更多详细说明，请参阅[此博客](http://go.microsoft.com/fwlink/?LinkId=623831)。
 
 ### Visual Studio 2013 中的改进
 
@@ -147,10 +147,10 @@ Azure 资源管理器工具已更新为使用基于角色的访问控制 (RBAC) 
 
 
 ## 另请参阅
-[Azure SDK 2.7.1 通告文章](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-7-1-for-net/)
+[Azure SDK 2.7.1 通告文章](http://go.microsoft.com/fwlink/?LinkId=623850)
 
 [Azure SDK 2.7 通告文章](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
 
-[Azure SDK for .NET 和 API 的支持和停用信息](https://msdn.microsoft.com/zh-cn/library/azure/dn479282.aspx/)
+[Azure SDK for .NET 和 API 的支持和停用信息](https://msdn.microsoft.com/library/azure/dn479282.aspx/)
 
 <!---HONumber=74-->

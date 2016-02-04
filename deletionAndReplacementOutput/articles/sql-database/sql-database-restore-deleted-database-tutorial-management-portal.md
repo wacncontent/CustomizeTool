@@ -4,5 +4,5 @@ deleted:
 
 		> [AZURE.VIDEO restore-a-deleted-sql-database]
 
-reason: ()
+reason: (video)
 

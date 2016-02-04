@@ -185,7 +185,7 @@ For a sequence link, the condition is only evaluated once since a single array i
 	$VMs = $ActivityOutput['Get-AzureVm']
 	Foreach ($VM in VMs)
 	{
-		If ($VM.PowerState –eq 'Started')
+		If ($VM.PowerState âeq 'Started')
 			{
 				$test = $true
 			}

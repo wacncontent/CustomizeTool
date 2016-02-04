@@ -10,13 +10,3 @@ replaced by:
 
 reason: ()
 
-deleted:
-
-		- [Azure Documentation Center](http://azure.microsoft.com/documentation/)
-
-replaced by:
-
-		- [Azure Documentation Center](http://www.windowsazure.cndocumentation/)
-
-reason: ()
-

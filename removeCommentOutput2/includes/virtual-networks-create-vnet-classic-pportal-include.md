@@ -1,3 +1,4 @@
+
 <!-- not suitable for Mooncake -->
 
 ## How to create a classic VNet in the Azure preview portal

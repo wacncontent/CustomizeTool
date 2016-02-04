@@ -3,14 +3,22 @@ deletion:
 deleted:
 
 		* [Activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). Your MSDN subscription gives you credits every month that you can use for paid Azure services.
-		
+
+reason: (MSDN subscriber)
+
+deleted:
+
 		> [AZURE.NOTE] If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azure Websites—no credit card required, and no commitments.
-		
+
+reason: (“Try it now”)
+
+deleted:
+
 		In this video, Scott Hanselman shows how easy it is to sign up for a trial of Windows Azure. (Duration: 1:58)
 		
 		> [AZURE.VIDEO sign-up-for-microsoft-azure]
 
-reason: (“Try it now”, video)
+reason: (video)
 
 deleted:
 
@@ -21,12 +29,16 @@ reason: ({application-insights})
 deleted:
 
 		* [How to choose or create a resource group](/documentation/articles/azure-preview-portal-using-resource-groups)
-		
+
+reason: (the new Ibiza portal)
+
+deleted:
+
 		## What's changed
 		* For a guide to the change from Websites to Azure Websites, see [Azure Websites and existing Azure services](/documentation/services/web-sites/).
 		* For a guide to the change from the Azure Management Portal to the preview portal, see [Reference for navigating the Azure Management Portal](https://manage.windowsazure.cn/).
 
-reason: (the new Ibiza portal, terminology: Azure App Service Web)
+reason: (terminology: Azure App Service Web, the new Ibiza portal)
 
 replacement:
 

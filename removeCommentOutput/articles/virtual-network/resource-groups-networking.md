@@ -4,23 +4,23 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="10/07/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # Network Resource Provider
-An underpinning need in today’s business success, is the ability to build and manage large scale network aware applications in an agile, flexible, secure and repeatable way. Azure Resource Manager (ARM) enables you to create such applications, as a single collection of resources in resource groups. Such resources are managed through various resource providers under ARM. 
+An underpinning need in today's business success, is the ability to build and manage large scale network aware applications in an agile, flexible, secure and repeatable way. Azure Resource Manager (ARM) enables you to create such applications, as a single collection of resources in resource groups. Such resources are managed through various resource providers under ARM. 
 
 Azure Resource Manager relies on different resource providers to provide access to your resources. There are three main resource providers: Network, Storage and Compute. This document discusses the characteristics and benefits of the Network Resource Provider, including:
 
-- **Metadata** – you can add information to resources using tags. These tags can be used to track resource utilization across resource groups and subscriptions.
+- **Metadata** - you can add information to resources using tags. These tags can be used to track resource utilization across resource groups and subscriptions.
 - **Greater control of your network** - network resources are loosely coupled and you can control them in a more granular fashion. This means you have more flexibility in managing the networking resources.
 - **Faster configuration** - because network resources are loosely coupled, you can create and orchestrate network resources in parallel. This has drastically reduced configuration time.
 - **Role Based Access Control** - RBAC provides default roles, with specific security scope, in addition to allowing the creation of custom roles for secure management. 
-- **Easier management and deployment** - it’s easier to deploy and manage applications since you can can create an entire application stack as a single collection of resources in a resource group. And faster to deploy, since you can deploy by simply providing a template JSON payload.
+- **Easier management and deployment** - it's easier to deploy and manage applications since you can can create an entire application stack as a single collection of resources in a resource group. And faster to deploy, since you can deploy by simply providing a template JSON payload.
 - **Rapid customization** - you can use declarative-style templates to enable repeatable and rapid customization of deployments. 
 - **Repeatable customization** - you can use declarative-style templates to enable repeatable and rapid customization of deployments.
 - **Management interfaces** - you can use any of the following interfaces to manage your resources:
@@ -76,7 +76,7 @@ You can manage your Azure networking resources using different interfaces. In th
 ### REST API 
 As mentioned earlier, network resources can be managed via a variety of interfaces, including REST API,.NET SDK, Node.JS SDK, Java SDK, PowerShell, CLI, Azure Management Portal and templates. 
 
-The Rest API’s conform to the HTTP 1.1 protocol specification. The general URI structure of the API is presented below: 
+The Rest API's conform to the HTTP 1.1 protocol specification. The general URI structure of the API is presented below: 
 
 	https://manage.windowsazure.cn/subscriptions/{subscription-id}/providers/{resource-provider-namespace}/locations/{region-location}/register?api-version={api-version}
 
@@ -97,7 +97,7 @@ Both the request and response conform to a JSON payload format. For more details
 ### ARM template language
 In addition to managing resources imperatively (via APIs or SDK), you can also use a declarative programming style to build and manage network resources by using the ARM Template Language. 
 
-A sample representation of a template is provided below – 
+A sample representation of a template is provided below - 
 
 	{
 	  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
@@ -258,7 +258,7 @@ You can deploy services to Azure from a template by using PowerShell, AzureCLI, 
 
 [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates)
 
-[Azure Networking – commonly used templates](https://github.com/Azure/azure-quickstart-templates)
+[Azure Networking - commonly used templates](https://github.com/Azure/azure-quickstart-templates)
 
 [Compute Resource Provider](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 
@@ -269,3 +269,5 @@ You can deploy services to Azure from a template by using PowerShell, AzureCLI, 
 [Using Tags in Azure Resource Manager](https://msdn.microsoft.com/zh-cn/library/azure/dn848368.aspx)
 
 [Template deployments](https://msdn.microsoft.com/zh-cn/library/azure/dn790549.aspx) 
+
+today's

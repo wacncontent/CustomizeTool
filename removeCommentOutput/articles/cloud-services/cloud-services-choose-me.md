@@ -17,7 +17,7 @@ Azure provides different hosting models for running applications. Each one provi
 
 | Compute Options    | Audience   |
 | ------------------ | --------   |
-| [Azure Websites]     | Scalable Web Apps, Mobile Apps, API Apps, and Logic Apps for any device |
+| [Azure Websites]     | Scalable web sites, Mobile Apps, API Apps, and Logic Apps for any device |
 | [Cloud Services]   | Highly available, scalable n-tier cloud apps with more control of the OS |
 | [Virtual Machines] | Customized Windows and Linux VMs with complete control of the OS |
 
@@ -31,6 +31,6 @@ Azure provides different hosting models for running applications. Each one provi
 [Create a cloud service app in PHP](/documentation/articles/cloud-services-php-create-web-role)<br/>
 [Create a cloud service app in Python](/documentation/articles/cloud-services-python-ptvs)<br/>
 
-[Azure Websites]: /documentation/services/web-sites
-[Virtual Machines]: /documentation/articles/virtual-machines-about
+[Azure Websites]: app-service-choose-me.md
+[Virtual Machines]: ../virtual-machines-about.md
 [Cloud Services]: #tellmecs 

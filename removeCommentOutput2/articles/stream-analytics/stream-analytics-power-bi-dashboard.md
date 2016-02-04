@@ -1,29 +1,25 @@
 <properties 
-	pageTitle="Power BI dashboard on Stream Analytics | Microsoft Azure" 
+	pageTitle="Power BI dashboard on Stream Analytics | Windows Azure" 
 	description="Use a real-time streaming Power BI dashboard to gather business intelligence and analyze high-volume data from a Stream Analytics job." 
-	keywords="business intelligence tools,power bi,streaming data,power bi dashboard"	
+	keywords="analytics dashboard, real-time dashboard"	
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="stream-analytics" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="data-services" 
-	ms.date="09/29/2015" 
-	ms.author="jeffstok"/>
+<tags
+	ms.service="stream-analytics"
+	ms.date="12/04/2015"
+	wacn.date=""/>
 	
-# Azure Stream Analytics & Power BI: Live dashboard for analytics in real-time on streaming data
+# Azure Stream Analytics & Power BI: A real-time analytics dashboard for real-time visibility of streaming data
 
-Azure Stream Analytics allows you to take advantage of one of the leading business intelligence tools, Microsoft Power BI. Learn how to use Azure Stream Analytics to analyze high-volume, streaming data and get the insight in a real-time Power BI dashboard.
+Azure Stream Analytics allows you to take advantage of one of the leading business intelligence tools, Microsoft Power BI. Learn how to use Azure Stream Analytics to analyze high-volume, streaming data and get the insight in a real-time Power BI analytics dashboard.
 
 Use [Microsoft Power BI](https://powerbi.com/) to build a live dashboard quickly. [Watch a video illustrating the scenario](https://www.youtube.com/watch?v=SGUpT-a99MA). 
 
-In this article, learn how create your own custom business intelligence tools by using Power BI as an output for your Azure Stream Analytics jobs. 
+In this article, learn how create your own custom business intelligence tools by using Power BI as an output for your Azure Stream Analytics jobs and utilize a real-time dashboard.
 
 > [AZURE.NOTE] Power BI output is a preview feature of Azure Stream Analytics. At this time, creation and configuration of Power BI outputs is not supported in the Azure Preview Portal.
 
@@ -95,9 +91,9 @@ For this tutorial, we are assuming you are using Event Hub as an input with JSON
 
 Provide values as below:
 
-* **Output Alias** – You can put any output alias that is easy for you to refer to. This output alias is particularly helpful if you decide to have multiple outputs for your job. In that case, you have to refer to this output in your query. For example, let’s use the output alias value = “OutPbi”.
-* **Dataset Name** - Provide a dataset name that you want your Power BI output to have. For example, let’s use “pbidemo”.
-*	**Table Name** - Provide a table name under the dataset of your Power BI output. Let’s say we call it “pbidemo”. Currently, Power BI output from Stream Analytics jobs may only have one table in a dataset.
+* **Output Alias** - You can put any output alias that is easy for you to refer to. This output alias is particularly helpful if you decide to have multiple outputs for your job. In that case, you have to refer to this output in your query. For example, let’s use the output alias value = “OutPbi”.
+* **Dataset Name** - Provide a dataset name that you want your Power BI output to have. For example, let's use “pbidemo”.
+*	**Table Name** - Provide a table name under the dataset of your Power BI output. Let's say we call it “pbidemo”. Currently, Power BI output from Stream Analytics jobs may only have one table in a dataset.
 
 >	[AZURE.NOTE] You should not explicitly create this dataset and table in your Power BI account. They will be automatically created when you start your Stream Analytics job and the job starts pumping output into Power BI. If your job query doesn’t return any results, the dataset and table will not be created.
 
@@ -198,7 +194,7 @@ To resolve this issue, stop your running job and go to your Power BI output.  Cl
 ![graphic13][graphic13]
 
 ## Get help ##
-For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics)
+For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics) 
 
 ## Next steps ##
 

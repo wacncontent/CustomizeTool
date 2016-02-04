@@ -9,7 +9,7 @@ deleted:
 		1. Click **Add a credential** at the top of the blade.
 		1. Complete the form and click **Create** to save the new credential.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -23,11 +23,14 @@ deleted:
 		The following image shows an example of using a credential in a graphical runbook.  In this case, it is being used to provide authentication for a runbook to Azure resources as described in [Configuring authentication to Azure resources](#automation-configuring.md).  The first activity retrieves the credential that has access to the Azure subscription.  The **Add-AzureAccount** activity then uses this credential to provide authentication for any activities that come after it.  A [pipeline link](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow) is here since **Get-AutomationPSCredential** is expecting a single object.  
 		
 		![Add credential to canvas](./media/automation-credentials/get-credential.png)
-		
-		
+
+reason: (Graphical Runbook)
+
+deleted:
+
 		## Related articles
 		
 		- [Links in graphical authoring](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
 
-reason: ()
+reason: (Graphical Runbook)
 

@@ -8,7 +8,7 @@ replaced by:
 
 		## <a name="concepts"></a>Concepts
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -18,7 +18,7 @@ replaced by:
 
 		## <a name="pre"></a>Prerequisites
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -28,7 +28,7 @@ replaced by:
 
 		## <a name="create-namespace"></a>Create an ACS Namespace
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -38,7 +38,7 @@ replaced by:
 
 		## <a name="add-IP"></a>Add identity providers
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -48,7 +48,7 @@ replaced by:
 
 		## <a name="add-RP"></a>Add a relying party application
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -58,7 +58,7 @@ replaced by:
 
 		## <a name="create-rules"></a>Create rules
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -68,7 +68,7 @@ replaced by:
 
 		## <a name="upload-certificate"></a>Upload a certificate to your ACS namespace
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -78,7 +78,7 @@ replaced by:
 
 		## <a name="review-app-int"></a>Review the Application Integration page
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -88,7 +88,7 @@ replaced by:
 
 		## <a name="create-java-app"></a>Create a Java web application
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -98,7 +98,7 @@ replaced by:
 
 		<a name="add_acs_filter_library"></a>Add
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -108,7 +108,7 @@ replaced by:
 
 		## <a name="deploy_compute_emulator"></a>Deploy to the compute emulator
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -118,5 +118,5 @@ replaced by:
 
 		## <a name="deploy_azure"></a>Deploy to Azure
 
-reason: ()
+reason: (inpage link)
 

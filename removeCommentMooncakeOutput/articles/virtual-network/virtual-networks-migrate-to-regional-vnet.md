@@ -4,11 +4,11 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/02/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # How to migrate from Affinity Groups to a Regional Virtual Network (VNet)
@@ -47,7 +47,7 @@ VNets that are currently associated with affinity groups are enabled for migrati
 
 ## Affinity groups and VMs
 
-As mentioned previously, affinity groups are no longer generally recommended for VMs. You should use an affinity group only when a set of VMs must have the absolute lowest network latency between the VMs. By placing VMs in an affinity group, the VMs will all be place in the same compute cluster or scale unit.
+As mentioned previously, affinity groups are no longer generally recommended for VMs. You should use an affinity group only when a set of VMs must have the absolute lowest network latency between the VMs. By placing VMs in an affinity group, the VMs will all be placed in the same compute cluster or scale unit.
 
 It's important to note that using an affinity group can have two, possibly negative, consequences:
 

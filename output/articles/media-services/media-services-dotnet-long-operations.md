@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -19,10 +19,10 @@
 
 Windows Azure Media Services offers APIs that send requests to Media Services to start operations (for example: create, start, stop, or delete a channel). These operations are long-running.
 
-The Media Services .NET SDK provides APIs that send the request and wait for the operation to complete (internally, the APIs are polling for operation progress at some intervals). For example, when you call channel.Start(), the method returns after the channel is started. You can also use the asynchronous version: await channel.StartAsync() (for information about Task-based Asynchronous Pattern, see [TAP](https://msdn.microsoft.com/zh-cn/library/hh873175(v=vs.110).aspx)). APIs that send an operation request and then poll for the status until the operation is complete are called “polling methods”. These methods (especially the Async version) are recommended for rich client applications and/or stateful services.
+The Media Services .NET SDK provides APIs that send the request and wait for the operation to complete (internally, the APIs are polling for operation progress at some intervals). For example, when you call channel.Start(), the method returns after the channel is started. You can also use the asynchronous version: await channel.StartAsync() (for information about Task-based Asynchronous Pattern, see [TAP](https://msdn.microsoft.com/zh-cn/library/hh873175(v=vs.110).aspx)). APIs that send an operation request and then poll for the status until the operation is complete are called "polling methods". These methods (especially the Async version) are recommended for rich client applications and/or stateful services.
 
-There are scenarios where an application cannot wait for a long running http request and wants to poll for the operation progress manually. A typical example would be a browser interacting with a stateless web service: when the browser requests to create a channel, the web service initiates a long running operation and returns the operation ID to the browser. The browser could then ask the web service to get the operation status based on the ID. The Media Services .NET SDK provides APIs that are useful for this scenario. These APIs are called “non-polling methods”.
-The “non-polling methods” have the following naming pattern: Send*OperationName*Operation (for example, SendCreateOperation). Send*OperationName*Operation methods return the **IOperation** object; the returned object contains information that can be used to track the operation. The Send*OperationName*OperationAsync methods return **Task<IOperation>**.
+There are scenarios where an application cannot wait for a long running http request and wants to poll for the operation progress manually. A typical example would be a browser interacting with a stateless web service: when the browser requests to create a channel, the web service initiates a long running operation and returns the operation ID to the browser. The browser could then ask the web service to get the operation status based on the ID. The Media Services .NET SDK provides APIs that are useful for this scenario. These APIs are called "non-polling methods".
+The "non-polling methods" have the following naming pattern: Send*OperationName*Operation (for example, SendCreateOperation). Send*OperationName*Operation methods return the **IOperation** object; the returned object contains information that can be used to track the operation. The Send*OperationName*OperationAsync methods return **Task<IOperation>**.
 
 Currently, the following classes support non-polling methods:  **Channel**, **StreamingEndpoint**, and **Program**.
 
@@ -39,7 +39,7 @@ The example also shows how the client might use this class.
 
 	/// <summary> 
 	/// The ChannelOperations class only implements 
-	/// the Channel’s creation operation. 
+	/// the Channel's creation operation. 
 	/// </summary> 
 	public class ChannelOperations
 	{
@@ -183,3 +183,11 @@ The example also shows how the client might use this class.
 	Console.WriteLine(channelId);
  
 
+
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

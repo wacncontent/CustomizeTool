@@ -1,5 +1,5 @@
 <properties 
-pageTitle="Indexer Operations (Azure Search Service REST API: 2015-02-28-Preview)" 
+pageTitle="Indexer Operations (Azure Search Service REST API: 2015-02-28-Preview) | Windows Azure | Hosted cloud search service" 
 description="Indexer Operations (Azure Search Service REST API: 2015-02-28-Preview)" 
 services="search" 
 documentationCenter="" 
@@ -7,21 +7,18 @@ authors="HeidiSteen"
 manager="mblythe" 
 editor="" />
 
-<tags 
-ms.service="search" 
-ms.devlang="rest-api" 
-ms.workload="search" ms.topic="article"  
-ms.tgt_pltfrm="na" 
-ms.date="09/29/2015" 
-ms.author="heidist" />
+<tags
+	ms.service="search"
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
 #Indexer Operations (Azure Search Service REST API: 2015-02-28-Preview)#
 
-> [AZURE.NOTE] This article describes indexers in the [2015-02-28-Preview](./search-api-2015-02-28-preview). Currently there is no difference between the `2015-02-28` version documented on [MSDN](http://go.mirosoft.com/fwlink/p/?LinkID=528173) and the `2015-02-28-Preview` version described here. We provide this article to give you the full documentation set for `2015-02-28-Preview`, even though this API happens to be unchanged.
+> [AZURE.NOTE] This article describes indexers in the <!-- deleted by customization [2015-02-28-Preview](/documentation/articles/search-api-2015-02-28-preview) --><!-- keep by customization: begin --> [2015-02-28-Preview](./search-api-2015-02-28-preview) <!-- keep by customization: end -->. Currently there is no difference between the `2015-02-28` version documented on [MSDN](http://go.mirosoft.com/fwlink/p/?LinkID=528173) and the `2015-02-28-Preview` version described here. We provide this article to give you the full documentation set for `2015-02-28-Preview`, even though this API happens to be unchanged.
 
 ## Overview ##
 
-Azure Search can integrate directly with some common data sources, removing the need to write code to index your data. To set up this up, you can call the Azure Search API to create and manage **indexers** and **data sources**. 
+<!-- deleted by customization Azure Search is a hosted cloud search service on Windows Azure. --> Azure Search can integrate directly with some common data sources, removing the need to write code to index your data. To set up this up, you can call the Azure Search API to create and manage **indexers** and **data sources**.
 
 An **indexer** is a resource that connects data sources with target search indexes. An indexer is used in the following ways: 
 
@@ -40,7 +37,7 @@ The following data sources are currently supported:
 
 We're considering adding support for additional data sources in the future. To help us prioritize these decisions, please provide your feedback on the [Azure Search feedback forum](http://feedback.azure.com/forums/263029-azure-search).
 
-See [Service Limits](search-limits-quotas-capacity.md) for maximum limits related to indexer and data source resources.
+See [Service <!-- deleted by customization Limits](/documentation/articles/search-limits-quotas-capacity) --><!-- keep by customization: begin --> Limits](search-limits-quotas-capacity.md) <!-- keep by customization: end --> for maximum limits related to indexer and data source resources.
 
 ## Typical Usage Flow ##
 
@@ -48,7 +45,7 @@ You can create and manage indexers and data sources via simple HTTP requests (PO
 
 Setting up automatic indexing is typically a four step process:
 
-1. Identify the data source that contains the data that needs to be indexed. Keep in mind that Azure Search may not support all of the data types present in your data source. See [Supported data types](https://msdn.microsoft.com/library/azure/dn798938.aspx) for the list.
+1. Identify the data source that contains the data that needs to be indexed. Keep in mind that Azure Search may not support all of the data types present in your data source. See [Supported data <!-- deleted by customization types](https://msdn.microsoft.com/zh-cn/library/azure/dn798938.aspx) --><!-- keep by customization: begin --> types](https://msdn.microsoft.com/library/azure/dn798938.aspx) <!-- keep by customization: end --> for the list.
 
 2. Create an Azure Search index whose schema is compatible with your data source.
   
@@ -67,23 +64,35 @@ After creating an indexer, you can retrieve its execution status using the [Get 
 
 In Azure Search, a data source is used with indexers, providing the connection information for ad hoc or scheduled data refresh of a target index. You can create a new data source within an Azure Search service using an HTTP POST request.
 	
+<!-- deleted by customization
+    POST https://[service name].search.chinacloudapi.cn/datasources?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
     POST https://[service name].search.windows.net/datasources?api-version=[api-version]
+<!-- keep by customization: end -->
     Content-Type: application/json
     api-key: [admin key]
 
 Alternatively, you can use PUT and specify the data source name on the URI. If the data source does not exist, it will be created.
 
+<!-- deleted by customization
+    PUT https://[service name].search.chinacloudapi.cn/datasources/[datasource name]?api-version=[api-version]
+
+**Note**: The maximum number of data sources allowed varies by pricing tier. The free service allows up to 3 data sources. Standard service allows 50 data sources. See [Service Limits](/documentation/articles/search-limits-quotas-capacity) for details.
+-->
+<!-- keep by customization: begin -->
     PUT https://[service name].search.windows.net/datasources/[datasource name]?api-version=[api-version]
 
 **Note**: The maximum number of data sources allowed varies by pricing tier. The free service allows up to 3 data sources. Standard service allows 50 data sources. See [Service Limits](search-limits-quotas-capacity.md) for details.
+<!-- keep by customization: end -->
 
 **Request**
 
 HTTPS is required for all service requests. The **Create Data Source** request can be constructed using either a POST or PUT method. When using POST, you must provide a data source name in the request body along with the data source definition. With PUT, the name is part of the URL. If the data source doesn't exist, it is created. If it already exists, it is updated to the new definition. 
 
-The data source name must be lower case, start with a letter or number, have no slashes or dots, and be less than 128 characters. After starting the data source name with a letter or number, the rest of the name can include any letter, number and dashes, as long as the dashes are not consecutive. See [Naming rules](https://msdn.microsoft.com/library/azure/dn857353.aspx) for details.
+The data source name must be lower case, start with a letter or number, have no slashes or dots, and be less than 128 characters. After starting the data source name with a letter or number, the rest of the name can include any letter, number and dashes, as long as the dashes are not consecutive. See [Naming <!-- deleted by customization rules](https://msdn.microsoft.com/zh-cn/library/azure/dn857353.aspx) --><!-- keep by customization: begin --> rules](https://msdn.microsoft.com/library/azure/dn857353.aspx) <!-- keep by customization: end --> for details.
 
-The `api-version` is required. The current version is `2015-02-28`. [Azure Search versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) has details and more information about alternative versions.
+The `api-version` is required. The current version is `2015-02-28`. [Azure Search <!-- deleted by customization versioning](https://msdn.microsoft.com/zh-cn/library/azure/dn864560.aspx) --><!-- keep by customization: begin --> versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) <!-- keep by customization: end --> has details and more information about alternative versions.
 
 **Request Headers**
 
@@ -92,7 +101,7 @@ The following list describes the required and optional request headers.
 - `Content-Type`: Required. Set this to `application/json`
 - `api-key`: Required. The `api-key` is used to authenticate the request to your Search service. It is a string value, unique to your service. The **Create Data Source** request must include an `api-key` header set to your admin key (as opposed to a query key). 
  
-You will also need the service name to construct the request URL. You can get both the service name and `api-key` from your service dashboard in the [Azure management portal](https://portal.azure.com/). See [Create a Search service in the portal](search-create-service-portal.md) for page navigation help.
+You will also need the service name to construct the request URL. You can get both the service name and `api-key` from your service dashboard in the [Azure management <!-- deleted by customization portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> portal](https://portal.azure.com/) <!-- keep by customization: end -->. See [Create a Search service in the <!-- deleted by customization portal](/documentation/articles/search-create-service-portal) --><!-- keep by customization: begin --> portal](search-create-service-portal.md) <!-- keep by customization: end --> for page navigation help.
 
 <a name="CreateDataSourceRequestSyntax"></a>
 **Request Body Syntax**
@@ -122,7 +131,7 @@ Request contains the following properties:
 - `credentials`:
 	- The required `connectionString` property specifies the connection string for the data source. The format of the connection string depends on the data source type: 
 		- For Azure SQL, this is the usual SQL Server connection string. If you're using the Azure management portal to retrieve the connection string, use the `ADO.NET connection string` option.
-		- For DocumentDB, the connection string must be in the following format: `"AccountEndpoint=https://[your account name].documents.azure.com;AccountKey=[your account key];Database=[your database id]"`. All of the values are required. You can find them in the [Azure management portal](https://portal.azure.com/).   
+		- For DocumentDB, the connection string must be in the following format: `"AccountEndpoint=https://[your account name].documents.azure.com;AccountKey=[your account key];Database=[your database id]"`. All of the values are required. You can find them in the [Azure management <!-- deleted by customization portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> portal](https://portal.azure.com/) <!-- keep by customization: end -->.
 		
 - `container`: 
 	- The required `name` property specifies the table or view (for Azure SQL data source) or collection (for DocumentDB data source) that will be indexed. 
@@ -159,7 +168,7 @@ This policy can be specified as follows:
 
 ***SQL Integrated Change Detection Policy***
 
-If your SQL database supports [change tracking](https://msdn.microsoft.com/library/bb933875.aspx), we recommend using SQL Integrated Change Tracking Policy. This policy enables the most efficient change tracking, and allows Azure Search to identify deleted rows without you having to have an explicit "soft delete" column in your schema.
+If your SQL database supports [change <!-- deleted by customization tracking](https://msdn.microsoft.com/zh-cn/library/bb933875.aspx) --><!-- keep by customization: begin --> tracking](https://msdn.microsoft.com/library/bb933875.aspx) <!-- keep by customization: end -->, we recommend using SQL Integrated Change Tracking Policy. This policy enables the most efficient change tracking, and allows Azure Search to identify deleted rows without you having to have an explicit "soft delete" column in your schema.
 
 Integrated change tracking is supported starting with the following SQL Server database versions: 
 - SQL Server 2008 R2, if you're using SQL Server on Azure VMs.
@@ -167,7 +176,7 @@ Integrated change tracking is supported starting with the following SQL Server d
 
 When using SQL Integrated Change Tracking policy, do not specify a separate data deletion detection policy - this policy has built-in support for identifying deleted rows. 
 
-This policy can only be used with tables; it cannot be used with views. You need to enable change tracking for the table you're using before you can use this policy. See [Enable and disable change tracking](https://msdn.microsoft.com/library/bb964713.aspx) for instructions.    
+This policy can only be used with tables; it cannot be used with views. You need to enable change tracking for the table you're using before you can use this policy. See [Enable and disable change <!-- deleted by customization tracking](https://msdn.microsoft.com/zh-cn/library/bb964713.aspx) --><!-- keep by customization: begin --> tracking](https://msdn.microsoft.com/library/bb964713.aspx) <!-- keep by customization: end --> for instructions.
  
 When structuring the **Create Data Source** request, SQL integrated change tracking policy can be specified as follows:
 
@@ -197,7 +206,7 @@ If you intend to use the data source with an indexer that runs on a schedule, th
 		"name" : "asqldatasource",
 		"description" : "a description",
     	"type" : "azuresql",
-    	"credentials" : { "connectionString" : "Server=tcp:....database.windows.net,1433;Database=...;User ID=...;Password=...;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" },
+    	"credentials": { "connectionString": <!-- deleted by customization "Server=tcp:....database.chinacloudapi.cn,1433;Database=...;User --><!-- keep by customization: begin --> "Server=tcp:....database.windows.net,1433;Database=...;User <!-- keep by customization: end --> ID=...;Password=...;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" },
     	"container" : { "name" : "sometable" },
     	"dataChangeDetectionPolicy" : { "@odata.type" : "#Microsoft.Azure.Search.HighWaterMarkChangeDetectionPolicy", "highWaterMarkColumnName" : "RowVersion" }, 
     	"dataDeletionDetectionPolicy" : { "@odata.type" : "#Microsoft.Azure.Search.SoftDeleteColumnDeletionDetectionPolicy", "softDeleteColumnName" : "IsDeleted", "softDeleteMarkerValue" : "true" }
@@ -209,7 +218,7 @@ If you only intend to use the data source for one-time copy of the data, the pol
 		"name" : "asqldatasource",
     	"description" : "anything you want, or nothing at all",
     	"type" : "azuresql",
-    	"credentials" : { "connectionString" : "Server=tcp:....database.windows.net,1433;Database=...;User ID=...;Password=...;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" },
+    	"credentials": { "connectionString": <!-- deleted by customization "Server=tcp:....database.chinacloudapi.cn,1433;Database=...;User --><!-- keep by customization: begin --> "Server=tcp:....database.windows.net,1433;Database=...;User <!-- keep by customization: end --> ID=...;Password=...;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" },
     	"container" : { "name" : "sometable" }
 	} 
 
@@ -222,13 +231,18 @@ For a successful request: 201 Created.
 
 You can update an existing data source using an HTTP PUT request. You specify the name of the data source to update on the request URI:
 
+<!-- deleted by customization
+    PUT https://[service name].search.chinacloudapi.cn/datasources/[datasource name]?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
     PUT https://[service name].search.windows.net/datasources/[datasource name]?api-version=[api-version]
+<!-- keep by customization: end -->
     Content-Type: application/json
     api-key: [admin key]
 
-The `api-version` is required. The current version is `2015-02-28`. [Azure Search versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) has details and more information about alternative versions.
+The `api-version` is required. The current version is `2015-02-28`. [Azure Search <!-- deleted by customization versioning](https://msdn.microsoft.com/zh-cn/library/azure/dn864560.aspx) --><!-- keep by customization: begin --> versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) <!-- keep by customization: end --> has details and more information about alternative versions.
 
-The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) to learn more about keys. [Create a Search service in the portal](search-create-service-portal.md) explains how to get the service URL and key properties used in the request.
+The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end --> to learn more about keys. [Create a Search service in the <!-- deleted by customization portal](/documentation/articles/search-create-service-portal) --><!-- keep by customization: begin --> portal](search-create-service-portal.md) <!-- keep by customization: end --> explains how to get the service URL and key properties used in the request.
 
 **Request**
 The request body syntax is the same as for [Create Data Source requests](#CreateDataSourceRequestSyntax).
@@ -244,12 +258,17 @@ Some properties cannot be updated on an existing data source. For example, you c
 
 The **List Data Sources** operation returns a list of the data sources in your Azure Search service. 
 
+<!-- deleted by customization
+    GET https://[service name].search.chinacloudapi.cn/datasources?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
     GET https://[service name].search.windows.net/datasources?api-version=[api-version]
+<!-- keep by customization: end -->
     api-key: [admin key]
 
-The `api-version` is required. The current version is `2015-02-28`. [Azure Search versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) has details and more information about alternative versions.
+The `api-version` is required. The current version is `2015-02-28`. [Azure Search <!-- deleted by customization versioning](https://msdn.microsoft.com/zh-cn/library/azure/dn864560.aspx) --><!-- keep by customization: begin --> versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) <!-- keep by customization: end --> has details and more information about alternative versions.
 
-The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) to learn more about keys. [Create a Search service in the portal](search-create-service-portal.md) explains how to get the service URL and key properties used in the request.
+The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end --> to learn more about keys. [Create a Search service in the <!-- deleted by customization portal](/documentation/articles/search-create-service-portal) --><!-- keep by customization: begin --> portal](search-create-service-portal.md) <!-- keep by customization: end --> explains how to get the service URL and key properties used in the request.
 
 **Response**
 
@@ -283,12 +302,17 @@ This is a useful technique to save bandwidth if you have a lot of data sources i
 
 The **Get Data Source** operation gets the data source definition from Azure Search.
 
+<!-- deleted by customization
+    GET https://[service name].search.chinacloudapi.cn/datasources/[datasource name]?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
     GET https://[service name].search.windows.net/datasources/[datasource name]?api-version=[api-version]
+<!-- keep by customization: end -->
     api-key: [admin key]
 
-The `api-version` is required. The current version is `2015-02-28`. [Azure Search versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) has details and more information about alternative versions.
+The `api-version` is required. The current version is `2015-02-28`. [Azure Search <!-- deleted by customization versioning](https://msdn.microsoft.com/zh-cn/library/azure/dn864560.aspx) --><!-- keep by customization: begin --> versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) <!-- keep by customization: end --> has details and more information about alternative versions.
 
-The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) to learn more about keys. [Create a Search service in the portal](search-create-service-portal.md) explains how to get the service URL and key properties used in the request.
+The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end --> to learn more about keys. [Create a Search service in the <!-- deleted by customization portal](/documentation/articles/search-create-service-portal) --><!-- keep by customization: begin --> portal](search-create-service-portal.md) <!-- keep by customization: end --> explains how to get the service URL and key properties used in the request.
 
 **Response**
 
@@ -300,7 +324,7 @@ The response is similar to examples in [Create Data Source example requests](#Cr
 		"name" : "asqldatasource",
 		"description" : "a description",
     	"type" : "azuresql",
-    	"credentials" : { "connectionString" : "Server=tcp:....database.windows.net,1433;Database=...;User ID=...;Password=...;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" },
+    	"credentials": { "connectionString": <!-- deleted by customization "Server=tcp:....database.chinacloudapi.cn,1433;Database=...;User --><!-- keep by customization: begin --> "Server=tcp:....database.windows.net,1433;Database=...;User <!-- keep by customization: end --> ID=...;Password=...;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" },
     	"container" : { "name" : "sometable" },
     	"dataChangeDetectionPolicy" : { 
             "@odata.type" : "#Microsoft.Azure.Search.HighWaterMarkChangeDetectionPolicy",
@@ -318,14 +342,19 @@ The response is similar to examples in [Create Data Source example requests](#Cr
 
 The **Delete Data Source** operation removes a data source from your Azure Search service.
 
+<!-- deleted by customization
+    DELETE https://[service name].search.chinacloudapi.cn/datasources/[datasource name]?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
     DELETE https://[service name].search.windows.net/datasources/[datasource name]?api-version=[api-version]
+<!-- keep by customization: end -->
     api-key: [admin key]
 
 **NOTE** If any indexers reference the data source that you're deleting, the delete operation will still proceed. However, those indexers will transition into an error state upon their next run.  
 
-The `api-version` is required. The current version is `2015-02-28`. [Azure Search versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) has details and more information about alternative versions.
+The `api-version` is required. The current version is `2015-02-28`. [Azure Search <!-- deleted by customization versioning](https://msdn.microsoft.com/zh-cn/library/azure/dn864560.aspx) --><!-- keep by customization: begin --> versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) <!-- keep by customization: end --> has details and more information about alternative versions.
 
-The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) to learn more about keys. [Create a Search service in the portal](search-create-service-portal.md) explains how to get the service URL and key properties used in the request.
+The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end --> to learn more about keys. [Create a Search service in the <!-- deleted by customization portal](/documentation/articles/search-create-service-portal) --><!-- keep by customization: begin --> portal](search-create-service-portal.md) <!-- keep by customization: end --> explains how to get the service URL and key properties used in the request.
 
 **Response**
 
@@ -336,12 +365,27 @@ Status Code: 204 No Content is returned for a successful response.
 
 You can create a new indexer within an Azure Search service using an HTTP POST request.
 	
+<!-- deleted by customization
+    POST https://[service name].search.chinacloudapi.cn/indexers?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
     POST https://[service name].search.windows.net/indexers?api-version=[api-version]
+<!-- keep by customization: end -->
     Content-Type: application/json
     api-key: [admin key]
 
 Alternatively, you can use PUT and specify the data source name on the URI. If the data source does not exist, it will be created.
 
+<!-- deleted by customization
+    PUT https://[service name].search.chinacloudapi.cn/indexers/[indexer name]?api-version=[api-version]
+
+**Note**: The maximum number of indexers allowed varies by pricing tier. The free service allows up to 3 indexers. Standard service allows 50 indexers. See [Service Limits](/documentation/articles/search-limits-quotas-capacity) for details.
+
+The `api-version` is required. The current version is `2015-02-28`. [Azure Search versioning](https://msdn.microsoft.com/zh-cn/library/azure/dn864560.aspx) has details and more information about alternative versions.
+
+The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) to learn more about keys. [Create a Search service in the portal](/documentation/articles/search-create-service-portal) explains how to get the service URL and key properties used in the request.
+-->
+<!-- keep by customization: begin -->
     PUT https://[service name].search.windows.net/indexers/[indexer name]?api-version=[api-version]
 
 **Note**: The maximum number of indexers allowed varies by pricing tier. The free service allows up to 3 indexers. Standard service allows 50 indexers. See [Service Limits](search-limits-quotas-capacity.md) for details.
@@ -349,6 +393,7 @@ Alternatively, you can use PUT and specify the data source name on the URI. If t
 The `api-version` is required. The current version is `2015-02-28`. [Azure Search versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) has details and more information about alternative versions.
 
 The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) to learn more about keys. [Create a Search service in the portal](search-create-service-portal.md) explains how to get the service URL and key properties used in the request.
+<!-- keep by customization: end -->
 
 
 <a name="CreateIndexerRequestSyntax"></a>
@@ -440,13 +485,18 @@ The following example creates an indexer that copies data from the table referen
 
 You can update an existing indexer using an HTTP PUT request. You specify the name of the indexer to update on the request URI:
 
+<!-- deleted by customization
+    PUT https://[service name].search.chinacloudapi.cn/indexers/[indexer name]?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
     PUT https://[service name].search.windows.net/indexers/[indexer name]?api-version=[api-version]
+<!-- keep by customization: end -->
     Content-Type: application/json
     api-key: [admin key]
 
-The `api-version` is required. The current version is `2015-02-28`. [Azure Search versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) has details and more information about alternative versions.
+The `api-version` is required. The current version is `2015-02-28`. [Azure Search <!-- deleted by customization versioning](https://msdn.microsoft.com/zh-cn/library/azure/dn864560.aspx) --><!-- keep by customization: begin --> versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) <!-- keep by customization: end --> has details and more information about alternative versions.
 
-The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) to learn more about keys. [Create a Search service in the portal](search-create-service-portal.md) explains how to get the service URL and key properties used in the request.
+The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end --> to learn more about keys. [Create a Search service in the <!-- deleted by customization portal](/documentation/articles/search-create-service-portal) --><!-- keep by customization: begin --> portal](search-create-service-portal.md) <!-- keep by customization: end --> explains how to get the service URL and key properties used in the request.
 
 **Request**
 
@@ -462,13 +512,18 @@ For a successful request: 201 Created if a new indexer was created, and 204 No C
 
 The **List Indexers** operation returns the list of indexers in your Azure Search service. 
 
+<!-- deleted by customization
+    GET https://[service name].search.chinacloudapi.cn/indexers?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
     GET https://[service name].search.windows.net/indexers?api-version=[api-version]
+<!-- keep by customization: end -->
     api-key: [admin key]
 
 
-The `api-version` is required. The preview version is `2015-02-28-Preview`. [Azure Search versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) has details and more information about alternative versions.
+The `api-version` is required. The preview version is `2015-02-28-Preview`. [Azure Search <!-- deleted by customization versioning](https://msdn.microsoft.com/zh-cn/library/azure/dn864560.aspx) --><!-- keep by customization: begin --> versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) <!-- keep by customization: end --> has details and more information about alternative versions.
 
-The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) to learn more about keys. [Create a Search service in the portal](search-create-service-portal.md) explains how to get the service URL and key properties used in the request.
+The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end --> to learn more about keys. [Create a Search service in the <!-- deleted by customization portal](/documentation/articles/search-create-service-portal) --><!-- keep by customization: begin --> portal](search-create-service-portal.md) <!-- keep by customization: end --> explains how to get the service URL and key properties used in the request.
 
 **Response**
 
@@ -505,12 +560,17 @@ This is a useful technique to save bandwidth if you have a lot of indexers in yo
 
 The **Get Indexer** operation gets the indexer definition from Azure Search.
 
+<!-- deleted by customization
+    GET https://[service name].search.chinacloudapi.cn/indexers/[indexer name]?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
     GET https://[service name].search.windows.net/indexers/[indexer name]?api-version=[api-version]
+<!-- keep by customization: end -->
     api-key: [admin key]
 
-The `api-version` is required. The preview version is `2015-02-28-Preview`. [Azure Search versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) has details and more information about alternative versions.
+The `api-version` is required. The preview version is `2015-02-28-Preview`. [Azure Search <!-- deleted by customization versioning](https://msdn.microsoft.com/zh-cn/library/azure/dn864560.aspx) --><!-- keep by customization: begin --> versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) <!-- keep by customization: end --> has details and more information about alternative versions.
 
-The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) to learn more about keys. [Create a Search service in the portal](search-create-service-portal.md) explains how to get the service URL and key properties used in the request.
+The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end --> to learn more about keys. [Create a Search service in the <!-- deleted by customization portal](/documentation/articles/search-create-service-portal) --><!-- keep by customization: begin --> portal](search-create-service-portal.md) <!-- keep by customization: end --> explains how to get the service URL and key properties used in the request.
 
 **Response**
 
@@ -533,14 +593,19 @@ The response is similar to examples in [Create Indexer example requests](#Create
 
 The **Delete Indexer** operation removes an indexer from your Azure Search service.
 
+<!-- deleted by customization
+    DELETE https://[service name].search.chinacloudapi.cn/indexers/[indexer name]?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
     DELETE https://[service name].search.windows.net/indexers/[indexer name]?api-version=[api-version]
+<!-- keep by customization: end -->
     api-key: [admin key]
 
 When an indexer is deleted, the indexer executions in progress at that time will run to completion, but no further executions will be scheduled. Attempts to use a non-existent indexer will result in HTTP status code 404 Not Found. 
  
-The `api-version` is required. The preview version is `2015-02-28-Preview`. [Azure Search versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) has details and more information about alternative versions.
+The `api-version` is required. The preview version is `2015-02-28-Preview`. [Azure Search <!-- deleted by customization versioning](https://msdn.microsoft.com/zh-cn/library/azure/dn864560.aspx) --><!-- keep by customization: begin --> versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) <!-- keep by customization: end --> has details and more information about alternative versions.
 
-The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) to learn more about keys. [Create a Search service in the portal](search-create-service-portal.md) explains how to get the service URL and key properties used in the request.
+The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end --> to learn more about keys. [Create a Search service in the <!-- deleted by customization portal](/documentation/articles/search-create-service-portal) --><!-- keep by customization: begin --> portal](search-create-service-portal.md) <!-- keep by customization: end --> explains how to get the service URL and key properties used in the request.
 
 **Response**
 
@@ -551,12 +616,17 @@ Status Code: 204 No Content is returned for a successful response.
 
 In addition to running periodically on a schedule, an indexer can also be invoked on demand via the **Run Indexer** operation: 
 
+<!-- deleted by customization
+	POST https://[service name].search.chinacloudapi.cn/indexers/[indexer name]/run?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
 	POST https://[service name].search.windows.net/indexers/[indexer name]/run?api-version=[api-version]
+<!-- keep by customization: end -->
     api-key: [admin key]
 
-The `api-version` is required. The preview version is `2015-02-28-Preview`. [Azure Search versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) has details and more information about alternative versions.
+The `api-version` is required. The preview version is `2015-02-28-Preview`. [Azure Search <!-- deleted by customization versioning](https://msdn.microsoft.com/zh-cn/library/azure/dn864560.aspx) --><!-- keep by customization: begin --> versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) <!-- keep by customization: end --> has details and more information about alternative versions.
 
-The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) to learn more about keys. [Create a Search service in the portal](search-create-service-portal.md) explains how to get the service URL and key properties used in the request.
+The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end --> to learn more about keys. [Create a Search service in the <!-- deleted by customization portal](/documentation/articles/search-create-service-portal) --><!-- keep by customization: begin --> portal](search-create-service-portal.md) <!-- keep by customization: end --> explains how to get the service URL and key properties used in the request.
 
 **Response**
 
@@ -567,13 +637,18 @@ Status Code: 202 Accepted is returned for a successful response.
 
 The **Get Indexer Status** operation retrieves the current status and execution history of an indexer: 
 
+<!-- deleted by customization
+	GET https://[service name].search.chinacloudapi.cn/indexers/[indexer name]/status?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
 	GET https://[service name].search.windows.net/indexers/[indexer name]/status?api-version=[api-version]
+<!-- keep by customization: end -->
     api-key: [admin key]
 
 
-The `api-version` is required. The preview version is `2015-02-28-Preview`. [Azure Search versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) has details and more information about alternative versions.
+The `api-version` is required. The preview version is `2015-02-28-Preview`. [Azure Search <!-- deleted by customization versioning](https://msdn.microsoft.com/zh-cn/library/azure/dn864560.aspx) --><!-- keep by customization: begin --> versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) <!-- keep by customization: end --> has details and more information about alternative versions.
 
-The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) to learn more about keys. [Create a Search service in the portal](search-create-service-portal.md) explains how to get the service URL and key properties used in the request.
+The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end --> to learn more about keys. [Create a Search service in the <!-- deleted by customization portal](/documentation/articles/search-create-service-portal) --><!-- keep by customization: begin --> portal](search-create-service-portal.md) <!-- keep by customization: end --> explains how to get the service URL and key properties used in the request.
 
 **Response**
 
@@ -661,12 +736,17 @@ Indexer execution status captures the status of a single indexer execution. It c
 
 The **Reset Indexer** operation resets the change tracking state associated with the indexer. This allows you to trigger from-scratch re-indexing (for example, if your data source schema has changed), or to change the data change detection policy for a data source associated with the indexer.   
 
+<!-- deleted by customization
+	POST https://[service name].search.chinacloudapi.cn/indexers/[indexer name]/reset?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
 	POST https://[service name].search.windows.net/indexers/[indexer name]/reset?api-version=[api-version]
+<!-- keep by customization: end -->
     api-key: [admin key]
 
-The `api-version` is required. The preview version is `2015-02-28-Preview`. [Azure Search versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) has details and more information about alternative versions.
+The `api-version` is required. The preview version is `2015-02-28-Preview`. [Azure Search <!-- deleted by customization versioning](https://msdn.microsoft.com/zh-cn/library/azure/dn864560.aspx) --><!-- keep by customization: begin --> versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) <!-- keep by customization: end --> has details and more information about alternative versions.
 
-The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) to learn more about keys. [Create a Search service in the portal](search-create-service-portal.md) explains how to get the service URL and key properties used in the request.
+The `api-key` must be an admin key (as opposed to a query key). Refer to the authentication section in [Search Service REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end --> to learn more about keys. [Create a Search service in the <!-- deleted by customization portal](/documentation/articles/search-create-service-portal) --><!-- keep by customization: begin --> portal](search-create-service-portal.md) <!-- keep by customization: end --> explains how to get the service URL and key properties used in the request.
 
 **Response**
 

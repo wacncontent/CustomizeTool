@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -38,7 +38,6 @@ Note that the reserved units are the same for Encoding and Indexing tasks.
 ##<a id="storage"></a>Scale Storage
 
 For more information, see [Managing Media Services Assets across Multiple Storage Accounts](https://msdn.microsoft.com/zh-cn/library/azure/dn271889.aspx) and [Working with Azure Storage](https://msdn.microsoft.com/zh-cn/library/azure/dn767951.aspx).
-
 
 
 

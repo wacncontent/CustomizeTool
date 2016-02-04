@@ -1,16 +1,16 @@
 <properties 
-    pageTitle="Federations migration" 
+    pageTitle="Federations migration | Windows Azure" 
     description="Outlines the steps to migrate an existing app built with Federations feature to the elastic database model." 
     services="sql-database" 
     documentationCenter="" 
     manager="jeffreyg" 
-    authors="sidneyh" 
+    authors="ddove" 
     editor=""/>
 
-<tags
-	ms.service="sql-database"
-	ms.date="08/14/2015"
-	wacn.date=""/>
+<tags 
+    ms.service="sql-database"
+    ms.date="11/04/2015" 
+    wacn.date=""/>
 
 # Federations migration 
 
@@ -30,7 +30,7 @@ There are three major steps for migrating an existing Federations application to
 ### The migration sample tool
 To assist in this process, a [Federations Migration Utility](https://code.msdn.microsoft.com:443/vstudio/Federations-Migration-ce61e9c1) has been created. The utility accomplishes steps 1 and 3. 
 
-## <a name="create-shard-map-manager"></a>Create a Shard Map Manager from a federation root
+## Create a Shard Map Manager from a federation root
 The first step in migrating a Federations application is to clone the metadata of a federation root to the constructs of a shard map manager. 
 
 ![Clone the federation root to the shard map manager][1]
@@ -43,9 +43,9 @@ The cloning of the federation root to the Shard Map Manager is a copy and transl
 
 ![Migrate the existing app to use the Elastic database tools APIs][2]
 
-## <a name="Modify-the-Existing-Application"></a>Modify the existing application  
+## Modify the existing application 
 
-With Shard Map Manager in place and the federation members and ranges registered with the Shard Map Manager (done via the migration utility), one can modify the existing Federations application to utilize the elastic database client library. As shown in the figure above, the application connections via these APIs will be routed through the Shard Map Manager to appropriate federation members (now also a shard). Mapping federation members to the Shard Map Manager enables two versions of an application – one that uses Federations and one that uses the elastic database client library — to be executed side-by-side to verify functionality.   
+With Shard Map Manager in place and the federation members and ranges registered with the Shard Map Manager (done via the migration utility), one can modify the existing Federations application to utilize the elastic database client library. As shown in the figure above, the application connections via these APIs will be routed through the Shard Map Manager to appropriate federation members (now also a shard). Mapping federation members to the Shard Map Manager enables two versions of an application â one that uses Federations and one that uses the elastic database client library â to be executed side-by-side to verify functionality.   
 
 During the migration of the application, there will be two core modifications to the existing application that will need to be made.
 
@@ -104,7 +104,7 @@ The Federations Migration Utility provides the abilities to:
 
 ## Feature comparison
 
-Although Elastic database tools offers many additional features (for example, [multi-shard querying](/documentation/articles/sql-database-elastic-scale-multishard-querying), [splitting and merging shards](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge), [shard elasticity](/documentation/articles/sql-database-elastic-scale-elasticity), [client-side caching](/documentation/articles/sql-database-elastic-scale-shard-map-management), and more), there are a few noteworthy Federations features that are not supported in elastic database tools.
+Although Elastic database tools offers many additional features (for example, [multi-shard querying](/documentation/articles/sql-database-elastic-scale-multishard-querying), [splitting and merging shards](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge), shard elasticity, [client-side caching](/documentation/articles/sql-database-elastic-scale-shard-map-management), and more), there are a few noteworthy Federations features that are not supported in elastic database tools.
   
 - The use of **FILTERING=ON**. Instead, it is recommended that you use row-level security (RLS) for row filtering. Like filtering in Federations, RLS automatically adds a predicate to all queries on a sharded table. For details, see [Multi-tenant applications with elastic database tools and row-level security](/documentation/articles/sql-database-elastic-tools-multi-tenant-row-level-security). 
  

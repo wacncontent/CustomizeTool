@@ -10,19 +10,18 @@
 	ms.service="virtual-machines"
 	ms.date="06/22/2015"
 	wacn.date=""/>
-
 #Creating an Oracle WebLogic Server 12c Virtual Machine in Azure
 The following example shows you how you can create a Virtual Machine based on a Microsoft-provided Oracle WebLogic Server 12c image running on Windows Server 2012 in Azure.
-<!-- deleted by customization
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
--->
 
+-->
 ##To create an Oracle WebLogic Server 12c Virtual Machine in Azure
 
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn/).
+1. Log in to the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->.
 
 2. Click on the **Marketplace**, click **Compute**, then type **Oracle** into the search box.
 
@@ -36,7 +35,12 @@ The following example shows you how you can create a Virtual Machine based on a 
 
 7.	Choose a **Pricing Tier**.  Note that Recommended Pricing Tiers are displayed by default, to see all configuration options, click **View all** on the top right.
 
+<!-- deleted by customization
 8.	Set the optional configuration as needed, with these considerations:
+-->
+<!-- keep by customization: begin -->
+8.	Set [Optional Configuration](https://msdn.microsoft.com/zh-cn/library/azure/dn763935.aspx) as needed, with these considerations:
+<!-- keep by customization: end -->
 	1. Leave **Storage Account** as-is to create a new storage account with the VM name.
 	2. Leave **Availability Set** as “Not Configured”.
 	3. Do not add any **endpoints** at this time.
@@ -50,7 +54,7 @@ The following example shows you how you can create a Virtual Machine based on a 
 
 ##To configure your Oracle WebLogic Server 12c Virtual Machine in Azure
 
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn/).
+1. Log in to the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->.
 
 2.	Click **Virtual Machines**.
 
@@ -127,7 +131,7 @@ The following example shows you how you can create a Virtual Machine based on a 
 
 10.	Create an endpoint for your Virtual Machine:
 
-	1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn/).
+	1. Log in to the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](hhttps://manage.windowsazure.cn) <!-- keep by customization: end -->.
 
 	2.	Click **Browse**
 
@@ -159,7 +163,7 @@ The following example shows you how you can create a Virtual Machine based on a 
 
 	2.	Click **Windows Start**, type **Windows Firewall with Advanced Security**, and then click the **Windows Firewall with Advanced Security** icon. This opens the **Windows Firewall with Advanced Security** management console.
 
-	3.	Within the firewall management console, click **Inbound Rules** in the left hand pane (if you don’t see **Inbound Rules**, expand the top node in the left hand pane), and then click New Rule in the right hand pane.
+	3.	Within the firewall management console, click **Inbound Rules** in the left hand pane (if you don't see **Inbound Rules**, expand the top node in the left hand pane), and then click New Rule in the right hand pane.
 
 	4.	For **Rule Type**, select **Port** and click **Next**.
 
@@ -171,11 +175,11 @@ The following example shows you how you can create a Virtual Machine based on a 
 
 	8.	Specify a name for the rule and optionally a description, and then click **Finish**.
 
-12.	To see the shopping cart application running on the Internet, open a browser to the URL in the form of `http://<<unique_domain_name>>/shoppingcart`. (You can determine the value for <<*unique_domain_name*>> within the [Azure Management Portal](https://manage.windowsazure.cn/) by clicking **Virtual Machines** and then selecting the Virtual Machine that you are using to run Oracle WebLogic Server).
+12.	To see the shopping cart application running on the Internet, open a browser to the URL in the form of `http://<<unique_domain_name>>/shoppingcart`. (You can determine the value for <<*unique_domain_name*>> within the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end --> by clicking **Virtual Machines** and then selecting the Virtual Machine that you are using to run Oracle WebLogic Server).
 
 
 ##Additional resources
-Now that you’ve set up your Virtual Machine running Oracle WebLogic Server, see the following topics for additional information.
+Now that you've set up your Virtual Machine running Oracle WebLogic Server, see the following topics for additional information.
 
 -	[Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
 

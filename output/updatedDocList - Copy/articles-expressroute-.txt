@@ -1,0 +1,7 @@
+updated docs: 3
+articles/expressroute/expressroute-howto-circuit-arm.md
+articles/expressroute/expressroute-howto-linkvnet-arm.md
+articles/expressroute/expressroute-locations.md
+
+updated includes: 1
+includes/expressroute-limits.md

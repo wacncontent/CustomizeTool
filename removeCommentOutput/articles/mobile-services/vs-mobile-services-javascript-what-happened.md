@@ -3,7 +3,7 @@
 	description="Describes what happened to your Azure Mobile Services project in Visual Studio" 
 	services="mobile-services" 
 	documentationCenter="" 
-	authors="patshea123" 
+	authors="TomArcher" 
 	manager="douge" 
 	editor=""/>
 

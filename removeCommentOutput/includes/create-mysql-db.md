@@ -69,6 +69,6 @@ To create a MySQL database as a linked resource when you create a [Azure Web Sit
 
 [ClearDB]: http://www.cleardb.com/
 [waws]: /documentation/services/web-sites/
-[Azure Store]: /documentation/articles/store
+[Azure Store]: ../articles/store.md
 [portal]: http://manage.windowsazure.cn
-[configure]: /documentation/articles/web-sites-configure
+[configure]: ../article/app-service-web/web-sites-configure.md

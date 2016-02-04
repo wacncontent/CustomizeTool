@@ -7,14 +7,14 @@
 	manager="msmbaldwin" 
 	editor=""/>
 
-<tags
-	ms.service="multiple"
-	ms.date="06/01/2015"
+<tags 
+	ms.service="multiple" 
+	ms.date="06/01/2015" 
 	wacn.date=""/>
 
 # Set up billing alerts for your Windows Azure subscriptions
 
-Are you concerned about how much you're spending each month for your Azure subscription? If you’re the account administrator for an Azure subscription, you can use the Azure Billing Alert Service to create customized billing alerts that help you monitor and manage billing activity for your Azure accounts.
+Are you concerned about how much you're spending each month for your Azure subscription? If you're the account administrator for an Azure subscription, you can use the Azure Billing Alert Service to create customized billing alerts that help you monitor and manage billing activity for your Azure accounts.
 
 This service is a preview service, so the first thing you have to do is sign up for it - visit <a href="https://account.windowsazure.cn/PreviewFeatures">the Preview Features page </a> in the Azure account management portal to do this.
 
@@ -32,11 +32,11 @@ When you add an alert, you give it a unique name, choose a spending threshold, a
 
 ![][Image3]
 
-Azure supports any email address but doesn’t verify that the email address works, so double-check for typos.
+Azure supports any email address but doesn't verify that the email address works, so double-check for typos.
 
 ## Check on your alerts
 
-After you set up alerts, the Account Center lists them and shows how many more you can set up. For each alert, you see the date and time it was sent, whether it’s an alert for Billing Total or Monetary Credit, and the limit you set up. The date and time format is 24-hour Universal Time Coordinate (UTC) and the date is yyyy-mm-dd format. Click the plus sign for an alert in the list to edit it, or click the trash can to delete it.
+After you set up alerts, the Account Center lists them and shows how many more you can set up. For each alert, you see the date and time it was sent, whether it's an alert for Billing Total or Monetary Credit, and the limit you set up. The date and time format is 24-hour Universal Time Coordinate (UTC) and the date is yyyy-mm-dd format. Click the plus sign for an alert in the list to edit it, or click the trash can to delete it.
 
 [Image1]: ./media/azure-billing-set-up-alerts/billingalert1.png
 [Image2]: ./media/azure-billing-set-up-alerts/billingalert2.png

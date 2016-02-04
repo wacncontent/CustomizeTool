@@ -4,19 +4,19 @@ deleted:
 
 		and [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)
 
-reason: ()
+reason: (Graphical Runbook)
 
 deleted:
 
 		or an exported graphical runbook (.graphrunbook)
 
-reason: ()
+reason: (Graphical Runbook)
 
 deleted:
 
 		- A .graphrunbook file may only be imported into a new [graphical runbook](/documentation/articles/automation-runbook-types#graphical-runbooks), and graphical runbooks can only be created from a .graphrunbook file.
 
-reason: ()
+reason: (Graphical Runbook)
 
 deleted:
 
@@ -32,7 +32,7 @@ deleted:
 		3. The new runbook will appear in the list of runbooks for the Automation Account.
 		4. You must [publish the runbook](#publishing-a-runbook) before you can run it.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -42,13 +42,13 @@ deleted:
 		1. Click the **Edit** button.
 		1. Click the **Publish** button and then **Yes** to the verification message.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		- [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)
 
-reason: ()
+reason: (Graphical Runbook)
 
 replacement:
 
@@ -71,5 +71,5 @@ replaced by:
 		3. If you want to edit the runbook now, then click **Edit Runbook**. Otherwise, click **OK**.
 		4. Your new runbook will appear on the **Runbooks** tab.
 
-reason: ()
+reason: (the new Ibiza portal)
 

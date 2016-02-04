@@ -7,9 +7,9 @@
 	manager="stevenpo"
 	editor="curtand"/>
 
-<tags
-	ms.service="active-directory"
-	ms.date="08/24/2015"
+<tags 
+	ms.service="active-directory"  
+	ms.date="08/24/2015" 
 	wacn.date=""/>
 
 # Changing the Azure AD Connect default configuration

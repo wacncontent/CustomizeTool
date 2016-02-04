@@ -99,7 +99,7 @@ Hive provides three different mechanisms to run queries on JSON documents:
 - write you own UDF using Python or other languages. See [this article][hdinsight-python] on running your own Python code with Hive. 
 
 ### Use the GET\_JSON_OBJECT UDF
-Hive provides a built-in UDF called [get json object](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-get_json_object) which can perform JSON querying during run time. This method takes two arguments – the table name and method name which has the flattened JSON document and the JSON field that needs to be parsed. Let’s look at an example to see how this UDF works.
+Hive provides a built-in UDF called [get json object](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-get_json_object) which can perform JSON querying during run time. This method takes two arguments - the table name and method name which has the flattened JSON document and the JSON field that needs to be parsed. Let's look at an example to see how this UDF works.
 
 Get the first name and last name for each student
 
@@ -115,7 +115,7 @@ Here is the output when running this query in console window.
 There are a few limitations of the get-json_object UDF. 
 
 - Because each field in the query requires re-parsing the query, it affects the performance.
-- GET\_JSON_OBJECT() returns the string representation of an array. To convert this to a Hive array, you will have to use regular expressions to replace the square brackets ‘[‘ and ‘]’ and then also call split to get the array.
+- GET\_JSON_OBJECT() returns the string representation of an array. To convert this to a Hive array, you will have to use regular expressions to replace the square brackets '[' and ']' and then also call split to get the array.
 
 
 This is why the Hive wiki recommends using json_tuple.  
@@ -237,7 +237,7 @@ If you want to skil malformed JSON, then as explained in the [wiki page](https:/
 
 
 ##Summary
-In conclusion, the type of JSON operator in Hive that you choose depends on your scenario. If you have a simple JSON document and you only have one field to look up on – you can choose to use the Hive UDF get\_json\_object. If you have more than one keys to look up on then you can use json_tuple. If you have a nested document, then you should use the JSON SerDe.
+In conclusion, the type of JSON operator in Hive that you choose depends on your scenario. If you have a simple JSON document and you only have one field to look up on - you can choose to use the Hive UDF get\_json\_object. If you have more than one keys to look up on then you can use json_tuple. If you have a nested document, then you should use the JSON SerDe.
 
 For other related articles, see
 
@@ -246,7 +246,7 @@ For other related articles, see
 - [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data)
 - [Run a Hadoop job using DocumentDB and HDInsight](/documentation/articles/documentdb-run-hadoop-with-hdinsight)
 
-[hdinsight-python]: /documentation/articles/hdinsight-python
+[hdinsight-python]: hdinsight-python.md
 
 [image-hdi-hivejson-flatten]: ./media/hdinsight-using-json-in-hive/flatten.png
 [image-hdi-hivejson-getjsonobject]: ./media/hdinsight-using-json-in-hive/getjsonobject.png

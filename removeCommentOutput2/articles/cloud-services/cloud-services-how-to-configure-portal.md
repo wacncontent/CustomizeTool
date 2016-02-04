@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="How to configure a cloud service (preview portal) | Windows Azure" 
-	description="Learn how to configure cloud services in Azure. Learn to update the cloud service configuration and configure remote access to role instances. These examples use the Azure preview portal." 
+	pageTitle="How to configure a cloud service | Windows Azure" 
+	description="Learn how to configure cloud services in Azure. Learn to update the cloud service configuration and configure remote access to role instances. These examples use the Azure Management Portal." 
 	services="cloud-services" 
 	documentationCenter="" 
 	authors="Thraka" 
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/22/2015"
+	ms.date="01/15/2016"
 	wacn.date=""/>
 
 
@@ -18,8 +18,8 @@
 # How to Configure Cloud Services
 
 > [AZURE.SELECTOR]
+- [Azure Management Portal](/documentation/articles/cloud-services-how-to-configure-portal)
 - [Azure Management Portal](/documentation/articles/cloud-services-how-to-configure)
-- [Azure Preview Portal](/documentation/articles/cloud-services-how-to-configure-portal)
 
 You can configure the most commonly used settings for a cloud service in the Azure Management Portal. Or, if you like to update your configuration files directly, download a service configuration file to update, and then upload the updated file and update the cloud service with the configuration changes. Either way, the configuration updates are pushed out to all role instances.
 
@@ -29,7 +29,7 @@ Azure can only ensure 99.95 percent service availability during the configuratio
 
 ## Change a cloud service
 
-1. In the [Azure Preview Portal](http://manage.windowsazure.cn/), navigate to your cloud service.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn), navigate to your cloud service.
 
 2. Click on the **Settings** icon or the **Essentials/All settings** link to open up the **Settings** blade.
 
@@ -37,11 +37,11 @@ Azure can only ensure 99.95 percent service availability during the configuratio
     
     From here you can view the **Properties**, change the **Configuration**, manage the **Certificates**, and manage the **Users** who have access to this cloud service.
 
-2. Under the **Monitoring** section you can click on any tile to configure alerts. 
+3. Under the **Monitoring** section you can click on any tile to configure alerts.
 
     ![Cloud Service Monitoring](./media/cloud-services-how-to-configure-portal/cs-monitoring.png)
     
-3. Under the **Roles and instances** section you can click on any cloud service role to manage the instance.
+4. Under the **Roles and instances** section you can click on any cloud service role to manage the instance.
 
     ![Cloud Service Instance](./media/cloud-services-how-to-configure-portal/cs-instance.png)
     
@@ -50,13 +50,13 @@ Azure can only ensure 99.95 percent service availability during the configuratio
     ![Cloud Service Instance Buttons](./media/cloud-services-how-to-configure-portal/cs-instance-buttons.png)
 
 >[AZURE.NOTE]
->The operating system used for the cloud service cannot be changed using the **Azure Preview Portal**, you can only change this setting through the [non-preview portal](http://manage.windowsazure.cn/). This is detailed [here](/documentation/articles/cloud-services-how-to-configure#update-a-cloud-service-configuration-file).
+>The operating system used for the cloud service cannot be changed using the **Azure Management Portal**, you can only change this setting through the [Azure Management Portal](https://manage.windowsazure.cn). This is detailed [here](/documentation/articles/cloud-services-how-to-configure#update-a-cloud-service-configuration-file).
 
 ## Update a cloud service configuration file
 
 1. First, download the existing cloud service configuration file (.cscfg).
 
-    1. In the [Azure Preview Portal](http://manage.windowsazure.cn/), navigate to your cloud service.
+    1. In the [Azure Management Portal](https://manage.windowsazure.cn), navigate to your cloud service.
 
     2. Click on the **Settings** icon or the **Essentials/All settings** link to open up the **Settings** blade.
 

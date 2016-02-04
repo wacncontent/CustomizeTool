@@ -1,19 +1,15 @@
 <properties 
-    pageTitle="StorSimple monitoring indicators | Microsoft Azure" 
+    pageTitle="StorSimple monitoring indicators | Windows Azure" 
     description="Describes the light-emitting diodes (LEDs) and audible alarms used to monitor the status of the StorSimple device."
     services="storsimple"
     documentationCenter="NA"
     authors="SharS"
     manager="carolz"
     editor="" />
- <tags 
-    ms.service="storsimple"
-    ms.devlang="NA"
-    ms.topic="article"
-    ms.tgt_pltfrm="NA"
-    ms.workload="TBD"
-    ms.date="08/31/2015"
-    ms.author="v-sharos" />
+ <tags
+	ms.service="storsimple"
+	ms.date="08/31/2015"
+	wacn.date=""/>
 
 # Use StorSimple monitoring indicators to manage your device   
 
@@ -43,7 +39,7 @@ The front panel contains the following indicators:
 4. Logical fault indicator LED (ON red-amber/OFF
 5. Unit ID display  
 
-The major difference between the front panel LEDs for the device and those for the EBOD enclosure is the **System Unit Identification Number** shown on the LED display. The default unit ID displayed on the device is **00**, whereas the default unit ID displayed on the EBOD enclosure is **01**. This allows you to quickly differentiate between the device and the EBOD enclosure when the device is turned on. If your device is turned off, use the information provided in  [Turn on a new device](storsimple-turn-device-on-or-off.md#turn-on-a-new-device) to differentiate the device from the EBOD enclosure.  
+The major difference between the front panel LEDs for the device and those for the EBOD enclosure is the **System Unit Identification Number** shown on the LED display. The default unit ID displayed on the device is **00**, whereas the default unit ID displayed on the EBOD enclosure is **01**. This allows you to quickly differentiate between the device and the EBOD enclosure when the device is turned on. If your device is turned off, use the information provided in  [Turn on a new device](/documentation/articles/storsimple-turn-device-on-or-off#turn-on-a-new-device) to differentiate the device from the EBOD enclosure.  
 
 ## Front panel LED status  
 
@@ -118,7 +114,7 @@ You can use the following table to determine the status of the PCM.
 |--------|---------------|------------------------|------------------|----------------------|
 | No AC power (to enclosure) | OFF | OFF | OFF | OFF |
 | No AC power (this PCM only) | OFF | ON | OFF | ON |
-| AC present PCM ON – OK | ON | OFF | OFF | OFF |
+| AC present PCM ON - OK | ON | OFF | OFF | OFF |
 | PCM fail (fan fail) | OFF | OFF | ON | X |
 | PCM fault (over amp, over voltage, over current | OFF | ON | ON | ON |
 | PCM (fan out of tolerance) | ON | OFF | OFF | ON |
@@ -140,7 +136,7 @@ Use the following table to determine whether the controller module is operating 
 
 | LED | Description                                                                            
 |---- | ----------- |
-| ID LED (blue) | Indicates that the module is being identified. If the blue LED is blinking on a running controller, then the controller is the active controller and the other one is the standby controller. For more information, see [Identify the active controller on your device](storsimple-controller-replacement.md#identify-the-active-controller-on-your-device). |
+| ID LED (blue) | Indicates that the module is being identified. If the blue LED is blinking on a running controller, then the controller is the active controller and the other one is the standby controller. For more information, see [Identify the active controller on your device](/documentation/articles/storsimple-controller-replacement#identify-the-active-controller-on-your-device). |
 | Fault LED (amber) | Indicates a fault in the controller.        
 | OK LED (green) | Steady green indicates that the controller is OK. Flashing green indicates a controller VPD configuration error. |
 | SAS activity LEDs (green) | Steady green indicates a connection with no current activity. Flashing green indicates the connection has ongoing activity. |
@@ -166,7 +162,7 @@ Use the following table to determine whether the EBOD controller module is opera
 | Controller module OK | ON | OFF | - |
 | Controller module fault | OFF | ON | - |
 | No external host port connection | - | - | OFF |
-| External host port connection – no activity | - | - | ON |
+| External host port connection - no activity | - | - | ON |
 | External host port connection - activity | - | - | Flashing |
 | Controller module metadata error | Flashing | - | - |
 
@@ -229,29 +225,29 @@ The following table describes the various alarm conditions.
 
 | Status | Severity | Alarm | Ops panel LED |
 |--------|---------|--------|----------------|
-| PCM alert – loss of DC power from a single PCM | Fault – no loss of redundancy | S1 | Module fault|
-|PCM alert – loss of DC power from a single PCM | Fault – loss of redundancy | S1 | Module fault |
-| PCM fan fail | Fault – loss of redundancy | S1 | Module fault |
+| PCM alert - loss of DC power from a single PCM | Fault - no loss of redundancy | S1 | Module fault|
+|PCM alert - loss of DC power from a single PCM | Fault - loss of redundancy | S1 | Module fault |
+| PCM fan fail | Fault - loss of redundancy | S1 | Module fault |
 | SBB module detected PCM fault | Fault | S1 | Module fault |
 | PCM removed | Configuration error | None | Module fault |
-| Enclosure configuration error | Fault – critical | S1 | Module fault |
+| Enclosure configuration error | Fault - critical | S1 | Module fault |
 | Low warning temperature alert | Warning | S1 | Module fault |
 | High warning temperature alert | Warning | S1 | Module fault |
-| Over temperature alarm | Fault – critical | S1 | Module fault |
-| I2C bus failure | Fault – loss of redundancy | S1 | Module fault |
-| Ops panel communication error (I2C) | Fault – critical	 | S1 | Module fault |
-| Controller error | Fault – critical | S1 | Module fault |
-| SBB interface module fault | Fault – critical | S1 | Module fault |
-| SBB interface module fault – No functioning modules remaining | Fault – critical | S4 | Module fault |
+| Over temperature alarm | Fault - critical | S1 | Module fault |
+| I2C bus failure | Fault - loss of redundancy | S1 | Module fault |
+| Ops panel communication error (I2C) | Fault - critical	 | S1 | Module fault |
+| Controller error | Fault - critical | S1 | Module fault |
+| SBB interface module fault | Fault - critical | S1 | Module fault |
+| SBB interface module fault - No functioning modules remaining | Fault - critical | S4 | Module fault |
 | SBB interface module removed | Warning | None | Module fault |
-| Drive power control fault | Warning – no loss of drive power | S1 | Module fault |
-| Drive power control fault | Fault – critical; loss of drive power | S1 | Module fault |
+| Drive power control fault | Warning - no loss of drive power | S1 | Module fault |
+| Drive power control fault | Fault - critical; loss of drive power | S1 | Module fault |
 | Drive removed | Warning | None | Module fault |
 | Insufficient power available | Warning | none | Module fault |
 
 ## Next steps
 
-Learn more about [StorSimple hardware components and status](storsimple-monitor-hardware-status.md).
+Learn more about [StorSimple hardware components and status](/documentation/articles/storsimple-monitor-hardware-status).
 
 [1]: ./media/storsimple-monitoring-indicators/storsimple-monitoring-indicators-IMAGE01.png
 [2]: ./media/storsimple-monitoring-indicators/storsimple-monitoring-indicators-IMAGE02.png

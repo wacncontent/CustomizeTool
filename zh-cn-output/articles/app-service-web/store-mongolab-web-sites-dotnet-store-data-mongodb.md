@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="使用 MongoLab 外接程序通过 MongoDB 在 Azure 上创建 .NET Web 应用" 
-	description="了解如何在 Azure 网站上创建 ASP.NET Web 应用，用于将数据存储在由 MongoLab 托管的 MongoDB 中。" 
+	description="了解如何在 Azure App Service 上创建 ASP.NET Web 应用，用于将数据存储在由 MongoLab 托管的 MongoDB 中。" 
 	tags="azure-classic-portal"
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -11,7 +11,7 @@
 <tags 
 	ms.service="app-service-web" 
 	ms.date="08/03/2015" 
-	wacn.date="10/03/2015"/>
+	wacn.date="11/27/2015"/>
 
 
 
@@ -23,16 +23,52 @@
 
 各位冒险家，大家好！ 欢迎使用 MongoDB 即服务。在本教程中，您将：
 
+1. [设置数据库][provision] - Azure 应用商店 [MongoLab](http://mongolab.com) 外接程序将为你提供一个托管在 Azure 云中并由 MongoLab 的云数据库平台管理的 MongoDB 数据库。
 1. [创建应用][create] - 它将是一个简单的 C# ASP.NET MVC 应用，用于进行记录。
-1. [部署应用][deploy] - 通过将一些配置联系在一起，我们轻而易举就能将代码推送到 [Azure 网站](/documentation/services/web-sites/)。
+1. [部署应用][deploy] - 通过将一些配置联系在一起，我们轻而易举就能将代码推送到 [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714)。
 1. [管理数据库][manage] - 最后，我们将向你演示 MongoLab 基于 Web 的数据库管理门户，在此你可轻松搜索、显示和修改数据。
 
 在本教程的任意时间，如有任何问题，请随时发送电子邮件至 [support@mongolab.com](mailto:support@mongolab.com)。
 
-<a name="provision"></a>
+## 快速启动
+如果你要使用的 Azure App Service 中已拥有 Web 应用，或者你比较熟悉 Azure 应用商店，请使用本部分进行快速启动。否则，请继续执行下面的[设置数据库][provision]。
+ 
+1. 通过单击“新建” > “应用商店”打开 Azure 应用商店。  
+	<!-- ![Store][button-store] -->
+
+1. 购买 MongoLab 外接程序。![MongoLab][entry-mongolab]
+
+1. 在“外接程序”列表中单击你的 MongoLab 外接程序，然后单击“连接信息”。![ConnectionInfoButton][button-connectioninfo]
+
+1. 将 MONGOLAB\_URI 复制到剪贴板。![ConnectionInfoScreen][screen-connectioninfo] **此 URI 包含你的数据库用户名称和密码。将其视为敏感信息并且不要共享。**
+
+1. 将该值添加到 Azure Web 应用程序“配置”菜单中的“连接字符串”列表：![WebSiteConnectionStrings][focus-website-connectinfo]
+
+1. 对于“名称”，请输入 MONGOLAB\_URI。
+
+1. 对于“值”，请粘贴我们在前一部分中获得的连接字符串。
+
+1. 在“类型”下拉列表中选择“自定义”（而不是默认的“SQLAzure”）。
+
+1. 在 Visual Studio 中，通过选择“工具 > 库程序包管理器 > 程序包管理器控制台”来安装 Mongo C# 驱动程序。在 PM 控制台中，键入 **Install-Package mongocsharpdriver**，然后按“Enter”。
+
+1. 在代码中设置挂钩以从环境变量中获得 MongoLab 连接 URI：
+
+        using MongoDB.Driver;  
+        ...
+        private string connectionString = System.Environment.GetEnvironmentVariable("CUSTOMCONNSTR_MONGOLAB_URI");
+        ...
+        MongoUrl url = new MongoUrl(connectionString);
+        MongoClient client = new MongoClient(url);
+
+> **注意：**Azure 会向最初声明的连接字符串添加 **CUSTOMCONNSTR\_** 前缀，这正是代码引用 **CUSTOMCONNSTR\_MONGOLAB\_URI** 而不是 **MONGOLAB\_URI** 的原因。
+
+现在，开始完整教程...
+
+<a name="provision">
 ## 设置数据库
 
-[AZURE.INCLUDE [howto-provision-mongolab](../includes/howto-provision-mongolab.md)]
+[AZURE.INCLUDE [howto-provision-mongolab](../../includes/howto-provision-mongolab.md)]
 
 <a name="create"></a>
 ## 创建应用程序
@@ -376,10 +412,10 @@
 <a name="deploy"></a>
 ## 部署应用程序
 
-现在，应用程序已开发完毕，是时候在 Azure 网站中创建 Web 应用了，以托管该应用程序、配置该 Web 应用并部署代码。本节的关键是使用 MongoDB 连接字符串 (URI)。你将使用此 URI 在你的 Web 应用中配置环境变量，以便将该 URI 与你的代码分开。您应将该 URI 视为敏感信息，因为它包含用于连接到您的数据库的凭据。
+现在，应用程序已开发完毕，是时候在 Azure App Service 中创建 Web 应用了，以托管该应用程序、配置该 Web 应用并部署代码。本节的关键是使用 MongoDB 连接字符串 (URI)。你将使用此 URI 在你的 Web 应用中配置环境变量，以便将该 URI 与你的代码分开。您应将该 URI 视为敏感信息，因为它包含用于连接到您的数据库的凭据。
 
 ### 创建新的 Web 应用并获取发布设置文件
-在 Azure 网站中创建 Web 应用非常简单，特别是 Azure 为 Visual Studio 自动生成发布配置文件时。
+在 Azure App Service 中创建 Web 应用非常简单，特别是 Azure 为 Visual Studio 自动生成发布配置文件时。
 
 1. 在 Azure 门户中，单击“新建”。![新建][button-new]
 
@@ -398,11 +434,11 @@
 
 ### 获取 MongoLab 连接字符串
 
-[AZURE.INCLUDE [howto-get-connectioninfo-mongolab](../includes/howto-get-connectioninfo-mongolab.md)]
+[AZURE.INCLUDE [howto-get-connectioninfo-mongolab](../../includes/howto-get-connectioninfo-mongolab.md)]
 
 ### 将连接字符串添加到 Web 应用的环境变量中
 
-[AZURE.INCLUDE [howto-save-connectioninfo-mongolab](../includes/howto-save-connectioninfo-mongolab.md)]
+[AZURE.INCLUDE [howto-save-connectioninfo-mongolab](../../includes/howto-save-connectioninfo-mongolab.md)]
 
 ### 发布 Web 应用
 1. 在 Visual Studio 的解决方案资源管理器中，右键单击“mongoNotes”项目，然后选择“发布”。此时会显示“发布”对话框：  
@@ -416,16 +452,16 @@
 
 1. 输入一些便笺文本，单击“创建”，然后查看结果！![HelloMongoAzure][screen-mongolab-sampleapp]
 
-<a name="manage"></a>
+<a name="manage">
 ## 管理数据库
 
-[AZURE.INCLUDE [howto-access-mongolab-ui](../includes/howto-access-mongolab-ui.md)]
+[AZURE.INCLUDE [howto-access-mongolab-ui](../../includes/howto-access-mongolab-ui.md)]
 
 祝贺你！ 您刚刚启动了由 MongoLab 托管的 MongoDB 数据库提供支持的 C# ASP.NET 应用程序！ 现在，你拥有了 MongoLab 数据库，如有任何关于你的数据库的问题或疑虑，或者要获得有关 MongoDB 或 C# 驱动程序本身的帮助，请联系 [support@mongolab.com](mailto:support@mongolab.com)。祝您好运！
 
-[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+[AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
-[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+[AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
 
 [screen-mongolab-sampleapp]: ./media/store-mongolab-web-sites-dotnet-store-data-mongodb/screen-mongolab-sampleapp.png
 [dialog-mongolab-vspublish]: ./media/store-mongolab-web-sites-dotnet-store-data-mongodb/dialog-mongolab-vspublish.png

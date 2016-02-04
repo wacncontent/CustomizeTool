@@ -43,7 +43,7 @@ To enable your app to authenticate users and get tokens, you'll first need to re
 -	In the left hand nav, click on **Active Directory**
 -	Select a tenant in which to register the application.
 -	Click the **Applications** tab, and click **Add** in the bottom drawer.
--	Follow the prompts and create a new **Web Application and/or WebAPI**.
+-	Follow the prompts and create a new **web site and/or WebAPI**.
     -	The **Name** of the application will describe your application to end-users.
     -	The **Redirect Uri** is location to which AAD will return tokens.  The default location for this sample is `https://localhost:44326/`
 -	Once you've completed registration, AAD will assign your app a unique **Client ID**.  You'll need this value in the next sections, so copy it from the **Configure** tab.
@@ -121,7 +121,7 @@ $scope.logout = function () {
 };
 ...
 ```
-- You might also want to present user information in the app's UI.  The adal service has already been added to the `userDataCtrl` controller, so you can access the `userInfo` object in the associated view, `App/Scripts/UserData.html`:
+- You might also want to present user information in the app's UI.  The adal service has already been added to the `userDataCtrl` controller, so you can access the `userInfo` object in the associated view, `App/Views/UserData.html`:
 
 ```js
 <p>{{userInfo.userName}}</p>

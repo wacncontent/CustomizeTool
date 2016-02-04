@@ -26,8 +26,8 @@ Windows Azure Redis Cache, currently in preview, is based on the popular open so
 
 Windows Azure Redis Cache is available in two tiers:
 
--	**Basic** – Single node. Multiple sizes up to 53 GB.
--	**Standard** – Two-node Primary/Replica. Multiple sizes up to 53 GB. 99.9% SLA.
+-	**Basic** - Single node. Multiple sizes up to 53 GB.
+-	**Standard** - Two-node Primary/Replica. Multiple sizes up to 53 GB. 99.9% SLA.
 
 >During the preview period, Azure Redis Cache will be available in the 250 MB and 1 GB sizes. For a limited time the cache will be offered free, with a limit of two caches per subscription.
 
@@ -125,7 +125,7 @@ To connect to an Azure Redis Cache and be returned an instance of a connected `C
 
 	ConnectionMultiplexer connection = ConnectionMultiplexer.Connect("contoso5.redis.cache.chinacloudapi.cn,ssl=true,password=...");
 
->[AZURE.IMPORTANT] Warning: Never store credentials in source code. To keep this sample simple, I’m showing them in the source code. See [How Application Strings and Connection Strings Work][] for information on how to store credentials.
+>[AZURE.IMPORTANT] Warning: Never store credentials in source code. To keep this sample simple, I'm showing them in the source code. See [How Application Strings and Connection Strings Work][] for information on how to store credentials.
 
 If you don't want to use SSL, either set `ssl=false` or just pass in the endpoint and key.
 
@@ -329,7 +329,7 @@ follow these links to learn how to do more complex caching tasks.
    
 <!-- LINKS -->
 [http://redis.io/clients]: http://redis.io/clients
-[Develop in other languages for Azure Redis Cache]: http://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx
+[Develop in other languages for Azure Redis Cache]: /documentation/services/redis-cache
 [How to retrieve an Azure Redis connection string and use it with Redsmin]: https://redsmin.uservoice.com/knowledgebase/articles/485711-how-to-connect-redsmin-to-azure-redis-cache
 [Azure Redis Session State Provider]: https://msdn.microsoft.com/zh-cn/library/dn690522.aspx
 [How to: Configure a Cache Client Programmatically]: http://msdn.microsoft.com/zh-cn/library/azure/gg618003.aspx

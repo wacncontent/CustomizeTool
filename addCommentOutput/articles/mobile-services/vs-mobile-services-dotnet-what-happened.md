@@ -1,10 +1,10 @@
-<properties 
-	pageTitle="What happened to my .NET project after adding Mobile Services by using Visual Studio Connected Services | Windows Azure" 
-	description="Describes what happened in your Visual Studio .NET project after adding Azure Mobile Services by using Connected Services " 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="patshea123" 
-	manager="douge" 
+<properties
+	pageTitle="What happened to my .NET project after adding Mobile Services by using Visual Studio Connected Services | Windows Azure"
+	description="Describes what happened in your Visual Studio .NET project after adding Azure Mobile Services by using Connected Services "
+	services="mobile-services"
+	documentationCenter=""
+	authors="TomArcher"
+	manager="douge"
 	editor=""/>
 
 <tags
@@ -13,6 +13,11 @@
 	wacn.date=""/>
 
 # What happened to my Visual Studio .NET project after adding Azure Mobile Services by using Connected Services?
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 > - [Getting Started](/documentation/articles/vs-mobile-services-dotnet-getting-started)
@@ -26,15 +31,15 @@ The Azure Mobile Services NuGet package was added to your project. As a result, 
 - **Microsoft.WindowsAzure.Mobile.Ext**
 - **Newtonsoft.Json**
 - **System.Net.Http.Extensions**
-- **System.Net.Http.Primitives** 
+- **System.Net.Http.Primitives**
 
 ## Connection string values for Mobile Services
 
-In your App.xaml.cs file, a **MobileServiceClient** object was created with the selected mobile service’s application URL and application key. 
+In your App.xaml.cs file, a **MobileServiceClient** object was created with the selected mobile serviceâs application URL and application key.
 
 ## Mobile Services project added
 
 If a .NET mobile service is created in the Connected Service Provider, then a mobile services project is created and added to the solution.
 
 
-[Learn more about mobile services](/documentation/services/mobile-services/) 
+[Learn more about mobile services](/documentation/services/mobile-services/)

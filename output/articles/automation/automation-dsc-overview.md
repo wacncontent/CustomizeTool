@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
    pageTitle="Azure Automation DSC Overview | Windows Azure" 
    description="An Overview of Azure Automation Desired State Configuration (DSC), its terms, and known issues" 
@@ -45,13 +43,17 @@ Azure Automation DSC builds on top of the fundamentals introduced in PowerShell 
 
 Azure Automation DSC allows you to [author and manage PowerShell Desired State Configurations](https://technet.microsoft.com/zh-cn/library/dn249918.aspx), import [DSC Resources](https://technet.microsoft.com/zh-cn/library/dn282125.aspx), and generate DSC Node Configurations (MOF documents), all in the cloud. These DSC items will be placed on the Azure Automation [DSC pull server](https://technet.microsoft.com/zh-cn/library/dn249913.aspx) so that target nodes (such as physical and virtual machines) in the cloud or on-premises can pick them up, automatically conform to the desired state they specify, and report back on their compliance with the desired state to Azure Automation.
 
+Prefer watching to reading? Have a look at the below video from May 2015, when Azure Automation DSC was first announced. **Note:** While the concepts and lifecycle discussed in this video are correct, Azure Automation DSC has progressed a lot since this video was recorded. It is now in public preview, has a more extensive UI in the Azure Management Portal, and supports additional capabilities.
+
+> [AZURE.VIDEO microsoft-ignite-2015-heterogeneous-configuration-management-using-microsoft-azure-automation]
+
 ## Azure Automation DSC Terms ##
 ### Configuration ###
 PowerShell DSC introduced a new concept called configurations. Configurations allow you to define, via PowerShell syntax, the desired state of your environment. To use DSC to configure your environment, first define a Windows PowerShell script block using the configuration keyword, then follow it with an identifier, then with braces ({}) to delimit the block.
 
 ![alt text](./media/automation-dsc-overview/AADSC_1.png)
 
-Inside the configuration block you can define node configuration blocks that specify the desired configuration for a set of nodes (computers) in your environment that should be configured exactly the same. In this way, a node configuration represents a “role” for one or more nodes to assume. A node configuration block starts with the node keyword. Follow this keyword with the name of the role, which can be a variable or expression. After the role name, use braces {} to delimit the node configuration block.
+Inside the configuration block you can define node configuration blocks that specify the desired configuration for a set of nodes (computers) in your environment that should be configured exactly the same. In this way, a node configuration represents a "role" for one or more nodes to assume. A node configuration block starts with the node keyword. Follow this keyword with the name of the role, which can be a variable or expression. After the role name, use braces {} to delimit the node configuration block.
 
 ![alt text](./media/automation-dsc-overview/AADSC_2.png)
  
@@ -70,8 +72,8 @@ Azure Automation DSC allows you to import, author, and compile DSC configuration
 
 ###Node Configuration###
 
-When a DSC Configuration is compiled, one or more node configurations are produced depending on the Node blocks in the configuration. A node configuration is the same as a “MOF,” or “configuration document” (if you are familiar with those PS DSC terms) and represents a “role,” such as webserver or worker, which desired state one or more nodes should assume. Names of node configurations in Azure Automation DSC take the form of “Configuration
-Name.NodeConfigurationBlockName”.
+When a DSC Configuration is compiled, one or more node configurations are produced depending on the Node blocks in the configuration. A node configuration is the same as a "MOF," or "configuration document" (if you are familiar with those PS DSC terms) and represents a "role," such as webserver or worker, which desired state one or more nodes should assume. Names of node configurations in Azure Automation DSC take the form of "Configuration
+Name.NodeConfigurationBlockName".
 
 PS DSC nodes become aware of node configurations they should enact via either DSC push, or pull methods. Azure Automation DSC relies on the DSC pull method, where nodes request node configurations they should apply from Azure Automation DSC pull server. Because the nodes make the request to Azure Automation DSC, nodes can be behind firewalls, have all inbound ports closed, etc. They only need outbound access to the Internet.
 
@@ -92,13 +94,13 @@ Azure Automation DSC ships with all the same built-in DSC resources as does PS D
 
 
 ###Compilation Job###
-A compilation job in Azure Automation DSC is an instance of compilation of a configuration, to create one or more node configurations. They are similar to Azure Automation runbook jobs, except that they do not actually perform any task except to create node configurations. Any node configurations created by a compilation job are automatically placed on the Azure Automation DSC pull server, and overwrite previous versions of node configurations, if they existed for this configuration. The name of a node configuration produced by a compilation job takes the form of “ConfigurationName.NodeConfigurationBlockName”. For example, compiling the below configuration would produce a single node configuration called “MyConfiguration.webserver”
+A compilation job in Azure Automation DSC is an instance of compilation of a configuration, to create one or more node configurations. They are similar to Azure Automation runbook jobs, except that they do not actually perform any task except to create node configurations. Any node configurations created by a compilation job are automatically placed on the Azure Automation DSC pull server, and overwrite previous versions of node configurations, if they existed for this configuration. The name of a node configuration produced by a compilation job takes the form of "ConfigurationName.NodeConfigurationBlockName". For example, compiling the below configuration would produce a single node configuration called "MyConfiguration.webserver"
 
 
 ![alt text](./media/automation-dsc-overview/AADSC_5.png)
 
 
->[AZURE.NOTE] Just like runbooks, configurations can be published. This is not related to putting DSC items onto the Azure Automation DSC pull server. Compilation jobs cause DSC items to be placed on the Azure Automation DSC pull server. For more information on “publishing” in Azure Automation, see [Publishing a Runbook](https://msdn.microsoft.com/zh-cn/library/dn903765.aspx).
+>[AZURE.NOTE] Just like runbooks, configurations can be published. This is not related to putting DSC items onto the Azure Automation DSC pull server. Compilation jobs cause DSC items to be placed on the Azure Automation DSC pull server. For more information on "publishing" in Azure Automation, see [Publishing a Runbook](https://msdn.microsoft.com/zh-cn/library/dn903765.aspx).
 
 Azure Automation DSC currently provides the following cmdlets in the [Azure Resource Manager PowerShell module](https://msdn.microsoft.com/zh-cn/library/mt244122.aspx) for management of compilation jobs:
 
@@ -120,15 +122,19 @@ Going from an empty automation account to a managed set of correctly configured 
 
 - Azure Automation does not support side by side use of PowerShell modules. This means all configurations within an Automation account must work with the last version of a PowerShell module imported into that Automation account, and with any PowerShell DSC resources that module contains that the configuration uses.
 
-- The traditional PowerShell DSC pull server expects module zips to be placed on the pull server in the format **ModuleName_Version.zip”**. Azure Automation expects PowerShell modules to be imported with names in the form of **ModuleName.zip**. See [this blog post](http://azure.microsoft.com/blog/2014/12/15/authoring-integration-modules-for-azure-automation/) for more info on the Integration Module format needed to import the module into Azure Automation. 
+- The traditional PowerShell DSC pull server expects module zips to be placed on the pull server in the format **ModuleName_Version.zip"**. Azure Automation expects PowerShell modules to be imported with names in the form of **ModuleName.zip**. See [this blog post](http://azure.microsoft.com/blog/2014/12/15/authoring-integration-modules-for-azure-automation/) for more info on the Integration Module format needed to import the module into Azure Automation. 
 
-- PowerShell modules that specify DSC resources side by side within the module, using the “version per folder” format, will not work in Azure Automation right now.
+- PowerShell modules that specify DSC resources side by side within the module, using the "version per folder" format, will not work in Azure Automation right now.
 
 - PowerShell modules imported into Azure Automation cannot contain .doc or .docx files. Some PowerShell modules containing DSC resources contain these files, for help purposes. These files should be removed from modules, prior to import into Azure Automation.
 
-- When a node is first registered with an Azure Automation account, or the node is changed to be mapped to a different node configuration server-side, it’s status will be 'Compliant', even if the node’s status is not actually compliant with the node configuration it is now mapped to. After the node performs its first pull, and sends its first report, after registration or a node configuration mapping change, the node status can be trusted.
+- When a node is first registered with an Azure Automation account, or the node is changed to be mapped to a different node configuration server-side, it's status will be 'Compliant', even if the node's status is not actually compliant with the node configuration it is now mapped to. After the node performs its first pull, and sends its first report, after registration or a node configuration mapping change, the node status can be trusted.
 
-- After registering, each node automatically negotiates a unique certificate for authentication that expires after one year. At this time, the PowerShell DSC registration protocol cannot automatically renew certificates when they are nearing expiration, so you need to reregister the nodes after a year’s time. Before reregistering, ensure that each node is running Windows Management Framework 5.0 RTM. If a node’s authentication certificate expires, and the node is not reregistered, the node will be unable to communicate with Azure Automation and will be marked ‘Unresponsive.’ Reregistration is performed in the same way you registered the node initially. Reregistration performed 90 days or less from the certificate expiration time, or at any point after the certificate expiration time, will result in a new certificate being generated and used.
+- When onboarding an Azure VM for management with Azure Automation DSC using `Register-AzureAutomationDscNode`, `Set-AzureVMExtension`, or the Azure Automation DSC VM extension in the Azure preview portal, if registration fails with **The computer name was not specified and the configuration directory does not have any configuration files**, this is a false alarm and the VM registration actually succeeded. Successful registration can be verified using the `Get-AzureAutomationDscNode` cmdlet.
+
+- When onboarding an Azure VM for management with Azure Automation DSC using `Register-AzureAutomationDscNode`, `Set-AzureVMExtension`, or the Azure Automation DSC VM extension in the Azure preview portal, it could take up to an hour for the VM to show up as a DSC node in Azure Automation. This is due to the installation of Windows Management Framework 5.0 on the VM by the Azure VM DSC extension, which is required to onboard the VM to Azure Automation DSC.
+
+- After registering, each node automatically negotiates a unique certificate for authentication that expires after one year. At this time, the PowerShell DSC registration protocol cannot automatically renew certificates when they are nearing expiration, so you need to reregister the nodes after a year's time. Before reregistering, ensure that each node is running Windows Management Framework 5.0 RTM. If a node's authentication certificate expires, and the node is not reregistered, the node will be unable to communicate with Azure Automation and will be marked 'Unresponsive.' Reregistration is performed in the same way you registered the node initially. Reregistration performed 90 days or less from the certificate expiration time, or at any point after the certificate expiration time, will result in a new certificate being generated and used.
 
 ##Related Articles##
 

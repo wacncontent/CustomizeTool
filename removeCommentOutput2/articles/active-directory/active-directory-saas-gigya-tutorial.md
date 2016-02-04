@@ -2,15 +2,16 @@
     pageTitle="Tutorial: Azure Active Directory integration with Gigya | Windows Azure" 
     description="Learn how to use Gigya with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/20/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Gigya
+>[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=528575).
   
 The objective of this tutorial is to show the integration of Azure and Gigya.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -18,7 +19,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A Gigya single sign on enabled subscription
   
-After completing this tutorial, the Azure AD users you have assigned to Gigya will be able to single sign into the application at your Gigya company site (service provider initiated sign on), or using the [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).
+After completing this tutorial, the Azure AD users you have assigned to Gigya will be able to single sign into the application at your Gigya company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586) 
   
 The scenario outlined in this tutorial consists of the following building blocks:
 

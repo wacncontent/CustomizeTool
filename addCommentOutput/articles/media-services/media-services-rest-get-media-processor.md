@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/28/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -82,19 +82,26 @@ Response:
 
 
 
+
 <!-- deleted by customization
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
 
 -->
-
 ##Next Steps
 Now that you know how to get a media processor instance, go to the [How to Encode an Asset][] topic which will show you how to use the Azure Media Encoder to encode an asset.
 
+<!-- deleted by customization
+[How to Encode an Asset]: media-services-rest-encode-asset.md
+-->
+<!-- keep by customization: begin -->
 [How to Encode an Asset]: /documentation/articles/media-services-rest-encode-asset
+<!-- keep by customization: end -->
 [Task Preset Strings for the Azure Media Encoder]: http://msdn.microsoft.com/zh-cn/library/jj129582.aspx
-[How to: Connect to Media Services Programmatically]: /documentation/articles/media-services-rest-connect_programmatically
+[How to: Connect to Media Services Programmatically]: <!-- deleted by customization ../media-services-rest-connect_programmatically/ --><!-- keep by customization: begin --> /documentation/articles/media-services-rest-connect_programmatically <!-- keep by customization: end -->

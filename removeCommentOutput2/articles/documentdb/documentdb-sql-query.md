@@ -1,29 +1,25 @@
 <properties 
-	pageTitle="SQL Queries on a DocumentDB Database – Query SQL | Microsoft Azure" 
-	description="Learn how DocumentDB supports SQL queries over hierarchical JSON documents for automatic indexing. Discover a SQL query database environment that’s truly schema-free." 
-	keywords="Query database, sql queries, sql query, structured query language, documentdb, azure, Microsoft azure"
+	pageTitle="SQL query on a DocumentDB, a NoSQL database | Windows Azure" 
+	description="Learn how to use SQL query statements to query DocumentDB, a NoSQL database. As a JSON query language, SQL queries can be used for big data analytics." 
+	keywords="sql query, sql queries, sql syntax, json query language, database concepts and sql queries"
 	services="documentdb" 
 	documentationCenter="" 
 	authors="arramac" 
 	manager="jhubbard" 
 	editor="monicar"/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/13/2015" 
-	ms.author="mimig"/>
+<tags
+	ms.service="documentdb"
+	ms.date="12/14/2015"
+	wacn.date=""/>
 
-# SQL query within DocumentDB
-Microsoft Azure DocumentDB supports querying documents using SQL (Structured Query Language) over hierarchical JSON documents. DocumentDB is truly schema-free. By virtue of its commitment to the JSON data model directly within the database engine, it provides automatic indexing of JSON documents without requiring explicit schema or creation of secondary indexes. 
+# SQL query in DocumentDB
+Microsoft Azure DocumentDB supports querying documents using SQL (Structured Query Language) as a JSON query language. DocumentDB is truly schema-free. By virtue of its commitment to the JSON data model directly within the database engine, it provides automatic indexing of JSON documents without requiring explicit schema or creation of secondary indexes.
 
 While designing the query language for DocumentDB we had two goals in mind:
 
--	**Embrace SQL** – Instead of inventing a new query language, we wanted to embrace SQL. After all, SQL is one of the most familiar and popular query languages. DocumentDB SQL provides a formal programming model for rich queries over JSON documents.
--	**Extend SQL** – As a JSON document database capable of executing JavaScript directly in the database engine, we wanted to use JavaScript's programming model as the foundation for our query language. The DocumentDB SQL is rooted in JavaScript's type system, expression evaluation, and function invocation. This in-turn provides a natural programming model for relational projections, hierarchical navigation across JSON documents, self joins, and invocation of user defined functions (UDFs) written entirely in JavaScript, among other features. 
+-	Instead of inventing a new query language, we wanted to support SQL. SQL is one of the most familiar and popular query languages. DocumentDB SQL provides a formal programming model for rich queries over JSON documents.
+-	As a JSON document database capable of executing JavaScript directly in the database engine, we wanted to use JavaScript's programming model as the foundation for our query language. The DocumentDB SQL is rooted in JavaScript's type system, expression evaluation, and function invocation. This in-turn provides a natural programming model for relational projections, hierarchical navigation across JSON documents, self joins, spatial queries, and invocation of user defined functions (UDFs) written entirely in JavaScript, among other features. 
 
 We believe that these capabilities are key to reducing the friction between the application and the database and are crucial for developer productivity.
 
@@ -31,9 +27,9 @@ We recommend getting started by watching the following video, where Aravind Rama
 
 > [AZURE.VIDEO dataexposedqueryingdocumentdb]
 
-Then, return to this article, where we'll start by walking through some simple JSON documents and SQL commands.
+Then, return to this article, where we'll start with a SQL query tutorial that walks you through some simple JSON documents and SQL commands.
 
-## Getting started with Structured Query Language (SQL) commands in DocumentDB
+## Getting started with SQL commands in DocumentDB
 To see DocumentDB SQL at work, let's begin with a few simple JSON documents and walk through some simple queries against it. Consider these two JSON documents about two families. Note that with DocumentDB, we do not need to create any schemas or secondary indices explicitly. We simply need to insert the JSON documents to a DocumentDB collection and subsequently query. 
 Here we have a simple JSON document for the Andersen family, the parents, children (and their pets), address and registration information. The document has strings, numbers, booleans, arrays and nested properties. 
 
@@ -165,9 +161,9 @@ We would like to draw attention to a few noteworthy aspects of the DocumentDB qu
 
 ## DocumentDB indexing
 
-Before we get into the DocumentDB SQL grammar, it is worth exploring the indexing design in DocumentDB. 
+Before we get into the DocumentDB SQL syntax, it is worth exploring the indexing design in DocumentDB. 
 
-The purpose of database indexes is to serve queries in their various forms and shapes with minimum resource consumption (like CPU and input/output) while providing good throughput and low latency. Often, the choice of the right index for querying a database requires much planning and experimentation. This approach poses a challenge for schema-less databases where the data doesn’t conform to a strict schema and evolves rapidly. 
+The purpose of database indexes is to serve queries in their various forms and shapes with minimum resource consumption (like CPU and input/output) while providing good throughput and low latency. Often, the choice of the right index for querying a database requires much planning and experimentation. This approach poses a challenge for schema-less databases where the data doesn’t conform to a strict schema and evolves rapidly.
 
 Therefore, when we designed the DocumentDB indexing subsystem, we set the following goals:
 
@@ -181,15 +177,15 @@ Therefore, when we designed the DocumentDB indexing subsystem, we set the follow
 
 -	Storage efficiency: For cost effectiveness, the on-disk storage overhead of the index is bounded and predictable. This is crucial because DocumentDB allows the developer to make cost based tradeoffs between index overhead in relation to the query performance.  
 
-Refer to the [DocumentDB samples](https://github.com/Azure/azure-documentdb-net) on MSDN for samples showing how to configure the indexing policy for a collection. Let’s now get into the details of the DocumentDB SQL grammar.
+Refer to the [DocumentDB samples](https://github.com/Azure/azure-documentdb-net) on MSDN for samples showing how to configure the indexing policy for a collection. Let’s now get into the details of the DocumentDB SQL syntax.
 
 
 ## Basics of a DocumentDB SQL query
 Every query consists of a SELECT clause and optional FROM and WHERE clauses per ANSI-SQL standards. Typically, for each query, the source in the FROM clause is enumerated. Then the filter in the WHERE clause is applied on the source to retrieve a subset of JSON documents. Finally, the SELECT clause is used to project the requested JSON values in the select list.
     
-    SELECT <select_list> 
+    SELECT [TOP <top_expression>] <select_list> 
     [FROM <from_specification>] 
-    [WHERE <filter_condition>]    
+    [WHERE <filter_condition>]
 
 
 ## FROM clause
@@ -558,7 +554,7 @@ For other comparison operators such as >, >=, !=, < and <=, the following rules 
 If the result of the scalar expression in the filter is Undefined, the corresponding document would not be included in the result, since Undefined doesn't logically equate to "true".
 
 ### BETWEEN keyword
-You can also use the BETWEEN keyword to express queries against ranges of values like in ANSI SQL. BETWEEN can be used against any JSON primitive type (numbers, strings, Booleans and nulls). 
+You can also use the BETWEEN keyword to express queries against ranges of values like in ANSI SQL. BETWEEN can be used against any JSON primitive type (numbers, strings, Booleans and nulls).
 
 For example, this query returns all family documents in which the first child's grade is between 1-5 (both inclusive). 
 
@@ -609,7 +605,7 @@ This example returns all documents where the state is any of the specified value
     FROM Families 
     WHERE Families.address.state IN ("NY", "WA", "CA", "PA", "OH", "OR", "MI", "WI", "MN", "FL")
 
-IN is equivalent to chaining multiple OR clauses, however since it can be served using a single index, DocumentDB supports a higher [limit](documentdb-limits.md) for the number of arguments specified within an IN clause.  
+IN is equivalent to chaining multiple OR clauses, however since it can be served using a single index, DocumentDB supports a higher [limit](documentdb-limits.md) for the number of arguments specified within an IN clause.
 
 ### Ternary (?) and Coalesce (??) operators
 The Ternary and Coalesce operators can be used to build conditional expressions, similar to popular programming languages like C# and JavaScript. 
@@ -896,6 +892,37 @@ The special operator (*) is supported to project the document as-is. When used, 
 	    "isRegistered": true
 	}]
 
+###TOP Operator
+The TOP keyword can be used to limit the number of values from a query. When TOP is used in conjunction with the ORDER BY clause, the result set is limited to the first N number of ordered values; otherwise, it returns the first N number of results in an undefined order. As a best practice, in a SELECT statement, always use an ORDER BY clause with the TOP clause. This is the only way to predictably indicate which rows are affected by TOP. 
+
+
+**Query**
+
+	SELECT TOP 1 * 
+	FROM Families f 
+
+**Results**
+
+	[{
+	    "id": "AndersenFamily",
+	    "lastName": "Andersen",
+	    "parents": [
+	       { "firstName": "Thomas" },
+	       { "firstName": "Mary Kay"}
+	    ],
+	    "children": [
+	       {
+	           "firstName": "Henriette Thaulow", "gender": "female", "grade": 5,
+	           "pets": [{ "givenName": "Fluffy" }]
+	       }
+	    ],
+	    "address": { "state": "WA", "county": "King", "city": "seattle" },
+	    "creationDate": 1431620472,
+	    "isRegistered": true
+	}]
+
+TOP can be used with a constant value (as shown above) or with a variable value using parameterized queries. For more details, please see parameterized queries below.
+
 ## ORDER BY clause
 Like in ANSI-SQL, you can include an optional Order By clause while querying. The clause can include an optional ASC/DESC argument to specify the order in which results must be retrieved. For a more detailed look at Order By, refer to [DocumentDB Order By Walkthrough](documentdb-orderby.md).
 
@@ -941,7 +968,7 @@ And here's a query that retrieves families in order of creation date, which is s
 	  }
 	]
 	
-## Advanced SQL query database concepts
+## Advanced database concepts and SQL queries
 ### Iteration
 A new construct was added via the **IN** keyword in DocumentDB SQL to provide support for iterating over JSON arrays. The FROM source provides support for iteration. Let's start with the following example:
 
@@ -1179,7 +1206,7 @@ DocumentDB provides a programming model for executing JavaScript based applicati
 ###User Defined Functions (UDFs)
 Along with the types already defined in this article, DocumentDB SQL provides support for User Defined Functions (UDF). In particular, scalar UDFs are supported where the developers can pass in zero or many arguments and return a single argument result back. Each of these arguments are checked for being legal JSON values.  
 
-The DocumentDB SQL grammar is extended to support custom application logic using these User Defined Functions. UDFs can be registered with DocumentDB and then be referenced as part of a SQL query. In fact, the UDFs are exquisitely designed to be invoked by queries. As a corollary to this choice, UDFs do not have access to the context object which the other JavaScript types (stored procedures and triggers) have. Since queries execute as read-only, they can run either on primary or on secondary replicas. Therefore, UDFs are designed to run on secondary replicas unlike other JavaScript types.
+The DocumentDB SQL syntax is extended to support custom application logic using these User Defined Functions. UDFs can be registered with DocumentDB and then be referenced as part of a SQL query. In fact, the UDFs are exquisitely designed to be invoked by queries. As a corollary to this choice, UDFs do not have access to the context object which the other JavaScript types (stored procedures and triggers) have. Since queries execute as read-only, they can run either on primary or on secondary replicas. Therefore, UDFs are designed to run on secondary replicas unlike other JavaScript types.
 
 Below is an example of how a UDF can be registered at the DocumentDB database, specifically under a document collection.
 
@@ -1313,6 +1340,15 @@ This request can then be sent to DocumentDB as a parameterized JSON query like s
         ] 
     }
 
+The argument to TOP can be set using parameterized queries like shown below.
+
+    {      
+        "query": "SELECT TOP @n * FROM Families",     
+        "parameters": [          
+            {"name": "@n", "value": 10},         
+        ] 
+    }
+
 Parameter values can be any valid JSON (strings, numbers, Booleans, null, even arrays or nested JSON). Also since DocumentDB is schema-less, parameters are not validated against any type.
 
 ##Built-in functions
@@ -1341,7 +1377,7 @@ DocumentDB also supports a number of built-in functions for common operations, t
 </tr>
 </table>  
 
-If you’re currently using a user defined function (UDF) for which a built-in function is now available, you should use the corresponding built-in function as it is going to be quicker to run and more efficiently. 
+If you’re currently using a user defined function (UDF) for which a built-in function is now available, you should use the corresponding built-in function as it is going to be quicker to run and more efficiently.
 
 ### Mathematical functions
 The mathematical functions each perform a calculation, usually based on input values that are provided as arguments, and return a numeric value. Here’s a table of supported built-in mathematical functions.
@@ -1517,22 +1553,22 @@ The following scalar functions perform an operation on a string input value and 
 
 Usage|Description
 ---|---
-[LENGTH (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_length)|Returns the number of characters of the specified string expression
-[CONCAT (str_expr, str_expr [, str_expr])](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_concat)|Returns a string that is the result of concatenating two or more string values.
-[SUBSTRING (str_expr, num_expr, num_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_substring)|Returns part of a string expression.
-[STARTSWITH (str_expr, str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_startswith)|Returns a Boolean indicating whether the first string expression ends with the second
-[ENDSWITH (str_expr, str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_endswith)|Returns a Boolean indicating whether the first string expression ends with the second
-[CONTAINS (str_expr, str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_contains)|Returns a Boolean indicating whether the first string expression contains the second.
-[INDEX_OF (str_expr, str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_index_of)|Returns the starting position of the first occurrence of the second string expression within the first specified string expression, or -1 if the string is not found.
-[LEFT (str_expr, num_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_left)|Returns the left part of a string with the specified number of characters.
-[RIGHT (str_expr, num_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_right)|Returns the right part of a string with the specified number of characters.
-[LTRIM (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_ltrim)|Returns a string expression after it removes leading blanks.
-[RTRIM (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_rtrim)|Returns a string expression after truncating all trailing blanks.
-[LOWER (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_lower)|Returns a string expression after converting uppercase character data to lowercase.
-[UPPER (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_upper)|Returns a string expression after converting lowercase character data to uppercase.
-[REPLACE (str_expr, str_expr, str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_replace)|Replaces all occurrences of a specified string value with another string value.
-[REPLICATE (str_expr, num_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_replicate)|Repeats a string value a specified number of times.
-[REVERSE (str_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_reverse)|Returns the reverse order of a string value.
+[LENGTH (str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_length)|Returns the number of characters of the specified string expression
+[CONCAT (str_expr, str_expr [, str_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_concat)|Returns a string that is the result of concatenating two or more string values.
+[SUBSTRING (str_expr, num_expr, num_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_substring)|Returns part of a string expression.
+[STARTSWITH (str_expr, str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_startswith)|Returns a Boolean indicating whether the first string expression ends with the second
+[ENDSWITH (str_expr, str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_endswith)|Returns a Boolean indicating whether the first string expression ends with the second
+[CONTAINS (str_expr, str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_contains)|Returns a Boolean indicating whether the first string expression contains the second.
+[INDEX_OF (str_expr, str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_index_of)|Returns the starting position of the first occurrence of the second string expression within the first specified string expression, or -1 if the string is not found.
+[LEFT (str_expr, num_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_left)|Returns the left part of a string with the specified number of characters.
+[RIGHT (str_expr, num_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_right)|Returns the right part of a string with the specified number of characters.
+[LTRIM (str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_ltrim)|Returns a string expression after it removes leading blanks.
+[RTRIM (str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_rtrim)|Returns a string expression after truncating all trailing blanks.
+[LOWER (str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_lower)|Returns a string expression after converting uppercase character data to lowercase.
+[UPPER (str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_upper)|Returns a string expression after converting lowercase character data to uppercase.
+[REPLACE (str_expr, str_expr, str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_replace)|Replaces all occurrences of a specified string value with another string value.
+[REPLICATE (str_expr, num_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_replicate)|Repeats a string value a specified number of times.
+[REVERSE (str_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_reverse)|Returns the reverse order of a string value.
 
 Using these functions, you can now run queries like the following. For example, you can return the family name in uppercase as follows:
 
@@ -1587,10 +1623,10 @@ The following scalar functions perform an operation on an array input value and 
 
 Usage|Description
 ---|---
-[ARRAY_LENGTH (arr_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_length)|Returns the number of elements of the specified array expression.
-[ARRAY_CONCAT (arr_expr, arr_expr [, arr_expr])](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_concat)|Returns an array that is the result of concatenating two or more array values.
-[ARRAY_CONTAINS (arr_expr, expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_contains)|Returns a Boolean indicating whether the array contains the specified value.
-[ARRAY_SLICE (arr_expr, num_expr [, num_expr])](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_slice)|Returns part of an array expression.
+[ARRAY_LENGTH (arr_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_length)|Returns the number of elements of the specified array expression.
+[ARRAY_CONCAT (arr_expr, arr_expr [, arr_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_concat)|Returns an array that is the result of concatenating two or more array values.
+[ARRAY_CONTAINS (arr_expr, expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_contains)|Returns a Boolean indicating whether the array contains the specified value.
+[ARRAY_SLICE (arr_expr, num_expr [, num_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_slice)|Returns part of an array expression.
 
 Array functions can be used to manipulate arrays within JSON. For example, here's a query that returns all documents where one of the parents is "Robin Wakefield". 
 
@@ -1624,11 +1660,9 @@ Here's another example that uses ARRAY_LENGTH to get the number of children per 
       "numberOfChildren": 1
     }]
 
-That wraps up built-in functions, and the SQL grammar for DocumentDB. Now let's take a look at how LINQ querying works and how it interacts with the grammar we've seen so far.
-
 ### Spatial functions
 
-DocumentDB supports the following Open Geospatial Consortium (OGC) built-in functions for geospatial querying. For more details on geospatial support in DocumentDB, please see [Working with geospatial data in Azure DocumentDB](documentdb-geospatial.md). 
+DocumentDB supports the following Open Geospatial Consortium (OGC) built-in functions for geospatial querying. For more details on geospatial support in DocumentDB, please see [Working with geospatial data in Azure DocumentDB](documentdb-geospatial.md).
 
 <table>
 <tr>
@@ -1667,7 +1701,7 @@ Spatial functions can be used to perform proximity querries against spatial data
       "id": "WakefieldFamily"
     }]
 
-If you include spatial indexing in your indexing policy, then "distance queries" will be served efficiently through the index. For more details on spatial indexing, please see the section below. If you don't have a spatial index for the specified paths, you can still perform spatial queries by specifying `x-ms-documentdb-query-enable-scan` request header with the value set to "true". In .NET, this can be done by passing the optional **FeedOptions** argument to queries with [EnableScanInQuery](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery) set to true. 
+If you include spatial indexing in your indexing policy, then "distance queries" will be served efficiently through the index. For more details on spatial indexing, please see the section below. If you don't have a spatial index for the specified paths, you can still perform spatial queries by specifying `x-ms-documentdb-query-enable-scan` request header with the value set to "true". In .NET, this can be done by passing the optional **FeedOptions** argument to queries with [EnableScanInQuery](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery) set to true.
 
 ST_WITHIN can be used to check if a point lies within a polygon. Commonly polygons are used to represent boundaries like zip codes, state boundaries, or natural formations. Again if you include spatial indexing in your indexing policy, then "within" queries will be served efficiently through the index. 
 
@@ -1719,7 +1753,7 @@ These functions can also be used to validate polygons. For example, here we use 
       	}
     }]
     
-That wraps up built-in functions, and the SQL grammar for DocumentDB. Now let's take a look at how LINQ querying works and how it interacts with the grammar we've seen so far.
+That wraps up spatial functions, and the SQL syntax for DocumentDB. Now let's take a look at how LINQ querying works and how it interacts with the syntax we've seen so far.
 
 ## LINQ to DocumentDB SQL
 LINQ is a .NET programming model that expresses computation as queries on streams of objects. DocumentDB provides a client side library to interface with LINQ by facilitating a conversion between JSON and .NET objects and a mapping from a subset of LINQ queries to DocumentDB queries. 
@@ -1817,9 +1851,9 @@ The DocumentDB query provider performs a best effort mapping from a LINQ query i
 
 First, for the type system, we support all JSON primitive types – numeric types, boolean, string, and null. Only these JSON types are supported. The following scalar expressions are supported.
 
--	Constant values – these includes constant values of the primitive data types at the time the query is evaluated.
+– Constant values - these includes constant values of the primitive data types at the time the query is evaluated.
 
--	Property/array index expressions – these expressions refer to the property of an object or an array element.
+– Property/array index expressions - these expressions refer to the property of an object or an array element.
 
 		family.Id;
 		family.children[0].familyName;
@@ -1841,6 +1875,22 @@ First, for the type system, we support all JSON primitive types – numeric type
 		new Parent { familyName = "Smith", givenName = "Joe" };
 		new { first = 1, second = 2 }; //an anonymous type with 2 fields              
 		new int[] { 3, child.grade, 5 };
+
+### List of supported LINQ operators
+Here is a list of supported LINQ operators in the LINQ provider included with the DocumentDB .NET SDK.
+
+-	**Select**: Projections translate to the SQL SELECT including object construction
+-	**Where**: Filters translate to the SQL WHERE, and support translation between && , || and ! to the SQL operators
+-	**SelectMany**: Allows unwinding of arrays to the SQL JOIN clause. Can be used to chain/nest expressions to filter on array elements
+-	**OrderBy and OrderByDescending**: Translates to ORDER BY ascending/descending:
+-	**CompareTo**: Translates to range comparisons. Commonly used for strings since they're not comparable in .NET
+-	**Take**: Translates to the SQL TOP for limiting results from a query
+-	**Math Functions**: Supports translation from .NET's Abs, Acos, Asin, Atan, Ceiling, Cos, Exp, Floor, Log, Log10, Pow, Round, Sign, Sin, Sqrt, Tan, Truncate to the equivalent SQL built-in functions.
+-	**String Functions**: Supports translation from .NET's Concat, Contains, EndsWith, IndexOf, Count, ToLower, TrimStart, Replace, Reverse, TrimEnd, StartsWith, SubString, ToUpper to the equivalent SQL built-in functions.
+-	**Array Functions**: Supports translation from .NET's Concat, Contains, and Count to the equivalent SQL built-in functions.
+-	**Geospatial Extension Functions**: Supports translation from stub methods Distance, Within, IsValid, and IsValidDetailed to the equivalent SQL built-in functions.
+-	**User Defined Function Extension Function**: Supports translation from the stub method UserDefinedFunctionProvider.Invoke to the corresponding user defined function.
+-	**Miscellaneous**: Supports translation of the coalesce and conditional operators. Can translate Contains to String CONTAINS, ARRAY_CONTAINS or the SQL IN depending on context.
 
 ### SQL query operators
 Here are some examples that illustrate how some of the standard LINQ query operators are translated down to DocumentDB queries.

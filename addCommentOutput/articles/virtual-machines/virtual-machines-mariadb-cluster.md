@@ -14,13 +14,17 @@
 	wacn.date=""/>
 
 # MariaDB (MySQL) cluster - Azure tutorial
-<!-- deleted by customization
 
+<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
--->
+> [AZURE.NOTE]  MariaDB Enterprise cluster is now available in the Azure Marketplace.  The new offering will automatically deploy a MariaDB Galera cluster on ARM. You should use the new offering from  https://azure.microsoft.com/marketplace/partners/mariadb/cluster-maxscale/ 
 
 We're creating a multi-Master [Galera](http://galeracluster.com/products/) cluster of [MariaDBs](https://mariadb.org/en/about/), a robust, scalable, and reliable drop-in replacement for MySQL, to work in a highly available environment on Azure Virtual Machines.
+-->
+<!-- keep by customization: begin -->
+<p>We're creating a multi-Master [Galera](http://galeracluster.com/products/) cluster of [MariaDBs](https://mariadb.org/en/about/), a robust, scalable, and reliable drop-in replacement for MySQL, to work in a highly available environment on Azure Virtual Machines.</p>
+<!-- keep by customization: end -->
 
 ## Architecture overview
 
@@ -44,7 +48,6 @@ This topic performs the following steps:
 1. Create an Affinity Group to hold the resources together
 
 		azure account affinity-group create mariadbcluster --location "China North" --label "MariaDB Cluster"
-
 2. Create a Virtual Network
 
 		azure network vnet create --address-space 10.0.0.0 --cidr 8 --subnet-name mariadb --subnet-start-ip 10.0.0.0 --subnet-cidr 24 --affinity-group mariadbcluster mariadbvnet
@@ -61,7 +64,6 @@ this will output something like `5112500ae3b842c8b9c604889f8753c3__OpenLogic-Cen
 4. Create the VM template replacing **/path/to/key.pem** with the path where you stored the generated .pem SSH key
 
 		azure vm create --virtual-network-name mariadbvnet --subnet-names mariadb --blob-url "http://mariadbstorage.blob.core.chinacloudapi.cn/vhds/mariadbhatemplate-os.vhd"  --vm-size Medium --ssh 22 --ssh-cert "/path/to/key.pem" --no-ssh-password mariadbtemplate 5112500ae3b842c8b9c604889f8753c3__OpenLogic-CentOS-70-20140926 azureuser
-
 5. Attach 4 x 500GB data disks to the VM for use in the RAID configuration
 
 		FOR /L %d IN (1,1,4) DO azure vm disk attach-new mariadbhatemplate 512 http://mariadbstorage.blob.core.chinacloudapi.cn/vhds/mariadbhatemplate-data-%d.vhd
@@ -73,119 +75,74 @@ this will output something like `5112500ae3b842c8b9c604889f8753c3__OpenLogic-Cen
 1. Obtain root
 
         sudo su
-
 2. Install RAID support:
 
      - Install mdadm
-
         		yum install mdadm
-
      - Create the RAID0/stripe configuration with an EXT4 file system
-
 				mdadm --create --verbose /dev/md0 --level=stripe --raid-devices=4 /dev/sdc /dev/sdd /dev/sde /dev/sdf
 				mdadm --detail --scan >> /etc/mdadm.conf
 				mkfs -t ext4 /dev/md0
-
      - Create the mount point directory
-
 				mkdir /mnt/data
-
      - Retrieve the UUID of the newly created RAID device
-
 				blkid | grep /dev/md0
-
      - Edit /etc/fstab
-
         		vi /etc/fstab
-
      - Add the device in there to enable auto mouting on reboot replacing the UUID with the value obtained from the **blkid** command before
-
         		UUID=<UUID FROM PREVIOUS>   /mnt/data ext4   defaults,noatime   1 2
-
      - Mount the new partition
-
         		mount /mnt/data
-
 3. Install MariaDB:
-
      - Create the MariaDB.repo file:
-
               	vi /etc/yum.repos.d/MariaDB.repo
-
      - Fill it with the below content
-
 				[mariadb]
 				name = MariaDB
 				baseurl = http://yum.mariadb.org/10.0/centos7-amd64
 				gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 				gpgcheck=1
-
      - Remove existing postfix and mariadb-libs to avoid conflicts
-
     		yum remove postfix mariadb-libs-*
-
      - Install MariaDB with Galera
-
     		yum install MariaDB-Galera-server MariaDB-client galera
-
 4. Move the MySQL data directory to the RAID block device
 
      - Copy the current MySQL directory into its new location and remove the old directory
-
     		cp -avr /var/lib/mysql /mnt/data  
     		rm -rf /var/lib/mysql
-
      - Set permissions on new directory accordingly
-
         	chown -R mysql:mysql /mnt/data && chmod -R 755 /mnt/data/  
-
      - Create a symlink pointing the old directory to the new location on the RAID partition
-
     		ln -s /mnt/data/mysql /var/lib/mysql
 
 5. Because [SELinux will interfere with the cluster operations](http://galeracluster.com/documentation-webpages/configuration.html#selinux), it is necessary to disable it for the current session (until a compatible version appears). Edit `/etc/selinux/config` to disable it for subsequent restarts:
-
 	        setenforce 0
-
        then editing `/etc/selinux/config` to set `SELINUX=permissive`
-
 6. Validate MySQL runs
 
     - Start MySQL
-
     		service mysql start
-
     - Secure the MySQL installation, set the root password, remove anonymous users, disabling remote root login and removing the test database
-
             mysql_secure_installation
-
     - Create a user on the database for cluster operations and optionally, your applications
-
 			mysql -u root -p
 			GRANT ALL PRIVILEGES ON *.* TO 'cluster'@'%' IDENTIFIED BY 'p@ssw0rd' WITH GRANT OPTION; FLUSH PRIVILEGES;
             exit
-
    - Stop MySQL
-
 			service mysql stop
-
 7. Create configuration placeholder
 
 	- Edit the MySQL configuration to create a placeholder for the cluster settings. Do not replace the **`<Vairables>`** or uncomment now. That will happen after we create a VM from this template.
-
 			vi /etc/my.cnf.d/server.cnf
-
 	- Edit the **[galera]** section and clear it out
-
 	- Edit the **[mariadb]** section
-
 			wsrep_provider=/usr/lib64/galera/libgalera_smm.so
             binlog_format=ROW
             wsrep_sst_method=rsync
 			bind-address=0.0.0.0 # When set to 0.0.0.0, the server listens to remote connections
 			default_storage_engine=InnoDB
             innodb_autoinc_lock_mode=2
-
             wsrep_sst_auth=cluster:p@ssw0rd # CHANGE: Username and password you created for the SST cluster MySQL user
             #wsrep_cluster_name='mariadbcluster' # CHANGE: Uncomment and set your desired cluster name
             #wsrep_cluster_address="gcomm://mariadb1,mariadb2,mariadb3" # CHANGE: Uncomment and Add all your servers
@@ -193,23 +150,17 @@ this will output something like `5112500ae3b842c8b9c604889f8753c3__OpenLogic-Cen
 			#wsrep_node_name='<NodeName>' # CHANGE: Uncomment and set the node name of this server
 
 8. Open required ports on the firewall (using FirewallD on CentOS 7)
-
 	- MySQL: `firewall-cmd --zone=public --add-port=3306/tcp --permanent`
     - GALERA: `firewall-cmd --zone=public --add-port=4567/tcp --permanent`
     - GALERA IST: `firewall-cmd --zone=public --add-port=4568/tcp --permanent`
     - RSYNC: `firewall-cmd --zone=public --add-port=4444/tcp --permanent`
     - Reload the firewall: `firewall-cmd --reload`
-
 9.  Optimize the system for performance. Refer to this article on [performance tuning strategy] for more details
 
 	- Edit the MySQL configuration file again
-
 			vi /etc/my.cnf.d/server.cnf
-
 	- Edit the **[mariadb]** section and append the below
-
 	> [AZURE.NOTE] It is recommended that **innodb\_buffer\_pool_size** be 70% of your VM's memory. It has been set at 2.45GB here for the Medium Azure VM with 3.5GB of RAM.
-
 	        innodb_buffer_pool_size = 2508M # The buffer pool contains buffered data and the index. This is usually set to 70% of physical memory.
             innodb_log_file_size = 512M #  Redo logs ensure that write operations are fast, reliable, and recoverable after a crash
             max_connections = 5000 # A larger value will give the server more time to recycle idled connections
@@ -217,27 +168,23 @@ this will output something like `5112500ae3b842c8b9c604889f8753c3__OpenLogic-Cen
             innodb_log_buffer_size = 128M # The log buffer allows transactions to run without having to flush the log to disk before the transactions commit
             innodb_flush_log_at_trx_commit = 2 # The setting of 2 enables the most data integrity and is suitable for Master in MySQL cluster
 			query_cache_size = 0
-
 10. Stop MySQL, disable MySQL service from running on startup to avoid messing up the cluster when adding a new node, and deprovision the machine.
 
 		service mysql stop
         chkconfig mysql off
 		waagent -deprovision
-
 11. Capture the VM through the portal. (Currently, [issue #1268 in the Azure CLI] tools describes the fact that images captured by the Azure CLI tools do not capture the attached data disks.)
 
 	- Shutdown the machine through the portal
     - Click on Capture and specify the image name as **mariadb-galera-image** and provide a  description and check "I have run waagent".
 	![Capture the Virtual Machine](./media/virtual-machines-mariadb-cluster/Capture.png)
 	![Capture the Virtual Machine](./media/virtual-machines-mariadb-cluster/Capture2.PNG)
-
 ## Creating the cluster
-
 Create 3 VMs out of the template you just created and then configure and start the cluster.
 
 1. Create the first CentOS 7 VM from the **mariadb-galera-image** image you created, providing the virtual network name **mariadbvnet** and the subnet **mariadb**, machine size **Medium**, passing in the Cloud Service name to be **mariadbha** (or whatever name you want to be accessed through mariadbha.chinacloudapp.cn), setting the name of this machine to be **mariadb1**  and the username to be **azureuser**,  and enabling SSH access and passing the SSH certificate .pem file and replacing **/path/to/key.pem** with the path where you stored the generated .pem SSH key.
 
-	> [AZURE.NOTE] The commands below are split over multiple lines for clarity, but you should enter each as one line.
+	> <!-- deleted by customization [AZURE.NOTE] --><!-- keep by customization: begin --> [WACOM.NOTE] <!-- keep by customization: end --> The commands below are split over multiple lines for clarity, but you should enter each as one line.
 
 		azure vm create
         --virtual-network-name mariadbvnet
@@ -274,7 +221,6 @@ and for MariaDB3
 		--ssh 24
 		--vm-name mariadb3
         --connect mariadbha mariadb-galera-image azureuser
-
 3. You will need to get the internal IP address of each of the 3 VMs for the next step:
 
 	![Getting IP address](./media/virtual-machines-mariadb-cluster/IP.png)
@@ -282,20 +228,16 @@ and for MariaDB3
 4. SSH into the 3 VMs and and edit the configuration file on each
 
 		sudo vi /etc/my.cnf.d/server.cnf
-
 	uncommenting **`wsrep_cluster_name`** and **`wsrep_cluster_address`** by removing the **#** at the beginning and validation they are indeed what you want.
     Additionally, replace **`<ServerIP>`** in **`wsrep_node_address`** and **`<NodeName>`** in **`wsrep_node_name`** with the VM's IP address and name respectively and uncomment those lines as well.
-
 5. Start the cluster on MariaDB1 and let it run at startup
 
 		sudo service mysql bootstrap
         chkconfig mysql on
-
 6. Start MySQL on MariaDB2 and MariaDB3 and let it run at startup
 
 		sudo service mysql start
         chkconfig mysql on
-
 ## Load balancing the cluster
 When you created the clustered VMs, you added them into an Availablity Set called **clusteravset** to ensure they are put on different fault and update domains and that Azure never does maintenance on all machines at once. This configuration meets the requirements to be supported by that Azure Service Level Agreement (SLA).
 
@@ -307,7 +249,6 @@ The command parameters structure is: `azure vm endpoint create-multiple <Machine
 	azure vm endpoint create-multiple mariadb1 3306:3306:tcp:false:MySQL:tcp:3306
     azure vm endpoint create-multiple mariadb2 3306:3306:tcp:false:MySQL:tcp:3306
     azure vm endpoint create-multiple mariadb3 3306:3306:tcp:false:MySQL:tcp:3306
-
 Finally, since the CLI sets the load-balancer probe interval to 15 seconds (which may be a bit too long), change it in the portal under **Endpoints** for any of the VMs
 
 ![Edit endpoint](./media/virtual-machines-mariadb-cluster/Endpoint.PNG)
@@ -327,7 +268,6 @@ The hard work is done. The cluster should be now accessible at `mariadbha.chinac
 Use your favorite MySQL client to connect or just connect from one of the VMs to verify this cluster is working.
 
 	 mysql -u cluster -h mariadbha.chinacloudapp.cn -p
-
 Then create a new database and populate it with some data
 
 	CREATE DATABASE TestDB;
@@ -336,7 +276,6 @@ Then create a new database and populate it with some data
 	INSERT INTO TestTable (value)  VALUES ('Value1');
 	INSERT INTO TestTable (value)  VALUES ('Value2');
     SELECT * FROM TestTable;
-
 Will result in the table below
 
 	+----+--------+
@@ -346,7 +285,6 @@ Will result in the table below
 	|  4 | Value2 |
 	+----+--------+
 	2 rows in set (0.00 sec)
-
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
 
@@ -368,9 +306,14 @@ You may want to take a look at [another way to cluster MySQL on Linux] and ways 
 [Galera]: http://galeracluster.com/products/
 [MariaDBs]: https://mariadb.org/en/about/
 [Azure CLI]: /documentation/articles/xplat-cli/
+<!-- deleted by customization
 [Azure CLI command reference]: /documentation/articles/virtual-machines-command-line-tools/
+-->
+<!-- keep by customization: begin -->
+[Azure CLI command reference]: /documentation/articles/command-line-tools/
+<!-- keep by customization: end -->
 [create an SSH key for authentication]:http://www.jeff.wilcox.name/2013/06/secure-linux-vms-with-ssh-certificates/
 [performance tuning strategy]: /documentation/articles/virtual-machines-linux-optimize-mysql-perf/
 [optimize and test MySQL performance on Azure Linux VMs]:/documentation/articles/virtual-machines-linux-optimize-mysql-perf/
 [issue #1268 in the Azure CLI]:https://github.com/Azure/azure-xplat-cli/issues/1268
-[another way to cluster MySQL on Linux]: /documentation/articles/virtual-machines-linux-mysql-cluster/
+[another way to cluster MySQL on Linux]: /documentation/articles/virtual-machines-linux-mysql-cluster/

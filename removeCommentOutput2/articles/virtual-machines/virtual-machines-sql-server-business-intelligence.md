@@ -9,12 +9,12 @@
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/19/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # SQL Server Business Intelligence in Azure Virtual Machines
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers using a resource with the classic deployment model. 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
  
 The Windows Azure Virtual Machine gallery includes images that contain SQL Server installations. The SQL Server editions supported in the gallery images are the same installation files you can install to on-premises computers and virtual machines. This topic summarizes the SQL Server Business Intelligence (BI) Features installed on the images and configuration steps required after a virtual machine is provisioned. This topic also describes supported deployment topologies for BI features and best practices.
@@ -108,7 +108,7 @@ The following table summarizes the Business Intelligence features installed on t
 
 	For more information, see the following: [Uninstall Reporting Services](https://msdn.microsoft.com/zh-cn/library/hh479745.aspx) and [Uninstall an Instance of Analysis Services](https://msdn.microsoft.com/zh-cn/library/ms143687.aspx).
 
-- Check **Windows Update** for new ‘Important updates’. The Windows Azure Virtual Machine images are frequently refreshed; however important updates could become available from **Windows Update** after the VM image was last refreshed.
+- Check **Windows Update** for new 'Important updates'. The Windows Azure Virtual Machine images are frequently refreshed; however important updates could become available from **Windows Update** after the VM image was last refreshed.
 
 ## Example Deployment Topologies
 
@@ -128,7 +128,7 @@ Analysis Services, Reporting Services, SQL Server Database Engine, and data sour
 
 ![bi  iaas scenario with 2 virtual machines](./media/virtual-machines-sql-server-business-intelligence/IC650109.gif)
 
-### Mixed Azure – data on Azure SQL database
+### Mixed Azure - data on Azure SQL database
 
 - Analysis Services, Reporting Services, and the SQL Server Database Engine on a single virtual machine. This deployment includes the report server databases.
 
@@ -136,7 +136,7 @@ Analysis Services, Reporting Services, SQL Server Database Engine, and data sour
 
 ![bi iaas scenarios vm and AzureSQL as data source](./media/virtual-machines-sql-server-business-intelligence/IC650110.gif)
 
-### Hybrid –data on-premises
+### Hybrid -data on-premises
 
 - In this example deployment Analysis Services, Reporting Services, and the SQL Server Database Engine run on a single virtual machine. The virtual machine hosts the report server databases. The virtual machine is joined to an on-premises Domain through Azure Virtual Networking, or some other VPN tunneling solution.
 
@@ -262,7 +262,7 @@ If you want to connect to Report Manager on the virtual machine from a remote co
 
 1. Create an Endpoint for the Virtual Machine of TCP Port 80. For more information see, the [Virtual Machine Endpoints and Firewall Ports](#virtual-machine-endpoints-and-firewall-ports) section in this document.
 
-1. Open port 80 in the virtual machine’s firewall.
+1. Open port 80 in the virtual machine's firewall.
 
 1. Browse to report manager using Azure Virtual Machine **DNS Name** as the server name in the URL. For example: 
 
@@ -301,7 +301,7 @@ The following table summarizes some of the options available to publish existing
 
 ## Install other SQL Server Services and features
 
-To install additional SQL Server services, such as Analysis Services in tabular mode, run the SQL server setup wizard. The setup files are on the virtual machine’s local disk.
+To install additional SQL Server services, such as Analysis Services in tabular mode, run the SQL server setup wizard. The setup files are on the virtual machine's local disk.
 
 1. Click **Start** and then click **All Programs**.
 
@@ -420,7 +420,7 @@ The following diagram illustrates the ports to open in the VM firewall to allow 
 
 - [Multidimensional Modeling (Adventure Works Tutorial)](https://technet.microsoft.com/zh-cn/library/ms170208.aspx)
 
-- [Azure Documentation Center](http://www.windowsazure.cndocumentation/)
+- [Azure Documentation Center](http://azure.microsoft.com/documentation/)
 
 - [Using Power BI in a Hybrid Environment](https://msdn.microsoft.com/zh-cn/library/dn798994.aspx)
 

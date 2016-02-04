@@ -9,10 +9,13 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/02/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Azure Active Directory Report Retention Policies
+
+*This documentation is part of the [Azure Active Directory Reporting Guide](/documentation/articles/active-directory-reporting-guide).*
+
 Azure AD's reports retain data for a certain number of days, indicated here.
 
 Report                                                  | Description

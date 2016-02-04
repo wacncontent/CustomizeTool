@@ -1,6 +1,6 @@
 
 <properties
-   pageTitle="Get started configuring your Internet-facing load balancer | Microsoft Azure"
+   pageTitle="Get started configuring your Internet-facing load balancer | Windows Azure"
    description="Set up your first Internet-facing load balancer for your virtual machines or cloud services. "
    services="load-balancer"
    documentationCenter="na"
@@ -8,21 +8,17 @@
    manager="adinah"
    editor="tysonn" />
 <tags
-   ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="hero-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/12/2015"
-   ms.author="joaoma" />
+	ms.service="load-balancer"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 # Get started configuring your Internet-facing load balancer
 
 > [AZURE.SELECTOR]
-- [Azure classic steps](load-balancer-internet-getstarted.md)
-- [Resource Manager Powershell steps](load-balancer-arm-powershell.md)
+- [Azure classic steps](/documentation/articles/load-balancer-internet-getstarted)
+- [Resource Manager Powershell steps](/documentation/articles/load-balancer-arm-powershell)
 
-Load balancing services in Microsoft Azure work with all the tenant types (IaaS or PaaS) and all supported operating systems (Windows or any supported Linux-based operating system).
+Load balancing services in Windows Azure work with all the tenant types (IaaS or PaaS) and all supported operating systems (Windows or any supported Linux-based operating system).
 
 
 ## Set up an Internet-facing load balancer for virtual machines
@@ -31,7 +27,7 @@ In order to load balance network traffic from the Internet across the virtual ma
 
 **To configure a load-balanced set for virtual machines**
 
-1. In the Azure portal, click **Virtual Machines**, and then click the name of a virtual machine in the load-balanced set.
+1. In the Azure Management Portal, click **Virtual Machines**, and then click the name of a virtual machine in the load-balanced set.
 2.	Click **Endpoints**, and then click **Add**.
 
 4.	On the **Add an endpoint to a virtual machine** page, click the right arrow.
@@ -59,15 +55,15 @@ You can also configure endpoints with the following Windows PowerShell cmdlets:
 
 - Add-AzureEndpoint
 
-[Add-AzureEndpoint](https://msdn.microsoft.com/library/windowsazure/dn495300)
+[Add-AzureEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn495300)
 
 - Get-AzureEndpoint
 
-[Get-AzureEndpoint](https://msdn.microsoft.com/library/windowsazure/dn495158)
+[Get-AzureEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn495158)
 
 - Remove-AzureEndpoint
 
-[Remove-AzureEndpoint](https://msdn.microsoft.com/library/windowsazure/dn495161)
+[Remove-AzureEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn495161)
 
 
 ## Set up an Internet-facing load balancer for cloud services
@@ -75,7 +71,7 @@ You can also configure endpoints with the following Windows PowerShell cmdlets:
 
 Cloud services are automatically configured with a load balancer and can be customized via the service model.
 
-You can leverage the Azure SDK for .NET 2.5 to update your cloud service. Endpoint settings for cloud services are made in the [service definition](https://msdn.microsoft.com/library/azure/gg557553.aspx).csdef file.
+You can leverage the Azure SDK for .NET 2.5 to update your cloud service. Endpoint settings for cloud services are made in the [service definition](https://msdn.microsoft.com/zh-cn/library/azure/gg557553.aspx).csdef file.
 
 The following example shows how a servicedefinition.csdef file for a cloud deployment is configured:
 
@@ -120,21 +116,21 @@ The service has to respond with a HTTP 200 status code for the load balancer to 
 
 The probe definition also controls the frequency of the probe. In our case above, the load balancer is probing the endpoint every 5 secs. If no positive answer is received for 10 secs (two probe intervals), the probe is assumed down, and the virtual machine is taken out of rotation. Similarly, if the service is out of rotation and a positive answer is received, the service is put back to rotation right away. If the service is fluctuating between healthy and unhealthy, the load balancer can decide to delay the re-introduction of the service back to rotation until it has been healthy for a number of probes.
 
-Check the service definition schema for the [health probe](https://msdn.microsoft.com/library/azure/jj151530.aspx) for more information.
+Check the service definition schema for the [health probe](https://msdn.microsoft.com/zh-cn/library/azure/jj151530.aspx) for more information.
 
 ## Set up load balancer using PowerShell
 
 After creating a virtual machine, you can use PowerShell cmdlets to add a load balancer to a virtual machine within the same cloud service.
 
-In the example below, you will add a load balancer called "webfarm" to cloud service endpoint "mycloudservice" (or mycloudservice.cloudapp.net) and a virtual machine named myVM. The load balancer receives traffic on port 80 and load balances the network traffic between the virtual machines on port 8080 using HTTP.
+In the example below, you will add a load balancer called "webfarm" to cloud service endpoint "mycloudservice" (or mycloudservice.chinacloudapp.cn) and a virtual machine named myVM. The load balancer receives traffic on port 80 and load balances the network traffic between the virtual machines on port 8080 using HTTP.
 
 	Get-AzureVM -ServiceName "mycloudservice" -Name "MyVM" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 -LBSetName "WebFarm" -ProbePort 80 -ProbeProtocol "http" -ProbePath '/' | Update-AzureVM
 
 
 ## Next steps
 
-[Get started configuring an internal load balancer](load-balancer-internal-getstarted.md)
+[Get started configuring an internal load balancer](/documentation/articles/load-balancer-internal-getstarted)
 
-[Configure a load balancer distribution mode](load-balancer-distribution-mode.md)
+[Configure a load balancer distribution mode](/documentation/articles/load-balancer-distribution-mode)
 
-[Configure idle TCP timeout settings for your load balancer](load-balancer-tcp-idle-timeout.md)
+[Configure idle TCP timeout settings for your load balancer](/documentation/articles/load-balancer-tcp-idle-timeout)

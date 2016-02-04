@@ -51,7 +51,7 @@ In both cases, you can retrieve your connection string using the [CloudConfigura
 
 ### Configure your connection string when using Cloud Services
 
-The service configuration mechanism is unique to Azure Cloud Services projects and enables you to dynamically change configuration settings from the Azure Management Portal without redeploying your application. For example, add a `Setting` label to your service definition (.csdef) file, as shown in the next example.
+The service configuration mechanism is unique to Azure Cloud Services projects and enables you to dynamically change configuration settings from the [Azure Management Portal][] without redeploying your application. For example, add a `Setting` label to your service definition (.csdef) file, as shown in the next example.
 
 ```
 <ServiceDefinition name="Azure1">
@@ -253,10 +253,10 @@ Now that you've learned the basics of Service Bus queues, follow these links to 
 
   [Azure Management Portal]: http://manage.windowsazure.cn
   [7]: ./media/service-bus-dotnet-how-to-use-queues/getting-started-multi-tier-13.png
-  [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
-  [Service Bus brokered messaging .NET tutorial]: /documentation/articles/service-bus-brokered-tutorial-dotnet
+  [Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
+  [Service Bus brokered messaging .NET tutorial]: service-bus-brokered-tutorial-dotnet.md
   [Azure samples]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
-  [overview of Service Bus samples]: /documentation/articles/service-bus-samples
+  [overview of Service Bus samples]: service-bus-samples.md
   [GetSetting]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudconfigurationmanager.getsetting.aspx
   [CloudConfigurationManager]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudconfigurationmanager
   [NamespaceManager]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx

@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-	ms.service="active-directory"
-	ms.date="07/15/2015"
-	wacn.date=""/>
+   ms.service="active-directory"
+   ms.date="10/20/2015"
+   wacn.date=""/>
 
 #Tutorial: How to integrate Salesforce with Azure Active Directory
 
@@ -26,7 +26,7 @@ This tutorial will show you how to connect your Salesforce environment to your A
 > 
 > You can get around this limitation by using a [free developer account](https://developer.salesforce.com/signup) to complete this tutorial.
 
-If you are using a Salesforce Sandbox environment, please see the [Salesforce Sandbox integration tutorial](/documentation/articles/active-directory-saas-salesforce-sandbox-tutorial/).
+If you are using a Salesforce Sandbox environment, please see the [Salesforce Sandbox integration tutorial](https://msdn.microsoft.com/zh-cn/library/azure/dn798671.aspx?f=255&MSPPError=-2147217396).
 
 
 ##Step 1: Add Salesforce to your directory
@@ -137,7 +137,7 @@ If you are using a Salesforce Sandbox environment, please see the [Salesforce Sa
 
 	![Select your SSO configuration][17]
 
-	> [AZURE.NOTE] If more than one authentication service is selected, then when users attempt to initiate single sign-on to your Salesforce environment, they will be prompted to select which authentication service they would like to sign in with. If you don’t want this to happen, then you should **leave all other authentication services unchecked**.
+	> [AZURE.NOTE] If more than one authentication service is selected, then when users attempt to initiate single sign-on to your Salesforce environment, they will be prompted to select which authentication service they would like to sign in with. If you donât want this to happen, then you should **leave all other authentication services unchecked**.
 
 15. In Azure AD, select the single sign-on configuration confirmation checkbox to enable the certificate that you uploaded to Salesforce. Then click **Next**.
 

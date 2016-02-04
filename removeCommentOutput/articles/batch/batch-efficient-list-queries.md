@@ -78,9 +78,9 @@ The [Batch .NET][api_net] and [Batch REST][api_rest] APIs provide the ability to
 
 Within the [Batch .NET][api_net] API, the [ODATADetailLevel][odata] is used for supplying filter, select, and expand strings to list operations. An ODataDetailLevel object has three public string properties that may be specified in the constructor or set directly, and this object is then passed as a parameter to the various list operations such as [ListPools][net_list_pools], [ListJobs][net_list_jobs], and [ListTasks][net_list_tasks].
 
-- [ODATADetailLevel.FilterClause][odata_filter] – Limit the number of items returned
-- [ODATADetailLevel.SelectClause][odata_select] – Specify a subset of property values returned with each item
-- [ODATADetailLevel.ExpandClause][odata_expand] – Retrieve item data in a single API call as opposed to issuing calls for each
+- [ODATADetailLevel.FilterClause][odata_filter] - Limit the number of items returned
+- [ODATADetailLevel.SelectClause][odata_select] - Specify a subset of property values returned with each item
+- [ODATADetailLevel.ExpandClause][odata_expand] - Retrieve item data in a single API call as opposed to issuing calls for each
 
 The follwing code snippet uses the Batch .NET API to efficiently query the Batch service for the statistics of a specific set of pools. In this scenario, the Batch user has both test and production pools, with their test pool IDs prefixed with "test" and production pool IDs prefixed with "prod". In the snippet, *myBatchClient* is a properly initialized instance of [BatchClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.batchclient).
 

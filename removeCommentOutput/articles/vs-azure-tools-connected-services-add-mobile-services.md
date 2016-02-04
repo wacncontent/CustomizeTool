@@ -3,12 +3,12 @@
    description="Add Mobile Services by using the Visual Studio Add Connected Services dialog box"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="patshea123"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
 	ms.service="visual-studio-online"
-	ms.date="08/12/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Adding Mobile Services by using Visual Studio Connected Services
@@ -72,7 +72,7 @@ You can use the Connected Services dialog to connect to Azure Mobile Services in
 
 ## How your project is modified
 
-How Visual Studio modifies your project depends on the project type. For C# client apps, see [What happend – C# projects](https://azure.microsoft.com/zh-cn/documentation/articles/vs-mobile-services-dotnet-getting-started/). For JavaScript client apps, see [What happened – JavaScript projects](/documentation/articles/vs-mobile-services-javascript-getting-started/). For Cordova apps, see [What happend – Cordova projects](https://azure.microsoft.com/zh-cn/documentation/articles/vs-mobile-services-cordova-getting-started/).
+How Visual Studio modifies your project depends on the project type. For C# client apps, see [What happend - C# projects](https://azure.microsoft.com/zh-cn/documentation/articles/vs-mobile-services-dotnet-getting-started/). For JavaScript client apps, see [What happened - JavaScript projects](/documentation/articles/vs-mobile-services-javascript-getting-started/). For Cordova apps, see [What happend - Cordova projects](https://azure.microsoft.com/zh-cn/documentation/articles/vs-mobile-services-cordova-getting-started/).
 
 
 ##Next steps

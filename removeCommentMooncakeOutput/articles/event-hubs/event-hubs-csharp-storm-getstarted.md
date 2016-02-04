@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get Started with Event Hubs"
+	pageTitle="Get Started with Event Hubs in C# with Apache Storm | Windows Azure"
 	description="Follow this tutorial to get started using Azure Event Hubs; sending events in C# and receiving them in an Apache Storm cluster."
 	services="event-hubs"
 	documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="09/01/2015"
+	ms.date="11/05/2015"
 	wacn.date=""/>
 
 # Get started with Event Hubs
@@ -30,13 +30,13 @@ In order to complete this tutorial you will need the following:
 
 + A Java development environment configured to run [Maven](http://maven.apache.org/). For this tutorial, we will assume [Eclipse](https://www.eclipse.org/)
 
-+ An active Azure account. <br/>If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Azure Trial</a>.
++ An active Azure account. <br/>If you don't have an account, you can create a trial account in just a couple of minutes. For details, see <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/" target="_blank">Azure Trial</a>.
 
 ## Create an Event Hub
 
-1. Log on to the [Azure Management Portal], and click **NEW** at the bottom of the screen.
+1. Log on to the [Azure management portal], and click **NEW** at the bottom of the screen.
 
-2. Click on **App Services**, then **Service Bus**, then **Event Hub**, then **Quick Create**.
+2. Click on **Azure Websitess**, then **Service Bus**, then **Event Hub**, then **Quick Create**.
 
 	![][1]
 
@@ -85,9 +85,9 @@ Now you are ready to run the applications.
 
 Now that you've built a working application that creates an Event Hub and sends and receives data, you can move on to the following scenarios:
 
-- A complete [sample application that uses Event Hubs].
-- The [Scale out Event Processing with Event Hubs] sample.
-- A [queued messaging solution] using Service Bus queues.
+- A complete [sample application that uses Event Hubs][].
+- The [Scale out Event Processing with Event Hubs][] sample.
+- A [queued messaging solution][] using Service Bus queues.
 
 <!-- Images. -->
 [1]: ./media/event-hubs-csharp-storm-getstarted/create-event-hub1.png

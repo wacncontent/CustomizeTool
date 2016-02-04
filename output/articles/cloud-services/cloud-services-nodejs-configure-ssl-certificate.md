@@ -59,7 +59,7 @@ world' service using the Azure PowerShell using these steps:
 
     ![][3]
 
-	> [AZURE.NOTE] If you have not previously imported publish settings for your Azure subscription, you will receive an error when trying to publish. For information on downloading and importing the publish settings for your subscription, see [How to Use the Azure PowerShell for Node.js](/documentation/articles/install-configure-powershell/#ImportPubSettings)
+	> [AZURE.NOTE] If you have not previously imported publish settings for your Azure subscription, you will receive an error when trying to publish. For information on downloading and importing the publish settings for your subscription, see [How to Use the Azure PowerShell for Node.js](/documentation/articles/powershell-install-configure/#ImportPubSettings)
 
 The **Created Website URL** value returned by the **Publish-AzureServiceProject** cmdlet contains the fully qualified domain name for your hosted application. You will need to obtain an SSL certificate for this specific fully qualified domain name and deploy it to Azure.
 

@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-	ms.service="active-directory"
-	ms.date="09/21/2015"
-	wacn.date=""/>
+   ms.service="active-directory"
+    ms.date="12/01/2015"
+   wacn.date=""/>
 
 # What is Windows Azure Active Directory licensing?
 
@@ -18,11 +18,10 @@
 Azure Active Directory (AD) is Microsoft's Identity as a Service (IDaaS) solution and platform. Azure AD is offered in a number of functional and technical versions ranging from Azure AD Free, which is available with any Microsoft service such as Office 365, Dynamics, Microsoft Intune and Azure (Azure AD does not generate any consumption charges in this mode), to Azure AD paid versions such as Enterprise Mobility Suite (EMS), Azure AD Premium and Basic, as well as Azure Multi-Factor Authentication (MFA). Like many of Microsoft online services, most Azure AD paid versions are delivered through per-user entitlements as they are in Office 365, Microsoft Intune, and Azure AD. In these cases, the service purchase is represented with one or more subscriptions, and each subscription includes a pre-purchase number of licenses in your tenant. Per-user entitlements are achieved through license assignment, creating a link between the user and the product, enabling the service components for the user, and consuming one of the prepaid licenses.
 
 [Try Azure AD premium now.](https://portal.office.com/Signup/Signup.aspx?OfferId=01824d11-5ad8-447f-8523-666b0848b381&ali=1#0)
-
 > [AZURE.NOTE] Azure AD administration portal is a part of the Azure Management Portal. While using Azure AD does not require any Azure purchases, accessing this portal requires an active Azure subscription or an [Azure trial subscription](/pricing/1rmb-trial/).
 
 For a broad overview of Azure AD service capabilities, see [What is Azure AD](/documentation/articles/active-directory-whatis).
-[Learn more about Azure AD service levels](/support/legal/sla/)
+[Learn more about Azure AD service levels](http://www.windowsazure.cn/support/legal/sla/)
 
 > [AZURE.NOTE]  Azure pay as you go subscriptions are different: while also represented in your directory, these subscriptions enable creation of Azure resources and map them to your payment method. In this case there are NO license counts associated with the subscription. Users' association with the subscription, the users' access to managing subscription resources, is achieved by granting them permissions to operate on Azure resources mapped to the subscription.
 
@@ -33,7 +32,7 @@ License-based (Entitlement-based) Azure AD services work by activating a subscri
 
 When you purchase or activate Enterprise Mobility Suite, Azure AD Premium, or Azure AD Basic, your directory is updated with the subscription, including its validity period and prepaid licenses. Your subscription information, including status, next lifecycle event, and the number of assigned or available licenses is available through the Azure AD Management Portal under the Licenses tab for the specific directory. This is also to best place to manage your license assignments.
 
-Each subscription consists of one or more service plans, each mapping the included functional level of the service type; for example, Azure AD, Azure MFA, Microsoft Intune, Exchange Online, or SharePoint Online. Azure AD license management does NOT require service plan level management. This is different from Office 365 which relies on this advanced configuration mode to manage access to included services. Azure AD relies on in service configuration, to enable features and manage individual permissions.
+Each subscription consists of one or more service plans, each representing the included functional level of the service type; for example, Azure AD, Azure MFA, Microsoft Intune, Exchange Online, or SharePoint Online. Azure AD license management does NOT require service plan level management. This is different from Office 365 which relies on this advanced configuration mode to manage access to included services. Azure AD relies on in service configuration, to enable features and manage individual permissions.
 
 In general, Azure AD subscription information is managed through the Azure Management Portal, under the Licenses tab for the specific directory. Azure AD subscriptions, with the exception of Azure AD Premium, do NOT show up in the Office portal.
 
@@ -62,7 +61,7 @@ Here are a couple of best practices:
 - If you are already using any of Microsoft's organizational services, you already have an Azure AD directory. In this case, you should continue to use the same directory for other services, so that core identity management, including provisioning and hybrid SSO, can be utilized across the services. Your users will have a single logon experience and will benefit from richer capabilities across the services. As a result, if you decide to buy an Azure AD paid service for your workforce, we recommend that you use the same directory to do this.
 - If you are planning to use Azure AD for a different set of users (partners, customers, and so on), or if you would like to evaluate Azure AD services and would like to do that in isolation of your production service, or if you are looking to setup a sandbox environment for your services, we recommend that you first create a new directory through the Azure Management Portal. [Learn more about creating a new Azure AD directory in the Azure Management Portal](/documentation/articles/active-directory-licensing-directory-independence). The new directory will be created with your account as an external user with global administrator permissions. When you sign in to the Azure Management Portal with this account, you will be able to see this directory and access all directory administration tasks. We recommend that you create a local account with appropriate privileges to manage other Microsoft services (those not accessible through the Azure Management Portal). [Learn more about creating user accounts in Azure AD](/documentation/articles/active-directory-create-users).
 
-> [AZURE.NOTE] Azure AD supports “external users,” which are user accounts in an instance of Azure AD that were created using either a Microsoft Account (MSA) or an Azure AD identity from another directory. While we are busy extending this capability into all of Microsoft's organizational services, right now these accounts are not supported in some of the services' experiences; for example, the Office 365 administration portal does not currently support these users. As a result, external users with Microsoft accounts will not be able to access the Office 365 administration portal at all, while external users from other Azure AD directories will be ignored. In the latter case, only the user’s local account, the Azure AD or Office 365 directory where the user was originally created, would be accessible through these experiences.
+> [AZURE.NOTE] Azure AD supports “external users,” which are user accounts in an instance of Azure AD that were created using either a Microsoft Account (MSA) or an Azure AD identity from another directory. While we are busy extending this capability into all of Microsoft's organizational services, right now these accounts are not supported in some of the services' experiences; for example, the Office 365 administration portal does not currently support these users. As a result, external users with Microsoft accounts will not be able to access the Office 365 administration portal at all, while external users from other Azure AD directories will be ignored. In the latter case, only the user's local account, the Azure AD or Office 365 directory where the user was originally created, would be accessible through these experiences.
 
 As indicated, Azure AD has different paid versions. These versions have some minor differences in their purchase availability:
 
@@ -99,7 +98,7 @@ You can now search or page through groups and add them to the **Assign** column 
 
 When a group is assigned, its members inherit the licenses within 30 minutes, but usually within 1-2 minutes.
 
-Assignment errors can occur during Azure AD portal license assignment, but are relatively rare. Potential assignment errors are limited to:
+Assignment errors can occur during Azure AD license assignment, but are relatively rare. Potential assignment errors are limited to:
 - Assignment conflict - when a user was previously assigned a license that is incompatible with the current license. In this case, assigning the new license will require removing the previous one.
 - Exceeded available licenses - when the number of users in assigned groups exceed available licenses, the users' assignment status will reflect a failure to assign due to missing licenses.
 
@@ -113,7 +112,7 @@ A detailed list of assigned users and groups, including assignment status and pa
 
 ![Detail display of licenses assigned for a license plan](./media/active-directory-licensing-what-is/assigned_licenses_detail.png)
 
-Removing licenses is just as easy as assigning them. If the user is directly assigned or for an assigned group, you can remove the license by selecting the license type, selecting **Remove**, adding the user or group to the remove list, and confirming the action. Alternatively, you can open a license type, select the specific user or group, and tap **Remove** on the command bar. To end a user’s inheritance of a license from a group, simply remove the user from the group.
+Removing licenses is just as easy as assigning them. If the user is directly assigned or for an assigned group, you can remove the license by selecting the license type, selecting **Remove**, adding the user or group to the remove list, and confirming the action. Alternatively, you can open a license type, select the specific user or group, and tap **Remove** on the command bar. To end a user's inheritance of a license from a group, simply remove the user from the group.
 
 ###Extending trials
 
@@ -121,7 +120,7 @@ Trial extensions for customers are available as self-service through the Office 
 
 ![Extending a license trial in the Office portal](./media/active-directory-licensing-what-is/extend_license_trial.png)
 
-Customers can also request a trial extension by submitting a support request. A customer admin can navigate to the Office portal [support page](http://aka.ms/extendAADtrial) (access depends on permissions for the Office support page). On this page select “Subscriptions and Trials” under Features and “Trial questions” under Symptom. Finally, enter information on the circumstances
+Customers can also request a trial extension by submitting a support request. A customer admin can navigate to the Office 365 portal [support page](http://aka.ms/extendAADtrial) (access depends on permissions for the Office support page). On this page select “Subscriptions and Trials” under Features and “Trial questions” under Symptom. Finally, enter information on the circumstances
 
 ![Extending a license trial using a support request](./media/active-directory-licensing-what-is/alternate_office_aad_trial_extension.png)
 

@@ -9,12 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+	ms.date="11/19/2015" 
+	wacn.date=""/>
 
 # Securing cloud resources with Azure Multi-Factor Authentication and AD FS
 
@@ -24,7 +20,7 @@ If your organization is federated with Azure Active Directory and you have resou
 
 
 
-1. Use the steps outlined in [turn-on multi-factor authentication](active-directory/multi-factor-authentication-get-started-cloud.md#turn-on-multi-factor-authentication-for-users) for users to enable an account.
+1. Use the steps outlined in [turn-on multi-factor authentication](/documentation/articles/multi-factor-authentication-get-started-cloud#turn-on-multi-factor-authentication-for-users) for users to enable an account.
 2. Use the following procedure to setup a claims rule:
 
 ![Cloud](./media/multi-factor-authentication-get-started-adfs-cloud/adfs1.png)
@@ -96,7 +92,7 @@ Now that the claims are in place, we cane configure trusted ips.
 8. Once the updates have been applied, click close.
 
 
-That’s it! At this point, federated Office 365 users should only have to use MFA when a claim originates from outside the corporate intranet.
+That's it! At this point, federated Office 365 users should only have to use MFA when a claim originates from outside the corporate intranet.
 
 
 

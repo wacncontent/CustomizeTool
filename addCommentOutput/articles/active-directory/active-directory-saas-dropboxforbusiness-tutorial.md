@@ -1,10 +1,20 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Dropbox for Business | Windows Azure" description="Learn how to use Dropbox for Business with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties 
+    pageTitle="Tutorial: Azure Active Directory integration with Dropbox for Business | Windows Azure" 
+    description="Learn how to use Dropbox for Business with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
+    services="active-directory" 
+    authors="MarkusVi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="08/01/2015"
+	ms.date="10/22/2015"
 	wacn.date=""/>
+
 #Tutorial: Azure Active Directory integration with Dropbox for Business
->[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/f9eae0a4-e776-4b28-a36b-4083f8a8dbb7/tutorial-azure-ad-integration-with-dropbox-for-business?forum=WindowsAzureAD).
+<!-- keep by customization: begin -->
+>[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=522415).
+<!-- keep by customization: end -->
+<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and Dropbox for Business.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -12,7 +22,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A test tenant in Dropbox for Business
   
-After completing this tutorial, the Azure AD users you have assigned to Dropbox for Business will be able to single sign into the application at your Dropbox for Business company site (service provider initiated sign on), or using the [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction)
+After completing this tutorial, the Azure AD users you have assigned to Dropbox for Business will be able to single sign into the application at your Dropbox for Business company site (service provider initiated sign on), or using the [Introduction to the Access <!-- deleted by customization Panel](/documentation/articles/active-directory-saas-access-panel-introduction) --><!-- keep by customization: begin --> Panel](/documentation/articles/active-directory-saas-access-panel-introduction)<!-- <!-- keep by customization: end --><!-- keep by customization: begin --> deleted by customization <!-- keep by customization: end -->. <!-- keep by customization: begin --> --><!-- keep by customization: end -->
   
 The scenario outlined in this tutorial consists of the following building blocks:
 

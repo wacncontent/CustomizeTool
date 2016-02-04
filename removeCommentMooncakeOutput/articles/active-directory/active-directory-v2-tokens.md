@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/12/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # App model v2.0 preview: Token reference
@@ -57,7 +57,7 @@ V-DIguXSzLVKnnflfSLyvhinsjLKCnu9L3oXHxw
 | Name | Claim | Example Value | Description |
 | ----------------------- | ------------------------------- | ------------ | --------------------------------- |
 | Audience | `aud` | `49210253-0ba1-4a9a-a424-616999fab620` | Identifies the intended recipient of the token.  In id_tokens, the audience is your app's Application Id, as assigned to your app in the app registration portal.  Your app should validate this value and reject the token if it does not match. |
-| Issuer | `iss` | `https://login.microsoftonline.com/b9410318-09af-49c2-b0c3-653adc1f376e/v2.0/` | Identifies the security token service (STS) that constructs and returns the token, as well as the Azure AD tenant in which the user was authenticated.  Your app should validate the issuer claim to ensure that the token came from the v2.0 endpoint.  It can also use the guid portion of the claim to restrict the set of tenants that are allowed to sign into the app. |
+| Issuer | `iss` | `https://login.chinacloudapi.cn/b9410318-09af-49c2-b0c3-653adc1f376e/v2.0/` | Identifies the security token service (STS) that constructs and returns the token, as well as the Azure AD tenant in which the user was authenticated.  Your app should validate the issuer claim to ensure that the token came from the v2.0 endpoint.  It can also use the guid portion of the claim to restrict the set of tenants that are allowed to sign into the app. |
 | Issued At | `iat` | `1438535543` | The time at which the token was issued, represented in epoch time. |
 | Expiration Time | `exp` | `1438539443` | The time at which the token becomes invalid, represented in epoch time.  Your app should use this claim to verify the validity of the token lifetime.  |
 | Version | `ver` | `2.0` | The version of the id_token, as defined by Azure AD.  For app model v2.0, The value will be `2.0`. |
@@ -124,11 +124,11 @@ At any given point in time, the v2.0 endpoint may sign an id_token using any one
 
 You can acquire the signing key data necessary to validate the signature by using the OpenID Connect metadata document located at:
 
-`https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration`
+`https://login.chinacloudapi.cn/common/v2.0/.well-known/openid-configuration`
 
 This metadata document is a JSON object containing several useful pieces of information, such as the location of the various endpoints required for performing OpenID Connect authentication.  It also includes a `jwks_uri`, which gives the location of the set of public keys used to sign tokens.  That location is provided below, but it is best to fetch that location dynamically by using the metadata document and parsing out the `jwks_uri`:
 
-`https://login.microsoftonline.com/common/discovery/v2.0/keys`
+`https://login.chinacloudapi.cn/common/discovery/v2.0/keys`
 
 The JSON document located at this url contains all of the public key information in use at that particular moment in time.  Your app can use the `kid` or `x5t` claims in the JWT header to select which public key in this document has been used to sign a particular token.  It can then perform signature validation using the correct public key and the indicated algorithm.
 
@@ -151,8 +151,8 @@ The following token lifetimes are provided purely for your understanding, as the
 
 | Token | Lifetime | Description |
 | ----------------------- | ------------------------------- | ------------ |
-| Id_Tokens (work or school accounts) | 1 hour | Id_Tokens are typically valid for an hour.  Your web app can use this same lifetime in maintaining its own session with the user (recommended), or choose a completely different session lifetime.  If your app needs to get a new id_token, it simply needs to make a new sign-in request to the v2.0 authorize endpoint.  If the user has a valid browser session with the v2.0 endpoint, they may not be required to enter their credentials again. |
-| Id_Tokens (personal accounts) | 24 hours | Id_Tokens for personal accounts are typically valid for 24 hours.  Your web app can use this same lifetime in maintaining its own session with the user (recommended), or choose a completely different session lifetime.  If your app needs to get a new id_token, it simply needs to make a new sign-in request to the v2.0 authorize endpoint.  If the user has a valid browser session with the v2.0 endpoint, they may not be required to enter their credentials again. |
+| Id_Tokens (work or school accounts) | 1 hour | Id_Tokens are typically valid for an hour.  Your web site can use this same lifetime in maintaining its own session with the user (recommended), or choose a completely different session lifetime.  If your app needs to get a new id_token, it simply needs to make a new sign-in request to the v2.0 authorize endpoint.  If the user has a valid browser session with the v2.0 endpoint, they may not be required to enter their credentials again. |
+| Id_Tokens (personal accounts) | 24 hours | Id_Tokens for personal accounts are typically valid for 24 hours.  Your web site can use this same lifetime in maintaining its own session with the user (recommended), or choose a completely different session lifetime.  If your app needs to get a new id_token, it simply needs to make a new sign-in request to the v2.0 authorize endpoint.  If the user has a valid browser session with the v2.0 endpoint, they may not be required to enter their credentials again. |
 | Access Tokens (work or school accounts) | 1 hour | Indicated in token responses as part of the token metadata. |
 | Access Tokens (personal accounts) | 1 hour | Indicated in token responses as part of the token metadata.  Access_tokens issued on behalf of personal accounts may be configured for a different lifetime, but one hour is typically the case. |
 | Refresh Tokens (work or school account) | Up to 14 days | A single refresh token is valid for a maximum of 14 days.  However, the refresh token may become invalid at any time for any number of reasons, so your app should continue to try and use a refresh token until it fails, or until your app replaces it with a new refresh token.  A refresh token will also become invalid if it has been 90 days since the user has entered their credentials. |

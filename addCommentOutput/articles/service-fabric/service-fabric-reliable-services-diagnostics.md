@@ -8,28 +8,29 @@
    editor=""/>
 
 <tags
-   ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/03/2015"
-   ms.author="alanwar"/>
+	ms.service="Service-Fabric"
+	ms.date="09/03/2015"
+	wacn.date=""/>
 
 # Diagnostic Functionality for Stateful Reliable Services
-The Stateful Reliable Services StatefulServiceBase class emits [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx) events 
+The Stateful Reliable Services StatefulServiceBase class emits [EventSource](https://msdn.microsoft.com/zh-cn/library/system.diagnostics.tracing.eventsource.aspx) events 
 that can be used for debugging the service, provide insights into how the runtime is operating and help with troubleshooting. 
 
 ## EventSource events
 The EventSource name for Stateful Reliable Service StatefulServiceBase class is "Microsoft-ServiceFabric-Services". Events from this event source appear in the 
-[Diagnostics Events](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) window when the service 
-is being [debugged in Visual Studio](service-fabric-debugging-your-application.md).
+[Diagnostics Events](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally#view-service-fabric-system-events-in-visual-studio) window when the service 
+is being [debugged in Visual Studio](/documentation/articles/service-fabric-debugging-your-application).
 
-Service Fabric also offers the option of directing these events to [Application Insights](http://azure.microsoft.com/services/application-insights/). For more information on this, please see 
-the article on [Application Insights setup for Service Fabric](service-fabric-diagnostics-application-insights-setup.md).
+<!-- deleted by customization
+Examples of tools and technologies that help in collecting and/or viewing EventSource events are [PerfView](http://www.microsoft.com/download/details.aspx?id=28567),
+-->
+<!-- keep by customization: begin -->
+Service Fabric also offers the option of directing these events to [Application Insights](/home/features/application-insights/). For more information on this, please see 
+the article on [Application Insights setup for Service Fabric](/documentation/articles/service-fabric-diagnostics-application-insights-setup).
 
-Other examples of tools and technologies that help in collecting and/or viewing EventSource events are [PerfView](http://www.microsoft.com/download/details.aspx?id=28567), 
-[Microsoft Azure Diagnostics](../cloud-services-dotnet-diagnostics.md) and the 
+Other examples of tools and technologies that help in collecting and/or viewing EventSource events are [PerfView](http://www.microsoft.com/download/details.aspx?id=28567),
+<!-- keep by customization: end -->
+[Windows Azure Diagnostics](/documentation/articles/cloud-services-dotnet-diagnostics) and the 
 [Microsoft TraceEvent Library](http://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
 
 ## Events
@@ -55,4 +56,4 @@ the service RunAsync() task throws an exception. Typically an exception thrown i
 different node which can be an expensive operation and delay incoming requests while the service is moved. Service writers should determine the cause of the exception and if possible mitigate it. 
 
 StatefulRunAsyncSlowCancellation is emitted whenever a cancellation request for the RunAsync task takes longer than 4 seconds. When a service takes too long to complete cancellation, it impacts
-the ability for the service to be quickly restarted on another node and may impact overall availability of the service. 
+the ability for the service to be quickly restarted on another node and may impact overall availability of the service. 

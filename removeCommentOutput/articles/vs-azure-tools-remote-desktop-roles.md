@@ -1,14 +1,14 @@
 <properties 
-   pageTitle="Using Remote Desktop with Azure Roles"
+   pageTitle="Using Remote Desktop with Azure Roles | Windows Azure"
    description="Using Remote Desktop with Azure Roles"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="08/24/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 # Using Remote Desktop with Azure Roles
@@ -33,7 +33,7 @@ By using the Azure SDK and Remote Desktop Services, you can access Azure roles a
  
     This displays a dropdown list box that lets you create or choose a certificate so that you can encrypt credentials information when connecting via remote desktop.
 
-1. In the dropdown list, choose **<Create>**, or choose an existing one from the list. 
+1. In the dropdown list, choose **&lt;Create>**, or choose an existing one from the list. 
 
     If you choose an existing certificate, skip the following steps.
 
@@ -45,9 +45,9 @@ By using the Azure SDK and Remote Desktop Services, you can access Azure roles a
 
     1. In the **Remote Desktop Configuration** dialog box, provide a user name and a password.
     
-        You can’t use an existing account. Don’t specify Administrator as the user name for the new account.
+        You can't use an existing account. Don't specify Administrator as the user name for the new account.
 
-        >[AZURE.NOTE] If the password doesn’t meet the complexity requirements, a red icon appears next to the password text box. The password must include capital letters, lowercase letters, and numbers or symbols.
+        >[AZURE.NOTE] If the password doesn't meet the complexity requirements, a red icon appears next to the password text box. The password must include capital letters, lowercase letters, and numbers or symbols.
 
     1. Choose a date on which the account will expire and after which remote desktop connections will be blocked.
 
@@ -55,7 +55,7 @@ By using the Azure SDK and Remote Desktop Services, you can access Azure roles a
     
         Several settings that enable Remote Access Services are added to the .cscfg and .csdef files.
 
-1. In the **Windows Azure Publish Settings** wizard, choose the **OK** button when you’re ready to publish your cloud service.
+1. In the **Windows Azure Publish Settings** wizard, choose the **OK** button when you're ready to publish your cloud service.
 
     If you're not ready to publish, choose the **Cancel** button. The configuration settings are saved, and you can publish your cloud service later.
 

@@ -12,25 +12,13 @@ Skip steps 1-3 if you created a console app when you completed [Get started with
 
 2. In the Visual Studio main menu, click **Tools**, **Library Package Manager**, and **Package Manager Console**, then in the console window type the following and press **Enter**:
 
-<!-- deleted by customization
         Install-Package Microsoft.Azure.NotificationHubs
  	
 	This adds a reference to the Azure Notification Hubs SDK using the <a href="http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/">Microsoft.Azure.Notification Hubs NuGet package</a>. 
--->
-<!-- keep by customization: begin -->
-        Install-Package WindowsAzure.ServiceBus
- 	
-	This adds a reference to the Azure Service Bus SDK by using the <a href="http://nuget.org/packages/WindowsAzure.ServiceBus/">WindowsAzure.ServiceBus NuGet package</a>. 
-<!-- keep by customization: end -->
 
 3. Open the file Program.cs and add the following `using` statement:
 
-<!-- deleted by customization
         using Microsoft.Azure.NotificationHubs;
--->
-<!-- keep by customization: begin -->
-        using Microsoft.ServiceBus.Notifications;
-<!-- keep by customization: end -->
 
 4. In the `Program` class, add the following method, or replace it if it already exists:
 
@@ -83,14 +71,7 @@ Skip steps 1-3 if you created a console app when you completed [Get started with
 
 	This code sends notifications for each of the six tags in the string array to Windows Store, Windows Phone and iOS devices. The use of tags makes sure that devices receive notifications only for the registered categories.
 	
-<!-- deleted by customization
-	> [AZURE.NOTE] This<!-- keep by customization: begin --> <p>This <!-- keep by customization: end --> backend code supports Windows Store, Windows Phone, iOS, and Android clients. Send methods return an error response when the notification hub hasn't yet been configured for a particular client platform. <!-- keep by customization: begin --> </p> <!-- keep by customization: end -->
--->
-<!-- keep by customization: begin -->
-	<div class="dev-callout"><strong>Note</strong> 
-	<!-- keep by customization: begin --> <p>This <!-- keep by customization: end --> backend code supports Windows Store, Windows Phone, iOS, and Android clients. Send methods return an error response when the notification hub hasn't yet been configured for a particular client platform. <!-- keep by customization: begin --> </p> <!-- keep by customization: end -->
-	</div>
-<!-- keep by customization: end -->
+	> [AZURE.NOTE] This backend code supports Windows Store, Windows Phone, iOS, and Android clients. Send methods return an error response when the notification hub hasn't yet been configured for a particular client platform. 
 
 6. In the above code, replace the `<hub name>` and `<connection string with full access>` placeholders with your notification hub name and the connection string for *DefaultFullSharedAccessSignature* that you obtained earlier.
 
@@ -111,10 +92,18 @@ Skip steps 1-3 if you created a console app when you completed [Get started with
 [16]: ./media/notification-hubs-back-end/notification-hub-scheduler2.png
 
 <!-- URLs. -->
-[get-started]: <!-- deleted by customization /documentation/articles/notification-hubs-windows-store-dotnet-get-started --><!-- keep by customization: begin --> /documentation/articles/notification-hubs-windows-store-dotnet-get-started/ <!-- keep by customization: end -->
+<!-- deleted by customization
+[get-started]: ../articles/notification-hubs/notification-hubs-windows-store-dotnet-get-started.md
+[Use Notification Hubs to send notifications to users]: ../articles/tutorial-notify-users-mobileservices.md
+-->
+<!-- keep by customization: begin -->
+[get-started]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
 [Use Notification Hubs to send notifications to users]: /documentation/articles/tutorial-notify-users-mobileservices
+<!-- keep by customization: end -->
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
+<!-- keep by customization: begin -->
 [Azure Management Portal]: https://manage.windowsazure.cn/
+<!-- keep by customization: end -->
 [wns object]: https://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/zh-cn/library/jj927172.aspx

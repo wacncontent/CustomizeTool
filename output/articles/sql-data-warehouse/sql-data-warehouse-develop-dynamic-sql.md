@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Dynamic SQL in SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Dynamic SQL in SQL Data Warehouse | Windows Azure"
    description="Tips for using dynamic SQL in Azure SQL Data Warehouse for developing solutions."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+	ms.service="sql-data-warehouse"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # Dynamic SQL in SQL Data Warehouse
 When developing application code for SQL Data Warehouse you may need to use dynamic sql to help deliver flexible, generic and modular solutions. SQL Data Warehouse does not support blob data types at this time. This may limit the size of your strings as blob types include both varchar(max) and nvarchar(max) types. If you have used these types in your application code when building very large strings, you will need to break the code into chunks and use the EXEC statement instead. 
@@ -41,6 +37,6 @@ For more development tips, see [development overview][].
 [development overview]: sql-data-warehouse-overview-develop.md
 
 <!--MSDN references-->
-[sp_executesql]: https://msdn.microsoft.com/en-us/library/ms188001.aspx
+[sp_executesql]: https://msdn.microsoft.com/zh-cn/library/ms188001.aspx
 
 <!--Other Web references-->

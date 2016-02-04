@@ -1,0 +1,5 @@
+new docs: 2, word count: {word_count_TODO}
+articles/automation/automation-first-runbook-textual-powershell.md
+articles/automation/automation-runbook-input-parameters.md
+
+new includes: 0

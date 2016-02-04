@@ -3,29 +3,22 @@
 	description="How to get started using Azure Blob storage in a cloud service project in Visual Studio after connecting to a storage account using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Get started with Azure Blob Storage and Visual Studio connected services (cloud services projects)
 
-> [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-cloud-services-getting-started-blobs)
-> - [What happened](/documentation/articles/vs-storage-cloud-services-what-happened)
-> - [Blobs](/documentation/articles/vs-storage-cloud-services-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-cloud-services-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-cloud-services-getting-started-tables)
-
 ## Overview
 
-This article describes how to get started with Azure Blob Storage after you created or referenced an Azure Storage account by using the Visual Studio **Add Connected Services** dialog in a Visual Studio cloud services project. We'll show you how to access and create blob containers, and how to perform common tasks like uploading, listing, and downloading blobs. The samples are written in C\# and use the [Azure Storage Client Library for .NET](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx).
+This article describes how to get started with Azure blob storage after you created or referenced an Azure storage account by using the Visual Studio **Add Connected Services** dialog in a Visual Studio cloud services project. We'll show you how to access and create blob containers, and how to perform common tasks like uploading, listing, and downloading blobs. The samples are written in C\# and use the [Azure Storage Client Library for .NET](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx).
 
-Azure Blob Storage is a service for storing large amounts of unstructured data that can be accessed from anywhere in the world via HTTP or HTTPS. A single blob can be any size. Blobs can be things like images, audio and video files, raw data, and document files.
+Azure Blob storage is a service for storing large amounts of unstructured data that can be accessed from anywhere in the world via HTTP or HTTPS. A single blob can be any size. Blobs can be things like images, audio and video files, raw data, and document files.
 
 Just as files live in folders, storage blobs live in containers. After you have created a storage, you create one or more containers in the storage. For example, in a storage called “Scrapbook,” you can create containers in the storage called “images” to store pictures and another called “audio” to store audio files. After you create the containers, you can upload individual blob files to them.
 
@@ -65,14 +58,14 @@ To programmatically access blobs in cloud service projects, you need to add the 
 
 ## Create a container in code
 
-> [AZURE.NOTE] Some APIs that perform calls out to Azure Storage in ASP.NET are asynchronous. See [Asynchronous programming with Async and Await](http://msdn.microsoft.com/zh-cn/library/hh191443.aspx) for more information. The code in the following example assumes that you are using async programming methods.
+> [AZURE.NOTE] Some APIs that perform calls out to Azure storage in ASP.NET are asynchronous. See [Asynchronous programming with Async and Await](http://msdn.microsoft.com/zh-cn/library/hh191443.aspx) for more information. The code in the following example assumes that you are using async programming methods.
 
 To create a container in your storage account, all you need to do is add a call to **CreateIfNotExistsAsync** as in the following code:
 
 	// Get a reference to a CloudBlobContainer with the variable name 'container'
     // as described in the "Access blob containers in code" section.
 
-    // If “mycontainer” doesn’t exist, create it.
+    // If “mycontainer” doesn't exist, create it.
     await container.CreateIfNotExistsAsync();
 
 

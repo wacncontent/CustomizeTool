@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Create a PHP-MySQL web app in Azure Websites and deploy using FTP" 
+	pageTitle="Create a PHP-MySQL web app in Azure and deploy using FTP" 
 	description="A tutorial that demonstrates how to create a PHP web app that stores data in MySQL and use FTP deployment to Azure." 
 	services="app-service\web" 
 	documentationCenter="php" 
@@ -13,7 +13,7 @@
 	wacn.date=""/>
 
 
-#Create a PHP-MySQL web app in Azure Websites and deploy using FTP
+#Create a PHP-MySQL web app in Azure and deploy using FTP
 
 > [AZURE.SELECTOR]
 - [.Net](/documentation/articles/web-sites-dotnet-get-started)
@@ -34,41 +34,46 @@ By following this tutorial, you will build a simple registration web app in PHP.
 
 ![Azure PHP Web Site][running-app]
 
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required, no commitments. 
+
 
 ##Create a web app and set up FTP publishing
 
 Follow these steps to create a web app and a MySQL database:
 
 1. Login to the [Azure Management Portal][management-portal].
-2. Click the **+ New** icon on the bottom left of the portal.
+2. Click the **+ New** icon on the bottom left of the Azure Management Portal.
 
 	![Create New Azure Web Site][new-website]
-3. Click ** Website**, then **CUSTOM CREATE**.
 
-	![Custom Create a new  Website][custom-create]
-	
-	Enter a value for **URL**, select **Create a New MySQL Database** from the **DATABASE** dropdown,  and select the data center for your  Website in the **REGION** dropdown. Click the arrow at the bottom of the dialog.
+3. Click **Web + Mobile**, then **Web app + MySQL**.
 
-	![Fill in  Website details][ Website-details]
+	![Custom Create a new Web Site][custom-create]
 
-4. Enter a value for the **NAME** of your database, select the data center for your database in the **REGION** dropdown, and check the box that indicates you agree with the legal terms. Click the checkmark at the bottom of the dialog.
+4. Enter a valid name for your resource group.
+
+    ![Set resource group name][resource-group]
+
+5. Enter values for your new web app.
+
+     ![Create web app][new-web-app]
+
+6. Enter values for your new database, including agreeing to the legal terms.
 
 	![Create new MySQL database][new-mysql-db]
+	
+7. When the web app has been created, you will see the new resource group. Click the name of the web app to configure its settings.
 
-	When the  Website has been created you will see the text **Creation of  Website ‘[SITENAME]’ completed successfully**. Now, you can enable FTP publishing.
+	![Open web app][go-to-webapp]
 
-5. Click the name of the  Website displayed in the list of  Websites to open the  Website’s **QUICKSTART** dashboard.
+6. Scroll down until you find **Set deployment credentials**. 
 
-	![Open  Website dashboard][go-to-dashboard]
+	![Set deployment credentials][set-deployment-credentials]
 
+7. To enable FTP publishing, you must provide a user name and password. Save the credentials and make a note of the user name and password you create.
 
-6. At the bottom of the **QUICKSTART** page, click **Reset deployment credentials**. 
+	![Create publishing credentials][portal-ftp-username-password]
 
-	![Reset deployment credentials][reset-deployment-credentials]
-
-7. To enable FTP publishing, you must provide a user name and password. Make a note of the user name and password you create.
-
-	![Create publishing credentials][portal-git-username-password]
 ##Build and test your app locally
 
 The Registration application is a simple PHP application that allows you to register for an event by providing your name and email address. Information about previous registrants is displayed in a table. Registration information is stored in a MySQL database. The app consists of two files:
@@ -264,9 +269,11 @@ Now you are ready to publish your app using FTP.
 After you have connected you will be able to upload and download files as needed. Be sure that you are uploading files to the root directory, which is `/site/wwwroot`.
 
 After uploading both `index.php` and `createtable.php`, browse to **http://[site name].chinacloudsites.cn/createtable.php** to create the MySQL table for the application, then browse to **http://[site name].chinacloudsites.cn/index.php** to begin using the application.
-[go-to-dashboard]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/go_to_dashboard.png
-[reset-deployment-credentials]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/reset-deployment-credentials.png
-[portal-git-username-password]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/git-deployment-credentials.png
+ 
+## Next steps
+
+For more information, see the [PHP Developer Center](/develop/php/).
+
 [install-php]: http://www.php.net/manual/en/install.php
 [install-mysql]: http://dev.mysql.com/doc/refman/5.6/en/installing.html
 [pdo-mysql]: http://www.php.net/manual/en/ref.pdo-mysql.php

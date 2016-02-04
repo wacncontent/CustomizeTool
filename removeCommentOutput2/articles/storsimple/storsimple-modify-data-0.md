@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Modify the DATA 0 settings on a StorSimple device | Microsoft Azure"
+   pageTitle="Modify the DATA 0 settings on a StorSimple device | Windows Azure"
    description="Learn how to use Windows PowerShell for StorSimple to reconfigure the DATA 0 network interface on your StorSimple device."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/02/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 # Modify the DATA 0 network interface settings on your StorSimple device
 
@@ -69,5 +65,6 @@ An alternate way to reconfigure DATA 0 network interface is through the use of  
 
 ## Next steps
 
-To configure network interfaces other than DATA 0, you can use the [Configure page in the Management Portal](storsimple-modify-device-config.md). If you experience any issues when configuring your network interfaces, refer to [Troubleshoot deployment issues](storsimple-troubleshoot-deployment.md).
+- To configure network interfaces other than DATA 0, you can use the [Configure page in the Azure Management Portal](storsimple-modify-device-config.md).
+- If you experience any issues when configuring your network interfaces, refer to [Troubleshoot deployment issues](/documentation/articles/storsimple-troubleshoot-deployment).
 

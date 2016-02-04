@@ -7,28 +7,24 @@
 	services="azure-portal" 
 	documentationCenter="na"/>
 
-<tags 
-	ms.service="azure-portal" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/28/2015" 
-	ms.author="hanikn"/>
+<tags
+	ms.service="azure-portal"
+	ms.date="04/28/2015"
+	wacn.date=""/>
 
 # View events and audit logs
 
-All operations performed on Azure resources are fully audited by the Azure Resource Manager, from creation and deletions to granting or revoking access. You can browse these logs in the Azure portal, and you can also use the [REST API](https://msdn.microsoft.com/library/azure/dn931927.aspx) or [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) to access the full set of events programmatically.
+All operations performed on Azure resources are fully audited by the Azure Resource Manager, from creation and deletions to granting or revoking access. You can browse these logs in the Azure Management Portal, and you can also use the [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931927.aspx) or [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) to access the full set of events programmatically.
 
 ## Browse the events impacting your Azure subscription
 
-1. Sign in to the [Azure Portal](https://portal.azure.com/).
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).
 2. Click on the **Browse** and select **Audit logs**.  
     ![Browse Hub](./media/insights-debugging-with-events/Insights_Browse.png)
 3. This will open up a blade showing all of the events that have impacted any of your subscriptions for the past 7 days. At the top is a chart showing data by level, and below that is the full list of logs:
     ![All events](./media/insights-debugging-with-events/Insights_AllEvents.png)
 
->[AZURE.NOTE] You can only view the 500 most recent events for a given subscription in the Azure portal. 
+>[AZURE.NOTE] You can only view the 500 most recent events for a given subscription in the Azure Management Portal. 
 
 4. You can click on any log entry to see the events that made it up. For example, when you deploy something to a resource group, many different resources may be created or modified. For each entry you can see:
     * The **Level** of the event - for example, it could be just something to track (**Informational**), or when something has gone wrong that you need to know about (**Error**). 
@@ -71,6 +67,6 @@ Once you have finished choosing what you want to see, click the **Update** butto
 
 ## Next steps
 
-* [Receive alert notifications](insights-receive-alert-notifications.md) whenever an event happens.
-* [Monitor service metrics](insights-how-to-customize-monitoring.md) to make sure your service is available and responsive.
-* [Track service health](insights-service-health.md) to find out when Azure has experienced performance degradation or service interruptions.  
+* [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) whenever an event happens.
+* [Monitor service metrics](/documentation/articles/insights-how-to-customize-monitoring) to make sure your service is available and responsive.
+* [Track service health](/documentation/articles/insights-service-health) to find out when Azure has experienced performance degradation or service interruptions.  

@@ -3,13 +3,13 @@
 	description="Describes the steps needed to manually update the PowerShell script that comes with an Azure Resource Group deployment project."
 	services="visual-studio-online"
 	documentationCenter="na"
-	authors="kempb"
+	authors="TomArcher"
 	manager="douge"
 	editor="tlee" />
 
  <tags
 	ms.service="azure-resource-manager"
-	ms.date="11/10/2015"
+	ms.date="11/20/2015"
 	wacn.date=""/>
 
 # Update the Azure Resource Group project PowerShell script
@@ -22,7 +22,7 @@ While the new version of Azure PowerShell brings new capabilities and makes usin
 
 After installing the new Azure PowerShell, problems can manifest in two ways in your Azure Resource Group project.
 
-- Because the deployment dialog in Visual Studio won't be able to find the new Azure cmdlets, you are prompted to install them. However, because the modules have been renamed in the new version of the cmdlets, Visual Studio won’t be able to find the new modules. As a result, you may get stuck in a loop if you try to install them from in Visual Studio.
+- Because the deployment dialog in Visual Studio won't be able to find the new Azure cmdlets, you are prompted to install them. However, because the modules have been renamed in the new version of the cmdlets, Visual Studio won't be able to find the new modules. As a result, you may get stuck in a loop if you try to install them from in Visual Studio.
 
 - If you run the script outside of Visual Studio in the PowerShell command window, you may get the error:
 
@@ -55,7 +55,7 @@ These instructions refer to line numbers. To enable line numbering in Visual Stu
 
 	```
 	$StorageAccountKey = (Get-AzureRMStorageAccountKey -ResourceGroupName $StorageAccountResourceGroupName -Name $StorageAccountName).Key1
-	$StorageAccountContext = New-AzureRMStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
+	$StorageAccountContext = (Get-AzureRmStorageAccount -ResourceGroupName $StorageAccountResourceGroupName -Name $StorageAccountName).Context
 	```
 
 1. In line 87, replace the following code:
@@ -79,7 +79,7 @@ These instructions refer to line numbers. To enable line numbering in Visual Stu
 		-TemplateFile $TemplateFile `
 		-TemplateParameterFile $TemplateParametersFile `
 		@OptionalParameters `
-		-Force –Verbose
+		-Force -Verbose
 	```
 
 	with the following code:

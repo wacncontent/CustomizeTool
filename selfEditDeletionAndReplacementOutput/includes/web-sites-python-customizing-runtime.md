@@ -8,5 +8,5 @@ replaced by:
 
 		(the CONFIGURE page on Azure portal)
 
-reason: ()
+reason: (the new Ibiza portal)
 

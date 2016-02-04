@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # Service-side authorization of users in Mobile Services
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR-LIST (Platform | Backend)]
 - [(Any | .NET)](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
@@ -32,7 +37,7 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 
 2. In Visual Studio, expand the Controllers folder,  open **TodoItemController.cs** and add the following using statement:
 
-		using Microsoft.Azure.Mobile.Server.Security;
+		using Microsoft.WindowsAzure.Mobile.Service.Security;
 
 3. Locate the **PostTodoItem** method and add the following code at the beginning of the method.
 
@@ -73,4 +78,4 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 [3]: ./media/mobile-services-dotnet-backend-ios-authorize-users-in-scripts/mobile-quickstart-startup-ios.png
 
 <!-- URLs. -->
-[Add Authentication to Existing Mobile Services App]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
+[Add Authentication to Existing Mobile Services App]: mobile-services-dotnet-backend-ios-get-started-users.md

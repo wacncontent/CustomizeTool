@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="StorSimple hardware components and status | Microsoft Azure"
+   pageTitle="StorSimple hardware components and status | Windows Azure"
    description="Learn how to monitor the hardware components of your StorSimple device through the StorSimple Manager service."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/15/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 # Use the StorSimple Manager service to monitor hardware components and status
 
@@ -23,19 +19,19 @@ This article describes the various physical and logical components in your on-pr
 
 The **Maintenance** page shows the hardware status of all the StorSimple device components. Under the list of components for 8100, there are three sections that describe:
 
-- **Shared Components** – These are not part of the controllers, such as disk drives, enclosure, PCM components and PCM temperature, line voltage, and line current sensors.
+- **Shared Components** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> These are not part of the controllers, such as disk drives, enclosure, PCM components and PCM temperature, line voltage, and line current sensors.
 
-- **Controller 0 Components** – The components that reside on Controller 0, such as controller, SAS expander and connector, controller temperature sensors, and the various network interfaces.
+- **Controller 0 Components** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The components that reside on Controller 0, such as controller, SAS expander and connector, controller temperature sensors, and the various network interfaces.
 
-- **Controller 1 Components** – The components that constitute Controller 1, similar to those detailed for Controller 0.
+- **Controller 1 Components** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The components that constitute Controller 1, similar to those detailed for Controller 0.
 
 An 8600 device has additional components that correspond to the Extended Bunch of Disks (EBOD) enclosure. Under the list of components, there are five sections. Of these, there are three sections that contain the components in the primary enclosure and are identical to the ones described for 8100. There are two additional sections for the EBOD enclosure that describe:
 
-- **EBOD enclosure Shared Components** – The components present in the EBOD enclosure and PCM that are not part of the EBOD controller.
+- **EBOD enclosure Shared Components** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The components present in the EBOD enclosure and PCM that are not part of the EBOD controller.
 
-- **EBOD Controller 0 Components** – The components that reside on EBOD enclosure 0, such as the EBOD controller, SAS expander and connector, and controller temperature sensors.
+- **EBOD Controller 0 Components** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The components that reside on EBOD enclosure 0, such as the EBOD controller, SAS expander and connector, and controller temperature sensors.
 
-- **EBOD Controller 1 Components** – The components that constitute EBOD enclosure 1, similar to those detailed for EBOD enclosure 0.
+- **EBOD Controller 1 Components** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> The components that constitute EBOD enclosure 1, similar to those detailed for EBOD enclosure 0.
 
 >[AZURE.NOTE] **The hardware status section is not present in the Maintenance page for a StorSimple virtual device (1100).**
 
@@ -47,12 +43,12 @@ Perform the following steps to view the hardware status of a device component:
 1. Navigate to **Devices**, select a specific StorSimple device. Click to go into the device-level menu and then click the **Maintenance** tab. 
 2. Locate the **Hardware Status** section and choose from the available components (as described above). Simply click an arrow preceding the component label to expand the list and view the status of the various device components. See the [detailed component list for the primary enclosure](#component-list-for-primary-enclosure-of-storsimple-device) and the [detailed component list for the EBOD enclosure](#component-list-for-ebod-enclosure-of-storsimple-device).
 2. Use the following color coding scheme to interpret the  component status:
-	-  **Green check** – Denotes a **Healthy** or **OK** component.
-	-  **Yellow** – Denotes a component in **Warning** state.
-	-  **Red exclamation** – Denotes a component that has a **Failure** or **Needs Attention** status.
-	-  **White with black text** – Denotes a component that is not present.
+	-  **Green check** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> Denotes a **Healthy** or **OK** component.
+	-  **Yellow** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> Denotes a component in **Warning** state.
+	-  **Red exclamation** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> Denotes a component that has a **Failure** or **Needs Attention** status.
+	-  **White with black text** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> Denotes a component that is not present.
 
-3. If you encounter a component that is not in a **Healthy** state, please contact Microsoft Support. If alerts are enabled on your device, you will receive an email alert. If you need to replace a failed hardware component, see [StorSimple hardware component replacement](storsimple-hardware-component-replacement.md).
+3. If you encounter a component that is not in a **Healthy** state, please contact Microsoft Support. If alerts are enabled on your device, you will receive an email alert. If you need to replace a failed hardware component, see [StorSimple hardware component <!-- deleted by customization replacement](/documentation/articles/storsimple-hardware-component-replacement) --><!-- keep by customization: begin --> replacement](storsimple-hardware-component-replacement.md) <!-- keep by customization: end -->.
 
 
 ## Component list for primary enclosure of StorSimple device
@@ -125,11 +121,20 @@ The following table outlines the physical and logical components contained in th
 |Connection to device controller|I/O|Physical|Controller|No|Indicates the state of the connection between the EBOD I/O module and the device controller.|
 
 ## Next steps
-- To learn more about using the StorSimple Manager service, go to [use the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+- To learn more about using the StorSimple Manager service, go to [use the StorSimple Manager service to administer your StorSimple <!-- deleted by customization device](/documentation/articles/storsimple-manager-service-administration) --><!-- keep by customization: begin --> device](storsimple-manager-service-administration.md) <!-- keep by customization: end -->.
  
 - If you need to troubleshoot a device component that has a degraded or failed status, refer to 
+<!-- deleted by customization
+[StorSimple monitoring indicators](/documentation/articles/storsimple-monitoring-indicators). 
+
+- To replace a failed hardware component, see [StorSimple hardware component replacement](/documentation/articles/storsimple-hardware-component-replacement).
+
+- If you continue to experience device issues, [contact Microsoft Support](/documentation/articles/storsimple-contact-microsoft-support).
+-->
+<!-- keep by customization: begin -->
 [StorSimple monitoring indicators](storsimple-monitoring-indicators.md). 
 
 - To replace a failed hardware component, see [StorSimple hardware component replacement](storsimple-hardware-component-replacement.md).
 
 - If you continue to experience device issues, [contact Microsoft Support](storsimple-contact-microsoft-support.md).
+<!-- keep by customization: end -->

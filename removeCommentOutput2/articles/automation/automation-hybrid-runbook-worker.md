@@ -27,8 +27,6 @@ You can designate one or more computers in your data center to act as a Hybrid R
 
 There are no inbound firewall requirements to support Hybrid Runbook Workers. The agent on the local computer initiates all communication with Azure Automation in the cloud. When a runbook is started, Azure Automation creates an instruction that is retrieved by agent. The agent then pulls down the runbook and any parameters before running it.  It will also retrieve any [assets](http://msdn.microsoft.com/zh-cn/library/dn939988.aspx) that are used by the runbook from Azure Automation.
 
->[AZURE.NOTE] Hybrid Runbook Workers do not currently support [DSC Configurations](/documentation/articles/automation-dsc-overview).
-
 ## Hybrid Runbook Worker groups
 
 Each Hybrid Runbook Worker is a member of a Hybrid Runbook Worker group that you specify when you install the agent.  A group can include a single agent, but you can install multiple agents in a group for high availability.
@@ -40,17 +38,13 @@ When you start a runbook on a Hybrid Runbook Worker, you specify the group that 
 You must designate at least one on-premise computer to run hybrid runbook jobs.  This computer must have the following:
 
 - Windows Server 2012 or later
-- Windows PowerShell 4.0 or later
+- WIndows PowerShell 4.0 or later
 
 Consider the following recommendations for hybrid workers: 
 
 - Designate multiple hybrid workers in each group for high availability.  
 - Hybrid workers can coexist with Service Management Automation or System Center Orchestrator runbook servers.
 - Consider using a machine physically located in or near the region of your automation account since the job data is sent back to Azure Automation when a job completes.
-
-Firewall requirements:
-
-- The on-premise machine running hybrid runbook worker must have outbound access to *.chinacloudapp.cn on ports 443, 9354, and 30000-30199.
 
 ## Installing Hybrid Runbook Worker
 The procedure below describes how to install and configure Hybrid Runbook Worker.  Perform the first two steps once for your Automation environment and then repeat the remaining steps for each worker computer.
@@ -75,13 +69,13 @@ When you add an agent to Operations Management Suite, the Automation solution pu
 
 Open a PowerShell session in Administrator mode and run the following commands to import the module.
 
-	cd "C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation\<version>\HybridRegistration"
+	cd "C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation\5.2.20826.0\HybridRegistration"
 	Import-Module HybridRegistration.psd1
 
 
 Then run the **Add-HybridRunbookWorker** cmdlet using the following syntax:
 
-	Add-HybridRunbookWorker –Name <String> -EndPoint <Url> -Token <String>
+	Add-HybridRunbookWorker -Name <String> -EndPoint <Url> -Token <String>
 
 You can get the information required for this cmdlet from the  **Manage Keys** blade in the Azure preview portal.  Open this blade by clicking the key icon on the Elements panel for the automation account.
 
@@ -110,9 +104,11 @@ When you start a runbook in the Azure preview portal, you will be presented with
 
 Use the **RunOn** parameter  You could use the following command to start a runbook named Test-Runbook on a Hybrid Runbook Worker Group named MyHybridGroup using Windows PowerShell.
 
-	Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" -RunOn "MyHybridGroup"
+	Start-AzureAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" -RunOn "MyHybridGroup"
 
 >[AZURE.NOTE] The **RunOn** parameter was added to the **Start-AzureAutomationRunbook** cmdlet in version 0.9.1 of Windows Azure PowerShell.  You should [download the latest version](http://azure.microsoft.com/downloads) if you have an earlier one installed.  You only need to install this version on a workstation where you will be starting the runbook from Windows PowerShell.  You do not need to install it on the worker computer unless you intend to start runbooks from that computer.  You cannot currently start a runbook on a Hybrid Runbook Worker from another runbook since this would require the latest version of Azure Powershell to be installed in your Automation account.  The latest version will be automatically updated in Azure Automation and automatically pushed down to the workers soon.
+
+>[AZURE.NOTE] Hybrid Runbook Worker can only run [Graphical and PowerShell Workflow runbooks](/documentation/articles/automation-runbook-types).  You cannot currently start a [PowerShell runbook](/documentation/articles/automation-runbook-types) on a Hybrid Runbook Worker. 
 
 ## Troubleshooting runbooks on Hybrid Runbook Worker
 
@@ -151,9 +147,10 @@ If you are an existing SMA user, you can move your runbooks to Azure Automation 
 
 You can use the following criteria to determine whether Azure Automation with Hybrid Runbook Worker or Service Management Automation is more appropriate for your requirements.
 
-- SMA requires a local installation of Windows Azure Pack that has more local resources and higher maintenance costs than Azure Automation which only needs an agent installed on local runbook workers.  The agents are managed by Operations Management Suite furthering decreasing their maintenance costs.
+- SMA requires a local installation of Windows Azure Pack that has higher more local resources and maintenance costs than Azure Automation which only needs an agent installed on local runbook workers.  The agents are managed by Operations Management Suite furthering decreasing their maintenance costs.
 - Azure Automation stores its runbooks in the cloud and delivers them to on-premises Hybrid Runbooks Workers.  If your security policy does not allow this behavior then you should use SMA.
 - Windows Azure Pack is a free download while Azure Automation may incur subscription charges.
+ Azure.  Must maintain multiple databases for SMA.
 - Azure Automation with Hybrid Runbook Worker allow you to manage runbooks for cloud resources and local resources in one location as opposed to separately managing both Azure Automation and SMA.
 - Azure Automation has advanced features such including graphical authoring that are not available in SMA.
 
@@ -161,5 +158,5 @@ You can use the following criteria to determine whether Azure Automation with Hy
 ## Related articles
 
 - [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook)
-- [Editing a Runbook in Azure Automation](https://msdn.microsoft.com/zh-cn/library/dn879137.aspx)
+- [Editing a Runbook in Azure Automation](/documentation/articles/automation-edit-textual-runbook)
  

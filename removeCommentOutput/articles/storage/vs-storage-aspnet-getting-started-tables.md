@@ -3,24 +3,16 @@
 	description="How to get started using Azure Table storage in an ASP.NET project in Visual Studio after connecting to a storage account using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Get started with table storage and Visual Studio connected services (ASP.NET)
-> [AZURE.SELECTOR]
-> - [Getting Started](/documentation/articles/vs-storage-aspnet-getting-started-tables)
-> - [What Happened](/documentation/articles/vs-storage-aspnet-what-happened)
-
-> [AZURE.SELECTOR]
-> - [Blobs](/documentation/articles/vs-storage-aspnet-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-aspnet-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-aspnet-getting-started-tables)
 
 ## Overview
 This article describes how get started using Azure Table storage in Visual Studio after you have created or referenced an Azure storage account in an ASP.NET project by using the  Visual Studio **Add Connected Services** dialog. This article shows you how to perform common tasks in Azure tables, including creating and

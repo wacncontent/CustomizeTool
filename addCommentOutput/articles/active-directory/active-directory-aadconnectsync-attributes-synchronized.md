@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+	ms.date="11/24/2015"
 	wacn.date=""/>
 
 
-# Azure AD Connect sync: Attributes synchronized to Azure Active Directory
+# Azure AD Connect <!-- deleted by customization sync --><!-- keep by customization: begin --> Sync <!-- keep by customization: end -->: Attributes synchronized to Azure Active Directory
 
-This topic lists the attributes that are synchronized by Azure AD Connect sync.<br>
-The attributes are grouped by the related Azure AD app.
+This topic lists the attributes that are synchronized by Azure AD Connect <!-- deleted by customization sync.<br> --><!-- keep by customization: begin --> Sync.<br> <!-- keep by customization: end -->
+The attributes are grouped by the related Azure AD <!-- deleted by customization app --><!-- keep by customization: begin --> apps <!-- keep by customization: end -->.
 
 
 ## Office 365 ProPlus
@@ -29,7 +29,7 @@ The attributes are grouped by the related Azure AD app.
 | objectSID| X| mechanical property. AD user identifier used to maintain sync between Azure AD and AD.|
 | pwdLastSet| X| mechanical property. Used to know when to invalidate already issued tokens. Used by both password sync and federation.|
 | sourceAnchor| X| mechanical property. Immutable identifier to maintain relationship between ADDS and Azure AD.|
-| usageLocation| X| mechanical property. The user’s country. Used for license assignment.|
+| usageLocation| X| mechanical property. The user's country. Used for license assignment.|
 | userPrincipalName| X| UPN is the login ID for the user. Most often the same as [mail] value.|
 
 
@@ -68,7 +68,12 @@ The attributes are grouped by the related Azure AD app.
 | facsimiletelephonenumber| X| X|  |  |
 | givenName| X| X|  |  |
 | homePhone| X| X|  |  |
+<!-- deleted by customization
 | info| X| X| X| This attribute is currently not consumed for groups.|
+-->
+<!-- keep by customization: begin -->
+| info| X| X| X|  |
+<!-- keep by customization: end -->
 | Initials| X| X|  |  |
 | l| X| X|  |  |
 | legacyExchangeDN| X| X| X|  |
@@ -94,11 +99,20 @@ The attributes are grouped by the related Azure AD app.
 | msExchELCExpirySuspensionStart| X|  |  |  |
 | msExchELCMailboxFlags| X|  |  |  |
 | msExchEnableModeration| X|  | X|  |
+<!-- deleted by customization
 | msExchExtensionCustomAttribute1| X| X| X| This attribute is currently not consumed by Exchange Online. |
 | msExchExtensionCustomAttribute2| X| X| X| This attribute is currently not consumed by Exchange Online. |
 | msExchExtensionCustomAttribute3| X| X| X| This attribute is currently not consumed by Exchange Online. |
 | msExchExtensionCustomAttribute4| X| X| X| This attribute is currently not consumed by Exchange Online. |
 | msExchExtensionCustomAttribute5| X| X| X| This attribute is currently not consumed by Exchange Online. |
+-->
+<!-- keep by customization: begin -->
+| msExchExtensionCustomAttribute1| X| X| X|  |
+| msExchExtensionCustomAttribute2| X| X| X|  |
+| msExchExtensionCustomAttribute3| X| X| X|  |
+| msExchExtensionCustomAttribute4| X| X| X|  |
+| msExchExtensionCustomAttribute5| X| X| X|  |
+<!-- keep by customization: end -->
 | msExchHideFromAddressLists| X| X| X|  |
 | msExchImmutableID| X|  |  |  |
 | msExchLitigationHoldDate| X| X| X|  |
@@ -150,12 +164,11 @@ The attributes are grouped by the related Azure AD app.
 | thumbnailphoto| X| X|  |  |
 | title| X| X|  |  |
 | unauthOrig| X| X| X|  |
-| usageLocation| X|  |  | mechanical property. The user’s country. Used for license assignment.|
+| usageLocation| X|  |  | mechanical property. The user's country. Used for license assignment.|
 | userCertificate| X| X|  |  |
 | userPrincipalName| X|  |  | UPN is the login ID for the user. Most often the same as [mail] value.|
 | userSMIMECertificates| X| X|  |  |
 | wWWHomePage| X| X|  |  |
-
 
 
 ## SharePoint Online
@@ -237,7 +250,7 @@ The attributes are grouped by the related Azure AD app.
 | title| X| X|  |  |
 | unauthOrig| X| X| X|  |
 | url| X| X|  |  |
-| usageLocation| X|  |  | mechanical property. The user’s country. Used for license assignment.|
+| usageLocation| X|  |  | mechanical property. The user's country. Used for license assignment.|
 | userPrincipalName| X|  |  | UPN is the login ID for the user. Most often the same as [mail] value.|
 | wWWHomePage| X| X|  |  |
 
@@ -287,7 +300,7 @@ The attributes are grouped by the related Azure AD app.
 | telephoneNumber| X| X|  |  |
 | thumbnailphoto| X| X|  |  |
 | title| X| X|  |  |
-| usageLocation| X|  |  | mechanical property. The user’s country. Used for license assignment.|
+| usageLocation| X|  |  | mechanical property. The user's country. Used for license assignment.|
 | userPrincipalName| X|  |  | UPN is the login ID for the user. Most often the same as [mail] value.|
 | wWWHomePage| X| X|  |  |
 
@@ -306,7 +319,7 @@ The attributes are grouped by the related Azure AD app.
 | pwdLastSet| X|  |  | mechanical property. Used to know when to invalidate already issued tokens.|
 | securityEnabled|  |  | X| Derived from groupType.|
 | sourceAnchor| X| X| X| mechanical property. Immutable identifier to maintain relationship between ADDS and Azure AD.|
-| usageLocation| X|  |  | mechanical property. The user’s country. Used for license assignment.|
+| usageLocation| X|  |  | mechanical property. The user's country. Used for license assignment.|
 | userPrincipalName| X|  |  | This UPN is the login ID for the user. Most often the same as [mail] value.|
 
 
@@ -327,7 +340,7 @@ The attributes are grouped by the related Azure AD app.
 | pwdLastSet| X|  |  | mechanical property. Used to know when to invalidate already issued tokens. Used by both password sync and federation.|
 | securityEnabled|  |  | X| Derived from groupType|
 | sourceAnchor| X| X| X| mechanical property. Immutable identifier to maintain relationship between ADDS and Azure AD.|
-| usageLocation| X|  |  | mechanical property. The user’s country. Used for license assignment.|
+| usageLocation| X|  |  | mechanical property. The user's country. Used for license assignment.|
 | userPrincipalName| X|  |  | UPN is the login ID for the user. Most often the same as [mail] value.|
 
 
@@ -363,7 +376,7 @@ The attributes are grouped by the related Azure AD app.
 | streetAddress| X| X|  |  |
 | telephoneNumber| X| X|  |  |
 | title| X| X|  |  |
-| usageLocation| X|  |  | mechanical property. The user’s country. Used for license assignment.|
+| usageLocation| X|  |  | mechanical property. The user's country. Used for license assignment.|
 | userPrincipalName| X|  |  | UPN is the login ID for the user. Most often the same as [mail] value.|
 
 ## 3rd party applications
@@ -380,13 +393,41 @@ This is a set of attributes which can be used if the Azure AD directory is not u
 | mailNickName| X| X| X|  |
 | member|  |  | X|  |
 | objectSID| X|  |  | mechanical property. AD user identifier used to maintain sync between Azure AD and AD.|
+<!-- deleted by customization
+| proxyAddresses| X| X| X|  |
+-->
+<!-- keep by customization: begin -->
 | proxyAddresses| X| X| x|  |
+<!-- keep by customization: end -->
 | pwdLastSet| X|  |  | mechanical property. Used to know when to invalidate already issued tokens. Used by both password sync and federation.|
 | sn| X| X|  |  |
 | sourceAnchor| X| X| X| mechanical property. Immutable identifier to maintain relationship between ADDS and Azure AD.|
-| usageLocation| X|  |  | mechanical property. The user’s country. Used for license assignment.|
+| usageLocation| X|  |  | mechanical property. The user's country. Used for license assignment.|
 | userPrincipalName| X|  |  | UPN is the login ID for the user. Most often the same as [mail] value.|
 
+<!-- deleted by customization
+## Windows 10
+Windows 10 domain-joined computers(devices) will synchronize some attributes to Azure AD. For more information on the scenarios see [Connect domain-joined devices to Azure AD for Windows 10 experiences](/documentation/articles/active-directory-azureadjoin-devices-group-policy). These attributes will always synchronize and Windows 10 does not appear as an app you can unselect. A Windows 10 domain-joined computer is identified by having the attribute userCertificate populated.
+
+| Attribute Name| Device| Comment |
+| --- | :-: | --- |
+| accountEnabled| X| |
+| deviceTrustType| X| Hardcoded value for domain-joined computers. |
+| displayName | X| |
+| ms-DS-CreatorSID | X| Also called registeredOwnerReference.|
+| objectGUID | X| Also called deviceID.|
+| objectSID | X| Also called onPremisesSecurityIdentifier.|
+| operatingSystem | X| Also called deviceOSType.|
+| operatingSystemVersion | X| Also called deviceOSVersion.|
+| userCertificate | X| |
+
+These attributes for user is in addition to the other apps you have selected.  
+
+| Attribute Name| User| Comment |
+| --- | :-: | --- |
+| domainFQDN| X| Also called dnsDomainName. E.g. contoso.com.|
+| domainNetBios| X| Also called netBiosName. E.g. CONTOSO.|
+-->
 
 ## Exchange hybrid writeback
 These attributes are written back from Azure AD to on-premises Active Directory when you select to enable Exchange hybrid. Depending on your Exchange version, fewer attributes might be synchronized.
@@ -406,7 +447,17 @@ These attributes are written back from Azure AD to on-premises Active Directory 
 - When using an Alternate ID, the on-premises attribute userPrincipalName will be synchronized with the Azure AD attribute onPremisesUserPrincipalName. The Alternate ID attribute, e.g. mail, will be synchronized with the Azure AD attribute userPrincipalName.
 
 
+<!-- deleted by customization
 ## Next steps
 Learn more about the [Azure AD Connect sync](/documentation/articles/active-directory-aadconnectsync-whatis) configuration.
 
 Learn more about [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect).
+-->
+<!-- keep by customization: begin -->
+## Additional Resources
+
+* [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
+* [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
+ 
+<!--Image references-->
+<!-- keep by customization: end -->

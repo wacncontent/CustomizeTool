@@ -7,14 +7,10 @@
     authors="vkbucha" 
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/12/2015" 
-    ms.author="elizapo" />
+<tags
+	ms.service="remoteapp"
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
 
 
@@ -22,9 +18,14 @@
 
 A hybrid collection is hosted in and stores data in the Azure cloud but also lets users access data and resources stored on your local network. Users can access apps by logging in with their corporate credentials synchronized or federated with Azure Active Directory. You can deploy a hybrid collection that uses an existing Azure Virtual Network, or you can create a new virtual network. We recommend that you create or use a virtual network subnet with a CIDR range large enough for expected future growth for Azure RemoteApp.
 
-Haven't created your collection yet? See [Create a hybrid collection](remoteapp-create-hybrid-deployment.md) for the steps.
+Haven't created your collection yet? See [Create a hybrid collection](/documentation/articles/remoteapp-create-hybrid-deployment) for the steps.
 
 If you are having trouble creating your collection, or if the collection isn't working the way you think it should, check out the following information.
+<!-- deleted by customization
+
+## Your image is invalid ##
+If you see a message like, "GoldImageInvalid" when you are waiting for Azure to provision your collection, it means that your template image doesn't meet the [defined image requirements](/documentation/articles/remoteapp-imagereqs). So, go read those [requirements](/documentation/articles/remoteapp-imagereqs), fix your image, and try to create your collection again.
+-->
 
 ## Does your VNET use forced tunneling? ##
 RemoteApp does not currently support using VNETs that have forced tunneling enabled. If you need this function, contact the [RemoteApp team](mailto:remoteappforum@microsoft.com) to request support.
@@ -36,16 +37,16 @@ Outbound: TCP: 443, TCP: 10101-10175
 ## Does your VNET have network security groups defined? ##
 If you have network security groups defined on the subnet you are using for your collection, make sure the following URLs are accessible from within your subnet: 
 
-	https://management.remoteapp.windowsazure.com  
+	https://management.remoteapp.windowsazure.cn  
 	https://opsapi.mohoro.com  
-	https://telemetry.remoteapp.windowsazure.com  
-	https://*.remoteapp.windowsazure.com  
-	https://login.windows.net (if you have Active Directory)  
-	https://login.microsoftonline.com  
-	Azure storage *.remoteapp.windowsazure.com  
-	*.core.windows.net  
-	https://www.remoteapp.windowsazure.com  
-	https://www.remoteapp.windowsazure.com  
+	https://telemetry.remoteapp.windowsazure.cn  
+	https://*.remoteapp.windowsazure.cn  
+	https://login.chinacloudapi.cn (if you have Active Directory)  
+	https://login.chinacloudapi.cn  
+	Azure storage *.remoteapp.windowsazure.cn  
+	*.core.chinacloudapi.cn  
+	https://www.remoteapp.windowsazure.cn  
+	https://www.remoteapp.windowsazure.cn  
 
 Open the following ports on the virtual network subnet:
 
@@ -74,7 +75,7 @@ For example:
 ## Are you using an Active Directory domain controller in your collection? ##
 Currently only one Active Directory domain can be associated with Azure RemoteApp. The hybrid collection supports only Azure Active Directory accounts that have been synced using DirSync tool from a Windows Server Active Directory deployment; specifically, either synced with the Password Synchronization option or synced with Active Directory Federation Services (AD FS) federation configured. You need to create a custom domain that matches the UPN domain suffix for your on-premises domain and set up directory integration. 
 
-See [Configuring Active Directory for Azure RemoteApp](remoteapp-ad.md) for more information.
+See [Configuring Active Directory for Azure RemoteApp](/documentation/articles/remoteapp-ad) for more information.
 
 Make sure the domain details provided are valid and the domain controller is reachable from the VM created in the subnet used for Azure Remote App. Also make sure the service account credentials supplied have permissions to add computers to the provided domain and that the AD name provided can be resolved from the DNS provided in the VNET.
 

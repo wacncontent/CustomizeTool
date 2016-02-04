@@ -19,8 +19,7 @@
 
 ## Overview
 
-The [Azure Storage Client Library for .NET](https://www.nuget.org/packages/WindowsAzure.Storage) supports encrypting data within client applications before uploading to Azure Storage, and decrypting data while downloading to the client. The library also supports integration with [Azure Key Vault](/home/features/key-vault/) for storage account key management.
-
+The [Azure Storage Client Library for .NET](https://www.nuget.org/packages/WindowsAzure.Storage) supports encrypting data within client applications before uploading to Azure Storage, and decrypting data while downloading to the client. The library also supports integration with <!-- deleted by customization [Azure Key Vault](/home/features/key-vault/) --><!-- keep by customization: begin --> Azure [Key Vault](/documentation/services/key-vault) <!-- keep by customization: end --> for storage account key management.
 For client-side encryption with Java, see [Client-Side Encryption with Java for Windows Azure Storage](/documentation/articles/storage-client-side-encryption-java).
 
 ## Encryption and decryption via the envelope technique
@@ -45,7 +44,7 @@ Decryption via the envelope technique works in the following way:
 
 1. The client library assumes that the user is managing the key encryption key (KEK) either locally or in Azure Key Vaults. The user does not need to know the specific key that was used for encryption. Instead, a key resolver which resolves different key identifiers to keys can be set up and used.
 2. The client library downloads the encrypted data along with any encryption material that is stored on the service.
-3. The wrapped content encryption key (CEK) is then unwrapped (decrypted) using the key encryption key (KEK). Here again, the client library does not have access to KEK. It simply invokes the custom or Key Vault provider’s unwrapping algorithm.
+3. The wrapped content encryption key (CEK) is then unwrapped (decrypted) using the key encryption key (KEK). Here again, the client library does not have access to KEK. It simply invokes the custom or Key Vault providerâs unwrapping algorithm.
 4. The content encryption key (CEK) is then used to decrypt the encrypted user data.
 
 ## Encryption Mechanism
@@ -72,7 +71,7 @@ Since queue messages can be of any format, the client library defines a custom f
 
 During encryption, the client library generates a random IV of 16 bytes along with a random CEK of 32 bytes and performs envelope encryption of the queue message text using this information. The wrapped CEK and some additional encryption metadata are then added to the encrypted queue message. This modified message (shown below) is stored on the service.
 
-	<MessageText>{"EncryptedMessageContents":"6kOu8Rq1C3+M1QO4alKLmWthWXSmHV3mEfxBAgP9QGTU++MKn2uPq3t2UjF1DO6w","EncryptionData":{…}}</MessageText>
+	<MessageText>{"EncryptedMessageContents":"6kOu8Rq1C3+M1QO4alKLmWthWXSmHV3mEfxBAgP9QGTU++MKn2uPq3t2UjF1DO6w","EncryptionData":{âŚ}}</MessageText>
 
 During decryption, the wrapped key is extracted from the queue message and unwrapped. The IV is also extracted from the queue message and used along with the unwrapped key to decrypt the queue message data. Note that the encryption metadata is small (under 500 bytes), so while it does count toward the 64KB limit for a queue message, the impact should be manageable.
 

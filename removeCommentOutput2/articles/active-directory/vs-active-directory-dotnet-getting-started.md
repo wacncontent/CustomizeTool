@@ -1,15 +1,15 @@
 <properties 
-	pageTitle="Get Started with Azure Active Directory and Visual Studio connected services (MVC projects)" 
+	pageTitle="Get Started with Azure Active Directory and Visual Studio connected services (MVC projects) | Windows Azure" 
 	description="How to get started using Azure Active Directory in MVC projects after connecting to or creating an Azure AD using Visual Studio connected services" 
 	services="active-directory" 
 	documentationCenter="" 
-	authors="patshea123" 
+	authors="TomArcher" 
 	manager="douge" 
-	editor="tglee"/>
+	editor=""/>
   
 <tags
 	ms.service="active-directory"
-	ms.date="09/03/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 # Getting Started with Azure Active Directory and Visual Studio connected services (MVC Projects)
@@ -71,4 +71,5 @@ To add a the SignIn/SignOut controls to your view, you can use the **_LoginParti
     &lt;/html&gt;
 </pre>
 
-[Learn more about Azure Active Directory](/home/features/identity/) 
+[Learn more about Azure Active Directory](/documentation/services/identity/) 
+

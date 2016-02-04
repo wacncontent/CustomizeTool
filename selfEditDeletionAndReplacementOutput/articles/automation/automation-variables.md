@@ -9,7 +9,7 @@ deleted:
 		1. Click **Add a variable** at the top of the blade.
 		1. Complete the form and click **Create** to save the new variable.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -42,11 +42,14 @@ deleted:
 		The following image shows how to filter the objects that are stored to a variable in a graphical runbook.  A [condition](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow) is added to the link in the previous example to filter only those virtual machines that were stopped when the variable was set.
 		
 		![Get complex variable filtered](./media/automation-variables/get-complex-variable-filter.png)
-		
-		
+
+reason: (Graphical Runbook)
+
+deleted:
+
 		## Related articles
 		
 		- [Links in graphical authoring](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
 
-reason: ()
+reason: (Graphical Runbook)
 

@@ -1,14 +1,14 @@
 <properties
     pageTitle="Using the Azure CLI with Azure Storage | Windows Azure"
-    description="Learn how to use the Azure Command-Line Interface (Azure CLI) with Azure Storage to create and manage storage accounts and work with Azure blobs and files."
+    description="Learn how to use the Azure Command-Line Interface (Azure CLI) with Azure Storage to create and manage storage accounts and work with Azure blobs and files. The Azure CLI is a cross-platform tool "
     services="storage"
     documentationCenter="na"
     authors="tamram"
-    manager="jdial"/>
+    manager="carmonm"/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/28/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 # Using the Azure CLI with Azure Storage
@@ -17,7 +17,7 @@
 
 The Azure CLI provides a set of open source, cross-platform commands for working with the Azure Platform. It provides much of the same functionality found in the Azure Management Portal as well as rich data access functionality.
 
-In this guide, we’ll explore how to use [Azure Command-Line Interface (Azure CLI)](/documentation/articles/xplat-cli-install) to perform a variety of development and administration tasks with Azure Storage. We recommend that you download and install or upgrade to the latest Azure CLI before using this guide.
+In this guide, we'll explore how to use [Azure Command-Line Interface (Azure CLI)](/documentation/articles/xplat-cli) to perform a variety of development and administration tasks with Azure Storage. We recommend that you download and install or upgrade to the latest Azure CLI before using this guide.
 
 This guide assumes that you understand the basic concepts of Azure Storage. The guide provides a number of scripts to demonstrate the usage of the Azure CLI with Azure Storage. Be sure to update the script variables based on your configuration before running each script.
 
@@ -27,19 +27,19 @@ This guide assumes that you understand the basic concepts of Azure Storage. The 
 
 This guide uses Ubuntu for examples, but other OS platforms should perform similarly.
 
-**New to Azure:** Get a Windows Azure subscription and a Microsoft account associated with that subscription. For information on Azure purchase options, see [Trial](/pricing/1rmb-trial/), [Purchase Options](/pricing/overview/), and [Member Offers](/pricing/member-offers/) (for members of MSDN, Microsoft Partner Network, and BizSpark, and other Microsoft programs).
+**New to Azure:** Get a Windows Azure subscription and a Microsoft account associated with that subscription. For information on Azure purchase options, see [Trial](http://www.windowsazure.cn/pricing/1rmb-trial/), [Purchase Options](/pricing/overview/), and [Member Offers](/pricing/member-offers/) (for members of MSDN, Microsoft Partner Network, and BizSpark, and other Microsoft programs).
 
 See [Manage Accounts, Subscriptions, and Administrative Roles](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx) for more information about Azure subscriptions.
 
 **After creating a Windows Azure subscription and account:**
 
-1. Download and install the Azure CLI following the instructions outlined in [Install the Azure CLI](/documentation/articles/xplat-cli-install).
+1. Download and install the Azure CLI following the instructions outlined in [Install the Azure CLI](/documentation/articles//xplat-cli-install).
 2. Once the Azure CLI has been installed, you will be able to use the azure command from your command-line interface (Bash, Terminal, Command prompt) to access the Azure CLI commands. Type `azure` command and you should see the following output.
 
     ![Azure Command Output][Image1]
 
 3. In the command line interface, type `azure storage` to list out all the azure storage commands and get a first impression of the functionalities the Azure CLI provides. You can type command name with **-h** parameter (for example, `azure storage share create -h`) to see details of command syntax.
-4. Now, we’ll give you a simple script that shows basic Azure CLI commands to access Azure Storage. The script will first ask you to set two variables for your storage account and key. Then, the script will create a new container in this new storage account and upload an existing image file (blob) to that container. After the script lists all blobs in that container, it will download the image file to the destination directory which exists on the local computer.
+4. Now, we'll give you a simple script that shows basic Azure CLI commands to access Azure Storage. The script will first ask you to set two variables for your storage account and key. Then, the script will create a new container in this new storage account and upload an existing image file (blob) to that container. After the script lists all blobs in that container, it will download the image file to the destination directory which exists on the local computer.
 
 		#!/bin/bash
 		# A simple Azure storage example
@@ -80,7 +80,7 @@ See [Manage Accounts, Subscriptions, and Administrative Roles](https://msdn.micr
 
     - **<destination_folder>** Enter a path to a local directory to store files downloaded from Azure Storage, such as: “~/downloadImages”.
 
-7. After you’ve updated the necessary variables in vim, press key combinations “Esc, : , wq!” to save the script.
+7. After you've updated the necessary variables in vim, press key combinations “Esc, : , wq!” to save the script.
 
 8. To run this script, simply type the script file name in the bash console. After this script runs, you should have a local destination folder that includes the downloaded image file. The following screenshot shows an example output:
 
@@ -165,7 +165,9 @@ To delete a blob, use the below command:
 
 ## Create and manage file shares
 
-Azure File storage offers shared storage for applications using the standard SMB protocol. Windows Azure virtual machines and cloud services, as well as on-premises applications, can share file data via mounted shares. You can manage file shares and file data via the Azure CLI. For more information on Azure File storage, see [How to use Azure File storage with Windows](/documentation/articles/storage-dotnet-how-to-use-files) or [How to use Azure File storage with Linux](/documentation/articles/storage-how-to-use-files-linux).
+Azure File storage offers shared storage for applications using the standard SMB protocol. Windows Azure virtual machines and cloud services, as well as on-premises applications, can share file data via mounted shares. You can manage file shares and file data via the Azure CLI. For more information on Azure File storage, see [How to use Azure File storage with Windows](/documentation/articles/storage-dotnet-how-to-use-files)or [How to use Azure File storage with Linux](/documentation/articles/storage-how-to-use-files-linux).
+
+> [AZURE.NOTE] Azure File storage is currently in preview. To request access to the preview, navigate to the [Windows Azure Preview page](/home/features/preview/), and request access to **Azure Files**. Once your request is approved, you'll be notified that you can access the File storage preview. You can then create a storage account for accessing File storage.
 
 ### Create a file share
 
@@ -202,7 +204,7 @@ Note that the directory name is optional for the listing operation. If omitted, 
 Beginning with version 0.9.8 of Azure CLI, you can copy a file to another file, a file to a blob, or a blob to a file. Below we demonstrate how to perform these copy operations using CLI commands. To copy a file to the new directory:
 
 	azure storage file copy start --source-share srcshare --source-path srcdir/hello.txt --dest-share destshare --dest-path destdir/hellocopy.txt --connection-string $srcConnectionString --dest-connection-string $destConnectionString
-	
+
 To copy a blob to a file directory:
 
 	azure storage file copy start --source-container srcctn --source-blob hello2.txt --dest-share hello --dest-path hellodir/hello2copy.txt --connection-string $srcConnectionString --dest-connection-string $destConnectionString
@@ -211,9 +213,8 @@ To copy a blob to a file directory:
 
 Here are some related articles and resources for learning more about Azure Storage.
 
-- [Azure Storage Documentation](/documentation/services/storage/)
+- [Azure Storage Documentation](/documentation/services/storage)
 - [Azure Storage REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
 
 
 [Image1]: ./media/storage-azure-cli/azure_command.png
- 

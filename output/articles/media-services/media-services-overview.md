@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Azure Media Services Overview and Common Scenarios
@@ -25,7 +25,10 @@ You can choose to stream your content live or deliver content on demand. This to
 To build Media Services solutions, you can use:
 
 - [Media Services REST API](https://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx)
-- One of the available client SDKs: [Azure Media Services SDK for .NET](https://github.com/Azure/azure-sdk-for-media-services), [Azure SDK for Java](https://github.com/Azure/azure-sdk-for-java), [Azure Media Services for Node.js](https://github.com/fritzy/node-azure-media), [Azure PHP SDK](https://github.com/Azure/azure-sdk-for-php)
+- One of the available client SDKs: 
+	- [Azure Media Services SDK for .NET](https://github.com/Azure/azure-sdk-for-media-services), 
+	- [Azure SDK for Java](https://github.com/Azure/azure-sdk-for-java), [Azure PHP SDK](https://github.com/Azure/azure-sdk-for-php), 
+	- [Azure Media Services for Node.js](https://github.com/michelle-becker/node-ams-sdk/blob/master/lib/request.js) (This is a non-Microsoft version of a Node.js SDK. It is maintained by a community and currently does not have a 100% coverage of the AMS APIs). 
 - Existing tools: [Azure Management Portal](http://manage.windowsazure.cn/) or [Azure-Media-Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer).
 
 
@@ -36,12 +39,17 @@ You can view AMS learning paths here:
 - [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
+##Poster
+
+
+[Here](http://azure.microsoft.com/documentation/infographics/media-services/) you can view the Azure Media Services  poster that depicts AMS workflows, from media creation through consumption. 
+
 ##Prerequisites
 
 To start using Azure Media Services, you should have the following:
  
 3. An Azure account. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
-2. An Azure Media Services account. Use Azure Management Portal, .NET, or REST API to create Azure Media Services account. For more information, see [Create Account](/documentation/articles/media-services-create-account).
+2. An Azure Media Services account. Use the Azure Management Portal, .NET, or REST API to create Azure Media Services account. For more information, see [Create Account](/documentation/articles/media-services-create-account).
 3. (Optional) Set up development environment. Choose .NET or REST API for your development environment. For more information, see [Set up environment](/documentation/articles/media-services-dotnet-how-to-use). 
 
 	Also, learn how to connect  programmatically [Connect](/documentation/articles/media-services-dotnet-connect_programmatically).
@@ -203,6 +211,10 @@ You can also scale your Media Services account by adding storage accounts to it.
 [Online documentation](https://msdn.microsoft.com/zh-cn/library/dn735912.aspx)
 [Downloadable eBook](https://www.microsoft.com/download/details.aspx?id=42629)
 
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 ##Service Level Agreement (SLA)
 

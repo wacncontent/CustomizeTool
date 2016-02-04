@@ -10,12 +10,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/07/2015"
+	ms.date="11/05/2015"
 	wacn.date=""/>
 
 
 # <a name="getting-started"> </a>Get started with Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
@@ -27,11 +30,11 @@ A screenshot from the completed app is below:
 
 ![](./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-completed-android.png)
 
-Completing this tutorial requires the [Android Developer Tools][Android Studio], which includes the Android Studio integrated development environment, and the latest Android platform. Android 4.2 or a later version is required.  
+Completing this tutorial requires the [Android Developer Tools][Android Studio], which includes the Android Studio integrated development environment, and the latest Android platform. Android 4.2 or a later version is required.
 
 The downloaded quickstart project contains the Mobile Services SDK for Android.
 
-> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28).
+> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 <!-- deleted by customization free --> mobile services that you can keep using even after your trial ends. For details, see [Azure <!-- deleted by customization Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28) --><!-- keep by customization: begin --> Trial](/pricing/1rmb-trial/) <!-- keep by customization: end -->.
 
 
 ## <a name="create-new-service"> </a>Create a new mobile service
@@ -44,7 +47,7 @@ Now that you have created the mobile service, download your personalized mobile 
 
 1. Click the mobile service that you just created, then in the quickstart tab, click **Android** under **Choose platform** and expand **Create a new Android app**.
 
-	![][1]  
+	![][1]
 
 2. If you haven't already done so, download and install [Visual Studio Professional 2013](https://www.visualstudio.com/downloads/download-visual-studio-vs), or a later version.
 
@@ -64,11 +67,16 @@ Now that you have created the mobile service, download your personalized mobile 
 
 In this section you will create a new Android app that is connected to your mobile service.
 
-1. In the [Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
+1. In the [Azure Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
 
 2. In the quickstart tab, click **Android** under **Choose platform** and expand **Create a new Android app**.
-
-	![][2]  
+<!-- deleted by customization
+	![][2]
+-->
+<!-- keep by customization: begin -->
+ 
+	![][2]
+<!-- keep by customization: end -->
 
 3. If you haven't already done so, download and install the [Android Developer Tools][Android SDK] on your local computer or virtual machine.
 
@@ -116,12 +124,19 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [15]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-services-import-android-project.png
 
 <!-- URLs. -->
+<!-- deleted by customization
+[Get started (Eclipse)]: mobile-services-dotnet-backend-android-get-started-ec.md
+[Add push notifications to your app]: mobile-services-dotnet-backend-android-get-started-push.md
+[Add authentication to your app]: mobile-services-dotnet-backend-android-get-started-auth.md
+-->
+<!-- keep by customization: begin -->
 [Get started (Eclipse)]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-ec
 [Add push notifications to your app]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
 [Add authentication to your app]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-auth
+<!-- keep by customization: end -->
 [Android SDK]: http://developer.android.com/sdk/index.html
 [Android Studio]: https://developer.android.com/sdk/index.html
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Troubleshoot a Mobile Services .NET backend]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
+[Troubleshoot a Mobile Services .NET backend]: <!-- deleted by customization mobile-services-dotnet-backend-how-to-troubleshoot.md --><!-- keep by customization: begin --> /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot <!-- keep by customization: end -->
 
-[Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn/

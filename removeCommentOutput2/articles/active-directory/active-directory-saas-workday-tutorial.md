@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Workday
@@ -94,7 +94,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![Account Administration](./media/active-directory-saas-workday-tutorial/IC782924.png "Account Administration")
 
-8.  Go to **Edit Tenant Setup – Security**.
+8.  Go to **Edit Tenant Setup - Security**.
 
     ![Edit Tenant Security](./media/active-directory-saas-workday-tutorial/IC782925.png "Edit Tenant Security")
 
@@ -146,7 +146,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
      11.5.  In the **View x509 Public Key** section, perform the following steps: <br><br>
         ![View x509 Public Key](./media/active-directory-saas-workday-tutorial/IC782930.png "View x509 Public Key") <br>
 
-      1.  In the **Name** textbox, type a name for your certificate (e.g.: *PPE_SP*).
+      1.  In the **Name** textbox, type a name for your certificate (e.g.: *PPE\_SP*).
       2.  In the **Valid From** textbox, type the valid from attribute value of your certificate.
       3.  In the **Valid To** textbox, type the valid to attribute value of your certificate.
 		

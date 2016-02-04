@@ -81,7 +81,12 @@ Event Hubs is available in the following regions:
 
 |Geo|Regions|
 |---|---|
-|China|China East, China North|
+|United States|China North, China East, China East 2, China East, China North|
+|Europe|China North, West Europe|
+|Asia Pacific|China East, China North|
+|Japan|Japan East, China East|
+|Brazil|Brazil South|
+|Australia|Australia East, Australia Southeast|
 
 ## Support and SLA
 
@@ -97,6 +102,6 @@ To learn more about Event Hubs, see the following articles:
 - A complete [sample application that uses Event Hubs].
 - A [queued messaging solution] using Service Bus queues.
 
-[Event Hubs overview]: /documentation/articles/event-hubs-overview
+[Event Hubs overview]: event-hubs-overview.md
 [sample application that uses Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
-[queued messaging solution]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
+[queued messaging solution]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md

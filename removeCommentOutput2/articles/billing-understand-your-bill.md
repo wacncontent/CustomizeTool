@@ -20,15 +20,7 @@ The charges for Windows Azure subscriptions vary by rate plan. Some rate plans, 
 
 Please note that up to 24 hours of latent usage from your prior billing period can be reported in your current billing period.
 
-For more information about consumption and rate plans, see the [Windows Azure Purchase Options page](/pricing/overview/).
-
-The below links cover a complete list of all Windows Azure services.
-
-- [Service Details list (csv1)](https://azurepricing.blob.core.chinacloudapi.cn/supplemental/MOSPServices_csv1.xlsx)
-- [Service Details list (csv2)](https://azurepricing.blob.core.chinacloudapi.cn/supplemental/MOSPServices_csv2.xlsx)
-
-*NOTE: The **csv1** link refers to the column header names for csv version 1 and **csv2** link refers to the new column header names for csv version 2.  These files are updated monthly.*
-
+For more information about consumption, usage, and rate plans, see the [Windows Azure Purchase Options page](/pricing/overview/).
 
 ## Content:
 
@@ -132,7 +124,7 @@ Any bill adjustments (credits or balances) applied to your account since your la
 The Current Charges section of the bill contains details about your monthly charges. The links are organized into the following subsections.
 
 ### Usage Charges
-Usage charges are total monthly charges on a subscription. You are billed in arrears for your past month’s usage.
+Usage charges are total monthly charges on a subscription. You are billed in arrears for your past month's usage.
 
 ### Discounts
 Service discounts on your usage would be reflected in this line item that are applied to your current bill.
@@ -164,7 +156,7 @@ This section is the payment instructions of where to send checks, wire transfers
 
 As part of our ongoing commitment to help customers easily manage their Azure use, we've enhanced the download usage file that reports on your Azure services usage and costs.  The download link contains two versions of the usage file: **Version 1** uses the pre-existing format; **Version 2** includes additional information and updated column names in the Daily Usage section.  
 
-Usage charges are total **monthly** charges on a subscription less any credit or discount. You are billed in arrears for your past month’s usage.  The top section of the file display the details on the services you are being billed for during the previous month's billing cycle.  The table below lists the names of the columns for each of the .csv version files.
+Usage charges are total **monthly** charges on a subscription less any credit or discount. You are billed in arrears for your past month's usage.  The top section of the file display the details on the services you are being billed for during the previous month's billing cycle.  The table below lists the names of the columns for each of the .csv version files.
 
 **Version 1** |  **Version 2**  |  **Description**|
 :---------------| :---------------- | --------|
@@ -217,9 +209,9 @@ Unit | Unit | Identifies the Unit that the service is charged in. For example, G
 Consumed | Consumed Quantity | Contains the amount of the resource that has been consumed for that day.
 Sub Region | Resource Location | Identifies the datacenter where the resource is running.
 Service | Consumed Service | This column is utilized to track the individual Azure platform service that may not be specifically identified in the Name column. This Service column will indicate which specific service the usage pertains.
-N/A | Resource Group | _**New column addition.**_ The resource group in which the deployed resource is running in. Refer to /documentation/articles/resource-group-overview/
+N/A | Resource Group | _**New column addition.**_ The resource group in which the deployed resource is running in. Refer to http://www.windowsazure.cn/documentation/articles/resource-group-overview/ 
 Component | Instance ID | The identifier for the running resource. The identifier contains the name you specify for the resource when it was created.
-N/A | Tags | _**New column addition.**_ New resource types in Azure allow you to tag resources. Refer to http://azure.microsoft.com/updates/organize-your-azure-resources-with-tags/
+N/A | Tags | _**New column addition.**_ New resource types in Azure allow you to tag resources. Refer to http://www.windowsazure.cn/updates/organize-your-azure-resources-with-tags/ 
 Additional Info | Additional Info | Additional metadata related to the service.
 Service Info 1 | Service Info 1 | This column provides the project name that the service belongs to on your subscription.
 Service Info 2 | Service Info 2 | This is a legacy field that captures optional service specific metadata.
@@ -234,13 +226,22 @@ In addition to some new fields and name changes to csv Version 2, there will be 
 
 ![additionalinfo_csv2](./media/billing-understand-your-bill/AdditionaInfo_csv2.png)
 
-- **Tags**:  This column contains the user specified resource tags. The tags can be used to group billing records. For example, you can use tags to distribute costs by department using the service. Learn more about [using tags to organize Azure Resources](/documentation/articles/resource-group-using-tags). Services that support emitting tags are:  
+- **Tags**:  This column contains the user specified resource tags. The tags can be used to group billing records. For example, you can use tags to distribute costs by department using the service. Learn more about [using tags to organize Azure Resources](/resource-group-using-tags.md/). Services that support emitting tags are:
     - Virtual Machines
     - Storage and
     - Networking services provisioned using the [Azure Resource Manager API](https://msdn.microsoft.com/zh-cn/library/azure/dn790567.aspx)
 
 ![tags](./media/billing-understand-your-bill/tags.png)
 
+
+Please see these additional sources for more details on each service. These files are updated on a monthly basis, published on the 25th for the coming month, and are available from **May 2015** onwards for .csv Version 1, and from **June 2015** onward for .csv Version 2. Below is the base file URL for the Service Download Fields:
+
+>>  https://azurepricing.blob.core.chinacloudapi.cn/supplemental/MOSPServices_v1_MMYYYY.xlsx
+>>  https://azurepricing.blob.core.chinacloudapi.cn/supplemental/MOSPServices_v2_MMYYYY.xlsx
+
+
+
+To find the most current version, enter in the Year and Month (looking for May 2015 file, enter in **052015** into the section _**“MMYYYY”**_ in the above URL).  This spreadsheet provides a listing of all possible combinations of the service related fields in the **Usage Download Report**.
 
 ## More Resources
 Navigate to the section, **Manage Accounts, Subscriptions, and Admin Roles**, under [Manage your services](https://msdn.microsoft.com/zh-cn/library/azure/dn578292.aspx) for some very helpful links:

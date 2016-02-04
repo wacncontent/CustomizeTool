@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/05/2015"
-   ms.author="amanbha"/>
+	ms.service="service-fabric"
+	ms.date="08/05/2015"
+	wacn.date=""/>
 
 
 # Reliable Actor Reentrancy

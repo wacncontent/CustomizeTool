@@ -1,26 +1,22 @@
 <properties 
-    pageTitle="Connecting DocumentDB with Azure Search using indexers | Microsoft Azure" 
+    pageTitle="Connecting DocumentDB with Azure Search using indexers | Windows Azure" 
     description="This article shows you how to use to Azure Search indexer with DocumentDB as a data source."
     services="documentdb" 
     documentationCenter="" 
-    authors="aliuy" 
+    authors="AndrewHoh" 
     manager="jhubbard" 
     editor="mimig"/>
 
-<tags 
-    ms.service="documentdb" 
-    ms.devlang="rest-api" 
-    ms.topic="article" 
-    ms.tgt_pltfrm="NA" 
-    ms.workload="data-services" 
-    ms.date="06/16/2015" 
-    ms.author="andrl"/>
+<tags
+	ms.service="documentdb"
+	ms.date="10/28/2015"
+	wacn.date=""/>
 
 #Connecting DocumentDB with Azure Search using indexers
 
 If you're looking to implement great search experiences over your DocumentDB data, use Azure Search indexer for DocumentDB! In this article, we will show you how to integrate Azure DocumentDB with Azure Search without having to write any code to maintain indexing infrastructure!
 
-To set this up, you have to [setup an Azure Search account](../search-get-started.md#start-with-the-free-service) (you don't need to upgrade to standard search), and then call the [Azure Search REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) to create a DocumentDB **data source** and an **indexer** for that data source.
+To set this up, you have to [setup an Azure Search <!-- deleted by customization account](/documentation/articles/search-get-started#start-with-the-free-service) --><!-- keep by customization: begin --> account](../search-get-started.md#start-with-the-free-service) <!-- keep by customization: end --> (you don't need to upgrade to standard search), and then call the [Azure Search REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end --> to create a DocumentDB **data source** and an **indexer** for that data source.
 
 ##<a id="Concepts"></a>Azure Search indexer concepts
 
@@ -38,7 +34,12 @@ An **indexer** describes how the data flows from your data source into a target 
 
 Issue a HTTP POST request to create a new data source in your Azure Search service, including the following request headers.
     
+<!-- deleted by customization
+    POST https://[Search service name].search.chinacloudapi.cn/datasources?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
     POST https://[Search service name].search.windows.net/datasources?api-version=[api-version]
+<!-- keep by customization: end -->
     Content-Type: application/json
     api-key: [Search service admin key]
 
@@ -121,9 +122,16 @@ You will receive an HTTP 201 Created response if the data source was successfull
 
 ##<a id="CreateIndex"></a>Step 2: Create an index
 
+<!-- deleted by customization
+Create a target Azure Search index if you donât have one already. You can do this from the [Azure Management Portal UI](/documentation/articles/search-get-started#test-service-operations) or by using the [Create Index API](https://msdn.microsoft.com/zh-cn/library/azure/dn798941.aspx).
+
+	POST https://[Search service name].search.chinacloudapi.cn/indexes?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
 Create a target Azure Search index if you don’t have one already. You can do this from the [Azure Portal UI](../search-get-started.md#test-service-operations) or by using the [Create Index API](https://msdn.microsoft.com/library/azure/dn798941.aspx).
 
 	POST https://[Search service name].search.windows.net/indexes?api-version=[api-version]
+<!-- keep by customization: end -->
 	Content-Type: application/json
 	api-key: [Search service admin key]
 
@@ -172,7 +180,12 @@ You will receive an HTTP 201 Created response if the index was successfully crea
 
 You can create a new indexer within an Azure Search service by using an HTTP POST request with the following headers.
     
+<!-- deleted by customization
+    POST https://[Search service name].search.chinacloudapi.cn/indexers?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
     POST https://[Search service name].search.windows.net/indexers?api-version=[api-version]
+<!-- keep by customization: end -->
     Content-Type: application/json
     api-key: [Search service admin key]
 
@@ -213,7 +226,12 @@ You will receive an HTTP 201 Created response if the indexer was successfully cr
 
 In addition to running periodically on a schedule, an indexer can also be invoked on demand by issuing the following HTTP POST request: 
 
+<!-- deleted by customization
+    POST https://[Search service name].search.chinacloudapi.cn/indexers/[indexer name]/run?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
     POST https://[Search service name].search.windows.net/indexers/[indexer name]/run?api-version=[api-version]
+<!-- keep by customization: end -->
     api-key: [Search service admin key]
 
 ###Response
@@ -224,7 +242,12 @@ You will receive an HTTP 202 Accepted response if the indexer was successfully i
 
 You can issue a HTTP GET request to retrieve the current status and execution history of an indexer: 
 
+<!-- deleted by customization
+    GET https://[Search service name].search.chinacloudapi.cn/indexers/[indexer name]/status?api-version=[api-version]
+-->
+<!-- keep by customization: begin -->
     GET https://[Search service name].search.windows.net/indexers/[indexer name]/status?api-version=[api-version]
+<!-- keep by customization: end -->
     api-key: [Search service admin key]
 
 ###Response
@@ -265,7 +288,7 @@ Execution history contains up to the 50 most recent completed executions, which 
 
 Congratulations! You have just learned how to integrate Azure DocumentDB with Azure Search using the indexer for DocumentDB.
 
- - To learn how more about Azure DocumentDB, click [here](/services/documentdb/).
+ - To learn how more about Azure DocumentDB, click <!-- deleted by customization [here](/home/features/documentdb/) --><!-- keep by customization: begin --> [here](/services/documentdb/) <!-- keep by customization: end -->.
 
- - To learn how more about Azure Search, click [here](/services/search/).
+ - To learn how more about Azure Search, click <!-- deleted by customization [here](/home/features/search/) --><!-- keep by customization: begin --> [here](/services/search/) <!-- keep by customization: end -->.
  

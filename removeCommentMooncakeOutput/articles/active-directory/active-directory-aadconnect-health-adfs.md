@@ -8,9 +8,9 @@
 	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags
-	ms.service="active-directory"
-	ms.date="08/14/2015"
+<tags 
+	ms.service="active-directory" 
+	ms.date="08/14/2015" 
 	wacn.date=""/>
 
 # Using Azure AD Connect Health with AD FS 
@@ -57,7 +57,7 @@ Azure AD Connect Health Performance Monitoring provides monitoring information o
 ![Azure AD Connect Health Portal](./media/active-directory-aadconnect-health/perf1.png)
 
 
-By selecting the Filter option at the top of the blade, you can filter by server to see an individual server’s metrics. To change metrics, simply right-click on the monitoring chart under the monitoring blade and select Edit Chart. Then, from the new blade that opens up, you can select additional metrics from the drop-down and specify a time range for viewing the performance data.
+By selecting the Filter option at the top of the blade, you can filter by server to see an individual serverâs metrics. To change metrics, simply right-click on the monitoring chart under the monitoring blade and select Edit Chart. Then, from the new blade that opens up, you can select additional metrics from the drop-down and specify a time range for viewing the performance data.
 
 
 
@@ -67,4 +67,5 @@ By selecting the Filter option at the top of the blade, you can filter by server
 * [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health)
 * [Azure AD Connect Health Agent Installation for AD FS](/documentation/articles/active-directory-aadconnect-health-agent-install-adfs)
 * [Azure AD Connect Health Operations](/documentation/articles/active-directory-aadconnect-health-operations)
+* [Using Azure AD Connect Health for sync](/documentation/articles/active-directory-aadconnect-health-sync)
 * [Azure AD Connect Health FAQ](/documentation/articles/active-directory-aadconnect-health-faq)

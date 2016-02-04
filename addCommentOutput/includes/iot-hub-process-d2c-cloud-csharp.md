@@ -21,7 +21,7 @@ In order to use [EventProcessorHost], you must have an Azure Storage account. Yo
 
 You will also need a Service Bus queue to enable reliable processing of interactive messages. You can create a queue programmatically with a 1 hour deduplication window, as explained in [How to use Service Bus Queues][Service Bus Queue], or use the [Azure Management Portal], following these steps:
 
-1. Click **NEW** in the bottom left corner, then **App Services**, then **Service Bus**, then **Queue**, then **Custom**, select the name **d2ctutorial**, then select a deduplication window of 1 hour.
+1. Click **NEW** in the bottom left corner, then **Azure Websitess**, then **Service Bus**, then **Queue**, then **Custom**, select the name **d2ctutorial**, then select a deduplication window of 1 hour.
 
     ![][30]
 
@@ -286,27 +286,33 @@ In this section, you'll write a Windows console app that receives interactive me
 
 [Azure IoT - Service SDK NuGet package]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 
-[Get Started with Event Hubs]: /documentation/articles/event-hubs-csharp-ephcs-getstarted
+[Get Started with Event Hubs]: ../event-hubs/event-hubs-csharp-ephcs-getstarted.md
 [IoT Hub Developer Guide - Identity Registry]: /documentation/articles/iot-hub-devguide#identityregistry
 
-[Azure Storage scalability Guidelines]: /documentation/articles/storage-scalability-targets
+[Azure Storage scalability Guidelines]: ../storage/storage-scalability-targets.md
+
 [Azure Block Blobs]: https://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx
 
-[Service Bus documentation]: /documentation/articles/service-bus-dotnet-how-to-use-queues
-[Event Hubs Overview]: /documentation/articles/event-hubs-overview
+[Service Bus documentation]: ../service-bus/service-bus-dotnet-how-to-use-queues.md
+
+[Event Hubs Overview]: ../event-hubs/event-hubs-overview.md
 [Scaled out event processing]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 
 [EventProcessorHost]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 
-[Event Hubs Programming Guide]: /documentation/articles/event-hubs-programming-guide
-[Azure Preview Portal]: https://manage.windowsazure.cn/
+[Event Hubs Programming Guide]: ../event-hubs/event-hubs-programming-guide.md
+
+[Azure preview portal]: https://manage.windowsazure.cn/
 
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
-[Service Bus Queue]: /documentation/articles/service-bus-dotnet-how-to-use-queues
-[Build multi-tier applications with Service Bus]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
+[Service Bus Queue]: ../service-bus/service-bus-dotnet-how-to-use-queues.md
+
+[Build multi-tier applications with Service Bus]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
+
+
 <!-- Images -->
 [10]: ./media/iot-hub-process-d2c-cloud-csharp/create-identity-csharp1.png
 [12]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp3.png

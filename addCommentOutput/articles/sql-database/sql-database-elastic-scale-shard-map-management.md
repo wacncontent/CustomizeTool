@@ -1,19 +1,20 @@
 <properties 
-	pageTitle="Shard map management" 
+	pageTitle="Shard map management | Windows Azure" 
 	description="How to use the ShardMapManager, elastic database client library" 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh" 
+	authors="ddove" 
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/24/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # Shard map management
-In a sharded database environment, a **shard map** maintains information allowing an application to connect to the correct database based upon the value of the **sharding key**. Understanding how these maps are constructed is crucial to managing shards with the elastic database client library.
+
+Use the [Elastic Database client library](/documentation/articles/sql-database-elastic-database-client-library) to manage sharded applications. In a sharded database environment, a [**shard map**](/documentation/articles/sql-database-elastic-scale-glossary) maintains information allowing an application to connect to the correct database based upon the value of the **sharding key**. Understanding how these maps are constructed is essential to shard map management.
 
 ## Shard maps and shard mappings
  
@@ -102,9 +103,7 @@ In this code, an application tries to open an existing **ShardMapManager**.  If 
         // for privileges on both the GSM and the shards themselves.
     } 
  
-<!-- deleted by customization
 As an alternative, you can use Powershell to create a new Shard Map Manager. An example is available [here](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db).
--->
 
 ### Shard map administration credentials
 
@@ -124,7 +123,7 @@ An example sequence of operations to populate a specific shard map is shown belo
 2. The metadata for two different shards is added to the shard map. 
 3. A variety of key range mappings are added, and the overall contents of the shard map are displayed. 
 
-The code is written in a way that the entire method can be safely rerun in case an unexpected error is encountered – each request tests whether a shard or mapping already exists, before attempting to create it. The code below assumes that databases named **sample_shard_0**, **sample_shard_1** and **sample_shard_2** have already been created in the server referenced by string **shardServer**. 
+The code is written in a way that the entire method can be safely rerun in case an unexpected error is encountered - each request tests whether a shard or mapping already exists, before attempting to create it. The code below assumes that databases named **sample_shard_0**, **sample_shard_1** and **sample_shard_2** have already been created in the server referenced by string **shardServer**. 
 
     public void CreatePopulatedRangeMap(ShardMapManager smm, string mapName) 
         {            
@@ -198,7 +197,7 @@ The code is written in a way that the entire method can be safely rerun in case 
             } 
         } 
  
-As an alternative you can use PowerShell scripts to achieve the same result. <!-- deleted by customization Some of the sample PowerShell examples are available [here](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db). -->
+As an alternative you can use PowerShell scripts to achieve the same result. Some of the sample PowerShell examples are available [here](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db).     
 
 Once shard maps have been populated, data access applications can be created or adapted to work with the maps. Populating or manipulating the maps need not occur again until **map layout** needs to change.  
 
@@ -222,7 +221,7 @@ These methods work together as the building blocks available for modifying the o
 
 * To create or remove points or ranges that are mapped to the shards: use **CreateRangeMapping**, **DeleteMapping**, **CreatePointMapping**. 
     
-    Many different points or ranges can be mapped to the same shard. These methods only affect metadata – they do not affect any data that may already be present in shards. If data needs to be removed from the database in order to be consistent with **DeleteMapping** operations, you will need to perform those operations separately but in conjunction with using these methods.  
+    Many different points or ranges can be mapped to the same shard. These methods only affect metadata - they do not affect any data that may already be present in shards. If data needs to be removed from the database in order to be consistent with **DeleteMapping** operations, you will need to perform those operations separately but in conjunction with using these methods.  
 
 * To split existing ranges into two, or merge adjacent ranges into one: use **SplitMapping** and **MergeMappings**.  
 
@@ -236,7 +235,7 @@ These methods work together as the building blocks available for modifying the o
 
     Certain operations on shard mappings are only allowed when a mapping is in an “offline” state, including **UpdateMapping** and **DeleteMapping**. When a mapping is offline, a data-dependent request based on a key included in that mapping will return an error. In addition, when a range is first taken offline, all connections to the affected shard are automatically killed in order to prevent inconsistent or incomplete results for queries directed against ranges being changed. 
 
-Mappings are immutable objects in .Net.  All of the methods above that change mappings also invalidate any references to them in your code.   To make it easier to perform sequences of operations that change a mapping’s state, all of the methods that change a mapping return a new mapping reference, so operations can be chained.  For example, to delete an existing mapping in shardmap sm that contains the key 25, you can execute the following: 
+Mappings are immutable objects in .Net.  All of the methods above that change mappings also invalidate any references to them in your code.   To make it easier to perform sequences of operations that change a mapping's state, all of the methods that change a mapping return a new mapping reference, so operations can be chained.  For example, to delete an existing mapping in shardmap sm that contains the key 25, you can execute the following: 
 
         sm.DeleteMapping(sm.MarkMappingOffline(sm.GetMappingForKey(25)));
 

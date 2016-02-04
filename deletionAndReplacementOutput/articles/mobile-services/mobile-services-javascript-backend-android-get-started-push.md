@@ -8,7 +8,7 @@ replaced by:
 
 		##<a id="register"></a>Enable Google Cloud Messaging
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -18,7 +18,7 @@ replaced by:
 
 		##<a id="configure"></a>Configure Mobile Services to send push requests
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -28,7 +28,7 @@ replaced by:
 
 		##<a id="add-push"></a>Add push notifications to your app
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -38,7 +38,7 @@ replaced by:
 
 		##<a id="update-scripts"></a>Update the registered insert script in the Management Portal
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -48,5 +48,5 @@ replaced by:
 
 		##<a id="test"></a>Test push notifications in your app
 
-reason: ()
+reason: (inpage link)
 

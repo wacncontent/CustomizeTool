@@ -17,7 +17,7 @@
 ### Streaming Logs ###
 
 The Windows Azure Management Portal provides an integrated streaming log viewer that lets you view tracing events from 
-your Azure Websites web apps in real time.  
+your Azure web apps in real time.  
 
 Setting this up requires a few simple steps:
 

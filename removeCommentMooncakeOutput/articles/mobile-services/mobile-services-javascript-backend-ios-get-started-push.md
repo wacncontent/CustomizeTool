@@ -18,7 +18,7 @@
 
 This topic shows you how to add push notifications to the [quickstart project](/documentation/articles/mobile-services-ios-get-started), so that your mobile service sends a push notification each time a record is inserted. You must complete [Get Started with Mobile Services] first.
 
-> [AZURE.NOTE] The [iOS simulator does not support push notifications](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html), so you must use a physical iOS device. You'll also need to sign up for a paid [Apple Developer Program membership](https://developer.apple.com/programs/ios/).
+> [AZURE.NOTE] The [iOS simulator does not support push notifications](https://developer.apple.com/zh-cn/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html), so you must use a physical iOS device. You'll also need to sign up for a paid [Apple Developer Program membership](https://developer.apple.com/programs/ios/).
 
 [AZURE.INCLUDE [Enable Apple Push Notifications](../includes/enable-apple-push-notifications.md)]
 
@@ -29,12 +29,13 @@ This topic shows you how to add push notifications to the [quickstart project](/
 
 ## <a id="update-scripts"></a>Update Backend Script to Send Push Notifications
 
-* In the Management Portal, click the **Data** tab and then click **TodoItem**. In **TodoItem**, click the **Script** tab and select **Insert**. This displays the function that is invoked when an insert occurs in the **TodoItem** table.
+* In the [Azure Management Portal], click the **Data** tab and then click **TodoItem**. In **TodoItem**, click the **Script** tab and select **Insert**. This displays the function that is invoked when an insert occurs in the **TodoItem** table.
 
 * Replace the insert function with the following code, and then click **Save**.  This registers a new insert script, which uses the [apns object] to send a push notification (the inserted text) to the device provided in the insert request. This script delays sending the notification to give you time to close the app to receive a push notification.
 
 
 ```
+
         function insert(item, user, request) {
             request.execute();
             // Set timeout to delay the notification, to provide time for the
@@ -105,10 +106,11 @@ This topic shows you how to add push notifications to the [quickstart project](/
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
-[Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
+[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts/
 
 [Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users
 [What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
 [Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-breaking-news
 [Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news
 [Mobile Services Objective-C how-to conceptual reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+

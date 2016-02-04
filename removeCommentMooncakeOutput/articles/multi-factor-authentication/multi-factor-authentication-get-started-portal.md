@@ -9,12 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+	ms.date="11/19/2015" 
+	wacn.date=""/>
 
 # Deploying the user portal for the Azure Multi-Factor Authentication Server
 
@@ -166,9 +162,9 @@ If they select the Voice Call authentication method or have been pre-configured 
 
 ![User portal trusted IPs](./media/multi-factor-authentication-get-started-portal/backupphone.png)
 
-If the user is required to use a PIN when they authenticate, the page will also prompt them to enter a PIN.  After entering their phone number(s) and PIN (if applicable), the user clicks the Call Me Now to Authenticate button.  Azure Multi-Factor Authentication will perform a phone call authentication to the user’s primary phone number.  The user must answer the phone call and enter their PIN (if applicable) and press # to move on to the next step of the self-enrollment process.   
+If the user is required to use a PIN when they authenticate, the page will also prompt them to enter a PIN.  After entering their phone number(s) and PIN (if applicable), the user clicks the Call Me Now to Authenticate button.  Azure Multi-Factor Authentication will perform a phone call authentication to the user's primary phone number.  The user must answer the phone call and enter their PIN (if applicable) and press # to move on to the next step of the self-enrollment process.   
 
-If the user selects the SMS Text authentication method or has been pre-configured to use that method, the page will prompt the user for their mobile phone number.  If the user is required to use a PIN when they authenticate, the page will also prompt them to enter a PIN.  After entering their phone number and PIN (if applicable), the user clicks the Text Me Now to Authenticate button.  Azure Multi-Factor Authentication will perform an SMS authentication to the user’s mobile phone.  The user must receive the SMS which contains a one- time-passcode (OTP) and reply to the message with that OTP plus their PIN if applicable) to move on to the next step of the self-enrollment process. 
+If the user selects the SMS Text authentication method or has been pre-configured to use that method, the page will prompt the user for their mobile phone number.  If the user is required to use a PIN when they authenticate, the page will also prompt them to enter a PIN.  After entering their phone number and PIN (if applicable), the user clicks the Text Me Now to Authenticate button.  Azure Multi-Factor Authentication will perform an SMS authentication to the user's mobile phone.  The user must receive the SMS which contains a one- time-passcode (OTP) and reply to the message with that OTP plus their PIN if applicable) to move on to the next step of the self-enrollment process. 
 
 ![User portal SMS](./media/multi-factor-authentication-get-started-portal/text.png)   
 
@@ -178,7 +174,7 @@ If the user selects the Mobile app authentication method or has been pre-configu
 
 The page then displays an activation code and a URL along with a barcode picture.  If the user is required to use a PIN when they authenticate, the page will also prompt them to enter a PIN.  The user enters the activation code and URL into the Azure Multi-Factor Authentication app or uses the barcode scanner to scan the barcode picture and clicks the Activate button.    
 
-After the activation is complete, the user clicks the Authenticate Me Now button.  Azure Multi-Factor Authentication will perform an authentication to the user’s mobile app.  The user must enter their PIN (if applicable) and press the Authenticate button in their mobile app to move on to the next step of the self-enrollment process.  
+After the activation is complete, the user clicks the Authenticate Me Now button.  Azure Multi-Factor Authentication will perform an authentication to the user's mobile app.  The user must enter their PIN (if applicable) and press the Authenticate button in their mobile app to move on to the next step of the self-enrollment process.  
 
 
 If the administrators have configured the Azure Multi-Factor Authentication Server to collect security questions and answers, the user is then taken to the Security Questions page.  The user must select four security questions and provide answers to their selected questions.    

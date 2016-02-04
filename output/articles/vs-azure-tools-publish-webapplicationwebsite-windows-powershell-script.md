@@ -1,14 +1,14 @@
 <properties
-   pageTitle="Publish-WebApplicationWebSite (Windows PowerShell script)"
+   pageTitle="Publish-WebApplicationWebSite (Windows PowerShell script) | Windows Azure"
    description="Learn how to publish a web project to an Azure website. This script creates the required resources in your Azure subscription if they don't exist."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="08/13/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 # Publish-WebApplicationWebSite (Windows PowerShell script)
@@ -18,7 +18,7 @@
 Publishes a web project to an Azure website. The script creates the required resources in your Azure subscription if they don't exist.
 
 	Publish-WebApplicationWebSite
-	–Configuration <configuration>
+	âConfiguration <configuration>
 	-SubscriptionName <subscriptionName>
 	-WebDeployPackage <packageName>
 	-DatabaseServerPassword @{Name = "name"; Password = "password"}

@@ -1,6 +1,6 @@
 
 <properties
-    pageTitle="Validate the Azure VNET to use with Azure RemoteApp | Microsoft Azure"
+    pageTitle="Validate the Azure VNET to use with Azure RemoteApp | Windows Azure"
     description="Learn how to make sure your Azure VNET is ready to use with Azure RemoteApp"
     services="remoteapp"
     documentationCenter=""
@@ -8,13 +8,9 @@
     manager="mbaldwin" />
 
 <tags
-    ms.service="remoteapp"
-    ms.workload="compute"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="article"
-    ms.date="09/29/2015"
-    ms.author="elizapo" />
+	ms.service="remoteapp"
+	ms.date="12/05/2015"
+	wacn.date=""/>
 
 
 
@@ -33,7 +29,6 @@ If this is successful, the Azure VNET is ready to use with RemoteApp.
 
 For more information about the end-to-end hybrid collection workflow, see the following articles:
 
-- [How to plan your virtual network for Azure RemoteApp](remoteapp-planvpn.md)
-- [Create a hybrid collection](remoteapp-create-hybrid-deployment.md)
+- [How to plan your virtual network for Azure RemoteApp](/documentation/articles/remoteapp-planvpn)
+- [Create a hybrid collection](/documentation/articles/remoteapp-create-hybrid-deployment)
 - [Deploy Azure RemoteApp collection to your Azure Virtual Network (with support for ExpressRoute)](http://blogs.msdn.com/b/rds/archive/2015/04/23/deploy-azure-remoteapp-collection-to-your-azure-virtual-network-with-support-for-expressroute.aspx)
- 

@@ -9,11 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/06/2015"
+	ms.date="11/05/2015"
 	wacn.date=""/>
 
 # <a name="getting-started"> </a>Get started with Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
@@ -33,7 +36,7 @@ A screenshot from the completed app is below:
 
 Completing this tutorial requires XCode and [Xamarin Studio] for OS X or the Xamarin Visual Studio plug-in for Visual Studio on Windows. The sample will run on iOS 5.0 and newer.
 
-> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure Trial](/pricing/1rmb-trial/).
+> [AZURE.IMPORTANT] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get up to 10 free mobile services that you can keep using even after your trial ends. For details, see [Azure <!-- deleted by customization Trial](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> Trial](/pricing/1rmb-trial) <!-- keep by customization: end -->.
 
 ## <a name="create-new-service"> </a>Create a new mobile service
 
@@ -41,11 +44,11 @@ Completing this tutorial requires XCode and [Xamarin Studio] for OS X or the Xam
 
 ## Create a new Xamarin.iOS app
 
-Once you have created your mobile service, you can follow an easy quickstart in the Management Portal to either create a new app or modify an existing app to connect to your mobile service.
+Once you have created your mobile service, you can follow an easy quickstart in the Azure Management Portal to either create a new app or modify an existing app to connect to your mobile service.
 
 In this section you will create a new Xamarin.iOS app that is connected to your mobile service.
 
-1.  In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+1.  In the [Azure Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
 
 2. In the quickstart tab, click **Xamarin.iOS** under **Choose platform** and expand **Create a new Xamarin.iOS app**.
 
@@ -83,7 +86,7 @@ The final stage of this tutorial is to build and run your new app.
 
 	> [AZURE.NOTE] You can review the code that accesses your mobile service to query and insert data, which is found in the TodoService.cs C# file.
 
-4. Back in the Management Portal, click the **Data** tab and then click the **TodoItems** table.
+4. Back in the [Azure Management Portal], click the **Data** tab and then click the **TodoItems** table.
 
 	![][11]
 
@@ -95,18 +98,17 @@ The final stage of this tutorial is to build and run your new app.
 ## Next Steps
 Now that you have completed the quickstart, learn how to perform additional important tasks in Mobile Services:
 
-* [Get started with offline data sync]  
+* [Get started with offline data sync]
   Learn how the quickstart uses offline data sync to make the app responsive and robust.
 
-* [Get started with authentication]  
+* [Get started with authentication]
   Learn how to authenticate users of your app with an identity provider.
 
-* [Get started with push notifications]  
+* [Get started with push notifications]
   Learn how to send a very basic push notification to your app.
 
-* [How to use the Xamarin Component client for Azure Mobile Services](/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library)  
-   Learn how to query the mobile service, work with data, and access custom APIs.   
-  
+* [How to use the Xamarin Component client for Azure Mobile Services](/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library)
+   Learn how to query the mobile service, work with data, and access custom APIs.
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
@@ -128,11 +130,17 @@ Now that you have completed the quickstart, learn how to perform additional impo
 
 
 <!-- URLs. -->
-[Get started with offline data sync]: /documentation/articles/mobile-services-xamarin-ios-get-started-offline-data
+[Get started with offline data sync]: <!-- deleted by customization mobile-services-xamarin-ios-get-started-offline-data.md --><!-- keep by customization: begin --> /documentation/articles/mobile-services-xamarin-ios-get-started-offline-data <!-- keep by customization: end -->
+<!-- deleted by customization
+[Get started with authentication]: partner-xamarin-mobile-services-ios-get-started-users.md
+[Get started with push notifications]: partner-xamarin-mobile-services-ios-get-started-push.md
+-->
+<!-- keep by customization: begin -->
 [Get started with authentication]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-users
 [Get started with push notifications]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-push
+<!-- keep by customization: end -->
 
 [Xamarin Studio]: http://xamarin.com/download
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
-[Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn/

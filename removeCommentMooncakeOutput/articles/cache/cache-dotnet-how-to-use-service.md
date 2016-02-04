@@ -32,7 +32,7 @@ Azure Managed Cache Service includes the following
 features:
 
 -   Pre-built ASP.NET providers for session state and page output
-    caching, enabling acceleration of web applications without having to
+    caching, enabling acceleration of web sites without having to
     modify application code.
 -   Caches any serializable managed object - for example: CLR objects, rows, XML,
     binary data.

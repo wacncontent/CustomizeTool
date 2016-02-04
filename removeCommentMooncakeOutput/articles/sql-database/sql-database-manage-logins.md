@@ -9,13 +9,13 @@
    tags=""/>
 
 <tags
-	ms.service="sql-database"
-	ms.date="09/25/2015"
-	wacn.date=""/>
+   ms.service="sql-database"
+   ms.date="09/25/2015"
+   wacn.date=""/>
 
 # Managing databases and logins in Azure SQL Database
 
-In Windows Azure SQL Database, when you sign up for the service, the provisioning process creates an Azure SQL Database server, a database named **master**, and a login that is the server-level principal of your Azure SQL Database server. That login is similar to the server-level principal (**sa**), for an on-premises instance of SQL Server.
+In Windows Azure SQL Database, when you sign up for the service, the provisioning process creates an Azure SQL Database server, a database named **master**, and a login that is the server-level principal of your Azure SQL Database server. That login is similar to the server-level principal, **sa**, for an instance of SQL Server on your premises. 
 
 The Azure SQL Database server-level principal account always has permission to manage all server-level and database-level security. This topic describes how you can use the server-level principal and other accounts to manage logins and databases in SQL Database.
 
@@ -75,23 +75,23 @@ CREATE LOGIN login1 WITH password='<ProvidePassword>';
 
 #### Using new logins
 
-In order to connect to Windows Azure SQL Database using the logins you create, you must first grant each login database-level permissions by using the ``CREATE USER`` command. For more information, see [Granting Database-Level Permissions to a Login](https://msdn.microsoft.com/zh-cn/library/ee336235.aspx#DatabasePerms).
+In order to connect to Windows Azure SQL Database using the logins you create, you must first grant each login database-level permissions by using the ``CREATE USER`` command. For more information, see  [Granting Database-Level Permissions to a Login](https://msdn.microsoft.com/zh-cn/library/ee336235.aspx#DatabasePerms).
 
 Because some tools implement tabular data stream (TDS) differently, you may need to append the Azure SQL Database server name to the login in the connection string using the ``<login>@<server>`` notation. In these cases, separate the login and Azure SQL Database server name with the ``@`` symbol. For example, if your login was named **login1** and the fully qualified name of your Azure SQL Database server is **servername.database.chinacloudapi.cn**, the username parameter of your connection string should be: **login1@servername**. This restriction places limitations on the text you can choose for the login name. For more information, see [CREATE LOGIN (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms189751.aspx).
 
 ## Granting server-level permissions to a login
 
-In order for logins other than the server-level principal to manage server-level security, Azure SQL Database offers two security roles: **loginmanager** for creating logins and **dbmanager** for creating databases. Only users in the **master** database can be added to these database roles.
+In order for logins other than the server-level principal to manage server-level security, Windows Azure SQL Database offers two security roles: **loginmanager**, for creating logins and **dbmanager** for creating databases. Only users in the **master** database can be added to these database roles.
 
 > [AZURE.NOTE] To create logins or databases, you must be connected to the **master** database (which is a logical representation of **master**).
 
 ### The loginmanager role
 
-Like the **securityadmin** fixed server role for an on-premises instance of SQL Server, the **loginmanager** database role in Azure SQL Database is has permission to create logins. Only the server-level principal login (created by the provisioning process) or members of the **loginmanager** database role can create new logins. 
+Like the **securityadmin** fixed server role for an on-premises instance of SQL Server, the **loginmanager** database role in Windows Azure SQL Database is has permission to create logins. Only the server-level principal login (created by the provisioning process) or members of the **loginmanager** database role can create new logins. 
 
 ### The dbmanager role
 
-The  Azure SQL Database **dbmanager** database role is similar to the **dbcreator** fixed server role for an on-premises instance of SQL Server. Only the server-level principal login (created by the provisioning process) or members of the **dbmanager** database role can create databases. Once a user is a member of the **dbmanager** database role, it can create a database with the Azure SQL Database ``CREATE DATABASE`` command, but that command must be executed in the master database. For more information, see [CREATE DATABASE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx).
+The Windows Azure SQL Database **dbmanager** database role is similar to the **dbcreator** fixed server role for an on-premises instance of SQL Server. Only the server-level principal login (created by the provisioning process) or members of the **dbmanager** database role can create databases. Once a user is a member of the **dbmanager** database role, it can create a database with the Azure SQL Database ``CREATE DATABASE`` command, but that command must be executed in the master database. For more information, see [CREATE DATABASE (SQL Server Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms176061.aspx).
 
 ### How to assign SQL Database server-level roles
 
@@ -116,7 +116,7 @@ EXEC sp_addrolemember 'loginmanager', 'login1User';
 
 ## Granting database access to a login
 
-All logins must be created in the **master** database. After a login has been created, you can create a user account in another database for that login. Azure SQL Database also supports database roles in the same way that an on-premises instance of SQL Server does.
+All logins must be created in the **master** database. After a login has been created, you can create a user account in another database for that login. Windows Azure SQL Database also supports database roles in the same way that an on-premises instance of SQL Server does.
 
 To create a user account in another database, assuming you have not created a login or a database, perform the following steps:
 
@@ -163,5 +163,5 @@ SELECT * FROM sys.databases;
 
 ## See also
 
-[Azure SQL Database Security Guidelines and Limitations](/documentation/articles/sql-database-security-guidelines) 
+[Azure SQL Database Security Guidelines and Limitations](/documentation/articles/sql-database-security-guidelines)
 [Connecting to SQL Database By Using Azure Active Directory Authentication](/documentation/articles/sql-database-aad-authentication)

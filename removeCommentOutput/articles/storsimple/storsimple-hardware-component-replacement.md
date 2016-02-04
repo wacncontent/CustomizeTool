@@ -1,27 +1,23 @@
 <properties 
-   pageTitle="StorSimple hardware component replacement | Microsoft Azure"
+   pageTitle="StorSimple hardware component replacement | Windows Azure"
    description="Describes how to safely replace the PCMs, battery, controller modules, EBOD controllers, disk drives, and chassis of a StorSimple device."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/31/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="08/31/2015"
+	wacn.date=""/>
 
 # StorSimple hardware component replacement
 
 ## Overview
 
-The hardware component replacement tutorials describe the hardware components of your Microsoft Azure StorSimple device and the steps necessary to remove and replace them. This article describes the safety icons, provides pointers to the detailed tutorials, and lists the components that are replaceable.
+The hardware component replacement tutorials describe the hardware components of your Windows Azure StorSimple device and the steps necessary to remove and replace them. This article describes the safety icons, provides pointers to the detailed tutorials, and lists the components that are replaceable.
 
->[AZURE.IMPORTANT] Before attempting to remove or replace any StorSimple component, make sure that you review the [safety icon conventions](#safety-icon-conventions) and other [safety precautions](storsimple-safety.md).
+>[AZURE.IMPORTANT] Before attempting to remove or replace any StorSimple component, make sure that you review the [safety icon conventions](#safety-icon-conventions) and other [safety precautions](/documentation/articles/storsimple-safety).
  
 ### Safety icon conventions
 
@@ -41,7 +37,7 @@ The following table describes the safety icons used in these tutorials. Pay clos
 
 ### Before you begin
 
-Familiarize yourself with the safety information about your device and safety icons used in this tutorial. Go to [Safely install and operate your StorSimple device](storsimple-safety.md) for complete information. Be sure to review the [Safety precautions](storsimple-safety.md#handling-precautions) before you handle your StorSimple device. 
+Familiarize yourself with the safety information about your device and safety icons used in this tutorial. Go to [Safely install and operate your StorSimple device](/documentation/articles/storsimple-safety) for complete information. Be sure to review the [Safety precautions](/documentation/articles/storsimple-safety#handling-precautions) before you handle your StorSimple device. 
 
 Before you attempt to replace a component, consider the following information.
 
@@ -57,17 +53,17 @@ When you replace a module, **NEVER leave an empty bay in the rear of the enclosu
 
 ## Hardware component replacement procedures
 
-Your Microsoft Azure StorSimple device consists of several plug-in modules in the primary and/or EBOD enclosures. The 8100 has a single primary enclosure, whereas the 8600 is a dual enclosure device with a primary enclosure and an EBOD enclosure.
+Your Windows Azure StorSimple device consists of several plug-in modules in the primary and/or EBOD enclosures. The 8100 has a single primary enclosure, whereas the 8600 is a dual enclosure device with a primary enclosure and an EBOD enclosure.
 
 The main hardware components in your device are summarized in the following tables. Click the link in the **Replacement procedure** column to go to the associated tutorial.
 
 |Components|# Present|Plug-in module?|Replacement procedure
 |:---------|:--------|:--------------|:---------------------|
-| Chassis|1|No|[Replace the chassis on your StorSimple device](storsimple-chassis-replacement.md) |
-|Primary controllers|2|Yes| [Replace a controller module on your StorSimple device](storsimple-controller-replacement.md) |
-|764W Power and Cooling Modules (PCMs)|2|Yes| [Replace a Power and Cooling Module on your StorSimple device](storsimple-power-cooling-module-replacement.md) |
-|Backup battery|2|Yes| [Replace the backup battery module on your StorSimple device](storsimple-battery-replacement.md) |
-|Disk drives|12|Yes| [Replace a disk drive on your StorSimple device](storsimple-disk-drive-replacement.md) |
+| Chassis|1|No|[Replace the chassis on your StorSimple device](/documentation/articles/storsimple-chassis-replacement) |
+|Primary controllers|2|Yes| [Replace a controller module on your StorSimple device](/documentation/articles/storsimple-controller-replacement) |
+|764W Power and Cooling Modules (PCMs)|2|Yes| [Replace a Power and Cooling Module on your StorSimple device](/documentation/articles/storsimple-power-cooling-module-replacement) |
+|Backup battery|2|Yes| [Replace the backup battery module on your StorSimple device](/documentation/articles/storsimple-battery-replacement) |
+|Disk drives|12|Yes| [Replace a disk drive on your StorSimple device](/documentation/articles/storsimple-disk-drive-replacement) |
 
 **Table 1** Hardware components in the primary enclosure
 
@@ -75,10 +71,10 @@ The primary enclosure and the EBOD enclosure differ in their I/O modules. Additi
 
 |Components|# Present|Plug-in module?| Replacement procedure
 |:---------|:--------|:--------------|:---------------------|
-|Chassis|1|No| [Replace the chassis on your StorSimple device](storsimple-chassis-replacement.md) |
-|EBOD controllers|2|Yes| [Replace an EBOD controller on your StorSimple device](storsimple-EBOD-controller-replacement.md) |
-|580W Power and Cooling Modules (PCMs)|2|Yes| [Replace a Power and Cooling Module on your StorSimple device](storsimple-power-cooling-module-replacement.md) |
-|Disk drives|12|Yes| [Replace a disk drive on your StorSimple device](storsimple-disk-drive-replacement.md) |
+|Chassis|1|No| [Replace the chassis on your StorSimple device](/documentation/articles/storsimple-chassis-replacement) |
+|EBOD controllers|2|Yes| [Replace an EBOD controller on your StorSimple device](/documentation/articles/storsimple-EBOD-controller-replacement) |
+|580W Power and Cooling Modules (PCMs)|2|Yes| [Replace a Power and Cooling Module on your StorSimple device](/documentation/articles/storsimple-power-cooling-module-replacement) |
+|Disk drives|12|Yes| [Replace a disk drive on your StorSimple device](/documentation/articles/storsimple-disk-drive-replacement) |
 
 **Table 2** Hardware components in the EBOD enclosure
 
@@ -136,8 +132,8 @@ The following field replaceable units (FRUs) are available for your StorSimple d
 
 - Rack mounting rail kit
 
-Please [contact Microsoft Support](storsimple-contact-microsoft-support.md) to order any of these replacement units.
+Please [contact Microsoft Support](/documentation/articles/storsimple-contact-microsoft-support) to order any of these replacement units.
 
 ## Next steps
 
-Review all [safety information](storsimple-safety.md) before you attempt to replace a StorSimple hardware component.
+Review all [safety information](/documentation/articles/storsimple-safety) before you attempt to replace a StorSimple hardware component.

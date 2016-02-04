@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-	ms.service="multiple"
-	ms.date="09/29/2015"
-	wacn.date=""/>
+   ms.service="multiple"
+   ms.date="09/29/2015"
+   wacn.date=""/>
 
 # Big Compute in Azure: Technical resources for batch and high performance computing (HPC)
 This is a guide to technical resources to help you run your large-scale parallel, batch, and HPC workloads in Azure. Extend your existing batch or HPC workloads to the Azure cloud, or build new Big Compute solutions in Azure using a range of Azure services.
@@ -24,7 +24,7 @@ Learn about Big Compute options in Azure, and choose the right approach for your
 
 ## Azure Batch
 
-[Batch](/home/features/batch/) is a platform service that makes it easy to cloud-enable your applications and run jobs without setting up and managing a cluster and job scheduler. Use the SDK to integrate client applications with Azure Batch through a variety of languages, stage data to Azure, and build job execution pipelines.
+[Batch](/documentation/services/batch/) is a platform service that makes it easy to cloud-enable your applications and run jobs without setting up and managing a cluster and job scheduler. Use the SDK to integrate client applications with Azure Batch through a variety of languages, stage data to Azure, and build job execution pipelines.
 
 * [Documentation](/documentation/services/batch/)
 
@@ -40,16 +40,18 @@ Deploy or extend your existing Windows or Linux HPC cluster to Azure to run your
 
 ### Microsoft HPC Pack
 
-HPC Pack is Microsoft's free HPC solution built on Windows Azure and Windows Server technologies.
+HPC Pack is Microsoft's free HPC solution built on Windows Azure and Windows Server technologies, capable of running Windows and Linux HPC workloads.  
 
-* [Download HPC Pack 2012 R2 Update 2](https://www.microsoft.com/download/details.aspx?id=47755)
+* [Download HPC Pack 2012 R2 Update 3](https://www.microsoft.com/download/details.aspx?id=49922)
 
 * [Documentation](https://technet.microsoft.com/zh-cn/library/jj899572.aspx)
 
 
 * [HPC cluster options with Microsoft HPC Pack in Azure](/documentation/articles/virtual-machines-hpcpack-cluster-options)
 
-* [Burst to Azure with HPC Pack](https://technet.microsoft.com/zh-cn/library/gg481749.aspx)
+* [Burst to Azure worker instances with HPC Pack](https://technet.microsoft.com/zh-cn/library/gg481749.aspx)
+
+* [Burst to Azure  Batch with HPC Pack](https://technet.microsoft.com/zh-cn/library/mt612877.aspx)
 
 
 * [Windows HPC forums](https://social.microsoft.com/Forums/home?category=windowshpc)

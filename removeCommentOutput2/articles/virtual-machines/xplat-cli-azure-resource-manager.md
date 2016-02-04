@@ -16,8 +16,7 @@
 
 > [AZURE.SELECTOR]
 - [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager)
-
-<br>
+- [Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager)
 
 
 This article describes how to create, manage, and delete Azure resources and VMs using the Azure CLI for Mac, Linux, and Windows using the Azure Resource Manager mode.  
@@ -170,7 +169,7 @@ The new **vm quick-create** shortcut cuts out most of the steps of the imperativ
 	Resource group name: CLIRG
 	Virtual machine name: myqvm
 	Location name: chinanorth
-	Operating system Type [Windows, Linux]: /documentation/articles/Linux
+	Operating system Type [Windows, Linux]: Linux
 	ImageURN (format: "publisherName:offer:skus:version"): CoreOS:CoreOS:Alpha:660.0.0
 	User name: azureuser
 	Password: ********

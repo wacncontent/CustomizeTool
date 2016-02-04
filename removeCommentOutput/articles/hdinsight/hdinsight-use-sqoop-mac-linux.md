@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Use Sqoop with Hadoop in HDInsight (SSH)
@@ -241,20 +241,20 @@ Now you have learned how to use Sqoop. To learn more, see:
 
 
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-versions]:  hdinsight-component-versioning.md
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data.md
+[hdinsight-use-oozie]: hdinsight-use-oozie.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
 
-[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
-[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
+[sqldatabase-get-started]: ../sql-database-get-started.md
+[sqldatabase-create-configue]: ../sql-database-create-configure.md
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-install]: /documentation/articles/install-configure-powershell
-[powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
+[powershell-install]: ../install-configure-powershell.md
+[powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html

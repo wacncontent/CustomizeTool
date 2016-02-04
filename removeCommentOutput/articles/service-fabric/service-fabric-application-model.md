@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Service Fabric application model"
-   description="How to model an application in Service Fabric"
+   pageTitle="Service Fabric application model | Windows Azure"
+   description="How to model and describe applications and services in Service Fabric."
    services="service-fabric"
    documentationCenter=".net"
    authors="alexwun"
@@ -8,13 +8,9 @@
    editor="mani-ramaswamy"/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="07/22/2015"
-   ms.author="alexwun"/>
+	ms.service="service-fabric"
+	ms.date="11/02/2015"
+	wacn.date=""/>
 
 # Model an application in Service Fabric
 
@@ -35,7 +31,7 @@ Classes (or "types") of applications and services are described using XML files 
 
 Two different manifest files are used to describe applications and services: the service manifest and application manifest, which are covered in detail in the ensuing sections.
 
-There can be one or more instances of a service type active in the cluster. For example, Stateful service instances, or replicas, achieve high reliability by replicating state between replicas located on different nodes in the cluster (essentially providing redundancy for the service to be available even if one node in a cluster fails). A [partitioned service](service-fabric-concepts-partitioning.md) further divides its state (and access patterns to that state) across nodes in the cluster.
+There can be one or more instances of a service type active in the cluster. For example, Stateful service instances, or replicas, achieve high reliability by replicating state between replicas located on different nodes in the cluster (essentially providing redundancy for the service to be available even if one node in a cluster fails). A [partitioned service](/documentation/articles/service-fabric-concepts-partitioning) further divides its state (and access patterns to that state) across nodes in the cluster.
 
 The following diagram shows the relationship between applications and service instances, partitions, and replicas.
 
@@ -227,8 +223,8 @@ Once the application is packaged correctly and passes verification, then it's re
 <!--Image references-->
 [1]: ./media/service-fabric-application-model/application-model.jpg
 [2]: ./media/service-fabric-application-model/vs-package-command.png
-[Image1]: media/service-fabric-application-model/Service1.jpg
-[Image2]: media/service-fabric-application-model/Service2.jpg
+[Image1]: ./media/service-fabric-application-model/Service1.jpg
+[Image2]: ./media/service-fabric-application-model/Service2.jpg
 
 <!--Link references--In actual articles, you only need a single period before the slash-->
 [10]: service-fabric-deploy-remove-applications.md

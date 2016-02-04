@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Connect to on-premises SQL Server from a web app in Azure Websites using Hybrid Connections"
+	pageTitle="Connect to on-premises SQL Server from a web app in Azure using Hybrid Connections"
 	description="Create a web app on Windows Azure and connect it to an on-premises SQL Server database"
 	services="app-service\web"
 	documentationCenter=""
@@ -11,18 +11,18 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="09/01/2015"
+	ms.date="11/13/2015"
 	wacn.date=""/>
 
-# Connect to on-premises SQL Server from a web app in Azure Websites using Hybrid Connections
+# Connect to on-premises SQL Server from a web app in Azure using Hybrid Connections
 
-Hybrid Connections can connect [Azure Websites](/documentation/services/web-sites/) Web Apps to on-premises resources that use a static TCP port. Supported resources include Microsoft SQL Server, MySQL, HTTP Web APIs, Mobile Services, and most custom Web Services.
+Hybrid Connections can connect [Azure Web App](/documentation/services/web-sites/) Web Apps to on-premises resources that use a static TCP port. Supported resources include Microsoft SQL Server, MySQL, HTTP Web APIs, Mobile Services, and most custom Web Services.
 
-In this tutorial, you will learn how to create an Azure Websites web app in the [Azure preview](https://manage.windowsazure.cn/), connect the web app to your local on-premises SQL Server database using the new Hybrid Connection feature, create a simple ASP.NET application that will use the hybrid connection, and deploy the application to the Azure Websites web app. The completed web app on Azure stores user credentials in a membership database that is on-premises. The tutorial assumes no prior experience using Azure or ASP.NET.
+In this tutorial, you will learn how to create an Azure web app in the [Azure preview](https://manage.windowsazure.cn/), connect the web app to your local on-premises SQL Server database using the new Hybrid Connection feature, create a simple ASP.NET application that will use the hybrid connection, and deploy the application to the Azure web app. The completed web app on Azure stores user credentials in a membership database that is on-premises. The tutorial assumes no prior experience using Azure or ASP.NET.
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 >
->The Web Apps portion of the Hybrid Connections feature is available only in the [Azure preview portal](https://manage.windowsazure.cn). To create a connection in BizTalk Services, see [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview/).  
+>The Web Apps portion of the Hybrid Connections feature is available only in the [Azure Management Portal](https://manage.windowsazure.cn). To create a connection in BizTalk Services, see [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview/).  
 
 ## Prerequisites ##
 
@@ -115,11 +115,11 @@ Your Visual Studio web application requires a membership database that can be ac
 	![MembershipDB created][SSMSMembershipDBCreated]
 
 <a name="CreateSite"></a>
-## B. Create a web app in the Azure preview portal ##
+## B. Create a web app in the Azure Management Portal ##
 
-> [AZURE.NOTE] If you have already created a web app in the Azure preview portal that you want to use for this tutorial, you can skip ahead to [Create a Hybrid Connection and a BizTalk Service](#CreateHC) and continue from there.
+> [AZURE.NOTE] If you have already created a web app in the Azure Management Portal that you want to use for this tutorial, you can skip ahead to [Create a Hybrid Connection and a BizTalk Service](#CreateHC) and continue from there.
 
-1. In the [Azure preview portal](https://manage.windowsazure.cn), click **New** > **Web + Mobile** > **Web app**.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn), click **New** > **Web + Mobile** > **Web app**.
 
 	![New button][New]
 
@@ -138,7 +138,7 @@ Next, you will create a hybrid connection and a BizTalk service for the web app.
 <a name="CreateHC"></a>
 ## C. Create a Hybrid Connection and a BizTalk Service ##
 
-1. Back in the portal, scroll down your web app's blade and click **Network Feature status** > **Configure your hybrid connection endpoints**.
+1. Back in the Portal, go to settings and click **Networking** > **Configure your hybrid connection endpoints**.
 
 	![Hybrid connections][CreateHCHCIcon]
 
@@ -205,7 +205,7 @@ In this step, you edit the connection string that tells your application where t
 
 	- If you are connecting to a named instance instead of a default instance (for example, YourServer\SQLEXPRESS), you must configure your SQL Server to use static ports. For information on configuring static ports, see [How to configure SQL Server to listen on a specific port](http://support.microsoft.com/kb/823938). By default, named instances use UDP and dynamic ports, which are not supported by Hybrid Connections.
 
-	- It is recommended that you specify the port (1433 by default, as shown in the example) n the connection string so that you can be sure that your local SQL Server has TCP enabled and is using the correct port.
+	- It is recommended that you specify the port (1433 by default, as shown in the example) on the connection string so that you can be sure that your local SQL Server has TCP enabled and is using the correct port.
 
 	- Remember to use SQL Server Authentication to connect, specifying the user ID and password in your connection string.
 
@@ -234,11 +234,11 @@ You are now ready for the next step, which is to publish the application to Azur
 <a name="PubNTest"></a>
 ## F. Publish the web application to Azure and test it ##
 
-Now, you'll publish your application to your Azure Websites web app and then test it to see how the hybrid connection you configured earlier is being used to connect your web app to the database on your local machine.
+Now, you'll publish your application to your Azure web app and then test it to see how the hybrid connection you configured earlier is being used to connect your web app to the database on your local machine.
 
 ### Publish the web application ###
 
-1. You can download your publishing profile for the Azure Websites web app in the Azure preview portal. On the blade for your web app, click **Get publish profile**, and then save the file to your computer.
+1. You can download your publishing profile for the Azure web app in the Azure Management Portal. On the blade for your web app, click **Get publish profile**, and then save the file to your computer.
 
 	![Download publish profile][PortalDownloadPublishProfile]
 
@@ -272,7 +272,7 @@ Next, you will use your live web application to see its Hybrid Connection in act
 
 	![Test log in][HCTestLogIn]
 
-2. Your Azure Websites web app is now connected to your web application's membership database on your local machine. To verify this, log in with the same credentials that you entered in the local database earlier.
+2. Your Azure web app is now connected to your web application's membership database on your local machine. To verify this, log in with the same credentials that you entered in the local database earlier.
 
 	![Hello greeting][HCTestHelloContoso]
 

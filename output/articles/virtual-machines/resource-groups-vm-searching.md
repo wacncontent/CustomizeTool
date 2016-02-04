@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Navigate and select VM images | Windows Azure"
    description="Learn how to determine the publisher, offer, and SKU for images when creating an Azure virtual machine with the Resource Manager deployment model."
@@ -11,12 +13,15 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/25/2015"
+	ms.date="12/08/2015"
 	wacn.date=""/>
 
 # Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI
 
-> [AZURE.NOTE] When you're searching for virtual machine images in this topic, you're using the [Azure Resource Manager mode](/documentation/articles/documentation/articles/resource-group-overview) with a recent installation of either the Azure Command-Line interface for Mac, Linux, and Windows or of Windows PowerShell. With the Azure CLI, enter that mode by typing `azure config mode arm`. With PowerShell, type `Switch-AzureMode AzureResourceManager`. See [Using Azure CLI with Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager) and [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager) for more complete update and configuration details.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
+
+
 
 ## Table of commonly used images
 
@@ -44,6 +49,8 @@
 
 
 ## Azure CLI
+
+> [AZURE.NOTE] This article describes how to navigate and select virtual machine images, using a recent installation of either the Azure CLI or Azure PowerShell. As a prerequisite, you would need to change to the Resource Manager mode. With the Azure CLI, enter that mode by typing `azure config mode arm`. 
 
 The easiest and quickest way to locate an image to use either with `azure vm quick-create` or to create a resource group template file is to call the `azure vm image list` command and pass the location, the publisher name (it's not case-sensitive!), and an offer -- if you know the offer. For example, the following list is only a short example -- many lists are quite long -- if you know that "Canonical" is a publisher for the "UbuntuServer" offer.
 
@@ -133,9 +140,19 @@ With this information, you can now find exactly the image you want by calling th
 
 Now you can choose precisely the image you want to use. To create a virtual machine quickly by using the URN information, which you just found, or to use a template with that URN information, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager).
 
+### Video walkthrough
+
+This video demonstrates the above steps using the CLI.
+
+[AZURE.VIDEO resource-groups-vm-searching-cli]
 
 
 ## PowerShell
+
+With PowerShell, type `Switch-AzureMode AzureResourceManager`. See [Using Azure CLI with Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager) and [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager) for more complete update and configuration details.
+
+> [AZURE.NOTE] With Azure PowerShell modules above 1.0, the `Switch-AzureMode` cmdlet was removed. With that version and more recent, please replace the commands below with the `Azure` portion replaced with `AzureRm`. If you are using Azure PowerShell modules below 1.0, you will use the below commands but you must first `Switch-AzureMode AzureResourceManager`. 
+
 
 When creating a new virtual machine with Azure Resource Manager, in some cases you need to specify an image with the combination of the following image properties:
 

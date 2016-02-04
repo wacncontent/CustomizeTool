@@ -1,0 +1,16 @@
+updated docs: 9
+articles/service-bus/service-bus-async-messaging.md
+articles/service-bus/service-bus-auto-forwarding.md
+articles/service-bus/service-bus-create-queues.md
+articles/service-bus/service-bus-create-topics-subscriptions.md
+articles/service-bus/service-bus-paired-namespaces.md
+articles/service-bus/service-bus-partitioning.md
+articles/service-bus/service-bus-performance-improvements.md
+articles/service-bus/service-bus-pricing-billing.md
+articles/service-bus/service-bus-pricing-faq.md
+
+updated includes: 4
+includes/service-bus-java-how-to-create-queue.md
+includes/service-bus-java-how-to-create-topic.md
+includes/service-bus-quotas-table.md
+includes/service-bus-selector-amqp.md

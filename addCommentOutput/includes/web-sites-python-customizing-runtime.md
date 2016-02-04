@@ -2,10 +2,10 @@ Azure will determine the version of Python to use for its virtual environment wi
 
 1. version specified in runtime.txt in the root folder
 <!-- deleted by customization
-1. version specified by Python setting in the web app configuration (the **Settings** > **Application Settings** blade for your web app in the Azure Management Portal)
+1. version specified by Python setting in the web site configuration (the **Settings** > **Application Settings** blade for your web site in the Azure Management Portal)
 -->
 <!-- keep by customization: begin -->
-1. version specified by Python setting in the web app configuration (the CONFIGURE page on Azure Management Portal)
+1. version specified by Python setting in the web site configuration (the CONFIGURE page on Azure Management Portal)
 <!-- keep by customization: end -->
 1. python-2.7 is the default if none of the above are specified
 

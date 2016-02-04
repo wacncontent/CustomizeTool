@@ -10,12 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/22/2015"
+	ms.date="01/04/2016"
 	wacn.date=""/>
 
 #About the virtual machine agent and extensions
 
-The Azure Virtual Machine Agent (VM Agent) is used to install, configure, manage and run Azure Virtual Machine Extensions (VM Extensions). VM Extensions provide dynamic features that Microsoft and other third parties provide. The agent and extensions are added primarily through the Management Portal, but you can also use the [Powershell](/documentation/articles/install-configure-powershell) cmdlets or the [Azure CLI](/documentation/articles/xplat-install) to add and configure either when you create a VM or with existing VMs.
+The Azure Virtual Machine Agent (VM Agent) is used to install, configure, manage and run Azure Virtual Machine Extensions (VM Extensions). VM Extensions provide dynamic features that Microsoft and other third parties provide. The agent and extensions are added primarily through the Management Portal, but you can also use the [Powershell](/documentation/articles/powershell-install-configure) cmdlets or the [Azure CLI](/documentation/articles/xplat-cli-install) to add and configure either when you create a VM or with existing VMs.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
@@ -42,15 +42,15 @@ The VM Agent is enabled in the following situations:
 
 -   When you create an instance of a Virtual Machine by using the **Quick Create** method in the Management Portal, or by using the **Custom Create** method in the Management Portal and making sure that the **Install the VM Agent** checkbox is selected (as shown in the image below). For more information, see [How to Create a Custom Virtual Machine](/documentation/articles/virtual-machines-create-custom).
 
-    ![VM Agent Checkbox](./media/virtual-machines-extensions-agent-about/IC719409.png "VM Agent Checkbox")
+    ![VM Agent Checkbox](./media/virtual-machines-extensions-agent-about/IC719409.png)
 
--   When you create an instance of a Virtual Machine by using the [New-AzureVM](https://msdn.microsoft.com/zh-cn/library/azure/dn495254.aspx) or the [New-AzureQuickVM](https://msdn.microsoft.com/zh-cn/library/azure/dn495183.aspx) cmdlet. You can create a VM without the VM Agent installed by adding the **–DisableGuestAgent** parameter to the [Add-AzureProvisioningConfig](https://msdn.microsoft.com/zh-cn/library/azure/dn495299.aspx) cmdlet.
+-   When you create an instance of a Virtual Machine by using the [New-AzureVM](https://msdn.microsoft.com/zh-cn/library/azure/dn495254.aspx) or the [New-AzureQuickVM](https://msdn.microsoft.com/zh-cn/library/azure/dn495183.aspx) cmdlet. You can create a VM without the VM Agent installed by adding the **-DisableGuestAgent** parameter to the [Add-AzureProvisioningConfig](https://msdn.microsoft.com/zh-cn/library/azure/dn495299.aspx) cmdlet.
 
 -   By manually downloading and installing the VM Agent (either the Windows or Linux version) on an existing VM instance and then setting the **ProvisionGuestAgent** value to **true** using Powershell or a REST call. (If you do not set this value after manually installing the VM Agent, the addition of the VM Agent is not detected properly.) The following code example shows how to do this using PowerShell where the `$svc` and `$name` arguments have already been determined.
 
-        $vm = Get-AzureVM –serviceName $svc –Name $name
+        $vm = Get-AzureVM -serviceName $svc -Name $name
         $vm.VM.ProvisionGuestAgent = $TRUE
-        Update-AzureVM –Name $name –VM $vm.VM –ServiceName $svc
+        Update-AzureVM -Name $name -VM $vm.VM -ServiceName $svc
 
 -   By creating a VM image that has the VM agent installed prior to uploading it to Azure. For a Windows VM, download the [Windows VM Agent .msi file](http://download.microsoft.com/download/3/4/3/3437907D-745F-46EF-8116-7FC025BBEBDB/WindowsAzureVmAgent.2.6.1198.718.rd_art_stable.150415-1739.fre.msi) and install the VM Agent. For a Linux VM, you will install it from the github repository located at <https://github.com/Azure/WALinuxAgent>. For more information on how to install the VM Agent on Linux, see the [Azure Linux VM Agent User Guide](/documentation/articles/virtual-machines-linux-agent-user-guide).
 

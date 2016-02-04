@@ -36,10 +36,10 @@ To create a service namespace:
 
 1.  Log on to the [Azure Management Portal][].
 
-2.  In the left navigation pane of the Management Portal, click
+2.  In the left navigation pane of the portal, click
     **Service Bus**.
 
-3.  In the lower pane of the Management Portal, click **Create**.
+3.  In the lower pane of the portal, click **Create**.
     ![][0]
 
 4.  In the **Add a new namespace** dialog, enter a namespace name.
@@ -65,7 +65,7 @@ To create a service namespace:
 
 In order to perform management operations, such as creating a topic or
 subscription on the new namespace, you must obtain the management
-credentials for the namespace. You can obtain these credentials from the Azure management portal.
+credentials for the namespace. You can obtain these credentials from the portal.
 
 ### To obtain management credentials from the portal
 

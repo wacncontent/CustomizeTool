@@ -73,7 +73,7 @@ Debian is an important distribution for the Linux and open-source world based on
 The CentOS Linux distribution is a stable, predictable, manageable and reproduceable platform derived from the sources of Red Hat Enterprise Linux (RHEL).
 
 1. [MSOpenTech VM Depot](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=centos)
-2. [Image Gallery](http://azure.microsoft.com/en-in/marketplace/partners/OpenLogic/)
+2. [Image Gallery](http://azure.microsoft.com/marketplace/partners/OpenLogic/)
 3. [How to: Prepare a Custom CentOS-Based VM for Azure](/documentation/articles/virtual-machines-linux-create-upload-vhd-centos)
 4. [Blog: How to Deploy a CentOS VM Image from OpenLogic](http://azure.microsoft.com/blog/2013/01/11/deploying-openlogic-centos-images-on-windows-azure-virtual-machines/)
 6. [How to: Install Apache Qpid Proton-C for AMQP and Service Bus](http://msdn.microsoft.com/zh-cn/library/azure/dn235560.aspx)
@@ -92,7 +92,7 @@ The CentOS Linux distribution is a stable, predictable, manageable and reproduce
 
 CoreOS is a small, optimized distro for pure compute scale with a high degree of control for customization.
 
-10. [Image Gallery](http://azure.microsoft.com/en-in/marketplace/partners/coreos/)  
+10. [Image Gallery](http://azure.microsoft.com/marketplace/partners/coreos/)  
 11. [How to: Use CoreOS on Azure](/documentation/articles/virtual-machines-linux-coreos-how-to)
 12. [How to: Get Started with Fleet and Docker on CoreOS on Azure](/documentation/articles/virtual-machines-linux-coreos-fleet-get-started)
 13. [Blog: TechEd Europe -- Windows Docker Client and Linux Containers](http://azure.microsoft.com/blog/2014/10/28/new-docker-coreos-topics-linux-on-azure/)
@@ -127,7 +127,7 @@ CoreOS is a small, optimized distro for pure compute scale with a high degree of
 13. [The basics: RAID](/documentation/articles/virtual-machines-linux-configure-raid)
 14. [The basics: Capturing a Linux VM to Make a Template](/documentation/articles/virtual-machines-linux-capture-image)
 15. [The basics: The Azure Linux Agent](/documentation/articles/virtual-machines-linux-agent-user-guide)
-16. [The basics: Azure VM Extensions and Features](http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
+16. [The basics: Azure VM Extensions and Features](/documentation/articles/virtual-machines-extensions-features)
 17. [The basics: Injecting Custom Data into a VM to use with Cloud-init](/documentation/articles/virtual-machines-how-to-inject-custom-data)
 18. [Blogging the basics: Building Highly Available Linux on Azure in 12 Steps](http://blogs.technet.com/b/keithmayer/archive/2014/10/03/quick-start-guide-building-highly-available-linux-servers-in-the-cloud-on-microsoft-azure.aspx)
 19. [Blogging the basics: Automate Provisioning Linux on Azure with Azure CLI, node.js, jhawk](http://blogs.technet.com/b/keithmayer/archive/2014/11/24/step-by-step-automated-provisioning-for-linux-in-the-cloud-with-microsoft-azure-xplat-cli-json-and-node-js-part-1.aspx)
@@ -164,12 +164,12 @@ CoreOS is a small, optimized distro for pure compute scale with a high degree of
 1. [Scala: Running Play Framework Applications in Azure Cloud Services](http://msopentech.com/blog/2014/09/25/tutorial-running-play-framework-applications-microsoft-azure-cloud-services-2/)
 
 ### SDK types, installations, upgrades
-4. [Azure Service Management SDK: Java](http://dl.windowsazure.com/javadoc/)
+4. [Azure Service Management SDK: Java](http://azure.github.io/azure-sdk-for-java/)
 5. [Azure Service Management SDK: Go](https://github.com/MSOpenTech/azure-sdk-for-go)
 5. [Azure Service Management SDK: Ruby](https://github.com/MSOpenTech/azure-sdk-for-ruby)
     - [How to: Install Ruby on Rails](/documentation/articles/virtual-machines-ruby-rails-web-app-linux)
 6. [Azure Service Management SDK: Python](https://github.com/Azure/azure-sdk-for-python)
-    - [How to: Django Hello World Web Application (Mac-Linux)](/documentation/articles/virtual-machines-python-django-web-app-linux)
+    - [How to: Django Hello World web site (Mac-Linux)](/documentation/articles/virtual-machines-python-django-web-app-linux)
 7. [Azure Service Management SDK: Node.js](https://github.com/MSOpenTech/azure-sdk-for-node)
 8. [Azure Service Management SDK: PHP](https://github.com/MSOpenTech/azure-sdk-for-php)
     - [How to: Install the LAMP Stack on an Azure VM](/documentation/articles/virtual-machines-linux-install-lamp-stack)
@@ -214,7 +214,7 @@ This section contains information about several different storage approaches and
 ### Big Data
 2. Hadoop/Cloudera  
 	- [Blog: Installing Hadoop on Azure Linux VMs](http://blogs.msdn.com/b/benjguin/archive/2013/04/05/how-to-install-hadoop-on-windows-azure-linux-virtual-machines.aspx)
-	- [How to: Get Started with Hadoop and Hive using HDInsight](/documentation/articles/hdinsight-get-started)  
+	- [How to: Get Started with Hadoop and Hive using HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)  
 3. [Azure HDInsight](/home/features/hdinsight/) -- a fully managed Hadoop service on Azure.
 
 ### Relational database
@@ -260,7 +260,7 @@ This section starts with a blog entry containing a series of videos on [Video: A
 1. Docker
 	- [Docker VM Extension for Linux on Azure](/documentation/articles/virtual-machines-docker-vm-extension)
 	- [Using the Docker VM Extension from the Azure Command-line Interface (Azure CLI)](/documentation/articles/virtual-machines-docker-with-xplat-cli)
-	- [Using the Docker VM Extension from the Azure Preview Portal](/documentation/articles/virtual-machines-docker-with-portal)
+	- [Using the Docker VM Extension from the Azure Management Portal](/documentation/articles/virtual-machines-docker-with-portal)
 	- [Getting Started Quickly with Docker in the Azure Marketplace](/documentation/articles/virtual-machines-docker-ubuntu-quickstart)
 	- [How to use docker-machine on Azure](/documentation/articles/virtual-machines-docker-machine)
 	- [How to use docker with swarm on Azure](/documentation/articles/virtual-machines-docker-swarm)
@@ -305,5 +305,5 @@ This section starts with a blog entry containing a series of videos on [Video: A
 [Support, Troubleshooting, and "It Just Doesn't Work"]: #supportdebug
 
 <!--Link references--In actual articles, you only need a single period before the slash. -->
-[How to use docker-machine on Azure]: /documentation/articles/virtual-machines-docker-machine
-[How to use docker with swarm on Azure]: /documentation/articles/virtual-machines-docker-swarm
+[How to use docker-machine on Azure]: virtual-machines-docker-machine.md
+[How to use docker with swarm on Azure]: virtual-machines-docker-swarm.md

@@ -1,4 +1,4 @@
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
+> [AZURE.SELECTOR]
 - [(iOS | .NET)](/documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts/)
 - [(iOS | JavaScript)](/documentation/articles/mobile-services-ios-authorize-users-in-scripts/)
 - [(Windows 8.x Store C# | .NET)](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts/)

@@ -39,14 +39,14 @@ These steps can help resolve many allocation failures in virtual machines.
 - Resize the VM to a different VM size.<br>
 	Click Browse all > Virtual machines (classic) > your virtual machine > Settings > **Size**. For detailed steps, see [Resize the virtual machine](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx).
 
-- Delete all VMs from the Cloud Service and recreate VMs.<br> 
+- Delete all VMs from the Cloud Service and recreate VMs.<br>
 	Click Browse all > Virtual machines (classic) > your virtual machine > Delete. Then, click New > Compute > [Virtual Machine Image]
 
 ## Troubleshooting common allocation failures in the Resource Manager deployment model
 
 These steps can help resolve many allocation failures in virtual machines.
 
-- Stop-deallocate all VMs in the same Availability Set, then restart each one.<br> 
+- Stop-deallocate all VMs in the same Availability Set, then restart each one.<br>
 	To stop: Click Resource Groups > your Resource Group > Resources > Your Availability Set > Virtual Machines > your Virtual Machine. > Stop
 
 	After all VMs stopped, select the first VM and click Start.
@@ -101,7 +101,7 @@ GeneralError*
 
 If it's acceptable to use a different VIP, delete the stopped (de-allocated) VMs (but keep the associated disks) and add the VMs back through a different Cloud Service. Use Regional Virtual Network to connect your Cloud Services:
 1.	If your existing Cloud Service uses Regional Virtual Network, simply add the new Cloud Service to the same Virtual Network.
-2.	If your existing Cloud Service does not use Regional Virtual Network, create a new Virtual Network for the new Cloud Service, and then [connect your existing VNet to the new VNet](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). See more about [Regional Virtual Network](http://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/).
+2.	If your existing Cloud Service does not use Regional Virtual Network, create a new Virtual Network for the new Cloud Service, and then [connect your existing VNet to the new VNet](https://azure.microsoft.com/zh-cn/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). See more about [Regional Virtual Network](http://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/).
 
 ### Allocation scenario: restarting stopped (de-allocated) VMs - full de-allocation
 **Error**
@@ -230,5 +230,5 @@ The server encountered an internal error. Please retry the request." or "Failed 
 ## Additional resources
 ### Contact Azure Customer Support
 
-If this article didn’t help to solve your Azure issue, browse the Azure forums on [MSDN and Stack Overflow](/support/forums/).
+If this article didn't help to solve your Azure issue, browse the Azure forums on [MSDN and Stack Overflow](/support/forums/).
 You can also file an Azure support incident about your issue. Go to the [Azure Support](/support/contact/) site and click Get Support. For information about using Azure Support, read the[ Windows Azure Support FAQ](/support/faq/).

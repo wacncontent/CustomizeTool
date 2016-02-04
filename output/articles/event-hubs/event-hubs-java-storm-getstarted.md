@@ -32,7 +32,7 @@ In order to complete this tutorial you will need the following:
 
 ## Create an Event Hub
 
-1. Log on to the [Azure Management Portal], and click **NEW** at the bottom of the screen.
+1. Log on to the [Azure Management Portal][], and click **NEW** at the bottom of the screen.
 
 2. Click **App Services**, then **Service Bus**, then **Event Hub**, and then **Quick Create**.
 
@@ -98,10 +98,10 @@ The following resources are available for developing applications integrating Ev
 <!-- Links -->
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[Event Hubs Overview]: /documentation/articles/event-hubs-overview
+[Event Hubs Overview]: event-hubs-overview.md
 
 [Apache Storm]: https://storm.incubator.apache.org
-[HDInsight Storm Overview]: /documentation/articles/hdinsight-storm-overview
-[Analyzing sensor data with Storm and HDInsight]: /documentation/articles/hdinsight-storm-sensor-data-analysis
-[Develop streaming data processing applications with SCP.NET and C# on Storm and HDInsight]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology
+[HDInsight Storm Overview]: ../hdinsight/hdinsight-storm-overview.md
+[Analyzing sensor data with Storm and HDInsight]: ../hdinsight/hdinsight-storm-sensor-data-analysis.md
+[Develop streaming data processing applications with SCP.NET and C# on Storm and HDInsight]: ../hdinsight/hdinsight-storm-develop-csharp-visual-studio-topology.md
  

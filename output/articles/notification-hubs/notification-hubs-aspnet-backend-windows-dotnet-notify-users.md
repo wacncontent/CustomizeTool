@@ -378,7 +378,7 @@ In this section, you update the code in the project you completed for the [Get s
 
 
 <!-- URLs. -->
-[Get started with Notification Hubs]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
-[Secure Push]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push
-[Use Notification Hubs to send breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
+[Get started with Notification Hubs]: notification-hubs-windows-store-dotnet-get-started.md
+[Secure Push]: notification-hubs-aspnet-backend-windows-dotnet-secure-push.md
+[Use Notification Hubs to send breaking news]: notification-hubs-windows-store-dotnet-send-breaking-news.md
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx

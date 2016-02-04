@@ -3,25 +3,16 @@
 	description="How to get started using Azure Blob storage in a cloud service project in Visual Studio after connecting to a storage account using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Get started with Azure Blob Storage and Visual Studio connected services (cloud services projects)
-
-> [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-cloud-services-getting-started-blobs)
-> - [What happened](/documentation/articles/vs-storage-cloud-services-what-happened)
-
-> [AZURE.SELECTOR]
-> - [Blobs](/documentation/articles/vs-storage-cloud-services-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-cloud-services-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-cloud-services-getting-started-tables)
 
 ## Overview
 
@@ -74,7 +65,7 @@ To create a container in your storage account, all you need to do is add a call 
 	// Get a reference to a CloudBlobContainer with the variable name 'container'
     // as described in the "Access blob containers in code" section.
 
-    // If “mycontainer” doesn’t exist, create it.
+    // If “mycontainer” doesn't exist, create it.
     await container.CreateIfNotExistsAsync();
 
 

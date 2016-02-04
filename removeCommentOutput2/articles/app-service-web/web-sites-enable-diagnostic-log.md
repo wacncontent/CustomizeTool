@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Enable diagnostics logging for web apps in Azure Websites"
+	pageTitle="Enable diagnostics logging for web apps in Azure"
 	description="Learn how to enable diagnostic logging and add instrumentation to your application, as well as how to access the information logged by Azure."
 	services="app-service"
 	documentationCenter=".net"
@@ -12,12 +12,13 @@
 	ms.date="10/20/2015"
 	wacn.date=""/>
 
-# Enable diagnostics logging for web apps in Azure Websites
+# Enable diagnostics logging for web apps in Azure
 
 ## Overview
 
-Azure provides built-in diagnostics to assist with debugging an [Azure Websites web app](/documentation/services/web-sites/). In this article you'll learn how to enable diagnostic logging and add instrumentation to your application, as well as how to access the information logged by Azure.
-This article uses the [Azure Management Portal](https://manage.windowsazure.cn/), Azure PowerShell, and the Azure Command-Line Interface (Azure CLI) to work with diagnostic logs. For information on working with diagnostic logs using Visual Studio, see [Troubleshooting Azure in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio).
+Azure provides built-in diagnostics to assist with debugging an [Azure web app](/documentation/services/web-sites/). In this article you'll learn how to enable diagnostic logging and add instrumentation to your application, as well as how to access the information logged by Azure.
+
+This article uses the [Azure Management Portal](https://manage.windowsazure.cn), Azure PowerShell, and the Azure Command-Line Interface (Azure CLI) to work with diagnostic logs. For information on working with diagnostic logs using Visual Studio, see [Troubleshooting Azure in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio).
 ##Table of Contents##
 
 - [What is: Web Site diagnostics?](#whatisdiag)
@@ -29,7 +30,7 @@ This article uses the [Azure Management Portal](https://manage.windowsazure.cn/)
 
 ## <a name="whatisdiag"></a>Web server diagnostics and application diagnostics
 
-Azure Websites web apps provide diagnostic functionality for logging information from both the web server and the web application. These are logically separated into **web server diagnostics** and **application diagnostics**.
+Azure web apps provide diagnostic functionality for logging information from both the web server and the web application. These are logically separated into **web server diagnostics** and **application diagnostics**.
 
 ### Web server diagnostics
 
@@ -47,18 +48,19 @@ Application diagnostics allows you to capture information produced by a web appl
 
 At runtime you can retrieve these logs to help with troubleshooting. For more information, see [Troubleshooting Azure web apps in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio).
 
-Azure Websites web apps also log deployment information when you publish content to a web app. This happens automatically and there are no configuration settings for deployment logging. Deployment logging allows you to determine why a deployment failed. For example, if you are using a custom deployment script, you might use deployment logging to determine why the script is failing.
+Azure web apps also log deployment information when you publish content to a web app. This happens automatically and there are no configuration settings for deployment logging. Deployment logging allows you to determine why a deployment failed. For example, if you are using a custom deployment script, you might use deployment logging to determine why the script is failing.
 
 ## <a name="enablediag"></a>How to enable diagnostics
+
 Diagnostics can be enabled by visiting the **Configure** page of your Azure  Website in the [Azure Management Portal](https://manage.windowsazure.cn). On the **Configure** page, use the **application diagnostics** and **site diagnostics** sections to enable logging.
 
 When enabling **application diagnostics** you must also select the **logging level** and whether to enable logging to the **file system**, **table storage**, or **blob storage**. While all three storage locations provide the same basic information for logged events, **table storage** and **blob storage** log additional information such as the instance ID, thread ID, and a more granular timestamp (tick format) than logging to **file system**.
 
 When enabling **site diagnostics**, you must select **storage** or **file system** for **web server logging**. Selecting **storage** allows you to select a storage account, and then a blob container that the logs will be written to. All other logs for **site diagnostics** are written to the file system only.
 
-In the [Azure Management Portal](https://manage.windowsazure.cn) Web app **Configure** tab, you can select **storage** or **file system** for **web server logging**. Selecting **storage** allows you to select a storage account, and then a blob container that the logs will be written to. All other logs for **site diagnostics** are written to the file system only.
+In the [Management Portal](https://manage.windowsazure.cn) Web app **Configure** tab, you can select **storage** or **file system** for **web server logging**. Selecting **storage** allows you to select a storage account, and then a blob container that the logs will be written to. All other logs for **site diagnostics** are written to the file system only.
 
-The [Azure Management Portal](https://manage.windowsazure.cn) Web app **Configure** tab also has additional settings for application diagnostics:
+The [Management Portal](https://manage.windowsazure.cn) Web app **Configure** tab also has additional settings for application diagnostics:
 
 * **File system** - stores the application diagnostics information to the web app file system. These files can be accessed by FTP, or downloaded as a Zip archive by using the Azure PowerShell or Azure Command-Line Interface (Azure CLI).
 * **Table storage** - stores the application diagnostics information in the specified Azure Storage Account and table name.
@@ -76,7 +78,7 @@ While all three storage locations provide the same basic information for logged 
 
 > [AZURE.NOTE] Information stored in **table storage** or **blob  storage** can only be accessed using a storage client or an application that can directly work with these storage systems. For example, Visual Studio 2013 contains a Storage Explorer that can be used to explore table or blob storage, and HDInsight can access data stored in blob storage. You can also write an application that accesses Azure Storage by using one of the [Azure SDKs](/downloads/#).
 
-> [AZURE.NOTE] Diagnostics can also be enabled from Azure PowerShell using the **Set-AzureWebsite** cmdlet. If you have not installed Azure PowerShell, or have not configured it to use your Azure Subscription, see [How to Use Azure PowerShell](/documentation/articles/install-configure-powershell/).
+> [AZURE.NOTE] Diagnostics can also be enabled from Azure PowerShell using the **Set-AzureWebsite** cmdlet. If you have not installed Azure PowerShell, or have not configured it to use your Azure Subscription, see [How to Use Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 ##<a name="download"></a> How to: Download logs
 
@@ -96,7 +98,7 @@ The directory structure that the logs are stored in is as follows:
 
 ### FTP
 
-To access diagnostic information using FTP, visit the **Dashboard** of your web app in the [Azure Management Portal](https://manage.windowsazure.cn). In the **quick glance** section, use the **FTP Diagnostic Logs** link to access the log files using FTP. The **Deployment/FTP User** entry lists the user name that should be used to access the FTP site.
+To access diagnostic information using FTP, visit the **Dashboard** of your web app in the [Management Portal](https://manage.windowsazure.cn). In the **quick glance** section, use the **FTP Diagnostic Logs** link to access the log files using FTP. The **Deployment/FTP User** entry lists the user name that should be used to access the FTP site.
 
 > [AZURE.NOTE] If the **Deployment/FTP User** entry is not set, or you have forgotten the password for this user, you can create a new user and password by using the **Reset deployment credentials** link in the **quick glance** section of the **Dashboard**.
 
@@ -108,7 +110,7 @@ To download the log files, start a new instance of Azure PowerShell and use the 
 
 This will save the logs for the web app specified by the **-Name** parameter to a file named **logs.zip** in the current directory.
 
-> [AZURE.NOTE] If you have not installed Azure PowerShell, or have not configured it to use your Azure Subscription, see [How to Use Azure PowerShell](/documentation/articles/install-configure-powershell/).
+> [AZURE.NOTE] If you have not installed Azure PowerShell, or have not configured it to use your Azure Subscription, see [How to Use Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 ### Download with Azure Command-Line Interface
 
@@ -146,7 +148,7 @@ To filter specific log types, such as HTTP, use the **-Path** parameter. For exa
 
 To see a list of available paths, use the -ListPath parameter.
 
-> [AZURE.NOTE] If you have not installed Azure PowerShell, or have not configured it to use your Azure Subscription, see [How to Use Azure PowerShell](/documentation/articles/install-configure-powershell/).
+> [AZURE.NOTE] If you have not installed Azure PowerShell, or have not configured it to use your Azure Subscription, see [How to Use Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 ### Streaming with Azure Command-Line Interface
 

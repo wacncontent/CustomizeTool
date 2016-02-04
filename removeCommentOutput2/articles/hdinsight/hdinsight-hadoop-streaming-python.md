@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="Develop Python MapReduce jobs with HDInsight | Windows Azure"
    description="Learn how to create and run Python MapReduce jobs on Linux-based HDInsight clusters."
@@ -12,14 +10,16 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Develop Python streaming programs for HDInsight
 
 Hadoop provides a streaming API for MapReduce that enables you to write map and reduce functions in languages other than Java. In this article, you will learn how to use Python to perform MapReduce operations.
 
-> [AZURE.NOTE] This article is based on information and examples published by Michael Noll at [http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/](http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/).
+> [AZURE.NOTE] While the Python code in this document can be used with a Windows-based HDInsight cluster, the steps in this document are specific to Linux-based clusters.
+
+This article is based on information and examples published by Michael Noll at [Writing an Hadoop MapReduce Program in Python](http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/).
 
 ##Prerequisites
 
@@ -140,7 +140,7 @@ From the client, in the same directory as **mapper.py** and **reducer.py**, use 
 
 This copies the files from the local system to the head node.
 
-> [AZURENOTE] If you used a password to secure your SSH account, you will be prompted for the password. If you used an SSH key, you may have to use the `-i` parameter and the path to the private key, for example, `scp -i /path/to/private/key mapper.py reducer.py username@clustername-ssh.azurehdinsight.cn:`.
+> [AZURE.NOTE] If you used a password to secure your SSH account, you will be prompted for the password. If you used an SSH key, you may have to use the `-i` parameter and the path to the private key, for example, `scp -i /path/to/private/key mapper.py reducer.py username@clustername-ssh.azurehdinsight.cn:`.
 
 ##Run MapReduce
 
@@ -152,7 +152,7 @@ This copies the files from the local system to the head node.
 
 2. Use the following command to start the MapReduce job.
 
-		hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files mapper.py,reducer.py -mapper mapper.py -reducer reducer.py -input wasb:///example/data/davinci.txt -output wasb:///example/wordcountout
+		hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files mapper.py,reducer.py -mapper mapper.py -reducer reducer.py -input wasb:///example/data/gutenberg/davinci.txt -output wasb:///example/wordcountout
 
 	This command has the following parts:
 

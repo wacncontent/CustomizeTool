@@ -15,7 +15,7 @@ The following are error conditions and will result in an exception:
 ## Column mapping samples
 > [AZURE.NOTE] The samples below are for Azure SQL and Azure Blob but are applicable in the same way for any data store that supports rectangular tables. You will have to adjust dataset and linked service definitions in examples below to point to data in the relevant data source.
 
-### Sample 1 – column mapping from Azure SQL to Azure blob
+### Sample 1 - column mapping from Azure SQL to Azure blob
 In this sample, the input table has a structure and it points to a SQL table in an Azure SQL database.
 
 	{
@@ -111,7 +111,7 @@ The JSON for the activity is shown below. The columns from source mapped to colu
 
 ![Column mapping flow](./media/data-factory-data-stores-with-rectangular-tables/column-mapping-flow.png)
 
-### Sample 2 – column mapping with SQL query from Azure SQL to Azure blob
+### Sample 2 - column mapping with SQL query from Azure SQL to Azure blob
 In this sample, a SQL query is used to extract data from Azure SQL instead of simply specifying the table name and the column names in “structure” section. 
 
 	{

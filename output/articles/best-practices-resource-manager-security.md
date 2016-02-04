@@ -15,12 +15,11 @@
 
 # Security considerations for Azure Resource Manager
 
-When looking at aspects of security for your Azure Resource Manager templates, there are several areas to consider – keys and secrets, role-based access control, 
+When looking at aspects of security for your Azure Resource Manager templates, there are several areas to consider - keys and secrets, role-based access control, 
 and network security groups.
 
 This topic assumes you are familiar with Role-Based Access Control (RBAC) in Azure Resource Manager. For more information, see 
-[Role-based access control in the Windows Azure Management Portal](/documentation/articles/role-based-access-control-configure) and 
-[Managing and Auditing Access to Resources](/documentation/articles/resource-group-rbac) 
+[Azure Role-based Access Control](/documentation/articles/role-based-access-control-configure). 
 
 This topic is part of a larger whitepaper. To read the full paper, download [World Class ARM Templates Considerations and Proven Practices](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World Class ARM Templates - Considerations and Proven Practices.pdf).
 
@@ -71,7 +70,7 @@ specific named vault. Therefore, a further best practice is to not comingle corp
             },
             "location": {
                 "type": "string",
-                "allowedValues": ["China East", "China North"],
+                "allowedValues": ["China East", "China North", "West Europe", "China East", "South China East"],
                 "metadata": {
                     "description": "Location of the Vault"
                 }
@@ -187,7 +186,7 @@ Group (NSG) to do this as part of an ARM template deployment.
 
 A network security group is a top-level object that is associated with your subscription. An NSG contains access control rules that allow or deny traffic to 
 VM instances. The rules of an NSG can be changed at any time, and changes are applied to all associated instances. To use an NSG, you must have a virtual network 
-that is associated with a region (location). NSGs are not compatible with virtual networks that are associated with an affinity group. If you don’t have a 
+that is associated with a region (location). NSGs are not compatible with virtual networks that are associated with an affinity group. If you don't have a 
 regional virtual network and you want to control traffic to your endpoints, please see [About Network Access Control Lists (ACLs)](/documentation/articles/virtual-networks-acl).
 
 You can associate an NSG with a VM, or to a subnet within a virtual network. When associated with a VM, the NSG applies to all the traffic that is sent and 
@@ -203,7 +202,7 @@ NSG works on one or more VM instances and controls all the traffic that is inbou
 
 A network security group has a *Name*, is associated with a *Region* (one of the supported Azure locations), and has a descriptive label. It contains two types of 
 rules, Inbound and Outbound. The Inbound rules are applied on the incoming packets to a VM and the Outbound rules are applied to the outgoing packets from the VM. 
-The rules are applied at the server machine where the VM is located. An incoming or outgoing packet must match an Allow rule to be permitted; otherwise, it’s dropped.
+The rules are applied at the server machine where the VM is located. An incoming or outgoing packet must match an Allow rule to be permitted; otherwise, it's dropped.
 
 Rules are processed in the order of priority. For example, a rule with a lower priority number such as 100 is processed before rules with a higher priority numbers 
 such as 200. Once a match is found, no more rules are processed.
@@ -217,7 +216,7 @@ A rule specifies the following:
 -	Source Port Range: An integer or range between 0 and 65536
 -	Destination IP Range: CIDR of the destination IP Range
 -	Destination Port Range: An integer or range between 0 and 65536
--	Protocol: TCP, UDP or ‘\*’
+-	Protocol: TCP, UDP or '\*'
 -	Access: Allow/Deny
 
 ### Default rules
@@ -268,14 +267,14 @@ Default tags are system-provided identifiers to address a category of IP address
 Tag |	Description
 --- | ---
 VIRTUAL_NETWORK |	Denotes all of your network address space. It includes the virtual network address space (IP CIDR in Azure) as well as all connected on-premises address space (Local Networks). This also includes virtual network-to-virtual network address spaces.
-AZURE_LOADBALANCER | Denotes the Azure Infrastructure load balancer and will translate to an Azure datacenter IP where Azure’s health probes will originate. This is needed only if the VM or set of VMs associated with the NSG is participating in a load balanced set.
+AZURE_LOADBALANCER | Denotes the Azure Infrastructure load balancer and will translate to an Azure datacenter IP where Azure's health probes will originate. This is needed only if the VM or set of VMs associated with the NSG is participating in a load balanced set.
 INTERNET | Denotes the IP address space that is outside the virtual network and can be reached by public Internet. This range includes Azure-owned public IP space as well.
 
 ### Ports and port ranges
 
 NSG rules can be specified on a single source or destination port, or on a port range. This approach is particularly useful when you want to open a wide range of ports 
 for an application, such as FTP. The range must be sequential and can't be mixed with individual port specifications.
-To specify a range of ports, use the hyphen (–) character. For example, **100-500**.
+To specify a range of ports, use the hyphen (-) character. For example, **100-500**.
 
 ### ICMP traffic
 

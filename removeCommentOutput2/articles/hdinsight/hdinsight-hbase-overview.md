@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/17/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 
@@ -35,7 +35,7 @@ Data can be managed in HBase by using the `create`, `get`, `put`, and `scan` com
 
 
 ## Scenarios: Use cases for HBase
-The canonical use case for which BigTable (and by extension, HBase) was created was web search. Search engines build indexes that map terms to the web pages that contain them. But there are many other use cases that HBase is suitable for—several of which are itemized in this section.
+The canonical use case for which BigTable (and by extension, HBase) was created was web search. Search engines build indexes that map terms to the web pages that contain them. But there are many other use cases that HBase is suitable for-several of which are itemized in this section.
 
 - Key-value store
 
@@ -69,14 +69,14 @@ The canonical use case for which BigTable (and by extension, HBase) was created 
 
 
 
-[hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
+[hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
 [hbase-build-java-maven]: /documentation/articles/hdinsight-hbase-build-java-maven
 
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
-[hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started/
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/

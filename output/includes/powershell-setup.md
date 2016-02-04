@@ -1,9 +1,9 @@
 <properties services="virtual-machines" title="Setting up PowerShell" authors="JoeDavies-MSFT" solutions="" manager="timlt" editor="tysonn" />
 
 <tags
-   ms.service="virtual-machines"
-   ms.date="05/12/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="05/12/2015"
+	wacn.date=""/>
 
 ## Setting up PowerShell
 
@@ -27,7 +27,7 @@ You should see something like this.
 	PSCompatibleVersions           {1.0, 2.0, 3.0}
 	PSRemotingProtocolVersion      2.2
 
-Verify that the value of **PSVersion** is 3.0 or 4.0. To install a compatible version, see [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) or [Windows Management Framework 4.0](http://www.microsoft.com/zh-CN/download/details.aspx?id=40855).
+Verify that the value of **PSVersion** is 3.0 or 4.0. To install a compatible version, see [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) or [Windows Management Framework <!-- deleted by customization 4.0](http://www.microsoft.com/download/details.aspx?id=40855) --><!-- keep by customization: begin --> 4.0](http://www.microsoft.com/zh-CN/download/details.aspx?id=40855) <!-- keep by customization: end -->.
 
 You should also have Azure PowerShell version 0.8.0 or later. You can check the version of Azure PowerShell that you have installed with this command at the Azure PowerShell command prompt.
 
@@ -44,7 +44,7 @@ For instructions and a link to the latest version, see [How to Install and Confi
 
 ### Set your Azure account and subscription
 
-If you don't already have an Azure subscription, you can sign up for a [trial](/pricing/1rmb-trial/).
+If you don't already have an Azure subscription, you can <!-- deleted by customization activate your [MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/) or --> sign up for a [trial](/pricing/1rmb-trial/).
 
 Open an Azure PowerShell command prompt and log on to Azure with this command.
 

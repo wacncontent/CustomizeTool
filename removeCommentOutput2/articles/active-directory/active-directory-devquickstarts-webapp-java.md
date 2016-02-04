@@ -167,7 +167,7 @@ Here, we'll configure ADAL4J to use the OpenID Connect authentication protocol. 
 
 ## 3. Create the Java web application files (WEB-INF)
 
-Here, we'll configure the Java web app to use the OpenID Connect authentication protocol.  The ADAL4J library will be used to issue sign-in and sign-out requests, manage the user's session, and get information about the user, amongst other things.
+Here, we'll configure the Java web appto use the OpenID Connect authentication protocol.  The ADAL4J library will be used to issue sign-in and sign-out requests, manage the user's session, and get information about the user, amongst other things.
 
 -	To begin, open the `web.xml` file located under `\webapp\WEB-INF\`, and enter your app's configuration values in the xml.
 
@@ -179,6 +179,7 @@ The file should look like the following:
 	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
     http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>Archetype Created Web Application</display-name>
 	<display-name>Archetype Created Web Application</display-name>
 	<context-param>
 		<param-name>authority</param-name>

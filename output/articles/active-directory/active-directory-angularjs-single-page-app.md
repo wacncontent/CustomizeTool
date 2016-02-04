@@ -44,7 +44,7 @@ From your shell or command line:
 4. Click the **Applications** tab.
 5. In the drawer, click **Add**.
 6. Click **Add an application my organization is developing**.
-7. Enter a friendly name for the application, for example "To Go API", select **Web Application** and/or **Web API**, and click **Next**.
+7. Enter a friendly name for the application, for example "To Go API", select **Web Site** and/or **Web API**, and click **Next**.
 8. For the sign-on URL, enter the base URL for the sample, which is by default `https://localhost:44327/`.
 9. For the App ID URI, enter `https://<your_directory_name>/ToGoAPI`, replacing `<your_directory_name>` with the name of your Azure AD directory.  Save the configuration.
 
@@ -73,7 +73,7 @@ All done!  Before moving on to the next step, you need to find the App ID URI of
 4. Click the **Applications** tab.
 5. In the drawer, click **Add**.
 6. Click **Add an application my organization is developing**.
-7. Enter a friendly name for the application, for example "To Do SPA", select **Web Application and/or Web API**, and click **Next**.
+7. Enter a friendly name for the application, for example "To Do SPA", select **Web Site and/or Web API**, and click **Next**.
 8. For the sign-on URL, enter the base URL for the sample, which is by default `https://localhost:44326/`.
 9. For the App ID URI, enter `https://<your_directory_name>/ToDoSPA`, replacing `<your_directory_name>` with the name of your Azure AD directory.
 10. In the **Permissions to Other Applications** section, click **Add Application**.  Select **Other** in the **Show** drop-down, and click the upper check mark.  Locate and click the To Go API, and click the bottom check mark to add the application.  Select **Access To Go API** from the **Delegated Permissions** drop-down, and save the configuration.
@@ -116,14 +116,14 @@ To deploy the To Do SPA and To Go API to Azure Web Sites, you will create two we
 ### Create the To Go API Azure Web Site
 
 1. Sign in to the [Azure management portal](https://manage.windowsazure.cn).
-2. Click **Web Sites** in the left hand nav.
+2. Click **Web Apps** in the left hand nav.
 3. Click **New** in the bottom left hand corner, select **Compute** > **Web Site** > **Custom Create**, select the hosting plan and region, and give your web site a name, e.g. togo-contoso.chinacloudsites.cn.  Select a database to use, or create a new one.  Click **Create Web Site**.
-4. Once the web site is created, click it to manage it.  For this set of steps, download the .publishsettings file and save it.  Other deployment mechanisms, such as from source control, can also be used. For more information about using a .publishsettings file, see [How to: Connect to your subscription](/documentation/articles/install-configure-powershell/#Connect). 
+4. Once the web site is created, click it to manage it.  For this set of steps, download the .publishsettings file and save it.  Other deployment mechanisms, such as from source control, can also be used. For more information about using a .publishsettings file, see [How to: Connect to your subscription](/documentation/articles/powershell-install-configure/#Connect). 
 
 ### Create the To Do SPA Azure Web Site
 
 1. Navigate to the [Azure management portal](https://manage.windowsazure.cn).
-2. Click **Web Sites** in the left hand nav.
+2. Click **Web Apps** in the left hand nav.
 3. Click **New** in the bottom left hand corner, select **Compute** > **Web Site** > **Custom Create**, select the hosting plan and region, and give your web site a name, e.g. todo-contoso.chinacloudsites.cn.   Select a database to use; the same database as the To Go API will be fine.  Click **Create Web Site**.
 4. Once the web site is created, click it to manage it.  Once again, download the .publishsettings file for this site and save it.
 
@@ -171,7 +171,7 @@ Special thanks to @matvelloso for the assist in getting this tutorial created.
 
 ## Next steps
 
-Here are some additional resources to help you use Azure AD to add authentication and authorization to your web applications and web APIs: 
+Here are some additional resources to help you use Azure AD to add authentication and authorization to your web sites and web APIs: 
 
 + [Azure Active Directory Code Samples](https://msdn.microsoft.com/zh-CN/library/azure/dn646737.aspx)
 + [Authentication Scenarios for Azure AD](https://msdn.microsoft.com/zh-CN/library/azure/dn499820.aspx)

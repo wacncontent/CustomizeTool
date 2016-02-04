@@ -9,10 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/08/2015"
+	ms.date="11/30/2015"
 	wacn.date=""/>
 
 # Recover your mobile service in the event of a disaster
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 
 When you use Azure Mobile Services to deploy an app, you can use its built-in features to ensure business continuity in the event of availability problems, such as server failures, network disruptions, data loss, and widespread facilities loss. By deploying your app using Azure Mobile Services you are taking advantage of many fault tolerance and infrastructure capabilities that you would have to design, implement, and manage if you were to deploy a traditional on-premise solution. Azure mitigates a large fraction of potential failures at a fraction of the cost.
 
@@ -23,7 +27,7 @@ To make recovery easier in case of an availability problem, you can prepare for 
 + **Back up your data in the Azure mobile service SQL Database**
 	Your mobile service application data is stored in an Azure SQL Database. We recommend that you back it up as prescribed in the [SQL Database business continuity guidance].
 + **Back up your mobile service scripts**
-	We recommend that you store your mobile service scripts in a source-control system such as [Team Foundation Service] or [GitHub] and not rely only on the copies in the mobile service itself. You can download the scripts via the Azure Management Portal, using the Mobile Services [source control feature], or [using the Azure CLI]. Pay close attention to features labeled as "preview" in the portal, as recovery for those scripts is not guaranteed and you might need to recover them from your own source control original.
+	We recommend that you store your mobile service scripts in a source-control system such as [Team Foundation Service] or [GitHub] and not rely only on the copies in the mobile service itself. You can download the scripts via the Azure Management Portal, using the Mobile Services [source control feature], or [using the Azure CLI]. Pay close attention to features labeled as "preview" in the Azure Management Portal, as recovery for those scripts is not guaranteed and you might need to recover them from your own source control original.
 + **Reserve a secondary mobile service**
 	In the event of an availability problem with your mobile service, you may have to redeploy it to an alternate Azure region. To ensure capacity is available (for example under rare circumstances such as the loss of an entire region), we recommend that you create a secondary mobile service in your alternate region and set its mode the same as or higher than the mode of your primary service. (If your primary service is in Basic mode, you can make the secondary service either Basic or Standard. But if the primary is Standard, then the secondary must also be Standard.)
 
@@ -62,14 +66,14 @@ To recover your mobile service after an outage:
 
 		azure mobile migrate PrimaryService SecondaryService
 		info:    Executing command mobile migrate
-		Warning: this action will use the capacity from the mobile service 'SecondaryService' and delete it and the host name for 'PrimaryService' may not resolve for up to 30 minutes. Do you want to migrate the mobile service 'PrimaryService'? [y/n]: /documentation/articles/y
+		Warning: this action will use the capacity from the mobile service 'SecondaryService' and delete it and the host name for 'PrimaryService' may not resolve for up to 30 minutes. Do you want to migrate the mobile service 'PrimaryService'? [y/n]: y
 		+ Performing migration
 		+ Migration with id '0123456789abcdef0123456789abcdef' started. The migration may take several minutes to complete.
 		+ Cleaning up
 		info:    Migration complete. It may take 30 minutes for DNS to resolve to the migrated site.
 		info:    mobile migrate command OK
 
-    > [AZURE.NOTE] It may take a few minutes after the command completes until you can see the changes in the portal.
+    > [AZURE.NOTE] It may take a few minutes after the command completes until you can see the changes in the Azure Management Portal.
 
 5. Verify that all scripts have been recovered correctly by comparing them to your originals in source control. In most cases, scripts are automatically recovered without data loss, but if you find a discrepancy, you can recover that script manually.
 
@@ -78,15 +82,18 @@ To recover your mobile service after an outage:
 	+ In the Azure Management Portal, on the **"Configure"** tab of your mobile service, choose "Change database" and then select the newly recovered database.
 
 7. Your mobile service is now hosted in a different physical location. You'll need to update your publishing and/or git credentials to allow for updating your running site.
-	+ If you are using a **.NET backend**, set up your publishing profile again, as described in [Publish your mobile service](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started#publish-your-mobile-service). This will update your publishing details to point to the new service location.
+	+ If you are using a **.NET backend**, set up your publishing profile again, as described in [Publish your mobile service](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/#publish-your-mobile-service). This will update your publishing details to point to the new service location.
 	+ If you are using a **Javascript backend** and managing your service with the Portal, you don't need to take any extra action.
+
 	+ If you are using a **Javascript backend** and managing your service with node, update your git remote to point to the new repository. To do this, you remove the .git file path from your git remote:
 
 		1. Find your current origin remote:
+
 				git remote -v
 				 origin  https://myservice.scm.azure-mobile.cn/myservice.git (fetch)
 				 origin  https://myservice.scm.azure-mobile.cn/myservice.git (push)
-		3. Update the remote using with the same url, but without the final .git file path:
+
+		3. Update the remote using the same url, but without the final .git file path:
 				git remote set-url origin https://myservice.scm.azure-mobile.cn
 		4. Pull from origin to verify that it is working correctly.
 
@@ -99,10 +106,9 @@ Now you should be in a state where your mobile service has been recovered to a n
 <!-- URLs. -->
 [SQL Database business continuity guidance]: http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx
 [Team Foundation Service]: http://tfs.visualstudio.com/
-
-[source control feature]: /develop/mobile/tutorials/store-scripts-in-source-control/
-[using the Azure CLI]: /develop/mobile/tutorials/command-line-administration/
+[Github]: https://github.com/
+[source control feature]: /documentation/articles/mobile-services-store-scripts-source-control
+[using the Azure CLI]: /documentation/articles/mobile-services-manage-command-line-interface
 [Azure Management Portal]: http://manage.windowsazure.cn/
-[Azure Service Dashboard]: http://azure.microsoft.com/support/service-dashboard/
-[Automate mobile services with the Azure CLI]: /develop/mobile/tutorials/command-line-administration/
- 
+[Azure Service Dashboard]: /zh-cn/support/service-dashboard/
+[Automate mobile services with the Azure CLI]: /documentation/articles/mobile-services-manage-command-line-interface

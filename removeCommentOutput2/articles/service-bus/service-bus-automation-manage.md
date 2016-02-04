@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage Azure Service Bus using Azure Automation"
+	pageTitle="Manage Azure Service Bus using Azure Automation | Windows Azure"
 	description="Learn about how the Azure Automation service can be used to manage Azure Service Bus."
 	services="service-bus, automation"
 	documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="08/28/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 

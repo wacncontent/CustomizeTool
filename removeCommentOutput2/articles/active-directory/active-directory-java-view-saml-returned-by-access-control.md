@@ -5,11 +5,11 @@
     documentationCenter="java"
     authors="rmcmurray"
     manager="wpickett"
-    editor="jimbe" />
+    editor="" />
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/12/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 # How to view SAML returned by the Azure Access Control Service
@@ -22,6 +22,9 @@ For more information on ACS, see the [Next steps](#next_steps) section.
 
 > [AZURE.NOTE]
 > The Azure Access Services Control Filter is a community technology preview. As pre-release software, it is not formally supported by Microsoft.
+
+## Prerequisites
+
 
 ## <a name="pre"></a>Prerequisites
 
@@ -187,7 +190,7 @@ To further explore ACS's functionality and to experiment with more sophisticated
 [Add the JspWriter library to your build path and deployment assembly]: #add_library
 [Run the application]: #run_application
 [Next steps]: #next_steps
-[Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
+[Access Control Service 2.0]: http://msdn.microsoft.com/zh-cn/library/hh147631.aspx
 [How to Authenticate Web Users with Azure Access Control Service Using Eclipse]: /documentation/articles/active-directory-java-authenticate-users-access-control-eclipse
 [saml_output]: ./media/active-directory-java-view-saml-returned-by-access-control/SAML_Output.png
  

@@ -5,37 +5,28 @@ deleted:
 		* To create a Windows virtual machine and install MongoDB, see [Install MongoDB on a virtual machine running Windows Server in Azure][InstallMongoOnWindowsVM].
 		* Alternatively, to create a Linux virtual machine and install MongoDB, see [Install MongoDB on a virtual machine running CentOS Linux in Azure][InstallMongoOnCentOSLinuxVM].
 
-reason: ()
+reason: (broken link)
 
 deleted:
 
 		[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
-reason: ()
+reason: (terminology: Azure App Service Web)
 
 deleted:
 
 		[InstallMongoOnCentOSLinuxVM]: /manage/linux/common-tasks/mongodb-on-a-linux-vm/
 		[InstallMongoOnWindowsVM]: /documentation/articles/virtual-machines-install-mongodb-windows-server-2008r2
 
-reason: ()
-
-replacement:
+reason: (broken link)
 
 deleted:
 
 		>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
-replaced by:
+reason: (“Try it now”)
 
-		In this tutorial you will:
-		
-		- [Create a virtual machine and install MongoDB](#virtualmachine)
-		- [Create and run the My Task List ASP.NET application on your development computer](#createapp)
-		- [Create an Azure web site](#createwebsite)
-		- [Deploy the ASP.NET application to the web site using Git](#deployapp)
-
-reason: ()
+replacement:
 
 deleted:
 
@@ -93,5 +84,5 @@ replaced by:
 		
 		9. Your Azure website is now available.  Check the **Dashboard** page for your site and the **Site URL** field to find the URL for your site. Following the procedures in this tutorial, your site would be available at this URL: http://mytasklistapp.chinacloudsites.cn.
 
-reason: ()
+reason: (the new Ibiza portal)
 

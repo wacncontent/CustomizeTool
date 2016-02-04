@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/07/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 #Using AES-128 Dynamic Encryption and Key Delivery Service
@@ -17,12 +17,13 @@
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/media-services-protect-with-aes128)
 - [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
+- [PHP](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
 
 ##Overview
 
 Windows Azure Media Services enables you to deliver Http-Live-Streaming (HLS) and Smooth Streams encrypted with Advanced Encryption Standard (AES) (using 128-bit encryption keys). Media Services also provides the Key Delivery service that delivers encryption keys to authorized users. If you want for Media Services to encrypt an asset, you need to associate an encryption key with the asset and also configure authorization policies for the key. When a stream is requested by a player, Media Services uses the specified key to dynamically encrypt your content using AES encryption. To decrypt the stream, the player will request the key from the key delivery service. To decide whether or not the user is authorized to get the key, the service evaluates the authorization policies that you specified for the key.
 
-Media Services supports multiple ways of authenticating users who make key requests. The content key authorization policy could have one or more authorization restrictions: open, token restriction, or IP restriction. The token restricted policy must be accompanied by a token issued by a Secure Token Service (STS). Media Services supports tokens in the [Simple Web Tokens](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2) (SWT) format and [JSON Web Token](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_3) (JWT) format. For more information, see [Configure the content key’s authorization policy](/documentation/articles/media-services-protect-with-aes128#configure_key_auth_policy).
+Media Services supports multiple ways of authenticating users who make key requests. The content key authorization policy could have one or more authorization restrictions: open, token restriction, or IP restriction. The token restricted policy must be accompanied by a token issued by a Secure Token Service (STS). Media Services supports tokens in the [Simple Web Tokens](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2) (SWT) format and [JSON Web Token](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_3) (JWT) format. For more information, see [Configure the content key's authorization policy](/documentation/articles/media-services-protect-with-aes128#configure_key_auth_policy).
 
 To take advantage of dynamic encryption, you need to have an asset that contains a set of multi-bitrate MP4 files or multi-bitrate Smooth Streaming source files. You also need to configure the delivery policy for the asset (described later in this topic). Then, based on the format specified in the streaming URL, the On-Demand Streaming server will ensure that the stream is delivered in the protocol you have chosen. As a result, you only need to store and pay for the files in single storage format and Media Services service will build and serve the appropriate response based on requests from a client.
 
@@ -36,8 +37,8 @@ The following are general steps that you would need to perform when encrypting y
 
 1. [Create an asset and upload files into the asset](/documentation/articles/media-services-protect-with-aes128#create_asset). 
 1. [Encode the asset containing the file to the adaptive bitrate MP4 set](/documentation/articles/media-services-protect-with-aes128#encode_asset).
-1. [Create a content key and associate it with the encoded asset](/documentation/articles/media-services-protect-with-aes128#create_contentkey). In Media Services, the content key contains the asset’s encryption key.
-1. [Configure the content key’s authorization policy](/documentation/articles/media-services-protect-with-aes128#configure_key_auth_policy). The content key authorization policy must be configured by you and met by the client in order for the content key to be delivered to the client. 
+1. [Create a content key and associate it with the encoded asset](/documentation/articles/media-services-protect-with-aes128#create_contentkey). In Media Services, the content key contains the asset's encryption key.
+1. [Configure the content key's authorization policy](/documentation/articles/media-services-protect-with-aes128#configure_key_auth_policy). The content key authorization policy must be configured by you and met by the client in order for the content key to be delivered to the client. 
 1. [Configure the delivery policy for an asset](/documentation/articles/media-services-protect-with-aes128#configure_asset_delivery_policy). The delivery policy configuration includes: key acquisition URL and Initialization Vector (IV) (AES 128 requires the same IV to be supplied when encrypting and decrypting), delivery protocol (for example, MPEG DASH, HLS, HDS, Smooth Streaming or all), the type of dynamic encryption (for example, envelope or no dynamic encryption). 
 
 	You could apply different policy to each protocol on the same asset. For example, you could apply PlayReady encryption to Smooth/DASH and AES Envelope to HLS. Any protocols that are not defined in a delivery policy (for example, you add a single policy that only specifies HLS as the protocol) will be blocked from streaming. The exception to this is if you have no asset delivery policy defined at all. Then, all protocols will be allowed in the clear.
@@ -56,7 +57,7 @@ The rest of this topic provides detailed explanations, code examples, and links 
 
 ##Current limitations
 
-If you add or update your asset’s delivery policy, you must delete an existing locator (if any) and create a new locator.
+If you add or update your asset's delivery policy, you must delete an existing locator (if any) and create a new locator.
 
 ##<a id="create_asset"></a>Create an asset and upload files into the asset
 
@@ -76,7 +77,7 @@ In Media Services, the content key contains the key that you want to encrypt an 
 
 For detailed information, see [Create content key](/documentation/articles/media-services-dotnet-create-contentkey).
 
-##<a id="configure_key_auth_policy"></a>Configure the content key’s authorization policy
+##<a id="configure_key_auth_policy"></a>Configure the content key's authorization policy
 
 Media Services supports multiple ways of authenticating users who make key requests. The content key authorization policy must be configured by you and met by the client (player) in order for the key to be delivered to the client. The content key authorization policy could have one or more authorization restrictions: open, token restriction, or IP restriction.
 
@@ -97,7 +98,7 @@ For detailed information, see [Configure asset delivery policy ](/documentation/
 
 You will need to provide your user with the streaming URL for Smooth, DASH or HLS.
 
->[AZURE.NOTE]If you add or update your asset’s delivery policy, you must delete an existing locator (if any) and create a new locator.
+>[AZURE.NOTE]If you add or update your asset's delivery policy, you must delete an existing locator (if any) and create a new locator.
 
 For instructions on how to publish an asset and build a streaming URL, see [Build a streaming URL](/documentation/articles/media-services-deliver-streaming-content).
 
@@ -234,6 +235,7 @@ The following code shows how to send a request to the Media Services key deliver
 1. Overwrite the code in your Program.cs file with the code shown in this section.
 	
 	Make sure to update variables to point to folders where your input files are located.
+			
 		
 		using System;
 		using System.Collections.Generic;
@@ -357,7 +359,7 @@ The following code shows how to send a request to the Media Services key deliver
 		            }
 		
 		            var assetName = Path.GetFileNameWithoutExtension(singleFilePath);
-		            IAsset inputAsset = _context.Assets.Create(assetName, AssetCreationOptions.StorageEncrypted); 
+		            IAsset inputAsset = _context.Assets.Create(assetName, AssetCreationOptions.StorageEncrypted);
 		
 		            var assetFile = inputAsset.AssetFiles.Create(Path.GetFileName(singleFilePath));
 		
@@ -381,31 +383,45 @@ The following code shows how to send a request to the Media Services key deliver
 		            return inputAsset;
 		        }
 		
-		        static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset inputAsset)
+		        static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset asset)
 		        {
-		            var encodingPreset = "H264 Adaptive Bitrate MP4 Set 720p";
+		            // Declare a new job.
+		            IJob job = _context.Jobs.Create("Media Encoder Standard Job");
+		            // Get a media processor reference, and pass to it the name of the 
+		            // processor to use for the specific task.
+		            IMediaProcessor processor = GetLatestMediaProcessorByName("Media Encoder Standard");
 		
-		            IJob job = _context.Jobs.Create(String.Format("Encoding into Mp4 {0} to {1}",
-		                                    inputAsset.Name,
-		                                    encodingPreset));
+		            // Create a task with the encoding details, using a string preset.
+		            // In this case "H264 Multiple Bitrate 720p" preset is used.
+		            ITask task = job.Tasks.AddNew("My encoding task",
+		                processor,
+		                "H264 Multiple Bitrate 720p",
+		                TaskOptions.None);
 		
-		            var mediaProcessors =
-		                _context.MediaProcessors.Where(p => p.Name.Contains("Media Encoder")).ToList();
-		
-		            var latestMediaProcessor =
-		                mediaProcessors.OrderBy(mp => new Version(mp.Version)).LastOrDefault();
-		
-		
-		
-		            ITask encodeTask = job.Tasks.AddNew("Encoding", latestMediaProcessor, encodingPreset, TaskOptions.None);
-		            encodeTask.InputAssets.Add(inputAsset);
-		            encodeTask.OutputAssets.AddNew(String.Format("{0} as {1}", inputAsset.Name, encodingPreset), AssetCreationOptions.StorageEncrypted);
+		            // Specify the input asset to be encoded.
+		            task.InputAssets.Add(asset);
+		            // Add an output asset to contain the results of the job. 
+		            // This output is specified as AssetCreationOptions.None, which 
+		            // means the output asset is not encrypted. 
+		            task.OutputAssets.AddNew("Output asset",
+		                AssetCreationOptions.None);
 		
 		            job.StateChanged += new EventHandler<JobStateChangedEventArgs>(JobStateChanged);
 		            job.Submit();
 		            job.GetExecutionProgressTask(CancellationToken.None).Wait();
 		
 		            return job.OutputMediaAssets[0];
+		        }
+		
+		        private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
+		        {
+		            var processor = _context.MediaProcessors.Where(p => p.Name == mediaProcessorName).
+		            ToList().OrderBy(p => new Version(p.Version)).LastOrDefault();
+		
+		            if (processor == null)
+		                throw new ArgumentException(string.Format("Unknown media processor", mediaProcessorName));
+		
+		            return processor;
 		        }
 		
 		        static public IContentKey CreateEnvelopeTypeContentKey(IAsset asset)
@@ -443,7 +459,7 @@ The following code shows how to send a request to the Media Services key deliver
 		                    Name = "HLS Open Authorization Policy",
 		                    KeyRestrictionType = (int)ContentKeyRestrictionType.Open,
 		                    Requirements = null // no requirements needed for HLS
-		                };
+		                        };
 		
 		            restrictions.Add(restriction);
 		
@@ -512,10 +528,10 @@ The following code shows how to send a request to the Media Services key deliver
 		            //   key url that will have KID=<Guid> appended to the envelope and
 		            //   the Initialization Vector (IV) to use for the envelope encryption.
 		            Dictionary<AssetDeliveryPolicyConfigurationKey, string> assetDeliveryPolicyConfiguration =
-		                new Dictionary<AssetDeliveryPolicyConfigurationKey, string> 
+		                new Dictionary<AssetDeliveryPolicyConfigurationKey, string>
 		            {
-		                {AssetDeliveryPolicyConfigurationKey.EnvelopeKeyAcquisitionUrl, keyAcquisitionUri.ToString()},
-		                {AssetDeliveryPolicyConfigurationKey.EnvelopeEncryptionIVAsBase64, envelopeEncryptionIV}
+		                        {AssetDeliveryPolicyConfigurationKey.EnvelopeKeyAcquisitionUrl, keyAcquisitionUri.ToString()},
+		                        {AssetDeliveryPolicyConfigurationKey.EnvelopeEncryptionIVAsBase64, envelopeEncryptionIV}
 		            };
 		
 		            IAssetDeliveryPolicy assetDeliveryPolicy =
@@ -543,6 +559,7 @@ The following code shows how to send a request to the Media Services key deliver
 		                                        FirstOrDefault();
 		
 		            // Create a 30-day readonly access policy. 
+                	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
 		            IAccessPolicy policy = _context.AccessPolicies.Create("Streaming policy",
 		                TimeSpan.FromDays(30),
 		                AccessPermissions.Read);

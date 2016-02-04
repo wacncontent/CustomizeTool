@@ -3,13 +3,13 @@
 	description="Learn how to configure single sign-on between Azure Active Directory and Questetra BPM Suite."
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
-	manager="msStevenPo"
+	authors="jeevansd"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/02/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 

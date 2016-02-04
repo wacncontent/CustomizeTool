@@ -79,7 +79,7 @@ to create a queue named `TestQueue` with a maximum size of 5GB:
 
     long maxSizeInMegabytes = 5120;
     QueueInfo queueInfo = new QueueInfo("TestQueue");
-    queueInfo.setMaxSizeInMegabytes(maxSizeInMegabytes);
+    queueInfo.setMaxSizeInMegabytes(maxSizeInMegabytes); 
     CreateQueueResult result = service.createQueue(queueInfo);
 
 Note that you can use the **listQueues** method on **ServiceBusContract**
@@ -97,7 +97,7 @@ message for the `TestQueue` queue previously created in the `HowToSample` namesp
         BrokeredMessage message = new BrokeredMessage("MyMessage");
         service.sendQueueMessage("TestQueue", message);
     }
-    catch (ServiceException e)
+    catch (ServiceException e) 
     {
         System.out.print("ServiceException encountered: ");
         System.out.println(e.getMessage());
@@ -115,7 +115,7 @@ The following example demonstrates how to send five test messages to the
          // Create message, passing a string message for the body.
          BrokeredMessage message = new BrokeredMessage("Test message " + i);
          // Set an additional app-specific property.
-         message.setProperty("MyProperty", i);
+         message.setProperty("MyProperty", i); 
          // Send message to the queue
          service.sendQueueMessage("TestQueue", message);
     }
@@ -164,14 +164,14 @@ our "TestQueue":
 	{
 		ReceiveMessageOptions opts = ReceiveMessageOptions.DEFAULT;
 		opts.setReceiveMode(ReceiveMode.PEEK_LOCK);
-
-		while(true)  {
-	         ReceiveQueueMessageResult resultQM =
+	
+		while(true)  { 
+	         ReceiveQueueMessageResult resultQM = 
 	     			service.receiveQueueMessage("TestQueue", opts);
 		    BrokeredMessage message = resultQM.getValue();
 		    if (message != null && message.getMessageId() != null)
 		    {
-			    System.out.println("MessageID: " + message.getMessageId());
+			    System.out.println("MessageID: " + message.getMessageId());    
 			    // Display the queue message.
 			    System.out.print("From queue: ");
 			    byte[] b = new byte[200];
@@ -185,16 +185,16 @@ our "TestQueue":
 	                numRead = message.getBody().read(b);
 			    }
 	            System.out.println();
-			    System.out.println("Custom Property: " +
+			    System.out.println("Custom Property: " + 
 			        message.getProperty("MyProperty"));
 			    // Remove message from queue.
 			    System.out.println("Deleting this message.");
 			    //service.deleteMessage(message);
 		    }  
 		    else  
-		    {
-		        System.out.println("Finishing up - no more messages.");
-		        break;
+		    {        
+		        System.out.println("Finishing up - no more messages.");        
+		        break; 
 		        // Added to handle no more messages.
 		        // Could instead wait for more messages to be added.
 		    }
@@ -209,7 +209,7 @@ our "TestQueue":
 	    System.out.print("Generic exception encountered: ");
 	    System.out.println(e.getMessage());
 	    System.exit(-1);
-	}
+	} 	
 
 ## How to handle application crashes and unreadable messages
 
@@ -244,10 +244,8 @@ constant across delivery attempts.
 Now that you've learned the basics of Service Bus queues, see [Queues, topics, and subscriptions][] for more information.
 
 For more information, see the [Java Developer Center](/develop/java/).
-
-
   [Azure SDK for Java]: /develop/java/
   [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
-  [Azure Management Portal]: http://manage.windowsazure.cn/
-  [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+
+  [Queues, Topics, and Subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx

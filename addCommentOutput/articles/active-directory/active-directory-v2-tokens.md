@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/12/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # App model v2.0 preview: Token reference
@@ -151,8 +151,8 @@ The following token lifetimes are provided purely for your understanding, as the
 
 | Token | Lifetime | Description |
 | ----------------------- | ------------------------------- | ------------ |
-| Id_Tokens (work or school accounts) | 1 hour | Id_Tokens are typically valid for an hour.  Your web app can use this same lifetime in maintaining its own session with the user (recommended), or choose a completely different session lifetime.  If your app needs to get a new id_token, it simply needs to make a new sign-in request to the v2.0 authorize endpoint.  If the user has a valid browser session with the v2.0 endpoint, they may not be required to enter their credentials again. |
-| Id_Tokens (personal accounts) | 24 hours | Id_Tokens for personal accounts are typically valid for 24 hours.  Your web app can use this same lifetime in maintaining its own session with the user (recommended), or choose a completely different session lifetime.  If your app needs to get a new id_token, it simply needs to make a new sign-in request to the v2.0 authorize endpoint.  If the user has a valid browser session with the v2.0 endpoint, they may not be required to enter their credentials again. |
+| Id_Tokens (work or school accounts) | 1 hour | Id_Tokens are typically valid for an hour.  Your web site can use this same lifetime in maintaining its own session with the user (recommended), or choose a completely different session lifetime.  If your app needs to get a new id_token, it simply needs to make a new sign-in request to the v2.0 authorize endpoint.  If the user has a valid browser session with the v2.0 endpoint, they may not be required to enter their credentials again. |
+| Id_Tokens (personal accounts) | 24 hours | Id_Tokens for personal accounts are typically valid for 24 hours.  Your web site can use this same lifetime in maintaining its own session with the user (recommended), or choose a completely different session lifetime.  If your app needs to get a new id_token, it simply needs to make a new sign-in request to the v2.0 authorize endpoint.  If the user has a valid browser session with the v2.0 endpoint, they may not be required to enter their credentials again. |
 | Access Tokens (work or school accounts) | 1 hour | Indicated in token responses as part of the token metadata. |
 | Access Tokens (personal accounts) | 1 hour | Indicated in token responses as part of the token metadata.  Access_tokens issued on behalf of personal accounts may be configured for a different lifetime, but one hour is typically the case. |
 | Refresh Tokens (work or school account) | Up to 14 days | A single refresh token is valid for a maximum of 14 days.  However, the refresh token may become invalid at any time for any number of reasons, so your app should continue to try and use a refresh token until it fails, or until your app replaces it with a new refresh token.  A refresh token will also become invalid if it has been 90 days since the user has entered their credentials. |

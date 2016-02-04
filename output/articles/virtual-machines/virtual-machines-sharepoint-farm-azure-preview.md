@@ -1,6 +1,8 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Create SharePoint server farms | Windows Azure"
-	description="Quickly create a new basic or highly-available SharePoint Server 2013 farm with the Azure Preview portal marketplace."
+	description="Quickly create a new basic or highly-available SharePoint Server 2013 farm with the Azure Management Portal marketplace."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="JoeDavies-MSFT"
@@ -14,14 +16,12 @@
 	wacn.date=""/>
 
 # Create SharePoint server farms
-<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic model.
- 
--->
-With the Windows Azure Preview portal marketplace, you can quickly create pre-configured SharePoint Server 2013 farms. This can save you a lot of time when you need a basic or high-availability SharePoint farm for a development and testing environment or if you are evaluating SharePoint Server 2013 as a collaboration solution for your organization.
 
-> [AZURE.NOTE] The **SharePoint Server Farm** item in the Azure Marketplace of the Azure Preview portal has been removed.
+With the Windows Azure Management Portal marketplace, you can quickly create pre-configured SharePoint Server 2013 farms. This can save you a lot of time when you need a basic or high-availability SharePoint farm for a development and testing environment or if you are evaluating SharePoint Server 2013 as a collaboration solution for your organization.
+
+> [AZURE.NOTE] The **SharePoint Server Farm** item in the Azure gallery of the Azure Management Portal has been removed.
 
 The basic SharePoint farm consists of three virtual machines in this configuration.
 
@@ -53,11 +53,11 @@ To create the high-availability (nine-server) SharePoint farm:
 
 ## Managing the SharePoint farms
 
-You can administer the servers of these farms through Remote Desktop connections. For more information, see [Log on to the virtual machine](/documentation/articles/virtual-machines-windows-tutorial#log-on-to-the-virtual-machine).
+You can administer the servers of these farms through Remote Desktop connections. For more information, see [Log on to the virtual machine](/documentation/articles/virtual-machines-windows-tutorial-classic-portal#log-on-to-the-virtual-machine).
 
 From the Central Administration SharePoint site, you can configure My sites, SharePoint applications, and other functionality. For more information, see [Configure SharePoint 2013](http://technet.microsoft.com/zh-cn/library/ee836142.aspx).
 
-> [AZURE.NOTE] The Azure Preview Portal creates both of these farms in a cloud-only virtual network with an Internet-facing web presence. There is no site-to-site VPN or ExpressRoute connection back to your organization network.
+> [AZURE.NOTE] The Azure Management Portal creates both of these farms in a cloud-only virtual network with an Internet-facing web presence. There is no site-to-site VPN or ExpressRoute connection back to your organization network.
 
 ## Additional resources
 

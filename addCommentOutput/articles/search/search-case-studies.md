@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Who's using Azure Search: case studies and customer stories"
-	description="Azure Search case studies and customer stories."
+	pageTitle="Who's using Azure Search: case studies and customer stories | Windows Azure | Hosted cloud search service"
+	description="Case studies and customer stories about Azure Search, a hosted cloud search service on Windows Azure."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -10,41 +10,82 @@
 
 <tags
 	ms.service="search"
-	ms.devlang="NA"
-	ms.workload="search"
-	ms.topic="article" 
-	ms.tgt_pltfrm="na"
-	ms.date="10/05/2015"
-	ms.author="heidist"/>
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
 # Who's using Azure Search: case studies and customer stories
 
+<!-- deleted by customization
+Learn how the following organizations moved their businesses forward by integrating a rich Azure Search experience into their online applications.
+-->
+<!-- keep by customization: begin -->
 Learn how Azure Search helped the following organizations move their businesses forward by integrating rich search experiences into their online applications.
+<!-- keep by customization: end -->
 
 [![][1]](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18596)
+<!-- deleted by customization
+
+autoTRADER.ca is on the road to creating an IT infrastructure based on Windows Azure's platform-as-a-service (PaaS) capabilities. The company started using Azure to host and serve its millions of images. It is now moving its application search functionality to Azure and is poised to migrate all its web properties to Azure. As a result, the company is better able to improve services and create new offerings—all while eliminating the need to manage its own infrastructure.
+-->
+<!-- keep by customization: begin -->
 autoTRADER.ca is on the road to creating an IT infrastructure based on Microsoft Azure’s platform-as-a-service (PaaS) capabilities. The company started using Azure to host and serve its millions of images. It is now moving its application search functionality to Azure and is poised to migrate all its web properties to Azure. As a result, the company is better able to improve services and create new offerings—all while eliminating the need to manage its own infrastructure.
+<!-- keep by customization: end -->
 
 
 [![][2]](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18633)
+<!-- deleted by customization
+
+How does a small search engine for Albanian speakers take on today's search giants? By understanding the local language, creating a targeted user experience, and relying on Microsoft cloud search technology.
+-->
+<!-- keep by customization: begin -->
 How does a small search engine for Albanian speakers take on today’s search giants? By understanding the local language, creating a targeted user experience, and relying on Microsoft cloud search technology.
+<!-- keep by customization: end -->
 
 
 [![][3]](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18662)
+<!-- deleted by customization
+
+JLL (formerly Jones Lang LaSalle) is looking to change the way its applications are designed and hosted by taking advantage of the cloud. Using Windows Azure, JLL can better serve its global workforce and customers in a more agile and scalable way, and it can focus on solutions instead of infrastructure.
+-->
+<!-- keep by customization: begin -->
 JLL (formerly Jones Lang LaSalle) is looking to change the way its applications are designed and hosted by taking advantage of the cloud. Using Microsoft Azure, JLL can better serve its global workforce and customers in a more agile and scalable way, and it can focus on solutions instead of infrastructure.
+<!-- keep by customization: end -->
 
 [![][6]](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18667)
+<!-- deleted by customization
+
+It's a classic tech startup story: developers with an idea see a market and want to jump. The market? Retail engagement. The idea? Back-end services for web and mobile application development to revive a flagging in-store retail experience. XOMNI used Windows Azure to rapidly implement a NoSQL database and a full-text search service, so customers now have a scalable platform for developing client software apps, integrating with social networks, and analyzing data to promote rich, interactive consumer experiences.
+-->
+<!-- keep by customization: begin -->
 It’s a classic tech startup story: developers with an idea see a market and want to jump. The market? Retail engagement. The idea? Back-end services for web and mobile application development to revive a flagging in-store retail experience. XOMNI used Microsoft Azure to rapidly implement a NoSQL database and a full-text search service, so customers now have a scalable platform for developing client software apps, integrating with social networks, and analyzing data to promote rich, interactive consumer experiences.
+<!-- keep by customization: end -->
 
 
 [![][4]](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=19540)
+<!-- deleted by customization
+
+As a startup with big plans for its healthcare search website, Medihoo needed fast, powerful search capabilities that didn't require a heavy investment in new infrastructure. The company chose to build its site on the Windows Azure cloud platform, with the Azure Search solution, which offers fast performance, comprehensive functionality, and geospatial and support in multiple languages. They now can help everyone—especially expatriates and travelers—find high-quality healthcare no matter where in the world they are.
+-->
+<!-- keep by customization: begin -->
 As a startup with big plans for its healthcare search website, Medihoo needed fast, powerful search capabilities that didn’t require a heavy investment in new infrastructure. The company chose to build its site on the Microsoft Azure cloud platform, with the Azure Search solution, which offers fast performance, comprehensive functionality, and geospatial and support in multiple languages. They now can help everyone—especially expatriates and travelers—find high-quality healthcare no matter where in the world they are.
+<!-- keep by customization: end -->
 
 
 [![][5]](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=21252)
+<!-- deleted by customization
+
+Independent realtor discovers that the best place to move is to the cloud
+Weichert Realtors is moving to the cloud—and it's leading to a complete shift in how the company conducts its business. Migrating to Windows Azure has enabled the company to reduce operating costs by 60 percent after saying goodbye to expensive on-premises hardware and software, completely revamp its CRM solution with robust search capabilities, and opened up a variety of new data services critical to the future of the business.
+
+##[Whattopedia.com](/documentation/articles/search-dev-case-study-whattopedia)
+
+-->
+<!-- keep by customization: begin -->
 Independent realtor discovers that the best place to move is to the cloud
 Weichert Realtors is moving to the cloud—and it’s leading to a complete shift in how the company conducts its business. Migrating to Microsoft Azure has enabled the company to reduce operating costs by 60 percent after saying goodbye to expensive on-premises hardware and software, completely revamp its CRM solution with robust search capabilities, and opened up a variety of new data services critical to the future of the business.
 
 ##[Whattopedia.com](search-dev-case-study-whattopedia.md)
+<!-- keep by customization: end -->
 Learn how one Swedish start-up built an infomedia portal that connects shoppers with retailers through a highly-relevant, scoped-search experience, similar to how travel portals match tourists up with the hotels, restaurants, and entertainment when in uncharted territory.
 
 <!--Image References-->

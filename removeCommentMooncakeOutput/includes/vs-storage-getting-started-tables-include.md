@@ -1,5 +1,5 @@
 #####Create a table
-A **CloudTableClient** object lets you get reference objects for tables and entities. The following code creates a **CloudTableClient** object and uses it to create a new table. The code tries to reference a table named “people.” If it can’t find a table with that name, it creates one.
+A **CloudTableClient** object lets you get reference objects for tables and entities. The following code creates a **CloudTableClient** object and uses it to create a new table. The code tries to reference a table named “people.” If it can't find a table with that name, it creates one.
 
 **NOTE:** All code in this guide assumes that the application being built is an Azure Cloud Service project and uses a storage connection string stored in the Azure application's service configuration.
 

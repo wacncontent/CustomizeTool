@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Manage devices with StorSimple Snapshot Manager | Microsoft Azure"
+   pageTitle="Manage devices with StorSimple Snapshot Manager | Windows Azure"
    description="Describes how to use the StorSimple Snapshot Manager MMC snap-in to connect and manage StorSimple devices."
    services="storsimple"
    documentationCenter=""
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/15/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 # Use StorSimple Snapshot Manager to connect and manage StorSimple devices
 
@@ -25,12 +21,12 @@ You can use nodes in the StorSimple Snapshot Manager **Scope** pane to verify im
 
 **Figure 1: StorSimple Snapshot Manager connected device** 
 
-Depending on your **View** selections, the **Results** pane shows the following information about each device. (For more information about configuring a view, go to [View menu](storsimple-use-snapshot-manager.md#view-menu).
+Depending on your **View** selections, the **Results** pane shows the following information about each device. (For more information about configuring a view, go to [View <!-- deleted by customization menu](/documentation/articles/storsimple-use-snapshot-manager#view-menu) --><!-- keep by customization: begin --> menu](storsimple-use-snapshot-manager.md#view-menu) <!-- keep by customization: end -->.
 
 
 | Results column  |Description          |
 |:----------------|:--------------------| 
-| Name            | The name of the device as configured in the Microsoft Azure Management Portal|
+| Name            | The name of the device as configured in the <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure Management Portal|
 | Model           | The model number of the device|
 | Version         | The version of the software installed on the device |
 | Status          | Whether the device is available |
@@ -65,7 +61,7 @@ This tutorial explains how to use StorSimple Snapshot Manager to connect and man
 - Change an expired device password
 - Replace a failed device
 
->[AZURE.NOTE] For general information about using the StorSimple Snapshot Manager interface, go to [StorSimple Snapshot Manager user interface](storsimple-use-snapshot-manager.md).
+>[AZURE.NOTE] For general information about using the StorSimple Snapshot Manager interface, go to [StorSimple Snapshot Manager user <!-- deleted by customization interface](/documentation/articles/storsimple-use-snapshot-manager) --><!-- keep by customization: begin --> interface](storsimple-use-snapshot-manager.md) <!-- keep by customization: end -->.
 
 
 ## Add or replace a device
@@ -190,7 +186,7 @@ Use the following procedure to delete an individual StorSimple device configurat
 
 ## Change an expired device password
 
-You must enter a password to authenticate a StorSimple device with StorSimple Snapshot Manager. You configure this password when you use the Windows PowerShell interface to set up the device. However, the password can expire. If this happens, you can use the Microsoft Azure Management Portal to change the password. Then, because the device was configured in StorSimple Snapshot Manager before the password expired, you must re-authenticate the device in StorSimple Snapshot Manager. 
+You must enter a password to authenticate a StorSimple device with StorSimple Snapshot Manager. You configure this password when you use the Windows PowerShell interface to set up the device. However, the password can expire. If this happens, you can use the <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure Management Portal to change the password. Then, because the device was configured in StorSimple Snapshot Manager before the password expired, you must re-authenticate the device in StorSimple Snapshot Manager.
 
 #### To change the expired password
 
@@ -222,7 +218,7 @@ If a StorSimple device fails and is replaced by a standby (failover) device, use
 
 #### To connect to a new device after failover
 
-1. Reconfigure the iSCSI connection to the new device. For instructions, go to "Step 7: Mount, initialize, and format a volume" in [Deploy your on-premises StorSimple device](storsimple-deployment-walkthrough.md). 
+1. Reconfigure the iSCSI connection to the new device. For instructions, go to "Step 7: Mount, initialize, and format a volume" in [Deploy your on-premises StorSimple <!-- deleted by customization device](/documentation/articles/storsimple-deployment-walkthrough) --><!-- keep by customization: begin --> device](storsimple-deployment-walkthrough.md) <!-- keep by customization: end -->.
 
 >[AZURE.NOTE] If the new StorSimple device has the same IP address as the old one, you might be able to connect the old configuration. 
 
@@ -252,7 +248,7 @@ If a StorSimple device fails and is replaced by a standby (failover) device, use
 
 5. Start StorSimple Snapshot Manager. 
 
-6. To configure the new StorSimple device, complete the steps in Step 2: Connect a StorSimple device in [Deploy StorSimple Snapshot Manager](storsimple-snapshot-manager-deployment.md). 
+6. To configure the new StorSimple device, complete the steps in Step 2: Connect a StorSimple device in [Deploy StorSimple Snapshot <!-- deleted by customization Manager](/documentation/articles/storsimple-snapshot-manager-deployment) --><!-- keep by customization: begin --> Manager](storsimple-snapshot-manager-deployment.md) <!-- keep by customization: end -->.
 
 7. Right-click the top-level node in the **Scope** pane (StorSimple Snapshot Manager in the example), and then click **Toggle Imports Display**. 
 
@@ -260,6 +256,6 @@ If a StorSimple device fails and is replaced by a standby (failover) device, use
 
 ## Next steps
 
-- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple solution](storsimple-snapshot-manager-admin.md).
-- Learn how to [use StorSimple Snapshot Manager to view and manage volumes](storsimple-snapshot-manager-manage-volumes.md).
+- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple <!-- deleted by customization solution](/documentation/articles/storsimple-snapshot-manager-admin) --><!-- keep by customization: begin --> solution](storsimple-snapshot-manager-admin.md) <!-- keep by customization: end -->.
+- Learn how to [use StorSimple Snapshot Manager to view and manage <!-- deleted by customization volumes](/documentation/articles/storsimple-snapshot-manager-manage-volumes) --><!-- keep by customization: begin --> volumes](storsimple-snapshot-manager-manage-volumes.md) <!-- keep by customization: end -->.
 

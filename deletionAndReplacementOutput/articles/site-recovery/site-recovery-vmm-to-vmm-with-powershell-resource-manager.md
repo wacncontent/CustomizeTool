@@ -2,33 +2,13 @@ replacement:
 
 deleted:
 
-		Azure](http://azure.microsoft.com/)
-
-replaced by:
-
-		Azure](http://www.windowsazure.cn/)
-
-reason: ()
-
-deleted:
-
-		Azure](http://azure.microsoft.com/)
-
-replaced by:
-
-		Azure](http://www.windowsazure.cn/)
-
-reason: ()
-
-deleted:
-
 		`Add-AzureAccount`
 
 replaced by:
 
 		`Add-AzureAccount -Environment AzureChinaCloud`
 
-reason: ()
+reason: (powershell -Environment)
 
 deleted:
 
@@ -38,5 +18,5 @@ replaced by:
 
 		`Add-AzureAccount -Environment AzureChinaCloud -Tenant "customer"`
 
-reason: ()
+reason: (powershell -Environment)
 

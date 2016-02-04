@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Configure Load Balancer distribution mode | Microsoft Azure"
+   pageTitle="Configure Load Balancer distribution mode | Windows Azure"
    description="How to configure Azure load balancer distribution mode to support source IP affinity"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
    manager="adinah"
    editor="tysonn" />
-<tags 
-   ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/02/2015"
-   ms.author="joaoma" />
+<tags
+	ms.service="load-balancer"
+	ms.date="11/02/2015"
+	wacn.date=""/>
 
 
 # Distribution mode for load balancer (Source IP affinity)
@@ -41,14 +37,14 @@ For virtual machines, you can use powershell to change timeout settings:
  
 Add an Azure endpoint to a Virtual Machine and set load balancer distribution mode
 
-	Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 –LoadBalancerDistribution “sourceIP”| Update-AzureVM
+	Get-AzureVM -ServiceName mySvc -Name MyVM1 | Add-AzureEndpoint -Name HttpIn -Protocol TCP -PublicPort 80 -LocalPort 8080 -LoadBalancerDistribution sourceIP | Update-AzureVM
 
 >[AZURE.NOTE] LoadBalancerDistribution can be set to sourceIP for 2-tuple (source IP, Destination IP) load balancing, sourceIPProtocol for 3-tuple (source IP, DestinaDestination IP, protocol) load balancing or none if you want the default behavior of 5-tuple load balancing
 
 
 Retrieve an endpoint load balancer distribution mode configuration
 
-	PS C:\> Get-AzureVM –ServiceName “MyService” –Name “MyVM” | Get-AzureEndpoint
+	PS C:\> Get-AzureVM -ServiceName MyService -Name MyVM | Get-AzureEndpoint
 
 	VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
 	LBSetName : MyLoadBalancedSet
@@ -75,7 +71,7 @@ If the LoadBalancerDistribution element is not present then the Azure Load balan
 
 If endpoints are part of a load balanced endpoint set, the distribution mode must be set on the load balanced endpoint set:
 
-	Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 –LoadBalancerDistribution "sourceIP"
+	Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol TCP -LocalPort 80 -ProbeProtocol TCP -ProbePort 8080 -LoadBalancerDistribution sourceIP
 
 ### Cloud Service configuration to change distribution mode
 
@@ -103,13 +99,13 @@ Here is an example of .csdef changes for endpoint settings:
 ## API example
 
 You can configure the load balancer distribution using the service management API
-Make sure to add the x-ms-version header is set to version 2014-09-01 or higher.
+Make sure to add the `x-ms-version` header is set to version `2014-09-01` or higher.
  
 Update the configuration of the specified load-balanced set in a deployment
 
 Request example
 
-	POST https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>?comp=UpdateLbSet 
+	POST https://management.core.chinacloudapi.cn/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>?comp=UpdateLbSet 
 
 	x-ms-version: 2014-09-01 
 
@@ -147,8 +143,8 @@ The value of LoadBalancerDistribution can be sourceIP for 2-tuple affinity, sour
 
 ## Next Steps
 
-[Internal load balancer overview](load-balancer-internal-overview.md)
+[Internal load balancer overview](/documentation/articles/load-balancer-internal-overview)
 
-[Get started Configuring an Internet facing load balancer](load-balancer-internet-getstarted.md)
+[Get started Configuring an Internet facing load balancer](/documentation/articles/load-balancer-internet-getstarted)
 
-[Configure idle TCP timeout settings for your load balancer](load-balancer-tcp-idle-timeout.md) 
+[Configure idle TCP timeout settings for your load balancer](/documentation/articles/load-balancer-tcp-idle-timeout) 

@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Configure a custom domain name for a web app in Azure Websites that uses Traffic Manager" 
-	description="Use a custom domain name for an a web app in Azure Websites that includes Traffic Manager for load balancing." 
+	pageTitle="Configure a custom domain name for a web site in Azure Websites that uses Traffic Manager"wpickett"Use a custom domain name for an a web site in Azure Websites that includes Traffic Manager for load balancing." 
+    description="Use a custom domain name for an a web site in Azure Websites that includes Traffic Manager for load balancing." 
 	services="app-service\web" 
 	documentationCenter="" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/18/2015"
+	ms.date="11/18/2015"
 	wacn.date=""/>
 
-#Configuring a custom domain name for a web app in Azure Websites using Traffic Manager
+#Configuring a custom domain name for a web site in Azure Websites using Traffic Manager
 
 [AZURE.INCLUDE [web-selector](../includes/websites-custom-domain-selector.md)]
 
@@ -30,18 +30,16 @@ This article provides generic instructions for using a custom domain name with A
 [AZURE.INCLUDE [understandingdns](../includes/custom-dns-web-site-understanding-dns-traffic-manager.md)]
 
 <a name="bkmk_configsharedmode"></a>
-## Configure your web apps for standard mode
+## Configure your web sites for standard mode
 
 [AZURE.INCLUDE [modes](../includes/custom-dns-web-site-modes-traffic-manager.md)]
 
 <a name="bkmk_configurecname"></a>
 ## Add a DNS record for your custom domain
 
+> [AZURE.NOTE] If you have purchased domain through Azure Websites then skip following steps and refer to the final step of [Buy Domain for web sites](/documentation/articles/custom-dns-web-site-buydomains-web-app) article. 
 
-> [AZURE.NOTE] If you have purchased domain through Azure Websites then skip following steps and refer to the final step of <a href="/documentation/articles/custom-dns-web-site-buydomains-web-app" title="Web Apps" class="current">Buy Domain for Web Apps</a> article. 
-
-
-To associate your custom domain with a web app in Azure Websites, you must add a new entry in the DNS table for your custom domain by using tools provided by the domain registrar that you purchased your domain name from. Use the following steps to locate and use the DNS tools.
+To associate your custom domain with a web site in Azure Websites, you must add a new entry in the DNS table for your custom domain by using tools provided by the domain registrar that you purchased your domain name from. Use the following steps to locate and use the DNS tools.
 
 1. Log on to your account at your domain registrar, and look for a page for managing DNS records. Look for links or areas of the site labeled as **Domain Name**, **DNS**, or **Name Server Management**. Often a link to this page can be found be viewing your account information, and then looking for a link such as **My domains**.
 
@@ -51,7 +49,7 @@ To associate your custom domain with a web app in Azure Websites, you must add a
 	* The page will mention **CNAME records**, or provide a drop-down to select a record type. It may also mention other records such as **A records** and **MX records**. In some cases, CNAME records will be called by other names such as an **Alias Record**.
 	* The page will also have fields that allow you to **map** from a **Host name** or **Domain name** to another domain name.
 
-5. While the specifics of each registrar vary, in general you map *from* your custom domain name (such as **contoso.com**,) *to* the Traffic Manager domain name (**contoso.trafficmanager.cn**) that is used for your web app.
+5. While the specifics of each registrar vary, in general you map *from* your custom domain name (such as **contoso.com**,) *to* the Traffic Manager domain name (**contoso.trafficmanager.cn**) that is used for your web site.
 
 6. Once you have finished adding or modifying DNS records at your registrar, save the changes.
 

@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory Integration with ITRP | Windows Azure" 
     description="Learn how to use ITRP with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/20/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory Integration with ITRP
@@ -128,7 +128,7 @@ In the case of ITRP, provisioning is a manual task.
 
     ![People](./media/active-directory-saas-itrp-tutorial/IC775587.png "People")
 
-4.  Click **Add New Person** (“+”).
+4.  Click **Add New Person** ("+").
 
     ![Admin](./media/active-directory-saas-itrp-tutorial/IC775576.png "Admin")
 

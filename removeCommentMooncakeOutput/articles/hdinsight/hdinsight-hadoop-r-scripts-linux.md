@@ -1,8 +1,8 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Use R in HDInsight to customize clusters | Windows Azure"
-	description="Learn how to install and use R to customize Hadoop clusters."
+	pageTitle="Install R on Linux-based HDInsight | Windows Azure"
+	description="Learn how to install and use R to customize Linux-based Hadoop clusters."
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/20/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Install and use R on HDInsight Hadoop clusters
@@ -46,7 +46,7 @@ Additionally, the following R packages are installed:
 | [Rcpp](https://cran.r-project.org/web/packages/Rcpp/index.html) | R and C++ integration. |
 | [RJSONIO](https://cran.r-project.org/web/packages/RJSONIO/index.html) | Serialize/deserialize R objects to JSON |
 | [bitops](https://cran.r-project.org/web/packages/bitops/index.html) | Functions for bitwise operations on integer vectors. |
-| [digest](Create Cryptographic Hash Digests of R Objects) | Create Cryptographic Hash Digests of R Objects. |
+| [digest](https://cran.r-project.org/web/packages/digest/index.html) | Create Cryptographic Hash Digests of R Objects. |
 | [functional](https://cran.r-project.org/web/packages/functional/index.html) | Curry, Compose, and other higher-order functions |
 | [reshape2](https://cran.r-project.org/web/packages/reshape2/index.html) | Flexibly restructure and aggregate data. |
 | [stringr](https://cran.r-project.org/web/packages/stringr/index.html) | Simple, Consistent Wrappers for Common String Operations. |
@@ -58,9 +58,9 @@ Additionally, the following R packages are installed:
 
 The [https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh) script action is used to install R on an HDInsight cluster. This section provides instructions about how to use the script when provisioning the cluster using the Azure Management Portal.
 
-> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster).
+> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster-v1).
 
-1. Start provisioning a cluster by using the steps in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal), but do not complete provisioning.
+1. Start provisioning a cluster by using the steps in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1#portal), but do not complete provisioning.
 
 2. On the **Optional Configuration** blade, select **Script Actions**, and provide the information below:
 
@@ -73,7 +73,7 @@ The [https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-inst
 
 3. At the bottom of the **Script Actions**, use the **Select** button to save the configuration. Finally, use the **Select** button at the bottom of the **Optional Configuration** blade to save the optional configuration information.
 
-4. Continue provisining the cluster as described in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal).
+4. Continue provisioning the cluster as described in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1#portal).
 
 ## Run R scripts
 
@@ -89,7 +89,7 @@ After the cluster has finished provisioning, use the following steps to use R to
 
 	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 
-2. From the `username@headnode1:~$` prompt, enter the following command to start an interactive R session:
+2. From the `username@hn0-CLUSTERNAME:~$` prompt, enter the following command to start an interactive R session:
 
 		R
 
@@ -98,7 +98,6 @@ After the cluster has finished provisioning, use the following steps to use R to
 		library(rmr2)
 		ints = to.dfs(1:100)
 		calc = mapreduce(input = ints, map = function(k, v) cbind(v, 2*v))
-
 
 	The first line calls the RHadoop library rmr2, which is used for MapReduce operations.
 
@@ -138,11 +137,9 @@ After the cluster has finished provisioning, use the following steps to use R to
 
 - [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install). Use cluster customization to install Giraph on HDInsight Hadoop clusters. Giraph allows you to perform graph processing using Hadoop, and it can be used with Azure HDInsight.
 
-- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on stored data.
+- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on stored data.
 
-- [Install Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Use cluster customization to install Hue on HDInsight Hadoop clusters. Hue is a set of Web applications used to interact with a Hadoop cluster.
+- [Install Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Use cluster customization to install Hue on HDInsight Hadoop clusters. Hue is a set of web sites used to interact with a Hadoop cluster.
 
-[powershell-install-configure]: /documentation/articles/install-configure-powershell-linux
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-linux
-[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
-[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install-linux
+[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
+[hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md

@@ -7,9 +7,9 @@
 	manager="jhubbard" 
 	editor=""/>
 
-<tags
-	ms.service="multiple"
-	ms.date="09/01/2014"
+<tags 
+	ms.service="multiple" 
+	ms.date="09/01/2014" 
 	wacn.date=""/>
 
 

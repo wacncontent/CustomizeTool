@@ -1,15 +1,15 @@
-<properties
-	pageTitle="Azure AD Connect Health AD FS Agent installation | Windows Azure"
-	description="This is the Azure AD Connect Health page that describes the Active Directory Federation Services (AD FS) agent installation."
-	services="active-directory"
-	documentationCenter=""
-	authors="billmath"
-	manager="stevenpo"
+<properties 
+	pageTitle="Azure AD Connect Health AD FS Agent installation | Windows Azure" 
+	description="This is the Azure AD Connect Health page that describes the Active Directory Federation Services (AD FS) agent installation." 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="billmath" 
+	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags
-	ms.service="active-directory"
-	ms.date="10/15/2015"
+<tags 
+	ms.service="active-directory" 
+	ms.date="08/14/2015" 
 	wacn.date=""/>
 
 
@@ -19,7 +19,7 @@
 
 # Azure AD Connect Health Agent Installation for AD FS
 
-This document will walk you through installing and configuring the Azure AD Connect Health Agent for AD FS on your servers.
+This document will walk you through installing and configuring the Azure AD Connect Health Agent for AD FS on your servers. 
 
 >[AZURE.NOTE]Remember that before you see any data in your instance of Azure AD Connect Health, you will need to install the Azure AD Connect Health Agent on your targeted servers.  Be sure to complete the requirements [here](/documentation/articles/active-directory-aadconnect-health#requirements) prior to installing the agent.  You can download the agent [here](http://download.microsoft.com/download/9/F/5/9F53F124-C990-42D2-8A32-6D352A67762B/AdHealthAdfsAgentSetup.exe).
 
@@ -49,7 +49,7 @@ To verify the agent has been installed, open services and look for the following
 - Azure AD Connect Health AD FS Diagnostics Service
 - Azure AD Connect Health AD FS Insights Service
 - Azure AD Connect Health AD FS Monitoring Service
-
+ 
 ![Verify Azure AD Connect Health](./media/active-directory-aadconnect-health-requirements/install5.png)
 
 
@@ -69,7 +69,7 @@ For Windows Server 2008 R2 servers do the following:
 
 ## Enable Auditing for AD FS
 
-In order for the Usage Analytics feature to gather and analyze data, the Azure AD Connect Health agent needs the information in the AD FS Audit Logs. These logs are not enabled by default. This only applies to AD FS federation servers. You do not need to enable auditing on AD FS Proxy servers or Web Application Proxy servers. Use the following procedures to enable AD FS auditing and to locate the AD FS audit logs.
+In order for the Usage Analytics feature to gather and analyze data, the Azure AD Connect Health agent needs the information in the AD FS Audit Logs. These logs are not enabled by default. This only applies to AD FS federation servers. You do not need to enable auditing on AD FS Proxy servers or Web Site Proxy servers. Use the following procedures to enable AD FS auditing and to locate the AD FS audit logs.
 
 #### To enable auditing for AD FS 2.0
 
@@ -109,7 +109,7 @@ In order for the Usage Analytics feature to gather and analyze data, the Azure A
 
 ![AD FS audit logs](./media/active-directory-aadconnect-health-requirements/adfsaudit.png)
 
-> [AZURE.WARNING] If you have a group policy that is disabling AD FS auditing then the Azure AD Connect Health Agent will not be able to collect information. Ensure that you don�t have a group policy that may be disabling auditing.
+> [AZURE.WARNING] If you have a group policy that is disabling AD FS auditing then the Azure AD Connect Health Agent will not be able to collect information. Ensure that you donĄŻt have a group policy that may be disabling auditing.
 
 [//]: # (Start of Agent Proxy Configuration Section)
 
@@ -117,7 +117,7 @@ In order for the Usage Analytics feature to gather and analyze data, the Azure A
 You can configure Azure AD Connect Health Agents to work with an HTTP Proxy.
 
 >[AZURE.NOTE]
-- Using �Netsh WinHttp set ProxyServerAddress� will not work as the agent uses System.Net to make web requests instead of Microsoft Windows HTTP Services.
+- Using Ą°Netsh WinHttp set ProxyServerAddressĄą will not work as the agent uses System.Net to make web requests instead of Microsoft Windows HTTP Services.
 - The configured Http Proxy address will be used to pass-through encrypted Https messages.
 - Authenticated proxies (using HTTPBasic) are not supported.
 

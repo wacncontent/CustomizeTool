@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/24/2015"
+	ms.date="11/17/2015"
 	wacn.date=""/>
 
 # Integrating with Azure Active Directory
@@ -24,7 +24,7 @@ There are several ways for your application to integrate with Azure AD.  Take ad
 
 ### Support Azure AD as a Way to Sign In to Your Application
 
-**Reduce sign in friction and reduce support costs.** By using Azure AD to sign in to your application, your users won't have one more name and password to remember.  As a developer, you'll have one less password to store and protect.  Not having to handle forgotten password resets may be a significant savings alone.  Azure AD powers sign in for some of the world's most popular cloud applications, including Office 365 and Windows Azure.  With more than 430 million users from nearly 5 million organizations, chances are your user is already signed in to Azure AD.  Learn more about [adding support for Azure AD sign in](/documentation/articles/active-directory-authentication-scenarios).
+**Reduce sign in friction and reduce support costs.** By using Azure AD to sign in to your application, your users won't have one more name and password to remember.  As a developer, you'll have one less password to store and protect.  Not having to handle forgotten password resets may be a significant savings alone.  Azure AD powers sign in for some of the world's most popular cloud applications, including Office 365 and Windows Azure.  With hundreds of millions users from millions of organizations, chances are your user is already signed in to Azure AD.  Learn more about [adding support for Azure AD sign in](/documentation/articles/active-directory-authentication-scenarios).
 
 **Simplify sign up for your application.**  During sign up for your application, Azure AD can send essential information about a user so that you can pre-fill your sign up form or eliminate it completely.  Users can sign up for your application using their Azure AD account via a familiar consent experience similar to those found in social media and mobile applications.  Any user can sign up and sign in to an application that is integrated with Azure AD without requiring IT involvement.  Learn more about [signing up you application for Azure AD Account login](/documentation/articles/mobile-services-how-to-register-active-directory-authentication) .
 
@@ -42,6 +42,11 @@ There are several ways for your application to integrate with Azure AD.  Take ad
 
 **Azure AD is the authorization server for Office 365 and other Microsoft business services.**  If you support Azure AD for sign in to your application or support linking your current user accounts to Azure AD user accounts using OAuth 2.0, you can request read and write access to a user's profile, calendar, email, contacts, files, and other information.  You can seamlessly write events to user's calendar, and read or write files to their OneDrive.  Learn more about [accessing the Office 365 APIs](https://msdn.microsoft.com/office/office365/howto/platform-development-overview).
 
+### Promote Your Application in the Azure and Office 365 Marketplaces
+
+**Promote your application to the millions of organizations who are already using Azure AD.**  Users who search and browse these marketplaces are already using one or more cloud services, making them qualified cloud service customers.  Learn more about promoting your application in [the Azure gallery](http://azure.microsoft.com/marketplace/partner-program/).
+
+**When users sign up for your application, it will appear in their Azure AD access panel and Office 365 app launcher.**  Users will be able to quickly and easily return to your application later, improving user engagement.  Learn more about the [Azure AD access panel](/documentation/articles/active-directory-saas-access-panel-introduction).
 
 ### Secure Device-to-Service and Service-to-Service Communication
 

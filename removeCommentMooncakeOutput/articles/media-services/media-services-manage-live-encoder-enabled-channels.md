@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 #Working with Channels that are Enabled to Perform Live Encoding with Azure Media Services
@@ -19,16 +19,45 @@
 In Azure Media Services, a **Channel** represents a pipeline for processing live streaming content. A **Channel** receives live input streams in one of two ways:
 
 - An on-premises live encoder sends multi-bitrate **RTMP** or **Smooth Streaming** (Fragmented MP4) to the Channel. You can use the following live encoders that output multi-bitrate Smooth Streaming: Elemental, Envivio, Cisco.  The following live encoders output RTMP: Adobe Flash Live, Telestream Wirecast, and Tricaster transcoders. The ingested streams pass through **Channel**s without any further processing. When requested, Media Services delivers the stream to customers.
-- A single bitrate stream (in one of the following formats: **RTP** (MPEG-TS)), **RTMP**, or **Smooth Streaming** (Fragmented MP4)) is sent to the **Channel** that is enabled to perform live encoding with Media Services. The **Channel** then performs live encoding of the incoming single bitrate stream to a multi-bitrate (adaptive) video stream. When requested, Media Services delivers the stream to customers. 
+- A single bitrate stream (in one of the following formats: **RTP** (MPEG-TS)), **RTMP**, or **Smooth Streaming** (Fragmented MP4)) is sent to the **Channel** that is enabled to perform live encoding with Media Services. The **Channel** then performs live encoding of the incoming single bitrate stream to a multi-bitrate (adaptive) video stream. When requested, Media Services delivers the stream to customers.
 
-Starting with the Media Services 2.10 release, when you create a Channel, you can specify in which way you want for your channel to receive the input stream and whether or not you want for the channel to perform live encoding of your stream. You have two options:    
+Starting with the Media Services 2.10 release, when you create a Channel, you can specify in which way you want for your channel to receive the input stream and whether or not you want for the channel to perform live encoding of your stream. You have two options:
 
-- **None** – Specify this value, if you plan to use an on-premises live encoder which will output multi-bitrate stream. In this case, the incoming stream passed through to the output without any encoding. This is the behavior of a Channel prior to 2.10 release.  For more detailed information about working with channels of this type, see [Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders](/documentation/articles/media-services-manage-channels-overview).
+- **None** - Specify this value, if you plan to use an on-premises live encoder which will output multi-bitrate stream. In this case, the incoming stream passed through to the output without any encoding. This is the behavior of a Channel prior to 2.10 release.  For more detailed information about working with channels of this type, see [Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders](/documentation/articles/media-services-manage-channels-overview).
 
-- **Standard** – Choose this value, if you plan to use Media Services to encode your single bitrate live stream to multi-bitrate stream. 
+- **Standard** - Choose this value, if you plan to use Media Services to encode your single bitrate live stream to multi-bitrate stream. Be aware that there is a billing impact for live encoding and you should remember that leaving a live encoding channel in the "Running" state will incur billing charges.  It is recommended that you immediately stop your running channels after your live streaming event is complete to avoid extra hourly charges.
 
 >[AZURE.NOTE]This topic discusses attributes of channels that are enabled to perform live encoding (**Standard** encoding type). For information about working with channels that are not enabled to perform live encoding, see [Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders](/documentation/articles/media-services-manage-channels-overview).
 
+
+##Billing Implications
+
+A live encoding channel begins billing as soon as it's state transitions to "Running" via the API.   You can also view the state in the Azure Management Portal, or in the Azure Media Services Explorer tool (http://aka.ms/amse).
+
+The following table shows how Channel states map to billing states in the API and Azure Management Portal. Note that the states are slightly different between the API and Portal UX. As soon as a channel is in the "Running" state via the API, or in the "Ready" or "Streaming" state in the Azure Management Portal, billing will be active.
+To stop the Channel from billing you further, you have to Stop the Channel via the API or in the Azure Management Portal.
+You are responsible for stopping your channels when you are done with the live encoding channel.  Failure to stop an encoding channel will result in continued billing.
+
+###<a id="states"></a>Channel states and how they map to the billing mode 
+
+The current state of a Channel. Possible values include:
+
+- **Stopped**. This is the initial state of the Channel after its creation (unless autostart was selected in the portal.) No billing occurs in this state. In this state, the Channel properties can be updated but streaming is not allowed.
+- **Starting**. The Channel is being started. No billing occurs in this state. No updates or streaming is allowed during this state. If an error occurs, the Channel returns to the Stopped state.
+- **Running**. The Channel is capable of processing live streams. It is now billing usage. You must stop the channel to prevent further billing. 
+- **Stopping**. The Channel is being stopped. No billing occurs in this transient state. No updates or streaming is allowed during this state.
+- **Deleting**. The Channel is being deleted. No billing occurs in this transient state. No updates or streaming is allowed during this state.
+
+The following table shows how Channel states map to the billing mode. 
+ 
+Channel state|Portal UI Indicators|Is it Billing?
+---|---|---
+Starting|Starting|No (transient state)
+Running|Ready (no running programs)<br/>or<br/>Streaming (at least one running program)|YES
+Stopping|Stopping|No (transient state)
+Stopped|Stopped|No
+
+##Live Encoding Workflow
 The following diagram represents a live streaming workflow where a channel receives a single bitrate stream in one of the following protocols: RTMP, Smooth Streaming, or RTP (MPEG-TS); it then encodes the stream to a multi-bitrate stream. 
 
 ![Live workflow][live-overview]
@@ -45,7 +74,7 @@ The following diagram represents a live streaming workflow where a channel recei
 
 The following are general steps involved in creating common live streaming applications.
 
->[AZURE.NOTE] Currently, the max recommended duration of a live event is 8 hours. Please contact amslived at WindowsAzure.cn if you need to run a Channel for longer periods of time.
+>[AZURE.NOTE] Currently, the max recommended duration of a live event is 8 hours. Please contact amslived at WindowsAzure.cn if you need to run a Channel for longer periods of time.Be aware that there is a billing impact for live encoding and you should remember that leaving a live encoding channel in the "Running" state will incur hourly billing charges.  It is recommended that you immediately stop your running channels after your live streaming event is complete to avoid extra hourly charges. 
 
 1. Connect a video camera to a computer. Launch and configure an on-premises live encoder that can output a **single** bitrate stream in one of the following protocols: RTMP, Smooth Streaming, or RTP (MPEG-TS). For more information, see [Azure Media Services RTMP Support and Live Encoders](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/).
 	
@@ -72,6 +101,9 @@ The following are general steps involved in creating common live streaming appli
 2. Optionally, the live encoder can be signaled to start an advertisement. The advertisement is inserted in the output stream.
 1. Stop the program whenever you want to stop streaming and archiving the event.
 1. Delete the Program (and optionally delete the asset).   
+
+>[AZURE.NOTE]It is very important not to forget to Stop a Live Encoding Channel. Be aware that there is an hourly billing impact for live encoding and you should remember that leaving a live encoding channel in the "Running" state will incur billing charges.  It is recommended that you immediately stop your running channels after your live streaming event is complete to avoid extra hourly charges. 
+
 
 The [live streaming tasks](/documentation/articles/media-services-manage-channels-overview#tasks) section links to topics that demonstrate how to achieve tasks described above.
 
@@ -195,7 +227,7 @@ You have an option of ingesting Fragmented MP4 (Smooth Streaming) live stream ov
 
 ###Allowed IP addresses
 
-You can define the IP addresses that are allowed to publish video to this channel. Allowed IP addresses can be specified as either a single IP address (e.g. ‘10.0.0.1’), an IP range using an IP address and a CIDR subnet mask (e.g. ‘10.0.0.1/22’), or an IP range using an IP address and a dotted decimal subnet mask (e.g. ‘10.0.0.1(255.255.252.0)’). 
+You can define the IP addresses that are allowed to publish video to this channel. Allowed IP addresses can be specified as either a single IP address (e.g. '10.0.0.1'), an IP range using an IP address and a CIDR subnet mask (e.g. '10.0.0.1/22'), or an IP range using an IP address and a dotted decimal subnet mask (e.g. '10.0.0.1(255.255.252.0)'). 
 
 If no IP addresses are specified and there is no rule definition then no IP address will be allowed. To allow any IP address, create a rule and set 0.0.0.0/0.
 
@@ -214,7 +246,7 @@ Once the Channel starts ingesting data, you can preview your stream.
 
 ###Allowed IP Addresses
 
-You can define the IP addresses that are allowed to connect to the preview endpoint. If no IP addresses are specified any IP address will be allowed. Allowed IP addresses can be specified as either a single IP address (e.g. ‘10.0.0.1’), an IP range using an IP address and a CIDR subnet mask (e.g. ‘10.0.0.1/22’), or an IP range using an IP address and a dotted decimal subnet mask (e.g. ‘10.0.0.1(255.255.252.0)’).
+You can define the IP addresses that are allowed to connect to the preview endpoint. If no IP addresses are specified any IP address will be allowed. Allowed IP addresses can be specified as either a single IP address (e.g. '10.0.0.1'), an IP range using an IP address and a CIDR subnet mask (e.g. '10.0.0.1/22'), or an IP range using an IP address and a dotted decimal subnet mask (e.g. '10.0.0.1(255.255.252.0)').
 
 ##Live encoding settings
 
@@ -282,7 +314,7 @@ Audio is encoded to stereo AAC-LC at 64 kbps, sampling rate of 44.1 kHz.
 
 ##Signaling Advertisements
 
-When your Channel has Live Encoding enabled, you have a component in your pipeline that is processing video, and can manipulate it. You can signal for the Channel to insert slates and/or advertisements into the outgoing adaptive bitrate stream. Slates are still images that you can use to cover up the input live feed in certain cases (for example during a commercial break). Advertising signals, are time-synchronized signals you embed into the outgoing stream to tell the video player to take special action – such as to switch to an advertisement at the appropriate time. See this [blog](https://codesequoia.wordpress.com/2014/02/24/understanding-scte-35/) for an overview of the SCTE-35 signaling mechanism used for this purpose. Below is a typical scenario you could implement in your live event.
+When your Channel has Live Encoding enabled, you have a component in your pipeline that is processing video, and can manipulate it. You can signal for the Channel to insert slates and/or advertisements into the outgoing adaptive bitrate stream. Slates are still images that you can use to cover up the input live feed in certain cases (for example during a commercial break). Advertising signals, are time-synchronized signals you embed into the outgoing stream to tell the video player to take special action - such as to switch to an advertisement at the appropriate time. See this [blog](https://codesequoia.wordpress.com/2014/02/24/understanding-scte-35/) for an overview of the SCTE-35 signaling mechanism used for this purpose. Below is a typical scenario you could implement in your live event.
 
 1. Have your viewers get a PRE-EVENT image before the event starts.
 1. Have your viewers get a POST-EVENT image after the event ends.
@@ -311,7 +343,7 @@ The slate will be stretched to fit the display image size.
 
 The live encoder within the Channel can be signaled to switch to a slate image. It can also be signaled to end an on-going slate. 
 
-The live encoder can be configured to switch to a slate image and hide the incoming video signal in certain situations – for example, during an ad break. If such a slate is not configured, input video is not masked during that ad break.
+The live encoder can be configured to switch to a slate image and hide the incoming video signal in certain situations - for example, during an ad break. If such a slate is not configured, input video is not masked during that ad break.
 
 ###Duration
 
@@ -380,7 +412,7 @@ Stopping|Stopping|No (transient state)
 Stopped|Stopped|No
 
 
->[AZURE.NOTE] Currently, the Channel start can take up to 20+ minutes. Channel reset can take up to 5 minutes.
+>[AZURE.NOTE] Currently, the Channel start average is about 2 minutes, but at times could take up to 20+ minutes. Channel resets can take up to 5 minutes.
 
 
 ##<a id="Considerations"></a>Considerations
@@ -394,12 +426,14 @@ Stopped|Stopped|No
 - You are only billed when your Channel is in the **Running** state. For more information, refer to [this](/documentation/articles/media-services-manage-live-encoder-enabled-channels#states) section.
 - Currently, the max recommended duration of a live event is 8 hours. Please contact amslived at WindowsAzure.cn if you need to run a Channel for longer periods of time.
 - Make sure to have at least one streaming reserved unit on the streaming endpoint from which you want to stream content.
+- Don't forget to STOP YOUR CHANNELS when done. If you don't, billing will continue. 
 
 ##Known Issues
 
-- Channel start up can take 20+ minutes.
+- Channel start up time has been improved to an average of 2 minutes, but at times of increased demand could still take up to 20+ minutes.
 - RTP support is catered towards professional broadcasters. Please review the notes on RTP in [this](http://azure.microsoft.com/blog/2015/04/13/an-introduction-to-live-encoding-with-azure-media-services/) blog.
 - Slate images should conform to restrictions described [here](/documentation/articles/media-services-manage-live-encoder-enabled-channels#default_slate). If you attempt create a Channel with a default slate that is larger than 1920x1080, the request will eventually error out.
+- Once again....don't forget to STOP YOUR CHANNELS when you are done streaming. If you don't, billing will continue.
 
 ###How to create channels that perform live encoding from a singe bitrate to adaptive bitrate stream 
 
@@ -409,6 +443,9 @@ Choose **Portal**, **.NET**, **REST API** to see how to create and manage channe
 - [Portal](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
 - [.NET SDK](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
+
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 
 ##Related topics

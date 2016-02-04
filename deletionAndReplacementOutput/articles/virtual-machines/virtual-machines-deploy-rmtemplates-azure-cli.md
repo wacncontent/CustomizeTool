@@ -12,16 +12,6 @@ reason: ()
 
 deleted:
 
-		"chinanorth"
-
-replaced by:
-
-		"chinanorths"
-
-reason: ()
-
-deleted:
-
 		+ Looking up the NIC "coreo-westu-1430261891570-nic"
 		    info:    An nic with given name "coreo-westu-1430261891570-nic" not found, creating a new one
 		    + Looking up the virtual network "coreo-westu-1430261891570-vnet"
@@ -32,7 +22,7 @@ replaced by:
 		    info:    An nic with given name "coreo-chinanorth-1430261891570-nic" not found, creating a new one
 		    + Looking up the virtual network "coreo-chinanorth-1430261891570-vnet"
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -46,7 +36,7 @@ replaced by:
 		    + Looking up the virtual network "coreo-chinanorth-1430261891570-vnet"
 		    + Looking up the subnet "coreo-chinanorth-1430261891570-snet" under the virtual network "coreo-chinanorth-1430261891570-vnet"
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -66,7 +56,7 @@ replaced by:
 		    + Creating NIC "coreo-chinanorth-1430261891570-nic"
 		    + Looking up the NIC "coreo-chinanorth-1430261891570-nic"
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -78,7 +68,7 @@ replaced by:
 		+ Looking up the NIC "coreo-chinanorth-1430261891570-nic"
 		    + Looking up the public ip "coreo-chinanorth-1430261891570-pip"
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -88,7 +78,7 @@ replaced by:
 
 		:coreo-chinanorth-1430261891570-pip.chinanorth.chinacloudapp.cn
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -98,7 +88,7 @@ replaced by:
 
 		:/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Network/networkInterfaces/coreo-chinanorth-1430261891570-nic
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -108,7 +98,7 @@ replaced by:
 
 		:coreo-chinanorth-1430261891570-nic
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -118,5 +108,5 @@ replaced by:
 
 		:coreo-chinanorth-1430261891570-pip.chinanorth.chinacloudapp.cn
 
-reason: ()
+reason: (region diff)
 

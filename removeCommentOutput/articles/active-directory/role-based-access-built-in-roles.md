@@ -9,21 +9,21 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/12/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #RBAC: Built in Roles
 
 ## Built-in roles
 
-Azure role-based access control comes with the following built-in roles that can be assigned to users, groups, and services. You can’t modify the definition of built-in roles. In an upcoming release of Azure RBAC, you will be able to define custom roles by composing a set of actions from a list of available actions that can be performed on Azure resources.
+Azure role-based access control comes with the following built-in roles that can be assigned to users, groups, and services. You can't modify the definition of built-in roles. In an upcoming release of Azure RBAC, you will be able to define custom roles by composing a set of actions from a list of available actions that can be performed on Azure resources.
 
 Click the corresponding link to see the **actions** and **not actions** properties of a role definition. The **actions** property specifies the allowed actions on Azure resources. Action strings can use wildcard characters. The **not actions** property of a role definition specifies the actions that must be excluded from the allowed actions.
 
 
 | Role Name | Description |
 | --------- | ----------- |
-| [API-Management Service Contributor](#api-management-service-contributor) | Can manage Application Insights components |
+| [API-Management Service Contributor](#api-management-service-contributor) | Can manage API Management services |
 | [Application Insights Component Contributor](#application-insights-component-contributor) | Can manage Application Insights components |
 | [Automation Operator](#automation-operator) | Able to start, stop, suspend, and resume jobs |
 | [BizTalk Contributor](#biztalk-contributor) | Can manage BizTalk services |
@@ -49,7 +49,7 @@ Click the corresponding link to see the **actions** and **not actions** properti
 | [User Access Administrator](#user-access-administrator) | Can manage user access to Azure resources |
 | [Classic Virtual Machine Contributor](#classic-virtual-machine-contributor) | Can manage classic virtual machines but not the virtual network or storage account to which they are connected |
 | [Virtual Machine Contributor](#virtual-machine-contributor) | Can manage virtual machines but not the virtual network or storage account to which they are connected |
-| [Classic Network Contributor](#classic-network-contributor) | Can manage virtual machines but not the virtual network or storage account to which they are connected |
+| [Classic Network Contributor](#classic-network-contributor) | Can manage classic virtual networks and reserved IPs |
 | [Web Plan Contributor](#web-plan-contributor) | Can manage web plans |
 | [Website Contributor](#website-contributor) | Can manage websites but not the web plans to which they are connected |
 
@@ -130,8 +130,8 @@ Contributors can manage everything except access
 | ------- | ------ |
 | * | Create and manage resources of all types |
 | **Not Actions |  |
-| Microsoft.Authorization/*/Write | Can’t create roles and role assignments |
-| Microsoft.Authorization/*/Delete | Can’t delete roles and role assignments |
+| Microsoft.Authorization/*/Write | Can't create roles and role assignments |
+| Microsoft.Authorization/*/Delete | Can't delete roles and role assignments |
 
 ### Data Factory Contributor
 Can manage data factories

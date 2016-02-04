@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/07/2015"
+	ms.date="11/29/2015"
 	wacn.date=""/>
 
 
@@ -30,5 +30,4 @@ Windows Azure HDInsight provides PowerShell cmdlets to perform Hadoop tasks on a
 ## See also
 
 * [Learning path for HDInsight](http://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/)
-
 -->

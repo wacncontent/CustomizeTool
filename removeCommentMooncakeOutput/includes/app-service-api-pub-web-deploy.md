@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 7. Right-click the API app project in **Solution Explorer** and select **Publish** to open the publish dialog. The publish profile that you created earlier should be pre-selected. 
 
 9. Click **Publish** to begin the deployment process. 
@@ -8,7 +10,7 @@
 
 	![Status notification of the Azure Websites Activity window](./media/app-service-api-pub-web-deploy/26-5-deployment-success-v4.png)
 
-	During this deployment process, Visual Studio automatically tries to restart the *gateway*. The gateway is a web app that handles administrative functions for all API apps in a resource group, and it has to be restarted to recognize changes in an API app's API definition or *apiapp.json* file. 
+	During this deployment process, Visual Studio automatically tries to restart the *gateway*. The gateway is a web site that handles administrative functions for all API apps in a resource group, and it has to be restarted to recognize changes in an API app's API definition or *apiapp.json* file. 
  
 	If you use another method to deploy an API app, or if Visual Studio fails to restart the gateway, you might have to restart the gateway manually. The following steps explain how to do that.
 

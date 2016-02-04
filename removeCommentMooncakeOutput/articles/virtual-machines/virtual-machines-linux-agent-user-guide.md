@@ -8,14 +8,16 @@
 	editor=""
 	tags="azure-service-management,azure-resource-manager" />
 
-<tags
-	ms.service="virtual-machines"
-	ms.date="07/30/2015"
+<tags 
+	ms.service="virtual-machines" 
+	ms.date="12/14/2015" 
 	wacn.date=""/>
 
 
 
 #Azure Linux Agent User Guide
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 ##Introduction
 
@@ -75,6 +77,7 @@ The following systems have been tested and are known to work with the Azure Linu
 * openSUSE 12.3+
 * SLES 11 SP2+
 * Oracle Linux 6.4+
+* Red Hat 6.7+
 
 Other Supported Systems:
 

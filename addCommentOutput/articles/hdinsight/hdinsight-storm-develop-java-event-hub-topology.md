@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Process events from Azure Event Hubs with Storm on HDInsight (Java)
@@ -30,7 +30,7 @@ In this tutorial, you will learn how to use the Event Hubs spout and bolt to rea
 
     > [AZURE.NOTE] The only difference between the two cluster types is whether you use SSH to submit the topology to the cluster or a web form.
 
-* An [Azure Event Hub](/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted)
+* An [Azure Event Hub](/documentation/articles/event-hubs-csharp-ephcs-getstarted)
 
 * [Oracle Java Developer Kit (JDK) version 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) or equivalent, such as [OpenJDK](http://openjdk.java.net/)
 
@@ -504,11 +504,11 @@ Export an import allows you to persist checkpoint data when you need to delete t
 If you do not see files being stored to the the /devicedata location (either using the `hadoop fs -ls /devicedata` command or the Hive commandd in the Query Console,) use the Storm UI to look for any errors returned by the topologies.
 
 For more information on using the Storm UI, see the following topics:
-
 <!-- deleted by customization
-* If you are using a __Linux-based__ Storm on HDInsight cluster, see [Deploy and manage Apache Storm topologies on Linux-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
 
+* If you are using a __Linux-based__ Storm on HDInsight cluster, see [Deploy and manage Apache Storm topologies on Linux-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
 -->
+
 * If you are using a __Windows-based__ Storm on HDInsight cluster, see [Deploy and manage Apache Storm topologies on Windows-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
 
 ##Next steps

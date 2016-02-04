@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/22/2015"
+	ms.date="11/19/2015"
 	wacn.date=""/>
 
 # How to run a compute-intensive task in Java on a virtual machine
@@ -68,7 +68,7 @@ Note that **JDK 6 Windows Server 2012** is available in case you have legacy app
 
 ## To remotely log in to your virtual machine
 
-1. Log on to the [Management Portal](https://manage.windowsazure.cn).
+1. Log on to the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Click **Virtual machines**.
 3. Click the name of the virtual machine that you want to log in to.
 4. Click **Connect**.
@@ -85,8 +85,8 @@ container for addressing Service Bus resources within your application.
 To create a service namespace:
 
 1.  Log on to the [Azure Management Portal](https://manage.windowsazure.cn).
-2.  In the lower-left navigation pane of the Management Portal, click **Service Bus, Access Control & Caching**.
-3.  In the upper-left pane of the Management Portal, click the **Service
+2.  In the lower-left navigation pane of the Azure Management Portal, click **Service Bus, Access Control & Caching**.
+3.  In the upper-left pane of the Azure Management Portal, click the **Service
     Bus** node, and then click the **New** button.  
     ![Service Bus Node screenshot][svc_bus_node]
 4.  In the **Create a new Service Namespace** dialog box, enter a
@@ -96,7 +96,7 @@ To create a service namespace:
 5.  After making sure the namespace name is available, choose the
     country or region in which your namespace should be hosted, and then click the **Create Namespace** button.  
 
-    The namespace you created will then appear in the Management Portal
+    The namespace you created will then appear in the Azure Management Portal
     and takes a moment to activate. Wait until the status is **Active** before continuing with the next step.
 
 ## Obtain the Default Management Credentials for the namespace
@@ -536,4 +536,4 @@ For both the solver and client applications, you can press **Ctrl+C** to exit if
 [namespace_list]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_05_NamespaceList.jpg
 [properties_pane]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_06_PropertiesPane.jpg
 [default_key]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_07_DefaultKey.jpg
-[add_ca_cert]: /documentation/articles/java-add-certificate-ca-store
+[add_ca_cert]: ../java-add-certificate-ca-store.md

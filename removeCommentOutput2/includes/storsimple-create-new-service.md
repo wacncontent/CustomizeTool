@@ -17,7 +17,7 @@
 
 1. Use your Microsoft account credentials to log on to the Windows Azure Management Portal here: [Azure Management Portal](https://manage.windowsazure.cn/).
 
-2. In the Management Portal, click **New** > **Data Services** > **StorSimple Manager** > **Quick Create**.
+2. In the  Management Portal, click **New** > **Data Services** > **StorSimple Manager** > **Quick Create**.
 
 3. In the form that is displayed, do the following:
   1. Supply a unique **Name** for your service. This is a friendly name that can be used to identify the service. The name can have between 2 and 50 characters that can be letters, numbers, and hyphens. The name must start and end with a letter or a number.

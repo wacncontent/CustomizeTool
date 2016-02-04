@@ -3,12 +3,12 @@
    description="Test the performance of a cloud service using the Visual Studio profiler"
    services="visual-studio-online"
    documentationCenter="n/a"
-   authors="patshea123"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
 	ms.service="visual-studio-online"
-	ms.date="08/14/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 
@@ -50,7 +50,7 @@ When you use the profiler, you can collect data when a cloud service runs locall
 
 ###Collect profiling data locally to:###
 
-- Test the performance of a part of a cloud service, such as the execution of specific worker role, that doesn’t require a realistic simulated load.
+- Test the performance of a part of a cloud service, such as the execution of specific worker role, that doesnât require a realistic simulated load.
 
 - Test the performance of a cloud service in isolation, under controlled conditions.
 

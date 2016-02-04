@@ -1,25 +1,21 @@
 <properties 
-   pageTitle="Replace the battery on a StorSimple device | Microsoft Azure"
+   pageTitle="Replace the battery on a StorSimple device | Windows Azure"
    description="Describes how to remove, replace, and maintain the backup battery module on your StorSimple device."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/31/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 # Replace the backup battery module on your StorSimple device
 
 ## Overview
 
-The primary enclosure Power and Cooling Module (PCM) on your Microsoft Azure StorSimple device has an additional battery pack. This pack provides power so that the StorSimple device can save data if there is loss of AC power to the primary enclosure. This battery pack is referred to as the *backup battery module*. The backup battery module exists only for the primary enclosure in your StorSimple device (the EBOD enclosure does not contain a backup battery module). 
+The primary enclosure Power and Cooling Module (PCM) on your Microsoft Azure StorSimple device has an additional battery pack. This pack provides power so that the StorSimple device can save data if there is loss of AC power to the primary enclosure. This battery pack is referred to as the *backup battery module*. The backup battery module exists only for the primary enclosure in your StorSimple device (the EBOD enclosure does not contain a backup battery module).
 
 This tutorial explains how to:
 
@@ -35,7 +31,7 @@ The backup battery module for your Microsoft Azure StorSimple device is a field-
 
 #### To remove the backup battery module
 
-1. In the Management Portal, navigate to **Devices** > **Maintenance** > **Hardware Status**. Under **Shared Components**, look at the status of the battery.
+1. In the Azure Management Portal, navigate to **Devices** > **Maintenance** > **Hardware Status**. Under **Shared Components**, look at the status of the battery.
 
 2. Identify the PCM in which the battery has failed. Figure 1 shows the back of the StorSimple device.
 
@@ -89,13 +85,13 @@ Perform the following steps to install the replacement battery module in the pri
 
 3. Replace the PCM in the primary enclosure by following the guidelines in [Replace a Power and Cooling Module on your StorSimple device](storsimple-power-cooling-module-replacement.md).
 
-4. After the replacement is complete, access the Management Portal and navigate to **Devices** > **Maintenance** > **Hardware Status**, and verify the status of the battery to make sure that the installation was successful. If the LED is showing a green status, the battery is healthy.
+4. After the replacement is complete, access the Azure Management Portal and navigate to **Devices** > **Maintenance** > **Hardware Status**, and verify the status of the battery to make sure that the installation was successful. If the LED is showing a green status, the battery is healthy.
 
 ## Maintain the backup battery module
 
 In device, the backup battery module provides power to the controller during a power loss event. It allows the StorSimple device to save critical data prior to shutting down in a controlled manner. With two fully charged batteries in the PCMs, the system can handle two consecutive loss events.
 
-In the Management Portal, the **Hardware Status** on the **Maintenance** page indicates if the battery is malfunctioning or when the end-of-life is approaching. The battery status is indicated by **Battery in PCM 0** or **Battery in PCM 1** under **Shared Components**. This page will show a **DEGRADED** state for end-of-life approaching, and **FAILED** for end-of-life reached. 
+In the Azure Management Portal, the **Hardware Status** on the **Maintenance** page indicates whether the battery is malfunctioning or the end-of-life is approaching. The battery status is indicated by **Battery in PCM 0** or **Battery in PCM 1** under **Shared Components**. This page will show a **DEGRADED** state for end-of-life approaching, and **FAILED** for end-of-life reached. 
 
 >[AZURE.NOTE] The battery can report **FAILED** when it simply needs to be charged.
  

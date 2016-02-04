@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL Data Warehouse downlevel clients support for data auditing | Microsoft Azure" 
+	pageTitle="SQL Data Warehouse downlevel clients support for data auditing | Windows Azure" 
 	description="Learn about SQL Data Warehouse downlevel clients support for data auditing" 
 	services="sql-data-warehouse" 
 	documentationCenter="" 
@@ -7,27 +7,23 @@
 	manager="" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/06/2015" 
-	ms.author="twounder"/>
+<tags
+	ms.service="sql-database"
+	ms.date="10/06/2015"
+	wacn.date=""/>
  
 # SQL Data Warehouse -  Downlevel clients support for auditing and Dynamic Data Masking 
 
 
-[Auditing](sql-data-warehouse-auditing-get-started.md) works with SQL clients that support TDS redirection. 
+[Auditing](/documentation/articles/sql-data-warehouse-auditing-get-started) works with SQL clients that support TDS redirection. 
 
 Any client which implements TDS 7.4 should also support redirection. Exceptions to this include JDBC 4.0 in which the redirection feature is not fully supported and Tedious for Node.JS in which redirection was not implemented.
 
 For "Downlevel clients", i.e. which support TDS version 7.3 and below - the server FQDN in the connection string should be modified:
 
-Original server FQDN in the connection string: <*server name*>.database.windows.net
+Original server FQDN in the connection string: <*server name*>.database.chinacloudapi.cn
 
-Modified server FQDN in the connection string: <*server name*>.database.**secure**.windows.net
+Modified server FQDN in the connection string: <*server name*>.database.**secure**.chinacloudapi.cn
 
 A partial list of "Downlevel clients" includes: 
 

@@ -21,7 +21,7 @@
 - [SSMS](/documentation/articles/sql-database-connect-query-ssms)
 - [Excel](/documentation/articles/sql-database-connect-excel)
 
-This article shows you how to connect Excel to an Azure SQL database and create a report over the data in the database. You'll need a SQL database first. If you don't have one, see [Create your first SQL database](/documentation/articles/sql-database-get-started) to get a database with sample data up and running in a few minutes. This article is based on the sample data from that article, but you can follow similar steps on your own data.
+This article shows you how to connect Excel to an Azure SQL database and create a report over the data in the database. You'll need a SQL database first. If you don't have one, seeÂ [Create your first SQL database](/documentation/articles/sql-database-get-started) to get a database with sample data up and running in a few minutes. This article is based on the sample data from that article, but you can follow similar steps on your own data.
 
 You'll also need a copy of Excel. This article uses [Microsoft Excel 2016](https://products.office.com/).
 

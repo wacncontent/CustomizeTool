@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="09/24/2015"
+	ms.date="12/10/2015"
 	wacn.date=""/>
 
 # How to use Notification Hubs from Node.js
@@ -24,11 +24,11 @@ from Node.js applications. The scenarios covered include **sending notifications
 
 Azure Notification Hubs provide an easy-to-use, multiplatform, scalable infrastructure for sending push notifications to mobile devices. For more information, see [Azure Notification Hubs](http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx).
 
-##<a id="create"></a> Create a Node.js Application
+##Create a Node.js Application
 
 Create a blank Node.js application. For instructions creating a Node.js application, see [Create and deploy a Node.js application to Azure Web Site][nodejswebsite], [Node.js Cloud Service][Node.js Cloud Service] (using Windows PowerShell), or [Web Site with WebMatrix].
 
-##<a id="config"></a> Configure Your Application to Use Notification Hub
+##Configure Your Application to Use Notification Hub
 
 To use Azure Notification Hub, you need to download and use the
 Node.js azure package. This includes a set of convenience libraries that
@@ -74,9 +74,9 @@ module:
 
     var notificationHubService = azure.createNotificationHubService('hubname','connectionstring');
 
-The connection **connectionstring** value can be obtained from the Azure Management portal by performing the following steps:
+The connection **connectionstring** value can be obtained from the [Azure Management Portal] by performing the following steps:
 
-1. From the Azure Management portal, select **Service Bus**, and then select the namespace that contains the notification hub.
+1. From the [Azure Management Portal], select **Service Bus**, and then select the namespace that contains the notification hub.
 
 2. Select **NOTIFICATION HUBS**, and then select the hub you wish to use.
 
@@ -86,7 +86,7 @@ The connection **connectionstring** value can be obtained from the Azure Managem
 
 </div>
 
-##<a id="send"></a> How to send notifications
+##How to send notifications
 
 The **NotificationHubService** object exposes the following object instances for sending notifications to specific devices and applications:
 
@@ -182,7 +182,7 @@ The following code uses the **WnsService** instance exposed by the **Notificatio
 	  }
 	});
 
-##<a id="next"></a> Next Steps
+## Next Steps
 
 Now that you've learned the basics of using Notification Hub, follow these
 links to learn more.
@@ -215,7 +215,7 @@ links to learn more.
   [Azure Service Bus Notification Hubs]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
   [Web Site with WebMatrix]: /develop/nodejs/tutorials/web-site-with-webmatrix/
-  [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+  [Node.js Cloud Service]: ../cloud-services-nodejs-develop-deploy-app.md
 [Previous Management Portal]: .media/notification-hubs-nodejs-how-to-use-notification-hubs/previous-portal.png
   [nodejswebsite]: /develop/nodejs/tutorials/create-a-website-(mac)/
   [Node.js Cloud Service with Storage]: /develop/nodejs/tutorials/web-app-with-storage/

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Analyze real-time Twitter sentiment with HBase | Windows Azure" 
 	description="Learn how to do real-time sentiment analysis of big data from Twitter using HBase in an HDInsight (Hadoop) cluster." 
@@ -9,10 +7,10 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="07/09/2015" 
-	wacn.date/>
+<tags
+	ms.service="hdinsight"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 # Analyze real-time Twitter sentiment with HBase in HDInsight
 
@@ -1313,8 +1311,11 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 - [Develop Java MapReduce programs for HDInsight][hdinsight-develop-mapreduce]
 
 
-[hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
-[website-get-started]: /documentation/articles/web-sites-dotnet-get-started
+[hbase-get-started]: ../hdinsight-hbase-get-started.md
+[website-get-started]: ../web-sites-dotnet-get-started.md
+
+
+
 [img-app-arch]: ./media/hdinsight-hbase-analyze-twitter-sentiment/AppArchitecture.png
 [img-twitter-app]: ./media/hdinsight-hbase-analyze-twitter-sentiment/TwitterApp.png
 [img-streaming-service]: ./media/hdinsight-hbase-analyze-twitter-sentiment/StreamingService.png
@@ -1322,10 +1323,14 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 
 
 
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
-[hdinsight-analyze-twitter-data]: /documentation/articles/hdinsight-analyze-twitter-data
-[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
+[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
+[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
+[hdinsight-analyze-twitter-data]: hdinsight-analyze-twitter-data.md
+[hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md
+
+
+
+
 [curl]: http://curl.haxx.se
 [curl-download]: http://curl.haxx.se/download.html
 
@@ -1335,14 +1340,15 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-install]: /documentation/articles/install-configure-powershell
-[powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
+[powershell-install]: ../install-configure-powershell.md
+[powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-storage-powershell]: /documentation/articles/hdinsight-use-blob-storage#powershell
-[hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
-[hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-storage-powershell]: /documentation/articles/hdinsight-hadoop-use-blob-storage#powershell
+[hdinsight-analyze-flight-delay-data]: hdinsight-analyze-flight-delay-data.md
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
+[hdinsight-power-query]: hdinsight-connect-excel-power-query.md
+[hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver.md
+ 

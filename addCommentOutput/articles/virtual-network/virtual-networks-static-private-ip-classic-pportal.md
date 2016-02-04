@@ -4,13 +4,13 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn"
    tags="azure-service-management"
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/08/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # How to set a static private IP address (classic) in the preview portal

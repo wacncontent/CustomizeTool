@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cache"
-	ms.date="11/03/2015"
+	ms.date="12/03/2015"
 	wacn.date=""/>
 
 
@@ -438,5 +438,4 @@ follow these links to learn how to do more complex caching tasks.
 [Azure Management Portal]: http://manage.windowsazure.cn/
 [Azure Shared Caching]: http://msdn.microsoft.com/zh-cn/library/azure/gg278356.aspx
 
-[Which Azure Cache offering is right for me?]: /documentation/articles/cache-faq#which-azure-cache-offering-is-right-for-me
- 
+[Which Azure Cache offering is right for me?]: http://msdn.microsoft.com/zh-cn/library/azure/dn766201.aspx

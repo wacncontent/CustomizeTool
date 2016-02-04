@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Service communication with ASP.NET Web API | Microsoft Azure"
+   pageTitle="Service communication with ASP.NET Web API | Windows Azure"
    description="Learn how to implement service communication step-by-step using ASP.NET Web API with OWIN self-hosting in the Reliable Services API."
    services="service-fabric"
    documentationCenter=".net"
@@ -8,15 +8,11 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="required"
-   ms.date="07/23/2015"
-   ms.author="vturecek"/>
+	ms.service="service-fabric"
+	ms.date="07/23/2015"
+	wacn.date=""/>
 
-# Getting Started with Microsoft Azure Service Fabric Web API services with OWIN self-host
+# Getting Started with Windows Azure Service Fabric Web API services with OWIN self-host
 
 Service Fabric puts the power in your hands when deciding how you want your services to communicate with users and with each other. This tutorial focuses on implementing service communication using ASP.NET Web API with OWIN self-hosting in Service Fabric's *Reliable Services* API. We'll go in depth into the *Reliable Services* pluggable communication API and show you step-by-step how to set up a custom communication listener for you service with Web API used as an example. To see a complete example of a Web API communication listener, check out the [Service Fabric WebApplication sample on GitHub](https://github.com/Azure/servicefabric-samples/tree/master/samples/Services/VS2015/WebApplication).
 
@@ -37,15 +33,15 @@ The Web API application itself doesn't change here - it's no different from Web 
 
 Start by creating a new application, with a single stateless service, in Visual Studio 2015:
 
-![Create a new Service Fabric application](media/service-fabric-reliable-services-communication-webapi/webapi-newproject.png)
+![Create a new Service Fabric application](./media/service-fabric-reliable-services-communication-webapi/webapi-newproject.png)
 
-![Create a single stateless service](media/service-fabric-reliable-services-communication-webapi/webapi-newproject2.png)
+![Create a single stateless service](./media/service-fabric-reliable-services-communication-webapi/webapi-newproject2.png)
 
 This gives us an empty Stateless Service that will host the Web API application. We're going to set the application up from scratch to see how it's all put together.
 
 The first step is to pull in some NuGet packages for Web API. The package we want to use is **Microsoft.AspNet.WebApi.OwinSelfHost**. This package includes all the necessary Web API packages and the *host* packages - this will be important later.
 
-![](media/service-fabric-reliable-services-communication-webapi/webapi-nuget.png)
+![](./media/service-fabric-reliable-services-communication-webapi/webapi-nuget.png)
 
 With the packages installed, we can begin building out the basic Web API project structure. If you've used  Web API, the project structure should look very familiar. Start by creating the basic Web API directories:
 
@@ -219,13 +215,13 @@ public class Program
 
 If that looks suspiciously like the entry point to a console application, that's because it is:
 
-![](media/service-fabric-reliable-services-communication-webapi/webapi-projectproperties.png)
+![](./media/service-fabric-reliable-services-communication-webapi/webapi-projectproperties.png)
 
 Details about the service host process and service registration is beyond the scope of this article, but it's important to know for now that **your service code is running in its own process**.
 
 ## Self-hosting Web API with an OWIN host
 
-Given that your Web API application code is hosted in its own process, how do we hook it up to a web server? Enter [OWIN](http://owin.org/). OWIN is simply a contract between .NET web applications and web servers. Traditionally with ASP.NET - up to MVC 5 - the web application was tightly coupled to IIS through System.Web. However, Web API implements OWIN, which allows you to write a web application that is decoupled from the web server that hosts it. This allows you to use a *self-host* OWIN web server that you can start in your own process, which fits perfectly in the Service Fabric hosting model we just described.
+Given that your Web API application code is hosted in its own process, how do we hook it up to a web server? Enter [OWIN](http://owin.org/). OWIN is simply a contract between .NET web sites and web servers. Traditionally with ASP.NET - up to MVC 5 - the web site was tightly coupled to IIS through System.Web. However, Web API implements OWIN, which allows you to write a web site that is decoupled from the web server that hosts it. This allows you to use a *self-host* OWIN web server that you can start in your own process, which fits perfectly in the Service Fabric hosting model we just described.
 
 In this article, we'll use Katana as the OWIN host for the Web API application. Katana is an open-source OWIN host implementation.
 
@@ -563,17 +559,17 @@ namespace WebApi
 With all the pieces in place, your project should now look like a typical Web API application with the Reliable Services API entry points and an OWIN host:
 
 
-![](media/service-fabric-reliable-services-communication-webapi/webapi-projectstructure.png)
+![](./media/service-fabric-reliable-services-communication-webapi/webapi-projectstructure.png)
 
 ## Run and connect through a web browser
 
-If you haven't done so, [set up your development environment](service-fabric-get-started.md).
+If you haven't done so, [set up your development environment](/documentation/articles/service-fabric-get-started).
 
 
 You can now build and deploy your service. Press **F5** in Visual Studio to build and deploy the application. In the Diagnostics Events window, you should see a message indicating the web server opened on **http://localhost:80/api**
 
 
-![](media/service-fabric-reliable-services-communication-webapi/webapi-diagnostics.png)
+![](./media/service-fabric-reliable-services-communication-webapi/webapi-diagnostics.png)
 
 > [AZURE.NOTE] If the port is already be open by another process on your machine, you may see an error here indicating the listener couldn't be opened. If that's the case, try using a different port in the Endpoint configuration in ServiceManifest.xml.
 
@@ -582,7 +578,7 @@ Once the service is running, open a browser and navigate to [http://localhost/ap
 
 ## Scale it out
 
-Scaling out stateless web apps typically means adding more machines and spinning up the web app on them. Service Fabric's orchestration engine can do this for you whenever new nodes are added to a cluster. When creating instances of a stateless service, you can specify the number of instances you want to create. Service Fabric will place that number of instances on nodes in the cluster accordingly, making sure not to create more than one instance on any one node. You can also instruct Service Fabric to always create an instance on every node by specifying "-1" for the instance count. This guarantees that whenever you add nodes to scale out your cluster, an instance of your stateless service will be created on the new nodes. This value is a property of the service instance, so it is set when creating a service instance either through PowerShell:
+Scaling out stateless web sites typically means adding more machines and spinning up the web site on them. Service Fabric's orchestration engine can do this for you whenever new nodes are added to a cluster. When creating instances of a stateless service, you can specify the number of instances you want to create. Service Fabric will place that number of instances on nodes in the cluster accordingly, making sure not to create more than one instance on any one node. You can also instruct Service Fabric to always create an instance on every node by specifying "-1" for the instance count. This guarantees that whenever you add nodes to scale out your cluster, an instance of your stateless service will be created on the new nodes. This value is a property of the service instance, so it is set when creating a service instance either through PowerShell:
 
 ```powershell
 
@@ -604,12 +600,12 @@ Or when defining a default service in a Visual Studio Stateless Service project:
 
 ```
 
-For more information on creating application and service instances, see [how to deploy and remove applications](service-fabric-deploy-remove-applications.md).
+For more information on creating application and service instances, see [how to deploy and remove applications](/documentation/articles/service-fabric-deploy-remove-applications).
 
 ## ASP.NET 5
 
-In ASP.NET 5, the concept and programming model of separating the *application* from the *host* in web applications remains the same. It can also be applied to other forms of communication. In addition, although the *host* may differ in ASP.NET 5, the Web API *application* layer remains the same, which is where the bulk of application logic actually lives.
+In ASP.NET 5, the concept and programming model of separating the *application* from the *host* in web sites remains the same. It can also be applied to other forms of communication. In addition, although the *host* may differ in ASP.NET 5, the Web API *application* layer remains the same, which is where the bulk of application logic actually lives.
 
 ## Next Steps
 
-[Debugging your Service Fabric Application in Visual Studio](service-fabric-debugging-your-application.md)
+[Debugging your Service Fabric Application in Visual Studio](/documentation/articles/service-fabric-debugging-your-application)

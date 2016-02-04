@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/05/2015"
+	ms.date="11/17/2015"
 	wacn.date=""/>
 
 # Troubleshoot Access to an Application Running on an Azure Virtual Machine
@@ -89,7 +89,7 @@ If the virtual machine or endpoint is a member of a load-balanced set:
 
 - Verify that the probe protocol (TCP or UDP) and port number are correct.
 - If the probe protocol and port is different than the load-balanced set protocol and port:
-	- Verify that the application is listening on the probe protocol (TCP or UDP) and port number (use **netstat –a** on the target virtual machine).
+	- Verify that the application is listening on the probe protocol (TCP or UDP) and port number (use **netstat âa** on the target virtual machine).
 	- The host firewall on the target virtual machine is allowing the inbound probe request and outbound probe response traffic.
 
 If you can access the application, ensure that your Internet edge device is allowing:
@@ -97,9 +97,21 @@ If you can access the application, ensure that your Internet edge device is allo
 - The outbound application request traffic from your client computer to the Azure virtual machine.
 - The inbound application response traffic from the Azure virtual machine.
 
+## Troubleshooting Endpoint Connectivity problems
+
+If you have problems when connecting to an Endpoint such as Remote Desktop  Endpoint, you can try the following general troubleshooting steps:
+
+- Restart virtual machine
+- Recreate Endpoint
+- Connect from different location
+- Resize virtual machine
+- Recreate virtual machine
+
+For more information, see [Troubleshooting Endpoint Connectivity (RDP/SSH/HTTP, etc. failures)](https://social.msdn.microsoft.com/Forums/azure/538a8f18-7c1f-4d6e-b81c-70c00e25c93d/troubleshooting-endpoint-connectivity-rdpsshhttp-etc-failures?forum=WAVirtualMachinesforWindows).
+
 ## Next steps
 
-If you have run through steps 1 through 3 in this article and need additional help to correct the problem, you can:
+If you have run the above steps in this article and need additional help to correct the problem, you can:
 
 - Get help from Azure experts across the world. Submit your issue to either the MSDN Azure or Stack Overflow forums. See [Windows Azure Forums](/support/forums/) for more information.
 - File an Azure support incident. Go to the [Azure Support site](/support/contact/) and click **Get support** under **Technical and billing support**.

@@ -22,7 +22,7 @@ Having multiple web hosting plans in a single resource group also allows you to 
 </br>
 ##When should I create a new resource group and when should I create a new web hosting plan?##
 </br>
-When creating a new  Website, you should consider creating a new resource group when the  Website you are about to create represents a new web application. In this case, creating a new resource group, an associated web hosting plan, and a  Websites is the right choice.  When creating such a new  Website through the new Azure Management Portal preview, using the gallery or the new  Website + SQL option, the portal will default to create a new resource group and web hosting plan for your new site. If you need to, though, you can overwrite these defaults.
+When creating a new  Website, you should consider creating a new resource group when the  Website you are about to create represents a new web site. In this case, creating a new resource group, an associated web hosting plan, and a  Websites is the right choice.  When creating such a new  Website through the new Azure Management Portal preview, using the gallery or the new  Website + SQL option, the portal will default to create a new resource group and web hosting plan for your new site. If you need to, though, you can overwrite these defaults.
 </br>
 </br>
 ![Creating a new Web Hosting Plan](./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview02.png)
@@ -109,7 +109,7 @@ A site can also be created into a specific Web Hosting Plan using the existing A
 </br>
 **Question**: How can I move a Site to a different Web Hosting Plan?
 </br>
-**Answer**: Moving a site to a different Web Hosting Plan is not currently supported using the Azure Management Portal Preview or the Full Azure Management Portal. However, using the [Azure PowerShell tools](/documentation/articles/install-configure-powershell/), you can move sites between different web hosting plans. To do this, install the Azure PowerShell tools, open a power shell prompt. Then, switch to the new **Azure Resource Manager** mode using the *Switch-AzureMode AzureResourceManager* Cmdlet and authenticate using the *Add-AzureAccount* Cmdlet.
+**Answer**: Moving a site to a different Web Hosting Plan is not currently supported using the Azure Management Portal Preview or the Full Azure Management Portal. However, using the [Azure PowerShell tools](/documentation/articles/powershell-install-configure/), you can move sites between different web hosting plans. To do this, install the Azure PowerShell tools, open a power shell prompt. Then, switch to the new **Azure Resource Manager** mode using the *Switch-AzureMode AzureResourceManager* Cmdlet and authenticate using the *Add-AzureAccount* Cmdlet.
 </br>
 For this example assume a Resource Group named **powershell** with 2 Web Hosting Plans (**whp1** & **whp2**) and 2  Websites (**pstest** & **pstest2**) have already been created. To get the content of a Resource group you can use the *Get-AzureResourceGroup* Cmdlet:
 </br>

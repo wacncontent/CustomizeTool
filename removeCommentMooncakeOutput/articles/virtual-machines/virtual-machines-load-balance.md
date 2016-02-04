@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Load balancing for infrastructure services | Windows Azure"
+	pageTitle="Load balancing for Azure infrastructure services"
 	description="Describes the two different types of load balancing supported by Azure: Load balancer for cloud services and Azure Traffic Manager for client traffic."
 	services="virtual-machines"
 	documentationCenter=""
@@ -14,7 +14,6 @@
 
 
 # Load balancing for Azure infrastructure services#
-
 
 There are two levels of load balancing available for Azure infrastructure services:
 

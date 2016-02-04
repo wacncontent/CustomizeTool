@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 #Working with Azure Media Services Jobs
@@ -29,7 +29,7 @@ Get Media Processor with **.NET** or **REST API**.
 
 [AZURE.INCLUDE [media-services-selector-get-media-processor](../includes/media-services-selector-get-media-processor.md)]
 
-##Creating jobs 
+##Creating jobs
 
 A job is an entity that contains metadata about a set of tasks (for example, encoding or indexing). Each task performs an atomic operation on the input asset(s). For example on how to create encoding jobs, see:
 
@@ -39,10 +39,10 @@ A job is an entity that contains metadata about a set of tasks (for example, enc
 
 [AZURE.INCLUDE [media-services-selector-index-content](../includes/media-services-selector-index-content.md)]
 
-##Encoding 
+##Encoding
 
 Encode with **Azure Media Encoder** using **Azure Management Portal**, **.NET**, or **REST API**.
- 
+
 [AZURE.INCLUDE [media-services-selector-encode](../includes/media-services-selector-encode.md)]
 
 ##Monitoring job progress
@@ -51,16 +51,27 @@ Monitor job progress using **Azure Management Portal**, **.NET** or **REST API**
 
 [AZURE.INCLUDE [media-services-selector-job-progress](../includes/media-services-selector-job-progress.md)]
 
+##Listing 
+
+> [AZURE.SELECTOR]
+- [.NET](/documentation/articles/media-services-dotnet-manage-entities#list-jobs-and-assets)
+- [REST](/documentation/articles/media-services-rest-manage-entities#querying-entities)
+
+##Deleting jobs
+
+> [AZURE.SELECTOR]
+- [.NET](/documentation/articles/media-services-dotnet-manage-entities#delete-a-job)
+- [REST](/documentation/articles/media-services-rest-manage-entities##deleting-entities)
+
 ##Related links
 
-[Quotas and Limitations](/documentation/articles/media-services-quotas-and-limitations) – Describes quotas used and limitations of the Media Services Encoder
- 
+[Quotas and Limitations](/documentation/articles/media-services-quotas-and-limitations) â Describes quotas used and limitations of the Media Services Encoder
 
 
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
 
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

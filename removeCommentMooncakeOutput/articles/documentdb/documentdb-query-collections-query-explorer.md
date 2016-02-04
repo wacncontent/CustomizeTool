@@ -1,24 +1,20 @@
 <properties 
-	pageTitle="Create, edit, and run SQL queries against a DocumentDB collection using Query Explorer | Microsoft Azure" 
-	description="Learn about the DocumentDB Query Explorer, an Azure Preview portal tool to create, edit, and run SQL queries against a DocumentDB collection." 
+	pageTitle="Create, edit, and run SQL queries against a DocumentDB collection using Query Explorer | Windows Azure" 
+	description="Learn about the DocumentDB Query Explorer, an Azure Management Portal tool to create, edit, and run SQL queries against a DocumentDB collection." 
 	services="documentdb" 
 	authors="AndrewHoh" 
 	manager="jhubbard" 
 	editor="monicar" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article"
-	ms.date="09/08/2015" 
-	ms.author="anhoh"/>
+<tags
+	ms.service="documentdb"
+	ms.date="12/01/2015"
+	wacn.date=""/>
 
 # Create, edit, and run SQL queries against a DocumentDB collection using Query Explorer #
 
-This article provides an overview of the [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/) Query Explorer, a Microsoft Azure Preview portal tool that enables you to create, edit, and run queries against a DocumentDB collection. 
+This article provides an overview of the [Windows Azure DocumentDB](/home/features/documentdb/) Query Explorer, a Windows Azure Management Portal tool that enables you to create, edit, and run queries against a DocumentDB collection. 
 
 By completing this tutorial, you'll be able to answer the following questions:  
 
@@ -48,7 +44,7 @@ Query Explorer can be launched from any of the DocumentDB account, database, and
 
 Query Explorer allows you to easily create, edit, and run queries against a DocumentDB collection, and includes basic keyword and value highlighting to improve the query authoring experience.  
 
-- When initially opening Query Explorer, a default query of SELECT * FROM c is provided.  You can accept the default query or construct your own and then click the **Run query** button to view the results. Query Explorer supports the DocumentDB SQL query language as described in [Query DocumentDB](documentdb-sql-query.md).
+- When initially opening Query Explorer, a default query of SELECT * FROM c is provided.  You can accept the default query or construct your own and then click the **Run query** button to view the results. Query Explorer supports the DocumentDB SQL query language as described in [Query DocumentDB](/documentation/articles/documentdb-sql-query).
 
 	![Screenshot of Query Explorer query results](./media/documentdb-query-collections-query-explorer/queryresults1.png) 
 
@@ -75,5 +71,5 @@ Query Explorer allows you to easily create, edit, and run queries against a Docu
 ##<a name="NextSteps"></a>Next steps
 
 - To learn more about DocumentDB, click [here](http://azure.com/docdb).
-- To learn more about the DocumentDB SQL grammar supported in Query Explorer, click [here](documentdb-sql-query.md).
+- To learn more about the DocumentDB SQL grammar supported in Query Explorer, click [here](/documentation/articles/documentdb-sql-query).
  

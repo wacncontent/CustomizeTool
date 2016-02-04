@@ -1,66 +1,73 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="使用 Express Route 时的网络配置详细信息" 
-	description="在已连接到 ExpressRoute 线路的虚拟网络中运行 App Service 环境时的网络配置详细信息。" 
-	services="app-service\web" 
+	pageTitle="Network Configuration Details for Working with Express Route" 
+	description="Network configuration details for running Azure Websites Environments in a Virtual Networks connected to an ExpressRoute Circuit." 
+	services="app-service" 
 	documentationCenter="" 
 	authors="stefsch" 
 	manager="nirma" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web"  
-	ms.date="06/30/2015" 
-	wacn.date=""/>	
+<tags
+	ms.service="app-service"
+	ms.date="09/11/2015"
+	wacn.date="11/27/2015"/>	
 
-# 使用 ExpressRoute 的 App Service 环境的网络配置详细信息 
+# Network Configuration Details for Azure Websites Environments with ExpressRoute 
 
-## 概述 ##
-客户可以将 [Azure ExpressRoute][ExpressRoute] 线路连接到虚拟网络基础结构，从而将其本地网络扩展到 Azure。可以在这个[虚拟网络][virtualnetwork]基础结构的子网中创建 App Service 环境。然后，在 App Service 环境上运行的应用程序可与后端资源建立安全连接，而后端资源只能通过 ExpressRoute 连接来访问。
+## Overview ##
+Customers can connect an [Azure ExpressRoute][ExpressRoute] circuit to their virtual network infrastructure, thus extending their on-premises network to Azure.  An Azure Websites Environment can  be created in a subnet of this [virtual network][virtualnetwork] infrastructure.  Apps running on the Azure Websites Environment can then establish secure connections to back-end resources accessible only over the ExpressRoute connection.  
 
-## 所需的网络连接 ##
-在已连接到 ExpressRoute 的虚拟网络中，可能一开始不符合 App Service 环境的网络连接要求。
+**Note:**  An Azure Websites Environment cannot be created in a "v2" virtual network.  Azure Websites Environments are currently only supported in classic "v1" virtual networks.
 
-App Service 环境需要以下所有项目才能正确工作：
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+
+## Required Network Connectivity ##
+There are network connectivity requirements for Azure Websites Environments that may not be initially met in a virtual network connected to an ExpressRoute.
+
+Azure Websites Environments require all of the following in order to function properly:
 
 
--  与 App Service 环境位于相同区域的 Azure 存储空间和 SQL 数据库资源的出站网络连接。此网络路径不能遍历内部公司代理，因为这样做可能会更改出站网络流量的有效 NAT 地址。更改在 Azure 存储空间和 SQL 数据库上定向的 App Service 环境出站网络流量的 NAT 地址会导致连接失败。
--  虚拟网络的 DNS 配置必须可以解析以下 Azure 控制域中的终结点：**.file.core.chinacloudapi.cn*、**.blob.core.chinacloudapi.cn*、**.database.chinacloudapi.cn*。
--  每当创建 App Service 环境时，以及对 App Service 环境进行重新配置和缩放更改期间，虚拟网络的 DNS 配置必须保持稳定。   
--  必须根据此[文章][requiredports]中所述，允许对 App Service 环境所需的端口进行入站网络访问。
+-  Outbound network connectivity to Azure Storage worldwide, and connectivity to Sql DB resources located in the same region as the Azure Websites Environment.  This network path cannot travel through internal corporate proxies because doing so will likely change the effective NAT address of the outbound network traffic.  Changing the NAT address of an Azure Websites Environment's outbound network traffic directed at Azure Storage and Sql DB endpoints will cause connectivity failures.
+-  The DNS configuration for the virtual network must be capable of resolving endpoints within the following Azure controlled domains:  **.file.core.chinacloudapi.cn*, **.blob.core.chinacloudapi.cn*, **.database.chinacloudapi.cn*.
+-  DNS configuration for the virtual network must remain stable whenever Azure Websites Environments are created, as well as during re-configurations and scaling changes to Azure Websites Environments.   
+-  If a custom DNS server exists on the other end of a VPN gateway, the DNS server must be reachable and available. 
+-  Inbound network access to required ports for Azure Websites Environments must be allowed as described in this [article][requiredports].
 
-确保虚拟网络的 DNS 配置有效，即可满足 DNS 要求。
+The DNS requirement can be met by ensuring a valid DNS configuration for the virtual network.  
 
-根据此[文章][requiredports]中所述，在 App Service 环境的子网上设置[网络安全组][NetworkSecurityGroups]以允许所需访问权限，即可满足入站网络访问的要求。
+The inbound network access requirements can be met by configuring a [network security group][NetworkSecurityGroups] on the Azure Websites Environment's subnet to allow the required access as described in this [article][requiredports].
 
-## 启用 App Service 环境的出站网络连接##
-默认情况下，新创建的 ExpressRoute 线路将会通告允许出站 Internet 连接的默认路由。使用此配置，App Service 环境可以连接到其他 Azure 终结点。
+## Enabling Outbound Network Connectivity for an Azure Websites Environment##
+By default, a newly created ExpressRoute circuit advertises a default route that allows outbound Internet connectivity.  With this configuration an Azure Websites Environment will be able to connect to other Azure endpoints.
 
-但是，常见的客户配置是定义其自身的默认路由，以强制出站 Internet 流量通过本地流向客户的代理/防火墙基础结构。此流量一定会中断 App Service 环境，因为已在本地阻止出站流量，或者 NAT 到无法再使用各种 Azure 终结点的一组无法识别的地址。
+However a common customer configuration is to define their own default route which forces outbound Internet traffic to instead flow on-premises through a customer's proxy/firewall infrastructure.  This traffic flow invariably breaks Azure Websites Environments because the outbound traffic is either blocked on-premises, or NAT'd to an unrecognizable set of addresses that no longer work with various Azure endpoints.
 
-解决方法是在子网上定义包含 App Service 环境的一个或多个用户定义路由 (UDR)。UDR 定义了要遵循的子网特定路由，而不是默认路由。
+The solution is to define one (or more) user defined routes (UDRs) on the subnet that contains the Azure Websites Environment.  A UDR defines subnet-specific routes that will be honored instead of the default route.
 
-有关用户定义路由的背景信息，请参阅此[概述][UDROverview]。
+Background information on user defined routes is available in this [overview][UDROverview].  
 
-有关创建和配置用户定义路由的详细信息，请参阅此[操作方法指南][UDRHowTo]。
+Details on creating and configuring user defined routes is available in this [How To Guide][UDRHowTo].
 
-## App Service 环境的示例 UDR 配置 ##
+## Example UDR Configuration for an Azure Websites Environment ##
 
-**先决条件**
+**Pre-requisites**
 
-1. 从 [Azure 下载页面][AzureDownloads]安装最新的 Azure Powershell（日期为 2015 年 6 月或更晚）。在“命令行工具”的“Windows Powershell”下，有一个“安装”链接可用于安装最新的 Powershell cmdlet。
+1. Install the very latest Azure Powershell from the [Azure Downloads page][AzureDownloads] (dated June 2015 or later).  Under "Command-line tools" there is an "Install" link under "Windows Powershell" that will install the latest Powershell cmdlets.
 
-2. 建议你创建唯一的子网，以专供 App Service 环境使用。这可确保应用到子网的 UDR 只会打开 App Service 环境的出站流量。
-3. **重要说明**：只有在完成以下配置步骤**之后**，才可以部署 App Service 环境。这可确保在尝试部署 App Service 环境之前出站网络连接可用。
+2. It is recommended that a unique subnet is created for exclusive use by an Azure Websites Environment.  This ensures that the UDRs applied to the subnet will only open outbound traffic for the Azure Websites Environment.
+3. **Important**:  do not deploy the Azure Websites Environment until **after** the following configuration steps are followed.  This ensures that outbound network connectivity is available before attempting to deploy an Azure Websites Environment.
 
-**步骤 1：创建命名路由表**
+**Step 1:  Create a named route table**
 
-以下代码段将在 Azure 美国西部区域创建名为“DirectInternetRouteTable”的路由表：
+The following snippet creates a route table called "DirectInternetRouteTable" in the China North Azure region:
 
     New-AzureRouteTable -Name 'DirectInternetRouteTable' -Location uswest
 
-**步骤 2：在路由表中创建一个或多个路由**
+**Step 2:  Create one or more routes in the route table**
 
-需要将一个或多个路由添加到路由表中，才能启用出站 Internet 访问。以下示例添加了足够多的路由，以涵盖美国西部区域中使用的所有可能 Azure 地址。
+You will need to add one or more routes to the route table in order to enable outbound Internet access.  The example below adds enough routes to cover all possible Azure addresses used in the China North region.
 
     Get-AzureRouteTable -Name 'DirectInternetRouteTable' | Set-AzureRoute -RouteName 'Direct Internet Range 1' -AddressPrefix 23.0.0.0/8 -NextHopType Internet
     Get-AzureRouteTable -Name 'DirectInternetRouteTable' | Set-AzureRoute -RouteName 'Direct Internet Range 2' -AddressPrefix 40.0.0.0/8 -NextHopType Internet
@@ -73,48 +80,46 @@ App Service 环境需要以下所有项目才能正确工作：
     Get-AzureRouteTable -Name 'DirectInternetRouteTable' | Set-AzureRoute -RouteName 'Direct Internet Range 9' -AddressPrefix 191.0.0.0/8 -NextHopType Internet
 
 
-有关 Azure 使用的 CIDR 范围的完整和已更新列表，可以从 [Microsoft 下载中心][DownloadCenterAddressRanges]下载包含所有范围的 XML 文件。
+For a comprehensive and updated list of CIDR ranges in use by Azure, you can download an Xml file containing all of the ranges from the [Microsoft Download Center][DownloadCenterAddressRanges] 
 
-**注意：**在某个时间点，缩写的 CIDR 简称 0.0.0.0/0 将可用于 *AddressPrefix* 参数。这个简称等同于“所有 Internet 地址”。现在，开发人员需要改为使用一组足以涵盖所有可能 Azure 地址范围的更广 CIDR 范围，而 Azure 地址范围用于已部署 App Service 环境的区域中。
+**Note:**  at some point an abbreviated CIDR short-hand of 0.0.0.0/0 will be available for use in the *AddressPrefix* parameter.  This short hand equates to "all Internet addresses".  For now developers will need to instead use a broad set of CIDR ranges sufficient to cover all possible Azure address ranges.
 
-**步骤 3：将路由表关联到包含 App Service 环境的子网**
+**Step 3:  Associate the route table to the subnet containing the Azure Websites Environment**
 
-最后一个配置步骤是将路由表关联到部署 App Service 环境的子网。以下命令将“DirectInternetRouteTable”关联到最终会包含 App Service 环境的“ASESubnet”。
+The last  configuration step is to associate the route table to the subnet where the Azure Websites Environment will be deployed.  The following command associates the "DirectInternetRouteTable" to the "ASESubnet" that will eventually contain an Azure Websites Environment.
 
     Set-AzureSubnetRouteTable -VirtualNetworkName 'YourVirtualNetworkNameHere' -SubnetName 'ASESubnet' -RouteTableName 'DirectInternetRouteTable'
 
 
-**步骤 4：最后的步骤**
+**Step 4:  Final Steps**
 
-将路由表绑定到子网后，建议先测试并确认预期效果。例如，将虚拟机部署到子网，并确认：
+Once the route table is bound to the subnet, it is recommended to first test and confirm the intended effect.  For example, deploy a virtual machine into the subnet and confirm that:
 
 
-- 发往 Azure 终结点的出站流量不会沿着 ExpressRoute 线路流动。
-- 已正确解析 Azure 终结点的 DNS 查找。 
+- Outbound traffic to Azure endpoints is not flowing down the ExpressRoute circuit.
+- DNS lookups for Azure endpoints are resolving properly. 
 
-确认上述步骤之后，即可继续创建 App Service 环境！
+Once the above steps are confirmed, you can delete the virtual machine and then proceed with creating an Azure Websites Environment!
 
-## 入门
+## Getting started
 
-若要开始使用 App Service 环境，请参阅 [App Service 环境简介][IntroToAppServiceEnvironment]
+To get started with Azure Websites Environments, see [Introduction to Azure Websites Environment][IntroToAppServiceEnvironment]
 
-有关 Azure App Service 平台的详细信息，请参阅 [Azure App Service][AzureAppService]。
+For more information about the Azure Websites platform, see [Azure Websites][AzureAppService].
 
 <!-- LINKS -->
-[virtualnetwork]: /documentation/services/virtual-network
-<!--[ExpressRoute]: http://azure.microsoft.com/services/expressroute/-->
-[requiredports]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic
-[NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg
-[UDROverview]: /documentation/articles/virtual-networks-udr-overview
-[UDRHowTo]: /documentation/articles/virtual-networks-udr-how-to
-[HowToCreateAnAppServiceEnvironment]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment
-[AzureDownloads]: /documentation/downloads/downloads
-[DownloadCenterAddressRanges]: http://www.microsoft.com/zh-cn/download/details.aspx?id=41653
-[NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg
-[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
-[IntroToAppServiceEnvironment]: /documentation/articles/app-service-app-service-environment-intro/
+[virtualnetwork]: http://azure.microsoft.com/services/networking/
+[ExpressRoute]: http://azure.microsoft.com/services/expressroute/
+[requiredports]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
+[NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
+[UDROverview]: /documentation/articles/virtual-networks-udr-overview/
+[UDRHowTo]: /documentation/articles/virtual-networks-udr-how-to/
+[HowToCreateAnAppServiceEnvironment]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
+[AzureDownloads]: /downloads/ 
+[DownloadCenterAddressRanges]: http://www.microsoft.com/download/details.aspx?id=41653  
+[NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
+[AzureAppService]: /documentation/services/web-sites/
+[IntroToAppServiceEnvironment]:  /documentation/articles/app-service-app-service-environment-intro/
  
 
 <!-- IMAGES -->
-
-<!---HONumber=66-->

@@ -10,5 +10,5 @@ replaced by:
 
 		![Database Overview](./media/sql-database-manage-portal/sqldatabase_annotated.png)
 
-reason: ()
+reason: (video)
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/28/2015"
+	ms.date="11/01/2015"
 	wacn.date=""/>
 
 # Register the current user for push notifications by using a mobile service
@@ -71,7 +71,6 @@ This topic shows you how to request push notification registration with Azure No
 
 			- (void)registerForNotificationsWithBackEnd {
 			    NSString* json = [NSString  stringWithFormat:@"{\"platform\":\"ios\", \"deviceToken\":\"%@\"}", [self.todoService getDeviceTokenInHex] ];
-
 			    [self.todoService.client invokeAPI:@"register_notifications" data:[json dataUsingEncoding:NSUTF8StringEncoding] HTTPMethod:@"POST" parameters:nil headers:nil completion:^(id result, NSHTTPURLResponse *response, NSError *error) {
 			        if (error != nil) {
 			            NSLog(@"Registration failed: %@", error);
@@ -86,15 +85,12 @@ This topic shows you how to request push notification registration with Azure No
 	This method constructs a json payload that contains the device token. It then calls the custom API in your Mobile Service to register for notification. This method creates a device token for push notifications and sends it, along with the device type, to the custom API method that creates a registration in Notification Hubs. This custom API was defined in [Notify users with Notification Hubs].
 
 7.	Finally, in the **viewDidAppear** method, add a call to this the new **registerForNotificationsWithBackEnd** method after the user successfully authenticates, as in the following example:
-
 			- (void)viewDidAppear:(BOOL)animated
 			{
 			    MSClient *client = self.todoService.client;
-
 			    if (client.currentUser != nil) {
 			        return;
 			    }
-
 			    [client loginWithProvider:@"microsoftaccount" controller:self animated:YES completion:^(MSUser *user, NSError *error) {
 			        [self refresh];
 			        [self registerForNotificationsWithBackEnd];
@@ -114,6 +110,4 @@ Now that the client app has been updated, return to the [Notify users with Notif
 [Notify users with Notification Hubs]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users/
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
 [Get Started with Notification Hubs]: /manage/services/notification-hubs/get-started-notification-hubs-ios/
- 

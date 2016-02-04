@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Configure web apps in Azure Websites" 
-	description="How to configure a web app in Azure Websites" 
+	pageTitle="Configure web sites in Azure Websites" 
+	description="How to configure a web site in Azure Websitess" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="erikre" 
@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/16/2015"
+	ms.date="12/08/2015"
 	wacn.date=""/>
 
 
-# Configure web apps in Azure Websites #
+# Configure web sites in Azure Websites #
 In the Azure Management Portal, you can change the configuration options for websites and link to other Azure resources, such as a database.
 
 ## Table of Contents ##
@@ -47,24 +47,24 @@ The **Configure** tab has the following sections:
 For technical reasons, enabling Java for your app disables the .NET, PHP, and Python options.
 
 <a name="platform"></a>
-**Platform**. Selects whether your web app runs in a 32-bit or 64-bit environment. The 64-bit environment requires Basic or Standard mode. Free and Shared modes always run in a 32-bit environment.
+**Platform**. Selects whether your web site runs in a 32-bit or 64-bit environment. The 64-bit environment requires Basic or Standard mode. Free and Shared modes always run in a 32-bit environment.
 
-**Web Sockets**. Set **ON** to enable the WebSocket protocol; for example, if your web app uses [ASP.NET SignalR](http://www.asp.net/signalr) or [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio).
+**Web Sockets**. Set **ON** to enable the WebSocket protocol; for example, if your web site uses [ASP.NET SignalR](http://www.asp.net/signalr) or [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio).
 
 <a name="alwayson"></a>
-**Always On**. By default, web apps are unloaded if they are idle for some period of time. This lets the system conserve resources. In Basic or Standard mode, you can enable **Always On** to keep the app loaded all the time. If your app runs continuous web jobs, you should enable **Always On**, or the web jobs may not run reliably.
+**Always On**. By default, web sites are unloaded if they are idle for some period of time. This lets the system conserve resources. In Basic or Standard mode, you can enable **Always On** to keep the app loaded all the time. If your app runs continuous web jobs, you should enable **Always On**, or the web jobs may not run reliably.
 
 **Managed Pipeline Version**. Sets the IIS [pipeline mode](http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application). Leave this set to Integrated (the default) unless you have a legacy app that requires an older version of IIS.
 
 
 ### Debugging
 
-**Remote Debugging**. Enables remote debugging. When enabled, you can use the remote debugger in Visual Studio to connect directly to your web app. Remote debugging will remain enabled for 48 hours. 
+**Remote Debugging**. Enables remote debugging. When enabled, you can use the remote debugger in Visual Studio to connect directly to your web site. Remote debugging will remain enabled for 48 hours. 
 
 
 ### App settings
 
-This section contains name/value pairs that you web app will load on start up. 
+This section contains name/value pairs that you web site will load on start up. 
 
 - For .NET apps, these settings are injected into your .NET configuration `AppSettings` at runtime, overriding existing settings. 
 
@@ -89,7 +89,7 @@ For example, if a MySql connection string were named `connectionstring1`, it wou
 
 The default document is the web page that is displayed at the root URL for a website.  The first matching file in the list is used. 
 
-Web apps might use modules that route based on URL, rather than serving static content, in which case there is no default document as such.    
+web sites might use modules that route based on URL, rather than serving static content, in which case there is no default document as such.    
 
 ### Handler mappings
 
@@ -108,17 +108,23 @@ To configure virtual applications and directories, specify each virtual director
 
 ### SSL 
 
-In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information, see [Enable HTTPS for a web app](/documentation/articles/web-sites-configure-ssl-certificate). 
+In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information, see [Enable HTTPS for a web site](/documentation/articles/web-sites-configure-ssl-certificate). 
+
 To view your uploaded certificates, click **Configure** > **SSL Bindings**.
+
 ### Domain names
 
-Add custom domain names for your web app. For more information, see [Configure a custom domain name for a web app in Azure Websites](/documentation/articles/web-sites-custom-domain-name).
+Add custom domain names for your web site. For more information, see [Configure a custom domain name for a web site in Azure Websites](/documentation/articles/web-sites-custom-domain-name).
+
 To view your domain names, click **Configure** > **Domain Names**.
+
 ### Deployments
 
-- Set up continuous deployment. See [Using Git to deploy Web Apps in Azure Websites](/documentation/articles/web-sites-publish-source-control)
-- Deployment slots. See [Deploy to Staging Environments for Web Apps in Azure Websites](/documentation/articles/web-sites-staged-publishing)
+- Set up continuous deployment. See [Using Git to deploy web sites in Azure Websites](/documentation/articles/web-sites-publish-source-control)
+- Deployment slots. See [Deploy to Staging Environments for web sites in Azure Websites](/documentation/articles/web-sites-staged-publishing)
+
 To view your deployment slots, click **Configure** > **Deployment**.
+
 
 ### Monitoring
 
@@ -130,6 +136,6 @@ For more information, see [How to: Monitor web endpoint status](/documentation/a
 
 - [Configure a custom domain name](/documentation/articles/web-sites-custom-domain-name)
 - [Enable HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)
-- [Scale a web app in Azure Websites](/documentation/articles/web-sites-scale)
-- [Monitoring basics for Web Apps in Azure Websites](/documentation/articles/web-sites-monitor)
+- [Scale a web site in Azure Websites](/documentation/articles/web-sites-scale)
+- [Monitoring basics for web sites in Azure Websites](/documentation/articles/web-sites-monitor)
  

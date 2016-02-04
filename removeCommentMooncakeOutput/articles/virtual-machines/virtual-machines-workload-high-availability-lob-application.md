@@ -8,12 +8,15 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags
+<tags 
 	ms.service="virtual-machines"
-	ms.date="08/11/2015"
+	ms.date="12/17/2015" 
 	wacn.date=""/>
 
 # Azure Infrastructure Services Workload: High-availability line of business application
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
 
 Set up your first or next web-based, intranet-only line of business application in Windows Azure and take advantage of ease of configuration and the ability to quickly expand the application to include new capacity.
  
@@ -51,18 +54,6 @@ This consists of:
 
 For an overview of line of business applications, see the [Line of Business Applications architecture blueprint](http://msdn.microsoft.com/dn630664).
 
-### Bill of materials
-
-This baseline configuration requires the following set of Azure services and components:
-
-- Seven virtual machines
-- Four extra data disks for the domain controllers and virtual machines running SQL Server
-- Three availability sets
-- One cross-premises virtual network
-- Two storage accounts
-
-### Deployment phases
-
 To deploy this configuration, use the following process:
 
 - Phase 1: Configure Azure 
@@ -87,14 +78,7 @@ To deploy this configuration, use the following process:
 
 Once configured, you can easily expand this line of business application by adding more web servers or virtual machines running SQL Servers to the cluster.
 
-## Additional resources
+## Next step
 
-[Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview)
+- Get an [overview](/documentation/articles/virtual-machines-workload-high-availability-lob-application-overview) of the production workload before diving into the configuration.
 
-[Line of Business Applications architecture blueprint](http://msdn.microsoft.com/dn630664)
-
-[Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
-
-[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
-
-[Azure Infrastructure Services Workload: SharePoint Server 2013 farm](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)

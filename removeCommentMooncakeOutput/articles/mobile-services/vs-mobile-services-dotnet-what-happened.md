@@ -3,16 +3,21 @@
 	description="Describes what happened in your Visual Studio .NET project after adding Azure Mobile Services by using Connected Services " 
 	services="mobile-services" 
 	documentationCenter="" 
-	authors="patshea123" 
+	authors="TomArcher"
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="09/17/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="09/17/2015" 
 	wacn.date=""/>
 
 # What happened to my Visual Studio .NET project after adding Azure Mobile Services by using Connected Services?
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 > - [Getting Started](/documentation/articles/vs-mobile-services-dotnet-getting-started)
@@ -30,7 +35,7 @@ The Azure Mobile Services NuGet package was added to your project. As a result, 
 
 ## Connection string values for Mobile Services
 
-In your App.xaml.cs file, a **MobileServiceClient** object was created with the selected mobile service’s application URL and application key. 
+In your App.xaml.cs file, a **MobileServiceClient** object was created with the selected mobile serviceâs application URL and application key. 
 
 ## Mobile Services project added
 

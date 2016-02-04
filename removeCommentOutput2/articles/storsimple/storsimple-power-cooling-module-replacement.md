@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Replace a PCM on your StorSimple device | Microsoft Azure"
+   pageTitle="Replace a PCM on your StorSimple device | Windows Azure"
    description="Explains how to remove and replace the Power and Cooling Module (PCM) on your StorSimple device"
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/31/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 # Replace a Power and Cooling Module on your StorSimple device
 
@@ -48,7 +44,7 @@ Follow these instructions when you are ready to remove a Power and Cooling Modul
 
 #### To remove a PCM
 
-1. In the Management Portal, click **Devices** > **Maintenance** > **Hardware Status**. Check the status of the PCM components under **Shared Components** to identify which PCM has failed:
+1. In the Azure Management Portal, click **Devices** > **Maintenance** > **Hardware Status**. Check the status of the PCM components under **Shared Components** to identify which PCM has failed:
 
      - If a power supply in PCM 0 has failed, the status of **Power Supply in PCM 0** will be red.
 
@@ -144,7 +140,7 @@ Follow these instructions to install a PCM in your StorSimple device.
 
 7. Turn on the PCM.
 
-8. Verify that the replacement was successful: in the Management Portal of your StorSimple Manager service, navigate to **Devices** > **Maintenance** > **Hardware Status**. Under **Shared Components**, the status of the PCM should be green. 
+8. Verify that the replacement was successful: in the Azure Management Portal of your StorSimple Manager service, navigate to **Devices** > **Maintenance** > **Hardware Status**. Under **Shared Components**, the status of the PCM should be green. 
 										
     >[AZURE.NOTE] It may take a few minutes for the replacement PCM to completely initialize.
 

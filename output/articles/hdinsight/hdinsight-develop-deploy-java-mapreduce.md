@@ -314,7 +314,7 @@ In this tutorial, you will create a container on a separate Storage account for 
 		$containerName_Data = "<ContainerName>"
 		$location = "<MicrosoftDataCenter>"  # For example, "China East"
 
-	The **$subscripionName** variable is associated with your Azure subscription. You must name **$storageAccountName_Data** and **$containerName_Data**. For the naming restrictions, see [Naming and Referencing Containers, Blobs, and Metadata](http://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx).
+	The **$subscripionName** variable is associated with your Azure subscription. You must name **$storageAccountName\_Data** and **$containerName\_Data**. For the naming restrictions, see [Naming and Referencing Containers, Blobs, and Metadata](http://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx).
 
 3. Run the following commands to create a Storage account and a Blob storage container on the account:
 
@@ -326,7 +326,7 @@ In this tutorial, you will create a container on a separate Storage account for 
 
 		# Create a Blob storage container
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName_Data | %{ $_.Primary }
-		$destContext = New-AzureStorageContext –StorageAccountName $storageAccountName_Data –StorageAccountKey $storageAccountKey  
+		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName_Data -StorageAccountKey $storageAccountKey  
 		New-AzureStorageContainer -Name $containerName_Data -Context $destContext
 
 4. Run the following commands to verify the Storage account and the container:
@@ -346,7 +346,7 @@ In this tutorial, you will create a container on a separate Storage account for 
 		$localFolder = "C:\hdp\hadoop-2.4.0.2.1.3.0-1981\share\doc\hadoop\common\"
 		$destFolder = "WordCount/Input"
 
-	The **$storageAccountName_Data** and **$containerName_Data** variables are the same as you defined in the last procedure.
+	The **$storageAccountName\_Data** and **$containerName\_Data** variables are the same as you defined in the last procedure.
 
 	Notice the source file folder is **c:\Hadoop\hadoop-1.1.0-SNAPSHOT**, and the destination folder is **WordCount/Input**.
 
@@ -396,7 +396,7 @@ In this tutorial, you will create a container on a separate Storage account for 
 		$jarFile = "C:\Tutorials\WordCountJava\wordcountjava\target\wordcountjava-1.0-SNAPSHOT.jar"
 		$blobFolder = "WordCount/jars"
 
-	The **$storageAccountName_Data** and **$containerName_Data** variables are the same as you defined in the last procedure, which means you will upload both the data file and the application to the same container on the same Storage account.
+	The **$storageAccountName\_Data** and **$containerName\_Data** variables are the same as you defined in the last procedure, which means you will upload both the data file and the application to the same container on the same Storage account.
 
 	Notice the destination folder is **WordCount/jars**.
 
@@ -484,7 +484,7 @@ In this section, you will create an Azure PowerShell script that performs the fo
 		# Create a Blob storage container used as the default file system
 		Write-Host "Create a Blob storage container" -ForegroundColor Green
 		$storageAccountKey_Default = Get-AzureStorageKey $storageAccountName_Default | %{ $_.Primary }
-		$destContext = New-AzureStorageContext –StorageAccountName $storageAccountName_Default –StorageAccountKey $storageAccountKey_Default
+		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName_Default -StorageAccountKey $storageAccountKey_Default
 
 		New-AzureStorageContainer -Name $containerName_Default -Context $destContext
 
@@ -524,7 +524,7 @@ In this section, you will create an Azure PowerShell script that performs the fo
 
 3. Set the first six variables in the script. The **$stringPrefix** variable is used to prefix the specified string to the HDInsight cluster name, the Storage account name, and the Blob storage container name. Because the names for these must be 3 to 24 characters, make sure the string you specify and the names this script uses, together, do not exceed the character limit for the name. You must use all lowercase for **$stringPrefix**.
 
-	The **$storageAccountName_Data** and **$containerName_Data** variables are the Storage account and container that are used for storing the data files and the application. The **$location** variable must match the data Storage account location.
+	The **$storageAccountName\_Data** and **$containerName\_Data** variables are the Storage account and container that are used for storing the data files and the application. The **$location** variable must match the data Storage account location.
 
 4. Review the rest of the variables.
 5. Save the script file.
@@ -555,7 +555,7 @@ This section shows you how to download and display the output. For the informati
 
 		Select-AzureSubscription $subscriptionName
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName_Data | %{ $_.Primary }
-		$storageContext = New-AzureStorageContext –StorageAccountName $storageAccountName_Data –StorageAccountKey $storageAccountKey  
+		$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName_Data -StorageAccountKey $storageAccountKey  
 
 4. Run the following commands to download and display the output:
 
@@ -579,22 +579,29 @@ In this tutorial, you have learned how to develop a Java MapReduce job, how to t
 - [Connect Excel to HDInsight with the Microsoft Hive ODBC Driver][hdinsight-ODBC]
 
 [azure-purchase-options]: /pricing/overview/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-emulator]: /documentation/articles/hdinsight-get-started-emulator
-[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-get-started-emulator#blobstorage
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
+[hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver.md
+[hdinsight-power-query]: hdinsight-connect-excel-power-query.md
+
+[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
+
+[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-emulator]: ../hdinsight-get-started-emulator.md
+[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-hadoop-emulator-get-started#blobstorage
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-power-query]: hdinsight-connect-excel-power-query.md
+
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[powershell-install-configure]: ../install-configure-powershell.md
+
+
+
 [image-emulator-wordcount-compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
 [image-emulator-wordcount-run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png

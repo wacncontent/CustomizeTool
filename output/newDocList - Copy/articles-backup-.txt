@@ -1,0 +1,8 @@
+new docs: 0, word count: {word_count_TODO}
+
+new includes: 5
+includes/storsimple-add-backup-policy-u2.md
+includes/storsimple-add-modify-backup-schedule-u2.md
+includes/storsimple-create-custom-backup-policy-u2.md
+includes/storsimple-version-selector-manage-backup-policies.md
+includes/storsimple-version-selector-restore-from-backup.md

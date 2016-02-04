@@ -20,8 +20,8 @@ A cloud service can be integrated with Azure CDN, serving any content from the c
 
 - Easily deploy and update images, scripts, and stylesheets in your cloud service's project directories
 - Easily upgrade the NuGet packages in your cloud service, such as jQuery or Bootstrap versions 
-- Manage your Web application and your CDN-served content all from the same Visual Studio interface
-- Unified deployment workflow for your Web application and your CDN-served content
+- Manage your Web Site and your CDN-served content all from the same Visual Studio interface
+- Unified deployment workflow for your Web Site and your CDN-served content
 - Integrate ASP.NET bundling and minification with Azure CDN
 
 ## What you will learn ##
@@ -92,7 +92,7 @@ In this section, you will deploy the default ASP.NET MVC application template in
 	When the **Windows Azure Activity Log** shows that publishing status is **Completed**, you will create a CDN endpoint that's integrated with this cloud service. 
 
 1. To create a CDN endpoint, log into your [Azure management portal](http://manage.windowsazure.cn/). 
-2. Click **New** > **App Services** > **CDN** > **Quick Create**. Select **http://*&lt;servicename>*.chinacloudapp.cn/cdn/** and click **Create**.
+2. Click **New** > **Azure Websitess** > **CDN** > **Quick Create**. Select **http://*&lt;servicename>*.chinacloudapp.cn/cdn/** and click **Create**.
 
 	![](./media/cdn-cloud-service-with-cdn/cdn-cs-10-createcdn.png)
 
@@ -140,11 +140,11 @@ In this section, you will deploy the default ASP.NET MVC application template in
 
 		http://cephalinservice.chinacloudapp.cn/cdn/Content/bootstrap.css
 
-	After URL rewrite in my Web app, the actual file that gets cached to my CDN cache is:
+	After URL rewrite in my Web Site, the actual file that gets cached to my CDN cache is:
 
 		http://cephalinservice.chinacloudapp.cn/Content/bootstrap.css
 
-	When you navigate to **http://*&lt;cdnName>*.vo.msecnd.net/Content/bootstrap.css**, you will be prompted to download the bootstrap.css that came from your published Web app. 
+	When you navigate to **http://*&lt;cdnName>*.vo.msecnd.net/Content/bootstrap.css**, you will be prompted to download the bootstrap.css that came from your published Web Site. 
 
 	![](./media/cdn-cloud-service-with-cdn/cdn-1-browser-access.PNG)
 
@@ -614,7 +614,7 @@ The [Bundle](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bun
 
 ## More Information ##
 - [Overview of the Azure Content Delivery Network (CDN)](http://msdn.microsoft.com/zh-cn/library/azure/ff919703.aspx)
-- [Serve Content from Azure CDN in Your Web Application](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application)
+- [Serve Content from Azure CDN in Your Web Site](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application)
 - [Integrate an Azure Website with Azure CDN](/documentation/articles/cdn-websites-with-cdn)
 - [ASP.NET Bundling and Minification](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)
 - [Using CDN for Azure](/documentation/articles/cdn-how-to-use)

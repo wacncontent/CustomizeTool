@@ -4,37 +4,37 @@ deleted:
 
 		For the same article written for the HDInsight cluster on Linux operating system, see [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux).
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		**Install Spark** | https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1. See [Install and use Spark on HDInsight clusters][hdinsight-install-spark].
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		* **Spark**. https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv02/spark-installer-v02.ps1
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		Spark or
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		Spark and
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		An example log snippet for a Spark script action looks like this:
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
@@ -78,19 +78,13 @@ deleted:
 		
 		In this log, it is clear that the Spark script action has been executed on the VM named HEADNODE0 and that no exceptions were thrown during the execution.
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		- [Install and use Spark on HDInsight clusters][hdinsight-install-spark]
 
-reason: ()
-
-deleted:
-
-		[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
-
-reason: ()
+reason: (Spark managment)
 
 replacement:
 
@@ -102,5 +96,5 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 

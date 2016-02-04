@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Failover in Site Recovery" 
+	pageTitle="Failover in Site Recovery | Windows Azure" 
 	description="Azure Site Recovery coordinates the replication, failover and recovery of virtual machines and physical servers. Learn about failover to Azure or a secondary datacenter." 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="10/12/2015"
+	ms.date="12/14/2015"
 	wacn.date=""/>
 
 # Failover in Site Recovery
 
 The [Azure Site Recovery service](/documentation/articles/site-recovery-overview) contributes to a robust business continuity and disaster recovery (BCDR) solution that protects your on-premises physical servers and virtual machines by orchestrating and automating replication and failover to Azure, or to a secondary on-premises datacenter. This article provides information and instructions for recovering (failing over and failing back) virtual machines and physical servers that are protected with Site Recovery. 
 
-If you have any questions after reading this article post them on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
+If you have any questions after reading this article post them on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr).
 
 
 ## Overview
@@ -85,10 +85,10 @@ When you run a test failover you'll be asked to select network settings for test
 **Test failover option** | **Description** | **Failover check** | **Details**
 ---|---|---|---
 **Fail over to Azure—without network** | Don't select a target Azure network | Failover checks that test virtual machine starts as expected in Azure | <p>All test virtual machines in a recover plan are added in a single cloud service and can connect to each other</p><p>Machines aren't connected to an Azure network after failover.</p><p>Users can connect to the test machines with a public IP address</p>
-**Fail over to Azure—with network** | Select a target Azure network | Failover checks that test machines are connected to the network | <p>Create an Azure network that’s isolated from your Azure production network and set up the infrastructure for the replicated virtual machine to work as expected.</p><p>The subnet of the test virtual machine is based on subnet on which the failed over virtual machine is expected to connect to if a planned or unplanned failover occurs.</p>
-**Fail over to a secondary VMM site—without network** | Don't select a VM network | Failover checks that test machines are created <p>The test virtual machine will be created on the same host as the host on which the replica virtual machine exists. It isn’t added to the cloud in which the replica virtual machine is located.</p></p>| <p>The failed over machine won’t be connected to any network.</p><p>The machine can be connected to a VM network after it has been created</p>
-**Fail over to a secondary VMM site—with network** | Select an existing VM network a | Failover checks that virtual machines are created | <p>The test virtual machine will be created on the same host as the host on which the replica virtual machine exists. It isn’t added to the cloud in which the replica virtual machine is located.</p><p>Create a VM network that's isolated from your production network</p><p>If you're using a VLAN-based network we recommend you create a separate logical network (not used in production) in VMM for this purpose. This logical network is used to create VM networks for the purpose of test failover.</p><p>The logical network should be associated with at least one of the network adapters of all the Hyper-V servers hosting virtual machines.</p><p>For VLAN logical networks, the network sites you add to the logical network should be isolated.</p><p>If you’re using a Windows Network Virtualization–based logical network, Azure Site Recovery automatically creates isolated VM networks.</p>
-**Fail over to a secondary VMM site—create a network** | A temporary test network will be created automatically based on the setting you specify in **Logical Network** and its related network sites | Failover checks that virtual machines are created | <p>Use this option if the recovery plan uses more than one VM network. If you're using Windows Network Virtualization networks, this option can automatically create VM networks with the same settings (subnets and IP address pools) in the network of the replica virtual machine. These VM networks are cleaned up automatically after the test failover is complete.</p><p>The test virtual machine will be created on the same host as the host on which the replica virtual machine exists. It isn’t added to the cloud in which the replica virtual machine is located.</p>
+**Fail over to Azure—with network** | Select a target Azure network | Failover checks that test machines are connected to the network | <p>Create an Azure network that's isolated from your Azure production network and set up the infrastructure for the replicated virtual machine to work as expected.</p><p>The subnet of the test virtual machine is based on subnet on which the failed over virtual machine is expected to connect to if a planned or unplanned failover occurs.</p>
+**Fail over to a secondary VMM site—without network** | Don't select a VM network | Failover checks that test machines are created <p>The test virtual machine will be created on the same host as the host on which the replica virtual machine exists. It isn't added to the cloud in which the replica virtual machine is located.</p></p>| <p>The failed over machine won't be connected to any network.</p><p>The machine can be connected to a VM network after it has been created</p>
+**Fail over to a secondary VMM site—with network** | Select an existing VM network a | Failover checks that virtual machines are created | <p>The test virtual machine will be created on the same host as the host on which the replica virtual machine exists. It isn't added to the cloud in which the replica virtual machine is located.</p><p>Create a VM network that's isolated from your production network</p><p>If you're using a VLAN-based network we recommend you create a separate logical network (not used in production) in VMM for this purpose. This logical network is used to create VM networks for the purpose of test failover.</p><p>The logical network should be associated with at least one of the network adapters of all the Hyper-V servers hosting virtual machines.</p><p>For VLAN logical networks, the network sites you add to the logical network should be isolated.</p><p>If you're using a Windows Network Virtualization-based logical network, Azure Site Recovery automatically creates isolated VM networks.</p>
+**Fail over to a secondary VMM site—create a network** | A temporary test network will be created automatically based on the setting you specify in **Logical Network** and its related network sites | Failover checks that virtual machines are created | <p>Use this option if the recovery plan uses more than one VM network. If you're using Windows Network Virtualization networks, this option can automatically create VM networks with the same settings (subnets and IP address pools) in the network of the replica virtual machine. These VM networks are cleaned up automatically after the test failover is complete.</p><p>The test virtual machine will be created on the same host as the host on which the replica virtual machine exists. It isn't added to the cloud in which the replica virtual machine is located.</p>
 
 >[AZURE.NOTE] The IP given to a virtual machine on a Test Failover is same as the IP it would get on doing a planned or unplanned failover given that this IP is available in the Test Failover network. If the same IP is not available in the test failover network, virutal machine will get some other IP available in the test failover network.
 
@@ -103,7 +103,7 @@ This procedure describes how to run a test failover for a recovery plan. Alterna
 3. If you're failing over to Azure and data encryption is enabled for the cloud, in **Encryption Key** select the certificate that was issued when you enabled data encryption during Provider installation. 
 4. Track failover progress on the **Jobs** tab. You should be able to see the test replica machine in the Azure Management Portal.
 5. You can access replica machines in Azure from your on-premises site initiate an RDP connection to the virtual machine. port 3389 will need to be open on the endpoint for the virtual machine.
-5. Once you're done, When the failover reaches the **Complete testing** phase , click **Complete Test** to finish.
+7. Once you're done, When the failover reaches the **Complete testing** phase , click **Complete Test** to finish.
 5. In **Notes** record and save any observations associated with the test failover.
 8. Click **The test failover is complete** to automatically clean up the test environment. After this is complete the test failover will show the C**omplete** status.
 
@@ -112,14 +112,14 @@ This procedure describes how to run a test failover for a recovery plan. Alterna
 
 ### Run a test failover from a primary on-premises site to a secondary on-premises site
 
-You’ll need to do a number of things to run a test failover, including making a copy of domain controller and placing test DHCP and DNS servers in your test environment. You can do this in a couple of ways:
+You'll need to do a number of things to run a test failover, including making a copy of domain controller and placing test DHCP and DNS servers in your test environment. You can do this in a couple of ways:
 
 - If you want to run a test failover using an existing network, prepare Active Directory, DHCP, and DNS in that network.
-- If you want to run a test failover using the option to create VM networks automatically, add manual step before Group-1 in the recovery plan you’re going to use for the test failover and then add the infrastructure resources to the automatically created network before running the test failover.
+- If you want to run a test failover using the option to create VM networks automatically, add manual step before Group-1 in the recovery plan you're going to use for the test failover and then add the infrastructure resources to the automatically created network before running the test failover.
 
 #### Things to note
 
-- When replicating to a secondary site, the type of network used by the replica machine doesn’t need to match the type of logical network used for test failover, but some combinations might not work. If the replica uses DHCP and VLAN-based isolation, the VM network for the replica doesn't need a static IP address pool. So using Windows Network Virtualization for the test failover wouldn't work because no address pools are available. In addition test failover won't work if the replica network is No Isolation and the test network is Windows Network Virtualization. This is because the No Isolation network doesn't have the subnets required to create a Windows Network Virtualization network.
+- When replicating to a secondary site, the type of network used by the replica machine doesn't need to match the type of logical network used for test failover, but some combinations might not work. If the replica uses DHCP and VLAN-based isolation, the VM network for the replica doesn't need a static IP address pool. So using Windows Network Virtualization for the test failover wouldn't work because no address pools are available. In addition test failover won't work if the replica network is No Isolation and the test network is Windows Network Virtualization. This is because the No Isolation network doesn't have the subnets required to create a Windows Network Virtualization network.
 - The way in which replica virtual machines are connected to mapped VM networks after failover depends on how the VM network is configured in the VMM console:
 	- **VM network configured with no isolation or VLAN isolation**—If DHCP is defined for the VM network, the replica virtual machine will be connected to the VLAN ID using the settings that are specified for the network site in the associated logical network. The virtual machine will receive its IP address from the available DHCP server. You don't need a static IP address pool defined for the target VM network. If a static IP address pool is used for the VM network the replica virtual machine will be connected to the VLAN ID using the settings that are specified for the network site in the associated logical network. The virtual machine will receive its IP address from the pool defined for the VM network. If a static IP address pool isn't defined on the target VM network, IP address allocation will fail. The IP address pool should be created on both the source and target VMM servers that you are going to use for protection and recovery.
 	- **VM network with Windows network virtualization**—If a VM network is configured with this setting a static pool should be defined for the target VM network, regardless of whether the source VM network is configured to use DHCP or a static IP address pool. If you define DHCP, the target VMM server will act as a DHCP server and provide an IP address from the pool that is defined for the target VM network. If use of a static IP address pool is defined for the source server, the target VMM server will allocate an IP address from the pool. In both cases, IP address allocation will fail if a static IP address pool is not defined.
@@ -144,14 +144,14 @@ If the virtual machines involved in test failover use DHCP, a test DHCP server s
 
 
 ### Prepare Active Directory
-To run a test failover for application testing, you’ll need a copy of the production Active Directory environment in your test environment. Go through [test failover considerations for active directory](/documentation/articles/site-recovery-active-directory#considerations-for-test-failover]) section for more details. 
+To run a test failover for application testing, you'll need a copy of the production Active Directory environment in your test environment. Go through [test failover considerations for active directory](/documentation/articles/site-recovery-active-directory#considerations-for-test-failover]) section for more details. 
 
 
 ### Prepare DNS
 
 Prepare a DNS server for the test failover as follows:
 
-- **DHCP**—If virtual machines use DHCP, the IP address of the test DNS should be updated on the test DHCP server. If you’re using a network type of Windows Network Virtualization, the VMM server acts as the DHCP server. Therefore, the IP address of DNS should be updated in the test failover network. In this case, the virtual machines will register themselves to the relevant DNS Server.
+- **DHCP**—If virtual machines use DHCP, the IP address of the test DNS should be updated on the test DHCP server. If you're using a network type of Windows Network Virtualization, the VMM server acts as the DHCP server. Therefore, the IP address of DNS should be updated in the test failover network. In this case, the virtual machines will register themselves to the relevant DNS Server.
 - **Static address**—If virtual machines use a static IP address, the IP address of the test DNS server should be updated in test failover network. You might need to update DNS with the IP address of the test virtual machines. You can use the following sample script for this purpose: 
 
 	    Param(
@@ -177,9 +177,9 @@ Prepare a DNS server for the test failover as follows:
 	- If previous failovers worked as expected and all of the virtual machine servers are located on either the source or target location, the failover direction details are for information only. 
 	- If virtual machines are active on both the source and target locations, the **Change Direction** button appears. Use this button to change and specify the direction in which the failover should occur.
 
-5. If you're failing over to Azure and data encryption is enabled for the cloud, in **Encryption Key** select the certificate that was issued when you enabled data encryption during Provider installation on the VMM server. 
-6. When a planned failover begins the first step is to shut down the virtual machines to ensure no data loss. You can follow the failover progress on the **Jobs** tab. If an error occurs in the failover (either on a virtual machine or in a script that is included in the recovery plan), the planned failover of a recovery plan stops. You can initiate the failover again.
-8. After replica virtual machines are created they're in a commit pending state. Click **Commit** to commit the failover. 
+4. If you're failing over to Azure and data encryption is enabled for the cloud, in **Encryption Key** select the certificate that was issued when you enabled data encryption during Provider installation on the VMM server.
+5. When a planned failover begins the first step is to shut down the virtual machines to ensure no data loss. You can follow the failover progress on the **Jobs** tab. If an error occurs in the failover (either on a virtual machine or in a script that is included in the recovery plan), the planned failover of a recovery plan stops. You can initiate the failover again.
+8. After replica virtual machines are created they're in a commit pending state. Click **Commit** to commit the failover.
 9. After replication is complete the virtual machines start up at the secondary location. 
 
 ## Run an unplanned failover
@@ -187,17 +187,17 @@ Prepare a DNS server for the test failover as follows:
 This procedure describes how to run an unplanned failover for a recovery plan. Alternatively you can run the failover for a single virtual machine or physical server on the **Virtual Machines** tab.
 
 1. Select **Recovery Plans** > *recoveryplan_name*. Click **Failover** > **Unplanned Failover**. 
-3. On the **Confirm Unplanned Failover **page, choose the source and target locations. Note the failover direction.
+2. On the **Confirm Unplanned Failover **page, choose the source and target locations. Note the failover direction.
 
 	- If previous failovers worked as expected and all of the virtual machine servers are located on either the source or target location, the failover direction details are for information only. 
 	- If virtual machines are active on both the source and target locations, the **Change Direction** button appears. Use this button to change and specify the direction in which the failover should occur.
 
-4. If you're failing over to Azure and data encryption is enabled for the cloud, in **Encryption Key** select the certificate that was issued when you enabled data encryption during Provider installation on the VMM server. 
-5. Select **Shut down virtual machines and synchronize the latest data** to specify that Site Recovery should try to shut down the protected virtual machines and synchronize the data so that the latest version of the data will be failed over. If you don’t select this option or the attempt doesn’t succeed the failover will be from the latest available recovery point for the virtual machine.
-6. You can follow the failover progress on the **Jobs** tab. Note that even if errors occur during an unplanned failover, the recovery plan runs until it is complete.
-7. After the failover, the virtual machines are in a **commit pending** state. Click **Commit** to commit the failover.
-8. If you set up replication to use multiple recovery points, in Change Recovery Point you can select to use a recovery point that isn't the latest (latest is used by default). After you commit additional recovery points will be removed.
-9. After replication is complete the virtual machines start up and are running at the secondary location. However they aren’t protected or replicating. When the primary site is available again with the same underlying infrastructure, click **Reverse Replicate** to begin reverse replication. This ensures that all the data is replicated back to the primary site, and that the virtual machine is ready for failover again. Reverse replication after an unplanned failover incurs an overhead in data transfer. The transfer will use the same method that is configured for initial replication settings for the cloud.
+3. If you're failing over to Azure and data encryption is enabled for the cloud, in **Encryption Key** select the certificate that was issued when you enabled data encryption during Provider installation on the VMM server.
+4. Select **Shut down virtual machines and synchronize the latest data** to specify that Site Recovery should try to shut down the protected virtual machines and synchronize the data so that the latest version of the data will be failed over. If you don't select this option or the attempt doesn't succeed the failover will be from the latest available recovery point for the virtual machine.
+5. You can follow the failover progress on the **Jobs** tab. Note that even if errors occur during an unplanned failover, the recovery plan runs until it is complete.
+6. After the failover, the virtual machines are in a **commit pending** state. Click **Commit** to commit the failover.
+7. If you set up replication to use multiple recovery points, in Change Recovery Point you can select to use a recovery point that isn't the latest (latest is used by default). After you commit additional recovery points will be removed.
+8. After replication is complete the virtual machines start up and are running at the secondary location. However they aren't protected or replicating. When the primary site is available again with the same underlying infrastructure, click **Reverse Replicate** to begin reverse replication. This ensures that all the data is replicated back to the primary site, and that the virtual machine is ready for failover again. Reverse replication after an unplanned failover incurs an overhead in data transfer. The transfer will use the same method that is configured for initial replication settings for the cloud.
 
 ## Failback from secondary to primary
 
@@ -215,7 +215,7 @@ This procedure describes how to run an unplanned failover for a recovery plan. A
 
 	- **Synchronize the data during failover only**—Use this option if you've only been running on Azure for a short amount of time. this option is faster because it resynchronizes instead of doing a full failback. It performs a fast checksum calculation and only downloads changed blocks.
 
-5. If you're failing over to Azure and data encryption is enabled for the cloud, in **Encryption Key** select the certificate that was issued when you enabled data encryption during Provider installation on the VMM server. 
+4. If you're failing over to Azure and data encryption is enabled for the cloud, in **Encryption Key** select the certificate that was issued when you enabled data encryption during Provider installation on the VMM server.
 5. By default the last recovery point is used, but in **Change Recovery Point** you can specify a different recovery point. 
 6. Click the checkmark to start the failback.  You can follow the failover progress on the **Jobs** tab. 
 7. f you selected the option to synchronize the data before the failover, once the initial data synchronization is complete and you're ready to shut down the virtual machines in Azure, click **Jobs** > <planned failover job name> **Complete Failover**. This shuts down the Azure machine, transfers the latest changes to the on-premises virtual machine, and starts it.

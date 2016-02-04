@@ -21,9 +21,10 @@ To start, see [Elastic database Split-Merge tool ](/documentation/articles/sql-d
 
 ## What's new in split-merge
 
-The most recent releases of the split-merge tool provides the following improvements: 
+The 1.1.0 release of the split-merge tool provides the ability to automatically clean up metadata from completed request. A configuration option controls how long this metadata is retained before it gets removed. 
 
-* .Net APIs are included to interface with split-merge – the web role is now optional 
+The 1.0.0 release of the split-merge tool provides the following improvements: 
+* .Net APIs are included to interface with split-merge - the web role is now optional 
 * Date and time types are now supported for sharding keys 
 * List shard maps are now supported. 
 * Range boundaries in requests can match more easily with ranges stored in the shard map.
@@ -43,11 +44,11 @@ You do not need to provision a new metadata database for split-merge to upgrade.
 
 Applications need to stretch flexibly beyond the limits of a single Azure SQL DB database, as illustrated by the following scenarios: 
 
-* **Grow Capacity – Splitting Ranges**: The ability to grow aggregate capacity at the data tier addresses increasing capacity needs. In this scenario, the application provides the additional capacity by sharding the data and by distributing it across incrementally more databases until capacity needs are fulfilled. The ‘split’ feature of the Elastic Scale split-merge Service addresses this scenario. 
+* **Grow Capacity - Splitting Ranges**: The ability to grow aggregate capacity at the data tier addresses increasing capacity needs. In this scenario, the application provides the additional capacity by sharding the data and by distributing it across incrementally more databases until capacity needs are fulfilled. The 'split' feature of the Elastic Scale split-merge Service addresses this scenario. 
 
-* **Shrink Capacity – Merging Ranges**: Capacity fluctuates due to the seasonal nature of a business. This scenario underlines the need to easily scale back to fewer scale units when business slows. The ‘merge’ feature in the Elastic Scale split-merge Service covers this requirement. 
+* **Shrink Capacity - Merging Ranges**: Capacity fluctuates due to the seasonal nature of a business. This scenario underlines the need to easily scale back to fewer scale units when business slows. The 'merge' feature in the Elastic Scale split-merge Service covers this requirement. 
 
-* **Manage Hotspots – Moving Shardlets**: With multiple tenants per database, the allocation of shardlets to shards can lead to capacity bottlenecks on some shards. This requires re-allocating shardlets or moving busy shardlets to new or less utilized shards. 
+* **Manage Hotspots - Moving Shardlets**: With multiple tenants per database, the allocation of shardlets to shards can lead to capacity bottlenecks on some shards. This requires re-allocating shardlets or moving busy shardlets to new or less utilized shards. 
 
 In the following, we will refer to any processing in the service along these capabilities as **split/merge/move** requests. 
 
@@ -70,9 +71,9 @@ The default deployed service runs with one worker and one web role. Each uses th
 
 **Consistent Shardlet Connections**: When data movement starts for a new batch of shardlets, any shard-map provided data-dependent routing connections to the shard storing the shardlet are killed and subsequent connections from the shard map APIs to the these shardlets are blocked while the data movement is in progress in order to avoid inconsistencies. Connections to other shardlets on the same shard will also get killed, but will succeed again immediately on retry. Once the batch is moved, the shardlets are marked online again for the target shard and the source data is removed from the source shard. The service goes through these steps for every batch until all shardlets have been moved. This will lead to several connection kill operations during the course of the complete split/merge/move operation.  
 
-**Managing Shardlet Availability**: Limiting the connection killing to the current batch of shardlets as discussed above restricts the scope of unavailability to one batch of shardlets at a time. This is preferred over an approach where the complete shard would remain offline for all its shardlets during the course of a split or merge operation. The size of a batch, defined as the number of distinct shardlets to move at a time, is a configuration parameter. It can be defined for each split and merge operation depending on the application’s availability and performance needs. Note that the range that is being locked in the shard map may be larger than the batch size specified. This is because the service picks the range size such that the actual number of sharding key values in the data approximately matches the batch size. This is important to remember in particular for sparsely populated sharding keys. 
+**Managing Shardlet Availability**: Limiting the connection killing to the current batch of shardlets as discussed above restricts the scope of unavailability to one batch of shardlets at a time. This is preferred over an approach where the complete shard would remain offline for all its shardlets during the course of a split or merge operation. The size of a batch, defined as the number of distinct shardlets to move at a time, is a configuration parameter. It can be defined for each split and merge operation depending on the application's availability and performance needs. Note that the range that is being locked in the shard map may be larger than the batch size specified. This is because the service picks the range size such that the actual number of sharding key values in the data approximately matches the batch size. This is important to remember in particular for sparsely populated sharding keys. 
 
-**Metadata Storage**: The split-merge service uses a database to maintain its status and to keep logs during request processing. The user creates this database in their subscription and provides the connection string for it in the configuration file for the service deployment. Administrators from the user’s organization can also connect to this database to review request progress and to investigate detailed information regarding potential failures.
+**Metadata Storage**: The split-merge service uses a database to maintain its status and to keep logs during request processing. The user creates this database in their subscription and provides the connection string for it in the configuration file for the service deployment. Administrators from the user's organization can also connect to this database to review request progress and to investigate detailed information regarding potential failures.
 
 **Sharding-Awareness**: The split-merge service differentiates between (1) sharded tables, (2) reference tables, and (3) normal tables. The semantics of a split/merge/move operation depend on the type of the table used and are defined as follows: 
 
@@ -98,7 +99,7 @@ The information on reference vs. sharded tables is provided by the **SchemaInfo*
     // Publish 
     smm.GetSchemaInfoCollection().Add(Configuration.ShardMapName, schemaInfo); 
 
-The tables ‘region’ and ‘nation’ are defined as reference tables and will be copied with split/merge/move operations. ‘customer’ and ‘orders’ in turn are defined as sharded tables. C_CUSTKEY and O_CUSTKEY serve as the sharding key. 
+The tables 'region' and 'nation' are defined as reference tables and will be copied with split/merge/move operations. 'customer' and 'orders' in turn are defined as sharded tables. C_CUSTKEY and O_CUSTKEY serve as the sharding key. 
 
 **Referential Integrity**: The split-merge service analyzes dependencies between tables and uses foreign key-primary key relationships to stage the operations for moving reference tables and shardlets. In general, reference tables are copied first in dependency order, then shardlets are copied in order of their dependencies within each batch. This is necessary so that FK-PK constraints on the target shard are honored as the new data arrives. 
 
@@ -170,7 +171,7 @@ The split-merge Service provides the **RequestStatus** table in the metadata sto
 
 ### Azure Diagnostics
 
-The split-merge service uses Azure Diagnostics based on Azure SDK 2.5 for monitoring and diagnostics. You control the diagnostics configuration as explained here: [Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics). The download package includes two diagnostics configurations – one for the web role and one for the worker role. These diagnostics configurations for the service follow the guidance from [Cloud Service Fundamentals in Windows Azure](https://code.msdn.microsoft.com/windowsazure/Cloud-Service-Fundamentals-4ca72649). It includes the definitions to log Performance Counters, IIS logs, Windows Event Logs, and split-merge application event logs. 
+The split-merge service uses Azure Diagnostics based on Azure SDK 2.5 for monitoring and diagnostics. You control the diagnostics configuration as explained here: [Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics). The download package includes two diagnostics configurations - one for the web role and one for the worker role. These diagnostics configurations for the service follow the guidance from [Cloud Service Fundamentals in Windows Azure](https://code.msdn.microsoft.com/windowsazure/Cloud-Service-Fundamentals-4ca72649). It includes the definitions to log Performance Counters, IIS logs, Windows Event Logs, and split-merge application event logs. 
 
 ## Deploying Diagnostics 
 
@@ -204,7 +205,7 @@ You can easily access your diagnostics from the Visual Studio Server Explorer in
 
 ![WADLogsTable][2]
 
-The WADLogsTable highlighted in the figure above contains the detailed events from the split-merge service’s application log. Note that the default configuration of the downloaded package is geared towards a production deployment. Therefore the interval at which logs and counters are pulled from the service instances is large (5 minutes). For test and development, lower the interval by adjusting the diagnostics settings of the web or the worker role to your needs. Right-click on the role in the Visual Studio Server Explorer (see above) and then adjust the Transfer Period in the dialog for the Diagnostics configuration settings: 
+The WADLogsTable highlighted in the figure above contains the detailed events from the split-merge service's application log. Note that the default configuration of the downloaded package is geared towards a production deployment. Therefore the interval at which logs and counters are pulled from the service instances is large (5 minutes). For test and development, lower the interval by adjusting the diagnostics settings of the web or the worker role to your needs. Right-click on the role in the Visual Studio Server Explorer (see above) and then adjust the Transfer Period in the dialog for the Diagnostics configuration settings: 
 
 ![Configuration][3]
 

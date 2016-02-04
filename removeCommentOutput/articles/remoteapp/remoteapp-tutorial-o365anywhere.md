@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="remoteapp"
-   ms.devlang="na"
-   ms.topic="hero-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="compute"
-   ms.date="08/12/2015"
-   ms.author="guscatal;elizapo"/>
+	ms.service="remoteapp"
+	ms.date="08/12/2015"
+	wacn.date=""/>
 
 
 # Get the same Office 365 experience on any device with Azure RemoteApp
@@ -26,7 +22,7 @@ We will accomplish this using Azure RemoteApp by hosting Office 365 on scale-abl
 ## Create a cloud collection
 
 First after you have created an Azure account, navigate to **RemoteApp** by clicking on the link on the left side. 
-![Showing Azure RemoteApp on the Azure Portal](https://raw.githubusercontent.com/guscatalano/azure-content/master/articles/media/remoteapp-tutorial-o365anywhere/1-menu.png)
+![Showing Azure RemoteApp on the Azure Management Portal](https://raw.githubusercontent.com/guscatalano/azure-content/master/articles/media/remoteapp-tutorial-o365anywhere/1-menu.png)
 
 Then continue by clicking **new** on the bottom and "quick creating" a collection. Provide a name, the region, the subscription, the plan and the image "Office Proffesional 2013" that we provide.
 ![Create Dialog](https://raw.githubusercontent.com/guscatalano/azure-content/master/articles/media/remoteapp-tutorial-o365anywhere/2-quickcreate.PNG)
@@ -47,7 +43,7 @@ Now let's try out connecting to Office 365!
 
 ## Connect to Office 365
 
-We'll head over to [https://www.remoteapp.windowsazure.com/](https://www.remoteapp.windowsazure.com/), scroll down  and click **Download clients** to install the Azure RemoteApp client on the device you're on. The screenshots below are for Windows.
+We'll head over to [https://www.remoteapp.windowsazure.cn/](https://www.remoteapp.windowsazure.cn/), scroll down  and click **Download clients** to install the Azure RemoteApp client on the device you're on. The screenshots below are for Windows.
 
 Once the application starts you'll be asked to sign in with your Microsoft account (formerly called a "Live ID"), use the same one as your Azure account for now. When you're signed in you should see a notification about new invitations, click there and you should see a list like one below. Accept the invitation that matches your Azure account owner email. 
 

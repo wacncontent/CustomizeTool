@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="service-bus"
-	ms.date="09/16/2015"
+	ms.date="12/28/2015"
 	wacn.date=""/>
 
 # Create applications that use Service Bus queues
@@ -43,7 +43,7 @@ As the load increases, more worker processes can be added to read from the worke
 
 ### Loose coupling
 
-Using message queuing to intermediate between message producers and consumers provides an intrinsic loose coupling between the components. Because producers and consumers are not aware of each other, a consumer can be upgraded without having any effect on the producer. Furthermore, the messaging topology can evolve without affecting the existing endpoints. We’ll discuss this more when we talk about publish/subscribe.
+Using message queuing to intermediate between message producers and consumers provides an intrinsic loose coupling between the components. Because producers and consumers are not aware of each other, a consumer can be upgraded without having any effect on the producer. Furthermore, the messaging topology can evolve without affecting the existing endpoints. We'll discuss this more when we talk about publish/subscribe.
 
 ## Show me the code
 
@@ -51,11 +51,11 @@ The following section shows how to use Service Bus to build this application.
 
 ### Sign up for a Service Bus account and subscription
 
-You’ll need an Azure account in order to start working with Service Bus. If you do not already have one, you can sign up for a trial [here](/pricing/1rmb-trial/?WT.mc_id=A85619ABF).
+You'll need an Azure account in order to start working with Service Bus. If you do not already have one, you can sign up for a trial [here](/pricing/1rmb-trial/?WT.mc_id=A85619ABF).
 
 ### Create a service namespace
 
-Once you have a subscription, you can create a new namespace. You’ll have to give your new namespace a unique name across all Service Bus accounts. Each namespace acts as a container for a set of Service Bus entities. For more information, see [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/zh-cn/library/azure/hh690931.aspx).
+Once you have a subscription, you can create a new namespace. You'll have to give your new namespace a unique name across all Service Bus accounts. Each namespace acts as a container for a set of Service Bus entities. For more information, see [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/zh-cn/library/azure/hh690931.aspx).
 
 ### Install the NuGet package
 
@@ -63,7 +63,7 @@ To use the Service Bus service namespace, an application must reference the Ser
 
 ### Create the queue
 
-Management operations for Service Bus messaging entities (queues and publish/subscribe topics) are performed via the [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) class. Service Bus uses a [Shared Access Signature (SAS)](/documentation/articles/service-bus-sas-overview) based security model. The [TokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.aspx) class represents a security token provider with built-in factory methods returning some well-known token providers. We’ll use a [CreateSharedAccessSignatureTokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.createsharedaccesssignaturetokenprovider.aspx) method to hold the SAS credentials. The [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) instance is then constructed with the base address of the Service Bus namespace and the token provider.
+Management operations for Service Bus messaging entities (queues and publish/subscribe topics) are performed via the [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) class. Service Bus uses a [Shared Access Signature (SAS)](/documentation/articles/service-bus-sas-overview) based security model. The [TokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.aspx) class represents a security token provider with built-in factory methods returning some well-known token providers. We'll use a [CreateSharedAccessSignatureTokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.createsharedaccesssignaturetokenprovider.aspx) method to hold the SAS credentials. The [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) instance is then constructed with the base address of the Service Bus namespace and the token provider.
 
 The [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) class provides methods to create, enumerate and delete messaging entities. The code that is shown here shows how the [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) instance is created and used to create the **DataCollectionQueue** queue.
 
@@ -93,7 +93,7 @@ For run-time operations on Service Bus entities; for example, sending and receiv
  bm.Properties["MachineID"] = "POS_1";
 ```
 
-Messages sent to and received from Service Bus queues, are instances of the [BrokeredMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) class. This class consists of a set of standard properties (such as [Label](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) and [TimeToLive](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)), a dictionary that is used to hold application properties, and a body of arbitrary application data. An application can set the body by passing in any serializable object (the following example passes in a **SalesData** object that represents the sales data from the POS terminal), which will use the [DataContractSerializer](https://msdn.microsoft.com/zh-cn/library/azure/system.runtime.serialization.datacontractserializer.aspx) to serialize the object. Alternatively, a [Stream](https://msdn.microsoft.com/zh-cn/library/azure/system.io.stream.aspx) object can be provided.
+Messages sent to, and received from Service Bus queues are instances of the [BrokeredMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) class. This class consists of a set of standard properties (such as [Label](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) and [TimeToLive](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)), a dictionary that is used to hold application properties, and a body of arbitrary application data. An application can set the body by passing in any serializable object (the following example passes in a **SalesData** object that represents the sales data from the POS terminal), which will use the [DataContractSerializer](https://msdn.microsoft.com/zh-cn/library/azure/system.runtime.serialization.datacontractserializer.aspx) to serialize the object. Alternatively, a [Stream](https://msdn.microsoft.com/zh-cn/library/azure/system.io.stream.aspx) object can be provided.
 
 The easiest way to send messages to a given queue, in our case the **DataCollectionQueue**, is to use [CreateMessageSender](https://msdn.microsoft.com/zh-cn/library/azure/hh322659.aspx) to create a [MessageSender](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagesender.aspx) object directly from the [MessagingFactory](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) instance.
 

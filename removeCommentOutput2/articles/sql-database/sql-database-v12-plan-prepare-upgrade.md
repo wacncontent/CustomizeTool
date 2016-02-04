@@ -20,7 +20,7 @@
 This topic describes the planning and preparations you must perform to upgrade your Azure SQL databases from version V11 to V12.
 
 
-A new [Windows Azure Management Portal](http://manage.windowsazure.cn/) is available to support your upgrade to V12.
+A new [Windows Azure Management Portal](https://manage.windowsazure.cn) is available to support your upgrade to V12.
 
 
 The following table lists other Help topics for V12.
@@ -29,7 +29,7 @@ The following table lists other Help topics for V12.
 | Title and link | Description of content |
 | :--- | :--- |
 | [What's new in SQL Database V12](/documentation/articles/sql-database-v12-whats-new) | Describes the details of how V12 brings Azure SQL Database closer to full parity with Microsoft SQL Server. |
-| [Create a database in SQL Database V12](/documentation/articles/sql-database-get-started) | Describes how you can create a new Azure SQL database at version V12. It describes various options beyond just an empty database. |
+| [Create a database in SQL Database V12](/documentation/articles/sql-database-create) | Describes how you can create a new Azure SQL database at version V12. It describes various options beyond just an empty database. |
 
 
 ## Plan ahead
@@ -87,7 +87,7 @@ The Web and Business service pricing tier is not supported on V12.
 If your V11 Azure SQL database is a Web or Business database, the upgrade process offers to switch your database to a supported tier. The upgrade recommends a tier that fits the workload history of your database. However, you can choose any supported tier you like.
 
 
-You can reduce the steps necessary during upgrade by switching your V11 database away from the Web-and-Business tier before you start the upgrade. You can do this by using the new [Windows Azure Management Portal](http://manage.windowsazure.cn/).
+You can reduce the steps necessary during upgrade by switching your V11 database away from the Web-and-Business tier before you start the upgrade. You can do this by using the new [Windows Azure Management Portal](https://manage.windowsazure.cn).
 
 
 If you are unsure which service tier to switch to, the S2 level of the Standard tier might be a sensible initial choice. Any lesser tier will have fewer resources than the Web and Business tier had.
@@ -123,7 +123,7 @@ Click [here](/documentation/articles/sql-database-develop-direct-route-ports-ado
 There are three portals for Azure, and each has different abilities regarding SQL Database V12.
 
 
-- [http://manage.windowsazure.cn/](http://manage.windowsazure.cn/)<br/>This Azure preview portal is new and is still at preview status. This portal is not quite yet at full General Availability (GA). This portal:
+- [http://manage.windowsazure.cn](http://manage.windowsazure.cn/)<br/>This Azure preview portal is new and is still at preview status. This portal is not quite yet at full General Availability (GA). This portal:
  - Can manage your V12 server and database.
  - Can upgrade your V11 database to V12.
 
@@ -146,7 +146,7 @@ We encourage you to connect to your Azure SQL databases with Visual Studio 2013 
 - To develop a database, either online or offline.
 
 
-You can instead connect with [Visual Studio Community 2013](https://www.visualstudio.com/news/vs2013-community-vs.aspx/), which is a free and full-featured version of VS2013.
+You can instead connect with [Visual Studio Community 2013](https://www.visualstudio.com/zh-CN/news/vs2013-community-vs.aspx/), which is a free and full-featured version of VS2013.
 
 
 In the older Azure Management Portal, on the database page, you can click **Open in Visual Studio** to launch VS2013 on your computer for connection to your Azure SQL Database.
@@ -181,7 +181,7 @@ The V11 database remains available for data access during the upgrade to V12. Ye
 ### Export and import *after* upgrade to V12
 
 
-You can export or import a V12 database by using the [Windows Azure Management Portal](http://manage.windowsazure.cn/). Or you can export or import by using any of the following tools:
+You can export or import a V12 database by using the [Windows Azure Management Portal](https://manage.windowsazure.cn). Or you can export or import by using any of the following tools:
 
 
 - SQL Server Management Studio (SSMS)
@@ -194,7 +194,7 @@ However, to use the tools, you must first install their latest updates to ensure
 
 - [Cumulative Update 6 for SQL Server Management Studio 2014](http://support2.microsoft.com/kb/3031047)
 - [February 2015 Update for SQL Server Database Tooling in Visual Studio 2013](https://msdn.microsoft.com/data/hh297027)
-- [February 2015 Data-Tier Application Framework (DacFx) for Azure SQL Database V12](http://www.microsoft.com/download/details.aspx?id=45886)
+- [February 2015 Data-Tier Application Framework (DacFx) for Azure SQL Database V12](https://www.microsoft.com/zh-CN/download/details.aspx?id=45886) 
 
 
 > [AZURE.NOTE] The preceding tool links were updated on or after March 2, 2015. We recommend that you use these newer updates of these tools.

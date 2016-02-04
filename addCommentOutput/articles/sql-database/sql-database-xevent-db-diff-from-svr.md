@@ -40,12 +40,7 @@ This topic explains how the implementation of extended events in Azure SQL Datab
 This topic assumes you already have some knowledge of:
 
 
-<!-- deleted by customization
 - [Azure SQL Database service](/documentation/services/sql-databases/).
--->
-<!-- keep by customization: begin -->
-- [Azure SQL Database service](/home/features/sql-database/).
-<!-- keep by customization: end -->
 
 
 - [Extended events](http://msdn.microsoft.com/zh-cn/library/bb630282.aspx) in Microsoft SQL Server.

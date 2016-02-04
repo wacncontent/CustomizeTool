@@ -7,12 +7,15 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with ThousandEyes
   
 The objective of this tutorial is to show how to set up single sign-on between Azure Active Directory (Azure AD) and ThousandEyes.
+>[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=529081).
+  
+The objective of this tutorial is to show how to set up single sign-on between Azure Active Directory (AAD) and ThousandEyes.
   
 The scenario outlined in this tutorial assumes that you already have the following items:
 
@@ -23,6 +26,7 @@ After completing this tutorial, the AAD users to whom you have assign ThousandEy
 
 1.  Enabling the application integration for ThousandEyes
 2.  Configuring Single Sign-On
+2.  [Configuring Single Sign-On](https://msdn.microsoft.com/zh-cn/library/eae8a61c-8e48-4f15-974d-867adbaf40ca#configuresso)
 3.  Configuring user provisioning
 4.  Assigning users
 
@@ -159,4 +163,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-thousandeyes-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).

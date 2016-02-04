@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/13/2015"
+	ms.date="11/16/2015"
 	wacn.date=""/>
 
 # Upload images to Azure Blob storage by using Mobile Services
@@ -34,7 +34,7 @@ This tutorial requires the following:
 
 This tutorial is based on the Mobile Services quickstart. Before you start this tutorial, you must first complete [Get started with Mobile Services]. 
 
-##Update the registered insert script in the Management Portal
+##Update the registered insert script in the Azure Management Portal
 
 [AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 
@@ -70,15 +70,22 @@ Now that you have been able to securely upload images by integrating your mobile
 
 
 <!-- URLs. -->
-[Send email from Mobile Services with SendGrid]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts
-[Schedule backend jobs in Mobile Services]: /documentation/articles/mobile-services-schedule-recurring-tasks
+[Send email from Mobile Services with SendGrid]: <!-- deleted by customization store-sendgrid-mobile-services-send-email-scripts.md --><!-- keep by customization: begin --> /documentation/articles/store-sendgrid-mobile-services-send-email-scripts <!-- keep by customization: end -->
+[Schedule backend jobs in Mobile Services]: <!-- deleted by customization mobile-services-schedule-recurring-tasks.md --><!-- keep by customization: begin --> /documentation/articles/mobile-services-schedule-recurring-tasks <!-- keep by customization: end -->
 [Send push notifications to Windows Store apps using Service Bus from a .NET back-end]: http://go.microsoft.com/fwlink/?LinkId=277073&clcid=0x409
+<!-- deleted by customization
+[Mobile Services server script reference]: mobile-services-how-to-use-server-scripts.md
+[Get started with Mobile Services]: mobile-services-javascript-backend-windows-store-dotnet-get-started.md
+[How To Create a Storage Account]: ../storage-create-storage-account.md
+-->
+<!-- keep by customization: begin -->
 [Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn
 [How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
+<!-- keep by customization: end -->
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866 
-[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[Mobile Services .NET How-to Conceptual Reference]: <!-- deleted by customization mobile-services-windows-dotnet-how-to-use-client-library.md --><!-- keep by customization: begin --> /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library <!-- keep by customization: end -->
 [App settings]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
  

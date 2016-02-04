@@ -19,7 +19,7 @@
 [AZURE.INCLUDE [mobile-services-selector-aad-graph](../includes/mobile-services-selector-aad-graph.md)]
 ##Overview
 
-Like the other identity providers offered with Mobile Services, the Azure Active Directory (AAD) provider also supports a rich Graph API which can be used for programmatic access to the directory. In this tutorial you update the ToDoList app to personalize the authenticated user’s app experience returning additional user information you retrieve from the directory using the [Graph REST API].
+Like the other identity providers offered with Mobile Services, the Azure Active Directory (AAD) provider also supports a rich Graph API which can be used for programmatic access to the directory. In this tutorial you update the ToDoList app to personalize the authenticated userâs app experience returning additional user information you retrieve from the directory using the [Graph REST API].
 
 For more information on the Azure AD Graph API, see the [Azure Active Directory Graph Team Blog]. 
 

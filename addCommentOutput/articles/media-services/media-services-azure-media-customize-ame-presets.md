@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 #Manipulate encoding tasks by customizing task presets 
@@ -30,10 +30,10 @@ Audio Bitrate - the bitrate used when encoding the audio, specified in kbps
 
 - Audio Codec the codec used for encoding audio, valid values are: AAC, WMA, and DDP
 - Channel Count the number of audio channels encoded, valid values are: 1, 2, or 6
-- Default extension – the default file extension 
+- Default extension - the default file extension 
 - Language the BCP-47 language code representing the language used in the audio. This currently defaults to “und”. 
 - Original File Name the name of the file uploaded into Azure Storage
-- StreamId – the stream ID as defined by the streamID attribute of the <StreamInfo> element in the preset file 
+- StreamId - the stream ID as defined by the streamID attribute of the <StreamInfo> element in the preset file 
 - Video Codec the codec used for encoding, valid values are: H264 and VC1
 - Video Bitrate the bitrate used when encoding the video, specified in kbps
 
@@ -131,7 +131,7 @@ Example 2:
 		OverlayStartTime="00:00:05"
 		OverlayEndTime="00:00:10.2120000">
 
-The location and size of the video overlay is controlled by the OverlayRect attribute. The content that is to be overlaid will be re-sized to fit this rectangle. Opacity is controlled by the OverlayOpacity attribute. Valid values are 0.0 – 1.0, where 1.0 is 100% opaque. The overlay will be displayed at the time specified by the OverlayStartTime attribute and will end at the time specified by the OverlayEndTime attribute. Both OverlayStartTime and OverlayEndTime should fall within the timeline of the source video. For more information about each overlay-specific attribute, please see Azure Media Encoder Schemas.
+The location and size of the video overlay is controlled by the OverlayRect attribute. The content that is to be overlaid will be re-sized to fit this rectangle. Opacity is controlled by the OverlayOpacity attribute. Valid values are 0.0 - 1.0, where 1.0 is 100% opaque. The overlay will be displayed at the time specified by the OverlayStartTime attribute and will end at the time specified by the OverlayEndTime attribute. Both OverlayStartTime and OverlayEndTime should fall within the timeline of the source video. For more information about each overlay-specific attribute, please see Azure Media Encoder Schemas.
 
 ###Presets for Audio Overlays
 
@@ -387,7 +387,7 @@ This snippet loads each asset sequentially for simplicity. In production environ
 
 ###Stitching Videos from a Single Asset
 
-When stitching videos within a single asset, each video must have a unique name. The videos are specified using the MediaFile attribute using the filename as the attribute’s value. For example:
+When stitching videos within a single asset, each video must have a unique name. The videos are specified using the MediaFile attribute using the filename as the attribute's value. For example:
 	
 	<MediaFile
 	    DeinterlaceMode="AutoPixelAdaptive"
@@ -503,16 +503,17 @@ To prevent the amplification of background noise, do the following:
 		// Launch the job. 
 		job.Submit();
 
+
 <!-- deleted by customization
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 -->
-
 ##See Also
 
 [Azure Media Encoder XML Schema](https://msdn.microsoft.com/zh-cn/library/azure/dn584702.aspx)

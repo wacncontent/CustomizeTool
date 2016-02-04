@@ -21,7 +21,7 @@
 In Media Services, you upload your digital files into an asset. The [Asset](https://msdn.microsoft.com/zh-cn/library/azure/hh974277.aspx) entity can contain video, audio, images, thumbnail collections, text tracks and closed caption files (and the metadata about these files.)  Once the files are uploaded into the asset, your content is stored securely in the cloud for further processing and streaming. 
 
 
->[AZURE.NOTE]Media Services uses the value of the IAssetFile.Name property when building URLs for the streaming content (for example, http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.) For this reason, percent-encoding is not allowed. The value of the **Name** property cannot have any of the following [percent-encoding-reserved characters](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#[]". Also, there can only be one ‘.’ for the file name extension.
+>[AZURE.NOTE]Media Services uses the value of the IAssetFile.Name property when building URLs for the streaming content (for example, http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.) For this reason, percent-encoding is not allowed. The value of the **Name** property cannot have any of the following [percent-encoding-reserved characters](http://zh.wikipedia.org/wiki/百分号编码#.E4.BF.9D.E7.95.99.E5.AD.97.E7.AC.A6.E7.9A.84.E7.99.BE.E5.88.86.E5.8F.B7.E7.BC.96.E7.A0.81): !*'();:@&=+$,/?%#[]". Also, there can only be one '.' for the file name extension.
 
 The basic workflow for uploading Assets is divided into the following sections:
 
@@ -427,7 +427,7 @@ IngestManifestAssets represent Assets within an IngestManifest that are used wit
 If your asset will use encryption, you must create the ContentKey to be used for encryption before creating the IngestManifestFiles for the asset. In this case, the following properties are included in the request body.
  
 Request body property	| Description
-Id | The ContentKey Id which we generate ourselves using the following format, “nb:kid:UUID:<NEW GUID>”.
+Id | The ContentKey Id which we generate ourselves using the following format, "nb:kid:UUID:<NEW GUID>".
 ContentKeyType | This is the content key type as an integer for this content key. We pass the value 1 for storage encryption.
 EncryptedContentKey | We create a new content key value which is a 256-bit (32 byte) value. The key is encrypted using the storage encryption X.509 certificate which we retrieve from Windows Azure Media Services by executing a HTTP GET request for the GetProtectionKeyId and GetProtectionKey Methods.
 ProtectionKeyId | This is the protection key id for the storage encryption X.509 certificate that was used to encrypt our content key.
@@ -511,5 +511,16 @@ You can monitor the progress of bulk ingesting operations for an IngestManifest 
 
 
 
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
+
+
  
-[How to Get a Media Processor]: /documentation/articles/media-services-get-media-processor
+[How to Get a Media Processor]: media-services-get-media-processor.md
+ 

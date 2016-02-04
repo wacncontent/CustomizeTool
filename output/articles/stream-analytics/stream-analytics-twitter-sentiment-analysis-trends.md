@@ -1,7 +1,7 @@
 <properties
-	pageTitle="Real-time Twitter sentiment analysis with Stream Analytics | Microsoft Azure"
+	pageTitle="Real-time Twitter sentiment analysis with Stream Analytics | Windows Azure"
 	description="Learn how to use Stream Analytics for real-time Twitter sentiment analysis. Step-by-step guidance from event generation to data on a live dashboard."
-	keywords="real-time twitter,sentiment analysis,social media analysis,social media analytics tools"
+	keywords="real-time twitter trend analysis, sentiment analysis, social media analysis, trend analysis example"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -10,23 +10,19 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="big-data"
-	ms.date="10/09/2015"
-	ms.author="jeffstok"/>
+	ms.date="12/04/2015"
+	wacn.date=""/>
 
 
 # Social media analysis: Real-time Twitter sentiment analysis in Azure Stream Analytics
 
-In this tutorial, you'll learn how to build a sentiment analysis solution by bringing real-time Twitter events into Event Hubs, writing Stream Analytics queries to analyze the data, and then storing the results or using a dashboard to provide insights in real time. 
+Learn how to build a sentiment analysis solution for social media analytics by bringing real-time Twitter events into Event Hubs. You'll write a Stream Analytics query to analyze the data and then either store the results for later perusal or use a dashboard to provide insights in real time using [Power BI](https://powerbi.com/).
 
-Social media analytics tools help organizations understand trending topics, meaning subjects and attitudes with a high volume of posts in social media. Sentiment analysis - also called "opinion mining" - uses social media analytics tools to determine attitudes toward a product, idea, and so on.
+Social media analytics tools help organizations understand trending topics, meaning subjects and attitudes with a high volume of posts in social media. Sentiment analysis - also called "opinion mining" - uses social media analytics tools to determine attitudes toward a product, idea, and so on. Real-time Twitter trend analysis is a great example because the hashtag subscription model allows you to listen to particular keywords and develop sentiment analysis on the feed. 
 
-## Scenario
+## Scenario - Sentiment Analysis in Real Time
 
-A news media website is interested in getting an edge over its competitors by featuring site content that is immediately relevant to its readers. They use social media analysis on topics relevant to their readers by doing real time sentiment analysis on Twitter data. Specifically, to identify what topics are trending in real time on Twitter, they need real-time analytics about the tweet volume and sentiment for key topics.
+A news media website is interested in getting an edge over its competitors by featuring site content that is immediately relevant to its readers. They use social media analysis on topics relevant to their readers by doing real time sentiment analysis on Twitter data. Specifically, to identify what topics are trending in real time on Twitter, they need real-time analytics about the tweet volume and sentiment for key topics. So in essence they need a sentiment analysis analytics engine based on this social media feed.
 
 ## Prerequisites
 1.	A Twitter account is required for this tutorial.  
@@ -38,7 +34,7 @@ The sample application will generate events and push them to an Event Hubs insta
 
 Follow the steps below to create an Event Hub.
 
-1.	In the Azure Portal click **NEW** > **APP SERVICES** > **SERVICE BUS** > **EVENT HUB** > **QUICK CREATE** and provide a name, region, and new or existing namespace to create a new Event Hub.  
+1.	In the Azure Management Portal click **NEW** > **APP SERVICES** > **SERVICE BUS** > **EVENT HUB** > **QUICK CREATE** and provide a name, region, and new or existing namespace to create a new Event Hub.  
 2.	As a best practice, each Stream Analytics job should read from a single Event Hubs Consumer Group. We will walk you through the process of creating a Consumer Group below and you can learn more about them here.  To create a Consumer Group, navigate to the newly created Event Hub and click the **CONSUMER GROUPS** tab, then click **CREATE** on the bottom of the page and provide a name for your Consumer Group.
 3.	To grant access to the Event Hub, we will need to create a shared access policy.  Click the **CONFIGURE** tab of your Event Hub.
 4.	Under **SHARED ACCESS POLICIES**, create a new policy with **MANAGE** permissions.
@@ -74,7 +70,7 @@ Now that we have Tweet events streaming in real-time from Twitter, we can set up
 
 ### Provision a Stream Analytics job
 
-1.	In the [Azure Portal](https://manage.windowsazure.com/), click **NEW** > **DATA SERVICES** > **STREAM ANALYTICS** > **QUICK CREATE**.
+1.	In the [Azure Management Portal](https://manage.windowsazure.cn/), click **NEW** > **DATA SERVICES** > **STREAM ANALYTICS** > **QUICK CREATE**.
 2.	Specify the following values, and then click **CREATE STREAM ANALYTICS JOB**:
 
 	* **JOB NAME**: Enter a job name.
@@ -111,7 +107,7 @@ Now that we have Tweet events streaming in real-time from Twitter, we can set up
 
 ### Specify job query
 
-Stream Analytics supports a simple, declarative query model for describing transformations. To learn more about the language, see the [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx).  This tutorial will help you author and test several queries over Twitter data.
+Stream Analytics supports a simple, declarative query model for describing transformations. To learn more about the language, see the [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx).  This tutorial will help you author and test several queries over Twitter data.
 
 #### Sample data input
 
@@ -139,7 +135,7 @@ To start with, we will do a simple pass-through query that projects all the fiel
 
 #### Count of tweets by topic: Tumbling window with aggregation
 
-To compare the number of mentions between topics, we'll leverage a [TumblingWindow](https://msdn.microsoft.com/library/azure/dn835055.aspx) to get the count of mentions by topic every 5 seconds.
+To compare the number of mentions between topics, we'll leverage a [TumblingWindow](https://msdn.microsoft.com/zh-cn/library/azure/dn835055.aspx) to get the count of mentions by topic every 5 seconds.
 
 1.	Change the query in the code editor to:
 
@@ -147,7 +143,7 @@ To compare the number of mentions between topics, we'll leverage a [TumblingWind
 		FROM TwitterStream TIMESTAMP BY CreatedAt
 		GROUP BY TUMBLINGWINDOW(s, 5), Topic
 
-	Note that this query uses the **TIMESTAMP BY** keyword to specify a timestamp field in the payload to be used in the temporal computation.  If this field wasn't specified, the windowing operation would be performed using the time each event arrived at Event Hub.  Learn more under "Arrival Time Vs Application Time" in the [Stream Analytics Query Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx).
+	Note that this query uses the **TIMESTAMP BY** keyword to specify a timestamp field in the payload to be used in the temporal computation.  If this field wasn't specified, the windowing operation would be performed using the time each event arrived at Event Hub.  Learn more under "Arrival Time Vs Application Time" in the [Stream Analytics Query Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx).
 
 	This query also accesses a timestamp for the end of each window with **System.Timestamp**.
 
@@ -155,7 +151,7 @@ To compare the number of mentions between topics, we'll leverage a [TumblingWind
 
 #### Identifying trending topics: Sliding window
 
-To identify trending topics we'll look for topics that cross a threshold value for mentions in a given amount of time.  For the purposes of this tutorial, we'll check for topics that are mentioned more than 20 times in the last 5 seconds using a [SlidingWindow](https://msdn.microsoft.com/library/azure/dn835051.aspx).
+To identify trending topics we'll look for topics that cross a threshold value for mentions in a given amount of time.  For the purposes of this tutorial, we'll check for topics that are mentioned more than 20 times in the last 5 seconds using a [SlidingWindow](https://msdn.microsoft.com/zh-cn/library/azure/dn835051.aspx).
 
 1.	Change the query in the code editor to:
 
@@ -226,14 +222,14 @@ Once your job is running and processing the real-time Twitter stream, choose how
 ![Social media analysis: Stream Analytics sentiment analysis (opinion mining) output in a Power BI dashboard.](./media/stream-analytics-twitter-sentiment-analysis-trends/stream-analytics-output-power-bi.png)
 
 ## Get support
-For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics). 
+For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/home?forum=AzureStreamAnalytics). 
 
 
 ## Next steps
 
-- [Introduction to Azure Stream Analytics](stream-analytics-introduction.md)
-- [Get started using Azure Stream Analytics](stream-analytics-get-started.md)
-- [Scale Azure Stream Analytics jobs](stream-analytics-scale-jobs.md)
-- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+- [Introduction to Azure Stream Analytics](/documentation/articles/stream-analytics-introduction)
+- [Get started using Azure Stream Analytics](/documentation/articles/stream-analytics-get-started)
+- [Scale Azure Stream Analytics jobs](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
  

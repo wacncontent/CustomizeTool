@@ -1,14 +1,14 @@
 <properties 
-	pageTitle="Using elastic database client library with Dapper" 
+	pageTitle="Using elastic database client library with Dapper | Windows Azure" 
 	description="Using elastic database client library with Dapper." 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh"/>
+	authors="torsteng"/>
 
-<tags
+<tags 
 	ms.service="sql-database"
-	ms.date="07/24/2015"
+	ms.date="11/04/2015" 
 	wacn.date=""/>
 
 # Using elastic database client library with Dapper 
@@ -32,7 +32,7 @@ To get the Dapper assemblies, see [Dapper dot net](http://www.nuget.org/packages
 
 ## A quick Look at the elastic database client library
 
-With the elastic database client library, you define partitions of your application data called *shardlets* , map them to databases, and identify them by *sharding keys*. You can have as many databases as you need and distribute your shardlets across these databases. The mapping of sharding key values to the databases is stored by a shard map provided by the library’s APIs. This capability is called **shard map management**. The shard map also serves as the broker of database connections for requests that carry a sharding key. This capability is referred to as **data dependent routing**.
+With the elastic database client library, you define partitions of your application data called *shardlets* , map them to databases, and identify them by *sharding keys*. You can have as many databases as you need and distribute your shardlets across these databases. The mapping of sharding key values to the databases is stored by a shard map provided by the library's APIs. This capability is called **shard map management**. The shard map also serves as the broker of database connections for requests that carry a sharding key. This capability is referred to as **data dependent routing**.
 
 ![Shard maps and data dependent routing][1]
 
@@ -55,7 +55,7 @@ The following section provides guidance for these requirements for applications 
 ## Technical Guidance
 ### Data dependent routing with Dapper 
 
-With Dapper, the application is typically responsible for creating and opening the connections to the underlying database. Given a type T by the application, Dapper returns query results as .NET collections of type T. Dapper performs the mapping from the T-SQL result rows to the objects of type T. Similarly, Dapper maps .NET objects into SQL values or parameters for data manipulation language (DML) statements. Dapper offers this functionality via extension methods on the regular [SqlConnection](http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.aspx) object from the ADO .NET SQL Client libraries. The SQL connection returned by the Elastic Scale APIs for DDR are also regular [SqlConnection](http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.aspx) objects. This allows us to directly use Dapper extensions over the type returned by the client library’s DDR API, as it is also a simple SQL Client connection.
+With Dapper, the application is typically responsible for creating and opening the connections to the underlying database. Given a type T by the application, Dapper returns query results as .NET collections of type T. Dapper performs the mapping from the T-SQL result rows to the objects of type T. Similarly, Dapper maps .NET objects into SQL values or parameters for data manipulation language (DML) statements. Dapper offers this functionality via extension methods on the regular [SqlConnection](http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.aspx) object from the ADO .NET SQL Client libraries. The SQL connection returned by the Elastic Scale APIs for DDR are also regular [SqlConnection](http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.aspx) objects. This allows us to directly use Dapper extensions over the type returned by the client library's DDR API, as it is also a simple SQL Client connection.
 
 These observations make it straightforward to use connections brokered by the elastic database client library for Dapper.
 
@@ -82,7 +82,7 @@ The call to the [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/a
 
 The shard map object creates a connection to the shard that holds the shardlet for the given sharding key. The elastic database client APIs also tag the connection to implement its consistency guarantees. Since the call to [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) returns a regular SQL Client connection object, the subsequent call to the **Execute** extension method from Dapper follows the standard Dapper practice.
 
-Queries work very much the same way – you first open the connection using [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) from the client API. Then you use the regular Dapper extension methods to map the results of your SQL query into .NET objects:
+Queries work very much the same way - you first open the connection using [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) from the client API. Then you use the regular Dapper extension methods to map the results of your SQL query into .NET objects:
 
     using (SqlConnection sqlconn = shardingLayer.ShardMap.OpenConnectionForKey(
                     key: tenantId1, 
@@ -108,7 +108,7 @@ Note that the **using** block with the DDR connection scopes all database operat
 
 Dapper comes with an ecosystem of additional extensions that can provide further convenience and abstraction from the database when developing database applications. DapperExtensions is an example. 
 
-Using DapperExtensions in your application does not change how database connections are created and managed. It is still the application’s responsibility to open connections, and regular SQL Client connection objects are expected by the extension methods. We can rely on the [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) as outlined above. As the following code samples show, the only change is that we do no longer have to write the T-SQL statements:
+Using DapperExtensions in your application does not change how database connections are created and managed. It is still the application's responsibility to open connections, and regular SQL Client connection objects are expected by the extension methods. We can rely on the [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) as outlined above. As the following code samples show, the only change is that we do no longer have to write the T-SQL statements:
 
     using (SqlConnection sqlconn = shardingLayer.ShardMap.OpenConnectionForKey(
                     key: tenantId2, 

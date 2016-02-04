@@ -65,9 +65,9 @@ Before you can connect, it is sometimes necessary to create a firewall exception
 
 ## How to: Add logins and users to Azure SQL Database
 
-After you deploy a database, you need to configure logins and assign permissions. In the next step, you’ll run two scripts.
+After you deploy a database, you need to configure logins and assign permissions. In the next step, you'll run two scripts.
 
-For the first script, you'll connect to master and run a script that creates logins. Logins will be used to support read and write operations, and to delegate operational tasks, such as the ability to run system queries without ‘sa’ permissions.
+For the first script, you'll connect to master and run a script that creates logins. Logins will be used to support read and write operations, and to delegate operational tasks, such as the ability to run system queries without 'sa' permissions.
 
 The logins you create must be SQL Server authentication logins. If you already have ready-made scripts that use Windows user identities or claims identities, that script will not work on SQL Database.
 

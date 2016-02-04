@@ -35,6 +35,7 @@ The guide assumes you know [how to create a WebJob project in Visual Studio with
 -   [Blob receipts](#receipts)
 -   [Related topics covered by the queues article](#queues)
 -   [Next steps](#nextsteps)
+
 ## <a id="trigger"></a> How to trigger a function when a blob is created or updated
 
 This section shows how to use the `BlobTrigger` attribute. 

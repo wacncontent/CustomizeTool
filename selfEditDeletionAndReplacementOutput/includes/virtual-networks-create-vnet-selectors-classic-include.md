@@ -4,5 +4,5 @@ deleted:
 
 		- [Preview portal](/documentation/articles/virtual-networks-create-vnet-classic-pportal)
 
-reason: ()
+reason: (the new Ibiza portal)
 

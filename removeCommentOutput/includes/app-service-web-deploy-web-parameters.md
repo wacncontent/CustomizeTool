@@ -9,7 +9,7 @@ We will describe each parameter in the template.
 
 ### siteName
 
-The name of the web app that you wish to create.
+The name of the web site that you wish to create.
 
     "siteName":{
       "type":"string"
@@ -17,7 +17,7 @@ The name of the web app that you wish to create.
 
 ### hostingPlanName
 
-The name of the App Service plan to use for hosting the web app.
+The name of the App Service plan to use for hosting the web site.
     
     "hostingPlanName":{
       "type":"string"
@@ -25,7 +25,7 @@ The name of the App Service plan to use for hosting the web app.
 
 ### siteLocation
 
-The location to use for creating the web app and hosting plan. It must be one of the Azure locations that support web apps.
+The location to use for creating the web site and hosting plan. It must be one of the Azure locations that support web sites.
 
     "siteLocation":{
       "type":"string"

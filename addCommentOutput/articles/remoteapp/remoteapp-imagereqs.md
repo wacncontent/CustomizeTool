@@ -7,27 +7,23 @@
     authors="lizap" 
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/12/2015" 
-    ms.author="elizapo" />
+<tags
+	ms.service="remoteapp"
+	ms.date="08/12/2015"
+	wacn.date=""/>
 
 
 
 # Requirements for Azure RemoteApp images
-Azure RemoteApp uses a Windows Server 2012 R2 image to host all the programs that you want to share with your users. To create a custom image, you can start with an existing image or [create a new one](remoteapp-create-custom-image.md). 
+Azure RemoteApp uses a Windows Server 2012 R2 image to host all the programs that you want to share with your users. To create a custom image, you can start with an existing image or [create a new one](/documentation/articles/remoteapp-create-custom-image). 
 
-> [AZURE.TIP] Did you know that your Azure RemoteApp subscription gives you access to a Windows Server 2012 R2 image in the Azure VM gallery that you can use to create your own template image? [Check it out](remoteapp-image-on-azurevm.md).  
+> [AZURE.TIP] Did you know that your Azure RemoteApp subscription gives you access to a Windows Server 2012 R2 image in the Azure VM gallery that you can use to create your own template image? [Check it out](/documentation/articles/remoteapp-image-on-azurevm).  
 
 
 The requirements for the image that can be uploaded for use with Azure RemoteApp are:
 
 
-- Custom applications don’t store data locally on the image. These images are stateless and should only contain applications.
+- Custom applications donât store data locally on the image. These images are stateless and should only contain applications.
 - The image does not contain data that can be lost.
 - The image size should be a multiple of MBs. If you try to upload an image that is not an exact multiple, the upload will fail.
 - The image size must be 127 GB or smaller. 
@@ -42,4 +38,4 @@ The requirements for the image that can be uploaded for use with Azure RemoteApp
 - The image must be SYSPREPed using the parameters **/oobe /generalize /shutdown** (DO NOT use the **/mode:vm** parameter).
 - Uploading your VHD from a snapshot chain is not supported.
  
-See [Create an Azure RemoteApp image](remoteapp-imageoptions.md) for more information about creating images for Azure RemoteApp.
+See [Create an Azure RemoteApp image](/documentation/articles/remoteapp-imageoptions) for more information about creating images for Azure RemoteApp.

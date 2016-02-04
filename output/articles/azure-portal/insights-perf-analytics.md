@@ -1,23 +1,19 @@
 <properties 
-	pageTitle="Monitor Azure web app performance" 
+	pageTitle="Monitor Azure web site performance" 
 	description="Chart load and response time, dependency information and set alerts on performance." 
 	services="azure-portal"
     documentationCenter="na"
 	authors="alancameronwills" 
 	manager="douge"/>
 
-<tags 
-	ms.service="azure-portal" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/23/2015" 
-	ms.author="awills"/>
+<tags
+	ms.service="azure-portal"
+	ms.date="09/23/2015"
+	wacn.date=""/>
 
-# Monitor Azure web app performance
+# Monitor Azure web site performance
 
-In the [Azure Portal](http://portal.azure.com) you can set up monitoring to collect the  statistics and details on the application dependencies in your [Azure web apps](../app-service-web/app-service-web-overview.md) or [virtual machines](../virtual-machines/virtual-machines-about.md).
+In the [Azure Management Portal](http://manage.windowsazure.cn) you can set up monitoring to collect the  statistics and details on the application dependencies in your [Azure web sites](/home/features/web-site/) or [virtual machines](/documentation/articles/virtual-machines-about).
 
 Azure supports Application performance monitoring (or, *APM*) by leveraging *extensions*. These extensions are installed into your application and collect the data and report back to the monitoring services. 
 
@@ -25,11 +21,11 @@ Application Insights and New Relic are two of the performance monitoring extensi
 
 ## Enable an extension
 
-1. Click **Browse** and select the web app or virtual machine you would like to instrument.
+1. Click **Browse** and select the web site or virtual machine you would like to instrument.
 
 2. Add the Application Insights or the New Relic extension. 
 
-    If you're instrumenting a web app:
+    If you're instrumenting a web site:
 
 ![Settings, Extensions, Add, Application Insights](./media/insights-perf-analytics/05-extend.png)
 
@@ -49,13 +45,13 @@ When you're asked to login, use the credentials for your Azure account.
 
 You can test the telemetry by running the app in your development machine, or you can just go ahead and republish it. 
 
-The SDK provides an API so that you can [write custom telemetry](../app-insights-api-custom-events-metrics.md) to track usage.
+The SDK provides an API so that you can [write custom telemetry](/documentation/articles/app-insights-api-custom-events-metrics) to track usage.
 
 ## Explore the data
 
 Use your application for a while to generate some telemetry.
 
-1. Then, from your web app or virtual machine blade, you'll see the extension installed.
+1. Then, from your web site or virtual machine blade, you'll see the extension installed.
 2. Click on the row that represents your application to navigate to that provider:
 ![Click Refresh](./media/insights-perf-analytics/06-overview.png)
 
@@ -78,9 +74,9 @@ Once you get to the blade, for Application Insights, for example, you can:
 
 ## Next steps
 
-* [Monitor service health metrics](insights-how-to-customize-monitoring.md) to make sure your service is available and responsive.
-* [Enable monitoring and diagnostics](insights-how-to-use-diagnostics.md) to collect detailed high-frequency metrics on your service.
-* [Receive alert notifications](insights-receive-alert-notifications.md) whenever operational events happen or metrics cross a threshold.
-* Use [Application Insights for JavaScript apps and web pages](../app-insights-web-track-usage.md) to get client analytics about the browsers that visit a web page.
-* [Monitor availability and responsiveness of any web page](../app-insights-monitor-web-app-availability.md) with Application Insights so you can find out if your page is down.
+* [Monitor service health metrics](/documentation/articles/insights-how-to-customize-monitoring) to make sure your service is available and responsive.
+* [Enable monitoring and diagnostics](/documentation/articles/insights-how-to-use-diagnostics) to collect detailed high-frequency metrics on your service.
+* [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) whenever operational events happen or metrics cross a threshold.
+* Use [Application Insights for JavaScript apps and web pages](/documentation/articles/app-insights-web-track-usage) to get client analytics about the browsers that visit a web page.
+* [Monitor availability and responsiveness of any web page](/documentation/articles/app-insights-monitor-web-app-availability) with Application Insights so you can find out if your page is down.
  

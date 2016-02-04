@@ -42,10 +42,10 @@ To create a service namespace:
 
 1.  Log on to the [Azure Management Portal][].
 
-2.  In the left navigation pane of the Azure Management Portal, click
+2.  In the left navigation pane of the portal, click
     **Service Bus**.
 
-3.  In the lower pane of the Azure Management Portal, click **Create**.
+3.  In the lower pane of the portal, click **Create**.
 
 	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png)
 
@@ -65,7 +65,7 @@ To create a service namespace:
 
 	![](./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-27.png)
 
-	The namespace you created then appears in the Azure Management Portal and takes a moment to activate. Wait until the status is **Active** before continuing.
+	The namespace you created then appears in the portal and takes a moment to activate. Wait until the status is **Active** before continuing.
 
 ## Obtain the default management credentials for the namespace
 
@@ -94,7 +94,6 @@ To install the NuGet package in your application, do the following:
     Service Bus** item. Click **Install** to complete the installation, then close the following dialog box.
 
 	![](./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-13.png)
-
 
 ## Use Service Bus to expose and consume a SOAP web service with TCP
 
@@ -289,6 +288,6 @@ Now that you've learned the basics of the Service Bus relay service, follow thes
   [Get the Service Bus NuGet Package]: #get_nuget_package
   [How to: Use Service Bus to Expose and Consume a SOAP Web Service  with TCP]: #how_soap
   [Azure Management Portal]: http://manage.windowsazure.cn
-  [Shared Access Signature Authentication with Service Bus]: /documentation/articles/service-bus-shared-access-signature-authentication
+  [Shared Access Signature Authentication with Service Bus]: <!-- deleted by customization service-bus-shared-access-signature-authentication.md --><!-- keep by customization: begin --> /documentation/articles/service-bus-shared-access-signature-authentication <!-- keep by customization: end -->
   [Azure samples]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
   [overview of Service Bus samples]: /documentation/articles/service-bus-samples

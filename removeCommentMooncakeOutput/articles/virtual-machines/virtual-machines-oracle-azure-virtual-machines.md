@@ -15,6 +15,9 @@
 
 # Oracle software hosted on Azure virtual machines
 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+ 
+
 Set up your first or next dev/test or production Oracle database running on a virtual machine in Azure infrastructure services. Take advantage of ease of configuration and the ability to quickly expand the Oracle database workload to include new capacity.
 
 ## Oracle virtual machine images
@@ -36,14 +39,6 @@ See [Miscellaneous considerations for Oracle virtual machine images](/documentat
 ## Oracle WebLogic Server 12c and Oracle Database 12c
 
 [Creating an Oracle WebLogic Server 12c and Oracle Database 12c virtual machine in Azure](/documentation/articles/virtual-machines-creating-oracle-weblogic-server-12c-oracle-database-12c-virtual-machine) steps you through virtual machine and database creation and configuration.
-
-## Oracle WebLogic Server 12c cluster
-
-[Creating an Oracle WebLogic Server 12c cluster in Azure](/documentation/articles/virtual-machines-creating-oracle-weblogic-server-12c-cluster) steps you through cluster creation and application deployment.
-
-## Oracle WebLogic Server 11g
-
-[Creating an Oracle WebLogic Server 11g virtual machine in Azure](/documentation/articles/virtual-machines-creating-oracle-weblogic-server-11g-virtual-machine) steps you through virtual machine creation, configuration, and application installation.
 
 ## Prepare an Oracle Linux virtual machine
 

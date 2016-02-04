@@ -11,7 +11,7 @@ deleted:
 		2. Click **Select a file** under **Upload a certificate file** to browse for a .cer or .pfx file.  If you select a .pfx file, specify a password and whether it should be allowed to be exported.
 		1. Click **Create** to save the new certificate asset.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -26,11 +26,14 @@ deleted:
 		This example uses the **UseConnectionObject** parameter set for the Send-**TwilioSMS activity** that uses a connection object for authentication to the service.  A [pipeline link](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow) must be used here since a sequence link would return a collection containing containing a single object which the Connection parameter is not expecting.
 		
 		![](./media/automation-certificates/add-certificate.png)
-		
-		
+
+reason: (Graphical Runbook)
+
+deleted:
+
 		## See Also
 		
 		- [Links in graphical authoring](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
 
-reason: ()
+reason: (Graphical Runbook)
 

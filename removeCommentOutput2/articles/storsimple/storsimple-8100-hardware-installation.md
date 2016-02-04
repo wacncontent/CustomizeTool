@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Install your StorSimple 8100 device | Microsoft Azure"
+   pageTitle="Install your StorSimple 8100 device | Windows Azure"
    description="Describes how to unpack, rack mount, and cable your StorSimple 8100 device before you deploy and configure the software."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="10/13/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/01/2015"
+	wacn.date=""/>
 
 # Unpack, rack-mount, and cable your StorSimple 8100 device
 
@@ -38,7 +34,7 @@ Next, complete the following steps to unpack your device.
 
 #### To unpack your device
 
-1. Inspect the box and the packaging foam for crushes, cuts, water damage, or any other obvious damage. If the box or packaging is severely damaged, do not open the box. Please [contact Microsoft Support](storsimple-contact-microsoft-support.md) to help you assess whether the device is in good working order. 
+1. Inspect the box and the packaging foam for crushes, cuts, water damage, or any other obvious damage. If the box or packaging is severely damaged, do not open the box. Please [contact Microsoft Support](storsimple-contact-microsoft-support.md) to help you assess whether the device is in good working order.
 
 2. Unpack the box. The following image shows the unpacked view of your StorSimple device.
 
@@ -67,7 +63,7 @@ Next, complete the following steps to unpack your device.
    - 1 rack-mount kit (2 side rails with mounting hardware)
    - Getting Started documentation
 
-    If you did not receive any of the items listed above, [contact Microsoft Support](storsimple-contact-microsoft-support.md). 
+    If you did not receive any of the items listed above, [contact Microsoft Support](storsimple-contact-microsoft-support.md).
 
 The next step is to rack-mount your device. 
 
@@ -194,7 +190,7 @@ Before you begin the cabling of your device, you will need:
 
 - Provided 4 QSFP-to-SFP+ adapters for use with 10 GbE network interfaces
 
-- [Supported hardware for 10 GbE network interfaces on your StorSimple device](storsimple-supported-hardware-for-10-gbe-network-interfaces.md)
+- [Supported hardware for 10 GbE network interfaces on your StorSimple device](storsimple-supported-hardware-for-10-gbe-network-interfaces.md) 
 
 
 ### Power cabling
@@ -248,7 +244,7 @@ To support this redundant controller failover, you need to cable your device net
 When cabling the device, the minimum configuration requires:
 
 
-- At least two network interfaces connected on each controller with one for cloud access and one for iSCSI. The DATA 0 port is automatically enabled and configured via the serial console of the device. Apart from DATA 0, another data port also needs to be configured through the Management Portal. In this case, connect DATA 0 port to the primary LAN (network with Internet access). The other data ports can be connected to SAN/iSCSI LAN (VLAN) segment of the network, depending on the intended role.
+- At least two network interfaces connected on each controller with one for cloud access and one for iSCSI. The DATA 0 port is automatically enabled and configured via the serial console of the device. Apart from DATA 0, another data port also needs to be configured through the Azure Management Portal. In this case, connect DATA 0 port to the primary LAN (network with Internet access). The other data ports can be connected to SAN/iSCSI LAN (VLAN) segment of the network, depending on the intended role.
 
 - Identical interfaces on each controller connected to the same network to ensure availability if a controller failover occurs. For instance, if you choose to connect DATA 0 and DATA 3 for one of the controllers, you need to connect the corresponding DATA 0 and DATA 3 on the other controller.
 	
@@ -261,7 +257,7 @@ Keep in mind for high availability and performance:
 
 For more information, refer to the **Network interfaces** under the [High availability requirements for your StorSimple device](storsimple-system-requirements/#high-availability-requirements-for-storsimple.md).
 
->[AZURE.NOTE] If using SFP+ transceivers with your 10 GbE network interfaces, use the provided QSFP-SFP+ adapters. More information on [Supported hardware for 10 GbE network interfaces on your StorSimple device](storsimple-supported-hardware-for-10-gbe-network-interfaces.md)
+>[AZURE.NOTE] If using SFP+ transceivers with your 10 GbE network interfaces, use the provided QSFP-SFP+ adapters. More information on [Supported hardware for 10 GbE network interfaces on your StorSimple device](storsimple-supported-hardware-for-10-gbe-network-interfaces.md) 
     
 
    
@@ -289,4 +285,4 @@ Your device is now cabled for power, network access, and serial connectivity. Th
 
 ## Next steps
 
-Learn how to [deploy and configure your on-premises StorSimple device](storsimple-deployment-walkthrough.md) 
+Learn how to [deploy and configure your on-premises StorSimple device](/documentation/articles/storsimple-deployment-walkthrough) 

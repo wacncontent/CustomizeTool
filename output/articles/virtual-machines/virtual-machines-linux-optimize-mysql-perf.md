@@ -10,12 +10,15 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="05/21/2015"
+	ms.date="12/15/2015"
 	wacn.date=""/>
 
 #Optimizing MySQL Performance on Azure Linux VMs
 
 There are many factors that impact MySQL performance on Azure, both in virtual hardware selection and software configuration. This article focuses on optimizing performance through storage, system, and database configurations.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+
 
 ##Utilizing RAID on an Azure virtual machine
 Storage is the key factor that impacts database performance in cloud environments.  Compared to a single disk, RAID can provide faster access via concurrency.  Refer to [Standard RAID Levels](http://en.wikipedia.org/wiki/Standard_RAID_levels) for more detail.   
@@ -155,7 +158,7 @@ For example, edit  the vim /etc/fstab file, adding the noatime as shown below.
 
 	# CLOUD_IMG: This file was created/modified by the Cloud Image build process
 	UUID=3cc98c06-d649-432d-81df-6dcd2a584d41       /        ext4   defaults,discard        0 0
-	#Add the “noatime” option below to disable atime logging
+	#Add the "noatime" option below to disable atime logging
 	UUID="431b1e78-8226-43ec-9460-514a9adf060e"     /RAID0   xfs   defaults,nobootwait, noatime 0 0
 	/dev/sdb1       /mnt    auto    defaults,nobootwait,comment=cloudconfig 0       2
 
@@ -193,8 +196,8 @@ Run the following commands:
 ###Step 3: Ensure that the limits are updated at boot time
 Put the following startup commands in the /etc/rc.local file so it will take effect during every boot time.  
 
-	echo “ulimit -SHn 65536” >>/etc/rc.local
-	echo “ulimit -SHu 65536” >>/etc/rc.local
+	echo "ulimit -SHn 65536" >>/etc/rc.local
+	echo "ulimit -SHu 65536" >>/etc/rc.local
 
 ##MySQL database optimization
 You can use the same performance tuning strategy to configure MySQL on Azure as on an on-premises machine.  
@@ -234,7 +237,7 @@ Please note that by default this is not enabled. Turning on the slow query log m
 ###Step 2: Restart mysql server
 	service  mysql  restart
 
-###Step 3: Check whether the setting is taking effect using the “show” command
+###Step 3: Check whether the setting is taking effect using the "show" command
 
 ![][7]   
 
@@ -272,7 +275,7 @@ The following are sample performance test data produced on targeted lab environm
 
 **Test commands:**
 
-	mysqlslap -p0ps.123 --concurrency=2 --iterations=1 --number-int-cols=10 --number-char-cols=10 -a --auto-generate-sql-guid-primary --number-of-queries=10000 --auto-generate-sql-load-type=write –engine=innodb
+	mysqlslap -p0ps.123 --concurrency=2 --iterations=1 --number-int-cols=10 --number-char-cols=10 -a --auto-generate-sql-guid-primary --number-of-queries=10000 --auto-generate-sql-load-type=write -engine=innodb
 
 **MySQL Performance (OLTP) Comparison with Different RAID Levels**  
 ![][12]
@@ -305,7 +308,7 @@ Note the file size used for this testing is 30GB and 1GB respectively, with RAID
 
 **Test commands:**
 
-	mysqlslap -p0ps.123 --concurrency=2 --iterations=1 --number-int-cols=10 --number-char-cols=10 -a --auto-generate-sql-guid-primary --number-of-queries=10000 --auto-generate-sql-load-type=write –engine=innodb,misam
+	mysqlslap -p0ps.123 --concurrency=2 --iterations=1 --number-int-cols=10 --number-char-cols=10 -a --auto-generate-sql-guid-primary --number-of-queries=10000 --auto-generate-sql-load-type=write -engine=innodb,misam
 
 **The configuration setting for default and optmization is as follows:**
 

@@ -32,7 +32,7 @@ AMQP 1.0 support is available in Service Bus SDK version 2.1 or later. You can d
 
 By default, the Service Bus .NET client library communicates with the Service Bus service using a dedicated SOAP-based protocol. To use AMQP 1.0 instead of the default protocol requires explicit configuration on the Service Bus connection string as described in the next section. Other than this change, application code remains basically unchanged when using AMQP 1.0.
 
-In the current release, there are a few API features that are not supported when using AMQP. These unsupported features are listed later in the section [Unsupported features and restrictions](#unsupported-features-and-restrictions). Some of the advanced configuration settings also have a different meaning when using AMQP. None of these settings are used in this article, but more details are available in the [Service Bus AMQP overview](/documentation/articles/service-bus-amqp-dotnet#unsupported-features-restrictions-and-behavioral-differences).
+In the current release, there are a few API features that are not supported when using AMQP. These unsupported features are listed later in the section [Unsupported features and restrictions](#unsupported-features-and-restrictions). Some of the advanced configuration settings also have a different meaning when using AMQP. None of these settings are used in this article, but more details are available in the [Service Bus AMQP overview](/documentation/articles/service-bus-amqp-dotnet/#unsupported-features-restrictions-and-behavioral-differences).
 
 ### Configure via App.config
 
@@ -59,7 +59,7 @@ The value of the **Microsoft.ServiceBus.ConnectionString** setting is the Servic
 Endpoint=sb://[namespace].servicebus.chinacloudapi.cn;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp
 ```
 
-Where `[namespace]` and `[SAS key]` are obtained from the Azure Management Portal. For more information, see [How to Use Service Bus Queues][].
+Where `[namespace]` and `[SAS key]` are obtained from the [Azure Management Portal][]. For more information, see [How to use Service Bus queues][].
 
 When using AMQP, the connection string is appended with `;TransportType=Amqp`, which tells the client library to make its connection to Service Bus using AMQP 1.0.
 
@@ -287,7 +287,7 @@ Received message with JMSMessageID = ID:acbca67f03c346de9b7893026f97ddeb
 exit
 ```
 
-## Unsupported features and restrictions
+## <a name="unsupported-features-and-restrictions"></a>Unsupported features and restrictions
 
 The following features of the .NET Service Bus API are not currently supported when using AMQP:
 
@@ -318,3 +318,4 @@ Now that you've read an overview of Service Bus and AMQP with .NET, see the foll
 * [How to use the Java Message Service (JMS) API with Service Bus & AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)
 * [How to Use Service Bus Queues](/documentation/articles/service-bus-dotnet-how-to-use-queues)
  
+[Azure Management Portal]: http://manage.windowsazure.cn

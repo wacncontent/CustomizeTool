@@ -9,11 +9,16 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/10/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 
 # How to: define a custom API endpoint in a .NET backend mobile service
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 - [JavaScript backend](/documentation/articles/mobile-services-javascript-backend-define-custom-api)

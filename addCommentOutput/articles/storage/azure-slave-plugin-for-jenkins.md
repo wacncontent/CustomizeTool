@@ -9,9 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="09/01/2015"
+	ms.date="11/19/2015"
 	wacn.date=""/>
-
 # How to use the Azure slave plug-in with Jenkins Continuous Integration
 
 You can use the Azure slave plug-in for Jenkins to provision slave nodes on Azure when running distributed builds.

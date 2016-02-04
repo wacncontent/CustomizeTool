@@ -9,13 +9,13 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/08/2015"
+	ms.date="11/16/2015"
 	wacn.date=""/>
 
 # Password Management Frequently Asked Questions
 The following are some frequently asked questions for all things related to password management. 
 
-If you find yourself with a question that you don't know the answer to, or are looking fror help with a particular problem you are facing, you can read on below to see if we've covered it already.  If we haven't already, don't worry! Feel free to ask any question you have that's not covered here on the [Azure AD Forums](https://social.msdn.microsoft.com/Forums/zh-cn/home) and we'll get back to you as soon as we can.
+If you find yourself with a question that you don't know the answer to, or are looking fror help with a particular problem you are facing, you can read on below to see if we've covered it already.  If we haven't already, don't worry! Feel free to ask any question you have that's not covered here on the [Azure AD Forums](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=WindowsAzureAD) and we'll get back to you as soon as we can.
 
 This FAQ is split into the following sections:
 
@@ -51,7 +51,7 @@ This FAQ is split into the following sections:
 
  - **Q:  How does the registration portal know which options to show my users?**
  
- > **A:** The password reset registration portal only shows the options that you have enabled for your users under the User Password Reset Policy section of your directory’s Configure tab. This means that if you do not enable, say, security questions, then users will not be able to register for that option.
+ > **A:** The password reset registration portal only shows the options that you have enabled for your users under the User Password Reset Policy section of your directory's Configure tab. This means that if you do not enable, say, security questions, then users will not be able to register for that option.
 
  - **Q:  When is a user considered registered?**
  
@@ -68,15 +68,15 @@ This FAQ is split into the following sections:
  
  > **A:** The password reset UI, SMS messages, and voice calls are localized in the same 40 languages that are supported in Office 365. Those are: Arabic, Bulgarian, Chinese Simplified, Chinese Traditional, Croatian, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Italian, Japanese, Kazakh, Korean, Latvian, Lithuanian, Malay (Malaysia), Norwegian (Bokmål), Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Serbian (Latin), Slovak, Slovenian, Spanish, Swedish, Thai, Turkish, Ukrainian, and Vietnamese.
 
- - **Q:  What parts of the password reset experience get branded when I set organizational branding in my directory’s configure tab?**
+ - **Q:  What parts of the password reset experience get branded when I set organizational branding in my directory's configure tab?**
  
- > **A:** The password reset portal will show your organizational logo and will also allow you to configure the Contact your administrator link to point to a custom email or URL. Any email that gets sent by password reset will include your organization’s logo, colors (in this case red), name in the body of the email, and customized from name. See an example with all the branded elements below. To learn more, read Customizing Password Reset Look and Feel.
+ > **A:** The password reset portal will show your organizational logo and will also allow you to configure the Contact your administrator link to point to a custom email or URL. Any email that gets sent by password reset will include your organization's logo, colors (in this case red), name in the body of the email, and customized from name. See an example with all the branded elements below. To learn more, read Customizing Password Reset Look and Feel.
 
   ![][001]
 
  - **Q:  How can I educate my users about where to go to reset their passwords?**
  
- > **A:** You can send your users to https://passwordreset.microsoftonline.com directly, or you can instruct them to click on the Can’t access your account link found on any School or Work ID sign in screen. You can feel free to publish these links (or create URL redirects to them) in any place that is easily accessible to your users.
+ > **A:** You can send your users to https://passwordreset.microsoftonline.com directly, or you can instruct them to click on the Can't access your account link found on any School or Work ID sign in screen. You can feel free to publish these links (or create URL redirects to them) in any place that is easily accessible to your users.
 
  - **Q:  Can I use this page from a mobile device?**
  
@@ -84,9 +84,9 @@ This FAQ is split into the following sections:
 
  - **Q:  Do you support unlocking local active directory accounts when users reset their passwords?**
  
- > **A:** Yes, when a user resets his or her password and Password Writeback has been deployed with all versions of Azure AD Connect, or versions of Azure AD Sync 1.0.0485.0222 or later, then that user’s account will be automatically unlocked when that user resets his or her password.
+ > **A:** Yes, when a user resets his or her password and Password Writeback has been deployed with all versions of Azure AD Connect, or versions of Azure AD Sync 1.0.0485.0222 or later, then that user's account will be automatically unlocked when that user resets his or her password.
 
- - **Q:  How can I integrate password reset directly into my user’s desktop sign-in experience?**
+ - **Q:  How can I integrate password reset directly into my user's desktop sign-in experience?**
  
  > **A:** This is not possible today. However, if you absolutely need this capability and are an Azure AD Premium customer, you can install Microsoft Identity Manager at no additional cost and deploy the on-premises password reset solution found therein to solve this requirement.
 
@@ -170,13 +170,13 @@ This FAQ is split into the following sections:
 
  - **Q:  What types of accounts does Password Writeback work for?**
  
- > **A:** Password Writeback works for Federated and Password Hash Sync’d users.
+ > **A:** Password Writeback works for Federated and Password Hash Sync'd users.
 
- - **Q:  Does Password Writeback enforce my domain’s password policies?**
+ - **Q:  Does Password Writeback enforce my domain's password policies?**
  
  > **A:** Yes, Password Writeback enforces password age, history, complexity, filters and any other restriction you may put in place on passwords in your local domain.
 
- - **Q:  Is Password Writeback secure?  How can I be sure I won’t get hacked?**
+ - **Q:  Is Password Writeback secure?  How can I be sure I won't get hacked?**
  
  > **A:** Yes, Password Writeback is extremely secure. To read more about the 4 layers of security implemented by the Password Writeback service, check out the “Password Writeback security model” in How Password Writeback works.
 
@@ -185,18 +185,17 @@ This FAQ is split into the following sections:
 <br/>
 <br/>
 
-**Additional Resources**
+## Links to password reset documentation
+Below are links to all of the Azure AD Password Reset documentation pages: 
 
-
-* [What is Password Management](/documentation/articles/active-directory-passwords)
-* [How Password Management works](/documentation/articles/active-directory-passwords-how-it-works)
-* [Getting started with Password Mangement](/documentation/articles/active-directory-passwords-getting-started)
-* [Customize Password Management](/documentation/articles/active-directory-passwords-customize)
-* [Password Management Best Practices](/documentation/articles/active-directory-passwords-best-practices)
-* [How to get Operational Insights with Password Management Reports](/documentation/articles/active-directory-passwords-get-insights)
-* [Troubleshoot Password Management](/documentation/articles/active-directory-passwords-troubleshoot)
-* [Learn More](/documentation/articles/active-directory-passwords-learn-more)
-* [Password Management on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)
+* [**Reset your own password**](/documentation/articles/active-directory-passwords-update-your-own-password) - learn about how to reset or change your own password as a user of the system
+* [**How it works**](/documentation/articles/active-directory-passwords-how-it-works) - learn about the six different components of the service and what each does
+* [**Getting started**](/documentation/articles/active-directory-passwords-getting-started) - learn how to allow you users to reset and change their cloud or on-premises passwords
+* [**Customize**](/documentation/articles/active-directory-passwords-customize) - learn how to customize the look & feel and behavior of the service to your organization's needs
+* [**Best practices**](/documentation/articles/active-directory-passwords-best-practices) - learn how to quickly deploy and effectively manage passwords in your organization
+* [**Get insights**](/documentation/articles/active-directory-passwords-get-insights) - learn about our integrated reporting capabilities
+* [**Troubleshooting**](/documentation/articles/active-directory-passwords-troubleshoot) - learn how to quickly troubleshoot problems with the service
+* [**Learn more**](/documentation/articles/active-directory-passwords-learn-more) - go deep into the technical details of how the service works
 
 
 [001]: ./media/active-directory-passwords-faq/001.jpg "Image_001.jpg"

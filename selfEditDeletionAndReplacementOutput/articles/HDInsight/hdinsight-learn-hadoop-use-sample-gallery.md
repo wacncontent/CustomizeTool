@@ -4,13 +4,13 @@ deleted:
 
 		- Twitter trend analysis
 
-reason: ()
+reason: (google facebook twitter)
 
 deleted:
 
 		[AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -18,7 +18,7 @@ deleted:
 		
 		<center><a href="https://www.youtube.com/embed/7ePbHot1SN4">https://www.youtube.com/embed/7ePbHot1SN4></a></center>
 
-reason: ()
+reason: (video)
 
 replacement:
 
@@ -30,7 +30,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -52,5 +52,5 @@ replaced by:
 		5.	Enter the Hadoop user name and password for the cluster.
 		6.	Click **Getting Started Gallery** at the top of the page.
 
-reason: ()
+reason: (the new Ibiza portal)
 

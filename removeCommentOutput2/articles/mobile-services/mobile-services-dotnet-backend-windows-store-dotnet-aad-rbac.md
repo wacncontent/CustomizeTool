@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/03/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Role Based Access Control in Mobile Services using JavaScript and the Azure Active Directory
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-rbac](../includes/mobile-services-selector-rbac.md)]
 
@@ -175,7 +180,7 @@ In this section you will create a new custom authorization attribute that can be
         // Use ADAL and the authentication app settings from the Mobile Service to get an AAD access token
         private async Task<string> GetAADToken()
         {
-            // Try to get the required AAD authentication app settings from the mobile service.  
+            // Try to get the required AAD authentication app settings from the mobile service.
             if (!(services.Settings.TryGetValue("AAD_CLIENT_ID", out clientid) &
                   services.Settings.TryGetValue("AAD_CLIENT_KEY", out clientkey) &
                   services.Settings.TryGetValue("AAD_TENANT_DOMAIN", out tenantdomain)))
@@ -295,10 +300,10 @@ In this section you will create a new custom authorization attribute that can be
                             if (clientAadCredentials != null)
                             {
                                 isAuthorized = CheckMembership(clientAadCredentials.ObjectId);
-                            }
                         }
                     }
                 }
+            }
             }
             catch (Exception e)
             {

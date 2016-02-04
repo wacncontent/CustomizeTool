@@ -20,7 +20,7 @@
 
 If you're developing a desktop application, Azure AD makes it simple and straightforward for you to authenticate your users with their Active Directory accounts.  It also enables your application to securely consume any web API protected by Azure AD, such as the Office 365 APIs or the Azure API.
 
-For Android clients that need to access protected resources, Azure AD provides the Active Directory Authentication Library, or ADAL.  ADAL’s sole purpose in life is to make it easy for your app to get access tokens.  To demonstrate just how easy it is, here we’ll build an Android To-Do List application that:
+For Android clients that need to access protected resources, Azure AD provides the Active Directory Authentication Library, or ADAL.  ADALâs sole purpose in life is to make it easy for your app to get access tokens.  To demonstrate just how easy it is, here weâll build an Android To-Do List application that:
 
 -	Gets access tokens for calling a To-Do List API using the [OAuth 2.0 authentication protocol](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
 -	Gets a user's To-Do List

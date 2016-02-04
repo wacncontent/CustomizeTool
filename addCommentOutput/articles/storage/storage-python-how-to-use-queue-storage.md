@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="08/25/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # How to use Queue storage from Python
@@ -44,7 +44,7 @@ The following code creates a **QueueService** object using the storage account n
 
 ## How To: Insert a Message into a Queue
 
-To insert a message into a queue, use the **put\_message** method to
+To insert a message into a queue, use the <!-- deleted by customization **put\_message** --><!-- keep by customization: begin --> **put_message** <!-- keep by customization: end --> method to
 create a new message and add it to the queue.
 
 	queue_service.put_message('taskqueue', 'Hello World')
@@ -53,8 +53,13 @@ create a new message and add it to the queue.
 ## How To: Peek at the Next Message
 
 You can peek at the message in the front of a queue without removing it
-from the queue by calling the **peek\_messages** method. By default,
+from the queue by calling the <!-- deleted by customization **peek\_messages** --><!-- keep by customization: begin --> **peek_messages** <!-- keep by customization: end --> method. By default,
+<!-- deleted by customization
 **peek\_messages** peeks at a single message.
+-->
+<!-- keep by customization: begin -->
+**peek_messages** peeks at a single message.
+<!-- keep by customization: end -->
 
 	messages = queue_service.peek_messages('taskqueue')
 	for message in messages:
@@ -64,14 +69,14 @@ from the queue by calling the **peek\_messages** method. By default,
 ## How To: Dequeue the Next Message
 
 Your code removes a message from a queue in two steps. When you call
-**get\_messages**, you get the next message in a queue by default. A
-message returned from **get\_messages** becomes invisible to any other
+<!-- deleted by customization **get\_messages** --><!-- keep by customization: begin --> **get_messages** <!-- keep by customization: end -->, you get the next message in a queue by default. A
+message returned from <!-- deleted by customization **get\_messages** --><!-- keep by customization: begin --> **get_messages** <!-- keep by customization: end --> becomes invisible to any other
 code reading messages from this queue. By default, this message stays
 invisible for 30 seconds. To finish removing the message from the queue,
-you must also call **delete\_message**. This two-step process of removing
+you must also call <!-- deleted by customization **delete\_message** --><!-- keep by customization: begin --> **delete_message** <!-- keep by customization: end -->. This two-step process of removing
 a message assures that when your code fails to process a message due to
 hardware or software failure, another instance of your code can get the
-same message and try again. Your code calls **delete\_message** right
+same message and try again. Your code calls <!-- deleted by customization **delete\_message** --><!-- keep by customization: begin --> **delete_message** <!-- keep by customization: end --> right
 after the message has been processed.
 
 	messages = queue_service.get_messages('taskqueue')
@@ -84,7 +89,7 @@ after the message has been processed.
 
 You can change the contents of a message in-place in the queue. If the
 message represents a work task, you could use this feature to update the
-status of the work task. The code below uses the **update\_message**
+status of the work task. The code below uses the <!-- deleted by customization **update\_message** --><!-- keep by customization: begin --> **update_message** <!-- keep by customization: end -->
 method to update a message.
 
 	messages = queue_service.get_messages('taskqueue')
@@ -97,7 +102,7 @@ There are two ways you can customize message retrieval from a queue.
 First, you can get a batch of messages (up to 32). Second, you can set a
 longer or shorter invisibility timeout, allowing your code more or less
 time to fully process each message. The following code example uses the
-**get\_messages** method to get 16 messages in one call. Then it processes
+<!-- deleted by customization **get\_messages** --><!-- keep by customization: begin --> **get_messages** <!-- keep by customization: end --> method to get 16 messages in one call. Then it processes
 each message using a for loop. It also sets the invisibility timeout to
 five minutes for each message.
 
@@ -109,7 +114,7 @@ five minutes for each message.
 ## How To: Get the Queue Length
 
 You can get an estimate of the number of messages in a queue. The
-**get\_queue\_metadata** method asks the queue service to return metadata
+<!-- deleted by customization **get\_queue\_metadata** --><!-- keep by customization: begin --> **get_queue_metadata** <!-- keep by customization: end --> method asks the queue service to return metadata
 about the queue, and the **x-ms-approximate-messages-count** should be used as the index into the returned dictionary to find the count.
 The result is only approximate because messages can be added or removed after the
 queue service responds to your request.
@@ -120,7 +125,12 @@ queue service responds to your request.
 ## How To: Delete a Queue
 
 To delete a queue and all the messages contained in it, call the
+<!-- deleted by customization
 **delete\_queue** method.
+-->
+<!-- keep by customization: begin -->
+**delete_queue** method.
+<!-- keep by customization: end -->
 
 	queue_service.delete_queue('taskqueue')
 
@@ -129,12 +139,10 @@ To delete a queue and all the messages contained in it, call the
 Now that you have learned the basics of queue storage, follow these links
 to learn about more complex storage tasks.
 
--   See the MSDN Reference: [Storing and Accessing Data in Azure][]
 -   Visit the [Azure Storage Team Blog][]
 
 For more information, see also the [Python Developer Center](/develop/python/).
 
-[Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
 [Python Azure package]: https://pypi.python.org/pypi/azure
 [Python Azure Storage package]: https://pypi.python.org/pypi/azure-storage 

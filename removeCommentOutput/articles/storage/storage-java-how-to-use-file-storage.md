@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="09/01/2015"
+	ms.date="10/26/2015"
 	wacn.date=""/>
 
 # How to use File Storage from Java
@@ -208,11 +208,12 @@ If you would like to learn more about other Azure storage APIs, follow these lin
 - [Azure Storage Client SDK Reference]
 - [Azure Storage REST API]
 - [Azure Storage Team Blog]
+- [Transfer data with the AzCopy command-line utility](/documentation/articles/storage-use-azcopy)
 
 [Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
-[Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+[Azure Storage Client SDK Reference]: http://azure.github.io/azure-storage-java/
+[Azure Storage REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
  

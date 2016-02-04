@@ -7,9 +7,9 @@
    manager="douge"
    editor="tglee" />
 <tags
-	ms.service="multiple"
-	ms.date="08/13/2015"
-	wacn.date=""/>
+   ms.service="multiple"
+   ms.date="08/13/2015"
+   wacn.date="" />
 
 # Publish-WebApplicationWebSite (Windows PowerShell script)
 
@@ -18,7 +18,7 @@
 Publishes a web project to an Azure website. The script creates the required resources in your Azure subscription if they don't exist.
 
 	Publish-WebApplicationWebSite
-	–Configuration <configuration>
+	âConfiguration <configuration>
 	-SubscriptionName <subscriptionName>
 	-WebDeployPackage <packageName>
 	-DatabaseServerPassword @{Name = "name"; Password = "password"}
@@ -54,7 +54,7 @@ The name of the Azure subscription that you want to create the website in.
 
 ## WebDeployPackage
 
-The path to the web deployment package to publish to the website. You can create this package by using the Publish Web wizard in Visual Studio. For more information, see [Get started with Azure Cloud Services and ASP.NET](/documentation/articles/vs-azure-tools-publish-webapplicationwebsite-windows-powershell-script/).
+The path to the web deployment package to publish to the website. You can create this package by using the Publish Web wizard in Visual Studio. See [How to: Create a Web Deployment Package in Visual Studio](/documentation/articles/vs-azure-tools-publish-webapplicationwebsite-windows-powershell-script/).
 
 |Parameter|Default value|
 |---|---|
@@ -93,7 +93,7 @@ If true, print messages from the script to the output stream.
 
 ## Remarks
 
-For a complete explanation of how to use the script to create Dev and Test environments, see [Using Windows PowerShell Scripts to Publish to Dev and Test Environments](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts).
+For a complete explanation of how to use the script to create Dev and Test environments, see [Using Windows PowerShell Scripts to Publish to Dev and Test Environments](https://msdn.microsoft.com/zh-cn/library/azure/dn642480.aspx).
 
 The JSON configuration file specifies the details of what is to be deployed. It includes the information that you specified when you created the project, such as the name and username for the website. It also includes the database to provision, if any. The following code shows an example JSON configuration file:
 
@@ -123,4 +123,4 @@ You can edit the JSON configuration file to change what is deployed. A webSite s
 
 ## Next steps
 
-For more information, see [Publish-WebApplicationVM (Windows PowerShell script)](/documentation/articles/vs-azure-tools-publish-webapplicationvm)
+[Publish-WebApplicationVM (Windows PowerShell script)](https://msdn.microsoft.com/zh-cn/library/azure/dn689112.aspx)

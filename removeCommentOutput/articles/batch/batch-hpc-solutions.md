@@ -29,7 +29,7 @@ Azure also offers development tools and services for organizations and software 
 
 ## Background: Batch and HPC applications
 
-Unlike web applications and many line-of-business applications, batch and HPC applications have a defined beginning and end, and they can run on a schedule or on demand, sometimes for hours or longer. Most fall into two main categories: *intrinsically parallel* (sometimes called “embarrassingly parallel”, because the problems they solve lend themselves to running in parallel on multiple computers or processors) and *tightly coupled*. See the following table for more about these application types. Some Azure solution approaches work better for one type or the other.
+Unlike web sites and many line-of-business applications, batch and HPC applications have a defined beginning and end, and they can run on a schedule or on demand, sometimes for hours or longer. Most fall into two main categories: *intrinsically parallel* (sometimes called “embarrassingly parallel”, because the problems they solve lend themselves to running in parallel on multiple computers or processors) and *tightly coupled*. See the following table for more about these application types. Some Azure solution approaches work better for one type or the other.
 
 >[AZURE.NOTE] In Batch and HPC solutions, a running instance of an application is typically called a *job*, and each job might get divided into *tasks*. And the clustered compute resources for the application are often called *compute nodes*.
 
@@ -56,11 +56,11 @@ You can readily migrate many applications that are designed to run in on-premise
 
 ### Big Compute or Big Data?
 
-The dividing lines between Big Compute and Big Data applications aren’t always clear, and some applications may have characteristics of both. Both involve running large-scale computations, usually on clusters of computers that run on-premises, in the cloud, or both. But the solution approaches and supporting tools might differ.
+The dividing lines between Big Compute and Big Data applications aren't always clear, and some applications may have characteristics of both. Both involve running large-scale computations, usually on clusters of computers that run on-premises, in the cloud, or both. But the solution approaches and supporting tools might differ.
 
 • **Big Compute** tends to involve applications that rely on CPU power and memory, such as engineering simulations, financial risk modeling, and digital rendering. The clusters that power a Big Compute solution might include computers with specialized multicore processors to perform raw computation, and specialized, high speed networking hardware to connect the computers.
 
-• **Big Data** solves data analysis problems that involve large amounts of data that can’t be managed by a single computer or database management system, such as large volumes of web logs or other business intelligence data. Big Data tends to rely more on disk capacity and I/O performance than on CPU power, and a Big Data solution often uses specialized tools such as Apache Hadoop to manage the cluster and partition the data. (For information about Azure HDInsight and other Azure Hadoop solutions, see [Hadoop](http://azure.microsoft.com/solutions/hadoop/).)
+• **Big Data** solves data analysis problems that involve large amounts of data that can't be managed by a single computer or database management system, such as large volumes of web logs or other business intelligence data. Big Data tends to rely more on disk capacity and I/O performance than on CPU power, and a Big Data solution often uses specialized tools such as Apache Hadoop to manage the cluster and partition the data. (For information about Azure HDInsight and other Azure Hadoop solutions, see [Hadoop](http://azure.microsoft.com/solutions/hadoop/).)
 
 ## Resource management and job scheduling
 
@@ -70,7 +70,7 @@ Running Batch and HPC application usually includes a *cluster manager* and a *jo
 
 * **Job scheduler** - Specifies the resources (such as processors or memory) an application needs, and the conditions when it will run. A job scheduler maintains a queue of jobs and allocates resources to them based on an assigned priority or other characteristics.
 
-Clustering and job scheduling tools for Windows-based and Linux-based clusters, or those developed independently, can migrate well to Azure. For example, [Microsoft HPC Pack](https://technet.microsoft.com/zh-cn/library/cc514029) is Microsoft’s free compute cluster solution for Windows Server and Windows-based computers. To reduce the need for dedicated on-premises compute resources, you can extend an HPC Pack cluster to use Azure compute nodes on demand, or deploy a cluster entirely in Azure virtual machines.
+Clustering and job scheduling tools for Windows-based and Linux-based clusters, or those developed independently, can migrate well to Azure. For example, [Microsoft HPC Pack](https://technet.microsoft.com/zh-cn/library/cc514029) is Microsoft's free compute cluster solution for Windows Server and Windows-based computers. To reduce the need for dedicated on-premises compute resources, you can extend an HPC Pack cluster to use Azure compute nodes on demand, or deploy a cluster entirely in Azure virtual machines.
 
 ### Big Compute workflows
 
@@ -130,7 +130,7 @@ Your Big Compute solution might need to include other Azure infrastructure and p
 
 * [Virtual Network](/documentation/services/virtual-network) - Creates a logically isolated section in Azure to connect Azure resources to your on-premises data center or a single client machine using IPSec; allows Big Compute applications to access on-premises data, Active Directory services, and license servers
 
-* [ExpressRoute](/documentation/services/expressroute) - Creates a private connection between Microsoft data centers and infrastructure that’s on-premises or in a co-location environment, with higher security, more reliability, faster speeds, and lower latencies than typical connections over the Internet.
+* [ExpressRoute](/documentation/services/expressroute) - Creates a private connection between Microsoft data centers and infrastructure that's on-premises or in a co-location environment, with higher security, more reliability, faster speeds, and lower latencies than typical connections over the Internet.
 
 * [Service Bus](/documentation/services/service-bus) - Provides several mechanisms for applications to communicate or exchange data, whether they are located on Azure, on another cloud platform, or in a data center.
 
@@ -182,7 +182,7 @@ Putting an entire HPC cluster in the cloud can have clear benefits.
 
 ### Scenario 3. Scale out a parallel application to Azure
 
-**When would you choose this?** - You might be running a compute-intensive application such as a Monte Carlo simulation, animation rendering, or media transcoding in on-premises workstations or a small cluster. You don’t want to manage compute resources or a job scheduler; instead, you want to focus on running your application efficiently to solve your business problems. Or you might want to offload your compute intensive application, or a third-party application, so it runs entirely as a service in the cloud.
+**When would you choose this?** - You might be running a compute-intensive application such as a Monte Carlo simulation, animation rendering, or media transcoding in on-premises workstations or a small cluster. You don't want to manage compute resources or a job scheduler; instead, you want to focus on running your application efficiently to solve your business problems. Or you might want to offload your compute intensive application, or a third-party application, so it runs entirely as a service in the cloud.
 
 Depending on the workload, you might take advantage of an existing Big Compute service in Azure, hosted by Microsoft or another service vendor, to simplify management of both the infrastructure and the application for your solution. Some services host specific applications for customers in selected industries. Some services plug into on-premises applications, enabling a hybrid solution. Others, like [Azure Media Services](/documentation/services/media-services), are dedicated platform services.
 

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Run Hive queries with Hadoop on HDInsight using PowerShell
@@ -23,7 +23,7 @@ This document provides an example of using Azure PowerShell to run a MapReduce j
 
 To complete the steps in this article, you will need the following:
 
-- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based )**
+- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based)** 
 
 - **A workstation with Azure PowerShell**. See [Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure)
 
@@ -82,6 +82,8 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 2. Open a new **Azure PowerShell** command prompt. Change directories to the location of the **mapreducejob.ps1** file, then use the following command to run the script:
 
 		.\mapreducejob.ps1
+    
+    When you run the script, you may be prompted to authenticate to your Azure subscription. You will also be asked to provide the HTTPS/Admin account name and password for the HDInsight cluster.
 
 3. When the job completes, you should receive output similar to the following:
 
@@ -99,7 +101,7 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 
 	> [AZURE.NOTE] If the **ExitCode** is a value other than 0, see [Troubleshooting](#troubleshooting).
 
-##<a id="results"></a>View the job output
+##View output
 
 The MapReduce job stored the results of the operation to Azure Blob storage, in the **wasb:///example/data/WordCountOutput** path that was specified as an argument for the job. Azure Blob storage is accessible through Azure PowerShell, but you must know the storage account name, key, and the  container that is used by your HDInsight cluster to directly access the files.
 
@@ -139,6 +141,7 @@ The following example retrieves the storage information, then downloads the outp
 		Get-AzureStorageBlob -Container $storageContainer -Blob example/data/WordCountOutput/* -Context $context | Get-AzureStorageBlobContent -Context $context
 
 > [AZURE.NOTE] This example will store the downloaded files to the  **example/data/WordCountOutput** folder in the directory that you run the script from.
+
 
 The output of the MapReduce job is stored in files with the name *part-r-#####*. Open the **example/data/WordCountOutput/part-r-00000** file in a text editor to see the words and counts produced by the job.
 

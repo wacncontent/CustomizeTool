@@ -8,7 +8,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -18,7 +18,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -28,7 +28,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -38,7 +38,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -48,5 +48,5 @@ replaced by:
 
 		* [Administer HDInsight by using the Azure Management Portal][hdinsight-admin-portal]
 
-reason: ()
+reason: (the new Ibiza portal)
 

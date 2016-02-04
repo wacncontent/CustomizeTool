@@ -8,15 +8,15 @@
    editor=""/>
 
 <tags
-	ms.service="active-directory"
-	ms.date="09/21/2015"
-	wacn.date=""/>
+   ms.service="active-directory"
+   ms.date="12/01/2015"
+   wacn.date=""/>
 
 #Manage the directory for your Office 365 subscription in Azure
 
 This article describes how to manage a directory that was created for an Office 365 subscription within the Azure Management Portal. The steps to complete this differ depending on whether you already have a subscription for Azure. You must be either the Service Administrator or a co-administrator of an Azure subscription in order to sign in to the Azure Management Portal.
 
-If you don’t yet have an Azure subscription, you just need to sign up by using the work or school account that you use to sign in to Office 365.
+If you donât yet have an Azure subscription, you just need to sign up by using the work or school account that you use to sign in to Office 365.
 
 ![](./media/active-directory-manage-o365-subscription/AAD_O365_01.png)
 
@@ -58,7 +58,7 @@ In order for Michael Smith to manage both directories while he is signed in to A
 After completing these steps, msmith@hotmail.com is a global administrator in the Contoso directory.
 
 ##To administer resources as the global admin
-Now let’s suppose that John Doe needs to sign in to the Azure Management Portal and administer the websites and database resources that are associated with the Azure subscription of msmith@hotmail.com. To do that, Michael Smith needs to complete these additional steps:
+Now letâs suppose that John Doe needs to sign in to the Azure Management Portal and administer the websites and database resources that are associated with the Azure subscription of msmith@hotmail.com. To do that, Michael Smith needs to complete these additional steps:
 
 1.	Sign in to the Management Portal by using the Service Administrator account of the Azure subscription (in this example, msmith@hotmail.com).
 2.	Transfer the subscription to the Contoso directory: click **Settings** > **Subscriptions** > select the subscription > **Edit Directory** > select **Contoso (Contoso.com)**. As part of the transfer, any work or school accounts that are co-administrators of the subscription will be removed.

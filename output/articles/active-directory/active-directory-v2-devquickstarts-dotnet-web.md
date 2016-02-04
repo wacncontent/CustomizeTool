@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/11/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # App model v2.0 preview: Add sign-in to an .NET MVC web app
@@ -63,14 +63,18 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 -	Change the class declaration to `public partial class Startup` - we've already implemented part of this class for you in another file.  In the `Configuration(...)` method, make a call to ConfigureAuth(...) to set up authentication for your web app  
 
 ```C#
-public partial class Startup
+[assembly: OwinStartup(typeof(Startup))]
+
+namespace TodoList_WebApp
 {
-    public void Configuration(IAppBuilder app)
-    {
-        ConfigureAuth(app);
-    }
-}
-```
+	public partial class Startup
+	{
+		public void Configuration(IAppBuilder app)
+		{
+			ConfigureAuth(app);
+		}
+	}
+}```
 
 -	Open the file `App_Start\Startup.Auth.cs` and implement the `ConfigureAuth(...)` method.  The parameters you provide in `OpenIdConnectAuthenticationOptions` will serve as coordinates for your app to communicate with Azure AD.  You'll also need to set up Cookie Authentication - the OpenID Connect middleware uses cookies underneath the covers.
 
@@ -139,7 +143,7 @@ public void SignOut()
 }
 ```
 
--	Now, open `Views\Shared_LoginPartial.cshtml`.  This is where you'll show the user your app's sign-in and sign-out links, and print out the user's name in a view.
+-	Now, open `Views\Shared\_LoginPartial.cshtml`.  This is where you'll show the user your app's sign-in and sign-out links, and print out the user's name in a view.
 
 ```HTML
 @if (Request.IsAuthenticated)

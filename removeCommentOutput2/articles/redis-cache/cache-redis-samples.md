@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cache"
-	ms.date="08/25/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 # Azure Redis Cache samples 
@@ -31,6 +31,7 @@ This sample shows how to:
 -	Work with Redis lists and sorted sets
 -	Store .NET objects using JsonConvert serializers
 -	Use Redis sets to implement tagging
+-	Work with Redis Cluster
 
 For more information, see the [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) documentation on github, and for more usage scenarios see the [StackExchange.Redis.Tests](https://github.com/StackExchange/StackExchange.Redis/tree/master/StackExchange.Redis.Tests) unit tests.
 
@@ -44,12 +45,6 @@ The [PHP example](https://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx#P
 
 The [Use Redis Cache as a Scale out Backplane for ASP.NET SignalR](https://github.com/rustd/RedisSamples/tree/master/RedisAsSignalRBackplane) sample demonstrates how you can use Azure Redis Cache as a SignalR backplane. For more information about backplane, see [SignalR Scaleout with Redis](http://www.asp.net/signalr/overview/performance/scaleout-with-redis).
 
-## Redis Cache customer query sample
-
-This sample demonstrates compares performance between accessing data from a cache and accessing data from persistence storage. This sample has two projects.
-
--	[Demo how Redis Cache can improve performance by Caching data](https://github.com/rustd/RedisSamples/tree/master/RedisCacheCustomerQuerySample)
--	[Seed the Database and Cache for the demo](https://github.com/rustd/RedisSamples/tree/master/SeedCacheForCustomerQuerySample)
 
 ## ASP.NET Session State and Output Caching
 
@@ -61,7 +56,7 @@ The [Manage Azure Redis Cache using Azure Management Libraries](https://github.c
 
 ## Custom monitoring sample
 
-The [Access Redis Cache Monitoring data](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) sample demonstrates how you can access monitoring data for your Azure Redis Cache outside of the Azure  preview portal.
+The [Access Redis Cache Monitoring data](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) sample demonstrates how you can access monitoring data for your Azure Redis Cache.
 
 ## A Twitter-style clone written using PHP and Redis
 

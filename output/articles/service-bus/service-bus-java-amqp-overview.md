@@ -93,6 +93,6 @@ Visit the following links to learn more about AMQP support in Service Bus.
 *    [OASIS Advanced Message Queuing Protocol (AMQP) Version 1.0 specification](http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf)
 
 [0]: ./media/service-bus-java-amqp-overview/Example1.png
-[Service Bus AMQP Developer's Guide]: /documentation/articles/service-bus-amqp-dotnet
+[Service Bus AMQP Developer's Guide]: service-bus-amqp-dotnet.md
 
  

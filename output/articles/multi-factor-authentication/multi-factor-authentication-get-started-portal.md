@@ -7,14 +7,10 @@
 	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 # Deploying the user portal for the Azure Multi-Factor Authentication Server
 
@@ -60,7 +56,7 @@ Please see Hardware and Software Requirements for hardware and software requirem
 - The Azure Multi-Factor Authentication Web Service SDK must be installed in IIS 6.x, IIS 7.x or higher on the server that the Azure Multi-Factor Authentication Server is installed on.
 - The Azure Multi-Factor Authentication Web Service SDK must be secured with an SSL certificate.
 - User Portal must be able to connect to the Azure Multi-Factor Authentication Web Service SDK over SSL.
-- User Portal must be able to authenticate to the Azure Multi-Factor Authentication Web Service SDK using the credentials of a service account that is a member of a security group called “PhoneFactor Admins”. This service account and group exist in Active Directory if the Azure Multi-Factor Authentication Server is running on a domain-joined server. This service account and group exist locally on the Azure Multi-Factor Authentication Server if it is not joined to a domain.
+- User Portal must be able to authenticate to the Azure Multi-Factor Authentication Web Service SDK using the credentials of a service account that is a member of a security group called "PhoneFactor Admins". This service account and group exist in Active Directory if the Azure Multi-Factor Authentication Server is running on a domain-joined server. This service account and group exist locally on the Azure Multi-Factor Authentication Server if it is not joined to a domain.
 
 Installing the user portal on a server other than the Azure Multi-Factor Authentication Server requires the following three steps:
 
@@ -71,7 +67,7 @@ Installing the user portal on a server other than the Azure Multi-Factor Authent
 
 ### Install the web service SDK
 
-If the Azure Multi-Factor Authentication Web Service SDK is not already installed on the Azure Multi-Factor Authentication Server, go to that server and open the Azure Multi-Factor Authentication Server. Click the Web Service SDK icon, click the Install Web Service SDK… button and follow the instructions presented. The Web Service SDK must be secured with an SSL certificate. A self-signed certificate is okay for this purpose, but it has to be imported into the “Trusted Root Certification Authorities” store of the Local Computer account on the User Portal web server so that it will trust that certificate when initiating the SSL connection. 
+If the Azure Multi-Factor Authentication Web Service SDK is not already installed on the Azure Multi-Factor Authentication Server, go to that server and open the Azure Multi-Factor Authentication Server. Click the Web Service SDK icon, click the Install Web Service SDK… button and follow the instructions presented. The Web Service SDK must be secured with an SSL certificate. A self-signed certificate is okay for this purpose, but it has to be imported into the "Trusted Root Certification Authorities" store of the Local Computer account on the User Portal web server so that it will trust that certificate when initiating the SSL connection. 
 
 <center>![Setup](./media/multi-factor-authentication-get-started-portal/sdk.png)</center>
 
@@ -88,8 +84,8 @@ Before installing the user portal on a seperate server, be aware of the followin
 2. On the Internet-facing web server, the setup file must be run with administrator rights. The easiest way to do this is to open a command prompt as an administrator and navigate to the location where the installation file was copied.
 3. Run the MultiFactorAuthenticationUserPortalSetup64 install file, change the Site and Virtual Directory name if desired.
 4. After finishing the install of the User Portal, browse to C:\inetpub\wwwroot\MultiFactorAuth (or appropriate directory based on the virtual directory name) and edit the web.config file.
-5. Locate the USE_WEB_SERVICE_SDK key and change the value from false to true. Locate the WEB_SERVICE_SDK_AUTHENTICATION_USERNAME and WEB_SERVICE_SDK_AUTHENTICATION_PASSWORD keys and set the values to the username and password of the service account that is a member of the PhoneFactor Admins security group (see the Requirements section above). Be sure to enter the Username and Password in between the quotation marks at the end of the line, (value=””/>). It is recommended to use a qualified username (e.g. domain\username or machine\username)
-6. Locate the pfup_pfwssdk_PfWsSdk setting and change the value from “http://localhost:4898/PfWsSdk.asmx” to the URL of the Web Service SDK that is running on the Azure Multi-Factor Authentication Server (e.g. https://computer1.domain.local/MultiFactorAuthWebServiceSdk/PfWsSdk.asmx). Since SSL is used for this connection, you must reference the Web Service SDK by server name and not IP address since the SSL certificate will have been issued for the server name and the URL used must match the name on the certificate. If the server name does not resolve to an IP address from the Internet-facing server, add an entry to the hosts file on that server to map the name of the Azure Multi-Factor Authentication Server to its IP address. Save the web.config file after changes have been made.
+5. Locate the USE_WEB_SERVICE_SDK key and change the value from false to true. Locate the WEB_SERVICE_SDK_AUTHENTICATION_USERNAME and WEB_SERVICE_SDK_AUTHENTICATION_PASSWORD keys and set the values to the username and password of the service account that is a member of the PhoneFactor Admins security group (see the Requirements section above). Be sure to enter the Username and Password in between the quotation marks at the end of the line, (value=""/>). It is recommended to use a qualified username (e.g. domain\username or machine\username)
+6. Locate the pfup_pfwssdk_PfWsSdk setting and change the value from "http://localhost:4898/PfWsSdk.asmx" to the URL of the Web Service SDK that is running on the Azure Multi-Factor Authentication Server (e.g. https://computer1.domain.local/MultiFactorAuthWebServiceSdk/PfWsSdk.asmx). Since SSL is used for this connection, you must reference the Web Service SDK by server name and not IP address since the SSL certificate will have been issued for the server name and the URL used must match the name on the certificate. If the server name does not resolve to an IP address from the Internet-facing server, add an entry to the hosts file on that server to map the name of the Azure Multi-Factor Authentication Server to its IP address. Save the web.config file after changes have been made.
 7. If the website that User Portal was installed under (e.g. Default Web Site) has not already been binded with a publicly-signed certificate, install the certificate on the server if not already installed, open IIS Manager and bind the certificate to the website.
 8. Open a web browser from any computer and navigate to the URL where User Portal was installed (e.g. https://www.publicwebsite.com/MultiFactorAuth ). Ensure that no certificate warnings or errors are displayed.
 
@@ -166,9 +162,9 @@ If they select the Voice Call authentication method or have been pre-configured 
 
 ![User portal trusted IPs](./media/multi-factor-authentication-get-started-portal/backupphone.png)
 
-If the user is required to use a PIN when they authenticate, the page will also prompt them to enter a PIN.  After entering their phone number(s) and PIN (if applicable), the user clicks the Call Me Now to Authenticate button.  Azure Multi-Factor Authentication will perform a phone call authentication to the user’s primary phone number.  The user must answer the phone call and enter their PIN (if applicable) and press # to move on to the next step of the self-enrollment process.   
+If the user is required to use a PIN when they authenticate, the page will also prompt them to enter a PIN.  After entering their phone number(s) and PIN (if applicable), the user clicks the Call Me Now to Authenticate button.  Azure Multi-Factor Authentication will perform a phone call authentication to the user's primary phone number.  The user must answer the phone call and enter their PIN (if applicable) and press # to move on to the next step of the self-enrollment process.   
 
-If the user selects the SMS Text authentication method or has been pre-configured to use that method, the page will prompt the user for their mobile phone number.  If the user is required to use a PIN when they authenticate, the page will also prompt them to enter a PIN.  After entering their phone number and PIN (if applicable), the user clicks the Text Me Now to Authenticate button.  Azure Multi-Factor Authentication will perform an SMS authentication to the user’s mobile phone.  The user must receive the SMS which contains a one- time-passcode (OTP) and reply to the message with that OTP plus their PIN if applicable) to move on to the next step of the self-enrollment process. 
+If the user selects the SMS Text authentication method or has been pre-configured to use that method, the page will prompt the user for their mobile phone number.  If the user is required to use a PIN when they authenticate, the page will also prompt them to enter a PIN.  After entering their phone number and PIN (if applicable), the user clicks the Text Me Now to Authenticate button.  Azure Multi-Factor Authentication will perform an SMS authentication to the user's mobile phone.  The user must receive the SMS which contains a one- time-passcode (OTP) and reply to the message with that OTP plus their PIN if applicable) to move on to the next step of the self-enrollment process. 
 
 ![User portal SMS](./media/multi-factor-authentication-get-started-portal/text.png)   
 
@@ -178,7 +174,7 @@ If the user selects the Mobile app authentication method or has been pre-configu
 
 The page then displays an activation code and a URL along with a barcode picture.  If the user is required to use a PIN when they authenticate, the page will also prompt them to enter a PIN.  The user enters the activation code and URL into the Azure Multi-Factor Authentication app or uses the barcode scanner to scan the barcode picture and clicks the Activate button.    
 
-After the activation is complete, the user clicks the Authenticate Me Now button.  Azure Multi-Factor Authentication will perform an authentication to the user’s mobile app.  The user must enter their PIN (if applicable) and press the Authenticate button in their mobile app to move on to the next step of the self-enrollment process.  
+After the activation is complete, the user clicks the Authenticate Me Now button.  Azure Multi-Factor Authentication will perform an authentication to the user's mobile app.  The user must enter their PIN (if applicable) and press the Authenticate button in their mobile app to move on to the next step of the self-enrollment process.  
 
 
 If the administrators have configured the Azure Multi-Factor Authentication Server to collect security questions and answers, the user is then taken to the Security Questions page.  The user must select four security questions and provide answers to their selected questions.    

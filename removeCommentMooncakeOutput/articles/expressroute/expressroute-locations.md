@@ -7,9 +7,9 @@
    manager="carolz"
    editor="" />
 <tags
-	ms.service="expressroute"
-	ms.date="09/22/2015"
-	wacn.date=""/>
+   ms.service="expressroute"
+   ms.date="12/02/2015"
+   wacn.date="" />
 
 # ExpressRoute partners and peering locations
 
@@ -28,7 +28,7 @@ You will have access to Azure services across all regions within a geopolitical 
 |**US**|All US Regions - China East, China North, China East 2, China North, China East, China North|Atlanta, Shanghai, Dallas, Los Angeles, Beijing, Seattle, Silicon Valley, Washington DC|
 |**South America**|Brazil South|Sao Paulo|
 |**Europe**|China North, West Europe|Amsterdam, London|
-|**Asia**|China East, China North|Hong Kong, Singapore|
+|**Asia**|China East, China North, China North, China East|Beijing, Shanghai, Hong Kong, Singapore|  
 |**Japan**|China East, Japan East|Tokyo|
 |**Australia**|Australia Southeast, Australia East|Melbourne, Sydney|
 |**India**|India West, India Central, India South|Chennai, Mumbai|

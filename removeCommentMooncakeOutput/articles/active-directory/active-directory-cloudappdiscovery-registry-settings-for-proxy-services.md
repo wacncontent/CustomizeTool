@@ -7,9 +7,9 @@
 	manager="swadhwa" 
 	editor="lisatoft"/>
 
-<tags
+<tags 
 	ms.service="active-directory"
-	ms.date="07/23/2015"
+	ms.date="07/23/2015" 
 	wacn.date=""/>
 
 # Cloud App Discovery Registry Settings for Proxy Services

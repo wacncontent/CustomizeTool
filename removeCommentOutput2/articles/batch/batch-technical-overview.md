@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure Batch technical overview | Windows Azure"
-	description="Learn about the concepts, workflows, and scenarios of the Azure Batch service for large-scale parallel and HPC workloads"
+	pageTitle="Azure Batch service basics | Windows Azure"
+	description="Learn about using the Azure Batch service for large-scale parallel and HPC workloads"
 	services="batch"
 	documentationCenter=""
 	authors="dlepow"
@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="batch"
-	ms.date="10/26/2015"
+	ms.date="11/19/2015"
 	wacn.date=""/>
 
+# Basics of Azure Batch
 
-# Technical overview of Azure Batch for large-scale parallel and HPC workloads
 Azure Batch helps you run large-scale parallel and high performance computing (HPC) applications efficiently in the cloud. It's a platform service that schedules compute-intensive work to run on a managed collection of virtual machines (compute nodes) and can scale the compute resources to meet the needs of the job. With the Batch service, you programmatically define Azure compute resources and large-scale batch jobs that run on demand or on a schedule, and you don't need to manually configure and manage an HPC cluster, individual VMs, virtual networks, or a job scheduler.
 
 ## Use cases
@@ -34,9 +34,9 @@ Examples include:
 * Genetic sequence analysis
 * Software testing
 
-Batch can also perform parallel calculations with a reduce step at the end, and other more complicated parallel workloads.
+Batch can also perform parallel calculations with a reduce step at the end, and more complex HPC workloads such as message passing interface (MPI) applications.
 
->[AZURE.NOTE]At this time Batch only supports workloads that run on Windows Server-based virtual machines. Additionally, Batch doesn't currently support message passing interface (MPI) applications.
+>[AZURE.NOTE]At this time Batch only supports workloads that run on Windows Server-based virtual machines. 
 
 For a comparison of Batch with other HPC solution options in Azure, see [Batch and HPC solutions](/documentation/articles/batch-hpc-solutions).
 
@@ -44,13 +44,13 @@ For a comparison of Batch with other HPC solution options in Azure, see [Batch a
 
 Develop with the Batch APIs to create and manage pools of compute nodes and to schedule the jobs and tasks that run on them. Write client applications or front-ends to run jobs and tasks on demand, on a schedule, or as part of a larger workflow managed by tools such as [Azure Data Factory](/documentation/services/data-factory/).
 
-See [API basics for Azure Batch](/documentation/articles/batch-api-basics) for more about the Batch concepts.
+See [Azure Batch feature overview](/documentation/articles/batch-api-basics) for more about the Batch concepts.
 
 ### Accounts you'll need
 
 + **Azure account and subscription** - If you don't have an account, you can activate your [MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/) or sign up for a [trial](/pricing/1rmb-trial/).
 
-+ **Batch account** - You use the name and URL of a Batch account and an access key as credentials when you make Batch API calls. All your Batch resources such as compute nodes, pools, jobs, and tasks are associated with a Batch account. One way to create a Batch account and manage access keys for the account is to use the [Azure preview portal](/documentation/articles/batch-account-create-portal).
++ **Batch account** - You use the name and URL of a Batch account and an access key as credentials when you make Batch API calls. All your Batch resources such as compute nodes, pools, jobs, and tasks are associated with a Batch account. One way to create a Batch account and manage access keys for the account is to use the [Azure Management Portal](/documentation/articles/batch-account-create-portal).
 
 + **Storage account** - For most Batch scenarios you'll need an Azure storage account to store your data inputs and outputs and the scripts or executables that run on the compute nodes. To create a storage account, see [About Azure storage accounts](/documentation/articles/storage-create-storage-account).
 
@@ -58,8 +58,8 @@ See [API basics for Azure Batch](/documentation/articles/batch-api-basics) for m
 
 Use these .NET libraries and tools with Visual Studio to develop and manage Azure Batch applications.
 
-+ [Batch client .NET library](http://www.nuget.org/packages/Azure.Batch/) (NuGet) – Develop client applications to run jobs with the Batch service
-+ [Batch Management .NET library](http://www.nuget.org/packages/Microsoft.Azure.Management.Batch/) (NuGet) – Manage Batch accounts
++ [Batch client .NET library](http://www.nuget.org/packages/Azure.Batch/) (NuGet) â Develop client applications to run jobs with the Batch service
++ [Batch Management .NET library](http://www.nuget.org/packages/Microsoft.Azure.Management.Batch/) (NuGet) â Manage Batch accounts
 + [Batch Explorer](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer) (GitHub) - Build this GUI application to browse, access, and update resources in a Batch account, including jobs and tasks, compute nodes and pools, and files on a compute node. See the [blog post](http://blogs.technet.com/b/windowshpc/archive/2015/01/20/azure-batch-explorer-sample-walkthrough.aspx).
 
 

@@ -10,13 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/21/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 # Create a cross-premises virtual network by using configuration tables
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
- 
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager deployment model.
 
 This topic steps you through the creation of a cross-premises virtual network by using settings previously specified in the following set of configuration tables:
 
@@ -33,7 +32,7 @@ The following procedure references the information in these tables to guide you 
 
 ## Create a new cross-premises Azure virtual network by using your configuration table settings
 
-1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).
+1. Sign in to the [Azure Management Portal].
 2. From the taskbar, click **New > Network Services > Virtual Network > Custom Create**.
 3. On the **Virtual Network Details** page:
 	- In **Name**, type the name from Item 1 in Table V.

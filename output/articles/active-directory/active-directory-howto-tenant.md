@@ -36,10 +36,10 @@ If you have previously signed up for an Azure subscription with your individual 
 To do so, follow these steps.  Alternatively, you may wish to create a new tenant and create an administrator in that tenant following a similar process.
 
 1.	Log into the [Azure Management Portal](https://manage.windowsazure.cn) with your individual account
-2.	Navigate to the “Active Directory” section of the portal (found in the left nav bar)
-3.	Select the “Default Directory” entry in the list of available directories
-4.	Click on the Users link at the top of the page.  You will see a single user in the list with value “Microsoft account” in the Sourced From column
-5.	Click “Add User” at the bottom of the page
+2.	Navigate to the "Active Directory" section of the portal (found in the left nav bar)
+3.	Select the "Default Directory" entry in the list of available directories
+4.	Click on the Users link at the top of the page.  You will see a single user in the list with value "Microsoft account" in the Sourced From column
+5.	Click "Add User" at the bottom of the page
 6.	In the Add User Form provide the following details:
     - Type of User: New user in your organization
     - User name: (choose a user name for this administrator)
@@ -47,7 +47,7 @@ To do so, follow these steps.  Alternatively, you may wish to create a new tenan
     - Role: Global Administrator
     - Alternate Email Address: (enter appropriate values)
     - Optional: Enable Multi-Factor Authentication
-    - Lastly, click on the green “CREATE” button to finalize user creation (and display the temporary password).
+    - Lastly, click on the green "CREATE" button to finalize user creation (and display the temporary password).
 7.	When you have completed the Add User Form, and receive the temporary password for the new administrative user, be sure to record this password as you will need to login with this new user in order to change the password. You can also send the password directly to the user, using an alternative e-mail.
 8.	To change the temporary password, log into https://login.chinacloudapi.cn with this new user account and change the password when requested.
 

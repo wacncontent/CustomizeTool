@@ -4,11 +4,11 @@ deleted:
 
 		- [Beeline](/documentation/articles/hdinsight-hadoop-use-hive-beeline)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		- [SSH](/documentation/articles/hdinsight-hadoop-use-hive-ssh)
 
-reason: ()
+reason: (Linux Support)
 

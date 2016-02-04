@@ -14,13 +14,13 @@
 
 # Integrate Azure AD into an Android App
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher)]
 
 [AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
 If you're developing a desktop application, Azure AD makes it simple and straightforward for you to authenticate your users with their Active Directory accounts.  It also enables your application to securely consume any web API protected by Azure AD, such as the Office 365 APIs or the Azure API.
 
-For Android clients that need to access protected resources, Azure AD provides the Active Directory Authentication Library, or ADAL.  ADAL’s sole purpose in life is to make it easy for your app to get access tokens.  To demonstrate just how easy it is, here we’ll build an Android To-Do List application that:
+For Android clients that need to access protected resources, Azure AD provides the Active Directory Authentication Library, or ADAL.  ADALâs sole purpose in life is to make it easy for your app to get access tokens.  To demonstrate just how easy it is, here weâll build an Android To-Do List application that:
 
 -	Gets access tokens for calling a To-Do List API using the [OAuth 2.0 authentication protocol](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
 -	Gets a user's To-Do List
@@ -164,7 +164,7 @@ You can get the jar file from maven the repo and drop into the *libs* folder in 
 ### Step 5: Add references to Android ADAL to your project
 
 
-2. Add a reference to your project and specify it as an Android library. If you are uncertain how to do this, [click here for more information] (http://developer.android.com/tools/projects/projects-eclipse.html)
+2. Add a reference to your project and specify it as an Android library. If you are uncertain how to do this, [click here for more information] (http://developer.android.com/intl/zh-cn/tools/projects/projects-eclipse.html) 
 
 3. Add the project dependency for debugging in to your project settings
 
@@ -282,7 +282,7 @@ You can call **acquireTokenSilent** to handle caching, and token refresh. It pro
  ```
  Broker user will be returned if account is valid.
 
- Your app manifest should have permissions to use AccountManager accounts: http://developer.android.com/reference/android/accounts/AccountManager.html
+ Your app manifest should have permissions to use AccountManager accounts: http://developer.android.com/intl/zh-cn/reference/android/accounts/AccountManager.html 
 
  * GET_ACCOUNTS
  * USE_CREDENTIALS
@@ -299,7 +299,7 @@ Library project resources can be overwritten by your application resources. This
 
 ### Broker
 
-Broker component will be delivered with Microsoft Intune's Company portal app. Account will be created in Account Manager. Account type is "com.microsoft.workaccount". It only allows single SSO account. It will create SSO cookie for this user after completing device challange for one of the apps.
+Broker component will be delivered with Intune's Company portal app. Account will be created in Account Manager. Account type is "com.microsoft.workaccount". It only allows single SSO account. It will create SSO cookie for this user after completing device challange for one of the apps.
 
 ### Authority Url and ADFS
 
@@ -310,13 +310,13 @@ Authority url needs STS instance and tenant name: https://login.chinacloudapi.cn
 ### Querying cache items
 
 ADAL provides Default cache in SharedPrefrecens with some simple cache query fucntions. You can get the current cache from AuthenticationContext with:
-```Java
+
+Java
  ITokenCacheStore cache = mContext.getCache();
-```
 You can also provide your cache implementation, if you want to customize it.
-```Java
+
+Java
 mContext = new AuthenticationContext(MainActivity.this, authority, true, yourCache);
-```
 
 ### PromptBehavior
 
@@ -326,10 +326,9 @@ ADAL provides option to specifiy prompt behavior. PromptBehavior.Auto will pop u
 
 This method does not use UI pop up and not require an activity. It will return token from cache if available. If token is expired, it will try to refresh it. If refresh token is expired or failed, it will return AuthenticationException.
 
-    ```Java
+    Java 
     Future<AuthenticationResult> result = mContext.acquireTokenSilent(resource, clientid, userId, callback );
-    ```
-
+    
 You can also make sync call with this method. You can set null to callback or use acquireTokenSilentSync.
 
 ### Diagnostics
@@ -351,7 +350,7 @@ This is obviously the first diagnostic. We try to provide helpful error messages
 You can configure the library to generate log messages that you can use to help diagnose issues. You configure logging by making the following call to configure a callback that ADAL will use to hand off each log message as it is generated.
 
 
- ```Java
+ Java 
  Logger.getInstance().setExternalLogger(new ILogger() {
      @Override
      public void Log(String tag, String message, String additionalMessage, LogLevel level, ADALError errorCode) {
@@ -360,10 +359,9 @@ You can configure the library to generate log messages that you can use to help 
       writeToLogFile(getApplicationContext(), tag +":" + message + "-" + additionalMessage);
      }
  }
- ```
-Messages can be written to a custom log file as seen below. Unfortunately, there is no standard way of getting logs from a device. There are some services that can help you with this. You can also invent your own, such as sending the file to a server.
+ Messages can be written to a custom log file as seen below. Unfortunately, there is no standard way of getting logs from a device. There are some services that can help you with this. You can also invent your own, such as sending the file to a server.
 
-```Java
+Java 
 private syncronized void writeToLogFile(Context ctx, String msg) {
        File directory = ctx.getDir(ctx.getPackageName(), Context.MODE_PRIVATE);
        File logFile = new File(directory, "logfile");
@@ -373,7 +371,6 @@ private syncronized void writeToLogFile(Context ctx, String msg) {
        osw.flush();
        osw.close();
 }
-```
 
 ##### Logging Levels
 
@@ -383,17 +380,16 @@ private syncronized void writeToLogFile(Context ctx, String msg) {
 + Verbose(More details)
 
 You set the log level like this:
-```Java
-Logger.getInstance().setLogLevel(Logger.LogLevel.Verbose);
- ```
 
+Java
+Logger.getInstance().setLogLevel(Logger.LogLevel.Verbose);
+ 
  All log messages are sent to logcat in addition to any custom log callbacks.
  You can get log to a file form logcat as shown belog:
 
- ```
-  adb logcat > "C:\logmsg\logfile.txt"
- ```
- More examples about adb cmds: https://developer.android.com/tools/debugging/debugging-log.html#startingLogcat
+   adb logcat > "C:\logmsg\logfile.txt"
+ 
+ More examples about adb cmds: https://developer.android.com/intl/zh-cn/tools/debugging/debugging-log.html#startingLogcat
 
 #### Network Traces
 
@@ -419,13 +415,13 @@ AuthenticationParameters class provides functionality to get the authorization_u
 ### Session cookies in Webview
 
 Android webview does not clear session cookies after app is closed. You can handle this with sample code below:
-```java
+
+java
 CookieSyncManager.createInstance(getApplicationContext());
 CookieManager cookieManager = CookieManager.getInstance();
 cookieManager.removeSessionCookie();
 CookieSyncManager.getInstance().sync();
-```
-More about cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
+More about cookies: http://developer.android.com/intl/zh-cn/reference/android/webkit/CookieSyncManager.html
 
 ### Resource Overrides
 
@@ -433,7 +429,7 @@ The ADAL library includes English strings for the following two ProgressDialog m
 
 Your application should overwrite them if localized strings are desired.
 
-```Java
+Java 
 <string name="app_loading">Loading...</string>
 <string name="broker_processing">Broker is processing</string>
 <string name="http_auth_dialog_username">Username</string>
@@ -441,12 +437,11 @@ Your application should overwrite them if localized strings are desired.
 <string name="http_auth_dialog_title">Sign In</string>
 <string name="http_auth_dialog_login">Login</string>
 <string name="http_auth_dialog_cancel">Cancel</string>
-```
 
 =======
 
 ### NTLM dialog
-Adal version 1.1.0 supports NTLM dialog that is processed through onReceivedHttpAuthRequest event from WebViewClient. Dialog layout and strings can be customized.### Step 5: Download the iOS Native Client Sample code
+Adal version 1.1.0 supports NTLM dialog that is processed through onReceivedHttpAuthRequest event from WebViewClient. Dialog layout and strings can be customized. 
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]
  

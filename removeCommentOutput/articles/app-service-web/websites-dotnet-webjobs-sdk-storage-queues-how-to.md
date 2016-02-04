@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="09/22/2015"
+	ms.date="12/14/2015"
 	wacn.date=""/>
 
 # How to use Azure queue storage with the WebJobs SDK
@@ -18,7 +18,7 @@
 
 This guide provides C# code samples that show how to use the Azure WebJobs SDK version 1.x with the Azure queue storage service.
 
-The guide assumes you know [how to create a WebJob project in Visual Studio with connection strings that point to your storage account](/documentation/articles/websites-dotnet-webjobs-sdk-get-started).
+The guide assumes you know [how to create a WebJob project in Visual Studio with connection strings that point to your storage account](/documentation/articles/websites-dotnet-webjobs-sdk-get-started#configure-storage) or to [multiple storage accounts](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs).
 
 Most of the code snippets only show functions, not the code that creates the `JobHost` object as in this example:
 
@@ -58,7 +58,8 @@ The guide includes the following topics:
 	- Configure QueueTrigger settings
 	- Set values for WebJobs SDK constructor parameters in code
 -   [How to trigger a function manually](#manual)
--   [How to write logs](#logs)
+-   [How to write logs](#logs) 
+-   [How to handle errors and configure timeouts](#errors)
 -   [Next steps](#nextsteps)
 
 ## <a id="trigger"></a> How to trigger a function when a queue message is received
@@ -127,13 +128,15 @@ The SDK implements a random exponential back-off algorithm to reduce the effect 
 
 ### <a id="instances"></a> Multiple instances
 
-If your web app runs on multiple instances, a continuous WebJobs runs on each machine, and each machine will wait for triggers and attempt to run functions. In some scenarios this can lead to some functions processing the same data twice, so functions should be idempotent (written so that calling them repeatedly with the same input data doesn't produce duplicate results).  
+If your web site runs on multiple instances, a continuous WebJob runs on each machine, and each machine will wait for triggers and attempt to run functions. The WebJobs SDK queue trigger automatically prevents a function from processing a queue message multiple times; functions do not have to be written to be idempotent. However, if you want to ensure that only one instance of a function runs even when there are multiple instances of the host web site, you can use the `Singleton` attribute. 
 
 ### <a id="parallel"></a> Parallel execution
 
 If you have multiple functions listening on different queues, the SDK will call them in parallel when messages are received simultaneously. 
 
-The same is true when multiple messages are received for a single queue. By default, the SDK gets a batch of 16 queue messages at a time and executes the function that processes them in parallel. [The batch size is configurable](#config). When the number being processed gets down to half of the batch size, the SDK gets another batch and starts processing those messages. Therefore the maximum number of concurrent messages being processed per function is one and a half times the batch size. This limit applies separately to each function that has a `QueueTrigger` attribute. If you don't want parallel execution for messages received on one queue, set the batch size to 1.
+The same is true when multiple messages are received for a single queue. By default, the SDK gets a batch of 16 queue messages at a time and executes the function that processes them in parallel. [The batch size is configurable](#config). When the number being processed gets down to half of the batch size, the SDK gets another batch and starts processing those messages. Therefore the maximum number of concurrent messages being processed per function is one and a half times the batch size. This limit applies separately to each function that has a `QueueTrigger` attribute. 
+
+If you don't want parallel execution for messages received on one queue, you can set the batch size to 1. See also **More control over Queue processing** in [Azure WebJobs SDK 1.1.0 RTM](/blog/azure-webjobs-sdk-1-1-0-rtm/).
 
 ### <a id="queuemetadata"></a>Get queue or queue message metadata
 
@@ -530,14 +533,14 @@ Output from Console methods that you call in a function or in the `Main()` metho
 
 Console output can't be linked to a particular method invocation because the Console is single-threaded, while many job functions may be running at the same time. That's why the  SDK provides each function invocation with its own unique log writer object.
 
-To write [application tracing logs](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#logsoverview), use `Console.Out` (creates logs marked as INFO) and `Console.Error` (creates logs marked as ERROR). An alternative is to use [Trace or TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), which provides Verbose, Warning, and Critical levels in addition to Info and Error. Application tracing logs appear in the web app log files, Azure tables, or Azure blobs depending on how you configure your Azure web app. As is true of all Console output, the most recent 100 application logs also appear in the Dashboard page for the WebJob, not the page for a function invocation. 
+To write [application tracing logs](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#logsoverview), use `Console.Out` (creates logs marked as INFO) and `Console.Error` (creates logs marked as ERROR). An alternative is to use [Trace or TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), which provides Verbose, Warning, and Critical levels in addition to Info and Error. Application tracing logs appear in the web site log files, Azure tables, or Azure blobs depending on how you configure your Azure web site. As is true of all Console output, the most recent 100 application logs also appear in the Dashboard page for the WebJob, not the page for a function invocation. 
 
 Console output appears in the Dashboard only if the program is running in an Azure WebJob, not if the program is running locally or in some other environment.
 
 Disable dashboard logging for high throughput scenarios. By default, the SDK writes logs to storage, and this activity could degrade performance when you are processing many messages. To disable logging, set the dashboard connection string to null as shown in the following example.
 
 		JobHostConfiguration config = new JobHostConfiguration();       
-		config.DashboardConnectionString = “”;        
+		config.DashboardConnectionString = ââ;        
 		JobHost host = new JobHost(config);
 		host.RunAndBlock();
 
@@ -563,7 +566,7 @@ In the WebJobs SDK Dashboard, the most recent 100 lines of Console output show u
  
 ![Click Toggle Output](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardapplogs.png)
 
-In a continuous WebJob, application logs show up in /data/jobs/continuous/*{webjobname}*/job_log.txt in the web app file system.
+In a continuous WebJob, application logs show up in /data/jobs/continuous/*{webjobname}*/job_log.txt in the web site file system.
 
 		[09/26/2014 21:01:13 > 491e54: INFO] Console.Write - Hello world!
 		[09/26/2014 21:01:13 > 491e54: ERR ] Console.Error - Hello world!
@@ -579,6 +582,28 @@ And in an Azure table the `Console.Out` and `Console.Error` logs look like this:
 ![Info log in table](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/tableinfo.png)
 
 ![Error log in table](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/tableerror.png)
+
+If you want to plug in your own logger, see [this example](http://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/MiscOperations/Program.cs).
+
+## <a id="errors"></a>How to handle errors and configure timeouts
+
+The WebJobs SDK also includes a [Timeout](http://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/MiscOperations/Functions.cs) attribute that you can use to cause a function to be canceled if doesn't complete within a specified amount of time. And if you want to raise an alert when too many errors happen within a specified period of time, you can use the `ErrorTrigger` attribute. Here is an [ErrorTrigger example](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Error-Monitoring).
+
+```
+public static void ErrorMonitor(
+[ErrorTrigger("00:01:00", 1)] TraceFilter filter, TextWriter log,
+[SendGrid(
+    To = "admin@emailaddress.com",
+    Subject = "Error!")]
+ SendGridMessage message)
+{
+    // log last 5 detailed errors to the Dashboard
+   log.WriteLine(filter.GetDetailedMessage(5));
+   message.Text = filter.GetDetailedMessage(1);
+}
+```
+
+You can also dynamically disable and enable functions to control whether they can be triggered, by using a configuration switch that could be an app setting or environment variable name. For sample code, see the `Disable` attribute in [the WebJobs SDK samples repository](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/MiscOperations/Functions.cs).
 
 ## <a id="nextsteps"></a> Next steps
 

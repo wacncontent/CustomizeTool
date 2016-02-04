@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="07/17/2015"
+	ms.date="11/01/2015"
 	wacn.date=""/>
 
 # How to use Notification Hubs from Java
@@ -294,17 +294,17 @@ In this topic we showed how to create a simple Java REST client for Notification
 	- [Send cross-platform notifications to authenticated users]
 
 [Java SDK]: https://github.com/Azure/azure-notificationhubs-java-backend
-[Get started tutorial]: /documentation/articles/notification-hubs-ios-get-started/
 <!-- deleted by customization
+[Get started tutorial]: /documentation/articles/notification-hubs-ios-get-started/
 [Get Started with Notification Hubs]: http://azure.microsoft.com/manage/services/notification-hubs/getting-started-windows-dotnet/
 [Send breaking news]: http://azure.microsoft.com/manage/services/notification-hubs/breaking-news-dotnet/
 -->
 <!-- keep by customization: begin -->
+[Get started tutorial]:/documentation/articles/notification-hubs-ios-get-started
 [Get Started with Notification Hubs]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [Send breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 <!-- keep by customization: end -->
 [Send localized breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
-[Send notifications to authenticated users]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
-[Send cross-platform notifications to authenticated users]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-xplat-mobile-services/
-[Maven]: http://maven.apache.org/
- 
+[Send notifications to authenticated users]: <!-- deleted by customization /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/ --><!-- keep by customization: begin --> /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users <!-- keep by customization: end -->
+[Send cross-platform notifications to authenticated users]: <!-- deleted by customization /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-xplat-mobile-services/ --><!-- keep by customization: begin --> /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users <!-- keep by customization: end -->
+[Maven]: http://maven.apache.org/

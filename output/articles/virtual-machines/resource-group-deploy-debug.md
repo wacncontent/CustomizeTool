@@ -3,24 +3,25 @@
    description="Describes common problems deploying resources created using Resource Manager deployment model, and shows how to detect and fix these issues."
    services="azure-resource-manager,virtual-machines"
    documentationCenter=""
+   tags="top-support-issue"
    authors="tfitzmac"
    manager="wpickett"
    editor=""/>
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="10/14/2015"
+	ms.date="01/06/2016"
 	wacn.date=""/>
 
 # Troubleshooting resource group deployments in Azure
 
-When you encounter a problem during deployment, you need to discover what went wrong. Resource Manager provides two ways for you to find out what happened and why it happened. You can use deployment commands to retrieve information about 
-particular deployments for a resource group. Or, you can use the audit logs to retrieve information about all operations performed on a resource group.  With this information, you can fix the 
+When you encounter a problem during deployment, you need to discover what went wrong. Resource Manager provides two ways for you to find out what happened and why it happened. You can use deployment commands to retrieve information about
+particular deployments for a resource group. Or, you can use the audit logs to retrieve information about all operations performed on a resource group.  With this information, you can fix the
 issue and resume operations in your solution.
 
 This topic focuses primarily on using deployment commands to troubleshoot deployments. For information about using the audit logs to track all operations on your resources, see [Audit operations with Resource Manager](/documentation/articles/resource-group-audit).
 
-This topic shows how to retrieve troubleshooting information through Azure PowerShell, Azure CLI and REST API. For information about using the preview portal to troubleshoot deployments, see [Using the Azure Preview Portal to manage your Azure resources](/documentation/articles/resource-group-portal).
+This topic shows how to retrieve troubleshooting information through Azure PowerShell, Azure CLI and REST API.
 
 Solutions to common errors that users encounter are also described in this topic.
 
@@ -60,7 +61,7 @@ Each deployment is usually made up of multiple operations, with each operation r
     /subscriptions/xxxxx...   347A111792B648D8     @{ProvisioningState=Failed; Timestam...
     /subscriptions/xxxxx...   699776735EFC3D15     @{ProvisioningState=Succeeded; Times...
 
-It shows two operations in the deployment. One has a provisioning state of Failed and the other of Succeeded. 
+It shows two operations in the deployment. One has a provisioning state of Failed and the other of Succeeded.
 
 You can retrieve the status message with the following command:
 
@@ -95,7 +96,7 @@ You can get the overall status of a deployment with the **azure group deployment
     info:    group deployment show command OK
 
 
-You can find out more information about why the deployment failed in the audit logs. To see the audit logs, run the **azure group log show** command. You can include the **--last-deployment** option to retrieve only the log for the most recent deployment. 
+You can find out more information about why the deployment failed in the audit logs. To see the audit logs, run the **azure group log show** command. You can include the **--last-deployment** option to retrieve only the log for the most recent deployment.
 
     azure group log show ExampleGroup --last-deployment
 
@@ -134,7 +135,7 @@ The **azure group log show** command can return a lot of information. For troubl
       },
       "properties": {
         "statusCode": "Conflict",
-        "statusMessage": "{\"Code\":\"Conflict\",\"Message\":\"Website with given name mysite already exists.\",\"Target\":null,\"Details\":[{\"Message\":\"Website with given name 
+        "statusMessage": "{\"Code\":\"Conflict\",\"Message\":\"Website with given name mysite already exists.\",\"Target\":null,\"Details\":[{\"Message\":\"Website with given name
           mysite already exists.\"},{\"Code\":\"Conflict\"},{\"ErrorEntity\":{\"Code\":\"Conflict\",\"Message\":\"Website with given name mysite already exists.\",\"ExtendedCode\":
           \"54001\",\"MessageTemplate\":\"Website with given name {0} already exists.\",\"Parameters\":[\"mysite\"],\"InnerErrors\":null}}],\"Innererror\":null}"
       },
@@ -204,9 +205,8 @@ For versions of PowerShell prior to 1.0 Preview, you can see the full list of re
 
     Name                                    Locations                               LocationsString
     ----                                    ---------                               ---------------
-    ResourceGroup                           {China East, China North... China East China North,...
-    Microsoft.ApiManagement/service         {China East, China North... China East China North,...
-    Microsoft.AppService/apiapps            {China East, China North... China East China North,...
+    ResourceGroup                           {China East, china North}				{China East, china North}
+    Microsoft.AppService/apiapps            {China East, china North}				{China East, china North}
     ...
 
 You can specify a particular type of resource with:
@@ -228,7 +228,7 @@ For Azure CLI, you can use **azure location list**. Because the list of location
     }
 
 ### REST API
-        
+
 For REST API, see [Get information about a resource provider](https://msdn.microsoft.com/zh-cn/library/azure/dn790534.aspx).
 
 ## Creating unique resource names
@@ -302,11 +302,12 @@ For Powershell 1.0 Preview, use **Get-AzureRmResourceProvider**.
 
     PS C:\> Get-AzureRmResourceProvider -ListAvailable
 
-    ProviderNamespace               RegistrationState ResourceTypes
-    -----------------               ----------------- -------------
-    Microsoft.ApiManagement         Unregistered      {service, validateServiceName, checkServiceNameAvailability}
-    Microsoft.AppService            Registered        {apiapps, appIdentities, gateways, deploymenttemplates...}
-    Microsoft.Batch                 Registered        {batchAccounts}
+	ProviderNamespace         RegistrationState ResourceTypes                                                                               Locations
+	-----------------         ----------------- -------------                                                                               ---------
+	microsoft.backup          Registering       {BackupVault}                                                                               {China East, China North}
+	Microsoft.Batch           Registered        {batchAccounts, locations, locations/quotas}                                                {China North, China East}
+	microsoft.cache           Registered        {Redis, checkNameAvailability, operations, RedisConfigDefinition...}                        {China North, China East}
+	...
 
 To register a provider, use **Register-AzureRmResourceProvider**.
 
@@ -315,23 +316,27 @@ To register a provider, use **Register-AzureRmResourceProvider**.
 To see whether the provider is registered for use using the Azure CLI, use the `azure provider list` command (the following is a truncated example of the output).
 
         azure provider list
-        info:    Executing command provider list
-        + Getting ARM registered providers
-        data:    Namespace                        Registered
-        data:    -------------------------------  -------------
-        data:    Microsoft.Compute                Registered
-        data:    Microsoft.Network                Registered  
-        data:    Microsoft.Storage                Registered
-        data:    microsoft.visualstudio           Registered
-        data:    Microsoft.Authorization          Registered
-        data:    Microsoft.Automation             NotRegistered
-        data:    Microsoft.Backup                 NotRegistered
-        data:    Microsoft.BizTalkServices        NotRegistered
-        data:    Microsoft.Features               Registered
-        data:    Microsoft.Search                 NotRegistered
-        data:    Microsoft.ServiceBus             NotRegistered
-        data:    Microsoft.Sql                    Registered
-        info:    provider list command OK
+		info:    Executing command provider list
+		+ Getting ARM registered providers
+		data:    Namespace                  Registered
+		data:    -------------------------  -----------
+		data:    microsoft.backup           Registering
+		data:    Microsoft.Batch            Registered
+		data:    microsoft.cache            Registered
+		data:    Microsoft.ClassicCompute   Registered
+		data:    Microsoft.ClassicNetwork   Registered
+		data:    Microsoft.ClassicStorage   Registered
+		data:    Microsoft.Insights         Registered
+		data:    Microsoft.KeyVault         Registered
+		data:    Microsoft.SiteRecovery     Registered
+		data:    Microsoft.Sql              Registered
+		data:    Microsoft.StreamAnalytics  Registered
+		data:    Microsoft.Web              Registered
+		data:    Microsoft.Authorization    Registered
+		data:    Microsoft.Features         Registered
+		data:    Microsoft.Resources        Registered
+		data:    Microsoft.Scheduler        Registered
+		info:    provider list command OK
 
 Again, if you want more information about providers, including their regional availability, type `azure provider list --json`. The following selects only the first one in the list to view:
 
@@ -343,8 +348,8 @@ Again, if you want more information about providers, including their regional av
                 "2014-02-14"
               ],
               "locations": [
-                "China North",
-                "China East"
+                "China East",
+                "China North"
               ],
               "properties": {},
               "name": "service"
@@ -370,7 +375,7 @@ If you are using templates that you created, it's important to understand that t
 
 Note however, that this does not necessarily mean that your resource group is "active and ready for your users". For example, most deployments request the deployment to download upgrades, wait on other, non-template resources, or to install complex scripts or some other executable activity that Azure does not know about because it is not an activity that a provider is tracking. In these cases, it can be some time before your resources are ready for real-world use. As a result, you should expect that the deployment status succeeds some time before your deployment can be used.
 
-You can prevent Azure from reporting deployment success, however, by creating a custom script for your custom template -- using the [CustomScriptExtension](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/) for example -- that knows how to monitor the entire deployment for system-wide readiness and returns successfully only when users can interact with the entire deployment. If you want to ensure that your extension is the last to run, use the **dependsOn** property in your template. An example can be seen [here](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx).
+You can prevent Azure from reporting deployment success, however, by creating a custom script for your custom template -- using the [CustomScriptExtension](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/) for example -- that knows how to monitor the entire deployment for system-wide readiness and returns successfully only when users can interact with the entire deployment. If you want to ensure that your extension is the last to run, use the **dependsOn** property in your template. An example can be seen when [creating template deployments](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx).
 
 ## Useful tools to interact with Azure
 When you work with your Azure resources from the command-line, you will collect tools that help you do your work. Azure resource group templates are JSON documents, and the Azure Resource Manager API accepts and returns JSON, so JSON parsing tools are some of the first things you will use to help you navigate information about your resources and to design or interact with templates and template parameter files.
@@ -395,4 +400,3 @@ To master the creation of templates, read through the [Authoring Azure Resource 
 <!--Image references-->
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
-

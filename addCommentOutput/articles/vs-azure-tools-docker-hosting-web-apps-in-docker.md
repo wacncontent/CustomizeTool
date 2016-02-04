@@ -1,39 +1,44 @@
 <properties
-   pageTitle="Hosting Web Apps in Docker | Windows Azure"
-   description="Learn how to use Visual Studio to host a web app in a Docker container."
+   pageTitle="Hosting web sites in Docker | Windows Azure"
+   description="Learn how to use Visual Studio to host a web site in a Docker container."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="08/20/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
-# Hosting Web Apps in Docker
+<!-- deleted by customization
+# Hosting web sites in Docker
+-->
+<!-- keep by customization: begin -->
+# Hosting Web Sites in Docker
+<!-- keep by customization: end -->
 
 [Docker](https://www.docker.com/whatisdocker/) is a lightweight container engine, similar in some ways to a virtual machine, which you can use to host applications and services. Visual Studio supports Docker on Ubuntu, CoreOS, and Windows.
 
-This example shows you how to use the Visual Studio 2015 Tools for Docker extension to publish an ASP.NET 5 app to an Ubuntu Linux virtual machine (referred to here as a Docker host) on Azure with the Docker extension installed, along with an ASP.NET 5 web application. The same experience can be used to publish to a Windows container.
+This example shows you how to use the Visual Studio 2015 Tools for Docker extension to publish an ASP.NET 5 app to an Ubuntu Linux virtual machine (referred to here as a Docker host) on Azure with the Docker extension installed, along with an ASP.NET 5 web site. The same experience can be used to publish to a Windows container.
 
 You can publish the app to a new Docker host hosted on Azure, or to an on-premise server, Hyper-V, or Boot2Docker host by using the **Custom Host** setting. After publishing your app to a Docker host, you can use Docker command-line tools to interact with the container your app has been published to.
 
 ## Create and publish a new Docker container
 
-In these procedures, you'll create a new ASP.NET 5 web application project, create container host, then build and run the web app project in the Docker container. To get started, download and install the [Visual Studio 2015 Tools for Docker](https://visualstudiogallery.msdn.microsoft.com/0f5b2caa-ea00-41c8-b8a2-058c7da0b3e4).
+In these procedures, you'll create a new ASP.NET 5 web site project, create container host, then build and run the web site project in the Docker container. To get started, download and install the [Visual Studio 2015 Tools for Docker](https://visualstudiogallery.msdn.microsoft.com/0f5b2caa-ea00-41c8-b8a2-058c7da0b3e4).
 
-### Add an ASP.NET 5 web application project
+### Add an ASP.NET 5 web site project
 
-1. Create a new ASP.NET web application project. On the main menu, choose **File**, **New Project**. Under **C#**, **Web**, choose **ASP.NET Web Application**.
+1. Create a new ASP.NET web site project. On the main menu, choose **File**, **New Project**. Under **C#**, **Web**, choose **ASP.NET <!-- deleted by customization web site** --><!-- keep by customization: begin --> Web Site** <!-- keep by customization: end -->.
 
 1. In the list of **ASP.NET 5 Preview Templates**, choose **Web Site**.
 
-1. Since the web app will be hosted/run in Docker, clear the **Host in the cloud** checkbox if it's selected and then choose the **OK** button.
+1. Since the web site will be hosted/run in Docker, clear the **Host in the cloud** checkbox if it's selected and then choose the **OK** button.
 
   ![][0]
 
-  This is the point where you'd typically add code to the web app to make it do something useful, but for this example, let's just leave it at its default settings. (Note that you can also choose to use existing ASP.NET 5 web apps.)
+  This is the point where you'd typically add code to the web site to make it do something useful, but for this example, let's just leave it at its default settings. (Note that you can also choose to use existing ASP.NET 5 web sites.)
 
 ### Publish the project
 
@@ -94,9 +99,9 @@ In these procedures, you'll create a new ASP.NET 5 web application project, crea
 
 1. After the Docker host is fully provisioned in Azure, you can check your account on the Azure Management Portal. You should be able to see the new virtual machine under the **Virtual Machine** category on the Azure Management Portal.
 
-1. Once the Docker host is ready, go back and publish the web app project. On the context menu for the web application project's node in **Solution Explorer**, choose **Publish**. Visual Studio creates a publish file based on the VM you created.
+1. Once the Docker host is ready, go back and publish the web site project. On the context menu for the web site project's node in **Solution Explorer**, choose **Publish**. Visual Studio creates a publish file based on the VM you created.
 
-1. On the **Connection** tab in the **Publish Web** dialog box, choose the **Validate Connection** box to make sure the Docker host is ready. If the connection is good, choose the **Publish** button to publish the web app.
+1. On the **Connection** tab in the **Publish Web** dialog box, choose the **Validate Connection** box to make sure the Docker host is ready. If the connection is good, choose the **Publish** button to publish the web site.
 
     The first time you publish an app to a Docker host, it will take time to download any of the base images that are referenced in your Docker file (such as **FROM** *imagename*).
 
@@ -141,7 +146,7 @@ The procedure below is for communicating with a Docker host that's been deployed
     Set DOCKER_TLS_VERIFY=1
     ```
 
-    Invoking these commands prevents you from having to add `–H (Host) tcp://<NameofAzureVM>.chinacloudapp.cn:2376` and `--TLSVERIFY` to every command you issue.
+    Invoking these commands prevents you from having to add `-H (Host) tcp://<NameofAzureVM>.chinacloudapp.cn:2376` and `--TLSVERIFY` to every command you issue.
 
 1. Now you can issue commands like these to test whether the Docker host is present and functioning. 
 
@@ -149,7 +154,7 @@ The procedure below is for communicating with a Docker host that's been deployed
     |---|---|
     |`docker info`|Get Docker version info.|
     |`docker ps`|Get a list of running containers.|
-    |`docker ps –a`|Get a list of containers, including ones that are stopped.|
+    |`docker ps -a`|Get a list of containers, including ones that are stopped.|
     |`docker logs <Docker container name>`|Get a log for the specified container.|
     |`docker images`|Get a list of images.|
 

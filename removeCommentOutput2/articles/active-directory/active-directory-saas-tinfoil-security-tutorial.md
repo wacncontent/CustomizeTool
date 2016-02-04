@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Tinfoil Security
@@ -139,7 +139,7 @@ In the case of Tinfoil Security, provisioning is a manual task.
 
 1.  If the user is a part of an Enterprise account, you need to contact the Tinfoil Security support team to get the user account created.
 
-2.  If the user is a regular Tinfoil Security SaaS user, then the user can add a collaborator to any of the user’s sites. This triggers a process to send an invitation to the specified email to create a new Tinfoil Security user account.
+2.  If the user is a regular Tinfoil Security SaaS user, then the user can add a collaborator to any of the user's sites. This triggers a process to send an invitation to the specified email to create a new Tinfoil Security user account.
 
 >[AZURE.NOTE] You can use any other Tinfoil Security user account creation tools or APIs provided by Tinfoil Security to provision AAD user accounts.
 

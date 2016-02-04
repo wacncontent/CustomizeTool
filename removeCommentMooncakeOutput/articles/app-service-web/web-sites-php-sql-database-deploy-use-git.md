@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Create a PHP-SQL web app and deploy to Azure Websites using Git" 
-	description="A tutorial that demonstrates how to create a PHP web app that stores data in Azure SQL Database and use Git deployment to Azure Websites." 
+	pageTitle="Create a PHP-SQL web site and deploy to Azure Websites using Git" 
+	description="A tutorial that demonstrates how to create a PHP web site that stores data in Azure SQL Database and use Git deployment to Azure Websites." 
 	services="app-service\web, sql-database" 
 	documentationCenter="php" 
 	authors="tfitzmac" 
@@ -9,30 +9,31 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/03/2015"
+	ms.date="11/19/2015"
 	wacn.date=""/>
 
-# Create a PHP-SQL web app and deploy to Azure Websites using Git
+# Create a PHP-SQL web site and deploy to Azure Websites using Git
 
-This tutorial shows you how to create a PHP web app in [Azure Websites](/documentation/services/web-sites/) that connects to Azure SQL Database and how to deploy it using Git. This tutorial assumes you have [PHP][install-php], [SQL Server Express][install-SQLExpress], the [Microsoft Drivers for SQL Server for PHP](http://www.microsoft.com/download/en/details.aspx?id=20098), a web server, and [Git][install-git] installed on your computer. Upon completing this guide, you will have a PHP-SQL web app running in Azure.
+This tutorial shows you how to create a PHP web site in [Azure Websites](/documentation/services/web-sites/) that connects to Azure SQL Database and how to deploy it using Git. This tutorial assumes you have [PHP][install-php], [SQL Server Express][install-SQLExpress], the [Microsoft Drivers for SQL Server for PHP](http://www.microsoft.com/download/en/details.aspx?id=20098), and [Git][install-git] installed on your computer. Upon completing this guide, you will have a PHP-SQL web site running in Azure.
 
 > [AZURE.NOTE]
-> You can install and configure PHP, SQL Server Express, the Microsoft Drivers for SQL Server for PHP, and Internet Information Services (IIS) using the [Microsoft Web Platform Installer](http://www.microsoft.com/web/downloads/platform.aspx).
+> You can install and configure PHP, SQL Server Express, and the Microsoft Drivers for SQL Server for PHP using the [Microsoft Web Platform Installer](http://www.microsoft.com/web/downloads/platform.aspx).
 
 You will learn:
 
-* How to create an Azure web app and a SQL Database using the [Azure Management Portal](https://manage.windowsazure.cn/). Because PHP is enabled in Azure Websites by default, nothing special is required to run your PHP code.
+* How to create an Azure web site and a SQL Database using the [Azure Management Portal](https://manage.windowsazure.cn/). Because PHP is enabled in Azure Websites by default, nothing special is required to run your PHP code.
 * How to publish and re-publish your application to Azure using Git.
  
-By following this tutorial, you will build a simple registration web application in PHP. The application will be hosted in an Azure Website. A screenshot of the completed application is below:
+By following this tutorial, you will build a simple registration web site in PHP. The application will be hosted in an Azure Website. A screenshot of the completed application is below:
 
 ![Azure PHP Web Site](./media/web-sites-php-sql-database-deploy-use-git/running_app_3.png)
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
-##Create an Azure web app and set up Git publishing
+##Create an Azure web site and set up Git publishing
 
-Follow these steps to create an Azure web app and a SQL Database:
+Follow these steps to create an Azure web site and a SQL Database:
+
 1. Login to the [Azure Management Portal][management-portal].
 2. Click the **New** icon on the bottom left of the portal.
 ![Create New Azure  Website][new- Website]
@@ -62,9 +63,11 @@ Follow these steps to create an Azure web app and a SQL Database:
 9. You will see instructions for pushing your application files to the repository. Make note of these instructions - you will need them later.
 
 	![Git instructions][git-instructions]
+
 ##Get SQL Database connection information
 
-To connect to the SQL Database instance that is linked to your web app, your will need the connection information, which you specified when you created the database. To get the SQL Database connection information, follow these steps:
+To connect to the SQL Database instance that is linked to your web site, your will need the connection information, which you specified when you created the database. To get the SQL Database connection information, follow these steps:
+
 1. From the Azure Management Portal, click **Linked Resources**, then click the database name.
 
 	![Linked Resources][linked-resources]
@@ -73,7 +76,8 @@ To connect to the SQL Database instance that is linked to your web app, your wil
 
 	![Connection string][connection-string]
 	
-3. From the **PHP** section of the resulting dialog, make note of the values for `SERVER`, `DATABASE`, and `USERNAME`.
+3. From the **PHP** section of the resulting dialog, make note of the values for `Server`, `SQL Database`, and `User Name`. You will use these values later when publishing your PHP web site to Azure Websites.
+
 ##Build and test your application locally
 
 The Registration application is a simple PHP application that allows you to register for an event by providing your name and email address. Information about previous registrants is displayed in a table. Registration information is stored in a SQL Database instance. The application consists of two files (copy/paste code available below):
@@ -81,7 +85,7 @@ The Registration application is a simple PHP application that allows you to regi
 * **index.php**: Displays a form for registration and a table containing registrant information.
 * **createtable.php**: Creates the SQL Database table for the application. This file will only be used once.
 
-To run the application locally, follow the steps below. Note that these steps assume you have PHP, SQL Server Express, and a web server set up on your local machine, and that you have enabled the [PDO extension for SQL Server][pdo-sqlsrv].
+To run the application locally, follow the steps below. Note that these steps assume you have PHP and SQL Server Express set up on your local machine, and that you have enabled the [PDO extension for SQL Server][pdo-sqlsrv].
 
 1. Create a SQL Server database called `registration`. You can do this from the `sqlcmd` command prompt with these commands:
 
@@ -90,7 +94,7 @@ To run the application locally, follow the steps below. Note that these steps as
 		2> GO	
 
 
-2. In your web server's root directory, create a folder called `registration` and create two files in it - one called `createtable.php` and one called `index.php`.
+2. In your application root directory, create two files in it - one called `createtable.php` and one called `index.php`.
 
 3. Open the `createtable.php` file in a text editor or IDE and add the code below. This code will be used to create the `registration_tbl` table in the `registration` database.
 
@@ -119,7 +123,11 @@ To run the application locally, follow the steps below. Note that these steps as
 
 	Note that you will need to update the values for <code>$user</code> and <code>$pwd</code> with your local SQL Server user name and password.
 
-4. Open a web browser and browse to **http://localhost/registration/createtable.php**. This will create the `registration_tbl` table in the database.
+4. In a terminal at the root directory of the application type the following command:
+
+		php -S localhost:8000
+
+4. Open a web browser and browse to **http://localhost:8000/createtable.php**. This will create the `registration_tbl` table in the database.
 
 5. Open the **index.php** file in a text editor or IDE and add the basic HTML and CSS code for the page (the PHP code will be added in later steps).
 
@@ -215,7 +223,7 @@ To run the application locally, follow the steps below. Note that these steps as
 			echo "<h3>No one is currently registered.</h3>";
 		}
 
-You can now browse to **http://localhost/registration/index.php** to test the application.
+You can now browse to **http://localhost:8000/index.php** to test the application.
 
 ##Publish your application
 
@@ -234,7 +242,7 @@ After you have tested your application locally, you can publish it to Azure Webs
 Now, you are ready to set up Git publishing and publish the application.
 
 > [AZURE.NOTE]
-> These are the same steps noted at the end of the **Create an Azure web app and set up Git publishing** section above.
+> These are the same steps noted at the end of the **Create an Azure web site and set up Git publishing** section above.
 
 
 1. Open GitBash (or a terminal, if Git is in your `PATH`), change directories to the root directory of your application (the **registration** directory), and run the following commands:
@@ -247,8 +255,8 @@ Now, you are ready to set up Git publishing and publish the application.
 
 	You will be prompted for the password you created earlier.
 
-2. Browse to **http://[web app name].chinacloudsites.cn/createtable.php** to create the SQL database table for the application.
-3. Browse to **http://[web app name].chinacloudsites.cn/index.php** to begin using the application.
+2. Browse to **http://[web site name].chinacloudsites.cn/createtable.php** to create the SQL database table for the application.
+3. Browse to **http://[web site name].chinacloudsites.cn/index.php** to begin using the application.
 
 After you have published your application, you can begin making changes to it and use Git to publish them. 
 
@@ -265,7 +273,7 @@ To publish changes to application, follow these steps:
 
 	You will be prompted for the password you created earlier.
 
-3. Browse to **http://[web app name].chinacloudsites.cn/index.php** to see your changes.
+3. Browse to **http://[web site name].chinacloudsites.cn/index.php** to see your changes.
 
 
 

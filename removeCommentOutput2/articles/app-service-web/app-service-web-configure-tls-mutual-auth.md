@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="How To Configure TLS Mutual Authentication for Web App" 
 	description="Learn how to configure your web app to use client certificate authentication on TLS." 
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/15/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>	
 
 # How To Configure TLS Mutual Authentication for Web App
@@ -19,10 +17,8 @@
 ## Overview ##
 You can restrict access to your Azure web app by enabling different types of authentication for it. One way to do so is to authenticate using a client certificate when the request is over TLS/SSL. This mechanism is called TLS mutual authentication or client certificate authentication and this article will detail how to setup your web app to use client certificate authentication.
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
-
 ## Configure Web App for Client Certificate Authentication ##
-To setup your web app to require client certificates you need to add the clientCertEnabled site setting for your web app and set it to true. This setting is not currently available through the management experience in the portal, and the REST API will need to be used to accomplish this.
+To setup your web app to require client certificates you need to add the clientCertEnabled site setting for your web app and set it to true. This setting is not currently available through the management experience in the Portal, and the REST API will need to be used to accomplish this.
 
 You can use the [ARMClient tool](https://github.com/projectkudu/ARMClient) to make it easy to craft the REST API call. After you log in with the tool you will need to issue the following command:
 
@@ -39,7 +35,7 @@ replacing everything in {} with information for your web app and creating a file
 > }  
 
 
-Make sure to change the value of "location" to wherever your web app is located e.g. China North or China North etc.
+Make sure to change the value of "location" to wherever your web app is located e.g. China North or China East.
 
 
 ## Accessing the Client Certificate From Your Web App ##

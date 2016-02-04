@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="StorSimple Snapshot Manager backup catalog | Microsoft Azure"
+   pageTitle="StorSimple Snapshot Manager backup catalog | Windows Azure"
    description="Describes how to use the StorSimple Snapshot Manager MMC snap-in to view and manage the backup catalog."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/15/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 # Use StorSimple Snapshot Manager to manage the backup catalog
 
@@ -27,27 +23,27 @@ You can view the backup catalog by expanding the **Backup Catalog** node in the 
 
 - If you click **Local Snapshot** or **Cloud Snapshot**, the **Results** pane shows the following information about each backup snapshot (depending on your **View** settings): 
 
-    - **Name** – the time the snapshot was taken. 
+    - **Name** - the time the snapshot was taken. 
 
-    - **Type** – whether this is a local snapshot or a cloud snapshot. 
+    - **Type** - whether this is a local snapshot or a cloud snapshot. 
 
-    - **Owner** – the content owner. 
+    - **Owner** - the content owner. 
 
-    - **Available** – whether the snapshot is currently available. True indicates that the snapshot is available and can be restored; False indicates that the snapshot is no longer available. 
+    - **Available** - whether the snapshot is currently available. True indicates that the snapshot is available and can be restored; False indicates that the snapshot is no longer available. 
 
-    - **Imported** – whether the backup was imported. **True** indicates that the backup was imported from the StorSimple Manager service at the time the device was configured in StorSimple Snapshot Manager; **False** indicates that it was not imported, but was created by StorSimple Snapshot Manager. (You can easily identify an imported volume group because a suffix is added that identifies the device from which the volume group was imported.)
+    - **Imported** - whether the backup was imported. **True** indicates that the backup was imported from the StorSimple Manager service at the time the device was configured in StorSimple Snapshot Manager; **False** indicates that it was not imported, but was created by StorSimple Snapshot Manager. (You can easily identify an imported volume group because a suffix is added that identifies the device from which the volume group was imported.)
 
     ![Backup catalog](./media/storsimple-snapshot-manager-manage-backup-catalog/HCS_SSM_Backup_catalog.png)
 
 - If you expand **Local Snapshot** or **Cloud Snapshot**, and then click an individual snapshot name, the **Results** pane shows the following information about the snapshot that you selected:
 
-    - **Name** – the volume identified by drive letter. 
+    - **Name** - the volume identified by drive letter. 
 
-    - **Local Name** – the local name of the drive (if available). 
+    - **Local Name** - the local name of the drive (if available). 
 
-    - **Device** – the name of the device on which the volume resides. 
+    - **Device** - the name of the device on which the volume resides. 
 
-    - **Available** – whether the snapshot is currently available. **True** indicates that the snapshot is available and can be restored; **False** indicates that the snapshot is no longer available. 
+    - **Available** - whether the snapshot is currently available. **True** indicates that the snapshot is available and can be restored; **False** indicates that the snapshot is no longer available. 
 
 This tutorial describes how you can use the **Backup Catalog** node to complete the following tasks:
 
@@ -111,7 +107,7 @@ Use the following procedure to create a duplicate (clone) of a volume or volume 
 
     4. Click **Create**.
 
-5. When the cloning process is finished, you must initialize the cloned volume. Start Server Manager, and then start Disk Management. For detailed instructions, see [Mount volumes](storsimple-snapshot-manager-manage-volumes.md#mount-volumes). After it is initialized, the volume will be listed under the **Volumes** node in the **Scope** pane. If you do not see the volume listed, refresh the list of volumes (right-click the **Volumes** node, and then click **Refresh**).
+5. When the cloning process is finished, you must initialize the cloned volume. Start Server Manager, and then start Disk Management. For detailed instructions, see [Mount volumes](/documentation/articles/storsimple-snapshot-manager-manage-volumes#mount-volumes). After it is initialized, the volume will be listed under the **Volumes** node in the **Scope** pane. If you do not see the volume listed, refresh the list of volumes (right-click the **Volumes** node, and then click **Refresh**).
 
 ## Delete a backup
 
@@ -157,7 +153,7 @@ Before you begin, make sure that you have a current backup of the volume group. 
 
    4. Click **Create**. 
 
-5. When the cloning process is finished, you must initialize the cloned volume. Start Server Manager, and then start Disk Management. For detailed instructions, see [Mount volumes](storsimple-snapshot-manager-manage-volumes.md#mount-volumes). After it is initialized, the volume will be listed under the **Volumes** node in the **Scope** pane. 
+5. When the cloning process is finished, you must initialize the cloned volume. Start Server Manager, and then start Disk Management. For detailed instructions, see [Mount volumes](/documentation/articles/storsimple-snapshot-manager-manage-volumes#mount-volumes). After it is initialized, the volume will be listed under the **Volumes** node in the **Scope** pane. 
 
     If you do not see the volume listed, refresh the list of volumes (right-click the **Volumes** node, and then click **Refresh**).
 
@@ -205,5 +201,5 @@ You should regularly back up the StorSimple Snapshot Manager database on the hos
 
 ## Next steps
 
-- Learn more about [using StorSimple Snapshot Manager to administer your StorSimple solution](storsimple-snapshot-manager-admin.md).
-- Learn more about [StorSimple Snapshot Manager tasks and workflows](storsimple-snapshot-manager-admin.md#storsimple-snapshot-manager-tasks-and-workflows).
+- Learn more about [using StorSimple Snapshot Manager to administer your StorSimple solution](/documentation/articles/storsimple-snapshot-manager-admin).
+- Learn more about [StorSimple Snapshot Manager tasks and workflows](/documentation/articles/storsimple-snapshot-manager-admin#storsimple-snapshot-manager-tasks-and-workflows).

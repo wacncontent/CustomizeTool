@@ -1,3 +1,4 @@
+
 <!-- not suitable for Mooncake -->
 
 ##Azure Management Portal and Azure preview portal

@@ -1,6 +1,6 @@
 <properties
-   pageTitle="REST-Based Application Lifecycle Sample | Microsoft Azure"
-   description="A Microsoft Azure Service Fabric sample that shows the Application Lifecycle by using the Service Fabric REST interface."
+   pageTitle="REST-Based application lifecycle sample | Windows Azure"
+   description="A Windows Azure Service Fabric sample that shows the application lifecycle by using the Service Fabric REST interface."
    services="service-fabric"
    documentationCenter=".net"
    authors="rwike77"
@@ -8,17 +8,13 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="rest-api"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/17/2015"
-   ms.author="ryanwi"/>
+	ms.service="service-fabric"
+	ms.date="08/17/2015"
+	wacn.date=""/>
 
 # REST-based application lifecycle sample
 
-This sample demonstrates the Service Fabric application lifecycle through REST API calls. For more information on the Service Fabric application lifecycle, see [Service Fabric Application Lifecycle](service-fabric-application-lifecycle.md).
+This sample demonstrates the Service Fabric application lifecycle through REST API calls. For more information on the Service Fabric application lifecycle, see [Service Fabric Application Lifecycle](/documentation/articles/service-fabric-application-lifecycle).
 
 This sample performs the following:
 
@@ -708,4 +704,4 @@ namespace ServiceFabricRestCaller
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
 
-[Service Fabric Application Lifecycle](service-fabric-application-lifecycle.md)
+[Service Fabric Application Lifecycle](/documentation/articles/service-fabric-application-lifecycle)

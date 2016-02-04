@@ -12,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/19/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Analyze Twitter data using Hive in HDInsight

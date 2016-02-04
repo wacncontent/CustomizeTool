@@ -3,23 +3,16 @@
 	description="How to get started using Azure Blob storage in a cloud service project in Visual Studio after connecting to a storage account using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Get started with Azure Blob Storage and Visual Studio connected services (cloud services projects)
-
-> [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-cloud-services-getting-started-blobs)
-> - [What happened](/documentation/articles/vs-storage-cloud-services-what-happened)
-> - [Blobs](/documentation/articles/vs-storage-cloud-services-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-cloud-services-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-cloud-services-getting-started-tables)
 
 ## Overview
 
@@ -27,7 +20,7 @@ This article describes how to get started with Azure Blob Storage after you crea
 
 Azure Blob Storage is a service for storing large amounts of unstructured data that can be accessed from anywhere in the world via HTTP or HTTPS. A single blob can be any size. Blobs can be things like images, audio and video files, raw data, and document files.
 
-Just as files live in folders, storage blobs live in containers. After you have created a storage, you create one or more containers in the storage. For example, in a storage called “Scrapbook,” you can create containers in the storage called “images” to store pictures and another called “audio” to store audio files. After you create the containers, you can upload individual blob files to them.
+Just as files live in folders, storage blobs live in containers. After you have created a storage, you create one or more containers in the storage. For example, in a storage called "Scrapbook," you can create containers in the storage called "images" to store pictures and another called "audio" to store audio files. After you create the containers, you can upload individual blob files to them.
 
 - For more information on programmatically manipulating blobs, see [How to use blob storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs).
 - For general information about Azure Storage,see [Storage documentation](/documentation/services/storage/).
@@ -58,7 +51,7 @@ To programmatically access blobs in cloud service projects, you need to add the 
 
 4. Get a **CloudBlobContainer** object to reference a specific blob container.
 
-        // Get a reference to a container named “mycontainer.”
+        // Get a reference to a container named "mycontainer."
         CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");
 
 > [AZURE.NOTE] Use all of the code shown in the previous procedure in front of the code shown in the following sections.
@@ -72,7 +65,7 @@ To create a container in your storage account, all you need to do is add a call 
 	// Get a reference to a CloudBlobContainer with the variable name 'container'
     // as described in the "Access blob containers in code" section.
 
-    // If “mycontainer” doesn’t exist, create it.
+    // If "mycontainer" doesn't exist, create it.
     await container.CreateIfNotExistsAsync();
 
 

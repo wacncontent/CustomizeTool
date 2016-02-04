@@ -16,7 +16,7 @@
 
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/powershell-install-configure)
-- [Azure CLI](/documentation/articles/xplat-cli-install)
+- [Azure CLI](/documentation/articles/xplat-cli)
 
 The Azure CLI provides a set of open source, cross-platform commands for working with the Azure Platform. The Azure CLI provides much of the same functionality found in the Azure Management Portal, such as the ability to manage websites, virtual machines, mobile services, SQL Database and other services provided by the Azure platform.
 
@@ -117,7 +117,7 @@ To change back to Azure service management mode, use the following command:
 
 >[AZURE.NOTE] The Resource Manager mode and Azure Service Management mode are mutually exclusive. That is, resources created in one mode cannot be managed from the other mode.
 
-For more information on working with the Resource Manager using the Azure CLI, see [Using the Azure CLI with the Resource Manager][cliarm].
+For more information on working with the Resource Manager using the Azure CLI, see [Using the Azure CLI with the Resource Manager][/documentation/articles/cliarm].
 
 ### Working with services in Azure service management mode
 
@@ -256,23 +256,23 @@ If you are writing a script that relies on the exit status, please verify that t
 
 * If you encounter problems using the Azure CLI, or Azure, visit the [Azure Forums](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchshome).
 
-* For more information on Azure, see [http://azure.microsoft.com/](http://azure.microsoft.com).
+* For more information on Azure, see [http://www.windowsazure.cn/](http://www.windowsazure.cn).
 
 
 
 
-[mac-installer]: http://azuresdkscu.blob.core.chinacloudapi.cn/downloads04/azure-cli.0.9.10.dmg
-[windows-installer]: http://go.microsoft.com/?linkid=9828653&clcid=0x409
+[mac-installer]: http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.dmg
+[windows-installer]: http://go.microsoft.com/fwlink/?LinkID=275464&clcid=0x409
 [authandsub]: http://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx#BKMK_AccountVCert
 
 [Azure Web Site]: ../media/freetrial.png
 [select a preview feature]: ../media/antares-iaas-preview-02.png
 [select subscription]: ../media/antares-iaas-preview-03.png
-[free-trial]: /pricing/1rmb-trial/?WT.mc_id=A7171371E
+<!--[free-trial]: /pricing/1rmb-trial/?WT.mc_id=A7171371E-->
 [advanced-bash]: http://tldp.org/LDP/abs/html/
 [script]: http://en.wikipedia.org/wiki/Shell_script
 [batch]: http://technet.microsoft.com/zh-cn/library/bb490890.aspx
-[cliarm]: /documentation/articles/xplat-cli-azure-resource-manager
+[xplatarm]: /documentation/articles/xplat-cli-azure-resource-manager
 [portal]: https://manage.windowsazure.cn
 [signuporg]: /documentation/articles/sign-up-organization/
 [Using the Azure CLI]: /documentation/articles/virtual-machines-command-line-tools

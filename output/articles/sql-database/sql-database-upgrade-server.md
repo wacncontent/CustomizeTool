@@ -16,7 +16,7 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](/documentation/articles/sql-database-upgrade-server-portal)
+- [Azure Management Portal](/documentation/articles/sql-database-upgrade-server-portal)
 - [PowerShell](/documentation/articles/sql-database-upgrade-server-powershell)
 
 
@@ -77,7 +77,7 @@ The following commands will be run against the subscription you just selected ab
 
 To get the recommendation for the server upgrade run the following cmdlet: 
 
-    $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName “resourcegroup1” -ServerName “server1” 
+    $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName "resourcegroup1" -ServerName "server1" 
 
 For more information, see [Azure SQL Database elastic database pool recommendations](/documentation/articles/sql-database-elastic-pool-portal#elastic-database-pool-pricing-tier-recommendations) and [Azure SQL Database picing tier recommendations](/documentation/articles/sql-database-service-tier-advisor). 
 
@@ -87,7 +87,7 @@ For more information, see [Azure SQL Database elastic database pool recommendati
 
 To start the upgrade of the server run the following cmdlet: 
 
-    Start-AzureRmSqlServerUpgrade -ResourceGroupName “resourcegroup1” -ServerName “server1” -ServerVersion 12.0 -DatabaseCollection $hint.Databases -ElasticPoolCollection $hint.ElasticPools  
+    Start-AzureRmSqlServerUpgrade -ResourceGroupName "resourcegroup1" -ServerName "server1" -ServerVersion 12.0 -DatabaseCollection $hint.Databases -ElasticPoolCollection $hint.ElasticPools  
 
 
 When you run this command upgrade process will begin. You can customize the output of the recommendation and provide the edited recommendation to this cmdlet. 
@@ -132,7 +132,7 @@ ElasticPoolCollection and DatabaseCollection parameters are optional:
     $elasticPool.DatabaseDtuMin = 0 
     $elasticPool.Dtu = 800 
     $elasticPool.Edition = "Standard" 
-    $elasticPool.DatabaseCollection = ("DB1", “DB2”, “DB3”, “DB4”) 
+    $elasticPool.DatabaseCollection = ("DB1", "DB2", "DB3", "DB4") 
     $elasticPool.Name = "elasticpool_1" 
     $elasticPool.StorageMb = 800 
      
@@ -150,7 +150,7 @@ ElasticPoolCollection and DatabaseCollection parameters are optional:
      
     # Starting the upgrade
     #
-    Start-AzureRmSqlServerUpgrade –ResourceGroupName resourcegroup1 –ServerName server1 -Version 12.0 -DatabaseCollection @($databaseMap1, $databaseMap2) -ElasticPoolCollection @($elasticPool) 
+    Start-AzureRmSqlServerUpgrade -ResourceGroupName resourcegroup1 -ServerName server1 -Version 12.0 -DatabaseCollection @($databaseMap1, $databaseMap2) -ElasticPoolCollection @($elasticPool) 
 
     
 
@@ -183,7 +183,7 @@ Additional monitoring information:
 
 **Alerts:** Set up 'Alerts' in the Azure Management Portal to notify you when the DTU consumption for an upgraded database approaches certain high level. Database alerts can be setup in the Azure Management Portal for various performance metrics like DTU, CPU, IO, and Log. Browse to your database and select **Alert rules** in the **Settings** blade.
 
-For example, you can set up an email alert on “DTU Percentage” if the average DTU percentage value exceeds 75% over the last 5 minutes. Refer to [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) to learn more about how to configure alert notifications.
+For example, you can set up an email alert on "DTU Percentage" if the average DTU percentage value exceeds 75% over the last 5 minutes. Refer to [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) to learn more about how to configure alert notifications.
 
 
 

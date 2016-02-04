@@ -2,22 +2,23 @@
     pageTitle="Tutorial: Azure Active Directory integration with 15Five | Windows Azure" 
     description="Learn how to use 15Five with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with 15Five
+>[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=528017).
 
 The objective of this tutorial is to show the integration of Azure and 15Five. The scenario outlined in this tutorial assumes that you already have the following items:
 
 -   A valid Azure subscription
 -   A 15Five single sign-on enabled subscription
 
-After completing this tutorial, the Azure AD users you have assigned to 15Five will be able to single sign into the application at your 15Five company site (service provider initiated sign on), or using the [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).
+After completing this tutorial, the Azure AD users you have assigned to 15Five will be able to single sign into the application at your 15Five company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586) 
 
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -129,4 +130,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-15five-tutorial/IC767830.png "Yes")
 
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).

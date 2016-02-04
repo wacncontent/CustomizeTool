@@ -19,6 +19,8 @@
 
 In this article, you will learn how to install and configure MySQL on an Azure virtual machine running Linux.
 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+
 
 ##Install MySQL on your virtual machine
 
@@ -127,7 +129,8 @@ We will use Linux VM with CentOS or Oracle Linux here.
 
     (b) Check whether the default port of  MySQL server is running:
 
-           #[root@mysqlnode ~]#netstat  –tunlp|grep 3306
+           #[root@mysqlnode ~]#netstat  âtunlp|grep 3306
+
 
     (c) Start the MySQL server:
 
@@ -165,7 +168,7 @@ We will use Linux VM with OpenSUSE here.
 
     (b) Check whether the default port of the MySQL server:
 
-           #[root@mysqlnode ~]# netstat  –tunlp|grep 3306
+           #[root@mysqlnode ~]# netstat  âtunlp|grep 3306
 
 
     (c) Start the MySQL server:

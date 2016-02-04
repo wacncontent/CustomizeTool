@@ -6,7 +6,7 @@
 	authors="wadepickett"
 	manager="wpickett"
 	editor="mollybos"
-	tags=“azure-service-management"/>
+	tags=âazure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -54,7 +54,7 @@ The following is an example of the .NET application monitoring the compute-inten
 
 ## To remotely log in to your virtual machine
 
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Log on to the [Management Portal](https://manage.windowsazure.cn).
 2. Click **Virtual machines**.
 3. Click the name of the virtual machine that you want to log in to.
 4. Click **Connect**.

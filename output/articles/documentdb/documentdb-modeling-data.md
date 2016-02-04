@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Modeling data in Azure DocumentDB | Microsoft Azure" 
+	pageTitle="Modeling data in Azure DocumentDB | Windows Azure" 
 	description="Learn how to model data for a NoSQL document database like Azure DocumentDB." 
 	services="documentdb" 
 	authors="ryancrawcour" 
@@ -7,14 +7,10 @@
 	editor="mimig1" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="ryancraw"/>
+<tags
+	ms.service="documentdb"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 #Modeling data in DocumentDB#
 While schema-free databases, like DocumentDB, make it super easy to embrace changes to your data model you should still spend some time thinking about your data. 
@@ -114,7 +110,7 @@ Take this JSON snippet.
 
 This might be what a post entity with embedded comments would look like if we were modeling a typical blog, or CMS, system. The problem with this example is that the comments array is **unbounded**, meaning that there is no (practical) limit to the number of comments any single post can have. This will become a problem as the size of the document could grow significantly.
 
-> [AZURE.TIP] Documents in DocumentDB have a maximum size. For more on this refer to [DocumentDB limits](documentdb-limits.md).
+> [AZURE.TIP] Documents in DocumentDB have a maximum size. For more on this refer to [DocumentDB limits](/documentation/articles/documentdb-limits).
 
 As the size of the document grows the ability to transmit the data over the wire as well as reading and updating the document, at scale, will be impacted.
 
@@ -385,11 +381,11 @@ The biggest takeaways from this article is to understand that data modeling in a
 
 Just as there is no single way to represent a piece of data on a screen, there is no single way to model your data. You need to understand your application and how it will produce, consume, and process the data. Then, by applying some of the guidelines presented here you can set about creating a model that addresses the immediate needs of your application. When your applications need to change, you can leverage the flexibility of a schema-free database to embrace that change and evolve your data model easily. 
 
-To learn more about Azure DocumentDB, refer to the service’s [documentation]( ../../services/documentdb/) page. 
+To learn more about Azure DocumentDB, refer to the service's [documentation]( ..//home/features/documentdb/) page. 
 
-To learn about tuning indexes in Azure DocumentDB, refer to the article on [indexing policies](documentdb-indexing-policies.md).
+To learn about tuning indexes in Azure DocumentDB, refer to the article on [indexing policies](/documentation/articles/documentdb-indexing-policies).
 
-To understand how to shard your data across multiple partitions, refer to [Partitioning Data in DocumentDB](documentdb-partition-data.md). 
+To understand how to shard your data across multiple partitions, refer to [Partitioning Data in DocumentDB](/documentation/articles/documentdb-partition-data). 
 
 And finally, for guidance on data modeling and sharding for multi-tenant applications, consult [Scaling a Multi-Tenant Application with Azure DocumentDB](http://blogs.msdn.com/b/documentdb/archive/2014/12/03/scaling-a-multi-tenant-application-with-azure-documentdb.aspx).
  

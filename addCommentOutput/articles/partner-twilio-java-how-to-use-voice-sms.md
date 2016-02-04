@@ -11,7 +11,6 @@
 	ms.service="multiple"
 	ms.date="11/25/2014"
 	wacn.date=""/>
-
 # How to Use Twilio for Voice and SMS Capabilities in Java
 
 This guide demonstrates how to perform common programming tasks with the Twilio API service on Azure. The scenarios covered include making a phone call and sending a Short Message Service (SMS) message. For more information on Twilio and using voice and SMS in your applications, see the [Next Steps](#NextSteps) section.
@@ -140,12 +139,10 @@ The following shows how to send an SMS message using the **SmsFactory** class. T
 
     // Send an SMS message.
     MessageFactory messageFactory = account.getMessageFactory();
-    
     List<NameValuePair> params = new ArrayList<NameValuePair>();
     params.add(new BasicNameValuePair("To", "+14159352345")); // Replace with a valid phone number for your account.
     params.add(new BasicNameValuePair("From", "+14158141829")); // Replace with a valid phone number for your account.
     params.add(new BasicNameValuePair("Body", "Where's Wallace?"));
-    
     Message sms = messageFactory.create(params);
         
 For more information about the parameters passed in to the **SmsFactory.create** method, see [http://www.twilio.com/docs/api/rest/sending-sms][twilio_rest_sending_sms].
@@ -177,7 +174,7 @@ The following JSP page results in a TwiML response that says some text, has seve
 
 The **ApiVersion** parameter is available in Twilio voice requests (not SMS requests). To see the available request parameters for Twilio voice and SMS requests, see <https://www.twilio.com/docs/api/twiml/twilio_request> and <https://www.twilio.com/docs/api/twiml/sms/twilio_request>, respectively. The **RoleName** environment variable is available as part of an Azure deployment. (If you want to add custom environment variables so they could be picked up from **System.getenv**, see the environment variables section at [Miscellaneous Role Configuration Settings][misc_role_config_settings].)
 
-Once you have your JSP page set up to provide TwiML responses, use the URL of the JSP page as the URL passed into the **CallFactory.create** method. For example, if you have a Web application named MyTwiML deployed to an Azure hosted service, and the name of the JSP page is mytwiml.jsp, the URL can be passed to **CallFactory.create** as shown in the following:
+Once you have your JSP page set up to provide TwiML responses, use the URL of the JSP page as the URL passed into the **CallFactory.create** method. For example, if you have a <!-- deleted by customization web site --><!-- keep by customization: begin --> Web Site <!-- keep by customization: end --> named MyTwiML deployed to an Azure hosted service, and the name of the JSP page is mytwiml.jsp, the URL can be passed to **CallFactory.create** as shown in the following:
 
     // Place the call From, To and URL values into a hash map. 
     HashMap<String, String> params = new HashMap<String, String>();
@@ -206,8 +203,8 @@ Now that you've learned the basics of the Twilio service, follow these links to 
 
 [twilio_java]: https://github.com/twilio/twilio-java
 [twilio_api_service]: https://api.twilio.com
-[add_ca_cert]: /documentation/articles/java-add-certificate-ca-store
-[howto_phonecall_java]: /documentation/articles/partner-twilio-java-phone-call-example
+[add_ca_cert]: java-add-certificate-ca-store.md
+[howto_phonecall_java]: partner-twilio-java-phone-call-example.md
 [misc_role_config_settings]: http://msdn.microsoft.com/zh-cn/library/azure/hh690945.aspx
 [twimlet_message_url]: http://twimlets.com/message
 [twimlet_message_url_hello_world]: http://twimlets.com/message?Message%5B0%5D=Hello%20World

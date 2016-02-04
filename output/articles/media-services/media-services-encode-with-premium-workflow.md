@@ -1,20 +1,18 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Advanced encoding with Media Encoder Premium Workflow" 
 	description="Learn how to encode with Media Encoder Premium Workflow. Code samples are written in C# and use the Media Services SDK for .NET." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="08/11/2015" 
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
 	wacn.date=""/>
 
-#Advanced encoding with Media Encoder Premium Workflow (public preview)
+#Advanced encoding with Media Encoder Premium Workflow
 
 **Note** Media Encoder Premium Workflow media processor discussed in this topic is not available in China. 
 
@@ -24,7 +22,7 @@ Windows Azure Media Services is introducing the **Media Encoder Premium Workflow
 
 The following topics outline details related to **Media Encoder Premium Workflow**: 
 
-- [Formats Supported by the Media Encoder Premium Workflow](/documentation/articles/media-services-premium-workflow-encoder-formats) – Discusses the file formats and codecs supported by **Media Encoder Premium Workflow**.
+- [Formats Supported by the Media Encoder Premium Workflow](/documentation/articles/media-services-premium-workflow-encoder-formats) - Discusses the file formats and codecs supported by **Media Encoder Premium Workflow**.
 
 - The [compare encoders](/documentation/articles/media-services-encode-asset#compare_encoders) section compares the encoding capabilities of **Media Encoder Premium Workflow** and **Azure Media Encoder**.
 
@@ -34,7 +32,7 @@ Encoding tasks for the **Media Encoder Premium Workflow** require a separate con
 
 ##Encode
 
-Encoding tasks for the **Media Encoder Premium Workflow** require a separate configuration file, called a Workflow file. These files have a .workflow extension and are created using the [Workflow Designer](/documentation/articles/media-services-workflow-designer) tool. 
+Encoding tasks for the **Media Encoder Premium Workflow** require a separate configuration file, called a Workflow file. These files have a .workflow extension and are created using the [Workflow Designer](/documentation/articles/media-services-workflow-designer) tool.
 
 
 You can also get the default workflow files [here](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows). The folder also contains the description of these files.
@@ -47,13 +45,13 @@ The following steps are performed:
  
 1. Create an asset and upload a workflow file. 
 2. Create an asset and upload a source media file.
-3. Get the “Media Encoder Premium Workflow” media processor.
+3. Get the "Media Encoder Premium Workflow" media processor.
 4. Create a job and a task.
 5. Add two input assets to the task.
 	
-	a. 1st – the workflow asset.
+	a. 1st - the workflow asset.
 
-	b. 2nd – the video asset.
+	b. 2nd - the video asset.
 	
 	**Note**: The workflow asset must be added to the task before the media asset. 
 The configuration string for this task should be empty. 
@@ -266,3 +264,12 @@ The following is a complete example. For information on how to set up with Media
 ##Known issues
 
 If your input video does not contain closed captioning, the output Asset will still contain an empty TTML file. 
+
+
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

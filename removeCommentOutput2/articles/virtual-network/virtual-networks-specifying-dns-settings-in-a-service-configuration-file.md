@@ -4,11 +4,11 @@
    services="virtual-network"
    documentationCenter="na"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/01/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Specifying DNS Settings in a Service Configuration File

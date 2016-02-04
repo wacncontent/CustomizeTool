@@ -1,19 +1,15 @@
 <properties 
-    pageTitle="Deploy QuickBooks in Azure RemoteApp | Microsoft Azure" 
+    pageTitle="Deploy QuickBooks in Azure RemoteApp | Windows Azure" 
     description="Learn how to share QuickBooks with Azure RemoteApp." 
     services="remoteapp" 
 	documentationCenter="" 
     authors="ericorman" 
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="10/01/2015" 
-    ms.author="elizapo" />
+<tags
+	ms.service="remoteapp"
+	ms.date="10/01/2015"
+	wacn.date=""/>
 
 
 
@@ -29,8 +25,8 @@ You can share QuickBooks 2015 Enterprise with Azure RemoteApp in either a hybrid
 ## Steps to deploy QuickBooks
 
 1. Create an Azure VM and install QuickBooks, QuickBooks database server, and place the company file on a Azure VM.  Make sure to properly configure firewall rules.
-2. Install QuickBooks on a [custom image](remoteapp-imageoptions.md) and create an [Azure RemoteApp collection](remoteapp-collections.md), either cloud or hybrid, within the exact same VNET where the VM hosting the QuickBooks database server with company files resides. 
-3.	[Publish](remoteapp-publish.md) QuickBooks app to users
+2. Install QuickBooks on a [custom image](/documentation/articles/remoteapp-imageoptions) and create an [Azure RemoteApp collection](/documentation/articles/remoteapp-collections), either cloud or hybrid, within the exact same VNET where the VM hosting the QuickBooks database server with company files resides. 
+3.	[Publish](/documentation/articles/remoteapp-publish) QuickBooks app to users
 4.	Launch the Azure RemoteApp-hosted QuickBooks client, navigate using standard Windows networking to the VM hosting the QuickBooks database server and open the company file. 
 
 ## Documentation references
@@ -38,7 +34,7 @@ You can share QuickBooks 2015 Enterprise with Azure RemoteApp in either a hybrid
 - QuickBooks [supported configurations](http://enterprisesuite.intuit.com/products/enterprise-solutions/technical/#top)
 - QuickBooks [deployment options](http://enterprisesuite.intuit.com/everythingenterprise/launchpad/new-user/)
 
-You can also check out my Ignite presentation, [Fundamentals of Microsoft Azure RemoteApp Management and Administration](https://channel9.msdn.com/Events/Ignite/2015/BRK3868) - fast-forward to 1:02:45 to get to the QuickBooks part.
+You can also check out my Ignite presentation, [Fundamentals of Windows Azure RemoteApp Management and Administration](https://channel9.msdn.com/Events/Ignite/2015/BRK3868) - fast-forward to 1:02:45 to get to the QuickBooks part.
 
 ## Deployment architecture
 

@@ -35,7 +35,7 @@ You should agree on a set of naming conventions up front. There are some conside
 
 ### Affixes
 
-When creating certain resources, Azure uses some defaults to simplify management of the resources that are associated with these resources. For example, when creating the first virtual machine for a new cloud service, the Azure Management Portal attempts to use the virtual machine’s name for the name of a new cloud service for the virtual machine.
+When creating certain resources, Azure uses some defaults to simplify management of the resources that are associated with these resources. For example, when creating the first virtual machine for a new cloud service, the Azure Management Portal attempts to use the virtual machine's name for the name of a new cloud service for the virtual machine.
 
 Therefore, it is beneficial to identify types of resources that need an affix to identify that type. In addition, clearly specify whether the affix will be at:
 
@@ -52,7 +52,7 @@ Affixes can refer to different aspects that describe the particular resources. T
 Aspect | Examples | Notes
 --- | --- | ---
 Environment | dev, stg, prod | Depending on the purpose and name of each environment.
-Location | usw (China North), use (China East 2) | Depending on the region of the datacenter or the region of the organization.
+Location | China North, China East | Depending on the region of the datacenter or the region of the organization.
 Azure component, service, or product | Rg for resource group, Svc for cloud service, VNet for virtual network | Depending on the product for which the resource provides support.
 Role | sql, ora, sp, iis | Depending on the role of the virtual machine.
 Instance | 01, 02, 03, etc. | For resources that have more than one instance. For example, load balanced web servers in a cloud service.
@@ -86,7 +86,7 @@ To ensure that the name provides enough information to determine to which resour
 
 When administrators create a virtual machine, Windows Azure requires them to provide a virtual machine name of up to 15 characters. Azure uses the virtual machine name as the Azure virtual machine resource name. Azure uses the same name as the computer name for the operating system installed in the virtual machine. However, these names might not always be the same.
 
-In case a virtual machine is created from a .vhd image file that already contains an operating system, the virtual machine name in Azure can differ from the virtual machine’s operating system computer name. This situation can add a degree of difficulty to virtual machine management, which we therefore do not recommend. Assign the Azure virtual machine resource the same name as the computer name that you assign to the operating system of that virtual machine.
+In case a virtual machine is created from a .vhd image file that already contains an operating system, the virtual machine name in Azure can differ from the virtual machine's operating system computer name. This situation can add a degree of difficulty to virtual machine management, which we therefore do not recommend. Assign the Azure virtual machine resource the same name as the computer name that you assign to the operating system of that virtual machine.
 
 We recommend that the Azure virtual machine name be the same as the underlying operating system computer name. Because of this, follow the NetBIOS naming rules as described in [Microsoft NetBIOS computer naming conventions](https://support.microsoft.com/kb/188997/).
 
@@ -200,7 +200,7 @@ Decisions:
 
 Task:
 
-- Create the set of storage accounts using your naming convention. You can use the Azure preview portal, the Azure Management Portal, or the **New-AzureStorageAccount** PowerShell cmdlet.
+- Create the set of storage accounts using your naming convention. You can use the Azure Management Portal, the Azure Management Portal, or the **New-AzureStorageAccount** PowerShell cmdlet.
 
 ## 4. Cloud services
 
@@ -264,13 +264,13 @@ For cross-premises virtual networks, you should design subnets with the same con
 
 Number of virtual machines needed | Number of host bits needed | Size of the subnet
 --- | --- | ---
-1–3 | 3 | /29
-4–11	 | 4 | /28
-12–27 | 5 | /27
-28–59 | 6 | /26
-60–123 | 7 | /25
+1-3 | 3 | /29
+4-11	 | 4 | /28
+12-27 | 5 | /27
+28-59 | 6 | /26
+60-123 | 7 | /25
 
-> [AZURE.NOTE] For normal on-premises subnets, the maximum number of host addresses for a subnet with n host bits is 2<sup>n</sup> – 2. For an Azure subnet, the maximum number of host addresses for a subnet with n host bits is 2<sup>n</sup> – 5 (2 plus 3 for the addresses that Azure uses on each subnet).
+> [AZURE.NOTE] For normal on-premises subnets, the maximum number of host addresses for a subnet with n host bits is 2<sup>n</sup> - 2. For an Azure subnet, the maximum number of host addresses for a subnet with n host bits is 2<sup>n</sup> - 5 (2 plus 3 for the addresses that Azure uses on each subnet).
 
 If you choose a subnet size that is too small, you will have to renumber and redeploy the virtual machines in the subnet.
 
@@ -286,7 +286,7 @@ Tasks:
 - Define the address space for the virtual network.
 - Define the set of subnets and the address space for each.
 - For cross-premises virtual networks, define the set of local network address spaces for the on-premises locations that the virtual machines in the virtual network need to reach.
-- Create the virtual network using your naming convention. You can use the Azure preview portal or the Azure Management Portal.
+- Create the virtual network using your naming convention. You can use the Azure Management Portal.
 
 ## 6. Availability sets
 
@@ -325,7 +325,7 @@ Decision:
 Tasks:
 
 - Define each virtual machine name using your naming convention.
-- Create your virtual machines with the Azure preview portal, the Azure Management Portal, the **New-AzureVM** PowerShell cmdlet, the Azure CLI, or with Resource Manager templates.
+- Create your virtual machines with the Azure Management Portal, the **New-AzureVM** PowerShell cmdlet, or the Azure CLI.
 
 ## Example of an IT workload: The Contoso financial analysis engine
 
@@ -352,7 +352,7 @@ The resulting design must incorporate:
 
 All of the above will follow these Contoso naming conventions:
 
-- Contoso uses [IT workload]-[location]-[Azure resource] as a prefix. For this example, "azfae" (Azure Financial Analysis Engine) is the IT workload name and "use" (China East 2) is the location, because most of Contoso's initial customers are on the East Coast of the United States.
+- Contoso uses [IT workload]-[location]-[Azure resource] as a prefix. For this example, "azfae" (Azure Financial Analysis Engine) is the IT workload name and "chinaeast" is the location, because most of Contoso's initial customers are on the East Coast of the United States.
 - Storage accounts use contosoazfaeusesa[description] Note that contoso was added to the prefix to provide uniqueness, and storage account names do not support the use of hyphens.
 - Virtual networks use AZFAE-USE-VN[number].
 - Availability sets use azfae-use-as-[role].
@@ -373,10 +373,10 @@ Contoso determined that they needed two storage accounts:
 
 Because the virtual network does not need ongoing connectivity to the Contoso on-premises network, Contoso decided on a cloud-only virtual network.
 
-They created a cloud-only virtual network with the following settings using the Azure preview portal:
+They created a cloud-only virtual network with the following settings using the Azure Management Portal:
 
 - Name: AZFAE-USE-VN01
-- Location: China East 2
+- Location: China East
 - Virtual network address space: 10.0.0.0/8
 - First subnet:
 	- Name: FrontEnd

@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="09/17/2015"
+	ms.date="11/10/2015"
 	wacn.date=""/>
 
 # Runbook execution in Azure Automation
@@ -80,24 +80,24 @@ You can use the following steps to view the jobs for a runbook.
 
 ## Retrieving job status using Windows PowerShell
 
-You can use the [Get-AzureAutomationJob](http://msdn.microsoft.com/zh-cn/library/azure/dn690263.aspx) to retrieve the jobs created for a runbook and the details of a particular job. If you start a runbook with Windows PowerShell using [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690259.aspx), then it will return the resulting job. Use [Get-AzureAutomationJob](http://msdn.microsoft.com/zh-cn/library/azure/dn690263.aspx)Output to get a job’s output.
+You can use the [Get-AzureAutomationJob](http://msdn.microsoft.com/zh-cn/library/azure/dn690263.aspx) to retrieve the jobs created for a runbook and the details of a particular job. If you start a runbook with Windows PowerShell using [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690259.aspx), then it will return the resulting job. Use [Get-AzureAutomationJob](http://msdn.microsoft.com/zh-cn/library/azure/dn690263.aspx)Output to get a job's output.
 
-The following sample commands retrieves the last job for a sample runbook and displays it’s status, the values provide for the runbook parameters, and the output from the job.
+The following sample commands retrieves the last job for a sample runbook and displays it's status, the values provide for the runbook parameters, and the output from the job.
 
-	$job = (Get-AzureAutomationJob –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" | sort LastModifiedDate –desc)[0]
+	$job = (Get-AzureAutomationJob -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" | sort LastModifiedDate -desc)[0]
 	$job.Status
 	$job.JobParameters
-	Get-AzureAutomationJobOutput –AutomationAccountName "MyAutomationAccount" -Id $job.Id –Stream Output
+	Get-AzureAutomationJobOutput -AutomationAccountName "MyAutomationAccount" -Id $job.Id -Stream Output
 
 ## Fair share
 
-In order to share resources among all runbooks in the cloud, Azure Automation will temporarily unload any job after it has been running for 3 hours and then restart it from its last [checkpoint](http://technet.microsoft.com/zh-cn/library/dn469257.aspx#bk_Checkpoints). During this time, the job will show a status of Running, Waiting for Resources. If the runbook has no checkpoints or the job had not reached the first checkpoint before being unloaded, then it will restart from the beginning.
+In order to share resources among all runbooks in the cloud, Azure Automation will temporarily unload any job after it has been running for 3 hours.  [Graphical](/documentation/articles/automation-runbook-types#graphical-runbooks) and [PowerShell Workflow](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks) runbooks will be resumed from their last [checkpoint](http://technet.microsoft.com/zh-cn/library/dn469257.aspx#bk_Checkpoints). During this time, the job will show a status of Running, Waiting for Resources. If the runbook has no checkpoints or the job had not reached the first checkpoint before being unloaded, then it will restart from the beginning.  [PowerShell](/documentation/articles/automation-runbook-types#powershell-runbooks) runbooks are always restarted from the beginning since they don't support checkpoints.
 
 If the runbook restarts from the same checkpoint or from the beginning of the runbook three consecutive times, it will be terminated with a status of Failed, waiting for resources. This is to protect from runbooks running indefinitely without completing, as they are not able to make it to the next checkpoint without being unloaded again. In this case, you will receive the following exception with the failure.
 
-The job cannot continue running because it was repeatedly evicted from the same checkpoint. Please make sure your Runbook does not perform lengthy operations without persisting its state.
+*The job cannot continue running because it was repeatedly evicted from the same checkpoint. Please make sure your Runbook does not perform lengthy operations without persisting its state.*
 
-When you create a runbook, you should ensure that the time to run any activities between two checkpoints will not exceed 3 hours. You may need to add checkpoints to your runbook to ensure that it does not reach this 3 hour limit. You may also need to break up long running operations. For example, your runbook might perform a reindex on a large SQL database. If this single operation does not complete within the fair share limit, then the job will be unloaded and restarted from the beginning. In this case, you should break up the reindex operation into multiple steps, such as reindexing one table at a time, and then insert a checkpoint after each operation so that the job could resume after the last operation to complete.
+When you create a runbook, you should ensure that the time to run any activities between two checkpoints will not exceed 3 hours. You may need to add checkpoints to your runbook to ensure that it does not reach this 3 hour limit or break up long running operations. For example, your runbook might perform a reindex on a large SQL database. If this single operation does not complete within the fair share limit, then the job will be unloaded and restarted from the beginning. In this case, you should break up the reindex operation into multiple steps, such as reindexing one table at a time, and then insert a checkpoint after each operation so that the job could resume after the last operation to complete.
 
 
 

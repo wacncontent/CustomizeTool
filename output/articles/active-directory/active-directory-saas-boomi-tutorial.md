@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory integration with Boomi | Windows Azure" 
     description="Learn how to use Boomi with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="MarkusVi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Boomi
@@ -73,7 +73,7 @@ The objective of this section is to outline how to enable users to authenticate 
 
     ![Configure Single Sign-On](./media/active-directory-saas-boomi-tutorial/IC790825.png "Configure Single Sign-On")
 
-3.  On the **Configure App URL** page, in the **Boomi Reply URL** textbox, type your **Boomi AtomSphere Login URL** (e.g.: “*https://platform.boomi.com/sso/AccountName/saml*”), and then click **Next**.
+3.  On the **Configure App URL** page, in the **Boomi Reply URL** textbox, type your **Boomi AtomSphere Login URL** (e.g.: "*https://platform.boomi.com/sso/AccountName/saml*"), and then click **Next**.
 
     ![Configure App URL](./media/active-directory-saas-boomi-tutorial/IC790826.png "Configure App URL")
 

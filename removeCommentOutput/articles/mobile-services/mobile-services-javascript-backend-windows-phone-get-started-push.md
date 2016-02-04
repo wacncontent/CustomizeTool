@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/14/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 
@@ -169,14 +169,14 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-windows-phone-get-started-data
-[Get started with authentication]: /documentation/articles/mobile-services-windows-phone-get-started-users
+[Add Mobile Services to an existing app]: mobile-services-windows-phone-get-started-data.md
+[Get started with authentication]: mobile-services-windows-phone-get-started-users.md
 
 [Setting up an authenticated web service to send push notifications for Windows Phone]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx
 
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
-[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[Mobile Services .NET How-to Conceptual Reference]: mobile-services-windows-dotnet-how-to-use-client-library.md
 
-[What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
+[What are Notification Hubs?]: ../notification-hubs-overview.md
 
  

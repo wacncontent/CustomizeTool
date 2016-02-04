@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Manage Azure Web App using Azure Automation"
-	description="Learn about how the Azure Automation service can be used to manage Azure Web App."
+	pageTitle="Manage Azure web site using Azure Automation"
+	description="Learn about how the Azure Automation service can be used to manage Azure web site."
 	services="app-service\web, automation"
 	documentationCenter=""
 	authors="csand-msft"
@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="04/13/2015"
+	ms.date="10/28/2015"
 	wacn.date=""/>
 
 
 
-#Managing Azure Web App using Azure Automation
+#Managing Azure web site using Azure Automation
 
-This guide will introduce you to the Azure Automation service, and how it can be used to simplify management of Azure Web App.
+This guide will introduce you to the Azure Automation service, and how it can be used to simplify management of Azure web site.
 
 ## What is Azure Automation?
 
@@ -27,14 +27,14 @@ Azure Automation provides a highly-reliable, highly-available workflow execution
 Reduce operational overhead and free up IT and DevOps staff to focus on work that adds business value by moving your cloud management tasks to be run automatically by Azure Automation.
 
 
-## How can Azure Automation help manage Azure Web App?
+## How can Azure Automation help manage Azure web site?
 
-Web App can be managed in Azure Automation by using the PowerShell cmdlets that are available in the [Azure PowerShell tools](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx). Azure Automation has these Web App PowerShell cmdlets available out of the box, so that you can perform all of your Web App management tasks within the service. You can also pair these cmdlets in Azure Automation with the cmdlets for other Azure services to automate complex tasks across Azure services and 3rd party systems.
+web site can be managed in Azure Automation by using the PowerShell cmdlets that are available in the [Azure PowerShell tools](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx). Azure Automation has these web site PowerShell cmdlets available out of the box, so that you can perform all of your web site management tasks within the service. You can also pair these cmdlets in Azure Automation with the cmdlets for other Azure services to automate complex tasks across Azure services and 3rd party systems.
 
 
 ## Next Steps
 
-Now that you've learned the basics of Azure Automation and how it can be used to manage Azure Web App, follow these links to learn more about Azure Automation.
+Now that you've learned the basics of Azure Automation and how it can be used to manage Azure web site, follow these links to learn more about Azure Automation.
 
 * See the Azure Automation [Getting Started Tutorial](/documentation/articles/automation-intro)
  

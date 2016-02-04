@@ -1,11 +1,12 @@
 <properties
-	pageTitle="How to connect to an Azure SQL database using SSMS | Windows Azure"
-	description="Learn how to connect to an Azure SQL database using SSMS."
+	pageTitle="Connect to SQL database by using SSMS | Windows Azure"
+	description="Learn how to connect to an Azure SQL database by using SQL Server Management Studio (SSMS). Then, run a sample query using Transact-SQL (T-SQL)."
 	metaCanonical=""
+	keywords="connect to sql database,sql server management studio"
 	services="sql-database"
 	documentationCenter=""
 	authors="stevestein"
-	manager="jeffreyg" 
+	manager="jeffreyg"
 	editor="" />
 
 <tags
@@ -39,9 +40,9 @@ When working with SQL Database, you should use the most recent version of SSMS. 
 
 ### If the connection fails
 
-The most common reason for connection failures are mistakes in the server name, user name, or password, as well as the server not allowing connections for security reasons. Make sure that the firewall settings of the server allow connections from your local computer's IP address and the IP address that the SSMS client uses. Sometimes they're different. 
+The most common reason for connection failures are mistakes in the server name, user name, or password, as well as the server not allowing connections for security reasons. Make sure that the firewall settings of the server allow connections from your local computer's IP address and the IP address that the SSMS client uses. Sometimes they're different.
 
-If the connection fails because of a firewall rule, the IP address is reported in the error message. Add this IP address to the server firewall rule. For more information, see [How to: Configure Firewall Settings (Azure SQL Database)](/documentation/articles/sql-database-configure-firewall-settings).
+If the connection fails because of firewall settings, the latest version of SSMS will create the firewall rule for you after asking. To get it, see [Download SSMS](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx). If you're using an earlier version, the IP address is reported in an error message and you need to add this IP address to the server firewall rule. For more information, see [How to: Configure Firewall Settings (Azure SQL Database)](/documentation/articles/sql-database-configure-firewall-settings).
 
 ## Run sample queries
 

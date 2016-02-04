@@ -10,7 +10,7 @@
 
 5. In the Add Application Wizard, enter a **Name** for your application and click the  **Native Client Application** type. Then click to continue.
 
-6. In the **Redirect URI** box, enter the /login/done endpoint for your Azure Websites gateway. This value should be similar to https://contoso.chinacloudsites.cn/login/done.
+6. In the **Redirect URI** box, enter the /login/done endpoint for your Azure gateway. This value should be similar to https://contoso.chinacloudsites.cn/login/done.
 
 7. Once the native application has been added, click the **Configure** tab. Copy the **Client ID**. You will need this later.
 
@@ -25,4 +25,4 @@
 Your application is now configured in AAD so that users can log in using AAD sign-on.
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[How to configure your Mobile App with Azure Active Directory]: /documentation/articles/app-service-how-to-configure-active-directory-authentication
+[How to configure your Mobile App with Azure Active Directory]: ../articles/app-service-how-to-configure-active-directory-authentication.md

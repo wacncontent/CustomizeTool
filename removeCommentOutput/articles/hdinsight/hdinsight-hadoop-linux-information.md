@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Information about using HDInsight on Linux
@@ -19,7 +19,19 @@ Linux-based Azure HDInsight clusters provide Hadoop on a familiar Linux environm
 
 ## Domain names
 
-The fully qualified domain name (FQDN) to use when connecting to the cluster is **&lt;clustername>.azurehdinsight.cn** or (for SSH only) **&lt;clustername-ssh>.azurehdinsight.cn**.
+The fully qualified domain name (FQDN) to use when connecting to the cluster from the internet is **&lt;clustername>.azurehdinsight.cn** or (for SSH only) **&lt;clustername-ssh>.azurehdinsight.cn**.
+
+Internally, each node in the cluster has a name that is assigned during cluster configuration. To find the cluster names, you can visit the __Hosts__ page on the Ambari Web UI, or use the following to return a list of hosts from the Ambari REST API using [cURL](http://curl.haxx.se/) and [jq](https://stedolan.github.io/jq/):
+
+    curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/hosts" | jq '.items[].Hosts.host_name'
+
+Replace __PASSWORD__ with the password of the admin account, and __CLUSTERNAME__ with the name of your cluster. This will return a JSON document that contains a list of the hosts in the cluster, then jq pulls out the `host_name` element value for each host in the cluster.
+
+If you need to find the name of the node for a specific service, you can query Ambari for that component. For example, to find the hosts for the HDFS name node, use the following.
+
+    curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/services/HDFS/components/NAMENODE" | jq '.host_components[].HostRoles.host_name'
+
+This returns a JSON document describing the service, and then jq pulls out only the `host_name` value for the hosts.
 
 ## Remote access to services
 
@@ -45,7 +57,7 @@ The fully qualified domain name (FQDN) to use when connecting to the cluster is 
 	>
 	> Authentication is plaintext - always use HTTPS to help ensure that the connection is secure.
 
-* **SSH** - &lt;clustername>-ssh.azurehdinsight.cn on port 22 or 23. Port 22 is used to connect to headnode0, while 23 is used to connect to headnode1. For more information on the head nodes, see [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability).
+* **SSH** - &lt;clustername>-ssh.azurehdinsight.cn on port 22 or 23. Port 22 is used to connect to head node 0, while 23 is used to connect to head node 1. For more information on the head nodes, see [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability).
 
 	> [AZURE.NOTE] You can only access the cluster head nodes through SSH from a client machine. Once connected, you can then access the worker nodes by using SSH from the head node.
 
@@ -104,9 +116,9 @@ During cluster creation, you selected to either use an existing Azure Storage ac
 	>
 	> `curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" | jq '.items[].configurations[].properties as $in | $in | keys[] | select(. | contains("fs.azure.account.key.")) as $item | $item | ltrimstr("fs.azure.account.key.") | { storage_account: ., storage_account_key: $in[$item] }'`
 
-You can also find the storage information using the Azure preview portal:
+You can also find the storage information using the Azure Management Portal:
 
-1. In the [Azure Preview Portal](https://manage.windowsazure.cn/), select your HDInsight cluster.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), select your HDInsight cluster.
 
 2. From the __Essentials__ section, select __All settings__.
 
@@ -191,13 +203,13 @@ The different cluster types are affected by scaling as follows:
 
 For specific information on scaling your HDInsight cluster, see:
 
-* [Manage Hadoop clusters in HDInsight by using the Azure preview portal](/documentation/articles/hdinsight-administer-use-portal-linux#scaling)
+* [Manage Hadoop clusters in HDInsight by using the Azure Management Portal](/documentation/articles/hdinsight-administer-use-portal-linux#scaling)
 
 * [Manage Hadoop clusters in HDinsight by using Azure PowerShell](/documentation/articles/hdinsight-administer-use-command-line#scaling)
 
 ## How do I install Hue (or other Hadoop component)?
 
-HDInsight is a managed service, which means that nodes in a cluster may be destroyed and reprovisioned automatically by Azure if a problem is detected. Because of this, it is not recommended to manually install things directly on the cluster nodes. Instead, use [HDInsight Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster) when you need to install the following:
+HDInsight is a managed service, which means that nodes in a cluster may be destroyed and reprovisioned automatically by Azure if a problem is detected. Because of this, it is not recommended to manually install things directly on the cluster nodes. Instead, use [HDInsight Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster-v1) when you need to install the following:
 
 * A service or web site such as Spark or Hue.
 * A component that requires configuration changes on multiple nodes in the cluster. For example, a required environment variable, creating of a logging directory, or creation of a configuration file.
@@ -207,7 +219,7 @@ Script Actions are Bash scripts that are ran during cluster provisioning, and ca
 * [Hue](/documentation/articles/hdinsight-hadoop-hue-linux)
 * [Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-linux)
 * [R](/documentation/articles/hdinsight-hadoop-r-scripts-linux)
-* [Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux)
+* [Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1)
 * [Spark](/documentation/articles/hdinsight-hadoop-spark-install-linux)
 
 For information on developing your own Script Actions, see [Script Action development with HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux).

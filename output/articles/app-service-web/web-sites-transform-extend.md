@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure Websites web app advanced config and extensions"
-	description="Use XML Document Transformation(XDT) declarations to transform the ApplicationHost.config file in your Azure Websites web app and to add private extensions to enable custom administration actions."
+	pageTitle="Azure web app advanced config and extensions"
+	description="Use XML Document Transformation(XDT) declarations to transform the ApplicationHost.config file in your Azure web app and to add private extensions to enable custom administration actions."
 	authors="cephalin"
 	writer="cephalin"
 	editor="mollybos"
@@ -10,17 +10,19 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/16/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
-# Azure Websites web app advanced config and extensions
+# Azure web app advanced config and extensions
 
-By using [XML Document Transformation](http://msdn.microsoft.com/zh-cn/library/dd465326.aspx) (XDT) declarations, you can transform the [ApplicationHost.config](http://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig) file in your web app in Azure Websites. You can also use XDT declarations to add private extensions to enable custom web app administration actions. This article includes a sample PHP Manager web app extension that enables management of PHP settings through a web interface.
+By using [XML Document Transformation](http://msdn.microsoft.com/zh-cn/library/dd465326.aspx) (XDT) declarations, you can transform the [ApplicationHost.config](http://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig) file in your web app in Azure. You can also use XDT declarations to add private extensions to enable custom web app administration actions. This article includes a sample PHP Manager web app extension that enables management of PHP settings through a web interface.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
 ##<a id="transform"></a>Advanced configuration through ApplicationHost.config
-The Azure Websites platform provides flexibility and control for web app configuration. Although the standard IIS ApplicationHost.config configuration file is not available for direct editing in Azure Websites, the platform supports a declarative ApplicationHost.config transform model based on XML Document Transformation (XDT).
+The Azure platform provides flexibility and control for web app configuration. Although the standard IIS ApplicationHost.config configuration file is not available for direct editing in Azure Web App, the platform supports a declarative ApplicationHost.config transform model based on XML Document Transformation (XDT).
 
-To leverage this transform functionality, you create an ApplicationHost.xdt file with XDT content and place under the web app root. You may need to restart the Web App for changes to take effect.
+To leverage this transform functionality, you create an ApplicationHost.xdt file with XDT content and place under the site root (d:\home\site) in the [Kudu Console](https://github.com/projectkudu/kudu/wiki/Kudu-console). You may need to restart the Web App for changes to take effect.
 
 The following applicationHost.xdt sample shows how to add a new custom environment variable to a web app that uses PHP 5.4.
 
@@ -40,7 +42,7 @@ The following applicationHost.xdt sample shows how to add a new custom environme
 
 A log file with transform status and details is available from the FTP root under LogFiles\Transform.
 
-For additional samples, see [https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions).
+For additional samples, see [https://github.com/projectkudu/kudu/wiki/Xdt-transform-samples](https://github.com/projectkudu/kudu/wiki/Xdt-transform-samples).
 
 **Note**<br />
 Elements from the list of modules under `system.webServer` cannot be removed or reordered, but additions to the list are possible.
@@ -50,9 +52,9 @@ Elements from the list of modules under `system.webServer` cannot be removed or 
 
 ###<a id="overview"></a> Overview of private web app extensions
 
-Azure Websites supports web app extensions as an extensibility point for administrative actions. In fact, some Azure Websites platform features are implemented as pre-installed extensions. While the pre-installed platform extensions cannot be modified, you can create and configure private extensions for your own web app. This functionality also relies on XDT declarations. The key steps for creating a private web app extension are the following:
+Azure supports web app extensions as an extensibility point for administrative actions. In fact, some Azure platform features are implemented as pre-installed extensions. While the pre-installed platform extensions cannot be modified, you can create and configure private extensions for your own web app. This functionality also relies on XDT declarations. The key steps for creating a private web app extension are the following:
 
-1. Web app extension **content**: create any web application supported by Azure Websites
+1. Web app extension **content**: create any web application supported by Azure
 2. Web app extension **declaration**: create an ApplicationHost.xdt file
 3. Web app extension **deployment**: place content in the SiteExtensions folder under `root`
 
@@ -64,7 +66,7 @@ A detailed example is included to illustrate the steps for creating and enabling
 
 ###<a id="SiteSample"></a> Web app extension example: PHP Manager
 
-PHP Manager is a web app extension that allows web app administrators to easily view and configure their PHP settings using a web interface instead of having to modify PHP .ini files directly. Common configuration files for PHP include the php.ini file located under Program Files and the .user.ini file located in the root folder of your web app. Since the php.ini file is not directly editable on the Azure Websites platform, the PHP Manager extension uses the .user.ini file to apply setting changes.
+PHP Manager is a web app extension that allows web app administrators to easily view and configure their PHP settings using a web interface instead of having to modify PHP .ini files directly. Common configuration files for PHP include the php.ini file located under Program Files and the .user.ini file located in the root folder of your web app. Since the php.ini file is not directly editable on the Azure platform, the PHP Manager extension uses the .user.ini file to apply setting changes.
 
 ####<a id="PHPwebapp"></a> The PHP Manager web application
 
@@ -165,6 +167,11 @@ You should be able to see your web app extension at:
 Note that the URL looks just like the URL for your web app, except that it uses HTTPS and contains ".scm".
 
 It is possible to disable all private (not pre-installed) extensions for your web app during development and investigations by adding an app settings with the key `WEBSITE_PRIVATE_EXTENSIONS` and a value of `0`.
+
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+
+## What's changed
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
 <!-- IMAGES -->
 [TransformSitePHPUI]: ./media/web-sites-transform-extend/TransformSitePHPUI.png

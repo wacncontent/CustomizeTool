@@ -237,5 +237,5 @@ For more information, see [EntityClient Provider for the Entity Framework](http:
 
 ## Next Steps
 
-Now that you have learned the basics of connecting to SQL Database, see [Development: How-to Topics (SQL Database)](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
+Now that you have learned the basics of connecting to SQL Database, see [Development: How-to Topics (SQL Database)](http://msdn.microsoft.com//zh-cn/library/azure/ee621787.aspx) 
  

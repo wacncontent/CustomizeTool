@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory Integration with Canvas LMS | Windows Azure" 
     description="Learn how to use Canvas LMS with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory Integration with Canvas LMS
@@ -137,9 +137,9 @@ In the case of Canvas, provisioning is a manual task.
 
     ![Add User](./media/active-directory-saas-canvas-lms-tutorial/IC775997.png "Add User")
 
-    1.  In the **Full Name** textbox, type the user’s name.
-    2.  In the **Email** textbox, type the user’s email address.
-    3.  In the **Login** textbox, type the user’s Azure AD email address.
+    1.  In the **Full Name** textbox, type the user's name.
+    2.  In the **Email** textbox, type the user's email address.
+    3.  In the **Login** textbox, type the user's Azure AD email address.
     4.  Select **Email the user about this account creation**.
     5.  Click **Add User**.
 

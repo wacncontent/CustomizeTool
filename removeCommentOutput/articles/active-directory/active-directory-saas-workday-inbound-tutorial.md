@@ -1,21 +1,19 @@
 <properties 
-  pageTitle="Tutorial: Configuring Workday for Inbound Synchronization | Windows Azure" 
-  description="Learn how to use Workday as source of identity data for Azure Active Directory." 
-  services="active-directory" 
-  authors="MarkusVi"  
-  documentationCenter="na" 
-  manager="msStevenPo"/>
+    pageTitle="Tutorial: Configuring Workday for Inbound Synchronization | Windows Azure" 
+    description="Learn how to use Workday as source of identity data for Azure Active Directory." 
+    services="active-directory" 
+    authors="MarkusVi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="08/01/2015"
+	ms.date="10/22/2015"
 	wacn.date=""/>
 
 
 #Tutorial: Configuring Workday for Inbound Synchronization
 
 
->[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/890959cb-11a3-426c-8efd-1f00d620c6ee/tutorial-azure-ad-integration-with-servicenow?forum=WindowsAzureAD).
-  
 The objective of this tutorial is to show you the steps you need to perform in Workday and Azure AD to import people from Workday to Azure AD. 
 
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -87,7 +85,7 @@ The objective of this section is to outline how to enable the application integr
 
 
 2. Complete the **Create Integration System User** task by supplying a user name and password for a new Integration System User.  Leave the Require New Password at Next Sign In option unchecked, because this user will be logging on programmatically. <br>
-Leave the Session Timeout Minutes with its default value of 0, which will prevent the user’s sessions from timing out prematurely. <br><br>   ![Create Integration System User](./media/active-directory-saas-workday-inbound-tutorial/IC750980.png "Create Integration System User")
+Leave the Session Timeout Minutes with its default value of 0, which will prevent the userâs sessions from timing out prematurely. <br><br>   ![Create Integration System User](./media/active-directory-saas-workday-inbound-tutorial/IC750980.png "Create Integration System User")
  
 
 
@@ -101,7 +99,7 @@ For the scenario outlined in this tutorial, you need to create an unconstrained 
 1. Enter create security group in the search box, and then click **Create Security Group**. <br><br>   ![CreateSecurity Group](./media/active-directory-saas-workday-inbound-tutorial/IC750981.png "CreateSecurity Group")
  
 
-2. Complete the Create Security Group task.  Select Integration System Security Group—Unconstrained from the Type of Tenanted Security Group dropdown, to create a security group to which members will be explicitly added. <br><br>   ![CreateSecurity Group](./media/active-directory-saas-workday-inbound-tutorial/IC750982.png "CreateSecurity Group")
+2. Complete the Create Security Group task.  Select Integration System Security GroupâUnconstrained from the Type of Tenanted Security Group dropdown, to create a security group to which members will be explicitly added. <br><br>   ![CreateSecurity Group](./media/active-directory-saas-workday-inbound-tutorial/IC750982.png "CreateSecurity Group")
  
 
 

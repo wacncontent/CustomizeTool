@@ -9,5 +9,5 @@ deleted:
 		1. Click **Add a Schedule** at the top of the blade.
 		1. Complete the form and click **Create** to save the new schedule.
 
-reason: ()
+reason: (the new Ibiza portal)
 

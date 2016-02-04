@@ -12,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/14/2015"
+	ms.date="11/17/2015"
 	wacn.date=""/>
 
 #Create Linux-based clusters in HDInsight using the Azure CLI
@@ -23,7 +23,10 @@ The Azure CLI is a cross-platform command-line utility that allows you to manage
 
 Azure Resource Management templates are JSON documents that describe a __resource group__ and all resources in it (such as HDInsight.) This template based approach allows you to define all the resources that you need for HDInsight in one template, and to manage changes to the group as a whole through __deployments__ that apply changes to the group.
 
-The steps in this document walk through the process of creating a new HDInsight cluster using the Azure CLI and a template:
+The steps in this document walk through the process of creating a new HDInsight cluster using the Azure CLI and a template.
+
+> [AZURE.IMPORTANT] The steps in this document use the default number of worker nodes (4) for an HDInsight cluster. If you plan on more than 32 worker nodes, either at cluster creation or by scaling the cluster after creation, then you must select a head node size with at least 8 cores and 14GB ram.
+> For more information on node sizes and associated costs, see [HDInsight pricing](/home/features/hdinsight/#price).
 
 ##Prerequisites
 
@@ -64,7 +67,7 @@ The following steps should be performed from a command-prompt, shell or terminal
     * __clusterName__: The name of the HDInsight cluster. This name must be unique, or the deployment will fail.
     * __clusterStorageAccountName__: The name of the Azure Storage Account that will be created for the HDInsight cluster. This name must be unique, or the deployment will fail.
     * __clusterLoginPassword__: The password for the cluster admin user. This should be a secure password, as it is used to access web sites and REST services on the cluster.
-    * __sshUserName__: The name of the first SSH user to create for this cluster. SSH will be used to remotely access the cluster using this account. The name must be unique, and cannot be the name of an account already in use on the cluster. Invalid names include root, storm, and hbase.
+    * __sshUserName__: The name of the first SSH user to create for this cluster. SSH will be used to remotely access the cluster using this account.
     * __sshPublicKey__: If you are using the template that requires an SSH public key, you must add your public key on this line. For more information on generating and working with public keys, see the following articles:
 
         * [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
@@ -106,11 +109,11 @@ Now that you have successfully created an HDInsight cluster, use the following t
 
 ###HBase clusters
 
-* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-stared-linux)
+* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1-linux)
 * [Develop Java applications for HBase on HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux)
 
 ###Storm clusters
 
 * [Develop Java topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology)
-* [Use Python components in Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-python)
+* [Use Python components in Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-python-topology)
 * [Deploy and monitor topologies with Storm on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)

@@ -32,37 +32,37 @@ deleted:
 		
 		* **Access the HBase UI**. From the Azure preview portal, click an HDInsight HBase cluster name to open the cluster blade. From the cluster blade, click **Dashboard**. When prompted, enter the cluster administrator credentials. In the Query Console that opens, click **HBase UI**
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		Southeast Asia, West Europe,
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		, or China North
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		Southeast Asia, West Europe,
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		, or China North
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
 		If you are using the preview portal, the UI will notify them of this issue in advance.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 replacement:
 
@@ -74,5 +74,5 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 

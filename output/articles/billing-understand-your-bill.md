@@ -132,7 +132,7 @@ Any bill adjustments (credits or balances) applied to your account since your la
 The Current Charges section of the bill contains details about your monthly charges. The links are organized into the following subsections.
 
 ### Usage Charges
-Usage charges are total monthly charges on a subscription. You are billed in arrears for your past month’s usage.
+Usage charges are total monthly charges on a subscription. You are billed in arrears for your past monthâs usage.
 
 ### Discounts
 Service discounts on your usage would be reflected in this line item that are applied to your current bill.
@@ -164,7 +164,7 @@ This section is the payment instructions of where to send checks, wire transfers
 
 As part of our ongoing commitment to help customers easily manage their Azure use, we've enhanced the download usage file that reports on your Azure services usage and costs.  The download link contains two versions of the usage file: **Version 1** uses the pre-existing format; **Version 2** includes additional information and updated column names in the Daily Usage section.  
 
-Usage charges are total **monthly** charges on a subscription less any credit or discount. You are billed in arrears for your past month’s usage.  The top section of the file display the details on the services you are being billed for during the previous month's billing cycle.  The table below lists the names of the columns for each of the .csv version files.
+Usage charges are total **monthly** charges on a subscription less any credit or discount. You are billed in arrears for your past monthâs usage.  The top section of the file display the details on the services you are being billed for during the previous month's billing cycle.  The table below lists the names of the columns for each of the .csv version files.
 
 **Version 1** |  **Version 2**  |  **Description**|
 :---------------| :---------------- | --------|

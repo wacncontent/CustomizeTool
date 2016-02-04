@@ -1,17 +1,19 @@
-<properties 
+<properties
    pageTitle="Azure Storage Scalability and Performance Targets | Windows Azure"
    description="Learn about the scalability and performance targets for Azure Storage, including capacity, request rate, and inbound and outbound bandwidth for both standard and premium storage accounts. Understand performance targets for partitions within each of the Azure Storage services."
    services="storage"
    documentationCenter="na"
-   authors="tamram"
-   manager="na"
-   editor="na" />
+   authors="robinsh"
+   manager="carmonm"
+   editor="tysonn" />
 <tags
 	ms.service="storage"
-	ms.date="09/27/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Azure Storage Scalability and Performance Targets
+
+## Overview
 
 This topic describes the scalability and performance topics for Windows Azure Storage. For a summary of other Azure limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits).
 
@@ -23,17 +25,28 @@ This topic describes the scalability and performance topics for Windows Azure St
 
 >When your application reaches the limit of what a partition can handle for your workload, Azure Storage will begin to return error code 503 (Server Busy) or error code 500 (Operation Timeout) responses. When this occurs, the application should use an exponential backoff policy for retries. The exponential backoff allows the load on the partition to decrease, and to ease out spikes in traffic to that partition.
 
-If the needs of your application exceed the scalability targets of a single storage account, you can build your application to use multiple storage accounts, and partition your data objects across those storage accounts. See [Storage Pricing Details](/home/features/storage/#price) for information on volume pricing.
+If the needs of your application exceed the scalability targets of a single storage account, you can build your application to use multiple storage accounts, and partition your data objects across those storage accounts. See [Storage Pricing Details](/home/features/storage#price) for information on volume pricing.
 
-## Scalability Targets for Standard Storage Accounts
+
+## Scalability targets for blobs, queues, tables, and files
 
 [AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
-## Scalability Targets for Premium Storage Accounts
+## Scalability targets for virtual machine disks
 
-[AZURE.INCLUDE [azure-storage-limits-premium-storage](../includes/azure-storage-limits-premium-storage.md)]
+[AZURE.INCLUDE [azure-storage-limits-vm-disks](../includes/azure-storage-limits-vm-disks.md)]
 
-## Storage Limits - Azure Resource Manager
+See [Virtual machine sizes](/documentation/articles/virtual-machines-size-specs) for additional details.
+
+### Standard storage accounts
+
+[AZURE.INCLUDE [azure-storage-limits-vm-disks-standard](../includes/azure-storage-limits-vm-disks-standard.md)]
+
+### Premium storage accounts
+
+[AZURE.INCLUDE [azure-storage-limits-vm-disks-premium](../includes/azure-storage-limits-vm-disks-premium.md)]
+
+## Scalability targets for Azure resource manager
 
 [AZURE.INCLUDE [azure-storage-limits-azure-resource-manager](../includes/azure-storage-limits-azure-resource-manager.md)]
 
@@ -53,7 +66,7 @@ Partitions affect load balancing and scalability for each of the storage service
 
 - **Entities**: The partition key for an entity is table name + partition key, where the partition key is the value of the required user-defined **PartitionKey** property for the entity.  
 
-	All entities with the same partition key value are grouped into the same partition and are stored on the same partition server. This is an important point to understand in designing your application. Your application should balance the scalability benefits of spreading entities across multiple partitions with the data access advantages of grouping entities in a single partition. 
+	All entities with the same partition key value are grouped into the same partition and are stored on the same partition server. This is an important point to understand in designing your application. Your application should balance the scalability benefits of spreading entities across multiple partitions with the data access advantages of grouping entities in a single partition.
 
 	A key advantage to grouping a set of entities in a table into a single partition is that it's possible to perform atomic batch operations across entities in the same partition, since a partition exists on a single server. Therefore if you wish to perform batch operations, consider grouping entities with the same partition key.
 
@@ -61,13 +74,9 @@ Partitions affect load balancing and scalability for each of the storage service
 
 ## See Also
 
-- [Storage Pricing Details](/home/features/storage/#price)
+- [Storage Pricing Details](/home/features/storage#price)
 - [Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits)
 - [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](/documentation/articles/storage-premium-storage-preview-portal)
 - [Azure Storage Replication](/documentation/articles/storage-redundancy)
 - [Windows Azure Storage Performance and Scalability Checklist](/documentation/articles/storage-performance-checklist)
 - [Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
-
-
-
- 

@@ -7,14 +7,17 @@
 	manager="jeffreyg"
    editor="monicar"    
    tags="azure-service-management"/>
-<tags
+<tags 
 	ms.service="virtual-machines"
-	ms.date="08/19/2015"
-	wacn.date=""/>
+	ms.date="12/04/2015"
+	wacn.date="" />
 
 # Security Considerations for SQL Server in Azure Virtual Machines
 
 This topic includes overall security guidelines that help establish secure access to SQL Server instances in an Azure VM. However, in order to ensure better protection to your SQL Server database instances in Azure, we recommend that you implement the traditional on-premises security practices in addition to the security best practices for Azure.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+ 
 
 For more information about the SQL Server security practices, see [SQL Server 2008 R2 Security Best Practices - Operational and Administrative Tasks](http://download.microsoft.com/download/1/2/A/12ABE102-4427-4335-B989-5DA579A4D29D/SQL_Server_2008_R2_Security_Best_Practice_Whitepaper.docx)
 
@@ -47,7 +50,7 @@ Following is a list of security recommendations that should be considered when c
 
 - Enable an encrypted connection option for an instance of the SQL Server Database Engine in Azure Virtual Machines. Configure SQL server instance with a signed certificate. For more information, see [Enable Encrypted Connections to the Database Engine](https://msdn.microsoft.com/zh-cn/library/ms191192.aspx) and [Connection String Syntax](https://msdn.microsoft.com/zh-cn/library/ms254500.aspx).
 
-- If your virtual machines should be accessed only from a specific network, use Windows Firewall to restrict access to certain IP addresses or network subnets. You can also consider adding an ACL on your endpoint to restrict traffic only to the clients you permit. For instructions on using ACLs with endpoints, see [Manage the ACL on an endpoint](/documentation/articles/virtual-machines-set-up-endpoints#manage-the-acl-on-an-endpoint)
+- If your virtual machines should be accessed only from a specific network, use Windows Firewall to restrict access to certain IP addresses or network subnets. You can also consider adding an ACL on your endpoint to restrict traffic only to the clients you permit. For instructions on using ACLs with endpoints, see [Manage the ACL on an endpoint](/documentation/articles/virtual-machines-set-up-endpoints/#manage-the-acl-on-an-endpoint)
 
 ## Next Steps
 

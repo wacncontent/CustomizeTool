@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/21/2015"
+	ms.date="08/02/2015"
 	wacn.date=""/>
 
 # Join a personal device to your organization
@@ -22,11 +22,11 @@ To join a Windows 10 device to your organization
 4.	You will then be taken to the sign-in page for your organization. Enter your username and password and click **OK**.
 5.	You will then be prompted for a multi-factor authentication challenge. This is configurable by IT.
 6.	Azure AD will then check whether this user/device requires mobile device management (MDM) enrollment.
-7.	Windows will then register the device in the organization’s directory in Azure AD and enroll it in MDM.
+7.	Windows will then register the device in the organizationâs directory in Azure AD and enroll it in MDM.
 8.	When this is done, if you are a managed user, Windows will wrap up the setup process and take the user to the desktop through the automatic sign-in screen.
 9.	If you are a federated user, you will be taken to the Windows sign-in screen and have to enter your credentials.
 
 ## Additional Information
-* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](/documentation/articles/active-directory-azureadjoin-overview)
+* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](/documentation/articles/active-directory-azureadjoin-user-upgrade)
 * [Learn about usage scenarios and deployment considerations for Azure AD Join](/documentation/articles/active-directory-azureadjoin-deployment-aadjoindirect)
 * [Set up Azure AD Join](/documentation/articles/active-directory-azureadjoin-setup)

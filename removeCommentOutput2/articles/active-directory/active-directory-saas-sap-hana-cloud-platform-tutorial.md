@@ -7,10 +7,11 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with SAP HANA Cloud Platform
+>[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=529793).
   
 The objective of this tutorial is to show the integration of Azure and SAP HANA Cloud Platform.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -18,7 +19,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A SAP HANA Cloud Platform account
   
-After completing this tutorial, the Azure AD users you have assigned to SAP HANA Cloud Platform will be able to single sign into the application using the [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).
+After completing this tutorial, the Azure AD users you have assigned to SAP HANA Cloud Platform will be able to single sign into the application using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586) 
 
 >[AZURE.IMPORTANT]You need to deploy your own application or subscribe to an application on your SAP HANA Cloud Platform account to test single sign on. In this tutorial, an application is deployed in the account.
   

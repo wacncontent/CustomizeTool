@@ -1,17 +1,17 @@
 <properties 
-	pageTitle="Profiling a Cloud Service Locally in the Compute Emulator" 
+	pageTitle="Profiling a Cloud Service Locally in the Compute Emulator | Windows Azure" 
 	services="cloud-services"
 	description="Investigate performance issues in cloud services with the Visual Studio profiler" 
 	documentationCenter=""
-	authors="patshea123" 
+	authors="TomArcher" 
 	manager="douge" 
-	editor="tglee"
+	editor=""
 	tags="" 
 	/>
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/14/2015"
+	ms.date="12/21/2015"
 	wacn.date=""/>
 
 # Testing the Performance of a Cloud Service Locally in the Azure Compute Emulator Using the Visual Studio Profiler

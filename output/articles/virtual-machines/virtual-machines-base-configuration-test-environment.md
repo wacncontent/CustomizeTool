@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/05/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # Base Configuration test environment
@@ -47,9 +47,9 @@ There are four phases to setting up the Corpnet subnet of the Windows Server 201
 3.	Configure APP1.
 4.	Configure CLIENT1.
 
-If you do not already have an Azure account, you can sign up for a trial at [Free one-month trial](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](/pricing/member-offers/msdn-benefits-details/).
+If you do not already have an Azure account, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Platforms subscription, see [Azure benefit for MSDN Platform subscribers](https://azure.microsoft.com/offers/ms-azr-0062p/).
 
-> [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Pricing Calculator](/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
+> [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN Platforms subscription, or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Pricing Calculator](/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
 
 ## Phase 1: Create the virtual network
 
@@ -64,12 +64,12 @@ First, you create the TestLab virtual network that will host the Corpnet subnet 
 7.	In the **CIDR (Address Count)** column for the Corpnet subnet, click **/24 (256)**.
 8.	Click the Complete icon. Wait until the virtual network is created before continuing.
 
-Next, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell) to install Azure PowerShell on your local computer. Open an Azure PowerShell command prompt.
+Next, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) to install Azure PowerShell on your local computer. Open an Azure PowerShell command prompt.
 
 First, select the correct Azure subscription with these commands. Replace everything within the quotes, including the < and > characters, with the correct name.
 
 	$subscr="<Subscription name>"
-	Select-AzureSubscription -SubscriptionName $subscr –Current
+	Select-AzureSubscription -SubscriptionName $subscr -Current
 
 You can get the subscription name from the **SubscriptionName** property of the display of the **Get-AzureSubscription** command.
 
@@ -111,14 +111,14 @@ DC1 is a domain controller for the corp.contoso.com Active Directory Domain Serv
 First, fill in the name of your cloud service and run these commands at the Azure PowerShell command prompt on your local computer to create an Azure Virtual Machine for DC1.
 
 	$serviceName="<your cloud service name>"
-	$cred=Get-Credential –Message "Type the name and password of the local administrator account for DC1."
+	$cred=Get-Credential -Message "Type the name and password of the local administrator account for DC1."
 	$image= Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name DC1 -InstanceSize Small -ImageName $image
 	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
 	$vm1 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 20 -DiskLabel "AD" -LUN 0 -HostCaching None
 	$vm1 | Set-AzureSubnet -SubnetNames Corpnet
 	$vm1 | Set-AzureStaticVNetIP -IPAddress 10.0.0.4
-	New-AzureVM –ServiceName $serviceName -VMs $vm1 -VNetName TestLab
+	New-AzureVM -ServiceName $serviceName -VMs $vm1 -VNetName TestLab
 
 Next, connect to the DC1 virtual machine.
 
@@ -184,13 +184,13 @@ APP1 provides web and file sharing services.
 First, fill in the name of your cloud service and run these commands at the Azure PowerShell command prompt on your local computer to create an Azure Virtual Machine for APP1.
 
 	$serviceName="<your cloud service name>"
-	$cred1=Get-Credential –Message "Type the name and password of the local administrator account for APP1."
-	$cred2=Get-Credential –UserName "CORP\User1" –Message "Now type the password for the CORP\User1 account."
+	$cred1=Get-Credential -Message "Type the name and password of the local administrator account for APP1."
+	$cred2=Get-Credential -UserName "CORP\User1" -Message "Now type the password for the CORP\User1 account."
 	$image= Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name APP1 -InstanceSize Small -ImageName $image
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain "CORP" -DomainUserName "User1" -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain "corp.contoso.com"
 	$vm1 | Set-AzureSubnet -SubnetNames Corpnet
-	New-AzureVM –ServiceName $serviceName -VMs $vm1 -VNetName TestLab
+	New-AzureVM -ServiceName $serviceName -VMs $vm1 -VNetName TestLab
 
 Next, connect to the APP1 virtual machine using the CORP\User1 credentials and open an administrator-level Windows PowerShell command prompt.
 
@@ -198,7 +198,7 @@ To check name resolution and network communication between APP1 and DC1, run the
 
 Next, make APP1 a web server with this command at the Windows PowerShell command prompt.
 
-	Install-WindowsFeature Web-WebServer –IncludeManagementTools
+	Install-WindowsFeature Web-WebServer -IncludeManagementTools
 
 Next, create a shared folder and a text file within the folder on APP1 with these commands.
 
@@ -217,13 +217,13 @@ CLIENT1 acts as a typical laptop, tablet, or desktop computer on the Contoso int
 First, fill in the name of your cloud service and run these commands at the Azure PowerShell command prompt on your local computer to create an Azure Virtual Machine for CLIENT1.
 
 	$serviceName="<your cloud service name>"
-	$cred1=Get-Credential –Message "Type the name and password of the local administrator account for CLIENT1."
-	$cred2=Get-Credential –UserName "CORP\User1" –Message "Now type the password for the CORP\User1 account."
+	$cred1=Get-Credential -Message "Type the name and password of the local administrator account for CLIENT1."
+	$cred2=Get-Credential -UserName "CORP\User1" -Message "Now type the password for the CORP\User1 account."
 	$image= Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name CLIENT1 -InstanceSize Small -ImageName $image
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain "CORP" -DomainUserName "User1" -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain "corp.contoso.com"
 	$vm1 | Set-AzureSubnet -SubnetNames Corpnet
-	New-AzureVM –ServiceName $serviceName -VMs $vm1 -VNetName TestLab
+	New-AzureVM -ServiceName $serviceName -VMs $vm1 -VNetName TestLab
 
 Next, connect to the CLIENT1 virtual machine using the CORP\User1 credentials.
 
@@ -246,15 +246,11 @@ This is your final configuration.
 
 ![](./media/virtual-machines-base-configuration-test-environment/BC_TLG04.png)
 
-Your base configuration in Azure is now ready for application development and testing or for additional test environments, such as the [simulated hybrid cloud environment](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing).
+Your base configuration in Azure is now ready for application development and testing or for additional test environments.
 
-## Additional resources
+## Next Step
 
-[Azure Test Lab](http://social.technet.microsoft.com/wiki/contents/articles/24092.azure-test-lab.aspx)
-
-[Hybrid cloud test environments](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)
-
-[Base Configuration test environment with Azure Resource Manager](/documentation/articles/virtual-machines-base-configuration-test-environment-resource-manager)
+- Set up the [simulated hybrid cloud environment](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing) to test hybrid configurations.
 
 ## <a id="costs"></a>Minimizing the costs of test environment virtual machines in Azure
 

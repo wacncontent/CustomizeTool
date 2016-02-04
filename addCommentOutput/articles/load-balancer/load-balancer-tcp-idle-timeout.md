@@ -1,29 +1,25 @@
 <properties 
-   pageTitle="Configure Load balancer TCP idle timeout | Microsoft Azure"
+   pageTitle="Configure Load balancer TCP idle timeout | Windows Azure"
    description="Configure Load balancer TCP idle timeout"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
    manager="adinah"
    editor="tysonn" />
-<tags 
-   ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/12/2015"
-   ms.author="joaoma" />
+<tags
+	ms.service="load-balancer"
+	ms.date="08/12/2015"
+	wacn.date=""/>
 
 # How to change TCP idle timeout settings for load balancer
 
-In its default configuration, Azure Load Balancer has an ‘idle timeout’ setting of 4 minutes.
+In its default configuration, Azure Load Balancer has an 'idle timeout' setting of 4 minutes.
 
 This means that if you have a period of inactivity on your tcp or http sessions for more than the timeout value, there is no guarantee to have the connection maintained between the client and your service.
 
 When the connection is closed, your client application will get an error message like “The underlying connection was closed: A connection that was expected to be kept alive was closed by the server”.
 
-A common practice to keep the connection active for a longer period is to use TCP Keep-alive (You can find .NET examples [here](https://msdn.microsoft.com/library/system.net.servicepoint.settcpkeepalive.aspx)).
+A common practice to keep the connection active for a longer period is to use TCP Keep-alive (You can find .NET examples [here](https://msdn.microsoft.com/zh-cn/library/system.net.servicepoint.settcpkeepalive.aspx)).
 
 Packets are sent when no activity is detected on the connection. By keeping on-going network activity, the idle timeout value is never hit and the connection is maintained for a long period.
 
@@ -49,7 +45,7 @@ To support such scenarios, we have added support for a configurable idle timeout
  
 ### Configure TCP timeout for your Instance-Level Public IP to 15 minutes.
 
-	Set-AzurePublicIP –PublicIPName webip –VM MyVM -IdleTimeoutInMinutes 15
+	Set-AzurePublicIP -PublicIPName webip -VM MyVM -IdleTimeoutInMinutes 15
 
 IdleTimeoutInMinutes is optional. If not set, the default timeout is 4 minutes. 
 
@@ -63,7 +59,7 @@ In order to change the timeout setting for an endpoint
  
 Retrieve your idle timeout configuration
 
-	PS C:\> Get-AzureVM –ServiceName “MyService” –Name “MyVM” | Get-AzureEndpoint
+	PS C:\> Get-AzureVM -ServiceName “MyService” -Name “MyVM” | Get-AzureEndpoint
 	VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
 	LBSetName : MyLoadBalancedSet
 	LocalPort : 80
@@ -123,7 +119,7 @@ Update the configuration of the specified load-balanced input endpoints on all V
 	
 	Request
 
-	POST https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>
+	POST https://management.core.chinacloudapi.cn/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>
 <BR>
 
 	Response
@@ -159,10 +155,10 @@ Update the configuration of the specified load-balanced input endpoints on all V
 
 ## Next Steps
 
-[Internal load balancer overview](load-balancer-internal-overview.md)
+[Internal load balancer overview](/documentation/articles/load-balancer-internal-overview)
 
-[Get started Configuring an Internet facing load balancer](load-balancer-internet-getstarted.md)
+[Get started Configuring an Internet facing load balancer](/documentation/articles/load-balancer-internet-getstarted)
 
-[Configure a Load balancer distribution mode](load-balancer-distribution-mode.md)
+[Configure a Load balancer distribution mode](/documentation/articles/load-balancer-distribution-mode)
 
  

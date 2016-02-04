@@ -86,7 +86,7 @@ Azure AD Connect Health supports the following built-in roles.
 |Contributor|  Contributors can ***view all information*** (e.g. view alerts) from the portal and ***change settings*** (e.g. email notifications) within Azure AD Connect Health.|
 |Reader| Readers can ***view all information*** (e.g. view alerts) from the portal within Azure AD Connect Health.|
 
-All other roles (such as ‘User Access Administrators’ or ‘DevTest Lab Users’), even if available in the portal experience, have no impact to access within Azure AD Connect Health.
+All other roles (such as 'User Access Administrators' or 'DevTest Lab Users'), even if available in the portal experience, have no impact to access within Azure AD Connect Health.
 
 #### Access Scope
 
@@ -126,7 +126,7 @@ These steps will allow the listed users and group access as per their assigned r
 ![Azure AD Connect Health RBAC pin blade](./media/active-directory-aadconnect-health/RBAC_pin_blade.png)
 
 
->[AZURE.NOTE] A user with the "Reader" role assigned will not be able to perform the "create" operation to get Azure AD Connect Health extension from the Azure Marketplace. This user can still get to the blade by going to the above link. For subsequent usage, the user can pin the blade to the dashboard.
+>[AZURE.NOTE] A user with the "Reader" role assigned will not be able to perform the "create" operation to get Azure AD Connect Health extension from the Azure gallery. This user can still get to the blade by going to the above link. For subsequent usage, the user can pin the blade to the dashboard.
 
 ### Remove users and/or groups
 You can remove a user or a group added to Azure AD Connect Health Role Based Access Control part by right clicking and selecting remove.<br>

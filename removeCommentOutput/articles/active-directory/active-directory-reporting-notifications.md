@@ -24,7 +24,7 @@ Irregular Sign ins are those that have been identified by our machine learning a
 
 ## Who receives the email notifications?
 
-The email is sent to all global admins who have been assigned an Active Directory Premium license. To ensure it is delivered, we send it to the admins Alternate Email Address as well. Admins should include aad-alerts-noreply@mail.windowsazure.cn in their safe senders list so they don’t miss the email.
+The email is sent to all global admins who have been assigned an Active Directory Premium license. To ensure it is delivered, we send it to the admins Alternate Email Address as well. Admins should include aad-alerts-noreply@mail.windowsazure.cn in their safe senders list so they donât miss the email.
 
 ## How often are these emails sent?
 

@@ -62,7 +62,7 @@ The following items were updated in the Azure SDK 2.6 release.
 - Azure publishing enhanced to include Azure API Apps as a deployment target.
 - API Apps provisioning functionality to enable users with API App creation and provisioning functionality.
 - Server Explorer changed to reflect new Azure Websites node, with Web, Mobile, and API apps grouped by Resource Group.
-- Add Azure API App Client gesture added to most C# projects that will enable automatic generation of Swagger-enabled API Apps running in a user’s Azure subscription.
+- Add Azure API App Client gesture added to most C# projects that will enable automatic generation of Swagger-enabled API Apps running in a userâs Azure subscription.
 - API Apps tooling and Azure Websites nodes in Server Explorer are available in Visual Studio 2013 only. 
 
 ##Azure Resource Manager Tools updates
@@ -91,6 +91,6 @@ The Diagnostics storage account can now be specified in the service configuratio
 	- Universal App could not be loaded in Visual Studio 2015 when Azure SDK 2.6 was installed on the machine.
 	- Debugging a Cloud Service project would fail in Visual Studio 2013 and Visual Studio 2015 with a message stuck on "Configuring diagnostics for emulator".
 	
-	An update to Azure SDK 2.6 was released on 5/18/2015. The updated version is 2.6.30508.1601; it contains fixes for two issues described above. You can identify the build of the SDK from Control Panel -> Programs and Features -> Microsoft Azure Tools for Microsoft Visual Studio 2013 – v 2.6. The Version column will display the build number.
+	An update to Azure SDK 2.6 was released on 5/18/2015. The updated version is 2.6.30508.1601; it contains fixes for two issues described above. You can identify the build of the SDK from Control Panel -> Programs and Features -> Microsoft Azure Tools for Microsoft Visual Studio 2013 â v 2.6. The Version column will display the build number.
 
 	If you are still facing the above issues, install the latest version of the Azure 2.6 SDK for [VS 2012](http://go.microsoft.com/fwlink/p/?linkid=323511&clcid=0x409), [VS 2013](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) or [VS 2015](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409).

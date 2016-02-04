@@ -15,13 +15,13 @@
 # Get started with SQL Database Dynamic Data Masking (Azure Management Portal)
 
 > [AZURE.SELECTOR]
-- [Dynamic Data Masking - Azure Preview portal](/documentation/articles/sql-database-dynamic-data-masking-get-started)
+- [Dynamic Data Masking - Azure Management Portal](/documentation/articles/sql-database-dynamic-data-masking-get-started)
 
 ## Overview
 
 SQL Database Dynamic Data Masking limits sensitive data exposure by masking it to non-privileged users. Dynamic data masking is supported for the V12 version of Azure SQL Database.
 
-Dynamic data masking helps prevent unauthorized access to sensitive data by enabling customers to designate how much of the sensitive data to reveal with minimal impact on the application layer. It’s a policy-based security feature that hides the sensitive data in the result set of a query over designated database fields, while the data in the database is not changed.
+Dynamic data masking helps prevent unauthorized access to sensitive data by enabling customers to designate how much of the sensitive data to reveal with minimal impact on the application layer. It's a policy-based security feature that hides the sensitive data in the result set of a query over designated database fields, while the data in the database is not changed.
 
 For example, a service representative at a call center may identify callers by several digits of their social security number or credit card number, but those data items should not be fully exposed to the service representative. A masking rule can be defined that masks all but the last four digits of any social security number or credit card number in the result set of any query. As another example, an appropriate data mask can be defined to protect personally identifiable information (PII) data, so that a developer can query production environments for troubleshooting purposes without violating compliance regulations.
 
@@ -30,7 +30,7 @@ For example, a service representative at a call center may identify callers by s
 You set up dynamic data masking policy in the Azure Management Portal under the Auditing & Security tab for your database.
 
 
-> [AZURE.NOTE] To set up dynamic data masking in the Azure Preview portal, see [Get started with SQL Database Dynamic Data Masking (Azure Preview portal)](/documentation/articles/sql-database-dynamic-data-masking-get-started).
+> [AZURE.NOTE] To set up dynamic data masking in the Azure Management Portal, see [Get started with SQL Database Dynamic Data Masking (Azure Management Portal)](/documentation/articles/sql-database-dynamic-data-masking-get-started).
 
 
 ### Dynamic data masking permissions

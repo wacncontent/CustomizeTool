@@ -22,7 +22,7 @@ Learn how to install Spark on Windows based HDInsight using Script Action, and h
 **Related articles**
 - [Install Spark on Linux-based HDInsight clusters](/documentation/articles/hdinsight-hadoop-spark-install-linux).
 
-- [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters): general information on creating HDInsight clusters.
+- [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1): general information on creating HDInsight clusters.
 
 - [Get Started with Apache Spark on HDInsight](/documentation/articles/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql): create a Spark type cluster on Windows OS.
 
@@ -38,7 +38,7 @@ Spark can also be used to perform conventional disk-based data processing. Spark
 
 This topic provides instructions on how to customize an HDInsight cluster to install Spark.
 
-## Install Spark using the Azure Preview portal
+## Install Spark using the Azure Management Portal
 
 A sample script to install Spark on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1](https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1). This script can install Spark 1.2.0 or Spark 1.0.2 depending on the version of the HDInsight cluster you create.
 
@@ -49,7 +49,7 @@ You can modify this script or create your own script to install other versions o
 
 > [AZURE.NOTE] The sample script works only with HDInsight 3.1 and 3.2 clusters. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning).
 
-1. Start creating a cluster by using the **CUSTOM CREATE** option, as described at [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters#portal). Pick the cluster version depending on the following:
+1. Start creating a cluster by using the **CUSTOM CREATE** option, as described at [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1#portal). Pick the cluster version depending on the following:
 
 	- If you want to install **Spark 1.2.0**, create an HDInsight 3.2 cluster.
 	- If you want to install **Spark 1.0.2**, create an HDInsight 3.1 cluster.
@@ -85,7 +85,7 @@ Spark provides APIs in Scala, Python, and Java. You can also use the interactive
 ###<a name="sparkshell"></a>Use the Spark shell to run interactive queries
 Perform the following steps to run Spark queries from an interactive Spark shell. In this section, we run a Spark query on a sample data file (/example/data/gutenberg/davinci.txt) that is available on HDInsight clusters by default.
 
-1. From the Azure Management Portal, enable Remote Desktop for the cluster you created with Spark installed, and then remote into the cluster. For instructions, see <a href="/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp" target="_blank">Connect to HDInsight clusters using RDP</a>.
+1. From the Azure Management Portal, enable Remote Desktop for the cluster you created with Spark installed, and then remote into the cluster. For instructions, see [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp).
 
 2. In the Remote Desktop Protocol (RDP) session, from the desktop, open the Hadoop command line (from a desktop shortcut), and navigate to the location where Spark is installed; for example, **C:\apps\dist\spark-1.2.0**.
 
@@ -119,7 +119,7 @@ Spark SQL allows you to use Spark to run relational queries expressed in Structu
 
 >[AZURE.NOTE] The sample below was created against **Spark 1.2.0**, which is installed if you run the script action while creating HDInsight 3.2 cluster.
 
-1. From the Azure Management Portal, enable Remote Desktop for the cluster you created with Spark installed, and then remote into the cluster. For instructions, see <a href="/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp" target="_blank">Connect to HDInsight clusters using RDP</a>.
+1. From the Azure Management Portal, enable Remote Desktop for the cluster you created with Spark installed, and then remote into the cluster. For instructions, see [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp).
 
 2. In the RDP session, from the desktop, open the Hadoop command line (from a desktop shortcut), and navigate to the location where Spark is installed; for example, **C:\apps\dist\spark-1.2.0**.
 
@@ -293,25 +293,25 @@ When prompted, enter the credentials for the cluster. It can take several minute
 
 ## Install Spark using PowerShell
 
-See [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster#call_scripts_using_powershell).
+See [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1#call_scripts_using_powershell).
 
 ## Install Spark using .NET SDK
 
-See [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster#call_scripts_using_azure_powershell).
+See [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1#call_scripts_using_azure_powershell).
 
 
 ## See also
 
 - [Install Spark on Linux-based HDInsight clusters](/documentation/articles/hdinsight-hadoop-spark-install-linux): install Spark on Linux based HDInsight clusters.
-- [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters): create HDInsight clusters.
+- [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1): create HDInsight clusters.
 - [Get Started with Apache Spark on HDInsight](/documentation/articles/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql): get started with Spark on HDInsight.
 - [Customize HDInsight cluster using Script Action][hdinsight-cluster-customize]: customize HDInsight clusters using Script Action.
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions): develop Script Action scripts.
 - [Install R on HDInsight clusters][hdinsight-install-r] provides instructions on how to use cluster customization to install and use R on HDInsight Hadoop clusters. R is an open-source language and environment for statistical computing. It provides hundreds of built-in statistical functions and its own programming language that combines aspects of functional and object-oriented programming. It also provides extensive graphical capabilities.
 - [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install). Use cluster customization to install Giraph on HDInsight Hadoop clusters. Giraph allows you to perform graph processing by using Hadoop, and can be used with Azure HDInsight.
-- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on data stored.
+- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on data stored.
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
-[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-install-r]: hdinsight-hadoop-r-scripts.md
+[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
+[powershell-install-configure]: ../install-configure-powershell.md

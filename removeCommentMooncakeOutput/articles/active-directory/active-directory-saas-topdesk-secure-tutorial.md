@@ -1,7 +1,15 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with TOPdesk - Secure | Windows Azure" description="Learn how to use TOPdesk - Secure with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory integration with TOPdesk - Secure | Windows Azure" description="Learn how to use TOPdesk - Secure with Azure Active Directory to enable single sign-on, automated provisioning, and more!." 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags
+	ms.service="active-directory"
+	ms.date="10/22/2015"
+	wacn.date=""/>
+
 #Tutorial: Azure Active Directory integration with TOPdesk - Secure
->[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=529789).
   
 The objective of this tutorial is to show the integration of Azure and TOPdesk - Secure.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -9,7 +17,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A TOPdesk - Secure single sign-on enabled subscription
   
-After completing this tutorial, the Azure AD users you have assigned to TOPdesk - Secure will be able to single sign into the application at your TOPdesk - Secure company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to TOPdesk - Secure will be able to single sign into the application at your TOPdesk - Secure company site (service provider initiated sign on), or using the [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -99,7 +107,7 @@ Configuring single sign-on for TOPdesk - Secure requires you to upload a logo ic
     ![Configure App URL](./media/active-directory-saas-topdesk-secure-tutorial/IC790604.png "Configure App URL")
 
     1.  In the **TOPdesk - Secure Sign On URL** textbox, type the URL used by your users to sign into your TOPdesk - Secure application (e.g.: "*https://qssolutions.topdesk.net*").
-    2.  In the **TOPdesk – Public Reply URL** textbox, paste the **TOPdesk - Secure AssertionConsumerService URL** (e.g.: "*https://qssolutions.topdesk.net/tas/public/login/saml*")
+    2.  In the **TOPdesk - Public Reply URL** textbox, paste the **TOPdesk - Secure AssertionConsumerService URL** (e.g.: "*https://qssolutions.topdesk.net/tas/public/login/saml*")
     3.  Click **Next**.
 
 10. On the **Configure single sign-on at TOPdesk - Secure** page, to download your metadata file, click **Download metadata**, and then save the file locally on your computer.
@@ -187,4 +195,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-topdesk-secure-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).

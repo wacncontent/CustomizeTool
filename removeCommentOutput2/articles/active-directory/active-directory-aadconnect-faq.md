@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect FAQ | Windows Azure"
+	pageTitle="Azure AD Connect: FAQ | Windows Azure"
 	description="This page has frequently asked questions about Azure AD Connect."
 	services="active-directory"
 	documentationCenter=""
@@ -9,10 +9,10 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/16/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
-# Azure Active Directory Connect FAQ
+# Azure AD Connect FAQ
 
 ## General installation
 **Q: Will installation work if the Azure AD Global Admin has 2FA enabled?**
@@ -79,17 +79,9 @@ No. This option will not retrieve all configuration settings and should not be u
 
 [Windows Azure Active Directory Forums](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=WindowsAzureAD)
 
-- You can search and browse for technical questions and answers from the community or ask your own question by clicking [here](https://social.msdn.microsoft.com/Forums/azure/newthread?category=windowsazureplatform&forum=WindowsAzureAD&prof=required).
+- You can search and browse for technical questions and answers from the community or ask your own question by clicking [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/newthread?category=windowsazureplatform&forum=WindowsAzureAD&prof=required).).
 
 
 [Azure AD Connect customer support](https://manage.windowsazure.cn/?getsupport=true)
 
 - Use this link to get support through the Azure Management Portal.
-
-**Q:What do I do if I receive an email that asking me to renew my Office 365 certificate**
-
-Use the guidance that is outlined in the article here to resolve to [here](/documentation/articles/active-directory-aadconnect-o365-certs) renew the certificate.
-
-
-
-

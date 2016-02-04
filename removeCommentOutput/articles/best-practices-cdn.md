@@ -38,7 +38,7 @@ Typical uses for the CDN include:
 
 - Streaming video files to the client on demand. Video benefits from the low latency and reliable connectivity available from the globally located datacenters that offer CDN connections.
 
-- Generally improving the experience for users, especially those located far from the application’s datacenter location who would otherwise suffer higher latency. A large proportion of the total size of the content in a web application is often static, and using the CDN can help to maintain performance and overall user experience while eliminating the requirement to deploy the application to multiple data centers.
+- Generally improving the experience for users, especially those located far from the application's datacenter location who would otherwise suffer higher latency. A large proportion of the total size of the content in a web site is often static, and using the CDN can help to maintain performance and overall user experience while eliminating the requirement to deploy the application to multiple data centers.
 
 - Coping with the growing load on applications that service mobile and fixed devices that are part of the Internet of Things (IoT). The huge numbers of such devices and appliances could easily overwhelm the application if it was required to process broadcast messages and manage firmware update distribution directly.
 
@@ -98,7 +98,7 @@ Using the CDN is a good way to minimize the load on your application, and maximi
 
 - **Origin** Deploying content through the CDN simply requires you to specify an HTTP (port 80) endpoint that the CDN service will use to access and cache the content. + The endpoint can specify an Azure blob storage container that holds the static content you want to deliver through the CDN. The container must be marked as public. Only blobs in a public container that have public read access will be available through the CDN.
 
-- The endpoint can specify a folder named **cdn** in the root of one of application’s compute layers (such as a web role or a virtual machine). The results from requests for resources, including dynamic resources such as ASPX pages, will be cached on the CDN. The minimum cacheability period is 300 seconds. Any shorter period will prevent the content from being deployed to the CDN (see the section "<a href="#cachecontrol" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">Cache control</a>" for more information).
+- The endpoint can specify a folder named **cdn** in the root of one of application's compute layers (such as a web role or a virtual machine). The results from requests for resources, including dynamic resources such as ASPX pages, will be cached on the CDN. The minimum cacheability period is 300 seconds. Any shorter period will prevent the content from being deployed to the CDN (see the section "<a href="#cachecontrol" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">Cache control</a>" for more information).
 
 - If you are using Azure Web Sites, the endpoint is set to the root folder of the site by selecting the site when creating the CDN instance. All of the content for the site will be available through the CDN.
 
@@ -138,7 +138,7 @@ Using the CDN is a good way to minimize the load on your application, and maximi
 
 - If no cache expiry period is specified (such as when content is loaded from blob storage), it will be cached on the CDN for up to 72 hours.
 
-- In a web application, you can set the caching and expiry for all content by using the **clientCache** element in the **system.webServer/staticContent** section of a web.config file. You can place a web.config file in any folder so that it affects the files in that folder and the files in all subfolders.
+- In a web site, you can set the caching and expiry for all content by using the **clientCache** element in the **system.webServer/staticContent** section of a web.config file. You can place a web.config file in any folder so that it affects the files in that folder and the files in all subfolders.
 
 - If you use a dynamic technique such as ASP.NET to create the content for the CDN, ensure that you specify the **Cache.SetExpires** property on each page. The CDN will not cache the output from pages that use the default cacheability setting of public.  Set the cache expiry period to a suitable value to ensure that the content is not discarded and reloaded from the application at very short intervals.  
 
@@ -230,6 +230,6 @@ By default, Azure CDN instances have the **Query String Status** setting disable
 ## More information
 + [Azure CDN](/home/features/cdn/)
 + [Overview of the Azure Content Delivery Network (CDN)](http://msdn.microsoft.com/zh-cn/library/azure/ff919703.aspx)
-+ [Serve Content from Azure CDN in Your Web Application](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application)
++ [Serve Content from Azure CDN in Your web site](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application)
 + [Integrate a cloud service with Azure CDN](/documentation/articles/cdn-cloud-service-with-cdn)
 + [Best Practices for the Azure Content Delivery Network](http://azure.microsoft.com/blog/2011/03/18/best-practices-for-the-windows-azure-content-delivery-network/)

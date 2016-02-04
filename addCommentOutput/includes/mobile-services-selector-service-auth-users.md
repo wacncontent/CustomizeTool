@@ -1,5 +1,5 @@
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
 <!-- deleted by customization
+> [AZURE.SELECTOR-LIST (Platform | Backend)]
 - [(iOS | .NET)](../articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts.md)
 - [(iOS | JavaScript)](../articles/mobile-services-ios-authorize-users-in-scripts.md)
 - [(Windows 8.x Store C# | .NET)](../articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts.md)
@@ -14,6 +14,7 @@
 - [(Xamarin.iOS | JavaScript)](../articles/partner-xamarin-mobile-services-ios-authorize-users-in-scripts.md)
 -->
 <!-- keep by customization: begin -->
+> [AZURE.SELECTOR]
 - [(iOS | .NET)](/documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts/)
 - [(iOS | JavaScript)](/documentation/articles/mobile-services-ios-authorize-users-in-scripts/)
 - [(Windows 8.x Store C# | .NET)](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts/)

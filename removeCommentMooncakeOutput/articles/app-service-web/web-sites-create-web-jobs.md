@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Run Background tasks with WebJobs" 
-	description="Learn how to run background tasks in Azure web apps." 
+	description="Learn how to run background tasks in Azure web sites." 
 	services="app-service" 
 	documentationCenter="" 
 	authors="tdykstra" 
@@ -16,9 +16,9 @@
 
 ## Overview
 
-You can run programs or scripts in WebJobs in your [Azure Websites](/documentation/services/web-sites/) web app in three ways: on demand, continuously, or on a schedule. There is no additional cost to use WebJobs.
+You can run programs or scripts in WebJobs in your [Azure Websites](/documentation/services/web-sites/) web site in three ways: on demand, continuously, or on a schedule. There is no additional cost to use WebJobs.
 
-This article shows how to deploy WebJobs by using the [Azure Management Portal](https://manage.windowsazure.cn/). For information about how to deploy by using Visual Studio or a continuous delivery process, see [How to Deploy Azure WebJobs to Web Apps](/documentation/articles/websites-dotnet-deploy-webjobs).
+This article shows how to deploy WebJobs by using the [Azure Management Portal](https://manage.windowsazure.cn). For information about how to deploy by using Visual Studio or a continuous delivery process, see [How to Deploy Azure WebJobs to web sites](/documentation/articles/websites-dotnet-deploy-webjobs).
 
 The Azure WebJobs SDK simplifies many WebJobs programming tasks. For more information, see [What is the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk).
 ## Table of Contents ##
@@ -73,9 +73,11 @@ The following file types are accepted:
 
 > [AZURE.NOTE]
 > For continuous tasks, it is recommended that you enable **Always On** on the Configure page for your website. The Always On feature, available in Basic and Standard mode, prevents websites from being unloaded, even if they have been idle for some time. If your website is always loaded, your continuously running task may run more reliably. 
-## <a name="CreateScheduled"></a>Create a scheduled WebJob
+## <a name="CreateScheduled"></a>Create a scheduled WebJob using the Azure Scheduler
 
-The Azure management portal doesn't yet have the ability to create a scheduled WebJob, but until that feature is added you can do it by using the [Management Portal](http://manage.windowsazure.cn).
+The following alternate technique makes use of the Azure Scheduler. In this case, your WebJob does not have any direct knowledge of the schedule. Instead, the Azure Scheduler gets configured to trigger your WebJob on a schedule. 
+
+The Azure Management Portal doesn't yet have the ability to create a scheduled WebJob, but until that feature is added you can do it by using the [Management Portal](http://manage.windowsazure.cn).
 
 1. In the [Management Portal](http://manage.windowsazure.cn) go to the WebJob page and click **Add**.
 
@@ -139,9 +141,7 @@ Scheduled jobs can be further configured in the Azure Scheduler pages of the [Ma
 	
 ## <a name="ViewJobHistory"></a>View the job history
 
-1. To view the execution history of a job, including jobs created with the WebJobs SDK, click  its corresponding link under the **Logs** column of the WebJobs blade. (You can use the clipboard icon to copy the URL of the log file page to the clipboard if you wish.)
-	
-	![Logs link](./media/web-sites-create-web-jobs/wjbladelogslink.png)
+1. To view the execution history of a job, including jobs created with the WebJobs SDK, click  its corresponding link under the **Logs** column of the WebJobs page. (You can use the clipboard icon to copy the URL of the log file page to the clipboard if you wish.)
 		
 2. Clicking the link opens the details page for the WebJob. This page shows you the name of the command run, the last times it ran, and its success or failure. Under **Recent job runs**, click a time to see further details.
 	
@@ -166,10 +166,10 @@ Scheduled jobs can be further configured in the Azure Scheduler pages of the [Ma
 
 ## <a name="WHPNotes"></a>Notes
 	
-- Web apps in Free mode can time out after 20 minutes if there are no requests to the scm (deployment) site and the web app's portal is not open in Azure. Requests to the actual site will not reset this.
+- web sites in Free mode can time out after 20 minutes if there are no requests to the scm (deployment) site and the web site's portal is not open in Azure. Requests to the actual site will not reset this.
 - Code for a continuous job needs to be written to run in an endless loop.
-- Continuous jobs run continuously only when the web app is up.
-- Basic and Standard modes offer the Always On feature which, when enabled, prevents web apps from becoming idle.
+- Continuous jobs run continuously only when the web site is up.
+- Basic and Standard modes offer the Always On feature which, when enabled, prevents web sites from becoming idle.
 - You can only debug continuously running WebJobs. Debugging scheduled or on-demand WebJobs is not supported.
 
 

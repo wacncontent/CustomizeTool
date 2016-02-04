@@ -8,7 +8,7 @@
    editor="tysonn" /> 
 <tags
 	ms.service="service-bus"
-	ms.date="09/18/2015"
+	ms.date="12/28/2015"
 	wacn.date=""/>
 
 # Best Practices for performance improvements using Service Bus brokered messaging
@@ -120,7 +120,7 @@ When using the default lock expiration of 60 seconds, a good value for [Subscrip
 
 Prefetching messages increases the overall throughput for a queue or subscription because it reduces the overall number of message operations, or round trips. Fetching the first message, however, will take longer (due to the increased message size). Receiving prefetched messages will be faster because these messages have already been downloaded by the client.
 
-The time-to-live (TTL) property of a message is checked by the server at the time the server sends the message to the client. The client does not check the message’s TTL property when the message is received. Instead, the message can be received even if the message’s TTL has passed while the message was cached by the client.
+The time-to-live (TTL) property of a message is checked by the server at the time the server sends the message to the client. The client does not check the messageâs TTL property when the message is received. Instead, the message can be received even if the messageâs TTL has passed while the message was cached by the client.
 
 Prefetching does not affect the number of billable messaging operations, and is available only for the Service Bus client protocol. The HTTP protocol does not support prefetching. Prefetching is available for both synchronous and asynchronous receive operations.
 
@@ -138,7 +138,7 @@ If a message containing critical information that must not be lost is sent to an
 
 ## Use of partitioned queues or topics
 
-Internally, Service Bus uses the same node and messaging store to process and store all messages for a messaging entity (queue or topic). A partitioned queue or topic, on the other hand, is distributed across multiple nodes and messaging stores. Partitioned queues and topics not only yield a higher throughput than regular queues and topics, they also exhibit superior availability. To create a partitioned entity, set the [EnablePartitioning][] property to **true**, as shown in the following example. For more information about partitioned entities, see [Partitioning Messaging Entities][].
+Internally, Service Bus uses the same node and messaging store to process and store all messages for a messaging entity (queue or topic). A partitioned queue or topic, on the other hand, is distributed across multiple nodes and messaging stores. Partitioned queues and topics not only yield a higher throughput than regular queues and topics, they also exhibit superior availability. To create a partitioned entity, set the [EnablePartitioning][] property to **true**, as shown in the following example. For more information about partitioned entities, see [Partitioned messaging entities][].
 
 ```
 // Create partitioned queue.
@@ -271,7 +271,7 @@ To maximize throughput, do the following:
 
 ## Next steps
 
-To learn more about optimizing Service Bus performance, see [Partitioning Messaging Entities][].
+To learn more about optimizing Service Bus performance, see [Partitioned messaging entities][].
 
   [QueueClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx
   [MessageSender]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagesender.aspx

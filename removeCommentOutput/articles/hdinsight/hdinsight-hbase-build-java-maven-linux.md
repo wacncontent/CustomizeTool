@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Use Maven to build Java applications that use HBase with HDInsight (Hadoop)
@@ -24,7 +24,7 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
 * [Maven](http://maven.apache.org/)
 
-* [An Linux-based Azure HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-get-started-linux#create-hbase-cluster)
+* [An Linux-based Azure HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1-linux#create-hbase-cluster)
 
 * **Familiarity with SSH and SCP**. For more information on using SSH and SCP with HDInsight, see the following:
 
@@ -155,6 +155,9 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 		    //            "zookeepernode0,zookeepernode1,zookeepernode2");
 		    //config.set("hbase.zookeeper.property.clientPort", "2181");
 		    //config.set("hbase.cluster.distributed", "true");
+            //
+            //NOTE: Actual zookeeper host names can be found using Ambari:
+            //curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/hosts"
 
 		    // create an admin object using the config
 		    HBaseAdmin admin = new HBaseAdmin(config);

@@ -7,9 +7,9 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags
-	ms.service="service-bus"
-	ms.date="10/08/2015"
+<tags 
+	ms.service="service-bus" 
+	ms.date="10/08/2015" 
 	wacn.date=""/>
 
 
@@ -107,6 +107,6 @@ Now that you have learned the basics of Service Bus queues, follow these links t
 
 [Azure Management Portal]: http://manage.windowsazure.cn
 [Python Azure package]: https://pypi.python.org/pypi/azure  
-[Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
-[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas
+[Queues, Topics, and Subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas
  

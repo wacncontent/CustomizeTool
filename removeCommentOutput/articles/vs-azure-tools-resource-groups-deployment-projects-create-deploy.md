@@ -1,17 +1,17 @@
 <properties
-   pageTitle="Creating and deploying Azure Resource Group deployment projects | Windows Azure"
-   description="Creating and deploying Azure Resource Group deployment projects"
+   pageTitle="Creating and deploying Azure Resource Group Visual Studio projects | Windows Azure"
+   description="Use Visual Studio to create a Azure resource group project and deploy the resources to Azure."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="10/02/2015"
+	ms.date="11/13/2015"
 	wacn.date=""/>
 
-# Creating and deploying Azure Resource Group deployment projects
+# Creating and deploying Azure resource groups through Visual Studio
 
 The **Azure Resource Group** deployment project template is available in Visual Studio when Azure SDK 2.6 is installed. Azure Resource Group projects let you group together and publish multiple related Azure resources in a single deployment operation. Azure Resource Group projects use a technology called **Azure Resource Manager** to do their work. **Azure Resource Manager** is a REST API service that lets you define Azure resource groups, which contain multiple Azure resources that are typically used together and have a similar lifecycle. By using resource groups, you can operate on all the resources in a group with a single function call, instead of calling different functions for each individual resource. To learn more about Azure resource groups, see [Using the Azure Preview Portal to manage your Azure resources](/documentation/articles/resource-group-portal). For a more detailed, end-to-end Azure Resource Group deployment scenario, see [Azure Resource Group for Visual Studio](https://azure.microsoft.com/blog/azure-resource-manager-2-5-for-visual-studio/).
 
@@ -21,7 +21,7 @@ Azure Resource Manager has many different resource providers available that can 
 
 ## Creating Azure Resource Group projects
 
-In this procedure, you learn how to create an Azure Resource Group project with a **Web App** template.
+In this procedure, you learn how to create an Azure Resource Group project with a **Web Apps** template.
 
 ### To create a Azure Resource Group project
 
@@ -29,7 +29,7 @@ In this procedure, you learn how to create an Azure Resource Group project with 
 
     ![Cloud Deployment Project](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/IC796668.png)
 
-1. Choose the template that you want to deploy to Azure Resource Manager. For this example, we'll choose the **Web app** template.
+1. Choose the template that you want to deploy to Azure Resource Manager. For this example, we'll choose the **Web Apps** template.
 
     ![Choose a template](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/IC796669.png)
 
@@ -37,18 +37,16 @@ In this procedure, you learn how to create an Azure Resource Group project with 
 
     >[AZURE.NOTE] The list of available templates is retrieved online and may change.
 
-    Visual Studio creates an Azure Resource Group deployment project for a web app.
+    Visual Studio creates an Azure Resource Group deployment project for a web site.
 
 1. Expand the nodes in the deployment project to see what was created.
 
-    Since we chose the Web app template for this example, you see the following files. 
+    Since we chose the web site template for this example, you see the following files. 
 
     |File name|Description|
     |---|---|
-    |Deploy-AzureResourceGroup.ps1|A PowerShell script that invokes PowerShell commands to deploy to Azure Resource Manager.
-
-    **Note** This PowerShell script is used by Visual Studio to deploy your template. Any changes you make to this script will also affect deployment in Visual Studio, so be careful.|
-    !WebSite.json|A configuration file that specifies all the details that you want deployed to Azure Resource Manager.|
+    |Deploy-AzureResourceGroup.ps1|A PowerShell script that invokes PowerShell commands to deploy to Azure Resource Manager.<br />**Note** This PowerShell script is used by Visual Studio to deploy your template. Any changes you make to this script will also affect deployment in Visual Studio, so be careful.|
+    !WebSite.json|A template that defines the infrastructure you want deploy to Azure.|
     |WebSite.param.dev.json|A parameters file that contains specific values needed by the configuration file.|
     |AzCopy.exe|A tool used by the PowerShell script to copy files from the local storage drop path to the storage account container. This tool is used only if you configure the deployment project to deploy your code along with the template.|
 
@@ -62,7 +60,7 @@ Azure Resource Group projects have two template files under the **Templates** no
 
 - **Azure Resource Manager template files** (which have the extension .json) specify the file(s) containing the resources you want, as well as parameters needed by the deployment project, such as site name and location. They also specify the dependencies of the components in the Azure Resource Group and their properties, such as names, tags, and rules for triggers. You can modify this file to add your own functionality. For example, you could add a database to the template. Refer to the documentation for each resource provider to find out the parameters you need to provide. See [Resource Providers](https://msdn.microsoft.com/zh-cn/library/azure/dn790572.aspx) for more information.
 
-- **Parameter files** (which have the extension `.param.*.json`) contain values for the parameters specified in the configuration file that are needed for each resource provider. In this example, the configuration file for a web app (WebSite.json) defines parameters for *siteName* and *siteLocation*. During deployment, you are asked to provide values for the parameters in the template file, and these values are stored in the parameters file. You can also edit the parameter file directly.
+- **Parameter files** (which have the extension `.param.*.json`) contain values for the parameters specified in the configuration file that are needed for each resource provider. In this example, the configuration file for a web site (WebSite.json) defines parameters for *siteName* and *siteLocation*. During deployment, you are asked to provide values for the parameters in the template file, and these values are stored in the parameters file. You can also edit the parameter file directly.
 
 JSON files can be edited in the Visual Studio editor. If you install the [PowerShell Tools for Visual Studio](https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597), then you'll also get syntax highlighting, brace matching, and IntelliSense to make it easier to read and edit PowerShell scripts. A link to install the PowerShell Tools appears at the top of the editor if it's not already installed.
 
@@ -74,7 +72,7 @@ If you want to deploy to different configurations or change settings often, you 
 
 ## Deploying an Azure Resource Group project to an Azure resource group
 
-When you deploy an Azure Resource Group project, you deploy it to an Azure resource group, which is just a logical grouping of resources in Azure such as web apps, databases, and so on.
+When you deploy an Azure Resource Group project, you deploy it to an Azure resource group, which is just a logical grouping of resources in Azure such as web sites, databases, and so on.
 
 1. On the shortcut menu of the deployment project node, choose **Deploy**, **New Deployment**.
 
@@ -98,7 +96,7 @@ When you deploy an Azure Resource Group project, you deploy it to an Azure resou
 
 1. Choose the template configuration and parameters files you want to use for this deployment, or accept the defaults.
 
-    You can edit the properties for a resource by choosing the **Edit Parameters** button. If required parameters are missing when you deploy, the **Edit Parameters** dialog box appears so that you can provide them. Parameters that are missing values have **<null>** appearing in the **Value** box next to them. For this example (a web app resource), the required parameters include the site name, hosting plan, and site location. (If you recall, these parameter values are set to null by default in the parameters file.) The other parameters have default values.
+    You can edit the properties for a resource by choosing the **Edit Parameters** button. If required parameters are missing when you deploy, the **Edit Parameters** dialog box appears so that you can provide them. Parameters that are missing values have **<null>** appearing in the **Value** box next to them. For this example (a web site resource), the required parameters include the site name, hosting plan, and site location. (If you recall, these parameter values are set to null by default in the parameters file.) The other parameters have default values.
 
     ![Edit Parameters Dialog Box](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/IC796675.png)
 
@@ -146,7 +144,7 @@ If you are using Cloud Deployment projects that were created with Azure SDK 2.5,
 
     1. Change the solution drop-down box to **Add to solution**.
 
-    1. Next, you will be asked to pick a template. Since you’ll be moving your existing templates from your Azure SDK 2.5 Cloud Deployment project, you can choose any template, so let’s choose the blank template at the bottom of the list.
+    1. Next, you will be asked to pick a template. Since you'll be moving your existing templates from your Azure SDK 2.5 Cloud Deployment project, you can choose any template, so let's choose the blank template at the bottom of the list.
 
     1. Choose the **OK** button.
 
@@ -162,25 +160,25 @@ If you are using Cloud Deployment projects that were created with Azure SDK 2.5,
 
 1. Paste the files into the Templates folder in your new Azure SDK 2.6 or later Resource Group project.
 
-1. If you're also deploying a web application with your template, you’ll need to create a reference from the new Azure SDK 2.6 or later Resource Group project to your Web Application.
+1. If you're also deploying a web site with your template, you'll need to create a reference from the new Azure SDK 2.6 or later Resource Group project to your web site.
 
     1. On the context menu of the **References** node of your new Azure SDK 2.6 or later Resource Group project in Solution Explorer, choose **Add Reference**.
 
-    1. Select the box next to your Web Application in the list of projects and then choose the **OK** button.
+    1. Select the box next to your web site in the list of projects and then choose the **OK** button.
 
 1. On the context menu of the References node of your new Azure SDK 2.6 or later Resource Group project in Solution Explorer, choose Add Reference.
 
-1. Select the box next to your Web Application in the list of projects and then choose the OK button.
+1. Select the box next to your web site in the list of projects and then choose the OK button.
 
 1. Rename all occurrences of the parameters *dropLocation* and *dropLocationSasToken* to *_artifactsLocation* and *_artifactsLocationSasToken*.
 
-1. If you don’t plan to use them, you can delete the empty template and parameter files that were automatically added to the Azure SDK 2.6 or later project when you created it
+1. If you don't plan to use them, you can delete the empty template and parameter files that were automatically added to the Azure SDK 2.6 or later project when you created it
 
     1. Delete the file DeployTemplate.json.
 
     1. Delete the file DeploymentTemplate.param.dev.json.
 
-1. If you have made changes to the Publish-AzureResourceGroup.ps1 script in the Azure SDK 2.5 project, you’ll need to move those changes to the Deploy-AzureResourceGroup.ps1 script in the Azure SDK 2.6 or later project.
+1. If you have made changes to the Publish-AzureResourceGroup.ps1 script in the Azure SDK 2.5 project, you'll need to move those changes to the Deploy-AzureResourceGroup.ps1 script in the Azure SDK 2.6 or later project.
 
     Now you can deploy your template using the deployment command in the Azure SDK 2.6 or later Azure Resource Group project and take advantage of the new features for editing templates in Azure SDK 2.6. Once you have the 2.6 or later project working to your satisfaction, you can remove the Azure SDK 2.5 project from your solution.
 
@@ -192,4 +190,4 @@ Adjustments were also made to some variable names and build tasks to better alig
 
 ## Next steps
 
-To learn how to add resources to your Azure Resource Group in Visual Studio, see [Adding resources to an Azure Resource Group](/documentation/articles/vs-azure-tools-resource-group-adding-resources).
+To learn how to add resources to your Azure Resource Group in Visual Studio, see [Editing Resource Manager templates with Visual Studio](/documentation/articles/vs-azure-tools-resource-group-adding-resources).

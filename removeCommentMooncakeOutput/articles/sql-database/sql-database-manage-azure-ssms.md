@@ -7,9 +7,9 @@
 	manager="jeffreyg" 
 	editor="tysonn"/>
 
-<tags
-	ms.service="sql-database"
-	ms.date="09/11/2015"
+<tags 
+	ms.service="sql-database" 
+	ms.date="09/11/2015" 
 	wacn.date=""/>
 
 
@@ -30,7 +30,7 @@ It's recommended that you use the latest version of SSMS whenever you work with 
 
 Connecting to SQL Database requires that you know the server name on Azure. You might need to sign in to the portal to get this information.
 
-1.  Sign in to the [Azure Management Portal](http://manage.windowsazure.cn).
+1.  Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
 
 2.  In the left pane, click **SQL Databases**.
 

@@ -1,19 +1,15 @@
-<properties 
-    pageTitle="Add a user to your Azure RemoteApp collection" 
-    description="Learn how to add users to your Azure RemoteApp collection" 
-    services="remoteapp" 
-	documentationCenter="" 
-    authors="lizap" 
+<properties
+    pageTitle="Add a user to your Azure RemoteApp collection | Windows Azure"
+    description="Learn how to add users to your Azure RemoteApp collection"
+    services="remoteapp"
+	documentationCenter=""
+    authors="lizap"
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/12/2015" 
-    ms.author="elizapo" />
+<tags
+	ms.service="remoteapp"
+	ms.date="12/05/2015"
+	wacn.date=""/>
 
 # How to add a user to your Azure RemoteApp collection
 
@@ -27,7 +23,7 @@ The different collection types (cloud vs. hybrid) support using different user i
 
 For a hybrid collection of RemoteApp, you need to set up an Active Directory domain infrastructure on premises and an Azure Active Directory tenant with Directory Integration (and optionally single sign-on). Additionally, you need to create some Active Directory objects in the on-premises directory.  
 
-For a cloud collection of RemoteApp, any user that has Azure Active Directory support identities can be granted user access to RemoteApp to include Microsoft Accounts.  See the table below. 
+For a cloud collection of RemoteApp, any user that has Azure Active Directory support identities can be granted user access to RemoteApp to include Microsoft Accounts.  See the table below.
 
 Office 365 users are Azure Active Directory users. If they have Azure Active Directory hybrid, Directory synchronized accounts, they can be granted user access in a RemoteApp hybrid deployment.   
 
@@ -36,19 +32,18 @@ You can use this table as a quick reference for which identity is supported in y
 |User accounts |Cloud	|Hybrid|
 |--------------|--------|------|
 |Microsoft Account| 	Yes|	No|
-|Azure Active Directory (Azure AD)|	| |	
+|Azure Active Directory (Azure AD)|	| |
 |Azure AD cloud only 	|Yes	|No	|
 |ADsync with password sync	|Yes	|Yes	|
 |ADsync without password sync|	Yes	|No	|
 |ADsync with AD FS	|Yes	|Yes	|
-|3rd-party Azure supported identity providers  (example Ping)	|Yes	|Yes|	
+|3rd-party Azure supported identity providers  (example Ping)	|Yes	|Yes|
 |Multi-Factor Authentication	|Yes	|Yes	|
 
-Check out [more information](remoteapp-ad.md) about configuring Active Directory for RemoteApp.
+Check out [more information](/documentation/articles/remoteapp-ad) about configuring Active Directory for RemoteApp.
 
 
-> [AZURE.NOTE] The Azure Active Directory users must be from the tenant that's associated with your subscription. (You can view and modify your subscription on the **Settings** tab in the portal. See [Change the Azure Active Directory tenant used by RemoteApp](remoteapp-changetenant.md) for more information.)
+> [AZURE.NOTE] The Azure Active Directory users must be from the tenant that's associated with your subscription. (You can view and modify your subscription on the **Settings** tab in the portal. See [Change the Azure Active Directory tenant used by RemoteApp](/documentation/articles/remoteapp-changetenant) for more information.)
 
 ## Office 365 ProPlus user account information
-If you are using the Office 365 ProPlus template image in your collection *or* if you created a custom image that uses Office 365, you are only allowed to add Azure Active Directory users that have Office 365 subscriptions for the default domain of your subscription. See [Using Office 365 with Azure RemoteApp](remoteapp-o365.md) for more information.
- 
+If you are using the Office 365 ProPlus template image in your collection *or* if you created a custom image that uses Office 365, you are only allowed to add Azure Active Directory users that have Office 365 subscriptions for the default domain of your subscription. See [Using Office 365 with Azure RemoteApp](/documentation/articles/remoteapp-o365) for more information.

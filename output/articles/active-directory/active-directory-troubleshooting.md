@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/24/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Troubleshooting: 'Active Directory' item is missing or not available

@@ -9,12 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/01/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
-
-
-
-
 
 # Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service
 
@@ -177,7 +173,7 @@ For more information, see also the [Node.js Developer Center](/develop/nodejs/).
   [Azure SDK for Node.js GitHub repository]: https://github.com/WindowsAzure/azure-sdk-for-node
   [completed-app]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-10.png
   [Azure SDK for Node.js]: /develop/nodejs/
-  [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+  [Node.js web site]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
   [Socket.IO GitHub repository]: https://github.com/LearnBoost/socket.io/tree/0.9.14
   [Azure Considerations]: #windowsazureconsiderations
   [Hosting the Chat Example in a Worker Role]: #hostingthechatexampleinawebrole

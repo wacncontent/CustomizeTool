@@ -4,7 +4,7 @@ deleted:
 
 		When creating SQL Server images, consider using the [new Portal](https://manage.windowsazure.cn) to take advantage of features, such as the default use of Premium Storage, and other options, such as Automated Patching, Automated Backup, and AlwaysOn configurations.
 
-reason: ()
+reason: (preview portal)
 
 replacement:
 

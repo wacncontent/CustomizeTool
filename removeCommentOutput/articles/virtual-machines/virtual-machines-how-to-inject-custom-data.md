@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/14/2015"
+	ms.date="12/08/2015"
 	wacn.date=""/>
 
 
@@ -77,4 +77,4 @@ For further information, see the [cloud-init documentation for Ubuntu](https://h
 <!--Link references-->
 [Add Role Service Management REST API Reference](http://msdn.microsoft.com/zh-cn/library/azure/jj157186.aspx)
 
-[Azure Command-line Interface](https://github.com/Azure/azure-sdk-tools-xplat)
+[Azure Command-line Interface](https://github.com/Azure/azure-xplat-cli)

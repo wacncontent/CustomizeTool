@@ -15,25 +15,25 @@
 
 The Service Bus samples demonstrate key features in Service Bus (cloud service) and Service Bus for Windows Server. This article categorizes and describes the samples available, with links to each.
 
->[AZURE.NOTE] Service Bus samples are not installed with the SDK. To obtain the samples, visit the [Azure SDK samples page](https://code.msdn.microsoft.com).
+>[AZURE.NOTE] Service Bus samples are not installed with the SDK. To obtain the samples, visit the [Azure SDK samples page](https://code.msdn.microsoft.com/windowsazure).
 
 ## Service Bus brokered messaging
 
 The following samples illustrate how to write applications that use Service Bus.
 
-Note that the brokered messaging samples require a connection string to access your Service Bus service namespace.
+Note that the brokered messaging samples require a connection string to access your Service BusÂ service namespace.
 
 ### To obtain a connection string for Azure Service Bus
 
 1. Log on to the [Azure Management Portal](http://manage.windowsazure.cn).
 
-1. In the left-hand column, click **Service Bus**.
+2. In the left-hand column, click **Service Bus**.
 
-1. Click the name of your service namespace in the list.
+3. Click the name of your service namespace in the list.
 
-1. Click **Connection Information**. In the **Access connection information** dialog, copy the connection string to your clipboard.
+4. Click **Connection Information**. In the **Access connection information** dialog, copy the connection string to your clipboard.
 
-1. Paste the connection string into the App.config file for the sample.
+5. Paste the connection string into the App.config file for the sample.
 
 ### To obtain a connection string for Service Bus for Windows Server
 
@@ -53,7 +53,7 @@ These samples describe basic messaging and relay functionality.
 |---|---|---|---|
 |[Getting Started: Messaging with Queues](http://code.msdn.microsoft.com/Getting-Started-Brokered-aa7a0ac3)|Demonstrates how to use Windows Azure Service Bus to send and receive messages from a queue.|1.8|Windows Azure Service Bus; Service Bus for Windows Server|
 |[Getting Started: Messaging With Topics](http://code.msdn.microsoft.com/Getting-Started-Brokered-614d42e5)|Demonstrates how to use Windows Azure Service Bus to send and receive messages from a topic with multiple subscriptions.|1.8|Windows Azure Service Bus; Service Bus for Windows Server|
-|[Getting Started with Event Hubs](http://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097)|Demonstrates the basic capabilities of Event Hubs, such as creating an Event Hub, sending events to an Event Hub, consuming events using the Event Processor.|2.4|Windows Azure Service Bus|
+|[Getting Started with Event Hubs](http://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097)|Demonstrates the basic capabilities of Event Hubs, such as creating an Event Hub, sending events to an Event Hub, consuming events using the Event Processor.|2.4|Windows Azure Service Bus|
 
 ### Exploring features
 
@@ -117,7 +117,7 @@ The following samples demonstrate various other features of the service.
 
 |Sample Name|Description|Minimum SDK Version|Availability|
 |---|---|---|---|
-|[Service Bus Explorer](http://code.msdn.microsoft.com/Service-Bus-Explorer-f2abca5a)|The Service Bus Explorer allows users to connect to a Service Bus service namespace and manage messaging entities in an easy manner. The tool provides advanced features such as import/export functionality, and the ability to test messaging entities and relay services.|1.8|Windows Azure Service Bus; Service Bus for Windows Server|
+|[Service Bus Explorer](http://code.msdn.microsoft.com/Service-Bus-Explorer-f2abca5a)|The Service Bus Explorer allows users to connect to a Service BusÂ service namespace and manage messaging entities in an easy manner. The tool provides advanced features such as import/export functionality, and the ability to test messaging entities and relay services.|1.8|Windows Azure Service Bus; Service Bus for Windows Server|
 |[Authorization: SBAzTool](http://code.msdn.microsoft.com/Authorization-SBAzTool-6fd76d93)|This sample demonstrates how to create and manage service identities in Windows Azure Active Directory Access Control (also known as Access Control Service or ACS) for use with Service Bus.|N/A|Windows Azure Service Bus|
 
 ## Next steps

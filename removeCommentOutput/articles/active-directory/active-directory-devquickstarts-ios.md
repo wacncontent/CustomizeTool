@@ -18,12 +18,12 @@
 
 [AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
-Azure AD provides the Active Directory Authentication Library, or ADAL, for iOS clients that need to access protected resources.  ADAL’s sole purpose in life is to make it easy for your app to get access tokens.  To demonstrate just how easy it is, here we’ll build a Objective C To-Do List application that:
+Azure AD provides the Active Directory Authentication Library, or ADAL, for iOS clients that need to access protected resources.  ADAL's sole purpose in life is to make it easy for your app to get access tokens.  To demonstrate just how easy it is, here we'll build a Objective C To-Do List application that:
 
 -	Gets access tokens for calling the Azure AD Graph API using the [OAuth 2.0 authentication protocol](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx).
 -	Searches a directory for users with a given alias.
 
-To build the complete working application, you’ll need to:
+To build the complete working application, you'll need to:
 
 2. Register your application with Azure AD.
 3. Install & Configure ADAL.

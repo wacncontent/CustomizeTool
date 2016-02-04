@@ -8,13 +8,13 @@
    editor=""/>
 
 <tags
-	ms.service="active-directory"
-	ms.date="09/21/2015"
-	wacn.date=""/>
+   ms.service="active-directory"
+   ms.date="12/01/2015"
+   wacn.date=""/>
 
-# Add and manage multiple Azure AD directories
+# Add and manage multiple Azure Active Directory directories
 
-In Azure AD directory, each directory is a fully independent resource: a peer, fully-featured, and logically independent of other directories that you manage. There is no parent-child relationship between directories. This independence between directories includes resource independence, administrative independence, and synchronization independence.
+In Azure Active Directory (Azure AD), each directory is a fully independent resource: a peer, fully-featured, and logically independent of other directories that you manage. There is no parent-child relationship between directories. This independence between directories includes resource independence, administrative independence, and synchronization independence.
 
 ##Resource independence
 
@@ -22,7 +22,7 @@ If you create or delete a resource in one directory, it has no impact on any res
 
 ##Administrative independence
 
-If a non-administrative user of directory 'Contoso', creates a test directory 'Test' then:
+If a non-administrative user of directory 'Contoso' creates a test directory 'Test' then:
 - By default, the user who creates a directory is added as an external user in that new directory, and assigned the global administrator role in that directory.
 - The administrators of directory 'Contoso' have no direct administrative privileges to directory 'Test' unless an administrator of 'Test' specifically grants them these privileges. Administrators of 'Contoso' can control access to directory 'Test' if they control the user account which created 'Test.'
 - If you change (add or remove) an administrator role for a user in one directory, the change does not affect any administrator role that the user might have in another directory.

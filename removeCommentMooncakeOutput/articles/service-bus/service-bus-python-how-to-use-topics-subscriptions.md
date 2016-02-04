@@ -7,12 +7,12 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags
-	ms.service="service-bus"
-	ms.date="10/08/2015"
+<tags 
+	ms.service="service-bus" 
+	ms.date="10/08/2015" 
 	wacn.date=""/>
 
-# How to use Service Bus topics and subscriptions
+# How to Use Service Bus topics and subscriptions
 
 [AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
 
@@ -154,7 +154,7 @@ In the event that the application crashes after processing the message but befor
 
 ## Delete topics and subscriptions
 
-Topics and subscriptions are persistent, and must be explicitly deleted either through the Azure Management Portal or programmatically. The following example shows how to delete the topic named `mytopic`:
+Topics and subscriptions are persistent, and must be explicitly deleted either through the [Azure Management Portal][] or programmatically. The following example shows how to delete the topic named `mytopic`:
 
 ```
 bus_service.delete_topic('mytopic')
@@ -177,4 +177,4 @@ Now that you've learned the basics of Service Bus topics, follow these links to 
 [Python Azure package]: https://pypi.python.org/pypi/azure  
 [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
 [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
-[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas 
+[Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas 

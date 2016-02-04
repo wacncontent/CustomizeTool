@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Configure a custom domain name in Azure Websites"
-	description="Learn how to use a custom domain name with a web app in Azure Websites."
+	pageTitle="Configure a custom domain name in Azure Web App"
+	description="Learn how to use a custom domain name with a web app in Azure."
 	services="app-service"
 	documentationCenter=""
 	authors="cephalin"
@@ -13,7 +13,7 @@
 	ms.date="10/23/2015"
 	wacn.date=""/>
 
-# Configure a custom domain name in Azure Websites
+# Configure a custom domain name in Azure
 
 > [AZURE.SELECTOR]
 - [Web Apps with External Domains](/documentation/articles/web-sites-custom-domain-name)
@@ -21,7 +21,7 @@
 
 When you create a web app, Azure assigns it to a subdomain of chinacloudsites.cn. For example, if your web app is named **contoso**, the URL is **contoso.chinacloudsites.cn**. Azure also assigns a virtual IP address.
 
-For a production web app, you may want users to see a custom domain name. This article explains how to configure a custom domain with [Azure Websites](/documentation/services/web-sites/).
+For a production web app, you may want users to see a custom domain name. This article explains how to configure a custom domain with [Azure Web Apps](/documentation/services/web-sites/).
 
 If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**.
 
@@ -33,17 +33,16 @@ In this article:
 -   [DNS record types]
 -   [Find the virtual IP address]
 -   [Create the DNS records]
--   [Create an 揳wverify?record (A records only)](#awverify)
+-   [Create an ćłwverify?record (A records only)](#awverify)
 -   [Enable the domain name on your website]
-## Overview
+##<a href="overview"></a> Overview
 
-If you haven't already registered for an external domain name (i.e. not *.chinacloudsites.cn) already, the easiest way to set up a custom domain is to buy one directly in the [Azure preview portal](https://manage.windowsazure.cn). The process enables you to manage your web app's domain name directly in the portal instead of going to a third-party site like GoDaddy to manage it. Likewise, configuring the domain name in your web app is greatly simplified, whether your web app uses [Azure Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name) or not. For more information, see [Buy and Configure a custom domain name in Azure Websites](/documentation/articles/custom-dns-web-site-buydomains-web-app).
 
-If you have a domain name already, or you want reserve domain from other domain registrars, here are the general steps to bring a custom domain name for web app (see [specific instructions for GoDaddy.com](/documentation/articles/web-sites-godaddy-custom-domain-name)):
+If you have a domain name already, or you want reserve domain from other domain registrars, here are the general steps to bring a custom domain name for web site :
 
 1. Reserve your domain name. This article does not cover that process. There are many domain registrars to choose from. When you sign up, their site will walk you through the process.
 1. Create DNS records that map the domain to your Azure web app.
-1. Add the domain name inside the [Azure Management Portal](https://manage.windowsazure.cn/).
+1. Add the domain name inside the [Azure Management Portal](https://manage.windowsazure.cn).
 
 Within this basic outline, there are specific cases to consider:
 
@@ -54,9 +53,9 @@ Within this basic outline, there are specific cases to consider:
 [AZURE.INCLUDE [modes](../includes/custom-dns-web-site-modes.md)]
 
 
-## DNS record types
+##<a href="dns-record-types"></a> DNS record types
 
-The Domain Name System (DNS) uses data records to map domain names into IP addresses. There are several types of DNS records. For web apps, you’ll create either an *A* record or a *CNAME* record.
+The Domain Name System (DNS) uses data records to map domain names into IP addresses. There are several types of DNS records. For web apps, you'll create either an *A* record or a *CNAME* record.
 
 - An A **(Address)** record maps a domain name to an IP address.
 - A **CNAME (Canonical Name)** record maps a domain name to another domain name. DNS uses the second name to look up the address. Users still see the first domain name in their browser. For example, you could map contoso.com to *&lt;yourwebapp&gt;*.chinacloudsites.cn.
@@ -66,7 +65,7 @@ If the IP address changes, a CNAME entry is still valid, whereas an A record mus
 > [AZURE.NOTE] The IP address may change if you delete and recreate your web app, or change the web app mode back to free.
 
 
-## Find the virtual IP address
+##<a href="find-the-virtual-ip-address"></a> Find the virtual IP address
 
 Skip this step if you are creating a CNAME record. To create an A record, you need the virtual IP address of your web app. To get the IP address:
 
@@ -79,9 +78,9 @@ Skip this step if you are creating a CNAME record. To create an A record, you ne
 4.	The IP address is listed toward the bottom of the dialog.
 
 	![](./media/web-sites-custom-domain-name/ipaddress.png)
-## Create the DNS records
+##<a href="create-the-dns-records"></a> Create the DNS records
 
-Log in to your domain registrar and use their tool to add an A record or CNAME record. Every registrar’s web app is slightly different, but here are some general guidelines.
+Log in to your domain registrar and use their tool to add an A record or CNAME record. Every registrar's web app is slightly different, but here are some general guidelines.
 
 1.	Find the page for managing DNS records. Look for links or areas of the site labeled **Domain Name**, **DNS**, or **Name Server Management**. Often the link can be found be viewing your account information, and then looking for a link such as **My domains**.
 2.	When you find the management page, look for a link that lets you add or edit DNS records. This might be listed as a **Zone file**, **DNS Records**, or as an **Advanced** configuration link.
@@ -90,7 +89,7 @@ The page might list A records and CNAME records separately, or else provide a dr
 
 When you create or edit a record, the fields will let you map your domain name to an IP address (for A records) or another domain (for CNAME records). For a CNAME record, you will map *from* your custom domain *to* your chinacloudsites.cn subdomain.
 
-In many registrar tools, you will just type the subdomain portion of your domain, not the entire domain name. Also, many tools use ‘@’ to mean the root domain. For example:
+In many registrar tools, you will just type the subdomain portion of your domain, not the entire domain name. Also, many tools use '@' to mean the root domain. For example:
 
 <table cellspacing="0" border="1">
   <tr>
@@ -110,22 +109,21 @@ In many registrar tools, you will just type the subdomain portion of your domain
   </tr>
 </table>
 
-Assuming the custom domain name is ‘contoso.com’, this would create the following records:
+Assuming the custom domain name is 'contoso.com', this would create the following records:
 
 - **contoso.com** mapped to 168.62.48.183.
 - **www.contoso.com** mapped to **contoso.chinacloudsites.cn**.
 
-<a name="awverify" />
-## Create an awverify record (A records only)
+##<a name="awverify" /></a> Create an awverify record (A records only)
 
 If you create an A record, web app also requires a special CNAME record, which is used to verify that you own the domain you are attempting to use. This CNAME record must have the following form.
 
 - *If the A record maps the root domain or a wildcard domain:* Create a CNAME record that maps from **awverify.&lt;yourdomain&gt;** to **awverify.&lt;yourwebappname&gt;.chinacloudsites.cn**.  For example, if the A record is for **contoso.com**, create a CNAME record for **awverify.contoso.com**.
 - *If the A record maps a specific subdomain:* Create a CNAME record that maps from **awverify.&lt;subdomain&gt;** to **awverify.&lt;yourwebappname&gt;.chinacloudsites.cn**. For example, if the A record is for **blogs.contoso.com**, create a CNAME record for **awverify.blogs.contoso.com**.
 
-Visitors to your web app will not see the awverify subdomain; it’s only for Azure to verify your domain.
+Visitors to your web app will not see the awverify subdomain; it's only for Azure to verify your domain.
 
-## Enable the domain name on your web app
+##<a name="enable-the-domain-name-on-your-website" /></a> Enable the domain name on your web site
 
 [AZURE.INCLUDE [modes](../includes/custom-dns-web-site-enable-on-web-site.md)]
 

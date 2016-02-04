@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 # Use Pig with Hadoop on HDInsight
@@ -39,7 +39,9 @@ For more information about Pig Latin, see [Pig Latin Reference Manual 1](http://
 
 For an example of using UDFs with Pig, see the following documents:
 
-* [Using Python with Pig and Hive in HDInsight](/documentation/articles/hdinsight-python)
+* [Use DataFu with Pig in HDInsight](/documentation/articles/hdinsight-hadoop-use-pig-datafu-udf) - DataFu is a collection of useful UDFs maintained by Apache
+
+* [Use Python with Pig and Hive in HDInsight](/documentation/articles/hdinsight-python)
 
 * [Use C# with Hive and Pig in HDInsight](/documentation/articles/hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
 
@@ -51,7 +53,7 @@ This example uses a *log4j* sample file, which is stored at **/example/data/samp
 
 In the previous example, the log level is ERROR.
 
-> [AZURE.NOTE] You can also generate a log4j file by using the [Apache Log4j](http://en.wikipedia.org/wiki/Log4j) logging tool and then upload that file to your blob. See [Upload Data to HDInsight](/documentation/articles/hdinsight-upload-data) for instructions. For more information about how blobs in Azure storage are used with HDInsight, see [Use Azure Blob Storage with HDInsight](/documentation/articles/hdinsight-use-blob-storage).
+> [AZURE.NOTE] You can also generate a log4j file by using the [Apache Log4j](http://zh.wikipedia.org/wiki/Log4j) logging tool and then upload that file to your blob. See [Upload Data to HDInsight](/documentation/articles/hdinsight-upload-data) for instructions. For more information about how blobs in Azure storage are used with HDInsight, see [Use Azure Blob Storage with HDInsight](/documentation/articles/hdinsight-hadoop-use-blob-storage).
 
 The sample data is stored in Azure Blob storage, which HDInsight uses as the default file system for Hadoop clusters. HDInsight can access files stored in blobs by using the **wasb** prefix. For example, to access the sample.log file, you would use the following syntax:
 
@@ -87,13 +89,13 @@ HDInsight can run Pig Latin jobs by using a variety of methods. Use the followin
 <!-- deleted by customization
 | [SSH](/documentation/articles/hdinsight-hadoop-use-pig-ssh)                        |              ✔              |            ✔            | Linux                                     | Linux, Unix, Mac OS X, or Windows        |
 | [Curl](/documentation/articles/hdinsight-hadoop-use-pig-curl)                      |           &nbsp;            |            ✔            | Linux or Windows                          | Linux, Unix, Mac OS X, or Windows        |
-| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk) |           &nbsp;            |            ✔            | Linux or Windows                          | Windows (for now)                        |
-| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-pig-powershell)  |           &nbsp;            |            ✔            | Linux or Windows                          | Windows                                  |
+| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1) |           &nbsp;            |            ✔            | Linux orWindows                          | Windows (for now)                        |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-pig-powershell)  |           &nbsp;            |            ✔            | Linux orWindows                          | Windows                                  |
 -->
 <!-- keep by customization: begin -->
 | [Curl](/documentation/articles/hdinsight-hadoop-use-pig-curl)                      |           &nbsp;            |            ✔            | Windows                          | Windows        |
-| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk) |           &nbsp;            |            ✔            |  Windows                          | Windows (for now)                        |
-| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-pig-powershell)  |           &nbsp;            |            ✔            |  Windows                          | Windows                                  |
+| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1) |           &nbsp;            |            ✔            | Windows                          | Windows (for now)                        |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-pig-powershell)  |           &nbsp;            |            ✔            | Windows                          | Windows                                  |
 <!-- keep by customization: end -->
 | [Remote Desktop](/documentation/articles/hdinsight-hadoop-use-pig-remote-desktop)  |              ✔              |            ✔            | Windows                                   | Windows                                  |
 
@@ -127,16 +129,37 @@ Now that you have learned how to use Pig with HDInsight, use the following links
 [connectionmanager]: http://msdn.microsoft.com/zh-cn/library/mt146773(v=sql.120).aspx
 [ssispack]: http://msdn.microsoft.com/zh-cn/library/mt146770(v=sql.120).aspx
 
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+<!-- deleted by customization
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
+
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
+
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+-->
+<!-- keep by customization: begin -->
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+<!-- keep by customization: end -->
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically#mapreduce-sdk
 
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell
+<!-- deleted by customization
+[Powershell-install-configure]: ../install-configure-powershell.md
+-->
+<!-- keep by customization: begin -->
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
+<!-- keep by customization: end -->
+
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
 [image-hdi-log4j-sample]: ./media/hdinsight-use-pig/HDI.wholesamplefile.png

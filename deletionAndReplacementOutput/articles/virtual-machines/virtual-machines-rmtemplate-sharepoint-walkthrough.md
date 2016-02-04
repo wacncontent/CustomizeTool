@@ -12,5 +12,5 @@ deleted:
 					"China East",
 					"China North"
 
-reason: ()
+reason: (region diff)
 

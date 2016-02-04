@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Monitor your StorSimple device | Microsoft Azure"
+   pageTitle="Monitor your StorSimple device | Windows Azure"
    description="Describes how to use the StorSimple Manager service to monitor I/O performance, capacity utilization, network throughput, and device performance."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/15/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 # Use the StorSimple Manager service to monitor your StorSimple device 
 
@@ -93,4 +89,4 @@ The charts below show the network throughput for the Data 0 and Data 4, both 1 G
 
 - Learn how to [use the StorSimple Manager service device dashboard](storsimple-device-dashboard.md).
 
-- Learn how to [use the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+- Learn how to [use the StorSimple Manager service to administer your StorSimple device](/documentation/articles/storsimple-manager-service-administration).

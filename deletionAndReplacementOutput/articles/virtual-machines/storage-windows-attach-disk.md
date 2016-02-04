@@ -8,7 +8,7 @@ deleted:
 		
 		[AZURE.VIDEO attaching-a-data-disk-to-a-windows-vm]
 
-reason: ()
+reason: (video)
 
 replacement:
 

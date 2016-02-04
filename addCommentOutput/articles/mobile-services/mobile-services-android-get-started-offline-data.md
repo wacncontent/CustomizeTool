@@ -9,11 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
+	ms.date="12/06/2015"
 	wacn.date=""/>
 
 # Add Offline Data Sync to your Android Mobile Services app
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
 
 ## Summary
@@ -31,7 +34,7 @@ Whether you are offline or connected, conflicts can arise any time multiple chan
 
 ## Update the app to support offline sync
 
-With offline sync you read to and write from a *sync table* (using the *IMobileServiceSyncTable* interface), which is part of a **SQL Light** database on your device.
+With offline sync you read to and write from a *sync table* (using the *IMobileServiceSyncTable* interface), which is part of a **SQLite** database on your device.
 
 To push and pull changes between the device and Azure Mobile Services, you use a *synchronization context* (*MobileServiceClient.SyncContext*), which you initialize with the local database that you use to store data locally.
 
@@ -43,9 +46,7 @@ To push and pull changes between the device and Azure Mobile Services, you use a
 2. Add the following **import** statements to *ToDoActivity.java*:
 
 		import java.util.Map;
-
 		import android.widget.Toast;
-
 		import com.microsoft.windowsazure.mobileservices.table.query.Query;
 		import com.microsoft.windowsazure.mobileservices.table.sync.MobileServiceSyncContext;
 		import com.microsoft.windowsazure.mobileservices.table.sync.MobileServiceSyncTable;
@@ -104,7 +105,6 @@ To push and pull changes between the device and Azure Mobile Services, you use a
 		public void syncAsync(){
 			if (isNetworkAvailable()) {
 				new AsyncTask<Void, Void, Void>() {
-
 					@Override
 					protected Void doInBackground(Void... params) {
 						try {
@@ -129,7 +129,6 @@ To push and pull changes between the device and Azure Mobile Services, you use a
 			syncAsync();
 
 	This causes the device on startup to sync with the Azure table. Otherwise you would display the last offline contents of the local store.
-
 
 
 9. Update the code in the `refreshItemsFromTable` method to use this query (first line of code inside the `try` block):
@@ -164,9 +163,9 @@ Lets test the following scenarios.
 
 ### Offline testing
 
-<!-- Now if you run the app and tap the refresh button, you should see all the items from the server. At that point you should be able to turn off the networking from the device by placing it in *Airplane Mode*, and continue making changes – the app will work just fine. When it’s time to sync the changes to the server, turn the network back on, and tap the **Refresh** button again.
+<!-- Now if you run the app and tap the refresh button, you should see all the items from the server. At that point you should be able to turn off the networking from the device by placing it in *Airplane Mode*, and continue making changes - the app will work just fine. When it's time to sync the changes to the server, turn the network back on, and tap the **Refresh** button again.
 
-One thing which is important to point out: if there are pending changes in the local store, a pull operation will first push those changes to the server (so that if there are changes in the same row, the push operation will fail and the application has an opportunity to handle the conflicts appropriately). That means that the push call in the code above isn’t necessarily required, but I think it’s always a good practice to be explicit about what the code is doing.
+One thing which is important to point out: if there are pending changes in the local store, a pull operation will first push those changes to the server (so that if there are changes in the same row, the push operation will fail and the application has an opportunity to handle the conflicts appropriately). That means that the push call in the code above isn't necessarily required, but I think it's always a good practice to be explicit about what the code is doing.
 -->
 
 1. Place the device or simulator in *Airplane Mode*. This creates an offline scenario.
@@ -175,7 +174,7 @@ One thing which is important to point out: if there are pending changes in the l
 
 3. View the contents of the Azure *TodoItem* table. Verify that the new items have _not_ been synced to the server:
 
-   - For the JavaScript backend, go to the Management Portal, and click the Data tab to view the contents of the `TodoItem` table.
+   - For the JavaScript backend, go to the Azure Management Portal, and click the Data tab to view the contents of the `TodoItem` table.
    - For the .NET backend, view the table contents either with a SQL tool such as *SQL Server Management Studio*, or a REST client such as *Fiddler* or *Postman*.
 
 4. Turn on WiFi in the device or simulator. Next, press the **Refresh** button.
@@ -206,14 +205,23 @@ One thing which is important to point out: if there are pending changes in the l
 [Mobile Services sample repository on GitHub]: https://github.com/Azure/mobile-services-samples
 
 
-[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
+<!-- deleted by customization
+[Get started with Mobile Services]: mobile-services-android-get-started.md
+[Handling Conflicts with Offline Support for Mobile Services]:  mobile-services-android-handling-conflicts-offline-data.md
+[Soft Delete]: mobile-services-using-soft-delete.md
+-->
 <!-- keep by customization: begin -->
-[Get started with data]: /documentation/articles/mobile-services-android-get-started-data
-<!-- keep by customization: end -->
-[Handling Conflicts with Offline Support for Mobile Services]: /documentation/articles/mobile-services-android-handling-conflicts-offline-data
+[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
+[Handling Conflicts with Offline Support for Mobile Services]:  /documentation/articles/mobile-services-android-handling-conflicts-offline-data
 [Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
+<!-- keep by customization: end -->
 
 [Cloud Cover: Offline Sync in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Azure Friday: Offline-enabled apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
 
+<!-- deleted by customization
+[Mobile Services Quick Start tutorial]: mobile-services-android-get-started.md
+-->
+<!-- keep by customization: begin -->
 [Mobile Services Quick Start tutorial]: /documentation/articles/mobile-services-android-get-started
+<!-- keep by customization: end -->

@@ -1,18 +1,16 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
    pageTitle="How to create NSGs in ARM mode using the preview portal | Windows Azure"
    description="Learn how to create and deploy NSGs in ARM using the preview portal"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn"
    tags="azure-resource-manager"
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/16/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # How to manage NSGs using the preview portal

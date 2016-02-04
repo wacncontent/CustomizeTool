@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure Resource Manager Policy | Windows Azure"
-	description="Describes how to use Azure Resource Manager Policy to prevent violations at different scopes like 			subscription, resource groups or individual resources."
+	description="Describes how to use Azure Resource Manager Policy to prevent violations at different scopes like subscription, resource groups or individual resources."
 	services="azure-resource-manager"
 	documentationCenter="na"
 	authors="ravbhatnagar"
@@ -9,25 +9,39 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="10/06/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 # Use Policy to manage resources and control access
 
 Azure Resource Manager now allows you to control access through custom
-policies. A policy represents one or more violations that can be prevented
-at the desired scope. A scope in this case can be a subscription,
-resource group or an individual resource.
+policies. With policies, you can prevent users in your organization from breaking conventions that are needed to manage your organization's resources. 
 
-Policy is a default allow system. A policy is defined through a Policy
-Definition and is applied through a Policy Assignment. Policy
-Assignments lets you control the scope of where a policy can be applied.
+You create policy definitions that describe the actions or resources that are specifically denied. 
+You assign those policy definitions at the desired scope, such as the subscription,
+resource group, or an individual resource. 
 
 In this article, we will explain the basic structure of the policy
 definition language that you can use to create policies. Then we will
 describe how you can apply these policies at different scopes and
-finally we will show some examples on how you can achieve this through
-REST API. PowerShell support will also be added shortly.
+finally we will show some examples of how you can achieve this through
+REST API.
+
+Policy is currently available as a preview.
+
+## How is it different from RBAC?
+
+There are a few key differences between policy and role-based access control, but the first thing to understand is that 
+policies and RBAC work together. To be able to use policy, the user must be authenticated through RBAC. Unlike RBAC, policy is a 
+default allow and explicit deny system. 
+
+RBAC focuses on the actions a **user** can perform at different scopes. 
+For example, a particular user is added to the contributor role for a resource group at the desired scope, so the user can make changes to that 
+resource group. 
+
+Policy focuses on **resource** actions at various scopes. For example, through policies, you can 
+control the types of resources that can be provisioned or restrict the locations in which the 
+resources can be provisioned.
 
 ## Common Scenarios
 
@@ -59,7 +73,7 @@ Basically, a policy contains the following:
 can be manipulated through a set of logical operators.
 
 **Effect:** This describes what the effect will be when the condition is
-satisfied – either deny or audit. An audit effect will emit a warning
+satisfied â either deny or audit. An audit effect will emit a warning
 event service log. For example, an administrator can create a policy which causes an audit if anyone creates a large VM, then review the logs later.
 
     {
@@ -78,14 +92,16 @@ The supported logical operators along with the syntax are listed below:
 
 | Operator Name		| Syntax		 |
 | :------------- | :------------- |
-| Not			 | "not" : {&lt;condition&gt;}			 |
-| And			| "allOf" : [ {&lt;condition1&gt;},{&lt;condition2&gt;}] |
-| Or						 | "anyOf" : [ {&lt;condition1&gt;},{&lt;condition2&gt;}] |
+| Not			 | "not" : {&lt;condition  or operator &gt;}			 |
+| And			| "allOf" : [ {&lt;condition  or operator &gt;},{&lt;condition  or operator &gt;}] |
+| Or						 | "anyOf" : [ {&lt;condition  or operator &gt;},{&lt;condition  or operator &gt;}] |
 
+Resource Manager enables you to specify complex logic in your policy through nested operators. For example, you can deny resource creation in a particular location for a specified resource type. An example of nested 
+operators is shown below.
 
 ## Conditions
 
-The supported conditions along with the syntax are listed below:
+A condition evaluates whether a **field** or **source** meets certain criteria. The supported condition names and syntax are listed below:
 
 | Condition Name | Syntax				 |
 | :------------- | :------------- |
@@ -98,12 +114,15 @@ The supported conditions along with the syntax are listed below:
 
 ## Fields and Sources
 
-The conditions are formed through the use of fields and sources. The
-following fields and sources are supported:
+Conditions are formed through the use of fields and sources. A field represents properties in the resource request payload. A source represents characteristics of the request itself. 
+
+The following fields and sources are supported:
 
 Fields: **name**, **kind**, **type**, **location**, **tags**, **tags.***.
 
-Sources: **action**
+Sources: **action**. 
+
+To get more information about actions, see [RBAC - Built in Roles] (active-directory/role-based-access-built-in-roles.md). Currently, policy only works on PUT requests. 
 
 ## Policy Definition Examples
 
@@ -112,7 +131,7 @@ scenarios listed above.
 
 ### Chargeback: Require departmental tags
 
-The below policy denies all requests which don’t have a tag containing
+The below policy denies all requests which donât have a tag containing
 "costCenter" key.
 
     {
@@ -196,6 +215,30 @@ the request.
         "effect" : "deny"
       }
     }
+    
+### Tag requirement just for Storage resources
+
+The below example shows how to nest logical operators to require an application tag for only Storage resources.
+
+    {
+        "if": {
+            "allOf": [
+              {
+                "not": {
+                  "field": "tags",
+                  "containsKey": "application"
+                }
+              },
+              {
+                "source": "action",
+                "like": "Microsoft.Storage/*"
+              }
+            ]
+        },
+        "then": {
+            "effect": "audit"
+        }
+    }
 
 ## Policy Assignment
 
@@ -215,7 +258,7 @@ You can create a policy with the [REST API for Policy Definitions](https://msdn.
 
 To create a new policy, run:
 
-    PUT https://management.azure.com/subscriptions/{subscription-id}/providers/Microsoft.authorization/policydefinitions/{policyDefinitionName}?api-version={api-version}
+    PUT https://manage.windowsazure.cn/subscriptions/{subscription-id}/providers/Microsoft.authorization/policydefinitions/{policyDefinitionName}?api-version={api-version}
 
 With a request body similar to the following:
 
@@ -274,7 +317,7 @@ The REST API enables you to create and delete policy assignments, and get inform
 
 To create a new policy assignment, run:
 
-    PUT https://management.azure.com /subscriptions/{subscription-id}/providers/Microsoft.authorization/policyassignments/{policyAssignmentName}?api-version={api-version}
+    PUT https://manage.windowsazure.cn /subscriptions/{subscription-id}/providers/Microsoft.authorization/policyassignments/{policyAssignmentName}?api-version={api-version}
 
 The {policy-assignment} is the name of the policy assignment. For
 api-version use *2015-10-01-preview*. 
@@ -309,3 +352,17 @@ If you want to remove the above policy assignment, you can do it as follows:
 You can get, change or remove policy definitions through Get-AzureRmPolicyDefinition, Set-AzureRmPolicyDefinition and Remove-AzureRmPolicyDefinition cmdlets respectively.
 
 Similarly, you can get, change or remove policy assignments through the Get-AzureRmPolicyAssignment, Set-AzureRmPolicyAssignment and Remove-AzureRmPolicyAssignment cmdlets respectively.
+
+##Policy Audit Events
+
+After you have applied your policy, you will begin to see policy-related events. You can either go to portal or use PowerShell to get this data. 
+
+To view all events that related to deny effect, you can use the following command. 
+
+    Get-AzureRmLog | where {$_.subStatus -eq "Forbidden"}     
+
+To view all events related to audit effect, you can use the following command. 
+
+    Get-AzureRmLog | where {$_.OperationName -eq "Microsoft.Authorization/policies/audit/action"} 
+    
+

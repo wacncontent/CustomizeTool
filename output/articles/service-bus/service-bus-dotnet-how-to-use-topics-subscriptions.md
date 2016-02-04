@@ -54,7 +54,7 @@ In both cases, you can retrieve your connection string using the `CloudConfigura
 
 ### Configure your connection string when using Cloud Services
 
-The service configuration mechanism is unique to Azure Cloud Services projects and enables you to dynamically change configuration settings from the Azure Management Portal without redeploying your application. For example, add a `Setting` label to your service definition (***.csdef**) file, as shown in the next example.
+The service configuration mechanism is unique to Azure Cloud Services projects and enables you to dynamically change configuration settings from the [Azure Management Portal][] without redeploying your application. For example, add a `Setting` label to your service definition (***.csdef**) file, as shown in the next example.
 
 ```
 <ServiceDefinition name="Azure1">
@@ -289,7 +289,7 @@ Client.OnMessage((message) =>
 }, options);
 ```
 
-This example configures the [OnMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.onmessage.aspx) callback using an [OnMessageOptions](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.onmessageoptions.aspx) object. [AutoComplete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.onmessageoptions.autocomplete.aspx) is set to **false** to enable manual control of when to call [Complete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) on the received message. [AutoRenewTimeout](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.onmessageoptions.autorenewtimeout.aspx) is set to 1 minute, which causes the client to wait for up to one minute for a message before the call times out and the client makes a new call to check for messages. This property value reduces the number of times the client makes chargeable calls that do not retrieve messages.
+This example configures the [OnMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.onmessage.aspx) callback using an [OnMessageOptions](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.onmessageoptions.aspx) object. [AutoComplete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.onmessageoptions.autocomplete.aspx) is set to **false** to enable manual control of when to call [Complete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) on the received message. [AutoRenewTimeout](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.onmessageoptions.autorenewtimeout.aspx) is set to 1 minute, which causes the client to wait for up to one minute before terminating the auto-renewal feature and the client makes a new call to check for messages. This property value reduces the number of times the client makes chargeable calls that do not retrieve messages.
 
 ## How to handle application crashes and unreadable messages
 
@@ -330,8 +330,8 @@ Now that you've learned the basics of Service Bus topics and subscriptions, foll
 
   [7]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/getting-started-multi-tier-13.png
 
-  [Queues, Topics, and Subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+  [Queues, Topics, and Subscriptions]: service-bus-queues-topics-subscriptions.md
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
   [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
-  [Service Bus Brokered Messaging .NET Tutorial]: /documentation/articles/service-bus-brokered-tutorial-dotnet
+  [Service Bus Brokered Messaging .NET Tutorial]: service-bus-brokered-tutorial-dotnet.md
   [Azure Samples]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2

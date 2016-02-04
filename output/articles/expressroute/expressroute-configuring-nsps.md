@@ -14,7 +14,7 @@
 
 #  Configure an ExpressRoute Connection through a Network Service Provider
 
-To configure your ExpressRoute connection through a network service provider, you’ll need to complete multiple steps in the proper order. These instructions will help you:
+To configure your ExpressRoute connection through a network service provider, you'll need to complete multiple steps in the proper order. These instructions will help you:
 
 - Create and manage ExpressRoute circuits
 - Link a Virtual Network to the ExpressRoute circuit
@@ -30,7 +30,7 @@ Before you begin configuration, verify that you have met the following prerequis
 	- A set of IP address prefixes to be used in virtual networks in Azure.
 	- A set of IP prefixes on-premises (can contain public IP addresses).
 	- The Virtual Network Gateway must be created with a /28 subnet.
-	- Additional set of IP prefixes (/28) that is outside of the virtual network. This will be used for configuring routes. – You will have to provide this to the network service provider.
+	- Additional set of IP prefixes (/28) that is outside of the virtual network. This will be used for configuring routes. - You will have to provide this to the network service provider.
 	- AS number for your network. You will have to provide this to the network service provider. You can use private AS numbers. If you choose to do so, it must be > 65000. For more information about AS numbers, see Autonomous System (AS) Numbers.	- 
 
 - From the network service provider:
@@ -52,7 +52,7 @@ Windows PowerShell is a powerful scripting environment that you can use to contr
 
 2. **Get the list of providers, locations, and bandwidths supported.**
 
-	Before creating a circuit you will need a list of service providers, supported locations, and bandwidth options for each location. The following PowerShell cmdlet returns this information which you’ll use in later steps.
+	Before creating a circuit you will need a list of service providers, supported locations, and bandwidth options for each location. The following PowerShell cmdlet returns this information which you'll use in later steps.
 
 		PS C:\> Get-AzureDedicatedCircuitServiceProvider
 
@@ -87,7 +87,7 @@ Windows PowerShell is a powerful scripting environment that you can use to contr
 
 3. **Make a request for a service key and pass it to your network service provider.** 
 
-	You will use a PowerShell cmdlet to make this request. For this example we’ll use AT&T Netbond as the service provider and will specify a 50 Mbps ExpressRoute circuit in Silicon Valley. If you are using a different provider and different settings, substitute that information when making your request.
+	You will use a PowerShell cmdlet to make this request. For this example we'll use AT&T Netbond as the service provider and will specify a 50 Mbps ExpressRoute circuit in Silicon Valley. If you are using a different provider and different settings, substitute that information when making your request.
 
 	Below is an example request for a new service key:
 
@@ -124,7 +124,7 @@ Windows PowerShell is a powerful scripting environment that you can use to contr
 		ServiceProviderProvisioningState : NotProvisioned
 		Status                           : Enabled
 
-	Once this step is complete, you’ll have connectivity to Azure storage and other services.
+	Once this step is complete, you'll have connectivity to Azure storage and other services.
 
 
 

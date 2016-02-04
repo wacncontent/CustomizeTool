@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Resource Balancer Architecture"
-   description="An architectural overview of Service Fabric's Resource Balancer"
+   pageTitle="Resource Balancer architecture | Windows Azure"
+   description="An architectural overview of Service Fabric's Resource Balancer."
    services="service-fabric"
    documentationCenter=".net"
    authors="GaugeField"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/03/2015"
-   ms.author="masnider"/>
+	ms.service="Service-Fabric"
+	ms.date="09/03/2015"
+	wacn.date=""/>
 
 # Resource Balancer Architecture Overview
 
@@ -29,11 +25,11 @@ The local agent is responsible for collecting and buffering load reports from th
 
 Resource Balancing Features:
 
-- [Describe the Cluster](service-fabric-resource-balancer-cluster-description.md)
-- [Describe Services](service-fabric-resource-balancer-service-description.md)
-- [Report Dynamic Load](service-fabric-resource-balancer-dynamic-load-reporting.md)
-- [Proactive Metric Packing](service-fabric-resource-balancer-proactive-metric-packing.md)
-- [Node Buffer Percentage](service-fabric-resource-balancer-node-buffer-percentage.md)
+- [Describe the Cluster](/documentation/articles/service-fabric-resource-balancer-cluster-description)
+- [Describe Services](/documentation/articles/service-fabric-resource-balancer-service-description)
+- [Report Dynamic Load](/documentation/articles/service-fabric-resource-balancer-dynamic-load-reporting)
+- [Proactive Metric Packing](/documentation/articles/service-fabric-resource-balancer-proactive-metric-packing)
+- [Node Buffer Percentage](/documentation/articles/service-fabric-resource-balancer-node-buffer-percentage)
 
-[Image1]: media/service-fabric-resource-balancer-architecture/Service-Fabric-Resource-Balancer-Architecture.png
+[Image1]: ./media/service-fabric-resource-balancer-architecture/Service-Fabric-Resource-Balancer-Architecture.png
  

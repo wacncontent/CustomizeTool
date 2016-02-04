@@ -7,9 +7,9 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="09/25/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="11/15/2015" 
 	wacn.date=""/>
 
 # Register your apps for Facebook authentication with Mobile Services
@@ -46,10 +46,13 @@ To complete the procedure in this topic, you must have a Facebook account that h
     >[AZURE.IMPORTANT] The app secret is an important security credential. Do not share this secret with anyone or distribute it with your app.
 	&nbsp;
 
-8. Click the **Advanced** tab, type the URL of your mobile service appended with the path _/login/facebook_ in **Valid OAuth redirect URIs**, then click **Save Changes**. 
-	&nbsp;
+8. Click the **Advanced** tab, type one of the following URL formats in **Valid OAuth redirect URIs**, then click **Save Changes**:
+ 
+	+ **.NET backend**: `https://<mobile_service>.azure-mobile.cn/signin-facebook`
+	+ **JavaScript backend**: `https://<mobile_service>.azure-mobile.cn/login/facebook` 
 
-     >[AZURE.NOTE] For a .NET backend mobile service published to Azure by using Visual Studio, the redirect URL is the URL of your mobile service appended with the path _signin-facebook_ your mobile service as a .NET service, such as `https://todolist.azure-mobile.cn/signin-facebook`.  
+	 >[AZURE.NOTE]Make sure that you use the correct redirect URL path format for your type of Mobile Services backend. When this is incorrect, authentication will not succeed. 
+
        
 
 9. Click **Status & Review** > **Yes** to enable general public access to your app.
@@ -67,7 +70,6 @@ You are now ready to use a Facebook login for authentication in your app by prov
 
 <!-- URLs. -->
 [Facebook Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268286
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-dotnet/
+[Get started with authentication]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Azure Mobile Services]: http://azure.microsoft.com/services/mobile-services/
- 
+[Azure Mobile Services]: /services/mobile-services/

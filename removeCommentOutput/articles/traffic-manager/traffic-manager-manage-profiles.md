@@ -4,11 +4,11 @@
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Manage an Azure Traffic Manager profile
@@ -33,7 +33,7 @@ You can quickly create a Traffic Manager profile by using Quick Create in the Az
 
 ## Disable, enable, or delete a profile
 
-You can disable an existing Traffic Manager profile so that it will not refer user requests to its configured endpoints. When you disable a Traffic Manager profile, the profile itself and the information contained in the profile will remain intact and can be edited in the Traffic Manager interface. When you want to re-enable the profile, you can easily do so in the Azure Management Portal and referrals will resume. When you create a Traffic Manager profile in the Azure Management Portal, it’s automatically enabled. If you decide a profile will no longer be necessary, you can delete it.
+You can disable an existing Traffic Manager profile so that it will not refer user requests to its configured endpoints. When you disable a Traffic Manager profile, the profile itself and the information contained in the profile will remain intact and can be edited in the Traffic Manager interface. When you want to re-enable the profile, you can easily do so in the Azure Management Portal and referrals will resume. When you create a Traffic Manager profile in the Azure Management Portal, it's automatically enabled. If you decide a profile will no longer be necessary, you can delete it.
 
 ### To disable a profile
 
@@ -69,20 +69,14 @@ You can view the change history for your Traffic Manager profile in the Azure Ma
    - To view details for each individual change, select the row with the change that you want to view, and then click **Details** at the bottom of the page. In the **Operation Details** window, you can view the XML representation of the API object that was created or updated as part of the operation and copy the XML code to the clipboard.
 
 
-## Additional resources
+## Next steps
 
-[What is Traffic Manager?](/documentation/articles/traffic-manager-overview)
+[Add an endpoint](/documentation/articles/traffic-manager-endpoints)
 
-[Manage endpoints in Traffic Manager](/documentation/articles/traffic-manager-endpoints)
+[Configure failover routing method](/documentation/articles/traffic-manager-configure-failover-routing-method)
 
-[About Traffic Manager monitoring](/documentation/articles/traffic-manager-monitoring)
+[Configure round robin routing method](/documentation/articles/traffic-manager-configure-round-robin-routing-method)
 
-[Traffic Manager - Disable, enable or delete a profile](/documentation/articles/disable-enable-or-delete-a-profile)
+[Configure performance routing method](/documentation/articles/traffic-manager-configure-performance-routing-method)
 
-[Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint)
-
-[Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
-
-[Cloud services](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
-
-[Websites](/home/features/web-site/)
+[Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded)

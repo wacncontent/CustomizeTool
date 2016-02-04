@@ -18,5 +18,5 @@ deleted:
 		|Australia East     |Australia Southeast
 		|Australia Southeast|Australia East
 
-reason: ()
+reason: (region diff)
 

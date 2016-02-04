@@ -14,6 +14,11 @@
 
 # Authenticate your app with Active Directory Authentication Library Single Sign-On
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
+
 [AZURE.INCLUDE [mobile-services-selector-adal-sso](../includes/mobile-services-selector-adal-sso.md)]
 
 ##Overview
@@ -42,7 +47,7 @@ This tutorial requires the following:
 To register the app with Azure Active Directory, you must associate it to the Windows Store and have a package security identifier (SID) for the app. The package SID gets registered with the native application settings in the Azure Active Directory.
 
 
-###Associate the app with a new store app name
+### Associate the app with a new store app name
 
 1. In Visual Studio, right click the client app project and click **Store** and **Associate App with the Store**
 
@@ -59,7 +64,7 @@ To register the app with Azure Active Directory, you must associate it to the Wi
 5. Click **Associate** to associate the app with the store name.
 
 
-###Retrieve the package SID for your app.
+### Retrieve the package SID for your app.
 
 Now you need to retrieve your package SID which will be configured with the native app settings.
 
@@ -79,7 +84,7 @@ Now you need to retrieve your package SID which will be configured with the nati
 
     ![][6]
 
-###Create the native app registration
+### Create the native app registration
 
 1. Navigate to **Active Directory** in the [Azure Management Portal], then click your directory.
 
@@ -180,7 +185,7 @@ Your mobile service is now configured in AAD to receive single sign-on logins fr
 ##Test the client using authentication
 
 1. In Visual Studio,run the client app.
-2. You will receive a prompt to login against your Azure Active Directory.  
+2. You will receive a prompt to login against your Azure Active Directory.
 3. The app authenticates and returns the todo items.
 
     ![][15]
@@ -206,7 +211,7 @@ Your mobile service is now configured in AAD to receive single sign-on logins fr
 [15]: ./media/mobile-services-windows-store-dotnet-adal-sso-authentication/mobile-services-app-run.png
 
 <!-- URLs. -->
-[How to Register with the Azure Active Directory]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication
+[How to Register with the Azure Active Directory]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication/ 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
 [Windows Dev Center Dashboard]: http://go.microsoft.com/fwlink/p/?LinkID=266734

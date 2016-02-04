@@ -1,15 +1,15 @@
 <properties
 	pageTitle="Node.js Getting Started Guide | Windows Azure"
-	description="Learn how to create a simple Node.js web application and deploy it to an Azure cloud service."
+	description="Learn how to create a simple Node.js web site and deploy it to an Azure cloud service."
 	services="cloud-services"
 	documentationCenter="nodejs"
-	authors="MikeWasson"
+	authors="rmcmurray"
 	manager="wpickett"
 	editor=""/>
 
 <tags
 	ms.service="cloud-services"
-	ms.date="08/31/2015"
+	ms.date="11/20/2015"
 	wacn.date=""/>
 
 
@@ -25,12 +25,12 @@ scalable cloud applications in Azure. They allow the separation and independent
 management and scale-out of front-end and back-end components of your application.  Cloud Services
 provide a robust dedicated virtual machine for hosting each role reliably.
 
-For more information on Cloud Services, and how they compare to Azure Websites and Virtual machines, see [Azure Websites, Cloud Services and Virtual Machines comparison](/documentation/articles/choose-web-site-cloud-service-vm).
+For more information on Cloud Services, and how they compare to Azure  Websites and Virtual machines, see [Azure  Websites, Cloud Services and Virtual Machines comparison](/documentation/articles/choose-web-site-cloud-service-vm).
 
->[AZURE.TIP] Looking to build a simple website? If your scenario involves just a simple website front-end, consider <a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac/">using a lightweight web app.</a> You can easily upgrade to a Cloud Service as your web app grows and your requirements change.
+>[AZURE.TIP] Looking to build a simple website? If your scenario involves just a simple website front-end, consider <a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac">using a lightweight web site.</a> You can easily upgrade to a Cloud Service as your web site grows and your requirements change.
 
 
-By following this tutorial, you will build a simple web application hosted inside a web role. You
+By following this tutorial, you will build a simple web site hosted inside a web role. You
 will use the compute emulator to test your application locally, then deploy it
 using PowerShell command-line tools.
 
@@ -42,8 +42,8 @@ The application is a simple "hello world" application:
 
 > [AZURE.NOTE] This tutorial uses Azure PowerShell, which requires Windows.
 
-- Install and configure [Azure Powershell](/documentation/articles/install-configure-powershell).
-- Download and install the [Azure SDK for .NET 2.7](http://www.microsoft.com/download/details.aspx?id=48178). In the install setup, select:
+- Install and configure [Azure Powershell](/documentation/articles/powershell-install-configure).
+- Download and install the [Azure SDK for .NET 2.7](http://www.microsoft.com/zh-cn/download/details.aspx?id=48178). In the install setup, select:
     - MicrosoftAzureAuthoringTools
     - MicrosoftAzureComputeEmulator
 
@@ -55,7 +55,7 @@ Perform the following tasks to create a new Azure Cloud Service project, along w
 
 1. Run **Azure PowerShell** as Administrator. (From the **Start Menu** or **Start Screen**, search for **Azure PowerShell**.)
 
-2.  [Connect PowerShell](/documentation/articles/powershell-install-configure#how-to-connect-to-your-subscription) to your subscription.
+2.  [Connect PowerShell](/documentation/articles/powershell-install-configure/#how-to-connect-to-your-subscription) to your subscription.
 3.  Enter the following PowerShell cmdlet to create to create the project:
 
         New-AzureServiceProject helloworld

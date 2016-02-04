@@ -10,7 +10,7 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="11/09/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # Create a VM with multiple NICs
@@ -60,7 +60,7 @@ At this time, multi NIC has the following requirements and constraints:
 |D11|2|
 |D12|4|
 |D13|8|
-|D14|16|
+|D14|8|
 |DS1|1|
 |DS2|2|
 |DS3|4|
@@ -68,30 +68,30 @@ At this time, multi NIC has the following requirements and constraints:
 |DS11|2|
 |DS12|4|
 |DS13|8|
-|DS14|16|
+|DS14|8|
 |D1_v2|1|
 |D2_v2|2|
 |D3_v2|4|
 |D4_v2|8|
-|D5_v2|16|
+|D5_v2|8|
 |D11_v2|2|
 |D12_v2|4|
 |D13_v2|8|
-|D14_v2|16|
+|D14_v2|8|
 |G1|1|
 |G2|2|
 |G3|4|
 |G4|8|
-|G5|16|
+|G5|8|
 |All Other Sizes|1|
 
 ## Network Security Groups (NSGs)
-In a Resource Manager deployment, any NIC on a VM may be associated with a Network Security Group (NSG), including any NICs on a VM that has multiple NICs enabled. If a NIC is assigned an address within a subnet where the subnet is associated with an NSG, then the rules in the subnet’s NSG also apply to that NIC. In addition to associating subnets with NSGs, you can also associate a NIC with an NSG. 
+In a Resource Manager deployment, any NIC on a VM may be associated with a Network Security Group (NSG), including any NICs on a VM that has multiple NICs enabled. If a NIC is assigned an address within a subnet where the subnet is associated with an NSG, then the rules in the subnet's NSG also apply to that NIC. In addition to associating subnets with NSGs, you can also associate a NIC with an NSG. 
 
 If a subnet is associated with an NSG, and a NIC within that subnet is individually associated with an NSG, the associated NSG rules are applied in **flow order** according to the direction of the traffic being passed into or out of the NIC: 
 
-- **Incoming traffic **whose destination is the NIC in question flows first through the subnet, triggering the subnet’s NSG rules, before passing into the NIC, then triggering the NIC’s NSG rules. 
-- **Outgoing traffic** whose source is the NIC in question flows first out from the NIC, triggering the NIC’s NSG rules, before passing through the subnet, then triggering the subnet’s NSG rules. 
+- **Incoming traffic **whose destination is the NIC in question flows first through the subnet, triggering the subnet's NSG rules, before passing into the NIC, then triggering the NIC's NSG rules. 
+- **Outgoing traffic** whose source is the NIC in question flows first out from the NIC, triggering the NIC's NSG rules, before passing through the subnet, then triggering the subnet's NSG rules. 
 
 Learn more about [Network Security Groups](/documentation/articles/virtual-networks-nsg) and how they are applied based on associations to subnets, VMs, and NICs..
 
@@ -117,7 +117,7 @@ The instructions below will help you create a multi NIC VM containing 3 NICs: a 
 	        <AddressPrefix>10.1.200.0/28</AddressPrefix>
 	      </Subnet>
 	    </Subnets>
-	… Skip over the remainder section …
+	âŚ Skip over the remainder section âŚ
 	</VirtualNetworkSite>
 
 
@@ -125,7 +125,7 @@ You need the following prerequisites before trying to run the PowerShell command
 
 - An Azure subscription.
 - A configured virtual network. See [Virtual Network Overview](/documentation/articles/virtual-networks-overview) for more information about VNets.
-- The latest version of Azure PowerShell downloaded and installed. See [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell).
+- The latest version of Azure PowerShell downloaded and installed. See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 To create a VM with multiple NICs, follow the steps below:
 
@@ -137,11 +137,11 @@ To create a VM with multiple NICs, follow the steps below:
 1. Create a VM configuration. 
 
 		$vm = New-AzureVMConfig -Name "MultiNicVM" -InstanceSize "ExtraLarge" `
-			-Image $image.ImageName –AvailabilitySetName "MyAVSet"
+			-Image $image.ImageName -AvailabilitySetName "MyAVSet"
 
 1. Create the default administrator login. 
 
-		Add-AzureProvisioningConfig –VM $vm -Windows -AdminUserName "<YourAdminUID>" `
+		Add-AzureProvisioningConfig -VM $vm -Windows -AdminUserName "<YourAdminUID>" `
 			-Password "<YourAdminPassword>"
 
 1. Add additional NICs to the VM configuration. 
@@ -158,7 +158,7 @@ To create a VM with multiple NICs, follow the steps below:
 
 1. Create the VM in your virtual network. 
 
-		New-AzureVM -ServiceName "MultiNIC-CS" –VNetName "MultiNIC-VNet" –VMs $vm
+		New-AzureVM -ServiceName "MultiNIC-CS" -VNetName "MultiNIC-VNet" -VMs $vm
 
 >[AZURE.NOTE] The VNet that you specify here must already exist (as mentioned in the prerequisites). The example below specifies a virtual network named **MultiNIC-VNet**. 
 

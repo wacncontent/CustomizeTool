@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/25/2015"
+	ms.date="11/30/2015"
 	wacn.date=""/>
 
-# Service-side authorization of users in Mobile Services
+# Service-side Authorization of Users in Mobile Services
 
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
+> [AZURE.SELECTOR]
 - [(Any | .NET)](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
 - [(Any | Javascript)](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
 
@@ -61,7 +61,7 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 [Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/p/?LinkID=257677
 [Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [My Apps dashboard]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Add Authentication to Existing Mobile Services App]:/documentation/articles/mobile-services-ios-get-started-users
+[Add Authentication to Existing Mobile Services App]:/documentation/articles/ mobile-services-ios-get-started-users
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
  

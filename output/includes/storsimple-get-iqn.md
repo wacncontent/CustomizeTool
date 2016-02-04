@@ -1,3 +1,9 @@
+<!-- deleted by customization
+<!--author=SharS last changed: 9/17/15-->
+
+#### To get the IQN of a Windows host
+-->
+<!-- keep by customization: begin -->
 <properties 
    pageTitle="Get the IQN of a Windows host"
    description="Explains how to get the iSCSI Qualified Name (IQN) of a computer running Windows Server 2012."
@@ -12,6 +18,7 @@
 	wacn.date=""/>
 
 ### To get the IQN of a Windows host
+<!-- keep by customization: end -->
 
 1. Start the Microsoft iSCSI initiator on your Windows host.
 

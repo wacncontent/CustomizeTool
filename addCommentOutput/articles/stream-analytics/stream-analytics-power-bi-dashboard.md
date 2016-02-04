@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Power BI dashboard on Stream Analytics | Microsoft Azure" 
+	pageTitle="Power BI dashboard on Stream Analytics | Windows Azure" 
 	description="Use a real-time streaming Power BI dashboard to gather business intelligence and analyze high-volume data from a Stream Analytics job." 
 	keywords="business intelligence tools,power bi,streaming data,power bi dashboard"	
 	services="stream-analytics" 
@@ -8,14 +8,10 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="stream-analytics" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="data-services" 
-	ms.date="09/29/2015" 
-	ms.author="jeffstok"/>
+<tags
+	ms.service="stream-analytics"
+	ms.date="11/12/2015"
+	wacn.date=""/>
 	
 # Azure Stream Analytics & Power BI: Live dashboard for analytics in real-time on streaming data
 
@@ -29,13 +25,18 @@ In this article, learn how create your own custom business intelligence tools by
 
 ## Prerequisites ##
 
+<!-- deleted by customization
+* Windows Azure Account
+-->
+<!-- keep by customization: begin -->
 * Microsoft Azure Account
+<!-- keep by customization: end -->
 * An input for the Stream Analytics job to consume streaming data from. Stream Analytics accepts input from Azure Event Hubs or Azure Blob storage.  
 * Work or school account for Power BI
 
 ## Create Azure Stream Analytics Job ##
 
-From [Azure Portal](https://manage.windowsazure.com), click **New, Data Services, Stream Analytics, Quick Create**.
+From [Azure <!-- deleted by customization Management Portal](https://manage.windowsazure.cn) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.com) <!-- keep by customization: end -->, click **New, Data Services, Stream Analytics, Quick Create**.
 
 Specifiy the following values, then click **Create Stream Analytics job**:
 
@@ -66,7 +67,7 @@ For this tutorial, we are assuming you are using Event Hub as an input with JSON
 
 * **Event Hub Name** - Select the name of the Azure Event Hub you have.
 * **Event Hub Policy Name** - Select the Event Hub policy for the Event Hub you are using. Ensure that this policy has manage permissions.
-*	**Event Hub Consumer Group** – You can leave this empty or specify a consumer group you have on your Event Hub. Note that each consumer group of an Event Hub can have only 5 readers at a time. So, decide the right consumer group for your job accordingly. If you leave the field blank, it will use the default consumer group.
+*	**Event Hub Consumer Group** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> You can leave this empty or specify a consumer group you have on your Event Hub. Note that each consumer group of an Event Hub can have only 5 readers at a time. So, decide the right consumer group for your job accordingly. If you leave the field blank, it will use the default consumer group.
 
 *	Click the right button.
 *	Specify the following values:
@@ -95,11 +96,11 @@ For this tutorial, we are assuming you are using Event Hub as an input with JSON
 
 Provide values as below:
 
-* **Output Alias** – You can put any output alias that is easy for you to refer to. This output alias is particularly helpful if you decide to have multiple outputs for your job. In that case, you have to refer to this output in your query. For example, let’s use the output alias value = “OutPbi”.
-* **Dataset Name** - Provide a dataset name that you want your Power BI output to have. For example, let’s use “pbidemo”.
-*	**Table Name** - Provide a table name under the dataset of your Power BI output. Let’s say we call it “pbidemo”. Currently, Power BI output from Stream Analytics jobs may only have one table in a dataset.
+* **Output Alias** <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> You can put any output alias that is easy for you to refer to. This output alias is particularly helpful if you decide to have multiple outputs for your job. In that case, you have to refer to this output in your query. For example, <!-- deleted by customization let's --><!-- keep by customization: begin --> let’s <!-- keep by customization: end --> use the output alias value = “OutPbi”.
+* **Dataset Name** - Provide a dataset name that you want your Power BI output to have. For example, <!-- deleted by customization let's --><!-- keep by customization: begin --> let’s <!-- keep by customization: end --> use “pbidemo”.
+*	**Table Name** - Provide a table name under the dataset of your Power BI output. <!-- deleted by customization Let's --><!-- keep by customization: begin --> Let’s <!-- keep by customization: end --> say we call it “pbidemo”. Currently, Power BI output from Stream Analytics jobs may only have one table in a dataset.
 
->	[AZURE.NOTE] You should not explicitly create this dataset and table in your Power BI account. They will be automatically created when you start your Stream Analytics job and the job starts pumping output into Power BI. If your job query doesn’t return any results, the dataset and table will not be created.
+>	[AZURE.NOTE] You should not explicitly create this dataset and table in your Power BI account. They will be automatically created when you start your Stream Analytics job and the job starts pumping output into Power BI. If your job query <!-- deleted by customization doesn't --><!-- keep by customization: begin --> doesn’t <!-- keep by customization: end --> return any results, the dataset and table will not be created.
 
 *	Click **OK**, **Test Connection** and now you output configuraiton is complete.
 
@@ -157,19 +158,19 @@ You will now get a line chart of average over time.  Using the pin option as bel
 
 ![graphic10][graphic10]
 
-Now when you view the dashboard with this pinned report, you will see report updating in real time. Try changing the data in your events – spike temp or something like that and you will see the real-time effect of that reflected in your dashboard.
+Now when you view the dashboard with this pinned report, you will see report updating in real time. Try changing the data in your events <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> spike temp or something like that and you will see the real-time effect of that reflected in your dashboard.
 
 Note that this tutorial demonstrated how to create but one kind of chart for a dataset. Power BI can help you create other customer business intelligence tools for your organization. For another example of a Power BI dashboard, watch the [Getting Started with Power BI](https://youtu.be/L-Z_6P56aas?t=1m58s) video.
 
-Another helpful resource to learn more about creating Dashboards with Power BI is [Dashboards in Power BI Preview](http://support.powerbi.com/knowledgebase/articles/424868-dashboards-in-power-bi-preview).
+<!-- deleted by customization For further information on configuring a Power BI output and to utilize Power BI groups, review the [Power BI section](/documentation/articles/stream-analytics-define-outputs#power-bi) of [Understanding Stream Analytics outputs](/documentation/articles/stream-analytics-define-outputs "Understanding Stream Analytics outputs"). --> Another helpful resource to learn more about creating Dashboards with Power BI is [Dashboards in Power BI Preview](http://support.powerbi.com/knowledgebase/articles/424868-dashboards-in-power-bi-preview).
 
 ## Limitations and best practices ##
 Power BI employs both concurrency and throughput constraints as described here: [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing "Power BI Pricing")
 
 Because of those Power BI lands itself most naturally to cases where Azure Stream Analytics does a significant data load reduction.
-We recommend using TumblingWindow or HoppingWindow to ensure that data push would be at most 1 push/second and that your query lands within the throughput requirements – you can use the following equation to compute the value to give your window in seconds: ![equation1](./media/stream-analytics-power-bi-dashboard/equation1.png).
+We recommend using TumblingWindow or HoppingWindow to ensure that data push would be at most 1 push/second and that your query lands within the throughput requirements <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> you can use the following equation to compute the value to give your window in seconds: ![equation1](./media/stream-analytics-power-bi-dashboard/equation1.png).
 
-As an example – If you have 1,000 devices sending data every second, you are on the Power BI Pro SKU that supports 1,000,000 rows/hour and you want to get average data per device on Power BI you can do at most a push every 4 seconds per device (as shown below):
+As an example <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> If you have 1,000 devices sending data every second, you are on the Power BI Pro SKU that supports 1,000,000 rows/hour and you want to get average data per device on Power BI you can do at most a push every 4 seconds per device (as shown below):
 ![equation2](./media/stream-analytics-power-bi-dashboard/equation2.png)
 
 Which means we would change the original query to:
@@ -198,15 +199,24 @@ To resolve this issue, stop your running job and go to your Power BI output.  Cl
 ![graphic13][graphic13]
 
 ## Get help ##
-For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics)
+For further assistance, try our [Azure Stream Analytics <!-- deleted by customization forum](https://social.msdn.microsoft.com/Forums/home?forum=AzureStreamAnalytics) --><!-- keep by customization: begin --> forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics) <!-- keep by customization: end -->
 
 ## Next steps ##
 
+<!-- deleted by customization
+- [Introduction to Azure Stream Analytics](/documentation/articles/stream-analytics-introduction)
+- [Get started using Azure Stream Analytics](/documentation/articles/stream-analytics-get-started)
+- [Scale Azure Stream Analytics jobs](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
+-->
+<!-- keep by customization: begin -->
 - [Introduction to Azure Stream Analytics](stream-analytics-introduction.md)
 - [Get started using Azure Stream Analytics](stream-analytics-get-started.md)
 - [Scale Azure Stream Analytics jobs](stream-analytics-scale-jobs.md)
 - [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+<!-- keep by customization: end -->
 
 
 [graphic1]: ./media/stream-analytics-power-bi-dashboard/1-stream-analytics-power-bi-dashboard.png
@@ -221,4 +231,4 @@ For further assistance, try our [Azure Stream Analytics forum](https://social.ms
 [graphic10]: ./media/stream-analytics-power-bi-dashboard/10-stream-analytics-power-bi-dashboard.png
 [graphic11]: ./media/stream-analytics-power-bi-dashboard/11-stream-analytics-power-bi-dashboard.png
 [graphic12]: ./media/stream-analytics-power-bi-dashboard/12-stream-analytics-power-bi-dashboard.png
-[graphic13]: ./media/stream-analytics-power-bi-dashboard/13-stream-analytics-power-bi-dashboard.png
+[graphic13]: ./media/stream-analytics-power-bi-dashboard/13-stream-analytics-power-bi-dashboard.png

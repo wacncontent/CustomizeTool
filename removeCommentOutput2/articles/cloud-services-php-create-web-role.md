@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/01/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 #How to create PHP web and worker roles
@@ -20,7 +20,7 @@ This guide will show you how to create PHP web or worker roles in a Windows deve
 
 ## What are PHP web and worker roles?
 
-Azure provides three compute models for running applications: Azure Websites, Azure Virtual Machines, and Azure Cloud Services. All three models support PHP. Cloud Services, which includes web and worker roles, provides *platform as a service (PaaS)*. Within a cloud service, a web role provides a dedicated Internet Information Services (IIS) web server to host front-end web applications. A worker role can run asynchronous, long-running or perpetual tasks independent of user interaction or input.
+Azure provides three compute models for running applications: Azure Web App, Azure Virtual Machines, and Azure Cloud Services. All three models support PHP. Cloud Services, which includes web and worker roles, provides *platform as a service (PaaS)*. Within a cloud service, a web role provides a dedicated Internet Information Services (IIS) web server to host front-end web applications. A worker role can run asynchronous, long-running or perpetual tasks independent of user interaction or input.
 
 For more information about these options, see [Compute hosting options provided by Azure](/documentation/articles/fundamentals-application-models).
 
@@ -192,7 +192,7 @@ To stop the emulators, execute this command:
 
 ## Publish your application
 
-To publish your application, you need to first import your publish settings by using the **Import-PublishSettingsFile** cmdlet. Then you can publish your application by using the [Publish-AzureServiceProject](https://msdn.microsoft.com/zh-cn/library/azure/dn495166.aspx) cmdlet. For information about signing in, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+To publish your application, you need to first import your publish settings by using the [Import-AzurePublishSettingsFile](https://msdn.microsoft.com/zh-cn/library/azure/dn790370.aspx) cmdlet. Then you can publish your application by using the [Publish-AzureServiceProject](https://msdn.microsoft.com/zh-cn/library/azure/dn495166.aspx) cmdlet. For information about signing in, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 ## Next steps
 

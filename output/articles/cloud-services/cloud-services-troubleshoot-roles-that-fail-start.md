@@ -3,7 +3,7 @@
    description="Here are some common reasons as to why a Cloud Service role may fail to start. Solutions to these problems are also provided."
    services="cloud-services"
    documentationCenter=""
-   authors="Thraka"
+   authors="dalechen"
    manager="msmets"
    editor=""
    tags="top-support-issue"/>
@@ -67,7 +67,7 @@ You can use remote desktop to access the role and view more complete errors remo
 
 1. Ensure that Azure SDK 1.3 or higher is installed.
 
-2. During the deployment of the solution using Visual Studio, choose to “Configure Remote Desktop connections…” For more information on configuring the Remote Desktop connection, see [Using Remote Desktop with Azure Roles](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx).
+2. During the deployment of the solution using Visual Studio, choose to "Configure Remote Desktop connections…" For more information on configuring the Remote Desktop connection, see [Using Remote Desktop with Azure Roles](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx).
 
 3. In the Windows Azure Management Portal, once the instance shows a status of **Ready**, click on one of the role instances.
 
@@ -91,7 +91,7 @@ Navigating to the web site will return more explicit error messages.
 
 * Description: An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
 
-* Exception Details: System.IO.FIleNotFoundException: Could not load file or assembly ‘Microsoft.WindowsAzure.StorageClient, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf856ad364e35’ or one of its dependencies. The system cannot find the file specified.
+* Exception Details: System.IO.FIleNotFoundException: Could not load file or assembly 'Microsoft.WindowsAzure.StorageClient, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf856ad364e35' or one of its dependencies. The system cannot find the file specified.
 
 For example:
 

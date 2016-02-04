@@ -2,10 +2,9 @@ deletion:
 
 deleted:
 
-		>
 		> Currently (8/25/2015,) you can only provision one Linux-based HDInsight cluster on an Azure Virtual Network.
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -14,5 +13,5 @@ deleted:
 		>
 		> If you have resources on a v1 network, and you wish to make HDInsight directly accessible to those resources through a virtual network, see [Connecting classic VNets to new VNets](/documentation/articles/virtual-networks-arm-asm-s2s) for information on how to connect a v2 Virtual Network to a v1 Virtual Network. Once this connection is established, you can create the HDInsight cluster in the v2 Virtual Network.
 
-reason: ()
+reason: (Linux Support)
 

@@ -43,7 +43,7 @@ This **From Gallery** option opens a wizard that helps you set up the virtual ma
 
 To do this, you'll need the following:
 
-- The Azure PowerShell module, version 0.8.2 or newer, installed on your local computer. You can check the version of Azure PowerShell that you have installed by using the **Get-Module azure | format-table version** command. For instructions and a link to the latest version, see [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell).
+- The Azure PowerShell module, version 0.8.2 or newer, installed on your local computer. You can check the version of Azure PowerShell that you have installed by using the **Get-Module azure | format-table version** command. For instructions and a link to the latest version, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 - The VM Agent installed on the target virtual machine.
 
@@ -62,7 +62,7 @@ If the VM Agent is installed, run these commands.
 
 	$Agent = Get-AzureVMAvailableExtension TrendMicro.DeepSecurity -ExtensionName TrendMicroDSA
 
-	Set-AzureVMExtension -Publisher TrendMicro.DeepSecurity –Version $Agent.Version -ExtensionName TrendMicroDSA -VM $vm | Update-AzureVM
+	Set-AzureVMExtension -Publisher TrendMicro.DeepSecurity âVersion $Agent.Version -ExtensionName TrendMicroDSA -VM $vm | Update-AzureVM
 
 ## Next steps
 
@@ -80,5 +80,5 @@ It takes a few minutes for the agent to start running when it is installed. Afte
 
 
 <!--Link references-->
-[How to log on to a virtual machine running Windows Server]: /documentation/articles/virtual-machines-log-on-windows-server
+[How to log on to a virtual machine running Windows Server]: virtual-machines-log-on-windows-server.md
 [Azure VM Extensions and features]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409

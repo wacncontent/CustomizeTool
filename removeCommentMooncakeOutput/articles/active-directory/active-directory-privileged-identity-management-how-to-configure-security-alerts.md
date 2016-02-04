@@ -22,7 +22,7 @@ Azure Privileged Identity Management offers the following alerts which can be co
 | **Suspicious activation renewal of privileged roles** | There were too many re-activations of the same role with the time allowed in the settings. |
 | **Suspicious usage of honey token Global administrator user** | The usage of a “honey pot” user was detected.|
 | **Weak authentication is configured for role activation** | There are roles without MFA in the settings. |
-| **Redundant administrators increase your attack surface** | There are temporary administrators that didn’t activate their roles within the number of days in the settings. |
+| **Redundant administrators increase your attack surface** | There are temporary administrators that <!-- deleted by customization didn't --><!-- keep by customization: begin --> didn’t <!-- keep by customization: end --> activate their roles within the number of days in the settings. |
 | **Too many global administrators increase your attack surface** | There are more global administrators than allowed in the settings. |
 
 ## Configuring Security Alerts

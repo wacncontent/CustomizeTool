@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Get started with Azure Search | Microsoft Azure" 
-	description="Get started with Azure Search" 
+	pageTitle="Get started with Azure Search | Windows Azure | Hosted cloud search service" 
+	description="Get started with Azure Search, a cloud hosted search service on Windows Azure." 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
@@ -8,25 +8,21 @@
 	editor=""
     tags="azure-portal"/>
 
-<tags 
-	ms.service="search" 
-	ms.devlang="rest-api" 
-	ms.workload="search" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.date="07/08/2015" 
-	ms.author="heidist"/>
+<tags
+	ms.service="search"
+	ms.date="12/18/2015"
+	wacn.date=""/>
 
 # Get started with Azure Search
 
-Microsoft Azure Search is a new service that allows you to embed search functionality into custom applications. It provides the search engine and storage for your data, which you access and manage using a .NET library or a REST API.
+Windows Azure Search is a hosted cloud search service that allows you to embed search functionality into custom applications. It provides the search engine and storage for your data, which you access and manage using a .NET library or a REST API.
 
 This article gets you started with the Azure Search REST API. 
 
-An alternative approach for .NET developers is to use the Azure Search.NET SDK. See [Get started with Azure Search in .NET](search-get-started-dotnet.md) or [How to use the Azure Search .NET SDK](search-howto-dotnet-sdk.md) for details.
+An alternative approach for .NET developers is to use the Azure Search.NET SDK. See [Get started with Azure Search in .NET](/documentation/articles/search-get-started-dotnet) or [How to use the Azure Search .NET SDK](/documentation/articles/search-howto-dotnet-sdk) for details.
 
 
-> [AZURE.NOTE] Completing this tutorial requires an [Azure subscription](../includes/free-trial-note.md). If you aren't ready to sign up for a trial subscription, you can skip this tutorial and opt for [Try Azure App Service](https://tryappservice.azure.com/) instead. This alternative option gives you Azure Search with an ASP.NET Web app for free - one hour per session - no subscription required.
+> [AZURE.NOTE] Completing this tutorial requires an [Azure subscription](../includes/free-trial-note.md). If you aren't ready to sign up for a trial subscription, you can skip this tutorial and opt for [Try Azure Websites](https://tryappservice.azure.com/) instead. This alternative option gives you Azure Search with an ASP.NET web site for free - one hour per session - no subscription required.
  
 <a id="sub-1"></a>
 ## Start with the free service
@@ -35,13 +31,13 @@ As an administrator, you can add Search service to an existing subscription at n
 
 Subscribers automatically get free access to a shared, multitenant Search service that you can use for learning purposes, proof-of-concept testing, or small development search projects. Sign up for the free version using these steps.
 
-1. Sign in to [Azure portal](https://portal.azure.com) using your existing subscription. Notice that this URL takes you to the Preview portal. Using the Preview portal is a requirement. 
+1. Sign in to [Azure Management Portal](https://manage.windowsazure.cn) using your existing subscription. Notice that this URL takes you to the Portal. Using the Portal is a requirement. 
 
 2. Click **New** at the top of the page.
  
   	![][6]
 
-3. Click **Data + Storage** | **Search**.
+3. Click **DATA SERVICE** | **Search**.
 
 	- Type a lower-case service name to use in the service URL, avoiding spaces, and staying within the 15 character string limit.
 
@@ -51,7 +47,7 @@ Subscribers automatically get free access to a shared, multitenant Search servic
 
 	- Click the arrow in **Subscription** if you have multiple subscriptions and you want to use a different subscription for this search service.
 
-	- Click the arrow in **Location** to choose a data center region. In this preview, you can choose from West US, East US, North Europe, and Southeast Asia. Later, when other regions are online, choose one region for the service you are creating. Distributing resources across multiple data centers will not be a supported configuration for public preview.
+	- Click the arrow in **Location** to choose a data center region. In this preview, you can choose from China North, China East, China North, and China North. Later, when other regions are online, choose one region for the service you are creating. Distributing resources across multiple data centers will not be a supported configuration for public preview.
 
 4. Click **CREATE** to provision the service. Notice that **CREATE** is enabled only after you fill in all required values. 
 
@@ -78,11 +74,11 @@ Setting up dedicated resources can take a while (15 minutes or longer).
 
 **Step 1 - Create a new service with Pricing Tier set to Standard**
 
-1. Sign in to [Azure portal](https://portal.azure.com) using your existing subscription. 
+1. Sign in to [Azure Management Portal](https://manage.windowsazure.cn) using your existing subscription. 
 
 2. Click **New** at the bottom of the page.
 
-4. From the Gallery, click **Data + Storage** | **Search**.
+4. From the Gallery, click **DATA SERVICE** | **Search**.
 
 7. Fill in the service configuration settings and then click **CREATE**.
 
@@ -98,7 +94,7 @@ Standard search starts with one replica and partition each, but can be easily re
 
 Additional replicas and partitions are billed in search units. The total search units required to support any particular resource configuration is shown on the page, as you add resources. 
 
-You can check [Pricing Details](http://go.microsoft.com/fwlink/p/?LinkID=509792) to get the per-unit billing information. See [Limits and constraints](search-limits-quotas-capacity.md) for help in deciding how to configure partition and replica combinations.
+You can check [Pricing Details](http://go.microsoft.com/fwlink/p/?LinkID=509792) to get the per-unit billing information. See [Limits and constraints](/documentation/articles/search-limits-quotas-capacity) for help in deciding how to configure partition and replica combinations.
 
  ![][15]
 
@@ -124,12 +120,12 @@ The following procedure works for both shared and standard search. In the steps 
 
     The full URL should look similar to the following example:
 
-         https://my-app.search.windows.net/indexes/hotels?api-version=2015-02-28
+         https://my-app.search.chinacloudapi.cn/indexes/hotels?api-version=2015-02-28
 
 4.	Specify the request header, replacing the host and api-key with values that are valid for your service.
 
         User-Agent: Fiddler
-        host: my-app.search.windows.net
+        host: my-app.search.chinacloudapi.cn
         content-type: application/json
         api-key: 1111222233334444
 
@@ -168,12 +164,12 @@ On the Composer tab, your request to post documents will look like the following
 
 2.	Enter a URL that starts with HTTPS, followed by your service URL, followed by "/indexes/<'indexname'>/docs/index?api-version=2015-02-28". The full URL should look similar to the following example:
 
-        https://my-app.search.windows.net/indexes/hotels/docs/index?api-version=2015-02-28
+        https://my-app.search.chinacloudapi.cn/indexes/hotels/docs/index?api-version=2015-02-28
 
 3.	Request Header should be the same as before. Remember that you replaced the host and api-key with values that are valid for your service.
 
         User-Agent: Fiddler
-        host: my-app.search.windows.net
+        host: my-app.search.chinacloudapi.cn
         content-type: application/json
         api-key: 1111222233334444
 
@@ -254,14 +250,14 @@ Now that an index and documents are loaded, you can issue queries against them. 
 
 2.	Enter a URL that starts with HTTPS, followed by your service URL, followed by "/indexes/<'indexname'>/docs?", followed by query parameters. By way of example, use the following URL, replacing the sample host name with one that is valid for your service.
 
-        https://my-app.search.windows.net/indexes/hotels/docs?search=motel&facet=category&facet=rating,values:1|2|3|4|5&api-version=2015-02-28
+        https://my-app.search.chinacloudapi.cn/indexes/hotels/docs?search=motel&facet=category&facet=rating,values:1|2|3|4|5&api-version=2015-02-28
 
-    This query searches on the term “motel” and retrieves facet categories for ratings.
+    This query searches on the term âmotelâ and retrieves facet categories for ratings.
 
 3.	Request Header should be the same as before. Remember that you replaced the host and api-key with values that are valid for your service.
 
         User-Agent: Fiddler
-        host: my-app.search.windows.net
+        host: my-app.search.chinacloudapi.cn
         content-type: application/json
         api-key: 1111222233334444
 
@@ -269,7 +265,7 @@ The response code should be 200, and the response output should look similar to 
  
    ![][19]
 
-The following example query is from the [Search Index operation (Azure Search API)](http://msdn.microsoft.com/library/dn798927.aspx) on MSDN. Many of the example queries in this topic include spaces, which are not allowed in Fiddler. Replace each space with a + character before pasting in the query string before attempting the query in Fiddler: 
+The following example query is from the [Search Index operation (Azure Search API)](http://msdn.microsoft.com/zh-cn/library/dn798927.aspx) on MSDN. Many of the example queries in this topic include spaces, which are not allowed in Fiddler. Replace each space with a + character before pasting in the query string before attempting the query in Fiddler: 
 
 **Before spaces are replaced:**
 
@@ -288,12 +284,12 @@ You can also query the system to get document counts and storage consumption. On
 
 2.	Enter a URL that includes your service URL, followed by "/indexes/hotels/stats?api-version=2015-02-28":
 
-        https://my-app.search.windows.net/indexes/hotels/stats?api-version=2015-02-28 
+        https://my-app.search.chinacloudapi.cn/indexes/hotels/stats?api-version=2015-02-28 
 
 3.	Specify the request header, replacing the host and api-key with values that are valid for your service.
 
         User-Agent: Fiddler
-        host: my-app.search.windows.net
+        host: my-app.search.chinacloudapi.cn
         content-type: application/json
         api-key: 1111222233334444
 
@@ -310,7 +306,7 @@ You can also query the system to get document counts and storage consumption. On
 
 If you need a refresher on where to find the configuration pages, follow these steps to locate the service dashboard.
 
-1.	Sign in to [Azure portal](https://portal.azure.com) using your existing subscription. 
+1.	Sign in to [Azure Management Portal](https://manage.windowsazure.cn) using your existing subscription. 
 2.	Click **Home** and then click the tile for your Search service.
 
  	![][22]
@@ -328,15 +324,15 @@ If you need a refresher on where to find the configuration pages, follow these s
 
 Ready for the next step? The following links take you to additional material that shows you how to build and manage search applications that use Azure Search.
 
-- [Create an Azure Search GeoSearch Sample](search-create-geospatial.md)
+- [Create an Azure Search GeoSearch Sample](/documentation/articles/search-create-geospatial)
 
-- [Manage your search solution in Microsoft Azure](search-manage.md) 
+- [Manage your search solution in Windows Azure](/documentation/articles/search-manage) 
 
-- [What is Azure Search?](search-what-is-azure-search.md)
+- [What is Azure Search?](/documentation/articles/search-what-is-azure-search)
 
-- [Azure Search Service REST API](http://msdn.microsoft.com/library/dn798935.aspx)
+- [Azure Search Service REST API](http://msdn.microsoft.com/zh-cn/library/dn798935.aspx)
 
-- [Azure Search .NET SDK](https://msdn.microsoft.com/library/azure/dn951165.aspx)
+- [Azure Search .NET SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn951165.aspx)
 
 - [Channel 9 video: Introduction to Azure Search](http://channel9.msdn.com/Shows/Data-Exposed/Introduction-To-Azure-Search)
 
@@ -373,7 +369,7 @@ Ready for the next step? The following links take you to additional material tha
 
 
 <!--Link references-->
-[Manage your search solution in Microsoft Azure]: search-manage.md
+[Manage your search solution in Windows Azure]: search-manage.md
 [Azure Search development workflow]: search-workflow.md
 [Create your first azure search solution]: search-create-first-solution.md
 [Create a geospatial search app using Azure Search]: search-create-geospatial.md

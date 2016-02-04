@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 #How to: Deliver an Asset by Download
@@ -68,6 +68,15 @@ This example shows how to download media assets from Media Services to your loca
 	    Console.WriteLine(string.Format("{0} % download progress. ", e.Progress));
 	}
 
+
+
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
    
 ##See Also 

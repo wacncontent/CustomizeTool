@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Managing Azure AD Connect | Windows Azure"
+	pageTitle="Azure AD Connect: Next steps and how to manage Azure AD Connect | Windows Azure"
 	description="Learn how to extend the default configuration and operational tasks for Azure AD Connect."
 	services="active-directory"
 	documentationCenter=""
@@ -9,10 +9,10 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/01/2015"
+	ms.date="01/11/2016"
 	wacn.date=""/>
 
-# Managing Azure AD Connect
+# Next steps and how to manage Azure AD Connect
 The following are advanced operational topics that allow you to customize Azure Active Directory Connect to meet your organization's needs and requirements.  
 
 ## Assigning licenses to Azure AD Premium and Enterprise Mobility users

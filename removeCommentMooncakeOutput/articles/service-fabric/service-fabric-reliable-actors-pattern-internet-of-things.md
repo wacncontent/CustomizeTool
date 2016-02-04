@@ -1,7 +1,7 @@
 
 <properties
-   pageTitle="Reliable Actors for Internet of Things"
-   description="Service Fabric Reliable Actors is the key building block (as a middle-tier) in a system that combines a messaging system front end that supports multiple transports such as HTTPS, MQTT or AMQP then communicates with actors that represent individual devices."
+   pageTitle="Reliable Actors for Internet of Things | Windows Azure"
+   description="Service Fabric Reliable Actors is the key building block in a system that combines a messaging system front end that supports multiple transports such as HTTPS, MQTT or AMQP."
    services="service-fabric"
    documentationCenter=".net"
    authors="vturecek"
@@ -9,13 +9,9 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/05/2015"
-   ms.author="vturecek"/>
+	ms.service="service-fabric"
+	ms.date="11/14/2015"
+	wacn.date=""/>
 
 # Reliable Actors design pattern: Internet of Things
 Since IoT became the new trend alongside the technological advancement in both devices and cloud services, developers started looking at key building blocks to develop their systems on.
@@ -33,14 +29,14 @@ There are essentially two scenarios usually composed together:
 
 ## Telemetry data and device grouping
 
-First let’s have a look at the case where devices, think tens of thousands, are grouped together and are all sending telemetry data to their associated group. In the following example, the customer has deployed devices to each region.
+First let's have a look at the case where devices, think tens of thousands, are grouped together and are all sending telemetry data to their associated group. In the following example, the customer has deployed devices to each region.
 When the device is switched on, the first thing it does is send an ActivateMe message with relevant information such as location, version, and so on. In turn, the actor associated with the device (through the Device Id) sets up the initial state for the device, such as saving state locally (could have been persisted also) and registering a group actor. In this case, we assign a random group for our simulation.
 
 As part of the initialization process, we can configure the device by retrieving configuration data from a group actor or some other agent. This way the devices can initially be pretty dumb and get their "smarts" upon initialization. Once this is done, the device and the actor are ready to send and process telemetry data.
 
 All the devices periodically send their telemetry information to the corresponding actor. If the actor is already activated then the same actor will be used. Otherwise it will be activated. At this point it can recover state from a stable store if required. When the actor receives telemetry information it stores it to a local variable. We are doing this to simplify the sample. In a real implementation we would probably save it to an external store to allow operations to monitor and diagnose device health and performance. Finally, we push telemetry data to the group actor that the device actor logically belongs to.
 
-## IoT code sample – Telemetry
+## IoT code sample - Telemetry
 
 ```csharp
 public interface IThing : IActor
@@ -60,10 +56,10 @@ class ThingState
 	long _deviceGroupId;
 }
 
-public class Thing : Actor<ThingState>, IThing
+public class Thing : StatefulActor<ThingState>, IThing
 {
 
-    public override Task OnActivateAsync()
+    protected override Task OnActivateAsync()
     {
         State._telemetry = new List<ThingTelemetry>();
         State._deviceGroupId = -1; // not activated
@@ -78,7 +74,7 @@ public class Thing : Actor<ThingState>, IThing
             var deviceGroup = ActorProxy.Create<IThingGroup>(State._deviceGroupId);
             return deviceGroup.SendTelemetryAsync(telemetry); // sending telemetry data for aggregation
         }
-        return TaskDone.Done;
+        return Task.FromResult(true);
     }
 
     public Task ActivateMe(string region, int version)
@@ -100,9 +96,9 @@ public class Thing : Actor<ThingState>, IThing
 ```
 
 At the group level, as per our sample, our goal is to monitor the devices in the group and aggregate telemetry data to produce alerts for engineers. In this case, our customer would like to send engineers to specific regions where there are a certain number of fault devices. Of course our customer would like to reduce costs by minimizing engineering time spent on the road. For this reason, each group actor maintains an aggregated state of faulty devices per region. When this number hits a threshold, our customer dispatches an engineer to the region to replace/repair these devices.
-Let’s have a look how it is done:
+Let's have a look how it is done:
 
-## IoT code sample – grouping and aggregation
+## IoT code sample - grouping and aggregation
 
 ```csharp
 public interface IThingGroup : IActor
@@ -123,10 +119,10 @@ class ThingGroupState
     public List<ThingInfo> _faultyDevices;
 }
 
-public class ThingGroup : Actor<ThingGroupState>, IThingGroup
+public class ThingGroup : StatefulActor<ThingGroupState>, IThingGroup
 {
 
-    public override Task OnActivateAsync()
+    protected override Task OnActivateAsync()
     {
         State._devices = new List<ThingInfo>();
         State._faultsPerRegion = new Dictionary<string, int>();
@@ -138,13 +134,13 @@ public class ThingGroup : Actor<ThingGroupState>, IThingGroup
     public Task RegisterDevice(ThingInfo deviceInfo)
     {
         State._devices.Add(deviceInfo);
-        return TaskDone.Done;
+        return Task.FromResult(true);
     }
 
     public Task UnregisterDevice(ThingInfo deviceInfo)
     {
         State._devices.Remove(deviceInfo);
-        return TaskDone.Done;
+        return Task.FromResult(true);
     }
 
     public Task SendTelemetryAsync(ThingTelemetry telemetry)
@@ -168,7 +164,7 @@ public class ThingGroup : Actor<ThingGroupState>, IThingGroup
             }
         }
 
-        return TaskDone.Done;
+        return Task.FromResult(true);
     }
 }
 ```
@@ -205,19 +201,19 @@ Azure Service Fabric Actors also takes care of the lifetime of the Actors. Think
 We conclude that more and more customers will look at Azure Service Fabric Actors as a key building block for their IoT implementations.
 
 ## Next Steps
-[Pattern: Smart Cache](service-fabric-reliable-actors-pattern-smart-cache.md)
+[Pattern: Smart Cache](/documentation/articles/service-fabric-reliable-actors-pattern-smart-cache)
 
-[Pattern: Distributed Networks and Graphs](service-fabric-reliable-actors-pattern-distributed-networks-and-graphs.md)
+[Pattern: Distributed Networks and Graphs](/documentation/articles/service-fabric-reliable-actors-pattern-distributed-networks-and-graphs)
 
-[Pattern: Resource Governance](service-fabric-reliable-actors-pattern-resource-governance.md)
+[Pattern: Resource Governance](/documentation/articles/service-fabric-reliable-actors-pattern-resource-governance)
 
-[Pattern: Stateful Service Composition](service-fabric-reliable-actors-pattern-stateful-service-composition.md)
+[Pattern: Stateful Service Composition](/documentation/articles/service-fabric-reliable-actors-pattern-stateful-service-composition)
 
-[Pattern: Distributed Computation](service-fabric-reliable-actors-pattern-distributed-computation.md)
+[Pattern: Distributed Computation](/documentation/articles/service-fabric-reliable-actors-pattern-distributed-computation)
 
-[Some Anti-patterns](service-fabric-reliable-actors-anti-patterns.md)
+[Some Anti-patterns](/documentation/articles/service-fabric-reliable-actors-anti-patterns)
 
-[Introduction to Service Fabric Actors](service-fabric-reliable-actors-introduction.md)
+[Introduction to Service Fabric Actors](/documentation/articles/service-fabric-reliable-actors-introduction)
 
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-pattern-internet-of-things/internet-of-things-1.png

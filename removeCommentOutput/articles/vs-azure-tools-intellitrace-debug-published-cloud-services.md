@@ -3,12 +3,12 @@
    description="Debugging a published cloud service with IntelliTrace and Visual Studio"
    services="visual-studio-online"
    documentationCenter="n/a"
-   authors="patshea123"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
 	ms.service="visual-studio-online"
-	ms.date="08/14/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 

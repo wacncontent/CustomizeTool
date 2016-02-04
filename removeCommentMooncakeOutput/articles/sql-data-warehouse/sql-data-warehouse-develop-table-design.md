@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Table design in SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Table design in SQL Data Warehouse | Windows Azure"
    description="Tips for designing tables in Azure SQL Data Warehouse for developing solutions."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+	ms.service="sql-data-warehouse"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # Table design in SQL Data Warehouse #
 SQL Data Warehouse is a massively parallel processing (MPP) distributed database system. It stores data across many different locations known as **distributions**. Each **distribution** is like a bucket; storing a unique subset of the data in the data warehouse. By spreading the data and processing capability across multiple nodes, SQL Data Warehouse can offer huge scalability - far beyond any single system.

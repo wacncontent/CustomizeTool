@@ -8,7 +8,7 @@
    editor="" />
 <tags
 	ms.service="service-bus"
-	ms.date="09/04/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # Shared Access Signature Authentication with Service Bus
@@ -90,7 +90,7 @@ For a full working sample of a Service Bus application that illustrates the conf
 
 ## Access Shared Access Authorization rules on a namespace
 
-Operations on the Service Bus namespace root require certificate authentication. You must upload a management certificate for your Azure subscription. To upload a management certificate, click **Settings** in the left-hand pane of the Azure Management Portal. For more information about Azure management certificates, see [Create a Management Certificate for Azure](https://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx).
+Operations on the Service Bus namespace root require certificate authentication. You must upload a management certificate for your Azure subscription. To upload a management certificate, click **Settings** in the left-hand pane of the [Azure Management Portal][]. For more information about Azure management certificates, see [Create a Management Certificate for Azure](https://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx).
 
 The endpoint for accessing shared access authorization rules on a Service Bus namespace is as follows:
 
@@ -251,3 +251,5 @@ The following table shows the access rights required for various operations on S
 For a high-level overview of SAS in Service Bus, see [Shared Access Signatures](/documentation/articles/service-bus-sas-overview).
 
 See [Service Bus Authentication and Authorization](/documentation/articles/service-bus-authentication-and-authorization) for more background on Service Bus authentication.
+
+[Azure Management Portal]: http://manage.windowsazure.cn

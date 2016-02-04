@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/29/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # Use Apache Phoenix and SQuirreL with HBase clusters in HDinsight  
@@ -79,13 +79,15 @@ For more information, see [SQLLine manual](http://sqlline.sourceforge.net/#manua
 
 [SQuirreL SQL Client](http://squirrel-sql.sourceforge.net/) is a graphical Java program that will allow you to view the structure of a JDBC compliant database, browse the data in tables, issue SQL commands etc. It can be used to connect to Apache Phoenix on HDInsight.
 
+<!-- deleted by customization
 This section shows you how to install and configure SQuirreL on your workstation to connect to an HBase cluster in HDInsight via VPN. 
+-->
 
 ###Prerequisites
 
 Before following the procedures, you must have the following:
 
-- An HBase cluster deployed to an Azure virtual network with a DNS virtual machine.  For instructions, see [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet]. 
+- An HBase cluster deployed to an Azure virtual network with a DNS virtual machine.  For instructions, see [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet-v1]. 
 
 	>[AZURE.IMPORTANT] You must install a DNS server to the virtual network. For instructions, see [Configure DNS between two Azure virtual networks](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
 
@@ -94,6 +96,7 @@ Before following the procedures, you must have the following:
 		myhbase.b7.internal.chinacloudapp.cn
 - Download and install [Microsoft Visual Studio Express 2013 for Windows Desktop](https://www.visualstudio.com/products/visual-studio-express-vs.aspx) on your workstation. You will need makecert from the package to create your certificate.  
 - Download and install [Java Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html) on your workstation.  SQuirreL SQL client version 3.0 and higher requires JRE version 1.6 or higher.  
+<!-- deleted by customization
 
 
 ###Configure a Point-to-Site VPN connection to the Azure virtual network
@@ -114,7 +117,7 @@ Assure you have provisioned an HBase cluster in an Azure virtual network (see th
 
 1. Sign in to the [Azure Management Portal][azure-portal].
 2. On the left, click **NETWORKS**.
-3. Click the virtual network you have created (see [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet]).
+3. Click the virtual network you have created (see [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet-v1]).
 4. Click **CONFIGURE** from the top.
 5. In the **point-to-site connectivity** section, select **Configure point-to-site connectivity**. 
 6. Configure **STARTING IP** and **CIDR** to specify the IP address range from which your VPN clients will receive an IP address when connected. The range cannot overlap with any of the ranges located on your on-premises network and the Azure virtual network you will be connecting to. For example. if you selected 10.0.0.0/20 for the virtual network, you can select 10.1.0.0/24 for the client address space. See the [Point-To-Site Connectivity][vnet-point-to-site-connectivity] page for more information.
@@ -143,7 +146,7 @@ One way to create an X.509 certificate is by using the Certificate Creation Tool
 
 1. From your workstation, open a command prompt window.
 2. Navigate to the Visual Studio tools folder. 
-3. The following command in the example below will create and install a root certificate in the Personal certificate store on your workstation and also create a corresponding .cer file that you’ll later upload to the Azure Management Portal. 
+3. The following command in the example below will create and install a root certificate in the Personal certificate store on your workstation and also create a corresponding .cer file that youâll later upload to the Azure Management Portal. 
 
 		makecert -sky exchange -r -n "CN=HBaseVnetVPNRootCertificate" -pe -a sha1 -len 2048 -ss My "C:\Users\JohnDole\Desktop\HBaseVNetVPNRootCertificate.cer"
 
@@ -203,6 +206,7 @@ One way to create an X.509 certificate is by using the Certificate Creation Tool
 		headnode0.myhbase.b7.internal.chinacloudapp.cn
 		headnode1.myhbase.b7.internal.chinacloudapp.cn
 		workernode0.myhbase.b7.internal.chinacloudapp.cn
+-->
 
 ###Install and configure SQuirreL on your workstation
 
@@ -252,7 +256,7 @@ You need to copy it to your workstation under the [SQuirreL installation folder]
 	- **Name**: The name of the HBase cluster or any name you prefer.
 	- **Driver**: Phoenix.  This must match the driver name you created in the last procedure.
 	- **URL**: The URL is copied from your driver configuration. Make sure to user all lower case.
-	- **User name**: It can be any text.  Because you use VPN connectivity here, the user name is not used at all.
+	- **User name**: It can be any text. <!-- deleted by customization  Because you use VPN connectivity here, the user name is not used at all. -->
 	- **Password**: It can be any text.
 
 	![HDInsight HBase Phoenix SQuirreL driver][img-squirrel-alias]
@@ -278,7 +282,7 @@ In this article, you have learned how to use Apache Phoenix in HDInsight.  To le
 
 - [HDInsight HBase overview][hdinsight-hbase-overview]:
 HBase is an Apache, open-source, NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semistructured data.
-- [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet]:
+- [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet-v1]:
 With virtual network integration, HBase clusters can be deployed to the same virtual network as your applications so that applications can communicate with HBase directly.
 - [Configure HBase replication in HDInsight](/documentation/articles/hdinsight-hbase-geo-replication): Learn how to configure HBase replication across two Azure datacenters. 
 <!-- deleted by customization
@@ -289,15 +293,25 @@ Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sent
 [azure-portal]: https://manage.windowsazure.cn
 [vnet-point-to-site-connectivity]: https://msdn.microsoft.com/zh-cn/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
-[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
-[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp
-[hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
-[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
 <!-- deleted by customization
-[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
+[hdinsight-versions]: hdinsight-component-versioning.md
+[hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md
+-->
+<!-- keep by customization: begin -->
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
+<!-- keep by customization: end -->
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp
+<!-- deleted by customization
+[hdinsight-hbase-provision-vnet-v1]: hdinsight-hbase-provision-vnet-v1.md
+[hdinsight-hbase-overview]: hdinsight-hbase-overview.md
+[hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
 
 -->
+<!-- keep by customization: begin -->
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
+[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
+<!-- keep by customization: end -->
 [hdinsight-hbase-phoenix-sqlline]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-phoenix-sqlline.png
 [img-certificate]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vpn-certificate.png
 [img-vnet-diagram]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vnet-point-to-site.png

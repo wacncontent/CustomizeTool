@@ -7,9 +7,9 @@
    manager="carolz"
    editor="" />
 <tags
-	ms.service="expressroute"
-	ms.date="10/12/2015"
-	wacn.date=""/>
+   ms.service="expressroute"
+   ms.date="10/12/2015"
+   wacn.date=""/>
 
 # Router configuration samples to setup and manage NAT
 

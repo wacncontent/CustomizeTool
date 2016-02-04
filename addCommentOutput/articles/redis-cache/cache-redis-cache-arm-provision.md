@@ -8,30 +8,45 @@
 	editor=""/>
 
 <tags
-	ms.service="app-service"
-	ms.date="10/02/2015"
+	ms.service="cache"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Create a Redis Cache using a template
 
-In this topic, you will learn how to create an Azure Resource Manager template that deploys an Azure Redis Cache. The cache can be used with an existing storage account to keep diagnostic data. You will learn how to define which resources are deployed and 
+In this topic, you will learn how to create an Azure Resource Manager template that deploys an Azure Redis Cache. <!-- deleted by customization The cache can be used with an existing storage account to keep diagnostic data. --> You will learn how to define which resources are deployed and
 how to define parameters that are specified when the deployment is executed. You can use this template for your own deployments, or customize it to meet your requirements.
+<!-- deleted by customization
 
 Currently, diagnostic settings are shared for all caches in the same region for a subscription. Updating one cache in the region will affect all other caches in the region.
+-->
 
 For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
 
 For the complete template, see [Redis Cache template](https://github.com/Azure/azure-quickstart-templates/blob/master/101-redis-cache/azuredeploy.json).
 
->[AZURE.NOTE] ARM templates for the new [Premium tier](/documentation/articles/cache-premium-tier-intro) are coming soon. To check for the latest templates, see [Azure Quickstart Templates](https://azure.microsoft.com/documentation/templates/) and search for `Redis Cache`.
+>[AZURE.NOTE] ARM templates for the new [Premium tier](/documentation/articles/cache-premium-tier-intro) are available. 
+>
+<!-- deleted by customization
+>-    [Create a Premium Redis Cache with clustering](https://azure.microsoft.com/documentation/templates/201-redis-premium-cluster-diagnostics/)
+>-    [Create Premium Redis Cache with data persistence](https://azure.microsoft.com/documentation/templates/201-redis-premium-persistence/)
+>-    [Create Premium Redis Cache with VNet and optional clustering](https://azure.microsoft.com/documentation/templates/201-redis-premium-vnet-cluster-diagnostics/)
+-->
+>
+>To check for the latest templates, see [Azure Quickstart Templates](https://azure.microsoft.com/documentation/templates/) and search for `Redis Cache`.
 
 ## What you will deploy
 
+<!-- deleted by customization
 In this template, you will deploy an Azure Redis Cache that uses an existing storage account for diagnostic data.
 
 To run the deployment automatically, click the following button:
 
-<!-- deleted by customization [![Deploy --><!-- keep by customization: begin --> ![Deploy <!-- keep by customization: end --> to <!-- deleted by customization Azure](./media/cache-redis-cache-arm-provision/deploybutton.png)](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-redis-cache%2Fazuredeploy.json) --><!-- keep by customization: begin --> Azure](./media/cache-redis-cache-arm-provision/deploybutton.png) <!-- keep by customization: end -->
+[![Deploy to Azure](./media/cache-redis-cache-arm-provision/deploybutton.png)](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-redis-cache%2Fazuredeploy.json)
+-->
+<!-- keep by customization: begin -->
+In this template, you will deploy an Azure Redis Cache.
+<!-- keep by customization: end -->
 
 ## Parameters
 
@@ -51,6 +66,7 @@ The location of the Redics Cache. For best perfomance, use the same location as 
       "type": "string"
     }
 
+<!-- deleted by customization
 ### diagnosticsStorageAccountName
 
 The name of the existing storage account to use for diagnostics. 
@@ -59,12 +75,14 @@ The name of the existing storage account to use for diagnostics.
       "type": "string"
     }
 
+-->
 ### enableNonSslPort
 
 A boolean value that indicates whether to allow access via non-SSL ports.
 
     "enableNonSslPort": {
       "type": "bool"
+<!-- deleted by customization
     }
 
 ### diagnosticsStatus
@@ -78,6 +96,7 @@ A value that indicates whether diagnostices is enabled. Use ON or OFF.
             "ON",
             "OFF"
         ]
+-->
     }
     
 ## Resources to deploy
@@ -101,6 +120,7 @@ Creates the Azure Redis Cache.
         }
       },
         "resources": [
+<!-- deleted by customization
           {
             "apiVersion": "2014-04-01",
             "type": "diagnosticSettings",
@@ -115,6 +135,7 @@ Creates the Azure Redis Cache.
               "retention": "30"
             }
           }
+-->
         ]
     }
 
@@ -124,7 +145,7 @@ Creates the Azure Redis Cache.
 
 ### PowerShell
 
-    New-AzureResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-redis-cache/azuredeploy.json -ResourceGroupName ExampleDeployGroup -redisCacheName ExampleCache -redisCacheLocation "China North"
+    New-AzureRmResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-redis-cache/azuredeploy.json -ResourceGroupName ExampleDeployGroup -redisCacheName ExampleCache -redisCacheLocation "China North"
 
 ### Azure CLI
 

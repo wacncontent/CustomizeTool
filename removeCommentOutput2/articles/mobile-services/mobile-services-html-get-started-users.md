@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/21/2015"
+	ms.date="11/30/2015"
 	wacn.date=""/>
 
 # Add authentication to your Mobile Services app 
@@ -64,7 +64,7 @@ Next, you will update the app to allow authentication before requesting resource
 
 	This enables you to login to Mobile Services from the page.
 
-2. In the app.js file, locate the line of code at the very bottom of the file that calls to the refreshTodoItems function, and replace it with the following code: 
+2. In the page.js file, locate the line of code at the very bottom of the file that calls to the refreshTodoItems function, and replace it with the following code: 
 	
 		function refreshAuthDisplay() {
 			var isLoggedIn = client.currentUser !== null;
@@ -129,7 +129,6 @@ In the next tutorial, [Authorize users with scripts], you will take the user ID 
 
 <!-- URLs. -->
 [Get started with Mobile Services]: /documentation/articles/mobile-services-html-get-started
-[Get started with data]: /documentation/articles/mobile-services-html-get-started-data
 [Authorize users with scripts]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
 
 [Azure Management Portal]: https://manage.windowsazure.cn/

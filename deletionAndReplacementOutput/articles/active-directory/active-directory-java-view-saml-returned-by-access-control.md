@@ -8,7 +8,7 @@ replaced by:
 
 		## <a name="pre"></a>Prerequisites
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -18,7 +18,7 @@ replaced by:
 
 		<a name="add_library"></a>Add
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -28,7 +28,7 @@ replaced by:
 
 		## <a name="modify_jsp"></a>Modify the JSP file to display SAML
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -38,7 +38,7 @@ replaced by:
 
 		## <a name="run_application"></a>Run the application
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -48,5 +48,5 @@ replaced by:
 
 		## <a name="next_steps"></a>Next steps
 
-reason: ()
+reason: (inpage link)
 

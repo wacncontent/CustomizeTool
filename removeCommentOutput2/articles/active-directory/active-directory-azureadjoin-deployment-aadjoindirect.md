@@ -1,15 +1,16 @@
 <properties 
 	pageTitle="Usage scenarios and deployment considerations for Azure AD Join| Windows Azure" 
-	description="Lists and explains the differnt deployment scenarios available for Azure AD Join." 
+	description="Explains how administrators can set up Azure AD Join for their end users (employees, students, other users). It also discusses the different real-world scenarios for using Azure AD Join." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="femila" 
 	manager="stevenpo" 
-	editor=""/>
+	editor=""
+	tags="azure-classic-portal"/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/21/2015"
+	ms.date="11/19/2015"
 	wacn.date=""/>
 
 # Usage scenarios and deployment considerations for Azure AD Join 
@@ -49,7 +50,7 @@ Enterprises can provide cloud-only accounts to partner companies and organizatio
 *	Windows 10 (Professional and Enterprise SKUs)
 
 ### Administrator Tasks
-* [Set up device registration and MFA](/documentation/articles/active-directory-azureadjoin-setup)
+* [Set up device registration](/documentation/articles/active-directory-azureadjoin-setup)
 
 ### User Tasks
 * [Setting up a new Windows 10 device with Azure AD during Setup](/documentation/articles/active-directory-azureadjoin-user-frx)
@@ -73,12 +74,12 @@ You can set up your users and employees to user their personal Windows devices t
 
 ### Administrator Tasks
 
-* [Set up device registration and MFA](/documentation/articles/active-directory-azureadjoin-setup)
+* [Set up device registration](/documentation/articles/active-directory-azureadjoin-setup)
 
 ### User Tasks
 * [Join a personal Windows 10 device to your organization](/documentation/articles/active-directory-azureadjoin-personal-device)
 
 
 ## Additional Information
-* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](/documentation/articles/active-directory-azureadjoin-overview)
+* [Extending cloud capabilities to Windows 10 devices through Azure Active Directory Join](/documentation/articles/active-directory-azureadjoin-user-upgrade)
 * [Set up Azure AD Join](/documentation/articles/active-directory-azureadjoin-setup)

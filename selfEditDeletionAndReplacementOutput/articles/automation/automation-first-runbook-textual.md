@@ -6,25 +6,25 @@ deleted:
 		- [Graphical](/documentation/articles/automation-first-runbook-graphical)
 		- [PowerShell Workflow](/documentation/articles/automation-first-runbook-textual)
 
-reason: ()
+reason: (Graphical Runbook)
 
 deleted:
 
-		[activate your MSDN subscriber benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) or <a href="/pricing/1rmb-trial/" target="_blank">
+		[activate your MSDN subscriber benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) or
 
-reason: ()
+reason: (MSDN subscriber)
 
 deleted:
 
 		![Save runbook](./media/automation-first-runbook-textual/runbook-edit-toolbar-save.png)
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		![Start Runbook](./media/automation-first-runbook-textual/start-runbook-input-params.png)
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -32,7 +32,7 @@ deleted:
 		
 		- [My first graphical runbook](/documentation/articles/automation-first-runbook-graphical)
 
-reason: ()
+reason: (Graphical Runbook)
 
 replacement:
 
@@ -55,7 +55,7 @@ replaced by:
 		3. After the runbook being created, you can find it under the **RUNBOOKS** tile of you automation account.
 		4. Click the **AUTHOR** tile of you runbook to enable the textual editor.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -73,7 +73,7 @@ replaced by:
 		2. Click **Test** to open the Test pane. And then, click **Yes** to confirm.
 		3. After a few seconds you will see output pane printing the message *"Hello World."*
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -107,7 +107,7 @@ replaced by:
 		9. Go back to your runbook. Under the **Jobs** tile, you can seen a list of job created will filter above.
 		10. Click a job, you can see the **summary** and **history** of the job.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -144,7 +144,7 @@ replaced by:
 		10. Once it completes, you should receive output similar to the following that returns the information for the user in the credential.  This confirms that the credential is valid.<br>
 		![Authenticate](./media/automation-first-runbook-textual/authentication-test.png)
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -166,7 +166,7 @@ replaced by:
 		
 		9. Save the runbook and then click **Test** so that we can test it.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -186,5 +186,5 @@ replaced by:
 		    		Start-AzureVM -Name $VMName -ServiceName $VMServiceName
 				}
 
-reason: ()
+reason: (the new Ibiza portal)
 

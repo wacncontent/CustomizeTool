@@ -16,7 +16,7 @@
 
 The **ShardMapManager** class provides ADO.NET applications the ability to easily direct database queries and commands to the appropriate physical database in a sharded environment. This is called **data-dependent routing** and it is a fundamental pattern when working with sharded databases. Each specific query or transaction in an application using data-dependent routing is restricted to accessing a single database per request.  
 
-Using data-dependent routing, there is no need for the application to track the various connection strings or DB locations associated with different slices of data in the sharded environment. Rather, the [Shard Map Manager](/documentation/articles/sql-database-elastic-scale-shard-map-management) takes responsibility for handing out open connections to the correct database when needed, based on the data in the shard map and the value of the sharding key that is the target of the application’s request. (This key is typically the *customer_id*, *tenant_id*, *date_key*, or some other specific identifier that is a fundamental parameter of the database request). 
+Using data-dependent routing, there is no need for the application to track the various connection strings or DB locations associated with different slices of data in the sharded environment. Rather, the [Shard Map Manager](/documentation/articles/sql-database-elastic-scale-shard-map-management) takes responsibility for handing out open connections to the correct database when needed, based on the data in the shard map and the value of the sharding key that is the target of the applicationâs request. (This key is typically the *customer_id*, *tenant_id*, *date_key*, or some other specific identifier that is a fundamental parameter of the database request). 
 
 ## Download the client library
 
@@ -80,7 +80,7 @@ A best practice in developing data access applications in the cloud is to ensure
  
 Transient fault handling can coexist naturally with the Data Dependent Routing pattern. The key requirement is to retry the entire data access request including the **using** block that obtained the data-dependent routing connection. The example above could be rewritten as follows (note highlighted change). 
 
-### Example – data dependent routing with transient fault handling 
+### Example â data dependent routing with transient fault handling 
 
 <pre><code>int customerId = 12345; 
 int newPersonId = 4321; 

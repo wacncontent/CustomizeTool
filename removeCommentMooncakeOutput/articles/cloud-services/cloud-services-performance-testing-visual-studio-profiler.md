@@ -1,24 +1,24 @@
 <properties 
-	pageTitle="Profiling a Cloud Service Locally in the Compute Emulator" 
+	pageTitle="Profiling a Cloud Service Locally in the Compute Emulator | Windows Azure" 
 	services="cloud-services"
 	description="Investigate performance issues in cloud services with the Visual Studio profiler" 
 	documentationCenter=""
-	authors="patshea123" 
+	authors="TomArcher" 
 	manager="douge" 
-	editor="tglee"
+	editor=""
 	tags="" 
 	/>
 
-<tags
-	ms.service="cloud-services"
-	ms.date="09/14/2015"
+<tags 
+	ms.service="cloud-services" 
+	ms.date="12/21/2015" 
 	wacn.date=""/>
 
 # Testing the Performance of a Cloud Service Locally in the Azure Compute Emulator Using the Visual Studio Profiler
 
 A variety of tools and techniques are available for testing the performance of cloud services.
 When you publish a cloud service to Azure, you can have Visual Studio collect profiling
-data and then analyze it locally, as described in [Profiling an Azure Application][1].
+data and then analyze it locally.
 You can also use diagnostics to track a variety of performance
 counters, as described in [Using performance counters in Azure][2].
 You might also want to profile your application locally in the compute emulator before deploying it to the cloud.
@@ -175,7 +175,6 @@ Instrumenting Azure binaries in the emulator is not supported in the Visual Stud
 
 
 
-[1]: http://msdn.microsoft.com/zh-cn/library/azure/hh369930.aspx
 [2]: http://msdn.microsoft.com/zh-cn/library/azure/hh411542.aspx
 [3]: http://blogs.msdn.com/b/habibh/archive/2009/06/30/walkthrough-using-the-tier-interaction-profiler-in-visual-studio-team-system-2010.aspx
 [4]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally09.png

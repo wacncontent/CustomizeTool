@@ -8,7 +8,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="10/07/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 # How to use Blob storage from iOS
@@ -68,11 +68,11 @@ Shared Key authentication means that your application will use your account name
 
 > [AZURE.WARNING (Only use Shared Key authentication for testing purposes!) ] Your account name and account key, which give full read/write access to the associated Storage account, will be distributed to every person that downloads your app. This is **not** good practice as you risk having your key compromised by untrusted clients.
 
-When using Shared Key authentication, you will create a "connection string." The connection string is comprised of:  
+When using Shared Key authentication, you will create a "connection string." The connection string is comprised of:
 
 - The **DefaultEndpointsProtocol** - you can choose http or https. However, using https is highly recommended.
 - The **Account Name** - the name of your Storage account
-- The **Account Key** - If using the [Management Portal](manage.windowsazure.cn), you can find this by clicking *Manage Access Keys*. 
+- The **Account Key** - If using the [Management Portal](manage.windowsazure.cn), you can find this by clicking *Manage Access Keys*. <!-- If you're using the [Preview Portal](portal.azure.com), you can click the Key icon to find this information.-->
 
 Here is how it will look in your application:
 
@@ -109,10 +109,10 @@ The following example shows how to use Azure CLI to generate a SAS token that gr
 		// Get a reference to a container in your Storage account
     	AZSCloudBlobContainer *blobContainer = [[AZSCloudBlobContainer alloc] initWithUrl:[NSURL URLWithString:@" your SAS URL"]];
 
-As you can see, when using a SAS token, you’re not exposing your account name and account key in your iOS application. You can learn more about SAS by checking out the [Shared Access Signature tutorial](/documentation/articles/storage-dotnet-shared-access-signature-part-1).
+As you can see, when using a SAS token, you're not exposing your account name and account key in your iOS application. You can learn more about SAS by checking out the [Shared Access Signature tutorial](/documentation/articles/storage-dotnet-shared-access-signature-part-1).
 
 ##Asynchronous Operations
-> [AZURE.NOTE] All methods that perform a request against the service are asynchronous operations. In the code samples, you’ll find that these methods have a completion handler. Code inside the completion handler will run **after** the request is completed. Code after the completion handler will run **while** the request is being made.
+> [AZURE.NOTE] All methods that perform a request against the service are asynchronous operations. In the code samples, you'll find that these methods have a completion handler. Code inside the completion handler will run **after** the request is completed. Code after the completion handler will run **while** the request is being made.
 
 ## Create a container
 Every blob in Azure Storage must reside in a container. The following example shows how to create a container, called *newcontainer*, in your Storage account if it doesn't already exist. When choosing a name for your container, be mindful of the naming rules mentioned above.
@@ -350,7 +350,7 @@ Now that you've learned the basics of Blob storage, follow these links to learn 
 - [Azure Storage REST API]
 - [Azure Storage Team Blog]
 
-If you have questions regarding this library feel free to post to our [MSDN Azure forum](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchsen-US/home?forum=windowsazuredata) or [Stack Overflow](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files).
+If you have questions regarding this library feel free to post to our [MSDN Azure forum](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazuredata) or [Stack Overflow](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files).
 If you have feature suggestions for Azure Storage please post to [Azure Storage Feedback](/product-feedback).
 
 [Azure Storage iOS Library]: https://github.com/azure/azure-storage-ios

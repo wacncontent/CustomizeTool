@@ -6,7 +6,7 @@
  authors="dlepow"
  manager="timlt"
  editor=""
- tags="azure-resource-manager,azure-service-management"/>
+ tags="azure-resource-manager,azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/28/2015"
@@ -16,7 +16,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
-This article shows you how to configure an on-premises client computer running Windows to
+This article shows you how to configure an on-premises client computer running Windows to 
 run HPC Pack job submission tools that communicate with an HPC Pack
 cluster in Azure over HTTPS. This provides a straightforward, flexible
 way for a variety of cluster users to submit jobs to a cloud-based HPC
@@ -28,14 +28,13 @@ run job submission tools.
 ## Prerequisites
 
 * **HPC Pack head node deployed in an Azure VM** - You can use
-automated tools such as an [Azure quickstart template](https://azure.microsoft.com/documentation/templates/) or an [Azure PowerShell script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)
+automated tools such as an an [Azure PowerShell script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)
 to deploy the head node and cluster, or you can deploy the cluster
 manually in Azure as you would for an on-premises cluster. You will need the DNS
 name of the head node and the credentials of a cluster administrator to
 complete the steps in this article.
 
-    If you deployed the head node manually, ensure that an HTTPS endpoint is configured in the VM. If it is not, set one up. See [How to Set Up Endpoints to a Virtual
-Machine](/documentation/articles/virtual-machines-set-up-endpoints).
+	If you deployed the head node manually, ensure that an HTTPS endpoint is configured in the VM. If it is not, set one up. See [How to Set Up Endpoints to a Virtual Machine](virtual-machines-set-up-endpoints.md).
 
 * **HPC Pack installation media** - The free installation package for the
 latest version of HPC Pack (HPC Pack 2012 R2) is available from the
@@ -60,7 +59,7 @@ For detailed procedures, see [Install the Microsoft HPC Pack Web
 Components](http://technet.microsoft.com/zh-cn/library/hh314627.aspx).
 
 >[AZURE.TIP] If you use an automated method such as the [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script) to create the cluster,
-you can optionally install and configure the web web components as part
+you can optionally install and configure the web web components as part 
 of the deployment.
 
 **To install the web components**
@@ -83,7 +82,7 @@ of the deployment.
 3. To configure the REST interface and start the HPC Web Service, type the following command:
 
     ```
-    .\Set-HPCWebComponents.ps1 –Service REST –enable
+    .\Set-HPCWebComponents.ps1 -Service REST -enable
     ```
 
 4. When prompted to select a certificate, choose the certificate that corresponds to the public DNS name of the head node (CN=&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn).
@@ -93,13 +92,13 @@ of the deployment.
 5. To configure the web portal for job submission, type the following command:
 
     ```
-    .\Set-HPCWebComponents.ps1 –Service Portal -enable
+    .\Set-HPCWebComponents.ps1 -Service Portal -enable
     ```
 6. After the script completes, stop and restart the HPC Job Scheduler Service by typing the following:
 
     ```
     net stop hpcscheduler
-net start hpcscheduler
+    net start hpcscheduler
     ```
 
 ## Step 2: Install the HPC Pack client utilities on an on-premises computer
@@ -109,14 +108,14 @@ HPC Pack setup files from the [Microsoft Download
 Center](http://go.microsoft.com/fwlink/?LinkId=328024) to the client
 computer, and choose the setup option for the HPC Pack client utilities.
 
-To use the HPC Pack client tools to submit jobs to the head node VM, you'll also need to export a certificate from the head node and install it on the
+To use the HPC Pack client tools to submit jobs to the head node VM, you'll also need to export a certificate from the head node and install it on the 
 client computer. You'll need the certificate to be in .CER format.
 
 **To export the certificate from the head node**
 
 1. On the head node, add the Certificates snap-in to a Microsoft Management Console for the Local Computer account. For steps to add the snap-in, see [Add the Certificates Snap-in to an MMC](https://technet.microsoft.com/zh-cn/library/cc754431.aspx).
 
-2. In the console tree, expand **Certificates – Local Computer**, expand **Personal**, and then click **Certificates**.
+2. In the console tree, expand **Certificates - Local Computer**, expand **Personal**, and then click **Certificates**.
 
 3. Locate the certificate that you configured for the HPC Pack web components in [Step 1: Install and configure the web components on the head node](#step-1:-install-and-configure-the-web-components-on-the-head-node) (for example, named &lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn).
 
@@ -134,7 +133,7 @@ client computer. You'll need the certificate to be in .CER format.
 
 2. On the client computer, run certmgr.msc.
 
-3. In Certificate Manager, expand **Certificates – Current user**, expand **Trusted Root Certification Authorities**, right-click **Certificates**, click **All Tasks**, and then click **Import**.
+3. In Certificate Manager, expand **Certificates - Current user**, expand **Trusted Root Certification Authorities**, right-click **Certificates**, click **All Tasks**, and then click **Import**.
 
 4. In the Certificate Import Wizard, click **Next** and follow the steps to import the certificate that your exported from the head node.
 
@@ -149,7 +148,7 @@ by using the on-premises computer that is running the HPC Pack client
 utilities. For example, you can use HPC Pack GUI tools or command-line commands to submit jobs to the cluster. You can also use a web-based portal to submit jobs.
 
 
-**To run job submission commands on the client
+**To run job submission commands on the client 
 computer**
 
 
@@ -160,7 +159,8 @@ computer**
     ```
     job list /scheduler:https://<HeadNodeDnsName>.chinacloudapp.cn /all
     ```
-    >[AZURE.TIP] Use the full DNS name of the head node, not the IP address, in the scheduler URL. If you specify the IP address, you’ll see an error similar to "The server certificate needs to either have a valid chain of trust or to be placed in the trusted root store".
+    
+    >[AZURE.TIP] Use the full DNS name of the head node, not the IP address, in the scheduler URL. If you specify the IP address, you'll see an error similar to "The server certificate needs to either have a valid chain of trust or to be placed in the trusted root store".
 
 3. When prompted, type the user name (in the form &lt;DomainName&gt;\&lt;UserName&gt;) and password of the HPC cluster administrator or another cluster user that you have configured. You can choose to store the credentials locally for more job operations.
 
@@ -186,6 +186,7 @@ computer**
 **To use the web-based job portal on the head node**
 
 1. Start a web browser on the client computer, and type the following address:
+
     ```
     https://HeadNodeDnsName.chinacloudapp.cn/HpcPortal
     ```

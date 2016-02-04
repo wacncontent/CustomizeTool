@@ -13,7 +13,7 @@
 
 # Service Bus brokered messaging .NET tutorial
 
-Azure Service Bus provides two comprehensive messaging solutions – one, through a centralized “relay” service running in the cloud that supports a variety of different transport protocols and Web services standards, including SOAP, WS-*, and REST. The client does not need a direct connection to the on-premises service nor does it need to know where the service resides, and the on-premises service does not need any inbound ports open on the firewall.
+Azure Service Bus provides two comprehensive messaging solutions - one, through a centralized “relay” service running in the cloud that supports a variety of different transport protocols and Web services standards, including SOAP, WS-*, and REST. The client does not need a direct connection to the on-premises service nor does it need to know where the service resides, and the on-premises service does not need any inbound ports open on the firewall.
 
 The second messaging solution enables “brokered” messaging capabilities. These can be thought of as asynchronous, or decoupled messaging features that support publish-subscribe, temporal decoupling, and load balancing scenarios using the Service Bus messaging infrastructure. Decoupled communication has many advantages; for example, clients and servers can connect as needed and perform their operations in an asynchronous fashion.
 
@@ -29,7 +29,7 @@ The following are some administrative and prerequisite steps you should follow b
 
 1. To create a service namespace, follow the steps outlined in [How To: Create or Modify a Service Bus Service Namespace](https://msdn.microsoft.com/zh-cn/library/azure/hh690931.aspx).
 
-1. In the main window of the Azure Management Portal, click the name of the namespace you created in the previous step.
+1. In the main window of the [Azure Management Portal][], click the name of the namespace you created in the previous step.
 
 1. Click **Configure**.
 
@@ -103,8 +103,8 @@ The next step is to create a Visual Studio project and write two helper function
 	    publicclass Program
 	    {
 	
-	        privatestatic DataTable issues;
-	        privatestatic List<BrokeredMessage> MessageList;
+	        private static DataTable issues;
+	        private static List<BrokeredMessage> MessageList;
 	```
 
 1. Outside `Main()`, define a `ParseCSV()` method that parses the list of messages in Data.csv and loads the messages into a [DataTable](https://msdn.microsoft.com/zh-cn/library/azure/system.data.datatable.aspx) table, as shown here. The method returns a **DataTable** object.
@@ -166,7 +166,8 @@ The next step is to create a Visual Studio project and write two helper function
 	    // Instantiate the brokered list object
 	    List<BrokeredMessage> result = new List<BrokeredMessage>();
 	
-	    // Iterate through the table and create a brokered message for each rowforeach (DataRow item in issues.Rows)
+	    // Iterate through the table and create a brokered message for each row
+	    foreach (DataRow item in issues.Rows)
 	    {
 	        BrokeredMessage message = new BrokeredMessage();
 	        foreach (DataColumn property in issues.Columns)
@@ -628,7 +629,7 @@ In Visual Studio, from the **Build** menu, click **Build Solution**, or press F6
 
 1. Before you run the application, you must ensure that you have created a service namespace and obtained a SAS key, as described in [Introduction and Prerequsites](#introduction-and-prerequisites).
 
-1. Open a browser and go to the [Azure Management Portal](http://manage.windowsazure.cn).
+1. Open a browser and go to the [Azure Management Portal][].
 
 1. Click **Service Bus** in the left-hand tree.
 
@@ -640,9 +641,10 @@ In Visual Studio, from the **Build** menu, click **Build Solution**, or press F6
 
 This tutorial showed how to build a Service Bus client application and service using the Service Bus brokered messaging capabilities. For a similar tutorial that uses Service Bus [relayed messaging](/documentation/articles/service-bus-messaging-overview#Relayed-messaging), see the [Service Bus relayed messaging tutorial](/documentation/articles/service-bus-relay-tutorial).
 
-To learn more about Service Bus, see the following topics.
+To learn more about [Service Bus](/home/features/service-bus/), see the following topics.
 
 - [Service Bus messaging overview](/documentation/articles/service-bus-messaging-overview)
 - [Service Bus fundamentals](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 - [Service Bus architecture](/documentation/articles/service-bus-architecture)
 
+[Azure Management Portal]: http://manage.windowsazure.cn

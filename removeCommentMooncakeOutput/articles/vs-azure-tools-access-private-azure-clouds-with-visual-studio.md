@@ -6,10 +6,10 @@
    authors="kempb"
    manager="douge"
    editor="tglee" />
-<tags
-	ms.service="multiple"
-	ms.date="08/13/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="multiple"
+   ms.date="08/13/2015"
+   wacn.date="" />
 
 # Accessing private Azure clouds with Visual Studio
 

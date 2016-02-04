@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Upgrade to Azure SQL Database V12 using the Azure preview portal | Windows Azure" 
-	description="Explains how to upgrade to Azure SQL Database V12 including how to upgrade Web and Business databases, and how to upgrade a V11 server migrating its databases directly into an elastic database pool using the Azure preview portal." 
+	pageTitle="Upgrade to Azure SQL Database V12 using the Azure Management Portal | Windows Azure" 
+	description="Explains how to upgrade to Azure SQL Database V12 including how to upgrade Web and Business databases, and how to upgrade a V11 server migrating its databases directly into an elastic database pool using the Azure Management Portal." 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="stevestein" 
@@ -13,11 +13,11 @@
 	wacn.date=""/>
 
 
-# Upgrade to Azure SQL Database V12 using the Azure preview portal
+# Upgrade to Azure SQL Database V12 using the Azure Management Portal
 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](/documentation/articles/sql-database-upgrade-server-portal)
+- [Azure Management Portal](/documentation/articles/sql-database-upgrade-server-portal)
 - [PowerShell](/documentation/articles/sql-database-upgrade-server-powershell)
 
 
@@ -51,7 +51,7 @@ After upgrading to V12, [service tier recommendations](/documentation/articles/s
 
 ## Start the upgrade
 
-1. In the [Azure Preview Portal](http://manage.windowsazure.cn/) browse to the server you want to upgrade by selecting **BROWSE ALL** > **SQL servers**, and selecting the desired server.
+1. In the [Azure Management Portal](http://manage.windowsazure.cn/) browse to the server you want to upgrade by selecting **BROWSE ALL** > **SQL servers**, and selecting the desired server.
 2. Select **Latest SQL database update**, then select **Upgrade this server**.
 
       ![upgrade server][1]
@@ -60,7 +60,7 @@ After upgrading to V12, [service tier recommendations](/documentation/articles/s
 
 If your server has any Web or Business databases you must upgrade them. During the process of upgrading to SQL Database V12 you will update all Web and Business databases to a new service tier.    
 
-To assist you with upgrading, the SQL Database service recommends an appropriate service tier and performance level (pricing tier) for each database. The service recommends the best tier for running your existing database’s workload by analyzing the historical usage for your database. 
+To assist you with upgrading, the SQL Database service recommends an appropriate service tier and performance level (pricing tier) for each database. The service recommends the best tier for running your existing databaseâs workload by analyzing the historical usage for your database. 
     
 3. In the **Upgrade this server** blade select each database to review and select the recommended pricing tier to upgrade to. You can always browse the available pricing tiers and select the one that suits your environment best.
 
@@ -96,7 +96,7 @@ After all databases on the server are eligible you are ready to start the upgrad
 
 ## Move your databases into an elastic database pool
 
-In the [Azure preview portal](https://manage.windowsazure.cn/) browse to the V12 server and click **Add pool**.
+In the [Azure Management Portal](https://manage.windowsazure.cn/) browse to the V12 server and click **Add pool**.
 
 -or-
 
@@ -136,7 +136,7 @@ Additional monitoring information:
 
 **Alerts:** Set up 'Alerts' in the Azure Management Portal to notify you when the DTU consumption for an upgraded database approaches certain high level. Database alerts can be setup in the Azure Management Portal for various performance metrics like DTU, CPU, IO, and Log. Browse to your database and select **Alert rules** in the **Settings** blade.
 
-For example, you can set up an email alert on “DTU Percentage” if the average DTU percentage value exceeds 75% over the last 5 minutes. Refer to [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) to learn more about how to configure alert notifications.
+For example, you can set up an email alert on âDTU Percentageâ if the average DTU percentage value exceeds 75% over the last 5 minutes. Refer to [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) to learn more about how to configure alert notifications.
 
 
 

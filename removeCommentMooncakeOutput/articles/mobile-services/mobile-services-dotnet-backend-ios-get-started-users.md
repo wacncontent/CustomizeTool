@@ -14,6 +14,9 @@
 
 # Add Authentication to Existing Azure Mobile Services app
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 In this tutorial, you add authentication to the Quick Start project using a supported identity provider. This tutorial is based on the [Mobile Services Quick Start tutorial], which you must complete first.
@@ -57,5 +60,5 @@ In the next tutorial, [Service-side authorization of Mobile Services users], you
 [Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Mobile Services .NET How-to Conceptual Reference]: /develop/mobile/how-to-guides/work-with-net-client-library
+[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication

@@ -208,7 +208,7 @@ Azure provides direct support for Hadoop, and also enables use of other technolo
 
 * [Big Data](/solutions/big-data/) 
 * [Azure HDInsight Service](/documentation/services/hdinsight/)
-* [Getting Started with Azure HDInsight Service](/documentation/articles/hdinsight-get-started/)
+* [Getting Started with Azure HDInsight Service](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/)
 
 For some discussion of issues involved with various noSQL storage methods, see: 
 
@@ -234,7 +234,7 @@ The two main factors affecting ACS resource usage, and thus performance, are the
 -->
 ##### Serialization #####
 
-Serialization is not an obvious part of performance optimization, but reducing network traffic can be significant, in some application scenarios. For an example of how serialization sizes can vary depending on the protocol, see the reductions demonstrated in [Azure Web Applications and Serialization](http://go.microsoft.com/fwlink/?LinkId=252749). 
+Serialization is not an obvious part of performance optimization, but reducing network traffic can be significant, in some application scenarios. For an example of how serialization sizes can vary depending on the protocol, see the reductions demonstrated in [Azure Websites and Serialization](http://go.microsoft.com/fwlink/?LinkId=252749). 
 
 If the amount of data being moved is a performance issue, then use the smallest available serialization available. In the event that serialization performance isn't sufficient, consider using custom or non-Microsoft third party serialization formats. As always, proof of concept testing is key. 
 
@@ -272,7 +272,7 @@ Take into account that there probably will be more, since the cloud data center 
 
 If possible, co-locate different nodes or application layers within the same data center. Otherwise network latency and cost will be greater. 
 
-For example, locate the web application in the same data center as the SQL Database instance that it accesses, rather than in a different data center, or on-premises. 
+For example, locate the web site in the same data center as the SQL Database instance that it accesses, rather than in a different data center, or on-premises. 
 
 ### Transient connections ###
 

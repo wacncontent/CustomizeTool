@@ -10,13 +10,3 @@ replaced by:
 
 reason: ()
 
-deleted:
-
-		1](http://azure.microsoft.com/blog/2014/04/11/vm-agent-and-extensions-part-1/)
-
-replaced by:
-
-		1](http://www.windowsazure.cnblog/2014/04/11/vm-agent-and-extensions-part-1/)
-
-reason: ()
-

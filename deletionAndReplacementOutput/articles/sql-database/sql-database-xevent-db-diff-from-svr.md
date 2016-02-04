@@ -2,23 +2,13 @@ replacement:
 
 deleted:
 
-		- [Azure SQL Database service](/documentation/services/sql-databases/).
-
-replaced by:
-
-		- [Azure SQL Database service](/home/features/sql-database/).
-
-reason: ()
-
-deleted:
-
 		*.server\_*
 
 replaced by:
 
 		*.server_*
 
-reason: ()
+reason: (escape policy)
 
 deleted:
 
@@ -28,7 +18,7 @@ replaced by:
 
 		*.database_*
 
-reason: ()
+reason: (escape policy)
 
 deleted:
 
@@ -38,7 +28,7 @@ replaced by:
 
 		*_database*
 
-reason: ()
+reason: (escape policy)
 
 deleted:
 
@@ -48,5 +38,5 @@ replaced by:
 
 		**MAX_MEMORY**
 
-reason: ()
+reason: (escape policy)
 

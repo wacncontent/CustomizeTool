@@ -53,9 +53,9 @@ One of the goals of an identity manager, to be able to bring all the identity pr
  
 ![](./media/hybrid-id-design-considerations/Directory_synchronization.png)
 To proper design the synchronization of your hybrid identity solution ensure that the following questions are answered:
-•	What are the sync solutions available for the hybrid identity solution?
-•	What are the single sign on capabilities available?
-•	What are the options for identity federation between B2B and B2C?
+â˘	What are the sync solutions available for the hybrid identity solution?
+â˘	What are the single sign on capabilities available?
+â˘	What are the options for identity federation between B2B and B2C?
 
 ## Next steps
 [Determine hybrid identity management adoption strategy](/documentation/articles/active-directory-hybrid-identity-design-considerations-lifecycle-adoption-strategy)

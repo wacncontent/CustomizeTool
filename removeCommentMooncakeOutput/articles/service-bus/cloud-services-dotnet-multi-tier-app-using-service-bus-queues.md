@@ -612,13 +612,13 @@ You might want to implement the front-end of a multi-tier application in an Azur
 
 To implement the application you create in this tutorial as a standard web project instead of as a cloud service web role, follow the steps in this tutorial with the following differences:
 
-1. When you create the project, choose the **ASP.NET MVC 4 Web Application** project template in the **Web** category instead of the **Cloud Service** template in the **Cloud** category. Then follow the same directions for creating the MVC application, until you get to the **Cloud configuration manager** section.
+1. When you create the project, choose the **ASP.NET MVC 4 Web Site** project template in the **Web** category instead of the **Cloud Service** template in the **Cloud** category. Then follow the same directions for creating the MVC application, until you get to the **Cloud configuration manager** section.
 
 2. When you create the worker role, create it in a new, separate solution, similar to the original instructions for the web role. Now however, you're creating just the worker role in the cloud service project. Then follow the same directions for creating the worker role.
 
 3. You can test the front-end and back-end separately, or you can run both simultaneously in separate Visual Studio instances.
 
-To learn how to deploy the front end to an Azure  Website, see [Deploying an ASP.NET Web Application to an Azure  Website](/documentation/articles/web-sites-dotnet-get-started/). To learn how to deploy the back end to an Azure Cloud Service, see [.NET Multi-Tier Application Using Storage Tables, Queues, and Blobs][mutitierstorage].
+To learn how to deploy the front end to an Azure  Website, see [Deploying an ASP.NET Web Site to an Azure  Website](/documentation/articles/web-sites-dotnet-get-started/). To learn how to deploy the back end to an Azure Cloud Service, see [.NET Multi-Tier Application Using Storage Tables, Queues, and Blobs][mutitierstorage].
 
 
   [0]: ./media/cloud-services-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-01.png

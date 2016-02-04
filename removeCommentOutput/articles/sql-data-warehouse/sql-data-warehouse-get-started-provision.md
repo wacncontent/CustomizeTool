@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a SQL Data Warehouse database in the Azure preview portal | Microsoft Azure"
+	pageTitle="Create a SQL Data Warehouse database in the Azure preview portal | Windows Azure"
 	description="Learn how to create an Azure SQL Data Warehouse in the Azure preview portal"
 	services="sql-data-warehouse"
 	documentationCenter="NA"
@@ -8,20 +8,16 @@
 	editor=""
 	tags="azure-sql-data-warehouse"/>
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="10/08/2015"
-   ms.author="lodipalm;barbkess"/>
+	ms.service="sql-data-warehouse"
+	ms.date="10/21/2015"
+	wacn.date=""/>
 
 # Create a SQL Data Warehouse by using the Azure preview portal#
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](sql-data-warehouse-get-started-provision.md)
-- [TSQL](sql-data-warehouse-get-started-create-database-tsql.md)
-- [PowerShell](sql-data-warehouse-get-started-provision-powershell.md)
+- [Azure preview portal](/documentation/articles/sql-data-warehouse-get-started-provision)
+- [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-database-tsql)
+- [PowerShell](/documentation/articles/sql-data-warehouse-get-started-provision-powershell)
 
 This tutorial shows you how to create an Azure SQL Data Warehouse database in just a few minutes by using the Azure preview portal. 
 
@@ -30,15 +26,15 @@ In this tutorial you will:
 - Create a server that will host your database.
 - Create a database that contains AdventureWorksDW sample database.
 
-[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 ## Step 1: Sign in and get started
 
-1. Sign in to the [Azure preview portal](https://portal.azure.com).
+1. Sign in to the [Azure preview portal](https://manage.windowsazure.cn).
 
-2. Click **New** > **Data + Storage** > **SQL Data Warehouse**.
+2. Click **New** > **DATA SERVICE** > **SQL Data Warehouse**.
 
-	![Create a data warehouse](./media/sql-data-warehouse-get-started-provision/new-data-warehouse.png)
+    ![Create](./media/sql-data-warehouse-get-started-provision/create-sample.gif)
 
 1. Enter a name for your database in the SQL Data Warehouse blade. In this example, we name the database AdventureWorksDW.
 
@@ -91,13 +87,13 @@ Now that you have selected your logical SQL server, you are ready to finish crea
   
         ![Select Sample](./media/sql-data-warehouse-get-started-provision/select-source.png)
 
-    - **Resource group**. You can keep the default values. Resource groups are containers designed to help you manage a collection of Azure resources. Learn more about [resource groups](../azure-portal/resource-group-portal.md).
+    - **Resource group**. You can keep the default values. Resource groups are containers designed to help you manage a collection of Azure resources. Learn more about [resource groups](/documentation/articles/resource-group-portal).
     
     - **Subscription**. Select the subscription to bill for this database.
 
 1. Click **Create** to create your SQL Data Warehouse database. 
 
-1. Wait for a few minutes and your database will be ready. When finished, you should be returned to the [Azure preview portal](https://portal.azure.com). Notice that your SQL Data Warehouse database has been added to the dashboard.
+1. Wait for a few minutes and your database will be ready. When finished, you should be returned to the [Azure preview portal](https://manage.windowsazure.cn). Notice that your SQL Data Warehouse database has been added to the dashboard.
 
     ![Portal view](./media/sql-data-warehouse-get-started-provision/database-portal-view.png)
 
@@ -115,7 +111,7 @@ To connect to the server from your current IP address, add your client IP addres
 
 1. Create a firewall rule with a range of IP addresses. You can do this now or later.
 
-	>[AZURE.IMPORTANT] You're IP address is likely to change from time to time, and you may not be able to access your server until you create a new firewall rule. To ensure consistent access, we recommend adding a range of IP addresses. For further details, see [How to configure firewall settings](../sql-database/sql-database-configure-firewall-settings.md).
+	>[AZURE.IMPORTANT] You're IP address is likely to change from time to time, and you may not be able to access your server until you create a new firewall rule. To ensure consistent access, we recommend adding a range of IP addresses. For further details, see [How to configure firewall settings](/documentation/articles/sql-database-configure-firewall-settings).
 
     To create a rule, enter a name and the IP address range, and click **Save**. 
 
@@ -126,7 +122,7 @@ Now that you have configured the firewall you will be able to make connections f
 
 ## Next steps
 
-Now that you have created a sample database for SQL Data Warehouse, learn about how to use SQL Data Warehouse in [Connect and query](./sql-data-warehouse-get-started-connect-query.md).
+Now that you have created a sample database for SQL Data Warehouse, you are ready to [Connect](/documentation/articles/sql-data-warehouse-get-started-connect) to your database.
 
 
 

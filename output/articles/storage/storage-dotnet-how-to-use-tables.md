@@ -1,15 +1,15 @@
 <properties
 	pageTitle="How to use Table storage from .NET | Windows Azure"
-	description="Learn how to use Windows Azure Table storage to create and delete tables and insert and query entities in a table."
+	description="Use Table storage to store unstructured, schemaless data. Table storage is a NoSQL key/attribute store. The storage client library for .NET provides APIs for creating and deleting tables as well as for inserting, updating, deleting, and querying data."
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
-	manager="adinah"
-	editor=""/>
+	manager="carmonm"
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="08/04/2015"
+	ms.date="01/07/2016"
 	wacn.date=""/>
 
 
@@ -474,24 +474,13 @@ If you are reading a large number of entities, and you want to process/display e
 Now that you've learned the basics of Table storage, follow these links
 to learn about more complex storage tasks:
 
-<ul>
-<li>View the Table service reference documentation for complete details about available APIs:
-  <ul>
-    <li><a href="https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx&clcid=0x409">Storage Client Library for .NET reference</a>
-    </li>
-    <li><a href="http://msdn.microsoft.com/zh-cn/library/azure/dd179355">REST API reference</a></li>
-  </ul>
-</li>
-<li>Learn about more advanced tasks you can perform with Azure Storage by reviewing <a href="http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx">Azure Storage documentation</a>.</li>
-<li>Learn how to simplify the code you write to work with Azure Storage by using the <a href="/documentation/articles/websites-dotnet-webjobs-sdk">Azure WebJobs SDK</a>.</li>
-<li>View more feature guides to learn about additional options for storing data in Azure:
-  <ul>
-    <li>Use <a href="/documentation/articles/storage-dotnet-how-to-use-blobs/">Blob storage</a> to store unstructured data.</li>
-    <li>Use <a href="/documentation/articles/storage-dotnet-how-to-use-queues/">Queue storage</a> to store structured data.</li>
-    <li>Use <a href="/documentation/articles/sql-database-dotnet-how-to-use/">SQL Database</a> to store relational data.</li>
-  </ul>
-</li>
-</ul>
+- View the Table service reference documentation for complete details about available APIs:
+    - [Storage Client Library for .NET reference](https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx&clcid=0x409)
+    - [REST API reference](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
+- Learn how to simplify the code you write to work with Azure Storage by using the [Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)
+- View more feature guides to learn about additional options for storing data in Azure.
+    - Use [Blob Storage](/documentation/articles/storage-dotnet-how-to-use-blobs) to store unstructured data.
+    - Use [SQL Database](/documentation/articles/sql-database-dotnet-how-to-use) to store relational data.
 
   [Download and install the Azure SDK for .NET]: /develop/net/
   [Creating an Azure Project in Visual Studio]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
@@ -504,7 +493,6 @@ to learn about more complex storage tasks:
 
   [Introducing Upsert and Query Projection blog post]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
   [.NET Client Library reference]: https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx&clcid=0x409
-  [Storing and accessing data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure Storage Team blog]: http://blogs.msdn.com/b/windowsazurestorage/
   [Configure Azure Storage connection strings]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2

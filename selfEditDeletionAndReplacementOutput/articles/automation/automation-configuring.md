@@ -6,5 +6,5 @@ deleted:
 		>
 		>Automation accounts created with the Azure Management Portal can be managed by either portal and either set of cmdlets. Once the account is created, it makes no difference how you create and manage resources within the account. If you are planning to continue to use the Azure Management Portal, then you should use it instead of the Azure preview portal to create any Automation accounts.
 
-reason: ()
+reason: (the new Ibiza portal)
 

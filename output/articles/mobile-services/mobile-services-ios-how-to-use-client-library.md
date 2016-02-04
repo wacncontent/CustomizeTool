@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # How to Use iOS Client Library for Azure Mobile Services
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
@@ -313,8 +318,8 @@ The file [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/azu
 <!-- Images. -->
 
 <!-- URLs. -->
-[Mobile Services Quick Start]: /documentation/articles/mobile-services-ios-get-started
-[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
+[Mobile Services Quick Start]: mobile-services-ios-get-started.md
+[Get started with Mobile Services]: mobile-services-ios-get-started.md
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Authentication]: /documentation/articles/mobile-services-ios-get-started-users
 [iOS SDK]: https://developer.apple.com/xcode
@@ -322,7 +327,8 @@ The file [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/azu
 [Handling Expired Tokens]: http://go.microsoft.com/fwlink/p/?LinkId=301955
 [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
 [Permissions]: http://msdn.microsoft.com/zh-cn/library/azure/jj193161.aspx
-[Service-side Authorization]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
+[Service-side Authorization]:
+mobile-services-javascript-backend-service-side-authorization.md
 [Dynamic Schema]: https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx
 [Create a table]: http://msdn.microsoft.com/zh-cn/library/azure/jj193162.aspx
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965

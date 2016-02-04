@@ -3,25 +3,16 @@
 	description="How to get started using Azure Blob storage in an ASP.NET project in Visual Studio after connecting to a storage account using Visual Studio connected services"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Get started with blob storage and Visual Studio connected services (ASP.NET)
-
-> [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-aspnet-getting-started-blobs)
-> - [What happened](/documentation/articles/vs-storage-aspnet-what-happened)
-
-> [AZURE.SELECTOR]
-> - [Blobs](/documentation/articles/vs-storage-aspnet-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-aspnet-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-aspnet-getting-started-tables)
 
 ## Overview
 
@@ -73,7 +64,7 @@ To programmatically access blobs in ASP.NET projects, you need to add the follow
 
 You can also use the **CloudBlobClient** object to create a container in your storage account. All you need to do is add a call to **CreateIfNotExistsAsync** to the above code as shown in the following example.
 
-    // If “mycontainer” doesn’t exist, create it.
+    // If “mycontainer” doesn't exist, create it.
     await container.CreateIfNotExistsAsync();
 
 ## Upload a blob into a container

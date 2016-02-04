@@ -4,67 +4,61 @@ deleted:
 
 		, or **Premium**
 
-reason: ()
+reason: (Premium mode)
 
 deleted:
 
 		[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
-reason: ()
+reason: (terminology: Azure App Service Web)
 
 deleted:
 
 		and **Premium**
 
-reason: ()
+reason: (Premium mode)
 
 deleted:
 
 		or Premium
 
-reason: ()
+reason: (Premium mode)
 
 deleted:
 
 		or **Premium**
 
-reason: ()
+reason: (Premium mode)
 
 deleted:
 
 		, and **Premium**
 
-reason: ()
+reason: (Premium mode)
 
 deleted:
 
 		and **Premium**
 
-reason: ()
+reason: (Premium mode)
 
 deleted:
 
 		, and **Premium**
 
-reason: ()
+reason: (Premium mode)
 
 deleted:
 
 		>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
-reason: ()
+reason: (“Try it now”)
 
 deleted:
 
 		[Data Transfers Pricing Details](/home/features/data-transfers/#price)
 
-reason: ()
-
-deleted:
-
-		[Azure Websites Pricing Details - SSL Connections](/home/features/web-site/#price//blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx).
-
-reason: ()
+reason: ({data transfers})
 
 deleted:
 
@@ -73,30 +67,24 @@ deleted:
 			- [When to Scale Azure Websites - with Stefan Schackow](/documentation/videos/azure-web-sites-free-vs-standard-scaling/)
 			- [Auto Scaling Azure Websites, CPU or Scheduled - with Stefan Schackow](/documentation/videos/auto-scaling-azure-web-sites/)
 			- [How Azure Websites Scale - with Stefan Schackow](/documentation/videos/how-azure-web-sites-scale/)
-		
+
+reason: (video)
+
+deleted:
+
 		## What's changed
 		* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 		* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-reason: ()
-
-replacement:
+reason: (terminology: Azure App Service Web, the new Ibiza portal)
 
 deleted:
 
 		> [AZURE.NOTE] Before switching a web app from the **Free** mode to **Basic**, **Standard**, or **Premium** mode, you must first remove the spending caps in place for your Azure Websites subscription. To view or change options for your Windows Azure Websites subscription, see [Windows Azure Subscriptions][azuresubscriptions].
 
-replaced by:
+reason: (terminology: Azure App Service Web)
 
-		In this article:
-		
-		- [Scaling to Shared or Basic Plan mode](#scalingsharedorbasic)
-		- [Scaling to Standard Plan mode](#scalingstandard)
-		- [Scaling a SQL Server Database connected to your site](#ScalingSQLServer)
-		- [Developer Features](#devfeatures)
-		- [Other Features](#OtherFeatures)
-
-reason: ()
+replacement:
 
 deleted:
 
@@ -154,7 +142,7 @@ replaced by:
 			
 			![Plan change complete][BasicComplete]
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -265,7 +253,7 @@ replaced by:
 			
 		14. After you have finished making changes to the items in the **Edit Scale Settings for Schedule** list, click the **Save** icon in the command bar at the bottom of the page to save all schedule settings at once (you do not have to save each schedule individually).
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -295,30 +283,5 @@ replaced by:
 			
 			The value you choose for **Max Size** specifies an upper limit for the database. Database charges are based on the amount of data that you actually store, so changing the **Max Size** property does not by itself affect your database charges. For more information, see [Accounts and Billing in Windows Azure SQL Database][SQLaccountsbilling].
 
-reason: ()
-
-deleted:
-
-		[ChooseWHP]: ./media/web-sites-scale/scale1ChooseWHP.png
-
-replaced by:
-
-		[Select Website]: ./media/web-sites-scale/01SelectWebsite.png
-		[SelectScaleTab]: ./media/web-sites-scale/02SelectScaleTab.png
-		[ChooseBasicInstanceSize]: ./media/web-sites-scale/03bChooseBasicInstanceSize.png
-		[ChooseBasicInstanceCount]: ./media/web-sites-scale/04ChooseBasicInstanceCount.png
-		[ChooseStandard]: ./media/web-sites-scale/07ChooseStandard.png
-		[CapacitySectionStandard]: ./media/web-sites-scale/08CapacitySectionStandard.png
-		[ChooseInstanceSize]: ./media/web-sites-scale/09ChooseInstanceSize.png
-		[SetUpScheduleTimesButton]: ./media/web-sites-scale/10SetUpScheduleTimesButton.png
-		[SetUpScheduleTimesDialog]: ./media/web-sites-scale/11SetUpScheduleTimesDialog.png
-		[EditScaleSettingsForSchedule]: ./media/web-sites-scale/12EditScaleSettingsForSchedule.png
-		[ScaleByMetric]: ./media/web-sites-scale/13ScaleByMetric.png
-		[InstanceCount]: ./media/web-sites-scale/14InstanceCount.png
-		[TargetCPU]: ./media/web-sites-scale/15TargetCPU.png
-		[LinkedResources]: ./media/web-sites-scale/16LinkedResources.png
-		[ScaleDatabase]: ./media/web-sites-scale/17ScaleDatabase.png
-		[ChooseWHP]: ./media/web-sites-scale/03aChooseWHP.png
-
-reason: ()
+reason: (the new Ibiza portal)
 

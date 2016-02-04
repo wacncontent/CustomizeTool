@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/12/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # App model v2.0 preview: Scopes, permissions, & consent
@@ -89,7 +89,7 @@ Content-Type: application/json
 	"client_id": "2d4d11a2-f814-46a7-890a-274a72a7309e",
 	"scope": "https://outlook.office.com/mail.read https://outlook.office.com/mail.send",
 	"code": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq..."
-	"client_secret": "zc53fwe80980293klaj9823"  // NOTE: Only required for web apps
+	"client_secret": "zc53fwe80980293klaj9823"  // NOTE: Only required for web sites
 }
 ```
 

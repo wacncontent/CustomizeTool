@@ -1,10 +1,16 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with Directions on Microsoft | Windows Azure" description="Learn how to use Directions on Microsoft with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
+<properties 
+    pageTitle="Tutorial: Azure Active Directory integration with Directions on Microsoft | Windows Azure" 
+    description="Learn how to use Directions on Microsoft with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="08/01/2015"
+	ms.date="10/22/2015"
 	wacn.date=""/>
+
 #Tutorial: Azure Active Directory integration with Directions on Microsoft
->[AZURE.TIP]For feedback, click [here](https://social.msdn.microsoft.com/Forums/azure/zh-cn/61f0061f-779f-4dad-8540-bcf1d3402673/tutorial-azure-active-directory-integration-with-directions-on-microsoft?forum=WindowsAzureAD).
 
 The objective of this tutorial is to show the integration of Azure Active Directory and Directions on Microsoft.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -12,7 +18,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A Directions on Microsoft subscription
 
-If you don’t have a federated Directions on Microsoft subscription yet, email a request to “*service@DirectionsOnMicrosoft.com*”.
+If you don't have a federated Directions on Microsoft subscription yet, email a request to “*service@DirectionsOnMicrosoft.com*”.
 
 After completing this tutorial, the Azure Active Directory users you have assigned to Directions on Microsoft will be able to single sign into the application using single sign-on.
 

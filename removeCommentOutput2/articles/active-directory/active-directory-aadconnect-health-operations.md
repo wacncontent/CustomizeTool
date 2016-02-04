@@ -86,7 +86,7 @@ Azure AD Connect Health supports the following built-in roles.
 |Contributor|  Contributors can ***view all information*** (e.g. view alerts) from the portal and ***change settings*** (e.g. email notifications) within Azure AD Connect Health.|
 |Reader| Readers can ***view all information*** (e.g. view alerts) from the portal within Azure AD Connect Health.|
 
-All other roles (such as ‘User Access Administrators’ or ‘DevTest Lab Users’), even if available in the portal experience, have no impact to access within Azure AD Connect Health.
+All other roles (such as User Access Administrators or DevTest Lab Users), even if available in the portal experience, have no impact to access within Azure AD Connect Health.
 
 #### Access Scope
 
@@ -137,7 +137,7 @@ You can remove a user or a group added to Azure AD Connect Health Role Based Acc
 ## Related links
 
 * [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health)
-* [Azure AD Connect Health Agent Installation](/documentation/articles/active-directory-aadconnect-health-agent-install)
+* [Azure AD Connect Health Agent Installation for AD FS](/documentation/articles/active-directory-aadconnect-health-agent-install-adfs)
 * [Using Azure AD Connect Health with AD FS](/documentation/articles/active-directory-aadconnect-health-adfs)
 * [Using Azure AD Connect Health for sync](/documentation/articles/active-directory-aadconnect-health-sync)
 * [Azure AD Connect Health FAQ](/documentation/articles/active-directory-aadconnect-health-faq)

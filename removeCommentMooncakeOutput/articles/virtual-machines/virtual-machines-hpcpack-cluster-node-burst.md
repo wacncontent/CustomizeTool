@@ -1,16 +1,16 @@
 <properties
- pageTitle="Add "burst" nodes to an HPC Pack cluster | Windows Azure"
+ pageTitle="Add burst nodes to an HPC Pack cluster | Windows Azure"
  description="Learn how to add worker role instances running in a cloud service on-demand as compute resources to an HPC Pack head node in Azure."
  services="virtual-machines"
  documentationCenter=""
  authors="dlepow"
  manager="timlt"
  editor=""
- tags="azure-service-management"/>
+ tags="azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/28/2015"
-	wacn.date=""/>
+ 	ms.date="09/28/2015"
+	wacn.date="" />
 
 # Add on-demand "burst" nodes (worker role instances) as compute resources to an HPC Pack cluster in Azure
 

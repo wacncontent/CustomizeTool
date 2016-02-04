@@ -8,12 +8,15 @@
 	editor="mollybos"/>
 <tags
 	ms.service="mobile-services"
-	ms.date="09/16/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Supporting multiple device platforms from a single mobile service
 
-One of the major benefits of using Azure Mobile Services in your mobile app development is the ability to use a single backend service that supports your app on multiple client platforms. Mobile Services provides native client libraries for all major device platforms, which makes it easier to develop apps using a single backend service and by using cross-platform developer tools. This topic discusses considerations for getting your app running on multiple client platforms while using a single mobile service backend.
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+One of the major benefits of using Azure Mobile Services in your mobile app development is the ability to use a single backend service that supports your app on multiple client platforms. Mobile Services provides native client libraries for all major device platforms, which makes it easier to develop apps using a single backend service and by using cross-platform developer tools. This topic discusses considerations for getting your app running on multiple client platforms while using a single mobile service backend. 
 
 ##<a id="push"></a>Cross-platform push notifications
 
@@ -32,7 +35,7 @@ Client registrations are created by using the register function in the platform-
 
 + **Template registration**<br/>Notification Hubs also supports platform-specific template registrations. By using template registrations, you can use a single API call to send a notification to your app running on any registered platform. For more information, see [Send cross-platform notifications to users].
 
-Tables in the following sections link to the client-specific tutorials that show you how to implement push notifications from both .NET and JavaScript backend mobile services.  
+Tables in the following sections link to the client-specific tutorials that show you how to implement push notifications from both .NET and JavaScript backend mobile services.
 
 ###.NET backend
 
@@ -125,7 +128,7 @@ When you use template client registrations rather than native client registratio
                 });
 
 ##<a id="xplat-app-dev"></a>Cross-platform app development
-Developing native mobile device apps for all of the major mobile device platforms requires you (or your organization) to have expertise in at least Objective-C, Java, and C# or JavaScript programming languages. Because of the expense of developing across these disparate platforms, some developers choose a fully web browser-based experience for their apps. However, such web-based experiences cannot access most of the native resources that provide the rich experience that users have come to expect on their mobile devices.  
+Developing native mobile device apps for all of the major mobile device platforms requires you (or your organization) to have expertise in at least Objective-C, Java, and C# or JavaScript programming languages. Because of the expense of developing across these disparate platforms, some developers choose a fully web browser-based experience for their apps. However, such web-based experiences cannot access most of the native resources that provide the rich experience that users have come to expect on their mobile devices.
 
 Cross-platform tools are available that provide a richer native experience on a mobile device, while still sharing a single code base, usually JavaScript. Mobile Services makes it easy to create and manage a backend service for cross-platform app development platforms by providing quickstart tutorials for the following development platforms:
 
@@ -142,19 +145,19 @@ Cross-platform tools are available that provide a richer native experience on a 
 
 <!-- URLs -->
 [Azure Management portal]: https://manage.windowsazure.cn
-[Azure Notification Hubs]: /develop/net/how-to-guides/service-bus-notification-hubs/
+[Azure Notification Hubs]: /documentation/articles/notification-hubs-overview/
 [SSO Windows Store]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/
-[SSO Windows Phone]: /develop/mobile/tutorials/single-sign-on-wp8/
-[Tutorials and resources]: /develop/mobile/resources/
-[Get started with Notification Hubs]: /manage/services/notification-hubs/getting-started-windows-dotnet/
+[SSO Windows Phone]: /documentation/articles/mobile-services-windows-phone-single-sign-on/
+[Tutorials and resources]: /zh-cn/documentation/services/mobile-services/
+[Get started with Notification Hubs]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [Send cross-platform notifications to users]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-xplat-mobile-services/
-[Get started with push Windows dotnet]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-dotnet-vs2012/
+[Get started with push Windows dotnet]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push-vs2012/ 
 [Get started with push Windows js]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js-vs2012/
 [Get started with push Windows Phone]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
 [Get started with push iOS]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
 [Get started with push Android]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
 [Dynamic schema]: http://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx
-[How to use a .NET client with Mobile Services]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[How to use a .NET client with Mobile Services]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/ 
 [push object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554217.aspx
 [TemplatePushMessage]:http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.templatepushmessage.aspx
 [PhoneGap]: /documentation/articles/mobile-services-javascript-backend-phonegap-get-started

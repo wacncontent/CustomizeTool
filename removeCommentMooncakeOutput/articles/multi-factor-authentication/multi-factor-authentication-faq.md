@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Azure Multi-Factor Authentication FAQ" 
-	description="Azure Multi-factor authentication is a method of verifying who you are that requires the use of more than just a username and password. It provides an additional layer of security to user sign-ins and transactions." 
+	description="Provides a list of frequently asked questions and answers related to Azure Multi-factor authentication (MFA). MFA is a method of verifying who you are that requires the use of more than just a username and password. It provides an additional layer of security to user sign-ins and transactions." 
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -9,12 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+	ms.date="11/20/2015" 
+	wacn.date=""/>
 
 # Azure Multi-Factor Authentication FAQ
 
@@ -27,9 +23,9 @@ This FAQ answers questions about Azure Multi-Factor Authentication. This FAQ cov
 
 [Search the Microsoft Knowledge Base (KB)](http://search.microsoft.com/supportresults.aspx?form=mssupport&q=phonefactor)
 
-- Search the Microsoft Knowledge Base (KB) for technical solutions to common break-fix issues about Support for Microsoft Azure Multi-Factor Authentication Server (Phone Factor).
+- Search the Microsoft Knowledge Base (KB) for technical solutions to common break-fix issues about Support for Windows Azure Multi-Factor Authentication Server (Phone Factor).
 
-[Microsoft Azure Active Directory Forums](https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD)
+[Windows Azure Active Directory Forums](https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD)
 
 - You can search and browse for technical questions and answers from the community or ask your own question by clicking [here](https://social.msdn.microsoft.com/Forums/azure/newthread?category=windowsazureplatform&forum=WindowsAzureAD&prof=required).
 
@@ -37,19 +33,19 @@ This FAQ answers questions about Azure Multi-Factor Authentication. This FAQ cov
 
 - Legacy Phonefactor customers who have any queries around resetting your password or for help to get your password reset, please use the link below to open a support case.
 
-[Microsoft Azure Multi-Factor Authentication Server (Phone Factor) customer support](https://support.microsoft.com/oas/default.aspx?prid=14947)
+[Windows Azure Multi-Factor Authentication Server (Phone Factor) customer support](https://support.microsoft.com/oas/default.aspx?prid=14947)
 
-- Use this link to contact a Microsoft support professional. We’ll ask you a few questions to help us determine what your support options are. The support options may include email, on-line submission or phone support. 
+- Use this link to contact a Microsoft support professional. We'll ask you a few questions to help us determine what your support options are. The support options may include email, on-line submission or phone support. 
 
-[General inquiries about Microsoft Azure Multi-Factor Authentication Server (Phone Factor)](http://azure.microsoft.com/services/multi-factor-authentication)
+[General inquiries about Windows Azure Multi-Factor Authentication Server (Phone Factor)](/home/features/multi-factor-authentication)
 
-- To learn more about Microsoft Azure Multi-Factor Authentication Server (Phone Factor) or if you have questions around how to buy the product and different support options available, please either visit or email [pfsales@microsoft.com](mailto:pfsales@microsoft.com). 
+- To learn more about Windows Azure Multi-Factor Authentication Server (Phone Factor) or if you have questions around how to buy the product and different support options available, please either visit or email [pfsales@microsoft.com](mailto:pfsales@microsoft.com). 
 
 
 
 **Q: How does the Azure Multi-Factor Authentication Server handle user data?**
 
-When you use the Multi-Factor Authentication (MFA) Server on-premises, a user’s data is stored in the on-premises servers. No persistent user data is stored in the cloud. When the user performs a two-factor authentication, the MFA Server sends data to the Azure MFA cloud service to perform the authentication. When these authentication requests are sent to the cloud service, the following fields are sent in the request and logs so that they are available in the customer's authentication/usage reports. Some of the fields are optional so they can be enabled or disabled within the Multi-Factor Authentication Server. The communication from the MFA Server to the MFA cloud service uses SSL/TLS over port 443 outbound. These fields are:
+When you use the Multi-Factor Authentication (MFA) Server on-premises, a user's data is stored in the on-premises servers. No persistent user data is stored in the cloud. When the user performs a two-factor authentication, the MFA Server sends data to the Azure MFA cloud service to perform the authentication. When these authentication requests are sent to the cloud service, the following fields are sent in the request and logs so that they are available in the customer's authentication/usage reports. Some of the fields are optional so they can be enabled or disabled within the Multi-Factor Authentication Server. The communication from the MFA Server to the MFA cloud service uses SSL/TLS over port 443 outbound. These fields are:
 
 - Unique ID - either username or internal MFA server ID
 - First and Last Name - optional
@@ -60,7 +56,7 @@ When you use the Multi-Factor Authentication (MFA) Server on-premises, a user’
 - Authentication Result 
 - MFA Server Name 
 - MFA Server IP 
-- Client IP – if available
+- Client IP - if available
 
 
 
@@ -77,19 +73,19 @@ All costs are rolled into the per-user or per-authentication cost of the service
 
 **"Q: How is the organization billed for Azure Multi-Factor Authentication?"**
 
-The ‘per user’ or ‘per authentication’ billing/usage model is chosen when creating a Multi-Factor Auth Provider in the Azure Management Portal. It is a consumption-based resource that is billed against the organization’s Azure subscription, just like virtual machines, websites, etc. are billed against the subscription.
+The 'per user' or 'per authentication' billing/usage model is chosen when creating a Multi-Factor Auth Provider in the Azure Management Portal. It is a consumption-based resource that is billed against the organization's Azure subscription, just like virtual machines, websites, etc. are billed against the subscription.
 
-**Q: Does the ‘per user’ billing model charge based on the number of users enabled for Multi-Factor Authentication or the number of users who perform the verifications?**
+**Q: Does the 'per user' billing model charge based on the number of users enabled for Multi-Factor Authentication or the number of users who perform the verifications?**
 
 Billing is based on the number of users enabled for Multi-Factor Authentication.
 
 ## Usability
 
-**Q: What do I do if I don’t receive a response on my phone or if I forgot my phone?**
+**Q: What do I do if I don't receive a response on my phone or if I forgot my phone?**
 
-If you previously configured a backup phone, try again by selecting that phone when prompted from the sign in page.  If you don’t have another method configured, contact your admin and ask them to update the number assigned to your primary phone – mobile or office.
+If you previously configured a backup phone, try again by selecting that phone when prompted from the sign in page.  If you don't have another method configured, contact your admin and ask them to update the number assigned to your primary phone - mobile or office.
 
-**Q: I removed a user from an admin role but forgot to disable the multi-factor authentication and now it’s not showing in the list how do I remove this feature?**
+**Q: I removed a user from an admin role but forgot to disable the multi-factor authentication and now it's not showing in the list how do I remove this feature?**
 
 - Depending on which portal you are using, in the left pane, click either Users or Users and Groups.
 - Select the check box next to the user that you want to edit, and then click either Edit or the Edit icon.
@@ -101,18 +97,18 @@ If you previously configured a backup phone, try again by selecting that phone w
 
 **Q: What do I do if a user contacts me, the administrator, with an account that has been locked out?**
 
-You can reset the user by forcing them to go through the registration process again. To do this see [Managing user and device settings with Azure Multi-Factor Authentication in the cloud](multi-factor-authentication-manage-users-and-devices.md)
+You can reset the user by forcing them to go through the registration process again. To do this see [Managing user and device settings with Azure Multi-Factor Authentication in the cloud](/documentation/articles/multi-factor-authentication-manage-users-and-devices)
 
 **Q: What do I do if a user has lost or had a device stolen that is using app passwords?**
 
-You can delete all of the users app passwords to prevent any unauthorized access. Once you have a replacement device, the user can recreate them. To do this see [Managing user and device settings with Azure Multi-Factor Authentication in the cloud](multi-factor-authentication-manage-users-and-devices.md)
+You can delete all of the users app passwords to prevent any unauthorized access. Once you have a replacement device, the user can recreate them. To do this see [Managing user and device settings with Azure Multi-Factor Authentication in the cloud](/documentation/articles/multi-factor-authentication-manage-users-and-devices)
 
 **Q: What if the user is not able to sign into non-browser apps?**
 
 - Users enabled for multi-factor authentication will require app password to sign into some non-browser apps.
 - Users will need to clear the sign-in info (delete sign-in info), restart the application and sign-in with the their username and app password. 
 
-For information on creating app passwords see [Help with app passwords](multi-factor-authentication-end-user-app-passwords.md)
+For information on creating app passwords see [Help with app passwords](/documentation/articles/multi-factor-authentication-end-user-app-passwords)
 
 
 >[AZURE.NOTE] Modern Authentication for the Office 2013 Clients
@@ -125,27 +121,33 @@ The Azure Multi-Factor Authentication service sends text messages through SMS ag
 
 Text message verifications are also more reliable in some countries such as the United States and Canada. Users that experience difficulty receiving text messages reliably when using Azure Multi-Factor Authentication are encouraged to select the mobile app or phone call methods instead. The mobile app is great because mobile app notifications can be received over both cellular and Wi-Fi connections, and the mobile app passcode is displayed even when the device has no signal at all.  The Azure Authenticator app is available for [Windows Phone](http://www.windowsphone.com/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator), and [IOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458).
 
+**Q:  Can I use hardware tokens with the Azure MFA server?**
+
+If you are using the Azure MFA Server, third-party OATH TOTP tokens can be imported and used for MFA. We currently support the import of third-party OATH TOTP tokens in an older PSKC format that Gemalto can produce for their tokens and support importing tokens in CSV format. When importing tokens in CSV format, the CSV file must contain a serial number, secret key in Base32 format and a time interval (generally 30 seconds). 
+
+So, if the ActiveIdentity tokens are OATH TOTP tokens and you can get the secret key file into a CSV file that can be imported into the Azure MFA Server, then you will be able to use them. OATH tokens can be used with AD FS, with RADIUS when the client system can process Access Challenge responses and with IIS Forms-based authentication.
+
+
+**Q:  Why can't I access the Azure Billing Portal or Office 365 with an account that has MFA enabled?**
+
+Azure Multi-Factor Authentication for Azure Administrators can be used to secure access to the Azure Management Portal. However, the sign-in protocols and endpoints being used on that portal are different than those used by the Azure Accounts Portal where Azure billing statements are viewed and Office 365. 
+Therefore, signing into these products and portals does not currently support MFA-enabled accounts. Work is in progress to migrate these other products and portals to use the same protocols and endpoints used by the Azure Management Portal. The Azure Accounts Portal should be migrated during Q1 of 2016. Office 365 will take a little longer. Until then, any accounts enabled for multi-factor authentication will only be able to access the Azure Management Portal and will see errors if attempting to sign into other locations.
 
 ## Errors
 
 **Q: What do I do when I see an “Authentication request is not for an activated account” error when I authenticate by using mobile application notifications?**
 
-- Go to [https://account.activedirectory.windowsazure.com/profile/](https://account.activedirectory.windowsazure.com/profile/) and sign in with your organizational account.
+- Go to [https://account.activedirectory.windowsazure.cn/profile/](https://account.activedirectory.windowsazure.cn/profile/) and sign in with your organizational account.
 - If needed, click Other verification options and select a different option for completing the account verification.
 - Click Additional Security Verification.
 - Remove the existing account from your mobile application.
 - Click Configure and follow the instructions to re-configure the mobile application.
-
-
-
 
 **Q: What do I do when I see a 0x800434D4L error while attempting to sign-in using a non-browser application?**
 
 Currently, additional security verification can only be used with applications/services that you can access through your browser. Non-browser applications (also referred to as rich client applications) which are installed on your local computer such as Windows Powershell will not work with accounts that are required for additional security verification. In this case, you may see the application generate error 0x800434D4L.
 
 A workaround for this is to have a separate user account for admin-related operations vs. non-admin operations. You can later link mailboxes between your admin account and non-admin account so you can sign-in to outlook using your non-admin account. For more details about this, see [Give an Administrator the Ability to Open and View the Contents of a User's Mailbox](http://help.outlook.com/141/gg709759(d=loband).aspx?sl=1).
-
-
 
 
 

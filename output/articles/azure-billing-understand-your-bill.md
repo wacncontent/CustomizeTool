@@ -123,7 +123,7 @@ Any bill adjustments (credits or balances) applied to your account since your la
 The Current Charges section of the bill contains details about your monthly charges. The links are organized into the following subsections.
 
 ### Usage Charges
-Usage charges are total monthly charges on a subscription. You are billed in arrears for your past month’s usage.
+Usage charges are total monthly charges on a subscription. You are billed in arrears for your past month's usage.
 
 ### Discounts
 Service discounts on your usage would be reflected in this line item that are applied to your current bill.
@@ -153,7 +153,7 @@ This section is the payment instructions of where to send checks, wire transfers
 
 ## Understand Detailed Usage Charges
 
-Usage charges are total monthly charges on a subscription less any credit or discount. You are billed in arrears for your past month’s usage.  When you view a list of usage charges in your invoice, the following columns display the details of what you are being billed for.  You can download a [sample file](https://understandingyourbill.blob.core.chinacloudapi.cn/appendices/UnderstandDetailedUsageCharges.xlsx) that shows the values for each column.
+Usage charges are total monthly charges on a subscription less any credit or discount. You are billed in arrears for your past month's usage.  When you view a list of usage charges in your invoice, the following columns display the details of what you are being billed for.  You can download a [sample file](https://understandingyourbill.blob.core.chinacloudapi.cn/appendices/UnderstandDetailedUsageCharges.xlsx) that shows the values for each column.
 
 ### Service Name
 Identifies the top-level service for which this usage belongs.

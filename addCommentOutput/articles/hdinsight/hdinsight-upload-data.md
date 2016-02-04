@@ -58,16 +58,11 @@ Microsoft provides the following utilities to work with Azure Blob storage:
 
 The Azure CLI is a cross-platform tool that allows you to manage Azure services. Use the following steps to upload data to Azure Blob storage:
 
-<!-- deleted by customization
 1. [Install and configure the Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install).
--->
-<!-- keep by customization: begin -->
-1. [Install and configure the Azure CLI ](/documentation/articles/xplat-cli-install).
-<!-- keep by customization: end -->
 
 2. Open a command prompt, bash, or other shell, and use the following to authenticate to your Azure subscription.
 
-		azure login
+		azure login <!-- keep by customization: begin --> -e AzureChinaCloud <!-- keep by customization: end -->
 
 	When prompted, enter the user name and password for your subscription.
 
@@ -97,9 +92,9 @@ The Azure CLI is a cross-platform tool that allows you to manage Azure services.
 
 > [AZURE.NOTE] If you will always be working with the same storage account, you can set the following environment variables instead of specifying the account and key for every command:
 >
-> * <!-- deleted by customization **AZURE\_STORAGE\_ACCOUNT** --><!-- keep by customization: begin --> **AZURE_STORAGE_ACCOUNT** <!-- keep by customization: end -->: The storage account name
+> * **AZURE\_STORAGE\_ACCOUNT**: The storage account name
 >
-> * <!-- deleted by customization **AZURE\_STORAGE\_ACCESS\_KEY** --><!-- keep by customization: begin --> **AZURE_STORAGE_ACCESS_KEY** <!-- keep by customization: end -->: The storage account key
+> * **AZURE\_STORAGE\_ACCESS\_KEY**: The storage account key
 
 ###<a id="powershell"></a>Azure PowerShell
 
@@ -263,21 +258,55 @@ Now that you understand how to get data into HDInsight, read the following artic
 [azure-powershell]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
 
 [azure-storage-client-library]: /documentation/articles/storage-dotnet-how-to-use-blobs/
+<!-- deleted by customization
+[azure-create-storage-account]: ../storage-create-storage-account.md
+[azure-azcopy-download]: ../storage-use-azcopy.md
+[azure-azcopy]: ../storage-use-azcopy.md
+
+[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
+
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
+[hdinsight-get-started]: ../hdinsight-get-started.md
+
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+
+[sqldatabase-create-configure]: ../sql-database-create-configure.md
+-->
+<!-- keep by customization: begin -->
 [azure-create-storage-account]: /documentation/articles/storage-create-storage-account
 [azure-azcopy-download]: /documentation/articles/storage-use-azcopy
 [azure-azcopy]: /documentation/articles/storage-use-azcopy
+
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[sqldatabase-create-configure]: /documentation/articles/sql-database-create-configure
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+
+[sqldatabase-create-configure]: /documentation/articles/sql-database-get-started
+<!-- keep by customization: end -->
+
 [apache-sqoop-guide]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
+<!-- deleted by customization
+[Powershell-install-configure]: ../powershell-install-configure.md
+
+[azurecli]: ../xplat-cli-install.md
+-->
+<!-- keep by customization: begin -->
 [Powershell-install-configure]: /documentation/articles/powershell-install-configure
+
 [azurecli]: /documentation/articles/xplat-cli-install
+<!-- keep by customization: end -->
+
+
 [image-azure-storage-explorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png
 [image-ase-addaccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png

@@ -25,7 +25,7 @@ The cmdlets in the following table are used to create and manage Automation conn
 
 |Cmdlet|Description|
 |:---|:---|
-|[Get-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921828.aspx)|Retrieves a connection. Includes a hashtable with the values of the connection’s fields.|
+|[Get-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921828.aspx)|Retrieves a connection. Includes a hashtable with the values of the connectionâs fields.|
 |[New-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921825.aspx)|Creates a new connection.|
 |[Remove-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921827.aspx)|Remove an existing connection.|
 |[Set-AzureAutomationConnectionFieldValue](http://msdn.microsoft.com/zh-cn/library/dn921826.aspx)|Sets the value of a particular field for an existing connection.|
@@ -38,7 +38,7 @@ The activities in the following table are used to access connections in a runboo
 |---|---|
 |Get-AutomationConnection|Gets a connection to use. Returns a hashtable with the properties of the connection.|
 
->[AZURE.NOTE] You should avoid using variables in the –Name parameter of **Get- AutomationConnection** since this can complicate discovering dependencies between runbooks or DSC configurations, and connection assets at design time.
+>[AZURE.NOTE] You should avoid using variables in the âName parameter of **Get- AutomationConnection** since this can complicate discovering dependencies between runbooks or DSC configurations, and connection assets at design time.
 
 ## Creating a New Connection
 
@@ -51,7 +51,6 @@ The activities in the following table are used to access connections in a runboo
 1. Complete the wizard and click the checkbox to save the new connection.
 
 
-<!-- deleted by customization
 ### To create a new connection with the Azure preview portal
 
 1. From your automation account, click the **Assets** part to open the **Assets** blade.
@@ -60,7 +59,6 @@ The activities in the following table are used to access connections in a runboo
 2. In the **Type** dropdown, select the type of connection you want to create.  The form will present the properties for that particular type.
 1. Complete the form and click **Create** to save the new connection.
 
--->
 
 
 ### To create a new connection with Windows PowerShell
@@ -95,7 +93,6 @@ The following sample commands show how to use the Twilio connection in the previ
 	#Send text with connection properties.
 	Send-TwilioSMS -AccountSid $Con.AccountSid -AuthToken $Con.AuthToken $Con -From $NumFrom -To $NumTo -Body $Body
 
-<!-- deleted by customization
 ### Graphical runbook samples
 
 You add a **Get-AutomationConnection** activity to a graphical runbook by right-clicking on the connection in the Library pane of the graphical editor and selecting **Add to canvas**.
@@ -117,5 +114,4 @@ The image below shows the same example as above but uses the **SpecifyConnection
 ## Related articles
 
 - [Links in graphical authoring](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
--->
  

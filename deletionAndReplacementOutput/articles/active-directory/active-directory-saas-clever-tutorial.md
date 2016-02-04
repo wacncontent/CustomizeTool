@@ -8,5 +8,5 @@ replaced by:
 
 		|clever.student.credentials.district_username|User.userprincipalname|
 
-reason: ()
+reason: (escape policy)
 

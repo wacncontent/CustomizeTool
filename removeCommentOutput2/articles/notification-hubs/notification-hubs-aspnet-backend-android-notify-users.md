@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Notification Hubs Notify Users"
+	pageTitle="Azure Notification Hubs Notify Users for Android with .NET backend"
 	description="Learn how to send push notifications to users in Azure. Code samples written in Java for Android"
 	documentationCenter="android"
 	services="notification-hubs"
@@ -9,20 +9,19 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="09/24/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
-#Azure Notification Hubs Notify Users
+#Azure Notification Hubs Notify Users 
 
 
 [AZURE.INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
 ##Overview
 
-Push notification support in Azure enables you to access an easy-to-use, multiplatform, and scaled-out push infrastructure, which greatly simplifies the implementation of push notifications for both consumer and enterprise applications for mobile platforms. This tutorial shows you how to use Azure Notification Hubs to send push notifications to a specific app user on a specific device. An ASP.NET WebAPI backend is used to authenticate clients and to generate notifications, as shown in the guidance topic [Registering from your app backend](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx). This tutorial builds on the notification hub that you created in the [Getting Started with Notification Hubs (Android)](/documentation/articles/notification-hubs-android-get-started) tutorial.
+Push notification support in Azure enables you to access an easy-to-use, multiplatform, and scaled-out push infrastructure, which greatly simplifies the implementation of push notifications for both consumer and enterprise applications for mobile platforms. This tutorial shows you how to use Azure Notification Hubs to send push notifications to a specific app user on a specific device. An ASP.NET WebAPI backend is used to authenticate clients and to generate notifications, as shown in the guidance topic [Registering from your app backend](/documentation/articles/notification-hubs-registration-management#registration-management-from-a-backend). This tutorial builds on the notification hub that you created in the [Getting Started with Notification Hubs (Android)](/documentation/articles/notification-hubs-android-get-started) tutorial.
 
 > [AZURE.NOTE] This tutorial assumes that you have created and configured your notification hub as described in [Getting Started with Notification Hubs (Android)](/documentation/articles/notification-hubs-android-get-started).
-> If you are using Mobile Services as your backend service, see the [Mobile Services version](/documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users) of this tutorial.
 
 [AZURE.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 
@@ -171,16 +170,16 @@ The next step is to create the Android application.
                 this.settings = context.getSharedPreferences(PREFS_NAME, 0);
                 httpClient =  new DefaultHttpClient();
                 Backend_Endpoint = backendEnpoint + "/api/register";
-            }
-
+			}
+		
             public String getAuthorizationHeader() {
-                return authorizationHeader;
-            }
-
+				return authorizationHeader;
+			}
+			
             public void setAuthorizationHeader(String authorizationHeader) {
                 this.authorizationHeader = authorizationHeader;
-            }
-
+			}
+			
             public void register(String handle, Set<String> tags) throws ClientProtocolException, IOException, JSONException {
                 String registrationId = retrieveRegistrationIdOrRequestNewOne(handle);
 
@@ -200,12 +199,12 @@ The next step is to create the Android application.
                     if (statusCode != HttpStatus.SC_OK) {
                         Log.e("RegisterClient", "Error upserting registration: " + statusCode);
                         throw new RuntimeException("Error upserting registration");
-                    }
-                } else {
+					}
+				} else {
                     Log.e("RegisterClient", "Error upserting registration: " + statusCode);
                     throw new RuntimeException("Error upserting registration");
-                }
-            }
+				}
+			}
 
             private int upsertRegistration(String registrationId, JSONObject deviceInfo)
                     throws UnsupportedEncodingException, IOException,

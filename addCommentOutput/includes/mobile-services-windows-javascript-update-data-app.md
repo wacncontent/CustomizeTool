@@ -43,4 +43,4 @@
 
    	This sends an item update to the mobile service.
 
-Now that the app has been updated to use Mobile Services for backend storage, it's time to test the app against Mobile Services.
+Now that the app has been updated to use Mobile Services for backend storage, it's time to test the app against Mobile Services.

@@ -9,16 +9,19 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
+	ms.date="12/06/2015"
 	wacn.date=""/>
 
 # Add Offline Data Sync to your Android Mobile Services app
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
 
 ## Summary
 
-Mobile apps can lose network connectivity when moving to an area without service, or due to network issues. For example, a construction industry app used at a remote construction site might need to enter scheduling data that is synced up to Azure later. With Azure Mobile Services offline sync, you can keep working when network connectivity is lost, which is essential to many mobile apps. With offline sync, you work with a local copy of your Azure SQL Server table, and periodically re-sync the two.
+Mobile apps can lose network connectivity when moving to an area without service, or due to network issues. For example, a construction industry app used at a remote construction site might need to enter scheduling data that is synced up to Azure later. With Azure Mobile Services offline sync, you can keep working when network connectivity is lost, which is essential to many mobile apps. With offline sync, you work with a local copy of your Azure SQL Server table, and periodically re-sync the two. 
 
 In this tutorial, you'll update the app from the [Mobile Services Quick Start tutorial] to enable offline sync, and then test the app by adding data offline,  syncing those items to the online database, and verifying the changes in the Azure Management Portal.
 
@@ -29,11 +32,12 @@ Whether you are offline or connected, conflicts can arise any time multiple chan
 
 [AZURE.INCLUDE [mobile-services-android-prerequisites](../includes/mobile-services-android-prerequisites.md)]
 
+
 ## Update the app to support offline sync
 
-With offline sync you read to and write from a *sync table* (using the *IMobileServiceSyncTable* interface), which is part of a **SQL Light** database on your device.
+With offline sync you read to and write from a *sync table* (using the *IMobileServiceSyncTable* interface), which is part of a **SQLite** database on your device.
 
-To push and pull changes between the device and Azure Mobile Services, you use a *synchronization context* (*MobileServiceClient.SyncContext*), which you initialize with the local database that you use to store data locally.
+To push and pull changes between the device and Azure Mobile Services, you use a *synchronization context* (*MobileServiceClient.SyncContext*), which you initialize with the local database that you use to store data locally. 
 
 1. Add permission to check for network connectivity by adding this code to the *AndroidManifest.xml* file:
 
@@ -43,16 +47,16 @@ To push and pull changes between the device and Azure Mobile Services, you use a
 2. Add the following **import** statements to *ToDoActivity.java*:
 
 		import java.util.Map;
-
+		
 		import android.widget.Toast;
+		
+		import com.microsoft.windowsazure.mobileservices.table.query.Query; 
+		import com.microsoft.windowsazure.mobileservices.table.sync.MobileServiceSyncContext; 
+		import com.microsoft.windowsazure.mobileservices.table.sync.MobileServiceSyncTable; 
+		import com.microsoft.windowsazure.mobileservices.table.sync.localstore.ColumnDataType; 
+		import com.microsoft.windowsazure.mobileservices.table.sync.localstore.SQLiteLocalStore; 
 
-		import com.microsoft.windowsazure.mobileservices.table.query.Query;
-		import com.microsoft.windowsazure.mobileservices.table.sync.MobileServiceSyncContext;
-		import com.microsoft.windowsazure.mobileservices.table.sync.MobileServiceSyncTable;
-		import com.microsoft.windowsazure.mobileservices.table.sync.localstore.ColumnDataType;
-		import com.microsoft.windowsazure.mobileservices.table.sync.localstore.SQLiteLocalStore;
-
-3. Near the top of the `ToDoActivity` class, change the declaration of the `mToDoTable` variable from a `MobileServiceTable<ToDoItem>` class to a `MobileServiceSyncTable<ToDoItem>` class.
+3. Near the top of the `ToDoActivity` class, change the declaration of the `mToDoTable` variable from a `MobileServiceTable<ToDoItem>` class to a `MobileServiceSyncTable<ToDoItem>` class. 
 
 		 private MobileServiceSyncTable<ToDoItem> mToDoTable;
 
@@ -104,7 +108,7 @@ To push and pull changes between the device and Azure Mobile Services, you use a
 		public void syncAsync(){
 			if (isNetworkAvailable()) {
 				new AsyncTask<Void, Void, Void>() {
-
+	
 					@Override
 					protected Void doInBackground(Void... params) {
 						try {
@@ -131,7 +135,7 @@ To push and pull changes between the device and Azure Mobile Services, you use a
 	This causes the device on startup to sync with the Azure table. Otherwise you would display the last offline contents of the local store.
 
 
-
+ 
 9. Update the code in the `refreshItemsFromTable` method to use this query (first line of code inside the `try` block):
 
 		final MobileServiceList<ToDoItem> result = mToDoTable.read(mPullQuery).get();
@@ -146,9 +150,9 @@ To push and pull changes between the device and Azure Mobile Services, you use a
 
 ## Test the app
 
-In this section, you will test the behavior with WiFi on, and then turn off WiFi to create an offline scenario.
+In this section, you will test the behavior with WiFi on, and then turn off WiFi to create an offline scenario. 
 
-When you add data items, they are held in the local SQL Light store, but not synced to the mobile service until you press the **Refresh** button. Other apps may have different requirements regarding when data needs to be synchronized, but for demo purposes this tutorial has the user explicitly request it.
+When you add data items, they are held in the local SQL Light store, but not synced to the mobile service until you press the **Refresh** button. Other apps may have different requirements regarding when data needs to be synchronized, but for demo purposes this tutorial has the user explicitly request it. 
 
 When you press that button, a new background task starts, and first pushes all the changes made to the local store, by using the synchronization context, and then pulls all changed data from Azure to the local table.
 
@@ -157,16 +161,16 @@ When you press that button, a new background task starts, and first pushes all t
 
 Lets test the following scenarios.
 
-1. Add some new items on your device;
-2. Verify the items don't show in the portal;
+1. Add some new items on your device; 
+2. Verify the items don't show in the portal; 
 3. next press **Refresh** and verify that they then show up.
 4. Change or add an item in the portal, then press **Refresh** and verify that the changes show up on your device.
 
 ### Offline testing
 
-<!-- Now if you run the app and tap the refresh button, you should see all the items from the server. At that point you should be able to turn off the networking from the device by placing it in *Airplane Mode*, and continue making changes – the app will work just fine. When it’s time to sync the changes to the server, turn the network back on, and tap the **Refresh** button again.
+<!-- Now if you run the app and tap the refresh button, you should see all the items from the server. At that point you should be able to turn off the networking from the device by placing it in *Airplane Mode*, and continue making changes - the app will work just fine. When it's time to sync the changes to the server, turn the network back on, and tap the **Refresh** button again.
 
-One thing which is important to point out: if there are pending changes in the local store, a pull operation will first push those changes to the server (so that if there are changes in the same row, the push operation will fail and the application has an opportunity to handle the conflicts appropriately). That means that the push call in the code above isn’t necessarily required, but I think it’s always a good practice to be explicit about what the code is doing.
+One thing which is important to point out: if there are pending changes in the local store, a pull operation will first push those changes to the server (so that if there are changes in the same row, the push operation will fail and the application has an opportunity to handle the conflicts appropriately). That means that the push call in the code above isn't necessarily required, but I think it's always a good practice to be explicit about what the code is doing.
 -->
 
 1. Place the device or simulator in *Airplane Mode*. This creates an offline scenario.
@@ -175,7 +179,7 @@ One thing which is important to point out: if there are pending changes in the l
 
 3. View the contents of the Azure *TodoItem* table. Verify that the new items have _not_ been synced to the server:
 
-   - For the JavaScript backend, go to the Management Portal, and click the Data tab to view the contents of the `TodoItem` table.
+   - For the JavaScript backend, go to the Azure Management Portal, and click the Data tab to view the contents of the `TodoItem` table.
    - For the .NET backend, view the table contents either with a SQL tool such as *SQL Server Management Studio*, or a REST client such as *Fiddler* or *Postman*.
 
 4. Turn on WiFi in the device or simulator. Next, press the **Refresh** button.
@@ -207,8 +211,7 @@ One thing which is important to point out: if there are pending changes in the l
 
 
 [Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
-[Get started with data]: /documentation/articles/mobile-services-android-get-started-data
-[Handling Conflicts with Offline Support for Mobile Services]: /documentation/articles/mobile-services-android-handling-conflicts-offline-data
+[Handling Conflicts with Offline Support for Mobile Services]:  /documentation/articles/mobile-services-android-handling-conflicts-offline-data
 [Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
 
 [Cloud Cover: Offline Sync in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri

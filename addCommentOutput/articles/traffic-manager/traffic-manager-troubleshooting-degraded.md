@@ -4,17 +4,17 @@
    services="traffic-manager"
    documentationCenter=""
    authors="kwill-MSFT"
-   manager="adinah"
+   manager="carmonm"
    editor="joaoma" />
 
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
-# Troubleshooting degraded status on Azure Traffic Manager
-This page will describe how to troubleshoot Azure Traffic Manager profile which is showing a degraded status, and provide some key points to understand about traffic manager probes.
+# Troubleshooting degraded state on Azure Traffic Manager
 
+This page will describe how to troubleshoot Azure Traffic Manager profile which is showing a degraded status, and provide some key points to understand about traffic manager probes.
 
 You have configured a Traffic Manager profile pointing to some of your .chinacloudapp.cn hosted services and after a few seconds you see the Status as Degraded.
 
@@ -31,9 +31,9 @@ If you go into the Endpoints tab of that profile you will see one or more of the
 
 - For HTTPs probes, certificate errors are ignored.
  
-- The actual content of the probe path doesn’t matter, as long as a 200 is returned.  A common technique if the actual website content doesn’t return a 200 (ie. if the ASP pages redirect to an ACS login page or some other CNAME URL) is to set the path to something like “/favicon.ico”.
+- The actual content of the probe path doesn't matter, as long as a 200 is returned.  A common technique if the actual website content doesn't return a 200 (ie. if the ASP pages redirect to an ACS login page or some other CNAME URL) is to set the path to something like “/favicon.ico”.
  
-- Best practice is to set the Probe path to something which has enough logic to determine if the site is up or down.  In the above example setting the path to “/favicon.ico” you are only testing if w3wp.exe is responding, but not if your website is healthy.  A better option would be to set a path to something such as “/Probe.aspx”, and within Probe.aspx include enough logic to determine if your site is healthy (ie. check perf counters to make sure you aren’t at 100% CPU or receiving a large number of failed requests, attempt to access resources such as the database or session state to make sure the application’s logic is working, etc).
+- Best practice is to set the Probe path to something which has enough logic to determine if the site is up or down.  In the above example setting the path to “/favicon.ico” you are only testing if w3wp.exe is responding, but not if your website is healthy.  A better option would be to set a path to something such as “/Probe.aspx”, and within Probe.aspx include enough logic to determine if your site is healthy (ie. check perf counters to make sure you aren't at 100% CPU or receiving a large number of failed requests, attempt to access resources such as the database or session state to make sure the application's logic is working, etc).
  
 - If all endpoints in a profile are degraded then Traffic Manager will treat all endpoints as healthy and route traffic to all endpoints.  This is to ensure that any potential problem with the probing mechanism which results in incorrectly failed probes will not result in a complete outage of your service.
 
@@ -41,7 +41,7 @@ If you go into the Endpoints tab of that profile you will see one or more of the
 
 ## Troubleshooting
 
-One tool for troubleshooting Traffic Manager probe failures is wget.  You can get the binaries and dependencies package from [wget](http://gnuwin32.sourceforge.net/packages/wget.htm).  Note that you can use other programs such as Fiddler or curl instead of wget – basically you just need something that will show you the raw HTTP response.
+One tool for troubleshooting Traffic Manager probe failures is wget.  You can get the binaries and dependencies package from [wget](http://gnuwin32.sourceforge.net/packages/wget.htm).  Note that you can use other programs such as Fiddler or curl instead of wget - basically you just need something that will show you the raw HTTP response.
 
 Once you have wget installed, go to a command prompt and run wget against the URL + Probe port & path that is configured in Traffic Manager.  For this example it would be http://watestsdp2008r2.chinacloudapp.cn:80/Probe.
 

@@ -7,9 +7,9 @@
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags
+<tags 
 	ms.service="sql-database"
-	ms.date="11/09/2015"
+	ms.date="11/09/2015" 
 	wacn.date=""/>
 
 

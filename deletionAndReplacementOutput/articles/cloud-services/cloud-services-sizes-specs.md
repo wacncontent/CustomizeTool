@@ -8,7 +8,7 @@ deleted:
 		        Jan'16: US South Central, APAC East, APAC Southeast, Japan East, China East,
 		                Australia East, Australia Southeast, Brazil South
 
-reason: ()
+reason: (region diff)
 
 
 

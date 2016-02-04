@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
   pageTitle="Create a MongoDB cluster on Ubuntu | Windows Azure"
   description="Create a MongoDB cluster on Ubuntu using a Azure Resource Manager template via Azure PowerShell or the Azure CLI"
@@ -15,9 +17,12 @@
 
 # Create a MongoDB cluster on Ubuntu using a Azure Resource Manager template
 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
+
 MongoDB is an open-source document database that provides high performance, high availability, and automatic scaling. MongoDB can be installed as a stand-alone database or within a cluster, leveraging built-in replication capabilities. In some cases, you can use replication to increase read capacity. Clients have the ability to send read and write operations to different servers. You can also maintain copies in different data centers to increase the locality and availability of data for distributed applications. With MongoDB, replication also provides redundancy and increases data availability. With multiple copies of data on different database servers, replication protects a database from the loss of a single server. Replication also allows you to recover from hardware failure and service interruptions. With additional copies of the data, you can dedicate one to disaster recovery, reporting, or backup.
 
-In addition to the various flavors that were already available in the Azure Marketplace, now you can also easily deploy a new MongoDB cluster on Ubuntu VMs using a Azure Resource Manager template deployed through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli-install).
+In addition to the various flavors that were already available in the Azure gallery, now you can also easily deploy a new MongoDB cluster on Ubuntu VMs using a Azure Resource Manager template deployed through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli-install).
 
 Newly deployed clusters based on this template will have the topology described in the following diagram, although other topologies can be easily achieved by customizing the template presented in this article.
 
@@ -29,7 +34,7 @@ Once the deployment is complete you can access the Jumpbox using the configured 
 
 Before diving into more details related to the Azure Resource Manager and the template we will use for this deployment, make sure you have Azure PowerShell or the Azure CLI configured correctly.
 
-[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell.md)]
+[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/powershell-preview-inline-include.md)]
 
 [AZURE.INCLUDE [xplat-getting-set-up-arm](../includes/xplat-getting-set-up-arm.md)]
 
@@ -104,9 +109,9 @@ When completed, look for the mongodb-high-availability folder in your C:\Azure\T
 
 ### Step 2: (optional) Understand the template parameters
 
-When you deploy non-trivial solutions like a MongoDB cluster, you must specify a set of configuration parameters to deal with a number of required settings. By declaring these parameters in the template definition, it’s possible to specify values during deployment through an external file or in the command line.
+When you deploy non-trivial solutions like a MongoDB cluster, you must specify a set of configuration parameters to deal with a number of required settings. By declaring these parameters in the template definition, it's possible to specify values during deployment through an external file or in the command line.
 
-In the parameters section at the top of the azuredeploy.json file, you’ll find the set of parameters that are required by the template to configure a MongoDB cluster. The following example shows the parameters section from this template's azuredeploy.json file.
+In the parameters section at the top of the azuredeploy.json file, you'll find the set of parameters that are required by the template to configure a MongoDB cluster. The following example shows the parameters section from this template's azuredeploy.json file.
 
     "parameters": {
       "adminUsername": {
@@ -292,7 +297,7 @@ Fill in an Azure deployment name, resource group name, Azure location, and the f
     $templateFile= $folderName + "\azuredeploy.json"
     $templateParameterFile= $folderName + "\azuredeploy-parameters.json"
 
-    New-AzureResourceGroup –Name $RGName –Location $locName
+    New-AzureResourceGroup -Name $RGName -Location $locName
 
     New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateParameterFile $templateParameterFile -TemplateFile $templateFile
 
@@ -306,12 +311,12 @@ To do that, go to the [Azure Management Portal](https://manage.windowsazure.cn) 
 
 - Click **Browse** on the left navigation bar, scroll down and then click **Resource Groups**.
 - After clicking the resource group that you just created, it will bring up the Resource group blade.
-- By clicking the "Events” bar graph in the "Monitoring” part of the Resource group blade, you can see the events for your deployment.
+- By clicking the "Events" bar graph in the "Monitoring" part of the Resource group blade, you can see the events for your deployment.
 Clicking an individual event lets you drill further down into the details of each individual operation made on behalf of the template.
 
 After your tests, if you need to remove this resource group and all of its resources (the storage account, virtual machine, and virtual network), use the following command.
 
-    Remove-AzureResourceGroup –Name "<resource group name>" -Force
+    Remove-AzureResourceGroup -Name "<resource group name>" -Force
 
 ### Step 3-b: Deploy a MongoDB cluster with a template using the Azure CLI
 
@@ -329,7 +334,7 @@ You can check the status of individual resources deployments with the following 
 
 ## A tour of the MongoDB template structure and file organization
 
-To design a robust and reusable Azure Resource Manager template, additional thinking is needed to organize the series of complex and interrelated tasks required during the deployment of a complex solution like MongoDB. Leveraging Azure Resource Manager *template linking* and *resource looping* in addition to script execution through related extensions, it’s possible to implement a modular approach that can be reused with virtually any complex template-based deployment.
+To design a robust and reusable Azure Resource Manager template, additional thinking is needed to organize the series of complex and interrelated tasks required during the deployment of a complex solution like MongoDB. Leveraging Azure Resource Manager *template linking* and *resource looping* in addition to script execution through related extensions, it's possible to implement a modular approach that can be reused with virtually any complex template-based deployment.
 
 The following diagram describes the relationships between all the files downloaded from GitHub for this deployment.
 
@@ -533,7 +538,7 @@ In this second fragment, the "vmScripts" variable is assigned to a JSON array wh
       "[concat(variables('sharedScriptUrl'), 'vm-disk-utils-0.1.sh')]"
     ],
 
-One important concept in this template is the way different “t-shirt sizes” for MongoDB clusters are defined. Looking at one of those “tshirtSizeXXXX” variables, you can notice that it describes important characteristics of how a cluster is deployed. In the following example, let’s take the Medium size as an example.
+One important concept in this template is the way different "t-shirt sizes" for MongoDB clusters are defined. Looking at one of those "tshirtSizeXXXX" variables, you can notice that it describes important characteristics of how a cluster is deployed. In the following example, let's take the Medium size as an example.
 
     "tshirtSizeMedium": {
       "vmSizeMember": "Standard_D2",
@@ -546,11 +551,11 @@ One important concept in this template is the way different “t-shirt sizes” 
       "dataDiskSize": 250
     },
 
-A “Medium” MongoDB cluster will use D2 as VM Size for the three MongoDB nodes hosting data, plus a fourth A1 VM that will be used as arbiter for replication purposes. The corresponding sub-template invoked to deploy data nodes will be `member-resources-D2.json` and data files (250 GB each) will be stored in two storage accounts. This variables will be used within the resources section to orchestrate node deployments and other tasks.
+A "Medium" MongoDB cluster will use D2 as VM Size for the three MongoDB nodes hosting data, plus a fourth A1 VM that will be used as arbiter for replication purposes. The corresponding sub-template invoked to deploy data nodes will be `member-resources-D2.json` and data files (250 GB each) will be stored in two storage accounts. This variables will be used within the resources section to orchestrate node deployments and other tasks.
 
 ### Resources section
 
-The resources section is where most of the action is happening. Looking carefully inside this section, you can immediately identify two different cases: the first one is an element defined of type `Microsoft.Resources/deployments` that basically means the invocation of a nested deployment within the main one. Through the "templateLink" element (and related version property), it’s possible to specify a linked template file that will be invoked passing a set of parameters as input, as shown in the next example.
+The resources section is where most of the action is happening. Looking carefully inside this section, you can immediately identify two different cases: the first one is an element defined of type `Microsoft.Resources/deployments` that basically means the invocation of a nested deployment within the main one. Through the "templateLink" element (and related version property), it's possible to specify a linked template file that will be invoked passing a set of parameters as input, as shown in the next example.
 
     {
       "name": "shared-resources",
@@ -580,9 +585,9 @@ From the previous example, it is clear how azuredeploy.json in this scenario has
 
 In particular, the following linked templates will be used for this deployment:
 
--	**Shared-resource.json**: Contains the definition of all resources that will be shared across the deployment. Examples are storage accounts used to store VM’s OS disks and virtual networks.
+-	**Shared-resource.json**: Contains the definition of all resources that will be shared across the deployment. Examples are storage accounts used to store VM's OS disks and virtual networks.
 -	**Jumpbox-resources.json**: When enabled, is responsible for deploying all resources related to the Jumpbox VM, the one with a public IP address that can be used to access MongoDB cluster from public network.
--	**Arbiter-resources.json**: When enabled, this template deploys an arbiter member in the MongoDB cluster. An arbiter doesn’t contain data, but is used when a replica set contains an even number of nodes to manage primary elections.
+-	**Arbiter-resources.json**: When enabled, this template deploys an arbiter member in the MongoDB cluster. An arbiter doesn't contain data, but is used when a replica set contains an even number of nodes to manage primary elections.
 -	**Member-resources-Dx.json**: Specifies resource templates that are effectively deploying MongoDB nodes. A specific file will be used based on the selected t-shirt size definition, where each file will only differ by the number of attached disks for each node.
 -	**Mongodb-ubuntu-install.sh**: A bash script file invoked by CustomScriptForLinux extension on every node in the cluster. Responsible for mounting and formatting data disks, and installing MongoDB bits on the node.
 
@@ -592,7 +597,7 @@ DEPLOY DATA MEMBERS (in parallel) => DEPLOY LAST DATA MEMBER => (optional) DEPLO
 
 In this sequence, deploying multiple data nodes will happen in parallel, with the exception of the last node. This is where the cluster will be formed and new replica set will be deployed, so all previous nodes will need to be up and running before that moment in time. Last step will be to deploy the optional Arbiter node (only for those t-shirt sizes where this is required).
 
-Looking again inside our main template (azuredeploy.json), let’s see how this logic is implemented, starting from all data members in the following example.
+Looking again inside our main template (azuredeploy.json), let's see how this logic is implemented, starting from all data members in the following example.
 
     {
       "type": "Microsoft.Resources/deployments",
@@ -644,11 +649,11 @@ Looking again inside our main template (azuredeploy.json), let’s see how this 
 
 One important concept to highlight is how it is possible to deploy multiple copies of a single resource type, and for each instance can set unique values for required settings. This concept is known as *Resource Looping*.
 
-In the previous example, a parameter (number of nodes to deploy in the cluster) will be used to set a variable (“numberOfMembers”) which is then passed to the **“copy”** element to trigger a number (loop) of child deployments, each one will result in the instantiation of the template for each member in the cluster. To be able to set all settings where unique values between instances are required, the **copyindex()** function can be used to obtain a numeric value indicating the current index in that particular resource loop creation.
+In the previous example, a parameter (number of nodes to deploy in the cluster) will be used to set a variable ("numberOfMembers") which is then passed to the **"copy"** element to trigger a number (loop) of child deployments, each one will result in the instantiation of the template for each member in the cluster. To be able to set all settings where unique values between instances are required, the **copyindex()** function can be used to obtain a numeric value indicating the current index in that particular resource loop creation.
 
 Another important concept in resource creation is the ability to specify dependencies and precedencies between resources, as you can notice in the **dependsOn** JSON array. In this particular template, deploying each node depends on the previous successful deployment of **shared resources**.
 
-Attached disks are formatted as part of the node preparation activities triggered by the execution of the mongodb-ubuntu-install.sh script file. Inside that file, in fact you’ll find an instance of the following call.
+Attached disks are formatted as part of the node preparation activities triggered by the execution of the mongodb-ubuntu-install.sh script file. Inside that file, in fact you'll find an instance of the following call.
 
     bash ./vm-disk-utils-0.1.sh -b $DATA_DISKS -s
 

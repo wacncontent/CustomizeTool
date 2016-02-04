@@ -8,7 +8,7 @@ manager="timlt"
 editor=""/>
 <tags
 	ms.service="cloud-services"
-	ms.date="08/18/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Enable communication for role instances in azure

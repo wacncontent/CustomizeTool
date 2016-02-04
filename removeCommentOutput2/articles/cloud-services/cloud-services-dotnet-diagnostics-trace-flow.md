@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="10/17/2015"
+	ms.date="12/15/2015"
 	wacn.date=""/>
 
 
@@ -57,6 +57,8 @@ Note that if you use the templates that are provided by Visual Studio, the confi
 		</trace>
 	</system.diagnostics>
 	```
+	>[AZURE.IMPORTANT] Make sure you have a project reference to the Microsoft.WindowsAzure.Diagnostics assembly. Update the version number in the xml above to match the version of the referenced Microsoft.WindowsAzure.Diagnostics assembly. 
+	
 3. Save the config file.
 
 For more information about listeners, see [Trace Listeners](https://msdn.microsoft.com/zh-cn/library/4y5y10s7.aspx).

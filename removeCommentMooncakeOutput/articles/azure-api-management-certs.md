@@ -7,10 +7,10 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags
-	ms.service="na"
+<tags 
+	ms.service="na" 
 	ms.date="10/01/2015"
-	wacn.date=""/>
+	wa.date=""/>
 
 
 # Upload an Azure Management API Management Certificate
@@ -21,7 +21,7 @@ Management certificates allow you to authenticate with the Service Management AP
 
 More information about Azure certificates (including creating a self-signed certificate) is [available](/documentation/articles/cloud-services-certs-create#what-are-management-certificates) to you if you need it.
 
-You can also use [Azure Active Directory](/documentation/services/identity/) to authenticate client-code for automation purposes.
+You can also use [Azure Active Directory](/home/features/identity/) to authenticate client-code for automation purposes.
 
 ## Upload a management certificate
 
@@ -46,4 +46,4 @@ Once you have a management certficate created, (.cer file with only the public k
 
 ## Next steps
 
-Now that you have a management certficate associated with a subscription, you can (after you have installed the matching certificate locally) programatically connect to the [Service Management REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt420159.aspx) and automate the various Azure resources that are also associated with that subscription. 
+Now that you have a management certficate associated with a subscription, you can (after you have installed the matching certificate locally) programatically connect to the [Service Management REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) and automate the various Azure resources that are also associated with that subscription. 

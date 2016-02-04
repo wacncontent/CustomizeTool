@@ -13,13 +13,13 @@
 
 # Certificate assets in Azure Automation
 
-Certificates can be stored securely in Azure Automation so they can be accessed by runbooks or DSC configurations using the **Get-AutomationCertificate** activity. This allows you to create runbooks and DSC configurations that use certificates for authentication or adds them to Azure or third party resources.
+Certificates can be stored securely in Azure Automation so they can be accessed by runbooks using the **Get-AutomationCertificate** activity. This allows you to create runbooks that use certificates for authentication or adds them to Azure or third party resources.
 
 >[AZURE.NOTE] Secure assets in Azure Automation include credentials, certificates, connections, and encrypted variables. These assets are encrypted and stored in the Azure Automation using a unique key that is generated for each automation account. This key is encrypted by a master certificate and stored in Azure Automation. Before storing a secure asset, the key for the automation account is decrypted using the master certificate and then used to encrypt the asset.
 
 ## Windows PowerShell Cmdlets
 
-The cmdlets in the following table are used to create and manage automation certificate assets with Windows PowerShell. They ship as part of the [Azure PowerShell module](/documentation/articles/powershell-install-configure) which is available for use in Automation runbooks and DSC configurations.
+The cmdlets in the following table are used to create and manage automation certificate assets with Windows PowerShell. They ship as part of the [Azure PowerShell module](/documentation/articles/powershell-install-configure) which is available for use in Automation runbooks .
 
 |Cmdlets|Description|
 |:---|:---|
@@ -30,17 +30,17 @@ The cmdlets in the following table are used to create and manage automation cert
 
 ## Activities to access certificates
 
-The activities in the following table are used to access certificates in a runbook or DSC configuration.
+The activities in the following table are used to access certificates in a runbook.
 
 |Activities|Description|
 |:---|:---|
-|Get-AutomationCertificate|Gets a certificate to use in a runbook or DSC configuration.|
+|Get-AutomationCertificate|Gets a certificate to use in a runbook.|
 
->[AZURE.NOTE] You should avoid using variables in the –Name parameter of GetAutomationCertificate since this can complicate discovering dependencies between runbooks or DSC configurations, and certificate assets at design time.
+>[AZURE.NOTE] You should avoid using variables in the -Name parameter of GetAutomationCertificate since this can complicate discovering dependencies between runbooks  and certificate assets at design time.
 
 ## Creating a new certificate
 
-When you create a new certificate, you upload a cer or pfx file to Azure Automation. If you mark the certificate as exportable, then you can transfer it out of the Azure Automation certificate store. If it is not exportable, then it can only be used for signing within the runbook or DSC configuration.
+When you create a new certificate, you upload a cer or pfx file to Azure Automation. If you mark the certificate as exportable, then you can transfer it out of the Azure Automation certificate store. If it is not exportable, then it can only be used for signing within the runbook.
 
 ### To create a new certificate with the Azure Management Portal
 
@@ -53,8 +53,6 @@ When you create a new certificate, you upload a cer or pfx file to Azure Automat
 1. Click the check mark to upload the certificate file and save the new certificate asset.
 
 
-
-
 ### To create a new certificate with Windows PowerShell
 
 The following sample commands show how to create a new automation certificate and marks it exportable. This imports an existing pfx file.
@@ -63,7 +61,7 @@ The following sample commands show how to create a new automation certificate an
 	$certPath = '.\MyCert.pfx'
 	$certPwd = ConvertTo-SecureString -String 'P@$$w0rd' -AsPlainText -Force
 	
-	New-AzureAutomationCertificate -AutomationAccountName "MyAutomationAccount" -Name $certName -Path $certPath –Password $certPwd -Exportable
+	New-AzureAutomationCertificate -AutomationAccountName "MyAutomationAccount" -Name $certName -Path $certPath -Password $certPwd -Exportable
 
 ## Using a certificate
 
@@ -75,6 +73,6 @@ The following sample code shows how to add a certificate to a cloud service in a
 
 	$serviceName = 'MyCloudService'
 	$cert = Get-AutomationCertificate -Name 'MyCertificate'
-	$certPwd = Get-AutomationVariable –Name 'MyCertPassword'
+	$certPwd = Get-AutomationVariable -Name 'MyCertPassword'
 	Add-AzureCertificate -ServiceName $serviceName -CertToDeploy $cert
 

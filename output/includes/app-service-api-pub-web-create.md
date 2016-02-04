@@ -27,6 +27,6 @@
 
 6. Click **OK** on the confirmation dialog. 
  
-	The provisioning process creates the resource group and API App in your Azure subscription. Visual Studio shows the progress in the **Azure Websites Activity** window. 
+	The provisioning process creates the resource group and API App in your Azure subscription. Visual Studio shows the progress in the **Azure Activity** window. 
 
-	![Status notification via the Azure Websites Activity window](./media/app-service-api-pub-web-create/26-provisioning-success-v3.png)
+	![Status notification via the Azure Activity window](./media/app-service-api-pub-web-create/26-provisioning-success-v3.png)

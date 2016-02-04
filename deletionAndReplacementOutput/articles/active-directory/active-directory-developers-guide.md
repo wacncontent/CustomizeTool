@@ -19,5 +19,5 @@ deleted:
 		- [Azure Identity 102](http://azure.microsoft.com/documentation/videos/azure-identity-creating-active-directory/)
 		- [Azure Identity 103](http://azure.microsoft.com/documentation/videos/azure-identity-application-to-authenticate/)
 
-reason: ()
+reason: (video)
 

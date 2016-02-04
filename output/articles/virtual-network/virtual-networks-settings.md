@@ -4,11 +4,11 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/02/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # How to manage Virtual Network (VNet) Properties

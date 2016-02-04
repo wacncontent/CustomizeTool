@@ -15,36 +15,31 @@
 
 # About disks and VHDs for Azure virtual machines
 
-<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers learning about resources created with both the Resource Manager deployment model and the classic deployment model.
-<!-- keep by customization: end -->
 
 
-Just like any other computer, virtual machines in Azure use disks as a place to store an operating system, applications, and data. All Azure virtual machines have at least two disks – an operating system disk and a temporary disk. The operating system disk is created from an image, and both the operating system disk and the image are actually virtual hard disks (VHDs) stored in an Azure storage account. Virtual machines also can have one or more data disks, that are also stored as VHDs.
+Just like any other computer, virtual machines in Azure use disks as a place to store an operating system, applications, and data. All Azure virtual machines have at least two disks - an operating system disk and a temporary disk. The operating system disk is created from an image, and both the operating system disk and the image are actually virtual hard disks (VHDs) stored in an Azure storage account. Virtual machines also can have one or more data disks, that are also stored as VHDs.
 
 ## Operating system disk
 
-Every virtual machine has one attached operating system disk. It’s registered as a SATA drive and labeled as the C: drive. This disk has a maximum capacity of 1023 gigabytes (GB). When Azure creates an operating system disk, three copies of the disk are created for high durability. Additionally, if you configure the virtual machine for geo-replication, your VHD is also replicated to different sites more than 400 miles apart.
+Every virtual machine has one attached operating system disk. It's registered as a SATA drive and labeled as the C: drive. This disk has a maximum capacity of 1023 gigabytes (GB). When Azure creates an operating system disk, three copies of the disk are created for high durability. Additionally, if you configure the virtual machine for geo-replication, your VHD is also replicated to different sites more than 400 miles apart.
 
 ##Temporary disk
 
 The temporary disk is automatically created for you. On Windows virtual machines, this disk is labeled as the D: drive. On Linux virtual machines, the disk is typically /dev/sdb and is formatted and mounted to /mnt/resource by the Azure Linux Agent.
 
->[AZURE.WARNING] Don’t store data on the temporary disk. It provides temporary storage for applications and processes and is intended to only store data such as page or swap files. To remap this disk for a Windows virtual machine, see [Change the drive letter of the Windows temporary disk](/documentation/articles/virtual-machines-windows-change-drive-letter).
+>[AZURE.WARNING] Don't store data on the temporary disk. It provides temporary storage for applications and processes and is intended to only store data such as page or swap files. To remap this disk for a Windows virtual machine, see [Change the drive letter of the Windows temporary disk](/documentation/articles/virtual-machines-windows-change-drive-letter).
 
 ## Data disk
 
-A data disk is a VHD that’s attached to a virtual machine to store application data, or other data you need to keep. Data disks are registered as SCSI drives and are labeled with a letter that you choose.  Each data disk has a maximum capacity of 1023 GB. The size of the virtual machine determines how many data disks you can attach to it and the type of storage you can use to host the disks.
+A data disk is a VHD that's attached to a virtual machine to store application data, or other data you need to keep. Data disks are registered as SCSI drives and are labeled with a letter that you choose.  Each data disk has a maximum capacity of 1023 GB. The size of the virtual machine determines how many data disks you can attach to it and the type of storage you can use to host the disks.
 
-	For more details about virtual machines capacities, see [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs).
+>[AZURE.NOTE] For more details about virtual machines capacities, see [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs).
 
 Azure creates an operating system disk when you create a virtual machine from an image. If you use an image that includes data disks, Azure also creates the data disks when it creates the virtual machine. (You can use an image from Azure or a partner, or one you provide.) Otherwise, you add data disks after you create the virtual machine.
 
-You can add data disks to a virtual machine at any time, by ‘attaching’ the disk to the virtual machine. You can use a VHD that you’ve uploaded or copied to your storage account, or one that Azure creates for you. Attaching a data disk associates the VHD file from your storage account with the virtual machine, by placing a ‘lease’ on the VHD so it can’t be deleted from storage while it’s attached to a virtual machine.
+You can add data disks to a virtual machine at any time, by 'attaching' the disk to the virtual machine. You can use a VHD that you've uploaded or copied to your storage account, or one that Azure creates for you. Attaching a data disk associates the VHD file from your storage account with the virtual machine, by placing a 'lease' on the VHD so it can't be deleted from storage while it's attached to a virtual machine.
 
 ## About VHDs
 
@@ -54,9 +49,9 @@ Outside of Azure, virtual hard disks can use either a VHD or a VHDX format. They
 
 All .vhd files in Azure that you want to use as a source to create disks or images are read-only. When you create a disk or image, Azure makes copies of the .vhd files. These copies can be read-only or read-and-write, depending on how you use the VHD.
 
- When you create a virtual machine from an image, Azure creates a disk for the virtual machine that is a copy of the source .vhd file. To protect against accidental deletion, Azure places a lease on any source .vhd file that’s used to create an image, an operating system disk, or a data disk.
+ When you create a virtual machine from an image, Azure creates a disk for the virtual machine that is a copy of the source .vhd file. To protect against accidental deletion, Azure places a lease on any source .vhd file that's used to create an image, an operating system disk, or a data disk.
 
-Before you can delete a source .vhd file, you’ll need to remove the lease by deleting the disk or image. To delete a .vhd file that is being used by a virtual machine as an operating system disk, you can delete the virtual machine, the operating system disk, and the source .vhd file all at once by deleting the virtual machine and deleting all associated disks. However, deleting a .vhd file that’s a source for a data disk requires several steps in a set order -- detach the disk from the virtual machine, delete the disk, and then delete the .vhd file.
+Before you can delete a source .vhd file, you'll need to remove the lease by deleting the disk or image. To delete a .vhd file that is being used by a virtual machine as an operating system disk, you can delete the virtual machine, the operating system disk, and the source .vhd file all at once by deleting the virtual machine and deleting all associated disks. However, deleting a .vhd file that's a source for a data disk requires several steps in a set order -- detach the disk from the virtual machine, delete the disk, and then delete the .vhd file.
 
 >[AZURE.WARNING] If you delete a source .vhd file from storage, or delete your storage account, Microsoft can't recover that data for you.
 

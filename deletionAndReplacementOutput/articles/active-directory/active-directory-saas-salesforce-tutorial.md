@@ -14,5 +14,5 @@ deleted:
 		
 		> [AZURE.VIDEO integrating-salesforce-with-azure-ad-how-to-automate-user-provisioning]
 
-reason: ()
+reason: (video)
 

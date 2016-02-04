@@ -7,13 +7,13 @@
    manager="douge"
    editor="tglee" />
 <tags
-	ms.service="multiple"
-	ms.date="09/08/2015"
-	wacn.date=""/>
+   ms.service="multiple"
+   ms.date="09/08/2015"
+   wacn.date="" />
 
 # Optimizing Your Azure Code
 
-When you’re programming apps that use Windows Azure, there are some coding practices you should follow to help avoid problems with app scalability, behavior and performance in a cloud environment. Microsoft provides an Azure Code Analysis tool that recognizes and identifies several of these commonly-encountered issues and helps you resolve them. You can download the tool in Visual Studio via NuGet.
+When you're programming apps that use Windows Azure, there are some coding practices you should follow to help avoid problems with app scalability, behavior and performance in a cloud environment. Microsoft provides an Azure Code Analysis tool that recognizes and identifies several of these commonly-encountered issues and helps you resolve them. You can download the tool in Visual Studio via NuGet.
 
 ## Azure Code Analysis rules
 
@@ -33,9 +33,9 @@ Please share your ideas and feedback at [Azure Code Analysis feedback](https://s
 
 ### Reason
 
-By default, the session state mode specified in the web.config file is in-process. Also, if no entry specified in the configuration file, the Session State mode defaults to in-process. The in-process mode stores session state in memory on the web server. When an instance is restarted or a new instance is used for load balancing or failover support, the session state stored in memory on the web server isn’t saved. This situation prevents the application from being scalable on the cloud.
+By default, the session state mode specified in the web.config file is in-process. Also, if no entry specified in the configuration file, the Session State mode defaults to in-process. The in-process mode stores session state in memory on the web server. When an instance is restarted or a new instance is used for load balancing or failover support, the session state stored in memory on the web server isn't saved. This situation prevents the application from being scalable on the cloud.
 
-ASP.NET session state supports several different storage options for session state data: InProc, StateServer, SQLServer, Custom, and Off. It’s recommended that you use Custom mode to host data on an external Session State store, such as [Azure Session State provider for Redis](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx).
+ASP.NET session state supports several different storage options for session state data: InProc, StateServer, SQLServer, Custom, and Off. It's recommended that you use Custom mode to host data on an external Session State store, such as [Azure Session State provider for Redis](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx).
 
 ### Solution
 
@@ -139,9 +139,9 @@ Please share your ideas and feedback at [Azure Code Analysis feedback](https://s
 
 ### Reason
 
-When calling **OnMessage**, the client starts an internal message pump that constantly polls the queue or subscription. This message pump contains an infinite loop that issues a call to receive messages. If the call times out, it issues a new call. The timeout interval is determined by the value of the [OperationTimeout](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx) property of the [MessagingFactory](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.messagingfactory.aspx)that’s being used.
+When calling **OnMessage**, the client starts an internal message pump that constantly polls the queue or subscription. This message pump contains an infinite loop that issues a call to receive messages. If the call times out, it issues a new call. The timeout interval is determined by the value of the [OperationTimeout](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx) property of the [MessagingFactory](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.messagingfactory.aspx)that's being used.
 
-The advantage of using **OnMessage** compared to **Receive** is that users don’t have to manually poll for messages, handle exceptions, process multiple messages in parallel, and complete the messages.
+The advantage of using **OnMessage** compared to **Receive** is that users don't have to manually poll for messages, handle exceptions, process multiple messages in parallel, and complete the messages.
 
 If you call **Receive** without using its default value, be sure the *ServerWaitTime* value is more than one minute. Setting *ServerWaitTime* to more than one minute prevents the server from timing out before the message is fully received.
 
@@ -247,7 +247,7 @@ Please share your ideas and feedback at [Azure Code Analysis feedback](https://s
 
 ### Reason
 
-Using asynchronous methods enables application program concurrency because executing each call doesn’t block the main thread. When using Service Bus messaging methods, performing an operation (send, receive, delete, etc.) takes time. This time includes the processing of the operation by the Service Bus service in addition to the latency of the request and the reply. To increase the number of operations per time, operations must execute concurrently. For more information please refer to [Best Practices for Performance Improvements Using Service Bus Brokered Messaging](https://msdn.microsoft.com/zh-cn/library/azure/hh528527.aspx).
+Using asynchronous methods enables application program concurrency because executing each call doesn't block the main thread. When using Service Bus messaging methods, performing an operation (send, receive, delete, etc.) takes time. This time includes the processing of the operation by the Service Bus service in addition to the latency of the request and the reply. To increase the number of operations per time, operations must execute concurrently. For more information please refer to [Best Practices for Performance Improvements Using Service Bus Brokered Messaging](https://msdn.microsoft.com/zh-cn/library/azure/hh528527.aspx).
 
 ### Solution
 
@@ -269,7 +269,7 @@ Please share your ideas and feedback at [Azure Code Analysis feedback](https://s
 
 ### Reason
 
-Partitioning Service Bus queues and topics increases performance throughput and service availability because the overall throughput of a partitioned queue or topic is no longer limited by the performance of a single message broker or messaging store. In addition, a temporary outage of a messaging store doesn’t make a partitioned queue or topic unavailable. For more information, see [Partitioning Messaging Entities](https://msdn.microsoft.com/zh-cn/library/azure/dn520246.aspx).
+Partitioning Service Bus queues and topics increases performance throughput and service availability because the overall throughput of a partitioned queue or topic is no longer limited by the performance of a single message broker or messaging store. In addition, a temporary outage of a messaging store doesn't make a partitioned queue or topic unavailable. For more information, see [Partitioning Messaging Entities](https://msdn.microsoft.com/zh-cn/library/azure/dn520246.aspx).
 
 ### Solution
 
@@ -314,7 +314,7 @@ The following code snippet demonstrates the code fix for this issue.
 // read/write access to the container for 10 hours.
 blobPermissions.SharedAccessPolicies.Add("mypolicy", new SharedAccessBlobPolicy()
 {
-   // To ensure SAS is valid immediately, don’t set start time.
+   // To ensure SAS is valid immediately, don't set start time.
    // This way, you can avoid failures caused by small clock differences.
    SharedAccessExpiryTime = DateTime.UtcNow.AddHours(10),
    Permissions = SharedAccessBlobPermissions.Write |
@@ -336,7 +336,7 @@ Please share your ideas and feedback at [Azure Code Analysis feedback](https://s
 
 ### Reason
 
-Datacenters at different locations around the world synchronize by a clock signal. Because it takes time for clock signal to travel to different locations, there can be a time variance between datacenters at different geographical locations although everything is supposedly synchronized. This time difference can affect the Shared Access policy start time and expiration interval. Therefore, to ensure Shared Access policy takes effect immediately, don’t specify the start time. In addition, make sure the expiration time is more than 5 minutes to prevent early timeout.
+Datacenters at different locations around the world synchronize by a clock signal. Because it takes time for clock signal to travel to different locations, there can be a time variance between datacenters at different geographical locations although everything is supposedly synchronized. This time difference can affect the Shared Access policy start time and expiration interval. Therefore, to ensure Shared Access policy takes effect immediately, don't specify the start time. In addition, make sure the expiration time is more than 5 minutes to prevent early timeout.
 
 For more information about using Shared Access Signature on Azure storage, see [Introducing Table SAS (Shared Access Signature), Queue SAS and update to Blob SAS - Windows Azure Storage Team Blog - Site Home - MSDN Blogs](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx).
 
@@ -351,7 +351,7 @@ The following is an example of not specifying a Shared Access policy start time.
 // read/write access to the container for 10 hours.
 blobPermissions.SharedAccessPolicies.Add("mypolicy", new SharedAccessBlobPolicy()
 {
-   // To ensure SAS is valid immediately, don’t set start time.
+   // To ensure SAS is valid immediately, don't set start time.
    // This way, you can avoid failures caused by small clock differences.
    SharedAccessExpiryTime = DateTime.UtcNow.AddHours(10),
    Permissions = SharedAccessBlobPermissions.Write |
@@ -366,7 +366,7 @@ The following is an example of specifying a Shared Access policy start time with
 // read/write access to the container for 10 hours.
 blobPermissions.SharedAccessPolicies.Add("mypolicy", new SharedAccessBlobPolicy()
 {
-   // To ensure SAS is valid immediately, don’t set start time.
+   // To ensure SAS is valid immediately, don't set start time.
    // This way, you can avoid failures caused by small clock differences.
   SharedAccessStartTime = new DateTime(2014,1,20),   
  SharedAccessExpiryTime = new DateTime(2014, 1, 21),
@@ -427,7 +427,7 @@ AP4001
 
 ### Description
 
-If you use hard-coded connection strings and you need to update them later, you’ll have to make changes to your source code and recompile the application. However, if you store your connection strings in a configuration file, you can change them later by simply updating the configuration file.
+If you use hard-coded connection strings and you need to update them later, you'll have to make changes to your source code and recompile the application. However, if you store your connection strings in a configuration file, you can change them later by simply updating the configuration file.
 
 Please share your ideas and feedback at [Azure Code Analysis feedback](https://social.msdn.microsoft.com/Forums/zh-cn/home).
 
@@ -441,7 +441,7 @@ Store connection strings in the configuration files or Azure environments.
 
 - For standalone applications, use app.config to store connection string settings.
 
-- For IIS-hosted web applications, use web.config to store connection strings.
+- For IIS-hosted web sites, use web.config to store connection strings.
 
 - For ASP.NET vNext applications, use configuration.json to store connection strings.
 
@@ -463,11 +463,11 @@ Please share your ideas and feedback at [Azure Code Analysis feedback](https://s
 
 Before Azure SDK 2.5 (which uses Azure diagnostics 1.3), Azure Diagnostics (WAD) could be configured by using several different methods: adding it to the configuration blob in storage, by using imperative code, declarative configuration, or the default configuration. However, the preferred way to configure diagnostics is to use an XML configuration file (diagnostics.wadcfg or diagnositcs.wadcfgx for SDK 2.5 and later) in the application project. In this approach, the diagnostics.wadcfg file completely defines the configuration and can be updated and redeployed at will. Mixing the use of the diagnostics.wadcfg configuration file with the programmatic methods of setting configurations by using the [DiagnosticMonitor](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.diagnostics.diagnosticmonitor.aspx)or [RoleInstanceDiagnosticManager](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.diagnostics.management.roleinstancediagnosticmanager.aspx)classes can lead to confusion. See [Initialize or Change Azure Diagnostics Configuration](https://msdn.microsoft.com/zh-cn/library/azure/hh411537.aspx) for more information.
 
-Beginning with WAD 1.3 (included with Azure SDK 2.5), it’s no longer possible to use code to configure diagnostics. As a result, you can only provide the configuration when applying or updating the diagnostics extension.
+Beginning with WAD 1.3 (included with Azure SDK 2.5), it's no longer possible to use code to configure diagnostics. As a result, you can only provide the configuration when applying or updating the diagnostics extension.
 
 ### Solution
 
-Use the diagnostics configuration designer to move diagnostic settings to the diagnostics configuration file (diagnositcs.wadcfg or diagnositcs.wadcfgx for SDK 2.5 and later). It’s also recommended that you install [Azure SDK 2.5](http://go.microsoft.com/fwlink/?LinkId=513188) and use the latest diagnostics feature.
+Use the diagnostics configuration designer to move diagnostic settings to the diagnostics configuration file (diagnositcs.wadcfg or diagnositcs.wadcfgx for SDK 2.5 and later). It's also recommended that you install [Azure SDK 2.5](http://go.microsoft.com/fwlink/?LinkId=513188) and use the latest diagnostics feature.
 
 1. On the shortcut menu for the role that you want to configure, choose Properties, and then choose the Configuration tab.
 
@@ -526,4 +526,4 @@ public class BlogsController : Controller
 
 ## Next steps
 
-To learn more about optimzing and troubleshooting Azure apps, see [Troubleshoot a web app in Azure Websites using Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio).
+To learn more about optimzing and troubleshooting Azure apps, see [Troubleshoot a web site in Azure Websites using Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio).

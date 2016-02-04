@@ -6,15 +6,3 @@ deleted:
 
 reason: ()
 
-replacement:
-
-deleted:
-
-		forum](http://social.msdn.microsoft.com/forums/azure/home?forum=ssdsgetstarted)
-
-replaced by:
-
-		forum](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchs)
-
-reason: ()
-

@@ -37,7 +37,7 @@ This tutorial requires the following:
 ## <a name="configure-permissions"></a>Configure your application for delegated access to SharePoint
 By default, the token you receive from AAD has limited permissions. In order to access a third-party resource or SaaS application such as SharePoint Online, you must explicitly allow it.
 
-1. In the **Active Directory** Section of the [Azure Management Portal], select your tenant. Navigate to the web application that you created for the mobile service.
+1. In the **Active Directory** Section of the [Azure Management Portal], select your tenant. Navigate to the web site that you created for the mobile service.
 
     ![][0]
 
@@ -51,7 +51,7 @@ You have now configured AAD to issue a SharePoint access token to the mobile ser
 
 In order to make a call to SharePoint, you need to specify the endpoints that the mobile service needs to talk to. You also need to be able to prove the identity of your mobile service. This is accomplished using a Client ID and Client Secret pair. You have already obtained and stored the Client ID for the mobile service during the AAD login setup. Because these are sensitive credentials, you should not store them as plaintext in our code. Instead, you will set these values as Application Settings for our Mobile Service.
 
-1. Return to the AAD Applications tab for your tenant, and select the web application for your mobile service.
+1. Return to the AAD Applications tab for your tenant, and select the web site for your mobile service.
 
 2. Under Configure, scroll down to Keys. You will obtain a Client Secret by generating a new key. Note once you create a key and leave the page, there is no way to get it out of the portal again. Upon creation you must copy and save this value in a secure location. Select a duration for your key, then click save, and copy out the resulting value.
 

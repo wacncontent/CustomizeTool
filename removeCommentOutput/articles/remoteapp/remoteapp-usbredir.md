@@ -1,19 +1,15 @@
 <properties 
-    pageTitle="How do you redirect USB devices in Azure RemoteApp?| Microsoft Azure" 
+    pageTitle="How do you redirect USB devices in Azure RemoteApp? | Windows Azure" 
     description="Learn how to use redirection for USB devices in Azure RemoteApp." 
     services="remoteapp" 
 	documentationCenter="" 
     authors="lizap" 
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="10/19/2015" 
-    ms.author="elizapo" />
+<tags
+	ms.service="remoteapp"
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
 
 
@@ -21,7 +17,7 @@
 
 Device redirection lets users use the USB devices attached to their computer or tablet with the apps in Azure RemoteApp. For example, if you shared Skype through Azure RemoteApp, your users need to be able to use their device cameras.
 
-Before you go further, make sure you read the USB redirection information in [Using redirection in Azure RemoteApp](remoteapp-redirection.md). However the recommended  nusbdevicestoredirect:s:* won't work for USB web cameras and may not work for some USB printers or USB multifunctional devices. By design and for security reasons, the Azure RemoteApp administrator has to enable redirection either by device class GUID or by device instance ID before your users can use those devices.
+Before you go further, make sure you read the USB redirection information in [Using redirection in Azure RemoteApp](/documentation/articles/remoteapp-redirection). However the recommended  nusbdevicestoredirect:s:* won't work for USB web cameras and may not work for some USB printers or USB multifunctional devices. By design and for security reasons, the Azure RemoteApp administrator has to enable redirection either by device class GUID or by device instance ID before your users can use those devices.
 
 Although this article talks about web camera redirection, you can use a similar approach to redirect USB printers and other USB multifunctional devices that are not redirected by the **nusbdevicestoredirect:s:*** command.
 
@@ -38,7 +34,7 @@ Azure RemoteApp uses very similar mechanisms for redirecting USB devices as the 
 ## Redirecting a USB device by using the device class GUID
 There are two ways to find the device class GUID that can be used for redirection. 
 
-The first option is to use the [System-Defined Device Setup Classes Available to Vendors](https://msdn.microsoft.com/library/windows/hardware/ff553426.aspx). Pick the class that most closely matches the device attached to the local computer. For digital cameras this could be an Imaging Device class or Video Capture Device class. You'll need to do some experimentation with the device classes to find the correct class GUID that works with the locally attached USB device (in our case the web camera).
+The first option is to use the [System-Defined Device Setup Classes Available to Vendors](https://msdn.microsoft.com/zh-cn/library/windows/hardware/ff553426.aspx). Pick the class that most closely matches the device attached to the local computer. For digital cameras this could be an Imaging Device class or Video Capture Device class. You'll need to do some experimentation with the device classes to find the correct class GUID that works with the locally attached USB device (in our case the web camera).
 
 A better way, or the second option, is to follow these steps to find the specific device class GUID:
 
@@ -64,10 +60,10 @@ If you want more fine-grained control and want to control redirection per device
 
 The hardest part of this method is finding the USB device instance ID. You'll need access to the computer and the specific USB device. Then follow these steps:
 
-1. Enable the device redirection in Remote Desktop Session as described in [How can I use my devices and resources in a Remote Desktop session?](http://windows.microsoft.com/en-us/windows7/How-can-I-use-my-devices-and-resources-in-a-Remote-Desktop-session)
+1. Enable the device redirection in Remote Desktop Session as described in [How can I use my devices and resources in a Remote Desktop session?](http://windows.microsoft.com/windows7/How-can-I-use-my-devices-and-resources-in-a-Remote-Desktop-session)
 2. Open a Remote Desktop Connection and click **Show Options**.
-3. Click **Save as** to save the current connection settings to an RDP file.
-![Save the settings as an RDP file](./media/remoteapp-usbredir/ra-saveasrdp.png)
+3. Click **Save as** to save the current connection settings to an RDP file.  
+	![Save the settings as an RDP file](./media/remoteapp-usbredir/ra-saveasrdp.png)
 4. Choose a file name and a location, for example “MyConnection.rdp” and “This PC\Documents”, and save the file.
 5. Open the MyConnection.rdp file using a text editor and find the instance ID of the device you want to redirect.
 
@@ -76,3 +72,6 @@ Now, use the instance ID in the following cmdlet:
 	Set-AzureRemoteAppCollection -CollectionName <collection name> -CustomRdpProperty "nusbdevicestoredirect:s: USB\<Device InstanceID value>"
 
 
+
+### Help us help you 
+Did you know that in addition to rating this article and making comments down below, you can make changes to the article itself? Something missing? Something wrong? Did I write something that's just confusing? Scroll up and click **Edit on GitHub** to make changes - those will come to us for review, and then, once we sign off on them, you'll see your changes and improvements right here.

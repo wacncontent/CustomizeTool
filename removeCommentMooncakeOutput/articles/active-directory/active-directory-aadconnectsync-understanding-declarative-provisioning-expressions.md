@@ -1,15 +1,15 @@
 <properties
-	pageTitle="Azure AD Connect Sync: Understanding Declarative Provisioning Expressions | Windows Azure"
+	pageTitle="Azure AD Connect Sync: Understanding Declarative Provisioning Expressions"
 	description="Explains the declarative provisioning expressions."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
-	manager="stevenpo"
+	manager="swadhwa"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+	ms.date="07/27/2015"
 	wacn.date=""/>
 
 
@@ -50,7 +50,7 @@ The following operators can be used:
 
 
 
-Operators are evaluated left to right. 2*(5+3) is not the same as 2*5+3.<br>
+Operators are evaluated left to right. 2*(5+3) is not the same as 2*5+3.<br> 
 The brackets ( ) are used to change the evaluation order.
 
 
@@ -63,10 +63,10 @@ A parameter is defined either by a Connector or by an administrator using PowerS
 
 The Active Directory Connector provided the following parameters for inbound Synchronization Rules:
 
-
+ 
 | Domain.Netbios | Domain.FQDN | Domain.LDAP |
 | Forest.Netbios | Forest.FQDN | Forest.LDAP |
-
+ 
 
 The system provides the following parameter:
 
@@ -116,9 +116,9 @@ For outbound Synchronization Rules there are two different constants to use: NUL
 
 The function ImportedValues is different than all other functions since the attribute name must be enclosed in quotes rather than square brackets: ImportedValue(“proxyAddresses”).
 
-Usually during synchronization an attribute will use the expected value, even if it hasn’t been exported yet or an error was received during export (“top of the tower”). An inbound synchronization will assume that an attribute which hasn’t yet reached a connected directory will eventually reach it. In some cases it is important to only synchronize a value which has been confirmed by the connected directory and in this case the function ImportedValue is used (“hologram and delta import tower”).
+Usually during synchronization an attribute will use the expected value, even if it hasn't been exported yet or an error was received during export (“top of the tower”). An inbound synchronization will assume that an attribute which hasn't yet reached a connected directory will eventually reach it. In some cases it is important to only synchronize a value which has been confirmed by the connected directory and in this case the function ImportedValue is used (“hologram and delta import tower”).
 
-An example of this can be found in the out-of-box Synchronization Rule In from AD – User Common from Exchange where in Hybrid Exchange the value added by Exchange online should only be synchronized if it has been confirmed the value was exported successfully:
+An example of this can be found in the out-of-box Synchronization Rule In from AD - User Common from Exchange where in Hybrid Exchange the value added by Exchange online should only be synchronized if it has been confirmed the value was exported successfully:
 
 
 `proxyAddresses <- RemoveDuplicates(Trim(ImportedValues(“proxyAddresses”)))`
@@ -130,5 +130,5 @@ For a complete list of functions, see [Azure AD Connect Sync: Functions Referenc
 
 * [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
 * [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
-
+ 
 <!--Image references-->

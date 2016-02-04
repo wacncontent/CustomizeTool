@@ -18,7 +18,7 @@ The [PairNamespaceAsync][] method, using a [SendAvailabilityPairedNamespaceOptio
 -   Creation of backlog queues.
 -   Creation of a [MessageSender][] object that talks to queues or topics.
 -   When a messaging entity becomes unavailable, sends ping messages to the entity in an attempt to detect when that entity becomes available again.
--   Optionally creates of a set of “message pumps” that move messages from the backlog queues to the primary queues.
+-   Optionally creates of a set of âmessage pumpsâ that move messages from the backlog queues to the primary queues.
 -   Coordinates closing/faulting of the primary and secondary [MessagingFactory][] instances.
 
 At a high level, the feature works as follows: when the primary entity is healthy, no behavior changes occur. When the [FailoverInterval][] duration elapses, and the primary entity sees no successful sends after a non-transient [MessagingException][] or a [TimeoutException][], the following behavior occurs:
@@ -29,7 +29,7 @@ At a high level, the feature works as follows: when the primary entity is health
 
 3.  [BrokeredMessage][] objects are routed to the chosen backlog queue.
 
-1.  If a send operation to the chosen backlog queue fails, that queue is pulled from the rotation and a new queue is selected. All senders on the [MessagingFactory][] instance learn of the failure.
+<!-- deleted by customization 1 --><!-- keep by customization: begin --> 4 <!-- keep by customization: end -->.  If a send operation to the chosen backlog queue fails, that queue is pulled from the rotation and a new queue is selected. All senders on the [MessagingFactory][] instance learn of the failure.
 
 The following figures depict the sequence. First, the sender sends messages.
 

@@ -26,7 +26,7 @@ In this tutorial, the Azure Management Portal is used to accomplish the followin
 3.  Create a channel.
 1.  Configure a live encoder and ingest live stream into the channel (Wirecast is used in this step).
 1.  Create a program (and an asset).
-1.  Publish the asset and get streaming URLs.  
+1.  Publish the asset and get streaming URLs.
 1.  Play your content.
 2.  Clean up.
 
@@ -55,15 +55,15 @@ To change the number of streaming reserved units, do the following:
 
 3. To specify the number of streaming units, select the **SCALE** tab and move the reserved capacity slider.
 
-	![Scale page](./media/media-services-portal-get-started-with-live/media-services-origin-scale.png)
+![Scale page](./media/media-services-portal-get-started-with-live/media-services-origin-scale.png)
 
 4. Click the **SAVE** button to save your changes.
 
-	The allocation of any new units takes around 20 minutes to complete.
+The allocation of any new units takes around 20 minutes to complete.
 
-	>[AZURE.NOTE] Currently, going from any positive value of streaming units back to none, can disable streaming for up to an hour.
-	>
-	> The highest number of units specified for the 24-hour period is used in calculating the cost. For information about pricing details, see [Media Services Pricing Details](/home/features/media-services/#price).
+>[AZURE.NOTE] Currently, going from any positive value of streaming units back to none, can disable streaming for up to an hour.
+>
+> The highest number of units specified for the 24-hour period is used in calculating the cost. For information about pricing details, see [Media Services Pricing Details](/home/features/media-services/#price).
 
 
 ## Create a channel
@@ -89,7 +89,7 @@ For more information about Ingest URLs, see [Using on-premises encoders to send 
 
 ## Configure a live encoder and ingest live stream
 
->[AZURE.NOTE] This step will require the channel’s ingest URL that was mentioned in the previous step.
+>[AZURE.NOTE] This step will require the channel's ingest URL that was mentioned in the previous step.
 
 For detailed information about how to configure Wirecast and start ingesting the stream, see [Wirecast Configuration](http://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/).
 
@@ -126,25 +126,25 @@ There are two ways to start an event:
 
 1. From the **CHANNELS** page, click **ADD** to add a new program.
 
-	On the **Create a new program** page, specify the program name, asset name, archive window, and encryption option.
+On the **Create a new program** page, specify the program name, asset name, archive window, and encryption option.
 
-	![createprogram](./media/media-services-portal-get-started-with-live/media-services-create-program.png)
+![createprogram](./media/media-services-portal-get-started-with-live/media-services-create-program.png)
 
-	If **Publish this program now** is selected, the publish URLs are created.
+If **Publish this program now** is selected, the publish URLs are created.
 
-	You can click **START** whenever you are ready to stream the program.
+You can click **START** whenever you are ready to stream the program.
 
-	Once you start the program, you can click **PLAY** to start playing the content.
+Once you start the program, you can click **PLAY** to start playing the content.
 
-	![createdprogram](./media/media-services-portal-get-started-with-live/media-services-created-program.png)
+![createdprogram](./media/media-services-portal-get-started-with-live/media-services-created-program.png)
 
 2. Alternatively, you can use a shortcut and click the **START STREAMING** button on the **CHANNELS** page. This will create an Asset, Program, and Streaming Locator.
 
-	The program is named DefaultProgram and the archive window is set to 1 hour.
+The program is named DefaultProgram and the archive window is set to 1 hour.
 
-	You can play the published program from the **CHANNELS** page.
+You can play the published program from the **CHANNELS** page.
 
-	![channelpublish](./media/media-services-portal-get-started-with-live/media-services-channel-play.png)
+![channelpublish](./media/media-services-portal-get-started-with-live/media-services-channel-play.png)
 
 
 If you click **STOP STREAMING** on the **CHANNELS** page, the default program will be stopped and deleted. The asset will still be there and you can publish or unpublish it from the **CONTENT**  page.
@@ -164,15 +164,15 @@ Dynamic packaging will take care of packaging the live stream into the specified
 
 By default, a streaming URL has the following format and you can use it to play Smooth Streaming assets.
 
-	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest
+{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest
 
 To build an HLS streaming URL, append (format=m3u8-aapl) to the URL.
 
-	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
+{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
 
 To build an  MPEG DASH streaming URL, append (format=mpd-time-csf) to the URL.
 
-	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
+{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
 
 For more information about delivering your content, see [Delivering content](/documentation/articles/media-services-deliver-content-overview).
 

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="Twitter trending topics with Apache Storm on HDInsight | Windows Azure"
    description="Learn how to use Trident to create an Apache Storm topology that determines trending topics on Twitter based on hashtags."
@@ -11,9 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="07/06/2015"
-   wacn.date=""/>
+	ms.service="hdinsight"
+	ms.date="12/04/2015"
+	wacn.date=""/>
 
 #Determine Twitter trending topics with Apache Storm on HDInsight
 

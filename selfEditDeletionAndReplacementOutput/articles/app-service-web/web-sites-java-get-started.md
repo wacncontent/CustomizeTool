@@ -4,12 +4,16 @@ deleted:
 
 		[activate your MSDN subscriber benefits][] or
 
-reason: ()
+reason: (MSDN subscriber)
 
 deleted:
 
 		If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites][]. There, you can immediately create a short-lived starter web app in Azure Websites—no credit card required, and no commitments.
-		
+
+reason: (“Try it now”)
+
+deleted:
+
 		## Create a Java web app by using the Azure Marketplace
 		
 		This information shows how to use the Azure Marketplace to select a Java application container, either Apache Tomcat or Jetty, for your web app.
@@ -38,18 +42,16 @@ deleted:
 		
 		Now that you've created the web app with an app container, see the **Next steps** section for information about uploading your application to the web app.
 
-reason: ()
+reason: (website gallery and market place)
 
 deleted:
 
-		For more information, see the [Java Developer Center](/develop/java/).
-		
 		## What's changed
 		
 		* For a guide to the change from Websites to Azure Websites, see [Azure Websites and existing Azure services][].
 		* For a guide to the change from the Management Portal to the new portal, see [Reference for navigating the Azure Management Portal][].
 
-reason: ()
+reason: (terminology: Azure App Service Web, the new Ibiza portal)
 
 replacement:
 
@@ -76,7 +78,7 @@ replaced by:
 		1. Log in to the Windows Azure Management Portal.
 		2. Click **New**, click **Compute**, click **Website**, and then click **Quick Create**.
 		3. Specify the URL name.
-		4. Select a region. For example, **Chian East**.
+		4. Select a region. For example, **China East**.
 		5. Click **Complete**. Within a few moments, your website will be created. To view the website, within the Azure Management Portal, in the **Websites** view, wait for the status to show as **Running** and then click the URL for the website.
 		6. Still within the Azure Management Portal, in the **Websites** view, click the name of your website to open the 
 		dashboard.
@@ -85,5 +87,5 @@ replaced by:
 		9. The options for the web container are displayed, for example, Tomcat and Jetty. Select the web container that you want to use. 
 		10. Click **Save**.
 
-reason: ()
+reason: (website gallery and market place, the new Ibiza portal)
 

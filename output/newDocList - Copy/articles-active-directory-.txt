@@ -1,0 +1,6 @@
+new docs: 3, word count: {word_count_TODO}
+articles/active-directory/active-directory-aadconnect-ports.md
+articles/active-directory/active-directory-saas-lessonly-tutorial.md
+articles/active-directory/role-based-access-control-manage-access-rest.md
+
+new includes: 0

@@ -13,7 +13,7 @@
 
 # Azure Event Hubs overview
 
-Many modern solutions intend to provide adaptive customer experiences or to improve products through continuous feedback and automated telemetry. Such solutions are faced with the challenge of how to securely and reliably process very large amounts of information from many concurrent publishers. Windows Azure Event Hubs is a managed platform service that provides a foundation for large-scale data intake in a broad variety of scenarios. Examples of such scenarios are behavior tracking in mobile apps, traffic information from web farms, in-game event capture in console games, or telemetry data collected from industrial machines or connected vehicles. The common role that Event Hubs plays in solution architectures is that it acts as the "front door" for an event pipeline, often called an *event ingestor*. An event ingestor is a component or service that sits between event producers and event consumers to decouple the production of an event stream from the consumption of those events.
+Many modern solutions intend to provide adaptive customer experiences or to improve products through continuous feedback and automated telemetry. Such solutions are faced with the challenge of how to securely and reliably process very large amounts of information from many concurrent producers. Windows Azure Event Hubs is a managed platform service that provides a foundation for large-scale data intake in a broad variety of scenarios. Examples of such scenarios are behavior tracking in mobile apps, traffic information from web farms, in-game event capture in console games, or telemetry data collected from industrial machines or connected vehicles. The common role that Event Hubs plays in solution architectures is that it acts as the "front door" for an event pipeline, often called an *event ingestor*. An event ingestor is a component or service that sits between event publishers and event consumers to decouple the production of an event stream from the consumption of those events.
 
 ![Event Hubs](./media/event-hubs-overview/IC759856.png)
 
@@ -158,7 +158,8 @@ Now that you've learned about Event Hubs concepts, you can move on to the follow
 - A complete [sample application that uses Event Hubs].
 - A [queued messaging solution] using Service Bus queues.
 
-[Event Hubs tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted
+[Event Hubs tutorial]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started
 [sample application that uses Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[queued messaging solution]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
+[queued messaging solution]: /documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues
  
+

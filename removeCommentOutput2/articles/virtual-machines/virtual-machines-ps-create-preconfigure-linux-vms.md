@@ -21,11 +21,17 @@
 
 <br>
 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+ 
+These steps show you how to create a Linux virtual machine using a fill-in-the-blanks approach for creating Azure PowerShell command sets. This approach can be useful if you are new to Azure PowerShell or you just want to know what values to specify for successful configuration. 
+
+You'll build your command set by copying the sets of command blocks into a text file or the PowerShell ISE and then filling in the variable values and removing the < and > characters. See the two [examples](#examples) at the end of this article for an idea of the final result.
+
 For the companion topic for Windows-based virtual machines, see [Use Azure PowerShell to create Windows-based virtual machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms).
 
 ## Install Azure PowerShell
 
-If you haven't done so already, [install and configure Azure PowerShell](/documentation/articles/install-configure-powershell). Then, open an Azure PowerShell command prompt.
+If you haven't done so already, [install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). Then, open an Azure PowerShell command prompt.
 
 ## Set your subscription and storage account
 
@@ -39,7 +45,7 @@ Replace everything within the quotes, including the < and > characters, with the
 
 	$subscr="<subscription name>"
 	$staccount="<storage account name>"
-	Select-AzureSubscription -SubscriptionName $subscr –Current
+	Select-AzureSubscription -SubscriptionName $subscr -Current
 	Set-AzureSubscription -SubscriptionName $subscr -CurrentStorageAccountName $staccount
 
 
@@ -108,7 +114,7 @@ Optionally, assign the virtual machine a specific IP address, known as a static 
 
 You can verify that a specific IP address is available with the following command.
 
-	Test-AzureStaticVNetIP –VNetName <VNet name> –IPAddress <IP address>
+	Test-AzureStaticVNetIP -VNetName <VNet name> -IPAddress <IP address>
 
 ## Optional: Assign the virtual machine to a specific subnet 
 
@@ -147,15 +153,15 @@ Add a block to your command set to start the virtual machine creation process by
 
 **Option 1**: Create the virtual machine in an existing cloud service.
 
-	New-AzureVM –ServiceName "<short name of the cloud service>" -VMs $vm1
+	New-AzureVM -ServiceName "<short name of the cloud service>" -VMs $vm1
 
-The short name of the cloud service is the name that appears in the list of Azure Cloud Services in the Azure Management Portal or in the list of resource groups in the Azure preview portal.
+The short name of the cloud service is the name that appears in the list of Azure Cloud Services in the Azure Management Portal or in the list of resource groups in the Azure Management Portal.
 
 **Option 2**: Create the virtual machine in an existing cloud service and virtual network.
 
 	$svcname="<short name of the cloud service>"
 	$vnetname="<name of the virtual network>"
-	New-AzureVM –ServiceName $svcname -VMs $vm1 -VNetName $vnetname
+	New-AzureVM -ServiceName $svcname -VMs $vm1 -VNetName $vnetname
 
 ## Run your command set
 
@@ -209,7 +215,7 @@ Here is the corresponding Azure PowerShell command set to create this virtual ma
 
 	$svcname="Azure-TailspinToys"
 	$vnetname="AZDatacenter"
-	New-AzureVM –ServiceName $svcname -VMs $vm1 -VNetName $vnetname
+	New-AzureVM -ServiceName $svcname -VMs $vm1 -VNetName $vnetname
 
 ### Example 2
 
@@ -254,7 +260,7 @@ Here is the corresponding Azure PowerShell command set to create this virtual ma
 
 	$svcname="Azure-TailspinToys"
 	$vnetname="AZDatacenter"
-	New-AzureVM –ServiceName $svcname -VMs $vm1 -VNetName $vnetname
+	New-AzureVM -ServiceName $svcname -VMs $vm1 -VNetName $vnetname
 
 ## Additional resources
 
@@ -264,7 +270,7 @@ Here is the corresponding Azure PowerShell command set to create this virtual ma
 
 [Overview of Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx)
 
-[How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)
+[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
 
 [How to log on to a virtual machine running Linux](/documentation/articles/virtual-machines-linux-how-to-log-on)
 

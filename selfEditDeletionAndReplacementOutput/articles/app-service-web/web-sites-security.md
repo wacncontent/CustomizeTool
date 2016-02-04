@@ -16,13 +16,13 @@ deleted:
 		
 		For more information on FTPS, see [File Transfer Protocol](http://en.wikipedia.org/wiki/File_Transfer_Protocol).
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
-reason: ()
+reason: (“Try it now”)
 
 deleted:
 
@@ -31,23 +31,15 @@ deleted:
 		
 		* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-reason: ()
-
-replacement:
+reason: (terminology: Azure App Service Web, the new Ibiza portal)
 
 deleted:
 
 		[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
-replaced by:
+reason: (terminology: Azure App Service Web)
 
-		###Table of contents
-		
-		* [Secure communications](#https)
-		* [Secure development](#develop)
-		* [Next steps](#next)
-
-reason: ()
+replacement:
 
 deleted:
 
@@ -57,5 +49,5 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 

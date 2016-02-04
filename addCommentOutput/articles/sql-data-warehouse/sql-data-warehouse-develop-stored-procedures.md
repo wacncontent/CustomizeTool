@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Stored procedures in SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Stored procedures in SQL Data Warehouse | Windows Azure"
    description="Tips for implementing stored procedures in Azure SQL Data Warehouse for developing solutions."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+	ms.service="sql-data-warehouse"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # Stored procedures in SQL Data Warehouse 
 
@@ -93,7 +89,7 @@ For more development tips, see [development overview][].
 [development overview]: sql-data-warehouse-overview-develop.md
 
 <!--MSDN references-->
-[nest level]: https://msdn.microsoft.com/en-us/library/ms187371.aspx
+[nest level]: https://msdn.microsoft.com/zh-cn/library/ms187371.aspx
 
 <!--Other Web references-->
 

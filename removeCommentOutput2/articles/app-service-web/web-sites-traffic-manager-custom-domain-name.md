@@ -1,24 +1,24 @@
 <properties 
-	pageTitle="Configure a custom domain name for a web app in Azure Websites that uses Traffic Manager" 
-	description="Use a custom domain name for an a web app in Azure Websites that includes Traffic Manager for load balancing." 
+	pageTitle="Configure a custom domain name for a web app in Azure that uses Traffic Manager"wpickett"Use a custom domain name for an a web app in Azure that includes Traffic Manager for load balancing." 
+    description="Use a custom domain name for an a web app in Azure that includes Traffic Manager for load balancing." 
 	services="app-service\web" 
 	documentationCenter="" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/18/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
-#Configuring a custom domain name for a web app in Azure Websites using Traffic Manager
+#Configuring a custom domain name for a web app in Azure using Traffic Manager
 
 [AZURE.INCLUDE [web-selector](../includes/websites-custom-domain-selector.md)]
 
 [AZURE.INCLUDE [intro](../includes/custom-dns-web-site-intro-traffic-manager.md)]
 
-This article provides generic instructions for using a custom domain name with Azure Websites that use Traffic Manager for load balancing.
+This article provides generic instructions for using a custom domain name with Azure that use Traffic Manager for load balancing.
 
 [AZURE.INCLUDE [tmwebsitefooter](../includes/custom-dns-web-site-traffic-manager-notes.md)]
 
@@ -38,8 +38,7 @@ This article provides generic instructions for using a custom domain name with A
 ## Add a DNS record for your custom domain
 
 
-
-To associate your custom domain with a web app in Azure Websites, you must add a new entry in the DNS table for your custom domain by using tools provided by the domain registrar that you purchased your domain name from. Use the following steps to locate and use the DNS tools.
+To associate your custom domain with a web app in Azure, you must add a new entry in the DNS table for your custom domain by using tools provided by the domain registrar that you purchased your domain name from. Use the following steps to locate and use the DNS tools.
 
 1. Log on to your account at your domain registrar, and look for a page for managing DNS records. Look for links or areas of the site labeled as **Domain Name**, **DNS**, or **Name Server Management**. Often a link to this page can be found be viewing your account information, and then looking for a link such as **My domains**.
 

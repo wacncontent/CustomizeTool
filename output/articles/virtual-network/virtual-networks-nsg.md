@@ -8,41 +8,12 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="11/10/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # What is a Network Security Group (NSG)?
 
-You are probably familiar with the use of firewalls and access control lists (ACLs) to filter the flow of network traffic to network segments, individual computers, and even network interface cards (NICs) within a computer. You can also filter the flow of network traffic in Azure in similar ways, as listed below.
-
-- **Endpoint ACLs**
-	- Can only filter inbound traffic.
-	- Can only be used on endpoints exposed to the Internet, or through an internal load balancer.
-	- Limited to 50 ACL rules per endpoint.
-	- Does **NOT** require a VNet (classic deployments).
-- **Network Security Groups (NSGs)**
-	- Allow or deny traffic based on direction, protocol, source address and port, and destination address and port.
-	- Can control inbound and outbound traffic on VMs or role instances (classic deployments), NICs (Resource Manager deployments) and subnets (all deployments). This includes any resources connected to subnets, such as cloud services and AppService environments.
-	- Can only be applied to resources connected to a regional VNet.
-	- Do **NOT** require management of a firewall appliance.
-	- Limited to 100 NSGs, each with 200 rules, per region.
-- **Firewall appliances**
-	- Implemented as VMs in your Azure network.
-	- Allow or deny traffic based on direction, protocol, source address and port, and destination address and port.
-	- Provides extra functionality, depending on the firewall appliance used.
-
-This article focuses on NSGs. For more information on the other traffic filtering choices, visit the links provided below.
-
-- [ACL documentation](/documentation/articles/virtual-networks-acl).
-- [Build a DMZ using NSGs and Firewall appliances](/documentation/articles/virtual-networks-dmz-nsg-fw-udr-asm).
-
-## How does an NSG work?
-
-An NSG contains two types of rules, **Inbound** and **Outbound**. When traffic flows into an Azure server hosting VMs or role instances, the host loads all inbound or outbound NSG rules, based on the direction of traffic. Then the hosts inspects each rule in order of priority. If a rule matches the packet the host is analyzing, the action for the rule (allow or deny) is applied. If no rules match the packet, the packet is dropped. The figure below shows this decision flow. 
-
-![NSG ACLs](./media/virtual-network-nsg-overview/figure3.png)
-
->[AZURE.NOTE] The rules applied to a given VM or role instance can come from multiple NSGs, since you can associate an NSG to a VM (classic deployments), a NIC (Resource Manager deployments), or a subnet (all deployments). The [Associating NSGs](#Associating-NSGs) section covers how rules from multiple NSGs are applied depending on the direction of traffic.
+Network security group (NSG) contains a list of Access control List (ACL) rules that allow\deny network traffic to your VM instances in a Virtual Network. NSGs can be associated with either subnets or individual VM instances within that subnet. When a NSG is associated with a subnet, the ACL rules apply to all the VM instances in that subnet.  In addition, traffic to an individual VM can be restricted further by associating a NSG directly to that VM.
 
 NSGs contain the following properties.
 
@@ -77,7 +48,7 @@ Default tags are system-provided identifiers to address a category of IP address
 
 - **VIRTUAL_NETWORK:** This default tag denotes all of your network address space. It includes the virtual network address space (CIDR ranges defined in Azure) as well as all connected on-premises address spaces and connected Azure VNets (local networks).
 
-- **AZURE_LOADBALANCER:** This default tag denotes Azure’s Infrastructure load balancer. This will translate to an Azure datacenter IP where Azure’s health probes originate.
+- **AZURE_LOADBALANCER:** This default tag denotes Azure's Infrastructure load balancer. This will translate to an Azure datacenter IP where Azure's health probes originate.
 
 - **INTERNET:** This default tag denotes the IP address space that is outside the virtual network and reachable by public Internet. This range includes [Azure owned public IP space](https://www.microsoft.com/download/details.aspx?id=41653) as well.
 
@@ -85,7 +56,7 @@ Default tags are system-provided identifiers to address a category of IP address
 
 All NSGs contain a set of default rules. The default rules cannot be deleted, but because they are assigned the lowest priority, they can be overridden by the rules that you create. 
 
-As illustrated by the default rules below, traffic originating and ending in a VNet is allowed both in Inbound and Outbound directions. While connectivity to the Internet is allowed for Outbound direction, it is by default blocked for Inbound direction. There is a default rule to allow Azure’s load balancer to probe the health of your VMs and role instances. You can override this rule if you are not using a load balanced set.
+As illustrated by the default rules below, traffic originating and ending in a VNet is allowed both in Inbound and Outbound directions. While connectivity to the Internet is allowed for Outbound direction, it is by default blocked for Inbound direction. There is a default rule to allow Azure's load balancer to probe the health of your VMs and role instances. You can override this rule if you are not using a load balanced set.
 
 **Inbound default rules**
 
@@ -191,7 +162,7 @@ The current NSG rules only allow for protocols *TCP* or *UDP*. There is not a sp
 
 ## Sample deployment
 
-To illustrate the application of the information in this article, we’ll define NSGs to filter network traffic for a two tier workload solution with the following requirements:
+To illustrate the application of the information in this article, we'll define NSGs to filter network traffic for a two tier workload solution with the following requirements:
 
 1. Separation of traffic between front end (Windows web servers) and back end (SQL database servers).
 2. Load balancing rules forwarding traffic to the load balancer to all web servers on port 80.

@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Connect remotely to your StorSimple device | Microsoft Azure"
+   pageTitle="Connect remotely to your StorSimple device | Windows Azure"
    description="Explains how to configure your device for remote management and how to connect to Windows PowerShell for StorSimple via HTTP or HTTPS."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="10/12/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 # Connect remotely to your StorSimple device
 
@@ -39,7 +35,7 @@ Connecting to Windows PowerShell for StorSimple through an HTTP session offers m
 
 You can use either the Azure Portal or the serial console to configure remote management. Select from the following procedures:
 
-- [Use the Azure Portal to enable remote management over HTTP](#use-the-azure-portal-to-enable-remote-management-over-http)
+- [Use the Azure Portal to enable remote management over HTTP](#use-the-azure-classic-portal-to-enable-remote-management-over-http)
 
 - [Use the serial console to enable remote management over HTTP](#use-the-serial-console-to-enable-remote-management-over-http)
 
@@ -47,7 +43,7 @@ After you enable remote management, use the following procedure to prepare the c
 
 - [Prepare the client for remote connection](#prepare-the-client-for-remote-connection)
 
-### Use the Azure Portal to enable remote management over HTTP 
+### Use the Azure Portal to enable remote management over HTTP
 
 Perform the following steps in the Azure Portal to enable remote management over HTTP.
 
@@ -73,7 +69,7 @@ Perform the following steps on the device serial console to enable remote manage
 
 1. On the serial console menu, select option 1. For more information about using the serial console on the device, go to [Connect to Windows PowerShell for StorSimple via device serial console](storsimple-windows-powershell-administration.md#connect-to-windows-powershell-for-storsimple-via-device-serial-console).
 
-2. At the prompt, type: `Enable-HcsRemoteManagement –AllowHttp`
+2. At the prompt, type: `Enable-HcsRemoteManagement –AllowHttp` 
 
 3. You will be notified about the security vulnerabilities of using HTTP to connect to the device. When prompted, confirm by typing **Y**.
 
@@ -91,7 +87,7 @@ Perform the following steps on the client to enable remote management.
 
 1. Start a Windows PowerShell session as an administrator.
 
-2. Type the following command to add the IP address of the StorSimple device to the client’s trusted hosts list: 
+2. Type the following command to add the IP address of the StorSimple device to the client’s trusted hosts list:
 
      `Set-Item wsman:\localhost\Client\TrustedHosts <device_ip> -Concatenate -Force`
 
@@ -120,11 +116,11 @@ Perform the following steps on the client to enable remote management.
 
 ## Connect through HTTPS
 
-Connecting to Windows PowerShell for StorSimple through an HTTPS session is the most secure and recommended method of remotely connecting to your Microsoft Azure StorSimple device. The following procedures explain how to set up the serial console and client computers so that you can use HTTPS to connect to Windows PowerShell for StorSimple.
+Connecting to Microsoft PowerShell for StorSimple through an HTTPS session is the most secure and recommended method of remotely connecting to your Windows Azure StorSimple device. The following procedures explain how to set up the serial console and client computers so that you can use HTTPS to connect to Windows PowerShell for StorSimple.
 
 You can use either the Azure Portal or the serial console to configure remote management. Select from the following procedures:
 
-- [Use the Azure Portal to enable remote management over HTTPS](#use-the-azure-portal-to-enable-remote-management-over-https)
+- [Use the Azure Portal to enable remote management over HTTPS](#use-the-azure-classic-portal-to-enable-remote-management-over-https)
 
 - [Use the serial console to enable remote management over HTTPS](#use-the-serial-console-to-enable-remote-management-over-https)
 

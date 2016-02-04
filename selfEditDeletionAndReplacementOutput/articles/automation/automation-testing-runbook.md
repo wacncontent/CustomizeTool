@@ -4,7 +4,7 @@ deleted:
 
 		, and there is no difference in testing between the textual editor and the graphical editor in the Azure preview portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -20,11 +20,11 @@ deleted:
 		6. If the runbook is [PowerShell Workflow](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks) or [Graphical](/documentation/articles/automation-runbook-types#graphical-runbooks), then you can stop or suspend it while it is being tested with the buttons underneath the Output Pane. When you suspend the runbook, it completes the current activity before being suspended. Once the runbook is suspended, you can stop it or restart it.
 		7. Inspect the output from the runbook in the output pane.
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
 		- [Graphical runbooks in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)
 
-reason: ()
+reason: (Graphical Runbook)
 

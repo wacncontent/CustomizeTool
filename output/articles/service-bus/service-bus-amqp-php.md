@@ -168,9 +168,9 @@ The following table maps the .NET property types to the PHP property types.
 | Guid               | UUID              | Proton-PHP class                                                                                                                                                    |
 | string             | string            | -                                                                                                                                                                     |
 | DateTime           | integer           | -                                                                                                                                                                     |
-| DateTimeOffset     | DescribedType     | DateTimeOffset.UtcTicks mapped to AMQP type:<type name=”datetime-offset” class=restricted source=”long”> <descriptor name=”com.microsoft:datetime-offset” /></type> |
-| TimeSpan           | DescribedType     | Timespan.Ticks mapped to AMQP type:<type name=”timespan” class=restricted source=”long”> <descriptor name=”com.microsoft:timespan” /></type>                        |
-| Uri                | DescribedType     | Uri.AbsoluteUri mapped to AMQP type:<type name=”uri” class=restricted source=”string”> <descriptor name=”com.microsoft:uri” /></type>                               |
+| DateTimeOffset     | DescribedType     | DateTimeOffset.UtcTicks mapped to AMQP type:<type name="datetime-offset" class=restricted source="long"> <descriptor name="com.microsoft:datetime-offset" /></type> |
+| TimeSpan           | DescribedType     | Timespan.Ticks mapped to AMQP type:<type name="timespan" class=restricted source="long"> <descriptor name="com.microsoft:timespan" /></type>                        |
+| Uri                | DescribedType     | Uri.AbsoluteUri mapped to AMQP type:<type name="uri" class=restricted source="string"> <descriptor name="com.microsoft:uri" /></type>                               |
 
 ### Standard properties
 
@@ -209,7 +209,7 @@ The following tables show the mapping between the Proton-PHP standard message pr
 | MessageId               | Message-\>id                                           | -                                                        |
 | ReplyTo                 | Message-\>reply\_to                                    | -                                                        |
 | ReplyToSessionId        | Message-\>reply\_to\_group\_id                         | -                                                        |
-| ScheduledEnqueueTimeUtc | Message-\>annotations [“x-opt-scheduled-enqueue-time”] | -                                                        |
+| ScheduledEnqueueTimeUtc | Message-\>annotations ["x-opt-scheduled-enqueue-time"] | -                                                        |
 | SessionId               | Message-\>group\_id                                    | -                                                        |
 | TimeToLive              | Message-\>ttl                                          | Conversion, Proton-PHP TTL is defined in milliseconds. |
 | To                      | Message-\>address                                      | -                                                        |
@@ -226,4 +226,4 @@ Ready to learn more? Visit the following links:
 
 [AMQP in Service Bus for Windows Server]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
 
-[Service Bus AMQP overview]: /documentation/articles/service-bus-amqp-overview
+[Service Bus AMQP overview]: service-bus-amqp-overview.md

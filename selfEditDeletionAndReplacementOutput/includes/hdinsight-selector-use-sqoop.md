@@ -4,5 +4,5 @@ deleted:
 
 		- [SSH](/documentation/articles/hdinsight-use-sqoop)
 
-reason: ()
+reason: (Linux Support)
 

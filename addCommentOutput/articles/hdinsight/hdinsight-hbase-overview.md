@@ -35,7 +35,7 @@ Data can be managed in HBase by using the `create`, `get`, `put`, and `scan` com
 
 
 ## Scenarios: Use cases for HBase
-The canonical use case for which BigTable (and by extension, HBase) was created was web search. Search engines build indexes that map terms to the web pages that contain them. But there are many other use cases that HBase is suitable for—several of which are itemized in this section.
+The canonical use case for which BigTable (and by extension, HBase) was created was web search. Search engines build indexes that map terms to the web pages that contain them. But there are many other use cases that HBase is suitable <!-- deleted by customization forâseveral --><!-- keep by customization: begin --> for-several <!-- keep by customization: end --> of which are itemized in this section.
 
 - Key-value store
 
@@ -72,20 +72,39 @@ The canonical use case for which BigTable (and by extension, HBase) was created 
 
 
 
-[hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
 <!-- deleted by customization
+[hbase-provision-vnet]: hdinsight-hbase-provision-vnet-v1.md
 
-[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
+[hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
 
--->
-[hbase-build-java-maven]: /documentation/articles/hdinsight-hbase-build-java-maven
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hbase-build-java-maven]: hdinsight-hbase-build-java-maven.md
+
+[hdinsight-use-hive]: hdinsight-use-hive.md
+
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started/
+-->
+<!-- keep by customization: begin -->
+[hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
+[hbase-build-java-maven]: /documentation/articles/hdinsight-hbase-build-java-maven
+
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
+<!-- keep by customization: end -->
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
+<!-- deleted by customization
+[azure-create-storageaccount]: ../storage-create-storage-account.md
+-->
+<!-- keep by customization: begin -->
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+<!-- keep by customization: end -->
+
 [apache-hadoop]: http://hadoop.apache.org/

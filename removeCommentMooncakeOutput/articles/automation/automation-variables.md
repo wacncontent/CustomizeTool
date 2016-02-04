@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="08/18/2015"
+	ms.date="10/23/2015"
 	wacn.date=""/>
 
 # Variable assets in Azure Automation
@@ -51,7 +51,7 @@ The workflow activities in the following table are used to access Automation var
 |Get-AutomationVariable|Retrieves the value of an existing variable.|
 |Set-AutomationVariable|Sets the value for an existing variable.|
 
->[AZURE.NOTE] You should avoid using variables in the –Name parameter of **Get-AutomationVariable**  in a runbook since this can complicate discovering dependencies between runbooks and Automation variables at design time.
+>[AZURE.NOTE] You should avoid using variables in the -Name parameter of **Get-AutomationVariable**  in a runbook since this can complicate discovering dependencies between runbooks and Automation variables at design time.
 
 ## Creating a new Automation variable
 
@@ -66,20 +66,20 @@ The workflow activities in the following table are used to access Automation var
 
 ### To create a new variable with Windows PowerShell
 
-The [New-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913771.aspx) cmdlet creates a new variable and sets its initial value. You can retrieve the value using [Get-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913772.aspx). If the value is a simple type, then that same type is returned. If it’s a complex type, then a **PSCustomObject** is returned.
+The [New-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913771.aspx) cmdlet creates a new variable and sets its initial value. You can retrieve the value using [Get-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913772.aspx). If the value is a simple type, then that same type is returned. If it's a complex type, then a **PSCustomObject** is returned.
 
 The following sample commands show how to create a variable of type string and then return its value.
 
 
-	New-AzureAutomationVariable –AutomationAccountName "MyAutomationAccount" –Name 'MyStringVariable' –Encrypted $false –Value 'My String'
-	$string = (Get-AzureAutomationVariable –AutomationAccountName "MyAutomationAccount" –Name 'MyStringVariable').Value
+	New-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name 'MyStringVariable' -Encrypted $false -Value 'My String'
+	$string = (Get-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name 'MyStringVariable').Value
 
 The following sample commands show how to create a variable with a complex type and then return its properties. In this case, a virtual machine object from **Get-AzureVM** is used.
 
-	$vm = Get-AzureVM –ServiceName "MyVM" –Name "MyVM"
-	New-AzureAutomationVariable –AutomationAccountName "MyAutomationAccount" –Name "MyComplexVariable" –Encrypted $false –Value $vm
+	$vm = Get-AzureVM -ServiceName "MyVM" -Name "MyVM"
+	New-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name "MyComplexVariable" -Encrypted $false -Value $vm
 	
-	$vmValue = (Get-AzureAutomationVariable –AutomationAccountName "MyAutomationAccount" –Name "MyComplexVariable").Value
+	$vmValue = (Get-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name "MyComplexVariable").Value
 	$vmName = $ vmValue.Name
 	$vmIpAddress = $ vmValue.IpAddress
 
@@ -105,7 +105,7 @@ The following sample commands show how to set and retrieve a variable in a textu
 	for ($i = 1; $i -le $NumberOfIterations; $i++) {
 	   Write-Output "$i`: $SampleMessage"
 	}
-	Set-AutomationVariable –Name NumberOfRunnings –Value (NumberOfRunngs += 1)
+	Set-AutomationVariable -Name NumberOfRunnings -Value (NumberOfRunngs += 1)
 
 
 #### Setting and retrieving a complex object in a variable

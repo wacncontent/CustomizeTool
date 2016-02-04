@@ -9,19 +9,22 @@
    tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines"
-	ms.date="09/01/2015"
-	wacn.date=""/>
+   ms.service="virtual-machines"
+   ms.date="09/01/2015"
+   wacn.date=""/>
 
-# Azure Windows VM Extension Configuration Samples.
+# Azure Windows VM Extension Configuration Samples
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
+
 
 This article provides sample configuration for configuring Azure VM Extensions for Windows VMs.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] 
 
-To learn more about these extensions click here : [Azure VM Extensions Overview.](https://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
+To learn more about these extensions, see [Azure VM Extensions Overview.](https://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
 
-To learn more about authoring extension templates click here : [Authoring Extension Templates.](/documentation/articles/virtual-machines-extensions-authoring-templates)
+To learn more about authoring extension templates, see [Authoring Extension Templates.](/documentation/articles/virtual-machines-extensions-authoring-templates)
 
 This article lists expected configuration values for some of the Windows Extensions.
 
@@ -278,12 +281,13 @@ Before deploying the extension please check the latest extension version and rep
 
 ### Azure Diagnostics
 
-Click here for an overview of [Azure Diagnostics Extension](https://msdn.microsoft.com/zh-cn/library/azure/dn782207.aspx/)
+For more details about how to configure diagnostics, see [Azure Diagnostics Extension](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template)
 
           {
             "publisher": "Microsoft.Azure.Diagnostics",
             "type": "IaaSDiagnostics",
-            "typeHandlerVersion": "1.4",
+            "typeHandlerVersion": "1.5",
+			"autoUpgradeMinorVersion": true,
             "settings": {
               "xmlCfg": "[base64(variables('wadcfgx'))]",
               "storageAccount": "[parameters('diagnosticsStorageAccount')]"

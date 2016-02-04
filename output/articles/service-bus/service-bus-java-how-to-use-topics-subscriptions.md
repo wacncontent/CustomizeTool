@@ -320,7 +320,7 @@ Now that you've learned the basics of Service Bus queues, see [Service Bus queue
   [Azure SDK for Java]: /develop/java/
   [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
   [Azure Management Portal]: http://manage.windowsazure.cn/
-  [Service Bus queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+  [Service Bus queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx 
   [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx

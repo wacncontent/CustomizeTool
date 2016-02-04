@@ -1,14 +1,14 @@
 <properties 
-   pageTitle="Accessing private Azure clouds with Visual Studio"
+   pageTitle="Accessing private Azure clouds with Visual Studio | Windows Azure"
    description="Learn how to access private cloud resources by using Visual Studio."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="08/13/2015"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 # Accessing private Azure clouds with Visual Studio

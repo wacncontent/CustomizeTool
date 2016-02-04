@@ -7,15 +7,15 @@ authors="cristy"
 manager="timlt"
 editor=""/>
 <tags
-	ms.service="cloud-services"
-	ms.date="06/11/2015"
-	wacn.date=""/>
+ms.service="cloud-services"
+ms.date="06/11/2015"
+wacn.date=""/>
 
 # Configure Local Storage Resources
 
 A local storage resource is a reserved directory in the file system of the virtual machine in which an instance of a role is running. You can store information in your virtual machine instance so that code running in the instance can access the local storage resource when it needs to write to or read from a file. For example, a local storage resource can be used to cache data that may need to be accessed again while the service is running in Azure. You can also configure local storage resource to store files during startup. For more information on configuring local storage resources for startup, see [Using Local Storage to Store Files During Startup](https://msdn.microsoft.com/zh-cn/library/azure/hh974419.aspx)
 
-A local storage resource is declared in the service definition file. You can declare any number of local storage resources for a role. Each local storage resource is reserved for every instance of that role. The minimum amount of disk space that you can allocate for a local storage resource is 1 MB. The maximum amount that you can allocate for any given local resource depends on the size of the virtual machine that is specified for the role. Each virtual machine size has a corresponding total storage allocation, and the total space allocated for all local storage resources declared for a role cannot exceed the maximum size allotted for that virtual machine size. For more information about the maximum amount of local disk space that is allotted for each virtual machine size, see [Configure Sizes for Cloud Services](https://msdn.microsoft.com/zh-cn/library/azure/ee814754.aspx).
+A local storage resource is declared in the service definition file. You can declare any number of local storage resources for a role. Each local storage resource is reserved for every instance of that role. The minimum amount of disk space that you can allocate for a local storage resource is 1Â MB. The maximum amount that you can allocate for any given local resource depends on the size of the virtual machine that is specified for the role. Each virtual machine size has a corresponding total storage allocation, and the total space allocated for all local storage resources declared for a role cannot exceed the maximum size allotted for that virtual machine size. For more information about the maximum amount of local disk space that is allotted for each virtual machine size, see [Configure Sizes for Cloud Services](https://msdn.microsoft.com/zh-cn/library/azure/ee814754.aspx).
 
 > [AZURE.NOTE]
 >

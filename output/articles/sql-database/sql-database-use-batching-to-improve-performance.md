@@ -30,7 +30,7 @@ In this paper, we want to examine various SQL Database batching strategies and s
 - The multitenant characteristics of SQL Database means that the efficiency of the data access layer correlates to the overall scalability of the database. SQL Database must prevent any single tenant/user from monopolizing database resources to the detriment of other tenants. In response to usage in excess of predefined quotas, SQL Database can reduce throughput or respond with throttling exceptions. Efficiencies, such as batching, enable you to do more work on SQL Database before reaching these limits. 
 - Batching is also effective for architectures that use multiple databases (sharding). The efficiency of your interaction with each database unit is still a key factor in your overall scalability. 
 
-One of the benefits of using SQL Database is that you don’t have to manage the servers that host the database. However, this managed infrastructure also means that you have to think differently about database optimizations. You can no longer look to improve the database hardware or network infrastructure. Windows Azure controls those environments. The main area that you can control is how your application interacts with SQL Database. Batching is one of these optimizations. 
+One of the benefits of using SQL Database is that you don't have to manage the servers that host the database. However, this managed infrastructure also means that you have to think differently about database optimizations. You can no longer look to improve the database hardware or network infrastructure. Windows Azure controls those environments. The main area that you can control is how your application interacts with SQL Database. Batching is one of these optimizations. 
 
 The first part of the paper examines various batching techniques for .NET applications that use SQL Database. The last two sections cover batching guidelines and scenarios.
 
@@ -81,7 +81,7 @@ The best way to optimize this code is to implement some form of client-side batc
 	    transaction.Commit();
 	}
 
-Transactions are actually being used in both of these examples. In the first example, each individual call is an implicit transaction. In the second example, an explicit transaction wraps all of the calls. Per the documentation for the [write-ahead transaction log](https://msdn.microsoft.com/zh-cn/library/ms186259.aspx), log records are flushed to the disk when the transaction commits. So by including more calls in a transaction, the write to the transaction log can delay until the transaction is committed. In effect, you are enabling batching for the writes to the server’s transaction log.
+Transactions are actually being used in both of these examples. In the first example, each individual call is an implicit transaction. In the second example, an explicit transaction wraps all of the calls. Per the documentation for the [write-ahead transaction log](https://msdn.microsoft.com/zh-cn/library/ms186259.aspx), log records are flushed to the disk when the transaction commits. So by including more calls in a transaction, the write to the transaction log can delay until the transaction is committed. In effect, you are enabling batching for the writes to the server's transaction log.
 
 The following table shows some ad-hoc testing results. The tests performed the same sequential inserts with and without transactions. For more perspective, the first set of tests ran remotely from a laptop to the database in Windows Azure. The second set of tests ran from a cloud service and database that both resided within the same Windows Azure datacenter (China North). The following table shows the duration in milliseconds of sequential inserts with and without transactions.
 
@@ -171,7 +171,7 @@ Then change the **SqlCommand** object declaration in the previous code example t
 	SqlCommand cmd = new SqlCommand("sp_InsertRows", connection);
 	cmd.CommandType = CommandType.StoredProcedure;
 
-In most cases, table-valued parameters have equivalent or better performance than other batching techniques. Table-valued parameters are often preferable, because they are more flexible than other options. For example, other techniques, such as SQL bulk copy, only permit the insertion of new rows. But with table-valued parameters, you can use logic in the stored procedure to determine which rows are updates and which are inserts. The table type can also be modified to contain an “Operation” column that indicates whether the specified row should be inserted, updated, or deleted.
+In most cases, table-valued parameters have equivalent or better performance than other batching techniques. Table-valued parameters are often preferable, because they are more flexible than other options. For example, other techniques, such as SQL bulk copy, only permit the insertion of new rows. But with table-valued parameters, you can use logic in the stored procedure to determine which rows are updates and which are inserts. The table type can also be modified to contain an "Operation" column that indicates whether the specified row should be inserted, updated, or deleted.
 
 The following table shows ad-hoc test results for the use of table-valued parameters in milliseconds.
 
@@ -219,7 +219,7 @@ The following ad-hoc test results show the performance of batching with **SqlBul
 
 >[AZURE.NOTE] Results are not benchmarks. See the [note about timing results in this topic](#note-about-timing-results-in-this-topic).
 
-In smaller batch sizes, the use table-valued parameters outperformed the **SqlBulkCopy** class. However, **SqlBulkCopy** performed 12–31% faster than table-valued parameters for the tests of 1,000 and 10,000 rows. Like table-valued parameters, **SqlBulkCopy** is a good option for batched inserts, especially when compared to the performance of non-batched operations.
+In smaller batch sizes, the use table-valued parameters outperformed the **SqlBulkCopy** class. However, **SqlBulkCopy** performed 12-31% faster than table-valued parameters for the tests of 1,000 and 10,000 rows. Like table-valued parameters, **SqlBulkCopy** is a good option for batched inserts, especially when compared to the performance of non-batched operations.
 
 For more information on bulk copy in ADO.NET, see [Bulk Copy Operations in SQL Server](https://msdn.microsoft.com/zh-cn/library/7ek5da1a.aspx).
 
@@ -263,7 +263,7 @@ This approach can be slightly faster for batches that are less than 100 rows. Al
 The **DataAdapter** class allows you to modify a **DataSet** object and then submit the changes as INSERT, UPDATE, and DELETE operations. If you are using the **DataAdapter** in this manner, it is important to note that separate calls are made for each distinct operation. To improve performance, use the **UpdateBatchSize** property to the number of operations that should be batched at a time. For more information, see [Performing Batch Operations Using DataAdapters](https://msdn.microsoft.com/zh-cn/library/aadf8fk2.aspx).
 
 ### Entity framework
-Entity Framework does not currently support batching. Different developers in the community have attempted to demonstrate workarounds, such as override the **SaveChanges** method. But the solutions are typically complex and customized to the application and data model. The Entity Framework codeplex project currently has a discussion page on this feature request. To view this discussion, see [Design Meeting Notes – August 2, 2012](http://entityframework.codeplex.com/wikipage?title=Design%20Meeting%20Notes%20-%20August%202%2c%202012).
+Entity Framework does not currently support batching. Different developers in the community have attempted to demonstrate workarounds, such as override the **SaveChanges** method. But the solutions are typically complex and customized to the application and data model. The Entity Framework codeplex project currently has a discussion page on this feature request. To view this discussion, see [Design Meeting Notes - August 2, 2012](http://entityframework.codeplex.com/wikipage?title=Design%20Meeting%20Notes%20-%20August%202%2c%202012).
 
 ### XML
 For completeness, we feel that it is important to talk about XML as a batching strategy. However, the use of XML has no advantages over other methods and several disadvantages. The approach is similar to table-valued parameters, but an XML file or string is passed to a stored procedure instead of a user-defined table. The stored procedure parses the commands in the stored procedure.
@@ -330,15 +330,15 @@ If you do use parallel execution, consider controlling the maximum number of wor
 ### Related performance factors
 Typical guidance on database performance also affects batching. For example, insert performance is reduced for tables that have a large primary key or many nonclustered indexes.
 
-If table-valued parameters use a stored procedure, you can use the command **SET NOCOUNT ON** at the beginning of the procedure. This statement suppresses the return of the count of the affected rows in the procedure. However, in our tests, the use of **SET NOCOUNT ON** either had no effect or decreased performance. The test stored procedure was simple with a single **INSERT** command from the table-valued parameter. It is possible that more complex stored procedures would benefit from this statement. But don’t assume that adding **SET NOCOUNT ON** to your stored procedure automatically improves performance. To understand the effect, test your stored procedure with and without the **SET NOCOUNT ON** statement.
+If table-valued parameters use a stored procedure, you can use the command **SET NOCOUNT ON** at the beginning of the procedure. This statement suppresses the return of the count of the affected rows in the procedure. However, in our tests, the use of **SET NOCOUNT ON** either had no effect or decreased performance. The test stored procedure was simple with a single **INSERT** command from the table-valued parameter. It is possible that more complex stored procedures would benefit from this statement. But don't assume that adding **SET NOCOUNT ON** to your stored procedure automatically improves performance. To understand the effect, test your stored procedure with and without the **SET NOCOUNT ON** statement.
 
 ## Batching scenarios
-The following sections describe how to use table-valued parameters in three application scenarios. The first scenario shows how buffering and batching can work together. The second scenario improves performance by performing master-detail operations in a single stored procedure call. The final scenario shows how to use table-valued parameters in an “UPSERT” operation.
+The following sections describe how to use table-valued parameters in three application scenarios. The first scenario shows how buffering and batching can work together. The second scenario improves performance by performing master-detail operations in a single stored procedure call. The final scenario shows how to use table-valued parameters in an "UPSERT" operation.
 
 ### Buffering
 Although there are some scenarios that are obvious candidate for batching, there are many scenarios that could take advantage of batching by delayed processing. However, delayed processing also carries a greater risk that the data is lost in the event of an unexpected failure. It is important to understand this risk and consider the consequences.
 
-For example, consider a web application that tracks the navigation history of each user. On each page request, the application could make a database call to record the user’s page view. But higher performance and scalability can be achieved by buffering the users’ navigation activities and then sending this data to the database in batches. You can trigger the database update by elapsed time and/or buffer size. For example, a rule could specify that the batch should be processed after 20 seconds or when the buffer reaches 1000 items.
+For example, consider a web application that tracks the navigation history of each user. On each page request, the application could make a database call to record the user's page view. But higher performance and scalability can be achieved by buffering the users' navigation activities and then sending this data to the database in batches. You can trigger the database update by elapsed time and/or buffer size. For example, a rule could specify that the batch should be processed after 20 seconds or when the buffer reaches 1000 items.
 
 The following code example uses [Reactive Extensions - Rx](https://msdn.microsoft.com/data/gg577609) to process buffered events raised by a monitoring class. When the buffer fills or a timeout is reached, the batch of user data is sent to the database with a table-valued parameter.
 
@@ -425,7 +425,7 @@ The handler converts all of the buffered items into a table-valued type and then
 To use this buffering class, the application creates a static NavHistoryDataMonitor object. Each time a user accesses a page, the application calls the NavHistoryDataMonitor.RecordUserNavigationEntry method. The buffering logic proceeds to take care of sending these entries to the database in batches.
 
 ### Master detail
-Table-valued parameters are useful for simple INSERT scenarios. However, it can be more challenging to batch inserts that involve more than one table. The “master/detail” scenario is a good example. The master table identifies the primary entity. One or more detail tables store more data about the entity. In this scenario, foreign key relationships enforce the relationship of details to a unique master entity. Consider a simplified version of a PurchaseOrder table and its associated OrderDetail table. The following Transact-SQL creates the PurchaseOrder table with four columns: OrderID, OrderDate, CustomerID, and Status.
+Table-valued parameters are useful for simple INSERT scenarios. However, it can be more challenging to batch inserts that involve more than one table. The "master/detail" scenario is a good example. The master table identifies the primary entity. One or more detail tables store more data about the entity. In this scenario, foreign key relationships enforce the relationship of details to a unique master entity. Consider a simplified version of a PurchaseOrder table and its associated OrderDetail table. The following Transact-SQL creates the PurchaseOrder table with four columns: OrderID, OrderDate, CustomerID, and Status.
 
 	CREATE TABLE [dbo].[PurchaseOrder](
 	[OrderID] [int] IDENTITY(1,1) NOT NULL,
@@ -538,7 +538,7 @@ This solution allows each batch to use a set of OrderID values that begin at 1. 
 This example demonstrates that even more complex database operations, such as master-detail operations, can be batched using table-valued parameters.
 
 ### UPSERT
-Another batching scenario involves simultaneously updating existing rows and inserting new rows. This operation is sometimes referred to as an “UPSERT” (update + insert) operation. Rather than making separate calls to INSERT and UPDATE, the MERGE statement is best suited to this task. The MERGE statement can perform both insert and update operations in a single call.
+Another batching scenario involves simultaneously updating existing rows and inserting new rows. This operation is sometimes referred to as an "UPSERT" (update + insert) operation. Rather than making separate calls to INSERT and UPDATE, the MERGE statement is best suited to this task. The MERGE statement can perform both insert and update operations in a single call.
 
 Table-valued parameters can be used with the MERGE statement to perform updates and inserts. For example, consider a simplified Employee table that contains the following columns: EmployeeID, FirstName, LastName, SocialSecurityNumber:
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Topologies for Azure AD Connect | Windows Azure"
+   pageTitle="Azure AD Connect: Supported topologies | Windows Azure"
    description="This topic details supported and unsupported topologies for Azure AD Connect"
    services="active-directory"
    documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # Topologies for Azure AD Connect
@@ -55,7 +55,7 @@ Common topologies are discussed in the next section: [Separate topologies](#mult
 In the default configuration delivered by Azure AD Connect sync, the following assumptions are made:
 1.	Users have only one enabled account and the forest where this account is located is used to authenticate the user. This is for both password sync and for federation; userPrincipalName and sourceAnchor/immutableID will come from this forest.
 2.	Users have only one mailbox.
-3.	The forest that hosts a user’s mailbox has the best data quality for attributes visible in the Exchange Global Address List (GAL). If there is no mailbox on the user, then any forest can be used to contribute these attribute values.
+3.	The forest that hosts a user's mailbox has the best data quality for attributes visible in the Exchange Global Address List (GAL). If there is no mailbox on the user, then any forest can be used to contribute these attribute values.
 4.	If you have a linked mailbox, then there is also another account in different forest used for login.
 
 If your environment does not match these assumptions, the following will happen:
@@ -67,7 +67,7 @@ If your environment does not match these assumptions, the following will happen:
 
 It is not supported to have more than one Azure AD Connect Sync server connected to a single Azure AD directory (with the exception of a [staging server](#staging-server)).
 
-### Multiple forests – separate topologies
+### Multiple forests - separate topologies
 “Users are represented only once across all directories”
 
 ![MultiForestUsersOnce](./media/active-directory-aadconnect-topologies/MultiForestUsersOnce.png)
@@ -78,12 +78,12 @@ In this environment, all forests on-premises are treated as separate entities an
 Each forest has its own Exchange organization and there is no GALSync between the forests. This could be the situation after a merger/acquisition or in an organization where each business unit is operating isolated from each other. In Azure AD these forests will be in the same organization and appear with a unified GAL.
 In this picture, each object in every forest will be represented once in the metaverse and aggregated in the target Azure AD directory.
 
-### Multiple forests – match users
+### Multiple forests - match users
 Common for all multi-forest scenarios where you select one of the options under “User identities exist across multiple directories” is that distribution and security groups can be found in every forest and can contain a mix of users, contacts, and FSPs (Foreign Security Principals).
 
 FSPs are used in ADDS to represent members from other forests in a security group. The sync engine will resolve the FSP to the real user and represent the security group in Azure AD with all FSPs resolved to the real object.
 
-### Multiple forests – full mesh with optional GALSync
+### Multiple forests - full mesh with optional GALSync
 “User identities exist across multiple directories. Match using: Mail attribute”
 
 ![MultiForestUsersMail](./media/active-directory-aadconnect-topologies/MultiForestUsersMail.png)
@@ -96,7 +96,7 @@ If Exchange is present in more than one forest, there could optionally be an on-
 
 In this scenario, identity objects are joined using the mail attribute. As a consequence of this, a user with a mailbox in one forest is joined with the contacts in the other forests.
 
-### Multiple Forests – Account-Resource Forest
+### Multiple Forests - Account-Resource Forest
 “User identities exist across multiple directories. Match using: ObjectSID and msExchMasterAccountSID attributes”
 
 ![MultiForestUsersObjectSID](./media/active-directory-aadconnect-topologies/MultiForestUsersObjectSID.png)
@@ -108,7 +108,7 @@ In an account-resource forest topology, you have one or more account forests wit
 This scenario includes one forest that trusts all account forests. This forest has typically an extended AD schema with Exchange and Lync. All Exchange and Lync services as well as other shared services are located in this forest. Users have a disabled user account in this forest and the mailbox is linked to the account forest.
 
 ## Office 365 and topology considerations
-Some Office 365 workloads have certain restrictions to supported topologies. If you plan to use any of these, please refer to each workload’s supported topologies pages.
+Some Office 365 workloads have certain restrictions to supported topologies. If you plan to use any of these, please refer to each workload's supported topologies pages.
 
 | Workload |  |
 | --------- | --------- |

@@ -1,16 +1,16 @@
 <properties 
 	pageTitle="如何通过 WebJobs SDK 使用 Azure 服务总线" 
-	description="了解如何通过 WebJobs SDK 使用 Azure 服务总线队列和主题。" 
+	description="了解如何通过 WebJobs SDK 使用 Azure 服务总线 队列和主题。" 
 	services="app-service\web, service-bus" 
 	documentationCenter=".net" 
 	authors="tdykstra" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.date="08/10/2015" 
-	wacn.date="10/03/2015"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="09/22/2015"
+	wacn.date="11/27/2015"/>
 
 # 如何通过 WebJobs SDK 使用 Azure 服务总线
 
@@ -33,10 +33,9 @@
 -   [先决条件](#prerequisites)
 -   [如何在接收队列消息时触发函数](#trigger)
 -   [如何创建队列消息](#create)
--   [如何使用 服务总线主题](#topics)
+-   [如何使用服务总线主题](#topics)
 -   [存储队列文章涵盖的相关主题](#queues)
 -   [后续步骤](#nextsteps)
-
 ## <a id="prerequisites"></a>先决条件
 
 你必须先安装 [Microsoft.Azure.WebJobs.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus/) NuGet 包和其他 WebJobs SDK 包，然后才能使用服务总线。
@@ -60,8 +59,7 @@
 ### ServicebusTrigger 工作原理
 
 SDK 接收 `PeekLock` 模式的消息。如果函数成功完成，则对此消息调用 `Complete`；如果函数失败，则调用 `Abandon`。如果函数的运行时间长于 `PeekLock` 超时时间，则会自动续订锁定。
-
-服务总线会自行执行有害队列处理，因此不需要由 WebJobs SDK 控制或在其中配置。
+服务总线会自行执行有害队列处理，因此不需要由 WebJobs SDK 控制或在其中配置。
 
 ### 字符串队列消息
 
@@ -77,7 +75,7 @@ SDK 接收 `PeekLock` 模式的消息。如果函数成功完成，则对此消�
 
 ### POCO 队列消息
 
-SDK 会自动反序列化包含 POCO（[普通旧 CLR 对象](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)）类型 JSON 的队列消息。以下代码示例读取包含 `BlobInformation` 对象（具有 `BlobName` 属性）的队列消息：
+SDK 会自动反序列化包含 POCO[（普通旧 CLR 对象](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)）类型 JSON 的队列消息。以下代码示例读取包含 `BlobInformation` 对象（具有 `BlobName` 属性）的队列消息：
 
 		public static void WriteLogPOCO([ServiceBusTrigger("inputqueue")] BlobInformation blobInfo,
 		    TextWriter logger)
@@ -171,4 +169,4 @@ SDK 会自动反序列化包含 POCO（[普通旧 CLR 对象](http://en.wikipedi
 本指南中包含的代码示例展示了如何处理常见方案来结合使用 Azure 服务总线。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 推荐资源](/documentation/articles/websites-webjobs-resources/)。
  
 
-<!---HONumber=71-->
+<!---HONumber=82-->

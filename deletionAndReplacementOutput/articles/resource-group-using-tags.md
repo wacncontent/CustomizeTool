@@ -23,7 +23,7 @@ replaced by:
 
 		chinaeast
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -33,7 +33,7 @@ replaced by:
 
 		chinaeast
 
-reason: ()
+reason: (region diff)
 
 deleted:
 
@@ -43,7 +43,7 @@ replaced by:
 
 		chinaeast
 
-reason: ()
+reason: (region diff)
 
 deleted:
 

@@ -145,13 +145,13 @@ For Linux or MacOS, these are main Azure scenarios that are supported:
 
 3. Developing and publishing to Azure Websites using Git
 
-The first scenario enables you to author rich web apps that take advantage of the Azure PaaS capabilities such as [blob storage][], [queue storage][], [table storage][] etc. via Pythonic wrappers for the Azure REST API's.  These work identically on Windows, Mac and Linux.  You can also use these client libraries from your local development machine or a Linux VM running on Azure.
+The first scenario enables you to author rich web sites that take advantage of the Azure PaaS capabilities such as [blob storage][], [queue storage][], [table storage][] etc. via Pythonic wrappers for the Azure REST API's.  These work identically on Windows, Mac and Linux.  You can also use these client libraries from your local development machine or a Linux VM running on Azure.
 
 For the VM scenario, you simply start a Linux VM of your choice (Ubuntu, CentOS, Suse) and run/manage what you like.  As an example, you can run [IPython][] REPL/notebook on your Windows/Mac/Linux machine and point your browser to a Linux or Windows multi-proc VM running the IPython Engine on Azure. See the [IPython Notebook on Azure][] tutorial for more information.
 
 For information on how to setup a Linux VM, please see the [Create a Virtual Machine Running Linux][] tutorial.
 
-Using Git deployment, you can develop a Python web application and publish it to an Azure Website from any operating system.  When you push your repository to Azure, it will automatically create a virtual environment and pip install your required packages.
+Using Git deployment, you can develop a Python web site and publish it to an Azure Website from any operating system.  When you push your repository to Azure, it will automatically create a virtual environment and pip install your required packages.
 
 For more information on developing and publishing Azure Websites, see the tutorials for [Creating Websites with Django][], [Creating Websites with Bottle][] and [Creating Websites with Flask][]. For more general information on using any WSGI compliant framework, see [Configuring Python with Azure Websites][].
 
@@ -169,33 +169,33 @@ For more information on developing and publishing Azure Websites, see the tutori
 * [Python Tools for Visual Studio on GitHub][]
 * [Python Developer Center](/develop/python/)
 
-[Continuum Analytics Python Distribution]: /documentation/articles/http://continuum.io
-[Enthought Python Distribution]: /documentation/articles/http://www.enthought.com
-[ActiveState Python Distribution]: /documentation/articles/http://www.activestate.com
-[www.python.org]: /documentation/articles/http://www.python.org
-[www.continuum.io]: /documentation/articles/http://continuum.io
-[www.enthought.com]: /documentation/articles/http://www.enthought.com
-[www.activestate.com]: /documentation/articles/http://www.activestate.com
-[SciPy - A suite of Scientific Python libraries]: /documentation/articles/http://www.scipy.org
-[NumPy - A numerics library for Python]: /documentation/articles/http://www.numpy.org
-[Django Project - A mature web framework/CMS]: /documentation/articles/http://www.djangoproject.com
-[IPython - an advanced REPL/Notebook for Python]: /documentation/articles/http://ipython.org
-[IPython]: /documentation/articles/http://ipython.org
-[IPython Notebook on Azure]: /documentation/articles/virtual-machines-python-ipython-notebook
-[Cloud Services]: /documentation/articles/cloud-services-python-ptvs
-[Websites]: /documentation/articles/web-sites-python-ptvs-django-mysql
-[Python Tools for Visual Studio]: /documentation/articles/http://aka.ms/ptvs
-[Python Tools for Visual Studio on GitHub]: /documentation/articles/https://github.com/microsoft/ptvs
-[Python Package Index]: /documentation/articles/http://pypi.python.org/pypi
-[Windows Azure SDK for Python 2.7]: /documentation/articles/http://go.microsoft.com/fwlink/?LinkId=254281
-[Windows Azure SDK for Python 3.4]: /documentation/articles/http://go.microsoft.com/fwlink/?LinkID=516990
-[Setting up a Linux VM via the Azure Management Portal]: /documentation/articles/create-and-configure-opensuse-vm-in-portal
-[How to use the Azure Command-Line Interface]: /documentation/articles/crossplat-cmd-tools
-[Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-tutorial
-[Creating Websites with Django]: /documentation/articles/web-sites-python-create-deploy-django-app
-[Creating Websites with Bottle]: /documentation/articles/web-sites-python-create-deploy-bottle-app
-[Creating Websites with Flask]: /documentation/articles/web-sites-python-create-deploy-flask-app
-[Configuring Python with Azure Websites]: /documentation/articles/web-sites-python-configure
-[table storage]: /documentation/articles/storage-python-how-to-use-table-storage
-[queue storage]: /documentation/articles/storage-python-how-to-use-queue-storage
-[blob storage]: /documentation/articles/storage-python-how-to-use-blob-storage
+[Continuum Analytics Python Distribution]: http://continuum.io
+[Enthought Python Distribution]: http://www.enthought.com
+[ActiveState Python Distribution]: http://www.activestate.com
+[www.python.org]: http://www.python.org
+[www.continuum.io]: http://continuum.io
+[www.enthought.com]: http://www.enthought.com
+[www.activestate.com]: http://www.activestate.com
+[SciPy - A suite of Scientific Python libraries]: http://www.scipy.org
+[NumPy - A numerics library for Python]: http://www.numpy.org
+[Django Project - A mature web framework/CMS]: http://www.djangoproject.com
+[IPython - an advanced REPL/Notebook for Python]: http://ipython.org
+[IPython]: http://ipython.org
+[IPython Notebook on Azure]: virtual-machines-python-ipython-notebook.md
+[Cloud Services]: cloud-services-python-ptvs.md
+[Websites]: web-sites-python-ptvs-django-mysql.md
+[Python Tools for Visual Studio]: http://aka.ms/ptvs
+[Python Tools for Visual Studio on GitHub]: https://github.com/microsoft/ptvs
+[Python Package Index]: http://pypi.python.org/pypi
+[Windows Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?LinkId=254281
+[Windows Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?LinkID=516990
+[Setting up a Linux VM via the Azure Management Portal]: create-and-configure-opensuse-vm-in-portal.md
+[How to use the Azure Command-Line Interface]: crossplat-cmd-tools.md
+[Create a Virtual Machine Running Linux]: virtual-machines-linux-tutorial.md
+[Creating Websites with Django]: web-sites-python-create-deploy-django-app.md
+[Creating Websites with Bottle]: web-sites-python-create-deploy-bottle-app.md
+[Creating Websites with Flask]: web-sites-python-create-deploy-flask-app.md
+[Configuring Python with Azure Websites]: web-sites-python-configure.md
+[table storage]: storage-python-how-to-use-table-storage.md
+[queue storage]: storage-python-how-to-use-queue-storage.md
+[blob storage]: storage-python-how-to-use-blob-storage.md

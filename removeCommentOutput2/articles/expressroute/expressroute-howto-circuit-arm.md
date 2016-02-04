@@ -9,7 +9,7 @@
    tags="azure-resource-manager"/>
 <tags
 	ms.service="expressroute"
-	ms.date="11/06/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # Create and modify an ExpressRoute circuit using Azure Resource Manager and PowerShell
@@ -57,9 +57,9 @@ This article walks you through the steps to create an ExpressRoute circuit using
 
 2. **Get the list of providers, locations, and bandwidths supported.**
 
-	Before creating an ExpressRoute circuit, you will need the list of connectivity providers, supported locations, and bandwidth options. The PowerShell cmdlet *Get-AzureRmExpressRouteServiceProvider* returns this information, which you’ll use in later steps.
+	Before creating an ExpressRoute circuit, you will need the list of connectivity providers, supported locations, and bandwidth options. The PowerShell cmdlet *Get-AzureRmExpressRouteServiceProvider* returns this information, which you'll use in later steps.
 
-		PS C:\> Get-AzureRmExpressRouteServiceProvider
+		Get-AzureRmExpressRouteServiceProvider
 
 	Check to see if your connectivity provider is listed there. Make note of the following as you will need them to create circuits.
 	
@@ -90,13 +90,13 @@ This article walks you through the steps to create an ExpressRoute circuit using
 	
 	The response will contain the service key. You can get detailed descriptions of all the parameters by running the following:
 
-		get-help New-AzureRmExpressRouteCircuit -detailed 
+		Get-Help New-AzureRmExpressRouteCircuit -detailed 
 
 4. **List all ExpressRoute circuits.**
 
 	You can run the *Get-AzureRmExpressRouteCircuit* command to get a list of all ExpressRoute circuits you created.
 
-		#Getting service key
+		
 		Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
 	The response will be something similar to the example below:
@@ -156,7 +156,7 @@ This article walks you through the steps to create an ExpressRoute circuit using
 
 	You can get detailed descriptions of all the parameters by running the following:
 
-		get-help Get-AzureRmExpressRouteCircuit -detailed 
+		Get-Help Get-AzureRmExpressRouteCircuit -detailed 
 
 5. **Send the Service Key to your connectivity provider for provisioning.**
 
@@ -180,7 +180,7 @@ This article walks you through the steps to create an ExpressRoute circuit using
 
 
 
-5. **Periodically check the status and the state of the circuit key.**
+6. **Periodically check the status and the state of the circuit key.**
 
 	This lets you know when your provider has enabled your circuit. Once the circuit has been configured, the *ServiceProviderProvisioningState* will display as *Provisioned* as shown in the example below.
 
@@ -210,19 +210,24 @@ This article walks you through the steps to create an ExpressRoute circuit using
 		ServiceKey                       : **************************************
 		Peerings                         : []
 
-6. **Create your routing configuration.**
+7. **Create your routing configuration.**
 	
-	Refer to the [ExpressRoute circuit routing configuration (create and modify circuit peerings)](/documentation/articles/expressroute-howto-routing-arm) page for step-by-step instructions. 
+Refer to [Create and modify routing for an ExpressRoute circuit](/documentation/articles/expressroute-howto-routing-arm) for step-by-step instructions.
+
+>[AZURE.IMPORTANT] These instructions only apply for circuits created with service providers offering Layer 2 connectivity services. If you are using a service provider offering managed Layer 3 services (typically an IPVPN, like MPLS), your connectivity provider will configure and manage routing for you. You will not be able to create or manage peerings in such cases. 
+
 
 7. **Link a VNet to an ExpressRoute circuit.** 
 
-	Next, link a VNet to your ExpressRoute circuit. Refer to [Linking ExpressRoute circuits to VNets](/documentation/articles/expressroute-howto-linkvnet-arm) for step by step instructions. If you need to create a virtual network for ExpressRoute, see [Creating a virtual network for ExpressRoute](/documentation/articles/expressroute-howto-createvnet-classic) for instructions.
+	Next, link a VNet to your ExpressRoute circuit. Refer to [Linking virtual networks to ExpressRoute circuits](/documentation/articles/expressroute-howto-linkvnet-arm) for step-by-step instructions.
 
 ##  To get the status of an ExpressRoute circuit
 
 You can retrieve this information at any time using the *Get-AzureRmExpressRouteCircuit* cmdlet. Making the call without any parameters will list all circuits. 
 
 		Get-AzureRmExpressRouteCircuit
+
+The response will be similar to the example below:
 
 		Name                             : ExpressRouteARMCircuit
 		ResourceGroupName                : ExpressRouteResourceGroup
@@ -250,7 +255,8 @@ You can get information on a specific ExpressRoute circuit by passing the resour
 
 		Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
-	The response will be something similar to the example below:
+
+The response will be something similar to the example below:
 
 		Name                             : ExpressRouteARMCircuit
 		ResourceGroupName                : ExpressRouteResourceGroup
@@ -276,7 +282,7 @@ You can get information on a specific ExpressRoute circuit by passing the resour
 
 You can get detailed descriptions of all the parameters by running the following:
 
-		get-help get-azurededicatedcircuit -detailed 
+		Get-Help Get-azurededicatedcircuit -detailed 
 
 ## To modify an ExpressRoute circuit
 
@@ -353,4 +359,5 @@ If the service provider has deprovisioned the circuit (the service provider prov
 ## Next steps
 
 - [Configure routing](/documentation/articles/expressroute-howto-routing-arm)
+
 - [Link a VNet to an ExpressRoute circuit](/documentation/articles/expressroute-howto-linkvnet-arm) 

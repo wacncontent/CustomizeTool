@@ -1,3 +1,25 @@
-new docs: 0, word count: 0
+new docs: 21, word count: 21213
+articles/traffic-manager/automation-manage-trafficmanager.md
+articles/traffic-manager/disable-enable-or-delete-a-profile.md
+articles/traffic-manager/disable-or-enable-an-endpoint.md
+articles/traffic-manager/testing-traffic-manager-settings.md
+articles/traffic-manager/traffic-manager-configure-failover-load-balancing.md
+articles/traffic-manager/traffic-manager-configure-failover-routing-method.md
+articles/traffic-manager/traffic-manager-configure-performance-load-balancing.md
+articles/traffic-manager/traffic-manager-configure-performance-routing-method.md
+articles/traffic-manager/traffic-manager-configure-round-robin-load-balancing.md
+articles/traffic-manager/traffic-manager-configure-round-robin-routing-method.md
+articles/traffic-manager/traffic-manager-endpoints.md
+articles/traffic-manager/traffic-manager-load-balancing-methods.md
+articles/traffic-manager/traffic-manager-manage-profiles.md
+articles/traffic-manager/traffic-manager-monitoring.md
+articles/traffic-manager/traffic-manager-overview.md
+articles/traffic-manager/traffic-manager-performance-considerations.md
+articles/traffic-manager/traffic-manager-point-internet-domain.md
+articles/traffic-manager/traffic-manager-powershell-arm.md
+articles/traffic-manager/traffic-manager-routing-methods.md
+articles/traffic-manager/traffic-manager-testing-settings.md
+articles/traffic-manager/traffic-manager-troubleshooting-degraded.md
 
-new includes: 0
+new includes: 1
+includes/traffic-manager-limits.md

@@ -2,7 +2,7 @@
 
 <properties 
 	pageTitle="Access on-premises resources using hybrid connections in Azure Websites" 
-	description="Create a connection between a web app in Azure Websites and an on-premises resource that uses a static TCP port" 
+	description="Create a connection between a web site in Azure Websites and an on-premises resource that uses a static TCP port" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
@@ -11,14 +11,14 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="08/11/2015"
+	ms.date="11/24/2015"
 	wacn.date=""/>
 
 #Access on-premises resources using hybrid connections in Azure Websites
 
-You can connect a web app in Azure Websites to any on-premises resource that uses a static TCP port, such as SQL Server, MySQL, HTTP Web APIs, Mobile Services, and most custom Web Services. This article shows you how to create a hybrid connection between a web app in Azure Websites and an on-premises SQL Server database.
+You can connect a web site in Azure Websites to any on-premises resource that uses a static TCP port, such as SQL Server, MySQL, HTTP Web APIs, Mobile Services, and most custom Web Services. This article shows you how to create a hybrid connection between a web site in Azure Websites and an on-premises SQL Server database.
 
-> [AZURE.NOTE] The Web Apps portion of the Hybrid Connections feature is available only in the [Azure Management Portal](https://manage.windowsazure.cn/). To create a connection in BizTalk Services, see [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview/).  
+> [AZURE.NOTE] The web sites portion of the Hybrid Connections feature is available only in the [Azure Management Portal](https://manage.windowsazure.cn). To create a connection in BizTalk Services, see [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview/).  
 
 ## Prerequisites
 - An Azure subscription. For a free subscription, see [Azure Trial](/pricing/1rmb-trial/). 
@@ -33,36 +33,34 @@ You can connect a web app in Azure Websites to any on-premises resource that use
 > [AZURE.NOTE] The steps in this article assume that you are using the browser from the computer that will host the on-premises hybrid connection agent.
 
 
-## Create a web app in the Azure Management Portal ##
+## Create a web site in the Azure Management Portal ##
 
-> [AZURE.NOTE] If you have already created a web app in the Azure Management Portal that you want to use for this tutorial, you can skip ahead to [Create a Hybrid Connection and a BizTalk Service](#CreateHC) and start from there.
+> [AZURE.NOTE] If you have already created a web site in the Azure Management Portal that you want to use for this tutorial, you can skip ahead to [Create a Hybrid Connection and a BizTalk Service](#CreateHC) and start from there.
 
-1. In the lower left corner of the [Azure Management Portal](https://manage.windowsazure.cn), click **New** > **Web + Mobile** > **Website**.
+1. In the upper left corner of the [Azure Management Portal](https://manage.windowsazure.cn), click **New** > **Web + Mobile** > **Web Apps**.
 	
-	![New button][New]
+	![New web site][NewWebsite]
 	
-	![New web app][NewWebsite]
-	
-2. On the **Web app** blade, provide a URL >  **Create**. 
+2. On the **Web Apps** blade, provide a URL and click **Create**. 
 	
 	![Website name][WebsiteCreationBlade]
 	
-3. After a few moments, the web app is created and its web app blade appears. The blade is a vertically scrollable dashboard that lets you manage your site.
+3. After a few moments, the web site is created and its web site blade appears. The blade is a vertically scrollable dashboard that lets you manage your site.
 	
 	![Website running][WebSiteRunningBlade]
 	
 4. To verify the site is live, you can click the **Browse** icon to display the default page.
 	
-	![Click browse to see your web app][Browse]
+	![Click browse to see your web site][Browse]
 	
-	![Default web app page][DefaultWebSitePage]
+	![Default web site page][DefaultWebSitePage]
 	
-Next, you will create a hybrid connection and a BizTalk service for the web app.
+Next, you will create a hybrid connection and a BizTalk service for the web site.
 
 <a name="CreateHC"></a>
 ## Create a Hybrid Connection and a BizTalk Service ##
 
-1. Scroll down the blade for your web app and choose **Hybrid connections**.
+1. In your web site blade click on **All settings** > **Networking** > **Configure your hybrid connection endpoints**.
 	
 	![Hybrid connections][CreateHCHCIcon]
 	
@@ -92,7 +90,7 @@ Next, you will create a hybrid connection and a BizTalk service for the web app.
 	
 	![Click OK][CreateBTScomplete]
 	
-6. When the process completes, the notifications area in the portal informs you that the connection has been successfully created.
+6. When the process completes, the notifications area in the Portal informs you that the connection has been successfully created.
 	<!-- TODO
 
     Everything fails at this step. I can't create a BizTalk service in the dogfood portal. I switch to the Management Portal
@@ -105,7 +103,7 @@ Next, you will create a hybrid connection and a BizTalk service for the web app.
 	The error indicates it couldn't find the type, not the instance.
 	![Success notification][CreateHCSuccessNotification]
 	-->
-7. On the web app's blade, the **Hybrid connections** icon now shows that 1 hybrid connection has been created.
+7. On the web site's blade, the **Hybrid connections** icon now shows that 1 hybrid connection has been created.
 	
 	![One hybrid connection created][CreateHCOneConnectionCreated]
 	
@@ -114,7 +112,7 @@ At this point, you have completed an important part of the cloud hybrid connecti
 <a name="InstallHCM"></a>
 ## Install the on-premises Hybrid Connection Manager to complete the connection ##
 
-1. On the web app's blade, click the Hybrid connections icon. 
+1. On the web site's blade, click **All settings** > **Networking** > **Configure your hybrid connection endpoints**. 
 	
 	![Hybrid connections icon][HCIcon]
 	
@@ -156,12 +154,12 @@ At this point, you have completed an important part of the cloud hybrid connecti
 
 Now that the hybrid connection infrastructure is complete, you can create a hybrid application that uses it. 
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 
 <a name="NextSteps"></a>
 ## Next Steps ##
 
-- For information on creating an ASP.NET web application that uses a hybrid connection, see [Connect to an on-premises SQL Server from an Azure web site using Hybrid Connections](/documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server/).
+- For information on creating an ASP.NET web site that uses a hybrid connection, see [Connect to an on-premises SQL Server from an Azure web site using Hybrid Connections](/documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server/).
 
 - For information on using a hybrid connection with a mobile service, see [Connect to an on-premises SQL Server from an Azure mobile service using Hybrid Connections](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started).
 
@@ -181,7 +179,6 @@ Now that the hybrid connection infrastructure is complete, you can create a hybr
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the Management Portal to the new portal see: [Reference on Websites and Web Apps in Azure Websites](https://manage.windowsazure.cn/)
 
 <!-- IMAGES -->
 [New]:./media/web-sites-hybrid-connection-get-started/B01New.png

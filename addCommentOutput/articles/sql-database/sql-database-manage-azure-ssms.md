@@ -17,7 +17,12 @@
 
 
 > [AZURE.SELECTOR]
+<!-- deleted by customization
+- [Azure Management Portal](/documentation/articles/sql-database-manage-portal)
+-->
+<!-- keep by customization: begin -->
 - [Azure Preview Portal](/documentation/articles/sql-database-manage-portal)
+<!-- keep by customization: end -->
 - [SSMS](/documentation/articles/sql-database-manage-azure-ssms)
 - [PowerShell](/documentation/articles/sql-database-command-line-tools)
 
@@ -30,7 +35,7 @@ It's recommended that you use the latest version of SSMS whenever you work with 
 
 Connecting to SQL Database requires that you know the server name on Azure. You might need to sign in to the portal to get this information.
 
-1.  Sign in to the [Azure Management Portal](http://manage.windowsazure.cn).
+1.  Sign in to the [Azure Management <!-- deleted by customization Portal](http://manage.windowsazure.cn) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->.
 
 2.  In the left pane, click **SQL Databases**.
 
@@ -261,5 +266,4 @@ complete details and more usage examples, see [Monitoring SQL Database using Dyn
              CROSS APPLY sys.dm_exec_sql_text(QS.sql_handle) as ST) as query_stats
         GROUP BY query_stats.query_hash
         ORDER BY 2 DESC;
- 
- 
+ 

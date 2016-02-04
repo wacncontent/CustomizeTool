@@ -4,7 +4,7 @@ deleted:
 
 		- A [Linux-based cluster](/documentation/articles/hdinsight-apache-storm-tutorial-get-started): Select this if you want to use SSH to work with the cluster from Linux, Unix, OS X, or Windows clients
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -14,19 +14,19 @@ deleted:
 		
 		    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		This is provided with all Linux, Unix, and OS X systems.
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		in a Unix or Linux distribution, it should have a value similar to `/usr/lib/jvm/java-7-oracle`.
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -100,11 +100,11 @@ deleted:
 		        storm kill reader
 		        storm kill writer
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		* If you are using a __Linux-based__ Storm on HDInsight cluster, see [Deploy and manage Apache Storm topologies on Linux-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
 
-reason: ()
+reason: (Linux Support)
 

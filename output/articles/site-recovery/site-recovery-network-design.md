@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Network infrastructure considerations for Site Recovery" 
+	pageTitle="Network infrastructure considerations for Site Recovery | Windows Azure" 
 	description="This article discusses practical network design considerations for failover with Site Recovery" 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="08/10/2015"
+	ms.date="12/14/2015"
 	wacn.date=""/>
 
 #  Network infrastructure considerations for Site Recovery
 
-The Azure Site Recovery service contributes to a robust business continuity and disaster recovery (BCDR) solution by protecting and recovering your on-premises physical servers and virtual machines with orchestration and automation of replication and failover to Azure, or to a secondary on-premises datacenter. 
+The Azure Site Recovery service contributes to a robust business continuity and disaster recovery (BCDR) solution by protecting and recovering your on-premises physical servers and virtual machines with orchestration and automation of replication and failover to Azure, or to a secondary on-premises data center. 
 
 This article is aimed at the virtualization team responsible for architecting, implementing, and supporting a BCDR solution and infrastructure that includes System Center VMM and Azure Site Recovery.
 
@@ -84,14 +84,14 @@ In a stretched subnet the subnet is available simultaneously in both the primary
 
 
 - From a Layer 2 (data link layer) perspective it requires networking equipment that can manage a stretched VLAN, although this type of equipment is now widely available.
-- The second and more difficult problem is that by stretching the VLAN the potential fault domain extends to both sites, essentially becoming a single point of failure. Although unlikely it could happen that a broadcast storm starts and cannot be isolated. We've seen mixed opinions about this issue, that range from successful implementation to “never”.
+- The second and more difficult problem is that by stretching the VLAN the potential fault domain extends to both sites, essentially becoming a single point of failure. Although unlikely it could happen that a broadcast storm starts and cannot be isolated. We've seen mixed opinions about this issue, that range from successful implementation to "never".
 - A stretched subnet isn't possible if you're failing over to Azure as your DR site.
 
 #### Subnet Failover
 
 It's possible to implement subnet failover in order to obtain the benefits of a stretched subnet without actually stretching it. In this configuration any given subnet is present at Site 1 or Site 2, but never at both sites simultaneously. To maintain the IP address space in the event of a failover, you can programmatically arrange for the router infrastructure to move the subnets from one site to another. In a failover scenario the subnets move with their associated protected VMs.  The main drawback to this approach is that in the event of a failure you have to move the whole subnet, which might be a reasonable solution, but could affect failover granularity considerations. 
 
-Let’s take a look at how a fictional enterprise (Contoso) is able to replicate its VMs to a recovery location, while failing over the entire subnet. We'll look at how Contoso is able to manages its subnets while replicating VMs between two on-premises locations, and discuss how subnet failover works when Azure is used as the disaster recovery site.
+Let's take a look at how a fictional enterprise (Contoso) is able to replicate its VMs to a recovery location, while failing over the entire subnet. We'll look at how Contoso is able to manages its subnets while replicating VMs between two on-premises locations, and discuss how subnet failover works when Azure is used as the disaster recovery site.
 
 ##### Example - Subnet failover in an enterprise
  
@@ -134,10 +134,10 @@ Note that if virtual machines use DHCP,  IP address management isn't handled by 
 If you're failing over to Azure there are a couple more constraints. Let's look at a fictional company (Woodgrove Bank) that has on-premises infrastructure hosting their line of business applications, and Azure hosting their mobile applications. 
 
 
-- Connectivity between Woodgrove Bank VMs in Azure and on-premises servers is over site-to-site VPN which shows the virtual network in Azure as an extension of Woodgrove Bank’s on-premises network. 
+- Connectivity between Woodgrove Bank VMs in Azure and on-premises servers is over site-to-site VPN which shows the virtual network in Azure as an extension of Woodgrove Bank's on-premises network. 
 - Woodgrove wants to use Site Recovery to replicate its on-premises workloads to Azure. 
 - Woodgrove has to deal with applications and configurations which depend on hard-coded IP addresses, so they need to retain IP addresses for their applications after failover to Azure.
-- Woodgrove’s on-premises infrastructure is managed by a VMM 2012 R2 server.
+- Woodgrove's on-premises infrastructure is managed by a VMM 2012 R2 server.
 - There's a VLAN-based logical network (Application Network) has been created on the VMM server. 
 	![Logical network](./media/site-recovery-network-design/ASR_NetworkDesign5.png)
 - A VM network (Application VM Network) was created using the logical network.
@@ -149,7 +149,7 @@ If you're failing over to Azure there are a couple more constraints. Let's look 
 For Woodgrove to deploy replication and maintain IP addresses the following is required:
 
 - An Azure virtual machine that's an extension of the on-premises network so that applications can fail over seamlessly.
-- Note that when you set up your site-to-site connection in Azure, an Azure network allows you to route traffic to the on-premises location (Azure calls it local-network) only if the IP address range is different from the on-premises IP address range, because Azure doesn’t support stretching subnets. This means that if you have a subnet 192.168.1.0/24 on-premises, you can’t add a local-network 192.168.1.0/24 in the Azure network. This is expected because Azure doesn’t know that there are no active VMs in the subnet and that the subnet is being created only for DR purposes. To be able to correctly route network traffic out of an Azure network the subnets in the network and the local-network must not conflict. 
+- Note that when you set up your site-to-site connection in Azure, an Azure network allows you to route traffic to the on-premises location (Azure calls it local-network) only if the IP address range is different from the on-premises IP address range, because Azure doesn't support stretching subnets. This means that if you have a subnet 192.168.1.0/24 on-premises, you can't add a local-network 192.168.1.0/24 in the Azure network. This is expected because Azure doesn't know that there are no active VMs in the subnet and that the subnet is being created only for DR purposes. To be able to correctly route network traffic out of an Azure network the subnets in the network and the local-network must not conflict. 
 - We'll need to created an additional network in Azure (Recovery Network) where the failed over VMs will be created.
 
 	![Azure networks](./media/site-recovery-network-design/ASR_NetworkDesign7.png)
@@ -178,7 +178,7 @@ Let's look at this scenario with an example that has a third site from which the
 
 	![Azure networks](./media/site-recovery-network-design/ASR_NetworkDesign11.png)
 
-- After failover the replica virtual machine might have an IP address that isn’t the same as the IP address of the primary virtual machine.
+- After failover the replica virtual machine might have an IP address that isn't the same as the IP address of the primary virtual machine.
 - Virtual machines will update the DNS server that they are using after they start. DNS entries typically have to be changed or flushed throughout the network, and cached entries in network tables have to be updated or flushed, so it is not uncommon to be faced with downtime while these state changes take place. This can be mitigated by:
 
 	- Using low TTL values for intranet applications.
@@ -196,7 +196,7 @@ Let's look at this scenario with an example that has a third site from which the
 
 #### Example - Failover to Azure
 
-The Networking infrastructure setup for Azure as a Disaster Recovery Site [blog post](http://azure.microsoft.com/blog/2014/09/04/networking-infrastructure-setup-for-microsoft-azure-as-a-disaster-recovery-site/) explains how to setup the required Azure networking infrastructure when retaining IP addresses isn’t a requirement. It starts with describing the application and then looks at how to set up networking on-premises and in Azure. It concludes with instructions for running a test failover and a planned failover.
+The Networking infrastructure setup for Azure as a Disaster Recovery Site [blog post](http://azure.microsoft.com/blog/2014/09/04/networking-infrastructure-setup-for-microsoft-azure-as-a-disaster-recovery-site/) explains how to setup the required Azure networking infrastructure when retaining IP addresses isn't a requirement. It starts with describing the application and then looks at how to set up networking on-premises and in Azure. It concludes with instructions for running a test failover and a planned failover.
 
 ## Next Steps
 

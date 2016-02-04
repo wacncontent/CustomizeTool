@@ -8,7 +8,7 @@ manager="timlt"
 editor=""/>
 <tags
 	ms.service="cloud-services"
-	ms.date="08/24/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Common Cloud Service startup tasks
@@ -190,16 +190,16 @@ Add this command to the **startup.cmd** file:
 
 This causes the **startup.cmd** batch file to be run every time the web role is initialized, ensuring that the required **ipSecurity** section is unlocked.
 
-Finally, modify the [system.webServer section](http://www.iis.net/configreference/system.webserver/security/ipsecurity#005) your web role’s **web.config** file to add a list of IP addresses that are granted access, as shown in the following example:
+Finally, modify the [system.webServer section](http://www.iis.net/configreference/system.webserver/security/ipsecurity#005) your web roleâs **web.config** file to add a list of IP addresses that are granted access, as shown in the following example:
 
 This sample config **allows** all IPs to access the server except the two defined
 
 ```xml
 <system.webServer>
     <security>
-    <!--Unlisted IP addresses are denied access-->
+    <!--Unlisted IP addresses are granted access-->
     <ipSecurity>
-        <!--The following IP addresses are granted access-->
+        <!--The following IP addresses are denied access-->
         <add allowed="false" ipAddress="192.168.100.1" subnetMask="255.255.0.0" />
         <add allowed="false" ipAddress="192.168.100.2" subnetMask="255.255.0.0" />
     </ipSecurity>
@@ -485,7 +485,7 @@ Learn more about how [Tasks](/documentation/articles/cloud-services-startup-task
 [Create and deploy](/documentation/articles/cloud-services-how-to-create-deploy-portal) your cloud service package.
 
 
-[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package#csdef
+[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package/#csdef
 [Task]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
 [Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime
 [Startup]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Startup

@@ -10,7 +10,7 @@
 <tags 
 	ms.service="app-service-web" 
 	ms.date="04/27/2015" 
-	wacn.date=""/>
+	wacn.date="11/27/2015"/>
 
 # 在 App Service 环境中扩展 Web 应用 #
 
@@ -76,7 +76,7 @@
 [HowtoConfigureASE]: /documentation/articles/app-service-web-configure-an-app-service-environment/
 [CreateWebappinASE]: /documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase
 [Appserviceplans]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview
-[AzureAppService]: /documentation/articles/app-service-value-prop-what-is
+[AzureAppService]: /documentation/services/web-sites
  
 
 <!---HONumber=67-->

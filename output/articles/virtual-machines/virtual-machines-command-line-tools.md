@@ -15,7 +15,7 @@
 
 # Using the Azure CLI for Mac, Linux, and Windows with Azure Service Management
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating and managing a resource with CLI commands in the classic deployment model. You can also create and manage a resource with CLI commands in the [Resource Manager deployment model](/documentation/articles/azure-cli-arm-commands).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
 
 This article describes how to use the Azure CLI in the Service Management mode (asm mode) to create, manage, and delete services on the command line of Mac, Linux, and Windows computers. You can perform many of the same tasks using the various libraries of the Azure SDKs, with Azure PowerShell, and using the Azure Management Portal. Using Azure services with the Service Management mode is conceptually similar to creating and managing individual Azure concepts and services like Websites, Virtual Machines, Virtual Networks, Storage, and so on.  
 
@@ -610,8 +610,8 @@ This command creates a new cloud service
 	+ Getting locations
 	help:    Location:
 	  1) China East
-	  2) China North
-	  : 6
+	  2) China Nort
+	  : 2
 	+ Creating cloud service
 	data:    Cloud service name newservicemsopentech
 	info:    service create command OK
@@ -1813,8 +1813,8 @@ Display a list of all available namespace locations.
 	+ Getting locations
 	data:    Name              Code
 	data:    ----------------  ----------------
-	data:    China North      China North
-	data:    China East           China East
+	data:    China East         China East
+	data:    China North  China North
 	info:    sb namespace location list command OK
 
 **sb namespace show &lt;name>**

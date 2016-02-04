@@ -34,7 +34,7 @@ At a high level, the flow is as follows:
 	- The device contacts the back-end requesting the secure payload.
 	- The app can show the payload as a notification on the device.
 
-It is important to note that in the preceding flow (and in this tutorial), we assume that the device stores an authentication token in local storage, after the user logs in. This guarantees a completely seamless experience, as the device can retrieve the notification’s secure payload using this token. If your application does not store authentication tokens on the device, or if these tokens can be expired, the device app, upon receiving the notification should display a generic notification prompting the user to launch the app. The app then authenticates the user and shows the notification payload.
+It is important to note that in the preceding flow (and in this tutorial), we assume that the device stores an authentication token in local storage, after the user logs in. This guarantees a completely seamless experience, as the device can retrieve the notificationâs secure payload using this token. If your application does not store authentication tokens on the device, or if these tokens can be expired, the device app, upon receiving the notification should display a generic notification prompting the user to launch the app. The app then authenticates the user and shows the notification payload.
 
 This Secure Push tutorial shows how to send a push notification securely. The tutorial builds on the [Notify Users](/documentation/articles/notification-hubs-aspnet-backend-android-notify-users) tutorial, so you should complete the steps in that tutorial first.
 
@@ -61,10 +61,8 @@ We will now modify the *login* flow in order to save the authentication header v
     		EditText password = (EditText) findViewById(R.id.passwordText);
     		String basicAuthHeader = username.getText().toString()+":"+password.getText().toString();
     		basicAuthHeader = Base64.encodeToString(basicAuthHeader.getBytes("UTF-8"), Base64.NO_WRAP);
-
     		SharedPreferences sp = getSharedPreferences(NOTIFY_USERS_PROPERTIES, Context.MODE_PRIVATE);
     		sp.edit().putString(AUTHORIZATION_HEADER_PROPERTY, basicAuthHeader).commit();
-
     		return basicAuthHeader;
 		}
 
@@ -87,7 +85,6 @@ Now we will change the handler that is called when the notification is received.
 		private void retrieveNotification(final String secureMessageId) {
 			SharedPreferences sp = ctx.getSharedPreferences(MainActivity.NOTIFY_USERS_PROPERTIES, Context.MODE_PRIVATE);
     		final String authorizationHeader = sp.getString(MainActivity.AUTHORIZATION_HEADER_PROPERTY, null);
-
 			new AsyncTask<Object, Object, Object>() {
 				@Override
 				protected Object doInBackground(Object... params) {
@@ -110,7 +107,6 @@ Now we will change the handler that is called when the notification is received.
 				}
 			}.execute(null, null, null);
 		}
-
 
 This method calls your app back-end to retrieve the notification content using the credentials stored in the shared preferences and displays it as a normal notification. The notification looks to the app user exactly like any other push notification.
 

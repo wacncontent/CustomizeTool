@@ -7,37 +7,33 @@
 	services="azure-portal" 
 	documentationCenter="na"/>
 
-<tags 
-	ms.service="azure-portal" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/08/2015" 
-	ms.author="stepsic"/>
+<tags
+	ms.service="azure-portal"
+	ms.date="09/08/2015"
+	wacn.date=""/>
 
 # Enable monitoring and diagnostics
 
-In the [Azure Portal](http://portal.azure.com), you can configure rich, frequent, monitoring and diagnostics data about your resources. You can also use the [REST API](https://msdn.microsoft.com/library/azure/dn931932.aspx) or [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) to configure diagnostics programmatically.
+In the [Azure Management Portal](http://manage.windowsazure.cn), you can configure rich, frequent, monitoring and diagnostics data about your resources. You can also use the [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931932.aspx) or [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) to configure diagnostics programmatically.
 
 Diagnostics, monitoring and metric data in Azure is saved into a Storage account of your choice. This allows you to use whatever tooling you want to read the data, from a storage explorer, to Power BI to third-party tooling.
 
 ## When you create a resource
 
-Most services allow you to enable diagnostics when you first create them in the [Azure Portal](http://portal.azure.com).
+Most services allow you to enable diagnostics when you first create them in the [Azure Management Portal](http://manage.windowsazure.cn).
 
 1. Go to **New** and choose the resource you are interested in. 
 
 2. Select **Optional configuration**.
     ![Diagnostics blade](./media/insights-how-to-use-diagnostics/Insights_CreateTime.png)
 
-3. Select **Diagnostics**, and click **On**. You will need to choose the Storage account that you want diagnostics to be saved to. You’ll be charged normal data rates for storage and transactions when you send diagnostics to a storage account.
+3. Select **Diagnostics**, and click **On**. You will need to choose the Storage account that you want diagnostics to be saved to. Youâll be charged normal data rates for storage and transactions when you send diagnostics to a storage account.
 
 4. Click **OK** and create the resource. 
 
 ## Change settings for an existing resource
 
-If you have already created a resource and you want to change the diagnostics settings (to change the level of data collection, for example), you can do that right in the Azure Portal.
+If you have already created a resource and you want to change the diagnostics settings (to change the level of data collection, for example), you can do that right in the Azure Management Portal.
 
 1. Go to the resource and click the **Settings** command.
 
@@ -65,10 +61,10 @@ Note that at this time certain distributions of Linux are not supported, and, th
 
 ## Next steps
 
-* [Receive alert notifications](insights-receive-alert-notifications.md) whenever operational events happen or metrics cross a threshold.
-* [Monitor service metrics](insights-how-to-customize-monitoring.md) to make sure your service is available and responsive.
-* [Scale instance count automatically](insights-how-to-scale.md) to make sure your service scale based on demand.
-* [Monitor application performance](insights-perf-analytics.md) if you want to understand exactly how your code is performing in the cloud.
-* [View events and audit logs](insights-debugging-with-events.md) to learn everything that has happened in your service.
-* [Track service health](insights-service-health.md) to find out when Azure has experienced performance degradation or service interruptions. 
+* [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) whenever operational events happen or metrics cross a threshold.
+* [Monitor service metrics](/documentation/articles/insights-how-to-customize-monitoring) to make sure your service is available and responsive.
+* [Scale instance count automatically](/documentation/articles/insights-how-to-scale) to make sure your service scale based on demand.
+* [Monitor application performance](/documentation/articles/insights-perf-analytics) if you want to understand exactly how your code is performing in the cloud.
+* [View events and audit logs](/documentation/articles/insights-debugging-with-events) to learn everything that has happened in your service.
+* [Track service health](/documentation/articles/insights-service-health) to find out when Azure has experienced performance degradation or service interruptions. 
  

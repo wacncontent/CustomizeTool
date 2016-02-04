@@ -125,8 +125,8 @@ After the Provider is installed continue setup to register the server in the vau
 8. In **Initial cloud metadata** sync select whether you want to synchronize metadata for all clouds on the VMM server with the vault. This action only needs to happen once on each server. If you don't want to synchronize all clouds, you can leave this setting unchecked and synchronize each cloud individually in the cloud properties in the VMM console.
 
 
-9. In **Data Encryption** you specify a location to save an SSL certificate that’s automatically generated for data encryption. This certificate is used if you enable data encryption for a cloud protected by Azure in the Azure Site Recovery portal. Keep this certificate safe. When you run a failover to Azure you’ll select it in order to decrypt encrypted data. 
-This option isn’t relevant if you’re replicating from one on-premises site to another.
+9. In **Data Encryption** you specify a location to save an SSL certificate that's automatically generated for data encryption. This certificate is used if you enable data encryption for a cloud protected by Azure in the Azure Site Recovery portal. Keep this certificate safe. When you run a failover to Azure you'll select it in order to decrypt encrypted data. 
+This option isn't relevant if you're replicating from one on-premises site to another.
 
 	![Server registration](./media/hyper-v-recovery-manager-configure-vault/SR_ProviderSyncEncrypt.png)
 
@@ -206,7 +206,7 @@ After servers, clouds, and networks are configured correctly, you can enable pro
 
 	![Verify virtual machines](./media/hyper-v-recovery-manager-configure-vault/SR_EnableVME2AProps.png)
 
-Track progress of the Enable Protection action in the **Jobs** tab, including the initial replication. After the Finalize Protection job runs the virtual machine is ready for failover. After protection is enabled and virtual machines are replicated, you’ll be able to view them in Azure.
+Track progress of the Enable Protection action in the **Jobs** tab, including the initial replication. After the Finalize Protection job runs the virtual machine is ready for failover. After protection is enabled and virtual machines are replicated, you'll be able to view them in Azure.
 
 
 ![Virtual machine protection job](./media/hyper-v-recovery-manager-configure-vault/SR_VMJobs.png)
@@ -233,7 +233,7 @@ To test your deployment you can run a test failover for a single virtual machine
 	- Verify that the virtual machines start successfully
 	- Click **Notes** to record and save any observations associated with the test failover.
 	- Click **The test failover is complete**. Clean up the test environment to automatically power off the test virtual machine and delete the test Azure network.
-5. After he failover you'll be able to see the virtual machine test replica in the Azure Management Portal. If you’re set up to access virtual machines from your on-premises network you can initiate a Remote Desktop connection to the virtual machine.
+5. After he failover you'll be able to see the virtual machine test replica in the Azure Management Portal. If you're set up to access virtual machines from your on-premises network you can initiate a Remote Desktop connection to the virtual machine.
 
 
 <h3><a id="runtest"></a>Monitor activity</h3>

@@ -9,22 +9,20 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/12/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Configure AlwaysOn Availability Groups in Azure VM (GUI)
 
 > [AZURE.SELECTOR]
-- [Portal](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
+- [Azure Management Portal](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
 - [PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
 
 <br/>
-<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
--->
 This end-to-end tutorial shows you how to implement Availability Groups using SQL Server AlwaysOn running on Azure virtual machines.
 
 >[AZURE.NOTE] In the Azure Management Portal, there is a new gallery setup for AlwaysOn Availability Groups with a Listener. This configures everything you need for AlwaysOn Availability Groups automatically. For more information, see [SQL Server AlwaysOn Offering in Windows Azure Management Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). To use PowerShell, see the tutorial of the same scenario at [Configure AlwaysOn Availability Groups in Azure with PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell).
@@ -63,7 +61,7 @@ You begin with a new Azure trial account. Once you have finished your account se
 
 1. Click the **New** button at the lower-left corner of the page, as shown below.
 
-	![Click New in the Portal](./media/virtual-machines-sql-server-alwayson-availability-groups-gui/IC665511.gif)
+	![Click New in the portal](./media/virtual-machines-sql-server-alwayson-availability-groups-gui/IC665511.gif)
 
 1. Click **Network Services**, then click **Virtual Network,** and then click **Custom Create**, as shown below.
 
@@ -86,7 +84,7 @@ You begin with a new Azure trial account. Once you have finished your account se
 	|Page|Settings|
 |---|---|
 |Select the virtual machine operating system|Windows Server 2012 R2 Datacenter|
-|Virtual machine configuration|**VERSION RELEASE DATE** = (latest)<br/>**VIRTUAL MACHINE NAME** = ContosoDC<br/>**TIER** = BASIC<br/>**SIZE** = A2 (2 cores)<br/>**NEW USER NAME** = AzureAdmin<br/>**NEW PASSWORD** = Contoso!000<br/>**CONFIRM** = Contoso!000|
+|Virtual machine configuration|**VERSION RELEASE DATE** = (latest)<br/>**VIRTUAL MACHINE NAME** = ContosoDC<br/>**TIER** = STANDARD<br/>**SIZE** = A2 (2 cores)<br/>**NEW USER NAME** = AzureAdmin<br/>**NEW PASSWORD** = Contoso!000<br/>**CONFIRM** = Contoso!000|
 |Virtual machine configuration|**CLOUD SERVICE** = Create a new cloud service<br/>**CLOUD SERVICE DNS NAME** = A unique cloud service name<br/>**DNS NAME** = A unique name (ex: ContosoDC123)<br/>**REGION/AFFINITY GROUP/VIRTUAL NETWORK** = ContosoNET<br/>**VIRTUAL NETWORK SUBNETS** = Back(10.10.2.0/24)<br/>**STORAGE ACCOUNT** = Use an automatically generated storage account<br/>**AVAILABILITY SET** = (None)|
 |Virtual machine options|Use defaults|
 
@@ -195,9 +193,13 @@ Next, create three VMs, including a WSFC cluster node and two SQL Server VMs. To
 |Page|VM1|VM2|VM3|
 |---|---|---|---|
 |Select the virtual machine operating system|**Windows Server 2012 R2 Datacenter**|**SQL Server 2014 RTM Enterprise**|**SQL Server 2014 RTM Enterprise**|
-|Virtual machine configuration|**VERSION RELEASE DATE** = (latest)<br/>**VIRTUAL MACHINE NAME** = ContosoWSFCNode<br/>**TIER** = BASIC<br/>**SIZE** = A2 (2 cores)<br/>**NEW USER NAME** = AzureAdmin<br/>**NEW PASSWORD** = Contoso!000<br/>**CONFIRM** = Contoso!000|**VERSION RELEASE DATE** = (latest)<br/>**VIRTUAL MACHINE NAME** = ContosoSQL1<br/>**TIER** = BASIC<br/>**SIZE** = A3 (4 cores)<br/>**NEW USER NAME** = AzureAdmin<br/>**NEW PASSWORD** = Contoso!000<br/>**CONFIRM** = Contoso!000|**VERSION RELEASE DATE** = (latest)<br/>**VIRTUAL MACHINE NAME** = ContosoSQL2<br/>**TIER** = BASIC<br/>**SIZE** = A3 (4 cores)<br/>**NEW USER NAME** = AzureAdmin<br/>**NEW PASSWORD** = Contoso!000<br/>**CONFIRM** = Contoso!000|
+|Virtual machine configuration|**VERSION RELEASE DATE** = (latest)<br/>**VIRTUAL MACHINE NAME** = ContosoWSFCNode<br/>**TIER** = STANDARD<br/>**SIZE** = A2 (2 cores)<br/>**NEW USER NAME** = AzureAdmin<br/>**NEW PASSWORD** = Contoso!000<br/>**CONFIRM** = Contoso!000|**VERSION RELEASE DATE** = (latest)<br/>**VIRTUAL MACHINE NAME** = ContosoSQL1<br/>**TIER** = STANDARD<br/>**SIZE** = A3 (4 cores)<br/>**NEW USER NAME** = AzureAdmin<br/>**NEW PASSWORD** = Contoso!000<br/>**CONFIRM** = Contoso!000|**VERSION RELEASE DATE** = (latest)<br/>**VIRTUAL MACHINE NAME** = ContosoSQL2<br/>**TIER** = STANDARD<br/>**SIZE** = A3 (4 cores)<br/>**NEW USER NAME** = AzureAdmin<br/>**NEW PASSWORD** = Contoso!000<br/>**CONFIRM** = Contoso!000|
 |Virtual machine configuration|**CLOUD SERVICE** = Previously Created Unique Cloud Service DNS Name (ex: ContosoDC123)<br/>**REGION/AFFINITY GROUP/VIRTUAL NETWORK** = ContosoNET<br/>**VIRTUAL NETWORK SUBNETS** = Back(10.10.2.0/24)<br/>**STORAGE ACCOUNT** = Use an automatically generated storage account<br/>**AVAILABILITY SET** = Create an availability set<br/>**AVAILABILITY SET NAME** = SQLHADR|**CLOUD SERVICE** = Previously Created Unique Cloud Service DNS Name (ex: ContosoDC123)<br/>**REGION/AFFINITY GROUP/VIRTUAL NETWORK** = ContosoNET<br/>**VIRTUAL NETWORK SUBNETS** = Back(10.10.2.0/24)<br/>**STORAGE ACCOUNT** = Use an automatically generated storage account<br/>**AVAILABILITY SET** = SQLHADR (You can also configure the availability set after the machine has been created. All three machines should be assigned to the SQLHADR availability set.)|**CLOUD SERVICE** = Previously Created Unique Cloud Service DNS Name (ex: ContosoDC123)<br/>**REGION/AFFINITY GROUP/VIRTUAL NETWORK** = ContosoNET<br/>**VIRTUAL NETWORK SUBNETS** = Back(10.10.2.0/24)<br/>**STORAGE ACCOUNT** = Use an automatically generated storage account<br/>**AVAILABILITY SET** = SQLHADR (You can also configure the availability set after the machine has been created. All three machines should be assigned to the SQLHADR availability set.)|
 |Virtual machine options|Use defaults|Use defaults|Use defaults|
+
+<br/>
+
+>[AZURE.NOTE] The previous configuration suggests STANDARD tier virtual machines, because BASIC tier machines do not support load-balanced endpoints required to later create an Availability Group listeners. Also, the machine sizes suggested here are meant for testing Availability Groups in Azure VMs. For the best performance on production workloads, see the recommendations for SQL Server machine sizes and configuration in [Performance best practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices).
 
 Once the three VMs are fully provisioned, you need to join them to the **corp.contoso.com** domain and grant CORP\Install administrative rights to the machines. To do this, use the following steps for each of the three VMs.
 

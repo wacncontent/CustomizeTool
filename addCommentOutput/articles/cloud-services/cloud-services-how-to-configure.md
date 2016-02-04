@@ -19,7 +19,12 @@
 
 > [AZURE.SELECTOR]
 - [Azure Management Portal](/documentation/articles/cloud-services-how-to-configure)
+<!-- deleted by customization
+- [Azure Management Portal](/documentation/articles/cloud-services-how-to-configure-portal)
+-->
+<!-- keep by customization: begin -->
 - [Azure Preview Portal](/documentation/articles/cloud-services-how-to-configure-portal)
+<!-- keep by customization: end -->
 
 You can configure the most commonly used settings for a cloud service in the Azure Management Portal. Or, if you like to update your configuration files directly, download a service configuration file to update, and then upload the updated file and update the cloud service with the configuration changes. Either way, the configuration updates are pushed out to all role instances.
 

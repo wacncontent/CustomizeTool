@@ -1,28 +1,30 @@
 <properties 
-   pageTitle="Azure Load Balancer overview | Microsoft Azure"
+   pageTitle="Azure Load Balancer overview | Windows Azure"
    description="Overview of Azure load balancer features, architecture and implementation. It helps to understand how load balancer works and leverage it for the cloud"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
    manager="adinah"
    editor="tysonn" />
-<tags 
-   ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/16/2015"
-   ms.author="joaoma" />
+<tags
+	ms.service="load-balancer"
+	ms.date="10/16/2015"
+	wacn.date=""/>
 
 
+<!-- deleted by customization
+# What is Azure load balancer?
+ 
+-->
+<!-- keep by customization: begin -->
 # Load Balancer Overview 
+<!-- keep by customization: end -->
 Azure load balancer delivers high availability and network performance to your applications. It is a Layer-4 (TCP, UDP) type load balancer that distributes incoming traffic among healthy service instances in cloud services or virtual machines defined in a load balancer set.
  
 It can be configured to:
 
-- Load balance incoming Internet traffic to virtual machines. We refer it as [Internet facing load balancing](load-balancer-internet-overview.md).
-- Load balance traffic between virtual machines in a Virtual Network, between virtual machines in cloud services or between on-premises computers and virtual machines in a cross-premises virtual network. We refer it as [internal load balancing (ILB)](load-balancer-internal-overview.md).
+- Load balance incoming Internet traffic to virtual machines. We refer it as [Internet facing load <!-- deleted by customization balancing](/documentation/articles/load-balancer-internet-overview) --><!-- keep by customization: begin --> balancing](/documentation/articles/load-balancer-overview) <!-- keep by customization: end -->.
+- Load balance traffic between virtual machines in a Virtual Network, between virtual machines in cloud services or between on-premises computers and virtual machines in a cross-premises virtual network. We refer it as [internal load balancing (ILB)](/documentation/articles/load-balancer-internal-overview).
 - 	Forward external traffic to a specific Virtual Machine instance
 
 
@@ -33,7 +35,7 @@ It can be configured to:
 Azure Load Balancer uses a hash based distribution algorithm. By default it uses is a 5 tuple (source IP, source port, destination IP, destination port, protocol type) hash to map traffic to available servers. It provides stickiness only within a transport session. Packets in the same TCP or UDP session will be directed to the same datacenter IP (DIP) instance behind the load balanced endpoint. When the client closes and re-opens the connection or starts a new session from the same source IP, the source port changes. This may cause the traffic to go to a different DIP endpoint.
 
 
-For more details on [Load Balancing distribution mode](load-balancer-distribution-mode.md)
+For more details on [Load Balancing distribution mode](/documentation/articles/load-balancer-distribution-mode)
 
 ![hash based load balancer](./media/load-balancer-overview/load-balancer-distribution.png)
 
@@ -62,7 +64,7 @@ There are three types of probes supported:
 
 - TCP custom probes. TCP probes rely on successful TCP session establishment to a defined probe port.
 
-For more information, see [load balancer health probe](https://msdn.microsoft.com/library/azure/jj151530.aspx).
+For more information, see [load balancer health probe](https://msdn.microsoft.com/zh-cn/library/azure/jj151530.aspx).
 
 ### Source NAT (SNAT)
 
@@ -85,17 +87,22 @@ Azure Load balancer configuration supports full cone NAT for UDP. Full cone NAT 
 
 **Support for multiple load balanced IP for Virtual machines**
 
-You can get more than one load balanced public IP address assigned to a set of Virtual machines. With this ability you can host multiple SSL websites and/or multiple SQL Always on Availability group listeners on the same set of Virtual machines. See more at [multiple VIP's per cloud service](load-balancer-multivip.md)
+You can get more than one load balanced public IP address assigned to a set of Virtual machines. With this ability you can host multiple SSL websites and/or multiple SQL Always on Availability group listeners on the same set of Virtual machines. See more at [multiple VIP's per cloud service](/documentation/articles/load-balancer-multivip)
 
-**Template-based deployments using Azure Resource Manager (public preview)** 
+<!-- deleted by customization
+**Template-based deployments using Azure Resource Manager ** 
 Azure Resource Manager (ARM) is the new management framework for services in Azure. Azure Load Balancer can now be managed using Azure Resource Manager-based APIs and tools. To learn more about Azure Resource Manager, see [Iaas just got easier with Azure Resource Manager](http://azure.microsoft.com/blog/2015/04/29/iaas-just-got-easier-again/)
+-->
+<!-- keep by customization: begin -->
+**Template-based deployments using Azure Resource Manager (public preview)** 
+Azure Resource Manager (ARM) is the new management framework for services in Azure. Azure Load Balancer can now be managed using Azure Resource Manager-based APIs and tools. To learn more about Azure Resource Manager, see [Iaas just got easier with Azure Resource Manager](http://www.windowsazure.cn/blog/2015/04/29/iaas-just-got-easier-again/)
+<!-- keep by customization: end -->
 
 
 ## Next Steps
 
-[Internet facing load balancer overview](load-balancer-internet-overview.md)
+[Internet facing load balancer overview](/documentation/articles/load-balancer-internet-overview)
 
-[Internal load balancer overview](load-balancer-internal-overview.md)
+[Internal load balancer overview](/documentation/articles/load-balancer-internal-overview)
 
-[Get started - Internet facing load balancer](load-balancer-internet-getstarted.md)
- 
+[Get started - Internet facing load balancer](/documentation/articles/load-balancer-internet-getstarted)

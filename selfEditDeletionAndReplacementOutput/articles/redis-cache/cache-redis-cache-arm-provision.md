@@ -8,5 +8,5 @@ replaced by:
 
 		![Deploy to Azure](./media/cache-redis-cache-arm-provision/deploybutton.png)
 
-reason: ()
+reason: (the new Ibiza portal)
 

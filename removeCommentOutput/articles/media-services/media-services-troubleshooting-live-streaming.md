@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/29/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 #Troubleshooting live streaming guide
@@ -45,7 +45,7 @@ This section gives suggestions on how to troubleshoot problems related to on-pre
 
 - **Potential issue**: Many RTP encoders do not allow for host names, and an IP address will need to be acquired.  
 
-	**Troubleshooting steps**: To find the IP address, open a command prompt on any computer. To do this in Windows, open the Run launcher (WIN + R) and type “cmd” to open.  
+	**Troubleshooting steps**: To find the IP address, open a command prompt on any computer. To do this in Windows, open the Run launcher (WIN + R) and type âcmdâ to open.  
 
 	Once the command prompt is open, type "Ping [AMS Host Name]". 
 
@@ -62,3 +62,11 @@ This section gives suggestions on how to troubleshoot problems related to on-pre
 	**Troubleshooting steps**: Navigate to the "Streaming Endpoint" tab in the AMSE tool, and confirm there is a Streaming Endpoint running with one streaming unit. 
 	
 >[AZURE.NOTE] If after following the troubleshooting steps you still cannot successfully stream, submit a support ticket using the Azure Management Portal.
+
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

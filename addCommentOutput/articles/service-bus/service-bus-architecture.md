@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Service Bus Architecture"
+   pageTitle="Service Bus architecture | Windows Azure"
    description="Describes the message processing architecture of Azure Service Bus."
    services="service-bus"
    documentationCenter="na"
@@ -8,18 +8,18 @@
    editor="tysonn" />
 <tags
 	ms.service="service-bus"
-	ms.date="07/24/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
-# Service Bus Architecture
+# Service Bus architecture
 
-The following section describes the message processing architecture of Azure Service Bus.
+This article describes the message processing architecture of Azure Service Bus.
 
 ## Service Bus scale units
 
 Service Bus is organized by *scale units*. A scale unit is a unit of deployment and contains all components required run the service. Each region deploys one or more Service Bus scale units.
 
-A Service Bus namespace is mapped to a scale unit. The scale unit handles all types of Service Bus entities: relays, brokered messaging entities (queues, topics, subscriptions), and notification hubs. A Service Bus scale unit consists of the following components:
+A Service BusÂ namespace is mapped to a scale unit. The scale unit handles all types of Service Bus entities: relays and brokered messaging entities (queues, topics, subscriptions). A Service Bus scale unit consists of the following components:
 
 - **A set of gateway nodes.** Gateway nodes authenticate incoming requests and handle relay requests. Each gateway node has a public IP address.
 
@@ -29,7 +29,7 @@ A Service Bus namespace is mapped to a scale unit. The scale unit handles all t
 
 - **One gateway store.** The gateway store holds the data for every entity that is defined in this scale unit. The gateway store is implemented on top of a SQL Azure database.
 
-- **Many messaging stores.** The messaging stores hold the messages of all queues, topics and subscriptions that are defined in this scale unit. It also contains all subscription data. Unless [Partitioning Messaging Entities](https://msdn.microsoft.com/zh-cn/library/azure/dn520246.aspx) is enabled, a queue or topic is mapped to one messaging store. Subscriptions are stored in the same messaging store as their parent topic. The messaging stores are implemented on top of SQL Azure databases.
+- **Many messaging stores.** The messaging stores hold the messages of all queues, topics and subscriptions that are defined in this scale unit. It also contains all subscription data. Unless [partitioned messaging entities](/documentation/articles/service-bus-partitioning) is enabled, a queue or topic is mapped to one messaging store. Subscriptions are stored in the same messaging store as their parent topic. Except for Service Bus [Premium Messaging](/documentation/articles/service-bus-premium-messaging), the messaging stores are implemented on top of SQL Azure databases.
 
 - **Multiple registration stores.** The registration stores contain device registrations for all notification hubs that are defined in this scale unit. The registration stores are implemented on top of SQL Azure databases.
 

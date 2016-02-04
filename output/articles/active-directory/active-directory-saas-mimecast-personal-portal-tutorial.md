@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory Integration with Mimecast Personal Portal | Windows Azure" 
     description="Learn how to use Mimecast Personal Portal with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory Integration with Mimecast Personal Portal
@@ -75,7 +75,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![Configure Single Sign-On](./media/active-directory-saas-mimecast-personal-portal-tutorial/IC794995.png "Configure Single Sign-On")
 
-3.  On the **Configure App URL** page, in the **Mimecast Personal Portal Sign On URL** textbox, type the URL used by your users to sign on to your Mimecast Personal Portal application (e.g.: “https://webmail-uk.mimecast.com” or “https://webmail-us.mimecast.com”), and then click **Next**.
+3.  On the **Configure App URL** page, in the **Mimecast Personal Portal Sign On URL** textbox, type the URL used by your users to sign on to your Mimecast Personal Portal application (e.g.: "https://webmail-uk.mimecast.com" or "https://webmail-us.mimecast.com"), and then click **Next**.
 
     >[AZURE.NOTE] The sign on URL is region specific.
 
@@ -116,7 +116,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
         >[AZURE.TIP]For more details, see [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o).
 
-    8.  Open your base-64 encoded certificate in notepad, remove the first line (“*--*“) and the last line (“*--*“), copy the remaining content of it into your clipboard, and then paste it to the **Identity Provider Certificate (Metadata)** textbox.
+    8.  Open your base-64 encoded certificate in notepad, remove the first line ("*--*") and the last line ("*--*"), copy the remaining content of it into your clipboard, and then paste it to the **Identity Provider Certificate (Metadata)** textbox.
     9.  Select **Allow Single Sign On**.
     10. Click **Save**.
 

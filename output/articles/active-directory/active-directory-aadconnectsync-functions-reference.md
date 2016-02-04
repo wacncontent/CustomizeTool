@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure AD Connect sync: Functions Reference | Windows Azure"
-	description="Reference of declarative provisioning expressions in Azure AD Connect Sync."
+	description="Reference of declarative provisioning expressions in Azure AD Connect sync."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+	ms.date="01/13/2016"
 	wacn.date=""/>
 
 
-# Azure AD Connect Sync: Functions Reference
+# Azure AD Connect sync: Functions Reference
 
 
 In Azure Active Directory Sync, functions are used to manipulate an attribute value during synchronization. <br>
@@ -26,18 +26,18 @@ An error is thrown if the type does not match.
 
 The types are expressed with the following syntax:
 
-- **bin** – Binary
-- **bool** – Boolean
-- **dt** – UTC Date/Time
-- **enum** – Enumeration of known constants
-- **exp** – Expression, which is expected to evaluate to a Boolean
-- **mvbin** – Multi Valued Binary
-- **mvstr** – Multi Valued Reference
-- **num** – Numeric
-- **ref** – Single Valued Reference
-- **str** – Single Valued String
-- **var** – A variant of (almost) any other type
-- **void** – doesn’t return a value
+- **bin** - Binary
+- **bool** - Boolean
+- **dt** - UTC Date/Time
+- **enum** - Enumeration of known constants
+- **exp** - Expression, which is expected to evaluate to a Boolean
+- **mvbin** - Multi Valued Binary
+- **mvstr** - Multi Valued Reference
+- **num** - Numeric
+- **ref** - Single Valued Reference
+- **str** - Single Valued String
+- **var** - A variant of (almost) any other type
+- **void** - doesn't return a value
 
 
 
@@ -56,7 +56,7 @@ The types are expressed with the following syntax:
 
 [DNComponent](#dncomponent)  &nbsp;&nbsp;&nbsp;&nbsp; [DNComponentRev](#dncomponentrev) &nbsp;&nbsp;&nbsp;&nbsp; [EscapeDNComponent](#escapedncomponent)
 
-**Insprection:**
+**Evaluation:**
 
 [IsBitSet](#isbitset)  &nbsp;&nbsp;&nbsp;&nbsp; [IsDate](#isdate) &nbsp;&nbsp;&nbsp;&nbsp; [IsEmpty](#isempty)
 &nbsp;&nbsp;&nbsp;&nbsp; [IsGuid](#isguid) &nbsp;&nbsp;&nbsp;&nbsp; [IsNull](#isnull) &nbsp;&nbsp;&nbsp;&nbsp; [IsNullOrEmpty](#isnullorempty) &nbsp;&nbsp;&nbsp;&nbsp; [IsNumeric](#isnumeric)  &nbsp;&nbsp;&nbsp;&nbsp; [IsPresent](#ispresent) &nbsp;&nbsp;&nbsp;&nbsp; [IsString](#isstring)
@@ -87,7 +87,7 @@ The BitAnd function sets specified bits on a value.
 **Syntax:**<br>
 `num BitAnd(num value1, num value2)`
 
-- value1, value2: numeric values which should be AND’ed together
+- value1, value2: numeric values which should be AND'ed together
 
 **Remarks:**<br>
 This function converts both parameters to the binary representation and sets a bit to:
@@ -99,7 +99,7 @@ In other words, it returns 0 in all cases except when the corresponding bits of 
 
 **Example:**<br>
 `BitAnd(&HF, &HF7)`<br>
-Returns 7 because hexadecimal “F” AND “F7” evaluate to this value.
+Returns 7 because hexadecimal "F" AND "F7" evaluate to this value.
 
 ----------
 ### BitOr
@@ -110,7 +110,7 @@ The BitOr function sets specified bits on a value.
 **Syntax:** <br>
 `num BitOr(num value1, num value2)`
 
-- value1, value2: numeric values that should be OR’ed together
+- value1, value2: numeric values that should be OR'ed together
 
 **Remarks:** <br>
 This function converts both parameters to the binary representation and sets a bit to 1 if one or both of the corresponding bits in mask and flag are 1, and to 0 if both of the corresponding bits are 0. <br>
@@ -153,7 +153,7 @@ The returned string is always in UTC.
 
 **Example:**<br>
 `CDate([employeeStartTime])` <br>
-Returns a DateTime based on the employee’s start time
+Returns a DateTime based on the employee's start time
 
 `CDate("2013-01-10 4:00 PM -8")` <br>
 Returns a DateTime representing "2013-01-11 12:00 AM"
@@ -198,8 +198,8 @@ For multi-valued string attributes the search will find substrings in the values
 For reference attributes, the searched string must exactly match the value to be considered a match.
 
 **Example:**<br>
-`IIF(Contains([proxyAddresses],”SMTP:”)>0,[proxyAddresses],Error(“No primary SMTP address found.”))`<br>
-If the proxyAddresses attribute has a primary email address (indicated by uppercase “SMTP:”) then return the proxyAddress attribute, else return an error.
+`IIF(Contains([proxyAddresses],"SMTP:")>0,[proxyAddresses],Error("No primary SMTP address found."))`<br>
+If the proxyAddresses attribute has a primary email address (indicated by uppercase "SMTP:") then return the proxyAddress attribute, else return an error.
 
 
 
@@ -318,7 +318,7 @@ Converts a string to a reference attribute
 `ref CRef(str value)`
 
 **Example:** <br>
-`CRef(“CN=LC Services,CN=Microsoft,CN=lcspool01, CN=Pools,CN=RTC Service,” & %Forest.LDAP%)`
+`CRef("CN=LC Services,CN=Microsoft,CN=lcspool01, CN=Pools,CN=RTC Service," & %Forest.LDAP%)`
 
 
 
@@ -338,7 +338,7 @@ The CStr function converts to a string data type.
 
 **Example:** <br>
 `CStr([dn]) <br>`
-Could return “cn=Joe,dc=contoso,dc=com”
+Could return "cn=Joe,dc=contoso,dc=com"
 
 
 
@@ -368,7 +368,7 @@ Returns a Date containing a date to which a specified time interval has been add
 
 **Example:** <br>
 `DateAdd("m", 3, CDate("2001-01-01"))` <br>
-Adds 3 months and returns a DateTime representing "2001-04-01”
+Adds 3 months and returns a DateTime representing "2001-04-01"
 
 
 
@@ -377,7 +377,7 @@ Adds 3 months and returns a DateTime representing "2001-04-01”
 ### DateFromNum
 
 **Description:** <br>
-The DateFromNum function converts a value in AD’s date format to a DateTime type.
+The DateFromNum function converts a value in AD's date format to a DateTime type.
 
 **Syntax:** <br>
 `dt DateFromNum(num value)`
@@ -404,7 +404,7 @@ The DNComponent function returns the value of a specified DN component going fro
 
 **Example:** <br>
 `DNComponent([dn],1)`  <br>
-If dn is “cn=Joe,ou=…, it returns Joe
+If dn is "cn=Joe,ou=…, it returns Joe
 
 
 
@@ -421,10 +421,10 @@ The DNComponentRev function returns the value of a specified DN component going 
 
 - dn: the reference attribute to interpret
 - ComponentNumber - The component in the DN to return
-- Options: DC – Ignore all components with “dc=”
+- Options: DC - Ignore all components with "dc="
 
 **Example:** <br>
-`If dn is “cn=Joe,ou=Atlanta,ou=GA,ou=US, dc=contoso,dc=com” then DNComponentRev([dn],3)` <br>  `DNComponentRev([dn],1,”DC”)` <br>
+`If dn is "cn=Joe,ou=Atlanta,ou=GA,ou=US, dc=contoso,dc=com" then DNComponentRev([dn],3)` <br>  `DNComponentRev([dn],1,"DC")` <br>
 Both return US.
 
 
@@ -440,7 +440,7 @@ The Error function is used to return a custom error.
 `void Error(str ErrorMessage)`
 
 **Example:** <br>
-`IIF(IsPresent([accountName]),[accountName],Error(“AccountName is required”))` <br>
+`IIF(IsPresent([accountName]),[accountName],Error("AccountName is required"))` <br>
 If the attribute accountName is not present, throw an error on the object.
 
 
@@ -456,7 +456,7 @@ The EscapeDNComponent function takes one component of a DN and escapes it so it 
 `str EscapeDNComponent(str value)`
 
 **Example:** <br>
-`EscapeDNComponent(“cn=” & [displayName]) & “,” & %ForestLDAP%` <br>
+`EscapeDNComponent("cn=" & [displayName]) & "," & %ForestLDAP%` <br>
 Makes sure the object can be created in an LDAP directory even if the displayName attribute has characters which must be escaped in LDAP.
 
 
@@ -479,11 +479,11 @@ The possible values for the format can be found here: [User-Defined Date/Time Fo
 
 **Example:** <br>
 
-`FormatDateTime(CDate(“12/25/2007”),”yyyy-mm-dd”)` <br>
-Results in “2007-12-25”.
+`FormatDateTime(CDate("12/25/2007"),"yyyy-mm-dd")` <br>
+Results in "2007-12-25".
 
-`FormatDateTime(DateFromNum([pwdLastSet]),”yyyyMMddHHmmss.0Z”)` <br>
-Can result in “20140905081453.0Z”
+`FormatDateTime(DateFromNum([pwdLastSet]),"yyyyMMddHHmmss.0Z")` <br>
+Can result in "20140905081453.0Z"
 
 
 
@@ -514,8 +514,8 @@ The IIF function returns one of a set of possible values based on a specified co
 - valueIfFalse: a value that will be returned if condition evaluates to false.
 
 **Example:** <br>
-`IIF([employeeType]=“Intern”,”t-“&[alias],[alias])` <br>
-Returns the alias of a user with “t-“ added to the beginning of it if the user is an intern, else returns the user’s alias as is.
+`IIF([employeeType]="Intern","t-"&[alias],[alias])` <br>
+Returns the alias of a user with "t-" added to the beginning of it if the user is an intern, else returns the user's alias as is.
 
 
 
@@ -589,7 +589,7 @@ The function IsBitSet Tests if a bit is set or not
 
 **Example:** <br>
 `IsBitSet(&HF,4)` <br>
-Returns True because bit “4” is set in the hexadecimal value “F”
+Returns True because bit "4" is set in the hexadecimal value "F"
 
 
 
@@ -748,7 +748,7 @@ The Item function is useful together with the Contains function since the latter
 Throws an error if index is out of bounds.
 
 **Example:** <br>
-`Mid(Item([proxyAddress],Contains([proxyAddress], ”SMTP:”)),6)`  <br>
+`Mid(Item([proxyAddress],Contains([proxyAddress], "SMTP:")),6)`  <br>
 Returns the primary email address.
 
 
@@ -791,8 +791,8 @@ The Join function takes a multi-valued string and returns a single-valued string
 There is parity between the Join and Split functions. The Join function takes an array of strings and joins them using a delimiter string, to return a single string. The Split function takes a string and separates it at the delimiter, to return an array of strings. However, a key difference is that Join can concatenate strings with any delimiter string, Split can only separate strings using a single character delimiter.
 
 **Example:** <br>
-`Join([proxyAddresses],”,”)` <br>
-Could return: “SMTP:john.doe@contoso.com,smtp:jd@contoso.com”
+`Join([proxyAddresses],",")` <br>
+Could return: "SMTP:john.doe@contoso.com,smtp:jd@contoso.com"
 
 
 
@@ -807,8 +807,8 @@ The LCase function converts all characters in a string to lower case.
 `str LCase(str value)`
 
 **Example:** <br>
-`LCase(“TeSt”)` <br>
-Returns “test”.
+`LCase("TeSt")` <br>
+Returns "test".
 
 
 
@@ -835,8 +835,8 @@ A string containing the first numChars characters in string:
 If string contains fewer characters than the number specified in numChars, a string identical to string (ie. containing all characters in parameter 1) is returned.
 
 **Example:** <br>
-`Left(“John Doe”, 3)` <br>
-Returns “Joh”.
+`Left("John Doe", 3)` <br>
+Returns "Joh".
 
 
 
@@ -851,7 +851,7 @@ The Len function returns number of characters in a string.
 `num Len(str value)`
 
 **Example:** <br>
-`Len(“John Doe”)` <br>
+`Len("John Doe")` <br>
 Returns 8
 
 
@@ -867,8 +867,8 @@ The LTrim function removes leading white spaces from a string.
 `str LTrim(str value)`
 
 **Example:** <br>
-`LTrim(“ Test ”)` <br>
-Returns “Test ”
+`LTrim(" Test ")` <br>
+Returns "Test "
 
 
 
@@ -901,11 +901,11 @@ If there are not numChar characters remaining in string from position start, as 
 
 **Example:** <br>
 
-`Mid(“John Doe”, 3, 5)` <br>
-Returns “hn Do”.
+`Mid("John Doe", 3, 5)` <br>
+Returns "hn Do".
 
-`Mid(“John Doe”, 6, 999)` <br>
-Returns “Doe”
+`Mid("John Doe", 6, 999)` <br>
+Returns "Doe"
 
 
 
@@ -926,7 +926,7 @@ The Now function returns a DateTime specifying the current date and time, accord
 ### NumFromDate
 
 **Description:** <br>
-The NumFromDate function returns a date in AD’s date format.
+The NumFromDate function returns a date in AD's date format.
 
 **Syntax:** <br>
 `num NumFromDate(dt value)`
@@ -965,8 +965,8 @@ The PadLeft function left-pads a string to a specified length using a provided p
 - If string is null, the function returns an empty string.
 
 **Example:** <br>
-`PadLeft(“User”, 10, “0”)` <br>
-Returns “000000User”.
+`PadLeft("User", 10, "0")` <br>
+Returns "000000User".
 
 
 
@@ -995,8 +995,8 @@ The PadRight function right-pads a string to a specified length using a provided
 
 
 **Example:** <br>
-`PadRight(“User”, 10, “0”)` <br>
-Returns “User000000”.
+`PadRight("User", 10, "0")` <br>
+Returns "User000000".
 
 
 
@@ -1011,8 +1011,8 @@ The PCase function converts the first character of each space delimited word in 
 `String PCase(string)`
 
 **Example:** <br>
-`PCase(“TEsT”)` <br>
-Returns “Test”.
+`PCase("TEsT")` <br>
+Returns "Test".
 
 
 
@@ -1069,15 +1069,15 @@ The Replace function replaces all occurrences of a string to another string.
 **Remarks:** <br>
 The function recognizes the following special monikers:
 
-- \n – New Line
-- \r – Carriage Return
-- \t – Tab
+- \n - New Line
+- \r - Carriage Return
+- \t - Tab
 
 
 **Example:** <br>
 
-`Replace([address],”\r\n”,”, “)` <br>
-Replaces CRLF with a comma and space, and could lead to “One Microsoft Way, Redmond, WA, USA”
+`Replace([address],"\r\n",", ")` <br>
+Replaces CRLF with a comma and space, and could lead to "One Microsoft Way, Redmond, WA, USA"
 
 
 
@@ -1110,13 +1110,13 @@ The format is {source1}:{target1},{source2}:{target2},{sourceN},{targetN} where 
 
 
 **Example:** <br>
-'%ReplaceString% = ’:,Å:A,Ä:A,Ö:O,å:a,ä:a,ö,o'
+'%ReplaceString% = ':,Å:A,Ä:A,Ö:O,å:a,ä:a,ö,o'
 
-`ReplaceChars(”Räksmörgås”,%ReplaceString%)` <br>
+`ReplaceChars("Räksmörgås",%ReplaceString%)` <br>
 Returns Raksmorgas
 
-`ReplaceChars(“O’Neil”,%ReplaceString%)` <br>
-Returns “ONeil”, the single tick is defined to be removed.
+`ReplaceChars("O'Neil",%ReplaceString%)` <br>
+Returns "ONeil", the single tick is defined to be removed.
 
 
 
@@ -1145,8 +1145,8 @@ A string containing the last numChars characters in string:
 If string contains fewer characters than the number specified in NumChars, a string identical to string is returned.
 
 **Example:** <br>
-`Right(“John Doe”, 3)` <br>
-Returns “Doe”.
+`Right("John Doe", 3)` <br>
+Returns "Doe".
 
 
 
@@ -1161,8 +1161,8 @@ The RTrim function removes trailing white spaces from a string.
 `str RTrim(str value)`
 
 **Example:** <br>
-`RTrim(“ Test ”)` <br>
-Returns “ Test”.
+`RTrim(" Test ")` <br>
+Returns " Test".
 
 
 
@@ -1183,7 +1183,7 @@ The Split function takes a string separated with a delimiter and makes it a mult
 - limit: maximum number of values which will be returned.
 
 **Example:** <br>
-`Split(“SMTP:john.doe@contoso.com,smtp:jd@contoso.com”,”,”)` <br>
+`Split("SMTP:john.doe@contoso.com,smtp:jd@contoso.com",",")` <br>
 Returns a multi-valued string with 2 elements useful for the proxyAddress attribute
 
 
@@ -1240,7 +1240,7 @@ Switch evaluates all of the expressions, even though it returns only one of them
 Value can also be the Error function which would return a custom string.
 
 **Example:** <br>
-`Switch([city] = "London", "English", [city] = "Rome", "Italian", [city] = "Paris", "French", True, Error(“Unknown city”))` <br>
+`Switch([city] = "London", "English", [city] = "Rome", "Italian", [city] = "Paris", "French", True, Error("Unknown city"))` <br>
 Returns the language spoken in some major cities, otherwise returns an Error.
 
 
@@ -1257,8 +1257,8 @@ The Trim function removes leading and trailing white spaces from a string.
 `mvstr Trim(mvstr value)`
 
 **Example:** <br>
-`Trim(“ Test ”)` <br>
-Returns “Test”.
+`Trim(" Test ")` <br>
+Returns "Test".
 
 `Trim([proxyAddresses])` <br>
 Removes leading and trailing spaces for each value in the proxyAddress attribute.
@@ -1276,8 +1276,8 @@ The UCase function converts all characters in a string to upper case.
 `str UCase(str string)`
 
 **Example:** <br>
-`UCase(“TeSt”)` <br>
-Returns “TEST”.
+`UCase("TeSt")` <br>
+Returns "TEST".
 
 
 
@@ -1305,11 +1305,11 @@ If string contains less than number words, or string does not contain any words 
 
 
 **Example:** <br>
-`Word(“The quick brown fox”,3,” “)` <br>
-Returns “brown”
+`Word("The quick brown fox",3," ")` <br>
+Returns "brown"
 
-`Word(“This,string!has&many seperators”,3,”,!&#”)` <br>
-Would return “has”
+`Word("This,string!has&many seperators",3,",!&#")` <br>
+Would return "has"
 
 
 ## Additional Resources

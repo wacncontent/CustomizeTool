@@ -18,7 +18,7 @@
 
 ## Why manage machines with Azure Automation DSC?
 
-Like [PowerShell Desired State Configuration](https://technet.microsoft.com/zh-cn/library/dn249912.aspx), Azure Automation Desired State Configuration is a simple, yet powerful, configuration management service for DSC nodes (physical and virtual machines) in any cloud or on-premises datacenter. It enables scalability across thousands of machines quickly and easily from a central, secure location. You can easily onboard machines, assign them declarative configurations, and view reports showing each machine’s compliance to the desired state you specified. The Azure Automation DSC management layer is to DSC what the Azure Automation management layer is to PowerShell scripting. In other words, in the same way that Azure Automation helps you manage Powershell scripts, it also helps you manage DSC configurations To learn more about the benefits of using Azure Automation DSC, see [Azure Automation DSC overview](/documentation/articles/automation-dsc-overview). 
+Like [PowerShell Desired State Configuration](https://technet.microsoft.com/zh-cn/library/dn249912.aspx), Azure Automation Desired State Configuration is a simple, yet powerful, configuration management service for DSC nodes (physical and virtual machines) in any cloud or on-premises datacenter. It enables scalability across thousands of machines quickly and easily from a central, secure location. You can easily onboard machines, assign them declarative configurations, and view reports showing each machine's compliance to the desired state you specified. The Azure Automation DSC management layer is to DSC what the Azure Automation management layer is to PowerShell scripting. In other words, in the same way that Azure Automation helps you manage Powershell scripts, it also helps you manage DSC configurations To learn more about the benefits of using Azure Automation DSC, see [Azure Automation DSC overview](/documentation/articles/automation-dsc-overview). 
 
 Azure Automation DSC can be used to manage a variety of machines:
 
@@ -36,7 +36,7 @@ With Azure Automation DSC, you can easily onboard Azure virtual machines (classi
 
 ### Azure virtual machines
 
-In the [Azure preview portal](http://manage.windowsazure.cn/), click **Browse** -> **Virtual machines (classic)**. Select the Windows VM you want to onboard. On the virtual machine’s dashboard blade, click **All settings** -> **Extensions** -> **Add** -> **Azure Automation DSC** -> **Create**. Enter the [PowerShell DSC Local Configuration Manager values](https://technet.microsoft.com/zh-cn/library/dn249922.aspx?f=255&MSPPError=-2147217396) required for your use case, your Automation account’s registration key and registration URL, and optionally a node configuration to assign to the VM.
+In the [Azure preview portal](http://manage.windowsazure.cn/), click **Browse** -> **Virtual machines (classic)**. Select the Windows VM you want to onboard. On the virtual machine's dashboard blade, click **All settings** -> **Extensions** -> **Add** -> **Azure Automation DSC** -> **Create**. Enter the [PowerShell DSC Local Configuration Manager values](https://technet.microsoft.com/zh-cn/library/dn249922.aspx?f=255&MSPPError=-2147217396) required for your use case, your Automation account's registration key and registration URL, and optionally a node configuration to assign to the VM.
 
 ![](./media/automation-dsc-onboarding/DSC_Onboarding_1.png)
 
@@ -195,11 +195,11 @@ On-premises Linux machines and Linux machines in non-Azure clouds can also be on
         
         $Session = New-CimSession -Credential:$Cred -ComputerName:<your Linux machine> -Port:5986 -Authentication:basic -SessionOption:$Opt
     	
-    	Set-DscLocalConfigurationManager -CimSession $Session –Path C:\Users\joe\Desktop\DscMetaConfigs
+    	Set-DscLocalConfigurationManager -CimSession $Session -Path C:\Users\joe\Desktop\DscMetaConfigs
 
 8.  If you cannot apply the PowerShell DSC metaconfigurations remotely, for each Linux machine to onboard, copy the metaconfiguration corresponding to that machine from the folder in step 5 onto the Linux machine. Then call `SetDscLocalConfigurationManager.py` locally on each Linux machine you want to onboard to Azure Automation DSC:
 
-	`/opt/microsoft/dsc/Scripts/SetDscLocalConfigurationManager.py –configurationmof <path to metaconfiguration file>`
+	`/opt/microsoft/dsc/Scripts/SetDscLocalConfigurationManager.py -configurationmof <path to metaconfiguration file>`
 
 9.  Using the Azure Management Portal or cmdlets, check that the machines to onboard now show up as DSC nodes registered in your Azure Automation account.
 
@@ -228,7 +228,7 @@ To troubleshoot or view the status of the Azure VM Desired State Configuration e
 
 ## Certificate expiration and reregistration
 
-After registering, each node automatically negotiates a unique certificate for authentication that expires after one year. Currently, the PowerShell DSC registration protocol cannot automatically renew certificates when they are nearing expiration, so you need to reregister the nodes after a year’s time. Before reregistering, ensure that each node is running Windows Management Framework 5.0 RTM. If a node’s authentication certificate expires, and the node is not reregistered, the node will be unable to communicate with Azure Automation and will be marked ‘Unresponsive.’ Reregistration is performed in the same way you registered the node initially. Reregistration performed 90 days or less from the certificate expiration time, or at any point after the certificate expiration time, will result in a new certificate being generated and used.
+After registering, each node automatically negotiates a unique certificate for authentication that expires after one year. Currently, the PowerShell DSC registration protocol cannot automatically renew certificates when they are nearing expiration, so you need to reregister the nodes after a year's time. Before reregistering, ensure that each node is running Windows Management Framework 5.0 RTM. If a node's authentication certificate expires, and the node is not reregistered, the node will be unable to communicate with Azure Automation and will be marked 'Unresponsive.' Reregistration is performed in the same way you registered the node initially. Reregistration performed 90 days or less from the certificate expiration time, or at any point after the certificate expiration time, will result in a new certificate being generated and used.
 
 ## Related Articles
 * [Azure Automation DSC overview](/documentation/articles/automation-dsc-overview)

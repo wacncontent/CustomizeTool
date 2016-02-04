@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Getting started with Azure AD sign in and sign out using node.js"
-	description="How to build a node.js Express MVC Web App that integrates with Azure AD for sign in."
+	description="How to build a node.js Express MVC web site that integrates with Azure AD for sign in."
 	services="active-directory"
 	documentationCenter="nodejs"
 	authors="brandwe"
@@ -9,10 +9,10 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/13/2015"
+	ms.date="11/19/2015"
 	wacn.date=""/>
 
-# Web App Sign In & Sign Out with Azure AD
+# web site Sign In & Sign Out with Azure AD
 
 
 Here we'll use Passport to:
@@ -21,7 +21,7 @@ Here we'll use Passport to:
 - Display some information about the user.
 - Sign the user out of the app.
 
-**Passport** is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Windows Azure Active Directory. We will install this module and then add the Windows Azure Active Directory `passport-azure-ad` plug-in.
+**Passport** is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web site. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Windows Azure Active Directory. We will install this module and then add the Windows Azure Active Directory `passport-azure-ad` plug-in.
 
 In order to do this, you'll need to:
 
@@ -41,7 +41,7 @@ The completed application is provided at the end of this tutorial as well.
 - In the left hand nav, click on **Active Directory**.
 - Select the tenant where you wish to register the application.
 - Click the **Applications** tab, and click add in the bottom drawer.
-- Follow the prompts and create a new **Web Application and/or WebAPI**.
+- Follow the prompts and create a new **web site and/or WebAPI**.
     - The **name** of the application will describe your application to end-users
     -	The **Sign-On URL** is the base URL of your app.  The skeleton's default is `http://localhost:3000/auth/openid/return``.
     - The **App ID URI** is a unique identifier for your application.  The convention is to use `https://<tenant-domain>/<app-name>`, e.g. `https://contoso.partner.onmschina.cn/my-first-aad-app`
@@ -83,7 +83,7 @@ var OIDCStrategy = require('passport-azure-ad').OIDCStrategy;
 // add a logger
 
 var log = bunyan.createLogger({
-    name: 'Microsoft OIDC Example Web Application'
+    name: 'Microsoft OIDC Example web site'
 });
 ```
 
@@ -127,11 +127,11 @@ passport.use(new OIDCStrategy({
   }
 ));
 ```
-Passport uses a similar pattern for all it’s Strategies (Twitter, Facebook, etc.) that all Strategy writers adhere to. Looking at the strategy you see we pass it a function() that has a token and a done as the parameters. The strategy will dutifully come back to us once it does all it’s work. Once it does we’ll want to store the user and stash the token so we won’t need to ask for it again.
+Passport uses a similar pattern for all it's Strategies (Twitter, Facebook, etc.) that all Strategy writers adhere to. Looking at the strategy you see we pass it a function() that has a token and a done as the parameters. The strategy will dutifully come back to us once it does all it's work. Once it does we'll want to store the user and stash the token so we won't need to ask for it again.
 
 
 > [AZURE.IMPORTANT] 
-The code above takes any user that happens to authenticate to our server. This is known as auto registration. In production servers you wouldn’t want to let anyone in without first having them go through a registration process you decide. This is usually the pattern you see in consumer apps who allow you to register with Facebook but then ask you to fill out additional information. If this wasn’t a sample application, we could have just extracted the email from the token object that is returned and then asked them to fill out additional information. Since this is a test server we simply add them to the in-memory database.
+The code above takes any user that happens to authenticate to our server. This is known as auto registration. In production servers you wouldn't want to let anyone in without first having them go through a registration process you decide. This is usually the pattern you see in consumer apps who allow you to register with Facebook but then ask you to fill out additional information. If this wasn't a sample application, we could have just extracted the email from the token object that is returned and then asked them to fill out additional information. Since this is a test server we simply add them to the in-memory database.
 
 - Next, let's add the methods that will allow us to keep track of the logged in users as required by Passport. This includes serializing and deserializing the user's information:
 
@@ -344,7 +344,6 @@ These simple routes will just pass along the request to our views, including the
 	<a href="/account">Account Info</a></br>
 	<a href="/logout">Log Out</a>
 <% } %>
-
 ```
 
 - Create the `/views/account.ejs` view under the root directory so that we can view additional information that `passport-azuread` has put in the user request.
@@ -364,7 +363,6 @@ These simple routes will just pass along the request to our views, including the
 <p></p>
 <a href="/logout">Log Out</a>
 <% } %>
-
 ```
 
 - Finally, let's make this look pretty by adding a layout. Create the '/views/layout.ejs' view under the root directory
@@ -391,14 +389,15 @@ These simple routes will just pass along the request to our views, including the
 		<% } %>
 		<%- body %>
 	</body>
-</html>```
+</html>
+```
 
 Finally, build and run your app! 
 
 Run `node app.js` and navigate to `http://localhost:3000`
 
 
-Sign in with either a personal Microsoft Account or a work or school account, and notice how the user's identity is reflected in the /account list.  You now have a web app secured using industry standard protocols that can authenticate users with both their personal and work/school accounts.
+Sign in with either a personal Microsoft Account or a work or school account, and notice how the user's identity is reflected in the /account list.  You now have a web site secured using industry standard protocols that can authenticate users with both their personal and work/school accounts.
 
 For reference, the completed sample (without your configuration values) [is provided as a .zip here](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/archive/complete.zip), or you can clone it from GitHub:
 

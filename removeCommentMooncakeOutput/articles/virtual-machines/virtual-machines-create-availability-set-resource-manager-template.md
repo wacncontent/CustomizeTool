@@ -62,7 +62,7 @@ Fill in an Azure deployment name, Resource Group name, Azure location, the folde
 	$locName="<Azure location, such as China North>"
 	$folderName="<folder name, such as C:\Azure\Templates\availability>"
 	$templateFile= $folderName + "\azuredeploy.json"
-	New-AzureResourceGroup –Name $RGName –Location $locName
+	New-AzureResourceGroup -Name $RGName -Location $locName
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateFile $templateFile
 
 When you run the **New-AzureResourceGroupDeployment** command, you'll be prompted to supply the values for parameters in the **"parameters"** section of the JSON file. After you've done this, the command creates the resource group and the availability set.
@@ -74,7 +74,7 @@ Here is an example of the PowerShell command set for the template.
 	$locname="China North"
 	$folderName="C:\Azure\Templates\[thing]"
 	$templateFile= $folderName + "\azuredeploy.json"
-	New-AzureResourceGroup –Name $RGName –Location $locName
+	New-AzureResourceGroup -Name $RGName -Location $locName
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateFile $templateFile
 
 You would see something like this.
@@ -91,7 +91,7 @@ You would see something like this.
 
 To remove this resource group and all of its resources (the storage account, virtual machine, and virtual network), use this command.
 
-	Remove-AzureResourceGroup –Name "<resource group name>"
+	Remove-AzureResourceGroup -Name "<resource group name>"
 
 
 ## Use Azure CLI

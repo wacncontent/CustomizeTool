@@ -3,12 +3,12 @@
  description="" 
  services="cdn" 
  documentationCenter=".NET" 
- authors="zhangmanling" 
+ authors="camsoper" 
  manager="dwrede" 
  editor=""/>
 <tags
 	ms.service="cdn"
-	ms.date="09/01/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 

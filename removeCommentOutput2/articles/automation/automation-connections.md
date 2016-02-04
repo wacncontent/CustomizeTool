@@ -13,7 +13,7 @@
 
 # Connection assets in Azure Automation
 
-An Automation connection asset contains the information required to connect to an external service or application from a runbook or DSC configuration. This may include information required for authentication such as a username and password in addition to connection information such as a URL or a port. The value of a connection is keeping all of the properties for connecting to a particular application in one asset as opposed to creating multiple variables. The user can edit the values for a connection in one place, and you can pass the name of a connection to a runbook or DSC configuration in a single parameter. The properties for a connection can be accessed in the runbook or DSC configuration with the **Get-AutomationConnection** activity.
+An Automation connection asset contains the information required to connect to an external service or application from a runbook. This may include information required for authentication such as a username and password in addition to connection information such as a URL or a port. The value of a connection is keeping all of the properties for connecting to a particular application in one asset as opposed to creating multiple variables. The user can edit the values for a connection in one place, and you can pass the name of a connection to a runbook in a single parameter. The properties for a connection can be accessed in the runbook with the **Get-AutomationConnection** activity.
 
 When you create a connection, you must specify a *connection type*. The connection type is a template that defines a set of properties. The connection defines values for each property defined in its connection type. Connection types are added to Azure Automation in integration modules or created with the [Azure Automation API](http://msdn.microsoft.com/zh-cn/library/azure/mt163818.aspx). The only connection types that are available when you create a connection are those installed in your automation account.
 
@@ -21,24 +21,24 @@ When you create a connection, you must specify a *connection type*. The connecti
 
 ## Windows PowerShell Cmdlets
 
-The cmdlets in the following table are used to create and manage Automation connections with Windows PowerShell They ship as part of the [Azure PowerShell module](/documentation/articles/powershell-install-configure) which is available for use in Automation runbooks and DSC configurations.
+The cmdlets in the following table are used to create and manage Automation connections with Windows PowerShell They ship as part of the [Azure PowerShell module](/documentation/articles/powershell-install-configure) which is available for use in Automation runbooks.
 
 |Cmdlet|Description|
 |:---|:---|
-|[Get-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921828.aspx)|Retrieves a connection. Includes a hashtable with the values of the connection’s fields.|
+|[Get-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921828.aspx)|Retrieves a connection. Includes a hashtable with the values of the connectionâs fields.|
 |[New-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921825.aspx)|Creates a new connection.|
 |[Remove-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921827.aspx)|Remove an existing connection.|
 |[Set-AzureAutomationConnectionFieldValue](http://msdn.microsoft.com/zh-cn/library/dn921826.aspx)|Sets the value of a particular field for an existing connection.|
 
 ## Activities
 
-The activities in the following table are used to access connections in a runbook or DSC configuration.
+The activities in the following table are used to access connections in a runbook.
 
 |Activities|Description|
 |---|---|
-|Get-AutomationConnection|Gets a connection to use. Returns a hashtable with the properties of the connection.|
+|Get-AutomationConnection|Gets a connection to use in a runbook. Returns a hashtable with the properties of the connection.|
 
->[AZURE.NOTE] You should avoid using variables in the –Name parameter of **Get- AutomationConnection** since this can complicate discovering dependencies between runbooks or DSC configurations, and connection assets at design time.
+>[AZURE.NOTE] You should avoid using variables in the âName parameter of **Get- AutomationConnection** since this can complicate discovering dependencies between runbooks and connection assets at design time.
 
 ## Creating a New Connection
 
@@ -67,9 +67,9 @@ The following sample commands create a new connection for [Twilio](http://www.tw
 	New-AzureAutomationConnection -AutomationAccountName "MyAutomationAccount" -Name "TwilioConnection" -ConnectionTypeName "Twilio" -ConnectionFieldValues $FieldValues
 
 
-## Using a connection in a runbook or DSC configuration
+## Using a connection in a runbook
 
-You retrieve a connection in a runbook or DSC configuration with the **Get-AutomationConnection** cmdlet.  This activity retrieves the values of the different fields in the connection and returns them as a [hash table](https://technet.microsoft.com/zh-cn/library/hh847780.aspx) which can then be used with the appropriate commands in the runbook or DSC configuration.
+You retrieve a connection in a runbook with the **Get-AutomationConnection** cmdlet.  This activity retrieves the values of the different fields in the connection and returns them as a [hash table](https://technet.microsoft.com/zh-cn/library/hh847780.aspx) which can then be used with the appropriate commands in the runbook.
 
 ### Textual runbook sample
 The following sample commands show how to use the Twilio connection in the previous example to send a text message from a runbook.  The Send-TwilioSMS activity used here has two parameter sets that each use a different method for authenticating to the Twilio service.  One uses a connection object and another uses individual parameters for the Account SID and Authorization Token.  Both methods are shown in this sample.
@@ -85,4 +85,3 @@ The following sample commands show how to use the Twilio connection in the previ
 	#Send text with connection properties.
 	Send-TwilioSMS -AccountSid $Con.AccountSid -AuthToken $Con.AuthToken $Con -From $NumFrom -To $NumTo -Body $Body
 
- 

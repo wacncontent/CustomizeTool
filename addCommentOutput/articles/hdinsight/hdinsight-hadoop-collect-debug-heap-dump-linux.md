@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/02/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 
@@ -38,7 +38,7 @@ You can also enable heap dumps for the map and reduce processes ran by HDInsight
 
 Heap dumps are enabled by passing options (sometimes known as opts, or parameters) to the JVM when a service is started. For most Hadoop services, this can be accomplished by modifying the shell script used to start the service.
 
-In each script, there is an export for <!-- deleted by customization **\*\_OPTS** --><!-- keep by customization: begin --> **\*_OPTS** <!-- keep by customization: end -->, which contains the options passed to the JVM. For example, in the **hadoop-env.sh** script, the line that begins with `export HADOOP_NAMENODE_OPTS=` contains the options for the NameNode service.
+In each script, there is an export for **\*\_OPTS**, which contains the options passed to the JVM. For example, in the **hadoop-env.sh** script, the line that begins with `export HADOOP_NAMENODE_OPTS=` contains the options for the NameNode service.
 
 Map and reduce processes are slightly different, as these are a child process of the MapReduce service. Each map or reduce process runs in a child container, and there are two entries that contain the JVM options for these. Both contained in **mapred-site.xml**:
 
@@ -93,7 +93,7 @@ To modify the configuration for a service, use the following steps:
 
     ![Filtered list](./media/hdinsight-hadoop-heap-dump-linux/filter.png)
 
-4. Find the <!-- deleted by customization **\*\_OPTS** --><!-- keep by customization: begin --> **\*_OPTS** <!-- keep by customization: end --> entry for the service you want to enable heap dumps for, and add the options you wish to enable. In the following image, I've added `-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/` to the <!-- deleted by customization **HADOOP\_NAMENODE\_OPTS** --><!-- keep by customization: begin --> **HADOOP_NAMENODE_OPTS** <!-- keep by customization: end --> entry:
+4. Find the **\*\_OPTS** entry for the service you want to enable heap dumps for, and add the options you wish to enable. In the following image, I've added `-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/` to the **HADOOP\_NAMENODE\_OPTS** entry:
 
     ![HADOOP_NAMENODE_OPTS with -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/](./media/hdinsight-hadoop-heap-dump-linux/opts.png)
 

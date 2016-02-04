@@ -4,17 +4,17 @@
    services="traffic-manager"
    documentationCenter="na"
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # Disable, Enable, or Delete a Profile
 
 
-You can disable an existing Traffic Manager profile so that it will not refer user requests to its configured endpoints. When you disable a Traffic Manager profile, the profile itself and the information contained in the profile will remain intact and can be edited in the Traffic Manager interface. When you want to re-enable the profile, you can easily do so in the Management Portal and referrals will resume. When you create a Traffic Manager profile in the Management Portal, it’s automatically enabled.
+You can disable an existing Traffic Manager profile so that it will not refer user requests to its configured endpoints. When you disable a Traffic Manager profile, the profile itself and the information contained in the profile will remain intact and can be edited in the Traffic Manager interface. When you want to re-enable the profile, you can easily do so in the Azure Management Portal and referrals will resume. When you create a Traffic Manager profile in the Azure Management Portal, <!-- deleted by customization itâs --><!-- keep by customization: begin --> it's <!-- keep by customization: end --> automatically enabled.
 
 ## To disable a profile
 
@@ -42,6 +42,11 @@ You can disable an existing Traffic Manager profile so that it will not refer us
 
 [Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint)
 
-[What is Traffic Manager?](/documentation/articles/traffic-manager-overview)
+[Configure failover routing method](/documentation/articles/traffic-manager-configure-failover-routing-method)
 
- 
+[Configure round robin routing method](/documentation/articles/traffic-manager-configure-round-robin-routing-method)
+
+[Configure performance routing method](/documentation/articles/traffic-manager-configure-performance-routing-method)
+
+[Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded)
+

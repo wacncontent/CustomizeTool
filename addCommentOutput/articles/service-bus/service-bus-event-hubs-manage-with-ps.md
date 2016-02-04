@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="08/14/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # Use PowerShell to manage Service Bus and Event Hubs resources
@@ -21,9 +21,9 @@ Windows Azure PowerShell is a scripting environment that you can use to control 
 Before you begin, you'll need the following:
 
 - An Azure subscription. Azure is a subscription-based platform. For more
-information about obtaining a subscription, see [Purchase Options], [Member Offers], or [Trial].
+information about obtaining a subscription, see [Purchase Options][], [Member Offers][], or [Trial][].
 
-- A computer with Azure PowerShell. For instructions, see [Install and configure Azure PowerShell]
+- A computer with Azure PowerShell. For instructions, see [Install and configure Azure PowerShell][].
 
 - A general understanding of PowerShell scripts, NuGet packages, and the .NET Framework.
 
@@ -80,10 +80,14 @@ This part of the script does the following:
 3. If the namespace is not found, it creates the namespace and then retrieves the newly created namespace.
 
 	``` powershell
-
 	$Namespace = "MyServiceBusNS"
+<!-- deleted by customization
 	$Location = "China North"
-
+-->
+<!-- keep by customization: begin -->
+		$Location = "China East"
+		
+<!-- keep by customization: end -->
 	# Query to see if the namespace currently exists
 	$CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
 
@@ -250,24 +254,41 @@ To create a queue or topic, perform a namespace check as in the previous section
 
 ## Next steps
 
-This article provides you with a basic outline for provisioning Service Bus entities using PowerShell. Although there are a limited number of PowerShell cmdlets available for managing Service Bus messaging entities, by referencing the Microsoft.ServiceBus.dll assembly, virtually any operation you can perform using the .NET client libraries you can also perform in a PowerShell script.
+This article provided you with a basic outline for provisioning Service Bus entities using PowerShell. Although there are a limited number of PowerShell cmdlets available for managing Service Bus messaging entities, by referencing the Microsoft.ServiceBus.dll assembly, virtually any operation you can perform using the .NET client libraries you can also perform in a PowerShell script.
 
-There are more detailed examples available on these blogs posts:
+There are more detailed examples available on these blog posts:
 
 - [How to create Service Bus queues, topics and subscriptions using a PowerShell script](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
 - [How to create a Service Bus Namespace and an Event Hub using a PowerShell script](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
 
-Some ready-made script are also available for download:
+Some ready-made scripts are also available for download:
+<!-- deleted by customization
+
+- [Service Bus PowerShell Scripts](https://code.msdn.microsoft.com/Service-Bus-PowerShell-a46b7059)
+-->
+<!-- keep by customization: begin -->
 - [Service Bus PowerShell Scripts](https://code.msdn.microsoft.com/windowsazure/Service-Bus-PowerShell-a46b7059)
+<!-- keep by customization: end -->
 
 <!--Anchors-->
 
 [Purchase Options]: /pricing/overview/
+<!-- deleted by customization
 [Member Offers]: /pricing/member-offers/
+-->
+<!-- keep by customization: begin -->
+[Member Offers]: http://azure.microsoft.com/zh-cn/pricing/member-offers/
+<!-- keep by customization: end -->
 [Trial]: /pricing/1rmb-trial/
 [Service Bus NuGet package]: http://www.nuget.org/packages/WindowsAzure.ServiceBus/
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx
 [New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx
 [Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/zh-cn/library/azure/dn495113.aspx
+<!-- deleted by customization
+[.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/azure/mt419900.aspx
+[Install and configure Azure PowerShell]: ../install-configure-powershell.md
+-->
+<!-- keep by customization: begin -->
 [.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
-[Install and configure Azure PowerShell]: /documentation/articles/install-configure-powershell
+[Install and configure Azure PowerShell]: /documentation/articles/powershell-install-configure
+<!-- keep by customization: end -->

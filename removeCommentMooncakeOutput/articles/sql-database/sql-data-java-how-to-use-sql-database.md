@@ -7,14 +7,14 @@
 	manager="jeffreyg" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="sql-database"
-	ms.date="10/12/2015"
+<tags 
+	ms.service="sql-database" 
+	ms.date="10/12/2015" 
 	wacn.date=""/>
 
 # How to Use Azure SQL Database in Java
 
-The following steps show you how to use Azure SQL Database with Java. Command line examples are shown for simplicity, but highly similar steps would be appropriate for web applications, either hosted on-premise, within Azure, or in other environments. This guide covers creating a server and creating a database from the [Azure Management Portal](https://windows.azure.com).
+The following steps show you how to use Azure SQL Database with Java. Command line examples are shown for simplicity, but highly similar steps would be appropriate for web sites, either hosted on-premise, within Azure, or in other environments. This guide covers creating a server and creating a database from the [Azure Management Portal](https://manage.windowsazure.cn).
 
 ## What is Azure SQL Database
 
@@ -32,9 +32,9 @@ For additional resources for SQL Database, see the [Next steps][] section.
 The following are prerequisites if you intend to use SQL Database with Java.
 
 * A Java Developer Kit (JDK), v 1.6 or later.
-* An Azure subscription, which can be acquired from </pricing/overview/>.
-* If you are using Eclipse, you'll need Eclipse IDE for Java EE Developers, Indigo or later. This can be downloaded from <http://www.eclipse.org/downloads/>. You will also need the Azure Toolkit for Eclipse. During installation of this plugin, ensure that Microsoft JDBC Driver 4.0 for SQL Server is included. For more information, see [Installing the Azure Toolkit for Eclipse](http://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx).
-* If you are not using Eclipse, you will need the Microsoft JDBC Driver 4.0 for SQL Server, which you can download from <http://www.microsoft.com/download/details.aspx?id=11774>.
+* An Azure subscription, which can be acquired from <http://www.windowsazure.cn/zh-cn/pricing/overview/>.
+* If you are using Eclipse, you'll need Eclipse IDE for Java EE Developers, Indigo or later. This can be downloaded from <http://www.eclipse.org/downloads/>. You will also need the Azure Toolkit for Eclipse. During installation of this plugin, ensure that Microsoft JDBC Driver 4.0 for SQL Server is included. For more information, see [Installing the Azure Toolkit for Eclipse](https://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx).
+* If you are not using Eclipse, you will need the Microsoft JDBC Driver 4.0 for SQL Server, which you can download from <http://www.microsoft.com/zh-cn/download/details.aspx?id=11774>.
 
 ## Creating an Azure SQL Database
 
@@ -75,12 +75,12 @@ Before using Azure SQL Database in Java code, you will need to create an Azure S
 7. You can now paste this value into your code file to create a connection string of the following form. Replace *your_server* (in two places) with the text you copied in the previous step, and replace *your_password* with the password value you specified when you created your SQL Database account. (Also replace the values assigned to **database=** and **user=** if you did not use **gettingstarted** and **MySQLAdmin**, respectively.) 
 
     String connectionString =
-		"jdbc:sqlserver://*your_server*.database.chinacloudapi.cn:1433" + ";" +  
+		"jdbc:sqlserver://*your_server*.database.chinacloudapi.cn:1433" + ";" +
     	"database=gettingstarted" + ";" + 
     	"user=MySQLAdmin@*your_server*" + ";" +  
     	"password=*your_password*" + ";" +  
         "encrypt=true" + ";" +
-        "hostNameInCertificate=*.int.mscds.com" + ";" +  
+        "hostNameInCertificate=*.database.chinacloudapi.cn" + ";" +
         "loginTimeout=30";
 
 We'll actually use this string later in this guide, for now you know the steps to determine the connection string. Also, depending on your application needs, you may not need to use the **encrypt** and **hostNameInCertificate** settings, and you may need to modify the **loginTimeout** setting.
@@ -123,7 +123,7 @@ We'll actually use this string later in this guide, for now you know the steps t
 5. Specify your connection string. Following is an example. As above, replace *your_server* (in two places), *your_user* and *your_password* with the values appropriate for your SQL Database server.
 
         String connectionString =
-        	"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +  
+        	"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +
         		"database=master" + ";" + 
         		"user=your_user@your_server" + ";" +  
         		"password=your_password";
@@ -158,7 +158,7 @@ The following code shows you how to create a table named **Person**.
 			// your_user@your_server,
 			// and your_password.
 			String connectionString = 
-				"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +  
+				"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +
 					"database=gettingstarted" + ";" + 
 					"user=your_user@your_server" + ";" +  
 					"password=your_password";
@@ -691,7 +691,7 @@ To use SQL Database in Java within an Azure deployment, in addition to having Mi
 3. In the **New Assembly Directive** dialog, click **Java Build Path Entries** and then click **Next**.
 4. Select **Microsoft JDBC Driver 4.0 SQL Server** and then click **Finish**.
 5. Click **OK** to close the **Properties** dialog.
-6. Export your project's WAR file to your approot folder, and rebuild your Azure project, per the steps documented at [Creating a Hello World Application Using the Azure Toolkit for Eclipse](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx). That topic also describes how to run your application in the compute emulator, and in Azure.
+6. Export your project's WAR file to your approot folder, and rebuild your Azure project, per the steps documented at [Creating a Hello World Application Using the Azure Toolkit for Eclipse](https://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx). That topic also describes how to run your application in the compute emulator, and in Azure.
 
 **Packaging the Microsoft JDBC Driver 4.0 SQL Server if you are not using Eclipse**
 
@@ -729,4 +729,3 @@ For more information, see also the [Java Developer Center](/develop/java/).
 [create_server_settings]: ./media/sql-data-java-how-to-use-sql-database/WA_CustomCreate_2.png
 [get_jdbc_connection_string]: ./media/sql-data-java-how-to-use-sql-database/WA_SQL_JDBC_ConnectionString.png
 [allowed_ips_dialog]: ./media/sql-data-java-how-to-use-sql-database/WA_Allowed_IPs.png
- 

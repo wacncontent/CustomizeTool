@@ -3,13 +3,13 @@
 	description="You can view usage patterns for your CDN using the following reports: Bandwidth, Data Transferred, Hits, Cache Statuses, Cache Hit Ratio, IPV4/IPV6 Data Transferred." 
 	services="cdn" 
 	documentationCenter=".NET" 
-	authors="juliako" 
+	authors="camsoper" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags
 	ms.service="cdn"
-	ms.date="09/01/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 #Analyze CDN usage patterns 
@@ -31,7 +31,7 @@ The bandwidth report consists of a graph and data table indicating the bandwidth
 - Select Date range to view data for today/this week/this month, etc. or enter custom dates, then click "go" to make sure your selection is updated.
 - You can export and download the data by clicking the excel sheet icon located next to "go". 
  
-The report is updated every 5 minute. 
+The report is updated every 5 minute.
 
 ![Bandwidth report](./media/cdn-reports/cdn-bandwidth.png)
 
@@ -43,7 +43,7 @@ This report consists of a graph and data table indicating the traffic usage for 
 - Select Date range to view data for today/this week/this month, etc. or enter custom dates, then click "go" to make sure your selection is updated.
 - You can export and download the data by clicking the excel sheet icon located next to "go" .
  
-The report is updated every 5 minute. 
+The report is updated every 5 minute.
 
 ![Data transferred report](./media/cdn-reports/cdn-data-transferred.png)
 
@@ -74,7 +74,7 @@ This report describes the distribution of cache hits and cache misses for client
 
 ###Full list of cache statuses
 
-- TCP_HIT - This status is reported when a request is served directly from the POP to the client. An asset is immediately served from a POP when it is cached on the POP closest to the client and it has a valid TTL. TTL is determined by the following response headers:
+- TCP_HIT - This status is reported when a request is served directly from the POP to the client. An asset is immediately served from a POP when it is cached on the POP closest to the client and it has a valid  TTL. TTL is determined by the following response headers:
 
 	- Cache-Control: s-maxage
 	- Cache-Control: max-age
@@ -82,7 +82,7 @@ This report describes the distribution of cache hits and cache misses for client
 
 - TCP_MISS - This status indicates that a cached version of the requested asset was not found on the POP closest to the client. The asset will be requested from either an origin server or an origin shield server. If the origin server or the origin shield server returns an asset, it will be served to the client and cached on both the client and the edge server. Otherwise, a non-200 status code (e.g., 403 Forbidden, 404 Not Found, etc.) will be returned. 
 
-- TCP_EXPIRED _HIT -  This status is reported when a request that targeted an asset with an expired time to live (TTL), such as when the asset's max-age has expired, was served directly from the POP to the client. 
+- TCP_EXPIRED _HIT -  This status is reported when a request that targeted an asset with an expired time to live (TTL), such as when the asset's max-age has expired, was served directly from the POP to the client.
 
 	An expired request typically results in a revalidation request to the origin server. In order for a TCP_EXPIRED _HIT to occur, the origin server must indicate that a newer version of the asset does not exist. This type of situation will typically update that asset's Cache-Control and Expires headers.
 
@@ -133,4 +133,4 @@ This report shows the traffic usage distribution in IPV4 vs IPV6.
 
 ##Considerations
 
-Reports can only be generated within the last 18 months. 
+Reports can only be generated within the last 18 months.

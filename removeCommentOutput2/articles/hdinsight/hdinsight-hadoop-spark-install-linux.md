@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Use Script Action to install Apache Spark on Linux-based HDInsight (Hadoop) | Windows Azure" 
 	description="Learn how to install Spark on a Linux-based HDInsight cluster using Script Actions. Script Actions allow you to customize the cluster during creation, by changing cluster configuration or installing services and utilities." 
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/19/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Install and use Spark on HDInsight Hadoop clusters
@@ -30,38 +28,42 @@ This topic provides instructions on how to customize an HDInsight cluster to ins
 
 ## <a name="whatis"></a>Which version of Spark can I install?
 
-In this topic, we use a Script Action custom script to install Spark on an HDInsight cluster. This script installs Spark 1.3.1.
+In this topic, we use a Script Action custom script to install Spark on an HDInsight cluster. This script installs Spark 1.5.1.
 
 You can modify this script or create your own script to install other versions of Spark.
 
 ## What the script does
 
-This script installs Spark version 1.3.1 into `/usr/hdp/current/spark`.
+This script installs Spark version 1.5.1 into `/usr/hdp/current/spark`.
+
+> [AZURE.WARNING] You may discover that some Spark 1.3.1 binaries are installed by default on your HDInsight cluster. These should not be used, and will be removed from the HDInsight cluster image in a future update.
 
 ## <a name="install"></a>Install Spark using Script Actions
 
-A sample script to install Spark on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv01/spark-installer-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv01/spark-installer-v01.sh). This section provides instructions on how to use the sample script while provisioning the cluster by using the Azure Management Portal.
+A sample script to install Spark on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh](https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh). This section provides instructions on how to use the sample script while creating the cluster by using the Azure Management Portal. 
 
-> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster).
+> [AZURE.NOTE] You can also use Azure PowerShell or the HDInsight .NET SDK to create a cluster using this script. For more information on using these methods, see [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster-v1).
 
-1. Start provisioning a cluster by using the steps in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal), but do not complete provisioning.
+1. Start creating a cluster by using the steps in [Create Linux-based HDInsight clusters](/documentation/articles/hdinsight-hadoop-create-linux-clusters-portal), but do not complete creation.
 
 2. On the **Optional Configuration** blade, select **Script Actions**, and provide the information below:
 
 	* __NAME__: Enter a friendly name for the script action.
-	* __SCRIPT URI__: https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv01/spark-installer-v01.sh
+	* __SCRIPT URI__: https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-installer-v02.sh
 	* __HEAD__: Check this option
-	* __WORKER__: Check this option
-	* __ZOOKEEPER__: Check this option to install on the Zookeeper node.
+	* __WORKER__: Uncheck this option
+	* __ZOOKEEPER__: Uncheck this option
 	* __PARAMETERS__: Leave this field blank
+    
+    > [AZURE.NOTE] The example Spark script only installs components on the head nodes, so the other node types can be unchecked.
 
 3. At the bottom of the **Script Actions**, use the **Select** button to save the configuration. Finally, use the **Select** button at the bottom of the **Optional Configuration** blade to save the optional configuration information.
 
-4. Continue provisining the cluster as described in [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal).
+4. Continue provisining the cluster as described in [Create Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-linux-clusters#portal).
 
 ## <a name="usespark"></a>How do I use Spark in HDInsight?
 
-Spark provides APIs in Scala, Python, and Java. You can also use the interactive Spark shell to run Spark queries. Once your cluster has finished provisioning, use the following to connect to your HDInsight cluster:
+Spark provides APIs in Scala, Python, and Java. You can also use the interactive Spark shell to run Spark queries. Once your cluster has finished creation, use the following to connect to your HDInsight cluster:
 
 	ssh USERNAME@CLUSTERNAME-ssh.azurehdinsight.cn
 	
@@ -106,7 +108,7 @@ Once connected, use the following sections for specific steps on using Spark:
 
 ###<a name="sparksql"></a>Using the Spark shell to run Spark SQL queries
 
-Spark SQL allows you to use Spark to run relational queries expressed in Structured Query Language (SQL), HiveQL, or Scala. In this section, we look at using Spark to run a Hive query on a sample Hive table. The Hive table used in this section (called **hivesampletable**) is available by default when you provision a cluster.
+Spark SQL allows you to use Spark to run relational queries expressed in Structured Query Language (SQL), HiveQL, or Scala. In this section, we look at using Spark to run a Hive query on a sample Hive table. The Hive table used in this section (called **hivesampletable**) is available by default when you create a cluster.
 
 1. Run the following command to start the Spark shell:
 
@@ -206,7 +208,7 @@ In this section, you will create a Scala application that counts the number of l
 6. Use the following command to run the SimpleApp.scala program:
 
 
-		/usr/hdp/current/spark/bin/spark-submit --class "SimpleApp" --master local target/scala-2.10/simpleapp_2.10-1.0.jar
+		/usr/hdp/current/spark/bin/spark-submit --class "SimpleApp" --master yarn target/scala-2.10/simpleapp_2.10-1.0.jar
 
 4. When the program finishes running, the output is displayed on the console.
 
@@ -218,16 +220,14 @@ In this section, you will create a Scala application that counts the number of l
 
 - [Install R on HDInsight clusters][hdinsight-install-r] provides instructions on how to use cluster customization to install and use R on HDInsight Hadoop clusters. R is an open-source language and environment for statistical computing. It provides hundreds of built-in statistical functions and its own programming language that combines aspects of functional and object-oriented programming. It also provides extensive graphical capabilities.
 
-- [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-linux). Use cluster customization to install Giraph on HDInsight Hadoop clusters. Giraph allows you to perform graph processing by using Hadoop, and can be used with Azure HDInsight.
+- [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1-linux). Use cluster customization to install Giraph on HDInsight Hadoop clusters. Giraph allows you to perform graph processing by using Hadoop, and can be used with Azure HDInsight.
 
-- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-linux). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on data stored.
+- [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on data stored.
 
 - [Install Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Use cluster customization to install Hue on HDInsight Hadoop clusters. Hue is a set of Web applications used to interact with a Hadoop cluster.
 
 
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-linux
-[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts-linux
-[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[hdinsight-install-r]: hdinsight-hadoop-r-scripts-linux.md
+[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
  

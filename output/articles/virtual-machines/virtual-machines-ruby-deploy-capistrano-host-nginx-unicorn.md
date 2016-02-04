@@ -1,7 +1,7 @@
-<properties linkid="dev-ruby-web-app-with-linux-vm-capistrano" urlDisplayName="Ruby on Rails Azure VM Capistrano" pageTitle="Deploying a Ruby on Rails Web application to an Azure Virtual Machine using Capistrano - tutorial" metaKeywords="ruby on rails, ruby on rails azure, rails azure, rails vm, capistrano azure vm, capistrano azure rails, unicorn azure vm, unicorn azure rails, unicorn nginx capistrano, unicorn nginx capistrano azure, nginx azure" description="Learn how to deploy a Ruby on Rails application to an Azure Virtual Machine using Capistrano, Unicorn and Nginx." metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="Deploy a Ruby on Rails Web application to an Azure VM using Capistrano" authors="larryfr" />
+<properties linkid="dev-ruby-web-app-with-linux-vm-capistrano" urlDisplayName="Ruby on Rails Azure VM Capistrano" pageTitle="Deploying a Ruby on Rails Web Site to an Azure Virtual Machine using Capistrano - tutorial" metaKeywords="ruby on rails, ruby on rails azure, rails azure, rails vm, capistrano azure vm, capistrano azure rails, unicorn azure vm, unicorn azure rails, unicorn nginx capistrano, unicorn nginx capistrano azure, nginx azure" description="Learn how to deploy a Ruby on Rails application to an Azure Virtual Machine using Capistrano, Unicorn and Nginx." metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="Deploy a Ruby on Rails Web Site to an Azure VM using Capistrano" authors="larryfr" />
 
 
-#Deploy a Ruby on Rails Web application to an Azure VM using Capistrano
+#Deploy a Ruby on Rails Web Site to an Azure VM using Capistrano
 
 This tutorial describes how to deploy a Ruby on Rails  Website to an Azure Virtual Machine using [Capistrano 3](https://github.com/capistrano/capistrano/). Once deployed, you will use [Nginx](http://nginx.org/) and [Unicorn](https://github.com/blog/517-unicorn) to host the  Website. [PostgreSQL](https://www.postgresql.org) will store application data for the deployed application.
 
@@ -380,7 +380,7 @@ On your development environment, modify the application to use the Unicorn web s
 		# the 'full name' of the application
 		set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 		# the server(s) to deploy to
-		server 'YourVM.chinacloudapp.cn', user: 'YourAzureVMUserName', roles: %w{web app db}, primary: true
+		server 'YourVM.chinacloudapp.cn', user: 'YourAzureVMUserName', roles: %w{web site db}, primary: true
 		# the path to deploy to
 		set :deploy_to, "/home/#{fetch(:deploy_user)}/apps/#{fetch(:full_app_name)}"
         # set to production for Rails
@@ -436,7 +436,7 @@ In this article you have learned how to create and publish a basic Rails applica
 * [Azure, Ruby on Rails, Capistrano 3, & PostgreSQL](http://wootstudio.ca/articles/tutorial-windows-azure-ruby-on-rails-capistrano-3-postgresql) - An alternative approach to deploying to Azure that involves custom deployment scripts.
 * [Capistrano 3 tutorial](http://www.talkingquickly.co.uk/2014/01/deploying-rails-apps-to-a-vps-with-capistrano-v3/) - A tutorial on working with Capistrano 3.
 
-For a more basic example of creating and deploying a Rails application to an Azure VM using only SSH, see [Host a Ruby on Rails Web App using a Linux Virtual Machine][ruby-vm].
+For a more basic example of creating and deploying a Rails application to an Azure VM using only SSH, see [Host a Ruby on Rails Web Site using a Linux Virtual Machine][ruby-vm].
 
 If you would like to learn more about Ruby on Rails, visit the [Ruby on Rails Guides][rails-guides].
 

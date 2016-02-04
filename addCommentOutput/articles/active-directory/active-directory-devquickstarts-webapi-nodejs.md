@@ -21,7 +21,7 @@ This walkthrough will give you  a quick and easy way to set up a REST API Servic
 By the end of this walk-through, you should be able to build a running REST API server with the following features:
 
 * A node.js server running an REST API interface with JSON using MongoDB as persistant storage
-* REST APIs leveraging OAuth2 API protection with Bearer tokens using Azure Active Directory
+* REST APIs leveraging OAuth2 API protection with <!-- deleted by customization Bearer --><!-- keep by customization: begin --> Bearner <!-- keep by customization: end --> tokens using Azure Active Directory
 
 
 We've released all of the source code for this running example in GitHub under an Apache 2.0 license, so feel free to clone (or even better, fork!) and provide feedback and pull requests.
@@ -47,11 +47,11 @@ To enable your app to authenticate users, you'll first need to register a new ap
 - In the left hand nav, click on **Active Directory**.
 - Select the tenant where you wish to register the application.
 - Click the **Applications** tab, and click add in the bottom drawer.
-- Follow the prompts and create a new **Web Application and/or WebAPI**.
+- Follow the prompts and create a new <!-- deleted by customization **web site --><!-- keep by customization: begin --> **Web Site <!-- keep by customization: end --> and/or WebAPI**.
     - The **name** of the application will describe your application to end-users
-    -	The **Sign-On URL** is the base URL of your app.  The skeleton’s default is `https://localhost:8888`.
+    <!-- deleted by customization -	The --><!-- keep by customization: begin --> - The <!-- keep by customization: end --> **Sign-On URL** is the base URL of your app.  The skeleton's default is `https://localhost:8888`.
     - The **App ID URI** is a unique identifier for your application.  The convention is to use `https://<tenant-domain>/<app-name>`, e.g. `https://contoso.partner.onmschina.cn/my-first-aad-app`
-- Once you’ve completed registration, AAD will assign your app a unique client identifier.  You’ll need this value in the next sections, so copy it from the Configure tab.
+- Once you've completed registration, AAD will assign your app a unique client identifier.  You'll need this value in the next sections, so copy it from the Configure tab.
 
 ## Step 3: Download node.js for your platform
 To successfully use this sample, you must have a working installation of Node.js.
@@ -139,7 +139,7 @@ The output of this command should appear similar to the following:
 
 ## Step 6: Install Passport.js in to your Web API
 
-[Passport](http://passportjs.org/) is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Azure Active Directory. We will install this module and then add the Azure Active Directory strategy plug-in.
+[Passport](http://passportjs.org/) is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web site. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Azure Active Directory. We will install this module and then add the Azure Active Directory strategy plug-in.
 
 From the command-line, change directories to the azuread directory.
 
@@ -280,22 +280,22 @@ We need to read these values from the Config file you just created across our ap
 
 From the command-line, change directories to the **azuread** folder if not already there:
 
-`cd azuread`
+<!-- deleted by customization `cd azuread` --><!-- keep by customization: begin --> cd azuread <!-- keep by customization: end -->
 
 Open your `server.js` file in our favorite editor and add the following information:
 
-```Javascript
+<!-- deleted by customization ```Javascript --><!-- keep by customization: begin --> Javascript <!-- keep by customization: end -->
 var config = require('./config');
-```
+<!-- deleted by customization ``` -->
 Then, add a new section to `server.js` with the following code:
 
-```Javascript
+<!-- deleted by customization ```Javascript --><!-- keep by customization: begin --> Javascript <!-- keep by customization: end -->
 /**
 * Setup some configuration
 */
 var mongoose = require('mongoose/');
 var serverPort = process.env.PORT || 8888;
-var serverURI = ( process.env.PORT ) ? config.creds.mongoose_auth_mongohq : config.creds.mongoose_auth_local;
+var serverURI = ( process.env.PORT )? config.creds.mongoose_auth_mongohq: config.creds.mongoose_auth_local;
 
 ```
 ## Step 13: Create a metadata.js helper file to aid in parsing metadata/tokens
@@ -306,7 +306,7 @@ Since the goal is to keep only application logic in the server.js file, it makes
 
 From the command-line, change directories to the **azuread** folder if not already there:
 
-`cd azuread`
+<!-- deleted by customization `cd azuread` --><!-- keep by customization: begin --> cd azuread <!-- keep by customization: end -->
 
 Create a `metadata.js` file in our favorite editor and add the following information:
 
@@ -623,7 +623,6 @@ return next(); // keep the server going
 server.post('/service/:add/:object', createObject); // calls createObject on routes that match this.
 
 ```
-
 
 This is the pattern at the most basic level. Resitfy (and Express) provide much deeper functionaltiy such as defining application types and doing complex routing across different endpoints. For our purposes, we will keep these routes very simply.
 
@@ -1173,6 +1172,11 @@ Simply clone down to your developer machine and configure as stated in the Walkt
 [ADAL for Android](https://github.com/MSOpenTech/azure-activedirectory-library-for-android)
 
 [ADAL for .Net](http://msdn.microsoft.com/zh-cn/library/azure/jj573266.aspx)
+<!-- deleted by customization
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
- 
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]
+
+<!-- keep by customization: end -->

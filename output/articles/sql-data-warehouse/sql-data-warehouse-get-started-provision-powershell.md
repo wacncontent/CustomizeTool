@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create SQL Data Warehouse by using Powershell | Microsoft Azure"
+   pageTitle="Create SQL Data Warehouse by using Powershell | Windows Azure"
    description="Create SQL Data Warehouse by using Powershell"
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,29 +8,25 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="10/08/2015"
-   ms.author="lodipalm"/>
+	ms.service="sql-data-warehouse"
+	ms.date="10/20/2015"
+	wacn.date=""/>
 
 # Create SQL Data Warehouse using Powershell
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](sql-data-warehouse-get-started-provision.md)
-- [TSQL](sql-data-warehouse-get-started-create-database-tsql.md)
-- [PowerShell](sql-data-warehouse-get-started-provision-powershell.md)
+- [Azure Management Portal](/documentation/articles/sql-data-warehouse-get-started-provision)
+- [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-database-tsql)
+- [PowerShell](/documentation/articles/sql-data-warehouse-get-started-provision-powershell)
 
-> [AZURE.NOTE]  In order to use Microsoft Azure Powershell with SQL Data Warehouse, you will need version 0.9.4 or greater.  You can check your version by running (Get-Module Azure).Version in Powershell.
+> [AZURE.NOTE]  In order to use Windows Azure Powershell with SQL Data Warehouse, you will need version 0.9.4 or greater.  You can check your version by running (Get-Module Azure).Version in Powershell.
 
 ## Get and run the Azure PowerShell cmdlets
 If you're not already set-up with Powershell, you can:
 
 1. To download the Azure PowerShell module, run [Microsoft Web Platform Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409).
-2. To run the module, at the start window type **Microsoft Azure PowerShell**.
-3. If you have not already added your account to the machine, run the following cmdlet. (For more information, see [How to install and configure Azure PowerShell][]):
+2. To run the module, at the start window type **Windows Azure PowerShell**.
+3. If you have not already added your account to the machine, then run the following cmdlet. (For more information, see [How to install and configure Azure PowerShell][]):
 
             Add-AzureAccount
 
@@ -61,12 +57,12 @@ If you're interested in more on how to manage SQL Data Warehouse programmaticall
 <!--Image references-->
 
 <!--Article references-->
-[migrate]:https://azure.microsoft.com/en-us/documentation/articles/sql-data-warehouse-overview-migrate/
-[develop]:https://azure.microsoft.com/en-us/documentation/articles/sql-data-warehouse-overview-develop/
-[load]:https://azure.microsoft.com/en-us/documentation/articles/sql-data-warehouse-overview-load/
-[load sample data]: https://azure.microsoft.com/en-us/documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
-[Powershell]: https://azure.microsoft.com/en-us/documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
-[REST API]: https://msdn.microsoft.com/library/azure/dn505719.aspx
-[MSDN]:https://msdn.microsoft.com/en-us/library/azure/dn546722.aspx
-[firewall rules]:https://azure.microsoft.com/en-us/documentation/articles/sql-database-configure-firewall-settings/
+[migrate]:/documentation/articles/sql-data-warehouse-overview-migrate/
+[develop]:/documentation/articles/sql-data-warehouse-overview-develop/
+[load]:/documentation/articles/sql-data-warehouse-overview-load/
+[load sample data]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
+[Powershell]: /documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
+[REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dn505719.aspx
+[MSDN]:https://msdn.microsoft.com/zh-cn/library/azure/dn546722.aspx
+[firewall rules]:/documentation/articles/sql-database-configure-firewall-settings/
 [How to install and configure Azure PowerShell]: powershell-install-configure.md

@@ -8,9 +8,9 @@
     editor=""/>
 
 <tags
-	ms.service="service-bus"
-	ms.date="10/07/2015"
-	wacn.date=""/>
+    ms.service="service-bus"
+    ms.date="10/07/2015"
+    wacn.date=""/>
 
 # How to use Service Bus queues
 
@@ -51,7 +51,7 @@ In both cases, you can retrieve your connection string using the [CloudConfigura
 
 ### Configure your connection string when using Cloud Services
 
-The service configuration mechanism is unique to Azure Cloud Services projects and enables you to dynamically change configuration settings from the Azure Management Portal without redeploying your application. For example, add a `Setting` label to your service definition (.csdef) file, as shown in the next example.
+The service configuration mechanism is unique to Azure Cloud Services projects and enables you to dynamically change configuration settings from the [Azure Management Portal][] without redeploying your application. For example, add a `Setting` label to your service definition (.csdef) file, as shown in the next example.
 
 ```
 <ServiceDefinition name="Azure1">

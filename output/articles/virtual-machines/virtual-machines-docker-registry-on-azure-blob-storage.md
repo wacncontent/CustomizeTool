@@ -15,7 +15,8 @@
 
 # Deploying Your Own Private Docker Registry on Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article applies to VMs created with the Resource Manager deployment model or the classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+
 
 
 This document describes what a Docker private registry is and shows how you can deploy a Docker Registry 2.0
@@ -40,7 +41,7 @@ container images on the cloud and allows you to create containers
 anytime using those images.
 
 Although the [Docker Hub][docker-hub] is a paid service for storing
-your private application container images, Docker respects developers’ needs and
+your private application container images, Docker respects developers' needs and
 provides an open-source toolset to store your images in your own private Docker
 registry behind a firewall or on-premises without hitting the public Internet.
 Because Azure Blob storage is easy to secure, you can quickly use it to create

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/11/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # App model v2.0 preview: Limitations & restrictions
@@ -28,7 +28,7 @@ The following types of apps are not currently supported in the v2.0 app model pu
 ##### Single Page Apps (Javascript)
 Many modern apps have a Single Page App front-end written primarily in javascript and often using a SPA frameworks such as AngularJS, Ember.js, Durandal, etc.  The generally available Azure AD service supports these apps using the [OAuth 2.0 Implicit Flow](/documentation/articles/active-directory-v2-protocols#oauth2-implicit-flow) - however, this flow is not yet available in the v2.0 app model.  It will be in short order.
 
-If you're anxious to get a SPA working with the v2.0 app model, you can implement authentication using the [web app flow](/documentation/articles/active-directory-v2-flows#web-apps).  But this is not the recommended approach, and documentation for this scenario will be limited.  If you'd like to get a feel for the SPA scenario, you can check out the [generally available Azure AD SPA code sample](/documentation/articles/active-directory-devquickstarts-angular).
+If you're anxious to get a SPA working with the v2.0 app model, you can implement authentication using the [web site flow](/documentation/articles/active-directory-v2-flows#web-apps).  But this is not the recommended approach, and documentation for this scenario will be limited.  If you'd like to get a feel for the SPA scenario, you can check out the [generally available Azure AD SPA code sample](/documentation/articles/active-directory-devquickstarts-angular).
 
 ##### Daemons/Server Side Apps
 Apps that contain long running processes or that operate without the presence of a user also need a way to access secured resources, such as Web APIs.  These apps can authenticate and get tokens using the app's identity (rather than a user's delegated identity) using the [OAuth 2.0 client credentials flow](/documentation/articles/active-directory-v2-protocols#oauth2-client-credentials-grant-flow).  
@@ -55,7 +55,7 @@ At this point in time, all apps that want to integrate with the v2.0 app model m
 
 Similarly, apps registered in the new App Registration Portal will work exclusively with the v2.0 app model.  You can not use the App Registration Portal to create apps that will integrate successfully with the Azure AD or Microsoft Account services.
 
-Apps that are registered in the new Application Registration Portal are currently restricted to a limited set of redirect_uri values.  The redirect_uri for web apps and services must begin with the scheme or `https`, while the redirect_uri for all other platforms must use the hard-coded value of `urn:ietf:oauth:2.0:oob`.
+Apps that are registered in the new Application Registration Portal are currently restricted to a limited set of redirect_uri values.  The redirect_uri for web sites and services must begin with the scheme or `https`, while the redirect_uri for all other platforms must use the hard-coded value of `urn:ietf:oauth:2.0:oob`.
 
 To learn how to register an app in the new Application Registration Portal, refer to [this article](/documentation/articles/active-directory-v2-app-registration).
 

@@ -299,10 +299,10 @@ Once configuration has completed, the custom domain name will be listed in the *
 [PricingDetails]: /pricing/overview/
 [portal]: http://manage.windowsazure.cn
 [digweb]: http://www.digwebinterface.com/
-[cloudservicedns]: /documentation/articles/custom-dns
-[trafficmanager]: /documentation/articles/web-sites-traffic-manager
-[addendpoint]: /documentation/articles/traffic-manager-endpoints
-[createprofile]: /documentation/articles/traffic-manager-manage-profiles
+[cloudservicedns]: ../articles/custom-dns.md
+[trafficmanager]: ../articles/app-service-web/web-sites-traffic-manager.md
+[addendpoint]: ../articles/traffic-manager/traffic-manager-endpoints.md
+[createprofile]: ../articles/traffic-manager/traffic-manager-manage-profiles.md
 
 <!-- images -->
 

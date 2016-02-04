@@ -18,19 +18,19 @@
 - [Azure Management Portal](/documentation/articles/cloud-services-custom-domain-name)
 - [Azure Preview Portal](/documentation/articles/cloud-services-custom-domain-name-portal)
 
-When you create a Cloud Service, Azure assigns it to a subdomain of **chinacloudapp.cn**. For example, if your Cloud Service is named "contoso", your users will be able to access your application on a URL like http://contoso.chinacloudapp.cn. Azure also assigns a virtual IP address.
+When you create a Cloud Service, Azure assigns it to a subdomain of **chinacloudapp.cn**. For example, if your Cloud Service is named "contoso", your users will be able to access your application on a URL like http://*contoso*.chinacloudapp.cn. Azure also assigns a virtual IP address.
 
 However, you can also expose your application on your own domain name, such as **contoso.com**. This article explains how to reserve or configure a custom domain name for Cloud Service web roles.
 
 Do you already undestand what CNAME and A records are? [Jump past the explaination](#add-a-cname-record-for-your-custom-domain).
 
 > [AZURE.NOTE]
-> The procedures in this task apply to Azure Cloud Services. For Websites, see [Configuring a Custom Domain Name for an Azure Websites Web App](/documentation/articles/web-sites-custom-domain-name). For storage accounts, see [Configuring a Custom Domain Name for an Azure Storage Account](/documentation/articles/storage-custom-domain-name).
+> The procedures in this task apply to Azure Cloud Services. For Websites, see [Configuring a Custom Domain Name for an Azure Websites Web Site](/documentation/articles/app-service-web/web-sites-custom-domain-name). For storage accounts, see [Configuring a Custom Domain Name for an Azure Storage Account](/documentation/articles/storage-custom-domain-name).
 
 <p/>
 
 > [AZURE.TIP]
-> Get going faster--use the NEW Azure [guided walkthrough](http://support.microsoft.com/kb/2990804)!  It makes associating a custom domain name AND securing communication (SSL) with Azure Cloud Services or Azure Websites a snap.
+> Get going faster--use the NEW Azure [guided walkthrough](http://support.microsoft.com/zh-cn/kb/2990804)!  It makes associating a custom domain name AND securing communication (SSL) with Azure Cloud Services or Azure Websites a snap.
 
 ## Understand CNAME and A records
 
@@ -65,7 +65,7 @@ To create a CNAME record, you must add a new entry in the DNS table for your cus
             
         **OR**
   
-    * Install and configure [Azure Powershell](/documentation/articles/install-configure-powershell), and then use the following command:
+    * Install and configure [Azure Powershell](/documentation/articles/powershell-install-configure), and then use the following command:
 
         ```powershell
         Get-AzureDeployment -ServiceName yourservicename | Select Url
@@ -107,7 +107,7 @@ To create an A record, you must first find the virtual IP address of your cloud 
 
         **OR**
 
-    * Install and configure [Azure Powershell](/documentation/articles/install-configure-powershell), and then use the following command:
+    * Install and configure [Azure Powershell](/documentation/articles/powershell-install-configure), and then use the following command:
 
         ```powershell
         get-azurevm -servicename yourservicename | get-azureendpoint -VM {$_.VM} | select Vip

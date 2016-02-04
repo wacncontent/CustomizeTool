@@ -1,0 +1,6 @@
+new docs: 0, word count: {word_count_TODO}
+
+new includes: 3
+includes/notification-hubs-portal-create-new-hub.md
+includes/notification-hubs-send-categories-template.md
+includes/notification-hubs-xamarin-enable-apple-push-notifications.md

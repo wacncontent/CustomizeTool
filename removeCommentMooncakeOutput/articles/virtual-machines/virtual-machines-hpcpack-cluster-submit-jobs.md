@@ -8,9 +8,9 @@
  editor=""
  tags="azure-resource-manager,azure-service-management"/>
 <tags
-	ms.service="virtual-machines"
-	ms.date="09/28/2015"
-	wacn.date=""/>
+ms.service="virtual-machines"
+ ms.date="09/28/2015"
+ wacn.date="09/15/2015"/>
 
 # Submit HPC jobs from an on-premises computer to an HPC Pack cluster in Azure
 
@@ -83,7 +83,7 @@ of the deployment.
 3. To configure the REST interface and start the HPC Web Service, type the following command:
 
     ```
-    .\Set-HPCWebComponents.ps1 –Service REST –enable
+    .\Set-HPCWebComponents.ps1 -Service REST -enable
     ```
 
 4. When prompted to select a certificate, choose the certificate that corresponds to the public DNS name of the head node (CN=&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn).
@@ -93,7 +93,7 @@ of the deployment.
 5. To configure the web portal for job submission, type the following command:
 
     ```
-    .\Set-HPCWebComponents.ps1 –Service Portal -enable
+    .\Set-HPCWebComponents.ps1 -Service Portal -enable
     ```
 6. After the script completes, stop and restart the HPC Job Scheduler Service by typing the following:
 
@@ -116,7 +116,7 @@ client computer. You'll need the certificate to be in .CER format.
 
 1. On the head node, add the Certificates snap-in to a Microsoft Management Console for the Local Computer account. For steps to add the snap-in, see [Add the Certificates Snap-in to an MMC](https://technet.microsoft.com/zh-cn/library/cc754431.aspx).
 
-2. In the console tree, expand **Certificates – Local Computer**, expand **Personal**, and then click **Certificates**.
+2. In the console tree, expand **Certificates - Local Computer**, expand **Personal**, and then click **Certificates**.
 
 3. Locate the certificate that you configured for the HPC Pack web components in [Step 1: Install and configure the web components on the head node](#step-1:-install-and-configure-the-web-components-on-the-head-node) (for example, named &lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn).
 
@@ -134,7 +134,7 @@ client computer. You'll need the certificate to be in .CER format.
 
 2. On the client computer, run certmgr.msc.
 
-3. In Certificate Manager, expand **Certificates – Current user**, expand **Trusted Root Certification Authorities**, right-click **Certificates**, click **All Tasks**, and then click **Import**.
+3. In Certificate Manager, expand **Certificates - Current user**, expand **Trusted Root Certification Authorities**, right-click **Certificates**, click **All Tasks**, and then click **Import**.
 
 4. In the Certificate Import Wizard, click **Next** and follow the steps to import the certificate that your exported from the head node.
 
@@ -160,7 +160,7 @@ computer**
     ```
     job list /scheduler:https://<HeadNodeDnsName>.chinacloudapp.cn /all
     ```
-    >[AZURE.TIP] Use the full DNS name of the head node, not the IP address, in the scheduler URL. If you specify the IP address, you’ll see an error similar to "The server certificate needs to either have a valid chain of trust or to be placed in the trusted root store".
+    >[AZURE.TIP] Use the full DNS name of the head node, not the IP address, in the scheduler URL. If you specify the IP address, you'll see an error similar to "The server certificate needs to either have a valid chain of trust or to be placed in the trusted root store".
 
 3. When prompted, type the user name (in the form &lt;DomainName&gt;\&lt;UserName&gt;) and password of the HPC cluster administrator or another cluster user that you have configured. You can choose to store the credentials locally for more job operations.
 

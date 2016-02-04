@@ -7,12 +7,15 @@
 	editor="" 
 	services="mobile-services"/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="10/05/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="10/05/2015" 
 	wacn.date=""/>
 
 # Handling database write conflicts
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 
 
 
@@ -62,7 +65,7 @@ In this section you will update the TodoList user interface to allow updating th
 		</ListView>
 
 
-4. In the Visual Studio Solution Explorer, open MainPage.cs in the shared project. Add the event handler to the MainPage for the TextBox `LostFocus` event as shown below.
+3. In the Visual Studio Solution Explorer, open MainPage.cs in the shared project. Add the event handler to the MainPage for the TextBox `LostFocus` event as shown below.
 
 
         private async void ToDoText_LostFocus(object sender, RoutedEventArgs e)
@@ -215,16 +218,16 @@ In this section you will build a Windows Store app package to install the app on
 
 	![][12]
   
-5. Run instance 1 of the app in Visual Studio by clicking **Debug**->**Start Debugging**. On the Start screen of the second machine, click the down arrow to see "Apps by name". Then click the **todolist** app to run instance 2 of the app. 
+6. Run instance 1 of the app in Visual Studio by clicking **Debug**->**Start Debugging**. On the Start screen of the second machine, click the down arrow to see "Apps by name". Then click the **todolist** app to run instance 2 of the app. 
 
-	App Instance 1	
+	App Instance 1
 	![][2]
 
 	App Instance 2	
 	![][2]
 
 
-6. In instance 1 of the app, update the text of the last item to **Test Write 1**, then click another text box so that the `LostFocus` event handler updates the database. The screenshot below shows an example.
+7. In instance 1 of the app, update the text of the last item to **Test Write 1**, then click another text box so that the `LostFocus` event handler updates the database. The screenshot below shows an example.
 	
 	App Instance 1	
 	![][3]
@@ -232,7 +235,7 @@ In this section you will build a Windows Store app package to install the app on
 	App Instance 2	
 	![][2]
 
-7. At this point the corresponding item in instance 2 of the app has an old version of the item. In that instance of the app, enter **Test Write 2** for the `text` property. Then click another text box so the `LostFocus` event handler attempts to update the database with the old `_version` property.
+8. At this point the corresponding item in instance 2 of the app has an old version of the item. In that instance of the app, enter **Test Write 2** for the `text` property. Then click another text box so the `LostFocus` event handler attempts to update the database with the old `_version` property.
 
 	App Instance 1	
 	![][4]
@@ -240,7 +243,7 @@ In this section you will build a Windows Store app package to install the app on
 	App Instance 2	
 	![][5]
 
-8. Since the `__version` value used with the update attempt didn't match the server `__version` value, the Mobile Services SDK throws a `MobileServicePreconditionFailedException` allowing the app to resolve this conflict. To resolve the conflict, you can click **Commit Local Text** to commit the values from instance 2. Alternatively, click **Leave Server Text** to discard the values in instance 2, leaving the values from instance 1 of the app committed. 
+9. Since the `__version` value used with the update attempt didn't match the server `__version` value, the Mobile Services SDK throws a `MobileServicePreconditionFailedException` allowing the app to resolve this conflict. To resolve the conflict, you can click **Commit Local Text** to commit the values from instance 2. Alternatively, click **Leave Server Text** to discard the values in instance 2, leaving the values from instance 1 of the app committed. 
 
 	App Instance 1	
 	![][4]
@@ -259,7 +262,7 @@ You can detect and resolve write conflicts in server scripts. This is a good ide
 
 The following steps walk you through adding the server update script and testing it.
 
-1. Log into the [Azure Management Portal], click **Mobile Services**, and then click your app. 
+1. Log into the [Azure Management Portal], click **Mobile Services**, and then click your app.
 
    	![][7]
 
@@ -366,7 +369,7 @@ This tutorial demonstrated how to enable a Windows Store app to handle write con
 <!-- URLs. -->
 [Optimistic Concurrency Control]: http://go.microsoft.com/fwlink/?LinkId=330935
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
-[Azure Account]: /pricing/1rmb-trial/
+[Azure Account]: http://www.windowsazure.cn/pricing/1rmb-trial/
 [Validate and modify data with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts
 [Refine queries with paging]: /documentation/articles/mobile-services-windows-store-dotnet-add-paging-data
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
@@ -375,9 +378,7 @@ This tutorial demonstrated how to enable a Windows Store app to handle write con
 [Add push notifications to your app]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Management Portal]: https://manage.windowsazure.cn/
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268374
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268375
 [Developer Code Samples site]:  http://go.microsoft.com/fwlink/p/?LinkId=271146
 [System Properties]: http://go.microsoft.com/fwlink/?LinkId=331143
- 

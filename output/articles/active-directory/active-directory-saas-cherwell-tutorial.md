@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory integration with Cherwell | Windows Azure" 
     description="Learn how to use Cherwell with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/20/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Cherwell

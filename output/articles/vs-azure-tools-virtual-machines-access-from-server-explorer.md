@@ -1,14 +1,14 @@
 <properties
-   pageTitle="Accessing Azure Virtual Machines from Server Explorer"
+   pageTitle="Accessing Azure Virtual Machines from Server Explorer | Windows Azure"
    description="Get an overview of how to view create and manage Azure virtual machines (VMs) in Server Explorer in Visual Studio."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="09/30/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 # Accessing Azure Virtual Machines from Server Explorer
@@ -30,7 +30,7 @@ If you have virtual machines hosted by Azure, you can access them in Server Expl
   	|DNS Name|The URL with the Internet address of the virtual machine.|
   	|Environment|For a virtual machine, the value of this property is always Production.|
   	|Name|The name of the virtual machine.|
-  	|Size|The size of the virtual machine, which reflects the amount of memory and disk space that’s available. For more information, see How To: Configure Virtual Machine Sizes.|
+  	|Size|The size of the virtual machine, which reflects the amount of memory and disk space that's available. For more information, see How To: Configure Virtual Machine Sizes.|
   	|Status|Values include Starting, Started, Stopping, Stopped, and Retrieving Status. If Retrieving Status appears, the current status is unknown. The values for this property differ from the values that are used on the management portal.|
   	|SubscriptionID|The subscription ID for your Azure account. You can show this information on the management portal by viewing the properties for a subscription.|
 
@@ -43,7 +43,7 @@ If you have virtual machines hosted by Azure, you can access them in Server Expl
   	|Name|An identifier for the endpoint.|
   	|Private Port|The port for network access internal to your application.|
   	|Protocol|The protocol that the transport layer for this endpoint uses, either TCP or UDP.|
-  	|Public Port|The port that’s used for public access to your application.|
+  	|Public Port|The port that's used for public access to your application.|
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Create a VM with a template | Windows Azure"
-	description="Use a Resource Manager template to easily create a new Windows virtual machine with PowerShell."
+	description="Use a Resource Manager template to easily create a new Windows virtual machine with PowerShell or the Azure CLI."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="davidmu1"
@@ -216,7 +216,7 @@ Fill in an Azure deployment name, resource group name, and Azure datacenter loca
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as China North>"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
-	New-AzureRmResourceGroup –Name $RGName –Location $locName
+	New-AzureRmResourceGroup -Name $RGName -Location $locName
 	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 When you run the **New-AzureRmResourceGroupDeployment** command, you will be prompted to supply the values of parameters in the "parameters" section of the JSON file. When you have specified all the parameter values, the command creates the resource group and the virtual machine.
@@ -227,7 +227,7 @@ Here is an example.
 	$RGName="TestRG"
 	$locname="China North"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
-	New-AzureRmResourceGroup –Name $RGName –Location $locName
+	New-AzureRmResourceGroup -Name $RGName -Location $locName
 	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 You will see something like this:
@@ -282,4 +282,4 @@ You now have a new Windows virtual machine named MyWindowsVM in your new resourc
 
 [Virtual machines documentation](/documentation/services/virtual-machines/)
 
-[How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)
+[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)

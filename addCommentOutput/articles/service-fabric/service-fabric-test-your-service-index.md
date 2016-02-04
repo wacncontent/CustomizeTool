@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Test a Service Fabric service | Microsoft Azure"
+   pageTitle="Test a Service Fabric service | Windows Azure"
    description="Conceptual information and tutorials that help you understand how to test a Service Fabric service by running Testability actions and scenarios."
    services="service-fabric"
    documentationCenter=".net"
@@ -8,20 +8,16 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="10/13/2015"
-   ms.author="ryanwi"/>
+	ms.service="service-fabric"
+	ms.date="10/13/2015"
+	wacn.date=""/>
 
 # Test a Service Fabric service
-Testability is a suite of tools specifically designed for testing your services built on Microsoft Azure Service Fabric. The tools allow you to easily induce meaningful faults and run test scenarios to exercise and validate the numerous different states and transitions your services will experience throughout their lifetimes, all in a controlled and safe manner. To learn more, read:
+Testability is a suite of tools specifically designed for testing your services built on Windows Azure Service Fabric. The tools allow you to easily induce meaningful faults and run test scenarios to exercise and validate the numerous different states and transitions your services will experience throughout their lifetimes, all in a controlled and safe manner. To learn more, read:
 
-- [Testability Overview](service-fabric-testability-overview.md)
-- [Run an action](service-fabric-testability-actions.md)  
-- [Run a scenario](service-fabric-testability-scenarios.md)
+- [Testability Overview](/documentation/articles/service-fabric-testability-overview)
+- [Run an action](/documentation/articles/service-fabric-testability-actions)  
+- [Run a scenario](/documentation/articles/service-fabric-testability-scenarios)
 - How to write tests for your service
-    - [Simulate failures during service workloads](service-fabric-testability-workload-tests.md)
-    - [Service to service communication failures](service-fabric-testability-scenarios-service-communication.md)
+    - [Simulate failures during service workloads](/documentation/articles/service-fabric-testability-workload-tests)
+    - [Service to service communication failures](/documentation/articles/service-fabric-testability-scenarios-service-communication)

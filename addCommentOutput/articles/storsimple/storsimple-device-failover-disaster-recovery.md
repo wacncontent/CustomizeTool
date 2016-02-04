@@ -1,36 +1,36 @@
 <properties 
-   pageTitle="StorSimple failover and disaster recovery | Microsoft Azure"
+   pageTitle="StorSimple failover and disaster recovery | Windows Azure"
    description="Learn how to fail over your StorSimple device to itself, another physical device, or a virtual device."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/14/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/14/2015"
+	wacn.date=""/>
 
 # Failover and disaster recovery for your StorSimple device
 
 ## Overview
 
-This tutorial describes the steps required to fail over a StorSimple device in the event of a disaster. A failover will allow you to migrate your data from a source device in the datacenter to another physical or even a virtual device located in the same or a different geographical location. 
+This tutorial describes the steps required to <!-- deleted by customization fail over --><!-- keep by customization: begin --> failover <!-- keep by customization: end --> a StorSimple device in the event of a disaster. A failover will allow you to migrate your data from a source device in the datacenter to another physical or even a virtual device located in the same or a different geographical location.
 Device failover is orchestrated via the disaster recovery (DR) feature and is initiated from the Devices page. This page tabulates all the StorSimple devices connected to your StorSimple Manager service. For each device, the friendly name, status, provisioned and maximum capacity, type and model are displayed.
 
 ![Devices page](./media/storsimple-device-failover-disaster-recovery/IC740972.png)
 
 ## Disaster recovery (DR) and device failover
-
 In a disaster recovery (DR) scenario, the primary device stops functioning. In this situation, you can move the cloud data associated with the failed device to another device by using the primary device as the *source* and specifying another device as the *target*. You can select one or more volume containers to migrate to the target device. This process is referred to as the *failover*. During the failover, the volume containers from the source device change ownership and are transferred to the target device.
 
 ## Considerations for device failover
+<!-- deleted by customization
 
 In the event of a disaster, you may choose to fail over your StorSimple device:
+-->
+<!-- keep by customization: begin -->
+In the event of a disaster, you may choose to failover your StorSimple device:
+<!-- keep by customization: end -->
 
 - To a physical device 
 - To itself
@@ -54,7 +54,7 @@ Perform the following steps to restore your device to a target physical device.
 
 1. Repeat the previous step for all the volume containers you would like to fail over to another device.
 
-1. On the **Devices** page, click **Failover**.
+1. On the <!-- deleted by customization **Devices** --><!-- keep by customization: begin --> Devices <!-- keep by customization: end --> page, click **Failover**.
 
 1. In the wizard that opens up, under **Choose volume container to failover**:
 
@@ -78,7 +78,7 @@ Perform the following steps if you only have a single device and need to perform
 
 1. Take cloud snapshots of all the volumes in your device.
 
-1. Reset your device to factory defaults. Follow the detailed instructions in [how to reset a StorSimple device to factory default settings](storsimple-manage-device-controller.md#reset-the-device-to-factory-default-settings).
+1. Reset your device to factory defaults. Follow the detailed instructions in [how to reset a StorSimple device to factory default <!-- deleted by customization settings](/documentation/articles/storsimple-manage-device-controller#reset-the-device-to-factory-default-settings) --><!-- keep by customization: begin --> settings](https://msdn.microsoft.com/zh-cn/library/dn772373.aspx) <!-- keep by customization: end -->.
 
 1. Configure your device and register it again with your StorSimple Manager service.
 
@@ -114,21 +114,28 @@ Perform the following steps to restore the device to a target StorSimple virtual
 
 1. In the wizard that opens up, under **Choose volume container to failover**, complete the following:
 													
-	a. In the list of volume containers, select the volume containers you would like to fail over.
+	<!-- deleted by customization a --><!-- keep by customization: begin --> 1 <!-- keep by customization: end -->. In the list of volume containers, select the volume containers you would like to fail over.
 
 	>[AZURE.NOTE] **Only the volume containers with associated cloud snapshots and offline volumes are displayed.**
 
-	b. Under **Choose a target device for the volumes in the selected containers**, select the StorSimple virtual device from the drop-down list of available devices. Only the devices that have sufficient capacity are displayed in the drop-down list.  
+	<!-- deleted by customization b --><!-- keep by customization: begin --> 1 <!-- keep by customization: end -->. Under **Choose a target device for the volumes in the selected containers**, select the StorSimple virtual device from the drop-down list of available devices. Only the devices that have sufficient capacity are displayed in the drop-down list.
+<!-- deleted by customization
 	
 	>[AZURE.NOTE] **If your physical device is running Update 1, you can fail over to a virtual device running Update 1 only. If the target virtual device is running a lower software version, you will see an error to the effect that your target device software needs to be updated.**
 
 1. Finally, review all the failover settings under **Confirm failover**. Click the check icon ![Check icon](./media/storsimple-device-failover-disaster-recovery/IC740895.png).
+-->
+<!-- keep by customization: begin -->
+
+1. Finally, review all the failover settings under Confirm failover. Click the check icon ![Check icon](./media/storsimple-device-failover-disaster-recovery/IC740895.png).
+<!-- keep by customization: end -->
 
 1. After the failover is completed, go to the **Devices** page.
 													
 	a. Select the StorSimple virtual device that was used as the target device for the failover process.
 	
-	b. 	Go to the **Volume Containers** page. All the volume containers, along with the volumes from the old device should now be listed.
+	b. Go to <!-- deleted by customization the --> **Volume Containers** page. All the volume containers, along with the volumes from the old device should now be listed <!-- keep by customization: begin --> here <!-- keep by customization: end -->.
+<!-- deleted by customization
 
 ![Video available](./media/storsimple-device-failover-disaster-recovery/Video_icon.png) **Video available**
 
@@ -145,8 +152,22 @@ If there are StorSimple devices that were registered just before a disaster occu
 
 After you have performed a failover, you may need to:
 
-- [Deactivate your StorSimple device](storsimple-deactivate-and-delete-device.md#deactivate-a-device)
-- [Delete your StorSimple device](storsimple-deactivate-and-delete-device.md#delete-a-device)
+- [Deactivate your StorSimple device](/documentation/articles/storsimple-deactivate-and-delete-device#deactivate-a-device)
+- [Delete your StorSimple device](/documentation/articles/storsimple-deactivate-and-delete-device#delete-a-device)
 
-For information about how to use the StorSimple Manager service, go to [Use the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
- 
+For information about how to use the StorSimple Manager service, go to [Use the StorSimple Manager service to administer your StorSimple device](/documentation/articles/storsimple-manager-service-administration).
+-->
+<!-- keep by customization: begin -->
+
+
+## See also
+After you have performed the failover, you may need to:
+
+- [Deactivate your StorSimple device](https://msdn.microsoft.com/zh-cn/library/azure/dn772379.aspx#deactivate)
+- [Delete your StorSimple device](https://msdn.microsoft.com/zh-cn/library/azure/dn772379.aspx#delete)
+
+For information on how to manage your device using the StorSimple Manager service, see:
+
+- [Administrator's Guide](https://msdn.microsoft.com/zh-cn/library/dn772401.aspx)
+
+<!-- keep by customization: end -->

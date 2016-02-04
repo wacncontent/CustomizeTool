@@ -4,13 +4,13 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn"
    tags="azure-service-management"
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/15/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # How to create NSGs (classic) in the Azure CLI

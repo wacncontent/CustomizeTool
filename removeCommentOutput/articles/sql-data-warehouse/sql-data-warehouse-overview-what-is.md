@@ -1,5 +1,5 @@
 <properties
-   pageTitle="What is Azure SQL Data Warehouse | Microsoft Azure"
+   pageTitle="What is Azure SQL Data Warehouse | Windows Azure"
    description="Enterprise-class distributed database capable of processing petabyte volumes of relational and non-relational data. It is the industry's first cloud data warehouse with grow, shrink, and pause in seconds."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="10/08/2015"
-   ms.author="barbkess;twounder;JRJ@BigBangData.co.uk;"/>
+	ms.service="sql-data-warehouse"
+	ms.date="10/08/2015"
+	wacn.date=""/>
 
 
 # What is Azure SQL Data Warehouse?
@@ -34,7 +30,7 @@ With the ability to fully control the amount of compute independently of storage
 - When you don't need to run queries, perhaps in the evenings or weekends, pause compute resources to cancel all running queries and remove all DWUs allocated to your data warehouse. Your data storage stays intact, but there is no charge for compute resources. When you need to start running queries, perhaps on Monday morning, you can resume your compute resources. 
 
 ## Massively parallel processing and columnstore indexes for breakthrough performance
-SQL Data Warehouse uses Microsoft’s massive parallel processing (MPP) architecture, and SQL Server's columnstore index technology to deliver breakthrough performance. 
+SQL Data Warehouse uses Microsoftâs massive parallel processing (MPP) architecture, and SQL Server's columnstore index technology to deliver breakthrough performance. 
 
 > [AZURE.NOTE] MPP is a divide and conquer approach to solving large data problems by using parallel computing. Data is divided and distributed across many computing resources, and each computing resource operates on its portion of the data in parallel.
 
@@ -43,7 +39,7 @@ SQL Data Warehouse uses Microsoft’s massive parallel processing (MPP) architec
 
 
 ## Hybrid cloud with enterprise-class SQL Server experience
-SQL Data Warehouse is based on SQL Server’s proven relational database engine and includes the features you expect from an enterprise data warehouse including stored procedures, user-defined functions, table partitioning, indexes, and collations. 
+SQL Data Warehouse is based on SQL Serverâs proven relational database engine and includes the features you expect from an enterprise data warehouse including stored procedures, user-defined functions, table partitioning, indexes, and collations. 
 
 > [AZURE.NOTE] If you already know Transact-SQL, its easy to transfer your knowledge to SQL Data Warehouse.  Whether you are advanced or a novice, the documentation examples will help you get started. 
 

@@ -1,16 +1,16 @@
 <properties
-	pageTitle="Administer your Azure AD directory"
+	pageTitle="Administer your Azure AD directory | Windows Azure"
 	description="A topic that explains what an Azure AD tenant is, and how to manage an Azure AD directory."
 	services="active-directory"
 	documentationCenter=""
-	authors="Markusvi"
+	authors="markusvi"
 	writer="markvi"
 	manager="stevenpo"
-	editor="LisaToft"/>
+	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/09/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Administer your Azure AD directory
@@ -27,7 +27,7 @@ Each Azure AD directory is distinct and separate from other Azure AD directories
 
 ## How can I get an Azure AD directory?
 
-Azure AD provides the core directory and identity management capabilities behind most of Microsoft’s cloud services, including:
+Azure AD provides the core directory and identity management capabilities behind most of Microsoft's cloud services, including:
 
 - Azure
 - Microsoft Office 365
@@ -39,9 +39,9 @@ You will get an Azure AD directory when you sign up for any of these Microsoft c
 > [AZURE.NOTE]
 > After you sign up for your first service, we recommend that you use the same administrator account associated with your organization when you sign up for other Microsoft cloud services.
 
-The first time you sign up for a Microsoft cloud service, you are prompted to provide details about your organization and your organization’s Internet domain name registration. This information is then used to create a new Azure AD directory instance for your organization. That same directory is used to authenticate sign in attempts when you subscribe to multiple Microsoft cloud services.
+The first time you sign up for a Microsoft cloud service, you are prompted to provide details about your organization and your organization's Internet domain name registration. This information is then used to create a new Azure AD directory instance for your organization. That same directory is used to authenticate sign in attempts when you subscribe to multiple Microsoft cloud services.
 
-The additional services fully leverage any existing user accounts, policies, settings or on-premises directory integration you configure to help improve efficiency between your organization’s identity infrastructure on-premises and Azure AD.
+The additional services fully leverage any existing user accounts, policies, settings or on-premises directory integration you configure to help improve efficiency between your organization's identity infrastructure on-premises and Azure AD.
 
 For example, if you originally signed up for a Microsoft Intune subscription and completed the steps necessary to further integrate your on-premises Active Directory with your Azure AD directory by deploying directory synchronization and/or single sign-on servers, you can sign up for another Microsoft cloud service such as Office 365 which can also leverage the same directory integration benefits you now use with Microsoft Intune.
 
@@ -51,14 +51,14 @@ For more information about integrating your on-premises directory with Azure AD,
 
 You can associate a new Azure subscription with the same directory that authenticates sign in for an existing Office 365 or Microsoft Intune subscription. Sign in to the Azure Management Portal using your work or school account. The Management Portal returns a message that it was unable to find any subscriptions for that account. Select **Sign Up For Azure**, and your directory will be available for administration within the portal. For more information, see [Manage the directory for your Office 365 subscription in Azure](/documentation/articles/active-directory-how-subscriptions-associated-directory#manage-the-directory-for-your-office-365-subscription-in-azure).
 
-For a video about common usage questions for Azure AD, see [Azure Active Directory - Common Sign-up, sign-in and usage questions](http://channel9.msdn.com/Series/Windows-Azure-Active-Directory/WAADCommonSignupsigninquestions).
+<!--For a video about common usage questions for Azure AD, see [Azure Active Directory - Common Sign-up, sign-in and usage questions](http://channel9.msdn.com/Series/Windows-Azure-Active-Directory/WAADCommonSignupsigninquestions).-->
 
 ### Create an Azure AD directory by signing up for a Microsoft cloud service as an organization
 
-If you don’t yet have a subscription to a Microsoft cloud service, use one of the links below to sign up. The act of signing up for your first service will create an Azure AD directory automatically.
+If you don't yet have a subscription to a Microsoft cloud service, use one of the links below to sign up. The act of signing up for your first service will create an Azure AD directory automatically.
 
 - [Windows Azure](https://account.windowsazure.cn/organization)
-- [Office 365](http://products.office.com/business/compare-office-365-for-business-plans/)
+- [Office 365](http://products.office.com/zh-cn/business/compare-office-365-for-business-plans/)
 - [Microsoft Intune](https://account.manage.microsoft.com/Signup/MainSignUp.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&ali=1)
 
 ### Manage an Azure-provisioned Default directory
@@ -81,14 +81,14 @@ From either of these portals (or cmdlets), you can:
 - Manage related cloud service(s) your organization subscribes to
 - Set up on-premises integration with your directory service
 
-The Azure Management Portal, Office 365 Admin Center, Microsoft Intune account portal and the Azure AD cmdlets all read from and write to a single shared instance of Azure AD that is associated with your organization’s directory, as shown in the following illustration. In this way, portals (or cmdlets) act as a front-end interface that pull in and/or modify your directory data.
+The Azure Management Portal, Office 365 Admin Center, Microsoft Intune account portal and the Azure AD cmdlets all read from and write to a single shared instance of Azure AD that is associated with your organization's directory, as shown in the following illustration. In this way, portals (or cmdlets) act as a front-end interface that pull in and/or modify your directory data.
 
 ![][2]
 
 These account portals and the associated Azure AD PowerShell cmdlets used to manage users and groups are built on top of the Azure AD platform.
 
 When you make a change to your organizations data using any of the portals (or cmdlets) while signed in under the context of one of these services, the change will also be shown in the other portals the next time you sign-in under the context of that service because this data is shared across the Microsoft cloud services you are subscribed to.
-For example, if you used the Office 365 Admin Center to block a user from signing in, that action will block the user from signing in to any other service that your organization is currently subscribed to. If you were to pull up that same user’s account under the context of the Microsoft Intune account portal you will see that the user is blocked.
+For example, if you used the Office 365 Admin Center to block a user from signing in, that action will block the user from signing in to any other service that your organization is currently subscribed to. If you were to pull up that same user's account under the context of the Microsoft Intune account portal you will see that the user is blocked.
 
 ## How can I add and manage multiple directories?
 
@@ -111,7 +111,7 @@ You can manage each directory as a fully independent resource: each directory is
 Also note that unlike other Azure resources, your directories are not child resources of an Azure subscription. So if you cancel or allow your Azure subscription to expire, you can still access your directory data using Azure AD PowerShell, the Azure Graph API, or other interfaces such as the Office 365 Admin Center. You can also associate another subscription with the directory.
 
 ## How can I delete an Azure AD directory?
-A global administrator can delete an Azure AD directory from the portal. When a directory is deleted, all resources contained in the directory are also deleted; so you should be sure you don’t need the directory before you delete it.
+A global administrator can delete an Azure AD directory from the portal. When a directory is deleted, all resources contained in the directory are also deleted; so you should be sure you don't need the directory before you delete it.
 
 > [AZURE.NOTE]
 > If the user is signed in with a work or school account, the user must not be attempting to delete his or her home directory. For example, if the user is signed in as joe@contoso.partner.onmschina.cn, that user cannot delete the directory that has contoso.partner.onmschina.cn as its default domain.

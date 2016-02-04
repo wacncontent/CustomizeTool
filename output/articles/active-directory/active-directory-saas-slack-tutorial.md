@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Slack
@@ -108,7 +108,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
     4.  Open your base-64 encoded certificate in notepad, copy the content of it into your clipboard, and then paste it to the **Public Certificate** textbox.
     5.  Deselect **Allow users to change their email address**.
     6.  Select **Allow users to choose their own username**.
-    7.  As **Authentication for your team must be used by**, select **It’s optional**.
+    7.  As **Authentication for your team must be used by**, select **It's optional**.
     8.  Click **Save Configuration**.
 
 9.  On the Azure AD portal, select the single sign-on configuration confirmation, and then click **Complete** to close the **Configure Single Sign On** dialog.

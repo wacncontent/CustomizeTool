@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 
@@ -288,9 +288,9 @@ The job definition describes where to find the workflow.xml, as well as other fi
 
 	This will return information similar to the following:
 
-		headnode0.CLUSTERNAME-ssh.j7.internal.chinacloudapp.cn
+		hn0-CLUSTERNAME.randomcharacters.cx.internal.chinacloudapp.cn
 
-	The port used for the JobTracker is 8050, so the full address to use for the JobTracker will be **headnode0.CLUSTERNAME-ssh.j7.internal.chinacloudapp.cn:8050**.
+	The port used for the JobTracker is 8050, so the full address to use for the JobTracker will be **hn0-CLUSTERNAME.randomcharacters.cx.internal.chinacloudapp.cn:8050**.
 
 1. Use the following to create the Oozie job definition configuration:
 
@@ -386,13 +386,13 @@ The following steps use the Oozie command to submit and manage Oozie workflows o
 	This will return a value similar to the following:
 
 		<name>oozie.base.url</name>
-		<value>http://headnode0.CLUSTERNAME-ssh.j7.internal.chinacloudapp.cn:11000/oozie</value>
+		<value>http://hn0-CLUSTERNAME.randomcharacters.cx.internal.chinacloudapp.cn:11000/oozie</value>
 
-	The **http://headnode0.CLUSTERNAME-ssh.j7.internal.chinacloudapp.cn:11000/oozie** portion is the URL to use with the Oozie command.
+	The **http://hn0-CLUSTERNAME.randomcharacters.cx.internal.chinacloudapp.cn:11000/oozie** portion is the URL to use with the Oozie command.
 
 2. Use the following to create an environment variable for the URL, so you don't have to type it for every command:
 
-		export OOZIE_URL=http://headnode0.CLUSTERNAME-ssh.j7.internal.chinacloudapp.cn:11000/oozie
+		export OOZIE_URL=http://HOSTNAMEt:11000/oozie
 
 	Replace the URL with the one you received earlier.
 
@@ -675,29 +675,29 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 
 
 
-[azure-data-factory-pig-hive]: /documentation/articles/data-factory-pig-hive-activities
-[hdinsight-oozie-coordinator-time]: /documentation/articles/hdinsight-use-oozie-coordinator-time
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[azure-data-factory-pig-hive]: data-factory-pig-hive-activities.md
+[hdinsight-oozie-coordinator-time]: hdinsight-use-oozie-coordinator-time.md
+[hdinsight-versions]:  hdinsight-component-versioning.md
+[hdinsight-storage]: hdinsight-use-blob-storage.md
+[hdinsight-get-started]: hdinsight-get-started.md
 
 
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator
+[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-storage]: hdinsight-use-blob-storage.md
+[hdinsight-get-started-emulator]: hdinsight-get-started-emulator.md
 
-[hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+[hdinsight-develop-streaming-jobs]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
+[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
 
-[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
-[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
+[sqldatabase-create-configue]: sql-database-create-configure.md
+[sqldatabase-get-started]: sql-database-get-started.md
 
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-create-storageaccount]: storage-create-storage-account.md
 
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
@@ -705,7 +705,7 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 
 [powershell-download]: /downloads/
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: powershell-install-configure.md
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-script]: https://technet.microsoft.com/zh-cn/library/ee176961.aspx
 

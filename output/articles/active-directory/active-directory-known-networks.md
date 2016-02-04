@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Known Networks" 
+	pageTitle="Known Networks | Windows Azure" 
 	description="By configuring known networks, you can avoid having IP addresses that are owned by your organization included in the Sign ins from multiple geographies and Sign ins from IP addresses with suspicious activity reports." 
 	services="active-directory" 
 	documentationCenter="" 
@@ -9,26 +9,26 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/03/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Known Networks
 
 
-You can use Azure Active Directory's access and usage reports to gain visibility into the integrity and security of your organization’s directory. With this information, a directory admin can better determine where possible security risks may lie so that they can adequately plan to mitigate those risks.
+You can use Azure Active Directory's access and usage reports to gain visibility into the integrity and security of your organization's directory. With this information, a directory admin can better determine where possible security risks may lie so that they can adequately plan to mitigate those risks.
 
-It is possible that the “*Sign ins from multiple geographies*” and “*Sign ins from IP addresses with suspicious activity*” reports incorrectly flag IP addresses that are actually owned by your organization. 
+It is possible that the "*Sign ins from multiple geographies*" and "*Sign ins from IP addresses with suspicious activity*" reports incorrectly flag IP addresses that are actually owned by your organization. 
 
 This can, for example, happen when: 
 
-- A user in your Boston office has signed in remotely to your data center in San Francisco triggers the “Sign ins from multiple geographies” report 
+- A user in your Boston office has signed in remotely to your data center in San Francisco triggers the "Sign ins from multiple geographies" report 
 
-- A user of your organization tries to sign-on several times with an incorrect password triggers the “Sign ins from IP addresses with suspicious activity” report 
+- A user of your organization tries to sign-on several times with an incorrect password triggers the "Sign ins from IP addresses with suspicious activity" report 
 
 To prevent these cases from generating misleading security reports, you should add known IP address ranges to the list of your organization's public IP address.    
 
 
-###To add your organization’s public IP address ranges, perform the following steps: 
+###To add your organization's public IP address ranges, perform the following steps: 
 
 1.	Sign-on to the [Azure management portal](https://manage.windowsazure.cn).
 

@@ -5,11 +5,11 @@
 	documentationCenter="" 
 	authors="tamram" 
 	manager="carmonm" 
-	editor=""/>
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="10/26/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 # Manage anonymous read access to containers and blobs
@@ -73,7 +73,7 @@ You can create a new service client object for anonymous access by providing the
     public static void CreateAnonymousBlobClient()
     {
         // Create the client object using the Blob service endpoint.
-        CloudBlobClient blobClient = new CloudBlobClient(new Uri(@"https://storagesample.blob.core.chinacloudapi.cn"));
+        CloudBlobClient blobClient = new CloudBlobClient(new Uri(@"https://storagesample.blob.core.Chinacloudapi.cn"));
 
         // Get a reference to a container that's available for anonymous access.
         CloudBlobContainer container = blobClient.GetContainerReference("sample-container");
@@ -91,7 +91,7 @@ If you have the URL to a container that is anonymously available, you can use it
     public static void ListBlobsAnonymously()
     {
         // Get a reference to a container that's available for anonymous access.
-        CloudBlobContainer container = new CloudBlobContainer(new Uri(@"https://storagesample.blob.core.chinacloudapi.cn/sample-container"));
+        CloudBlobContainer container = new CloudBlobContainer(new Uri(@"https://storagesample.blob.core.Chinacloudapi.cn/sample-container"));
 
         // List blobs in the container.
         foreach (IListBlobItem blobItem in container.ListBlobs())
@@ -107,11 +107,11 @@ If you have the URL to a blob that is available for anonymous access, you can re
 
     public static void DownloadBlobAnonymously()
     {
-        CloudBlockBlob blob = new CloudBlockBlob(new Uri(@"https://storagesample.blob.core.chinacloudapi.cn/sample-container/logfile.txt"));
+        CloudBlockBlob blob = new CloudBlockBlob(new Uri(@"https://storagesample.blob.Chinacloudapi.cn/sample-container/logfile.txt"));
         blob.DownloadToFile(@"C:\Temp\logfile.txt", System.IO.FileMode.Create);
     }
 
-## Features available to anonymous users
+## Features Available to Anonymous Users
 
 The following table shows which operations may be called by anonymous users when a container's ACL is set to allow public access.
 
@@ -142,7 +142,6 @@ The following table shows which operations may be called by anonymous users when
 | Lease Blob                                             | Owner only                              | Owner only                                        |
 | Put Page                                               | Owner only                              | Owner only                                        |
 | Get Page Ranges                                        | All                                     | All                                                  |
-| Append Blob                                            | Owner only                              | Owner only                                                  |
 
 
 ## See Also

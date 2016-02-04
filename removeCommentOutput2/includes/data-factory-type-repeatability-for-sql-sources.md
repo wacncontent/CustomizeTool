@@ -9,7 +9,7 @@ When copying data to Azure SQL/SQL Server Database, copy activity will by defaul
 	6	Flat Washer	3			2015-05-01 00:00:00
 	7 	Down Tube	2			2015-05-01 00:00:00
 
-Suppose you found errors in source file and updated the quantity of Down Tube from 2 to 4 in the source file. If you re-run the data slice for that period, you’ll find two new records appended to Azure SQL/SQL Server Database. The below assumes none of the columns in the table have the primary key constraint.
+Suppose you found errors in source file and updated the quantity of Down Tube from 2 to 4 in the source file. If you re-run the data slice for that period, you'll find two new records appended to Azure SQL/SQL Server Database. The below assumes none of the columns in the table have the primary key constraint.
 	
 	ID	Product		Quantity	ModifiedDate
 	...	...			...			...
@@ -55,7 +55,7 @@ Another mechanism to achieve repeatability is by having a dedicated column (**sl
 
 This column would be used by Azure Data Factory for repeatability purposes and in the process Azure Data Factory will not make any schema changes to the Table. Way to use this approach:
 
-1.	Define a column of type binary (32) in the destination SQL Table. There should be no constraints on this column. Let's name this column as ‘ColumnForADFuseOnly’ for this example.
+1.	Define a column of type binary (32) in the destination SQL Table. There should be no constraints on this column. Let's name this column as 'ColumnForADFuseOnly' for this example.
 2.	Use it in the copy activity as follows:
 
 		"sink":  

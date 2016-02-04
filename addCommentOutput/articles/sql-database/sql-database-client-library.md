@@ -9,13 +9,13 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/25/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Create and manage SQL Database with C&#x23;
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](/documentation/articles/sql-database-elastic-pool-portal)
+- [Azure Management Portal](/documentation/articles/sql-database-elastic-pool-portal)
 - [C#](/documentation/articles/sql-database-client-library)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
 
@@ -40,9 +40,9 @@ If you do not have an Azure subscription, simply click **FREE TRIAL** at the top
 
 Get the required management libraries by installing the following packages using the [package manager console](http://docs.nuget.org/Consume/Package-Manager-Console):
 
-    PM> Install-Package Microsoft.Azure.Management.Sql –Pre
-    PM> Install-Package Microsoft.Azure.Management.Resources –Pre
-    PM> Install-Package Microsoft.Azure.Common.Authentication –Pre
+    PM> Install-Package Microsoft.Azure.Management.Sql -Pre
+    PM> Install-Package Microsoft.Azure.Management.Resources -Pre
+    PM> Install-Package Microsoft.Azure.Common.Authentication -Pre
 
 
 ## Configure authentication with Azure Active Directory
@@ -51,7 +51,7 @@ You must first enable your application to access the REST API by setting up the 
 
 The [Azure Resource Manager REST APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx) use Azure Active Directory for authentication rather than the certificates used by the earlier Azure Service Management REST APIs. 
 
-To authenticate your client application based on the current user you must first register your application in the AAD domain associated with the subscription under which the Azure resources have been created. If your Azure subscription was created with a Microsoft account rather than a work or school account you will already have a default AAD domain. Registering the application can be done in the [management portal](https://manage.windowsazure.cn/). 
+To authenticate your client application based on the current user you must first register your application in the AAD domain associated with the subscription under which the Azure resources have been created. If your Azure subscription was created with a Microsoft account rather than a work or school account you will already have a default AAD domain. Registering the application can be done in the [Management Portal](https://manage.windowsazure.cn/). 
 
 To create a new application and register it in the correct active directory do the following:
 
@@ -101,12 +101,7 @@ To create a new application and register it in the correct active directory do t
 
 The domain name is required for your code. An easy way to identify the proper domain name is to:
 
-<!-- deleted by customization
-1. Go to the [Azure preview portal](https://manage.windowsazure.cn).
--->
-<!-- keep by customization: begin -->
 1. Go to the [Azure Management Portal](https://manage.windowsazure.cn).
-<!-- keep by customization: end -->
 2. Hover over your name in the upper right corner and note the Domain that appears in the pop-up window.
 
     ![Identify domain name][3]
@@ -337,7 +332,7 @@ To create a new pool on a server:
 
 ## Move an existing database into an elastic database pool
 
-*After creating a pool you can also use Transact-SQL for moving existing databases in and out of a pool. For details see, [Elastic database pool reference - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL).*
+*After creating a pool you can also use Transact-SQL for moving existing databases in and out of a pool. For details see, [Elastic database pool reference - <!-- deleted by customization Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL).* --><!-- keep by customization: begin --> Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL).* <!-- keep by customization: end -->
 
 To move an existing database into a pool:
 
@@ -369,7 +364,7 @@ To move an existing database into a pool:
 
 ## Create a new database in an elastic database pool
 
-*After creating a pool you can also use Transact-SQL for creating new elastic databases in the pool. For details see, [Elastic database pool reference - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL).*
+*After creating a pool you can also use Transact-SQL for creating new elastic databases in the pool. For details see, [Elastic database pool reference - <!-- deleted by customization Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL).* --><!-- keep by customization: begin --> Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL).* <!-- keep by customization: end -->
 
 To create a new database directly in a pool:
 

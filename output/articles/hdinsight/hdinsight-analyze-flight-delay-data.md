@@ -9,16 +9,14 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/11/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 #Analyze flight delay data by using Hive in HDInsight
 
 Hive provides a means of running Hadoop MapReduce jobs through an SQL-like scripting language called *[HiveQL][hadoop-hiveql]*, which can be applied towards summarizing, querying, and analyzing large volumes of data.
-<!-- deleted by customization
 
 > [AZURE.NOTE] The steps in this document require a Windows-based HDInsight cluster. For steps that work with a Linux-based cluster, see [Analyze flight delay data by using Hive in HDInsight (Linux)](/documentation/articles/hdinsight-analyze-flight-delay-data-linux).
--->
 
 One of the major benefits of Azure HDInsight is the separation of data storage and compute. HDInsight uses Azure Blob storage for data storage. A typical job involves 3 parts:
 
@@ -40,21 +38,16 @@ The main portion of the tutorial shows you how to use one Windows PowerShell scr
 - Delete the HDInsight cluster.
 
 In the appendixes, you can find the instructions for uploading flight delay data, creating/uploading a Hive query string, and preparing the Azure SQL database for the Sqoop job.
-<!-- deleted by customization
 
 > [AZURE.NOTE] The steps in this document are specific to Windows-based HDInsight clusters. For steps that will work with a Linux-based cluster, see [Analyze flight delay data using Hive in HDInsight (Linux)](/documentation/articles/hdinsight-analyze-flight-delay-data-linux)
 
--->
-<!-- keep by customization: begin -->
-<a id="prerequisite"></a>
-<!-- keep by customization: end -->
 ###Prerequisites
 
 Before you begin this tutorial, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
+- **A workstation with Azure PowerShell**. See [Install Azure PowerShell 1.0 and greater](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater).
 
 **Files used in this tutorial**
 
@@ -113,7 +106,7 @@ For more information on creating an HDInsight cluster and running Hive jobs, see
 		
 		$HDInsightClusterName = $namePrefix + "hdi"
 		$httpUserName = "admin"
-		$httpPassword = "Pass@word111"
+		$httpPassword = "<Enter the Password>"
 		
 		$defaultStorageAccountName = $namePrefix + "store"
 		$defaultBlobContainerName = $HDInsightClusterName # use the cluster name
@@ -731,18 +724,18 @@ Now you understand how to upload a file to Azure Blob storage, how to populate a
 
 
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[powershell-install-configure]: ../install-configure-powershell.md
 
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+[hdinsight-use-oozie]: hdinsight-use-oozie.md
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
+[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
 
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
 [hadoop-shell-commands]: http://hadoop.apache.org/docs/r0.18.3/hdfs_shell.html

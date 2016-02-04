@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="08/31/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # On-premises application with blob storage
@@ -70,7 +70,8 @@ respectively.
     public static final String storageConnectionString =
            "DefaultEndpointsProtocol=http;" +
                "AccountName=your_account_name;" +
-               "AccountKey=your_account_name";
+               "AccountKey=your_account_name;" +
+	       "EndpointSuffix=core.chinacloudapi.cn";
 
 Add in your declaration for **main**, include a **try** block, and
 include the necessary open brackets, **{**.
@@ -253,8 +254,8 @@ Close **MakeHTMLPage** by inserting a close bracket: **}**
 Close **StorageSample** by inserting a close bracket: **}**
 
 The following is the complete code for this example. Remember to modify
-the placeholder values **your\_account\_name** and
-**your\_account\_key** to use your account name and account key,
+the placeholder values **your_account_name** and
+**your_account_key** to use your account name and account key,
 respectively.
 
     import com.microsoft.azure.storage.*;
@@ -270,7 +271,8 @@ respectively.
         public static final String storageConnectionString =
                 "DefaultEndpointsProtocol=http;" +
                        "AccountName=your_account_name;" +
-                       "AccountKey=your_account_name";
+                       "AccountKey=your_account_name;" +
+		       "EndpointSuffix=core.chinacloudapi.cn";
 
         public static void main(String[] args) {
             try {
@@ -379,7 +381,8 @@ deletes the container named **gettingstarted**.
         public static final String storageConnectionString =
                 "DefaultEndpointsProtocol=http;" +
                    "AccountName=your_account_name;" +
-                   "AccountKey=your_account_key";
+                   "AccountKey=your_account_key;" +
+		   "EndpointSuffix=core.chinacloudapi.cn";
 
         public static void main(String[] args)
         {
@@ -430,6 +433,5 @@ Follow these links to learn more about more complex storage tasks.
   [How to Manage Storage Accounts]: /documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys
   [How to Use the Blob Storage Service from Java]: /documentation/articles/storage-java-how-to-use-blob-storage
   [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
-  [Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
-  [Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+  [Azure Storage Client SDK Reference]: http://azure.github.io/azure-storage-java/
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/

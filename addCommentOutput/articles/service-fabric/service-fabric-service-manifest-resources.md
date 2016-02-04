@@ -4,17 +4,13 @@
    services="service-fabric"
    documentationCenter=".net"
    authors="sumukhs"
-   manager="anuragg"
+   manager="timlt"
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/26/2015"
-   ms.author="sumukhs"/>
+	ms.service="service-fabric"
+	ms.date="08/26/2015"
+	wacn.date=""/>
 
 # Service Manifest Resources
 
@@ -36,7 +32,7 @@ When an Endpoint resource is defined in the service manifest, Service Fabric ass
 </Resources>
 ```
 
-Refer to [configuring stateful Reliable Services](../Service-Fabric/service-fabric-reliable-services-configuration.md) to read more about referencing endpoints from the config package settings file (settings.xml).
+Refer to [configuring stateful Reliable Services](/documentation/articles/service-fabric-reliable-services-configuration) to read more about referencing endpoints from the config package settings file (settings.xml).
 
 ## Sample
 The following service manifest defines 1 TCP endpoint resource and 2 HTTP endpoint resources in the &lt;Resources&gt; element.
@@ -66,5 +62,4 @@ HTTP endpoints are automatically ACL'd by Service-Fabric.
     </Endpoints>
   </Resources>
 </ServiceManifest>
-```
- 
+```

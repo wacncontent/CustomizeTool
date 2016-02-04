@@ -19,7 +19,7 @@ This topic shows how to install additional domain controllers (also known as rep
 
 You might also be interested in these related topics:
 
-- You can optionally install a new Active Directory forest on an Azure virtual network. For those steps, see [Install a new Active Directory forest on an Azure virtual network](/documentation/articles/active-directory-new-forest-virtual-machine).
+-  You can optionally install a new Active Directory forest on an Azure virtual network. For those steps, see [Install a new Active Directory forest on an Azure virtual network](/documentation/articles/active-directory-new-forest-virtual-machine).
 -  For conceptual guidance about installing Active Directory Domain Services (AD DS) on an Azure virtual network, see [Guidelines for Deploying Windows Server Active Directory on Azure Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx).
 
 
@@ -34,7 +34,7 @@ The DCs replicate with each other and with on-premises DCs by using Active Direc
 
 ## Create an Active Directory site for the Azure virtual network
 
-It’s a good idea to create a site in Active Directory that represents the network region corresponding to the virtual network. That helps optimize authentication, replication, and other DC location operations. The following steps explain how to create a site, and for more background, see [Adding a New Site](https://technet.microsoft.com/zh-cn/library/cc781496.aspx).
+It's a good idea to create a site in Active Directory that represents the network region corresponding to the virtual network. That helps optimize authentication, replication, and other DC location operations. The following steps explain how to create a site, and for more background, see [Adding a New Site](https://technet.microsoft.com/zh-cn/library/cc781496.aspx).
 
 1. Open Active Directory Sites and Services: **Server Manager** > **Tools** > **Active Directory Sites and Services**.
 2. Create a site to represent the region where you created an Azure virtual network: click **Sites** > **Action** > **New site** > type the name of the new site, such as Azure US West > select a site link > **OK**.

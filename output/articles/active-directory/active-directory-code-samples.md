@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/17/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 # Azure Active Directory Code Samples
@@ -24,7 +24,7 @@ Contribute to our samples on GitHub: [Windows Azure Active Directory Samples and
 
 ## Web Browser to Web Application
 
-These samples show how to write a web application that directs the user’s browser to sign them in to Azure AD.
+These samples show how to write a web application that directs the userâs browser to sign them in to Azure AD.
 
 
 

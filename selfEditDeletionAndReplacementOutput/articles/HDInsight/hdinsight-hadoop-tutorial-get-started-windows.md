@@ -6,7 +6,7 @@ deleted:
 		- [Windows](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows)
 		- [Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -16,13 +16,13 @@ deleted:
 		
 		**[Watch the Hadoop tutorial for HDInsight on YouTube](https://www.youtube.com/watch?v=Y4aNjnoeaHA&list=PLDrz-Fkcb9WWdY-Yp6D4fTC1ll_3lU-QS)**
 
-reason: ()
+reason: (video)
 
 deleted:
 
 		[Twitter trend analysis](/documentation/articles/hdinsight-analyze-twitter-data) | Learn how to use HDInsight to analyze trends in Twitter.
 
-reason: ()
+reason: (google facebook twitter)
 
 replacement:
 
@@ -115,7 +115,7 @@ replaced by:
 		
 			>[AZURE.NOTE] The previous procedure creates a Hadoop cluster by using HDInsight version 3.1. To create cluster with other versions, use the **Custom Create** method from the portal or use Azure PowerShell. For information about what's different between each version, see [What's new in the cluster versions provided by HDInsight?][hdinsight-versions]. For information about using the **CUSTOM CREATE** option, see [Provision HDInsight clusters using custom options][hdinsight-provision].
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -125,7 +125,7 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 
 deleted:
 
@@ -142,5 +142,5 @@ replaced by:
 		3. Click the name of the cluster that you want to use to run the Hive job, and then click **QUERY CONSOLE** at the bottom of the page.
 		4. A webpage opens in a different browser tab. Enter the Hadoop user account and password. The default user name is **admin**; the password is what you entered while provisioning the cluster. The dashboard looks like this:
 
-reason: ()
+reason: (the new Ibiza portal)
 

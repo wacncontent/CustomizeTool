@@ -1,32 +1,28 @@
 <properties 
-   pageTitle="Replace a PCM on your StorSimple device | Microsoft Azure"
+   pageTitle="Replace a PCM on your StorSimple device | Windows Azure"
    description="Explains how to remove and replace the Power and Cooling Module (PCM) on your StorSimple device"
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/31/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="08/31/2015"
+	wacn.date=""/>
 
 # Replace a Power and Cooling Module on your StorSimple device
 
 ## Overview
 
-The Power and Cooling Module (PCM) in your Microsoft Azure StorSimple device consists of a power supply and cooling fans that are controlled through the primary and EBOD enclosures. There is only one model of PCM that is certified for each enclosure. The primary enclosure is certified for a 764 W PCM and the EBOD enclosure is certified for a 580 W PCM. Although the PCMs for the primary enclosure and the EBOD enclosure are different, the replacement procedure is identical.
+The Power and Cooling Module (PCM) in your <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple device consists of a power supply and cooling fans that are controlled through the primary and EBOD enclosures. There is only one model of PCM that is certified for each enclosure. The primary enclosure is certified for a 764 W PCM and the EBOD enclosure is certified for a 580 W PCM. Although the PCMs for the primary enclosure and the EBOD enclosure are different, the replacement procedure is identical.
 
 This tutorial explains how to:
 
 - Remove a PCM
 - Install a replacement PCM
 
->[AZURE.IMPORTANT] Before removing and replacing a PCM, review the safety information in [StorSimple hardware component replacement](storsimple-hardware-component-replacement.md).
+>[AZURE.IMPORTANT] Before removing and replacing a PCM, review the safety information in [StorSimple hardware component <!-- deleted by customization replacement](/documentation/articles/storsimple-hardware-component-replacement) --><!-- keep by customization: begin --> replacement](storsimple-hardware-component-replacement.md) <!-- keep by customization: end -->.
 
 ## Before you replace a PCM
 
@@ -42,7 +38,7 @@ Be aware of the following important issues before you replace your PCM:
 
 ## Remove a PCM
 
-Follow these instructions when you are ready to remove a Power and Cooling Module (PCM) from your Microsoft Azure StorSimple device.
+Follow these instructions when you are ready to remove a Power and Cooling Module (PCM) from your <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple device.
 
 >[AZURE.NOTE] Before you remove your PCM, verify that you have a correct replacement (764 W for the primary enclosure or 580 W for the EBOD enclosure).
 
@@ -150,4 +146,4 @@ Follow these instructions to install a PCM in your StorSimple device.
 
 ## Next steps
 
-Learn more about [StorSimple hardware component replacement](storsimple-hardware-component-replacement.md).
+Learn more about [StorSimple hardware component <!-- deleted by customization replacement](/documentation/articles/storsimple-hardware-component-replacement) --><!-- keep by customization: begin --> replacement](storsimple-hardware-component-replacement.md) <!-- keep by customization: end -->.

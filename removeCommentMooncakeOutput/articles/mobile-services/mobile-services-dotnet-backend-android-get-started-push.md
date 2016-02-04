@@ -7,16 +7,19 @@
 	manager="dwrede"
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="10/01/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="12/06/2015"
 	wacn.date=""/>
 
 # Add push notifications to your Mobile Services app
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
-This topic shows how to use Azure Mobile Services to send push notifications to your Android app. In this tutorial you add push notifications using Google Cloud Messaging (GCM) to the quickstart project. When complete, your mobile service will send a push notification each time a record is inserted.
+This topic shows how to use Azure Mobile Services to send push notifications to your Android app. In this tutorial you add push notifications using Google Cloud Messaging (GCM) to the quickstart project. When complete, your mobile service will send a push notification each time a record is inserted. 
 
 This tutorial is based on the Mobile Services quickstart. Before you start this tutorial, you must first complete [Get started with Mobile Services] to connect your project to the mobile service. As such, this tutorial also requires Visual Studio 2013.
 
@@ -42,7 +45,7 @@ To see the completed source code go [here](https://github.com/RickSaling/mobile-
 [AZURE.INCLUDE [mobile-services-verify-android-sdk-version](../includes/mobile-services-verify-android-sdk-version.md)]
 
 
-Your next step is to install Google Play services. Google Cloud Messaging has some minimum API level requirements for development and testing, which the **minSdkVersion** property in the Manifest must conform to.
+Your next step is to install Google Play services. Google Cloud Messaging has some minimum API level requirements for development and testing, which the **minSdkVersion** property in the Manifest must conform to. 
 
 If you will be testing with an older device, then consult [Set Up Google Play Services SDK] to determine how low you can set this value, and set it appropriately.
 
@@ -82,11 +85,11 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
   <br/>Learn more about how Notification Hubs works to deliver notifications to your apps across all major client platforms.
 
 * [Debug Notification Hubs applications](https://msdn.microsoft.com/zh-cn/library/dn530751.aspx)
-  </br>Get guidance troubleshooting and debugging Notification Hubs solutions.
+  </br>Get guidance troubleshooting and debugging Notification Hubs solutions. 
 
 * [How to use the Android client library for Mobile Services]
   <br/>Learn more about how to use Mobile Services with Android.  
-
+  
 <!-- Anchors. -->
 
 [Create a new mobile service]: #create-service
@@ -105,7 +108,6 @@ Learn more about Mobile Services and Notification Hubs in the following topics:
 <!-- URLs. -->
 [Get started with push notifications (Eclipse)]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push-ec
 [Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
-[Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
 
 [How to use the Android client library for Mobile Services]: /documentation/articles/mobile-services-android-how-to-use-client-library

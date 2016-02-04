@@ -58,13 +58,13 @@ Using Notepad or another text editor, add the following to the top of the **serv
 var azure = require('azure');
 ```
 
-### Set up an Azure Service Bus connection
+### Setup an Azure Service Bus Connection
 
 The Azure module reads the environment variables AZURE\_SERVICEBUS\_NAMESPACE and AZURE\_SERVICEBUS\_ACCESS\_KEY to obtain information required to connect to Service Bus. If these environment variables are not set, you must specify the account information when calling **createServiceBusService**.
 
 For an example of setting the environment variables in a configuration file for an Azure Cloud Service, see [Node.js Cloud Service with Storage][].
 
-For an example of setting the environment variables in the Azure Management Portal for an Azure Website, see [Node.js Web Application with Storage][].
+For an example of setting the environment variables in the [Azure Management Portal][] for an Azure Website, see [Node.js Web Application with Storage][].
 
 ## Create a queue
 
@@ -99,7 +99,7 @@ serviceBusService.createQueueIfNotExists('myqueue', queueOptions, function(error
 });
 ```
 
-### Filters
+###Filters
 
 Optional filtering operations can be applied to operations performed using **ServiceBusService**. Filtering operations can include logging, automatically retrying, etc. Filters are objects that implement a method with the signature:
 
@@ -195,6 +195,5 @@ To learn more, see the following resources.
   [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
   [Create and deploy a Node.js application to an Azure Website]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
   [Node.js Cloud Service with Storage]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
-  [Node.js Web Application with Storage]: /documentation/articles/storage-nodejs-how-to-use-table-storage
-  [Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted#capacity-and-quotas
- 
+  [Node.js web site with Storage]:/documentation/articles/storage-nodejs-how-to-use-table-storage
+  [Azure Queues and Service Bus queues]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas

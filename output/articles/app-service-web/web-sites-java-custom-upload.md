@@ -1,22 +1,22 @@
 <properties 
 	pageTitle="Upload a custom Java web app to Azure" 
-	description="This tutorial shows you how to upload a custom Java web app to Azure Websites." 
+	description="This tutorial shows you how to upload a custom Java web app to Azure Web Apps." 
 	services="app-service\web" 
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor=""/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/31/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 # Upload a custom Java web app to Azure
 
-This topic explains how to upload a custom Java web app to [Azure Websites] Web Apps. Included is information that applies to any Java website or web app, and also some examples for specific applications.
+This topic explains how to upload a custom Java web app to [Azure Web App] Web Apps. Included is information that applies to any Java website or web app, and also some examples for specific applications.
 
-Note that Azure provides a means for creating Java web apps using the Azure Management Portal's configuration UI, as documented at [Create a Java web app in Azure Websites](/documentation/articles/web-sites-java-get-started). This tutorial is for scenarios in which you do not want to use the portal configuration UI.  
+Note that Azure provides a means for creating Java web apps using the Azure Management Portal's configuration UI, and the Azure gallery, as documented at [Create a Java web app in Azure](/documentation/articles/web-sites-java-get-started). This tutorial is for scenarios in which you do not want to use the Azure Management Portal configuration UI or the Azure gallery.  
 
 ## Configuration guidelines
 
@@ -76,10 +76,10 @@ Java based web apps can be deployed easily through most of the same means that a
 
 ## Application configuration Examples
 
-For the following applications, a web.config file and the application configuration is provided as examples to show how to enable your Java application on Azure Websites.
+For the following applications, a web.config file and the application configuration is provided as examples to show how to enable your Java application on Azure Web Apps.
 
 ### Tomcat
-While there are two variations on Tomcat that are supplied with Azure Websites, it is still quite possible to upload customer specific instances. Below is an example of an install of Tomcat with a different Java Virtual Machine (JVM).
+While there are two variations on Tomcat that are supplied with Azure Web Apps, it is still quite possible to upload customer specific instances. Below is an example of an install of Tomcat with a different Java Virtual Machine (JVM).
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<configuration>
@@ -107,7 +107,7 @@ On the Tomcat side, there are a few configuration changes that need to be made. 
 -	Comment out HTTPS and AJP connectors
 -	The IPv4 setting can also be set in the catalina.properties file where you can add     `java.net.preferIPv4Stack=true`
     
-Direct3d calls are not supported on Azure Websites. To disable those, add the following Java option should your application make such calls: `-Dsun.java2d.d3d=false`
+Direct3d calls are not supported on Azure Web Apps. To disable those, add the following Java option should your application make such calls: `-Dsun.java2d.d3d=false`
 
 ### Jetty
 
@@ -150,7 +150,7 @@ In order to get a Springboot application running you need to upload your JAR or 
 
 Our test used the Hudson 3.1.2 war and the default Tomcat 7.0.50 instance but without using the UI to set things up.  Because Hudson is a software build tool, it is advised to install it on dedicated instances where the **AlwaysOn** flag can be set on the web app.
 
-1. In your web app’s root directory, i.e., **d:\home\site\wwwroot**, create a **webapps** directory (if not already present), and place Hudson.war in **d:\home\site\wwwroot\webapps**.
+1. In your web app's root directory, i.e., **d:\home\site\wwwroot**, create a **webapps** directory (if not already present), and place Hudson.war in **d:\home\site\wwwroot\webapps**.
 2. Download apache maven 3.0.5 (compatible with Hudson) and place it in **d:\home\site\wwwroot**.
 3. Create web.config in **d:\home\site\wwwroot** and paste the following contents in it:
 	
@@ -195,7 +195,7 @@ For additional information on Hudson, see [http://hudson-ci.org](http://hudson-c
 
 ### Liferay
 
-Liferay is supported on Azure Websites. Since Liferay can require significant memory, the web app needs to run on a medium or large dedicated worker, which can provide enough memory. Liferay also takes several minutes to start up. For that reason, it is recommended that you set the web app to **Always On**.  
+Liferay is supported on Azure Web Apps. Since Liferay can require significant memory, the web app needs to run on a medium or large dedicated worker, which can provide enough memory. Liferay also takes several minutes to start up. For that reason, it is recommended that you set the web app to **Always On**.  
 
 Using Liferay 6.1.2 Community Edition GA3 bundled with Tomcat, the following files were edited after downloading Liferay:
 
@@ -234,7 +234,7 @@ At the same directory level as the tomcat-7.0.40 folder, create a file named **w
 	  </system.webServer>
 	</configuration>
 
-Under the **httpPlatform** block, the **requestTimeout** is set to “00:10:00”.  It can be reduced but then you are likely to see some timeout errors while Liferay is bootstrapping.  If this value is changed, then the **connectionTimeout** in the tomcat server.xml should also be modified.  
+Under the **httpPlatform** block, the **requestTimeout** is set to "00:10:00".  It can be reduced but then you are likely to see some timeout errors while Liferay is bootstrapping.  If this value is changed, then the **connectionTimeout** in the tomcat server.xml should also be modified.  
 
 It is worth noting that the JRE_HOME environnment varariable is specified in the above web.config to point to the 64-bit JDK. The default is 32-bit, but since Liferay may require high levels of memory, it is recommended to use the 64-bit JDK.
 
@@ -245,7 +245,11 @@ Once you make these changes, restart your web app running Liferay, Then, open ht
 For more information about Liferay, see [http://www.liferay.com](http://www.liferay.com).
 
 For more information about Java, see the [Java Developer Center](/develop/java/).
+
+[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+
+[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
  
  
 <!-- External Links -->
-[Azure Websites]: /documentation/services/web-sites/
+[Azure Web App]: /documentation/services/web-sites/

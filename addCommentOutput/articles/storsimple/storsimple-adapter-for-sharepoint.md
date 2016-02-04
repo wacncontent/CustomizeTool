@@ -1,25 +1,21 @@
 <properties 
-   pageTitle="StorSimple Adapter for SharePoint | Microsoft Azure"
+   pageTitle="StorSimple Adapter for SharePoint | Windows Azure"
    description="Describes how to install and configure or remove the StorSimple Adapter for SharePoint in a SharePoint server farm."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/17/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/17/2015"
+	wacn.date=""/>
 
 # Install and configure the StorSimple Adapter for SharePoint
 
 ## Overview
 
-The StorSimple Adapter for SharePoint is a component that lets you provide Microsoft Azure StorSimple flexible storage and data protection to SharePoint server farms. You can use the adapter to move Binary Large Object (BLOB) content from the SQL Server content databases to the Microsoft Azure StorSimple hybrid cloud storage device.
+The StorSimple Adapter for SharePoint is a component that lets you provide <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple flexible storage and data protection to SharePoint server farms. You can use the adapter to move Binary Large Object (BLOB) content from the SQL Server content databases to the <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple hybrid cloud storage device.
 
 The StorSimple Adapter for SharePoint functions as a Remote BLOB Storage (RBS) provider and uses the SQL Server Remote BLOB Storage feature to store unstructured SharePoint content (in the form of BLOBs) on a file server that is backed by a StorSimple device.
 
@@ -35,9 +31,9 @@ The rest of this overview briefly describes the role of the StorSimple Adapter f
 
 In a SharePoint site, content is stored as unstructured BLOB data in one or more content databases. By default, these databases are hosted on computers that are running SQL Server and are located in the SharePoint server farm. BLOBs can rapidly increase in size, consuming large amounts of on-premises storage. For this reason, you might want to find another, less-expensive storage solution. SQL Server provides a technology called Remote Blob Storage (RBS) that lets you store BLOB content in the file system, outside the SQL Server database. With RBS, BLOBs can reside in the file system on the computer that is running SQL Server, or they can be stored in the file system on another server computer.
 
-RBS requires that you use an RBS provider, such as the StorSimple Adapter for SharePoint, to enable RBS in SharePoint. The StorSimple Adapter for SharePoint works with RBS, letting you move BLOBs to a server backed up by the Microsoft Azure StorSimple system. Microsoft Azure StorSimple then stores the BLOB data locally or in the cloud, based on usage. BLOBs that are very active (typically referred to as Tier 1 or hot data) reside locally. Less active data and archival data reside in the cloud. After you enable RBS on a content database, any new BLOB content created in SharePoint is stored on the StorSimple device and not in the content database.
+RBS requires that you use an RBS provider, such as the StorSimple Adapter for SharePoint, to enable RBS in SharePoint. The StorSimple Adapter for SharePoint works with RBS, letting you move BLOBs to a server backed up by the <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple system. <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple then stores the BLOB data locally or in the cloud, based on usage. BLOBs that are very active (typically referred to as Tier 1 or hot data) reside locally. Less active data and archival data reside in the cloud. After you enable RBS on a content database, any new BLOB content created in SharePoint is stored on the StorSimple device and not in the content database.
 
-The Microsoft Azure StorSimple implementation of RBS provides the following benefits:
+The <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple implementation of RBS provides the following benefits:
 
 - By moving BLOB content to a separate server, you can reduce the query load on SQL Server, which can improve SQL Server responsiveness. 
 
@@ -55,7 +51,7 @@ Moving BLOB content to the file system can provide other cost savings and benefi
 
 ### Capacity and performance limits
 
-Before you consider using RBS in your SharePoint solution, you should be aware of the tested performance and capacity limits of SharePoint Server 2010 and SharePoint Server 2013, and how these limits relate to acceptable performance. For more information, see [Software Boundaries and Limits for SharePoint 2013](https://technet.microsoft.com/library/cc262787.aspx).
+Before you consider using RBS in your SharePoint solution, you should be aware of the tested performance and capacity limits of SharePoint Server 2010 and SharePoint Server 2013, and how these limits relate to acceptable performance. For more information, see [Software Boundaries and Limits for SharePoint <!-- deleted by customization 2013](https://technet.microsoft.com/zh-cn/library/cc262787.aspx) --><!-- keep by customization: begin --> 2013](https://technet.microsoft.com/library/cc262787.aspx) <!-- keep by customization: end -->.
 
 Review the following before you configure RBS:
 
@@ -85,7 +81,7 @@ Review the following before you configure RBS:
 
     Use traditional SQL Server migration best practices to move the content database to the StorSimple device. Move the database only after all BLOB content from the database has been moved to the file share via RBS. If you choose to move the content database to the StorSimple device, we recommend that you configure the content database storage on the device as a primary volume.
 
-- In Microsoft Azure StorSimple, there is no way to guarantee that content stored locally on the StorSimple device will not be tiered to Microsoft Azure cloud storage. To ensure that the content database remains on the StorSimple device and is not moved to Microsoft Azure (which would adversely affect SharePoint transaction response times), it is important to understand and manage the other workloads on the StorSimple device. We recommend that you do not configure a StorSimple device to host workloads that have a high rate of data writes if the device is already hosting SharePoint content database workloads and SharePoint file share workloads.
+- In <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple, there is no way to guarantee that content stored locally on the StorSimple device will not be tiered to <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure cloud storage. To ensure that the content database remains on the StorSimple device and is not moved to <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure (which would adversely affect SharePoint transaction response times), it is important to understand and manage the other workloads on the StorSimple device. We recommend that you do not configure a StorSimple device to host workloads that have a high rate of data writes if the device is already hosting SharePoint content database workloads and SharePoint file share workloads.
 
 - If you do not store the content databases on the StorSimple device, use traditional SQL Server high availability best practices that support RBS. SQL Server clustering supports RBS, while SQL Server mirroring does not. 
 
@@ -103,13 +99,13 @@ Before you can install the StorSimple Adapter for SharePoint, make sure that the
 
 The StorSimple Adapter for SharePoint works with the following hardware and software:
 
-- Supported operating system – Windows Server 2008 R2 SP1, Windows Server 2012, or Windows Server 2012 R2 
+- Supported operating system <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> Windows Server 2008 R2 SP1, Windows Server 2012, or Windows Server 2012 R2
 
-- Supported SharePoint versions – SharePoint Server 2010 or SharePoint Server 2013
+- Supported SharePoint versions <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> SharePoint Server 2010 or SharePoint Server 2013
 
-- Supported SQL Server versions – SQL Server 2008 Enterprise Edition, SQL Server 2008 R2 Enterprise Edition, or SQL Server 2012 Enterprise Edition
+- Supported SQL Server versions <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> SQL Server 2008 Enterprise Edition, SQL Server 2008 R2 Enterprise Edition, or SQL Server 2012 Enterprise Edition
 
-- Supported StorSimple devices – StorSimple 8000 series, StorSimple 7000 series, or StorSimple 5000 series.
+- Supported StorSimple devices <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> StorSimple 8000 series, StorSimple 7000 series, or StorSimple 5000 series.
 
 ### StorSimple device configuration prerequisites
 
@@ -121,7 +117,7 @@ The StorSimple device is a block device and as such requires a file server on wh
 >
 >- If you do not store the content database on the StorSimple device, use traditional high availability best practices that support RBS. SQL Server clustering supports RBS, while SQL Server mirroring does not. 
 
-Make sure that your StorSimple device is configured correctly, and that appropriate volumes to support your SharePoint deployment are configured and accessible from your SQL Server computer. Go to [Deploy your on-premises StorSimple device](storsimple-deployment-walkthrough.md) if you have not yet deployed and configured your StorSimple device. Note the IP address of the StorSimple device; you will need it during StorSimple Adapter for SharePoint installation. 
+Make sure that your StorSimple device is configured correctly, and that appropriate volumes to support your SharePoint deployment are configured and accessible from your SQL Server computer. Go to [Deploy your on-premises StorSimple <!-- deleted by customization device](/documentation/articles/storsimple-deployment-walkthrough) --><!-- keep by customization: begin --> device](storsimple-deployment-walkthrough.md) <!-- keep by customization: end --> if you have not yet deployed and configured your StorSimple device. Note the IP address of the StorSimple device; you will need it during StorSimple Adapter for SharePoint installation.
 
 In addition, make sure that the volume to be used for BLOB externalization meets the following requirements:
 
@@ -181,7 +177,12 @@ When you have completed all prerequisite configuration steps, go to [Install the
 
 Use the following steps to install the StorSimple Adapter for SharePoint. If you are reinstalling the software, see [Upgrade or reinstall the StorSimple Adapter for SharePoint](#upgrade-or-reinstall-the-storsimple-adapter-for-sharepoint). The time required for the installation depends on the total number of SharePoint databases in your SharePoint server farm.
 
+<!-- deleted by customization
+[AZURE.INCLUDE [storsimple-install-sharepoint-adapter](../includes/storsimple-install-sharepoint-adapter.md)]
+-->
+<!-- keep by customization: begin -->
 [AZURE.INCLUDE [storsimple-install-sharepoint-adapter](../../includes/storsimple-install-sharepoint-adapter.md)]
+<!-- keep by customization: end -->
 
 
 ## Configure RBS
@@ -190,7 +191,12 @@ After you install the StorSimple Adapter for SharePoint, configure RBS as descri
 
 >[AZURE.TIP] The StorSimple Adapter for SharePoint plugs into the SharePoint Central Administration page, allowing RBS to be enabled or disabled on each content database in the SharePoint farm. However, enabling or disabling RBS on the content database causes an IIS reset, which, depending on your farm configuration, can momentarily disrupt the availability of the SharePoint web front end (WFE). (Factors such as the use of a front-end load balancer, the current server workload, and so on, can limit or eliminate this disruption.) To protect users from a disruption, we recommend that you enable or disable RBS only during a planned maintenance window.
 
+<!-- deleted by customization
+[AZURE.INCLUDE [storsimple-sharepoint-adapter-configure-rbs](../includes/storsimple-sharepoint-adapter-configure-rbs.md)]
+-->
+<!-- keep by customization: begin -->
 [AZURE.INCLUDE [storsimple-sharepoint-adapter-configure-rbs](../../includes/storsimple-sharepoint-adapter-configure-rbs.md)]
+<!-- keep by customization: end -->
  
 
 ## Configure garbage collection
@@ -209,9 +215,16 @@ If you need to delete orphaned BLOBs immediately, you can use the following inst
 
 - The content database name is WSS_Content.
 - The SQL Server name is SHRPT13-SQL12\SHRPT13.
+<!-- deleted by customization
+- The web site name is SharePoint - 80.
+
+[AZURE.INCLUDE [storsimple-sharepoint-adapter-garbage-collection](../includes/storsimple-sharepoint-adapter-garbage-collection.md)]
+-->
+<!-- keep by customization: begin -->
 - The web application name is SharePoint – 80.
 
 [AZURE.INCLUDE [storsimple-sharepoint-adapter-garbage-collection](../../includes/storsimple-sharepoint-adapter-garbage-collection.md)]
+<!-- keep by customization: end -->
 
 
 ## Upgrade or reinstall the StorSimple Adapter for SharePoint
@@ -228,7 +241,12 @@ Use the following procedure to upgrade SharePoint server and then reinstall Stor
 >
 >- If you are configuring RBS for a SharePoint farm that has a very large number of databases (greater than 200), the **SharePoint Central Administration** page might time out. If that occurs, refresh the page. This does not affect the configuration process.
 
+<!-- deleted by customization
+[AZURE.INCLUDE [storsimple-upgrade-sharepoint-adapter](../includes/storsimple-upgrade-sharepoint-adapter.md)]
+-->
+<!-- keep by customization: begin -->
 [AZURE.INCLUDE [storsimple-upgrade-sharepoint-adapter](../../includes/storsimple-upgrade-sharepoint-adapter.md)]
+<!-- keep by customization: end -->
  
 ## StorSimple Adapter for SharePoint removal
 
@@ -261,7 +279,7 @@ Before you uninstall the StorSimple Adapter for SharePoint software, you must mi
 
 5. Delete the objects from SharePoint, and then upload them again.
 
-Alternatively, you can use the Microsoft` RBS Migrate()` PowerShell cmdlet included with SharePoint. For more information, see [Migrate content into or out of RBS](https://technet.microsoft.com/library/ff628255.aspx).
+Alternatively, you can use the Microsoft` RBS Migrate()` PowerShell cmdlet included with SharePoint. For more information, see [Migrate content into or out of <!-- deleted by customization RBS](https://technet.microsoft.com/zh-cn/library/ff628255.aspx) --><!-- keep by customization: begin --> RBS](https://technet.microsoft.com/library/ff628255.aspx) <!-- keep by customization: end -->.
 
 After you move the BLOBs back to the content database, go to the next step: [Uninstall the adapter](#uninstall-the-adapter).
 
@@ -298,12 +316,26 @@ After you move the BLOBs back to the SQL Server content databases, use one of th
 
 ## Next steps
 
+<!-- deleted by customization
+[Learn more about StorSimple](/documentation/articles/storsimple-overview).
+-->
+<!-- keep by customization: begin -->
 [Learn more about StorSimple](storsimple-overview.md).
+<!-- keep by customization: end -->
 
 <!--Reference links-->
 [1]: https://www.microsoft.com/download/details.aspx?id=44073
+<!-- deleted by customization
+[2]: https://technet.microsoft.com/zh-cn/library/ff628583(v=office.15).aspx
+[3]: https://technet.microsoft.com/zh-cn/library/ff628583(v=office.14).aspx
+[4]: https://technet.microsoft.com/zh-cn/library/ff628569(v=office.14).aspx
+[5]: https://technet.microsoft.com/zh-cn/library/ff628583(v=office.15).aspx
+[8]: https://technet.microsoft.com/zh-cn/library/ff943565.aspx
+-->
+<!-- keep by customization: begin -->
 [2]: https://technet.microsoft.com/library/ff628583(v=office.15).aspx
 [3]: https://technet.microsoft.com/library/ff628583(v=office.14).aspx
 [4]: https://technet.microsoft.com/library/ff628569(v=office.14).aspx
 [5]: https://technet.microsoft.com/library/ff628583(v=office.15).aspx
 [8]: https://technet.microsoft.com/en-us/library/ff943565.aspx
+<!-- keep by customization: end -->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Monitor your workload using DMVs | Microsoft Azure"
+   pageTitle="Monitor your workload using DMVs | Windows Azure"
    description="Learn how to monitor your workload using DMVs."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="sahajs"/>
+	ms.service="sql-data-warehouse"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # Monitor your workload using DMVs
 

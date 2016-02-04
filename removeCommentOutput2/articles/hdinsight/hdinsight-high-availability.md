@@ -78,7 +78,7 @@ The creation and provisioning of a cluster by using Azure PowerShell is document
 				-DefaultStorageContainerName $containerName  `
 				-ClusterSizeInNodes $clusterNodes
 
-For the SDK, the story is similar. The creation and provisioning of a cluster by using the SDK is documented in [Using HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters#sdk). The configuration of an extra-large head node requires the addition of the `HeadNodeSize = NodeVMSize.ExtraLarge` parameter to the `ClusterCreateParameters()` method used in this code.
+For the SDK, the story is similar. The creation and provisioning of a cluster by using the SDK is documented in [Using HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters-v1#sdk). The configuration of an extra-large head node requires the addition of the `HeadNodeSize = NodeVMSize.ExtraLarge` parameter to the `ClusterCreateParameters()` method used in this code.
 
     # Create a new HDInsight cluster with the HDInsight SDK
 	# Configured with an ExtraLarge head-node VM
@@ -100,4 +100,4 @@ For the SDK, the story is similar. The creation and provisioning of a cluster by
 
 - [ZooKeeper](http://zookeeper.apache.org/ )
 - [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)
-- [Using HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters#sdk)
+- [Using HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters-v1#sdk)

@@ -3,13 +3,13 @@
    description="Article provides an introduction for generating, collecting, and analyzing security logs from services hosted on Azure.  It is intended for IT professionals and security analysts who deal with information asset management on a daily basis, including those responsible for their organization's security and compliance efforts."
    services="virtual-machines, cloud-services, storage"
    documentationCenter="na"
-   authors="TerryLanfear"
+   authors="nayak-mahesh"
    manager="msStevenPo"
    editor=""/>
 
 <tags
 	ms.service="azure-security"
-	ms.date="08/13/2015"
+	ms.date="12/10/2015"
 	wacn.date=""/>
 
 # Windows Azure security and audit log management
@@ -54,7 +54,7 @@ Contents of EnableLogOnAudit.cmd:
 
 [Auditpol.exe](https://technet.microsoft.com/zh-cn/library/cc731451.aspx) used in the previous example is a command-line tool included in Windows Server operating system that allows you to manage audit policy settings.
 
-In addition to generating Windows event logs, various Windows operating system components can be configured to generate logs that are important for security analysis and monitoring. For example, Internet Information Services (IIS) logs and http.err logs are automatically generated for web roles, and they can be configured for collection. These logs provide valuable information that can be used to identify unauthorized access or attacks against your web role. For more information, see [Configure Logging in IIS](http://technet.microsoft.com/zh-cn/library/hh831775.aspx) and [Advanced Logging for IIS – Custom Logging](http://www.iis.net/learn/extensions/advanced-logging-module/advanced-logging-for-iis-custom-logging).
+In addition to generating Windows event logs, various Windows operating system components can be configured to generate logs that are important for security analysis and monitoring. For example, Internet Information Services (IIS) logs and http.err logs are automatically generated for web roles, and they can be configured for collection. These logs provide valuable information that can be used to identify unauthorized access or attacks against your web role. For more information, see [Configure Logging in IIS](http://technet.microsoft.com/zh-cn/library/hh831775.aspx) and [Advanced Logging for IIS - Custom Logging](http://www.iis.net/learn/extensions/advanced-logging-module/advanced-logging-for-iis-custom-logging).
 
 To change IIS logging in a web role, customers can add a startup task to the web role service definition file. The following example enables HTTP logging for a website named Contoso, and it specifies that IIS should log all requests for the Contoso website.
 
@@ -75,7 +75,7 @@ Contents of ConfigureIISLogging:cmd
 ## <a name="log-collection"></a>Log collection
 Collection of security events and logs from Cloud Services or virtual machines in Azure occurs through two primary methods:
 
-- Azure Diagnostics, collects events in a customer’s Azure storage account
+- Azure Diagnostics, collects events in a customer's Azure storage account
 - Windows Event Forwarding (WEF), a technology in computers running Windows
 
 Some key differences between these two technologies are included in the table below. Based on your requirements and these key differences, the appropriate method needs to be chosen to implement log collection.
@@ -110,7 +110,7 @@ Additionally, HDInsight can be used for further analysis of the data in the clou
 
 ### Security data collection from Azure Virtual Machines by using Azure Diagnostics
 
-The following examples use Azure Diagnostics 1.2 and Azure PowerShell cmdlets to enable security data collection from virtual machines. The data is collected from virtual machines on a scheduled interval (that is configurable) and pushed to Azure Storage within a customer’s subscription.
+The following examples use Azure Diagnostics 1.2 and Azure PowerShell cmdlets to enable security data collection from virtual machines. The data is collected from virtual machines on a scheduled interval (that is configurable) and pushed to Azure Storage within a customer's subscription.
 In this section, we will walk through two log collection scenarios using Azure Diagnostics:
 
 1. Set up a new instance of a security log collection pipeline on a virtual machine.
@@ -460,14 +460,14 @@ Wait about five minutes to allow the Azure Diagnostics agent to push the event d
 ![][14]
 
 ### Security event distribution and spike detection
-After the events are in the customer’s storage account, applications can use the storage client libraries to access and perform event aggregation. For sample code to access table data, see [How to: Retrieve table data](/documentation/articles/storage-dotnet-how-to-use-tables).
+After the events are in the customer's storage account, applications can use the storage client libraries to access and perform event aggregation. For sample code to access table data, see [How to: Retrieve table data](/documentation/articles/storage-dotnet-how-to-use-tables).
 
 Following is an example of event aggregation. Any spikes in event distribution can be investigated further for anomalous activity.
 
 ![][15]
 
 ### IIS log collection and processing by using HDInsight
-In this section, we collect IIS logs from your web role instance and move the logs to an Azure blob in the customer’s storage account.
+In this section, we collect IIS logs from your web role instance and move the logs to an Azure blob in the customer's storage account.
 
 #### Step 1: Update configuration file to include IIS log collection
 
@@ -486,7 +486,7 @@ In this section, we collect IIS logs from your web role instance and move the lo
     </WadCfg>
     </PublicConfig>
 
-In the previous Azure Diagnostics configuration, **containerName** is the blob container name to which logs will be moved within customer’s storage account.
+In the previous Azure Diagnostics configuration, **containerName** is the blob container name to which logs will be moved within customer's storage account.
 
 Validate the configuration file by using the same steps as shown earlier in [Step 3: Validate configuration XML file](#step3).
 
@@ -523,7 +523,7 @@ You should see an error such as the one that follows. Remember that we added cod
 
 8.	Right-click and select **View Blob Container** to display the IIS log file stored in the blob:
 ![][19]
-9.	After the IIS events are in the customer’s storage account, applications that leverage HDInsight analysis can be used to perform event aggregation. The following line chart is an example of an event aggregation task that shows HTTP Status Code 500:
+9.	After the IIS events are in the customer's storage account, applications that leverage HDInsight analysis can be used to perform event aggregation. The following line chart is an example of an event aggregation task that shows HTTP Status Code 500:
 ![][20]
 
 ## Security log collection recommendations
@@ -545,7 +545,7 @@ The logging level is cumulative. If the filter is set to **Warning**, then **Err
 >[AZURE.NOTE] To learn more about diagnostic data see [Store and View Diagnostic Data in Azure Storage](https://msdn.microsoft.com/zh-cn/library/azure/hh411534.aspx).  The containers and tables that store diagnostic data are just like other containers and tables, you can delete blobs and entities from them in the same way you would for other data. You can delete the diagnostic data programmatically via one of the storage client libraries or visually via a [storage explorer client](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx).
 
 - It is a best practice to store service data and security log data in separate storage accounts. This isolation ensures that saving security log data does not impact the storage performance for production service data.
-- Choose the log retention duration based on your organization’s compliance policy and data analysis and monitoring requirements.
+- Choose the log retention duration based on your organization's compliance policy and data analysis and monitoring requirements.
 
 ## Exporting security logs to another system
 You can download blob data by using the Azure Storage Client Library, and then export it to your on-premises system for processing. For sample code to manage blob data, see [How to use Blob Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs).

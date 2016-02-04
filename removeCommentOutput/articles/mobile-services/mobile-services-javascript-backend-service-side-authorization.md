@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/25/2015"
+	ms.date="11/30/2015"
 	wacn.date=""/>
 
 # Service-side authorization of users in Mobile Services

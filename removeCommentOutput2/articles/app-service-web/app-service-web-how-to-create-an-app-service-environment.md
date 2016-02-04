@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="How to Create an Azure Websites Environment" 
+	pageTitle="How to Create an Azure Environment" 
 	description="Creation flow description for app service environments" 
 	services="app-service" 
 	documentationCenter="" 
@@ -12,9 +14,9 @@
 	ms.date="10/26/2015"
 	wacn.date=""/>
 
-# How to Create an Azure Websites Environment #
+# How to Create an Azure Environment #
 
-Azure Websites Environments (ASE) are a Premium service option of Azure Websites that delivers an enhanced configuration capability that is not available in the multi-tenant stamps.  The ASE feature essentially deploys the Azure Websites into a customer’s virtual network.  To gain a greater understanding of the capabilities offered by Azure Websites Environments read the [What is an Azure Websites Environment][WhatisASE] documentation.
+Azure Environments (ASE) are a Premium service option of Azure that delivers an enhanced configuration capability that is not available in the multi-tenant stamps.  The ASE feature essentially deploys the Azure into a customer's virtual network.  To gain a greater understanding of the capabilities offered by Azure Environments read the [What is an Azure Environment][WhatisASE] documentation.
 
 ### Overview ###
 
@@ -36,7 +38,7 @@ There are some important details to each of those items.
 
 Each ASE deployment is a Hosted Service that Azure manages and maintains.  The compute resources hosting the ASE system roles are not accessible to the customer though the customer does manage the quantity of instances and their sizes.  
 
-There are two ways to access the ASE creation UI.  It can be found by searching in the Azure Marketplace for ***Azure Websites Environment*** or by going through New -> Web + Mobile.  
+There are two ways to access the ASE creation UI.  It can be found by searching in the Azure Marketplace for ***Azure Environment*** or by going through New -> Web + Mobile.  
 
 If you want the VNET to have a separate resource group from the ASE then you need to first create the VNET separately and then select it during ASE creation.  Also, if you want to create a subnet in an existing VNET during ASE creation, the ASE has to then be in the same resource group as the VNET.
 
@@ -59,7 +61,7 @@ The name that is specified for the ASE will be used for the apps created in the 
 Having the defaults is very useful for a certain number of situations but often you will need to adjust something.  The next few sections walk through each of the ASE related configuration sections.
 
 ### Virtual Network ###
-While there is a quick create capability that will automatically create a new VNET, the feature also supports selection of an existing VNET and manual creation of a VNET.  You can select an existing VNET (only classic "v1" virtual networks are supported at this time) if it is large enough to support an Azure Websites Environment deployment.  The VNET must have at least 8 addresses or more.  
+While there is a quick create capability that will automatically create a new VNET, the feature also supports selection of an existing VNET and manual creation of a VNET.  You can select an existing VNET (only classic "v1" virtual networks are supported at this time) if it is large enough to support an Azure Environment deployment.  The VNET must have at least 8 addresses or more.  
 
 If you do select a pre-existing VNET you will also have to specify a subnet to use or create a new one.  The subnet needs to have 8 addresses or more and cannot have any other resources already in it.  ASE creation will fail if you try to use a subnet that already has VMs allocated into it.  
 
@@ -107,13 +109,13 @@ Within any single worker pool the fault tolerance requirements are that for a gi
 - if X is between 21 to 40, the amount of usable compute resources you can use for workloads is X-2
 - if X is between 41 to 53, the amount of usable compute resources you can use for workloads is X-3
 
-In addition to being able to manage the quantity of compute resources that you can assign to a given pool you also have control over the size.  With Azure Websites Environments you can choose from 4 different sizes labeled P1 through P4.  For details around those sizes and their pricing please see here [Azure Websites Pricing][AppServicePricing].  The P1 to P3 compute resource sizes are the same as what is available in the multi-tenant environments.  The P4 compute resource gives 8 cores with 14 GB of RAM and is only available in an Azure Websites Environment.  
+In addition to being able to manage the quantity of compute resources that you can assign to a given pool you also have control over the size.  With Azure Environments you can choose from 4 different sizes labeled P1 through P4.  For details around those sizes and their pricing please see here [Azure Pricing][AppServicePricing].  The P1 to P3 compute resource sizes are the same as what is available in the multi-tenant environments.  The P4 compute resource gives 8 cores with 14 GB of RAM and is only available in an Azure Environment.  
 
-Pricing for Azure Websites Environments is against the compute resources assigned.  You pay for the compute resources allocated to your Azure Websites Environment regardless if they are hosting workloads or not. 
+Pricing for Azure Environments is against the compute resources assigned.  You pay for the compute resources allocated to your Azure Environment regardless if they are hosting workloads or not. 
 
 By default an ASE comes with 1 IP address that is available for IP SSL.  If you know that you will need more you can specify that here or manage it after creation.  
   
-### After Azure Websites Environment creation ###
+### After Azure Environment creation ###
 
 After ASE creation you can adjust:
 
@@ -130,19 +132,19 @@ You cannot change:
 - VNET used
 - Subnet used
 
-There are more details around manual scaling, management and monitoring of Azure Websites Environments here: [How to configure an Azure Websites Environment][ASEConfig] 
+There are more details around manual scaling, management and monitoring of Azure Environments here: [How to configure an Azure Environment][ASEConfig] 
 
 For information on autoscaling there is a guide here:
-[How to configure autoscale for an Azure Websites Environment][ASEAutoscale]
+[How to configure autoscale for an Azure Environment][ASEAutoscale]
 
-There are additional dependencies that are not available for customization such as the database and storage.  These are handled by Azure and come with the system.  The system storage supports up to 500 GB for the entire Azure Websites Environment and the database is adjusted by Azure as needed by the scale of the system.
+There are additional dependencies that are not available for customization such as the database and storage.  These are handled by Azure and come with the system.  The system storage supports up to 500 GB for the entire Azure Environment and the database is adjusted by Azure as needed by the scale of the system.
 
 
 ## Getting started
 
-To get started with Azure Websites Environments, see [Introduction to Azure Websites Environments][WhatisASE]
+To get started with Azure Environments, see [Introduction to Azure Environments][WhatisASE]
 
-For more information about the Azure Websites platform, see [Azure Websites][AzureAppService].
+For more information about the Azure platform, see [Azure Web App][AzureAppService].
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
@@ -157,5 +159,6 @@ For more information about the Azure Websites platform, see [Azure Websites][Azu
 <!--Links-->
 [WhatisASE]: /documentation/articles/app-service-app-service-environment-intro/
 [ASEConfig]: /documentation/articles/app-service-web-configure-an-app-service-environment/
-[AppServicePricing]: /home/features/app-service/#price 
+[AppServicePricing]: /home/features/web-site/#price 
 [AzureAppService]: /documentation/services/web-sites/ 
+[ASEAutoscale]: /documentation/articles/app-service-environment-auto-scale/

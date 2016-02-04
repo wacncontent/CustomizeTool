@@ -35,7 +35,7 @@ Data can be managed in HBase by using the `create`, `get`, `put`, and `scan` com
 
 
 ## Scenarios: Use cases for HBase
-The canonical use case for which BigTable (and by extension, HBase) was created was web search. Search engines build indexes that map terms to the web pages that contain them. But there are many other use cases that HBase is suitable for—several of which are itemized in this section.
+The canonical use case for which BigTable (and by extension, HBase) was created was web search. Search engines build indexes that map terms to the web pages that contain them. But there are many other use cases that HBase is suitable forâseveral of which are itemized in this section.
 
 - Key-value store
 
@@ -70,15 +70,15 @@ The canonical use case for which BigTable (and by extension, HBase) was created 
 
 
 
-[hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
+[hbase-provision-vnet]: hdinsight-hbase-provision-vnet-v1.md
 
-[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
+[hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
 
-[hbase-build-java-maven]: /documentation/articles/hdinsight-hbase-build-java-maven
+[hbase-build-java-maven]: hdinsight-hbase-build-java-maven.md
 
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-hive]: hdinsight-use-hive.md
 
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
 
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started/
 
@@ -86,6 +86,6 @@ The canonical use case for which BigTable (and by extension, HBase) was created 
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-create-storageaccount]: ../storage-create-storage-account.md
 
 [apache-hadoop]: http://hadoop.apache.org/

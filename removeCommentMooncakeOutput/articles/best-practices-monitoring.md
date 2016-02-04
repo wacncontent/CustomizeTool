@@ -9,9 +9,9 @@
    tags=""/>
 
 <tags
-	ms.service="best-practice"
-	ms.date="04/28/2015"
-	wacn.date=""/>
+   ms.service="best-practice"
+   ms.date="12/17/2015"
+   wacn.date=""/>
 
 # Monitoring and diagnostics guidance
 
@@ -28,7 +28,7 @@ Monitoring enables you to gain an insight into how well a system is functioning,
 - Maintaining performance to ensure that the throughput of the system does not degrade unexpectedly as the volume of work increases.
 - Guaranteeing that the system meets any SLAs agreed with customers.
 - Protecting the privacy and security of the system, users, and their data.
-- Tracking the operations that are performed auditing or regulatory purposes.
+- Tracking the operations that are performed for auditing or regulatory purposes.
 - Monitoring the day-to-day usage of the system and help spot trends that could lead to problems if they are not addressed.
 - Tracking issues that occur, from initial report through to analysis of possible causes, rectification, consequent software updates, and deployment.
 - Tracing operations and debugging software releases.
@@ -88,16 +88,16 @@ The instrumentation data must be aggregated and correlated to support the follow
 
 - The immediate availability of the system and subsystems.
 - The availability failure rates of the system and subsystems. Ideally an operator should be able to correlate failures with specific activities; what was happening when the system failed?
-- An historical view of failure rates of the system or any subsystems across any specified time period, and the loading on the system (number of user requests for example) when a failure occurred.
+- An historical view of failure rates of the system or any subsystems across any specified time period, and the load on the system (number of user requests for example) when a failure occurred.
 - The reasons for unavailability of the system or any subsystems. For example, service not running, loss of connectivity, connected but timing out, and connected but returning errors.
 
 You can calculate the percentage availability of a service over a period of time by using the formula:
 
 ```
-%Availability =  ((Total Time – Total Downtime) / Total Time ) * 100
+%Availability =  ((Total Time - Total Downtime) / Total Time ) * 100
 ```
 
-This is useful for SLA purposes ([SLA monitoring](#SLA-monitoring) is described in more detail later in this guidance). The definition of _Downtime_ depends on the service. For example, Visual Studio Online defines downtime as the period during which a customer's attempts to connect to the service take longer than 120 seconds and all basic read and write operations fail after the connection is established within that period.
+This is useful for SLA purposes ([SLA monitoring](#SLA-monitoring) is described in more detail later in this guidance). The definition of _Downtime_ depends on the service. For example, Visual Studio Team Services Build Service defines downtime as the period (total accumulated minutes) during which Build Service is unavailable. A minute is considered unavailable if all continuous HTTP requests to the Build Service to perform operations initiated by Customer throughout the minute either result in an Error Code or do not return a response.
 
 ## Performance monitoring
 As the system is placed under more and more stress as the volume of users increase and the size of the datasets that these users access grows, the possible failure of one or more components becomes likely. Frequently, component failure is preceded by a decrease in performance. If you are able detect such a decrease you can take proactive steps to remedy the situation.
@@ -279,14 +279,14 @@ To examine system usage, an operator would typically need to see information inc
 - The volume of data storage occupied by each user.
 - The resources being accessed by each user.
 
-An operator should also be able to generate graphs, for example, displaying the most resource-hungry users, or the most frequently accessed resources.
+An operator should also be able to generate graphs, for example, displaying the most resource-hungry users, or the most frequently accessed resources or system features.
 
 ### Data sources, instrumentation, and data collection requirements
 Usage tracking can be performed at a relatively high level, noting the start and end time of each request and the nature of the request (read, write, and so on, depending on the resource in question). You can obtain this information by:
 
 - Tracing user activity.
 - Capturing performance counters measuring the utilization for each resource.
-- Monitoring the CPU and I/O utilization of operations performed by each user.
+- Monitoring the resource consumption by each user.
 
 For metering purposes, you also need to be able to identity which users are responsible for performing which operations and the resources that these operations utilize. The information gathered should be detailed enough to enable accurate billing.
 
@@ -320,7 +320,7 @@ For tracing unexpected events and other problems, it is vital that the monitorin
 ### Data sources, instrumentation, and data collection requirements
 Troubleshooting can involve tracing all the methods (and their parameters) invoked as part of an operation to build up a tree depicting the logical flow through the system when a customer makes a specific request. Exceptions and warnings generated by the system as a result of this flow need to be captured and logged.
 
-To support debugging, the system can provide hooks that enable an operator to capture state information at crucial points in the system, or deliver detailed step-by-step information as selected operations progress. Capturing data at this level of detail can impose an additional load on the system should be a temporary process, mainly used when a highly unusual series of events occur that is difficult to replicate, or when a new release of one or more elements into a system require careful monitoring to ensure that they function as expected.
+To support debugging, the system can provide hooks that enable an operator to capture state information at crucial points in the system, or deliver detailed step-by-step information as selected operations progress. Capturing data at this level of detail can impose an additional load on the system and should be a temporary process, mainly used when a highly unusual series of events occur that is difficult to replicate, or when a new release of one or more elements into a system require careful monitoring to ensure that they function as expected.
 
 ## The monitoring and diagnostics pipeline
 Monitoring a large-scale distributed system poses a significant challenge, and each of the scenarios described in the previous section should not necessarily be considered in isolation. There is likely to be a significant overlap in the monitoring and diagnostic data required for each situation, although this data may need to be processed and presented in different ways. For these reasons, you should take a holistic view of monitoring and diagnostics.
@@ -332,7 +332,7 @@ You can envisage the entire monitoring and diagnostics process as a pipeline tha
 _Figure 1.
 The stages in the monitoring and diagnostics pipeline_
 
-Figure 1 highlights how the data for monitoring and diagnostics can come from a variety of data sources. The Instrumentation/Collection stage is concerned with instrumentation; determining which data to capture, how to capture it, and how to format this data so that it can be easily examined. The Analysis/Diagnosis phase takes the raw data and uses it to generate meaningful information that can be used to determine the state of the system. This information can be used to make decisions about possible actions to take, and the results can be fed back into the Instrumentation/Collection phase. The Visualization/Alerting stage phase presents a consumable view of the system state; it could display information in near real-time by using a series of dashboards, and it could generates reports, graphs, and charts to provide a historical view of the data that can help identify long-term trends. If information indicates that a KPI is likely to exceed acceptable bounds, then this stage can also trigger an alert to an operator. In some cases, an alert can also be used to trigger an automated process that attempts to take corrective actions, such as auto-scaling.
+Figure 1 highlights how the data for monitoring and diagnostics can come from a variety of data sources. The Instrumentation/Collection stage is concerned with instrumentation; determining which data to capture, how to capture it, and how to format this data so that it can be easily examined. The Analysis/Diagnosis phase takes the raw data and uses it to generate meaningful information that can be used to determine the state of the system. This information can be used to make decisions about possible actions to take, and the results can be fed back into the Instrumentation/Collection phase. The Visualization/Alerting stage phase presents a consumable view of the system state; it could display information in near real-time by using a series of dashboards, and it could generate reports, graphs, and charts to provide a historical view of the data that can help identify long-term trends. If information indicates that a KPI is likely to exceed acceptable bounds, then this stage can also trigger an alert to an operator. In some cases, an alert can also be used to trigger an automated process that attempts to take corrective actions, such as auto-scaling.
 
 Note that these steps constitute a continuous-flow process where the stages are happening in parallel. Ideally, all the phases should be dynamically configurable; at some points, especially when a system has been newly deployed or is experiencing problems, it may be necessary to gather extended data on a more frequent basis. At other times, it should be possible to revert to capturing a base-level of essential information to verify that the system is functioning properly.
 
@@ -381,7 +381,7 @@ Instrumentation is a critical part of the monitoring process; you can only make 
 
 The instrumentation data will typically comprise information written to trace logs, and metrics:
 
-- The contents of a trace log can be the result of textual data written by the application, binary data created as the result of a trace event (if the application is using Event Tracing for Windows – ETW), or they can be generated from system logs that record events arising from parts of the infrastructure, such as a web server. Textual log messages are often designed to be human-readable, but they should also be written in a format that enables them to be easily parsed by an automated system. You should also categorize logs; don't write all trace data to a single log but use separate logs to record the trace output from different operational aspects of the system. This enables you to quickly filter log messages by reading from the appropriate log rather than having to process a single lengthy file. Never write information that has different security requirements (such as audit information and debugging data) to the same log.
+- The contents of a trace log can be the result of textual data written by the application, binary data created as the result of a trace event (if the application is using Event Tracing for Windows - ETW), or they can be generated from system logs that record events arising from parts of the infrastructure, such as a web server. Textual log messages are often designed to be human-readable, but they should also be written in a format that enables them to be easily parsed by an automated system. You should also categorize logs; don't write all trace data to a single log but use separate logs to record the trace output from different operational aspects of the system. This enables you to quickly filter log messages by reading from the appropriate log rather than having to process a single lengthy file. Never write information that has different security requirements (such as audit information and debugging data) to the same log.
 
 	> [AZURE.NOTE] A log may be implemented as a file on the file system, or it could be held in some other format such as a blob in blob storage. Log information might also be held in more structured storage, such as rows in a table.
 
@@ -399,7 +399,7 @@ All monitoring data should be time-stamped in the same way. For consistency, rec
 Consider the following points when deciding which instrumentation data you need to collect:
 
 - Information captured by trace events should be machine and human readable.  You should adopt well-defined schemas for this information to facilitate automated processing of log data across systems, and provide consistency to operations and engineering staff reading the logs. Include environmental information, such as the deployment environment, the machine on which the process is running, the details of the process, and the call stack.  
-- Profiling can impose a significant overhead on the system and should only be enabled when necessary. Profiling by using instrumentation records an event (such as a method call) every time it occurs, whereas sampling only records selected events. The selection could be time-based – once every N seconds, or frequency-based – once every N requests. If events occur very frequently, profiling by instrumentation may cause too much of a burden and itself impact overall performance. In this case, the sampling approach may be preferable. However, if the frequency of events is low, then sampling might miss them and in this case instrumentation might be the better approach.
+- Profiling can impose a significant overhead on the system and should only be enabled when necessary. Profiling by using instrumentation records an event (such as a method call) every time it occurs, whereas sampling only records selected events. The selection could be time-based - once every N seconds, or frequency-based - once every N requests. If events occur very frequently, profiling by instrumentation may cause too much of a burden and itself impact overall performance. In this case, the sampling approach may be preferable. However, if the frequency of events is low, then sampling might miss them and in this case instrumentation might be the better approach.
 - Provide sufficient context to enable a developer or administrator to determine the source of each request. This may include some form of activity ID identifying a specific instance of a request, and information that can be used to correlate this activity with the computational work performed and the resources used. Note that this work may cross process and machine boundaries. For metering, the context should also include (either directly or indirectly via other correlated information) a reference to the customer that caused the request to be made. This context provides valuable information about the application state at the time the monitoring data was captured.
 - Record all requests, and the locations or regions from which these requests are made. This information can assist in determining whether there are any location-specific hotspots, and provide data that can be useful in determining whether to repartition an application or the data that it uses.
 - Record and capture the details of exceptions carefully. Often critical debug information is lost as a result of poor exception handling. Capture the full details of exceptions thrown by the application, including any inner exceptions and other context information, including the call stack if possible.
@@ -424,7 +424,7 @@ The following list summarizes best practices for instrumenting a distributed app
 - Categorize logs and write messages to the appropriate log file.
 - Do not disclose sensitive information about the system or personal information about users. Scrub this information before it is logged, but ensure that the relevant details are retained. For example, remove the ID and password from any database connection strings, but write the remaining information to the log so that an analyst can determine that the system is accessing the correct database. Log all critical exceptions, but enable the administrator to turn logging on and off for lower levels of exceptions and warnings. Also, capture and log all retry logic information. This data can be useful in monitoring the transient health of the system.
 - Trace out of process calls, such as requests to external web services or database.
-- Don’t mix log messages with different security requirements in the same log file. For example, don't write debug and audit information to the same log.
+- Don't mix log messages with different security requirements in the same log file. For example, don't write debug and audit information to the same log.
 - With the exception of auditing events, all logging calls should be fire-and-forget operations that must not block the progress of business operations. Auditing events are exceptional because they are critical to the business and can be classified as a fundamental part of business operations.
 - Logging should be extensible and not have any direct dependencies on concrete target. For example, rather than writing information by using _System.Diagnostics.Trace_, define an abstract interface (such as _ILogger_) which exposes logging methods and that can be implemented by using any appropriate means.
 - All logging must be fail-safe and should never trigger any cascading errors. Logging must not throw any exceptions.
@@ -444,7 +444,6 @@ Note that this is a simplified view. The collection service is not necessarily a
 
 For Azure applications and services, Azure Diagnostics (WAD) provides one possible solution for capturing data. WAD gathers data from the following sources for each compute node, aggregates it together, and then uploads it to Azure storage:
 
-- Azure logs
 - IIS logs
 - IIS Failed Request logs
 - Windows Event logs
@@ -452,6 +451,8 @@ For Azure applications and services, Azure Diagnostics (WAD) provides one possib
 - Crash dumps
 - Azure Diagnostic infrastructure logs  
 - Custom error logs
+- .NET EventSource
+- Manifest based ETW
 
 For more information, see the article [Azure: Telemetry Basics and Troubleshooting](http://social.technet.microsoft.com/wiki/contents/articles/18146.windows-azure-telemetry-basics-and-troubleshooting.aspx) on the Microsoft website.
 
@@ -463,7 +464,7 @@ To optimize the use of bandwidth, you can elect to transfer less urgent data in 
 #### _Pulling and pushing instrumentation data_
 The instrumentation data collection subsystem can either actively retrieve instrumentation data from the various logs and other sources for each instance of the application (the _pull model_), or it can act as a passive receiver waiting for the data to be sent from the components that constitute each instance of the application (the _push model_).
 
-One approach to implementing the pull model is to use monitoring agents running locally with each instance of the application. A monitoring agent is a separate process that periodically retrieves (pulls) telemetry data collected at the local node and writes this information directly to centralized storage that is shared by all instances of the application. This is the mechanism implemented by WAD. Each instance of an Azure web or worker role can be configured to capture diagnostic and other trace information which is stored locally. The monitoring agent that runs alongside each copies the specified data to Azure storage. The page [Configuring Diagnostics for Azure Cloud Services and Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx) on the Microsoft website provide more details on this process. Some elements, such as IIS logs, crash dumps, and custom error logs are written to blob storage, while data from the Windows Event log, ETW events, and performance counters is recorded in table storage. Figure 3 illustrates this mechanism:
+One approach to implementing the pull model is to use monitoring agents running locally with each instance of the application. A monitoring agent is a separate process that periodically retrieves (pulls) telemetry data collected at the local node and writes this information directly to centralized storage that is shared by all instances of the application. This is the mechanism implemented by WAD. Each instance of an Azure web or worker role can be configured to capture diagnostic and other trace information which is stored locally. The monitoring agent that runs alongside each copies the specified data to Azure storage. The page [Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics) on the Microsoft website provide more details on this process. Some elements, such as IIS logs, crash dumps, and custom error logs are written to blob storage, while data from the Windows Event log, ETW events, and performance counters is recorded in table storage. Figure 3 illustrates this mechanism:
 
 ![](./media/best-practices-monitoring/PullModel.png)
 
@@ -472,7 +473,6 @@ Using a monitoring agent to pull information and write to shared storage_
 
 > [AZURE.NOTE] Using a monitoring agent is ideally suited to capturing instrumentation data that is naturally pulled from a data source, such as information from SQL Server Management Views, or the length of an Azure Service Bus Queue.
 
-For information about configuring and using Azure Diagnostics, visit the [Collect Logging Data by Using Azure Diagnostics](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx) page on the Microsoft website.
 
 Telemetry data for a small-scale application running on a limited number of nodes can feasibly be stored in a single location using the approach just described. However, a complex, highly scalable, global cloud application might easily generate huge volumes of data from hundreds of web and worker roles, database shards, and other services. This flood of data could easily overwhelm the I/O bandwidth available with a single, central location. Therefore your telemetry solution must be scalable to prevent it acting as a bottleneck as the system expands, and ideally incorporate a degree of redundancy to reduce the risks of losing important monitoring information (such as auditing or billing data) if part of the system fails.
 
@@ -606,10 +606,9 @@ In many cases, reports can be generated by batch processes according to a define
 ## More information
 - The article [Monitor, Diagnose, and Troubleshoot Windows Azure Storage](/documentation/articles/storage-monitoring-diagnosing-troubleshooting) on the Microsoft website.
 - The article [Azure: Telemetry Basics and Troubleshooting](http://social.technet.microsoft.com/wiki/contents/articles/18146.windows-azure-telemetry-basics-and-troubleshooting.aspx) on the Microsoft website.
-- The page [Collect Logging Data by Using Azure Diagnostics](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx) on the Microsoft website.
-- The page [Configuring Diagnostics for Azure Cloud Services and Virtual Machines](https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx) on the Microsoft website.
+- The page [Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics) on the Microsoft website.
 - The [Azure Redis Cache](/home/features/cache/), [Azure DocumentDB](/home/features/documentdb/), and [HDInsight](/home/features/hdinsight/) pages on the Microsoft website.
-- The page [How to use Service Bus Queues](http://azure.microsoft.com/) on the Microsoft website.
+- The page [How to use Service Bus Queues](/documentation/articles/service-bus-dotnet-how-to-use-queues) on the Microsoft website.
 - The article [SQL Server Business Intelligence in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-business-intelligence) on the Microsoft website.
-- The page [Understanding Monitoring Alerts and Notifications in Azure](https://msdn.microsoft.com/zh-cn/library/azure/dn306639.aspx) on the Microsoft website.
+- The pages [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) and [Track service health](/documentation/articles/insights-service-health) on the Microsoft website.
 - The [Application Insights](/documentation/articles/app-insights-get-started) page on the Microsoft website.

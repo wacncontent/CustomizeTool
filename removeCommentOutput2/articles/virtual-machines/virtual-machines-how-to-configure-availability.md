@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configure an availability set for VMs | Windows Azure"
+	pageTitle="Configure an availability set for classic VMs | Windows Azure"
 	description="Configure an availability set for a new or existing virtual machine in the classic deployment model using the Azure Management Portal and Azure PowerShell."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,24 +10,23 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/10/2015"
+	ms.date="01/07/2016"
 	wacn.date=""/>
 
 # How to configure an availability set for virtual machines in the classic deployment model
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating resources with the classic deployment model.
-
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
 
 An availability set helps keep your virtual machines available during downtime, such as during maintenance. Placing two or more similarly configured virtual machines in an availability set creates the redundancy needed to maintain availability of the applications or services that your virtual machine runs. For details about how this works, see [Manage the availability of virtual machines] [].
 
 It's a best practice to use both availability sets and load-balancing endpoints to help ensure that your application is always available and running efficiently. For details about load-balanced endpoints, see [Load balancing for Azure infrastructure services] [].
 
-You can put virtual machines into an availability set by using one of two options:
+In the classic deployment model, you can put virtual machines into an availability set by using one of two options:
 
 - [Option 1: Create a virtual machine and an availability set at the same time] []. Then, add new virtual machines to the set when you create those virtual machines.
 - [Option 2: Add an existing virtual machine to an availability set] [].
 
->[AZURE.NOTE] Virtual machines that you want to put in the same availability set must belong to the same cloud service.
+>[AZURE.NOTE] In the classic model, virtual machines that you want to put in the same availability set must belong to the same cloud service.
 
 ## <a id="createset"> </a>Option 1: Create a virtual machine and an availability set at the same time##
 
@@ -105,6 +104,6 @@ To use Azure PowerShell commands, open an administrator-level Azure PowerShell s
 
 [Load balancing for Azure infrastructure services]: /documentation/articles/virtual-machines-load-balance
 [Manage the availability of virtual machines]: /documentation/articles/virtual-machines-manage-availability
-[Create a virtual machine running Windows]: /documentation/articles/virtual-machines-windows-tutorial
+[Create a virtual machine running Windows]:/documentation/articles/virtual-machines-windows-tutorial-classic-portal
 [Virtual Network overview]: /documentation/articles/virtual-networks-overview
 [Articles for virtual machines in Service Management]: /documentation/articles/virtual-machines-service-management-articles

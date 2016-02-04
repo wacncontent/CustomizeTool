@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -33,9 +33,6 @@ Encrypted assets have to be associated with **ContentKey**s. This article descri
 
 One of the values that you must set when create a content key is the content key type. Choose from one of the following values. 
 
-    /// <summary>
-    /// Specifies the type of a content key.
-    /// </summary>
     public enum ContentKeyType
     {
         /// <summary>
@@ -50,9 +47,14 @@ One of the values that you must set when create a content key is the content key
         StorageEncryption = 1,
 
         /// <summary>
-        /// Specifies a content key for encrypting encoding configuration data that may contain sensitive preset information. 
+        /// Specifies a content key for configuration encryption.
         /// </summary>
         ConfigurationEncryption = 2,
+
+        /// <summary>
+        /// Specifies a content key for Envelope encryption.  Only used internally.
+        /// </summary>
+        EnvelopeEncryption = 4
     }
 
 ##<a id="envelope_contentkey"></a>Create envelope type ContentKey
@@ -132,3 +134,10 @@ call
 	IContentKey key = CreateCommonTypeContentKey(encryptedsset); 
 
 
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

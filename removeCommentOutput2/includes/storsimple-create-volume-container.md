@@ -28,4 +28,3 @@
   6. Click the check icon ![check-icon](./media/storsimple-create-volume-container/HCS_CheckIcon-include.png) to save this volume container and exit the wizard. 
 
   The newly created volume container will be listed on the **Volume containers** page.
-

@@ -14,11 +14,11 @@
   
 3. Choose the identity provider you want to use, and follow the steps in the corresponding article to configure your API app with that provider. These articles were written for mobile apps, but the procedures are the same for API apps. Some of the procedures require you to use the [Azure Management Portal]. 
 
- - [Microsoft Account](/documentation/articles/app-service-mobile-how-to-configure-microsoft-authentication-preview)
- - [Facebook login](/documentation/articles/app-service-mobile-how-to-configure-facebook-authentication-preview)
- - [Twitter login](/documentation/articles/app-service-mobile-how-to-configure-twitter-authentication-preview)
- - [Google login](/documentation/articles/app-service-mobile-how-to-configure-google-authentication-preview)
- - [Azure Active Directory](/documentation/articles/app-service-mobile-how-to-configure-active-directory-authentication-preview)
+ - [Microsoft Account](/documentation/articles/app-service-mobile-how-to-configure-microsoft-authentication)
+ - [Facebook login](/documentation/articles/app-service-mobile-how-to-configure-facebook-authentication)
+ - [Twitter login](/documentation/articles/app-service-mobile-how-to-configure-twitter-authentication)
+ - [Google login](/documentation/articles/app-service-mobile-how-to-configure-google-authentication)
+ - [Azure Active Directory](/documentation/articles/app-service-mobile-how-to-configure-active-directory-authentication)
 
 As an example, the following screen shots show what you should see in the [Azure Management Portal] pages and [Azure preview portal] blades after you have set up Azure Active Directory authentication.
 

@@ -5,11 +5,13 @@
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor="jimbe" 
+	scriptId="" 
+	videoId=""/>
 
-<tags
-	ms.service="storage"
-	ms.date="10/12/2015"
+<tags 
+	ms.service="storage" 
+	ms.date="10/12/2015" 
 	wacn.date=""/>
 
 # Using Azure Storage with a Jenkins Continuous Integration solution
@@ -106,7 +108,7 @@ For instruction purposes, first we'll need to create a job that will create seve
     
     Below the **Command** section where you entered a script for **Execute Windows batch command** is a link to the environment variables recognized by Jenkins. Click that link to learn the environment variable names and descriptions. Note that environment variables that contain special characters, such as the **BUILD_URL** environment variable, are not allowed as a container name or common virtual path.
 
-8. Click **Make new container public by default** for this example. (If you want to use a private container, you'll need to create a shared access signature to allow access. That is beyond the scope of this topic. You can learn more about shared access signatures at [Creating a Shared Access Signature](http://go.microsoft.com/fwlink/?LinkId=279889).)
+8. Click **Make new container public by default** for this example. (If you want to use a private container, you'll need to create a shared access signature to allow access. That is beyond the scope of this topic. You can learn more about shared access signatures at [Creating a Shared Access Signature](http://msdn.microsoft.com/zh-cn/library/azure/jj721951.aspx).)
 9. [Optional] Click **Clean container before uploading** if you want the container to be cleared of contents before build artifacts are uploaded (leave it unchecked if you do not want to clean the contents of the container).
 10. For **List of Artifacts to upload**, enter **text/*.txt**.
 11. For **Common virtual path for uploaded artifacts**, for purposes of this tutorial, enter **${BUILD\_ID}/${BUILD\_NUMBER}**.

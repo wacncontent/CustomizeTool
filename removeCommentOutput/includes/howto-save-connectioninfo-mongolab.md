@@ -2,9 +2,9 @@ While it's possible to paste a MongoLab URI into your code, we recommend configu
 
 
 1. In the Azure Management Portal, select **Web Apps**.
-1. Click the name of the web app in the Web Apps list.  
+1. Click the name of the web site in the web sites list.  
 ![WebAppEntry][entry-website]  
-The Web App dashboard displays.
+The web site dashboard displays.
 
 1. Click **Configure** in the menu bar.  
 ![WebAppDashboardConfig][focus-mongolab-websitedashboard-config]

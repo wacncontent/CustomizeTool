@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="DocumentDB Indexing Policies | Microsoft Azure" 
+    pageTitle="DocumentDB Indexing Policies | Windows Azure" 
     description="Understand how indexing works in DocumentDB learn how to configure and change the indexing policy. Configure the indexing policy withing DocumentDB for automatic indexing and greater performance." 
 	keywords="how indexing works, automatic indexing, indexing database, documentdb, azure, Microsoft azure"
     services="documentdb" 
@@ -8,19 +8,15 @@
     manager="jhubbard" 
     editor="monicar"/>
 
-<tags 
-    ms.service="documentdb" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.tgt_pltfrm="na" 
-    ms.workload="data-services" 
-    ms.date="10/05/2015" 
-    ms.author="mimig"/>
+<tags
+	ms.service="documentdb"
+	ms.date="10/05/2015"
+	wacn.date=""/>
 
 
 # DocumentDB indexing policies
 
-While many customers are happy to let DocumentDB automatically handle [all aspects of indexing](documentdb-indexing.md), DocumentDB also supports specifying a custom **indexing policy** for collections during creation. Indexing policies in DocumentDB are more flexible and powerful than secondary indexes offered in other indexing database platforms, in that they let you design and customize the shape of the index without sacrificing schema flexibility. To learn how indexing works within DocumentDB, you must understand that by managing indexing policy, you can make fine-grained tradeoffs between index storage overhead, write and query throughput, and query consistency.  
+While many customers are happy to let DocumentDB automatically handle [all aspects of <!-- deleted by customization indexing](/documentation/articles/documentdb-indexing) --><!-- keep by customization: begin --> indexing](documentdb-indexing.md) <!-- keep by customization: end -->, DocumentDB also supports specifying a custom **indexing policy** for collections during creation. Indexing policies in DocumentDB are more flexible and powerful than secondary indexes offered in other indexing database platforms, in that they let you design and customize the shape of the index without sacrificing schema flexibility. To learn how indexing works within DocumentDB, you must understand that by managing indexing policy, you can make fine-grained tradeoffs between index storage overhead, write and query throughput, and query consistency.
 
 In this article, we take a close look at DocumentDB indexing policies, how you can customize indexing policy, and the associated trade-offs. 
 
@@ -30,7 +26,7 @@ After reading this article, you'll be able to answer the following questions:
 - How can I override the properties to include or exclude from indexing?
 - How can I configure the index for eventual updates?
 - How can I configure indexing to perform Order By or range queries?
-- How do I make changes to a collection’s indexing policy?
+- How do I make changes to a <!-- deleted by customization collection's --><!-- keep by customization: begin --> collection’s <!-- keep by customization: end --> indexing policy?
 - How do I compare storage and performance of different indexing policies?
 
 ##<a id="CustomizingIndexingPolicy"></a> Customizing the indexing policy of a collection
@@ -65,11 +61,11 @@ The following .NET code snippet shows how to set a custom indexing policy during
 
 ### Database indexing modes
 
-DocumentDB supports three indexing modes which can be configured via the indexing policy on a DocumentDB collection – Consistent, Lazy and None.
+DocumentDB supports three indexing modes which can be configured via the indexing policy on a DocumentDB collection <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> Consistent, Lazy and None.
 
-**Consistent**: If a DocumentDB collection’s policy is designated as "consistent", the queries on a given DocumentDB collection follow the same consistency level as specified for the point-reads (i.e. strong, bounded-staleness, session or eventual). The index is updated synchronously as part of the document update (i.e. insert, replace, update, and delete of a document in a DocumentDB collection).  Consistent indexing supports consistent queries at the cost of possible reduction in write throughput. This reduction is a function of the unique paths that need to be indexed and the “consistency level”. Consistent indexing mode is designed for “write quickly, query immediately” workloads.
+**Consistent**: If a DocumentDB <!-- deleted by customization collection's --><!-- keep by customization: begin --> collection’s <!-- keep by customization: end --> policy is designated as "consistent", the queries on a given DocumentDB collection follow the same consistency level as specified for the point-reads (i.e. strong, bounded-staleness, session or eventual). The index is updated synchronously as part of the document update (i.e. insert, replace, update, and delete of a document in a DocumentDB collection).  Consistent indexing supports consistent queries at the cost of possible reduction in write throughput. This reduction is a function of the unique paths that need to be indexed and the “consistency level”. Consistent indexing mode is designed for “write quickly, query immediately” workloads.
 
-**Lazy**: To allow maximum document ingestion throughput, a DocumentDB collection can be configured with lazy consistency; meaning queries are eventually consistent. The index is updated asynchronously when a DocumentDB collection is quiescent i.e. when the collection’s throughput capacity is not fully utilized to serve user requests. For "ingest now, query later" workloads requiring unhindered document ingestion, "lazy" indexing mode may be suitable.
+**Lazy**: To allow maximum document ingestion throughput, a DocumentDB collection can be configured with lazy consistency; meaning queries are eventually consistent. The index is updated asynchronously when a DocumentDB collection is quiescent i.e. when the <!-- deleted by customization collection's --><!-- keep by customization: begin --> collection’s <!-- keep by customization: end --> throughput capacity is not fully utilized to serve user requests. For "ingest now, query later" workloads requiring unhindered document ingestion, "lazy" indexing mode may be suitable.
 
 **None**: A collection marked with index mode of “None” has no index associated with it. Configuring the indexing policy with "None" has the side effect of dropping any existing index.
 
@@ -301,9 +297,9 @@ The following code sample show how create a DocumentDB collection using the .NET
 
 ### Index paths
 
-DocumentDB models JSON documents and the index as trees, and allows you to tune to policies for paths within the tree. You can find more details in this [introduction to DocumentDB indexing](documentdb-indexing.md). Within documents, you can choose which paths must be included or excluded from indexing. This can offer improved write performance and lower index storage for scenarios when the query patterns are known beforehand.
+DocumentDB models JSON documents and the index as trees, and allows you to tune to policies for paths within the tree. You can find more details in this [introduction to DocumentDB <!-- deleted by customization indexing](/documentation/articles/documentdb-indexing) --><!-- keep by customization: begin --> indexing](documentdb-indexing.md) <!-- keep by customization: end -->. Within documents, you can choose which paths must be included or excluded from indexing. This can offer improved write performance and lower index storage for scenarios when the query patterns are known beforehand.
 
-Index paths start with the root (/) and typically end with the ? wildcard operator, denoting that there are multiple possible values for the prefix. For example, to serve SELECT * FROM Families F WHERE F.familyName = "Andersen", you must include an index path for /familyName/? in the collection’s index policy.
+Index paths start with the root (/) and typically end with the? wildcard operator, denoting that there are multiple possible values for the prefix. For example, to serve SELECT * FROM Families F WHERE F.familyName = "Andersen", you must include an index path for /familyName/? in the <!-- deleted by customization collection's --><!-- keep by customization: begin --> collection’s <!-- keep by customization: end --> index policy.
 
 Index paths can also use the * wildcard operator to specify the behavior for paths recursively under the prefix. For example, /payload/* can be used to exclude everything under the payload property from indexing.
 
@@ -596,7 +592,7 @@ You can choose whether you want the collection to automatically index all docume
 
 With automatic indexing turned off, you can still selectively add only specific documents to the index. Conversely, you can leave automatic indexing on and selectively choose to exclude only specific documents. Indexing on/off configurations are useful when you have only a subset of documents that need to be queried.
 
-For example, the following sample shows how to include a document explicitly using the [DocumentDB .NET SDK](https://github.com/Azure/azure-documentdb-java) and the [RequestOptions.IndexingDirective](http://msdn.microsoft.com/library/microsoft.azure.documents.client.requestoptions.indexingdirective.aspx) property.
+For example, the following sample shows how to include a document explicitly using the [DocumentDB .NET SDK](https://github.com/Azure/azure-documentdb-java) and the <!-- deleted by customization [RequestOptions.IndexingDirective](http://msdn.microsoft.com/zh-cn/library/microsoft.azure.documents.client.requestoptions.indexingdirective.aspx) --><!-- keep by customization: begin --> [RequestOptions.IndexingDirective](http://msdn.microsoft.com/library/microsoft.azure.documents.client.requestoptions.indexingdirective.aspx) <!-- keep by customization: end --> property.
 
     // If you want to override the default collection behavior to either
     // exclude (or include) a Document from indexing,
@@ -611,11 +607,16 @@ DocumentDB allows you to make changes to the indexing policy of a collection on 
 
 **Online Index Transformations**
 
+<!-- deleted by customization
+![How indexing works - DocumentDB online index transformations](./media/documentdb-indexing-policies/index-transformations.png)
+-->
+<!-- keep by customization: begin -->
 ![How indexing works – DocumentDB online index transformations](media/documentdb-indexing-policies/index-transformations.png)
+<!-- keep by customization: end -->
 
 Index transformations are made online, meaning that the documents indexed per the old policy are efficiently transformed per the new policy **without affecting the write availability or the provisioned throughput** of the collection. The consistency of read and write operations made using the REST API, SDKs or from within stored procedures and triggers is not impacted during index transformation. This means that there is no performance degradation or downtime to your apps when you make an indexing policy change.
 
-However, during the time that index transformation is progress, queries are eventually consistent regardless of the indexing mode configuration (Consistent or Lazy). This also applies to queries from all interfaces – REST API, SDKs, and from within stored procedures and triggers. Just like with Lazy indexing, index transformation is performed asynchronously in the background on the replicas using the spare resources available for a given replica. 
+However, during the time that index transformation is progress, queries are eventually consistent regardless of the indexing mode configuration (Consistent or Lazy). This also applies to queries from all interfaces <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> REST API, SDKs, and from within stored procedures and triggers. Just like with Lazy indexing, index transformation is performed asynchronously in the background on the replicas using the spare resources available for a given replica.
 
 Index transformations are also made **in-situ** (in place), i.e. DocumentDB does not maintain two copies of the index and swap the old index out with the new one. This means that no additional disk space is required or consumed in your collections while performing index transformations.
 
@@ -626,7 +627,7 @@ You can however move to Lazy or None indexing mode while a transformation is in 
 - When you move to Lazy, the index policy change is made effective immediately and DocumentDB starts recreating the index asynchronously. 
 - When you move to None, then the index is dropped effective immediately. Moving to None is useful when you want to cancel an in progress transformation and start fresh with a different indexing policy. 
 
-If you’re using the .NET SDK, you can kick of an indexing policy change using the new **ReplaceDocumentCollectionAsync** method and track the percentage progress of the index transformation using the **IndexTransformationProgress** response property from a **ReadDocumentCollectionAsync** call. Other SDKs and the REST API support equivalent properties and methods for making indexing policy changes.
+If <!-- deleted by customization you're --><!-- keep by customization: begin --> you’re <!-- keep by customization: end --> using the .NET SDK, you can kick of an indexing policy change using the new **ReplaceDocumentCollectionAsync** method and track the percentage progress of the index transformation using the **IndexTransformationProgress** response property from a **ReadDocumentCollectionAsync** call. Other SDKs and the REST API support equivalent properties and methods for making indexing policy changes.
 
 Here's a code snippet that shows how to modify a collection's indexing policy from Consistent indexing mode to Lazy.
 
@@ -681,7 +682,7 @@ When would you make indexing policy changes to your DocumentDB collections? The 
 
 The DocumentDB APIs provide information about performance metrics such as the index storage used, and the throughput cost (request units) for every operation. This information can be used to compare various indexing policies and for performance tuning.
 
-To check the storage quota and usage of a collection, run a HEAD or GET request against the collection resource, and inspect the x-ms-request-quota and the x-ms-request-usage headers. In the .NET SDK, the [DocumentSizeQuota](http://msdn.microsoft.com/library/dn850325.aspx) and [DocumentSizeUsage](http://msdn.microsoft.com/library/azure/dn850324.aspx) properties in [ResourceResponse<T\>](http://msdn.microsoft.com/library/dn799209.aspx) contain these corresponding values.
+To check the storage quota and usage of a collection, run a HEAD or GET request against the collection resource, and inspect the x-ms-request-quota and the x-ms-request-usage headers. In the .NET SDK, the <!-- deleted by customization [DocumentSizeQuota](http://msdn.microsoft.com/zh-cn/library/dn850325.aspx) --><!-- keep by customization: begin --> [DocumentSizeQuota](http://msdn.microsoft.com/library/dn850325.aspx) <!-- keep by customization: end --> and <!-- deleted by customization [DocumentSizeUsage](http://msdn.microsoft.com/zh-cn/library/azure/dn850324.aspx) --><!-- keep by customization: begin --> [DocumentSizeUsage](http://msdn.microsoft.com/library/azure/dn850324.aspx) <!-- keep by customization: end --> properties in <!-- deleted by customization [ResourceResponse<T\>](http://msdn.microsoft.com/zh-cn/library/dn799209.aspx) --><!-- keep by customization: begin --> [ResourceResponse<T\>](http://msdn.microsoft.com/library/dn799209.aspx) <!-- keep by customization: end --> contain these corresponding values.
 
      // Measure the document size usage (which includes the index size) against   
      // different policies.        
@@ -689,7 +690,7 @@ To check the storage quota and usage of a collection, run a HEAD or GET request 
      Console.WriteLine("Document size quota: {0}, usage: {1}", collectionInfo.DocumentQuota, collectionInfo.DocumentUsage);
 
 
-To measure the overhead of indexing on each write operation (create, update, or delete), inspect the x-ms-request-charge header (or the equivalent [RequestCharge](http://msdn.microsoft.com/library/dn799099.aspx) property in [ResourceResponse<T\>](http://msdn.microsoft.com/library/dn799209.aspx) in the .NET SDK) to measure the number of request units consumed by these operations.
+To measure the overhead of indexing on each write operation (create, update, or delete), inspect the x-ms-request-charge header (or the equivalent <!-- deleted by customization [RequestCharge](http://msdn.microsoft.com/zh-cn/library/dn799099.aspx) --><!-- keep by customization: begin --> [RequestCharge](http://msdn.microsoft.com/library/dn799099.aspx) <!-- keep by customization: end --> property in <!-- deleted by customization [ResourceResponse<T\>](http://msdn.microsoft.com/zh-cn/library/dn799209.aspx) --><!-- keep by customization: begin --> [ResourceResponse<T\>](http://msdn.microsoft.com/library/dn799209.aspx) <!-- keep by customization: end --> in the .NET SDK) to measure the number of request units consumed by these operations.
 
      // Measure the performance (request units) of writes.     
      ResourceResponse<Document> response = await client.CreateDocumentAsync(collectionSelfLink, myDocument);              
@@ -774,8 +775,14 @@ For a practical comparison, here is one example custom indexing policy written u
 Follow the links below for index policy management samples and to learn more about DocumentDB's query language.
 
 1.	[DocumentDB .NET Index Management code samples](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/IndexManagement/Program.cs)
+<!-- deleted by customization
+2.	[DocumentDB REST API Collection Operations](https://msdn.microsoft.com/zh-cn/library/azure/dn782195.aspx)
+3.	[Query with DocumentDB SQL](/documentation/articles/documentdb-sql-query)
+-->
+<!-- keep by customization: begin -->
 2.	[DocumentDB REST API Collection Operations](https://msdn.microsoft.com/library/azure/dn782195.aspx)
 3.	[Query with DocumentDB SQL](documentdb-sql-query.md)
+<!-- keep by customization: end -->
 
  
 

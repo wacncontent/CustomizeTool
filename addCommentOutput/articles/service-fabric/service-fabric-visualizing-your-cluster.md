@@ -1,6 +1,6 @@
 <properties
    pageTitle="Visualizing your cluster using Service Fabric Explorer"
-   description="Service Fabric Explorer is a useful GUI tool for inspecting and managing cloud applications and nodes in a Microsoft Azure Service Fabric cluster."
+   description="Service Fabric Explorer is a useful GUI tool for inspecting and managing cloud applications and nodes in a Windows Azure Service Fabric cluster."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
@@ -8,23 +8,19 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/05/2015"
-   ms.author="jesseb"/>
+	ms.service="service-fabric"
+	ms.date="08/05/2015"
+	wacn.date=""/>
 
 # Visualizing your cluster using Service Fabric Explorer
 
-Service Fabric Explorer is a visual tool for inspecting and managing cloud applications and nodes in a Microsoft Azure Service Fabric cluster. Service Fabric Explorer can connect to both local development clusters and Azure clusters. For information on the Service Fabric PowerShell cmdlets, see the **Next Steps**.
+Service Fabric Explorer is a visual tool for inspecting and managing cloud applications and nodes in a Windows Azure Service Fabric cluster. Service Fabric Explorer can connect to both local development clusters and Azure clusters. For information on the Service Fabric PowerShell cmdlets, see the **Next Steps**.
 
 > [AZURE.NOTE] Creation of Service Fabric clusters in Azure is not yet available.
 
 ## Introduction to Service Fabric Explorer
 
-Ensure your local development environment is setup by following the instructions at [set up your Service Fabric development environment](service-fabric-get-started.md).
+Ensure your local development environment is setup by following the instructions at [set up your Service Fabric development environment](/documentation/articles/service-fabric-get-started).
 
 Run Service Fabric Explorer from your local installation path (%Program Files%\Microsoft SDKs\Service Fabric\Tools\ServiceFabricExplorer\ServiceFabricExplorer.exe). The tool will automatically connect to a local development cluster, if one exists.  It displays information on the cluster such as:
 
@@ -36,7 +32,7 @@ Run Service Fabric Explorer from your local installation path (%Program Files%\M
 
 ![Visual representation of the Service Fabric cluster and the deployed applications][servicefabricexplorer]
 
-One of the important visualizations is the cluster map, visible on the dashboard for the cluster (e.g. clicking on **Onebox/Local cluster**). The cluster map shows the set of upgrade domains and failure domains, and which nodes are mapped to which domains.  See the [technical overview of Service Fabric](service-fabric-technical-overview.md) to familiarize yourself with key Service Fabric concepts.
+One of the important visualizations is the cluster map, visible on the dashboard for the cluster (e.g. clicking on **Onebox/Local cluster**). The cluster map shows the set of upgrade domains and failure domains, and which nodes are mapped to which domains.  See the [technical overview of Service Fabric](/documentation/articles/service-fabric-technical-overview) to familiarize yourself with key Service Fabric concepts.
 
 ![Cluster map shows which upgrade domains and failure domains each node belongs to.][clustermap]
 
@@ -64,9 +60,9 @@ To view a remote Service Fabric cluster, click on **Connect** to bring up the **
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
 
-- [Testability overview](service-fabric-testability-overview.md).
-- [Managing your Service Fabric applications in Visual Studio](service-fabric-manage-application-in-visual-studio.md).
-- [Service Fabric application deployment using PowerShell](service-fabric-deploy-remove-applications.md)
+- [Testability overview](/documentation/articles/service-fabric-testability-overview).
+- [Managing your Service Fabric applications in Visual Studio](/documentation/articles/service-fabric-manage-application-in-visual-studio).
+- [Service Fabric application deployment using PowerShell](/documentation/articles/service-fabric-deploy-remove-applications)
 
 <!--Image references-->
 [applicationview]: ./media/service-fabric-visualizing-your-cluster/applicationview.png

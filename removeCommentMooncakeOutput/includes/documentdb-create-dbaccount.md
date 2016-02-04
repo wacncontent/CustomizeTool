@@ -3,7 +3,7 @@
 
 	![Screen shot of the Azure Preview portal, highlighting the New button and DocumentDB in the New blade][1]   
 
-	Alternatively, from the Startboard, you can browse the Azure Marketplace, select the “Data + analytics” category, choose **DocumentDB** and then click **Create**.  
+	Alternatively, from the Startboard, you can browse the Azure Marketplace, select the âData + analyticsâ category, choose **DocumentDB** and then click **Create**.  
 	
 	![Screen shot of the Azure Preview portal, showing the Marketplace blade with the DocumentDB tile highlighted, and the DocumentDB blade with the Create button highlighted][2]   
    

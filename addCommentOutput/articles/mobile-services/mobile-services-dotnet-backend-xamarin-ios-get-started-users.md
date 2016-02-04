@@ -9,11 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/18/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Add authentication to your Mobile Services app
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 This topic shows you how to authenticate users in Azure Mobile Services from your app. In this tutorial, you add authentication to the quickstart project using an identity provider that is supported by Mobile Services. After being successfully authenticated and authorized by Mobile Services, the user ID value is displayed.
@@ -38,7 +41,6 @@ This tutorial is based on the Mobile Services quickstart. You must also first co
 
 <ol start="6">
 <li><p>In Visual Studio or Xamarin Studio, run the client project on a device or simulator. Verify that an unhandled exception with a status code of 401 (Unauthorized) is raised after the app starts.</p>
-
    	<p>This happens because the app attempts to access Mobile Services as an unauthenticated user, but the <em>TodoItem</em> table now requires authentication.</p></li>
 </ol>
 
@@ -46,7 +48,7 @@ Next, you will update the app to authenticate users before requesting resources 
 
 ##<a name="add-authentication"></a>Add authentication to the app
 
-In this section, you will modify the app to display a login screen before displaying data. When the app starts, it will not not connect to your mobile service and will not display any data. After the first time that the user performs the refresh gesture, the login screen will appear; after successful login the list of todo items will be displayed.
+In this section, you will modify the app to display a login screen before displaying data. When the app starts, it will not connect to your mobile service and will not display any data. After the first time that the user performs the refresh gesture, the login screen will appear; after successful login the list of todo items will be displayed.
 
 1. In the client project, open the file **QSTodoService.cs** and add the following declarations to QSTodoService:
 
@@ -103,7 +105,6 @@ In this section, you will modify the app to display a login screen before displa
 			}
 		}
 		// rest of RefreshAsync method
-
 5. Press the **Run** button to build the project and start the app in the iPhone simulator. Verify that the app displays no data.
 
 	Perform the refresh gesture by pulling down the list of items, which will cause the login screen to appear. Once you have successfully entered valid credentials, the app will display the list of todo items and you can make updates to the data.
@@ -112,7 +113,6 @@ In this section, you will modify the app to display a login screen before displa
 
 In the next tutorial, [Service-side authorization of Mobile Services users][Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services.
  -->
-
 <!-- Anchors. -->
 [Register your app for authentication and configure Mobile Services]: #register
 [Restrict table permissions to authenticated users]: #permissions
@@ -124,6 +124,14 @@ In the next tutorial, [Service-side authorization of Mobile Services users][Auth
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
+<!-- deleted by customization
+[Get started with Mobile Services]: mobile-services-dotnet-backend-xamarin-ios-get-started.md
+[Get started with authentication]: mobile-services-dotnet-backend-xamarin-ios-get-started-users.md
+[Get started with push notifications]: mobile-services-dotnet-backend-xamarin-ios-get-started-push.md
+[Authorize users with scripts]: ../mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts.md
+[JavaScript and HTML]: ../mobile-services-dotnet-backend-windows-store-javascript-get-started-users.md
+-->
+<!-- keep by customization: begin -->
 [Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started-push
@@ -131,3 +139,4 @@ In the next tutorial, [Service-side authorization of Mobile Services users][Auth
 [JavaScript and HTML]: /documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
+<!-- keep by customization: end -->

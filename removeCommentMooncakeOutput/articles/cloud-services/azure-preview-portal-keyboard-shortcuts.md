@@ -4,13 +4,14 @@
    services="cloud-services"
    documentationCenter=""
    authors="curtand"
-   manager="msStevenPo"
+   manager="stevenpo"
    editor=""/>
 
 <tags
-	ms.service="multiple"
-	ms.date="09/10/2015"
-	wacn.date=""/>
+   ms.service="multiple"
+
+   ms.date="12/01/2015"
+   wacn.date=""/>
 
 # Azure Management Portal keyboard shortcuts
 
@@ -36,7 +37,7 @@
 | - | Minimize blade or restore from maximized |
 | + | Maximize blade or restore from minimized |
 | # | Close current blade |
-| ¦ | Close all blades |
+| ÂŚ | Close all blades |
 | , | Move focus to command bar |
 | . | Move focus to navigation bar |
 | ? | View keyboard shortcuts |
@@ -44,4 +45,5 @@
 
 ## Next steps
 
-Get to know the Azure Management Portal better: http://azure.microsoft.com.
+Get to know the Azure Management Portal better: http://www.windowsazure.cn/.
+

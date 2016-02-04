@@ -1,7 +1,19 @@
-<properties pageTitle="Tutorial: Azure Active Directory integration with SimpleNexus | Windows Azure" description="Learn how to use SimpleNexus with Azure Active Directory to enable single sign-on, automated provisioning, and more!." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+<properties 
+    pageTitle="Tutorial: Azure Active Directory integration with SimpleNexus | Windows Azure" 
+    description="Learn how to use SimpleNexus with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
+    services="active-directory" 
+    authors="markusvi"  
+    documentationCenter="na" 
+    manager="stevenpo"/>
+<tags
+	ms.service="active-directory"
+	ms.date="10/22/2015"
+	wacn.date=""/>
+
 #Tutorial: Azure Active Directory integration with SimpleNexus
+<!-- keep by customization: begin -->
 >[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=528205).
+<!-- keep by customization: end -->
   
 The objective of this tutorial is to show the integration of Azure and SimpleNexus.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -9,7 +21,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A SimpleNexus single sign-on enabled subscription
   
-After completing this tutorial, the Azure AD users you have assigned to SimpleNexus will be able to single sign into the application at your SimpleNexus company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586)
+After completing this tutorial, the Azure AD users you have assigned to SimpleNexus will be able to single sign into the application at your SimpleNexus company site (service provider initiated sign on), or using the [Introduction to the Access <!-- deleted by customization Panel](/documentation/articles/active-directory-saas-access-panel-introduction). --><!-- keep by customization: begin --> Panel](https://msdn.microsoft.com/zh-cn/library/dn308586) <!-- keep by customization: end -->
   
 The scenario outlined in this tutorial consists of the following building blocks:
 
@@ -64,7 +76,7 @@ The objective of this section is to outline how to enable users to authenticate 
 
     ![Configure Single Sign-On](./media/active-directory-saas-simplenexus-tutorial/IC785897.png "Configure Single Sign-On")
 
-3.  On the **Configure App URL** page, in the **SimpleNexus Sign In URL** textbox, type your URL using the following pattern "*https://simplenexus.com/CompanyName_login*", and then click **Next**.
+3.  On the **Configure App URL** page, in the **SimpleNexus Sign In URL** textbox, type your URL using the following pattern <!-- deleted by customization "*https://simplenexus.com/CompanyName\_login*" --><!-- keep by customization: begin --> "*https://simplenexus.com/CompanyName_login*" <!-- keep by customization: end -->, and then click **Next**.
 
     ![Configure App URL](./media/active-directory-saas-simplenexus-tutorial/IC786904.png "Configure App URL")
 
@@ -100,4 +112,4 @@ To test your configuration, you need to grant the Azure AD users you want to all
 
     ![Yes](./media/active-directory-saas-simplenexus-tutorial/IC767830.png "Yes")
   
-If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586).
+If you want to test your single sign-on settings, open the Access Panel. For more details about the Access Panel, see [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).

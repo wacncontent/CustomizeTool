@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="remoteapp"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="compute"
-   ms.date="08/12/2015"
-   ms.author="guscatal;spatnaik;elizapo"/>
+	ms.service="remoteapp"
+	ms.date="08/12/2015"
+	wacn.date=""/>
 
 
 
@@ -26,17 +22,17 @@
 -------------
 First we need to download Azure Powershell commandlets [here](http://go.microsoft.com/?linkid=9811175), the RemoteApp ones are included in it. 
 
-Check out the Azure RemoteApp cmdlet help [here](https://msdn.microsoft.com/library/mt428031.aspx).
+Check out the Azure RemoteApp cmdlet help [here](https://msdn.microsoft.com/zh-cn/library/mt428031.aspx).
 
 ## Configure Azure cmdlets to use your subscription
 ------------------
-Follow [this guide](../powershell-install-configure.md) so you can use the cmdlets against your Azure subscription.
+Follow [this guide](/documentation/articles/powershell-install-configure) so you can use the cmdlets against your Azure subscription.
 
 ## Create a cloud collection
 --------------------
 It's simple, run the following command:
 
-    New-AzureRemoteAppCollection -Collectionname RAppO365Col1 -ImageName "Office 365 ProPlus (Subscription required)" -Plan Basic -Location "West US" - Description "Office 365 Collection."
+    New-AzureRemoteAppCollection -Collectionname RAppO365Col1 -ImageName "Office 365 ProPlus (Subscription required)" -Plan Basic -Location "China North" - Description "Office 365 Collection."
 
 The above command automatically publishes Microsoft Office 365 applications (Excel, OneNote, Outlook, PowerPoint, Visio and Word).
 
@@ -49,7 +45,7 @@ After the collection is done, you can add users to the collection with the follo
 
     Add-AzureRemoteAppUser -CollectionName RAppO365Col1 -Type microsoftAccount -UserUpn someone@domain.com
 
-And you're done! That user should be able to connect to the application using the Azure RemoteApp client found [here](https://www.remoteapp.windowsazure.com/).
+And you're done! That user should be able to connect to the application using the Azure RemoteApp client found [here](https://www.remoteapp.windowsazure.cn/).
 
 ## Available cmdlets
 There are lots of other commands that we have, the documentation for them will be coming shortly:

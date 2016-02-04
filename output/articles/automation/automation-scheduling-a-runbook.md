@@ -37,7 +37,7 @@ The following sample commands show how to create a new schedule that runs each d
 
 	$automationAccountName = "MyAutomationAccount"
 	$scheduleName = "Sample-DailySchedule"
-	New-AzureAutomationSchedule –AutomationAccountName $automationAccountName –Name $scheduleName –StartTime "1/20/2015 15:30:00" –DayInterval 1
+	New-AzureAutomationSchedule -AutomationAccountName $automationAccountName -Name $scheduleName -StartTime "1/20/2015 15:30:00" -DayInterval 1
 
 ## Linking a schedule to a runbook
 
@@ -54,7 +54,7 @@ A runbook can be linked to multiple schedules, and a schedule can have multiple 
 
 ### To link a schedule to a runbook with Windows PowerShell
 
-You can use the [Register-AzureAutomationScheduledRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690265.aspx) to link a schedule to a runbook. You can specify values for the runbook’s parameters with the Parameters parameter. See [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook) for more information on specifying parameter values.
+You can use the [Register-AzureAutomationScheduledRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690265.aspx) to link a schedule to a runbook. You can specify values for the runbook's parameters with the Parameters parameter. See [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook) for more information on specifying parameter values.
 
 The following sample commands show how to link a schedule to a runbook with parameters.
 
@@ -62,7 +62,7 @@ The following sample commands show how to link a schedule to a runbook with para
 	$runbookName = "Test-Runbook"
 	$scheduleName = "Sample-DailySchedule"
 	$params = @{"FirstName"="Joe";"LastName"="Smith";"RepeatCount"=2;"Show"=$true}
-	Register-AzureAutomationScheduledRunbook –AutomationAccountName $automationAccountName –Name $runbookName –ScheduleName $scheduleName –Parameters $params
+	Register-AzureAutomationScheduledRunbook -AutomationAccountName $automationAccountName -Name $runbookName -ScheduleName $scheduleName -Parameters $params
 
 ## Disabling a schedule
 
@@ -85,7 +85,7 @@ The following sample commands show how to disable a schedule.
 
 	$automationAccountName = "MyAutomationAccount"
 	$scheduleName = "Sample-DailySchedule"
-	Set-AzureAutomationSchedule –AutomationAccountName $automationAccountName –Name $scheduleName –IsEnabled $false
+	Set-AzureAutomationSchedule -AutomationAccountName $automationAccountName -Name $scheduleName -IsEnabled $false
 
 ## Related articles
 

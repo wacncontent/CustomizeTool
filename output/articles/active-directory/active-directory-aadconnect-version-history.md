@@ -1,4 +1,4 @@
-﻿<properties
+<properties
    pageTitle="Azure AD Connect: Version Release History | Windows Azure"
    description="This topic lists all releases of Azure AD Connect and Azure AD Sync"
    services="active-directory"
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/03/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # Azure AD Connect: Version Release History
@@ -22,6 +22,16 @@ Related links:
 
 - For permissions required to apply an update, see [accounts and permissions](/documentation/articles/active-directory-aadconnect-accounts-permissions#upgrade)
 - [Download Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771)
+
+## 1.0.9131.0
+Released: 2015 December
+
+**Fixed issues:**
+
+- Password sync might not work when you change passwords in AD DS, but works when you do set password.
+- When you have a proxy server, authentication to Azure AD might fail during installation or un upgrade on the configuration page.
+- Updating from a previous release of Azure AD Connect with a full SQL Server will fail if you are not SA in SQL.
+- Updating from a previous release of Azure AD Connect with a remote SQL Server will show the error "Unable to access the ADSync SQL database".
 
 ## 1.0.9125.0
 Released: 2015 November
@@ -69,10 +79,10 @@ Released: 2015 August
 - Azure AD Connect installation wizard crashes if another user continues installation rather than the person who first started the installation.
 - If a previous uninstall of Azure AD Connect fails to uninstall Azure AD Connect sync cleanly, it is not possible to reinstall.
 - Cannot install Azure AD Connect using Express install if the user is not in the root domain of the forest or if a non-English version of Active Directory is used.
-- If the FQDN of the Active Directory user account cannot be resolved, a misleading error message “Failed to commit the schema” is shown.
+- If the FQDN of the Active Directory user account cannot be resolved, a misleading error message "Failed to commit the schema" is shown.
 - If the account used on the Active Directory Connector is changed outside the wizard, the wizard will fail on subsequent runs.
 - Azure AD Connect sometimes fails to install on a domain controller.
-- Cannot enable and disable “Staging mode” if extension attributes have been added.
+- Cannot enable and disable "Staging mode" if extension attributes have been added.
 - Password writeback fails in some configuration because of a bad password on the Active Directory Connector.
 - DirSync cannot be upgraded if dn is used in attribute filtering.
 - Excessive CPU usage when using password reset.
@@ -130,7 +140,7 @@ Released: 2015 April
 
 **New features:**
 
-- A join can now connect to “ANY” object type in the MV.
+- A join can now connect to "ANY" object type in the MV.
 
 ## 1.0.485.0222
 Released: 2015 February
@@ -142,8 +152,8 @@ Released: 2015 February
 **Fixed issues:**
 
 - Password Sync honors the cloudFiltered attribute used by attribute filtering. Filtered objects will no longer be in scope for password synchronization.
-- In rare situations where the topology had very many domain controllers, password sync doesn’t work.
-- “Stopped-server” when importing from the Azure AD Connector after device management has been enabled in Azure AD/Intune.
+- In rare situations where the topology had very many domain controllers, password sync doesn't work.
+- "Stopped-server" when importing from the Azure AD Connector after device management has been enabled in Azure AD/Intune.
 - Joining Foreign Security Principals (FSPs) from multiple domains in same forest causes an ambiguous-join error.
 
 ## 1.0.475.1202
@@ -185,7 +195,7 @@ If you already have Azure AD Sync installed, there is one additional step you ha
 
 **Permissions for the AD account**
 
-The AD account must be granted additional permissions to be able to read the password hashes from AD. The permissions to grant are named “Replicating Directory Changes” and “Replicating Directory Changes All”. Both permissions are required to be able to read the password hashes
+The AD account must be granted additional permissions to be able to read the password hashes from AD. The permissions to grant are named "Replicating Directory Changes" and "Replicating Directory Changes All". Both permissions are required to be able to read the password hashes
 
 ## 1.0.419.0911
 Released: 2014 September

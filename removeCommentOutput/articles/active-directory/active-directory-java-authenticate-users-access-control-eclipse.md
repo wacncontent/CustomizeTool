@@ -51,7 +51,7 @@ To complete the tasks in this guide, you should understand the following
 concepts:
 
 **Client** - In the context of this how-to guide, this is a browser that
-is attempting to gain access to your web application.
+is attempting to gain access to your web site.
 
 **Relying party (RP) application** - An RP application is a website or
 service that outsources authentication to one external authority. In
@@ -131,7 +131,7 @@ addressing ACS resources from within your application.
 
 1. Log into the [Azure Management Portal][].
 2. Click **Active Directory**. 
-3. To create a new Access Control namespace, click **New**, click **App Services**, click **Access Control**, and then click **Quick Create**. 
+3. To create a new Access Control namespace, click **New**, click **Azure Websitess**, click **Access Control**, and then click **Quick Create**. 
 4. Enter a name for the namespace. Azure verifies that the name is unique.
 5. Select the region in which the namespace is used. For the best performance, use the region in which you are deploying your application.
 6. If you have more than one subscription, select the subscription that you want to use for the ACS namespace.
@@ -152,7 +152,7 @@ Management Portal.
 3.  Windows Live ID is enabled by default, and cannot be deleted. For purposes of this tutorial, only Windows Live ID is used. This screen, however, is where you could add other IPs, by clicking the **Add** button.
 
 Windows Live ID is now enabled as an IP for your ACS namespace. Next, you
-specify your Java web application (to be created later) as an RP.
+specify your Java web site (to be created later) as an RP.
 
 ## Add a relying party application
 
@@ -173,7 +173,7 @@ application as a valid RP application.
 
 4.  Click **Save**.
 
-You have now successfully configured your Java web application when it is run in the Azure compute emulator (at
+You have now successfully configured your Java web site when it is run in the Azure compute emulator (at
 http://localhost:8080/) to be an RP in your ACS namespace. Next, create
 the rules that ACS uses to process claims for the RP.
 
@@ -185,9 +185,9 @@ ACS to copy the input claim types and values directly in the output
 token, without filtering or modifying them.
 
 1.  On the ACS Management Portal main page, click **Rule groups**.
-2.  On the **Rule Groups** page, click **Default Rule Group for Azure Web App**.
+2.  On the **Rule Groups** page, click **Default Rule Group for Azure web site**.
 3.  On the **Edit Rule Group** page, click **Generate**.
-4.  On the **Generate Rules: Default Rule Group for Azure Web App** page, ensure Windows Live ID is checked and then click **Generate**.	
+4.  On the **Generate Rules: Default Rule Group for Azure web site** page, ensure Windows Live ID is checked and then click **Generate**.	
 5.  On the **Edit Rule Group** page, click **Save**.
 
 ## Upload a certificate to your ACS namespace
@@ -197,7 +197,7 @@ In this task, you upload a .PFX certificate that will be used to sign token requ
 1.  On the ACS Management Portal main page, click **Certificates and keys**.
 2.  On the **Certificates and Keys** page, click **Add** above **Token Signing**.
 3.  On the **Add Token-Signing Certificate or Key** page:
-    1. In the **Used for** section, click **Relying Party Application** and select **Azure Web App** (which you previously set as the name of your relying party application).
+    1. In the **Used for** section, click **Relying Party Application** and select **Azure web site** (which you previously set as the name of your relying party application).
     2. In the **Type** section, select **X.509 Certificate**.
     3. In the **Certificate** section, click the browse button and navigate to the X.509 certificate file that you want to use. This will be a .PFX file. Select the file, click **Open**,  and then enter the certificate password in the **Password** text box. Note that for testing purposes, you may use a self-signed-certificate. To create a self-signed certificate, use the **New** button in the **ACS Filter Library** dialog (described later), or use the **encutil.exe** utility from the [project website][] of the Azure Starter Kit for Java.
     4. Ensure that **Make Primary** is checked. Your **Add Token-Signing Certificate or Key** page should look similar to the following.
@@ -211,18 +211,18 @@ application to use ACS.
 ## Review the Application Integration page
 
 You can find all the information and the code necessary to configure
-your Java web application (the RP application) to work with ACS on
+your Java web site (the RP application) to work with ACS on
 the Application Integration page of the ACS Management Portal. You will
-need this information when configuring your Java web application for
+need this information when configuring your Java web site for
 federated authentication.
 
 1.  On the ACS Management Portal, click **Application integration**.  
 2.  In the **Application Integration** page, click **Login Pages**.
-3.  In the **Login Page Integration** page, click **Azure Web App**.
+3.  In the **Login Page Integration** page, click **Azure web site**.
 
-In the **Login Page Integration: Azure Web App** page, the URL listed in **Option 1: Link to an ACS-hosted login page** will be used in your Java web application. You will need this value when you add the Azure Access Control Services Filter library to your Java application.
+In the **Login Page Integration: Azure web site** page, the URL listed in **Option 1: Link to an ACS-hosted login page** will be used in your Java web site. You will need this value when you add the Azure Access Control Services Filter library to your Java application.
 
-## Create a Java web application
+## Create a Java web site
 1. Within Eclipse, at the menu click **File**, click **New**, and then click **Dynamic Web Project**. (If you don't see **Dynamic Web Project** listed as an available project after clicking **File**, **New**, then do the following: click **File**, click **New**, click **Project**, expand **Web**, click **Dynamic Web Project**, and click **Next**.) For purposes of this tutorial, name the project **MyACSHelloWorld**. (Ensure you use this name, subsequent steps in this tutorial expect your WAR file to be named MyACSHelloWorld). Your screen will appear similar to the following:
 
     ![Create a Hello World project for ACS exampple][create_acs_hello_world]
@@ -273,7 +273,7 @@ In the **Login Page Integration: Azure Web App** page, the URL listed in **Optio
 3. Select a JDK and application server. (These steps are covered in detail in the [Creating a Hello World Application for Azure in Eclipse](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx) tutorial).
 4. Click **Finish**.
 5. Click the **Run in Azure Emulator** button.
-6. After your Java web application starts in the compute emulator, close all instances of your browser (so that any current browser sessions do not interfere with your ACS login test).
+6. After your Java web site starts in the compute emulator, close all instances of your browser (so that any current browser sessions do not interfere with your ACS login test).
 7. Run your application by opening <http://localhost:8080/MyACSHelloWorld/> in your browser (or <https://localhost:8080/MyACSHelloWorld/> if you checked **Require HTTPS connections**). You should be prompted for a Windows Live ID login, then you should be taken to the return URL specified for your relying party application.
 99.  When you have finished viewing your application, click the **Reset Azure Emulator** button.
 
@@ -306,7 +306,7 @@ To deploy to Azure, you'll need to change the relying party realm and return URL
 14. Click **OK** to close the **Properties for MyACSHelloWorld** dialog.
 15. In Eclipse, click the **Publish to Azure Cloud** button. Respond to the prompts, similar as done in the **To deploy your application to Azure** section of the [Creating a Hello World Application for Azure in Eclipse](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx) topic. 
 
-After your web application has been deployed, close any open browser sessions, run your web application, and you should be prompted to sign in with Windows Live ID credentials, followed by being sent to the return URL of your relying party application.
+After your web site has been deployed, close any open browser sessions, run your web site, and you should be prompted to sign in with Windows Live ID credentials, followed by being sent to the return URL of your relying party application.
 
 When you are done using your ACS Hello World application, remember to delete the deployment (you can learn how to delete a deployment in the [Creating a Hello World Application for Azure in Eclipse](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx) topic).
 
@@ -339,14 +339,14 @@ At this point, your certificate would be included in your deployment. Note that 
 [What is ACS?]: #what-is
 [Concepts]: #concepts
 [Prerequisites]: #pre
-[Create a Java web application]: #create-java-app
+[Create a Java web site]: #create-java-app
 [Create an ACS Namespace]: #create-namespace
 [Add Identity Providers]: #add-IP
 [Add a Relying Party Application]: #add-RP
 [Create Rules]: #create-rules
 [Upload a certificate to your ACS namespace]: #upload-certificate
 [Review the Application Integration Page]: #review-app-int
-[Configure Trust between ACS and Your ASP.NET Web Application]: #config-trust
+[Configure Trust between ACS and Your ASP.NET web site]: #config-trust
 [Add the ACS Filter library to your application]: #add_acs_filter_library
 [Deploy to the compute emulator]: #deploy_compute_emulator
 [Deploy to Azure]: #deploy_azure

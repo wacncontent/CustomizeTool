@@ -17,8 +17,7 @@
 
 This article describes how to create and manage Windows virtual machines using Azure PowerShell.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a Windows VM with the classic deployment model. You can also create a Windows VM with the [Resource Manager deployment model](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell).
-
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
 
 
 ## Set up Azure PowerShell
@@ -27,7 +26,7 @@ If you have already installed Azure PowerShell, you must have Azure PowerShell v
 
 	Get-Module azure | format-table version
 
-If you haven't done so already, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell) to install Azure PowerShell on your local computer. Then, open an Azure PowerShell command prompt.
+If you haven't done so already, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) to install Azure PowerShell on your local computer. Then, open an Azure PowerShell command prompt.
 
 First, you must sign in to Azure by using this command:
 
@@ -42,7 +41,7 @@ Next, if you have multiple Azure subscriptions, you need to set your Azure subsc
 Now, replace everything within the quotes, including the < and > characters, with the correct subscription name and run these commands:
 
 	$subscrName="<subscription name>"
-	Select-AzureSubscription -SubscriptionName $subscrName –Current
+	Select-AzureSubscription -SubscriptionName $subscrName -Current
 
 ## Create a virtual machine
 
@@ -91,7 +90,7 @@ Next, copy this set of Azure PowerShell commands to a text editor, such as Notep
 	$vm=New-AzureVMConfig -Name $vmName -InstanceSize Medium -ImageName $image
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account."
 	$vm | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
-	New-AzureVM –ServiceName $csName –Location $locName -VMs $vm
+	New-AzureVM -ServiceName $csName -Location $locName -VMs $vm
 
 In your text editor, fill in the name of the virtual machine, the cloud service name, and the location.
 
@@ -202,6 +201,6 @@ To attach data disks from an existing .vhd file in blob storage, run this comman
 
 [Virtual Machines documentation](/documentation/services/virtual-machines/)
 
-[How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)
+[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
 
 [Use Azure PowerShell to create and preconfigure Windows-based virtual machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)

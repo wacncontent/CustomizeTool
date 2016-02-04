@@ -7,25 +7,3 @@ deleted:
 
 reason: ()
 
-replacement:
-
-deleted:
-
-		Support](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade)
-
-replaced by:
-
-		Support](https://manage.windowsazure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade)
-
-reason: ()
-
-deleted:
-
-		Support](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade)
-
-replaced by:
-
-		Support](https://manage.windowsazure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade)
-
-reason: ()
-

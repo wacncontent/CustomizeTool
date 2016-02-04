@@ -10,14 +10,14 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/10/2015"
+	ms.date="12/15/2015"
 	wacn.date=""/>
 
 #How to create a LAMP Stack with Windows Azure
 
 A "LAMP" stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web applications. This term is actually an acronym that represents the Linux operating system with the Apache web server. The site data is stored in a MySQL database, and dynamic content is processed by PHP.  
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the Resource Manager deployment model or the classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
 In this guide, we'll get a LAMP stack installed on a Linux image and deploy it on Windows Azure.  
@@ -32,23 +32,22 @@ It is assumed that the reader already has an Azure subscription.  If not you can
 
 In addition to this topic, if you already have a virtual machine and are just looking for the basics of installing a  LAMP stack on different Linux distributions, refer to [Install the LAMP Stack on a Linux virtual machine in Azure](/documentation/articles/virtual-machines-linux-install-lamp-stack).
 
-You can also deploy pre-configured LAMP images from the Azure Marketplace. The following 10 minute video introduces deploying pre-built LAMP images from the Azure Marketplace: (LAMP stack on Azure VMs](https://channel9.msdn.com/Shows/Azure-Friday/LAMP-stack-on-Azure-VMs-with-Guy-Bowerman).
 
 ##Phase 1: Create an image
 In this phase, you will create a virtual machine using a Linux image in Azure.  
 
 ###Step 1: Generate an SSH Authentication Key
-SSH is an important tool for system administrators. However, relying on a human-determined password for security is not always wise. A strong SSH key allows you to leave remote access open without worrying about passwords. The method consists of authentication with asymmetric cryptography. The user’s private key is the one that grants the authentication. You can even lock the user’s account to disallow password authentication completely.
+SSH is an important tool for system administrators. However, relying on a human-determined password for security is not always wise. A strong SSH key allows you to leave remote access open without worrying about passwords. The method consists of authentication with asymmetric cryptography. The user's private key is the one that grants the authentication. You can even lock the user's account to disallow password authentication completely.
 
 Follow these steps to generate the SSH Authentication Key.
 
--	Download and install puttygen from the following location: [http://www.chiark.greenend.org.uk/~sgtatham/](http://www.chiark.greenend.org.uk/~sgtatham/)putty/download.html
+-	Download and install puttygen from [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 -	Run puttygen.exe.
 -	Click **Generate** to generate the keys. In the process you can increase randomness by moving the mouse over the blank area in the window.  
 ![][1]
--	After the generate process, Puttygen.exe will show your generated key. For example:  
+-	After the generate process, puttygen.exe will show your generated key. For example:  
 ![][2]
--	Select and copy the public key in **Key** and save it in a file named **publicKey.pem**. Don’t click **Save public key**, because the saved public key’s file format is different from the public key we want.
+-	Select and copy the public key in **Key** and save it in a file named **publicKey.pem**. Don't click **Save public key**, because the saved public key's file format is different from the public key we want.
 -	Click **Save private key** and save it in a file named **privateKey.ppk**.
 
 ###Step 2: Create the image in the Azure Management Portal.
@@ -89,8 +88,8 @@ Configure the endpoint:
 1.	Type a name for the endpoint in **Endpoint**.
 2.	Type 80 in **Public Port**. If you changed the default listen port of Apache, you should update Private Port to be the same as the Apache listen port.
 3.	Type 80 in **Public Port**. By default, HTTP traffic uses port 80.
-If you set it to 80, don’t need to include the port number in the URL that allows you to access the Apache web service. For example, http://lampdemo.chinacloudapp.cn.
-If you set the Apache listening port to another value, such as 81, you need to add the port number to the URL to access the Apache web service. For example,  http://lampdemo.chinacloudapp.cn:81/.
+If you set it to 80, don't need to include the port number in the URL that allows you to access the Apache web service. For example, http://lampdemo.chinacloudapp.cn.
+If you set the Apache listening port to another value, such as 81, you need to add the port number to the URL to access the Apache web service. For example, http://lampdemo.chinacloudapp.cn:81/.
 
 ![][7]
 
@@ -108,7 +107,7 @@ Get the port number for SSH connections from the **SSH** field.   Here is an exa
 
 ![][8]
 
-Download Putty from [here](http://www.putty.org/) .  
+Download Putty from [here](http://www.putty.org/).  
 
 After downloading, click the executable file PUTTY.EXE. Configure the basic options with the host name and port number obtained from the properties of your virtual machine. Here is an example:
 
@@ -147,11 +146,11 @@ Once it installs, start Apache with this command:
 	sudo service httpd start
 
 ####Test Apache
-To check if Apache is successfully installed, browse to your Apache server’s DNS name (for the example URL in this article, http://lampdemo.chinacloudapp.cn/). The page should display the words “It works!"
+To check if Apache is successfully installed, browse to your Apache server's DNS name (for the example URL in this article, http://lampdemo.chinacloudapp.cn/). The page should display the words “It works!"
 ![][14]
 
 ####Troubleshooting
-If Apache is running but you can’t see Apache default page above, you need to check following:  
+If Apache is running but you can't see Apache default page above, you need to check following:  
 
 -	Apache web service listening address / port
 	-	Check your endpoint setting for your Azure virtual machine. Make sure the configuration of the endpoint is appropriate. See the Phase 1: Create an Image instructions in this article.
@@ -204,7 +203,7 @@ After it is done installing, you can set a root MySQL password with the followin
 
 The prompt will ask you for your current root password.
 
-Since you just installed MySQL, you most likely won’t have one, so leave it blank by pressing ENTER.  
+Since you just installed MySQL, you most likely won't have one, so leave it blank by pressing ENTER.  
 
 	Enter current password for root (enter for none):
 	OK, successfully used password, moving on...  
@@ -263,7 +262,7 @@ Answer “y” to download software packages. Then answer “y” to Importing G
 	warning: rpmts_HdrFromFdno: Header V3 DSA signature: NOKEY, key ID e8562897
 	updates/gpgkey                                                                                                                                                                       | 1.5 kB     00:00
 	Importing GPG key 0xE8562897 "CentOS-5 Key (CentOS 5 Official Signing Key) <centos-5-key@centos.org>" from /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-	Is this ok [y/N]: y
+	Is this ok [y/N]: y  
 
 ###Debian, Ubuntu base
 This has been tested on Ubuntu 14.04.  
@@ -363,7 +362,7 @@ Once you have setup the LAMP stack successfully, you can deploy your existing we
 ###Can't access Virtual Machine with Apache and Moodle from the Internet
 
 -	**Symptom**  
-Apache is running but you can’t see the Apache default page with your browser.
+Apache is running but you can't see the Apache default page with your browser.
 -	**Possible root case**
 	1.	The Apache listening port is not same as the Private Port of your virtual machine's endpoint for web traffic.</br>
 	Check your Public Port and Private Port endpoint settings and make sure the Private Port is same as the Apache listen port. See Phase 1: Create an Image for instructions on configuring endpoints for your virtual machine.</br>

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Spark on Ubuntu Resource Manager Template | Windows Azure"
 	description="How to deploy a new Spark cluster on Ubuntu VMs using Azure PowerShell or the Azure CLI and a Resource Manager template"
@@ -16,6 +18,9 @@
 # Spark on Ubuntu with a Resource Manager template
 
 Apache Spark is a fast engine for large-scale data processing. Spark has an advanced DAG execution engine that supports cyclic data flow and in-memory computing, and it can access diverse data sources, including HDFS, Spark, HBase, and S3.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't deploy this resource with the classic deployment model.
+
 
 In addition to running on the Mesos or YARN cluster managers, Spark provides a simple standalone deployment mode. This tutorial will walk you through how to use a sample Azure Resource Manager template to deploy a Spark cluster on Ubuntu VMs through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli-install).
 
@@ -40,7 +45,7 @@ As shown in the above image, the deployment topology consists of the following e
 -	Four slave nodes running in the same virtual subnet and availability set as the master node.
 -	A jump-box VM located in the same virtual network and subnet that can be used to access the cluster.
 
-Spark version 3.0.0 is the default version and can be changed to any pre-built binaries available on the Spark repository. There is also a provision in the script to uncomment the build from source. A static IP address will be assigned to each Spark master node: 10.0.0.10. A static IP address will be assigned to each Spark slave node in order to work around the current limitation of not being able to dynamically compose a list of IP addresses from within the template. (By default, the first node will be assigned the private IP address of 10.0.0.30, the second node will be assigned 10.0.0.31, and so on.) To check deployment errors, go to the new Azure Management Portal and look under **Resource Group** > **Last deployment** > **Check Operation Details**.
+Spark version 3.0.0 is the default version and can be changed to any pre-built binaries available on the Spark repository. There is also a provision in the script to uncomment the build from source. A static IP address will be assigned to each Spark master node: 10.0.0.10. A static IP address will be assigned to each Spark slave node in order to work around the current limitation of not being able to dynamically compose a list of IP addresses from within the template. (By default, the first node will be assigned the private IP address of 10.0.0.30, the second node will be assigned 10.0.0.31, and so on.) To check deployment errors, go to the Azure Management Portal and look under **Resource Group** > **Last deployment** > **Check Operation Details**.
 
 Before diving into more details related to Azure Resource Manager and the template we will use for this deployment, make sure you have Azure PowerShell or the Azure CLI configured correctly.
 

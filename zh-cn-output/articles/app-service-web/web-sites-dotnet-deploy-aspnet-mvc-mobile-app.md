@@ -10,7 +10,7 @@
 <tags 
 	ms.service="app-service-web" 
 	ms.date="09/16/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="11/27/2015"/>
 
 
 # 在 Azure 网站上部署 ASP.NET MVC 5 移动 Web 应用
@@ -65,7 +65,7 @@
 - [改进 SessionsTable 视图][]
 - [改进 SessionByCode 视图][]
 
-##<a name="bkmk_DeployStarterProject"></a>将初学者项目部署到 Windows Azure Web 应用
+## <a name="bkmk_DeployStarterProject"></a>将初学者项目部署到 Windows Azure Web 应用
 
 1.	下载会议列表应用程序[初学者项目][StarterProject]。
 
@@ -121,7 +121,7 @@ ASP.NET 标记视图已根据屏幕大小缩放，这是 Bootstrap 自动为你�
 
 Bootstrap 支持是 MVC 5 模板中内置的新功能。你已经看到了它如何立即改进应用程序中的不同视图。例如，当浏览器宽度较小时，顶部导航栏可自动折叠。在桌面浏览器中，尝试调整浏览器窗口的大小，并了解导航栏如何改变其外观。这是 Bootstrap 内置的响应式 Web 设计。
 
-若要在没有 Bootstrap 的情况下查看 Web 应用的外观，请打开 *App_Start\\BundleConfig.cs* 并注释掉包含的行 *bootstrap.js* 和 *bootstrap.css*。以下代码显示了更改后 `RegisterBundles` 方法的两个语句：
+若要在没有 Bootstrap 的情况下查看 Web 应用的外观，请打开 *App\_Start\\BundleConfig.cs* 并注释掉包含的行 *bootstrap.js* 和 *bootstrap.css*。以下代码显示了更改后 `RegisterBundles` 方法的两个语句：
 
      bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
               //"~/Scripts/bootstrap.js",
@@ -564,7 +564,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 <!-- External Links -->
 [Visual Studio Express 2013]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-web
 [Visual Studio 2015]: https://www.visualstudio.com/downloads/download-visual-studio-vs
-[AzureSDKVs2013]: https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids
+[AzureSDKVs2013]: http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409
 [Fiddler]: http://www.fiddler2.com/fiddler2/
 [EmulatorIE11]: http://msdn.microsoft.com/zh-cn/library/ie/dn255001.aspx
 [EmulatorChrome]: https://developers.google.com/chrome-developer-tools/docs/mobile-emulation

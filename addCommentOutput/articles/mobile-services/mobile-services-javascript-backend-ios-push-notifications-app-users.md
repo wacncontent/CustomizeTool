@@ -63,8 +63,16 @@ function insert(item, user, request) {
 
 
 <!-- URLs. -->
+<!-- deleted by customization
+[Get started with authentication]: mobile-services-ios-get-started-users.md
+[Get started with push notifications]: mobile-services-javascript-backend-ios-get-started-push.md
+[Mobile Services .NET How-to Conceptual Reference]: mobile-services-ios-how-to-use-client-library.md
+-->
+<!-- keep by customization: begin -->
 [Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-ios-how-to-use-client-library
+
+<!-- keep by customization: end -->

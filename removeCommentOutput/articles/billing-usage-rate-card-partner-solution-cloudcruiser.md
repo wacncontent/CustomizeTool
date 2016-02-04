@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Cloud Cruiser and Windows Azure Billing API Integration"
+   pageTitle="Cloud Cruiser and Windows Azure Billing API Integration | Windows Azure"
    description="Provides a unique perspective from Windows Azure Billing partner Cloud Cruiser, on their experiences integrating the Azure Billing APIs into their product.  This is especially useful for Azure and Cloud Cruiser customers that are interested in using/trying Cloud Cruiser for Windows Azure Pack."
    services="billing"
    documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="billing"
-	ms.date="08/10/2015"
+	ms.date="11/02/2015"
 	wacn.date=""/>
 
 # Cloud Cruiser and Windows Azure Billing API Integration
@@ -35,14 +35,14 @@ Below is a sample response from the API showing the prices for the A0 (Windows) 
 		"IncludedQuantity": 0.0
 	},
 
-### Cloud Cruiser’s Interface to Azure RateCard API
+### Cloud Cruiser's Interface to Azure RateCard API
 Cloud Cruiser can leverage the RateCard API information in different ways. For this article, we will show how it can be used to make IaaS workload cost simulation and analysis.
 
 To demonstrate this use case, imagine a workload of several instances running on Windows Azure Pack (WAP). The goal is to simulate this same workload on Azure, and estimate the costs of doing such migration. In order to create this simulation, there are two main tasks to be performed:
 
 1. **Import and process the service information collected from the RateCard API** - This task is also performed on the workbooks, where the extract from the RateCard API is transformed and published to a new rate plan. This new rate plan will be used on the simulations to estimate the Azure prices.
 
-2. **Normalize WAP services and Azure services for IaaS** - By default, WAP services are based on individual resources (CPU, Memory Size, Disk Size, etc.) while Azure services are based on instance size (A0, A1, A2, etc.). This first task can be performed by Cloud Cruiser’s ETL engine, called workbooks, where these resources can be bundled on instance sizes, analogous to Azure instance services.
+2. **Normalize WAP services and Azure services for IaaS** - By default, WAP services are based on individual resources (CPU, Memory Size, Disk Size, etc.) while Azure services are based on instance size (A0, A1, A2, etc.). This first task can be performed by Cloud Cruiser's ETL engine, called workbooks, where these resources can be bundled on instance sizes, analogous to Azure instance services.
 
 ### Import data from the RateCard API
 
@@ -54,7 +54,7 @@ Each workbook can have one or multiple collections. This allows you to correlate
 
 ![Figure 2 - Import data from the new collection][2]
 
-After importing the data into the workbook, it’s possible to create multiple steps and transformation processes, to modify and model the data. For this example, since we are only interested in infrastructure-as-a-Service (IaaS,) we can use the transformation steps to remove unnecessary rows, or records, related to services other than IaaS.
+After importing the data into the workbook, it's possible to create multiple steps and transformation processes, to modify and model the data. For this example, since we are only interested in infrastructure-as-a-Service (IaaS,) we can use the transformation steps to remove unnecessary rows, or records, related to services other than IaaS.
 
 The screenshot below shows the transformation steps used to process the data collected from RateCard API:
 
@@ -74,7 +74,7 @@ At the end of the transformation process, it is possible to create a new step an
 
 ### Verify Azure Services and Rates
 
-After publishing the services and rates, you can verify the list of imported services in Cloud Cruiser’s *Services* tab:
+After publishing the services and rates, you can verify the list of imported services in Cloud Cruiser's *Services* tab:
 
 ![Figure 5 - Verifying the new Services][5]
 
@@ -98,7 +98,7 @@ After finishing the workbook, you can automate the processing of the data, by ad
 
 ### Create Reports for Workload Cost Simulation Analysis
 
-As the usage is collected and the charges are loaded into the Cloud Cruiser database, we can then leverage the Cloud Cruiser Insights module – an advanced analytics reporting tool – to create the workload cost simulation that we desire.
+As the usage is collected and the charges are loaded into the Cloud Cruiser database, we can then leverage the Cloud Cruiser Insights module - an advanced analytics reporting tool - to create the workload cost simulation that we desire.
 
 In order to demonstrate this scenario, we created the following report:
 
@@ -106,7 +106,7 @@ In order to demonstrate this scenario, we created the following report:
 
 The top graph shows a cost comparison broken by services and compares the price of running the workload for each specific service between WAP (dark blue color) and Azure (light blue color).
 
-The bottom graph shows the same data but broken down by department, demonstrating the costs for each department to run their workload on WAP and Azure, along with the difference between these two – Savings bar (green color).
+The bottom graph shows the same data but broken down by department, demonstrating the costs for each department to run their workload on WAP and Azure, along with the difference between these two - Savings bar (green color).
 
 ## Azure Usage API
 
@@ -141,7 +141,7 @@ consumption based on the account structure populated by the tags.
 The data available through the Azure Usage API includes not only consumption information, but also resource metadata including any tags associated with it. Tags provide an easy way to organize your resources, but in order to be effective, you need to ensure that:
 
 - Tags are correctly applied to the resources at provision time
-- Tags are properly used on the Showback/Chargeback process to tie the usage to the organization’s account structure.
+- Tags are properly used on the Showback/Chargeback process to tie the usage to the organization's account structure.
 
 Both of these requirements can be challenging, especially when there is some sort of manual process on the provision or charging side. Mistyped, incorrect or even missing tags are common complaints from customers when using tags and these errors can make life on the charging side very difficult.
 
@@ -227,16 +227,16 @@ Now we just need to add another step to publish the usage data. During this step
 information, and the resulting charge is then loaded into the database.
 
 The best part is that you only have to go through this process once. When the workbook is completed, you just need to add it to the scheduler and it will run hourly or daily at the
-scheduled time. Then it’s just a matter of creating new reports, or customizing
+scheduled time. Then it's just a matter of creating new reports, or customizing
 existing ones, in order to visualize and analyze the data to get meaningful
 insights from your cloud usage.
 
 ### Next Steps
 
-+ For detailed instructions on creating Cloud Cruiser workbooks and reports, please refer to Cloud Cruiser’s online [documentation](http://docs.cloudcruiser.com/) (valid login required).  For more information about Cloud Cruiser, please contact [info@cloudcruiser.com](mailto:info@cloudcruiser.com).
++ For detailed instructions on creating Cloud Cruiser workbooks and reports, please refer to Cloud Cruiser's online [documentation](http://docs.cloudcruiser.com/) (valid login required).  For more information about Cloud Cruiser, please contact [info@cloudcruiser.com](mailto:info@cloudcruiser.com).
 + See [Gain insights into your Windows Azure resource consumption](/documentation/articles/billing-usage-rate-card-overview) for an overview of the Azure Resource Usage and RateCard APIs.
 + Check out the [Azure Billing REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c) for more information on both APIs, which are part of the set of APIs provided by the Azure Resource Manager.
-+ If you would like to dive right into the sample code, check out our [Windows Azure Billing API Code Samples on Github](https://github.com/Azure/BillingCodeSamples).
++ If you would like to dive right into the sample code, check out our Windows Azure Billing API Code Samples on [Azure Code Samples](https://azure.microsoft.com/documentation/samples/?term=billing).
 
 ### Learn More
 + See the [Azure Resource Manager Overview](/documentation/articles/resource-group-overview) article to learn more about the Azure Resource Manager.

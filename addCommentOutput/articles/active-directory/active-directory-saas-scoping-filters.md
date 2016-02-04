@@ -1,15 +1,15 @@
 <properties
-	pageTitle="Attribute-based app provisioning with scoping filters"
-	description="Learn how to use scoping filters to prevent objects in apps that support automated user provisioning from actually being provisioned if an object doesn’t satisfy your business requirements."
+	pageTitle="Attribute-based app provisioning with scoping filters | Windows Azure"
+	description="Learn how to use scoping filters to prevent objects in apps that support automated user provisioning from actually being provisioned if an object doesn't satisfy your business requirements."
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
-	manager="swadhwa"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/27/2015"
+	ms.date="10/20/2015"
 	wacn.date=""/>
 
 
@@ -31,13 +31,24 @@ The objective of this section is to explain how to use scoping filters to define
 
 Scoping filters are defined by one or more **scope groups**, each of which hold one or more **clauses**. To see the clauses for a particular scope group, expand it by clicking the arrow to the left of the group name.
 
-A **clause** determines which users are allowed to pass through the scoping filter by evaluating each user’s attributes. For example, you might have one clause that requires that a user’s ‘state’ attribute be equal to Beijing, which means that only your Beijing users will be provisioned into the application.
+<!-- deleted by customization
+A **clause** determines which users are allowed to pass through the scoping filter by evaluating each user's attributes. For example, you might have one clause that requires that a user's 'state' attribute be equal to Beijing, which means that only your Beijing users will be provisioned into the application.
 
 ![Scoping Group Name][2] 
 
 
 
-Each **scope group** starts with one mandatory **clause**, as shown in the screenshot above. This clause simply states that the user must first be assigned to the application before it’s evaluated by your scoping filters. This clause cannot be deleted or modified.
+Each **scope group** starts with one mandatory **clause**, as shown in the screenshot above. This clause simply states that the user must first be assigned to the application before <!-- keep by customization: begin --><!-- deleted by customization <!-- keep by customization: end --> it's <!-- keep by customization: begin --> --><!-- keep by customization: end --> evaluated by your scoping filters. This clause cannot be deleted or modified.
+-->
+<!-- keep by customization: begin -->
+A **clause** determines which users are allowed to pass through the scoping filter by evaluating each <!-- deleted by customization user's --><!-- keep by customization: begin --> user’s <!-- keep by customization: end --> attributes. For example, you might have one clause that requires that a <!-- deleted by customization user's 'state' --><!-- keep by customization: begin --> user’s ‘state’ <!-- keep by customization: end --> attribute be equal to <!-- deleted by customization Beijing --><!-- keep by customization: begin --> New York <!-- keep by customization: end -->, which means that only your <!-- deleted by customization Beijing --><!-- keep by customization: begin --> New York <!-- keep by customization: end --> users will be provisioned into the application.
+
+![Scoping Group Name][2] 
+
+
+
+Each **scope group** starts with one mandatory **clause**, as shown in the screenshot above. This clause simply states that the user must first be assigned to the application before <!-- keep by customization: begin --><!-- deleted by customization <!-- keep by customization: end --> it's <!-- keep by customization: begin --> -->it’s<!-- keep by customization: end --> evaluated by your scoping filters. This clause cannot be deleted or modified.
+<!-- keep by customization: end -->
 
 You can add new clauses or new scope groups by pressing the appropriate button. You can give each scope group a name by editing its **Scope Group Name** property.
 
@@ -51,10 +62,18 @@ During provisioning, we test every assigned user against your scoping filters to
 
 If you have multiple scope groups defined, each user must pass at least one of them in order to access the application. Within each scope group, however, the user must pass every single clause in order to pass that specific scope group. 
 
-In other words, you can think of scope groups as being OR’d together, and you can think of the clauses within them as being AND’d together.For example, consider the scoping filter below:
+<!-- deleted by customization
+In other words, you can think of scope groups as being OR'd together, and you can think of the clauses within them as being AND'd together.For example, consider the scoping filter below:
 
 
 ![Scoping Group Name][2]  
+-->
+<!-- keep by customization: begin -->
+In other words, you can think of scope groups as being <!-- deleted by customization OR'd --><!-- keep by customization: begin --> OR’d <!-- keep by customization: end --> together, and you can think of the clauses within them as being <!-- deleted by customization AND'd --><!-- keep by customization: begin --> AND’d <!-- keep by customization: end --> together.For example, consider the scoping filter below:
+
+
+![Scoping Group Name][2]  
+<!-- keep by customization: end -->
 
 
 According to this scoping filter, users must satisfy the following criteria, in order to be provisioned:

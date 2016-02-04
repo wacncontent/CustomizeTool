@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Using elastic database client library with Entity Framework" 
-	description="Elastic database client makes it easy to scale, and Entity Framework is easy to use for coding databases" 
+	pageTitle="Using elastic database client library with Entity Framework | Windows Azure" 
+	description="Use Elastic Database client library and Entity Framework for coding databases" 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh" 
+	authors="torsteng" 
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/24/2015"
+	ms.date="11/04/2015"
 	wacn.date=""/>
 
 # Elastic Database client library with Entity Framework 
  
-You can use the elastic database client library with Microsoft’s Entity Framework (EF) to build applications that take advantage of database sharding, facilitating scaling-out your application's data tier. This document shows the changes in an Entity Framework application that are needed to integrate with the elastic database tools' capabilities. The focus is on composing [shard map management](/documentation/articles/sql-database-elastic-scale-shard-map-management) and [data-dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing) with the Entity Framework **Code First** approach. The [Code First – New Database](http://msdn.microsoft.com/data/jj193542.aspx) tutorial for EF serves as our running example throughout this document. The sample code accompanying this document is part of elastic database tools' set of samples in the Visual Studio Code Samples.
+This document shows the changes in an Entity Framework application that are needed to integrate with the [Elastic Database tools](/documentation/articles/sql-database-elastic-scale-introduction). The focus is on composing [shard map management](/documentation/articles/sql-database-elastic-scale-shard-map-management) and [data-dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing) with the Entity Framework **Code First** approach. The [Code First - New Database](http://msdn.microsoft.com/data/jj193542.aspx) tutorial for EF serves as our running example throughout this document. The sample code accompanying this document is part of elastic database tools' set of samples in the Visual Studio Code Samples.
   
 ## Downloading and Running the Sample Code
 To download the code for this article:
@@ -22,11 +22,11 @@ To download the code for this article:
 * Visual Studio 2012 or later is required. 
 * Start Visual Studio. 
 * In Visual Studio, select File -> New Project. 
-* In the ‘New Project’ dialog, navigate to the **Online Samples** for **Visual C#** and type "elastic db" into the search box in the upper right.
+* In the 'New Project' dialog, navigate to the **Online Samples** for **Visual C#** and type "elastic db" into the search box in the upper right.
     
     ![Entity Framework and elastic database sample app][1] 
 
-    Select the sample called **Elastic DB Tools for Azure SQL – Entity Framework Integration**. After accepting the license, the sample loads. 
+    Select the sample called **Elastic DB Tools for Azure SQL - Entity Framework Integration**. After accepting the license, the sample loads. 
 
 To run the sample, you need to create three empty databases in Azure SQL Database:
 
@@ -53,7 +53,7 @@ For term definitions, see [Elastic Database tools glossary](/documentation/artic
 
 With elastic database client library, you define partitions of your application data called shardlets. Shardlets are identified by a sharding key and are mapped to specific databases. An application may have as many databases as needed and distribute the shardlets to provide enough capacity or performance given current business requirements. The mapping of sharding key values to the databases is stored by a shard map provided by the elastic database client APIs. We call this capability **Shard Map Management**, or SMM for short. The shard map also serves as the broker of database connections for requests that carry a sharding key. We refer to this capability as **data-dependent routing**. 
  
-The shard map manager protects users from inconsistent views into shardlet data that can occur when concurrent shardlet management operations (such as relocating data from one shard to another) are happening. To do so, the shard maps managed by the client library broker the database connections for an application. This allows the shard map functionality to automatically kill a database connection when shard management operations could impact the shardlet that the connection has been created for. This approach needs to integrate with some of EF’s functionality, such as creating new connections from an existing one to check for database existence. In general, our observation has been that the standard DbContext constructors only work reliably for closed database connections that can safely be cloned for EF work. The design principle of elastic database instead is to only broker opened connections. One might think that closing a connection brokered by the client library before handing it over to the EF DbContext may solve this issue. However, by closing the connection and relying on EF to re-open it, one foregoes the validation and consistency checks performed by the library. The migrations functionality in EF, however, uses these connections to manage the underlying database schema in a way that is transparent to the application. Ideally, we would like to retain and combine all these capabilities from both the elastic database client library and EF in the same application. The following section discusses these properties and requirements in more detail. 
+The shard map manager protects users from inconsistent views into shardlet data that can occur when concurrent shardlet management operations (such as relocating data from one shard to another) are happening. To do so, the shard maps managed by the client library broker the database connections for an application. This allows the shard map functionality to automatically kill a database connection when shard management operations could impact the shardlet that the connection has been created for. This approach needs to integrate with some of EF's functionality, such as creating new connections from an existing one to check for database existence. In general, our observation has been that the standard DbContext constructors only work reliably for closed database connections that can safely be cloned for EF work. The design principle of elastic database instead is to only broker opened connections. One might think that closing a connection brokered by the client library before handing it over to the EF DbContext may solve this issue. However, by closing the connection and relying on EF to re-open it, one foregoes the validation and consistency checks performed by the library. The migrations functionality in EF, however, uses these connections to manage the underlying database schema in a way that is transparent to the application. Ideally, we would like to retain and combine all these capabilities from both the elastic database client library and EF in the same application. The following section discusses these properties and requirements in more detail. 
 
 
 ## Requirements 
@@ -64,7 +64,7 @@ When working with both the elastic database client library and Entity Framework 
 
 * **Consistency**: The application employs sharding, and uses the data dependent routing capabilities of the client library. To avoid corruption or wrong query results, connections are brokered through the shard map manager. This also retains validation and consistency.
  
-* **Code First**: To retain the convenience of EF’s code first paradigm. In Code First, classes in the application are mapped transparently to the underlying database structures. The application code interacts with DbSets that mask most aspects involved in the underlying database processing.
+* **Code First**: To retain the convenience of EF's code first paradigm. In Code First, classes in the application are mapped transparently to the underlying database structures. The application code interacts with DbSets that mask most aspects involved in the underlying database processing.
  
 * **Schema**: Entity Framework handles initial database schema creation and subsequent schema evolution through migrations. By retaining these capabilities, adapting your app is easy as the data evolves. 
 
@@ -186,7 +186,7 @@ Current Constructor  | Rewritten Constructor for data | Base Constructor | Notes
 ---------- | ----------- | ------------|----------
 MyContext() |ElasticScaleContext(ShardMap, TKey) |DbContext(DbConnection, bool) |The connection needs to be a function of the shard map and the data-dependent routing key. You need to by-pass automatic connection creation by EF and instead use the shard map to broker the connection. 
 MyContext(string)|ElasticScaleContext(ShardMap, TKey) |DbContext(DbConnection, bool) |The connection is a function of the shard map and the data-dependent routing key. A fixed database name or connection string will not work as they by-pass validation by the shard map. 
-MyContext(DbCompiledModel) |ElasticScaleContext(ShardMap, TKey, DbCompiledModel) |DbContext(DbConnection, DbCompiledModel, bool) |The connection will get created for the given shard map and sharding key with the model provided. The compiled model will be passed on to the base c’tor.
+MyContext(DbCompiledModel) |ElasticScaleContext(ShardMap, TKey, DbCompiledModel) |DbContext(DbConnection, DbCompiledModel, bool) |The connection will get created for the given shard map and sharding key with the model provided. The compiled model will be passed on to the base c'tor.
 MyContext(DbConnection, bool) |ElasticScaleContext(ShardMap, TKey, bool) |DbContext(DbConnection, bool) |The connection needs to be inferred from the shard map and the key. It cannot be provided as an input (unless that input was already using the shard map and the key). The Boolean will be passed on. 
 MyContext(string, DbCompiledModel) |ElasticScaleContext(ShardMap, TKey, DbCompiledModel) |DbContext(DbConnection, DbCompiledModel, bool) |The connection needs to be inferred from the shard map and the key. It cannot be provided as an input (unless that input was using the shard map and the key). The compiled model will be passed on. 
 MyContext(ObjectContext, bool) |ElasticScaleContext(ShardMap, TKey, ObjectContext, bool) |DbContext(ObjectContext, bool) |The new constructor needs to ensure that any connection in the ObjectContext passed as an input is re-routed to a connection managed by Elastic Scale. A detailed discussion of ObjectContexts is beyond the scope of this document.
@@ -194,14 +194,14 @@ MyContext(DbConnection, DbCompiledModel,bool) |ElasticScaleContext(ShardMap, TKe
 
 ## Shard schema deployment through EF migrations 
 
-Automatic schema management is a convenience provided by the Entity Framework. In the context of applications using elastic database tools, we want to retain this capability to automatically provision the schema to newly created shards when databases are added to the sharded application. The primary use case is to increase capacity at the data tier for sharded applications using EF. Relying on EF’s capabilities for schema management reduces the database administration effort with a sharded application built on EF. 
+Automatic schema management is a convenience provided by the Entity Framework. In the context of applications using elastic database tools, we want to retain this capability to automatically provision the schema to newly created shards when databases are added to the sharded application. The primary use case is to increase capacity at the data tier for sharded applications using EF. Relying on EF's capabilities for schema management reduces the database administration effort with a sharded application built on EF. 
 
 Schema deployment through EF migrations works best on **unopened connections**. This is in contrast to the scenario for data dependent routing that relies on the opened connection provided by the elastic database client API. Another difference is the consistency requirement: While desirable to ensure consistency for all data-dependent routing connections to protect against concurrent shard map manipulation, it is not a concern with initial schema deployment to a new database that has not yet been registered in the shard map, and not yet been allocated to hold shardlets. We can therefore rely on regular database connections for this scenarios, as opposed to data-dependent routing.  
 
-This leads to an approach where schema deployment through EF migrations is tightly coupled with the registration of the new database as a shard in the application’s shard map. This relies on the following prerequisites: 
+This leads to an approach where schema deployment through EF migrations is tightly coupled with the registration of the new database as a shard in the application's shard map. This relies on the following prerequisites: 
 
 * The database has already been created. 
-* The database is empty – it holds no user schema and no user data.
+* The database is empty - it holds no user schema and no user data.
 * The database cannot yet be accessed through the elastic database client APIs for data-dependent routing. 
 
 With these prerequisites in place, we can create a regular un-opened **SqlConnection** to kick off EF migrations for schema deployment. The following code sample illustrates this approach. 
@@ -262,7 +262,7 @@ The approaches outlined in this document entail a couple of limitations:
 
 * EF applications that use **LocalDb** first need to migrate to a regular SQL Server database before using elastic database client library. Scaling out an application through sharding with Elastic Scale is not possible with **LocalDb**. Note that development can still use **LocalDb**. 
 
-* Any changes to the application that imply database schema changes need to go through EF migrations on all shards. The sample code for this document does not demonstrate how to do this. Consider using Update-Database with a ConnectionString parameter to iterate over all shards; or extract the T-SQL script for the pending migration using Update-Database with the –Script option and apply the T-SQL script to your shards.  
+* Any changes to the application that imply database schema changes need to go through EF migrations on all shards. The sample code for this document does not demonstrate how to do this. Consider using Update-Database with a ConnectionString parameter to iterate over all shards; or extract the T-SQL script for the pending migration using Update-Database with the -Script option and apply the T-SQL script to your shards.  
 
 * Given a request, it is assumed that all of its database processing is contained within a single shard as identified by the sharding key provided by the request. However, this assumption does not always hold true. For example, when it is not possible to make a sharding key available. To address this, the client library provides the **MultiShardQuery** class that implements a connection abstraction for querying over several shards. Learning to use the **MultiShardQuery** in combination with EF is beyond the scope of this document
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/12/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # App model v2.0 preview: What's different?
@@ -23,7 +23,7 @@ If you're familiar with the generally available Azure AD service or have integra
 ## Microsoft Accounts and Azure AD Accounts
 The v2.0 app model allows developers to write apps that accept sign-in from both Microsoft Accounts and Azure AD accounts, using a single endpoint.  This gives you the ability to write your app completely account-agnostic; it can be ignorant of the type of account that the user signs in with.  Of course, you *can* make your app aware of the type of account being used in a particular session, but you don't have to.
 
-For instance, if your app calls the [Office 365 REST APIs](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2), some additional functionality and data will be available to enterprise users, such as their SharePoint sites or Directory data.  But for many actions, such as [Reading a user's mail](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2), the code can be written exactly the same for both Microsoft Accounts and Azure AD accounts.  
+For instance, if your app calls the [Office 365 REST APIs](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2), some additional functionality and data will be available to enterprise users, such as their SharePoint sites or Directory data.  But for many actions, such as [Reading a user's mail](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2), the code can be written exactly the same for both Microsoft Accounts and Azure AD accounts.  
 
 Integrating your app with Microsoft Accounts and Azure AD accounts is now one simple process.  You can use a single set of endpoints, a single library, and a single app registration to gain access to both the consumer and enterprise worlds.  To learn more about the v2.0 app model preview, check out [the overview](/documentation/articles/active-directory-appmodel-v2-overview).
 
@@ -37,7 +37,7 @@ Note that today, apps registered in the new App Registration Portal will only wo
 
 
 ## One App Id for All Platforms
-In the GA Azure AD service, you may have registered several different apps for a single project.  You were forced to use separate app registrations for your native clients and web apps:
+In the GA Azure AD service, you may have registered several different apps for a single project.  You were forced to use separate app registrations for your native clients and web sites:
 
 ![Old Application Registration UI](../media/active-directory-v2-flows/old_app_registration.PNG)
 
@@ -61,7 +61,7 @@ In the Azure AD generally available service, an app can behave as a **resource**
 All of this holds true for the v2.0 app model.  An app can still behave as resource, define scopes, and be identified by a URI.  Client apps can still request access to those scopes.  However, the way in which a client requests those permissions has changed.  In the past, an OAuth 2.0 authorize request to Azure AD might have looked like:
 
 ```
-GET https://login.microsoftonline.com/common/oauth2/authorize?
+GET https://login.chinacloudapi.cn/common/oauth2/authorize?
 client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
 &resource=https%3A%2F%2Fgraph.chinacloudapi.cn%2F
 ...
@@ -70,7 +70,7 @@ client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
 where the **resource** parameter indicated which resource the client app is requesting authorization for.  Azure AD computed the permissions required by the app based on static configuration in the Azure Management Portal, and issued tokens accordingly.  Now, the same OAuth 2.0 authorize request looks like:
 
 ```
-GET https://login.microsoftonline.com/common/v2.0/oauth2/authorize?
+GET https://login.chinacloudapi.cn/common/v2.0/oauth2/authorize?
 client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
 &scope=https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.read%20https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.write
 ...
@@ -92,7 +92,7 @@ The permissions an app required were configured **statically**.  While this allo
 In the v2.0 app model, you can specify the permissions your app needs **dynamically**, at runtime, during regular usage of your app.  To do so, you can specify the scopes your app needs at any given point in time by including them in the `scope` parameter of an authorization request:
 
 ```
-GET https://login.microsoftonline.com/common/v2.0/oauth2/authorize?
+GET https://login.chinacloudapi.cn/common/v2.0/oauth2/authorize?
 client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
 &scope=https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.read%20https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.write
 ...
@@ -103,7 +103,7 @@ The above requests permission for the app to read an Azure AD user's directory d
 Allowing an app to request permissions dynamically via the `scope` parameter gives you full control over your user's experience.  If you wish, you can choose to frontload your consent experience and ask for all permissions in one initial authorization request.  Or if your app requires a large number of permissions, you can choose to gather those permissions from the user incrementally, as they attempt to use certain features of your app over time.
 
 ## Offline Access
-The v2.0 app model introduces a new well-known permission for apps - the `offline_access` scope.  All apps will need to request this permission if they need to access resources on the behalf of a user for a prolonged period of time, even when the user may not be actively using the app.  The `offline_access` scope will appear to the user in consent dialogs as "Access your data offline", which the user must agree to.  Requesting the `offline_access` permission will enable your web app to receive OAuth 2.0 refresh_tokens from the v2.0 endpoint.  Refresh_tokens are long-lived, and can be exchanged for new OAuth 2.0 access_tokens for extended periods of access.  
+The v2.0 app model introduces a new well-known permission for apps - the `offline_access` scope.  All apps will need to request this permission if they need to access resources on the behalf of a user for a prolonged period of time, even when the user may not be actively using the app.  The `offline_access` scope will appear to the user in consent dialogs as "Access your data offline", which the user must agree to.  Requesting the `offline_access` permission will enable your web site to receive OAuth 2.0 refresh_tokens from the v2.0 endpoint.  Refresh_tokens are long-lived, and can be exchanged for new OAuth 2.0 access_tokens for extended periods of access.  
 
 If your app does not request the `offline_access` scope, it will not receive refresh_tokens.  This means that when you redeem an authorization_code in the [OAuth 2.0 authorization code flow](/documentation/articles/active-directory-v2-protocols#oauth2-authorization-code-flow), you will only receive back an access_token from the `/oauth2/token` endpoint.  That access_token will remain valid for a short period of time (typically one hour), but will eventually expire.  At that point in time, your app will need to redirect the user back to the `/oauth2/authorize` endpoint to retrieve a new authorization_code.  During this redirect, the user may or may not need to enter their credentials again or re-consent to permissions, depending on the the type of app.
 

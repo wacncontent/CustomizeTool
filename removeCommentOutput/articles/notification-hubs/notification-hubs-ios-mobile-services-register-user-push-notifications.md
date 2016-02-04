@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/28/2015"
+	ms.date="11/01/2015"
 	wacn.date=""/>
 
 # Register the current user for push notifications by using a mobile service
@@ -114,6 +114,5 @@ Now that the client app has been updated, return to the [Notify users with Notif
 [Notify users with Notification Hubs]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users/
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
 [Get Started with Notification Hubs]: /manage/services/notification-hubs/get-started-notification-hubs-ios/
  

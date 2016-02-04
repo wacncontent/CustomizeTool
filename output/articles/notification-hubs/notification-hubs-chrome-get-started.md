@@ -20,7 +20,7 @@ This topic shows you how to use Azure Notification Hubs to send push notificatio
 
 One of the key benefits of using Chrome App notifications is that the notifications show up within the context of the Google Chrome browser. You don't need to have the Chrome App running or open in the browser (though the Chrome browser itself must be running). You also get a consolidated view of all your notifications in the Chrome Notifications window.
 
->[AZURE.NOTE] This is not a generic in-browser push notification and is specific to Chrome Apps—see [Chrome Apps Overview] for details. Chrome Apps were previously known as "Packaged Apps" and are different from simpler "Hosted Apps". See [Installable Web Apps] for the difference. Chrome Apps can also run on mobile (Android and iOS) via Apache Cordova. See [Chrome Apps on Mobile] to learn more.
+>[AZURE.NOTE] This is not a generic in-browser push notification and is specific to Chrome Appsâsee [Chrome Apps Overview] for details. Chrome Apps were previously known as "Packaged Apps" and are different from simpler "Hosted Apps". See [Installable Web Apps] for the difference. Chrome Apps can also run on mobile (Android and iOS) via Apache Cordova. See [Chrome Apps on Mobile] to learn more.
 
 In this tutorial, we will create a Chrome app that receives push notifications by using Google Cloud Messaging (GCM). When you complete the tutorial, you will be able to broadcast push notifications to all the Chrome users who have installed this Chrome App.
 
@@ -398,7 +398,7 @@ You should see the following view for your folder at the end of this:
 
    	![][19]
 
-5. Enter your **Notification Hub Name** and the **DefaultListenSharedAccessSignature** that you obtained from the Azure Management Portal earlier, and click **Register with Azure Notification Hub**. You must see the message **Notification Hub Registration successful!** and the details of the registration response, which contains the Azure Notification Hubs registration ID.
+5. Enter your **Notification Hub Name** and the **DefaultListenSharedAccessSignature** that you obtained from the portal earlier, and click **Register with Azure Notification Hub**. You must see the message **Notification Hub Registration successful!** and the details of the registration response, which contains the Azure Notification Hubs registration ID.
 
    	![][20]  
 
@@ -491,5 +491,5 @@ To target specific users, refer to the tutorial [Azure Notification Hubs Notify 
 [crypto-js library]: http://code.google.com/p/crypto-js/
 [GCM with Chrome Apps]: https://developer.chrome.com/apps/cloudMessaging
 [Google Cloud Messaging for Chrome]: https://developer.chrome.com/apps/cloudMessagingV1
-[Azure Notification Hubs Notify Users]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
-[Azure Notification Hubs breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
+[Azure Notification Hubs Notify Users]: notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
+[Azure Notification Hubs breaking news]: notification-hubs-windows-store-dotnet-send-breaking-news.md

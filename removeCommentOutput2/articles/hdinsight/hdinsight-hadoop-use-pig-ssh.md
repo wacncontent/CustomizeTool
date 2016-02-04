@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="Use Hadoop Pig with SSH on an HDInsight cluster | Windows Azure"
    description="Learn how connect to a Linux-based Hadoop cluster with SSH, and then use the Pig command to run Pig Latin statements interactively, or as a batch job."
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Run Pig jobs on a Linux-based cluster with the Pig command (SSH)
@@ -97,7 +95,7 @@ For more information on using PuTTY, see [Use SSH with Linux-based Hadoop on HDI
 
 6. You can also save the results of a transformation by using the `STORE` statement. For example, the following saves the `RESULT` to the **/example/data/pigout** directory on the default storage container for your cluster.
 
-		STORE RESULT into 'wasb:///example/data/pigout'
+		STORE RESULT into 'wasb:///example/data/pigout';
 
 	> [AZURE.NOTE] The data is stored in the specified directory in files named **part-nnnnn**. If the directory already exists, you will receive an error.
 

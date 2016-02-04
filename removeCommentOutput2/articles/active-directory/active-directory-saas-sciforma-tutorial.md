@@ -7,10 +7,11 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure AD integration with Sciforma
+>[AZURE.TIP]For feedback, click [here](http://go.microsoft.com/fwlink/?LinkId=524480).
   
 The objective of this tutorial is to show the integration of Azure and Sciforma.  
 The scenario outlined in this tutorial assumes that you already have the following items:
@@ -18,7 +19,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 -   A valid Azure subscription
 -   A Sciforma tenant
   
-After completing this tutorial, the Azure AD users you have assigned to Sciforma will be able to single sign into the application at your Sciforma company site (service provider initiated sign on), or using the [Introduction to the Access Panel](/documentation/articles/active-directory-saas-access-panel-introduction).
+After completing this tutorial, the Azure AD users you have assigned to Sciforma will be able to single sign into the application at your Sciforma company site (service provider initiated sign on), or using the [Introduction to the Access Panel](https://msdn.microsoft.com/zh-cn/library/dn308586) 
   
 The scenario outlined in this tutorial consists of the following building blocks:
 

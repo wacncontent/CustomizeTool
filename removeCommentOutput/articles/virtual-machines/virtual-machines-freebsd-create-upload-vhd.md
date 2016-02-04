@@ -86,7 +86,7 @@ From the virtual machine that the FreeBSD operating system was installed to, com
 
     **Important**: After installation, please double check it is running.
 
-		# service –e | grep waagent
+		# service -e | grep waagent
 		/etc/rc.d/waagent
 		# cat /var/log/waagent.log
 
@@ -96,7 +96,7 @@ From the virtual machine that the FreeBSD operating system was installed to, com
 
     Below command also deletes the last provisioned user account and associated data.
 
-		# waagent –deprovision+user
+		# waagent -deprovision+user
 
 ## Step 2: Create a storage account in Azure ##
 
@@ -176,11 +176,11 @@ Before you can upload a .vhd file, you need to establish a secure connection bet
 
    For more information, see [Get Started with Windows Azure Cmdlets](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)
 
-   For more information on installing and configuring PowerShell, see [How to install and configure Windows Azure PowerShell](/documentation/articles/install-configure-powershell).
+   For more information on installing and configuring PowerShell, see [How to install and configure Windows Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 ## Step 4: Upload the .vhd file ##
 
-When you upload the .vhd file, you can place the .vhd file anywhere within your blob storage. In the following command examples, **BlobStorageURL** is the URL for the storage account that you created in Step 2, **YourImagesFolder** is the container within blob storage where you want to store your images. **VHDName** is the label that appears in the Management Portal to identify the virtual hard disk. **PathToVHDFile** is the full path and name of the .vhd file.
+When you upload the .vhd file, you can place the .vhd file anywhere within your blob storage. In the following command examples, **BlobStorageURL** is the URL for the storage account that you created in Step 2, **YourImagesFolder** is the container within blob storage where you want to store your images. **VHDName** is the label that appears in the Azure Management Portal to identify the virtual hard disk. **PathToVHDFile** is the full path and name of the .vhd file.
 
 
 1. From the Azure PowerShell window you used in the previous step, type:
@@ -196,7 +196,7 @@ After you upload the .vhd, you can add it as an image to the list of custom imag
 
     **Important**: Please use Linux as OS type for now since current Azure PowerShell version only accepts “Linux” or “Windows” as a parameter.
 
-2. After you complete the previous steps, the new image is listed when you choose the **Images** tab on the Azure management portal.  
+2. After you complete the previous steps, the new image is listed when you choose the **Images** tab on the Azure Management Portal.  
 
     ![add image](./media/virtual-machines-freebsd-create-upload-vhd/addfreebsdimage.png)
 

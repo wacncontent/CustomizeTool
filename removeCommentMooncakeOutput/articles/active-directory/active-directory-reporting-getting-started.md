@@ -1,16 +1,16 @@
 <properties
    pageTitle="Azure AD Reporting: Getting started"
-   description="Lists the various available reports in Azure Active Directory reporting"
+   description="Azure AD Reporting: Getting started"
    services="active-directory"
    documentationCenter=""
    authors="curtand"
-   manager="stevenpo"
+   manager="mbaldwin"
    editor=""/>
 
 <tags
-	ms.service="active-directory"
-	ms.date="09/21/2015"
-	wacn.date=""/>
+   ms.service="active-directory"
+   ms.date="06/30/2015"
+   wacn.date=""/>
 
 # Getting started with Azure AD Reporting
 

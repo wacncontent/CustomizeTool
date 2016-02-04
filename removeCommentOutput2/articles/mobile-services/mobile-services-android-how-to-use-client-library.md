@@ -15,6 +15,10 @@
 
 # How to use the Android client library for Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
 This guide shows you how to perform common scenarios using the Android client for Azure Mobile Services.  The scenarios covered include querying for data; inserting, updating, and deleting data, authenticating users, handling errors, and customizing the client.
@@ -44,7 +48,7 @@ The corresponding typed client side object is the following:
 When dynamic schema is enabled, Azure Mobile Services automatically generates new columns based on the object in the insert or update request. For more information, see [Dynamic schema](https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx).
 
 ##<a name="create-client"></a>How to: Create the Mobile Services client
-The following code creates the [MobileServiceClient](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) object that is used to access your mobile service. The code goes in the `onCreate` method of the Activity class specified in *AndroidManifest.xml* as a **MAIN** action and **LAUNCHER** category.
+The following code creates the [MobileServiceClient](http://azure.github.io/azure-storage-android/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) object that is used to access your mobile service. The code goes in the `onCreate` method of the Activity class specified in *AndroidManifest.xml* as a **MAIN** action and **LAUNCHER** category.
 
 		MobileServiceClient mClient = new MobileServiceClient(
 				"MobileServiceUrl", // Replace with the above Site URL
@@ -57,7 +61,7 @@ In the code above, replace `MobileServiceUrl` and `AppKey` with the mobile servi
 
 The easiest way to query or modify data in the mobile service is by using the *typed programming model*, since Java is a strongly typed language (later on we will discuss the *untyped* model). This model provides seamless serialization and deserialization to JSON using the [gson](http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html) library when sending data between the client and the mobile service: the developer doesn't have to do anything, the framework handles it all.
 
-The first thing you do to query or modify data is to create a [MobileServiceTable](http://go.microsoft.com/fwlink/p/?LinkId=296835) object by calling the **getTable** method on the [**MobileServiceClient**](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html).  We will look at two overloads of this method:
+The first thing you do to query or modify data is to create a [MobileServiceTable](http://go.microsoft.com/fwlink/p/?LinkId=296835) object by calling the **getTable** method on the [**MobileServiceClient**](http://azure.github.io/azure-storage-android/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html).  We will look at two overloads of this method:
 
 	public class MobileServiceClient {
 	    public <E> MobileServiceTable<E> getTable(Class<E> clazz);
@@ -102,9 +106,9 @@ The following code returns all items in the *ToDoItem* table. It displays them i
                             mAdapter.clear();
                             for (ToDoItem item : result) {
                                 mAdapter.add(item);
-                            }
-                        }
-                    });
+					}
+				}
+			});
                } catch (Exception exception) {
                     createAndShowDialog(exception, "Error");
                }
@@ -129,7 +133,7 @@ The following code returns all items from the *ToDoItem* table whose *complete* 
                     final MobileServiceList<ToDoItem> result =
 						mToDoTable.where().field("complete").eq(false).execute().get();
 					for (ToDoItem item : result) {
-                		Log.i(TAG, "Read object with ID " + item.id);  
+                		Log.i(TAG, "Read object with ID " + item.id);
 					}
                 } catch (Exception exception) {
                     createAndShowDialog(exception, "Error");
@@ -248,8 +252,8 @@ First you instantiate an instance of the *ToDoItem* class and set its properties
 	                    runOnUiThread(new Runnable() {
 	                        public void run() {
 	                            mAdapter.add(item);
-	                        }
-	                    });
+			}
+		});
 	                }
 	            } catch (Exception exception) {
 	                createAndShowDialog(exception, "Error");
@@ -322,8 +326,8 @@ The following code shows how to update data in a table. In this example, *item* 
 	                            mAdapter.remove(item);
 	                        }
 	                        refreshItemsFromTable();
-	                    }
-	                });
+			}
+		});
 	            } catch (Exception exception) {
 	                createAndShowDialog(exception, "Error");
 	            }
@@ -356,8 +360,8 @@ The following code shows how to delete data from a table. It deletes an existing
                                 mAdapter.remove(item);
                             }
                             refreshItemsFromTable();
-                        }
-                    });
+		    }
+		});
                 } catch (Exception exception) {
                     createAndShowDialog(exception, "Error");
                 }
@@ -367,7 +371,7 @@ The following code shows how to delete data from a table. It deletes an existing
 	}
 
 
-The following code illustrates another way to do this. It deletes an existing item in the ToDoItem table by specifying the value of the id field of the row to delete (assumed to equal "2FA404AB-E458-44CD-BC1B-3BC847EF0902"). In an actual app you would pick up the ID somehow and pass it in as a variable. Here, to simplify testing, you can go into the Azure Mobile Services portal for your service, click **Data** and copy an ID that you wish to test with.
+The following code illustrates another way to do this. It deletes an existing item in the ToDoItem table by specifying the value of the id field of the row to delete (assumed to equal "2FA404AB-E458-44CD-BC1B-3BC847EF0902"). In an actual app you would pick up the ID somehow and pass it in as a variable. Here, to simplify testing, you can go to your service in the Azure Management Portal, click **Data** and copy an ID that you wish to test with.
 
     public void deleteItem(View view) {
 
@@ -381,8 +385,8 @@ The following code illustrates another way to do this. It deletes an existing it
                     runOnUiThread(new Runnable() {
                         public void run() {
                             refreshItemsFromTable();
-                        }
-               });
+		    }
+		});
                 } catch (Exception exception) {
                     createAndShowDialog(exception, "Error");
                 }
@@ -392,7 +396,7 @@ The following code illustrates another way to do this. It deletes an existing it
     }
 
 ##<a name="lookup"></a>How to: Look up a specific item
-Sometimes you want to look up a specific item by its *id*, unlike querying where you typically get a collection of items that satisfy some criteria. The following code shows how to do this, for an *id* value of `0380BAFB-BCFF-443C-B7D5-30199F730335`. In an actual app you would pick up the ID somehow and pass it in as a variable. Here, to simplify testing, you can go to the Azure Mobile Services portal for your service, click the **Data** tab and copy an ID that you wish to test with.
+Sometimes you want to look up a specific item by its *id*, unlike querying where you typically get a collection of items that satisfy some criteria. The following code shows how to do this, for an *id* value of `0380BAFB-BCFF-443C-B7D5-30199F730335`. In an actual app you would pick up the ID somehow and pass it in as a variable. Here, to simplify testing, you can go to your service in the Azure Management Portal, click the **Data** tab and copy an ID that you wish to test with.
 
     /**
      * Lookup specific item from table and UI
@@ -410,8 +414,8 @@ Sometimes you want to look up a specific item by its *id*, unlike querying where
                         public void run() {
                             mAdapter.clear();
                             mAdapter.add(result);
-                        }
-               });
+		    }
+		});
                 } catch (Exception exception) {
                     createAndShowDialog(exception, "Error");
                 }
@@ -509,7 +513,7 @@ The following code shows how to retrieve an entire table. Since you are using a 
                         @Override
                         public void run() {
                             mAdapter.clear();
-                            for (JsonElement item : results) {
+		            for(JsonElement item : results){
                                 String ID = item.getAsJsonObject().getAsJsonPrimitive("id").getAsString();
                                 String mText = item.getAsJsonObject().getAsJsonPrimitive("text").getAsString();
                                 Boolean mComplete = item.getAsJsonObject().getAsJsonPrimitive("complete").getAsBoolean();
@@ -518,9 +522,9 @@ The following code shows how to retrieve an entire table. Since you are using a 
                                 mToDoItem.setText(mText);
                                 mToDoItem.setComplete(mComplete);
                                 mAdapter.add(mToDoItem);
-                            }
-                        }
-                    });
+		        }
+		    }
+		});
                 } catch (Exception exception) {
                     createAndShowDialog(exception, "Error");
                 }
@@ -629,12 +633,12 @@ You are now ready to use data binding. The following code shows how to get the i
 
                         @Override
                         public void run() {
-                            mAdapter.clear();
-                            for (ToDoItem item : result) {
-                                mAdapter.add(item);
-                            }
-                        }
-                    });
+					mAdapter.clear();
+					for (ToDoItem item : result) {
+						mAdapter.add(item);
+					}
+				} 
+		});
                 } catch (Exception exception) {
                     createAndShowDialog(exception, "Error");
                 }
@@ -654,7 +658,7 @@ A custom API enables you to define custom endpoints that expose server functiona
 
 ##<a name="authentication"></a>How to: Authenticate users
 
-Mobile Services supports authenticating and authorizing app users using a variety of external identity providers: Facebook, Google, Microsoft Account, Twitter, and Azure Active Directory. You can set permissions on tables to restrict access for specific operations to only authenticated users. You can also use the identity of authenticated users to implement authorization rules in your backend. For more information, see [Get started with authentication](/documentation/articles/mobile-services-android-get-started-users/).
+Mobile Services supports authenticating and authorizing app users using a variety of external identity providers: Microsoft Account, and Azure Active Directory. You can set permissions on tables to restrict access for specific operations to only authenticated users. You can also use the identity of authenticated users to implement authorization rules in your backend. For more information, see [Get started with authentication](/documentation/articles/mobile-services-android-get-started-users/).
 
 Two authentication flows are supported: a *server* flow and a *client* flow. The server flow provides the simplest authentication experience, as it relies on the provider's web authentication interface. The client flow allows for deeper integration with device-specific capabilities such as single-sign-on as it relies on provider-specific device-specific SDKs.
 
@@ -708,8 +712,8 @@ These first two tasks are done using the [Azure Management Portal](https://manag
                         "You are now logged in - %1$2s",
                         user.getUserId()), "Success");
     			createTable();
-    		}
-    	});
+						}
+					});
 
     This code authenticates the user using a Google login. A dialog is displayed which displays the ID of the authenticated user. You cannot proceed without a positive authentication.
 
@@ -799,8 +803,8 @@ You might want to attach a custom header to every outgoing request. You can acco
 					NextServiceFilterCallback next) {
 
             runOnUiThread(new Runnable() {
-
-                @Override
+		
+		    @Override
                 public void run() {
 	        		request.addHeader("My-Header", "Value");	                }
             });
@@ -835,7 +839,7 @@ Suppose that your Java client code uses standard Java-style names for the *ToDoI
 - mDuration
 
 
-You must serialize the client names into JSON names that match the column names of the *ToDoItem* table on the server. The following code, which makes use of the <a href=" http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html" target="_blank">gson</a> library does this.
+You must serialize the client names into JSON names that match the column names of the *ToDoItem* table on the server. The following code, which makes use of the <a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html" target="_blank">gson</a> library does this.
 
 	@com.google.gson.annotations.SerializedName("text")
 	private String mText;
@@ -859,9 +863,9 @@ Mapping the client table name to a different mobile services table name is easy,
 
 ### <a name="conversions"></a>How to: Automate column name mappings
 
-Mapping column names for a narrow table with only a few columns isn't a big deal, as we saw in the prior section. But suppose our table has a lot of columns, say 20 or 30. It turns out that we can call the <a href=" http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html" target="_blank">gson</a> API and specify a conversion strategy that will apply to every column, and avoid having to annotate every single column name.
+Mapping column names for a narrow table with only a few columns isn't a big deal, as we saw in the prior section. But suppose our table has a lot of columns, say 20 or 30. It turns out that we can call the <a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html" target="_blank">gson</a> API and specify a conversion strategy that will apply to every column, and avoid having to annotate every single column name.
 
-To do this we use the <a href=" http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html" target="_blank">gson</a> library which the Android client library uses behind the scenes to serialize Java objects to JSON data, which is sent to Azure Mobile Services.
+To do this we use the <a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html" target="_blank">gson</a> library which the Android client library uses behind the scenes to serialize Java objects to JSON data, which is sent to Azure Mobile Services.
 
 The following code uses the *setFieldNamingStrategy()* method, in which we define a *FieldNamingStrategy()* method. This method says to delete the initial character (an "m"), and then lower-case the next character, for every field name. This code also enables pretty-printing of the output JSON.
 
@@ -885,7 +889,7 @@ This code must be executed prior to any method calls on the Mobile Services clie
 
 So far all of our serialization examples have involved primitive types such as integers and strings which easily serialize into JSON and into the mobile services table. Suppose we want to add a complex object to our client type, which doesn't automatically serialize to JSON and to the table. For example we might want to add an array of strings to the client object. It is now up to us to specify how to do the serialization, and how to store the array into the mobile services table.
 
-To see an example of how to do this, check out the blog post <a href="http://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson" target="_blank">Customizing serialization using the <a href=" http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html" target="_blank">gson</a> library in the Mobile Services Android client</a>.
+To see an example of how to do this, check out the blog post <a href="http://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson" target="_blank">Customizing serialization using the <a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html" target="_blank">gson</a> library in the Mobile Services Android client</a>.
 
 This general method can be used whenever we have a complex object that is not automatically serializable into JSON and the mobile services table.
 

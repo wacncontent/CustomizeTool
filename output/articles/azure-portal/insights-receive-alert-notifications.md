@@ -7,14 +7,10 @@
 	services="azure-portal" 
 	documentationCenter="na"/>
 
-<tags 
-	ms.service="azure-portal" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/08/2015" 
-	ms.author="stepsic"/>
+<tags
+	ms.service="azure-portal"
+	ms.date="09/08/2015"
+	wacn.date=""/>
 
 # Receive alert notifications
 
@@ -24,11 +20,11 @@ For an alert rule on a metric value, when the value of a specified metric crosse
 
 When you create an alert rule, you can select options to send an email notification to the service administrator and co-administrators or to another administrator that you can specify. A notification email is sent when the rule becomes active, and when an alert condition is resolved.
 
-You can use the [REST API](https://msdn.microsoft.com/library/azure/dn931945.aspx) or [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) to configure and get information about alert rules programmatically.
+You can use the [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931945.aspx) or [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) to configure and get information about alert rules programmatically.
 
 ## Create an alert rule
 
-1. In the [portal](https://portal.azure.com/), click **Browse**, and then a resource you're interested in monitoring.
+1. In the [portal](https://manage.windowsazure.cn/), click **Browse**, and then a resource you're interested in monitoring.
 
 2. Click on the  **Alert rules** tile in the **Operations** lens.
 
@@ -43,7 +39,7 @@ You can use the [REST API](https://msdn.microsoft.com/library/azure/dn931945.asp
 6. You can also choose **Events**, and get a notification when a certain event happens. 
     ![Events](./media/insights-receive-alert-notifications/Insights_Events.png)
     
->[AZURE.NOTE] At this time Events are only supported for Web Apps. 
+>[AZURE.NOTE] At this time Events are only supported for web sites. 
 
 7. Finally, you can choose to send email notification to responsible administrators.
 
@@ -60,10 +56,11 @@ You can of course edit this alert rule, and **Disable** or **Enable** it if you 
 
 ## Next steps
 
-* [Monitor service metrics](insights-how-to-customize-monitoring.md) to make sure your service is available and responsive.
-* [Enable monitoring and diagnostics](insights-how-to-use-diagnostics.md) to collect detailed high-frequency metrics on your service.
-* [Monitor availability and responsiveness of any web page](../app-insights-monitor-web-app-availability.md) with Application Insights so you can find out if your page is down.
-* [Monitor application performance](insights-perf-analytics.md) if you want to understand exactly how your code is performing in the cloud.
-* [View events and audit logs](insights-debugging-with-events.md) to learn everything that has happened in your service.
-* [Track service health](insights-service-health.md) to find out when Azure has experienced performance degradation or service interruptions.
+* [Configure webhooks on your Alerts](/documentation/articles/insights-webhooks-alerts) to route notifications to various channels
+* [Monitor service metrics](/documentation/articles/insights-how-to-customize-monitoring) to make sure your service is available and responsive.
+* [Enable monitoring and diagnostics](/documentation/articles/insights-how-to-use-diagnostics) to collect detailed high-frequency metrics on your service.
+* [Monitor availability and responsiveness of any web page](/documentation/articles/app-insights-monitor-web-app-availability) with Application Insights so you can find out if your page is down.
+* [Monitor application performance](/documentation/articles/insights-perf-analytics) if you want to understand exactly how your code is performing in the cloud.
+* [View events and audit logs](/documentation/articles/insights-debugging-with-events) to learn everything that has happened in your service.
+* [Track service health](/documentation/articles/insights-service-health) to find out when Azure has experienced performance degradation or service interruptions.
  

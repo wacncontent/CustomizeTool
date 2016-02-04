@@ -3,8 +3,8 @@
 	description="Learn how to use the New Relic service to manage and monitor your Azure application." 
 	services="" 
 	documentationCenter=".net" 
-	authors="stepsic-microsoft-com" 
-	manager="carolz" 
+	authors="nickfloyd" 
+	manager="timlt" 
 	editor=""/>
 
 <tags
@@ -14,15 +14,22 @@
 
 
 
+<!-- deleted by customization
+# New Relic Application Performance Management on Azure
+-->
+<!-- keep by customization: begin -->
 #New Relic Application Performance Management on Azure
+<!-- keep by customization: end -->
 
 This guide describes how to add New Relic's world-class performance
 monitoring to your Azure hosted applications. We'll cover the fast and simple
 process to add New Relic to your application and introduce you to some of
 New Relic's features. For more information about using New Relic, see [Using New Relic](#using-new-relic).
 
-What is New Relic?
+<!-- deleted by customization ## --> What is New Relic?
+<!-- keep by customization: begin -->
 --
+<!-- keep by customization: end -->
 
 New Relic is a developer focused tool that monitors your production applications
 and provides deep insight into their performance and reliability. It is
@@ -34,8 +41,10 @@ the server and your users' browsers. It shows how much time you spend in the
 database, analyzes slow queries and web requests, provides uptime monitoring and
 alerting, tracks application exceptions, and a whole lot more.
 
-New Relic special pricing through the Azure Store
+<!-- deleted by customization ## --> New Relic special pricing through the Azure Store
+<!-- keep by customization: begin -->
 --
+<!-- keep by customization: end -->
 
 New Relic Standard is free to Azure users
 New Relic Pro is offered based on instance size for Azure Cloud Services
@@ -46,8 +55,10 @@ For pricing information see the [New Relic page in the Azure Store](http://azure
 
 Azure customers receive a 2 week trial subscription of New Relic Pro when they deploy the New Relic agent.
 
-Sign up for New Relic using the Azure Store
+<!-- deleted by customization ## --> Sign up for New Relic using the Azure Store
+<!-- keep by customization: begin -->
 --
+<!-- keep by customization: end -->
 
 New Relic integrates seamlessly with Azure Web Roles and Worker roles.
 
@@ -111,9 +122,16 @@ To sign up for New Relic directly from the Azure Store, follow these three easy 
 
 
 **Note:** If this is your first time deploying this app to Azure, you will be prompted to enter your 
-Azure credentials. For more information, see <a href="/develop/net/tutorials/get-started/">Deploying an ASP.NET Web Application to an Azure Website</a>.
+<!-- deleted by customization
+Azure credentials. For more information, see [Deploying an ASP.NET web site to an Azure Website](app-service-web\web-sites-dotnet-get-started.md)
 
 ![publish settings](./media/store-new-relic-cloud-services-dotnet-application-performce-management/NewRelicAzureNuget10.png)
+-->
+<!-- keep by customization: begin -->
+Azure credentials. For more information, see <a href="/develop/net/tutorials/get-started/">Deploying an ASP.NET Web Site to an Azure Website</a>.
+
+![publish settings](./media/store-new-relic-cloud-services-dotnet-application-performce-management/NewRelicAzureNuget10.png)
+<!-- keep by customization: end -->
 
 ### Step 3. Check out your application's performance in New Relic.
 
@@ -133,6 +151,26 @@ To view your New Relic dashboard:
 
 After you select your app from the list on the Applications menu, the Overview dashboard shows current app server and browser information. To toggle between the two views, click the **App server** or **Browser** button.
 
+<!-- deleted by customization
+In addition to the [standard New Relic UI](https://newrelic.com/docs/site/the-new-relic-ui#functions") and [dashboard drill-down](https://newrelic.com/docs/site/the-new-relic-ui#drilldown) functions, the Applications Overview dashboard has additional functions.
+
+| If you want to... | Do this... |
+| ----------------- | ---------- |
+| Show dashboard information for the selected app's server or browser. | Click the **App Server** or **Browser** button. |
+| View threshold levels for your app's [Apdex](https://newrelic.com/docs/site/apdex) score. | Point to the Apdex score **?** icon. |
+| View worldwide Apdex details. | From the Overview's **Browser** view, point anywhere on the Global Apdex map. **Tip:** To go directly to the selected app's [Geography](https://docs.newrelic.com/docs/new-relic-browser/geography-dashboard") dashboard, click the **Global Apdex** title, or click anywhere on the Global Apdex map. |
+| View the [Web Transactions](https://newrelic.com/docs/applications-dashboards/web-transactions) dashboard. | Click the Web Transactions table on the Applications Overview dashboard. Or, to view details about a specific web transaction (including [Key Transactions](https://newrelic.com/docs/site/key-transactions"), click its name. |
+| View the [Errors](https://newrelic.com/docs/site/errors) dashboard. | Click the Error rate chart's title on the Applications Overview dashboard. **Tip:** You can also view the Errors dashboard from **Applications** > (your app) > Events > Errors. |
+
+
+Additionally, if you want to view the app's server details, do any of the following:
+
+- Toggle between a table view of the hosts or breakout metric details of each host.
+- Click an individual server's name.
+- Point to an individual server's Apdex score.
+- Click an individual server's CPU usage or Memory.
+-->
+<!-- keep by customization: begin -->
 In addition to the <a href="https://newrelic.com/docs/site/the-new-relic-ui#functions">standard New Relic UI</a> and <a href="https://newrelic.com/docs/site/the-new-relic-ui#drilldown">dashboard drill-down</a> functions, the Applications Overview dashboard has additional functions.
 
 <table border="1">
@@ -176,6 +214,7 @@ In addition to the <a href="https://newrelic.com/docs/site/the-new-relic-ui#func
     </tr>
   </tbody>
 </table>
+<!-- keep by customization: end -->
 
 Below is an example of the Applications Overview dashboard when you select the Browser view.
 

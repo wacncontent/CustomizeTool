@@ -1,41 +1,37 @@
 <properties 
-	pageTitle="Stream Analytics Alerting | Microsoft Azure" 
+	pageTitle="Set up alerts for queries in Stream Analytics | Windows Azure" 
 	description="Understanding Stream Analytics Alerting" 
-	keywords="big data analytics,cloud service,internet of things,managed service,stream processing,streaming analytics,streaming data"
+	keywords="set up alerts"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="stream-analytics" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="data-services" 
-	ms.date="09/29/2015" 
-	ms.author="jeffstok"/> 
+<tags
+	ms.service="stream-analytics"
+	ms.date="12/04/2015"
+	wacn.date=""/> 
 
 
-# Setting up alerts
+# Set up alerts for Azure Stream Analytics jobs
 
-## Monitor page
+## Introduction: Monitor page
 
-You can setup a rule to trigger an alert when a metric reaches a condition that you specify.
+You can set up alerts to trigger an alert when a metric reaches a condition that you specify.
 
 For example,  “If Output Events for the last 15 minutes is <100,  send email notification to email id: xyz@company.com”.
 
-Rules can be setup on metrics through the portal, or can be configured [programmatically](https://code.msdn.microsoft.com/windowsazure/Receive-Email-Notifications-199e2c9a) over Operation Logs data.
+Rules can be set up on metrics through the portal, or can be configured [programmatically](https://code.msdn.microsoft.com/windowsazure/Receive-Email-Notifications-199e2c9a) over Operation Logs data.
 
-## Setting up alerts through the Azure Portal
+## Set up alerts through the Azure Management Portal
 
 There are two ways to setup alerts in the Azure Management portal:  
 
 1.	The **Monitor** tab of your Stream Analytics job  
 2.	The Operations Log in the Management services  
 
-## Alerts through the Monitor tab of the job in the portal
+## Set up alert through the Monitor tab of the job in the portal
 
 1.	Select the metric in the monitor tab, and click on the **Add Rule** button in the bottom of the dashboard, and setup your rules.  
 
@@ -49,18 +45,18 @@ There are two ways to setup alerts in the Azure Management portal:
 
     ![Define Conditions](./media/stream-analytics-set-up-alerts/03-stream-analytics-set-up-alerts.png)  
 
-## Setting up alerts through the Operations logs
+## Set up alerts through the Operations logs
 
-1.	Go to the **Alerts** tab in Management Services in the [Azure Portal](https://manage.windowsazure.com).  
+1.	Go to the **Alerts** tab in Management Services in the [Azure Management Portal](https://manage.windowsazure.cn).  
 2.	Click on **Add Rule**  
 
     ![Criteria](./media/stream-analytics-set-up-alerts/04-stream-analytics-set-up-alerts.png)  
 
-3.	Define the name and description of the Alert. Select ‘Stream Analytics’ as Service Type, and the job name as the Service Name.  
+3.	Define the name and description of the Alert. Select 'Stream Analytics' as Service Type, and the job name as the Service Name.  
 
     ![Define Alert](./media/stream-analytics-set-up-alerts/05-stream-analytics-set-up-alerts.png)  
 
-## Setting up alerts in the Azure Preview portal ##
+## Set up alerts in the Azure Preview portal ##
 
 In the Azure Preview portal, browse to the Stream Analtyics job you are interested in alerting on and click the **Monitoring** section.  In the **Metric** blade that opens, click the **Add alert** command.
 
@@ -72,15 +68,15 @@ When you select Metrics you'll choose a condition and threshold Value for the me
 
   ![Azure preview portal select metric](./media/stream-analytics-set-up-alerts/07-stream-analytics-set-up-alerts.png)  
 
-For more detail on configuring alerts in the Azure Preview portal, see [Receive alert notifications](./azure-portal/insights-receive-alert-notifications.md).  
+For more detail on configuring alerts in the Azure Preview portal, see [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications).  
 
 ## Get help
-For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics)
+For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/home?forum=AzureStreamAnalytics)
 
 ## Next steps
 
-- [Introduction to Azure Stream Analytics](stream-analytics-introduction.md)
-- [Get started using Azure Stream Analytics](stream-analytics-get-started.md)
-- [Scale Azure Stream Analytics jobs](stream-analytics-scale-jobs.md)
-- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+- [Introduction to Azure Stream Analytics](/documentation/articles/stream-analytics-introduction)
+- [Get started using Azure Stream Analytics](/documentation/articles/stream-analytics-get-started)
+- [Scale Azure Stream Analytics jobs](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)

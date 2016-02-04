@@ -7,14 +7,10 @@
 	manager="stevenpo" 
 	editor="curtland"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 
 
@@ -35,7 +31,7 @@ The following are some things to remember on how to use app passwords.
 - It is recommended that app passwords be created per device and not per application. For example, you can create one app password for your laptop and use that app password for all of your applications on that laptop.
 - You are given an app password the first time you sign-in.  If you need additional ones, you can create them.
  
-![Setup](./media/multi-factor-authentication-end-user-app-passwords/app.png)
+<!-- deleted by customization ![Setup](./media/multi-factor-authentication-end-user-app-passwords/app.png) --><!-- keep by customization: begin --> <center>![Setup](./media/multi-factor-authentication-end-user-app-passwords/app.png)</center> <!-- keep by customization: end -->
 
 Once you have an app password, you use this in place of your original password with these non-browser apps.  So for instance, if you are using multi-factor authentication and the Apple native email client on your phone.  Use the app password so that it can bypass multi-factor authentication and continue to work.
 
@@ -46,7 +42,7 @@ How you use multi-factor authentiation|Description
 :------------- | :------------- | 
 [I use it with Office 365](#creating-and-deleting-app-passwords-with-office-365)|  This means that you will want to create app passwords through the Office 365 portal.
 [I don't know](#creating-and-deleting-app-passwords-with-myapps-portal)|This means you will want create app passwords through [https://myapps.microsoft.com](https://myapps.microsoft.com)
-[I use it with Microsoft Azure](#create-app-passwords-in-the-azure-portal)| This means that you will want create app passwords through the Azure portal.
+[I use it with Windows Azure](#create-app-passwords-in-the-azure-portal)| This means that you will want create app passwords through the Azure Management Portal.
 
 ## Creating and deleting app passwords with Office 365 
 
@@ -55,7 +51,7 @@ If you use multi-factor authentication with Office 365 you will want to create a
 ### To create app passwords in the Office 365 portal
 --------------------------------------------------------------------------------
 
-1. Log on to the [Office 365 portal](https://login.microsoftonline.com/).
+1. Log on to the [Office 365 portal](https://login.chinacloudapi.cn/).
 2. In the top right corner select the widget and choose Office 365 Settings.
 3. Click on Additional security verification.
 4. On the right, click the link that says **Update my phone numbers used for account security.**
@@ -75,7 +71,7 @@ If you use multi-factor authentication with Office 365 you will want to create a
 --------------------------------------------------------------------------------
 
 
-1. Log on to the [Office 365 portal](https://login.microsoftonline.com/).
+1. Log on to the [Office 365 portal](https://login.chinacloudapi.cn/).
 2. In the top right corner select the widget and choose Office 365 Settings.
 3. Click on Additional security verification.
 4. On the right, click the link that says **Update my phone numbers used for account security.**
@@ -127,11 +123,11 @@ If you are not sure how you use multi-factor authentication, then you can always
 ![Close](./media/multi-factor-authentication-end-user-app-passwords/delete3.png)
 
 
-## Create app passwords in the Azure portal
+## Create app passwords in the Azure Management Portal
 
-If you use multi-factor authentication with Azure you will want to create app passwords through the Azure portal.
+If you use multi-factor authentication with Azure you will want to create app passwords through the Azure Management Portal.
 
-### To create app passwords in the Azure portal
+### To create app passwords in the Azure Management Portal
 
 1. Sign-in to the Azure Management portal.
 2. At the top, right-click on your user name and select Additional Security Verification.
@@ -141,7 +137,7 @@ If you use multi-factor authentication with Azure you will want to create app pa
 6. Copy the app password to the clipboard and paste it into your app.
 ![Cloud](./media/multi-factor-authentication-end-user-app-passwords-create-azure/app2.png)
 
-### To delete app passwords in the Azure portal
+### To delete app passwords in the Azure Management Portal
 
 1. Sign-in to the Azure Management portal.
 2. At the top, right-click on your user name and select Additional Security Verification.

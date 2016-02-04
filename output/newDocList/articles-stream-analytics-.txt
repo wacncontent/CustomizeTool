@@ -1,0 +1,31 @@
+new docs: 27, word count: {word_count_TODO}
+articles/stream-analytics/stream-analytics-add-inputs.md
+articles/stream-analytics/stream-analytics-add-outputs.md
+articles/stream-analytics/stream-analytics-comparison-storm.md
+articles/stream-analytics/stream-analytics-create-a-job.md
+articles/stream-analytics/stream-analytics-define-inputs.md
+articles/stream-analytics/stream-analytics-define-outputs.md
+articles/stream-analytics/stream-analytics-documentdb-output.md
+articles/stream-analytics/stream-analytics-dotnet-management-sdk.md
+articles/stream-analytics/stream-analytics-get-started.md
+articles/stream-analytics/stream-analytics-how-to-configure-azure-machine-learning-endpoints-in-stream-analytics.md
+articles/stream-analytics/stream-analytics-introduction.md
+articles/stream-analytics/stream-analytics-login-credentials-inputs-outputs.md
+articles/stream-analytics/stream-analytics-machine-learning-integration-tutorial.md
+articles/stream-analytics/stream-analytics-monitor-and-manage-jobs-use-powershell.md
+articles/stream-analytics/stream-analytics-monitor-jobs.md
+articles/stream-analytics/stream-analytics-monitoring.md
+articles/stream-analytics/stream-analytics-operation-logs.md
+articles/stream-analytics/stream-analytics-power-bi-dashboard.md
+articles/stream-analytics/stream-analytics-real-time-event-processing-reference-architecture.md
+articles/stream-analytics/stream-analytics-release-notes.md
+articles/stream-analytics/stream-analytics-run-a-job.md
+articles/stream-analytics/stream-analytics-scale-jobs.md
+articles/stream-analytics/stream-analytics-set-up-alerts.md
+articles/stream-analytics/stream-analytics-stream-analytics-query-patterns.md
+articles/stream-analytics/stream-analytics-twitter-sentiment-analysis-trends.md
+articles/stream-analytics/stream-analytics-use-reference-data.md
+articles/stream-analytics/stream-analytics-write-queries.md
+
+new includes: 1
+includes/stream-analytics-limits-table.md

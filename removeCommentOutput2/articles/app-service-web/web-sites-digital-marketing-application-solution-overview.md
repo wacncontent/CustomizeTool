@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Create a digital marketing campaign on Azure Websites" 
-	description="This guide provides a technical overview of how to use Azure Websites to create digital marketing campaigns. This includes deployment, social media integration, scaling strategies, and monitoring." 
+	pageTitle="Create a digital marketing campaign on Azure Web Apps" 
+	description="This guide provides a technical overview of how to use Azure Web Apps to create digital marketing campaigns. This includes deployment, social media integration, scaling strategies, and monitoring." 
 	editor="jimbe" 
 	manager="wpickett" 
 	authors="cephalin" 
@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="09/29/2015"
+	ms.date="12/10/2015"
 	wacn.date=""/>
 
-# Create a digital marketing campaign on Azure Websites
-[Azure Websites](/documentation/services/web-sites/) Web Apps is a great choice for digital marketing campaigns. Digital marketing campaigns are typically short-lived and are meant to drive short-term marketing goals. There are two main scenarios to consider. In the first scenario, a third-party marketing firm creates and manages the campaign for their customer for the duration of the promotion. A second scenario involves the marketing firm creating and then transferring ownership of the digital marketing campaign resources to their customer. The customer then runs and manages the digital marketing campaign on their own. is a good match for both scenarios. 
+# Create a digital marketing campaign on Azure Web Apps
+[Azure Web App](/documentation/services/web-sites/) Web Apps is a great choice for digital marketing campaigns. Digital marketing campaigns are typically short-lived and are meant to drive short-term marketing goals. There are two main scenarios to consider. In the first scenario, a third-party marketing firm creates and manages the campaign for their customer for the duration of the promotion. A second scenario involves the marketing firm creating and then transferring ownership of the digital marketing campaign resources to their customer. The customer then runs and manages the digital marketing campaign on their own. is a good match for both scenarios. 
 
 The following areas are addressed in this guide:
 
@@ -24,28 +24,28 @@ The following areas are addressed in this guide:
 - [Monitor the Campaign](#monitor)
 
 > [AZURE.NOTE]
-> This guide presents some of the most common areas and tasks that are aligned with running a digital marketing campaign in Azure Websites. However, there are other common solutions that you can implement in Azure Websites. To review these solutions, see the other guides on [Global Web Presence](/documentation/articles/web-sites-global-web-presence-solution-overview) and [Business Applications](/documentation/articles/web-sites-business-application-solution-overview).
+> This guide presents some of the most common areas and tasks that are aligned with running a digital marketing campaign in Azure Web Apps. However, there are other common solutions that you can implement in Azure Web Apps. To review these solutions, see the other guides on [Global Web Presence](/documentation/articles/web-sites-global-web-presence-solution-overview) and [Business Applications](/documentation/articles/web-sites-business-application-solution-overview).
 
 ## Create from scratch or bring existing assets
 
-Quickly bring your existing web assets to Azure Websites from a variety of languages and frameworks.
+Quickly bring your existing web assets to Azure Web Apps from a variety of languages and frameworks.
 
 You can create a web app using your favorite CMS flavor. You can choose from various database backends to meet your needs, including [Azure SQL Database] and [MySQL].
 
-Your existing web assets can run on Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools. If you frequently create digital marketing campaigns, it is possible that you have existing web assets in a source control management system. You can deploy to Web Apps directly from popular source control options, such as [Visual Studio] and [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
+Your existing web assets can run on Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools. If you frequently create digital marketing campaigns, it is possible that you have existing web assets in a source control management system. You can deploy to Web Apps directly from popular source control options, such as [Visual Studio], and [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
 
 ## Stay agile
 
-Stay agile by continuously publishing directly from your existing source control and run A/B tests in Azure Websites. 
+Stay agile by continuously publishing directly from your existing source control and run A/B tests in Azure Web Apps. 
 
-During the planning, prototyping, and early development of a web app, you and your customer can look at real working versions of the campaign app before it goes live by [deploying to a staging slot] of your web app. By integrating source control with Azure Websites, you can [continuously publish] to a staging slot, and swap it into production with no downtime when it is ready. 
+During the planning, prototyping, and early development of a web app, you and your customer can look at real working versions of the campaign app before it goes live by [deploying to a staging slot] of your web app. By integrating source control with Azure Web Apps, you can [continuously publish] to a staging slot, and swap it into production with no downtime when it is ready. 
 
 Also, when planning changes to a live web app, you can easily [run A/B tests] on the proposed updates using the Test in Production feature in and analyze real user behavior to help you make informed decisions on app design.
 
 
 ## Go social
 
-Your digital marketing campaign in Azure Websites can integrate with social media by authenticating with popular providers like Facebook and Twitter. For an example of this approach with an ASP.NET application, see [Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Websites]. 
+Your digital marketing campaign in Azure Web Apps can integrate with social media by authenticating with popular providers like Facebook and Twitter. For an example of this approach with an ASP.NET application, see [Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App]. 
 
 Furthermore, each social media site typically provides information on other ways to integrate with it from .NET and many other frameworks.
 
@@ -70,7 +70,7 @@ Deliver your static content lightning fast to users globally by [integrating you
 
 Optimize your web app by scaling automatically with Autoscale, caching with Azure Redis Cache, running background tasks with WebJobs, and maintaining high availability with Azure Traffic Manager.
 
-The ability of Azure Websites to [scale up and out] is perfect for unpredictable workloads, which is the case with digital marketing campaigns. Scale out your web app manually through the [Azure Management Portal](https://manage.windowsazure.cn/), programmatically through the [Service Management API] or [PowerShell scripting], or automatically through the Autoscale feature. In the **Standard** tier, Autoscale enables you to scale out a web app automatically based on CPU utilization. This feature helps you maximize agility and minimize cost at the same time by scaling out the web app only when needed based on user activity. For best practices, see [Troy Hunt]'s [10 things I learned about rapidly scaling web apps with Azure].
+The ability of Azure Web Apps to [scale up and out] is perfect for unpredictable workloads, which is the case with digital marketing campaigns. Scale out your web app manually through the [Azure Management Portal](https://manage.windowsazure.cn/), programmatically through the [Service Management API] or [PowerShell scripting], or automatically through the Autoscale feature. In the **Standard** tier, Autoscale enables you to scale out a web app automatically based on CPU utilization. This feature helps you maximize agility and minimize cost at the same time by scaling out the web app only when needed based on user activity. For best practices, see [Troy Hunt]'s [10 things I learned about rapidly scaling web apps with Azure].
 
 Make your web app more responsive with the [Azure Redis Cache]. Use it to cache data from backend databases and other things such as the [ASP.NET session state] and [output cache].
 
@@ -84,13 +84,13 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 
 ## More Resources
 
-- [Azure Websites Documentation](/home/features/app-service/web/)
-- [Learning Map for Azure Websites](/documentation/articles/websites-learning-map)
-- [Azure Web Blog](/blog/topics/web/)
+- [Azure Web Apps Documentation](/home/features/web-site/)
+- [Learning Map for Azure Web Apps](/documentation/articles/websites-learning-map)
+- [Azure Web Blog](/blog/tags/网站/)
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
-[Azure Websites]: /home/features/web-site/
+[Azure Web App]: /home/features/web-site/
 
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
@@ -102,7 +102,7 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [continuously publish]:http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
 [run A/B tests]:http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
 
-[Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Websites]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
+[Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 
 [Azure Media Services]:http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
 [SendGrid service in Azure Marketplace]: /documentation/articles/sendgrid-dotnet-how-to-send-email
@@ -110,7 +110,7 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [Notification Hub]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 
 [Azure Traffic Manager]:http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
-[integrating your web app with Azure CDN]: /documentation/articles/cdn-websites-with-cdn
+[integrating your web site with Azure CDN]: /documentation/articles/cdn-websites-with-cdn
 [CDN node]:https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
 
 [scale up and out]:/manage/services/web-sites/how-to-scale-websites/

@@ -10,5 +10,5 @@ deleted:
 
 		For a detailed walk through, please see our [how-to video](http://azure.microsoft.com/documentation/videos/restore-a-sql-database-using-geo-restore-with-microsoft-azure-powershell/).
 
-reason: ()
+reason: (video)
 

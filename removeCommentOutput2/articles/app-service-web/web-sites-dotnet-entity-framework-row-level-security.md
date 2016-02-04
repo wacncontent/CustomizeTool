@@ -16,7 +16,7 @@
 
 This tutorial shows how to build a multi-tenant web app with a "[shared database, shared schema](https://msdn.microsoft.com/zh-cn/library/aa479086.aspx)" tenancy model, using Entity Framework and [Row-Level Security](https://msdn.microsoft.com/zh-cn/library/dn765131.aspx). In this model, a single database contains data for many tenants, and each row in each table is associated with a "Tenant ID." Row-Level Security (RLS), a new feature for Azure SQL Database, is used to prevent tenants from accessing each other's data. This requires just a single, small change to the application. By centralizing the tenant access logic within the database itself, RLS simplifies the application code and reduces the risk of accidental data leakage between tenants.
 
-Let's start with the simple Contact Manager application from [Create an ASP.NET MVP app with auth and SQL DB and deploy to Azure Websites](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database). Right now, the application allows all users (tenants) to see all contacts:
+Let's start with the simple Contact Manager application from [Create an ASP.NET MVP app with auth and SQL DB and deploy to Azure Web App](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database). Right now, the application allows all users (tenants) to see all contacts:
 
 ![Contact Manager application before enabling RLS](./media/web-sites-dotnet-entity-framework-row-level-security/ContactManagerApp-Before.png)
 
@@ -124,7 +124,7 @@ Now the table looks like this:
 
 When new contacts are created, they'll automatically be assigned the correct UserId. For demo purposes, however, let's assign a few of these existing contacts to an existing user.
 
-If you've created a few users in the application already (e.g., using local, Google, or Facebook accounts), you'll see them in the AspNetUsers table. In the screenshot below, there is only one user so far.
+If you've created a few users in the application already (e.g., using local accounts), you'll see them in the AspNetUsers table. In the screenshot below, there is only one user so far.
 
 ![SSMS AspNetUsers table](./media/web-sites-dotnet-entity-framework-row-level-security/SSMS-AspNetUsers.png)
 

@@ -22,7 +22,7 @@ When you provision development and test environments in Windows Azure, you only 
 
 ![Scenario](./media/solution-dev-test-environments-preview-portal/scenario.png)
 
-Three development and testing environments are shown above.  Each has a web application and SQL database.  The names of the application and database in each environment are different.  This article explains how you can use a template to deploy the same resource across environments, and use unique parameter files to specify different configurations for the resources across the environments.
+Three development and testing environments are shown above.  Each has a web site and SQL database.  The names of the application and database in each environment are different.  This article explains how you can use a template to deploy the same resource across environments, and use unique parameter files to specify different configurations for the resources across the environments.
 
 If you're not familiar with Azure Resource Manager concepts, it's recommended that you read the [Azure Resource Manager Overview](/documentation/articles/resource-group-overview) article before reading this article.
 
@@ -31,19 +31,19 @@ You may want to first go through the steps in this article as listed without rea
 ## Plan Azure resource use
 Once you have a high level design for your application, you can define:
 
-- Which Azure resources your application will include. You might build your application and deploy it as an Azure Web App with an Azure SQL Database.  You might build your application in virtual machines using PHP and MySQL or IIS and SQL Server, or other components. The [Azure Websites, Cloud Services, and Virtual Machines comparison]( app-service-web/choose-web-site-cloud-service-vm.md) article helps you decide which Azure resources you might want to utilize for your application.
+- Which Azure resources your application will include. You might build your application and deploy it as an Azure web site with an Azure SQL Database.  You might build your application in virtual machines using PHP and MySQL or IIS and SQL Server, or other components. The [Azure Websites, Cloud Services, and Virtual Machines comparison]( app-service-web/choose-web-site-cloud-service-vm.md) article helps you decide which Azure resources you might want to utilize for your application.
 - What service level requirements such as availability, security, and scale that your application will meet.
 
 ## Using Azure Resource Manager templates
 An Azure Resource Manager template defines all of the Azure resources that your application utilizes. Several templates already exist that you can deploy directly in the Azure Preview Portal, or download, modify, and save in a source control system with your application code.  Chances are, an existing template exists that includes the resources you want to use with your application. You can find a list of available templates in the [Azure Quickstart Templates](https://github.com/Azure/azure-quickstart-templates/) GitHub repository. 
 
-In the list you'll see a "[201-web-app-sql-database](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database)" folder. Since many custom applications include a web application and SQL database, this template is used as an example in the remainder of this article to help you understand how to use templates. It's beyond the scope of this article to fully explain everything this template creates and configures, but if you plan to use it to create actual environments in your organization, you'll want to fully understand it by reading the [Provision a web app with a SQL Database](/documentation/articles/app-service-web-arm-with-sql-database-provision) article.
+In the list you'll see a "[201-web-app-sql-database](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database)" folder. Since many custom applications include a web site and SQL database, this template is used as an example in the remainder of this article to help you understand how to use templates. It's beyond the scope of this article to fully explain everything this template creates and configures, but if you plan to use it to create actual environments in your organization, you'll want to fully understand it by reading the [Provision a web site with a SQL Database](/documentation/articles/app-service-web-arm-with-sql-database-provision) article.
 
-> [AZURE.NOTE] You can deploy the template to Azure directly by clicking the "Deploy to Azure" button on the [Provision a Web App with a SQL Database](http://azure.microsoft.com/documentation/templates/201-web-app-sql-database/) article.  You might find this helpful to learning about templates, but doing so does not enable you to edit, version, and save your template and parmeter values with your application code. The steps in this article explain how you can save and version your template and parameter values with your application code.
+> [AZURE.NOTE] You can deploy the template to Azure directly by clicking the "Deploy to Azure" button on the [Provision a web site with a SQL Database](http://azure.microsoft.com/documentation/templates/201-web-app-sql-database/) article.  You might find this helpful to learning about templates, but doing so does not enable you to edit, version, and save your template and parmeter values with your application code. The steps in this article explain how you can save and version your template and parameter values with your application code.
 
   **Step 1:** View the contents of the [azuredeploy.json](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json) file in the 201-web-app-sql-database folder. This is the Azure Resource Manager template file. In the view mode, click the "[Raw](https://github.com/Azure/azure-quickstart-templates/raw/master/201-web-app-sql-database/azuredeploy.json)" button. With your mouse, select the entire contents of this file and save it to your computer as a file named "TestApp1-Template.json." 
 
-In the template file you'll see a "resources" section, which defines the Azure resources created by this template. Among other resource types, this template creates [Azure Web App](/home/features/web-site/) and [Azure SQL Database](/documentation/articles/sql-database-technical-overview) resources.
+In the template file you'll see a "resources" section, which defines the Azure resources created by this template. Among other resource types, this template creates [Azure web site](/home/features/web-site/) and [Azure SQL Database](/documentation/articles/sql-database-technical-overview) resources.
 
 You'll also see a "parameters" section, which defines the parameters that each resource can be configured with. Some of the parameters specified in the template have "defaultValue" properties, while others do not. When deploying Azure resources with a template, you must provide values for all parameters that do not have defaultValue properties.  If you do not provide values for parameters with defaultValue properties, then the value specified for the defaultValue parameter in the template is used.
 
@@ -87,7 +87,7 @@ You'll probably want the same Azure resources created in each environment, but y
 | **administratorLoginPassword** | #testapp1XYZ |
 | **databaseName** | testapp1test |
 
-In Step 6, these parameter files will be used to create unique configurations for the Azure Web App and Azure SQL Database resources in the Development and Test environments.
+In Step 6, these parameter files will be used to create unique configurations for the Azure web site and Azure SQL Database resources in the Development and Test environments.
 
  **Step 4:** Edit the TestApp1-Parameters-Pre-Production.json parameter file you created in Step 2.  Replace the entire contents of the file with the what's below:
 
@@ -130,7 +130,7 @@ In Step 6, these parameter files will be used to create unique configurations fo
 
 In the Pre-Production parameters file above, the **sku** and **requestedServiceObjectiveName** parameters were *added*, whereas they weren't added in the Development and Test parameters files. This is because there are default values specified for these parameters in the template, and in the Development and Test environments, the default values are used, but in the Pre-Production environment non-default values for these parameters are used.
 
-The reason non-default values are used for these parameters in the Pre-Production environment is to test values for these parameters that you might prefer for your Production environment.  These parameters all relate to the Azure [Web App hosting plans](/home/features/app-service/#price), or **sku** and Azure [SQL Database](/home/features/sql-database/#price), or **requestedServiceObjectiveName** that are used by the application.  Different skus and service objective names have different costs and features and support different service level metrics.
+The reason non-default values are used for these parameters in the Pre-Production environment is to test values for these parameters that you might prefer for your Production environment.  These parameters all relate to the Azure [web site hosting plans](/home/features/web-site/#price), or **sku** and Azure [SQL Database](/home/features/sql-database/#price), or **requestedServiceObjectiveName** that are used by the application.  Different skus and service objective names have different costs and features and support different service level metrics.
 
 The table below lists the default values for these parameters specified in the template and the values that are used instead of the default values in the Pre-Production parameters file.
 
@@ -140,7 +140,7 @@ The table below lists the default values for these parameters specified in the t
 | **requestedServiceObjectiveName** | S0 | S1 |
 
 ## Create environments
-All Azure resources must be created within an [Azure Resource Group](/documentation/articles/resource-group-portal). Resource groups enable you to group Azure resources so they can be managed collectively.  [Permissions](/documentation/articles/resource-group-rbac) can be assigned to resource groups such that specific people within your organization can create, modify, delete, or view them and the resources within them.  Alerts and billing information for resources in the Resource Group can be viewed in the [Azure Preview Portal](https://manage.windowsazure.cn). Resource groups are created in an Azure [location](http://azure.microsoft.com/regions/).  In this article, all resources are created in the China North location. When you start creating actual environments, you'll choose the location that best meets your requirements. 
+All Azure resources must be created within an [Azure Resource Group](/documentation/articles/resource-group-portal). Resource groups enable you to group Azure resources so they can be managed collectively.  [Permissions](/documentation/articles/role-based-access-control-configure) can be assigned to resource groups such that specific people within your organization can create, modify, delete, or view them and the resources within them.  Alerts and billing information for resources in the Resource Group can be viewed in the [Azure Preview Portal](https://manage.windowsazure.cn). Resource groups are created in an Azure [location](http://azure.microsoft.com/regions/).  In this article, all resources are created in the China North location. When you start creating actual environments, you'll choose the location that best meets your requirements. 
 
   **Step 5:** Create resource groups for the Development and Test environments using either of the methods below.  Both methods will achieve the exact same outcome.
 
@@ -303,7 +303,7 @@ Throughout development, configuration of the Azure resources in the different en
 
   ![Portal](./media/solution-dev-test-environments-preview-portal/portal1.png)
 
-  After clicking the TestApp1-Development resource group you'll see the blade that lists the resources created by the template in the resource group deployment you completed in a previous step.  Delete the TestApp1Dev Web App resource by clicking TestApp1Dev-->Delete as shown below.
+  After clicking the TestApp1-Development resource group you'll see the blade that lists the resources created by the template in the resource group deployment you completed in a previous step.  Delete the TestApp1Dev web site resource by clicking TestApp1Dev-->Delete as shown below.
 
   ![Portal](./media/solution-dev-test-environments-preview-portal/portal2.png)
 
@@ -376,6 +376,6 @@ Now that you've experienced how easy it is to create, maintain, and delete devel
 
 - [Create and deploy Azure Resource Manager templates in Visual Studio](http://msdn.microsoft.com/zh-cn/library/azure/Dn872471.aspx) with Azure SDK 2.6 installed.
 - Create your application using [Visual Studio Enterprise](https://www.visualstudio.com/products/visual-studio-enterprise-vs), [Visual Studio Code](http://www.visualstudio.com/products/code-vs), or [Web Matrix](http://www.microsoft.com/web/webmatrix/).
-- [Deploy a Web App](/documentation/articles/web-sites-deploy) to the environments you created.
+- [Deploy a web site](/documentation/articles/web-sites-deploy) to the environments you created.
 - Use [Visual Studio Release Management](http://msdn.microsoft.com/Library/vs/alm/Release/overview) to create managed, continuous deployment pipelines to release quickly, easily, and often.
 - Request an invite for the preview of [Azure Dev/Test Lab](http://azure.microsoft.com/campaigns/devtest-lab/). It enables you to manage dev and test lab environments using templates, and configure quotas and policies for use within your organization.

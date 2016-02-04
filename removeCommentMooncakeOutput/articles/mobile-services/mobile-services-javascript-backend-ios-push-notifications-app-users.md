@@ -68,3 +68,4 @@ function insert(item, user, request) {
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-ios-how-to-use-client-library
+

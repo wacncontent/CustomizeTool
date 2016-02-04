@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure AD .NET Getting Started | Windows Azure"
-	description="How to build a .NET MVC Web App that integrates with Azure AD for sign in."
+	description="How to build a .NET MVC web site that integrates with Azure AD for sign in."
 	services="active-directory"
 	documentationCenter=".net"
 	authors="dstrockis"
@@ -12,11 +12,11 @@
 	ms.date="10/13/2015"
 	wacn.date=""/>
 
-# Web App Sign In & Sign Out with Azure AD
+# web site Sign In & Sign Out with Azure AD
 
 [AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
-Azure AD makes it simple and straightforward to outsource your web app's identity management, providing single sign-in and sign-out with only a few lines of code.  In Asp.NET web apps, you can accomplish this using Microsoft's implementation of the community-driven OWIN middleware included in .NET Framework 4.5.  Here we'll use OWIN to:
+Azure AD makes it simple and straightforward to outsource your web site's identity management, providing single sign-in and sign-out with only a few lines of code.  In Asp.NET web sites, you can accomplish this using Microsoft's implementation of the community-driven OWIN middleware included in .NET Framework 4.5.  Here we'll use OWIN to:
 -	Sign the user into the app using Azure AD as the identity provider.
 -	Display some information about the user.
 -	Sign the user out of the app.
@@ -37,7 +37,7 @@ To enable your app to authenticate users, you'll first need to register a new ap
 - In the left hand nav, click on **Active Directory**.
 - Select the tenant where you wish to register the application.
 - Click the **Applications** tab, and click add in the bottom drawer.
-- Follow the prompts and create a new **Web Application and/or WebAPI**.
+- Follow the prompts and create a new **web site and/or WebAPI**.
     - The **name** of the application will describe your application to end-users
     -	The **Sign-On URL** is the base URL of your app.  The skeleton's default is `https://localhost:44320/`.
     - The **App ID URI** is a unique identifier for your application.  The convention is to use `https://<tenant-domain>/<app-name>`, e.g. `https://contoso.partner.onmschina.cn/my-first-aad-app`
@@ -55,7 +55,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 ```
 
 -	Add an OWIN Startup class to the project called `Startup.cs`  Right click on the project --> **Add** --> **New Item** --> Search for "OWIN".  The OWIN middleware will invoke the `Configuration(...)` method when your app starts.
--	Change the class declaration to `public partial class Startup` - we've already implemented part of this class for you in another file.  In the `Configuration(...)` method, make a call to ConfgureAuth(...) to set up authentication for your web app  
+-	Change the class declaration to `public partial class Startup` - we've already implemented part of this class for you in another file.  In the `Configuration(...)` method, make a call to ConfgureAuth(...) to set up authentication for your web site  
 
 ```C#
 public partial class Startup

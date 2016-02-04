@@ -18,7 +18,7 @@
 
 ## Overview
 
-The feature that provides the ability to write SQL Server backups to the Azure Blob storage service was released in SQL Server 2012 SP1 CU2. You can use this functionality to back up to and restore from the Azure Blob service with an on-premises SQL Server database or a SQL Server database in an Azure virtual machine. Backup to cloud offers benefits of availability, limitless geo-replicated off-site storage, and ease of migration of data to and from the cloud.   You can issue BACKUP or RESTORE statements by using T-SQL or SMO. Back up to or restore from the Azure Blob storage service by using SQL Server Management Studio Backup or Restore Wizard is not available. Furthermore, when database files are stored in an Azure blob and you are using SQL Server 2016, you can use [file-snapshot backup](http://msdn.microsoft.com/zh-cn/library/mt169363.aspx) to perform nearly instantaneous backups and incredibly quick restores.
+The feature that provides the ability to write SQL Server backups to the Azure Blob storage service was released in SQL Server 2012 SP1 CU2. You can use this functionality to back up to and restore from the Azure Blob service with an on-premises SQL Server database or a SQL Server database in an Azure virtual machine. Backup to cloud offers benefits of availability, limitless geo-replicated off-site storage, and ease of migration of data to and from the cloud.   You can issue BACKUP or RESTORE statements by using Transact-SQL or SMO. Furthermore, when database files are stored in an Azure blob and you are using SQL Server 2016, you can use [file-snapshot backup](http://msdn.microsoft.com/zh-cn/library/mt169363.aspx) to perform nearly instantaneous backups and incredibly quick restores.
 
 ## Benefits of Using the Azure Blob Service for SQL Server Backups
 
@@ -40,7 +40,7 @@ Creating an Azure account is the first step to this process. For a complete walk
 
 ## Azure Blob Storage Service Components
 
-* Storage Account: The storage account is the starting point for all storage services. To access an Azure Blob Storage service, first create an Azure Storage account. For more information about Azure Blob storage service, see [How to use the Azure Blob Storage Service](/documentation/articles/storage-dotnet-how-to-use-blobs/)
+* Storage Account: The storage account is the starting point for all storage services. To access an Azure Blob Storage service, first create an Azure Storage account. For more information about Azure Blob storage service, see [How to use the Azure Blob Storage Service](/documentation/articles/storage-dotnet-how-to-use-blobs) 
 
 * Container: A container provides a grouping of a set of blobs, and can store an unlimited number of Blobs. To write a SQL Server backup to an Azure Blob service, you must have at least the root container created.
 

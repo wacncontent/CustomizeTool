@@ -1,11 +1,11 @@
 <properties
-   pageTitle="How to upgrade projects to the current version of the Azure tools"
+   pageTitle="How to upgrade projects to the current version of the Azure tools | Windows Azure"
    description="Learn how to upgrade an Azure project in Visual Studio to the current version of the Azure tools"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
 	ms.date="09/28/2015"
@@ -29,9 +29,9 @@ If a project is automatically upgraded or you specify that you want to upgrade i
 
 - Some properties in the publish profile are updated to support new and changed features. **AllowUpgrade** is replaced by **DeploymentReplacementMethod** because you can update a deployed cloud service simultaneously or incrementally.
 
-- The property **UseIISExpressByDefault** is added and set to false so that the web server that’s used for debugging won’t automatically change from Internet Information Services (IIS) to IIS Express. IIS Express is the default web server for projects that are created with the newer releases of the tools.
+- The property **UseIISExpressByDefault** is added and set to false so that the web server that's used for debugging won't automatically change from Internet Information Services (IIS) to IIS Express. IIS Express is the default web server for projects that are created with the newer releases of the tools.
 
-- If Azure Caching is hosted in one or more of your project’s roles, some properties in the service configuration (.cscfg file) and service definition (.csdef file) are changed when a project is upgraded. If the project uses the Azure Caching NuGet package, the project is upgraded to the most recent version of the package. You should open the web.config file and verify that the client configuration was maintained properly during the upgrade process. If you added the references to Azure Caching client assemblies without using the NuGet package, these assemblies won't be updated; you must manually update these references to the new versions.
+- If Azure Caching is hosted in one or more of your project's roles, some properties in the service configuration (.cscfg file) and service definition (.csdef file) are changed when a project is upgraded. If the project uses the Azure Caching NuGet package, the project is upgraded to the most recent version of the package. You should open the web.config file and verify that the client configuration was maintained properly during the upgrade process. If you added the references to Azure Caching client assemblies without using the NuGet package, these assemblies won't be updated; you must manually update these references to the new versions.
 
 >[AZURE.IMPORTANT] For F# projects, you must manually update references to Azure assemblies so that they reference the newer versions of those assemblies.
 
@@ -41,8 +41,14 @@ If a project is automatically upgraded or you specify that you want to upgrade i
 
 1. In Solution Explorer, open the shortcut menu for the project node, choose **Properties**, and then choose the **Application** tab of the dialog box that appears.
 
-    The **Application** tab shows the tools version that’s associated with the project. If the current version of Azure Tools appears, the project has already been upgraded. If you've installed a newer version of the tools than what the tab shows, an **Upgrade** button appears.
+    The **Application** tab shows the tools version that's associated with the project. If the current version of Azure Tools appears, the project has already been upgraded. If you've installed a newer version of the tools than what the tab shows, an **Upgrade** button appears.
 
 1. Choose the **Upgrade** button to upgrade a project to the current version of the tools.
 
 1. Build the project, and then address any errors that result from API changes. For information about how to modify your code for the new version, see the documentation for the specific API.
+<!-- keep by customization: begin -->
+
+## Resources
+
+[Azure Tools Release History]( http://go.microsoft.com/fwlink/p/?LinkId=623548)
+<!-- keep by customization: end -->

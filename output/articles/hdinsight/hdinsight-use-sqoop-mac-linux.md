@@ -1,17 +1,16 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-	pageTitle="Use Hadoop Sqoop in HDInsight | Windows Azure"
+	pageTitle="Use Hadoop Sqoop in Linux-based HDInsight | Windows Azure"
 	description="Learn how to run Sqoop import and export between a Linux-based Hadoop on HDInsight cluster and an Azure SQL database."
 	editor="cgronlun"
 	manager="paulettm"
 	services="hdinsight"
 	documentationCenter=""
-	authors="Blackmist"/>
+	authors="Blackmist"
+	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/15/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Use Sqoop with Hadoop in HDInsight (SSH)
@@ -37,13 +36,13 @@ Before you begin this tutorial, you must have the following:
 
 - **Workstation**: A computer with an SSH client.
 
-- **Azure CLI**: For more information, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli.)
+- **Azure CLI**: For more information, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install)
 
 - **Linux-based HDInsight cluster**: For instructions about cluster provision, see [Get started using HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started) or [Provision HDInsight clusters][hdinsight-provision].
 
 - **Azure SQL database**: This document provides instructions for creating an example SQL database. For more information on SQL Database, see [Get started using Azure SQL database][sqldatabase-get-started].
 
-* **SQL Server**: The steps in this document can also be used, with some modification, with SQL Server. For more information on requirements specific to using this article with SQL Server, see the [Using SQL Server](#using-sql-server) section.
+* **SQL Server**: The steps in this document can also be used, with some modification, with SQL Server; however, both the HDInsight cluster and SQL Server must be on the same Azure Virtual Network. For more information on requirements specific to using this article with SQL Server, see the [Using SQL Server](#using-sql-server) section.
 
 ##Understand the scenario
 
@@ -156,7 +155,7 @@ You will first export **hivesampletable** to the Azure SQL database or to SQL Se
 
 2. Use the following command to create a link to the SQL Server JDBC driver from the Sqoop lib directory. This allows Sqoop to use this driver to talk to SQL Database:
 
-        sudo ln /usr/share/java/sqljdbc_4.1/enu/sqljdbc4.jar /usr/hdp/current/sqoop-client/lib/sqljdbc4.jar
+        sudo ln /usr/share/java/sqljdbc_4.1/enu/sqljdbc41.jar /usr/hdp/current/sqoop-client/lib/sqljdbc41.jar
 
 3. Use the following command to verify that Sqoop can see your SQL Database:
 
@@ -205,7 +204,7 @@ You can also use Sqoop to import and export data from SQL Server, either in your
 
     > [AZURE.NOTE] For **point-to-site** virtual networks, SQL Server must be running the VPN client configuration application, which is available from the **Dashboard** of your Azure virtual network configuration.
 
-    For more information on creating and configuring a virtual network, see [Virtual Network Configuration Tasks](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx).
+    For more information on creating and configuring a virtual network, see [Virtual Network Configuration Tasks](/home/features/virtual-machines/).
 
 * SQL Server must be configured to allow SQL authentication. For more information, see [Choose an Authentication Mode](https://msdn.microsoft.com/ms144284.aspx)
 
@@ -242,18 +241,20 @@ Now you have learned how to use Sqoop. To learn more, see:
 
 
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
-[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
+[hdinsight-versions]:  hdinsight-component-versioning-v1.md
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data.md
+[hdinsight-use-oozie]: hdinsight-use-oozie.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
+
+[sqldatabase-get-started]: ../sql-database-get-started.md
+[sqldatabase-create-configue]: ../sql-database-create-configure.md
+
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-install]: /documentation/articles/install-configure-powershell
-[powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
+[powershell-install]: ../install-configure-powershell.md
+[powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html

@@ -7,18 +7,21 @@
 	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.date="01/11/2016"
+	wacn.date=""/>
 
 # Configuring Azure Multi-Factor Authentication
 
 The following article will help you manage Azure Multi-Factor Authentication now that you are up and running.  It covers a variety of topics that will allow you to get the most out of Azure Multi-Factor Authentication.  Please be aware that not all of these features are available in every version of Azure Multi-Factor Authentication.
+
+The configuration for some of the features below is found in the Azure Multi-Factor Authentication Management Portal. There are two different ways that you can access this portal, which are both done via the Azure Management Portal. The first is by managing a Multi-Factor Auth Provider if using consumption-based MFA. The second is via the MFA service settings. The second option requires either a Multi-Factor Auth Provider or an Azure MFA, Azure AD Premium or Enterprise Mobility Suite license.
+
+To access the MFA Management Portal via an Azure Multi-Factor Auth Provider, sign into the Azure Management Portal as an administrator and select the Active Directory option. Click the **Multi-Factor Auth Providers** tab, then select your directory and click the **Manage** button at the bottom.
+
+To access the MFA Management Portal via the MFA Service Settings page, sign into the Azure Management Portal as an administrator and select the Active Directory option. Click on your directory and then click the **Configure** tab. Under the multi-factor authentication section, select **Manage service settings**. At the bottom of the MFA Service Settings page, click the **Go to the portal** link.
+
 
 Feature| Description| What is covered
 :------------- | :------------- | :------------- | 
@@ -26,7 +29,7 @@ Feature| Description| What is covered
 [One-time bypass](#one-time-bypass) |A one-time bypass allows a user to authenticate a single time by "bypassing" multi-factor authentication.|How to setup and configure a one-time bypass
 [Custom Voice Messages](#custom-voice-messages) |Custom voice messages allow you to use your own recordings or greetings with multi-factor authentication. |How to setup and configure custom greetings and messages
 [Caching](#caching)|Caching allows you to set a specific time period so that subsequent authentication attempts succeed automatically. |How to setup and configure authentication caching.
-[Trusted IPs](#trusted-ips)|Trusted IPs is a feature of multi-factor authentication that allows administrators of a managed or federated tenant the ability to bypass multi-factor authentication for users that are signing in from the company’s local intranet.|Configure and setup IP addresses that are exempt for multi-factor authentication	
+[Trusted IPs](#trusted-ips)|Trusted IPs is a feature of multi-factor authentication that allows administrators of a managed or federated tenant the ability to bypass multi-factor authentication for users that are signing in from the company's local intranet.|Configure and setup IP addresses that are exempt for multi-factor authentication	
 [App Passwords](#app-passwords)|App passwords allows an application that is not mfa aware to bypass multi-factor authentication and continue working.|Information about app passwords.
 [Suspend Multi-Factor Authentication for remembered devices and browsers (Public Preview)](#suspend-multi-factor-authentication-for-remembered-devices-and-browsers-public-preview)|Allows you to suspend MFA for a set number of days after a user has successfully signed in using MFA.|Information about enabling this feature and setting up the number of days.
 
@@ -38,16 +41,17 @@ Fraud alert can be configured and setup so that your users can report fraudulent
 
 ### To setup and configure fraud alert
 
+1.	Log on to http://azure.microsoft.com
+2.	Navigate to the MFA Management Portal per the instructions at the top of this page.
+3.	In the Azure Multi-Factor Authentication Management Portal, click Settings under the Configure section.
+4.	Under the Fraud Alert section of the Settings page, check the Allow users to submit Fraud Alerts checkbox.
+5.	If you want users to be blocked when fraud is reported, place a check in Block user when fraud is reported.
+6.	In the **Code To Report Fraud During Initial Greeting** textbox enter a number code that can be used during call verification. If a user enters this code plus # instead of just the # sign, then a fraud alert will be reported. 
+7.	At the bottom, click Save.
 
-1. Log on to [http://azure.microsoft.com](http://azure.microsoft.com)
-2. On the left, select Active Directory.
-3. At the top select Multi-Factor Auth Providers. This will bring up a list of your Multi-Factor Auth Providers.
-4. If you have more than one Multi-Factor Auth Provider, select the one you wish to enable fraud alerting on and click Manage at the bottom of the page. If you have only one, just click Manage. This will open the Azure Multi-Factor Authentication Management Portal.
-5. On the Azure Multi-Factor Authentication Management Portal, on the left, click Settings.
-6. Under the Fraud Alert section, place a check in Allow users to submit Fraud Alerts.
-7. If you want users to be blocked when fraud is reported, place a check in Block user when fraud is reported.
-8. In the box under Code To Report Fraud During Initial Greeting enter a number code that can be used during call verification. If a user enters this code, instead of the # sign, then a fraud alert will be reported.
-9. At the bottom, click Save.
+>[AZURE.NOTE]
+>Microsoft's default voice greetings instruct users to press 0# to submit a fraud alert. If you use a code other than 0, you will need to record and upload your own custom voice greetings with appropriate instructions.
+
 
 <center>![Cloud](./media/multi-factor-authentication-whats-next/fraud.png)</center>
 
@@ -55,18 +59,21 @@ Fraud alert can be configured and setup so that your users can report fraudulent
 Fraud alert can be reported two ways.  Either through the mobile app or through the phone.  
 
 ### To report fraud alert with the mobile app
-<ol>
-<li>When a verification is sent to your phone click on it and it will start the Multi-Factor Authentication app.</li>
-<li>To report fraud, click the Cancel and Report Fraud. This will bring up a box that says your organizations IT</li> Support staff will be notified. Click report fraud.
-<li>On the app, click Close.</li></ol>
+
+
+
+1. When a verification is sent to your phone click on it and it will start the Multi-Factor Authentication app.
+2. To report fraud, click the Cancel and Report Fraud. This will bring up a box that says your organizations IT Support staff will be notified. 
+3. Click report fraud.
+4. On the app, click Close.
 
 <center>![Cloud](./media/multi-factor-authentication-whats-next/report1.png)</center>
 
 ### To report fraud alert with the phone
-<ol>
-<li>When a verification call comes in to your phone answer it.</li>
-<li>To report fraud, enter the code that has been configured to correspond with reporting fraud via the phone and then the # sign. You will be notified that a fraud alert has been submitted.</li>
-<li>End the call.</li></ol>
+
+1. When a verification call comes in to your phone answer it.</li>
+2. To report fraud, enter the code that has been configured to correspond with reporting fraud via the phone and then the # sign. You will be notified that a fraud alert has been submitted.
+3. End the call.
 
 ### To view the fraud report
 
@@ -84,21 +91,17 @@ A one-time bypass allows a user to authenticate a single time by "bypassing" mul
 
 ### To create a one-time bypass
 
-<ol>
-<li>Log on to [http://azure.microsoft.com](http://azure.microsoft.com)</li>
-<li>On the left, select Active Directory.</li>
-<li>At the top select Multi-Factor Auth Providers. This will bring up a list of your Multi-Factor Auth Providers.</li>
-<li>If you have more than one Multi-Factor Auth Provider, select the one that is associated with the directory for the user you wish to create a one-time bypass for and click Manage at the bottom of the page. If you have only one, just click Manage. This will open the Azure Multi-Factor Authentication Management Portal.</li>
-<li>On the Azure Multi-Factor Authentication Management Portal, on the left, under User Administration, click Settings.</li>
+1.	Log on to http://azure.microsoft.com
+2.	Navigate to the MFA Management Portal per the instructions at the top of this page.
+3.	In the Azure Multi-Factor Authentication Management Portal, if you see the name of your tenant or Azure MFA Provider on the left with a + next to it, click the + see different MFA Server replication groups and the Azure Default group. Click on the appropriate group.
+4.	Under User Administration, click **One-Time Bypass**.
+![Cloud](./media/multi-factor-authentication-whats-next/create1.png)
+5.	On the One-Time Bypass page, click **New One-Time Bypass**.
+6.	Enter the user's username, the number of seconds that the bypass will exist, the reason for the bypass and click **Bypass**.
+![Cloud](./media/multi-factor-authentication-whats-next/create2.png)
+7.	At this point, the user must sign in before the one-time bypass expires.
 
-<center>![Cloud](./media/multi-factor-authentication-whats-next/create1.png)</center>
 
-<li>On the One-Time Bypass page, click New One-Time Bypass.</li>
-<li>Enter the user’s username, the number of seconds that the bypass will exist, the reason for the bypass and click Bypass.</li>
-
-<center>![Cloud](./media/multi-factor-authentication-whats-next/create2.png)</center>
-
-<li>At this point, the user must sign in before the one-time bypass expires.</li>
 
 ### To view the one-time bypass report
 
@@ -125,73 +128,57 @@ Before you begin be aware of the following:
 
 
 ### To setup custom voice messages in Azure Multi-Factor Authentication
-<ol>
-<li>Create a custom voice message using one of the supported file formats. See Custom Voice Message Recommendations below.</li>
-<li>Log on to [http://azure.microsoft.com](http://azure.microsoft.com)</li>
-<li>On the left, select Active Directory.</li>
-<li>At the top select Multi-Factor Auth Providers. This will bring up a list of your Multi-Factor Auth Providers.</li>
-<li>If you have more than one Multi-Factor Auth Provider, select the one you wish to configure the custom voice message on and click Manage at the bottom of the page. If you have only one, just click Manage. This will open the Azure Multi-Factor Authentication Management Portal.</li>
-<li>On the Azure Multi-Factor Authentication Management Portal, on the left, click Voice Messages.</li>
+1.	Create a custom voice message using one of the supported file formats.
+2.	Log on to http://azure.microsoft.com
+3.	Navigate to the MFA Management Portal per the instructions at the top of this page.
+4.	In the Azure Multi-Factor Authentication Management Portal, click Voice Messages under the Configure section.
+5.	Under the Voice Messages section, click **New Voice Message**.
+![Cloud](./media/multi-factor-authentication-whats-next/custom1.png)
+6.	On the Configure: New Voice Messages page, click **Manage Sound Files**.
+![Cloud](./media/multi-factor-authentication-whats-next/custom2.png)
+7.	On the Configure: Sound Files page, click **Upload Sound File**.
+![Cloud](./media/multi-factor-authentication-whats-next/custom3.png)
+8.	On the Configure: Upload Sound File, click **Browse** and navigate to your voice message, click **Open**.
+![Cloud](./media/multi-factor-authentication-whats-next/custom4.png)
+9.	Add a Description and click Upload.
+10.	Once this completes, you will see a message that you have successfully uploaded the file.
+11.	On the left, click Voice Messages.
+12.	Under the Voice Messages section, click New Voice Message.
+13.	From the Language drop-down, select a language.
+14.	If this message is for a specific application, specify it in the Application box.
+15.	From the Message Type, select the message type that will be overridden with our new custom message.
+16.	From the Sound File drop-down, select your sound file.
+17.	Click **Create**. You will see a message that says you have successfully created a voice message.
+![Cloud](./media/multi-factor-authentication-whats-next/custom5.png)</center>
 
-<center>![Cloud](./media/multi-factor-authentication-whats-next/custom1.png)</center>
-
-<li>Under the Voice Messages section, click New Voice Message.</li>
-
-<center>![Cloud](./media/multi-factor-authentication-whats-next/custom2.png)</center>
-
-<li>On the Configure: New Voice Messages page, click Manage Sound Files.</li>
-
-<center>![Cloud](./media/multi-factor-authentication-whats-next/custom3.png)</center>
-
-<li>On the Configure: Sound Files page, click Upload Sound File.</li>
-
-<center>![Cloud](./media/multi-factor-authentication-whats-next/custom4.png)</center>
-
-<li>On the Configure: Upload Sound File, click Browse and navigate to your voice message, click Open.</li>
-<li>Add a Description and click Upload.</li>
-<li>Once this completes, you will see a message that you have successfully uploaded the file.</li>
-<li>On the left, click Voice Messages.</li>
-<li>Under the Voice Messages section, click New Voice Message.</li>
-<li>From the Language drop-down, select a language.</li>
-<li>If this message is for a specific application, specify it in the Application box.</li>
-<li>From the Message Type, select the message type that will be overridden with our new custom message.</li>
-<li>From the Sound File drop-down, select your sound file.</li>
-<li>Click Create. You will see a message that says you have successfully created a voice message.</li>
-
-<center>![Cloud](./media/multi-factor-authentication-whats-next/custom5.png)</center>
 
 
 ## Caching in Azure Multi-Factor Authentication
 
-Caching allows you to set a specific time period so that subsequent authentication attempts succeed automatically.  This allows your users to avoid having to wait for phone calls or text if they authenticate within this time period.
-
+Caching allows you to set a specific time period so that subsequent authentication attempts succeed automatically. This is primarily used when on-premises systems such as VPN send multiple verification requests while the first request is still in progress. This allows the subsequent requests to succeed automatically after the user succeeds the verification in progress. Note that caching is not intended to be used for sign-ins to 
 
 
 ### To setup caching in Azure Multi-Factor Authentication
-<ol>
 
-1. Log on to [http://azure.microsoft.com](http://azure.microsoft.com)
-2. On the left, select Active Directory.
-3. At the top select Multi-Factor Auth Providers. This will bring up a list of your Multi-Factor Auth Providers.
-4. If you have more than one Multi-Factor Auth Provider, select the one you wish to enable fraud alerting on and click Manage at the bottom of the page. If you have only one, just click Manage. This will open the Azure Multi-Factor Authentication Management Portal.
-5. On the Azure Multi-Factor Authentication Management Portal, on the left, click Caching.
-6. On the Configure caching page click New Cache
-7. Select the Cache type and the cache seconds.  Click create.
-
+1.	Log on to http://azure.microsoft.com
+2.	Navigate to the MFA Management Portal per the instructions at the top of this page.
+3.	In the Azure Multi-Factor Authentication Management Portal, click Caching under the Configure section.
+4.	On the Configure caching page click New Cache
+5.	Select the Cache type and the cache seconds. Click create.
 
 <center>![Cloud](./media/multi-factor-authentication-whats-next/cache.png)</center>
 
 ## Trusted IPs
 
-Trusted IPs is a feature of multi-factor authentication that allows administrators of a managed or federated tenant the ability to bypass multi-factor authentication for users that are signing in from the company’s local intranet. The features are available for Azure AD tenants that have Azure AD Premium, Enterprise Mobility Suite or Azure Multi-Factor Authentication licenses.
+Trusted IPs is a feature of multi-factor authentication that allows administrators of a managed or federated tenant the ability to bypass multi-factor authentication for users that are signing in from the company's local intranet. The features are available for Azure AD tenants that have Azure AD Premium, Enterprise Mobility Suite or Azure Multi-Factor Authentication licenses.
 
  
 Type of Azure AD Tenant| Available Trusted IP options
 :------------- | :------------- | 
-Managed|Specific IP address ranges – Administrators can specify a range of IP addresses that can bypass multi-factor authentication for users that are signing in from the company’s intranet..
-Federated|<li>All Federated Users - All federated users who are signing-in from inside the organization will bypass multi-factor authentication using a claim issued by AD FS.</li><li>Specific IP address ranges – Administrators can specify a range of IP addresses that can bypass multi-factor authentication for users that are signing in from the company’s intranet.
+Managed|Specific IP address ranges - Administrators can specify a range of IP addresses that can bypass multi-factor authentication for users that are signing in from the company's intranet..
+Federated|<li>All Federated Users - All federated users who are signing-in from inside the organization will bypass multi-factor authentication using a claim issued by AD FS.</li><li>Specific IP address ranges - Administrators can specify a range of IP addresses that can bypass multi-factor authentication for users that are signing in from the company's intranet.
 
-This bypass only works from inside a company’s intranet. So for example, if you only selected all federated users, and a user signs in from outside the company’s intranet, that user will have to authenticate using multi-factor authentication even if the user presents an AD FS claim. The following table describes when multi-factor authentication and app passwords are required inside your corpnet and outside your corpnet when Trusted IPs is enabled.
+This bypass only works from inside a company's intranet. So for example, if you only selected all federated users, and a user signs in from outside the company's intranet, that user will have to authenticate using multi-factor authentication even if the user presents an AD FS claim. The following table describes when multi-factor authentication and app passwords are required inside your corpnet and outside your corpnet when Trusted IPs is enabled.
 
 
 |Trusted IPs enabled| Trusted IPs disabled
@@ -203,25 +190,25 @@ Outside corpnet|For browser flows, multi-factor authentication required.|For bro
 
 ### To enable Trusted IPs
 
- 
-<ol>
-<li>Sign-in to the Azure Management Portal.</li>
-<li>On the left, click Active Directory.</li>
-<li>Under, Directory click on the directory you wish to setup Trusted IPsing on.</li>
-<li>On the Directory you have selected, click Configure.</li>
-<li>In the multi-factor authentication section, click Manage service settings.</li>
-<li>On the Service Settings page, under Trusted IPs, select either:
-<ul>
-<li>For requests from federated users originating from my intranet – All federated users who are signing in from the corporate network will bypass multi-factor authentication using a claim issued by AD FS. 
+1. Sign-in to the Azure Management Portal.
+2. On the left, click Active Directory.
+3. Under, Directory click on the directory you wish to setup Trusted IPsing on.
+4. On the Directory you have selected, click Configure.
+5. In the multi-factor authentication section, click Manage service settings.
+6. On the Service Settings page, under Trusted IPs, select either:
 
-<li>For requests from a specific range of public IPs – enter the IP addresses in the boxes provided using CIDR notation. For example: xxx.xxx.xxx.0/24 for IP addresses in the range xxx.xxx.xxx.1 – xxx.xxx.xxx.254, or xxx.xxx.xxx.xxx/32 for a single IP address. You can enter up to 12 IP address ranges.</li></ul>
+	- For requests from federated users originating from my intranet - All federated users who are signing in from the corporate network will bypass multi-factor authentication using a claim issued by AD FS. 
+	- For requests from a specific range of public IPs - enter the IP addresses in the boxes provided using CIDR notation. For example: xxx.xxx.xxx.0/24 for IP addresses in the range xxx.xxx.xxx.1 - xxx.xxx.xxx.254, or xxx.xxx.xxx.xxx/32 for a single IP address. You can enter up to 12 IP address ranges.
 
-
-<center>![Cloud](./media/multi-factor-authentication-whats-next/trustedips.png)</center>
+7. Click save.
+8. Once the updates have been applied, click close.
 
 
-<li>Click save.</li>
-<li>Once the updates have been applied, click close.</li>
+
+![Cloud](./media/multi-factor-authentication-whats-next/trustedips2.png)
+
+
+
  
 ## App Passwords
 
@@ -281,7 +268,7 @@ For example, suppose you have an architecture that consists of the following:
 
  In these instances, you must do the following:
 
-- When signing-in to Lync, use your organizations’ username and password.
+- When signing-in to Lync, use your organizations' username and password.
 - When attempting to access the address book via an Outlook client that connects to Exchange online, use an app password.
 
 ### Allowing app password creation
@@ -304,7 +291,7 @@ By default, users cannot create app passwords.  This feature must be enabled.  T
 ### Creating app passwords
 Users can create app passwords during their initial registration.  They are given an option at the end of the registration process that allows them to create them.
 
-Additionally users can also create app passwords later on by changing their settings in the Azure Portal, the Office 365 portal or by 
+Additionally users can also create app passwords later on by changing their settings in the Azure Management Portal, the Office 365 portal or by 
 
 ### To create app passwords in the Office 365 portal
 --------------------------------------------------------------------------------
@@ -322,7 +309,7 @@ Additionally users can also create app passwords later on by changing their sett
 <center>![Cloud](./media/multi-factor-authentication-whats-next/security.png)</center>
 
 
-### To create app passwords in the Azure portal
+### To create app passwords in the Azure Management Portal
 --------------------------------------------------------------------------------
 1. Sign-in to the Azure Management portal
 3. At the top, right-click on your user name and select Additional Security Verification.

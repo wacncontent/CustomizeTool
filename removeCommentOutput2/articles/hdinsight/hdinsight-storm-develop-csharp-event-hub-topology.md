@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/30/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Process events from Azure Event Hubs with Storm on HDInsight (C#)
@@ -24,9 +24,9 @@ In this tutorial, you will learn how to use the HDInsight Tools for Visual Studi
 
 ## Prerequisites
 
-* An [Apache Storm on HDInsight cluster](/documentation/articles/hdinsight-storm-getting-started)
+* An [Apache Storm on HDInsight cluster](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 
-* An [Azure Event Hub](/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted)
+* An [Azure Event Hub](/documentation/articles/event-hubs-csharp-ephcs-getstarted)
 
 * The [Azure .NET SDK](/downloads/)
 

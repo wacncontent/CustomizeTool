@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Run Hive queries using the HDInsight tools for Visual Studio
@@ -25,7 +25,7 @@ In this article, you will learn how to submit Hive queries to an HDInsight clust
 
 To complete the steps in this article, you will need the following.
 
-* An Azure HDInsight (Hadoop on HDInsight) cluster ( Windows-based)
+* An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based)
 
 * Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305), Visual Studio 2013 [Update 3](https://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs), or [Visual Studio Express 2013](http://www.microsoft.com/download/details.aspx?id=40769)
 
@@ -100,7 +100,7 @@ For more information about the HDInsight tools for Visual Studio:
 * [Getting started with HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)
 
 
-[hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
+[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
@@ -108,7 +108,7 @@ For more information about the HDInsight tools for Visual Studio:
 
 [apache-tez]: http://tez.apache.org
 [apache-hive]: http://hive.apache.org/
-[apache-log4j]: http://en.wikipedia.org/wiki/Log4j
+[apache-log4j]: http://zh.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
@@ -118,13 +118,13 @@ For more information about the HDInsight tools for Visual Studio:
 
 
 
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 [image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png

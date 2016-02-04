@@ -23,7 +23,7 @@ AMQP 1.0 support is available in the Service Bus SDK version 2.1 or later. You c
 
 By default, the Service Bus .NET client library communicates with the Service Bus service using a dedicated SOAP-based protocol. To use AMQP 1.0 instead of the default protocol requires explicit configuration on the Service Bus connection string, as described in the next section. Other than this change, application code remains basically unchanged when using AMQP 1.0.
 
-In the current release, there are a few API features that are not supported when using AMQP. These unsupported features are listed later in the section “Unsupported Features and Restrictions.” Some of the advanced configuration settings also have a different meaning when using AMQP.
+In the current release, there are a few API features that are not supported when using AMQP. These unsupported features are listed later in the section [Unsupported features, restrictions, and behavioral differences](#unsupported-features-restrictions-and-behavioral-differences). Some of the advanced configuration settings also have a different meaning when using AMQP.
 
 ### Configuration using App.config
 
@@ -41,7 +41,7 @@ The value of the `Microsoft.ServiceBus.ConnectionString` setting is the Service 
 
 	Endpoint=sb://[namespace].servicebus.chinacloudapi.cn/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp
 
-Where `[namespace]` and `SharedAccessKey` are obtained from the Azure Management Portal. For more information, see [How to Use Service Bus Queues][].
+Where `[namespace]` and `SharedAccessKey` are obtained from the [Azure Management Portal][]. For more information, see [How to use Service Bus queues][].
 
 When using AMQP, append the connection string with `;TransportType=Amqp`. This notation informs the client library to make its connection to Service Bus using AMQP 1.0.
 
@@ -87,7 +87,7 @@ To facilitate interoperability with non-.NET clients, use only .NET types that c
 | DateTimeOffset | `<type name=”datetime-offset” class=restricted source=”long”> <descriptor name=”com.microsoft:datetime-offset” /></type>` | DateTimeOffset.UtcTicks |
 | TimeSpan       | `<type name=”timespan” class=restricted source=”long”> <descriptor name=”com.microsoft:timespan” /></type> `              | TimeSpan.Ticks          |
 
-## Unsupported features, restrictions, and behavioral differences
+## <!-- deleted by customization Unsupported --><!-- keep by customization: begin --> <a name="unsupported-features-restrictions-and-behavioral-differences"></a>Unsupported <!-- keep by customization: end --> features, restrictions, and behavioral differences
 
 The following features of the Service Bus .NET API are not currently supported when using AMQP:
 
@@ -164,9 +164,17 @@ The .NET APIs expose several settings to control the behavior of the AMQP protoc
 Ready to learn more? Visit the following links:
 
 - [Service Bus AMQP overview]
+<!-- deleted by customization
+- [AMQP 1.0 support for Service Bus partitioned queues and topics]
+-->
 - [AMQP in Service Bus for Windows Server]
 
-  [How to Use Service Bus Queues]: /documentation/articles/service-bus-dotnet-how-to-use-queues
+<!-- deleted by customization
+  [How to Use Service Bus Queues]: service-bus-dotnet-how-to-use-queues.md
+-->
+<!-- keep by customization: begin -->
+  [How to use Service Bus queues]: /documentation/articles/service-bus-dotnet-how-to-use-queues
+<!-- keep by customization: end -->
   [DataContractSerializer]: https://msdn.microsoft.com/zh-cn/library/azure/system.runtime.serialization.datacontractserializer.aspx
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
   [Microsoft.ServiceBus.Messaging.MessagingFactory.AcceptMessageSession]: https://msdn.microsoft.com/zh-cn/library/azure/jj657638.aspx
@@ -194,5 +202,12 @@ Ready to learn more? Visit the following links:
   [OperationTimeout]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx
 [NuGet]: http://nuget.org/packages/WindowsAzure.ServiceBus/
 
+[Azure Management Portal]: http://manage.windowsazure.cn
+<!-- deleted by customization
+[Service Bus AMQP overview]: service-bus-amqp-overview.md
+[AMQP 1.0 support for Service Bus partitioned queues and topics]: service-bus-partitioned-queues-and-topics-amqp-overview.md
+-->
+<!-- keep by customization: begin -->
 [Service Bus AMQP overview]: /documentation/articles/service-bus-amqp-overview
+<!-- keep by customization: end -->
 [AMQP in Service Bus for Windows Server]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx

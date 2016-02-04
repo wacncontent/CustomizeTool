@@ -39,7 +39,7 @@ We use this data to predict whether a building will be hotter or colder based on
 
 ##<a name="app"></a>Write a machine learning application using Spark MLlib
 
-1. From the [Azure Preview Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
+1. From the [Azure Management Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
 
 2. From the Spark cluster blade, click **Quick Links**, and then from the **Cluster Dashboard** blade, click **Jupyter Notebook**. If prompted, enter the admin credentials for the cluster.
 
@@ -227,18 +227,36 @@ Apache Spark clusters on HDInsight include Anaconda libraries. This also include
 * [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager)
 
 
+<!-- deleted by customization
+[hdinsight-versions]: ../hdinsight-component-versioning/
+
+[hdinsight-upload-data]: ../hdinsight-upload-data/
+
+[hdinsight-storage]: ../hdinsight-use-blob-storage/
+
+
+[hdinsight-weblogs-sample]: ../hdinsight-hive-analyze-website-log/
+[hdinsight-sensor-data-sample]: ../hdinsight-hive-analyze-sensor-data/
+-->
+<!-- keep by customization: begin -->
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
 
 [hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
+<!-- keep by customization: end -->
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
+<!-- deleted by customization
+[azure-create-storageaccount]: ../storage-create-storage-account/
+-->
+<!-- keep by customization: begin -->
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+<!-- keep by customization: end -->

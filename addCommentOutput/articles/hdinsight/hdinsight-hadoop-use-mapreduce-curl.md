@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Run MapReduce jobs with Hadoop on HDInsight using Curl
@@ -33,7 +33,7 @@ To complete the steps in this article, you will need the following:
 * A Hadoop on HDInsight cluster (Linux or Windows-based)
 -->
 <!-- keep by customization: begin -->
-* A Hadoop on HDInsight cluster ( Windows-based)
+* A Hadoop on HDInsight cluster (Windows-based)
 <!-- keep by customization: end -->
 
 * [Curl](http://curl.haxx.se/)
@@ -90,7 +90,7 @@ To complete the steps in this article, you will need the following:
 
 4. When the state of the job has changed to **SUCCEEDED**, you can retrieve the results of the job from Azure Blob storage. The `statusdir` parameter that is passed with the query contains the location of the output file; in this case, **wasb:///example/curl**. This address stores the output of the job in the **example/curl** directory in the default storage container used by your HDInsight cluster.
 
-You can list and download these files by using the [Azure CLI <!-- deleted by customization for Mac, Linux and Windows](/documentation/articles/xplat-cli-install) --><!-- keep by customization: begin --> ](/documentation/articles/xplat-cli-install) <!-- keep by customization: end -->. For example, to list files in the **example/curl**, use the following command:
+You can list and download these files by using the [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install). For example, to list files in the **example/curl**, use the following command:
 
 	azure storage blob list <container-name> example/curl
 
@@ -98,7 +98,7 @@ To download a file, use the following:
 
 	azure storage blob download <container-name> <blob-name> <destination-file>
 
-> [AZURE.NOTE] You must specify the storage account name that contains the blob by using the `-a` and `-k` parameters, or set the <!-- deleted by customization **AZURE\_STORAGE\_ACCOUNT** --><!-- keep by customization: begin --> **AZURE_STORAGE_ACCOUNT** <!-- keep by customization: end --> and <!-- deleted by customization **AZURE\_STORAGE\_ACCESS\_KEY** --><!-- keep by customization: begin --> **AZURE_STORAGE_ACCESS_KEY** <!-- keep by customization: end --> environment variables. See [how to upload data to HDInsight](/documentation/articles/hdinsight-upload-data) for more information.
+> [AZURE.NOTE] You must specify the storage account name that contains the blob by using the `-a` and `-k` parameters, or set the **AZURE\_STORAGE\_ACCOUNT** and **AZURE\_STORAGE\_ACCESS\_KEY** environment variables. See [how to upload data to HDInsight](/documentation/articles/hdinsight-upload-data) for more information.
 
 ##<a id="summary"></a>Summary
 

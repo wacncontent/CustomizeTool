@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/03/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 #Generate movie recommendations by using Apache Mahout with Hadoop in HDInsight
@@ -18,10 +18,8 @@
 [AZURE.INCLUDE [mahout-selector](../includes/hdinsight-selector-mahout.md)]
 
 Learn how to use the [Apache Mahout](http://mahout.apache.org) machine learning library with Azure HDInsight to generate movie recommendations.
-<!-- deleted by customization
 
 > [AZURE.NOTE] The steps in this document require a Windows client and a Windows-based HDInsight cluster. For information on using Mahout from a Linux, OS X, or Unix client, with a Linux-based HDInsight cluster, see [Generate movie recommendations by using Apache Mahout with Linux-based Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-mahout-linux-mac)
--->
 
 
 ##<a name="learn"></a>What you will learn
@@ -38,9 +36,8 @@ Mahout is a [machine learning][ml] library for Apache Hadoop. Mahout contains al
 
 ##prerequisites
 
-* **An Windows-based Hadoop cluster in HDInsight**. For information about creating one, see [Get started using Hadoop in HDInsight][getstarted]
-
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
+- **An Windows-based Hadoop cluster in HDInsight**. For information about creating one, see [Get started using Hadoop in HDInsight][getstarted]
+- **A workstation with Azure PowerShell**. See [Install Azure PowerShell 1.0 and greater](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater).
 
 
 ##<a name="recommendations"></a>Generate recommendations by using Windows PowerShell
@@ -131,7 +128,7 @@ Use the following Windows PowerShell script to run a job that uses the Mahout re
             
 	# NOTE: The version number portion of the file path
 	# may change in future versions of HDInsight.
-	$jarFile = "file:///C:/apps/dist/mahout-0.9.0.2.2.7.1-33/examples/target/mahout-examples-0.9.0.2.2.7.1-33-job.jar"
+	$jarFile =  "file:///C:/apps/dist/mahout-0.9.0.2.2.7.1-37/examples/target/mahout-examples-0.9.0.2.2.7.1-37-job.jar"
     #
 	# If you are using an earlier version of HDInsight,
 	# set $jarFile to the jar file you
@@ -325,11 +322,11 @@ One of the classification methods available with Mahout is to build a [random fo
 
 ###Load the data
 
-1. Download the following files from [The NSL-KDD Data Set](http://nsl.cs.unb.ca/NSL-KDD/).
+1. Download the following files from [The NSL-KDD Data Set](http://www.unb.ca/research/iscx/dataset/iscx-NSL-KDD-dataset.html).
 
-  * [KDDTrain+.ARFF](http://nsl.cs.unb.ca/NSL-KDD/KDDTrain+.arff): the training file
+  * [KDDTrain+.ARFF](http://www.unb.ca/research/iscx/dataset/iscx-NSL-KDD-dataset.htmlKDDTrain+.arff): the training file
 
-  * [KDDTest+.ARFF](http://nsl.cs.unb.ca/NSL-KDD/KDDTest+.arff): the test data
+  * [KDDTest+.ARFF](http://www.unb.ca/research/iscx/dataset/iscx-NSL-KDD-dataset.htmlKDDTest+.arff): the test data
 
 2. Open each file and remove the lines at the top that begin with '@', and then save the files. If these are not removed, you will receive error messages when using this data with Mahout.
 
@@ -369,19 +366,19 @@ One of the classification methods available with Mahout is to build a [random fo
 
 3. Use the following command to generate the file descriptor (__KDDTrain+.info__), which uses Mahout.
 
-		hadoop jar "c:/apps/dist/mahout-0.9.0.2.1.3.0-1887/examples/target/mahout-examples-0.9.0.2.1.3.0-1887-job.jar" org.apache.mahout.classifier.df.tools.Describe -p "wasb:///example/data/KDDTrain+.arff" -f "wasb:///example/data/KDDTrain+.info" -d N 3 C 2 N C 4 N C 8 N 2 C 19 N L
+		hadoop jar "c:/apps/dist/mahout-0.9.0.2.2.7.1-37/examples/target/mahout-examples-0.9.0.2.2.7.1-37-job.jar" org.apache.mahout.classifier.df.tools.Describe -p "wasb:///example/data/KDDTrain+.arff" -f "wasb:///example/data/KDDTrain+.info" -d N 3 C 2 N C 4 N C 8 N 2 C 19 N L
 
 	The `N 3 C 2 N C 4 N C 8 N 2 C 19 N L` describes the attributes of the data in the file. For example, L indicates a label.
 
 4. Build a forest of decision trees by using the following command:
 
-		hadoop jar c:/apps/dist/mahout-0.9.0.2.1.3.0-1887/examples/target/mahout-examples-0.9.0.2.1.3.0-1887-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d wasb:///example/data/KDDTrain+.arff -ds wasb:///example/data/KDDTrain+.info -sl 5 -p -t 100 -o nsl-forest
+		hadoop jar c:/apps/dist/mahout-0.9.0.2.2.7.1-37/examples/target/mahout-examples-0.9.0.2.2.7.1-37-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d wasb:///example/data/KDDTrain+.arff -ds wasb:///example/data/KDDTrain+.info -sl 5 -p -t 100 -o nsl-forest
 
     The output of this operation is stored in the __nsl-forest__ directory, which is located in the storage for your HDInsight cluster at __wasb://user/&lt;username>/nsl-forest/nsl-forest.seq. The &lt;username> is the user name that you used for your Remote Desktop session. This file is not readable by humans.
 
 5. Test the forest by classifying the __KDDTest+.arff__ dataset. Use the following command:
 
-    	hadoop jar c:/apps/dist/mahout-0.9.0.2.1.3.0-1887/examples/target/mahout-examples-0.9.0.2.1.3.0-1887-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i wasb:///example/data/KDDTest+.arff -ds wasb:///example/data/KDDTrain+.info -m nsl-forest -a -mr -o wasb:///example/data/predictions
+    	hadoop jar c:/apps/dist/mahout-0.9.0.2.2.7.1-37/examples/target/mahout-examples-0.9.0.2.2.7.1-37-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i wasb:///example/data/KDDTest+.arff -ds wasb:///example/data/KDDTrain+.info -m nsl-forest -a -mr -o wasb:///example/data/predictions
 
     This command returns summary information about the classification process similar to the following:
 
@@ -515,11 +512,11 @@ Now that you have learned how to use Mahout, discover other ways of working with
 * [MapReduce with HDInsight](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell)
 
 [build]: http://mahout.apache.org/developers/buildingmahout.html
-[aps]: /documentation/articles/powershell-install-configure
+[aps]: ../powershell-install-configure.md
 [movielens]: http://grouplens.org/datasets/movielens/
 [100k]: http://files.grouplens.org/datasets/movielens/ml-100k.zip
-[getstarted]: /documentation/articles/hdinsight-get-started
-[upload]: /documentation/articles/hdinsight-upload-data
+[getstarted]: ../hdinsight-get-started.md
+[upload]: hdinsight-upload-data.md
 [ml]: http://en.wikipedia.org/wiki/Machine_learning
 [forest]: http://en.wikipedia.org/wiki/Random_forest
 [management]: https://manage.windowsazure.cn/

@@ -73,7 +73,7 @@ There are ways to further limit what a user can do with Azure SQL Database:
 * [Data Masking](/documentation/articles/sql-database-dynamic-data-masking-get-started) can be used to limit exposure of sensitive data.
 * [Stored procedures](https://msdn.microsoft.com/zh-cn/library/ms190782) can be used to limit the actions that can be taken on the database.
 
-Managing databases and logical servers from the Azure Management Portal or using the Azure Resource Manager API is controlled by your portal user account's role assignments. For more information on this topic, see [Role-based access control in Azure Preview portal](/documentation/articles/role-based-access-control-configure).
+Managing databases and logical servers from the Azure Management Portal or using the Azure Resource Manager API is controlled by your portal user account's role assignments. For more information on this topic, see [Role-based access control in Azure Management Portal](/documentation/articles/role-based-access-control-configure).
 
 
 ## Encryption

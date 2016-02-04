@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="08/25/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # How to use Azure Blob storage from Python
@@ -58,9 +58,9 @@ container, but only you can modify or delete them.
 
 ## Upload a blob into a container
 
-To upload data to a blob, use the **put\_block\_blob\_from\_path**, **put\_block\_blob\_from\_file**, **put\_block\_blob\_from\_bytes** or **put\_block\_blob\_from\_text** methods. They are high-level methods that perform the necessary chunking when the size of the data exceeds 64 MB.
+To upload data to a blob, use the **put_block_blob_from_path**, **put_block_blob_from_file**, **put_block_blob_from_bytes** or **put_block_blob_from_text** methods. They are high-level methods that perform the necessary chunking when the size of the data exceeds 64 MB.
 
-**put\_block\_blob\_from\_path** uploads the contents of a file from the specified path, and **put\_block\_blob\_from\_file** uploads the contents from an already opened file/stream. **put\_block\_blob\_from\_bytes** uploads an array of bytes, and **put\_block\_blob\_from\_text** uploads the specified text value using the specified encoding (defaults to UTF-8).
+**put_block_blob_from_path** uploads the contents of a file from the specified path, and **put_block_blob_from_file** uploads the contents from an already opened file/stream. **put_block_blob_from_bytes** uploads an array of bytes, and **put_block_blob_from_text** uploads the specified text value using the specified encoding (defaults to UTF-8).
 
 The following example uploads the contents of the **sunset.png** file into the **myblob** blob.
 
@@ -73,9 +73,9 @@ The following example uploads the contents of the **sunset.png** file into the *
 
 ## List the blobs in a container
 
-To list the blobs in a container, use the **list\_blobs** method. Each
-call to **list\_blobs** will return a segment of results. To get all results,
-check the **next\_marker** of the results and call **list\_blobs** again as
+To list the blobs in a container, use the **list_blobs** method. Each
+call to **list_blobs** will return a segment of results. To get all results,
+check the **next_marker** of the results and call **list_blobs** again as
 needed. The following code outputs the **name** of each blob in a container
 to the console.
 
@@ -93,12 +93,12 @@ to the console.
 ## Download blobs
 
 Each segment of results can contain a variable number of blobs up to a maximum
-of 5000. If **next\_marker** exists for a particular segment, there may be
+of 5000. If **next_marker** exists for a particular segment, there may be
 more blobs in the container.
 
-To download data from a blob, use **get\_blob\_to\_path**, **get\_blob\_to\_file**, **get\_blob\_to\_bytes**, or **get\_blob\_to\_text**. They are high-level methods that perform the necessary chunking when the size of the data exceeds 64 MB.
+To download data from a blob, use **get_blob_to_path**, **get_blob_to_file**, **get_blob_to_bytes**, or **get_blob_to_text**. They are high-level methods that perform the necessary chunking when the size of the data exceeds 64 MB.
 
-The following example demonstrates using **get\_blob\_to\_path** to download the contents of the **myblob** blob and store it to the **out-sunset.png** file.
+The following example demonstrates using **get_blob_to_path** to download the contents of the **myblob** blob and store it to the **out-sunset.png** file.
 
 	blob_service.get_blob_to_path('mycontainer', 'myblob', 'out-sunset.png')
 
@@ -113,12 +113,11 @@ Finally, to delete a blob, call **delete_blob**.
 Now that you have learned the basics of Blob storage, follow these links
 to learn about more complex storage tasks.
 
--   See the MSDN Reference: [Storing and Accessing Data in Azure][]
--   Visit the [Azure Storage Team Blog][]
+- Visit the [Azure Storage Team Blog][]
+- [Transfer data with the AzCopy command-line utility](/documentation/articles/storage-use-azcopy)
 
 For more information, see also the [Python Developer Center](/develop/python/).
 
-[Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
 [Python Azure package]: https://pypi.python.org/pypi/azure
 [Python Azure Storage package]: https://pypi.python.org/pypi/azure-storage  

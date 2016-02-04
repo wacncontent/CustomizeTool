@@ -56,7 +56,7 @@
 		<Button Name="ButtonLogin" Click="ButtonLogin_Click" 
                         Visibility="Visible">Sign in</Button>
 
-<!-- deleted by customization 6 --><!-- keep by customization: begin --> 2 <!-- keep by customization: end -->. In the Windows Phone app project, add the following **Button** elements just before the element that defines the **Save** button:
+6. In the Windows Phone app project, add the following **Button** elements just before the element that defines the **Save** button:
 
 		<Button Grid.Row ="1" Grid.Column="1" Name="ButtonLogin" Click="ButtonLogin_Click" 
                         Visibility="Visible" Margin="10, 0, 0, 0">Sign in</Button> 

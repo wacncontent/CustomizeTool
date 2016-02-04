@@ -3,8 +3,8 @@ Entity|Quota (Standard Offer)
 ---|---
 Database Accounts*|5
 Number of databases per database account|100
-Number of users per database account – across all databases|500,000
-Number of permissions per database account – across all databases|2,000,000
+Number of users per database account â across all databases|500,000
+Number of permissions per database account â across all databases|2,000,000
 Attachment storage per database account (Preview Feature)|2 GB
 Maximum Request Units / second per collection|2500
 Number of stored procedures, triggers and UDFs per collection* |25 each
@@ -22,8 +22,8 @@ Maximum length of property or value|No practical limit
 Maximum number of UDFs per query* |2
 Maximum number of JOINs per query* |5
 Maximum number of AND clauses per query* |20
-Maximum number of OR clauses per query* |10
-Maximum number of values per IN expression* |100
+Maximum number of OR clauses per query* |20
+Maximum number of values per IN expression* |200
 Maximum number of points in a polygon argument in a ST_WITHIN query* |16
 Maximum number of collection creates per minute* |5
 Maximum number of scale operations per minute* |5

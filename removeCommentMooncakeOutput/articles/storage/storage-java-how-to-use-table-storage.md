@@ -7,9 +7,9 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="storage"
-	ms.date="08/31/2015"
+<tags 
+	ms.service="storage" 
+	ms.date="12/01/2015" 
 	wacn.date=""/>
 
 
@@ -50,7 +50,8 @@ An Azure storage client uses a storage connection string to store endpoints and 
     public static final String storageConnectionString = 
         "DefaultEndpointsProtocol=http;" + 
         "AccountName=your_storage_account;" + 
-        "AccountKey=your_storage_account_key";
+        "AccountKey=your_storage_account_key;" +
+	"EndpointSuffix=core.chinacloudapi.cn";
 
 In an application running within a role in Windows Azure, this string can be stored in the service configuration file, *ServiceConfiguration.cscfg*, and can be accessed with a call to the **RoleEnvironment.getConfigurationSettings** method. Here's an example of getting the connection string from a **Setting** element named *StorageConnectionString* in the service configuration file:
 
@@ -556,8 +557,7 @@ For more information, see also the [Java Developer Center](/develop/java/).
 [Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
-[Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+[Azure Storage Client SDK Reference]: http://azure.github.io/azure-storage-java/
+[Azure Storage REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
 [blog post]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
- 

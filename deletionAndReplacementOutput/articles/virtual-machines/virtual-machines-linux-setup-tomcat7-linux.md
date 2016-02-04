@@ -10,7 +10,7 @@ deleted:
 
 		Preview
 
-reason: ()
+reason: (preview portal)
 
 replacement:
 
@@ -32,7 +32,7 @@ replaced by:
 
 		Management
 
-reason: ()
+reason: (preview portal)
 
 deleted:
 
@@ -42,7 +42,7 @@ replaced by:
 
 		Management
 
-reason: ()
+reason: (preview portal)
 
 deleted:
 
@@ -52,5 +52,5 @@ replaced by:
 
 		Management
 
-reason: ()
+reason: (preview portal)
 

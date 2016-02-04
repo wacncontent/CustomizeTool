@@ -1,3 +1,28 @@
-new docs: 0, word count: 0
+new docs: 23, word count: 28772
+articles/cdn/cdn-advanced-http-reports.md
+articles/cdn/cdn-analyze-usage-patterns.md
+articles/cdn/cdn-caching-policy.md
+articles/cdn/cdn-cloud-service-with-cdn.md
+articles/cdn/cdn-country-codes.md
+articles/cdn/cdn-create-a-storage-account-with-cdn.md
+articles/cdn/cdn-create-new-endpoint.md
+articles/cdn/cdn-edge-performance.md
+articles/cdn/cdn-how-to-use-cdn.md
+articles/cdn/cdn-improve-performance.md
+articles/cdn/cdn-manage-expiration-of-blob-content.md
+articles/cdn/cdn-manage-expiration-of-cloud-service-content.md
+articles/cdn/cdn-map-content-to-custom-domain.md
+articles/cdn/cdn-overview.md
+articles/cdn/cdn-pop-locations.md
+articles/cdn/cdn-purge-endpoint.md
+articles/cdn/cdn-query-string-premium.md
+articles/cdn/cdn-query-string.md
+articles/cdn/cdn-real-time-stats.md
+articles/cdn/cdn-restrict-access-by-country.md
+articles/cdn/cdn-rules-engine-details.md
+articles/cdn/cdn-rules-engine.md
+articles/cdn/cdn-serve-content-from-cdn-in-your-web-application.md
 
-new includes: 0
+new includes: 2
+includes/cdn-limits.md
+includes/cdn.md

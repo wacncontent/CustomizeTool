@@ -9,11 +9,16 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/01/2015"
+	ms.date="11/09/2015"
 	wacn.date=""/>
 
 
 # Build a service using an existing SQL database with the Mobile Services .NET backend
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 The Mobile Services .NET backend makes it easy to take advantage of existing assets in building a mobile service. One particularly interesting scenario is using an existing SQL database (either on-premises or in the cloud), that may already be used by other applications, to make existing data available to mobile clients. In this case it's a requirement that database model (or *schema*) remain unchanged, in order for existing solutions to continue working.
 
@@ -143,7 +148,6 @@ The data model you would like to use with your mobile service may be arbitrarily
 
         using System.ComponentModel.DataAnnotations.Schema;
         using Microsoft.WindowsAzure.Mobile.Service.Tables;
-        using System.ComponentModel.DataAnnotations;
         using System;
 
 4. Next, add these extra properties to each of the classes:
@@ -465,7 +469,7 @@ The next step is to implement a [**MappedEntityDomainManager**](http://msdn.micr
             }
         }
 
-    In this case the **InsertAsync** and **UpdateAsync** methods are interesting; that's where we enforce the relationship that each **Order** must have a valid associated **Customer**. In **InsertAsync** you'll notice that we populate the **MobileOrder.CustomerId** property, which maps to the **Order.CustomerId** property. We get that value by based looking up the **Customer** with the matching **MobileOrder.MobileCustomerId**. This is because by default the client is only aware of the Mobile Services ID (**MobileOrder.MobileCustomerId**) of the **Customer**, which is different than its actual primary key needed to set the foreign key (**MobileOrder.CustomerId**) from **Order** to **Customer**. This is only used internally within the service to facilitate the insert operation.
+    In this case the **InsertAsync** and **UpdateAsync** methods are interesting; that's where we enforce the relationship that each **Order** must have a valid associated **Customer**. In **InsertAsync** you'll notice that we populate the **MobileOrder.CustomerId** property, which maps to the **Order.CustomerId** property. We get that value based by looking up the **Customer** with the matching **MobileOrder.MobileCustomerId**. This is because by default the client is only aware of the Mobile Services ID (**MobileOrder.MobileCustomerId**) of the **Customer**, which is different than its actual primary key needed to set the foreign key (**MobileOrder.CustomerId**) from **Order** to **Customer**. This is only used internally within the service to facilitate the insert operation.
 
 We are now ready to create controllers to expose our DTOs to our clients.
 
@@ -581,7 +585,7 @@ We are now ready to create controllers to expose our DTOs to our clients.
 
 3. You are now ready to run your service. Press **F5** and use the test client built into the help page to modify the data.
 
-Please note that both controller implementations make exclusive use of the DTOs **MobileCustomer** and **MobileOrder** and are agnostic of the underlying model. These DTOs are readily serialized to JSON and can be used to exchange data with the  Mobile Services client SDK on all platforms. For example, if building a Windows Store app, the corresponding client-side type would look as shown below. The type would be analogous on other client platforms.
+Please note that both controller implementations make exclusive use of the DTOs **MobileCustomer** and **MobileOrder** and are agnostic of the underlying model. These DTOs are readily serialized to JSON and can be used to exchange data with the  Mobile Services client SDK on all platforms. For example, building a Windows Store app, the corresponding client-side type would look as shown below. The type would be analogous on other client platforms.
 
     using Microsoft.WindowsAzure.MobileServices;
     using System;

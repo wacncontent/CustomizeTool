@@ -7,12 +7,17 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="09/14/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # Build a .NET backend mobile service that uses Table storage
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 This topic shows you how to use a non-relational data store for your .NET backend mobile service. In this tutorial, you will modify the Azure Mobile Services quickstart project to use Azure Table storage instead of the default Azure SQL Database data store.
 
@@ -32,7 +37,7 @@ First, you need to configure your mobile service and .NET backend code project t
 
 3. If you haven't yet created your storage account, see [How To Create a Storage Account](/documentation/articles/storage-create-storage-account).
 
-4. In the Management Portal, click **Storage**, click the storage account, then click **Manage Keys**. 
+4. In the [Azure Management Portal], click **Storage**, click the storage account, then click **Manage Keys**.
 
 5. Make a note of the **Storage Account Name** and **Access Key**.
  
@@ -133,7 +138,7 @@ Now that you have seen how easy it is to use Table storage with .NET backend, co
 
 + [Connect to an on-premises SQL Server using Hybrid Connections](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started)</br>Hybrid Connections lets your mobile service securely connect to your on-premises assets. In this way, you can make your on-premises data accessible to your mobile clients by using Azure. Supported assets include any resource that runs on a static TCP port, including Microsoft SQL Server, MySQL, HTTP Web APIs, and most custom web services.
 
-+ [Upload images to Azure Storage using Mobile Services](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage)</br>Shows you how to extend the TodoList sample project to let you upload images from your app to Azure Blob storage.
++ [Upload images to Azure Storage using Mobile Services](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storaged)</br>Shows you how to extend the TodoList sample project to let you upload images from your app to Azure Blob storage.
 
 <!-- Anchors. -->
 [Create a non-relational store]: #create-store
@@ -147,6 +152,6 @@ Now that you have seen how easy it is to use Table storage with .NET backend, co
 <!-- URLs. -->
 [Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[What is the Table Service]: /documentation/articles/storage-dotnet-how-to-use-tables#what-is
+[What is the Table Service]: /documentation/articles/storage-dotnet-how-to-use-tables/#what-is
 [MongoLab Add-on Page]: /gallery/store/mongolab/mongolab
  

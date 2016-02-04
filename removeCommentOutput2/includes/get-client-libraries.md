@@ -43,6 +43,6 @@ To download and install the PHP Client Libraries for Azure manually, follow thes
 For more information about installing the PHP Client Libraries for Azure (including information about installing as a PEAR package), see [Download the Azure SDK for PHP][download-SDK-PHP].
 
 [php-sdk-github]: http://go.microsoft.com/fwlink/?LinkId=252719
-[install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
+[install-git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
 [download-SDK-PHP]: /documentation/articles/php-download-sdk
 [composer-phar]: http://getcomposer.org/composer.phar

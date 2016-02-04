@@ -9,12 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # Service-side authorization of users in Mobile Services
 
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+> [AZURE.SELECTOR]
 - [(Any | .NET)](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
 - [(Any | Javascript)](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
 
@@ -32,7 +35,7 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 
 2. In Visual Studio, expand the Controllers folder,  open **TodoItemController.cs** and add the following using statement:
 
-		using Microsoft.Azure.Mobile.Server.Security;
+		using Microsoft.WindowsAzure.Mobile.Service.Security;
 
 3. Locate the **PostTodoItem** method and add the following code at the beginning of the method.
 
@@ -44,7 +47,7 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 
 	This code adds the user ID of the authenticated user to the item, before it is inserted into the TodoItem table.
 
-3. Locate the **GetAllTodoItems** method and replace the existing **return** statement with the following line of code:
+4. Locate the **GetAllTodoItems** method and replace the existing **return** statement with the following line of code:
 
 		// Get the logged in user
 		var currentUser = User as ServiceUser;
@@ -53,7 +56,7 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 
 	This query filters the returned TodoItem objects so that each user only receives the items that they inserted.
 
-4. Republish the mobile service project to Azure.
+5. Republish the mobile service project to Azure.
 
 
 ## <a name="test-app"></a>Test the app
@@ -73,4 +76,4 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 [3]: ./media/mobile-services-dotnet-backend-ios-authorize-users-in-scripts/mobile-quickstart-startup-ios.png
 
 <!-- URLs. -->
-[Add Authentication to Existing Mobile Services App]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
+[Add Authentication to Existing Mobile Services App]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users 

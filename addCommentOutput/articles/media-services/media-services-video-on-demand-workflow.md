@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -87,15 +87,16 @@ This article contains links to topics that show how to set up your development e
 For concepts related to delivering your content on demand, see [Media Services Concepts](/documentation/articles/media-services-concepts).
 players.md).
 
-
 <!-- deleted by customization
-##Next steps: AMS learning paths
+##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 -->
+
 
 [vod-overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
  

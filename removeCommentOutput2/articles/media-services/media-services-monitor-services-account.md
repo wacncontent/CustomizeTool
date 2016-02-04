@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -24,7 +24,7 @@ You can monitor the number of queued encoding jobs, failed encoding tasks, activ
 
 ##<a id="configuremonitoring"></a>How to: Monitoring a Media Services account
 
-1. In the [Management Portal](https://manage.windowsazure.cn/), click **Media Services**, and then click the Media Services account name to open the dashboard. 
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Media Services**, and then click the Media Services account name to open the dashboard. 
 
 	![MediaServices_Dashboard][dashboard]
 

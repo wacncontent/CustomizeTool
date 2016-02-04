@@ -7,24 +7,22 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="07/23/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="11/02/2015" 
 	wacn.date=""/>
 
 # Add authentication to your Mobile Services app
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users-legacy](../includes/mobile-services-selector-get-started-users-legacy.md)]
 
 ##Overview
 
 This topic shows you how to authenticate users in Azure Mobile Services from your app. In this tutorial, you add authentication to the quickstart project using an identity provider that is supported by Mobile Services. After being successfully authenticated and authorized by Mobile Services, the user ID value is displayed.
 
-This tutorial walks you through these basic steps to enable authentication in your app:
-
-1. [Register your app for authentication and configure Mobile Services]
-2. [Restrict table permissions to authenticated users]
-3. [Add authentication to the app]
 
 This tutorial is based on the Mobile Services quickstart. You must also first complete the tutorial [Add Mobile Services to an existing app]. 
 

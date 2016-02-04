@@ -1,21 +1,21 @@
 <properties 
-   pageTitle="Adding resources to an Azure resource group"
-   description="Learn how to add resources to an Azure Resource Group by using Visual Studio."
+   pageTitle="Editing a Resource Manager template with Visual Studio | Windows Azure"
+   description="Learn how to add resources to an Azure Resource Manager template by using Visual Studio."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="08/13/2015"
+	ms.date="11/13/2015"
 	wacn.date=""/>
 
 # Adding resources to an Azure resource group
 
 If you need to add more resources to a resource group, you can do this in the JSON Outline window in Visual Studio.
 
-## Adding resources to a resource group
+## Adding resources to a resource group 
 
 ### To add resources to a resource group
 

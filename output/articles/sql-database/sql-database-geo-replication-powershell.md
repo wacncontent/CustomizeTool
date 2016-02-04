@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="11/10/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # Configure geo-replication for Azure SQL Database with PowerShell
@@ -17,7 +17,7 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](/documentation/articles/sql-database-geo-replication-portal)
+- [Azure Management Portal](/documentation/articles/sql-database-geo-replication-portal)
 - [PowerShell](/documentation/articles/sql-database-geo-replication-powershell)
 - [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql)
 
@@ -34,10 +34,7 @@ To configure geo-replication you need the following:
 
 - An Azure subscription. If you need an Azure subscription simply click **FREE TRIAL** at the top of this page, and then come back to finish this article.
 - An Azure SQL database - The primary database that you want to replicate to a different geographical region.
-- Azure PowerShell 1.0 Preview. You can download and install the Azure PowerShell modules by following [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
-
-> [AZURE.IMPORTANT] Starting with the release of Azure PowerShell 1.0 Preview, the Switch-AzureMode cmdlet is no longer available, and cmdlets that were in the Azure ResourceManger module have been renamed. The examples in this article use the new PowerShell 1.0 Preview naming convention. For detailed information, see [Deprecation of Switch-AzureMode in Azure PowerShell](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
-
+- Azure PowerShell 1.0 or later. You can download and install the Azure PowerShell modules by following [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 
 
@@ -71,7 +68,7 @@ To enable a secondary you must be the subscription owner or co-owner.
 
 You can use the **New-AzureRmSqlDatabaseSecondary** cmdlet to add a secondary database on a partner server to a local database on the server to which you are connected (the primary database). 
 
-This cmdlet replaces **Start-AzureSqlDatabaseCopy** with the **–IsContinuous** parameter.  It will output an **AzureRmSqlDatabaseSecondary** object that can be used by other cmdlets to clearly identify a specific replication link. This cmdlet will return when the secondary database is created and fully seeded. Depending on the size of the database it may take from minutes to hours.
+This cmdlet replaces **Start-AzureSqlDatabaseCopy** with the **-IsContinuous** parameter.  It will output an **AzureRmSqlDatabaseSecondary** object that can be used by other cmdlets to clearly identify a specific replication link. This cmdlet will return when the secondary database is created and fully seeded. Depending on the size of the database it may take from minutes to hours.
 
 The replicated database on the secondary server will have the same name as the database on the primary server and will, by default, have the same service level. The secondary database can be readable or non-readable, and can be a single database or an elastic database. For more information, see [New-AzureRMSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt603689.aspx) and [Service Tiers](/documentation/articles/sql-database-service-tiers).
 After the secondary is created and seeded, data will begin replicating from the primary database to the new secondary database. The steps below describe how to accomplish this task using PowerShell to create non-readable and readable secondaries, either with a single database or an elastic database.
@@ -84,8 +81,8 @@ If the partner database already exists (for example - as a result of terminating
 
 The following command creates a non-readable secondary of database "mydb" of server "srv2" in resource group "rg2":
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb"
-    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary –PartnerResourceGroupName "rg2" –PartnerServerName "srv2" -AllowConnections "None"
+    $database = Get-AzureRmSqlDatabase -DatabaseName "mydb"
+    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary -PartnerResourceGroupName "rg2" -PartnerServerName "srv2" -AllowConnections "None"
 
 
 
@@ -93,8 +90,8 @@ The following command creates a non-readable secondary of database "mydb" of ser
 
 The following command creates a readable secondary of database "mydb" of server "srv2" in resource group "rg2":
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb"
-    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary –PartnerResourceGroupName "rg2" –PartnerServerName "srv2" -AllowConnections "All"
+    $database = Get-AzureRmSqlDatabase -DatabaseName "mydb"
+    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary -PartnerResourceGroupName "rg2" -PartnerServerName "srv2" -AllowConnections "All"
 
 
 
@@ -103,16 +100,16 @@ The following command creates a readable secondary of database "mydb" of server 
 
 The following command creates a non-readable secondary of database "mydb" in the elastic database pool named "ElasticPool1" of server "srv2" in resource group "rg2":
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb"
-    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary –PartnerResourceGroupName "rg2" –PartnerServerName "srv2" –SecondaryElasticPoolName "ElasticPool1" -AllowConnections "None"
+    $database = Get-AzureRmSqlDatabase -DatabaseName "mydb"
+    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary -PartnerResourceGroupName "rg2" -PartnerServerName "srv2" -SecondaryElasticPoolName "ElasticPool1" -AllowConnections "None"
 
 
 ### Add a readable secondary (elastic database)
 
 The following command creates a readable secondary of database "mydb" in the elastic database pool named "ElasticPool1" of server "srv2" in resource group "rg2":
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb"
-    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary –PartnerResourceGroupName "rg2" –PartnerServerName "srv2" –SecondaryElasticPoolName "ElasticPool1" -AllowConnections "All"
+    $database = Get-AzureRmSqlDatabase -DatabaseName "mydb"
+    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary -PartnerResourceGroupName "rg2" -PartnerServerName "srv2" -SecondaryElasticPoolName "ElasticPool1" -AllowConnections "All"
 
 
 
@@ -120,7 +117,7 @@ The following command creates a readable secondary of database "mydb" in the ela
 
 ## Remove secondary database
 
-Use the **Remove-AzureRmSqlDatabaseSecondary** cmdlet to permanently terminate the replication partnership between a secondary database and its primary. After the relationship termination, the secondary database becomes a read-write database. If the connectivity to secondary database is broken the command succeeds but the secondary will become read-write after connectivity is restored. For more information, see [Remove-AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt603457.aspx) and [Service Tiers](/documentation/articles/sql-database-service-tiers/).
+Use the **Remove-AzureRmSqlDatabaseSecondary** cmdlet to permanently terminate the replication partnership between a secondary database and its primary. After the relationship termination, the secondary database becomes a read-write database. If the connectivity to secondary database is broken the command succeeds but the secondary will become read-write after connectivity is restored. For more information, see [Remove-AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt603457.aspx) and [Service Tiers](/documentation/articles/sql-database-service-tiers).
 
 This cmdlet replaces Stop-AzureSqlDatabaseCopy for replication. 
 
@@ -131,8 +128,8 @@ In order to remove secondary, users should have write access to both primary and
 
 The following removes replication link of database named "mydb" to server "srv2" of the resource group "rg2". 
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb"
-    $secondaryLink = $database | Get-AzureRmSqlDatabaseReplicationLink –SecondaryResourceGroup "rg2" –PartnerServerName "srv2"
+    $database = Get-AzureRmSqlDatabase -DatabaseName "mydb"
+    $secondaryLink = $database | Get-AzureRmSqlDatabaseReplicationLink -SecondaryResourceGroup "rg2" -PartnerServerName "srv2"
     $secondaryLink | Remove-AzureRmSqlDatabaseSecondary 
 
 
@@ -157,9 +154,9 @@ This sequence guarantees that no data loss will occur. There is a short period d
 
 This cmdlet will return when the process of switching the secondary database to primary is completed.
 
-The following command switches the roles of the database named "mydb” on the server "srv2” under the resource group "rg2” to primary. The original primary to which "db2” was connected to will switch to secondary after the two databases are fully synchronized.
+The following command switches the roles of the database named "mydb" on the server "srv2" under the resource group "rg2" to primary. The original primary to which "db2" was connected to will switch to secondary after the two databases are fully synchronized.
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb” –ResourceGroupName "rg2” –ServerName "srv2”
+    $database = Get-AzureRmSqlDatabase -DatabaseName "mydb" -ResourceGroupName "rg2" -ServerName "srv2"
     $database | Set-AzureRmSqlDatabaseSecondary -Failover
 
 
@@ -167,7 +164,7 @@ The following command switches the roles of the database named "mydb” on the s
 ## Initiate an unplanned failover from the primary database to the secondary database
 
 
-You can use the **Set-AzureRmSqlDatabaseSecondary** cmdlet with **–Failover** and **-AllowDataLoss** parameters to promote a secondary database to become the new primary database in an unplanned fashion, forcing the demotion of the existing primary to become a secondary at a time when the primary database is no longer available.
+You can use the **Set-AzureRmSqlDatabaseSecondary** cmdlet with **-Failover** and **-AllowDataLoss** parameters to promote a secondary database to become the new primary database in an unplanned fashion, forcing the demotion of the existing primary to become a secondary at a time when the primary database is no longer available.
 
 This functionality is designed for disaster recovery when restoring availability of the database is critical and some data loss is acceptable. When forced failover is invoked, the specified secondary database immediately becomes the primary database and begins accepting write transactions. As soon as the original primary database is able to reconnect with this new primary database after the forced failover operation, an incremental backup is taken on the original primary database and the old primary database is made into a secondary database for the new primary database; subsequently, it is merely a replica of the new primary.
 
@@ -176,13 +173,13 @@ But because Point In Time Restore is not supported on secondary databases, if yo
 > [AZURE.NOTE] If the command is issued when the both primary and secondary are online the old primary will become the new secondary but data synchronization will not be attempted so some data loss may occur.
 
 
-If the primary database has multiple secondaries the command will partially succeed. The secondary on which the command was executed will become primary. The old primary however will remain primary, i.e. the two primaries will end up in inconsistent state and connected by a suspended replication link. The user will have to manually repair this configuration using a “remove secondary” API on either of these primary databases.
+If the primary database has multiple secondaries the command will partially succeed. The secondary on which the command was executed will become primary. The old primary however will remain primary, i.e. the two primaries will end up in inconsistent state and connected by a suspended replication link. The user will have to manually repair this configuration using a "remove secondary" API on either of these primary databases.
 
 
-The following command switches the roles of the database named "mydb” to primary when the primary is unavailable. The original primary to which "mydb” was connected to will switch to secondary after it is back online. At that point the synchronization may result in data loss.
+The following command switches the roles of the database named "mydb" to primary when the primary is unavailable. The original primary to which "mydb" was connected to will switch to secondary after it is back online. At that point the synchronization may result in data loss.
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb” –ResourceGroupName "rg2” –ServerName "srv2”
-    $database | Set-AzureRmSqlDatabaseSecondary –Failover -AllowDataLoss
+    $database = Get-AzureRmSqlDatabase -DatabaseName "mydb" -ResourceGroupName "rg2" -ServerName "srv2"
+    $database | Set-AzureRmSqlDatabaseSecondary -Failover -AllowDataLoss
 
 
 
@@ -192,10 +189,10 @@ Monitoring tasks include monitoring of the geo-replication configuration and mon
 
 [Get-AzureRmSqlDatabaseReplicationLink](https://msdn.microsoft.com/zh-cn/library/mt619330.aspx) can be used to retrieve the information about the forward replication links visible in the sys.geo_replication_links catalog view.
 
-The following command retrieves status of the replication link between the primary database "mydb” and the secondary on server "srv2” of the resource group "rg2”.
+The following command retrieves status of the replication link between the primary database "mydb" and the secondary on server "srv2" of the resource group "rg2".
 
-    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb”
-    $secondaryLink = $database | Get-AzureRmSqlDatabaseReplicationLink –PartnerResourceGroup "rg2” –PartnerServerName "srv2”
+    $database = Get-AzureRmSqlDatabase -DatabaseName "mydb"
+    $secondaryLink = $database | Get-AzureRmSqlDatabaseReplicationLink -PartnerResourceGroup "rg2" -PartnerServerName "srv2"
 
 
 

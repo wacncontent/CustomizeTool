@@ -3,13 +3,13 @@
 	description="Learn how to configure single sign-on between Azure Active Directory and Questetra BPM Suite."
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
-	manager="msStevenPo"
+	authors="jeevansd"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/02/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 
@@ -37,7 +37,7 @@ To configure Azure AD integration with Questetra BPM Suite, you need the followi
 To test the steps in this tutorial, you should follow these recommendations:
 
 - You should not use your production environment, unless this is necessary.
-- If you don't have an Azure AD trial environment, you can get a one-month trial [here](https://azure.microsoft.com/pricing/1rmb-trial/). 
+- If you don't have an Azure AD trial environment, you can get a one-month trial <!-- deleted by customization [here](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> [here](https://azure.microsoft.com/pricing/1rmb-trial/) <!-- keep by customization: end -->.
 
  
 ## Scenario Description

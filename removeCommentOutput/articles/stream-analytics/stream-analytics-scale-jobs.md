@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Scale Stream Analytics jobs to increase throughput | Microsoft Azure"
+	pageTitle="Scale Stream Analytics jobs to increase throughput | Windows Azure"
 	description="Learn how to scale Stream Analytics jobs by configuring input partitions, tuning the query definition, and setting job streaming units."
 	keywords="analytics jobs,data stream,data streaming"
 	services="stream-analytics"
@@ -10,12 +10,8 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="data-services"
-	ms.date="09/29/2015"
-	ms.author="jeffstok"/>
+	ms.date="11/06/2015"
+	wacn.date=""/>
 
 # Scale Azure Stream Analytics jobs to increase throughput #
 
@@ -24,12 +20,12 @@ Learn how to calculate *streaming units* for Stream Analytics jobs, and how to s
 ## What are the parts of a Stream Analytics job? ##
 An Azure Stream Analytics job definition includes inputs, a query, and output. Inputs are from where the job reads the data stream, the query is used to transform the data input stream, and the output is where the job sends the job results to.  
 
-A job requires at least one input source for data streaming. The data stream input source can be stored in an Azure Service Bus Event Hub or in Azure Blob storage. For more information, see [Introduction to Azure Stream Analytics](stream-analytics-introduction.md), [Get started using Azure Stream Analytics](stream-analytics-get-started.md), and [Azure Stream Analytics developer guide](../stream-analytics-developer-guide.md).
+A job requires at least one input source for data streaming. The data stream input source can be stored in an Azure Service Bus Event Hub or in Azure Blob storage. For more information, see [Introduction to Azure Stream Analytics](/documentation/articles/stream-analytics-introduction), [Get started using Azure Stream Analytics](/documentation/articles/stream-analytics-get-started), and [Azure Stream Analytics developer guide](/documentation/articles/stream-analytics-developer-guide).
 
 ## Configuring Streaming Units ##
 Streaming Units (SUs) represent the resources and power to execute an Azure Stream Analytics job. SUs provide a way to describe the relative event processing capacity based on a blended measure of CPU, memory, and read and write rates. Each streaming unit corresponds to roughly 1MB/second of throughput. 
 
-Choosing how many SUs are required for a particular job is depends on the on the partition configuration for the inputs and the query defined for the job.  You can select up to your quota in streaming units for a job by using the Azure portal. Each Azure subscription by default has a quota of up to 50 streaming units for all the analytics jobs in a specific region.  To increase streaming units for your subscriptions, contact [Microsoft Support](http://support.microsoft.com).
+Choosing how many SUs are required for a particular job is depends on the on the partition configuration for the inputs and the query defined for the job.  You can select up to your quota in streaming units for a job by using the Azure Management Portal. Each Azure subscription by default has a quota of up to 50 streaming units for all the analytics jobs in a specific region.  To increase streaming units for your subscriptions, contact [Microsoft Support](http://support.microsoft.com).
 
 The number of streaming units that a job can utilize depends on the partition configuration for the inputs and the query defined for the job. Note also that a valid value for the stream units must be used. The valid values start at 1, 3, 6 and then upwards in increments of 6, as shown below.
 
@@ -61,7 +57,7 @@ The previous query has two steps.
 
 Partitioning a step requires the following conditions:
 
-- The input source must be partitioned. For more information, see [Azure Stream Analytics developer guide](../stream-analytics-developer-guide.md) and [Event Hubs Programming Guide](../azure-event-hubs-developer-guide.md).
+- The input source must be partitioned. For more information, see [Azure Stream Analytics developer guide](/documentation/articles/stream-analytics-developer-guide) and [Event Hubs Programming Guide](/documentation/articles/azure-event-hubs-developer-guide).
 - The SELECT statement of the query must read from a partitioned input source.
 - The query within the step must have the **Partition By** keyword
 
@@ -147,7 +143,7 @@ This query can be scaled to 24 streaming units.
 
 **To adjust a streaming unit for a job**
 
-1. Sign in to the [Management portal](https://manage.windowsazure.com).
+1. Sign in to the [Management portal](https://manage.windowsazure.cn).
 2. Click **Stream Analytics** in the left pane.
 3. Click the Stream Analytics job that you want to scale.
 4. Click **SCALE** at the top of the page.
@@ -171,7 +167,7 @@ Calculate the expected throughput of the workload in Events/second. If the throu
 
 To understand how ASA scales in a typical scenario in terms of processing throughput across multiple Streaming Units, here is an experiment that sends sensor data (clients) into Event Hub, ASA processes it and sends alert or statistics as an output to another Event Hub.
 
-The client is sending synthesized sensor data to Event Hubs in JSON format to ASA and data output is also in JSON format.  Here is how the sample data would look like–  
+The client is sending synthesized sensor data to Event Hubs in JSON format to ASA and data output is also in JSON format.  Here is how the sample data would look like-  
 
     {"devicetime":"2014-12-11T02:24:56.8850110Z","hmdt":42.7,"temp":72.6,"prss":98187.75,"lght":0.38,"dspl":"R-PI Olivier's Office"}
 
@@ -232,16 +228,16 @@ Below are the results with increasing number of Streaming units and correspondin
 ![img.stream.analytics.perfgraph][img.stream.analytics.perfgraph]
 
 ## Get help ##
-For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
+For further assistance, try our [Azure Stream Analytics forum](https://social.msdn.microsoft.com/Forums/home?forum=AzureStreamAnalytics).
 
 
 ## Next steps ##
 
-- [Introduction to Azure Stream Analytics](stream-analytics-introduction.md)
-- [Get started using Azure Stream Analytics](stream-analytics-get-started.md)
-- [Scale Azure Stream Analytics jobs](stream-analytics-scale-jobs.md)
-- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+- [Introduction to Azure Stream Analytics](/documentation/articles/stream-analytics-introduction)
+- [Get started using Azure Stream Analytics](/documentation/articles/stream-analytics-get-started)
+- [Scale Azure Stream Analytics jobs](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure Stream Analytics Query Language Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure Stream Analytics Management REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
 
 <!--Image references-->
@@ -255,8 +251,8 @@ For further assistance, try our [Azure Stream Analytics forum](https://social.ms
 <!--Link references-->
 
 [microsoft.support]: http://support.microsoft.com
-[azure.management.portal]: http://manage.windowsazure.com
-[azure.event.hubs.developer.guide]: http://msdn.microsoft.com/library/azure/dn789972.aspx
+[azure.management.portal]: http://manage.windowsazure.cn
+[azure.event.hubs.developer.guide]: http://msdn.microsoft.com/zh-cn/library/azure/dn789972.aspx
 
 [stream.analytics.developer.guide]: ../stream-analytics-developer-guide.md
 [stream.analytics.introduction]: stream-analytics-introduction.md

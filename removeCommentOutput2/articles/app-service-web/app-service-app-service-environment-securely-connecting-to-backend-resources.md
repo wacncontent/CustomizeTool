@@ -1,8 +1,8 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Securely Connecting to BackEnd Resources from an Azure Websites Environment" 
-	description="Learn about how to securely connect to backend resources from an Azure Websites Environment." 
+	pageTitle="Securely Connecting to BackEnd Resources from an Azure Environment" 
+	description="Learn about how to securely connect to backend resources from an Azure Environment." 
 	services="app-service" 
 	documentationCenter="" 
 	authors="ccompy" 
@@ -11,30 +11,30 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/11/2015"
+	ms.date="12/08/2015"
 	wacn.date=""/>	
 
-# Securely Connecting to Backend Resources from an Azure Websites Environment #
+# Securely Connecting to Backend Resources from an Azure Environment #
 
 ## Overview ##
-Since an Azure Websites Environment is always created in a subnet of a regional classic "v1" [virtual network][virtualnetwork], outbound connections from an Azure Websites Environment to other backend resources can flow exclusively over the virtual network.  
+Since an Azure Environment is always created in a subnet of a regional classic "v1" [virtual network][virtualnetwork], outbound connections from an Azure Environment to other backend resources can flow exclusively over the virtual network.  
 
-**Note:**  An Azure Websites Environment cannot be created in a "v2" virtual network.
+**Note:**  An Azure Environment cannot be created in a "v2" ARM-managed virtual network.
 
 For example, there may be a SQL Server running on a cluster of virtual machines with port 1433 locked down.  The endpoint may be ACLd to only allow access from other resources on the same virtual network.  
 
 As another example, sensitive endpoints may run on-premises and be connected to Azure via either [Site-to-Site][SiteToSite] or [Azure ExpressRoute][ExpressRoute] connections.  As a result, only resources in virtual networks connected to the Site-to-Site or ExpressRoute tunnels will be able to access on-premises endpoints.
 
-For all of these scenarios, apps running on an Azure Websites Environment will be able to securely connect to the various servers and resources.  Outbound traffic from apps running in an Azure Websites Environment to private endpoints in the same virtual network (or connected to the same virtual network), will only flow over the virtual network.  Outbound traffic to private endpoints will not flow over the public Internet.
+For all of these scenarios, apps running on an Azure Environment will be able to securely connect to the various servers and resources.  Outbound traffic from apps running in an Azure Environment to private endpoints in the same virtual network (or connected to the same virtual network), will only flow over the virtual network.  Outbound traffic to private endpoints will not flow over the public Internet.
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
 ## Outbound Connectivity and DNS Requirements ##
-Note that for an Azure Websites Environment to function properly, it requires outbound access to Azure Storage worldwide, as well as connectivity to Sql Database in the same Azure region.  If outbound Internet access is blocked in the virtual network, Azure Websites Environments will not be able to access these Azure endpoints.
+Note that for an Azure Environment to function properly, it requires outbound access to Azure Storage worldwide, as well as connectivity to Sql Database in the same Azure region.  If outbound Internet access is blocked in the virtual network, Azure Environments will not be able to access these Azure endpoints.
 
-Customer may also have custom DNS servers configured in the virtual network.  Azure Websites Environments need to be able to resolve Azure endpoints under *.database.chinacloudapi.cn, *.file.core.chinacloudapi.cn and *.blob.core.chinacloudapi.cn.  
+Customer may also have custom DNS servers configured in the virtual network.  Azure Environments need to be able to resolve Azure endpoints under *.database.chinacloudapi.cn, *.file.core.chinacloudapi.cn and *.blob.core.chinacloudapi.cn.  
 
-It is also recommended that any custom DNS servers on the virtual network be setup ahead of time prior to creating an Azure Websites Environment.  If a virtual network's DNS configuration is changed while an Azure Websites Environment is being created, that will result in the Azure Websites Environment creation process failing.  If a custom DNS server exists on the other end of a VPN gateway, and the DNS server is unreachable or unavailable, the Azure Websites Environment creation process will also fail. 
+It is also recommended that any custom DNS servers on the virtual network be setup ahead of time prior to creating an Azure Environment.  If a virtual network's DNS configuration is changed while an Azure Environment is being created, that will result in the Azure Environment creation process failing.  If a custom DNS server exists on the other end of a VPN gateway, and the DNS server is unreachable or unavailable, the Azure Environment creation process will also fail. 
 
 ## Connecting to a SQL Server
 A common SQL Server configuration has an endpoint listening on port 1433:
@@ -55,7 +55,7 @@ Port 1433 can be secured using a network access control list.  The example below
 
 ![Network Access Control List Example][NetworkAccessControlListExample]
 
-Any applications running in Azure Websites Environment in the same virtual network as the SQL Server will be able to connect to the SQL Server instance using the **VNet internal** IP address for the SQL Server virtual machine.  
+Any applications running in Azure Environment in the same virtual network as the SQL Server will be able to connect to the SQL Server instance using the **VNet internal** IP address for the SQL Server virtual machine.  
 
 The example connection string below references the SQL Server using its private IP address.
 
@@ -85,11 +85,11 @@ The end result is a set of security rules that block external access, while allo
 
 ## Getting started
 
-To get started with Azure Websites Environments, see [Introduction to Azure Websites Environment][IntroToAppServiceEnvironment]
+To get started with Azure Environments, see [Introduction to Azure Environment][IntroToAppServiceEnvironment]
 
-For details around controlling inbound traffic to your Azure Websites Environment, see [Controlling inbound traffic to an Azure Websites Environment][ControlInboundASE]
+For details around controlling inbound traffic to your Azure Environment, see [Controlling inbound traffic to an Azure Environment][ControlInboundASE]
 
-For more information about the Azure Websites platform, see [Azure Websites][AzureAppService].
+For more information about the Azure platform, see [Azure Web App][AzureAppService].
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 

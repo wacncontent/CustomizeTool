@@ -4,16 +4,16 @@
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="08/19/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Add, disable, enable or delete endpoints
 
-The Web Apps feature in Azure Websites already provides failover and round-robin traffic routing functionality for websites within a datacenter, regardless of the website mode. Azure Traffic Manager allows you to specify failover and round-robin traffic routing for websites and cloud services in different datacenters. The first step necessary to provide that functionality is to add the cloud service or website endpoint to Traffic Manager.
+The web sites feature in Azure Websites already provides failover and round-robin traffic routing functionality for websites within a datacenter, regardless of the website mode. Azure Traffic Manager allows you to specify failover and round-robin traffic routing for websites and cloud services in different datacenters. The first step necessary to provide that functionality is to add the cloud service or website endpoint to Traffic Manager.
 
 >[AZURE.NOTE] You cannot add external locations or Traffic Manager profiles as endpoints using the Azure Management Portal. You must use the REST API [Create Definition](https://msdn.microsoft.com/zh-cn/library/azure/hh758257.aspx) or Windows PowerShell [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-cn/library/dn690257.aspx).
 
@@ -28,7 +28,7 @@ You can also disable individual endpoints that are part of a Traffic Manager pro
 2. At the top of the page, click **Endpoints** to view the endpoints that are already part of your configuration.
 3. At the bottom of the page, click **Add** to access the **Add Service Endpoints** page. By default, the page lists the cloud services under **Service Endpoints**.
 4. For cloud services, select the cloud services in the list to enable them as endpoints for this profile. Clearing the cloud service name removes it from the list of endpoints.
-5. For websites, click the **Service Type** drop-down list, and then select **Web app**.
+5. For websites, click the **Service Type** drop-down list, and then select **Web Apps**.
 6. Select the websites in the list to add them as endpoints for this profile. Clearing the website name removes it from the list of endpoints. Note that you can only select a single website per Azure datacenter (also known as a region). If you select a website in a datacenter that hosts multiple websites, when you select the first website, the others in the same datacenter become unavailable for selection. Also note that only Standard websites are listed.
 7. After you select the endpoints for this profile, click the checkmark on the lower right to save your changes.
 
@@ -58,18 +58,15 @@ You can also disable individual endpoints that are part of a Traffic Manager pro
 
 >[AZURE.NOTE] You cannot delete external locations or Traffic Manager profiles as endpoints using the Azure Management Portal. You must use Windows PowerShell. For more information, see [Remove-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-cn/library/dn690251.aspx).
 
-## Additional resources
+## Next steps
 
-[Traffic Manager overview](/documentation/articles/traffic-manager-overview)
 
-[About Traffic Manager monitoring](/documentation/articles/traffic-manager-monitoring)
+[Configure failover routing method](/documentation/articles/traffic-manager-configure-failover-routing-method)
 
-[Traffic Manager - Disable, enable or delete a profile](/documentation/articles/disable-enable-or-delete-a-profile)
+[Configure round robin routing method](/documentation/articles/traffic-manager-configure-round-robin-routing-method)
 
-[Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint)
+[Configure performance routing method](/documentation/articles/traffic-manager-configure-performance-routing-method)
+
+[Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded)
 
 [Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
-
-[Cloud Services](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
-
-[Websites](/home/features/web-site/)

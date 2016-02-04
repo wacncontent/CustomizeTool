@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/07/2015"
+	ms.date="11/29/2015"
 	wacn.date=""/>
 
 
@@ -24,4 +24,5 @@ Windows Azure HDInsight provides PowerShell cmdlets to perform Hadoop tasks on a
 **Look at the Windows Azure HDInsight PowerShell reference document: [Azure HDInsight PowerShell reference](https://msdn.microsoft.com/zh-cn/library/azure/dn858087.aspx)**
 
 ![HDInsight PowerShell Cmdlet cheat sheet for performing common Hadoop tasks](./media/hdinsight-hadoop-powershell-cmdlet-cheat-sheet/HDI.PowerShell.Cmdlet.CheatSheet.png)
+
 

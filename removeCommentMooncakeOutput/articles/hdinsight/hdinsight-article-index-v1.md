@@ -1,6 +1,6 @@
 <properties
    pageTitle="HDInsight article index for Azure Management Portal | Windows Azure"
-   description="An index page with links to articles about HDInsight on the Azure Management Portal. Microsoft recommends the Azure Management Portalfor new Hadoop clusters on HDInsight."
+   description="An index page with links to articles about HDInsight on the Azure Management Portal. Microsoft recommends the Azure Management Portal for new Hadoop clusters on HDInsight."
    services="hdinsight"
    documentationCenter="na"
    authors="cjgronlund"
@@ -18,7 +18,7 @@ Use this index page to find articles covering HDInsight on the [Azure Management
 
 ## Get started
 
-If you're new to Hadoop on HDInsight, go to the [HDInsight documentation page](/documentation/services/hdinsight/) to get started with the Azure Azure Management Portal.
+If you're new to Hadoop on HDInsight, go to the [HDInsight documentation page](/documentation/services/hdinsight/) to get started with the Azure Management Portal.
 
 ## Hadoop: Batch query
 
@@ -38,7 +38,7 @@ If you're new to Hadoop on HDInsight, go to the [HDInsight documentation page](/
 * [Serialize data in Hadoop with the Microsoft Avro Library](/documentation/articles/hdinsight-dotnet-avro-serialization)
 * [Process and analyze JSON documents using Hive](/documentation/articles/hdinsight-using-json-in-hive)
 * [Use Python with Hive and Pig](/documentation/articles/hdinsight-python)
-* [Optimize Hive queries for Hadoop](hdinsight-hadoop-optimize-hive-query–v1.md)
+* [Optimize Hive queries for Hadoop](/documentation/articles/hdinsight-hadoop-optimize-hive-query-v1)
 * [Run Pig jobs using the .NET SDK for Hadoop](hdinsight-hadoop-use-pig-dotnet-sdk-v1.md )
 * [Use C# user-defined functions with Hive and Pig streaming](/documentation/articles/hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
 * [Develop C# Hadoop streaming programs](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs)
@@ -72,7 +72,7 @@ If you're new to Hadoop on HDInsight, go to the [HDInsight documentation page](/
 ## Operations
 
 * [Provision clusters on Windows](/documentation/articles/hdinsight-provision-clusters-v1)
-* [Provision HBase clusters on Azure Virtual Network](/documentation/articles/hdinsight-hbase-provision-vnet)
+* [Provision HBase clusters on Azure Virtual Network](/documentation/articles/hdinsight-hbase-provision-vnet-v1)
 * [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)
 * [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability)
 

@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Sprinklr
@@ -114,7 +114,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
     6.  In the Azure Management Portal, on the **Configure single sign-on at Sprinklr** dialog page, copy the **Identity Provider ID** value, and then paste it into the **Entity Id** textbox.
     7.  In the Azure Management Portal, on the **Configure single sign-on at Sprinklr** dialog page, copy the **Remote Login URL** value, and then paste it into the **Identity Provider Login URL** textbox.
     8.  In the Azure Management Portal, on the **Configure single sign-on at Sprinklr** dialog page, copy the **Remote Logout URL** value, and then paste it into the **Identity Provider Logout URL** textbox.
-    9.  As **SAML User ID Type**, select **Assertion contains User”s sprinklr.com username**.
+    9.  As **SAML User ID Type**, select **Assertion contains User"s sprinklr.com username**.
     10. As **SAML User ID Location**, select **User ID is in the Name Identifier element of the Subject statement**.
     11. Close **Save**.
 
@@ -161,7 +161,7 @@ This section describes how to create AAD user accounts inside Sprinklr.
 
     ![Partner Roles](./media/active-directory-saas-sprinklr-tutorial/IC782917.png "Partner Roles")
 
-    1.  From the **Global** list, select <!-- deleted by customization **ALL\_Permissions** --><!-- keep by customization: begin --> **ALL_Permissions** <!-- keep by customization: end -->.
+    1.  From the **Global** list, select **ALL\_Permissions**.
     2.  Click **Update**.
 
 >[AZURE.NOTE] You can use any other Sprinklr user account creation tools or APIs provided by Sprinklr to provision Azure AD user accounts.

@@ -1,29 +1,18 @@
-<properties 
+<properties
 	pageTitle="Getting started with queue storage and Visual Studio connected services (WebJob projects) | Windows Azure"
 	description="How to get started using Azure Queue storage in a WebJob project after connecting to a storage account using Visual Studio connected services."
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 # Getting started with Azure Queue storage and Visual Studio connected services (WebJob Projects)
-
-> [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-webjobs-getting-started-queues)
-> - [What happened](/documentation/articles/vs-storage-webjobs-what-happened)
-<!-- deleted by customization
-
-> [AZURE.SELECTOR]
--->
-> - [Blobs](/documentation/articles/vs-storage-webjobs-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-webjobs-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-webjobs-getting-started-tables)
 
 ## Overview
 
@@ -37,7 +26,7 @@ Azure Queue storage is a service for storing large numbers of messages that can 
 
 ## How to trigger a function when a queue message is received
 
-To write a function that the WebJobs SDK calls when a queue message is received, use the **QueueTrigger** attribute. The attribute constructor takes a string parameter that specifies the name of the queue to poll. You can also [set the queue name dynamically](/documentation/articles/how-to-set-configuration-options).
+To write a function that the WebJobs SDK calls when a queue message is received, use the **QueueTrigger** attribute. The attribute constructor takes a string parameter that specifies the name of the queue to poll. You can also [set the queue name <!-- deleted by customization dynamically](/documentation/articles/how-to-set-configuration-options) --><!-- keep by customization: begin --> dynamically](#how-to-set-configuration-options) <!-- keep by customization: end -->.
 
 ### String queue messages
 
@@ -101,7 +90,7 @@ The SDK implements a random exponential back-off algorithm to reduce the effect 
 
 ## Multiple instances
 
-If your web app runs on multiple instances, a continuous WebJobs runs on each machine, and each machine will wait for triggers and attempt to run functions. In some scenarios this can lead to some functions processing the same data twice, so functions should be idempotent (written so that calling them repeatedly with the same input data doesn't produce duplicate results).  
+If your web site runs on multiple instances, a continuous WebJobs runs on each machine, and each machine will wait for triggers and attempt to run functions. In some scenarios this can lead to some functions processing the same data twice, so functions should be idempotent (written so that calling them repeatedly with the same input data doesn't produce duplicate results).  
 
 ## Parallel execution
 
@@ -109,7 +98,12 @@ If you have multiple functions listening on different queues, the SDK will call 
 
 The same is true when multiple messages are received for a single queue. By default, the SDK gets a batch of 16 queue messages at a time and executes the function that processes them in parallel. [The batch size is configurable](#how-to-set-configuration-options). When the number being processed gets down to half of the batch size, the SDK gets another batch and starts processing those messages. Therefore the maximum number of concurrent messages being processed per function is one and a half times the batch size. This limit applies separately to each function that has a **QueueTrigger** attribute. If you don't want parallel execution for messages received on one queue, set the batch size to 1.
 
+<!-- deleted by customization
 ## Get queue or queue message metadata
+-->
+<!-- keep by customization: begin -->
+##<a id="get-queue-or-queue-message-metadata"></a> Get queue or queue message metadata
+<!-- keep by customization: end -->
 
 You can get the following message properties by adding parameters to the method signature:
 
@@ -204,7 +198,6 @@ The following non-async code sample creates a new queue message in the queue nam
 		{
 		    outputQueueMessage = queueMessage;
 		}
-
 ### POCO [(Plain Old CLR Object](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)) queue messages
 
 To create a queue message that contains a POCO rather than a string, pass the POCO type as an output parameter to the **Queue** attribute constructor.
@@ -246,7 +239,7 @@ You can use the **Queue** attribute on the following parameter types:
 * **IAsyncCollector**
 * **CloudQueue** (for creating messages manually using the Azure Storage API directly)
 
-### Use WebJobs SDK attributes in the body of a function
+<!-- deleted by customization ### --><!-- keep by customization: begin --> ###<a <!-- keep by customization: end --><!-- keep by customization: begin --> id="use-webjobs-sdk-attributes-in-the-body-of-a-function"></a> <!-- keep by customization: end --> Use WebJobs SDK attributes in the body of a function
 
 If you need to do some work in your function before using a WebJobs SDK attribute such as **Queue**, **Blob**, or **Table**, you can use the **IBinder** interface.
 
@@ -264,7 +257,7 @@ The following example takes an input queue message and creates a new message wit
 
 The **IBinder** interface can also be used with the **Table** and **Blob** attributes.
 
-## How to read and write blobs and tables while processing a queue message
+<!-- deleted by customization ## How --><!-- keep by customization: begin --> ##<a id="how-to-read-and-write-blobs-and-tables-while-processing-a-queue-message"></a>How <!-- keep by customization: end --> to read and write blobs and tables while processing a queue message
 
 The **Blob** and **Table** attributes enable you to read and write blobs and tables. The samples in this section apply to blobs. For code samples that show how to trigger processes when blobs are created or updated, see [How to use Azure blob storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to), and for code samples that read and write tables, see [How to use Azure table storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to).
 
@@ -383,7 +376,12 @@ You can get the number of times a message has been picked up for processing by a
 		    }
 		}
 
+<!-- deleted by customization
 ## How to set configuration options
+-->
+<!-- keep by customization: begin -->
+##<a id="how-to-set-configuration-options"></a>How to set configuration options
+<!-- keep by customization: end -->
 
 You can use the **JobHostConfiguration** type to set the following configuration options:
 
@@ -492,7 +490,12 @@ To trigger a function manually, use the **Call** or **CallAsync** method on the 
 		    }
 		}
 
+<!-- deleted by customization
 ## How to write logs
+-->
+<!-- keep by customization: begin -->
+##<a id="how-to-write-logs"></a>How to write logs
+<!-- keep by customization: end -->
 
 The Dashboard shows logs in two places: the page for the WebJob, and the page for a particular WebJob invocation.
 
@@ -504,7 +507,7 @@ Output from Console methods that you call in a function or in the **Main()** met
 
 Console output can't be linked to a particular method invocation because the Console is single-threaded, while many job functions may be running at the same time. That's why the  SDK provides each function invocation with its own unique log writer object.
 
-To write [application tracing logs](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#logsoverview), use **Console.Out** (creates logs marked as INFO) and **Console.Error** (creates logs marked as ERROR). An alternative is to use [Trace or TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), which provides Verbose, Warning, and Critical levels in addition to Info and Error. Application tracing logs appear in the web app log files, Azure tables, or Azure blobs depending on how you configure your Azure web app. As is true of all Console output, the most recent 100 application logs also appear in the Dashboard page for the WebJob, not the page for a function invocation.
+To write [application tracing logs](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#logsoverview), use **Console.Out** (creates logs marked as INFO) and **Console.Error** (creates logs marked as ERROR). An alternative is to use [Trace or TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), which provides Verbose, Warning, and Critical levels in addition to Info and Error. Application tracing logs appear in the web site log files, Azure tables, or Azure blobs depending on how you configure your Azure <!-- deleted by customization web site --><!-- keep by customization: begin --> Website <!-- keep by customization: end -->. As is true of all Console output, the most recent 100 application logs also appear in the Dashboard page for the WebJob, not the page for a function invocation.
 
 Console output appears in the Dashboard only if the program is running in an Azure WebJob, not if the program is running locally or in some other environment.
 
@@ -532,7 +535,7 @@ In the WebJobs SDK Dashboard, the most recent 100 lines of Console output show u
 
 ![Click Toggle Output](./media/vs-storage-webjobs-getting-started-queues/dashboardapplogs.png)
 
-In a continuous WebJob, application logs show up in /data/jobs/continuous/*{webjobname}*/job_log.txt in the web app file system.
+In a continuous WebJob, application logs show up in /data/jobs/continuous/*{webjobname}*/job_log.txt in the web site file system.
 
 		[09/26/2014 21:01:13 > 491e54: INFO] Console.Write - Hello world!
 		[09/26/2014 21:01:13 > 491e54: ERR ] Console.Error - Hello world!
@@ -551,4 +554,4 @@ And in an Azure table the **Console.Out** and **Console.Error** logs look like t
 
 ##Next steps
 
-This article has provided code samples that show how to handle common scenarios for working with Azure queues. For more information about how to use Azure WebJobs and the WebJobs SDK, see [Azure WebJobs Recommended Resources](/documentation/articles/websites-webjobs-resources/).
+This article has provided code samples that show how to handle common scenarios for working with Azure queues. For more information about how to use Azure WebJobs and the WebJobs SDK, see [Azure WebJobs Recommended <!-- deleted by customization Resources](/documentation/articles/websites-webjobs-resources/) --><!-- keep by customization: begin --> Resources](/documentation/articles/websites-webjobs-resources) <!-- keep by customization: end -->.

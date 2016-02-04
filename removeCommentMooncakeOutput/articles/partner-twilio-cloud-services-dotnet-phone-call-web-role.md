@@ -7,9 +7,9 @@
 	manager="twilio" 
 	editor=""/>
 
-<tags
-	ms.service="cloud-services"
-	ms.date="08/02/2015"
+<tags 
+	ms.service="cloud-services" 
+	ms.date="08/02/2015" 
 	wacn.date=""/>
 
 
@@ -154,7 +154,7 @@ More information about TwiML can be found at [http://www.twilio.com/docs/api/twi
 ## <a id="nextsteps"></a>Next steps
 This code was provided to show you basic functionality using Twilio in an ASP.NET web role on Azure. Before deploying to Azure in production, you may want to add more error handling or other features. For example:
 
-* Instead of using a web form, you could use Azure Blob storage or an Azure SQL Database instance to store phone numbers and call text. For information about using blobs in Azure, see [How to use the Azure Blob storage service in .NET][howto_blob_storage_dotnet]. For information about using SQL Database, see [How to use Azure SQL Database in .NET applications][howto_sql_azure_dotnet].
+* Instead of using a web form, you could use Azure Blob storage or an Azure SQL 数据库 instance to store phone numbers and call text. For information about using blobs in Azure, see [How to use the Azure Blob storage service in .NET][howto_blob_storage_dotnet]. For information about using SQL 数据库, see [How to use Azure SQL 数据库 in .NET applications][howto_sql_azure_dotnet].
 * You could use RoleEnvironment.getConfigurationSettings to retrieve the Twilio account ID and authentication token from your deployment's configuration settings, instead of hard-coding the values in your form. For information about the RoleEnvironment class, see [Microsoft.WindowsAzure.ServiceRuntime Namespace][azure_runtime_ref_dotnet].
 * Read the Twilio security guidelines at [https://www.twilio.com/docs/security][twilio_docs_security].
 * Learn more about Twilio at [https://www.twilio.com/docs][twilio_docs].
@@ -176,9 +176,9 @@ This code was provided to show you basic functionality using Twilio in an ASP.NE
 
 [howto_twilio_voice_sms_dotnet]: /develop/net/how-to-guides/twilio/
 
-[howto_blob_storage_dotnet]: /documentation/articles/storage-dotnet-how-to-use-blobs/
+[howto_blob_storage_dotnet]: https://www.windowsazure.cn/documentation/articles/storage-dotnet-how-to-use-blobs/
 
-[howto_sql_azure_dotnet]: /develop/net/how-to-guides/sql-database/
+[howto_sql_azure_dotnet]: https://www.windowsazure.cn/develop/net/how-to-guides/sql-database/
 
 
 [twilio_docs_security]: http://www.twilio.com/docs/security

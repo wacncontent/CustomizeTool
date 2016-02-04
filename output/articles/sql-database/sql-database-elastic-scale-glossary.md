@@ -29,7 +29,7 @@ These terms are used in [Adding a shard using Elastic Database tools](/documenta
 
 **Local shard map**: Stored on a shard, the local shard map contains mappings for the shardlets that reside on the shard.
 
-**Multi-shard query**: The ability to issue a query against multiple shards; results sets are returned using UNION ALL semantics (also known as “fan-out query”). Compare to **data dependent routing**.
+**Multi-shard query**: The ability to issue a query against multiple shards; results sets are returned using UNION ALL semantics (also known as âfan-out queryâ). Compare to **data dependent routing**.
 
 **Range shard map**: A shard map in which the shard distribution strategy is based on multiple ranges of contiguous values. 
 

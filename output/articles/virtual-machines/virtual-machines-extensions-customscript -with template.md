@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Custom scripts on VMs using templates | Windows Azure"
    description="Automate Windows and Linux Azure VM configuration tasks by using the Custom Script extension with Resource Manager templates"
@@ -9,9 +11,9 @@
    tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines"
-	ms.date="07/01/2015"
-	wacn.date=""/>
+   ms.service="virtual-machines"
+   ms.date="07/01/2015"
+   wacn.date=""/>
 
 # Using Custom Script extension With Azure Resource Manager templates
 

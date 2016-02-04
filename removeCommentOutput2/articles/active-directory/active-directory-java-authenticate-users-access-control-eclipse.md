@@ -5,11 +5,11 @@
     documentationCenter="java"
     authors="rmcmurray"
     manager="wpickett"
-    editor="jimbe" />
+    editor="" />
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/12/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 # How to Authenticate Web Users with Azure Access Control Service Using Eclipse
@@ -53,7 +53,7 @@ concepts:
 **Client** - In the context of this how-to guide, this is a browser that
 is attempting to gain access to your web application.
 
-**Relying party (RP) application** - An RP application is a website or
+**Relying party (RP) application** - An RP application is a Website or
 service that outsources authentication to one external authority. In
 identity jargon, we say that the RP trusts that authority. This guide
 explains how to configure your application to trust ACS.
@@ -197,7 +197,7 @@ In this task, you upload a .PFX certificate that will be used to sign token requ
 1.  On the ACS Management Portal main page, click **Certificates and keys**.
 2.  On the **Certificates and Keys** page, click **Add** above **Token Signing**.
 3.  On the **Add Token-Signing Certificate or Key** page:
-    1. In the **Used for** section, click **Relying Party Application** and select **Azure Web App** (which you previously set as the name of your relying party application).
+    1. In the **Used for** section, click **Relying Party Application** and select **App Services** (which you previously set as the name of your relying party application).
     2. In the **Type** section, select **X.509 Certificate**.
     3. In the **Certificate** section, click the browse button and navigate to the X.509 certificate file that you want to use. This will be a .PFX file. Select the file, click **Open**,  and then enter the certificate password in the **Password** text box. Note that for testing purposes, you may use a self-signed-certificate. To create a self-signed certificate, use the **New** button in the **ACS Filter Library** dialog (described later), or use the **encutil.exe** utility from the [project website][] of the Azure Starter Kit for Java.
     4. Ensure that **Make Primary** is checked. Your **Add Token-Signing Certificate or Key** page should look similar to the following.
@@ -208,7 +208,7 @@ Next, review the information in the Application Integration page and
 copy the URI that you will need to configure your Java web
 application to use ACS.
 
-## <a name="review-app-int"></a>Review the Application Integration page
+## Review the Application Integration page
 
 You can find all the information and the code necessary to configure
 your Java web application (the RP application) to work with ACS on
@@ -218,11 +218,11 @@ federated authentication.
 
 1.  On the ACS Management Portal, click **Application integration**.  
 2.  In the **Application Integration** page, click **Login Pages**.
-3.  In the **Login Page Integration** page, click **Azure Web App**.
+3.  In the **Login Page Integration** page, click **App Services**.
 
 In the **Login Page Integration: Azure Web App** page, the URL listed in **Option 1: Link to an ACS-hosted login page** will be used in your Java web application. You will need this value when you add the Azure Access Control Services Filter library to your Java application.
 
-## <a name="create-java-app"></a>Create a Java web application
+## <a name="create-java-app"></a>Create a Java web site
 1. Within Eclipse, at the menu click **File**, click **New**, and then click **Dynamic Web Project**. (If you don't see **Dynamic Web Project** listed as an available project after clicking **File**, **New**, then do the following: click **File**, click **New**, click **Project**, expand **Web**, click **Dynamic Web Project**, and click **Next**.) For purposes of this tutorial, name the project **MyACSHelloWorld**. (Ensure you use this name, subsequent steps in this tutorial expect your WAR file to be named MyACSHelloWorld). Your screen will appear similar to the following:
 
     ![Create a Hello World project for ACS exampple][create_acs_hello_world]
@@ -351,11 +351,11 @@ At this point, your certificate would be included in your deployment. Note that 
 [Deploy to the compute emulator]: #deploy_compute_emulator
 [Deploy to Azure]: #deploy_azure
 [Next steps]: #next_steps
-[project website]: http://wastarterkit4java.codeplex.com/releases/view/61026
-[How to view SAML returned by the Azure Access Control Service]: /develop/java/how-to-guides/view-saml-returned-by-acs/
-[Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
-[Windows Identity Foundation]: http://www.microsoft.com/download/en/details.aspx?id=17331
-[Windows Identity Foundation SDK]: http://www.microsoft.com/download/en/details.aspx?id=4451
+[project  Website]: http://wastarterkit4java.codeplex.com/releases/view/61026
+[How to view SAML returned by the Azure Access Control Service]: documentation/articles/active-directory-java-view-saml-returned-by-access-control/
+[Access Control Service 2.0]: http://msdn.microsoft.com/zh-cn/library/hh147631.aspx
+[Windows Identity Foundation]: http://www.microsoft.com/zh-cn/download/details.aspx?id=17331
+[Windows Identity Foundation SDK]: http://www.microsoft.com/zh-cn/download/details.aspx?id=4451
 [Azure Management Portal]: https://manage.windowsazure.cn
 [acs_flow]: ./media/active-directory-java-authenticate-users-access-control-eclipse/ACSFlow.png
 

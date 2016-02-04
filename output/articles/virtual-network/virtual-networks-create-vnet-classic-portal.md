@@ -4,13 +4,13 @@
    services="virtual-network"
    documentationCenter=""
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor=""
-   tags="classic"/>
+   tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-network"
-	ms.date="08/21/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Create a virtual network (classic) by using the Azure Management Portal
@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-intro](../includes/virtual-networks-create-vnet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] 
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This document covers creating a VNet by using the classic deployment model. You can also [create a virtual network in the Resource Manager deployment model by using the Azure preview portal](/documentation/articles/virtual-networks-create-vnet-arm-pportal).
 
 You will learn to create a VNet from the Azure Management Portal by using the UI, and by deploying a netcfg file.
 

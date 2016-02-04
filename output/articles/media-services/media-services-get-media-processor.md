@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	wacn.date=""/>
 
 
@@ -53,10 +53,17 @@ The following method shows how to get a media processor instance. The code examp
 	}
 
 
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 ##Next Steps
 Now that you know how to get a media processor instance, go to the [How to Encode an Asset][] topic which will show you how to use the Azure Media Encoder to encode an asset.
 
-[How to Encode an Asset]: /documentation/articles/media-services-encode-asset
+[How to Encode an Asset]: media-services-encode-asset.md
 [Task Preset Strings for the Azure Media Encoder]: http://msdn.microsoft.com/zh-cn/library/jj129582.aspx
-[How to: Connect to Media Services Programmatically]: /documentation/articles/media-services-set-up-computer
+[How to: Connect to Media Services Programmatically]: ../media-services-set-up-computer/ 

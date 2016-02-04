@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="High Availability and Disaster Recovery for SQL Server | Windows Azure"
-	description="This tutorial uses resources created with the classic deployment model, and discusses the various types of HADR strategies for SQL Server running in Azure Virtual Machines."
+	description="A discussion of the various types of HADR strategies for SQL Server running in Azure Virtual Machines."
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
@@ -9,7 +9,7 @@
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="11/13/2015"
+	ms.date="01/07/2015"
 	wacn.date=""/>
 
 # High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines
@@ -17,6 +17,9 @@
 ## Overview
 
 Windows Azure virtual machines (VMs) with SQL Server can help lower the cost of a high availability and disaster recovery (HADR) database solution. Most SQL Server HADR solutions are supported in Azure virtual machines, both as  Azure-only  and as hybrid solutions. In an Azure-only solution, the entire HADR system runs in  Azure. In a hybrid configuration, part of the solution runs in Azure and the other part runs on-premises in your organization. The flexibility of the Azure environment enables you to move partially or completely to  Azure to satisfy the budget and HADR requirements of your SQL Server database systems.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
 
 ## Understanding the need for an HADR solution
 
@@ -32,6 +35,7 @@ SQL Server HADR technologies that are supported in Azure include:
 - [Database Mirroring](https://technet.microsoft.com/zh-cn/library/ms189852.aspx)
 - [Log Shipping](https://technet.microsoft.com/zh-cn/library/ms187103.aspx)
 - [Backup and Restore with Azure Blob Storage Service](https://msdn.microsoft.com/zh-cn/library/jj919148.aspx)
+- [AlwaysOn Failover Cluster Instances](https://technet.microsoft.com/zh-cn/library/ms189134.aspx) 
 
 It is possible to combine the technologies together to implement a SQL Server solution that has both high availability and disaster recovery capabilities.  Depending on the technology you use, a hybrid deployment may require a VPN tunnel with the Azure virtual network. The sections below show you some of the example deployment architectures.
 
@@ -41,8 +45,9 @@ You can have a high availability solution for your SQL Server databases in Azure
 
 |Technology|Example Architectures|
 |---|---|
-|**AlwaysOn Availability Groups**|All availability replicas running in Azure VMs for high availability within the same region. You need to configure a domain controller in addition to the SQL Server virtual machines because Windows Server Failover Clustering (WSFC) requires an Active Directory domain.<br/> ![AlwaysOn Availability Groups](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_ha_always_on.gif)<br/>For more information, see [Configure AlwaysOn Availability Groups in Azure (GUI)](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui).|
+|**AlwaysOn Availability Groups**|All availability replicas running in Azure VMs for high availability within the same region. You need to configure a domain controller VM, because Windows Server Failover Clustering (WSFC) requires an Active Directory domain.<br/> ![AlwaysOn Availability Groups](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_ha_always_on.gif)<br/>For more information, see [Configure AlwaysOn Availability Groups in Azure (GUI)](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui).|
 |**Database Mirroring**|Principal, mirror, and witness servers all running in the same Azure datacenter for high availability. You can deploy using a domain controller.<br/>![Database Mirroring](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_ha_dbmirroring1.gif)<br/>You can also deploy the same database mirroring configuration without a domain controller by using server certificates instead.<br/>![Database Mirroring](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_ha_dbmirroring2.gif)|
+|**AlwaysOn Failover Cluster Instances**|Failover Cluster Instances (FCI), which require shared storage, can be created in 2 different ways.<br/><br/>1. An FCI on a two-node WSFC running in Azure VMs with storage supported by a third-party clustering solution. For a specific example that uses SIOS DataKeeper, see [High availability for a file share using WSFC and 3rd party software SIOS Datakeeper](https://azure.microsoft.com/blog/high-availability-for-a-file-share-using-wsfc-ilb-and-3rd-party-software-sios-datakeeper/).<br/><br/>2. An FCI on a two-node WSFC running in Azure VMs with remote iSCSI Target shared block storage via ExpressRoute. For example, NetApp Private Storage (NPS) exposes an iSCSI target via ExpressRoute with Equinix to Azure VMs.<br/><br/>For third-party shared storage and data replication solutions, you should contact the vendor for any issues related to accessing data on failover.<br/><br/>Note that using FCI on top of [Azure File storage](/home/features/storage/files/) is not supported yet, because this solution does not utilize Premium Storage. We are working to support this soon.|
 
 ## Azure-only: disaster recovery solutions
 
@@ -50,7 +55,7 @@ You can have a disaster recovery solution for your SQL Server databases in Azure
 
 |Technology|Example Architectures|
 |---|---|
-|**AlwaysOn Availability Groups**|Availability replicas running across multiple datacenters in Azure VMs for disaster recovery.  This cross-region solution protects against complete site outage. <br/> ![AlwaysOn Availability Groups](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_alwayson.png)<br/>Within a region, all replicas should be within the same cloud service and the same VNet. Because each region will have a separate VNet, these solutions require VNet to VNet connectivity. For more information, see [Configure a Site-to-Site VPN in the Management Portal](/documentation/articles/vpn-gateway-site-to-site-create).|
+|**AlwaysOn Availability Groups**|Availability replicas running across multiple datacenters in VMs for disaster recovery.  This cross-region solution protects against complete site outage. <br/> ![AlwaysOn Availability Groups](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_alwayson.png)<br/>Within a region, all replicas should be within the same cloud service and the same VNet. Because each region will have a separate VNet, these solutions require VNet to VNet connectivity. For more information, see [Configure a Site-to-Site VPN in the Azure Management Portal](/documentation/articles/vpn-gateway-site-to-site-create).|
 |**Database Mirroring**|Principal and mirror and servers running in different  datacenters for disaster recovery. You must deploy using server certificates because an active directory domain cannot span multiple  datacenters.<br/>![Database Mirroring](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_dbmirroring.gif)|
 |**Backup and Restore with Azure Blob Storage Service**|Production databases backed up directly to blob storage in a different  datacenter for disaster recovery.<br/>![Backup and Restore](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_backup_restore.gif)<br/>For more information, see [Backup and Restore  for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-backup-and-restore).|
 
@@ -81,13 +86,13 @@ Consider the scenario when a two-node cluster is created and brought online:
 
 1. The cluster comes online, then NODE1 requests a dynamically assigned IP address for the cluster network name.
 
-1. No IP address other than NODE1’s own IP address is given by the DHCP service, since the DHCP service recognizes that the request comes from NODE1 itself.
+1. No IP address other than NODE1's own IP address is given by the DHCP service, since the DHCP service recognizes that the request comes from NODE1 itself.
 
 1. Windows detects that a duplicate address is assigned both to NODE1 and to the cluster network name, and the default cluster group fails to come online.
 
-1. The default cluster group moves to NODE2, which treats NODE1’s IP address as the cluster IP address and brings the default cluster group online.
+1. The default cluster group moves to NODE2, which treats NODE1's IP address as the cluster IP address and brings the default cluster group online.
 
-1. When NODE2 attempts to establish connectivity with NODE1, packets directed at NODE1 never leave NODE2 because it resolves NODE1’s IP address to itself. NODE2 cannot establish connectivity with NODE1, then loses quorum and shuts down the cluster.
+1. When NODE2 attempts to establish connectivity with NODE1, packets directed at NODE1 never leave NODE2 because it resolves NODE1's IP address to itself. NODE2 cannot establish connectivity with NODE1, then loses quorum and shuts down the cluster.
 
 1. In the meantime, NODE1 can send packets to NODE2, but NODE2 cannot reply. NODE1 loses quorum and shuts down the cluster.
 

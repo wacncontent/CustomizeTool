@@ -11,12 +11,12 @@
 <tags
 	ms.service="sql-database"
 	ms.date="10/15/2015"
-	wacn.date=""/>
+	wacn.date="" />
 
 # Azure SQL Database benchmark overview
 
 ## Overview
-Windows Azure SQL Database offers three [service tiers](/documentation/articles/sql-database-service-tiers) with multiple performance levels. Each performance level provides an increasing set of resources, or ‘power’, designed to deliver increasingly higher throughput.
+Windows Azure SQL Database offers three [service tiers](/documentation/articles/sql-database-service-tiers) with multiple performance levels. Each performance level provides an increasing set of resources, or 'power', designed to deliver increasingly higher throughput.
 
 It is important to be able to quantify how the increasing power of each performance level translates into increased database performance. To do this Microsoft has developed the Azure SQL Database Benchmark (ASDB). The benchmark exercises a mix of basic operations found in all OLTP workloads. We measure the throughput achieved for databases running in each performance level.
 
@@ -33,9 +33,9 @@ The benchmark and its methodology are described in more detail below.
 ASDB measures the performance of a mix of basic database operations which occur most frequently in online transaction processing (OLTP) workloads. Although the benchmark is designed with cloud computing in mind, the database schema, data population, and transactions have been designed to be broadly representative of the basic elements most commonly used in OLTP workloads.
 
 ## Schema
-The schema is designed to have enough variety and complexity to support a broad range of operations. The benchmark runs against a database comprised of six tables. The tables fall into three categories: fixed-size, scaling, and growing. There are two fixed-size tables; three scaling tables; and one growing table. Fixed-size tables have a constant number of rows. Scaling tables have a cardinality that is proportional to database performance, but doesn’t change during the benchmark. The growing table is sized like a scaling table on initial load, but then the cardinality changes in the course of running the benchmark as rows are inserted and deleted.
+The schema is designed to have enough variety and complexity to support a broad range of operations. The benchmark runs against a database comprised of six tables. The tables fall into three categories: fixed-size, scaling, and growing. There are two fixed-size tables; three scaling tables; and one growing table. Fixed-size tables have a constant number of rows. Scaling tables have a cardinality that is proportional to database performance, but doesn't change during the benchmark. The growing table is sized like a scaling table on initial load, but then the cardinality changes in the course of running the benchmark as rows are inserted and deleted.
 
-The schema includes a mix of data types, including integer, numeric, character, and date/time. The schema includes primary and secondary keys, but not any foreign keys – that is, there are no referential integrity constraints between tables.
+The schema includes a mix of data types, including integer, numeric, character, and date/time. The schema includes primary and secondary keys, but not any foreign keys - that is, there are no referential integrity constraints between tables.
 
 A data generation program generates the data for the initial database. Integer and numeric data is generated with various strategies. In some cases, values are distributed randomly over a range. In other cases, a set of values is randomly permuted to ensure that a specific distribution is maintained. Text fields are generated from a weighted list of words to produce realistic looking data.
 

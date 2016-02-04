@@ -7,26 +7,22 @@
 	services="azure-portal" 
 	documentationCenter="na"/>
 
-<tags 
-	ms.service="azure-portal" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/08/2015" 
-	ms.author="stepsic"/>
+<tags
+	ms.service="azure-portal"
+	ms.date="09/08/2015"
+	wacn.date=""/>
 
 # Scale instance count manually or automatically
 
-In the [Azure Portal](https://portal.azure.com/), you can manually set the instance count of your service, or, you can set parameters to have it automatically scale based on demand. This is typically referred to as *Scale out* or *Scale in*.
+In the [Azure Management Portal](https://manage.windowsazure.cn/), you can manually set the instance count of your service, or, you can set parameters to have it automatically scale based on demand. This is typically referred to as *Scale out* or *Scale in*.
 
 Before scaling based on instance count, you should consider that scaling is affected by **Pricing tier** in addition to instance count. Different pricing tiers can have different numbers cores and memory, and so they will have better performance for the same number of instances (which is *Scale up* or *Scale down*). This article specifically covers *Scale in* and *out*.
 
-You can scale in the portal, and you can also use the [REST API](https://msdn.microsoft.com/library/azure/dn931953.aspx) or [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) to adjust scale manually or automatically.
+You can scale in the portal, and you can also use the [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931953.aspx) or [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) to adjust scale manually or automatically.
 
 ## Scaling manually
 
-1. In the [Azure Portal](https://portal.azure.com/), click **Browse**, then navigate to the resource you want to scale, such as a **App Service plan**.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Browse**, then navigate to the resource you want to scale, such as a <!-- deleted by customization **Azure Websites --><!-- keep by customization: begin --> **App Service <!-- keep by customization: end --> plan**.
 
 2. The **Scale** tile in **Operations** will tell you the status of scaling: **Off** for when you are scaling manually, **On** for when you are scaling by one or more performance metrics.
     ![Scale tile](./media/insights-how-to-scale/Insights_UsageLens.png)
@@ -41,7 +37,7 @@ You can scale in the portal, and you can also use the [REST API](https://msdn.mi
 
 ## Scaling based on a pre-set metric
 
-If you want the number of instances to automatically adjust based on a metric, select the metric you want in the **Scale by** dropdown. For example, for an **App Service plan** you can scale by **CPU Percentage**.
+If you want the number of instances to automatically adjust based on a metric, select the metric you want in the **Scale by** dropdown. For example, for an <!-- deleted by customization **Azure Websites --><!-- keep by customization: begin --> **App Service <!-- keep by customization: end --> plan** you can scale by **CPU Percentage**.
 
 1. When you select a metric you'll get a slider, and/or, text boxes to enter the number of instances you want to scale between:
 
@@ -98,7 +94,6 @@ With this additional rule, if your load exceeds 85% before a scale action, you w
 
 ## Scale based on a schedule
 
-
 By default, when you create a scale rule it will  always apply. You can see that when you click on the profile header:
 
 ![Profile](./media/insights-how-to-scale/Insights_Profile.png)
@@ -136,10 +131,10 @@ However, you may want to have more agressive scaling during the day, or the week
 
 ## Next steps
 
-* [Monitor service metrics](insights-how-to-customize-monitoring.md) to make sure your service is available and responsive.
-* [Enable monitoring and diagnostics](insights-how-to-use-diagnostics.md) to collect detailed high-frequency metrics on your service.
-* [Receive alert notifications](insights-receive-alert-notifications.md) whenever operational events happen or metrics cross a threshold.
-* [Monitor application performance](insights-perf-analytics.md) if you want to understand exactly how your code is performing in the cloud.
-* [View events and audit logs](insights-debugging-with-events.md) to learn everything that has happened in your service.
-* [Monitor availability and responsiveness of any web page](../app-insights-monitor-web-app-availability.md) with Application Insights so you can find out if your page is down.
+* [Monitor service metrics](/documentation/articles/insights-how-to-customize-monitoring) to make sure your service is available and responsive.
+* [Enable monitoring and diagnostics](/documentation/articles/insights-how-to-use-diagnostics) to collect detailed high-frequency metrics on your service.
+* [Receive alert notifications](/documentation/articles/insights-receive-alert-notifications) whenever operational events happen or metrics cross a threshold.
+* [Monitor application performance](/documentation/articles/insights-perf-analytics) if you want to understand exactly how your code is performing in the cloud <!-- deleted by customization. -->
+* [View events and audit logs](/documentation/articles/insights-debugging-with-events) to learn everything that has happened in your service.
+* [Monitor availability and responsiveness of any web page](/documentation/articles/app-insights-monitor-web-app-availability) with Application Insights so you can find out if your page is down.
  

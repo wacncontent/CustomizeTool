@@ -81,7 +81,7 @@ when the cached content time-to-live period expires.
 
 1. In the [Azure Management Portal], in the navigation pane, click **CDN**.
 
-2. On the ribbon, click **New**. In the **New** dialog, select **App Services**, then **CDN**, then **Quick Create**.
+2. On the ribbon, click **New**. In the **New** dialog, select **Azure Websitess**, then **CDN**, then **Quick Create**.
 
 3. In the **Origin Domain** dropdown, select the storage account you created in the previous section from the list of your available storage accounts. 
 

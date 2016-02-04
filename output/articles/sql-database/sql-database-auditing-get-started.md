@@ -25,7 +25,7 @@ Auditing tools enable and facilitate adherence to compliance standards but don't
 
 ##<a id="subheading-1"></a>Azure SQL Database Auditing basics
 
-The following section describes the configuration of auditing using the Azure Preview Portal. You may also [set up auditing for your database using the Classic Azure Management Portal].
+The following section describes the configuration of auditing using the Azure Management Portal. You may also [set up auditing for your database using the Classic Azure Management Portal].
 
 SQL Database Auditing allows you to:
 
@@ -58,7 +58,7 @@ Before setting up auditing check if you are using a ["Downlevel Client"](/docume
 
 ##<a id="subheading-2"></a>Set up auditing for your database
 
-1. Launch the [Azure Preview Portal](https://manage.windowsazure.cn) at https://manage.windowsazure.cn. Alternatively, you can also launch the [Classic Azure Management Portal](https://manage.windowsazure.cn/) at https://manage.windowsazure.cn/. Refer to details below.
+1. Launch the [Azure Management Portal](https://manage.windowsazure.cn) at https://manage.windowsazure.cn. Alternatively, you can also launch the [Classic Azure Management Portal](https://manage.windowsazure.cn/) at https://manage.windowsazure.cn/. Refer to details below.
 
 2. Navigate to the settings blade of the SQL Database / SQL Server you want to audit. In the Settings blade select **Auditing & Threat detection**.
 
@@ -119,7 +119,7 @@ You can import your audit logs into the Excel template directly from your Azure 
 
 
 ##<a id="subheading-5">Practices for usage in production</a>
-The description in this section refers to screen captures above. Either [Azure Preview Portal](https://manage.windowsazure.cn) or [Classic Azure Management Portal](https://manage.windowsazure.cn/) may be used.
+The description in this section refers to screen captures above. Either [Azure Management Portal](https://manage.windowsazure.cn) or [Classic Azure Management Portal](https://manage.windowsazure.cn/) may be used.
 
 
 ##<a id="subheading-6"></a>Storage Key Regeneration

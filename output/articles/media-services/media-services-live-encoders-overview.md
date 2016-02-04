@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/29/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 
@@ -35,6 +35,15 @@ For information on how to configure the [Telestream Wirecast](http://www.telestr
 
 For information on how to configure the [Tricaster](http://newtek.com/products/tricaster-40.html) encoder to send a single bitrate live stream to an AMS Channel, see [Configuring Tricaster](/documentation/articles/media-services-configure-tricaster-live-encoder).
 
+
+
+##Media Services learning paths
+
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
+
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 ## See also
 

@@ -7,7 +7,7 @@
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with Syncplicity
@@ -132,7 +132,7 @@ For AAD users to be able to sign in, they must be provisioned to Syncplicity app
 
     >[AZURE.NOTE] If there are no groups listed, just click **Next**.
 
-6.  Select the folders you would like to place under Syncplicity’s control on the user’s computer, and then click **Next**.
+6.  Select the folders you would like to place under Syncplicity's control on the user's computer, and then click **Next**.
 
     ![Syncplicity Folders](./media/active-directory-saas-syncplicity-tutorial/IC769773.png "Syncplicity Folders")
 

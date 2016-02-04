@@ -3,13 +3,13 @@
 	description="Learn how to enable remote-desktop access for the virtual machines hosting your Azure Node.js application." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/01/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 
@@ -25,7 +25,7 @@ application.
 
 ## Prerequisites
 
-- Install and configure [Azure Powershell](/documentation/articles/install-configure-powershell).
+- Install and configure [Azure Powershell](/documentation/articles/powershell-install-configure).
 - Deploy a Node.js app to an Azure Cloud Service. For more information, see [Build and deploy a Node.js application to an Azure Cloud Service](/documentation/articles/cloud-services-nodejs-develop-deploy-app).
 
 
@@ -62,7 +62,7 @@ the role instance.
 
 1.  In the [Azure Management Portal], select **Cloud Services** and then select your service.
 
-	![azure management portal][cloud-services]
+	![Azure Management Portal][cloud-services]
 
 2.  Click **Instances**, and then click **Production** or **Staging** to see the instances for your service. Select an instance and then click **Connect** at the bottom of the page.
 

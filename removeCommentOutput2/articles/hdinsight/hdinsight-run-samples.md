@@ -41,10 +41,10 @@ Nowadays, a lot of people choose Hive and Pig over MapReduce.  For more informat
 **Prerequisites**:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-- **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters).
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
+- **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1).
+- **A workstation with Azure PowerShell**. See [Install Azure PowerShell 1.0 and greater](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater).
 
-## Word count - Java 
+## <a name="hdinsight-sample-wordcount"></a>Word count - Java 
 
 To submit a MapReduce project, you first create a MapReduce job definition. In the job definition, you specify the MapReduce program jar file and the location of the jar file, which is **wasb:///example/jars/hadoop-mapreduce-examples.jar**, the class name, and the arguments.  The wordcount MapReduce program takes two arguments: the source file that will be used to count words, and the location for output.
 
@@ -58,46 +58,39 @@ For the procedure of developing a Java MapReduce program, see - [Develop Java Ma
 2. Paste the following PowerShell script:
 
 		$subscriptionName = "<Azure Subscription Name>"
-		$resourceGroupName = "<Resource Group Name>"
 		$clusterName = "<HDInsight cluster name>"             # HDInsight cluster name
 		
-		Select-AzureRmSubscription $subscriptionName
+		Select-AzureSubscription $subscriptionName
 		
 		# Define the MapReduce job
-		$mrJobDefinition = New-AzureRmHDInsightMapReduceJobDefinition `
+		$mrJobDefinition = New-AzureHDInsightMapReduceJobDefinition `
 									-JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" `
 									-ClassName "wordcount" `
 									-Arguments "wasb:///example/data/gutenberg/davinci.txt", "wasb:///example/data/WordCountOutput1"
 		
 		# Submit the job and wait for job completion
 		$cred = Get-Credential -Message "Enter the HDInsight cluster HTTP user credential:" 
-		$mrJob = Start-AzureRmHDInsightJob `
-							-ResourceGroupName $resourceGroupName `
-							-ClusterName $clusterName `
-							-HttpCredential $cred `
+		$mrJob = Start-AzureHDInsightJob `
+							-Cluster $clusterName `
+							-Credential $cred `
 							-JobDefinition $mrJobDefinition 
 		
-		Wait-AzureRmHDInsightJob `
-			-ResourceGroupName $resourceGroupName `
-			-ClusterName $clusterName `
-			-HttpCredential $cred `
+		Wait-AzureHDInsightJob `
+			-Cluster $clusterName `
+			-Credential $cred `
 			-JobId $mrJob.JobId 
 		
 		# Get the job output
-		$cluster = Get-AzureRmHDInsightCluster -ResourceGroupName $resourceGroupName -ClusterName $clusterName
+		$cluster = Get-AzureHDInsightCluster -Name $clusterName
 		$defaultStorageAccount = $cluster.DefaultStorageAccount -replace '.blob.core.chinacloudapi.cn'
-		$defaultStorageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $defaultStorageAccount |  %{ $_.Key1 }
+		$defaultStorageAccountKey = Get-AzureStorageKey -StorageAccountName $defaultStorageAccount |  %{ $_.Primary }
 		$defaultStorageContainer = $cluster.DefaultStorageContainer
 		
-		Get-AzureRmHDInsightJobOutput `
-			-ResourceGroupName $resourceGroupName `
-			-ClusterName $clusterName `
-			-HttpCredential $cred `
-			-DefaultStorageAccountName $defaultStorageAccount `
-			-DefaultStorageAccountKey $defaultStorageAccountKey `
-			-DefaultContainer $defaultStorageContainer  `
+		Get-AzureHDInsightJobOutput `
+			-Cluster $clusterName `
+			-Credential $cred `
 			-JobId $mrJob.JobId `
-			-DisplayOutputType StandardError
+			-StandardError
 
 		# Download the job output to the workstation
 		$storageContext = New-AzureStorageContext -StorageAccountName $defaultStorageAccount -StorageAccountKey $defaultStorageAccountKey 
@@ -110,11 +103,9 @@ For the procedure of developing a Java MapReduce program, see - [Develop Java Ma
 
 3. Set the first 3 variables, and run the script.
 
-## Word count - C# streaming
+## <a name="hdinsight-sample-csharp-streaming"></a>Word count - C# streaming
 
 Hadoop provides a streaming API to MapReduce, which enables you to write map and reduce functions in languages other than Java.
-
-> [AZURE.NOTE] The steps in this tutorial apply only to Windows-based HDInsight clusters. For an example of streaming for Linux-based HDInsight clusters, see [Develop Python streaming programs for HDInsight](/documentation/articles/hdinsight-hadoop-streaming-python).
 
 In the example, the mapper and the reducer are executables that read the input from [stdin][stdin-stdout-stderr] (line-by-line) and emit the output to [stdout][stdin-stdout-stderr]. The program counts all of the words in the text.
 
@@ -132,8 +123,8 @@ For more information about the Hadoop Streaming interface, see [Hadoop Streaming
 
 - Follow the procdure in [Word count - Java](#word-count-java), and replace the job definition with the following:
 
-		$mrJobDefinition = New-AzureRmHDInsightStreamingMapReduceJobDefinition `
-									-File "/example/apps/" `
+		$mrJobDefinition = New-AzureHDInsightStreamingMapReduceJobDefinition `
+									-Files <a collection of files> `
 									-Mapper "cat.exe" `
 									-Reducer "wc.exe" `
 									-InputPath "/example/data/gutenberg/davinci.txt" `
@@ -144,7 +135,7 @@ For more information about the Hadoop Streaming interface, see [Hadoop Streaming
 	
 		example/data/StreamingOutput/wc.txt/part-00000		
 								
-## PI estimator
+## <a name="hdinsight-sample-pi-estimator"></a>PI estimator
 
 The pi estimator uses a statistical (quasi-Monte Carlo) method to estimate the value of pi. Points placed at random inside of a unit square also fall within a circle inscribed within that square with a probability equal to the area of the circle, pi/4. The value of pi can be estimated from the value of 4R, where R is the ratio of the number of points that are inside the circle to the total number of points that are within the square. The larger the sample of points used, the better the estimate is.
 
@@ -154,12 +145,12 @@ The script provided for this sample submits a Hadoop jar job and is set up to ru
 
 - Follow the procdure in [Word count - Java](#word-count-java), and replace the job definition with the following:
 
-		$mrJobJobDefinition = New-AzureRmHDInsightMapReduceJobDefinition `
+		$mrJobJobDefinition = New-AzureHDInsightMapReduceJobDefinition `
 									-JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" `
 									-ClassName "pi" `
 									-Arguments "16", "10000000"
 
-## 10-GB Graysort
+## <a name="hdinsight-sample-10gb-graysort"></a>10-GB Graysort
 
 This sample uses a modest 10GB of data so that it can be run relatively quickly. It uses the MapReduce applications developed by Owen O'Malley and Arun Murthy that won the annual general-purpose ("daytona") terabyte sort benchmark in 2009 with a rate of 0.578TB/min (100TB in 173 minutes). For more information on this and other sorting benchmarks, see the [Sortbenchmark](http://sortbenchmark.org/) site.
 
@@ -181,17 +172,17 @@ Three tasks are required by the sample, each corresponding to one of the MapRedu
 
 - Follow the procdure in [Word count - Java](#word-count-java), and use the following job definitions:
 
-	$teragen = New-AzureRmHDInsightMapReduceJobDefinition `
+	$teragen = New-AzureHDInsightMapReduceJobDefinition `
 								-JarFile "/example/jars/hadoop-mapreduce-examples.jar" `
 								-ClassName "teragen" `
 								-Arguments "-Dmapred.map.tasks=50", "100000000", "/example/data/10GB-sort-input"
 	
-	$terasort = New-AzureRmHDInsightMapReduceJobDefinition `
+	$terasort = New-AzureHDInsightMapReduceJobDefinition `
 								-JarFile "/example/jars/hadoop-mapreduce-examples.jar" `
 								-ClassName "terasort" `
 								-Arguments "-Dmapred.map.tasks=50", "-Dmapred.reduce.tasks=25", "/example/data/10GB-sort-input", "/example/data/10GB-sort-output"
 	
-	$teravalidate = New-AzureRmHDInsightMapReduceJobDefinition `
+	$teravalidate = New-AzureHDInsightMapReduceJobDefinition `
 								-JarFile "/example/jars/hadoop-mapreduce-examples.jar" `
 								-ClassName "teravalidate" `
 								-Arguments "-Dmapred.map.tasks=50", "-Dmapred.reduce.tasks=25", "/example/data/10GB-sort-output", "/example/data/10GB-sort-validate"
@@ -984,9 +975,9 @@ The code for the TeraSort MapReduce program is presented for inspection in this 
 [hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction
 
 
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples
 [hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort

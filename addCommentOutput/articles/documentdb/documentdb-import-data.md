@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Import data to DocumentDB | Microsoft Azure" 
+	pageTitle="Import data to DocumentDB | Windows Azure" 
 	description="Learn how to use the open source DocumentDB data migration tool to import data to DocumentDB from various sources, including JSON files, CSV files, SQL, MongoDB, Azure Table storage, Amazon DynamoDB, and DocumentDB collections." 
 	services="documentdb" 
 	authors="andrewhoh" 
@@ -7,18 +7,14 @@
 	editor="monicar" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/16/2015" 
-	ms.author="anhoh"/>
+<tags
+	ms.service="documentdb"
+	ms.date="10/16/2015"
+	wacn.date=""/>
 
 # Import data to DocumentDB #
 
-This article shows you how to use the open source DocumentDB data migration tool to import data to [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/) from various sources, including JSON files, CSV files, SQL, MongoDB, Azure Table storage, Amazon DynamoDB and DocumentDB collections.
+This article shows you how to use the open source DocumentDB data migration tool to import data to <!-- deleted by customization [Windows --><!-- keep by customization: begin --> [Microsoft <!-- keep by customization: end --> Azure <!-- deleted by customization DocumentDB](/home/features/documentdb/) --><!-- keep by customization: begin --> DocumentDB](http://azure.microsoft.com/services/documentdb/) <!-- keep by customization: end --> from various sources, including JSON files, CSV files, SQL, MongoDB, Azure Table storage, Amazon DynamoDB and DocumentDB collections.
 
 After reading this article, you'll be able to answer the following questions:  
 
@@ -135,7 +131,7 @@ Which returns the following (partial) results:
 
 ![Screenshot of SQL query results](./media/documentdb-import-data/sqlqueryresults.png)
 
-Note the aliases such as Address.AddressType and Address.Location.StateProvinceName.  By specifying a nesting separator of ‘.’, the import tool creates Address and Address.Location subdocuments during the import.  Here is an example of a resulting document in DocumentDB:
+Note the aliases such as Address.AddressType and Address.Location.StateProvinceName.  By specifying a nesting separator of <!-- deleted by customization '.' --><!-- keep by customization: begin --> ‘.’ <!-- keep by customization: end -->, the import tool creates Address and Address.Location subdocuments during the import.  Here is an example of a resulting document in DocumentDB:
 
 *{
   "id": "956",
@@ -164,13 +160,18 @@ Here are some command line samples to import from SQL Server:
 
 The CSV file source importer option enables you to import one or more CSV files.  When adding folders that contain CSV files for import, you have the option of recursively searching for files in subfolders.
 
+<!-- deleted by customization
+![Screenshot of CSV source options](./media/documentdb-import-data/csvsource.png)
+-->
+<!-- keep by customization: begin -->
 ![Screenshot of CSV source options](media/documentdb-import-data/csvsource.png)
+<!-- keep by customization: end -->
 
 Similar to the SQL source, the nesting separator property may be used to create hierarchical relationships (sub-documents) during import.  Consider the following CSV header row and data rows:
 
 ![Screenshot of CSV sample records](./media/documentdb-import-data/csvsample.png)
 
-Note the aliases such as DomainInfo.Domain_Name and RedirectInfo.Redirecting.  By specifying a nesting separator of ‘.’, the import tool will create DomainInfo and RedirectInfo subdocuments during the import.  Here is an example of a resulting document in DocumentDB:
+Note the aliases such as DomainInfo.Domain_Name and RedirectInfo.Redirecting.  By specifying a nesting separator of <!-- deleted by customization '.' --><!-- keep by customization: begin --> ‘.’ <!-- keep by customization: end -->, the import tool will create DomainInfo and RedirectInfo subdocuments during the import.  Here is an example of a resulting document in DocumentDB:
 
 *{
   "DomainInfo": {
@@ -210,7 +211,7 @@ The format of the Azure Table storage connection string is:
 
 > [AZURE.NOTE] Use the Verify command to ensure that the Azure Table storage instance specified in the connection string field can be accessed. 
 
-Enter the name of the Azure table from which data will be imported.  You may optionally specify a [filter](https://msdn.microsoft.com/library/azure/ff683669.aspx).
+Enter the name of the Azure table from which data will be imported.  You may optionally specify a <!-- deleted by customization [filter](https://msdn.microsoft.com/zh-cn/library/azure/ff683669.aspx) --><!-- keep by customization: begin --> [filter](https://msdn.microsoft.com/library/azure/ff683669.aspx) <!-- keep by customization: end -->.
 
 The Azure Table storage source importer option has the following additional options:
 
@@ -251,7 +252,7 @@ The JSON file, MongoDB export file, and CSV file source importer options allow y
 
 Here is command line sample to import JSON files from Azure Blob storage:
 
-	dt.exe /s:JsonFile /s.Files:"blobs://<account key>@account.blob.core.windows.net:443/importcontainer/.*" /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:doctest
+	dt.exe /s:JsonFile /s.Files:"blobs://<account <!-- deleted by customization key>@account.blob.core.chinacloudapi.cn:443/importcontainer/.*" --><!-- keep by customization: begin --> key>@account.blob.core.windows.net:443/importcontainer/.*" <!-- keep by customization: end --> /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:doctest
 
 ##<a id="DocumentDBSource"></a>Import from DocumentDB ##
 
@@ -312,7 +313,7 @@ Here is a command line sample to import from HBase:
 
 ##<a id="DocumentDBBulkTarget"></a>Import to DocumentDB (Bulk Import) ##
 
-The DocumentDB Bulk importer allows you to import from any of the available source options, using a DocumentDB stored procedure for efficiency.  The tool supports import to a single DocumentDB collection, as well as sharded import whereby data is partitioned across multiple DocumentDB collections.  Read more about partitioning data in DocumentDB [here](documentdb-partition-data.md).  The tool will create, execute, and then delete the stored procedure from the target collection(s).  
+The DocumentDB Bulk importer allows you to import from any of the available source options, using a DocumentDB stored procedure for efficiency.  The tool supports import to a single DocumentDB collection, as well as sharded import whereby data is partitioned across multiple DocumentDB collections.  Read more about partitioning data in DocumentDB <!-- deleted by customization [here](/documentation/articles/documentdb-partition-data) --><!-- keep by customization: begin --> [here](documentdb-partition-data.md) <!-- keep by customization: end -->.  The tool will create, execute, and then delete the stored procedure from the target collection(s).
 
 ![Screenshot of DocumentDB bulk options](./media/documentdb-import-data/documentdbbulk.png)
 
@@ -328,7 +329,7 @@ To import to a single collection, enter the name of the collection to which data
 2. You can use an abbreviated syntax: collection[3] will emit same set of collections mentioned in step 1.
 3. More than one substitution can be provided.  For example, collection[0-1] [0-9] will generate 20 collection names with leading zeros (collection01, ..02, ..03).
 
-Once the collection name(s) have been specified, choose the desired pricing tier of the collection(s) (S1, S2, or S3).  For best import performance, choose S3.  Read more about DocumentDB performance levels [here](documentdb-performance-levels.md).
+Once the collection name(s) have been specified, choose the desired pricing tier of the collection(s) (S1, S2, or S3).  For best import performance, choose S3.  Read more about DocumentDB performance levels <!-- deleted by customization [here](/documentation/articles/documentdb-performance-levels) --><!-- keep by customization: begin --> [here](documentdb-performance-levels.md) <!-- keep by customization: end -->.
 
 > [AZURE.NOTE] The performance tier setting only applies to collection creation.  If the specified collection already exists, its pricing tier will not be modified.
 
@@ -368,7 +369,7 @@ The DocumentDB Bulk importer has the following additional advanced options:
 
 ##<a id="DocumentDBSeqTarget"></a>Import to DocumentDB (Sequential Record Import) ##
 
-The DocumentDB sequential record importer allows you to import from any of the available source options on a record by record basis.  You might choose this option if you’re importing to an existing collection that has reached its quota of stored procedures.  The tool supports import to a single DocumentDB collection, as well as sharded import whereby data is partitioned across multiple DocumentDB collections.  Read more about partitioning data in DocumentDB [here](documentdb-partition-data.md). 
+The DocumentDB sequential record importer allows you to import from any of the available source options on a record by record basis.  You might choose this option if <!-- deleted by customization you're --><!-- keep by customization: begin --> you’re <!-- keep by customization: end --> importing to an existing collection that has reached its quota of stored procedures.  The tool supports import to a single DocumentDB collection, as well as sharded import whereby data is partitioned across multiple DocumentDB collections.  Read more about partitioning data in DocumentDB <!-- deleted by customization [here](/documentation/articles/documentdb-partition-data) --><!-- keep by customization: begin --> [here](documentdb-partition-data.md) <!-- keep by customization: end -->.
 
 ![Screenshot of DocumentDB sequential record import options](./media/documentdb-import-data/documentdbsequential.png)
 
@@ -384,7 +385,7 @@ To import to a single collection, enter the name of the collection to which data
 2. You can use an abbreviated syntax: collection[3] will emit same set of collections mentioned in step 1.
 3. More than one substitution can be provided.  For example, collection[0-1] [0-9] will generate 20 collection names with leading zeros (collection01, ..02, ..03).
 
-Once the collection name(s) have been specified, choose the desired pricing tier of the collection(s) (S1, S2, or S3).  For best import performance, choose S3.  Read more about DocumentDB performance levels [here](documentdb-performance-levels.md).
+Once the collection name(s) have been specified, choose the desired pricing tier of the collection(s) (S1, S2, or S3).  For best import performance, choose S3.  Read more about DocumentDB performance levels <!-- deleted by customization [here](/documentation/articles/documentdb-performance-levels) --><!-- keep by customization: begin --> [here](documentdb-performance-levels.md) <!-- keep by customization: end -->.
 
 > [AZURE.NOTE] The performance tier setting only applies to collection creation.  If the specified collection already exists, its pricing tier will not be modified.
 
@@ -426,14 +427,14 @@ Using the Indexing Policy advanced option, you can select an indexing policy fil
 
 The policy templates the tool provides are:
 
-- Default.  This policy is best when you’re performing equality queries against strings and using ORDER BY, range, and equality queries for numbers.  This policy has a lower index storage overhead than Range.
-- Hash. This policy is best when you’re performing equality queries for both numbers and strings.  This policy has the lowest index storage overhead.
-- Range. This policy is best you’re using ORDER BY, range and equality queries on both numbers and strings.  This policy has a higher index storage overhead than Default or Hash.
+- Default.  This policy is best when <!-- deleted by customization you're --><!-- keep by customization: begin --> you’re <!-- keep by customization: end --> performing equality queries against strings and using ORDER BY, range, and equality queries for numbers.  This policy has a lower index storage overhead than Range.
+- Hash. This policy is best when <!-- deleted by customization you're --><!-- keep by customization: begin --> you’re <!-- keep by customization: end --> performing equality queries for both numbers and strings.  This policy has the lowest index storage overhead.
+- Range. This policy is best <!-- deleted by customization you're --><!-- keep by customization: begin --> you’re <!-- keep by customization: end --> using ORDER BY, range and equality queries on both numbers and strings.  This policy has a higher index storage overhead than Default or Hash.
 
 
 ![Screenshot of DocumentDB Indexing Policy advanced options](./media/documentdb-import-data/indexingpolicy2.png)
 
-> [AZURE.NOTE] If you do not specify an indexing policy, then the default policy will be applied.  Read more about DocumentDB indexing policies [here](documentdb-indexing-policies.md). 
+> [AZURE.NOTE] If you do not specify an indexing policy, then the default policy will be applied.  Read more about DocumentDB indexing policies <!-- deleted by customization [here](/documentation/articles/documentdb-indexing-policies) --><!-- keep by customization: begin --> [here](documentdb-indexing-policies.md) <!-- keep by customization: end -->.
 
 
 ## Export to JSON file
@@ -494,7 +495,7 @@ In the Advanced configuration screen, specify the location of the log file to wh
 
 	![Screenshot of summary screen](./media/documentdb-import-data/summarycommand.png)
 
-2. Once you’re satisfied with your source and target options, click **Import**.  The elapsed time, transferred count, and failure information (if you didn't provide a file name in the Advanced configuration) will update as the import is in process.  Once complete, you can export the results (e.g. to deal with any import failures). 
+2. Once <!-- deleted by customization you're --><!-- keep by customization: begin --> you’re <!-- keep by customization: end --> satisfied with your source and target options, click **Import**.  The elapsed time, transferred count, and failure information (if you didn't provide a file name in the Advanced configuration) will update as the import is in process.  Once complete, you can export the results (e.g. to deal with any import failures).
 
 	![Screenshot of DocumentDB JSON export option](./media/documentdb-import-data/viewresults.png)
 

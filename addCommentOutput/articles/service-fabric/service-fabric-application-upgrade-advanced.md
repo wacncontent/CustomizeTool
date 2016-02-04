@@ -1,24 +1,27 @@
 <properties
-   pageTitle="Service Fabric Application Upgrade: Advanced Topics"
+   pageTitle="Application upgrade: advanced topics | Windows Azure"
    description="This article covers some advanced topics pertaining to upgrading a Service Fabric application."
    services="service-fabric"
    documentationCenter=".net"
    authors="mani-ramaswamy"
-   manager="samgeo"
+   manager="timlt"
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="07/17/2015"
-   ms.author="subramar"/>
+	ms.service="service-fabric"
+	ms.date="07/17/2015"
+	wacn.date=""/>
 
+<!-- deleted by customization
+# Service Fabric application upgrade: advanced topics
+
+## Manual upgrade mode
+-->
+<!-- keep by customization: begin -->
 # Service Fabric Application Upgrade: Advanced Topics
 
 ## Manual Upgrade Mode
+<!-- keep by customization: end -->
 
 > [AZURE.NOTE] Only for a failed or suspended upgrade, should the Unmonitored Manual mode be even considered. The Monitored mode is the upgrade mode recommended for Service Fabric applications.
 
@@ -42,11 +45,11 @@ Occasions when using a diff package would be a good choice:
 
 ## Next steps
 
-[Upgrade Tutorial](service-fabric-application-upgrade-tutorial.md)
+[Upgrade Tutorial](/documentation/articles/service-fabric-application-upgrade-tutorial)
 
-[Upgrade Parameters](service-fabric-application-upgrade-parameters.md)
+[Upgrade Parameters](/documentation/articles/service-fabric-application-upgrade-parameters)
 
-[Data Serialization](service-fabric-application-upgrade-data-serialization.md)
+[Data Serialization](/documentation/articles/service-fabric-application-upgrade-data-serialization)
 
-[Troubleshooting Application Upgrade](service-fabric-application-upgrade-troubleshooting.md)
+[Troubleshooting Application Upgrade](/documentation/articles/service-fabric-application-upgrade-troubleshooting)
  

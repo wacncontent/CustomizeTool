@@ -3,16 +3,21 @@
 	description="You can view usage patterns for your CDN using the following reports: Bandwidth, Data Transferred, Hits, Cache Statuses, Cache Hit Ratio, IPV4/IPV6 Data Transferred." 
 	services="cdn" 
 	documentationCenter=".NET" 
-	authors="juliako" 
+	authors="camsoper" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags
 	ms.service="cdn"
-	ms.date="09/01/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
+<!-- deleted by customization
+# Analyze CDN usage patterns 
+-->
+<!-- keep by customization: begin -->
 #Analyze CDN usage patterns 
+<!-- keep by customization: end -->
 
 You can view usage patterns for your CDN using the following reports:
 
@@ -23,7 +28,12 @@ You can view usage patterns for your CDN using the following reports:
 - Cache Hit Ratio
 - IPV4/IPV6 Data Transferred 
 
+<!-- deleted by customization
+## Bandwidth
+-->
+<!-- keep by customization: begin -->
 ##Bandwidth
+<!-- keep by customization: end -->
 
 The bandwidth report consists of a graph and data table indicating the bandwidth usage for HTTP and HTTPS over a particular time period. You can view the bandwidth usage across all CDN POPs or a particular POP. This allows you to view the traffic spikes and distribution across CDN POPs in Mbps. 
 
@@ -31,11 +41,16 @@ The bandwidth report consists of a graph and data table indicating the bandwidth
 - Select Date range to view data for today/this week/this month, etc. or enter custom dates, then click "go" to make sure your selection is updated.
 - You can export and download the data by clicking the excel sheet icon located next to "go". 
  
-The report is updated every 5 minute. 
+The report is updated every 5 <!-- deleted by customization minutes --><!-- keep by customization: begin --> minute <!-- keep by customization: end -->.
 
 ![Bandwidth report](./media/cdn-reports/cdn-bandwidth.png)
 
+<!-- deleted by customization
+## Data transferred
+-->
+<!-- keep by customization: begin -->
 ##Data Transferred
+<!-- keep by customization: end -->
 
 This report consists of a graph and data table indicating the traffic usage for HTTP and HTTPS over a particular time period. You can view the traffic usage across all CDN POPs or a particular POP. This allows you to view the traffic spikes and distribution across CDN POPs in GB.
 
@@ -43,11 +58,16 @@ This report consists of a graph and data table indicating the traffic usage for 
 - Select Date range to view data for today/this week/this month, etc. or enter custom dates, then click "go" to make sure your selection is updated.
 - You can export and download the data by clicking the excel sheet icon located next to "go" .
  
-The report is updated every 5 minute. 
+The report is updated every 5 <!-- deleted by customization minutes --><!-- keep by customization: begin --> minute <!-- keep by customization: end -->.
 
 ![Data transferred report](./media/cdn-reports/cdn-data-transferred.png)
 
+<!-- deleted by customization
+## Hits (status codes)
+-->
+<!-- keep by customization: begin -->
 ##Hits (Status Codes)
+<!-- keep by customization: end -->
 
 This report describes the distribution of request status codes for your content. Every request for content will generate an HTTP status code. The status code describes how edge POPs handled the request. For example, 2xx status codes indicate that the request was successfully served to a client, while a 4xx status code indicates an error occurred. For more details about HTTP status code, see [status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
  
@@ -56,13 +76,23 @@ This report describes the distribution of request status codes for your content.
 
 ![Hits report](./media/cdn-reports/cdn-hits.png)
 
+<!-- deleted by customization
+## Cache statuses
+-->
+<!-- keep by customization: begin -->
 ##Cache Statuses
+<!-- keep by customization: end -->
 
 This report describes the distribution of cache hits and cache misses for client request. Since the fastest performance comes from cache hits, you can optimize data delivery speeds by minimizing cache misses and expired cache hits. Cache misses can be reduced by configuring your origin server to avoid assigning "no-cache" response headers, by avoiding query-string caching except where strictly needed, and by avoiding non-cacheable response codes. Expired cache hits can be avoided by making an asset's max-age as long as possible to minimize the number of requests to the origin server.
 
 ![Cache statuses report](./media/cdn-reports/cdn-cache-statuses.png)
 
+<!-- deleted by customization
+### Main cache statuses include: 
+-->
+<!-- keep by customization: begin -->
 ###Main cache statuses include: 
+<!-- keep by customization: end -->
 
 - TCP_HIT: Served from Edge. The object was in cache and had not exceeded its max-age.
 - TCP_MISS: Served from Origin. The object was not in cache and the response was back to origin. 
@@ -72,9 +102,16 @@ This report describes the distribution of cache hits and cache misses for client
 - Select Date range to view data for today/this week/this month, etc. or enter custom dates, then click "go" to make sure your selection is updated.
 - You can export and download the data by clicking the excel sheet icon located next to "go".
 
+<!-- deleted by customization
+### Full list of cache statuses
+
+- TCP_HIT - This status is reported when a request is served directly from the POP to the client. An asset is immediately served from a POP when it is cached on the POP closest to the client and it has a valid time-to-live, or TTL. TTL is determined by the following response headers:
+-->
+<!-- keep by customization: begin -->
 ###Full list of cache statuses
 
-- TCP_HIT - This status is reported when a request is served directly from the POP to the client. An asset is immediately served from a POP when it is cached on the POP closest to the client and it has a valid TTL. TTL is determined by the following response headers:
+- TCP_HIT - This status is reported when a request is served directly from the POP to the client. An asset is immediately served from a POP when it is cached on the POP closest to the client and it has a valid  TTL. TTL is determined by the following response headers:
+<!-- keep by customization: end -->
 
 	- Cache-Control: s-maxage
 	- Cache-Control: max-age
@@ -82,7 +119,7 @@ This report describes the distribution of cache hits and cache misses for client
 
 - TCP_MISS - This status indicates that a cached version of the requested asset was not found on the POP closest to the client. The asset will be requested from either an origin server or an origin shield server. If the origin server or the origin shield server returns an asset, it will be served to the client and cached on both the client and the edge server. Otherwise, a non-200 status code (e.g., 403 Forbidden, 404 Not Found, etc.) will be returned. 
 
-- TCP_EXPIRED _HIT -  This status is reported when a request that targeted an asset with an expired time to live (TTL), such as when the asset's max-age has expired, was served directly from the POP to the client. 
+- TCP_EXPIRED _HIT -  This status is reported when a request that targeted an asset with an expired <!-- deleted by customization TTL --><!-- keep by customization: begin --> time to live (TTL) <!-- keep by customization: end -->, such as when the asset's max-age has expired, was served directly from the POP to the client.
 
 	An expired request typically results in a revalidation request to the origin server. In order for a TCP_EXPIRED _HIT to occur, the origin server must indicate that a newer version of the asset does not exist. This type of situation will typically update that asset's Cache-Control and Expires headers.
 
@@ -100,9 +137,18 @@ This report describes the distribution of cache hits and cache misses for client
 
 - UNCACHEABLE - This status is reported when an asset's Cache-Control and Expires headers indicate that it should not be cached on a POP or by the HTTP client. These types of requests are served from the origin server
 
+<!-- deleted by customization
+## Cache Hit Ratio
+
+This report indicates the percentage of cached requests that were served directly from cache <!-- deleted by customization. -->
+
+The report provides the following details:
+-->
+<!-- keep by customization: begin -->
 ##Cache HIT Ratio
 
-This report indicates the percentage of cached requests that were served directly from cache The report provides the following details:
+This report indicates the percentage of cached requests that were served directly from cache <!-- deleted by customization. -->The report provides the following details:
+<!-- keep by customization: end -->
 
 - The requested content was cached on the POP closest to the requester.
 - The request was served directly from the edge of our network.
@@ -122,15 +168,28 @@ The formula is: (TCP_ HIT/(TCP_ HIT+TCP_MISS))*100
 
 ![Cache hit ratio report](./media/cdn-reports/cdn-cache-hit-ratio.png)
 
+<!-- deleted by customization
+## IPV4/IPV6 Data transferred 
+-->
+<!-- keep by customization: begin -->
 ##IPV4/IPV6 Data transferred 
+<!-- keep by customization: end -->
 
 This report shows the traffic usage distribution in IPV4 vs IPV6. 
 
+<!-- deleted by customization
+![IPV4/IPV6 Data transferred](./media/cdn-reports/cdn-ipv4-ipv6.png)
+-->
 
 - Select Date range to view data for today/this week/this month, etc. or enter custom dates.
 - Then, click "go" to make sure your selection is updated.
 
 
+<!-- deleted by customization
+## Considerations
+-->
+<!-- keep by customization: begin -->
 ##Considerations
+<!-- keep by customization: end -->
 
-Reports can only be generated within the last 18 months. 
+Reports can only be generated within the last 18 months.

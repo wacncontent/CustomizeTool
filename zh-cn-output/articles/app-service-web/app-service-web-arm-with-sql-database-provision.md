@@ -1,49 +1,54 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="设置使用 SQL 数据库的 Web 应用" 
-	description="使用 Azure 资源管理器模板来部署包含 SQL 数据库的 Web 应用。" 
-	services="app-service\web" 
+	pageTitle="Provision a web site that uses a SQL Database" 
+	description="Use an Azure Resource Manager template to deploy a web site that includes a SQL Database." 
+	services="app-service" 
 	documentationCenter="" 
 	authors="tfitzmac" 
 	manager="wpickett" 
-	editor=""/>
+	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.date="06/29/2015" 
-	wacn.date=""/>
+<tags
+	ms.service="app-service"
+	ms.date="09/15/2015"
+	wacn.date="11/27/2015"/>
 
-# 设置使用 SQL 数据库的 Web 应用
+# Provision a web site with a SQL Database
 
-在本主题中，你将学习如何创建用于部署 Web 应用和 SQL 数据库的 Azure 资源管理器模板。你将了解如何定义要部署的资源以及如何定义执行部署时指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求。
+In this topic, you will learn how to create an Azure Resource Manager template that deploys a web site and SQL Database. You will learn how to define which resources are deployed and 
+how to define parameters that are specified when the deployment is executed. You can use this template for your own deployments, or customize it to meet your requirements.
 
-有关创建模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
+For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
 
-有关部署应用的详细信息，请参阅[通过可预测的方式在 Azure 中部署复杂应用程序](/documentation/articles/app-service-deploy-complex-application-predictably)。
+For more information about deploying apps, see [Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably).
 
-有关完整的模板，请参阅[使用 SQL 数据库的 Web 应用的模板](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json)。
+For the complete template, see [Web Site With SQL Database template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json).
 
-## 将部署的内容
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
-在此模板中，你将部署：
+## What you will deploy
 
-- Web 应用
-- SQL 数据库服务器
+In this template, you will deploy:
+
+- a web site
+- SQL Database server
 - SQL Database
-- 自动缩放设置
-- 警报规则
+- AutoScale settings
+- Alert rules
 - App Insights
 
-若要自动运行部署，请单击以下按钮：
+To run the deployment automatically, click the following button:
 
-[![部署到 Azure](http://azuredeploy.net/deploybutton.png)](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-sql-database%2Fazuredeploy.json)
+[![Deploy to Azure](./media/app-service-web-arm-with-sql-database-provision/deploybutton.png)](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-sql-database%2Fazuredeploy.json)
 
-## 要指定的参数
+## Parameters to specify
 
 [AZURE.INCLUDE [app-service-web-deploy-web-parameters](../includes/app-service-web-deploy-web-parameters.md)]
 
 ### serverName
 
-要创建的新数据库服务器的名称。
+The name of the new database server to create.
 
     "serverName": {
       "type": "string"
@@ -51,7 +56,7 @@
 
 ### serverLocation
 
-数据库服务器的位置。为了获得最佳性能，此位置应与 Web 应用的位置相同。
+The location of the database server. For best performance, this location should be the same as the location of the web site.
 
     "serverLocation": {
       "type": "string"
@@ -59,7 +64,7 @@
 
 ### administratorLogin
 
-要用于数据库服务器管理员的帐户名称。
+The account name to use for the database server administrator.
 
     "administratorLogin": {
       "type": "string"
@@ -67,7 +72,7 @@
 
 ### administratorLoginPassword
 
-要用于数据库服务器管理员的密码。
+The password to use for the database server administrator.
 
     "administratorLoginPassword": {
       "type": "securestring"
@@ -75,7 +80,7 @@
 
 ### databaseName
 
-要创建的新数据库的名称。
+The name of the new database to create.
 
     "databaseName": {
       "type": "string"
@@ -83,7 +88,7 @@
 
 ### collation
 
-要用于管理字符的正确使用的数据库排序规则。
+The database collation to use for governing the proper use of characters.
 
     "collation": {
       "type": "string",
@@ -92,53 +97,61 @@
 
 ### edition
 
-要创建的数据库类型。
+The type of database to create.
 
     "edition": {
       "type": "string",
-      "defaultValue": "Web"
+      "defaultValue": "Standard",
+      "metadata": {
+        "description": "The type of database to create. The available options are: Web, Business, Basic, Standard, and Premium."
+      }
     }
 
 ### maxSizeBytes
 
-数据库的最大大小（以字节为单位）。
+The maximum size, in bytes, for the database.
 
     "maxSizeBytes": {
       "type": "string",
       "defaultValue": "1073741824"
     }
 
-### requestedServiceObjectiveId
+### requestedServiceObjectiveName
 
-版本的性能级别所对应的 GUID。有关可用值的列表，请参阅[创建数据库](https://msdn.microsoft.com/zh-cn/library/azure/dn505701.aspx)。默认值与 Web 性能级别相对应。
+The name corresponding to the performance level for edition. 
 
-    "requestedServiceObjectiveId": {
-        "type": "string",
-        "defaultValue": "910b4fcb-8a29-4c3e-958f-f7ba794388b2"
+    "requestedServiceObjectiveName": {
+      "type": "string",
+      "defaultValue": "S0",
+      "metadata": {
+        "description": "The name corresponding to the performance level for edition. The available options are: Shared, Basic, S0, S1, S2, S3, P1, P2, and P3."
+      }
     }
 
 
-## 要部署的资源
+## Resources to deploy
 
-### SQL Server 和数据库
+### SQL Server and Database
 
-创建一个新的 SQL Server 和数据库。在 **serverName** 参数中指定服务器的名称，在 **serverLocation** 参数中指定其位置。在创建新服务器时，必须提供数据库服务器管理员的登录名和密码。
+Creates a new SQL Server and database. The name of the server is specified in the **serverName** parameter and the location specified in the **serverLocation** parameter. When creating the new server,
+you must provide a login name and password for the database server administrator. 
 
     {
       "name": "[parameters('serverName')]",
       "type": "Microsoft.Sql/servers",
       "location": "[parameters('serverLocation')]",
-      "apiVersion": "2.0",
+      "apiVersion": "2014-04-01-preview",
       "properties": {
         "administratorLogin": "[parameters('administratorLogin')]",
-        "administratorLoginPassword": "[parameters('administratorLoginPassword')]"
+        "administratorLoginPassword": "[parameters('administratorLoginPassword')]",
+        "version": "12.0"
       },
       "resources": [
         {
           "name": "[parameters('databaseName')]",
           "type": "databases",
           "location": "[parameters('serverLocation')]",
-          "apiVersion": "2.0",
+          "apiVersion": "2014-08-01",
           "dependsOn": [
             "[concat('Microsoft.Sql/servers/', parameters('serverName'))]"
           ],
@@ -146,7 +159,7 @@
             "edition": "[parameters('edition')]",
             "collation": "[parameters('collation')]",
             "maxSizeBytes": "[parameters('maxSizeBytes')]",
-            "requestedServiceObjectiveId": "[parameters('requestedServiceObjectiveId')]"
+            "requestedServiceObjectiveName": "[parameters('requestedServiceObjectiveName')]"
           }
         },
         {
@@ -169,7 +182,7 @@
 [AZURE.INCLUDE [app-service-web-deploy-web-host](../includes/app-service-web-deploy-web-host.md)]
 
 
-### Web 应用
+### Web Site
 
     {
       "apiVersion": "2015-06-01",
@@ -200,7 +213,7 @@
       ]
     }
 
-### 自动缩放
+### AutoScale
 
     {
       "apiVersion": "2014-04-01",
@@ -268,7 +281,7 @@
         }
     }
 
-### 状态代码 403 和 500 的警报规则、高 CPU 及 HTTP 队列长度 
+### Alert rules for status codes 403 and 500's, High CPU, and HTTP Queue Length 
 
     {
       "apiVersion": "2014-04-01",
@@ -424,7 +437,7 @@
         }
     }
 
-## 运行部署的命令
+## Commands to run deployment
 
 [AZURE.INCLUDE [app-service-deploy-commands](../includes/app-service-deploy-commands.md)]
 
@@ -438,5 +451,3 @@
 
 
  
-
-<!---HONumber=67-->

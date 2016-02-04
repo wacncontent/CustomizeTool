@@ -1,6 +1,7 @@
 > [AZURE.SELECTOR]
 - [Overview](/documentation/articles/hdinsight-use-hive)
 <!-- deleted by customization
+- [Hive View](/documentation/articles/hdinsight-hadoop-use-hive-ambari-view)
 - [Beeline](/documentation/articles/hdinsight-hadoop-use-hive-beeline)
 -->
 - [Query Console](/documentation/articles/hdinsight-hadoop-use-hive-query-console)

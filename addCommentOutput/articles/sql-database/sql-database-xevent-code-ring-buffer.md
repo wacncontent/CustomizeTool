@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="XEvent Event File code for SQL Database | Windows Azure" 
+	pageTitle="XEvent Ring Buffer code for SQL Database | Windows Azure" 
 	description="Provides a Transact-SQL code sample that is made easy and quick by use of the Ring Buffer target, in Azure SQL Database." 
 	services="sql-database" 
 	documentationCenter="" 
@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="09/30/2015"
+	ms.date="10/22/2015"
 	wacn.date=""/>
 
 
@@ -47,7 +47,7 @@ This topic presents a Transact-SQL code sample that:
 ## Prerequisites
 
 
-- An Azure account and subscription. You can sign up for a [trial](/pricing/1rmb-trial/).
+- An Azure account and subscription. You can sign up for a <!-- deleted by customization [trial](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> [trial](/pricing/1rmb-trial) <!-- keep by customization: end -->.
 
 
 - Any database you can create a table in.

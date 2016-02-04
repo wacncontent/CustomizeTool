@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Starting and stopping virtual machines with Azure Automation - PowerShell Workflow | Windows Azure"
-	description="PowerShellversion of Azure Automation solution including runbooks to start and stop classic virtual machines."
+	description="Graphical version of Azure Automation solution including runbooks to start and stop classic virtual machines."
 	services="automation"
 	documentationCenter=""
 	authors="bwren"
@@ -20,10 +20,15 @@ This Azure Automation solution includes runbooks to start and stop classic virtu
 - Call the runbooks from another runbook as part of an overall solution. 
 - Use the runbooks as tutorials to learn runbook authoring concepts. 
 
+> [AZURE.SELECTOR]
+- [Graphical](/documentation/articles/automation-solution-startstopvm-graphical)
+- [PowerShell Workflow](/documentation/articles/automation-solution-startstopvm-psworkflow)
+
+This is the PowerShell Workflow runbook version of this solution. It is also available using [graphical runbooks](/documentation/articles/automation-solutions-startstopvm-graphical).
 
 ## Getting the solution
 
-This solution consists of two PowerShell Workflow runbooks that you can download from the following links.  
+This solution consists of two PowerShell Workflow runbooks that you can download from the following links.  See the [graphical version](/documentation/articles/automation-solutions-startstopvm-graphical) of this solution for links to the graphical runbooks.
 
 | Runbook | Link | Type | Description |
 |:---|:---|:---|:---|
@@ -31,12 +36,11 @@ This solution consists of two PowerShell Workflow runbooks that you can download
 | Stop-AzureVMs | [Stop Azure Classic VMs](https://gallery.technet.microsoft.com/Stop-Azure-Classic-VMs-7a4ae43e) | PowerShell Workflow | Stops all virtual machines in an automation account or all virtual machines with a particular service name.  |
 
 
-[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
 ## Installing the solution
 
 ### 1. Install the runbooks
 
-After downloading the runbooks, you can import them using the procedure in [Importing a Runbook](http://msdn.microsoft.com/zh-cn/library/dn643637.aspx#ImportRunbook).
+After downloading the runbooks, you can import them using the procedure in [Importing a Runbook](/documentation/articles/automation-creating-importing-runbook#ImportRunbook).
 
 ### 2. Review the description and requirements
 The runbooks include commented help text that includes a description and required assets.  You can also get the same information from this article. 
@@ -68,7 +72,7 @@ You can use any of the methods in [Starting a runbook in Azure Automation](/docu
 The following sample commands uses Windows PowerShell to run **StartAzureVMs** to start all virtual machines with the service name *MyVMService*.
 
 	$params = @{"ServiceName"="MyVMService"}
-	Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Start-AzureVMs" –Parameters $params
+	Start-AzureAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Start-AzureVMs" -Parameters $params
 
 ### Output
 

@@ -1,15 +1,15 @@
 <properties 
-   pageTitle="High Availability and Disaster Recovery for SQL Server | Windows Azure"
-   description="This tutorial uses resources created with the classic deployment model, and discusses the various types of HADR strategies for SQL Server running in Azure Virtual Machines."
-   services="virtual-machines"
-   documentationCenter="na"
-   authors="rothja"
-   manager="jeffreyg"
-   editor="monicar" 
-   tags="azure-service-management"/>
+	pageTitle="High Availability and Disaster Recovery for SQL Server | Windows Azure"
+	description="This tutorial uses resources created with the classic deployment model, and discusses the various types of HADR strategies for SQL Server running in Azure Virtual Machines."
+	services="virtual-machines"
+	documentationCenter="na"
+	authors="rothja"
+	manager="jeffreyg"
+	editor="monicar" 
+	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/17/2015"
+	ms.date="11/13/2015"
 	wacn.date=""/>
 
 # High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines
@@ -17,11 +17,9 @@
 ## Overview
 
 Windows Azure virtual machines (VMs) with SQL Server can help lower the cost of a high availability and disaster recovery (HADR) database solution. Most SQL Server HADR solutions are supported in Azure virtual machines, both as  Azure-only  and as hybrid solutions. In an Azure-only solution, the entire HADR system runs in  Azure. In a hybrid configuration, part of the solution runs in Azure and the other part runs on-premises in your organization. The flexibility of the Azure environment enables you to move partially or completely to  Azure to satisfy the budget and HADR requirements of your SQL Server database systems.
-<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
--->
 
 ## Understanding the need for an HADR solution
 
@@ -55,7 +53,7 @@ You can have a disaster recovery solution for your SQL Server databases in Azure
 
 |Technology|Example Architectures|
 |---|---|
-|**AlwaysOn Availability Groups**|Availability replicas running across multiple datacenters in Azure VMs for disaster recovery.  This cross-region solution protects against complete site outage. <br/> ![AlwaysOn Availability Groups](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_alwayson.png)<br/>Within a region, all replicas should be within the same cloud service and the same VNet. Because each region will have a separate VNet, these solutions require VNet to VNet connectivity. For more information, see [Configure a Site-to-Site VPN in the Management Portal](/documentation/articles/vpn-gateway-site-to-site-create).|
+|**AlwaysOn Availability Groups**|Availability replicas running across multiple datacenters in Azure VMs for disaster recovery.  This cross-region solution protects against complete site outage. <br/> ![AlwaysOn Availability Groups](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_alwayson.png)<br/>Within a region, all replicas should be within the same cloud service and the same VNet. Because each region will have a separate VNet, these solutions require VNet to VNet connectivity. For more information, see [Configure a Site-to-Site VPN in the <!-- deleted by customization Azure --> Management Portal](/documentation/articles/vpn-gateway-site-to-site-create).|
 |**Database Mirroring**|Principal and mirror and servers running in different  datacenters for disaster recovery. You must deploy using server certificates because an active directory domain cannot span multiple  datacenters.<br/>![Database Mirroring](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_dbmirroring.gif)|
 |**Backup and Restore with Azure Blob Storage Service**|Production databases backed up directly to blob storage in a different  datacenter for disaster recovery.<br/>![Backup and Restore](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_backup_restore.gif)<br/>For more information, see [Backup and Restore  for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-backup-and-restore).|
 
@@ -86,13 +84,13 @@ Consider the scenario when a two-node cluster is created and brought online:
 
 1. The cluster comes online, then NODE1 requests a dynamically assigned IP address for the cluster network name.
 
-1. No IP address other than NODE1’s own IP address is given by the DHCP service, since the DHCP service recognizes that the request comes from NODE1 itself.
+1. No IP address other than NODE1's own IP address is given by the DHCP service, since the DHCP service recognizes that the request comes from NODE1 itself.
 
 1. Windows detects that a duplicate address is assigned both to NODE1 and to the cluster network name, and the default cluster group fails to come online.
 
-1. The default cluster group moves to NODE2, which treats NODE1’s IP address as the cluster IP address and brings the default cluster group online.
+1. The default cluster group moves to NODE2, which treats NODE1's IP address as the cluster IP address and brings the default cluster group online.
 
-1. When NODE2 attempts to establish connectivity with NODE1, packets directed at NODE1 never leave NODE2 because it resolves NODE1’s IP address to itself. NODE2 cannot establish connectivity with NODE1, then loses quorum and shuts down the cluster.
+1. When NODE2 attempts to establish connectivity with NODE1, packets directed at NODE1 never leave NODE2 because it resolves NODE1's IP address to itself. NODE2 cannot establish connectivity with NODE1, then loses quorum and shuts down the cluster.
 
 1. In the meantime, NODE1 can send packets to NODE2, but NODE2 cannot reply. NODE1 loses quorum and shuts down the cluster.
 
@@ -102,9 +100,14 @@ For more information, see [Configure AlwaysOn Availability Groups in Azure (GUI)
 
 ### Availability group listener support
 
-Availability group listeners are supported on Azure VMs running Windows Server 2008 R2, Windows Server 2012, and Windows Server 2012 R2. This support is made possible by the use of load-balanced endpoints with direct server return (DSR) enabled on the Azure VMs that are availability group nodes. You must follow special configuration steps for the listeners to work for both client applications that are running in Azure as well as those running on-premises.
+Availability group listeners are supported on Azure VMs running Windows Server 2008 R2, Windows Server 2012, and Windows Server 2012 R2. This support is made possible by the use of load-balanced endpoints enabled on the Azure VMs that are availability group nodes. You must follow special configuration steps for the listeners to work for both client applications that are running in Azure as well as those running on-premises.
 
-Clients must connect to the listener from a machine that is not in the same cloud service as the AlwaysOn Availability Group nodes. If the Availability Group spans multiple Azure subnets (such as a deployment that crosses Azure regions), the client connection string must include "MultisubnetFailover=True". This results in parallel connection attempts to the replicas in the different subnets. For instructions on setting up a listener, see [Configure an ILB listener for AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener).
+There are two main options for setting up your listener: external (public) or internal. The external (public) listener is associated with a public Virtual IP (VIP) that is accessible over the internet. With an external listener, you must enable Direct Server Return, which means that you must connect to the listener from a machine that is not in the same cloud service as the AlwaysOn Availability Group nodes. The other option is an internal listener that uses the Internal Load Balancer (ILB). An internal listener only support clients within the same Virtual Network.
+
+If the Availability Group spans multiple Azure subnets (such as a deployment that crosses Azure regions), the client connection string must include "**MultisubnetFailover=True**". This results in parallel connection attempts to the replicas in the different subnets. For instructions on setting up a listener, see 
+
+- [Configure an ILB listener for AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener).
+- [Configure an external listener for AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-sql-server-configure-public-alwayson-availability-group-listener).
 
 You can still connect to each availability replica separately by connecting directly to the service instance. Also, since AlwaysOn Availability Groups are backward compatible with database mirroring clients, you can connect to the availability replicas like database mirroring partners as long as the replicas are configured similar to database mirroring:
 

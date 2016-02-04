@@ -9,12 +9,19 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/25/2015"
+	ms.date="11/30/2015"
 	wacn.date=""/>
 
+<!-- deleted by customization
 # Service-side authorization of users in Mobile Services
 
 > [AZURE.SELECTOR-LIST (Platform | Backend)]
+-->
+<!-- keep by customization: begin -->
+# Service-side Authorization of Users in Mobile Services
+
+> [AZURE.SELECTOR]
+<!-- keep by customization: end -->
 - [(Any | .NET)](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
 - [(Any | Javascript)](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
 
@@ -65,7 +72,7 @@ This tutorial is based on the Mobile Services Quick Start and builds on the [Add
 [Add Authentication to Existing Mobile Services App]: /documentation/articles/mobile-services-ios-get-started-users
 -->
 <!-- keep by customization: begin -->
-[Add Authentication to Existing Mobile Services App]:/documentation/articles/mobile-services-ios-get-started-users
+[Add Authentication to Existing Mobile Services App]:/documentation/articles/ mobile-services-ios-get-started-users
 <!-- keep by customization: end -->
 
 [Azure Management Portal]: https://manage.windowsazure.cn/

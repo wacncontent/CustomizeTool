@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/04/2015"
+	ms.date="01/04/2016"
 	wacn.date=""/>
 
 # Manage Hadoop clusters in HDInsight by using Azure PowerShell
@@ -26,9 +26,39 @@ Azure PowerShell is a powerful scripting environment that you can use to control
 Before you begin this article, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
 
-	> [AZURE.NOTE] The PowerShell scripts provided in this article uses the Azure resource manager mode. To ensure the samples work for you, please download the latest Azure PowerShell using the Microsoft Web Platform Installer.  
+##Install Azure PowerShell 1.0 and greater
+
+First you must unintall the 0.9x versions.
+
+To check the version of the installed PowerShell:
+
+	Get-Module *azure*
+	
+To uninstall the older version, run Programs and Features in the control panel. 
+
+There are two main options for installing Azure PowerShell. 
+
+- [PowerShell Gallery](https://www.powershellgallery.com/). Run the following commands from elevated PowerShell ISE or elevated Windows PowerShell console:
+
+		# Install the Azure Resource Manager modules from PowerShell Gallery
+		Install-Module AzureRM
+		Install-AzureRM
+		
+		# Install the Azure Service Management module from PowerShell Gallery
+		Install-Module Azure
+		
+		# Import AzureRM modules for the given version manifest in the AzureRM module
+		Import-AzureRM
+		
+		# Import Azure Service Management module
+		Import-Module Azure
+
+	For more information, see [PowerShell Gallery](https://www.powershellgallery.com/).
+
+- [Microsoft Web Platform Installer (WebPI)](http://aka.ms/webpi-azps). If you have Azure PowerShell 0.9.x installed, you will be prompted to uninstall 0.9.x. If you installed Azure PowerShell modules from PowerShell Gallery, the installer requires the modules be removed prior to installation to ensure a consistent Azure PowerShell Environment. For the instructions, see [Install Azure PowerShell 1.0 via WebPI](https://azure.microsoft.com/blog/azps-1-0/).
+
+WebPI will receive monthly updates. PowerShell Gallery will receive updates on a continuous basis. If you are comfortable with installing from PowerShell Gallery, that will be the first channel for the latest and greatest in Azure PowerShell.
 
 ##Create clusters
 
@@ -60,7 +90,7 @@ HDInsight cluster requires an Azure Resource group and a Blob container on an Az
 [AZURE.INCLUDE [data center list](../includes/hdinsight-pricing-data-centers-clusters.md)]
 
 
-For information on creating an Azure Storage account by using the Azure preview portal, see [About Azure storage accounts](/documentation/articles/storage-create-storage-account).
+For information on creating an Azure Storage account by using the Azure Management Portal, see [About Azure storage accounts](/documentation/articles/storage-create-storage-account).
 
 If you have already had a Storage account but do not know the account name and account key, you can use the following commands to retrieve the information:
 
@@ -69,7 +99,7 @@ If you have already had a Storage account but do not know the account name and a
 	# List the keys for a Storage account
 	Get-AzureRmStorageAccountKey -ResourceGroupName <Azure Resource Group Name> -name $storageAccountName <Azure Storage Account Name>
 
-For details on getting the information by using the <!-- deleted by customization preview portal --><!-- keep by customization: begin --> Management Portal <!-- keep by customization: end -->, see the "View, copy, and regenerate storage access keys" section of [About Azure storage accounts](/documentation/articles/storage-create-storage-account).
+For details on getting the information by using the Portal, see the "View, copy, and regenerate storage access keys" section of [About Azure storage accounts](/documentation/articles/storage-create-storage-account).
 
 **To create an Azure storage container**
 
@@ -198,7 +228,7 @@ To grant:
 
 	# Credential option 1
 	$hadoopUserName = "admin"
-	$hadoopUserPassword = "Pass@word123"
+	$hadoopUserPassword = "<Enter the Password>"
 	$hadoopUserPW = ConvertTo-SecureString -String $hadoopUserPassword -AsPlainText -Force
 	$credential = New-Object System.Management.Automation.PSCredential($hadoopUserName,$hadoopUserPW)
 
@@ -209,12 +239,7 @@ To grant:
 
 >[AZURE.NOTE] By granting/revoking the access, you will reset the cluster user name and password.
 
-<!-- deleted by customization
-This can also be done via the preview portal. See [Administer HDInsight by using the Azure preview portal][hdinsight-admin-portal].
--->
-<!-- keep by customization: begin -->
-This can also be done via the Management Portal. See [Administer HDInsight by using the Azure Management Portal][hdinsight-admin-portal].
-<!-- keep by customization: end -->
+This can also be done via the Portal. See [Administer HDInsight by using the Azure Management Portal][hdinsight-admin-portal].
 
 ##Update HTTP user credentials
 
@@ -272,12 +297,7 @@ See [Upload data to HDInsight][hdinsight-upload-data].
 
 ## See Also
 * [HDInsight cmdlet reference documentation][hdinsight-powershell-reference]
-<!-- deleted by customization
-* [Administer HDInsight by using the Azure preview portal][hdinsight-admin-portal]
--->
-<!-- keep by customization: begin -->
 * [Administer HDInsight by using the Azure Management Portal][hdinsight-admin-portal]
-<!-- keep by customization: end -->
 * [Administer HDInsight using a command-line interface][hdinsight-admin-cli]
 * [Create HDInsight clusters][hdinsight-provision]
 * [Upload data to HDInsight][hdinsight-upload-data]
@@ -285,29 +305,25 @@ See [Upload data to HDInsight][hdinsight-upload-data].
 * [Get started with Azure HDInsight][hdinsight-get-started]
 
 
-<!-- keep by customization: begin -->
-[hdinsight-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-<!-- keep by customization: end -->
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-provision-custom-options]: /documentation/articles/hdinsight-provision-clusters#configuration
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-provision-custom-options]: /documentation/articles/hdinsight-provision-clusters-v1#configuration
+[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
 
-[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-flight]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-admin-cli]: hdinsight-administer-use-command-line.md
+[hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1
+[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-flight]: hdinsight-analyze-flight-delay-data.md
 
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[powershell-install-configure]: ../install-configure-powershell.md
 
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png

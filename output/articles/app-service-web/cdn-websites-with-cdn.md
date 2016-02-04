@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Use Azure CDN in Azure Websites" 
-	description="A tutorial that teaches you how to deploy a web app to Azure Websites that serves content from an integrated Azure CDN endpoint" 
+	pageTitle="Use Azure CDN in Azure Web App" 
+	description="A tutorial that teaches you how to deploy a web app to Azure that serves content from an integrated Azure CDN endpoint" 
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -9,18 +9,18 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/16/2015"
+	ms.date="12/08/2015"
 	wacn.date=""/>
 
 
-# Use Azure CDN in Azure Websites
+# Use Azure CDN in Azure
 
-[Azure Websites](/documentation/services/web-sites/) can be integrated with [Azure CDN](/home/features/cdn/), adding to the global scaling capabilities inherent in [Azure Websites](/documentation/services/web-sites/) by serving your web app content globally from server nodes near your customers (an updated list of all current node locations can be found [here](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx)). In scenarios like serving static images, this integration can dramatically increase the performance of your Azure Websites and significantly improves your web app's user experience worldwide. 
+[Azure Web App](/documentation/services/web-sites/) can be integrated with [Azure CDN](/home/features/cdn/), adding to the global scaling capabilities inherent in [Azure Web Apps](/documentation/services/web-sites/) by serving your web app content globally from server nodes near your customers (an updated list of all current node locations can be found [here](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx)). In scenarios like serving static images, this integration can dramatically increase the performance of your Azure Web Apps and significantly improves your web app's user experience worldwide. 
 
 Integrating Web Apps with Azure CDN gives you the following advantages:
 
 - Integrate content deployment (images, scripts, and stylesheets) as part of your web app's [continuous deployment](/documentation/articles/web-sites-publish-source-control) process
-- Easily upgrade the NuGet packages in your web app in Azure Websites, such as jQuery or Bootstrap versions 
+- Easily upgrade the NuGet packages in your web app in Azure, such as jQuery or Bootstrap versions 
 - Manage your Web application and your CDN-served content from the same Visual Studio interface
 - Integrate ASP.NET bundling and minification with Azure CDN
 
@@ -28,59 +28,59 @@ Integrating Web Apps with Azure CDN gives you the following advantages:
 
 ## What you will build ##
 
-You will deploy a web app to Azure Websites using the default ASP.NET MVC template in Visual Studio, add code to serve content from an integrated Azure CDN, such as an image, controller action results, and the default JavaScript and CSS files, and also write code to configure the fallback mechanism for bundles served in the event that the CDN is offline.
+You will deploy a web app to Azure using the default ASP.NET MVC template in Visual Studio, add code to serve content from an integrated Azure CDN, such as an image, controller action results, and the default JavaScript and CSS files, and also write code to configure the fallback mechanism for bundles served in the event that the CDN is offline.
 
 ## What you will need ##
 
 This tutorial has the following prerequisites:
 
 -	An active [Windows Azure account](/account/)
--	Visual Studio 2013 with the [Azure SDK for .NET](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)
+-	Visual Studio 2015 with the [Azure SDK for .NET](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids). If you use Visual Studio, the steps may vary.
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
 > + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web Apps.
+> + You can [activate Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Your Visual Studio subscription gives you credits every month that you can use for paid Azure services.
+>
+> If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 ## Deploy a web app to Azure with an integrated CDN endpoint ##
 
-In this section, you will deploy the default ASP.NET MVC application template in Visual Studio 2013 to Azure Websites, and then integrate it with a new CDN endpoint. Follow the instructions below:
+In this section, you will deploy the default ASP.NET MVC application template in Visual Studio 2013 to Azure Web App, and then integrate it with a new CDN endpoint. Follow the instructions below:
 
-1. In Visual Studio 2013, create a new ASP.NET web application from the menu bar by going to **File > New > Project > Web > ASP.NET Web Application**. Give it a name and click **OK**.
+1. In Visual Studio 2015, create a new ASP.NET web application from the menu bar by going to **File > New > Project > Web > ASP.NET Web Application**. Give it a name and click **OK**.
 
 	![](./media/cdn-websites-with-cdn/1-new-project.png)
 
-3. Select **MVC** and click **Manage Subscriptions**.
+3. Select **MVC** and click **OK**.
 
 	![](./media/cdn-websites-with-cdn/2-webapp-template.png)
 
-4. Click **Sign In**.
+4. If you haven't logged into your Azure account yet, click the account icon in the upper-right corner and follow the dialog to log into your Azure account. Once you're done, configure your app as shown below, then click **New** to create a new App Service plan for your app.  
 
-	![](./media/cdn-websites-with-cdn/3-manage-subscription.png)
+	![](./media/cdn-websites-with-cdn/3-configure-webapp.png)
 
-6. In the sign-in page, sign in with the Microsoft account you used to activate your Azure account.
-7. Once you're signed in, click **Close**. Then, click **OK** to continue.
+5. Configure a new App Service plan in the dialog as shown below and click **OK**. 
 
-	![](./media/cdn-websites-with-cdn/4-signed-in.png)
+	![](./media/cdn-websites-with-cdn/4-app-service-plan.png)
 
-8. Assuming that you haven't created a web app in Azure, Visual Studio can help you create it. In the **Configure Windows Azure Website** dialog, make sure your site name is unique. Then, click **OK**.
+8. Click **Create** to create the web app.
 
-	<!--todo: need 2.5.1 screenshot-->
 	![](./media/cdn-websites-with-cdn/5-create-website.png)
 
-9. Once your ASP.NET application is created, publish it to Azure in the Web Publish Activity pane by clicking **Publish `<app name>` to this site now**. Click **Publish** to complete the process.
+9. Once your ASP.NET application is created, publish it to Azure in the Azure Activity pane by clicking **Publish `<app name>` to this Web App now**. Click **Publish** to complete the process.
 
-	<!--todo: need 2.5.1 screenshot-->
 	![](./media/cdn-websites-with-cdn/6-publish-website.png)
 
 	You will see your published web app in the browser when publishing is complete. 
 
-1. To create a CDN endpoint, log into the [Azure Management Portal](https://manage.windowsazure.cn/). 
+1. To create a CDN endpoint, log into the [Azure Management Portal](https://manage.windowsazure.cn). 
 2. Click **New** > **App Services** > **CDN** > **Quick Create**. Select **http://*&lt;sitename>*.chinacloudsites.cn/** and click **Create**.
 
 	![](./media/cdn-websites-with-cdn/7-create-cdn.png)
 
-	> [AZURE.NOTE] Once your CDN endpoint is created, the Azure Management Portal will show you its URL and the origin domain that it's integrated with. However, it can take a while for the new CDN endpoint's configuration to be fully propagated to all the CDN node locations. 
+	> [AZURE.NOTE] Once your CDN endpoint is created, the Management Portal will show you its URL and the origin domain that it's integrated with. However, it can take a while for the new CDN endpoint's configuration to be fully propagated to all the CDN node locations. 
 
-3. Back in the Azure Management Portal, in the **CDN** tab, click the name of the CDN endpoint you just created.
+3. Back in the Management Portal, in the **CDN** tab, click the name of the CDN endpoint you just created.
 
 	![](./media/cdn-websites-with-cdn/8-select-cdn.png)
 
@@ -375,7 +375,7 @@ Follow the steps below to integration ASP.NET bundling and minification with you
 
           // Use the development version of Modernizr to develop with and learn from. Then, when you're
           // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-          bundles.Add(new ScriptBundle("~/bundles/modernizr", string.Format(cdnUrl, "bundles/modernizer")).Include(
+          bundles.Add(new ScriptBundle("~/bundles/modernizr", string.Format(cdnUrl, "bundles/modernizr")).Include(
                 "~/Scripts/modernizr-*"));
 
           bundles.Add(new ScriptBundle("~/bundles/bootstrap", string.Format(cdnUrl, "bundles/bootstrap")).Include(
@@ -547,5 +547,15 @@ The [Bundle](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bun
 
 7. Refresh your browser window for the Azure web app. You should now see that the all scripts and stylesheets are properly loaded.
 
+## More Information 
+- [Overview of the Azure Content Delivery Network (CDN)](/documentation/articles/cdn-overview)
+- [Serve Content from Azure CDN in Your Web Application](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application)
+- [Integrate a cloud service with Azure CDN](/documentation/articles/cdn-cloud-service-with-cdn)
+- [ASP.NET Bundling and Minification](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)
+- [Using CDN for Azure](/documentation/articles/cdn-how-to-use-cdn)
+
+## What's changed
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
  
 

@@ -1,4 +1,3 @@
-updated docs: 1
-articles/site-recovery/site-recovery-sql.md
+updated docs: 0
 
 updated includes: 0

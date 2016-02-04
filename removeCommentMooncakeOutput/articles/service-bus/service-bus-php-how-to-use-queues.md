@@ -7,12 +7,12 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags
-	ms.service="service-bus"
-	ms.date="10/14/2015"
+<tags 
+	ms.service="service-bus" 
+	ms.date="10/14/2015" 
 	wacn.date=""/>
 
-# How to use Service Bus queues
+# How to Use Service Bus Queues
 
 [AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
 
@@ -54,7 +54,7 @@ To instantiate a Service Bus client, you must first have a valid connection stri
 
 	Endpoint=[yourEndpoint];SharedSecretIssuer=[Default Issuer];SharedSecretValue=[Default Key]
 
-Where **Endpoint** is typically of the format `https://[yourNamespace].servicebus.chinacloudapi.cn`.
+Where **Endpoint is** typically of the format `https://[yourNamespace].servicebus.chinacloudapi.cn`.
 
 To create any Azure service client you must use the **ServicesBuilder** class. You can:
 
@@ -204,4 +204,3 @@ For more information, also see the [PHP Developer Center](/develop/php/).
 [Queues, Topics, and Subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
 [require_once]: http://php.net/require_once
 
- 

@@ -9,15 +9,15 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/06/2015"
+	ms.date="01/04/2016"
 	wacn.date=""/>
 
 # Managing Role-Based Access Control with Windows PowerShell #
 
 > [AZURE.SELECTOR]
-- [Windows PowerShell](/documentation/articles/role-based-access-control-powershell)
-- [Azure CLI](/documentation/articles/role-based-access-control-xplat-cli-install)
-
+- [PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell)
+- [Azure CLI](/documentation/articles/role-based-access-control-manage-access-azure-cli)
+- [REST API](/documentation/articles/role-based-access-control-manage-access-rest)
 
 Role-Based access control (RBAC) in the Azure Management Portal and Azure Resource Management API allows you to manage access to your subscription at a fine-grained level. With this feature, you can grant access for Active Directory users, groups, or service principals by assigning some roles to them at a particular scope.
 
@@ -31,7 +31,7 @@ Before you can use Windows PowerShell to manage RBAC, you must have the followin
 
 - Windows PowerShell, Version 3.0 or 4.0. To find the version of Windows PowerShell, type:`$PSVersionTable` and verify that the value of `PSVersion` is 3.0 or 4.0. To install a compatible version, see [Windows Management Framework 3.0 ](http://www.microsoft.com/download/details.aspx?id=34595) or [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855).
 
-- Azure PowerShell version 0.8.8 or later. To install the latest version and associate it with your Azure subscription, see [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell).
+- Azure PowerShell version 0.8.8 or later. To install the latest version and associate it with your Azure subscription, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 This tutorial is designed for Windows PowerShell beginners, but it assumes that you understand the basic concepts, such as modules, cmdlets, and sessions. For more information about Windows PowerShell, see [Getting Started with Windows PowerShell](http://technet.microsoft.com/zh-cn/library/hh857337.aspx).
 
@@ -45,7 +45,7 @@ For example, to get help for the Add-AzureAccount cmdlet, type:
 
 Please also read the following tutorials to get familiar with set up and using Azure Resource Manager in Windows PowerShell:
 
-- [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)
+- [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
 - [Using Windows PowerShell with Resource Manager](/documentation/articles/powershell-azure-resource-manager)
 
 
@@ -70,7 +70,7 @@ If you have multiple subscriptions and want to switch to another one, type:
     # Use the subscription name to select the one you want to work on.
     PS C:\> Select-AzureSubscription -SubscriptionName <subscription name>
 
-For more information, please refer to [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell).
+For more information, please refer to [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 ## Check existing role assignments
 

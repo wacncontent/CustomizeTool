@@ -55,7 +55,7 @@ If your AutocertificateRollover setting is True but your federation metadata is 
 - verify that you are logged on to the primary AD FS server.
 - Check the current signing certificates in AD FS by opening a PowerShell command window and running the following command:
 
-`PS C:\>Get-ADFSCertificate –CertificateType token-signing.`
+`PS C:\>Get-ADFSCertificate -CertificateType token-signing.`
 
 (note that if you are using AD FS 2.0, you will need to run Add-Pssnapin Microsoft.Adfs.Powershell first)
 
@@ -64,9 +64,9 @@ If your AutocertificateRollover setting is True but your federation metadata is 
 
 - If you only see one certificate, and the NotAfter date is within 5 days, you need to generate a new certificate by executing the following steps.
 
-- To generate a new certificate, execute the following command at a PowerShell command prompt: `PS C:\>Update-ADFSCertificate –CertificateType token-signing`.
+- To generate a new certificate, execute the following command at a PowerShell command prompt: `PS C:\>Update-ADFSCertificate -CertificateType token-signing`.
 
-- Verify the update by running the following command again: PS C:\>Get-ADFSCertificate –CertificateType token-signing
+- Verify the update by running the following command again: PS C:\>Get-ADFSCertificate -CertificateType token-signing
 - Next, to manually update Office 365 federation trust properties, follow these steps.
 
 Two certificates should be listed now, one of which has a NotAfter date of approximately one year in the future and for which the IsPrimary value is False.
@@ -76,9 +76,9 @@ Two certificates should be listed now, one of which has a NotAfter date of appro
 
 1.	Open the Windows Azure Active Directory Module for Windows PowerShell.
 2.	Run $cred=Get-Credential. When this cmdlet prompts you for credentials, type your cloud service administrator account credentials.
-3.	Run Connect-MsolService –Credential $cred. This cmdlet connects you to the cloud service. Creating a context that connects you to the cloud service is required before running any of the additional cmdlets installed by the tool.
+3.	Run Connect-MsolService -Credential $cred. This cmdlet connects you to the cloud service. Creating a context that connects you to the cloud service is required before running any of the additional cmdlets installed by the tool.
 4.	If you are running these commands on a computer that is not the AD FS primary federation server, run Set-MSOLAdfscontext -Computer <AD FS primary server>, where <AD FS primary server> is the internal FQDN name of the primary AD FS server. This cmdlet creates a context that connects you to AD FS.
-5.	Run Update-MSOLFederatedDomain –DomainName <domain>. This cmdlet updates the settings from AD FS into the cloud service and configures the trust relationship between the two.
+5.	Run Update-MSOLFederatedDomain -DomainName <domain>. This cmdlet updates the settings from AD FS into the cloud service and configures the trust relationship between the two.
 
 >[AZURE.NOTE] If you need to support multiple top-level domains, such as contoso.com and fabrikam.com, you must use the SupportMultipleDomain switch with any cmdlets. For more information, see Support for Multiple Top Level Domains.
-Finally, ensure all Web Application Proxy servers are updated with [Windows Server May 2014](http://support.microsoft.com/kb/2955164) rollup, otherwise the proxies may fail to update themselves with the new certificate, resulting in an outage.
+Finally, ensure all web site Proxy servers are updated with [Windows Server May 2014](http://support.microsoft.com/kb/2955164) rollup, otherwise the proxies may fail to update themselves with the new certificate, resulting in an outage.

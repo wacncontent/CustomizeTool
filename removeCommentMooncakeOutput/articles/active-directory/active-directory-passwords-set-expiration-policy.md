@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/10/2015"
+	ms.date="11/16/2015"
 	wacn.date=""/>
 
 
@@ -36,7 +36,7 @@ To use Windows PowerShell cmdlets, you first must install them.
 
 2.  Do one of the following:
 
-	- To see whether a single user’s password is set to never expire, run the following cmdlet by using the user principal name (UPN) (for example, aprilr@contoso.partner.onmschina.cn) or the user ID of the user you want to check: `Get-MSOLUser -UserPrincipalName <user ID> | Select PasswordNeverExpires`
+	- To see whether a single userâs password is set to never expire, run the following cmdlet by using the user principal name (UPN) (for example, aprilr@contoso.partner.onmschina.cn) or the user ID of the user you want to check: `Get-MSOLUser -UserPrincipalName <user ID> | Select PasswordNeverExpires`
 
 	- To see the "Password never expires" setting for all users, run the following cmdlet: `Get-MSOLUser | Select UserPrincipalName, PasswordNeverExpires`
 
@@ -50,7 +50,7 @@ To use Windows PowerShell cmdlets, you first must install them.
   	
 	- To set the passwords of all users in the organization so that they will expire, use the following cmdlet: `Get-MSOLUser | Set-MsolUser -PasswordNeverExpires \$false`
 
-## Set a password not to expire
+## Set a password to never expire
 
 1. Connect to Windows PowerShell using your company administrator credentials.
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="09/24/2015"
+	ms.date="12/10/2015"
 	wacn.date=""/>
 
 # How to use Notification Hubs from Node.js
@@ -74,9 +74,9 @@ module:
 
     var notificationHubService = azure.createNotificationHubService('hubname','connectionstring');
 
-The connection **connectionstring** value can be obtained from the Azure Management portal by performing the following steps:
+The connection **connectionstring** value can be obtained from the [Azure Management Portal] by performing the following steps:
 
-1. From the Azure Management portal, select **Service Bus**, and then select the namespace that contains the notification hub.
+1. From the [Azure Management Portal], select **Service Bus**, and then select the namespace that contains the notification hub.
 
 2. Select **NOTIFICATION HUBS**, and then select the hub you wish to use.
 
@@ -215,8 +215,8 @@ links to learn more.
   [Azure Service Bus Notification Hubs]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
   [Web Site with WebMatrix]: /develop/nodejs/tutorials/web-site-with-webmatrix/
-  [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+  [Node.js Cloud Service]: ../cloud-services-nodejs-develop-deploy-app.md
 [Previous Management Portal]: .media/notification-hubs-nodejs-how-to-use-notification-hubs/previous-portal.png
   [nodejswebsite]: /develop/nodejs/tutorials/create-a-website-(mac)/
   [Node.js Cloud Service with Storage]: /develop/nodejs/tutorials/web-app-with-storage/
-  [Node.js Web Application with Storage]: /develop/nodejs/tutorials/web-site-with-storage/
+  [Node.js web site with Storage]: /develop/nodejs/tutorials/web-site-with-storage/

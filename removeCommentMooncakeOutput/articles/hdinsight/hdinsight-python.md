@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Use Python with Hive and Pig in HDInsight
@@ -184,7 +184,7 @@ If you are using a Windows-based HDInsight cluster and a Windows client, use the
 
 ###PowerShell
 
-These steps use Azure PowerShell. If this is not already installed and configured on your development machine, see [How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell) before using the following steps.
+These steps use Azure PowerShell. If this is not already installed and configured on your development machine, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) before using the following steps.
 
 1. Using the Python examples [streaming.py](#streamingpy) and [jython.py](#jythonpy), create local copies of the files on your development machine.
 
@@ -243,7 +243,7 @@ The output for the **Hive** job should appear similar to the following:
 
 	# Replace 'YourHDIClusterName' with the name of your cluster
 	$clusterName = YourHDIClusterName
-
+     
 	$PigQuery = "Register wasb:///jython.py using jython as myfuncs;" +
 	            "LOGS = LOAD 'wasb:///example/data/sample.log' as (LINE:chararray);" +
 	            "LOG = FILTER LOGS by LINE is not null;" +

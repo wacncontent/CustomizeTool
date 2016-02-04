@@ -7,10 +7,10 @@
    authors="joaoma"
    manager="jdial"
    editor="tysonn"/>
-<tags
-	ms.service="application-gateway"
-	ms.date="09/21/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="application-gateway"
+   ms.date="11/10/2015"
+   wacn.date=""/>
 
 
 # Create Application Gateway using ARM template
@@ -18,10 +18,9 @@
 Application Gateway is load balancer layer 7. It provides failover, performance routing HTTP requests between different servers, whether they are on the cloud or on premise. Application gateway has the following application delivery features: HTTP load balancing, Cookie based session affinity, SSL offload. 
 
 > [AZURE.SELECTOR]
-- [Azure Classic Powershell steps](/documentation/articles/application-gateway-create-gateway)
-- [Azure Resource Manager Powershell steps](/documentation/articles/application-gateway-create-gateway-arm)
-- [Azure Resource Manager template steps](/documentation/articles/application-gateway-create-gateway-arm-template)
-
+- [Azure Classic PowerShell](/documentation/articles/application-gateway-create-gateway)
+- [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-gateway-arm)
+- [Azure Resource Manager template](/documentation/articles/application-gateway-create-gateway-arm-template)
 
 <BR>
 
@@ -56,7 +55,7 @@ In this scenario you will create:
 
 You can download the existing ARM template for creating a VNet and two subnets from github, make any changes you might want, and reuse it. To do so, follow the steps below.
 
-1. Navigate to https://github.com/Azure/azure-quickstart-templates/blob/master/101-create-applicationgateway-publicip.
+1. Navigate to https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-create-application-gateway/
 2. Click **azuredeploy.json**, and then click **RAW**.
 3. Save the file to a a local folder on your computer.
 4. If you are familiar with ARM templates, skip to step 7.
@@ -83,37 +82,35 @@ You can download the existing ARM template for creating a VNet and two subnets f
 	- **name**. Name for the resource. Notice the use of **[parameters('applicationGatewayName')]**, which means the name will provided as input by the user or a parameter file during deployment.
 	- **properties**. List of properties for the resource. This template uses the virtual network and public IP address during Application Gateway creation.
 
-7. Navigate back to https://github.com/Azure/azure-quickstart-templates/blob/master/101-create-applicationgateway-publicip.
+7. Navigate back to https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-create-application-gateway/azuredeploy.json.
 8. Click **azuredeploy-paremeters.json**, and then click **RAW**.
 9. Save the file to a a local folder on your computer.
 10. Open the file you just saved and edit the values for the parameters. Use the values below to deploy the Application Gateway described in our scenario.
 
 		{
-		   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-		   "contentVersion": "1.0.0.0",
-		   "parameters": {
-		     "location": {
-		       "value": "China East"
-		     },
-		     "addressPrefix": {
-		      "value": "10.0.0.0/16"
-    		 },
-		     "subnetPrefix": {
-		      "value": "10.0.0.0/24"
-		     },
-		     "skuName": {
-		       "value": "Standard_Small"
-		     },
-		     "capacity": {
-		       "value": 2
-		    },
-		    "backendIpAddress1": {
-		      "value": "10.0.1.10"
-		    },
-		     "backendIpAddress2": {
-		       "value": "10.0.1.11"
-		     }
-		  }
+		  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+		{
+    	"location" : {
+        "value" : "China North"
+    	},
+    	"addressPrefix": {
+        "value": "10.0.0.0/16"
+    	},
+    	"subnetPrefix": {
+        "value": "10.0.0.0/24"
+    	},
+    	"skuName": {
+        "value": "Standard_Small"
+    	},
+    	"capacity": {
+        "value": 2
+    	},
+    	"backendIpAddress1": {
+        "value": "10.0.1.10"
+    	},
+    	"backendIpAddress2": {
+        "value": "10.0.1.11"
+    	}
 		}
 
 11. Save the file.You can test the Json template and parameter template using online json validation tools like [JSlint.com](http://www.jslint.com/)
@@ -236,7 +233,7 @@ Click to deploy is another way to use ARM templates. It's an easy way to use tem
 
 
 ### Step 1 
-Using the link [Click to deploy Application Gateway](http://azure.microsoft.com/documentation/templates/101-create-applicationgateway-publicip/) will redirect you to the portal template page for Application Gateway.
+Using the link [Click to deploy Application Gateway](/documentation/templates/101-application-gateway-public-ip/) will redirect you to the portal template page for Application Gateway.
 
 
 ### Step 2 

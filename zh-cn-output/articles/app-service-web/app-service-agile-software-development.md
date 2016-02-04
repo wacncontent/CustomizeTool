@@ -1,253 +1,258 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="使用 Azure App Service 进行灵便软件开发"
-	description="学习如何使用支持灵便软件开发的方式，通过 Azure App Service 创建高缩放性的复杂应用程序。"
-	services="app-service\web"
+	pageTitle="Agile software development with Azure Websites"
+	description="Learn how to create high-scale complex applications with Azure Websites in a way that supports agile software development."
+	services="app-service"
 	documentationCenter=""
 	authors="cephalin"
 	manager="wpickett"
 	editor=""/>
 
 <tags
-	ms.service="app-service-web"
-	ms.date="06/24/2015"
-	wacn.date=""/>
+	ms.service="app-service"
+	ms.date="10/16/2015"
+	wacn.date="11/27/2015"/>
 
 
-# 使用 Azure App Service 进行灵便软件开发 #
+# Agile software development with Azure Websites #
 
-在本教程中，你将学习如何使用支持[灵便软件开发](https://en.wikipedia.org/wiki/Agile_software_development)的方式，通过 [Azure App Service](/home/features/app-service/) 创建高缩放性的复杂应用程序。假设你已经知道如何[通过可预测方式在 Azure 中部署复杂应用程序](/documentation/articles/app-service-deploy-complex-application-predictably)。
+In this tutorial, you will learn how to create high-scale complex applications with [Azure Websites](/home/features/app-service/) in a way that supports [agile software development](https://en.wikipedia.org/wiki/Agile_software_development). It assumes that you already know how to [deploy complex applications predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably).
 
-技术流程限制通常会妨碍成功的实施灵便方法。如果在 [Azure 资源管理器](/documentation/articles/resource-group-overview)中合理地结合了部署的协调与管理，则具有[连续发布](/documentation/articles/web-sites-publish-source-control)、[过渡环境](/documentation/articles/web-sites-staged-publishing)（槽）和[监视](/documentation/articles/web-sites-monitor)等功能的 Azure App Service 是非常适合采用灵便软件开发的开发人员的解决方案。
+Limitations in technical processes can often stand in the way of successful implementation of agile methodologies. Azure Websites with features such as [continuous publishing](/documentation/articles/web-sites-publish-source-control), [staging environments](/documentation/articles/web-sites-staged-publishing) (slots), and [monitoring](/documentation/articles/web-sites-monitor), when coupled wisely with the orchestration and management of deployment in [Azure Resource Manager](/documentation/articles/resource-group-overview), can be part of a great solution for developers who embrace agile software development.
 
-下表是灵便开发的相关要求以及 Azure 服务如何启用它们的简短列表。
+The following table is a short list of requirements associated with agile development, and how Azure services enables each of them.
 
-| 要求 | Azure 如何实现 |
+| Requirement | How Azure enables |
 |---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| - 每次提交时构建<br>- 自动快速构建 | 配置连续部署后，Azure App Service 可以根据开发分支充当实时运行的构建版本。每次将代码推送到分支时，Azure 中会自动构建和实时运行代码。|
-| - 将构建版本设为自我测试 | 负载测试、Web 测试等可以使用 Azure 资源管理器模板进行部署。|
-| - 在生产环境的复本中运行测试 | Azure 资源管理器模板可以用来创建 Azure 生产环境的复本（包括应用设置、连接字符串模板、缩放等）以通过快速且可预测的方式测试。|
-| - 轻松查看最新构建版本的结果 | 从存储库连续部署到 Azure，意味着你可以在提交更改后，立即在实时应用程序中测试新代码。 |
-| - 每天提交到主要分支<br>- 自动化部署 | 生产应用程序与存储库主要分支的连续集成可自动将主要分支的每次提交/合并部署到生产环境。 |
+| - Build with every commit<br>- Build automatically and fast | When configured with continuous deployment, Azure Websites can function as live-running builds based on a dev branch. Every time code is pushed to the branch, it is automatically built and running live in Azure.|
+| - Make builds self-testing | Load tests, web tests, etc., can be deployed with the Azure Resource Manager template.|
+| - Perform tests in a clone of production environment | Azure Resource Manager templates can be used to create clones of the Azure production environment (including app settings, connection string templates, scaling, etc.) for testing quickly and predictably.|
+| - View result of latest build easily | Continuous deployment to Azure from a repository means that you can test new code in a live application immediately after you commit your changes. |
+| - Commit to the main branch every day<br>- Automate deployment | Continuous integration of a production application with a repository’s main branch automatically deploys every commit/merge to the main branch to production. |
 
-## 执行的操作 ##
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
-你将逐步执行典型的“开发-测试-过渡-生产”工作流，以将新更改发布到 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 示例应用程序（包含两个 [Web 应用](/home/features/app-service/web/)：一个是前端 (FE)，另一个是 Web API 后端 (BE)）和 [SQL 数据库](/home/features/sql-database/)。将按如下所示使用部署体系结构：
+## What you will do ##
+
+You will walk through a typical dev-test-stage-production workflow in order to publish new changes to the [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) sample application, which consists of two [web sites](/home/features/web-site/), one being a frontend (FE) and the other being a Web API backend (BE), and a [SQL database](/home/features/sql-database/). You will work with the deployment architecture shown below:
 
 ![](./media/app-service-agile-software-development/what-1-architecture.png)
 
-将图片放入文字：
+To put the picture into words :
 
--	部署体系结构分成三个不同的环境（或 Azure 中的[资源组](/documentation/articles/resource-group-overview)），各有其自身的 [App Service](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview) 计划、[缩放](/documentation/articles/web-sites-scale)设置和 SQL 数据库。 
--	你可以单独管理每个环境。它们甚至可以存在于不同的订阅中。
--	过渡和生产环境实现为相同 App Service 应用的两个槽。主分支是设置进行具有过渡槽的连续集成。
--	在过渡槽（包含生产数据）上验证主分支的提交时，已验证的过渡应用将交换到生产槽，且[不会造成停机](/documentation/articles/web-sites-staged-publishing)。
+-	The deployment architecture is separated into three distinct environments (or [resource groups](/documentation/articles/resource-group-overview) in Azure), each with its own [App Service plan](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview), [scaling](/documentation/articles/web-sites-scale) settings, and SQL database. 
+-	Each environment can be managed separately. They can even exist in different subscriptions.
+-	Staging and production are implemented as two slots of the same Azure Websites app. The master branch is setup for continuous integration with the staging slot.
+-	When a commit to master branch is verified on the staging slot (with production data), the verified staging app is swapped into the production slot [with no downtime](/documentation/articles/web-sites-staged-publishing).
 
-生产和过渡环境由 [*&lt;repository_root>*/ARMTemplates/ProdandStage.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/ProdAndStage.json) 中的模板定义。
+The production and staging environment is defined by the template at [*&lt;repository_root>*/ARMTemplates/ProdandStage.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/ProdAndStage.json).
 
-开发和测试环境由 [*&lt;repository_root>*/ARMTemplates/Dev.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/Dev.json) 中的模板定义。
+The dev and test environments are defined by the template at [*&lt;repository_root>*/ARMTemplates/Dev.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/Dev.json).
 
-你还要使用典型分支策略，其中，代码从开发分支移到测试分支，然后移到主分支（所谓的质量提升）。
+You will also use the typical branching strategy, with code moving from the dev branch up to the test branch, then to the master branch (moving up in quality, so to speak).
 
-![](./media/app-service-agile-software-development/what-2-branches.png)
+![](./media/app-service-agile-software-development/what-2-branches.png) 
 
-## 所需的项目 ##
+## What you will need ##
 
--	一个 Azure 帐户
--	一个 [GitHub](https://github.com/) 帐户
--	Git Shell（与 [GitHub for Windows](https://windows.github.com/) 一起安装）- 可让你在相同的会话中运行 Git 和 PowerShell 命令 
--	最新的 [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/download/0.9.4-June2015/azure-powershell.0.9.4.msi) 软件
--	基本了解以下知识：
-	-	[Azure 资源管理器](/documentation/articles/resource-group-overview)模板部署（另请参阅[通过可预测的方式在 Azure 中部署复杂应用程序](/documentation/articles/app-service-deploy-complex-application-predictably)）
+-	An Azure account
+-	A [GitHub](https://github.com/) account
+-	Git Shell (installed with [GitHub for Windows](https://windows.github.com/)) - this enables you to run both the Git and PowerShell commands in the same session 
+-	Latest [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/download/0.9.4-June2015/azure-powershell.0.9.4.msi) bits
+-	Basic understanding of the following:
+	-	[Azure Resource Manager](/documentation/articles/resource-group-overview) template deployment (also see [Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably))
 	-	[Git](http://git-scm.com/documentation)
 	-	[PowerShell](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)
 
-> [AZURE.NOTE]完成本教程需要有一个 Azure 帐户：
-> + 你可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial) - 获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web Apps）。
+> [AZURE.NOTE] You need an Azure account to complete this tutorial:
+> + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web Sites.
+> + You can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Your MSDN subscription gives you credits every month that you can use for paid Azure services.
 >
-> 如果你想要在注册帐户之前开始使用 Azure App Service，请转到[“试用 App Service”](https://tryappservice.azure.com/)，你可以通过该网站在 App Service 中创建一个生存期较短的入门站点。你不需要使用信用卡，也不需要做出承诺。
+> If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 
-## 设置生产环境 ##
+## Set up your production environment ##
 
->[AZURE.NOTE]本教程中使用的脚本自动从 GitHub 存储库配置连续发布。这需要你的 GitHub 凭据已存储在 Azure 中，否则，尝试配置 Web Apps 的源代码管理设置时，脚本化部署将会失败。
+>[AZURE.NOTE] The script used in this tutorial will automatically configure continuous publishing from your GitHub repository. This requires that your GitHub credentials are already stored in Azure, otherwise the scripted deployment will fail when attempting to configure source control settings for the web sites. 
 >
->若要在 Azure 中存储你的 GitHub 凭据，请在 [Azure 门户](https://manage.windowsazure.cn)中创建 Web 应用，并[配置 GitHub 部署](/documentation/articles/web-sites-publish-source-control#Step7)。您只需执行此操作一次。
+>To store your GitHub credentials in Azure, create a web site in the [Azure preview portal](https://manage.windowsazure.cn) and [configure GitHub deployment](/documentation/articles/web-sites-publish-source-control#Step7). You only need to do this once. 
 
-在典型的 DevOps 方案中，应用程序在 Azure 中实时运行，并且你可以通过连续发布对它进行更改。此方案将会提供你开发、测试和使用的模板来部署生产环境。本部分将介绍如何设置生产环境。
+In a typical DevOps scenario, you have an application that’s running live in Azure, and you want to make changes to it through continuous publishing. In this scenario, you have a template that you developed, tested, and used to deploy the production environment. You will set it up in this section.
 
-1.	创建 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 存储库的专属分叉。有关创建分叉的信息，请参阅[分叉存储库](https://help.github.com/articles/fork-a-repo/)。创建分叉后，可以在浏览器中查看它。
+1.	Create your own fork of the [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) repository. For information on creating your fork, see [Fork a Repo](https://help.github.com/articles/fork-a-repo/). Once your fork is created, you can see it in your browser.
  
 	![](./media/app-service-agile-software-development/production-1-private-repo.png)
 
-2.	打开 Git Shell 会话。如果你还没有 Git Shell，请立即安装 [GitHub for Windows](https://windows.github.com/)。
+2.	Open a Git Shell session. If you don't have Git Shell yet, install [GitHub for Windows](https://windows.github.com/) now.
 
-3.	通过执行以下命令创建分叉的本地复本：
+3.	Create a local clone of your fork by executing the following command:
 
 		git clone https://github.com/<your_fork>/ToDoApp.git 
 
-4.	创建本地复本后，请导航到 *&lt;repository_root>*\\ARMTemplates 并运行 deploy.ps1 脚本，如下所示：
+4.	Once you have your local clone, navigate to *&lt;repository_root>*\ARMTemplates, and run the deploy.ps1 script as follows:
 
 		.\deploy.ps1 –RepoUrl https://github.com/<your_fork>/todoapp.git
 
-4.	出现提示时，键入所需的用户名和密码来访问数据库。
+4.	When prompted, type in the desired username and password for database access.
 
-	你应会看到各种 Azure 资源的设置进度。部署完成后，脚本将在浏览器中启动应用程序，并发出友好的提示音。
+	You should see the provisioning progress of various Azure resources. When deployment completes, the script will launch the application in the browser and give you a friendly beep.
 
 	![](./media/app-service-agile-software-development/production-2-app-in-browser.png)
  
-	>[AZURE.TIP]查看 *&lt;repository_root>*\\ARMTemplates\\Deploy.ps1，以了解它如何生成具有唯一 ID 的资源。可以使用相同的方法来创建相同部署的复本，而不必担心资源名称冲突。
+	>[AZURE.TIP] Take a look at *&lt;repository_root>*\ARMTemplates\Deploy.ps1, to see how it generates resources with unique IDs. You can use the same approach to create clones of the same deployment without worrying about conflicting resource names.
  
-6.	返回 Git Shell 会话，运行：
+6.	Back in your Git Shell session, run:
 
 		.\swap –Name ToDoApp<unique_string>master
 
 	![](./media/app-service-agile-software-development/production-4-swap.png)
 
-7.	脚本完成后，请返回浏览到前端的地址 (http://ToDoApp*&lt;unique_string>*master.chinacloudsites.cn/)，以查看在生产环境中运行的应用程序。
+7.	When the script finishes, go back to browse to the frontend’s address (http://ToDoApp*&lt;unique_string>*master.chinacloudsites.cn/) to see the application running in production.
  
-5.	登录[ Azure 门户](https://manage.windowsazure.cn) 并查看创建的内容。
+5.	Log into the [Azure preview portal](https://manage.windowsazure.cn) and take a look at what’s created.
 
-	应该可以在相同的资源组中看到两个 Web 应用，其中一个的名称具有 `Api` 后缀。当你查看资源组视图时，还会看到 SQL Database 和服务器、App Service 计划以及 Web 应用的过渡槽。浏览不同的资源，并将它们与 *&lt;repository_root>*\\ARMTemplates\\ProdAndStage.json 进行比较，以查看它们在模板中的配置方式。
+	You should be able to see two web sites in the same resource group, one with the `Api` suffix in the name. If you look at the resource group view, you will also see the SQL Database and server, the App Service plan, and the staging slots for the web sites. Browse through the different resources and compare them with *&lt;repository_root>*\ARMTemplates\ProdAndStage.json to see how they are configured in the template.
 
 	![](./media/app-service-agile-software-development/production-3-resource-group-view.png)
 
-你现在已经设置了生产环境。接下来，将要开始更新应用程序。
+You have now set up the production environment. Next, you will kick off a new update to the application.
 
-## 创建开发和测试分支 ##
+## Create dev and test branches ##
 
-现在，你已在 Azure 的生产环境中创建了一个复杂应用程序，接下来，你要使用灵便方法来更新应用程序。在本部分中，你将要创建需要进行必要更新的开发和测试分支。
+Now that you have a complex application running in production in Azure, you will make an update to your application in accordance with agile methodology. In this section, you will create the dev and test branches that you will need to make the required updates.
 
-1.	首先创建测试环境。在 Git Shell 会话中，运行以下命令来创建名为 **NewUpdate** 的新分支的环境。 
+1.	Create the test environment first. In your Git Shell session, run the following commands to create the environment for a new branch called **NewUpdate**. 
 
 		git checkout -b NewUpdate
 		git push origin NewUpdate 
 		.\deploy.ps1 -TemplateFile .\Dev.json -RepoUrl https://github.com/<your_fork>/ToDoApp.git -Branch NewUpdate
 
-1.	出现提示时，键入所需的用户名和密码来访问数据库。
+1.	When prompted, type in the desired username and password for database access. 
 
-	部署完成后，脚本将在浏览器中启动应用程序，并发出友好的提示音。这时，你已创建了带有自身测试环境的新分支。请花点时间来了解有关此测试环境的一些要点：
+	When deployment completes, the script will launch the application in the browser and give you a friendly beep. And just like that, you now have a new branch with its own test environment. Take a moment to review a few things about this test environment:
 
-	-	你可以在任何 Azure 订阅中创建测试环境。这意味着，你可以分开管理生产环境和测试环境。
-	-	测试环境在 Azure 中实时运行。
-	-	测试环境类似于生产环境，差别在于过渡槽和缩放设置。因为这是 ProdandStage.json 与 Dev.json 之间的唯一差别，所以你可以得知这项信息。
-	-	你可以在其自身 App Service 计划与不同的价格层（例如**免费**）中管理测试环境。
-	-	删除这个测试环境就像删除资源组一样简单。[稍后](#delete)你将学习如何执行这项操作。
+	-	You can create it in any Azure subscription. That means the production environment can be managed separately from your test environment.
+	-	Your test environment is running live in Azure.
+	-	Your test environment is identical to the production environment, except for the staging slots and the scaling settings. You can know this because these are the only differences between ProdandStage.json and Dev.json.
+	-	You can manage your test environment in its own App Service plan, with a different price tier (such as **Free**).
+	-	Deleting this test environment will be as simple as deleting the resource group. You will find out how to do this [later](#delete).
 
-2.	运行以下命令，以继续创建开发分支：
+2.	Go on to create a dev branch by running the following commands:
 
 		git checkout -b Dev
 		git push origin Dev
 		.\deploy.ps1 -TemplateFile .\Dev.json -RepoUrl https://github.com/<your_fork>/ToDoApp.git -Branch Dev
 
-3.	出现提示时，键入所需的用户名和密码来访问数据库。
+3.	When prompted, type in the desired username and password for database access. 
 
-	请花点时间来了解有关此开发环境的一些要点：
+	Take a moment to review a few things about this dev environment: 
 
-	-	开发环境的配置与测试环境相同，因为它是使用相同模板部署的。
-	-	在开发人员自己的 Azure 订阅中，可以创建每个开发环境，但分开管理测试环境。
-	-	开发环境在 Azure 中实时运行。
-	-	删除开发环境就像删除资源组一样简单。[稍后](#delete)你将学习如何执行这项操作。
+	-	Your dev environment has a configuration identical to the test environment because it’s deployed using the same template.
+	-	Each dev environment can be created in the developer’s own Azure subscription, leaving the test environment to be separately managed.
+	-	Your dev environment is running live in Azure.
+	-	Deleting the dev environment is as simple as deleting the resource group. You will find out how to do this [later](#delete).
 
->[AZURE.NOTE]有多位开发人员处理新的更新时，只要执行以下操作，每一位都可以轻松创建分支和专用开发环境：
+>[AZURE.NOTE] When you have multiple developers working on the new update, each of them can easily create a branch and dedicated dev environment by doing the following:
 >
->1.	在 GitHub 中创建其在存储库中的专属分叉（请参阅[分叉存储库](https://help.github.com/articles/fork-a-repo/)）。
->2.	克隆其本地计算机上的分叉
->3.	运行相同的命令，以创建其自身的开发分支和环境。
+>1.	Create their own fork of the repository in GitHub (see [Fork a Repo](https://help.github.com/articles/fork-a-repo/)).
+>2.	Clone the fork on their local machine
+>3.	Run the same commands to create their own dev branch and environment.
 
-完成后，GitHub 分叉应有三个分支：
+When you’re done, your GitHub fork should have three branches:
 
 ![](./media/app-service-agile-software-development/test-1-github-view.png)
 
-三个不同的资源组中应该有六个 Web 应用（两个一组，共三组）：
+And you should have six web sites (three sets of two) in three separate resource groups:
 
 ![](./media/app-service-agile-software-development/test-2-all-webapps.png)
  
->[AZURE.NOTE]请注意，ProdandStage.json 将生产环境指定为使用**标准**定价层，这适合生产应用程序的缩放性。
+>[AZURE.NOTE] Note that ProdandStage.json specifies the production environment to use the **Standard** pricing tier, which is appropriate for scalability of the production application.
 
-## 构建和测试每项提交 ##
+## Build and test every commit ##
 
-模板文件 ProdAndStage.json 和 Dev.json 已指定源代码管理参数，默认情况下，将设置 Web 应用程序的连续发布。因此，GitHub 分支的每项提交都会触发从该分支自动部署到 Azure。现在，我们看看你的设置的运行情况。
+The template files ProdAndStage.json and Dev.json already specify the source control parameters, which by default sets up continuous publishing for the web site. Therefore, every commit to the GitHub branch triggers an automatic deployment to Azure from that branch. Let’s see how your setup works now.
 
-1.	确保你处于本地存储库的 Dev 分支中。为此，请在 Git Shell 中运行以下命令：
+1.	Make sure that you’re in the Dev branch of the local repository. To do this, run the following command in Git Shell:
 
 		git checkout Dev
 
-2.	通过将代码更改为使用 [Bootstrap](http://getbootstrap.com/components/) 列表，对应用的 UI 层进行简单更改。打开 *&lt;repository_root>*\\src\\MultiChannelToDo.Web\\app\\index.cshtml，并进行下面突出显示的更改：
+2.	Make a simple change to the app’s UI layer by changing the code to use [Bootstrap](http://getbootstrap.com/components/) lists. Open *&lt;repository_root>*\src\MultiChannelToDo.Web\index.cshtml and make the highlighted change below:
 
 	![](./media/app-service-agile-software-development/commit-1-changes.png)
 
-	>[AZURE.NOTE]如果无法看到上述图像：
+	>[AZURE.NOTE] If you can't read the image above: 
 	>
-	>- 在第 18 行，将 `check-list` 更改为 `list-group`。
-	>- 在第 19 行，将 `class="check-list-item"` 更改为 `class="list-group-item"`。
+	>- In line 18, change `check-list` to `list-group`.
+	>- In line 19, change `class="check-list-item"` to `class="list-group-item"`.
 
-3.	保存更改。返回到 Git Shell 并运行以下命令：
+3.	Save the change. Back in Git Shell, run the following commands:
 
 		cd <repository_root>
 		git add .
 		git commit -m "changed to bootstrap style"
 		git push origin Dev
  
-	这些 git 命令与另一个源代码管理系统（例如 TFS）中的“签入你的代码”类似。运行 `git push` 时，新的提交将触发自动将代码推送到 Azure，然后重建应用程序，以反映开发环境中的更改。
+	These git commands are similar to "checking in your code" in another source control system like TFS. When you run `git push`, the new commit triggers an automatic code push to Azure, which then rebuilds the application to reflect the change in the dev environment.
 
-4.	若要验证是否已将此代码推送到开发环境，请转到开发环境的 Web 应用边栏选项卡，并查看“部署”部分。你应该可以在这里看到最新提交消息。
+4.	To verify that this code push to your dev environment has occurred, go to your dev environment’s web site blade and look at the **Deployment** part. You should be able to see your latest commit message there.
 
 	![](./media/app-service-agile-software-development/commit-2-deployed.png)
 
-5.	在这里，单击“浏览”以查看 Azure 中实时应用程序中的新更改。
+5.	From there, click **Browse** to see the new change in the live application in Azure.
 
 	![](./media/app-service-agile-software-development/commit-3-webapp-in-browser.png)
 
-	这对应用程序而言是相当小的更改。不过，多次对复杂 Web 应用程序进行更改通常会产生不利和非预期的负面影响。如果能够轻松测试实时构建版本中的每个提交，便可以在客户看到这些问题之前找出问题。
+	This is a pretty minor change to the application. However, many times new changes to a complex web site has unintended and undesirable side effects. Being able to easily test every commit in live builds enables you to catch these issues before your customers see them.
 
-到目前为止，你应已认识到，作为 **NewUpdate** 项目的开发人员，如何轻松自行创建开发环境，然后构建每项提交并测试每个构建版本。
+By now, you should be comfortable with the realization that, as a developer on the **NewUpdate** project, you will be able to easily create a dev environment for yourself, then build every commit and test every build.
 
-## 将代码合并到测试环境 ##
+## Merge code into test environment ##
 
-准备好将代码从 Dev 分支推送到 NewUpdate 分支后，请执行标准的 git 过程：
+When you’re ready to push your code from Dev branch up to NewUpdate branch, it’s the standard git process:
 
-1.	在 GitHub 中，将 NewUpdate 的任何新提交（例如其他开发人员所创建的提交）合并到 Dev 分支。GitHub 上的任何新提交都会在开发环境中触发代码推送和构建。然后可以确保开发分支中的代码仍能与 NewUpdate 分支中的最新位一起运行。
+1.	Merge any new commits to NewUpdate into the Dev branch in GitHub, such as commits created by other developers. Any new commit on GitHub will trigger a code push and build in the dev environment. You can then make sure your code in Dev branch still works with the latest bits from NewUpdate branch.
 
-2.	在 GitHub 中，将所有新提交从 Dev 分支合并到 NewUpdate 分支。此操作将在测试环境中触发代码推送和构建。
+2.	Merge all your new commits from Dev branch into NewUpdate branch on GitHub. This action triggers a code push and build in the test environment. 
 
-请再次注意，因为连续部署已设置这些 git 分支，所以你不需要采取任何其他措施（例如运行集成构建）。你只需要使用 git 执行标准源代码管理措施，Azure 就会为你执行所有构建过程。
+Note again that because continuous deployment is already setup with these git branches, you don’t need to take any other action like running integration builds. You simply need to perform standard source control practices using git, and Azure will perform all the build processes for you.
 
-现在，请将你的代码推送到 **NewUpdate** 分支。在 Git Shell 中运行以下命令：
+Now, let’s push your code to **NewUpdate** branch. In Git Shell, run the following commands:
 
 	git checkout NewUpdate
 	git pull origin NewUpdate
 	git merge Dev
 	git push origin NewUpdate
 
-就这么简单！
+That’s it! 
 
-转到测试环境的 Web 应用边栏选项卡，以查看新提交是否已推送到测试环境（合并到 NewUpdate 分支）。然后，单击“浏览”查看样式更改是否在 Azure 中实时运行。
+Go to the web site blade for your test environment to see your new commit (merged into NewUpdate branch) now pushed to the test environment. Then, click **Browse** to see that the style change is now running live in Azure.
 
-## 将更新部署到生产环境 ##
+## Deploy update to production ##
 
-将代码推送到过渡和生产环境的过程类似于前面将代码所推送到测试环境。真的就这么简单。
+Pushing code to the staging and production environment should feel no different than what you’ve already done when you pushed code to the test environment. It's really that simple. 
 
-在 Git Shell 中运行以下命令：
+In Git Shell, run the following commands:
 
 	git checkout master
 	git pull origin master
 	git merge NewUpdate
 	git push origin master
 
-请记住，根据在 ProdandStage.json 中设置过渡和生产环境的方式，新代码将推送到“过渡”槽，并在该处运行。因此，如果你导航到过渡槽的 URL，则会看到新代码正在该处运行。为此，请在 Git Shell 中运行 `Show-AzureWebsite` cmdlet。
+Remember that based on the way the staging and production environment is setup in ProdandStage.json, your new code is pushed to the **Staging** slot and is running there. So if you navigate to the staging slot’s URL, you’ll see the new code running there. To do this, run the `Show-AzureWebsite` cmdlet in Git Shell.
 
 	Show-AzureWebsite -Name ToDoApp<unique_string>master -Slot Staging
  
-现在，在过渡槽中验证更新之后，唯一要做的就是将它交换到生产环境。在 Git Shell 中，只要运行以下命令：
+And now, after you’ve verified the update in the staging slot, the only thing left to do is to swap it into production. In Git Shell, just run the following commands:
 
 	cd <repository_root>\ARMTemplates
 	.\swap.ps1 -Name ToDoApp<unique_string>master
 
-祝贺你！ 你已成功地将新的更新发布到生产 Web 应用程序。不仅如此，完成的方式也只是轻松地创建开发和测试环境，以及构建和测试每项提交。这些是灵便软件开发的重要构建块。
+Congratulations! You’ve successfully published a new update to your production web site. What’s more is that you’ve just done it by easily creating dev and test environments, and building and testing every commit. These are crucial building blocks for agile software development.
 
 <a name="delete"></a>
-## 删除开发和测试环境 ##
+## Delete dev and test enviroments ##
 
-由于你特意将开发和测试环境构建为独立的资源组，因此可以很容易删除它们。若要删除你在本教程中创建的环境（GitHub 分支和 Azure 项目），只需在 Git Shell 中运行以下命令：
+Because you have purposely architected your dev and test environments to be self-contained resource groups, it is very easy to delete them. To delete the ones you created in this tutorial, both the GitHub branches and Azure artifacts, just run the following commands in Git Shell:
 
 	git branch -d Dev
 	git push origin :Dev
@@ -257,23 +262,21 @@
 	Remove-AzureResourceGroup -Name ToDoApp<unique_string>dev-group -Force -Verbose
 	Remove-AzureResourceGroup -Name ToDoApp<unique_string>newupdate-group -Force -Verbose
 
-## 摘要 ##
+## Summary ##
 
-对于许多想要采用 Azure 作为其应用程序平台的公司而言，灵便软件开发是必不可少的。在本教程中，你已学习如何轻松创建和删除生产环境的确切副本或近似副本，即使对于复杂应用程序也是一样。你还学习了如何利用此功能创建开发过程，以便在 Azure 中构建和测试每项提交。本教程旨在演示如何最恰当地将 Azure App Service 和 Azure 资源管理器配合使用，以创建提供灵便方法的 DevOps 解决方案。
+Agile software development is a must-have for many companies who want to adopt Azure as their application platform. In this tutorial, you have learned how to create and tear down exact replicas or near replicas of the production environment with ease, even for complex applications. You have also learned how to leverage this ability to create a development process that can build and test every single commit in Azure. This tutorial has hopefully shown you how you can best use Azure Websites and Azure Resource Manager together to create a DevOps solution that caters to agile methodologies. Next, you can build on this scenario by performing advanced DevOps techniques such as [testing in production](/documentation/articles/app-service-web-test-in-production-get-start). For a common testing-in-production scenario, see [Flighting deployment (beta testing) in Azure Websites](/documentation/articles/app-service-web-test-in-production-controlled-test-flight).
 
-## 更多资源 ##
+## More resources ##
 
--	[通过可预测的方式在 Azure 中部署复杂应用程序](/documentation/articles/app-service-deploy-complex-application-predictably)
--	[灵便开发实践：有关现代化开发周期的提示和技巧](http://channel9.msdn.com/Events/Ignite/2015/BRK3707)
--	[使用资源管理器模板为 Azure Web Apps 制定高级部署策略](http://channel9.msdn.com/Events/Build/2015/2-620)
--	[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
--	[JSONLint – JSON 验证程序](http://jsonlint.com/)
--	[ARMClient – 设置从 GitHub 到站点的发布](https://github.com/projectKudu/ARMClient/wiki/Setup-GitHub-publishing-to-Site)
--	[Git 分支 - 基本分支和合并](http://www.git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
--	[David Ebbo 的博客](http://blog.davidebbo.com/)
+-	[Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably)
+-	[Agile Development in Practice: Tips and Tricks for Modernized Development Cycle](http://channel9.msdn.com/Events/Ignite/2015/BRK3707)
+-	[Advanced deployment strategies for Azure Websites using Resource Manager templates](http://channel9.msdn.com/Events/Build/2015/2-620)
+-	[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
+-	[JSONLint - The JSON Validator](http://jsonlint.com/)
+-	[ARMClient – Set up GitHub publishing to site](https://github.com/projectKudu/ARMClient/wiki/Setup-GitHub-publishing-to-Site)
+-	[Git Branching – Basic Branching and Merging](http://www.git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+-	[David Ebbo’s Blog](http://blog.davidebbo.com/)
 -	[Azure PowerShell](/documentation/articles/powershell-install-configure)
--	[Azure 跨平台命令行工具](/documentation/articles/xplat-cli)
--	[在 Azure AD 中创建或编辑用户](https://msdn.microsoft.com/zh-cn/library/azure/hh967632.aspx#BKMK_1)
--	[项目 Kudu Wiki](https://github.com/projectkudu/kudu/wiki)
-
-<!---HONumber=66-->
+-	[Azure Cross-Platform Command-Line Tools](/documentation/articles/xplat-cli-install)
+-	[Create or edit users in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/hh967632.aspx#BKMK_1)
+-	[Project Kudu Wiki](https://github.com/projectkudu/kudu/wiki)

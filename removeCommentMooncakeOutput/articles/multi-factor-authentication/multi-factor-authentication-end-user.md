@@ -8,13 +8,9 @@
 	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+	ms.service="multi-factor-authentication"  
+	ms.date="11/19/2015" 
+	wacn.date=""/>
 
 
 
@@ -32,7 +28,7 @@ So the first thing you are going to need to do is complete the enrollment proces
 
 > [AZURE.NOTE]  Be aware that your IT department may disable one or more of the options above.  If this is the case, those options will not be available during the enrollment process.
 
-Now that you have decided on your verification method, it's time to enroll.  Use the [Setup Experience](multi-factor-authentication-end-user-first-time.md) link to get started with a walk through on the enrollment process.
+Now that you have decided on your verification method, it's time to enroll.  Use the [Setup Experience](/documentation/articles/multi-factor-authentication-end-user-first-time) link to get started with a walk through on the enrollment process.
 
 
 ## How to get going with multi-factor authentication
@@ -41,10 +37,10 @@ Select one of the topics below to get started.
 
 Topic|Description
 :------------- | :------------- | 
-[Setup Experience](multi-factor-authentication-end-user-first-time.md)|  Describes the process of setting up multi-factor authentication for the first time.
-[Sign-in experience](multi-factor-authentication-end-user-signin.md)|Shows what you can expect from signing in using the various methods such as phone or app.
-[Changing your settings](multi-factor-authentication-end-user-manage-settings.md)|Shows you how you can change your settings such as phone number or preferred enrollment method.
-[Help with app passwords](multi-factor-authentication-end-user-app-passwords.md)| Find information on creating and using app passwords.
-[Use the mobile app](multi-factor-authentication-azure-authenticator.md)|The Azure Authenticator app is available for [Windows Phone](http://www.windowsphone.com/en-us/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator), and [IOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458).
+[Setup Experience](/documentation/articles/multi-factor-authentication-end-user-first-time)|  Describes the process of setting up multi-factor authentication for the first time.
+[Sign-in experience](/documentation/articles/multi-factor-authentication-end-user-signin)|Shows what you can expect from signing in using the various methods such as phone or app.
+[Changing your settings](/documentation/articles/multi-factor-authentication-end-user-manage-settings)|Shows you how you can change your settings such as phone number or preferred enrollment method.
+[Help with app passwords](/documentation/articles/multi-factor-authentication-end-user-app-passwords)| Find information on creating and using app passwords.
+[Use the mobile app](/documentation/articles/multi-factor-authentication-azure-authenticator)|The Azure Authenticator app is available for [Windows Phone](http://www.windowsphone.com/zh-cn/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator), and [IOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458).
 
  

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Creating recovery plans" 
+	pageTitle="Create recovery plans | Windows Azure" 
 	description="Azure Site Recovery coordinates the replication, failover and recovery of virtual machines located on on-premises servers to Azure or a secondary datacenter." 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -9,10 +9,10 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="10/07/2015"
+	ms.date="12/14/2015"
 	wacn.date=""/>
 
-# Creating recovery plans
+# Create recovery plans
 
 The Site Recovery service contributes to a robust business continuity and disaster recovery (BCDR) solution that protects your on-premises physical servers and virtual machines by orchestrating and automating replication and failover to Azure, or to a secondary on-premises datacenter. For an introduction to Site Recovery deployment scenarios read the [Site Recovery Overview](/documentation/articles/site-recovery-overview).
 
@@ -20,7 +20,7 @@ The Site Recovery service contributes to a robust business continuity and disast
 
 The article provides information about creating and customizing recovery plans. 
 
-If you have any questions after reading this article post them on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
+If you have any questions after reading this article post them on the [Azure Recovery Services Forum](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=hypervrecovmgr).
 
 ## Overview
 
@@ -37,9 +37,9 @@ Recovery plans are displayed on the **Recovery Plans** in the Site Recovery port
 
 The way in which you create a recovery plan depends on your Site Recovery deployment.
 
-- **Hyper-V replication (VMM)**—If you’re replicating from a VMM site to a secondary on-premises site or to Azure using Hyper-V replication you add protected Hyper-V virtual machines from a VMM cloud to a recovery plan.
+- **Hyper-V replication (VMM)**—If you're replicating from a VMM site to a secondary on-premises site or to Azure using Hyper-V replication you add protected Hyper-V virtual machines from a VMM cloud to a recovery plan.
 - **Hyper-V replication (Hyper-V site)**—If you're replicating from a Hyper-V site (without a VMM server) to Azure you add protected Hyper-V virtual machines from a protection group to a recovery plan.
-- **SAN replication**—If you’re replicating to a secondary on-premises site using SAN replication you add a replication group that contains virtual machines to the recovery plan. You select a replication group rather than specific virtual machines because all virtual machines in a replication group must fail over together (failover occurs at the storage layer first.
+- **SAN replication**—If you're replicating to a secondary on-premises site using SAN replication you add a replication group that contains virtual machines to the recovery plan. You select a replication group rather than specific virtual machines because all virtual machines in a replication group must fail over together (failover occurs at the storage layer first.
 - **VMware replication**—If you're replicating VMware virtual machines to Azure you add replication groups that contain virtual machines to a recovery plan.
 
 Create a recovery plan as follows:
@@ -90,7 +90,7 @@ Note the following before you start:
 	- Open the 64-bit Windows PowerShell console using elevated privileges.
 	- Type: **Set-executionpolicy bypass**. [Get more details](https://technet.microsoft.com/zh-cn/library/ee176961.aspx).
 - Ensure that you use try-catch blocks, so that the exceptions are handled gracefully. If there is an exception in the script it stops running and the task shows as failed.  If an error does occur, any remaining part of the script won't run. If this occurs when you are running an unplanned failover, the recovery plan will continue. If this occurs when you are running a planned failover, the recovery plan will stop. If this occurs, fix the script, make sure it runs as expected, and then run the recovery plan again.
-- The Write-Host command doesn’t work in a recovery plan script, and the script will fail. If you want to create output, create a proxy script that in turn runs your main script, and ensure that all output is piped out using the >> command.
+- The Write-Host command doesn't work in a recovery plan script, and the script will fail. If you want to create output, create a proxy script that in turn runs your main script, and ensure that all output is piped out using the >> command.
 - The script times out if it does not return within 600 seconds.
 - If anything is written out to STDERR, the script will be classified as failed. This information will be displayed in the script execution details.
 

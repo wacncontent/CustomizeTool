@@ -9,9 +9,9 @@
    tags=""/>
 
 <tags
-	ms.service="best-practice"
-	ms.date="05/13/2015"
-	wacn.date=""/>
+   ms.service="best-practice"
+   ms.date="12/17/2015"
+   wacn.date=""/>
 
 # API implementation guidance
 
@@ -141,9 +141,9 @@ In a service implemented by using the ASP.NET Web API, each request is routed to
 
 - **Consider the benefits and tradeoffs of placing the API in a subdomain**.
 
-	By default, the ASP.NET web API organizes APIs into the _/api_ directory in a domain, such as _http://www.adventure-works.com/api/orders_. This directory resides in the same domain as any other services exposed by the same host. It may be beneficial to split the web API out into its own subdomain running on a separate host, with URIs such as _http://api.adventure-works.com/orders_. This separation enables you to partition and scale the web API more effectively without affecting any other web applications or services running in the _www.adventure-works.com_ domain.
+	By default, the ASP.NET web API organizes APIs into the _/api_ directory in a domain, such as _http://www.adventure-works.com/api/orders_. This directory resides in the same domain as any other services exposed by the same host. It may be beneficial to split the web API out into its own subdomain running on a separate host, with URIs such as _http://api.adventure-works.com/orders_. This separation enables you to partition and scale the web API more effectively without affecting any other web sites or services running in the _www.adventure-works.com_ domain.
 
-	However, placing a web API in a different subdomain can also lead to security concerns. Any web applications or services hosted at _www.adventure-works.com_ that invoke a web API running elsewhere may violate the same-origin policy of many web browsers. In this situation, it will be necessary to enable cross-origin resource sharing (CORS) between the hosts. For more information, see the API Security Guidance document.
+	However, placing a web API in a different subdomain can also lead to security concerns. Any web sites or services hosted at _www.adventure-works.com_ that invoke a web API running elsewhere may violate the same-origin policy of many web browsers. In this situation, it will be necessary to enable cross-origin resource sharing (CORS) between the hosts. For more information, see the API Security Guidance document.
 
 ## Considerations for processing requests
 
@@ -153,7 +153,7 @@ Once a request from a client application has been successfully routed to a metho
 
 	The code that implements these requests should not impose any side-effects. The same request repeated over the same resource should result in the same state. For example, sending multiple DELETE requests to the same URI should have the same effect, although the HTTP status code in the response messages may be different (the first DELETE request might return status code 204 (No Content) while a subsequent DELETE request might return statis code 404 (Not Found)).
 
-> [AZURE.NOTE] The article [Idempotency Patterns](http://blog.jonathanoliver.com/idempotency-patterns/) on Jonathan Oliver’s blog provides an overview of idempotency and how it relates to data management operations.
+> [AZURE.NOTE] The article [Idempotency Patterns](http://blog.jonathanoliver.com/idempotency-patterns/) on Jonathan Oliver's blog provides an overview of idempotency and how it relates to data management operations.
 
 - **POST actions that create new resources should do so without unrelated side-effects**.
 
@@ -243,26 +243,26 @@ Once a request from a client application has been successfully routed to a metho
 	...
 	Content-Length: ...
 	{"CustomerID":2,"CustomerName":"Bert","Links":[
-	  {"Relationship":"self",
-	   "HRef":"http://adventure-works.com/customers/2",
-	   "Action":"GET",
-	   "LinkedResourceMIMETypes":["text/xml","application/json"]},
-	  {"Relationship":"self",
-	   "HRef":"http://adventure-works.com/customers/2",
-	   "Action":"PUT",
-	   "LinkedResourceMIMETypes":["application/x-www-form-urlencoded"]},
-	  {"Relationship":"self",
-	   "HRef":"http://adventure-works.com/customers/2",
-	   "Action":"DELETE",
-	   "LinkedResourceMIMETypes":[]},
-	  {"Relationship":"orders",
-	   "HRef":"http://adventure-works.com/customers/2/orders",
-	   "Action":"GET",
-	   "LinkedResourceMIMETypes":["text/xml","application/json"]},
-	  {"Relationship":"orders",
-	   "HRef":"http://adventure-works.com/customers/2/orders",
-	   "Action":"POST",
-	   "LinkedResourceMIMETypes":["application/x-www-form-urlencoded"]}
+	  {"rel":"self",
+	   "href":"http://adventure-works.com/customers/2",
+	   "action":"GET",
+	   "types":["text/xml","application/json"]},
+	  {"rel":"self",
+	   "href":"http://adventure-works.com/customers/2",
+	   "action":"PUT",
+	   "types":["application/x-www-form-urlencoded"]},
+	  {"rel":"self",
+	   "href":"http://adventure-works.com/customers/2",
+	   "action":"DELETE",
+	   "types":[]},
+	  {"rel":"orders",
+	   "href":"http://adventure-works.com/customers/2/orders",
+	   "action":"GET",
+	   "types":["text/xml","application/json"]},
+	  {"rel":"orders",
+	   "href":"http://adventure-works.com/customers/2/orders",
+	   "action":"POST",
+	   "types":["application/x-www-form-urlencoded"]}
 	]}
 	```
 
@@ -279,10 +279,10 @@ Once a request from a client application has been successfully routed to a metho
 
 	public class Link
 	{
-    	public string Relationship { get; set; }
-    	public string HRef { get; set; }
+    	public string Rel { get; set; }
+    	public string Href { get; set; }
     	public string Action { get; set; }
-    	public string [] LinkedResourceMIMETypes { get; set; }
+    	public string [] Types { get; set; }
 	}
 	```
 
@@ -290,11 +290,11 @@ Once a request from a client application has been successfully routed to a metho
 
 	- The relationship between the object being returned and the object described by the link. In this case "self" indicates that the link is a reference back to the object itself (similar to a `this` pointer in many object-oriented languages), and "orders" is the name of a collection containing the related order information.
 
-	- The hyperlink (`HRef`) for the object being described by the link in the form of a URI.
+	- The hyperlink (`Href`) for the object being described by the link in the form of a URI.
 
 	- The type of HTTP request (`Action`) that can be sent to this URI.
 
-	- The format of any data (`LinkedResourceMIMETypes`) that should be provided in the HTTP request or that can be returned in the response, depending on the type of the request.
+	- The format of any data (`Types`) that should be provided in the HTTP request or that can be returned in the response, depending on the type of the request.
 
 	The HATEOAS links shown in the example HTTP response indicate that a client application can perform the following operations:
 
@@ -402,7 +402,7 @@ In a distributed environment such as that involving a web server and client appl
 	Cache-Control: max-age=600, private
 	Content-Type: text/json; charset=utf-8
 	Content-Length: ...
-	{"OrderID":2,"ProductID":4,"Quantity":2,"OrderValue":10.00}
+	{"orderID":2,"productID":4,"quantity":2,"orderValue":10.00}
 	```
 
 	In this example, the Cache-Control header specifies that the data returned should be expired after 600 seconds, and is only suitable for a single client and must not be stored in a shared cache used by other clients (it is _private_). The Cache-Control header could specify _public_ rather than _private_ in which case the data can be stored in a shared cache, or it could specify _no-store_ in which case the data must **not** be cached by the client. The following code example shows how to construct a Cache-Control header in a response message:
@@ -510,7 +510,7 @@ In a distributed environment such as that involving a web server and client appl
 	Content-Type: text/json; charset=utf-8
 	ETag: "2147483648"
 	Content-Length: ...
-	{"OrderID":2,"ProductID":4,"Quantity":2,"OrderValue":10.00}
+	{"orderID":2,"productID":4,"quantity":2,"orderValue":10.00}
 	```
 
 	> [AZURE.TIP] For security reasons, do not allow sensitive data or data returned over an authenticated (HTTPS) connection to be cached.
@@ -642,7 +642,7 @@ In a distributed environment such as that involving a web server and client appl
 	...
 	Date: Fri, 12 Sep 2014 09:18:37 GMT
 	Content-Length: ...
-	ProductID=3&Quantity=5&OrderValue=250
+	productID=3&quantity=5&orderValue=250
 	```
 
 	- The PUT operation in the web API obtains the current ETag for the requested data (order 1 in the above example), and compares it to the value in the If-Match header.
@@ -885,7 +885,7 @@ There may be occasions when a client application needs to issue requests that se
 
 	A client application that is about to send a large amount of data to a server may determine first whether the server is actually willing to accept the request. Prior to sending the data, the client application can submit an HTTP request with an Expect: 100-Continue header, a Content-Length header that indicates the size of the data, but an empty message body. If the server is willing to handle the request, it should respond with a message that specifies the HTTP status 100 (Continue). The client application can then proceed and send the complete request including the data in the message body.
 
-	If you are hosting a service by using IIS, the HTTP.sys driver automatically detects and handles Expect: 100-Continue headers before passing requests to your web application. This means that you are unlikely to see these headers in your application code, and you can assume that IIS has already filtered any messages that it deems to be unfit or too large.
+	If you are hosting a service by using IIS, the HTTP.sys driver automatically detects and handles Expect: 100-Continue headers before passing requests to your web site. This means that you are unlikely to see these headers in your application code, and you can assume that IIS has already filtered any messages that it deems to be unfit or too large.
 
 	If you are building client applications by using the .NET Framework, then all POST and PUT messages will first send messages with Expect: 100-Continue headers by default. As with the server-side, the process is handled transparently by the .NET Framework. However, this process results in each POST and PUT request causing 2 round-trips to the server, even for small requests. If your application is not sending requests with large amounts of data, you can disable this feature by using the `ServicePointManager` class to create `ServicePoint` objects in the client application. A `ServicePoint` object handles the connections that the client makes to a server based on the scheme and host fragments of URIs that identify resources on the server. You can then set the `Expect100Continue` property of the `ServicePoint` object to false. All subsequent POST and PUT requests made by the client through a URI that matches the scheme and host fragments of the `ServicePoint` object will be sent without Expect: 100-Continue headers. The following code shows how to configure a `ServicePoint` object that configures all requests sent to URIs with a scheme of `http` and a host of `www.contoso.com`.
 
@@ -959,7 +959,7 @@ The same web API might be utilized by many client applications running anywhere 
 
 	- Using the Comet model to retain a persistent network connection between the client and the server hosting the web API, and using this connection to push messages from the server back to the client. The MSDN magazine article [Building a Simple Comet Application in the Microsoft .NET Framework](https://msdn.microsoft.com/magazine/jj891053.aspx) describes an example solution.
 
-	- Using SignalR to push data in real-time from the web server to the client over a persistent network connection. SignalR is available for ASP.NET web applications as a NuGet package. You can find more information on the [ASP.NET SignalR](http://signalr.net/) website.
+	- Using SignalR to push data in real-time from the web server to the client over a persistent network connection. SignalR is available for ASP.NET web sites as a NuGet package. You can find more information on the [ASP.NET SignalR](http://signalr.net/) website.
 
 	> [AZURE.NOTE] Comet and SignalR both utilize persistent network connections between the web server and the client application. This can affect scalability as a large number of clients may require an equally large number of concurrent connections.
 
@@ -1023,7 +1023,7 @@ The nature of a web API brings its own additional requirements to verify that it
 	- If the client sends a request that successfully deletes a resource, the status code should be 204 (No Content).
 	- If the client sends a request that creates a new resource, the status code should be 201 (Created)
 
-Watch out for unexpected response status codes in the 5xx range. These messages are usually reported by the host server to indicate that it was unable to fulfil a valid request.
+Watch out for unexpected response status codes in the 5xx range. These messages are usually reported by the host server to indicate that it was unable to fulfill a valid request.
 
 - Test the different request header combinations that a client application can specify and ensure that the web API returns the expected information in response messages.
 
@@ -1057,7 +1057,7 @@ Azure provides the [API Management Service](/documentation/services/api-manageme
 
 You can find full details describing how to perform these tasks on the [API Management](/home/features/api-management/) page on the Microsoft website. The Azure API Management Service also provides its own REST interface, enabling you to build a custom interface for simplifying the process of configuring a web API. For more information, visit the [Azure API Management REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn776326.aspx) page on the Microsoft website.
 
-> [AZURE.TIP] Azure provides the Azure Traffic Manager which enables you to implement failover and load-balancing, and reduce latency across multiple instances of a web site hosted in different geographic locations. You can use Azure Traffic Manager in conjunction with the API Management Service; the API Management Service can route requests to instances of a web site through Azure Traffic Manager.  For more information, visit the [About Traffic Manager Load Balancing Methods](/documentation/articles/traffic-manager-load-balancing-methods) page on the Microsoft website.
+> [AZURE.TIP] Azure provides the Azure Traffic Manager which enables you to implement failover and load-balancing, and reduce latency across multiple instances of a web site hosted in different geographic locations. You can use Azure Traffic Manager in conjunction with the API Management Service; the API Management Service can route requests to instances of a web site through Azure Traffic Manager.  For more information, visit the [About Traffic Manager Load Balancing Methods](https://msdn.microsoft.com/zh-cn/library/azure/dn339010.aspx) page on the Microsoft website.
 
 > In this structure, if you are using custom DNS names for your web sites, you should configure the appropriate CNAME record for each web site to point to the DNS name of the Azure Traffic Manager web site.
 
@@ -1101,7 +1101,7 @@ If you have implemented your web API by using the ASP.NET Web API template (eith
 
 - The number of sessions initiated by different browsers and user agents.
 
-- The most frequently viewed pages (primarily useful for web applications rather than web APIs).
+- The most frequently viewed pages (primarily useful for web sites rather than web APIs).
 
 - The different user roles accessing the web API.
 
@@ -1135,7 +1135,7 @@ You can use this information to determine whether a particular web API or operat
 - The [Basic Tutorial](http://www.odata.org/getting-started/basic-tutorial/) page on the OData website provides an introduction to the features of the OData protocol.
 - The [ASP.NET Web API OData](http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api) page on the Microsoft website contains examples and further information on implementing an OData web API by using ASP.NET.
 - The page [Introducing Batch Support in Web API and Web API OData](http://blogs.msdn.com/b/webdev/archive/2013/11/01/introducing-batch-support-in-web-api-and-web-api-odata.aspx) on the Microsoft website describes how to implement batch operations in a web API by using OData.
-- The article [Idempotency Patterns](http://blog.jonathanoliver.com/idempotency-patterns/) on Jonathan Oliver’s blog provides an overview of idempotency and how it relates to data management operations.
+- The article [Idempotency Patterns](http://blog.jonathanoliver.com/idempotency-patterns/) on Jonathan Oliver's blog provides an overview of idempotency and how it relates to data management operations.
 - The [Status Code Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) page on the W3C website contains a full list of HTTP status codes and their descriptions.
 - For detailed information on handling HTTP exceptions with the ASP.NET Web API, visit the [Exception Handling in ASP.NET Web API](http://www.asp.net/web-api/overview/error-handling/exception-handling) page on the Microsoft website.
 - The article [Web API Global Error Handling](http://www.asp.net/web-api/overview/error-handling/web-api-global-error-handling) on the Microsoft website describes how to implement a global error handling and logging strategy for a web API.
@@ -1143,7 +1143,7 @@ You can use this information to determine whether a particular web API or operat
 - The page [Azure Notification Hubs Notify Users](/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users) on the Microsoft website shows how you can use an Azure Notification Hub to push asynchronous responses to client applications.
 - The [API Management](/home/features/api-management/) page on the Microsoft website describes how to publish a product that provides controlled and secure access to a web API.
 - The [Azure API Management REST API Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn776326.aspx) page on the Microsoft website describes how to use the API Management REST API to build custom management applications.
-- The [About Traffic Manager Load Balancing Methods](/documentation/articles/traffic-manager-load-balancing-methods) page on the Microsoft website summarizes how Azure Traffic Manager can be used to load-balance requests across multiple instances of a website hosting a web API.
+- The [About Traffic Manager Load Balancing Methods](https://msdn.microsoft.com/zh-cn/library/azure/dn339010.aspx) page on the Microsoft website summarizes how Azure Traffic Manager can be used to load-balance requests across multiple instances of a website hosting a web API.
 - The [Application Insights - Start monitoring your app's health and usage](/documentation/articles/app-insights-start-monitoring-app-health-usage) page on the Microsoft website provides detailed information on installing and configuring Application Insights in an ASP.NET Web API project.
 - The page [Verifying Code by Using Unit Tests](https://msdn.microsoft.com/zh-cn/library/dd264975.aspx) on the Microsoft website provides detailed information on creating and managing unit tests by using Visual Studio.
 - The page [Run performance tests on an application before a release](https://msdn.microsoft.com/zh-cn/library/dn250793.aspx) on the Microsoft website describes how to use Visual Studio Ultimate to create a web performance and load test project.

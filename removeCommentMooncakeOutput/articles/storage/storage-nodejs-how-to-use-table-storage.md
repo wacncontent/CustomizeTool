@@ -1,15 +1,15 @@
-<properties
-	pageTitle="How to use Azure Table storage from Node.js | Windows Azure"
-	description="Learn how to use Azure Table storage. Code samples are written using the Node.js API."
-	services="storage"
-	documentationCenter="nodejs"
-	authors="MikeWasson"
-	manager="wpickett"
+<properties 
+	pageTitle="How to use Table storage from Node.js | Windows Azure" 
+	description="Learn how to use Azure table storage. Code samples are written using the Node.js API." 
+	services="storage" 
+	documentationCenter="nodejs" 
+	authors="MikeWasson" 
+	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="storage"
-	ms.date="09/01/2015"
+<tags 
+	ms.service="storage" 
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 
@@ -56,7 +56,7 @@ communicate with the storage REST services.
 		+-- xml2js@0.2.7 (sax@0.5.2)
 		+-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
 
-3.  You can manually run the **ls** command to verify that a **node\_modules** folder was created. Inside that folder you will find the **azure-storage** package, which contains the libraries you need to access storage.
+3.  You can manually run the **ls** command to verify that a **node_modules** folder was created. Inside that folder you will find the **azure-storage** package, which contains the libraries you need to access storage.
 
 ### Import the package
 
@@ -66,9 +66,9 @@ Add the following code to the top of the **server.js** file in your application:
 
 ## Set up an Azure Storage connection
 
-The azure module will read the environment variables AZURE\_STORAGE\_ACCOUNT and AZURE\_STORAGE\_ACCESS\_KEY, or AZURE\_STORAGE\_CONNECTION\_STRING for information required to connect to your Azure storage account. If these environment variables are not set, you must specify the account information when calling **TableService**.
+The azure module will read the environment variables AZURE_STORAGE_ACCOUNT and AZURE_STORAGE_ACCESS_KEY, or AZURE_STORAGE_CONNECTION_STRING for information required to connect to your Azure storage account. If these environment variables are not set, you must specify the account information when calling **TableService**.
 
-For an example of setting the environment variables in the Azure Management Portal for an Azure Website, see [Node.js web application with Storage]
+For an example of setting the environment variables in the management portal for an Azure Website, see [Node.js Web Site with Storage]
 
 ## Create a table
 
@@ -111,7 +111,7 @@ To add an entity, first create an object that defines your entity properties. Al
 
 * **RowKey** - uniquely identifies the entity within the partition
 
-Both **PartitionKey** and **RowKey** must be string values. For more information, see [Understanding the Table service data model](http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx).
+Both **PartitionKey** and **RowKey** must be string values. For more information, see [Understanding the Table Service data model](http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx).
 
 The following is an example of defining an entity. Note that **dueDate** is defined as a type of **Edm.DateTime**. Specifying the type is optional, and types will be inferred if not specified.
 
@@ -431,20 +431,18 @@ Once the ACL has been set, you can then create a SAS based on the ID for a polic
 
 For more information, see the following resources.
 
--   MSDN Reference: [Storing and accessing data in Azure][].
 -   [Azure Storage Team Blog][].
 -   [Azure Storage SDK for Node][] repository on GitHub.
 -   [Node.js Developer Center](/develop/nodejs/)
 
   [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
   [OData.org]: http://www.odata.org/
-  [Using the REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx
+  [using the REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx
   [Azure Management Portal]: http://manage.windowsazure.cn
 
   [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
-  [Storing and accessing data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
-  [Website with WebMatrix]: /documentation/articles/web-sites-nodejs-use-webmatrix
+  [ Website with WebMatrix]: /documentation/articles/web-sites-nodejs-use-webmatrix
   [Node.js Cloud Service with Storage]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
-  [Node.js web application with Storage]: /documentation/articles/storage-nodejs-use-table-storage-web-site
-  [Create and deploy a Node.js application to an Azure website]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+  [Node.js Web Site with Storage]: /documentation/articles/storage-nodejs-use-table-storage-web-site
+  [Create and deploy a Node.js application to an Azure  Website]: /documentation/articles/web-sites-nodejs-develop-deploy-mac

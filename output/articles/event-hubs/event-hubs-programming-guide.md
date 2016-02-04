@@ -168,7 +168,7 @@ The [EventProcessorHost](https://msdn.microsoft.com/zh-cn/library/azure/microsof
 
 ## Publisher revocation
 
-In addition to the advanced runtime features of [EventProcessorHost](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx), Event Hubs enables publisher revocation in order to block specific publishers from sending event to an Event Hub. These features are particularly useful if a publisher’s token has been compromised, or a software update is causing them to behave inappropriately. In these situations, the publisher’s identity, which is part of their SAS token, can be blocked from publishing events.
+In addition to the advanced runtime features of [EventProcessorHost](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx), Event Hubs enables publisher revocation in order to block specific publishers from sending event to an Event Hub. These features are particularly useful if a publisher's token has been compromised, or a software update is causing them to behave inappropriately. In these situations, the publisher's identity, which is part of their SAS token, can be blocked from publishing events.
 
 For more information about publisher revocation and how to send to Event Hubs as a publisher, see the [Service Bus Event Hubs Large Scale Secure Publishing](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-99ce67ab) sample.
 

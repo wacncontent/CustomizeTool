@@ -10,12 +10,12 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/03/2015"
+	ms.date="11/09/2015"
 	wacn.date=""/>
 
 # Develop Script Action scripts for HDInsight
 
-Learn how to write Script Action scripts for HDInsight. For information on using Script Action scripts, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster). For the same article written for the HDInsight cluster on Linux operating system, see [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux).
+Learn how to write Script Action scripts for HDInsight. For information on using Script Action scripts, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1). For the same article written for the HDInsight cluster on Linux operating system, see [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux).
 
 Script Action can be used to install additional software running on a Hadoop cluster or to change the configuration of applications installed on a cluster. Script actions are scripts that run on the cluster nodes when HDInsight clusters are deployed, and they are executed once nodes in the cluster complete HDInsight configuration. A script action is executed under system admin account privileges and provides full access rights to the cluster nodes. Each cluster can be provided with a list of script actions to be executed in the order in which they are specified. 
 
@@ -85,10 +85,10 @@ Name | Script
 ----- | -----
 **Install Spark** | https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1. See [Install and use Spark on HDInsight clusters][hdinsight-install-spark].
 **Install R** | https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1. See [Install and use R on HDInsight clusters][hdinsight-r-scripts].
-**Install Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1. See [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install).
+**Install Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1. See [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1).
 - **Install Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1. See [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install).
 
-Script Action can be deployed from the Azure preview portal, Azure PowerShell or by using the HDInsight .NET SDK.  For more information, see [Customize HDInsight clusters using Script Action][hdinsight-cluster-customize].
+Script Action can be deployed from the Azure Management Portal, Azure PowerShell or by using the HDInsight .NET SDK.  For more information, see [Customize HDInsight clusters using Script Action][hdinsight-cluster-customize].
 
 > [AZURE.NOTE] The sample scripts work only with HDInsight cluster version 3.1 or above. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning).
 
@@ -182,12 +182,12 @@ This section provides guidance on implementing some of the common usage patterns
 
 ### Configure environment variables
 
-Often in script action development, you will feel the need to set environment variables. For instance, a most likely scenario is when you download a binary from an external site, install it on the cluster, and add the location of where it is installed to your ‘PATH’ environment variable. The following snippet shows you how to set environment variables in the custom script.
+Often in script action development, you will feel the need to set environment variables. For instance, a most likely scenario is when you download a binary from an external site, install it on the cluster, and add the location of where it is installed to your 'PATH' environment variable. The following snippet shows you how to set environment variables in the custom script.
 
 	Write-HDILog "Starting environment variable setting at: $(Get-Date)";
 	[Environment]::SetEnvironmentVariable('MDS_RUNNER_CUSTOM_CLUSTER', 'true', 'Machine');
 
-This statement sets the environment variable **MDS_RUNNER_CUSTOM_CLUSTER** to the value 'true' and also sets the scope of this variable to be machine-wide. At times it is important that environment variables are set at the appropriate scope – machine or user. Refer [here][1] for more information on setting environment variables.
+This statement sets the environment variable **MDS_RUNNER_CUSTOM_CLUSTER** to the value 'true' and also sets the scope of this variable to be machine-wide. At times it is important that environment variables are set at the appropriate scope - machine or user. Refer [here][1] for more information on setting environment variables.
 
 ### Access to locations where the custom scripts are stored
 
@@ -195,11 +195,11 @@ Scripts used to customize a cluster needs to either be in the default storage ac
 
 	Save-HDIFile -SrcUri 'https://somestorageaccount.blob.core.chinacloudapi.cn/somecontainer/some-file.jar' -DestFile 'C:\apps\dist\hadoop-2.4.0.2.1.9.0-2196\share\hadoop\mapreduce\some-file.jar'
 
-In this example, you must ensure that the container 'somecontainer' in storage account 'somestorageaccount' is publicly accessible. Otherwise, the script will throw a ‘Not Found’ exception and fail.
+In this example, you must ensure that the container 'somecontainer' in storage account 'somestorageaccount' is publicly accessible. Otherwise, the script will throw a 'Not Found' exception and fail.
 
-### Pass parameters to the Add-AzureHDInsightScriptAction cmdlet
+### Pass parameters to the Add-AzureRmHDInsightScriptAction cmdlet
 
-To pass multiple parameters to the Add-AzureHDInsightScriptAction cmdlet, you need to format the string value to contain all parameters for the script. For example:
+To pass multiple parameters to the Add-AzureRmHDInsightScriptAction cmdlet, you need to format the string value to contain all parameters for the script. For example:
 
 	"-CertifcateUri wasb:///abc.pfx -CertificatePassword 123456 -InstallFolderName MyFolder"
  
@@ -249,11 +249,11 @@ A straight-forward way to test a custom script before using it in the HDInsight 
 
 This section outlines the procedure for using the HDInsight Emulator locally for testing purposes, but the procedure for using a VM is similar.
 
-**Install the HDInsight Emulator** - To run Script Action locally, you must have the HDInsight Emulator installed. For instructions on how to install it, see [Get started with the HDInsight Emulator](/documentation/articles/hdinsight-get-started-emulator).
+**Install the HDInsight Emulator** - To run Script Action locally, you must have the HDInsight Emulator installed. For instructions on how to install it, see [Get started with the HDInsight Emulator](/documentation/articles/hdinsight-hadoop-emulator-get-started).
 
 **Set the execution policy for Azure PowerShell** - Open Azure PowerShell and run (as administrator) the following command to set the execution policy to *LocalMachine* and to be *Unrestricted*:
 
-	Set-ExecutionPolicy Unrestricted –Scope LocalMachine
+	Set-ExecutionPolicy Unrestricted -Scope LocalMachine
 
 We need this policy to be unrestricted as scripts are not signed.
 
@@ -338,14 +338,14 @@ In the event that an execution failure occurs, the output describing it will als
 - [Customize HDInsight clusters using Script Action][hdinsight-cluster-customize]
 - [Install and use Spark on HDInsight clusters][hdinsight-install-spark]
 - [Install and use R on HDInsight clusters][hdinsight-r-scripts]
-- [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install).
+- [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1).
 - [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install).
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
-[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
-[hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[hdinsight-provision]: ../hdinsight-provision-clusters-v1/
+[hdinsight-cluster-customize]: ../hdinsight-hadoop-customize-cluster-v1
+[hdinsight-install-spark]: ../hdinsight-hadoop-spark-install/
+[hdinsight-r-scripts]: ../hdinsight-hadoop-r-scripts/
+[powershell-install-configure]: ../install-configure-powershell/
 
 <!--Reference links in article-->
 [1]: https://msdn.microsoft.com/zh-cn/library/96xafkes(v=vs.110).aspx

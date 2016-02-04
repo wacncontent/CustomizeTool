@@ -4,16 +4,16 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="rkarlin"
-	manager="StevenPo"
+	manager="msStevenPo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/12/2015"
+	ms.date="08/09/2015"
 	wacn.date=""/>
 
 # Working with conditional access
-> [AZURE.NOTE] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](/documentation/articles/active-directory-editions).
+> [AZURE.NOTE] Application Proxy is a feature that is available only if you upgraded to the Premium or Basic edition of Azure Active Directory. For more information, see [Azure Active Directory editions](https://msdn.microsoft.com/zh-cn/library/azure/dn532272.aspx).
 
 You can now enable access rules to grant conditional access to users and groups accessing applications published using Application Proxy. This enables you to:
 - Require mutli-factor authentication per application
@@ -30,7 +30,7 @@ Access rules are evaluated when a user accesses a federated application that use
 - A federated or managed Azure Active Directory tenant 
 - Federated tenants require that multi-factor authentication (MFA) be enabled 
 
-![](./media/active-directory-application-proxy-conditional-access/application-proxy-conditional-access.png)
+![](http://i.imgur.com/rv28onQ.png)
 
 ## Configure per-application multi-factor authentication
 1. Sign in as an administrator in the Azure Management Portal.
@@ -39,30 +39,16 @@ Access rules are evaluated when a user accesses a federated application that use
 4. Enable the rule by selecting **Enable Access Rules** to **On**.
 5. Specify the users and groups to whom the rules will apply. Use the **Add Group** button  to select one or more groups to which the access rule will apply. This dialog can also be used to remove selected groups.  When the rules are selected to apply to groups, the access rules will only be enforced for users that belong to one of the specified security groups. <br> To explicitly exclude security groups from the rule, check **Except**  and specify one or more groups. Users who are members of a group in the Except list will not be required to perform multi-factor authentication. <br>If a user was configured using the per-user multi-factor authentication feature, this setting will take precedence over the application multi-factor authentication rules. This means that a user who has been configured for per-user multi-factor authentication will be required to perform multi-factor authentication even if they have been exempted from the application's multi-factor authentication rules. [Learn more about multi-factor authentication and per-user settings](/documentation/articles/multi-factor-authentication). 
 6. Select the access rule you want to set:
-	- **Require Multi-factor authentication**: Users to whom access rules apply will be required to complete multi-factor authentication before accessing the application to which the rule applies.
-	- **Require Multi-factor authentication when not at work**: Users trying to access the application from a trusted IP address will not be required to perform multi-factor authentication. The trusted IP address ranges can be configured on the multi-factor authentication settings page.
-	- **Block access when not at work**: Users trying to access the application from outside your corporate network will not be able to access the application.
+- **Require Multi-factor authentication**: Users to whom access rules apply will be required to complete multi-factor authentication before accessing the application to which the rule applies.
+- **Require Multi-factor authentication when not at work**: Users trying to access the application from a trusted IP address will not be required to perform multi-factor authentication. The trusted IP address ranges can be configured on the multi-factor authentication settings page.
+- **Block access when not at work**: Users trying to access the application from outside your corporate network will not be able to access the application.
 
 
 ## Configuring MFA for federation services
-For federated tenants, multi-factor authentication (MFA) may performed by Azure Active Directory or by the on-premises AD FS server. By default, MFA will occur on any page hosted by Azure Active Directory. In order to configure MFA on-premises, run Windows PowerShell and use the –SupportsMFA property to set the Azure AD module.
+For federated tenants, multi-factor authentication (MFA) may performed by Azure Active Directory or by the on-premises AD FS server. By default, MFA will occur on any page hosted by Azure Active Directory. In order to configure MFA on-premises, run Windows PowerShell and use the âSupportsMFA property to set the Azure AD module.
 The following example shows how to enable on-premises MFA by using the [Set-MsolDomainFederationSettings cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn194088.aspx) on the contoso.com tenant: `Set-MsolDomainFederationSettings -DomainName contoso.com -SupportsMFA $true `
-In addition to setting this flag, the federated tenant AD FS instance must be configured to perform multi-factor authentication. Follow the instructions for [Deploying Windows Azure Multi-Factor Authentication on-premises](..multi-factor-authentication-get-started-server.md). 
-## See also
-There's a lot more you can do with Application Proxy:
-
-- [Publish applications with Application Proxy](/documentation/articles/active-directory-application-proxy-publish)
-- [Publish applications using your own domain name](/documentation/articles/active-directory-application-proxy-custom-domains)
-- [Enable single-sign on](/documentation/articles/active-directory-application-proxy-sso-using-kcd)
-- [Working with claims aware applications](/documentation/articles/active-directory-application-proxy-claims-aware-apps)
-- [Troubleshoot issues you're having with Application Proxy](/documentation/articles/active-directory-application-proxy-troubleshoot)
-
-## Learn more about Application Proxy
-- [Take a look here at our online help](/documentation/articles/active-directory-application-proxy-enable)
-- [Check out the Application Proxy blog](http://blogs.technet.com/b/applicationproxyblog/)
-- [Watch our videos on Channel 9!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
-
+In addition to setting this flag, the federated tenant AD FS instance must be configured to perform multi-factor authentication. Follow the instructions for [Deploying Windows Azure Multi-Factor Authentication on-premises](http://technet.microsoft.com/zh-cn/library/dn280946.aspx). 
 ## Additional Resources
 
-* [Sign up for Azure as an organization](..sign-up-organization.md)
-* [Azure Identity](..fundamentals-identity.md)
+* [Sign up for Azure as an organization](/documentation/articles/sign-up-organization)
+* [Azure Identity](/documentation/articles/fundamentals-identity)

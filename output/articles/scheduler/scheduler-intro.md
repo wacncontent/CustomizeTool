@@ -8,16 +8,16 @@
  editor=""/>
 <tags
 	ms.service="scheduler"
-	ms.date="08/04/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # What is Azure Scheduler?
 
 Azure Scheduler allows you to declaratively describe actions to run in the cloud. It then schedules and runs those actions automatically.  Scheduler does this by using [the Azure Management Portal](/documentation/articles/scheduler-get-started-portal), code, [REST API](https://msdn.microsoft.com/zh-cn/library/dn528946), or Azure PowerShell.
 
-Scheduler creates, maintains, and invokes scheduled work.  Scheduler does not host any workloads or run any code. It only _invokes_ code hosted elsewhere—in Azure, on-premises, or with another provider. It invokes via HTTP, HTTPS, or a storage queue.
+Scheduler creates, maintains, and invokes scheduled work.  Scheduler does not host any workloads or run any code. It only _invokes_ code hosted elsewhereâin Azure, on-premises, or with another provider. It invokes via HTTP, HTTPS, or a storage queue.
 
-Scheduler schedules [jobs](/documentation/articles/scheduler-concepts-terms), keeps a history of job execution results that one can review, and deterministically and reliably schedules workloads to be run. Azure WebJobs (part of the Web Apps feature in Azure Websites) and other Azure scheduling capabilities use Scheduler in the background. The [Scheduler REST API](https://msdn.microsoft.com/zh-cn/library/dn528946) helps manage the communication for these actions. As such, Scheduler supports [complex schedules and advanced recurrence](/documentation/articles/scheduler-advanced-complexity) easily.
+Scheduler schedules [jobs](/documentation/articles/scheduler-concepts-terms), keeps a history of job execution results that one can review, and deterministically and reliably schedules workloads to be run. Azure WebJobs (part of the Web Apps feature in Azure Web App) and other Azure scheduling capabilities use Scheduler in the background. The [Scheduler REST API](https://msdn.microsoft.com/zh-cn/library/dn528946) helps manage the communication for these actions. As such, Scheduler supports [complex schedules and advanced recurrence](/documentation/articles/scheduler-advanced-complexity) easily.
 
 There are several scenarios that lend themselves to the usage of Scheduler. For example:
 
@@ -30,7 +30,7 @@ Scheduler allows you to create, update, delete, view, and manage jobs and [job c
 
  [Azure Scheduler concepts, terminology, and entity hierarchy](/documentation/articles/scheduler-concepts-terms)
 
- [Get started using Azure Scheduler in the Azure Management Portal](/documentation/articles/scheduler-get-started-portal)
+ [Get started using Scheduler in the Azure Management Portal](/documentation/articles/scheduler-get-started-portal)
 
  [Plans and billing in Azure Scheduler](/documentation/articles/scheduler-plans-billing)
 

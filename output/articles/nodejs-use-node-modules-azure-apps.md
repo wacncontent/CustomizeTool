@@ -1,6 +1,9 @@
-<properties pageTitle="Working with Node.js Modules" description="Learn how to work with Node.js modules when using Azure Web Sites or Cloud Services." services="" documentationCenter="nodejs" authors="MikeWasson" manager="wpickett" editor="mollybos"/>
+<properties pageTitle="Working with Node.js Modules" description="Learn how to work with Node.js modules when using Azure Web Sites or Cloud Services." services="" documentationCenter="nodejs" authors="rmcmurray" manager="wpickett" editor=""/>
 
-<tags ms.service="multiple" ms.date="08/31/2015" wacn.date=""/>
+<tags
+	ms.service="multiple"
+	ms.date="01/09/2016"
+	wacn.date=""/>
 
 
 
@@ -72,10 +75,10 @@ Now that you understand how to use Node.js modules with Azure, learn how to [spe
 
 For more information, see the [Node.js Developer Center](/develop/nodejs/).
 
-[specify the Node.js version]: /documentation/articles/nodejs-specify-node-version-azure-apps
-[How to use the Azure Command-Line Interface for Mac and Linux]: /documentation/articles/xplat-cli-install
-[build and deploy a Node.js Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
-[Node.js Web Application with Storage on MongoDB (MongoLab)]: /documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb
-[Publishing with Git]: /documentation/articles/web-sites-publish-source-control
-[Build and deploy a Node.js application to an Azure Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+[specify the Node.js version]: nodejs-specify-node-version-azure-apps.md
+[How to use the Azure Command-Line Interface for Mac and Linux]: xplat-cli-install.md
+[build and deploy a Node.js Web Site]: web-sites-nodejs-develop-deploy-mac.md
+[Node.js Web Application with Storage on MongoDB (MongoLab)]: store-mongolab-web-sites-nodejs-store-data-mongodb.md
+[Publishing with Git]: web-sites-publish-source-control.md
+[Build and deploy a Node.js application to an Azure Cloud Service]: cloud-services-nodejs-develop-deploy-app.md
 [Custom Website Deployment Scripts with Kudu]: /documentation/videos/custom-web-site-deployment-scripts-with-kudu/

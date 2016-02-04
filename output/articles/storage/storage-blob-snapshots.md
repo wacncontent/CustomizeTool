@@ -1,15 +1,15 @@
 <properties
-	pageTitle="Create a snapshot of a blob | Windows Azure"
-	description="A guide for creating snapshots of Azure storage blobs"
+	pageTitle="Create a read-only snapshot of a blob | Windows Azure"
+	description="Learn how to create a snapshot of a blob to back up blob data at a given moment in time. Understand how snapshots are billed and how to use them to minimize capacity charges."
 	services="storage"
 	documentationCenter=""
 	authors="tamram"
-	manager="adinah"
-	editor=""/>
+	manager="carmonm"
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="09/01/2015"
+	ms.date="01/07/2016"
 	wacn.date=""/>
 
 # Create a blob snapshot
@@ -87,7 +87,7 @@ The following list includes key points to consider when creating a snapshot.
 
 - Charges are incurred for unique blocks or pages, whether they are in the blob or in the snapshot. Your account does not incur additional charges for snapshots associated with a blob until you update the blob on which they are based. After you update the base blob, it diverges from its snapshots, and you will be charged for the unique blocks or pages in each blob or snapshot.
 
-- When you replace a block within a block blob, that block is subsequently charged as a unique block. This is true even if the block has the same block ID and the same data as it has in the snapshot. After the block is committed again, it diverges from its counterpart in any snapshot, and you will be charged for its data. The same holds true for a page in a page blob that’s updated with identical data.
+- When you replace a block within a block blob, that block is subsequently charged as a unique block. This is true even if the block has the same block ID and the same data as it has in the snapshot. After the block is committed again, it diverges from its counterpart in any snapshot, and you will be charged for its data. The same holds true for a page in a page blob that's updated with identical data.
 
 - Replacing a block blob by calling the **UploadFile**, **UploadText**, **UploadStream**, or **UploadByteArray** method replaces all of the blocks in that blob. If you have a snapshot associated with that blob, all of the blocks in the base blob and snapshot now diverge, and you will be charged for all of the blocks in both blobs. This is true even if the data in the base blob and the snapshot remain identical.
 
@@ -95,7 +95,7 @@ The following list includes key points to consider when creating a snapshot.
 
 > [AZURE.NOTE] Best practices dictate that you manage snapshots carefully to avoid extra charges. We recommend that you manage snapshots in the following manner:
 
-> - Delete and re-create snapshots associated with a blob whenever you update the blob, even if you are updating with identical data, unless your application design requires that you maintain snapshots. By deleting and re-creating the blob’s snapshots, you can ensure that the blob and snapshots do not diverge.
+> - Delete and re-create snapshots associated with a blob whenever you update the blob, even if you are updating with identical data, unless your application design requires that you maintain snapshots. By deleting and re-creating the blob's snapshots, you can ensure that the blob and snapshots do not diverge.
 
 > - If you are maintaining snapshots for a blob, avoid calling **UploadFile**, **UploadText**, **UploadStream**, or **UploadByteArray** to update the blob, as those methods replace all of the blocks in the blob. Instead, update the fewest possible number of blocks by using the **PutBlock** and **PutBlockList** methods.
 

@@ -1,3 +1,5 @@
-new docs: 0, word count: 0
+new docs: 2, word count: 7594
+articles/cache/cache-dotnet-how-to-use-in-role.md
+articles/cache/cache-dotnet-how-to-use-service.md
 
 new includes: 0

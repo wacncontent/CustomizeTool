@@ -16,15 +16,5 @@ replaced by:
 
 		Management Portal](https://manage.windowsazure.cn)
 
-reason: ()
-
-deleted:
-
-		API](http://msdn.microsoft.com//library/azure/dd179355.aspx)
-
-replaced by:
-
-		API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
-
-reason: ()
+reason: (preview portal)
 

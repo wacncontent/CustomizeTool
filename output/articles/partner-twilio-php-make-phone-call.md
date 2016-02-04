@@ -124,7 +124,7 @@ For additional information about Twilio, see [https://www.twilio.com/docs][twili
 [twiml]: http://www.twilio.com/docs/api/twiml
 [twilio_api_service]: http://api.twilio.com
 [build_php_azure_app]: http://azurephp.interoperabilitybridges.com/articles/build-and-deploy-a-windows-azure-php-application
-[howto_twilio_voice_sms_php]: /documentation/articles/partner-twilio-php-how-to-use-voice-sms
+[howto_twilio_voice_sms_php]: partner-twilio-php-how-to-use-voice-sms.md
 [howto_blob_storage_php]: /documentation/articles/storage-php-how-to-use-blobs/
 [howto_sql_azure_php]: /documentation/articles/sql-database-php-how-to-use/
 [twilio_call_properties]: https://www.twilio.com/docs/api/rest/call#instance-properties

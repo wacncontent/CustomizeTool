@@ -1,8 +1,8 @@
 ## Download, install, and register the Azure Backup agent
 
-After creating the Azure Backup vault, an agent should be installed on each of your on-premises servers (Windows Server, Windows client or Data Protection Manager server) that enables back up of data and applications to Azure.
+After creating the Azure Backup vault, an agent should be installed on each of your Windows machines (Windows Server, Windows client, System Center Data Protection Manager server, or Azure Backup Server machine) that enables back up of data and applications to Azure.
 
-1. Sign in to the [Management Portal](https://manage.windowsazure.cn/)
+1. Sign in to the [Management Portal](https://manage.windowsazure.cn)
 
 2. Click **Recovery Services**, then select the backup vault that you want to register with a server. The Quick Start page for that backup vault appears.
 
@@ -16,7 +16,7 @@ After creating the Azure Backup vault, an agent should be installed on each of y
 
 5.	If you use a proxy server to connect to the internet, in the **Proxy configuration** screen, enter the proxy server details. If you use an authenticated proxy, enter the user name and password details in this screen.
 
-6.	The Azure Backup agent installs .NET Framework 4.5 and Windows PowerShell (if it’s not available already) to complete the installation.
+6.	The Azure Backup agent installs .NET Framework 4.5 and Windows PowerShell (if it's not available already) to complete the installation.
 
 7.	Once the agent is installed, click the **Proceed to Registration** button to continue with the workflow.
 
@@ -26,7 +26,7 @@ After creating the Azure Backup vault, an agent should be installed on each of y
 
     ![Vault credentials](./media/backup-install-agent/vc.png)
 
-    The vault credentials file is valid only for 48 hrs (after it’s downloaded from the portal). If you encounter any error in this screen (e.g “Vault credentials file provided has expired”), login to the Azure Management Portal and download the vault credentials file again.
+    The vault credentials file is valid only for 48 hrs (after it's downloaded from the portal). If you encounter any error in this screen (e.g “Vault credentials file provided has expired”), login to the Azure Management Portal and download the vault credentials file again.
 
     Ensure that the vault credentials file is available in a location which can be accessed by the setup application. If you encounter access related errors, copy the vault credentials file to a temporary location in this machine and retry the operation.
 

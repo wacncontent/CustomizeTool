@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="10/26/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # Understanding Resource Manager deployment and classic deployment
@@ -44,28 +44,21 @@ Resources created through Resource Manager share the following characteristics:
 
 - Created through one of the following methods:
 
-  - The [preview portal](https://manage.windowsazure.cn/).
+  - The [Azure Management Portal](https://manage.windowsazure.cn/).
 
-        ![preview portal](./media/resource-manager-deployment-model/preview-portal.png)
+        ![Azure Management Portal](./media/resource-manager-deployment-model/preview-portal.png)
 
-        For Compute, Storage, and Networking resources, you have the option of using either Resourece Manager or Classic deployment. Select **Resource Manager**.
+        For Compute, Storage, and Networking resources, you have the option of using either Resource Manager or Classic deployment. Select **Resource Manager**.
 
         ![Resource Manager deployment](./media/resource-manager-deployment-model/select-resource-manager.png)
 
-<!-- deleted by customization
-  - For Azure PowerShell versions earlier than 1.0 Preview, commands run in the **AzureResourceManager** mode.
--->
-<!-- keep by customization: begin -->
-  - PowerShell commands run in the **AzureResourceManager** mode.
-<!-- keep by customization: end -->
+  - For Azure PowerShell versions earlier than 1.0, commands run in the **AzureResourceManager** mode.
 
             PS C:\> Switch-AzureMode -Name AzureResourceManager
-<!-- deleted by customization
 
-  - For Azure PowerShell 1.0 Preview, use the Resource Manager version of commands. These commands have the format *verb-AzureRm*, as shown below.
+  - For Azure PowerShell 1.0, use the Resource Manager version of commands. These commands have the format *verb-AzureRm*, as shown below.
 
             PS C:\> Get-AzureRmResourceGroupDeployment
--->
 
   - [Azure Resource Manager REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx) for REST operations.
   - Azure CLI commands run in the **arm** mode.
@@ -82,23 +75,21 @@ Resources created in the classic deployment model share the following characteri
 
 - Created through one of the following methods:
 
-  - [Azure Management Portal](https://manage.windowsazure.cn)
+  - [Management Portal](https://manage.windowsazure.cn)
 
-        ![Azure Management Portal](./media/resource-manager-deployment-model/azure-portal.png)
+        ![Management Portal](./media/resource-manager-deployment-model/azure-portal.png)
 
-        Or, the preview portal and you specify **Classic** deployment (for Compute, Storage, and Networking).
+        Or, the portal and you specify **Classic** deployment (for Compute, Storage, and Networking).
 
         ![Classic deployment](./media/resource-manager-deployment-model/select-classic.png)
 
-  - <!-- deleted by customization For versions of Azure --> PowerShell <!-- deleted by customization earlier than 1.0 Preview, --> commands run in the **AzureServiceManagement** mode (which is the default mode, so if do not you specifically switch to AzureResourceManager, you are running in AzureServiceManagement mode).
+  - For versions of Azure PowerShell earlier than 1.0, commands run in the **AzureServiceManagement** mode (which is the default mode, so if do not you specifically switch to AzureResourceManager, you are running in AzureServiceManagement mode).
 
             PS C:\> Switch-AzureMode -Name AzureServiceManagement
-<!-- deleted by customization
 
-  - For Azure PowerShell 1.0 Preview, use the Service Management version of commands. These command names **do not** have the format *verb-AzureRm*, as shown below.
+  - For Azure PowerShell 1.0, use the Service Management version of commands. These command names **do not** have the format *verb-AzureRm*, as shown below.
 
             PS C:\> Get-AzureDeployment
--->
 
   - [Service Management REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) for REST operations.
   - Azure CLI commands run in **asm** or default mode.
@@ -106,7 +97,7 @@ Resources created in the classic deployment model share the following characteri
 
     ![classic type](./media/resource-manager-deployment-model/classic-type.png)
 
-You can still use the preview portal to manage resources that were created through classic deployment.
+You can still use the portal to manage resources that were created through classic deployment.
 
 ## Benefits of using Resource Manager and resource groups
 
@@ -121,7 +112,7 @@ Resource Manager added the concept of the resource group. Every resource you cre
 
 
 Prior to Resource Manager, every resource you created through classic deployment did not exist within a resource group. When Resource Manager was added, all resources were retroactively added to default resource groups. If you create a resource through classic deployment now, the resource is 
-automatically created within a default resource group for that service, even though you did not specify that resource group at deployment. However, just existing within a resource group does not mean that the resource has been converted to the Resourece Manager model. For Virtual Machines, Storage, and Virtual Networks, if the resource was created through classic deployment, you must continue to operate on it through classic operations. 
+automatically created within a default resource group for that service, even though you did not specify that resource group at deployment. However, just existing within a resource group does not mean that the resource has been converted to the Resource Manager model. For Virtual Machines, Storage, and Virtual Networks, if the resource was created through classic deployment, you must continue to operate on it through classic operations. 
 
 You can move resources to a different resource group, and add new resources to an existing resource group. So, your resource group can contain a 
 mix of resources created through Resource Manager and classic deployment. This combination of resources can create unexpected results because the resources 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Websites" 
+	pageTitle="Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App" 
 	description="Learn how to develop an ASP.NET MVC 5 app with a SQL Database back-end, add authentication and authorization, and deploy it to Azure." 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -10,12 +10,12 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="10/07/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/> 
 
-# Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Websites
+# Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure
 
-This tutorial shows how to build a secure ASP.NET MVC 5 web app that lets users log in with credentials from Facebook or Google. The app is a simple contact list that uses the ADO.NET Entity Framework for database access. You'll deploy the app to [Azure Websites](/documentation/services/web-sites/). 
+This tutorial shows how to build a secure ASP.NET MVC 5 web app that lets users log in with credentials from Facebook or Google. The app is a simple contact list that uses the ADO.NET Entity Framework for database access. You'll deploy the app to [Azure Web App](/documentation/services/web-sites/). 
 
 On completing the tutorial, you'll have a secure data-driven web application up and running in the cloud and using a cloud database. The following illustration shows the login page for the completed application.
 
@@ -29,16 +29,17 @@ You'll learn:
 * How to use the ADO.NET Entity Framework 6 Code First to read and write data in a SQL database.
 * How to use Entity Framework Code First Migrations to deploy a database.
 * How to store relational data in the cloud by using Azure SQL Database.
-* How to deploy a web project that uses a database to a [web app](/documentation/services/web-sites/) in Azure Websites.
+* How to deploy a web project that uses a database to a [web app](/documentation/services/web-sites/) in Azure Web App.
 
->[AZURE.NOTE] This is a long tutorial. If you want a quick introduction to Azure Websites and Visual Studio web projects, see [Create an ASP.NET web app in Azure Websites](/documentation/articles/web-sites-dotnet-get-started). For troubleshooting info, see the [Troubleshooting](#troubleshooting) section.
+>[AZURE.NOTE] This is a long tutorial. If you want a quick introduction to Azure and Visual Studio web projects, see [Create an ASP.NET web app in Azure](/documentation/articles/web-sites-dotnet-get-started). For troubleshooting info, see the [Troubleshooting](#troubleshooting) section.
 >
+>Or if you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 ## Prerequisites
 
-To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
+To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [activate your Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 
-To set up your development environment, you must install [Visual Studio 2013 Update 4](http://go.microsoft.com/fwlink/?LinkId=390521) or higher, and the latest version of the [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409). This article was written for Visual Studio Update 4 and SDK 2.7.1. The same instructions work for Visual Studio 2015 with the latest [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409) installed, but some screens will look different from the illustrations.
+To set up your development environment, you must install [Visual Studio 2013 Update 5](http://go.microsoft.com/fwlink/?LinkId=390521) or higher, and the latest version of the [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409). This article was written for Visual Studio Update 4 and SDK 2.8.1. The same instructions work for Visual Studio 2015 with the latest [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409) installed, but some screens will look different from the illustrations.
 
 ## Create an ASP.NET MVC 5 application
 
@@ -56,7 +57,7 @@ To set up your development environment, you must install [Visual Studio 2013 Upd
  
 	**Note:** Make sure you enter "ContactManager". Code blocks that you'll be copying later assume that the project name is ContactManager. 
 
-1. In the **New ASP.NET Project** dialog box, select the **MVC** template. Verify **Authentication** is set to **Individual User Accounts**, **Host in the cloud** is checked, and **Web App** is selected.
+1. In the **New ASP.NET Project** dialog box, select the **MVC** template. Verify **Authentication** is set to **Individual User Accounts**, **Host in the cloud** is checked, and **App Services** is selected.
 
 	![New ASP.NET Project dialog box](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newproject.png)
 
@@ -72,7 +73,7 @@ To set up your development environment, you must install [Visual Studio 2013 Upd
 
 5. In the **App Service plan** drop-down select **Create new App Service plan** and enter a name, such as "StandardWeb" as shown in the illustration.
 
-	If you prefer, you can select an App Service plan that you already have. For information about App Service plans, see [App Service plans in-depth overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview). 
+	If you prefer, you can select an App Service plan that you already have. For information about App Service plans, see [Azure App Service plans in-depth overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview). 
 
 5. In the **Resource group** drop-down select **Create new resource group** and enter a name, such as "ExampleMVC", as shown in the illustration.
 
@@ -96,7 +97,7 @@ To set up your development environment, you must install [Visual Studio 2013 Upd
 
 4. Click **OK**.
 
-	Visual Studio creates the ContactManager web project, creates the resource group and App Service plan that you specified, and creates a web app in Azure Websites with the name you specified.
+	Visual Studio creates the ContactManager web project, creates the resource group and App Service plan that you specified, and creates a web app in Azure with the name you specified.
 
 ### Set the page header and footer
 
@@ -163,7 +164,6 @@ To set up your development environment, you must install [Visual Studio 2013 Upd
 
 This is all you need to do for now to create the application that you'll deploy to Azure. 
 
-<a name="bkmk_deploytowindowsazure1"></a>
 ## Deploy the application to Azure
 
 1. In Visual Studio, right-click the project in **Solution Explorer** and select **Publish** from the context menu.
@@ -224,7 +224,6 @@ This is all you need to do for now to create the application that you'll deploy 
 
 	 ![FireFox Cert Warning](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss30.PNG)
 
-<a name="bkmk_addadatabase"></a>
 ## Add a database to the application
 
 Next, you'll update the app to add the ability to display and update contacts and store the data in a database. The app will use the Entity Framework (EF) to create the database and to read and update data.
@@ -385,8 +384,9 @@ The next task is to enable the [Code First Migrations](http://msdn.microsoft.com
 
 	![MVC view of data][rx2]
 
-<a name="addOauth"></a>
 ## Add an OAuth2 Provider
+
+>[AZURE.NOTE] For detailed instructions on how to use the Google and Facebook developer portal sites, this tutorial links to tutorials on the ASP.NET site. However, Google and Facebook change their sites more frequently than those tutorials are updated, and they are now out of date. If you have trouble following the directions, see the featured Disqus comment at the end of this tutorial for a list of what has changed. 
 
 [OAuth](http://oauth.net/ "http://oauth.net/") is an open protocol that allows secure authorization in a simple and standard method from web, mobile, and desktop applications. The ASP.NET MVC internet template uses OAuth to expose Facebook, Twitter, Google and Microsoft as authentication providers. Although this tutorial uses only Google as the authentication provider, you can easily modify the code to use any of these providers. The steps to implement other providers are very similar to the steps you see in this tutorial. To use Facebook as an authentication provider, see [MVC 5 App with Facebook, Twitter, LinkedIn and Google OAuth2 Sign-on ](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on).
 
@@ -398,7 +398,6 @@ In addition to authentication, this tutorial uses roles to implement authorizati
 
 2. If you want to create social login buttons with provider-specific icons, see [Pretty social login buttons for ASP.NET MVC 5](http://www.jerriepelser.com/blog/pretty-social-login-buttons-for-asp-net-mvc-5)
 
-<a name="mbrDB"></a>
 ## Using the Membership API
 
 In this section you will add a local user and the *canEdit* role to the membership database. Only those users in the *canEdit* role will be able to edit data. A best practice is to name roles by the actions they can perform, so *canEdit* is preferred over a role called *admin*. When your application evolves, you can add new roles such as *canDeleteMembers* rather than the less descriptive *superAdmin*.
@@ -591,7 +590,6 @@ In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/librar
 
 1. Verify you can make data changes.
 
-<a name="bkmk_deploytowindowsazure11"></a>
 ## Deploy the app to Azure
 
 1. In Visual Studio, right-click the project in **Solution Explorer** and select **Publish** from the context menu.
@@ -622,10 +620,12 @@ In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/librar
 
 ### Stop the web app to prevent other people from registering  
 
-1. In **Server Explorer**, navigate to **Azure > Azure Websites > {your resource group} > {your web app}**.
+1. In **Server Explorer**, navigate to **Azure > Azure > {your resource group} > {your web app}**.
 
 4. Right-click the web app and select **Stop**. 
-	Alternatively, from the [Azure Management Portal](https://manage.windowsazure.cn), you can go to the web app's blade, then click the **Stop** icon at the bottom of the page.
+
+	Alternatively, from the [Azure Management Portal](https://manage.windowsazure.cn/), you can go to the web app's blade, then click the **Stop** icon at the top of the blade.
+
 	![stop web app portal](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)
 
 ### Remove AddToRoleAsync, Publish, and Test
@@ -708,10 +708,10 @@ In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/librar
 
 If you run into problems, here are some suggestions for what to try.
 
-* Errors provisioning SQL Database - Make sure you have the current SDK installed. Versions before 2.7.1 have a bug that in some scenarios causes errors when VS tries to create the database server or the database.
+* Errors provisioning SQL Database - Make sure you have the current SDK installed. Versions before 2.8.1 have a bug that in some scenarios causes errors when VS tries to create the database server or the database.
 * Error message "operation is not supported for your subscription offer type" when creating Azure resources - Same as above.
 * Errors when deploying - Consider going through the [basic ASP.NET deployment](/documentation/articles/web-sites-dotnet-get-started) article. That deployment scenario is simpler and if you have the same problem there it may be easier to isolate. For example, in some enterprise environments a corporate firewall may prevent Web Deploy from making the kinds of connections to Azure that it requires.
-* No option to select connection string in the Publish Web wizard when you deploy - If you used a different method to create your Azure resources (for example, you are trying to deploy to  a web app and a SQL database created in the portal), the SQL database may not be associated with the web app. The easiest solution is to create a new web app and database by using VS as shown in the tutorial. You don't have to start the tutorial over -- in the Publish Web wizard you can opt to create a new web app and you get the same Azure resource creation dialog that you get when you create the project.
+* No option to select connection string in the Publish Web wizard when you deploy - If you used a different method to create your Azure resources (for example, you are trying to deploy to  a web app and a SQL database created in the Portal), the SQL database may not be associated with the web app. The easiest solution is to create a new web app and database by using VS as shown in the tutorial. You don't have to start the tutorial over -- in the Publish Web wizard you can opt to create a new web app and you get the same Azure resource creation dialog that you get when you create the project.
 * Directions for Google or Facebook developer portal are out of date - See the featured Disqus comment at the end of this tutorial.
 
 ## Next steps
@@ -726,7 +726,13 @@ You've created a basic ASP.NET MVC web application that authenticates users. For
 
 For a  more advanced tutorial about how to use the Entity Framework, see [Getting Started with EF and MVC](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
 
+This tutorial was written by [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) with assistance from Tom Dykstra and Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)). 
+
 ***Please leave feedback*** on what you liked or what you would like to see improved, not only about the tutorial itself but also about the products that it demonstrates. Your feedback will help us prioritize improvements. You can also request and vote on new topics at [Show Me How With Code](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
+
+## What's changed
+
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
 <!-- bookmarks -->
 [Add an OAuth Provider]: #addOauth

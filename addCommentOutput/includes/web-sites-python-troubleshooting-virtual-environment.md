@@ -5,19 +5,14 @@ In certain situations, you may want to force delete that virtual environment.  Y
 There are a few options to manage the existing virtual environment on Azure:
 
 ### Option 1: Use FTP
-<!-- deleted by customization
 
-With an FTP client, connect to the server and you'll be able to delete the env folder.  Note that some FTP clients (such as web browsers) may be read-only and won't allow you to delete folders, so you'll want to make sure to use an FTP client with that capability.  The FTP host name and user are displayed in the your web app's blade on the [Azure Management Portal](https://manage.windowsazure.cn).
+With an FTP client, connect to the server and you'll be able to delete the env folder.  Note that some FTP clients (such as web browsers) may be read-only and won't allow you to delete folders, so you'll want to make sure to use an FTP client with that capability.  The FTP host name and user are displayed in <!-- keep by customization: begin --> the dashboard page for <!-- keep by customization: end --> your web <!-- deleted by customization site's blade --><!-- keep by customization: begin --> site <!-- keep by customization: end --> on the <!-- deleted by customization [Azure --><!-- keep by customization: begin --> Azure <!-- keep by customization: end --> Management <!-- deleted by customization Portal](https://manage.windowsazure.cn) --><!-- keep by customization: begin --> Portal <!-- keep by customization: end -->.
 
--->
-<!-- keep by customization: begin -->
-With an FTP client, connect to the server and you'll be able to delete the env folder.  Note that some FTP clients (such as web browsers) may be read-only and won't allow you to delete folders, so you'll want to make sure to use an FTP client with that capability.  The FTP host name and user are displayed in the dashboard page for your web app on the Azure Management Portal.
-<!-- keep by customization: end -->
 ### Option 2: Toggle runtime
 
 Here's an alternative that takes advantage of the fact that the deployment script will delete the env folder when it doesn't match the desired version of Python.  This will effectively delete the existing environment, and create a new one.
-<!-- deleted by customization
 
+<!-- deleted by customization
 1. Switch to a different version of Python (via runtime.txt or the **Application Settings** blade in the Azure Management Portal)
 -->
 <!-- keep by customization: begin -->

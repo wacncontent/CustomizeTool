@@ -183,7 +183,7 @@ For a sequence link, the condition is only evaluated once since a single array i
 	$VMs = $ActivityOutput['Get-AzureVm']
 	Foreach ($VM in VMs)
 	{
-		If ($VM.PowerState –eq 'Started')
+		If ($VM.PowerState -eq 'Started')
 			{
 				$test = $true
 			}
@@ -334,15 +334,15 @@ Use [comparison operators](https://technet.microsoft.com/zh-cn/library/hh847759.
 
 For example, the following condition determines whether the virtual machine from an activity named *Get-AzureVM* is currently *stopped*. 
 
-	$ActivityOutput["Get-AzureVM"].PowerState –eq "Stopped"
+	$ActivityOutput["Get-AzureVM"].PowerState -eq "Stopped"
 
 The following condition checks whether the same virtual machine is in any state other than *stopped*.
 
-	$ActivityOutput["Get-AzureVM"].PowerState –ne "Stopped"
+	$ActivityOutput["Get-AzureVM"].PowerState -ne "Stopped"
 
 You can join multiple conditions using a [logical operator](https://technet.microsoft.com/zh-cn/library/hh847789.aspx) such as **-and** or **-or**.  For example, the following condition checks whether the same virtual machine in the previous example is in a state of *stopped* or *stopping*.
 
-	($ActivityOutput["Get-AzureVM"].PowerState –eq "Stopped") -or ($ActivityOutput["Get-AzureVM"].PowerState –eq "Stopping") 
+	($ActivityOutput["Get-AzureVM"].PowerState -eq "Stopped") -or ($ActivityOutput["Get-AzureVM"].PowerState -eq "Stopping") 
 
 
 ### Hashtables

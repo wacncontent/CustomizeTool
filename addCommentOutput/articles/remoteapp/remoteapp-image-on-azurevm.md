@@ -1,19 +1,15 @@
 <properties 
-    pageTitle="Create an Azure RemoteApp image based on an Azure VM | Microsoft Azure"
+    pageTitle="Create an Azure RemoteApp image based on an Azure VM | Windows Azure"
     description="Learn how to create an image for Azure RemoteApp by starting with an Azure virtual machine." 
     services="remoteapp" 
     documentationCenter="" 
     authors="lizap" 
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="09/02/2015" 
-    ms.author="elizapo" />
+<tags
+	ms.service="remoteapp"
+	ms.date="09/02/2015"
+	wacn.date=""/>
 
 
 
@@ -27,17 +23,17 @@ There are two steps to create your own image based on an Azure VM - create the i
 
 Use these steps to create an image based on an Azure VM.
 
-1. Create an Azure virtual machine. You can use the “Windows Server Remote Desktop Session Host” or the "Windows Server Remote Desktop Session Host with Microsoft Office 365 ProPlus" image from the Azure virtual machine image gallery. This image meets all the Azure RemoteApp template image requirements. 
+1. Create an Azure virtual machine. You can use the âWindows Server Remote Desktop Session Hostâ <!-- deleted by customization or the "Windows Server Remote Desktop Session Host with Microsoft Office 365 ProPlus" --> image from the Azure virtual machine image gallery. This image meets all the Azure RemoteApp template image requirements.
 
-	For details, see [Create a VM running Windows](virtual-machines-windows-tutorial.md).
+	For details, see [Create a VM running Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).
 
 2. Connect to the VM and install and configure the apps that you want to share through RemoteApp. Make sure to perform any additional Windows configurations required by your apps. 
 
-	For details, see [How to Log on to a Virtual Machine Running Windows Server](virtual-machines-log-on-windows-server.md). 
+	For details, see [How to Log on to a Virtual Machine Running Windows Server](/documentation/articles/virtual-machines-log-on-windows-server). 
 
-3. If you are using one of the Windows Server Remote Desktop Session Host images, there is an included validation script that will ensure your VM meets the RemoteApp pre-reqs. To run script, double-click **ValidateRemoteAppImage** on the desktop. Ensure that all errors reported by the script are fixed before proceeding to the next step.
+3. If you are using <!-- deleted by customization one of --> the Windows Server Remote Desktop Session Host <!-- deleted by customization images --><!-- keep by customization: begin --> image <!-- keep by customization: end -->, there is an included validation script that will ensure your VM meets the RemoteApp pre-reqs. To run script, double-click **ValidateRemoteAppImage** on the desktop. Ensure that all errors reported by the script are fixed before proceeding to the next step.
 
-4. SYSPREP generalize and capture the image. See [How to Capture a Windows Virtual Machine to Use as a Template](../virtual-machines-capture-image-windows-server.md) for instructions.
+4. SYSPREP generalize and capture the image. See [How to Capture a Windows Virtual Machine to Use as a Template](/documentation/articles/virtual-machines-capture-image-windows-server) for instructions.
 
  
 
@@ -56,5 +52,5 @@ Use these steps to import the new image into Azure RemoteApp:
 
 > [AZURE.NOTE] You can import images from any Azure location supported by Azure Virtual Machines to any Azure location supported by Azure RemoteApp. Depending on the locations the import can take up to 25 minutes.
 
-Now you are ready to create your new collection, either a [cloud](remoteapp-create-cloud-deployment.md) collection or [hybrid](remoteapp-create-hybrid-deployment.md), depending on your needs.
+Now you are ready to create your new collection, either a [cloud](/documentation/articles/remoteapp-create-cloud-deployment) collection or [hybrid](/documentation/articles/remoteapp-create-hybrid-deployment), depending on your needs.
  

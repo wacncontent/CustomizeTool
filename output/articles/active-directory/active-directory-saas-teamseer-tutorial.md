@@ -6,7 +6,7 @@
     documentationCenter="na" manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration with TeamSeer
@@ -113,7 +113,7 @@ If you are not familiar with this procedure, see [How to convert a binary certif
 
     ![SAML Settings](./media/active-directory-saas-teamseer-tutorial/IC789638.png "SAML Settings")
 
-    1.  In the **Test Email Addresses**, type the test user’s email address.
+    1.  In the **Test Email Addresses**, type the test user's email address.
     2.  In the **Issuer** textbox, type the Issuer URL of the service provider.
     3.  Click **Save**.
 

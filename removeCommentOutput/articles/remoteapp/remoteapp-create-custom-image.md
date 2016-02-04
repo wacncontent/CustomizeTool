@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to create a custom template image for Azure RemoteApp | Microsoft Azure"
+	pageTitle="How to create a custom template image for Azure RemoteApp | Windows Azure"
 	description="Learn how to create a custom template image for Azure RemoteApp. You can use this template with either a hybrid or cloud collection."
 	services="remoteapp"
 	documentationCenter=""
@@ -9,18 +9,14 @@
 
 <tags
 	ms.service="remoteapp"
-	ms.workload="compute"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/12/2015" 
-	ms.author="elizapo"/>
+	ms.date="09/12/2015"
+	wacn.date=""/>
 
 # How to create a custom template image for Azure RemoteApp
 Azure RemoteApp uses a Windows Server 2012 R2 template image to host all the programs that you want to share with your users. To create a custom RemoteApp template image, you can start with an existing image or create a new one. 
 
 
-> [AZURE.TIP] Did you know you can create an image from an Azure VM? True story, and it cuts down on the amount of time it takes to import the image. Check out the steps [here](remoteapp-image-on-azurevm.md).
+> [AZURE.TIP] Did you know you can create an image from an Azure VM? True story, and it cuts down on the amount of time it takes to import the image. Check out the steps [here](/documentation/articles/remoteapp-image-on-azurevm).
 
 The requirements for the image that can be uploaded for use with Azure RemoteApp are:
 
@@ -43,10 +39,10 @@ The requirements for the image that can be uploaded for use with Azure RemoteApp
 
 You need to do the following before creating the service:
 
-- [Sign up](http://azure.microsoft.com/services/remoteapp/) for RemoteApp.
-- Create a user account in Active Directory to use as the RemoteApp service account. Restrict the permissions for this account so that it can only join machines to the domain. See [Configure Azure Active Directory for RemoteApp](remoteapp-ad.md) for more information.
+- [Sign up](/home/features/remoteapp/) for RemoteApp.
+- Create a user account in Active Directory to use as the RemoteApp service account. Restrict the permissions for this account so that it can only join machines to the domain. See [Configure Azure Active Directory for RemoteApp](/documentation/articles/remoteapp-ad) for more information.
 - Gather information about your on-premises network: IP address information and VPN device details.
-- Install the [Azure PowerShell](../install-configure-powershell.md) module.
+- Install the [Azure PowerShell](/documentation/articles/powershell-install-configure) module.
 - Gather information about the users that you want to grant access to. This can be either Microsoft account information or Active Directory work account information for users.
 
 
@@ -75,7 +71,7 @@ The detailed steps for creating a new image are:
 		1.	Click **Action > Create VHD**.
 		2.	Specify the location, size, and VHD format. Select **Dynamically expanding**, and then click **OK**.
 
-			This will run for several seconds. When the VHD creation is complete, you should see a new disk without any drive letter and in “Not initialized" state in the Disk Management console.
+			This will run for several seconds. When the VHD creation is complete, you should see a new disk without any drive letter and in âNot initialized" state in the Disk Management console.
 
 		- Right-click the disk (not the unallocated space), and then click **Initialize Disk**. Select **MBR** (Master Boot Record) as the partition style, and then click **OK**.
 		- Create a new volume: right-click the unallocated space, and then click **New Simple Volume**. You can accept the defaults in the wizard, but make sure you assign a drive letter to avoid potential problems when you upload the template image.
@@ -138,6 +134,6 @@ The detailed steps for creating a new image are:
 Now that you have your custom template image, you need to upload that image to your RemoteApp collection. Use the information in the following articles to create your collection:
 
 
-- [How to create a hybrid collection of RemoteApp](remoteapp-create-hybrid-deployment.md)
-- [How to create a cloud collection of RemoteApp](remoteapp-create-cloud-deployment.md)
+- [How to create a hybrid collection of RemoteApp](/documentation/articles/remoteapp-create-hybrid-deployment)
+- [How to create a cloud collection of RemoteApp](/documentation/articles/remoteapp-create-cloud-deployment)
  

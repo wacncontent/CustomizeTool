@@ -1,21 +1,22 @@
 <properties 
-    pageTitle="StorSimple monitoring indicators | Microsoft Azure" 
+    pageTitle="StorSimple monitoring indicators | Windows Azure" 
     description="Describes the light-emitting diodes (LEDs) and audible alarms used to monitor the status of the StorSimple device."
     services="storsimple"
     documentationCenter="NA"
     authors="SharS"
     manager="carolz"
     editor="" />
- <tags 
-    ms.service="storsimple"
-    ms.devlang="NA"
-    ms.topic="article"
-    ms.tgt_pltfrm="NA"
-    ms.workload="TBD"
-    ms.date="08/31/2015"
-    ms.author="v-sharos" />
+ <tags
+	ms.service="storsimple"
+	ms.date="08/31/2015"
+	wacn.date=""/>
 
+<!-- deleted by customization
 # Use StorSimple monitoring indicators to manage your device   
+-->
+<!-- keep by customization: begin -->
+# Troubleshoot with monitoring indicators   
+<!-- keep by customization: end -->
 
 ## Overview
 
@@ -33,7 +34,12 @@ The remainder of this article describes the various monitoring indicator LEDs, t
 
 The front panel, also known as the *operations panel* or *ops panel*, displays the aggregate status of all the modules in the system. The front panel is identical on the StorSimple device and the EBOD enclosure, and is illustrated below.  
 
+<!-- deleted by customization
    ![Device front panel][1]
+-->
+<!-- keep by customization: begin -->
+   ![][1]
+<!-- keep by customization: end -->
  
 The front panel contains the following indicators:  
 
@@ -43,7 +49,7 @@ The front panel contains the following indicators:
 4. Logical fault indicator LED (ON red-amber/OFF
 5. Unit ID display  
 
-The major difference between the front panel LEDs for the device and those for the EBOD enclosure is the **System Unit Identification Number** shown on the LED display. The default unit ID displayed on the device is **00**, whereas the default unit ID displayed on the EBOD enclosure is **01**. This allows you to quickly differentiate between the device and the EBOD enclosure when the device is turned on. If your device is turned off, use the information provided in  [Turn on a new device](storsimple-turn-device-on-or-off.md#turn-on-a-new-device) to differentiate the device from the EBOD enclosure.  
+The major difference between the front panel LEDs for the device and those for the EBOD enclosure is the **System Unit Identification Number** shown on the LED display. The default unit ID displayed on the device is **00**, whereas the default unit ID displayed on the EBOD enclosure is **01**. This allows you to quickly differentiate between the device and the EBOD enclosure when the device is turned on. If your device is turned off, use the information provided in  <!-- deleted by customization [Turn --><!-- keep by customization: begin --> [Turning <!-- keep by customization: end --> on a new <!-- deleted by customization device](/documentation/articles/storsimple-turn-device-on-or-off#turn-on-a-new-device) --><!-- keep by customization: begin --> device](https://msdn.microsoft.com/zh-cn/library/azure/dn772378.aspx) <!-- keep by customization: end --> to differentiate the device from the EBOD enclosure.
 
 ## Front panel LED status  
 
@@ -67,12 +73,17 @@ Power cooling module (PCM) indicator LEDs can be found on the back of the primar
 - PCM LEDs for the EBOD enclosure
 
 ## PCM LEDs for the primary enclosure  
-
 The StorSimple device has a 764W PCM module with an additional battery. The following illustration shows the LED panel for the device.  
 
+<!-- deleted by customization
    ![PCM LEDs on the primary enclosure][2]
-
 LED legend:
+-->
+<!-- keep by customization: begin -->
+   ![][2]
+ 
+**LED legend**   
+<!-- keep by customization: end -->
 
 1. AC power failure
 2. Fan failure
@@ -110,7 +121,12 @@ The status of the PCM is indicated on the LED panel. The device PCM LED panel ha
 
 The EBOD enclosure has a 580W PCM and no additional battery. The PCM panel for the EBOD enclosure has indicator LEDs only for the power supplies and the fan. The following illustration shows these LEDs.
 
+<!-- deleted by customization
    ![PCM LEDs on the EBOD enclosure][3] 
+-->
+<!-- keep by customization: begin -->
+   ![][3] 
+<!-- keep by customization: end -->
  
 You can use the following table to determine the status of the PCM.  
 
@@ -118,7 +134,7 @@ You can use the following table to determine the status of the PCM.
 |--------|---------------|------------------------|------------------|----------------------|
 | No AC power (to enclosure) | OFF | OFF | OFF | OFF |
 | No AC power (this PCM only) | OFF | ON | OFF | ON |
-| AC present PCM ON – OK | ON | OFF | OFF | OFF |
+| AC present PCM ON - OK | ON | OFF | OFF | OFF |
 | PCM fail (fan fail) | OFF | OFF | ON | X |
 | PCM fault (over amp, over voltage, over current | OFF | ON | ON | ON |
 | PCM (fan out of tolerance) | ON | OFF | OFF | ON |
@@ -132,7 +148,12 @@ The StorSimple device contains LEDs for the primary controller and the EBOD cont
 ### Monitoring LEDs for the primary controller
 The following illustration helps you identify the LEDs on the primary controller. (All of the components are listed to aid in orientation.)  
 
+<!-- deleted by customization
    ![Monitoring LEDs - primary controller][4]
+-->
+<!-- keep by customization: begin -->
+   ![][4]
+<!-- keep by customization: end -->
  
 Use the following table to determine whether the controller module is operating correctly.  
 
@@ -140,7 +161,7 @@ Use the following table to determine whether the controller module is operating 
 
 | LED | Description                                                                            
 |---- | ----------- |
-| ID LED (blue) | Indicates that the module is being identified. If the blue LED is blinking on a running controller, then the controller is the active controller and the other one is the standby controller. For more information, see [Identify the active controller on your device](storsimple-controller-replacement.md#identify-the-active-controller-on-your-device). |
+| ID LED (blue) | Indicates that the module is being identified. If the blue LED is blinking on a running controller, then the controller is the active controller and the other one is the standby controller. For more information, see [Identify <!-- deleted by customization the --><!-- keep by customization: begin --> an <!-- keep by customization: end --> active controller on your <!-- deleted by customization device](/documentation/articles/storsimple-controller-replacement#identify-the-active-controller-on-your-device) --><!-- keep by customization: begin --> device](https://msdn.microsoft.com/zh-cn/library/azure/dn790262.aspx) <!-- keep by customization: end -->. |
 | Fault LED (amber) | Indicates a fault in the controller.        
 | OK LED (green) | Steady green indicates that the controller is OK. Flashing green indicates a controller VPD configuration error. |
 | SAS activity LEDs (green) | Steady green indicates a connection with no current activity. Flashing green indicates the connection has ongoing activity. |
@@ -151,22 +172,37 @@ Use the following table to determine whether the controller module is operating 
 If the fault LED is lit, there is a problem with the controller module that might be resolved by restarting the controller. Please contact Microsoft Support if restarting the controller does not resolve this issue.  
 
 
+<!-- deleted by customization
 ### Monitoring LEDs for the EBOD (EBOD enclosure)  
+-->
+<!-- keep by customization: begin -->
+###Monitoring LEDs for the EBOD (EBOD enclosure)  
+<!-- keep by customization: end -->
 
 Each of the 6 Gb/s SAS EBOD controllers has LEDs that indicate its status as shown in the following illustration.  
 
+<!-- deleted by customization
   ![Monitoring LEDs - EBOD enclosure][5]
-
+-->
+<!-- keep by customization: begin -->
+  ![][5]
+ 
+<!-- keep by customization: end -->
 Use the following table to determine whether the EBOD controller module is operating normally.  
 
+<!-- deleted by customization
 ### EBOD controller module indicator LEDs  
+-->
+<!-- keep by customization: begin -->
+###EBOD controller module indicator LEDs  
+<!-- keep by customization: end -->
 
 |Status | I/O module OK (green) | I/O module fault (amber) | Host port activity (green) |
 |-------|----------------------|-------------------------------|----------------------------|
 | Controller module OK | ON | OFF | - |
 | Controller module fault | OFF | ON | - |
 | No external host port connection | - | - | OFF |
-| External host port connection – no activity | - | - | ON |
+| External host port connection - no activity | - | - | ON |
 | External host port connection - activity | - | - | Flashing |
 | Controller module metadata error | Flashing | - | - |
 
@@ -176,7 +212,12 @@ The StorSimple device has disk drives located in both the primary enclosure and 
 
 For the disk drives, the drive status is indicated by a green LED and a red-amber LED mounted on the front of each drive carrier module. The following illustration shows these LEDs.
 
+<!-- deleted by customization
   ![Disk drive LEDs][6]
+-->
+<!-- keep by customization: begin -->
+  ![][6]
+<!-- keep by customization: end -->
  
 Use the following table to determine the state of each disk drive, which in turn affects the overall front panel LED status.  
 
@@ -229,35 +270,36 @@ The following table describes the various alarm conditions.
 
 | Status | Severity | Alarm | Ops panel LED |
 |--------|---------|--------|----------------|
-| PCM alert – loss of DC power from a single PCM | Fault – no loss of redundancy | S1 | Module fault|
-|PCM alert – loss of DC power from a single PCM | Fault – loss of redundancy | S1 | Module fault |
-| PCM fan fail | Fault – loss of redundancy | S1 | Module fault |
+| PCM alert - loss of DC power from a single PCM | Fault - no loss of redundancy | S1 | Module fault|
+|PCM alert - loss of DC power from a single PCM | Fault - loss of redundancy | S1 | Module fault |
+| PCM fan fail | Fault - loss of redundancy | S1 | Module fault |
 | SBB module detected PCM fault | Fault | S1 | Module fault |
 | PCM removed | Configuration error | None | Module fault |
-| Enclosure configuration error | Fault – critical | S1 | Module fault |
+| Enclosure configuration error | Fault - critical | S1 | Module fault |
 | Low warning temperature alert | Warning | S1 | Module fault |
 | High warning temperature alert | Warning | S1 | Module fault |
-| Over temperature alarm | Fault – critical | S1 | Module fault |
-| I2C bus failure | Fault – loss of redundancy | S1 | Module fault |
-| Ops panel communication error (I2C) | Fault – critical	 | S1 | Module fault |
-| Controller error | Fault – critical | S1 | Module fault |
-| SBB interface module fault | Fault – critical | S1 | Module fault |
-| SBB interface module fault – No functioning modules remaining | Fault – critical | S4 | Module fault |
+| Over temperature alarm | Fault - critical | S1 | Module fault |
+| I2C bus failure | Fault - loss of redundancy | S1 | Module fault |
+| Ops panel communication error (I2C) | Fault - critical	 | S1 | Module fault |
+| Controller error | Fault - critical | S1 | Module fault |
+| SBB interface module fault | Fault - critical | S1 | Module fault |
+| SBB interface module fault - No functioning modules remaining | Fault - critical | S4 | Module fault |
 | SBB interface module removed | Warning | None | Module fault |
-| Drive power control fault | Warning – no loss of drive power | S1 | Module fault |
-| Drive power control fault | Fault – critical; loss of drive power | S1 | Module fault |
+| Drive power control fault | Warning - no loss of drive power | S1 | Module fault |
+| Drive power control fault | Fault - critical; loss of drive power | S1 | Module fault |
 | Drive removed | Warning | None | Module fault |
 | Insufficient power available | Warning | none | Module fault |
 
+<!-- deleted by customization
 ## Next steps
 
-Learn more about [StorSimple hardware components and status](storsimple-monitor-hardware-status.md).
+Learn more about [StorSimple hardware components and status](/documentation/articles/storsimple-monitor-hardware-status).
 
+-->
 [1]: ./media/storsimple-monitoring-indicators/storsimple-monitoring-indicators-IMAGE01.png
 [2]: ./media/storsimple-monitoring-indicators/storsimple-monitoring-indicators-IMAGE02.png
 [3]: ./media/storsimple-monitoring-indicators/storsimple-monitoring-indicators-IMAGE03.png
 [4]: ./media/storsimple-monitoring-indicators/storsimple-monitoring-indicators-IMAGE04.png
 [5]: ./media/storsimple-monitoring-indicators/storsimple-monitoring-indicators-IMAGE05.png
 [6]: ./media/storsimple-monitoring-indicators/storsimple-monitoring-indicators-IMAGE06.png
-
- 
+

@@ -2,36 +2,6 @@ replacement:
 
 deleted:
 
-		Push](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push)
-
-replaced by:
-
-		Push](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/)
-
-reason: ()
-
-deleted:
-
-		Java/PHP](/documentation/articles/notification-hubs-java-backend-how-to)
-
-replaced by:
-
-		Java/PHP](/documentation/articles/notification-hubs-java-backend-how-to/)
-
-reason: ()
-
-deleted:
-
-		Hub
-
-replaced by:
-
-		Hubs
-
-reason: ()
-
-deleted:
-
 		interface](http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx)
 
 replaced by:
@@ -72,16 +42,6 @@ replaced by:
 
 		<div class="dev-callout"><strong>Note</strong> 
 			<!-- keep by customization: begin --> <p>This
-
-reason: ()
-
-deleted:
-
-		/documentation/articles/notification-hubs-windows-store-dotnet-get-started
-
-replaced by:
-
-		/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
 
 reason: ()
 

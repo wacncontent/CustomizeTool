@@ -6,14 +6,10 @@
    authors="joaoma"
    manager="adinah"
    editor="tysonn" />
-<tags 
-   ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="07/23/2015"
-   ms.author="joaoma" />
+<tags
+	ms.service="load-balancer"
+	ms.date="10/26/2015"
+	wacn.date=""/>
 
 # Multiple VIPs per cloud service
 You can access Azure cloud services over the public Internet by using an IP address provided by Azure. This public IP address is referred to as a VIP (virtual IP) since it is linked to the Azure load balancer, and not really the VM instances within the cloud service. You can access any VM instance within a cloud service by using a single VIP. 
@@ -26,9 +22,9 @@ In the above scenario, all VIPs use the same public port (443) and traffic is re
 
 >[AZURE.NOTE] Another scenario for the use the multiple VIPs is hosting multiple SQL AlwaysOn availability group listeners on the same set of Virtual Machines.
 
-VIPs are dynamic by default, which means that the actual IP address assigned to the cloud service may change over time. To prevent that from happening, you can reserve a VIP for your service. To learn more about reserved VIPs, see [Reserved Public IP](../virtual-networks-reserved-public-ip).
+VIPs are dynamic by default, which means that the actual IP address assigned to the cloud service may change over time. To prevent that from happening, you can reserve a VIP for your service. To learn more about reserved VIPs, see [Reserved Public IP](/documentation/articles/virtual-networks-reserved-public-ip).
 
->[AZURE.NOTE] Please see [IP Address pricing](http://azure.microsoft.com/pricing/details/ip-addresses/) for information on pricing on VIPs and reserved IPs.
+>[AZURE.NOTE] Please see [IP Address <!-- deleted by customization pricing](/home/features/ip-addresses/#price) --><!-- keep by customization: begin --> pricing](/home/features/reserved-ip-addresses/#price) <!-- keep by customization: end --> for information on pricing on VIPs and reserved IPs.
 
 You can use PowerShell to verify the VIPs used by your cloud services, as well as add and remove VIPs, associate a VIP to an endpoint, and configure load balancing on a specific VIP. 
 
@@ -89,9 +85,9 @@ The script above will display a result similar to the sample below:
 In this example, the cloud service has 3 VIPs:
 
 - **Vip1** is the default VIP, you know that because the value for IsDnsProgrammedName is set to true.
-- **Vip2** and **Vip3** are not used as they don’t have any IP addresses. They will only be used if you associate an endpoint to the VIP.
+- **Vip2** and **Vip3** are not used as they donât have any IP addresses. They will only be used if you associate an endpoint to the VIP.
 
->[AZURE.NOTE] Your subscription will only be charged for extra VIPs once they are associated with an endpoint. For more information on pricing, see [IP Address pricing](http://azure.microsoft.com/pricing/details/ip-addresses/).
+>[AZURE.NOTE] Your subscription will only be charged for extra VIPs once they are associated with an endpoint. For more information on pricing, see [IP Address <!-- deleted by customization pricing](/home/features/ip-addresses/#price) --><!-- keep by customization: begin --> pricing](/home/features/reserved-ip-addresses/#price) <!-- keep by customization: end -->.
 
 ## How to associate a VIP to an endpoint
 To associate a VIP on a cloud service to an endpoint, run the following PowerShell command:
@@ -146,11 +142,15 @@ You can also update your load balancer to use a different VIP. For instance, if 
 
 ## See Also
 
-[Internet facing load balancer overview](load-balancer-internet-overview.md)
+[Internet facing load balancer overview](/documentation/articles/load-balancer-internet-overview)
 
-[Get started on Internet facing load balancer](load-balancer-internet-getstarted.md)
+[Get started on Internet facing load balancer](/documentation/articles/load-balancer-internet-getstarted)
 
-[Virtual Network Overview](../virtual-network/virtual-networks-overview.md)
+<!-- deleted by customization
+[Virtual Network Overview](/documentation/articles/virtual-networks-overview)
+-->
+<!-- keep by customization: begin -->
+[Virtual Network Overview](https://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)
+<!-- keep by customization: end -->
 
-[Reserved IP REST APIs](https://msdn.microsoft.com/library/azure/dn722420.aspx)
- 
+[Reserved IP REST APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx)

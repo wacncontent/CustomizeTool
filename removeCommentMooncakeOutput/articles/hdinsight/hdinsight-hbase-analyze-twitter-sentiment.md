@@ -9,17 +9,17 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="07/09/2015" 
-	wacn.date/>
+<tags
+	ms.service="hdinsight"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 # Analyze real-time Twitter sentiment with HBase in HDInsight
 
 Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sentiment_analysis) of big data from Twitter by using HBase in an HDInsight (Hadoop) cluster.
 
 
-Social websites are one of the major driving forces for big data adoption. Public APIs provided by sites like Twitter are a useful source of data for analyzing and understanding popular trends. In this tutorial, you will develop a console streaming service application and an ASP.NET web application to perform the following:
+Social websites are one of the major driving forces for big data adoption. Public APIs provided by sites like Twitter are a useful source of data for analyzing and understanding popular trends. In this tutorial, you will develop a console streaming service application and an ASP.NET web site to perform the following:
 
 ![][img-app-arch]
 
@@ -28,7 +28,7 @@ Social websites are one of the major driving forces for big data adoption. Publi
 	- Evaluate the sentiment of these tweets
 	- Store the sentiment information in HBase by using the Microsoft HBase SDK
 - The Azure Websites application
-	- Plot the real-time statistical results on Bing maps by using an ASP.NET web application. A visualization of the tweets will look something like this:
+	- Plot the real-time statistical results on Bing maps by using an ASP.NET web site. A visualization of the tweets will look something like this:
 
 	![hdinsight.hbase.twitter.sentiment.bing.map][img-bing-map]
 	
@@ -234,7 +234,7 @@ You need to create a console application to get tweets, calculate tweet sentimen
         Queue<ITweet> queue = new Queue<ITweet>();
         bool threadRunning = true;
 
-6. Set the constant values, including **&lt;HBaseClusterName>**, **&lt;HadoopUserName>**, and **&lt;HaddopUserPassword>**. If you want to change the HBase table name, you must change the table name in the web application accordingly.
+6. Set the constant values, including **&lt;HBaseClusterName>**, **&lt;HadoopUserName>**, and **&lt;HaddopUserPassword>**. If you want to change the HBase table name, you must change the table name in the web site accordingly.
 
 	You will download and move the dictionary.tsv file to a specific folder later in the tutorial.
 
@@ -498,7 +498,7 @@ You need to create a console application to get tweets, calculate tweet sentimen
 1. From Visual Studio, press **F5**. The following is a screenshot of the console application:
 
 	![hdinsight.hbase.twitter.sentiment.streaming.service][img-streaming-service]
-2. Keep the streaming console application running while you develop the web application, so you have more data to use.
+2. Keep the streaming console application running while you develop the web site, so you have more data to use.
 
 
 
@@ -528,16 +528,16 @@ You need to create a console application to get tweets, calculate tweet sentimen
 
 ##<a id="web"></a> Create a website by using Azure Websites to visualize Twitter sentiment
 
-In this section, you will create an ASP.NET MVC web application to read the real-time sentiment data from HBase and plot the data on Bing maps.
+In this section, you will create an ASP.NET MVC web site to read the real-time sentiment data from HBase and plot the data on Bing maps.
 
-**To create an ASP.NET MVC Web application**
+**To create an ASP.NET MVC web site**
 
 1. Open Visual Studio.
 2. Click **File**, click **New**, and then click **Project**.
 3. Enter the following information:
 
 	- Template category: **Visual C#/Web**
-	- Template: **ASP.NET Web Application**
+	- Template: **ASP.NET web site**
 	- Name: **TweetSentimentWeb**
 	- Location: **C:\Tutorials** 
 4. Click **OK**.
@@ -678,7 +678,7 @@ In this section, you will create an ASP.NET MVC web application to read the real
     - **HADOOPUSERPASSWORD**: The HBase cluster Hadoop user password.
     - **HBASETABLENAME** = "tweets_by_words";
 
-	The HBase table name is **"tweets_by_words";**. The values must match the values you sent in the streaming service, so that the web application reads the data from the same HBase table.
+	The HBase table name is **"tweets_by_words";**. The values must match the values you sent in the streaming service, so that the web site reads the data from the same HBase table.
 
 
 
@@ -1288,10 +1288,10 @@ In this section, you will create an ASP.NET MVC web application to read the real
   
 	Modify the registration of the API routes to make the Web API controller work inside the MVC application.
 
-**To run the web application**
+**To run the web site**
 
 1. Verify that the streaming service console application is still running so you can see the real-time changes.
-2. Press **F5** to run the web application:
+2. Press **F5** to run the web site:
 
 	![hdinsight.hbase.twitter.sentiment.bing.map][img-bing-map]
 2. In the text box, enter a keyword, and then click **Go**.  Depending on the data collected in the HBase table, some keywords might not be found. Try some common keywords, such as "love," "xbox," and "playstation." 
@@ -1313,8 +1313,11 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 - [Develop Java MapReduce programs for HDInsight][hdinsight-develop-mapreduce]
 
 
-[hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
 [website-get-started]: /documentation/articles/web-sites-dotnet-get-started
+
+
+
 [img-app-arch]: ./media/hdinsight-hbase-analyze-twitter-sentiment/AppArchitecture.png
 [img-twitter-app]: ./media/hdinsight-hbase-analyze-twitter-sentiment/TwitterApp.png
 [img-streaming-service]: ./media/hdinsight-hbase-analyze-twitter-sentiment/StreamingService.png
@@ -1325,7 +1328,11 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 [hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
 [hdinsight-analyze-twitter-data]: /documentation/articles/hdinsight-analyze-twitter-data
-[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
+
+
+
+
 [curl]: http://curl.haxx.se
 [curl-download]: http://curl.haxx.se/download.html
 
@@ -1335,14 +1342,15 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-install]: /documentation/articles/install-configure-powershell
-[powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
+[powershell-install]: /documentation/articles/powershell-install-configure
+[powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-storage-powershell]: /documentation/articles/hdinsight-use-blob-storage#powershell
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-storage-powershell]: /documentation/articles/hdinsight-hadoop-use-blob-storage#powershell
 [hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 [hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+ 

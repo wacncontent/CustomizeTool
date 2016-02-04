@@ -3,19 +3,19 @@
    description="Learn how to migrate and publish your web application to an Azure cloud service by using Visual Studio."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
 	ms.service="multiple"
-	ms.date="09/30/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
 # How to: Migrate and Publish a Web Application to an Azure Cloud Service from Visual Studio
 
 To take advantage of the hosting services and scalability of Azure, you might want to migrate and publish your web application to an Azure cloud service. You can run a web application in Azure with minimal changes to your existing application.
 
->[AZURE.NOTE] This topic is about deploying to cloud services, not to web sites. For information about deploying to web sites, see [Deploy a web app in Azure Websites](/documentation/articles/web-sites-deploy).
+>[AZURE.NOTE] This topic is about deploying to cloud services, not to web sites.Â For information about deploying to web sites, see [Deploy a web app in Azure](/documentation/articles/web-sites-deploy).
 
 For a list of specific templates that are supported for both Visual C# and Visual Basic, see the section **Supported Project Templates** later in this topic.
 
@@ -85,7 +85,7 @@ If you have a connection string for your web application that uses a SQL Server 
 1. You must also add the parameter `MultipleActiveResultSets=True` to the connection string. The connection string should have the following format:
 
     ```
-    connectionString=”Server=tcp:<database_server>.database.chinacloudapi.cn,1433;Database=<database_name>;User ID=<user_name>@<database_server>;Password=<myPassword>;Trusted_Connection=False;Encrypt=True;MultipleActiveResultSets=True"
+    connectionString=âServer=tcp:<database_server>.database.chinacloudapi.cn,1433;Database=<database_name>;User ID=<user_name>@<database_server>;Password=<myPassword>;Trusted_Connection=False;Encrypt=True;MultipleActiveResultSets=True"
     ```
 
 1. (Optional) An alternative method to changing the connection string directly in the web.config file is to add a section into one of the web.config transformation files, depending on the build configuration that you use to create your service package. Open either the Web.Debug.Config file or the Web.Release.Config file. Add the following section into this file:

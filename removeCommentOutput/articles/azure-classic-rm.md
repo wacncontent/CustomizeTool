@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="08/14/2015"
+	ms.date="12/07/2015"
 	wacn.date=""/>
 
 # Azure Deployment Models

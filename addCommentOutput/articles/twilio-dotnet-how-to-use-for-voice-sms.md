@@ -242,7 +242,7 @@ As you can see from the example above, the TwiML response is simply an XML docum
 
 For more information about TwiML, see [https://www.twilio.com/docs/api/twiml](https://www.twilio.com/docs/api/twiml).
 
-Once you have set up a way to provide TwiML responses, you can pass that URL into the **client.InitiateOutboundCall** method. For example, if you have a web application named MyTwiML deployed to an Azure cloud service, and the name of your ASP.NET Handler is mytwiml.ashx, the URL can be passed to **client.InitiateOutboundCall** as shown in the following code sample:
+Once you have set up a way to provide TwiML responses, you can pass that URL into the **client.InitiateOutboundCall** method. For example, if you have a web site named MyTwiML deployed to an Azure cloud service, and the name of your ASP.NET Handler is mytwiml.ashx, the URL can be passed to **client.InitiateOutboundCall** as shown in the following code sample:
 
     // Place the call From, To, and URL values into a hash map.
     // This sample uses the sandbox number provided by Twilio to make the call.
@@ -262,7 +262,10 @@ For additional information about using Twilio on Azure with ASP.NET, see [How to
 
 
 
-[howto_phonecall_dotnet]: /documentation/articles/partner-twilio-cloud-services-dotnet-phone-call-web-role
+[howto_phonecall_dotnet]: partner-twilio-cloud-services-dotnet-phone-call-web-role.md
+
+
+
 [twimlet_message_url]: http://twimlets.com/message
 
 [twilio_rest_making_calls]: http://www.twilio.com/docs/api/rest/making-calls

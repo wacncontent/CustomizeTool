@@ -25,7 +25,7 @@
    A summary of the new resource group is returned.
 
         ResourceGroupName : ExampleResourceGroup
-        Location          : China North
+        Location          : <!-- deleted by customization chinanorth --><!-- keep by customization: begin --> China North <!-- keep by customization: end -->
         ProvisioningState : Succeeded
         Tags              :
         Permissions       :

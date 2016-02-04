@@ -92,6 +92,7 @@ Click on an app to see a tutorial on how to configure automated provisioning for
 - [Docusign](/documentation/articles/active-directory-saas-docussign-tutorial/)
 - [Dropbox for Business](/documentation/articles/active-directory-saas-dropboxforbusiness-tutorial/)
 - [Google Apps](/documentation/articles/active-directory-saas-google-apps-tutorial/)
+- [Jive](http://go.microsoft.com/fwlink/?LinkId=309591)
 - [Salesforce](/documentation/articles/active-directory-saas-salesforce-tutorial/)
 - [Salesforce Sandbox](https://msdn.microsoft.com/zh-cn/library/azure/dn798671.aspx)
 - [ServiceNow](/documentation/articles/active-directory-saas-servicenow-tutorial/)
@@ -101,3 +102,4 @@ In order for an application to support automated user provisioning, it must firs
 
 To contact the Azure AD engineering team to request provisioning support for additional applications, please submit a message through the [Azure Active Directory feedback forum](http://feedback.azure.com/forums/169401-azure-active-directory).
 
+[AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]

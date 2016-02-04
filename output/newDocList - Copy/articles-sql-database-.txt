@@ -1,0 +1,11 @@
+new docs: 2, word count: {word_count_TODO}
+articles/sql-database/sql-database-always-encrypted.md
+articles/sql-database/sql-database-ssms-remoteapp.md
+
+new includes: 6
+includes/sql-database-configure-includes-selector-method.md
+includes/sql-database-include-connection-string-details-20-portalshots.md
+includes/sql-database-include-connection-string-dotnet-20-portalshots.md
+includes/sql-database-include-connection-string-jdbc-20-portalshots.md
+includes/sql-database-include-connection-string-odbc-20-portalshots.md
+includes/sql-database-include-connection-string-php-20-portalshots.md

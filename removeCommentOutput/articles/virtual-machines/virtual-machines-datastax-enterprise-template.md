@@ -20,7 +20,7 @@
 
 DataStax is a recognized industry leader in developing and delivering solutions based on Apache Cassandra™ - the commercially-supported, enterprise-ready NoSQL distributed database technology that is widely-acknowledged as agile, always-on, and predictably scalable to any size. DataStax offers both the Enterprise (DSE) and Community (DSC) flavors. In addition to what the Community edition provides, Datastax Enterprise is Production-certified Cassandra with capabilities like in-memory computing, enterprise-level security, fast and powerful integrated analytics, and enterprise management.
 
->[AZURE.NOTE] Unlike the Community edition, in order to deploy DataStax Enterprise, you need to have a valid DataStax account (username and password) to pass in as parameters during template deployment. Visit the [Datastax](http://www.datastax.com) website to set up your account if you don’t have one already.
+>[AZURE.NOTE] Unlike the Community edition, in order to deploy DataStax Enterprise, you need to have a valid DataStax account (username and password) to pass in as parameters during template deployment. Visit the [Datastax](http://www.datastax.com) website to set up your account if you don't have one already.
 
 In addition to what is already available in Azure Marketplace, now you can also easily deploy a new Datastax Enterprise cluster on Ubuntu VMs using a Resource Manager template deployed through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli-install).
 
@@ -90,9 +90,9 @@ When completed, look for the datastax-enterprise folder in your C:\Azure\Templat
 <!--Wrapping name of folder in bold typeface is not corp style  -->
 ### Step 2: (optional) Understand the template parameters
 
-When you deploy non-trivial solutions like an Apache Cassandra cluster based on DataStax, you must specify a set of configuration parameters to deal with a number of required settings. By declaring these parameters in the template definition, it’s possible to specify values during deployment through an external file or in the command line.
+When you deploy non-trivial solutions like an Apache Cassandra cluster based on DataStax, you must specify a set of configuration parameters to deal with a number of required settings. By declaring these parameters in the template definition, it's possible to specify values during deployment through an external file or in the command line.
 
-In the "parameters" section at the top of the azuredeploy.json file, you’ll find the set of parameters that are required by the template to configure a Datastax Enterprise cluster. Here is an example of the parameters section from this template's azuredeploy.json file.
+In the "parameters" section at the top of the azuredeploy.json file, you'll find the set of parameters that are required by the template to configure a Datastax Enterprise cluster. Here is an example of the parameters section from this template's azuredeploy.json file.
 
 	"parameters": {
 		"region": {
@@ -238,7 +238,7 @@ Fill in an Azure deployment name, resource group name, Azure location, and the f
 	$templateFile= $folderName + "\azuredeploy.json"
 	$templateParameterFile= $folderName + "\azuredeploy-parameters.json"
 
-	New-AzureResourceGroup –Name $RGName –Location $locName
+	New-AzureResourceGroup -Name $RGName -Location $locName
 
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateParameterFile $templateParameterFile -TemplateFile $templateFile
 
@@ -257,7 +257,7 @@ To do that, go to the [Azure Management Portal](https://manage.windowsazure.cn) 
 
 After your tests, if you need to remove this resource group and all of its resources (the storage account, virtual machine, and virtual network), use the next command.
 
-	Remove-AzureResourceGroup –Name "<resource group name>" -Force
+	Remove-AzureResourceGroup -Name "<resource group name>" -Force
 
 ### Step 3-b: Deploy a DataStax Enterprise cluster with a template using the Azure CLI
 
@@ -275,7 +275,7 @@ You can check the status of individual resources deployments with the following 
 
 ## A tour of the Datastax Enterprise template structure and file organization
 
-In order to design a robust and reusable Resource Manager template, additional thinking is needed to organize the series of complex and interrelated tasks required during the deployment of a complex solution like DataStax Enterprise. Leveraging ARM **template linking** and **resource looping** in addition to script execution through related extensions, it’s possible to implement a modular approach that can be reused with virtually any complex template-based deployment.
+In order to design a robust and reusable Resource Manager template, additional thinking is needed to organize the series of complex and interrelated tasks required during the deployment of a complex solution like DataStax Enterprise. Leveraging ARM **template linking** and **resource looping** in addition to script execution through related extensions, it's possible to implement a modular approach that can be reused with virtually any complex template-based deployment.
 <!-- In previous paragraph, we can't use bold typeface to show emphasis. You can use italic to denote emphasis. -->
 The next diagram describes the relationships between all the files downloaded from GitHub for this deployment.
 
@@ -354,7 +354,7 @@ In the second fragment, the "scripts" variable is a JSON array where each elemen
 
 ### "resources" section
 
-The "resources" section is where most of the action is happening. Looking inside this section, you can immediately identify two different cases: the first one is an element defined of type `Microsoft.Resources/deployments` that basically means the invocation of a nested deployment within the main one. Through the "templateLink" element (and related version property), it’s possible to specify a linked template file that will be invoked by passing a set of parameters as input, as shown in the next example.
+The "resources" section is where most of the action is happening. Looking inside this section, you can immediately identify two different cases: the first one is an element defined of type `Microsoft.Resources/deployments` that basically means the invocation of a nested deployment within the main one. Through the "templateLink" element (and related version property), it's possible to specify a linked template file that will be invoked by passing a set of parameters as input, as shown in the next example.
 
 	{
 	      "name": "shared",
@@ -384,12 +384,12 @@ From this first example, it is clear how azuredeploy.json in this scenario has b
 
 In particular, the following linked templates will be used for this deployment:
 <!-- In list format, using bold typeface in the following manner is ok -->
--	**shared-resource.json**: Contains the definition of all resources that will be shared across the deployment. Examples are storage accounts used to store VM’s OS disks and virtual networks.
+-	**shared-resource.json**: Contains the definition of all resources that will be shared across the deployment. Examples are storage accounts used to store VM's OS disks and virtual networks.
 -	**opscenter-resources.json**: Deploys an OpsCenter VM and all related resources, including a network interface and public IP address.
 -	**opscenter-install-resources.json**: Deploys the OpsCenter VM extension (custom script for Linux) that will invoke the specific bash script file (opscenter.sh) required to set up the OpsCenter service within that VM.
 -	**ephemeral-nodes-resources.json**: Deploys all cluster node VMs and connected resources (for example, network cards, and private IPs.). This template will also deploy VM extensions (custom scripts for Linux) and invoke a bash script (dsenode.sh) to physically install Apache Cassandra bits on each node.
 
-Let’s drill down into how this last template is used, as it is one of the most interesting from a template development perspective. One important concept to highlight is how a single template file can deploy multiple copies of a single resource type, and for each instance can set unique values for required settings. This concept is known as Resource Looping.
+Let's drill down into how this last template is used, as it is one of the most interesting from a template development perspective. One important concept to highlight is how a single template file can deploy multiple copies of a single resource type, and for each instance can set unique values for required settings. This concept is known as Resource Looping.
 
 When ephemeral-nodes-resources.json is invoked from within the main azuredeploy.json file, a parameter called nodeCount is provided as part of the parameters list. Within the child template, nodeCount (the number of nodes to deploy in the cluster) will be used inside the **"copy”** element of each resource that needs to be deployed in multiple copies, as highlighted in the next example. For all settings where you need unique values for different instances of the deployed resource, the **copyindex()** function can be used to obtain a numeric value indicating the current index in that particular resource loop creation. In the next example, you can see this concept applied to multiple VMs being created for the Datastax Enterprise cluster nodes.
 

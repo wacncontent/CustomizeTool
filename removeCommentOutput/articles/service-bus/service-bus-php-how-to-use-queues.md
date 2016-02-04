@@ -201,7 +201,7 @@ Now that you've learned the basics of Service Bus queues, see [Queues, topics, a
 
 For more information, also see the [PHP Developer Center](/develop/php/).
 
-[Queues, Topics, and Subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions
+[Queues, Topics, and Subscriptions]: service-bus-queues-topics-subscriptions.md
 [require_once]: http://php.net/require_once
 
  

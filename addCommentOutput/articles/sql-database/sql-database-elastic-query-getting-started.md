@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Getting started with elastic database query | Windows Azure"
+	pageTitle="Getting started with elastic queries for sharding (horizontal partitioning) | Windows Azure"
 	description="how to use cross database database queries"
 	services="sql-database"
 	documentationCenter=""  
@@ -11,7 +11,12 @@
 	ms.date="10/15/2015"
 	wacn.date=""/>
 
+<!-- deleted by customization
+# Getting started with elastic queries for sharding (horizontal partitioning)
+-->
+<!-- keep by customization: begin -->
 # Getting started with cross-database query
+<!-- keep by customization: end -->
 
 Elastic Database query (preview) for Azure SQL Database allows you to run T-SQL queries that span multiple databases using a single connection point. For more information about the Elastic Database query feature, please see the [feature overview page](/documentation/articles/sql-database-elastic-query-overview).
 
@@ -24,12 +29,12 @@ Download and run the [Getting started with Elastic Database tools sample](/docum
 
 Here you will create a shard map manager along with several shards, followed by insertion of data into the shards. If you happen to already have shards setup with sharded data in them, you can skip the following steps and move to the next section.
 
-1. Build and run the **Getting started with Elastic Database tools** sample application. Follow the steps until step 7 in the section [Download and run the sample app](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools). At the end of Step 7, you will see the following command prompt:
+1. Build and run the **Getting started with Elastic Database tools** sample application. Follow the steps until step 7 in the section [Download and run the sample <!-- deleted by customization app](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools) --><!-- keep by customization: begin --> app](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools) <!-- keep by customization: end -->. At the end of Step 7, you will see the following command prompt:
 
 	![command prompt][1]
 
 2.  In the command window, type "1" and press **Enter**. This creates the shard map manager, and adds two shards to the server. Then type "3" and press **Enter**; repeat the action four times. This inserts sample data rows in your shards.
-3.  The [Azure preview portal](https://manage.windowsazure.cn) should show three new databases in your v12 server:
+3.  The [Azure <!-- deleted by customization Management Portal](https://manage.windowsazure.cn) --><!-- keep by customization: begin --> preview portal](https://manage.windowsazure.cn) <!-- keep by customization: end --> should show three new databases in your v12 server:
 
 	![Visual Studio confirmation][2]
 
@@ -39,7 +44,7 @@ Here you will create a shard map manager along with several shards, followed by 
 
 ## Create an elastic query database
 
-1. Open the [Azure preview portal](https://manage.windowsazure.cn) and log in.
+1. Open the [Azure <!-- deleted by customization Management Portal](https://manage.windowsazure.cn) --><!-- keep by customization: begin --> preview portal](https://manage.windowsazure.cn) <!-- keep by customization: end --> and log in.
 2. Create a new Azure SQL database in the same server as your shard setup. Name the database "ElasticDBQuery." For a pricing tier, you must select one of the premium offers. The Elastic Database query is currently available only on the premium tier.
 
 	![Azure Management Portal and pricing tier][3]
@@ -62,7 +67,7 @@ These are used to connect to the shard map manager and the shards:
 		WITH IDENTITY = '<username>',
 		SECRET = '<password>';
 
-	"username" and "password" should be the same as login information used in step 6 of [Download and run the sample app](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools) in [Getting started with elastic database tools](/documentation/articles/sql-database-elastic-scale-get-started).
+	"username" and "password" should be the same as login information used in step 6 of [Download and run the sample <!-- deleted by customization app](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools) --><!-- keep by customization: begin --> app](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools) <!-- keep by customization: end --> in [Getting started with elastic database tools](/documentation/articles/sql-database-elastic-scale-get-started).
 
 ### External data sources
 
@@ -120,12 +125,12 @@ You will notice that the query aggregates results from all the shards and gives 
 All the rows from **Customers** table, stored in different shards populate the Excel sheet.
 
 ## Next steps
-You can now use Excel’s powerful data visualization functions. You can use the connection string with your server name, database name and credentials to connect your BI and data integration tools to the elastic query database. Make sure that SQL Server is supported as a data source for your tool. You can refer to the elastic query database and external tables just like any other SQL Server database and SQL Server tables that you would connect to with your tool.
+You can now use Excelâs powerful data visualization functions. You can use the connection string with your server name, database name and credentials to connect your BI and data integration tools to the elastic query database. Make sure that SQL Server is supported as a data source for your tool. You can refer to the elastic query database and external tables just like any other SQL Server database and SQL Server tables that you would connect to with your tool.
 
 ### Cost
 There is no additional charge for using the Elastic Database Query feature. However, at this time this feature is available only on premium databases as an end point, but the shards can be of any service tier.
 
-For pricing information see [SQL Database Pricing Details](/home/features/sql-database/#price).
+For pricing information see [SQL Database Pricing <!-- deleted by customization Details](/home/features/sql-database/#price) --><!-- keep by customization: begin --> Details](http://www.windowsazure.cn/home/features/sql-database/#price) <!-- keep by customization: end -->.
 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]

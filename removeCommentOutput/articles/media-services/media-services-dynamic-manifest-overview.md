@@ -22,7 +22,7 @@ This topics discusses common scenarios in which using filters would be very bene
 
 When delivering your content to customers (streaming live events or video-on-demand) your goal is to deliver a high quality video to various devices under different network conditions. To achieve this goal do the following:
 
-- encode your stream to multi-bitrate ([adaptive bitrate](http://en.wikipedia.org/wiki/Adaptive_bitrate_streaming)) video stream (this will take care of quality and network conditions) and 
+- encode your stream to multi-bitrate ([adaptive bitrate](http://zh.wikipedia.org/wiki/自适性串流)) video stream (this will take care of quality and network conditions) and 
 - use Media Services [Dynamic Packaging](/documentation/articles/media-services-dynamic-packaging-overview) to dynamically re-package your stream into different protocols (this will take care of streaming on different devices). Media Services supports delivery of the following adaptive bitrate streaming technologies: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH, and HDS (for Adobe PrimeTime/Access licensees only). 
 
 ###Manifest files 
@@ -147,7 +147,7 @@ Filtered Asset:
 
 ##Adjusting Presentation Window (DVR)
 
-Currently, Azure Media Services offers circular archive where the duration can be configured between 5 minutes - 25 hours. Manifest filtering can be used to create a rolling DVR window over the top of the archive, without deleting media. There are many scenarios where broadcasters want to provide a limited DVR window which moves with the live edge and at the same time keep a bigger archiving window. A broadcaster may want to use the data that is out of the DVR window to highlight clips, or he\she may want to provide different DVR windows for different devices. For example, most of the mobile devices don’t handle big DVR windows (you can have a 2 minute DVR window for mobile devices and 1 hour for desktop clients).
+Currently, Azure Media Services offers circular archive where the duration can be configured between 5 minutes - 25 hours. Manifest filtering can be used to create a rolling DVR window over the top of the archive, without deleting media. There are many scenarios where broadcasters want to provide a limited DVR window which moves with the live edge and at the same time keep a bigger archiving window. A broadcaster may want to use the data that is out of the DVR window to highlight clips, or he\she may want to provide different DVR windows for different devices. For example, most of the mobile devices don't handle big DVR windows (you can have a 2 minute DVR window for mobile devices and 1 hour for desktop clients).
 
 ![DVR window][dvr_filter]
 
@@ -182,7 +182,7 @@ The following scenario demonstrates why you might want to combine filters:
 2. You also want to trim the start and end time of an asset. To achieve this, you would create a local filter and set the start/end time. 
 3. You want to combine both of these filters (without combination you would need to add quality filtering to the trimming filter which will make filter usage difficult).
 
-To combine filters, you need to set the filter names to the manifest/playlist URL with semicolon delimited. Let’s assume you have a filter named *MyMobileDevice* that filters qualities and you have another named *MyStartTime* to set a specific start time. You can combine them like this:
+To combine filters, you need to set the filter names to the manifest/playlist URL with semicolon delimited. Let's assume you have a filter named *MyMobileDevice* that filters qualities and you have another named *MyStartTime* to set a specific start time. You can combine them like this:
 
 	http://teststreaming.streaming.mediaservices.chinacloudapi.cn/3d56a4d-b71d-489b-854f-1d67c0596966/64ff1f89-b430-43f8-87dd-56c87b7bd9e2.ism/Manifest(filter=MyMobileDevice;MyStartTime)
 
@@ -200,10 +200,12 @@ For more information see [this](http://azure.microsoft.com/blog/azure-media-serv
 
 ##Media Services learning paths
 
-You can view AMS learning paths here:
+[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
 
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+##Provide feedback
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
 
 
 ##See Also

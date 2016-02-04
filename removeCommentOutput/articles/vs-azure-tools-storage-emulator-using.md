@@ -1,14 +1,14 @@
 <properties 
-   pageTitle="Configuring and using the Storage Emulator with Visual Studio"
+   pageTitle="Configuring and using the Storage Emulator with Visual Studio | Windows Azure"
    description="Configuring and using the Storage Emulator with Visual Studio"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
 	ms.service="storage"
-	ms.date="08/24/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 # Configuring and Using the Storage Emulator with Visual Studio

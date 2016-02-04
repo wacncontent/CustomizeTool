@@ -1,0 +1,6 @@
+updated docs: 2
+articles/batch/batch-automatic-scaling.md
+articles/batch/batch-dotnet-get-started.md
+
+updated includes: 1
+includes/azure-batch-limits.md

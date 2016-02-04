@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory Integration with Citrix ShareFile | Windows Azure" 
     description="Learn how to use Citrix ShareFile with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory Integration with Citrix ShareFile

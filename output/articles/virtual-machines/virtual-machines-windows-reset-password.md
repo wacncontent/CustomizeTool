@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Reset the password or Remote Desktop on a Windows VM | Windows Azure"
 	description="Reset the administrator password or Remote Desktop services on a Windows VM created with the Resource Manager deployment model."
@@ -15,18 +17,19 @@
 
 # How to reset a password or the Remote Desktop service for a Windows VM
 
-If you can't connect to a Windows virtual machine because of a forgotten password or a problem with the Remote Desktop service configuration, use the Azure preview portal or the VMAccess extension to reset the local administrator password or reset the Remote Desktop service configuration.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
-> [AZURE.NOTE] This article does not apply to virtual machines created in Azure Resource Manager.
 
-## Preview portal
+If you can't connect to a Windows virtual machine because of a forgotten password or a problem with the Remote Desktop service configuration, use the Azure Management Portal or the VMAccess extension to reset the local administrator password or reset the Remote Desktop service configuration.
 
-To reset the Remote Desktop service in the [preview portal](https://manage.windowsazure.cn), click **Browse all** > **Virtual machines (classic)** > *your Windows virtual machine* > **Reset Remote Access**. The following page appears.
+## Azure Management Portal
+
+To reset the Remote Desktop service in the [Azure Management Portal](https://manage.windowsazure.cn), click **Browse all** > **Virtual machines (classic)** > *your Windows virtual machine* > **Reset Remote Access**. The following page appears.
 
 
 ![](./media/virtual-machines-windows-reset-password/Portal-RDP-Reset-Windows.png)
 
-To reset the name and password of the local administrator account in the [preview portal](https://manage.windowsazure.cn), click **Browse all** > **Virtual machines (classic)** > *your Windows virtual machine* > **All settings** > **Password reset**. The following page appears.
+To reset the name and password of the local administrator account in the [Azure Management Portal](https://manage.windowsazure.cn), click **Browse all** > **Virtual machines (classic)** > *your Windows virtual machine* > **All settings** > **Password reset**. The following page appears.
 
 ![](./media/virtual-machines-windows-reset-password/Portal-PW-Reset-Windows.png)
 
@@ -52,11 +55,11 @@ If you don't know the cloud service and virtual machine name, run **Get-AzureVM*
 
 If the **write-host** command displays **True**, the VM Agent is installed. If it displays **False**, see the instructions and a link to the download in the [VM Agent and Extensions - Part 2](https://azure.microsoft.com/zh-cn/blog/vm-agent-and-extensions-part-2/) Azure blog post.
 
-If you created the virtual machine with the Azure Management Portal, run the following additional command.
+If you created the virtual machine with the portal, run the following additional command.
 
 	$vm.GetInstance().ProvisionGuestAgent = $true
 
-This command will prevent the “Provision Guest Agent must be enabled on the VM object before setting IaaS VM Access Extension” error when running the **Set-AzureVMExtension** command in the following sections.
+This command will prevent the "Provision Guest Agent must be enabled on the VM object before setting IaaS VM Access Extension" error when running the **Set-AzureVMExtension** command in the following sections.
 
 Now, you can do these tasks:
 
@@ -67,8 +70,8 @@ Now, you can do these tasks:
 
 Add the current local administrator account name and the new password, and then run the following commands.
 
-	$cred=Get-Credential –Message "Type the name of the current local administrator account and the new password."
-	Set-AzureVMAccessExtension –vm $vm -UserName $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password  | Update-AzureVM
+	$cred=Get-Credential -Message "Type the name of the current local administrator account and the new password."
+	Set-AzureVMAccessExtension -vm $vm -UserName $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password  | Update-AzureVM
 
 - If you type a different name than the current account, the VMAccess extension renames the local administrator account, assigns the password to that account, and issues a Remote Desktop log off.
 - If the local administrator account is disabled, the VMAccess extension enables it.
@@ -79,7 +82,7 @@ These commands also reset the Remote Desktop service configuration.
 
 To reset the Remote Desktop service configuration, run the following command.
 
-	Set-AzureVMAccessExtension –vm $vm | Update-AzureVM
+	Set-AzureVMAccessExtension -vm $vm | Update-AzureVM
 
 The VMAccess extension runs these two commands on the virtual machine:
 
@@ -103,7 +106,7 @@ If you were unable to run the Azure IaaS (Windows) diagnostics package or runnin
 
 ## Additional resources
 
-[Azure VM extensions and features](http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
+[Azure VM extensions and features](/documentation/articles/virtual-machines-extensions-features)
 
 [Connect to an Azure virtual machine with RDP or SSH](http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx)
 

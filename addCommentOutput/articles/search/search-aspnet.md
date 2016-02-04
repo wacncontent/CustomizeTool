@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Connect Azure Search with ASP.NET MVC Web Apps | Microsoft Azure"
-	description="Hook up an ASP.NET Web app with Azure Search. Learn how to connect, query, and render results using the .Net library or REST API."
+	pageTitle="Connect Azure Search with ASP.NET MVC web sites | Windows Azure | Hosted cloud search service"
+	description="Hook up an ASP.NET MVC web site with Azure Search, a hosted cloud search service. Learn how to connect, query, and render results using the .Net library or REST API."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -9,36 +9,51 @@
 
 <tags
 	ms.service="search"
-	ms.devlang="na"
-	ms.workload="search"
-	ms.topic="hero-article"
-	ms.tgt_pltfrm="na"
-	ms.date="08/26/2015"
-	ms.author="heidist"/>
+	ms.date="11/04/2015"
+	wacn.date=""/>
 
+<!-- deleted by customization
+#How to integrate Azure Search with ASP.NET MVC web sites
+
+ASP.NET MVC is the predominant web site framework in custom solutions that integrate with Azure Search. In this article, you'll learn how to connect your ASP.NET web site to Azure Search, ramp up on design patterns for common operations, and review a few coding practices that could help your development experience go more smoothly.
+-->
+<!-- keep by customization: begin -->
 #How to integrate Azure Search with ASP.NET MVC Web Apps
 
-ASP.NET MVC is the predominant web application framework in custom solutions that integrate with Azure Search. In this article, you’ll learn how to connect your ASP.NET web app to Azure Search, ramp up on design patterns for common operations, and review a few coding practices that could help your development experience go more smoothly. 
+ASP.NET MVC is the predominant web application framework in custom solutions that integrate with Azure Search. In this article, you’ll learn how to connect your ASP.NET web app to Azure Search, ramp up on design patterns for common operations, and review a few coding practices that could help your development experience go more smoothly.
+<!-- keep by customization: end -->
 
 ##Samples and demos using ASP.NET and Azure Search
 
 Several code samples already exist that show how Search integrates with ASP.NET. You can go straight to code or a demo app by visiting any of these links:
 
+<!-- deleted by customization
+- [Beijing City (NYC) jobs demo site](http://aka.ms/azjobsdemo)
+- [Try Azure Websites + Azure Search](/documentation/articles/search-tryappservice)
+- [Complete list of videos, tutorials, demos, and code samples](/documentation/articles/earch-video-demo-tutorial-list)
+-->
+<!-- keep by customization: begin -->
 - [New York City (NYC) jobs demo site](http://aka.ms/azjobsdemo)
 - [Try App Service + Azure Search](search-tryappservice.md)
 - [Complete list of videos, tutorials, demos, and code samples](earch-video-demo-tutorial-list.md)
+<!-- keep by customization: end -->
 
 ##Connect to the service
 
-To establish a connection to the service and issue requests, your Web application only needs three things: 
+To establish a connection to the service and issue requests, your <!-- deleted by customization web site --><!-- keep by customization: begin --> Web application <!-- keep by customization: end --> only needs three things:
 
+<!-- deleted by customization
+- A URL to the Azure Search service you've provisioned, formatted as https://<service-name>.search.chinacloudapi.cn
+-->
+<!-- keep by customization: begin -->
 - A URL to the Azure Search service you’ve provisioned, formatted as https://<service-name>.search.windows.net
+<!-- keep by customization: end -->
 - An API key (string) that authenticates the connection to Azure Search
 - An HTTPClient or SearchServiceClient to formulate the connection request
 
 ####URLs and API Keys
 
-You can find the URL and API key in the [portal](search-create-service-portal.md) or retrieve them programmatically using the [Management REST API](https://msdn.microsoft.com/library/dn832684.aspx). 
+You can find the URL and API key in the <!-- deleted by customization [portal](/documentation/articles/search-create-service-portal) --><!-- keep by customization: begin --> [portal](search-create-service-portal.md) <!-- keep by customization: end --> or retrieve them programmatically using the [Management REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/dn832684.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/dn832684.aspx) <!-- keep by customization: end -->.
 
 Typically, both URL and key are placed in the web.config file of your user interaction program:
 
@@ -48,22 +63,27 @@ Typically, both URL and key are placed in the web.config file of your user inter
     	. . .
       </appSettings>
 
-The Search service name can be the short name you specified during provisioning as long as you append the domain (search.windows.net) on the connection, or you could specify the fully qualified name (<service-name>.search.windows.net) in web.config, without the HTTPS prefix.
+The Search service name can be the short name you specified during provisioning as long as you append the domain <!-- deleted by customization (search.chinacloudapi.cn) --><!-- keep by customization: begin --> (search.windows.net) <!-- keep by customization: end --> on the connection, or you could specify the fully qualified name <!-- deleted by customization (<service-name>.search.chinacloudapi.cn) --><!-- keep by customization: begin --> (<service-name>.search.windows.net) <!-- keep by customization: end --> in web.config, without the HTTPS prefix.
 
 The API key is an authentication token generated during service provisioning (admin keys only) or generated by hand if you are creating query keys in the portal. The type of key determines which search operations are available to your application:
 
 - admin keys (read-write permissions, 2 per service)
 - query keys (read-only, up to 50 per service)
 
-API keys are strings, 32 characters long. Visually, there is no distinction between admin and query keys. If you lose take of what type of key you've specified in code, you would need to check the portal or use the Management REST API to return the key type. To learn more about keys, visit [Azure Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx).
+API keys are strings, 32 characters long. Visually, there is no distinction between admin and query keys. If you lose take of what type of key you've specified in code, you would need to check the portal or use the Management REST API to return the key type. To learn more about keys, visit [Azure Search Service REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end -->.
 
-> [AZURE.TIP] A query key delivers a read-only experience to the client. See the [TryAppService + Azure Search](search-tryappservice.md) to test-drive the Azure Search operations that are available in a read-only service. Note that in TryAppService, the Web app code is fully modifiable – you can change any of the C# code in the ASP.NET project to modify web page layout, search query construction, or search results—it’s just the Azure Search service index and document load operations that are read-only, per the inclusion of a query api-key on the service connection.
+> [AZURE.TIP] A query key delivers a read-only experience to the client. See the [TryAppService + Azure <!-- deleted by customization Search](/documentation/articles/search-tryappservice) --><!-- keep by customization: begin --> Search](search-tryappservice.md) <!-- keep by customization: end --> to test-drive the Azure Search operations that are available in a read-only service. Note that in TryAppService, the <!-- deleted by customization web site --><!-- keep by customization: begin --> Web app <!-- keep by customization: end --> code is fully modifiable <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> you can change any of the C# code in the ASP.NET project to modify web page layout, search query construction, or search <!-- deleted by customization results—it's --><!-- keep by customization: begin --> results—it’s <!-- keep by customization: end --> just the Azure Search service index and document load operations that are read-only, per the inclusion of a query api-key on the service connection.
 
 ####Client Connection
 
 The next two code snippets set up a connection to the Search service using the URL and API key. Recall that the service name and API keys are specified in web.config file. For REST calls, admin keys must be passed in the request header, while query keys could be passed in the header or directly in the URL.
 
+<!-- deleted by customization
+**[HttpClient](https://msdn.microsoft.com/zh-cn/library/system.net.http.httpclient.aspx) with REST API calls**
+-->
+<!-- keep by customization: begin -->
 **[HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx) with REST API calls**
+<!-- keep by customization: end -->
 
     public class CatalogSearch
     {
@@ -75,7 +95,7 @@ The next two code snippets set up a connection to the Search service using the U
         {
             try
             {
-                _serviceUri = new Uri("https://" + ConfigurationManager.AppSettings["SearchServiceName"] + ".search.windows.net");
+                _serviceUri = new Uri("https://" + ConfigurationManager.AppSettings["SearchServiceName"] + <!-- deleted by customization ".search.chinacloudapi.cn") --><!-- keep by customization: begin --> ".search.windows.net") <!-- keep by customization: end -->;
                 _httpClient = new HttpClient();
                 _httpClient.DefaultRequestHeaders.Add("api-key", ConfigurationManager.AppSettings["SearchServiceApiKey"]);
             }
@@ -85,7 +105,12 @@ The next two code snippets set up a connection to the Search service using the U
             }
         }
 
+<!-- deleted by customization
+**[SearchServiceClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.search.searchserviceclient.aspx) with .NET**
+-->
+<!-- keep by customization: begin -->
 **[SearchServiceClient](https://msdn.microsoft.com/library/azure/microsoft.azure.search.searchserviceclient.aspx) with .NET**
+<!-- keep by customization: end -->
 
         static UsgsSearch()
         {
@@ -105,7 +130,7 @@ The next two code snippets set up a connection to the Search service using the U
 
 ##Design patterns
 
-A Web app that integrates with Azure Search will need to formulate queries and render the results. This section provides guidance on how to structure code for tasks executed in a program that contains user interaction code. Schema definition, index generation, and data ingestion are purposely excluded. For guidance on how to code those operations, see the walkthroughs and samples listed in [Videos, samples, and tutorials in Azure Search](search-video-demo-tutorial-list.md). 
+A <!-- deleted by customization web site --><!-- keep by customization: begin --> Web app <!-- keep by customization: end --> that integrates with Azure Search will need to formulate queries and render the results. This section provides guidance on how to structure code for tasks executed in a program that contains user interaction code. Schema definition, index generation, and data ingestion are purposely excluded. For guidance on how to code those operations, see the walkthroughs and samples listed in [Videos, samples, and tutorials in Azure <!-- deleted by customization Search](/documentation/articles/search-video-demo-tutorial-list) --><!-- keep by customization: begin --> Search](search-video-demo-tutorial-list.md) <!-- keep by customization: end -->.
 
 ###Query formulation
 
@@ -297,7 +322,7 @@ In the same Index.cshmtl file, you can find the HTML used to build a faceted nav
 
 ###Hit highlighting
 
-Applying a style to the instance of the search term in a search result is called hit highlighting. In Azure Search, hit highlights are specified in the query, via the highlight search parameter, to which you give a comma-delimited list of fields to scan for matching terms. The actual style you apply is up to you. The following three code snippets are from the [TryAppService + Azure Search tutorial](search-tryappservice.md).
+Applying a style to the instance of the search term in a search result is called hit highlighting. In Azure Search, hit highlights are specified in the query, via the highlight search parameter, to which you give a comma-delimited list of fields to scan for matching terms. The actual style you apply is up to you. The following three code snippets are from the [TryAppService + Azure Search <!-- deleted by customization tutorial](/documentation/articles/search-tryappservice) --><!-- keep by customization: begin --> tutorial](search-tryappservice.md) <!-- keep by customization: end -->.
 
 First, specify hit highlights as a search parameter and list the fields to check for matching terms. Specify the HTML style to use on hit highlight.
 
@@ -353,13 +378,13 @@ New to MVC, .NET programming, or REST APIs?  These sections offer a few coding p
 
 ###MVC template
 
-The following table summarizes how MVC template components are used in applications that include Azure Search. If you’re using MVC 4 or MVC 5, code that integrates Azure Search will generally be added to these modules
+The following table summarizes how MVC template components are used in applications that include Azure Search. If <!-- deleted by customization you're --><!-- keep by customization: begin --> you’re <!-- keep by customization: end --> using MVC 4 or MVC 5, code that integrates Azure Search will generally be added to these modules
 
 File|Description
 ----|-----------
 Web.config|Provide the service URL and api-key. Add a reference to System.Configuration in your main program module to read the values.
 Program.cs|In the main program, set up an HttpClient or SearchServiceClient to establish a connection to the service. Add the Search method to this program.
-DataModel|Not used. Assuming that index creation and data load operations are in different programs, no data model is required for Azure Search in your web application.
+DataModel|Not used. Assuming that index creation and data load operations are in different programs, no data model is required for Azure Search in your web <!-- deleted by customization site --><!-- keep by customization: begin --> application <!-- keep by customization: end -->.
 Views|A view contains the HTML for the application web page, from search box input to dynamic HTML for handling search results.
 Controllers|Query construction and error handling is typically found in the HomeContoller.cs. At a minimum, the controller should include a search method that retrieves results from Azure Search and forwards the result set to the view. 
 
@@ -369,7 +394,7 @@ Optionally, if you are using suggestions for auto-complete queries, you would in
 
 For ASP.NET applications, the .NET client library is considered a better choice because it sets up the HTTP connection and handles JSON serialization and deserialization for you, which simplifies your code.
 
-In some cases, your choice of API might be dictated by feature parity between the two approaches. Generally, the [.NET client library](https://msdn.microsoft.com/library/azure/dn951165.aspx) and [Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) are interchangeable so long as the operations you require are implemented in both. However, sometimes new features show up first in the REST API as part of a preview release, and only added to the .NET library months later. For example, indexers, which are used to automate data load operations from specific data source types, appeared in preview REST API first before showing up in the client library a few months later. Any restrictions on feature implementation are noted in feature documentation.
+In some cases, your choice of API might be dictated by feature parity between the two approaches. Generally, the [.NET client <!-- deleted by customization library](https://msdn.microsoft.com/zh-cn/library/azure/dn951165.aspx) --><!-- keep by customization: begin --> library](https://msdn.microsoft.com/library/azure/dn951165.aspx) <!-- keep by customization: end --> and [Service REST <!-- deleted by customization API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) --><!-- keep by customization: begin --> API](https://msdn.microsoft.com/library/azure/dn798935.aspx) <!-- keep by customization: end --> are interchangeable so long as the operations you require are implemented in both. However, sometimes new features show up first in the REST API as part of a preview release, and only added to the .NET library months later. For example, indexers, which are used to automate data load operations from specific data source types, appeared in preview REST API first before showing up in the client library a few months later. Any restrictions on feature implementation are noted in feature documentation.
 
 ###Include AzureSearchHelper.cs for JSON serialization and deserialization in REST API
 
@@ -449,9 +474,9 @@ Splitting your workloads up into standalone projects within the same Visual Stud
 - Data ingestion code
 - User interaction code
 
-In Azure Search, indexing operations and document operations – such as adding or updating documents, or executing queries – are fully independent of each other. This means you can decouple index management from your ASP.NET user interaction code that formulates search requests and renders the results.
+In Azure Search, indexing operations and document operations <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> such as adding or updating documents, or executing queries <!-- deleted by customization - --><!-- keep by customization: begin --> – <!-- keep by customization: end --> are fully independent of each other. This means you can decouple index management from your ASP.NET user interaction code that formulates search requests and renders the results.
 
-In most of our code samples, the index is both created and loaded in one project (referred to as DataIndexer, CatalogIndexer, or DataCatalog in various samples), while the code that handles search requests and responses is placed in an ASP.NET MVC application project. In code samples, its practical to bundle index creation and document upload in one project, but production code would probably isolate these operations. Once an index is created, it’s rarely changed (and depending on the change, it might need to be rebuilt), whereas documents are likely to be refreshed on a recurring basis.
+In most of our code samples, the index is both created and loaded in one project (referred to as DataIndexer, CatalogIndexer, or DataCatalog in various samples), while the code that handles search requests and responses is placed in an ASP.NET MVC application project. In code samples, its practical to bundle index creation and document upload in one project, but production code would probably isolate these operations. Once an index is created, <!-- deleted by customization it's --><!-- keep by customization: begin --> it’s <!-- keep by customization: end --> rarely changed (and depending on the change, it might need to be rebuilt), whereas documents are likely to be refreshed on a recurring basis.
 
 Separating the workloads provides other advantages in the form of different levels of permissions for Azure Search (full admin rights versus query-only rights), use of different programming languages, more specific dependencies per program, plus the ability to revise programs independently or create multiple front-end applications that all operate on the index built and maintained by a central indexing application.
 
@@ -459,7 +484,13 @@ Separating the workloads provides other advantages in the form of different leve
 
 To further your understanding of Azure Search and ASP.NET integration, visit the following links:
 
-- [How to use Azure Search from a .NET Application](search-howto-dotnet-sdk.md) 
+- [How to use Azure Search from a .NET <!-- deleted by customization Application](/documentation/articles/search-howto-dotnet-sdk) --><!-- keep by customization: begin --> Application](search-howto-dotnet-sdk.md) <!-- keep by customization: end -->
+<!-- deleted by customization
+- [Azure Search Developer Case Study](/documentation/articles/search-dev-case-study-whattopedia)
+- [Typical workflow for Azure Search development](/documentation/articles/search-workflow) 
+-->
+<!-- keep by customization: begin -->
 - [Azure Search Developer Case Study](search-dev-case-study-whattopedia.md)
 - [Typical workflow for Azure Search development](search-workflow.md) 
+<!-- keep by customization: end -->
 

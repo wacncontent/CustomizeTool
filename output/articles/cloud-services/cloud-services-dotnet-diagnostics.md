@@ -384,7 +384,7 @@ Exit Code|Description
 -103|The plugin process is unable to initialize itself. Specifically it is unable to create the logger object.<p><p>Solution: Verify that sufficient system resources are available to launch new processes.
 -104|Unable to load the rcf file provided by the guest agent.<p><p>This is an internal error that should only happen if the guest agent plugin launcher is manually invoked, incorrectly, on the VM.
 -105|The Diagnostics plugin cannot open the Diagnostics configuration file.<p><p>This is an internal error that should only happen if the Diagnostics plugin is manually invoked, incorrectly, on the VM.
--106|Cannot read the Diagnostics configuration file.<p><p>Solution: This is the result of a configuration file not passing schema validation. So the solution is to provide a configuration file that complies with the schema. You can find the XML that is delivered to the Diagnostics extension in the folder *%SystemDrive%\WindowsAzure\Config* on the VM. Open the appropriate XML file and search for **Microsoft.Azure.Diagnostics**, then for the **xmlCfg** field. The data is base64 encoded so you’ll need to [decode it](http://www.bing.com/search?q=base64+decoder) to see the XML that was loaded by Diagnostics.<p>
+-106|Cannot read the Diagnostics configuration file.<p><p>Solution: This is the result of a configuration file not passing schema validation. So the solution is to provide a configuration file that complies with the schema. You can find the XML that is delivered to the Diagnostics extension in the folder *%SystemDrive%\WindowsAzure\Config* on the VM. Open the appropriate XML file and search for **Microsoft.Azure.Diagnostics**, then for the **xmlCfg** field. The data is base64 encoded so you'll need to [decode it](http://www.bing.com/search?q=base64+decoder) to see the XML that was loaded by Diagnostics.<p>
 -107|The resource directory pass to the monitoring agent is invalid.<p><p>This is an internal error that should only happen if the monitoring agent is manually invoked, incorrectly, on the VM.</p>
 -108	|Unable to convert the Diagnostics configuration file into the monitoring agent configuration file.<p><p>This is an internal error that should only happen if the Diagnostics plugin is manually invoked with an invalid configuration file.
 -110|General Diagnostics configuration error.<p><p>This is an internal error that should only happen if the Diagnostics plugin is manually invoked with an invalid configuration file.
@@ -419,7 +419,7 @@ The following are some frequently asked questions and their answers:
 
 **Q.** If I have already installed the Diagnostics 1.1 Extension on my role or VM how do I upgrade to Diagnostics 1.2 or 1.3?
 
-**A.** If you specified “–Version “1.*”" when you installed Diagnostics 1.1, the next time your role restarts or the VM reboots it will be automatically updated to the most recent version matching the regular expression “1.*” If “–Version “1.1”” when you installed Diagnostics 1.1 you can update a newer version be re-executing the Set- cmdlet and specifying the version you want to install.
+**A.** If you specified "-Version "1.*"" when you installed Diagnostics 1.1, the next time your role restarts or the VM reboots it will be automatically updated to the most recent version matching the regular expression "1.*" If "-Version "1.1"" when you installed Diagnostics 1.1 you can update a newer version be re-executing the Set- cmdlet and specifying the version you want to install.
 
 **Q.** How are tables named?
 
@@ -436,23 +436,23 @@ The following are some frequently asked questions and their answers:
 
 Here is an example:
 
-		<EtwEventSourceProviderConfiguration provider=”prov1”>
-		  <Event id=”1” />
-		  <Event id=”2” eventDestination=”dest1” />
+		<EtwEventSourceProviderConfiguration provider="prov1">
+		  <Event id="1" />
+		  <Event id="2" eventDestination="dest1" />
 		  <DefaultEvents />
 		</EtwEventSourceProviderConfiguration>
-		<EtwEventSourceProviderConfiguration provider=”prov2”>
-		  <DefaultEvents eventDestination=”dest2” />
+		<EtwEventSourceProviderConfiguration provider="prov2">
+		  <DefaultEvents eventDestination="dest2" />
 		</EtwEventSourceProviderConfiguration>
 
 That will generate 4 tables:
 
 Event|Table Name
 ---|---
-provider=”prov1” &lt;Event id=”1” /&gt;|WADEvent+MD5(“prov1”)+”1”
-provider=”prov1” &lt;Event id=”2” eventDestination=”dest1” /&gt;|WADdest1
-provider=”prov1” &lt;DefaultEvents /&gt;|WADDefault+MD5(“prov1”)
-provider=”prov2” &lt;DefaultEvents eventDestination=”dest2” /&gt;|WADdest2
+provider="prov1" &lt;Event id="1" /&gt;|WADEvent+MD5("prov1")+"1"
+provider="prov1" &lt;Event id="2" eventDestination="dest1" /&gt;|WADdest1
+provider="prov1" &lt;DefaultEvents /&gt;|WADDefault+MD5("prov1")
+provider="prov2" &lt;DefaultEvents eventDestination="dest2" /&gt;|WADdest2
 
 ## Comparing Azure Diagnostics Versions
 

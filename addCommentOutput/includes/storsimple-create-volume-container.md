@@ -34,8 +34,8 @@
   6. Click the check icon ![check-icon](./media/storsimple-create-volume-container/HCS_CheckIcon-include.png) to save this volume container and exit the wizard. 
 
   The newly created volume container will be listed on the **Volume containers** page.
-
 <!-- deleted by customization
+
 ![Video available](./media/storsimple-create-volume-container/Video_icon.png) **Video available**
 
 To watch a video that demonstrates how to create a volume container in your StorSimple solution, click [here](http://azure.microsoft.com/documentation/videos/create-a-volume-container-in-your-storsimple-solution/).

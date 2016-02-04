@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Create and deploy a secure ASP.NET Web Forms app with Membership, OAuth, and SQL Database to Azure Websites" 
+	pageTitle="Create and deploy a secure ASP.NET Web Forms app with Membership, OAuth, and SQL Database to Azure Web App" 
 	description="This tutorial shows you how to build a secure ASP.NET 4.5 Web Forms web app that incorporates a SQL Database and deploy the application to Azure." 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -9,17 +9,17 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/06/2015"
+	ms.date="12/10/2015"
 	wacn.date=""/>
 
 
-# Create and deploy a secure ASP.NET Web Forms app with Membership, OAuth, and SQL Database to Azure Websites
+# Create and deploy a secure ASP.NET Web Forms app with Membership, OAuth, and SQL Database to Azure
 
 ##Overview
 This tutorial shows you how to build a secure ASP.NET 4.5 Web Forms web app that incorporates a SQL Database and deploy the application to Azure. 
 
 >[AZURE.NOTE] 
-For an MVC version of this tutorial, see [Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Websites](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database).
+For an MVC version of this tutorial, see [Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database).
 
 You can open an Azure account for free, and if you don't already have Visual Studio 2013, the SDK automatically installs Visual Studio 2013 for Web Express. You can start developing for Azure for free.
 
@@ -27,7 +27,7 @@ This tutorial assumes that you have no prior experience using Windows Azure. Onc
 
 You'll learn:
 
-- How to create an ASP.NET 4.5 Web Forms project and publish it to Azure Websites.
+- How to create an ASP.NET 4.5 Web Forms project and publish it to Azure Web App.
 - How to use OAuth and the ASP.NET membership to secure your application.
 - How to use a single database for both membership and application data.
 - How to use Web Forms Scaffolding to create web pages that allow you to modify data.
@@ -76,7 +76,7 @@ When the installation is complete, you have everything necessary to start develo
 In this section you'll set up the Azure environment by creating an Azure and a SQL database in Azure.
 
 ###Create a Web App and a SQL Database in Azure 
-In this tutorial your web app will run in a shared hosting environment, which means it runs on virtual machines (VMs) that are shared with other web apps in Azure Websites. A shared hosting environment is a low-cost way to get started in the cloud. Later, if your web traffic increases, the application can scale to meet the need by running on dedicated VMs. If you need a more complex architecture, you can migrate to an Azure Cloud Service. Cloud services run on dedicated VMs that you can configure according to your needs. 
+In this tutorial your web app will run in a shared hosting environment, which means it runs on virtual machines (VMs) that are shared with other web apps in Azure. A shared hosting environment is a low-cost way to get started in the cloud. Later, if your web traffic increases, the application can scale to meet the need by running on dedicated VMs. If you need a more complex architecture, you can migrate to an Azure Cloud Service. Cloud services run on dedicated VMs that you can configure according to your needs. 
 
 Azure SQL Database is a cloud-based relational database service that is built on SQL Server technologies. The tools and applications that work with SQL Server also work with SQL Database.
 
@@ -214,7 +214,7 @@ The new site needs the application name and a link updated. The link will point 
 		</body>
 		</html>
 
-	Later in this tutorial you will add Web Forms scaffolding. Scaffolding will create the page that the above “Contact Demo” link references.
+	Later in this tutorial you will add Web Forms scaffolding. Scaffolding will create the page that the above "Contact Demo" link references.
  
 ###Run the Application Locally 
  
@@ -231,7 +231,7 @@ Now that you have created and ran your application locally, it is time to deploy
 	![Select Publish](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms05.png)  
 	The **Publish Web** dialog box is displayed.  
 
-2. In the **Profile** tab of the **Publish Web** dialog box, click **Azure Web App**.  
+2. In the **Profile** tab of the **Publish Web** dialog box, click **App Services**.  
 	  
 3. If you are not already signed in, click the **Sign In** button in the **Select Existing Web App** dialog box. Once you've finished signing in, select the web app you created in the first part of this tutorial. Click **OK** to continue.  
 	![Select Existing Web Site dialog box](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms07.png)  
@@ -258,7 +258,7 @@ You begin by creating a simple data model using code. This data model will be co
 	![Select Class](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms12.png)  
 	The **Add New Item** dialog box is displayed.  
 
-2. Name this new class *Contacts.cs*.  
+2. Name this new class *Contacts.cs* and click **Add**.  
 	![Add New Item dialog box](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms13.png)  
 3. Replace the default code with the following code:  
 
@@ -451,10 +451,10 @@ The following steps will allow you to add a Google authentication provider.
 	Next, you'll see the **Google Developers Console**.
 	![Google Developers Console](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21a.png)  
 
-4. Click the **Create Project** button and enter a project name and ID (you can use the default values). Then, click the **agreement checkbox** and the **Create** button.  
+4. Click the **Select a project** > **Create Project** and enter a project name and ID (you can use the default values). Then, click the **agreement checkbox** and the **Create** button.  
 	![Google - New Project](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21b.png)  
 	In a few seconds the new project will be created and your browser will display the new projects page.
-5. In the left tab, click **APIs & auth**, and then click **Credentials**.
+5. In the **Google Developers Console** drop-down menu, click **API Manager**, and then click **Credentials**.
 6. Click the **Create New Client ID** under **OAuth**.  
 	The **Create Client ID** dialog will be displayed.
 	![Google - Create Client ID](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21c.png)  
@@ -468,7 +468,7 @@ The following steps will allow you to add a Google authentication provider.
 
 	This value is the URI that ASP.NET OAuth users to communicate with the google OAuth server. Remember to the SSL URL you used above (**https://localhost:44300/** unless you've created other SSL projects). 
  
-10. Click the **Create Client ID** button.
+10. Click the **Create** button.
 11. In Visual Studio, update the `UseGoogleAuthentication` method of the *Startup.Auth.cs* page by copying and pasting the **AppId** and **App Secret** into the method. The **AppId** and **App Secret** values shown below are samples and will not work.  
 
 		using System;
@@ -713,7 +713,7 @@ Now that the web application is complete, you can publish it to Azure.
 	![Publish menu option](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms22.png)  
 	The **Publish Web** dialog box is displayed.  
 	![Publish Web dialog box](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms22a.png)  
-3. From the **Profile** tab, select **Azure Web App** as the publish target if it is not already selected.  
+3. From the **Profile** tab, select **App Services** as the publish target if it is not already selected.
 	![Publish Web dialog box](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms23.png)  
 4. Click **Sign In** if you are not already signed in.
 5. Select the existing web app that you created earlier in this tutorial from the **Existing Web Apps** dropdown box and click the **OK** button.  
@@ -760,7 +760,7 @@ In order to prevent other people from registering and using your sample applicat
 3. Right click on each web app instance and select **Stop Web App**.  
 	![Stop Web Site menu item](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26a.png)  
 
-	Alternatively, from the Windows Azure management portal, you can select the web app, then click the **stop** icon at the bottom of the page.  
+	Alternatively, from the Azure Management Portal, you can select the web app, then click the **stop** icon at the bottom of the page.  
 	![Add New Contact Page](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26b.png)  
 
 ##Review the Database 
@@ -798,7 +798,7 @@ We are working on a tool that will make managing users and roles much easier.
 ##Next steps
 For more information about ASP.NET Web Forms, see [Learn About ASP.NET Web Forms](http://www.asp.net/web-forms) on the ASP.NET web app and [Windows Azure Tutorials and Guides](/documentation/services/web-sites/#net).
 
-This tutorial was based on the MVC tutorial [Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Websites](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database) written by Rick Anderson (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) with assistance from Tom Dykstra and Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)). 
+This tutorial was based on the MVC tutorial [Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database) written by Rick Anderson (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) with assistance from Tom Dykstra and Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)). 
 
 Please leave feedback about what you liked and what you would like to see improved, not only about the tutorial itself but also about the products that it demonstrates. Your feedback will help us prioritize improvements. You can also request and vote on new topics at [Show Me How With Code](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
 

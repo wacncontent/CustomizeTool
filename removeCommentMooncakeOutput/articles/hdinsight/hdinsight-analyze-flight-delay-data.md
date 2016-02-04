@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Analyze flight delay data with Hadoop in HDInsight | Windows Azure"
-	description="Learn how to use one Windows PowerShell script to provision an HDInsight cluster, run a Hive job, run a Sqoop job, and delete the cluster."
+	description="Learn how to use one Windows PowerShell script to create an HDInsight cluster, run a Hive job, run a Sqoop job, and delete the cluster."
 	services="hdinsight"
 	documentationCenter=""
 	authors="mumian"
@@ -9,71 +9,50 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/12/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 #Analyze flight delay data by using Hive in HDInsight
 
 Hive provides a means of running Hadoop MapReduce jobs through an SQL-like scripting language called *[HiveQL][hadoop-hiveql]*, which can be applied towards summarizing, querying, and analyzing large volumes of data.
 
-One of the major benefits of Azure HDInsight is the separation of data storage and compute. HDInsight uses Azure Blob storage for data storage. A common MapReduce process can be broken into 3 parts:
+One of the major benefits of Azure HDInsight is the separation of data storage and compute. HDInsight uses Azure Blob storage for data storage. A typical job involves 3 parts:
 
 1. **Store data in Azure Blob storage.** This can be a continuous process. For example, weather data, sensor data, web logs, and in this case, flight delay data are saved into Azure Blob storage.
-2. **Run jobs.** When it is time to process the data, you run a Windows PowerShell script (or a client application) to provision an HDInsight cluster, run jobs, and delete the cluster. The jobs save output data to Azure Blob storage. The output data is retained even after the cluster is deleted. This way, you pay for only what you have consumed.
+2. **Run jobs.** When it is time to process the data, you run a Windows PowerShell script (or a client application) to create an HDInsight cluster, run jobs, and delete the cluster. The jobs save output data to Azure Blob storage. The output data is retained even after the cluster is deleted. This way, you pay for only what you have consumed.
 3. **Retrieve the output from Azure Blob storage**, or in this tutorial, export the data to an Azure SQL database.
 
 The following diagram illustrates the scenario and the structure of this tutorial:
 
 ![HDI.FlightDelays.flow][img-hdi-flightdelays-flow]
 
-**Note**: The numbers in the diagram correspond to the section titles.
+**Note**: The numbers in the diagram correspond to the section titles. **M** stands for the main process. **A** stands for the content in the appendix.
 
 The main portion of the tutorial shows you how to use one Windows PowerShell script to perform the following:
 
-- Provision an HDInsight cluster.
+- Create an HDInsight cluster.
 - Run a Hive job on the cluster to calculate average delays at airports. The flight delay data is stored in an Azure Blob storage account.
 - Run a Sqoop job to export the Hive job output to an Azure SQL database.
 - Delete the HDInsight cluster.
 
 In the appendixes, you can find the instructions for uploading flight delay data, creating/uploading a Hive query string, and preparing the Azure SQL database for the Sqoop job.
-<a id="prerequisite"></a>
-###Prerequisites
+
+###<a id="prerequisite"></a> Prerequisites
 
 Before you begin this tutorial, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
-
-**Understand HDInsight storage**
-
-Hadoop clusters in HDInsight use Azure Blob storage for data storage. For more information, see [Use Azure Blob storage with HDInsight][hdinsight-storage].
-
-When you provision an HDInsight cluster, a Blob storage container of an Azure Storage account is designated as the default file system, just like in Hadoop Distributed File System (HDFS). This Storage account is referred to as the *default Storage account*, and the Blob container is referred to as the *default Blob container* or *default container*. The default Storage account must be co-located in the same datacenter as the HDInsight cluster. Deleting an HDInsight cluster does not delete the default container or the default Storage account.
-
-In addition to the default Storage account, other Azure Storage accounts can be bound to an HDInsight cluster during the provisioning process. The binding is to add the Storage account and Storage account key to the configuration file so the cluster can access those Storage accounts at run time. For instructions on adding additional Storage accounts, see [Provision Hadoop clusters in HDInsight][hdinsight-provision].
-
-The Azure Blob storage syntax is:
-
-	wasb[s]://<ContainerName>@<StorageAccountName>.blob.core.chinacloudapi.cn/<path>/<filename>
-
->[AZURE.NOTE] The Blob storage path is a virtual path. For more information, see [Use Azure Blob storage with HDInsight][hdinsight-storage].
-
-Files stored in the default container can be accessed from HDInsight by using any of the following URIs (using flightdelays.hql as an example):
-
-	wasb://mycontainer@mystorageaccount.blob.core.chinacloudapi.cn/tutorials/flightdelays/flightdelays.hql
-	wasb:///tutorials/flightdelays/flightdelays.hql
-	/tutorials/flightdelays/flightdelays.hql
-
-For accessing the file directly from the Storage account, the blob name for the file is:
-
-	tutorials/flightdelays/flightdelays.hql
-
-Notice there is no "/" in the front of the blob name.
+- **A workstation with Azure PowerShell**. See [Install Azure PowerShell 1.0 and greater](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater).
 
 **Files used in this tutorial**
 
-This tutorial uses the on-time performance of airline flight data from [Research and Innovative Technology Administration, Bureau of Transportation Statistics or RITA] [rita-website]. The data has been uploaded to an Azure Blob storage container with the Public Blob access permission. Because it is a public Blob container, you do not need to bind this Storage account to the HDInsight cluster running the Hive script. The HiveQL script is also uploaded to the same Blob container. If you want to learn how to get/upload the data to your own Storage account, and how to create/upload the HiveQL script file, see [Appendix A](#appendix-a) and [Appendix B](#appendix-b).
+This tutorial uses the on-time performance of airline flight data from 
+[Research and Innovative Technology Administration, Bureau of Transportation Statistics or RITA] [rita-website]. 
+A copy of the data has been uploaded to an Azure Blob storage container with the Public Blob access permission. 
+A part of your PowerShell script copies the data from the public blob container to the default blob container of 
+your cluster. The HiveQL script is also copied to the same Blob container. 
+If you want to learn how to get/upload the data to your own Storage account, and how to create/upload the HiveQL script file, see [Appendix A](#appendix-a) and [Appendix B](#appendix-b).
 
 The following table lists the files used in this tutorial:
 
@@ -86,34 +65,14 @@ The following table lists the files used in this tutorial:
 </table>
 
 
-
-**Understand the Hive internal table and external table**
-
-There are a few things you need to know about the Hive internal table and external table:
-
-- The **CREATE TABLE** command creates an internal table. The data file must be located in the default container.
-- The **CREATE TABLE** command moves the data file to the /hive/warehouse/<TableName> folder.
-- The **CREATE EXTERNAL TABLE** command creates an external table. The data file can be located outside the default container.
-- The **CREATE EXTERNAL TABLE** command does not move the data file.
-- The **CREATE EXTERNAL TABLE** command doesn't allow any folders in the LOCATION. This is the reason why the tutorial makes a copy of the sample.log file.
-
-For more information, see [HDInsight: Hive Internal and External Tables Intro][cindygross-hive-tables].
-
-> [AZURE.NOTE] One of the HiveQL statements creates a Hive external table. The Hive external table keeps the data file in the original location. The Hive internal table moves the data file to hive\warehouse. The Hive internal table requires the data file to be located in the default container. For data stored outside the default Blob container, you must use Hive external tables.
+##<a name="runjob"></a> Create cluster and run Hive/Sqoop jobs
 
 
+Hadoop MapReduce is batch processing. The most cost-effective way to run a Hive job is to create a cluster for the job, 
+and delete the job after the job is completed. The following script covers the whole process. 
+For more information on creating an HDInsight cluster and running Hive jobs, see [Create Hadoop clusters in HDInsight][hdinsight-provision] and [Use Hive with HDInsight][hdinsight-use-hive].
 
-
-
-
-
-
-
-##Provision an HDInsight cluster and run Hive/Sqoop jobs
-
-Hadoop MapReduce is batch processing. The most cost-effective way to run a Hive job is to provision a cluster for the job, and delete the job after the job is completed. The following script covers the whole process. For more information on provisioning an HDInsight cluster and running Hive jobs, see [Provision Hadoop clusters in HDInsight][hdinsight-provision] and [Use Hive with HDInsight][hdinsight-use-hive].
-
-**To run the Hive queries by using Windows PowerShell**
+**To run the Hive queries by Azure PowerShell**
 
 1. Create an Azure SQL database and the table for the Sqoop job output by using the instructions in [Appendix C](#appendix-c).
 2. Prepare the parameters:
@@ -201,7 +160,7 @@ Hadoop MapReduce is batch processing. The most cost-effective way to run a Hive 
 		#region - Connect to Azure subscription
 		Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
 		Write-Host "`tCurrent system time: " (get-date) -ForegroundColor Yellow
-		if (-not (Get-AzureAccount)){ Add-AzureAccount}
+		if (-not (Get-AzureAccount)){ Add-AzureAccount -Environment AzureChinaCloud}
 		#endregion
 
 		#region - Validate user input, and provision HDInsight cluster if needed
@@ -314,7 +273,7 @@ Hadoop MapReduce is batch processing. The most cost-effective way to run a Hive 
 		Write-Host "`tCurrent system time: " (get-date) -ForegroundColor Yellow
 
 		Use-AzureHDInsightCluster $HDInsightClusterName
-		$response = Invoke-Hive –File $hqlScriptFile -StatusFolder $jobStatusFolder
+		$response = Invoke-Hive âFile $hqlScriptFile -StatusFolder $jobStatusFolder
 
 		Write-Host "`nThe Hive job status" -ForegroundColor Cyan
 		Write-Host "---------------------------------------------------------" -ForegroundColor Cyan
@@ -382,10 +341,10 @@ Hadoop MapReduce is batch processing. The most cost-effective way to run a Hive 
 
 ---
 ##<a id="appendix-a"></a>Appendix A - Upload flight delay data to Azure Blob storage
-Uploading the data file and the HiveQL script files (see [Appendix B](#appendix-b)) requires some planning. The idea is to store the data files and the HiveQL file before provisioning an HDInsight cluster and running the Hive job. You have two options:
+Uploading the data file and the HiveQL script files (see [Appendix B](#appendix-b)) requires some planning. The idea is to store the data files and the HiveQL file before creating an HDInsight cluster and running the Hive job. You have two options:
 
 - **Use the same Azure Storage account that will be used by the HDInsight cluster as the default file system.** Because the HDInsight cluster will have the Storage account access key, you don't need to make any additional changes.
-- **Use a different Azure Storage account from the HDInsight cluster default file system.** If this is the case, you must modify the provisioning part of the Windows PowerShell script found in [Provision HDInsight cluster and run Hive/Sqoop jobs](#runjob) to include the Storage account as an additional Storage account. For instructions, see [Provision Hadoop clusters in HDInsight][hdinsight-provision]. The HDInsight cluster then knows the access key for the Storage account.
+- **Use a different Azure Storage account from the HDInsight cluster default file system.** If this is the case, you must modify the creation part of the Windows PowerShell script found in [Create HDInsight cluster and run Hive/Sqoop jobs](#runjob) to link the Storage account as an additional Storage account. For instructions, see [Create Hadoop clusters in HDInsight][hdinsight-provision]. The HDInsight cluster then knows the access key for the Storage account.
 
 >[AZURE.NOTE] The Blob storage path for the data file is hard coded in the HiveQL script file. You must update it accordingly.
 
@@ -402,7 +361,7 @@ Uploading the data file and the HiveQL script files (see [Appendix B](#appendix-
 	</table>
 
 3. Click **Download**.
-4. Unzip the file to the **C:\Tutorials\FlightDelays\Data** folder. Each file is a CSV file and is approximately 60GB in size.
+4. Unzip the file to the **C:\Tutorials\FlightDelay\2013Data** folder. Each file is a CSV file and is approximately 60GB in size.
 5.	Rename the file to the name of the month that it contains data for. For example, the file containing the January data would be named *January.csv*.
 6. Repeat steps 2 and 5 to download a file for each of the 12 months in 2013. You will need a minimum of one file to run the tutorial.  
 
@@ -437,7 +396,7 @@ Uploading the data file and the HiveQL script files (see [Appendix B](#appendix-
 
 		#Region - Connect to Azure subscription
 		Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
-		if (-not (Get-AzureAccount)){ Add-AzureAccount}
+		if (-not (Get-AzureAccount)){ Add-AzureAccount -Environment AzureChinaCloud}
 		#EndRegion
 
 		#Region - Validate user input
@@ -480,13 +439,16 @@ Uploading the data file and the HiveQL script files (see [Appendix B](#appendix-
 		Get-AzureStorageBlob -Container $blobContainerName  -Context $storageContext -Prefix $destFolder
 		#EndRegion
 
+
+
+
 4. Press **F5** to run the script.
 
-If you choose to use a different method for uploading the files, please make sure the file path is tutorials/flightdelays/data. The syntax for accessing the files is:
+If you choose to use a different method for uploading the files, please make sure the file path is tutorials/flightdelay/data. The syntax for accessing the files is:
 
-	wasb://<ContainerName>@<StorageAccountName>.blob.core.chinacloudapi.cn/tutorials/flightdelays/data
+	wasb://<ContainerName>@<StorageAccountName>.blob.core.chinacloudapi.cn/tutorials/flightdelay/data
 
-The path tutorials/flightdelays/data is the virtual folder you created when you uploaded the files. Verify that there are 12 files, one for each month.
+The path tutorials/flightdelay/data is the virtual folder you created when you uploaded the files. Verify that there are 12 files, one for each month.
 
 >[AZURE.NOTE] You must update the Hive query to read from the new location.
 
@@ -578,7 +540,7 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 		$azureAccounts= Get-AzureAccount
 		if (! $azureAccounts)
 		{
-		    Add-AzureAccount
+		    Add-AzureAccount -Environment AzureChinaCloud
 		}
 		#endregion
 
@@ -668,10 +630,10 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 
 	Here are the variables used in the script:
 
-	- **$hqlLocalFileName** - The script saves the HiveQL script file locally before uploading it to Blob storage. This is the file name. The default value is <u>C:\tutorials\flightdelays\flightdelays.hql</u>.
-	- **$hqlBlobName** - This is the HiveQL script file blob name used in the Azure Blob storage. The default value is tutorials/flightdelays/flightdelays.hql. Because the file will be written directly to Azure Blob storage, there is NOT a "/" at the beginning of the blob name. If you want to access the file from Blob storage, you will need to add a "/" at the beginning of the file name.
-	- **$srcDataFolder** and **$dstDataFolder** - = "tutorials/flightdelays/data"
- = "tutorials/flightdelays/output"
+	- **$hqlLocalFileName** - The script saves the HiveQL script file locally before uploading it to Blob storage. This is the file name. The default value is <u>C:\tutorials\flightdelay\flightdelays.hql</u>.
+	- **$hqlBlobName** - This is the HiveQL script file blob name used in the Azure Blob storage. The default value is tutorials/flightdelay/flightdelays.hql. Because the file will be written directly to Azure Blob storage, there is NOT a "/" at the beginning of the blob name. If you want to access the file from Blob storage, you will need to add a "/" at the beginning of the file name.
+	- **$srcDataFolder** and **$dstDataFolder** - = "tutorials/flightdelay/data"
+ = "tutorials/flightdelay/output"
 
 
 ---
@@ -749,7 +711,7 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 		$azureAccounts= Get-AzureAccount
 		if (! $azureAccounts)
 		{
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 		}
 		#endregion
 
@@ -851,18 +813,19 @@ Now you understand how to upload a file to Azure Blob storage, how to populate a
 
 
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
-[cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
+
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
 [hadoop-shell-commands]: http://hadoop.apache.org/docs/r0.18.3/hdfs_shell.html
 

@@ -8,7 +8,7 @@ deleted:
 		|-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
 		| Fix Spark cluster node re-imaging workflow | Fixed a bug that was causing Spark cluster nodes to not recover after re-image | Service    | Spark| N/A                  |
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
@@ -20,7 +20,7 @@ deleted:
 		<td>N/A</td>
 		</tr>
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
@@ -32,35 +32,29 @@ deleted:
 		<td>N/A</td>
 		</tr>
 
-reason: ()
+reason: ({DocumentDB})
 
 deleted:
 
 		<a href = "/documentation/articles/hdinsight-hadoop-spark-install/" target="_blank">Spark</a>,
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		Spark and
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		* [Install and use Spark 1.0 on HDInsight clusters](/documentation/articles/hdinsight-hadoop-spark-install)
 
-reason: ()
+reason: (Spark managment)
 
 deleted:
 
 		* East Asia
 
-reason: ()
-
-deleted:
-
-		[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
-
-reason: ()
+reason: (region diff)
 

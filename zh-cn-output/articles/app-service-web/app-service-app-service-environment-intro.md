@@ -1,77 +1,104 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="App Service 环境简介" 
-	description="了解有关可提供安全、加入 VNet 的专用缩放单位用于运行所有应用的 App Service 环境功能。" 
-	services="app-service\web" 
+	pageTitle="Introduction to Azure Websites Environment" 
+	description="Learn about the Azure Websites Environment feature that provides secure, VNet-joined, dedicated scale units for running all of your apps." 
+	services="app-service" 
 	documentationCenter="" 
 	authors="ccompy" 
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.date="04/14/2015" 
-	editor=""/>
+<tags
+	ms.service="app-service"
+	ms.date="10/06/2015"
+	wacn.date="11/27/2015"/>
 
-# App Service 环境简介
+# Introduction to Azure Websites Environment
 
-## 概述 ##
-App Service 环境是 Azure App Service 的 [高级] [PremiumTier] 服务计划选项，可提供完全隔离和专用的环境，以便安全地运行所有应用。这包括具有扩展缩放选项的 [Web Apps][WebApps]、[Mobile Apps][MobileApps]、[API Apps][APIApps] 和 [Logic Apps][LogicApps]。
+## Overview ##
+An Azure Websites Environment is a [Premium][PremiumTier] service plan option of Azure Websites that provides a fully isolated and dedicated environment for securely running Azure Websites apps at high scale, including [Web Sites][WebApps], [Mobile Apps][MobileApps], and [API Apps][APIApps].  
 
-App Service 环境的计算资源专门用来运行你的应用。App Service 环境始终创建于区域虚拟网络中，你的应用有网络隔离的新选项。此外，App Service 环境支持其他缩放选项，最多有 50 个计算资源可用于运行你的应用。在 App Service 环境之外，用于托管应用的计算资源限制为 20 个。
+Azure Websites Environments are ideal for application workloads requiring:
 
-## 虚拟网络支持 ##
-可以在预先存在的区域虚拟网络或新的区域虚拟网络中创建 App Service 环境（[有关虚拟网络的详细信息][MoreInfoOnVirtualNetworks]）。由于 App Service 环境始终位于区域虚拟网络中，更准确地说，位于区域虚拟网络的子网中，因此你可以利用虚拟网络的安全功能来控制入站和出站网络通信。
+- Very high scale
+- Isolation and secure network access
 
-可以使用[网络安全组][NetworkSecurityGroups]将入站网络通信限制为 App Service 环境所在的子网。这样，你便可以在上游设备和服务（例如 Ｗeb 应用程序防火墙和网络 SaaS 提供者）后面运行应用。
+Customers can create multiple Azure Websites Environments within a single Azure region, as well as across multiple Azure regions.  This makes Azure Websites Environments ideal for horizontally scaling state-less application tiers in support of high RPS workloads.
 
-应用还经常需要访问公司资源，例如内部数据库和 Web 服务。常见的做法是让这些终结点仅可用于在 Azure 虚拟网络中流动的内部网络流量。一旦 App Service 环境加入到与内部服务相同的虚拟网络，在此环境中运行的应用即可访问这些内部服务，包括可通过[站点到站点][SiteToSite]访问的终结点。
+Azure Websites Environments are isolated to running only a single customer's applications, and are always deployed into a virtual network.  Customers have fine-grained control over both inbound and outbound application network traffic, and applications can establish high-speed secure connections over virtual networks to on-premises corporate resources.
 
-## 专用计算资源 ##
-App Service 环境中的所有计算资源都专属于单个订阅。App Service 环境由单个前端计算资源池，以及一到三个工作线程计算资源池组成。
+For an overview of how Azure Websites Environments enable high scale and secure network access, see the [AzureCon Deep Dive][AzureConDeepDive] on Azure Websites Environments!
 
-前端池包含负责处理 SSL 终止以及 App Service 环境中应用请求的自动负载平衡的计算资源。
+For a deep-dive on horizontally scaling using multiple Azure Websites Environments see the article on how to setup a [geo-distributed app footprint][GeodistributedAppFootprint].
 
-每个工作线程池包含分配给 [App Service 计划][AppServicePlan]的计算资源，而这些资源又包含一个或多个 Azure App Service 应用。由于 App Service 环境中可能有多达三个不同的工作线程池，因此你可以灵活地为每个工作线程池选择不同的计算资源。
+To see how the security architecture shown in the AzureCon Deep Dive was configured, see the article on implementing a [layered security architecture](/documentation/articles/app-service-app-service-environment-layered-security) with Azure Websites Environments.
 
-例如，你可以针对主要用于开发或测试应用的 App Service 方案创建一个计算资源较不强大的工作线程池。第二个（甚至第三个）工作线程池可以使用比较强大的计算资源，以供 App Service 计划运行生产应用。
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
-可将 App Service 环境配置为在单个工作线程池中最多包含 50 个计算资源。有关前端和工作线程池可用计算资源数量的详细信息，请参阅[如何配置 App Service 环境][HowToConfigureanAppServiceEnvironment]。
+## Dedicated Compute Resources ##
+All of the compute resources in an Azure Websites Environment are dedicated exclusively to a single subscription, and an Azure Websites Environment can be configured with up to fifty (50) compute resources for exclusive use by a single application.
 
-有关 App Service 环境中支持的可用计算资源大小的详细信息，请参阅 [App Service 定价][AppServicePricing] 页，并查看高级定价层中 App Service 环境可用的选项。
+An Azure Websites Environment is composed of a front-end compute resource pool, as well as one to three worker compute resource pools. 
 
+The front-end pool contains compute resources responsible for SSL termination as well automatic load balancing of app requests within an Azure Websites Environment. 
 
-## 入门
+Each worker pool contains compute resources allocated to [App Service Plans][AppServicePlan], which in turn contain one or more Azure Websites apps.  Since there can be up to three different worker pools in an Azure Websites Environment, you have the flexibility to choose different compute resources for each worker pool.  
 
-若要开始使用 App Service 环境，请参阅[如何创建 App Service 环境][HowToCreateAnAppServiceEnvironment]
+For example this allows you to create one worker pool with less powerful compute resources for App Service Plans intended for development or test apps.  A second (or even third) worker pool could use more powerful compute resources intended for App Service Plans running production apps.
 
-有关 Azure App Service 平台的详细信息，请参阅 [Azure App Service][AzureAppService]。
+For more details on the quantity of compute resources available to the front-end and worker pools, see [How To Configure an Azure Websites Environment][HowToConfigureanAppServiceEnvironment].  
 
-有关 App Service 环境网络体系结构的概述，请参阅[网络体系结构概述][NetworkArchitectureOverview]一文。
+For details on the available compute resource sizes supported in an Azure Websites Environment, consult the [Azure Websites Pricing][AppServicePricing] page and review the available options for Azure Websites Environments in the Premium pricing tier.
 
-有关在 App Service 环境中使用 ExpressRoute 的详细信息，请参阅以下文章：[Express Route 和 App Service 环境][NetworkConfigDetailsForExpressRoute]。
+## Virtual Network Support ##
+An Azure Websites Environment can either be created in a pre-existing regional classic "v1" virtual network, or a new regional classic "v1" virtual network ([more info on virtual networks][MoreInfoOnVirtualNetworks]).  Since an Azure Websites Environment always exists in a regional virtual network, and more precisely within a subnet of a regional virtual network, you can leverage the security features of virtual networks to control both inbound and outbound network communications.  
+
+You can use [network security groups][NetworkSecurityGroups] to restrict inbound network communications to the subnet where an Azure Websites Environment resides.  This allows you to run apps behind upstream devices and services such as web site firewalls, and network SaaS providers.  
+
+Apps also frequently need to access corporate resources such as internal databases and web services.  A common approach is to make these endpoints available only to internal network traffic flowing within an Azure virtual network.  Once an Azure Websites Environment is joined to the same virtual network as the internal services, apps running in the environment can access them, including endpoints reachable via [Site-to-Site][SiteToSite] and [Azure ExpressRoute][ExpressRoute] connections.
+
+For more details on how Azure Websites Environments work with virtual networks and on-premises networks consult the following articles on [Network Architecture][NetworkArchitectureOverview], [Controlling Inbound Traffic][ControllingInboundTraffic], and [Securely Connecting to Backends][SecurelyConnectingToBackends]. 
+
+**Note:**  An Azure Websites Environment cannot be created in a "v2" virtual network.
+
+## Getting started
+
+To get started with Azure Websites Environments, see [How To Create An Azure Websites Environment][HowToCreateAnAppServiceEnvironment]
+
+For more information about the Azure Websites platform, see [Azure Websites][AzureAppService].
+
+For an overview of the Azure Websites Environment network architecture, see the [Network Architecture Overview][NetworkArchitectureOverview] article.
+
+For details on using an Azure Websites Environment with ExpressRoute, see the following article on [Express Route and Azure Websites Environments][NetworkConfigDetailsForExpressRoute].
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
 
 <!-- LINKS -->
-<!--[PremiumTier]: /home/features/app-service/#price-->
-[MoreInfoOnVirtualNetworks]: https://msdn.microsoft.com/zh-cn/library/azure/dn133803.aspx
-[AppServicePlan]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview
-[Azure portal]: https://manage.windowsazure.cn
-[HowToCreateAnAppServiceEnvironment]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment
-[AzureAppService]: /documentation/articles/app-service-value-prop-what-is
-[WebApps]: /documentation/articles/app-service-web-overview
-[MobileApps]: /documentation/articles/app-service-mobile-value-prop-preview
-[APIApps]: /documentation/articles/app-service-api-apps-why-best-platform
-[LogicApps]: /documentation/articles/app-service-logic-what-are-logic-apps
-[NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg
-[SiteToSite]: /documentation/articles/vpn-gateway-site-to-site-create
-[HowToConfigureanAppServiceEnvironment]: /documentation/articles/app-service-web-configure-an-app-service-environment
-[NetworkArchitectureOverview]: /documentation/articles/app-service-app-service-environment-network-architecture-overview
-[NetworkConfigDetailsForExpressRoute]: /documentation/articles/app-service-app-service-environment-network-configuration-expressroute
-<!--[AppServicePricing]: /home/features/app-service/#price -->
+[PremiumTier]: /home/features/app-service/#price
+[MoreInfoOnVirtualNetworks]: /documentation/articles/virtual-networks-faq/
+[AppServicePlan]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
+[Azure preview portal]: http://manage.windowsazure.cn
+[HowToCreateAnAppServiceEnvironment]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
+[AzureAppService]: /documentation/services/web-sites/
+[WebApps]: /home/features/web-site//
+[MobileApps]: /documentation/articles/app-service-mobile-value-prop-preview/
+[APIApps]: /documentation/articles/app-service-api-apps-why-best-platform/
+[LogicApps]: /documentation/articles/app-service-logic-what-are-logic-apps/
+[AzureConDeepDive]:  https://azure.microsoft.com/documentation/videos/azurecon-2015-deploying-highly-scalable-and-secure-web-and-mobile-apps/
+[GeodistributedAppFootprint]:  /documentation/articles/app-service-app-service-environment-geo-distributed-scale/
+[NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
+[SiteToSite]: /documentation/articles/vpn-gateway-site-to-site-create/
+[ExpressRoute]: http://azure.microsoft.com/services/expressroute/
+[HowToConfigureanAppServiceEnvironment]:  /documentation/articles/app-service-web-configure-an-app-service-environment/
+[ControllingInboundTraffic]:  /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
+[SecurelyConnectingToBackends]:  /documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/
+[NetworkArchitectureOverview]:  /documentation/articles/app-service-app-service-environment-network-architecture-overview/
+[NetworkConfigDetailsForExpressRoute]:  /documentation/articles/app-service-app-service-environment-network-configuration-expressroute/
+[AppServicePricing]: /home/features/app-service/#price 
 
 <!-- IMAGES -->
 
-<!---HONumber=66-->
+ 

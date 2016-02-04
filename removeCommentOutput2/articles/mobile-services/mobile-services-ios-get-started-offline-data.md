@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # Get Started with Offline Data Sync in Mobile Services
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
 
@@ -26,7 +31,7 @@ Offline sync has several advantages:
 * Syncs data across multiple devices
 * Detects conflicts when same record is modified by two devices
 
-> [AZURE.NOTE] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get [free mobile services that you can keep using even after your trial ends](/home/features/mobile-services/#price). For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=AE564AB28 target="_blank").
+> [AZURE.NOTE] To complete this tutorial, you need an Azure account. If you don't have an account, you can sign up for an Azure trial and get [free mobile services that you can keep using even after your trial ends](/home/features/mobile-services/#price). For details, see [Azure Trial](/pricing/1rmb-trial/ target="_blank").
 
 This tutorial is based on the [Mobile Services Quick Start tutorial], which you must complete first. Let's first review the code related to offline sync already in the Quick Start.
 
@@ -194,7 +199,7 @@ In this section, you will turn of Wi-Fi in the simulator to create an offline sc
 
 3. View the contents of the remote TodoItem table. Verify that the new items have _not_ been synced to the server.
 
-   - For the JavaScript backend, go to the Management Portal, and click the Data tab to view the contents of the `TodoItem` table.
+   - For the JavaScript backend, go to the [Azure Management Portal](http://manage.windowsazure.cn), and click the Data tab to view the contents of the `TodoItem` table.
    - For the .NET backend, view the table contents either with a SQL tool such as SQL Server Management Studio, or a REST client such as Fiddler or Postman.
 
 4. Turn on Wi-Fi in the iOS simulator. Next, perform the refresh gesture by pulling down the list of items. You will see a progress spinner and the text "Syncing...".
@@ -253,16 +258,18 @@ To synchronize the local store with the server, you used `MSSyncTable.pullWithQu
 
 [Core Data]: https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html
 [Download the preview SDK here]: http://aka.ms/Gc6fex
-[How to use the Mobile Services client library for iOS]: /documentation/articles/mobile-services-ios-how-to-use-client-library
+[How to use the Mobile Services client library for iOS]: /documentation/articles/mobile-services-ios-how-to-use-client-library 
 [Offline iOS Sample]: https://github.com/Azure/mobile-services-samples/tree/master/TodoOffline/iOS/blog20140611
 [Mobile Services sample repository on GitHub]: https://github.com/Azure/mobile-services-samples
 
 
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
-[Handling Conflicts with Offline Support for Mobile Services]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data
+[Handling Conflicts with Offline Support for Mobile Services]:  /documentation/articles/mobile-services-ios-handling-conflicts-offline-data
 [Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
 
 [Cloud Cover: Offline Sync in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Azure Friday: Offline-enabled apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
 
 [Mobile Services Quick Start tutorial]: /documentation/articles/mobile-services-ios-get-started
+ 
+

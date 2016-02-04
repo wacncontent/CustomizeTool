@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/11/2015"
+	ms.date="12/09/2015"
 	wacn.date=""/>
 
 # App Model v2.0 Preview: Secure a Web API using node.js
@@ -21,7 +21,7 @@ With the v2.0 app model, you can protecet a Web API using [OAuth 2.0](/documenta
 
 **Passport** is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based or Resitify web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more. We have developed a strategy for Windows Azure Active Directory. We will install this module and then add the Windows Azure Active Directory `passport-azure-ad` plug-in.
 
-In order to do this, you’ll need to:
+In order to do this, you'll need to:
 
 1. Register an application with Azure AD
 2. Set up your app to use Passport's azure-ad-passport plug-in.
@@ -638,7 +638,7 @@ The easiest way to do this is by using curl in a command line. Before we do that
 
 `$npm install -g jsontool`
 
-This installs the JSON tool globally. Now that we’ve accomplished that – let’s play with the server:
+This installs the JSON tool globally. Now that we've accomplished that - let's play with the server:
 
 First, make sure that your monogoDB isntance is running..
 
@@ -714,9 +714,9 @@ server.use(passport.session()); // Provides session support
 ```
 
 > [AZURE.TIP]
-When writing APIs you should always link the data to something unique from the token that the user can’t spoof. When this server stores TODO items, it stores them based on the subscription ID of the user in the token (called through token.sub) which we put in the “owner” field. This ensures that only that user can access his TODOs and no one else can access the TODOs entered. There is no exposure in the API of “owner” so an external user can request other’s TODOs even if they are authenticated.
+When writing APIs you should always link the data to something unique from the token that the user can't spoof. When this server stores TODO items, it stores them based on the subscription ID of the user in the token (called through token.sub) which we put in the "owner" field. This ensures that only that user can access his TODOs and no one else can access the TODOs entered. There is no exposure in the API of "owner" so an external user can request other's TODOs even if they are authenticated.
 
-Next, let’s use the Open ID Connect Bearer strategy that comes with passport-azure-ad. Just look at the code for now, I’ll explain it shortly. Put this after what you pated above:
+Next, let's use the Open ID Connect Bearer strategy that comes with passport-azure-ad. Just look at the code for now, I'll explain it shortly. Put this after what you pated above:
 
 ```Javascript
 /**
@@ -761,16 +761,16 @@ return done(null, user, token);
 passport.use(oidcStrategy);
 ```
 
-Passport uses a similar pattern for all it’s Strategies (Twitter, Facebook, etc.) that all Strategy writers adhere to. Looking at the strategy you see we pass it a function() that has a token and a done as the parameters. The strategy will dutifully come back to us once it does all it’s work. Once it does we’ll want to store the user and stash the token so we won’t need to ask for it again.
+Passport uses a similar pattern for all it's Strategies (Twitter, Facebook, etc.) that all Strategy writers adhere to. Looking at the strategy you see we pass it a function() that has a token and a done as the parameters. The strategy will dutifully come back to us once it does all it's work. Once it does we'll want to store the user and stash the token so we won't need to ask for it again.
 
 > [AZURE.IMPORTANT]
-The code above takes any user that happens to authenticate to our server. This is known as auto registration. In production servers you wouldn’t want to let anyone in without first having them go through a registration process you decide. This is usually the pattern you see in consumer apps who allow you to register with Facebook but then ask you to fill out additional information. If this wasn’t a command line program, we could have just extracted the email from the token object that is returned and then asked them to fill out additional information. Since this is a test server we simply add them to the in-memory database.
+The code above takes any user that happens to authenticate to our server. This is known as auto registration. In production servers you wouldn't want to let anyone in without first having them go through a registration process you decide. This is usually the pattern you see in consumer apps who allow you to register with Facebook but then ask you to fill out additional information. If this wasn't a command line program, we could have just extracted the email from the token object that is returned and then asked them to fill out additional information. Since this is a test server we simply add them to the in-memory database.
 
 ### 2. Finally, protect some endpoints
 
 You protect endpoints by specifying the passport.authenticate() call with the protocol you wish to use.
 
-Let’s edit our route in our server code to do something more interesting:
+Let's edit our route in our server code to do something more interesting:
 
 ```Javascript
 server.get('/tasks', passport.authenticate('oidc-bearer', {

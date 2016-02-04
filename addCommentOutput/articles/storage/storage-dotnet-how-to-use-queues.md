@@ -3,13 +3,13 @@
 	description="Learn how to use Windows Azure Queue storage to create and delete queues and insert, peek, get, and delete queue messages."
 	services="storage"
 	documentationCenter=".net"
-	authors="tamram"
-	manager="adinah"
+	authors="robinsh"
+	manager="carmonm"
 	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="08/04/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # How to use Queue storage from .NET
@@ -19,7 +19,7 @@
 ## Overview
 
 This guide will show you how to perform common scenarios using the
-Azure Queue storage service. The samples are written in C\# code
+Azure Queue storage service. The samples are written in <!-- deleted by customization C\# --><!-- keep by customization: begin --> C# <!-- keep by customization: end --> code
 and use the Azure Storage Client for .NET. The scenarios covered include **inserting**,
 **peeking**, **getting**, and **deleting** queue messages, as well as
 **creating and deleting queues**.
@@ -37,7 +37,7 @@ and use the Azure Storage Client for .NET. The scenarios covered include **inser
 [AZURE.INCLUDE [storage-dotnet-obtain-assembly](../includes/storage-dotnet-obtain-assembly.md)]
 
 ### Namespace declarations
-Add the following code namespace declarations to the top of any C\# file
+Add the following code namespace declarations to the top of any <!-- deleted by customization C\# --><!-- keep by customization: begin --> C# <!-- keep by customization: end --> file
 in which you wish to programmatically access Azure Storage:
 
     using Microsoft.WindowsAzure.Storage;
@@ -146,9 +146,9 @@ that triggers an application error each time it is processed.
 
 	// Get the message from the queue and update the message contents.
     CloudQueueMessage message = queue.GetMessage();
-    message.SetMessageContent("Updated contents.") ;
+    message.SetMessageContent("Updated contents.");
     queue.UpdateMessage(message,
-        TimeSpan.FromSeconds(0.0),  // Make it visible immediately.
+        TimeSpan.FromSeconds(60.0),  // Make it visible for another 60 seconds.
         MessageUpdateFields.Content | MessageUpdateFields.Visibility);
 
 ## De-queue the next message
@@ -242,7 +242,7 @@ will become visible again.
 
 You can get an estimate of the number of messages in a queue. The
 **FetchAttributes** method asks the Queue service to
-retrieve the queue attributes, including the message count. The **ApproximateMethodCount**
+retrieve the queue attributes, including the message count. The **ApproximateMessageCount**
 property returns the last value retrieved by the
 **FetchAttributes** method, without calling the Queue service.
 
@@ -291,7 +291,6 @@ to learn about more complex storage tasks.
 - View the Queue service reference documentation for complete details about available APIs:
     - [Storage Client Library for .NET reference](https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx&clcid=0x409)
     - [REST API reference](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
-- Learn about more advanced tasks you can perform with Azure Storage at [Storing and Accessing Data in Azure](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
 - Learn how to simplify the code you write to work with Azure Storage by using the [Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk).
 - View more feature guides to learn about additional options for storing data in Azure.
     - Use [Table Storage](/documentation/articles/storage-dotnet-how-to-use-tables) to store structured data. 
@@ -302,7 +301,6 @@ to learn about more complex storage tasks.
   [.NET client library reference]: https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx&clcid=0x409
   [Creating a Azure Project in Visual Studio]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
   [CloudStorageAccount]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudstorageaccount_methods.aspx
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
   [Configuring Connection Strings]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2

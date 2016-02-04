@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/07/2015"
+	ms.date="11/29/2015"
 	wacn.date=""/>
 
 # Use Hive with HDInsight to analyze logs from websites
@@ -49,6 +49,6 @@ In this sample, you will use an HDInsight cluster to analyze website log files t
 Try the following sample: [Analyzing sensor data using Hive with HDInsight](/documentation/articles/hdinsight-hive-analyze-sensor-data).
 
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png
  

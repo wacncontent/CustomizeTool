@@ -7,10 +7,9 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="cdn" 
-
-	ms.date="09/01/2015" 
+<tags
+	ms.service="cdn"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 #CDN Caching Policy in Media Services Extension

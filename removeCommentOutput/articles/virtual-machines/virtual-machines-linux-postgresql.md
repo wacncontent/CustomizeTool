@@ -83,7 +83,7 @@ Connect to the Linux VM you created via PuTTY. If this is the first time you're 
 
 		# mkdir -p /opt/pgsql_data
 
-3. Create a non-root user and modify that user’s profile. Then, switch to this new user (called *postgres* in our example):
+3. Create a non-root user and modify that user's profile. Then, switch to this new user (called *postgres* in our example):
 
 		# useradd postgres
 
@@ -193,7 +193,7 @@ You have now set up a four-column table with the following column names and rest
 
 1. The “name” column has been limited by the VARCHAR command to be under 20 characters long.
 2. The “food” column indicates the food item that each person will bring. VARCHAR limits this text to be under 30 characters.
-3. The “confirmed” column records whether the person has RSVP’d to the potluck. The acceptable values are "Y" and "N".
+3. The “confirmed” column records whether the person has RSVP'd to the potluck. The acceptable values are "Y" and "N".
 4. The “date” column shows when they signed up for the event. Postgres requires that dates be written as yyyy-mm-dd.
 
 You should see the following if your table has been successfully created:
@@ -236,7 +236,7 @@ The output is:
 
 Use the following command to delete data in a table:
 
-	delete from potluck where name=’John’;
+	delete from potluck where name='John';
 
 This deletes all the information in the "John" row. The output is:
 

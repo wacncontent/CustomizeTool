@@ -1,0 +1,16 @@
+updated docs: 3
+articles/virtual-network/virtual-network-ip-addresses-overview-arm.md
+articles/virtual-network/virtual-network-ip-addresses-overview-classic.md
+articles/virtual-network/virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md
+
+updated includes: 10
+includes/azure-virtual-network-limits-azure-resource-manager.md
+includes/azure-virtual-network-limits.md
+includes/virtual-networks-create-nsg-intro-include.md
+includes/virtual-networks-create-vnet-arm-ps-include.md
+includes/virtual-networks-create-vnet-arm-template-ps-include.md
+includes/virtual-networks-nrp-appgw-include.md
+includes/virtual-networks-nrp-dns-include.md
+includes/virtual-networks-nrp-lb-include.md
+includes/virtual-networks-nrp-tm-include.md
+includes/virtual-networks-vnet-faq-include.md

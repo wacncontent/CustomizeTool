@@ -3,13 +3,13 @@
 	description="How to get started with Mobile Services in a JavaScript project in Visual Studio" 
 	services="mobile-services" 
 	documentationCenter="" 
-	authors="patshea123" 
+	authors="TomArcher" 
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.date="09/17/2015"
+<tags 
+	ms.service="mobile-services" 
+	ms.date="09/17/2015" 
 	wacn.date=""/>
 
 # Getting Started with with a Javascript mobile app after adding Azure Mobile Services by using Visual Studio Connected Services
@@ -86,4 +86,4 @@ Delete a row in a data table. Call the [done]() method on the returned [Promise]
 
 
 
-[Learn more about mobile services](/documentation/services/mobile-services/) 
+[Learn more about mobile services](/documentation/services/mobile-services) 

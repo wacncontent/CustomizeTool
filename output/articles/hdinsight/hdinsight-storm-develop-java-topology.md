@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 #Develop Java-based topologies for a basic word-count application with Apache Storm and Maven on HDInsight
@@ -33,7 +33,7 @@ After completing the steps in this document, you will have a basic topology that
 
 The following environment variables may be set when you install Java and the JDK. However, you should check that they exist and that they contain the correct values for your system.
 
-* **JAVA_HOME** - should point to the directory where the Java runtime environment (JRE) is installed. For example, In Windows, it would have a value similar to `c:\Program Files (x86)\Java\jre1.7`
+* **JAVA_HOME** - should point to the directory where the Java runtime environment (JRE) is installed. For example, in a Unix or Linux distribution, it should have a value similar to `/usr/lib/jvm/java-7-oracle`. In Windows, it would have a value similar to `c:\Program Files (x86)\Java\jre1.7`
 
 * **PATH** - should contain the following paths:
 
@@ -447,9 +447,11 @@ By looking at the data emitted by the count bolt, we can see that 'apple' has be
 
 Trident is a high-level abstraction that is provided by Storm. It supports stateful processing. The primary advantage of Trident is that it can guarantee that every message that enters the topology is processed only once. This is difficult to achieve in a raw Java topology, which guarantee's that messages will be processed at least once. There are also other differences, such as built-in components that can be used instead of creating bolts. In fact, bolts are completely replaced by less-generic components, such as filters, projections, and functions.
 
-Trident applications can be created by using Maven projects. You use the same basic steps as presented earlier in this article—only the code is different.
+Trident applications can be created by using Maven projects. You use the same basic steps as presented earlier in this articleâonly the code is different.
 
 For more information about Trident, see the <a href="http://storm.apache.org/documentation/Trident-API-Overview.html" target="_blank">Trident API Overview</a>.
+
+For an example of a Trident application, see [Twitter trending topics with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-twitter-trending).
 
 ##Next Steps
 

@@ -272,7 +272,7 @@ If you are writing a script that relies on the exit status, please verify that t
 [advanced-bash]: http://tldp.org/LDP/abs/html/
 [script]: http://en.wikipedia.org/wiki/Shell_script
 [batch]: http://technet.microsoft.com/zh-cn/library/bb490890.aspx
-[cliarm]: /documentation/articles/xplat-cli-azure-resource-manager
+[cliarm]: xplat-cli-azure-resource-manager.md
 [portal]: https://manage.windowsazure.cn
 [signuporg]: /documentation/articles/sign-up-organization/
-[Using the Azure CLI]: /documentation/articles/virtual-machines-command-line-tools
+[Using the Azure CLI]: virtual-machines-command-line-tools.md

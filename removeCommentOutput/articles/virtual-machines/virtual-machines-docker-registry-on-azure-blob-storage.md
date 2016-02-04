@@ -41,7 +41,7 @@ container images on the cloud and allows you to create containers
 anytime using those images.
 
 Although the [Docker Hub][docker-hub] is a paid service for storing
-your private application container images, Docker respects developers’ needs and
+your private application container images, Docker respects developersâ needs and
 provides an open-source toolset to store your images in your own private Docker
 registry behind a firewall or on-premises without hitting the public Internet.
 Because Azure Blob storage is easy to secure, you can quickly use it to create

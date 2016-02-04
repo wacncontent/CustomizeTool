@@ -7,9 +7,9 @@
 	manager="timlt" 
 	editor="mattshel"/>
 
-<tags
-	ms.service="service-bus"
-	ms.date="10/05/2015"
+<tags 
+	ms.service="service-bus" 
+	ms.date="10/05/2015" 
 	wacn.date=""/>
 
 
@@ -38,6 +38,8 @@ AMQP 1.0 is an efficient, reliable, wire-level messaging protocol that you can u
 *    **Broker-model independent**: The AMQP 1.0 specification does not make any requirements on the messaging model used by a broker. This means that it's possible to easily add AMQP 1.0 support to existing messaging brokers.
 
 ## AMQP 1.0 is a Standard (with a capital 'S')
+
+AMQP 1.0 is an international standard, approved by ISO and IEC as ISO/IEC 19464:2014.
 
 AMQP 1.0 has been in development since 2008 by a core group of more than 20 companies, both technology suppliers and end-user firms. During that time, user firms have contributed their real-world business requirements and the technology vendors have evolved the protocol to meet those requirements. Throughout the process, vendors have participated in workshops in which they collaborated to validate the interoperability between their implementations.
 

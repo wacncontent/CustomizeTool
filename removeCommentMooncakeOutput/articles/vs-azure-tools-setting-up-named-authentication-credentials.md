@@ -7,9 +7,9 @@
    manager="douge"
    editor="tglee" />
 <tags
-	ms.service="multiple"
-	ms.date="09/02/2015"
-	wacn.date=""/>
+   ms.service="multiple"
+   ms.date="09/02/2015"
+   wacn.date="" />
 
 # Setting Up Named Authentication Credentials
 
@@ -23,7 +23,7 @@ The following items are required for authentication to Azure.
 
 - A valid X.509 v3 certificate
 
->[AZURE.NOTE] The length of the X.509 v3 certificate's key must be at least 2048 bits. Azure will reject any certificate that doesn’t meet this requirement or that isn’t valid.
+>[AZURE.NOTE] The length of the X.509 v3 certificate's key must be at least 2048 bits. Azure will reject any certificate that doesn't meet this requirement or that isn't valid.
 
 Visual Studio uses your subscription ID together with the certificate data as credentials. The appropriate credentials are referenced in the subscription file (.publishsettings file), which contains a public key for the certificate. The subscription file can contain credentials for more than one subscription.
 
@@ -31,7 +31,7 @@ You can edit the subscription information from the **New/Edit Subscription** dia
 
 If you want to create a certificate yourself, you can refer to the instructions in [Create and Upload a Management Certificate for Azure](https://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx) and then manually upload the certificate to the management portal.
 
->[AZURE.NOTE] These credentials that Visual Studio requires to manage your cloud services aren’t the same credentials that are required to authenticate a request against the Azure storage services.
+>[AZURE.NOTE] These credentials that Visual Studio requires to manage your cloud services aren't the same credentials that are required to authenticate a request against the Azure storage services.
 
 ## Modify or Export Authentication Credentials in Visual Studio
 

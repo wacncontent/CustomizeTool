@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect sync - Implement password synchronization | Windows Azure"
+	pageTitle="Azure AD Connect sync: Implement password synchronization | Windows Azure"
 	description="Provides you with the information you need to understand how password synchronization works and how to enable it in your environment."
 	services="active-directory"
 	documentationCenter=""
@@ -33,13 +33,13 @@ Any customer of Azure Active Directory is eligible to run password synchronizati
 
 Password synchronization is an extension to the directory synchronization feature implemented by Azure AD Connect sync. As a consequence of this, this feature requires directory synchronization between your on-premise and your Azure Active Directory to be configured.
 
-The Active Directory Domain Service stores passwords in form of a hash value representation of the actual user password. The password hash cannot be used to sign-in to your on-premises network. It is also designed so that it cannot be reversed in order to gain access to the user’s plain text password. To synchronize a password, Azure AD Connect sync extracts the user's password hash from the on-premises Active Directory. Additional security processing is applied to the password hash before it is synchronized to the Azure Active Directory Authentication service. The actual data flow of the password synchronization process is similar to the synchronization of user data such as DisplayName or Email Addresses.
+The Active Directory Domain Service stores passwords in form of a hash value representation of the actual user password. The password hash cannot be used to sign-in to your on-premises network. It is also designed so that it cannot be reversed in order to gain access to the user's plain text password. To synchronize a password, Azure AD Connect sync extracts the user's password hash from the on-premises Active Directory. Additional security processing is applied to the password hash before it is synchronized to the Azure Active Directory Authentication service. The actual data flow of the password synchronization process is similar to the synchronization of user data such as DisplayName or Email Addresses.
 
-Passwords are synchronized more frequently than the standard directory synchronization window for other attributes. Passwords are synchronized on a per-user basis and are generally synchronized in chronological order. When a user’s password is synchronized from the on-premises AD to the cloud, the existing cloud password will be overwritten.
+Passwords are synchronized more frequently than the standard directory synchronization window for other attributes. Passwords are synchronized on a per-user basis and are generally synchronized in chronological order. When a user's password is synchronized from the on-premises AD to the cloud, the existing cloud password will be overwritten.
 
 When you first enable the password synchronization feature, it will perform an initial synchronization of the passwords of all in-scope users from your on-premises Active Directory to Azure Active Directory. You cannot explicitly define the set of users that will have their passwords synchronized to the cloud. Subsequently, when a password has been changed by an on-premises user, the password synchronization feature detects and synchronizes the changed password, most often in a matter of minutes. The password synchronization feature automatically retries failed user password syncs. If an error occurs during an attempt to synchronize a password the error is logged in your event viewer.
 
-The synchronization of a password has no impact on currently logged on users. If a user that is logged into a cloud service also changes the on-premise password, the cloud service session will continue uninterrupted. However, as soon as the cloud service requires the user to re-authenticate, the new password needs to be provided. At this point, the user is required to provide the new password – the password that has been recently synchronized from the on-premise Active Directory to the cloud.
+The synchronization of a password has no impact on currently logged on users. If a user that is logged into a cloud service also changes the on-premise password, the cloud service session will continue uninterrupted. However, as soon as the cloud service requires the user to re-authenticate, the new password needs to be provided. At this point, the user is required to provide the new password - the password that has been recently synchronized from the on-premise Active Directory to the cloud.
 
 > [AZURE.NOTE] Password sync is only supported for the object type user in Active Directory. It is not supported for the iNetOrgPerson object type.
 
@@ -49,7 +49,7 @@ If you enable this service in Azure AD, the password sync option is required to 
 
 ### Security considerations
 
-When synchronizing passwords, the plain text version of a user’s password is neither exposed to the password synchronization feature nor to Azure AD or any of the associated services.
+When synchronizing passwords, the plain text version of a user's password is neither exposed to the password synchronization feature nor to Azure AD or any of the associated services.
 
 Additionally, there is no requirement on the on-premises Active Directory to store the password in a reversibly encrypted format. A digest of the Active Directory password hash is used for the transmission between the on-premises AD and Azure Active Directory. The digest of the password hash cannot be used to access resources in the customer's on-premises environment.
 
@@ -74,9 +74,9 @@ The cloud password will be updated the next time the user changes the password i
 
 ### Overwriting synchronized passwords
 
-An administrator can manually reset a user’s password using the Azure Active Directory PowerShell.
+An administrator can manually reset a user's password using the Azure Active Directory PowerShell.
 
-In this case, the new password will override the user’s synchronized password and all password policies defined in the cloud will apply to the new password.
+In this case, the new password will override the user's synchronized password and all password policies defined in the cloud will apply to the new password.
 
 If the user changes the on-premises password again, the new password will be synchronized to the cloud, and will override the manually updated password.
 
@@ -126,10 +126,12 @@ The status column can have the following values which also indicates the issue a
 
 | Status | Description |
 | ---- | ----- |
-| Success | Password has been successfully synchronized       |
-| SourceConnectorNotPresent | No object found in the on-prem Active Directory connector space |
-| NoTargetConnection | No object in the metaverse or in the Azure AD connector space |
-| TargetNotExportedToDirectory | The object in the Azure AD connector space has not yet been exported |
+| Success | Password has been successfully synchronized. |
+| FilteredByTarget | Password is set to **User must change password at next logon**. Password has not been synchronized. |
+| NoTargetConnection | No object in the metaverse or in the Azure AD connector space. |
+| SourceConnectorNotPresent | No object found in the on-premises Active Directory connector space. |
+| TargetNotExportedToDirectory | The object in the Azure AD connector space has not yet been exported. |
+| MigratedCheckDetailsForMoreInfo | Log entry was created before build 1.0.9125.0 and is shown in its legacy state. |
 
 
 ### Trigger a full sync of all passwords
@@ -139,7 +141,7 @@ Forcing a full sync of all passwords should not be required, but if for some rea
     $aadConnector = "<CASE SENSITIVE AAD CONNECTOR NAME>"
     Import-Module adsync
     $c = Get-ADSyncConnector -Name $adConnector
-    $p = New-Object Microsoft.IdentityManagement.PowerShell.ObjectModel.ConfigurationParameter “Microsoft.Synchronize.ForceFullPasswordSync”, String, ConnectorGlobal, $null, $null, $null
+    $p = New-Object Microsoft.IdentityManagement.PowerShell.ObjectModel.ConfigurationParameter "Microsoft.Synchronize.ForceFullPasswordSync", String, ConnectorGlobal, $null, $null, $null
     $p.Value = 1
     $c.GlobalParameters.Remove($p.Name)
     $c.GlobalParameters.Add($p)
@@ -154,4 +156,3 @@ Forcing a full sync of all passwords should not be required, but if for some rea
 
 * [Azure AD Connect Sync: Customizing Synchronization options](/documentation/articles/active-directory-aadconnectsync-whatis)
 * [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect)
-

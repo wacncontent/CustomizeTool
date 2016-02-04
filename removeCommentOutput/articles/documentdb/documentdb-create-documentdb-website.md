@@ -1,29 +1,25 @@
 <properties 
-	pageTitle="Deploy DocumentDB and Azure App Service Web Apps using an Azure Resource Manager Template | Microsoft Azure" 
-	description="Learn how to deploy a DocumentDB account, Azure App Service Web Apps, and a sample web application using an Azure Resource Manager template." 
+	pageTitle="Deploy DocumentDB and Azure Websites using an Azure Resource Manager Template | Windows Azure" 
+	description="Learn how to deploy a DocumentDB account, Azure Websites, and a sample web site using an Azure Resource Manager template." 
 	services="documentdb, app-service\web" 
 	authors="ryancrawcour" 
 	manager="jhubbard" 
 	editor="monicar" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/16/2015" 
-	ms.author="ryancraw"/>
+<tags
+	ms.service="documentdb"
+	ms.date="10/16/2015"
+	wacn.date=""/>
 
-# Deploy DocumentDB and Azure App Service Web Apps using an Azure Resource Manager Template #
+# Deploy DocumentDB and Azure Websites using an Azure Resource Manager Template #
 
-This tutorial shows you how to use an Azure Resource Manager template to deploy and integrate [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/), an [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) web app, and a sample web application.
+This tutorial shows you how to use an Azure Resource Manager template to deploy and integrate [Windows Azure DocumentDB](/home/features/documentdb/), an [Azure Websites](/documentation/services/web-sites/) web site, and a sample web site.
 
 After completing this tutorial, you'll be able to answer the following questions:  
 
--	How can I use an Azure Resource Manager template to deploy and integrate a DocumentDB account and a web app in Azure App Service?
--	How can I use an Azure Resource Manager template to deploy and integrate a DocumentDB account, a web app in App Service Web Apps, and a Webdeploy application?
+-	How can I use an Azure Resource Manager template to deploy and integrate a DocumentDB account and a web site in Azure Websites?
+-	How can I use an Azure Resource Manager template to deploy and integrate a DocumentDB account, a web site in Azure Websites, and a Webdeploy application?
 
 <a id="Prerequisites"></a>
 ## Prerequisites ##
@@ -31,50 +27,50 @@ After completing this tutorial, you'll be able to answer the following questions
 
 Before following the instructions in this tutorial, ensure that you have the following:
 
-- An Azure subscription. Azure is a subscription-based platform.  For more information about obtaining a subscription, see [Purchase Options](http://azure.microsoft.com/pricing/purchase-options/), [Member Offers](http://azure.microsoft.com/pricing/member-offers/), or [Free Trial](http://azure.microsoft.com/pricing/free-trial/).
-- An Azure Storage Account. For instructions, see [About Azure Storage Accounts](../storage-whatis-account.md).
-- A workstation with Azure PowerShell 0.9.8. For instructions, see [Install and configure Azure PowerShell](../install-configure-powershell.md). This tutorial has not yet been updated for Azure PowerShell 1.0 Preview. 
+- An Azure subscription. Azure is a subscription-based platform.  For more information about obtaining a subscription, see [Purchase Options](/pricing/overview/), [Member Offers](/pricing/member-offers/), or [Trial](/pricing/1rmb-trial/).
+- An Azure Storage Account. For instructions, see [About Azure Storage Accounts](/documentation/articles/storage-whatis-account).
+- A workstation with Azure PowerShell 0.9.8. For instructions, see [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). This tutorial has not yet been updated for Azure PowerShell 1.0 Preview. 
 
 ##<a id="CreateDB"></a>Step 1: Download and extract the sample files ##
 Let's start by downloading the sample files we will use in this tutorial.
 
-1. Download the [Create a DocumentDB account, Web Apps, and deploy a demo application sample](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebsiteTodo.zip) to a local folder (e.g. C:\DocumentDBTemplates) and extract the files.  This sample will deploy a DocumentDB account, an App Service web app, and a web application.  It will also automatically configure the web application to connect to the DocumentDB account.
+1. Download the [Create a DocumentDB account, web sites, and deploy a demo application sample](https://portalcontent.blob.core.chinacloudapi.cn/samples/CreateDocDBWebsiteTodo.zip) to a local folder (e.g. C:\DocumentDBTemplates) and extract the files.  This sample will deploy a DocumentDB account, an Azure Websites, and a web site.  It will also automatically configure the web site to connect to the DocumentDB account.
 
-2. Download the [Create a DocumentDB account and Web Apps sample](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebSite.zip) to a local folder (e.g. C:\DocumentDBTemplates) and extract the files.  This sample will deploy a DocumentDB account, an App Service web app, and will modify the web app's configuration to easily surface DocumentDB connection information, but does not include a web application.  
+2. Download the [Create a DocumentDB account and web sites sample](https://portalcontent.blob.core.chinacloudapi.cn/samples/CreateDocDBWebSite.zip) to a local folder (e.g. C:\DocumentDBTemplates) and extract the files.  This sample will deploy a DocumentDB account, an Azure Websites, and will modify the web site's configuration to easily surface DocumentDB connection information, but does not include a web site.  
 
 > [AZURE.TIP] Note that depending on the security settings of your computer, you may need to unblock the extracted files by right-clicking, clicking **Properties**, and clicking **Unblock**.
 
 ![Screenshot of the Properties window with the Unblock button highlighted](./media/documentdb-create-documentdb-website/image1.png)
 
 <a id="Build"></a>
-##Step 2: Deploy the Document account, App Service web app and demo application sample ##
+##Step 2: Deploy the Document account, Azure Websites and demo application sample ##
 
 Now let's deploy our first template.
 
-> [AZURE.TIP] The template does not validate that the web app name and DocumentDB account name entered below are a) valid and b) available.  It is highly recommended that you verify the availability of the names you plan to supply prior to running the PowerShell deployment script.
+> [AZURE.TIP] The template does not validate that the web site name and DocumentDB account name entered below are a) valid and b) available.  It is highly recommended that you verify the availability of the names you plan to supply prior to running the PowerShell deployment script.
 
-1. Open Microsoft Azure PowerShell and navigate to the folder in which you downloaded and extracted the [Create a DocumentDB account, App Service web app, and deploy a demo application sample](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebsiteTodo.zip) (e.g. C:\DocumentDBTemplates\CreateDocDBWebsiteTodo).
+1. Open Windows Azure PowerShell and navigate to the folder in which you downloaded and extracted the [Create a DocumentDB account, Azure Websites, and deploy a demo application sample](https://portalcontent.blob.core.chinacloudapi.cn/samples/CreateDocDBWebsiteTodo.zip) (e.g. C:\DocumentDBTemplates\CreateDocDBWebsiteTodo).
 
 
 2. We're going to run the CreateDocDBWebsiteTodo.ps1 PowerShell script.  The script takes the following mandatory parameters:
-	- WebsiteName: Specifies the App Service web app name and is used to construct the URL that you will use to access the web app (e.g. if you specify "mydemodocdbwebapp", then the URL by which you will access the web app will be mydemodocdbwebapp.azurewebsites.net).
+	- WebsiteName: Specifies the Azure Websites name and is used to construct the URL that you will use to access the web site (e.g. if you specify "mydemodocdbwebapp", then the URL by which you will access the web site will be mydemodocdbwebapp.chinacloudsites.cn).
 
 	- ResourceGroupName: Specifies the name of the Azure Resource Group to deploy. If the specified Resource Group doesn't exist, it will be created.
 
 	- docDBAccountName: Specifies the name of the DocumentDB account to create.
 
-	- location: Specifies the Azure location in which to create the DocumentDB and web app resources.  Valid values are East Asia, Southeast Asia, East US, West US, North Europe, West Europe (note that the location value provided is case sensitive).
+	- location: Specifies the Azure location in which to create the DocumentDB and web site resources.  Valid values are China East, China North, China East, China North, China North, West Europe (note that the location value provided is case sensitive).
 
 
 3. Here is an example command to run the script:
 
-    	PS C:\DocumentDBTemplates\CreateDocDBWebAppTodo> .\CreateDocDBWebsiteTodo.ps1 -WebSiteName "mydemodocdbwebapp" -ResourceGroupName "myDemoResourceGroup" -docDBAccountName "mydemodocdbaccount" -location "West US"
+    	PS C:\DocumentDBTemplates\CreateDocDBWebAppTodo> .\CreateDocDBWebsiteTodo.ps1 -WebSiteName "mydemodocdbwebapp" -ResourceGroupName "myDemoResourceGroup" -docDBAccountName "mydemodocdbaccount" -location "China North"
 
 	> [AZURE.TIP] Note that you will be prompted to enter your Azure account username and password as part of running the script.  The full deployment will take between 10 and 15 minutes to complete.  	
 
 4. And here is an example of the resulting output: 
 
-		VERBOSE: 1:06:00 PM - Created resource group 'myDemoResourceGroup' in location westus'
+		VERBOSE: 1:06:00 PM - Created resource group 'myDemoResourceGroup' in location chinanorth'
 		VERBOSE: 1:06:01 PM - Template is valid.
 		VERBOSE: 1:06:01 PM - Create template deployment 'Microsoft.DocumentDBWebSiteTodo'.
 		VERBOSE: 1:06:08 PM - Resource Microsoft.DocumentDb/databaseAccounts 'mydemodocdbaccount' provisioning status is running
@@ -93,47 +89,47 @@ Now let's deploy our first template.
 		VERBOSE: 1:16:35 PM - Resource Microsoft.Web/Sites/Extensions 'mydemodocdbwebapp/MSDeploy' provisioning status is succeeded
 
 		ResourceGroupName : myDemoResourceGroup
-		Location          : westus
+		Location          : chinanorth
 		Resources         : {mydemodocdbaccount, CPUHigh mydemodocdbwebapp, ForbiddenRequests mydemodocdbwebapp, LongHttpQueue mydemodocdbwebapp...}
 		ResourcesTable    :
                     Name                                    Type                                   Location
                     ======================================  =====================================  =========
-                    mydemodocdbaccount                      Microsoft.DocumentDb/databaseAccounts  westus
-                    CPUHigh mydemodocdbwebapp              microsoft.insights/alertrules          eastus
-                    ForbiddenRequests mydemodocdbwebapp    microsoft.insights/alertrules          eastus
-                    LongHttpQueue mydemodocdbwebapp        microsoft.insights/alertrules          eastus
-                    ServerErrors mydemodocdbwebapp         microsoft.insights/alertrules          eastus
-                    mydemodocdbwebapp-myDemoResourceGroup  microsoft.insights/autoscalesettings   eastus
+                    mydemodocdbaccount                      Microsoft.DocumentDb/databaseAccounts  chinanorth
+                    CPUHigh mydemodocdbwebapp              microsoft.insights/alertrules          chinaeast
+                    ForbiddenRequests mydemodocdbwebapp    microsoft.insights/alertrules          chinaeast
+                    LongHttpQueue mydemodocdbwebapp        microsoft.insights/alertrules          chinaeast
+                    ServerErrors mydemodocdbwebapp         microsoft.insights/alertrules          chinaeast
+                    mydemodocdbwebapp-myDemoResourceGroup  microsoft.insights/autoscalesettings   chinaeast
                     mydemodocdbwebapp                      microsoft.insights/components          centralus
-                    mydemodocdbwebapp                      Microsoft.Web/serverFarms              westus
-                    mydemodocdbwebapp                      Microsoft.Web/sites                    westus
+                    mydemodocdbwebapp                      Microsoft.Web/serverFarms              chinanorth
+                    mydemodocdbwebapp                      Microsoft.Web/sites                    chinanorth
 
 		ProvisioningState : Succeeded
 
 
 5. Before we look at our sample application, let's understand what the template deployment accomplished:
 
-	- An App Service web app was created.
+	- An Azure Websites was created.
 
 	- A DocumentDB account was created.
 
-	- A Web Deploy package was deployed to the App Service web app
+	- A Web Deploy package was deployed to the Azure Websites
 
-	- The web app configuration was modified such that the DocumentDB endpoint and primary master key were surfaced as application settings.
+	- The web site configuration was modified such that the DocumentDB endpoint and primary master key were surfaced as application settings.
 
 	- A series of default monitoring rules were created.
 
 	
-6. In order to use the application, simply navigate to the web app URL (in the example above, the URL would be http://mydemodocdbwebapp.azurewebsites.net).  You'll see the following web application:
+6. In order to use the application, simply navigate to the web site URL (in the example above, the URL would be http://mydemodocdbwebapp.chinacloudsites.cn).  You'll see the following web site:
 
 	![Sample Todo application](./media/documentdb-create-documentdb-website/image2.png)
 
-7. Go ahead and create a couple of tasks and then let's open the [Microsoft Azure Preview portal](https://portal.azure.com).
+7. Go ahead and create a couple of tasks and then let's open the [Windows Azure Preview portal](https://manage.windowsazure.cn).
 
 8. Choose to browse Resource Groups and select the Resource Group we created during the deployment (in the sample above, myDemoResourceGroup).
 
-	![Screenshot of the Azure portal with the myDemoResourceGroup highlighted](./media/documentdb-create-documentdb-website/image3.png)
-9.  Notice how the resource map in the Summary lens shows all of our related resources (DocumentDB account, App Service web app, Monitoring).
+	![Screenshot of the Azure Management Portal with the myDemoResourceGroup highlighted](./media/documentdb-create-documentdb-website/image3.png)
+9.  Notice how the resource map in the Summary lens shows all of our related resources (DocumentDB account, Azure Websites, Monitoring).
 
 	![Screenshot of the Summary lens](./media/documentdb-create-documentdb-website/image4.png)
 10.  Click your DocumentDB account, and launch Query Explorer (near the bottom of the account blade).
@@ -147,48 +143,48 @@ Now let's deploy our first template.
 12. Feel free to explore the DocumentDB portal experience or modify the sample Todo application.  When you're ready, let's deploy another template.
 	
 <a id="Build"></a> 
-## Step 3: Deploy the Document account and web app sample ##
+## Step 3: Deploy the Document account and web site sample ##
 
 Now let's deploy our second template.
 
-> [AZURE.TIP] The template does not validate that the web app name and DocumentDB account name entered below are a) valid and b) available.  It is highly recommended that you verify the availability of the names you plan to supply prior to running the PowerShell deployment script.
+> [AZURE.TIP] The template does not validate that the web site name and DocumentDB account name entered below are a) valid and b) available.  It is highly recommended that you verify the availability of the names you plan to supply prior to running the PowerShell deployment script.
 
-1. Open Microsoft Azure PowerShell and navigate to the folder in which you downloaded and extracted the [Create a DocumentDB account and web app sample](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebSite.zip) (e.g. C:\DocumentDBTemplates\CreateDocDBWebsite).
+1. Open Windows Azure PowerShell and navigate to the folder in which you downloaded and extracted the [Create a DocumentDB account and web site sample](https://portalcontent.blob.core.chinacloudapi.cn/samples/CreateDocDBWebSite.zip) (e.g. C:\DocumentDBTemplates\CreateDocDBWebsite).
 
 
 2. We're going to run the CreateDocDBWebsite.ps1 PowerShell script.  The script takes the same parameters as the first template we deployed, namely:
-	- WebsiteName: Specifies the App Service web app name and is used to construct the URL that you will use to access the web app (e.g. if you specify "myotherdocumentdbwebapp", then the URL by which you will access the web app will be myotherdocumentdbwebapp.azurewebsites.net).
+	- WebsiteName: Specifies the Azure Websites name and is used to construct the URL that you will use to access the web site (e.g. if you specify "myotherdocumentdbwebapp", then the URL by which you will access the web site will be myotherdocumentdbwebapp.chinacloudsites.cn).
 
 	- ResourceGroupName: Specifies the name of the Azure Resource Group to deploy.  If the specified Resource Group doesn't exist, it will be created.
 
 	- docDBAccountName: Specifies the name of the DocumentDB account to create.
 
-	- 	location: Specifies the Azure location in which to create the DocumentDB and web app resources.  Valid values are East Asia, Southeast Asia, East US, West US, North Europe, West Europe (note that the location value provided is case sensitive).
+	- 	location: Specifies the Azure location in which to create the DocumentDB and web site resources.  Valid values are China East, China North, China East, China North, China North, West Europe (note that the location value provided is case sensitive).
 
 3. Here is an example command to run the script:
 
-    	PS C:\DocumentDBTemplates\CreateDocDBWebSite> .\CreateDocDBWebSite.ps1 -WebSiteName "myotherdocumentdbwebapp" -ResourceGroupName "myOtherDemoResourceGroup" -docDBAccountName "myotherdocumentdbdemoaccount" -location "East US"
+    	PS C:\DocumentDBTemplates\CreateDocDBWebSite> .\CreateDocDBWebSite.ps1 -WebSiteName "myotherdocumentdbwebapp" -ResourceGroupName "myOtherDemoResourceGroup" -docDBAccountName "myotherdocumentdbdemoaccount" -location "China East"
 
 	> [AZURE.TIP] Note that you will be prompted to enter your Azure account username and password as part of running the script.  The full deployment will take between 10 and 15 minutes to complete.  	
 
 4. The deployment output will be very similar to the first template example. 
 5. Before we open the Azure Preview portal, let's understand what this template deployment accomplished:
 
-	- An App Service web app was created.
+	- An Azure Websites was created.
 
 	- A DocumentDB account was created.
 
-	- 	The web app configuration was modified such that the Azure DocumentDB endpoint, primary master key, and secondary master key were surfaced as application settings.
+	- 	The web site configuration was modified such that the Azure DocumentDB endpoint, primary master key, and secondary master key were surfaced as application settings.
 
 	- 	A series of default monitoring rules were created.
 
-6. Let's open the [Azure Preview portal](https://portal.azure.com), choose to browse Resource Groups and select the Resource Group we created during the deployment (in the sample above, myOtherDemoResourceGroup).
-7. In the Summary lens, click the web app which was just deployed.
+6. Let's open the [Azure Preview portal](https://manage.windowsazure.cn), choose to browse Resource Groups and select the Resource Group we created during the deployment (in the sample above, myOtherDemoResourceGroup).
+7. In the Summary lens, click the web site which was just deployed.
 
-	![Screenshot of the Summary lens with the myotherdocumentdbwebapp web app highlighted](./media/documentdb-create-documentdb-website/image6.png)
-8. On the web app's blade, click **All settings**, then **Application Settings** and note how there are application settings present for the DocumentDB endpoint and each of the DocumentDB master keys.
+	![Screenshot of the Summary lens with the myotherdocumentdbwebapp web site highlighted](./media/documentdb-create-documentdb-website/image6.png)
+8. On the web site's blade, click **All settings**, then **Application Settings** and note how there are application settings present for the DocumentDB endpoint and each of the DocumentDB master keys.
 
-	![Screenshot of the web app, Settings, and application settings blades](./media/documentdb-create-documentdb-website/image7.png)
+	![Screenshot of the web site, Settings, and application settings blades](./media/documentdb-create-documentdb-website/image7.png)
 9. Feel free to continue exploring the Azure Preview portal, or follow one of our DocumentDB [samples](http://go.microsoft.com/fwlink/?LinkID=402386) to create your own DocumentDB application.
 
 	
@@ -196,16 +192,16 @@ Now let's deploy our second template.
 <a name="NextSteps"></a>
 ## Next steps
 
-Congratulations! You've deployed DocumentDB, App Service web app and a sample web application using Azure Resource Manager templates.
+Congratulations! You've deployed DocumentDB, Azure Websites and a sample web site using Azure Resource Manager templates.
 
 - To learn more about DocumentDB, click [here](http://azure.com/docdb).
-- To learn more about Azure App Service Web apps, click [here](http://go.microsoft.com/fwlink/?LinkId=325362).
-- To learn more about Azure Resource Manager templates, click [here](https://msdn.microsoft.com/library/azure/dn790549.aspx).
+- To learn more about Azure Websites, click [here](http://go.microsoft.com/fwlink/?LinkId=325362).
+- To learn more about Azure Resource Manager templates, click [here](https://msdn.microsoft.com/zh-cn/library/azure/dn790549.aspx).
 
 
 ## What's changed
-* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](http://go.microsoft.com/fwlink/?LinkId=529714)
-* For a guide to the change of the old portal to the new portal see: [Reference for navigating the Azure portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the Azure Management Portal](https://manage.windowsazure.cn/)
 
->[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
  

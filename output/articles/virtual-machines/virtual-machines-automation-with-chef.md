@@ -15,13 +15,15 @@
 
 # Automating Azure virtual machine deployment with Chef
 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+
 Chef is a great tool for delivering automation and desired state configurations.
 
 With our latest cloud-api release, Chef provides seamless integration with Azure, giving you the ability to provision and deploy configuration states through a single command.
 
-In this article, I’ll show you how to set up your Chef environment to provision Azure virtual machines and walk you through creating a policy or “CookBook” and then deploying this cookbook to an Azure virtual machine.
+In this article, I'll show you how to set up your Chef environment to provision Azure virtual machines and walk you through creating a policy or "CookBook" and then deploying this cookbook to an Azure virtual machine.
 
-Let’s begin!
+Let's begin!
 
 ## Chef basics
 
@@ -39,11 +41,11 @@ The Chef Client (node) is the agent that sits on the servers you are managing.
 
 The Chef Workstation is our admin workstation where we create our policies and execute our management commands. We run the **knife** command from the Chef Workstation to manage our infrastructure.
 
-There is also the concept of “Cookbooks” and “Recipes”. These are effectively the policies we define and apply to our servers.
+There is also the concept of "Cookbooks" and "Recipes". These are effectively the policies we define and apply to our servers.
 
 ## Preparing the workstation
 
-First, lets prep the workstation. I’m using a standard Windows workstation. We need to create a directory to store our config files and cookbooks.
+First, lets prep the workstation. I'm using a standard Windows workstation. We need to create a directory to store our config files and cookbooks.
 
 First create a directory called C:\chef.
 
@@ -67,7 +69,7 @@ Once your organization is created, download the starter kit.
 
 ![][4]
 
-> [AZURE.NOTE] If you receive a prompt warning you that your keys will be reset, it’s ok to proceed as we have no existing infrastructure configured as yet.
+> [AZURE.NOTE] If you receive a prompt warning you that your keys will be reset, it's ok to proceed as we have no existing infrastructure configured as yet.
 
 This starter kit zip file contains your organization config files and keys.
 
@@ -85,7 +87,7 @@ You should now have four files including the Azure publishing file in the root o
 
 The PEM files contain your organization and admin private keys for communication while the knife.rb file contains your knife configuration. We will need to edit the knife.rb file.
 
-Open the file in your editor of choice and modify the “cookbook_path” by removing the /../ from the path so it appears as shown next.
+Open the file in your editor of choice and modify the "cookbook_path" by removing the /../ from the path so it appears as shown next.
 
 	cookbook_path  ["#{current_dir}/cookbooks"]
 
@@ -115,15 +117,15 @@ If they are not there, make sure you add these paths!
 
 Reboot your workstation before you continue.
 
-Next, we will install the Knife Azure extension. This provides Knife with the “Azure Plugin”.
+Next, we will install the Knife Azure extension. This provides Knife with the "Azure Plugin".
 
 Run the following command.
 
-	chef gem install knife-azure ––pre
+	chef gem install knife-azure --pre
 
-> [AZURE.NOTE] The –pre argument ensures you are receiving the latest RC version of the Knife Azure Plugin which provides access to the latest set of APIs.
+> [AZURE.NOTE] The -pre argument ensures you are receiving the latest RC version of the Knife Azure Plugin which provides access to the latest set of APIs.
 
-It’s likely that a number of dependencies will also be installed at the same time.
+It's likely that a number of dependencies will also be installed at the same time.
 
 ![][8]
 
@@ -146,7 +148,7 @@ Under your C:\Chef directory run the following command.
 
 This will generate a set of files under the directory C:\Chef\cookbooks\webserver. We now need to define the set of commands we would like our Chef client to execute on our managed virtual machine.
 
-The commands are stored in the file default.rb. In this file, I’ll be defining a set of commands that installs IIS, starts IIS and copies a template file to the wwwroot folder.
+The commands are stored in the file default.rb. In this file, I'll be defining a set of commands that installs IIS, starts IIS and copies a template file to the wwwroot folder.
 
 Modify the C:\chef\cookbooks\webserver\recipes\default.rb file and add the following lines.
 
@@ -174,7 +176,7 @@ Run the following command to generate the template.
 
 	chef generate template webserver Default.htm
 
-Now navigate to the C:\chef\cookbooks\webserver\templates\default\Default.htm.erb file. Edit the file by adding some simple “Hello World” HTML code, and then save the file.
+Now navigate to the C:\chef\cookbooks\webserver\templates\default\Default.htm.erb file. Edit the file by adding some simple "Hello World" HTML code, and then save the file.
 
 
 
@@ -188,7 +190,7 @@ In this step, we are taking a copy of the Cookbook that we have created on our l
 
 ## Deploy a virtual machine with Knife Azure
 
-We will now deploy an Azure virtual machine and apply the “Webserver” Cookbook which will install our IIS web service and default web page.
+We will now deploy an Azure virtual machine and apply the "Webserver" Cookbook which will install our IIS web service and default web page.
 
 In order to do this, use the **knife azure server create** command.
 
@@ -198,7 +200,7 @@ Am example of the command appears next.
 
 The parameters are self-explanatory. Substitute your particular variables and run.
 
-> [AZURE.NOTE] Through the the command line, I’m also automating my endpoint network filter rules by using the –tcp-endpoints parameter. I’ve opened up ports 80 and 3389 to provide access to my web page and RDP session.
+> [AZURE.NOTE] Through the the command line, I'm also automating my endpoint network filter rules by using the -tcp-endpoints parameter. I've opened up ports 80 and 3389 to provide access to my web page and RDP session.
 
 Once you run the command, go to the Azure Management Portal and you will see your machine begin to provision.
 
@@ -208,13 +210,13 @@ The command prompt appears next.
 
 ![][10]
 
-Once the deployment is complete, we should be able to connect to the web service over port 80 as we had opened the port when we provisioned the virtual machine with the Knife Azure command. As this virtual machine is the only virtual machine in my cloud service, I’ll connect it with the cloud service url.
+Once the deployment is complete, we should be able to connect to the web service over port 80 as we had opened the port when we provisioned the virtual machine with the Knife Azure command. As this virtual machine is the only virtual machine in my cloud service, I'll connect it with the cloud service url.
 
 ![][11]
 
 As you can see, I got creative with my HTML code.
 
-Don’t forget we can also connect through an RDP session from the Azure Management Portal via port 3389.
+Don't forget we can also connect through an RDP session from the Azure Management Portal via port 3389.
 
 I hope this has been helpful! Go  and start your infrastructure as code journey with Azure today!
 

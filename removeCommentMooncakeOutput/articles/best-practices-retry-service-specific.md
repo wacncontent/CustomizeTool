@@ -9,9 +9,9 @@
    tags=""/>
 
 <tags
-	ms.service="best-practice"
-	ms.date="04/28/2015"
-	wacn.date=""/>
+   ms.service="best-practice"
+   ms.date="04/28/2015"
+   wacn.date=""/>
 
 # Retry service specific guidance
 
@@ -209,7 +209,7 @@ namespace RetryCodeSamples
 ## More information
 
 - [Azure Storage Client Library Retry Policy Recommendations](http://azure.microsoft.com/blog/2014/05/22/azure-storage-client-library-retry-policy-recommendations/)
-- [Storage Client Library 2.0 – Implementing Retry Policies](http://gauravmantri.com/2012/12/30/storage-client-library-2-0-implementing-retry-policies/)
+- [Storage Client Library 2.0 - Implementing Retry Policies](http://gauravmantri.com/2012/12/30/storage-client-library-2-0-implementing-retry-policies/)
 
 ## SQL Database using Entity Framework 6 retry guidelines
 
@@ -295,7 +295,7 @@ Consider starting with following settings for retrying operations. You cannot sp
 
 | **Context**          | **Sample target E2E<br />max latency** | **Retry policy** | **Settings**           | **Values**   | **How it works**                                                                                                            |
 |----------------------|-----------------------------------|--------------------|------------------------|--------------|-----------------------------------------------------------------------------------------------------------------------------|
-| Interactive, UI,<br />or foreground | 2 seconds                         | Exponential        | MaxRetryCount<br />MaxDelay | 3<br />750 ms     | Attempt 1 - delay 0 sec<br />Attempt 2 - delay 750 ms<br />Attempt 3 – delay 750 ms                                                   |
+| Interactive, UI,<br />or foreground | 2 seconds                         | Exponential        | MaxRetryCount<br />MaxDelay | 3<br />750 ms     | Attempt 1 - delay 0 sec<br />Attempt 2 - delay 750 ms<br />Attempt 3 - delay 750 ms                                                   |
 | Background<br /> or batch            | 30 seconds                        | Exponential        | MaxRetryCount<br />MaxDelay | 5<br />12 seconds | Attempt 1 - delay 0 sec<br />Attempt 2 - delay ~1 sec<br />Attempt 3 - delay ~3 sec<br />Attempt 4 - delay ~7 sec<br />Attempt 5 - delay 12 sec |
 
 > [AZURE.NOTE] The end-to-end latency targets assume the default timeout for connections to the service. If you specify longer connection timeouts, the end-to-end latency will be extended by this additional time for every retry attempt.
@@ -410,10 +410,10 @@ Default strategies for the Transient Fault Handling Application Block are shown 
 Consider the following guidelines when accessing SQL Database using ADO.NET:
 
 * Choose the appropriate service option (shared or premium). A shared instance may suffer longer than usual connection delays and throttling due to the usage by other tenants of the shared server. If more predictable performance and reliable low latency operations are required, consider choosing the premium option.
-* Ensure that you perform retries at the appropriate level or scope to avoid non-idempotent operations causing inconsistency in the data. Ideally, all operations should be idempotent so that they can be repeated without causing inconsistency. Where this is not the case, the retry should be performed at a level or scope that allows all related changes to be undone if one operation fails; for example, from within a transactional scope. For more information, see [Cloud Service Fundamentals Data Access Layer – Transient Fault Handling](http://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx#Idempotent_Guarantee).
+* Ensure that you perform retries at the appropriate level or scope to avoid non-idempotent operations causing inconsistency in the data. Ideally, all operations should be idempotent so that they can be repeated without causing inconsistency. Where this is not the case, the retry should be performed at a level or scope that allows all related changes to be undone if one operation fails; for example, from within a transactional scope. For more information, see [Cloud Service Fundamentals Data Access Layer - Transient Fault Handling](http://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx#Idempotent_Guarantee).
 * A fixed interval strategy is not recommended for use with Azure SQL Database except for interactive scenarios where there are only a few retries at very short intervals. Instead, consider using an exponential back-off strategy for the majority of scenarios.
 * Choose a suitable value for the connection and command timeouts when defining connections. Too short a timeout may result in premature failures of connections when the database is busy. Too long a timeout may prevent the retry logic working correctly by waiting too long before detecting a failed connection. The value of the timeout is a component of the end-to-end latency; it is effectively added to the retry delay specified in the retry policy for every retry attempt.
-* Close the connection after a certain number of retries, even when using an exponential back off retry logic, and retry the operation on a new connection. Retrying the same operation multiple times on the same connection can be a factor that contributes to connection problems. For an example of this technique, see [Cloud Service Fundamentals Data Access Layer – Transient Fault Handling](http://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx).
+* Close the connection after a certain number of retries, even when using an exponential back off retry logic, and retry the operation on a new connection. Retrying the same operation multiple times on the same connection can be a factor that contributes to connection problems. For an example of this technique, see [Cloud Service Fundamentals Data Access Layer - Transient Fault Handling](http://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx).
 * When connection pooling is in use (the default) there is a chance that the same connection will be chosen from the pool, even after closing and reopening a connection. If this is the case, a technique to resolve it is to call the **ClearPool** method of the **SqlConnection** class to mark the connection as not reusable. However, you should do this only after several connection attempts have failed, and only when encountering the specific class of transient failures such as SQL timeouts (error code -2) related to faulty connections.
 * If the data access code uses transactions initiated as **TransactionScope** instances, the retry logic should reopen the connection and initiate a new transaction scope. For this reason, the retryable code block should encompass the entire scope of the transaction.
 * The Transient Fault Handling Application Block supports retry configurations entirely defined in configuration files. However, for maximum flexibility on Azure you should consider creating the configuration programmatically within the application. The specific parameters for the retry policies, such as the number of retries and the retry intervals, can be stored in the service configuration file and used at runtime to create the appropriate policies. This allows the settings to be changed within requiring the application to be restarted.
@@ -477,7 +477,7 @@ using (var reader = await sqlCommand.ExecuteReaderWithRetryAsync(retryPolicy))
 }
 ```
 
-However, this approach deals only with individual operations or commands, and not with blocks of statements where there can be properly defined transactional boundaries. In addition, it does not address the situation of removing faulty connections from the connection pool so that they are not selected for subsequent attempts. A synchronous example of resolving these issues can be found in [Cloud Service Fundamentals Data Access Layer – Transient Fault Handling](http://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx#Timeouts_amp_Connection_Management). In addition to retrying arbitrary sequences of database instructions, it clears the connection pool to remove invalid connections, and instruments the entire process. While the code shown in this example is synchronous, it is relatively easy to convert it to asynchronous code.
+However, this approach deals only with individual operations or commands, and not with blocks of statements where there can be properly defined transactional boundaries. In addition, it does not address the situation of removing faulty connections from the connection pool so that they are not selected for subsequent attempts. A synchronous example of resolving these issues can be found in [Cloud Service Fundamentals Data Access Layer - Transient Fault Handling](http://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx#Timeouts_amp_Connection_Management). In addition to retrying arbitrary sequences of database instructions, it clears the connection pool to remove invalid connections, and instruments the entire process. While the code shown in this example is synchronous, it is relatively easy to convert it to asynchronous code.
 
 ### More information
 
@@ -485,7 +485,7 @@ For detailed information about using the Transient Fault Handling Application Bl
 
 * [Using the Transient Fault Handling Application Block with SQL Azure](http://msdn.microsoft.com/zh-cn/library/hh680899.aspx)
 * [Perseverance, Secret of All Triumphs: Using the Transient Fault Handling Application Block](http://msdn.microsoft.com/zh-cn/library/dn440719.aspx)
-* [Cloud Service Fundamentals Data Access Layer – Transient Fault Handling](http://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx)
+* [Cloud Service Fundamentals Data Access Layer - Transient Fault Handling](http://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx)
 
 For general guidance on getting the most from SQL Database, see:
 

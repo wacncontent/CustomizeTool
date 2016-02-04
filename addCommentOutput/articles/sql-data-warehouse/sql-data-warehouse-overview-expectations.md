@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL Data Warehouse preview expectations | Microsoft Azure"
+   pageTitle="SQL Data Warehouse preview expectations | Windows Azure"
    description="Summary of public preview capabilities and our goals for general availability of SQL Data Warehouse."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="lvargas;twounder;barbkess"/>
+	ms.service="sql-data-warehouse"
+	ms.date="09/22/2015"
+	wacn.date=""/>
 
 # SQL Data Warehouse preview expectations
 
@@ -37,14 +33,14 @@ Any data warehouse has 2 fundamental performance metrics:
 - Scan rate. The number of records that can be sequentially retrieved from the data warehouse per second. We specifically measure the number of records returned by a query on a clustered columnstore index.
 
 
-We’re measuring some important performance enhancements and will soon share the expected rates. During preview we will make continuous enhancements (e.g. increasing compression and caching) to increase these rates and to ensure they scale predictably.  
+Weâre measuring some important performance enhancements and will soon share the expected rates. During preview we will make continuous enhancements (e.g. increasing compression and caching) to increase these rates and to ensure they scale predictably.  
 
 
 ## High reliability backed by an SLA
 
 ### Data Protection 
 
-SQL Data Warehouse stores all data in Azure storage using geo-redundant blobs. Three synchronous copies of the data are maintained in the local Azure region to guarantee transparent data protection in case of localized failures (e.g. storage drive failures). In addition, three more asynchronous copies are maintained in a remote Azure region to guarantee data protection in case of regional failures (disaster recovery). Local and remote regions are paired to maintain acceptable synchronization latencies (e.g. East US and West US). 
+SQL Data Warehouse stores all data in Azure storage using geo-redundant blobs. Three synchronous copies of the data are maintained in the local Azure region to guarantee transparent data protection in case of localized failures (e.g. storage drive failures). In addition, three more asynchronous copies are maintained in a remote Azure region to guarantee data protection in case of regional failures (disaster recovery). Local and remote regions are paired to maintain acceptable synchronization latencies (e.g. China East and China North). 
 
 
 ### Backups
@@ -62,7 +58,7 @@ Based on telemetry data, we estimate the current reliability of Azure SQL Data W
 
 ### Service uptime
 
-Azure SQL Data Warehouse may have up to 4 maintenance events per month to install critical fixes. Each event may cause query failures for up to 2 hours. The time will depend on the number of DWUs allocated to the service. We will make every attempt to notify these events 48 hours in advance.
+Azure SQL Data Warehouse may have up to 4 maintenance events per month to install critical fixes. Each event may cause query failures for up to 2 hours. The time will depend on the number of DWUs allocated to the service.
 
 
 ## Next steps

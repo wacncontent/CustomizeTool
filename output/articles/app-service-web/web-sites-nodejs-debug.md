@@ -1,6 +1,6 @@
 <properties
-	pageTitle="How to debug a Node.js web app in Azure Websites"
-	description="Learn how to debug a Node.js web app in Azure Websites."
+	pageTitle="How to debug a Node.js web app in Azure"
+	description="Learn how to debug a Node.js web app in Azure."
 	tags="azure-portal"
 	services="app-service\web"
 	documentationCenter="nodejs"
@@ -10,19 +10,19 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/11/2015"
+	ms.date="11/18/2015"
 	wacn.date=""/>
 
-# How to debug a Node.js web app in Azure Websites
+# How to debug a Node.js web app in Azure
 
-Azure provides built-in diagnostics to assist with debugging Node.js applications hosted in [Azure Websites](/documentation/services/web-sites/) Web Apps. In this article, you will learn how to enable logging of stdout and stderr, display error information in the browser, and how to download and view log files.
+Azure provides built-in diagnostics to assist with debugging Node.js applications hosted in [Azure Web App](/documentation/services/web-sites/) Web Apps. In this article, you will learn how to enable logging of stdout and stderr, display error information in the browser, and how to download and view log files.
 
 Diagnostics for Node.js applications hosted on Azure is provided by [IISNode]. While this article discusses the most common settings for gathering diagnostics information, it does not provide a complete reference for working with IISNode. For more information on working with IISNode, see the [IISNode Readme] on GitHub.
 
 <a id="enablelogging"></a>
 ## Enable logging
 
-By default, an Azure Websites web app only captures diagnostic information about deployments, such as when you deploy a web app using Git. This information is useful if you are having problems during deployment, such as a failure when installing a module referenced in **package.json**, or if you are using a custom deployment script.
+By default, an Azure web app only captures diagnostic information about deployments, such as when you deploy a web app using Git. This information is useful if you are having problems during deployment, such as a failure when installing a module referenced in **package.json**, or if you are using a custom deployment script.
 
 To enable the logging of stdout and stderr streams, you must create an **IISNode.yml** file at the root of your Node.js application and add the following:
 
@@ -59,7 +59,7 @@ Diagnostic logs can be accessed in three ways; Using the File Transfer Protocol 
 
 	npm install azure-cli -g
 
-Once installed, the tools can be accessed using the 'azure' command. The command-line tools must first be configured to use your Azure subscription. For information on how to accomplish this task, see the **How to download and import publish settings** section of the [How to Use The Azure Command-Line Tools] article.
+Once installed, the tools can be accessed using the 'azure' command. The command-line tools must first be configured to use your Azure subscription. For information on how to accomplish this task, see the **How to download and import publish settings** section of the [How to Use The Azure Command-Line Tools](/documentation/articles/xplat-cli-connect) article.
 
 ###FTP
 
@@ -69,7 +69,7 @@ To access the diagnostic information through FTP, visit the [Azure Management Po
 
 The FTP URL returned in the dashboard is for the **LogFiles** directory, which will contain the following sub-directories:
 
-* [Deployment Method] - If you use a deployment method such as Git, a directory of the same name will be created and will contain information related to deployments.
+* [Deployment Method](/documentation/articles/web-sites-deploy) - If you use a deployment method such as Git, a directory of the same name will be created and will contain information related to deployments.
 
 * nodejs - Stdout and stderr information captured from all instances of your application (when loggingEnabled is true.)
 
@@ -85,7 +85,7 @@ This will download a **diagnostics.zip** in the current directory. This archive 
 
 * LogFiles
 
-	* [Deployment method] - If you use a deployment method such as Git, a directory of the same name will be created and will contain information related to deployments.
+	* [Deployment method](/documentation/articles/web-sites-deploy) - If you use a deployment method such as Git, a directory of the same name will be created and will contain information related to deployments.
 
 	* nodejs - Stdout and stderr information captured from all instances of your application (when loggingEnabled is true.)
 
@@ -100,11 +100,24 @@ This will return a stream of log events that are updated as they occur on the se
 <a id="nextsteps"></a>
 ## Next Steps
 
-In this article you learned how to enable and access diagnostics information for Azure. While this information is useful in understanding problems that occur with your application, it may point to a problem with a module you are using or that the version of Node.js used by Azure Websites is different than the one used in your deployment environment.
+In this article you learned how to enable and access diagnostics information for Azure. While this information is useful in understanding problems that occur with your application, it may point to a problem with a module you are using or that the version of Node.js used by Azure Web Apps is different than the one used in your deployment environment.
 
+For information in working with modules on Azure, see [Using Node.js Modules with Azure Applications](/documentation/articles/nodejs-use-node-modules-azure-apps).
+
+For information on specifying a Node.js version for your application, see [Specifying a Node.js version in an Azure application].
+
+For more information, see also the [Node.js Developer Center](/develop/nodejs/).
+
+## What's changed
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 [IISNode]: https://github.com/tjanczuk/iisnode
 [IISNode Readme]: https://github.com/tjanczuk/iisnode#readme
-[How to Use The Azure Command-Line Interface]: /documentation/articles/xplat-cli-install
+[How to Use The Azure Command-Line Interface]: ../xplat-cli-install.md
+[Using Node.js Modules with Azure Applications]: ../nodejs-use-node-modules-azure-apps.md
+[Specifying a Node.js version in an Azure application]: ../nodejs-specify-node-version-azure-apps.md
+
 [restart-button]: ./media/web-sites-nodejs-debug/restartbutton.png
  

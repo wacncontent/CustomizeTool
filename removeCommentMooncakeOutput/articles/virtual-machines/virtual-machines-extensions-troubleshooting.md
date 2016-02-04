@@ -9,13 +9,14 @@
    tags="top-support-issue,azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines"
-	ms.date="09/01/2015"
-	wacn.date=""/>
+   ms.service="virtual-machines"
+   ms.date="09/01/2015"
+   wacn.date=""/>
 
 # Troubleshooting Azure VM Extension failures.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers using the Resource Manager deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
 
 ## Overview of Azure Resource Manager Templates.
 

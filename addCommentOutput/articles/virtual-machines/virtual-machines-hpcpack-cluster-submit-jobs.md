@@ -6,7 +6,7 @@
  authors="dlepow"
  manager="timlt"
  editor=""
- tags="azure-resource-manager,azure-service-management"/>
+ tags="azure-resource-manager,azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/28/2015"
@@ -16,11 +16,13 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
-This article shows you how to configure an on-premises client computer running Windows to
+This article shows you how to configure an on-premises client computer running Windows to <!-- deleted by customization run HPC Pack job submission tools that communicate with an HPC Pack cluster in Azure over HTTPS. This provides a straightforward, flexible way for a variety of cluster users to submit jobs to a cloud-based HPC Pack cluster without needing to connect directly to the head node VM to -->
+<!-- keep by customization: begin -->
 run HPC Pack job submission tools that communicate with an HPC Pack
 cluster in Azure over HTTPS. This provides a straightforward, flexible
 way for a variety of cluster users to submit jobs to a cloud-based HPC
 Pack cluster without needing to connect directly to the head node VM to
+<!-- keep by customization: end -->
 run job submission tools.
 
 ![Submit a job to a cluster in Azure][jobsubmit]
@@ -59,9 +61,11 @@ configure the components by running the HPC PowerShell script
 For detailed procedures, see [Install the Microsoft HPC Pack Web
 Components](http://technet.microsoft.com/zh-cn/library/hh314627.aspx).
 
->[AZURE.TIP] If you use an automated method such as the [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script) to create the cluster,
-you can optionally install and configure the web web components as part
+>[AZURE.TIP] If you use <!-- keep by customization: begin --> an automated method such as <!-- keep by customization: end --> the [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script) to create the cluster,
+you can optionally install and configure the web web components as part <!-- deleted by customization of the deployment. -->
+<!-- keep by customization: begin -->
 of the deployment.
+<!-- keep by customization: end -->
 
 **To install the web components**
 
@@ -83,7 +87,7 @@ of the deployment.
 3. To configure the REST interface and start the HPC Web Service, type the following command:
 
     ```
-    .\Set-HPCWebComponents.ps1 –Service REST –enable
+    .\Set-HPCWebComponents.ps1 -Service REST -enable
     ```
 
 4. When prompted to select a certificate, choose the certificate that corresponds to the public DNS name of the head node (CN=&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn).
@@ -93,13 +97,13 @@ of the deployment.
 5. To configure the web portal for job submission, type the following command:
 
     ```
-    .\Set-HPCWebComponents.ps1 –Service Portal -enable
+    .\Set-HPCWebComponents.ps1 -Service Portal -enable
     ```
 6. After the script completes, stop and restart the HPC Job Scheduler Service by typing the following:
 
     ```
     net stop hpcscheduler
-net start hpcscheduler
+    net start hpcscheduler
     ```
 
 ## Step 2: Install the HPC Pack client utilities on an on-premises computer
@@ -107,18 +111,20 @@ net start hpcscheduler
 If you haven't already done so, download a compatible version of the
 HPC Pack setup files from the [Microsoft Download
 Center](http://go.microsoft.com/fwlink/?LinkId=328024) to the client
-computer, and choose the setup option for the HPC Pack client utilities.
+computer <!-- deleted by customization. When you begin the installation -->, <!-- keep by customization: begin --> and <!-- keep by customization: end --> choose the setup option for the HPC Pack client utilities.
 
-To use the HPC Pack client tools to submit jobs to the head node VM, you'll also need to export a certificate from the head node and install it on the
+To use the HPC Pack client tools to submit jobs to the head node VM, you'll also need to export a certificate from the head node and install it on the <!-- deleted by customization client computer. You'll need the certificate to be in .CER format. -->
+<!-- keep by customization: begin -->
 client computer. You'll need the certificate to be in .CER format.
+<!-- keep by customization: end -->
 
 **To export the certificate from the head node**
 
 1. On the head node, add the Certificates snap-in to a Microsoft Management Console for the Local Computer account. For steps to add the snap-in, see [Add the Certificates Snap-in to an MMC](https://technet.microsoft.com/zh-cn/library/cc754431.aspx).
 
-2. In the console tree, expand **Certificates – Local Computer**, expand **Personal**, and then click **Certificates**.
+2. In the console tree, expand **Certificates - Local Computer**, expand **Personal**, and then click **Certificates**.
 
-3. Locate the certificate that you configured for the HPC Pack web components in [Step 1: Install and configure the web components on the head node](#step-1:-install-and-configure-the-web-components-on-the-head-node) (for example, named &lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn).
+3. Locate the certificate that you configured for the HPC Pack web components in [Step 1: Install and configure the web components on the head node](#step-1:-install-and-configure-the-web-components-on-the-head-node) (for example, named <!-- deleted by customization &lt;HeadNodeDnsName&gt;.chinacloudapp.cn) --><!-- keep by customization: begin --> &lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn) <!-- keep by customization: end -->.
 
 4. Right-click the certificate, click **All Tasks**, and then click **Export**.
 
@@ -134,7 +140,7 @@ client computer. You'll need the certificate to be in .CER format.
 
 2. On the client computer, run certmgr.msc.
 
-3. In Certificate Manager, expand **Certificates – Current user**, expand **Trusted Root Certification Authorities**, right-click **Certificates**, click **All Tasks**, and then click **Import**.
+3. In Certificate Manager, expand **Certificates - Current user**, expand **Trusted Root Certification Authorities**, right-click **Certificates**, click **All Tasks**, and then click **Import**.
 
 4. In the Certificate Import Wizard, click **Next** and follow the steps to import the certificate that your exported from the head node.
 
@@ -149,8 +155,10 @@ by using the on-premises computer that is running the HPC Pack client
 utilities. For example, you can use HPC Pack GUI tools or command-line commands to submit jobs to the cluster. You can also use a web-based portal to submit jobs.
 
 
-**To run job submission commands on the client
+**To run job submission commands on the client <!-- deleted by customization computer** -->
+<!-- keep by customization: begin -->
 computer**
+<!-- keep by customization: end -->
 
 
 1. On the client computer, start a Command prompt.
@@ -160,9 +168,9 @@ computer**
     ```
     job list /scheduler:https://<HeadNodeDnsName>.chinacloudapp.cn /all
     ```
-    >[AZURE.TIP] Use the full DNS name of the head node, not the IP address, in the scheduler URL. If you specify the IP address, you’ll see an error similar to "The server certificate needs to either have a valid chain of trust or to be placed in the trusted root store".
+    >[AZURE.TIP] Use the full DNS name of the head node, not the IP address, in the scheduler URL. If you specify the IP address, you'll see an error similar to "The server certificate needs to either have a valid chain of trust or to be placed in the trusted root store".
 
-3. When prompted, type the user name (in the form &lt;DomainName&gt;\&lt;UserName&gt;) and password of the HPC cluster administrator or another cluster user that you have configured. You can choose to store the credentials locally for more job operations.
+3. When prompted, type the user name (in the form <!-- deleted by customization &lt;DomainName&gt;\\&lt;UserName&gt;) --><!-- keep by customization: begin --> &lt;DomainName&gt;\&lt;UserName&gt;) <!-- keep by customization: end --> and password of the HPC cluster administrator or another cluster user that you have configured. You can choose to store the credentials locally for more job operations.
 
     A list of jobs appears.
 
@@ -175,23 +183,33 @@ computer**
 
     b. Click **Windows Credentials**, and then click **Add a generic credential**.
 
-    c. Specify the Internet address https://&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn/HpcScheduler, and provide the user name (in the form &lt;DomainName&gt;\&lt;UserName&gt;) and password of the HPC cluster administrator or another cluster user that you configured.
+    c. Specify the Internet address <!-- deleted by customization https://&lt;HeadNodeDnsName&gt;.chinacloudapp.cn/HpcScheduler --><!-- keep by customization: begin --> https://&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn/HpcScheduler <!-- keep by customization: end -->, and provide the user name (in the form <!-- deleted by customization &lt;DomainName&gt;\\&lt;UserName&gt;) --><!-- keep by customization: begin --> &lt;DomainName&gt;\&lt;UserName&gt;) <!-- keep by customization: end --> and password of the HPC cluster administrator or another cluster user that you configured.
 
 2. On the client computer, start HPC Job Manager.
 
-3. In the **Select Head Node** dialog box, type the URL to the head node in Azure in the form  https://&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn.
+3. In the **Select Head Node** dialog box, type the URL to the head node in Azure in the form  <!-- deleted by customization https://&lt;HeadNodeDnsName&gt;.chinacloudapp.cn --><!-- keep by customization: begin --> https://&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn <!-- keep by customization: end -->.
 
     HPC Job Manager opens and shows a list of jobs on the head node.
 
+<!-- deleted by customization
+**To use the web portal running on the head node**
+-->
+<!-- keep by customization: begin -->
 **To use the web-based job portal on the head node**
+<!-- keep by customization: end -->
 
 1. Start a web browser on the client computer, and type the following address:
     ```
+<!-- deleted by customization
+    https://<HeadNodeDnsName>.chinacloudapp.cn/HpcPortal
+-->
+<!-- keep by customization: begin -->
     https://HeadNodeDnsName.chinacloudapp.cn/HpcPortal
+<!-- keep by customization: end -->
     ```
 2. In the security dialog box that appears, type the domain credentials of the HPC cluster administrator. (You can also add other cluster users in different roles. For more information, see [Managing Cluster Users](https://technet.microsoft.com/zh-cn/library/ff919335.aspx).)
 
-    The portal opens to the job list view.
+    The <!-- deleted by customization web --> portal opens to the job list view.
 
 3. To submit a sample job that returns the string “Hello World” from the cluster, click **New job** in the left-hand navigation.
 

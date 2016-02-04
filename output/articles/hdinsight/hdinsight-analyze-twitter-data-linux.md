@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Analyze Twitter data with Apache Hive on HDInsight | Windows Azure"
 	description="Learn how to use Python to store Tweets that contain specific keywords, then use Hive and Hadoop on HDInsight to transform the raw TWitter data into a searchable Hive table."
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/19/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Analyze Twitter data using Hive in HDInsight

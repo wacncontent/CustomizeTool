@@ -8,15 +8,5 @@ replaced by:
 
 		[portal](https://manage.windowsazure.cn)
 
-reason: ()
-
-deleted:
-
-		https://manage.windowsazure.cn
-
-replaced by:
-
-		https://management.windowsazure.cn
-
-reason: ()
+reason: (preview portal)
 

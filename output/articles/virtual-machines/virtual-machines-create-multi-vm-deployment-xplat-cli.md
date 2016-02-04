@@ -15,7 +15,7 @@
 
 # Create a multi-VM deployment with the Azure CLI
 
-> [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating resources with the classic deployment model. 
+> [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
 
 The following script will show you how to configure a multi-VM multi-cloud service deployment in a VNET using Azure Command-Line Interface (Azure CLI).
 
@@ -32,7 +32,7 @@ The code to set this up is relatively straightforward:
 
     azure network vnet create samplevnet -l "China North"
     azure vm create -l "China North" -w samplevnet -e 10000 -z Small -n servervm servercs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB azureuser Password@1
-    azure vm create -l "China North" -w samplevnet -e 10001 -z Small –n clientvm1 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB azureuser Password@1
+    azure vm create -l "China North" -w samplevnet -e 10001 -z Small -n clientvm1 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB azureuser Password@1
     azure vm create -l "China North" -w samplevnet -e 10002 -c -z Small -n clientvm2 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB azureuser Password@1
     azure vm disk attach-new servervm 100
     azure vm disk attach-new servervm 500
@@ -45,11 +45,11 @@ As is the code to tear it down:
     azure vm delete -b -q clientvm2
     azure network vnet delete -q samplevnet
 
-*The –q option suppresses the interactive confirmation for deleting objects, -b cleans up the disks / blobs associated with the VM.*
+*The -q option suppresses the interactive confirmation for deleting objects, -b cleans up the disks / blobs associated with the VM.*
 
 ## Generic forms of the commands used
 
-While you can find more information by using the –help option on any of the Azure CLI commands, the generic form of each command as used above is:
+While you can find more information by using the -help option on any of the Azure CLI commands, the generic form of each command as used above is:
 
     azure network vnet create -l <Region> <VNet_name>
     azure network vnet delete -q <VNet_name>

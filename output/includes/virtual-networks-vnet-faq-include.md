@@ -1,4 +1,4 @@
-﻿## Virtual Network Basics
+## Virtual Network Basics
 
 ### What is an Azure Virtual network (VNet)?
 
@@ -193,7 +193,7 @@ No. You must not change any interface properties of VMs. Any changes may lead to
 
 Nothing. The IP addresses (both public VIP and internal IP address) will stay with your cloud service or VM. 
 
-> [AZURE.NOTE] If you want to simply shut down the VM, don't use the Management Portal to do so. Currently, the shutdown button will deallocate the virtual machine.
+> [AZURE.NOTE]Â If you want to simply shut down the VM, don't use the Management Portal to do so. Currently, the shutdown button will deallocate the virtual machine.
 
 ### Can I move VMs from one subnet to another subnet in a VNet without re-deploying?
 
@@ -205,7 +205,7 @@ No. A MAC address cannot be statically configured.
 
 ### Will the MAC address remain the same for my VM once it has been created?
 
-No. A VM's MAC address can change for a different reasons. If the VM is put in the status Stopped (Deallocated), if you change the VM size, or if there is service healing or planned maintenance of the host server, the MAC address is not retained.
+No, but it will only change if the VM is put in the status Stopped (Deallocated). If you change the VM size, reboot, or in case of service healing or planned maintenance of the host server, the MAC address is retained.
 
 ### Can I connect to the internet from a VM in a VNet?
 
@@ -219,10 +219,10 @@ You can only use compute services within VNets. Compute services are limited to 
 
 ### Can I use Web Apps with Virtual Network?
 
-Yes. You can deploy Web Apps inside a VNet using ASE (Azure Websites Environment). Adding to that, Web Apps can securely connect and access resources in your Azure VNet if you have point-to-site configured for your VNet. For more information, see the following:
+Yes. You can deploy Web Apps inside a VNet using ASE (Azure Environment). Adding to that, Web Apps can securely connect and access resources in your Azure VNet if you have point-to-site configured for your VNet. For more information, see the following:
 
 
-- [Creating Web Apps in an Azure Websites Environment](/documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase/)
+- [Creating Web Apps in an Azure Environment](/documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase)
 
 - [Web Apps Virtual Network Integration](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)
 

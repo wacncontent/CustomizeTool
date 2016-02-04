@@ -6,11 +6,11 @@
    authors="dlepow"
    manager="timlt"
    editor=""
-   tags="azure-service-management"/>
+   tags="azure-service-management,hpc-pack"/>
 <tags
-	ms.service="virtual-machines"
-	ms.date="09/29/2015"
-	wacn.date=""/>
+   ms.service="virtual-machines"
+   ms.date="09/29/2015"
+   wacn.date=""/>
 
 # Create a high performance computing (HPC) cluster in Azure VMs with the HPC Pack IaaS deployment script
 
@@ -38,7 +38,7 @@ For background information about planning an HPC Pack cluster, see the [Product 
 * **Windows client computer with Azure PowerShell 0.8.7 or later installed and configured** - See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). The script runs in Azure Service Management.
 
 
-* **HPC Pack IaaS deployment script** - Download and unpack the latest version of the script from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=44949). You can check the version of the script by running `New-HPCIaaSCluster.ps1 –Version`. This article is based on version 4.4.0 of the script.
+* **HPC Pack IaaS deployment script** - Download and unpack the latest version of the script from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=44949). You can check the version of the script by running `New-HPCIaaSCluster.ps1 -Version`. This article is based on version 4.4.0 of the script.
 
 * **Script configuration file** - You'll need to create an XML file that the script uses to configure the HPC cluster. For information and examples, see sections later in this article.
 
@@ -56,7 +56,7 @@ New-HPCIaaSCluster.ps1 [-ConfigFile] <String> [-AdminUserName]<String> [[-AdminP
 
 * **AdminUserName** -Specifies the user name. If the domain forest is created by the script, this becomes the local administrator user name for all VMs as well as the domain administrator name. If the domain forest already exists, this specifies the domain user as the local administrator user name to install HPC Pack.
 
-* **AdminPassword** - Specifies the administrator’s password. If not specified in the command line, the script will prompt you to input the password.
+* **AdminPassword** - Specifies the administrator's password. If not specified in the command line, the script will prompt you to input the password.
 
 * **HPCImageName** (optional) - Specifies the HPC Pack VM image name used to deploy the HPC cluster. It must be a Microsoft-provided HPC Pack image from the Azure Marketplace. If not specified (recommended in most cases), the script chooses the latest published HPC Pack image.
 
@@ -78,8 +78,8 @@ The following example creates a new HPC Pack cluster using the
 configuration file MyConfigFile.xml, and specifies administrative
 credentials for installing the cluster.
 ```
-New-HPCIaaSCluster.ps1 –ConfigFile MyConfigFile.xml -AdminUserName
-<username> –AdminPassword <password>
+New-HPCIaaSCluster.ps1 -ConfigFile MyConfigFile.xml -AdminUserName
+<username> -AdminPassword <password>
 ```
 ### Additional considerations
 
@@ -107,7 +107,7 @@ detail in the file Manual.rtf in the deployment script folder. For example files
 The following configuration file deploys an HPC Pack cluster in an existing domain forest. The cluster has 1 head node with local databases and 12 compute nodes with the BGInfo VM extension applied.
 Automatic installation of Windows updates is disabled for all the VMs in
 the domain forest. All the cloud services are created directly in the
-East Asia location. The compute nodes are created in 3 cloud services
+China East location. The compute nodes are created in 3 cloud services
 and 3 storage accounts (i.e., MyHPCCN-0001 to MyHPCCN-0005 in
 MyHPCCNService01 and mycnstorage01; MyHPCCN-0006 to MyHPCCN0010 in
 MyHPCCNService02 and mycnstorage02; and MyHPCCN-0011 to MyHPCCN-0012 in
@@ -122,7 +122,7 @@ and shrink service is enabled with default grow and shrink intervals.
     <SubscriptionName>Subscription-1</SubscriptionName>
     <StorageAccount>mystorageaccount</StorageAccount>
   </Subscription>
-  <Location>East Asia</Location>  
+  <Location>China East</Location>  
   <VNet>
     <VNetName>MyVNet</VNetName>
     <SubnetName>Subnet-1</SubnetName>
@@ -194,7 +194,7 @@ Scheduler REST API and HPC web portal are enabled on the head node.
     <StorageAccount>mystorageaccount</StorageAccount>
   </Subscription>
   <AffinityGroup>MyAffinityGroup</AffinityGroup>
-  <Location>East Asia</Location>  
+  <Location>China East</Location>  
   <VNet>
     <VNetName>MyVNet</VNetName>
     <SubnetName>Subnet-1</SubnetName>
@@ -241,7 +241,7 @@ Scheduler REST API and HPC web portal are enabled on the head node.
 The following configuration file creates a new domain forest
 and Deployments an HPC Pack cluster which has 1 head node with local
 databases and 20 Linux compute nodes. All the cloud services are created
-directly in the East Asia location. The Linux compute nodes are created
+directly in the China East location. The Linux compute nodes are created
 in 4 cloud services and 4 storage accounts (i.e. MyLnxCN-0001 to
 MyHPCCN-0005 in MyLnxCNService01 and mylnxstorage01, MyLnxCN-0006 to
 MyLnxCN-0010 in MyLnxCNService02 and mylnxstorage02, MyLnxCN-0011 to
@@ -256,7 +256,7 @@ are created from an OpenLogic CentOS version 7.0 Linux image.
     <SubscriptionName>Subscription-1</SubscriptionName>
     <StorageAccount>mystorageaccount</StorageAccount>
   </Subscription>
-  <Location>East Asia</Location>  
+  <Location>China East</Location>  
   <VNet>
     <VNetName>MyVNet</VNetName>
     <SubnetName>Subnet-1</SubnetName>
@@ -300,7 +300,7 @@ are created from an OpenLogic CentOS version 7.0 Linux image.
 The following configuration file deploys an HPC Pack cluster
 which has a head node with local databases and 5 compute nodes running
 the Windows Server 2008 R2 operating system. All the cloud services are
-created directly in the East Asia location. The head node acts as domain
+created directly in the China East location. The head node acts as domain
 controller of the domain forest.
 
 ```
@@ -310,7 +310,7 @@ controller of the domain forest.
     <SubscriptionId>08701940-C02E-452F-B0B1-39D50119F267</SubscriptionId>
     <StorageAccount>mystorageaccount</StorageAccount>
   </Subscription>
-  <Location>East Asia</Location>  
+  <Location>China East</Location>  
   <VNet>
     <VNetName>MyVNet</VNetName>
     <SubnetName>Subnet-1</SubnetName>
@@ -353,7 +353,7 @@ will run on the head node after the head node is configured.
     <StorageAccount>mystorageaccount</StorageAccount>
   </Subscription>
   <AffinityGroup>MyAffinityGroup</AffinityGroup>
-  <Location>East Asia</Location>  
+  <Location>China East</Location>  
   <VNet>
     <VNetName>MyVNet</VNetName>
     <SubnetName>Subnet-1</SubnetName>
@@ -411,7 +411,7 @@ will run on the head node after the head node is configured.
 ## Known issues
 
 
-* **“VNet doesn’t exist” error** - If you run the HPC Pack IaaS deployment script to deploy multiple
+* **“VNet doesn't exist” error** - If you run the HPC Pack IaaS deployment script to deploy multiple
 clusters in Azure concurrently under one subscription, one or more
 deployments may fail with the error “VNet *VNet_Name* doesn't exist”.
 If this error occurs, re-run the script for the failed deployment.
@@ -421,7 +421,7 @@ the deployment script, or you manually promote a VM to domain
 controller, you may experience problems connecting the VMs in the Azure
 virtual network to the Internet. This can occur if a forwarder DNS
 server is automatically configured on the domain controller, and this
-forwarder DNS server doesn’t resolve properly.
+forwarder DNS server doesn't resolve properly.
 
     To work around this problem, log on to the domain controller and either
     remove the forwarder configuration setting or configure a valid

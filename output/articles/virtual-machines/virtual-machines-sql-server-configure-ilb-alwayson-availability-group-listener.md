@@ -22,12 +22,7 @@
 
 This topic shows you how to configure a listener for an AlwaysOn Availability Group by using an **Internal Load Balancer (ILB)**. 
 
-<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the classic deployment model. 
-<!-- keep by customization: end -->
  
 
 Your Availability Group can contain replicas that are on-premises only, Azure only, or span both on-premises and Azure for hybrid configurations. Azure replicas can reside within the same region or across multiple regions using multiple virtual networks (VNets). The steps below assume you have already [configured an availability group](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui) but have not configured a listener. 
@@ -85,7 +80,7 @@ For ILB, you must first create the internal load balancer. This is done in the s
 
 1. Once you have set the variables, copy the script from the text editor into your Azure PowerShell session to run it. If the prompt still shows >>, type ENTER again to make sure the script starts running.Note 
 
->[AZURE.NOTE] The Azure Management Portal does not support the Internal Load Balancer at this time, so you will not see either the ILB or the endpoints in the portal. However, **Get-AzureEndpoint** returns an internal IP address if the Load Balancer is running on it. Otherwise, it returns null.
+>[AZURE.NOTE] The Azure Management Portal does not support the Internal Load Balancer at this time, so you will not see either the ILB or the endpoints in the Azure Management Portal. However, **Get-AzureEndpoint** returns an internal IP address if the Load Balancer is running on it. Otherwise, it returns null.
 
 ## Verify that KB2854082 is installed if necessary
 
@@ -110,7 +105,7 @@ For ILB, you must first create the internal load balancer. This is done in the s
 		# Define variables
 		$ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
 		$IPResourceName = "<IPResourceName>" # the IP Address resource name 
-		$ILBIP = “<X.X.X.X>” # the IP Address of the Internal Load Balancer (ILB)
+		$ILBIP = "<X.X.X.X>" # the IP Address of the Internal Load Balancer (ILB)
 		
 		Import-Module FailoverClusters
 		

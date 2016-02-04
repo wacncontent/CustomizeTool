@@ -1,25 +1,21 @@
 <properties 
-   pageTitle="PowerShell for StorSimple device management | Microsoft Azure"
+   pageTitle="PowerShell for StorSimple device management | Windows Azure"
    description="Learn how to use Windows PowerShell for StorSimple to manage your StorSimple device."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/28/2015"
-   ms.author="alkohli@microsoft.com" />
+<tags
+	ms.service="storsimple"
+	ms.date="08/28/2015"
+	wacn.date=""/>
 
 # Use Windows PowerShell for StorSimple to administer your device
 
 ## Overview
 
-Windows PowerShell for StorSimple provides a command-line interface that you can use to manage your Microsoft Azure StorSimple device. As the name suggests, it is a Windows PowerShell-based, command-line interface that is built in a constrained runspace. From the perspective of the user at the command line, a constrained runspace appears as a restricted version of Windows PowerShell. While maintaining some of the basic capabilities of Windows PowerShell, this interface has additional dedicated cmdlets that are geared towards managing your Microsoft Azure StorSimple device. 
+Windows PowerShell for StorSimple provides a command-line interface that you can use to manage your <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple device. As the name suggests, it is a Windows PowerShell-based, command-line interface that is built in a constrained runspace. From the perspective of the user at the command line, a constrained runspace appears as a restricted version of Windows PowerShell. While maintaining some of the basic capabilities of Windows PowerShell, this interface has additional dedicated cmdlets that are geared towards managing your <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple device.
 
 This article describes the Windows PowerShell for StorSimple features, including how you can connect to this interface, and contains links to step-by-step procedures or workflows that you can perform using this interface. The workflows include how to register your device, configure the network interface on your device, install updates that require the device to be in maintenance mode, change the device state, and troubleshoot any issues that you may experience.
 
@@ -33,9 +29,9 @@ After reading this article, you will be able to:
 
 >[AZURE.NOTE] 	
 
->- Windows PowerShell for StorSimple cmdlets allow you to manage your StorSimple device from a serial console or remotely via Windows PowerShell remoting. For more information about each of the individual cmdlets that can be used in this interface, go to [cmdlet reference for Windows PowerShell for StorSimple](https://technet.microsoft.com/library/dn688168.aspx).
+>- Windows PowerShell for StorSimple cmdlets allow you to manage your StorSimple device from a serial console or remotely via Windows PowerShell remoting. For more information about each of the individual cmdlets that can be used in this interface, go to [cmdlet reference for Windows PowerShell for <!-- deleted by customization StorSimple](https://technet.microsoft.com/zh-cn/library/dn688168.aspx) --><!-- keep by customization: begin --> StorSimple](https://technet.microsoft.com/library/dn688168.aspx) <!-- keep by customization: end -->.
 
->- The Azure PowerShell StorSimple cmdlets are a different collection of cmdlets that allow you to automate StorSimple service-level and migration tasks from the command line. For more information about the Azure PowerShell cmdlets for StorSimple, go to the [Azure StorSimple cmdlet reference](https://msdn.microsoft.com/library/azure/dn920427.aspx).
+>- The Azure PowerShell StorSimple cmdlets are a different collection of cmdlets that allow you to automate StorSimple service-level and migration tasks from the command line. For more information about the Azure PowerShell cmdlets for StorSimple, go to the [Azure StorSimple cmdlet <!-- deleted by customization reference](https://msdn.microsoft.com/zh-cn/library/azure/dn920427.aspx) --><!-- keep by customization: begin --> reference](https://msdn.microsoft.com/library/azure/dn920427.aspx) <!-- keep by customization: end -->.
 
 You can access the Windows PowerShell for StorSimple using one of the following methods:
 
@@ -45,7 +41,7 @@ You can access the Windows PowerShell for StorSimple using one of the following 
 
 ## Connect to Windows PowerShell for StorSimple via the device serial console
 
-You can [download PuTTY](http://www.putty.org/) or similar terminal emulation software to connect to Windows PowerShell for StorSimple. You need to configure PuTTY specifically to access the Microsoft Azure StorSimple device. The following topics contain detailed steps about how to configure PuTTy and connect to the device. Various menu options in the serial console are also explained.
+You can [download PuTTY](http://www.putty.org/) or similar terminal emulation software to connect to Windows PowerShell for StorSimple. You need to configure PuTTY specifically to access the <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple device. The following topics contain detailed steps about how to configure PuTTy and connect to the device. Various menu options in the serial console are also explained.
 
 ### About the serial console
 
@@ -68,7 +64,7 @@ You can choose from the following settings:
 
 1. **Log in with full access**
 This option allows you to connect (with the proper credentials) to the **SSAdminConsole** runspace on the local controller. (The local controller is the controller that you are currently accessing through the serial console of your StorSimple device.) 
-This option can also be used to allow Microsoft Support to access unrestricted runspace (a support session) to troubleshoot any possible device issues. After you use option 1 to log on, you can allow the Microsoft Support engineer to access unrestricted runspace by running a specific cmdlet. For details, refer to [Start a support session](storsimple-contact-microsoft-support.md#start-a-support-session-in-windows-powershell-for-storsimple).
+This option can also be used to allow Microsoft Support to access unrestricted runspace (a support session) to troubleshoot any possible device issues. After you use option 1 to log on, you can allow the Microsoft Support engineer to access unrestricted runspace by running a specific cmdlet. For details, refer to [Start a support <!-- deleted by customization session](/documentation/articles/storsimple-contact-microsoft-support#start-a-support-session-in-windows-powershell-for-storsimple) --><!-- keep by customization: begin --> session](storsimple-contact-microsoft-support.md#start-a-support-session-in-windows-powershell-for-storsimple) <!-- keep by customization: end -->.
 
 1. **Log in to peer controller with full access**
 This option is the same as option 1, except that you can connect (with the proper credentials) to the **SSAdminConsole** runspace on the peer controller. Because the StorSimple device is a high availability device with two controllers in an active-passive configuration, peer refers to the other controller in the device that you are accessing through the serial console).
@@ -123,7 +119,12 @@ Make sure that you use the following PuTTY settings to connect to the Windows Po
 
 You can now use PuTTY to connect to the device serial console by doing the following steps:
 
+<!-- deleted by customization
+[AZURE.INCLUDE [storsimple-use-putty](../includes/storsimple-use-putty.md)]
+-->
+<!-- keep by customization: begin -->
 [AZURE.INCLUDE [storsimple-use-putty](../../includes/storsimple-use-putty.md)]
+<!-- keep by customization: end -->
 
 
 ## Connect remotely to StorSimple using Windows PowerShell for StorSimple
@@ -131,13 +132,19 @@ You can use Windows PowerShell remoting to connect to your StorSimple device. Wh
 
 The display language is independent of the language that you set by using the **Change Language** option in the serial console menu. Remote PowerShell will automatically pick up the locale of the device you are connecting from if none is specified.
 
->[AZURE.NOTE] If you are working with Microsoft Azure virtual hosts and StorSimple virtual devices, you can use Windows PowerShell remoting and the virtual host to connect to the virtual device. If you have set up a share location on the host on which to save information from the Windows PowerShell session you should be aware that the Everyone principal includes only authenticated users. Therefore, if you have set the share up to allow access by Everyone and you connect without specifying credentials, the unauthenticated Anonymous principal will be used and you will see an error. To fix this issue, on the share host you must enable the Guest account and then give the Guest account full access to the share or you must specify valid credentials along with the Windows PowerShell cmdlet.
+>[AZURE.NOTE] If you are working with <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure virtual hosts and StorSimple virtual devices, you can use Windows PowerShell remoting and the virtual host to connect to the virtual device. If you have set up a share location on the host on which to save information from the Windows PowerShell session you should be aware that the Everyone principal includes only authenticated users. Therefore, if you have set the share up to allow access by Everyone and you connect without specifying credentials, the unauthenticated Anonymous principal will be used and you will see an error. To fix this issue, on the share host you must enable the Guest account and then give the Guest account full access to the share or you must specify valid credentials along with the Windows PowerShell cmdlet.
 
 
 You can use HTTP or HTTPS to connect via Windows PowerShell remoting. Use the instructions in the following tutorials:
 
+<!-- deleted by customization
+- [Connect remotely using http](/documentation/articles/storsimple-remote-connect#connect-through-http)
+- [Connect remotely using https](/documentation/articles/storsimple-remote-connect#connect-through-https)
+-->
+<!-- keep by customization: begin -->
 - [Connect remotely using http](storsimple-remote-connect.md#connect-through-http)
 - [Connect remotely using https](storsimple-remote-connect.md#connect-through-https)
+<!-- keep by customization: end -->
 
 ## Connection security considerations
 
@@ -157,13 +164,13 @@ The following table shows a summary of all the common management tasks and compl
 
 |If you want to do this ...|Use this procedure.|
 |---|---|
-|Register your device|[Configure and register the device using Windows PowerShell for StorSimple](storsimple-deployment-walkthrough.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple) |
-|Configure web proxy</br>View web proxy settings|[Configure web proxy for your StorSimple device](storsimple-configure-web-proxy.md)|
-|Modify DATA 0 network interface settings on your device|[Modify DATA 0 network interface for your StorSimple device](storsimple-modify-data-0.md)|
-|Stop a controller </br> Restart or shut down a controller </br> Shut down a device</br>Reset the device to factory default settings|[Manage device controllers](storsimple-manage-device-controller.md)|
-|Install maintenance mode updates and hotfixes|[Update your device](storsimple-update-device.md)|
-|Enter maintenance mode </br>Exit maintenance mode|[StorSimple device modes](storsimple-device-modes.md)|
-|Create a Support package</br>Decrypt and edit a support package|[Create and manage a Support package](storsimple-create-manage-support-package.md)|
+|Register your device|[Configure and register the device using Windows PowerShell for <!-- deleted by customization StorSimple](/documentation/articles/storsimple-deployment-walkthrough#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple) --><!-- keep by customization: begin --> StorSimple](storsimple-deployment-walkthrough.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple) <!-- keep by customization: end --> |
+|Configure web proxy</br>View web proxy settings|[Configure web proxy for your StorSimple <!-- deleted by customization device](/documentation/articles/storsimple-configure-web-proxy)| --><!-- keep by customization: begin --> device](storsimple-configure-web-proxy.md)| <!-- keep by customization: end -->
+|Modify DATA 0 network interface settings on your device|[Modify DATA 0 network interface for your StorSimple <!-- deleted by customization device](/documentation/articles/storsimple-modify-data-0)| --><!-- keep by customization: begin --> device](storsimple-modify-data-0.md)| <!-- keep by customization: end -->
+|Stop a controller </br> Restart or shut down a controller </br> Shut down a device</br>Reset the device to factory default settings|[Manage device <!-- deleted by customization controllers](/documentation/articles/storsimple-manage-device-controller)| --><!-- keep by customization: begin --> controllers](storsimple-manage-device-controller.md)| <!-- keep by customization: end -->
+|Install maintenance mode updates and hotfixes|[Update your <!-- deleted by customization device](/documentation/articles/storsimple-update-device)| --><!-- keep by customization: begin --> device](storsimple-update-device.md)| <!-- keep by customization: end -->
+|Enter maintenance mode </br>Exit maintenance mode|[StorSimple device <!-- deleted by customization modes](/documentation/articles/storsimple-device-modes)| --><!-- keep by customization: begin --> modes](storsimple-device-modes.md)| <!-- keep by customization: end -->
+|Create a Support package</br>Decrypt and edit a support package|[Create and manage a Support <!-- deleted by customization package](/documentation/articles/storsimple-create-manage-support-package)| --><!-- keep by customization: begin --> package](storsimple-create-manage-support-package.md)| <!-- keep by customization: end -->
 |Start a Support session</br>|[Start a support session in Windows PowerShell for StorSimple](/storsimple-contact-microsoft-support.md#start-a-support-session-in-windows-powershell-for-storsimple)
  
 
@@ -181,7 +188,7 @@ The following is a brief description of the types of Help for this Windows Power
 
 - To get online Help for any cmdlet, use the previous cmdlet with the `-Online` parameter: `Get-Help <cmdlet-name> -Online`
 
-- For full Help, you can use the –Full parameter, and for examples, use the `–Examples` parameter.
+- For full Help, you can use the <!-- deleted by customization -Full --><!-- keep by customization: begin --> –Full <!-- keep by customization: end --> parameter, and for examples, use the <!-- deleted by customization `-Examples` --><!-- keep by customization: begin --> `–Examples` <!-- keep by customization: end --> parameter.
 
 #### To update Help
 
@@ -202,5 +209,5 @@ You can easily update the Help in the Windows PowerShell interface. Perform the 
 >[AZURE.NOTE] To get a list of all the available cmdlets in any of the runspaces, log in to the corresponding menu option and run the `Get-Command` cmdlet.
 
 ## Next steps
-If you experience any issues with your StorSimple device when performing one of the above workflows, refer to [Tools for troubleshooting StorSimple deployments](storsimple-troubleshoot-deployment.md#tools-for-troubleshooting-storsimple-deployments).
+If you experience any issues with your StorSimple device when performing one of the above workflows, refer to [Tools for troubleshooting StorSimple <!-- deleted by customization deployments](/documentation/articles/storsimple-troubleshoot-deployment#tools-for-troubleshooting-storsimple-deployments) --><!-- keep by customization: begin --> deployments](storsimple-troubleshoot-deployment.md#tools-for-troubleshooting-storsimple-deployments) <!-- keep by customization: end -->.
 

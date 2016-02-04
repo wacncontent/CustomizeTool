@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/05/2015"
+	ms.date="11/06/2015"
 	wacn.date=""/>
 
 # Get started with Mobile Services
@@ -48,7 +48,7 @@ Completing this tutorial requires the following:
 
 In this section you will create a new PhoneGap app that is connected to your mobile service.
 
-1.  In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+1.  In the [Azure Management Portal], click **Mobile Services**, and then click the mobile service that you just created.
 
 2. In the quickstart tab, click **PhoneGap** under **Choose platform** and expand **Create a new PhoneGap app**.
 
@@ -77,39 +77,48 @@ The final stage of this tutorial is to build and run your new app.
 	+ **Windows Phone 8**
 
 		1. Windows Phone 8: Open the .sln file in the **platforms\wp8** folder in Visual Studio 2012 Express for Windows Phone.
-
 		2. Press the **F5** key to rebuild the project and start the app.
-
+<!-- deleted by customization
 	  	![][2]
+-->
+<!-- keep by customization: begin -->
+	
+	  	![][2]
+<!-- keep by customization: end -->
 
 	+ **iOS**
 
 		1. Open the project in the **platforms/ios** folder in Xcode.
-
 		2. Press the **Run** button to build the project and start the app in the iPhone emulator, which is the default for this project.
-
+<!-- deleted by customization
 	  	![][3]
+-->
+<!-- keep by customization: begin -->
+	
+	  	![][3]
+<!-- keep by customization: end -->
 
 	+ **Android**
 
 		1. In Eclipse, click **File** then **Import**, expand **Android**, click **Existing Android Code into Workspace**, and then click **Next.**
-
 		2. Click **Browse**, browse to the location of the expanded project files, click **OK**, make sure that the TodoActivity project is checked, then click **Finish**. <p>This imports the project files into the current workspace.</p>
-
 		3. From the **Run** menu, click **Run** to start the project in the Android emulator.
-
+<!-- deleted by customization
 			![][4]
-
+-->
+<!-- keep by customization: begin -->
+		
+			![][4]
+	
+<!-- keep by customization: end -->
 		>[AZURE.NOTE]To be able to run the project in the Android emulator, you must define a least one Android Virtual Device (AVD). Use the AVD Manager to create and manage these devices.
-
-
 3. After launching the app in one of the mobile emulators above, type some text into the textbox and then click **Add**.
 
 	This sends a POST request to the new mobile service hosted in Azure. Data from the request is inserted into the **TodoItem** table. Items stored in the table are returned by the mobile service, and the data is displayed in the list.
 
 	> [AZURE.IMPORTANT] Changes to this platform project will be overwritten if the main project is rebuilt with the PhoneGap tools. Instead, make changes in the project's root www directory as outlined in the section below.
 
-4. Back in the Management Portal, click the **Data** tab and then click the **TodoItem** table.
+4. Back in the [Azure Management Portal], click the **Data** tab and then click the **TodoItem** table.
 
 	![](./media/mobile-services-javascript-backend-phonegap-get-started/mobile-data-tab.png)
 
@@ -117,14 +126,13 @@ The final stage of this tutorial is to build and run your new app.
 
 	![](./media/mobile-services-javascript-backend-phonegap-get-started/mobile-data-browse.png)
 
-
 ## Make app updates and rebuild projects for each platform
 
 1. Make changes to code files in the ´www´ directory, which in this case is ´todolist/www´.
 
 2. Verify that all of the target platform tools are accessible in the system path.
 
-2. Open a command prompt in the root project directory, and run one of the following platform-specific commands:
+<!-- deleted by customization 2 --><!-- keep by customization: begin --> 3 <!-- keep by customization: end -->. Open a command prompt in the root project directory, and run one of the following platform-specific commands:
 
 	+ **Windows Phone**
 
@@ -133,7 +141,6 @@ The final stage of this tutorial is to build and run your new app.
     		phonegap local build wp8
 
 	+ **iOS**
-
 		Open terminal and run the following command:
 
     		phonegap local build ios
@@ -170,9 +177,13 @@ Now that you have completed the quickstart, learn how to perform additional impo
 [4]: ./media/mobile-services-javascript-backend-phonegap-get-started/mobile-portal-quickstart-android.png
 
 <!-- URLs. -->
+<!-- deleted by customization
+[Add authentication to your app]: mobile-services-html-get-started-users.md
+-->
+<!-- keep by customization: begin -->
 [Add authentication to your app]: /documentation/articles/mobile-services-html-get-started-users
+<!-- keep by customization: end -->
 [Android SDK]: http://developer.android.com/sdk/index.html
-[Management Portal]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[Visual Studio 2012 Express for Windows Phone]: https://www.visualstudio.com/downloads/download-visual-studio-vs
- 
+[Visual Studio 2012 Express for Windows Phone]: https://www.visualstudio.com/downloads/download-visual-studio-vs

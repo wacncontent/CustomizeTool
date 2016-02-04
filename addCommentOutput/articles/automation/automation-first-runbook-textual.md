@@ -19,9 +19,13 @@
 > [AZURE.SELECTOR]
 - [Graphical](/documentation/articles/automation-first-runbook-graphical)
 - [PowerShell Workflow](/documentation/articles/automation-first-runbook-textual)
--->
 
-This tutorial walks you through the creation of a [PowerShell Workflow runbook](/documentation/articles/automation-runbook-types#powerShell-workflow-runbooks) in Azure Automation.  We'll start with a simple runbook that we'll test and publish while we explain how to track the status of the runbook job.  Then we'll modify the runbook to actually manage Azure resources, in this case starting an Azure virtual machine.  We'll then make the runbook more robust by adding runbook parameters.  
+This tutorial walks you through the creation of a [PowerShell Workflow runbook](/documentation/articles/automation-runbook-types#powerShell-workflow-runbooks) in Azure Automation.  We'll start with a simple runbook that we'll test and publish while we explain how to track the status of the runbook job.  Then we'll modify the runbook to actually manage Azure resources, in this case starting an Azure virtual machine.  We'll then make the runbook more robust by adding runbook parameters.
+-->
+<!-- keep by customization: begin -->
+
+This tutorial walks you through the creation of a PowerShell Workflow runbook in Azure Automation.  We'll start with a simple runbook that we'll test and publish while we explain how to track the status of the runbook job.  Then we'll modify the runbook to actually manage Azure resources, in this case starting an Azure virtual machine.  We'll then make the runbook more robust by adding runbook parameters.
+<!-- keep by customization: end -->
 
 ## Prerequisites
 
@@ -146,20 +150,20 @@ We've tested and published our runbook, but so far it doesn't do anything useful
 3.  On the next line, type *Add-AzureAccount -Credential $Credential*. <br>
 ![Authenticate](./media/automation-first-runbook-textual/authentication.png) 
 3. Click **Test pane** so that we can test the runbook.
-10. Click **Start** to start the test.  Once it completes, you should receive output similar to the following that returns the information for the user in the credential.  This confirms that the credential is valid.<br>
+10 <!-- deleted by customization. Click **Start** to start the test -->.  Once it completes, you should receive output similar to the following that returns the information for the user in the credential.  This confirms that the credential is valid.<br>
 ![Authenticate](./media/automation-first-runbook-textual/authentication-test.png) 
 -->
 <!-- keep by customization: begin -->
-3.  On the next line, type *Add-AzureAccount -Credential $Credential –Environment AzureChinaCloud*.
+3.  On the next line, type *Add-AzureAccount -Credential $Credential -Environment AzureChinaCloud*.
 
 		workflow test
 		{
     		$Credential = Get-AutomationPSCredential -Name "<your credential>"
-    		Add-AzureAccount –Credential $Credential –Environment AzureChinaCloud
+    		Add-AzureAccount -Credential $Credential -Environment AzureChinaCloud
 		}
 
 3. Click **Test** and then **Yes** when prompted.
-10.  Once it completes, you should receive output similar to the following that returns the information for the user in the credential.  This confirms that the credential is valid.<br>
+10 <!-- deleted by customization. Click **Start** to start the test -->.  Once it completes, you should receive output similar to the following that returns the information for the user in the credential.  This confirms that the credential is valid.<br>
 ![Authenticate](./media/automation-first-runbook-textual/authentication-test.png) 
 <!-- keep by customization: end -->
 
@@ -180,7 +184,7 @@ Now that our runbook is authenticating to our Azure subscription, we can manage 
 		workflow test
 		{
     		$Credential = Get-AutomationPSCredential -Name "<your credential>"
-    		Add-AzureAccount –Credential $Credential –Environment AzureChinaCloud
+    		Add-AzureAccount -Credential $Credential -Environment AzureChinaCloud
     		Start-AzureVM -Name "<your vm>" -ServiceName "<your vm service>"
 		}
 
@@ -193,9 +197,7 @@ Now that our runbook is authenticating to our Azure subscription, we can manage 
 Our runbook currently starts the virtual machine that we hardcoded in the runbook, but it would be more useful if we could specify the virtual machine when the runbook is started.  We will now add input parameters to the runbook to provide that functionality.
 
 1. Add parameters for *VMName* and *VMServiceName* to the runbook and use these variables with the **Start-AzureVM** cmdlet as in the following image. <br>
-<!-- deleted by customization
-![Authenticate](./media/automation-first-runbook-textual/params.png) 
--->
+<!-- deleted by customization ![Authenticate](./media/automation-first-runbook-textual/params.png) -->
 <!-- keep by customization: begin -->
 		workflow test
 		{
@@ -205,19 +207,20 @@ Our runbook currently starts the virtual machine that we hardcoded in the runboo
     		)
     
     		$Credential = Get-AutomationPSCredential -Name "<your credential>"
-    		Add-AzureAccount –Credential $Credential –Environment AzureChinaCloud
+    		Add-AzureAccount -Credential $Credential -Environment AzureChinaCloud
     		Start-AzureVM -Name $VMName -ServiceName $VMServiceName
 		}
+
 <!-- keep by customization: end -->
 9. Save the runbook and open the Test pane.  Note that you can now provide values for the two input variables that will be used in the test. 
 11.  Close the Test pane.
 12.  Click **Publish** to publish the new version of the runbook.
 13.  Stop the virtual machine that you started in the previous step.
-13.  Click **Start** to start the runbook.  Type in the **VMName** and **VMServiceName** for the virtual machine that you're going to start.<br>
+13.  Click **Start** to start the runbook.  Type in the **VMName** and **VMServiceName** for the virtual machine that you're going to <!-- deleted by customization start.<br> --><!-- keep by customization: begin --> start. <!-- keep by customization: end -->
 <!-- deleted by customization
 ![Start Runbook](./media/automation-first-runbook-textual/start-runbook-input-params.png) 
--->
 
+-->
 14.  When the runbook completes, check that the virtual machine was started.
 
 

@@ -2,12 +2,12 @@
     pageTitle="Tutorial: Azure Active Directory integration integration with Druva | Windows Azure" 
     description="Learn how to use Druva with Azure Active Directory to enable single sign-on, automated provisioning, and more!" 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags
 	ms.service="active-directory"
-	ms.date="10/22/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Tutorial: Azure Active Directory integration integration with Druva
@@ -80,7 +80,7 @@ The following screenshot shows an example for this.
 
     ![Configure Single Sign-On](./media/active-directory-saas-druva-tutorial/IC795088.png "Configure Single Sign-On")
 
-3.  On the **Configure App URL** page, in the **Druva Sign On URL** textbox, type the URL used by your users to sign on to your Druva application (e.g.: "*https://cloud.druva.com/home/*”), and then click **Next**.
+3.  On the **Configure App URL** page, in the **Druva Sign On URL** textbox, type the URL used by your users to sign on to your Druva application (e.g.: "*https://cloud.druva.com/home/*"), and then click **Next**.
 
     ![Configure App URL](./media/active-directory-saas-druva-tutorial/IC795089.png "Configure App URL")
 
@@ -130,12 +130,7 @@ The following screenshot shows an example for this.
 
 	|Attribute Name|Attribute Value|
     |---|---|
-<!-- deleted by customization
     |insync\_auth\_token|<*clipboard value*>|
--->
-<!-- keep by customization: begin -->
-    |insync_auth_token|<*clipboard value*>|
-<!-- keep by customization: end -->
 
     1.  For each data row in the table above, click **add user attribute**.
     2.  In the **Attribute Name** textbox, type the attribute name shown for that row.

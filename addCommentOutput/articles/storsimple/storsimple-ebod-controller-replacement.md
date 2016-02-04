@@ -1,25 +1,21 @@
 <properties 
-   pageTitle="Replace a StorSimple EBOD controller | Microsoft Azure"
+   pageTitle="Replace a StorSimple EBOD controller | Windows Azure"
    description="Explains how to remove and replace one or both EBOD controllers on a StorSimple 8600 device."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/12/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="08/12/2015"
+	wacn.date=""/>
 
 # Replace an EBOD controller on your StorSimple device
 
 ## Overview
 
-This tutorial explains how to replace a faulty EBOD controller module on your Microsoft Azure StorSimple device. To replace an EBOD controller module, you need to:
+This tutorial explains how to replace a faulty EBOD controller module on your <!-- deleted by customization Windows --><!-- keep by customization: begin --> Microsoft <!-- keep by customization: end --> Azure StorSimple device. To replace an EBOD controller module, you need to:
 
 - Remove the faulty EBOD controller
 - Install a new EBOD controller
@@ -30,7 +26,7 @@ Consider the following information before you begin:
 
 - The EBOD controller is hot-swappable and can be removed or replaced. Do not remove a failed module until you have a replacement. When you initiate the replacement process, you must finish it within 10 minutes.
 
->[AZURE.IMPORTANT] Before removing and replacing an EBOD controller, review the safety information in [StorSimple hardware component replacement](storsimple-hardware-component-replacement.md).
+>[AZURE.IMPORTANT] Before removing and replacing an EBOD controller, review the safety information in [StorSimple hardware component <!-- deleted by customization replacement](/documentation/articles/storsimple-hardware-component-replacement) --><!-- keep by customization: begin --> replacement](storsimple-hardware-component-replacement.md) <!-- keep by customization: end -->.
 
 ## Remove an EBOD controller
 
@@ -105,4 +101,4 @@ The following procedure and table explain how to install an EBOD controller modu
 
 ## Next steps
 
-Learn more about [StorSimple hardware component replacement](storsimple-hardware-component-replacement.md).
+Learn more about [StorSimple hardware component <!-- deleted by customization replacement](/documentation/articles/storsimple-hardware-component-replacement) --><!-- keep by customization: begin --> replacement](storsimple-hardware-component-replacement.md) <!-- keep by customization: end -->.

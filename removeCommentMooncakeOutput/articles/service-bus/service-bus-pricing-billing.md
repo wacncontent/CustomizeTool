@@ -6,10 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" />
-<tags
-	ms.service="service-bus"
-	ms.date="09/10/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="service-bus"
+   ms.date="09/10/2015"
+   wacn.date="" />
 
 # Service Bus pricing and billing
 
@@ -29,7 +29,7 @@ The **Premium** tier provides resource isolation at the CPU and memory layer so 
 
 Note that the standard base charge is charged only once per month per Azure subscription. This means that after you create a single Standard or Premium tier Service Bus namespace, you will be able to create as many additional Standard or Premium tier namespaces as you want under that same Azure subscription, without incurring additional base charges.
 
-All existing Service Bus namespaces created prior to November 1, 2014 were automatically placed into the Standard tier. This ensures that you continue to have access to all features currently available with Service Bus. Subsequently, you can use the Azure Management Portal to downgrade to the Basic tier if desired.
+All existing Service Bus namespaces created prior to November 1, 2014 were automatically placed into the Standard tier. This ensures that you continue to have access to all features currently available with Service Bus. Subsequently, you can use the [Azure Management Portal][] to downgrade to the Basic tier if desired.
 
 The following table summarizes the functional differences between the Basic and Standard/Premium tiers.
 
@@ -117,7 +117,7 @@ Relays are available only in Standard tier namespaces. Otherwise, pricing and co
 
 ### How is the Relay Hours meter calculated?
 
-See [this topic](/documentation/articles/service-bus-pricing-faq#How-is-the-Relay-Hours-meter-calculated?).
+See [this topic](/documentation/articles/service-bus-pricing-faq/#How-is-the-Relay-Hours-meter-calculated?).
 
 ### What are brokered connections and how do I get charged for them?
 
@@ -131,9 +131,9 @@ Service Bus charges for the peak number of concurrent brokered connections that 
 
 For example:
 
-1. Each of 10,000 devices connect via a single AMQP connection, and receive commands from a Service Bus topic. The devices send telemetry events to an Event Hub. If all devices connect for 12 hours each day, the following connection charges apply (in addition to any other Service Bus topic charges): 10,000 connections * 12 hours * 31 days / 744 = 5,000 brokered connections. After the monthly allowance of 1,000 brokered connections, you would be charged for 4,000 brokered connections, at the rate of $0.03 per brokered connection, for a total of $120.
+3. Each of 10,000 devices connect via a single AMQP connection, and receive commands from a Service Bus topic. The devices send telemetry events to an Event Hub. If all devices connect for 12 hours each day, the following connection charges apply (in addition to any other Service Bus topic charges): 10,000 connections * 12 hours * 31 days / 744 = 5,000 brokered connections. After the monthly allowance of 1,000 brokered connections, you would be charged for 4,000 brokered connections, at the rate of $0.03 per brokered connection, for a total of $120.
 
-2. 10,000 devices receive messages from a Service Bus queue via HTTP, specifying a non-zero timeout. If all devices connect for 12 hours every day, you will see the following connection charges (in addition to any other Service Bus charges): 10,000 HTTP Receive connections * 12 hours per day * 31 days / 744 hours = 5,000 brokered connections.
+4. 10,000 devices receive messages from a Service Bus queue via HTTP, specifying a non-zero timeout. If all devices connect for 12 hours every day, you will see the following connection charges (in addition to any other Service Bus charges): 10,000 HTTP Receive connections * 12 hours per day * 31 days / 744 hours = 5,000 brokered connections.
 
 ### Do brokered connection charges apply to queues and topics/subscriptions?
 
@@ -143,3 +143,4 @@ Yes. There are no connection charges for sending events using HTTP, regardless o
 
 [Service Bus Pricing FAQ](/documentation/articles/service-bus-pricing-faq)
 
+[Azure Management Portal]: http://manage.windowsazure.cn

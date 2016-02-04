@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Microsoft Azure Service Fabric How to communicate with services"
+   pageTitle="Windows Azure Service Fabric How to communicate with services"
    description="This article describes how you can connect to and communicate with services in Service Fabric applications."
    services="service-fabric"
    documentationCenter=".net"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/21/2015"
-   ms.author="kunalds"/>
+	ms.service="service-fabric"
+	ms.date="08/21/2015"
+	wacn.date=""/>
 
 
 # Communicating with services
@@ -41,18 +37,18 @@ For services written using Reliable Actors API all the communication details are
 ### Communication options for Reliable Services
 There are a couple of different options if your service was written using Reliable Services API. Your choice of a communication protocol will guide as to what Service Fabric communication APIs you may use.
 
-* **There isn't a specific communication protocol that I need to use and I want something up and running quickly**: If you don't have a particular choice of communication framework then the ideal option for you is to use the [Default stack](service-fabric-reliable-services-communication-default.md) that allows for a similar model as the Actor communication model. This is the easiest and fastest way to get started with service communication. It provides strongly typed RPC communication that abstracts most of the communication details away so that invoking a method on a remote service in your code looks like calling a method on a local object instance. These classes abstract the resolution, connection, retry and error handling while setting up the communication channel and allows for a method call based communication model. For this the `ServiceCommunicationListener` class is to be used for the server side and the `ServiceProxy` class on the client side of the communication.
+* **There isn't a specific communication protocol that I need to use and I want something up and running quickly**: If you don't have a particular choice of communication framework then the ideal option for you is to use the [Default stack](/documentation/articles/service-fabric-reliable-services-communication-default) that allows for a similar model as the Actor communication model. This is the easiest and fastest way to get started with service communication. It provides strongly typed RPC communication that abstracts most of the communication details away so that invoking a method on a remote service in your code looks like calling a method on a local object instance. These classes abstract the resolution, connection, retry and error handling while setting up the communication channel and allows for a method call based communication model. For this the `ServiceCommunicationListener` class is to be used for the server side and the `ServiceProxy` class on the client side of the communication.
 
-* **HTTP**: To leverage the flexibility that HTTP based communication provides you can use Service Fabric communication APIs that allow the communication mechanism to be defined while resolution, connection and retry logic is still abstracted from you. For example you can use Web API for specifying the communication mechanism and leverage the [`ICommunicationClient` and `ServicePartitionClient` classes](service-fabric-reliable-services-communication.md) to setup communication.
-* **WCF**: If you have existing code that uses WCF as your communication framework then you can use the WcfCommunicationListener for the server side, and WcfCommunicationClient and ServicePartitionClient classes for the client. For more details see [this article](service-fabric-reliable-services-communication-wcf.md).
+* **HTTP**: To leverage the flexibility that HTTP based communication provides you can use Service Fabric communication APIs that allow the communication mechanism to be defined while resolution, connection and retry logic is still abstracted from you. For example you can use Web API for specifying the communication mechanism and leverage the [`ICommunicationClient` and `ServicePartitionClient` classes](/documentation/articles/service-fabric-reliable-services-communication) to setup communication.
+* **WCF**: If you have existing code that uses WCF as your communication framework then you can use the WcfCommunicationListener for the server side, and WcfCommunicationClient and ServicePartitionClient classes for the client. For more details see [this article](/documentation/articles/service-fabric-reliable-services-communication-wcf).
 
-* **Other communication frameworks including custom  protocols**: If you are planning on using any other communication framework including custom communication protocols there are Service Fabric communication APIs which you can plugin your communication stack into while all the work to discover and connect is abstracted from you. See [this article](service-fabric-reliable-services-communication.md) for more details.
+* **Other communication frameworks including custom  protocols**: If you are planning on using any other communication framework including custom communication protocols there are Service Fabric communication APIs which you can plugin your communication stack into while all the work to discover and connect is abstracted from you. See [this article](/documentation/articles/service-fabric-reliable-services-communication) for more details.
 
 ### Communication between services written in different programming languages
 All ServiceFabric communication APIs are currently only available in C# so if have a service that is written in some other programming language such as Java or Node.JS then you will have to write your own communication mechanism.
 
 ## Next Steps
-* [Default communication stack provided by Reliable Services Framework ](service-fabric-reliable-services-communication-default.md)
-* [Reliable Services communication model](service-fabric-reliable-services-communication.md)
-* [Getting Started with Microsoft Azure Service Fabric Web API services with OWIN self-host](service-fabric-reliable-services-communication-webapi.md)
-* [WCF based communication stack for Reliable Services](service-fabric-reliable-services-communication-wcf.md)
+* [Default communication stack provided by Reliable Services Framework ](/documentation/articles/service-fabric-reliable-services-communication-default)
+* [Reliable Services communication model](/documentation/articles/service-fabric-reliable-services-communication)
+* [Getting Started with Windows Azure Service Fabric Web API services with OWIN self-host](/documentation/articles/service-fabric-reliable-services-communication-webapi)
+* [WCF based communication stack for Reliable Services](/documentation/articles/service-fabric-reliable-services-communication-wcf)

@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="StorSimple Snapshot Manager and volumes | Microsoft Azure"
+   pageTitle="StorSimple Snapshot Manager and volumes | Windows Azure"
    description="Describes how to use the StorSimple Snapshot Manager MMC snap-in to view and manage volumes and to configure backups."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="10/15/2015"
-   ms.author="v-sharos" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/02/2015"
+	wacn.date=""/>
 
 # Use StorSimple Snapshot Manager to view and manage volumes
 
@@ -265,8 +261,9 @@ Use the following procedure to configure a dynamic mirrored volume, and then eit
 
 ## Next steps
 
-- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple solution](storsimple-snapshot-manager-admin.md).
-- Learn how to [use StorSimple Snapshot Manager to create and manage volume groups](storsimple-snapshot-manager-manage-volume-groups.md).
+- Learn how to [use StorSimple Snapshot Manager to administer your StorSimple solution](/documentation/articles/storsimple-snapshot-manager-admin).
+- Learn how to [use StorSimple Snapshot Manager to create and manage volume groups](/documentation/articles/storsimple-snapshot-manager-manage-volume-groups).
 
 <!--Reference links-->
 [1]: https://msdn.microsoft.com/library/ee338480(v=ws.10).aspx
+

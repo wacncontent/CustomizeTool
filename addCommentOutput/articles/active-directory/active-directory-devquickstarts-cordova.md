@@ -14,7 +14,12 @@
 
 # Integrate Azure AD with an Apache Cordova app
 
+<!-- deleted by customization
 [AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher)]
+<!-- keep by customization: end -->
 
 [AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
@@ -27,7 +32,7 @@ In this tutorial we will use the Apache Cordova plugin for Active Directory Auth
 -	Use that token to invoke the Graph API to query that directory and display the results  
 -	Leverage the ADAL token cache for minimizing the authentication prompts for the user.
 
-In order to do this, you’ll need to:
+In order to do this, you'll need to:
 
 2. Register an application with Azure AD
 2. Add code to your app to request tokens
@@ -57,20 +62,20 @@ Note that those should work both on the PC and on the Mac.
 Each target platform has different prerequisites.
 
 - To build and run Windows Tablet/PC or Phone app version
-	- [Visual Studio 2013 for Windows with Update 2 or later](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-8) (Express or another version).
+	- [Visual Studio 2013 for Windows with Update 2 or <!-- deleted by customization later](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-8) --><!-- keep by customization: begin --> later](http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs#d-express-windows-8) <!-- keep by customization: end --> (Express or another version).
 - To build and run for iOS
-	-   Xcode 5.x or greater. Download it at http://developer.apple.com/downloads or the [Mac App Store](http://itunes.apple.com/us/app/xcode/id497799835?mt=12)
-	-   [ios-sim](https://www.npmjs.org/package/ios-sim) – allows you to launch iOS apps into the iOS Simulator from the command line (can be easily installed via the terminal: `npm install -g ios-sim`)
+	-   Xcode 5.x or greater. Download it at http://developer.apple.com/downloads or the [Mac App <!-- deleted by customization Store](http://itunes.apple.com/us/app/xcode/id497799835?mt=12) --><!-- keep by customization: begin --> Store](http://itunes.apple.com/cn/app/xcode/id497799835?mt=12) <!-- keep by customization: end -->
+	-   [ios-sim](https://www.npmjs.org/package/ios-sim) - allows you to launch iOS apps into the iOS Simulator from the command line (can be easily installed via the terminal: `npm install -g ios-sim`)
 
 - To build and run application for Android
-	- Install [Java Development Kit (JDK) 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) or later. Make sure `JAVA_HOME` (Environment Variable) is correctly set according to JDK installation path (for example C:\Program Files\Java\jdk1.7.0_75).
-	- Install [Android SDK](http://developer.android.com/sdk/installing/index.html?pkg=tools) and add `<android-sdk-location>\tools` location (for example, C:\tools\Android\android-sdk\tools) to your `PATH` Environment Variable.
+	- Install [Java Development Kit (JDK) <!-- deleted by customization 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) --><!-- keep by customization: begin --> 7](http://www.oracle.com/technetwork/cn/java/javase/downloads/jdk7-downloads-1880260.html) <!-- keep by customization: end --> or later. Make sure `JAVA_HOME` (Environment Variable) is correctly set according to JDK installation path (for example C:\Program Files\Java\jdk1.7.0_75).
+	- Install [Android <!-- deleted by customization SDK](http://developer.android.com/sdk/installing/index.html?pkg=tools) --><!-- keep by customization: begin --> SDK](http://developer.android.com/intl/zh-cn/sdk/installing/index.html) <!-- keep by customization: end --> and add `<android-sdk-location>\tools` location (for example, C:\tools\Android\android-sdk\tools) to your `PATH` Environment Variable.
 	- Open Android SDK Manager (for example, via terminal: `android`) and install
     - *Android 5.0.1 (API 21)* platform SDK
     - *Android SDK Build-tools* version 19.1.0 or higher
     - *Android Support Repository* (Extras)
 
-  Android sdk doesn't provide any default emulator instance. Create a new one by running `android avd` from terminal and then selecting *Create...* if you want to run Android app on emulator. Recommended *Api Level* is 19 or higher, see [AVD Manager] (http://developer.android.com/tools/help/avd-manager.html) for more information about Android emulator and creation options.
+  Android sdk doesn't provide any default emulator instance. Create a new one by running `android avd` from terminal and then selecting *Create...* if you want to run Android app on emulator. Recommended *Api Level* is 19 or higher, see [AVD Manager] <!-- deleted by customization (http://developer.android.com/tools/help/avd-manager.html) --><!-- keep by customization: begin --> (http://developer.android.com/intl/zh-cn/tools/help/avd-manager.html) <!-- keep by customization: end --> for more information about Android emulator and creation options.
 
 
 ## *1.	Register an application with Azure AD*
@@ -87,7 +92,7 @@ Azure AD will only issue tokens to known applications. Before you can use Azure 
     - The name of the application will describe your application to end-users
     -	The “Redirect URI” is the URI used to return tokens to your app. Enter `http://MyDirectorySearcherApp`.
 
-Once you’ve completed registration, AAD will assign your app a unique client identifier.  You’ll need this value in the next sections: you can find it in the Configure tab of the newly created app.
+Once you've completed registration, AAD will assign your app a unique client identifier.  You'll need this value in the next sections: you can find it in the Configure tab of the newly created app.
 
 ## *2. Clone the repositories required for the tutorial*
 
@@ -228,7 +233,7 @@ The concrete steps for running the app vary by platform.
 
    `cordova run windows`
 
-   __Note__: During first run you may be asked to sign in for a developer license. See [Developer license](https://msdn.microsoft.com/zh-cn/library/windows/apps/hh974578.aspx) for more details.
+   __Note__: During first run you may be asked to sign in for a developer license. See [Developer <!-- deleted by customization license](https://msdn.microsoft.com/zh-cn/library/windows/apps/hh974578.aspx) --><!-- keep by customization: begin --> license]( https://msdn.microsoft.com/zh-cn/library/windows/apps/hh974578.aspx) <!-- keep by customization: end --> for more details.
 
 
 ##### To build and run application on Windows Phone 8.1
@@ -264,4 +269,9 @@ For reference, the completed sample (without your configuration values) is provi
 
 [Secure a Node.js Web API with Azure AD >>](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
 
+<!-- deleted by customization
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]
+<!-- keep by customization: end -->

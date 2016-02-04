@@ -4,37 +4,25 @@ deleted:
 
 		Either a Linux-based or
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		- [Get started using Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		and Linux based
 
-reason: ()
+reason: (Linux Support)
 
 deleted:
 
 		- [Analyze Twitter data with Hadoop in HDInsight][hdinsight.analyze.twitter.data]
 
-reason: ()
-
-deleted:
-
-		[hdinsight.introduction]: /documentation/articles/hdinsight-introduction
-
-reason: ()
-
-deleted:
-
-		[hdinsight.analyze.twitter.data]: /documentation/articles/hdinsight-analyze-twitter-data
-
-reason: ()
+reason: (google facebook twitter)
 
 replacement:
 
@@ -46,5 +34,5 @@ replaced by:
 
 		Management Portal
 
-reason: ()
+reason: (the new Ibiza portal)
 

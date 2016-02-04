@@ -7,12 +7,12 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="storage"
-	ms.date="08/31/2015"
+<tags 
+	ms.service="storage" 
+	ms.date="12/01/2015" 
 	wacn.date=""/>
 
-# How to use Queue storage from Java
+# How to use Queue Storage from Java
 
 [AZURE.INCLUDE [storage-selector-queue-include](../includes/storage-selector-queue-include.md)]
 
@@ -42,13 +42,14 @@ Add the following import statements to the top of the Java file where you want t
 
 ## Setup an Azure storage connection string
 
-An Azure storage client uses a storage connection string to store endpoints and credentials for accessing data management services. When running in a client application, you must provide the storage connection string in the following format, using the name of your storage account and the Primary access key for the storage account listed in the Management Portal for the *AccountName* and *AccountKey* values. This example shows how you can declare a static field to hold the connection string:
+An Azure storage client uses a storage connection string to store endpoints and credentials for accessing data management services. When running in a client application, you must provide the storage connection string in the following format, using the name of your storage account and the Primary access key for the storage account listed in the [Management Portal](https://manage.windowsazure.cn) for the *AccountName* and *AccountKey* values. This example shows how you can declare a static field to hold the connection string:
 
     // Define the connection-string with your values.
     public static final String storageConnectionString = 
         "DefaultEndpointsProtocol=http;" + 
         "AccountName=your_storage_account;" + 
-        "AccountKey=your_storage_account_key";
+        "AccountKey=your_storage_account_key;" +
+	"EndpointSuffix=core.chinacloudapi.cn";
 
 In an application running within a role in Windows Azure, this string can be stored in the service configuration file, *ServiceConfiguration.cscfg*, and can be accessed with a call to the **RoleEnvironment.getConfigurationSettings** method. Here's an example of getting the connection string from a **Setting** element named *StorageConnectionString* in the service configuration file:
 
@@ -383,6 +384,6 @@ Now that you've learned the basics of queue storage, follow these links to learn
 [Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
-[Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+[Azure Storage Client SDK Reference]: http://azure.github.io/azure-storage-java/
+[Azure Storage REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/

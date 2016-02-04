@@ -7,14 +7,10 @@
 	manager="stevenpo" 
 	editor="curtland"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/15/2015" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 # Security Best Practices for using Azure Multi-Factor Authentication with Azure AD accounts
 
@@ -49,16 +45,16 @@ When selecting the Auth Provider, you need to select a directory and consider th
 - You will need to associate the Multi-Factor Auth Provider with an Azure AD directory if you wish to extend multi-factor authentication to all of your users and/or want your global administrators to be able to take advantage of features such as the management portal, custom greetings, and reports.
 - DirSync or AAD Sync are only a requirement if you are synchronizing your on-premises Active Directory environment with an Azure AD directory. If you only use an Azure AD directory that is not synchronized with an on-premises instance of Active Directory, you do not need DirSync or AAD Sync.
 - If you have Azure AD Premium or the Enterprise Mobility Suite, you do not need to create a Multi-Factor Auth provider. You only need to assign a user a license and then you can begin turning on MFA for users.
-- Make sure to choose the right usage model for your business (per auth or per enabled user), once you select the usage model you can’t change it.
+- Make sure to choose the right usage model for your business (per auth or per enabled user), once you select the usage model you can't change it.
 
 ### User Account
 When enabling MFA for your users, user accounts can be in one of three core states: disabled, enabled or enforced. 
 Use the guidelines below to ensure you are using the most appropriate option for your deployment:
 
-- When the user’s state is set to disabled, that user is not using multi-factor authentication. This is the default state.
-- When the user’s state is set to enabled, it means that the user is enabled but has not completed the registration process. They will be prompted to complete the process at next sign-in. This setting doesn’t affect non browser apps. All apps will continue to work until the registration process is completed.
-- When the user’s state is set to enforced, it means that the user may or may not have completed registration. If they have completed the registration process then they are using multi-factor authentication. Otherwise, the user will be prompted to complete the registration process at next sign-in. This setting does affect non browser apps. These apps will not work until app passwords are created and used.
-- Use the User Notification Template available in the article [Getting started with Azure Multi-Factor Authentication in the cloud](multi-factor-authentication-get-started-cloud.md) to send an email to your users regarding MFA adoption.
+- When the user's state is set to disabled, that user is not using multi-factor authentication. This is the default state.
+- When the user's state is set to enabled, it means that the user is enabled but has not completed the registration process. They will be prompted to complete the process at next sign-in. This setting doesn't affect non browser apps. All apps will continue to work until the registration process is completed.
+- When the user's state is set to enforced, it means that the user may or may not have completed registration. If they have completed the registration process then they are using multi-factor authentication. Otherwise, the user will be prompted to complete the registration process at next sign-in. This setting does affect non browser apps. These apps will not work until app passwords are created and used.
+- Use the User Notification Template available in the article [Getting started with Azure Multi-Factor Authentication in the cloud](/documentation/articles/multi-factor-authentication-get-started-cloud) to send an email to your users regarding MFA adoption.
 
 ### Supportability
 
@@ -66,7 +62,7 @@ Since the vast majority of the users are accustomed to using only passwords to a
 However, there are some scenarios where temporarily disabling MFA is necessary. Use the guidelines below to understand how to handle those scenarios:
 
 - Make sure your technical support personnel are trained to handle scenarios where the mobile app or phone is not receiving a notification or phone-call and for this reason the user is unable to sign in. They can enable a one-time bypass option to allow a user to authenticate a single time by "bypassing" multi-factor authentication. The bypass is temporary and expires after the specified number of seconds. 
-- If necessary, you can leverage the Trusted IPs capability in Azure MFA. This feature allows administrators of a managed or federated tenant the ability to bypass multi-factor authentication for users that are signing in from the company’s local intranet. The features are available for Azure AD tenants that have Azure AD Premium, Enterprise Mobility Suite or Azure Multi-Factor Authentication licenses.
+- If necessary, you can leverage the Trusted IPs capability in Azure MFA. This feature allows administrators of a managed or federated tenant the ability to bypass multi-factor authentication for users that are signing in from the company's local intranet. The features are available for Azure AD tenants that have Azure AD Premium, Enterprise Mobility Suite or Azure Multi-Factor Authentication licenses.
 
 
 ## Best Practices for Azure Multi-Factor Authentication on-premises
@@ -83,20 +79,12 @@ When setting up Multi-Factor Authentication Server consider following:
 - It is not a requirement that the Azure Multi-Factor Authentication Server be installed on your AD FS federation server however the Multi-Factor Authentication Adapter for AD FS must be installed on a Windows Server 2012 R2 running AD FS. You can install the server on a different computer, as long as it is a supported version and install the AD FS adapter separately on your AD FS federation server. See the procedure below for instructions on installing the adapter separately.
 - The Multi-Factor Authentication AD FS Adapter installation wizard creates a security group called PhoneFactor Admins in your Active Directory and then adds the AD FS service account of your federation service to this group.It is recommended that you verify on your domain controller that the PhoneFactor Admins group is indeed created and that the AD FS service account is a member of this group. If necessary, add the AD FS service account to the PhoneFactor Admins group on your domain controller manually.
 
-### Users Portal
+### User Portal
 This portal runs in an Internet Information Server (IIS) web site, which allows self-service capabilities and provides a full set of user administration capabilities. Use the guidelines below to configure this component:
 
 - IIS 6 or greater is required
 - ASP.NET  v2.0.507207 have to be installed and registered
 - This server can be deployed in a perimeter network.
-- If there is a firewall filtering the communication between this server and Azure, TCP port 443 outbound is required to allow communication with the following URLs:
-	- https://pfd.phonefactor.net 
-	- https://pfd2.phonefactor.net 
-	- https://css.phonefactor.net
-- If outbound firewalls are restricted on port 443, the following IP address ranges will need to be allowed outbound:
-	- 134.170.116.0/25
-	- 134.170.165.0/25
-	- 70.37.154.128/25
 
 
 
@@ -116,20 +104,20 @@ Use the list below to understand some additional considerations and best practic
 
 Method|Description
 :------------- | :------------- | 
-[Active Directory Federation Service](multi-factor-authentication-get-started-adfs.md)|Information on setting up Azure Multi-Factor Authentication with AD FS.
-[RADIUS Authenticaton](multi-factor-authentication-get-started-server-radius.md)|  Information on setup and configuring the Azure MFA Server with RADIUS.
-[IIS Authentication](multi-factor-authentication-get-started-server-iis.md)|Information on setup and configuring the Azure MFA Server with IIS.
-[Windows Authenticaton](multi-factor-authentication-get-started-server-windows.md)|  Information on setup and configuring the Azure MFA Server with Windows Authentication.
-[LDAP Authentication](multi-factor-authentication-get-started-server-ldap.md)|Information on setup and configuring the Azure MFA Server with LDAP Authentication.
-[Remote Desktop Gateway and Azure Multi-Factor Authentication Server using RADIUS](multi-factor-authentication-get-started-server-rdg.md)|  Information on setup and configuring the Azure MFA Server with Remote Desktop Gateway using RADIUS.
-[Sync with Windows Server Active Directory](multi-factor-authentication-get-started-server-dirint.md)|Information on setup and configuring synchronization between Active Directory and the Azure MFA Server.
-[Deploying the Azure Multi-Factor Authentication Server Mobile App Web Service](multi-factor-authentication-get-started-server-webservice.md)|Information on setup and configuring the Azure MFA server web service.
-[Advanced VPN Configuration with Azure Multi-Factor Authentication](multi-factor-authentication-advanced-vpn-configurations.md)|Information on configuring Cisco ASA, Citrix Netscaler, and Juniper/Pulse Secure VPN appliances using LDAP or RADIUS. 
+[Active Directory Federation Service](/documentation/articles/multi-factor-authentication-get-started-adfs)|Information on setting up Azure Multi-Factor Authentication with AD FS.
+[RADIUS Authenticaton](/documentation/articles/multi-factor-authentication-get-started-server-radius)|  Information on setup and configuring the Azure MFA Server with RADIUS.
+[IIS Authentication](/documentation/articles/multi-factor-authentication-get-started-server-iis)|Information on setup and configuring the Azure MFA Server with IIS.
+[Windows Authenticaton](/documentation/articles/multi-factor-authentication-get-started-server-windows)|  Information on setup and configuring the Azure MFA Server with Windows Authentication.
+[LDAP Authentication](/documentation/articles/multi-factor-authentication-get-started-server-ldap)|Information on setup and configuring the Azure MFA Server with LDAP Authentication.
+[Remote Desktop Gateway and Azure Multi-Factor Authentication Server using RADIUS](/documentation/articles/multi-factor-authentication-get-started-server-rdg)|  Information on setup and configuring the Azure MFA Server with Remote Desktop Gateway using RADIUS.
+[Sync with Windows Server Active Directory](/documentation/articles/multi-factor-authentication-get-started-server-dirint)|Information on setup and configuring synchronization between Active Directory and the Azure MFA Server.
+[Deploying the Azure Multi-Factor Authentication Server Mobile App Web Service](/documentation/articles/multi-factor-authentication-get-started-server-webservice)|Information on setup and configuring the Azure MFA server web service.
+[Advanced VPN Configuration with Azure Multi-Factor Authentication](/documentation/articles/multi-factor-authentication-advanced-vpn-configurations)|Information on configuring Cisco ASA, Citrix Netscaler, and Juniper/Pulse Secure VPN appliances using LDAP or RADIUS. 
 
 
 ## Additional Resources
 While this article highlights some best practices for Azure MFA, there are other resources that you can also use while planning your MFA deployment. The list below has some key articles that can assist you during this process:
 
-- [Reports in Azure Multi-Factor Authentication](multi-factor-authentication-manage-reports.md)
-- [Setup experience for Azure Multi-Factor Authentication](multi-factor-authentication-end-user-first-time.md)
-- [Azure Multi-Factor Authentication FAQ](multi-factor-authentication-faq.md)
+- [Reports in Azure Multi-Factor Authentication](/documentation/articles/multi-factor-authentication-manage-reports)
+- [Setup experience for Azure Multi-Factor Authentication](/documentation/articles/multi-factor-authentication-end-user-first-time)
+- [Azure Multi-Factor Authentication FAQ](/documentation/articles/multi-factor-authentication-faq)

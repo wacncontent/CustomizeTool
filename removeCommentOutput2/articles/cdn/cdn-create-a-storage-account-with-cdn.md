@@ -3,13 +3,13 @@
 	description="Learn how to use the Azure Content Delivery Network (CDN) to deliver high-bandwidth content by caching blobs and static content." 
 	services="cdn" 
 	documentationCenter=".net" 
-	authors="zhangmanling" 
+	authors="camsoper" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags
 	ms.service="cdn"
-	ms.date="09/01/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 
@@ -24,7 +24,7 @@ Use the following procedure to create a new storage account for a
 Azure subscription. A storage account gives access to 
 Azure storage services. The storage account represents the highest level
 of the namespace for accessing each of the Azure storage service
-components: Blob services, Queue services, and Table services. For more
+components: Blob services, Queue services, and Table services. For more 
 information about the Azure storage services, see [Using the
 Azure Storage Services](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx).
 
@@ -59,13 +59,13 @@ Azure Service Management API, see the [Create Storage Account](http://msdn.micro
 
 	This value is also used as the name of this storage account in the portal, or when accessing this account programmatically.
 
-4.  From the **Region/Affinity Group** drop-down list, select a region or affinity group for the storage account. Select an affinity group instead of a region if you want your storage services to be in the same data center with other Windows Azure services that you are using. This can improve performance, and no charges are incurred for egress.
+4.  From the **Region/Affinity Group** drop-down list, select a region or affinity group for the storage account. Select an affinity group instead of a region if you want your storage services to be in the same data center with other Windows Azure services that you are using. This can improve performance, and no charges are incurred for egress.  
 
     **Note:** To create an affinity group, open the **Settings** area of the Management Portal, click **Affinity Groups**, and then click either **Add an affinity group** or **Add**. You can also create and manage affinity groups using the Windows Azure Service Management API. For more information, see [Operations on Affinity Groups].
 
-6. From the **Subscription** drop-down list, select the subscription that the storage account will be used with.
-7.  Click **Create Storage Account**. The process of creating the storage account might take several minutes to complete.
-8.  To verify that the storage account was created successfully, verify that the account appears in the items listed for **Storage** with a status of **Online**.
+5. From the **Subscription** drop-down list, select the subscription that the storage account will be used with.
+6.  Click **Create Storage Account**. The process of creating the storage account might take several minutes to complete.
+7.  To verify that the storage account was created successfully, verify that the account appears in the items listed for **Storage** with a status of **Online**.
 
 
 ## Step 2: Create a new CDN endpoint for your storage account
@@ -80,7 +80,7 @@ when the cached content time-to-live period expires.
 
 1. In the [Azure Management Portal], in the navigation pane, click **CDN**.
 
-2. On the ribbon, click **New**. In the **New** dialog, select **App Services**, then **CDN**, then **Quick Create**.
+2. On the ribbon, click **New**. In the **New** dialog, select **Azure Websitess**, then **CDN**, then **Quick Create**.
 
 3. In the **Origin Domain** dropdown, select the storage account you created in the previous section from the list of your available storage accounts. 
 
@@ -112,12 +112,12 @@ If you no longer wish to cache an object in the Azure Content
 Delivery Network (CDN), you can take one of the following steps:
 
 -   You can make the container private instead of public. See [Restrict Access to Containers and Blobs](http://msdn.microsoft.com/zh-cn/library/dd179354.aspx) for more information.
--   You can disable or delete the CDN endpoint using the Management
+-   You can disable or delete the CDN endpoint using the Management 
     Portal.
--   You can modify your hosted service to no longer respond to requests for the
+-   You can modify your hosted service to no longer respond to requests for the 
     object.
 
-An object already cached in the CDN will remain cached until the
+An object already cached in the CDN will remain cached until the 
 time-to-live period for the object expires. When the time-to-live period
 expires, the CDN will check to see whether the CDN endpoint is still
 valid and the object still anonymously accessible. If it is not, then
@@ -144,4 +144,3 @@ The ability to immediately purge content is currently not supported on Azure Man
 
 [create-new-storage-account]: ./media/cdn-create-a-storage-account-with-cdn/CDN_CreateNewStorageAcct.png
 
- 

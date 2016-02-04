@@ -1,20 +1,3 @@
-updated docs: 16
-articles/media-services/media-services-content-protection-overview.md
-articles/media-services/media-services-create-account.md
-articles/media-services/media-services-develop-video-players.md
-articles/media-services/media-services-dotnet-configure-asset-delivery-policy.md
-articles/media-services/media-services-dotnet-configure-content-key-auth-policy.md
-articles/media-services/media-services-dotnet-creating-live-encoder-enabled-channel.md
-articles/media-services/media-services-dotnet-encode-with-media-encoder-standard.md
-articles/media-services/media-services-dotnet-get-started.md
-articles/media-services/media-services-encode-asset.md
-articles/media-services/media-services-fmp4-live-ingest-overview.md
-articles/media-services/media-services-manage-channels-overview.md
-articles/media-services/media-services-manage-content.md
-articles/media-services/media-services-manage-live-encoder-enabled-channels.md
-articles/media-services/media-services-playback-content-with-existing-players.md
-articles/media-services/media-services-protect-with-drm.md
-articles/media-services/media-services-release-notes.md
+updated docs: 0
 
-updated includes: 1
-includes/azure-mediaservices-limits.md
+updated includes: 0

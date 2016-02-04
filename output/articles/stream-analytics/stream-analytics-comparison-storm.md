@@ -1,7 +1,7 @@
 <properties
-	pageTitle="Comparison: Apache Storm vs. Azure Stream Analytics | Microsoft Azure"
-	description="Learn how to use Stream Analytics for real-time Twitter sentiment analysis. Step-by-step guidance from event generation to data on a live dashboard."
-	keywords="real-time twitter,sentiment analysis,social media analysis,social media analytics tools"
+	pageTitle="Analytics platforms: Apache Storm comparison to Stream Analytics | Windows Azure"
+	description="Get guidance choosing a cloud analytics platform by using an Apache Storm comparison to Stream Analytics. Understand features and differences."
+	keywords="analytics platform, analytics platforms, cloud analytics platform, storm comparison"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -10,22 +10,16 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="big-data"
-	ms.date="10/13/2015"
-	ms.author="jeffstok"/>
+	ms.date="11/06/2015"
+	wacn.date=""/>
 
-# Comparison of Apache Storm and Azure Stream Analytics #
+# Help choosing a streaming analytics platform: Apache Storm comparison to Azure Stream Analytics
 
-## Introduction ##
+Get guidance choosing a cloud analytics platform by using this Apache Storm comparison to Azure Stream Analytics. Understand the value propositions of Stream Analytics versus Apache Storm as a managed service on Azure HDInsight, so you can choose the right solution for your business use cases.
 
-This document illustrates the positioning of Azure Stream Analytics and Apache Storm as a managed service on HDInsight. The goal is to help customers understand the value proposition of both services, and make a decision on which is the right choice for their business use case.
+Both analytics platforms provide benefits of a PaaS solution, there are a few major distinguishing capabilities that differentiate them. Capabilities as well as the limitations of these services are listed below to help you land on the solution you need to achieve your goals.
 
-While both provide benefits of a PaaS solution, there are a few major distinguishing capabilities that differentiate these services. We believe that listing out the capabilities, as well as the limitations, of these services will help customers land on the solution they need to achieve their goals.
-
-## General ##
+## Storm comparison to Stream Analytics: General features ##
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
@@ -124,7 +118,7 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
                     Stream Analytics is priced by volume of data processed and the number of streaming units (per hour the job is running) required.
                 </p>
                 <p>
-                    <a href="http://azure.microsoft.com/en-us/pricing/details/stream-analytics/">Further pricing information can be found here.</a>
+                    <a href="http://azure.microsoft.com/home/features/stream-analytics/#price">Further pricing information can be found here.</a>
                 </p>
             </td>
             <td width="246" valign="top">
@@ -132,13 +126,13 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
                     For Apache Storm on HDInsight, the unit of purchase is cluster-based, and is charged based on the time the cluster is running, independent of jobs deployed.
                 </p>
                 <p>
-                    <a href="http://azure.microsoft.com/en-us/pricing/details/hdinsight/">Further pricing information can be found here.</a>
+                    <a href="http://azure.microsoft.com/home/features/hdinsight/#price">Further pricing information can be found here.</a>
                 </p>
             </td>
         </tr>
     </tbody>
 </table>
-## Authoring ##
+## Authoring on each analytics platform ##
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
@@ -200,7 +194,7 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
             </td>
             <td width="204" valign="top">
                 <p>
-                    Interactive authoring and debugging experience through Azure Portal on sample data.
+                    Interactive authoring and debugging experience through Azure Management Portal on sample data.
                 </p>
             </td>
             <td width="246" valign="top">
@@ -262,7 +256,7 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
         </tr>
     </tbody>
 </table>
-## Input and Output ##
+## Data sources and outputs ##
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
@@ -377,7 +371,7 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
                     <strong>Job Deployment model</strong>
                 </p>
                 <p>
-                    - <strong>Azure Portal</strong>
+                    - <strong>Azure Management Portal</strong>
                 </p>
                 <p>
                     - <strong>Visual Studio</strong>
@@ -388,12 +382,12 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
             </td>
             <td width="204" valign="top">
                 <p>
-                    Deployment is implemented via Azure Portal, PowerShell and REST APIs.
+                    Deployment is implemented via Azure Management Portal, PowerShell and REST APIs.
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
-                    Depolyment is implemented via Azure Portal, PowerShell, Visual Studio and REST APIs.
+                    Depolyment is implemented via Azure Management Portal, PowerShell, Visual Studio and REST APIs.
                 </p>
             </td>
         </tr>
@@ -405,7 +399,7 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
             </td>
             <td width="204" valign="top">
                 <p>
-                    Monitoring is implemented via Azure Portal and REST APIs.
+                    Monitoring is implemented via Azure Management Portal and REST APIs.
                 </p>
                 <p>
                     The user may also configure Azure alerts.
@@ -491,7 +485,7 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
         <tr>
             <td width="174" valign="top">
                 <p>
-                    <strong>Business continuity through a Highly Available Service with guaranteed SLA’s</strong>
+                    <strong>Business continuity through a Highly Available Service with guaranteed SLAâs</strong>
                 </p>
             </td>
             <td width="204" valign="top">
@@ -563,7 +557,7 @@ While both provide benefits of a PaaS solution, there are a few major distinguis
             </td>
             <td width="246" valign="top">
                 <p>
-                    No limits on data size. Connectors available for HBase, DocumentDB, SQL Server and Azure. Unsupported connectors may be implemented via custom code. 
+                    No limits on data size. Connectors available for HBase, DocumentDB, SQL Server and Azure. Unsupported connectors may be implemented via custom code.
                 </p>
                 <p>
                     Refreshing of reference data must be handled by custom code.

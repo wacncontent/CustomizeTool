@@ -1,4 +1,4 @@
-﻿<properties
+<properties
    pageTitle="Azure AD Connect: Version Release History | Windows Azure"
    description="This topic lists all releases of Azure AD Connect and Azure AD Sync"
    services="active-directory"
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/03/2015"
+	ms.date="12/02/2015"
 	wacn.date=""/>
 
 # Azure AD Connect: Version Release History
@@ -22,6 +22,16 @@ Related links:
 
 - For permissions required to apply an update, see [accounts and permissions](/documentation/articles/active-directory-aadconnect-accounts-permissions#upgrade)
 - [Download Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771)
+
+## 1.0.9131.0
+Released: 2015 December
+
+**Fixed issues:**
+
+- Password sync might not work when you change passwords in AD DS, but works when you do set password.
+- When you have a proxy server, authentication to Azure AD might fail during installation or un upgrade on the configuration page.
+- Updating from a previous release of Azure AD Connect with a full SQL Server will fail if you are not SA in SQL.
+- Updating from a previous release of Azure AD Connect with a remote SQL Server will show the error “Unable to access the ADSync SQL database”.
 
 ## 1.0.9125.0
 Released: 2015 November
@@ -142,7 +152,7 @@ Released: 2015 February
 **Fixed issues:**
 
 - Password Sync honors the cloudFiltered attribute used by attribute filtering. Filtered objects will no longer be in scope for password synchronization.
-- In rare situations where the topology had very many domain controllers, password sync doesn’t work.
+- In rare situations where the topology had very many domain controllers, password sync doesn't work.
 - “Stopped-server” when importing from the Azure AD Connector after device management has been enabled in Azure AD/Intune.
 - Joining Foreign Security Principals (FSPs) from multiple domains in same forest causes an ambiguous-join error.
 

@@ -4,5 +4,5 @@ deleted:
 
 		_Facebook_, _Google_, _Twitter_, or
 
-reason: ()
+reason: (google facebook twitter)
 

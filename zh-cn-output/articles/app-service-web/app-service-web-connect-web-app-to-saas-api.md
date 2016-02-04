@@ -1,56 +1,58 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-   pageTitle="在 Azure App Service 中将 Web 应用连接到 API 应用" 
-   description="本教程演示如何从托管在 Azure App Service 中的 ASP.NET Web 应用使用 API 应用。" 
-   services="app-service\web" 
-   documentationCenter=".net" 
-   authors="syntaxc4" 
-   manager="yochayk" 
-   editor="jimbe"/>
+	pageTitle="Connect a web site to an API app in Azure Websites" 
+	description="This tutorial shows you how to consume an API app from an ASP.NET web site hosted in Azure Websites." 
+	services="app-service\web" 
+	documentationCenter=".net" 
+	authors="syntaxc4" 
+	manager="yochayk" 
+	editor="jimbe"/>
 
 <tags
-   ms.service="app-service-web"
-   ms.date="03/24/2015"
-   wacn.date=""/>
+	ms.service="app-service-web"
+	ms.date="09/15/2015"
+	wacn.date="11/27/2015"/>
 
-# 在 Azure App Service 中将 Web 应用连接到 API 应用
+# Connect a web site to an API app in Azure Websites
 
-本教程演示如何从 [App Service](/documentation/articles/app-service) 中的 ASP.NET Web 应用使用 API 应用。
+This tutorial shows how to consume an API app from an ASP.NET web site hosted in [Azure Websites](/documentation/articles/app-service).
 
-## 先决条件
+## Prerequisites
 
-本教程基于 API 应用教程系列：
+This tutorial builds upon the series from the API App tutorials:
 
-1. [创建 Azure API 应用](/documentation/articles/app-service-dotnet-create-api-app)
-3. [部署 Azure API 应用](/documentation/articles/app-service-dotnet-deploy-api-app)
-4. [调试 Azure API 应用](/documentation/articles/app-service-dotnet-remotely-debug-api-app)
+1. [Create an Azure API App](/documentation/articles/app-service-dotnet-create-api-app)
+3. [Deploy an Azure API App](/documentation/articles/app-service-dotnet-deploy-api-app)
+4. [Debug an Azure API App](/documentation/articles/app-service-dotnet-remotely-debug-api-app)
 
-## 使 API 应用可公开访问
+## Make the API app publicly accessible
 
-在 [Azure 预览门户](https://manage.windowsazure.cn/)中，选择该 API 应用。单击命令栏中的“设置”按钮。在“应用程序设置”边栏选项卡中，将“访问级别”更改为“公开（匿名）”。
+In the [Azure preview portal](https://manage.windowsazure.cn/), select the API app. Click on the **Settings** button in the command bar. In the **Application Settings** blade, change the **Access Level** to **Public (anonymous)**.
 
 ![](./media/app-service-web-connect-web-app-to-saas-api/4-5-Change-Access-Level-To-Public.png)
 
-## 在 Visual Studio 中创建 ASP.NET MVC 应用程序
+## Create an ASP.NET MVC Application in Visual Studio
 
-1. 打开 Visual Studio。使用“新建项目”对话框添加新的 **ASP.NET Web 应用程序**。单击**“确定”**。
+1. Open Visual Studio. Use the **New Project** dialogue to add a new **ASP.NET Web Site**. Click **OK**.
 
-	![“文件”>“新建”>“Web”>“ASP.NET Web 应用程序”](./media/app-service-web-connect-web-app-to-saas-api/1-Create-New-MVC-App-For-Consumption.png)
+	![File > New > Web > ASP.NET Web Site](./media/app-service-web-connect-web-app-to-saas-api/1-Create-New-MVC-App-For-Consumption.png)
 
-1. 选择 **MVC** 模板。单击“更改身份验证”，选择“无身份验证”，然后两次单击“确定”。
+1. Select the **MVC** template. Click **Change Authentication**, then select **No Authentication**, and then click **OK** twice.
 
-	![新建 ASP.NET 应用程序](./media/app-service-web-connect-web-app-to-saas-api/2-Change-Auth-To-No-Auth.png)
+	![New ASP.NET Application](./media/app-service-web-connect-web-app-to-saas-api/2-Change-Auth-To-No-Auth.png)
 
-1. 在解决方案资源管理器中，右键单击新创建的 Web 应用程序项目，然后选择“添加 Azure 应用参考”。
+1. In Solution Explorer, right-click the newly created Web Site project and select **Add Azure App Reference**.
 
-	![添加 Azure API 应用参考...](./media/app-service-web-connect-web-app-to-saas-api/3-Add-Azure-API-App-SDK.png)
+	![Add Azure API App Reference...](./media/app-service-web-connect-web-app-to-saas-api/3-Add-Azure-API-App-SDK.png)
 
-1. 在“现有 API 应用”下拉列表中，选择想要连接到的 API 应用。
+1. In the **Existing API Apps** dropdown list, select the API App you would like to connect to.
 
-	![选择现有 API 应用](./media/app-service-web-connect-web-app-to-saas-api/4-Add-Azure-API-App-SDK-Dialog.png)
+	![Select Existing API App](./media/app-service-web-connect-web-app-to-saas-api/4-Add-Azure-API-App-SDK-Dialog.png)
 
-	>[AZURE.NOTE]将从 Swagger API 终结点自动生成用于连接到 API 应用的客户端代码。
+	>[AZURE.NOTE] The client code for connecting to the API app will be automatically generated from a Swagger API endpoint.
 
-1. 若要利用生成的 API 代码，请打开 HomeController.cs 文件并使用以下操作替换 `Contact` 操作：
+1. To leverage the generated API code, open the HomeController.cs file and replace the `Contact` action with the following:
 
 	    public async Task<ActionResult> Contact()
 	    {
@@ -63,31 +65,31 @@
 	        return View(contactList);
 	    }
 
-	![HomeController.cs 代码更新](./media/app-service-web-connect-web-app-to-saas-api/5-Write-Code-Which-Leverages-Swagger-Generated-Code.png)
+	![HomeController.cs Code Updates](./media/app-service-web-connect-web-app-to-saas-api/5-Write-Code-Which-Leverages-Swagger-Generated-Code.png)
 
-1. 使用以下代码更新 `Contact` 视图以反映联系人的动态列表：
+1. Update the `Contact` view to reflect the dynamic list of contacts with the code below:  
 	<pre>// Add to the very top of the view file
-@model IList&lt;MyContactsList.Web.Models.Contact>
+	@model IList&lt;MyContactsList.Web.Models.Contact&gt;
+	
+	// Replace the default email addresses with the following
+    &lt;h3&gt;Public Contacts&lt;/h3&gt;
+    &lt;ul&gt;
+        @foreach (var contact in Model)
+        {
+            &lt;li&gt;&lt;a href=&quot;mailto:@contact.EmailAddress&quot;&gt;@contact.Name &amp;lt;@contact.EmailAddress&amp;gt;&lt;/a&gt;&lt;/li&gt;
+        }
+    &lt;/ul&gt; 
+	</pre>
 
-// Replace the default email addresses with the following
-&lt;h3>Public Contacts&lt;/h3>
-&lt;ul>
-    @foreach (var contact in Model)
-    {
-        &lt;li>&lt;a href="mailto:@contact.EmailAddress">@contact.Name &amp;lt;@contact.EmailAddress&amp;gt;&lt;/a>&lt;/li>
-    }
-&lt;/ul> 
-</pre>![Contact.cshtml 代码更新](./media/app-service-web-connect-web-app-to-saas-api/6-Update-View-To-Reflect-Changes.png)
+	![Contact.cshtml Code Updates](./media/app-service-web-connect-web-app-to-saas-api/6-Update-View-To-Reflect-Changes.png)
 
-## 将 Web 应用程序部署到 App Service 中的 Web Apps
+## Deploy the web site to Web Sites in Azure Websites
 
-按照[如何部署 Azure Web 应用](/documentation/articles/web-sites-deploy)的说明进行操作。
+Follow the instructions available at [How to Deploy an Azure Website](/documentation/articles/web-sites-deploy).
 
->[AZURE.NOTE]如果你想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](https://tryappservice.azure.com/)，你可以通过该网站在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
 
-## 发生的更改
-* 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](/documentation/services/web-sites/)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在 Azure 门户中导航的参考](https://manage.windowsazure.cn/)
+## What's changed
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
  
-
-<!---HONumber=67-->

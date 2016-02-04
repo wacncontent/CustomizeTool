@@ -23,7 +23,7 @@ replaced by:
 
 		##<a name="adding-categories"></a>Add category selection to the app
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -33,7 +33,7 @@ replaced by:
 
 		##<a name="register"></a>Register for notifications
 
-reason: ()
+reason: (inpage link)
 
 deleted:
 
@@ -43,5 +43,5 @@ replaced by:
 
 		##<a name="test-app"></a>Run the app and generate notifications
 
-reason: ()
+reason: (inpage link)
 

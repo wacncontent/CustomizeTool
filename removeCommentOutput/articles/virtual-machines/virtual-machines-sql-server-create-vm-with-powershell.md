@@ -16,7 +16,7 @@
 # Create a SQL Server Virtual Machine in Azure (PowerShell)
 
 > [AZURE.SELECTOR]
-- [Portal](/documentation/articles/virtual-machines-provision-sql-server)
+- [Azure Management Portal](/documentation/articles/virtual-machines-provision-sql-server)
 - [PowerShell](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
 
 ## Overview
@@ -56,7 +56,7 @@ Your SQL Server Virtual Machine will be hosted in a cloud service that resides a
 1. Assign your target Azure subscription to the **$subscr** variable. Then set this as your current Azure subscription. 
 
 		$subscr="<subscription name>"
-		Select-AzureSubscription -SubscriptionName $subscr –Current
+		Select-AzureSubscription -SubscriptionName $subscr -Current
 
 1. Then check for existing storage accounts. The following script displays all storage accounts that exist in your chosen region:
 
@@ -105,7 +105,7 @@ Finally, create the virtual machine with PowerShell:
 
 4. Run the following script to create the virtual machine.
 
-		New-AzureVM –ServiceName $svcname -VMs $vm1
+		New-AzureVM -ServiceName $svcname -VMs $vm1
 
 >[AZURE.NOTE] For additional explanation and configuration options, see the **Build your command set** section in [Use Azure PowerShell to create and preconfigure Windows-based Virtual Machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms).
 
@@ -124,7 +124,7 @@ The following script provides and example of a complete script that creates a **
 	
 	# Set the current subscription and storage account
 	# Comment out the New-AzureStorageAccount line if the account already exists
-	Select-AzureSubscription -SubscriptionName $subscr –Current
+	Select-AzureSubscription -SubscriptionName $subscr -Current
 	New-AzureStorageAccount -StorageAccountName $staccount -Location $dcLocation
 	Set-AzureSubscription -SubscriptionName $subscr -CurrentStorageAccountName $staccount
 	
@@ -142,7 +142,7 @@ The following script provides and example of a complete script that creates a **
 	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
 	
 	# Create the SQL Server VM:
-	New-AzureVM –ServiceName $svcname -VMs $vm1
+	New-AzureVM -ServiceName $svcname -VMs $vm1
 	 
 
 ## Connect with remote desktop

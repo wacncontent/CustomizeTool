@@ -367,13 +367,25 @@ Your own JSON template to build a multi-tier infrastructure in Azure should foll
 1.	Create the common (storage account, virtual network), tier-specific (availability sets), and virtual machine-specific (public IP addresses, availability sets, network interfaces, load balancer instances) elements of Azure infrastructure that are required for your deployment.
 2.	For each tier in your application (such as authentication, database, web), create and configure the servers in that tier using the common (storage account, virtual network), tier-specific (availability set) and virtual machine-specific (public IP addresses, network interfaces, load balancer instances) elements.
 
-For more information, see [Azure Resource Manager template language](/documentation/articles/resource-group-authoring-templates).
+For more information, see [Azure Resource Manager <!-- deleted by customization template language](/documentation/articles/resource-group-authoring-templates) --><!-- keep by customization: begin --> Template Language](https://msdn.microsoft.com/zh-CN/library/azure/dn835138.aspx) <!-- keep by customization: end -->.
 
 ## Additional resources
 
+<!-- deleted by customization
 [Azure compute, network, and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 [Azure Resource Manager overview](/documentation/articles/resource-group-overview)
 
 [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates)
 
 [Virtual machines documentation](/documentation/services/virtual-machines/)
+-->
+<!-- keep by customization: begin -->
+[Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
+
+[Azure Resource Manager Overview](/documentation/articles/resource-group-overview)
+
+[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
+
+[Virtual machines documentation](/home/features/virtual-machines/)
+
+<!-- keep by customization: end -->

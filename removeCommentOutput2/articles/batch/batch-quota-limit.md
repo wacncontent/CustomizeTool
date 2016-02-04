@@ -37,9 +37,9 @@ Tasks per compute node|4 x number of node cores
 
 ## View Batch quotas
 
-View your Batch account quotas in the [Azure preview portal](https://manage.windowsazure.cn).
+View your Batch account quotas in the [Azure Management Portal](https://manage.windowsazure.cn).
 
-1. In the preview portal, click **Batch accounts** and then the name of your Batch account.
+1. In the Management portal, click **Batch accounts** and then the name of your Batch account.
 
 2. On the account blade, click **Settings** > **Properties**.
 
@@ -49,7 +49,7 @@ View your Batch account quotas in the [Azure preview portal](https://manage.wind
 
 ## Increase a quota
 
-Use the following steps to request a quota increase in the Azure preview portal (you can also request an increase in the [Azure Management Portal](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)).
+Use the following steps to request a quota increase in the Azure Management Portal (you can also request an increase in the [Azure Management Portal](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)).
 
 1. On the dashboard of the preview portal, click **Help + support**.
 
@@ -85,7 +85,7 @@ Azure support will contact you. Completing the request can take up to 2 business
 
 * [Create and manage an Azure Batch account](/documentation/articles/batch-account-create-portal)
 
-* [API basics for Azure Batch](/documentation/articles/batch-api-basics)
+* [Azure Batch feature overview](/documentation/articles/batch-api-basics)
 
 * [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits)
 

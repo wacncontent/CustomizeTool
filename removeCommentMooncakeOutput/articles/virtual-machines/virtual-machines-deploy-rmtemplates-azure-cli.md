@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/09/2015"
+	ms.date="11/01/2015"
 	wacn.date=""/>
 
 # Deploy and manage virtual machines by using Azure Resource Manager templates and the Azure CLI
@@ -18,7 +18,6 @@
 This article shows you how to use Azure Resource Manager templates and the Azure CLI to do the following common tasks for deploying and managing Azure virtual machines. For more templates you can use, see [Azure Quickstart templates](http://azure.microsoft.com/documentation/templates/) and [Application frameworks using templates](/documentation/articles/virtual-machines-app-frameworks).
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't use templates in the classic deployment model.
-
 
 - [Quick-create a virtual machine in Azure](#quick-create-a-vm-in-azure)
 - [Deploy a virtual machine in Azure from a template](#deploy-a-vm-in-azure-from-a-template)
@@ -34,16 +33,16 @@ This article shows you how to use Azure Resource Manager templates and the Azure
 
 ## Getting ready
 
-Before you can use the Azure CLI with Azure resource groups, you need to have the right Azure CLI version and a work or school account.
+Before you can use the Azure CLI with Azure resource groups, you need to have the right Azure CLI version and an Azure account. If you don't have the Azure CLI, [install it](/documentation/articles/xplat-cli-install).
 
 ### Update your Azure CLI version to 0.9.0 or later
 
-Type `azure --version` to see whether you have already installed version 0.9.0 or later.
+Type `azure --version` to see whether you have already installed version 0.9.0 or later. 
 
 	azure --version
     0.9.0 (node: 0.10.25)
 
-If your version is not 0.9.0 or later, you need to either [install the Azure CLI](/documentation/articles/xplat-cli-install) or update by using one of the native installers or through **npm** by typing `npm update -g azure-cli`.
+If your version is not 0.9.0 or later, you need to update it by using one of the native installers or through **npm** by typing `npm update -g azure-cli`.
 
 You can also run Azure CLI as a Docker container by using the following [Docker image](https://registry.hub.docker.com/u/microsoft/azure-cli/). From a Docker host, run the following command:
 
@@ -51,11 +50,11 @@ You can also run Azure CLI as a Docker container by using the following [Docker 
 
 ### Set your Azure account and subscription
 
-If you don't already have an Azure subscription, you can sign up for a [trial](/pricing/1rmb-trial/).
+If you don't already have an Azure subscription but you do have an MSDN subscription, you can activate your [MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/). Or you can sign up for a [trial](/pricing/1rmb-trial/).
 
-You need to have a work or school account to use Azure resource management templates. If you have one, you can type `azure login` and enter your user name and password, and you should successfully log in.
+Now [log in to your Azure account interactively](/documentation/articles/xplat-cli-connect#use-the-log-in-method) by typing `azure login` and following the prompts for an interactive login experience to your Azure account. 
 
-> [AZURE.NOTE] If you don't have one, you'll see an error message indicating that you need a different type of account. To create one from your current Azure account, see [Creating a work or school identity in Azure Active Directory](/documentation/articles/resource-group-create-work-id-from-personal).
+> [AZURE.NOTE] If you have a work or school ID and you know you do not have two-factor authentication enabled, you can **also** use `azure login -u` along with the work or school ID to log in *without* an interactive session. If you don't have a work or school ID, you can [create a work or school id from your personal Microsoft account](/documentation/articles/resource-group-create-work-id-from-personal) to log in the same way.
 
 Your account may have more than one subscription. You can list your subscriptions by typing `azure account list`, which might look something like this:
 
@@ -80,15 +79,11 @@ By default, the Azure CLI starts in the service management mode (**asm** mode). 
 
 	azure config mode arm
 
-
-
-> [AZURE.NOTE] You can switch back to the default set of commands by typing `azure config mode asm`.
-
 ## Understanding Azure resource templates and resource groups
 
 Most applications are built from a combination of different resource types (such as one or more VMs and storage accounts, a SQL database, a virtual network, or a content delivery network). The default Azure service management API and the Azure Management Portal represented these items by using a service-by-service approach. This approach requires you to deploy and manage the individual services individually (or find other tools that do so), and not as a single logical unit of deployment.
 
-*Azure Resource Manager templates* make it possible for you to deploy and manage these different resources as one logical deployment unit in a declarative fashion. Instead of imperatively telling Azure what to deploy one command after another, you describe your entire deployment in a JSON file -- all of the resources and associated configuration and deployment parameters -- and tell Azure to deploy those resources as one group.
+*Azure Resource Manager templates*, however, make it possible for you to deploy and manage these different resources as one logical deployment unit in a declarative fashion. Instead of imperatively telling Azure what to deploy one command after another, you describe your entire deployment in a JSON file -- all of the resources and associated configuration and deployment parameters -- and tell Azure to deploy those resources as one group.
 
 You can then manage the overall life cycle of the group's resources by using Azure CLI resource management commands to:
 
@@ -159,32 +154,32 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     info:    Using the VM Size "Standard_A1"
     info:    The [OS, Data] Disk or image configuration requires storage account
     + Retrieving storage accounts
-    info:    Could not find any storage accounts in the region "chinanorths", trying to create new one
+    info:    Could not find any storage accounts in the region "chinanorth", trying to create new one
     + Creating storage account "cli9fd3fce49e9a9b3d14302" in "chinanorth"
     + Looking up the storage account cli9fd3fce49e9a9b3d14302
-    + Looking up the NIC "coreo-chinanorth-1430261891570-nic"
-    info:    An nic with given name "coreo-chinanorth-1430261891570-nic" not found, creating a new one
-    + Looking up the virtual network "coreo-chinanorth-1430261891570-vnet"
+    + Looking up the NIC "coreo-westu-1430261891570-nic"
+    info:    An nic with given name "coreo-westu-1430261891570-nic" not found, creating a new one
+    + Looking up the virtual network "coreo-westu-1430261891570-vnet"
     info:    Preparing to create new virtual network and subnet
-    / Creating a new virtual network "coreo-chinanorth-1430261891570-vnet" [address prefix: "10.0.0.0/16"] with subnet "coreo-chinanorth-1430261891570-sne+" [address prefix: "10.0.1.0/24"]
-    + Looking up the virtual network "coreo-chinanorth-1430261891570-vnet"
-    + Looking up the subnet "coreo-chinanorth-1430261891570-snet" under the virtual network "coreo-chinanorth-1430261891570-vnet"
+    / Creating a new virtual network "coreo-westu-1430261891570-vnet" [address prefix: "10.0.0.0/16"] with subnet "coreo-westu-1430261891570-sne+" [address prefix: "10.0.1.0/24"]
+    + Looking up the virtual network "coreo-westu-1430261891570-vnet"
+    + Looking up the subnet "coreo-westu-1430261891570-snet" under the virtual network "coreo-westu-1430261891570-vnet"
     info:    Found public ip parameters, trying to setup PublicIP profile
-    + Looking up the public ip "coreo-chinanorth-1430261891570-pip"
-    info:    PublicIP with given name "coreo-chinanorth-1430261891570-pip" not found, creating a new one
-    + Creating public ip "coreo-chinanorth-1430261891570-pip"
-    + Looking up the public ip "coreo-chinanorth-1430261891570-pip"
-    + Creating NIC "coreo-chinanorth-1430261891570-nic"
-    + Looking up the NIC "coreo-chinanorth-1430261891570-nic"
+    + Looking up the public ip "coreo-westu-1430261891570-pip"
+    info:    PublicIP with given name "coreo-westu-1430261891570-pip" not found, creating a new one
+    + Creating public ip "coreo-westu-1430261891570-pip"
+    + Looking up the public ip "coreo-westu-1430261891570-pip"
+    + Creating NIC "coreo-westu-1430261891570-nic"
+    + Looking up the NIC "coreo-westu-1430261891570-nic"
     + Creating VM "coreos"
     + Looking up the VM "coreos"
-    + Looking up the NIC "coreo-chinanorth-1430261891570-nic"
-    + Looking up the public ip "coreo-chinanorth-1430261891570-pip"
+    + Looking up the NIC "coreo-westu-1430261891570-nic"
+    + Looking up the public ip "coreo-westu-1430261891570-pip"
     data:    Id                              :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Compute/virtualMachines/coreos
     data:    ProvisioningState               :Succeeded
     data:    Name                            :coreos
     data:    Location                        :chinanorth
-    data:    FQDN                            :coreo-chinanorth-1430261891570-pip.chinanorth.chinacloudapp.cn
+    data:    FQDN                            :coreo-westu-1430261891570-pip.chinanorth.chinacloudapp.cn
     data:    Type                            :Microsoft.Compute/virtualMachines
     data:
     data:    Hardware Profile:
@@ -214,16 +209,16 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     data:    Network Profile:
     data:      Network Interfaces:
     data:        Network Interface #1:
-    data:          Id                        :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Network/networkInterfaces/coreo-chinanorth-1430261891570-nic
+    data:          Id                        :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Network/networkInterfaces/coreo-westu-1430261891570-nic
     data:          Primary                   :true
     data:          MAC Address               :00-0D-3A-30-72-E3
     data:          Provisioning State        :Succeeded
-    data:          Name                      :coreo-chinanorth-1430261891570-nic
+    data:          Name                      :coreo-westu-1430261891570-nic
     data:          Location                  :chinanorth
     data:            Private IP alloc-method :Dynamic
     data:            Private IP address      :10.0.1.4
     data:            Public IP address       :104.40.24.124
-    data:            FQDN                    :coreo-chinanorth-1430261891570-pip.chinanorth.chinacloudapp.cn
+    data:            FQDN                    :coreo-westu-1430261891570-pip.chinanorth.chinacloudapp.cn
     info:    vm quick-create command OK
 
 And away you go with your new VM.

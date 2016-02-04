@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Upload a custom Java web app to Azure" 
-	description="This tutorial shows you how to upload a custom Java web app to Azure Websites." 
+	pageTitle="Upload a custom Java web site to Azure" 
+	description="This tutorial shows you how to upload a custom Java web site to Azure Websites." 
 	services="app-service\web" 
 	documentationCenter="java" 
 	authors="rmcmurray" 
@@ -9,24 +9,24 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="08/31/2015"
+	ms.date="11/19/2015"
 	wacn.date=""/>
 
-# Upload a custom Java web app to Azure
+# Upload a custom Java web site to Azure
 
-This topic explains how to upload a custom Java web app to [Azure Websites] Web Apps. Included is information that applies to any Java website or web app, and also some examples for specific applications.
+This topic explains how to upload a custom Java web site to [Azure Websites] web sites. Included is information that applies to any Java website or web site, and also some examples for specific applications.
 
-Note that Azure provides a means for creating Java web apps using the Azure <!-- deleted by customization preview portal's --><!-- keep by customization: begin --> Management Portal's <!-- keep by customization: end --> configuration UI <!-- deleted by customization, and the Azure Marketplace -->, as documented at [Create a Java web app in Azure Websites](/documentation/articles/web-sites-java-get-started). This tutorial is for scenarios in which you do not want to use the portal configuration UI <!-- deleted by customization or the Azure Marketplace -->.
+Note that Azure provides a means for creating Java web sites using the Azure Management Portal's configuration UI <!-- deleted by customization, and the Azure Marketplace -->, as documented at [Create a Java web site in Azure Websites](/documentation/articles/web-sites-java-get-started). This tutorial is for scenarios in which you do not want to use the Azure Management Portal configuration UI <!-- deleted by customization or the Azure Marketplace -->.
 
 ## Configuration guidelines
 
-The following describes the settings expected for custom Java web apps on Azure.
+The following describes the settings expected for custom Java web sites on Azure.
 
 - The HTTP port used by the Java process is dynamically assigned.  The process must use the port from the environment variable `HTTP_PLATFORM_PORT`.
 - All listen ports other than the single HTTP listener should be disabled.  In Tomcat, that includes the shutdown, HTTPS, and AJP ports.
 - The container needs to be configured for IPv4 traffic only.
 - The **startup** command for the application needs to be set in the configuration.
-- Applications that require directories with write permission need to be located in the Azure web app's content directory,  which is **D:\home**.  The environmental variable `HOME` refers to D:\home.  
+- Applications that require directories with write permission need to be located in the Azure web site's content directory,  which is **D:\home**.  The environmental variable `HOME` refers to D:\home.  
 
 You can set environment variables as required in the web.config file.
 
@@ -72,7 +72,7 @@ Examples:
 
 ## Deployment
 
-Java based web apps can be deployed easily through most of the same means that are used with the Internet Information Services (IIS) based web applications.  FTP, Git and Kudu are all supported as deployment mechanisms, as is the integrated SCM capability for web apps. WebDeploy works as a protocol, however, as Java is not developed in Visual Studio, WebDeploy does not fit with Java web app deployment use cases.
+Java based web sites can be deployed easily through most of the same means that are used with the Internet Information Services (IIS) based web sites.  FTP, Git and Kudu are all supported as deployment mechanisms, as is the integrated SCM capability for web sites. WebDeploy works as a protocol, however, as Java is not developed in Visual Studio, WebDeploy does not fit with Java web site deployment use cases.
 
 ## Application configuration Examples
 
@@ -148,9 +148,9 @@ In order to get a Springboot application running you need to upload your JAR or 
 
 ### Hudson
 
-Our test used the Hudson 3.1.2 war and the default Tomcat 7.0.50 instance but without using the UI to set things up.  Because Hudson is a software build tool, it is advised to install it on dedicated instances where the **AlwaysOn** flag can be set on the web app.
+Our test used the Hudson 3.1.2 war and the default Tomcat 7.0.50 instance but without using the UI to set things up.  Because Hudson is a software build tool, it is advised to install it on dedicated instances where the **AlwaysOn** flag can be set on the web site.
 
-1. In your web app’s root directory, i.e., **d:\home\site\wwwroot**, create a **webapps** directory (if not already present), and place Hudson.war in **d:\home\site\wwwroot\webapps**.
+1. In your web site's root directory, i.e., **d:\home\site\wwwroot**, create a **webapps** directory (if not already present), and place Hudson.war in **d:\home\site\wwwroot\webapps**.
 2. Download apache maven 3.0.5 (compatible with Hudson) and place it in **d:\home\site\wwwroot**.
 3. Create web.config in **d:\home\site\wwwroot** and paste the following contents in it:
 	
@@ -174,7 +174,7 @@ Our test used the Hudson 3.1.2 war and the default Tomcat 7.0.50 instance but wi
 		  </system.webServer>
 		</configuration>
 
-    At this point the web app can be restarted to take the changes.  Connect to http://yourwebapp/hudson to start Hudson.
+    At this point the web site can be restarted to take the changes.  Connect to http://yourwebapp/hudson to start Hudson.
 
 4. After Hudson configures itself, you should see the following screen:
 
@@ -195,7 +195,7 @@ For additional information on Hudson, see [http://hudson-ci.org](http://hudson-c
 
 ### Liferay
 
-Liferay is supported on Azure Websites. Since Liferay can require significant memory, the web app needs to run on a medium or large dedicated worker, which can provide enough memory. Liferay also takes several minutes to start up. For that reason, it is recommended that you set the web app to **Always On**.  
+Liferay is supported on Azure Websites. Since Liferay can require significant memory, the web site needs to run on a medium or large dedicated worker, which can provide enough memory. Liferay also takes several minutes to start up. For that reason, it is recommended that you set the web site to **Always On**.  
 
 Using Liferay 6.1.2 Community Edition GA3 bundled with Tomcat, the following files were edited after downloading Liferay:
 
@@ -234,11 +234,11 @@ At the same directory level as the tomcat-7.0.40 folder, create a file named **w
 	  </system.webServer>
 	</configuration>
 
-Under the **httpPlatform** block, the **requestTimeout** is set to “00:10:00”.  It can be reduced but then you are likely to see some timeout errors while Liferay is bootstrapping.  If this value is changed, then the **connectionTimeout** in the tomcat server.xml should also be modified.  
+Under the **httpPlatform** block, the **requestTimeout** is set to <!-- deleted by customization “00:10:00” --><!-- keep by customization: begin --> â00:10:00â <!-- keep by customization: end -->.  It can be reduced but then you are likely to see some timeout errors while Liferay is bootstrapping.  If this value is changed, then the **connectionTimeout** in the tomcat server.xml should also be modified.
 
 It is worth noting that the JRE_HOME environnment varariable is specified in the above web.config to point to the 64-bit JDK. The default is 32-bit, but since Liferay may require high levels of memory, it is recommended to use the 64-bit JDK.
 
-Once you make these changes, restart your web app running Liferay, Then, open http://yourwebapp. The Liferay portal is available from the web app root. 
+Once you make these changes, restart your web site running Liferay, Then, open http://yourwebapp. The Liferay portal is available from the web site root. 
 
 ## Next steps
 

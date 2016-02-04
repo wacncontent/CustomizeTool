@@ -12,5 +12,5 @@ replaced by:
 		
 		[Azure AD Connect FAQ](/documentation/articles/active-directory-aadconnect-faq) - Frequently asked questions around Azure AD Connect.
 
-reason: ()
+reason: (video)
 

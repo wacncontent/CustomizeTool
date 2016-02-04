@@ -7,10 +7,9 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="cdn" 
-
-	ms.date="09/01/2015" 
+<tags
+	ms.service="cdn"
+	ms.date="12/08/2015"
 	wacn.date=""/>
 
 # Serve Content from Azure CDN in Your Web Application #
@@ -41,7 +40,7 @@ This tutorial has the following prerequisites:
 -	[Azure PowerShell](http://go.microsoft.com/?linkid=9811175&clcid=0x409) (used by [Automate content upload from your ASP.NET application to your CDN endpoint](#upload))
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
-> + You can [open an Azure account](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites.
+> + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites.
 > + You can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/) - Your MSDN subscription gives you credits every month that you can use for paid Azure services.
 
 <a name="static"></a>
@@ -58,19 +57,19 @@ In this tutorial section, you will learn how to create a CDN and use it to serve
 Let's get to it. Follow the steps below to start using the Azure CDN:
 
 1. To create a CDN endpoint, log into your [Azure management portal](http://manage.windowsazure.cn/). 
-2. Create a storage account by clicking **New > Data Services > Storage > Quick Create**. Specify a URL, a location, and click **Create Storage Account**. 
+1. Create a storage account by clicking **New > Data Services > Storage > Quick Create**. Specify a URL, a location, and click **Create Storage Account**. 
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-1.PNG)
 
 	>[AZURE.NOTE] Note that I'm using China East as the region as it is far enough away for me to test my CDN from North America later.
 
-3. Once the new storage account's status is **Online**, create a new CDN endpoint that's tied to the storage account you created. Click **New > Azure Websites > CDN > Quick Create**. Select the storage account you created and click **Create**.
+2. Once the new storage account's status is **Online**, create a new CDN endpoint that's tied to the storage account you created. Click **New > Azure > CDN > Quick Create**. Select the storage account you created and click **Create**.
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-2.PNG)
 
 	>[AZURE.NOTE] Once your CDN is created, the Azure Management Portal will show you its URL and the origin domain that it's tied to. However, it can take awhile for the CDN endpoint's configuration to be fully propagated to all the node locations.  
 
-4. Test your CDN endpoint to make sure that it's online by pinging it. If your CDN endpoint has not propagated to all the nodes, you will see a message similar to the one below.
+3. Test your CDN endpoint to make sure that it's online by pinging it. If your CDN endpoint has not propagated to all the nodes, you will see a message similar to the one below.
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-3-fail.PNG)
 
@@ -78,52 +77,52 @@ Let's get to it. Follow the steps below to start using the Azure CDN:
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-3-succeed.PNG)
 
-5. At this point, you can already see where the CDN endpoint determines to be the closest CDN node to you. From my desktop computer, the responding IP address is **93.184.215.201**. Plug it into a site like [www.ip-address.org](http://www.ip-address.org) and see that the server is located in Washington D.C.
+4. At this point, you can already see where the CDN endpoint determines to be the closest CDN node to you. From my desktop computer, the responding IP address is **93.184.215.201**. Plug it into a site like [www.ip-address.org](http://www.ip-address.org) and see that the server is located in Washington D.C.
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-4.PNG)
 
 	For a list of all CDN node locations, see [Azure Content Delivery Network (CDN) Node Locations](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx).
 
-6. Back in the Azure Management Portal, in the **CDN** tab, click the name of the CDN endpoint you just created.
+3. Back in the Azure Management Portal, in the **CDN** tab, click the name of the CDN endpoint you just created.
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-2-enablequerya.PNG)
 
-7. Click **Enable Query String** to enable query strings in the Azure CDN cache. Once you enable this, the same link accessed with different query strings will be cached as separate entries.
+3. Click **Enable Query String** to enable query strings in the Azure CDN cache. Once you enable this, the same link accessed with different query strings will be cached as separate entries.
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-2-enablequeryb.PNG)
 
 	>[AZURE.NOTE] While enabling the query string is not necessary for this part of the tutorial, you want to do this as early as possible for convenience sake since any change here is going to take time to propagate to the rest of the nodes, and you don't want any non-query-string-enabled content to clog up the CDN cache (updating CDN content will be discussed later). You will find out how to take advantage of this in [Serve fresh content immediately through query strings](#query).
 
-8. In Visual Studio 2013, in Server Explorer, click the **Connect to Windows Azure** button.
+6. In Visual Studio 2013, in Server Explorer, click the **Connect to Windows Azure** button.
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-5.PNG)
 
-9.  Follow the prompt to sign into your Azure account. 
-10.  Once you sign in, expand the **Windows Azure > Storage > your storage account**. Right-click **Blob** and select **Create Blob Container**.
+7.  Follow the prompt to sign into your Azure account. 
+8.  Once you sign in, expand the **Windows Azure > Storage > your storage account**. Right-click **Blob** and select **Create Blob Container**.
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-6.PNG)
 
-11.	Specify a blob container name and click **OK**.
+8.	Specify a blob container name and click **OK**.
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-7.PNG)
 
-12.	In Server Explorer, double-click the blob container you created to manage it. You should see the management interface in the center pane.
+9.	In Server Explorer, double-click the blob container you created to manage it. You should see the management interface in the center pane.
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-8.PNG)
 
-13.	Click the **Upload Blob** button to upload images, scripts, or stylesheets that are used by your Web pages into the blob container. The upload progress will be shown in the **Azure Activity Log**, and the blobs will appear in the container view when they are uploaded. 
+10.	Click the **Upload Blob** button to upload images, scripts, or stylesheets that are used by your Web pages into the blob container. The upload progress will be shown in the **Azure Activity Log**, and the blobs will appear in the container view when they are uploaded. 
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-9.PNG)
 
-14.	Now that you have uploaded the blobs, you must make them public for you to access them. In Server Explorer, right-click the container and select **Properties**. Set the **Public Read Access** property to **Blob**.
+11.	Now that you have uploaded the blobs, you must make them public for you to access them. In Server Explorer, right-click the container and select **Properties**. Set the **Public Read Access** property to **Blob**.
 
 	![](./media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-10.PNG)
 
-15.	Test the public access of your blobs by navigating to the URL for one of the blobs in a browser. For example, I can test the first image in my uploaded list with `http://cephalinstorage.blob.core.chinacloudapi.cn/cdn/cephas_lin.png`.
+12.	Test the public access of your blobs by navigating to the URL for one of the blobs in a browser. For example, I can test the first image in my uploaded list with `http://cephalinstorage.blob.core.chinacloudapi.cn/cdn/cephas_lin.png`.
 
 	Note that I'm not using the HTTPS address given in the blob management interface in Visual Studio. By using HTTP, you test whether the content is publicly accessible, which is a requirement for Azure CDN.
 
-16.	If you can see the blob rendered properly in your browser, change the URL from `http://<yourStorageAccountName>.blob.core.chinacloudapi.cn` to the URL of your Azure CDN. In my case, to test the first image at my CDN endpoint, I would use `http://az623979.vo.msecnd.net/cdn/cephas_lin.png`.
+13.	If you can see the blob rendered properly in your browser, change the URL from `http://<yourStorageAccountName>.blob.core.chinacloudapi.cn` to the URL of your Azure CDN. In my case, to test the first image at my CDN endpoint, I would use `http://az623979.vo.msecnd.net/cdn/cephas_lin.png`.
 
 	>[AZURE.NOTE] You can find the CDN endpoint's URL in the Azure management portal, in the CDN tab.
 
@@ -137,7 +136,7 @@ Let's get to it. Follow the steps below to start using the Azure CDN:
 
  	Pay attention to the numbers for the **Request** timing, which is the time to first byte, or the time taken to send the request and receive the first response from the server. When I access the blob, which is hosted in the China East region, it takes 266 ms for me - since the request must traverse the entire Pacific Ocean just to get to the server. However, when I access the Azure CDN, it takes only 16 ms, which is nearly a **20-fold gain in performance**!
 	
-17.	Now, it's just a matter of using the new link in your Web page. For example, I can add the following image tag:
+15.	Now, it's just a matter of using the new link in your Web page. For example, I can add the following image tag:
 
 		<img alt="Mugshot" src="http://az623979.vo.msecnd.net/cdn/cephas_lin.png" />
 
@@ -146,20 +145,20 @@ In this section, you have learned how to create a CDN endpoint, upload content t
 <a name="upload"></a>
 ## Automate content upload from your ASP.NET application to your CDN endpoint ##
 
-If you want to easily upload all of the static content in your ASP.NET Web application to your CDN endpoint, or if your deploy your Web application using continuous delivery (for an example, see [Continuous Delivery for Cloud Services in Azure](/documentation/articles/cloud-services/cloud-services-dotnet-continuous-delivery)), you can use Azure PowerShell to automate the synchronization of the latest content files to Azure blobs every time you deploy your Web application. For example, you can run the script at [Upload Content Files from ASP.NET Application to Azure Blobs](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a) upload all the content files in an ASP.NET application. To use this script:
+If you want to easily upload all of the static content in your ASP.NET Web application to your CDN endpoint, or if your deploy your Web application using continuous delivery (for an example, see [Continuous Delivery for Cloud Services in Azure](/documentation/articles/cloud-services-dotnet-continuous-delivery)), you can use Azure PowerShell to automate the synchronization of the latest content files to Azure blobs every time you deploy your Web application. For example, you can run the script at [Upload Content Files from ASP.NET Application to Azure Blobs](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a) upload all the content files in an ASP.NET application. To use this script:
 
-1. From the **Start** menu, run **Windows Azure PowerShell**.
-2. In the Azure PowerShell window, run `Get-AzurePublishSettingsFile` to download a publish settings file for your Azure account.
-3. Once you have downloaded your publish settings file, run the following: 
+4. From the **Start** menu, run **Windows Azure PowerShell**.
+5. In the Azure PowerShell window, run `Get-AzurePublishSettingsFile` to download a publish settings file for your Azure account.
+6. Once you have downloaded your publish settings file, run the following: 
 
 		Import-AzurePublishSettingsFile "<yourDownloadedFilePath>"
 
 	>[AZURE.NOTE] Once you import your publish settings file, it will be the default Azure account used for all Azure PowerShell sessions. This means that the above steps only need to be done once.
 	
-5. Download the script from the [download page](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a). Save it into your ASP.NET application's project folder.
-6. Right-click the downloaded script and click **Properties**.
-7. Click **Unblock**.
-8. Open a PowerShell window and run the following:
+1. Download the script from the [download page](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a). Save it into your ASP.NET application's project folder.
+2. Right-click the downloaded script and click **Properties**.
+3. Click **Unblock**.
+4. Open a PowerShell window and run the following:
 
 		cd <ProjectFolder>
 		.\UploadContentToAzureBlobs.ps1 -StorageAccount "<yourStorageAccountName>" -StorageContainer "<yourContainerName>"
@@ -245,19 +244,19 @@ If you change the assembly number as part of every publish cycle, then you can l
 
 ## What about bundled scripts and stylesheets in ASP.NET? ##
 
-With [Azure Websites](/documentation/services/web-sites/) and [Azure Cloud Services](/home/features/cloud-services/), you get the best Azure CDN integration with [ASP.NET bundling and minification](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification). 
+With [Azure Web Apps](/documentation/services/web-sites/) and [Azure Cloud Services](/home/features/cloud-services/), you get the best Azure CDN integration with [ASP.NET bundling and minification](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification). 
 
-Integrating Azure Websites or Azure Cloud Services with Azure CDN gives you the following advantages:
+Integrating Azure or Azure Cloud Services with Azure CDN gives you the following advantages:
 
 - Integrate content deployment (images, scripts, and stylesheets) as part of your Azure web app's [continuous deployment](/documentation/articles/web-sites-publish-source-control) process
 - Easily upgrade your CDN-served NuGet packages, such as jQuery or Bootstrap versions 
 - Manage your Web application and your CDN-served content from the same Visual Studio interface
 
 For related tutorials, see:
-- [Use Azure CDN in Azure Websites](/documentation/articles/cdn-websites-with-cdn)
+- [Use Azure CDN in Azure Web App](/documentation/articles/cdn-websites-with-cdn)
 - [Integrate a cloud service with Azure CDN](/documentation/articles/cdn-cloud-service-with-cdn)
 
-Without integration with Azure Websites or Azure Cloud Services, it is possible to use Azure CDN for your script bundles, with the following caveats:
+Without integration with Azure Web Apps or Azure Cloud Services, it is possible to use Azure CDN for your script bundles, with the following caveats:
 
 - You must manually upload the bundled scripts to blob storage. A programmatic solution is proposed at [stackoverflow](http://stackoverflow.com/a/13736433).
 - In your .cshtml files, transform the rendered script/CSS tags to use the Azure CDN. For example:
@@ -266,7 +265,7 @@ Without integration with Azure Websites or Azure Cloud Services, it is possible 
 
 ## More Information ##
 - [Overview of the Azure Content Delivery Network (CDN)](/documentation/articles/cdn-overview)
-- [Use Azure CDN in Azure Websites](/documentation/articles/cdn-websites-with-cdn)
+- [Use Azure CDN in Azure Web App](/documentation/articles/cdn-websites-with-cdn)
 - [Integrate a cloud service with Azure CDN](/documentation/articles/cdn-cloud-service-with-cdn)
 - [How to Map Content Delivery Network (CDN) Content to a Custom Domain](http://msdn.microsoft.com/zh-cn/library/azure/gg680307.aspx)
 - [Using CDN for Azure](/documentation/articles/cdn-how-to-use-cdn)

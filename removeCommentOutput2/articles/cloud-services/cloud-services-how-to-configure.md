@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="09/22/2015"
+	ms.date="01/15/2016"
 	wacn.date=""/>
 
 
@@ -18,6 +18,7 @@
 # How to Configure Cloud Services
 
 > [AZURE.SELECTOR]
+- [Azure Management Portal](/documentation/articles/cloud-services-how-to-configure-portal)
 - [Azure Management Portal](/documentation/articles/cloud-services-how-to-configure)
 - [Azure Preview Portal](/documentation/articles/cloud-services-how-to-configure-portal)
 

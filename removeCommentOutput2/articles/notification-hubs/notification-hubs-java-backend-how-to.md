@@ -294,7 +294,7 @@ In this topic we showed how to create a simple Java REST client for Notification
 	- [Send cross-platform notifications to authenticated users]
 
 [Java SDK]: https://github.com/Azure/azure-notificationhubs-java-backend
-[Get started tutorial]: /documentation/articles/notification-hubs-ios-get-started/
+[Get started tutorial]:/documentation/articles/notification-hubs-ios-get-started
 [Get Started with Notification Hubs]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [Send breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [Send localized breaking news]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news

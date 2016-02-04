@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Configuring Python with Azure Websites" 
-	description="This tutorial describes options for authoring and configuring a basic Web server Gateway Interface (WSGI) compliant Python application on Azure Websites." 
+	pageTitle="Configuring Python with Azure Web Apps" 
+	description="This tutorial describes options for authoring and configuring a basic Web server Gateway Interface (WSGI) compliant Python application on Azure Web Apps." 
 	services="app-service" 
 	documentationCenter="python" 
 	tags="python"
@@ -10,15 +10,15 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/29/2015"
+	ms.date="12/16/2015"
 	wacn.date=""/>
 
 
 
 
-# Configuring Python with Azure Websites
+# Configuring Python with Azure Web Apps
 
-This tutorial describes options for authoring and configuring a basic Web Server Gateway Interface (WSGI) compliant Python application on [Azure Websites](/documentation/services/web-sites/).
+This tutorial describes options for authoring and configuring a basic Web Server Gateway Interface (WSGI) compliant Python application on [Azure Web Apps](/documentation/services/web-sites/).
 
 It describes additional features of Git deployment, such as virtual environment and package installation using requirements.txt.
 
@@ -39,7 +39,7 @@ It describes additional features of Git deployment, such as virtual environment 
 
 ## Bottle, Django or Flask?
 
-The Azure Marketplace contains templates for the Bottle, Django and Flask frameworks. If you are developing your first web app in Azure Websites, or you are not familiar with Git, we recommend that you follow one of these tutorials, which include step-by-step instructions for building a working application from the gallery using Git deployment from Windows or Mac:
+The Azure Marketplace contains templates for the Bottle, Django and Flask frameworks. If you are developing your first web app in Azure, or you are not familiar with Git, we recommend that you follow one of these tutorials, which include step-by-step instructions for building a working application from the gallery using Git deployment from Windows or Mac:
 
 - [Creating web apps with Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)
 - [Creating web apps with Django](/documentation/articles/web-sites-python-create-deploy-django-app)
@@ -53,12 +53,12 @@ This tutorial assumes an existing Azure subscription and access to the Azure Man
 If you do not have an existing web app, you can create one from the [Azure Management Portal](https://manage.windowsazure.cn).  Click the NEW button in the bottom left corner. A window will appear. Click COMPUTE, WEB SITE, then QUICK CREATE.
 
 ![](./media/web-sites-python-configure/configure-python-create-Website.png)
-<a name="git-publishing"></a>
-## Git Publishing
 
-Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control). This tutorial uses Git to create, manage, and publish our Python web app to Azure Websites.
+##<a name="git-publishing"></a> Git Publishing
 
-Once Git publishing is set up, a Git repository will be created and associated with your web app. The repository's URL will be displayed and can henceforth be used to push data from the local development environment to the cloud. To publish applications via Git, make sure a Git client is also installed and use the instructions provided to push your web app content to Azure Websites.
+Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control). This tutorial uses Git to create, manage, and publish our Python web app to Azure Web App.
+
+Once Git publishing is set up, a Git repository will be created and associated with your web app. The repository's URL will be displayed and can henceforth be used to push data from the local development environment to the cloud. To publish applications via Git, make sure a Git client is also installed and use the instructions provided to push your web app content to Azure Web App.
 
 
 ## Application Overview
@@ -74,7 +74,7 @@ In the next sections, the following files are created. They should be placed in 
 
 ## WSGI Handler
 
-WSGI is a Python standard described by [PEP 3333](http://www.python.org/dev/peps/pep-3333/) defining an interface between the web server and Python. It provides a standardized interface for writing various web applications and frameworks using Python. Popular Python web frameworks today use WSGI. Azure Websites gives you support for any such frameworks; in addition, advanced users can even author their own as long as the custom handler follows the WSGI specification guidelines.
+WSGI is a Python standard described by [PEP 3333](http://www.python.org/dev/peps/pep-3333/) defining an interface between the web server and Python. It provides a standardized interface for writing various web applications and frameworks using Python. Popular Python web frameworks today use WSGI. Azure Web Apps gives you support for any such frameworks; in addition, advanced users can even author their own as long as the custom handler follows the WSGI specification guidelines.
 
 Here's an example of an `app.py` that defines a custom handler:
 
@@ -382,8 +382,7 @@ Contents of `ptvs_virtualenv_proxy.py`:
 
 [AZURE.INCLUDE [web-sites-python-troubleshooting-virtual-environment](../includes/web-sites-python-troubleshooting-virtual-environment.md)]
 
+## Next steps
 
+For more information, see the [Python Developer Center](/develop/python/).
 
-
-
- 

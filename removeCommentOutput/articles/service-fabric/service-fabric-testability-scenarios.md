@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Running the Chaos test."
-   description="This article talks about the pre-canned service fabric scenarios shipped by Microsoft."
+   pageTitle="Chaos and failover tests | Windows Azure"
+   description="Using the Service Fabric chaos test and failover test scenarios to induce faults and verify the reliability of your services."
    services="service-fabric"
    documentationCenter=".net"
    authors="anmolah"
@@ -8,13 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/26/2015"
-   ms.author="anmola"/>
+	ms.service="service-fabric"
+	ms.date="08/26/2015"
+	wacn.date=""/>
 
 # Testability Scenarios
 Large distributed systems like cloud infrastructures are inherently unreliable. Service Fabric provides developers the ability to write services to run on top of unreliable infrastructures. In order to write high quality services, developers need to be able to induce such unreliable infrastructure to test the stability of their services. Service Fabric gives developers the ability to induce fault actions to test services in presence of failures. However, targeted simulated faults will only get you so far. To take the testing further Service Fabric ships pre-canned test scenarios. The scenarios simulate continuous interleaved faults, both graceful and ungraceful, throughout the cluster over extended periods of time. Once configured with the rate and kind of faults, it runs as a client side tool, through either C# APIs or PowerShell to generate faults in the cluster and your service. As part of the testability feature we ship the following scenarios.
@@ -28,7 +24,7 @@ The chaos scenario generates faults across the entire service fabric cluster. Th
 ### Faults simulated in Chaos test
  - Restart of a Node
  - Restart of a Deployed Code Package
- - Remove of a Replicas
+ - Removal of a Replica
  - Restart of a Replica
  - Move of a Primary Replica (optional)
  - Move of a secondary Replica (optional)
@@ -142,8 +138,8 @@ The Failover test scenario is a version of the Chaos test scenario targeting a s
 
 ### Faults simulated in Failover test
 - Restart a Deployed Code Package where partition is hosted
-- Remove a Primary/Secondary replica or Stateless instance
-- Restart a Primary Secondary Replica (If persisted service)
+- Remove a Primary/Secondary replica or stateless instance
+- Restart a Primary Secondary Replica (if persisted service)
 - Move a Primary Replica
 - Move a secondary Replica
 - Restart the partition.

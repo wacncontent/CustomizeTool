@@ -18,7 +18,7 @@ You will learn:
 * How to develop a PHP application using WebMatrix.
 * How to publish and re-publish your application to Azure using WebMatrix.
  
-By following this tutorial, you will build a simple Tasklist web application in PHP. The application will be hosted in an Azure  Website. A screenshot of the running application is below:
+By following this tutorial, you will build a simple Tasklist web site in PHP. The application will be hosted in an Azure  Website. A screenshot of the running application is below:
 
 ![Azure PHP  Website][running-app]
 

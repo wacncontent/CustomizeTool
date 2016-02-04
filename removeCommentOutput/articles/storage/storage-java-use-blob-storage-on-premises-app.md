@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="08/31/2015"
+	ms.date="12/01/2015"
 	wacn.date=""/>
 
 # On-premises application with blob storage
@@ -428,8 +428,7 @@ Follow these links to learn more about more complex storage tasks.
   [Download the Azure SDK for Java]: /develop/java/
   [How to Create a Storage Account]: /documentation/articles/storage-create-storage-account#create-a-storage-account
   [How to Manage Storage Accounts]: storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys
-  [How to Use the Blob Storage Service from Java]: /documentation/articles/storage-java-how-to-use-blob-storage
+  [How to Use the Blob Storage Service from Java]: storage-java-how-to-use-blob-storage.md
   [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
-  [Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
-  [Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+  [Azure Storage Client SDK Reference]: http://azure.github.io/azure-storage-java/
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/

@@ -76,7 +76,7 @@ The last step is to go to the target server, or servers, and generate the logins
 >
 >ALTER LOGIN <login name> DISABLE
 >
->DISABLE doesn’t change the password, so you can always enable it if needed.
+>DISABLE doesnât change the password, so you can always enable it if needed.
 
 ## Set up user access upon termination of a continuous copy relationship
 In the event of failover, the continuous copy relationship must be stopped between the primary and the secondaries. For information on this process, see [Recover an Azure SQL Database from an outage](/documentation/articles/sql-database-disaster-recovery).

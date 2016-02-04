@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="06/16/2015"
+	ms.date="12/14/2015"
 	wacn.date=""/>
 
 
@@ -20,6 +20,9 @@ To update your [Azure Linux agent](https://github.com/Azure/WALinuxAgent) on a L
 
 1. a running Linux vm in Azure
 2. You are connected to that Linux VM using SSH
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+
 
 > [AZURE.NOTE] If you will perform this task from a Windows computer, you can use Putty to SSH into your Linux machine. For more information, see [How to Log on to a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-how-to-log-on).
 
@@ -83,11 +86,15 @@ Open [the release of Azure Linux Agent in GitHub](https://github.com/Azure/WALin
 
   For most of Linux, use
 
-      #sudo cp waagent /usr/sbin
+    #sudo cp waagent /usr/sbin
 
   For CoreOS, use:
 
     #sudo cp waagent /usr/share/oem/bin/
+
+  If this is the new installation of Azure Linux Agent, run below:
+ 
+    #sudo /usr/sbin/waagent -install -verbose
 
 ###For the version 2.1.x, use:
 

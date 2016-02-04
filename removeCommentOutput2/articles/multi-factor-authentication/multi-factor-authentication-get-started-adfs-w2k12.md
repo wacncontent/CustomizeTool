@@ -7,21 +7,17 @@
 	manager="stevenpo" 
 	editor="curtland"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2015" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.date="11/19/2015"
+	wacn.date=""/>
 
 
 # Secure cloud and on-premises resources using Azure Multi-Factor Authentication Server with Windows Server 2012 R2 AD FS
 
 If your organization is federated with Azure AD and you have resources that are on-premises or in the cloud that you wish to secure you can do this by using the Azure Multi-Factor Authentication Sever and configuring it to work with AD FS so that multi-factor authentication is triggered for high value end points.
 
-This documentation covers using the Azure Multi-Factor Authentication Server with AD FS in Windows Server 2012 R2.  For infomation on using Azure Multi-Factor Authentication with AD FS 2.0 see [Secure cloud and on-premises resources using Azure Multi-Factor Authentication Server with AD FS 2.0](multi-factor-authentication-get-started-adfs-adfs2.md).
+This documentation covers using the Azure Multi-Factor Authentication Server with AD FS in Windows Server 2012 R2.  For infomation on using Azure Multi-Factor Authentication with AD FS 2.0 see [Secure cloud and on-premises resources using Azure Multi-Factor Authentication Server with AD FS 2.0](/documentation/articles/multi-factor-authentication-get-started-adfs-adfs2).
 
 ## Securing Windows Server 2012 R2 AD FS with Azure Multi-Factor Authentication Server
 
@@ -41,7 +37,7 @@ Before you begin, be aware of the following information:
 
 ### To install the Azure Multi-Factor Authentication Server locally on the same server as AD FS
 
-1. Download and install the Azure Multi-Factor Authentication Server on your AD FS federation server. For information on installing the Azure Multi-Factor Authentication server see [Getting started with the Azure Multi-Factor Authentication Server](multi-factor-authentication-get-started-server.md)
+1. Download and install the Azure Multi-Factor Authentication Server on your AD FS federation server. For information on installing the Azure Multi-Factor Authentication server see [Getting started with the Azure Multi-Factor Authentication Server](/documentation/articles/multi-factor-authentication-get-started-server)
 2. In the Azure Multi-Factor Authentication Server user interface, select the AD FS icon and select options for Allow user enrollement and Allow users to select method.
 3. Select any additional options.
 4. Click Install AD FS Adapter.

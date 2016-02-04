@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="DocumentDB query cheat sheet | Microsoft Azure" 
+	pageTitle="DocumentDB query cheat sheet | Windows Azure" 
 	description="A printable query cheat sheet that helps you use DocumentDB's SQL-like grammar to query JSON documents in its NoSQL database." 
 	services="documentdb" 
 	documentationCenter="" 
@@ -7,20 +7,16 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/20/2015" 
-	ms.author="mimig"/>
+<tags
+	ms.service="documentdb"
+	ms.date="08/20/2015"
+	wacn.date=""/>
 
 # Downloadable DocumentDB SQL query cheat sheet
 
 The **DocumentDB Query Cheat Sheet** helps you quickly write queries for DocumentDB data by displaying common queries, keywords, built-in functions, and operators in an easy to print reference sheet. 
 
-DocumentDB supports relational, hierarchical,  and spatial querying of JSON documents using [SQL](documentdb-sql-query.md) without specifying a schema or secondary indexes. In addition to the standard ANSI-SQL keywords and operators, DocumentDB supports JavaScript user defined functions (UDFs), JavaScript operators, and a multitude of built-in functions.
+DocumentDB supports relational, hierarchical,  and spatial querying of JSON documents using [SQL](/documentation/articles/documentdb-sql-query) without specifying a schema or secondary indexes. In addition to the standard ANSI-SQL keywords and operators, DocumentDB supports JavaScript user defined functions (UDFs), JavaScript operators, and a multitude of built-in functions.
 
 ## Download  the DocumentDB query cheat sheet
 
@@ -35,6 +31,6 @@ Write your queries faster by downloading the query cheat sheet and using it as a
 
 ## More help with queries
 
-- For a walk through of the query options available in DocumentDB, see [Query DocumentDB](documentdb-sql-query.md).
-- For the related reference documentation, see [DocumentDB SQL Query Language](https://msdn.microsoft.com/library/azure/dn782250.aspx).
+- For a walk through of the query options available in DocumentDB, see [Query DocumentDB](/documentation/articles/documentdb-sql-query).
+- For the related reference documentation, see [DocumentDB SQL Query Language](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx).
 

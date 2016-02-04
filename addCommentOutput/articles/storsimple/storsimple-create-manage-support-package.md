@@ -1,19 +1,15 @@
 <properties 
-   pageTitle="Create a StorSimple support package | Microsoft Azure"
+   pageTitle="Create a StorSimple support package | Windows Azure"
    description="Learn how to create, decrypt, and edit a support package for your StorSimple device."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
    editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/15/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="09/15/2015"
+	wacn.date=""/>
 
 
 # Create and manage a StorSimple support package
@@ -94,16 +90,28 @@ Perform the following steps to create a support package in Windows PowerShell fo
 
 	- For network shares that are password protected, type:
 
+<!-- deleted by customization
+		`Export-HcsSupportPackage -PackageTag "MySupportPackage" -Credential "Username" -Force`
+-->
+<!-- keep by customization: begin -->
 		`Export-HcsSupportPackage –PackageTag "MySupportPackage" –Credential "Username" -Force`
+<!-- keep by customization: end -->
 
 		You will be prompted for a password, a path to the network shared folder, and an encryption passphrase (because the support package is encrypted). When these are provided, a support package will be created in the specified folder.
 											
 
 	- For open network shared folders (those that are not password protected), you do not need the `-Credential` parameter. Type the following: 
 
+<!-- deleted by customization
+		`Export-HcsSupportPackage -PackageTag "MySupportPackage" -Force`
+
+		The support package will be created for both controllers in the specified network shared folder. It is an encrypted, compressed file that can be sent to Microsoft Support for troubleshooting. For more information, see [Contact Microsoft Support](/documentation/articles/storsimple-contact-microsoft-support).
+-->
+<!-- keep by customization: begin -->
 		`Export-HcsSupportPackage –PackageTag "MySupportPackage" -Force`
 
 		The support package will be created for both controllers in the specified network shared folder. It is an encrypted, compressed file that can be sent to Microsoft Support for troubleshooting. For more information, see [Contact Microsoft Support](storsimple-contact-microsoft-support.md).
+<!-- keep by customization: end -->
 
 
 ### More information about the Export-HcsSupportPackage cmdlet
@@ -196,7 +204,7 @@ An example demonstrating how to decrypt, edit and re-encrypt a support package i
 
 ## Next steps
 
-- Learn how to [use support packages and device logs to troubleshoot your device deployment](storsimple-troubleshoot-deployment.md#support-packages-and-device-logs-available-for-troubleshooting). 
-- Learn how to [use the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+- Learn how to [use support packages and device logs to troubleshoot your device <!-- deleted by customization deployment](/documentation/articles/storsimple-troubleshoot-deployment#support-packages-and-device-logs-available-for-troubleshooting) --><!-- keep by customization: begin --> deployment](storsimple-troubleshoot-deployment.md#support-packages-and-device-logs-available-for-troubleshooting) <!-- keep by customization: end -->.
+- Learn how to [use the StorSimple Manager service to administer your StorSimple <!-- deleted by customization device](/documentation/articles/storsimple-manager-service-administration) --><!-- keep by customization: begin --> device](storsimple-manager-service-administration.md) <!-- keep by customization: end -->.
 
 

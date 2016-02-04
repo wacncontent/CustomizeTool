@@ -1,6 +1,8 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="SQL Server AlwaysOn with Azure Resource Manager template | Windows Azure"
-	description="Easily deploy five servers that support SQL Server AlwaysOn with a Resource Manager template and the Azure preview portal, Azure PowerShell, or the Azure CLI."
+	description="Easily deploy five servers that support SQL Server AlwaysOn with a Resource Manager template and the Azure Management Portal, Azure PowerShell, or the Azure CLI."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="davidmu1"
@@ -15,15 +17,17 @@
 
 # Deploy SQL Server AlwaysOn with an Azure Resource Manager template
 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
+
 Use the instructions in this article to deploy SQL Server AlwaysOn using an Azure Resource Manager template. This template creates five virtual machines in a new virtual network on two different subnets.
 
 ![](./media/virtual-machines-workload-template-sql-alwayson/five-server-sqlao.png)
 
-You can run the template with the Azure preview portal, Azure PowerShell, or the Azure CLI.
+You can run the template with the Azure Management Portal, Azure PowerShell, or the Azure CLI.
 
-## Azure preview portal
+## Azure Management Portal
 
-To deploy this workload using an Azure Resource Manager template and the Azure preview portal, click [here](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsql-server-2014-alwayson-dsc%2Fazuredeploy.json).
+To deploy this workload using an Azure Resource Manager template and the Azure Management Portal, click [here](https://manage.windowsazure.cn#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsql-server-2014-alwayson-dsc%2Fazuredeploy.json).
 
 ![](./media/virtual-machines-workload-template-sql-alwayson/azure-portal-template.png)
 
@@ -39,7 +43,7 @@ Depending on the template, it can take some time for Azure to build the workload
 
 ## Azure PowerShell
 
-Before you begin, make sure you have the right version of Azure PowerShell installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click [here](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/#setting-up-powershell-for-resource-manager-templates).
+[AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
 
 Fill in an Azure deployment name, a new Resource Group name, and an Azure datacenter location in the following set of commands. Remove everything within the quotes, including the < and > characters.
 
@@ -99,4 +103,4 @@ When the template execution is complete, you have a new five-server SQL Server A
 
 [Virtual machines documentation](/documentation/services/virtual-machines/)
 
-[How to install and configure Azure PowerShell](/documentation/articles/install-configure-powershell)
+[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)

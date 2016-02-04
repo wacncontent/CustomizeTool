@@ -4,11 +4,11 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/18/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # Connecting classic VNets to new VNets
@@ -113,9 +113,9 @@ To create a VM in the classic VNet by using Azure Service Manager PowerShell cmd
 3.  Create the VM by running the commands below. Make sure to replace the user name and password values.
 
 		$vm1 = New-AzureVMConfig -Name "VM01" -InstanceSize "ExtraLarge" `
-		    -Image $WinImage.ImageName –AvailabilitySetName "MyAVSet1" `
+		    -Image $WinImage.ImageName -AvailabilitySetName "MyAVSet1" `
 		    -MediaLocation "https://v1v2teststorage1.blob.core.chinacloudapi.cn/vhd/vm01.vhd"
-		Add-AzureProvisioningConfig –VM $vm1 -Windows `
+		Add-AzureProvisioningConfig -VM $vm1 -Windows `
 		    -AdminUserName "user" -Password "P@ssw0rd" 
 
 4.  Connect the VM to *Subnet1* by running the commands below.
@@ -126,7 +126,7 @@ To create a VM in the classic VNet by using Azure Service Manager PowerShell cmd
 5. Create a new cloud service to host the VM by running the command below.
 
 		New-AzureService -ServiceName "v1v2svc01" -Location "China East"
- 		New-AzureVM -ServiceName "v1v2svc01" –VNetName "vnet01" –VMs $vm1
+ 		New-AzureVM -ServiceName "v1v2svc01" -VNetName "vnet01" -VMs $vm1
 
 ### Step 3: Create a VPN gateway for the classic VNet 
 
@@ -268,9 +268,9 @@ You need to configure the classic VNet to use the IP address of the gateway crea
 
 4. Open the file you just downloaded, and edit the **LocalNetworkSite** element for **vnet02** to add the IP address of the gateway for the new VNet obtained in step 1 above. The element should look similar to the sample below.
 
-	      <LocalNetworkSite name="vnet03">
+	      <LocalNetworkSite name="vnet02">
 	        <AddressSpace>
-	          <AddressPrefix>10.3.0.0/16</AddressPrefix>
+	          <AddressPrefix>10.2.0.0/16</AddressPrefix>
 	        </AddressSpace>
 	        <VPNGatewayAddress>23.99.213.28</VPNGatewayAddress>
 	      </LocalNetworkSite>

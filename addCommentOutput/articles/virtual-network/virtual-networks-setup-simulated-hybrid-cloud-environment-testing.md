@@ -77,7 +77,7 @@ First, create a new virtual network named TestVNET.
 	- In the **CIDR (Address Count)** column for the TestSubnet, click **/24 (256)**.
 7.	Click the Complete icon. Wait until the virtual network is created before continuing.
 
-Next, use the instructions in [How to install and configure Azure PowerShell to install Azure PowerShell on your local computer](/documentation/articles/install-configure-powershell).
+Next, use the instructions in [How to install and configure Azure PowerShell to install Azure PowerShell on your local computer](/documentation/articles/powershell-install-configure).
 
 Next, create a new cloud service for the TestVNET virtual network. You must pick a unique name. For example, you could name it **TestVNET-***UniqueSequence*, in which *UniqueSequence* is an abbreviation of your organization. For example, if your organization is named Tailspin Toys, you could name the cloud service **TestVNET-Tailspin**.
 

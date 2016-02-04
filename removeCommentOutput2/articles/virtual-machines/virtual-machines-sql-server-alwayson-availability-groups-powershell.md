@@ -9,16 +9,19 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/14/2015"
+	ms.date="12/04/2015"
 	wacn.date=""/>
 
 # Configure AlwaysOn Availability Groups in Azure VM (PowerShell)
 
 > [AZURE.SELECTOR]
-- [Portal](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
+- [Azure Management Portal](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
 - [PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
 
 <br/>
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
 
 Azure virtual machines (VMs) can help database administrators to implement lower the cost of a high availability SQL Server system. This tutorial shows you how to implement an availability group using SQL Server AlwaysOn end-to-end inside an Azure environment. At the end of the tutorial, your SQL Server AlwaysOn solution in Azure will consist of the following elements:
 
@@ -147,7 +150,7 @@ This tutorial is intended to show you the steps required to set up the described
 				-Password $vmAdminPassword |
 				New-AzureVM `
 					-ServiceName $dcServiceName `
-					–AffinityGroup $affinityGroupName `
+					-AffinityGroup $affinityGroupName `
 					-VNetName $virtualNetworkName
 
 	This series of piped commands do the following things:
@@ -180,7 +183,7 @@ The DC server is now successfully provisioned. Next, you will configure the Acti
 
 ## Configure the Domain Controller
 
-1. Connect to the DC server by launching the remote desktop file. Use the machine administrator’s username AzureAdmin and password **Contoso!000**, which you specified when creating the new VM.
+1. Connect to the DC server by launching the remote desktop file. Use the machine administrator's username AzureAdmin and password **Contoso!000**, which you specified when creating the new VM.
 
 1. Open a PowerShell window in administrator mode.
 
@@ -288,7 +291,7 @@ The DC server is now successfully provisioned. Next, you will configure the Acti
 					-SubnetNames $subnetName |
 					New-AzureVM `
 						-ServiceName $sqlServiceName `
-						–AffinityGroup $affinityGroupName `
+						-AffinityGroup $affinityGroupName `
 						-VNetName $virtualNetworkName `
 						-DnsSettings $dnsSettings
 
@@ -416,7 +419,7 @@ In this section, you need to modify the three servers you will use in the WSFC c
 
 Now, you are ready to start. Beginning with **ContosoQuorum**, follow the steps below:
 
-1. Connect to **ContosoQuorum** by launching the remote desktop files. Use the machine administrator’s username **AzureAdmin** and password **Contoso!000**, which you specified when creating the VMs.
+1. Connect to **ContosoQuorum** by launching the remote desktop files. Use the machine administrator's username **AzureAdmin** and password **Contoso!000**, which you specified when creating the VMs.
 
 1. Verify that the computers have been successfully joined to **corp.contoso.com**.
 
@@ -439,7 +442,7 @@ Now, you are ready to start. Beginning with **ContosoQuorum**, follow the steps 
 
 Next, initialize **ContosoSQL1** and **ContosoSQL2**. Follow the steps below, which are identical for both of the SQL Server VMs.
 
-1. Connect to the two SQL Server VMs by launching the remote desktop files. Use the machine administrator’s username **AzureAdmin** and password **Contoso!000**, which you specified when creating the VMs.
+1. Connect to the two SQL Server VMs by launching the remote desktop files. Use the machine administrator's username **AzureAdmin** and password **Contoso!000**, which you specified when creating the VMs.
 
 1. Verify that the computers have been successfully joined to **corp.contoso.com**.
 

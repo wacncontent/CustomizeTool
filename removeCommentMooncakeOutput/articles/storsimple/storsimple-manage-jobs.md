@@ -1,21 +1,19 @@
 <properties 
-   pageTitle="View and manage StorSimple jobs | Microsoft Azure"
+   pageTitle="View and manage StorSimple jobs | Windows Azure"
    description="Describes the StorSimple Manager service Jobs page and how to use it to track recent, current, and scheduled backup jobs."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
    manager="carolz"
    editor=""/>
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/15/2015"
-   ms.author="alkohli" />
+<tags
+	ms.service="storsimple"
+	ms.date="12/14/2015"
+	wacn.date=""/>
 
 # Use the StorSimple Manager service to view and manage StorSimple jobs
+
+[AZURE.INCLUDE [storsimple-version-selector-manage-jobs](../includes/storsimple-version-selector-manage-jobs.md)]
 
 ## Overview
 
@@ -25,27 +23,27 @@ The **Jobs** page provides a single central portal for viewing and managing jobs
 
 You can quickly find the jobs you are interested in by filtering on fields such as:
 
-- **Status** – Jobs can be running, scheduled, failed, completed, canceling, or canceled.
+- **Status** - Jobs can be running, scheduled, failed, completed, canceling, or canceled.
 
-- **Type** – Jobs can be created as a result of a scheduled or an on-demand backup (**Take Backup**), cloning, a device restore, or an update operation.
+- **Type** - Jobs can be created as a result of a scheduled or an on-demand backup (**Take Backup**), cloning, a device restore, or an update operation.
 
-- **Devices** – Jobs are initiated on a certain device connected to your service.
+- **Devices** - Jobs are initiated on a certain device connected to your service.
 
-- **From and To** – Jobs can be filtered based on the date and time range.
+- **From and To** - Jobs can be filtered based on the date and time range.
 
 The filtered jobs are then tabulated on the basis of the following attributes:
 
-- **Type** – Backup, clone, restore, failover, or update.
+- **Type** - Backup, clone, restore, failover, or update.
 
-- **Status** – Running, scheduled, failed, completed, canceling, or canceled.
+- **Status** - Running, scheduled, failed, completed, canceling, or canceled.
 
-- **Entity** – The jobs can be associated with a volume, a backup policy, or a device. A clone job is associated with a volume, whereas a scheduled backup job is associated with a backup policy. A device job is created as a result of a disaster recovery (DR) or a restore operation.
+- **Entity** - The jobs can be associated with a volume, a backup policy, or a device. A clone job is associated with a volume, whereas a scheduled backup job is associated with a backup policy. A device job is created as a result of a disaster recovery (DR) or a restore operation.
 
-- **Device** – The name of the device on which the job was started.
+- **Device** - The name of the device on which the job was started.
 
-- **Started On** – The time when the job was started.
+- **Started On** - The time when the job was started.
 
-- **Progress** – The percentage completion of a running job. For a completed job, this should always be 100%.
+- **Progress** - The percentage completion of a running job. For a completed job, this should always be 100%.
 
 The list of jobs is refreshed every 30 seconds.
 
@@ -87,6 +85,6 @@ This job is now canceled.
 
 ## Next steps
 
-- Learn how to [manage your StorSimple backup policies](storsimple-manage-backup-policies.md).
+- Learn how to [manage your StorSimple backup policies](/documentation/articles/storsimple-manage-backup-policies).
 
-- Learn how to [use the StorSimple Manager service to administer your StorSimple device](storsimple-manager-service-administration.md).
+- Learn how to [use the StorSimple Manager service to administer your StorSimple device](/documentation/articles/storsimple-manager-service-administration).

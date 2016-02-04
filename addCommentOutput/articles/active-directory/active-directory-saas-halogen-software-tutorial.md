@@ -3,13 +3,13 @@
 	description="Learn how to configure single sign-on between Azure Active Directory and Halogen Software."
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
+	authors="jeevansd"
 	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/01/2015"
+	ms.date="12/18/2015"
 	wacn.date=""/>
 
 
@@ -37,7 +37,12 @@ To configure Azure AD integration with Halogen Software, you need the following 
 To test the steps in this tutorial, you should follow these recommendations:
 
 - You should not use your production environment, unless this is necessary.
+<!-- deleted by customization
 - If you don't have an Azure AD trial environment, you can get a one-month trial [here](/pricing/1rmb-trial/). 
+-->
+<!-- keep by customization: begin -->
+- If you don't have an Azure AD trial environment, you can get a one-month trial <!-- deleted by customization [here](/pricing/1rmb-trial/) --><!-- keep by customization: begin --> [here](https://azure.microsoft.com/pricing/1rmb-trial/) <!-- keep by customization: end -->.
+<!-- keep by customization: end -->
 
  
 ## Scenario Description

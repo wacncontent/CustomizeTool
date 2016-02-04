@@ -18,13 +18,13 @@
  
 Since Azure Websites Environments provide an isolated runtime environment deployed into a virtual network, developers can create a layered security architecture providing differing levels of network access for each physical application tier.
 
-A common desire is to hide API back-ends from general Internet access, and only allow APIs to be called by upstream web apps.  [Network security groups (NSGs)][NetworkSecurityGroups] can be used on subnets containing Azure Websites Environments to restrict public access to API applications.
+A common desire is to hide API back-ends from general Internet access, and only allow APIs to be called by upstream web sites.  [Network security groups (NSGs)][NetworkSecurityGroups] can be used on subnets containing Azure Websites Environments to restrict public access to API applications.
 
-The diagram below shows an example architecture with a WebAPI based app deployed on an Azure Websites Environment.  Three separate web app instances, deployed on three separate Azure Websites Environments, make back-end calls to the same WebAPI app.
+The diagram below shows an example architecture with a WebAPI based app deployed on an Azure Websites Environment.  Three separate web site instances, deployed on three separate Azure Websites Environments, make back-end calls to the same WebAPI app.
 
 ![Conceptual Architecture][ConceptualArchitecture] 
 
-The green plus signs indicate that the network security group on the subnet containing "apiase" allows inbound calls from the upstream web apps, as well calls from itself.  However the same network security group explicitly denies access to general inbound traffic from the Internet. 
+The green plus signs indicate that the network security group on the subnet containing "apiase" allows inbound calls from the upstream web sites, as well calls from itself.  However the same network security group explicitly denies access to general inbound traffic from the Internet. 
 
 The remainder of this topic walks through the steps needed to configure the network security group on the subnet containing "apiase".
 
