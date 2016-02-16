@@ -1,5 +1,5 @@
 {
-    "customize": false,
+    "customize": true,
     "path": "E:/GitHub/azure-content-pr/",
     "language": "en-us",
     "folders": [
@@ -11,32 +11,13 @@
         "articles/redis-cache/",
         "articles/traffic-manager/",
         "articles/virtual-network/",
-        "articles/active-directory/",
-        "articles/batch/",
-        "articles/cache/",
-        "articles/cdn/",
-        "articles/cloud-services/",
-        "articles/event-hubs/",
-        "articles/expressroute/",
-        "articles/mobile-services/",
-        "articles/scheduler/",
-        "articles/service-bus/",
-        "articles/site-recovery/",
-        "articles/sql-database/",
-        "articles/storage/",
-        "articles/application-gateway/",
-        "articles/backup/",
-        "articles/notification-hubs/",
-        "articles/Key-Vault/",
-        "articles/multi-factor-authentication/",
-        "articles/"
     ],
   "output_folder": "output/",
   "compare": {
     "compare": false,
     "path": "addCommentOutput/"
   },
-  "updateFileList": false,
+  "updateFileList": true,
   "includes_search_keys": {
     "articles/app-service-web/": [ "web", "publishing-with-git" ],
     "articles/automation/": [ "automation" ],
@@ -80,8 +61,8 @@
     "check_dates": false,
     "815path": "E:/GitHub/techcontent/",
     "removeComment": {
-        "remove": false,
-        "path": "removeCommentOutput2/"
+        "remove": true,
+        "path": "removeCommentOutput/"
     },
     "updateLinks": false,
     "addComment": {
@@ -90,7 +71,7 @@
         "mooncakePath": "removeCommentMooncakeOutput/",
         "outputPath": "addCommentOutput/"
     },
-    "wordCount": true,
+    "wordCount": false,
     "getDeletionAndReplacement": {
         "get": false,
         "input": "addCommentOutput/",

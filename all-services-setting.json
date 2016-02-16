@@ -3,6 +3,7 @@
     "path": "C:/Users/Administrator/Documents/GitHub/azure-content-pr/",
     "language": "en-us",
     "folders": [
+        "articles/virtual-machines/",
         "articles/app-service-web/",
         "articles/automation/",
         "articles/hdinsight/",
@@ -23,10 +24,11 @@
         "articles/site-recovery/",
         "articles/sql-database/",
         "articles/storage/",
-        "articles/virtual-machines/",
         "articles/application-gateway/",
         "articles/backup/",
         "articles/notification-hubs/",
+        "articles/Key-Vault/",
+        "articles/multi-factor-authentication/",
         "articles/"
     ],
     "output_folder": "output/",

@@ -2278,3 +2278,95 @@ C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\Micro
 2016-01-22T09:19:53: [WARNING] Library was set explicitly - skipping path detection
 2016-01-22T09:19:53: IncludeModulesFromModulePath = win32com
 2016-01-22T09:19:53: Deleting 0 files
+
+2016-02-16T09:54:09: Start analysis
+2016-02-16T09:54:09: [WARNING] Library was set explicitly - skipping path detection
+2016-02-16T09:54:09: IncludeModulesFromModulePath = win32com
+2016-02-16T09:54:10: Deleting 38 files
+2016-02-16T09:54:10: astropy.CallDepth = 0
+2016-02-16T09:54:10: matplotlib.CallDepth = 3
+2016-02-16T09:54:10: pandas.CallDepth = 0
+2016-02-16T09:54:10: sympy.CallDepth = 0
+2016-02-16T09:54:10: Start group "E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet" with 38 files
+2016-02-16T09:54:24: Parsing "chardet.big5freq" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\big5freq.py")
+2016-02-16T09:54:24: Parsing "chardet.big5prober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\big5prober.py")
+2016-02-16T09:54:24: Parsing "chardet.chardetect" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\chardetect.py")
+2016-02-16T09:54:24: Parsing "chardet.chardistribution" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\chardistribution.py")
+2016-02-16T09:54:24: Parsing "chardet.charsetgroupprober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\charsetgroupprober.py")
+2016-02-16T09:54:24: Parsing "chardet.charsetprober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\charsetprober.py")
+2016-02-16T09:54:24: Parsing "chardet.codingstatemachine" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\codingstatemachine.py")
+2016-02-16T09:54:24: Parsing "chardet.compat" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\compat.py")
+2016-02-16T09:54:24: Parsing "chardet.constants" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\constants.py")
+2016-02-16T09:54:24: Parsing "chardet.cp949prober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\cp949prober.py")
+2016-02-16T09:54:24: Parsing "chardet.escprober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\escprober.py")
+2016-02-16T09:54:24: Parsing "chardet.escsm" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\escsm.py")
+2016-02-16T09:54:24: Parsing "chardet.eucjpprober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\eucjpprober.py")
+2016-02-16T09:54:24: Parsing "chardet.euckrfreq" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\euckrfreq.py")
+2016-02-16T09:54:24: Parsing "chardet.euckrprober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\euckrprober.py")
+2016-02-16T09:54:24: Parsing "chardet.euctwfreq" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\euctwfreq.py")
+2016-02-16T09:54:24: Parsing "chardet.euctwprober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\euctwprober.py")
+2016-02-16T09:54:24: Parsing "chardet.gb2312freq" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\gb2312freq.py")
+2016-02-16T09:54:24: Parsing "chardet.gb2312prober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\gb2312prober.py")
+2016-02-16T09:54:24: Parsing "chardet.hebrewprober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\hebrewprober.py")
+2016-02-16T09:54:25: Parsing "chardet.jisfreq" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\jisfreq.py")
+2016-02-16T09:54:25: Parsing "chardet.jpcntx" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\jpcntx.py")
+2016-02-16T09:54:25: Parsing "chardet.langbulgarianmodel" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\langbulgarianmodel.py")
+2016-02-16T09:54:25: Parsing "chardet.langcyrillicmodel" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\langcyrillicmodel.py")
+2016-02-16T09:54:25: Parsing "chardet.langgreekmodel" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\langgreekmodel.py")
+2016-02-16T09:54:25: Parsing "chardet.langhebrewmodel" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\langhebrewmodel.py")
+2016-02-16T09:54:25: Parsing "chardet.langhungarianmodel" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\langhungarianmodel.py")
+2016-02-16T09:54:25: Parsing "chardet.langthaimodel" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\langthaimodel.py")
+2016-02-16T09:54:25: Parsing "chardet.latin1prober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\latin1prober.py")
+2016-02-16T09:54:25: Parsing "chardet.mbcharsetprober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\mbcharsetprober.py")
+2016-02-16T09:54:25: Parsing "chardet.mbcsgroupprober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\mbcsgroupprober.py")
+2016-02-16T09:54:25: Parsing "chardet.mbcssm" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\mbcssm.py")
+2016-02-16T09:54:25: Parsing "chardet.sbcharsetprober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\sbcharsetprober.py")
+2016-02-16T09:54:25: Parsing "chardet.sbcsgroupprober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\sbcsgroupprober.py")
+2016-02-16T09:54:25: Parsing "chardet.sjisprober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\sjisprober.py")
+2016-02-16T09:54:25: Parsing "chardet.universaldetector" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\universaldetector.py")
+2016-02-16T09:54:25: Parsing "chardet.utf8prober" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\utf8prober.py")
+2016-02-16T09:54:25: Parsing "chardet" ("E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet\__init__.py")
+2016-02-16T09:54:25: Parsing complete
+2016-02-16T09:54:25: Analyzing "chardet.big5freq"
+2016-02-16T09:54:25: Analyzing "chardet.big5prober"
+2016-02-16T09:54:25: Analyzing "chardet.chardetect"
+2016-02-16T09:54:25: Analyzing "chardet.chardistribution"
+2016-02-16T09:54:25: Analyzing "chardet.charsetgroupprober"
+2016-02-16T09:54:25: Analyzing "chardet.charsetprober"
+2016-02-16T09:54:25: Analyzing "chardet.codingstatemachine"
+2016-02-16T09:54:25: Analyzing "chardet.compat"
+2016-02-16T09:54:25: Analyzing "chardet.constants"
+2016-02-16T09:54:25: Analyzing "chardet.cp949prober"
+2016-02-16T09:54:25: Analyzing "chardet.escprober"
+2016-02-16T09:54:25: Analyzing "chardet.escsm"
+2016-02-16T09:54:25: Analyzing "chardet.eucjpprober"
+2016-02-16T09:54:25: Analyzing "chardet.euckrfreq"
+2016-02-16T09:54:25: Analyzing "chardet.euckrprober"
+2016-02-16T09:54:25: Analyzing "chardet.euctwfreq"
+2016-02-16T09:54:25: Analyzing "chardet.euctwprober"
+2016-02-16T09:54:25: Analyzing "chardet.gb2312freq"
+2016-02-16T09:54:25: Analyzing "chardet.gb2312prober"
+2016-02-16T09:54:25: Analyzing "chardet.hebrewprober"
+2016-02-16T09:54:25: Analyzing "chardet.jisfreq"
+2016-02-16T09:54:25: Analyzing "chardet.jpcntx"
+2016-02-16T09:54:25: Analyzing "chardet.langbulgarianmodel"
+2016-02-16T09:54:25: Analyzing "chardet.langcyrillicmodel"
+2016-02-16T09:54:25: Analyzing "chardet.langgreekmodel"
+2016-02-16T09:54:25: Analyzing "chardet.langhebrewmodel"
+2016-02-16T09:54:25: Analyzing "chardet.langhungarianmodel"
+2016-02-16T09:54:25: Analyzing "chardet.langthaimodel"
+2016-02-16T09:54:25: Analyzing "chardet.latin1prober"
+2016-02-16T09:54:25: Analyzing "chardet.mbcharsetprober"
+2016-02-16T09:54:25: Analyzing "chardet.mbcsgroupprober"
+2016-02-16T09:54:25: Analyzing "chardet.mbcssm"
+2016-02-16T09:54:25: Analyzing "chardet.sbcharsetprober"
+2016-02-16T09:54:25: Analyzing "chardet.sbcsgroupprober"
+2016-02-16T09:54:25: Analyzing "chardet.sjisprober"
+2016-02-16T09:54:25: Analyzing "chardet.universaldetector"
+2016-02-16T09:54:25: Analyzing "chardet.utf8prober"
+2016-02-16T09:54:25: Analyzing "chardet"
+2016-02-16T09:54:25: Starting analysis of 38 modules
+2016-02-16T09:54:25: Analysis complete
+2016-02-16T09:54:25: Saving group "E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet"
+2016-02-16T09:54:25: End of group "E:\GitHub\CustomizeTool\env27\Lib\site-packages\chardet"
+2016-02-16T09:54:26: Deleting 0 files
