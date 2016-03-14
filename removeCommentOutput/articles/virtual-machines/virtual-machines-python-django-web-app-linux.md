@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Python web site with Django on Linux | Windows Azure" 
-	description="Learn how to host a Django-based web site on Azure using a Linux virtual machine." 
+	pageTitle="Python web app with Django on Linux | Windows Azure" 
+	description="Learn how to host a Django-based web application on Azure using a Linux virtual machine." 
 	services="virtual-machines" 
 	documentationCenter="python" 
 	authors="huguesv" 
@@ -13,7 +13,7 @@
 	ms.date="11/17/2015"
 	wacn.date=""/>
 	
-# Django Hello World web site on a Linux VM
+# Django Hello World web application on a Linux VM
 
 > [AZURE.SELECTOR]
 - [Windows](/documentation/articles/virtual-machines-python-django-web-app-windows-server)

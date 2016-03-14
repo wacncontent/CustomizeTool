@@ -38,7 +38,7 @@ This topic describes several example XML presets that configure the encoder sett
 
 ##Encoding to Dolby Digital Plus 5.1 Multichannel
 
-To encode to Dolby Digital Plus 5.1 Multichannel, set Codec and EncoderMode attributes to “DolbyDigitalPlus”. The number of channels encoded is specified using the AudioCodingMode attribute of the <DolbyDigitalPlusAudioProfile> element. For a 5.1 multichannel encoding set AudioCodingMode to “Mode32”. 
+To encode to Dolby Digital Plus 5.1 Multichannel, set Codec and EncoderMode attributes to "DolbyDigitalPlus". The number of channels encoded is specified using the AudioCodingMode attribute of the <DolbyDigitalPlusAudioProfile> element. For a 5.1 multichannel encoding set AudioCodingMode to "Mode32". 
 
 The following XML preset contains a complete Azure Media Encoder XML preset that produces an MP4 file with H264 Broadband 1080p video and Dolby Digital Plus 5.1 Multichannel audio. This preset also specifies to encode a Low Frequency Effects (LFE) channel, which is specified by setting the LFEOn attribute to true. Any attributes not specified will have their default values.
 
@@ -123,7 +123,7 @@ This XML preset should be passed to the **Azure Media Encoder** to create an enc
 
 ##Encoding to Dolby Digital Plus Stereo
 
-To encode to Dolby Digital Plus stereo, set the Codec and EncoderMode attributes to “DolbyDigitalPlus”. The number of channels encoded is specified using the AudioCodingMode attribute. For a stereo encoding set AudioCodingMode to “Mode20”. The following XML preset example shows the <DolbyDigitalPlusAudioProfile> used to encode to 5.1 audio. Any attributes not specified will have their default values.
+To encode to Dolby Digital Plus stereo, set the Codec and EncoderMode attributes to "DolbyDigitalPlus". The number of channels encoded is specified using the AudioCodingMode attribute. For a stereo encoding set AudioCodingMode to "Mode20". The following XML preset example shows the <DolbyDigitalPlusAudioProfile> used to encode to 5.1 audio. Any attributes not specified will have their default values.
 
 This XML preset should be passed to the **Azure Media Encoder** to create an encoding job as described in [this](/documentation/articles/media-services-dotnet-encode-asset) topic (only instead of a predefined preset string you will pass the whole XML preset, as described [here](#configure_preset)).
 

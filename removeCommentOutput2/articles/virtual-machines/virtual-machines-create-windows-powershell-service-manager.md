@@ -41,7 +41,7 @@ Next, if you have multiple Azure subscriptions, you need to set your Azure subsc
 Now, replace everything within the quotes, including the < and > characters, with the correct subscription name and run these commands:
 
 	$subscrName="<subscription name>"
-	Select-AzureSubscription -SubscriptionName $subscrName –Current
+	Select-AzureSubscription -SubscriptionName $subscrName -Current
 
 ## Create a virtual machine
 
@@ -90,7 +90,7 @@ Next, copy this set of Azure PowerShell commands to a text editor, such as Notep
 	$vm=New-AzureVMConfig -Name $vmName -InstanceSize Medium -ImageName $image
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account."
 	$vm | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
-	New-AzureVM –ServiceName $csName –Location $locName -VMs $vm
+	New-AzureVM -ServiceName $csName -Location $locName -VMs $vm
 
 In your text editor, fill in the name of the virtual machine, the cloud service name, and the location.
 

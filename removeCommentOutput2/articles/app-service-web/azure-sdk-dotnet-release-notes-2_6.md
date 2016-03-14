@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/02/2015"
+	ms.date="01/19/2016"
 	wacn.date=""/>
 
 
@@ -68,7 +68,7 @@ The following items were updated in the Azure SDK 2.6 release.
 - API Apps provisioning functionality to enable users with API App creation and provisioning functionality.
 - Server Explorer changed to reflect new Azure Web App node, with Web, Mobile, and API apps grouped by Resource Group.
 - Add Azure API App Client gesture added to most C# projects that will enable automatic generation of Swagger-enabled API Apps running in a user's Azure subscription.
-- API Apps tooling and Azure Web App nodes in Server Explorer are available in Visual Studio 2013 only. 
+- API Apps tooling and Azure Web App nodes in Server Explorer are available in Visual Studio 2013 only.
 
 ##Azure Resource Manager Tools updates
 
@@ -78,14 +78,14 @@ The Azure resource manager tools have been updated to include templates for Virt
 
 Azure SDK 2.6 brings back support for collecting diagnostics logs in the Azure compute emulator and transferring them to development storage. Any diagnostics logs (including application trace Logs, Event Tracing for Windows (ETW) logs, performance counters, infrastructure logs and windows event logs) generated when the application is running in the emulator can be transferred to development storage to verify that your diagnostics logging is working on your local machine. 
 
-The Diagnostics storage account can now be specified in the service configuration (.cscfg) file making it easier to use different diagnostics storage accounts for different environments. There are some notable differences between how the connection string worked in Azure SDK 2.4 and Azure SDK 2.6. For more information on how to use the Diagnostics Storage connection string and how it impacts your projects see [Configuring Diagnostics for Azure Cloud Services](https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx#BKBM_Changes).
+The Diagnostics storage account can now be specified in the service configuration (.cscfg) file making it easier to use different diagnostics storage accounts for different environments. There are some notable differences between how the connection string worked in Azure SDK 2.4 and Azure SDK 2.6. 
 
 ##Breaking changes
 
 ###Azure Resource Manager Tools 
 
 - The **Cloud Deployment Projects** project type available in the Azure SDK 2.5 has been renamed to **Azure Resource Group**.
-- **Cloud Deployment Projects** type of projects created in the Azure SDK 2.5 can be used in 2.6 but deploying the template from Visual Studio will fail. However, deploying with the PowerShell script will still work as it did previously.  For information on how to use **Cloud Deployment Projects** in 2.6 read this [post](https://msdn.microsoft.com/zh-cn/library/azure/dn872471.aspx).
+- **Cloud Deployment Projects** type of projects created in the Azure SDK 2.5 can be used in 2.6 but deploying the template from Visual Studio will fail. However, deploying with the PowerShell script will still work as it did previously.  
  
 ##Known issues
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="09/16/2015"
+	ms.date="02/01/2016"
 	wacn.date=""/>
 
 # Example 1 - Build a Simple DMZ with NSGs

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Create a .NET MVC web site in Azure Websites with Azure Active Directory authentication" 
-	description="Learn how to create an ASP.NET MVC line-of-business application in Azure Websites that authenticates with Azure Active Directory" 
+	pageTitle="Create a .NET MVC web app in Azure with Azure Active Directory authentication" 
+	description="Learn how to create an ASP.NET MVC line-of-business application in Azure that authenticates with Azure Active Directory" 
 	services="app-service\web, active-directory" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -12,18 +12,18 @@
 	ms.date="12/10/2015"
 	wacn.date=""/>
 
-# Create a .NET MVC web site in Azure Websites with Azure Active Directory authentication #
+# Create a .NET MVC web app in Azure with Azure Active Directory authentication #
 
-In this article, you will learn how to create an ASP.NET MVC line-of-business application in [Azure Websites](/documentation/services/web-sites/) using [Azure Active Directory](/home/features/identity/) as the identity provider. You will also learn how to use the [Azure Active Directory Graph Client Library](http://blogs.msdn.com/b/aadgraphteam/archive/2014/06/02/azure-active-directory-graph-client-library-1-0-publish.aspx) to query directory data in the application.
+In this article, you will learn how to create an ASP.NET MVC line-of-business application in [Azure Web Apps](/documentation/services/web-sites/) using [Azure Active Directory](/home/features/identity/) as the identity provider. You will also learn how to use the [Azure Active Directory Graph Client Library](http://blogs.msdn.com/b/aadgraphteam/archive/2014/06/02/azure-active-directory-graph-client-library-1-0-publish.aspx) to query directory data in the application.
 
 The Azure Active Directory tenant that you use can be an Azure-only directory, or it can be directory-synced with your on-premise Active Directory (AD) to create a single sign-on experience for workers that are on-premise or remote.
 
->[AZURE.NOTE] For Azure Websites you can configure authentication against an Azure Active Directory tenant with a few clicks of a button. For more information, see [Use Active Directory for authentication in Azure Websites](/documentation/articles/web-sites-authentication-authorization).
+>[AZURE.NOTE] For Azure Web Apps you can configure authentication against an Azure Active Directory tenant with a few clicks of a button. For more information, see [Use Active Directory for authentication in Azure Web App](/documentation/articles/web-sites-authentication-authorization).
 
 <a name="bkmk_build"></a>
 ## What you will build ##
 
-You will build a simple line-of-business Create-Read-Update-Delete (CRUD) application in Azure Websites that tracks work items with the following features:
+You will build a simple line-of-business Create-Read-Update-Delete (CRUD) application in Azure Web Apps that tracks work items with the following features:
 
 - Authenticates users against Azure Active Directory
 - Implements sign-in and sign-out functionality
@@ -36,7 +36,7 @@ You will build a simple line-of-business Create-Read-Update-Delete (CRUD) applic
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 You need the following to complete this tutorial:
 
@@ -73,25 +73,25 @@ Be sure to follow all the instructions to convert the application from multi-ten
 5.	If you configured the Azure Active Directory application properly and set the corresponding settings in Web.config, you should be redirected to the log in. Simply log in with the account you used to create the Azure Active Directory application in the Azure Management Portal, since it's the Azure Active Directory application's default owner. 
 	
 <a name="bkmk_deploy"></a>
-## Deploy the sample application to Azure Websites
+## Deploy the sample application to Azure Web Apps
 
-Here, you will publish the application to a web site in Azure Websites. There are already instructions at [README.md](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims/blob/master/README.md) for deploying to Azure Websites, but those steps also annul the configuration for your local debug environment. I'll show you how to deploy while preserving the debug configuration.
+Here, you will publish the application to a web app in Azure. There are already instructions at [README.md](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims/blob/master/README.md) for deploying to Azure Web Apps, but those steps also annul the configuration for your local debug environment. I'll show you how to deploy while preserving the debug configuration.
 
 1. Right-click your project and select **Publish**.
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/publish-app.png)
 
-2. Select **Windows Azure web sites**.
+2. Select **Windows Azure Web Apps**.
 
 3. If you haven't signed in to Azure, click **Add an account** and use the Microsoft account for your Azure subscription to sign in.
 
-4. Once signed in, click **New** to create a new web site in Azure.
+4. Once signed in, click **New** to create a new web app in Azure.
 
 5. In **Hosting**, Fill in all required fields. 
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/4-create-website.png)
 
-5. You will need a database connection for this application to store role mappings, cached tokens, and any application data. In **Create Azure Websites** dialog, click **Services**.  Next to the **SQL Database** click the plus sign to add a new database.
+5. You will need a database connection for this application to store role mappings, cached tokens, and any application data. In **Create Azure Web App** dialog, click **Services**.  Next to the **SQL Database** click the plus sign to add a new database.
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/4-create-database.png)
 
@@ -99,7 +99,7 @@ Here, you will publish the application to a web site in Azure Websites. There ar
 
 	 ![](./media/web-sites-dotnet-lob-application-azure-ad/4-config-database.png)
 
-6. Click **Create**. Once the web site is created, the **Publish Web** dialog is opened.
+6. Click **Create**. Once the web app is created, the **Publish Web** dialog is opened.
 
 7. In **Destination URL**, change **http** to **https**. Copy the entire URL to a text editor. You will use it later. Then, click **Next**.
 
@@ -119,11 +119,11 @@ Here, you will publish the application to a web site in Azure Websites. There ar
 
 2. Click **Add an application my organization is developing**.
 
-3. Select **web site And/Or Web API**.
+3. Select **Web Application And/Or Web API**.
 
 4. Give the application a name and click **Next**.
 
-5. In App Properties, set **Sign-On URL** to the web site URL that you saved earler (e.g. `https://<site-name>.chinacloudsites.cn/`), and the **APP ID URI** to `https://<aad-tenanet-name>/<app-name>`. Then, click **Complete**.
+5. In App Properties, set **Sign-On URL** to the web app URL that you saved earler (e.g. `https://<site-name>.chinacloudsites.cn/`), and the **APP ID URI** to `https://<aad-tenanet-name>/<app-name>`. Then, click **Complete**.
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/7-app-properties.png)
 
@@ -158,11 +158,11 @@ Here, you will publish the application to a web site in Azure Websites. There ar
 
 1. Right-click your project and select **Publish**.
 
-2. Click **Publish** to publish to Azure Websites.
+2. Click **Publish** to publish to Azure Web Apps.
 
-When you're done, you have two Azure Active Directory applications configured in the Azure Management Portal: one for your debug environment in Visual Studio, and one for the published web site in Azure. During debugging, the app settings in Web.config are used to make your **Debug** configuration work with Azure Active Directory, and when it's published (by default, the **Release** configuration is published), a transformed Web.config is uploaded that incorporates the app setting changes in Web.Release.config.
+When you're done, you have two Azure Active Directory applications configured in the Azure Management Portal: one for your debug environment in Visual Studio, and one for the published web app in Azure. During debugging, the app settings in Web.config are used to make your **Debug** configuration work with Azure Active Directory, and when it's published (by default, the **Release** configuration is published), a transformed Web.config is uploaded that incorporates the app setting changes in Web.Release.config.
 
-If you want to attach the published web site to the debugger (you must upload debug symbols of your code in the published web site), you can create a clone of the Debug configuration for Azure debugging, but with its own custom Web.config transform (e.g. Web.AzureDebug.config) that uses the Azure Active Directory settings from Web.Release.config. This allows you to maintain a static configuration across the different environments.
+If you want to attach the published web app to the debugger (you must upload debug symbols of your code in the published web app), you can create a clone of the Debug configuration for Azure debugging, but with its own custom Web.config transform (e.g. Web.AzureDebug.config) that uses the Azure Active Directory settings from Web.Release.config. This allows you to maintain a static configuration across the different environments.
 
 <a name="bkmk_crud"></a>
 ## Add line-of-business functionality to the sample application
@@ -351,7 +351,7 @@ In this part of the tutorial, you will learn how to build out the desired line-o
 
 15. Open the [Package Manger Console](http://docs.nuget.org/Consume/Package-Manager-Console) and run **Enable-Migrations âEnableAutomaticMigrations**. Similar to the option you selected when you published the app to Azure, this command helps update your app's database schema in [LocalDB](https://msdn.microsoft.com/zh-cn/library/hh510202.aspx) when you debug it in Visual Studio.
 
-15. Now, either run the app in the Visual Studio debugger or publish again to Azure Websites. Log in as the application owner and navigate to `https://<webappname>.chinacloudsites.cn/WorkItems/Create`. You'll see now that you can pick an Azure Active Directory user or group from the drop down list, or type in something to filter the list.
+15. Now, either run the app in the Visual Studio debugger or publish again to Azure Web Apps. Log in as the application owner and navigate to `https://<webappname>.chinacloudsites.cn/WorkItems/Create`. You'll see now that you can pick an Azure Active Directory user or group from the drop down list, or type in something to filter the list.
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/9-create-workitem.png)
 
@@ -371,8 +371,8 @@ Now that you have configured the authorizations and line-of-business functionali
 ## Further resources
 
 - [Protect the Application with SSL and the Authorize Attribute](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
-- [Use Active Directory for authentication in Azure Websites](/documentation/articles/web-sites-authentication-authorization)
-- [Create a .NET MVC web site in Azure Websites with AD FS authentication](/documentation/articles/web-sites-dotnet-lob-application-adfs)
+- [Use Active Directory for authentication in Azure Web App](/documentation/articles/web-sites-authentication-authorization)
+- [Create a .NET MVC web app in Azure with AD FS authentication](/documentation/articles/web-sites-dotnet-lob-application-adfs)
 - [Windows Azure Active Directory Samples and Documentation](https://github.com/AzureADSamples)
 - [Vittorio Bertocci's blog](http://blogs.msdn.com/b/vbertocci/)
 - [Migrate a VS2013 Web Project From WIF to Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)

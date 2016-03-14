@@ -112,7 +112,7 @@ Get a test token based on the token restriction that was used for the key author
 	    TokenRestrictionTemplateSerializer.Deserialize(tokenTemplateString);
 	
 	// Generate a test token based on the data in the given TokenRestrictionTemplate.
-	//The GenerateTestToken method returns the token without the word “Bearer” in front
+	//The GenerateTestToken method returns the token without the word "Bearer" in front
 	//so you have to add it in front of the token string. 
 	string testToken = TokenRestrictionTemplateSerializer.GenerateTestToken(tokenTemplate);
 	Console.WriteLine("The authorization token is:\nBearer {0}", testToken);
@@ -263,7 +263,15 @@ The following code shows how to send a request to the Media Services key deliver
 		            ConfigurationManager.AppSettings["MediaServicesAccountName"];
 		        private static readonly string _mediaServicesAccountKey =
 		            ConfigurationManager.AppSettings["MediaServicesAccountKey"];
-		
+<!-- keep by customization: begin -->
+
+				private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+				// Azure China uses a different API server and a different ACS Base Address from the Global.
+				private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+				private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+
+<!-- keep by customization: end -->
 		        // A Uri describing the issuer of the token.  
 		        // Must match the value in the token for the token to be considered valid.
 		        private static readonly Uri _sampleIssuer =
@@ -289,9 +297,25 @@ The following code shows how to send a request to the Media Services key deliver
 		            // Create and cache the Media Services credentials in a static class variable.
 		            _cachedCredentials = new MediaServicesCredentials(
 		                            _mediaServicesAccountName,
+<!-- deleted by customization
 		                            _mediaServicesAccountKey);
+-->
+<!-- keep by customization: begin -->
+		                            _mediaServicesAccountKey,
+									_defaultScope,
+									_chinaAcsBaseAddressUrl);
+
+					// Create the API server Uri
+					_apiServer = new Uri(_chinaApiServerUrl);
+
+<!-- keep by customization: end -->
 		            // Used the chached credentials to create CloudMediaContext.
+<!-- deleted by customization
 		            _context = new CloudMediaContext(_cachedCredentials);
+-->
+<!-- keep by customization: begin -->
+		            _context = new CloudMediaContext(_apiServer, _cachedCredentials);
+<!-- keep by customization: end -->
 		
 		            bool tokenRestriction = false;
 		            string tokenTemplateString = null;
@@ -330,7 +354,7 @@ The following code shows how to send a request to the Media Services key deliver
 		                // TokenClaim.ContentKeyIdentifierClaim in during the creation of TokenRestrictionTemplate.
 		                Guid rawkey = EncryptionUtils.GetKeyIdAsGuid(key.Id);
 		
-		                //The GenerateTestToken method returns the token without the word “Bearer” in front
+		                //The GenerateTestToken method returns the token without the word "Bearer" in front
 		                //so you have to add it in front of the token string. 
 		                string testToken = TokenRestrictionTemplateSerializer.GenerateTestToken(tokenTemplate, null, rawkey);
 		                Console.WriteLine("The authorization token is:\nBearer {0}", testToken);

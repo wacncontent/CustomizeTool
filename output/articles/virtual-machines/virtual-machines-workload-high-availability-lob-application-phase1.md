@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Line of business application Phase 1 | Windows Azure" 
 	description="Create the virtual network and other Azure infrastructure elements in Phase 1 of the line of business application in Azure." 
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/20/2015"
+	ms.date="01/21/2016"
 	wacn.date=""/>
 
 # Line of Business Application Workload Phase 1: Configure Azure

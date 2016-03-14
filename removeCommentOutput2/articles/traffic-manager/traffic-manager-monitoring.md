@@ -45,10 +45,10 @@ The Profile Monitor status in the table below is the result of the combination o
 |Profile status (as configured)|Endpoint Monitor status|Profile Monitor status (API and Portal)|Notes|
 |---|---|---|---|
 |Disabled|&lt;any&gt; or a profile with no defined endpoints.|Disabled|Endpoints are not monitored.|
-|Enabled|The status of at least one endpoint is “Degraded”.|Degraded|This is a flag that customer action is required.|
-|Enabled|The status of at least one endpoint is “Online”. No endpoints are “Degraded”.|Online|The service is accepting traffic and customer action is not required.|
-|Enabled|The status of at least one endpoint is “CheckingEndpoint”. No endpoints are “Online” or “Degraded”.|CheckingEndpoints|Transition state. This typically occurs when a profile has just been enabled and the endpoint health is being probed.|
-|Enabled|The status of all endpoints defined in the profile is either “Disabled” or “Stopped”, or the profile has no defined endpoints.|Inactive|No endpoints are active, but the profile is still enabled.|
+|Enabled|The status of at least one endpoint is "Degraded".|Degraded|This is a flag that customer action is required.|
+|Enabled|The status of at least one endpoint is "Online". No endpoints are "Degraded".|Online|The service is accepting traffic and customer action is not required.|
+|Enabled|The status of at least one endpoint is "CheckingEndpoint". No endpoints are "Online" or "Degraded".|CheckingEndpoints|Transition state. This typically occurs when a profile has just been enabled and the endpoint health is being probed.|
+|Enabled|The status of all endpoints defined in the profile is either "Disabled" or "Stopped", or the profile has no defined endpoints.|Inactive|No endpoints are active, but the profile is still enabled.|
 
 ## How monitoring works
 

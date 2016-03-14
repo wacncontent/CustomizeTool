@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
+	ms.date="01/31/2016"
 	wacn.date=""/>
 
 
@@ -33,8 +33,7 @@ In this tutorial, the Azure Management Portal is used to accomplish the followin
 ## Prerequisites
 The following are required to complete the tutorial.
 
-- To complete this tutorial, you need an Azure account. If you don't have an account, you can create a trial account in just a couple of minutes.
-For details, see [Azure Trial](/pricing/1rmb-trial/).
+- To complete this tutorial, you need an Azure account. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F). 
 - A Media Services account. To create a Media Services account, see [Create Account](/documentation/articles/media-services-create-account).
 - A webcam and an encoder that can send a multi-bitrate live stream.
 
@@ -91,7 +90,7 @@ For more information about Ingest URLs, see [Using on-premises encoders to send 
 
 >[AZURE.NOTE] This step will require the channel's ingest URL that was mentioned in the previous step.
 
-For detailed information about how to configure Wirecast and start ingesting the stream, see [Wirecast Configuration](http://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/).
+For detailed information about how to configure Wirecast and start ingesting the stream, see [Wirecast Configuration](https://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/).
 
 >[AZURE.NOTE] If for any reason you stop the encoder and then need to restart it you should first reset the channel by clicking the **RESET** command in the Azure Management Portal.
 
@@ -195,7 +194,7 @@ If this topic didn't contain what you were expecting, is missing something, or i
 
 
 ## Additional resources
-- [Getting Started with Live Streaming Using the Azure Management Portal](http://azure.microsoft.com/blog/getting-started-with-live-streaming-using-the-azure-management-portal/)
+- [Getting Started with Live Streaming Using the Azure Management Portal](https://azure.microsoft.com/blog/getting-started-with-live-streaming-using-the-azure-management-portal/)
 
 <!-- URLs. -->
 [Azure Management Portal]: http://manage.windowsazure.cn/

@@ -1,6 +1,6 @@
-new docs: 3, word count: 2581
-articles/app-service-web/app-service-web-app-cloning.md
-articles/app-service-web/app-service-web-app-powerhell-ssl-binding.md
-articles/app-service-web/app-service-web-arm-with-msdeploy-provision.md
-
-new includes: 0
+new docs: 1, word count: 387
+articles/app-service-web/develop-wordpress-on-app-service-web-apps.md
+ 
+new includes: 2
+includes/app-service-blueprint-webjobs.md
+includes/app-service-blueprint-guide-for-wordpress.md

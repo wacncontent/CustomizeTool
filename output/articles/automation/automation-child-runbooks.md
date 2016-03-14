@@ -17,6 +17,7 @@
 It is a best practice in Azure Automation to write reusable, modular runbooks with a discrete function that can be used by other runbooks. A parent runbook will often call one or more child runbooks to perform required functionality. There are two ways to call a child runbook, and each has distinct differences that yrou should understand so that you can determine which will be best for your different scenarios.
 
 ##  Invoking a child runbook using inline execution
+<a name="InlineExecution"></a>
 
 To invoke a runbook inline from another runbook, you use the name of the runbook and provide values for its parameters exactly like you would use an activity or cmdlet.  All runbooks in the same Automation account are available to all others to be used in this manner. The parent runbook will wait for the child runbook to complete before moving to the next line, and any output is returned directly to the parent.
 
@@ -28,9 +29,7 @@ The parameters of a child runbook called inline can be any data type including c
 
 ### Runbook types
 
-You can't use a [PowerShell Workflow runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks) or a [Graphical runbook](/documentation/articles/automation-runbook-types#graphical-runbooks) as a child in a [PowerShell runbook](/documentation/articles/automation-runbook-types#powershell-runbooks) using inline execution.  Similarly, you can't use a PowerShell runbook as a child with inline execution in a PowerShell Workflow runbook or a Graph icalrunbook.  PowerShell runbooks can only use another PowerShell as a child.  Graphical and PowerShell Workflow runbooks can use each other as child runbooks.
-
-When you call a Graphical or PowerShell Workflow child runbook using inline execution, you just use the name of the runbook.  When you call a PowerShell child runbook, you must preceded its name with *.\\* to specify that the script is located in the local directory. 
+When you call a PowerShell Workflow child runbook using inline execution, you just use the name of the runbook.  When you call a PowerShell child runbook, you must preceded its name with *.\\* to specify that the script is located in the local directory. 
 
 ### Example
 
@@ -38,12 +37,6 @@ The following example invokes a test child runbook that accepts three parameters
 
 	$vm = Get-AzureVM -ServiceName "MyVM" -Name "MyVM"
 	$output = Test-ChildRunbook -VM $vm -RepeatCount 2 -Restart $true
-
-Following is the same example using a PowerShell runbook as the child.
-
-	$vm = Get-AzureVM -ServiceName "MyVM" -Name "MyVM"
-	$output = .\Test-ChildRunbook.ps1 -VM $vm -RepeatCount 2 -Restart $true
-
 
 ##  Starting a child runbook using cmdlet
 

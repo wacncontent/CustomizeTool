@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/03/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Install and use Giraph in HDInsight

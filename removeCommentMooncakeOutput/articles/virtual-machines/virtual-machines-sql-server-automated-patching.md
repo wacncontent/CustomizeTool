@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="11/12/2015"
-  	wacn.date="" />
+	wacn.date=""/>
 
 # Automated Patching for SQL Server in Azure Virtual Machines
 
@@ -20,7 +20,7 @@ Automated Patching establishes a maintenance window for an Azure Virtual Machine
 
 ## Configure Automated Patching in the Azure Management Portal
 
-You can use the [Azure Management Portal](https://portal.azure.com/) to configure Automated Patching when you create a new SQL Server Virtual Machine. 
+You can use the [Azure Management Portal](https://manage.windowsazure.cn/) to configure Automated Patching when you create a new SQL Server Virtual Machine. 
 
 >[AZURE.NOTE] Automated Patching relies on the SQL Server IaaS Agent. To install and configure the agent, you must have the Azure VM Agent running on the target virtual machine. Newer virtual machine gallery images have this option enabled by default, but the Azure VM Agent might be missing on existing VMs. If you are using your own VM image, you will also need to install the SQL Server IaaS Agent. For more information, see [VM Agent and Extensions](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/).
 
@@ -51,7 +51,7 @@ Based on this example, the following table describes the practical effect on the
 |**DayOfWeek**|Patches installed every Thursday.|
 |**MaintenanceWindowStartingHour**|Begin updates at 11:00am.|
 |**MaintenanceWindowsDuration**|Patches must be installed within 120 minutes. Based on the start time, they must complete by 1:00pm.|
-|**PatchCategory**|The only possible setting for this parameter is “Important”.|
+|**PatchCategory**|The only possible setting for this parameter is "Important".|
 
 It could take several minutes to install and configure the SQL Server IaaS Agent.
 
@@ -73,7 +73,7 @@ You can also uninstall the extension using the **Remove-AzureVMSqlServerExtensio
 
 ## Compatibility
 
-The following products are compatible with the SQL Server IaaS Agent features for Automated Patching:
+The following products areÂ compatible withÂ the SQL Server IaaS Agent features for Automated Patching:
 
 - Windows Server 2012
 

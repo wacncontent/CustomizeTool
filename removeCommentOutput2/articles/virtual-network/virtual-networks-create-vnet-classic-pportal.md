@@ -1,6 +1,8 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Create a virtual network using the Azure preview portal | Windows Azure"
-   description="Learn how to create a virtual network using the Azure preview portal."
+   pageTitle="Create a virtual network using the Azure Management Portal | Windows Azure"
+   description="Learn how to create a virtual network using the Azure Management Portal."
    services="virtual-network"
    documentationCenter=""
    authors="telmosampaio"
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="12/07/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 # Create a virtual network (classic) by using the Azure preview portal

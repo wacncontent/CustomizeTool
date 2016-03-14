@@ -38,7 +38,7 @@ In this article:
 ##<a href="overview"></a> Overview
 
 
-If you have a domain name already, or you want reserve domain from other domain registrars, here are the general steps to bring a custom domain name for web site :
+If you have a domain name already, or you want reserve domain from other domain registrars, here are the general steps to bring a custom domain name for web site:
 
 1. Reserve your domain name. This article does not cover that process. There are many domain registrars to choose from. When you sign up, their site will walk you through the process.
 1. Create DNS records that map the domain to your Azure web app.

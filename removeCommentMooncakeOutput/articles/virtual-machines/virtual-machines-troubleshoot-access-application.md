@@ -89,7 +89,7 @@ If the virtual machine or endpoint is a member of a load-balanced set:
 
 - Verify that the probe protocol (TCP or UDP) and port number are correct.
 - If the probe protocol and port is different than the load-balanced set protocol and port:
-	- Verify that the application is listening on the probe protocol (TCP or UDP) and port number (use **netstat âa** on the target virtual machine).
+	- Verify that the application is listening on the probe protocol (TCP or UDP) and port number (use **netstat -a** on the target virtual machine).
 	- The host firewall on the target virtual machine is allowing the inbound probe request and outbound probe response traffic.
 
 If you can access the application, ensure that your Internet edge device is allowing:

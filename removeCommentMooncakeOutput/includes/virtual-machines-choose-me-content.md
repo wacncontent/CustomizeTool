@@ -1,6 +1,6 @@
 | Compute Options    | Audience   |
 | ------------------ | --------   |
-| [Azure Websites]      | Scalable Web Sites, Mobile Apps, API Apps, and Logic Apps for any device |
+| [Azure Web App]      | Scalable Web Apps, Mobile Apps, API Apps, and Logic Apps for any device |
 | [Cloud Services]   | Highly available, scalable n-tier cloud apps with more control of the OS |
 | [Virtual Machines] | Customized Windows and Linux VMs with complete control of the OS |
 
@@ -33,12 +33,12 @@ VMs can be managed using a browser-based portal, command-line tools with support
 Along with the OS, other configuration choices you have with VMs include:
 
 - The size, which determines factors such as how many disks you can attach and the processing power. Azure offers a wide variety of sizes to support many types of uses. For details, see [Sizes for Virtual Machines](/documentation/articles/virtual-machines-size-specs).  
-- The Azure region where your new VM will be hosted, such as in the China East or China North. 
+- The Azure region where your new VM will be hosted, such as in the China East or China North.
 - VM extensions, which give your virtual machine additional capabilities, such as running anti-virus or using the Desired State Configuration feature of Windows PowerShell.
 
 Other benefits to consider for VMs include:
 
-**Pay-as-you-go** -- Azure charges an hourly price based on the VMâs size and operating system. For partial hours, Azure charges only for the minutes of use. Storage is priced and charged separately. For details, see [Virtual Machines Pricing](/home/features/virtual-machines/#price).
+**Pay-as-you-go** -- Azure charges an hourly price based on the VM's size and operating system. For partial hours, Azure charges only for the minutes of use. Storage is priced and charged separately. For details, see [Virtual Machines Pricing](/home/features/virtual-machines/#price).
 
 **Resiliency** -- Azure monitors the physical hardware that hosts each running VM. If a physical server running a VM fails, Azure notices this, moves the VM to new hardware and restarts the VM. This process is sometimes called service healing. Azure also protects a virtual machine's data, by keeping redundant copies of the VHDs in blob storage. 
 

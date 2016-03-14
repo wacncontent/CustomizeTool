@@ -35,7 +35,7 @@ You can only work with [PowerShell Workflow runbooks](/documentation/articles/au
 You can work with PowerShell Workflow runbooks in the Azure Management Portal.
 <!-- keep by customization: end -->
 
-1. In the Azure Management Portal, click, **New**, **Azure Websitess**, **Automation**, **Runbook**, **Quick Create**.
+1. In the Azure Management Portal, click, **New**, **App Services**, **Automation**, **Runbook**, **Quick Create**.
 2. Enter the required information, and then click **Create**. The runbook name must start with a letter and can have letters, numbers, underscores, and dashes.
 3. If you want to edit the runbook now, then click **Edit Runbook**. Otherwise, click **OK**.
 4. Your new runbook will appear on the **Runbooks** tab.

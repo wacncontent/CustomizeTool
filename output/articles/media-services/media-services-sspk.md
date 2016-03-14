@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/30/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 #Licensing Microsoft® Smooth Streaming Client Porting Kit
@@ -87,7 +87,6 @@ Interim and Final SSPK licensees can submit technical questions to [smoothpk@mic
 - Amazon Digital Services, Inc.
 - Amlogic, Co., Ltd.
 - AVC Multimedia Software Co., Ltd.
-- Cisco Systems, Inc.
 - EchoStar Purchasing Corporation
 - Enseo, Inc.
 - Guangdong OPPO Mobile Telecommunications Corp., Ltd.
@@ -95,16 +94,15 @@ Interim and Final SSPK licensees can submit technical questions to [smoothpk@mic
 - Infomir GMBH
 - Inside Secure
 - Irdeto USA Inc.
-- LG CNS Co., Ltd
 - Liberty Global Services BV
 - MediaTek Inc.
 - MStar Co, Ltd
+- Nintendo Co., Ltd.
 - OpenTV, Inc.
 - Research In Motion Limited
 - Saffron Digital Limited
 - Sichuan Changhong Electric Co., Ltd
 - Tatung Technology Inc.
-- Teleca US Software Solutions LLC
 - Telechips Inc.
 - Vestel Elektronik Sanayi ve Ticaret A.S.
 - VisualOn, Inc.
@@ -121,7 +119,6 @@ Interim and Final SSPK licensees can submit technical questions to [smoothpk@mic
 - ATMACA ELEKTRONİK SAN. VE TİC. A.Ş
 - British Sky Broadcasting Limited
 - CastPal Technology Inc., Shenzhen
-- Cisco Systems, Inc.
 - Compal Electronics, Inc.
 - Dongguan Digital AV Technology Corp., Ltd.
 - Enseo, Inc.
@@ -144,6 +141,7 @@ Interim and Final SSPK licensees can submit technical questions to [smoothpk@mic
 - Shenzhen Jiuzhou Electric Co.,Ltd
 - Shenzhen Skyworth Digital Technology Co., Ltd
 - Sichuan Changhong Electric Co., Ltd.
+- Sky Deutschland Fernsehen GmbH & Co. KG
 - SmarDTV S.A.
 - SoftAtHome
 - TCL Overseas Marketing (Macao Commercial Offshore) Limited

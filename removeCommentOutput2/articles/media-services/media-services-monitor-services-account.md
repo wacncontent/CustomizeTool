@@ -9,10 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
-
-
 
 #<a id="monitormediaservicesaccount"></a>How to Monitor a Media Services Account
 

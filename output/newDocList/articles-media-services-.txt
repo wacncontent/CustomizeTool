@@ -1,10 +1,11 @@
-new docs: 98, word count: 140945
+new docs: 100, word count: 154231
 articles/media-services/meda-services-managing-multiple-storage-accounts.md
 articles/media-services/media-services-axinom-integration.md
 articles/media-services/media-services-azure-media-customize-ame-presets.md
 articles/media-services/media-services-azure-media-encoder-formats.md
 articles/media-services/media-services-build-smooth-streaming-apps.md
 articles/media-services/media-services-castlabs-integration.md
+articles/media-services/media-services-cenc-with-multidrm-access-control.md
 articles/media-services/media-services-check-job-progress.md
 articles/media-services/media-services-concepts.md
 articles/media-services/media-services-configure-elemental-live-encoder.md
@@ -59,6 +60,7 @@ articles/media-services/media-services-manage-content.md
 articles/media-services/media-services-manage-live-encoder-enabled-channels.md
 articles/media-services/media-services-manage-origins.md
 articles/media-services/media-services-manage-with-powershell.md
+articles/media-services/media-services-media-encoder-premium-workflow-tutorials.md
 articles/media-services/media-services-media-encoder-standard-formats.md
 articles/media-services/media-services-monitor-services-account.md
 articles/media-services/media-services-overview.md

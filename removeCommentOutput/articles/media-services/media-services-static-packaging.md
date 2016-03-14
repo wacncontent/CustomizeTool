@@ -9,13 +9,13 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
+	ms.date="02/14/2016"
 	wacn.date=""/>
 
 
 # Using Azure Media Packager to accomplish static packaging tasks
 
->[AZURE.NOTE]Windows Azure Media Packager and Windows Azure Media Encryptor will reach end of life on March 1, 2016. At that time, these components will no longer be available.  The format conversion and encryption capabilities will be available through dynamic packaging and dynamic encryption. 
+>[AZURE.NOTE]The end of life date for Windows Azure Media Packager and Windows Azure Media Encryptor has been extended to March 1, 2017. Before that date, the functionalities of these processors will be added to Media Encoder Standard (MES). Customers will be provided with instructions on how to migrate their workflows to send Jobs to MES. Format conversion and encryption capabilities may also be available through dynamic packaging and dynamic encryption.
 
 ## Overview
 
@@ -40,7 +40,7 @@ You can also use static packaging to perform the following tasks. However it is 
 
 If you want to use a set of adaptive bitrate (multi-bitrate) MP4 files that were not encoded with Media Services Encoder, you should validate your files before further processing. The Media Services Packager can validate an asset that contains a set of MP4 files and check whether the asset can be packaged to Smooth Streaming or HLS. If the validation task fails, the job that was processing the task will complete with an error. The XML that defines the preset for the validation task can be found in the [Task Preset for Azure Media Packager](http://msdn.microsoft.com/zh-cn/library/azure/hh973635.aspx) topic.
 
->[AZURE.NOTE]Use the Media Services Encoder to produce or the Media Services Packager to validate your content in order to avoid runtime issues. If the On-Demand Streaming server is not able to parse your source files at runtime, you will receive HTTP 1.1 error “415 Unsupported Media Type”. Repeatedly causing the server to fail to parse your source files affects performance of the On-Demand Streaming server and may reduce the bandwidth available to serving other requests. Azure Media Services offers a Service Level Agreement (SLA) on its On-Demand Streaming services; however, this SLA cannot be honored if the server is misused in the fashion described above.
+>[AZURE.NOTE]Use the Media Services Encoder to produce or the Media Services Packager to validate your content in order to avoid runtime issues. If the On-Demand Streaming server is not able to parse your source files at runtime, you will receive HTTP 1.1 error "415 Unsupported Media Type". Repeatedly causing the server to fail to parse your source files affects performance of the On-Demand Streaming server and may reduce the bandwidth available to serving other requests. Azure Media Services offers a Service Level Agreement (SLA) on its On-Demand Streaming services; however, this SLA cannot be honored if the server is misused in the fashion described above.
 
 This section shows how to process the validation task. It also shows how to see the status and the error message of the job that completes with JobStatus.Error.
 
@@ -162,7 +162,7 @@ The following code sample uses Azure Media Services .NET SDK Extensions.  Make s
 	
 	            // Get the SDK extension method to  get a reference to the Azure Media Packager.
 	            IMediaProcessor processor = _context.MediaProcessors.GetLatestMediaProcessorByName(
-	                MediaProcessorNames.AzureMediaPackager);
+	                MediaProcessorNames.WindowsAzureMediaPackager);
 	
 	            // Create a task with the conversion details, using the configuration data. 
 	            ITask task = job.Tasks.AddNew("Mp4 Validation Task",

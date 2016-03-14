@@ -17,7 +17,7 @@
 
 There are many factors that impact MySQL performance on Azure, both in virtual hardware selection and software configuration. This article focuses on optimizing performance through storage, system, and database configurations.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 ##Utilizing RAID on an Azure virtual machine
@@ -34,7 +34,7 @@ Please note that there are limits on how many disks you can add for different vi
 This article assumes you have already created a Linux virtual machine and have MYSQL installed and configured. For more information on getting started please refer to How to install MySQL on Azure.  
 
 ###Setting up RAID on Azure
-The following steps show how to create RAID on Azure using the Azure Management Portal. You can also set up RAID using Windows PowerShell scripts. 
+The following steps show how to create RAID on Azure using the Azure Management Portal. You can also set up RAID using Windows PowerShell scripts.
 In this example we will configure RAID 0 with 4 disks.  
 
 ####Step 1: Add a Data Disk to your Virtual Machine  
@@ -158,7 +158,7 @@ For example, edit  the vim /etc/fstab file, adding the noatime as shown below.
 
 	# CLOUD_IMG: This file was created/modified by the Cloud Image build process
 	UUID=3cc98c06-d649-432d-81df-6dcd2a584d41       /        ext4   defaults,discard        0 0
-	#Add the “noatime” option below to disable atime logging
+	#Add the "noatime" option below to disable atime logging
 	UUID="431b1e78-8226-43ec-9460-514a9adf060e"     /RAID0   xfs   defaults,nobootwait, noatime 0 0
 	/dev/sdb1       /mnt    auto    defaults,nobootwait,comment=cloudconfig 0       2
 
@@ -196,8 +196,8 @@ Run the following commands:
 ###Step 3: Ensure that the limits are updated at boot time
 Put the following startup commands in the /etc/rc.local file so it will take effect during every boot time.  
 
-	echo “ulimit -SHn 65536” >>/etc/rc.local
-	echo “ulimit -SHu 65536” >>/etc/rc.local
+	echo "ulimit -SHn 65536" >>/etc/rc.local
+	echo "ulimit -SHu 65536" >>/etc/rc.local
 
 ##MySQL database optimization
 You can use the same performance tuning strategy to configure MySQL on Azure as on an on-premises machine.  
@@ -237,7 +237,7 @@ Please note that by default this is not enabled. Turning on the slow query log m
 ###Step 2: Restart mysql server
 	service  mysql  restart
 
-###Step 3: Check whether the setting is taking effect using the “show” command
+###Step 3: Check whether the setting is taking effect using the "show" command
 
 ![][7]   
 

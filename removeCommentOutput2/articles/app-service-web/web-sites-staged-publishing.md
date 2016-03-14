@@ -20,7 +20,7 @@ When you deploy your web app to [Azure Web App](/documentation/services/web-site
 
 - You can validate web app changes in a staging deployment slot before swapping it with the production slot.
 
-- Deploying a web app to a slot first and swapping it into production ensures that all instances of the slot are warmed up before being swapped into production. This eliminates downtime when you deploy your web app. The traffic redirection is seamless, and no requests are dropped as a result of swap operations. This entire workflow can be automated by configuring [Auto Swap](#configure-auto-swap-for-your-web-app) when pre-swap validation is not needed.
+- Deploying a web app to a slot first and swapping it into production ensures that all instances of the slot are warmed up before being swapped into production. This eliminates downtime when you deploy your web app. The traffic redirection is seamless, and no requests are dropped as a result of swap operations. 
 
 - After a swap, the slot with previously staged web app now has the previous production web app. If the changes swapped into the production slot are not as you expected, you can perform the same swap immediately to get your "last known good site" back.
 
@@ -107,7 +107,18 @@ Multi-phase swap is available to simplify validation in the context of configura
 
 <a name="Rollback"></a>
 ## To rollback a production app after swap ##
+
 If any errors are identified in production after a slot swap, roll the slots back to their pre-swap states by swapping the same two slots immediately.
+
+<a name="Warm-up"></a>
+## Custom warm-up before swap ##
+
+Some apps may require custom warm-up actions. The applicationInitialization configuration element in web.config allows you to specify custom initialization actions to be performed before a request is received. The swap operation will wait for this custom warm-up to complete. Here is a sample web.config fragment.
+
+    <applicationInitialization>
+        <add initializationPage="/" hostName="[web app hostname]" />
+        <add initializationPage="/Home/About" hostname="[web app hostname]" />
+    </applicationInitialization>
 
 <a name="Delete"></a>
 ## To delete a deployment slot##
@@ -145,7 +156,7 @@ Azure PowerShell is a module that provides cmdlets to manage Azure through Windo
 
 ### Initiate multi-phase swap and apply target slot configuration to source slot
 
-`$ParametersObject = @{targetSlot  = "[slot name - e.g. “production”]"}`
+`$ParametersObject = @{targetSlot  = "[slot name - e.g. "production"]"}`
 `Invoke-AzureResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [web app name]/[slot name] -Action applySlotConfig -Parameters $ParametersObject -ApiVersion 2015-07-01`
 
 ----------
@@ -158,7 +169,7 @@ Azure PowerShell is a module that provides cmdlets to manage Azure through Windo
 
 ### Swap deployment slots
 
-`$ParametersObject = @{targetSlot  = "[slot name - e.g. “production”]"}`
+`$ParametersObject = @{targetSlot  = "[slot name - e.g. "production"]"}`
 `Invoke-AzureResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [web app name]/[slot name] -Action slotsswap -Parameters $ParametersObject -ApiVersion 2015-07-01`
 
 ----------

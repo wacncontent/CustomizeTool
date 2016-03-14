@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
    pageTitle="Network Resource Provider Overview | Windows Azure"
    description="Learn about the new Network Resource Provider in Azure Resource Manager"
@@ -116,7 +118,7 @@ The template is primarily a JSON description of the resources and the instance v
 	    "parameters" : {
 	      "location": {
 	        "type": "String",
-	        "allowedValues": ["China East", "China North", "West Europe", "China East", "South China East"],
+	        "allowedValues": ["China East", "China North"],
 	        "metadata" : {
 	          "Description" : "Deployment location"
 	        }

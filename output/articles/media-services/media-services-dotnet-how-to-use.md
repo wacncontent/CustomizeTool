@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/05/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Media Services development with .NET

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Creating web sites with Django in Azure"
-	description="A tutorial that introduces you to running a Python web site in Azure Websites."
+	pageTitle="Creating web apps with Django in Azure"
+	description="A tutorial that introduces you to running a Python web app in Azure."
 	services="app-service\web"
 	documentationCenter="python"
 	tags="python"
@@ -14,38 +14,21 @@
 	wacn.date=""/>
 
 
-# Creating web sites with Django in Azure
+# Creating web apps with Django in Azure
 
-This tutorial describes how to get started running Python on [Azure Websites](/documentation/services/web-sites/). web sites provides limited free hosting and rapid deployment, and you can use Python! As your app grows, you can switch to paid hosting, and you can also integrate with all of the other Azure services.
+This tutorial describes how to get started running Python on [Azure Web Apps](/documentation/services/web-sites/). Web Apps provides limited free hosting and rapid deployment, and you can use Python! As your app grows, you can switch to paid hosting, and you can also integrate with all of the other Azure services.
 
-You will create an application using the Django web framework (see alternate versions of this tutorial for [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app) and [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)). You will create the web site <!-- deleted by customization from the Azure Marketplace -->, set up Git deployment, and clone the repository locally. Then you will run the application locally, make changes, commit and push them to Azure. The tutorial shows how to do this from Windows or Mac/Linux.
+You will create an application using the Django web framework (see alternate versions of this tutorial for [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app) and [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)). You will create the web app <!-- deleted by customization from the Azure gallery -->, set up Git deployment, and clone the repository locally. Then you will run the application locally, make changes, commit and push them to Azure. The tutorial shows how to do this from Windows or Mac/Linux.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 <!-- deleted by customization
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 
 ## Prerequisites
 -->
 <!-- keep by customization: begin -->
-+ [Prerequisites](#prerequisites)
-+ [Website Creation on Portal](#website-creation-on-portal)
-+ [Application Overview](#application-overview)
-+ Website Development
-  + [Windows - Python Tools for Visual Studio](#website-development-windows-ptvs)
-  + [Windows - Command Line](#website-development-windows-command-line)
-  + [Mac/Linux - Command Line](#website-development-mac-linux-command-line)
-+ [Deployment](#troubleshooting-deployment)
-+ [Troubleshooting - Package Installation](#troubleshooting-package-installation)
-+ [Troubleshooting - Virtual Environment](#troubleshooting-virtual-environment)
-+ [Troubleshooting - Static Files](#troubleshooting-static-files)
-+ [Troubleshooting - Settings](#troubleshooting-settings)
-+ [Using a Database](#using-a-database)
-+ [Django Admin Interface](#django-admin-interface)
-+ [Next steps](#next-steps)
-
-
 ##<a name="prerequisites"></a> Prerequisites
 <!-- keep by customization: end -->
 
@@ -71,16 +54,16 @@ You should have Python and Git already installed, but make sure you have either 
 
 
 <!-- deleted by customization
-## web site Creation on Portal
+## Web App Creation on Portal
 
-The first step in creating your app is to create the web site via the [Azure Management Portal](https://manage.windowsazure.cn).
+The first step in creating your app is to create the web app via the [Azure Management Portal](https://manage.windowsazure.cn).
 
 1. Log into the Azure Management Portal and click the **NEW** button in the bottom left corner.
 2. Click **Web + Mobile**.
 3. In the search box, type "python".
 4. In the search results, select **Django**, then click **Create**.
 5. Configure the new Django app, such as creating a new App Service plan and a new resource group for it. Then, click **Create**.
-6. Configure Git publishing for your newly created web site by following the instructions at [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
+6. Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control).
 
 ## Application Overview
 -->
@@ -175,9 +158,9 @@ IIS configuration file. Created from web.x.y.config on every deployment.
 
     \env\
 
-Python virtual environment. Created during deployment if a compatible virtual environment doesn't already exist on the web site. Packages listed in requirements.txt are pip installed, but pip will skip installation if the packages are already installed.
+Python virtual environment. Created during deployment if a compatible virtual environment doesn't already exist on the web app. Packages listed in requirements.txt are pip installed, but pip will skip installation if the packages are already installed.
 
-The next 3 sections describe how to proceed with the web site development under 3 different environments:
+The next 3 sections describe how to proceed with the web app development under 3 different environments:
 
 - Windows, with Python Tools for Visual Studio
 - Windows, with command line
@@ -185,7 +168,7 @@ The next 3 sections describe how to proceed with the web site development under 
 
 
 <!-- deleted by customization
-## web site development - Windows - Python Tools for Visual Studio
+## Web app development - Windows - Python Tools for Visual Studio
 -->
 <!-- keep by customization: begin -->
 ##<a name="website-development-windows-ptvs"></a> Web Site development - Windows - Python Tools for Visual Studio
@@ -193,7 +176,7 @@ The next 3 sections describe how to proceed with the web site development under 
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Management Portal. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Management Portal. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control).
 
 Open the solution file (.sln) that is included in the root of the repository.
 
@@ -205,7 +188,7 @@ Now we'll create a virtual environment for local development. Right-click on **P
 
 - Make sure the name of the environment is `env`.
 
-- Select the base interpreter. Make sure to use the same version of Python that is selected for your web site (in runtime.txt or the <!-- deleted by customization **Application Settings** blade of your web --> site <!-- deleted by customization in the Azure Management Portal) --><!-- keep by customization: begin --> configuration page) <!-- keep by customization: end -->.
+- Select the base interpreter. Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the <!-- deleted by customization **Application Settings** blade of your web --> app <!-- deleted by customization in the Azure Management Portal) --><!-- keep by customization: begin --> configuration page) <!-- keep by customization: end -->.
 
 - Make sure the option to download and install packages is checked.
 
@@ -272,7 +255,7 @@ Browse to the Azure URL to view your changes.
 
 
 <!-- deleted by customization
-## web site development - Windows - command line
+## Web app development - Windows - command line
 -->
 <!-- keep by customization: begin -->
 ##<a name="website-development-windows-command-line"></a> Web Site development - Windows - command line
@@ -280,7 +263,7 @@ Browse to the Azure URL to view your changes.
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -290,7 +273,7 @@ First, clone the repository using the URL provided on the Azure Management Porta
 
 We'll create a new virtual environment for development purposes (do not add it to the repository). Virtual environments in Python are not relocatable, so every developer working on the application will create their own locally.
 
-Make sure to use the same version of Python that is selected for your web site (in runtime.txt or the <!-- deleted by customization Application Settings blade of your web --> site <!-- deleted by customization in the Azure Management Portal) --><!-- keep by customization: begin --> configuration page) <!-- keep by customization: end -->.
+Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the <!-- deleted by customization Application Settings blade of your web --> app <!-- deleted by customization in the Azure Management Portal) --><!-- keep by customization: begin --> configuration page) <!-- keep by customization: end -->.
 
 For Python 2.7:
 
@@ -366,7 +349,7 @@ Browse to the Azure URL to view your changes.
 
 
 <!-- deleted by customization
-## web site development - Mac/Linux - command line
+## Web app development - Mac/Linux - command line
 -->
 <!-- keep by customization: begin -->
 ##<a name="website-development-mac-linux-command-line"></a> Web Site development - Mac/Linux - command line
@@ -374,7 +357,7 @@ Browse to the Azure URL to view your changes.
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Websites](/documentation/articles/web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -384,7 +367,7 @@ First, clone the repository using the URL provided on the Azure Management Porta
 
 We'll create a new virtual environment for development purposes (do not add it to the repository). Virtual environments in Python are not relocatable, so every developer working on the application will create their own locally.
 
-Make sure to use the same version of Python that is selected for your web site (in runtime.txt or the <!-- deleted by customization Application Settings blade of your web --> site <!-- deleted by customization in the Azure Management Portal) --><!-- keep by customization: begin --> configuration page) <!-- keep by customization: end -->.
+Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the <!-- deleted by customization Application Settings blade of your web --> app <!-- deleted by customization in the Azure Management Portal) --><!-- keep by customization: begin --> configuration page) <!-- keep by customization: end -->.
 
 For Python 2.7:
 
@@ -593,7 +576,7 @@ For more information, see the [Python Developer Center](/develop/python/).
 
 
 ## What's changed
-* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
 -->
 

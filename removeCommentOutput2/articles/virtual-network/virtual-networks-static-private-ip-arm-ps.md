@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
    pageTitle="How to set a static private IP in ARM mode using PowerShell| Windows Azure"
    description="Understanding static IPs (DIPs) and how to manage them in ARM mode using PowerShell"

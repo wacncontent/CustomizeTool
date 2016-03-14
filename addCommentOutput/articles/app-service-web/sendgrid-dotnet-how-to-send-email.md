@@ -306,7 +306,7 @@ details, see the [SendGrid API documentation][].
 ## Next steps
 -->
 <!-- keep by customization: begin -->
-##<a name="nextsteps"></a> Next steps
+##<a name="nextsteps" id="next-steps"></a> Next steps
 <!-- keep by customization: end -->
 
 Now that you've learned the basics of the SendGrid Email service, follow

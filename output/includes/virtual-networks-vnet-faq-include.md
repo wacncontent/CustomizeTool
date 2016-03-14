@@ -224,9 +224,9 @@ Yes. You can deploy Web Apps inside a VNet using ASE (Azure Environment). Adding
 
 - [Creating Web Apps in an Azure Environment](/documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase)
 
-- [Web Apps Virtual Network Integration](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)
+- [Web Apps Virtual Network Integration](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)
 
-- [Using VNet Integration and Hybrid Connections with Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
+- [Using VNet Integration and Hybrid Connections with Web Apps](https://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 
 - [Integrate a web app with an Azure Virtual Network](/documentation/articles/web-sites-integrate-with-vnet)
 

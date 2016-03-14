@@ -19,7 +19,7 @@
 - [Windows](/documentation/articles/virtual-machines-windows-use-ssh-key)
 - [Linux/Mac](/documentation/articles/virtual-machines-linux-use-ssh-key)
 
-This topic describes how to use **ssh-keygen** and **openssl** on Linux and Mac to create and use **ssh-rsa** format and **.pem** format files to secure communication with Azure VMs based on Linux. Creating Linux-based Azure Virtual Machines using the Resource Manager deployment model is recommended for new deployments and takes an *ssh-rsa* type public key file or string (depending on the deployment client). The [preview portal](https://manage.windowsazure.cn) currently accepts only the **ssh-rsa** format strings, whether for classic or Resource Manager deployments.
+This topic describes how to use **ssh-keygen** and **openssl** on Linux and Mac to create and use **ssh-rsa** format and **.pem** format files to secure communication with Azure VMs based on Linux. Creating Linux-based Azure Virtual Machines using the Resource Manager deployment model is recommended for new deployments and takes an *ssh-rsa* type public key file or string (depending on the deployment client). The [Azure Management Portal](https://manage.windowsazure.cn) currently accepts only the **ssh-rsa** format strings, whether for classic or Resource Manager deployments.
 
 > [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 To create these types of files for use on a Windows computer to communicate securely with Linux VMs in Azure, see [Use SSH keys on Windows](/documentation/articles/virtual-machines-windows-use-ssh-key). 
@@ -30,7 +30,7 @@ A basic ssh setup for Azure includes an **ssh-rsa** public and private key pair 
 
 Here are the deployment scenarios, and the types of files you use in each:
 
-1. **ssh-rsa** keys are required for any deployment using the [preview portal](https://manage.windowsazure.cn), regardless of the deployment model.
+1. **ssh-rsa** keys are required for any deployment using the [Azure Management Portal](https://manage.windowsazure.cn), regardless of the deployment model.
 2. .pem file are required to create VMs using the [Management Portal](https://manage.windowsazure.cn). .pem files are also supported in classic deployments that use the [Azure CLI](/documentation/articles/xplat-cli-install). 
 
 ## Create keys for use with SSH
@@ -255,15 +255,13 @@ If you didn't use the default SSH port of 22 when you created the VM, you can di
 
 ### Example: Output of SSH session using .pem keys and classic deployment
 
-If you created a VM using a .pem file created from your `~/.ssh/id_rsa` file, you can directly ssh into that VM. Note that when you do, the certificate handshake will use your private key at `~/.ssh/id_rsa`. It might look like the following example:
+If you created a VM using a .pem file created from your `~/.ssh/id_rsa` file, you can directly ssh into that VM. Note that when you do, the certificate handshake will use your private key at `~/.ssh/id_rsa`. (The VM creation process computes the public key from the .pem and places the ssh-rsa form of the public key in `~/.ssh/authorized_users`.) Connecting might look like the following example:
 
 	ssh ops@testpemasm.chinacloudapp.cn -p 22
 	The authenticity of host 'testpemasm.chinacloudapp.cn (40.83.178.221)' can't be established.
 	RSA key fingerprint is dc:bb:e4:cc:59:db:b9:49:dc:71:a3:c8:37:36:fd:62.
 	Are you sure you want to continue connecting (yes/no)? yes
 	Warning: Permanently added 'testpemasm.chinacloudapp.cn,40.83.178.221' (RSA) to the list of known hosts.
-	Saving password to keychain failed
-	Identity added: /Users/user/.ssh/id_rsa.pub (/Users/user/.ssh/id_rsa.pub)
 	Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-28-generic x86_64)
 
 	* Documentation:  https://help.ubuntu.com/

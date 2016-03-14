@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="05/19/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # Create and Upload a FreeBSD VHD to Azure
@@ -23,7 +23,7 @@ This article shows you how to create and upload a virtual hard disk (VHD) that c
 ##Prerequisites##
 This article assumes that you have the following items:
 
-- **An Azure subscription** - If you don't have one, you can create an account in just a couple of minutes. If you have an MSDN subscription, see [Azure Benefit for MSDN Subscribers](/pricing/member-offers/msdn-benefits-details/). Otherwise, see [create a trial account](/pricing/1rmb-trial/).  
+- **An Azure subscription** - If you don't have one, you can create an account in just a couple of minutes. If you have an MSDN subscription, see [Azure Benefit for MSDN Subscribers](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Otherwise, see [create a trial account](/pricing/1rmb-trial/).  
 
 - **Azure PowerShell tools** - You have the Windows Azure PowerShell module installed and configured to use your subscription. To download the module, see [Azure Downloads](/downloads/). A tutorial to install and configure the module is available here. You'll use the [Azure Downloads](/downloads/) cmdlet to upload the VHD.
 
@@ -68,7 +68,7 @@ From the virtual machine that the FreeBSD operating system was installed to, com
 
     5.1 **Install python**
 
-		# pkg install python27 py27-asn1
+		# pkg install python27
 		# ln -s /usr/local/bin/python2.7 /usr/bin/python
 
     5.2 **Install wget**
@@ -77,7 +77,7 @@ From the virtual machine that the FreeBSD operating system was installed to, com
 
 6. **Install Azure Agent**
 
-    The latest release of the Azure Agent can always be found on [github](https://github.com/Azure/WALinuxAgent/releases). Version 2.0.10 and later officially supports FreeBSD 10 and later releases.
+    The latest release of the Azure Agent can always be found on [github](https://github.com/Azure/WALinuxAgent/releases). Version 2.0.10 and later officially supports FreeBSD 10 and later releases. The latest Azure Agent version for FreeBSD is 2.0.16.
 
 		# wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-2.0.10/waagent --no-check-certificate
 		# mv waagent /usr/sbin
@@ -102,7 +102,7 @@ From the virtual machine that the FreeBSD operating system was installed to, com
 
 You need a storage account in Azure to upload a .vhd file so it can be used in Azure to create a virtual machine. You can use the Azure Management Portal to create a storage account.
 
-1. Sign in to the Azure Management Portal.
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
 
 2. On the command bar, click **New**.
 
@@ -185,7 +185,7 @@ When you upload the .vhd file, you can place the .vhd file anywhere within your 
 
 1. From the Azure PowerShell window you used in the previous step, type:
 
-		Add-AzureVhd -Destination "<BlobStorageURL>/<YourImagesFolder>/<VHDName>.vhd" -LocalFilePath <PathToVHDFile>		
+		Add-AzureVhd -Destination "<BlobStorageURL>/<YourImagesFolder>/<VHDName>.vhd" -LocalFilePath <PathToVHDFile>
 
 ## Step 5: Create a VM with uploaded VHD ##
 After you upload the .vhd, you can add it as an image to the list of custom images associated with your subscription and create a virtual machine with this custom image.
@@ -194,7 +194,7 @@ After you upload the .vhd, you can add it as an image to the list of custom imag
 
 		Add-AzureVMImage -ImageName <Your Image's Name> -MediaLocation <location of the VHD> -OS <Type of the OS on the VHD>
 
-    **Important**: Please use Linux as OS type for now since current Azure PowerShell version only accepts “Linux” or “Windows” as a parameter.
+    **Important**: Please use Linux as OS type for now since current Azure PowerShell version only accepts "Linux" or "Windows" as a parameter.
 
 2. After you complete the previous steps, the new image is listed when you choose the **Images** tab on the Azure Management Portal.  
 

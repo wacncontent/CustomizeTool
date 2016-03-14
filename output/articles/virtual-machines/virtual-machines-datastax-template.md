@@ -321,7 +321,7 @@ Drilling down into this example, you can see two different approaches. In this f
 	        "version": "latest"
 	      },
 
-	 
+	â
 In this second fragment, the **scripts** variable is a JSON array where each element will be calculated at run time through a template language function (concat) and the value of another variable plus string constants:
 
 	      "scripts": [

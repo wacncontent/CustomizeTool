@@ -1,5 +1,8 @@
-new docs: 0, word count: 508
-
-new includes: 2
-includes/virtual-machines-sql-server-connection-steps-classic-tcp-endpoint.md
-includes/virtual-machines-sql-server-connection-steps-classic.md
+new docs: 5, word count: 8145
+articles/virtual-machines/virtual-machines-arm-log-on-windows-vm.md
+articles/virtual-machines/virtual-machines-setup-simulated-hybrid-cloud-environment-testing.md
+articles/virtual-machines/virtual-machines-sql-server-alwayson-availability-groups-gui-arm.md
+articles/virtual-machines/virtual-machines-upload-image-windows-resource-manager.md
+articles/virtual-machines/virtual-machines-windows-capture-image-resource-manager.md
+ 
+new includes: 0

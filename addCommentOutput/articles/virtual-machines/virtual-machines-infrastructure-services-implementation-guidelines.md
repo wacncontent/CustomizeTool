@@ -21,7 +21,7 @@ Azure is an excellent platform to implement dev/test or proof-of-concept configu
 
 This guidance identifies many areas for which planning is vital to the success of an IT workload in Azure. In addition, planning provides an order to the creation of the necessary resources. Although there is some flexibility, we recommend that you apply the order in this article to your planning and decision-making.
 
-This article was adapted from the content in the [Azure implementation guidelines](http://blogs.msdn.com/b/thecolorofazure/archive/2014/05/13/azure-implementation-guidelines.aspx) blog post. Thanks to Santiago Cánepa (Application Development Manager for Microsoft) and Hugo Salcedo (Application Development Manager for Microsoft) for their original material.
+This article was adapted from the content in the [Azure implementation guidelines](http://blogs.msdn.com/b/thecolorofazure/archive/2014/05/13/azure-implementation-guidelines.aspx) blog post. Thanks to Santiago <!-- deleted by customization Cánepa --><!-- keep by customization: begin --> Cรกnepa <!-- keep by customization: end --> (Application Development Manager for Microsoft) and Hugo Salcedo (Application Development Manager for Microsoft) for their original material.
 
 > [AZURE.NOTE] Affinity groups have been deprecated. Their use is not described here. For more information, see [About regional VNets and affinity groups](/documentation/articles/virtual-networks-migrate-to-regional-vnet).
 
@@ -52,7 +52,12 @@ Affixes can refer to different aspects that describe the particular resources. T
 Aspect | Examples | Notes
 --- | --- | ---
 Environment | dev, stg, prod | Depending on the purpose and name of each environment.
+<!-- deleted by customization
 Location | usw (China North), use (China East 2) | Depending on the region of the datacenter or the region of the organization.
+-->
+<!-- keep by customization: begin -->
+Location | China North, China East | Depending on the region of the datacenter or the region of the organization.
+<!-- keep by customization: end -->
 Azure component, service, or product | Rg for resource group, Svc for cloud service, VNet for virtual network | Depending on the product for which the resource provides support.
 Role | sql, ora, sp, iis | Depending on the role of the virtual machine.
 Instance | 01, 02, 03, etc. | For resources that have more than one instance. For example, load balanced web servers in a cloud service.
@@ -212,7 +217,7 @@ In the case of IaaS, cloud services offer similar functionality, although in mos
 
 Cloud service names are especially important in IaaS because Azure uses them as part of the default naming convention for disks. The cloud service name can contain only letters, numbers, and hyphens. The first and last character in the field must be a letter or number.
 
-Azure exposes the cloud service names, because they are associated to the VIP, in the domain “chinacloudapp.cn”. For a better user experience of the application, a vanity name should be configured as needed to replace the fully qualified cloud service name. This is typically done with a CNAME record in your public DNS that maps the public DNS name of your resource (for example, www.contoso.com) to the DNS name of the cloud service hosting the resource (for example, the cloud service hosting the web servers for www.contoso.com).
+Azure exposes the cloud service names, because they are associated to the VIP, in the domain "chinacloudapp.cn". For a better user experience of the application, a vanity name should be configured as needed to replace the fully qualified cloud service name. This is typically done with a CNAME record in your public DNS that maps the public DNS name of your resource (for example, www.contoso.com) to the DNS name of the cloud service hosting the resource (for example, the cloud service hosting the web servers for www.contoso.com).
 
 In addition, the naming convention used for cloud services might need to tolerate exceptions because the cloud service names must be unique among all other Windows Azure cloud services, regardless of the Windows Azure tenant.
 
@@ -286,7 +291,7 @@ Tasks:
 - Define the address space for the virtual network.
 - Define the set of subnets and the address space for each.
 - For cross-premises virtual networks, define the set of local network address spaces for the on-premises locations that the virtual machines in the virtual network need to reach.
-- Create the virtual network using your naming convention. You can use the Azure Management Portal or the Azure Management Portal.
+- Create the virtual network using your naming convention. You can use the Azure Management Portal <!-- deleted by customization or the Azure Management Portal -->.
 
 ## 6. Availability sets
 
@@ -325,7 +330,7 @@ Decision:
 Tasks:
 
 - Define each virtual machine name using your naming convention.
-- Create your virtual machines with the Azure Management Portal, the Azure Management Portal, the **New-AzureVM** PowerShell cmdlet, the Azure CLI, or with Resource Manager templates.
+- Create your virtual machines with the Azure Management Portal, the <!-- deleted by customization Azure Management Portal, the --> **New-AzureVM** PowerShell cmdlet, <!-- keep by customization: begin --> or <!-- keep by customization: end --> the Azure CLI <!-- deleted by customization, or with Resource Manager templates -->.
 
 ## Example of an IT workload: The Contoso financial analysis engine
 
@@ -352,7 +357,7 @@ The resulting design must incorporate:
 
 All of the above will follow these Contoso naming conventions:
 
-- Contoso uses [IT workload]-[location]-[Azure resource] as a prefix. For this example, "azfae" (Azure Financial Analysis Engine) is the IT workload name and "use" (China East 2) is the location, because most of Contoso's initial customers are on the East Coast of the United States.
+- Contoso uses [IT workload]-[location]-[Azure resource] as a prefix. For this example, "azfae" (Azure Financial Analysis Engine) is the IT workload name and <!-- deleted by customization "use" (China East 2) --><!-- keep by customization: begin --> "chinaeast" <!-- keep by customization: end --> is the location, because most of Contoso's initial customers are on the East Coast of the United States.
 - Storage accounts use contosoazfaeusesa[description] Note that contoso was added to the prefix to provide uniqueness, and storage account names do not support the use of hyphens.
 - Virtual networks use AZFAE-USE-VN[number].
 - Availability sets use azfae-use-as-[role].
@@ -376,7 +381,7 @@ Because the virtual network does not need ongoing connectivity to the Contoso on
 They created a cloud-only virtual network with the following settings using the Azure Management Portal:
 
 - Name: AZFAE-USE-VN01
-- Location: China East 2
+- Location: China East <!-- deleted by customization 2 -->
 - Virtual network address space: 10.0.0.0/8
 - First subnet:
 	- Name: FrontEnd

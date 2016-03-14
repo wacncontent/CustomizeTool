@@ -13,6 +13,7 @@
 	ms.date="11/16/2015"
 	wacn.date=""/>
 
+	
 # Frequently asked question about Azure Virtual Machines created with the classic deployment model
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
@@ -28,13 +29,13 @@ All subscribers can run server software on an Azure virtual machine. You can run
 
 • For Linux VMs -- [Linux on Azure-Endorsed Distributions](/documentation/articles/virtual-machines-linux-endorsed-distributions/)
 
-For Windows client images, certain versions of Windows 7 and Windows 8.1 are available to MSDN Azure benefit subscribers and MSDN Dev and Test Pay-As-You-Go subscribers, for development and test tasks. For details, including instructions and limitations, see [Windows Client images for MSDN subscribers](http://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/).
+For Windows client images, certain versions of Windows 7 and Windows 8.1 are available to MSDN Azure benefit subscribers and MSDN Dev and Test Pay-As-You-Go subscribers, for development and test tasks. For details, including instructions and limitations, see [Windows Client images for MSDN subscribers](https://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/).
 
 ## How much storage can I use with a virtual machine?
 
 Each data disk can be up to 1 TB. The number of data disks you can use depends on the size of the virtual machine. For details, see [Sizes for Virtual Machines](/documentation/articles/virtual-machines-size-specs).
 
-An Azure storage account provides storage for the operating system disk and any data disks. Each disk is a .vhd file stored as a page blob. For pricing details, see [Storage Pricing Details](http://www.windowsazure.cn/home/features/storage/#price).
+An Azure storage account provides storage for the operating system disk and any data disks. Each disk is a .vhd file stored as a page blob. For pricing details, see [Storage Pricing Details](/home/features/storage/#price).
 
 ## Which virtual hard disk types can I use?
 
@@ -46,7 +47,7 @@ Azure only supports fixed, VHD-format virtual hard disks. If you have a VHDXyou 
 
 ## Are these virtual machines the same as Hyper-V virtual machines?
 
-In many ways they're similar to “Generation 1” Hyper-V VMs, but they're not exactly the same. Both types provide virtualized hardware, and the VHD-format virtual hard disks are compatible. This means you can move them between Hyper-V and Azure. Three key differences that sometimes surprise Hyper-V users are:
+In many ways they're similar to "Generation 1" Hyper-V VMs, but they're not exactly the same. Both types provide virtualized hardware, and the VHD-format virtual hard disks are compatible. This means you can move them between Hyper-V and Azure. Three key differences that sometimes surprise Hyper-V users are:
 
 - Azure doesn't provide console access to a virtual machine. There is no way to access a VM until it is done booting.
 - Azure VMs in most [sizes](/documentation/articles/virtual-machines-size-specs) have only 1 virtual network adapter, which means that they also can have only 1 external IP address. (The A8 and A9 sizes use a second network adapter for application communication between instances in limited scenarios.)
@@ -112,9 +113,9 @@ Additional details:
 
 Azure offers several options for anti-virus solutions, but it's up to you to manage it. For example, you might need a separate subscription for antimalware software, and you'll need to decide when to run scans and install updates. You can add anti-virus support with a VM extension for Microsoft Antimalware, Symantec Endpoint Protection, or TrendMicro Deep Security Agent when you create a Windows virtual machine, or at a later point. The Symantec and TrendMicro extensions let you use a free limited-time trial subscription or an existing enterprise subscription. Microsoft Antimalware is free of charge. For details, see:
 
-- [How to install and configure Symantec Endpoint Protection on an Azure VM](https://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-install-symantec/)
+- [How to install and configure Symantec Endpoint Protection on an Azure VM](/documentation/articles/virtual-machines-install-symantec/) 
 - [How to install and configure Trend Micro Deep Security as a Service on an Azure VM](/documentation/articles/virtual-machines-install-trend/)
-- [Deploying Antimalware Solutions on Azure Virtual Machines](http://azure.microsoft.com/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)
+- [Deploying Antimalware Solutions on Azure Virtual Machines](https://azure.microsoft.com/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)
 
 ## What are my options for backup and recovery?
 
@@ -132,7 +133,7 @@ You are charged when the VM status is Running or Stopped, but you are not charge
 - Use the Stop-AzureVM cmdlet, available in the Azure PowerShell module.
 - Use the Shutdown Role operation in the Service Management REST API and specify StoppedDeallocated for the PostShutdownAction element.
 
-For more details, see [Virtual Machines Pricing](http://www.windowsazure.cn/home/features/virtual-machines/#price).
+For more details, see [Virtual Machines Pricing](/home/features/virtual-machines/#price).
 
 ## Will Azure reboot my VM for maintenance?
 
@@ -142,7 +143,7 @@ Unplanned maintenance events can occur when Azure detects a serious hardware pro
 
 For any standalone VM (meaning the VM isn't part of an availability set), Azure notifies the subscription's Service Administrator by email at least one week before planned maintenance because the VMs could be restarted during the update. Applications running on the VMs could experience downtime.
 
-You also can use the Azure Management Portal or Azure PowerShell to view the reboot logs when the reboot occurred due to planned maintenance. For details, see [Viewing VM Reboot Logs](http://azure.microsoft.com/blog/2015/04/01/viewing-vm-reboot-logs/).
+You also can use the Azure Management Portal or Azure PowerShell to view the reboot logs when the reboot occurred due to planned maintenance. For details, see [Viewing VM Reboot Logs](https://azure.microsoft.com/blog/2015/04/01/viewing-vm-reboot-logs/).
 
 To provide redundancy, put two or more similarly configured VMs in the same availability set. This helps ensure at least one VM is available during planned or unplanned maintenance. Azure guarantees certain levels of VM availability for this configuration. For details, see [Manage the availability of virtual machines](/documentation/articles/virtual-machines-manage-availability).
 

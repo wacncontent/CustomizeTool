@@ -22,17 +22,17 @@ The guide assumes you know [how to create a WebJob project in Visual Studio with
 
 The code snippets only show functions, not the code that creates the `JobHost` object as in this example:
 
-```
-public class Program
-{
-   public static void Main()
-   {
-      JobHostConfiguration config = new JobHostConfiguration();
-      config.UseServiceBus();
-      JobHost host = new JobHost(config);
-      host.RunAndBlock();
-   }
-}
+	public class Program
+	{
+   		public static void Main()
+   		{
+      			JobHostConfiguration config = new JobHostConfiguration();
+      			config.UseServiceBus();
+      			JobHost host = new JobHost(config);
+      			host.RunAndBlock();
+   		}
+	}
+
 ## Table of contents
 
 -   [Prerequisites](#prerequisites)
@@ -41,7 +41,6 @@ public class Program
 -   [How to work with Service Bus topics](#topics)
 -   [Related topics covered by the storage queues article](#queues)
 -   [Next steps](#nextsteps)
-```
 
 A [complete Service Bus code example](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/ServiceBus/Program.cs) is in the azure-webjobs-sdk-samples repository on GitHub.com.
 

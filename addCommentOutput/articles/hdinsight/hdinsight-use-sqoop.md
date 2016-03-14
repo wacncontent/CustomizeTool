@@ -624,7 +624,7 @@ Now you have learned how to use Sqoop. To learn more, see:
 [azure-management-portal]: https://manage.windowsazure.cn/
 
 <!-- deleted by customization
-[hdinsight-versions]:  hdinsight-component-versioning.md
+[hdinsight-versions]:  hdinsight-component-versioning-v1.md
 [hdinsight-provision]: hdinsight-provision-clusters-v1.md
 [hdinsight-get-started]: ../hdinsight-get-started.md
 [hdinsight-storage]: ../hdinsight-use-blob-storage.md
@@ -637,7 +637,7 @@ Now you have learned how to use Sqoop. To learn more, see:
 [sqldatabase-create-configue]: ../sql-database-create-configure.md
 -->
 <!-- keep by customization: begin -->
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage

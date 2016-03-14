@@ -2,7 +2,7 @@
 
 <properties
 	pageTitle="Provision and deploy microservices predictably in Azure"
-	description="Learn how to deploy an application composed of microservices in Azure Websites as a single unit and in a predictable manner using JSON resource group templates and PowerShell scripting."
+	description="Learn how to deploy an application composed of microservices in Azure as a single unit and in a predictable manner using JSON resource group templates and PowerShell scripting."
 	services="app-service"
 	documentationCenter=""
 	authors="cephalin"
@@ -17,9 +17,9 @@
 
 # Provision and deploy microservices predictably in Azure #
 
-This tutorial shows how to provision and deploy an application composed of [microservices](https://en.wikipedia.org/wiki/Microservices) in [Azure Websites](/home/features/app-service/) as a single unit and in a predictable manner using JSON resource group templates and PowerShell scripting. 
+This tutorial shows how to provision and deploy an application composed of [microservices](https://en.wikipedia.org/wiki/Microservices) in [Azure Web App](/home/features/web-site/) as a single unit and in a predictable manner using JSON resource group templates and PowerShell scripting. 
 
-When provisioning and deploying high-scale applications that are composed of highly decoupled microservices, repeatability and predictability are crucial to success. [Azure Websites](/home/features/app-service/) enables you to create microservices that include web sites, mobile apps, API apps, and logic apps. [Azure Resource Manager](/documentation/articles/resource-group-overview) enables you to manage all the microservices as a unit, together with resource dependencies such as database and source control settings. Now, you can also deploy such an application using JSON templates and simple PowerShell scripting. 
+When provisioning and deploying high-scale applications that are composed of highly decoupled microservices, repeatability and predictability are crucial to success. [Azure Web App](/home/features/web-site/) enables you to create microservices that include web apps, mobile apps, API apps, and logic apps. [Azure Resource Manager](/documentation/articles/resource-group-overview) enables you to manage all the microservices as a unit, together with resource dependencies such as database and source control settings. Now, you can also deploy such an application using JSON templates and simple PowerShell scripting. 
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
@@ -27,7 +27,7 @@ When provisioning and deploying high-scale applications that are composed of hig
 
 In the tutorial, you will deploy an application that includes:
 
--	Two web sites (i.e. two microservices)
+-	Two web apps (i.e. two microservices)
 -	A backend SQL Database
 -	App settings, connection strings, and source control
 -	Application insights, alerts, autoscaling settings
@@ -38,7 +38,7 @@ In this tutorial, you will use the following tools. Since it's not comprehensive
 
 ### Azure Resource Manager templates (JSON) ###
  
-Every time you create a web site in Azure Websites, for example, Azure Resource Manager uses a JSON template to create the entire resource group with the component resources. A complex template from the [Azure Marketplace](/marketplace) like the [Scalable WordPress](/marketplace/partners/wordpress/scalablewordpress/) app can include the MySQL database, storage accounts, the App Service plan, the web site itself, alert rules, app settings, autoscale settings, and more, and all these templates are available to you through PowerShell. For information on how to download and use these templates, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
+Every time you create a web app in Azure, for example, Azure Resource Manager uses a JSON template to create the entire resource group with the component resources. A complex template from the [Azure gallery](/marketplace) like the [Scalable WordPress](/marketplace/partners/wordpress/scalablewordpress/) app can include the MySQL database, storage accounts, the App Service plan, the web app itself, alert rules, app settings, autoscale settings, and more, and all these templates are available to you through PowerShell. For information on how to download and use these templates, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
 
 For more information on the Azure Resource Manager templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
 
@@ -60,13 +60,13 @@ This [preview tool](https://resources.azure.com) enables you to explore the JSON
 
 ### Deploy to Azure button ###
 
-If you use GitHub for source control, you can put a [Deploy to Azure button](/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/) into your README.MD, which enables a turn-key deployment UI to Azure. While you can do this for any simple web site, you can extend this to enable deploying an entire resource group by putting an azuredeploy.json file in the repository root. This JSON file, which contains the resource group template, will be used by the Deploy to Azure button to create the resource group. For an example, see the [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) sample, which you will use in this tutorial.
+If you use GitHub for source control, you can put a [Deploy to Azure button](/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/) into your README.MD, which enables a turn-key deployment UI to Azure. While you can do this for any simple web app, you can extend this to enable deploying an entire resource group by putting an azuredeploy.json file in the repository root. This JSON file, which contains the resource group template, will be used by the Deploy to Azure button to create the resource group. For an example, see the [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) sample, which you will use in this tutorial.
 
 ## Get the sample resource group template ##
 
 So now let's get right to it.
 
-1. 	Navigate to the [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) Azure Websites sample.
+1. 	Navigate to the [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) Azure sample.
 
 2.	 In readme.md, click **Deploy to Azure**.
  
@@ -82,11 +82,11 @@ So now let's get right to it.
 
 5.	Back in the Deploy page, click the **Manage** link to see the new application in the Azure Management Portal.
 
-6.	In the **Essentials** dropdown, click the resource group link. Note also that the web site is already connected to the GitHub repository under **External Project**. 
+6.	In the **Essentials** dropdown, click the resource group link. Note also that the web app is already connected to the GitHub repository under **External Project**. 
 
 	![](./media/app-service-deploy-complex-application-predictably/gettemplate-3-portalresourcegroup.png)
  
-7.	In the resource group blade, note that there are already two web sites and one SQL Database in the resource group.
+7.	In the resource group blade, note that there are already two web apps and one SQL Database in the resource group.
 
 	![](./media/app-service-deploy-complex-application-predictably/gettemplate-4-portalresourcegroupclicked.png)
  
@@ -117,7 +117,7 @@ Take a look at the parameters section to see that most of these parameters are w
 
 ### Resources ###
 
-In the resources node, you can see that 4 top-level resources are defined, including a SQL Server instance, an App Service plan, and two web sites. 
+In the resources node, you can see that 4 top-level resources are defined, including a SQL Server instance, an App Service plan, and two web apps. 
 
 #### App Service plan ####
 
@@ -139,19 +139,19 @@ Note the following about the highlighted JSON code:
 
 -	The use of parameters ensures that the created resources are named and configured in a way that makes them consistent with one another.
 -	The SQLServer resource has two nested resources, each has a different value for `type`.
--	The nested resources inside `“resources”: […]`, where the database and the firewall rules are defined, have a `dependsOn` element that specifies the resource ID of the root-level SQLServer resource. This tells Azure Resource Manager, “before you create this resource, that other resource must already exist; and if that other resource is defined in the template, then create that one first”.
+-	The nested resources inside `"resources": […]`, where the database and the firewall rules are defined, have a `dependsOn` element that specifies the resource ID of the root-level SQLServer resource. This tells Azure Resource Manager, "before you create this resource, that other resource must already exist; and if that other resource is defined in the template, then create that one first".
 
 	>[AZURE.NOTE] For detailed information on how to use the `resourceId()` function, see [Azure Resource Manager Template Functions](/documentation/articles/resource-group-template-functions).
 
 -	The effect of the `dependsOn` element is that Azure Resource Manager can know which resources can be created in parallel and which resources must be created sequentially. 
 
-#### web site ####
+#### Web app ####
 
-Now, let's move on to the actual web sites themselves, which are more complicated. Click the [variables('apiSiteName')] web site in the JSON Outline to highlight its JSON code. You'll notice that things are getting much more interesting. For this purpose, I'll talk about the features one by one:
+Now, let's move on to the actual web apps themselves, which are more complicated. Click the [variables('apiSiteName')] web app in the JSON Outline to highlight its JSON code. You'll notice that things are getting much more interesting. For this purpose, I'll talk about the features one by one:
 
 ##### Root resource #####
 
-The web site depends on two different resources. This means that Azure Resource Manager will create the web site only after both the App Service plan and the SQL Server instance are created.
+The web app depends on two different resources. This means that Azure Resource Manager will create the web app only after both the App Service plan and the SQL Server instance are created.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-5-webapproot.png)
 
@@ -161,7 +161,7 @@ The app settings are also defined as a nested resource.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-6-webappsettings.png)
 
-In the `properties` element for `config/appsettings`, you have two app settings in the format `“<name>” : “<value>”`.
+In the `properties` element for `config/appsettings`, you have two app settings in the format `"<name>" : "<value>"`.
 
 -	`PROJECT` is a [KUDU setting](https://github.com/projectkudu/kudu/wiki/Customizing-deployments) that tells Azure deployment which project to use in a multi-project Visual Studio solution. I will show you later how source control is configured, but since the ToDoApp code is in a multi-project Visual Studio solution, we need this setting.
 -	`clientUrl` is simply an app setting that the application code uses.
@@ -172,7 +172,7 @@ The connection strings are also defined as a nested resource.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-7-webappconnstr.png)
 
-In the `properties` element for `config/connectionstrings`, each connection string is also defined as a name:value pair, with the specific format of `“<name>” : {“value”: “…”, “type”: “…”}`. For the `type` element, possible values are `MySql`, `SQLServer`, `SQLAzure`, and `Custom`.
+In the `properties` element for `config/connectionstrings`, each connection string is also defined as a name:value pair, with the specific format of `"<name>" : {"value": "…", "type": "…"}`. For the `type` element, possible values are `MySql`, `SQLServer`, `SQLAzure`, and `Custom`.
 
 >[AZURE.TIP] For a definitive list of the connection string types, run the following command in Azure PowerShell:
 	\[Enum]::GetNames("Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.DatabaseType")
@@ -185,19 +185,19 @@ The source control settings are also defined as a nested resource. Azure Resourc
 
 `RepoUrl` and `branch` should be pretty intuitive and should point to the Git repository and the name of the branch to publish from. Again, these are defined by input parameters. 
 
-Note in the `dependsOn` element that, in addition to the web site resource itself, `sourcecontrols/web` also depends on `config/appsettings` and `config/connectionstrings`. This is because once `sourcecontrols/web` is configured, the Azure deployment process will automatically attempt to deploy, build, and start the application code. Therefore, inserting this dependency helps you make sure that the application has access to the required app settings and connection strings before the application code is run. [TODO: need to verify if this is true.]
+Note in the `dependsOn` element that, in addition to the web app resource itself, `sourcecontrols/web` also depends on `config/appsettings` and `config/connectionstrings`. This is because once `sourcecontrols/web` is configured, the Azure deployment process will automatically attempt to deploy, build, and start the application code. Therefore, inserting this dependency helps you make sure that the application has access to the required app settings and connection strings before the application code is run. [TODO: need to verify if this is true.]
 
->[AZURE.NOTE] Note also that `IsManualIntegration` is set to `true`. This property is necessary in this tutorial because you do not actually own the GitHub repository, and thus cannot actually grant permission to Azure to configure continuous publishing from [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) (i.e. push automatic repository updates to Azure). You can use the default value `false` for the specified repository only if you have configured the owner's GitHub credentials in the [Azure preview portal](https://manage.windowsazure.cn) before. In other words, if you have set up source control to GitHub or BitBucket for any app in the [Azure Management Portal](https://manage.windowsazure.cn) previously, using your user credentials, then Azure will remember the credentials and use them whenever you deploy any app from GitHub or BitBucket in the future. However, if you haven't done this already, deployment of the JSON template will fail when Azure Resource Manager tries to configure the web site's source control settings because it cannot log into GitHub or BitBucket with the repository owner's credentials.
+>[AZURE.NOTE] Note also that `IsManualIntegration` is set to `true`. This property is necessary in this tutorial because you do not actually own the GitHub repository, and thus cannot actually grant permission to Azure to configure continuous publishing from [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) (i.e. push automatic repository updates to Azure). You can use the default value `false` for the specified repository only if you have configured the owner's GitHub credentials in the [Azure preview portal](https://manage.windowsazure.cn) before. In other words, if you have set up source control to GitHub or BitBucket for any app in the [Azure Management Portal](https://manage.windowsazure.cn) previously, using your user credentials, then Azure will remember the credentials and use them whenever you deploy any app from GitHub or BitBucket in the future. However, if you haven't done this already, deployment of the JSON template will fail when Azure Resource Manager tries to configure the web app's source control settings because it cannot log into GitHub or BitBucket with the repository owner's credentials.
 
 ## Compare the JSON template with deployed resource group ##
 
-Here, you can go through all the web site's blades in the [Azure Management Portal](https://manage.windowsazure.cn), but there's another tool that's just as useful, if not more. Go to the [Azure Resource Explorer](https://resources.azure.com) preview tool, which gives you a JSON representation of all the resource groups in your subscriptions, as they actually exist in the Azure backend. You can also see how the resource group's JSON hierarchy in Azure corresponds with the hierarchy in the template file that's used to create it.
+Here, you can go through all the web app's blades in the [Azure Management Portal](https://manage.windowsazure.cn), but there's another tool that's just as useful, if not more. Go to the [Azure Resource Explorer](https://resources.azure.com) preview tool, which gives you a JSON representation of all the resource groups in your subscriptions, as they actually exist in the Azure backend. You can also see how the resource group's JSON hierarchy in Azure corresponds with the hierarchy in the template file that's used to create it.
 
 For example, when I go to the [Azure Resource Explorer](https://resources.azure.com) tool and expand the nodes in the explorer, I can see the resource group and the root-level resources that are collected under their respective resource types.
 
 ![](./media/app-service-deploy-complex-application-predictably/ARM-1-treeview.png)
 
-If you drill down to a web site, you should be able to see web site configuration details similar to the below screenshot:
+If you drill down to a web app, you should be able to see web app configuration details similar to the below screenshot:
 
 ![](./media/app-service-deploy-complex-application-predictably/ARM-2-jsonview.png)
 
@@ -225,11 +225,11 @@ The **Deploy to Azure** button is great, but it allows you to deploy the resourc
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-3-newresource.png)
 
-7.	Select **Application Insights for web sites**, then make sure an existing App Service plan and web site is selected, and then click **Add**.
+7.	Select **Application Insights for Web Apps**, then make sure an existing App Service plan and web app is selected, and then click **Add**.
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-4-newappinsight.png)
 
-	You'll now be able to see several new resources that, depending on the resource and what it does, have dependencies on either the App Service plan or the web site. These resources are not enabled by their existing definition and you're going to change that.
+	You'll now be able to see several new resources that, depending on the resource and what it does, have dependencies on either the App Service plan or the web app. These resources are not enabled by their existing definition and you're going to change that.
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-5-appinsightresources.png)
  

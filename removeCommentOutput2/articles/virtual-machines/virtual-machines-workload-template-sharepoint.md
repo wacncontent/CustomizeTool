@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Deploy SharePoint farms with ARM templates | Windows Azure"
 	description="Easily deploy 3-server or 9-server SharePoint farm with Resource Manager templates and the Azure Management Portal, Azure PowerShell, or the Azure CLI."

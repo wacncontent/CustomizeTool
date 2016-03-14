@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="10/01/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 
@@ -75,7 +75,7 @@ The [WordPress MU Domain Mapping][wordpress-plugin-wordpress-mu-domain-mapping] 
 The **Free** [Azure Web App](/documentation/services/web-sites/) plan mode does not support adding custom domains to Web Apps. You will need to switch to **Shared** or **Standard** mode. To do this:
 
 * Log in to the Azure Management Portal and locate your web app. 
-* Click on the **Scale** tab in the main content area
+* Click on the **Scale up** tab in **Settings**.
 * Under **General**, select either *SHARED* or *STANDARD*
 * Click **Save**
 

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Create a Windows VM | Windows Azure"
 	description="Use Azure PowerShell and Resource Manager templates to easily create a new Windows virtual machine."

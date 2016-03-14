@@ -337,12 +337,12 @@ The **<trigger>** element contains a **<startConditions>** element which specify
 
 VPAID is an API for enabling executable ad units to communicate with a video player. This allows highly interactive ad experiences. The user can interact with the ad and the ad can respond to actions taken by the viewer. For example an ad may display buttons that allow the user to view more information or a longer version of the ad. The video player must support the VPAID API and the executable ad must implement the API. When a player requests an ad from an ad server the server may respond with a VAST response that contains a VPAID ad.
 
-An executable ad is created in code that must be executed in a runtime environment such as Adobe Flash™ or JavaScript that can be executed in a web browser. When an ad server returns a VAST response containing a VPAID ad, the value of the apiFramework attribute in the <MediaFile> element must be “VPAID”. This attribute specifies that the contained ad is a VPAID executable ad. The type attribute must be set to the MIME type of the executable, such as “application/x-shockwave-flash” or “application/x-javascript”. The following XML snippet shows the <MediaFile> element from a VAST response containing a VPAID executable ad. 
+An executable ad is created in code that must be executed in a runtime environment such as Adobe Flash™ or JavaScript that can be executed in a web browser. When an ad server returns a VAST response containing a VPAID ad, the value of the apiFramework attribute in the <MediaFile> element must be "VPAID". This attribute specifies that the contained ad is a VPAID executable ad. The type attribute must be set to the MIME type of the executable, such as "application/x-shockwave-flash" or "application/x-javascript". The following XML snippet shows the <MediaFile> element from a VAST response containing a VPAID executable ad. 
 
 	
 	<MediaFiles>
-	   <MediaFile id="1" delivery="progressive" type=”application/x-shockwaveflash”
-	              width=”640” height=”480” apiFramework=”VPAID”>
+	   <MediaFile id="1" delivery="progressive" type="application/x-shockwaveflash"
+	              width="640" height="480" apiFramework="VPAID">
 	       <!-- CDATA wrapped URI to executable ad -->
 	   </MediaFile>
 	</MediaFiles>

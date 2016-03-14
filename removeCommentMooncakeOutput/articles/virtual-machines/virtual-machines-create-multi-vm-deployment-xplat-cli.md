@@ -9,13 +9,13 @@
    tags="azure-service-management"/>
 
    <tags
-   ms.service="virtual-machines"
-   ms.date="02/20/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="02/20/2015"
+	wacn.date=""/>
 
 # Create a multi-VM deployment with the Azure CLI
 
-> [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating resources with the classic deployment model. 
+> [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
 
 The following script will show you how to configure a multi-VM multi-cloud service deployment in a VNET using Azure Command-Line Interface (Azure CLI).
 

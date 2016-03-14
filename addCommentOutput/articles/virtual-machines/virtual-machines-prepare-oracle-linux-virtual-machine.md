@@ -11,19 +11,18 @@ tags="azure-service-management,azure-resource-manager"
 	ms.service="virtual-machines"
 	ms.date="06/22/2015"
 	wacn.date=""/>
+
 #Prepare an Oracle Linux virtual machine for Azure
-<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
--->
 -   [Prepare an Oracle Linux 6.4+ virtual machine for Azure](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
 
--   [Prepare an Oracle Linux 7.0+ <!-- deleted by customization virtual machine --><!-- keep by customization: begin --> Virtual Machine <!-- keep by customization: end --> for Azure](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
+-   [Prepare an Oracle Linux 7.0+ virtual machine for Azure](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
 
 ##Prerequisites
-This article assumes that you have already installed an Oracle Linux operating system to a virtual hard disk. Multiple tools exist to create .vhd files, for example a virtualization solution such as Hyper-V. For instructions, see [Install Hyper-V and create a <!-- deleted by customization virtual --><!-- keep by customization: begin --> vRirtual <!-- keep by customization: end --> machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx).
+This article assumes that you have already installed an Oracle Linux operating system to a virtual hard disk. Multiple tools exist to create .vhd files, for example a virtualization solution such as Hyper-V. For instructions, see [Install Hyper-V and create a virtual machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx).
 
 **Oracle Linux installation notes**
 
@@ -40,6 +39,9 @@ This article assumes that you have already installed an Oracle Linux operating s
 - Do not configure a swap partition on the OS disk. The Linux agent can be configured to create a swap file on the temporary resource disk. More information about this can be found in the steps below.
 
 - All of the VHDs must have sizes that are multiples of 1 MB.
+
+- Make sure the `Addons`repository is enabled. Edit the file `/etc/yum.repo.d/public-yum-ol6.repo`(Oracle Linux 6) or `/etc/yum.repo.d/public-yum-ol7.repo`(Oracle Linux ), and change the line `enabled=0` to `enabled=1` under **[ol6_addons]** or **[ol7_addons]** in this file.
+
 
 ##Oracle Linux 6.4+
 You must complete specific configuration steps in the operating system for the virtual machine to run in Azure.

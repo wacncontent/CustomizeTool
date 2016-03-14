@@ -126,7 +126,7 @@ the largest Big Data apps in the world.
 
 ![](./media/hdinsight-application-partners/kyvos8.png)  
 Kyvos is committed to unlock the power of Big Data Analytics with its
-unique “OLAP on Hadoop” technology. This allows you to build cubes
+unique "OLAP on Hadoop" technology. This allows you to build cubes
 in-place on Hadoop with linear scalability, eliminating the limitations
 of traditional OLAP solutions, and enabling interactive
 multi-dimensional analytics on your Big Data. Users can visualize,

@@ -16,18 +16,10 @@
 # Create SharePoint server farms
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic model.
-<!-- deleted by customization
 
 With the Windows Azure Management Portal marketplace, you can quickly create pre-configured SharePoint Server 2013 farms. This can save you a lot of time when you need a basic or high-availability SharePoint farm for a development and testing environment or if you are evaluating SharePoint Server 2013 as a collaboration solution for your organization.
 
-> [AZURE.NOTE] The **SharePoint Server Farm** item in the Azure Marketplace of the Azure Management Portal has been removed.
--->
-<!-- keep by customization: begin -->
- 
-With the Windows Azure Preview portal marketplace, you can quickly create pre-configured SharePoint Server 2013 farms. This can save you a lot of time when you need a basic or high-availability SharePoint farm for a development and testing environment or if you are evaluating SharePoint Server 2013 as a collaboration solution for your organization.
-
-> [AZURE.NOTE] The **SharePoint Server Farm** item in the Azure Marketplace of the Azure Preview portal has been removed.
-<!-- keep by customization: end -->
+> [AZURE.NOTE] The **SharePoint Server Farm** item in the Azure gallery of the Azure Management Portal has been removed.
 
 The basic SharePoint farm consists of three virtual machines in this configuration.
 
@@ -63,7 +55,7 @@ You can administer the servers of these farms through Remote Desktop connections
 
 From the Central Administration SharePoint site, you can configure My sites, SharePoint applications, and other functionality. For more information, see [Configure SharePoint 2013](http://technet.microsoft.com/zh-cn/library/ee836142.aspx).
 
-> [AZURE.NOTE] The Azure <!-- deleted by customization Management --><!-- keep by customization: begin --> Preview <!-- keep by customization: end --> Portal creates both of these farms in a cloud-only virtual network with an Internet-facing web presence. There is no site-to-site VPN or ExpressRoute connection back to your organization network.
+> [AZURE.NOTE] The Azure Management Portal creates both of these farms in a cloud-only virtual network with an Internet-facing web presence. There is no site-to-site VPN or ExpressRoute connection back to your organization network.
 
 ## Additional resources
 

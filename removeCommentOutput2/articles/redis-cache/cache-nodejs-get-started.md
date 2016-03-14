@@ -61,7 +61,7 @@ You can use the following PowerShell command to enable the non-SSL endpoint
 	var redis = require("redis");
 
 	// Add your cache name and access key.
-  var client = redis.createClient(6379,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>' });
+	var client = redis.createClient(6379,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>' });
 
 	client.set("foo", "bar", function(err, reply) {
 	    console.log(reply);

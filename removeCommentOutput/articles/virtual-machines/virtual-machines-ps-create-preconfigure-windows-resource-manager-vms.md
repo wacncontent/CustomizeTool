@@ -16,11 +16,11 @@
 # Create and configure a Windows Virtual Machine with Resource Manager and Azure PowerShell
 
 > [AZURE.SELECTOR]
-- [Azure Management Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
-- [Azure PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
-- [Azure PowerShell - Template](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template)
-- [Azure Management Portal - Linux](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
-- [Azure CLI](/documentation/articles/virtual-machines-linux-tutorial)
+- [Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
+- [PowerShell - Template](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template)
+- [Portal - Linux](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
+- [CLI](/documentation/articles/virtual-machines-linux-tutorial)
 
 <br>
 
@@ -387,6 +387,6 @@ Here is the Azure PowerShell command set to create this virtual machine.
 
 [Deploy and Manage Azure Virtual Machines using Resource Manager Templates and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
-[Create a Windows virtual machine with a Resource Manager template and PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template-simple)
+[Create a Windows virtual machine with a Resource Manager template and PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template)
 
 [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)

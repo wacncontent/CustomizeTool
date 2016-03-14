@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Automate with Azure Resource Manager | Windows Azure"
 	description="Get links to topics on how to automate the creation and management of Azure virtual machines by using Resource Manager."

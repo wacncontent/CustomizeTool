@@ -22,7 +22,7 @@ Azure Web App is the best choice for most web apps. Deployment and management ar
 
 If you need more control over the web server environment, such as the ability to remote into your server or configure server startup tasks, Azure Cloud Services is typically the best option.
 
-If you have an existing application that would require substantial modifications to run in Azure Web App or Azure Cloud Services, you could choose Azure Virtual Machines in order to simplify migrating to the cloud. However, correctly configuring, securing, and maintaining VMs requires much more time and IT expertise compared to Azure Web App and Cloud Services. If you are considering Azure Virtual Machines, make sure you take into account the ongoing maintenance effort required to patch, update, and manage your VM environment.  
+If you have an existing application that would require substantial modifications to run in Azure Web App or Azure Cloud Services, you could choose Azure Virtual Machines in order to simplify migrating to the cloud. However, correctly configuring, securing, and maintaining VMs requires much more time and IT expertise compared to Azure Web App and Cloud Services. If you are considering Azure Virtual Machines, make sure you take into account the ongoing maintenance effort required to patch, update, and manage your VM environment.
 
 The following diagram illustrates the relative degree of control versus ease of use for each of these web hosting options on Azure.
 
@@ -173,9 +173,7 @@ Can listen to ETW events||X|X|
 
 ## <a id="nextsteps"></a> Next Steps
 
-For more information about the three web hosting options, see the following resources:
-
-* [Compute Hosting Options Provided by Azure](/documentation/articles/fundamentals-application-models)
+For more information about the three web hosting options, see [Introducing Azure](/documentation/articles/fundamentals-introduction-to-azure).
 
 To get started with the option(s) you choose for your application, see the following resources:
 

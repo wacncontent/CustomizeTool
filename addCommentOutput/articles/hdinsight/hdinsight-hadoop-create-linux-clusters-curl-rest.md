@@ -23,7 +23,7 @@ The Azure REST API allows you to perform management operations on services hoste
 >
 > For more information on node sizes and associated costs, see [HDInsight pricing](/home/features/hdinsight/#price).
 
-##Prerequisites
+<!-- deleted by customization ###Prerequisites --><!-- keep by customization: begin --> ##Prerequisites <!-- keep by customization: end -->
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 

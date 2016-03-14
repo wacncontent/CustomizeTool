@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Different ways to create a Windows VM | Windows Azure"
 	description="Lists the different ways to create a Windows virtual machine with Resource Manager."
@@ -56,7 +54,7 @@ For Azure PowerShell, see:
 Choose an image based on the operating system you want to run. Azure and its partners offer many images, some of which include applications and tools. Or, use one of your own images. Find the platform image that you need for your application by using the information in: [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI][].
 
 <!-- LINKS -->
-[overview]: /documentation/articles/resource-group-overview
+[overview]: ../documentation/articles/resource-group-overview
 
 [Create a virtual machine running Windows]: virtual-machines-windows-tutorial.md
 
@@ -65,7 +63,7 @@ Choose an image based on the operating system you want to run. Azure and its par
 [Create and preconfigure a Windows virtual machine with Resource Manager and Azure PowerShell]:  virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md
 [Deploy and manage virtual machines using Azure Resource Manager templates and PowerShell]: virtual-machines-deploy-rmtemplates-powershell.md
 [Create a Windows VM with Resource Manager and PowerShell]: virtual-machines-create-windows-powershell-resource-manager.md
-[Create a Windows virtual machine with a Resource Manager template and PowerShell]: virtual-machines-create-windows-powershell-resource-manager-template-simple.md
+[Create a Windows virtual machine with a Resource Manager template and PowerShell]: virtual-machines-create-windows-powershell-resource-manager-template.md
 
 
 [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI]: resource-groups-vm-searching.md

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="CLI for Mac, Linux, and Windows | Windows Azure"
 	description="Using the Windows Azure CLI for Mac, Linux, and Windows with Azure Resource Manager."

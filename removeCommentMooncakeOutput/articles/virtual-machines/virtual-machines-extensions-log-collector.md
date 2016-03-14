@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.date="11/12/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="11/12/2015"
+	wacn.date=""/>
 
 
 # AzureLogCollector Extension
@@ -38,7 +38,7 @@ In both collection modes, additional data collection folders can be specified by
 
 - **Location**: The path to the folder on the virtual machine where file will be collected.
 
-- **SearchPattern**: The pattern of the names of files to be collected. Default is “*”
+- **SearchPattern**: The pattern of the names of files to be collected. Default is "*"
 
 - **Recursive**: if the files will be collected recursively under the folder.
 
@@ -167,13 +167,13 @@ The following is the definition of the parameters passed to the script. (This is
 
 - *ServiceName*: Your cloud service name.
 
-- *Roles*: A list of roles, such as “WebRole1” or ”WorkerRole1”.
+- *Roles*: A list of roles, such as "WebRole1" or "WorkerRole1".
 
-- *Instances*: A list of the names of role instances separated by comma -- use the wildcard string (“*”) for all role instances.
+- *Instances*: A list of the names of role instances separated by comma -- use the wildcard string ("*") for all role instances.
 
-- *Slot*: Slot name. “Production” or “Staging”.
+- *Slot*: Slot name. "Production" or "Staging".
 
-- *Mode*: Collection mode. “Full” or “GA”.
+- *Mode*: Collection mode. "Full" or "GA".
 
 - *StorageAccountName*: Name of Azure storage account for storing collected data.
 
@@ -253,7 +253,7 @@ The following is the definition of the parameters passed to the script. (This is
 
 - VMName The name of the VM.
 
-- Mode: Collection mode. “Full” or “GA”.
+- Mode: Collection mode. "Full" or "GA".
 
 - StorageAccountName: Name of Azure storage account for storing collected data.
 

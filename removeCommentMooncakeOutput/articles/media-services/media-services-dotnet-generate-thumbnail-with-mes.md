@@ -361,7 +361,7 @@ The following considerations apply:
 
 	You can mix and match notations as you please.
 	
-	Additionally, Start also supports a special Macro:{Best}, which attempts to determine the first “interesting” frame of the content 
+	Additionally, Start also supports a special Macro:{Best}, which attempts to determine the first "interesting" frame of the content 
 	NOTE: (Step and Range are ignored when Start is set to {Best})
 	
 	- Defaults: Start:{Best}

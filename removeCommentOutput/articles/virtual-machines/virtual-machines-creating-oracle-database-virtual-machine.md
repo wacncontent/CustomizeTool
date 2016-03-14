@@ -38,7 +38,7 @@ The following example shows you how you can create a virtual machine (VM) based 
 
 	a. Leave **Storage Account** as-is to create a new storage account with the VM name.
 
-	b. Leave **Availability Set** as “Not Configured”.
+	b. Leave **Availability Set** as "Not Configured".
 
 	c. Do not add any **endpoints** at this time.
 

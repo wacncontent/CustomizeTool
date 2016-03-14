@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/26/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 # How to Create an Azure Environment #
@@ -49,8 +49,7 @@ The creation experience for an ASE does have a set of defaults to enable a quick
 - Worker pool with 2 P1 compute resources
 - single IP address to be used for IP SSL
 
-This is the minimum size for an ASE.  Front End pools require P2 or larger.  
-Be sure to select the subscription that you want the ASE to be in.  The only accounts that can use the ASE to host content must be in the subscription used to create it.  
+Front End pools require P2 or larger.  Be careful when selecting the subscription that you want the ASE to be in.  The only accounts that can use the ASE to host content must be in the subscription used to create it.  
 
 ![][1]
 

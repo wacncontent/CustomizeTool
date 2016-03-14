@@ -47,7 +47,7 @@ Day 1 video covers:
 
 - Designer Overview
 <!-- deleted by customization
-- Basic Workflows - “Hello World”
+- Basic Workflows - "Hello World"
 -->
 <!-- keep by customization: begin -->
 - Basic Workflows - âHello Worldâ

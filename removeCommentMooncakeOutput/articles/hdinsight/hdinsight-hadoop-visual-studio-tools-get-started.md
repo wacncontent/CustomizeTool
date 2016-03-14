@@ -178,10 +178,10 @@ Even though executing queries via HiveServer2 has many performance benefits, it 
 
 | |Executing via HiveServer2 |Submitting via WebHCat|
 |---|---|---|
-|Execute queries|Eliminates the overhead in WebHCat (which launches a MapReduce Job named “TempletonControllerJob”).|As long as a query is executed via WebHCat, WebHCat will launch a MapReduce job which introduces additional latency.|
+|Execute queries|Eliminates the overhead in WebHCat (which launches a MapReduce Job named "TempletonControllerJob").|As long as a query is executed via WebHCat, WebHCat will launch a MapReduce job which introduces additional latency.|
 |Stream logs back|In near real-time.|The job execution logs are available only when the job is finished.|
 |View job history|If a query is executed via HiveServer2, it's job history (job log, job output) is not preserved. The application can be viewed in YARN UI with limited information.|If a query is executed via WebHCat, it's job history (job log, job output) is preserved and can be viewed using Visual Studio/HDInsight SDK/PowerShell. |
-|Close window| 	Executing via HiveServer2 is a “synchronous” way so you must keep the windows open; if the windows are closed then the query execution will be cancelled.|Submitting via WebHCat is a “asynchronous” way so you can submit the query via WebHCat and close Visual Studio. You can come back and see the results at any time.|
+|Close window| 	Executing via HiveServer2 is a "synchronous" way so you must keep the windows open; if the windows are closed then the query execution will be cancelled.|Submitting via WebHCat is a "asynchronous" way so you can submit the query via WebHCat and close Visual Studio. You can come back and see the results at any time.|
 
 
 ### Tez Hive job performance graph

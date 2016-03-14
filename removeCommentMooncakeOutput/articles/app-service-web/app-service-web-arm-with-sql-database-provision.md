@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Provision a web site that uses a SQL Database" 
-	description="Use an Azure Resource Manager template to deploy a web site that includes a SQL Database." 
+	pageTitle="Provision a web app that uses a SQL Database" 
+	description="Use an Azure Resource Manager template to deploy a web app that includes a SQL Database." 
 	services="app-service" 
 	documentationCenter="" 
 	authors="tfitzmac" 
@@ -12,20 +12,20 @@
 	ms.date="12/16/2015"
 	wacn.date=""/>
 
-# Provision a web site with a SQL Database
+# Provision a web app with a SQL Database
 
-In this topic, you will learn how to create an Azure Resource Manager template that deploys a web site and SQL Database. You will learn how to define which resources are deployed and 
+In this topic, you will learn how to create an Azure Resource Manager template that deploys a web app and SQL Database. You will learn how to define which resources are deployed and 
 how to define parameters that are specified when the deployment is executed. You can use this template for your own deployments, or customize it to meet your requirements.
 
 For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
 
-For the complete template, see [web site With SQL Database template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json).
+For the complete template, see [Web App With SQL Database template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json).
 
 ## What you will deploy
 
 In this template, you will deploy:
 
-- a web site
+- a web app
 - SQL Database server
 - SQL Database
 - AutoScale settings
@@ -46,7 +46,7 @@ The name of the new database server to create.
 
 ### serverLocation
 
-The location of the database server. For best performance, this location should be the same as the location of the web site.
+The location of the database server. For best performance, this location should be the same as the location of the web app.
 
     "serverLocation": {
       "type": "string"
@@ -172,7 +172,7 @@ you must provide a login name and password for the database server administrator
 [AZURE.INCLUDE [app-service-web-deploy-web-host](../includes/app-service-web-deploy-web-host.md)]
 
 
-### web site
+### Web app
 
     {
       "apiVersion": "2015-08-01",

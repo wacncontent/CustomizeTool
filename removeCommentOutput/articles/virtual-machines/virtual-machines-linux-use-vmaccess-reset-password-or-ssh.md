@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Resetting Linux VM password from Azure CLI | Windows Azure"
-	description="How to use VMAccess extension from Azure Management Portal or CLI to reset Linux VM passwords and SSH keys, SSH configurations, and delete users accounts."
+	pageTitle="Resetting Linux VM Passwords and adding Users from the Azure CLI | Windows Azure"
+	description="How to use VMAccess extension from the Azure Management Portal or CLI to reset Linux VM passwords and SSH keys, SSH configurations, add or delete user accounts, and check the consistency of disks."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -10,15 +10,15 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/28/2015"
+	ms.date="12/15/2015"
 	wacn.date=""/>
 
-# How to Reset a Password or SSH for Linux Virtual Machines #
+# How to Reset Access and Manage Users and Check Disks with the Azure VMAccess Extension for Linux#
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
-If you can't connect to a Linux virtual machine because of a forgotten password, an incorrect Secure Shell (SSH) key, or a problem with the SSH configuration, use the Azure Management Portal or the  VMAccessForLinux extension to reset the password or SSH key or fix the SSH configuration. Note that this article applies to the virtual machines created using the **Classic** deployment model.
+If you can't connect to a Linux virtual machine on Azure because of a forgotten password, an incorrect Secure Shell (SSH) key, or a problem with the SSH configuration, use the Azure Management Portal or the VMAccessForLinux extension with the Azure CLI to reset the password or SSH key, fix the SSH configuration, and check disk consistency. 
 
 ## Azure Management Portal
 
@@ -57,6 +57,8 @@ With the Azure CLI, you can do the following tasks:
 + [Reset the SSH configuration](#sshconfigresetcli)
 + [Delete a user](#deletecli)
 + [Display the status of the VMAccess extension](#statuscli)
++ [Check consistency of added disks](#checkdisk)
++ [Repair added disks on your Linux VM](#repairdisk)
 
 ### <a name="pwresetcli"></a>Reset the password
 
@@ -65,7 +67,7 @@ Step 1: Create a file named PrivateConf.json with these contents, substituting f
 	{
 	"username":"currentusername",
 	"password":"newpassword",
-	"expiration":"2016-01-01",
+	"expiration":"2016-01-01"
 	}
 
 Step 2: Run this command, substituting the name of your virtual machine for "vmname".
@@ -78,7 +80,7 @@ Step 1: Create a file named PrivateConf.json with these contents, substituting f
 
 	{
 	"username":"currentusername",
-	"ssh_key":"contentofsshkey",
+	"ssh_key":"contentofsshkey"
 	}
 
 Step 2: Run this command, substituting the name of your virtual machine for "vmname".
@@ -92,7 +94,7 @@ Step 1: Create a file named PrivateConf.json with these contents, substituting f
 	{
 	"username":"currentusername",
 	"ssh_key":"contentofsshkey",
-	"password":"newpassword",
+	"password":"newpassword"
 	}
 
 Step 2: Run this command, substituting the name of your virtual machine for "vmname".
@@ -111,14 +113,14 @@ You can also use [Reset the password and the SSH key](#resetbothcli) to create a
 
 ### <a name="sshconfigresetcli"></a>Reset the SSH configuration
 
-If the SSH configuration is in an undesired state, you might also lose access to the VM. You can use the VMAccess extension to reset the configuration to its default state. To do so, you just need to set the “reset_ssh” key to “True”. The extension will restart the SSH server, open the SSH port on your VM, and reset the SSH configuration to default values. The user account (name, password or SSH keys) will not be changed.
+If the SSH configuration is in an undesired state, you might also lose access to the VM. You can use the VMAccess extension to reset the configuration to its default state. To do so, you just need to set the "reset_ssh" key to "True". The extension will restart the SSH server, open the SSH port on your VM, and reset the SSH configuration to default values. The user account (name, password or SSH keys) will not be changed.
 
 > [AZURE.NOTE] The SSH configuration file that gets reset is located at /etc/ssh/sshd_config.
 
 Step 1: Create a file named PrivateConf.json with this content.
 
 	{
-	"reset_ssh":"True",
+	"reset_ssh":"True"
 	}
 
 Step 2: Run this command, substituting the name of your virtual machine for "vmname".
@@ -132,7 +134,7 @@ If you want to delete a user account without logging into to the VM directly, yo
 Step 1: Create a file named PrivateConf.json with this content, substituting for the placeholder value.
 
 	{
-	"remove_user":"usernametoremove",
+	"remove_user":"usernametoremove"
 	}
 
 Step 2: Run this command, substituting the name of your virtual machine for "vmname".
@@ -145,6 +147,34 @@ To display the status of the VMAccess extension, run this command.
 
 	azure vm extension get
 
+### <a name='checkdisk'<</a>Check consistency of added disks
+
+To run fsck on all disks in your Linux virtual machine, you will need to do the following:
+
+Step 1: Create a file named PublicConf.json with this content. Check Disk takes a boolean for whether to check disks attached to your virtual machine or not. 
+
+    {   
+    "check_disk": "true"
+    }
+
+Step 2: Run this command to execute, substituting for the placeholder values.
+
+   azure vm extension set vm-name VMAccessForLinux Microsoft.OSTCExtensions 1.* --public-config-path PublicConf.json 
+
+### <a name='repairdisk'></a>Repair added disks on your Linux virtual machine
+
+To repair disks that are not mounting or have mount configuration errors, use the VMAccess extension to reset the mount configuration on your Linux VIrtual machine.
+
+Step 1: Create a file named PublicConf.json with this content. 
+
+    {
+    "repair_disk":"true",
+    "disk_name":"yourdisk"
+    }
+
+Step 2: Run this command to execute, substituting for the placeholder values.
+
+    azure vm extension set vm-name VMAccessForLinux Microsoft.OSTCExtensions 1.* --public-config-path PublicConf.json
 
 ## Use Azure PowerShell
 
@@ -165,7 +195,7 @@ If you created the virtual machine with the Azure Management Portal, run the fol
 
 	$vm.GetInstance().ProvisionGuestAgent = $true
 
-This command will prevent the “Provision Guest Agent must be enabled on the VM object before setting IaaS VM Access Extension” error when running the Set-AzureVMExtension command in the following sections.
+This command will prevent the "Provision Guest Agent must be enabled on the VM object before setting IaaS VM Access Extension" error when running the Set-AzureVMExtension command in the following sections.
 
 Then, you can do the following tasks:
 
@@ -175,6 +205,8 @@ Then, you can do the following tasks:
 + [Reset the SSH configuration](#config)
 + [Delete a user](#delete)
 + [Display the status of the VMAccess extension](#status)
++ [Check consistency of added disks](#checkdisk)
++ [Repair added disks on your Linux VM](#repairdisk)
 
 ### <a name="password"></a>Reset the password
 
@@ -248,6 +280,25 @@ To display the status of the VMAccess extension, run this command.
 
 	$vm.GuestAgentStatus
 
+### <a name="checkdisk"<</a>Check the consistency of added disks
+
+To check the consistency of your disks with fsck utility, run these commands. 
+
+	$PublicConfig = "{"check_disk": "true"}"
+	$ExtensionName = "VMAccessForLinux"
+	$Publisher = "Microsoft.OSTCExtensions"
+	$Version = "1.*"
+	Set-AzureVMExtension -ExtensionName $ExtensionName -VM $vm -Publisher $Publisher -Version $Version -PublicConfiguration $PublicConfig | Update-AzureVM
+
+### <a name="checkdisk"<</a>Repair added disks on your Linux VM
+
+To repair disks with fsck utility, run these commands. 
+
+	$PublicConfig = "{"repair_disk": "true", "disk_name": "my_disk"}"
+	$ExtensionName = "VMAccessForLinux"
+	$Publisher = "Microsoft.OSTCExtensions"
+	$Version = "1.*"
+	Set-AzureVMExtension -ExtensionName $ExtensionName -VM $vm -Publisher $Publisher -Version $Version -PublicConfiguration $PublicConfig | Update-AzureVM
 
 ## Additional resources
 

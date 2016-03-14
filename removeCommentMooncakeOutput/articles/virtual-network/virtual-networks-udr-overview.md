@@ -83,5 +83,4 @@ This virtual appliance VM must be able to receive incoming traffic that is not a
 
 ## Next Steps
 
-- Learn how to [create routes in the Resource Manager deployment model](/documentation/articles/virtual-network-create-udr-arm-template) and associate them to subnets. 
 - Learn how to [create routes in the classic deployment model](/documentation/articles/virtual-network-create-udr-classic-ps) and associate them to subnets.

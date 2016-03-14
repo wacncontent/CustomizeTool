@@ -46,7 +46,7 @@ The set-up requirements to use the Resource Manager mode with the Azure CLI are:
 Once you have an account and have installed the Azure CLI, you must
 
 - [configure the Azure CLI](/documentation/articles/xplat-cli-connect) to use a work or school account or a Microsoft account identity
-- switch to the Resource Manager mode by typing `azure config mode arm` <!-- keep by customization: begin -->. <!-- keep by customization: end -->
+- switch to the Resource Manager mode by typing `azure config mode arm`
 
 
 ## azure account: Manage your account information
@@ -55,10 +55,12 @@ Your Azure subscription information is used by the tool to connect to your accou
 **List the imported subscriptions**
 
 	account list [options]
+<!-- deleted by customization
 
 **Show details about a subscription**  
 
 	account show [options] [subscriptionNameOrId]
+-->
 
 **Set the current subscription**
 
@@ -209,6 +211,7 @@ Your Azure subscription information is used by the tool to connect to your accou
 
 ## azure network: Commands to manage network resources
 
+<!-- deleted by customization
 **Commands to manage virtual networks**
 
 	network vnet create [options] <resource-group> <name> <location>
@@ -1249,6 +1252,7 @@ Creates a public ip resource. You will create the public ip resource and associa
 
 
 Parameter options:
+
 	-h, --help                                   output usage information
 	-v, --verbose                                use verbose output
 	--json                                       use json output
@@ -1319,7 +1323,7 @@ Lists all public IP resources within a resource group.
 	data:    mypubip5         chinanorth    Dynamic                   4             "domain name".chinanorth.chinacloudapp.cn
 	data:    myPublicIP       chinaeast    Dynamic                   4             "domain name".chinaeast.chinacloudapp.cn
 	data:    mytestpublicip   chinaeast    Dynamic                   4             "domain name".chinaeast.chinacloudapp.cn
-	data:    mytestpublicip1  chinaeast   Static (Static IP address) 4             <!-- deleted by customization azureclitest.chinaeast.chinacloudapp.cn --><!-- keep by customization: begin --> xplatclitest.chinaeast.chinacloudapp.cn <!-- keep by customization: end -->
+	data:    mytestpublicip1  chinaeast   Static (Static IP address) 4             azureclitest.chinaeast.chinacloudapp.cn
 
 Parameter options:
 
@@ -1477,6 +1481,16 @@ Parameter options:
 **Commands to manage virtual network gateways**
 
 	network gateway list [options] <resource-group>
+-->
+<!-- keep by customization: begin -->
+In Windows Azure China, VNet is not manageable by ARM yet. For Azure CLI ASM commands of VNet, read the following articles:
+
+- [Create a virtual network using Azure CLI](/documentation/articles/virtual-networks-create-vnet-classic-cli)
+- [How to create NSGs in classic mode using the Azure CLI](/documentation/articles/virtual-networks-create-nsg-classic-cli)
+- [Control routing and use virtual appliances using the Azure CLI in the classic deployment model](/documentation/articles/virtual-network-create-udr-classic-cli)
+- [Deploy multi NIC VMs using the Azure CLI in the classic deployment model](/documentation/articles/virtual-network-deploy-multinic-classic-cli)
+- [How to set a static private IP in classic mode ausing the CLI](/documentation/articles/virtual-networks-static-private-ip-classic-cli).
+<!-- keep by customization: end -->
 
 ## azure provider: Commands to manage resource provider registrations
 
@@ -1536,6 +1550,7 @@ Parameter options:
 
 ## azure storage: Commands to manage your Storage objects
 
+<!-- deleted by customization
 **Commands to manage your Storage accounts**
 
 	storage account list [options]
@@ -1657,6 +1672,10 @@ Parameter options:
 	storage table policy list [options] [table]
 	storage table policy set [options] [table] [name]
 	storage table policy delete [options] [table] [name]
+-->
+<!-- keep by customization: begin -->
+In Windows Azure China, Storage is not manageable by ARM yet. For Azure CLI ASM commands of Storage, read [Using the Azure CLI with Azure Storage](/documentation/articles/storage-azure-cli)
+<!-- keep by customization: end -->
 
 ## azure tag: Commands to manage your resource manager tag
 
@@ -1678,6 +1697,7 @@ Parameter options:
 
 ## azure vm: Commands to manage your Azure Virtual Machines
 
+<!-- deleted by customization
 **Create a VM**
 
 	vm create [options] <resource-group> <name> <location> <os-type>
@@ -1759,9 +1779,14 @@ Parameter options:
 	vm image list-offers [options] <location> <publisher>
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
+-->
+<!-- keep by customization: begin -->
+In Windows Azure China, Virtual Machines is not manageable by ARM yet. For Azure CLI ASM commands of Virtual Machines, read [Equivalent Azure CLI commands for VM tasks](/documentation/articles/xplat-cli-azure-manage-vm-asm-arm)
+<!-- keep by customization: end -->
 
 ## azure hdinsight: Commands to manage your HDInsight clusters
 
+<!-- deleted by customization
 **Commands to create or add to a cluster configuration file**
 
 	hdinsight config create [options] <configFilePath> <overwrite>
@@ -1878,3 +1903,7 @@ Parameter options:
 **Command to disable HTTP access for a cluster**
 
 	hdinsight cluster disable-rdp-access [options] <clusterName>
+-->
+<!-- keep by customization: begin -->
+In Windows Azure China, HDInsight is not manageable by ARM yet. For Azure CLI ASM commands of HDInsight, read [Create Windows-based Hadoop clusters in HDInsight using Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli)
+<!-- keep by customization: end -->

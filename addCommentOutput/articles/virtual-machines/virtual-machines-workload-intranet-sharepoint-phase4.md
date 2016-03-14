@@ -37,7 +37,7 @@ Specify the values for the variables, removing the < and > characters. Note that
 - Table ST, for your storage accounts
 - Table A, for your availability sets
 
-Recall that you defined Table M in [Phase 2: Configure domain controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2) and Tables V, S, <!-- deleted by customization ST --><!-- keep by customization: begin --> A <!-- keep by customization: end -->, and <!-- deleted by customization A --><!-- keep by customization: begin --> C <!-- keep by customization: end --> in [Phase 1: Configure Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase1).
+Recall that you defined Table M in [Phase 2: Configure domain controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2) and Tables V, S, ST, and A in [Phase 1: Configure Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase1).
 
 When you have supplied all the proper values, run the resulting block at the Azure PowerShell command prompt.
 
@@ -149,7 +149,7 @@ Next, for each virtual machine, join them to the appropriate Active Directory do
 
 Note that you must supply domain account credentials after entering the **Add-Computer** command.
 
-After they restart, <!-- deleted by customization use --><!-- keep by customization: begin --> Use <!-- keep by customization: end --> the [Logging on to a virtual machine with a Remote Desktop connection procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2#logon) four times, once for each SharePoint server, to log on by using the [Domain]\sp_farm_db account credentials. You created these credentials in [Phase 2: Configure domain controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2).
+After they restart, use the [Logging on to a virtual machine with a Remote Desktop connection procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2#logon) four times, once for each SharePoint server, to log on by using the [Domain]\sp_farm_db account credentials. You created these credentials in [Phase 2: Configure domain controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2).
 
 Use the [To test connectivity procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2#testconn) four times, once for each SharePoint server, to test connectivity to locations on your organization network.
 
@@ -169,7 +169,7 @@ Use these steps to configure the first SharePoint server in the farm:
  - In **Password**, type the sp_farm_db account password.
 6.	Click **Next**.
 7.	On the **Specify Farm Security Settings** page, type a passphrase twice. Record the passphrase and store it in a secure location for future reference. Click **Next**.
-8.	On the **Configure SharePoint Central Administration web site** page, click **Next**.
+8.	On the **Configure SharePoint Central Administration Web Application** page, click **Next**.
 9.	The **Completing the SharePoint Products Configuration Wizard** page appears. Click **Next**.
 10.	The **Configuring SharePoint Products** page appears. Wait until the configuration process finishes, about 8 minutes.
 11.	After the farm is successfully configured, click **Finish**. The new administration website starts.

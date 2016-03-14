@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Create an Azure virtual machine running Linux in the Azure Management Portal | Windows Azure"
 	description="Use the Azure Management Portal to create an Azure virtual machine (VM) running Linux with the Azure resource groups."

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Create an availability set using Azure Resource Manager templates"
 	description="Describes how to use the availability set template and includes template syntax"

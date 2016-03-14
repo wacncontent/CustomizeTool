@@ -1,4 +1,5 @@
 <!-- not suitable for Mooncake -->
+
 1. In **Solution Explorer**, right-click the project (not the solution) and click **Publish**. 
 
 	![Project publish menu option](./media/app-service-api-pub-web-create/20-publish-gesture-v3.png)
@@ -20,7 +21,7 @@
 	- For **Access Level**, select **Available to Anyone**. You can restrict access later through the Azure preview portal.
 	- For **Region**, select a region close to you.  
 
-	![Configure Windows Azure web site dialog](./media/app-service-api-pub-web-create/24-new-api-app-dialog-v3.png)
+	![Configure Windows Azure Web App dialog](./media/app-service-api-pub-web-create/24-new-api-app-dialog-v3.png)
 
 5. Click **OK** to create the API App in your subscription. 
 
@@ -28,6 +29,6 @@
 
 6. Click **OK** on the confirmation dialog. 
  
-	The provisioning process creates the resource group and API App in your Azure subscription. Visual Studio shows the progress in the **Azure Websites Activity** window. 
+	The provisioning process creates the resource group and API App in your Azure subscription. Visual Studio shows the progress in the **Azure Activity** window. 
 
-	![Status notification via the Azure Websites Activity window](./media/app-service-api-pub-web-create/26-provisioning-success-v3.png)
+	![Status notification via the Azure Web App Activity window](./media/app-service-api-pub-web-create/26-provisioning-success-v3.png)

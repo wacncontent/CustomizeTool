@@ -36,7 +36,7 @@ The following example shows you how you can create a Virtual Machine based on a 
 
 8.	Set the optional configuration as needed, with these considerations:
 	1. Leave **Storage Account** as-is to create a new storage account with the VM name.
-	2. Leave **Availability Set** as “Not Configured”.
+	2. Leave **Availability Set** as "Not Configured".
 	3. Do not add any **endpoints** at this time.
 
 9.	Choose or Create a [Resource Group](/documentation/articles/resource-group-portal)

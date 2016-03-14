@@ -16,8 +16,8 @@
 # Azure Windows VM Extension Configuration Samples
 
 > [AZURE.SELECTOR]
-- [Azure PowerShell - Template](/documentation/articles/virtual-machines-extensions-configuration-samples-windows)
-- [Azure CLI - Template](/documentation/articles/virtual-machines-extensions-configuration-samples-linux)
+- [PowerShell - Template](/documentation/articles/virtual-machines-extensions-configuration-samples-windows)
+- [CLI - Template](/documentation/articles/virtual-machines-extensions-configuration-samples-linux)
 
 <br> 
 

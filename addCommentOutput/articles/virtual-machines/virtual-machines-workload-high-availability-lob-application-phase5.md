@@ -111,21 +111,6 @@ You can optionally create a listener configuration for the AlwaysOn Availability
 
 Once the listener is configured, you need to configure all the web server virtual machines to use the listener, instead of the name of the first SQL server in the cluster. Rather than using a new DNS name and record that maps to the virtual IP address of the internal load balancing instance, configure the web server virtual machines to use a SQL Alias. For details and steps, see [SQL Alias for SharePoint](http://blogs.msdn.com/b/priyo/archive/2013/09/13/sql-alias-for-sharepoint.aspx).
 
-<!-- deleted by customization
 ## Next step
 
 - See these [guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines) if you are deploying your own IT workload in Azure.
--->
-<!-- keep by customization: begin -->
-## Additional resources
-
-[Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview)
-
-[Line of Business Applications architecture blueprint](http://msdn.microsoft.com/dn630664)
-
-[Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
-
-[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
-
-[Azure Infrastructure Services Workload: SharePoint Server 2013 farm](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
-<!-- keep by customization: end -->

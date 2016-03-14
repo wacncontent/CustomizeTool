@@ -133,7 +133,7 @@ Some services display a **Quick Links** link at the top of the page. This can be
 
 Selecting any of these links will open a new tab in your browser, which will display the selected page.
 
-> [AZURE.NOTE] Selecting a **Quick Links** link for any service will result in a "server not found" error unless you are using a Secure Sockets Layer (SSL) tunnel to proxy web traffic to the cluster. This is because the web sites used to display this information are not exposed on the internet.
+> [AZURE.NOTE] Selecting a **Quick Links** link for any service will result in a "server not found" error unless you are using a Secure Sockets Layer (SSL) tunnel to proxy web traffic to the cluster. This is because the web <!-- deleted by customization applications --><!-- keep by customization: begin --> sites <!-- keep by customization: end --> used to display this information are not exposed on the internet.
 >
 > For information on using an SSL tunnel with HDInsight, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel)
 

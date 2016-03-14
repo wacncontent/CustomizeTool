@@ -31,9 +31,9 @@ If you go into the Endpoints tab of that profile you will see one or more of the
 
 - For HTTPs probes, certificate errors are ignored.
  
-- The actual content of the probe path doesn't matter, as long as a 200 is returned.  A common technique if the actual website content doesn't return a 200 (ie. if the ASP pages redirect to an ACS login page or some other CNAME URL) is to set the path to something like “/favicon.ico”.
+- The actual content of the probe path doesn't matter, as long as a 200 is returned.  A common technique if the actual website content doesn't return a 200 (ie. if the ASP pages redirect to an ACS login page or some other CNAME URL) is to set the path to something like "/favicon.ico".
  
-- Best practice is to set the Probe path to something which has enough logic to determine if the site is up or down.  In the above example setting the path to “/favicon.ico” you are only testing if w3wp.exe is responding, but not if your website is healthy.  A better option would be to set a path to something such as “/Probe.aspx”, and within Probe.aspx include enough logic to determine if your site is healthy (ie. check perf counters to make sure you aren't at 100% CPU or receiving a large number of failed requests, attempt to access resources such as the database or session state to make sure the application's logic is working, etc).
+- Best practice is to set the Probe path to something which has enough logic to determine if the site is up or down.  In the above example setting the path to "/favicon.ico" you are only testing if w3wp.exe is responding, but not if your website is healthy.  A better option would be to set a path to something such as "/Probe.aspx", and within Probe.aspx include enough logic to determine if your site is healthy (ie. check perf counters to make sure you aren't at 100% CPU or receiving a large number of failed requests, attempt to access resources such as the database or session state to make sure the application's logic is working, etc).
  
 - If all endpoints in a profile are degraded then Traffic Manager will treat all endpoints as healthy and route traffic to all endpoints.  This is to ensure that any potential problem with the probing mechanism which results in incorrectly failed probes will not result in a complete outage of your service.
 
@@ -53,11 +53,11 @@ Using Wget:
 
  
 
-Notice that wget indicates that the URL returned a 301 redirect to http://watestsdp2008r2.chinacloudapp.cn/Default.aspx.  As we know from the “Important notes about Traffic Manager probing” section above, a 30x redirect is considered a failure by Traffic Manager probing and this will cause the probe to report Offline.  At this point it is a simple matter to check the website configuration and make sure that a 200 is returned from the /Probe path (or reconfigure the Traffic Manager probe to point to a path which will return a 200).
+Notice that wget indicates that the URL returned a 301 redirect to http://watestsdp2008r2.chinacloudapp.cn/Default.aspx.  As we know from the "Important notes about Traffic Manager probing" section above, a 30x redirect is considered a failure by Traffic Manager probing and this will cause the probe to report Offline.  At this point it is a simple matter to check the website configuration and make sure that a 200 is returned from the /Probe path (or reconfigure the Traffic Manager probe to point to a path which will return a 200).
 
  
 
-If your probe is using HTTPs protocol you will want to add the “--no-check-certificate” parameter to wget so that it will ignore the certificate mismatch on the chinacloudapp.cn URL.
+If your probe is using HTTPs protocol you will want to add the "--no-check-certificate" parameter to wget so that it will ignore the certificate mismatch on the chinacloudapp.cn URL.
 
 
 ## Next Steps

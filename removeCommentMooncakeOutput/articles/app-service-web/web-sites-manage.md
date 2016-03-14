@@ -66,7 +66,7 @@ A **Quick Glance** section which includes the following summary information and 
 
 
 ##Deployments##
- This tab appears only if you have set up deployment from source control. The **Deployments** management page provides a summary of all deployments made to the website using your publishing method of choice. If Git publishing has been configured for the website but no deployments have been made, the **Deployments** management page provides information describing how to use GIT to deploy your web site.
+ This tab appears only if you have set up deployment from source control. The **Deployments** management page provides a summary of all deployments made to the website using your publishing method of choice. If Git publishing has been configured for the website but no deployments have been made, the **Deployments** management page provides information describing how to use GIT to deploy your web application.
 
 ##Monitor##
 The **Monitor** management page provides a chart that displays usage information for the website. By default this chart displays the same metrics as the chart on the **Dashboard** page as described above in the Dashboard section. The chart can also be configured to display the metrics HTTP Successes, HTTP Redirects, HTTP 401 errors, HTTP 403 errors, HTTP 404 errors and HTTP 406 errors. For more information about these metrics, see [How to Monitor Web Sites][Monitor].

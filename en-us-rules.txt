@@ -1,4 +1,4 @@
-﻿[CONST]
+[CONST]
 # domain name replacement
 
 # group 1
@@ -70,7 +70,7 @@ Chicago = Shanghai
 Yankees = Guo An
 
 # Brand
-Microsoft Azure = Windows Azure
+Microsoft Azure = Azure
 Microsoft dot com = WindowsAzure.cn
 Azure Marketplace = Azure gallery
 
@@ -1083,7 +1083,7 @@ hdinsight-hadoop-solr-install(-v1)? = hdinsight-hadoop-solr-install-v1
 hdinsight-hadoop-tutorial-get-started-windows(-v1)? = hdinsight-hadoop-tutorial-get-started-windows-v1
 hdinsight-hadoop-use-pig-dotnet-sdk(-v1)? = hdinsight-hadoop-use-pig-dotnet-sdk-v1
 hdinsight-hbase-provision-vnet(-v1)? = hdinsight-hbase-provision-vnet-v1
-hdinsight-hbase-tutorial-get-started(-v1)? = hdinsight-hbase-tutorial-get-started-v1
+hdinsight-hbase-tutorial-get-started(-v1|-linux)? = hdinsight-hbase-tutorial-get-started-v1
 hdinsight-learn-hadoop-use-sample-gallery(-v1) = hdinsight-learn-hadoop-use-sample-gallery-v1
 hdinsight-provision-clusters(-v1)? = hdinsight-provision-clusters-v1
 hdinsight-component-versioning(-v1)? = hdinsight-component-versioning-v1
@@ -1103,8 +1103,8 @@ amsplayer.chinacloudsites.cn/azuremediaplayer.html = amsplayer.azurewebsites.net
 aestoken.chinacloudsites.cn = aestoken.azurewebsites.net
 sltoken.chinacloudsites.cn = sltoken.azurewebsites.net
 dashplayer.chinacloudsites.cn = dashplayer.azurewebsites.net
-Windows Azure Storage SDK = Microsoft Azure Storage SDK
-Windows Azure Tools for Microsoft Visual Studio = Microsoft Azure Tools for Microsoft Visual Studio
+Azure Storage SDK = Microsoft Azure Storage SDK
+Azure Tools for Microsoft Visual Studio = Microsoft Azure Tools for Microsoft Visual Studio
 https://azure.microsoft.com/zh-cn/support/faq/ = /support/faq/
 https://azure.microsoft.com/support/faq/ = /support/faq/
 http://azure.microsoft.com/zh-cn/support/faq/ = /support/faq/
@@ -1165,7 +1165,7 @@ http://azure.microsoft.com/pricing/1rmb-trial/ = /pricing/1rmb-trial/
 /documentation/articles/media-services-channels-overview = /documentation/articles/media-services-manage-channels-overview
 [AZURE.NOTE](/documentation/articles/optional) = [AZURE.NOTE]  optional
 http://azure.microsoft.com/downloads/ = /downloads/
-Windows Azure Active Directory Connect = Microsoft Azure Active Directory Connect
+Azure Active Directory Connect = Microsoft Azure Active Directory Connect
 ://technet.microsoft.com/library/ = ://technet.microsoft.com/zh-cn/library/
 http://azure.microsoft.com/home/features/identity/all/ = /home/features/identity/
 https://azure.microsoft.com/home/features = /home/features
@@ -1272,3 +1272,9 @@ http://msdn.microsoft.com/zh-cn/library/dn642480.aspx = /documentation/articles/
 https://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx = /documentation/articles/azure-toolkit-for-eclipse-installation
 /documentation/articles/storage-manage-storage-account = /documentation/articles/storage-create-storage-account
 hdinsight-hadoop-customize-cluster-v1-bootstrap = hdinsight-hadoop-customize-cluster-bootstrap
+/documentation/articles/xplat-cli-install-connect = /documentation/articles/xplat-cli-connect
+xplat-cli-install-azure-resource-manager = xplat-cli-azure-resource-manager
+xplat-cli-install-azure-manage-vm-asm-arm = xplat-cli-azure-manage-vm-asm-arm
+//dsahandler.blob.core.chinacloudapi.cn = //dsahandler.blob.core.windows.net
+/documentation/articles/app-service-value-prop-what-is = /documentation/services/web-sites
+/documentation/articles/app-service-web-overview = /home/features/web-site

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # Run Background tasks with WebJobs

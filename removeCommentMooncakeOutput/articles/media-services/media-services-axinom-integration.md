@@ -56,7 +56,7 @@ Please see [JWT Token Generation](/documentation/articles/media-services-axinom-
 
 AMP v1.4.0 supports playback of AMS content that is dynamically packaged with both PlayReady and Widevine DRM.
 If Widevine license server does not require token authentication, there is nothing additional you need to do to test a DASH content protected by Widevine. For an example, the AMP team provides a simple [sample](http://amp.chinacloudapi.cn/libs/amp/latest/samples/dynamic_multiDRM_PlayReadyWidevine_notoken.html), where you can see it working in Edge and IE11 with PlayReady and Chrome with Widevine.
-The Widevine license server provided by Axinom requires JWT token authentication. The JWT token needs to be submitted with license request through an HTTP header “X-AxDRM-Message”. For this purpose, you need to add the following javascript in the web page hosting AMP before setting the source:
+The Widevine license server provided by Axinom requires JWT token authentication. The JWT token needs to be submitted with license request through an HTTP header "X-AxDRM-Message". For this purpose, you need to add the following javascript in the web page hosting AMP before setting the source:
 
 	<script>AzureHtml5JS.KeySystem.WidevineCustomAuthorizationHeader = "X-AxDRM-Message"</script>
 
@@ -136,7 +136,7 @@ Axinom Widevine license server
 
 ###Considerations
 
-1.	Even though AMS PlayReady license delivery service requires “Bearer=” preceding an authentication token, Axinom Widevine license server does not use it.
+1.	Even though AMS PlayReady license delivery service requires "Bearer=" preceding an authentication token, Axinom Widevine license server does not use it.
 2.	The Axinom communication key is used as signing key. Note that the key is a hex string, however it must be treated as a series of bytes not a string when encoding. This is achieved by the method ConvertHexStringToByteArray.
 
 ##Retrieving Key ID

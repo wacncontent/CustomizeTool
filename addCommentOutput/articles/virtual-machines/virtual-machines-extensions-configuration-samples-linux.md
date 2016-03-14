@@ -14,22 +14,20 @@
 	wacn.date=""/>
 
 # Linux VM extension configuration samples
-<!-- deleted by customization
 
 > [AZURE.SELECTOR]
-- [Azure PowerShell - Template](/documentation/articles/virtual-machines-extensions-configuration-samples-windows)
-- [Azure CLI - Template](/documentation/articles/virtual-machines-extensions-configuration-samples-linux)
+- [PowerShell - Template](/documentation/articles/virtual-machines-extensions-configuration-samples-windows)
+- [CLI - Template](/documentation/articles/virtual-machines-extensions-configuration-samples-linux)
 
 <br> 
 
--->
 
 This article provides sample configuration for configuring Azure VM extensions for Linux VMs.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
-To learn more about these extensions click here: [Azure VM Extensions <!-- deleted by customization Overview.](/documentation/articles/virtual-machines-extensions-features) --><!-- keep by customization: begin --> Overview.](https://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx) <!-- keep by customization: end -->
+To learn more about these extensions click here : [Azure VM Extensions Overview.](/documentation/articles/virtual-machines-extensions-features)
 
 To learn more about authoring extension templates click here : [Authoring Extension Templates.](/documentation/articles/virtual-machines-extensions-authoring-templates)
 

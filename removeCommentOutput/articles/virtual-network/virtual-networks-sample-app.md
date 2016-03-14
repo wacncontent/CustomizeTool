@@ -1,6 +1,6 @@
 <properties
    pageTitle="Sample Application for Use with Security Boundary Environments | Windows Azure"
-   description="Deploy this simple web site after creating a DMZ to test traffic flow scenarios"
+   description="Deploy this simple web application after creating a DMZ to test traffic flow scenarios"
    services="virtual-network"
    documentationCenter="na"
    authors="tracsman"
@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="09/16/2015"
+	ms.date="02/01/2016"
 	wacn.date=""/>
 
 # Sample Application for Use with Security Boundary Environments
 
 [Return to the Security Boundary Best Practices Page][HOME]
 
-These PowerShell scripts can be run locally on the IIS01 and AppVM01 servers to install and setup a very simple web site that displays an html page from the front end IIS01 server with content from the backend AppVM01 server.
+These PowerShell scripts can be run locally on the IIS01 and AppVM01 servers to install and setup a very simple web application that displays an html page from the front end IIS01 server with content from the backend AppVM01 server.
 
 This will app provides a simple testing environment for many of the DMZ Examples and how changes on the Endpoints, NSGs, UDR, and Firewall rules can effect traffic flows.
 
@@ -29,7 +29,7 @@ This simple PowerShell statement can be run on any Windows VM to allow ICMP (Pin
 
 **Note:** If you use the below scripts, this firewall rule addition is the first statement.
 
-## IIS01 - web site Installation Script
+## IIS01 - Web Application Installation Script
 This script will;
 
 1.	Open IMCPv4 (Ping) on the local server windows firewall for easier testing
@@ -54,7 +54,7 @@ This PowerShell script should be run locally while RDP'd into IIS01.
 		Write-Host "Installing IIS and .Net 4.5, this can take some time, like 15+ minutes..." -ForegroundColor Cyan
 		add-windowsfeature Web-Server, Web-WebServer, Web-Common-Http, Web-Default-Doc, Web-Dir-Browsing, Web-Http-Errors, Web-Static-Content, Web-Health, Web-Http-Logging, Web-Performance, Web-Stat-Compression, Web-Security, Web-Filtering, Web-App-Dev, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Net-Ext, Web-Net-Ext45, Web-Asp-Net45, Web-Mgmt-Tools, Web-Mgmt-Console
 		
-	# Create web site Pages
+	# Create Web App Pages
 		Write-Host "Creating Web page and Web.Config file" -ForegroundColor Cyan
 		$MainPage = '<%@ Page Language="vb" AutoEventWireup="false" %>
 		<%@ Import Namespace="System.IO" %>
@@ -131,7 +131,7 @@ This PowerShell script should be run locally while RDP'd into IIS01.
 		Restart-Service -Name W3SVC
 		
 		Write-Host
-		Write-Host "web site Creation Successfull!" -ForegroundColor Green
+		Write-Host "Web App Creation Successfull!" -ForegroundColor Green
 		Write-Host
 
 

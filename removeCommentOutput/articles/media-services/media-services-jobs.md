@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Working with Azure Media Services Jobs
@@ -41,7 +41,7 @@ A job is an entity that contains metadata about a set of tasks (for example, enc
 
 ##Encoding
 
-Encode with **Azure Media Encoder** using **Azure Management Portal**, **.NET**, or **REST API**.
+Encode with **Media Encoder Standard** using **Azure Management Portal**, **.NET**, or **REST API**.
 
 [AZURE.INCLUDE [media-services-selector-encode](../includes/media-services-selector-encode.md)]
 

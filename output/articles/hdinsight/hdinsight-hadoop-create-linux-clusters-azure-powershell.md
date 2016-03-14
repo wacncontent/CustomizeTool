@@ -104,7 +104,7 @@ It can take up to 15 minutes for the provisioning to complete.
 
 ##Customize clusters
 
-- See [Customize HDInsight clusters using Bootstrap](/documentation/articles/hdinsight-hadoop-customize-cluster-v1-bootstrap#use-azure-powershell).
+- See [Customize HDInsight clusters using Bootstrap](/documentation/articles/hdinsight-hadoop-customize-cluster-bootstrap#use-azure-powershell).
 - See [Customize Windows-based HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1#call-scripts-using-azure-powershell).
 
 ##Next steps

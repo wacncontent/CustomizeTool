@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="12/04/2015"
-	wacn.date="" />
+	wacn.date=""/>
 
 # Configure AlwaysOn Availability Groups in Azure VM (GUI)
 

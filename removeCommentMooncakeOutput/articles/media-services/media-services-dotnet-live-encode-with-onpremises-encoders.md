@@ -68,6 +68,12 @@ For information on how to configure a live encoder, see [Azure Media Services RT
 		        private const string AssetlName = "asset001";
 		        private const string ProgramlName = "program001";
 		
+				private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+				// Azure China uses a different API server and a different ACS Base Address from the Global.
+				private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+				private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+
 		        // Read values from the App.config file.
 		        private static readonly string _mediaServicesAccountName =
 		            ConfigurationManager.AppSettings["MediaServicesAccountName"];
@@ -83,9 +89,15 @@ For information on how to configure a live encoder, see [Azure Media Services RT
 		            // Create and cache the Media Services credentials in a static class variable.
 		            _cachedCredentials = new MediaServicesCredentials(
 		                            _mediaServicesAccountName,
-		                            _mediaServicesAccountKey);
+		                            _mediaServicesAccountKey,
+									_defaultScope,
+									_chinaAcsBaseAddressUrl);
+
+					// Create the API server Uri
+					_apiServer = new Uri(_chinaApiServerUrl);
+
 		            // Used the cached credentials to create CloudMediaContext.
-		            _context = new CloudMediaContext(_cachedCredentials);
+		            _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 		
 		            IChannel channel = CreateAndStartChannel();
 		

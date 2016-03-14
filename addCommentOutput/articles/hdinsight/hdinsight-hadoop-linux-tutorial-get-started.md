@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/03/2015"
+	ms.date="01/13/2016"
 	wacn.date=""/>
 
 # Hadoop tutorial: Get started using Hadoop with Hive in HDInsight on Linux
@@ -31,7 +31,7 @@ Before you begin this Linux tutorial for Hadoop, you must have the following:
 
 ## <a name="provision"></a>Provision an HDInsight cluster on Linux
 
-When you provision a cluster, you create the Azure compute resources that contain Hadoop services and resources. In this section, you provision an HDInsight version 3.2 cluster, which contains Hadoop version 2.2. For information about HDInsight versions and their SLAs, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning). For more detailed information on creating an HDInsight cluster, see [Provision HDInsight clusters using custom options][hdinsight-provision].
+When you provision a cluster, you create the Azure compute resources that contain Hadoop services and resources. In this section, you provision an HDInsight version 3.2 cluster, which contains Hadoop version 2.2. For information about HDInsight versions and their SLAs, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1). For more detailed information on creating an HDInsight cluster, see [Provision HDInsight clusters using custom options][hdinsight-provision].
 
 >[AZURE.NOTE]  You can also create Hadoop clusters running the Windows Server operating system. For instructions, see [Get Started with HDInsight on Windows](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1).
 
@@ -108,7 +108,7 @@ Ambari Views provide several utilities through a web page. In the following sect
 
 > [AZURE.NOTE] Ambari is a management and monitoring utility provided with Linux-based HDInsight clusters. Ambari has a lot of capabilities that won't be discussed in this document. For more information, see [Manage HDInsight clusters by using the Ambari Web UI](/documentation/articles/hdinsight-hadoop-manage-ambari).
 
-You can Ambari Views from the Azure Management Portal, select your HDInsight cluster and then select __Ambari Views__ from the __Quick Links__ section.
+To display Ambari Views from the Azure Management Portal, select your HDInsight cluster and then select __Ambari Views__ from the __Quick Links__ section
 
 ![quick links section](./media/hdinsight-hadoop-linux-tutorial-get-started/quicklinks.png)
 

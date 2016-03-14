@@ -212,7 +212,7 @@ In the case of IaaS, cloud services offer similar functionality, although in mos
 
 Cloud service names are especially important in IaaS because Azure uses them as part of the default naming convention for disks. The cloud service name can contain only letters, numbers, and hyphens. The first and last character in the field must be a letter or number.
 
-Azure exposes the cloud service names, because they are associated to the VIP, in the domain “chinacloudapp.cn”. For a better user experience of the application, a vanity name should be configured as needed to replace the fully qualified cloud service name. This is typically done with a CNAME record in your public DNS that maps the public DNS name of your resource (for example, www.contoso.com) to the DNS name of the cloud service hosting the resource (for example, the cloud service hosting the web servers for www.contoso.com).
+Azure exposes the cloud service names, because they are associated to the VIP, in the domain "chinacloudapp.cn". For a better user experience of the application, a vanity name should be configured as needed to replace the fully qualified cloud service name. This is typically done with a CNAME record in your public DNS that maps the public DNS name of your resource (for example, www.contoso.com) to the DNS name of the cloud service hosting the resource (for example, the cloud service hosting the web servers for www.contoso.com).
 
 In addition, the naming convention used for cloud services might need to tolerate exceptions because the cloud service names must be unique among all other Windows Azure cloud services, regardless of the Windows Azure tenant.
 
@@ -376,7 +376,7 @@ Because the virtual network does not need ongoing connectivity to the Contoso on
 They created a cloud-only virtual network with the following settings using the Azure Management Portal:
 
 - Name: AZFAE-USE-VN01
-- Location: China East
+- Location: China East 
 - Virtual network address space: 10.0.0.0/8
 - First subnet:
 	- Name: FrontEnd

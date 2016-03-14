@@ -17,7 +17,7 @@
 
 Apache Tomcat (or simply Tomcat, formerly also Jakarta Tomcat) is an open source web server and servlet container developed by the Apache Software Foundation (ASF). Tomcat implements the Java Servlet and the JavaServer Pages (JSP) specifications from Sun Microsystems, and provides a pure Java HTTP web server environment in which to run Java code. In the simplest configuration, Tomcat runs in a single operating system process. This process runs a Java virtual machine (JVM). Every HTTP request from a browser to Tomcat is processed as a separate thread in the Tomcat process.  
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 In this guide, you will install tomcat7 on a Linux image and deploy it in Windows Azure.  
@@ -28,7 +28,7 @@ You will learn:
 -	How to prepare the virtual machine for tomcat7.
 -	How to install tomcat7.
 
-It is assumed that the reader already has an Azure subscription.  If not you can sign up for a 1rmb trial at [http://windowsazure.cn](http://windowsazure.cn). If you have an MSDN subscription. To learn more about Azure, see [What is Azure?](http://azure.microsoft.com/overview/what-is-azure/).
+It is assumed that the reader already has an Azure subscription.  If not you can sign up for a trial at [http://azure.microsoft.com](https://azure.microsoft.com/). If you have an MSDN subscription, see [Windows Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/?c=14-39). To learn more about Azure, see [What is Azure?](https://azure.microsoft.com/overview/what-is-azure/).
 
 This topic assumes that you have basic working knowledge of tomcat and Linux.  
 

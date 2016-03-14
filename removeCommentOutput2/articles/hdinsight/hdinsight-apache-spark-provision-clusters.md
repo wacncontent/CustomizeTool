@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Provision Apache Spark clusters in HDInsight | Windows Azure"
    description="Learn how to provision Spark clusters for Azure HDInsight by using the Azure Management Portal, Azure PowerShell, a command line, or the HDInsight .NET SDK."
@@ -220,7 +222,7 @@ Specify the Spark cluster type:
 
 [azure-management-portal]: https://manage.windowsazure.cn/
 
-[azure-command-line-tools]: /documentation/articles/xplat-cli
+[azure-command-line-tools]: /documentation/articles/xplat-cli-install
 
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 

@@ -1,7 +1,7 @@
 Resource|Free|Shared (Preview)|Basic|Standard|Premium (Preview)</th>
 ---|---|---|---|---|---
-[Web, mobile, or API apps](/home/features/app-service/) per [App Service plan](/documentation/articles/web-sites-web-hosting-plan-overview)<sup>1</sup>|10|100|Unlimited<sup>2</sup>|Unlimited<sup>2</sup>|Unlimited<sup>2</sup>
-[Logic apps](/home/features/app-service/) per [App Service plan](/documentation/articles/web-sites-web-hosting-plan-overview)</a><sup>1</sup>|10|10|10|20 per core|20 per core 
+[Web, mobile, or API apps](/home/features/web-site/) per [App Service plan](/documentation/articles/web-sites-web-hosting-plan-overview)<sup>1</sup>|10|100|Unlimited<sup>2</sup>|Unlimited<sup>2</sup>|Unlimited<sup>2</sup>
+[Logic apps](/home/features/web-site/) per [App Service plan](/documentation/articles/web-sites-web-hosting-plan-overview)</a><sup>1</sup>|10|10|10|20 per core|20 per core 
 [App Service plan](/documentation/articles/web-sites-web-hosting-plan-overview)|1 per region|10 per resource group|10 per resource group|10 per resource group|10 per resource group
 Compute instance type|Shared|Shared|Dedicated<sup>3</sup>|Dedicated<sup>3</sup>|Dedicated<sup>3</sup></p>
 [Scale-Out](/documentation/articles/web-sites-scale) (max instances)|1 shared|1 shared|3 dedicated<sup>3</sup>|10 dedicated<sup>3</sup>|50 dedicated<sup>3,4</sup>
@@ -28,12 +28,12 @@ SLA||<p>|99.9%|99.95%<sup>10</sup>|99.95%<sup>10</sup>
 
 <sup>1</sup>Apps and storage quotas are per App Service plan unless noted otherwise.  
 <sup>2</sup>The actual number of apps that you can host on these machines depends on the activity of the apps, the size of the machine instances, and the corresponding resource utilization.  
-<sup>3</sup>Dedicated instances can be of different sizes. See [Azure Websites Pricing](/home/features/web-site/#price) for more details. Additional instances are available by opening a support request.  
-<sup>4</sup>Premium tier allows up to 50 computes instances (subject to availability) and 500 GB of disk space when using Azure Websites Environments, and 20 compute instances and 250 GB storage otherwise.  
+<sup>3</sup>Dedicated instances can be of different sizes. See [Azure <!-- keep by customization: begin --> Web App <!-- keep by customization: end --> Pricing](/home/features/web-site/#price) for more details. Additional instances are available by opening a support request.
+<sup>4</sup>Premium tier allows up to 50 computes instances (subject to availability) and 500 GB of disk space when using Azure Environments, and 20 compute instances and 250 GB storage otherwise.  
 <sup>5</sup>The storage limit is the total content size across all apps in the 
 same App Service plan. Storage limits can be increased by opening a support request.  
 <sup>6</sup>These resources are constrained by physical resources on the dedicated instances (the instance size and the number of instances).  
 <sup>7</sup>If you scale an app in the Basic tier to two instances, you have 350 concurrent connections for each of the two instances.  
-<sup>8</sup>Premium tier allows backup intervals down up to every 5 minutes when using Azure Websites Environments, and 50 times per day otherwise.  
-<sup>9</sup>Run custom executables and/or scripts on demand, on a schedule, or continuously as a background task within your Azure Websites instance. Always On is required for continuous WebJobs execution. Azure Scheduler Free or Standard is required for scheduled WebJobs.  
+<sup>8</sup>Premium tier allows backup intervals down up to every 5 minutes when using Azure <!-- keep by customization: begin --> Web App <!-- keep by customization: end --> Environments, and 50 times per day otherwise.
+<sup>9</sup>Run custom executables and/or scripts on demand, on a schedule, or continuously as a background task within your Azure instance. Always On is required for continuous WebJobs execution. Azure Scheduler Free or Standard is required for scheduled WebJobs.  
 <sup>10</sup>SLA of 99.95% provided for deployments that use multiple instances with Azure Traffic Manager configured for failover.  

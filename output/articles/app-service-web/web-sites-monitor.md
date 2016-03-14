@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/14/2015"
+	ms.date="01/13/2016"
 	wacn.date=""/>
 
 #<a name="howtomonitor"></a>Monitor Web Apps in Azure
@@ -94,7 +94,7 @@ You can enable or disable the following application diagnostics:
 
 	To specify the Azure Storage Account and blob, choose **On**, select the **Logging Level**, and then choose **Manage Blob Storage**. Specify the storage account, blob container, and blob name to use, or create a new container and blob.
 
-For more information about Azure Storage Accounts, see [How to Manage Storage Accounts](/documentation/articles/storage-manage-storage-account/).
+For more information about Azure Storage Accounts, see [How to Manage Storage Accounts](/documentation/articles/storage-create-storage-account/).
 
 > [AZURE.NOTE] Application logging to table or blob storage is only supported for .NET applications.
 
@@ -117,7 +117,7 @@ The **site diagnostics** section of the **Configure** management page controls t
 
 - **Web Server Logging** - Turn on Web Server logging to save web app logs using the W3C extended log file format. Web server logging produces a record of all incoming requests to your web app, which contains information such as the client IP address, requested URI, HTTP status code of the response, and the user agent string of the client. You can save the logs to an Azure Storage Account or to the File System.
 
- To save web server logs to an Azure Storage Account, choose **Storage**, and then choose **manage storage** to specify a storage account and an Azure Blob Container where the logs will be kept. For more information about Azure Storage Accounts, see [How to Manage Storage Accounts](/documentation/articles/storage-manage-storage-account/).
+ To save web server logs to an Azure Storage Account, choose **Storage**, and then choose **manage storage** to specify a storage account and an Azure Blob Container where the logs will be kept. For more information about Azure Storage Accounts, see [How to Manage Storage Accounts](/documentation/articles/storage-create-storage-account/).
 
    To save web server logs to the file system, choose **File System**. This enables the **Quota** box where you can set the maximum amount of disk space for the log files. The minimum size is 25MB and the maximum is 100MB. The default size is 35MB.
 
@@ -167,7 +167,7 @@ Log files can be downloaded using either FTP, Azure PowerShell, or the Azure CLI
 
 **Azure PowerShell**
 
-1. From the **Start Screen** or the **Start Menu**, search for **Azure PowerShell**. Right-click the **Azure PowerShell** entry and select **Run as Administrator**.
+1. From the **Start Screen** or the **Start Menu**, search for **Windows PowerShell**. Right-click the **Windows PowerShell** entry and select **Run as Administrator**.
 
 	> [AZURE.NOTE] If **Azure PowerShell** is not installed, see [Getting Started with Azure PowerShell Cmdlets](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx) for installation and configuration information.
 
@@ -259,7 +259,7 @@ After you configure endpoint monitoring, you can drill down into the individual 
 7.	Optionally, repeat the previous steps to create a second endpoint.
 8.	Click **Save**. It may take some time for the web endpoint monitoring data to be available on the **Dashboard** and **Monitor** tabs.
 
-	To create an email rule, do the following:
+To create an email rule, do the following:
 
 9.	In the service bar at the far left, click **Management Services**.
 10.	Click **Add Rule** at the bottom.

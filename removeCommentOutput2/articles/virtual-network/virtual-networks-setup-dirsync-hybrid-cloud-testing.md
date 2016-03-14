@@ -15,7 +15,7 @@
 
 # Set up Office 365 Directory Synchronization (DirSync) in a hybrid cloud for testing
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
  
 
 This topic steps you through creating a hybrid cloud environment for testing Office 365 Directory Synchronization (DirSync) with password synchronization hosted in Windows Azure. Here is the resulting configuration.
@@ -41,7 +41,7 @@ There are three major phases to setting up this hybrid cloud test environment:
 2.	Configure the Office 365 FastTrack trial.
 3.	Configure the DirSync server (DS1).
 
-If you do not already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](/pricing/member-offers/msdn-benefits-details/).
+If you do not already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). 
 
 ## Phase 1: Set up the hybrid cloud environment
 

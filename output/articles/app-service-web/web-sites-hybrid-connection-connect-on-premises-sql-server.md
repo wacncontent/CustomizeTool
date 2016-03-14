@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/13/2015"
+	ms.date="02/09/2016"
 	wacn.date=""/>
 
 # Connect to on-premises SQL Server from a web app in Azure using Hybrid Connections
 
 Hybrid Connections can connect [Azure Web App](/documentation/services/web-sites/) Web Apps to on-premises resources that use a static TCP port. Supported resources include Microsoft SQL Server, MySQL, HTTP Web APIs, Mobile Services, and most custom Web Services.
 
-In this tutorial, you will learn how to create an Azure web app in the [Azure preview](https://manage.windowsazure.cn/), connect the web app to your local on-premises SQL Server database using the new Hybrid Connection feature, create a simple ASP.NET application that will use the hybrid connection, and deploy the application to the Azure web app. The completed web app on Azure stores user credentials in a membership database that is on-premises. The tutorial assumes no prior experience using Azure or ASP.NET.
+In this tutorial, you will learn how to create an Azure web app in the [Azure Management Portal](https://manage.windowsazure.cn/), connect the web app to your local on-premises SQL Server database using the new Hybrid Connection feature, create a simple ASP.NET application that will use the hybrid connection, and deploy the application to the Azure web app. The completed web app on Azure stores user credentials in a membership database that is on-premises. The tutorial assumes no prior experience using Azure or ASP.NET.
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 >
@@ -59,7 +59,7 @@ If you already have SQL Server installed in a configuration and in an environmen
 <a name="InstallSQL"></a>
 ## A. Install SQL Server Express, enable TCP/IP, and create a SQL Server database on-premises ##
 
-This section shows you how to install SQL Server Express, enable TCP/IP, and create a database so that your web application will work with the Azure Preview environment.
+This section shows you how to install SQL Server Express, enable TCP/IP, and create a database so that your web application will work with the Azure Management Portal.
 
 ### Install SQL Server Express ###
 

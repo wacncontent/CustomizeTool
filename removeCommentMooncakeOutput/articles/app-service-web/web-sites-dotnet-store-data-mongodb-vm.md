@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Create a web site in Azure that connects to MongoDB running on a virtual machine" 
-	description="A tutorial that teaches you how to use Git to deploy an ASP.NET app to Azure Websites, connected to MongoDB on an Azure Virtual Machine."
+	pageTitle="Create a web app in Azure that connects to MongoDB running on a virtual machine" 
+	description="A tutorial that teaches you how to use Git to deploy an ASP.NET app to Azure Web App, connected to MongoDB on an Azure Virtual Machine."
 	tags="azure-portal" 
 	services="app-service\web, virtual-machines" 
 	documentationCenter=".net" 
@@ -14,9 +14,9 @@
 	wacn.date=""/>
 
 
-# Create a web site in Azure that connects to MongoDB running on a virtual machine
+# Create a web app in Azure that connects to MongoDB running on a virtual machine
 
-Using Git, you can deploy an ASP.NET application to Azure Websites. In this tutorial, you will build a simple front-end ASP.NET MVC task list application that connects to a MongoDB database running on a virtual machine in Azure.  [MongoDB][MongoDB] is a popular open source, high performance NoSQL database. After running and testing the ASP.NET application on your development computer, you will upload the application to Azure Websites using Git.
+Using Git, you can deploy an ASP.NET application to Azure Web Apps. In this tutorial, you will build a simple front-end ASP.NET MVC task list application that connects to a MongoDB database running on a virtual machine in Azure.  [MongoDB][MongoDB] is a popular open source, high performance NoSQL database. After running and testing the ASP.NET application on your development computer, you will upload the application to Azure Web Apps using Git.
 
 In this tutorial you will:
 
@@ -30,8 +30,8 @@ In this tutorial you will:
 Knowledge of the following is useful for this tutorial, though not required:
 
 * The C# driver for MongoDB. For more information on developing C# applications against MongoDB, see the MongoDB [CSharp Language Center][MongoC#LangCenter]. 
-* The ASP .NET web site framework. You can learn all about it at the [ASP.net website][ASP.NET].
-* The ASP .NET MVC web site framework. You can learn all about it at the [ASP.NET MVC website][MVCWebSite].
+* The ASP .NET web application framework. You can learn all about it at the [ASP.net website][ASP.NET].
+* The ASP .NET MVC web application framework. You can learn all about it at the [ASP.NET MVC website][MVCWebSite].
 * Azure. You can get started reading at [Azure][WindowsAzure].
 
 ## Prerequisites ##
@@ -52,32 +52,29 @@ After you have created the virtual machine in Azure and installed MongoDB, be su
 <a id="createapp"></a>
 ## Create the application ##
 
-In this section you will create an ASP.NET application called "My Task List" by using Visual Studio and perform an initial deployment to Azure Websites. You will run the application locally, but it will connect to your virtual machine on Azure and use the MongoDB instance that you created there.
+In this section you will create an ASP.NET application called "My Task List" by using Visual Studio and perform an initial deployment to Azure Web Apps. You will run the application locally, but it will connect to your virtual machine on Azure and use the MongoDB instance that you created there.
 
 1. In Visual Studio, click **New Project**.
 
 	![Start Page New Project][StartPageNewProject]
 
-1. In the **New Project** window, in the left pane, select **Visual C#**, and then select **Web**. In the middle pane, select **ASP.NET  web site**. At the bottom, name your project "MyTaskListApp," and then click **OK**.
+1. In the **New Project** window, in the left pane, select **Visual C#**, and then select **Web**. In the middle pane, select **ASP.NET  Web Application**. At the bottom, name your project "MyTaskListApp," and then click **OK**.
 
 	![New Project Dialog][NewProjectMyTaskListApp]
 
-1. In the **New ASP.NET Project** dialog box, select **MVC**, and then click **OK**.
+1. In the **New ASP.NET Project** dialog box, select **MVC**, and then click **OK**. Make sure **Host in the cloud** is unchecked, and click **OK**.
 
-	![Select MVC Template][VS2013SelectMVCTemplate]
+	If you haven't create a web app yet, go to [Azure Management Portal](https://manage.windowsazure.cn) to create one. And, in **Dashboard** of your web app, under **quick glance**, download the "publish profile".
 
-1. If you aren't already signed into Windows Azure, you will be prompted to sign in. Follow the prompts to sign into Azure.
-2. Once you are signed in, you can start configuring your Azure Websites. Specify the **web site name**, **App Service plan**, **Resource group**, and **Region**, then click **Create**.
+2. Right click your solution, and click **Publish...**
 
-	![](./media/web-sites-dotnet-store-data-mongodb-vm/VSConfigureWebAppSettings.png)
-
-1. After the project creation completes, wait for the web site to be created in Azure Websites as indicated in the **Azure Websites Activity** window. Then, click **Publish MyTaskListApp to this web site now**.
+1. Click **Import**, choose the previously downloaded "publish profile", and click **OK**.
 
 1. Click **Publish**.
 
 	![](./media/web-sites-dotnet-store-data-mongodb-vm/VSPublishWeb.png)
 
-	Once your default ASP.NET application is published to Azure Websites, it will be launched in the browser.
+	Once your default ASP.NET application is published to Azure Web Apps, it will be launched in the browser.
 
 ## Install the MongoDB C# driver
 
@@ -437,7 +434,7 @@ To run your application on your development computer, select **Start Debugging**
 
 ![My Task List Application][TaskListAppBlank]
 
-## Publish to Azure Websites
+## Publish to Azure Web Apps
 In this section you will create a website and deploy the My Task List ASP.NET application using Git.
 
 ###<a id="createwebsite"></a> Create an Azure website###
@@ -478,11 +475,11 @@ In this section you will deploy the My Task List application using Git.
 9. Your Azure website is now available.  Check the **Dashboard** page for your site and the **Site URL** field to find the URL for your site. Following the procedures in this tutorial, your site would be available at this URL: http://mytasklistapp.chinacloudsites.cn.
 ## Summary ##
 
-You have now successfully deployed your ASP.NET application to Azure Websites. To view the web site:
+You have now successfully deployed your ASP.NET application to Azure Web Apps. To view the web app:
 
 1. Log into the Azure Management Portal.
-2. Click **Web Apps**. 
-3. Select your web site in the **Web Apps** list.
+2. Click **Web apps**. 
+3. Select your web app in the **Web Apps** list.
 
 For more information on developing C# applications against MongoDB, see [CSharp Language Center][MongoC#LangCenter]. 
  

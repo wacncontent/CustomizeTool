@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/28/2015"
+	ms.date="12/29/2015"
 	wacn.date=""/>
 
 
@@ -62,7 +62,7 @@ The Azure CLI is a cross-platform tool that allows you to manage Azure services.
 
 2. Open a command prompt, bash, or other shell, and use the following to authenticate to your Azure subscription.
 
-		azure login -e AzureChinaCloud
+		azure login -e AzureChinaCloud -u <your account>
 
 	When prompted, enter the user name and password for your subscription.
 

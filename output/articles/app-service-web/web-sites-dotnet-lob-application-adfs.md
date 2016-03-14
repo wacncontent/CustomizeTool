@@ -334,7 +334,7 @@ Since you have included group memberships as role claims in your RP trust config
 
 A reason that you would want to implement your line-of-business application with AD FS instead of Azure Active Directory is compliance issues with keeping organization data off-premise. This may also mean that your web app in Azure must access on-premise databases, since you are not allowed to use [SQL Database](/home/features/sql-database/) as the data tier for your web apps.
 
-Azure Web Apps supports accessing on-premise databases with two approaches: [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview) and [Virtual Networks](/documentation/articles/web-sites-integrate-with-vnet). For more information, see [Using VNET integration and Hybrid connections with Azure Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/).
+Azure Web Apps supports accessing on-premise databases with two approaches: [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview) and [Virtual Networks](/documentation/articles/web-sites-integrate-with-vnet). For more information, see [Using VNET integration and Hybrid connections with Azure Web Apps](https://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/).
 
 <a name="bkmk_resources"></a>
 ## Further resources

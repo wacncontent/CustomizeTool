@@ -23,7 +23,7 @@ Learn how to create Azure HDInsight HBase clusters on an [Azure Virtual Network]
 
 With virtual network integration, HBase clusters can be deployed to the same virtual network as your applications so that applications can communicate with HBase directly. The benefits include:
 
-- Direct connectivity of the web site to the nodes of the HBase cluster, which enables communication via HBase Java remote procedure call (RPC) APIs.
+- Direct connectivity of the web application to the nodes of the HBase cluster, which enables communication via HBase Java remote procedure call (RPC) APIs.
 - Improved performance by not having your traffic go over multiple gateways and load-balancers.
 - The ability to process sensitive information in a more secure manner without exposing a public endpoint.
 

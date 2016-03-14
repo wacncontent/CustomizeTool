@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/26/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 # How to Create an Azure Environment #
@@ -38,7 +38,7 @@ There are some important details to each of those items.
 
 Each ASE deployment is a Hosted Service that Azure manages and maintains.  The compute resources hosting the ASE system roles are not accessible to the customer though the customer does manage the quantity of instances and their sizes.  
 
-There are two ways to access the ASE creation UI.  It can be found by searching in the Azure Marketplace for ***Azure Environment*** or by going through New -> Web + Mobile.  
+There are two ways to access the ASE creation UI.  It can be found by searching in the Azure gallery for ***Azure Environment*** or by going through New -> Web + Mobile.  
 
 If you want the VNET to have a separate resource group from the ASE then you need to first create the VNET separately and then select it during ASE creation.  Also, if you want to create a subnet in an existing VNET during ASE creation, the ASE has to then be in the same resource group as the VNET.
 
@@ -51,8 +51,7 @@ The creation experience for an ASE does have a set of defaults to enable a quick
 - Worker pool with 2 P1 compute resources
 - single IP address to be used for IP SSL
 
-This is the minimum size for an ASE.  Front End pools require P2 or larger.  
-Be sure to select the subscription that you want the ASE to be in.  The only accounts that can use the ASE to host content must be in the subscription used to create it.  
+Front End pools require P2 or larger.  Be careful when selecting the subscription that you want the ASE to be in.  The only accounts that can use the ASE to host content must be in the subscription used to create it.  
 
 ![][1]
 

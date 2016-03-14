@@ -24,14 +24,6 @@ We'll learn how to use a SQL database hosted on Azure, how to configure the web 
 
 See the [Python Developer Center] for more articles that cover development of Azure Web Apps with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Web App, the steps are similar when developing [Azure Cloud Services].
 
-+ [Prerequisites](#prerequisites)
-+ [Create the Project](#create-the-project)
-+ [Create a SQL Database](#create-a-sql-database)
-+ [Configure the Project](#configure-the-project)
-+ [Publish to an Azure Website](#publish-to-an-azure-website)
-+ [Next steps](#next-steps)
-
-
 ##<a name="prerequisites"></a> Prerequisites
 
  - Visual Studio 2013 or 2015

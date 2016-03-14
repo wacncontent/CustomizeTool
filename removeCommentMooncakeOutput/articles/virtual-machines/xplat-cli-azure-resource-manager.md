@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Using the Windows Azure CLI for Mac, Linux, and Windows with Azure Resource Management | Windows Azure"
 	description="Using the Windows Azure CLI for Mac, Linux, and Windows with Azure Resource Manager."
@@ -340,5 +342,5 @@ To view logged information on operations performed on a group, use the `azure gr
 [signuporg]: /documentation/articles/sign-up-organization/
 [adtenant]: http://technet.microsoft.com/zh-cn/library/jj573650#createAzureTenant
 [portal]: https://manage.windowsazure.cn/
-[clisetup]: /documentation/articles/xplat-cli
+[clisetup]: /documentation/articles/xplat-cli-install
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="11/18/2015"
+	ms.date="01/19/2016"
 	wacn.date=""/>
 
 
@@ -57,17 +57,17 @@ In this release the following updates were made. These updates are in preview. F
 - Old **Storm** project must be upgraded when using this version of the tools. For more information, see [this blog](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 - Visual Studio Web Express is no longer supported. For more information, see [this blog](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 
-###Azure Websites Tools
+###Azure Tools
 
 In this release the following updates were made to Web Tools Extensions. For more information see [this](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)  blog. 
 
 - Support for DreamSpark accounts added
 - Full change to Azure Tools made to support the new Azure Resource Management APIs
-- Support for Azure Websites added to [Cloud Explorer](/documentation/articles/azure-sdk-dot-net-release-notes-2_7#cloud_explorer)
+- Support for Azure added to [Cloud Explorer](/documentation/articles/azure-sdk-dot-net-release-notes-2_7#cloud_explorer)
 
 ####Known issues
 
-web site deployment slot nodes don't appear under the Slots node in Server Explorer, and web site deployment slot child nodes don't load under Cloud Explorer. This issue has been resolved and prepared for the next SDK release. 
+Web App deployment slot nodes don't appear under the Slots node in Server Explorer, and Web App deployment slot child nodes don't load under Cloud Explorer. This issue has been resolved and prepared for the next SDK release. 
 
 
 ###<a id="cloud_explorer"></a>Cloud Explorer for Visual Studio 2015
@@ -125,7 +125,7 @@ For more detailed explanation about HDInsight tools updates, see [this blog](htt
 	To enable you to view the grammar errors instantly, the Hive Error Marker feature was added. Also, error messages were enhanced and you can now see detailed grammar errors instantly (until this release, you had to submit a Hive script to the cluster and wait for some time before getting details about your error message).  
 - Storm Topology Graph (a new feature)
 
-	Visualizing is very important when you want to see if your topology is working as expected. In this release we added visualization for Storm graphs. You can visualize the important metrics for your topology (for example, a color indicates weather a certain Bolt is “busy” or not). You can also double click the Bolt/Spout to view more details.
+	Visualizing is very important when you want to see if your topology is working as expected. In this release we added visualization for Storm graphs. You can visualize the important metrics for your topology (for example, a color indicates weather a certain Bolt is "busy" or not). You can also double click the Bolt/Spout to view more details.
 
 - Support for HDInsight clusters that were created in the Azure Management Portal (a bug fix)
 

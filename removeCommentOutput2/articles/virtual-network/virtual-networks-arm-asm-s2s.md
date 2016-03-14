@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
    pageTitle="How to connect classic VNets to ARM VNets in Azure - Solution Guide"
    description="Learn how to create a VPN connection between classic VNets and new VNets"

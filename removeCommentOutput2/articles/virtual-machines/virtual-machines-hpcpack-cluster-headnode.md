@@ -9,7 +9,7 @@
  tags="azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/28/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 # Create the head node of an HPC Pack cluster in an Azure VM with a Marketplace image

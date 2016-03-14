@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Tutorial: web site with a multi-tenant database using Entity Framework and Row-Level Security"
-	description="Learn how to develop an ASP.NET MVC 5 web site with a multi-tenant SQL Database backent, using Entity Framework and Row-Level Security."
+	pageTitle="Tutorial: Web app with a multi-tenant database using Entity Framework and Row-Level Security"
+	description="Learn how to develop an ASP.NET MVC 5 web app with a multi-tenant SQL Database backent, using Entity Framework and Row-Level Security."
   metaKeywords="azure asp.net mvc entity framework multi tenant row level security rls sql database"
 	services="app-service\web"
 	documentationCenter=".net"
@@ -12,11 +12,11 @@
 	ms.date="10/30/2015"
 	wacn.date=""/>
 
-# Tutorial: web site with a multi-tenant database using Entity Framework and Row-Level Security
+# Tutorial: Web app with a multi-tenant database using Entity Framework and Row-Level Security
 
-This tutorial shows how to build a multi-tenant web site with a "[shared database, shared schema](https://msdn.microsoft.com/zh-cn/library/aa479086.aspx)" tenancy model, using Entity Framework and [Row-Level Security](https://msdn.microsoft.com/zh-cn/library/dn765131.aspx). In this model, a single database contains data for many tenants, and each row in each table is associated with a "Tenant ID." Row-Level Security (RLS), a new feature for Azure SQL Database, is used to prevent tenants from accessing each other's data. This requires just a single, small change to the application. By centralizing the tenant access logic within the database itself, RLS simplifies the application code and reduces the risk of accidental data leakage between tenants.
+This tutorial shows how to build a multi-tenant web app with a "[shared database, shared schema](https://msdn.microsoft.com/zh-cn/library/aa479086.aspx)" tenancy model, using Entity Framework and [Row-Level Security](https://msdn.microsoft.com/zh-cn/library/dn765131.aspx). In this model, a single database contains data for many tenants, and each row in each table is associated with a "Tenant ID." Row-Level Security (RLS), a new feature for Azure SQL Database, is used to prevent tenants from accessing each other's data. This requires just a single, small change to the application. By centralizing the tenant access logic within the database itself, RLS simplifies the application code and reduces the risk of accidental data leakage between tenants.
 
-Let's start with the simple Contact Manager application from [Create an ASP.NET MVP app with auth and SQL DB and deploy to Azure Websites](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database). Right now, the application allows all users (tenants) to see all contacts:
+Let's start with the simple Contact Manager application from [Create an ASP.NET MVP app with auth and SQL DB and deploy to Azure Web App](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database). Right now, the application allows all users (tenants) to see all contacts:
 
 ![Contact Manager application before enabling RLS](./media/web-sites-dotnet-entity-framework-row-level-security/ContactManagerApp-Before.png)
 
@@ -24,7 +24,7 @@ With just a few small changes, we will add support for multi-tenancy, so that us
 
 ## Step 1: Add an Interceptor class in the application to set the SESSION_CONTEXT
 
-There is one application change we need to make. Because all application users connect to the database using the same connection string (i.e. same SQL login), there is currently no way for an RLS policy to know which user it should filter for. This approach is very common in web sites because it enables efficient connection pooling, but it means we need another way to identify the current application user within the database. The solution is to have the application set a key-value pair for the current UserId in the [SESSION_CONTEXT](https://msdn.microsoft.com/zh-cn/library/mt590806) before it executes a query. SESSION_CONTEXT is a session-scoped key-value store, and our RLS policy will use the UserId stored in it to identify the current user. *Note: SESSION_CONTEXT is currently a preview feature on Azure SQL Database.*
+There is one application change we need to make. Because all application users connect to the database using the same connection string (i.e. same SQL login), there is currently no way for an RLS policy to know which user it should filter for. This approach is very common in web applications because it enables efficient connection pooling, but it means we need another way to identify the current application user within the database. The solution is to have the application set a key-value pair for the current UserId in the [SESSION_CONTEXT](https://msdn.microsoft.com/zh-cn/library/mt590806) before it executes a query. SESSION_CONTEXT is a session-scoped key-value store, and our RLS policy will use the UserId stored in it to identify the current user. *Note: SESSION_CONTEXT is currently a preview feature on Azure SQL Database.*
 
 We will add an [interceptor](https://msdn.microsoft.com/data/dn469464.aspx), a new feature in Entity Framework (EF) 6, to automatically set the current UserId in the SESSION_CONTEXT by prepending a T-SQL statement before EF executes each query.
 
@@ -170,7 +170,7 @@ To validate this further, try registering a new user. They will see no contacts,
 
 ## Next steps
 
-That's it! The simple Contact Manager web site has been converted into a multi-tenant one where each user has its own contact list. By using Row-Level Security, we've avoided the complexity of enforcing tenant access logic in our application code. This transparency allows the application to focus on the real business problem at hand, and it also reduces the risk of accidentally leaking data as the application's codebase grows.
+That's it! The simple Contact Manager web app has been converted into a multi-tenant one where each user has its own contact list. By using Row-Level Security, we've avoided the complexity of enforcing tenant access logic in our application code. This transparency allows the application to focus on the real business problem at hand, and it also reduces the risk of accidentally leaking data as the application's codebase grows.
 
 This tutorial has only scratched the surface of what's possible with RLS. For instance, it's possible to have more sophisticated or granular access logic, and it's possible to store more than just the current UserId in the SESSION_CONTEXT. It's also possible to [integrate RLS with the elastic database tools client libraries](/documentation/articles/sql-database-elastic-tools-multi-tenant-row-level-security) to support multi-tenant shards in a scale-out data tier.
 

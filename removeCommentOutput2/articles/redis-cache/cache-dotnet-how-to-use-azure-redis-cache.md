@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cache"
-	ms.date="12/03/2015"
+	ms.date="01/21/2016"
 	wacn.date=""/>
 
 # How to Use Azure Redis Cache
@@ -38,6 +38,8 @@ Getting started with Azure Redis Cache is easy. To get started, you provision an
 
 -	[Create the cache][]
 -	[Configure the cache clients][]
+
+##<a name="create-cache"></a> Create a cache
 
 In Windows Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
 

@@ -1,11 +1,12 @@
 <properties
-	pageTitle="How to run a compute-intensive task in .NET on an Azure virtual machine"
+	pageTitle="Run a compute-intensive .NET app on a VM | Windows Azure"
 	description="Learn how to deploy and run a compute-intensive .NET app on an Azure virtual machine and use Azure Service Bus queues to monitor progress remotely."
 	services="virtual-machines"
 	documentationCenter=".net"
 	authors="wadepickett"
 	manager="wpickett"
-	editor="mollybos"/>
+	editor="mollybos"
+	tags=âazure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -15,6 +16,9 @@
 # How to run a compute-intensive task in .NET on an Azure virtual machine
 
 With Azure, you can use a virtual machine to handle compute-intensive tasks. For example, a virtual machine can handle tasks and deliver results to client machines or mobile applications. After completing the tutorial, you will understand how to create a virtual machine that runs a compute-intensive .NET application that can be monitored by another .NET application.
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+
 
 This tutorial assumes you know how to create .NET console applications. No knowledge of Azure is assumed.
 
@@ -53,7 +57,7 @@ The following is an example of the .NET application monitoring the compute-inten
 
 ## To remotely log in to your virtual machine
 
-1. Log on to the [Management Portal](https://manage.windowsazure.cn).
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Click **Virtual machines**.
 3. Click the name of the virtual machine that you want to log in to.
 4. Click **Connect**.

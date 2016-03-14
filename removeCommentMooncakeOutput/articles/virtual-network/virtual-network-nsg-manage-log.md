@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
    pageTitle="Monitor operations, events, and counters for NSGs | Windows Azure"
    description="Learn how to enable counters, events, and operational logging for NSGs"

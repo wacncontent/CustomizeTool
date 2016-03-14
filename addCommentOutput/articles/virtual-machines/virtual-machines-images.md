@@ -14,14 +14,12 @@
 	wacn.date=""/>
 
 # About images for virtual machines
-<!-- deleted by customization
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
--->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
 
 Images are used in Azure to provide a new virtual machine with an operating system. An image might also have one or more data disks. Images are available from several sources:
 
--	Azure offers images in the [Marketplace](http://azure.microsoft.com/gallery/virtual-machines/). You'll find recent versions of Windows Server and distributions of the Linux operating system. Some images also contain applications, such as SQL Server. MSDN Benefit and MSDN Pay-as-You-Go subscribers have access to additional images.
+-	Azure offers images in the <!-- deleted by customization [Marketplace](http://azure.microsoft.com/gallery/virtual-machines/) --><!-- keep by customization: begin --> gallery <!-- keep by customization: end -->. You'll find recent versions of Windows Server and distributions of the Linux operating system. Some images also contain applications, such as SQL Server. MSDN Benefit and MSDN Pay-as-You-Go subscribers have access to additional images.
 -	The open source community offers images through [VM Depot](http://vmdepot.msopentech.com/List/Index).
 -	You also can store and use your own images in Azure, by either capturing an existing Azure virtual machine for use as an image or uploading an image.
 

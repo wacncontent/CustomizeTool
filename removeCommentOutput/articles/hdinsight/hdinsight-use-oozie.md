@@ -52,7 +52,7 @@ The workflow you will implement by following the instructions in this tutorial c
 
 Before you begin this tutorial, you must have the following:
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell). To execute Windows PowerShell scripts, you must run as an administrator and set the execution policy to *RemoteSigned*. For more information, see [Run Windows PowerShell scripts][powershell-script].
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure). To execute Windows PowerShell scripts, you must run as an administrator and set the execution policy to *RemoteSigned*. For more information, see [Run Windows PowerShell scripts][powershell-script].
 
 ##Define Oozie workflow and the related HiveQL script
 
@@ -633,7 +633,7 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 
 [azure-data-factory-pig-hive]: ../data-factory/data-factory-pig-hive-activities.md
 [hdinsight-oozie-coordinator-time]: hdinsight-use-oozie-coordinator-time.md
-[hdinsight-versions]:  hdinsight-component-versioning.md
+[hdinsight-versions]:  hdinsight-component-versioning-v1.md
 [hdinsight-storage]: ../hdinsight-use-blob-storage.md
 [hdinsight-get-started]: ../hdinsight-get-started.md
 [hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1

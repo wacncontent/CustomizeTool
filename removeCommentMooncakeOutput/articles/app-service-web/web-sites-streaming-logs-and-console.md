@@ -19,13 +19,13 @@
 ### Streaming Logs ###
 
 The Windows Azure Management Portal provides an integrated streaming log viewer that lets you view tracing events from 
-your Azure Websites in real time.  
+your Azure web apps in real time.  
 
 Setting this up requires a few simple steps:
 
 - Write traces in your code
 - Enable Application Diagnostics from within the Azure Management Portal
-- Click on the streaming logs part on the web site's blade
+- Click on the streaming logs part on the web app's blade
 
 ### How to write traces in your code ###
 
@@ -54,11 +54,11 @@ console.log("My trace statement").
 ### How to enable and view the streaming logs ###
 
 ![][BrowseSitesScreenshot]
-Diagnostics are enabled on a per web site basis.  From within the [portal](https://manage.windowsazure.cn) click the
- **Browse (1)** button on the left menu bar and then click **web sites (2)** to get to the **list (3)** of 
- all your web sites.  
+Diagnostics are enabled on a per web app basis.  From within the [portal](https://manage.windowsazure.cn) click the
+ **Browse (1)** button on the left menu bar and then click **Web Apps (2)** to get to the **list (3)** of 
+ all your web apps.  
 
-Click on the name of the web site that you want to configure to navigate to it.
+Click on the name of the web app that you want to configure to navigate to it.
   
 ![][DiagnosticsLogs]
 Then click **Settings (1)** > **Diagnostic Logs (2)** and turn **On** 
@@ -78,13 +78,13 @@ is actively writing trace statements then you should see them in the resulting w
 
 ## Console ##
 
-The Azure Management Portal provides console access to your web site environment. You can explore your web 
+The Azure Management Portal provides console access to your web app environment. You can explore your web 
 app's file system and run powershell/cmd scripts.  You are bound by the same permissions set as 
-your running web site code when executing console commands. You won't be able to access protected 
+your running web app code when executing console commands. You won't be able to access protected 
 directories or run scripts that require elevated permissions.  
 
 ![][ConsoleScreenshot]
-To get to the console, browse to a web site as described in the section above. 
+To get to the console, browse to a web app as described in the section above. 
 Click on **Tools**>**Console** and the console will open.
 
 To get familiar with the console try basic commands like these:

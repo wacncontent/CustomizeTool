@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/17/2015"
+	ms.date="01/22/2016"
 	wacn.date=""/>
 
 #Create Linux-based clusters in HDInsight using the Azure CLI

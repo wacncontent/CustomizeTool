@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="11/12/2015"
+	ms.date="02/09/2016"
 	wacn.date=""/>
 
 # Point a company Internet domain to a Azure Traffic Manager domain

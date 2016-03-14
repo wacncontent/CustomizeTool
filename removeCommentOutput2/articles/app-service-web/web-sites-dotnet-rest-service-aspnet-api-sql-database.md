@@ -33,18 +33,6 @@ You'll build a simple contact list web application that is built on ASP.NET MVC 
 
 ![screenshot of web site][intro001]
 
-In this tutorial:
-
-* [Set up the development environment][setupdbenv]
-* [Set up the Azure environment][setupwindowsazureenv]
-* [Create an ASP.NET MVC 5 application][createapplication]
-* [Deploy the application to Azure][deployapp1]
-* [Add a database to the application][adddb]
-* [Add a Controller and a view for the data][addcontroller]
-* [Add a Web API Restful interface][addwebapi]
-* [Add XSRF Protection][]
-* [Publish the application update to Azure and SQL Database][deploy2]
-
 <a name="bkmk_setupdevenv"></a>
 <!-- the next line produces the "Set up the development environment" section as see at /documentation/articles/web-sites-dotnet-get-started/ -->
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
@@ -64,8 +52,6 @@ In this tutorial:
 If you do not have a web site in Azure yet, you can go to the [Azure Management Portal](http://manage.windowsazure.cn) to create one. After the web site is created, go to the **Dashboard**, under **quick glance**, you can download the publish profile. You will need it in the publish section in this article.
 
 If you have a database server, use that to create a new database. Database servers are a precious resource, and you generally want to create multiple databases on the same server for testing and development rather than creating a database server per database. Make sure your web site and database are in the same region.
-
-![Configure Azure Website](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/configWithDB.PNG)
 
 ### Set the page header and footer
 
@@ -131,11 +117,11 @@ This is all you need to do for now to create the application that you'll deploy 
 
 	The **Publish Web** wizard opens.
 
-12. Click **Publish**.
+12. Click **Publish**, click **Import**, and Choose the previously downloaded "publish profile".
 
-![Settings tab](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/pw.png)
+	![Settings tab](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/pw.png)
 
-Visual Studio begins the process of copying the files to the Azure server. The **Output** window shows what deployment actions were taken and reports successful completion of the deployment.
+	Visual Studio begins the process of copying the files to the Azure server. The **Output** window shows what deployment actions were taken and reports successful completion of the deployment.
 
 14. The default browser automatically opens to the URL of the deployed site.
 
@@ -733,7 +719,7 @@ Another way to store data in an Azure application is to use Azure storage, which
 * [Your First ASP.NET Web API](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)
 * [Debugging WAWS](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
 
-This tutorial and the sample application was written by [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) with assistance from Tom Dykstra and Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)). 
+This tutorial and the sample application was written by [Rick Anderson](http://blogs.msdn.com/b/rickandy/) with assistance from Tom Dykstra and Barry Dorrans.
 
 Please leave feedback on what you liked or what you would like to see improved, not only about the tutorial itself but also about the products that it demonstrates. Your feedback will help us prioritize improvements. We are especially interested in finding out how much interest there is in more automation for the process of configuring and deploying the membership database. 
 

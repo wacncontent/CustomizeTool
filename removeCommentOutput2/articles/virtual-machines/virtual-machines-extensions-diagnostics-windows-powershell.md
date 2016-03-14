@@ -15,7 +15,7 @@
 
 # Use PowerShell to enable Azure Diagnostics in a virtual machine running Windows
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 You can collect diagnostic data like application logs, performance counter etc. from a Azure Virtual machine running Windows using the Azure Diagnostics extension. This article describes how to enable the Azure Diagnostics extension for a Virtual Machine using PowerShell.  See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) for the prerequisites needed for this article.
 
@@ -40,10 +40,10 @@ The following XML can be used for the diagnostics public configuration with the 
 
 The configuration needs to be updated to include the following:
 
-- The *resourceID* attribute of the **Metrics** element needs to be updated with the resource ID for the virtual machine. 
-	- The resource ID can be constructed using the following pattern: "/subscriptions/{*subscription ID for the subscription with the VM*}/providers/Microsoft.ClassicCompute/virtualMachines/{*The VM Name*}". 
-	- For example if the subscription id for the subscription where the VM is running is **11111111-1111-1111-1111-111111111111**, the VM Name is **MyWindowsVM** then the value for *resourceID* would be:
-	 
+- The *resourceID* attribute of the **Metrics** element needs to be updated with the resource ID for the VM.
+	- The resource ID can be constructed by using the following pattern: "/subscriptions/{*subscription ID for the subscription with the VM*}/providers/Microsoft.ClassicCompute/virtualMachines/{*The VM Name*}".
+	- For example if the subscription ID for the subscription where the VM is running is **11111111-1111-1111-1111-111111111111**, the VM Name is **MyWindowsVM**, then the value for *resourceID* would be:
+
 		```
 		<Metrics resourceId="/subscriptions/11111111-1111-1111-1111-111111111111/providers/Microsoft.ClassicCompute/virtualMachines/MyWindowsVM" >
 		```

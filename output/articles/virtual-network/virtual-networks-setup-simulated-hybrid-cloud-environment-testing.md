@@ -10,12 +10,12 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="01/14/2016"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
-# Set up a simulated hybrid cloud environment for testing
+# Set up a simulated hybrid cloud environment for testing (classic deployment mode)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-setup-simulated-hybrid-cloud-environment-testing).
 
 This article steps you through creating a simulated hybrid cloud environment with Windows Azure for testing using two separate Azure virtual networks. Use this configuration as an alternative to 
 [Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing) when you do not have a direct Internet connection and an available public IP address. Here is the resulting configuration.
@@ -41,7 +41,7 @@ There are four major phases to setting up this hybrid cloud test environment:
 3.	Create the VNet-to-VNet VPN connection.
 4.	Configure DC2. 
 
-If you don't already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](/pricing/member-offers/msdn-benefits-details/).
+If you don't already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
 >[AZURE.NOTE] Virtual machines and virtual network gateways in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. To reduce the costs of running this test environment when you are not using it, see [Minimizing the ongoing costs of this environment](#costs) in this article for more information.
 
@@ -217,11 +217,7 @@ Your simulated hybrid cloud environment is now ready for testing.
 
 ## Next Steps
 
-Set up the following workloads in the TestVNET virtual network:
-
-- [SharePoint intranet farm](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
-- [Web-based line of business application](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
-- [Office 365 Directory Synchronization (DirSync) server](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing)
+- Set up a [SharePoint intranet farm](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing), a [Web-based line of business application](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing), or an [Office 365 Directory Synchronization (DirSync) server](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing) in the TestVNET virtual network.
 
 
 ## <a id="costs"></a>Minimizing the ongoing costs of this environment
@@ -261,4 +257,3 @@ Next, you configure the pre-shared key for both gateways to use the same value, 
 	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet -SharedKey $preSharedKey
 
 Next, on the Network page of the Azure Management Portal, click the **TestLab** virtual network, and then click **Connect** in the task bar. Wait until the TestLab virtual network shows a connected state to the TestVNET local network.
- 

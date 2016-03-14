@@ -72,7 +72,7 @@ jti|A unique identifier about this token (every token can only be used once in t
 The [sample solution](https://github.com/AzureMediaServicesSamples/CastlabsIntegration) consists of two projects:
 
 -	A console app that can be used to set DRM restrictions on an already ingested asset, for both PlayReady and Widevine.
--	A web site that hands out tokens, which could be seen as a VERY SIMPLIFIED version of an STS.
+-	A Web Application that hands out tokens, which could be seen as a VERY SIMPLIFIED version of an STS.
 
 
 To use the console application:
@@ -90,7 +90,12 @@ To use the console application:
 5.	Run the program.
 
 
+<!-- deleted by customization
+To use the Web Application (STS):
+-->
+<!-- keep by customization: begin -->
 To use the web site (STS):
+<!-- keep by customization: end -->
 
 1.	Change the web.config to setup castlabs merchant ID, the STS configuration and the shared key.
 2.	Deploy to Azure Websites.

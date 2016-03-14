@@ -41,8 +41,8 @@ Azure HDInsight deploys and provisions Hadoop clusters in the cloud, by using **
 Category | Hadoop on Windows
 ---------|  --------------------
 **Cluster OS** | Windows Server 2012 R2
-**Cluster Type** | Hadoop, HBase, Storm 
-**Deployment** | Azure CLI, Azure PowerShell 
+**Cluster Type** | Hadoop,  HBase, Storm
+**Deployment** |  Azure CLI, Azure PowerShell
 **Cluster UI** |  Cluster Dashboard
 **Remote Access**  | Remote Desktop Protocol (RDP), REST API, ODBC, JDBC
 
@@ -87,7 +87,7 @@ The following components and utilities are included on HDInsight clusters.
 ### <a name="avro"></a>Avro (Microsoft .NET Library for Avro)
 
 The Microsoft .NET Library for Avro implements the Apache Avro compact binary data interchange format for serialization for the Microsoft .NET environment. It uses <a target="_blank" href="http://www.json.org/">JavaScript Object Notation (JSON)</a> to define a language-agnostic schema that underwrites language interoperability, meaning data serialized in one language can be read in another. Detailed information on the format can be found in the <a target=_"blank" href="http://avro.apache.org/docs/current/spec.html">Apache Avro Specification</a>.
-The format of Avro files supports the distributed MapReduce programming model. Files are âsplittableâ, meaning you can seek any point in a file and start reading from a particular block. To find out how, see [Serialize data with the Microsoft .NET Library for Avro](/documentation/articles/hdinsight-dotnet-avro-serialization).
+The format of Avro files supports the distributed MapReduce programming model. Files are "splittable", meaning you can seek any point in a file and start reading from a particular block. To find out how, see [Serialize data with the Microsoft .NET Library for Avro](/documentation/articles/hdinsight-dotnet-avro-serialization).
 
 
 ### <a name="HDFS"></a>HDFS
@@ -143,7 +143,7 @@ As part of the Azure cloud ecosystem, Hadoop in HDInsight offers a number of ben
 
 * Efficient and economical data storage with Azure Blob storage, a Hadoop-compatible option. See [Use Azure Blob storage with Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-use-blob-storage) for details.
 
-* Integration with other Azure services, including [web sites](/documentation/services/web-sites/) and [SQL Database](/documentation/services/sql-databases/).
+* Integration with other Azure services, including [Web apps](/documentation/services/web-sites/) and [SQL Database](/documentation/services/sql-databases/).
 
 * Low entry cost. Start a [trial](/pricing/1rmb-trial/), or consult [HDInsight pricing details](/home/features/hdinsight/#price).
 
@@ -206,5 +206,5 @@ Use big data analysis on your organization's data to gain insights into your bus
 
 
 [marketing-page]: /home/features/hdinsight/
-[component-versioning]: /documentation/articles/hdinsight-component-versioning
+[component-versioning]: /documentation/articles/hdinsight-component-versioning-v1
 [zookeeper]: http://zookeeper.apache.org/

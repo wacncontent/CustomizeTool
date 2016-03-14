@@ -53,7 +53,7 @@ Click **USERS** and look for your single personal account. You should see in the
 
 We're going to follow [these instructions](https://technet.microsoft.com/zh-cn/library/hh967632.aspx#BKMK_1) in the next few steps, but use a specific example.
 
-At the bottom of the page, click **+ADD USER**. In the page that appears, type the new user name, and make the **Type of User** a **New user in your organization**. In this example, the new user name is `ahmet`. Select the default domain that you discovered previously as the domain for `ahmet`'s email address. Click the next arrow when finished.
+At the bottom of the page, click **+ADD USER**. In the page that appears, type the new user name, and make the **Type of User** a **New user in your organization**. In this example, the new user name is `ahmet`. Select the default domain that you discovered previously as the domain for ahmet's email address. Click the next arrow when finished.
 
 ![](./media/resource-group-create-work-id-from-personal/addingauserwithdirectorydropdown.png)
 

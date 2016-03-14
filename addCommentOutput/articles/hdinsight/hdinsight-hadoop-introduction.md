@@ -43,7 +43,7 @@ Azure HDInsight deploys and provisions Hadoop clusters in the cloud on **Linux**
 Category | Hadoop on Linux
 ---------| -------------------
 **Cluster OS** | Ubuntu 12.04 Long Term Support (LTS)
-**Cluster Type** | Hadoop, Spark, HBase, Storm
+**Cluster Type** | Hadoop, Spark,HBase, Storm
 **Deployment** | Azure Management Portal, Azure CLI, Azure PowerShell
 **Cluster UI** | Ambari
 **Remote Access** | Secure Shell (SSH), REST API, ODBC, JDBC
@@ -61,7 +61,7 @@ Azure HDInsight deploys and provisions Hadoop clusters in the cloud, by using **
 Category | Hadoop on Windows
 ---------|  --------------------
 **Cluster OS** | Windows Server 2012 R2
-**Cluster Type** | Hadoop,  HBase, Storm
+**Cluster Type** | Hadoop, HBase, Storm
 **Deployment** |  Azure CLI, Azure PowerShell
 **Cluster UI** |  Cluster Dashboard
 **Remote Access**  | Remote Desktop Protocol (RDP), REST API, ODBC, JDBC
@@ -90,9 +90,9 @@ Script Actions are scripts that run during cluster provisioning, and can be used
 
 The following example scripts are provided by the HDInsight team:
 
-* [Hue](/documentation/articles/hdinsight-hadoop-hue-linux): A set of web sites used to interact with a cluster. Linux clusters only.
+* [Hue](/documentation/articles/hdinsight-hadoop-hue-linux): A set of web applications used to interact with a cluster. Linux clusters only.
 
-* [Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-linux): Graph processing to model relationships between things or people.
+* [Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1-linux): Graph processing to model relationships between things or people.
 
 * [R](/documentation/articles/hdinsight-hadoop-r-scripts-linux): An open-source language and environment for statistical computing used in machine learning.
 
@@ -142,7 +142,7 @@ See [Manage HDInsight clusters using Ambari](/documentation/articles/hdinsight-h
 ### <a name="avro"></a>Avro (Microsoft .NET Library for Avro)
 
 The Microsoft .NET Library for Avro implements the Apache Avro compact binary data interchange format for serialization for the Microsoft .NET environment. It uses <a target="_blank" href="http://www.json.org/">JavaScript Object Notation (JSON)</a> to define a language-agnostic schema that underwrites language interoperability, meaning data serialized in one language can be read in another. Detailed information on the format can be found in the <a target=_"blank" href="http://avro.apache.org/docs/current/spec.html">Apache Avro Specification</a>.
-The format of Avro files supports the distributed MapReduce programming model. Files are <!-- deleted by customization “splittable” --><!-- keep by customization: begin --> âsplittableâ <!-- keep by customization: end -->, meaning you can seek any point in a file and start reading from a particular block. To find out how, see [Serialize data with the Microsoft .NET Library for Avro](/documentation/articles/hdinsight-dotnet-avro-serialization).
+The format of Avro files supports the distributed MapReduce programming model. Files are "splittable", meaning you can seek any point in a file and start reading from a particular block. To find out how, see [Serialize data with the Microsoft .NET Library for Avro](/documentation/articles/hdinsight-dotnet-avro-serialization).
 
 
 <!-- deleted by customization
@@ -203,7 +203,7 @@ As part of the Azure cloud ecosystem, Hadoop in HDInsight offers a number of ben
 
 * Efficient and economical data storage with Azure Blob storage, a Hadoop-compatible option. See [Use Azure Blob storage with Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-use-blob-storage) for details.
 
-* Integration with other Azure services, including [web sites](/documentation/services/web-sites/) and [SQL Database](/documentation/services/sql-databases/).
+* Integration with other Azure services, including [Web apps](/documentation/services/web-sites/) and [SQL Database](/documentation/services/sql-databases/).
 
 * Low entry cost. Start a [trial](/pricing/1rmb-trial/), or consult [HDInsight pricing details](/home/features/hdinsight/#price).
 
@@ -280,9 +280,9 @@ Use big data analysis on your organization's data to gain insights into your bus
 
 [marketing-page]: /home/features/hdinsight/
 <!-- deleted by customization
-[component-versioning]: hdinsight-component-versioning.md
+[component-versioning]: hdinsight-component-versioning-v1.md
 -->
 <!-- keep by customization: begin -->
-[component-versioning]: /documentation/articles/hdinsight-component-versioning
+[component-versioning]: /documentation/articles/hdinsight-component-versioning-v1
 <!-- keep by customization: end -->
 [zookeeper]: http://zookeeper.apache.org/

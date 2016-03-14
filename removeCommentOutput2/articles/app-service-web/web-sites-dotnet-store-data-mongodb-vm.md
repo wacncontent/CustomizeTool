@@ -62,16 +62,13 @@ In this section you will create an ASP.NET application called "My Task List" by 
 
 	![New Project Dialog][NewProjectMyTaskListApp]
 
-1. In the **New ASP.NET Project** dialog box, select **MVC**, and then click **OK**.
+1. In the **New ASP.NET Project** dialog box, select **MVC**, and then click **OK**. Make sure **Host in the cloud** is unchecked, and click **OK**. 
 
-	![Select MVC Template][VS2013SelectMVCTemplate]
+	If you haven't create a web app yet, go to [Azure Management Portal](https://manage.windowsazure.cn) to create one. And, in **Dashboard** of your web app, under **quick glance**, download the "publish profile".
 
-1. If you aren't already signed into Windows Azure, you will be prompted to sign in. Follow the prompts to sign into Azure.
-2. Once you are signed in, you can start configuring your Azure web app. Specify the **Web App name**, **App Service plan**, **Resource group**, and **Region**, then click **Create**.
+2. Right click your solution, and click **Publish...**
 
-	![](./media/web-sites-dotnet-store-data-mongodb-vm/VSConfigureWebAppSettings.png)
-
-1. After the project creation completes, wait for the web app to be created in Azure as indicated in the **Azure Activity** window. Then, click **Publish MyTaskListApp to this Web App now**.
+1. Click **Import**, choose the previously downloaded "publish profile", and click **OK**.
 
 1. Click **Publish**.
 

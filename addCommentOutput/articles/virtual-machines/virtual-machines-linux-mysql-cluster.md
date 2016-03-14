@@ -15,26 +15,10 @@
 
 # Using load-balanced sets to clusterize MySQL on Linux
 
-<!-- deleted by customization
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
 
 
-The purpose of this article is to explore and illustrate the different approaches available to deploy highly available Linux-based services on Windows Azure, exploring MySQL Server high availability as a primer. A video illustrating this approach is available on [Channel 9](http://channel9.msdn.com/Blogs/Open/Load-balancing-highly-available-Linux-services-on-Windows-Azure-OpenLDAP-and-MySQL).
--->
-<!-- keep by customization: begin -->
-* [Getting ready](#getting-ready)
-* [Setting up the cluster](#setting-up-the-cluster)
-* [Setting up MySQL](#setting-up-mysql)
-* [Setting up Corosync](#setting-up-corosync)
-* [Setting up Pacemaker](#setting-up-pacemaker)
-* [Testing](#testing)
-* [STONITH](#stonith)
-* [Limitations](#limitations)
-
-## Introduction
-
-The purpose of this article is to explore and illustrate the different approaches available to deploy highly available Linux-based services on Windows Azure, exploring MySQL Server high availability as a primer. 
-<!-- keep by customization: end -->
+The purpose of this article is to explore and illustrate the different approaches available to deploy highly available Linux-based services on Windows Azure, exploring MySQL Server high availability as a primer. <!-- deleted by customization A video illustrating this approach is available on [Channel 9](http://channel9.msdn.com/Blogs/Open/Load-balancing-highly-available-Linux-services-on-Windows-Azure-OpenLDAP-and-MySQL). -->
 
 We outline a shared-nothing two-node single-master MySQL high availability solution based on DRBD, Corosync and Pacemaker. Only one node is running MySQL at a time. Reading and writing from the DRBD resource is also limited to only one node at a time.
 
@@ -67,7 +51,7 @@ A new network is created, and a subnet is created inside the network. We chose a
 
 The first Ubuntu 13.10 VM is created using an Endorsed Ubuntu Gallery image, and called `hadb01`. A new cloud service is created in the process, called hadb. We call it this way to illustrate the shared, load-balanced nature that the service will have when we add more resources. The creation of `hadb01` is uneventful and completed using the portal. An endpoint for SSH is automatically created, and our created network is selected. We also choose to create a new availability set for the VMs.
 
-Once the first VM is created (technically, when the cloud service is created) we proceed to create the second VM, `hadb02`. For the second VM we will also use Ubuntu 13.10 VM from the Gallery using the <!-- deleted by customization portal --><!-- keep by customization: begin --> Portal <!-- keep by customization: end --> but we will choose to use an existing cloud service, `hadb.chinacloudapp.cn`, instead of creating a new one. The network and availability set should be automatically selected for us. An SSH endpoint will be created, too.
+Once the first VM is created (technically, when the cloud service is created) we proceed to create the second VM, `hadb02`. For the second VM we will also use Ubuntu 13.10 VM from the Gallery using the portal but we will choose to use an existing cloud service, `hadb.chinacloudapp.cn`, instead of creating a new one. The network and availability set should be automatically selected for us. An SSH endpoint will be created, too.
 
 After both VMs have been created, we will take note of the SSH port for `hadb01` (TCP 22) and `hadb02` (automatically assigned by Azure)
 
@@ -165,7 +149,7 @@ You also need to enable networking for MySQL if you want to make queries from ou
 
 ### Creating the MySQL Load Balanced Set
 
-We will go back to the <!-- deleted by customization portal --><!-- keep by customization: begin --> Azure Management Portal <!-- keep by customization: end --> and browse to the `hadb01` VM, then Endpoints. We will create a new Endpoint, choose MySQL (TCP 3306) from the dropdown and tick on the *Create new load balanced set* box. We will call our load balanced endpoint `lb-mysql`. We will leave most of the options alone except for time which we'll reduce to 5 (seconds, minimum)
+We will go back to the portal and browse to the `hadb01` VM, then Endpoints. We will create a new Endpoint, choose MySQL (TCP 3306) from the dropdown and tick on the *Create new load balanced set* box. We will call our load balanced endpoint `lb-mysql`. We will leave most of the options alone except for time which we'll reduce to 5 (seconds, minimum)
 
 After the endpoint is created we go to `hadb02`, Endpoints, and create a new endpoint but we will choose `lb-mysql`, then select MySQL from the dropdown menu. You can also use the Azure CLI for this step.
 
@@ -325,7 +309,7 @@ And this screenshot shows both nodes, with one master and one slave:
 
 We're ready for an automatic failover simulation. There are two ways to doing this: soft and hard. The soft way is using the cluster's shutdown function: ``crm_standby -U `uname -n` -v on``. Using this on the master, the slave will take over. Remember to set this back to off (crm_mon will tell you one node is on standby otherwise)
 
-The hard way is shutting down the primary VM (hadb01) via the <!-- deleted by customization portal --><!-- keep by customization: begin --> Portal <!-- keep by customization: end --> or changing the runlevel on the VM (i.e., halt, shutdown) then we're helping Corosync and Pacemaker by signaling master's going down. We can test this (useful for maintenance windows) but we can also force the scenario by just freezing the VM.
+The hard way is shutting down the primary VM (hadb01) via the portal or changing the runlevel on the VM (i.e., halt, shutdown) then we're helping Corosync and Pacemaker by signaling master's going down. We can test this (useful for maintenance windows) but we can also force the scenario by just freezing the VM.
 
 ## STONITH
 

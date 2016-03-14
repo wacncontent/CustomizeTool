@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Analyze flight delay data by using Hive in HDInsight
@@ -27,7 +27,7 @@ Before you begin this tutorial, you must have the following:
 
 - __An HDInsight cluster__. See [Get started using Hadoop with Hive in HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started) for steps on creating a new Linux-based HDInsight cluster.
 
-- __Azure SQL Database__. You will use an Azure SQL database as a destination data store. If you do not have a SQL Database already, see [How to create an Azure SQL Database](/documentation/articles/sql-database-create)
+- __Azure SQL Database__. You will use an Azure SQL database as a destination data store. If you do not have a SQL Database already, see [SQL Database tutorial: Create a SQL database in minutes](/documentation/articles/sql-database-get-started).
 
 - __Azure CLI__. If you have not installed the Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install) for more steps.
 

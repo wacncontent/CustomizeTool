@@ -23,16 +23,6 @@ We'll learn how to create an Azure Storage account, how to configure the web app
 
 See the [Python Developer Center] for more articles that cover development of Azure Web Apps with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Web App, the steps are similar when developing [Azure Cloud Services].
 
-+ [Prerequisites](#prerequisites)
-+ [Create the Project](#create-the-project)
-+ [Create an Azure Storage Account](#create-an-azure-storage-account)
-+ [Configure the Project](#configure-the-project)
-+ [Explore the Azure Table Storage](#explore-the-azure-table-storage)
-+ [Publish to an Azure Website](#publish-to-an-azure-website)
-+ [Configure the Azure Website](#configure-the-azure-website)
-+ [Next steps](#next-steps)
-
-
 ##<a name="prerequisites"></a> Prerequisites
 
  - Visual Studio 2013 or 2015
@@ -73,13 +63,9 @@ To use storage operations, you need an Azure storage account. You can create a s
 
 1.  Log into the [Azure Management Portal](https://manage.windowsazure.cn/).
 
-2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage**.  Give the storage account a unique name and create a new [resource group](/documentation/articles/resource-group-overview) for it.
+2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage**.
 
   	![Quick Create](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonAzureStorageCreate.png)
-
-	When the storage account has been created, the **Notifications** button will flash a green **SUCCESS** and the storage account's blade is open to show that it belongs to the new resource group you created.
-
-  	<!-- ![Quick Create](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonAzureStorageCreate.png) -->
 
 5. Click the **Settings** part in the storage account's blade. Take note of the account name and the primary key.
 
@@ -142,7 +128,6 @@ The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
 1.  Fill in the following fields and click **Create**.
 	-	**Web App name**
 	-	**App Service plan**
-	-	**Resource group**
 	-	**Region**
 	-	Leave **Database server** set to **No database**
 

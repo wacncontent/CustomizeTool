@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/15/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 
@@ -298,7 +298,6 @@ For information about schema, see [this](https://msdn.microsoft.com/zh-cn/librar
 	          <MaxBitrate>4500</MaxBitrate>
 	        </H264Layer>
 	      </H264Layers>
-	      <Chapters />
 	    </H264Video>
 	    <AACAudio>
 	      <Profile>AACLC</Profile>
@@ -361,7 +360,7 @@ The following considerations apply:
 
 	You can mix and match notations as you please.
 	
-	Additionally, Start also supports a special Macro:{Best}, which attempts to determine the first “interesting” frame of the content 
+	Additionally, Start also supports a special Macro:{Best}, which attempts to determine the first "interesting" frame of the content 
 	NOTE: (Step and Range are ignored when Start is set to {Best})
 	
 	- Defaults: Start:{Best}

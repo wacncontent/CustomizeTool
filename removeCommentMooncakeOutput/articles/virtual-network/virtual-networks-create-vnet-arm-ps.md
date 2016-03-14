@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Create a virtual network using PowerShell in ARM | Windows Azure"
    description="Learn how to create a virtual network using PowerShell in ARM | Resource Manager."

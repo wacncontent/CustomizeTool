@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="Deploy a 3-node Deis cluster | Windows Azure"
    description="This article describes how to create a 3-node Deis cluster on Azure using an Azure Resource Manager template"
@@ -28,7 +26,7 @@ The following diagram shows the architecture of the deployed system. A system ad
 
 In order to run through the following steps, you'll need:
 
- * An active Azure subscription. If you don't have one, you can get a free trail on [azure.com](https://azure.microsoft.com).
+ * An active Azure subscription. If you don't have one, you can get a free trail on [azure.com](https://azure.microsoft.com/).
  * A work or school id to use Azure resource groups. If you have a personal account and log in with a Microsoft id, you need to [create a work id from your personal one](/documentation/articles/resource-group-create-work-id-from-personal).
  * Either -- depending on your client operating system -- the [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI for Mac, Linux, and Windows](/documentation/articles/xplat-cli-install).
  * [OpenSSL](https://www.openssl.org/). OpenSSL is used to generate the necessary certificates.

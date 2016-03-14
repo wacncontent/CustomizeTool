@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/08/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>	
 
 # Geo Distributed Scale with Azure Environments

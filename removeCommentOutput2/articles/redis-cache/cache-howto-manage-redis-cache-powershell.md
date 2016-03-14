@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cache"
-	ms.date="12/16/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Manage Azure Redis Cache with Azure PowerShell
@@ -57,6 +57,23 @@ To get detailed help for any cmdlet you see in this tutorial, use the Get-Help c
 For example, to get help for the `New-AzureRmRedisCache` cmdlet, type:
 
 	Get-Help New-AzureRmRedisCache -Detailed
+
+### To connect to the Azure China Cloud
+
+To connect to the Azure China Cloud, use one of the following commands.
+
+	Add-AzureRMAccount -EnvironmentName AzureChinaCloud
+
+or
+
+	Add-AzureRmAccount -Environment (Get-AzureRmEnvironment -Name AzureChinaCloud)
+
+To create a cache in the Azure China Cloud, use one of the following locations.
+
+-	China East
+-	China North
+
+For more information about the Azure China Cloud, see [AzureChinaCloud for Azure operated by 21Vianet in China](http://www.windowsazure.cn/).
 
 ## Properties used for Azure Redis Cache PowerShell
 
@@ -142,7 +159,7 @@ To see a list of available parameters and their descriptions for `New-AzureRmRed
 	
 	    -VirtualNetwork <String>
 	        The exact ARM resource ID of the virtual network to deploy the redis cache in. Example format:
-	        /subscriptions/{subid}/resourceGroups/{resourceGroupName}/Microsoft.ClassicNetwork/VirtualNetworks/vnet1
+	        /subscriptions/{subid}/resourceGroups/{resourceGroupName}/providers/Microsoft.ClassicNetwork/VirtualNetworks/{vnetName}
 	
 	    -Subnet <String>
 	        Required when deploying a redis cache inside an existing Azure Virtual Network.

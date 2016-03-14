@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../includes/virtual-network-deploy-multinic-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-network-deploy-multinic-arm-cli).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-classic-include.md)] 
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../includes/virtual-network-deploy-multinic-scenario-include.md)]
 
@@ -43,9 +43,9 @@ The backend VMs depend on the creation of the resources listed below.
 
 You can download the full bash script used [here](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/classic/virtual-network-deploy-multinic-classic-cli.sh). Follow the steps below to change the script to work in your environment.
 
-1. Change the values of the variables below based on your existing resource group deployed above in [Prerequisites](#Prerequisites).
+1. Change the values of the variables below based on what you deployed above in [Prerequisites](#Prerequisites).
 
-		location="useast2"
+		location="chinaeast"
 		vnetName="WTestVNet"
 		backendSubnetName="BackEnd"
 
@@ -68,7 +68,7 @@ You can download the full bash script used [here](https://raw.githubusercontent.
 
 ### Step 2 - Create necessary resources for your VMs
 
-1. Create a new cloud service for all backend VMs. Notice the use of the `$backendCSName` variable for the resource group name, and `$location` for the Azure region.
+1. Create a new cloud service for all backend VMs. Notice the use of the `$backendCSName` variable for the cloud service name, and `$location` for the Azure region.
 
 		azure service create --serviceName $backendCSName \
 		    --location $location

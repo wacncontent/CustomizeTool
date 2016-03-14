@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Create a .NET MVC web site in Azure Websites with Azure Active Directory authentication" 
-	description="Learn how to create an ASP.NET MVC line-of-business application in Azure Websites that authenticates with Azure Active Directory" 
+	pageTitle="Create a .NET MVC web app in Azure with Azure Active Directory authentication" 
+	description="Learn how to create an ASP.NET MVC line-of-business application in Azure that authenticates with Azure Active Directory" 
 	services="app-service\web, active-directory" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -12,13 +12,13 @@
 	ms.date="12/10/2015"
 	wacn.date=""/>
 
-# Create a .NET MVC web site in Azure Websites with Azure Active Directory authentication #
+# Create a .NET MVC web app in Azure with Azure Active Directory authentication #
 
-In this article, you will learn how to create an ASP.NET MVC line-of-business application in [Azure Websites](/documentation/services/web-sites/) using [Azure Active Directory](/home/features/identity/) as the identity provider. You will also learn how to use the [Azure Active Directory Graph Client Library](http://blogs.msdn.com/b/aadgraphteam/archive/2014/06/02/azure-active-directory-graph-client-library-1-0-publish.aspx) to query directory data in the application.
+In this article, you will learn how to create an ASP.NET MVC line-of-business application in [Azure Web Apps](/documentation/services/web-sites/) using [Azure Active Directory](/home/features/identity/) as the identity provider. You will also learn how to use the [Azure Active Directory Graph Client Library](http://blogs.msdn.com/b/aadgraphteam/archive/2014/06/02/azure-active-directory-graph-client-library-1-0-publish.aspx) to query directory data in the application.
 
 The Azure Active Directory tenant that you use can be an Azure-only directory, or it can be directory-synced with your on-premise Active Directory (AD) to create a single sign-on experience for workers that are on-premise or remote.
 
->[AZURE.NOTE] For Azure Websites you can configure authentication against an Azure Active Directory tenant with a few clicks of a button. For more information, see [Use Active Directory for authentication in Azure Websites](/documentation/articles/web-sites-authentication-authorization).
+>[AZURE.NOTE] For Azure Web Apps you can configure authentication against an Azure Active Directory tenant with a few clicks of a button. For more information, see [Use Active Directory for authentication in Azure Web App](/documentation/articles/web-sites-authentication-authorization).
 <!-- keep by customization: begin -->
 
 - [What you will build](#bkmk_build)
@@ -33,7 +33,7 @@ The Azure Active Directory tenant that you use can be an Azure-only directory, o
 <a name="bkmk_build"></a>
 ## What you will build ##
 
-You will build a simple line-of-business Create-Read-Update-Delete (CRUD) application in Azure Websites that tracks work items with the following features:
+You will build a simple line-of-business Create-Read-Update-Delete (CRUD) application in Azure Web Apps that tracks work items with the following features:
 
 - Authenticates users against Azure Active Directory
 - Implements sign-in and sign-out functionality
@@ -46,7 +46,7 @@ You will build a simple line-of-business Create-Read-Update-Delete (CRUD) applic
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 You need the following to complete this tutorial:
 
@@ -64,7 +64,12 @@ The sample application in this tutorial, [WebApp-RoleClaims-DotNet](https://gith
 - Contains a sample `TaskTracker` controller that demonstrates how you can authorize different roles for specific actions in an application, including the standard usage of `[Authorize]`. 
 - Is a multitenant application with pre-defined roles that you can immediately assign your users and groups. 
 
+<!-- deleted by customization
 <a name="bkmk_run" />
+-->
+<!-- keep by customization: begin -->
+<a name="bkmk_run"></a>
+<!-- keep by customization: end -->
 ## Run the sample application ##
 
 1.	Clone or download the sample solution at [WebApp-RoleClaims-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims) to your local directory.
@@ -83,26 +88,26 @@ Be sure to follow all the instructions to convert the application from multi-ten
 5.	If you configured the Azure Active Directory application properly and set the corresponding settings in Web.config, you should be redirected to the log in. Simply log in with the account you used to create the Azure Active Directory application in the Azure Management Portal, since it's the Azure Active Directory application's default owner. 
 	
 <a name="bkmk_deploy"></a>
-## Deploy the sample application to Azure Websites
+## Deploy the sample application to Azure Web Apps
 
-Here, you will publish the application to a web site in Azure Websites. There are already instructions at [README.md](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims/blob/master/README.md) for deploying to Azure Websites, but those steps also annul the configuration for your local debug environment. I'll show you how to deploy while preserving the debug configuration.
+Here, you will publish the application to a web app in Azure. There are already instructions at [README.md](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims/blob/master/README.md) for deploying to Azure Web Apps, but those steps also annul the configuration for your local debug environment. I'll show you how to deploy while preserving the debug configuration.
 
 1. Right-click your project and select **Publish**.
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/publish-app.png)
 
 <!-- deleted by customization
-2. Select **Windows Azure web sites**.
+2. Select **Windows Azure Web Apps**.
 
 3. If you haven't signed in to Azure, click **Add an account** and use the Microsoft account for your Azure subscription to sign in.
 
-4. Once signed in, click **New** to create a new web site in Azure.
+4. Once signed in, click **New** to create a new web app in Azure.
 
 5. In **Hosting**, Fill in all required fields. 
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/4-create-website.png)
 
-5. You will need a database connection for this application to store role mappings, cached tokens, and any application data. In **Create Azure Websites** dialog, click **Services**.  Next to the **SQL Database** click the plus sign to add a new database.
+5. You will need a database connection for this application to store role mappings, cached tokens, and any application data. In **Create Azure Web App** dialog, click **Services**.  Next to the **SQL Database** click the plus sign to add a new database.
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/4-create-database.png)
 
@@ -110,7 +115,7 @@ Here, you will publish the application to a web site in Azure Websites. There ar
 
 	 ![](./media/web-sites-dotnet-lob-application-azure-ad/4-config-database.png)
 
-6. Click **Create**. Once the web site is created, the **Publish Web** dialog is opened.
+6. Click **Create**. Once the web app is created, the **Publish Web** dialog is opened.
 -->
 <!-- keep by customization: begin -->
 2. In Profile Tag, click **Import**, and select a publish profile which you can download from a existing web site in [Azure Management Portal](https://manage.windowsazure.cn/).
@@ -134,11 +139,11 @@ Here, you will publish the application to a web site in Azure Websites. There ar
 
 2. Click **Add an application my organization is developing**.
 
-3. Select **web site And/Or Web API**.
+3. Select **Web Application And/Or Web API**.
 
 4. Give the application a name and click **Next**.
 
-5. In App Properties, set **Sign-On URL** to the web site URL that you saved earler (e.g. `https://<site-name>.chinacloudsites.cn/`), and the **APP ID URI** to `https://<aad-tenanet-name>/<app-name>`. Then, click **Complete**.
+5. In App Properties, set **Sign-On URL** to the web app URL that you saved earler (e.g. `https://<site-name>.chinacloudsites.cn/`), and the **APP ID URI** to `https://<aad-tenanet-name>/<app-name>`. Then, click **Complete**.
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/7-app-properties.png)
 
@@ -163,21 +168,21 @@ Here, you will publish the application to a web site in Azure Websites. There ar
 
 11. In Visual Studio, open **Web.Release.config** in your project. Insert the following XML into the `<configuration>` tag, and replace the value of each key with the information that you saved for your new Azure Active Directory application.  
 	<pre class="prettyprint">
-&lt;appSettings&gt;
-   &lt;add key="ida:ClientId" value="<mark>[e.g. 82692da5-a86f-44c9-9d53-2f88d52b478b]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;
-   &lt;add key="ida:AppKey" value="<mark>[e.g. rZJJ9bHSi/cYnYwmQFxLYDn/6EfnrnIfKoNzv9NKgbo=]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;
-   &lt;add key="ida:PostLogoutRedirectUri" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;
+<!-- deleted by customization &lt;appSettings&gt; --><!-- keep by customization: begin --> &lt;appSettings&gt;<span>&#13;</span> <!-- keep by customization: end -->
+   &lt;add key="ida:ClientId" value="<mark>[e.g. 82692da5-a86f-44c9-9d53-2f88d52b478b]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" <!-- deleted by customization /&gt; --><!-- keep by customization: begin --> /&gt;<span>&#13;</span> <!-- keep by customization: end -->
+   &lt;add key="ida:AppKey" value="<mark>[e.g. rZJJ9bHSi/cYnYwmQFxLYDn/6EfnrnIfKoNzv9NKgbo=]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" <!-- deleted by customization /&gt; --><!-- keep by customization: begin --> /&gt;<span>&#13;</span> <!-- keep by customization: end -->
+   &lt;add key="ida:PostLogoutRedirectUri" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" <!-- deleted by customization /&gt; --><!-- keep by customization: begin --> /&gt;<span>&#13;</span> <!-- keep by customization: end -->
 &lt;/appSettings&gt;</pre>
 
 	Make sure that the value of ida:PostLogoutRedirectUri ends with a slash "/".
 
 1. Right-click your project and select **Publish**.
 
-2. Click **Publish** to publish to Azure Websites.
+2. Click **Publish** to publish to Azure Web Apps.
 
-When you're done, you have two Azure Active Directory applications configured in the Azure Management Portal: one for your debug environment in Visual Studio, and one for the published web site in Azure. During debugging, the app settings in Web.config are used to make your **Debug** configuration work with Azure Active Directory, and when it's published (by default, the **Release** configuration is published), a transformed Web.config is uploaded that incorporates the app setting changes in Web.Release.config.
+When you're done, you have two Azure Active Directory applications configured in the Azure Management Portal: one for your debug environment in Visual Studio, and one for the published web app in Azure. During debugging, the app settings in Web.config are used to make your **Debug** configuration work with Azure Active Directory, and when it's published (by default, the **Release** configuration is published), a transformed Web.config is uploaded that incorporates the app setting changes in Web.Release.config.
 
-If you want to attach the published web site to the debugger (you must upload debug symbols of your code in the published web site), you can create a clone of the Debug configuration for Azure debugging, but with its own custom Web.config transform (e.g. Web.AzureDebug.config) that uses the Azure Active Directory settings from Web.Release.config. This allows you to maintain a static configuration across the different environments.
+If you want to attach the published web app to the debugger (you must upload debug symbols of your code in the published web app), you can create a clone of the Debug configuration for Azure debugging, but with its own custom Web.config transform (e.g. Web.AzureDebug.config) that uses the Azure Active Directory settings from Web.Release.config. This allows you to maintain a static configuration across the different environments.
 
 <a name="bkmk_crud"></a>
 ## Add line-of-business functionality to the sample application
@@ -211,13 +216,13 @@ In this part of the tutorial, you will learn how to build out the desired line-o
 
 6.	Open DAL\RoleClaimContext.cs and add the highlighted code:  
 	<pre class="prettyprint">
-    public class RoleClaimContext : DbContext
-    {
-        public RoleClaimContext() : base("RoleClaimContext") { }
+    public class RoleClaimContext: <!-- deleted by customization DbContext --><!-- keep by customization: begin --> DbContext<span>&#13;</span> <!-- keep by customization: end -->
+    <!-- deleted by customization { --><!-- keep by customization: begin --> {<span>&#13;</span> <!-- keep by customization: end -->
+        public RoleClaimContext(): base("RoleClaimContext") { <!-- deleted by customization } --><!-- keep by customization: begin --> }<span>&#13;</span> <!-- keep by customization: end -->
 
-        public DbSet&lt;Task&gt; Tasks { get; set; }
-        <mark>public DbSet&lt;WorkItem&gt; WorkItems { get; set; }</mark>
-        public DbSet&lt;TokenCacheEntry&gt; TokenCacheEntries { get; set; }
+        public DbSet&lt;Task&gt; Tasks { get; set; <!-- deleted by customization } --><!-- keep by customization: begin --> }<span>&#13;</span> <!-- keep by customization: end -->
+        <mark>public DbSet&lt;WorkItem&gt; WorkItems { get; set; <!-- deleted by customization }</mark> --><!-- keep by customization: begin --> }</mark><span>&#13;</span> <!-- keep by customization: end -->
+        public DbSet&lt;TokenCacheEntry&gt; TokenCacheEntries { get; set; <!-- deleted by customization } --><!-- keep by customization: begin --> }<span>&#13;</span> <!-- keep by customization: end -->
     }</pre>
 
 7.	Build the project to make your new model accessible to the scaffolding logic in Visual Studio.
@@ -234,36 +239,66 @@ In this part of the tutorial, you will learn how to build out the desired line-o
 
 11. Add the highlighted [Authorize] decorations to the respective actions below.
 	<pre class="prettyprint">
-	...
+	<!-- deleted by customization ... --><!-- keep by customization: begin --> ...<span>&#13;</span> <!-- keep by customization: end -->
 
-    <mark>[Authorize(Roles = "Admin, Observer, Writer, Approver")]</mark>
-    public class WorkItemsController : Controller
+    <mark>[Authorize(Roles = "Admin, Observer, Writer, <!-- deleted by customization Approver")]</mark> --><!-- keep by customization: begin --> Approver")]</mark><span>&#13;</span> <!-- keep by customization: end -->
+    public class WorkItemsController: <!-- deleted by customization Controller --><!-- keep by customization: begin --> Controller<span>&#13;</span> <!-- keep by customization: end -->
+<!-- deleted by customization
     {
 		...
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
-        public ActionResult Create()
-        ...
+        <mark>[Authorize(Roles = "Admin, <!-- deleted by customization Writer")]</mark> --><!-- keep by customization: begin --> Writer")]</mark><span>&#13;</span> <!-- keep by customization: end -->
+        public ActionResult Create()<!-- keep by customization: begin --> Create()<span>&#13;</span> <!-- keep by customization: end -->
+        ...<!-- keep by customization: begin --> ...<span>&#13;</span> <!-- keep by customization: end -->
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
-        public async Task&lt;ActionResult&gt; Create([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)
-        ...
+        <mark>[Authorize(Roles = "Admin, <!-- deleted by customization Writer")]</mark> --><!-- keep by customization: begin --> Writer")]</mark><span>&#13;</span> <!-- keep by customization: end -->
+        public async Task&lt;ActionResult&gt; Create([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)<!-- keep by customization: begin --> workItem)<span>&#13;</span> <!-- keep by customization: end -->
+        ...<!-- keep by customization: begin --> ...<span>&#13;</span> <!-- keep by customization: end -->
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
-        public async Task&lt;ActionResult&gt; Edit(int? id)
-        ...
+        <mark>[Authorize(Roles = "Admin, <!-- deleted by customization Writer")]</mark> --><!-- keep by customization: begin --> Writer")]</mark><span>&#13;</span> <!-- keep by customization: end -->
+        public async Task&lt;ActionResult&gt; Edit(int? id)<!-- keep by customization: begin --> id)<span>&#13;</span> <!-- keep by customization: end -->
+        ...<!-- keep by customization: begin --> ...<span>&#13;</span> <!-- keep by customization: end -->
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
-        public async Task&lt;ActionResult&gt; Edit([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)
-        ...
+        <mark>[Authorize(Roles = "Admin, <!-- deleted by customization Writer")]</mark> --><!-- keep by customization: begin --> Writer")]</mark><span>&#13;</span> <!-- keep by customization: end -->
+        public async Task&lt;ActionResult&gt; Edit([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)<!-- keep by customization: begin --> workItem)<span>&#13;</span> <!-- keep by customization: end -->
+        ...<!-- keep by customization: begin --> ...<span>&#13;</span> <!-- keep by customization: end -->
 
-        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark>
-        public async Task&lt;ActionResult&gt; Delete(int? id)
-        ...
+        <mark>[Authorize(Roles = "Admin, Writer, <!-- deleted by customization Approver")]</mark> --><!-- keep by customization: begin --> Approver")]</mark><span>&#13;</span> <!-- keep by customization: end -->
+        public async Task&lt;ActionResult&gt; Delete(int? id)<!-- keep by customization: begin --> id)<span>&#13;</span> <!-- keep by customization: end -->
+        ...<!-- keep by customization: begin --> ...<span>&#13;</span> <!-- keep by customization: end -->
 
-        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark>
-        public async Task&lt;ActionResult&gt; DeleteConfirmed(int id)
-        ...
+        <mark>[Authorize(Roles = "Admin, Writer, <!-- deleted by customization Approver")]</mark> --><!-- keep by customization: begin --> Approver")]</mark><span>&#13;</span> <!-- keep by customization: end -->
+        public async Task&lt;ActionResult&gt; DeleteConfirmed(int id)<!-- keep by customization: begin --> id)<span>&#13;</span> <!-- keep by customization: end -->
+        ...<!-- keep by customization: begin --> ...<span>&#13;</span> <!-- keep by customization: end -->
+-->
+<!-- keep by customization: begin -->
+    {<span>&#13;</span>
+		...<span>&#13;</span>
+
+        <mark>[Authorize(Roles = "Admin, <!-- deleted by customization Writer")]</mark> --><!-- keep by customization: begin --> Writer")]</mark><span>&#13;</span> <!-- keep by customization: end -->
+        public ActionResult <!-- keep by customization: begin --> Create()<span>&#13;</span> <!-- keep by customization: end -->
+        <!-- keep by customization: begin --> ...<span>&#13;</span> <!-- keep by customization: end -->
+
+        <mark>[Authorize(Roles = "Admin, <!-- deleted by customization Writer")]</mark> --><!-- keep by customization: begin --> Writer")]</mark><span>&#13;</span> <!-- keep by customization: end -->
+        public async Task&lt;ActionResult&gt; Create([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem <!-- keep by customization: begin --> workItem)<span>&#13;</span> <!-- keep by customization: end -->
+        <!-- keep by customization: begin --> ...<span>&#13;</span> <!-- keep by customization: end -->
+
+        <mark>[Authorize(Roles = "Admin, <!-- deleted by customization Writer")]</mark> --><!-- keep by customization: begin --> Writer")]</mark><span>&#13;</span> <!-- keep by customization: end -->
+        public async Task&lt;ActionResult&gt; Edit(int? <!-- keep by customization: begin --> id)<span>&#13;</span> <!-- keep by customization: end -->
+        <!-- keep by customization: begin --> ...<span>&#13;</span> <!-- keep by customization: end -->
+
+        <mark>[Authorize(Roles = "Admin, <!-- deleted by customization Writer")]</mark> --><!-- keep by customization: begin --> Writer")]</mark><span>&#13;</span> <!-- keep by customization: end -->
+        public async Task&lt;ActionResult&gt; Edit([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem <!-- keep by customization: begin --> workItem)<span>&#13;</span> <!-- keep by customization: end -->
+        <!-- keep by customization: begin --> ...<span>&#13;</span> <!-- keep by customization: end -->
+
+        <mark>[Authorize(Roles = "Admin, Writer, <!-- deleted by customization Approver")]</mark> --><!-- keep by customization: begin --> Approver")]</mark><span>&#13;</span> <!-- keep by customization: end -->
+        public async Task&lt;ActionResult&gt; Delete(int? <!-- keep by customization: begin --> id)<span>&#13;</span> <!-- keep by customization: end -->
+        <!-- keep by customization: begin --> ...<span>&#13;</span> <!-- keep by customization: end -->
+
+        <mark>[Authorize(Roles = "Admin, Writer, <!-- deleted by customization Approver")]</mark> --><!-- keep by customization: begin --> Approver")]</mark><span>&#13;</span> <!-- keep by customization: end -->
+        public async Task&lt;ActionResult&gt; DeleteConfirmed(int <!-- keep by customization: begin --> id)<span>&#13;</span> <!-- keep by customization: end -->
+        <!-- keep by customization: begin --> ...<span>&#13;</span> <!-- keep by customization: end -->
+<!-- keep by customization: end -->
 	}</pre>
 
 	Since you take care of role mappings in the Azure Management Portal UI, all you need to do is make sure that each action authorizes the right roles.
@@ -296,69 +331,92 @@ In this part of the tutorial, you will learn how to build out the desired line-o
         }
 		
 14.	In Views\WorkItems\Create.cshtml (an automatically scaffolded item), find the `Html.BeginForm` helper method and modify it as follows:  
-	<pre class="prettyprint">@using (Html.BeginForm(<mark>"Create", "WorkItems", FormMethod.Post, new { id = "main-form" }</mark>))
-	{
-	    @Html.AntiForgeryToken()
+	<pre class="prettyprint">@using (Html.BeginForm(<mark>"Create", "WorkItems", FormMethod.Post, new { id = "main-form" <!-- deleted by customization }</mark>)) --><!-- keep by customization: begin --> }</mark>))<span>&#13;</span> <!-- keep by customization: end -->
+	<!-- deleted by customization { --><!-- keep by customization: begin --> {<span>&#13;</span> <!-- keep by customization: end -->
+	    <!-- deleted by customization @Html.AntiForgeryToken() --><!-- keep by customization: begin --> @Html.AntiForgeryToken()<span>&#13;</span> <!-- keep by customization: end -->
 	    
-	    &lt;div class="form-horizontal"&gt;
-	        &lt;h4&gt;WorkItem&lt;/h4&gt;
-	        &lt;hr /&gt;
-	        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+	    &lt;div <!-- deleted by customization class="form-horizontal"&gt; --><!-- keep by customization: begin --> class="form-horizontal"&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	        <!-- deleted by customization &lt;h4&gt;WorkItem&lt;/h4&gt; --><!-- keep by customization: begin --> &lt;h4&gt;WorkItem&lt;/h4&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	        &lt;hr <!-- deleted by customization /&gt; --><!-- keep by customization: begin --> /&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	        @Html.ValidationSummary(true, "", new { @class = "text-danger" <!-- deleted by customization }) --><!-- keep by customization: begin --> })<span>&#13;</span> <!-- keep by customization: end -->
 	
-	        &lt;div class="form-group"&gt;
-	            &lt;div class="col-md-10"&gt;
-	                @Html.EditorFor(model =&gt; model.AssignedToID, new { htmlAttributes = new { @class = "form-control"<mark>, @type=&quot;hidden&quot;</mark> } })
-	                @Html.ValidationMessageFor(model =&gt; model.AssignedToID, "", new { @class = "text-danger" })
-	            &lt;/div&gt;
-	        &lt;/div&gt;
+	        &lt;div <!-- deleted by customization class="form-group"&gt; --><!-- keep by customization: begin --> class="form-group"&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	            &lt;div <!-- deleted by customization class="col-md-10"&gt; --><!-- keep by customization: begin --> class="col-md-10"&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	                @Html.EditorFor(model =&gt; model.AssignedToID, new { htmlAttributes = new { @class = "form-control"<mark>, @type=&quot;hidden&quot;</mark> } <!-- deleted by customization }) --><!-- keep by customization: begin --> })<span>&#13;</span> <!-- keep by customization: end -->
+	                @Html.ValidationMessageFor(model =&gt; model.AssignedToID, "", new { @class = "text-danger" <!-- deleted by customization }) --><!-- keep by customization: begin --> })<span>&#13;</span> <!-- keep by customization: end -->
+	            <!-- deleted by customization &lt;/div&gt; --><!-- keep by customization: begin --> &lt;/div&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	        <!-- deleted by customization &lt;/div&gt; --><!-- keep by customization: begin --> &lt;/div&gt;<span>&#13;</span> <!-- keep by customization: end -->
 	
-	        &lt;div class="form-group"&gt;
-	            @Html.LabelFor(model =&gt; model.AssignedToName, htmlAttributes: new { @class = "control-label col-md-2" })
-	            &lt;div class="col-md-10"&gt;
-	                @Html.EditorFor(model =&gt; model.AssignedToName, new { htmlAttributes = new { @class = "form-control" } })
-	                @Html.ValidationMessageFor(model =&gt; model.AssignedToName, "", new { @class = "text-danger" })
-	            &lt;/div&gt;
-	        &lt;/div&gt;
+	        &lt;div <!-- deleted by customization class="form-group"&gt; --><!-- keep by customization: begin --> class="form-group"&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	            @Html.LabelFor(model =&gt; model.AssignedToName, htmlAttributes: new { @class = "control-label col-md-2" <!-- deleted by customization }) --><!-- keep by customization: begin --> })<span>&#13;</span> <!-- keep by customization: end -->
+	            &lt;div <!-- deleted by customization class="col-md-10"&gt; --><!-- keep by customization: begin --> class="col-md-10"&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	                @Html.EditorFor(model =&gt; model.AssignedToName, new { htmlAttributes = new { @class = "form-control" } <!-- deleted by customization }) --><!-- keep by customization: begin --> })<span>&#13;</span> <!-- keep by customization: end -->
+	                @Html.ValidationMessageFor(model =&gt; model.AssignedToName, "", new { @class = "text-danger" <!-- deleted by customization }) --><!-- keep by customization: begin --> })<span>&#13;</span> <!-- keep by customization: end -->
+	            <!-- deleted by customization &lt;/div&gt; --><!-- keep by customization: begin --> &lt;/div&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	        <!-- deleted by customization &lt;/div&gt; --><!-- keep by customization: begin --> &lt;/div&gt;<span>&#13;</span> <!-- keep by customization: end -->
 	
-	        &lt;div class="form-group"&gt;
-	            @Html.LabelFor(model =&gt; model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-	            &lt;div class="col-md-10"&gt;
-	                @Html.EditorFor(model =&gt; model.Description, new { htmlAttributes = new { @class = "form-control" } })
-	                @Html.ValidationMessageFor(model =&gt; model.Description, "", new { @class = "text-danger" })
-	            &lt;/div&gt;
-	        &lt;/div&gt;
+	        &lt;div <!-- deleted by customization class="form-group"&gt; --><!-- keep by customization: begin --> class="form-group"&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	            @Html.LabelFor(model =&gt; model.Description, htmlAttributes: new { @class = "control-label col-md-2" <!-- deleted by customization }) --><!-- keep by customization: begin --> })<span>&#13;</span> <!-- keep by customization: end -->
+	            &lt;div <!-- deleted by customization class="col-md-10"&gt; --><!-- keep by customization: begin --> class="col-md-10"&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	                @Html.EditorFor(model =&gt; model.Description, new { htmlAttributes = new { @class = "form-control" } <!-- deleted by customization }) --><!-- keep by customization: begin --> })<span>&#13;</span> <!-- keep by customization: end -->
+	                @Html.ValidationMessageFor(model =&gt; model.Description, "", new { @class = "text-danger" <!-- deleted by customization }) --><!-- keep by customization: begin --> })<span>&#13;</span> <!-- keep by customization: end -->
+	            <!-- deleted by customization &lt;/div&gt; --><!-- keep by customization: begin --> &lt;/div&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	        <!-- deleted by customization &lt;/div&gt; --><!-- keep by customization: begin --> &lt;/div&gt;<span>&#13;</span> <!-- keep by customization: end -->
 	
-	        &lt;div class="form-group"&gt;
-	            @Html.LabelFor(model =&gt; model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
-	            &lt;div class="col-md-10"&gt;
-	                @Html.EnumDropDownListFor(model =&gt; model.Status, htmlAttributes: new { @class = "form-control" })
-	                @Html.ValidationMessageFor(model =&gt; model.Status, "", new { @class = "text-danger" })
-	            &lt;/div&gt;
-	        &lt;/div&gt;
+	        &lt;div <!-- deleted by customization class="form-group"&gt; --><!-- keep by customization: begin --> class="form-group"&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	            @Html.LabelFor(model =&gt; model.Status, htmlAttributes: new { @class = "control-label col-md-2" <!-- deleted by customization }) --><!-- keep by customization: begin --> })<span>&#13;</span> <!-- keep by customization: end -->
+	            &lt;div <!-- deleted by customization class="col-md-10"&gt; --><!-- keep by customization: begin --> class="col-md-10"&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	                @Html.EnumDropDownListFor(model =&gt; model.Status, htmlAttributes: new { @class = "form-control" <!-- deleted by customization }) --><!-- keep by customization: begin --> })<span>&#13;</span> <!-- keep by customization: end -->
+	                @Html.ValidationMessageFor(model =&gt; model.Status, "", new { @class = "text-danger" <!-- deleted by customization }) --><!-- keep by customization: begin --> })<span>&#13;</span> <!-- keep by customization: end -->
+	            <!-- deleted by customization &lt;/div&gt; --><!-- keep by customization: begin --> &lt;/div&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	        <!-- deleted by customization &lt;/div&gt; --><!-- keep by customization: begin --> &lt;/div&gt;<span>&#13;</span> <!-- keep by customization: end -->
 	
-	        &lt;div class="form-group"&gt;
-	            &lt;div class="col-md-offset-2 col-md-10"&gt;
-	                &lt;input type="submit" value="Create" class="btn btn-default" <mark>id="submit-button"</mark> /&gt;
-	            &lt;/div&gt;
+	        &lt;div <!-- deleted by customization class="form-group"&gt; --><!-- keep by customization: begin --> class="form-group"&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	            &lt;div class="col-md-offset-2 <!-- deleted by customization col-md-10"&gt; --><!-- keep by customization: begin --> col-md-10"&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	                &lt;input type="submit" value="Create" class="btn btn-default" <mark>id="submit-button"</mark> <!-- deleted by customization /&gt; --><!-- keep by customization: begin --> /&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	            <!-- deleted by customization &lt;/div&gt; --><!-- keep by customization: begin --> &lt;/div&gt;<span>&#13;</span> <!-- keep by customization: end -->
+<!-- deleted by customization
 	        &lt;/div&gt;
 	    &lt;/div&gt;
 	
-	    <mark>&lt;script&gt;
-	            // People/Group Picker Code
-	            var maxResultsPerPage = 14;
-	            var input = document.getElementById("AssignedToName");
-	            var token = "@ViewData["token"]";
-	            var tenant = "@ViewData["tenant"]";
+	    <!-- deleted by customization <mark>&lt;script&gt; --><!-- keep by customization: begin --> <mark>&lt;script&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	            // People/Group Picker Code<!-- keep by customization: begin --> Code<span>&#13;</span> <!-- keep by customization: end -->
+	            var maxResultsPerPage = 14;<!-- keep by customization: begin --> 14;<span>&#13;</span> <!-- keep by customization: end -->
+	            var input = document.getElementById("AssignedToName");<!-- keep by customization: begin --> document.getElementById("AssignedToName");<span>&#13;</span> <!-- keep by customization: end -->
+	            var token = "@ViewData["token"]";<!-- keep by customization: begin --> "@ViewData["token"]";<span>&#13;</span> <!-- keep by customization: end -->
+	            var tenant = "@ViewData["tenant"]";<!-- keep by customization: begin --> "@ViewData["tenant"]";<span>&#13;</span> <!-- keep by customization: end -->
 	
-	            var picker = new AadPicker(maxResultsPerPage, input, token, tenant);
+	            var picker = new AadPicker(maxResultsPerPage, input, token, tenant);<!-- keep by customization: begin --> tenant);<span>&#13;</span> <!-- keep by customization: end -->
 	
-	            // Submit the selected user/group to be asssigned.
-	            $("#submit-button").click({ picker: picker }, function () {
-	                if (!picker.Selected())
-	                    return;
-	                $("#main-form").get()[0].elements["AssignedToID"].value = picker.Selected().objectId;
-	            });
-	    &lt;/script&gt;</mark>
+	            // Submit the selected user/group to be asssigned.<!-- keep by customization: begin --> asssigned.<span>&#13;</span> <!-- keep by customization: end -->
+	            $("#submit-button").click({ picker: picker }, function () {<!-- keep by customization: begin --> {<span>&#13;</span> <!-- keep by customization: end -->
+	                if (!picker.Selected())<!-- keep by customization: begin --> (!picker.Selected())<span>&#13;</span> <!-- keep by customization: end -->
+	                    return;<!-- keep by customization: begin --> return;<span>&#13;</span> <!-- keep by customization: end -->
+	                $("#main-form").get()[0].elements["AssignedToID"].value = picker.Selected().objectId;<!-- keep by customization: begin --> picker.Selected().objectId;<span>&#13;</span> <!-- keep by customization: end -->
+	            });<!-- keep by customization: begin --> });<span>&#13;</span> <!-- keep by customization: end -->
+	    <!-- deleted by customization &lt;/script&gt;</mark> --><!-- keep by customization: begin --> &lt;/script&gt;</mark><span>&#13;</span> <!-- keep by customization: end -->
+-->
+<!-- keep by customization: begin -->
+	        &lt;/div&gt;<span>&#13;</span>
+	    &lt;/div&gt;<span>&#13;</span>
+	
+	    <!-- deleted by customization <mark>&lt;script&gt; --><!-- keep by customization: begin --> <mark>&lt;script&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	            // People/Group Picker <!-- keep by customization: begin --> Code<span>&#13;</span> <!-- keep by customization: end -->
+	            var maxResultsPerPage = <!-- keep by customization: begin --> 14;<span>&#13;</span> <!-- keep by customization: end -->
+	            var input = <!-- keep by customization: begin --> document.getElementById("AssignedToName");<span>&#13;</span> <!-- keep by customization: end -->
+	            var token = <!-- keep by customization: begin --> "@ViewData["token"]";<span>&#13;</span> <!-- keep by customization: end -->
+	            var tenant = <!-- keep by customization: begin --> "@ViewData["tenant"]";<span>&#13;</span> <!-- keep by customization: end -->
+	
+	            var picker = new AadPicker(maxResultsPerPage, input, token, <!-- keep by customization: begin --> tenant);<span>&#13;</span> <!-- keep by customization: end -->
+	
+	            // Submit the selected user/group to be <!-- keep by customization: begin --> asssigned.<span>&#13;</span> <!-- keep by customization: end -->
+	            $("#submit-button").click({ picker: picker }, function () <!-- keep by customization: begin --> {<span>&#13;</span> <!-- keep by customization: end -->
+	                if <!-- keep by customization: begin --> (!picker.Selected())<span>&#13;</span> <!-- keep by customization: end -->
+	                    <!-- keep by customization: begin --> return;<span>&#13;</span> <!-- keep by customization: end -->
+	                $("#main-form").get()[0].elements["AssignedToID"].value = <!-- keep by customization: begin --> picker.Selected().objectId;<span>&#13;</span> <!-- keep by customization: end -->
+	            <!-- keep by customization: begin --> });<span>&#13;</span> <!-- keep by customization: end -->
+	    <!-- deleted by customization &lt;/script&gt;</mark> --><!-- keep by customization: begin --> &lt;/script&gt;</mark><span>&#13;</span> <!-- keep by customization: end -->
+<!-- keep by customization: end -->
 	
 	}</pre>
 
@@ -366,7 +424,7 @@ In this part of the tutorial, you will learn how to build out the desired line-o
 
 15. Open the [Package Manger Console](http://docs.nuget.org/Consume/Package-Manager-Console) and run **Enable-Migrations <!-- deleted by customization âEnableAutomaticMigrations** --><!-- keep by customization: begin --> -EnableAutomaticMigrations** <!-- keep by customization: end -->. Similar to the option you selected when you published the app to Azure, this command helps update your app's database schema in [LocalDB](https://msdn.microsoft.com/zh-cn/library/hh510202.aspx) when you debug it in Visual Studio.
 
-15. Now, either run the app in the Visual Studio debugger or publish again to Azure Websites. Log in as the application owner and navigate to `https://<webappname>.chinacloudsites.cn/WorkItems/Create`. You'll see now that you can pick an Azure Active Directory user or group from the drop down list, or type in something to filter the list.
+15. Now, either run the app in the Visual Studio debugger or publish again to Azure Web Apps. Log in as the application owner and navigate to `https://<webappname>.chinacloudsites.cn/WorkItems/Create`. You'll see now that you can pick an Azure Active Directory user or group from the drop down list, or type in something to filter the list.
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/9-create-workitem.png)
 
@@ -386,8 +444,8 @@ Now that you have configured the authorizations and line-of-business functionali
 ## Further resources
 
 - [Protect the Application with SSL and the Authorize Attribute](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
-- [Use Active Directory for authentication in Azure Websites](/documentation/articles/web-sites-authentication-authorization)
-- [Create a .NET MVC web site in Azure Websites with AD FS authentication](/documentation/articles/web-sites-dotnet-lob-application-adfs)
+- [Use Active Directory for authentication in Azure Web App](/documentation/articles/web-sites-authentication-authorization)
+- [Create a .NET MVC web app in Azure with AD FS authentication](/documentation/articles/web-sites-dotnet-lob-application-adfs)
 - [Windows Azure Active Directory Samples and Documentation](https://github.com/AzureADSamples)
 - [Vittorio Bertocci's blog](http://blogs.msdn.com/b/vbertocci/)
 - [Migrate a VS2013 Web Project From WIF to Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)

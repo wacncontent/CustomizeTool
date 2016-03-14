@@ -12,7 +12,7 @@
 	ms.date="12/14/2015"
 	wacn.date=""/>
 
-# Create a .NET WebJob in Azure
+# Create a .NET WebJob in Azure Web App 
 
 This tutorial shows how to write code for a simple multi-tier ASP.NET MVC 5 application that uses the [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk).
 
@@ -22,7 +22,6 @@ The sample application is an advertising bulletin board. Users can upload images
 
 ![Ad list](./media/websites-dotnet-webjobs-sdk-get-started/list.png)
 
-This sample application works with [Azure queues](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) and [Azure blobs](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage). The tutorial shows how to deploy the application to [Azure Web App](/documentation/services/web-sites/) and [Azure SQL Database](/documentation/articles/sql-database-technical-overview/).
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -81,13 +80,13 @@ In a real-world application, you typically create separate accounts for applicat
 
 2. Right-click the **Azure** node, and then click **Connect to Windows Azure**.
 
-![Connect to Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
+	![Connect to Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
 
 3. Sign in using your Azure credentials.
 
 5. Right-click **Storage** under the Azure node, and then click **Create Storage Account**.
 
-![Create Storage Account](./media/websites-dotnet-webjobs-sdk-get-started/createstor.png)
+	![Create Storage Account](./media/websites-dotnet-webjobs-sdk-get-started/createstor.png)
 
 3. In the **Create Storage Account** dialog, enter a name for the storage account.
 
@@ -131,9 +130,9 @@ In a real-world application, you typically create separate accounts for applicat
 
 	The storage connection string is an example that has placeholders for the storage account name and access key. You'll replace this with a connection string that has the name and key of your storage account.  
 
-	<pre class="prettyprint">&lt;connectionStrings&gt;
-	  &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" /&gt;
-	  &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;
+	<pre class="prettyprint">&lt;connectionStrings&gt;<span>&#13;</span> 
+	  &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" /&gt;<span>&#13;</span> 
+	  &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;<span>&#13;</span> 
 	&lt;/connectionStrings&gt;</pre>
 
 	The storage connection string is named AzureWebJobsStorage because that's the name the WebJobs SDK uses by default. The same name is used here so you have to set only one connection string value in the Azure environment.
@@ -155,7 +154,7 @@ In a real-world application, you typically create separate accounts for applicat
 6. Open the *App.config* file in the ContosoAdsWebJob project.
 
 	This file has two storage connection strings, one for application data and one for logging. You can use separate storage accounts for application data and logging, and you can use [multiple storage accounts for data](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs). For this tutorial you'll use a single storage account. The connection strings have placeholders for the storage account keys. 
-  	<pre class="prettyprint">&lt;configuration&gt;
+<pre class="prettyprint">&lt;configuration&gt;
     &lt;connectionStrings&gt;
         &lt;add name="AzureWebJobsDashboard" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;
         &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;
@@ -585,7 +584,7 @@ The *Views\Home\Index.cshtml* file displays category links on the home page. The
 		<li>@Html.ActionLink("Free stuff", "Index", "Ad", new { category = (int)Category.FreeStuff }, null)</li>
 		<li>@Html.ActionLink("All", "Index", "Ad", null, null)</li>
 
-### ContosoAdsWeb - AdController.cs
+###<a name="ResolveBlobName"></a> ContosoAdsWeb - AdController.cs
 
 In the *AdController.cs* file the constructor calls the `InitializeStorage` method to create Azure Storage Client Library objects that provide an API for working with blobs and queues.
 

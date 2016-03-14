@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Tips for using Hadoop on Linux-based HDInsight | Windows Azure"
    description="Get implementation tips for using Linux-based HDInsight (Hadoop) clusters on a familiar Linux environment running in the Azure cloud."
@@ -212,7 +214,7 @@ HDInsight is a managed service, which means that nodes in a cluster may be destr
 Script Actions are Bash scripts that are ran during cluster provisioning, and can be used to install and configure additional components on the cluster. Example scripts are provided for installing the following components:
 
 * [Hue](/documentation/articles/hdinsight-hadoop-hue-linux)
-* [Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1-linux)
+* [Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1)
 * [R](/documentation/articles/hdinsight-hadoop-r-scripts-linux)
 * [Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1)
 * [Spark](/documentation/articles/hdinsight-hadoop-spark-install-linux)

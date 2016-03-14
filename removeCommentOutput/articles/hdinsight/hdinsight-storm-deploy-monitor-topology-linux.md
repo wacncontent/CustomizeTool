@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/16/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 # Deploy and manage Apache Storm topologies on Linux-based HDInsight
@@ -20,7 +20,7 @@ In this document, learn the basics of managing and monitoring Storm topologies r
 
 ## Prerequisites
 
-- **A Linux-based Storm on HDInsight cluster**: see [Get started with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-get-started-linux) for steps on creating a cluster
+- **A Linux-based Storm on HDInsight cluster**: see [Get started with Apache Storm on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started) for steps on creating a cluster
 
 - **Familiarity with SSH and SCP**: For more information on using SSH and SCP with HDInsight, see the following:
     - **Linux, Unix or OS X clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X or Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
@@ -90,23 +90,10 @@ Rebalancing a topology allows the system to revise the parallelism of the topolo
 
 ##Monitor and manage using the Storm UI
 
-The Storm UI provides a web interface for working with running topologies, and is included on your HDInsight cluster.
+The Storm UI provides a web interface for working with running topologies, and is included on your HDInsight cluster. To view the Storm UI, use a web browser to open __https://CLUSTERNAME.azurehdinsight.cn/stormui__, where __CLUSTERNAME__ is the name of your cluster.
 
-> [AZURE.IMPORTANT] The Storm UI is not publicly available over the internet, and must be accessed using an SSH tunnel to the HDInsight cluster head node. For information on creating and using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel).
+> [AZURE.NOTE] If asked to provide a user name and password, enter the cluster administrator (admin) and password that you used when creating the cluster.
 
-Use the following steps to view the Storm UI:
-
-1. Open a web browser to the Ambari Web for your HDInsight cluster. The URL for Ambari Web is https://CLUSTERNAME.azurehdinsight.cn, where __CLUSTERNAME__ is the name of your cluster.
-
-2. From the list of services on the left of the page, select __Storm__. Then select __Storm UI__ from __Quick Links__.
-
-    ![Storm UI entry in quick links](./media/hdinsight-storm-deploy-monitor-topology-linux/ambari-storm.png)
-
-    This will display the Storm UI:
-
-    ![the storm ui](./media/hdinsight-storm-deploy-monitor-topology-linux/storm-ui.png)
-
-> [AZURE.NOTE] When working with the Storm UI, you may notice that some versions of Internet Explorer do not correctly refresh the UI after you have first visited it. For example, it may not show the new topologies you submitted, or it may show a topology as active when you previously deactivated it. Microsoft is aware of this issue and is working on a solution.
 
 ### Main page
 

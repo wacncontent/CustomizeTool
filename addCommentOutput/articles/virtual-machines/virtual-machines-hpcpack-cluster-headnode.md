@@ -14,10 +14,10 @@
 
 # Create the head node of an HPC Pack cluster in an Azure VM with a Marketplace image
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
 
 
-This article shows you how to use the [Microsoft HPC Pack virtual machine image](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/) in the Azure Marketplace
+This article shows you how to use the [Microsoft HPC Pack virtual machine image](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/) in the Azure gallery
 to create the head node of a Windows HPC cluster in Azure in the classic (Service Management) deployment model. The head node needs to be joined to an Active Directory domain in an Azure virtual network. You can use this head node for a proof of concept deployment of HPC Pack in Azure and add compute resources to the cluster to run HPC workloads.
 
 
@@ -25,7 +25,7 @@ to create the head node of a Windows HPC cluster in Azure in the classic (Servic
 
 >[AZURE.NOTE] Currently the HPC Pack
 VM image is based on Windows Server 2012 R2 Datacenter with HPC
-Pack 2012 R2 Update 2 pre-installed. Microsoft SQL Server 2014 Express
+<!-- deleted by customization Pack 2012 R2 --><!-- keep by customization: begin --> PackÂ 2012Â R2 <!-- keep by customization: end --> Update 2 pre-installed. Microsoft SQL Server 2014 Express
 is also pre-installed.
 
 
@@ -60,7 +60,7 @@ Pack head node. You can use a variety of Azure tools to do these steps in the Az
 
     * For a simple proof of concept deployment, you can omit this step and later promote the head node VM as a domain controller.
 
-3. In the Azure Management Portal or Azure Management Portal, create a classic VM by selecting the HPC Pack 2012 R2 image from the Azure Marketplace. (See steps for the Azure Management Portal [here](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).)
+3. In the Azure Management Portal or Azure Management Portal, create a classic VM by selecting the HPC Pack 2012 R2 image from the Azure gallery. (See steps for the Azure Management Portal [here](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).)
 
     **Considerations**
 

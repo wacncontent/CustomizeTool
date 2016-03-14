@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Deploy an ASP.NET MVC 5 mobile web site in Azure Websites" 
-	description="A tutorial that teaches you how to deploy a web site to Azure Websites using mobile features in ASP.NET MVC 5 web site." 
+	pageTitle="Deploy an ASP.NET MVC 5 mobile web app in Azure" 
+	description="A tutorial that teaches you how to deploy a web app to Azure using mobile features in ASP.NET MVC 5 web application." 
 	services="app-service" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/16/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 
-# Deploy an ASP.NET MVC 5 mobile web site in Azure Websites
+# Deploy an ASP.NET MVC 5 mobile web app in Azure
 
 This tutorial will teach you the basics of how to build an ASP.NET MVC 5
-web site that is mobile-friendly and deploy it to Azure Websites. For this tutorial, you need 
+web app that is mobile-friendly and deploy it to Azure Web App. For this tutorial, you need 
 [Visual Studio Express 2013 for Web][Visual Studio Express 2013]
 or the professional edition of Visual Studio if you already
 have that. You can use [Visual Studio 2015] but the screen shots will be different and you must use the ASP.NET 4.x templates.
@@ -40,7 +40,7 @@ application. 
 
 Here's what you'll learn:
 
--	How to use Visual Studio 2013 to publish your web site directly to a web site in Azure Websites.
+-	How to use Visual Studio 2013 to publish your web application directly to a web app in Azure.
 -   How the ASP.NET MVC 5 templates use the CSS Bootstrap framework to
     improve display on mobile devices
 -   How to create mobile-specific views to target specific mobile
@@ -79,21 +79,21 @@ this topic:
 - [Improve the Dates List][]
 - [Improve the SessionsTable View][]
 - [Improve the SessionByCode View][]
-##<a name="bkmk_DeployStarterProject"></a>Deploy the starter project to an Azure web site
+##<a name="bkmk_DeployStarterProject"></a>Deploy the starter project to an Azure web app
 
 1.	Download the conference-listing application [starter project][StarterProject].
 
-2. 	Then in Windows Explorer, right-click the Mvc5Mobile.zip file and choose *Properties*.
+2. 	Then in Windows Explorer, right-click the downloaded ZIP file and choose *Properties*.
 
-3. 	In the **Mvc5Mobile.zip Properties** dialog box,
+3. 	In the **Properties** dialog box,
 choose the **Unblock** button. (Unblocking prevents a security warning
 that occurs when you try to use a *.zip* file that you've downloaded
 from the web.)
 
-4.	Right-click the *Mvc5Mobile.zip* file and select **Extract All** to
+4.	Right-click the ZIP file and select **Extract All** to
 unzip the file. 
 
-5. 	In Visual Studio, open the *Mvc5Mobile.sln* file.
+5. 	In Visual Studio, open the *C#\Mvc5Mobile.sln* file.
 
 6.	Log into the [Management Portal](https://manage.windowsazure.cn/), and click an exited website or create a new website.
 
@@ -105,11 +105,11 @@ unzip the file.
 
 7.	In Publish Web, click **Import**, and choose the publish profile downloaded above.
 
-13.	The Publish Web dialog will be filled with the settings for your new web site. Click **Publish**.
+13.	The Publish Web dialog will be filled with the settings for your new web app. Click **Publish**.
 
 	![][DeployPublishSite]
 
-	Once Visual Studio finishes publishing the starter project to the Azure web site, the desktop browser opens to display the live web site.
+	Once Visual Studio finishes publishing the starter project to the Azure web app, the desktop browser opens to display the live web app.
 
 14.	Start your mobile browser emulator, copy the URL for
 the conference application (*<prefix>*.chinacloudsites.cn) into the emulator, and then click the
@@ -121,7 +121,7 @@ image below shows the *AllTags* view in portrait mode (from choosing
 
 	![][AllTags]
 
->[AZURE.NOTE] While you can debug your MVC 5 application from within Visual Studio, you can publish your web site to Azure again to verify the live web site directly from your mobile browser or a browser emulator.
+>[AZURE.TIP] While you can debug your MVC 5 application from within Visual Studio, you can publish your web app to Azure again to verify the live web app directly from your mobile browser or a browser emulator.
 
 The display is very readable on a mobile device. You can also already
 see some of the visual effects applied by the Bootstrap CSS framework.
@@ -145,7 +145,7 @@ try resizing the browser window and see how the navigation bar changes
 its look and feel. This is the responsive web design that is built into
 Bootstrap.
 
-To see how the web site would look without Bootstrap, open
+To see how the Web app would look without Bootstrap, open
 *App\_Start\\BundleConfig.cs* and comment out the lines that contain
 *bootstrap.js* and *bootstrap.css*. The following code shows the last
 two statements of the `RegisterBundles` method after the change:
@@ -172,8 +172,8 @@ Undo your changes and refresh the mobile browser
 to verify that the mobile-friendly display has been restored.
 
 Bootstrap is not specific to ASP.NET MVC 5, and you can take advantage
-of these features in any web site. But it is now built into the
-ASP.NET MVC 5 project template, so that your MVC 5 web site can
+of these features in any web application. But it is now built into the
+ASP.NET MVC 5 project template, so that your MVC 5 Web application can
 take advantage of Bootstrap by default.
 
 For more information about Bootstrap, go to the
@@ -221,7 +221,7 @@ emulator. The mobile browser emulator shows the two changes you made
 
 ![][AllTagsMobile_LayoutMobile]
 
-In contrast, the desktop display has not changed (with titles from from *\_Layout.cshtml* and 
+In contrast, the desktop display has not changed (with titles from *\_Layout.cshtml* and 
 *AllTags.cshtml*).
 
 ![][AllTagsMobile_LayoutMobileDesktop]
@@ -683,9 +683,9 @@ changes that you just made:
 ## Wrap Up and Review
 
 This tutorial has shown you how to use ASP.NET MVC 5 to develop
-mobile-friendly web sites. These include:
+mobile-friendly Web applications. These include:
 
--	Deploy an ASP.NET MVC 5 application to an Azure Websites
+-	Deploy an ASP.NET MVC 5 application to an Azure web app
 -   Use Bootstrap to create responsive web layout in your MVC 5
     application
 -   Override layout, views, and partial views, both globally and for an
@@ -703,11 +703,11 @@ mobile-friendly web sites. These include:
 -   [Official Bootstrap Blog][]
 -   [Twitter Bootstrap Tutorial from Tutorial Republic][]
 -   [The Bootstrap Playground][]
--   [W3C Recommendation Mobile web site Best Practices][]
+-   [W3C Recommendation Mobile Web Application Best Practices][]
 -   [W3C Candidate Recommendation for media queries][]
 
 <!-- Internal Links -->
-[Deploy the starter project to an Azure web site]: #bkmk_DeployStarterProject
+[Deploy the starter project to an Azure web app]: #bkmk_DeployStarterProject
 [Bootstrap CSS Framework]: #bkmk_bootstrap
 [Override the Views, Layouts, and Partial Views]: #bkmk_overrideviews
 [Create Browser-Specific Views]:#bkmk_browserviews
@@ -738,7 +738,7 @@ mobile-friendly web sites. These include:
 [Official Bootstrap Blog]: http://blog.getbootstrap.com/
 [Twitter Bootstrap Tutorial from Tutorial Republic]: http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/
 [The Bootstrap Playground]: http://www.bootply.com/
-[W3C Recommendation Mobile web site Best Practices]: http://www.w3.org/TR/mwabp/
+[W3C Recommendation Mobile Web Application Best Practices]: http://www.w3.org/TR/mwabp/
 [W3C Candidate Recommendation for media queries]: http://www.w3.org/TR/css3-mediaqueries/
 
 <!-- Images -->

@@ -140,7 +140,12 @@ Use the following procedure twice, once for each SQL server, to configure the SQ
 
 1.	On the Start screen, type **SQL Studio**, and then click **SQL Server 2014 Management Studio**.
 2.	In **Connect to Server**, click **Connect**.
+<!-- deleted by customization
 3.	In the left pane, right-click the top node—the default instance named after the machine—and then click **Properties**.
+-->
+<!-- keep by customization: begin -->
+3.	In the left pane, right-click the top nodeâthe default instance named after the machineâand then click **Properties**.
+<!-- keep by customization: end -->
 4.	In **Server Properties**, click **Database Settings**.
 5.	In **Database default locations**, set the following values:
 - For **Data**, set the path to **f:\Data**.

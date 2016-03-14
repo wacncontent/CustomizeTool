@@ -14,7 +14,7 @@
 	wacn.date=""/>
 
 
-# Equivalent Resource Manager and Service Management commands for VM tasks with the Azure CLI for Mac, Linux, and Windows
+# Equivalent Resource Manager and Service Management commands for VM tasks with the Azure command-line interface
 This article shows equivalent Windows Azure command-line interface (Azure CLI) commands to create and manage Azure VMs in Azure Service Management and Azure Resource Manager. Use this as a handy guide to migrate scripts from one command mode to the other.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
@@ -23,10 +23,14 @@ This article shows equivalent Windows Azure command-line interface (Azure CLI) c
 
 * If you haven't already installed the Azure CLI and connected to your subscription, see [Install the Azure CLI](/documentation/articles/xplat-cli-install) and [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect). When you want to use the Resource Manager mode commands, be sure to connect with the login method.
 
+* To get started with the Resource Manager mode in the Azure CLI, you might need to switch command modes. By default the CLI starts in Service Management mode. To change to Resource Manager mode, run `azure config mode arm`. To go back to Service Management mode, run `azure config mode asm`.
+
 * For online command help and options, type `azure <command> <subcommand> --help` or `azure help <command> <subcommand>`.
 
 ## VM tasks
 The next table compares common VM tasks you can perform with Azure CLI commands in Service Management and Resource Manager. With many Resource Manager commands you need to pass the name of an existing resource group.
+
+> [AZURE.NOTE] These examples don't include template-based operations which are generally recommended for VM deployments in Resource Manager. For information, see [Use the Azure CLI with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager) and [Deploy and manage virtual machines by using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli).
 
 Task | Service Management | Resource Manager
 -------------- | ----------- | -------------------------
@@ -52,7 +56,6 @@ Add Chef extension to a VM | `azure  vm extension get-chef [options] <vm-name>` 
 Disable a VM extension | `azure  vm extension set [options] -b <vm-name> <extension-name> <publisher-name> <version>` | Not available
 Remove a VM extension | `azure  vm extension set [options] -u <vm-name> <extension-name> <publisher-name> <version>` | `azure  vm extension set [options] -u <resource-group> <vm-name> <name> <publisher-name> <version>`
 List VM extensions | `azure vm extension list [options]` | Not available
-List VM images | `azure vm image list [options]` | `azure vm image list [options] <location> <publisher> [offer] [sku]` -OR- <br/> `azure vm image list-publishers [options] <location>` -OR- <br/> `azure vm image list-offers [options] <location>` -OR- <br/> `azure vm image list-skus [options] <location>`
 Show a VM image | `azure vm image show [options]` | Not available
 Get usage of VM resources | Not available | `azure vm list-usage [options] <location>`
 Get all available VM sizes | Not available | `azure vm sizes [options]`

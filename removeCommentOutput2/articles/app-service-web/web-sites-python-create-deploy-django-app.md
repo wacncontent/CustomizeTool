@@ -22,23 +22,6 @@ You will create an application using the Django web framework (see alternate ver
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
-+ [Prerequisites](#prerequisites)
-+ [Website Creation on Portal](#website-creation-on-portal)
-+ [Application Overview](#application-overview)
-+ Website Development
-  + [Windows - Python Tools for Visual Studio](#website-development-windows-ptvs)
-  + [Windows - Command Line](#website-development-windows-command-line)
-  + [Mac/Linux - Command Line](#website-development-mac-linux-command-line)
-+ [Deployment](#troubleshooting-deployment)
-+ [Troubleshooting - Package Installation](#troubleshooting-package-installation)
-+ [Troubleshooting - Virtual Environment](#troubleshooting-virtual-environment)
-+ [Troubleshooting - Static Files](#troubleshooting-static-files)
-+ [Troubleshooting - Settings](#troubleshooting-settings)
-+ [Using a Database](#using-a-database)
-+ [Django Admin Interface](#django-admin-interface)
-+ [Next steps](#next-steps)
-
-
 ##<a name="prerequisites"></a> Prerequisites
 
 - Windows, Mac or Linux

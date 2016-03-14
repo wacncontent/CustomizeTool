@@ -45,8 +45,6 @@ There are several ways you can set up a Java application in an Azure web app.
 
 	For cases like these, you can create an app using the Azure Management Portal, and then provide the appropriate runtime files manually. In this case the files will be counted against your storage space quotas for your App Service plan. For more information, see [Upload a custom Java web app to Azure](/documentation/articles/web-sites-java-custom-upload/).
 
-## <a name="portal"></a> Create and configure a Java web app
-
 This information shows how to use the Azure configuration UI to select a Java application container, either Apache Tomcat or Jetty, for your web site.
 
 1. Log in to the Windows [Azure Management Portal](https://manage.windowsazure.cn/).

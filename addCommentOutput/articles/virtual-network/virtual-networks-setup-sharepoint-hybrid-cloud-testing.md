@@ -15,7 +15,7 @@
 
 # Set up a SharePoint intranet farm in a hybrid cloud for testing
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
  
 
 This topic steps you through creating a hybrid cloud environment for testing an intranet SharePoint farm hosted in Windows Azure. Here is the resulting configuration.
@@ -173,7 +173,7 @@ Next, configure SP1 for a new SharePoint farm and a default team site.
 4.	On the Connect to a server farm page, click **Create a new server farm**, and then click **Next**.
 5.	On the Specify Configuration Database Settings page, type **sql1.corp.contoso.com** in **Database server**, type **CORP\SPFarmAdmin** in **User name**, type the SPFarmAdmin account password in **Password**, and then click **Next**.
 6.	On the Specify Farm Security Settings page, type **P@ssphrase** in both **Passphrase** and **Confirm passphrase**, and then click **Next**.
-7.	On the Configure SharePoint Central Administration web site page, click **Next**.
+7.	On the Configure SharePoint Central Administration Web Application page, click **Next**.
 8.	On the Completing the SharePoint Products Configuration Wizard page, click **Next**. The SharePoint Products Configuration Wizard might take a few minutes to complete.
 9.	On the Configuration Successful page, click **Finish**. After completion, Internet Explorer launches with a tab named Initial Farm Configuration Wizard.
 10.	In the **Help Make SharePoint Better** dialog box, click **No, I don't wish to participate**, and then click **OK**.

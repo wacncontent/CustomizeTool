@@ -27,8 +27,6 @@ The same network can be hosted in Azure as shown in the figure below.
 
 Notice how the Azure infrastructure takes on the role of the router, allowing access from your VNet to the public Internet without the need of any configuration. Firewalls can be substituted by Network Security Groups (NSGs) applied to each individual subnet. And physical load balancers are substituted by internet facing and internal load balancers in Azure.
 
->[AZURE.NOTE] There are two deployment modes in Azure: classic (also known as Service Management) and Azure Resource Manager (ARM). Classic VNets could be added to an affinity group, or created as a regional VNet. If you have a VNet in an affinity group, it is recommended to [migrate it to a regional VNet](/documentation/articles/virtual-networks-migrate-to-regional-vnet).
-
 ## Virtual Network Benefits
 
 - **Isolation**. VNets are completely isolated from one another. That allows you to create disjoint networks for development, testing, and production that use the same CIDR address blocks.
@@ -54,7 +52,7 @@ Subnet is a range of IP addresses in the VNet, you can divide a VNet into multip
 
 There are two types of IP addresses assigned to resources in Azure: *public* and *private*. Public IP Addresses allow Azure resources to communicate with Internet and other Azure public-facing services like [Azure Redis Cache](/home/features/cache/), [Azure Event Hubs](/documentation/services/event-hubs/). Private IP Addresses allows communication between resources in a virtual network, along with those connected through a VPN, without using an Internet-routable IP addresses.
 
-To learn more about IP addresses in Azure, visit [IP addresses in virtual network](/documentation/articles/virtual-network-ip-addresses-overview-arm)
+To learn more about IP addresses in Azure, visit [IP addresses in virtual network](/documentation/articles/virtual-network-ip-addresses-arm) 
 
 ## Azure load balancers
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Use the FMLE encoder to send a single bitrate live stream
@@ -91,7 +91,7 @@ In this tutorial the following output settings are used. The rest of this sectio
 
 	![fmle](./media/media-services-fmle-live-encoder/media-services-fmle3.png)
 
-	When using interlaced sources, please checkmark the “Deinterlace” option
+	When using interlaced sources, please checkmark the "Deinterlace" option
 
 2. Select the wrench icon next to Format, these additional settings should be:
 

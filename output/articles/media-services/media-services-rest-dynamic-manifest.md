@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/18/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Creating Filters with Azure Media Services REST API

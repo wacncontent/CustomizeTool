@@ -1,6 +1,6 @@
 <properties
-	pageTitle="How to debug a Node.js web site in Azure Websites"
-	description="Learn how to debug a Node.js web site in Azure Websites."
+	pageTitle="How to debug a Node.js web app in Azure"
+	description="Learn how to debug a Node.js web app in Azure."
 	tags="azure-portal"
 	services="app-service\web"
 	documentationCenter="nodejs"
@@ -13,16 +13,16 @@
 	ms.date="11/18/2015"
 	wacn.date=""/>
 
-# How to debug a Node.js web site in Azure Websites
+# How to debug a Node.js web app in Azure
 
-Azure provides built-in diagnostics to assist with debugging Node.js applications hosted in [Azure Websites](/documentation/services/web-sites/) web sites. In this article, you will learn how to enable logging of stdout and stderr, display error information in the browser, and how to download and view log files.
+Azure provides built-in diagnostics to assist with debugging Node.js applications hosted in [Azure Web App](/documentation/services/web-sites/) Web Apps. In this article, you will learn how to enable logging of stdout and stderr, display error information in the browser, and how to download and view log files.
 
 Diagnostics for Node.js applications hosted on Azure is provided by [IISNode]. While this article discusses the most common settings for gathering diagnostics information, it does not provide a complete reference for working with IISNode. For more information on working with IISNode, see the [IISNode Readme] on GitHub.
 
 <a id="enablelogging"></a>
 ## Enable logging
 
-By default, an Azure Websites only captures diagnostic information about deployments, such as when you deploy a web site using Git. This information is useful if you are having problems during deployment, such as a failure when installing a module referenced in **package.json**, or if you are using a custom deployment script.
+By default, an Azure web app only captures diagnostic information about deployments, such as when you deploy a web app using Git. This information is useful if you are having problems during deployment, such as a failure when installing a module referenced in **package.json**, or if you are using a custom deployment script.
 
 To enable the logging of stdout and stderr streams, you must create an **IISNode.yml** file at the root of your Node.js application and add the following:
 
@@ -38,15 +38,15 @@ Once this option is enabled, IISNode will return the last 64K of information sen
 
 > [AZURE.NOTE] While devErrorsEnabled is useful when diagnosing problems during development, enabling it in a production environment may result in development errors being sent to end users.
 
-If the **IISNode.yml** file did not already exist within your application, you must restart your web site after publishing the updated application. If you are simply changing settings in an existing **IISNode.yml** file that has previously been published, no restart is required.
+If the **IISNode.yml** file did not already exist within your application, you must restart your web app after publishing the updated application. If you are simply changing settings in an existing **IISNode.yml** file that has previously been published, no restart is required.
 
-> [AZURE.NOTE] If your web site was created using the Azure Command-Line Tools or Azure PowerShell Cmdlets, a default **IISNode.yml** file is automatically created.
+> [AZURE.NOTE] If your web app was created using the Azure Command-Line Tools or Azure PowerShell Cmdlets, a default **IISNode.yml** file is automatically created.
 
-To restart the web site, select the web site in the [Azure Management Portal](https://manage.windowsazure.cn), and then click **RESTART** button:
+To restart the web app, select the web app in the [Azure Management Portal](https://manage.windowsazure.cn), and then click **RESTART** button:
 
 ![restart button][restart-button]
 
-If the Azure Command-Line Tools are installed in your development environment, you can use the following command to restart the web site:
+If the Azure Command-Line Tools are installed in your development environment, you can use the following command to restart the web app:
 
 	azure site restart [sitename]
 
@@ -63,7 +63,7 @@ Once installed, the tools can be accessed using the 'azure' command. The command
 
 ###FTP
 
-To access the diagnostic information through FTP, visit the [Azure Management Portal](https://manage.windowsazure.cn), select your web site, and then select the **DASHBOARD**. In the **quick links** section, the **FTP DIAGNOSTIC LOGS** and **FTPS DIAGNOSTIC LOGS** links provide access to the logs using the FTP protocol.
+To access the diagnostic information through FTP, visit the [Azure Management Portal](https://manage.windowsazure.cn), select your web app, and then select the **DASHBOARD**. In the **quick links** section, the **FTP DIAGNOSTIC LOGS** and **FTPS DIAGNOSTIC LOGS** links provide access to the logs using the FTP protocol.
 
 > [AZURE.NOTE] If you have not previously configured user name and password for FTP or deployment, you can do so from the **QuickStart** management page by selecting **Set up deployment credentials**.
 
@@ -100,7 +100,7 @@ This will return a stream of log events that are updated as they occur on the se
 <a id="nextsteps"></a>
 ## Next Steps
 
-In this article you learned how to enable and access diagnostics information for Azure. While this information is useful in understanding problems that occur with your application, it may point to a problem with a module you are using or that the version of Node.js used by Azure Websites is different than the one used in your deployment environment.
+In this article you learned how to enable and access diagnostics information for Azure. While this information is useful in understanding problems that occur with your application, it may point to a problem with a module you are using or that the version of Node.js used by Azure Web Apps is different than the one used in your deployment environment.
 
 
 [IISNode]: https://github.com/tjanczuk/iisnode

@@ -10,13 +10,14 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/14/2015"
+	ms.date="01/22/2016"
 	wacn.date=""/>
 
 
 # How to capture a classic Linux virtual machine as an image
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-linux-capture-image-resource-manager).
+
 
 This article shows you how to capture a classic Azure virtual machine running Linux as an image to create other virtual machines. This image includes the OS disk and data disks attached to the virtual machine. It doesn't include networking configuration, so you'll need to configure that when you create the other virtual machines from the image.
 
@@ -24,9 +25,7 @@ Azure stores the image under **Images**. This is also where any images you've up
 
 ## Before You begin
 
-These steps assume that you've already created an Azure virtual machine using the classic deployment model and configured the operating system, including attaching any data disks. If you haven't done this yet, see these instructions:
-
-- [How to Create a Virtual Machine Running Linux] []
+These steps assume that you've already created an Azure virtual machine using the classic deployment model and configured the operating system, including attaching any data disks. If you haven't done this yet, read [How to Create a Linux Virtual Machine] [].
 
 
 ## Capture the virtual machine
@@ -93,4 +92,4 @@ The image is ready to be used to create virtual machines. You can use the Azure 
 [About Virtual Machine Images in Azure]: virtual-machines-images.md
 [How to Create a Custom Virtual Machine]: virtual-machines-linux-create-custom.md
 [How to Attach a Data Disk to a Virtual Machine]: storage-windows-attach-disk.md
-[How to Create a Virtual Machine Running Linux]: virtual-machines-linux-tutorial.md
+[How to Create a Linux Virtual Machine]: virtual-machines-linux-create-custom.md

@@ -15,7 +15,7 @@
 
 # Get started with an HPC Pack cluster in Azure to run Excel and SOA workloads
 
-This article shows you how to deploy an HPC Pack cluster on Azure infrastructure services (IaaS) using an Azure quickstart template or an Azure PowerShell deployment script. You'll use Azure Marketplace VM images designed to run Microsoft Excel or service-oriented architecture (SOA) workloads with HPC Pack. You can use the cluster to run simple Excel HPC and SOA services from an on-premises client computer. The Excel HPC services include Excel workbook offloading and Excel user-defined functions, or UDFs.
+This article shows you how to deploy an HPC Pack cluster on Azure infrastructure services (IaaS) using an Azure quickstart template or an Azure PowerShell deployment script. You'll use Azure gallery VM images designed to run Microsoft Excel or service-oriented architecture (SOA) workloads with HPC Pack. You can use the cluster to run simple Excel HPC and SOA services from an on-premises client computer. The Excel HPC services include Excel workbook offloading and Excel user-defined functions, or UDFs.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
@@ -35,6 +35,7 @@ At a high level the following diagram shows the HPC Pack cluster you'll create.
 
 ## Step 1. Set up an HPC Pack cluster in Azure
 
+<!-- deleted by customization
 We'll show you two ways to set up the cluster: first, using an Azure quickstart template and the Azure Management Portal; and second, using an Azure PowerShell deployment script.
 
 
@@ -61,7 +62,7 @@ Use an Azure quickstart template to quickly and easily deploy an HPC Pack cluste
     >
     >Compute node VMs will be created from the latest image of the selected compute node family. Select the **ComputeNode** option for the latest HPC Pack 2012 R2 Update 3 compute image for general purposes. Select **ComputeNodeWithExcel** option for the latest HPC Pack compute node image that includes an evaluation version of Microsoft Excel Professional Plus 2013. If you want to deploy a cluster for general SOA sessions or for Excel UDF offloading, choose the **ComputeNode** option (without Excel installed).
     >
-    >When using  **ComputeNodeWithExcel** for production workloads, you'll need to provide a valid Excel license to activate Excel on the compute nodes. Otherwise, the evaluation version of Excel could be expired within 30 days, and running the Excel workbook would constantly fail with the COMExeption (0x800AC472). If this happens, you may log on the head node to clusrun “%ProgramFiles(x86)%\Microsoft Office\Office15\OSPPREARM.exe” on all Excel compute nodes via HPC Cluster Manager console to rearm Excel for another 30 days of evaluation time. The max rearm time for the grace period is 2, after that you may need to provide a valid Excel license.
+    >When using  **ComputeNodeWithExcel** for production workloads, you'll need to provide a valid Excel license to activate Excel on the compute nodes. Otherwise, the evaluation version of Excel could be expired within 30 days, and running the Excel workbook would constantly fail with the COMExeption (0x800AC472). If this happens, you may log on the head node to clusrun "%ProgramFiles(x86)%\Microsoft Office\Office15\OSPPREARM.exe" on all Excel compute nodes via HPC Cluster Manager console to rearm Excel for another 30 days of evaluation time. The max rearm time for the grace period is 2, after that you may need to provide a valid Excel license.
 
     c. Choose the subscription.
 
@@ -85,6 +86,7 @@ Use an Azure quickstart template to quickly and easily deploy an HPC Pack cluste
 
     ![Export the certificate][cert]
 
+-->
 ### Use the HPC Pack IaaS Deployment script
 
 The HPC Pack IaaS deployment script provides another versatile way to deploy an HPC Pack cluster. It runs in Azure Service Management (ASM) mode, whereas the template runs in Azure Resource Manager (ARM) mode. Also, the script is compatible with a subscription in either the Azure Global or Azure China service.
@@ -99,8 +101,13 @@ The HPC Pack IaaS deployment script provides another versatile way to deploy an 
 
  The HPC Pack IaaS deployment script uses an XML configuration file as input which describes the infrastructure of the HPC cluster. To deploy a cluster consisting of a head node and 18 compute nodes created from the compute node image that includes Microsoft Excel, substitute values for your environment into the following sample configuration file. For more information about the configuration file, see the Manual.rtf file in the script folder and [Create an HPC cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script).
 
+<!-- deleted by customization
 ```
 <?xml version="1.0" encoding="utf-8"?>
+-->
+<!-- keep by customization: begin -->
+	<?xml version="1.0" encoding="utf-8"?>
+<!-- keep by customization: end -->
 <IaaSClusterConfig>
   <Subscription>
     <SubscriptionName>MySubscription</SubscriptionName>
@@ -139,7 +146,7 @@ The HPC Pack IaaS deployment script provides another versatile way to deploy an 
     <ImageName>HPCPack2012R2_ComputeNodeWithExcel</ImageName>
   </ComputeNodes>
 </IaaSClusterConfig>
-```
+<!-- deleted by customization ``` -->
 
 **Notes about the configuration file**
 
@@ -149,21 +156,21 @@ The HPC Pack IaaS deployment script provides another versatile way to deploy an 
 
 * The post-configuration PowerShell script PostConfig.ps1 configures certain settings on the head node such as setting up the Azure storage connection string, removing the compute node role from the head node, and bringing all nodes online when they are deployed. A sample script follows.
 
+<!-- deleted by customization
 ```
     # add the HPC Pack powershell cmdlets
+-->
+<!-- keep by customization: begin -->
+	    # add the HPC Pack powershell cmdlets
+<!-- keep by customization: end -->
         Add-PSSnapin Microsoft.HPC
-
     # set the Azure storage connection string for the cluster
         Set-HpcClusterProperty -AzureStorageConnectionString 'DefaultEndpointsProtocol=https;AccountName=<yourstorageaccountname>;AccountKey=<yourstorageaccountkey>'
-
     # remove the compute node role for head node to make sure the Excel workbook won't run on head node
         Get-HpcNode -GroupName HeadNodes | Set-HpcNodeState -State offline | Set-HpcNode -Role BrokerNode
-
     # total number of nodes in the deployment including the head node and compute nodes, which should match the number specified in the XML configuration file
         $TotalNumOfNodes = 19
-
         $ErrorActionPreference = 'SilentlyContinue'
-
     # bring nodes online when they are deployed until all nodes are online
         while ($true)
         {
@@ -175,7 +182,9 @@ The HPC Pack IaaS deployment script provides another versatile way to deploy an 
           }
           sleep 60
         }
+<!-- deleted by customization
 ```
+-->
 
 **Run the script**
 
@@ -183,23 +192,42 @@ The HPC Pack IaaS deployment script provides another versatile way to deploy an 
 
 2. Change directory to the script folder (E:\IaaSClusterScript in this example).
 
+<!-- deleted by customization
     ```
     cd E:\IaaSClusterScript
 ```
+-->
+<!-- keep by customization: begin -->
+    	cd E:\IaaSClusterScript
+<!-- keep by customization: end -->
 
 4. Run the command below to deploy the HPC Pack cluster. This example assumes that the configuration file is located in E:\HPCDemoConfig.xml.
 
+<!-- deleted by customization
     ```
     .\New-HpcIaaSCluster.ps1 -ConfigFile E:\HPCDemoConfig.xml -AdminUserName MyAdminName
 ```
+-->
+<!-- keep by customization: begin -->
+    	.\New-HpcIaaSCluster.ps1 âConfigFile E:\HPCDemoConfig.xml âAdminUserName MyAdminName
+
+<!-- keep by customization: end -->
 
 The HPC Pack deployment script will run for some time. One thing the script wil do is to export and download the cluster certificate and save it in the current user's Documents folder on the client computer. The script will generate a message similar to the following. In a following step you'll import the certificate in the appropriate certificate store.
 
+<!-- deleted by customization
 ```
+-->
 You have enabled REST API or web portal on HPC Pack head node. Please import the following certificate in the Trusted Root Certification Authorities certificate store on the computer where you are submitting job or accessing the HPC web portal:
+<!-- deleted by customization
  C:\Users\hpcuser\Documents\HPCWebComponent_HPCExcelHN004_2015070716
 2011.cer
 ```
+-->
+<!-- keep by customization: begin -->
+
+ C:\Users\hpcuser\Documents\HPCWebComponent_HPCExcelHN004_20150707162011.cer
+<!-- keep by customization: end -->
 
 ## Step 2. Offload Excel workbooks and run UDFs from an on-premises client
 
@@ -213,14 +241,19 @@ Follow these steps to offload an Excel workbook to run on the HPC Pack cluster i
 
 3. Make sure Excel is installed. Create an Excel.exe.config file with the following contents in the same folder with Excel.exe on the client computer. This ensures that the HPC Pack 2012 R2 Excel COM add-in will be loaded successfully.
 
+<!-- deleted by customization
     ```
 <?xml version="1.0"?>
+-->
+<!-- keep by customization: begin -->
+		<?xml version="1.0"?>
+<!-- keep by customization: end -->
 <configuration>
     <startup useLegacyV2RuntimeActivationPolicy="true">
         <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
     </startup>
 </configuration>
-```
+<!-- deleted by customization ``` -->
 4.	Download the full [HPC Pack 2012 R2 Update 3 installation](http://www.microsoft.com/download/details.aspx?id=49922) and install the HPC Pack client,
 or download and install the [HPC Pack 2012 R2 Update 3 client utilities](https://www.microsoft.com/download/details.aspx?id=49923) and the appropriate Visual C++ 2010 redistributable for your computer ([x64](http://www.microsoft.com/download/details.aspx?id=14632), [x86](https://www.microsoft.com/download/details.aspx?id=5555)).
 
@@ -236,22 +269,25 @@ or download and install the [HPC Pack 2012 R2 Update 3 client utilities](https:/
 
     ![Excel macro for HPC Pack][macro]
 
+<!-- deleted by customization
     ```
     'Private Const HPC_ClusterScheduler = "HEADNODE_NAME"
+-->
+<!-- keep by customization: begin -->
+	    'Private Const HPC_ClusterScheduler = "HEADNODE_NAME"
+<!-- keep by customization: end -->
     Private Const HPC_ClusterScheduler = "hpc01.chinaeast.chinacloudapp.cn"
-
     'Private Const HPC_NetworkShare = "\\PATH\TO\SHARE\DIRECTORY"
     Private Const HPC_DependFiles = "D:\Excel\Upload\ConvertiblePricing_Complete.xlsb=ConvertiblePricing_Complete.xlsb"
-
     'HPCExcelClient.Initialize ActiveWorkbook
     HPCExcelClient.Initialize ActiveWorkbook, HPC_DependFiles
-
     'HPCWorkbookPath = HPC_NetworkShare & Application.PathSeparator & ActiveWorkbook.name
     HPCWorkbookPath = "ConvertiblePricing_Complete.xlsb"
-
     'HPCExcelClient.OpenSession headNode:=HPC_ClusterScheduler, remoteWorkbookPath:=HPCWorkbookPath
     HPCExcelClient.OpenSession headNode:=HPC_ClusterScheduler, remoteWorkbookPath:=HPCWorkbookPath, UserName:="hpc\azureuser", Password:="<YourPassword>"
+<!-- deleted by customization
 ```
+-->
 
 9.	Copy the Excel work book to an upload directory such as D:\Excel\Upload, as specified in the HPC_DependsFiles constant in the VBA macro.
 
@@ -297,50 +333,86 @@ To use Http binding with an Azure storage queue, make a few changes to the sampl
 
 * Update the cluster name.
 
+<!-- deleted by customization
     ```
 // Before
+-->
+<!-- keep by customization: begin -->
+		// Before
+<!-- keep by customization: end -->
 const string headnode = "[headnode]";
 // After e.g.
 const string headnode = "hpc01.chinaeast.chinacloudapp.cn";
 or
 const string headnode = "hpc01.chinacloudapp.cn";
+<!-- deleted by customization
 ```
+-->
 
 * Optionally, use default TransportScheme in SessionStartInfo or explicitly set it to Http.
 
+<!-- deleted by customization
 ```
     info.TransportScheme = TransportScheme.Http;
 ```
+-->
+<!-- keep by customization: begin -->
+    	info.TransportScheme = TransportScheme.Http;
+<!-- keep by customization: end -->
 
 * Use default binding for the BrokerClient.
 
+<!-- deleted by customization
     ```
 // Before
+-->
+<!-- keep by customization: begin -->
+		// Before
+<!-- keep by customization: end -->
 using (BrokerClient<IService1> client = new BrokerClient<IService1>(session, binding))
 // After
 using (BrokerClient<IService1> client = new BrokerClient<IService1>(session))
+<!-- deleted by customization
 ```
+-->
 
     Or set explicitly using the basicHttpBinding.
 
+<!-- deleted by customization
     ```
 BasicHttpBinding binding = new BasicHttpBinding(BasicHttpSecurityMode.TransportWithMessageCredential);
+-->
+<!-- keep by customization: begin -->
+		BasicHttpBinding binding = new BasicHttpBinding(BasicHttpSecurityMode.TransportWithMessageCredential);
+<!-- keep by customization: end -->
 binding.Security.Message.ClientCredentialType = BasicHttpMessageCredentialType.UserName;    binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
+<!-- deleted by customization
 ```
+-->
 
 * Optionally, set the UseAzureQueue flag to true in SessionStartInfo. If not set, it will be set to true by default when the cluster name has Azure domain suffixes and the TransportScheme is Http.
 
+<!-- deleted by customization
     ```
     info.UseAzureQueue = true;
 ```
+-->
+<!-- keep by customization: begin -->
+    	info.UseAzureQueue = true;
+<!-- keep by customization: end -->
 
 ###Use Http binding without Azure storage queue
 
 To do this, explicitly set UseAzureQueue flag to false in the SessionStartInfo.
 
+<!-- deleted by customization
 ```
     info.UseAzureQueue = false;
 ```
+-->
+<!-- keep by customization: begin -->
+    	info.UseAzureQueue = false;
+<!-- keep by customization: end -->
 
 ### Use NetTcp binding
 

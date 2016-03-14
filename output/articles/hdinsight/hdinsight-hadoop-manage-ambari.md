@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/03/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 #Manage HDInsight clusters by using the Ambari Web UI

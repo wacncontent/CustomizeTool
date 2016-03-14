@@ -10,7 +10,7 @@
    keywords=""/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="11/26/2015"
+	ms.date="02/12/2016"
 	wacn.date=""/>
 
 # Testing SAP NetWeaver on Windows Azure SUSE Linux VMs
@@ -66,8 +66,7 @@ The PowerShell commands below are valid for Azure PowerShell version 1.0.1 or la
 ## Installing WALinuxAgent in a SUSE VM
 
 The agent called WALinuxAgent is part of the SLES images in the Azure gallery. Here are places where you can find
-<!information about installing it manually (e.g. when uploading a SLES OS VHD from on-premises):
-<https://windowsazure.cn/documentation/articles/virtual-machines-linux-endorsed-distributions/>
+information about installing it manually (e.g. when uploading a SLES OS VHD from on-premises):
 
 - [OpenSUSE] (http://software.opensuse.org/package/WALinuxAgent)
 
@@ -85,13 +84,36 @@ process. You might add the nofail parameter in /etc/fstab to mitigate the issue.
 that with nofail, applications might use the mount point as before, and maybe write into the root
 file system in case an external Azure data disk wasn't mounted during the boot.
 
+The only exception regarding mount via UUID is related to attaching an OS disk for troubleshooting purposes
+as described in the following section.
+
+## Troubleshooting SUSE VM which isn't accessible anymore
+
+There might be situations where a SUSE VM on Azure hangs in the boot process ( e.g. mistake related to
+mounting of disks ). The issue can be verified e.g. by the boot diagnostics feature in the portal for
+v2 VMs ( [see this blog] (https://azure.microsoft.com/blog/boot-diagnostics-for-virtual-machines-v2/) ).
+
+An option to solve the problem is to attach the OS disk from the damaged VM to another SUSE VM on Azure
+and then make appropriate changes like editing /etc/fstab or removing network udev rules as described in
+the next section.
+
+There is one important thing to consider though. Deploying several SUSE VMs from the same Azure gallery
+image ( e.g. SLES 11 SP4 ) shows that the OS disk will always be mounted by the same UUID. Attaching an
+OS disk from a different VM by UUID which was deployed using the same Azure gallery image will therefore
+result in two identical UUIDs. This causes problems and could mean that the VM meant for troubleshooting
+will in fact boot from the attached and damaged OS disk instead the original one. 
+
+There are two possibilities to avoid this:
+
+* use a different Azure gallery image for the troubleshooting VM ( e.g. SLES 12 instead of SLES 11 SP4 )
+* don't attach the damaged OS disk from another VM via UUID but use something else
+
 ## Uploading a SUSE VM from on-premises to Azure
 
 [This article] (virtual-machines-linux-create-upload-vhd-suse.md) describes the steps for uploading a SUSE VM from on-premises to Azure.
 
 If you want to upload a VM without the deprovision step at the end to keep, for example, an existing SAP
-<!installation as well as the hostname, check the following items:
-<https://windowsazure.cn/documentation/articles/virtual-machines-linux-create-upload-vhd-suse/>
+installation as well as the hostname, check the following items:
 
 * Make sure that the OS disk is mounted via UUID and not via device ID. Changing to UUID just in /etc/fstab is not enough for the OS disk. Also, don't forget to adapt the boot loader via YaST or by editing /boot/grub/menu.lst.
 * If you used the VHDX format for the SUSE OS disk and converted it to VHD for uploading to Azure, it's very likely that the network device changed from eth0 to eth1.
@@ -114,9 +136,7 @@ file is created, you can deploy the VM by using the following CLI command as an 
    ```
 You can find more details about JSON template files in [this article] (resource-group-authoring-templates.md) and [this webpage] (https://azure.microsoft.com/documentation/templates/).
 
-<!You can find more details about CLI and Azure Resource Manager in [this article] (xplat-cli-azure-resource-manager.md).
-<https://windowsazure.cn/documentation/articles/resource-group-authoring-templates/>
-<https://windowsazure.cn/documentation/articles/xplat-cli-azure-resource-manager/>
+You can find more details about CLI and Azure Resource Manager in [this article](/documentation/articles/xplat-cli-azure-resource-manager).
 
 ## SAP license and hardware key
 
@@ -143,9 +163,7 @@ if "no_root_squash" is set for the share. This was the solution in an internal t
 ## Logical volumes
 
 Logical Volume Manager (LVM) isn't fully validated on Azure. If you need a big logical volume across multiple Azure
-data disks (e.g. for the SAP database), you should use mdadm. [This article]
-(virtual-machines-linux-configure-raid.md) describes how to set up Linux RAID on Azure by using mdadm.
-<https://windowsazure.cn/documentation/articles/virtual-machines-linux-configure-raid/>
+data disks (e.g. for the SAP database), you should use mdadm. [This article](/documentation/articles/virtual-machines-linux-configure-raid) describes how to set up Linux RAID on Azure by using mdadm.
 
 
 ## Azure SUSE repository
@@ -184,4 +202,3 @@ understand.
 SAP won't support Oracle on SUSE or Red Hat in a public cloud
 like Azure.
 Customers should contact Oracle directly to discuss this topic.
-

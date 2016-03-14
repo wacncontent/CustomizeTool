@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/08/2015"
+	ms.date="01/07/2016"
 	wacn.date=""/>
 
 
@@ -22,11 +22,11 @@ Use the instructions in this article to deploy a highly-available Active Directo
 
 ![](./media/virtual-machines-workload-template-ad-domain/two-server-ad.png)
 
-You can run the template with the Azure <!-- deleted by customization Management --><!-- keep by customization: begin --> Preview <!-- keep by customization: end --> Portal, Azure PowerShell, or the Azure CLI.
+You can run the template with the Azure Management Portal, Azure PowerShell, or the Azure CLI.
 
 ## Azure Management Portal
 
-To deploy this workload using a Resource Manager template and the Azure <!-- deleted by customization Management --><!-- keep by customization: begin --> Preview <!-- keep by customization: end --> Portal, click [here](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Factive-directory-new-domain-ha-2-dc%2Fazuredeploy.json).
+To deploy this workload using a Resource Manager template and the Azure Management Portal, click [here](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Factive-directory-new-domain-ha-2-dc%2Fazuredeploy.json).
 
 ![](./media/virtual-machines-workload-template-ad-domain/azure-portal-template.png)
 
@@ -70,7 +70,7 @@ When the template execution is complete, you have a new two-server Active Direct
 
 ## Azure CLI
 
-Before you begin, make sure you have the right version of Azure CLI installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click <!-- deleted by customization [here](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli#getting-ready) --><!-- keep by customization: begin --> [here](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/#getting-ready) <!-- keep by customization: end -->.
+Before you begin, make sure you have the right version of Azure CLI installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click [here](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli#getting-ready).
 
 First, you create a new resource group. Use the following command and specify the name of the group and the Azure data center location into which you want to deploy.
 
@@ -88,23 +88,3 @@ Here is an example.
 When you run the **azure group deployment create** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, Azure creates and configures the virtual machines.
 
 When the template execution is complete, you have a new, two-server Active Directory Domain Services domain configuration in your new resource group.
-
-
-## Additional Resources
-
-[Deploy and manage virtual machines using Azure Resource Manager Templates and Azure PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
-
-[Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
-
-[Azure Resource Manager Overview](/documentation/articles/resource-group-overview)
-
-[Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
-
-<!-- deleted by customization
-[Virtual machines documentation](/documentation/services/virtual-machines/)
--->
-<!-- keep by customization: begin -->
-[Virtual machines documentation](http://www.windowsazure.cn/documentation/services/virtual-machines/)
-<!-- keep by customization: end -->
-
-[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)

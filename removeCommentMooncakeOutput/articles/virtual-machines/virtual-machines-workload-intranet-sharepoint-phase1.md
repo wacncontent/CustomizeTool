@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="SharePoint Server 2013 farm Phase 1 | Windows Azure"
 	description="Create the virtual network and other Azure infrastructure elements in Phase 1 of the SharePoint Server 2013 farm in Azure."
@@ -85,7 +87,7 @@ Item | Local network address space
 
 First, start an Azure PowerShell prompt and login to your account.
 
-	Login-AzureRMAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
+	Login-AzureRMAccount
 
 Get your subscription name using the following command.
 
@@ -103,7 +105,7 @@ Next, create a new resource group for your intranet SharePoint farm. To determin
 Create your new resource group with these commands.
 
 	$rgName="<resource group name>"
-	$locName="<an Azure location, such as China East>"
+	$locName="<an Azure location, such as China North>"
 	New-AzureRMResourceGroup -Name $rgName -Location $locName
 
 Resource Manager-based virtual machines require a Resource Manager-based storage account.

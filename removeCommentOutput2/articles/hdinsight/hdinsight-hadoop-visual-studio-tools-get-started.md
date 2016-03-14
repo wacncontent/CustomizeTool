@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/30/2015"
+	ms.date="01/27/2016"
 	wacn.date=""/>
 
 # Get started using Visual Studio Hadoop tools for HDInsight to run a Hive query
@@ -48,8 +48,6 @@ HDInsight Tools for Visual Studio and Microsoft Hive ODBC Driver are packaged wi
 
 ## Connect to Azure subscriptions
 The HDInsight Tools for Visual Studio allows you to connect to your HDInsight clusters, perform some basic management operations, and run Hive queries.
-
->[AZURE.NOTE] For information on connecting to HDInsight Emulator, see [Get started with the HDInsight Emulator](/documentation/articles/hdinsight-hadoop-emulator-get-started#vstools).
 
 >[AZURE.NOTE] For information on connecting to a generic Hadoop cluster (preview), see [Write and submit Hive queries using Visual Studio](http://blogs.msdn.com/b/xiaoyong/archive/2015/05/04/how-to-write-and-submit-hive-queries-using-visual-studio.aspx).
 
@@ -178,10 +176,10 @@ Even though executing queries via HiveServer2 has many performance benefits, it 
 
 | |Executing via HiveServer2 |Submitting via WebHCat|
 |---|---|---|
-|Execute queries|Eliminates the overhead in WebHCat (which launches a MapReduce Job named “TempletonControllerJob”).|As long as a query is executed via WebHCat, WebHCat will launch a MapReduce job which introduces additional latency.|
+|Execute queries|Eliminates the overhead in WebHCat (which launches a MapReduce Job named "TempletonControllerJob").|As long as a query is executed via WebHCat, WebHCat will launch a MapReduce job which introduces additional latency.|
 |Stream logs back|In near real-time.|The job execution logs are available only when the job is finished.|
 |View job history|If a query is executed via HiveServer2, it's job history (job log, job output) is not preserved. The application can be viewed in YARN UI with limited information.|If a query is executed via WebHCat, it's job history (job log, job output) is preserved and can be viewed using Visual Studio/HDInsight SDK/PowerShell. |
-|Close window| 	Executing via HiveServer2 is a “synchronous” way so you must keep the windows open; if the windows are closed then the query execution will be cancelled.|Submitting via WebHCat is a “asynchronous” way so you can submit the query via WebHCat and close Visual Studio. You can come back and see the results at any time.|
+|Close window| 	Executing via HiveServer2 is a "synchronous" way so you must keep the windows open; if the windows are closed then the query execution will be cancelled.|Submitting via WebHCat is a "asynchronous" way so you can submit the query via WebHCat and close Visual Studio. You can come back and see the results at any time.|
 
 
 ### Tez Hive job performance graph

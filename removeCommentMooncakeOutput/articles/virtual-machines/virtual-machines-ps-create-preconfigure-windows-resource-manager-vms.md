@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Create and configure a VM | Windows Azure"
 	description="Create and configure an Azure virtual machine with the Powershell and the Resource Manager deployment model."
@@ -14,6 +16,17 @@
 	wacn.date=""/>
 
 # Create and configure a Windows Virtual Machine with Resource Manager and Azure PowerShell
+
+> [AZURE.SELECTOR]
+- [Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
+- [PowerShell - Template](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template)
+- [Portal - Linux](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
+- [CLI](/documentation/articles/virtual-machines-linux-tutorial)
+
+<br>
+
+
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms).
 

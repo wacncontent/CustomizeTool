@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Test your Azure web site's performance | Windows Azure"
-   description="Run Azure web site performance tests to check how your app handles user load. Measure response time and find failures that might indicate problems."
+   pageTitle="Test your Azure web app's performance | Windows Azure"
+   description="Run Azure web app performance tests to check how your app handles user load. Measure response time and find failures that might indicate problems."
    services="app-service\web"
    documentationCenter=""
    authors="ecfan"
@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="09/11/2015"
+	ms.date="01/13/2016"
 	wacn.date=""/>
 
-# Performance test your Azure web site under load
+# Performance test your Azure web app under load
 
-Check your web site's performance before you launch it or deploy updates to production. 
+Check your web app's performance before you launch it or deploy updates to production. 
 That way, you can better assess whether your app is ready for release. Feel more
 confident that your app can handle the traffic during peak use or at your next marketing push.
 
@@ -22,7 +22,7 @@ During public preview, you can performance test your app for free in the Azure M
 These tests simulate user load on your app over a specific time period and measure your app's response. For example, your test results show how fast your app responds to a specific number 
 of users. They also show how many requests failed, which might indicate problems with your app.      
 
-![Find performance problems in your web site][TestOverview]
+![Find performance problems in your web app][TestOverview]
 
 ## Before you start
 
@@ -30,11 +30,11 @@ of users. They also show how many requests failed, which might indicate problems
 if you don't have one already. Learn how you can 
 [open an Azure account for free][AzureFreeTrial].
 
-*	You'll need a [Visual Studio Team Services (VSTS)][WhatIsVSTS] 
+*	You'll need a [Visual Studio Team Services (Team Services)][WhatIsTeamServices] 
 account to keep your performance test history. 
 Create your new account when you set up your performance test, 
 or use an existing account if you're the account owner. 
-[What else can I do with a Visual Studio Team Services account?](#VSTSAccount)
+[What else can I do with a Visual Studio Team Services account?](#TeamServicesAccount)
 
 *	Deploy your app for testing in a non-production environment. 
 Have your app use an App Service plan other than the plan used in production. 
@@ -46,20 +46,20 @@ That way, you don't affect any existing customers or slow down your app in produ
 To use a Visual Studio Team Services account that you own, 
 sign in as the account owner.
 
-0.	Go to your web site.
+0.	Go to your web app.
 
-	![Go to Browse All, web sites, your web site][WebApp]
+	![Go to Browse All, Web Apps, your web app][WebApp]
 
 0.	Go to **Performance Test**.
 
 	![Go to Tools, Performance Test][ExpandedTools]
  
-0.	Now you'll link a [Visual Studio Team Services (VSTS)][WhatIsVSTS] 
+0.	Now you'll link a [Visual Studio Team Services (Team Services)][WhatIsTeamServices] 
 account to keep your performance test history.
 
-	If you have a VSTS account to use, select that account. If you don't, create a new account.
+	If you have a Team Services account to use, select that account. If you don't, create a new account.
 
-	![Select existing VSTS account, or create a new account][ExistingNewVSTSAccount]
+	![Select existing Team Services account, or create a new account][ExistingNewTeamServicesAccount]
 
 0.	Create your performance test. Set the details and run the test. 
 You can watch the results in real time while the test runs.
@@ -76,7 +76,7 @@ You can watch the results in real time while the test runs.
 
 	![Create, set up, and run your performance test][NewTest]
 
-	 *	Your web site's default URL is added automatically. 
+	 *	Your web app's default URL is added automatically. 
 	 You can change the URL to test other pages (HTTP GET requests only).
 
 	 *	To simulate local conditions and reduce latency, 
@@ -114,7 +114,7 @@ you can purchase more time and pay only for what you use.
 
 A: You can check this amount in the Azure Management Portal.
 
-![Go to your VSTS account][VSTSAccount]
+![Go to your Team Services account][TeamServicesAccount]
 
 ![Check VUMs used][CheckTestTime]
 
@@ -123,22 +123,22 @@ A: You can check this amount in the Azure Management Portal.
 
 A: To find your new account, go to ```https://{accountname}.visualstudio.com```. 
 Share your code, build, test, track work, and ship software â all in the cloud 
-using any tool or language. Learn more about how [Visual Studio Team Services][WhatIsVSTS] 
+using any tool or language. Learn more about how [Visual Studio Team Services][WhatIsTeamServices] 
 features and services help your team collaborate more easily and deploy continuously.
 
 <!--Image references-->
 [WebApp]: ./media/app-service-web-app-performance-test/azure-np-web-apps.png
 [TestOverview]: ./media/app-service-web-app-performance-test/azure-np-perf-test-overview.png
 [ExpandedTools]: ./media/app-service-web-app-performance-test/azure-np-web-app-details-tools-expanded.png
-[ExistingNewVSTSAccount]: ./media/app-service-web-app-performance-test/azure-np-no-vso-account.png
+[ExistingNewTeamServicesAccount]: ./media/app-service-web-app-performance-test/azure-np-no-vso-account.png
 [NewTest]: ./media/app-service-web-app-performance-test/azure-np-new-performance-test.png
 [TestRunning]: ./media/app-service-web-app-performance-test/azure-np-running-perf-test.png
 [TestDone]: ./media/app-service-web-app-performance-test/azure-np-perf-test-done.png
-[VSTSAccount]: ./media/app-service-web-app-performance-test/azure-np-vso-accounts.png
+[TeamServicesAccount]: ./media/app-service-web-app-performance-test/azure-np-vso-accounts.png
 [CheckTestTime]: ./media/app-service-web-app-performance-test/azure-np-vso-accounts-vum-summary.png
 
 <!--Reference links -->
 [AzurePortal]: https://manage.windowsazure.cn
 [AzureSubscription]: https://account.windowsazure.cn/subscriptions
 [AzureFreeTrial]: /pricing/1rmb-trial/?WT.mc_id=A261C142F
-[WhatIsVSTS]: https://www.visualstudio.com/products/what-is-visual-studio-online-vs
+[WhatIsTeamServices]: https://www.visualstudio.com/products/what-is-visual-studio-online-vs

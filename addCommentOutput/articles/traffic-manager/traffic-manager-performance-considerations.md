@@ -16,7 +16,7 @@
 # Performance considerations for Traffic Manager
 
 
-Common question regarding Azure Traffic Manager deals with potential performance problems that it might cause.  The questions are typically along the lines of “How much latency will Traffic Manager add to my website?”, “My monitoring site says that my website was slow for a couple hours yesterday - were there any Traffic Manager issues at that time?”, “Where are the Traffic Manager servers? I want to make sure they are in the same datacenter as my website so that performance isn't impacted”.
+Common question regarding Azure Traffic Manager deals with potential performance problems that it might cause.  The questions are typically along the lines of "How much latency will Traffic Manager add to my website?", "My monitoring site says that my website was slow for a couple hours yesterday - were there any Traffic Manager issues at that time?", "Where are the Traffic Manager servers? I want to make sure they are in the same datacenter as my website so that performance isn't impacted".
 
 This page will talk about the direct performance impact that Traffic Manager can cause to a website.  If you have a website in China East and one in Asia and your China East is failing the Traffic Manager probes, then all of your users will be directed to your Asia website and you will see performance impacts, but this performance impact has nothing to do with Traffic Manager itself.
 
@@ -75,7 +75,7 @@ http://www.digwebinterface.com - Similar to the watchmouse site, but this one sh
 
 ## Conclusion
 
-Given the above information we know that the only performance impact that Traffic Manager will have on a website is the first DNS lookup (times vary, but average ~50 ms), and then 0 performance impact for the duration of the DNS TTL (300 seconds default), and then again a refresh the DNS cache after the TTL expires.  So the answer to the question “How much latency will Traffic Manager add to my website?" is, essentially, zero.
+Given the above information we know that the only performance impact that Traffic Manager will have on a website is the first DNS lookup (times vary, but average ~50 ms), and then 0 performance impact for the duration of the DNS TTL (300 seconds default), and then again a refresh the DNS cache after the TTL expires.  So the answer to the question "How much latency will Traffic Manager add to my website?" is, essentially, zero.
 
 
 ## Next Steps

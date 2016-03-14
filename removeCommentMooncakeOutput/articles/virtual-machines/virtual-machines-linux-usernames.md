@@ -8,9 +8,9 @@
 	editor=""
 	tags="azure-service-management,azure-resource-manager" />
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.date="12/17/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 

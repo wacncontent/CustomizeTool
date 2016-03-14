@@ -47,7 +47,7 @@ The following are required to complete the tutorial.
 
 - To complete this tutorial, you need an Azure account. 
 	
-	If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F). You get credits that can be used to try out paid Azure services. Even after the credits are used up, you can keep the account and use free Azure services and features, such as the web sites feature in Azure Websites.
+	If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F). You get credits that can be used to try out paid Azure services. Even after the credits are used up, you can keep the account and use free Azure services and features, such as the Web Apps feature in Azure Web App.
 - Operating Systems: Windows 8 or later, Windows 2008 R2, Windows 7.
 - .NET Framework 4.0 or later
 - Visual Studio 2010 SP1 (Professional, Premium, Ultimate, or Express) or later versions.
@@ -166,9 +166,20 @@ The **Main** function calls methods that will be defined further in this section
         private static readonly string _mediaServicesAccountKey =
             ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 
+<!-- keep by customization: begin -->
+        private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+		// Azure China uses a different API server and a different ACS Base Address from the Global.
+		private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+		private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+
+<!-- keep by customization: end -->
         // Field for service context.
         private static CloudMediaContext _context = null;
         private static MediaServicesCredentials _cachedCredentials = null;
+<!-- keep by customization: begin -->
+		private static Uri _apiServer = null;
+<!-- keep by customization: end -->
 
         static void Main(string[] args)
         {
@@ -177,9 +188,25 @@ The **Main** function calls methods that will be defined further in this section
                 // Create and cache the Media Services credentials in a static class variable.
                 _cachedCredentials = new MediaServicesCredentials(
                                 _mediaServicesAccountName,
+<!-- deleted by customization
                                 _mediaServicesAccountKey);
+-->
+<!-- keep by customization: begin -->
+                                _mediaServicesAccountKey,
+								_defaultScope,
+								_chinaAcsBaseAddressUrl);
+
+				// Create the API server Uri
+				_apiServer = new Uri(_chinaApiServerUrl);
+
+<!-- keep by customization: end -->
                 // Used the chached credentials to create CloudMediaContext.
+<!-- deleted by customization
                 _context = new CloudMediaContext(_cachedCredentials);
+-->
+<!-- keep by customization: begin -->
+                _context = new CloudMediaContext(_apiServer, _cachedCredentials);
+<!-- keep by customization: end -->
 
                 // Add calls to methods defined in this section.
 

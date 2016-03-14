@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Run Background tasks with WebJobs" 
-	description="Learn how to run background tasks in Azure web sites." 
+	description="Learn how to run background tasks in Azure web apps." 
 	services="app-service" 
 	documentationCenter="" 
 	authors="tdykstra" 
@@ -16,9 +16,9 @@
 
 ## Overview
 
-You can run programs or scripts in WebJobs in your [Azure Websites](/documentation/services/web-sites/) web site in three ways: on demand, continuously, or on a schedule. There is no additional cost to use WebJobs.
+You can run programs or scripts in WebJobs in your [Azure Web App](/documentation/services/web-sites/) web app in three ways: on demand, continuously, or on a schedule. There is no additional cost to use WebJobs.
 
-This article shows how to deploy WebJobs by using the [Azure Management Portal](https://manage.windowsazure.cn). For information about how to deploy by using Visual Studio or a continuous delivery process, see [How to Deploy Azure WebJobs to web sites](/documentation/articles/websites-dotnet-deploy-webjobs).
+This article shows how to deploy WebJobs by using the [Azure Management Portal](https://manage.windowsazure.cn). For information about how to deploy by using Visual Studio or a continuous delivery process, see [How to Deploy Azure WebJobs to Web Apps](/documentation/articles/websites-dotnet-deploy-webjobs).
 
 The Azure WebJobs SDK simplifies many WebJobs programming tasks. For more information, see [What is the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk).
 <!-- deleted by customization
@@ -52,7 +52,7 @@ The following file types are accepted:
 ## <a name="CreateOnDemand"></a>Create an on demand WebJob in the portal
 <!-- deleted by customization
 
-1. In the **Web Apps** blade of the [Azure Management Portal](http://manage.windowsazure.cn), click **All settings > WebJobs** to show the **WebJobs** blade.
+1. In the **Web App** blade of the [Azure Management Portal](http://manage.windowsazure.cn), click **All settings > WebJobs** to show the **WebJobs** blade.
 	
 	![WebJob blade](./media/web-sites-create-web-jobs/wjblade.png)
 	
@@ -77,7 +77,7 @@ The following file types are accepted:
 <!-- deleted by customization
 3. In the **File Upload** box, click the folder icon and browse to the zip file that contains your script. The zip file should contain your executable (.exe .cmd .bat .sh .php .py .js) as well as any supporting files needed to run the program or script.
 	
-5. Check **Create** to upload the script to your web site. 
+5. Check **Create** to upload the script to your web app. 
 	
 	The name you specified for the WebJob appears in the list on the **WebJobs** blade.
 	
@@ -91,13 +91,13 @@ The following file types are accepted:
 
 2. To start or stop a continuous WebJob, right-click the WebJob in the list and click **Start** or **Stop**.
 	
-> [AZURE.NOTE] If your web site runs on more than one instance, a continuously running WebJob will run on all of your instances. On-demand and scheduled WebJobs run on a single instance selected for load balancing by Windows Azure.
+> [AZURE.NOTE] If your web app runs on more than one instance, a continuously running WebJob will run on all of your instances. On-demand and scheduled WebJobs run on a single instance selected for load balancing by Windows Azure.
 	
-> For Continuous WebJobs to run reliably and on all instances, enable the Always On* configuration setting for the web site otherwise they can stop running when the SCM host site has been idle for too long.
+> For Continuous WebJobs to run reliably and on all instances, enable the Always On* configuration setting for the web app otherwise they can stop running when the SCM host site has been idle for too long.
 
 ## <a name="CreateScheduledCRON"></a>Create a scheduled WebJob using a CRON expression
 
-This technique is available to web sites running in Standard or Premium mode, and requires the **Always On** setting to be enabled on the app.
+This technique is available to Web Apps running in Standard or Premium mode, and requires the **Always On** setting to be enabled on the app.
 
 To turn an On Demand WebJob into a scheduled WebJob, simply include a `settings.job` file at the root of your WebJob zip file. This JSON file should include a `schedule` property with a [CRON expression](https://en.wikipedia.org/wiki/Cron), per example below.
 
@@ -241,14 +241,14 @@ Scheduled jobs can be further configured in the Azure Scheduler pages of the [Ma
 
 ## <a name="WHPNotes"></a>Notes
 	
-- web sites in Free mode can time out after 20 minutes if there are no requests to the scm (deployment) site and the web site's portal is not open in Azure. Requests to the actual site will not reset this.
+- Web apps in Free mode can time out after 20 minutes if there are no requests to the scm (deployment) site and the web app's portal is not open in Azure. Requests to the actual site will not reset this.
 - Code for a continuous job needs to be written to run in an endless loop.
-- Continuous jobs run continuously only when the web site is up.
-- Basic and Standard modes offer the Always On feature which, when enabled, prevents web sites from becoming idle.
+- Continuous jobs run continuously only when the web app is up.
+- Basic and Standard modes offer the Always On feature which, when enabled, prevents web apps from becoming idle.
 - You can only debug continuously running WebJobs. Debugging scheduled or on-demand WebJobs is not supported.
 
 <!-- deleted by customization
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 -->
 
 ## <a name="NextSteps"></a>Next Steps
@@ -257,7 +257,7 @@ For more information, see [Azure WebJobs Recommended Resources][WebJobsRecommend
 <!-- deleted by customization
 
 ## What's changed
-* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 -->
 

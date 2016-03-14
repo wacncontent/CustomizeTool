@@ -12,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/03/2015"
+	ms.date="01/04/2016"
 	wacn.date=""/>
 
 #Use the Hive View with Hadoop in HDInsight
@@ -121,7 +121,7 @@ This is the __Visual Explain__ view of the query, which can be helpful in unders
 
 ###Tez
 
-Select the __Visual Explain__ icon to the right of the editor.
+Select the __Tez__ icon to the right of the editor.
 
 ![icons](./media/hdinsight-hadoop-use-hive-ambari-view/tez.png)
 
@@ -129,7 +129,7 @@ This will display the Directed Acyclic Graph (DAG) used by Tez for this query, i
 
 ###Notifications
 
-Select the __Visual Explain__ icon to the right of the editor.
+Select the __Notifications__ icon to the right of the editor.
 
 ![icons](./media/hdinsight-hadoop-use-hive-ambari-view/notifications.png)
 

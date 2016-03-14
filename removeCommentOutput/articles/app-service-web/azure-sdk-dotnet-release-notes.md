@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="11/18/2015"
+	ms.date="01/19/2016"
 	wacn.date=""/>
 
 
@@ -61,7 +61,7 @@ This topic contains links to Azure SDK for .NET Release Notes.
 
 ##Related topics
 
-[Azure SDK for .NET](/downloads/)
+[Azure SDK for .NET](/downloads/archive-net-downloads/)
 
 [Azure SDK Release Notes on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn627519.aspx)
  

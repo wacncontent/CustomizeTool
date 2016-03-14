@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/01/2016"
 	wacn.date=""/>
 
 # Correlate events over time with Storm and HBase on HDInsight
@@ -93,7 +93,7 @@ In HBase, the data is stored in a table with the following schema/settings:
 
 ## Download the project
 
-The sample project can be downloaded from [hdinsight-storm-eventcorrelation](https://github.com/Blackmist/hdinsight-storm-eventcorrelation).
+The sample project can be downloaded from [https://github.com/Azure-Samples/hdinsight-storm-dotnet-event-correlation](https://github.com/Azure-Samples/hdinsight-storm-dotnet-event-correlation).
 
 This download contains the following C# projects:
 

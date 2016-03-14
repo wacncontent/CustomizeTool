@@ -90,7 +90,7 @@ You can also uninstall the extension using the **Remove-AzureVMSqlServerExtensio
 
 ## Compatibility
 
-The following products are compatible with the SQL Server IaaS Agent features for Automated Backup:
+The following products <!-- deleted by customization are compatible with the --><!-- keep by customization: begin --> areÂ compatible withÂ the <!-- keep by customization: end --> SQL Server IaaS Agent features for Automated Backup:
 
 - Windows Server 2012
 

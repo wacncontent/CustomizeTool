@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="11/03/2015"
+	ms.date="01/21/2016"
 	wacn.date=""/>
 
 
@@ -37,4 +37,6 @@ Virtual machines can be managed in Azure Automation by using [Azure PowerShell](
 
 Now that you've learned the basics of Azure Automation and how it can be used to manage Azure virtual machines, learn more:
 
-[Get started with Azure Automation](/documentation/articles/automation-create-runbook-from-samples)
+- [Azure Automation Overview](/documentation/articles/automation-intro)
+- [My first runbook](/documentation/articles/automation-first-runbook-graphical)
+- [Azure Automation learning map](https://azure.microsoft.com/documentation/learning-paths/automation/)

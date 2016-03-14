@@ -1,7 +1,7 @@
 
 This article shows you how to configure HTTPS for a web app in Azure. It does not cover client certificate authentication; for information about that, see [How To Configure TLS Mutual Authentication for Web Apps](/documentation/articles/app-service-web-configure-tls-mutual-auth).
 
-By default, Azure already enables HTTP for your app with a wildcard certificate for  the \*.chinacloudsites.cn domain. If you don't plan to configure a custom domain, then you can benefit from the default HTTPS certificate. However, like [all wildcard domains](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/), it is not as secure as using a custom domain with your own certificate.   
+By default, Azure already enables HTTPS for your app with a wildcard certificate for  the \*.chinacloudsites.cn domain. If you don't plan to configure a custom domain, then you can benefit from the default HTTPS certificate. However, like [all wildcard domains](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/), it is not as secure as using a custom domain with your own certificate.   
 
 The rest of this document provides details on enabling HTTPS for custom domains, such as **contoso.com**, **www.contoso.com**, or **\*.contoso.com**
 
@@ -11,18 +11,18 @@ The rest of this document provides details on enabling HTTPS for custom domains,
 To enable HTTPS for a custom domain, such as **contoso.com**, you must first [configure a custom domain name in Azure Web App](/documentation/articles/web-sites-custom-domain-name). Then, you do the following:
 
 1. [Get an SSL certificate](#bkmk_getcert)
-2. [Configure Standard pricing tier](#bkmk_standardmode)
+2. [Configure Standard or Premium pricing tier](#bkmk_standardmode)
 2. [Configure SSL in your app](#bkmk_configuressl)
 3. [Enforce SSL on your app](#bkmk_enforce) (Optional)
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**.
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](https://azure.microsoft.com/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](https://azure.microsoft.com/support/contact/) and click on **Get Support**.
 
 <a name="bkmk_getcert"></a>
 ## 1. Get an SSL certificate
 
 Before requesting an SSL certificate you must first determine which domain names will be secured by the certificate. This will determine what type of certificate you must obtain. If you just need to secure a single domain name such as **contoso.com** or **www.contoso.com** a basic certificate is sufficient. If you need to secure multiple domain names, such as **contoso.com**, **www.contoso.com**, and **mail.contoso.com**, then you can get a [wildcard certificate](http://en.wikipedia.org/wiki/Wildcard_certificate), or a certificate with [Subject Alternate Name](http://en.wikipedia.org/wiki/SubjectAltName) (subjectAltName).
 
-SSL certificates used with Azure must be signed by a [Certificate Authority](http://en.wikipedia.org/wiki/Certificate_authority) (CA). If you do not already have one, you will need to obtain one from a company that issues SSL certificates. For a list of Certificate Authorities, see [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] on the Microsoft TechNet Wiki.
+SSL certificates used with Azure must be signed by a [Certificate Authority](http://zh.wikipedia.org/wiki/证书颁发机构) (CA). If you do not already have one, you will need to obtain one from a company that issues SSL certificates. For a list of Certificate Authorities, see [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] on the Microsoft TechNet Wiki.
 
 The certificate must meet the following requirements for SSL certificates in Azure:
 
@@ -386,21 +386,25 @@ You can create a test certificate from a Windows system that has Visual Studio i
 	The **myserver.pfx** produced by this command can be used to secure your app for testing purposes.
 
 <a name="bkmk_standardmode"></a>
-## 2. Configure Standard pricing tier
+## 2. Configure Standard or Premium pricing tier
 
-Enabling HTTPS for a custom domain is only available for the **Standard** tier in Azure Web App. Use the following steps to switch your App Service plan to **Standard** tier.
+Enabling HTTPS for a custom domain is only available for the **Standard** and **Premium** pricing tiers in Azure Web App. Use the following steps to switch your App Service plan to **Standard** tier.
 
 > [AZURE.NOTE] Before switching an app from the **Free** tier to **Standard** tier, you should remove spending caps in place for your subscription, otherwise you risk your app becoming unavailable if you reach your caps before the billing period ends. For more information on shared and **Standard** tier, see [Pricing Details][pricing].
 
-1.	In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn/).
-2.	Click the **Browse** option on the left side of the page.
-3.	Click the **Web Apps** blade.
+1.	In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
+	
+2.	Click the **App Services** option on the left side of the page.
+
 4.	Click the name of your app.
+
 5.	In the **Essentials** page, click **Settings**.
-6.	Click **Scale**
+
+6.	Click **Scale Up**
+	
 	![The scale tab][scale]
-7.	In the **Scale** section, set the App Service plan mode by clicking **Select**.
-	![The Pricing tier][sslreserved]
+
+7.	In the **Scale Up** section, set the App Service plan mode by clicking **Select**.
 
 	> [AZURE.NOTE] If you receive a "Configuring scale for web app '&lt;app name&gt;' failed" error you can use the details button to get more information. You may receive a "Not enough available standard instance servers to satisfy this request." error. If you receive this error, please contact [Azure support](/support/contact/).
 
@@ -410,15 +414,23 @@ Enabling HTTPS for a custom domain is only available for the **Standard** tier i
 Before performing the steps in this section, you must have associated a custom domain name with your app. For more information, see [Configuring a custom domain name for a web app][customdomain].
 
 1.	In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
-2.	Click the **Browse** option on the left side of the page.
-3.	Click the **Web Apps** blade.
+
+2.	Click the **App Services** option on the left side of the page.
+
 4.	Click the name of your app.
+
 5.	In the **Essentials** page, click **Settings**.
+
 6.	Click **Custom domains and SSL**.
-	![The config tab][sslconfig]
+
+	![The config tab][configure]
+
 7.	In the **certificates** section, click **Upload**
+
 8.	Using the **Upload a certificate** dialog, select the .pfx certificate file created earlier using the IIS Manager or OpenSSL. Specify the password, if any, that was used to secure the .pfx file. Finally, click the **Save** to upload the certificate.
-	![ssl upload][ssluploadcert]
+
+	![ssl upload][uploadcert]
+
 9. In the **ssl bindings** section of the **SSL Settings** tab, use the dropdowns to select the domain name to secure with SSL, and the certificate to use. You may also select whether to use [Server Name Indication][sni] (SNI) or IP based SSL.
 
 	![ssl bindings][sslbindings]
@@ -532,7 +544,7 @@ For more information on the IIS URL Rewrite module, see the [URL Rewrite](http:/
 [exportcertiis]: http://technet.microsoft.com/zh-cn/library/cc731386(WS.10).aspx
 [openssl]: http://www.openssl.org/
 [portal]: https://manage.windowsazure.cn/
-[tls]: http://en.wikipedia.org/wiki/Transport_Layer_Security
+[tls]: http://zh.wikipedia.org/wiki/Transport_Layer_Security
 [staticip]: ./media/configure-ssl-web-site/staticip.png
 [website]: ./media/configure-ssl-web-site/sslwebsite.png
 [scale]: ./media/configure-ssl-web-site/sslscale.png

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/07/2015"
+	ms.date="01/26/2016"
 	wacn.date=""/>
 
 # Restore a web site in Azure Websites
@@ -116,7 +116,7 @@ The Azure Websites Restore feature, available on the **Backups** blade in the [A
 	![Operation Details][OperationDetails]
 
 <!-- IMAGES -->
-[RestoredContoso Website]: ./media/web-sites-restore/09RestoredContosoWebsite.png
+[RestoredContoso Website]: ./media/web-sites-restore/09RestoredContosoWebSite.png
 [ChooseRestoreNow]: ./media/web-sites-restore/02ChooseRestoreNow.png
 [ViewContainers]: ./media/web-sites-restore/03ViewContainers.png
 [StorageAccountFile]: ./media/web-sites-restore/02StorageAccountFile.png

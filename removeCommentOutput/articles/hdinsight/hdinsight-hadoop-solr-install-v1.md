@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/02/2015"
+	ms.date="02/12/2016"
 	wacn.date=""/>
 
 # Install and use Solr on HDInsight Hadoop clusters
@@ -19,7 +19,7 @@ Learn how to customize Windows based HDInsight cluster with Solr using Script Ac
  
 You can install Solr on any type of cluster (Hadoop, Storm, HBase, Spark) on Azure HDInsight by using *Script Action*. A sample script to install Solr on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1). 
 
-The sample script works only with HDInsight cluster version 3.1. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning).
+The sample script works only with HDInsight cluster version 3.1. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning-v1).
 
 The sample script used in this topic creates a Windows-based Solr cluster with a specific configuration. If you want to configure the Solr cluster with different collections, shards, schemas, replicas, etc., you must modify the script and Solr binaries accordingly.
 
@@ -185,7 +185,7 @@ See [Customize HDInsight clusters using Script Action](/documentation/articles/h
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions)
 - [Install and use Spark on HDInsight clusters][hdinsight-install-spark]: Script Action sample about installing Spark
 - [Install R on HDInsight clusters][hdinsight-install-r]: Script Action sample about installing R
-- [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install): Script Action sample about installing Giraph
+- [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1): Script Action sample about installing Giraph
 
 [powershell-install-configure]: ../install-configure-powershell.md
 [hdinsight-provision]: hdinsight-provision-clusters-v1.md

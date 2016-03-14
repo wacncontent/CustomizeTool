@@ -1,6 +1,6 @@
 | Compute Options    | Audience   |
 | ------------------ | --------   |
-| [Azure Websites]      | Scalable web sites, Mobile Apps, API Apps, and Logic Apps for any device |
+| [Azure Web App]      | Scalable Web Apps, Mobile Apps, API Apps, and Logic Apps for any device |
 | [Cloud Services]   | Highly available, scalable n-tier cloud apps with more control of the OS |
 | [Virtual Machines] | Customized Windows and Linux VMs with complete control of the OS |
 

@@ -31,7 +31,7 @@ Custom Script extension for Windows allows you to run PowerShell scripts on a re
 ### Prerequistes for running Custom Script Extension
 
 1. Install Azure PowerShell cmdlets version 0.8.0 or later from <a href="http://azure.microsoft.com/downloads" target="_blank">here</a>.
-2. If the scripts are run on an existing VM, make sure VM Agent is enabled on the VM, if not follow this <a href="https://msdn.microsoft.com/zh-cn/library/azure/dn832621.aspx" target="_blank">article</a> to install one.
+2. If the scripts are run on an existing VM, make sure VM Agent is enabled on the VM, if not follow this <a href="https://msdn.microsoft.com/zh-cn/library/azure/dn832621.aspx" target="_blank">article</a> to install one. (If you are provisioning the VM from Azure gallery then VM agents are enabled by default , you don't have to enable them)
 3. Upload the scripts that you want to run on the VM to Azure Storage. The scripts can come from a single container or multiple storage containers.
 4. The script should be authored in such a way that the entry script, which is started by the extension, starts other scripts.
 
@@ -39,7 +39,7 @@ Custom Script extension for Windows allows you to run PowerShell scripts on a re
 
 ### Upload files to the default container
 
-If you have your scripts in the storage container of the default account of your subscription, then the following example shows how you can run them on the VM. The ContainerName is where you upload the scripts to. The default storage account can be verified by using the **Get-AzureSubscription âDefault** command.
+If you have your scripts in the storage container of the default account of your subscription, then the following example shows how you can run them on the VM. The ContainerName is where you upload the scripts to. The default storage account can be verified by using the **Get-AzureSubscription -Default** command.
 
 The following example creates a new VM, but the same scenario can be run on an existing VM as well.
 
@@ -58,7 +58,7 @@ The following example creates a new VM, but the same scenario can be run on an e
 
 ### Upload files to a non-default storage container
 
-This scenario shows how to use a non-default storage either within the same subscription or in a different subscription for uploading scripts and files. Here weâll use an existing VM but the same operations can be done while creating a new VM.
+This scenario shows how to use a non-default storage either within the same subscription or in a different subscription for uploading scripts and files. Here we'll use an existing VM but the same operations can be done while creating a new VM.
 
         Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileName 'file1.ps1','file2.ps1' -Run 'file.ps1' | Update-AzureVM
 

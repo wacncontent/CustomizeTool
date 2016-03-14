@@ -139,7 +139,7 @@ We will use Linux VM with CentOS or Oracle Linux here.
 
     (b) Check whether the default port of  MySQL server is running:
 
-           #[root@mysqlnode ~]#netstat  âtunlp|grep 3306
+           #[root@mysqlnode ~]#netstat  -tunlp|grep 3306
 
 
     (c) Start the MySQL server:
@@ -178,7 +178,7 @@ We will use Linux VM with OpenSUSE here.
 
     (b) Check whether the default port of the MySQL server:
 
-           #[root@mysqlnode ~]# netstat  âtunlp|grep 3306
+           #[root@mysqlnode ~]# netstat  -tunlp|grep 3306
 
 
     (c) Start the MySQL server:

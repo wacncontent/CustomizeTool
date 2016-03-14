@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="01/09/2016"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 # Create a Node.js web app in Azure

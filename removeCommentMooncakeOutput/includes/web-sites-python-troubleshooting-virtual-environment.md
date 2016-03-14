@@ -6,7 +6,7 @@ There are a few options to manage the existing virtual environment on Azure:
 
 ### Option 1: Use FTP
 
-With an FTP client, connect to the server and you'll be able to delete the env folder.  Note that some FTP clients (such as web browsers) may be read-only and won't allow you to delete folders, so you'll want to make sure to use an FTP client with that capability.  The FTP host name and user are displayed in the dashboard page for your web site on the Azure Management Portal.
+With an FTP client, connect to the server and you'll be able to delete the env folder.  Note that some FTP clients (such as web browsers) may be read-only and won't allow you to delete folders, so you'll want to make sure to use an FTP client with that capability.  The FTP host name and user are displayed in the dashboard page for your web app's blade on the [Azure Management Portal](https://manage.windowsazure.cn).
 
 ### Option 2: Toggle runtime
 

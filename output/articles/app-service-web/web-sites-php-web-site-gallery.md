@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/13/2015"
+	ms.date="02/08/2016"
 	wacn.date=""/>
 
 # Create a WordPress web app in Azure
 
-This tutorial shows how to find an application in the Azure gallery and install it in an Azure web app. The tutorial uses a WordPress blog site as an example, but the process is similar for many other Marketplace applications.
+This tutorial shows how to deploy a WordPress blog site from the Azure gallery.
 
 When you're done with the tutorial you'll have your own WordPress blog site up and running in the cloud.
 
@@ -24,9 +24,11 @@ You'll learn:
 
 * How to find an application template in the Azure gallery.
 * How to create a web app in Azure that is based on the template.
-* How to configure Azure settings for the new web app and MySQL database.
+* How to configure Azure settings for the new web app and database.
 
 The Azure gallery makes available a wide range of popular web apps developed by Microsoft, third party companies, and open source software initiatives. The web apps are built on a wide range of popular frameworks, such as [PHP](/develop/nodejs/) in this WordPress example, [.NET](/develop/net/), [Node.js](/develop/nodejs/), [Java](/develop/java/), and [Python](/develop/python/), to name a few. To create a web app from the Azure gallery the only software you need is the browser that you use for the [Azure Management Portal](https://manage.windowsazure.cn/). 
+
+The WordPress site that you deploy in this tutorial uses MySQL for the database. If you wish to instead use SQL Database for the database, see [Project Nami](http://projectnami.org/). **Project Nami** is also available through the Marketplace.
 
 > [AZURE.NOTE]
 > To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [activate your Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
@@ -41,7 +43,7 @@ The Azure gallery makes available a wide range of popular web apps developed by 
 	
     ![Create New][5]
 	
-3. Search for **WordPress**, and then click **WordPress**.
+3. Search for **WordPress**, and then click **WordPress**. If you wish to use SQL Database instead of MySQL, search for **Project Nami**.
 
 	![WordPress from list][7]
 	

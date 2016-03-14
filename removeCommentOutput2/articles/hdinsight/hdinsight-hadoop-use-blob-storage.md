@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/23/2015"
+	ms.date="01/29/2016"
 	wacn.date=""/>
 
 
@@ -271,6 +271,7 @@ The following script shows how to list files inside a folder. (The next example 
 ###Run Hive queries using an undefined storage account
 
 This example shows how to list a folder from storage account that is not defined during the creating process.
+
 	$clusterName = "<HDInsightClusterName>"
 
 	$undefinedStorageAccount = "<UnboundedStorageAccountUnderTheSameSubscription>"
@@ -295,6 +296,7 @@ For more information, see:
 * [Upload data to HDInsight][hdinsight-upload-data]
 * [Use Hive with HDInsight][hdinsight-use-hive]
 * [Use Pig with HDInsight][hdinsight-use-pig]
+* [Use Azure Storage Shared Access Signatures to restrict access to data with HDInsight][hdinsight-use-sas]
 
 [powershell-install]: /documentation/articles/powershell-install-configure
 [hdinsight-creation]: /documentation/articles/hdinsight-provision-clusters-v1

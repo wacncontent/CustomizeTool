@@ -1,18 +1,21 @@
 <properties
-	pageTitle="Manage the availability of virtual machines | Windows Azure"
+	pageTitle="Manage the availability of VMs | Windows Azure"
 	description="Learn how to use multiple virtual machines to ensure high availability for your Azure application."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="kenazk"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-resource-manager,azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
 	ms.date="07/23/2015"
 	wacn.date=""/>
 
-#Manage the availability of virtual machines
+# Manage the availability of virtual machines
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 ## Understand planned vs. unplanned maintenance
 There are two types of Windows Azure platform events that can affect the availability of your virtual machines: planned maintenance and unplanned maintenance.
@@ -30,7 +33,7 @@ To reduce the impact of downtime due to one or more of these events, we recommen
 * [Avoid single instance virtual machines in Availability Sets]
 
 ### Configure multiple virtual machines in an Availability Set for redundancy
-To provide redundancy to your application, we recommend that you group two or more virtual machines in an Availability Set. This configuration ensures that during either a planned or unplanned maintenance event, at least one virtual machine will be available and meet the 99.95% Azure SLA. For more information about service level agreements, see the âCloud Services, virtual machines, and Virtual Networkâ section in [Service Level Agreements](/support/legal/sla/).
+To provide redundancy to your application, we recommend that you group two or more virtual machines in an Availability Set. This configuration ensures that during either a planned or unplanned maintenance event, at least one virtual machine will be available and meet the 99.95% Azure SLA. For more information about service level agreements, see the "Cloud Services, virtual machines, and Virtual Network" section in [Service Level Agreements](/support/legal/sla/).
 
 Each virtual machine in your Availability Set is assigned an Update Domain (UD) and a Fault Domain (FD) by the underlying Azure platform. For a given Availability Set, five non-user-configurable UDs are assigned to indicate groups of virtual machines and underlying physical hardware that can be rebooted at the same time. When more than five virtual machines are configured within a single Availability Set, the sixth virtual machine will be placed into the same UD as the first virtual machine, the seventh in the same UD as the second virtual machine, and so on. The order of UDs being rebooted may not proceed sequentially during planned maintenance, but only one UD will be rebooted at a time.
 
@@ -63,4 +66,4 @@ Avoid leaving a single instance virtual machine in an Availability Set by itself
 [Configure each application tier into separate Availability Sets]: #configure-each-application-tier-into-separate-availability-sets
 [Combine the Load Balancer with Availability Sets]: #combine-the-load-balancer-with-availability-sets
 [Avoid single instance virtual machines in Availability Sets]: #avoid-single-instance-virtual-machines-in-availability-sets
-[How to Configure An Availability Set for virtual machines]: /documentation/articles/virtual-machines-how-to-configure-availability
+[How to Configure An Availability Set for virtual machines]: /documentation/articles/virtual-machines-how-to-configure-availability 

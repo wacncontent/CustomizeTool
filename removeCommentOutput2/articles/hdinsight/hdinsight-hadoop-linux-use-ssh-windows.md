@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Use SSH keys with Hadoop on Linux-based clusters from Windows | Windows Azure"
    description="Learn how to create and use SSH keys to authenticate to Linux-based HDInsight clusters. Connect clusters from Windows-based clients by using the PuTTY SSH client."
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/16/2015"
+	ms.date="01/22/2016"
 	wacn.date=""/>
 
 #Use SSH with Linux-based Hadoop on HDInsight from Windows

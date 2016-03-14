@@ -8,9 +8,9 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.date="12/17/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.date="12/17/2015"
 	wacn.date=""/>
 
 # Deploy a high-availability line of business application in Azure
@@ -46,8 +46,8 @@ Item | Virtual machine description | Gallery image | Default size
 --- | --- | --- | --- 
 1. | First domain controller | Windows Server 2012 R2 Datacenter | D1
 2. | Second domain controller | Windows Server 2012 R2 Datacenter | D1
-3. | Primary database server | Microsoft SQL Server 2014 Enterprise ¨C Windows Server 2012 R2 | D4
-4. | Secondary database server | Microsoft SQL Server 2014 Enterprise ¨C Windows Server 2012 R2 | D4
+3. | Primary database server | Microsoft SQL Server 2014 Enterprise - Windows Server 2012 R2 | D4
+4. | Secondary database server | Microsoft SQL Server 2014 Enterprise - Windows Server 2012 R2 | D4
 5. | Majority node for the cluster | Windows Server 2012 R2 Datacenter | D1
 6. | First web server | Windows Server 2012 R2 Datacenter | D3
 7. | Second web server | Windows Server 2012 R2 Datacenter | D3

@@ -14,6 +14,10 @@
 
 # Connect to a SQL Server Virtual Machine on Azure (Classic Deployment)
 
+> [AZURE.SELECTOR]
+- [Resource Manager](/documentation/articles/virtual-machines-sql-server-connectivity-resource-manager)
+- [Classic](/documentation/articles/virtual-machines-sql-server-connectivity)
+
 ## Overview
 
 Configuring connectivity to SQL Server running on an Azure Virtual Machine does not differ dramatically from the steps required for an on-premises SQL Server instance. You still have to work with configuration steps involving the firewall, authentication, and database logins.

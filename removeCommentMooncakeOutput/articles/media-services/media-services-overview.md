@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 #Azure Media Services Overview and Common Scenarios
@@ -25,16 +25,11 @@ You can choose to stream your content live or deliver content on demand. This to
 To build Media Services solutions, you can use:
 
 - [Media Services REST API](https://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx)
-- One of the available client SDKs: [Azure Media Services SDK for .NET](https://github.com/Azure/azure-sdk-for-media-services), [Azure SDK for Java](https://github.com/Azure/azure-sdk-for-java), [Azure Media Services for Node.js](https://github.com/fritzy/node-azure-media), [Azure PHP SDK](https://github.com/Azure/azure-sdk-for-php)
+- One of the available client SDKs: 
+	- [Azure Media Services SDK for .NET](https://github.com/Azure/azure-sdk-for-media-services), 
+	- [Azure SDK for Java](https://github.com/Azure/azure-sdk-for-java), [Azure PHP SDK](https://github.com/Azure/azure-sdk-for-php), 
+	- [Azure Media Services for Node.js](https://github.com/michelle-becker/node-ams-sdk/blob/master/lib/request.js) (This is a non-Microsoft version of a Node.js SDK. It is maintained by a community and currently does not have a 100% coverage of the AMS APIs). 
 - Existing tools: [Azure Management Portal](http://manage.windowsazure.cn/) or [Azure-Media-Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer).
-
-
-##Media Services learning paths
-
-You can view AMS learning paths here:
-
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
 ##Prerequisites
 

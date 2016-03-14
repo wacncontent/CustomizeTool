@@ -61,7 +61,7 @@ The workflow contains two actions:
 
 Before you begin this tutorial, you must have the following:
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure <!-- deleted by customization PowerShell](/documentation/articles/install-configure-powershell) --><!-- keep by customization: begin --> PowerShell](/documentation/articles/powershell-install-configure) <!-- keep by customization: end -->. To execute Windows PowerShell scripts, you must run Azure PowerShell as an administrator and set the execution policy to *RemoteSigned*. For more information, see [Run Windows PowerShell scripts][powershell-script].
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure). To execute Windows PowerShell scripts, you must run Azure PowerShell as an administrator and set the execution policy to *RemoteSigned*. For more information, see [Run Windows PowerShell scripts][powershell-script].
 - **An HDInsight cluster**. For information about creating an HDInsight cluster, see [Provision HDInsight clusters][hdinsight-provision], or [Get started with HDInsight][hdinsight-get-started]. You will need the following data to go through the tutorial:
 
 	<table border = "1">
@@ -702,7 +702,7 @@ In this tutorial, you learned how to define an Oozie workflow and an Oozie coord
 
 
 <!-- deleted by customization
-[hdinsight-versions]:  hdinsight-component-versioning.md
+[hdinsight-versions]:  hdinsight-component-versioning-v1.md
 [hdinsight-storage]: ../hdinsight-use-blob-storage.md
 [hdinsight-get-started]: ../hdinsight-get-started.md
 [hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1
@@ -724,7 +724,7 @@ In this tutorial, you learned how to define an Oozie workflow and an Oozie coord
 [sqldatabase-get-started]: ../sql-database-get-started.md
 -->
 <!-- keep by customization: begin -->
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1

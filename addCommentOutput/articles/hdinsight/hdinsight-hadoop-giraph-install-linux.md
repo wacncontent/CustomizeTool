@@ -19,7 +19,7 @@ You can install Giraph on any type of cluster in Hadoop on Azure HDInsight by us
 
 In this topic, you will learn how to install Giraph by using Script Action. Once you have installed Giraph, you'll also learn how to use Giraph for most typical applications, which is to process large-scale graphs.
 
-> [AZURE.NOTE] The information in this article is specific to Linux-based HDInsight clusters. For information on working with Windows-based clusters, see [Install Giraph on HDInsight Hadoop clusters (Windows)](/documentation/articles/hdinsight-hadoop-giraph-install)
+> [AZURE.NOTE] The information in this article is specific to Linux-based HDInsight clusters. For information on working with Windows-based clusters, see [Install Giraph on HDInsight Hadoop clusters (Windows)](/documentation/articles/hdinsight-hadoop-giraph-install-v1)
 
 ## <a name="whatis"></a>What is Giraph?
 
@@ -87,7 +87,7 @@ Once the cluster has finished creating, use the following steps to run the Simpl
 
 	Drawn out, and using the value (or weight) as the distance between objects, the above data might look like this:
 
-	![tiny_graph.txt drawn as circles with lines of varying distance between](./media/hdinsight-hadoop-giraph-install-linux/giraph-graph.png)
+	![tiny_graph.txt drawn as circles with lines of varying distance between](./media/hdinsight-hadoop-giraph-install-v1-linux/giraph-graph.png)
 
 2. To save the file, use __Ctrl+X__, then __Y__, and finally __Enter__ to accept the file name.
 
@@ -135,7 +135,7 @@ Once the cluster has finished creating, use the following steps to run the Simpl
 
 	Visualizing this, you can verify the results by traveling the shortest paths between ID 1 and all other objects. Note that the shortest path between ID 1 and ID 4 is 5. This is the total distance between <span style="color:orange">ID 1 and 3</span>, and then <span style="color:red">ID 3 and 4</span>.
 
-	![Drawing of objects as circles with shortest paths drawn between](./media/hdinsight-hadoop-giraph-install-linux/giraph-graph-out.png)
+	![Drawing of objects as circles with shortest paths drawn between](./media/hdinsight-hadoop-giraph-install-v1-linux/giraph-graph-out.png)
 
 
 ## Next steps

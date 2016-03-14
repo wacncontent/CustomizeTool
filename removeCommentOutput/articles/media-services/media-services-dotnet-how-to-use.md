@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/05/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Media Services development with .NET
@@ -31,7 +31,7 @@ The **Azure Media Services .NET SDK** library enables you to program against Med
 
 ##Create and configure a Visual Studio project
 
-This section shows you how to create a project in Visual Studio and set it up for Media Services development.  In this case the project is a C# Windows console application, but the same setup steps shown here apply to other types of projects you can create for Media Services applications (for example, a Windows Forms application or an ASP.NET web site).
+This section shows you how to create a project in Visual Studio and set it up for Media Services development.  In this case the project is a C# Windows console application, but the same setup steps shown here apply to other types of projects you can create for Media Services applications (for example, a Windows Forms application or an ASP.NET Web application).
 
 This section shows how to use **NuGet** to add Media Services .NET SDK and other dependent libraries.
 

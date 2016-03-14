@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Create an FQDN for a VM in the Azure Management Portal | Windows Azure"
+   pageTitle="Create FQDN for a VM in Azure Management Portal | Windows Azure"
    description="Learn how to create a Fully Qualified Domain Name or FQDN for a Resource Manager based virtual machine in the Azure Management Portal."
    services="virtual-machines"
    documentationCenter=""
@@ -9,11 +11,11 @@
    tags="azure-resource-manager"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.date="08/21/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="08/21/2015"
+	wacn.date=""/>
 
-# Create a Fully Qualified Domain Name in the Azure Preview Portal
+# Create a Fully Qualified Domain Name in the Azure Management Portal
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 

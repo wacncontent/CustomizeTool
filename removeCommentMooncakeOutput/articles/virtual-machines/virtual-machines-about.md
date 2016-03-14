@@ -44,6 +44,6 @@ If you're just starting to learn about Azure virtual machines, be sure to also c
 
 
 <!--links-->
-[Azure Websites]: app-service-choose-me.md
+[Azure Web App]: app-service-choose-me.md
 [Virtual Machines]: #tellmevm
 [Cloud Services]: cloud-services-choose-me.md

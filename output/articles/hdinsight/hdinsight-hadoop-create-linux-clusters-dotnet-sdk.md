@@ -157,7 +157,7 @@ The HDInsight .NET SDK provides .NET client libraries that make it easier to wor
 
 ## Use bootstrap
 
-For more information, see [Customize HDInsight clusters using Bootstrap](/documentation/articles/hdinsight-hadoop-customize-cluster-v1-bootstrap).
+For more information, see [Customize HDInsight clusters using Bootstrap](/documentation/articles/hdinsight-hadoop-customize-cluster-bootstrap).
 
 Modify the sample in [Create clusters](#create-clusters) to configure a Hive setting:
 

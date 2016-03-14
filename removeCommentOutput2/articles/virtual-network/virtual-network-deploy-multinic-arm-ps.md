@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
    pageTitle="Deploy multi NIC VMs using PowerShell in Resource Manager | Windows Azure"
    description="Learn how to deploy multi NIC VMs using PowerShell in Resource Manager"
@@ -10,7 +12,7 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="11/20/2015"
+	ms.date="02/02/2016"
 	wacn.date=""/>
 
 #Deploy multi NIC VMs using PowerShell
@@ -47,7 +49,7 @@ The backend VMs depend on the creation of the resources listed below.
 
 ### Step 1 - Start your script
 
-You can download the full PowerShell script used [here](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/arm/virtual-network-deploy-multinic-arm-cli.ps1). Follow the steps below to change the script to work in your environment.
+You can download the full PowerShell script used [here](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/arm/virtual-network-deploy-multinic-arm-ps.ps1). Follow the steps below to change the script to work in your environment.
 
 [AZURE.INCLUDE [powershell-preview-include.md](../includes/powershell-preview-include.md)]
 

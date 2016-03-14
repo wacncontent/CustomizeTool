@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Flask and Azure Table Storage on Azure with Python Tools 2.2 for Visual Studio" 
-	description="Learn how to use the Python Tools for Visual Studio to create a Flask web site that stores data in Azure Table Storage and deploy it to Azure Websites." 
+	description="Learn how to use the Python Tools for Visual Studio to create a Flask web app that stores data in Azure Table Storage and deploy it to Azure Web Apps." 
 	services="app-service\web"
 	tags="python"
 	documentationCenter="python" 
@@ -18,23 +18,13 @@
 
 # Flask and Azure Table Storage on Azure with Python Tools 2.2 for Visual Studio 
 
-In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web site using one of the PTVS sample templates. This tutorial is also available as a [video](https://www.youtube.com/watch?v=qUtZWtPwbTk).
+In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates. This tutorial is also available as a [video](https://www.youtube.com/watch?v=qUtZWtPwbTk).
 
-The polls web site defines an abstraction for its repository, so you can easily switch between different types of repositories (In-Memory, Azure Table Storage, MongoDB).
+The polls web app defines an abstraction for its repository, so you can easily switch between different types of repositories (In-Memory, Azure Table Storage, MongoDB).
 
-We'll learn how to create an Azure Storage account, how to configure the web site to use Azure Table Storage, and how to publish the web site to [Azure Websites](/documentation/services/web-sites/).
+We'll learn how to create an Azure Storage account, how to configure the web app to use Azure Table Storage, and how to publish the web app to [Azure Web Apps](/documentation/services/web-sites/).
 
-See the [Python Developer Center] for more articles that cover development of Azure Websites with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Websites, the steps are similar when developing [Azure Cloud Services].
-
-+ [Prerequisites](#prerequisites)
-+ [Create the Project](#create-the-project)
-+ [Create an Azure Storage Account](#create-an-azure-storage-account)
-+ [Configure the Project](#configure-the-project)
-+ [Explore the Azure Table Storage](#explore-the-azure-table-storage)
-+ [Publish to an Azure Website](#publish-to-an-azure-website)
-+ [Configure the Azure Website](#configure-the-azure-website)
-+ [Next steps](#next-steps)
-
+See the [Python Developer Center] for more articles that cover development of Azure Web Apps with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Web App, the steps are similar when developing [Azure Cloud Services].
 
 ##<a name="prerequisites"></a> Prerequisites
 
@@ -133,36 +123,33 @@ It's easy to view and edit storage tables using Server Explorer in Visual Studio
 
   	<!-- ![Table Query Results](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonServerExplorerTable.png) -->
 
-##<a name="publish-to-an-azure-website"></a> Publish the web site to Azure Websites
+##<a name="publish-to-an-azure-website"></a> Publish the web app to Azure
 
-The Azure .NET SDK provides an easy way to deploy your web site to Azure Websites.
+The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
 
-1.  Click on **Windows Azure web sites**.
+1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
-1.  Click on **New** to create a new web site.
+  	![Publish Web Dialog](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonPublishWebSiteDialog.png)
 
-1.  Fill in the following fields and click **Create**.
-	-	**web site name**
-	-	**App Service plan**
-	-	**Resource group**
-	-	**Region**
-	-	Leave **Database server** set to **No database**
+1.  Click on **Import**.
 
-  	<!-- ![Create Site on Windows Azure Dialog](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonCreateWebSite.png) -->
+1.  Choose the previously downloaded "publish profile", and click "OK".
+
+	If you haven't downloaded the "publish profile", or have't created a web app, go to [Azure Management Portal](https://manage.windowsazure.cn) to create one. And in **Dashboard** of the web app, under **quick glance**, download the "publish profile".
 
 1.  Accept all other defaults and click **Publish**.
 
-1.  Your web browser will open automatically to the published web site. If you browse to the about page, you'll see that it uses the **In-Memory** repository, not the **Azure Table Storage** repository.
+1.  Your web browser will open automatically to the published web app. If you browse to the about page, you'll see that it uses the **In-Memory** repository, not the **Azure Table Storage** repository.
 
-    That's because the environment variables are not set on the web sites instance in Azure Websites, so it uses the default values specified in **settings.py**.
+    That's because the environment variables are not set on the Web Apps instance in Azure Web App, so it uses the default values specified in **settings.py**.
 
-## Configure the web sites instance
+## Configure the Web Apps instance
 
-In this section, we'll configure environment variables for the web sites instance.
+In this section, we'll configure environment variables for the Web Apps instance.
 
-1.  In [Azure Management Portal], open the web site's blade by clicking  **Web Apps** > your web site name.
+1.  In [Azure Management Portal], open the web app's blade by clicking **Web Apps** > your web app name.
 
-1.  In your web site's blade, click **Configure**.
+1.  In your web app's blade, click **Configure**.
 
   	<!-- ![Top Menu](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonWebSiteTopMenu.png) -->
 
@@ -174,7 +161,7 @@ In this section, we'll configure environment variables for the web sites instanc
 
   	<!-- ![Bottom Menu](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonWebSiteConfigureBottomMenu.png) -->
 
-1.  You should see the web site working as expected, using the **Azure Table Storage** repository.
+1.  You should see the web app working as expected, using the **Azure Table Storage** repository.
 
     Congratulations!
 

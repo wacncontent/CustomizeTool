@@ -17,7 +17,7 @@
 
 Apache Tomcat (or simply Tomcat, formerly also Jakarta Tomcat) is an open source web server and servlet container developed by the Apache Software Foundation (ASF). Tomcat implements the Java Servlet and the JavaServer Pages (JSP) specifications from Sun Microsystems, and provides a pure Java HTTP web server environment in which to run Java code. In the simplest configuration, Tomcat runs in a single operating system process. This process runs a Java virtual machine (JVM). Every HTTP request from a browser to Tomcat is processed as a separate thread in the Tomcat process.  
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
 
 
 In this guide, you will install tomcat7 on a Linux image and deploy it in Windows Azure.  
@@ -56,7 +56,7 @@ Follow these steps to generate the SSH authentication key.
 6.	Click **Save private key** and save it in a file named privateKey.ppk.
 
 ###Step 2: Create the image in the Azure Management Portal.
-In the [Azure Management <!-- deleted by customization Portal](https://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn) <!-- keep by customization: end -->, click **New** in the task bar to create an image, choosing the Linux image based on your needs. The following example uses the Ubuntu 14.04 image.
+In the [Azure Management Portal](https://manage.windowsazure.cn/), click **New** in the task bar to create an image, choosing the Linux image based on your needs. The following example uses the Ubuntu 14.04 image.
 ![][3]
 
 For **Host Name** specify the name for the URL that you and Internet clients will use to access this virtual machine. Define the last part of the DNS name, for example tomcatdemo, and Azure will generate the URL as tomcatdemo.chinacloudapp.cn.  
@@ -183,7 +183,7 @@ There are other optional tomcat components that you can also install.
 
 Use the **sudo apt-cache search tomcat7** command to see all the available components. The following commands are examples to install some useful parts.  
 
-	sudo apt-get install tomcat7-admin      #admin web sites
+	sudo apt-get install tomcat7-admin      #admin web applications
 	sudo apt-get install tomcat7-user         #tools to create user instances  
 
 ##Phase 4: Configure Tomcat
@@ -243,7 +243,7 @@ Tomcat is running but you can't see the Tomcat default page with your browser.
 
 			sudo vi /etc/default/tomcat7  
 
-		Then uncomment the last line and change “no” to “yes”.  
+		Then uncomment the last line and change "no" to "yes".  
 
 			AUTHBIND=yes
 

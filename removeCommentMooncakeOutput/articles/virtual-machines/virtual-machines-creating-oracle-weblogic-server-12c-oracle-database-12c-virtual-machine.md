@@ -1,13 +1,26 @@
-<properties title="Creating an Oracle WebLogic Server 12c and Oracle Database 12c virtual machine in Azure" pageTitle="Creating an Oracle WebLogic Server 12c and Oracle Database 12c virtual machine in Azure" description="Step through an example of creating an Oracle WebLogic Server 12c and Oracle Database 12c image running on Windows Server 2012 in Windows Azure." services="virtual-machines" authors="bbenz" documentationCenter=""/>
-<tags ms.service="virtual-machines" ms.date="06/22/2015" wacn.date=""/>
+<properties
+	pageTitle="Oracle WebLogic Server and Database VM | Windows Azure"
+	description="Create an Oracle WebLogic Server 12c and Oracle Database 12c Azure image running on Windows Server 2012, using Resource Manager deployment model."
+	services="virtual-machines"
+	authors="bbenz"
+	documentationCenter=""
+	tags="azure-resource-manager"/>
+
+<tags
+	ms.service="virtual-machines"
+	ms.date="06/22/2015"
+	wacn.date=""/>
 
 #Create an Oracle WebLogic Server 12c and Oracle Database 12c virtual machine in Azure
 
 This article shows how to create a virtual machine based on a Microsoft-provided Oracle WebLogic Server 12c and Oracle Database 12c image running on Windows Server 2012 in Azure.
 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)]
+
+
 ##To create an Oracle WebLogic Server 12c and Oracle Database 12c virtual machine in Azure
 
-1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 2.	Click the **Marketplace**, click **Compute**, and then type **Oracle** into the search box.
 
@@ -21,7 +34,7 @@ This article shows how to create a virtual machine based on a Microsoft-provided
 
 7.	Choose a **Pricing Tier**.  Note that the recommended pricing tiers are displayed by default. To see all configuration options, click **View all** on the top right.
 
-8. Set the optional configurations as needed (see [About Azure virtual machine configuration settings](https://msdn.microsoft.com/zh-cn/library/azure/dn763935.aspx). Follow these considerations:
+8. Set the optional configurations as needed. Follow these considerations:
 
 	a. Leave **Storage Account** as-is to create a new storage account with the virtual machine name.
 
@@ -29,7 +42,7 @@ This article shows how to create a virtual machine based on a Microsoft-provided
 
 	c. Do not add any endpoints at this time.
 
-9.	Choose or create a resource group. For more information, see [Using the Azure Preview Portal to manage your Azure resources](/documentation/articles/resource-group-portal).
+9.	Choose or create a resource group. For more information, see [Using the Azure Management Portal to manage your Azure resources](/documentation/articles/resource-group-portal).
 
 10. Choose a **Subscription**.
 

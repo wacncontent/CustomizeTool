@@ -6,7 +6,7 @@
 	authors="szarkos"
 	manager="timlt"
 	editor="tysonn"
-	tags="azure-resource-manager,azure-service-management"/>
+		tags="azure-resource-manager,azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -322,7 +322,7 @@ Preparing a CentOS 7 virtual machine for Azure is very similar to CentOS 6, howe
 
 		# sudo yum install WALinuxAgent
 
-14.	Do not create swap space on the OS disk
+15.	Do not create swap space on the OS disk
 
 	The Azure Linux Agent can automatically configure swap space using the local resource disk that is attached to the VM after provisioning on Azure. Note that the local resource disk is a *temporary* disk, and might be emptied when the VM is deprovisioned. After installing the Azure Linux Agent (see previous step), modify the following parameters in /etc/waagent.conf appropriately:
 
@@ -332,10 +332,14 @@ Preparing a CentOS 7 virtual machine for Azure is very similar to CentOS 6, howe
 		ResourceDisk.EnableSwap=y
 		ResourceDisk.SwapSizeMB=2048    ## NOTE: set this to whatever you need it to be.
 
-15.	Run the following commands to deprovision the virtual machine and prepare it for provisioning on Azure:
+16.	Run the following commands to deprovision the virtual machine and prepare it for provisioning on Azure:
 
 		# sudo waagent -force -deprovision
 		# export HISTSIZE=0
 		# logout
 
-16. Click **Action -> Shut Down** in Hyper-V Manager. Your Linux VHD is now ready to be uploaded to Azure.
+17. Click **Action -> Shut Down** in Hyper-V Manager. Your Linux VHD is now ready to be uploaded to Azure.
+
+## Next Steps
+You're now ready to use your CentOS Linux .vhd to create new Azure Virtual Machines in Azure. If this is the 1st time you use Azure and upload the .vhd file to Azure, you could follow the step 2 & 3 in [this guidance](/documentation/articles/virtual-machines-linux-create-upload-vhd).
+ 

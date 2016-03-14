@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
   pageTitle="Create a MongoDB cluster on Ubuntu | Windows Azure"
   description="Create a MongoDB cluster on Ubuntu using a Azure Resource Manager template via Azure PowerShell or the Azure CLI"

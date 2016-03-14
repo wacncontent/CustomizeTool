@@ -17,13 +17,8 @@
 
 #Install the LAMP Stack on a Linux virtual machine in Azure
 
-<!-- deleted by customization
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers creating a resource with the Resource Manager deployment model or the classic deployment model.
-<!-- keep by customization: end -->
 
 A LAMP stack consists of the following different elements:
 
@@ -127,4 +122,5 @@ Suppose you want to automate these steps to deploy applications to remote Linux 
 
 There are many other resources for setting up a LAMP stack on Ubuntu.
 
-- [https://help.ubuntu.com/community/ApacheMySQLPHP](https://help.ubuntu.com/community/ApacheMySQLPHP)
+- [https://help.ubuntu.com/community/ApacheMySQLPHP](https://help.ubuntu.com/community/ApacheMySQLPHP)
+ 

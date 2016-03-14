@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/17/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Using AES-128 Dynamic Encryption and Key Delivery Service
@@ -112,7 +112,7 @@ Get a test token based on the token restriction that was used for the key author
 	    TokenRestrictionTemplateSerializer.Deserialize(tokenTemplateString);
 	
 	// Generate a test token based on the data in the given TokenRestrictionTemplate.
-	//The GenerateTestToken method returns the token without the word “Bearer” in front
+	//The GenerateTestToken method returns the token without the word "Bearer" in front
 	//so you have to add it in front of the token string. 
 	string testToken = TokenRestrictionTemplateSerializer.GenerateTestToken(tokenTemplate);
 	Console.WriteLine("The authorization token is:\nBearer {0}", testToken);
@@ -330,7 +330,7 @@ The following code shows how to send a request to the Media Services key deliver
 		                // TokenClaim.ContentKeyIdentifierClaim in during the creation of TokenRestrictionTemplate.
 		                Guid rawkey = EncryptionUtils.GetKeyIdAsGuid(key.Id);
 		
-		                //The GenerateTestToken method returns the token without the word “Bearer” in front
+		                //The GenerateTestToken method returns the token without the word "Bearer" in front
 		                //so you have to add it in front of the token string. 
 		                string testToken = TokenRestrictionTemplateSerializer.GenerateTestToken(tokenTemplate, null, rawkey);
 		                Console.WriteLine("The authorization token is:\nBearer {0}", testToken);

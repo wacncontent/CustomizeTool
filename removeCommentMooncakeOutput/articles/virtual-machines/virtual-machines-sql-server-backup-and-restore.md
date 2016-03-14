@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="11/13/2015"
-	wacn.dater="" />
+	wacn.date=""/>
 
 # Backup and Restore for SQL Server in Azure Virtual Machines
 

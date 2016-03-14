@@ -86,7 +86,7 @@ Make your .COM site attractive with rich media, such as:
 ## More Resources
 
 - [Azure Web Apps Documentation](/home/features/web-site/)
-- [Learning Map for Azure Web Apps](/documentation/articles/websites-learning-map)
+- [Learning Map for Azure Web Apps](/documentation/learning-paths/appservice-webapps/)
 - [Azure Web Blog](/blog/tags/网站/)
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]

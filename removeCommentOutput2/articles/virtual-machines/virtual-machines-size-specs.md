@@ -23,16 +23,18 @@ This article describes the available sizes and options for the virtual machine-b
 
 To see general limits on Azure VMs, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
 
-The standard sizes consist of several series: A and D. Considerations for some of these sizes include:
+The standard sizes consist of several series: Aand D. Considerations for some of these sizes include:
 
-*   D-series VMs are designed to run applications that demand higher compute power and temporary disk performance. D-series VMs provide faster processors, a higher memory-to-core ratio, and a solid-state drive (SSD) for the temporary disk. For details, see the announcement on the Azure blog, [New D-Series Virtual Machine Sizes](http://azure.microsoft.com/blog/2014/09/22/new-d-series-virtual-machine-sizes/).
+*   D-series VMs are designed to run applications that demand higher compute power and temporary disk performance. D-series VMs provide faster processors, a higher memory-to-core ratio, and a solid-state drive (SSD) for the temporary disk. For details, see the announcement on the Azure blog, [New D-Series Virtual Machine Sizes](https://azure.microsoft.com/blog/2014/09/22/new-d-series-virtual-machine-sizes/).
+
+*   DS-series VMs can use Premium Storage, which provides high-performance, low-latency storage for I/O intensive workloads. These VMs use solid-state drives (SSDs) to host a virtual machine's disks and also provide a local SSD disk cache. Premium Storage is available in certain regions. For details, see [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage-preview-portal).
 
 The size of the virtual machine affects the pricing. The size also affects the processing, memory, and storage capacity of the virtual machine. Storage costs are calculated separately based on used pages in the storage account. For details, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Storage Pricing](/home/features/storage/#price). For more details about storage for VMss, see [About disks and VHDs for virtual machines ](/documentation/articles/virtual-machines-disks-vhds).
 
 The following considerations might help you decide on a size:
 
 
-*   Some of the physical hosts in Azure data centers may not support larger virtual machine sizes, such as A5 - A11. As a result, you may see the error message **Failed to configure virtual machine <machine name>** or **Failed to create virtual machine <machine name>** when resizing an existing virtual machine to a new size; creating a new virtual machine in a virtual network created before April 16, 2013; or adding a new virtual machine to an existing cloud service. See  [Error: “Failed to configure virtual machine”](https://social.msdn.microsoft.com/Forums/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows) on the support forum for workarounds for each deployment scenario.  
+*   Some of the physical hosts in Azure data centers may not support larger virtual machine sizes, such as A5 - A11. As a result, you may see the error message **Failed to configure virtual machine <machine name>** or **Failed to create virtual machine <machine name>** when resizing an existing virtual machine to a new size; creating a new virtual machine in a virtual network created before April 16, 2013; or adding a new virtual machine to an existing cloud service. See  [Error: "Failed to configure virtual machine"](https://social.msdn.microsoft.com/Forums/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows) on the support forum for workarounds for each deployment scenario.  
 
 
 ## Performance considerations
@@ -46,10 +48,10 @@ We have created the concept of the Azure Compute Unit (ACU) to provide a way of 
 |SKU Family	|ACU/Core |
 |---|---|
 |[Standard_A0 (Extra Small)](#standard-tier-a-series)	|50 |
-|[Standard_A1-4 (Small - Large)] (#standard-tier-a-series)	|100 |
+|[Standard_A1-4 (Small - Large)](#standard-tier-a-series)	|100 |
 |[Standard_A5-7](#standard-tier-a-series)	|100 |
 |[D1-14](#standard-tier-d-series)	|160 |
-
+|[DS1-14](#standard-tier-ds-series)	|160 |
 
 ACUs marked with a * use Intel® Turbo technology to increase CPU frequency and provide a performance boost.  The amount of the boost can vary based on the VM size, workload, and other workloads running on the same host.
 
@@ -62,6 +64,8 @@ The following tables show the sizes and the capacities they provide.
 >[AZURE.NOTE] Storage capacity is represented by using 1024^3 bytes as the unit of measurement for GB. This is sometimes referred to as gibibyte, or base 2 definition. When comparing sizes that use different base systems, remember that base 2 sizes may appear smaller than base 10 but for any specific size (such as 1 GB) a base 2 system provides more capacity than a base 10 system, because 1024^3 is greater than 1000^3.
 
 <br>
+
+
 
 ## Standard tier: A-series
 
@@ -98,6 +102,21 @@ In the classic deployment model, some VM sizes are slightly different in Powersh
 |Standard_D12 |4|28 GB|4|Temporary (SSD) =200 GB |8|8x500|
 |Standard_D13 |8|56 GB|8|Temporary (SSD) =400 GB |16|16x500|
 |Standard_D14 |16|112 GB|8|Temporary (SSD) =800 GB |32|32x500|
+
+## Standard tier: DS-series*
+
+|Size |CPU cores|Memory|NICs (Max)|Max. disk size|Max. data disks (1023 GB each)|Cache size (GB)|Max. disk IOPS &amp; bandwidth|
+|---|---|---|---|---|---|---|---|
+|Standard_DS1 |1|3.5|1|Local SSD disk = 7 GB |2|43| 3,200  32 MB per second |
+|Standard_DS2 |2|7|2|Local SSD disk = 14 GB |4|86| 6,400  64 MB per second |
+|Standard_DS3 |4|14|4|Local SSD disk = 28 GB |8|172| 12,800  128 MB per second |
+|Standard_DS4 |8|28|8|Local SSD disk = 56 GB |16|344| 25,600  256 MB per second |
+|Standard_DS11 |2|14|2|Local SSD disk = 28 GB |4|72| 6,400  64 MB per second |
+|Standard_DS12 |4|28|4|Local SSD disk = 56 GB |8|144| 12,800  128 MB per second |
+|Standard_DS13 |8|56|8|Local SSD disk = 112 GB |16|288| 25,600  256 MB per second |
+|Standard_DS14 |16|112|8|Local SSD disk = 224 GB |32|576| 50,000  512 MB per second |
+
+*The maximum input/output operations per second (IOPS) and throughput (bandwidth) possible with a DS series VM is affected by the size of the disk. For details, see [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage-preview-portal).
 
 ### See also
 

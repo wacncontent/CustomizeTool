@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Python web site with Django | Windows Azure"
+	pageTitle="Python web app with Django | Windows Azure"
 	description="This tutorial teaches you how to host a Django-based website on Azure using a Windows Server 2012 R2 Datacenter virtual machine using the classic deployment model."
 	services="virtual-machines"
 	documentationCenter="python"
@@ -15,7 +15,7 @@
 	wacn.date=""/>
 
 
-# Django Hello World web site on a Windows Server VM
+# Django Hello World web application on a Windows Server VM
 
 > [AZURE.SELECTOR]
 - [Windows](/documentation/articles/virtual-machines-python-django-web-app-windows-server)

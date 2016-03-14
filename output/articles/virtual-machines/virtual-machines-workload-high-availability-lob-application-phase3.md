@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Line of business application Phase 3 | Windows Azure" 
 	description="Create the computers and the SQL Server cluster and enable Availability Groups in Phase 3 of the line of business application in Azure." 
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/20/2015"
+	ms.date="01/21/2016"
 	wacn.date=""/>
 
 # Line of Business Application Workload Phase 3: Configure SQL Server infrastructure

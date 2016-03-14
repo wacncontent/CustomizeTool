@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/12/2016"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 # Process events from Azure Event Hubs with Storm on HDInsight (Java)

@@ -16,7 +16,7 @@
 
 # Get started in the Hadoop ecosystem with the HDInsight Emulator, a Hadoop sandbox
 
-This tutorial gets you started with Hadoop clusters in the Microsoft HDInsight Emulator for Azure (formerly HDInsight Server Developer Preview). The HDInsight Emulator comes with the same components from the Hadoop ecosystem as Azure HDInsight. For details, including information on the versions deployed, see [What version of Hadoop is in Azure HDInsight?](/documentation/articles/hdinsight-component-versioning).
+This tutorial gets you started with Hadoop clusters in the Microsoft HDInsight Emulator for Azure (formerly HDInsight Server Developer Preview). The HDInsight Emulator comes with the same components from the Hadoop ecosystem as Azure HDInsight. For details, including information on the versions deployed, see [What version of Hadoop is in Azure HDInsight?](/documentation/articles/hdinsight-component-versioning-v1).
 
 Once the emulator is installed, you follow a MapReduce tutorial for word count and then run samples.
 
@@ -37,7 +37,7 @@ Before you begin this tutorial, you must have the following:
 	- Windows 8
 	- Windows Server 2012
 
-- **Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/install-configure-powershell).
+- **Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 
 ##<a name="install"></a>Install the HDInsight Emulator
@@ -117,7 +117,7 @@ Once the connection is successfully established, you can use the HDInsight VS to
 			<value>*</value>
 		</property>
 
-3. You might get an error when Visual Studio tries to connect to WebHCat service (“error”: “Could not find job job_XXXX_0001”). In this case, you must restart the WebHCat service and try again. To restart the WebHCat service, start the **Services** MMC, right-click **Apache Hadoop Templeton** (this is the old name for WebHCat service), and click **Restart**.
+3. You might get an error when Visual Studio tries to connect to WebHCat service ("error": "Could not find job job_XXXX_0001"). In this case, you must restart the WebHCat service and try again. To restart the WebHCat service, start the **Services** MMC, right-click **Apache Hadoop Templeton** (this is the old name for WebHCat service), and click **Restart**.
 
 ##<a name="runwordcount"></a>A word-count MapReduce tutorial
 
@@ -525,7 +525,7 @@ In this MapReduce tutorial, you installed the HDInsight Emulator - a Hadoop sand
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 [hdinsight-get-started]: ../hdinsight-get-started.md
 [hdinsight-develop-deploy-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
-[hdinsight-versions]: hdinsight-component-versioning.md
+[hdinsight-versions]: hdinsight-component-versioning-v1.md
 
 [Powershell-install-configure]: ../install-configure-powershell.md
 

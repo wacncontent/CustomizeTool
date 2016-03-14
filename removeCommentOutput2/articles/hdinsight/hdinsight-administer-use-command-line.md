@@ -29,7 +29,7 @@ Before you begin this article, you must have the following:
 - **Azure CLI** - See [Install and configure the Azure CLI](/documentation/articles/xplat-cli-install) for installation and configuration information.
 - **Connect to Azure**, using the following command:
 
-		azure login -e AzureChinaCloud 
+		azure login -e AzureChinaCloud -u <your account> 
 
 	For more information on authenticating using a work or school account, see [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect).
 	
@@ -41,7 +41,6 @@ To get help, use the **-h** switch.  For example:
 ##Create clusters
 
 See [Create Windows-based Hadoop clusters in HDInsight using Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli).
-	azure hdinsight cluster create --clusterName <Cluster Name> --location <Location> --osType Windows --storageAccountName <Default Storage Account Name> --storageAccountKey <Storage Account Key> --storageContainer <Default Storage Container> --username <HDInsight Cluster Username> --password <HDInsight Cluster Password> --dataNodeCount <Number of Data Nodes>
 
 ##List and show cluster details
 Use the following commands to list and show cluster details:
@@ -66,7 +65,7 @@ In this article, you have learned how to perform different HDInsight cluster adm
 * [How to use the Azure CLI] [azure-command-line-tools]
 
 
-[azure-command-line-tools]: /documentation/articles/xplat-cli
+[azure-command-line-tools]: /documentation/articles/xplat-cli-install
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/

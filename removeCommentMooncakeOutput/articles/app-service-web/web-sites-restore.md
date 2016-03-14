@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Restore a web site in Azure Websites" 
-	description="Learn how to restore your web site from a backup." 
+	pageTitle="Restore an app in Azure Web App" 
+	description="Learn how to restore your app from a backup." 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
@@ -9,16 +9,16 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/11/2015"
+	ms.date="01/07/2015"
 	wacn.date=""/>
 
 # Restore a web site in Azure Websites
 
-This article shows you how to restore an Azure Website that you have previously backed up by using the [Azure Websites](/documentation/services/web-sites) Backup feature. For more information, see [Azure Websites Backups](/documentation/articles/web-sites-backup). 
+This article shows you how to restore an Azure Website that you have previously backed up by using the [Azure Websites](/documentation/services/web-sites) Backup feature. For more information, see [Azure Websites Backups](/documentation/articles/web-sites-backup).
 
 The Azure Websites Restore feature lets you restore your web site with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new web site based on one of your original web site's backup. Creating a new web site that runs in parallel to the latest version can be useful for A/B testing.
 
-The Azure Websites Restore feature, available on the **Backups** blade in the [Azure Management Portal](http://manage.windowsazure.cn), is available only in Standard pricing tiers. For information about scaling your app using Standard tier, see [Scale a web site in Azure Websites](/documentation/articles/web-sites-scale).
+The Azure Websites Restore feature, available on the **Backups** blade in the [Azure Management Portal](http://manage.windowsazure.cn), is available only in Standard  pricing tiers. For information about scaling your app using Standard  tier, see [Scale a web site in Azure Websites](/documentation/articles/web-sites-scale). 
 
 ##In this article
 - [To Restore an Azure  Website from a previously made backup](#PreviousBackup)
@@ -116,7 +116,7 @@ The Azure Websites Restore feature, available on the **Backups** blade in the [A
 	![Operation Details][OperationDetails]
 
 <!-- IMAGES -->
-[RestoredContoso Website]: ./media/web-sites-restore/09RestoredContosoWebsite.png
+[RestoredContoso Website]: ./media/web-sites-restore/09RestoredContosoWebSite.png
 [ChooseRestoreNow]: ./media/web-sites-restore/02ChooseRestoreNow.png
 [ViewContainers]: ./media/web-sites-restore/03ViewContainers.png
 [StorageAccountFile]: ./media/web-sites-restore/02StorageAccountFile.png

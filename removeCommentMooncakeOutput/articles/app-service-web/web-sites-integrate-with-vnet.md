@@ -2,7 +2,7 @@
 
 <properties 
 	pageTitle="Integrate an app with an Azure Virtual Network" 
-	description="Shows you how to connect an app in Azure Websites to a new or existing Azure virtual network" 
+	description="Shows you how to connect an app in Azure to a new or existing Azure virtual network" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="ccompy" 
@@ -16,11 +16,11 @@
 
 # Integrate your app with an Azure Virtual Network #
 
-This document describes the Azure Websites virtual network integration feature and shows how to set it up with apps in [Azure Websites](/documentation/services/web-sites/).  If you are unfamiliar with Azure Virtual Networks (VNETs), this is a capability that allows you to place many of your Azure resources in a non-internet routeable network that you control access to.  These networks can then be connected to your on premise networks using a variety of VPN technologies.  To learn more about Azure Virtual Networks start with the information here: [Azure Virtual Network Overview][VNETOverview].  
+This document describes the Azure virtual network integration feature and shows how to set it up with apps in [Azure Web App](/documentation/services/web-sites/).  If you are unfamiliar with Azure Virtual Networks (VNETs), this is a capability that allows you to place many of your Azure resources in a non-internet routeable network that you control access to.  These networks can then be connected to your on premise networks using a variety of VPN technologies.  To learn more about Azure Virtual Networks start with the information here: [Azure Virtual Network Overview][VNETOverview].  
 
-The Azure Websites has two forms.  The first and most common form is the multi-tenant systems that support the full range of pricing plans.  The second is the Azure Websites Environment (ASE) premium feature which deploys into a customers VNET.  With an Azure Websites Environment you normally do not need to use VNET Integration as the system is already in your VNET and has access to all the resources in that VNET.  The one reason you would still use the VNET Integration feature with an ASE is if you wish to access resources in another VNET that is not connected to the VNET hosting your ASE.  
+The Azure has two forms.  The first and most common form is the multi-tenant systems that support the full range of pricing plans.  The second is the Azure Environment (ASE) premium feature which deploys into a customers VNET.  With an Azure Environment you normally do not need to use VNET Integration as the system is already in your VNET and has access to all the resources in that VNET.  The one reason you would still use the VNET Integration feature with an ASE is if you wish to access resources in another VNET that is not connected to the VNET hosting your ASE.  
 
-VNET Integration gives your web site access to resources in your virtual network but does not grant private access to your web site from the virtual network.  A common scenario where you would use this feature is enabling your web site access to a database or a web services that are running in a virtual machine in your Azure virtual network.  With VNET Integration you don't need to expose a public endpoint for applications on your VM but can use the private non-internet routable addresses instead.  
+VNET Integration gives your web app access to resources in your virtual network but does not grant private access to your web app from the virtual network.  A common scenario where you would use this feature is enabling your web app access to a database or a web services that are running in a virtual machine in your Azure virtual network.  With VNET Integration you don't need to expose a public endpoint for applications on your VM but can use the private non-internet routable addresses instead.  
 
 The VNET Integration feature:
 
@@ -41,7 +41,7 @@ There are some things that VNET Integration does not support including:
 - private site access
 
 ### Getting started ###
-Here are some things to keep in mind before connecting your web site to a virtual network:
+Here are some things to keep in mind before connecting your web app to a virtual network:
 
 - VNET Integration only works with apps in a **Standard** or **Premium** pricing plan.  If you enable the feature and then scale your App Service Plan to an unsupported pricing plan your apps will lose their connections to the VNETs they are using.  
 - If your target virtual network already exists, it must have point-to-site VPN enabled with a Dynamic routing gateway before it can be connected to an app.  You cannot enable point-to-site Virtual Private Network (VPN) if your gateway is configured with Static routing.
@@ -56,7 +56,7 @@ You have the option to connect to a new or existing virtual network.  If you cre
 
 >[AZURE.NOTE] Configuring a new virtual network integration can take several minutes.  
 
-To enable VNET Integration open your app Settings and then select Networking.  The UI that opens up offers three networking choices.  This guide is only going into VNET Integration though Hybrid Connections and Azure Websites Environments are discussed later in this document.  
+To enable VNET Integration open your app Settings and then select Networking.  The UI that opens up offers three networking choices.  This guide is only going into VNET Integration though Hybrid Connections and Azure Environments are discussed later in this document.  
 
 If your app is not in the correct pricing plan the UI will helpfully enable you to scale your plan to a higher pricing plan of your choice.
 
@@ -102,7 +102,7 @@ If you set the DNS server information here then that will be set for your VNET. 
 When you create a V1 VNET using the VNET Integration UI, it will create a VNET in the same resource group as your app. 
 
 ## How the system works ##
-Under the covers this feature builds on top of Point-to-Site VPN technology to connect your app to your VNET.   Apps in Azure Websites have a multi-tenant system architecture which precludes provisioning an app directly in a VNET as is done with virtual machines.  By building on point-to-site technology we limit network access to just the virtual machine hosting the app.  Access to the network is further restricted on those app hosts so that your apps can only access the networks that you configure them to access.  
+Under the covers this feature builds on top of Point-to-Site VPN technology to connect your app to your VNET.   Apps in Azure have a multi-tenant system architecture which precludes provisioning an app directly in a VNET as is done with virtual machines.  By building on point-to-site technology we limit network access to just the virtual machine hosting the app.  Access to the network is further restricted on those app hosts so that your apps can only access the networks that you configure them to access.  
 
 ![][4]
  
@@ -150,7 +150,7 @@ With respect to actions there are two primary actions.  The first is the ability
 As noted earlier the routes that are defined in your VNET are what is used for directing traffic into your VNET from your app.  There are some uses though where customers want to send additional outbound traffic from an app into the VNET and for them this capability is provided.  What happens to the traffic after that is up to how the customer configures their VNET.  
 
 **Certificates**
-The Certificate Status reflects a check being performed by the Azure Websites to validate that the certificates that we are using for the VPN connection are still good.  When VNET Integration enabled, then if this is the first integration to that VNET from any apps in this ASP, there is a required exchange of certificates to ensure the security of the connection.  Along with the certificates we get the DNS configuration, routes and other similar things that describe the network.
+The Certificate Status reflects a check being performed by the Azure to validate that the certificates that we are using for the VPN connection are still good.  When VNET Integration enabled, then if this is the first integration to that VNET from any apps in this ASP, there is a required exchange of certificates to ensure the security of the connection.  Along with the certificates we get the DNS configuration, routes and other similar things that describe the network.
 If those certificates or network information is changed then you will need to click "Sync Network".  **NOTE**: When you click "Sync Network" then you will cause a brief outage in connectivity between your app and your VNET.  While your app will not be restarted the loss of connectivity could cause your site to not function properly.  
 
 ##Accessing on premise resources##
@@ -166,7 +166,7 @@ There are a few pricing nuances that you should be aware of when using the VNET 
 - Data transfer costs
 - VPN Gateway costs.
 
-For your apps to be able to use this feature, they need to be in a Standard or Premium App Service Plan.  You can see more details on those costs here: [Azure Websites Pricing][ASPricing]. 
+For your apps to be able to use this feature, they need to be in a Standard or Premium App Service Plan.  You can see more details on those costs here: [Azure Pricing][ASPricing]. 
 
 Due to the way Point to Site VPNs are handled, you always have a charge for outbound data through your VNET Integration connection even if the VNET is in the same data center.  To see what those charges are take a look here:[Data Transfer Pricing Details][DataPricing].  
 
@@ -232,26 +232,26 @@ Now if your VNET hosted VM can reach your on premise system but your app can't t
 - your on premise firewalls are blocking traffic from your Point to Site IP range
 - you have a User Defined Route(UDR) in your VNET that prevents your Point to Site based traffic from reaching your on premise network
 
-## Hybrid Connections and Azure Websites Environments##
+## Hybrid Connections and Azure Environments##
 There are 3 features that enable access to VNET hosted resources.  They are:
 
 - VNET Integration
 - Hybrid Connections
-- Azure Websites Environments
+- Azure Environments
 
 Hybrid Connections requires you to install a relay agent called the Hybrid Connection Manager(HCM) in your network.  The HCM needs to be able to connect to Azure and also to your application.  This solution is especially great from a remote network such as your on premise network or even another cloud hosted network because it does not require an internet accessible endpoint.  The HCM only runs on Windows and you can have up to 5 instances running to provide high availability.  Hybrid Connections only supports TCP though and each HC endpoint has to match to a specific host:port combination.  
 
-The Azure Websites Environment feature allows you to run an instance of the Azure Websites in your VNET.  This lets your apps access resources in your VNET without any extra steps.  Some of the other benefits of an Azure Websites Environment is that you can use 8 core dedicated workers with 14 GB of RAM.  Another benefit is that you can scale the system to meet your needs.  Unlike the multi-tenant environments where your ASP is limited in size, in an ASE you control how many resources you want to give to the system.  With respect to the network focus of this document though, one of the things you get with an ASE that you don't with VNET Integration is that it can work with an ExpressRoute VPN.  
+The Azure Environment feature allows you to run an instance of the Azure in your VNET.  This lets your apps access resources in your VNET without any extra steps.  Some of the other benefits of an Azure Environment is that you can use 8 core dedicated workers with 14 GB of RAM.  Another benefit is that you can scale the system to meet your needs.  Unlike the multi-tenant environments where your ASP is limited in size, in an ASE you control how many resources you want to give to the system.  With respect to the network focus of this document though, one of the things you get with an ASE that you don't with VNET Integration is that it can work with an ExpressRoute VPN.  
 
 While there is some use case overlap, none of these feature can replace any of the others.  Knowing what feature to use is tied to your needs and how you will want to use it.  For example:
 
 - If you are a developer and simply want to run a site in Azure and have it access the database on the workstation under your desk then the easiest thing to use is Hybrid Connections.  
-- If you are a large organization that wants to put a large number of web properties in the public cloud and manage them in your own network then you want to go with the Azure Websites Environment.  
-- If you have a number of Azure Websites hosted apps and simply want to access resources in your VNET then VNET Integration is the way to go.  
+- If you are a large organization that wants to put a large number of web properties in the public cloud and manage them in your own network then you want to go with the Azure Environment.  
+- If you have a number of Azure hosted apps and simply want to access resources in your VNET then VNET Integration is the way to go.  
 
-Beyond the use cases there are some simplicity related aspects.  If your VNET is already connected to your on premise network then using VNET Integration or an Azure Websites Environment is an easy way to consume on premise resources.  On the other hand, if your VNET is not connected to your on premise network then it's a lot more overhead to set up a site to site VPN with your VNET compared with installing the HCM.  
+Beyond the use cases there are some simplicity related aspects.  If your VNET is already connected to your on premise network then using VNET Integration or an Azure Environment is an easy way to consume on premise resources.  On the other hand, if your VNET is not connected to your on premise network then it's a lot more overhead to set up a site to site VPN with your VNET compared with installing the HCM.  
 
-Beyond the functional differences there are also pricing differences.  The Azure Websites Environment feature is a Premium service offering but offers the most network configuration possibilities in addition to other great features.  VNET Integration can be used with Standard or Premium ASPs and is perfect for securely consuming resources in your VNET from the multi-tenant Azure Websites.  Hybrid Connections currently depends on a BizTalk account which has pricing levels that start free and then get progressively more expensive based on the amount you need.  When it comes to working across many networks though, there is no other feature like Hybrid Connections which can enable you to access resources in well over 100 separate networks.    
+Beyond the functional differences there are also pricing differences.  The Azure Environment feature is a Premium service offering but offers the most network configuration possibilities in addition to other great features.  VNET Integration can be used with Standard or Premium ASPs and is perfect for securely consuming resources in your VNET from the multi-tenant Azure Web App.  Hybrid Connections currently depends on a BizTalk account which has pricing levels that start free and then get progressively more expensive based on the amount you need.  When it comes to working across many networks though, there is no other feature like Hybrid Connections which can enable you to access resources in well over 100 separate networks.    
 
 
 <!--Image references-->

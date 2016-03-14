@@ -1,6 +1,8 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Create a VM with a template | Windows Azure"
-	description="Use a Resource Manager template to easily create a new Windows virtual machine with PowerShell or the Azure CLI."
+	description="Use a Resource Manager template to easily create a new Windows virtual machine with PowerShell."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="davidmu1"
@@ -10,10 +12,19 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/08/2015"
+	ms.date="01/07/2016"
 	wacn.date=""/>
 
 # Create a Windows virtual machine with a Resource Manager template
+
+> [AZURE.SELECTOR]
+- [Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
+- [CLI](/documentation/articles/virtual-machines-linux-tutorial)
+
+<br>
+
+
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
 
@@ -270,16 +281,6 @@ You will see something like this:
 
 You now have a new Windows virtual machine named MyWindowsVM in your new resource group.
 
-## Additional resources
+## Next Steps
 
-[Azure compute, network, and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
-
-[Azure Resource Manager overview](/documentation/articles/resource-group-overview)
-
-[Create a Windows virtual machine with Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager)
-
-[Create a Windows virtual machine with PowerShell and Azure Service Manager](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
-
-[Virtual machines documentation](/documentation/services/virtual-machines/)
-
-[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
+Learn how to manage the virtual machine that you just created by reviewing [Manage virtual machines using Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell).

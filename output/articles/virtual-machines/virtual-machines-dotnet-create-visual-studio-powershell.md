@@ -15,7 +15,7 @@
 
 # Creating a virtual machine for a web application with Visual Studio
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 When you create a web application project for Azure, you can provision a virtual machine in Azure. You can then configure the virtual machine with additional software, or use the virtual machine for diagnostic or debugging purposes.
 
@@ -27,26 +27,33 @@ To create a virtual machine when you create a web application, follow these step
 	![][0]
 
 3. For this example, in the drop-down list under Windows Azure, choose **Virtual Machine (v1)**, and then click the **OK** button.
+4. Sign in to Azure if you're prompted. The **Create Virtual Machine** dialog box appears.
 
-4. Click **View**, Open the **Server Explorer**, and then right click **Azure**, choose **Manage and Filter Subscriptions...**. Click tag **Certificates**. Now, you can add a certificate for you Azure Subscription.
+	![][2]
 
-	>[AZURE.NOTE] Don't try to add an account, because, by default, the account being added must be an Azure global account. I am still trying to figure out a way to change that.
+5. In the **DNS name** box, enter a name for the virtual machine. The DNS name must be unique in Azure. If the name you entered isn't available, a red exclamation point appears.
+6. In the **Image** list, choose the image you want to base the virtual machine on. You can choose any of the standard Azure virtual machine images or your image that you've uploaded to Azure.
+7. Leave the **Enable IIS and Web Deploy** check box selected unless you plan to install a different web server. You won't be able to publish from Visual Studio if you disable Web Deploy. You can add IIS and Web Deploy to any of the packaged Windows Server images, including your own custom images.
+8. In the **Size** list, choose the size of the virtual machine.
+9. Specify the sign-in credentials for this virtual machine. Make a note of them, because you'll need them to access the machine through Remote Desktop.
+10. In the **Location** list, choose the region to host the virtual machine.
+11. Click  the **OK** button to start creating the virtual machine. You can follow the progress of the operation in the **Output** window.
 
-5. Click [here](https://manage.windowsazure.cn/publishsettings/index?client=vsserverexplorer&schemaversion=2.0) to download a publish profile for your subscription. Click **import** in the previous step pop up windows, and choose the file just downloaded. And then, you will be able to manage most of the services WindowsAzure.cn provided.
+	![][3]
 
-6. Right click **Virtual Machines** in **Server Explorer** under "Azure", and choose **Create Virtual Machine**. Choose the subscription just added. Select the server type you want (must be a windows server).
+12. When the virtual machine is provisioned, published scripts are created in a **PublishScripts** node in your solution. The published script runs and provisions a virtual machine in Azure. The **Output** window shows the status. The script performs the following actions to set up the virtual machine:
 
-7. Follow the step to create a VM. For Endpoints, "Web Deploy", "http" must be added. "https" can be added, if you need it.
+	* Creates the virtual machine if it doesn't already exist.
+	* Creates a storage account with a name that begins with `devtest`, but only if there isn't already such a storage account in the specified region.
+	* Creates a cloud service as a container for the virtual machine, and creates a web role for the web application.
+	* Configures Web Deploy on the virtual machine.
+	* Configures IIS and ASP.NET on the virtual machine.
 
-8. After the VM is created, connect it with Remote Desktop. Configure the server for Web Deploy. For more detail, take a look at [this](http://www.iis.net/learn/install/installing-publishing-technologies/installing-and-configuring-web-deploy-on-iis-80-or-later). Follow the steps, you should be able to configure your server to enable Web Deploy.
+	![][4]
 
-	![][5]
+13. (Optional) You can connect to the new virtual machine. In **Server Explorer**, expand the **Virtual Machines** node, choose the node for the virtual machine you created, and on its shortcut menu, choose **Connect with Remote Desktop**. Alternatively, in **Cloud Explorer** you can choose **Open in Portal** on the shortcut menu and connect to the virtual machine there.
 
-9. On the Remote Desktop of your server, in the IIS Manager, right click the site you want to deploy to, correctly configure the Web Deploy Publishing. If you have an SQL Server, Enter the connection string for your web app. And, replay the host name in the URL by "<your cloud service name>.chinacloudapp.cn". The URL would become something like this: "https://<your cloud service name>.chinacloudapp.cn:8172/msdeploy.axd". Click **Setup**, and a publish setting file is created for you.
-
-10. Go back to you Visual Studio, right click your solution, and choose publish.
-
-11. Select **Import** and choose the files copied from the server. And then enter the password, and check **Save password**. Now, you can publish your web app to the VM.
+ ![][5]
 
 
 ## Next steps

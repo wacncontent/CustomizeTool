@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Configure PHP in Azure Websites | Windows Azure"
-	description="Learn how to configure the default PHP installation or add a custom PHP installation for web sites in Azure Websites."
+	pageTitle="Configure PHP in Azure Web Apps | Windows Azure"
+	description="Learn how to configure the default PHP installation or add a custom PHP installation for Web Apps in Azure."
 	services="app-service"
 	documentationCenter="php"
 	authors="tfitzmac"
@@ -12,22 +12,14 @@
 	ms.date="12/16/2015"
 	wacn.date=""/>
 
-#Configure PHP in Azure Websites
+#Configure PHP in Azure Web Apps
 
-##Table of Contents
+##<a name="WhatIs"></a> Introduction
 
-* [What is Azure  Websites?](#WhatIs)
-* [How to: Change the default PHP configuration](#ChangeBuiltInPHP)
-* [How to: Enable extensions in the built-in PHP runtime](#EnableExtDefaultPHP)
-* [How to: Use a custom PHP runtime](#UseCustomPHP)
-* [Next steps](#NextSteps)
+This guide will show you how to configure the built-in PHP runtime for Web Apps in [Azure Web App](/documentation/services/web-sites/), provide a custom PHP runtime, and enable extensions. To use Azure Web App, sign up for the [trial]. To get the most from this guide, you should first create a PHP web app in Azure.
 
-## Introduction
-
-This guide will show you how to configure the built-in PHP runtime for web sites in [Azure Websites](/documentation/services/web-sites/), provide a custom PHP runtime, and enable extensions. To use Azure Websites, sign up for the [trial]. To get the most from this guide, you should first create a PHP web site in Azure Websites.
-
-## How to: Change the built-in PHP version
-By default, PHP 5.4 is installed and immediately available for use when you create an Azure Websites. The best way to see the available release revision, its default configuration, and the enabled extensions is to deploy a script that calls the [phpinfo()] function.
+##<a name="ChangeBuiltInPHP"></a> How to: Change the built-in PHP version
+By default, PHP 5.4 is installed and immediately available for use when you create an Azure web app. The best way to see the available release revision, its default configuration, and the enabled extensions is to deploy a script that calls the [phpinfo()] function.
 
 PHP 5.5 and PHP 5.6 versions are also available, but not enabled by default. To update the PHP version, follow one of these methods:
 
@@ -51,7 +43,7 @@ PHP 5.5 and PHP 5.6 versions are also available, but not enabled by default. To 
 
         PS C:\> Login-AzureRmAccount
 
-2. Set the PHP version for the web site.
+2. Set the PHP version for the web app.
 
         PS C:\> Set-AzureWebsite -PhpVersion [5.4 | 5.5 | 5.6] -Name {site-name}
 
@@ -67,13 +59,14 @@ To use the Azure Command-Line Interface, you must have **Node.js** installed on 
 
         azure login
 
-2. Set the PHP version for the web site.
+2. Set the PHP version for the web app.
 
         azure site set --php-version [5.4 | 5.5] {site-name}
 
 3. The PHP version is now set. You can confirm these settings:
 
         azure site show {site-name}
+
 
 ## How to: Change the built-in PHP configurations
 
@@ -88,8 +81,8 @@ For any built-in PHP runtime, you can change any of the configuration options by
 		display_errors=On
 		upload_max_filesize=10M
 
-3. Deploy your web site.
-4. Restart the web site. (Restarting is necessary because the frequency with which PHP reads `.user.ini` files is governed by the `user_ini.cache_ttl` setting, which is a system level setting and is 300 seconds (5 minutes) by default. Restarting the web site forces PHP to read the new settings in the `.user.ini` file.)
+3. Deploy your web app.
+4. Restart the web app. (Restarting is necessary because the frequency with which PHP reads `.user.ini` files is governed by the `user_ini.cache_ttl` setting, which is a system level setting and is 300 seconds (5 minutes) by default. Restarting the web app forces PHP to read the new settings in the `.user.ini` file.)
 
 As an alternative to using a `.user.ini` file, you can use the [ini_set()] function in scripts to set configuration options that are not system-level directives.
 
@@ -102,15 +95,15 @@ As an alternative to using a `.user.ini` file, you can use the [ini_set()] funct
 		; Example Settings
 		curl.cainfo="%ProgramFiles(x86)%\Git\bin\curl-ca-bundle.crt"
 		wincache.maxfilesize=512
-4. Restart your Web Site to load the changes.
+4. Restart your Web App to load the changes.
 
 ## How to: Enable extensions in the default PHP runtime
 As noted in the previous section, the best way to see the default PHP version, its default configuration, and the enabled extensions is to deploy a script that calls [phpinfo()]. To enable additional extensions, follow the steps below:
 
 ### Configure via ini settings
 
-1. Add a `ext` directory to the <code>d:\home\site</code> directory.
-2. Put `.dll` extension files in the `ext` directory (for example, <code>php_mongo.dll</code> and <code>php_xdebug.dll</code>). Make sure that the extensions are compatible with default version of PHP (which is, as of this writing, PHP 5.4) and are VC9 and non-thread-safe (nts) compatible.
+1. Add a `ext` directory to the `d:\home\site` directory.
+2. Put `.dll` extension files in the `ext` directory (for example, `php_mongo.dll` and `php_xdebug.dll`). Make sure that the extensions are compatible with default version of PHP (which is, as of this writing, PHP 5.4) and are VC9 and non-thread-safe (nts) compatible.
 3. Add an App Setting to your Web Site with the key <code>PHP_INI_SCAN_DIR</code> and value <code>d:\home\site\ini</code>
 4. Create an <code>ini</code> file in <code>d:\home\site\ini</code> called `extensions.ini`.
 5. Add configuration settings to the `extensions.ini` file using the same syntax you would use in a php.ini file. For example, if you wanted to enable the MongoDB and XDebug extensions, your `extensions.ini` file would contain this text:
@@ -118,13 +111,13 @@ As noted in the previous section, the best way to see the default PHP version, i
 		; Enable Extensions
 		extension=d:\home\site\ext\php_mongo.dll
 		zend_extension=d:\home\site\ext\php_xdebug.dll
-6. Restart your web site to load the changes.
+6. Restart your Web App to load the changes.
 
 ### Configure via App Setting
 
 1. Add a `bin` directory to the root directory.
 2. Put `.dll` extension files in the `bin` directory (for example, <code>php_mongo.dll</code>). Make sure that the extensions are compatible with default version of PHP (which is, as of this writing, PHP 5.4) and are VC9 and non-thread-safe (nts) compatible.
-3. Deploy your web site.
+3. Deploy your web app.
 
 1. Navigate to your site's dashboard in the Azure Management Portal, and click on **Configure**.
 
@@ -142,13 +135,13 @@ Zend extensions are also supported by using a **PHP_ZENDEXTENSIONS** key. To ena
 
 
 ## How to: Use a custom PHP runtime
-Instead of the default PHP runtime, Azure Websites can use a PHP runtime that you provide to execute PHP scripts. The runtime that you provide can be configured by a <code>php.ini</code> file that you also provide. To use a custom PHP runtime with Web Sites, follow the steps below.
+Instead of the default PHP runtime, Azure Web Apps can use a PHP runtime that you provide to execute PHP scripts. The runtime that you provide can be configured by a <code>php.ini</code> file that you also provide. To use a custom PHP runtime with Web Apps, follow the steps below.
 
 1. Obtain a non-thread-safe, VC9 or VC11 compatible version of PHP for Windows. Recent releases of PHP for Windows can be found here: [http://windows.php.net/download/]. Older releases can be found in the archive here: [http://windows.php.net/downloads/releases/archives/].
-2. Modify the <code>php.ini</code> file for your runtime. Note that any configuration settings that are system-level-only directives will be ignored by Web Sites. (For information about system-level-only directives, see [List of php.ini directives]).
-3. Optionally, add extensions to your PHP runtime and enable them in the <code>php.ini</code> file.
+2. Modify the <code>php.ini</code> file for your runtime. Note that any configuration settings that are system-level-only directives will be ignored by Web Apps. (For information about system-level-only directives, see [List of php.ini directives]).
+3. Optionally, add extensions to your PHP runtime and enable them in the `php.ini` file.
 4. Add a `bin` directory to your root directory, and put the directory that contains your PHP runtime in it (for example, `bin\php`).
-5. Deploy your web site.
+5. Deploy your web app.
 1. Navigate to your site's dashboard in the Azure Management Portal, and click on **Configure**.
 
 	![Configure tab on  Websites dashboard][configure]

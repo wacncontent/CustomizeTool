@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="CLI for Mac, Linux, and Windows | Windows Azure"
 	description="Using the Windows Azure CLI for Mac, Linux, and Windows with Azure Resource Manager."
@@ -172,7 +174,7 @@ The new **vm quick-create** shortcut cuts out most of the steps of the imperativ
 	Resource group name: CLIRG
 	Virtual machine name: myqvm
 	Location name: chinanorth
-	Operating system Type [Windows, Linux]: /documentation/articles/Linux
+	Operating system Type [Windows, Linux]: Linux
 	ImageURN (format: "publisherName:offer:skus:version"): CoreOS:CoreOS:Alpha:660.0.0
 	User name: azureuser
 	Password: ********

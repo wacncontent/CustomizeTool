@@ -8,10 +8,10 @@
 	editor="monicar" 
 	tags="azure-service-management" />
 	
-<tags 
+<tags
 	ms.service="virtual-machines"
-	ms.date="11/13/2015"
-	wacn.date="" />
+	ms.date="12/22/2015"
+	wacn.date=""/>
 
 # Performance best practices for SQL Server in Azure Virtual Machines
 
@@ -19,7 +19,7 @@
 
 This topic provides best practices for optimizing SQL Server performance in Windows Azure Virtual Machine. While running SQL Server in Azure Virtual Machines, we recommend that you continue using the same database performance tuning options that are applicable to SQL Server in on-premises server environment. However, the performance of a relational database in a public cloud depends on many factors such as the size of a virtual machine, and the configuration of the data disks.
 
-When creating SQL Server images, consider using the [new Portal](https://manage.windowsazure.cn) to take advantage of features, such as the default use of Premium Storage, and other options, such as Automated Patching, Automated Backup, and AlwaysOn configurations.
+When creating SQL Server images, consider using the Azure Management Portal to take advantage of features, such as the default use of Premium Storage, and other options, such as Automated Patching, Automated Backup, and AlwaysOn configurations.
 
 This paper is focused on getting the best performance for SQL Server on Azure VMs. If your workload is less demanding, you might not require every optimization listed below. Consider your performance needs and workload patterns as you evaluate these recommendations.
 
@@ -49,7 +49,7 @@ For performance sensitive applications, it's recommended that you use the follow
 
 For up-to-date information on supported virtual machine sizes, see [Sizes for Virtual Machines](/documentation/articles/virtual-machines-size-specs).
 
-In addition, we recommend that you create your Azure storage account in the same data center as your SQL Server virtual machines to reduce transfer delays. When creating a storage account, disable geo-replication as consistent write order across multiple disks is not guaranteed. Instead, consider configuring a SQL Server disaster recovery technology between two Azure data centers. For more information, see [High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions).
+In addition, we recommend that you create your Azure storage account in the same data centerÂ as your SQL Server virtual machines to reduce transfer delays. When creating a storage account, disable geo-replicationÂ as consistent write order across multiple disks is not guaranteed. Instead, consider configuring a SQL Server disaster recovery technology between two Azure data centers. For more information, see [High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions).
 
 ## Disks and performance considerations
 
@@ -66,6 +66,8 @@ Default caching policy on the operating system disk is **Read/Write**. For perfo
 The temporary storage drive, labeled as the **D**: drive, is not persisted to Azure blob storage. Do not store your data or log files on the **D**: drive.
 
 Only store TempDB and/or Buffer Pool Extensions on the **D** drive when using the D-Series or G-Series Virtual Machines (VMs). Unlike the other VM series, the **D** drive in the D-Series and G-Series VMs is SSD-based. This can improve the performance of workloads that heavily use temporary objects or that have working sets which don't fit in memory. For more information, see [Using SSDs in Azure VMs to store SQL Server TempDB and Buffer Pool Extensions](http://blogs.technet.com/b/dataplatforminsider/archive/2014/09/25/using-ssds-in-azure-vms-to-store-sql-server-tempdb-and-buffer-pool-extensions.aspx).
+
+For VMs that support Premium storage, we recommend storing TempDB on a disk that supports Premium Storage with read caching enabled.
 
 ### Data Disk
 
@@ -98,16 +100,6 @@ Only store TempDB and/or Buffer Pool Extensions on the **D** drive when using th
 - Make sure **autoshrink** is disabled to avoid unnecessary overhead that can negatively affect performance.
 
 - If you are running SQL Server 2012, install Service Pack 1 Cumulative Update 10. This update contains the fix for poor performance on I/O when you execute select into temporary table statement in SQL Server 2012. For information, see this [knowledge base article](http://support.microsoft.com/kb/2958012).
-
-- Move system databases (such as msdb and TempDB), backups and the default data and log directories of SQL Server to non-cached data disks to improve performance. Then, perform the following actions:
-
-	- Adjust the XEvent and Trace file paths.
-	
-	- Adjust the SQL Error Log path.
-	
-	- Adjust the default backup path.
-	
-	- Adjust the default database location.
 
 - Establish locked pages to reduce IO and any paging activities.
 

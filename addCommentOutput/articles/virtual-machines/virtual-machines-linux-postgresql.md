@@ -191,10 +191,10 @@ For example, create a new example Postgres table by using the following command:
 
 You have now set up a four-column table with the following column names and restrictions:
 
-1. The “name” column has been limited by the VARCHAR command to be under 20 characters long.
-2. The “food” column indicates the food item that each person will bring. VARCHAR limits this text to be under 30 characters.
-3. The “confirmed” column records whether the person has RSVP'd to the potluck. The acceptable values are "Y" and "N".
-4. The “date” column shows when they signed up for the event. Postgres requires that dates be written as yyyy-mm-dd.
+1. The "name" column has been limited by the VARCHAR command to be under 20 characters long.
+2. The "food" column indicates the food item that each person will bring. VARCHAR limits this text to be under 30 characters.
+3. The "confirmed" column records whether the person has RSVP'd to the potluck. The acceptable values are "Y" and "N".
+4. The "date" column shows when they signed up for the event. Postgres requires that dates be written as yyyy-mm-dd.
 
 You should see the following if your table has been successfully created:
 

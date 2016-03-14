@@ -101,11 +101,16 @@ You can provision HDInsight clusters from the Azure Management Portal by using t
 
 9. Select __Optional Configuration__. This blade allows you to configure the following items:
 
-	* __HDInsight Version__: The version of HDInsight used for the cluster. For more information on HDInsight versioning, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning)
+	* __HDInsight Version__: The version of HDInsight used for the cluster. For more information on HDInsight versioning, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1)
 
 	* __External Metastores__: This allows you to select a SQL Database, which will be used to store configuration information for Oozie and Hive. This allows you to reuse the configuration when deleting and recreating a cluster, instead of having to recreate the Hive and Oozie configuration each time.
 
-	* __Virtual Network__: This allows you to place the HDInsight cluster on the same virtual network as other resources, such as SQL Database or an Azure Virtual Machine. Placing resources on a virtual network allows the to directly communicate with each other, bypassing the public gateways that handle incoming traffic from the Internet. For more information on how HDInsight benefits from Azure Virtual Networks, see [Extend HDInsight capabilities by using Azure Virtual Network](/documentation/articles/hdinsight-extend-hadoop-virtual-network).
+	* __Virtual Network__: This allows you to place the HDInsight cluster on the same virtual network as other resources, such as SQL Database or an Azure Virtual Machine. Placing resources on a virtual network allows the to directly communicate with each other, bypassing the public gateways that handle incoming traffic from the Internet. <!-- keep by customization: begin --> For more information on how HDInsight benefits from Azure Virtual Networks, see [Extend HDInsight capabilities by using Azure Virtual Network](/documentation/articles/hdinsight-extend-hadoop-virtual-network). <!-- keep by customization: end -->
+<!-- deleted by customization
+    
+        For information on using HDInsight with a Virtual Network, including specific configuration requirements for the Virtual Network, see [Extend HDInsight capbilities by using an Azure Virtual Network](/documentation/articles/hdinsight-extend-hadoop-virtual-network).
+-->
+<!-- keep by customization: begin -->
 
 		> [AZURE.IMPORTANT] You must create the Azure Virtual Network before creating the HDInsight cluster, as you cannot create a new network from HDInsight configuration.
 		>
@@ -114,6 +119,7 @@ You can provision HDInsight clusters from the Azure Management Portal by using t
         > You cannot use a v1 (Classic,) Azure Virtual Network with Linux-based HDInsight. The Virtual Network must be v2 (Azure Resource Manager,) in order for it to be listed as an option during the HDInsight cluster creation process in the Azure Management Portal, or to be usable when creating a cluster from the Azure CLI or Azure PowerShell.
         >
         > If you have resources on a v1 network, and you wish to make HDInsight directly accessible to those resources through a virtual network, see [Connecting classic VNets to new VNets](/documentation/articles/virtual-networks-arm-asm-s2s) for information on how to connect a v2 Virtual Network to a v1 Virtual Network. Once this connection is established, you can create the HDInsight cluster in the v2 Virtual Network.
+<!-- keep by customization: end -->
 
 	* __Script Actions__: This allows you to specify Bash scripts that customize the HDInsight cluster during provisioning. For example, there is a [script that installs Hue](/documentation/articles/hdinsight-hadoop-hue-linux) (a graphical client for working with Hadoop.) For more information on Script Actions, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1).
 
@@ -185,6 +191,6 @@ In this article, you have learned how to create an HDInsight cluster by using th
 * [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1)
 * [Submit Hadoop jobs programmatically](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)
 * [Get Started with Azure HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
-* [What version of Hadoop is in Azure HDInsight?](/documentation/articles/hdinsight-component-versioning)
+* [What version of Hadoop is in Azure HDInsight?](/documentation/articles/hdinsight-component-versioning-v1)
 
 [preview-portal]: https://manage.windowsazure.cn

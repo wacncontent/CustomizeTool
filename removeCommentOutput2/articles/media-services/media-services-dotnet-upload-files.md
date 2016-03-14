@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/17/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 
@@ -176,7 +176,7 @@ When uploading a large number of assets, consider the following.
  
 ##<a id="ingest_in_bulk"></a>Ingesting Assets in Bulk using Media Services .NET SDK 
 
-Uploading large asset files can be a bottleneck during asset creation. Ingesting Assets in Bulk or “Bulk Ingesting”, involves decoupling asset creation from the upload process. To use a bulk ingesting approach, create a manifest (IngestManifest) that describes the asset and its associated files. Then use the upload method of your choice to upload the associated files to the manifest's blob container. Windows Azure Media Services watches the blob container associated with the manifest. Once a file is uploaded to the blob container, Windows Azure Media Services completes the asset creation based on the configuration of the asset in the manifest (IngestManifestAsset).
+Uploading large asset files can be a bottleneck during asset creation. Ingesting Assets in Bulk or "Bulk Ingesting", involves decoupling asset creation from the upload process. To use a bulk ingesting approach, create a manifest (IngestManifest) that describes the asset and its associated files. Then use the upload method of your choice to upload the associated files to the manifest's blob container. Windows Azure Media Services watches the blob container associated with the manifest. Once a file is uploaded to the blob container, Windows Azure Media Services completes the asset creation based on the configuration of the asset in the manifest (IngestManifestAsset).
 
 
 To create a new IngestManifest call the Create method exposed by the IngestManifests collection on the CloudMediaContext. This method will create a new IngestManifest with the manifest name you provide.

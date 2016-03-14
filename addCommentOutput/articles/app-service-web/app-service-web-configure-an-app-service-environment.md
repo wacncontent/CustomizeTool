@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="How to Configure an Azure Websites Environment" 
-	description="Configuration, management and monitoring of Azure Websites Environments" 
+	pageTitle="How to Configure an Azure Environment" 
+	description="Configuration, management and monitoring of Azure Environments" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="ccompy" 
@@ -9,19 +9,19 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/26/2015"
+	ms.date="01/04/2016"
 	wacn.date=""/>
 
 
-# Configuring an Azure Websites Environment #
+# Configuring an Azure Environment #
 
 ## Overview ##
 
-Azure Websites Environments is a Premium Tier capability in the Azure Websites that offers new scaling and network access capabilities.  This new scale capability allows you to place an instance of the Azure Websites into your VNET.  This capability can host web sites, Mobile Apps and API Apps.  Logic Apps do not yet run in an ASE.
+Azure Environments is a Premium Tier capability in the Azure that offers new scaling and network access capabilities.  This new scale capability allows you to place an instance of the Azure into your VNET.  This capability can host Web Apps, Mobile Apps and API Apps.  Logic Apps do not yet run in an ASE.
 
-If you are unfamiliar with the Azure Websites Environment (ASE) capability then read the document here [What is an Azure Websites Environment](/documentation/articles/app-service-app-service-environment-intro). For information on how to create an ASE read the document here [How to Create an Azure Websites Environment](/documentation/articles/app-service-web-how-to-create-an-app-service-environment). 
+If you are unfamiliar with the Azure Environment (ASE) capability then read the document here [What is an Azure Environment](/documentation/articles/app-service-app-service-environment-intro). For information on how to create an ASE read the document here [How to Create an Azure Environment](/documentation/articles/app-service-web-how-to-create-an-app-service-environment). 
 
-At a high level an Azure Websites Environment consists of several major components:
+At a high level an Azure Environment consists of several major components:
 
 - Compute resources running in the Azure App Environment Hosted Service
 - Storage
@@ -29,7 +29,7 @@ At a high level an Azure Websites Environment consists of several major componen
 - A classic "v1" Virtual Network with at least one subnet
 - subnet with the Azure App Environment hosted service running in it
 
-The compute resources are used for your 4 resource pools.  Each Azure Websites Environment has a set of Front Ends and 3 Worker Pools.  You don't need to use all 3 Worker Pools and if you want can just use one.  The Front Ends are the HTTP endpoints for your apps held in your ASE.  The Workers are where your apps actually run.  The science on when you need to add more Front Ends or more Workers is tied to how the apps you put in the ASE perform.  As an example, let's say you only have one app on your ASE and it's a hello world app that gets a vast number of requests.  In that case you would need to scale up your Front Ends to handle the HTTP load but conversely would not need to scale up your Workers.  Trying to handle all of this by hand is rather daunting especially when you consider that each ASE likely has a mix of apps running on it with varied performance criteria.  Happily enough we have added autoscale to Azure Websites Environments and this is what will make life a lot easier.  For details around scaling and autoscaling of Azure Websites Environments follow the link here [How to configure autoscale in an Azure Websites Environment][ASEAutoscale]
+The compute resources are used for your 4 resource pools.  Each Azure Environment has a set of Front Ends and 3 Worker Pools.  You don't need to use all 3 Worker Pools and if you want you can just use one.  The Front Ends are the HTTP endpoints for your apps held in your ASE.  The Workers are where your apps actually run.  The science on when you need to add more Front Ends or more Workers is tied to how the apps you put in the ASE perform.  As an example, let's say you only have one app on your ASE and it's a hello world app that gets a vast number of requests.  In that case you would need to scale up your Front Ends to handle the HTTP load but conversely would not need to scale up your Workers.  Trying to handle all of this by hand is rather daunting especially when you consider that each ASE likely has a mix of apps running on it with varied performance criteria.  Happily enough we have added autoscale to Azure Environments and this is what will make life a lot easier.  For details around scaling and autoscaling of Azure Environments follow the link here [How to configure autoscale in an Azure Environment][ASEAutoscale]
 
 Each ASE is configured with 500 Gb of storage.  This space is used across all the apps in the ASE.  This storage space is a part of the ASE and currently cannot be switched to use the customer's storage space.
 
@@ -37,11 +37,11 @@ The database holds the information that defines the environment as well as detai
 
 The virtual network that is used with your ASE can be one that you made when creating the ASE or one that you had ahead of time.  If you want your ASE to be in a resource group that is separate from the one used for your ASE then you need to make your VNET separately from the ASE creation flow.  It is a good idea to create the subnet you want to use at the same time as creating the subnet during ASE creation will force the ASE to be in the same resource group as the VNET.  Currently there is only support for V1 "classic" VNETs.  
 
-The UI to manage and monitor your Azure Websites Environment is available from the Azure Management Portal.  If you have an ASE then you are likely to see the Azure Websites symbol on your sidebar.  This symbol is used to represent Azure Websites Environments in the Azure Management Portal.
+The UI to manage and monitor your Azure Environment is available from the Azure Management Portal.  If you have an ASE then you are likely to see the Azure symbol on your sidebar.  This symbol is used to represent Azure Environments in the Azure Management Portal.
 
 ![][1]
 
-You can use the icon or select the chevron (greater than symbol) at the bottom of the sidebar and select Azure Websites Environments.  Both do the same thing which is to open up UI that lists all of your Azure Websites Environments.  Selecting one of the ASEs listed opens up the UI used to monitor and manage it.
+You can use the icon or select the chevron (greater than symbol) at the bottom of the sidebar and select Azure Environments.  Both do the same thing which is to open up the UI that lists all of your Azure Environments.  Selecting one of the ASEs listed opens up the UI used to monitor and manage it.
 
 ![][2]
 
@@ -51,14 +51,14 @@ This first blade shows some properties of your ASE along with a metric chart per
 
 The charts give an ability to see a variety of performance metrics in each resource pool.  For the Front End pool it makes a lot of sense to monitor the average CPU and memory.  The Front Ends have a distributed load by looking at an average you can get a good view at the general performance.  The worker pools are however not the same.  Multiple App Service Plans can make use of the workers in a worker pool.  If that is the case then CPU and memory usage do not provide much in the way of useful information.  It's more important to track how many workers you have used and are available especially if you are managing this system for others to use.  
 
-All of the metrics that can be tracked in the charts can also be used to set up Alerts.  Setting up Alerts works the same as they do elsewhere in Azure Websites. You can set an alert from either the Alerts UI part or from drilling into any metrics UI and hitting Add Alert.
+All of the metrics that can be tracked in the charts can also be used to set up Alerts.  Setting up Alerts works the same as they do elsewhere in Azure Web App. You can set an alert from either the Alerts UI part or from drilling into any metrics UI and hitting Add Alert.
  
 ![][3]
 
-The metrics that were just discussed are the Azure Websites Environment metrics.  There are also metrics available at the App Service Plan level.  This is where monitoring CPU and memory makes a lot of sense.  In an ASE, all of the ASPs are dedicated ASPs.  That is to say that the only apps that are running on the hosts allocated to that ASP are the apps in that ASP.  
+The metrics that were just discussed are the Azure Environment metrics.  There are also metrics available at the App Service Plan level.  This is where monitoring CPU and memory makes a lot of sense.  In an ASE, all of the ASPs are dedicated ASPs.  That is to say that the only apps that are running on the hosts allocated to that ASP are the apps in that ASP.  
 To see details on your ASP simply bring up your ASP from any of the lists in the ASE UI or even from browse App Service Plans which lists all of them.   
 
-You may already be familiar with the autoscale capabilities that are available to ASPs outside of an ASE and how those leverage the metrics that are available for a resource.  The same is also true for auto scale of an Azure Websites Environment.  Not only can you still autoscale the ASP based on metrics in an ASE but you can also set up autoscale rules for the ASE itself.  For details around setting up autoscale there is a detailed guide here: [Autoscale in an Azure Websites Environment][ASEAutoscale]  
+You may already be familiar with the autoscale capabilities that are available to ASPs outside of an ASE and how those leverage the metrics that are available for a resource.  The same is also true for auto scale of an Azure Environment.  Not only can you still autoscale the ASP based on metrics in an ASE but you can also set up autoscale rules for the ASE itself.  For details around setting up autoscale there is a detailed guide here: [Autoscale in an Azure Environment][ASEAutoscale]  
 
 
 ## Properties ##
@@ -69,7 +69,7 @@ The Settings blade will automatically open up when you bring up your ASE blade. 
 
 ## IP Addresses ##
 
-This is where you can add more IP addresses to your ASE for your apps to use.  When you create an app in your ASE that you want to set up with IP SSL then you need to have an IP address that is reserved just for that app.  In order to do that your ASE needs to have some IP addresses that it owns which can be allocated.  When an ASE is created it has 1 address for this purpose.  If you need more then you go here and add more.  Now before you simply drag it to the maximum allotment in case you might ever want more, be aware that there is a charge for additional IP addresses.  The details on how much more are tracked on the pricing page here: [Azure Websites Pricing][AppServicePricing]  Just scroll down to the section on SSL connections.  The additional price is the IP SSL price.
+This is where you can add more IP addresses to your ASE for your apps to use.  When you create an app in your ASE that you want to set up with IP SSL then you need to have an IP address that is reserved just for that app.  In order to do that your ASE needs to have some IP addresses that it owns which can be allocated.  When an ASE is created it has 1 address for this purpose.  If you need more then you go here and add more.  Now before you simply drag it to the maximum allotment in case you might ever want more, be aware that there is a charge for additional IP addresses.  The details on how much more are tracked on the pricing page here: [Azure Pricing][AppServicePricing]  Just scroll down to the section on SSL connections.  The additional price is the IP SSL price.
 
 **NOTE:** If you do add more IP addresses then be aware that this is a scale operation.  There can only be one scale operation in progress at a time.  There are three scale operations:
 
@@ -87,7 +87,7 @@ The base blade for each resource pool provides a chart with metrics for that res
 
 ### Compute Resource Quantity Scale ###
 
-To give a better perspective on scaling apps in an ASE there is a guide here: [Scaling Apps in an Azure Websites Environment](/documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment).  If you want to learn more on how to configure autoscale for the ASE resource pools then start here: [Autoscale in an Azure Websites Environment][ASEAutoscale].  This description details manual scale operations on your resource pools.
+To give a better perspective on scaling apps in an ASE there is a guide here: [Scaling Apps in an Azure Environment](/documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment).  If you want to learn more on how to configure autoscale for the ASE resource pools then start here: [Autoscale in an Azure Environment][ASEAutoscale].  This description details manual scale operations on your resource pools.
 
 The resource pools, Front Ends and Workers, are not directly accessible to tenants.  That is to say, you cannot RDP to them, change their provisioning or act as an admin on them.  They are operated and maintained by Azure.  With that said, the quantity and sizes of compute resources though are up to the user to decide.  
 
@@ -104,7 +104,7 @@ To use the manual or autoscale capabilities in the specific resource pool, start
 
 ![][7] 
 
-An Azure Websites Environment can be configured to use up to 55 total compute resources.  Of those 55 compute resources, only 50 can be used to host workloads. The reason for that is two fold.  There are a minimum of 2 Front End compute resources.  That leaves up to 53 to support worker pool allocation. In order to provide fault tolerance, you need to have an additional compute resource allocated according to the following rules:
+An Azure Environment can be configured to use up to 55 total compute resources.  Of those 55 compute resources, only 50 can be used to host workloads. The reason for that is two fold.  There are a minimum of 2 Front End compute resources.  That leaves up to 53 to support worker pool allocation. In order to provide fault tolerance, you need to have an additional compute resource allocated according to the following rules:
 
 - each worker pool needs at least one additional compute resource which is not available to be assigned a workload
 - when the quantity of compute resources in a worker pool goes above a certain value then another compute resource is required for fault tolerance.  This is not the case in the front end pool.
@@ -126,7 +126,7 @@ The fault tolerance aspect is important but you need to keep it in mind as your 
 
 ### Compute Resource Size Scale ###
 
-In addition to being able to manage the quantity of compute resources that you can assign to a given pool you also have control over the size.  With Azure Websites Environments you can choose from 4 different sizes labeled P1 through P4.  For details around those sizes and their pricing please see here [Azure Websites Pricing](/documentation/services/web-sites) The P1 to P3 compute resource sizes are the same as what is available normally.  The P4 compute resource gives 8 cores with 14 GB of RAM and is only available in an Azure Websites Environment.
+In addition to being able to manage the quantity of compute resources that you can assign to a given pool you also have control over the size.  With Azure Environments you can choose from 4 different sizes labeled P1 through P4.  For details around those sizes and their pricing please see here [Azure Pricing](/documentation/services/web-sites) The P1 to P3 compute resource sizes are the same as what is available normally.  The P4 compute resource gives 8 cores with 14 GB of RAM and is only available in an Azure Environment.
 
 If you want to change the size of the compute resources used in your pools you have two ways to go about it.  There is the scale command that is available from the ASE blade and also the Pricing Tiers blade that you get to by going to Settings in the individual resource pool.
 
@@ -135,7 +135,7 @@ If you want to change the size of the compute resources used in your pools you h
 Before making any changes though it is important to note a few things:
 
 - changes made can potentially take a couple of hours to complete depending on how large the change is
-- when there is already a Azure Websites Environment configuration change in work, you cannot start another change
+- when there is already a Azure Environment configuration change in work, you cannot start another change
 - if you change the size of the compute resources used in a worker pool you can cause outages for the apps running in that worker pool
 
 Adding additional instances to a worker pool is a benign operation and does not incur any app outages for resources in that pool.  Changing the size of the compute resource used in a worker pool is another story though.  To avoid any app down time during a size change to a worker pool it is better to:
@@ -143,11 +143,11 @@ Adding additional instances to a worker pool is a benign operation and does not 
 - use an unused worker pool to bring up the instances required in the size desired
 - scale the App Service Plans to the new worker pool.  
  
-This is much less disruptive to running apps than changing the compute resource size with running workloads.  For details around scaling apps in an Azure Websites Environment go here [Scaling Apps in an Azure Websites Environment](/documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment)  
+This is much less disruptive to running apps than changing the compute resource size with running workloads.  For details around scaling apps in an Azure Environment go here [Scaling Apps in an Azure Environment](/documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment)  
 
 ## Virtual Network ##
 
-Unlike the hosted service that contains the ASE, the [Virtual Network][virtualnetwork] and subnet are all under user control.  Azure Websites Environments do have a few network requirements but the rest is up to the user to control.  Those ASE requirements are:
+Unlike the hosted service that contains the ASE, the [Virtual Network][virtualnetwork] and subnet are all under user control.  Azure Environments do have a few network requirements but the rest is up to the user to control.  Those ASE requirements are:
 
 - a classic "v1" VNET 
 - a subnet with at least 8 addresses 
@@ -155,23 +155,23 @@ Unlike the hosted service that contains the ASE, the [Virtual Network][virtualne
  
 Administering your VNET is done through the Virtual Network UI or Powershell.
 
-Because this capability places the Azure Websites into your VNET it means that your apps hosted in your ASE can now access resources made available through ExpressRoute or Site to Site VPNs directly.  The apps within your Azure Websites Environments do not require additional networking features to access resources available to the VNET hosting your Azure Websites Environment. This means you don't need to use VNET Integration or Hybrid Connections to get to resources in or connected to your VNET.  You can still use both of those features though to access resources in networks that are not connected to your VNET.  For example you can use VNET Integration to integrate with a VNET that is in your subscription but isn't connected to the VNET that your ASE is in.  You can still also use Hybrid Connections to access resources in other networks just like you normally can.  
+Because this capability places the Azure into your VNET it means that your apps hosted in your ASE can now access resources made available through ExpressRoute or Site to Site VPNs directly.  The apps within your Azure Environments do not require additional networking features to access resources available to the VNET hosting your Azure Environment. This means you don't need to use VNET Integration or Hybrid Connections to get to resources in or connected to your VNET.  You can still use both of those features though to access resources in networks that are not connected to your VNET.  For example you can use VNET Integration to integrate with a VNET that is in your subscription but isn't connected to the VNET that your ASE is in.  You can still also use Hybrid Connections to access resources in other networks just like you normally can.  
 
-If you do have your VNET configured with an ExpressRoute VPN you should be aware of some of the routing needs that an ASE has.  There are some user defined route (UDR) configurations that are incompatible with an ASE.  For more details around running an ASE in a VNET with ExpressRoute see the document here: [Running an Azure Websites Environment in a VNET with ExpressRoute][ExpressRoute]
+If you do have your VNET configured with an ExpressRoute VPN you should be aware of some of the routing needs that an ASE has.  There are some user defined route (UDR) configurations that are incompatible with an ASE.  For more details around running an ASE in a VNET with ExpressRoute see the document here: [Running an Azure Environment in a VNET with ExpressRoute][ExpressRoute]
 
-You can also now control access to your apps using Network Security Groups.  This capability allows you to lock down your Azure Websites Environment to just the IP addresses you wish to restrict it to.  For more information around how to do that see the document here [How to Control Inbound Traffic in an Azure Websites Environment](/documentation/articles/app-service-app-service-environment-control-inbound-traffic).
+You can also now control access to your apps using Network Security Groups.  This capability allows you to lock down your Azure Environment to just the IP addresses you wish to restrict it to.  For more information around how to do that see the document here [How to Control Inbound Traffic in an Azure Environment](/documentation/articles/app-service-app-service-environment-control-inbound-traffic).
 
-## Deleting an Azure Websites Environment ##
+## Deleting an Azure Environment ##
 
-If you want to delete an Azure Websites Environment then simply use the Delete action at the top of the Azure Websites Environment blade.  When you do this you will be prompted to enter the name of your Azure Websites Environment to confirm that you really want to do this.  NOTE: When you delete an Azure Websites Environment you delete all the content within it as well.  
+If you want to delete an Azure Environment then simply use the Delete action at the top of the Azure Environment blade.  When you do this you will be prompted to enter the name of your Azure Environment to confirm that you really want to do this.  NOTE: When you delete an Azure Environment you delete all the content within it as well.  
 
 ![][9]  
 
 ## Getting started
 
-To get started with Azure Websites Environments, see [How To Create An Azure Websites Environment](/documentation/articles/app-service-web-how-to-create-an-app-service-environment)
+To get started with Azure Environments, see [How To Create An Azure Environment](/documentation/articles/app-service-web-how-to-create-an-app-service-environment)
 
-For more information about the Azure Websites platform, see [Azure Websites](/documentation/services/web-sites).
+For more information about the Azure platform, see [Azure Web App](/documentation/services/web-sites).
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 

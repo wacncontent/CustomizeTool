@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Enable HTTPS for a web site in Azure Websites"
-	description="Learn how to enable SSL with an Azure Websites."
+	pageTitle="Enable HTTPS for a web app in Azure"
+	description="Learn how to enable SSL with an Azure Web App."
 	services="app-service"
 	documentationCenter=".net"
 	authors="cephalin"
@@ -14,7 +14,7 @@
 	wacn.date=""/>
 
 
-#Enable HTTPS for an app in Azure Websites
+#Enable HTTPS for an app in Azure
 
 <!-- deleted by customization
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]

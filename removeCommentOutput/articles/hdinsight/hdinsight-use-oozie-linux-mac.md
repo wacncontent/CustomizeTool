@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 
@@ -28,7 +28,7 @@ Apache Oozie is a workflow/coordination system that manages Hadoop jobs. It is i
 
 Before you begin this tutorial, you must have the following:
 
-- **An Azure subscription**: See [Get Azure trial](/documentation/articles/get-azure-free-trial-for-testing-hadoop-in-hdinsight).
+- **An Azure subscription**: See [Get Azure trial](/pricing/1rmb-trial/).
 
 - **Azure CLI**: See [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install)
 
@@ -677,7 +677,7 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 
 [azure-data-factory-pig-hive]: data-factory-pig-hive-activities.md
 [hdinsight-oozie-coordinator-time]: hdinsight-use-oozie-coordinator-time.md
-[hdinsight-versions]:  hdinsight-component-versioning.md
+[hdinsight-versions]:  hdinsight-component-versioning-v1.md
 [hdinsight-storage]: hdinsight-use-blob-storage.md
 [hdinsight-get-started]: hdinsight-get-started.md
 

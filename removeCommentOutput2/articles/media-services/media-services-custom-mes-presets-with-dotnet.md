@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="01/14/2016"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 
@@ -412,7 +412,7 @@ The following considerations apply:
 
 	You can mix and match notations as you please.
 	
-	Additionally, Start also supports a special Macro:{Best}, which attempts to determine the first “interesting” frame of the content 
+	Additionally, Start also supports a special Macro:{Best}, which attempts to determine the first "interesting" frame of the content 
 	NOTE: (Step and Range are ignored when Start is set to {Best})
 	
 	- Defaults: Start:{Best}
@@ -754,7 +754,6 @@ In addition to defining a preset file, you also have to let Media Services know 
 	
 	<?xml version="1.0" encoding="utf-16"?>
 	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://azure.microsoft.com/media/encoding/Preset/2014/03">
-	  <Grid Enabled="true" />
 	  <Sources>
 	    <Source>
 	      <Streams />
@@ -874,13 +873,6 @@ You can turn the auto de-interlacing off. This option is not recommended.
 
 
 
-##Media Services learning paths
-
-[AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
-
-##Provide feedback
-
-[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 ##See Also 
 

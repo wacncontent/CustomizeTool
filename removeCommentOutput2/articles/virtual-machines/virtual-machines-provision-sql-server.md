@@ -16,7 +16,7 @@
 # Provision a SQL Server virtual machine in Azure
 
 > [AZURE.SELECTOR]
-- [Portal](/documentation/articles/virtual-machines-provision-sql-server)
+- [Management Portal](/documentation/articles/virtual-machines-provision-sql-server)
 - [PowerShell](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
 
 ## Overview
@@ -27,7 +27,7 @@ The Azure virtual machine gallery includes several images that contain Microsoft
 
 In this tutorial, you will:
 
-* [Connect to the Azure management portal and provision a virtual machine from the gallery](#Provision)
+* [Connect to the Azure Management Portal and provision a virtual machine from the gallery](#Provision)
 * [Open the virtual machine using Remote Desktop and complete setup](#RemoteDesktop)
 * [Complete configuration steps to connect to the virtual machine using SQL Server Management Studio on another computer](#SSMS)
 * [Next steps](#Optional)

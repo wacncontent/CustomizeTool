@@ -1,3 +1,14 @@
 updated docs: 0
+articles/virtual-network/virtual-network-create-udr-classic-ps.md
+articles/virtual-network/virtual-network-ip-addresses-overview-classic.md
+articles/virtual-network/virtual-networks-dmz-nsg-fw-asm.md
+articles/virtual-network/virtual-networks-dmz-nsg-fw-udr-asm.md
+articles/virtual-network/virtual-networks-instance-level-public-ip.md
+articles/virtual-network/virtual-networks-nsg.md
+articles/virtual-network/virtual-networks-reserved-public-ip.md
+articles/virtual-network/virtual-networks-setup-hybrid-cloud-environment-testing.md
+articles/virtual-network/virtual-networks-setup-sharepoint-hybrid-cloud-testing.md
+articles/virtual-network/virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md
+
 
 updated includes: 0

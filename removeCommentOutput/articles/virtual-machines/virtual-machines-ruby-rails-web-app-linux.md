@@ -10,14 +10,14 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="11/20/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 
 
 
 
-#Ruby on Rails web site on an Azure VM
+#Ruby on Rails Web application on an Azure VM
 
 This tutorial shows how to host a Ruby on Rails website on Azure using a Linux virtual machine.  
 

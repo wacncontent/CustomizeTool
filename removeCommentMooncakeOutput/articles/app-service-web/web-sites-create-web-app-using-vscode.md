@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Create an ASP.NET 5 web site in Visual Studio Code"
-   description="This tutorial illustrates how to create an ASP.NET 5 web site using Visual Studio Code."
+   pageTitle="Create an ASP.NET 5 web app in Visual Studio Code"
+   description="This tutorial illustrates how to create an ASP.NET 5 web app using Visual Studio Code."
    services="app-service\web"
    documentationCenter=".net"
    authors="erikre"
@@ -12,24 +12,24 @@
 	ms.date="12/17/2015"
 	wacn.date=""/>
 
-# Create an ASP.NET 5 web site in Visual Studio Code
+# Create an ASP.NET 5 web app in Visual Studio Code
 
 ## Overview
 
-This tutorial shows you how to create an ASP.NET 5 web site using [Visual Studio Code (VS Code)](http://code.visualstudio.com//Docs/whyvscode) and deploy it to [Azure Websites](/documentation/services/web-sites). 
+This tutorial shows you how to create an ASP.NET 5 web app using [Visual Studio Code (VS Code)](http://code.visualstudio.com//Docs/whyvscode) and deploy it to [Azure Web App](/documentation/services/web-sites). 
 
-ASP.NET 5 is a significant redesign of ASP.NET. ASP.NET 5 is a new open-source and cross-platform framework for building modern cloud-based web sites using .NET. For more information, see [Introduction to ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html). For information about Azure Websites, see [web sites Overview](/home/features/web-site/).
+ASP.NET 5 is a significant redesign of ASP.NET. ASP.NET 5 is a new open-source and cross-platform framework for building modern cloud-based web apps using .NET. For more information, see [Introduction to ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html). For information about Azure web apps, see [Web Apps Overview](/home/features/web-site).
 
 [AZURE.INCLUDE [app-service-web-try-app-service.md](../includes/app-service-web-try-app-service.md)]
 
 ## Prerequisites  
 
 * Install [VS Code](http://code.visualstudio.com/Docs/setup).
-* Install [Node.js](http://nodejs.org) - Node.js is a platform for building fast and scalable server applications using JavaScript. Node is the runtime (Node), and [npm](http://www.npmjs.com/) is the Package Manager for Node modules. You will use npm to scaffold an ASP.NET 5 web site in this tutorial.
+* Install [Node.js](http://nodejs.org) - Node.js is a platform for building fast and scalable server applications using JavaScript. Node is the runtime (Node), and [npm](http://www.npmjs.com/) is the Package Manager for Node modules. You will use npm to scaffold an ASP.NET 5 web app in this tutorial.
 * Install Git - You can install it from either of these locations: [Chocolatey](https://chocolatey.org/packages/git) or [git-scm.com](http://git-scm.com/downloads). If you are new to Git, choose [git-scm.com](http://git-scm.com/downloads) and select the option to **Use Git from the Windows Command Prompt**. Once you install Git, you'll also need to set the Git user name and email as it's required later in the tutorial (when performing a commit from VS Code).  
 
 ## Install ASP.NET 5 and DNX
-ASP.NET 5/DNX (the .NET Execution Environment) is a lean .NET stack for building modern cloud and web sites that run on OS X, Linux, and Windows. It has been built from the ground up to provide an optimized development framework for apps that are either deployed to the cloud or run on-premises. It consists of modular components with minimal overhead, so you retain flexibility while constructing your solutions.
+ASP.NET 5/DNX (the .NET Execution Environment) is a lean .NET stack for building modern cloud and web apps that run on OS X, Linux, and Windows. It has been built from the ground up to provide an optimized development framework for apps that are either deployed to the cloud or run on-premises. It consists of modular components with minimal overhead, so you retain flexibility while constructing your solutions.
 
 This tutorial is designed to get you started building applications with the latest development versions of ASP.NET 5 and DNX. The following instructions are specific to Windows. For more detailed installation instructions for OS X, Linux, and Windows, see [Installing ASP.NET 5 and DNX](https://code.visualstudio.com/Docs/ASPnet5#_installing-aspnet-5-and-dnx). 
 
@@ -61,15 +61,15 @@ This tutorial is designed to get you started building applications with the late
 
 	![DNVM location](./media/web-sites-create-web-app-using-vscode/00b-dnvm-list.png)
 
-	If more than one DNX runtime is listed, you can choose to enter the following (or a more recent version) at the command prompt to set the active DNX runtime. Set it to the same version that is used by the ASP.NET 5 generator when you create your web site later in this tutorial. *You may not need to change the active runtime if it is set to the latest available.*
+	If more than one DNX runtime is listed, you can choose to enter the following (or a more recent version) at the command prompt to set the active DNX runtime. Set it to the same version that is used by the ASP.NET 5 generator when you create your web app later in this tutorial. *You may not need to change the active runtime if it is set to the latest available.*
 
 		dnvm use 1.0.0-update1 -p
 
 > [AZURE.NOTE] For more detailed installation instructions for OS X, Linux, and Windows, see [Installing ASP.NET 5 and DNX](https://code.visualstudio.com/Docs/ASPnet5#_installing-aspnet-5-and-dnx). 
 
-## Create the web site 
+## Create the web app 
 
-This section shows you how to scaffold a new app ASP.NET web site. You will use the node package manager (npm) to install [Yeoman](http://yeoman.io/) (application scaffolding tool - the VS Code equivalent of the Visual Studio **File > New Project** operation), [Grunt](http://gruntjs.com/) (JavaScript task runner), and [Bower](http://bower.io/) (client side package manager). 
+This section shows you how to scaffold a new app ASP.NET web app. You will use the node package manager (npm) to install [Yeoman](http://yeoman.io/) (application scaffolding tool - the VS Code equivalent of the Visual Studio **File > New Project** operation), [Grunt](http://gruntjs.com/) (JavaScript task runner), and [Bower](http://bower.io/) (client side package manager). 
 
 1. Open a command prompt with Administrator rights and navigate to the location where you want to create your ASP.NET project. For instance, create a *vscodeprojects* directory at the root of C:\.
 
@@ -83,11 +83,11 @@ This section shows you how to scaffold a new app ASP.NET web site. You will use 
 
 		yo aspnet
 
-4. Use the arrow keys to select the **web site Basic** type from the ASP.NET 5 generator menu, and press **&lt;Enter>**.
+4. Use the arrow keys to select the **Web Application Basic** type from the ASP.NET 5 generator menu, and press **&lt;Enter>**.
 
 	![Yeoman - ASP.NET 5 generator](./media/web-sites-create-web-app-using-vscode/01-yo-aspnet.png)
 
-5. Set the name of your new ASP.NET web site to **SampleWebApp**. As this name is used throughout the tutorial, if you select a different name, you'll need to substitute it for each occurrence of **SampleWebApp**. When you press **&lt;Enter>**, Yeoman will create a new folder named **SampleWebApp** and the necessary files for your new app.
+5. Set the name of your new ASP.NET web app to **SampleWebApp**. As this name is used throughout the tutorial, if you select a different name, you'll need to substitute it for each occurrence of **SampleWebApp**. When you press **&lt;Enter>**, Yeoman will create a new folder named **SampleWebApp** and the necessary files for your new app.
 
 6. At the command prompt, change directories to your new project folder:
 
@@ -101,9 +101,9 @@ This section shows you how to scaffold a new app ASP.NET web site. You will use 
 
 		code .
 
-## Run the web site locally
+## Run the web app locally
 
-Now that you have created the web site and retrieved all the NuGet packages for the app, you can run the web site locally.
+Now that you have created the web app and retrieved all the NuGet packages for the app, you can run the web app locally.
 
 1. From the **Command Palette** in VS Code, enter the following to show the available run command options:
 
@@ -111,7 +111,7 @@ Now that you have created the web site and retrieved all the NuGet packages for 
 
 	> [AZURE.NOTE] If the Omnisharp server is not currently running, it will start up. Re-enter the above command.
 
-	Next, select the following command to run your web site:
+	Next, select the following command to run your web app:
 		
 		dnx web - (SampleWebApp)
 
@@ -123,13 +123,13 @@ Now that you have created the web site and retrieved all the NuGet packages for 
 
 	**http://localhost:5000**
 
-	The default page of the web site will appear as follows.
+	The default page of the web app will appear as follows.
 
-	![Local web site in a browser](./media/web-sites-create-web-app-using-vscode/08-web-app.png)
+	![Local web app in a browser](./media/web-sites-create-web-app-using-vscode/08-web-app.png)
 
 3. Close your browser. In the **Command Window**, press **Ctrl+C** to shut down the application and close the **Command Window**. 
 
-## Create a web site in the Azure Management Portal
+## Create a web app in the Azure Management Portal
 
 The first step in creating your app is to create the web site via the Azure Management Portal.  To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.
 
@@ -147,9 +147,9 @@ After setting up Git publishing, you will momentarily see a page informing you t
 
 ![](./media/web-sites-python-create-deploy-django-app/django-ws-006.png)
 
-## Publish your web site to Azure Websites
+## Publish your web app to Azure
 
-In this section, you will create a local Git repository and push from that repository to Azure to deploy your web site to Azure.
+In this section, you will create a local Git repository and push from that repository to Azure to deploy your web app to Azure.
 
 1. In VS Code, select the **Git** option in the left navigation bar.
 
@@ -159,7 +159,7 @@ In this section, you will create a local Git repository and push from that repos
 
 	![Initialize Git](./media/web-sites-create-web-app-using-vscode/19-initgit.png)
 
-3. Open the Command Window and change directories to the directory of your web site. Then, enter the following command:
+3. Open the Command Window and change directories to the directory of your web app. Then, enter the following command:
 
 		git config core.autocrlf false
 
@@ -173,9 +173,9 @@ In this section, you will create a local Git repository and push from that repos
 
 	![Git no changes](./media/web-sites-create-web-app-using-vscode/no-changes.png)
 
-6. Change back to the Command Window where the command prompt points to the directory where your web site is located.
+6. Change back to the Command Window where the command prompt points to the directory where your web app is located.
 
-7. Create a remote reference for pushing updates to your web site by using the Git URL (ending in ".git") that you copied earlier.
+7. Create a remote reference for pushing updates to your web app by using the Git URL (ending in ".git") that you copied earlier.
 
 		git remote add azure [URL for remote repository]
 
@@ -200,18 +200,18 @@ In this section, you will create a local Git repository and push from that repos
 If you need to collaborate on a project, you should consider pushing to GitHub in between pushing to Azure.
 
 ## Run the app in Azure
-Now that you have deployed your web site, let's run the app while hosted in Azure. 
+Now that you have deployed your web app, let's run the app while hosted in Azure. 
 
 This can be done in two ways:
 
-* Open a browser and enter the name of your web site as follows.   
+* Open a browser and enter the name of your web app as follows.   
 
 		http://SampleWebAppDemo.chinacloudsites.cn
  
-* In the Azure Management Portal, locate the web site blade for your web site, and click **Browse** to view your app 
+* In the Azure Management Portal, locate the web app blade for your web app, and click **Browse** to view your app 
 * in your default browser.
 
-![Azure web site](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)
+![Azure web app](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)
 
 ## Summary
-In this tutorial, you learned how to create a web site in VS Code and deploy it to Azure. For more information about VS Code, see the article, [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) For information about Azure Websites, see [web sites Overview](/home/features/web-site/). 
+In this tutorial, you learned how to create a web app in VS Code and deploy it to Azure. For more information about VS Code, see the article, [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) For information about Azure web apps, see [Web Apps Overview](/home/features/web-site). 

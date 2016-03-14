@@ -12,21 +12,24 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="01/05/2016"
+	ms.date="01/20/2016"
 	wacn.date=""/>
 
 # Deploy Azure Resources Using the Compute, Network, and Storage .NET Libraries
 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
 This tutorial shows you how to use the Compute, Storage, and Network .NET libraries to create and delete resources in Windows Azure. It also shows you how to authenticate the requests to Azure Resource Manager by using Azure Active Directory.
 
-[AZURE.INCLUDE [trial-note](../includes/free-trial-note.md)]
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 To complete this tutorial you also need:
 
 - [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
 - [Azure storage account](/documentation/articles/storage-create-storage-account)
-- [Windows Management Framework 3.0](/download/details.aspx?id=34595) or [Windows Management Framework 4.0](/download/details.aspx?id=40855)
-- [Azure PowerShell](/documentation/articles/powershell-install-configure)
+- [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) or [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)
+
+[AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
 
 It takes about 30 minutes to do these steps.
 
@@ -36,29 +39,21 @@ To use Azure AD to authenticate requests to Azure Resource Manager, an applicati
 
 1. Open an Azure PowerShell prompt, run this command, and then enter the credentials for your subscription when prompted:
 
-        Switch-AzureMode âName AzureResourceManager
+			Login-AzureRmAccount
 
-2. Set the Azure account that you want to use for this tutorial. Run this command and enter the credentials for your subscription when prompted:
+2. Replace {password} in the following command with the one that you want to use and then run it to create the application:
 
-	    Add-AzureAccount
+			New-AzureRmADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
 
-3. Replace {password} in the following command with the one that you want to use and then run it to create the application:
+	>[AZURE.NOTE] Take note of the application identifer that is returned after the application is created because you'll need it for the next step. You can also find the application identifier in the client id field of the application in the Active Directory section of the Azure Management Portal.
 
-	    New-AzureADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
+3. Replace {application-id} with the identifier that you just recorded and then create the service principal for the application:
 
-4. Record the ApplicationId value in the response from the previous step. You will need it later in this tutorial:
+        New-AzureRmADServicePrincipal -ApplicationId {application-id}
 
-	![Create an AD application](./media/virtual-machines-arm-deployment/azureapplicationid.png)
+4. Set the permission to use the application:
 
-	>[AZURE.NOTE] You can also find the application identifier in the client id field of the application in the Management Portal.
-
-5. Replace {application-id} with the identifier that you just recorded and then create the service principal for the application:
-
-        New-AzureADServicePrincipal -ApplicationId {application-id}
-
-6. Set the permission to use the application:
-
-	    New-AzureRoleAssignment -RoleDefinitionName Owner -ServicePrincipalName "https://myapp1.com"
+	    New-AzureRmRoleAssignment -RoleDefinitionName Owner -ServicePrincipalName "https://myapp1.com"
 
 ## Step 2: Create a Visual Studio project and install the libraries
 
@@ -76,7 +71,7 @@ NuGet packages are the easiest way to install the libraries that you need to fin
 
 6. Type *Microsoft.Azure.Management.Network* in the search box, click **Install** for the Network .NET Libraries, and then follow the instructions to install the package.
 
-7. Type *Microsoft.Azure.Management.Storage* in the search box, click **Install** for the Network .NET Libraries, and then follow the instructions to install the package.
+7. Type *Microsoft.Azure.Management.Storage* in the search box, click **Install** for the Storage .NET Libraries, and then follow the instructions to install the package.
 
 8. Type *Microsoft.Azure.Management.Resources* in the search box, click **Install** for the Resource Management Libraries.
 
@@ -408,7 +403,6 @@ Availability sets make it easier for you to manage the maintenance of the virtua
 	Console.ReadLine();
 	```
 
-###Create a virtual network
 ### Create a virtual machine
 
 Now that you created all of the supporting resources, you can create a virtual machine.
@@ -546,8 +540,8 @@ Because you are charged for resources used in Azure, it is always a good practic
 
 2. Press **Enter** after each status code is returned to create each resource. After the virtual machine is created, do the next step before pressing Enter to delete all of the resources.
 
-	It should take about 5 minutes for this console application to run completely from start to finish. Before you press Enter to start deleting resources, you could take a few minutes to verify the creation of the resources in the Azure preview portal before you delete them.
+	It should take about 5 minutes for this console application to run completely from start to finish. Before you press Enter to start deleting resources, you could take a few minutes to verify the creation of the resources in the Azure Management Portal before you delete them.
 
-3. Browse to the Audit Logs in the Azure preview portal to see the status of the resources:
+3. Browse to the Audit Logs in the Azure Management Portal to see the status of the resources:
 
 	![Create an AD application](./media/virtual-machines-arm-deployment/crpportal.png)

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Generate recommendations using Mahout and Linux-based HDInsight | Windows Azure"
 	description="Learn how to use the Apache Mahout machine learning library to generate movie recommendations with Linux-based HDInsight (Hadoop)."
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/08/2016"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 #Generate movie recommendations by using Apache Mahout with Linux-based Hadoop in HDInsight (preview)
@@ -245,9 +247,9 @@ Mahout jobs do not remove temporary data that is created while processing the jo
 
 Now that you have learned how to use Mahout, discover other ways of working with data on HDInsight:
 
-* [Hive with HDInsight](/documentation/articles/hdinsight-hadoop-use-hive-powershell)
-* [Pig with HDInsight](/documentation/articles/hdinsight-hadoop-use-pig-powershell)
-* [MapReduce with HDInsight](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell)
+* [Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 [build]: http://mahout.apache.org/developers/buildingmahout.html
 [movielens]: http://grouplens.org/datasets/movielens/

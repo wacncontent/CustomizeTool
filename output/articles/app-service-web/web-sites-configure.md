@@ -21,7 +21,7 @@ This topic explains how to configure a web app using the [Azure Management Porta
 
 ## Application settings
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn), open the blade for the web app.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), open the blade for the web app.
 2. Click **Configure**.
 3. Click **Application Settings**.
 

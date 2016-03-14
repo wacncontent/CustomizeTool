@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
    pageTitle="How to create NSGs in ARM mode using the Azure CLI| Windows Azure"
    description="Learn how to create and deploy NSGs in ARM using the Azure CLI"

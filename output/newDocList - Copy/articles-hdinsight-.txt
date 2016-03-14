@@ -1,28 +1,9 @@
 new docs: 21, word count: {word_count_TODO}
-articles/hdinsight/hdinsight-apache-spark-create-standalone-application.md
-articles/hdinsight/hdinsight-apache-spark-custom-library-website-log-analysis.md
-articles/hdinsight/hdinsight-apache-spark-eventhub-streaming.md
-articles/hdinsight/hdinsight-apache-spark-ipython-notebook-machine-learning-v1.md
-articles/hdinsight/hdinsight-apache-spark-jupyter-notebook-kernels.md
-articles/hdinsight/hdinsight-apache-spark-jupyter-spark-sql.md
-articles/hdinsight/hdinsight-apache-spark-known-issues.md
-articles/hdinsight/hdinsight-apache-spark-livy-rest-interface.md
-articles/hdinsight/hdinsight-apache-spark-machine-learning-mllib-ipython.md
-articles/hdinsight/hdinsight-apache-spark-overview-v1.md
-articles/hdinsight/hdinsight-apache-spark-resource-manager-v1.md
-articles/hdinsight/hdinsight-apache-spark-use-bi-tools-v1.md
-articles/hdinsight/hdinsight-apache-spark-use-zeppelin-notebook.md
-articles/hdinsight/hdinsight-hadoop-create-windows-clusters-arm-templates.md
-articles/hdinsight/hdinsight-hadoop-create-windows-clusters-cli.md
-articles/hdinsight/hdinsight-hadoop-create-windows-clusters-dotnet-sdk.md
-articles/hdinsight/hdinsight-hadoop-create-windows-clusters-portal.md
-articles/hdinsight/hdinsight-hadoop-create-windows-clusters-powershell.md
-articles/hdinsight/hdinsight-hadoop-customize-cluster-bootstrap.md
-articles/hdinsight/hdinsight-storage-sharedaccesssignature-permissions.md
-articles/hdinsight/hdinsight-storm-write-data-lake-store.md
+articles/HDInsight/hdinsight-apache-spark-intellij-tool-plugin.md
+articles/HDInsight/hdinsight-hadoop-create-windows-clusters-arm-templates.md
+articles/HDInsight/hdinsight-hadoop-create-windows-clusters-portal.md
 
 new includes: 4
-includes/hdinsight-ambari-selector.md
-includes/hdinsight-create-windows-cluster-selector.md
-includes/hdinsight-hbase-selector.md
-includes/hdinsight-selector-use-script-action.md
+includes/hdinsight-azure-preview-portal.md
+includes/hdinsight-azure-preview-portal-nolink.md
+includes/hdinsight-pricing-data-centers-clusters.md

@@ -40,8 +40,6 @@ You will build a basic ASP.NET application in Azure Web Apps with the following 
 <a name="bkmk_need"></a>
 ## What you will need ##
 
-[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
-
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 You need the following to complete this tutorial:
@@ -87,7 +85,7 @@ The sample application in this tutorial, [WebApp-WSFederation-DotNet)](https://g
 
 5.	In App_Start\Startup.Auth.cs, change the static string definitions as highlighted below:  
 	<pre class="prettyprint">
-	private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
+private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
     <mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
     <mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark>
     <mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark>
@@ -98,7 +96,7 @@ The sample application in this tutorial, [WebApp-WSFederation-DotNet)](https://g
 
 6.	You will now make the corresponding changes in Web.config. Open the Web.config and modify the app settings as highlighted below:  
 	<pre class="prettyprint">
-	&lt;appSettings&gt;
+&lt;appSettings&gt;
 	  &lt;add key="webpages:Version" value="3.0.0.0" /&gt;
 	  &lt;add key="webpages:Enabled" value="false" /&gt;
 	  &lt;add key="ClientValidationEnabled" value="true" /&gt;
@@ -109,7 +107,7 @@ The sample application in this tutorial, [WebApp-WSFederation-DotNet)](https://g
 	  <mark>&lt;add key="ida:RPIdentifier" value="[Enter the relying party identifier as configured in AD FS, e.g. https://localhost:44320/]" /&gt;</mark>
 	  <mark>&lt;add key="ida:ADFS" value="[Enter the FQDN of AD FS service, e.g. adfs.contoso.com]" /&gt;</mark>
 
-	&lt;/appSettings&gt;
+	&lt;/appSettings&gt;<span>&#13;</span> 
 	</pre>
 
 	Fill in the key values based on your respective environment.
@@ -127,14 +125,9 @@ Here, you will publish the application to a web app in Azure while preserving th
 
 	![](./media/web-sites-dotnet-lob-application-adfs/01-publish-website.png)
 
-2. Select **Windows Azure Web App**.
-3. If you haven't signed in to Azure, click **Sign In** and use the Microsoft account for your Azure subscription to sign in.
-4. Once signed in, click **New** to create a new web app.
-5. Fill in all required fields. You are going to connect to on-premise data later, so you won't create a database for this web app.
-
-	![](./media/web-sites-dotnet-lob-application-adfs/02-create-website.png)
-
-6. Click **Create**. Once the web app is created, the Publish Web dialog is opened.
+2. Select **Import**.
+3. If you haven't download the "publish profile", go to [Azure Management Portal](https://manage.windowsazure.cn) to download. If you haven't create a web app, create one. And, in **Dashboard** page of your web app, under **quick glance**, download the "publish profile".
+4. Choose the previous downloaded "publish profile", and click "OK".
 7. In **Destination URL**, change **http** to **https**. Copy the entire URL to a text editor. You will use it later. Then, click **Publish**.
 
 	![](./media/web-sites-dotnet-lob-application-adfs/03-destination-url.png)
@@ -210,12 +203,12 @@ Now you need to configure an RP trust in AD FS Mangement before you can use your
 		=> add(
 			store = "_OpaqueIdStore",
 			types = ("<mark>http://contoso.com/internal/sessionid</mark>"),
-			query = "{0};{1};{2};{3};{4}",
-			param = "useEntropy",
-			param = c1.Value,
-			param = c1.OriginalIssuer,
-			param = "",
-			param = c2.Value);
+query = "{0};{1};{2};{3};{4}",
+			param = "useEntropy",<span>&#13;</span>
+			param = c1.Value,<span>&#13;</span>
+			param = c1.OriginalIssuer,<span>&#13;</span> 
+			param = "",<span>&#13;</span>
+			param = c2.Value);<span>&#13;</span>
 	</pre>
 
 	Your custom rule should look like this:
@@ -271,21 +264,21 @@ Since you have included group memberships as role claims in your RP trust config
 1. Open Controllers\HomeController.cs.
 2. Decorate the `About` and `Contact` action methods similar to below, using security group memberships that your authenticated user has.  
 	<pre class="prettyprint">
-    <mark>[Authorize(Roles="Test Group")]</mark>
+<mark>[Authorize(Roles="Test Group")]</mark>
     public ActionResult About()
     {
         ViewBag.Message = "Your application description page.";
 
-        return View();
-    }
+        return View();<span>&#13;</span>
+    }<span>&#13;</span>
 
-    <mark>[Authorize(Roles="Domain Admins")]</mark>
-    public ActionResult Contact()
-    {
-        ViewBag.Message = "Your contact page.";
+    <mark>[Authorize(Roles="Domain Admins")]</mark><span>&#13;</span> 
+    public ActionResult Contact()<span>&#13;</span> 
+    {<span>&#13;</span> 
+        ViewBag.Message = "Your contact page.";<span>&#13;</span> 
 
-        return View();
-    }
+        return View();<span>&#13;</span>
+    }<span>&#13;</span>
 	</pre>
 
 	Since I added **Test User** to **Test Group** in my AD FS lab environment, I'll use Test Group to test authorization on `About`. For `Contact`, I'll test the negative case of **Domain Admins**, to which **Test User** doesn't belong.
@@ -297,7 +290,7 @@ Since you have included group memberships as role claims in your RP trust config
 
 	If you investigate this error in Event Viewer on the AD FS server, you will see this exception message:  
 	<pre class="prettyprint">
-	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Contact your administrator for details.
+Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Contact your administrator for details.
 	   at Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context)
 	   at Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response)
 	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler)

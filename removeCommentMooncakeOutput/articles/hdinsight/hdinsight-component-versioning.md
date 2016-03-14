@@ -129,7 +129,7 @@ The **Deprecation Date** is the date after which the cluster version cannot be c
 * HDInsight cluster version 1.6 uses a Hadoop distribution that is based on [Hortonworks Data Platform 1.1][hdp-1-1-0].
 
 
-[image-hdi-versioning-versionscreen]: ./media/hdinsight-component-versioning/hdi-versioning-version-screen.png
+[image-hdi-versioning-versionscreen]: ./media/hdinsight-component-versioning-v1/hdi-versioning-version-screen.png
 
 [wa-forums]: /support/forums/
 

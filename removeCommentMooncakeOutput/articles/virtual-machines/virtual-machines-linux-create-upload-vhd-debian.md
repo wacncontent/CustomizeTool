@@ -58,7 +58,7 @@ This section assumes that you have already installed a Debian Linux operating sy
 
 8. Deprovision the virtual machine and prepare it for provisioning on Azure and run:
 
-        # sudo waagent âforce -deprovision
+        # sudo waagent -force -deprovision
         # export HISTSIZE=0
         # logout
  
@@ -74,4 +74,4 @@ If any issue to use this script, just file a issue to Credativ [here](https://gi
 
 ## Next Steps
 
-You're now ready to use your Debian .vhd to create new Azure Virtual Machines.
+You're now ready to use your Debian .vhd to create new Azure Virtual Machines. If this is the 1st time you use Azure and upload the .vhd file to Azure, you could follow the step 2 & 3 in [this guidance](/documentation/articles/virtual-machines-linux-create-upload-vhd).

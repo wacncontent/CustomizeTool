@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="01/09/2016"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 # Create a Node.js web app in Azure
@@ -175,7 +175,7 @@ This article uses the Azure Management Portal to create a web app. You can also 
 For more information about how to develop Node.js applications on Azure, see the [Node.js Developer Center](/develop/nodejs/).
 
 [Azure Management Portal]: http://manage.windowsazure.cn
-[Azure Command-Line Tools for Mac and Linux]: /documentation/articles/xplat-cli
+[Azure Command-Line Tools for Mac and Linux]: /documentation/articles/xplat-cli-install
 [Azure PowerShell]: /documentation/articles/powershell-install-configure
 [portal-new- Website]: ./media/web-sites-nodejs-develop-deploy-mac/plus-new.png
 [portal-git-username-password]: ./media/web-sites-nodejs-develop-deploy-mac/git-deployment-credentials.png

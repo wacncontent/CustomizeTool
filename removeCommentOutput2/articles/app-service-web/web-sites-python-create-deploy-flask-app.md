@@ -22,17 +22,6 @@ You will create an application using the Flask web framework (see alternate vers
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
-+ [Prerequisites](#prerequisites)
-+ [Website Creation on Portal](#website-creation-on-portal)
-+ [Application Overview](#application-overview)
-+ Website Development
-  + [Windows - Python Tools for Visual Studio](#website-development-windows-ptvs)
-  + [Windows - Command Line](#website-development-windows-command-line)
-  + [Mac/Linux - Command Line](#website-development-mac-linux-command-line)
-+ [Troubleshooting - Deployment](#troubleshooting-deployment)
-+ [Troubleshooting - Package Installation](#troubleshooting-package-installation)
-+ [Troubleshooting - Virtual Environment](#troubleshooting-virtual-environment)
-+ [Next steps](#next-steps)
 ## Prerequisites
 
 - Windows, Mac or Linux
@@ -207,7 +196,7 @@ To trigger a deployment, click on **Sync** or **Push**.  Sync does both a push a
 
 The first deployment will take some time, as it will create a virtual environment, install packages, etc.
 
-Visual Studio doesn't show the progress of the deployment.  If you'd like to review the output, see the section on [Troubleshooting - Deployment](#troubleshooting-deployment).
+Visual Studio doesn't show the progress of the deployment.  
 
 Browse to the Azure URL to view your changes.
 

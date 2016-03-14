@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Creating a VM for a web project using Visual Studio | Windows Azure"
-	description="Create a virtual machine for a web site"
+	description="Create a virtual machine for a web application"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="TomArcher"
@@ -10,19 +10,19 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/19/2015"
+	ms.date="01/05/2016"
 	wacn.date=""/>
 
-# Creating a virtual machine for a web site with Visual Studio
+# Creating a virtual machine for a web application with Visual Studio
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
-When you create a web site project for Azure, you can provision a virtual machine in Azure. You can then configure the virtual machine with additional software, or use the virtual machine for diagnostic or debugging purposes.
+When you create a web application project for Azure, you can provision a virtual machine in Azure. You can then configure the virtual machine with additional software, or use the virtual machine for diagnostic or debugging purposes.
 
-To create a virtual machine when you create a web site, follow these steps:
+To create a virtual machine when you create a web application, follow these steps:
 
-1. In Visual Studio, click **File** > **New** > **Project** > **Web**, and then choose **ASP.NET web site** (under the **Visual C#** or **Visual Basic** nodes).
-2. In the **New ASP.NET Project** dialog box, select the type of web site you want, and in the Azure section of the dialog box (in the lower-right corner), make sure that the **Host in the cloud** check box is selected (this check box is labeled **Create remote resources** in some installations).
+1. In Visual Studio, click **File** > **New** > **Project** > **Web**, and then choose **ASP.NET Web Application** (under the **Visual C#** or **Visual Basic** nodes).
+2. In the **New ASP.NET Project** dialog box, select the type of web application you want, and in the Azure section of the dialog box (in the lower-right corner), make sure that the **Host in the cloud** check box is selected (this check box is labeled **Create remote resources** in some installations).
 
 	![][0]
 
@@ -45,7 +45,7 @@ To create a virtual machine when you create a web site, follow these steps:
 
 	* Creates the virtual machine if it doesn't already exist.
 	* Creates a storage account with a name that begins with `devtest`, but only if there isn't already such a storage account in the specified region.
-	* Creates a cloud service as a container for the virtual machine, and creates a web role for the web site.
+	* Creates a cloud service as a container for the virtual machine, and creates a web role for the web application.
 	* Configures Web Deploy on the virtual machine.
 	* Configures IIS and ASP.NET on the virtual machine.
 

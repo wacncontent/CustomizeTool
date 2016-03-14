@@ -147,7 +147,7 @@ Now set up a standard SMB share on a folder on the head node, and mount the shar
 
 The first command creates a folder named /openfoam on all nodes in the LinuxNodes group. The second command mounts the shared folder //SUSE12RDMA-HN/OpenFOAM onto the Linux nodes with dir_mode and file_mode bits set to 777. The *username* and *password* in the command should be the credentials of a user on the head node.
 
->[AZURE.NOTE]The “\`” symbol in the second command is an escape symbol for PowerShell. “\`,” means the “,” (comma character) is a part of the command.
+>[AZURE.NOTE]The "\`" symbol in the second command is an escape symbol for PowerShell. "\`," means the "," (comma character) is a part of the command.
 
 ## Install MPI and OpenFOAM
 
@@ -232,7 +232,7 @@ Save the downloaded installation package for the OpenFOAM Source Pack (OpenFOAM-
     clusrun /nodegroup:LinuxNodes /interleaved source /openfoam/settings.sh `&`& /opt/OpenFOAM/OpenFOAM-2.3.1/Allwmake
     ```
     
-    >[AZURE.NOTE]The “\`” symbol in the command is an escape symbol for PowerShell. “\`&” means the “&” is a part of the command.
+    >[AZURE.NOTE]The "\`" symbol in the command is an escape symbol for PowerShell. "\`&" means the "&" is a part of the command.
 
 ## Prepare to run an OpenFOAM job
 
@@ -360,7 +360,7 @@ Now you can submit a job in HPC Cluster Manager. You'll need to pass the script 
 
     ![Job details][job_details]
 
-5.	In **Job resources**, choose the type of resource as “Node” and set the Minimum to 2. This will run the job on 2 Linux nodes each of which has 8 cores in this example.
+5.	In **Job resources**, choose the type of resource as "Node" and set the Minimum to 2. This will run the job on 2 Linux nodes each of which has 8 cores in this example.
 
     ![Job resources][job_resources]
 

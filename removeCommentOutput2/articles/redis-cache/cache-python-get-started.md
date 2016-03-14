@@ -46,10 +46,10 @@ Use the following PowerShell Script to create a cache:
 	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
 
 
-  ## Add something to the cache and retrieve it
+## Add something to the cache and retrieve it
 
-  >>> import redis
-  >>> r = redis.StrictRedis(host='<name>.redis.cache.chinacloudapi.cn',
+    >>> import redis
+    >>> r = redis.StrictRedis(host='<name>.redis.cache.chinacloudapi.cn',
           port=6380, db=0, password='<key>', ssl=True)
     >>> r.set('foo', 'bar')
     True

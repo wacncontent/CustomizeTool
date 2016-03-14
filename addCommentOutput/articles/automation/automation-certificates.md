@@ -60,18 +60,6 @@ When you create a new certificate, you upload a cer or pfx file to Azure Automat
 1. Click the check mark to upload the certificate file and save the new certificate asset.
 
 
-<!-- deleted by customization
-### To create a new certificate with the Azure preview portal
-
-1. From your automation account, click the **Assets** part to open the **Assets** blade.
-1. Click the **Certificates** part to open the **Certificates** blade.
-1. Click **Add a certificate** at the top of the blade.
-2. Type a name for the certificate in the **Name** box.
-2. Click **Select a file** under **Upload a certificate file** to browse for a .cer or .pfx file.  If you select a .pfx file, specify a password and whether it should be allowed to be exported.
-1. Click **Create** to save the new certificate asset.
--->
-
-
 ### To create a new certificate with Windows PowerShell
 
 The following sample commands show how to create a new automation certificate and marks it exportable. This imports an existing pfx file.

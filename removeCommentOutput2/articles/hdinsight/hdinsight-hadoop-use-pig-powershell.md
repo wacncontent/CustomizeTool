@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 #Run Pig jobs using PowerShell
@@ -106,7 +106,7 @@ The following steps demonstrate how to use these cmdlets to run a job on your HD
 			SubmissionTime  : 11/20/2014 4:04:58 PM
 			JobId           : job_1415949758166_0023
 
-        Display the standard output ...
+			Display the standard output ...
 			(TRACE,816)
 			(DEBUG,434)
 			(INFO,96)

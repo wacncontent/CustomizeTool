@@ -48,7 +48,7 @@ and related applications. In this section, you create an HDInsight version 3.2 c
 You can also create Hadoop clusters for other versions. For instructions, see 
 [Create HDInsight clusters using custom options][hdinsight-provision]. For information 
 about HDInsight versions and their SLAs, see 
-[HDInsight component versioning](/documentation/articles/hdinsight-component-versioning).
+[HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1).
 
 
 **To create a Hadoop cluster**
@@ -193,7 +193,7 @@ In this Hadoop tutorial, you learned how to create a Hadoop cluster on Windows i
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 
 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1

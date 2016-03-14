@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Django and MySQL on Azure with Python Tools 2.2 for Visual Studio" 
-	description="Learn how to use the Python Tools for Visual Studio to create a Django web site that stores data in a MySQL database instance and deploy it to Azure Websites." 
+	description="Learn how to use the Python Tools for Visual Studio to create a Django web app that stores data in a MySQL database instance and deploy it to Azure Web Apps." 
 	services="app-service\web" 
 	documentationCenter="python" 
 	authors="huguesv" 
@@ -22,19 +22,11 @@
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
 - [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web site using one of the PTVS sample templates. This tutorial is also available as a [video](https://www.youtube.com/watch?v=oKCApIrS0Lo).
+In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates. This tutorial is also available as a [video](https://www.youtube.com/watch?v=oKCApIrS0Lo).
 
-We'll learn how to use a MySQL service hosted on Azure, how to configure the web site to use MySQL, and how to publish the web site to [Azure Websites](/documentation/services/web-sites/).
+We'll learn how to use a MySQL service hosted on Azure, how to configure the web app to use MySQL, and how to publish the web app to [Azure Web Apps](/documentation/services/web-sites/).
 
-See the [Python Developer Center] for more articles that cover development of Azure Websites with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Websites, the steps are similar when developing [Azure Cloud Services].
-
-+ [Prerequisites](#prerequisites)
-+ [Create the Project](#create-the-project)
-+ [Create a MySQL Database](#create-a-mysql-database)
-+ [Configure the Project](#configure-the-project)
-+ [Publish to an Azure Website](#publish-to-an-azure-website)
-+ [Next steps](#next-steps)
-
+See the [Python Developer Center] for more articles that cover development of Azure Web Apps with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Web App, the steps are similar when developing [Azure Cloud Services].
 
 ##<a name="prerequisites"></a> Prerequisites
 
@@ -110,7 +102,7 @@ You can create a database with a free plan by following these steps.
 
 ## Configure the Project
 
-In this section, we'll configure our web site to use the MySQL database we just created. We'll also install additional Python packages required to use MySQL databases with Django. Then we'll run the web site locally.
+In this section, we'll configure our web app to use the MySQL database we just created. We'll also install additional Python packages required to use MySQL databases with Django. Then we'll run the web app locally.
 
 1.  In Visual Studio, open **settings.py**, from the *ProjectName* folder. Temporarily paste the connection string in the editor. The connection string is in this format:
 
@@ -144,20 +136,20 @@ In this section, we'll configure our web site to use the MySQL database we just 
 
 1.  Run the application with `F5`. Polls that are created with **Create Sample Polls** and the data submitted by voting will be serialized in the MySQL database.
 
-## Publish the web site to Azure Websites
+## Publish the web app to Azure
 
-The Azure .NET SDK provides an easy way to deploy your web site to Azure Websites.
+The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
 
 1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
   	![Publish Web Dialog](./media/web-sites-python-ptvs-django-mysql/PollsCommonPublishWebSiteDialog.png)
 
-1.  Click on **Windows Azure web sites**.
+1.  Click on **Windows Azure Web Apps**.
 
-1.  Click on **New** to create a new web site.
+1.  Click on **New** to create a new web app.
 
 1.  Fill in the following fields and click **Create**.
-	-	**web site name**
+	-	**Web App name**
 	-	**App Service plan**
 	-	**Resource group**
 	-	**Region**
@@ -167,7 +159,7 @@ The Azure .NET SDK provides an easy way to deploy your web site to Azure Website
 
 1.  Accept all other defaults and click **Publish**.
 
-1.  Your web browser will open automatically to the published web site. You should see the web site working as expected, using the **MySQL** database hosted on Azure.
+1.  Your web browser will open automatically to the published web app. You should see the web app working as expected, using the **MySQL** database hosted on Azure.
 
     Congratulations!
 

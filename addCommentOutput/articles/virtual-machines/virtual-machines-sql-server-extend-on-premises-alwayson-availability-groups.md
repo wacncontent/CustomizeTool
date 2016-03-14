@@ -24,8 +24,10 @@ This tutorial assumes you have the following:
 - An active Azure subscription. You can [sign up for a trial](/pricing/1rmb-trial).
 
 - An existing AlwaysOn Availability Group on-premises. For more information on Availability Groups, see [AlwaysOn Availability Groups](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx).
+<!-- deleted by customization
 
-- Connectivity between the on-premises network and your Azure virtual network. For more information about creating this virtual network, see [Configure a Site-to-Site VPN in the <!-- deleted by customization Azure --> Management Portal](/documentation/articles/vpn-gateway-site-to-site-create).
+- Connectivity between the on-premises network and your Azure virtual network. For more information about creating this virtual network, see [Configure a Site-to-Site VPN in the Azure Management Portal](/documentation/articles/vpn-gateway-site-to-site-create).
+-->
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
@@ -61,7 +63,7 @@ This section shows you how to use the **Add Azure Replica Wizard** to extend you
 |**VM Username**|Specify a user name that will become the administrator account on the VM|
 |**VM Administrator Password**|Specify a password for the new account|
 |**Confirm Password**|Confirm the password of the new account|
-|**Virtual Network**|Specify the Azure virtual network that the new VM should use. For more information on virtual networks, see [Virtual Network <!-- deleted by customization Overview](/documentation/articles/virtual-networks-overview).| --><!-- keep by customization: begin --> Overview](/documentation/articles/..\virtual-network\virtual-networks-overview).| <!-- keep by customization: end -->
+|**Virtual Network**|Specify the Azure virtual network that the new VM should use. For more information on virtual networks, see [Virtual Network Overview](/documentation/articles/virtual-networks-overview).|
 |**Virtual Network Subnet**|Specify the virtual network subnet that the new VM should use|
 |**Domain**|Confirm the pre-populated value for the domain is correct|
 |**Domain User Name**|Specify an account that is in the local administrators group on the local cluster nodes|

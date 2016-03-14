@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/06/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 #Generate movie recommendations by using Apache Mahout with Linux-based Hadoop in HDInsight (preview)
@@ -29,7 +29,7 @@ Mahout is a [machine learning][ml] library for Apache Hadoop. Mahout contains al
 
 ##Mahout versioning
 
-For more information about the version of Mahout included with your HDInsight cluster, see [HDInsight versions and Hadoop components](/documentation/articles/hdinsight-component-versioning).
+For more information about the version of Mahout included with your HDInsight cluster, see [HDInsight versions and Hadoop components](/documentation/articles/hdinsight-component-versioning-v1).
 
 > [AZURE.WARNING] While it is possible to upload a different version of Mahout to the HDInsight cluster, only components provided with the HDInsight cluster are fully supported and Microsoft Support will help to isolate and resolve issues related to these components.
 >

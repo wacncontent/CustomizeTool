@@ -5,12 +5,12 @@
 	documentationCenter=""
 	authors="danielsollondon"
 	manager="jeffreyg"
-   editor="monicar"    
-   tags="azure-service-management"/>
+	editor="monicar"    
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/02/2015"
+	ms.date="01/06/2015"
 	wacn.date=""/>
 
 # Use Azure Premium Storage with SQL Server on Virtual Machines
@@ -54,7 +54,7 @@ You can only use DS* VMs with Premium Storage when they are created in a new clo
 
 ### Regional VNETS
 
-For  DS* VMs you must configure the Virtual Network (VNET) hosting your VMs to be regional. This “widens” the VNET is to allow the larger VMs to be provisioned in other clusters and allow communication between them. In the following screenshot, the highlighted Location shows regional VNETs, whereas the first result shows a “narrow” VNET.
+For  DS* VMs you must configure the Virtual Network (VNET) hosting your VMs to be regional. This "widens" the VNET is to allow the larger VMs to be provisioned in other clusters and allow communication between them. In the following screenshot, the highlighted Location shows regional VNETs, whereas the first result shows a "narrow" VNET.
  
 ![RegionalVNET][1]
 
@@ -187,7 +187,7 @@ The example below shows how to place the OS VHD onto premium storage and attach 
     #check exisitng reserved VIP
     Get-AzureReservedIP
     
-    $reservedVIPName = “sqlcloudVIP” 
+    $reservedVIPName = "sqlcloudVIP" 
     New-AzureReservedIP -ReservedIPName $reservedVIPName -Label $reservedVIPName -Location $location 
 
 #### Step 4: Create a VM Container
@@ -289,7 +289,7 @@ You can use an existing image. Or, you can [take an image of an existing machine
     $destContext = New-AzureStorageContext  -StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary  
  
 #### Step 4: Copy Blob between Storage Accounts
-    #Get Image VHD from Portal
+    #Get Image VHD 
     $myImageVHD = "dansoldonorsql2k14-os-2015-04-15.vhd"
     $containerName = 'vhds'
     
@@ -330,7 +330,7 @@ Here you are building the VM from your image and attaching two Premium Storage V
     
     #Machine User Credentials
     $userName = "myadmin"
-    $pass = "theM)stC0mplexP@ssw0rd!”
+    $pass = "theM)stC0mplexP@ssw0rd!"
      
     
     #Create VM Config
@@ -713,7 +713,7 @@ You should be planning to migrate a cloud secondary node first, if this is curre
     ##Building Existing Data Disk Configuration
     $file = "C:\Azure Storage Testing\mydiskconfig_$vmNameToMigrate.csv"
     $datadisks = @(Get-AzureVM -ServiceName $sourceSvc -Name $vmNameToMigrate | Get-AzureDataDisk )
-    Add-Content $file “lun, vhdname, hostcaching, disklabel, diskName”
+    Add-Content $file "lun, vhdname, hostcaching, disklabel, diskName"
     foreach ($disk in $datadisks)
     {
       $vhdname = $disk.MediaLink.AbsolutePath -creplace  "/vhds/"
@@ -927,7 +927,7 @@ At this point you wait for the secondary that node that was migrated to fully re
     #Building Existing Data Disk Configuration
     $file = "C:\Azure Storage Testing\mydiskconfig_$vmNameToMigrate.csv"
     $datadisks = @(Get-AzureVM -ServiceName $sourceSvc -Name $vmNameToMigrate | Get-AzureDataDisk )
-    Add-Content $file “lun, vhdname, hostcaching, disklabel, diskName”
+    Add-Content $file "lun, vhdname, hostcaching, disklabel, diskName"
     foreach ($disk in $datadisks)
     {
       $vhdname = $disk.MediaLink.AbsolutePath -creplace  "/vhds/"
@@ -1091,7 +1091,7 @@ For information for individual blobs:
     Get-AzureVM -ServiceName $destcloudsvc -Name $vmNameToMigrate  | Add-AzureEndpoint -Name $epname -Protocol $prot -LocalPort $locport -PublicPort $pubport -ProbePort 59999 -ProbeIntervalInSeconds 5 -ProbeTimeoutInSeconds 11  -ProbeProtocol "TCP" -InternalLoadBalancerName $ilb -LBSetName $ilb -DirectServerReturn $true | Update-AzureVM
     
     
-    #STOP!!! CHECK in portal or Machine Endpoints through powershell that these Endpoints are created!
+    #STOP!!! CHECK in the Azure Management Portal or Machine Endpoints through powershell that these Endpoints are created!
     
     #SET ACLs or Azure Network Security Groups & Windows FWs 
      

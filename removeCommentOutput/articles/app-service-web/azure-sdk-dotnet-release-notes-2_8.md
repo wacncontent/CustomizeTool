@@ -10,14 +10,14 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="11/30/2015"
+	ms.date="01/31/2016"
 	wacn.date=""/>
 
-# Azure SDK for .NET 2.8 and 2.8.1
+# Azure SDK for .NET 2.8, 2.8.1 and 2.8.2
 
 ##Overview
  
-This article contains the release notes (that includes known issues and breaking changes) for the Azure SDK for .NET 2.8 and 2.8.1 releases. 
+This article contains the release notes (that includes known issues and breaking changes) for the Azure SDK for .NET 2.8, 2.8.1 and 2.8.2 releases. 
 
 For complete list of new features and updates made in this release, see the [Azure SDK 2.8 for Visual Studio 2013 and Visual Studio 2015](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-8-for-net/) announcement. 
 
@@ -33,7 +33,7 @@ For complete list of new features and updates made in this release, see the [Azu
 
 ####Known issues
 
-Azure .NET SDK 2.8 allows you to create .NET 4.5.2 Cloud Service packages. However .NET 4.5.2 framework will not be installed on the default Guest OS images until January 2016 Guest OS release. Before that, .NET 4.5.2 framework will be available through a separate Guest OS release version - November 2015-02. See the [Azure Guest OS Releases and SDK Compatibility Matrix](/documentation/articles/cloud-services-guestos-update-matrix) page to track when the image will be released.  Once the November 2015-02 image is released you can choose to use that image by updating your Cloud Service configuration file (.cscfg) file. In the service configuration file set the osVersion attribute of the ServiceConfiguration element to the string "WA-GUEST-OS-4.26_201511-02". If you choose to opt in to use this image then you will no longer get automatic updates to the Guest OS. To get the automatic updates the osVersion must be set to “*” and .NET 4.5.2 will only be available through automatic updates in January 2016.
+Azure .NET SDK 2.8 allows you to create .NET 4.5.2 Cloud Service packages. However .NET 4.5.2 framework will not be installed on the default Guest OS images until January 2016 Guest OS release. Before that, .NET 4.5.2 framework will be available through a separate Guest OS release version - November 2015-02. See the [Azure Guest OS Releases and SDK Compatibility Matrix](/documentation/articles/cloud-services-guestos-update-matrix) page to track when the image will be released.  Once the November 2015-02 image is released you can choose to use that image by updating your Cloud Service configuration file (.cscfg) file. In the service configuration file set the osVersion attribute of the ServiceConfiguration element to the string "WA-GUEST-OS-4.26_201511-02". If you choose to opt in to use this image then you will no longer get automatic updates to the Guest OS. To get the automatic updates the osVersion must be set to "*" and .NET 4.5.2 will only be available through automatic updates in January 2016.
 
 ###Azure Data Factory
 
@@ -60,8 +60,8 @@ The 2.8 SDK requires version 1.0 of the Azure PowerShell cmdlets.  All other ver
 
 The following known issues will be addressed in the following release.
 
-- Azure Websites related Cloud and Server Explorer gesture for non-production environments (like Azure China or Azure Stack customers) do not work. For customers in these impacted areas, downloading the publish profile from the Azure Management Portal will enable publishing ability. A future release will repair gestures such as “Attach Debugger” and “View Streaming Logs” for Azure China and Stack customers. 
-- Customers may see errors during Azure Websites creation when the App Insights instance to which they are deploying is in a region other than China East. In these scenarios, creating an Azure Websites in the portal and downloading the publish profile will enable publishing scenarios. 
+- Azure related Cloud and Server Explorer gesture for non-production environments (like Azure China or Azure Stack customers) do not work. For customers in these impacted areas, downloading the publish profile from the Azure Management Portal will enable publishing ability. A future release will repair gestures such as "Attach Debugger" and "View Streaming Logs" for Azure China and Stack customers. 
+- Customers may see errors during Azure creation when the App Insights instance to which they are deploying is in a region other than China East. In these scenarios, creating an Azure in the portal and downloading the publish profile will enable publishing scenarios. 
 
 ###Azure HDInsight Tools
 
@@ -78,9 +78,18 @@ For information, see [Azure SDK 2.8 for Visual Studio 2013 and Visual Studio 201
  
 1. Triggered WebJob publishes to slots will show and error and won't set a schedule, but it will push the WebJob to Azure. Customers who are in need of a Scheduled job can then use the Azure Management Portal to set up the schedule for the WebJob. 
 2. Python customers may experience debugger issues. Service team is rolling out a fix for this but if customers are affected, please let Microsoft know in the forums or on the announcement blog or release notes comments section. 
-3. Customers in certain regions (such as South India) will experience Azure Websites provisioning errors. This is consistent with the portal, and customers who experience this issue can use the Azure Management Portal to request access to publish to these geo-regions. Once they request access to these regions using the Azure Management Portal provisioning should work. 
+3. Customers in certain regions (such as South India) will experience Azure provisioning errors. This is consistent with the portal, and customers who experience this issue can use the Azure Management Portal to request access to publish to these geo-regions. Once they request access to these regions using the Azure Management Portal provisioning should work. 
 
+##Azure SDK for .NET 2.8.2
 
+Following the installation of the 2.8.2 tools, customers may experience the following issue.         
+
+- If you are using Windows 10 and have not installed Internet Explorer, you may get an "Internet Explorer could not be found" error.
+To resolve the issue, install Internet Explorer using the Add/Remove Windows Components dialog.
+
+If you observe this issue, use the Send-a-smile feature to report it.
+
+For more information, see [this](https://azure.microsoft.com/blog/announcing-azure-sdk-2-8-2-for-net/) post.
 ##Other updates
 
 For other updates, see [Azure SDK 2.8 announcement post](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-8-for-net/).

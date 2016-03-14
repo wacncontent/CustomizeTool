@@ -27,13 +27,13 @@
 
 This article explains what the WebJobs SDK is, reviews some common scenarios it is useful for, and gives an overview of how you use it in your code.
 
-[WebJobs](/documentation/articles/websites-webjobs-resources) is a feature of Azure Websites that enables you to run a program or script in the same context as a web site, API app, or mobile app. The purpose of the [WebJobs SDK](/documentation/articles/websites-webjobs-resources) is to simplify the code you write for common tasks that a WebJob can perform, such as image processing, queue processing, RSS aggregation, file maintenance, and sending emails. The WebJobs SDK has built-in features for working with Azure Storage and Service Bus, for scheduling tasks and handling errors, and for many other common scenarios. In addition, it's designed to be extensible, and there's an [open source repository for extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview).
+[WebJobs](/documentation/articles/websites-webjobs-resources) is a feature of Azure Web App that enables you to run a program or script in the same context as a web app, API app, or mobile app. The purpose of the [WebJobs SDK](/documentation/articles/websites-webjobs-resources) is to simplify the code you write for common tasks that a WebJob can perform, such as image processing, queue processing, RSS aggregation, file maintenance, and sending emails. The WebJobs SDK has built-in features for working with Azure Storage and Service Bus, for scheduling tasks and handling errors, and for many other common scenarios. In addition, it's designed to be extensible, and there's an [open source repository for extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview).
 
 The WebJobs SDK includes the following components:
 
 * **NuGet packages**. NuGet packages that you add to a Visual Studio Console Application project provide a framework that your code uses by decorating your methods with WebJobs SDK attributes.
   
-* **Dashboard**. Part of the WebJobs SDK is included in Azure Websites and provides rich monitoring and diagnostics for programs that use the NuGet packages. You don't have to write code to use these monitoring and diagnostics features.
+* **Dashboard**. Part of the WebJobs SDK is included in Azure Web App and provides rich monitoring and diagnostics for programs that use the NuGet packages. You don't have to write code to use these monitoring and diagnostics features.
 
 ## <a id="scenarios"></a>Scenarios
 
@@ -53,7 +53,7 @@ Here are some typical scenarios you can handle more easily with the Azure WebJob
 
 * Any tasks that you want to run on a schedule, such as performing a back-up operation every night.
 
-In many of these scenarios you may want to scale a web site to run on multiple VMs, which would run multiple WebJobs simultaneously. In some scenarios this could result in the same data getting processed multiple times, but this is not a problem when you use the built-in queue, blob, and Service Bus triggers of the WebJobs SDK. The SDK ensures that your functions will be processed only once for each message or blob.
+In many of these scenarios you may want to scale a web app to run on multiple VMs, which would run multiple WebJobs simultaneously. In some scenarios this could result in the same data getting processed multiple times, but this is not a problem when you use the built-in queue, blob, and Service Bus triggers of the WebJobs SDK. The SDK ensures that your functions will be processed only once for each message or blob.
 
 The WebJobs SDK also makes it easy to handle common error handling scenarios. You can set up alerts to send notifications when a function fails, and you can set timeouts so that a function is automatically canceled if it doesn't complete within a specified time limit.
 
@@ -162,7 +162,7 @@ You're not limited to built-in functionality -- the WebJobs SDK allows you to wr
 
 A program that uses the the WebJobs SDK is a standard Console Application and can run anywhere -- it doesn't have to run as a WebJob. You can test the program locally on your development computer, and in production you can run it in a Cloud Service worker role or a Windows service if you prefer one of those environments. 
 
-However, the dashboard is only available as an extension for an Azure Websites. If you want to run outside of a WebJob and still use the Dashboard, you can configure a web site to use the same storage account that your WebJobs SDK Dashboard connection string refers to, and that web site's WebJobs Dashboard will then show data about function execution from your program that is running somewhere else. You can get to the Dashboard by using the URL https://*{webappname}*.scm.chinacloudsites.cn/azurejobs/#/functions. For more information, see [Getting a dashboard for local development with the WebJobs SDK](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx), but note that the blog post shows an old connection string name. 
+However, the dashboard is only available as an extension for an Azure web app. If you want to run outside of a WebJob and still use the Dashboard, you can configure a web app to use the same storage account that your WebJobs SDK Dashboard connection string refers to, and that web app's WebJobs Dashboard will then show data about function execution from your program that is running somewhere else. You can get to the Dashboard by using the URL https://*{webappname}*.scm.chinacloudsites.cn/azurejobs/#/functions. For more information, see [Getting a dashboard for local development with the WebJobs SDK](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx), but note that the blog post shows an old connection string name. 
 
 ## <a id="nostorage"></a>Dashboard features
 

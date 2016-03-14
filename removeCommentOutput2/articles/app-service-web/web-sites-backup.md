@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/07/2015"
+	ms.date="01/26/2016"
 	wacn.date=""/>
 
 # Back up a web app in Azure
@@ -50,8 +50,7 @@ This information is backed up to the Azure storage account and container that yo
 
 * The Backup and Restore feature supports up to 10GB of website and database content. An error will be indicated if the backup feature cannot proceed because the payload exceeds this limit. 
 
-<a name="manualbackup"></a>
-## Create a manual backup
+##<a name="manualbackup" id="create-a-manual-backup"></a> Create a manual backup
 1. In the Azure Management Portal for your website, choose the **Backups** tab.
 	
 	![Backups page][ChooseBackupsPage]

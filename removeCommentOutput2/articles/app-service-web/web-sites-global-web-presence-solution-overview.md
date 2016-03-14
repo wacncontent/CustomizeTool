@@ -20,7 +20,12 @@
 
 Below is an example of a .COM website running on Azure Web Apps. It demonstrates what you can do simply by composing Web Apps together with other services with minimal technical investments. **Click on an element in the topography to read more about it.** 
 
-<object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/corp-website-visio.svg" width="100%" height="100%"></object>
+<div style="display:none">
+![](./media/web-sites-global-web-presence-solution-overview/corp-website-visio.svg)
+</div>
+
+<object type="image/svg+xml" data="./media/web-sites-global-web-presence-solution-overview/corp-website-visio.svg" width="100%" height="100%"></object>
+
 
 > [AZURE.NOTE]
 > This guide presents some of the most common areas and tasks that are aligned with running a public-facing .COM site in Azure Web Apps. However, there are other common solutions that you can implement in Azure Web Apps. To review these solutions, see the other guides on [Digital Marketing Campaigns](/documentation/articles/web-sites-digital-marketing-application-solution-overview) and [Business Applications](/documentation/articles/web-sites-business-application-solution-overview).
@@ -80,12 +85,11 @@ In the **Standard** hosting plan, monitor site responsiveness receive email noti
 Make your .COM site attractive with rich media, such as:
 
 -  Upload and stream videos globally with [Azure Media Services]
--  Send emails to users with [SendGrid service in Azure Marketplace]
+-  Send emails to users with [SendGrid service in Azure gallery]
 
 ## More Resources
 
 - [Azure Web Apps Documentation](/home/features/web-site/)
-- [Learning Map for Azure Web Apps](/documentation/articles/websites-learning-map)
 - [Azure Web Blog](/blog/tags/网站/)
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
@@ -126,6 +130,6 @@ Make your .COM site attractive with rich media, such as:
 [How to: Receive Alert Notifications and Manage Alert Rules in Azure]:http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
 
 [Azure Media Services]:http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
-[SendGrid service in Azure Marketplace]: /documentation/articles/sendgrid-dotnet-how-to-send-email
+[SendGrid service in Azure gallery]: /documentation/articles/sendgrid-dotnet-how-to-send-email
 
  

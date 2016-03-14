@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/02/2015"
+	ms.date="01/29/2016"
 	wacn.date=""/>
 
 
@@ -349,7 +349,7 @@ Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sent
 
 [hdinsight-hbase-overview]: hdinsight-hbase-overview.md
 [hdinsight-hbase-provision-vnet-v1]: hdinsight-hbase-provision-vnet-v1.md
-[hdinsight-versions]: hdinsight-component-versioning.md
+[hdinsight-versions]: hdinsight-component-versioning-v1.md
 [hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/

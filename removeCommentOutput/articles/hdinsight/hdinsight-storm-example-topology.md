@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="01/15/2016"
 	wacn.date=""/>
 
 # Example Storm toplogies and components for Apache Storm on HDInsight
@@ -19,6 +19,7 @@ The following is a list of examples created and maintained by Microsoft for use 
 
 | Description                                                                                             | Demonstrates                                         | Language/Framework         |
 |:--------------------------------------------------------------------------------------------------------|:-----------------------------------------------------|:---------------------------|
+| [Write to Azure Data Lake Store from Apache Storm](/documentation/articles/hdinsight-storm-write-data-lake-store) | Writing to Azure Data Lake Store | Java |
 | [Event Hub Spout and Bolt source](https://github.com/apache/storm/tree/master/external/storm-eventhubs) | Source for the Event Hub Spout and Bolt | Java |
 | [Develop Java-based topologies for Apache Storm on HDInsight][5797064f]                                 | Maven                                                | Java                       |
 | [Develop C# topologies for Apache Storm on HDInsight using Visual Studio][16fce2d1]                     | HDInsight Tools for Visual Studio                    | C#, Java                   |

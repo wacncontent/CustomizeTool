@@ -96,7 +96,7 @@ The following are some common reason for a cache disconnect.
 -	Client-side causes
 	-	The client application was redeployed.
 	-	The client application performed a scaling operation.
-		-	In the case of Cloud Services or web sites, this may be due to auto-scaling.
+		-	In the case of Cloud Services or <!-- deleted by customization Web Apps --><!-- keep by customization: begin --> web sites <!-- keep by customization: end -->, this may be due to auto-scaling.
 	-	The networking layer on the client side changed.
 	-	Transient errors occurred in the client or in the network nodes between the client and the server.
 	-	The bandwidth threshold limits were reached.

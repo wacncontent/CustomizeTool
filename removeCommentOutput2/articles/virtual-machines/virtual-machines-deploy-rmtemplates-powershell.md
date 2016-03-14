@@ -18,9 +18,11 @@
 # Manage virtual machines using Azure Resource Manager and PowerShell
 
 > [AZURE.SELECTOR]
-- [Preview Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
-- [PowerShell - Windows](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
+- [PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 - [CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
+
+<br>
+
 
 Using Azure PowerShell and Resource Manager templates provides you with a lot of power and flexibility when managing resources in Windows Azure. You can use the tasks in this article to manage virtual machine resources.
 
@@ -187,7 +189,7 @@ If you would like to see a video of this task being done, take a look at this:
 
 In the following command, replace *resource group name* with the name of the resource group that contains the virtual machine and *VM name* with the name of the machine, and then run it:  
 
-	Remove-AzureRmVM -ResourceGroupName "resource group name" -Name "VM name"
+	Remove-AzureRmVM -ResourceGroupName "resource group name" âName "VM name"
 
 > [AZURE.NOTE] You can use the **-Force** parameter to skip the confirmation prompt.
 
@@ -211,4 +213,3 @@ It returns something like this:
 If you would like to see a video of this task being done, take a look at this:
 
 [AZURE.VIDEO start-stop-restart-and-delete-vms-in-microsoft-azure-with-powershell]
-

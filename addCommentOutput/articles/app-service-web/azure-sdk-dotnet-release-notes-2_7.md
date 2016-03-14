@@ -24,7 +24,7 @@ The document also contain the release notes for the Azure SDK for .NET 2.7.1 rel
 
 Azure SDK 2.7 is only supported in Visual Studio 2015 and Visual Studio 2013. [Azure SDK 2.6](/downloads/) is the last supported SDK for Visual Studio 2012.
 
-For detailed information about this release, see [Azure SDK 2.7 announcement post](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/) and [Azure SDK 2.7.1 announcement post](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/).
+For detailed information about this release, see [Azure SDK 2.7 announcement <!-- deleted by customization post](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/) --><!-- keep by customization: begin --> post](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/) <!-- keep by customization: end --> and [Azure SDK 2.7.1 announcement post](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/).
 
 ##Azure SDK for .NET 2.7
 
@@ -57,17 +57,24 @@ In this release the following updates were made. These updates are in preview. F
 - Old **Storm** project must be upgraded when using this version of the tools. For more information, see [this blog](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 - Visual Studio Web Express is no longer supported. For more information, see [this blog](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 
-###Azure Websites Tools
+<!-- deleted by customization
+###Azure Tools
 
-In this release the following updates were made to Web Tools Extensions. For more information see [this](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)  blog. 
+In this release the following updates were made to Web Tools Extensions. For more information see [this](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)  blog.
+-->
+<!-- keep by customization: begin -->
+###Azure Web App Tools
+
+In this release the following updates were made to Web Tools Extensions. For more information see [this](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)  blog.
+<!-- keep by customization: end -->
 
 - Support for DreamSpark accounts added
 - Full change to Azure Tools made to support the new Azure Resource Management APIs
-- Support for Azure Websites added to [Cloud Explorer](/documentation/articles/azure-sdk-dot-net-release-notes-2_7#cloud_explorer)
+- Support for Azure <!-- keep by customization: begin --> Web App <!-- keep by customization: end --> added to [Cloud Explorer](/documentation/articles/azure-sdk-dot-net-release-notes-2_7#cloud_explorer)
 
 ####Known issues
 
-web site deployment slot nodes don't appear under the Slots node in Server Explorer, and web site deployment slot child nodes don't load under Cloud Explorer. This issue has been resolved and prepared for the next SDK release. 
+Web App deployment slot nodes don't appear under the Slots node in Server Explorer, and Web App deployment slot child nodes don't load under Cloud Explorer. This issue has been resolved and prepared for the next SDK release. 
 
 
 ###<a id="cloud_explorer"></a>Cloud Explorer for Visual Studio 2015
@@ -129,7 +136,7 @@ For more detailed explanation about HDInsight tools updates, see [this blog](htt
 	To enable you to view the grammar errors instantly, the Hive Error Marker feature was added. Also, error messages were enhanced and you can now see detailed grammar errors instantly (until this release, you had to submit a Hive script to the cluster and wait for some time before getting details about your error message).  
 - Storm Topology Graph (a new feature)
 
-	Visualizing is very important when you want to see if your topology is working as expected. In this release we added visualization for Storm graphs. You can visualize the important metrics for your topology (for example, a color indicates weather a certain Bolt is <!-- deleted by customization “busy” --><!-- keep by customization: begin --> âbusyâ <!-- keep by customization: end --> or not). You can also double click the Bolt/Spout to view more details.
+	Visualizing is very important when you want to see if your topology is working as expected. In this release we added visualization for Storm graphs. You can visualize the important metrics for your topology (for example, a color indicates weather a certain Bolt is "busy" or not). You can also double click the Bolt/Spout to view more details.
 
 - Support for HDInsight clusters that were created in the Azure Management Portal (a bug fix)
 
@@ -155,6 +162,11 @@ LightSwitch projects are not compatibile with this release. This issue will be r
 ##Also see
 [Azure SDK 2.7.1 announcement post](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/)
 
+<!-- deleted by customization
 [Azure SDK 2.7 announcement post](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
+-->
+<!-- keep by customization: begin -->
+[Azure SDK 2.7 announcement post](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
+<!-- keep by customization: end -->
 
 [Support and Retirement Information for the Azure SDK for .NET and APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn479282.aspx/)

@@ -16,7 +16,7 @@
 
 # How to install and configure Trend Micro Deep Security as a Service on a Windows VM
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 This article shows you how to install and configure Trend Micro Deep Security as a Service on a new or existing virtual machine (VM) running Windows Server. Deep Security as a Service includes anti-malware protection, a firewall, an intrusion prevention system, and integrity monitoring.
@@ -69,8 +69,8 @@ If the VM Agent is installed, run these commands.
 It takes a few minutes for the agent to start running when it is installed. After that, you'll need to activate Deep Security on the virtual machine so it can be managed by a Deep Security Manager. See the following for additional instructions:
 
 - Trend's article about this solution, [Instant-On Cloud Security for Windows Azure](http://www.trendmicro.com/us/business/saas/deep-security-as-a-service/microsoft-azure-security/index.html?cm_mmc=VURL:www.trendmicro.com-_-VURL-_-%2Fazure%2Findex.html-_-1-1#how-it-works)
-- A [sample Windows PowerShell script](https://dsahandler.blob.core.windows.net/dsaas/ds-config.ps1) to configure the virtual machine
-- [Instructions](https://dsahandler.blob.core.windows.net/dsaas/ds-config-README.txt)  for the sample
+- A [sample Windows PowerShell script](https://dsahandler.blob.core.chinacloudapi.cn/dsaas/ds-config.ps1) to configure the virtual machine
+- [Instructions](https://dsahandler.blob.core.chinacloudapi.cn/dsaas/ds-config-README.txt)  for the sample
 
 ## Additional resources
 

@@ -22,7 +22,7 @@
 
 [Create a virtual machine running Windows in the Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 
-[Create a custom virtual machine running Windows in Azure](/documentation/articles/virtual-machines-windows-create-custom)
+[Create a custom virtual machine running Windows in Azure](/documentation/articles/virtual-machines-create-custom)
 
 [Create a custom virtual machine running Linux in Azure](/documentation/articles/virtual-machines-linux-create-custom)
 

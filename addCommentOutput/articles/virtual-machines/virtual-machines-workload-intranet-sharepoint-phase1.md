@@ -85,7 +85,7 @@ Item | Local network address space
 
 First, start an Azure PowerShell prompt and login to your account.
 
-	Login-AzureRMAccount <!-- keep by customization: begin --> -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud) <!-- keep by customization: end -->
+	Login-AzureRMAccount
 
 Get your subscription name using the following command.
 
@@ -103,7 +103,7 @@ Next, create a new resource group for your intranet SharePoint farm. To determin
 Create your new resource group with these commands.
 
 	$rgName="<resource group name>"
-	$locName="<an Azure location, such as China <!-- deleted by customization North>" --><!-- keep by customization: begin --> East>" <!-- keep by customization: end -->
+	$locName="<an Azure location, such as China North>"
 	New-AzureRMResourceGroup -Name $rgName -Location $locName
 
 Resource Manager-based virtual machines require a Resource Manager-based storage account.

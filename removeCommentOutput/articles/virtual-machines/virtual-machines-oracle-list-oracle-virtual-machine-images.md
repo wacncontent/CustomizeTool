@@ -63,6 +63,6 @@ The following is a list of the available preconfigured Oracle virtual machine im
 - Oracle Linux 7.0.0.0.0
 
 ##Additional resources
-[New all-in-one Oracle images in the Azure Marketplace](https://msopentech.com/blog/2015/02/19/new-one-oracle-images-azure-marketplace/)
+[New all-in-one Oracle images in the Azure gallery](https://msopentech.com/blog/2015/02/19/new-one-oracle-images-azure-marketplace/)
 
 [Oracle virtual machine images - miscellaneous considerations](#miscellaneous-considerations-for-oracle-virtual-machine-images-new-article)

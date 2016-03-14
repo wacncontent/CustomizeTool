@@ -14,19 +14,11 @@
 
 #Configure PHP in Azure Web Apps
 
-##Table of Contents
-
-* [What is Azure  Websites?](#WhatIs)
-* [How to: Change the default PHP configuration](#ChangeBuiltInPHP)
-* [How to: Enable extensions in the built-in PHP runtime](#EnableExtDefaultPHP)
-* [How to: Use a custom PHP runtime](#UseCustomPHP)
-* [Next steps](#NextSteps)
-
-## Introduction
+##<a name="WhatIs"></a> Introduction
 
 This guide will show you how to configure the built-in PHP runtime for Web Apps in [Azure Web App](/documentation/services/web-sites/), provide a custom PHP runtime, and enable extensions. To use Azure Web App, sign up for the [trial]. To get the most from this guide, you should first create a PHP web app in Azure.
 
-## How to: Change the built-in PHP version
+##<a name="ChangeBuiltInPHP"></a> How to: Change the built-in PHP version
 By default, PHP 5.4 is installed and immediately available for use when you create an Azure web app. The best way to see the available release revision, its default configuration, and the enabled extensions is to deploy a script that calls the [phpinfo()] function.
 
 PHP 5.5 and PHP 5.6 versions are also available, but not enabled by default. To update the PHP version, follow one of these methods:

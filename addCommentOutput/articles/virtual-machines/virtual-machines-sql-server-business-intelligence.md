@@ -25,7 +25,7 @@ There are two ways to license SQL Server in Windows Azure Virtual Machines:
 
 1. License mobility benefits that are part of Software Assurance. For more information, see [License Mobility through Software Assurance on Azure](/pricing/license-mobility/).
 
-1. Pay per hour rate of Azure Virtual Machines with SQL Server installed. See the “SQL Server” section in [Virtual Machines Pricing](/home/features/virtual-machines/#price).
+1. Pay per hour rate of Azure Virtual Machines with SQL Server installed. See the "SQL Server" section in [Virtual Machines Pricing](/home/features/virtual-machines/#price).
 
 For more information on licensing and current rates, see [Virtual Machines Licensing FAQ](/pricing/licensing-faq/%20).
 
@@ -35,9 +35,9 @@ The Windows Azure Virtual Machine gallery includes several images that contain M
 
 ![SQL image in azure VM gallery](./media/virtual-machines-sql-server-business-intelligence/IC741367.png)
 
-![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif) The following PowerShell script returns the list of Azure images that contain “SQL-Server” in the ImageName:
+![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif) The following PowerShell script returns the list of Azure images that contain "SQL-Server" in the ImageName:
 
-	# assumes you have already uploaded a management certificate to your Windows Azure Subscription. View the thumbprint value from the "settings" menu in <!-- keep by customization: begin --> Windows <!-- keep by customization: end --> Azure Management Portal <!-- deleted by customization. -->
+	# assumes you have already uploaded a management certificate to your Windows Azure Subscription. View the thumbprint value from the "settings" menu in Azure Management Portal.
 	
 	$subscriptionID = ""    # REQUIRED: Provide your subscription ID.
 	$subscriptionName = "" # REQUIRED: Provide your subscription name.
@@ -62,7 +62,7 @@ For more information on editions and features supported by SQL Server, see the f
 
 ### BI Features Installed on the SQL Server Virtual Machine Gallery Images
 
-The following table summarizes the Business Intelligence features installed on the common Windows Azure Virtual Machine gallery images for SQL Server”
+The following table summarizes the Business Intelligence features installed on the common Windows Azure Virtual Machine gallery images for SQL Server"
 
 - SQL Server 2014 RTM Enterprise
 
@@ -82,7 +82,7 @@ The following table summarizes the Business Intelligence features installed on t
 
 <sup>1</sup> For additional information on SharePoint and Azure virtual machines, see [Windows Azure Architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx) and [SharePoint Deployment on Windows Azure Virtual Machines](https://www.microsoft.com/download/details.aspx?id=34598).
 
-![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif) Run the following PowerShell command to get a list of installed services that contain “SQL” in the service name.
+![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif) Run the following PowerShell command to get a list of installed services that contain "SQL" in the service name.
 
 	get-service | Where-Object{ $_.DisplayName -like '*SQL*' } | Select DisplayName, status, servicetype, dependentservices | format-Table -AutoSize
 
@@ -166,7 +166,7 @@ There are two common workflows for connecting to an Azure Virtual Machine:
 		
 		Myservice.chinacloudapp.cn:63133
 		
-		For more information, see [What is a cloud <!-- deleted by customization service?](/documentation/articles/fundamentals-application-models/) --><!-- keep by customization: begin --> service?](http://www.windowsazure.cn/documentation/articles/fundamentals-application-models/) <!-- keep by customization: end -->.
+		For more information, see [What is a cloud service?](/documentation/articles/fundamentals-application-models/).
 
 **Start Reporting Services Configuration Manager.**
 
@@ -359,7 +359,7 @@ In the virtual machines firewall, open port **2382** and create a static Analysi
 
 		netstat /ao
 
-1. Use SQL Server Management Studio to create a static Analysis Services named instance port by updating 'Port' value in tabular AS instance general properties. For more information, see the “Use a fixed port for a default or named instance” in [Configure the Windows Firewall to Allow Analysis Services Access](https://msdn.microsoft.com/zh-cn/library/ms174937.aspx#bkmk_fixed).
+1. Use SQL Server Management Studio to create a static Analysis Services named instance port by updating 'Port' value in tabular AS instance general properties. For more information, see the "Use a fixed port for a default or named instance" in [Configure the Windows Firewall to Allow Analysis Services Access](https://msdn.microsoft.com/zh-cn/library/ms174937.aspx#bkmk_fixed).
 
 1. Restart the tabular instance of the Analysis Services  service.
 
@@ -396,7 +396,7 @@ For more information on creating endpoints, see the following:
 
 - Create Endpoints:[How to Set Up Endpoints to a Virtual Machine](/documentation/articles/virtual-machines-set-up-endpoints).
 
-- SQL Server: See the “Complete Configuration steps to connect to the virtual machine Using SQL Server Management Studio” section of [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-provision-sql-server).
+- SQL Server: See the "Complete Configuration steps to connect to the virtual machine Using SQL Server Management Studio" section of [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-provision-sql-server).
 
 The following diagram illustrates the ports to open in the VM firewall to allow remote access to features and components on the VM.
 

@@ -15,12 +15,12 @@
 
 # How to reset a password or the Remote Desktop service for a Windows VM
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] <!-- deleted by customization classic deployment model. -->
 
 
 If you can't connect to a Windows virtual machine because of a forgotten password or a problem with the Remote Desktop service configuration, use the Azure Management Portal or the VMAccess extension to reset the local administrator password or reset the Remote Desktop service configuration.
-
 <!-- deleted by customization
+
 ## Azure Management Portal
 
 To reset the Remote Desktop service in the [Azure Management Portal](https://manage.windowsazure.cn), click **Browse all** > **Virtual machines (classic)** > *your Windows virtual machine* > **Reset Remote Access**. The following page appears.
@@ -31,20 +31,8 @@ To reset the Remote Desktop service in the [Azure Management Portal](https://man
 To reset the name and password of the local administrator account in the [Azure Management Portal](https://manage.windowsazure.cn), click **Browse all** > **Virtual machines (classic)** > *your Windows virtual machine* > **All settings** > **Password reset**. The following page appears.
 
 ![](./media/virtual-machines-windows-reset-password/Portal-PW-Reset-Windows.png)
+
 -->
-<!-- keep by customization: begin -->
-##  portal
-
-To reset the Remote Desktop service in the [preview portal](https://manage.windowsazure.cn), click **Browse all** > **Virtual machines (classic)** > *your Windows virtual machine* > **Reset Remote Access**. The following page appears.
-
-
-![](./media/virtual-machines-windows-reset-password/Portal-RDP-Reset-Windows.png)
-
-To reset the name and password of the local administrator account in the [preview portal](https://manage.windowsazure.cn), click **Browse all** > **Virtual machines (classic)** > *your Windows virtual machine* > **All settings** > **Password reset**. The following page appears.
-
-![](./media/virtual-machines-windows-reset-password/Portal-PW-Reset-Windows.png)
-<!-- keep by customization: end -->
-
 
 ## VMAccess extension and PowerShell
 
@@ -67,11 +55,11 @@ If you don't know the cloud service and virtual machine name, run **Get-AzureVM*
 
 If the **write-host** command displays **True**, the VM Agent is installed. If it displays **False**, see the instructions and a link to the download in the [VM Agent and Extensions - Part 2](https://azure.microsoft.com/zh-cn/blog/vm-agent-and-extensions-part-2/) Azure blog post.
 
-If you created the virtual machine with the <!-- deleted by customization portal --><!-- keep by customization: begin --> Azure Management Portal <!-- keep by customization: end -->, run the following additional command.
+If you created the virtual machine with the portal, run the following additional command.
 
 	$vm.GetInstance().ProvisionGuestAgent = $true
 
-This command will prevent the “Provision Guest Agent must be enabled on the VM object before setting IaaS VM Access Extension” error when running the **Set-AzureVMExtension** command in the following sections.
+This command will prevent the "Provision Guest Agent must be enabled on the VM object before setting IaaS VM Access Extension" error when running the **Set-AzureVMExtension** command in the following sections.
 
 Now, you can do these tasks:
 
@@ -118,12 +106,7 @@ If you were unable to run the Azure IaaS (Windows) diagnostics package or runnin
 
 ## Additional resources
 
-<!-- deleted by customization
 [Azure VM extensions and features](/documentation/articles/virtual-machines-extensions-features)
--->
-<!-- keep by customization: begin -->
-[Azure VM extensions and features](http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
-<!-- keep by customization: end -->
 
 [Connect to an Azure virtual machine with RDP or SSH](http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx)
 

@@ -15,7 +15,7 @@
 
 # Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
 
 
 This article shows you how to create and upload a virtual hard disk (VHD) so you can use it as your own image to create virtual machines in Azure. You'll learn how to prepare the operating system so you can use it to create multiple virtual machines based on that image.
@@ -50,9 +50,7 @@ This article assumes that you have the following items:
 Azure supports a variety of Linux distributions (see [Endorsed Distributions](/documentation/articles/linux-endorsed-distributions)). The following articles will guide you through how to prepare the various Linux distributions that are supported on Azure:
 
 - **[CentOS-based Distributions](/documentation/articles/virtual-machines-linux-create-upload-vhd-centos)**
-<!-- deleted by customization
 - **[Debian Linux](/documentation/articles/virtual-machines-linux-create-upload-vhd-debian)**
--->
 - **[Oracle Linux](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)**
 - **[Red Hat Enterprise Linux](/documentation/articles/virtual-machines-linux-create-upload-vhd-redhat)**
 - **[SLES & openSUSE](/documentation/articles/virtual-machines-linux-create-upload-vhd-suse)**
@@ -73,12 +71,7 @@ Before you can upload a .vhd file, you need to establish a secure connection bet
 
 The latest Azure CLI defaults into Resource Manager deployment model, so make sure you are in the classic deployment model by using this command:
 
-<!-- deleted by customization
 		azure config mode asm  
--->
-<!-- keep by customization: begin -->
-		azure change mode asm  
-<!-- keep by customization: end -->
 
 Next, use any of the following login methods to connect to your Azure subscription. 
 
@@ -160,7 +153,7 @@ Use the Azure CLI to upload the image. You can upload an image by using the foll
 
 You will need a storage account to upload your VHD file to. You can either pick an existing one or create a new one. To create a storage account please refer to [Create a Storage Account](/documentation/articles/storage-create-storage-account)
 
-When you upload the .vhd file, you can place the .vhd file anywhere within your blob storage. In the following command examples, **BlobStorageURL** is the URL for the storage account you plan to use, **YourImagesFolder** is the container within blob storage where you want to store your images. **VHDName** is the label that appears in the <!-- deleted by customization [Azure Management --><!-- keep by customization: begin --> [Management <!-- keep by customization: end --> Portal](http://manage.windowsazure.cn) to identify the virtual hard disk. **PathToVHDFile** is the full path and name of the .vhd file.
+When you upload the .vhd file, you can place the .vhd file anywhere within your blob storage. In the following command examples, **BlobStorageURL** is the URL for the storage account you plan to use, **YourImagesFolder** is the container within blob storage where you want to store your images. **VHDName** is the label that appears in the [Azure Management Portal](http://manage.windowsazure.cn) to identify the virtual hard disk. **PathToVHDFile** is the full path and name of the .vhd file.
 
 From the Azure PowerShell window you used in the previous step, type:
 

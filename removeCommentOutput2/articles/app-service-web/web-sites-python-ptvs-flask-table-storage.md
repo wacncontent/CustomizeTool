@@ -26,16 +26,6 @@ We'll learn how to create an Azure Storage account, how to configure the web app
 
 See the [Python Developer Center] for more articles that cover development of Azure Web Apps with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Web App, the steps are similar when developing [Azure Cloud Services].
 
-+ [Prerequisites](#prerequisites)
-+ [Create the Project](#create-the-project)
-+ [Create an Azure Storage Account](#create-an-azure-storage-account)
-+ [Configure the Project](#configure-the-project)
-+ [Explore the Azure Table Storage](#explore-the-azure-table-storage)
-+ [Publish to an Azure Website](#publish-to-an-azure-website)
-+ [Configure the Azure Website](#configure-the-azure-website)
-+ [Next steps](#next-steps)
-
-
 ##<a name="prerequisites"></a> Prerequisites
 
  - Visual Studio 2013 or 2015
@@ -133,22 +123,19 @@ It's easy to view and edit storage tables using Server Explorer in Visual Studio
 
   	<!-- ![Table Query Results](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonServerExplorerTable.png) -->
 
-##<a name="publish-to-an-azure-website"></a> Publish the web site to Azure Websites
+##<a name="publish-to-an-azure-website"></a> Publish the web app to Azure
 
 The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
 
-1.  Click on **Windows Azure Web Apps**.
+1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
-1.  Click on **New** to create a new web app.
+  	![Publish Web Dialog](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonPublishWebSiteDialog.png)
 
-1.  Fill in the following fields and click **Create**.
-	-	**Web App name**
-	-	**App Service plan**
-	-	**Resource group**
-	-	**Region**
-	-	Leave **Database server** set to **No database**
+1.  Click on **Import**.
 
-  	<!-- ![Create Site on Windows Azure Dialog](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonCreateWebSite.png) -->
+1.  Choose the previously downloaded "publish profile", and click "OK".
+
+	If you haven't downloaded the "publish profile", or have't created a web app, go to [Azure Management Portal](https://manage.windowsazure.cn) to create one. And in **Dashboard** of the web app, under **quick glance**, download the "publish profile".
 
 1.  Accept all other defaults and click **Publish**.
 

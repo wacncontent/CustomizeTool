@@ -1,15 +1,17 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Spark on Ubuntu Resource Manager Template"
-	description="Learn to easily deploy a new Spark cluster on Ubuntu VMs using Azure PowerShell or the Azure CLI and a Resource Manager template"
+	pageTitle="Spark on Ubuntu Resource Manager Template | Windows Azure"
+	description="How to deploy a new Spark cluster on Ubuntu VMs using Azure PowerShell or the Azure CLI and a Resource Manager template"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="paolosalvatori"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
-	
 	ms.date="05/16/2015"
 	wacn.date=""/>
 
@@ -17,7 +19,10 @@
 
 Apache Spark is a fast engine for large-scale data processing. Spark has an advanced DAG execution engine that supports cyclic data flow and in-memory computing, and it can access diverse data sources, including HDFS, Spark, HBase, and S3.
 
-In addition to running on the Mesos or YARN cluster managers, Spark provides a simple standalone deployment mode. This tutorial will walk you through how to use a sample Azure Resource Manager template to deploy a Spark cluster on Ubuntu VMs through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't deploy this resource with the classic deployment model.
+
+
+In addition to running on the Mesos or YARN cluster managers, Spark provides a simple standalone deployment mode. This tutorial will walk you through how to use a sample Azure Resource Manager template to deploy a Spark cluster on Ubuntu VMs through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli-install).
 
 This template deploys a Spark cluster on the Ubuntu virtual machines. This template also provisions a storage account, virtual network, availability sets, public IP addresses and network interfaces required by the installation. The Spark cluster is created behind a subnet, so there is no public IP access to the cluster.  As part of the deployment, an optional "jump box" can be deployed. This "jump box" is an Ubuntu VM deployed in the subnet as well, but it *does* expose a public IP address with an open SSH port that you can connect to. Then from the "jump box", you can SSH to all the Spark VMs in the subnet.
 
@@ -40,7 +45,7 @@ As shown in the above image, the deployment topology consists of the following e
 -	Four slave nodes running in the same virtual subnet and availability set as the master node.
 -	A jump-box VM located in the same virtual network and subnet that can be used to access the cluster.
 
-Spark version 3.0.0 is the default version and can be changed to any pre-built binaries available on the Spark repository. There is also a provision in the script to uncomment the build from source. A static IP address will be assigned to each Spark master node: 10.0.0.10. A static IP address will be assigned to each Spark slave node in order to work around the current limitation of not being able to dynamically compose a list of IP addresses from within the template. (By default, the first node will be assigned the private IP address of 10.0.0.30, the second node will be assigned 10.0.0.31, and so on.) To check deployment errors, go to the new Azure Management Portal and look under **Resource Group** > **Last deployment** > **Check Operation Details**.
+Spark version 3.0.0 is the default version and can be changed to any pre-built binaries available on the Spark repository. There is also a provision in the script to uncomment the build from source. A static IP address will be assigned to each Spark master node: 10.0.0.10. A static IP address will be assigned to each Spark slave node in order to work around the current limitation of not being able to dynamically compose a list of IP addresses from within the template. (By default, the first node will be assigned the private IP address of 10.0.0.30, the second node will be assigned 10.0.0.31, and so on.) To check deployment errors, go to the Azure Management Portal and look under **Resource Group** > **Last deployment** > **Check Operation Details**.
 
 Before diving into more details related to Azure Resource Manager and the template we will use for this deployment, make sure you have Azure PowerShell or the Azure CLI configured correctly.
 
@@ -487,7 +492,7 @@ The **vmStorageAccountContainerName** variable is an example of a simple name/va
 
 If you want to customize the size of the Spark cluster deployment, then you can change the properties of the variables **tshirtSizeS**, **tshirtSizeM**, and **tshirtSizeL** in the azuredeploy.json template.  
 
-More information regarding the template language can be found on MSDN at [Azure Resource Manager Template Language](https://msdn.microsoft.com/zh-cn/library/azure/dn835138.aspx).
+More information regarding the template language can be found on MSDN at [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).
 
 
 ### "resources" section
@@ -830,7 +835,7 @@ In essence, this approach suggests to:
 -	For identical members of a group of resources (nodes in a cluster, etc.), create specific templates that leverage resource looping in order to deploy multiple instances with unique properties.
 -	For all post-deployment tasks (product installation, configurations, etc.), leverage script deployment extensions and create scripts specific to each technology.
 
-For more information, see [Azure Resource Manager Template Language](https://msdn.microsoft.com/zh-cn/library/azure/dn835138.aspx).
+For more information, see [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).
 
 ## Next steps
 

@@ -13,7 +13,6 @@
 	ms.date="11/11/2015"
 	wacn.date=""/>
 
-
 # Create and preconfigure a Linux virtual machine using Azure Powershell
 
 > [AZURE.SELECTOR]
@@ -22,7 +21,7 @@
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
  
 These steps show you how to create a Linux virtual machine using a fill-in-the-blanks approach for creating Azure PowerShell command sets. This approach can be useful if you are new to Azure PowerShell or you just want to know what values to specify for successful configuration. 
 

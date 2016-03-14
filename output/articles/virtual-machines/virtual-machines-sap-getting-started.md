@@ -10,7 +10,7 @@
    keywords=""/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="11/18/2015"
+	ms.date="02/12/2016"
 	wacn.date=""/>
    
 # Using SAP on Azure Virtual Machines (VMs)

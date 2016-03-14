@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Deploy a 3-node Deis cluster | Windows Azure"
    description="This article describes how to create a 3-node Deis cluster on Azure using an Azure Resource Manager template"
@@ -9,9 +11,9 @@
    tags="azure-resource-manager"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.date="06/24/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="06/24/2015"
+	wacn.date=""/>
 
 # Deploy a 3-node Deis cluster
 

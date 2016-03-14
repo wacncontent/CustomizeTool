@@ -15,7 +15,7 @@
 
 #How to create a LAMP Stack with Windows Azure
 
-A "LAMP" stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web sites. This term is actually an acronym that represents the Linux operating system with the Apache web server. The site data is stored in a MySQL database, and dynamic content is processed by PHP.  
+A "LAMP" stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web applications. This term is actually an acronym that represents the Linux operating system with the Apache web server. The site data is stored in a MySQL database, and dynamic content is processed by PHP.  
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
@@ -28,11 +28,11 @@ You will learn:
 -	How to prepare the virtual machine for the LAMP stack.
 -	How to install software that is needed by your LAMP server on the virtual machine.
 
-It is assumed that the reader already has an Azure subscription.  If not you can sign up for a trial at [http://azure.microsoft.com](http://azure.microsoft.com). If you have an MSDN subscription, see [Windows Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](/pricing/member-offers/msdn-benefits/?c=14-39). To learn more about Azure, see [What is Azure?](http://azure.microsoft.com/overview/what-is-azure/)
+It is assumed that the reader already has an Azure subscription.  If not you can sign up for a trial at [http://azure.microsoft.com](https://azure.microsoft.com/). If you have an MSDN subscription, see [Windows Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/?c=14-39). To learn more about Azure, see [What is Azure?](https://azure.microsoft.com/overview/what-is-azure/)
 
 In addition to this topic, if you already have a virtual machine and are just looking for the basics of installing a  LAMP stack on different Linux distributions, refer to [Install the LAMP Stack on a Linux virtual machine in Azure](/documentation/articles/virtual-machines-linux-install-lamp-stack).
 
-You can also deploy pre-configured LAMP images from the Azure Marketplace. The following 10 minute video introduces deploying pre-built LAMP images from the Azure Marketplace: [LAMP stack on Azure VMs](https://channel9.msdn.com/Shows/Azure-Friday/LAMP-stack-on-Azure-VMs-with-Guy-Bowerman).
+You can also deploy pre-configured LAMP images from the Azure gallery. The following 10 minute video introduces deploying pre-built LAMP images from the Azure gallery: [LAMP stack on Azure VMs](https://channel9.msdn.com/Shows/Azure-Friday/LAMP-stack-on-Azure-VMs-with-Guy-Bowerman).
 
 ##Phase 1: Create an image
 In this phase, you will create a virtual machine using a Linux image in Azure.  
@@ -147,7 +147,7 @@ Once it installs, start Apache with this command:
 	sudo service httpd start
 
 ####Test Apache
-To check if Apache is successfully installed, browse to your Apache server's DNS name (for the example URL in this article, http://lampdemo.chinacloudapp.cn/). The page should display the words “It works!"
+To check if Apache is successfully installed, browse to your Apache server's DNS name (for the example URL in this article, http://lampdemo.chinacloudapp.cn/). The page should display the words "It works!"
 ![][14]
 
 ####Troubleshooting
@@ -155,7 +155,7 @@ If Apache is running but you can't see Apache default page above, you need to ch
 
 -	Apache web service listening address / port
 	-	Check your endpoint setting for your Azure virtual machine. Make sure the configuration of the endpoint is appropriate. See the Phase 1: Create an Image instructions in this article.
-	-	Open /etc/httpd/conf/httpd.conf and then search for the string “Listen”. Ensure that the Apache listening port is same as the Private Port that you configured for your endpoint. The default port for Apache is 80. Here is an example.  
+	-	Open /etc/httpd/conf/httpd.conf and then search for the string "Listen". Ensure that the Apache listening port is same as the Private Port that you configured for your endpoint. The default port for Apache is 80. Here is an example.  
 
 			……
 			......
@@ -258,7 +258,7 @@ To install PHP on your virtual machine, open terminal and run this command:
 
 	sudo yum install php php-mysql  
 
-Answer “y” to download software packages. Then answer “y” to Importing GPG key 0xE8562897 "CentOS-5 Key (CentOS 5 Official Signing Key). PHP will install.
+Answer "y" to download software packages. Then answer "y" to Importing GPG key 0xE8562897 "CentOS-5 Key (CentOS 5 Official Signing Key). PHP will install.
 
 	warning: rpmts_HdrFromFdno: Header V3 DSA signature: NOKEY, key ID e8562897
 	updates/gpgkey                                                                                                                                                                       | 1.5 kB     00:00
@@ -318,7 +318,7 @@ Your browser should look similar to this:
 
 ##Additional steps
 
-As general practice, you will change some default settings to prepare for web site deployment.  
+As general practice, you will change some default settings to prepare for web application deployment.  
 
 ###Allow remote access to MySQL
 If you have more than one VM installed with MySQL and they need to exchange data, you should enable MySQL remote access and grant the proper permissions.  
@@ -342,8 +342,8 @@ To add an endpoint to allow remote access, refer to instructions in Phase 1: Cre
 
 ![][17]
 
-###Deploy your web sites to the apache server
-Once you have setup the LAMP stack successfully, you can deploy your existing web site to the Apache web server (your virtual machine). It is the same steps as deploying an existing web site on a physical web server.
+###Deploy your web applications to the apache server
+Once you have setup the LAMP stack successfully, you can deploy your existing web application to the Apache web server (your virtual machine). It is the same steps as deploying an existing web application on a physical web server.
 
 -	The root of the webserver is located at **/var/www/html**. You should grant privileges to the users who need to upload files to this folder. The following example shows how to add write permission to a group named lampappgroup and put the azureuser user name in this group:  
 
@@ -367,7 +367,7 @@ Apache is running but you can't see the Apache default page with your browser.
 -	**Possible root case**
 	1.	The Apache listening port is not same as the Private Port of your virtual machine's endpoint for web traffic.</br>
 	Check your Public Port and Private Port endpoint settings and make sure the Private Port is same as the Apache listen port. See Phase 1: Create an Image for instructions on configuring endpoints for your virtual machine.</br>
-	To determine the listen port of Apache, open /etc/httpd/conf/httpd.conf (Red Hat release) or /etc/apache2/ports.conf (Debian release), search for the string “Listen”. The default port is 80.
+	To determine the listen port of Apache, open /etc/httpd/conf/httpd.conf (Red Hat release) or /etc/apache2/ports.conf (Debian release), search for the string "Listen". The default port is 80.
 
 	2.	The firewall has disabled the listen port of Apache.</br>  
 	If you can see Apache default page from the local host, then the problem is most likely that the port which is listened by Apache is blocked by the firewall. You can use the w3m tool to browse the web page. The following commands install w3m and browse to Apache default page:  
@@ -446,7 +446,7 @@ When you restart the Apache server using one of the following commands:
 	You have not set the server name of Apache.
 
 -	**Solution**  
-	Insert a “ServerName localhost” line in either httpd.conf (Red Hat release) or apache2.conf (Debian release) in /etc/apache2 and restart Apache. The notice will disappear.
+	Insert a "ServerName localhost" line in either httpd.conf (Red Hat release) or apache2.conf (Debian release) in /etc/apache2 and restart Apache. The notice will disappear.
 
 
 

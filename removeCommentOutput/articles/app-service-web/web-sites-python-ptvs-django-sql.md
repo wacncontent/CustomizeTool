@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Django and SQL Database on Azure with Python Tools 2.2 for Visual Studio" 
-	description="Learn how to use the Python Tools for Visual Studio to create a Django web site that stores data in a SQL database instance and deploy it to Azure Websites." 
+	description="Learn how to use the Python Tools for Visual Studio to create a Django web app that stores data in a SQL database instance and deploy it to Azure Web Apps." 
 	services="app-service\web" 
 	tags="python"
 	documentationCenter="python" 
@@ -18,11 +18,11 @@
 
 # Django and SQL Database on Azure with Python Tools 2.2 for Visual Studio 
 
-In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web site using one of the PTVS sample templates. This tutorial is also available as a [video](https://www.youtube.com/watch?v=ZwcoGcIeHF4).
+In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates. This tutorial is also available as a [video](https://www.youtube.com/watch?v=ZwcoGcIeHF4).
 
-We'll learn how to use a SQL database hosted on Azure, how to configure the web site to use a SQL database, and how to publish the web site to [Azure Websites](/documentation/services/web-sites/).
+We'll learn how to use a SQL database hosted on Azure, how to configure the web app to use a SQL database, and how to publish the web app to [Azure Web Apps](/documentation/services/web-sites/).
 
-See the [Python Developer Center] for more articles that cover development of Azure Websites with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Websites, the steps are similar when developing [Azure Cloud Services].
+See the [Python Developer Center] for more articles that cover development of Azure Web Apps with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Web App, the steps are similar when developing [Azure Cloud Services].
 
 ## Prerequisites
 
@@ -34,11 +34,11 @@ See the [Python Developer Center] for more articles that cover development of Az
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 ## Create the Project
 
-In this section, we'll create a Visual Studio project using a sample template. We'll create a virtual environment and install required packages. We'll create a local database using sqlite. Then we'll run the web site locally.
+In this section, we'll create a Visual Studio project using a sample template. We'll create a virtual environment and install required packages. We'll create a local database using sqlite. Then we'll run the web app locally.
 
 1.  In Visual Studio, select **File**, **New Project**.
 
@@ -110,9 +110,9 @@ You can create a database by following these steps.
 
 ## Configure the Project
 
-In this section, we'll configure our web site to use the SQL database 
+In this section, we'll configure our web app to use the SQL database 
 we just created. We'll also install additional Python packages required to use SQL 
-databases with Django. Then we'll run the web site locally.
+databases with Django. Then we'll run the web app locally.
 
 1.  In Visual Studio, open **settings.py**, from the *ProjectName* folder. Temporarily paste the connection string in the editor. The connection string is in this format:
 
@@ -154,20 +154,20 @@ Edit the definition of `DATABASES` to use the values above.
 1.  Run the application with `F5`. Polls that are created with **Create Sample Polls** and the data submitted by voting will be serialized in the SQL database.
 
 
-## Publish the web site to Azure Websites
+## Publish the web app to Azure
 
-The Azure .NET SDK provides an easy way to deploy your web web site to Azure Websites.
+The Azure .NET SDK provides an easy way to deploy your web web app to Azure Web Apps.
 
 1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
   	<!-- ![Publish Web Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonPublishWebSiteDialog.png) -->
 
-1.  Click on **Windows Azure web sites**.
+1.  Click on **Windows Azure Web Apps**.
 
-1.  Click on **New** to create a new web site.
+1.  Click on **New** to create a new web app.
 
 1.  Fill in the following fields and click **Create**.
-	-	**web site name**
+	-	**Web App name**
 	-	**App Service plan**
 	-	**Resource group**
 	-	**Region**
@@ -177,7 +177,7 @@ The Azure .NET SDK provides an easy way to deploy your web web site to Azure Web
 
 1.  Accept all other defaults and click **Publish**.
 
-1.  Your web browser will open automatically to the published web site. You should see the web site working as expected, using the **SQL** database hosted on Azure.
+1.  Your web browser will open automatically to the published web app. You should see the web app working as expected, using the **SQL** database hosted on Azure.
 
     Congratulations!
 
@@ -195,7 +195,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Django an
 - [SQL Database]
 
 ## What's changed
-* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
 
 <!--Link references-->

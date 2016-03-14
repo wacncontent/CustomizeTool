@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/31/2015"
+	ms.date="01/21/2016"
 	wacn.date=""/>
 
 # Install MySQL on a virtual machine running OpenSUSE Linux in Azure
@@ -22,8 +22,6 @@
 
 <br>
 
-
-[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 ## Create a virtual machine running OpenSUSE Linux
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Use the FMLE encoder to send a single bitrate live stream

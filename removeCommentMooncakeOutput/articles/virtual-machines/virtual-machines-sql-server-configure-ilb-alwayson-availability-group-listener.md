@@ -7,10 +7,10 @@
 	manager="jeffreyg"
 	editor="monicar" 
 	tags="azure-service-management"/>
-<tags 
+<tags
 	ms.service="virtual-machines"
 	ms.date="11/06/2015"
-	wacn.date="" />
+	wacn.date=""/>
 
 # Configure an ILB listener for AlwaysOn Availability Groups in Azure
 
@@ -80,7 +80,7 @@ For ILB, you must first create the internal load balancer. This is done in the s
 
 1. Once you have set the variables, copy the script from the text editor into your Azure PowerShell session to run it. If the prompt still shows >>, type ENTER again to make sure the script starts running.Note 
 
->[AZURE.NOTE] The Azure Management Portal does not support the Internal Load Balancer at this time, so you will not see either the ILB or the endpoints in the portal. However, **Get-AzureEndpoint** returns an internal IP address if the Load Balancer is running on it. Otherwise, it returns null.
+>[AZURE.NOTE] The Azure Management Portal does not support the Internal Load Balancer at this time, so you will not see either the ILB or the endpoints in the Azure Management Portal. However, **Get-AzureEndpoint** returns an internal IP address if the Load Balancer is running on it. Otherwise, it returns null.
 
 ## Verify that KB2854082 is installed if necessary
 
@@ -105,7 +105,7 @@ For ILB, you must first create the internal load balancer. This is done in the s
 		# Define variables
 		$ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
 		$IPResourceName = "<IPResourceName>" # the IP Address resource name 
-		$ILBIP = â<X.X.X.X>â # the IP Address of the Internal Load Balancer (ILB)
+		$ILBIP = "<X.X.X.X>" # the IP Address of the Internal Load Balancer (ILB)
 		
 		Import-Module FailoverClusters
 		

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    	pageTitle="Create Hadoop, HBase, Storm, or Spark clusters on Linux in HDInsight using the HDInsight .NET SDK | Windows Azure"
    	description="Learn how to create Hadoop, HBase, Storm, or Spark clusters on Linux for HDInsight using the HDInsight .NET SDK."
@@ -157,7 +159,7 @@ The HDInsight .NET SDK provides .NET client libraries that make it easier to wor
 
 ## Use bootstrap
 
-For more information, see [Customize HDInsight clusters using Bootstrap](/documentation/articles/hdinsight-hadoop-customize-cluster-v1-bootstrap).
+For more information, see [Customize HDInsight clusters using Bootstrap](/documentation/articles/hdinsight-hadoop-customize-cluster-bootstrap).
 
 Modify the sample in [Create clusters](#create-clusters) to configure a Hive setting:
 

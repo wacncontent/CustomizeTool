@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="DataStax Enterprise on Ubuntu with a Resource Manager Template | Windows Azure"
 	description="Learn to easily deploy a new DataStax Enterprise cluster on Ubuntu VMs using Azure PowerShell or the Azure CLI and a Resource Manager template"
@@ -22,7 +24,7 @@ DataStax is a recognized industry leader in developing and delivering solutions 
 
 >[AZURE.NOTE] Unlike the Community edition, in order to deploy DataStax Enterprise, you need to have a valid DataStax account (username and password) to pass in as parameters during template deployment. Visit the [Datastax](http://www.datastax.com) website to set up your account if you don't have one already.
 
-In addition to what is already available in Azure Marketplace, now you can also easily deploy a new Datastax Enterprise cluster on Ubuntu VMs using a Resource Manager template deployed through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli-install).
+In addition to what is already available in Azure gallery, now you can also easily deploy a new Datastax Enterprise cluster on Ubuntu VMs using a Resource Manager template deployed through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli-install).
 
 Newly deployed clusters based on this template will have the topology described in the following diagram, although other topologies can be easily achieved by customizing the template presented in this article.
 
@@ -30,7 +32,7 @@ Newly deployed clusters based on this template will have the topology described 
 
 Using parameters, you can define the number of nodes that will be deployed in the new Apache Cassandra cluster. An instance of the DataStax Operation Center service will be also deployed in a standalone VM within the same VNET, giving you the ability to monitor the status of the cluster and all individual nodes, add/remove nodes, and perform all administrative tasks related to that cluster.
 
-Once the deployment is complete, you can access the Datastax Operations Center VM instance using the configured DNS address. The OpsCenter VM has SSH port 22 enabled, as well as port 8443 for HTTPS. The DNS address for the operations center will include the *dnsName* and *region* entered as parameters, resulting in the format `{dnsName}.{region}.chinacloudapp.cn`. If you created a deployment with the *dnsName* parameter set to "datastax” in the "China North” region you could access the Datastax Operations Center VM for the deployment at `https://datastax.chinanorth.chinacloudapp.cn:8443`.
+Once the deployment is complete, you can access the Datastax Operations Center VM instance using the configured DNS address. The OpsCenter VM has SSH port 22 enabled, as well as port 8443 for HTTPS. The DNS address for the operations center will include the *dnsName* and *region* entered as parameters, resulting in the format `{dnsName}.{region}.chinacloudapp.cn`. If you created a deployment with the *dnsName* parameter set to "datastax" in the "China North" region you could access the Datastax Operations Center VM for the deployment at `https://datastax.chinanorth.chinacloudapp.cn:8443`.
 
 > [AZURE.NOTE] The certificate used in the deployment is a self-signed certificate that will create a browser warning. You can follow the process on the [Datastax](http://www.datastax.com/) web site for replacing the certificate with your own SSL certificate.
 
@@ -250,9 +252,9 @@ During and after deployment, you can check all the requests that were made durin
 
 To do that, go to the [Azure Management Portal](https://manage.windowsazure.cn) and do the following:
 
-- Click "Browse” on the left-hand navigation bar, scroll down and click "Resource Groups”.
-- After clicking the Resource Group that you just created, it will bring up the "Resource Group” blade.
-- By clicking the "Events” bar graph in the "Monitoring” part of the "Resource Group” blade, you can see the events for your deployment:
+- Click "Browse" on the left-hand navigation bar, scroll down and click "Resource Groups".
+- After clicking the Resource Group that you just created, it will bring up the "Resource Group" blade.
+- By clicking the "Events" bar graph in the "Monitoring" part of the "Resource Group" blade, you can see the events for your deployment:
 - Clicking individual events lets you drill further down into the details of each individual operation made on behalf of the template.
 
 After your tests, if you need to remove this resource group and all of its resources (the storage account, virtual machine, and virtual network), use the next command.
@@ -333,7 +335,7 @@ The "variables" section specifies variables that can be used throughout this tem
 	"nodeList": "[concat(variables('networkSettings').statics.clusterRange.base, variables('networkSettings').statics.clusterRange.start, '-', parameters('clusterNodeCount'))]"
 	},
 
-In the previous example, you can see two different approaches. In the first fragment, the "osSettings” variable is a nested JSON element containing 4 key-value pairs.
+In the previous example, you can see two different approaches. In the first fragment, the "osSettings" variable is a nested JSON element containing 4 key-value pairs.
 
 	"osSettings": {
 	      "imageReference": {
@@ -391,7 +393,7 @@ In particular, the following linked templates will be used for this deployment:
 
 Let's drill down into how this last template is used, as it is one of the most interesting from a template development perspective. One important concept to highlight is how a single template file can deploy multiple copies of a single resource type, and for each instance can set unique values for required settings. This concept is known as Resource Looping.
 
-When ephemeral-nodes-resources.json is invoked from within the main azuredeploy.json file, a parameter called nodeCount is provided as part of the parameters list. Within the child template, nodeCount (the number of nodes to deploy in the cluster) will be used inside the **"copy”** element of each resource that needs to be deployed in multiple copies, as highlighted in the next example. For all settings where you need unique values for different instances of the deployed resource, the **copyindex()** function can be used to obtain a numeric value indicating the current index in that particular resource loop creation. In the next example, you can see this concept applied to multiple VMs being created for the Datastax Enterprise cluster nodes.
+When ephemeral-nodes-resources.json is invoked from within the main azuredeploy.json file, a parameter called nodeCount is provided as part of the parameters list. Within the child template, nodeCount (the number of nodes to deploy in the cluster) will be used inside the **"copy"** element of each resource that needs to be deployed in multiple copies, as highlighted in the next example. For all settings where you need unique values for different instances of the deployed resource, the **copyindex()** function can be used to obtain a numeric value indicating the current index in that particular resource loop creation. In the next example, you can see this concept applied to multiple VMs being created for the Datastax Enterprise cluster nodes.
 
 			   {
 			      "apiVersion": "2015-05-01-preview",

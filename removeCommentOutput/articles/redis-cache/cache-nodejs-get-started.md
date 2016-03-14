@@ -39,8 +39,7 @@ In the [Azure Management Portal](https://manage.windowsazure.cn/), click **New**
 
   ![][1]
 
-Enter a DNS hostname. It will have the form `<name>
-  .redis.cache.chinacloudapi.cn`. Click **Create**.
+Enter a DNS hostname. It will have the form `<name>.redis.cache.chinacloudapi.cn`. Click **Create**.
 
   ![][2]
 
@@ -49,30 +48,22 @@ Enter a DNS hostname. It will have the form `<name>
 
   ![][4]
 
+## Add something to the cache and retrieve it
 
-  ## Enable the non-SSL endpoint
+```js
+var redis = require("redis");
 
+// Add your cache name and access key.
+var client = redis.createClient(6380,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>', tls: {servername: '<name>.redis.cache.chinacloudapi.cn'}});
 
-  Click the link under **Ports**, and click **No** for "Allow access only via SSL". This enables the non-SSL port for the cache. The node_redis client currently does not support SSL.
+client.set("foo", "bar", function(err, reply) {
+  console.log(reply);
+});
 
-  ![][3]
-
-
-  ## Add something to the cache and retrieve it
-
-  var redis = require("redis");
-
-  // Add your cache name and access key.
-  var client = redis.createClient(6379,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>' });
-
-	client.set("foo", "bar", function(err, reply) {
-	    console.log(reply);
-	});
-
-	client.get("foo",  function(err, reply) {
-	    console.log(reply);
-	});
-
+client.get("foo",  function(err, reply) {
+  console.log(reply);
+});
+```
 
 Output:
 

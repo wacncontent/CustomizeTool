@@ -60,21 +60,21 @@ ISO Fragmented MP4 based live ingest for Windows Azure Media Services uses a sta
 
 Here are the detailed requirements:
 
-1. Encoder SHOULD start the broadcast by sending an HTTP POST request with an empty “body” (zero content length) using the same ingestion URL. This can help quickly detect if the live ingestion endpoint is valid and if there is any authentication or other conditions required. Per HTTP protocol, the server won't be able to send back HTTP response until the entire request including POST body is received. Given the long running nature of live event, without this step, the encoder may not be able to detect any error until it finishes sending all the data.
+1. Encoder SHOULD start the broadcast by sending an HTTP POST request with an empty "body" (zero content length) using the same ingestion URL. This can help quickly detect if the live ingestion endpoint is valid and if there is any authentication or other conditions required. Per HTTP protocol, the server won't be able to send back HTTP response until the entire request including POST body is received. Given the long running nature of live event, without this step, the encoder may not be able to detect any error until it finishes sending all the data.
 2. Encoder MUST handle any errors or authentication challenges as a result of (1). If (1) succeeds with a 200 response, continue.
-3. Encoder MUST start a new HTTP POST request with the fragmented MP4 stream.  The payload MUST start with the header boxes followed by fragments.  Note the 'ftyp', “Live Server Manifest Box”, and 'moov' box (in this order) MUST be sent with each request, even if the encoder must reconnect because the previous request was terminated prior to the end of the stream. 
+3. Encoder MUST start a new HTTP POST request with the fragmented MP4 stream.  The payload MUST start with the header boxes followed by fragments.  Note the 'ftyp', "Live Server Manifest Box", and 'moov' box (in this order) MUST be sent with each request, even if the encoder must reconnect because the previous request was terminated prior to the end of the stream. 
 4. Encoder MUST use Chunked Transfer Encoding for uploading since it's impossible to predict the entire content length of the live event.
 5. When the event is over, after sending the last fragment, the encoder MUST gracefully end the Chunked Transfer Encoding message sequence (most HTTP client stacks handle it automatically). Encoder MUST wait for the service to return the final response code and then terminate the connection. 
 6. Encoder MUST NOT use the Events() noun as described in 9.2 in [1] for live ingestion into Windows Azure Media Services.
-7. If the HTTP POST request terminates or times out prior to the end of the stream with a TCP error, the encoder MUST issue a new POST request using a new connection and follow the requirements above with the additional requirement that the encoder MUST resend the previous two MP4 fragments for each track in the stream, and resume without introducing discontinuities in the media timeline.  Resending the last two MP4 fragments for each track ensures that there is no data loss.  In other words, if a stream contains both an audio and video track, and the current POST request fails, the encoder must reconnect and resend the last two fragments for the audio track, which were previously successfully sent, and the last two fragments for the video track, which were previously successfully sent, in order to ensure that there is no data loss.  The encoder MUST maintain a “forward” buffer of media fragments, which it resends when reconnecting.
+7. If the HTTP POST request terminates or times out prior to the end of the stream with a TCP error, the encoder MUST issue a new POST request using a new connection and follow the requirements above with the additional requirement that the encoder MUST resend the previous two MP4 fragments for each track in the stream, and resume without introducing discontinuities in the media timeline.  Resending the last two MP4 fragments for each track ensures that there is no data loss.  In other words, if a stream contains both an audio and video track, and the current POST request fails, the encoder must reconnect and resend the last two fragments for the audio track, which were previously successfully sent, and the last two fragments for the video track, which were previously successfully sent, in order to ensure that there is no data loss.  The encoder MUST maintain a "forward" buffer of media fragments, which it resends when reconnecting.
 
 ##5. Timescale 
 
-[[MS-SSTR]](https://msdn.microsoft.com/zh-cn/library/ff469518.aspx) describes the usage of “Timescale” for SmoothStreamingMedia (Section 2.2.2.1), StreamElement (Section 2.2.2.3), StreamFragmentElement(2.2.2.6) and LiveSMIL (Section 2.2.7.3.1). If timescale value is not present, the default value used is 10,000,000 (10 MHz). Although Smooth Streaming Format Specification doesn't block usage of other timescale values, most of the encoder implementations uses this default value (10 MHz) to generate Smooth Streaming ingest data. Due to [Azure Media Dynamic Packaging](/documentation/articles/media-services-dynamic-packaging-overview) feature, it is recommend to use 90 kHz timescale for video streams and 44.1 or 48.1 kHz for audio streams. If different timescale values are used for different streams, the stream level timescale MUST be sent. Please refer to [[MS-SSTR]](https://msdn.microsoft.com/zh-cn/library/ff469518.aspx).     
+[[MS-SSTR]](https://msdn.microsoft.com/zh-cn/library/ff469518.aspx) describes the usage of "Timescale" for SmoothStreamingMedia (Section 2.2.2.1), StreamElement (Section 2.2.2.3), StreamFragmentElement(2.2.2.6) and LiveSMIL (Section 2.2.7.3.1). If timescale value is not present, the default value used is 10,000,000 (10 MHz). Although Smooth Streaming Format Specification doesn't block usage of other timescale values, most of the encoder implementations uses this default value (10 MHz) to generate Smooth Streaming ingest data. Due to [Azure Media Dynamic Packaging](/documentation/articles/media-services-dynamic-packaging-overview) feature, it is recommend to use 90 kHz timescale for video streams and 44.1 or 48.1 kHz for audio streams. If different timescale values are used for different streams, the stream level timescale MUST be sent. Please refer to [[MS-SSTR]](https://msdn.microsoft.com/zh-cn/library/ff469518.aspx).     
 
-##6. Definition of “Stream”  
+##6. Definition of "Stream"  
 
-“Stream” is the basic unit of operation in live ingestion for composing live presentation, handling streaming failover and redundancy scenarios. “Stream” is defined as one unique Fragmented MP4 bit-stream which may contain a single track or multiple tracks. A full live presentation could contain one or more streams depending on the configuration of the live encoder(s). The examples below illustrate various options of using stream(s) to compose a full live presentation.
+"Stream" is the basic unit of operation in live ingestion for composing live presentation, handling streaming failover and redundancy scenarios. "Stream" is defined as one unique Fragmented MP4 bit-stream which may contain a single track or multiple tracks. A full live presentation could contain one or more streams depending on the configuration of the live encoder(s). The examples below illustrate various options of using stream(s) to compose a full live presentation.
 
 **Example:** 
 
@@ -122,7 +122,7 @@ In this section, we will discuss service failover scenarios. In this case, the f
 5. After a TCP error:
 	1. The current connection MUST be closed, and a new connection MUST be created for a new HTTP POST request.
 	2. The new HTTP POST URL MUST be the same as the initial POST URL.
-	3. The new HTTP POST MUST include stream headers ('ftyp', “Live Server Manifest Box”, and 'moov' box) identical to the stream headers in the initial POST.
+	3. The new HTTP POST MUST include stream headers ('ftyp', "Live Server Manifest Box", and 'moov' box) identical to the stream headers in the initial POST.
 	4. The last two fragments sent for each track MUST be resent, and streaming resumed without introducing a discontinuity in the media timeline.  The MP4 fragment timestamps must increase continuously, even across HTTP POST requests.
 6. The encoder SHOULD terminate the HTTP POST request if data is not being sent at a rate commensurate with the MP4 fragment duration.  An HTTP POST request that does not send data can prevent Azure Media Services from quickly disconnecting from the encoder in the event of a service update.  For this reason, the HTTP POST for sparse (ad signal) tracks SHOULD be short lived, terminating as soon as the sparse fragment is sent.
 
@@ -154,7 +154,7 @@ The requirement for this scenario is almost the same as the requirements in Enco
 
 ##10. Service Redundancy  
 
-For highly redundant global distribution, it is sometimes required to have cross-region backup to handle regional disasters. Expanding on the “Encoder Redundancy” topology, customers can choose to have a redundant service deployment in a different region which is connected with the 2nd set of encoders. Customers could also work with a CDN provider to deploy a GTM (Global Traffic Manager) in front of the two service deployments to seamlessly route client traffic. The requirements for the encoders are the same as “Encoder Redundancy” case with the only exception that the second set of encoders need to be pointed to a different live ingest end point. The diagram below shows this setup:
+For highly redundant global distribution, it is sometimes required to have cross-region backup to handle regional disasters. Expanding on the "Encoder Redundancy" topology, customers can choose to have a redundant service deployment in a different region which is connected with the 2nd set of encoders. Customers could also work with a CDN provider to deploy a GTM (Global Traffic Manager) in front of the two service deployments to seamlessly route client traffic. The requirements for the encoders are the same as "Encoder Redundancy" case with the only exception that the second set of encoders need to be pointed to a different live ingest end point. The diagram below shows this setup:
 
 ![image7][image7]
 
@@ -169,8 +169,8 @@ When delivering a live streaming presentation with rich client experience, it is
 Below is a recommended implementation for ingesting sparse track:
 
 1. Create a separate Fragmented MP4 bit-stream which just contains sparse track(s) without audio/video tracks.
-2. In the “Live Server Manifest Box” as defined in Section 6 in [1], use “parentTrackName” parameter to specify the name of the parent track. Please refer to section 4.2.1.2.1.2 in [1] for more details.
-3. In the “Live Server Manifest Box”, manifestOutput MUST be set to “true”.
+2. In the "Live Server Manifest Box" as defined in Section 6 in [1], use "parentTrackName" parameter to specify the name of the parent track. Please refer to section 4.2.1.2.1.2 in [1] for more details.
+3. In the "Live Server Manifest Box", manifestOutput MUST be set to "true".
 4. Given the sparse nature of the signaling event, it is recommended that:
 	1. At the beginning of the live event, encoder sends the initial header boxes to the service which would allow the service to register the sparse track in the client manifest.
 	2. The encoder SHOULD terminate the HTTP POST request when data is not being sent.  A long running HTTP POST that does not send data can prevent Azure Media Services from quickly disconnecting from the encoder in the event of a service update or server reboot, as the media server will be temporarily blocked in a receive operation on the socket. 
@@ -188,7 +188,7 @@ In a typical HTTP Adaptive Streaming scenario (e.g. Smooth Streaming or DASH), t
 To solve this problem, Windows Azure Media Services supports live ingestion of redundant audio tracks. The idea is that the same audio track can be sent multiple times in different streams. While the service will only register the audio track once in the client manifest, it is able to use redundant audio tracks as backups for retrieving audio fragments if the primary audio track is having issues. In order to ingest redundant audio tracks, the encoder needs to:
 
 1. Create the same audio track in multiple Fragment MP4 bit-streams. The redundant audio tracks MUST be semantically equivalent with exactly the same fragment timestamps and interchangeable at header and fragment level.
-2. Ensure that the “audio” entry in the Live Server Manifest (Section 6 in [1]) be the same for all redundant audio tracks.
+2. Ensure that the "audio" entry in the Live Server Manifest (Section 6 in [1]) be the same for all redundant audio tracks.
 
 Below is a recommended implementation for redundant audio tracks:
 

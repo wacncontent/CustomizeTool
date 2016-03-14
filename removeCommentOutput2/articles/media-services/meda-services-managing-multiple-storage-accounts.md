@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 
@@ -71,6 +71,12 @@ The following code uses the latest Media Services SDK to perform the following t
 		        private static readonly string MediaServicesAccountKey = 
 		            ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 		
+				private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+				// Azure China uses a different API server and a different ACS Base Address from the Global.
+				private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+				private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+
 		        private static CloudMediaContext _context;
 		        private static MediaServicesCredentials _cachedCredentials = null;
 	
@@ -80,9 +86,15 @@ The following code uses the latest Media Services SDK to perform the following t
 		            // Create and cache the Media Services credentials in a static class variable.
 		            _cachedCredentials = new MediaServicesCredentials(
 		                            MediaServicesAccountName,
-		                            MediaServicesAccountKey);
+		                            MediaServicesAccountKey,
+									_defaultScope,
+									_chinaAcsBaseAddressUrl);
+
+					// Create the API server Uri
+					_apiServer = new Uri(_chinaApiServerUrl);
+
 		            // Used the cached credentials to create CloudMediaContext.
-		            _context = new CloudMediaContext(_cachedCredentials);
+		            _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 	
 		
 		            // Display the storage accounts associated with 
@@ -138,12 +150,12 @@ The following code uses the latest Media Services SDK to perform the following t
 		            IJob job = _context.Jobs.Create("My encoding job");
 		            // Get a media processor reference, and pass to it the name of the 
 		            // processor to use for the specific task.
-		            IMediaProcessor processor = GetLatestMediaProcessorByName("Azure Media Encoder");
+		            IMediaProcessor processor = GetLatestMediaProcessorByName("Media Encoder Standard");
 		
 		            // Create a task with the encoding details, using a string preset.
 		            ITask task = job.Tasks.AddNew("My encoding task",
 		                processor,
-		                "H264 Broadband 720p",
+		                "H264 Multiple Bitrate 720p",
 		                Microsoft.WindowsAzure.MediaServices.Client.TaskOptions.ProtectedConfiguration);
 		
 		            // Specify the input asset to be encoded.

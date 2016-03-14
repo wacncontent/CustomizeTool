@@ -15,7 +15,8 @@
 
 # How to set up endpoints on a classic Azure virtual machine
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model. 
+
 
 All virtual machines that you create in Azure using the classic deployment model can automatically communicate over a private network channel with other virtual machines in the same cloud service or virtual network. However, computers on the Internet or other virtual networks require endpoints to direct the inbound network traffic to a virtual machine.
 
@@ -84,6 +85,7 @@ The rules are evaluated in order starting with the first rule and ending with th
 
 To use an Azure PowerShell cmdlet to set this up, see [Managing access control lists (ACLs) for endpoints by using PowerShell](/documentation/articles/virtual-networks-acl-powershell).
 
+
 ## Additional resources
 
-[Load balancing for Azure infrastructure services](/documentation/articles/virtual-machines-load-balance)
+[Get started creating an Internet facing load balancer in Resource Manager using PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps)

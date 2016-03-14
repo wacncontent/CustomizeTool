@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/30/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 #Licensing Microsoft® Smooth Streaming Client Porting Kit
@@ -87,26 +87,36 @@ Interim and Final SSPK licensees can submit technical questions to [smoothpk@mic
 - Amazon Digital Services, Inc.
 - Amlogic, Co., Ltd.
 - AVC Multimedia Software Co., Ltd.
-- Cisco Systems, Inc.
+- AwoX S.A.
 - EchoStar Purchasing Corporation
 - Enseo, Inc.
+- Fluendo SA
+- GIGABYTE Technology
 - Guangdong OPPO Mobile Telecommunications Corp., Ltd.
 - HANDAN BroadInfoCom Co., Ltd.
 - Infomir GMBH
 - Inside Secure
 - Irdeto USA Inc.
-- LG CNS Co., Ltd
+- Ittiam Systems Private Ltd
+- Koninklijke Philips Electronics N.V.
 - Liberty Global Services BV
 - MediaTek Inc.
 - MStar Co, Ltd
+- Nextscape Inc.
 - OpenTV, Inc.
+- Panasonic Corporation
 - Research In Motion Limited
 - Saffron Digital Limited
 - Sichuan Changhong Electric Co., Ltd
+- SoftAtHome
 - Tatung Technology Inc.
-- Teleca US Software Solutions LLC
+- TCL Technoly Electronics (Huizhou) Co., Ltd.
+- Technicolor Delivery Technologies, SAS
 - Telechips Inc.
+- TeleIDEA BV
+- Tivo Inc.
 - Vestel Elektronik Sanayi ve Ticaret A.S.
+- VimpelCom (OJSC)
 - VisualOn, Inc.
 - ZTE Corporation
 
@@ -115,27 +125,35 @@ Interim and Final SSPK licensees can submit technical questions to [smoothpk@mic
 - Advanced Digital Broadcast SA
 - AirTies Kablosuz Iletism Sanayive Dis Ticaret A.S.
 - Albis Technologies Ltd.
+- Altech Multimedia International (Pty) Ltd
 - Amazon Digital Services, Inc.
 - AmTRAN Technology Co., Ltd.
 - Arcadyan Technology Corporation
-- ATMACA ELEKTRONİK SAN. VE TİC. A.Ş
+- Arcelik A.S
+- AwoX S.A.
 - British Sky Broadcasting Limited
 - CastPal Technology Inc., Shenzhen
-- Cisco Systems, Inc.
 - Compal Electronics, Inc.
 - Dongguan Digital AV Technology Corp., Ltd.
 - Enseo, Inc.
 - Filmflex Movies Limited
+- Fluendo SA
+- GIGABYTE Technology
 - Guangdong OPPO Mobile Telecommunications Corp., Ltd.
 - HANDAN BroadInfoCom Co., Ltd.
 - Hisense International Co., Ltd
 - Homecast Co.,Ltd
 - Hon Hai Precision Industry Co., Ltd.
 - Infomir GMBH
+- Koninklijke Philips Electronics N.V.
 - Kaonmedia Co., Ltd.
 - KDDI Corporation
+- Loewe Opta GmbH
+- NETGEAR, Inc.
 - Nintendo Co., Ltd.
 - Orange SA
+- Pace plc
+- Panasonic Corporation
 - PIXELA Corporation
 - Saffron Digital Limited
 - Sagemcom Broadband SAS
@@ -144,11 +162,14 @@ Interim and Final SSPK licensees can submit technical questions to [smoothpk@mic
 - Shenzhen Jiuzhou Electric Co.,Ltd
 - Shenzhen Skyworth Digital Technology Co., Ltd
 - Sichuan Changhong Electric Co., Ltd.
+- Sky Deutschland Fernsehen GmbH & Co. KG
 - SmarDTV S.A.
 - SoftAtHome
 - TCL Overseas Marketing (Macao Commercial Offshore) Limited
 - Technicolor Delivery Technologies, SAS
+- TeleIDEA BV
 - Toshiba Lifestyle Products & Services Corporation
+- TP Vision Netherlands B.V.
 - Virgin Media Limited
 - VIZIO, Inc.
 - Wistron Corporation

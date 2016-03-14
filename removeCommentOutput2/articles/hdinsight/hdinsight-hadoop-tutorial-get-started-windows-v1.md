@@ -207,7 +207,7 @@ In this Hadoop tutorial, you learned how to provision a Hadoop cluster on Window
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 
 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1

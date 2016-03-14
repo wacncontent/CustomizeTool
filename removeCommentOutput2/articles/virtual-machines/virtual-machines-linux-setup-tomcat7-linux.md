@@ -17,7 +17,7 @@
 
 Apache Tomcat (or simply Tomcat, formerly also Jakarta Tomcat) is an open source web server and servlet container developed by the Apache Software Foundation (ASF). Tomcat implements the Java Servlet and the JavaServer Pages (JSP) specifications from Sun Microsystems, and provides a pure Java HTTP web server environment in which to run Java code. In the simplest configuration, Tomcat runs in a single operating system process. This process runs a Java virtual machine (JVM). Every HTTP request from a browser to Tomcat is processed as a separate thread in the Tomcat process.  
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
 
 
 In this guide, you will install tomcat7 on a Linux image and deploy it in Windows Azure.  
@@ -28,7 +28,7 @@ You will learn:
 -	How to prepare the virtual machine for tomcat7.
 -	How to install tomcat7.
 
-It is assumed that the reader already has an Azure subscription.  If not you can sign up for a 1rmb trial at [http://windowsazure.cn](http://windowsazure.cn) . If you have an MSDN subscription, see [Windows Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](/pricing/member-offers/msdn-benefits/?c=14-39). To learn more about Azure, see [What is Azure?](http://azure.microsoft.com/overview/what-is-azure/).
+It is assumed that the reader already has an Azure subscription.  If not you can sign up for a 1rmb trial at [http://windowsazure.cn](http://windowsazure.cn). If you have an MSDN subscription. To learn more about Azure, see [What is Azure?](https://azure.microsoft.com/overview/what-is-azure/).
 
 This topic assumes that you have basic working knowledge of tomcat and Linux.  
 
@@ -56,7 +56,7 @@ Follow these steps to generate the SSH authentication key.
 6.	Click **Save private key** and save it in a file named privateKey.ppk.
 
 ###Step 2: Create the image in the Azure Management Portal.
-In the [Azure Management Portal](https://manage.windowsazure.cn), click **New** in the task bar to create an image, choosing the Linux image based on your needs. The following example uses the Ubuntu 14.04 image.
+In the [Azure Management Portal](https://manage.windowsazure.cn/), click **New** in the task bar to create an image, choosing the Linux image based on your needs. The following example uses the Ubuntu 14.04 image.
 ![][3]
 
 For **Host Name** specify the name for the URL that you and Internet clients will use to access this virtual machine. Define the last part of the DNS name, for example tomcatdemo, and Azure will generate the URL as tomcatdemo.chinacloudapp.cn.  
@@ -243,7 +243,7 @@ Tomcat is running but you can't see the Tomcat default page with your browser.
 
 			sudo vi /etc/default/tomcat7  
 
-		Then uncomment the last line and change “no” to “yes”.  
+		Then uncomment the last line and change "no" to "yes".  
 
 			AUTHBIND=yes
 

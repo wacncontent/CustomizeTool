@@ -10,7 +10,7 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="11/12/2015"
+	ms.date="02/02/2016"
 	wacn.date=""/>
 
 #Deploy multi NIC VMs (classic) using the Azure CLI

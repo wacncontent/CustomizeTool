@@ -20,7 +20,7 @@ Azure Web Apps enables this application scenario with the Web Apps Memcache shim
 
 ## Prerequisites
 
-The Web Apps Memcache shim can be used with any application provided it communicates using the Memcache protocol. For this particular example, the reference application is a Scalable WordPress site which can be provisioned from the Azure Marketplace.
+The Web Apps Memcache shim can be used with any application provided it communicates using the Memcache protocol. For this particular example, the reference application is a Scalable WordPress site which can be provisioned from the Azure gallery.
 
 Follow the steps outlined in these articles:
 
@@ -144,7 +144,7 @@ The call to list the keys should return a value. If not, try navigating to the w
 
 ## Conclusion
 
-Congratulations! The WordPress app now has a centralized in-memory cache to aid in increasing throughput. Remember, the Web Apps Memcache Shim can be used with any Memcache client regardless of programming language or application framework. To provide feedback or to ask questions about the Web Apps Memcache shim, post to [MSDN Forums][10] or [Stackoverflow][11].
+Congratulations! The WordPress app now has a centralized in-memory cache to aid in increasing throughput. Remember, the Web Apps Memcache Shim can be used with any Memcache client regardless of programming language or application framework. To provide feedback or to ask questions about the Web Apps Memcache shim, post to [MSDN Forums][10] or [CSDN][11].
 
 
 
@@ -159,6 +159,6 @@ Congratulations! The WordPress app now has a centralized in-memory cache to aid 
 [8]: http://blog.syntaxc4.net/post/2015/02/05/how-to-enable-a-site-extension-in-azure-websites.aspx
 [9]: http://redis.io/download#installation
 [10]: https://social.msdn.microsoft.com/Forums/home?forum=windowsazurewebsitespreview
-[11]: http://stackoverflow.com/questions/tagged/azure-web-sites
+[11]: http://azure.csdn.net/
 [12]: /services/cache/
 [13]: http://memcached.org

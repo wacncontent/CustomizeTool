@@ -17,7 +17,8 @@
 
 # Authoring Azure Resource Manager Templates with VM Extensions.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers using the Resource Manager deployment model. 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] 
+ 
 
 ## Overview of Azure Resource Manager Templates.
 

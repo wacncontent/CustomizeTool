@@ -1,6 +1,6 @@
 <properties
-	pageTitle="My first graphical runbook in Azure Automation"
-	description="Tutorial that walks you through the creation, testing, and publishing of a simple graphical runbook.  Several concepts are covered such as authenticating to Azure resources, input parameters, and conditional links."
+	pageTitle="My first graphical runbook in Azure Automation | Windows Azure"
+	description="Tutorial that walks you through the creation, testing, and publishing of a simple graphical runbook."
 	services="automation"
 	documentationCenter=""
 	authors="bwren"
@@ -18,6 +18,9 @@
 > [AZURE.SELECTOR]
 - [Graphical](/documentation/articles/automation-first-runbook-graphical)
 - [PowerShell Workflow](/documentation/articles/automation-first-runbook-textual)
+<!-- deleted by customization
+- [PowerShell](/documentation/articles/automation-first-runbook-textual-PowerShell)
+-->
 
 This tutorial walks you through the creation of a [graphical runbook](/documentation/articles/automation-runbook-types#graphical-runbooks) in Azure Automation.  We'll start with a simple runbook that we'll test and publish while we explain how to track the status of the runbook job.  Then we'll modify the runbook to actually manage Azure resources, in this case starting an Azure virtual machine.  We'll then make the runbook more robust by adding runbook parameters and a conditional link.  
 
@@ -197,5 +200,5 @@ We will now modify the runbook so that it will only attempt to start the runbook
 
 - [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro)
 - [My first PowerShell Workflow runbook](/documentation/articles/automation-first-runbook-textual)
-
+<!-- deleted by customization - [My first PowerShell runbook](/documentation/articles/automation-first-runbook-textual-PowerShell) -->
  

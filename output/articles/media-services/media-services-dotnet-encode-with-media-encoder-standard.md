@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/21/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 
@@ -42,7 +42,7 @@ The encoders output metadata is described [here](http://msdn.microsoft.com/zh-cn
 
 ##Download sample
 
-Get and run a sample from [here](http://azure.microsoft.com/documentation/samples/media-services-dotnet-on-demand-encoding-with-media-encoder-standard/).
+Get and run a sample from [here](https://azure.microsoft.com/documentation/samples/media-services-dotnet-on-demand-encoding-with-media-encoder-standard/).
 
 ##Example
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/17/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Implementing Failover Streaming Scenario
@@ -17,7 +17,7 @@
 This walkthrough demonstrates how to copy content (blobs) from one asset into another in order to handle redundancy for On-Demand streaming. This scenario is useful to customers that want to set up their CDN to failover between two datacenters in the case of an outage in one of our data centers.
 This walkthrough uses Windows Azure Media Services SDK, Windows Azure Media Services REST API, and Azure Storage SDK to demonstrate the following tasks.
 
-1. Set up a Media Services account in ”Data Center A”.
+1. Set up a Media Services account in "Data Center A".
 1. Upload a mezzanine file into a source asset.
 1. Encode the asset into multi-bit rate MP4 files. 
 1. Create a read-only SAS locator for the source asset to have read access to the container in the Storage account that is associated with the source asset.
@@ -26,12 +26,12 @@ This walkthrough uses Windows Azure Media Services SDK, Windows Azure Media Serv
 
 Then, to handle the failover:
 
-1. Set up a Media Services account in ”Data Center B”.
+1. Set up a Media Services account in "Data Center B".
 1. Create a target empty asset in the target Media Services account.
 1. Create a write SAS locator for the target empty asset to have write access to the container in the target Storage account that is associated with the target asset.
-1. Use Azure Storage SDK to copy blobs (asset files) between the source storage account in ”Data Center A” and target storage account in ”Data Center B” (these storage accounts are associated with the assets of interest.)
+1. Use Azure Storage SDK to copy blobs (asset files) between the source storage account in "Data Center A" and target storage account in "Data Center B" (these storage accounts are associated with the assets of interest.)
 1. Associate blobs (asset files) that were copied to the target blob container with the target asset. 
-1. Create an origin locator for the asset in ”Data Center B” and specify the locator Id that was generated for the asset in ”Data Center A”. 
+1. Create an origin locator for the asset in "Data Center B" and specify the locator Id that was generated for the asset in "Data Center A". 
 1. This gives you the streaming URLs where the relative paths of the URLs are the same (only the base URLs are different). 
  
 Then, to handle any outages, you can create a CDN on top of these origin locators. 

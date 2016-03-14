@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/29/2015"
+	ms.date="01/05/2015"
 	wacn.date=""/>
 
 #Overview and Comparison of Azure On Demand Media Encoders
@@ -71,13 +71,17 @@ The encoders input metadata is described [here](http://msdn.microsoft.com/zh-cn/
 
 The encoders output metadata is described [here](http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx).
 
-###Thumbnail
+###Generate thumbnails
 
-For information on how to generate thumbnails, see [How to generate thumbnails using Media Encoder Standard](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes).
+For information, see [How to generate thumbnails using Media Encoder Standard](/documentation/articles/media-services-custom-mes-presets-with-dotnet#thumbnails).
 
-###Audio and/or video overlays
+###Trim videos (clipping)
 
-Currently, not supported.
+For information, see [How to trim videos using Media Encoder Standard](/documentation/articles/media-services-custom-mes-presets-with-dotnet#trim_video).
+
+###Create overlays
+
+For information, see [How to create overlays using Media Encoder Standard](/documentation/articles/media-services-custom-mes-presets-with-dotnet#overlay).
 
 ###See also
 
@@ -257,9 +261,29 @@ MP3 (MPEG-1 Audio Layer 3)|No|No|Yes
 Windows Media Audio|No|Yes|Yes
 
 
+##Error codes  
+
+The following table lists error codes that could be returned in case an error was encountered during the encoding task execution.  To get error details in your .NET code, use the <!-- deleted by customization [ErrorDetails](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mediaservices.client.errordetail.aspx) --><!-- keep by customization: begin --> [ErrorDetails](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mediaservices.client.errordetail.aspx) <!-- keep by customization: end --> class. To get error details in your REST code, use the [ErrorDetail](https://msdn.microsoft.com/zh-cn/library/jj853026.aspx) REST API.
+
+ErrorDetail.Code|Possible causes for error
+-----|-----------------------
+Unknown| Unknown error while executing the task
+ErrorDownloadingInputAssetMalformedContent|Category of errors that covers errors in downloading input asset such as bad file names, zero length files, incorrect formats and so on.
+ErrorDownloadingInputAssetServiceFailure|Category of errors that covers problems on the service side - for example network or storage errors while downloading.
+ErrorParsingConfiguration|Category of errors where task <see cref="MediaTask.PrivateData"/> (configuration) is not valid, for example the configuration is not a valid system preset or it contains invalid XML.
+ErrorExecutingTaskMalformedContent|Category of errors during the execution of the task where issues inside the input media files cause failure.
+ErrorExecutingTaskUnsupportedFormat|Category of errors where the media processor cannot process the files provided - media format not supported, or does not match the Configuration. For example, trying to produce an audio-only output from an asset that has only video
+ErrorProcessingTask|Category of other errors that the media processor encounters during the processing of the task that are unrelated to content.
+ErrorUploadingOutputAsset|Category of errors when uploading the output asset
+ErrorCancelingTask|Category of errors to cover failures when attempting to cancel the Task
+TransientError|Category of errors to cover transient issues (eg. temporary networking issues with Azure Storage)
 
 
 <!-- deleted by customization
+To get help from the **Media Services** team, open a [support ticket](https://manage.windowsazure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+
+
+
 ##Media Services learning paths
 
 [AZURE.INCLUDE [media-services-learning-paths-include](../includes/media-services-learning-paths-include.md)]
@@ -272,6 +296,7 @@ Windows Media Audio|No|Yes|Yes
 
 ##Related articles
 
+- [Perform advanced encoding tasks by customizing Media Encoder Standard presets](/documentation/articles/media-services-custom-mes-presets-with-dotnet)
 - [Quotas and Limitations](/documentation/articles/media-services-quotas-and-limitations)
 
  

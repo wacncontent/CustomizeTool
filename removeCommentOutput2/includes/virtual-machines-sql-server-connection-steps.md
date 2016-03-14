@@ -123,4 +123,3 @@ To connect to the Database Engine from another computer, you must create at leas
 12. Click OK.
 
 For more information about SQL Server logins, see [Create a Login](http://msdn.microsoft.com/zh-cn/library/aa337562.aspx).
-

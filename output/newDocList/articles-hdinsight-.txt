@@ -1,10 +1,4 @@
-new docs: 6, word count: 7513
-articles/hdinsight/hdinsight-hadoop-create-windows-clusters-cli.md
-articles/hdinsight/hdinsight-hadoop-create-windows-clusters-dotnet-sdk.md
-articles/hdinsight/hdinsight-hadoop-create-windows-clusters-powershell.md
-articles/hdinsight/hdinsight-hadoop-customize-cluster-bootstrap.md
-articles/hdinsight/hdinsight-storage-sharedaccesssignature-permissions.md
-articles/hdinsight/hdinsight-storm-write-data-lake-store.md
-
+new docs: 1, word count: 2133
+articles/HDInsight/hdinsight-apache-spark-intellij-tool-plugin.md
+ 
 new includes: 0
-

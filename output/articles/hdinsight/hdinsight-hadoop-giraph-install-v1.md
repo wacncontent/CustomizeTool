@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/02/2015"
+	ms.date="02/12/2016"
 	wacn.date=""/>
 
 # Install Giraph on HDInsight Hadoop clusters, and use Giraph to process large-scale graphs

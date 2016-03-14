@@ -1,6 +1,8 @@
 new docs: 3, word count: {word_count_TODO}
-articles/app-service-web/app-service-web-app-cloning.md
-articles/app-service-web/app-service-web-app-powerhell-ssl-binding.md
-articles/app-service-web/app-service-web-arm-with-msdeploy-provision.md
+articles/app-service-web/app-service-app-service-environment-geo-distributed-scale.md
+articles/app-service-web/app-service-app-service-environment-layered-security.md
+articles/app-service-web/app-service-web-app-performance-test.md
+articles/app-service-web/app-service-web-test-in-production-controlled-test-flight.md
+articles/app-service-web/app-service-web-test-in-production-get-start.md
 
 new includes: 0

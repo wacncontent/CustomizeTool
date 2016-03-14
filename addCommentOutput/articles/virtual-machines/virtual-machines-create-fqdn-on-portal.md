@@ -13,7 +13,7 @@
 	ms.date="08/21/2015"
 	wacn.date=""/>
 
-# Create a Fully Qualified Domain Name in the Azure <!-- deleted by customization Management --><!-- keep by customization: begin --> Preview <!-- keep by customization: end --> Portal
+# Create a Fully Qualified Domain Name in the Azure Management Portal
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 

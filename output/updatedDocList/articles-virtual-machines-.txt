@@ -1,3 +1,28 @@
 updated docs: 0
+articles/virtual-machines/automation-manage-virtual-machines.md
+articles/virtual-machines/storage-windows-attach-disk.md
+articles/virtual-machines/virtual-machines-allocation-failure.md
+articles/virtual-machines/virtual-machines-app-frameworks.md
+articles/virtual-machines/virtual-machines-hpcpack-cluster-submit-jobs.md
+articles/virtual-machines/virtual-machines-linux-capture-image.md
+articles/virtual-machines/virtual-machines-linux-choices-create-vm.md
+articles/virtual-machines/virtual-machines-linux-cluster-rdma.md
+articles/virtual-machines/virtual-machines-linux-create-upload-vhd-generic.md
+articles/virtual-machines/virtual-machines-linux-create-upload-vhd-oracle.md
+articles/virtual-machines/virtual-machines-linux-create-upload-vhd-ubuntu.md
+articles/virtual-machines/virtual-machines-linux-create-upload-vhd.md
+articles/virtual-machines/virtual-machines-linux-use-vmaccess-reset-password-or-ssh.md
+articles/virtual-machines/virtual-machines-planned-maintenance.md
+articles/virtual-machines/virtual-machines-sap-on-linux-suse-quickstart.md
+articles/virtual-machines/virtual-machines-sharepoint-infrastructure-services.md
+articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md
+articles/virtual-machines/virtual-machines-sql-server-use-premium-storage.md
+articles/virtual-machines/virtual-machines-troubleshoot-remote-desktop-connections.md
+articles/virtual-machines/virtual-machines-troubleshoot-ssh-connections.md
+articles/virtual-machines/virtual-machines-windows-hpcpack-cluster-rdma.md
 
 updated includes: 0
+includes/create-and-configure-opensuse-vm-in-portal.md
+includes/install-and-run-mysql-on-opensuse-vm.md
+includes/virtual-machines-ag-listener-next-steps.md
+includes/virtual-machines-log-on-win-server.md

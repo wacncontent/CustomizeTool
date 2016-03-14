@@ -1,10 +1,10 @@
 <!-- not suitable for Mooncake -->
 
-The Azure Marketplace makes available a wide range of popular web apps developed by Microsoft, third party companies, and open source software initiatives. Web apps created from the Azure Marketplace do not require installation of any software other than the browser used to connect to the [Azure Preview Portal](https://manage.windowsazure.cn/). 
+The Azure gallery makes available a wide range of popular web apps developed by Microsoft, third party companies, and open source software initiatives. Web apps created from the Azure gallery do not require installation of any software other than the browser used to connect to the [Azure Preview Portal](https://manage.windowsazure.cn/). 
 
 In this tutorial, you'll learn:
 
-- How to create a new web app through the Azure Marketplace.
+- How to create a new web app through the Azure gallery.
 
 - How to deploy the web app through the Azure Preview Portal.
  
@@ -19,7 +19,7 @@ You'll build a WordPress blog that uses a default template. The following illust
 
 1. Log in to the Azure Preview Portal.
 
-2. Open the Azure Marketplace either by clicking the **Marketplace** icon:
+2. Open the Azure gallery either by clicking the **Marketplace** icon:
 
     ![Marketplace icon][marketplace]
 

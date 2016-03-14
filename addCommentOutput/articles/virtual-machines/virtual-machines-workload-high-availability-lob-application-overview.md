@@ -46,8 +46,8 @@ Item | Virtual machine description | Gallery image | Default size
 --- | --- | --- | --- 
 1. | First domain controller | Windows Server 2012 R2 Datacenter | D1
 2. | Second domain controller | Windows Server 2012 R2 Datacenter | D1
-3. | Primary database server | Microsoft SQL Server 2014 Enterprise <!-- deleted by customization â --><!-- keep by customization: begin --> ¨C <!-- keep by customization: end --> Windows Server 2012 R2 | D4
-4. | Secondary database server | Microsoft SQL Server 2014 Enterprise <!-- deleted by customization â --><!-- keep by customization: begin --> ¨C <!-- keep by customization: end --> Windows Server 2012 R2 | D4
+3. | Primary database server | Microsoft SQL Server 2014 Enterprise <!-- deleted by customization â --><!-- keep by customization: begin --> - <!-- keep by customization: end --> Windows Server 2012 R2 | D4
+4. | Secondary database server | Microsoft SQL Server 2014 Enterprise <!-- deleted by customization â --><!-- keep by customization: begin --> - <!-- keep by customization: end --> Windows Server 2012 R2 | D4
 5. | Majority node for the cluster | Windows Server 2012 R2 Datacenter | D1
 6. | First web server | Windows Server 2012 R2 Datacenter | D3
 7. | Second web server | Windows Server 2012 R2 Datacenter | D3

@@ -13,13 +13,15 @@
 	ms.date="10/22/2015"
 	wacn.date=""/>
 
-# Different ways to create a Windows virtual machine with Resource Manager
+# Different ways to create a Windows virtual machine <!-- deleted by customization with Resource Manager -->
 
 Azure offers different ways to create a virtual machine because virtual machines are suited for different users and purposes. This means that you need to make some choices about the virtual machine and how to create it. This article gives you a summary of these choices and links to instructions.
+<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 Azure Resource Manager templates were recently introduced as a way to create and manage a virtual machine and its different resources as one logical deployment unit. Instructions for this approach are included below, where available. To learn more about Azure Resource Manager and how to manage resources as one unit, see the [Overview][].
+-->
 
 ## Tool choices
 
@@ -35,11 +37,18 @@ If you prefer working in a command shell, choose between the Azure command-line 
 
 For Azure CLI, see:
 
+<!-- deleted by customization
 - [Equivalent Resource Manager and Service Management commands for virtual machine operations with the Azure CLI for Mac, Linux, and Windows][]
 - [Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI][].
+-->
+<!-- keep by customization: begin -->
+- [Using the Azure CLI for Mac, Linux, and Windows with Azure Service Management](/documentation/articles/virtual-machines-command-line-tools).
+- [Create a multi-VM deployment with the Azure CLI](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)
+<!-- keep by customization: end -->
 
 For Azure PowerShell, see:
 
+<!-- deleted by customization
 - [Create a Windows VM with Resource Manager and PowerShell][]
 - [Create and preconfigure a Windows virtual machine with Resource Manager and Azure PowerShell][]
 - [Deploy and manage virtual machines using Azure Resource Manager templates and PowerShell][]
@@ -48,12 +57,18 @@ For Azure PowerShell, see:
 ### Development environment: Visual Studio
 
 [Deploy Azure resources using the Compute, Network, and Storage .NET libraries][]
+-->
+<!-- keep by customization: begin -->
+- [Create a SQL Server Virtual Machine in Azure (PowerShell)](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
+- [Manage your virtual machines by using Azure PowerShell](/documentation/articles/virtual-machines-manage-vms-powershell)
+<!-- keep by customization: end -->
 
 ## Operating system and image choices
 
 Choose an image based on the operating system you want to run. Azure and its partners offer many images, some of which include applications and tools. Or, use one of your own images. Find the platform image that you need for your application by using the information in: [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI][].
 
 <!-- LINKS -->
+<!-- deleted by customization
 [overview]: ../documentation/articles/resource-group-overview
 
 [Create a virtual machine running Windows]: virtual-machines-windows-tutorial.md
@@ -74,3 +89,11 @@ Choose an image based on the operating system you want to run. Azure and its par
 [Base configuration test environment]: virtual-machines-base-configuration-test-environment.md
 
 [Azure hybrid cloud test environments]: virtual-machines-hybrid-cloud-test-environments.md
+
+-->
+<!-- keep by customization: begin -->
+
+[Create a virtual machine running Windows]: virtual-machines-windows-tutorial-classic-portal
+
+[Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI]: /documentation/articles/resource-groups-vm-searching
+<!-- keep by customization: end -->

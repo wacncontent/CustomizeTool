@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/15/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Working with Channels that Receive Multi-bitrate Live Stream from On-premises Encoders

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Attach a data disk | Windows Azure"
 	description="How to attach new or existing data disk to a VM in the Azure Management Portal using the Resource Manager deployment model."

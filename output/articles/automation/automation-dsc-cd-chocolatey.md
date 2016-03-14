@@ -1,3 +1,4 @@
+<!-- not suitable for Mooncake -->
 <properties
    pageTitle="Azure Automation DSC Continuous Deployment with Chocolatey | Windows Azure"
    description="DevOps continuous deployment using Azure Automation DSC and Chocolatey package manager.  Example with full JSON ARM template and PowerShell source."
@@ -9,7 +10,7 @@
 
 <tags
 	ms.service="automation"
-	ms.date="11/11/2015"
+	ms.date="10/16/2015"
 	wacn.date=""/>
 
 # Usage Example: Continuous deployment to Virtual Machines using Automation DSC and Chocolatey
@@ -56,10 +57,11 @@ If you're not starting with an ARM template, that's also OK.  There are PowerShe
 
 At an authenticated (Add-AzureAccount) PowerShell command line:  (can take a few minutes while the pull server is set up)
 
-    New-AzureRmResourceGroup -Name MY-AUTOMATION-RG -Location MY-RG-LOCATION-IN-QUOTES
+    Switch-AzureMode -Name AzureResourceManager                     <-- assumes you are still running Azure PowerShell v0.9.x    
+    New-AzureResourceGroup -Name MY-AUTOMATION-RG -Location MY-RG-LOCATION-IN-QUOTES
     New-AzureAutomationAccount -ResourceGroupName MY-AUTOMATION-RG -Location MY-RG-LOCATION-IN-QUOTES -Name MY-AUTOMATION-ACCOUNT 
 
-You can put your automation account into any of the following regions (aka location):  Japan East, China East 2, West Europe, China North, China East.
+You can put your automation account into any of the following regions (aka location):  China North, China East.
 
 ## Step 2: VM extension tweaks to the ARM template
 
@@ -87,7 +89,7 @@ Or, there's the manual approach.  The folder structure of a PowerShell Integrati
             -Name MODULE-NAME -ContentLink "https://STORAGE-URI/public/MODULE-NAME.zip"
         
 
-The included example performs these steps for cChoco and xNetworking. See the [Notes](#notes) for special handling for cChoco.
+The included example performs these steps for cChoco and xNetworking. See the Notes for special handling for cChoco.
 
 ## Step 4: Adding the node configuration to the pull server
 
@@ -140,18 +142,18 @@ ISVBoxConfig.ps1:
 
 New-ConfigurationScript.ps1:
 
-    Import-AzureRmAutomationDscConfiguration ` 
+    Import-AzureAutomationDscConfiguration ` 
         -ResourceGroupName MY-AUTOMATION-RG -AutomationAccountName MY-AUTOMATION-ACCOUNT ` 
         -SourcePath C:\temp\AzureAutomationDsc\ISVBoxConfig.ps1 ` 
         -Published -Force
     
-    $jobData = Start-AzureRmAutomationDscCompilationJob ` 
+    $jobData = Start-AzureAutomationDscCompilationJob ` 
         -ResourceGroupName MY-AUTOMATION-RG -AutomationAccountName MY-AUTOMATION-ACCOUNT ` 
         -ConfigurationName ISVBoxConfig 
     
     $compilationJobId = $jobData.Id
     
-    Get-AzureRmAutomationDscCompilationJob ` 
+    Get-AzureAutomationDscCompilationJob ` 
         -ResourceGroupName MY-AUTOMATION-RG -AutomationAccountName MY-AUTOMATION-ACCOUNT ` 
         -Id $compilationJobId
 
@@ -163,7 +165,7 @@ For each package that you put into the package repository, you need a nuspec tha
 
 ## Step 6: Tying it all together
 
-Each time a version passes QA and is approved for deployment, the package is created, nuspec and nupkg updated and deployed to the NuGet server.  In addition, the configuration (Step 4 above) must be updated to agree with the new version number.  It must be sent to the pull server and compiled.  From that point on, it's up to the VMs that depend on that configuration to pull the update and install it.  Each of these updates are simple - just a line or two of PowerShell.  In the case of Visual Studio Team Services, some of them are encapsulated in build tasks that can be chained together in a build.  This [article](https://www.visualstudio.com/get-started/build/build-your-app-vs) provides more details.  This [GitHub repo](https://github.com/Microsoft/vso-agent-tasks) details the various available build tasks.
+Each time a version passes QA and is approved for deployment, the package is created, nuspec and nupkg updated and deployed to the NuGet server.  In addition, the configuration (Step 4 above) must be updated to agree with the new version number.  It must be sent to the pull server and compiled.  From that point on, it's up to the VMs that depend on that configuration to pull the update and install it.  Each of these updates are simple - just a line or two of PowerShell.  In the case of Visual Studio Online, some of them are encapsulated in build tasks that can be chained together in a build.  This [article](https://www.visualstudio.com/get-started/build/build-your-app-vs) provides more details.  This [GitHub repo](https://github.com/Microsoft/vso-agent-tasks) details the various available build tasks.
 
 ## Notes
 
@@ -179,6 +181,6 @@ Full source for this usage example is in [this Visual Studio project](https://gi
 
 ##Related Articles##
 
-- [Azure Automation DSC Overview] (automation-dsc-overview.md)
+- [Azure Automation DSC Overview](/documentation/articles/automation-dsc-overview)
 - [Azure Automation DSC cmdlets] (https://msdn.microsoft.com/zh-cn/library/mt244122.aspx)
-- [Onboarding machines for management by Azure Automation DSC] (automation-dsc-onboarding.md)
+- [Onboarding machines for management by Azure Automation DSC](/documentation/articles/automation-dsc-onboarding)

@@ -9,13 +9,13 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/21/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 
 #How to encode an asset using Media Encoder Standard
 
-Encoding jobs are one of the most common processing operations in Media Services. You create encoding jobs to convert media files from one encoding to another. When you encode, you can use the Media Services built-in Media Encoder. You can also use an encoder provided by a Media Services partner; third party encoders are available through the Azure Marketplace. 
+Encoding jobs are one of the most common processing operations in Media Services. You create encoding jobs to convert media files from one encoding to another. When you encode, you can use the Media Services built-in Media Encoder. You can also use an encoder provided by a Media Services partner; third party encoders are available through the Azure gallery. 
 
 This topic shows how to use .NET to encode your assets with Media Encoder Standard (MES). Media Encoder Standard is configured using one of the encoder presets described [here](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx).
 
@@ -127,7 +127,6 @@ The following code example uses Media Services .NET SDK to perform the following
 		}
 
 
-[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 ##See Also 
 

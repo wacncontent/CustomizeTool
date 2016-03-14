@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="11/13/2015"
+	ms.date="02/01/2016"
 	wacn.date=""/>
 
 #Introduction to Linux on Azure
@@ -25,7 +25,7 @@ When creating a Linux virtual machine using the Azure Management Portal, you are
 
 
  - See [Create a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-tutorial)
- - See [How to Use SSH with Linux on Azure](/documentation/articles/linux-use-ssh-key)
+ - See [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-use-ssh-key)
 
 
 ## Obtaining Superuser Privileges Using `sudo`
@@ -64,7 +64,7 @@ The Azure Linux Agent includes functionality to automatically detect this name c
 **Ubuntu** and **CoreOS** images utilize cloud-init pn Azure, which provides additional capabilities for bootstrapping a virtual machine.
 
  - [How to Inject Custom Data](/documentation/articles/virtual-machines-how-to-inject-custom-data)
- - [Custom Data and Cloud-Init on Windows Azure](http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/)
+ - [Custom Data and Cloud-Init on Windows Azure](https://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/)
  - [Create Azure Swap Partitions Using Cloud-Init](https://wiki.ubuntu.com/AzureSwapPartitions)
  - [How to Use CoreOS on Azure](/documentation/articles/virtual-machines-linux-coreos-how-to)
 

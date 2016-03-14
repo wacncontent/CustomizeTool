@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Create a virtual network using an ARM template | Windows Azure"
    description="Learn how to create a virtual network using an ARM template | Resource Manager."
@@ -5,12 +7,12 @@
    documentationCenter=""
    authors="telmosampaio"
    manager="carmonm"
-   editor=""
+   editor="tysonn"
    tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-network"
-	ms.date="12/07/2015"
+	ms.date="02/02/2016"
 	wacn.date=""/>
 
 # Create a virtual network by using an ARM template

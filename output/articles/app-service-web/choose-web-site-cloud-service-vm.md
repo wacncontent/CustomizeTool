@@ -46,7 +46,7 @@ Here are some common application scenarios with recommendations as to which Azur
 
 ### <a id="onprem"></a> I need a web front end with background processing and database backend to run business applications integrated with on premise assets.
 
-Azure is a great solution for complex business applications. It lets you develop apps that scale automatically on a load balanced platform, are secured with Active Directory, and connect to your on-premises resources. It makes managing those apps easy through a world-class portal and APIs, and allows you to gain insight into how customers are using them with app insight tools. The [Webjobs][] feature lets you run background processes and tasks as part of your web tier, while hybrid connectivity and [VNET features](/documentation/articles/fundamentals-introduction-to-azure#networking) make it easy to connect back to on-premises resources. Azure provides three 9's SLA for web apps and enables you to:
+Azure is a great solution for complex business applications. It lets you develop apps that scale automatically on a load balanced platform, are secured with Active Directory, and connect to your on-premises resources. It makes managing those apps easy through a world-class portal and APIs, and allows you to gain insight into how customers are using them with app insight tools. The [Webjobs][] feature lets you run background processes and tasks as part of your web tier, while hybrid connectivity and VNET features make it easy to connect back to on-premises resources. Azure provides three 9's SLA for web apps and enables you to:
 
 * Run your applications reliably on a self-healing, auto-patching cloud platform.
 * Scale automatically across a global network of datacenters.
@@ -119,7 +119,7 @@ If your open source framework is not supported on Azure Web App, you can run it 
 
 ### <a id="lob"></a>I have a line-of-business application that needs to connect to the corporate network
 
-If you want to create a line-of-business application, your website might require direct access to services or data on the corporate network. This is possible on Azure Web App, Cloud Services, and Virtual Machines using the [Azure Virtual Network service](/home/features/networking/). On Azure you can use the [VNET integration feature](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/), which allows your Azure applications to run as if they were on your corporate network.
+If you want to create a line-of-business application, your website might require direct access to services or data on the corporate network. This is possible on Azure Web App, Cloud Services, and Virtual Machines using the [Azure Virtual Network service](/home/features/networking/). On Azure you can use the [VNET integration feature](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/), which allows your Azure applications to run as if they were on your corporate network.
 
 ### <a id="mobile"></a>I want to host a REST API or web service for mobile clients
 
@@ -172,10 +172,7 @@ Can listen to ETW events||X|X|
 
 ## <a id="nextsteps"></a> Next Steps
 
-For more information about the three web hosting options, see the following resources:
-
-* [Introducing Azure](/documentation/articles/fundamentals-introduction-to-azure)
-* [Compute Hosting Options Provided by Azure](/documentation/articles/fundamentals-application-models)
+For more information about the three web hosting options, see [Introducing Azure](/documentation/articles/fundamentals-introduction-to-azure).
 
 To get started with the option(s) you choose for your application, see the following resources:
 

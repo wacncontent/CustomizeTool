@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="Authoring Templates with Azure VM Extensions | Windows Azure"
    description="Learn more about authoring Templates with Extensions"
@@ -17,7 +15,7 @@
 
 # Authoring Azure Resource Manager Templates with VM Extensions.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
  
 
 ## Overview of Azure Resource Manager Templates.

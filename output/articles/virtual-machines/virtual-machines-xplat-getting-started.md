@@ -19,11 +19,11 @@ Only installing the Azure CLI and having an Azure subscription will prevent you 
 
 ## Installing the Azure CLI
 
-Follow the instructions for [installing the Azure CLI](/documentation/articles/xplat-cli#install).
+Follow the instructions for [installing the Azure CLI](/documentation/articles/xplat-cli-install#install).
 
 ## Connecting to Azure by using the Azure CLI
 
-You can connect your Azure CLI installation with a personal Azure account, or with a work or school Azure account. To understand the differences and choose, see [How to connect to your Azure subscription](/documentation/articles/xplat-cli#configure).
+You can connect your Azure CLI installation with a personal Azure account, or with a work or school Azure account. To understand the differences and choose, see [How to connect to your Azure subscription](/documentation/articles/xplat-cli-install#configure).
 
 ## Creating and connecting to a VM in Azure
 

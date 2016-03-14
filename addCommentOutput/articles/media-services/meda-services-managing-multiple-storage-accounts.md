@@ -71,6 +71,14 @@ The following code uses the latest Media Services SDK to perform the following t
 		        private static readonly string MediaServicesAccountKey = 
 		            ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 		
+<!-- keep by customization: begin -->
+				private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+				// Azure China uses a different API server and a different ACS Base Address from the Global.
+				private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+				private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+
+<!-- keep by customization: end -->
 		        private static CloudMediaContext _context;
 		        private static MediaServicesCredentials _cachedCredentials = null;
 	
@@ -80,9 +88,25 @@ The following code uses the latest Media Services SDK to perform the following t
 		            // Create and cache the Media Services credentials in a static class variable.
 		            _cachedCredentials = new MediaServicesCredentials(
 		                            MediaServicesAccountName,
+<!-- deleted by customization
 		                            MediaServicesAccountKey);
+-->
+<!-- keep by customization: begin -->
+		                            MediaServicesAccountKey,
+									_defaultScope,
+									_chinaAcsBaseAddressUrl);
+
+					// Create the API server Uri
+					_apiServer = new Uri(_chinaApiServerUrl);
+
+<!-- keep by customization: end -->
 		            // Used the cached credentials to create CloudMediaContext.
+<!-- deleted by customization
 		            _context = new CloudMediaContext(_cachedCredentials);
+-->
+<!-- keep by customization: begin -->
+		            _context = new CloudMediaContext(_apiServer, _cachedCredentials);
+<!-- keep by customization: end -->
 	
 		
 		            // Display the storage accounts associated with 

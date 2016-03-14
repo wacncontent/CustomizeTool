@@ -33,7 +33,7 @@ At the end of the Media Services account setup process, you obtained the followi
 
 - Your Media Services account key.
 
-To find these values, go to the Azure Managment Portal, select your Media Service account, and click on the <!-- deleted by customization “**MANAGE KEYS**” --><!-- keep by customization: begin --> â**MANAGE KEYS**â <!-- keep by customization: end --> icon on the bottom of the portal window. Clicking on the icon next to each text box copies the value to the system clipboard.
+To find these values, go to the Azure Managment Portal, select your Media Service account, and click on the "**MANAGE KEYS**" icon on the bottom of the portal window. Clicking on the icon next to each text box copies the value to the system clipboard.
 
 
 ## Creating a CloudMediaContext Instance
@@ -60,7 +60,7 @@ The following example uses the public CloudMediaContext(MediaServicesCredentials
 This section shows how to reuse Access Control Service tokens by using CloudMediaContext constructors that take MediaServicesCredentials as a parameter.
 
 
-[Azure Active Directory Access Control](https://msdn.microsoft.com/zh-cn/library/hh147631.aspx) (also known as Access Control Service or ACS) is a cloud-based service that provides an easy way of authenticating and authorizing users to gain access to their web sites. Windows Azure Media Services controls access to its services though OAuth protocol that requires an ACS token. Media Services receives the ACS tokens from an authorization server.
+[Azure Active Directory Access Control](https://msdn.microsoft.com/zh-cn/library/hh147631.aspx) (also known as Access Control Service or ACS) is a cloud-based service that provides an easy way of authenticating and authorizing users to gain access to their web applications. Windows Azure Media Services controls access to its services though OAuth protocol that requires an ACS token. Media Services receives the ACS tokens from an authorization server.
 
 When developing with the Media Services SDK, you can choose to not deal with the tokens because the SDK code managers them for you. However, letting the SDK fully manage the ACS tokens leads to unnecessary token requests. Requesting tokens takes time and consumes the client and server resources. Also, the ACS server throttles the requests if the rate is too high. The limit is 30 requests per second, see [ACS Service Limitations](https://msdn.microsoft.com/zh-cn/library/gg185909.aspx) for more details.
 

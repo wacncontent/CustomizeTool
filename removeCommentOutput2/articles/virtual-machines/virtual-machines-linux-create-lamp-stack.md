@@ -55,7 +55,7 @@ In the [Azure Management Portal](https://manage.windowsazure.cn/), click **New**
 
 ![][3]
 
-For **Host Name**, specify the name for the URL that you an Internet clients will use to access this virtual machine. Define the last part of the DNS name, for example LAMPDemo, and Azure will generate the URL as Lampdemo.chinacloudapp.cn.
+For **Host Name**, specify the name for the URL that you an Internet clients will use to access this virtual machine. Define the last part of the DNS name, for example LAMPDemo, and Azure will generate the URL as *lampdemo.chinacloudapp.cn*.
 
 For **User Name**, pick a name that you will later use to login to the virtual machine.
 
@@ -146,7 +146,7 @@ Once it installs, start Apache with this command:
 	sudo service httpd start
 
 ####Test Apache
-To check if Apache is successfully installed, browse to your Apache server's DNS name (for the example URL in this article, http://lampdemo.chinacloudapp.cn/). The page should display the words “It works!"
+To check if Apache is successfully installed, browse to your Apache server's DNS name (for the example URL in this article, http://lampdemo.chinacloudapp.cn/). The page should display the words "It works!"
 ![][14]
 
 ####Troubleshooting
@@ -154,7 +154,7 @@ If Apache is running but you can't see Apache default page above, you need to ch
 
 -	Apache web service listening address / port
 	-	Check your endpoint setting for your Azure virtual machine. Make sure the configuration of the endpoint is appropriate. See the Phase 1: Create an Image instructions in this article.
-	-	Open /etc/httpd/conf/httpd.conf and then search for the string “Listen”. Ensure that the Apache listening port is same as the Private Port that you configured for your endpoint. The default port for Apache is 80. Here is an example.  
+	-	Open /etc/httpd/conf/httpd.conf and then search for the string "Listen". Ensure that the Apache listening port is same as the Private Port that you configured for your endpoint. The default port for Apache is 80. Here is an example.  
 
 			……
 			......
@@ -257,7 +257,7 @@ To install PHP on your virtual machine, open terminal and run this command:
 
 	sudo yum install php php-mysql  
 
-Answer “y” to download software packages. Then answer “y” to Importing GPG key 0xE8562897 "CentOS-5 Key (CentOS 5 Official Signing Key). PHP will install.
+Answer "y" to download software packages. Then answer "y" to Importing GPG key 0xE8562897 "CentOS-5 Key (CentOS 5 Official Signing Key). PHP will install.
 
 	warning: rpmts_HdrFromFdno: Header V3 DSA signature: NOKEY, key ID e8562897
 	updates/gpgkey                                                                                                                                                                       | 1.5 kB     00:00
@@ -366,7 +366,7 @@ Apache is running but you can't see the Apache default page with your browser.
 -	**Possible root case**
 	1.	The Apache listening port is not same as the Private Port of your virtual machine's endpoint for web traffic.</br>
 	Check your Public Port and Private Port endpoint settings and make sure the Private Port is same as the Apache listen port. See Phase 1: Create an Image for instructions on configuring endpoints for your virtual machine.</br>
-	To determine the listen port of Apache, open /etc/httpd/conf/httpd.conf (Red Hat release) or /etc/apache2/ports.conf (Debian release), search for the string “Listen”. The default port is 80.
+	To determine the listen port of Apache, open /etc/httpd/conf/httpd.conf (Red Hat release) or /etc/apache2/ports.conf (Debian release), search for the string "Listen". The default port is 80.
 
 	2.	The firewall has disabled the listen port of Apache.</br>  
 	If you can see Apache default page from the local host, then the problem is most likely that the port which is listened by Apache is blocked by the firewall. You can use the w3m tool to browse the web page. The following commands install w3m and browse to Apache default page:  
@@ -445,7 +445,7 @@ When you restart the Apache server using one of the following commands:
 	You have not set the server name of Apache.
 
 -	**Solution**  
-	Insert a “ServerName localhost” line in either httpd.conf (Red Hat release) or apache2.conf (Debian release) in /etc/apache2 and restart Apache. The notice will disappear.
+	Insert a "ServerName localhost" line in either httpd.conf (Red Hat release) or apache2.conf (Debian release) in /etc/apache2 and restart Apache. The notice will disappear.
 
 
 

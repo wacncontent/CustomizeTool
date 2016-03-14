@@ -292,7 +292,7 @@ In this tutorial, you've seen how to create a simple web application and deploy 
 
 * [How to choose or create an App Service plan](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview)
 
-* [How to choose or create a resource group](/documentation/articles/azure-preview-portal-using-resource-groups)
+* [How to choose or create a resource group](/documentation/articles/resource-group-portal)
 
 ## What's changed
 * For a guide to the change from Websites to Azure Web App, see [Azure and existing Azure services](/documentation/services/web-sites/).

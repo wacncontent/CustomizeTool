@@ -55,15 +55,15 @@ Before you begin this article, you must have the following:
 For the creation instructions using the Portal, see [Create HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1#create-using-the-preview-portal).
 
 HDInsight works with a wide range of Hadoop components. For the list of the components that have been verified and supported, 
-see [What version of Hadoop is in Azure HDInsight](/documentation/articles/hdinsight-component-versioning). You can customize HDInsight by using one of the following options:
+see [What version of Hadoop is in Azure HDInsight](/documentation/articles/hdinsight-component-versioning-v1). You can customize HDInsight by using one of the following options:
 
 - Use Script Action to run custom scripts that can customize a cluster to either change cluster configuration or install custom components such as Giraph or Solr. For more information, see [Customize HDInsight cluster using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1).
 - Use the cluster customization parameters in the HDInsight .NET SDK or Azure PowerShell during cluster creation. These configuration changes are then preserved through the lifetime of the cluster and are not affected by cluster node reimages that Azure platform periodically performs for maintenance. For more information on using the cluster customization parameters, see [Create HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1).
 - Some native Java components, like Mahout and Cascading, can be run on the cluster as JAR files. These JAR files can be distributed to Azure Blob storage, and submitted to HDInsight clusters through Hadoop job submission mechanisms. For more information, see [Submit Hadoop jobs programmatically](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically).
 
-	>[AZURE.NOTE] If you have issues deploying JAR files to HDInsight clusters or calling JAR files on HDInsight clusters, contact [Microsoft Support](/support/contact/).
+	>[AZURE.NOTE] If you have issues deploying JAR files to HDInsight clusters or calling JAR files on HDInsight clusters, contact [Microsoft Support](https://azure.microsoft.com/support/contact/).
 
-	> Cascading is not supported by HDInsight, and is not eligible for Microsoft Support. For lists of supported components, see [What's new in the cluster versions provided by HDInsight?](/documentation/articles/hdinsight-component-versioning).
+	> Cascading is not supported by HDInsight, and is not eligible for Microsoft Support. For lists of supported components, see [What's new in the cluster versions provided by HDInsight?](/documentation/articles/hdinsight-component-versioning-v1).
 
 Installation of custom software on the cluster by using Remote Desktop Connection is not supported. You should avoid storing any files on the drives of the head node, as they will be lost if you need to re-create the clusters. We recommend storing files on Azure Blob storage. Blob storage is persistent.
 
@@ -134,7 +134,7 @@ Installation of custom software on the cluster by using Remote Desktop Connectio
 	- **Data created**.
 	- **Operating system**: Either **Windows** or **Linux**.
 	- **Type**: Hadoop, HBase, Storm, Spark. 
-	- **Version**. See [HDInsight versions](/documentation/articles/hdinsight-component-versioning)
+	- **Version**. See [HDInsight versions](/documentation/articles/hdinsight-component-versioning-v1)
 	- **Subscriotion**: Subscription name.
 	- **Subscrition ID**.
 	- **Primary data source**. The Azure Blob storage account used as the default Hadoop file system.
@@ -392,7 +392,7 @@ In this article, you have learned how to create an HDInsight cluster by using th
 * [Create HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1)
 * [Submit Hadoop jobs programmatically](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)
 * [Get Started with Azure HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
-* [What version of Hadoop is in Azure HDInsight?](/documentation/articles/hdinsight-component-versioning)
+* [What version of Hadoop is in Azure HDInsight?](/documentation/articles/hdinsight-component-versioning-v1)
 
 [azure-portal]: https://manage.windowsazure.cn
 [image-hadoopcommandline]: ./media/hdinsight-administer-use-management-portal-v1/hdinsight-hadoop-command-line.png "Hadoop command line"

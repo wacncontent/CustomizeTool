@@ -1,6 +1,6 @@
 <properties
 	pageTitle="My first PowerShell Workflow runbook in Azure Automation | Windows Azure"
-	description="Tutorial that walks you through the creation, testing, and publishing of a simple text runbook using PowerShell Workflow.  Several concepts are covered such as authenticating to Azure resources and input parameters."
+	description="Tutorial that walks you through the creation, testing, and publishing of a simple text runbook using PowerShell Workflow."
 	services="automation"
 	documentationCenter=""
 	authors="bwren"
@@ -18,6 +18,7 @@
 > [AZURE.SELECTOR]
 - [Graphical](/documentation/articles/automation-first-runbook-graphical)
 - [PowerShell Workflow](/documentation/articles/automation-first-runbook-textual)
+- [PowerShell](/documentation/articles/automation-first-runbook-textual-PowerShell)
 
 This tutorial walks you through the creation of a [PowerShell Workflow runbook](/documentation/articles/automation-runbook-types#powerShell-workflow-runbooks) in Azure Automation.  We'll start with a simple runbook that we'll test and publish while we explain how to track the status of the runbook job.  Then we'll modify the runbook to actually manage Azure resources, in this case starting an Azure virtual machine.  We'll then make the runbook more robust by adding runbook parameters.  
 
@@ -139,3 +140,4 @@ Our runbook currently starts the virtual machine that we hardcoded in the runboo
 ## Related articles
 
 - [My first graphical runbook](/documentation/articles/automation-first-runbook-graphical)
+- [My first PowerShell runbook](/documentation/articles/automation-first-runbook-textual-PowerShell)

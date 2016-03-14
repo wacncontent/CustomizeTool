@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/10/2015"
+	ms.date="01/21/2016"
 	wacn.date=""/>
 
 # Create and upload a Windows Server VHD to Azure
@@ -62,7 +62,7 @@ You need a storage account in Azure so you have a place to upload the .vhd file.
 
 ### Option 1: Create a storage account
 
-1. Sign in to the Azure Management Portal.
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
 
 2. On the command bar, click **New**.
 
@@ -98,7 +98,7 @@ You need a storage account in Azure so you have a place to upload the .vhd file.
 
 ### Option 2: Get the storage account info
 
-1.	Sign in to the Azure Management Portal.
+1.	Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
 
 2.	From the navigation pane, click **Storage**.
 
@@ -191,15 +191,13 @@ For more information about the Add-AzureVhd cmdlet, see [Add-AzureVhd](http://ms
 
 	![custom image](./media/virtual-machines-create-upload-vhd-windows-server/vm_custom_image.png)
 
-	This new image is now available under **My Images** when you create a virtual machine. For instructions, see [How to create a custom virtual machine running Windows](/documentation/articles/virtual-machines-windows-create-custom).
+	This new image is now available under **My Images** when you create a virtual machine. For instructions, see [Create a custom virtual machine](/documentation/articles/virtual-machines-create-custom).
 
 	![create VM from custom image](./media/virtual-machines-create-upload-vhd-windows-server/create_vm_custom_image.png)
 
 	> [AZURE.TIP] If you get an error when you try to create a VM, with this error message, "The VHD https://XXXXX... has an unsupported virtual size of YYYY bytes. The size must be a whole number (in MBs)," it means your VHD is not a whole number of MBs and needs to be a fixed size VHD. Try using the **Add-AzureVMImage** PowerShell cmdlet instead of the Azure Management Portal to add the image (see step 5, above). The Azure cmdlets ensure that the VHD meets the Azure requirements.
 
-## Next steps ##
 
-After creating a virtual machine, try to create a SQL Server virtual machine. For instructions, see [Provisioning a SQL Server virtual machine on Windows Azure](/documentation/articles/virtual-machines-provision-sql-server).
 
 [Step 1: Prepare the image to be uploaded]: #prepimage
 [Step 2: Create a storage account in Azure]: #createstorage

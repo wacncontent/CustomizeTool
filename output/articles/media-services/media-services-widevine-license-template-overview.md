@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="11/11/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Widevine License Template Overview

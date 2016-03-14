@@ -15,14 +15,14 @@
 
 # Articles for virtual machines in Service Management
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
 
 
 ## Get started
 
 [Create a virtual machine running Windows in the Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 
-[Create a custom virtual machine running Windows in Azure](/documentation/articles/virtual-machines-windows-create-custom)
+[Create a custom virtual machine running Windows in <!-- deleted by customization Azure](/documentation/articles/virtual-machines-create-custom) --><!-- keep by customization: begin --> Azure](/documentation/articles/virtual-machines-windows-create-custom) <!-- keep by customization: end -->
 
 [Create a custom virtual machine running Linux in Azure](/documentation/articles/virtual-machines-linux-create-custom)
 

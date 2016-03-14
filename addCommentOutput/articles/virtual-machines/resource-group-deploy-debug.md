@@ -3,13 +3,14 @@
    description="Describes common problems deploying resources created using Resource Manager deployment model, and shows how to detect and fix these issues."
    services="azure-resource-manager,virtual-machines"
    documentationCenter=""
+   tags="top-support-issue"
    authors="tfitzmac"
    manager="wpickett"
    editor=""/>
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="10/14/2015"
+	ms.date="01/06/2016"
 	wacn.date=""/>
 
 # Troubleshooting resource group deployments in Azure
@@ -20,7 +21,7 @@ issue and resume operations in your solution.
 
 This topic focuses primarily on using deployment commands to troubleshoot deployments. For information about using the audit logs to track all operations on your resources, see [Audit operations with Resource Manager](/documentation/articles/resource-group-audit).
 
-This topic shows how to retrieve troubleshooting information through Azure PowerShell, Azure CLI and REST API. For information about using the preview portal to troubleshoot deployments, see [Using the Azure <!-- deleted by customization Management --><!-- keep by customization: begin --> Preview <!-- keep by customization: end --> Portal to manage your Azure resources](/documentation/articles/resource-group-portal).
+This topic shows how to retrieve troubleshooting information through Azure PowerShell, Azure CLI and REST API. <!-- deleted by customization For information about using the preview portal to troubleshoot deployments, see [Using the Azure Management Portal to manage your Azure resources](/documentation/articles/resource-group-portal). -->
 
 Solutions to common errors that users encounter are also described in this topic.
 
@@ -204,14 +205,14 @@ For versions of PowerShell prior to 1.0 Preview, you can see the full list of re
 
     Name                                    Locations                               LocationsString
     ----                                    ---------                               ---------------
-    ResourceGroup                           {China East, <!-- deleted by customization South China --><!-- keep by customization: begin --> china <!-- keep by customization: end --><!-- deleted by customization East, China East.. --><!-- keep by customization: begin --> North.. <!-- keep by customization: end -->. China East <!-- deleted by customization, South --> China <!-- deleted by customization East, China East,.. --><!-- keep by customization: begin --> North,.. <!-- keep by customization: end -->.
 <!-- deleted by customization
+    ResourceGroup                           {China East, South China East, China East... China East, South China East, China East,...
     Microsoft.ApiManagement/service         {China North, China East, China East 2, Nor... China North, China East, China East 2, Nort...
     Microsoft.AppService/apiapps            {China East, China North, China East,... China East, China North, China East, ...
 -->
 <!-- keep by customization: begin -->
-    Microsoft.ApiManagement/service         {China East, china North... China East China North,...
-    Microsoft.AppService/apiapps            {China East, china North... China East China North,...
+    ResourceGroup                           {China East, china North}				{China East, china North}
+    Microsoft.AppService/apiapps            {China East, china North}				{China East, china North}
 <!-- keep by customization: end -->
     ...
 
@@ -261,10 +262,16 @@ For Azure CLI, you can use **azure location list**. Because the list of location
     azure location list --json | jq '.[] | select(.name == "Microsoft.Compute/virtualMachines")'
     {
       "name": "Microsoft.Compute/virtualMachines",
+<!-- deleted by customization
       "location": "China East,China East 2,China North,China North,China East,China North,West Europe,China East,China North,Japan East,China East"
+-->
+<!-- keep by customization: begin -->
+      "location": "China East,China North"
+<!-- keep by customization: end -->
     }
 
 ### REST API
+
 For REST API, see [Get information about a resource provider](https://msdn.microsoft.com/zh-cn/library/azure/dn790534.aspx).
 
 ## Creating unique resource names
@@ -309,12 +316,12 @@ To be specific about cores, for example, you can check the regions for which you
             "2014-12-01-preview"
           ],
           "locations": [
-<!-- deleted by customization
             "China East",
+<!-- deleted by customization
             "China North",
             "West Europe",
--->
             "China East",
+-->
             "China North"
           ]
         }
@@ -343,11 +350,21 @@ For Powershell 1.0 Preview, use **Get-AzureRmResourceProvider**.
 
     PS C:\> Get-AzureRmResourceProvider -ListAvailable
 
+<!-- deleted by customization
     ProviderNamespace               RegistrationState ResourceTypes
     -----------------               ----------------- -------------
     Microsoft.ApiManagement         Unregistered      {service, validateServiceName, checkServiceNameAvailability}
     Microsoft.AppService            Registered        {apiapps, appIdentities, gateways, deploymenttemplates...}
     Microsoft.Batch                 Registered        {batchAccounts}
+-->
+<!-- keep by customization: begin -->
+	ProviderNamespace         RegistrationState ResourceTypes                                                                               Locations
+	-----------------         ----------------- -------------                                                                               ---------
+	microsoft.backup          Registering       {BackupVault}                                                                               {China East, China North}
+	Microsoft.Batch           Registered        {batchAccounts, locations, locations/quotas}                                                {China North, China East}
+	microsoft.cache           Registered        {Redis, checkNameAvailability, operations, RedisConfigDefinition...}                        {China North, China East}
+	...
+<!-- keep by customization: end -->
 
 To register a provider, use **Register-AzureRmResourceProvider**.
 
@@ -358,7 +375,8 @@ To see whether the provider is registered for use using the Azure CLI, use the `
         azure provider list
         info:    Executing command provider list
         + Getting ARM registered providers
-        data:    Namespace                        Registered
+        data:    Namespace                  <!-- deleted by customization       --> Registered
+<!-- deleted by customization
         data:    -------------------------------  -------------
         data:    Microsoft.Compute                Registered
         data:    Microsoft.Network                Registered  
@@ -372,6 +390,26 @@ To see whether the provider is registered for use using the Azure CLI, use the `
         data:    Microsoft.Search                 NotRegistered
         data:    Microsoft.ServiceBus             NotRegistered
         data:    Microsoft.Sql                    Registered
+-->
+<!-- keep by customization: begin -->
+		data:    -------------------------  -----------
+		data:    microsoft.backup           Registering
+		data:    Microsoft.Batch            Registered
+		data:    microsoft.cache            Registered
+		data:    Microsoft.ClassicCompute   Registered
+		data:    Microsoft.ClassicNetwork   Registered
+		data:    Microsoft.ClassicStorage   Registered
+		data:    Microsoft.Insights         Registered
+		data:    Microsoft.KeyVault         Registered
+		data:    Microsoft.SiteRecovery     Registered
+        data:    Microsoft.Sql               Registered
+		data:    Microsoft.StreamAnalytics  Registered
+		data:    Microsoft.Web              Registered
+		data:    Microsoft.Authorization    Registered
+		data:    Microsoft.Features         Registered
+		data:    Microsoft.Resources        Registered
+		data:    Microsoft.Scheduler        Registered
+<!-- keep by customization: end -->
         info:    provider list command OK
 
 Again, if you want more information about providers, including their regional availability, type `azure provider list --json`. The following selects only the first one in the list to view:
@@ -419,7 +457,7 @@ If you are using templates that you created, it's important to understand that t
 
 Note however, that this does not necessarily mean that your resource group is "active and ready for your users". For example, most deployments request the deployment to download upgrades, wait on other, non-template resources, or to install complex scripts or some other executable activity that Azure does not know about because it is not an activity that a provider is tracking. In these cases, it can be some time before your resources are ready for real-world use. As a result, you should expect that the deployment status succeeds some time before your deployment can be used.
 
-You can prevent Azure from reporting deployment success, however, by creating a custom script for your custom template -- using the [CustomScriptExtension](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/) for example -- that knows how to monitor the entire deployment for system-wide readiness and returns successfully only when users can interact with the entire deployment. If you want to ensure that your extension is the last to run, use the **dependsOn** property in your template. An example can be seen <!-- deleted by customization when [creating template deployments](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx) --><!-- keep by customization: begin --> [here](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx) <!-- keep by customization: end -->.
+You can prevent Azure from reporting deployment success, however, by creating a custom script for your custom template -- using the [CustomScriptExtension](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/) for example -- that knows how to monitor the entire deployment for system-wide readiness and returns successfully only when users can interact with the entire deployment. If you want to ensure that your extension is the last to run, use the **dependsOn** property in your template. An example can be seen when [creating template deployments](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx).
 
 ## Useful tools to interact with Azure
 When you work with your Azure resources from the command-line, you will collect tools that help you do your work. Azure resource group templates are JSON documents, and the Azure Resource Manager API accepts and returns JSON, so JSON parsing tools are some of the first things you will use to help you navigate information about your resources and to design or interact with templates and template parameter files.

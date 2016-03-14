@@ -46,7 +46,7 @@ The following steps are performed:
 1. Create an asset and upload a workflow file. 
 2. Create an asset and upload a source media file.
 <!-- deleted by customization
-3. Get the “Media Encoder Premium Workflow” media processor.
+3. Get the "Media Encoder Premium Workflow" media processor.
 -->
 <!-- keep by customization: begin -->
 3. Get the âMedia Encoder Premium Workflowâ media processor.

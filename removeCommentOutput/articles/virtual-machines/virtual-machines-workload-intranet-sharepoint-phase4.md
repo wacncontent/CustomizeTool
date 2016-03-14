@@ -169,7 +169,7 @@ Use these steps to configure the first SharePoint server in the farm:
  - In **Password**, type the sp_farm_db account password.
 6.	Click **Next**.
 7.	On the **Specify Farm Security Settings** page, type a passphrase twice. Record the passphrase and store it in a secure location for future reference. Click **Next**.
-8.	On the **Configure SharePoint Central Administration web site** page, click **Next**.
+8.	On the **Configure SharePoint Central Administration Web Application** page, click **Next**.
 9.	The **Completing the SharePoint Products Configuration Wizard** page appears. Click **Next**.
 10.	The **Configuring SharePoint Products** page appears. Wait until the configuration process finishes, about 8 minutes.
 11.	After the farm is successfully configured, click **Finish**. The new administration website starts.

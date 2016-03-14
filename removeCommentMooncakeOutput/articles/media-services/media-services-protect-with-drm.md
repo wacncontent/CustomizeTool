@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/17/2015"
+	ms.date="01/10/2016" 
 	wacn.date=""/>
 
 
@@ -28,7 +28,7 @@ Starting with the Media Services .NET SDK version 3.5.2, Media Services also ena
 
 >[AZURE.NOTE]Widevine license delivery services provided by Azure Media Sevices is in preview. For more information see [this blog](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/).
 
-You can also use the following AMS partners to help you deliver Widevine licenses: [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/). For more information, see: integration with [castLabs](/documentation/articles/media-services-castlabs-integration).
+You can also use the following AMS partners to help you deliver Widevine licenses: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/). For more information, see: integration with [Axinom](/documentation/articles/media-services-axinom-integration) and [castLabs](/documentation/articles/media-services-castlabs-integration).
 
 Media Services supports multiple ways of authorizing users who make key requests. The content key authorization policy could have one or more authorization restrictions: open or token restriction. The token restricted policy must be accompanied by a token issued by a Secure Token Service (STS). Media Services supports tokens in the [Simple Web Tokens](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2) (SWT) format and [JSON Web Token](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_3) (JWT) format. For more information, see Configure the content key's authorization policy.
 
@@ -121,13 +121,13 @@ Get a test token based on the token restriction that was used for the key author
 	    TokenRestrictionTemplateSerializer.Deserialize(tokenTemplateString);
 	
 	// Generate a test token based on the data in the given TokenRestrictionTemplate.
-	//The GenerateTestToken method returns the token without the word âBearerâ in front
+	//The GenerateTestToken method returns the token without the word "Bearer" in front
 	//so you have to add it in front of the token string. 
 	string testToken = TokenRestrictionTemplateSerializer.GenerateTestToken(tokenTemplate);
 	Console.WriteLine("The authorization token is:\nBearer {0}", testToken);
 
 	
-You can use the [AMS Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) to test your stream.
+
 
 ##<a id="example"></a>Example
 
@@ -185,6 +185,12 @@ The following sample demonstrates functionality that was introduced in Azure Med
 		        private static readonly string _mediaServicesAccountKey =
 		            ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 		
+				private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+				// Azure China uses a different API server and a different ACS Base Address from the Global.
+				private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+				private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+
 		        private static readonly Uri _sampleIssuer =
 		            new Uri(ConfigurationManager.AppSettings["Issuer"]);
 		        private static readonly Uri _sampleAudience =
@@ -205,9 +211,15 @@ The following sample demonstrates functionality that was introduced in Azure Med
 		            // Create and cache the Media Services credentials in a static class variable.
 		            _cachedCredentials = new MediaServicesCredentials(
 		                            _mediaServicesAccountName,
-		                            _mediaServicesAccountKey);
+		                            _mediaServicesAccountKey,
+									_defaultScope,
+									_chinaAcsBaseAddressUrl);
+
+					// Create the API server Uri
+					_apiServer = new Uri(_chinaApiServerUrl);
+
 		            // Used the cached credentials to create CloudMediaContext.
-		            _context = new CloudMediaContext(_cachedCredentials);
+		            _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 		
 		            bool tokenRestriction = false;
 		            string tokenTemplateString = null;
@@ -607,7 +619,7 @@ The following sample demonstrates functionality that was introduced in Azure Med
 		    }
 		}
 
-[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
 
 
 ##See also

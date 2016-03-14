@@ -24,7 +24,7 @@ This article describes different ways to tag a virtual machine in Azure through 
 
 First, let's look at tagging through templates. [This template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm) places tags on the following resources: Compute (Virtual Machine), Storage (Storage Account), and Network (Public IP Address, Virtual Network, and Network Interface).
 
-Click the **Deploy to Azure** button from the [template link](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm). This will navigate to the [Azure <!-- deleted by customization Management Portal](http://manage.windowsazure.cn/) --><!-- keep by customization: begin --> Preview Portal](https://manage.windowsazure.cn) <!-- keep by customization: end --> where you can deploy this template.
+Click the **Deploy to Azure** button from the [template link](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm). This will navigate to the [Azure Management Portal](http://manage.windowsazure.cn/) where you can deploy this template.
 
 ![Simple deployment with Tags](./media/virtual-machines-tagging-arm/deploy-to-azure-tags.png)
 
@@ -34,9 +34,9 @@ This template includes the following tags: *Department*, *Application*, and *Cre
 
 As you can see, the tags are defined as Key/Value pairs, separated by a colon (:). The tags must be defined in this format:
 
-        “tags”: {
-            “Key1” : ”Value1”,
-            “Key2” : “Value2”
+        "tags": {
+            "Key1" : "Value1",
+            "Key2" : "Value2"
         }
 
 Save the template file after you finish editing it with the tags of your choice.

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/15/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Install and use Spark on HDInsight Hadoop clusters using Script Action

@@ -158,7 +158,7 @@ For example, edit  the vim /etc/fstab file, adding the noatime as shown below.
 
 	# CLOUD_IMG: This file was created/modified by the Cloud Image build process
 	UUID=3cc98c06-d649-432d-81df-6dcd2a584d41       /        ext4   defaults,discard        0 0
-	#Add the “noatime” option below to disable atime logging
+	#Add the "noatime" option below to disable atime logging
 	UUID="431b1e78-8226-43ec-9460-514a9adf060e"     /RAID0   xfs   defaults,nobootwait, noatime 0 0
 	/dev/sdb1       /mnt    auto    defaults,nobootwait,comment=cloudconfig 0       2
 
@@ -196,8 +196,8 @@ Run the following commands:
 ###Step 3: Ensure that the limits are updated at boot time
 Put the following startup commands in the /etc/rc.local file so it will take effect during every boot time.  
 
-	echo “ulimit -SHn 65536” >>/etc/rc.local
-	echo “ulimit -SHu 65536” >>/etc/rc.local
+	echo "ulimit -SHn 65536" >>/etc/rc.local
+	echo "ulimit -SHu 65536" >>/etc/rc.local
 
 ##MySQL database optimization
 You can use the same performance tuning strategy to configure MySQL on Azure as on an on-premises machine.  
@@ -237,7 +237,7 @@ Please note that by default this is not enabled. Turning on the slow query log m
 ###Step 2: Restart mysql server
 	service  mysql  restart
 
-###Step 3: Check whether the setting is taking effect using the “show” command
+###Step 3: Check whether the setting is taking effect using the "show" command
 
 ![][7]   
 

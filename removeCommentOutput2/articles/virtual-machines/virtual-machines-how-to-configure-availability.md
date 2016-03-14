@@ -32,9 +32,9 @@ In the classic deployment model, you can put virtual machines into an availabili
 
 You can use either the Azure Management Portal or Azure PowerShell commands to do this.
 
-To use the portal:
+To use the Azure Management Portal:
 
-1. If you haven't already done so, sign in to the [portal](http://manage.windowsazure.cn).
+1. If you haven't already done so, sign in to the Azure Management Portal.
 
 2. On the command bar, click **New**.
 
@@ -67,10 +67,10 @@ To use Azure PowerShell commands to create an Azure virtual machine and add it t
 
 ## <a id="addmachine"> </a>Option 2: Add an existing virtual machine to an availability set##
 
-In the portal, you can add existing virtual machines to an existing availability set
+In the Azure Management Portal, you can add existing virtual machines to an existing availability set
  or create a new one for them. (Keep in mind that the virtual machines in the same availability set must belong to the same cloud service.) The steps are almost the same. With Azure PowerShell, you can add the virtual machine to an existing availability set.
 
-1. If you have not already done so, sign in to the [portal](http://manage.windowsazure.cn).
+1. If you have not already done so, sign in to the Azure Management Portal.
 
 2. On the command bar, click **Virtual Machines**.
 

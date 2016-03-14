@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Optimize your Hive queries for faster execution in HDInsight | Windows Azure"
    description="Learn how to optimize your Hive queries for Hadoop in HDInsight."

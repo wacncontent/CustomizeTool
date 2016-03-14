@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create a Node.js web site on Azure with MongoDB using the MongoLab add-on"
-	description="Learn how to create a Node.js web site in Azure Websites that connects to a MongoDB instance hosted on MongoLab."
+	pageTitle="Create a Node.js web app on Azure with MongoDB using the MongoLab add-on"
+	description="Learn how to create a Node.js web app in Azure Websites that connects to a MongoDB instance hosted on MongoLab."
 	tags="azure-classic-portal"
 	services="app-service\web, virtual-machines"
 	documentationCenter="nodejs"
@@ -18,7 +18,7 @@
 
 
 
-# Create a Node.js web site on Azure with MongoDB using the MongoLab add-on
+# Create a Node.js web app on Azure with MongoDB using the MongoLab add-on
 
 
 *By Eric Sedor, MongoLab*
@@ -47,7 +47,7 @@ Before continuing, ensure that you have the following installed:
 <a name="create"></a>
 ## Create the app
 
-In this section you will set up your development environment and lay the code for a basic task list web site using Node.js, Express, and MongoDB. [Express] provides a View Controller framework for node, while [Mongoose] is a driver for communicating with MongoDB in node.
+In this section you will set up your development environment and lay the code for a basic task list web application using Node.js, Express, and MongoDB. [Express] provides a View Controller framework for node, while [Mongoose] is a driver for communicating with MongoDB in node.
 
 ### Setup
 
@@ -365,9 +365,9 @@ Now that our environment and scaffolding is ready, we'll extend the basic applic
 <a name="deploy"></a>
 ## Deploy the app
 
-Now that the application has been developed, it's time to create a web site in Azure Websites to host it, configure that web site, and deploy the code. Central to this section is the use of the MongoDB connection string (URI). You're going to configure an environment variable in your web site with this URI to keep the URI separate from your code.  You should treat the URI as sensitive information as it contains credentials to connect to your database.
+Now that the application has been developed, it's time to create a web app in Azure Websites to host it, configure that web app, and deploy the code. Central to this section is the use of the MongoDB connection string (URI). You're going to configure an environment variable in your web app with this URI to keep the URI separate from your code.  You should treat the URI as sensitive information as it contains credentials to connect to your database.
 
-The steps in this section use the Azure Command-Line Interface for Mac, Linux, and Windows to create a new web site in Azure Websites, and then use Git to deploy your application. To perform these steps you must have an Azure subscription.
+The steps in this section use the Azure Command-Line Interface for Mac, Linux, and Windows to create a new web app in Azure Websites, and then use Git to deploy your application. To perform these steps you must have an Azure subscription.
 
 ### Install the Azure CLI
 
@@ -408,23 +408,23 @@ Before using the Azure CLI, you must first download a file containing informatio
 
 3. Once the import has completed, you should delete the publish settings file as it is no longer needed and contains sensitive information regarding your Azure subscription.
 
-### Create a new web site and push your code
+### Create a new web app and push your code
 
-Creating a web site in Azure Websites is very easy. If this is your first Azure web site, you must use the portal. If you already have at least one, then skip to step 7.
+Creating a web app in Azure Websites is very easy. If this is your first Azure web app, you must use the portal. If you already have at least one, then skip to step 7.
 
 1. In the Azure Management Portal, click **New**.
 ![New][button-new]
-2. Select **Compute > web sites > Quick Create**.
-<!-- ![Create web site][screen-mongolab-newwebsite] -->
+2. Select **Compute > Web app > Quick Create**.
+<!-- ![Create Web App][screen-mongolab-newwebsite] -->
 3. Enter a URL prefix. Choose a name you prefer, but keep in mind this must be unique ('mymongoapp' will likely not be available).
-4. Click **Create web site**.
-5. When the web site creation completes, click the web site name in the web sites list. The web site dashboard displays.
-<!-- ![web site Dashboard][screen-mongolab-websitedashboard] -->
-6. Click **Set up deployment from source control** under **quick glance**, select GitHub, and enter your desired git user name and password. You will use this password when pushing to your web site (in step 9).  
-7. If you created your web site using the steps above, the following command will complete the process. However, if you already have more than one web site, you can skip the above steps and create a new web site using this same command. From your **tasklist** project directory:
+4. Click **Create web app**.
+5. When the web app creation completes, click the web app name in the web apps list. The Web App dashboard displays.
+<!-- ![Web App Dashboard][screen-mongolab-websitedashboard] -->
+6. Click **Set up deployment from source control** under **quick glance**, select GitHub, and enter your desired git user name and password. You will use this password when pushing to your web app (in step 9).  
+7. If you created your web app using the steps above, the following command will complete the process. However, if you already have more than one web app, you can skip the above steps and create a new web app using this same command. From your **tasklist** project directory:
 
 		azure site create myuniquewebappname --git  
-	Replace 'myuniquewebappname' with the unique name for your web site. If the web site is created as part of this command, you will be prompted for the datacenter that the web site will be located in. Select the datacenter geographically close to your MongoLab database.
+	Replace 'myuniquewebappname' with the unique name for your web app. If the web app is created as part of this command, you will be prompted for the datacenter that the web app will be located in. Select the datacenter geographically close to your MongoLab database.
 
 	The `--git` parameter will create:
 	* a local git repository in the **tasklist** folder, if none exists.
@@ -432,7 +432,7 @@ Creating a web site in Azure Websites is very easy. If this is your first Azure 
 	* an [iisnode.yml] file, which contains settings used by Azure to host node applications.
 	* a .gitignore file to prevent the node-modules folder from being published to .git.  
 
-	Once this command has completed, you will see output similar to the following. Note that the line beginning with **Created site at** contains the URL for the web site.
+	Once this command has completed, you will see output similar to the following. Note that the line beginning with **Created site at** contains the URL for the web app.
 
 		info:   Executing command site create
 		info:   Using location southcentraluswebspace
@@ -454,7 +454,7 @@ Creating a web site in Azure Websites is very easy. If this is your first Azure 
 
 		git push azure master  
 
-	When pushing the latest Git repository changes to the web site in Azure Websites, you must specify that the target branch is **master** as this is used for the web site content. If prompted for a password, enter the password you created when you set up git publishing for your web site above.
+	When pushing the latest Git repository changes to the web app in Azure Websites, you must specify that the target branch is **master** as this is used for the web app content. If prompted for a password, enter the password you created when you set up git publishing for your web app above.
 
 	You will see output similar to the following. As the deployment takes place Azure will download all npm modules.
 
@@ -483,13 +483,13 @@ Remember process.env.CUSTOMCONNSTR_MONGOLAB_URI in the code? We want to populate
 
 [AZURE.INCLUDE [howto-get-connectioninfo-mongolab](../includes/howto-get-connectioninfo-mongolab.md)]
 
-#### Add the connection string to the web site's environment variables
+#### Add the connection string to the web app's environment variables
 
 [AZURE.INCLUDE [howto-save-connectioninfo-mongolab](../includes/howto-save-connectioninfo-mongolab.md)]
 
 ## Success!
 
-Run `azure site browse` from your project directory to automatically open a browser, or open a browser and manually navigate to your web site URL (myuniquewebappname.chinacloudsites.cn):
+Run `azure site browse` from your project directory to automatically open a browser, or open a browser and manually navigate to your web app URL (myuniquewebappname.chinacloudsites.cn):
 
 ![A webpage displaying an empty tasklist][node-mongo-finished]
 
@@ -531,7 +531,7 @@ Congratulations! You've just launched a Node.js application backed by a MongoLab
 [Create and deploy a Node.js application to Azure Web Sites]: /develop/nodejs/tutorials/create-a-website-(mac)/
 [Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control
 [MongoLab]: http://mongolab.com
-[Node.js web site with Storage on MongoDB (Virtual Machine)]: /develop/nodejs/tutorials/website-with-mongodb-(mac)/
+[Node.js Web Application with Storage on MongoDB (Virtual Machine)]: /develop/nodejs/tutorials/website-with-mongodb-(mac)/
 [node-mongo-finished]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/todo_list_noframe.png
 [node-mongo-express-results]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/express_output.png
 [download-publishing-settings]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/azure-account-download-cli.png

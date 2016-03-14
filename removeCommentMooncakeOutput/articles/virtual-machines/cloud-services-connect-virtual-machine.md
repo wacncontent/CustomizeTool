@@ -11,13 +11,12 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/15/2015"
-        wacn.date=""/>
-
+	wacn.date=""/>
 
 
 # Connect virtual machines created with the classic deployment model with a virtual network or cloud service
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 Virtual machines created with the classic deployment model are always placed in a cloud service. The cloud service acts as a container and provides a unique public DNS name, a public IP address, and a set of endpoints to access the virtual machine over the Internet. The cloud service can be in a virtual network, but that's not a requirement.

@@ -26,7 +26,7 @@ To create a SQL Server virtual machine in Azure, you must first obtain an Azure 
 
 After signing up for a subscription, the easiest way to deploy a SQL Server virtual machine in Azure is to [provision a SQL Server machine gallery image in the Azure Management Portal](/documentation/articles/virtual-machines-provision-sql-server). Those images include licensing of SQL Server in the pricing for the VM.
 
->[AZURE.NOTE] Use the [new Portal](https://manage.windowsazure.cn) to provision and manage SQL Server Virtual Machines. It defaults to using Premium Storage and offers Automated Patching, Automated Backup, and AlwaysOn configurations.
+>[AZURE.NOTE] Use the Azure Management Portal to provision and manage SQL Server Virtual Machines. It defaults to using Premium Storage and offers Automated Patching, Automated Backup, and AlwaysOn configurations.
 
 The following table provides a matrix of available SQL Server images in the virtual machine gallery.
 
@@ -57,7 +57,7 @@ After your SQL Server virtual machine is up and running, you might want to migra
 
 ## High availability
 
-If you require high availability, consider configuring SQL Server AlwaysOn Availability Groups. This involves multiple Azure VMs in a virtual network. The Azure Preview Portal has a template that sets up this configuration for you. For more information, see [SQL Server AlwaysOn Offering in Windows Azure Management Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). 
+If you require high availability, consider configuring SQL Server AlwaysOn Availability Groups. This involves multiple Azure VMs in a virtual network. The Azure Management Portal has a template that sets up this configuration for you. For more information, see [SQL Server AlwaysOn Offering in Azure Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). 
 
 If you want to manually configure your Availability Group and associated listener, see the following articles:
 
@@ -128,13 +128,13 @@ The following database engine settings are configured. For more settings, examin
 
 ### Customer Experience Improvement Program (CEIP)
 
-The [Customer Experience Improvement Program (CEIP)](https://technet.microsoft.com/zh-cn/library/cc730757.aspx) is enabled. You can disable the CEIP by using the SQL Server Error and Usage Reporting utility. To launch the SQL Server Error and Usage Reporting utility; on the Start menu, click All Programs, click Microsoft SQL Server version, click Configuration Tools, and then click SQL Server Error and Usage Reporting. If you do not want to use an instance of SQL Server with CEIP enabled, you might also consider deploying your own virtual machine image to Azure.Â  For more information, see [Creating and Uploading a Virtual Hard Disk that Contains the Windows Server Operating System](/documentation/articles/virtual-machines-create-upload-vhd-windows-server).
+The [Customer Experience Improvement Program (CEIP)](https://technet.microsoft.com/zh-cn/library/cc730757.aspx) is enabled. You can disable the CEIP by using the SQL Server Error and Usage Reporting utility. To launch the SQL Server Error and Usage Reporting utility; on the Start menu, click All Programs, click Microsoft SQL Server version, click Configuration Tools, and then click SQL Server Error and Usage Reporting. If you do not want to use an instance of SQL Server with CEIP enabled, you might also consider deploying your own virtual machine image to Azure.ĂÂ  For more information, see [Creating and Uploading a Virtual Hard Disk that Contains the Windows Server Operating System](/documentation/articles/virtual-machines-create-upload-vhd-windows-server).
 
 ## Run SQL Server setup from the platform-provided SQL Server image
 
 If you create a virtual machine by using a platform-provided SQL Server image, you can find the SQL Server setup media saved on the virtual machine in the **C:\SqlServer_SQLMajorVersion.SQLMinorVersion_Full** directory. You can run setup from this directory to perform any setup actions including add or remove features, add a new instance, or repair the instance if the disk space permits.
 
->[AZURE.NOTE] Azure provides multiple versions of the SQL Server images on the portal. If the version release date of SQL Server platform-provided image is May 15th, 2014 or later, it contains the product key by default. If you provision a virtual machine by using a platform-provided SQL Server image that is published before this date, that VM does not contain the product key. As a best practice, we recommend that you always select the latest image version when you provision a new VM.
+>[AZURE.NOTE] Azure provides multiple versions of the SQL Server images. If the version release date of SQL Server platform-provided image is May 15th, 2014 or later, it contains the product key by default. If you provision a virtual machine by using a platform-provided SQL Server image that is published before this date, that VM does not contain the product key. As a best practice, we recommend that you always select the latest image version when you provision a new VM.
 
 ## Resources
 

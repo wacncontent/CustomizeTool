@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Authoring Templates with Azure VM Extensions | Windows Azure"
    description="Learn more about authoring Templates with Extensions"
@@ -9,13 +11,14 @@
    tags="azure-resource-manager"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.date="09/01/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 # Authoring Azure Resource Manager Templates with VM Extensions.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)] This article covers using the Resource Manager deployment model. 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)]
+ 
 
 ## Overview of Azure Resource Manager Templates.
 

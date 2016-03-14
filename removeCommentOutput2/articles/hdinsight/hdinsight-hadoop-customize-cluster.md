@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Customize HDInsight Clusters using script actions | Windows Azure"
 	description="Learn how to customize HDInsight clusters using Script Action."

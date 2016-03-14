@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/28/2015"
+	ms.date="12/29/2015"
 	wacn.date=""/>
 
 
@@ -62,7 +62,7 @@ The Azure CLI is a cross-platform tool that allows you to manage Azure services.
 
 2. Open a command prompt, bash, or other shell, and use the following to authenticate to your Azure subscription.
 
-		azure login <!-- keep by customization: begin --> -e AzureChinaCloud <!-- keep by customization: end -->
+		azure login <!-- keep by customization: begin --> -e AzureChinaCloud -u <your account> <!-- keep by customization: end -->
 
 	When prompted, enter the user name and password for your subscription.
 
@@ -119,8 +119,13 @@ Azure PowerShell is a scripting environment that you can use to control and auto
 		Select-AzureSubscription $subscriptionName
 
 		# Get the storage account key
+<!-- deleted by customization
+		$storageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName | %{ $_.Key1 }
+-->
+<!-- keep by customization: begin -->
 		$storageaccountkey = get-azurestoragekey -ResourceGroupName $resourceGroupName -Name $storageAccountName | %{$_.Primary}
 
+<!-- keep by customization: end -->
 		# Create the storage context object
 		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageaccountkey
 

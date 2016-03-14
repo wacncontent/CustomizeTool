@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="11/11/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Widevine License Template Overview
@@ -23,31 +23,31 @@ Widevine license request is formatted as a JSON message.
 Note that you can choose to create an empty message with no values just "{}" and a license template will be created with all defaults.  
 
 	{  
-	   “payload”:“<license challenge>”,
-	   “content_id”: “<content id>” 
-	   “provider”: ”<provider>”
-	   “allowed_track_types”:“<types>”,
-	   “content_key_specs”:[  
+	   "payload":"<license challenge>",
+	   "content_id": "<content id>" 
+	   "provider": "<provider>"
+	   "allowed_track_types":"<types>",
+	   "content_key_specs":[  
 	      {  
-	         “track_type”:“<track type 1>”
+	         "track_type":"<track type 1>"
 	      },
 	      {  
-	         “track_type”:“<track type 2>”
+	         "track_type":"<track type 2>"
 	      },
 	      …
 	   ],
-	   “policy_overrides”:{  
-	      “can_play”:<can play>,
-	      “can persist”:<can persist>,
-	      “can_renew”:<can renew>,
-	      “rental_duration_seconds”:<rental duration>,
-	      “playback_duration_seconds”:<playback duration>,
-	      “license_duration_seconds”:<license duration>,
-	      “renewal_recovery_duration_seconds”:<renewal recovery duration>,
-	      “renewal_server_url”:”<renewal server url>”,
-	      “renewal_delay_seconds”:<renewal delay>,
-	      “renewal_retry_interval_seconds”:<renewal retry interval>,
-	      “renew_with_usage”:<renew with usage>
+	   "policy_overrides":{  
+	      "can_play":<can play>,
+	      "can persist":<can persist>,
+	      "can_renew":<can renew>,
+	      "rental_duration_seconds":<rental duration>,
+	      "playback_duration_seconds":<playback duration>,
+	      "license_duration_seconds":<license duration>,
+	      "renewal_recovery_duration_seconds":<renewal recovery duration>,
+	      "renewal_server_url":"<renewal server url>",
+	      "renewal_delay_seconds":<renewal delay>,
+	      "renewal_retry_interval_seconds":<renewal retry interval>,
+	      "renew_with_usage":<renew with usage>
 	   }
 	}
 

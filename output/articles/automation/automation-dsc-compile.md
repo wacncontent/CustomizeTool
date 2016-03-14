@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
    pageTitle="Compiling configurations in Azure Automation DSC | Windows Azure" 
    description="Overview of two ways to compile Desired State Configuration (DSC) configurations: In the Azure Management Portal, and with Windows PowerShell. " 

@@ -28,7 +28,7 @@ Visit [the Virtual Network documentation](/documentation/services/networking/) t
 
 ### What services can I use with VNets?
 
-VNets can be used with a variety of different Azure services, such as Cloud Services (PaaS), Virtual Machines, and web sites. However, there are a few services that are not supported on a VNet. Please check the specific service you want to use and verify that it is compatible.
+VNets can be used with a variety of different Azure services, such as Cloud Services (PaaS), Virtual Machines, and Web Apps. However, there are a few services that are not supported on a VNet. Please check the specific service you want to use and verify that it is compatible.
 
 ### Can I use VNets without cross-premises connectivity?
 
@@ -217,9 +217,9 @@ Yes. All services deployed within a VNet can connect to the Internet. Additional
 
 You can only use compute services within VNets. Compute services are limited to Cloud Services (web and worker roles) and VMs.
 
-- [Using VNet Integration and Hybrid Connections with web sites](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
+- [Using VNet Integration and Hybrid Connections with Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 
-- [Integrate a web site with an Azure Virtual Network](/documentation/articles/web-sites-integrate-with-vnet)
+- [Integrate a web app with an Azure Virtual Network](/documentation/articles/web-sites-integrate-with-vnet)
 
 ### Can I deploy cloud services with web and worker roles (PaaS) in a VNet?
 

@@ -14,12 +14,7 @@
 	wacn.date=""/>
 
 
-<!-- deleted by customization
 # Equivalent Resource Manager and Service Management commands for VM tasks with the Azure command-line interface
--->
-<!-- keep by customization: begin -->
-# Equivalent Resource Manager and Service Management commands for VM tasks with the Azure CLI for Mac, Linux, and Windows
-<!-- keep by customization: end -->
 This article shows equivalent Windows Azure command-line interface (Azure CLI) commands to create and manage Azure VMs in Azure Service Management and Azure Resource Manager. Use this as a handy guide to migrate scripts from one command mode to the other.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
@@ -28,26 +23,21 @@ This article shows equivalent Windows Azure command-line interface (Azure CLI) c
 
 * If you haven't already installed the Azure CLI and connected to your subscription, see [Install the Azure CLI](/documentation/articles/xplat-cli-install) and [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect). When you want to use the Resource Manager mode commands, be sure to connect with the login method.
 
-* To get started with the Resource Manager mode in the Azure CLI <!-- deleted by customization, you might need to --><!-- keep by customization: begin --> and <!-- keep by customization: end --> switch command modes <!-- keep by customization: begin -->, see [Using the Azure Command-Line Interface with the Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager) <!-- keep by customization: end -->. By default the CLI starts in Service Management mode. To change to Resource Manager mode, run `azure config mode arm`. To go back to Service Management mode, run `azure config mode asm`.
+* To get started with the Resource Manager mode in the Azure CLI, you might need to switch command modes. By default the CLI starts in Service Management mode. To change to Resource Manager mode, run `azure config mode arm`. To go back to Service Management mode, run `azure config mode asm`.
 
 * For online command help and options, type `azure <command> <subcommand> --help` or `azure help <command> <subcommand>`.
 
 ## VM tasks
 The next table compares common VM tasks you can perform with Azure CLI commands in Service Management and Resource Manager. With many Resource Manager commands you need to pass the name of an existing resource group.
 
-<!-- deleted by customization
 > [AZURE.NOTE] These examples don't include template-based operations which are generally recommended for VM deployments in Resource Manager. For information, see [Use the Azure CLI with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager) and [Deploy and manage virtual machines by using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli).
--->
-<!-- keep by customization: begin -->
-> [AZURE.NOTE] These examples don't include template-based operations in Resource Manager. For information, see [Using the Azure Command-Line Interface with the Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager).
-<!-- keep by customization: end -->
 
 Task | Service Management | Resource Manager
 -------------- | ----------- | -------------------------
-Create the most basic VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>`<br/><br/>(Obtain the `image-urn` from the `azure vm image list` <!-- deleted by customization command. See [this article](/documentation/articles/resource-groups-vm-searching) for examples.) --><!-- keep by customization: begin --> command.) <!-- keep by customization: end -->
+Create the most basic VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>`<br/><br/>(Obtain the `image-urn` from the `azure vm image list` command. See [this article](/documentation/articles/resource-groups-vm-searching) for examples.)
 Create a Linux VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure  vm create [options] <resource-group> <name> <location> -y "Linux"`
 Create a Windows VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure  vm create [options] <resource-group> <name> <location> -y "Windows"`
-List VMs | `azure  vm list [options]` | `azure  vm list <!-- deleted by customization [options]` --><!-- keep by customization: begin --> [options] <resource_group>` <!-- keep by customization: end -->
+List VMs | `azure  vm list [options]` | `azure  vm list [options]`
 Get information about a VM | `azure  vm show [options] <vm_name>` | `azure  vm show [options] <resource_group> <name>`
 Start a VM | `azure vm start [options] <name>` | `azure vm start [options] <resource_group> <name>`
 Stop a VM | `azure vm shutdown [options] <name>` | `azure vm stop [options] <resource_group> <name>`
@@ -65,13 +55,7 @@ Add Docker extension to a VM | `azure  vm docker create [options] <dns-name> <im
 Add Chef extension to a VM | `azure  vm extension get-chef [options] <vm-name>` | Not available
 Disable a VM extension | `azure  vm extension set [options] -b <vm-name> <extension-name> <publisher-name> <version>` | Not available
 Remove a VM extension | `azure  vm extension set [options] -u <vm-name> <extension-name> <publisher-name> <version>` | `azure  vm extension set [options] -u <resource-group> <vm-name> <name> <publisher-name> <version>`
-<!-- deleted by customization
 List VM extensions | `azure vm extension list [options]` | Not available
--->
-<!-- keep by customization: begin -->
-List VM extensions | `azure vm extension list [options]` | `azure  vm extension get [options] <resource-group> <vm-name>`
-List VM images | `azure vm image list [options]` | `azure vm image list [options] <location> <publisher> [offer] [sku]` -OR- <br/> `azure vm image list-publishers [options] <location>` -OR- <br/> `azure vm image list-offers [options] <location>` -OR- <br/> `azure vm image list-skus [options] <location>`
-<!-- keep by customization: end -->
 Show a VM image | `azure vm image show [options]` | Not available
 Get usage of VM resources | Not available | `azure vm list-usage [options] <location>`
 Get all available VM sizes | Not available | `azure vm sizes [options]`
@@ -79,8 +63,5 @@ Get all available VM sizes | Not available | `azure vm sizes [options]`
 
 ## Next steps
 
-<!-- keep by customization: begin -->
-* For more about using the Azure CLI to work with Resource Manager resources, see [Using the Azure Command-Line Interface with the Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager) and [Managing Role-Based Access Control with the Azure Command-Line Interface](/documentation/articles/role-based-access-control-xplat-cli-install).
-<!-- keep by customization: end -->
 * For additional examples of the CLI commands, see [Using the Azure Command-Line Interface with Azure Service Management](/documentation/articles/virtual-machines-command-line-tools) and
 [Using the Azure CLI with Azure Resource Manager](/documentation/articles/azure-cli-arm-commands).

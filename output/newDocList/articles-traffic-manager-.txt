@@ -1,5 +1,4 @@
-new docs: 21, word count: 21213
-articles/traffic-manager/automation-manage-trafficmanager.md
+new docs: 20, word count: 21097
 articles/traffic-manager/disable-enable-or-delete-a-profile.md
 articles/traffic-manager/disable-or-enable-an-endpoint.md
 articles/traffic-manager/testing-traffic-manager-settings.md

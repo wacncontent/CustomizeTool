@@ -11,8 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="11/05/2015"
-    wacn.date=""/>
-
+	wacn.date=""/>
 
 #Capture an image of an Azure Windows virtual machine created with the classic deployment model.
 
@@ -32,7 +31,7 @@ These steps assume that you've already created an Azure virtual machine and conf
 
 > [AZURE.WARNING] This process deletes the original virtual machine after it's captured. 
 
-This is not intended as a way to back up a virtual machine. One possible way to do that is Azure Backup, which is available as a preview in certain regions. For details, see [Back up Azure virtual machines](/documentation/articles/backup-azure-vms). Other solutions are available from certified partners. To find out whatâs currently available, search the Azure Marketplace.
+This is not intended as a way to back up a virtual machine. One possible way to do that is Azure Backup, which is available as a preview in certain regions. For details, see [Back up Azure virtual machines](/documentation/articles/backup-azure-vms). Other solutions are available from certified partners. To find out whatâs currently available, search the Azure gallery.
 
 
 ##Capture the virtual machine

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Hadoop tutorial: Get started with Hadoop on Windows | Windows Azure"
    description="Get started with Hadoop in HDInsight. Learn how to create Hadoop clusters on Windows, run a Hive query on data, and analyze output in Excel."
@@ -191,7 +193,7 @@ In this Hadoop tutorial, you learned how to create a Hadoop cluster on Windows i
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 
 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1

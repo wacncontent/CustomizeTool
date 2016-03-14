@@ -28,7 +28,7 @@ To create Docker-enabled VMs right now, see:
 
 + [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]
 + [How to use the Docker VM Extension with the Azure Management Portal]
-+ [How to Get Started Quickly with Docker in the Azure Marketplace]
++ [How to Get Started Quickly with Docker in the Azure gallery]
 
 To learn more about the extension and how it works, see the [Docker Extension User Guide](https://github.com/Azure/azure-docker-extension/blob/master/README.md).
 
@@ -70,12 +70,12 @@ To create Docker-enabled VMs right now, see:
 ## Virtual Machine Extensions for Linux and Windows
 The [Docker VM extension for Azure](https://github.com/Azure/azure-docker-extension/blob/master/README.md) is just one of several VM extensions that provide special behaviour, and more are in development. For example, several of the [Linux VM Agent extension](/documentation/articles/virtual-machines-linux-agent-user-guide) features allow you to modify and manage the Virtual Machine, including security features, kernel and networking features, and so on. The VMAccess extension for example lets you reset the administrator password or SSH key.
 
-For a complete list, see [Azure VM Extensions](http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx).
+For a complete list, see [Azure VM Extensions](/documentation/articles/virtual-machines-extensions-features).
 
 <!--Anchors-->
 [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]: /documentation/articles/virtual-machines-docker-with-xplat-cli/
 [How to use the Docker VM Extension with the Azure Management Portal]: /documentation/articles/virtual-machines-docker-with-portal/
-[How to Get Started Quickly with Docker in the Azure Marketplace]: /documentation/articles/virtual-machines-docker-ubuntu-quickstart/
+[How to Get Started Quickly with Docker in the Azure gallery]: /documentation/articles/virtual-machines-docker-ubuntu-quickstart/
 [Docker and Linux Containers]: #Docker-and-Linux-Containers
 [How to use the Docker VM Extension with Azure]: #How-to-use-the-Docker-VM-Extension-with-Azure
 [Virtual Machine Extensions for Linux and Windows]: #Virtual-Machine-Extensions-For-Linux-and-Windows

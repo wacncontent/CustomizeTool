@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/virtual-networks-create-vnet-arm-ps)
 - [Azure CLI](/documentation/articles/virtual-networks-create-vnet-arm-cli)

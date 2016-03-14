@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="Troubleshooting Azure VM extensions failures | Windows Azure"
    description="Learn about troubleshooting Azure VM extension failures"

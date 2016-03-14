@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Configure web sites in Azure Websites" 
-	description="How to configure a web site in Azure Websitess" 
+	pageTitle="Configure web apps in Azure" 
+	description="How to configure a web app in Azure" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="erikre" 
@@ -13,16 +13,16 @@
 	wacn.date=""/>
 
 
-# Configure web sites in Azure Websites #
+# Configure web apps in Azure #
 <!-- deleted by customization
 
-This topic explains how to configure a web site using the [Azure Management Portal](https://manage.windowsazure.cn/).
+This topic explains how to configure a web app using the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
 ## Application settings
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn), open the blade for the web site.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn), open the blade for the web app.
 2. Click **Configure**.
 3. Click **Application Settings**.
 
@@ -50,7 +50,7 @@ In the Azure Management Portal, you can change the configuration options for web
 To set configuration options for a website:
 
 1. In the [Management Portal](https://manage.windowsazure.cn/), open the Website's management pages.
-1. Click the <strong>Configure</strong> tab.
+1. Click the **Configure** tab.
 
 The **Configure** tab has the following sections:
 <!-- keep by customization: end -->
@@ -58,36 +58,113 @@ The **Configure** tab has the following sections:
 
 **Framework versions**. Set these options if your app uses any these frameworks: 
 
-- **.NET Framework**: Set the .NET framework version. 
-- **PHP**: Set the PHP version, or **OFF **to disable PHP. 
+- **.NET <!-- deleted by customization Framework** --><!-- keep by customization: begin --> Framework Version** <!-- keep by customization: end -->: Set the .NET framework version.
+- <!-- deleted by customization **PHP** --><!-- keep by customization: begin --> **PHP Version** <!-- keep by customization: end -->: Set the PHP version, or **OFF **to disable PHP.
+<!-- deleted by customization
 - **Java**: Select the Java version or **OFF** to disable Java. Use the **Web Container** option to choose between Tomcat and Jetty versions.
 - **Python**: Select the Python version, or **OFF** to disable Python.
+-->
+<!-- keep by customization: begin -->
+- **Java Version**: Select the displayed version to enable Java, or **OFF** to disable Java. 
+- **Python Version**: Select the Python version, or **OFF** to disable Python.
+<!-- keep by customization: end -->
 
 For technical reasons, enabling Java for your app disables the .NET, PHP, and Python options.
 
-<a name="platform"></a>
-**Platform**. Selects whether your web site runs in a 32-bit or 64-bit environment. The 64-bit environment requires Basic or Standard mode. Free and Shared modes always run in a 32-bit environment.
+<!-- keep by customization: begin -->
+**Managed Pipeline Mode**. Sets the IIS [pipeline mode](http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application). Leave this set to Integrated (the default) unless you have a legacy website that requires an older version of IIS.
 
-**Web Sockets**. Set **ON** to enable the WebSocket protocol; for example, if your web site uses [ASP.NET SignalR](http://www.asp.net/signalr) or [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio).
+<!-- keep by customization: end -->
+<a name="platform"></a>
+**Platform**. Selects whether your <!-- deleted by customization web app --><!-- keep by customization: begin --> application <!-- keep by customization: end --> runs in a 32-bit or 64-bit environment. The 64-bit environment requires Basic or Standard mode. Free and Shared modes always run in a 32-bit environment.
+
+**Web Sockets**. Set **ON** to enable the WebSocket protocol; for example, if your <!-- deleted by customization web app --><!-- keep by customization: begin --> website <!-- keep by customization: end --> uses [ASP.NET SignalR](http://www.asp.net/signalr) or <!-- deleted by customization [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio) --><!-- keep by customization: begin --> [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio/) <!-- keep by customization: end -->.
 
 <a name="alwayson"></a>
-**Always On**. By default, web sites are unloaded if they are idle for some period of time. This lets the system conserve resources. In Basic or Standard mode, you can enable **Always On** to keep the app loaded all the time. If your app runs continuous web jobs, you should enable **Always On**, or the web jobs may not run reliably.
+**Always On**. By default, <!-- deleted by customization web apps --><!-- keep by customization: begin --> websites <!-- keep by customization: end --> are unloaded if they are idle for some period of time. This lets the system conserve resources. In Basic or Standard mode, you can enable **Always On** to keep the <!-- deleted by customization app --><!-- keep by customization: begin --> site <!-- keep by customization: end --> loaded all the time. If your <!-- deleted by customization app --><!-- keep by customization: begin --> site <!-- keep by customization: end --> runs continuous web jobs, you should enable **Always On**, or the web jobs may not run reliably <!-- deleted by customization. -->
 
-**Managed Pipeline Version**. Sets the IIS [pipeline mode](http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application). Leave this set to Integrated (the default) unless you have a legacy app that requires an older version of IIS.
 <!-- deleted by customization
+**Managed Pipeline Version**. Sets the IIS [pipeline mode](http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application). Leave this set to Integrated (the default) unless you have a legacy app that requires an older version of IIS.
 
-**Auto Swap**. If you enable Auto Swap for a deployment slot, Azure Websites will automatically swap the web site into production when you push an update to that slot. For more information, see [Deploy to staging slots for web sites in Azure Websites] (web-sites-staged-publishing.md).
--->
+**Auto Swap**. If you enable Auto Swap for a deployment slot, Azure will automatically swap the web app into production when you push an update to that slot. For more information, see [Deploy to staging slots for web apps in Azure] (web-sites-staged-publishing.md).
 
 
 ### Debugging
 
-**Remote Debugging**. Enables remote debugging. When enabled, you can use the remote debugger in Visual Studio to connect directly to your web site. Remote debugging will remain enabled for 48 hours. 
+**Remote Debugging**.<!-- keep by customization: begin --> <strong>Remote Debugging</strong> <!-- keep by customization: end --> Enables remote debugging. When enabled, you can use the remote debugger in Visual Studio to connect directly to your web app. Remote debugging will remain enabled for 48 hours.
+-->
+<!-- keep by customization: begin -->
+**Edit in Visual Studio Online**. Enables live code editing with Visual Studio Online. If enabled, the Dashboard tab will show a link called **Edit in Visual Studio Online**, under the **Quick Glance** section. Click this link to edit your website directly online. If you need to authenticate, you can use your basic deployment credentials.
+
+Note: If you enable deployment from source control, it is possible for a deployment to overwrite changes you make in the Visual Studio Online editor. 
+
+### Certificates
+
+In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information,, see [Enable HTTPS for an Azure website](href="/documentation/articles/web-sites-configure-ssl-certificate/). 
+
+Your uploaded certificates are listed here. After you upload a certificate, you can assign it to any website in your subscription and region. Wildcard certificates can be used for any site within the domain for which it is valid. A certificate can be deleted only if there are no active bindings for that certificate.
+
+### Domain names
+
+View or add additional domain names for the  Website. For more information, see [Configuring a custom domain name for an Azure Website](/zh-cm/documentation/articles/web-sites-custom-domain-name/).
+
+### SSL Bindings
+
+If you uploaded SSL certificates, you can bind them to custom domain names. For more information,, see [Enable HTTPS for an Azure Website](href="/documentation/articles/web-sites-configure-ssl-certificate/)
+
+### Deployments
+
+This section appears only if you have enabled deployment from source control. Use these settings to configure deployments.
+
+- **Git URL**. If you have created a Git repository for your Azure website, this is the URL where you push your content.
+- **Deployment Trigger URL**. This URL can be set on a GitHub, CodePlex, Bitbucket, or other repository to trigger the deployment when a commit is pushed to the repository.
+- **Branch to Deploy**. Specifies the branch that will be deployed when you push content.
+
+To set up deployment from source control, view the **Dashboard** tab, and click **Set up deployment from source control**. 
+
+### Application diagnostics
+
+Options for writing diagnostic logs from a web application that supports logging: 
+
+- <strong>File System</strong>. Writes logs to the website's file system. File system logging lasts for a period of 12 hours. You can access the logs from the FTP share for the website.
+- <strong>Table Storage</strong>. Writes logs to Azure table storage. There is no time limit, and logging stays enabled until you disable it. 
+- <strong>Blob Storage</strong>. Writes logs to Azure blob storage. There is no time limit, and logging stays enabled until you disable it.
+
+<strong>Logging Level</strong>. When logging is enabled, this option specifies the amount of information that will be recorded (Error, Warning, Information, or Verbose).
+
+**Manage table storage**. When table storage is enabled, click this button to set the storage account and table name.
+
+**Manage blob storage.** When blob storage is enabled, click this button to set the storage account and blob storage name.
+
+### Site diagnostics
+
+Options for gathering diagnostic information for your website.
+
+<strong>Web Server Logging</strong>. Enables web server logging. Logs are saved in the W3C extended log file format. You can save the logs to Azure Storage or to the website's file System.
+ 
+- If you choose <strong>File System</strong>, logs are saved to the FTP site listed under "FTP Diagnostic Logs" on the Dashboard page.
+- If you choose **File System**, use the <strong>Quota</strong> box to set the maximum amount of disk space for the log files. The minimum is 25MB and the maximum is 100MB. The default is 35MB. When the quota is reached, the oldest files are successively overwritten by the newest ones. If you need to retain more history 100MB, use Azure Storage, which has a much greater storage capacity.
+- Optionally, click <strong>Set Retention</strong> to automatically delete files after a period of time. By default, logs are never deleted.   
+
+<strong>Detailed Error Messages</strong>. If enabled, detailed error messages are saved as .htm files. To view the files, go to the FTP site listed under "FTP Diagnostic Logs" on the Dashboard page. The files are saved under /LogFiles/DetailedErrors in the FTP site.
+
+<strong>Failed Request Tracing</strong>. If enabled, failed requests are logged to XML files. To view the files, go to the FTP site listed under "FTP Diagnostic Logs" on the Dashboard page. The files are saved under /LogFiles/W3SVC*xxx*, where xxx is a unique identifier. This folder contains an XSL file and one or more XML files. Make sure to download the XSL file, because it provides functionality for formatting and filtering the contents of the XML files.
+
+<!-- keep by customization: begin --> <strong>Remote Debugging</strong> <!-- keep by customization: end --> Enables remote debugging. When enabled, you can use the remote debugger in Visual Studio to connect directly to your Azure website. Remote debugging will remain enabled for 48 hours.
+
+**Note**: Remote debugging will not work with a site name or user name that is longer than 20 characters. 
+
+### Developer analytics
+
+Choose <strong>Add-on</strong> to select an analytics add-on from a list (Currently, Azure China does not support Azure gallery). Choose <strong>Custom</strong> to select an analytics provider such as New Relic from a list. If you use a custom provider, you must enter the license key in the<strong> Provider Key</strong> box. 
+
+For more information on using New Relic with Azure  Websites, see <a href="/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/">New Relic Application Performance Management on Azure  Websites</a>.
+<!-- keep by customization: end -->
 
 
 ### App settings
 
-This section contains name/value pairs that you web site will load on start up. 
+This section contains name/value pairs that you web app will load on start up. 
 
 - For .NET apps, these settings are injected into your .NET configuration `AppSettings` at runtime, overriding existing settings. 
 
@@ -112,7 +189,7 @@ For example, if a MySql connection string were named `connectionstring1`, it wou
 
 The default document is the web page that is displayed at the root URL for a website.  The first matching file in the list is used. 
 
-web sites might use modules that route based on URL, rather than serving static content, in which case there is no default document as such.    
+Web apps might use modules that route based on URL, rather than serving static content, in which case there is no default document as such.    
 
 ### Handler mappings
 
@@ -133,10 +210,10 @@ To configure virtual applications and directories, specify each virtual director
 
 To enable diagnostic logs:
 
-1. In the blade for your web site, click **All settings**.
+1. In the blade for your web app, click **All settings**.
 2. Click **Diagnostic logs**. 
 
-Options for writing diagnostic logs from a web site that supports logging: 
+Options for writing diagnostic logs from a web application that supports logging: 
 
 - **Application Logging**. Writes application logs to the file system. Logging lasts for a period of 12 hours. 
 
@@ -150,7 +227,7 @@ Options for writing diagnostic logs from a web site that supports logging:
 
 To view the log files, you must create FTP credentials, as follows:
 
-1. In the blade for your web site, click **All settings**.
+1. In the blade for your web app, click **All settings**.
 2. Click **Deployment credentials**.
 3. Enter a user name and password.
 4. Click **Save**.
@@ -158,41 +235,30 @@ To view the log files, you must create FTP credentials, as follows:
 ![](./media/web-sites-configure/configure03.png)
 
 
-The full FTP user name is âapp\usernameâ where *app* is the name of your web site. The username is listed in the web site blade, under **Essentials**.  
+The full FTP user name is âapp\usernameâ where *app* is the name of your web app. The username is listed in the web app blade, under **Essentials**.  
 
 ![](./media/web-sites-configure/configure02.png)
 
--->
 ## Other configuration tasks
 
 ### SSL 
 
-In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information, see [Enable HTTPS for a web site](/documentation/articles/web-sites-configure-ssl-certificate). 
+In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information, see [Enable HTTPS for a web app](/documentation/articles/web-sites-configure-ssl-certificate). 
 
-<!-- deleted by customization
 To view your uploaded certificates, click **Configure** > **Custom domains and SSL**.
--->
-<!-- keep by customization: begin -->
-To view your uploaded certificates, click **Configure** > **SSL Bindings**.
-<!-- keep by customization: end -->
 
 ### Domain names
 
-Add custom domain names for your web site. For more information, see [Configure a custom domain name for a web site in Azure Websites](/documentation/articles/web-sites-custom-domain-name).
+Add custom domain names for your web app. For more information, see [Configure a custom domain name for a web app in Azure](/documentation/articles/web-sites-custom-domain-name).
 
-<!-- deleted by customization
 To view your domain names, click **Configure** > **Custom domains and SSL**.
--->
-<!-- keep by customization: begin -->
-To view your domain names, click **Configure** > **Domain Names**.
-<!-- keep by customization: end -->
 
 ### Deployments
 
-- Set up continuous deployment. See [Using Git to deploy web sites in Azure Websites](/documentation/articles/web-sites-publish-source-control)
-- Deployment slots. See [Deploy to Staging Environments for web sites in Azure Websites](/documentation/articles/web-sites-staged-publishing)
+- Set up continuous deployment. See [Using Git to deploy Web Apps in Azure](/documentation/articles/web-sites-publish-source-control)
+- Deployment slots. See [Deploy to Staging Environments for Web Apps in Azure](/documentation/articles/web-sites-staged-publishing)
 
-To view your deployment slots, click **Configure** > <!-- deleted by customization **Deployment slots** --><!-- keep by customization: begin --> **Deployment** <!-- keep by customization: end -->.
+To view your deployment slots, click **Configure** > **Deployment slots**.
 
 
 ### Monitoring
@@ -201,19 +267,18 @@ In Basic or Standard mode, you can  test the availability of HTTP or HTTPS endpo
 
 For more information, see [How to: Monitor web endpoint status](/documentation/articles/web-sites-monitor/).
 
-<!-- deleted by customization
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 -->
 ## Next steps
 
 - [Configure a custom domain name](/documentation/articles/web-sites-custom-domain-name)
 - [Enable HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)
-- [Scale a web site in Azure Websites](/documentation/articles/web-sites-scale)
-- [Monitoring basics for web sites in Azure Websites](/documentation/articles/web-sites-monitor)
+- [Scale a web app in Azure](/documentation/articles/web-sites-scale)
+- [Monitoring basics for Web Apps in Azure](/documentation/articles/web-sites-monitor)
 <!-- deleted by customization
 
 ## What's changed
-* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 -->
  

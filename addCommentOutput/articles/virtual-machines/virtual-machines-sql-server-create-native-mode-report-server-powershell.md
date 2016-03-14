@@ -79,7 +79,7 @@ This topic describes and walks you through the deployment and configuration of a
 
 	- **Cloud Service**: select **Create a new Cloud Service**.
 	
-	- **Cloud Service DNS Name**: This is the public DNS name of the Cloud Service that is associated with the VM. The default name is the name you typed in for the VM name. If in later steps of the topic, you create a trusted SSL certificate and then the DNS name is used for the value of the “**Issued to**” of the certificate.
+	- **Cloud Service DNS Name**: This is the public DNS name of the Cloud Service that is associated with the VM. The default name is the name you typed in for the VM name. If in later steps of the topic, you create a trusted SSL certificate and then the DNS name is used for the value of the "**Issued to**" of the certificate.
 	
 	- **Region/Affinity Group/Virtual Network**: Choose the region closest to your end users.
 	
@@ -95,7 +95,7 @@ This topic describes and walks you through the deployment and configuration of a
 	
 	- Click next . ![next](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC692021.gif)
 
-1. On the last page of the wizard, keep the default **Install the VM agent** selected. The steps in this topic do not utilize the VM agent but if you plan to keep this VM, the VM agent and extensions will allow you to enhance he CM.  For more information on the VM agent, see [VM Agent and Extensions - Part 1](http://azure.microsoft.com/blog/2014/04/11/vm-agent-and-extensions-part-1/). One of the default extensions installed ad running is the “BGINFO” extension that displays on the VM desktop, system information such as internal IP and free drive space.
+1. On the last page of the wizard, keep the default **Install the VM agent** selected. The steps in this topic do not utilize the VM agent but if you plan to keep this VM, the VM agent and extensions will allow you to enhance he CM.  For more information on the VM agent, see [VM Agent and Extensions - Part 1](http://azure.microsoft.com/blog/2014/04/11/vm-agent-and-extensions-part-1/). One of the default extensions installed ad running is the "BGINFO" extension that displays on the VM desktop, system information such as internal IP and free drive space.
 
 1. Click complete . ![ok](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC660122.gif)
 
@@ -163,11 +163,11 @@ A self-signed certificate was created on the VM when the VM was provisioned. The
 		
 		1. Click the **Details** tab.
 		
-		1. Click **Thumbprint**. The value of the thumbprint is displayed in the details field, for example ‎a6 08 3c df f9 0b f7 e3 7c 25 ed a4 ed 7e ac 91 9c 2c fb 2f.
+		1. Click **Thumbprint**. The value of the thumbprint is displayed in the details field, for example <!-- deleted by customization ‎a6 --><!-- keep by customization: begin --> âa6 <!-- keep by customization: end --> 08 3c df f9 0b f7 e3 7c 25 ed a4 ed 7e ac 91 9c 2c fb 2f.
 		
 		1. Copy the thumbprint and save the value for later or edit the script now.
 		
-		1. (*) Before you run the script, remove the spaces in between the pairs of values. For example the thumbprint noted before would now be ‎a6083cdff90bf7e37c25eda4ed7eac919c2cfb2f.
+		1. (*) Before you run the script, remove the spaces in between the pairs of values. For example the thumbprint noted before would now be <!-- deleted by customization ‎a6083cdff90bf7e37c25eda4ed7eac919c2cfb2f --><!-- keep by customization: begin --> âa6083cdff90bf7e37c25eda4ed7eac919c2cfb2f <!-- keep by customization: end -->.
 		
 		1. Assign the server certificate to the report server. The assignment is completed in the next section when you configure the report server.
 
@@ -181,7 +181,7 @@ This section walks you through configuring the VM as a Reporting Services native
 
 - Use Configuration Manager to Configure the Report Server.
 
-For more detailed steps, see the section [Connect to the Virtual Machine and Start the Reporting Services Configuration <!-- deleted by customization Manager](/documentation/articles/virtual-machines-sql-server-business-intelligence#connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager) --><!-- keep by customization: begin --> Manager](/documentation/articles/virtual-machines-sql-server-business-intelligence/#connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager) <!-- keep by customization: end -->.
+For more detailed steps, see the section [Connect to the Virtual Machine and Start the Reporting Services Configuration Manager](/documentation/articles/virtual-machines-sql-server-business-intelligence#connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager).
 
 **Authentication Note:** Windows authentication is the recommended authentication method and it is the default Reporting Services authentication. Only users that are configured on the VM can access Reporting Services and assigned to Reporting Services roles.
 
@@ -310,7 +310,7 @@ To use the Windows PowerShell script to configure the report server, complete th
 		write-host -foregroundcolor DarkGray $time
 		
 		## Open Firewall port for $HTTPport
-		    New-NetFirewallRule -DisplayName “Report Server (TCP on port $HTTPport)” -Direction Inbound -Protocol TCP -LocalPort $HTTPport
+		    New-NetFirewallRule -DisplayName "Report Server (TCP on port $HTTPport)" -Direction Inbound -Protocol TCP -LocalPort $HTTPport
 		    write-host "Added rule Report Server (TCP on port $HTTPport) in Windows Firewall"
 		
 		write-host 'Operations completed, Report Server is ready'
@@ -320,7 +320,7 @@ To use the Windows PowerShell script to configure the report server, complete th
 
 1. If you created the VM with an HTTP port other than 80, modify the parameter $HTTPport = 80.
 
-1. The script is currently configured for  Reporting Services. If you want to run the script for  Reporting Services, modify the version portion of the path to the namespace to “v11”, on the Get-WmiObject statement.
+1. The script is currently configured for  Reporting Services. If you want to run the script for  Reporting Services, modify the version portion of the path to the namespace to "v11", on the Get-WmiObject statement.
 
 1. Run the script.
 
@@ -495,7 +495,7 @@ To use Windows PowerShell to configure the report server, complete the following
 		write-host -foregroundcolor DarkGray $time
 		
 		## Open Firewall port for $httpsport
-		    New-NetFirewallRule -DisplayName “Report Server (TCP on port $httpsport)” -Direction Inbound -Protocol TCP -LocalPort $httpsport
+		    New-NetFirewallRule -DisplayName "Report Server (TCP on port $httpsport)" -Direction Inbound -Protocol TCP -LocalPort $httpsport
 		    write-host "Added rule Report Server (TCP on port $httpsport) in Windows Firewall"
 		
 		write-host 'Operations completed, Report Server is ready'
@@ -535,7 +535,7 @@ To use Windows PowerShell to configure the report server, complete the following
 
 		Change the $DNSName value if you do not want to use the virtual machine's DNS name for Reporting Services. If you use the parameter, the certificate must also use this name and you register the name globally on a DNS server.
 
-1. The script is currently configured for  Reporting Services. If you want to run the script for  Reporting Services, modify the version portion of the path to the namespace to “v11”, on the Get-WmiObject statement.
+1. The script is currently configured for  Reporting Services. If you want to run the script for  Reporting Services, modify the version portion of the path to the namespace to "v11", on the Get-WmiObject statement.
 
 1. Run the script.
 
@@ -565,7 +565,7 @@ If you do not want to run the PowerShell script to configure the report server, 
 
 1. In the left pane, click **Web Service URL**.
 
-1. By default, RS is configured for HTTP port 80 with IP “All Assigned”. To add HTTPS:
+1. By default, RS is configured for HTTP port 80 with IP "All Assigned". To add HTTPS:
 
 	1. In **SSL Certificate**: select the certificate you want to use, for example [VM name].chinacloudapp.cn. If no certificates are listed, see the section **Step 2: Create a Server Certificate** for information on how to install and trust the certificate on the VM.
 	
@@ -609,7 +609,7 @@ If you configured a private port for HTTPS other than 443, modify the following 
 
 1. If you used a port other than 443 when you configured the HTTPS endpoint on the VM, update the port in the following command and then run the command:
 
-		New-NetFirewallRule -DisplayName “Report Server (TCP on port 443)” -Direction Inbound -Protocol TCP -LocalPort 443
+		New-NetFirewallRule -DisplayName "Report Server (TCP on port 443)" -Direction Inbound -Protocol TCP -LocalPort 443
 
 1. When the command completes, **Ok** is displayed in the command prompt.
 
@@ -651,7 +651,7 @@ After configuring and verifying the report server, a common administrative task 
 
 The following table summarizes some of the options available to publish existing reports from an on-premises computer to the report server hosted on the Windows Azure Virtual Machine:
 
-- **RS.exe script**: Use RS.exe script to copy report items from and existing report server to your Windows Azure Virtual Machine. For more information, see the section “Native mode to Native Mode - Windows Azure Virtual Machine” in [Sample Reporting Services rs.exe Script to Migrate Content between Report Servers](https://msdn.microsoft.com/zh-cn/library/dn531017.aspx).
+- **RS.exe script**: Use RS.exe script to copy report items from and existing report server to your Windows Azure Virtual Machine. For more information, see the section "Native mode to Native Mode - Windows Azure Virtual Machine" in [Sample Reporting Services rs.exe Script to Migrate Content between Report Servers](https://msdn.microsoft.com/zh-cn/library/dn531017.aspx).
 
 - **Report Builder**: The virtual machine includes the click-once version of Microsoft SQL Server Report Builder. To start Report builder the first time on the virtual machine:
 

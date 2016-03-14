@@ -1,14 +1,13 @@
-
 <!-- not suitable for Mooncake -->
 
-## How to create a classic VNet in the Azure preview portal
+## How to create a classic VNet in the Azure Management Portal
 
 To create a classic VNet based on the scenario above, follow the steps below.
 
 1. From a browser, navigate to http://manage.windowsazure.cn and, if necessary, sign in with your Azure account.
 2. Click **NEW** > **Networking** > **Virtual network**, notice that the **Select a deployment model** list already shows **Classic**, and then click **Create**, as seen in the figure below.
 
-	![Create VNet in preview portal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure1.gif)
+	![Create VNet in Azure Management Portal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure1.gif)
 
 3. On the **Virtual network** blade, type the **Name** of the VNet, and then click **Address space**. Configure your address space settings for the VNet and its first subnet, then click **OK**. The figure below shows the CIDR block settings for our scenario.
 
@@ -36,4 +35,4 @@ To create a classic VNet based on the scenario above, follow the steps below.
 
 10. Click **Subnets** > **Add**, then type a **Name** and specify an **Address range (CIDR block)** for your subnet, and then click **OK**. The figure below shows the settings for our current scenario.
 
-	![Create VNet in preview portal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure7.gif)
+	![Create VNet in Azure Management Portal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure7.gif)

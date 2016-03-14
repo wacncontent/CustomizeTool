@@ -36,7 +36,7 @@ A cross-premises virtual network is connected to an on-premises network with a s
 
 ![](./media/virtual-machines-workload-high-availability-LOB-application/CreateLOBAppHybridCloud_3.png)
  
-You can create this dev/test environment for free with your [MSDN subscription](/pricing/member-offers/msdn-benefits/) or an [Azure Trial Subscription](/pricing/1rmb-trial/).
+You can create this dev/test environment for <!-- deleted by customization free with your [MSDN subscription](/pricing/member-offers/msdn-benefits/) --> or an [Azure Trial Subscription](/pricing/1rmb-trial/).
 
 Your next step is to create a high-availability line of business application in Azure.
 

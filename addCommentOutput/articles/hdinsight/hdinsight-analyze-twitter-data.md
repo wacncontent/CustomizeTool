@@ -30,7 +30,7 @@ to a Linux-based cluster, see [Analyze Twitter data using Hive in HDInsight (Lin
 
 Before you begin this tutorial, you must have the following:
 
-- **A workstation** with Azure PowerShell installed and configured. See [Install and use Azure <!-- deleted by customization PowerShell](/documentation/articles/install-configure-powershell) --><!-- keep by customization: begin --> PowerShell](/documentation/articles/powershell-install-configure) <!-- keep by customization: end -->. To execute Windows PowerShell scripts, you must run Azure PowerShell as administrator and set the execution policy to *RemoteSigned*. See [Run Windows PowerShell scripts][powershell-script].
+- **A workstation** with Azure PowerShell installed and configured. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure). To execute Windows PowerShell scripts, you must run Azure PowerShell as administrator and set the execution policy to *RemoteSigned*. See [Run Windows PowerShell scripts][powershell-script].
 
 	Before running Windows PowerShell scripts, make sure you are connected to your Azure subscription by using the following cmdlet:
 

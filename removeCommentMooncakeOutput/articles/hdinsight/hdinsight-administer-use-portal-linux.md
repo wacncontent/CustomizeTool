@@ -103,7 +103,7 @@ You can provision HDInsight clusters from the Azure Management Portal by using t
 
 9. Select __Optional Configuration__. This blade allows you to configure the following items:
 
-	* __HDInsight Version__: The version of HDInsight used for the cluster. For more information on HDInsight versioning, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning)
+	* __HDInsight Version__: The version of HDInsight used for the cluster. For more information on HDInsight versioning, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1)
 
 	* __External Metastores__: This allows you to select a SQL Database, which will be used to store configuration information for Oozie and Hive. This allows you to reuse the configuration when deleting and recreating a cluster, instead of having to recreate the Hive and Oozie configuration each time.
 
@@ -187,6 +187,6 @@ In this article, you have learned how to create an HDInsight cluster by using th
 * [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1)
 * [Submit Hadoop jobs programmatically](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)
 * [Get Started with Azure HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
-* [What version of Hadoop is in Azure HDInsight?](/documentation/articles/hdinsight-component-versioning)
+* [What version of Hadoop is in Azure HDInsight?](/documentation/articles/hdinsight-component-versioning-v1)
 
 [preview-portal]: https://manage.windowsazure.cn

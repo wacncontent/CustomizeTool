@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 # Use Power BI (preview) to visualize data from an Apache Storm topology
@@ -63,7 +63,7 @@ Download the [HDInsight C# Storm Power BI example](https://github.com/Blackmist/
 
 ## Configure the sample
 
-1. Open the sample in Visual Studio. From **Solution Explorer**, open the **SCPHost.exe.config** file, and then find the **<OAuth .../>** element. Enter values for the following properties of this element.
+1. Open the sample in Visual Studio. From **Solution Explorer**, open the **App.config** file, and then find the **<OAuth .../>** element. Enter values for the following properties of this element.
 
     * **Client**: The Client ID for the application registration you created earlier.
 

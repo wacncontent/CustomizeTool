@@ -1,17 +1,17 @@
 <properties
-	pageTitle="Create a Java web site in Azure Websites | Windows Azure"
-	description="This tutorial shows you how to deploy a Java web site to Azure Websites."
+	pageTitle="Create a Java web app in Azure | Windows Azure"
+	description="This tutorial shows you how to deploy a Java web app to Azure."
 	services="app-service\web"
 	documentationCenter="java"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"/>
+	editor=""/>
 <tags
 	ms.service="app-service-web"
-	ms.date="10/20/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
-# Create a Java web site in Azure Websites
+# Create a Java web app in Azure
 
 > [AZURE.SELECTOR]
 - [.Net](/documentation/articles/web-sites-dotnet-get-started)
@@ -21,14 +21,14 @@
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
 - [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-This tutorial shows how to create a Java [web site in Azure Websites](/documentation/services/web-sites/) by using the [Azure Management Portal](https://manage.windowsazure.cn/).
+This tutorial shows how to create a Java [web app in Azure](/documentation/services/web-sites/) by using the [Azure Management Portal](https://manage.windowsazure.cn/). 
 
 > [AZURE.NOTE] To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [sign up for a trial][].
 >
 
 ## Java application options
 
-There are several ways you can set up a Java application in an Azure Websites. 
+There are several ways you can set up a Java application in an Azure web app. 
 
 1. Create an app and then use the Azure configuration UI.
 
@@ -36,16 +36,16 @@ There are several ways you can set up a Java application in an Azure Websites.
   
 3. Create an app and then manually copy and edit configuration files 
 
-	You might want to host a custom Java application that does not deploy in any of the web containers provided by Azure Websites.  For example, here are some reasons for doing this:
+	You might want to host a custom Java application that does not deploy in any of the web containers provided by Azure Web App.  For example, here are some reasons for doing this:
 	
-	* Your Java application requires a version of Tomcat or Jetty that isn't directly supported by Azure Websites or provided in the gallery.
+	* Your Java application requires a version of Tomcat or Jetty that isn't directly supported by Azure or provided in the gallery.
 	* Your Java application takes HTTP requests and does not deploy as a WAR into a pre-existing web container.
 	* You want to configure the web container from scratch yourself. 
-	* You want to use a version of Java that isn't supported in Azure Websites and want to upload it yourself.
+	* You want to use a version of Java that isn't supported in Azure and want to upload it yourself.
 
-	For cases like these, you can create an app using the Azure Management Portal, and then provide the appropriate runtime files manually. In this case the files will be counted against your storage space quotas for your App Service plan. For more information, see [Upload a custom Java web site to Azure](/documentation/articles/web-sites-java-custom-upload/).
+	For cases like these, you can create an app using the Azure Management Portal, and then provide the appropriate runtime files manually. In this case the files will be counted against your storage space quotas for your App Service plan. For more information, see [Upload a custom Java web app to Azure](/documentation/articles/web-sites-java-custom-upload/).
 
-## <a name="portal"></a> Create and configure a Java web site
+## <a name="portal"></a> Create and configure a Java web app
 
 This information shows how to use the Azure configuration UI to select a Java application container, either Apache Tomcat or Jetty, for your web site.
 
@@ -67,7 +67,7 @@ Now that you've created the web site with an app container, see the **Next steps
 
 ## Next steps
 
-At this point, you have a Java application server running in your web site in Azure Websites. To deploy your own code to the web site, see [Add an application or webpage to your Java web site](/documentation/articles/web-sites-java-add-app).
+At this point, you have a Java application server running in your web app in Azure. To deploy your own code to the web app, see [Add an application or webpage to your Java web app](/documentation/articles/web-sites-java-add-app).
 
 For more information about developing Java applications in Azure, see the [Java Developer Center](/develop/java/).
 
@@ -75,4 +75,4 @@ For more information about developing Java applications in Azure, see the [Java 
 [activate your Visual Studio subscriber benefits]: /pricing/1rmb-trial/
 [sign up for a trial]: /pricing/1rmb-trial/
 
-[Try Azure Websites]: https://tryappservice.azure.com/
+[Try Azure Web App]: https://tryappservice.azure.com/

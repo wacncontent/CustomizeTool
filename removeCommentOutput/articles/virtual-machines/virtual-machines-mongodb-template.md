@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
   pageTitle="Create a MongoDB cluster on Ubuntu | Windows Azure"
   description="Create a MongoDB cluster on Ubuntu using a Azure Resource Manager template via Azure PowerShell or the Azure CLI"
@@ -20,7 +22,7 @@
 
 MongoDB is an open-source document database that provides high performance, high availability, and automatic scaling. MongoDB can be installed as a stand-alone database or within a cluster, leveraging built-in replication capabilities. In some cases, you can use replication to increase read capacity. Clients have the ability to send read and write operations to different servers. You can also maintain copies in different data centers to increase the locality and availability of data for distributed applications. With MongoDB, replication also provides redundancy and increases data availability. With multiple copies of data on different database servers, replication protects a database from the loss of a single server. Replication also allows you to recover from hardware failure and service interruptions. With additional copies of the data, you can dedicate one to disaster recovery, reporting, or backup.
 
-In addition to the various flavors that were already available in the Azure Marketplace, now you can also easily deploy a new MongoDB cluster on Ubuntu VMs using a Azure Resource Manager template deployed through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli-install).
+In addition to the various flavors that were already available in the Azure gallery, now you can also easily deploy a new MongoDB cluster on Ubuntu VMs using a Azure Resource Manager template deployed through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli-install).
 
 Newly deployed clusters based on this template will have the topology described in the following diagram, although other topologies can be easily achieved by customizing the template presented in this article.
 
@@ -309,7 +311,7 @@ To do that, go to the [Azure Management Portal](https://manage.windowsazure.cn) 
 
 - Click **Browse** on the left navigation bar, scroll down and then click **Resource Groups**.
 - After clicking the resource group that you just created, it will bring up the Resource group blade.
-- By clicking the "Events” bar graph in the "Monitoring” part of the Resource group blade, you can see the events for your deployment.
+- By clicking the "Events" bar graph in the "Monitoring" part of the Resource group blade, you can see the events for your deployment.
 Clicking an individual event lets you drill further down into the details of each individual operation made on behalf of the template.
 
 After your tests, if you need to remove this resource group and all of its resources (the storage account, virtual machine, and virtual network), use the following command.
@@ -536,7 +538,7 @@ In this second fragment, the "vmScripts" variable is assigned to a JSON array wh
       "[concat(variables('sharedScriptUrl'), 'vm-disk-utils-0.1.sh')]"
     ],
 
-One important concept in this template is the way different “t-shirt sizes” for MongoDB clusters are defined. Looking at one of those “tshirtSizeXXXX” variables, you can notice that it describes important characteristics of how a cluster is deployed. In the following example, let's take the Medium size as an example.
+One important concept in this template is the way different "t-shirt sizes" for MongoDB clusters are defined. Looking at one of those "tshirtSizeXXXX" variables, you can notice that it describes important characteristics of how a cluster is deployed. In the following example, let's take the Medium size as an example.
 
     "tshirtSizeMedium": {
       "vmSizeMember": "Standard_D2",
@@ -549,7 +551,7 @@ One important concept in this template is the way different “t-shirt sizes” 
       "dataDiskSize": 250
     },
 
-A “Medium” MongoDB cluster will use D2 as VM Size for the three MongoDB nodes hosting data, plus a fourth A1 VM that will be used as arbiter for replication purposes. The corresponding sub-template invoked to deploy data nodes will be `member-resources-D2.json` and data files (250 GB each) will be stored in two storage accounts. This variables will be used within the resources section to orchestrate node deployments and other tasks.
+A "Medium" MongoDB cluster will use D2 as VM Size for the three MongoDB nodes hosting data, plus a fourth A1 VM that will be used as arbiter for replication purposes. The corresponding sub-template invoked to deploy data nodes will be `member-resources-D2.json` and data files (250 GB each) will be stored in two storage accounts. This variables will be used within the resources section to orchestrate node deployments and other tasks.
 
 ### Resources section
 
@@ -647,7 +649,7 @@ Looking again inside our main template (azuredeploy.json), let's see how this lo
 
 One important concept to highlight is how it is possible to deploy multiple copies of a single resource type, and for each instance can set unique values for required settings. This concept is known as *Resource Looping*.
 
-In the previous example, a parameter (number of nodes to deploy in the cluster) will be used to set a variable (“numberOfMembers”) which is then passed to the **“copy”** element to trigger a number (loop) of child deployments, each one will result in the instantiation of the template for each member in the cluster. To be able to set all settings where unique values between instances are required, the **copyindex()** function can be used to obtain a numeric value indicating the current index in that particular resource loop creation.
+In the previous example, a parameter (number of nodes to deploy in the cluster) will be used to set a variable ("numberOfMembers") which is then passed to the **"copy"** element to trigger a number (loop) of child deployments, each one will result in the instantiation of the template for each member in the cluster. To be able to set all settings where unique values between instances are required, the **copyindex()** function can be used to obtain a numeric value indicating the current index in that particular resource loop creation.
 
 Another important concept in resource creation is the ability to specify dependencies and precedencies between resources, as you can notice in the **dependsOn** JSON array. In this particular template, deploying each node depends on the previous successful deployment of **shared resources**.
 

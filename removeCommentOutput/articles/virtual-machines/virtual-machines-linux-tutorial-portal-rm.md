@@ -16,11 +16,11 @@
 # Create a Virtual Machine Running Linux using the Azure Management Portal
 
 > [AZURE.SELECTOR]
-- [Azure Management Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
-- [Azure PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
-- [Azure PowerShell - Template](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template)
-- [Azure Management Portal - Linux](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
-- [Azure CLI](/documentation/articles/virtual-machines-linux-tutorial)
+- [Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
+- [PowerShell - Template](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template)
+- [Portal - Linux](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
+- [CLI](/documentation/articles/virtual-machines-linux-tutorial)
 
 <br>
 
@@ -35,7 +35,7 @@ Creating an Azure virtual machine (VM) that runs Linux is easy to do. This tutor
 
 ## Select the image
 
-Go to the Azure Marketplace in the Preview portal to find the Windows Server VM image you want.
+Go to the Azure gallery in the Preview portal to find the Windows Server VM image you want.
 
 1. Sign in to the [Preview portal](https://manage.windowsazure.cn).
 

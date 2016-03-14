@@ -42,7 +42,7 @@ Next, if you have multiple Azure subscriptions, you need to set your Azure subsc
 Now, replace everything within the quotes, including the < and > characters, with the correct subscription name and run these commands.
 
 	$subscrName="<subscription name>"
-	Select-AzureRmSubscription -SubscriptionName $subscrName â€“Current
+	Select-AzureRmSubscription -SubscriptionName $subscrName â€"Current
 
 Next, you need to create a storage account. You must pick a unique name that contains only lowercase letters and numbers. You can test for the uniqueness of the storage account name with this command.
 

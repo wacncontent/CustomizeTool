@@ -1,4 +1,4 @@
-Some packages may not install using pip when run on Azure.  It may simply be that the package is not available on the Python Package Index.  It could be that a compiler is required (a compiler is not available on the machine running the web site in Azure Websites).
+Some packages may not install using pip when run on Azure.  It may simply be that the package is not available on the Python Package Index.  It could be that a compiler is required (a compiler is not available on the machine running the web app in Azure).
 
 In this section, we'll look at ways to deal with this issue.
 
@@ -10,7 +10,7 @@ With the recent availability of [Microsoft Visual C++ Compiler for Python 2.7][]
 
 ### Build wheels (requires Windows)
 
-Note: When using this option, make sure to compile the package using a Python environment that matches the platform/architecture/version that is used on the web site in Azure Websites (Windows/32-bit/2.7 or 3.4).
+Note: When using this option, make sure to compile the package using a Python environment that matches the platform/architecture/version that is used on the web app in Azure (Windows/32-bit/2.7 or 3.4).
 
 If the package doesn't install because it requires a compiler, you can install the compiler on your local machine and build a wheel for the package, which you will then include in your repository.
 
@@ -55,7 +55,7 @@ Add this to the deployment script:
 
 ### Include the virtual environment in the repository (requires Windows)
 
-Note: When using this option, make sure to use a virtual environment that matches the platform/architecture/version that is used on the web site in Azure Websites (Windows/32-bit/2.7 or 3.4).
+Note: When using this option, make sure to use a virtual environment that matches the platform/architecture/version that is used on the web app in Azure (Windows/32-bit/2.7 or 3.4).
 
 If you include the virtual environment in the repository, you can prevent the deployment script from doing virtual environment management on Azure by creating an empty file:
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/07/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Using partners to deliver Widevine licenses to Azure Media Services
@@ -28,5 +28,5 @@ You can use [castLabs](http://castlabs.com/company/partners/azure/) to deliver W
 
 [Using PlayReady and/or Widevine dynamic common encryption](/documentation/articles/media-services-protect-with-drm)
 
-[Mingfei's blog](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/)
+[Mingfeiâs blog](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/)
 

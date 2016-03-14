@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Flighting deployment (beta testing) in Azure Websites"
-	description="Learn how to flight new features in your app or beta test your updates in this end-to-end tutorial. It brings together Azure Websites features like continuous publishing, slots, traffic routing, and Application Insights integration."
+	pageTitle="Flighting deployment (beta testing) in Azure Web App"
+	description="Learn how to flight new features in your app or beta test your updates in this end-to-end tutorial. It brings together Azure features like continuous publishing, slots, traffic routing, and Application Insights integration."
 	services="app-service\web"
 	documentationCenter=""
 	authors="cephalin"
@@ -11,9 +11,9 @@
 	ms.service="app-service-web"
 	ms.date="10/16/2015"
 	wacn.date=""/>
-# Flighting deployment (beta testing) in Azure Websites
+# Flighting deployment (beta testing) in Azure
 
-This tutorial shows you how to do *flighting deployments* by integrating the various capabilities of [Azure Websites](/documentation/services/web-sites/) and [Azure Application Insights](/home/features/application-insights/). 
+This tutorial shows you how to do *flighting deployments* by integrating the various capabilities of [Azure Web App](/documentation/services/web-sites/) and [Azure Application Insights](/home/features/application-insights/). 
 
 *Flighting* is a deployment process that validates a new feature or change with a limited number of real customers, and is a major testing in production 
 scenario. It is akin to beta testing and is sometimes known as "controlled test flight". Many large enterprises with a web presence use this approach to 
@@ -39,7 +39,7 @@ with Application Insights, but you can use New Relic or other technologies that 
 
 ## What you will do
 
-In this tutorial, you will learn how to bring the following scenarios together to test your Azure Websites app in production:
+In this tutorial, you will learn how to bring the following scenarios together to test your Azure Web App in production:
 
 - [Route production traffic](/documentation/articles/app-service-web-test-in-production-get-start) to your beta app
 - [Instrument your app](/documentation/articles/app-insights-web-track-usage) to obtain useful metrics
@@ -59,16 +59,16 @@ In this tutorial, you will learn how to bring the following scenarios together t
 	-	[PowerShell](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
-> + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as web sites.
+> + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web Apps.
 > + You can [activate Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Your Visual Studio subscription gives you credits every month that you can use for paid Azure services.
 >
-> If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
+> If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
-## Set up your production web site
+## Set up your production web app
 
->[AZURE.NOTE] The script used in this tutorial will automatically configure continuous publishing from your GitHub repository. This requires that your GitHub credentials are already stored in Azure, otherwise the scripted deployment will fail when attempting to configure source control settings for the web sites.
+>[AZURE.NOTE] The script used in this tutorial will automatically configure continuous publishing from your GitHub repository. This requires that your GitHub credentials are already stored in Azure, otherwise the scripted deployment will fail when attempting to configure source control settings for the web apps.
 >
->To store your GitHub credentials in Azure, create a web site in the [Azure Management Portal](https://manage.windowsazure.cn) and [configure GitHub deployment](/documentation/articles/web-sites-publish-source-control#Step7). You only need to do this once.
+>To store your GitHub credentials in Azure, create a web app in the [Azure Management Portal](https://manage.windowsazure.cn) and [configure GitHub deployment](/documentation/articles/web-sites-publish-source-control#Step7). You only need to do this once.
 
 In a typical DevOps scenario, you have an application that's running live in Azure, and you want to make changes to it through continuous publishing. In this scenario, you will deploy to production a template that you have developed and tested.
 
@@ -99,7 +99,7 @@ In a typical DevOps scenario, you have an application that's running live in Azu
 7.	When the script finishes, go back to browse to the frontend's address (http://ToDoApp*&lt;your_suffix>*.chinacloudsites.cn/) to see the application running in production.
 5.	Log into the [Azure Management Portal](https://manage.windowsazure.cn) and take a look at what's created.
 
-	You should be able to see two web sites in the same resource group, one with the `Api` suffix in the name. If you look at the resource group view, you will also see the SQL Database and server, the App Service plan, and the staging slots for the web sites. Browse through the different resources and compare them with *&lt;repository_root>*\ARMTemplates\ProdAndStage.json to see how they are configured in the template.
+	You should be able to see two web apps in the same resource group, one with the `Api` suffix in the name. If you look at the resource group view, you will also see the SQL Database and server, the App Service plan, and the staging slots for the web apps. Browse through the different resources and compare them with *&lt;repository_root>*\ARMTemplates\ProdAndStage.json to see how they are configured in the template.
 
 	![](./media/app-service-web-test-in-production-controlled-test-flight/00.3-resource-group-view.png)
 
@@ -133,7 +133,7 @@ You have set up the production app.  Now, let's imagine that you receive feedbac
             });
         </script>
 
-    This JavaScript snippet sends a custom event to Application Insights every time a user clicks anywhere in the web site.
+    This JavaScript snippet sends a custom event to Application Insights every time a user clicks anywhere in the web app.
 
 12. In Git Shell, commit and push your changes to your fork in GitHub. Then, wait for clients to refresh browser.
 
@@ -207,14 +207,14 @@ Since you're gathering data on client behavior, you will [add a telemetry initia
 
     This initializer code causes the `appInsights` object to add the a custom property called `Environment` to every piece of telemetry it sends.
 
-2. Next, add this custom property as a [slot setting](/documentation/articles/web-sites-staged-publishing#AboutConfiguration) for your web site in Azure. To do this, run the following commands in your Git Shell session.
+2. Next, add this custom property as a [slot setting](/documentation/articles/web-sites-staged-publishing#AboutConfiguration) for your web app in Azure. To do this, run the following commands in your Git Shell session.
 
         $app = Get-AzureWebsite -Name todoapp<your_suffix> -Slot production
         $app.AppSettings.Add("environment", "Production")
         $app.SlotStickyAppSettingNames.Add("environment")
         $app | Set-AzureWebsite -Name todoapp<your_suffix> -Slot production
 
-    The Web.config in your project already defines the `environment` app setting. With this setting, when you test the app locally, your metrics will be tagged with `VS Debugger`. However, when you push your changes to Azure, Azure will find and use the `environment` app setting in the web site's configuration instead, and your metrics will be tagged with `Production`.
+    The Web.config in your project already defines the `environment` app setting. With this setting, when you test the app locally, your metrics will be tagged with `VS Debugger`. However, when you push your changes to Azure, Azure will find and use the `environment` app setting in the web app's configuration instead, and your metrics will be tagged with `Production`.
 
 3. Commit and push your code changes to your fork on GitHub, and then wait for your users to use the new app (need to refresh the browser). It takes about 15 minutes for the new property to show up in your Application Insights `MultiChannelToDo.Web` resource.
 
@@ -292,7 +292,7 @@ Again, for completeness you will set up the server-side app. Unlike the client a
 
     Once the script finishes, all your resources in the original resource group are retained, but a new slot named "beta" is created in it with the same configuration as the "Staging" slot that was created in the beginning.
 
-    >[AZURE.NOTE] This method of creating different deployment environments is different from the method in [Agile software development with Azure Websites](/documentation/articles/app-service-agile-software-development). Here, you create deployment environments with deployment slots, where as there you create deployment environments with resource groups. Managing deployment environments with resource groups enables you to keep the production environment off-limits to developers, but it's not easy to do testing in production, which you can do easily with slots.
+    >[AZURE.NOTE] This method of creating different deployment environments is different from the method in [Agile software development with Azure Web App](/documentation/articles/app-service-agile-software-development). Here, you create deployment environments with deployment slots, where as there you create deployment environments with resource groups. Managing deployment environments with resource groups enables you to keep the production environment off-limits to developers, but it's not easy to do testing in production, which you can do easily with slots.
 
 If you wish, you can also create an alpha app by running
 
@@ -375,12 +375,12 @@ You're now ready to move your update to production. What's great is that now you
 
 ## Summary ##
 
-Azure Websites makes it easy for small- to medium-sized businesses to test their customer-facing apps in production, something that has been traditionally done in big enterprises. Hopefully, this tutorial has given you the knowledge you need to bring together Azure Websites and Application Insights to make possible flighting deployment, and even other test-in-production scenarios, in your DevOps world. 
+Azure makes it easy for small- to medium-sized businesses to test their customer-facing apps in production, something that has been traditionally done in big enterprises. Hopefully, this tutorial has given you the knowledge you need to bring together Azure and Application Insights to make possible flighting deployment, and even other test-in-production scenarios, in your DevOps world. 
 
 ## More resources ##
 
--   [Agile software development with Azure Websites](/documentation/articles/app-service-agile-software-development)
--   [Set up staging environments for web sites in Azure Websites](/documentation/articles/web-sites-staged-publishing)
+-   [Agile software development with Azure Web App](/documentation/articles/app-service-agile-software-development)
+-   [Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing)
 -	[Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably)
 -	[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
 -	[JSONLint - The JSON Validator](http://jsonlint.com/)

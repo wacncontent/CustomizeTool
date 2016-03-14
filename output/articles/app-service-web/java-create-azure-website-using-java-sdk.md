@@ -603,7 +603,7 @@ This procedure creates an Azure web app. You will be billed for the resource as 
 
 [Azure Web App]: /documentation/services/web-sites/
 [Web Platform Installer]: http://go.microsoft.com/fwlink/?LinkID=252838
-[Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx
+[Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation
 [Azure Management Portal]: https://manage.windowsazure.cn
 [What is an Azure AD directory]: http://technet.microsoft.com/zh-cn/library/jj573650.aspx
 [Create and Upload a Management Certificate for Azure]: /documentation/articles/cloud-services-certs-create/

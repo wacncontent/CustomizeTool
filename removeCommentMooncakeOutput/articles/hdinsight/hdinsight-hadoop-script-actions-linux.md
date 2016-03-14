@@ -45,7 +45,7 @@ When you develop a custom script for an HDInsight cluster, there are several bes
 
 ### <a name="bPS1"></a>Target the Hadoop version
 
-Different versions of HDInsight have different versions of Hadoop services and components installed. If your script expects a specific version of a service or component, you should only use the script with the version of HDInsight that includes the required components. You can find information on component versions included with HDInsight using the [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning) document.
+Different versions of HDInsight have different versions of Hadoop services and components installed. If your script expects a specific version of a service or component, you should only use the script with the version of HDInsight that includes the required components. You can find information on component versions included with HDInsight using the [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1) document.
 
 ### <a name="bPS2"></a>Provide stable links to script resources
 
@@ -179,7 +179,7 @@ Microsoft provides sample scripts to install components on an HDInsight cluster.
 - [Install and use Spark on HDInsight clusters](/documentation/articles/hdinsight-hadoop-spark-install-linux)
 - [Install and use R on HDInsight Hadoop clusters](/documentation/articles/hdinsight-hadoop-r-scripts-linux)
 - [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1)
-- [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-linux)  
+- [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1-linux)  
 
 > [AZURE.NOTE] The documents linked above are specific to Linux-based HDInsight clusters. For a scripts that work with Windows-based HDInsight, see [Script action development with HDInsight (Windows)](/documentation/articles/hdinsight-hadoop-script-actions) or use the links available at the top of each article.
 

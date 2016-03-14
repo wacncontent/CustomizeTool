@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/05/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Media Services development with .NET
@@ -44,7 +44,7 @@ Alternatively, you can get the latest Media Services .NET SDK bits from GitHub (
 2. Use **NuGet** to install and add **Azure Media Services .NET SDK Extensions**. Installing this package, also installs **Media Services .NET SDK** and adds all other required dependencies.
 1. Ensure that you have the newest version of NuGet installed. For more information and installation instructions, see [NuGet](http://nuget.codeplex.com/).
 
-	2. In Solution Explorer, right-click the name of the project and choose Manage NuGet packages ….
+2. In Solution Explorer, right-click the name of the project and choose Manage NuGet packages âŚ.
 
 The Manage NuGet Packages dialog box appears.
 

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Create SharePoint server farms | Windows Azure"
 	description="Quickly create a new basic or highly-available SharePoint Server 2013 farm with the Azure Management Portal marketplace."
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/29/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 # Create SharePoint server farms
@@ -21,7 +19,7 @@
 
 With the Windows Azure Management Portal marketplace, you can quickly create pre-configured SharePoint Server 2013 farms. This can save you a lot of time when you need a basic or high-availability SharePoint farm for a development and testing environment or if you are evaluating SharePoint Server 2013 as a collaboration solution for your organization.
 
-> [AZURE.NOTE] The **SharePoint Server Farm** item in the Azure gallery of the Azure Management Portal has been removed.
+> [AZURE.NOTE] The **SharePoint Server Farm** item in the Azure gallery of the Azure Management Portal has been removed. It has been replaced with the **SharePoint 2013 non-HA Farm** and **SharePoint 2013 HA Farm** items.
 
 The basic SharePoint farm consists of three virtual machines in this configuration.
 
@@ -49,8 +47,6 @@ To create the high-availability (nine-server) SharePoint farm:
 3. On the **SharePoint 2013 HA Farm** pane, click **Create**.
 4. Specify settings on the 7 steps of the **Create SharePoint 2013 HA Farm** pane, and then click **Create**.
 
-> [AZURE.NOTE] Microsoft has released the SharePoint Server 2016 IT Preview. To make this preview easy to install and test, you can use an Azure virtual machine gallery image with SharePoint Server 2016 IT Preview and its prerequisites pre-installed. For more information, see [Test the SharePoint Server 2016 IT Preview in Azure](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/).
-
 ## Managing the SharePoint farms
 
 You can administer the servers of these farms through Remote Desktop connections. For more information, see [Log on to the virtual machine](/documentation/articles/virtual-machines-windows-tutorial-classic-portal#log-on-to-the-virtual-machine).
@@ -59,10 +55,6 @@ From the Central Administration SharePoint site, you can configure My sites, Sha
 
 > [AZURE.NOTE] The Azure Management Portal creates both of these farms in a cloud-only virtual network with an Internet-facing web presence. There is no site-to-site VPN or ExpressRoute connection back to your organization network.
 
-## Additional resources
+## Next Step
 
-[SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
-
-[Set up a SharePoint intranet farm in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
-
-[Windows Azure Architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)
+- Discover additional [SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx) configurations in Azure infrastructure services.

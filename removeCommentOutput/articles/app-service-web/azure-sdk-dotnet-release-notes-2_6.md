@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/02/2015"
+	ms.date="01/19/2016"
 	wacn.date=""/>
 
 
@@ -60,15 +60,15 @@ With Azure SDK 2.6 you can develop cloud service applications (PaaS) targeting .
 
 >[AZURE.IMPORTANT]We're announcing the November 30, 2016, retirement for Azure Managed Cache Service and Azure In-Role Cache. We recommend that you migrate to Azure Redis Cache in preparation for this retirement. For more information on dates and migration guidance, see [Which Azure Cache offering is right for me?](/documentation/articles/cache-faq#which-azure-cache-offering-is-right-for-me)
 
-##Azure Websites Tools
+##Azure Tools
 
 The following items were updated in the Azure SDK 2.6 release.
 
 - Azure publishing enhanced to include Azure API Apps as a deployment target.
 - API Apps provisioning functionality to enable users with API App creation and provisioning functionality.
-- Server Explorer changed to reflect new Azure Websites node, with Web, Mobile, and API apps grouped by Resource Group.
+- Server Explorer changed to reflect new Azure node, with Web, Mobile, and API apps grouped by Resource Group.
 - Add Azure API App Client gesture added to most C# projects that will enable automatic generation of Swagger-enabled API Apps running in a user's Azure subscription.
-- API Apps tooling and Azure Websites nodes in Server Explorer are available in Visual Studio 2013 only. 
+- API Apps tooling and Azure nodes in Server Explorer are available in Visual Studio 2013 only. 
 
 ##Azure Resource Manager Tools updates
 
@@ -78,14 +78,14 @@ The Azure resource manager tools have been updated to include templates for Virt
 
 Azure SDK 2.6 brings back support for collecting diagnostics logs in the Azure compute emulator and transferring them to development storage. Any diagnostics logs (including application trace Logs, Event Tracing for Windows (ETW) logs, performance counters, infrastructure logs and windows event logs) generated when the application is running in the emulator can be transferred to development storage to verify that your diagnostics logging is working on your local machine. 
 
-The Diagnostics storage account can now be specified in the service configuration (.cscfg) file making it easier to use different diagnostics storage accounts for different environments. There are some notable differences between how the connection string worked in Azure SDK 2.4 and Azure SDK 2.6. For more information on how to use the Diagnostics Storage connection string and how it impacts your projects see [Configuring Diagnostics for Azure Cloud Services](https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx#BKBM_Changes).
+The Diagnostics storage account can now be specified in the service configuration (.cscfg) file making it easier to use different diagnostics storage accounts for different environments. There are some notable differences between how the connection string worked in Azure SDK 2.4 and Azure SDK 2.6. For more information on how to use the Diagnostics Storage connection string and how it impacts your projects see [Configuring Diagnostics for Azure Cloud Services](/documentation/articles/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines).
 
 ##Breaking changes
 
 ###Azure Resource Manager Tools 
 
 - The **Cloud Deployment Projects** project type available in the Azure SDK 2.5 has been renamed to **Azure Resource Group**.
-- **Cloud Deployment Projects** type of projects created in the Azure SDK 2.5 can be used in 2.6 but deploying the template from Visual Studio will fail. However, deploying with the PowerShell script will still work as it did previously.  For information on how to use **Cloud Deployment Projects** in 2.6 read this [post](https://msdn.microsoft.com/zh-cn/library/azure/dn872471.aspx).
+- **Cloud Deployment Projects** type of projects created in the Azure SDK 2.5 can be used in 2.6 but deploying the template from Visual Studio will fail. However, deploying with the PowerShell script will still work as it did previously.  For information on how to use **Cloud Deployment Projects** in 2.6 read this [post](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy).
  
 ##Known issues
 

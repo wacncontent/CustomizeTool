@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="Sample configuration for Windows VM extensions | Windows Azure"
    description="Sample configuration for authoring templates with extensions"

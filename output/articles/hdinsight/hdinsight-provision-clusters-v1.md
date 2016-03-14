@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/21/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 #Provision Hadoop clusters in HDInsight

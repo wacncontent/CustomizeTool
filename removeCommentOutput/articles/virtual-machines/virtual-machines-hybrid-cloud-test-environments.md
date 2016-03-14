@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/16/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # Azure hybrid cloud test environments
@@ -45,12 +45,6 @@ The [Office 365 DirSync server in a hybrid cloud test environment](/documentatio
 For organizations and individuals for which a direct Internet connection and public IP address are not readily available, the [simulated hybrid cloud test environment](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing) builds out the simplified on-premises network in a separate Azure Virtual Network and then connects the two virtual networks with a VNet-to-VNet VPN connection.
 
 
-## Additional resources
+## Next step
 
-[SharePoint farms hosted in Azure Infrastructure Services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
-
-[Azure Infrastructure Services Workload: High-availability line of business application](/documentation/articles/virtual-machines-workload-high-availability-LOB-application)
-
-[Deploy Office 365 Directory Synchronization (DirSync) in Windows Azure](https://technet.microsoft.com/zh-cn/library/dn635310.aspx)
-
-[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
+- Learn about [implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines) to design a custom dev/test or production deployment in Azure infrastruture services.

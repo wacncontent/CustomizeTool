@@ -9,13 +9,13 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
+	ms.date="02/14/2016"
 	wacn.date=""/>
 
 
 # Using Azure Media Packager to accomplish static packaging tasks
 
->[AZURE.NOTE]Windows Azure Media Packager and Windows Azure Media Encryptor will reach end of life on March 1, 2016. At that time, these components will no longer be available.  The format conversion and encryption capabilities will be available through dynamic packaging and dynamic encryption. 
+>[AZURE.NOTE]The end of life date for Windows Azure Media Packager and Windows Azure Media Encryptor has been extended to March 1, 2017. Before that date, the functionalities of these processors will be added to Media Encoder Standard (MES). Customers will be provided with instructions on how to migrate their workflows to send Jobs to MES. Format conversion and encryption capabilities may also be available through dynamic packaging and dynamic encryption.
 
 ## Overview
 
@@ -162,7 +162,7 @@ The following code sample uses Azure Media Services .NET SDK Extensions.  Make s
 	
 	            // Get the SDK extension method to  get a reference to the Azure Media Packager.
 	            IMediaProcessor processor = _context.MediaProcessors.GetLatestMediaProcessorByName(
-	                MediaProcessorNames.AzureMediaPackager);
+	                MediaProcessorNames.WindowsAzureMediaPackager);
 	
 	            // Create a task with the conversion details, using the configuration data. 
 	            ITask task = job.Tasks.AddNew("Mp4 Validation Task",

@@ -3,7 +3,7 @@
 	description="Step through the structure of the Azure Resource Manager template for the three-server SharePoint farm."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="JoeDavies-MSFT"
+	authors="davidmu1"
 	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
@@ -363,13 +363,7 @@ Your own JSON template to build a multi-tier infrastructure in Azure should foll
 1.	Create the common (storage account, virtual network), tier-specific (availability sets), and virtual machine-specific (public IP addresses, availability sets, network interfaces, load balancer instances) elements of Azure infrastructure that are required for your deployment.
 2.	For each tier in your application (such as authentication, database, web), create and configure the servers in that tier using the common (storage account, virtual network), tier-specific (availability set) and virtual machine-specific (public IP addresses, network interfaces, load balancer instances) elements.
 
-For more information, see [Azure Resource Manager template language](/documentation/articles/resource-group-authoring-templates).
+## Next step
 
-## Additional resources
+- Learn about the [Azure Resource Manager template language](/documentation/articles/resource-group-authoring-templates) and build your own.
 
-[Azure compute, network, and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
-[Azure Resource Manager overview](/documentation/articles/resource-group-overview)
-
-[Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates)
-
-[Virtual machines documentation](/documentation/services/virtual-machines/)

@@ -87,13 +87,13 @@ For more information and checklists to use the compute-intensive instances with 
 
 Within a single cloud service or an availability set, the A8 and A9 instances can access the RDMA network in Azure for running MPI applications that use the Linux RDMA drivers to communicate between instances. At this time, Azure Linux RDMA is supported only with [Intel MPI Library 5](https://software.intel.com/intel-mpi-library/).
 
->[AZURE.NOTE] Currently, Azure Linux RDMA drivers are not available for installation via driver extensions. They are available only by using the RDMA-enabled SLES 12 image from the Azure Marketplace.
+>[AZURE.NOTE] Currently, Azure Linux RDMA drivers are not available for installation via driver extensions. They are available only by using the RDMA-enabled SLES 12 image from the Azure gallery.
 
 See the following table for prerequisites for Linux MPI applications to access the RDMA network in clusters of compute nodes (IaaS). See [Set up a Linux RDMA cluster to run MPI applications](/documentation/articles/virtual-machines-linux-cluster-rdma) for deployment options and configuration steps.
 
 Prerequisite | Virtual machines (IaaS)
 ------------ | -------------
-Operating system | SLES 12 HPC image from the Azure Marketplace
+Operating system | SLES 12 HPC image from the Azure gallery
 MPI | Intel MPI Library 5
 
 ### Access from Windows A8 and A9 instances

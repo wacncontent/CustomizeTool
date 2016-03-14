@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/17/2015"
+	ms.date="02/02/2016"
 	wacn.date=""/>
 
 
@@ -25,8 +25,6 @@ Windows Azure Media Services enables you to deliver encrypted MPEG-DASH, Smooth 
 Media Services provides a service for delivering Microsoft PlayReady licenses. Media Services also provides APIs that let you configure the rights and restrictions that you want for the PlayReady DRM runtime to enforce when a user plays back protected content. When a user requests PlayReady protected content, the player application will request a license from the AMS license service. The AMS license service will issue a license to the player if it is authorized. A PlayReady license contains the decryption key that can be used by the client player to decrypt and stream the content.
 
 Starting with the Media Services .NET SDK version 3.5.2, Media Services also enables you to configure Widevine license template and get Widevine licenses. 
-
->[AZURE.NOTE]Widevine license delivery services provided by Azure Media Sevices is in preview. For more information see [this blog](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/).
 
 You can also use the following AMS partners to help you deliver Widevine licenses: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/). For more information, see: integration with [Axinom](/documentation/articles/media-services-axinom-integration) and [castLabs](/documentation/articles/media-services-castlabs-integration).
 
@@ -126,7 +124,7 @@ Get a test token based on the token restriction that was used for the key author
 	    TokenRestrictionTemplateSerializer.Deserialize(tokenTemplateString);
 	
 	// Generate a test token based on the data in the given TokenRestrictionTemplate.
-	//The GenerateTestToken method returns the token without the word “Bearer” in front
+	//The GenerateTestToken method returns the token without the word "Bearer" in front
 	//so you have to add it in front of the token string. 
 	string testToken = TokenRestrictionTemplateSerializer.GenerateTestToken(tokenTemplate);
 	Console.WriteLine("The authorization token is:\nBearer {0}", testToken);
@@ -623,6 +621,8 @@ The following sample demonstrates functionality that was introduced in Azure Med
 
 ##See also
 
+[CENC with Multi-DRM and Access Control](/documentation/articles/media-services-cenc-with-multidrm-access-control)
+
 [Configure Widevine packaging with AMS](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
 
-[Announcing Google Widevine license delivery services public preview in Azure Media Services](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/)
+[Announcing Google Widevine license delivery services in Azure Media Services](https://azure.microsoft.com/blog/announcing-general-availability-of-google-widevine-license-services/)

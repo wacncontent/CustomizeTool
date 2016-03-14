@@ -57,7 +57,7 @@ If you created the virtual machine with the portal, run the following additional
 
 	$vm.GetInstance().ProvisionGuestAgent = $true
 
-This command will prevent the “Provision Guest Agent must be enabled on the VM object before setting IaaS VM Access Extension” error when running the **Set-AzureVMExtension** command in the following sections.
+This command will prevent the "Provision Guest Agent must be enabled on the VM object before setting IaaS VM Access Extension" error when running the **Set-AzureVMExtension** command in the following sections.
 
 Now, you can do these tasks:
 

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
    pageTitle="How to create NSGs in ARM mode using a template| Windows Azure"
    description="Learn how to create and deploy NSGs in ARM using a template"

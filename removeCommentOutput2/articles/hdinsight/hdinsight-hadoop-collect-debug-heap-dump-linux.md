@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Enable heap dumps for Hadoop services on HDInsight | Windows Azure"
 	description="Enable heap dumps for Hadoop services from Linux-based HDInsight clusters for debugging and analysis."
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 

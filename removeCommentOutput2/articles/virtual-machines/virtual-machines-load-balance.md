@@ -4,16 +4,18 @@
 	services="virtual-machines"
 	documentationCenter=""
 	authors="joaoma"
-	manager="adinah"
+	manager="carmonm"
 	editor=""/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/21/2015"
+	ms.date="02/02/2016"
 	wacn.date=""/>
 
 
 # Load balancing for Azure infrastructure services#
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 There are two levels of load balancing available for Azure infrastructure services:
 
@@ -77,4 +79,4 @@ For the steps to create a load-balanced set, see [Configure an internal load-bal
 
 For more information about load balancer, see [Internal load balancing](/documentation/articles/load-balancer-internal-overview).
 
-<!-- LINKS -->
+

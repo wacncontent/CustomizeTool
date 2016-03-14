@@ -217,7 +217,7 @@ Yes. All services deployed within a VNet can connect to the Internet. Additional
 
 You can only use compute services within VNets. Compute services are limited to Cloud Services (web and worker roles) and VMs.
 
-- [Using VNet Integration and Hybrid Connections with Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
+- [Using VNet Integration and Hybrid Connections with Web Apps](https://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 
 - [Integrate a web app with an Azure Virtual Network](/documentation/articles/web-sites-integrate-with-vnet)
 

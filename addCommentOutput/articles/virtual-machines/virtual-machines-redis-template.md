@@ -14,11 +14,9 @@
 	wacn.date=""/>
 
 # Redis cluster with a Resource Manager template
-<!-- deleted by customization
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
--->
 
 Redis is an open-source key-value cache and store, where keys can contain data structures such as strings, hashes, lists, sets and sorted sets. Redis supports a set of atomic operations on these data types.  With the release of Redis version 3.0, Redis Cluster is now available in the latest stable version of Redis.  Redis Cluster is a distributed implementation of Redis where data is automatically sharded across multiple Redis nodes, with the ability to continue operations when a subset of nodes is experiencing failures.
 
@@ -26,11 +24,11 @@ Windows Azure Redis Cache is a dedicated Redis cache service, managed by Microso
 
 This tutorial will walk through using a sample Azure Resource Manager  template to deploy a Redis cluster on Ubuntu VMs within a subnet in a resource group in Windows Azure.  In addition to Redis 3.0 Cluster, this template also supports deploying Redis 2.8 with Redis Sentinel.  Note that this tutorial will focus on the Redis 3.0 Cluster implementation.
 
-The Redis cluster is created behind a subnet, so there is no public IP access to the Redis cluster.  As part of the deployment, an optional “jump box” can be deployed.  This “jump box” is an Ubuntu VM deployed in the subnet as well, but it *does* expose a public IP address with an open SSH port that you can SSH to.  Then from the “jump box”, you can SSH to all the Redis VMs in the subnet.
+The Redis cluster is created behind a subnet, so there is no public IP access to the Redis cluster.  As part of the deployment, an optional "jump box" can be deployed.  This "jump box" is an Ubuntu VM deployed in the subnet as well, but it *does* expose a public IP address with an open SSH port that you can SSH to.  Then from the "jump box", you can SSH to all the Redis VMs in the subnet.
 
-This template utilizes a “t-shirt size” concept in order to specify a “Small”, “Medium”, or “Large” Redis Cluster setup.  When the Azure Resource Manager template language supports more dynamic template sizing, this could be changed to specify the number of Redis Cluster master nodes, slave nodes, VM size, etc.  For now, you can see the VM size and the number of masters and slaves defined in the file azuredeploy.json in the variables `tshirtSizeSmall`, `tshirtSizeMedium`, and `tshirtSizeLarge`.
+This template utilizes a "t-shirt size" concept in order to specify a "Small", "Medium", or "Large" Redis Cluster setup.  When the Azure Resource Manager template language supports more dynamic template sizing, this could be changed to specify the number of Redis Cluster master nodes, slave nodes, VM size, etc.  For now, you can see the VM size and the number of masters and slaves defined in the file azuredeploy.json in the variables `tshirtSizeSmall`, `tshirtSizeMedium`, and `tshirtSizeLarge`.
 
-The Redis Cluster template for the “Medium” t-shirt size creates this configuration:
+The Redis Cluster template for the "Medium" t-shirt size creates this configuration:
 
 ![cluster-architecture](./media/virtual-machines-redis-template/cluster-architecture.png)
 
@@ -349,8 +347,8 @@ During and after deployment, you can check all the requests that were made durin
 To do that, go to the [Azure Management Portal](https://manage.windowsazure.cn), and do the following:
 
 - In the left-hand navigation bar, click **Browse**, and then scroll down and click **Resource Groups**.
-- Select the resource group that you just created, to bring up the “Resource Group” blade.
-- In the **Monitoring** section, select the “Events” bar graph. This will display the events for your deployment.
+- Select the resource group that you just created, to bring up the "Resource Group" blade.
+- In the **Monitoring** section, select the "Events" bar graph. This will display the events for your deployment.
 - By clicking individual events, you can drill further down into the details of each operation made on behalf of the template.
 
 If you need to remove this resource group and all of its resources (the Storage account, virtual machine, and virtual network) after testing, use this command:
@@ -405,7 +403,7 @@ Open the azuredeploy.json template in a text editor or tool of your choice. The 
 
 We mentioned already the role of azuredeploy-parameters.json, which will be used to pass a given set of parameter values during template execution. The "parameters" section of azuredeploy.json specifies parameters that are used to input data into this template.
 
-Here is an example of a parameter for the “t-shirt size”:
+Here is an example of a parameter for the "t-shirt size":
 
 ```json
 "tshirtSize": {
@@ -487,9 +485,9 @@ If you want to customize the size of the Redis Cluster deployment, then you can 
 },
 ```
 
-Note:  The `totalMemberCountExcludingLast` and `totalMemberCount` properties are needed because the template language currently does not have “math” operations.
+Note:  The `totalMemberCountExcludingLast` and `totalMemberCount` properties are needed because the template language currently does not have "math" operations.
 
-More information regarding the template language can be found in MSDN at [Azure Resource Manager Template <!-- deleted by customization Language](/documentation/articles/resource-group-authoring-templates) --><!-- keep by customization: begin --> Language](https://msdn.microsoft.com/zh-cn/library/azure/dn835138.aspx) <!-- keep by customization: end -->.
+More information regarding the template language can be found in MSDN at [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).
 
 ### "resources" section
 
@@ -526,12 +524,12 @@ From this first example it is clear how azuredeploy.json in this scenario has be
 In particular, the following linked templates will be used for this deployment:
 
 - **shared-resource.json**: contains the definition of all resources that will be shared across the deployment. Examples are Storage accounts used to store a VM's OS disks, virtual networks, and availability sets.
-- **jumpbox-resources.json**: deploys the “jump box” VM and all related resources, such as network interface, public IP address, and the input endpoint used to SSH into the environment.
+- **jumpbox-resources.json**: deploys the "jump box" VM and all related resources, such as network interface, public IP address, and the input endpoint used to SSH into the environment.
 - **node-resources.json**: deploys all Redis Cluster node VMs and connected resources (network adapters, private IPs, etc.). This template also deploys VM extensions (custom scripts for Linux) and invokes a bash script to physically install and set up Redis on each node.  The script to invoke is passed to this template in the `machineSettings` parameter of the `commandToExecute` property.  All but one of the Redis Cluster nodes can be deployed and scripted in parallel.  One node needs to be saved until the end because the Redis Cluster setup can be run on only one node, and it must be done after all of the nodes are running the Redis server.  This is why the script to execute is passed to this template; the last node needs to run a slightly different script that will not only install the Redis server, but also set up the Redis cluster.
 
 Let's drill down into *how* this last template, node-resources.json, is used, as it is one of the most interesting from a template development perspective. One important concept to highlight is how a single template file can deploy multiple copies of a single resource type, and for each instance, it can set unique values for required settings. This concept is known as **resource looping**.
 
-When node-resources.json is invoked from within the main azuredeploy.json file, it is invoked from inside a resource that uses the `copy` element to create a loop of sorts. A resource that uses the `copy` element will “copy” itself for the number of times specified in the `count` parameter of the `copy` element. For all settings where it is necessary to specify unique values between different instances of the deployed resource, the **copyindex()** function can be used to obtain a numeric value indicating the current index in that particular resource loop creation. In the following fragment from azuredeploy.json, you can see this concept applied to multiple VMs being created for the Redis Cluster nodes:
+When node-resources.json is invoked from within the main azuredeploy.json file, it is invoked from inside a resource that uses the `copy` element to create a loop of sorts. A resource that uses the `copy` element will "copy" itself for the number of times specified in the `count` parameter of the `copy` element. For all settings where it is necessary to specify unique values between different instances of the deployed resource, the **copyindex()** function can be used to obtain a numeric value indicating the current index in that particular resource loop creation. In the following fragment from azuredeploy.json, you can see this concept applied to multiple VMs being created for the Redis Cluster nodes:
 
 ```json
 {
@@ -666,4 +664,4 @@ In essence, this approach suggests to:
 - For identical members of a group of resources (nodes in a cluster, etc.), create specific templates that leverage resource looping in order to deploy multiple instances with unique properties.
 - For all post-deployment tasks (product installation, configurations, etc.), leverage script deployment extensions and create scripts specific to each technology.
 
-For more information, see [Azure Resource Manager Template <!-- deleted by customization Language](/documentation/articles/resource-group-authoring-templates) --><!-- keep by customization: begin --> Language](https://msdn.microsoft.com/zh-cn/library/azure/dn835138.aspx) <!-- keep by customization: end -->.
+For more information, see [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/29/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 
@@ -45,7 +45,7 @@ Standard implementations of Hadoop clusters typically have a single head node. H
 
 
 
-## Check the active head node service status
+## Check active head node service status
 To determine which head node is active and to check on the status of the services running on that head node, you must connect to the Hadoop cluster by using the Remote Desktop Protocol (RDP). For the RDP instructions, see [Manage Hadoop clusters in HDInsight by using the Azure Management Portal](/documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp). Once you have remoted into the cluster, double-click on the **Hadoop Service Available ** icon located on the desktop to obtain status about which head node the Namenode, Jobtracker, Templeton, Oozieservice, Metastore, and Hiveserver2 services are running, or for HDI 3.0, the Namenode, Resource Manager, History Server, Templeton, Oozieservice, Metastore, and Hiveserver2 services.
 
 ![](./media/hdinsight-high-availability/Hadoop.Service.Availability.Status.png)
@@ -59,7 +59,7 @@ To access job logs on the secondary head node in the event that it has become th
 ![](./media/hdinsight-high-availability/Hadoop.Head.Node.Log.Files.png)
 
 
-## Configure the size of the head node
+## Configure head node size
 The head nodes are allocated as large virtual machines (VMs) by default. This size is adequate for the management of most Hadoop jobs run on the cluster. But there are scenarios that may require extra-large VMs for the head nodes. One example is when the cluster has to manage a large number of small Oozie jobs.
 
 Extra-large VMs can be configured by using either Azure PowerShell cmdlets or the HDInsight SDK.
@@ -96,8 +96,8 @@ For the SDK, the story is similar. The creation and provisioning of a cluster by
     };
 
 
-**References**
+## Next Steps
 
-- [ZooKeeper](http://zookeeper.apache.org/ )
+- [Apache ZooKeeper](http://zookeeper.apache.org/ )
 - [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)
 - [Using HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters-v1#sdk)

@@ -1,14 +1,13 @@
 new docs: 3, word count: {word_count_TODO}
+articles/virtual-machines/virtual-machines-arm-log-on-windows-vm.md
+articles/virtual-machines/virtual-machines-setup-simulated-hybrid-cloud-environment-testing.md
+articles/virtual-machines/virtual-machines-sql-server-alwayson-availability-groups-gui-arm.md
+articles/virtual-machines/virtual-machines-sql-server-azure-key-vault-integration-resource-manager.md
 articles/virtual-machines/virtual-machines-sql-server-connectivity-resource-manager.md
 articles/virtual-machines/virtual-machines-sql-server-provision-resource-manager.md
-articles/virtual-machines/virtual-machines-vmss-walkthrough-cli.md
+articles/virtual-machines/virtual-machines-upload-image-windows-resource-manager.md
+articles/virtual-machines/virtual-machines-windows-capture-image-resource-manager.md
 
 new includes: 8
-includes/virtual-machines-sql-server-akv-next-steps.md
-includes/virtual-machines-sql-server-akv-prepare.md
-includes/virtual-machines-sql-server-connection-steps-classic-tcp-endpoint.md
-includes/virtual-machines-sql-server-connection-steps-classic.md
-includes/virtual-machines-sql-server-connection-steps-resource-manager-nsg-rule.md
 includes/virtual-machines-sql-server-connection-steps-resource-manager.md
-includes/virtual-machines-vmss-preview-cli-include.md
-includes/virtual-machines-vmss-preview-ps-include.md
+includes/virtual-machines-sql-server-connection-steps-resource-manager-nsg-rule.md

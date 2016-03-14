@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Automatically Scale Virtual Machine Scale Sets | Windows Azure"
 	description="Get started creating and managing your first Azure Virtual Machine Scale Sets using Azure PowerShell"

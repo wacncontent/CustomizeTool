@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Node.js web site using the Azure Table Service"
-	description="A tutorial that teaches you how to use the Azure Table service to store data from a Node.js application hosted in Azure Websites."
+	pageTitle="Node.js web app using the Azure Table Service"
+	description="This tutorial teaches you how to use the Azure Table service to store data from a Node.js application which is hosted in Azure Web Apps."
 	tags="azure-portal"
 	services="app-service\web, storage"
 	documentationCenter="nodejs"
@@ -10,16 +10,14 @@
 
 <tags
 	ms.service="storage"
-	ms.date="11/20/2015"
+	ms.date="01/20/2016"
 	wacn.date=""/>
 
-
-
-# Node.js web site using the Azure Table Service
+# Node.js web app using the Azure Table Service
 
 ## Overview
 
-This tutorial shows you how to use Table service provided by Azure Data Management to store and access data from a [node] application hosted in [Azure Websites](/documentation/services/web-sites/) web sites. This tutorial assumes that you have some prior experience using node and [Git].
+This tutorial shows you how to use Table service provided by Azure Data Management to store and access data from a [node] application hosted in [Azure Web App](/documentation/services/web-sites/) Web Apps. This tutorial assumes that you have some prior experience using node and [Git].
 
 You will learn:
 
@@ -27,7 +25,7 @@ You will learn:
 
 * How to work with the Azure Table service
 
-* How to use the Azure CLI to create a web site.
+* How to use the Azure CLI to create a web app.
 
 By following this tutorial, you will build a simple web-based "to-do list" application that allows creating, retrieving and completing tasks. The tasks are stored in the Table service.
 
@@ -35,8 +33,7 @@ Here is the completed application:
 
 ![A web page displaying an empty tasklist][node-table-finished]
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
-
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 ## Prerequisites
 
@@ -46,14 +43,13 @@ Before following the instructions in this article, ensure that you have the foll
 
 * [Git]
 
-
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 ## Create a storage account
 
 Create an Azure storage account. The app will use this account to store the to-do items.
 
-1.  Log into the [Azure Management Portal](https://manage.windowsazure.cn).
+1.  Log into the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage**. Give the storage account a unique name and create a new [resource group](/documentation/articles/resource-group-overview) for it.
 
@@ -88,7 +84,7 @@ In this section you will create a new Node application and use npm to add module
 		├── mkdirp@0.3.5
 		└── commander@1.3.2 (keypress@0.1.0)
 
-	> [AZURE.NOTE] The '-g' parameter installs the module globally. That way, we can use **express** to generate web site scaffolding without having to type in additional path information.
+	> [AZURE.NOTE] The '-g' parameter installs the module globally. That way, we can use **express** to generate web app scaffolding without having to type in additional path information.
 
 4. To create the scaffolding for the application, enter the **express** command:
 
@@ -124,7 +120,7 @@ In this section you will create a new Node application and use npm to add module
 
 ### Install additional modules
 
-One of the files that **express** creates is **package.json**. This file contains a list of module dependencies. Later, when you deploy the application to Azure Websites, this file determines which modules need to be installed on Azure.
+One of the files that **express** creates is **package.json**. This file contains a list of module dependencies. Later, when you deploy the application to Azure Web Apps, this file determines which modules need to be installed on Azure.
 
 From the command-line, enter the following command to install the modules described in the **package.json** file. You may need to use 'sudo'.
 
@@ -289,7 +285,7 @@ A *controller* handles HTTP requests and renders the HTML response.
 		  },
 
 		  addTask: function(req,res) {
-		    var self = this
+		    var self = this;
 		    var item = req.body.item;
 		    self.task.addItem(item, function itemAdded(error) {
 		      if(error) {
@@ -403,7 +399,7 @@ A *controller* handles HTTP requests and renders the HTML response.
 
 ### Modify the global layout
 
-The **layout.jade** file in the **views** directory is a global template for other **.jade** files. In this step you will modify it to use [Twitter Bootstrap](https://github.com/twbs/bootstrap), which is a toolkit that makes it easy to design a nice looking web site.
+The **layout.jade** file in the **views** directory is a global template for other **.jade** files. In this step you will modify it to use [Twitter Bootstrap](https://github.com/twbs/bootstrap), which is a toolkit that makes it easy to design a nice looking web app.
 
 Download and extract the files for [Twitter Bootstrap](http://getbootstrap.com/). Copy the **bootstrap.min.css** file from the Bootstrap **css** folder into the **public/stylesheets** directory of your application.
 
@@ -476,11 +472,11 @@ Even though the application is running locally, it is storing the data in the Az
 
 ## Deploy your application to Azure
 
-The steps in this section use the Azure command-line tools to create a new web site in Azure Websites, and then use Git to deploy your application. To perform these steps you must have an Azure subscription.
+The steps in this section use the Azure command-line tools to create a new web app in Azure, and then use Git to deploy your application. To perform these steps you must have an Azure subscription.
 
-> [AZURE.NOTE] These steps can also be performed by using the [Azure Management Portal](https://manage.windowsazure.cn). See [Build and deploy a Node.js web site in Azure Websites].
+> [AZURE.NOTE] These steps can also be performed by using the [Azure Management Portal](https://manage.windowsazure.cn/). See [Build and deploy a Node.js web app in Azure].
 >
-> If this is the first web site you have created, you must use the Azure Management Portal to deploy this application.
+> If this is the first web app you have created, you must use the Azure Management Portal to deploy this application.
 
 To get started, install the [Azure CLI] by entering the following command from the command line:
 
@@ -508,19 +504,19 @@ In this step, you will download a file containing information about your subscri
 
 3. After the settings are imported, delete the publish settings file. It is no longer needed, and contains sensitive information regarding your Azure subscription.
 
-### Create an Azure Websites
+### Create an Azure web app
 
 1. From the command-line, change directories to the **tasklist** directory.
 
-2. Use the following command to create a new web site.
+2. Use the following command to create a new web app.
 
 		azure site create --git
 
-	You will be prompted for the web site name and location. Provide a unique name and select the same geographical location as your Azure Storage account.
+	You will be prompted for the web app name and location. Provide a unique name and select the same geographical location as your Azure Storage account.
 
-	The `--git` parameter creates a Git repository on Azure for this web site. It also initializes a Git repository in the current directory if none exists, and adds a [Git remote] named 'azure', which is used to publish the application to Azure. Finally, it creates a **web.config** file, which contains settings used by Azure to host node applications. If you omit the `--git` parameter but the directory contains a Git repository, the command will still create the 'azure' remote.
+	The `--git` parameter creates a Git repository on Azure for this web app. It also initializes a Git repository in the current directory if none exists, and adds a [Git remote] named 'azure', which is used to publish the application to Azure. Finally, it creates a **web.config** file, which contains settings used by Azure to host node applications. If you omit the `--git` parameter but the directory contains a Git repository, the command will still create the 'azure' remote.
 
-	Once this command has completed, you will see output similar to the following. Note that the line beginning with **Website created at** contains the URL for the web site.
+	Once this command has completed, you will see output similar to the following. Note that the line beginning with **Website created at** contains the URL for the web app.
 
 		info:   Executing command site create
 		help:   Need a site name
@@ -535,11 +531,11 @@ In this step, you will download a file containing information about your subscri
 		info:   Executing `git remote add azure https://username@tabletasklist.chinacloudsites.cn/TableTasklist.git`
 		info:   site create command OK
 
-	> [AZURE.NOTE] If this is the first Azure Websites for your subscription, you will be instructed to use the Azure Management Portal to create the web site. For more information, see [Build and deploy a Node.js web site in Azure Websites].
+	> [AZURE.NOTE] If this is the first Azure web app for your subscription, you will be instructed to use the Azure Management Portal to create the web app. For more information, see [Build and deploy a Node.js web app in Azure].
 
 ### Set environment variables
 
-In this step, you will add environment variables to your web site configuration on Azure.
+In this step, you will add environment variables to your web app configuration on Azure.
 From the command line, enter the following:
 
 	azure site appsetting add
@@ -548,11 +544,11 @@ From the command line, enter the following:
 
 Replace **<storage account name>** with the name of the storage account you created earlier, and replace **<storage access key>** with the primary access key for your storage account. (Use the same values as the config.json file that you created earlier.)
 
-Alternatively, you can set environment variables in the [Azure Management Portal](https://manage.windowsazure.cn):
+Alternatively, you can set environment variables in the [Azure Management Portal](https://manage.windowsazure.cn/):
 
-1.  Open the web site's blade by clicking **Browse** > **Web Apps** > your web site name.
+1.  Open the web app's blade by clicking **Browse** > **Web Apps** > your web app name.
 
-1.  In your web site's blade, click **Configure** > **Application Settings**.
+1.  In your web app's blade, click **Configure** > **Application Settings**.
 
   	<!-- ![Top Menu](./media/storage-nodejs-use-table-storage-web-site/PollsCommonWebSiteTopMenu.png) -->
 
@@ -576,7 +572,7 @@ To publish the app, commit the code files to Git and then push to azure/master.
 		git add .
 		git commit -m "adding files"
 
-3. Push the commit to the Azure Websites:
+3. Push the commit to the Azure web app:
 
 		git push azure master
 
@@ -585,24 +581,25 @@ To publish the app, commit the code files to Git and then push to azure/master.
 		To https://username@tabletasklist.chinacloudsites.cn/TableTasklist.git
  		 * [new branch]      master -> master
 
-4. Once the push operation has completed, browse to the web site URL returned previously by the `azure create site` command to view your application.
+4. Once the push operation has completed, browse to the web app URL returned previously by the `azure create site` command to view your application.
 
 
 ## Next steps
 
-While the steps in this article describe using the Table Service to store information, you can also use MongoDB. See [Node.js web site with MongoDB] for more information.
+While the steps in this article describe using the Table Service to store information, you can also use MongoDB. See [Node.js web app with MongoDB] for more information.
 
 ## Additional resources
 
 [Azure CLI]
 
 ## What's changed
-* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
-[Build and deploy a Node.js web site in Azure Websites]: web-sites-nodejs-develop-deploy-mac.md
-[Continuous deployment using GIT in Azure Websites]: web-sites-publish-source-control.md
+<!-- URLs -->
+
+[Build and deploy a Node.js web app in Azure]: web-sites-nodejs-develop-deploy-mac.md
+[Continuous deployment using GIT in Azure Web App]: web-sites-publish-source-control.md
 [Azure Developer Center]: /develop/nodejs/
-
 
 [node]: http://nodejs.org
 [Git]: http://git-scm.com
@@ -610,10 +607,10 @@ While the steps in this article describe using the Table Service to store inform
 [for free]: http://windowsazure.cn
 [Git remote]: http://git-scm.com/docs/git-remote
 
-[Node.js web site with MongoDB]: web-sites-nodejs-store-data-mongodb.md
+[Node.js web app with MongoDB]: web-sites-nodejs-store-data-mongodb.md
 [Azure CLI]: ../xplat-cli-install.md
 
-[Continuous deployment using GIT in Azure Websites]: web-sites-publish-source-control.md
+[Continuous deployment using GIT in Azure Web App]: web-sites-publish-source-control.md
 [azure]: https://github.com/Azure/azure-sdk-for-node
 [node-uuid]: https://www.npmjs.com/package/node-uuid
 [nconf]: https://www.npmjs.com/package/nconf
@@ -621,6 +618,9 @@ While the steps in this article describe using the Table Service to store inform
 
 [Azure Management Portal]: https://manage.windowsazure.cn
 
+[Create and deploy a Node.js application to an Azure Web Site]: web-sites-nodejs-develop-deploy-mac.md
+ 
+<!-- Image References -->
 
 [node-table-finished]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_empty.png
 [node-table-list-items]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_list.png
@@ -629,11 +629,7 @@ While the steps in this article describe using the Table Service to store inform
 [portal-storage-account]: ./media/storage-nodejs-use-table-storage-web-site/new-storage.png
 [portal-quick-create-storage]: ./media/storage-nodejs-use-table-storage-web-site/quick-storage.png
 [portal-storage-access-keys]: ./media/storage-nodejs-use-table-storage-web-site/manage-access-keys.png
-
 [go-to-dashboard]: ./media/storage-nodejs-use-table-storage-web-site/go_to_dashboard.png
 [web-configure]: ./media/storage-nodejs-use-table-storage-web-site/sql-task-configure.png
 [app-settings-save]: ./media/storage-nodejs-use-table-storage-web-site/savebutton.png
 [app-settings]: ./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png
-
-[Create and deploy a Node.js application to an Azure Web Site]: web-sites-nodejs-develop-deploy-mac.md
- 

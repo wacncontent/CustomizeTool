@@ -49,7 +49,7 @@ Before you begin the instructions in this article, you must have the following:
 
 - **HDInsight version**
 
-	It is used to determine the version of HDInsight to use for this cluster. For more information, see [Hadoop cluster versions and components in HDInsight](/documentation/articles/hdinsight-component-versioning/)
+	It is used to determine the version of HDInsight to use for this cluster. For more information, see [Hadoop cluster versions and components in HDInsight](/documentation/articles/hdinsight-component-versioning-v1/)
 
 - **Cluster type** and **cluster size (a.k.a. data nodes)**
 

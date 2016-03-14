@@ -1,5 +1,8 @@
+<!-- deleted by customization
+>[AZURE.NOTE] If you want to get started with Azure  before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+-->
 <!-- keep by customization: begin -->
 <!-- not suitable for Mooncake -->
 
+>[AZURE.NOTE] If you want to get started with Azure Web App before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 <!-- keep by customization: end -->
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.

@@ -15,7 +15,7 @@
 
 # Set up a hybrid cloud environment for testing
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
  
 
 This topic steps you through creating a hybrid cloud environment with Windows Azure for testing. Here is the resulting configuration.
@@ -56,8 +56,8 @@ Next, log on to DC1 with the CORP\User1 credentials. To configure the CORP domai
 
 	New-ADReplicationSite -Name "TestLab" 
 	New-ADReplicationSite -Name "TestVNET"
-	New-ADReplicationSubnet “Name "10.0.0.0/8" “Site "TestLab"
-	New-ADReplicationSubnet “Name "192.168.0.0/16" “Site "TestVNET
+	New-ADReplicationSubnet "Name "10.0.0.0/8" "Site "TestLab"
+	New-ADReplicationSubnet "Name "192.168.0.0/16" "Site "TestVNET
 
 This is your current configuration.
 
@@ -86,7 +86,7 @@ Use these commands at an administrator-level Windows PowerShell command prompt o
 	[IPAddress]$publicDNS="<Your ISP DNS server(s)>"
 	Rename-NetAdapter -Name $corpnetAdapterName -NewName Corpnet
 	Rename-NetAdapter -Name $internetAdapterName -NewName Internet
-	New-NetIPAddress -InterfaceAlias "Internet" -IPAddress $publicIP -PrefixLength $publicIPpreflength “DefaultGateway $publicDG
+	New-NetIPAddress -InterfaceAlias "Internet" -IPAddress $publicIP -PrefixLength $publicIPpreflength "DefaultGateway $publicDG
 	Set-DnsClientServerAddress -InterfaceAlias Internet -ServerAddresses $publicDNS
 	New-NetIPAddress -InterfaceAlias "Corpnet" -IPAddress 10.0.0.2 -AddressFamily IPv4 -PrefixLength 24
 	Set-DnsClientServerAddress -InterfaceAlias "Corpnet" -ServerAddresses 10.0.0.1

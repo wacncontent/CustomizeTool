@@ -17,12 +17,13 @@
 
 > [AZURE.SELECTOR]
 - [Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 - [PowerShell: Resource Manager deployment](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 - [PowerShell: Classic deployment](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
 <!-- HHTML comment in to break between the selector and the note in the include below-->
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).
 
 This tutorial shows you how easy it is to create an Azure virtual machine (VM) running Windows in the Azure Management Portal. We'll use a Windows Server image as an example, but that's just one of the many images Azure offers. Note that your image choices depend on your subscription. For example, Windows desktop images may be available to MSDN subscribers.
 
@@ -30,9 +31,17 @@ You can also create VMs using [your own images](/documentation/articles/virtual-
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
+## Video walkthrough
+
+Here's a walkthrough of this tutorial.
+
+[AZURE.VIDEO creating-a-windows-vm-on-microsoft-azure-classic-portal]
+
 ## <a id="createvirtualmachine"> </a>How to create the virtual machine
 
 This section shows you how to use the **From Gallery** option in the Azure Management Portal to create the virtual machine. This option provides more configuration choices than the **Quick Create** option. For example, if you want to join a virtual machine to a virtual network, you'll need to use the **From Gallery** option.
+
+> [AZURE.NOTE] You can also try the richer, customizable Azure Management Portal to create a virtual machine, use enhanced monitoring and diagnostics, use Premium storage, and more. The available options for configuring a virtual machine in the two portals overlap substantially but aren't identical. For example, use the Azure Management Portal to configure a virtual machine with Premium storage.
 
 [AZURE.INCLUDE [virtual-machines-create-WindowsVM](../includes/virtual-machines-create-windowsvm.md)]
 

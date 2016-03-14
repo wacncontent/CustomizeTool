@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Create a REST service using ASP.NET Web API and SQL Database in Azure Websites" 
-	description="A tutorial that teaches you how to deploy an app that uses the ASP.NET Web API to an Azure web site by using Visual Studio." 
+	pageTitle="Create a REST service using ASP.NET Web API and SQL Database in Azure Web App" 
+	description="A tutorial that teaches you how to deploy an app that uses the ASP.NET Web API to an Azure web app by using Visual Studio." 
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="Rick-Anderson" 
@@ -13,13 +13,13 @@
 	ms.date="12/04/2015"
 	wacn.date=""/>
 
-# Create a REST service using ASP.NET Web API and SQL Database in Azure Websites
+# Create a REST service using ASP.NET Web API and SQL Database in Azure
 
-This tutorial shows how to deploy an ASP.NET web site to an [Azure Websites](/documentation/services/web-sites/) by using the Publish Web wizard in Visual Studio 2013 or Visual Studio 2013 Community Edition. 
+This tutorial shows how to deploy an ASP.NET web app to an [Azure Web App](/documentation/services/web-sites/) by using the Publish Web wizard in Visual Studio 2013 or Visual Studio 2013 Community Edition. 
 
 You can open an Azure account for free, and if you don't already have Visual Studio 2013, the SDK automatically installs Visual Studio 2013 for Web Express. So you can start developing for Azure entirely for free.
 
-This tutorial assumes that you have no prior experience using Azure. On completing this tutorial, you'll have a simple web site up and running in the cloud.
+This tutorial assumes that you have no prior experience using Azure. On completing this tutorial, you'll have a simple web app up and running in the cloud.
  
 You'll learn:
 
@@ -29,7 +29,7 @@ You'll learn:
 * How to use a SQL database to store data in Azure.
 * How to publish application updates to Azure.
 
-You'll build a simple contact list web site that is built on ASP.NET MVC 5 and uses the ADO.NET Entity Framework for database access. The following illustration shows the completed application:
+You'll build a simple contact list web application that is built on ASP.NET MVC 5 and uses the ADO.NET Entity Framework for database access. The following illustration shows the completed application:
 
 ![screenshot of web site][intro001]
 
@@ -40,7 +40,7 @@ You'll build a simple contact list web site that is built on ASP.NET MVC 5 and u
 
 1. Start Visual Studio 2013.
 1. From the **File** menu click **New Project**.
-3. In the **New Project** dialog box, expand **Visual C#** and select **Web**  and then select **ASP.NET web site**. Name the application **ContactManager** and click **OK**.
+3. In the **New Project** dialog box, expand **Visual C#** and select **Web**  and then select **ASP.NET Web Application**. Name the application **ContactManager** and click **OK**.
 
 	![New Project dialog box](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr4.png)
 
@@ -548,7 +548,7 @@ Cross-site request forgery (also known as XSRF or CSRF) is an attack against web
 
 An XSRF attack is distinct from a phishing attack. Phishing attacks require interaction from the victim. In a phishing attack, a malicious website will mimic the target website, and the victim is fooled into providing sensitive information to the attacker. In an XSRF attack, there is often no interaction necessary from the victim. Rather, the attacker is relying on the browser automatically sending all relevant cookies to the destination website.
 
-For more information, see the [Open web site Security Project](https://www.owasp.org/index.php/Main_Page) (OWASP) [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)).
+For more information, see the [Open Web Application Security Project](https://www.owasp.org/index.php/Main_Page) (OWASP) [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)).
 
 1. In **Solution Explorer**, right **ContactManager** project and click **Add** and then click **Class**.
 
@@ -724,11 +724,11 @@ When you see that the item you enter is saved and appears on the contact manager
 
 The application is now running in the cloud, using SQL Database to store its data. After you finish testing the application in Azure, delete it. The application is public and doesn't have a mechanism to limit access.
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 ## Next Steps
 
-A real application would require authentication and authorization, and you would use the membership database for that purpose. The tutorial [Deploy a Secure ASP.NET MVC application with OAuth, Membership and SQL Database](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database) is based on this tutorial and shows how to deploy a web site with the membership database.
+A real application would require authentication and authorization, and you would use the membership database for that purpose. The tutorial [Deploy a Secure ASP.NET MVC application with OAuth, Membership and SQL Database](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database) is based on this tutorial and shows how to deploy a web application with the membership database.
 
 Another way to store data in an Azure application is to use Azure storage, which provide non-relational data storage in the form of blobs and tables. The following links provide more information on Web API, ASP.NET MVC and Window Azure.
  
@@ -743,7 +743,7 @@ This tutorial and the sample application was written by [Rick Anderson](http://b
 Please leave feedback on what you liked or what you would like to see improved, not only about the tutorial itself but also about the products that it demonstrates. Your feedback will help us prioritize improvements. We are especially interested in finding out how much interest there is in more automation for the process of configuring and deploying the membership database. 
 
 ## What's changed
-* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
 <!-- bookmarks -->
 [Add an OAuth Provider]: #addOauth

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Create a PHP-MySQL web site in Azure Websites and deploy using FTP" 
-	description="A tutorial that demonstrates how to create a PHP web site that stores data in MySQL and use FTP deployment to Azure." 
+	pageTitle="Create a PHP-MySQL web app in Azure and deploy using FTP" 
+	description="A tutorial that demonstrates how to create a PHP web app that stores data in MySQL and use FTP deployment to Azure." 
 	services="app-service\web" 
 	documentationCenter="php" 
 	authors="tfitzmac" 
@@ -13,7 +13,7 @@
 	wacn.date=""/>
 
 
-#Create a PHP-MySQL web site in Azure Websites and deploy using FTP
+#Create a PHP-MySQL web app in Azure and deploy using FTP
 
 > [AZURE.SELECTOR]
 - [.Net](/documentation/articles/web-sites-dotnet-get-started)
@@ -23,25 +23,25 @@
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
 - [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-This tutorial shows you how to create a PHP-MySQL web site and how to deploy it using FTP. This tutorial assumes you have [PHP][install-php], [MySQL][install-mysql], a web server, and an FTP client installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP/MySQL web site running in Azure.
+This tutorial shows you how to create a PHP-MySQL web app and how to deploy it using FTP. This tutorial assumes you have [PHP][install-php], [MySQL][install-mysql], a web server, and an FTP client installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP/MySQL web app running in Azure.
  
 You will learn:
 
-* How to create a web site and a MySQL database using the Azure Management Portal. Because PHP is enabled in web sites by default, nothing special is required to run your PHP code.
+* How to create a web app and a MySQL database using the Azure Management Portal. Because PHP is enabled in Web Apps by default, nothing special is required to run your PHP code.
 * How to publish your application to Azure using FTP.
  
-By following this tutorial, you will build a simple registration web site in PHP. The application will be hosted in a web site. A screenshot of the completed application is below:
+By following this tutorial, you will build a simple registration web app in PHP. The application will be hosted in a Web App. A screenshot of the completed application is below:
 
 ![Azure PHP Web Site][running-app]
 
 <!-- deleted by customization
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required, no commitments. 
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required, no commitments. 
 -->
 
 
-##Create a web site and set up FTP publishing
+##Create a web app and set up FTP publishing
 
-Follow these steps to create a web site and a MySQL database:
+Follow these steps to create a web app and a MySQL database:
 
 1. Login to the [Azure Management Portal][management-portal].
 2. Click the **+ New** icon on the bottom left of the Azure Management Portal.
@@ -49,23 +49,23 @@ Follow these steps to create a web site and a MySQL database:
 	![Create New Azure Web Site][new-website]
 
 <!-- deleted by customization
-3. Click **Web + Mobile**, then **web site + MySQL**.
+3. Click **Web + Mobile**, then **Web app + MySQL**.
 
 	![Custom Create a new Web Site][custom-create]
 4. Enter a valid name for your resource group.
 
     ![Set resource group name][resource-group]
 
-5. Enter values for your new web site.
+5. Enter values for your new web app.
 
-     ![Create web site][new-web-app]
+     ![Create web app][new-web-app]
 
 6. Enter values for your new database, including agreeing to the legal terms.
 
 	![Create new MySQL database][new-mysql-db]
-7. When the web site has been created, you will see the new resource group. Click the name of the web site to configure its settings.
+7. When the web app has been created, you will see the new resource group. Click the name of the web app to configure its settings.
 
-	![Open web site][go-to-webapp]
+	![Open web app][go-to-webapp]
 
 6. Scroll down until you find **Set deployment credentials**. 
 
@@ -248,7 +248,7 @@ You can now browse to [http://localhost/registration/index.php][localhost-index]
 
 ##Get MySQL and FTP connection information
 
-To connect to the MySQL database that is running in web sites, your will need the connection information. To get MySQL connection information, follow these steps:
+To connect to the MySQL database that is running in Web Apps, your will need the connection information. To get MySQL connection information, follow these steps:
 
 <!-- deleted by customization
 1. From your resource group, click the database:
@@ -263,7 +263,7 @@ To connect to the MySQL database that is running in web sites, your will need th
 
     ![Note properties][note-properties]
 
-3. From your web site, click the **Download publish profile** link at the bottom right corner of the page:
+3. From your web app, click the **Download publish profile** link at the bottom right corner of the page:
 
 	![Download publish profile][download-publish-profile]
 
@@ -291,7 +291,7 @@ Make note of the `publishUrl`, `userName`, and `userPWD` attributes.
 
 ##Publish your app
 
-After you have tested your app locally, you can publish it to your web site using FTP. However, you first need to update the database connection information in the application. Using the database connection information you obtained earlier (in the **Get MySQL and FTP connection information** section), update the following information in **both** the `createdatabase.php` and `index.php` files with the appropriate values:
+After you have tested your app locally, you can publish it to your web app using FTP. However, you first need to update the database connection information in the application. Using the database connection information you obtained earlier (in the **Get MySQL and FTP connection information** section), update the following information in **both** the `createdatabase.php` and `index.php` files with the appropriate values:
 
 	// DB connection info
 	$host = "value of Data Source";

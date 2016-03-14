@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="WordPress on Ubuntu with ARM template | Windows Azure"
 	description="Easily deploy a single WordPress server running Ubuntu using a Resource Manager Template and the Azure Management Portal, Azure PowerShell, or the Azure CLI."
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/08/2015"
+	ms.date="01/07/2016"
 	wacn.date=""/>
 
 # Deploy a WordPress server on Ubuntu with an Azure Resource Manager template
@@ -87,17 +89,3 @@ Here is an example.
 When you run the **azure group deployment create** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, Azure creates and configures the virtual machines.
 
 When the template execution is complete, you now have WordPress server running on Ubuntu in your new resource group.
-
-## Additional resources
-
-[Deploy and manage Virtual Machines using Azure Resource Manager templates and Azure PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
-
-[Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
-
-[Azure Resource Manager Overview](/documentation/articles/resource-group-overview)
-
-[Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
-
-[Virtual machines documentation](/documentation/services/virtual-machines/)
-
-[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)

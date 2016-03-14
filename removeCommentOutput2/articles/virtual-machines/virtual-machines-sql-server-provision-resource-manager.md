@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Provision a SQL Server virtual machine in Azure Resource Manager (GUI) | Windows Azure"
 	description="Create an SQL Server virtual machine in Azure Resource Manager mode. This tutorial primarily uses the user interface and tools rather than scripting."
@@ -45,7 +47,7 @@ This tutorial assumes that you already have an Azure account. If you do not have
 
 ## <a id="Provision">Provision a SQL VM image from the gallery with the resource manager deployment model
 
-1. Log in to the [Azure Management Portal](http://manage.windowsazure.cn) using your account.
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn) using your account.
 1. On the Azure Management Portal click **+New**. The portal will open the **New** blade. The SQL Server VM templates are in the **Compute** group of the Marketplace.
 
 1. In the **New** blade, click **Compute**.

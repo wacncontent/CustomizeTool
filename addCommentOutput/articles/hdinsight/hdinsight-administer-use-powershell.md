@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/01/2015"
+	ms.date="01/04/2016"
 	wacn.date=""/>
 
 # Manage Hadoop clusters in HDInsight by using Azure PowerShell
@@ -40,17 +40,21 @@ To uninstall the older version, run Programs and Features in the control panel.
 There are two main options for installing Azure PowerShell. 
 
 - [PowerShell Gallery](https://www.powershellgallery.com/). Run the following commands from elevated PowerShell ISE or elevated Windows PowerShell console:
+<!-- deleted by customization
 
 		# Install the Azure Resource Manager modules from PowerShell Gallery
 		Install-Module AzureRM
 		Install-AzureRM
+-->
 		
 		# Install the Azure Service Management module from PowerShell Gallery
 		Install-Module Azure
 		
+<!-- deleted by customization
 		# Import AzureRM modules for the given version manifest in the AzureRM module
 		Import-AzureRM
 		
+-->
 		# Import Azure Service Management module
 		Import-Module Azure
 
@@ -62,9 +66,11 @@ WebPI will receive monthly updates. PowerShell Gallery will receive updates on a
 
 ##Create clusters
 
-HDInsight cluster requires an Azure Resource group and a Blob container on an Azure Storage account:
+HDInsight cluster requires <!-- deleted by customization an Azure Resource group and --> a Blob container on an Azure Storage account:
 
+<!-- deleted by customization
 - Azure Resource group is a logical container for Azure resources. The Azure resource group and the HDInsight cluster don't have to be in the same location.  For more information, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
+-->
 - HDInsight uses a Blob container of an Azure Storage account as the default file system. An Azure Storage account and a storage container are required before you can create an HDInsight cluster. The default storage account and the HDInsight cluster have to be in the same location.
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
@@ -73,12 +79,6 @@ HDInsight cluster requires an Azure Resource group and a Blob container on an Az
 
 <!-- deleted by customization
 	Login-AzureRmAccount
--->
-<!-- keep by customization: begin -->
-[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
-
-	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-<!-- keep by customization: end -->
 	Get-AzureRmSubscription  # list your subscriptions and get your subscription ID
 	Select-AzureRmSubscription -SubscriptionId "<Your Azure Subscription ID>"
 
@@ -86,7 +86,17 @@ HDInsight cluster requires an Azure Resource group and a Blob container on an Az
 	
 **To create a new resource group**
 
-	New-AzureRmResourceGroup -name <New Azure Resource Group Name> -Location "<Azure Location>"  # For example, <!-- deleted by customization "EAST US 2" --><!-- keep by customization: begin --> "China East" <!-- keep by customization: end -->
+	New-AzureRmResourceGroup -name <New Azure Resource Group Name> -Location "<Azure Location>"  # For example, "EAST US 2"
+-->
+<!-- keep by customization: begin -->
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
+
+	Add-AzureAccount -Environment AzureChinaCloud
+	Get-AzureSubscription  # list your subscriptions and get your subscription ID
+	Select-AzureSubscription -SubscriptionId "<Your Azure Subscription ID>"
+
+**Select-AzureSubscription** is called in case you have multiple Azure subscriptions.
+<!-- keep by customization: end -->
 
 **To create an Azure Storage account**
 
@@ -162,7 +172,7 @@ Once you have the Storage account and the Blob container prepared, you are ready
 	$storageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName | %{ $_.Key1 }
 -->
 <!-- keep by customization: begin -->
-	$storageAccountKey = Get-AzureRmStorageKey -StorageAccountName $storageAccountName | %{ $_.Primary }
+	$storageAccountKey = Get-AzureStorageKey -StorageAccountName $storageAccountName | %{ $_.Primary }
 <!-- keep by customization: end -->
 
 	# Create a new HDInsight cluster
@@ -298,7 +308,7 @@ To grant:
 
 	# Credential option 1
 	$hadoopUserName = "admin"
-	$hadoopUserPassword = "Pass@word123"
+	$hadoopUserPassword = "<Enter the Password>"
 	$hadoopUserPW = ConvertTo-SecureString -String $hadoopUserPassword -AsPlainText -Force
 	$credential = New-Object System.Management.Automation.PSCredential($hadoopUserName,$hadoopUserPW)
 

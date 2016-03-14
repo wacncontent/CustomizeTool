@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Restore an app in Azure Websites" 
+	pageTitle="Restore an app in Azure Web App" 
 	description="Learn how to restore your app from a backup." 
 	services="app-service" 
 	documentationCenter="" 
@@ -9,17 +9,17 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/11/2015"
+	ms.date="01/07/2015"
 	wacn.date=""/>
 
 <!-- deleted by customization
-# Restore an app in Azure Websites
+# Restore an app in Azure
 
-This article shows you how to restore an Azure Websites app that you have previously backed up by using the [Azure Websites](/documentation/services/web-sites) Backup feature. For more information, see [Azure Websites Backups](/documentation/articles/web-sites-backup).
+This article shows you how to restore an Azure Web App that you have previously backed up by using the [Azure Web App](/documentation/services/web-sites) Backup feature. For more information, see [Azure  Backups](/documentation/articles/web-sites-backup).
 
-The Azure Websites Restore feature lets you restore your app with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new app based on one of your original app's backup. Creating a new app that runs in parallel to the latest version can be useful for A/B testing.
+The Azure  Restore feature lets you restore your app with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new app based on one of your original app's backup. Creating a new app that runs in parallel to the latest version can be useful for A/B testing.
 
-The Azure Websites Restore feature, available on the **Backups** blade in the [Azure Management Portal](http://manage.windowsazure.cn), is available only in Standard and Premium pricing tiers. For information about scaling your app using Standard or Premium tier, see [Scale an app in Azure Websites](/documentation/articles/web-sites-scale). Note that the Premium tier allows a greater number of daily backups to be performed over the Standard tier.
+The Azure Restore feature, available on the **Backups** blade in the [Azure Management Portal](http://manage.windowsazure.cn), is available only in Standard and Premium pricing tiers. For information about scaling your app using Standard or Premium tier, see [Scale an app in Azure Web App](/documentation/articles/web-sites-scale). Note that the Premium tier allows a greater number of daily backups to be performed over the Standard tier.
 -->
 <!-- keep by customization: begin -->
 # Restore a web site in Azure Websites
@@ -173,10 +173,12 @@ The Azure Websites Restore feature, available on the **Backups** blade in the [A
 	
 The details blade will display the available information related to the operation.
 	
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
-	
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+## Next Steps
+You can also backup and restore Azure Web Apps using REST API (see [Use REST to back up and restore Azure Web Apps](/documentation/articles/websites-csm-backup)).
+
 ## What's changed
-* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 -->
 <!-- keep by customization: begin -->
 
@@ -199,7 +201,7 @@ The details blade will display the available information related to the operatio
 
 <!-- IMAGES -->
 <!-- keep by customization: begin -->
-[RestoredContoso Website]: ./media/web-sites-restore/09RestoredContosoWebsite.png
+[RestoredContoso Website]: ./media/web-sites-restore/09RestoredContosoWebSite.png
 <!-- keep by customization: end -->
 [ChooseRestoreNow]: ./media/web-sites-restore/02ChooseRestoreNow.png
 [ViewContainers]: ./media/web-sites-restore/03ViewContainers.png

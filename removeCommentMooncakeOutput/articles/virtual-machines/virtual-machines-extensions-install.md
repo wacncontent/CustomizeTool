@@ -10,12 +10,12 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="12/08/2015"
- wacn.date=""/>
+	wacn.date=""/>
 #Manage virtual machine extensions
 
 Describes how to find, add, modify, or remove VM Extensions with either Windows or Linux Virtual Machines on Azure.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager mode
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 ##Using VM Extensions

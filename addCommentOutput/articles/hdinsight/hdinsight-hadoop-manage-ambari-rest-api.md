@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 #Manage HDInsight clusters by using the Ambari REST API
@@ -106,6 +106,10 @@ You can then use this information with the [Azure CLI](/documentation/articles/x
         azure storage account list --json | jq '.[] | select(.name=="ACCOUNTNAME").resourceGroup'
     
     This will return the resource group name for the account.
+    
+    > [AZURE.NOTE] If nothing is returned from this command, you may need to change the Azure CLI to Azure Resource Manager mode and run the command again. To switch to Azure Resource Manager mode, use the following command.
+    >
+    > `azure config mode arm`
     
 2. Get the key for the Storage account. Replace __GROUPNAME__ with the Resource Group from the previous step. Replace __ACCOUNTNAME__ with the Storage Account name:
 

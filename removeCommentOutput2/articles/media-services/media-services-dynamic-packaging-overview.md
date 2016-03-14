@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 
@@ -34,7 +34,7 @@ The following diagram shows the dynamic packaging workflow.
 
 ##Common scenario
 
-1. Upload an input file (called a mezzanine file). For example, H.264, MP4, or WMV (for the list of supported formats see [Formats Supported by the Media Services Encoder](/documentation/articles/media-services-azure-media-encoder-formats)).
+1. Upload an input file (called a mezzanine file). For example, H.264, MP4, or WMV (for the list of supported formats see [Formats Supported by the Media Encoder Standard](/documentation/articles/media-services-media-encoder-standard-formats).
 
 1. Encode your mezzanine file to H.264 MP4 adaptive bitrate sets.
 
@@ -42,55 +42,40 @@ The following diagram shows the dynamic packaging workflow.
 
 1. Build the streaming URLs to access and stream your content.
 
->[AZURE.NOTE]Not all MP4 file formats are supported by dynamic packaging, for more information, see [Unsupported formats for dynamic packaging](/documentation/articles/media-services-dynamic-packaging-overview#unsupported_formats).
 
 ##Preparing assets for dynamic streaming
 
 To prepare your asset for dynamic streaming you have two options:
 
-- Upload a master file and produce H.264 MP4 adaptive bitrate sets using the Azure Media Encoder.
-- Upload existing adaptive bitrate sets and validate them using the Media Packager.
+1. [Upload a master file](/documentation/articles/media-services-dotnet-upload-files).
+2. [Use the Media Encoder Standard encoder to produce H.264 MP4 adaptive bitrate sets](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard).
+3. [Stream your content](/documentation/articles/media-services-deliver-content-overview).
 
-###Upload a master file and produce H.264 MP4 adaptive bitrate sets using the Azure Media Encoder
+-OR-
+ 
+1. Upload pre-enocded MP4 files. 
 
-For information about how to upload and encode assets see the following articles:
+	>[AZURE.NOTE] This opiton is not recommended.
+	
+2. [Validate your pre-encoded files](/documentation/articles/media-services-static-packaging#validating-adaptive-bitrate-mp4s-encoded-with-external-encoders).
+3. [Stream your content](/documentation/articles/media-services-deliver-content-overview).
 
-
-Upload your files using **Azure Management Portal**, **.NET** or **REST API**.
 
 <div class="technical-azure-selector">
 <a href="/documentation/articles/media-services-manage-content">Portal</a>
 <a href="/documentation/articles/media-services-dotnet-upload-files">.NET</a>
 <a href="/documentation/articles/media-services-rest-upload-files">REST API</a>
 </div>
-Encode with **Azure Media Encoder** using **Azure Management Portal**, **.NET**, or **REST API**.
-
 <div class="technical-azure-selector">
 <a href="/documentation/articles/media-services-manage-content#encode">Portal</a>
 <a href="/documentation/articles/media-services-dotnet-encode-asset">.NET</a>
 <a href="/documentation/articles/media-services-rest-encode-asset">REST API</a>
 </div>
-###Upload existing adaptive bitrate sets and validate them using the Media Packager
-
-You would typically want to perform this task if you are uploading a set of adaptive bitrate MP4 files that were not encoded with Media Services Encoder. The [Validating Adaptive Bitrate MP4s Encoded with External Encoders](https://msdn.microsoft.com/zh-cn/library/azure/dn750842.aspx) topic shows how to achieve this task.
-
-##Streaming your content to clients
-
-Once you have the adaptive bitrate sets, you can publish your asset by creating an On-Demand locator and compose the streaming URLs for Smooth Steaming, MPEG DASH, HLS, and HDS (for Adobe PrimeTime/Access licensees only).
-
-For information on how to create locators and use dynamic packaging to stream your content, see the following topics:
-
-[Delivering Content to Customers Overview](/documentation/articles/media-services-deliver-content-overview).
-
-Configure asset delivery policy using **.NET** or **REST API**.
-
 <div class="technical-azure-selector">
 <a href="/documentation/articles/media-services-dotnet-configure-asset-delivery-policy">.NET</a>
 <a href="/documentation/articles/media-services-rest-configure-asset-delivery-policy">REST API</a>
 <a href="https://github.com/southworkscom/azure-sdk-for-media-services-java-samples">Java</a>
 </div>
-Publish assets (by creating Locators) using **Azure Management Portal** or **.NET**.
-
 <div class="technical-azure-selector">
 <a href="/documentation/articles/media-services-manage-content#publish">Portal</a>
 <a href="/documentation/articles/media-services-deliver-streaming-content">.NET</a>
@@ -100,6 +85,6 @@ Publish assets (by creating Locators) using **Azure Management Portal** or **.NE
 
 The following source file formats are not supported by dynamic packaging.
 
-- Dolby digital plus mp4 files.
-- Dolby digital plus smooth files.
+- Dolby digital mp4 files.
+- Dolby digital smooth files.
 

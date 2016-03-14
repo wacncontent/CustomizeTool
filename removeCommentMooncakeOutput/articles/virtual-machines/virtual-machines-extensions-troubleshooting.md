@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
    pageTitle="Troubleshooting Azure VM extensions failures | Windows Azure"
    description="Learn about troubleshooting Azure VM extension failures"
@@ -9,9 +11,9 @@
    tags="top-support-issue,azure-resource-manager"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.date="09/01/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="09/01/2015"
+	wacn.date=""/>
 
 # Troubleshooting Azure VM Extension failures.
 

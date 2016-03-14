@@ -32,9 +32,9 @@ In addition, the tutorial assumes that you have already implemented the followin
 
 - You have created two Virtual Machines (VMs) in Azure using the platform provided Oracle Enterprise Edition image on Windows Server. For information, see [Creating an Oracle Database 12c Virtual Machine in Azure](#z3dc8d3c097cf414e9048f7a89c026f80) and [Azure Virtual Machines](/documentation/services/virtual-machines/). Make sure that the Virtual Machines are in the [same cloud service](/documentation/articles/virtual-machines-load-balance) and in the same [Virtual Network](/documentation/services/networking/) to ensure they can access each other over the persistent private IP address.
 
-- You've set the Virtual Machine names as “MachineGG1” for Site A and “MachineGG2” for Site B at the Azure Management Portal.
+- You've set the Virtual Machine names as "MachineGG1" for Site A and "MachineGG2" for Site B at the Azure Management Portal.
 
-- You've created test databases “TestGG1” on Site A and “TestGG2” on Site B.
+- You've created test databases "TestGG1" on Site A and "TestGG2" on Site B.
 
 - You log on to your Windows server as a member of the Administrators group or a member of the **ORA_DBA** group.
 
@@ -340,7 +340,7 @@ As a final step, save and close the GLOBALS parameter file.
 
 
 ###Add REPLICAT on Site B
-This section describes how to add a REPLICAT process “REP2” on Site B.
+This section describes how to add a REPLICAT process "REP2" on Site B.
 
 Use ADD REPLICAT command to create a Replicat group on Site B:
 
@@ -357,7 +357,7 @@ Open the parameter file using the EDIT PARAMS command and then append the follow
 
 ###Create Extract and Data Pump processes on Site B
 
-This section describes how to create a new extract process “EXT2” and a new data pump process “DPUMP2” on Site B:
+This section describes how to create a new extract process "EXT2" and a new data pump process "DPUMP2" on Site B:
 
 	GGSCI (MachineGG2) 3> add extract ext2 tranlog begin now
 	 EXTRACT added.
@@ -414,7 +414,7 @@ Save and close the GLOBALS parameter file.
 
 ###Add REPLICAT on Site A
 
-This section describes how to add a REPLICAT process “REP1” on Site A.
+This section describes how to add a REPLICAT process "REP1" on Site A.
 
 The following command creates a Replicat group rep1 with the name of a trail, and the associated checkpointtable.
 
@@ -535,7 +535,7 @@ Display the status and lag (where relevant) for all Manager, Extract, and Replic
 
 ### Start REPLICAT process on Site A
 
-This section describes how to start the REPLICAT process “REP1” on Site A.
+This section describes how to start the REPLICAT process "REP1" on Site A.
 
 Start the Replicat process on Site A:
 
@@ -550,7 +550,7 @@ Display the status of a Replicat group:
 
 ###Start REPLICAT process on Site B
 
-This section describes how to start the REPLICAT process “REP2” on Site B.
+This section describes how to start the REPLICAT process "REP2" on Site B.
 
 Start the Replicat process on Site B:
 

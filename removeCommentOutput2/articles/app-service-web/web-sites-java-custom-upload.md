@@ -234,7 +234,7 @@ At the same directory level as the tomcat-7.0.40 folder, create a file named **w
 	  </system.webServer>
 	</configuration>
 
-Under the **httpPlatform** block, the **requestTimeout** is set to "00:10:00".  It can be reduced but then you are likely to see some timeout errors while Liferay is bootstrapping.  If this value is changed, then the **connectionTimeout** in the tomcat server.xml should also be modified.
+Under the **httpPlatform** block, the **requestTimeout** is set to "00:10:00".  It can be reduced but then you are likely to see some timeout errors while Liferay is bootstrapping.  If this value is changed, then the **connectionTimeout** in the tomcat server.xml should also be modified.  
 
 It is worth noting that the JRE_HOME environnment varariable is specified in the above web.config to point to the 64-bit JDK. The default is 32-bit, but since Liferay may require high levels of memory, it is recommended to use the 64-bit JDK.
 

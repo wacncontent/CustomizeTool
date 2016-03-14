@@ -22,7 +22,15 @@ In the Azure Management Portal, you use the **Connect** button to start a Remote
 
 Do you want to connect to a Linux VM? See [How to log on to a virtual machine running Linux](/documentation/articles/virtual-machines-linux-how-to-log-on).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+## Video walkthrough
+
+Here's a video walkthrough of the steps in this tutorial. It also covers endpoints and public and private ports used for connecting to a Windows VM in Azure.
+
+[AZURE.VIDEO logging-on-to-vm-running-windows-server-on-azure]
+
 
 ## Connect to the virtual machine
 

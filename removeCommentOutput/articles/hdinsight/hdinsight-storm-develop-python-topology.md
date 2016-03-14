@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/01/2016"
 	wacn.date=""/>
 
 #Develop Apache Storm topologies using Python on HDInsight
@@ -21,6 +21,8 @@ Apache Storm supports multiple languages, even allowing you to combine component
 * Python 2.7 or higher
 
 * Java JDK 1.7 or higher
+
+* [Leiningen](http://leiningen.org/)
 
 ##Storm multi-language support
 
@@ -50,7 +52,7 @@ Both methods are described in this document, along with example projects.
 
 ##Python components with a Java topology
 
-> [AZURE.NOTE] This example is available at https://github.com/Blackmist/hdinsight-python-storm-wordcount in the __JavaTopology__ directory. This is a Maven based project. If you are unfamiliar with Maven, see [Develop Java-based topologies with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology) for more information on creating a Maven project for a Storm topology.
+> [AZURE.NOTE] This example is available at [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount) in the __JavaTopology__ directory. This is a Maven based project. If you are unfamiliar with Maven, see [Develop Java-based topologies with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology) for more information on creating a Maven project for a Storm topology.
 
 A Java-based topology that uses Python (or other JVM language components,) initially appears to use Java components; but if you look in each of the Java spouts/bolts, you'll see code similar to the following:
 
@@ -111,7 +113,7 @@ To deploy the project to an HDInsight cluster running Apache Storm, use the foll
 
 ##Python components with a Clojure topology
 
-> [AZURE.NOTE] This example is available at https://github.com/Blackmist/hdinsight-python-storm-wordcount in the __ClojureTopology__ directory.
+> [AZURE.NOTE] This example is available at [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount) in the __ClojureTopology__ directory.
 
 This topology was created by using [Leiningen](http://leiningen.org) to [create a new Clojure project](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md#creating-a-project). After that, the following modifications to the scaffolded project were made:
 

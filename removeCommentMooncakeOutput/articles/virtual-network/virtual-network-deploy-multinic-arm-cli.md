@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
    pageTitle="Deploy multi NIC VMs using the Azure CLI in Resource Manager | Windows Azure"
    description="Learn how to deploy multi NIC VMs using the Azure CLI in Resource Manager"

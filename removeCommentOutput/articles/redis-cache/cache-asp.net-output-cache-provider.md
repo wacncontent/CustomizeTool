@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="cache"
-	ms.date="10/23/2015"
+	ms.date="01/13/2016"
 	wacn.date=""/>
 
 # ASP.NET Output Cache Provider for Azure Redis Cache

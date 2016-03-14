@@ -23,12 +23,12 @@ This example will create a DMZ with a firewall, four windows servers, User Defin
 ## Environment Setup
 In this example there is a subscription that contains the following:
 
-- Three cloud services: “SecSvc001”, “FrontEnd001”, and “BackEnd001”
-- A Virtual Network, “CorpNetwork”, with three subnets; “SecNet”, “FrontEnd”, and “BackEnd”
+- Three cloud services: "SecSvc001", "FrontEnd001", and "BackEnd001"
+- A Virtual Network, "CorpNetwork", with three subnets; "SecNet", "FrontEnd", and "BackEnd"
 - A network virtual appliance, in this example a firewall, connected to the SecNet subnet
-- A Windows Server that represents an application web server (“IIS01”)
-- Two windows servers that represent application back end servers (“AppVM01”, “AppVM02”)
-- A Windows server that represents a DNS server (“DNS01”)
+- A Windows Server that represents an application web server ("IIS01")
+- Two windows servers that represent application back end servers ("AppVM01", "AppVM02")
+- A Windows server that represents a DNS server ("DNS01")
 
 In the references section below there is a PowerShell script that will build most of the environment described above. Building the VMs and Virtual Networks, although are done by the example script, are not described in detail in this document.
 
@@ -43,7 +43,7 @@ To build the environment;
 Once the script runs successfully the following post-script steps may be taken;
 
 1.	Set up the firewall rules, this is covered in the section below titled: Firewall Rule Description.
-2.	Optionally in the references section are two scripts to set up the web server and app server with a simple web site to allow testing with this DMZ configuration.
+2.	Optionally in the references section are two scripts to set up the web server and app server with a simple web application to allow testing with this DMZ configuration.
 
 Once the script runs successfully the firewall rules will need to be completed, this is covered in the section titled: Firewall Rules.
 
@@ -66,15 +66,15 @@ As for priority, routes are processed via the Longest Prefix Match (LPM) method,
 
 Therefore, traffic (for example to the DNS01 server, 10.0.2.4) intended for the local network (10.0.0.0/16) would be routed across the VNet to its destination due to the 10.0.0.0/16 route. In other words, for 10.0.2.4, the 10.0.0.0/16 route is the most specific route, even though the 10.0.0.0/8 and 0.0.0.0/0 also could apply, but since they are less specific they don't affect this traffic. Thus the traffic to 10.0.2.4 would have a next hop of the local VNet and simply route to the destination.
 
-If traffic was intended for 10.1.1.1 for example, the 10.0.0.0/16 route wouldn't apply, but the 10.0.0.0/8 would be the most specific, and this the traffic would be dropped (“black holed”) since the next hop is Null. 
+If traffic was intended for 10.1.1.1 for example, the 10.0.0.0/16 route wouldn't apply, but the 10.0.0.0/8 would be the most specific, and this the traffic would be dropped ("black holed") since the next hop is Null. 
 
 If the destination didn't apply to any of the Null prefixes or the VNETLocal prefixes, then it would follow the least specific route, 0.0.0.0/0 and be routed out to the Internet as the next hop and thus out Azure's internet edge.
 
-If there are two identical prefixes in the route table, the following is the order of preference based on the routes “source” attribute:
+If there are two identical prefixes in the route table, the following is the order of preference based on the routes "source" attribute:
 
 1.	<blank> = A User Defined Route manually added to the table
-2.	“VPNGateway” = A Dynamic Route (BGP when used with hybrid networks), added by a dynamic network protocol, these routes may change over time as the dynamic protocol automatically reflects changes in peered network
-3.	“Default” = The System Routes, the local VNet and the static entries as shown in the route table above.
+2.	"VPNGateway" = A Dynamic Route (BGP when used with hybrid networks), added by a dynamic network protocol, these routes may change over time as the dynamic protocol automatically reflects changes in peered network
+3.	"Default" = The System Routes, the local VNet and the static entries as shown in the route table above.
 
 >[AZURE.NOTE] There is a limitation using User Defined Routing (UDR) and ExpressRoute due to the complexity of dynamic routing used on the Azure Virtual Gateway. Subnets communicating to the Azure Gateway providing the ExpressRoute connection should not have UDR applied. Also, the Azure Gateway cannot be the NextHop device for other UDR bound subnets. The ability to fully integrate UDR and ExpressRoute will be enabled in a future Azure release.
 
@@ -206,7 +206,7 @@ One prerequisite for the Virtual Machine running the firewall are public endpoin
 
 >[AZURE.IMPORTANT] A key takeway here is to remember that **all** traffic will come through the firewall. So to remote desktop to the IIS01 server, even though it's in the Front End Cloud Service and on the Front End subnet, to access this server we will need to RDP to the firewall on port 8014, and then allow the firewall to route the RDP request internally to the IIS01 RDP Port. The Azure Management Portal's "Connect" button won't work because there is no direct RDP path to IIS01 (as far as the portal can see). This means all connections from the internet will be to the Security Service and a Port, e.g. secscv001.chinacloudapp.cn:xxxx (reference the above diagram for the mapping of External Port and Internal IP and Port).
 
-An endpoint can be opened either at the time of VM creation or post build as is done in the example script and shown below in this code snippet (Note; any item beginning with a dollar sign (e.g.: $VMName[$i]) is a user defined variable from the script in the reference section of this document. The “$i” in brackets, [$i], represents the array number of a specific VM in an array of VMs):
+An endpoint can be opened either at the time of VM creation or post build as is done in the example script and shown below in this code snippet (Note; any item beginning with a dollar sign (e.g.: $VMName[$i]) is a user defined variable from the script in the reference section of this document. The "$i" in brackets, [$i], represents the array number of a specific VM in an array of VMs):
 
 	Add-AzureEndpoint -Name "HTTP" -Protocol tcp -PublicPort 80 -LocalPort 80 `
 	    -VM (Get-AzureVM -ServiceName $ServiceName[$i] -Name $VMName[$i]) | `
@@ -220,7 +220,7 @@ Instructions for client download and connecting to the Barracuda used in this ex
 
 Once logged onto the firewall but before creating firewall rules, there are two prerequisite object classes that can make creating the rules easier; Network & Service objects.
 
-For this example, three named network objects should be defined (one for the Frontend subnet and the Backend subnet, also a network object for the IP address of the DNS server). To create a named network; starting from the Barracuda NG Admin client dashboard, navigate to the configuration tab, in the Operational Configuration section click Ruleset, then click “Networks” under the Firewall Objects menu, then click New in the Edit Networks menu. The network object can now be created, by adding the name and the prefix:
+For this example, three named network objects should be defined (one for the Frontend subnet and the Backend subnet, also a network object for the IP address of the DNS server). To create a named network; starting from the Barracuda NG Admin client dashboard, navigate to the configuration tab, in the Operational Configuration section click Ruleset, then click "Networks" under the Firewall Objects menu, then click New in the Edit Networks menu. The network object can now be created, by adding the name and the prefix:
 
 ![Create a FrontEnd Network Object][3]
  
@@ -232,7 +232,7 @@ For the DNS Server Object:
 
 This single IP address reference will be utilized in a DNS rule later in the document.
 
-The second prerequisite objects are Services objects. These will represent the RDP connection ports for each server. Since the existing RDP service object is bound to the default RDP port, 3389, new Services can be created to allow traffic from the external ports (8014-8026). The new ports could also be added to the existing RDP service, but for ease of demonstration, an individual rule for each server can be created. To create a new RDP rule for a server; starting from the Barracuda NG Admin client dashboard, navigate to the configuration tab, in the Operational Configuration section click Ruleset, then click “Services” under the Firewall Objects menu, scroll down the list of services and select the “RDP” service. Right-click and select copy, then right-click and select Paste. There is now a RDP-Copy1 Service Object that can be edited. Right-click RDP-Copy1 and select Edit, the Edit Service Object window will pop up as shown here:
+The second prerequisite objects are Services objects. These will represent the RDP connection ports for each server. Since the existing RDP service object is bound to the default RDP port, 3389, new Services can be created to allow traffic from the external ports (8014-8026). The new ports could also be added to the existing RDP service, but for ease of demonstration, an individual rule for each server can be created. To create a new RDP rule for a server; starting from the Barracuda NG Admin client dashboard, navigate to the configuration tab, in the Operational Configuration section click Ruleset, then click "Services" under the Firewall Objects menu, scroll down the list of services and select the "RDP" service. Right-click and select copy, then right-click and select Paste. There is now a RDP-Copy1 Service Object that can be edited. Right-click RDP-Copy1 and select Edit, the Edit Service Object window will pop up as shown here:
 
 ![Copy of Default RDP Rule][5]
 
@@ -255,7 +255,7 @@ The Pass rule: ![Pass Icon][9]
 
 More information on these rules can be found at the Barracuda web site.
 
-To create the following rules (or verify existing default rules), starting from the Barracuda NG Admin client dashboard, navigate to the configuration tab, in the Operational Configuration section click Ruleset. A grid called, “Main Rules” will show the existing active and deactivated rules on this firewall. In the upper right corner of this grid is a small, green “+” button, click this to create a new rule (Note: your firewall may be “locked” for changes, if you see a button marked “Lock” and you are unable to create or edit rules, click this button to “unlock” the rule set and allow editing). If you wish to edit an existing rule, select that rule, right-click and select Edit Rule.
+To create the following rules (or verify existing default rules), starting from the Barracuda NG Admin client dashboard, navigate to the configuration tab, in the Operational Configuration section click Ruleset. A grid called, "Main Rules" will show the existing active and deactivated rules on this firewall. In the upper right corner of this grid is a small, green "+" button, click this to create a new rule (Note: your firewall may be "locked" for changes, if you see a button marked "Lock" and you are unable to create or edit rules, click this button to "unlock" the rule set and allow editing). If you wish to edit an existing rule, select that rule, right-click and select Edit Rule.
 
 Once your rules are created and/or modified, they must be pushed to the firewall and then activated, if this is not done the rule changes will not take effect. The push and activation process is described below the details rule descriptions.
 
@@ -269,9 +269,9 @@ The specifics of each rule required to complete this example are described as fo
 
 - **RDP Rules**:  These Destination NAT rules will allow management of the individual servers via RDP.
 There are four critical fields needed to create this rule:
-  1.	Source - to allow RDP from anywhere, the reference “Any” is used in the Source field.
-  2.	Service - use the appropriate Service Object created earlier, in this case “AppVM01 RDP”, the external ports redirect to the servers local IP address and to port 3386 (the default RDP port). This specific rule is for RDP access to AppVM01.
-  3.	Destination - should be the *local port on the firewall*, “DCHP 1 Local IP” or eth0 if using static IPs. The ordinal number (eth0, eth1, etc) may be different if your network appliance has multiple local interfaces. This is the port the firewall is sending out from (may be the same as the receiving port), the actual routed destination is in the Target List field.
+  1.	Source - to allow RDP from anywhere, the reference "Any" is used in the Source field.
+  2.	Service - use the appropriate Service Object created earlier, in this case "AppVM01 RDP", the external ports redirect to the servers local IP address and to port 3386 (the default RDP port). This specific rule is for RDP access to AppVM01.
+  3.	Destination - should be the *local port on the firewall*, "DCHP 1 Local IP" or eth0 if using static IPs. The ordinal number (eth0, eth1, etc) may be different if your network appliance has multiple local interfaces. This is the port the firewall is sending out from (may be the same as the receiving port), the actual routed destination is in the Target List field.
   4.	Redirection - this section tells the virtual appliance where to ultimately redirect this traffic. The simplest redirection is to place the IP and Port (optional) in the Target List field. If no port is used the destination port on the inbound request will be used (ie no translation), if a port is designated the port will also be NAT'd along with the IP address.
 
 	![Firewall RDP Rule][11]
@@ -301,7 +301,7 @@ There are four critical fields needed to create this rule:
 
 	![Firewall AppVM01 Rule][13]
 
-	This Pass rule allows any IIS server on the Frontend subnet to reach the AppVM01 (IP Address 10.0.2.5) on Any port, using any Protocol to access data needed by the web site.
+	This Pass rule allows any IIS server on the Frontend subnet to reach the AppVM01 (IP Address 10.0.2.5) on Any port, using any Protocol to access data needed by the web application.
 
 	In this screen shot an "\<explicit-dest\>" is used in the Destination field to signify 10.0.2.5 as the destination. This could be either explicit as shown or a named Network Object (as was done in the prerequisites for the DNS server). This is up to the administrator of the firewall as to which method will be used. To add 10.0.2.5 as an Explict Desitnation, double-click on the first blank row under \<explicit-dest\> and enter the address in the window that pops up.
 
@@ -309,7 +309,7 @@ There are four critical fields needed to create this rule:
 
 	**Note**: The Source network in this rule is any resource on the FrontEnd subnet, if there will only be one, or a known specific number of web servers, a Network Object resource could be created to be more specific to those exact IP addresses instead of the entire Frontend subnet.
 
->[AZURE.TIP] This rule uses the service “Any” to make the sample application easier to setup and use, this will also allow ICMPv4 (ping) in a single rule. However, this is not a recommended practice. The ports and protocols (“Services”) should be narrowed to the minimum possible that allows application operation to reduce the attack surface across this boundary.
+>[AZURE.TIP] This rule uses the service "Any" to make the sample application easier to setup and use, this will also allow ICMPv4 (ping) in a single rule. However, this is not a recommended practice. The ports and protocols ("Services") should be narrowed to the minimum possible that allows application operation to reduce the attack surface across this boundary.
 
 <br />
 
@@ -323,13 +323,13 @@ There are four critical fields needed to create this rule:
 
 	![Firewall DNS Rule][15]
 
-	**Note**: In this screen shot the Connection Method is included. Because this rule is for internal IP to internal IP address traffic, no NATing is required, this the Connection Method is set to “No SNAT” for this Pass rule.
+	**Note**: In this screen shot the Connection Method is included. Because this rule is for internal IP to internal IP address traffic, no NATing is required, this the Connection Method is set to "No SNAT" for this Pass rule.
 
 - **Subnet to Subnet Rule**: This Pass rule is a default rule that has been activated and modified to allow any server on the back end subnet to connect to any server on the front end subnet. This rule is all internal traffic so the Connection Method can be set to No SNAT.
 
 	![Firewall Intra-VNet Rule][16]
 
-	**Note**: The Bi-directional checkbox is not checked (nor is it checked in most rules), this is significant for this rule in that it makes this rule “one directional”, a connection can be initiated from the back end subnet to the front end network, but not the reverse. If that checkbox was checked, this rule would enable bi-directional traffic, which from our logical diagram is not desired.
+	**Note**: The Bi-directional checkbox is not checked (nor is it checked in most rules), this is significant for this rule in that it makes this rule "one directional", a connection can be initiated from the back end subnet to the front end network, but not the reverse. If that checkbox was checked, this rule would enable bi-directional traffic, which from our logical diagram is not desired.
 
 - **Deny All Traffic Rule**: This should always be the final rule (in terms of priority), and as such if a traffic flows fails to match any of the preceding rules it will be dropped by this rule. This is a default rule and usually activated, no modifications are generally needed. 
 
@@ -342,7 +342,7 @@ With the ruleset modified to the specification of the logic diagram, the ruleset
 
 ![Firewall Rule Activation][18]
  
-In the upper right hand corner of the management client are a cluster of buttons. Click the “Send Changes” button to send the modified rules to the firewall, then click the “Activate” button.
+In the upper right hand corner of the management client are a cluster of buttons. Click the "Send Changes" button to send the modified rules to the firewall, then click the "Activate" button.
  
 With the activation of the firewall ruleset this example environment build is complete.
 
@@ -363,7 +363,7 @@ For these scenarios, the following firewall rules should be in place:
 10.	Intra-Subnet Traffic (back end to front end only)
 11.	Deny All
 
-The actual firewall ruleset will most likely have many other rules in addition to these, the rules on any given firewall will also have different priority numbers than the ones listed here. This list and associated numbers are to provide relevance between just these eleven rules and the relative priority amongst them. In other words; on the actual firewall, the “RDP to IIS01” may be rule number 5, but as long as it's below the “Firewall Management” rule and above the “RDP to DNS01” rule it would align with the intention of this list. The list will also aid in the below scenarios allowing brevity; e.g. “FW Rule 9 (DNS)”. Also for brevity, the four RDP rules will be collectively called, “the RDP rules” when the traffic scenario is unrelated to RDP.
+The actual firewall ruleset will most likely have many other rules in addition to these, the rules on any given firewall will also have different priority numbers than the ones listed here. This list and associated numbers are to provide relevance between just these eleven rules and the relative priority amongst them. In other words; on the actual firewall, the "RDP to IIS01" may be rule number 5, but as long as it's below the "Firewall Management" rule and above the "RDP to DNS01" rule it would align with the intention of this list. The list will also aid in the below scenarios allowing brevity; e.g. "FW Rule 9 (DNS)". Also for brevity, the four RDP rules will be collectively called, "the RDP rules" when the traffic scenario is unrelated to RDP.
 
 Also recall that Network Security Groups are in-place for inbound internet traffic on the Frontend and Backend subnets.
 
@@ -377,7 +377,7 @@ Also recall that Network Security Groups are in-place for inbound internet traff
   2.	FW Rules 2 - 5 (RDP Rules) don't apply, move to next rule
   3.	FW Rule 6 (App: Web) does apply, traffic is allowed, firewall NATs it to 10.0.1.4 (IIS01)
 6.	The Frontend subnet begins inbound rule processing:
-  1.	NSG Rule 1 (Block Internet) doesn't apply (this traffic was NAT'd by the firewall, thus the source address is now the firewall which is on the Security subnet and seen by the Frontend subnet NSG to be “local” traffic and is thus allowed), move to next rule
+  1.	NSG Rule 1 (Block Internet) doesn't apply (this traffic was NAT'd by the firewall, thus the source address is now the firewall which is on the Security subnet and seen by the Frontend subnet NSG to be "local" traffic and is thus allowed), move to next rule
   2.	Default NSG Rules allow subnet to subnet traffic, traffic is allowed, stop NSG rule processing
 7.	IIS01 is listening for web traffic, receives this request and starts processing the request
 8.	IIS01 attempts to initiates an FTP session to AppVM01 on Backend subnet
@@ -405,7 +405,7 @@ Also recall that Network Security Groups are in-place for inbound internet traff
 22.	Since there are no outbound NSG rules or UDR hops on the Frontend subnet the response is allowed, and the Internet User receives the web page requested.
 
 #### (Allowed) Internet RDP to Backend
-1.	Server Admin on internet requests RDP session to AppVM01 via SecSvc001.CloudApp.Net:8025, where 8025 is the user assigned port number for the “RDP to AppVM01” firewall rule
+1.	Server Admin on internet requests RDP session to AppVM01 via SecSvc001.CloudApp.Net:8025, where 8025 is the user assigned port number for the "RDP to AppVM01" firewall rule
 2.	The cloud service passes traffic through the open endpoint on port 8025 to firewall interface on 10.0.0.4:8025
 3.	No NSG assigned to Security subnet, so system NSG rules allow traffic to firewall
 4.	Firewall begins rule processing:
@@ -414,7 +414,7 @@ Also recall that Network Security Groups are in-place for inbound internet traff
   3.	FW Rule 3 (RDP DNS01) doesn't apply, move to next rule
   4.	FW Rule 4 (RDP AppVM01) does apply, traffic is allowed, firewall NATs it to 10.0.2.5:3386 (RDP port on AppVM01)
 5.	The Backend subnet begins inbound rule processing:
-  1.	NSG Rule 1 (Block Internet) doesn't apply (this traffic was NAT'd by the firewall, thus the source address is now the firewall which is on the Security subnet and seen by the Backend subnet NSG to be “local” traffic and is thus allowed), move to next rule
+  1.	NSG Rule 1 (Block Internet) doesn't apply (this traffic was NAT'd by the firewall, thus the source address is now the firewall which is on the Security subnet and seen by the Backend subnet NSG to be "local" traffic and is thus allowed), move to next rule
   2.	Default NSG Rules allow subnet to subnet traffic, traffic is allowed, stop NSG rule processing
 6.	AppVM01 is listening for RDP traffic and responds
 7.	With no outbound NSG rules, default rules apply and return traffic is allowed
@@ -525,7 +525,7 @@ Thus there are at least three independent layers of defense between the internet
 
 ## References
 ### Main Script and Network Config
-Save the Full Script in a PowerShell script file. Save the Network Config into a file named “NetworkConf2.xml”.
+Save the Full Script in a PowerShell script file. Save the Network Config into a file named "NetworkConf2.xml".
 Modify the user defined variables as needed. Run the script, then follow the Firewall rule setup instruction above.
 
 #### Full Script
@@ -867,14 +867,14 @@ This PowerShell script should be run locally on an internet connected PC or serv
 	
 	# Optional Post-script Manual Configuration
 	  # Configure Firewall
-	  # Install Test web site (Run Post-Build Script on the IIS Server)
+	  # Install Test Web App (Run Post-Build Script on the IIS Server)
 	  # Install Backend resource (Run Post-Build Script on the AppVM01)
 	  Write-Host
 	  Write-Host "Build Complete!" -ForegroundColor Green
 	  Write-Host
 	  Write-Host "Optional Post-script Manual Configuration Steps" -ForegroundColor Gray
 	  Write-Host " - Configure Firewall" -ForegroundColor Gray
-	  Write-Host " - Install Test web site (Run Post-Build Script on the IIS Server)" -ForegroundColor Gray
+	  Write-Host " - Install Test Web App (Run Post-Build Script on the IIS Server)" -ForegroundColor Gray
 	  Write-Host " - Install Backend resource (Run Post-Build Script on the AppVM01)" -ForegroundColor Gray
 	  Write-Host
 	

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/21/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Azure Media Services Fragmented MP4 Live Ingest Specification

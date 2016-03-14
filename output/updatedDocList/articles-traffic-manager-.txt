@@ -1,3 +1,6 @@
 updated docs: 0
+articles/traffic-manager/traffic-manager-performance-considerations.md
+articles/traffic-manager/traffic-manager-powershell-arm.md
+
 
 updated includes: 0

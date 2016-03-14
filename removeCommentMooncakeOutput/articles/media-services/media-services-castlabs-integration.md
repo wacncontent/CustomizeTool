@@ -66,7 +66,7 @@ jti|A unique identifier about this token (every token can only be used once in t
 The [sample solution](https://github.com/AzureMediaServicesSamples/CastlabsIntegration) consists of two projects:
 
 -	A console app that can be used to set DRM restrictions on an already ingested asset, for both PlayReady and Widevine.
--	A web site that hands out tokens, which could be seen as a VERY SIMPLIFIED version of an STS.
+-	A Web Application that hands out tokens, which could be seen as a VERY SIMPLIFIED version of an STS.
 
 
 To use the console application:

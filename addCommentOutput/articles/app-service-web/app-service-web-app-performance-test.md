@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Test your Azure web site's performance | Windows Azure"
-   description="Run Azure web site performance tests to check how your app handles user load. Measure response time and find failures that might indicate problems."
+   pageTitle="Test your Azure web app's performance | Windows Azure"
+   description="Run Azure web app performance tests to check how your app handles user load. Measure response time and find failures that might indicate problems."
    services="app-service\web"
    documentationCenter=""
    authors="ecfan"
@@ -12,9 +12,9 @@
 	ms.date="09/11/2015"
 	wacn.date=""/>
 
-# Performance test your Azure web site under <!-- deleted by customization load --><!-- keep by customization: begin --> loada <!-- keep by customization: end -->
+# Performance test your Azure web app under <!-- deleted by customization load --><!-- keep by customization: begin --> loada <!-- keep by customization: end -->
 
-Check your web site's performance before you launch it or deploy updates to production. 
+Check your web app's performance before you launch it or deploy updates to production. 
 That way, you can better assess whether your app is ready for release. Feel more
 confident that your app can handle the traffic during peak use or at your next marketing push.
 
@@ -22,7 +22,7 @@ During public preview, you can performance test your app for free in the Azure M
 These tests simulate user load on your app over a specific time period and measure your app's response. For example, your test results show how fast your app responds to a specific number 
 of users. They also show how many requests failed, which might indicate problems with your app.      
 
-![Find performance problems in your web site][TestOverview]
+![Find performance problems in your web app][TestOverview]
 
 ## Before you start
 
@@ -46,9 +46,9 @@ That way, you don't affect any existing customers or slow down your app in produ
 To use a Visual Studio Team Services account that you own, 
 sign in as the account owner.
 
-0.	Go to your web site.
+0.	Go to your web app.
 
-	![Go to Browse All, web sites, your web site][WebApp]
+	![Go to Browse All, Web Apps, your web app][WebApp]
 
 0.	Go to **Performance Test**.
 
@@ -76,7 +76,7 @@ You can watch the results in real time while the test runs.
 
 	![Create, set up, and run your performance test][NewTest]
 
-	 *	Your web site's default URL is added automatically. 
+	 *	Your web app's default URL is added automatically. 
 	 You can change the URL to test other pages (HTTP GET requests only).
 
 	 *	To simulate local conditions and reduce latency, 

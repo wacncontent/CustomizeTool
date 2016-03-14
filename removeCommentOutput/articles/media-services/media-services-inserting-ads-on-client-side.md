@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/15/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 
@@ -19,7 +19,8 @@ This topic contains information on how to insert various types of ads on the cli
 
 For information about closed captioning and ad support in Live streaming videos, see [Supported Closed Captioning and Ad Insertion Standards](/documentation/articles/media-services-manage-channels-overview#cc_and_ads).
 
- 
+>[AZURE.NOTE] Azure Media Player does not currently support Ads. 
+
 ##<a id="insert_ads_into_media"></a>Inserting Ads into your Media
 
 Azure Media Services provides support for ad insertion through the Windows Media Platform: Player Frameworks. Player frameworks with ad support are available for Windows 8, Silverlight, Windows Phone 8, and iOS devices. Each player framework contains sample code that shows you how to implement a player application.There are three different kinds of ads you can insert into your media:list.
@@ -337,12 +338,12 @@ The **<trigger>** element contains a **<startConditions>** element which specify
 
 VPAID is an API for enabling executable ad units to communicate with a video player. This allows highly interactive ad experiences. The user can interact with the ad and the ad can respond to actions taken by the viewer. For example an ad may display buttons that allow the user to view more information or a longer version of the ad. The video player must support the VPAID API and the executable ad must implement the API. When a player requests an ad from an ad server the server may respond with a VAST response that contains a VPAID ad.
 
-An executable ad is created in code that must be executed in a runtime environment such as Adobe Flash™ or JavaScript that can be executed in a web browser. When an ad server returns a VAST response containing a VPAID ad, the value of the apiFramework attribute in the <MediaFile> element must be “VPAID”. This attribute specifies that the contained ad is a VPAID executable ad. The type attribute must be set to the MIME type of the executable, such as “application/x-shockwave-flash” or “application/x-javascript”. The following XML snippet shows the <MediaFile> element from a VAST response containing a VPAID executable ad. 
+An executable ad is created in code that must be executed in a runtime environment such as Adobe Flash™ or JavaScript that can be executed in a web browser. When an ad server returns a VAST response containing a VPAID ad, the value of the apiFramework attribute in the <MediaFile> element must be "VPAID". This attribute specifies that the contained ad is a VPAID executable ad. The type attribute must be set to the MIME type of the executable, such as "application/x-shockwave-flash" or "application/x-javascript". The following XML snippet shows the <MediaFile> element from a VAST response containing a VPAID executable ad. 
 
 	
 	<MediaFiles>
-	   <MediaFile id="1" delivery="progressive" type=”application/x-shockwaveflash”
-	              width=”640” height=”480” apiFramework=”VPAID”>
+	   <MediaFile id="1" delivery="progressive" type="application/x-shockwaveflash"
+	              width="640" height="480" apiFramework="VPAID">
 	       <!-- CDATA wrapped URI to executable ad -->
 	   </MediaFile>
 	</MediaFiles>

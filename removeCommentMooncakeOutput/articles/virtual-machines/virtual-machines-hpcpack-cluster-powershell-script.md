@@ -8,13 +8,13 @@
    editor=""
    tags="azure-service-management,hpc-pack"/>
 <tags
-   ms.service="virtual-machines"
-   ms.date="09/29/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="01/08/2016"
+	wacn.date=""/>
 
 # Create a high performance computing (HPC) cluster in Azure VMs with the HPC Pack IaaS deployment script
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
 
 
 
@@ -23,7 +23,7 @@ computer to deploy a complete HPC Pack cluster in Azure infrastructure
 services (IaaS). The script provides several deployment options, and can add cluster compute nodes running supported Linux
 distributions or Windows Server operating systems.
 
-Depending on your environment and choices, the script can create all the cluster infrastructure, including the Azure virtual network, storage accounts, cloud services, domain controller, remote or local SQL databases, head node, broker nodes, compute nodes, and Azure cloud service (“burst”, or PaaS) nodes. Alternatively, the script can use pre-existing Azure infrastructure and then create the HPC cluster head node, broker nodes, compute nodes, and Azure burst nodes.
+Depending on your environment and choices, the script can create all the cluster infrastructure, including the Azure virtual network, storage accounts, cloud services, domain controller, remote or local SQL databases, head node, broker nodes, compute nodes, and Azure cloud service ("burst", or PaaS) nodes. Alternatively, the script can use pre-existing Azure infrastructure and then create the HPC cluster head node, broker nodes, compute nodes, and Azure burst nodes.
 
 
 For background information about planning an HPC Pack cluster, see the [Product Evaluation and Planning](https://technet.microsoft.com/zh-cn/library/jj899596.aspx) and [Getting Started](https://technet.microsoft.com/zh-cn/library/jj899590.aspx) content in the HPC Pack TechNet Library.
@@ -35,10 +35,10 @@ For background information about planning an HPC Pack cluster, see the [Product 
 * **Azure subscription** - You can use a subscription in either the Azure Global or Azure China service. Your subscription limits will affect the number and type of cluster nodes you can deploy. For information, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
 
 
-* **Windows client computer with Azure PowerShell 0.8.7 or later installed and configured** - See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). The script runs in Azure Service Management.
+* **Windows client computer with Azure PowerShell 0.8.7 or later installed and configured** - See [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). The script runs in Azure Service Management.
 
 
-* **HPC Pack IaaS deployment script** - Download and unpack the latest version of the script from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=44949). You can check the version of the script by running `New-HPCIaaSCluster.ps1 -Version`. This article is based on version 4.4.0 of the script.
+* **HPC Pack IaaS deployment script** - Download and unpack the latest version of the script from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=44949). Check the version of the script by running `New-HPCIaaSCluster.ps1 -Version`. This article is based on version 4.4.0 of the script.
 
 * **Script configuration file** - You'll need to create an XML file that the script uses to configure the HPC cluster. For information and examples, see sections later in this article.
 
@@ -54,11 +54,11 @@ New-HPCIaaSCluster.ps1 [-ConfigFile] <String> [-AdminUserName]<String> [[-AdminP
 
 * **ConfigFile** - Specifies the file path of the configuration file to describe the HPC cluster. For more information, see [Configuration file](#Configuration-file) in this topic, or the file Manual.rtf, in the folder containing the script.
 
-* **AdminUserName** -Specifies the user name. If the domain forest is created by the script, this becomes the local administrator user name for all VMs as well as the domain administrator name. If the domain forest already exists, this specifies the domain user as the local administrator user name to install HPC Pack.
+* **AdminUserName** - Specifies the user name. If the domain forest is created by the script, this becomes the local administrator user name for all VMs as well as the domain administrator name. If the domain forest already exists, this specifies the domain user as the local administrator user name to install HPC Pack.
 
 * **AdminPassword** - Specifies the administrator's password. If not specified in the command line, the script will prompt you to input the password.
 
-* **HPCImageName** (optional) - Specifies the HPC Pack VM image name used to deploy the HPC cluster. It must be a Microsoft-provided HPC Pack image from the Azure Marketplace. If not specified (recommended in most cases), the script chooses the latest published HPC Pack image.
+* **HPCImageName** (optional) - Specifies the HPC Pack VM image name used to deploy the HPC cluster. It must be a Microsoft-provided HPC Pack image from the Azure gallery. If not specified (recommended in most cases), the script chooses the latest published HPC Pack image.
 
     >[AZURE.NOTE] Deployment will fail if you don't specify a valid HPC Pack image.
 
@@ -68,25 +68,25 @@ New-HPCIaaSCluster.ps1 [-ConfigFile] <String> [-AdminUserName]<String> [[-AdminP
 
 * **NoCleanOnFailure** (optional) - Specifies that the Azure VMs that are not successfully deployed will not be removed. You must remove these VMs manually before rerunning the script to continue the deployment, or the deployment may fail.
 
-* **PSSessionSkipCACheck** (optional)- For every cloud service with VMs deployed by this script, a self-signed certificate is automatically generated by Azure, and all the VMs in the cloud service use this certificate as the default Windows Remote Management (WinRM) certificate. To deploy HPC features in these Azure VMs, the script by default temporarily installs these certificates in the Local Computer\\Trusted Root Certification Authorities store of the client computer to suppress the “not trusted CA” security error during the script execution; the certificates are removed when the script finishes. If this parameter is specified, the certificates are not installed in the client computer, and the security warning is suppressed.
+* **PSSessionSkipCACheck** (optional) - For every cloud service with VMs deployed by this script, a self-signed certificate is automatically generated by Azure, and all the VMs in the cloud service use this certificate as the default Windows Remote Management (WinRM) certificate. To deploy HPC features in these Azure VMs, the script by default temporarily installs these certificates in the Local Computer\\Trusted Root Certification Authorities store of the client computer to suppress the "not trusted CA" security error during script execution; the certificates are removed when the script finishes. If this parameter is specified, the certificates are not installed in the client computer, and the security warning is suppressed.
 
     >[AZURE.IMPORTANT] This parameter is not recommended for production deployments.
 
 ### Example
 
 The following example creates a new HPC Pack cluster using the
-configuration file MyConfigFile.xml, and specifies administrative
+configuration file *MyConfigFile.xml*, and specifies administrative
 credentials for installing the cluster.
+
 ```
-New-HPCIaaSCluster.ps1 -ConfigFile MyConfigFile.xml -AdminUserName
-<username> -AdminPassword <password>
+New-HPCIaaSCluster.ps1 -ConfigFile MyConfigFile.xml -AdminUserName <username> -AdminPassword <password>
 ```
+
 ### Additional considerations
 
-* The script uses the HPC Pack VM image in the Azure Marketplace to create the cluster head node. The current image is based on Windows Server 2012 R2 Datacenter with HPC Pack 2012 R2 Update 2 installed.
+* The script uses the HPC Pack VM image in the Azure gallery to create the cluster head node. The latest image is based on Windows Server 2012 R2 Datacenter with HPC Pack 2012 R2 Update 3 installed.
 
 * The script can optionally enable job submission through the HPC Pack web portal or the HPC Pack REST API.
-
 
 * The script can optionally run custom pre- and post-configuration scripts on the head node if you want to install additional software or configure other settings.
 
@@ -108,10 +108,10 @@ The following configuration file deploys an HPC Pack cluster in an existing doma
 Automatic installation of Windows updates is disabled for all the VMs in
 the domain forest. All the cloud services are created directly in the
 China East location. The compute nodes are created in 3 cloud services
-and 3 storage accounts (i.e., MyHPCCN-0001 to MyHPCCN-0005 in
-MyHPCCNService01 and mycnstorage01; MyHPCCN-0006 to MyHPCCN0010 in
-MyHPCCNService02 and mycnstorage02; and MyHPCCN-0011 to MyHPCCN-0012 in
-MyHPCCNService03 and mycnstorage03). The compute nodes are created from
+and 3 storage accounts (i.e., _MyHPCCN-0001_ to _MyHPCCN-0005_ in
+_MyHPCCNService01_ and _mycnstorage01_; _MyHPCCN-0006_ to _MyHPCCN0010_ in
+_MyHPCCNService02_ and _mycnstorage02_; and _MyHPCCN-0011_ to _MyHPCCN-0012_ in
+_MyHPCCNService03_ and _mycnstorage03_). The compute nodes are created from
 an existing private image captured from a compute node. The auto grow
 and shrink service is enabled with default grow and shrink intervals.
 
@@ -159,7 +159,7 @@ and shrink service is enabled with default grow and shrink intervals.
 <StorageAccountNamePattern>mycnstorage%01%</StorageAccountNamePattern>
     <VMSize>Medium</VMSize>
     <NodeCount>12</NodeCount>
-    <ImageName HPCPackInstalled=”true”>MyHPCComputeNodeImage</ImageName>
+    <ImageName HPCPackInstalled="true">MyHPCComputeNodeImage</ImageName>
     <VMExtensions>
        <VMExtension>
           <ExtensionName>BGInfo</ExtensionName>
@@ -182,8 +182,8 @@ in an existing domain forest. The cluster contains 1 head node, 1
 database server with a 500GB data disk, 2 broker nodes running the Windows
 Server 2012 R2 operating system, and 5 compute nodes running the Windows
 Server 2012 R2 operating system. The cloud service MyHPCCNService is
-created in the affinity group MyIBAffinityGroup, and all the other cloud
-services are created in the affinity group MyAffinityGroup. The HPC Job
+created in the affinity group *MyIBAffinityGroup*, and all the other cloud
+services are created in the affinity group *MyAffinityGroup*. The HPC Job
 Scheduler REST API and HPC web portal are enabled on the head node.
 
 ```
@@ -242,11 +242,11 @@ The following configuration file creates a new domain forest
 and Deployments an HPC Pack cluster which has 1 head node with local
 databases and 20 Linux compute nodes. All the cloud services are created
 directly in the China East location. The Linux compute nodes are created
-in 4 cloud services and 4 storage accounts (i.e. MyLnxCN-0001 to
-MyHPCCN-0005 in MyLnxCNService01 and mylnxstorage01, MyLnxCN-0006 to
-MyLnxCN-0010 in MyLnxCNService02 and mylnxstorage02, MyLnxCN-0011 to
-MyLnxCN-0015 in MyLnxCNService03 and mylnxstorage03, and MyLnxCN-0016 to
-MyLnxCN-0020 in MyLnxCNService04 and mylnxstorage04). The compute nodes
+in 4 cloud services and 4 storage accounts (i.e. _MyLnxCN-0001_ to
+_MyLnxCN-0005_ in _MyLnxCNService01_ and _mylnxstorage01_, _MyLnxCN-0006_ to
+_MyLnxCN-0010_ in _MyLnxCNService02_ and _mylnxstorage02_, _MyLnxCN-0011_ to
+_MyLnxCN-0015_ in _MyLnxCNService03_ and _mylnxstorage03_, and _MyLnxCN-0016_ to
+_MyLnxCN-0020_ in _MyLnxCNService04_ and _mylnxstorage04_). The compute nodes
 are created from an OpenLogic CentOS version 7.0 Linux image.
 
 ```
@@ -342,7 +342,7 @@ controller of the domain forest.
 The following configuration file deploys an HPC Pack cluster
 in an existing domain forest. The cluster has 1 head node with local
 databases, two Azure node templates are created, and 3 Medium size Azure
-nodes are created for Azure node template AzureTemplate1. A script file
+nodes are created for Azure node template _AzureTemplate1_. A script file
 will run on the head node after the head node is configured.
 
 ```
@@ -411,9 +411,9 @@ will run on the head node after the head node is configured.
 ## Known issues
 
 
-* **“VNet doesn't exist” error** - If you run the HPC Pack IaaS deployment script to deploy multiple
+* **"VNet doesn't exist" error** - If you run the HPC Pack IaaS deployment script to deploy multiple
 clusters in Azure concurrently under one subscription, one or more
-deployments may fail with the error “VNet *VNet_Name* doesn't exist”.
+deployments may fail with the error "VNet *VNet\_Name* doesn't exist".
 If this error occurs, re-run the script for the failed deployment.
 
 * **Problem accessing the Internet from the Azure virtual network** - If you create an HPC Pack cluster with a new domain controller by using
@@ -445,6 +445,6 @@ extension might be stuck in the installing state.
 
 * Try running a test workload on the cluster. For an example, see the HPC Pack [getting started guide](https://technet.microsoft.com/zh-cn/library/jj884144).
 
-* For a tutorial that uses the script to create a cluster and run an HPC workload, see [Get started with an HPC Pack cluster in Azure to run Excel and SOA workloads](/documentation/articles/virtual-machines-excel-cluster-hpcpac) or [Run NAMD with Microsoft HPC Pack on Linux compute nodes in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd).
+* For tutorials that use the script to create a cluster and run an HPC workload, see [Get started with an HPC Pack cluster in Azure to run Excel and SOA workloads](/documentation/articles/virtual-machines-excel-cluster-hpcpac), [Run NAMD with Microsoft HPC Pack on Linux compute nodes in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd), or [Run OpenFOAM with Microsoft HPC Pack on Linux compute nodes in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack-openfoam).
 
 * Try HPC Pack's tools to start, stop, add, and remove compute nodes from a cluster you create. See [Manage compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-hpcpack-cluster-node-manage)

@@ -439,7 +439,7 @@ Here is the complete script used to run this sample on a default HDInsight 3.1 c
 	Select-AzureSubscription $subscriptionName
 
 	### Create a MapReduce job definition
-	$piEstimatorJobDefinition = New-AzureHDInsightMapReduceJobDefinition -ClassName "pi" -Arguments “32”, “1000000000” -JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar"
+	$piEstimatorJobDefinition = New-AzureHDInsightMapReduceJobDefinition -ClassName "pi" -Arguments "32", "1000000000" -JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar"
 
 	### Run the MapReduce job
 	$piJob = $piEstimatorJobDefinition | Start-AzureHDInsightJob -Cluster $clusterName

@@ -20,15 +20,10 @@ This Azure Automation solution includes runbooks to start and stop classic virtu
 - Call the runbooks from another runbook as part of an overall solution. 
 - Use the runbooks as tutorials to learn runbook authoring concepts. 
 
-> [AZURE.SELECTOR]
-- [Graphical](/documentation/articles/automation-solution-startstopvm-graphical)
-- [PowerShell Workflow](/documentation/articles/automation-solution-startstopvm-psworkflow)
-
-This is the PowerShell Workflow runbook version of this solution. It is also available using [graphical runbooks](/documentation/articles/automation-solutions-startstopvm-graphical).
 
 ## Getting the solution
 
-This solution consists of two PowerShell Workflow runbooks that you can download from the following links.  See the [graphical version](/documentation/articles/automation-solutions-startstopvm-graphical) of this solution for links to the graphical runbooks.
+This solution consists of two PowerShell Workflow runbooks that you can download from the following links.  
 
 | Runbook | Link | Type | Description |
 |:---|:---|:---|:---|
@@ -36,7 +31,9 @@ This solution consists of two PowerShell Workflow runbooks that you can download
 | Stop-AzureVMs | [Stop Azure Classic VMs](https://gallery.technet.microsoft.com/Stop-Azure-Classic-VMs-7a4ae43e) | PowerShell Workflow | Stops all virtual machines in an automation account or all virtual machines with a particular service name.  |
 
 
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
 ## Installing the solution
+<a id="installing-the-solution"></a>
 
 ### 1. Install the runbooks
 
@@ -54,6 +51,7 @@ The runbooks require the following assets that you must create and populate with
 | Variable | AzureSubscriptionId | Contains the subscription ID of your Azure subscription. |
 
 ## Using the solution
+<a id="using-the-solution"></a>
 
 ### Parameters
 

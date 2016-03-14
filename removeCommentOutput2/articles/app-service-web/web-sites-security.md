@@ -31,7 +31,7 @@ Security in Azure has two levels:
 Because Azure maintains the Azure VMs, storage, network connections, web frameworks, management and integration features and much more, it is actively secured and hardened and goes 
 through vigorous compliance and checks on a continuous basis to make sure that:
 
-- Your Azure Web Apps are isolated from both the Internet from other customers' Azure resources.
+- Your Azure Web Apps are isolated from both the Internet and from the other customers' Azure resources.
 - Communication of secrets (e.g. connection strings) between your Azure Web App and other Azure resources (e.g. SQL Database) in a resource group stays within Azure and doesn't cross any network boundaries. Secrets are 
 always encrypted.
 - All communication between your Azure Web App and external resources, such as PowerShell management, command-line interface, Azure SDKs, REST APIs, and hybrid connections, are properly encrypted.
@@ -108,7 +108,7 @@ exposing this information. A simple search on [GitHub](https://github.com), for 
 
 The best practice is to keep this information out of your app's configuration files. Azure lets you store configuration information as part of the runtime environment as **app settings** and **connection strings**. The values 
 are exposed to your application at runtime through *environment variables* for most programming languages. For .NET applications, these values are injected into your .NET configuration at runtime. Apart from these situations, these
-configuration settings will remain encrypted unless you view or configure them using the [Azure Management Portal](http://manage.windowsazure.cn) or utilities such as PowerShell or the Azure CLI. 
+configuration settings will remain encrypted unless you view or configure them using the [Azure Management Portal](https://manage.windowsazure.cn) or utilities such as PowerShell or the Azure CLI. 
 
 Storing configuration information in Azure makes it possible for the app's administrator to lock down sensitive information for the production apps. Developers can use a separate set of configuration settings
 for app development and the settings can be automatically superseded by the settings configured in Azure Web App. Not even the developers need to know the secrets configured for the production app. For more information on 
@@ -122,19 +122,17 @@ always use FTPS instead of FTP.
 
 The FTPS link for your app can be found with the following steps:
 
-1. Open the [Azure Management Portal](http://manage.windowsazure.cn).
-2. Select **Browse All**.
-3. From the **Browse** blade, select **App Services**.
-4. From the **App Services** blade, Select the desired app.
-5. From the app's blade, select **All settings**.
-6. From the **Settings** blade, select **Properties**.
-7. The FTP and FTPS links are provided on the **Settings** blade. 
+1. Open the [Azure Management Portal](https://manage.windowsazure.cn).
+2. Select **Web Apps**.
+4. Select the desired app.
+5. Click **Dashboard**
+6. You can find the **FTPS HOST NAME** there.
 
 For more information on FTPS, see [File Transfer Protocol](http://en.wikipedia.org/wiki/File_Transfer_Protocol).
 
 ##<a name="next"></a> Next steps
 
-For more information on the security of the Azure platform, information on reporting a **security incident or abuse**, or to inform Microsoft that you will be performing **penetration testing** of your site, see the security section of the [Windows Azure Trust Center](/support/trust-center/security/).
+For more information on the security of the Azure platform, information on reporting a **security incident or abuse**, or to inform Microsoft that you will be performing **penetration testing** of your site, see the security section of the [Windows Azure Trust Center](https://azure.microsoft.com/support/trust-center/security/).
 
 For more information on **web.config** or **applicationhost.config** files in Azure Web Apps, see [Configuration options unlocked in Azure web apps](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/).
 

@@ -1,9 +1,11 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="The three-server SharePoint farm Resource Manager template"
+	pageTitle="3-server SharePoint farm ARM template | Windows Azure"
 	description="Step through the structure of the Azure Resource Manager template for the three-server SharePoint farm."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="JoeDavies-MSFT"
+	authors="davidmu1"
 	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
@@ -14,6 +16,8 @@
 	wacn.date=""/>
 
 # The three-server SharePoint farm Resource Manager template
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
 
 This topic steps you through the structure of the azuredeploy.json template file for the three-server SharePoint farm. You can see the contents of this template in your browser from [here](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-three-vm/azuredeploy.json).
 
@@ -36,6 +40,9 @@ The **"parameters"** section specifies parameters that are used to input data in
 		"allowedValues": [
 			"China North",
 			"China East",
+			"West Europe",
+			"China East",
+			"China North"
 		],
 		"metadata": {
 			"Description": "The region to deploy the resources into"
@@ -358,15 +365,7 @@ Your own JSON template to build a multi-tier infrastructure in Azure should foll
 1.	Create the common (storage account, virtual network), tier-specific (availability sets), and virtual machine-specific (public IP addresses, availability sets, network interfaces, load balancer instances) elements of Azure infrastructure that are required for your deployment.
 2.	For each tier in your application (such as authentication, database, web), create and configure the servers in that tier using the common (storage account, virtual network), tier-specific (availability set) and virtual machine-specific (public IP addresses, network interfaces, load balancer instances) elements.
 
-For more information, see [Azure Resource Manager Template Language](https://msdn.microsoft.com/zh-CN/library/azure/dn835138.aspx).
+## Next step
 
-## Additional resources
-
-[Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
-
-[Azure Resource Manager Overview](/documentation/articles/resource-group-overview)
-
-[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
-
-[Virtual machines documentation](/home/features/virtual-machines/)
+- Learn about the [Azure Resource Manager template language](/documentation/articles/resource-group-authoring-templates) and build your own.
 

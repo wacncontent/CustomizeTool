@@ -50,7 +50,7 @@ The following numbered steps correspond to the numbers in Figure 1.
 
 ## Round robin traffic routing method
 
-A common traffic routing pattern is to provide a set of identical endpoints and send traffic to each in a round-robin fashion. The Round Robin method splits up traffic across various endpoints. It selects a healthy endpoint at random and will not send traffic to services that are detected as being down. For more information, see [Traffic Manager Monitoring](/documentation/articles/traffic-manager-onitoring).
+A common traffic routing pattern is to provide a set of identical endpoints and send traffic to each in a round-robin fashion. The Round Robin method splits up traffic across various endpoints. It selects a healthy endpoint at random and will not send traffic to services that are detected as being down. For more information, see [Traffic Manager Monitoring](/documentation/articles/traffic-manager-monitoring).
 
 Figure 2 shows an example of the Round Robin traffic routing method for a set of endpoints.
 
@@ -87,9 +87,9 @@ To test the profile from a single client and observe the equal or weighted round
 
 ## Performance traffic routing method
 
-In order to traffic route endpoints that are located in different datacenters across the globe, you can direct incoming traffic to the closest endpoint in terms of the lowest latency between the requesting client and the endpoint. Usually, the “closest” endpoint directly corresponds to the shortest geographic distance. The Performance traffic routing method will allow you to distribute based on location and latency, but cannot take into account real-time changes in network configuration or load.
+In order to traffic route endpoints that are located in different datacenters across the globe, you can direct incoming traffic to the closest endpoint in terms of the lowest latency between the requesting client and the endpoint. Usually, the "closest" endpoint directly corresponds to the shortest geographic distance. The Performance traffic routing method will allow you to distribute based on location and latency, but cannot take into account real-time changes in network configuration or load.
 
-The Performance traffic routing method locates the requesting client and refers it to the closest endpoint. “Closeness” is determined by an Internet Latency Table showing the round trip time between various IP addresses and each Azure datacenter. This table is updated at periodic intervals and is not meant to be a real time reflection of performance across the Internet. It does not take into account the load on a given service, although Traffic Manager monitors your endpoints based on the method you choose and will not include them in DNS query responses if they are unavailable. In other words, Performance traffic routing also incorporates the Failover traffic routing method.
+The Performance traffic routing method locates the requesting client and refers it to the closest endpoint. "Closeness" is determined by an Internet Latency Table showing the round trip time between various IP addresses and each Azure datacenter. This table is updated at periodic intervals and is not meant to be a real time reflection of performance across the Internet. It does not take into account the load on a given service, although Traffic Manager monitors your endpoints based on the method you choose and will not include them in DNS query responses if they are unavailable. In other words, Performance traffic routing also incorporates the Failover traffic routing method.
 
 Figure 4 shows an example of the Performance traffic routing method for a set of endpoints.
 

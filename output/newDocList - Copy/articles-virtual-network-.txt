@@ -3,15 +3,10 @@ articles/virtual-network/virtual-network-deploy-static-pip-arm-cli.md
 articles/virtual-network/virtual-network-deploy-static-pip-arm-portal.md
 articles/virtual-network/virtual-network-deploy-static-pip-arm-ps.md
 articles/virtual-network/virtual-network-deploy-static-pip-arm-template.md
+articles/virtual-network/virtual-networks-create-vnet-arm-pportal.md
+articles/virtual-network/virtual-networks-name-resolution-ddns.md
+articles/virtual-network/virtual-networks-static-private-ip-arm-pportal.md
+articles/virtual-network/virtual-networks-static-private-ip-classic-pportal.md
 
 new includes: 10
-includes/virtual-network-deploy-multinic-arm-selectors-include.md
-includes/virtual-network-deploy-multinic-classic-selectors-include.md
-includes/virtual-network-deploy-multinic-intro-include.md
-includes/virtual-network-deploy-multinic-scenario-include.md
-includes/virtual-network-deploy-static-pip-arm-selectors-include.md
-includes/virtual-network-deploy-static-pip-intro-include.md
-includes/virtual-network-deploy-static-pip-scenario-include.md
-includes/vpn-gateway-add-vnet-to-vnet-connection-rm-portal-include.md
-includes/vpn-gateway-basic-vnet-rm-portal-include.md
-includes/vpn-gateway-basic-vnet-scenario-include.md
+includes/virtual-networks-create-vnet-arm-pportal-include.md

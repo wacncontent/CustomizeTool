@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="09/22/2015"
+	ms.date="12/14/2015"
 	wacn.date=""/>
 
 # How to use Azure blob storage with the WebJobs SDK
@@ -20,7 +20,7 @@ This guide provides C# code samples that show how to trigger a process when an A
 
 For code samples that show how to create blobs, see [How to use Azure queue storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to). 
 		
-The guide assumes you know [how to create a WebJob project in Visual Studio with connection strings that point to your storage account](/documentation/articles/websites-dotnet-webjobs-sdk-get-started).
+The guide assumes you know [how to create a WebJob project in Visual Studio with connection strings that point to your storage account](/documentation/articles/websites-dotnet-webjobs-sdk-get-started) or to [multiple storage accounts](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs).
 <!-- keep by customization: begin -->
 
 ## Table of contents
@@ -101,9 +101,15 @@ You can use the `BlobTrigger` attribute on the following types:
 * `ICloudBlob`
 * `CloudBlockBlob`
 * `CloudPageBlob`
+* `CloudBlobContainer`
+* `CloudBlobDirectory`
+* `IEnumerable<CloudBlockBlob>`
+* `IEnumerable<CloudPageBlob>`
 * Other types deserialized by [ICloudBlobStreamBinder](#icbsb) 
 
 If you want to work directly with the Azure storage account, you can also add a `CloudStorageAccount` parameter to the method signature.
+
+For examples, see the [blob binding code in the azure-webjobs-sdk repository on GitHub.com](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/BlobBindingEndToEndTests.cs).
 
 ## <a id="string"></a> Getting text blob content by binding to string
 

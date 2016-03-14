@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/08/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 
@@ -19,7 +19,7 @@
 
 This article describes how you can use Azure Media Services (AMS) to deliver a stream that is dynamically encrypted by AMS with both PlayReady and Widevine DRMs. The PlayReady license comes from Media Services PlayReady license server and Widevine license is delivered by **castLabs** license server.
 
-To playback streaming content protected by CENC (PlayReady and/or Widevine), you can use  [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html). See [AMP document](http://amp.azure.net/libs/amp/latest/docs/) for details.
+To playback streaming content protected by CENC (PlayReady and/or Widevine), you can use  [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html). See [AMP document](http://amp.chinacloudapi.cn/libs/amp/latest/docs/) for details.
 
 The following diagram demonstrates a high-level Azure Media Services and castLabs integration architecture.
 

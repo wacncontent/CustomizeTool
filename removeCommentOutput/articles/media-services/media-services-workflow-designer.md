@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/16/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 
@@ -46,7 +46,7 @@ The following videos demonstrate how to use the designer.
 Day 1 video covers:
 
 - Designer Overview
-- Basic Workflows - “Hello World”
+- Basic Workflows - "Hello World"
 - Creating multiple output MP4 files for use with Azure Media Services streaming
 
 > [AZURE.VIDEO azure-premium-encoder-workflow-designer-training-videos-day-1]

@@ -62,7 +62,7 @@ The sample application in this tutorial, [WebApp-RoleClaims-DotNet](https://gith
 - Contains a sample `TaskTracker` controller that demonstrates how you can authorize different roles for specific actions in an application, including the standard usage of `[Authorize]`. 
 - Is a multitenant application with pre-defined roles that you can immediately assign your users and groups. 
 
-<a name="bkmk_run" />
+<a name="bkmk_run"></a>
 ## Run the sample application ##
 
 1.	Clone or download the sample solution at [WebApp-RoleClaims-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims) to your local directory.
@@ -186,11 +186,11 @@ In this part of the tutorial, you will learn how to build out the desired line-o
 
 6.	Open DAL\RoleClaimContext.cs and add the highlighted code:  
 	<pre class="prettyprint">
-    public class RoleClaimContext : DbContext
+public class RoleClaimContext : DbContext
     {
         public RoleClaimContext() : base("RoleClaimContext") { }
 
-        public DbSet&lt;Task&gt; Tasks { get; set; }
+        public DbSet&lt;Task&gt; Tasks { get; set; }<span>&#13;</span> 
         <mark>public DbSet&lt;WorkItem&gt; WorkItems { get; set; }</mark>
         public DbSet&lt;TokenCacheEntry&gt; TokenCacheEntries { get; set; }
     }</pre>
@@ -209,36 +209,36 @@ In this part of the tutorial, you will learn how to build out the desired line-o
 
 11. Add the highlighted [Authorize] decorations to the respective actions below.
 	<pre class="prettyprint">
-	...
+	...<span>&#13;</span> 
 
     <mark>[Authorize(Roles = "Admin, Observer, Writer, Approver")]</mark>
-    public class WorkItemsController : Controller
-    {
-		...
+public class WorkItemsController : Controller
+    {<span>&#13;</span>
+		...<span>&#13;</span>
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
-        public ActionResult Create()
-        ...
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span> 
+        public ActionResult Create()<span>&#13;</span> 
+...<span>&#13;</span> 
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
-        public async Task&lt;ActionResult&gt; Create([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)
-        ...
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span> 
+        public async Task&lt;ActionResult&gt; Create([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)<span>&#13;</span> 
+...<span>&#13;</span> 
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
-        public async Task&lt;ActionResult&gt; Edit(int? id)
-        ...
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span> 
+        public async Task&lt;ActionResult&gt; Edit(int? id)<span>&#13;</span> 
+...<span>&#13;</span> 
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
-        public async Task&lt;ActionResult&gt; Edit([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)
-        ...
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span> 
+        public async Task&lt;ActionResult&gt; Edit([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)<span>&#13;</span> 
+...<span>&#13;</span> 
 
-        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark>
-        public async Task&lt;ActionResult&gt; Delete(int? id)
-        ...
+        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark><span>&#13;</span> 
+        public async Task&lt;ActionResult&gt; Delete(int? id)<span>&#13;</span> 
+...<span>&#13;</span> 
 
-        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark>
-        public async Task&lt;ActionResult&gt; DeleteConfirmed(int id)
-        ...
+        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark><span>&#13;</span> 
+        public async Task&lt;ActionResult&gt; DeleteConfirmed(int id)<span>&#13;</span> 
+...<span>&#13;</span> 
 	}</pre>
 
 	Since you take care of role mappings in the Azure Management Portal UI, all you need to do is make sure that each action authorizes the right roles.
@@ -271,23 +271,23 @@ In this part of the tutorial, you will learn how to build out the desired line-o
         }
 		
 14.	In Views\WorkItems\Create.cshtml (an automatically scaffolded item), find the `Html.BeginForm` helper method and modify it as follows:  
-	<pre class="prettyprint">@using (Html.BeginForm(<mark>"Create", "WorkItems", FormMethod.Post, new { id = "main-form" }</mark>))
+<pre class="prettyprint">@using (Html.BeginForm(<mark>"Create", "WorkItems", FormMethod.Post, new { id = "main-form" }</mark>))
 	{
 	    @Html.AntiForgeryToken()
 	    
-	    &lt;div class="form-horizontal"&gt;
+&lt;div class="form-horizontal"&gt;
 	        &lt;h4&gt;WorkItem&lt;/h4&gt;
 	        &lt;hr /&gt;
 	        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 	
-	        &lt;div class="form-group"&gt;
+&lt;div class="form-group"&gt;
 	            &lt;div class="col-md-10"&gt;
 	                @Html.EditorFor(model =&gt; model.AssignedToID, new { htmlAttributes = new { @class = "form-control"<mark>, @type=&quot;hidden&quot;</mark> } })
 	                @Html.ValidationMessageFor(model =&gt; model.AssignedToID, "", new { @class = "text-danger" })
 	            &lt;/div&gt;
 	        &lt;/div&gt;
 	
-	        &lt;div class="form-group"&gt;
+&lt;div class="form-group"&gt;
 	            @Html.LabelFor(model =&gt; model.AssignedToName, htmlAttributes: new { @class = "control-label col-md-2" })
 	            &lt;div class="col-md-10"&gt;
 	                @Html.EditorFor(model =&gt; model.AssignedToName, new { htmlAttributes = new { @class = "form-control" } })
@@ -295,7 +295,7 @@ In this part of the tutorial, you will learn how to build out the desired line-o
 	            &lt;/div&gt;
 	        &lt;/div&gt;
 	
-	        &lt;div class="form-group"&gt;
+&lt;div class="form-group"&gt;
 	            @Html.LabelFor(model =&gt; model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
 	            &lt;div class="col-md-10"&gt;
 	                @Html.EditorFor(model =&gt; model.Description, new { htmlAttributes = new { @class = "form-control" } })
@@ -303,7 +303,7 @@ In this part of the tutorial, you will learn how to build out the desired line-o
 	            &lt;/div&gt;
 	        &lt;/div&gt;
 	
-	        &lt;div class="form-group"&gt;
+&lt;div class="form-group"&gt;
 	            @Html.LabelFor(model =&gt; model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
 	            &lt;div class="col-md-10"&gt;
 	                @Html.EnumDropDownListFor(model =&gt; model.Status, htmlAttributes: new { @class = "form-control" })
@@ -314,26 +314,26 @@ In this part of the tutorial, you will learn how to build out the desired line-o
 	        &lt;div class="form-group"&gt;
 	            &lt;div class="col-md-offset-2 col-md-10"&gt;
 	                &lt;input type="submit" value="Create" class="btn btn-default" <mark>id="submit-button"</mark> /&gt;
-	            &lt;/div&gt;
-	        &lt;/div&gt;
-	    &lt;/div&gt;
+&lt;/div&gt;
+	        &lt;/div&gt;<span>&#13;</span>
+	    &lt;/div&gt;<span>&#13;</span>
 	
-	    <mark>&lt;script&gt;
-	            // People/Group Picker Code
-	            var maxResultsPerPage = 14;
-	            var input = document.getElementById("AssignedToName");
-	            var token = "@ViewData["token"]";
-	            var tenant = "@ViewData["tenant"]";
+	    <mark>&lt;script&gt;<span>&#13;</span> 
+	            // People/Group Picker Code<span>&#13;</span> 
+	            var maxResultsPerPage = 14;<span>&#13;</span> 
+	            var input = document.getElementById("AssignedToName");<span>&#13;</span> 
+	            var token = "@ViewData["token"]";<span>&#13;</span> 
+	            var tenant = "@ViewData["tenant"]";<span>&#13;</span> 
 	
-	            var picker = new AadPicker(maxResultsPerPage, input, token, tenant);
+	            var picker = new AadPicker(maxResultsPerPage, input, token, tenant);<span>&#13;</span> 
 	
-	            // Submit the selected user/group to be asssigned.
-	            $("#submit-button").click({ picker: picker }, function () {
-	                if (!picker.Selected())
-	                    return;
-	                $("#main-form").get()[0].elements["AssignedToID"].value = picker.Selected().objectId;
-	            });
-	    &lt;/script&gt;</mark>
+	            // Submit the selected user/group to be asssigned.<span>&#13;</span> 
+	            $("#submit-button").click({ picker: picker }, function () {<span>&#13;</span> 
+	                if (!picker.Selected())<span>&#13;</span> 
+	                    return;<span>&#13;</span> 
+	                $("#main-form").get()[0].elements["AssignedToID"].value = picker.Selected().objectId;<span>&#13;</span> 
+	            });<span>&#13;</span> 
+	    &lt;/script&gt;</mark><span>&#13;</span> 
 	
 	}</pre>
 

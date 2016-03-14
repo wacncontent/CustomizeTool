@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/16/2015"
+	ms.date="01/04/2016"
 	wacn.date=""/>
 
 # Manage Hadoop clusters in HDInsight using the Azure CLI
@@ -29,7 +29,7 @@ Before you begin this article, you must have the following:
 - **Azure CLI** - See [Install and configure the Azure CLI](/documentation/articles/xplat-cli-install) for installation and configuration information.
 - **Connect to Azure**, using the following command:
 
-		azure login -e AzureChinaCloud
+		azure login -e AzureChinaCloud -u <your account>
 
 	For more information on authenticating using a work or school account, see [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect).
 	
@@ -40,41 +40,7 @@ To get help, use the **-h** switch.  For example:
 	
 ##Create clusters
 
-[AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
-
-You must a Azure Blob storage account before you can create a HDInsight cluster. To create a HDInsight cluster, you must specify the following:
-
-- **HDInsight cluster name**
-
-- **Location**: One of the Azure data centers that supports HDInsight clusters. For a list of supported locations, see [HDInsight pricing](/home/features/hdinsight/#price).
-
-- **Default storage account**: HDInsight uses an Azure Blob storage container as the default file system. An Azure Storage account is required before you can create an HDInsight cluster.
-
-	To create a new Azure storage account:
-	
-		azure storage account create "<Azure Storage Account Name>" -l "<Azure Location>" --type LRS
-
-	> [AZURE.NOTE] The Storage account must be collocated with HDInsight in the data center.
-	> The storage account type can't be ZRS, because ZRS doesn't support table.
-	
-	If you already have a Storage account but do not know the account name and account key, you can use the following commands to retrieve the information:
-	
-		-- Lists Storage accounts
-		azure storage account list
-		-- Shows a Storage account
-		azure storage account show "<Storage Account Name>"
-		-- Lists the keys for a Storage account
-		azure storage account keys list "<Storage Account Name>"
-
-	For details on getting the information by using the Azure Management Portal, see the "View, copy, and regenerate storage access keys" section of [Create, manage, or delete a Storage account][azure-create-storageaccount].
-
-- **(Optional) Default Blob container**: The **azure hdinsight cluster create** command creates the container if it doesn't exist. If you choose to create the container beforehand, you can use the following command:
-
-	azure storage container create --account-name "<Storage Account Name>" --account-key <Storage Account Key> [ContainerName]
-
-Once you have the Storage account prepared, you are ready to create a cluster:
-
-	azure hdinsight cluster create --clusterName <Cluster Name> --location <Location> --osType Windows --storageAccountName <Default Storage Account Name> --storageAccountKey <Storage Account Key> --storageContainer <Default Storage Container> --username <HDInsight Cluster Username> --password <HDInsight Cluster Password> --dataNodeCount <Number of Data Nodes>
+See [Create Windows-based Hadoop clusters in HDInsight using Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli).
 
 ##List and show cluster details
 Use the following commands to list and show cluster details:
@@ -83,6 +49,7 @@ Use the following commands to list and show cluster details:
 	azure hdinsight cluster show <Cluster Name>
 
 ![HDI.CLIListCluster][image-cli-clusterlisting]
+
 
 ##Delete clusters
 Use the following command to delete a cluster:
@@ -98,7 +65,7 @@ In this article, you have learned how to perform different HDInsight cluster adm
 * [How to use the Azure CLI] [azure-command-line-tools]
 
 
-[azure-command-line-tools]: /documentation/articles/xplat-cli
+[azure-command-line-tools]: /documentation/articles/xplat-cli-install
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/

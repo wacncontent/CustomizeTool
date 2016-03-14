@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
    pageTitle="Deploy a VM with a static public IP using a template in Resource Manager | Windows Azure"
    description="Learn how to deploy VMs with a static public IP using a template in Resource Manager"
@@ -10,7 +12,7 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="01/08/2015"
+	ms.date="01/08/2016"
 	wacn.date=""/>
 
 # Deploy a VM with a static public IP using a template
@@ -148,7 +150,7 @@ To deploy the template you downloaded by using PowerShell, follow the steps belo
 
 To deploy the template by using the Azure CLI, follow the steps below.
 
-1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli) and follow the instructions up to the point where you select your Azure account and subscription.
+1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install) and follow the instructions up to the point where you select your Azure account and subscription.
 2. Run the **azure config mode** command to switch to Resource Manager mode, as shown below.
 
 		azure config mode arm

@@ -87,42 +87,57 @@ Interim and Final SSPK licensees can submit technical questions to [smoothpk@mic
 - Amazon Digital Services, Inc.
 - Amlogic, Co., Ltd.
 - AVC Multimedia Software Co., Ltd.
+<!-- keep by customization: begin -->
 - AwoX S.A.
-<!-- deleted by customization
-- Axinom GmbH
--->
+<!-- keep by customization: end -->
 - Cisco Systems, Inc.
 - EchoStar Purchasing Corporation
 - Enseo, Inc.
+<!-- keep by customization: begin -->
 - Fluendo SA
 - GIGABYTE Technology
+<!-- keep by customization: end -->
 - Guangdong OPPO Mobile Telecommunications Corp., Ltd.
 - HANDAN BroadInfoCom Co., Ltd.
 - Infomir GMBH
 - Inside Secure
 - Irdeto USA Inc.
+<!-- keep by customization: begin -->
 - Ittiam Systems Private Ltd
 - Koninklijke Philips Electronics N.V.
+<!-- keep by customization: end -->
 - LG CNS Co., Ltd
 - Liberty Global Services BV
 - MediaTek Inc.
 - MStar Co, Ltd
+<!-- keep by customization: begin -->
 - Nextscape Inc.
+<!-- keep by customization: end -->
 - OpenTV, Inc.
+<!-- keep by customization: begin -->
 - Panasonic Corporation
+<!-- keep by customization: end -->
 - Research In Motion Limited
 - Saffron Digital Limited
 - Sichuan Changhong Electric Co., Ltd
+<!-- keep by customization: begin -->
 - SoftAtHome
+<!-- keep by customization: end -->
 - Tatung Technology Inc.
+<!-- keep by customization: begin -->
 - TCL Technoly Electronics (Huizhou) Co., Ltd.
 - Technicolor Delivery Technologies, SAS
+<!-- keep by customization: end -->
 - Teleca US Software Solutions LLC
 - Telechips Inc.
+<!-- keep by customization: begin -->
 - TeleIDEA BV
 - Tivo Inc.
+<!-- keep by customization: end -->
 - Vestel Elektronik Sanayi ve Ticaret A.S.
+<!-- keep by customization: begin -->
 - VimpelCom (OJSC)
+<!-- keep by customization: end -->
 - VisualOn, Inc.
 - ZTE Corporation
 
@@ -131,15 +146,19 @@ Interim and Final SSPK licensees can submit technical questions to [smoothpk@mic
 - Advanced Digital Broadcast SA
 - AirTies Kablosuz Iletism Sanayive Dis Ticaret A.S.
 - Albis Technologies Ltd.
+<!-- keep by customization: begin -->
 - Altech Multimedia International (Pty) Ltd
+<!-- keep by customization: end -->
 - Amazon Digital Services, Inc.
 - AmTRAN Technology Co., Ltd.
 - Arcadyan Technology Corporation
+<!-- deleted by customization
+- ATMACA ELEKTRONİK SAN. VE TİC. A.Ş
+-->
+<!-- keep by customization: begin -->
 - Arcelik A.S
 - AwoX S.A.
-<!-- deleted by customization
-- Axinom GmbH
--->
+<!-- keep by customization: end -->
 - British Sky Broadcasting Limited
 - CastPal Technology Inc., Shenzhen
 - Cisco Systems, Inc.
@@ -147,23 +166,31 @@ Interim and Final SSPK licensees can submit technical questions to [smoothpk@mic
 - Dongguan Digital AV Technology Corp., Ltd.
 - Enseo, Inc.
 - Filmflex Movies Limited
+<!-- keep by customization: begin -->
 - Fluendo SA
 - GIGABYTE Technology
+<!-- keep by customization: end -->
 - Guangdong OPPO Mobile Telecommunications Corp., Ltd.
 - HANDAN BroadInfoCom Co., Ltd.
 - Hisense International Co., Ltd
 - Homecast Co.,Ltd
 - Hon Hai Precision Industry Co., Ltd.
 - Infomir GMBH
+<!-- keep by customization: begin -->
 - Koninklijke Philips Electronics N.V.
+<!-- keep by customization: end -->
 - Kaonmedia Co., Ltd.
 - KDDI Corporation
+<!-- keep by customization: begin -->
 - Loewe Opta GmbH
 - NETGEAR, Inc.
+<!-- keep by customization: end -->
 - Nintendo Co., Ltd.
 - Orange SA
+<!-- keep by customization: begin -->
 - Pace plc
 - Panasonic Corporation
+<!-- keep by customization: end -->
 - PIXELA Corporation
 - Saffron Digital Limited
 - Sagemcom Broadband SAS
@@ -176,9 +203,13 @@ Interim and Final SSPK licensees can submit technical questions to [smoothpk@mic
 - SoftAtHome
 - TCL Overseas Marketing (Macao Commercial Offshore) Limited
 - Technicolor Delivery Technologies, SAS
+<!-- keep by customization: begin -->
 - TeleIDEA BV
+<!-- keep by customization: end -->
 - Toshiba Lifestyle Products & Services Corporation
+<!-- keep by customization: begin -->
 - TP Vision Netherlands B.V.
+<!-- keep by customization: end -->
 - Virgin Media Limited
 - VIZIO, Inc.
 - Wistron Corporation

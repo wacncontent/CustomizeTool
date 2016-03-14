@@ -1,5 +1,5 @@
-new docs: 0, word count: 199
-
-new includes: 2
-includes/virtual-network-deploy-static-pip-intro-include.md
-includes/virtual-network-deploy-static-pip-scenario-include.md
+new docs: 1, word count: 710
+articles/virtual-network/virtual-networks-name-resolution-ddns.md
+ 
+new includes: 1
+includes/vpn-gateway-table-vnet-to-vnet-include.md

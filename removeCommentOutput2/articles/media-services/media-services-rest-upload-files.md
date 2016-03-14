@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/18/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 
@@ -427,7 +427,7 @@ IngestManifestAssets represent Assets within an IngestManifest that are used wit
 If your asset will use encryption, you must create the ContentKey to be used for encryption before creating the IngestManifestFiles for the asset. In this case, the following properties are included in the request body.
  
 Request body property	| Description
-Id | The ContentKey Id which we generate ourselves using the following format, “nb:kid:UUID:<NEW GUID>”.
+Id | The ContentKey Id which we generate ourselves using the following format, "nb:kid:UUID:<NEW GUID>".
 ContentKeyType | This is the content key type as an integer for this content key. We pass the value 1 for storage encryption.
 EncryptedContentKey | We create a new content key value which is a 256-bit (32 byte) value. The key is encrypted using the storage encryption X.509 certificate which we retrieve from Windows Azure Media Services by executing a HTTP GET request for the GetProtectionKeyId and GetProtectionKey Methods.
 ProtectionKeyId | This is the protection key id for the storage encryption X.509 certificate that was used to encrypt our content key.

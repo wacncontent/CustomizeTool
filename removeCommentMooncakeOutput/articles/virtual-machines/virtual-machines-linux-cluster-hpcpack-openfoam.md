@@ -16,7 +16,7 @@
 
 This article shows you how to deploy a Microsoft HPC Pack cluster on Azure and run an [OpenFoam](http://openfoam.com/) job with Intel MPI on multiple Linux compute nodes that connect across the Azure remote direct memory access (RDMA) network.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
 
 OpenFOAM (for Open Field Operation and Manipulation) is a freely available open-source computational fluid dynamics (CFD) software package that is used widely in engineering and science, in both commercial and academic organizations. It includes tools for meshing, notably snappyHexMesh, a parallelized mesher for complex CAD geometries, and for pre- and post-processing. Almost all processes run in parallel, enabling users to take full advantage of computer hardware at their disposal.  
 
@@ -26,11 +26,11 @@ Microsoft HPC Pack provides features to run a variety of large-scale HPC and par
 
 ## Prerequisites
 
-*   **HPC Pack cluster with Linux compute nodes** - See [Get started with Linux compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack) for the prerequisites and steps to deploy an HPC Pack cluster with Linux compute nodes on Azure by using an Azure PowerShell script and HPC Pack images in the Azure Marketplace. For additional considerations to use the A8 compute-intensive instances to access the Azure RDMA network, see [About the A8, A9, A10, and A11 compute-intensive instances](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs).
+*   **HPC Pack cluster with Linux compute nodes** - See [Get started with Linux compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack) for the prerequisites and steps to deploy an HPC Pack cluster with Linux compute nodes on Azure by using an Azure PowerShell script and HPC Pack images in the Azure gallery. For additional considerations to use the A8 compute-intensive instances to access the Azure RDMA network, see [About the A8, A9, A10, and A11 compute-intensive instances](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs).
 
     Following is a sample XML configuration file to use with the script to deploy an Azure-based HPC Pack cluster consisting of one size A8 Windows Server 2012 R2 head node and 2 size A8 SUSE Linux Enterprise Server 12 compute nodes. Substitute appropriate values for your subscription and service names.
 
-    >[AZURE.NOTE]Currently, Linux RDMA networking in Azure is supported only on VMs created from the RDMA-enabled SUSE Linux Enterprise Server 12 image in the Azure Marketplace (b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708).
+    >[AZURE.NOTE]Currently, Linux RDMA networking in Azure is supported only on VMs created from the RDMA-enabled SUSE Linux Enterprise Server 12 image in the Azure gallery (b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708).
 
     ```
     <?xml version="1.0" encoding="utf-8" ?>
@@ -147,7 +147,7 @@ Now set up a standard SMB share on a folder on the head node, and mount the shar
 
 The first command creates a folder named /openfoam on all nodes in the LinuxNodes group. The second command mounts the shared folder //SUSE12RDMA-HN/OpenFOAM onto the Linux nodes with dir_mode and file_mode bits set to 777. The *username* and *password* in the command should be the credentials of a user on the head node.
 
->[AZURE.NOTE]The “\`” symbol in the second command is an escape symbol for PowerShell. “\`,” means the “,” (comma character) is a part of the command.
+>[AZURE.NOTE]The "\`" symbol in the second command is an escape symbol for PowerShell. "\`," means the "," (comma character) is a part of the command.
 
 ## Install MPI and OpenFOAM
 
@@ -232,7 +232,7 @@ Save the downloaded installation package for the OpenFOAM Source Pack (OpenFOAM-
     clusrun /nodegroup:LinuxNodes /interleaved source /openfoam/settings.sh `&`& /opt/OpenFOAM/OpenFOAM-2.3.1/Allwmake
     ```
     
-    >[AZURE.NOTE]The “\`” symbol in the command is an escape symbol for PowerShell. “\`&” means the “&” is a part of the command.
+    >[AZURE.NOTE]The "\`" symbol in the command is an escape symbol for PowerShell. "\`&" means the "&" is a part of the command.
 
 ## Prepare to run an OpenFOAM job
 
@@ -360,7 +360,7 @@ Now you can submit a job in HPC Cluster Manager. You'll need to pass the script 
 
     ![Job details][job_details]
 
-5.	In **Job resources**, choose the type of resource as “Node” and set the Minimum to 2. This will run the job on 2 Linux nodes each of which has 8 cores in this example.
+5.	In **Job resources**, choose the type of resource as "Node" and set the Minimum to 2. This will run the job on 2 Linux nodes each of which has 8 cores in this example.
 
     ![Job resources][job_resources]
 

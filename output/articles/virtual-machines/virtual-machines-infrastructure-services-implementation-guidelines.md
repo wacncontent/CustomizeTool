@@ -52,7 +52,7 @@ Affixes can refer to different aspects that describe the particular resources. T
 Aspect | Examples | Notes
 --- | --- | ---
 Environment | dev, stg, prod | Depending on the purpose and name of each environment.
-Location | China North, China East | Depending on the region of the datacenter or the region of the organization.
+Location | usw (China North), use (China East 2) | Depending on the region of the datacenter or the region of the organization.
 Azure component, service, or product | Rg for resource group, Svc for cloud service, VNet for virtual network | Depending on the product for which the resource provides support.
 Role | sql, ora, sp, iis | Depending on the role of the virtual machine.
 Instance | 01, 02, 03, etc. | For resources that have more than one instance. For example, load balanced web servers in a cloud service.
@@ -286,7 +286,7 @@ Tasks:
 - Define the address space for the virtual network.
 - Define the set of subnets and the address space for each.
 - For cross-premises virtual networks, define the set of local network address spaces for the on-premises locations that the virtual machines in the virtual network need to reach.
-- Create the virtual network using your naming convention. You can use the Azure Management Portal.
+- Create the virtual network using your naming convention. You can use the Azure Management Portal or the Azure Management Portal.
 
 ## 6. Availability sets
 
@@ -325,7 +325,7 @@ Decision:
 Tasks:
 
 - Define each virtual machine name using your naming convention.
-- Create your virtual machines with the Azure Management Portal, the **New-AzureVM** PowerShell cmdlet, or the Azure CLI.
+- Create your virtual machines with the Azure Management Portal, the Azure Management Portal, the **New-AzureVM** PowerShell cmdlet, the Azure CLI, or with Resource Manager templates.
 
 ## Example of an IT workload: The Contoso financial analysis engine
 
@@ -352,7 +352,7 @@ The resulting design must incorporate:
 
 All of the above will follow these Contoso naming conventions:
 
-- Contoso uses [IT workload]-[location]-[Azure resource] as a prefix. For this example, "azfae" (Azure Financial Analysis Engine) is the IT workload name and "chinaeast" is the location, because most of Contoso's initial customers are on the East Coast of the United States.
+- Contoso uses [IT workload]-[location]-[Azure resource] as a prefix. For this example, "azfae" (Azure Financial Analysis Engine) is the IT workload name and "use" (China East 2) is the location, because most of Contoso's initial customers are on the East Coast of the United States.
 - Storage accounts use contosoazfaeusesa[description] Note that contoso was added to the prefix to provide uniqueness, and storage account names do not support the use of hyphens.
 - Virtual networks use AZFAE-USE-VN[number].
 - Availability sets use azfae-use-as-[role].
@@ -376,7 +376,7 @@ Because the virtual network does not need ongoing connectivity to the Contoso on
 They created a cloud-only virtual network with the following settings using the Azure Management Portal:
 
 - Name: AZFAE-USE-VN01
-- Location: China East
+- Location: China East 2
 - Virtual network address space: 10.0.0.0/8
 - First subnet:
 	- Name: FrontEnd

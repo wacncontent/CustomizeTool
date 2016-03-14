@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Media Services PlayReady License Template Overview
@@ -45,7 +45,7 @@ The following example shows the simplest (and most common) template that configu
 
 The XML conforms to the PlayReady license template XML schema defined in the PlayReady license template XML schema section.
 
-Media Services also defines a set of .NET classes that could be used to serialized and deserialized to and from the XML. For description of main classes, see [Media Services .NET classes]((media-services-playready-license-template-overview.md#classes). that are used to configure license templates.
+Media Services also defines a set of .NET classes that could be used to serialized and deserialized to and from the XML. For description of main classes, see [Media Services .NET classes](/documentation/articles/media-services-playready-license-template-overview#classes). that are used to configure license templates.
 
 For an end-to-end example that uses .NET classes to configure the PlayReady license template, see [Using PlayReady Dynamic Encryption and License Delivery Service](/documentation/articles/media-services-protect-with-drm).
 
@@ -59,7 +59,7 @@ The [MediaServicesLicenseTemplateSerializer](https://msdn.microsoft.com/zh-cn/li
 
 [PlayReadyLicenseResponseTemplate](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.contentkeyauthorization.playreadylicenseresponsetemplate.aspx) - This class represents the template for the response sent back to the end user. It contains a field for a custom data string between the license server and the application (may be useful for custom app logic) as well as a list of one or more license templates.
 
-This is the “top level” class in the template hierarchy. Meaning that the response template includes a list of license templates and the license templates include (directly or indirectly) all of the other classes that make up the template data to be serialized.
+This is the "top level" class in the template hierarchy. Meaning that the response template includes a list of license templates and the license templates include (directly or indirectly) all of the other classes that make up the template data to be serialized.
 
 
 ###PlayReadyLicenseTemplate

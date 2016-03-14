@@ -17,6 +17,15 @@
 
 # Create a Windows virtual machine with a Resource Manager template
 
+> [AZURE.SELECTOR]
+- [Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
+- [CLI](/documentation/articles/virtual-machines-linux-tutorial)
+
+<br>
+
+
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
 
 You can easily create a new Windows-based Azure virtual machine by using a Resource Manager template with Azure PowerShell. This template creates a single virtual machine running Windows in a new virtual network with a single subnet in a new resource group.
@@ -275,4 +284,3 @@ You now have a new Windows virtual machine named MyWindowsVM in your new resourc
 ## Next Steps
 
 Learn how to manage the virtual machine that you just created by reviewing [Manage virtual machines using Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell).
-[Create a Windows virtual machine with PowerShell and Azure Service Manager](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)

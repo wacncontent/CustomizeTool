@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/20/2015"
+	ms.date="01/22/2016"
 	wacn.date=""/>
 
 # Customize Linux-based HDInsight clusters using Script Action

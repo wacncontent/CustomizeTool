@@ -89,6 +89,15 @@ The code example below performs the following tasks:
 		    static string _externalStorageAccountName = ConfigurationManager.AppSettings["ExternalStorageAccountName"];
 		    static string _externalStorageAccountKey = ConfigurationManager.AppSettings["ExternalStorageAccountKey"];
 		
+			private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+			// Azure China uses a different API server and a different ACS Base Address from the Global.
+			private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+			private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+
+			// Azure China Storage Endpoint Suffix
+			private static readonly String _chinaEndpointSuffix = "core.chinacloudapi.cn";
+
 		    private static MediaServicesCredentials _cachedCredentials = null;
 		    private static CloudMediaContext _context = null;
 		
@@ -99,9 +108,15 @@ The code example below performs the following tasks:
 		    {
 		        _cachedCredentials = new MediaServicesCredentials(
 		                        _accountName,
-		                        _accountKey);
+		                        _accountKey,
+								_defaultScope,
+								_chinaAcsBaseAddressUrl);
+
+				// Create the API server Uri
+				_apiServer = new Uri("https://wamsshaclus001rest-hs.chinacloudapp.cn/API/");
+
 		        // Use the cached credentials to create CloudMediaContext.
-		        _context = new CloudMediaContext(_cachedCredentials);
+		        _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 		
 		        // In this example the storage account from which we copy blobs is not 
 		        // associated with the Media Services account into which we copy blobs.
@@ -112,12 +127,12 @@ The code example below performs the following tasks:
 		        // (an external account).  
 		        StorageCredentials externalStorageCredentials =
 		            new StorageCredentials(_externalStorageAccountName, _externalStorageAccountKey);
-		        _sourceStorageAccount = new CloudStorageAccount(externalStorageCredentials, true);
+		        _sourceStorageAccount = new CloudStorageAccount(externalStorageCredentials, _chinaEndpointSuffix, true);
 		
 		        //Get a reference to the storage account that is associated with a Media Services account. 
 		        StorageCredentials mediaServicesStorageCredentials =
 		            new StorageCredentials(_storageAccountName, _storageAccountKey);
-		        _destinationStorageAccount = new CloudStorageAccount(mediaServicesStorageCredentials, false);
+		        _destinationStorageAccount = new CloudStorageAccount(mediaServicesStorageCredentials, _chinaEndpointSuffix, false);
 		
 		        // Upload Smooth Streaming files into a storage account.
 		        string localMediaDir = @"C:\supportFiles\streamingfiles";

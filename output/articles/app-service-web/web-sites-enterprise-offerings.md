@@ -45,7 +45,7 @@ An alternative approach is to make use of your existing investment on premise. I
 
 - [Azure Environments](/documentation/articles/app-service-app-service-environment-intro) - Azure Environments (ASE) are a new Premium feature which was recently add to the Windows Azure offering.  ASEs provide a fully isolated and dedicated environment for securely running Azure Web Apps at high scale while also offering isolation and secure network access   
 - [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview) - Hybrid Connections are a feature of Windows Azure BizTalk Services and enable Web Apps to connect to on premises resources securely, for example SQL Server, MySQL, Web APIs and custom web services. 
-- [Virtual Network Integration](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/) - Web Apps integrtaion with Azure Virtual Network allows you to connect your web app to an Azure Virtual Network which in turn can be connected to your on premises infrastructure through a site-to-site VPN. 
+- [Virtual Network Integration](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/) - Web Apps integrtaion with Azure Virtual Network allows you to connect your web app to an Azure Virtual Network which in turn can be connected to your on premises infrastructure through a site-to-site VPN. 
 
 The following diagrams depict an example high-level solution with connectivity options for on premises resources.  The first example shows how this can be achieved using standard features of Azure and the second shows how this can be achieved using the premium offering, Azure Environments.
 

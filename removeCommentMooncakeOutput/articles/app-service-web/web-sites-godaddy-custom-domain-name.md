@@ -1,8 +1,8 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Configure a custom domain name in Azure Websites (GoDaddy)"
-	description="Learn how to use a domain name from GoDaddy with Azure web sites"
+	pageTitle="Configure a custom domain name in Azure (GoDaddy)"
+	description="Learn how to use a domain name from GoDaddy with Azure Web Apps"
 	services="app-service"
 	documentationCenter=""
 	authors="erikre"
@@ -14,15 +14,15 @@
 	ms.date="10/23/2015"
 	wacn.date=""/>
 
-# Configure a custom domain name in Azure Websites (Purchased directly from GoDaddy)
+# Configure a custom domain name in Azure (Purchased directly from GoDaddy)
 
 [AZURE.INCLUDE [web-selector](../includes/websites-custom-domain-selector.md)]
 
 [AZURE.INCLUDE [intro](../includes/custom-dns-web-site-intro.md)]
 
-If you have purchased domain through Azure Websites then refer to the final step of [Buy Domain for web sites](/documentation/articles/custom-dns-web-site-buydomains-web-app).
+If you have purchased domain through Azure Web Apps then refer to the final step of [Buy Domain for Web Apps](/documentation/articles/custom-dns-web-site-buydomains-web-app).
 
-This article provides instructions on using a custom domain name that was purchased directly from [GoDaddy](https://godaddy.com) with [Azure Websites](/documentation/services/web-sites/).
+This article provides instructions on using a custom domain name that was purchased directly from [GoDaddy](https://godaddy.com) with [Azure Web Apps](/documentation/services/web-sites/).
 
 [AZURE.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]
 
@@ -34,9 +34,9 @@ This article provides instructions on using a custom domain name that was purcha
 <a name="bkmk_configurecname"></a>
 ## Add a DNS record for your custom domain
 
-To associate your custom domain with a web site in Azure Websites, you must add a new entry in the DNS table for your custom domain by using tools provided by GoDaddy. Use the following steps to locate the DNS tools for GoDaddy.com
+To associate your custom domain with a web app in Azure, you must add a new entry in the DNS table for your custom domain by using tools provided by GoDaddy. Use the following steps to locate the DNS tools for GoDaddy.com
 
-1. Log on to your account with GoDaddy.com, and select **My Account** and then **Manage my domains**. Finally, select the drop-down menu for the domain name that you wish to use with your Azure web site and select **Manage DNS**.
+1. Log on to your account with GoDaddy.com, and select **My Account** and then **Manage my domains**. Finally, select the drop-down menu for the domain name that you wish to use with your Azure web app and select **Manage DNS**.
 
 	![custom domain page for GoDaddy](./media/web-sites-godaddy-custom-domain-name/godaddy-customdomain.png)
 
@@ -58,23 +58,23 @@ To associate your custom domain with a web site in Azure Websites, you must add 
 
 	![add zone record](./media/web-sites-godaddy-custom-domain-name/godaddy-addzonerecord.png)
 
-	* When adding an **A (host) record** - you must set the **Host** field to either **@** (this represents root domain name, such as **contoso.com**,) * (a wildcard for matching multiple sub-domains,) or the sub-domain you wish to use (for example, **www**.) You must set the **Points to** field to the IP address of your Azure web site.
+	* When adding an **A (host) record** - you must set the **Host** field to either **@** (this represents root domain name, such as **contoso.com**,) * (a wildcard for matching multiple sub-domains,) or the sub-domain you wish to use (for example, **www**.) You must set the **Points to** field to the IP address of your Azure web app.
 
-	* When adding a **CNAME (alias) record** - you must set the **Host** field to the sub-domain you wish to use. For example, **www**. You must set the **Points to** field to the **.chinacloudsites.cn** domain name of your Azure web site. For example, **contoso.azurwebsites.net**.
+	* When adding a **CNAME (alias) record** - you must set the **Host** field to the sub-domain you wish to use. For example, **www**. You must set the **Points to** field to the **.chinacloudsites.cn** domain name of your Azure web app. For example, **contoso.azurwebsites.net**.
 
 5. Click **Add Another**.
 6. Select **CNAME** as the record type, then specify a **Host** value of **awverify** and a **Points to** value of **awverify.&lt;yourwebappname&gt;.chinacloudsites.cn**.
 
-	> [AZURE.NOTE] This CNAME record is used by Azure to validate that you own the domain described by the A record or the first CNAME record. Once the domain has been mapped to the web site in the Azure Management Portal, the **awverify** entry can be removed.
+	> [AZURE.NOTE] This CNAME record is used by Azure to validate that you own the domain described by the A record or the first CNAME record. Once the domain has been mapped to the web app in the Azure Management Portal, the **awverify** entry can be removed.
 
 5. When you have finished adding or modifying records, click **Finish** to save changes.
 
 <a name="enabledomain"></a>
-## Enable the domain name on your web site
+## Enable the domain name on your web app
 
 [AZURE.INCLUDE [modes](../includes/custom-dns-web-site-enable-on-web-site.md)]
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web site in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 ## What's changed
-* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="01/05/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Overview and Comparison of Azure On Demand Media Encoders
@@ -30,8 +30,9 @@ To take advantage of [dynamic packaging](/documentation/articles/media-services-
 
 Media Services supports the following on demand encoders that are described in this article:
 
-- **Media Encoder Standard**
-- **Azure Media Encoder**
+- [Media Encoder Standard](/documentation/articles/media-services-encode-asset#media-encoder-standard)
+- [Azure Media Encoder](/documentation/articles/media-services-encode-asset#azure-media-encoder)
+- [Media Encoder Premium Workflow](/documentation/articles/media-services-encode-asset#media-encoder-premium-workflow)
 
 This article gives a brief overview of on demand media encoders and provides links to articles that give more detailed information. The topic also provides comparison of the encoders.
 
@@ -128,13 +129,18 @@ The encoders output metadata is described [here](http://msdn.microsoft.com/zh-cn
 
 ###Overview
 
-[Introducing Premium Encoding in Azure Media Services](http://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services)
+[Introducing Premium Encoding in Azure Media Services](https://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services/)
 
 ###How to use
 
 Media Encoder Premium Workflow is configured using complex workflows. Workflow files could be created and updated using the [Workflow Designer](/documentation/articles/media-services-workflow-designer) tool.
 
-[How to Use Premium Encoding in Azure Media Services](http://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services)
+[How to Use Premium Encoding in Azure Media Services](https://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services/)
+
+###Known issues
+
+If your input video does not contain closed captioning, the output Asset will still contain an empty TTML file. 
+
 
 ##<a id="compare_encoders"></a>Compare Encoders
 
@@ -247,7 +253,21 @@ Windows Media Audio|No|Yes|Yes
 
 ##Error codes  
 
-The following table lists error codes that could be returned in case an error was encountered during the encoding task execution.  To get error details in your .NET code, use the [ErrorDetails](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mediaservices.client.errordetail.aspx) class. To get error details in your REST code, use the [ErrorDetail](https://msdn.microsoft.com/zh-cn/library/jj853026.aspx) REST API.
+The following table lists error codes that could be returned in case an error was encountered during the encoding task execution.  To get error details in your .NET code, use the [ErrorDetails](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mediaservices.client.errordetail.aspx) class. To get error details in your REST code, use the [ErrorDetail](https://msdn.microsoft.com/zh-cn/library/jj853026.aspx) REST API.
+
+ErrorDetail.Code|Possible causes for error
+-----|-----------------------
+Unknown| Unknown error while executing the task
+ErrorDownloadingInputAssetMalformedContent|Category of errors that covers errors in downloading input asset such as bad file names, zero length files, incorrect formats and so on.
+ErrorDownloadingInputAssetServiceFailure|Category of errors that covers problems on the service side - for example network or storage errors while downloading.
+ErrorParsingConfiguration|Category of errors where task <see cref="MediaTask.PrivateData"/> (configuration) is not valid, for example the configuration is not a valid system preset or it contains invalid XML.
+ErrorExecutingTaskMalformedContent|Category of errors during the execution of the task where issues inside the input media files cause failure.
+ErrorExecutingTaskUnsupportedFormat|Category of errors where the media processor cannot process the files provided - media format not supported, or does not match the Configuration. For example, trying to produce an audio-only output from an asset that has only video
+ErrorProcessingTask|Category of other errors that the media processor encounters during the processing of the task that are unrelated to content.
+ErrorUploadingOutputAsset|Category of errors when uploading the output asset
+ErrorCancelingTask|Category of errors to cover failures when attempting to cancel the Task
+TransientError|Category of errors to cover transient issues (eg. temporary networking issues with Azure Storage)
+
 
 
 

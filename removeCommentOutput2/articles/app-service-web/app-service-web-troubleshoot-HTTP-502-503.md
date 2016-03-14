@@ -10,18 +10,18 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="10/23/2015"
+	ms.date="01/13/2016"
 	wacn.date=""/>
 
 # Troubleshoot: web app unavailable due to HTTP 502/503
 
 This article helps you troubleshoot HTTP 502/503 errors in your web app hosted in [Azure Web App](/documentation/services/web-sites/).
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**.
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the CSDN Azure](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**.
 
 ## Symptom
 
-When you browse to the web app, it returns a HTTP “502 Bad Gateway” or a HTTP “503 Service Unavailable”.
+When you browse to the web app, it returns a HTTP "502 Bad Gateway" or a HTTP "503 Service Unavailable".
 
 ## Cause
 
@@ -60,7 +60,7 @@ Some of the metrics that you might want to monitor for your web app are
 
 For more information, see:
 
--	[Monitor Web Apps in Azure Web App](/documentation/articles/web-sites-monitor)
+-	[Monitor Web Apps in Azure](/documentation/articles/web-sites-monitor)
 -	[Receive alert notifications](/documentation/articles/insights-receive-alert-notifications)
 
 <a name="collect"></a>
@@ -125,7 +125,7 @@ For more information, see [Auto-Healing Azure Web Sites](/blog/auto-healing-wind
 
 ####	Restart the web app
 
-This is often the simplest way to recover from one-time issues. On the [Azure Management Portal](https://manage.windowsazure.cn), on your web app's blade, you have the options to stop or restart your app.
+This is often the simplest way to recover from one-time issues. On the [Azure Management Portal](https://manage.windowsazure.cn/), on your web app's blade, you have the options to stop or restart your app.
 
  ![](./media/app-service-web-troubleshoot-HTTP-502-503/2-restart.png)
 

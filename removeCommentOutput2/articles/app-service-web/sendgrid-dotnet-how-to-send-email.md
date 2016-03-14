@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="10/12/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 
@@ -267,7 +267,7 @@ SendGrid offers web-based APIs and webhooks that you can use to leverage additio
 SendGrid functionality from your Azure application. For full
 details, see the [SendGrid API documentation][].
 
-##<a name="nextsteps"></a> Next steps
+##<a name="nextsteps" id="next-steps"></a> Next steps
 
 Now that you've learned the basics of the SendGrid Email service, follow
 these links to learn more.

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 #Create Linux-based clusters in HDInsight using cURL and the Azure REST API
@@ -302,7 +302,7 @@ Use the following to create a new resource group. You must create the group firs
         -H "Content-Type: application/json" \
         -d $'{
     "location": "DATACENTERLOCATION"
-    }'
+    }â
 
 If this request is successful, you will receive a 200 series response and the response body will contain a JSON document containing information about the group. The `"provisioningState"` element will contain a value of `"Succeeded"`.
 

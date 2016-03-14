@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Using Docker VM Extension for Linux | Windows Azure"
 	description="Describes Docker and the Azure Virtual Machines extensions, and how to create Azure Virtual Machines that are docker hosts using the Azure CLI in classic deployment model."
@@ -11,7 +13,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/22/2015"
-	wacn.date="" />
+	wacn.date=""/>
 
 
 # Using the Docker VM Extension with the Azure Management Portal
@@ -19,7 +21,7 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
-[Docker](https://www.docker.com/) is one of the most popular virtualization approaches that uses [Linux containers](http://en.wikipedia.org/wiki/LXC) rather than virtual machines as a way of isolating data and computing on shared resources. You can use the Docker VM extension managed by [Azure Linux Agent] to create a Docker VM that hosts any number of containers for your applications on Azure.
+[Docker](https://www.docker.com/) is one of the most popular virtualization approaches that uses [Linux containers](http://zh.wikipedia.org/wiki/LXC) rather than virtual machines as a way of isolating data and computing on shared resources. You can use the Docker VM extension managed by [Azure Linux Agent] to create a Docker VM that hosts any number of containers for your applications on Azure.
 
 > [AZURE.NOTE] This topic describes how to create a Docker VM from the Azure Management Portal. To see how to create a Docker VM at the command line, see [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]. To see a high-level discussion of containers and their advantages, see the [Docker High Level Whiteboard](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard).
 
@@ -53,7 +55,7 @@ At the command line, use **`base64`** or another favorite encoding tool to creat
 
 ## Add the Docker VM Extension
 To add the Docker VM Extension, locate the VM instance you created and scroll down to **Extensions** and click it to bring up VM Extensions, as shown below.
-> [AZURE.NOTE] This functionality is supported in the preview portal only: https://manage.windowsazure.cn
+> [AZURE.NOTE] This functionality is supported in the preview portal only: https://manage.windowsazure.cn/
 
 ![](./media/virtual-machines-docker-with-portal/ClickExtensions.png)
 ### Add an Extension

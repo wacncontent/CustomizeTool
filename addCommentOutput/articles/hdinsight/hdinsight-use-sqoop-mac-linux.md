@@ -241,7 +241,7 @@ Now you have learned how to use Sqoop. To learn more, see:
 
 
 
-[hdinsight-versions]:  hdinsight-component-versioning.md
+[hdinsight-versions]:  hdinsight-component-versioning-v1.md
 [hdinsight-provision]: hdinsight-provision-clusters-v1.md
 [hdinsight-get-started]: ../hdinsight-get-started.md
 [hdinsight-storage]: ../hdinsight-use-blob-storage.md

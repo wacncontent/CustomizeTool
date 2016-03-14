@@ -7,10 +7,10 @@
 	manager="jeffreyg"
 	editor="monicar"
 	tags="azure-service-management" />
-<tags 
+<tags
 	ms.service="virtual-machines"
 	ms.date="11/13/2015"
-	wacn.date="" />
+	wacn.date=""/>
 
 # Configure an external listener for AlwaysOn Availability Groups in Azure
 

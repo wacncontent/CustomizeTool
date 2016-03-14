@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/11/2015"
+	ms.date="01/07/2016"
 	wacn.date=""/>
 
 # How to Detach a Disk from a Linux Virtual Machine

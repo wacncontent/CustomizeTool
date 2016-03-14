@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cache"
-	ms.date="12/16/2015"
+	ms.date="01/21/2016"
 	wacn.date=""/>
 
 # Azure Redis Cache FAQ
@@ -76,7 +76,7 @@ Azure Redis Cache pricing is [here](/home/features/redis-cache/#price). The pric
 <a name="cache-timeouts"></a>
 ## Why am I seeing timeouts?
 
-Timeouts happen in the client that you use to talk to Redis. For the most part Redis server does not time out. When a command is sent to the Redis server, the command is queued up and Redis server eventually picks up the command and executes it. However the client can time out during this process and if it does an exception is raised on the calling side. For more information on troubleshooting timeout issues, see [Investigating timeout exceptions in StackExchange.Redis for Azure Redis Cache](http://azure.microsoft.com/blog/2015/02/10/investigating-timeout-exceptions-in-stackexchange-redis-for-azure-redis-cache/).
+Timeouts happen in the client that you use to talk to Redis. For the most part Redis server does not time out. When a command is sent to the Redis server, the command is queued up and Redis server eventually picks up the command and executes it. However the client can time out during this process and if it does an exception is raised on the calling side. For more information on troubleshooting timeout issues, see [Investigating timeout exceptions in StackExchange.Redis for Azure Redis Cache](https://azure.microsoft.com/blog/2015/02/10/investigating-timeout-exceptions-in-stackexchange-redis-for-azure-redis-cache/).
 
 <a name="cache-monitor"></a>
 ## How do I monitor the health and performance of my cache?
@@ -91,7 +91,7 @@ The following are some common reason for a cache disconnect.
 -	Client-side causes
 	-	The client application was redeployed.
 	-	The client application performed a scaling operation.
-		-	In the case of Cloud Services or Web Apps, this may be due to auto-scaling.
+		-	In the case of Cloud Services or web sites, this may be due to auto-scaling.
 	-	The networking layer on the client side changed.
 	-	Transient errors occurred in the client or in the network nodes between the client and the server.
 	-	The bandwidth threshold limits were reached.
@@ -130,6 +130,55 @@ In most cases the default values of the client are sufficient. You can fine tune
 		-	You can set different values for connection timeouts and retry logic for each ConnectionMultiplexer that you use.
 		-	Set the `ClientName` property on each multiplexer to help with diagnostics. 
 		-	This will lead to more streamlined latency per `ConnectionMultiplexer`.
+
+<a name="threadpool"></a>
+## Important details about ThreadPool growth
+
+The CLR ThreadPool has two types of threads - "Worker" and "I/O Completion Port" (aka IOCP) threads.  
+
+-	Worker threads are used when for things like processing `Task.Run(…)` or `ThreadPool.QueueUserWorkItem(…)` methods.  These threads are also used by various components in the CLR when work needs to happen on a background thread.
+-	IOCP threads are used when asynchronous IO happens (e.g. reading from the network).  
+
+The thread pool provides new worker threads or I/O completion threads on demand (without any throttling) until it reaches the "Minimum" setting for each type of thread.  By default, the minimum number of threads is set to the number of processors on a system.  
+
+Once the number of existing (busy) threads hits the "minimum" number of threads, the ThreadPool will throttle the rate at which is injects new threads to one thread per 500 milliseconds.  This means that if your system gets a burst of work needing an IOCP thread, it will process that work very quickly.   However, if the burst of work is more than the configured "Minimum" setting, there will be some delay in processing some of the work as the ThreadPool waits for one of two things to happen.
+
+1. An existing thread becomes free to process the work.
+1. No existing thread becomes free for 500ms, so a new thread is created.
+
+Basically, it means that when the number of Busy threads is greater than Min threads, you are likely paying a 500ms delay before network traffic is processed by the application.  Also, it is important to note that when an existing thread stays idle for longer than 15 seconds (based on what I remember), it will be cleaned up and this cycle of growth and shrinkage can repeat.
+
+If we look at an example error message from StackExchange.Redis (build 1.0.450 or later), you will see that it now prints ThreadPool statistics (see IOCP and WORKER details below).
+
+	System.TimeoutException: Timeout performing GET MyKey, inst: 2, mgr: Inactive, 
+	queue: 6, qu: 0, qs: 6, qc: 0, wr: 0, wq: 0, in: 0, ar: 0, 
+	IOCP: (Busy=6,Free=994,Min=4,Max=1000), 
+	WORKER: (Busy=3,Free=997,Min=4,Max=1000)
+
+In the above example, you can see that for IOCP thread there are 6 busy threads and the system is configured to allow 4 minimum threads.  In this case, the client would have likely seen two 500 ms delays because 6 > 4.
+
+Note that StackExchange.Redis can hit timeouts if growth of either IOCP or WORKER threads gets throttled.
+
+### Recommendation
+
+Given this information, we strongly recommend that customers set the minimum configuration value for IOCP and WORKER threads to something larger than the default value.  We can't give one-size-fits-all guidance on what this value should be because the right value for one application will be too high/low for another application.  This setting can also impact the performance of other parts of complicated applications, so each customer needs to fine-tune this setting to their specific needs.  A good starting place is 200 or 300, then test and tweak as needed.
+
+How to configure this setting:
+
+-	In ASP.NET, use the ["minIoThreads" configuration setting][] under the `<processModel>` configuration element in web.config.  If you are running inside of Azure WebSites, this setting is not exposed through the configuration options.  However, you should still be able to set this programmatically (see below) from your Application_Start method in global.asax.cs.
+
+> **Important Note:** the value specified in this configuration element is a *per-core* setting.  For example, if you have a 4 core machine and want your minIOThreads setting to be 200 at runtime, you would use `<processModel minIoThreads="50"/>`.
+
+-	Outside of ASP.NET, use the [ThreadPool.SetMinThreads(…)](https://msdn.microsoft.com/zh-cn/library/system.threading.threadpool.setminthreads.aspx) API.
+
+<a name="server-gc"></a>
+## Enable server GC to get more throughput on the client when using StackExchange.Redis
+
+Enabling server GC can optimize the client and provide better performance and throughput when using StackExchange.Redis. For more information on server GC and how to enable it, see the following articles.
+
+-	[To enable server GC](https://msdn.microsoft.com/zh-cn/library/ms229357.aspx)
+-	[Fundamentals of Garbage Collection](https://msdn.microsoft.com/zh-cn/library/ee787088.aspx)
+-	[Garbage Collection and Performance](https://msdn.microsoft.com/zh-cn/library/ee851764.aspx)
 
 <a name="cache-redis-commands"></a>
 ## What are some of the considerations when using common Redis commands?
@@ -202,7 +251,7 @@ Azure Cache currently has three offerings:
 >
 >Azure Redis Cache has been the recommended caching solution in Azure since the service became generally available, and it's is now available in all Azure regions, including China and US Government. Because of this availability, we're announcing the upcoming retirement for Managed Cache Service and In-Role Cache service. 
 >
->Managed Cache Service and In-Role Cache service will remain available for existing customers for a maximum of 12 months from the date of this announcement on November 30, 2015âthe end of service date for both will end on November 30, 2016. After this date, Managed Cache Service will be shut down, and In-Role Cache service will no longer be supported.
+>Managed Cache Service and In-Role Cache service will remain available for existing customers for a maximum of 12 months from the date of this announcement on November 30, 2015-the end of service date for both will end on November 30, 2016. After this date, Managed Cache Service will be shut down, and In-Role Cache service will no longer be supported.
 >
 >We'll remove support for creating new in-role caches in the first Azure SDK release that happens after February 1, 2016. Customers will be able to open existing projects that have in-role caches. 
 >
@@ -211,7 +260,7 @@ Azure Cache currently has three offerings:
 >If you have any questions, please [contact us](https://azure.microsoft.com/support/contact/?WT.mc_id=azurebg_email_Trans_933). 
 
 ### Azure Redis Cache
-Azure Redis Cache is Generally Available in sizes up to 53 GB and has an availability SLA of 99.9%. The new [premium tier](/documentation/articles/cache-premium-tier) offers sizes up to 530 GB and support for clustering, VNET, and persistence, with a 99.9% SLA.
+Azure Redis Cache is Generally Available in sizes up to 53 GB and has an availability SLA of 99.9%. The new [premium tier](/documentation/articles/cache-premium-tier-intro) offers sizes up to 530 GB and support for clustering, VNET, and persistence, with a 99.9% SLA.
 
 Azure Redis Cache gives customers the ability to use a secure, dedicated Redis cache, managed by Microsoft. With this offer, you get to leverage the rich feature set and ecosystem provided by Redis, and reliable hosting and monitoring from Microsoft.
 
@@ -226,3 +275,5 @@ Managed Cache service is set to be retired November 30, 2016.
 
 ### In-Role Cache
 In-Role Cache is set to be retired November 30, 2016.
+
+["minIoThreads" configuration setting]: https://msdn.microsoft.com/zh-cn/library/vstudio/7w2sway1(v=vs.100).aspx

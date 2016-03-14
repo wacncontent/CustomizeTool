@@ -10,10 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/13/2015"
+	ms.date="01/15/2016"
 	wacn.date=""/>
 
 # About images for virtual machines
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
 
 Images are used in Azure to provide a new virtual machine with an operating system. An image might also have one or more data disks. Images are available from several sources:
 
@@ -46,6 +48,7 @@ For examples of using the tools in a classic deployment:
 -	**Save a specialized image**: `Save-AzureVMImage -ServiceName "mySvc2" -Name "MyVMToCapture2" -ImageName "myFirstVMImageSP" -OSState "Specialized" -Verbose`
 >[Azure.Tip] The OSState parameter is required if you want to create a VM image, which includes data disks as well as the operating system disk. If you don't use the parameter, the cmdlet creates an OS image. The value of the parameter indicates whether the image is generalized or specialized, based on whether the operating system disk has been prepared for reuse.
 -	**Delete an image**: `Remove-AzureVMImage -ImageName "MyOldVmImage"`
+
 
 ## Additional resources
 

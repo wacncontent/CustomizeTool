@@ -6,7 +6,7 @@
 	authors="huguesv" 
 	manager="wpickett" 
 	editor=""
-	tags="azure-service-management"/>
+	tags=âazure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -21,7 +21,7 @@
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] Resource Manager model.
 
 
 This tutorial describes how to host a Django-based website on Microsoft 

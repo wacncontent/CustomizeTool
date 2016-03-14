@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Use Script Action to install Spark on Hadoop cluster | Windows Azure"
 	description="Learn how to customize an HDInsight cluster with Spark using Script Action."
@@ -9,7 +11,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/15/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Install and use Spark on HDInsight Hadoop clusters using Script Action

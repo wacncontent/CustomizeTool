@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/17/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Using AES-128 Dynamic Encryption and Key Delivery Service

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/29/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 # Learn Hadoop by using the Azure HDInsight Getting Started Gallery

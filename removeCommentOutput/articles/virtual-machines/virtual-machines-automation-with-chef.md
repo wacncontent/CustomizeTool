@@ -21,7 +21,7 @@ Chef is a great tool for delivering automation and desired state configurations.
 
 With our latest cloud-api release, Chef provides seamless integration with Azure, giving you the ability to provision and deploy configuration states through a single command.
 
-In this article, I'll show you how to set up your Chef environment to provision Azure virtual machines and walk you through creating a policy or “CookBook” and then deploying this cookbook to an Azure virtual machine.
+In this article, I'll show you how to set up your Chef environment to provision Azure virtual machines and walk you through creating a policy or "CookBook" and then deploying this cookbook to an Azure virtual machine.
 
 Let's begin!
 
@@ -41,7 +41,7 @@ The Chef Client (node) is the agent that sits on the servers you are managing.
 
 The Chef Workstation is our admin workstation where we create our policies and execute our management commands. We run the **knife** command from the Chef Workstation to manage our infrastructure.
 
-There is also the concept of “Cookbooks” and “Recipes”. These are effectively the policies we define and apply to our servers.
+There is also the concept of "Cookbooks" and "Recipes". These are effectively the policies we define and apply to our servers.
 
 ## Preparing the workstation
 
@@ -87,7 +87,7 @@ You should now have four files including the Azure publishing file in the root o
 
 The PEM files contain your organization and admin private keys for communication while the knife.rb file contains your knife configuration. We will need to edit the knife.rb file.
 
-Open the file in your editor of choice and modify the “cookbook_path” by removing the /../ from the path so it appears as shown next.
+Open the file in your editor of choice and modify the "cookbook_path" by removing the /../ from the path so it appears as shown next.
 
 	cookbook_path  ["#{current_dir}/cookbooks"]
 
@@ -117,7 +117,7 @@ If they are not there, make sure you add these paths!
 
 Reboot your workstation before you continue.
 
-Next, we will install the Knife Azure extension. This provides Knife with the “Azure Plugin”.
+Next, we will install the Knife Azure extension. This provides Knife with the "Azure Plugin".
 
 Run the following command.
 
@@ -176,7 +176,7 @@ Run the following command to generate the template.
 
 	chef generate template webserver Default.htm
 
-Now navigate to the C:\chef\cookbooks\webserver\templates\default\Default.htm.erb file. Edit the file by adding some simple “Hello World” HTML code, and then save the file.
+Now navigate to the C:\chef\cookbooks\webserver\templates\default\Default.htm.erb file. Edit the file by adding some simple "Hello World" HTML code, and then save the file.
 
 
 
@@ -190,7 +190,7 @@ In this step, we are taking a copy of the Cookbook that we have created on our l
 
 ## Deploy a virtual machine with Knife Azure
 
-We will now deploy an Azure virtual machine and apply the “Webserver” Cookbook which will install our IIS web service and default web page.
+We will now deploy an Azure virtual machine and apply the "Webserver" Cookbook which will install our IIS web service and default web page.
 
 In order to do this, use the **knife azure server create** command.
 

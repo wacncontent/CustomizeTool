@@ -76,7 +76,7 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 ## More Resources
 
 - [Azure Web Apps Documentation](/home/features/web-site/)
-- [Learning Map for Azure Web Apps](/documentation/articles/websites-learning-map)
+- [Learning Map for Azure Web Apps](/documentation/learning-paths/appservice-webapps/)
 - [Azure Web Blog](/blog/tags/网站/)
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.

@@ -18,7 +18,7 @@
 
 ## Zero-friction authentication and authorization ##
 
-With a few clicks of a button, you can enable authentication and authorization for your web app. The checkbox style configuration in every Azure web app provides basic access control for your line-of-business web app. It does so by enforcing HTTPS and authentication to an Azure AD tenant of your choice before granting users access to your web app content. For more information, see [Web Apps Authentication / Authorization](http://azure.microsoft.com/blog/2014/11/13/azure-websites-authentication-authorization/).
+With a few clicks of a button, you can enable authentication and authorization for your web app. The checkbox style configuration in every Azure web app provides basic access control for your line-of-business web app. It does so by enforcing HTTPS and authentication to an Azure AD tenant of your choice before granting users access to your web app content. For more information, see [Web Apps Authentication / Authorization](https://azure.microsoft.com/blog/2014/11/13/azure-websites-authentication-authorization/).
 
 >[AZURE.NOTE] This feature is currently in preview.
 

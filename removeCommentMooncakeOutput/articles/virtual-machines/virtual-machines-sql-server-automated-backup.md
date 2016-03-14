@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Automated Backup for SQL Server Virtual Machines | Windows Azure"
-	description="Explains the Automated Backup feature for SQL Server running in Azure Virtual Machines."
+	description="Explains the Automated Backup feature for SQL Server running in Azure Virtual Machines using the Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="11/12/2015"
-   	wacn.date="" />
+	wacn.date=""/>
 
 # Automated Backup for SQL Server in Azure Virtual Machines
 
@@ -90,7 +90,7 @@ You can also uninstall the extension using the **Remove-AzureVMSqlServerExtensio
 
 ## Compatibility
 
-The following products are compatible with the SQL Server IaaS Agent features for Automated Backup:
+The following products areÂ compatible withÂ the SQL Server IaaS Agent features for Automated Backup:
 
 - Windows Server 2012
 

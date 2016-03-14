@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
    pageTitle="Control routing and use virtual appliances in Resource Manager using the Azure CLI | Windows Azure"
    description="Learn how to control routing and use virtual appliances using the Azure CLI"

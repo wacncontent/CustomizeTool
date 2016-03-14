@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="automation"
-	ms.date="11/23/2015"
+	ms.date="01/11/2016"
 	wacn.date=""/>
 
 # Onboarding machines for management by Azure Automation DSC
@@ -25,6 +25,10 @@ Azure Automation DSC can be used to manage a variety of machines:
 *    Physical / virtual Windows machines on-premises, or in a cloud other than Azure
 *    Physical / virtual Linux machines on-premises, in Azure, or in a cloud other than Azure
 
+<!-- deleted by customization
+In addition, a **DSC metaconfiguration** can be generated to generically onboard any combination of the above machines to Azure Automation DSC.
+
+-->
 The following sections outline how you can onboard each type of machine to Azure Automation DSC.
 
 ## Azure virtual machines (classic)
@@ -146,65 +150,84 @@ The <!-- deleted by customization [Register-AzureRmAutomationDscNode](https://ms
 On-premises Windows machines and Windows machines in non-Azure clouds (such as Amazon Web Services) can also be onboarded to Azure Automation DSC, as long as they have outbound access to the internet, via a few simple steps:
 
 1. Make sure the latest version of [WMF 5](http://www.microsoft.com/download/details.aspx?id=48729) is installed on the machines you want to onboard to Azure Automation DSC.
+<!-- deleted by customization
+2. Follow the directions in section [**Generating DSC metaconfigurations**](#generating-dsc-metaconfigurations) below to generate a folder containing the needed DSC metaconfigurations.
+3. Remotely apply the PowerShell DSC metaconfiguration to the machines you want to onboard. **The machine this command is run from must have the latest version of [WMF 5](http://www.microsoft.com/download/details.aspx?id=48729) installed**:
+-->
+<!-- keep by customization: begin -->
 
 2. Open the PowerShell console or PowerShell ISE as an administrator in a machine in your local environment. This machine must also have the latest version of WMF 5 installed.
 
 3. Connect to Azure Resource Manager using the Azure PowerShell module:
-<!-- deleted by customization
-        `Login-AzureRmAccount`
--->
-<!-- keep by customization: begin -->
         `Login-AzureRMAccount`
-<!-- keep by customization: end -->
 
 4. Download, from the Automation account you want to onboard nodes to, the PowerShell DSC metaconfigurations for the machines you want to onboard:
 
-	<!-- deleted by customization `Get-AzureRmAutomationDscOnboardingMetaconfig --><!-- keep by customization: begin --> `Get-AzureRMAutomationDscOnboardingMetaconfig <!-- keep by customization: end --> -ResourceGroupName MyResourceGroup -AutomationAccountName      MyAutomationAccount -ComputerName MyServer1, MyServer2 -OutputFolder C:\Users\joe\Desktop`
+	`Get-AzureRMAutomationDscOnboardingMetaconfig -ResourceGroupName MyResourceGroup -AutomationAccountName      		MyAutomationAccount -ComputerName MyServer1, MyServer2 -OutputFolder C:\Users\joe\Desktop`
 
 5. Optionally, view and update the metaconfigurations in the output folder as needed to match the [PowerShell DSC Local Configuration Manager fields and values](https://technet.microsoft.com/zh-cn/library/dn249922.aspx?f=255&MSPPError=-2147217396) you want, if the defaults do not match your use case.
 
 6. Remotely apply the PowerShell DSC metaconfiguration to the machines you want to onboard:
+<!-- keep by customization: end -->
 
 	`Set-DscLocalConfigurationManager -Path C:\Users\joe\Desktop\DscMetaConfigs -ComputerName MyServer1, MyServer2`
 
+<!-- deleted by customization
+4. If you cannot apply the PowerShell DSC metaconfigurations remotely, copy the metaconfigurations' folder from step 2 onto each machine to onboard. Then call **Set-DscLocalConfigurationManager** locally on each machine to onboard.
+5. Using the Azure Management Portal or cmdlets, check that the machines to onboard now show up as DSC nodes registered in your Azure Automation account.
+
+## Physical / virtual Linux machines on-premises, in Azure, or in a cloud other than Azure
+
+On-premises Linux machines <!-- deleted by customization, Linux machines in Azure, --> and Linux machines in non-Azure clouds can also be onboarded to Azure Automation DSC, as long as they have outbound access to the internet, via a few simple steps:
+-->
+<!-- keep by customization: begin -->
 7. If you cannot apply the PowerShell DSC metaconfigurations remotely, copy the output folder from step 4 onto each machine to onboard. Then call Set-DscLocalConfigurationManager locally on each machine to onboard.
 
 8. Using the Azure Management Portal or cmdlets, check that the machines to onboard now show up as DSC nodes registered in your Azure Automation account.
 
-<!-- deleted by customization ## --><!-- keep by customization: begin --> #### <!-- keep by customization: end --> Physical / virtual Linux machines on-premises, in Azure, or in a cloud other than Azure
+#### Physical / virtual Linux machines on-premises, in Azure, or in a cloud other than Azure
 
 On-premises Linux machines <!-- deleted by customization, Linux machines in Azure, --> and Linux machines in non-Azure clouds can also be onboarded to Azure Automation DSC, as long as they have outbound access to the internet, via a few simple steps:
+<!-- keep by customization: end -->
 
 1. Make sure the latest version of the [DSC Linux agent](http://www.microsoft.com/download/details.aspx?id=49150) is installed on the machines you want to onboard to Azure Automation DSC.
 
+<!-- deleted by customization
+2. If the [PowerShell DSC Local Configuration Manager defaults](hhttps://msdn.microsoft.com/powershell/dsc/metaconfig4) match your use case, and you want to onboard machines such that they **both** pull from and report to Azure Automation DSC::
+-->
+<!-- keep by customization: begin -->
 2. If the [PowerShell DSC Local Configuration Manager defaults](https://technet.microsoft.com/zh-cn/library/dn249922.aspx?f=255&MSPPError=-2147217396) match your use case:
+<!-- keep by customization: end -->
 
 	*    On each Linux machine to onboard to Azure Automation DSC, use Register.py to onboard using the PowerShell DSC Local Configuration Manager defaults:
 
 		`/opt/microsoft/dsc/Scripts/Register.py <Automation account registration key> <Automation account registration URL>`
 
 	*    To find the registration key and registration URL for your Automation account, see the <!-- deleted by customization [**Secure registration**](#secure-registration) --><!-- keep by customization: begin --> [Secure registration](#Secure-registration) <!-- keep by customization: end --> section below.
+<!-- deleted by customization
+	If the PowerShell DSC Local Configuration Manager defaults **do** **not** match your use case, or you want to onboard machines such that they only report to Azure Automation DSC, but do not pull configuration or PowerShell modules from it,  follow steps 3 - 6. Otherwise, proceed directly to step 6.
+
+3.	Follow the directions in the [**Generating DSC metaconfigurations**](#generating-dsc-metaconfigurations) section below to generate a folder containing the needed DSC metaconfigurations.
+4.  Remotely apply the PowerShell DSC metaconfiguration to the machines you want to onboard:
+-->
+<!-- keep by customization: begin -->
 
 	If the PowerShell DSC Local Configuration Manager defaults **do** **not** match your use case, follow steps 3 - 9. Otherwise, proceed directly to step 9.
 
-3.Open the PowerShell console or PowerShell ISE as an administrator on a Windows machine in your local environment. This machine must have the latest version of [WMF 5](http://www.microsoft.com/download/details.aspx?id=48729) installed.
+3.  Open the PowerShell console or PowerShell ISE as an administrator on a Windows machine in your local environment. This machine must have the latest version of [WMF 5](http://www.microsoft.com/download/details.aspx?id=48729) installed.
 
-4.Connect to Azure Resource Manager using the Azure PowerShell module:
+4.  Connect to Azure Resource Manager using the Azure PowerShell module:
 
-<!-- deleted by customization
-	`Login-AzureRmAccount`
--->
-<!-- keep by customization: begin -->
 	`Login-AzureRMAccount`
-<!-- keep by customization: end -->
 
 5.  Download, from the Automation account you want to onboard nodes to, the PowerShell DSC metaconfigurations for the machines you want to onboard:
 	
-	<!-- deleted by customization `Get-AzureRmAutomationDscOnboardingMetaconfig --><!-- keep by customization: begin --> `Get-AzureRMAutomationDscOnboardingMetaconfig <!-- keep by customization: end --> -ResourceGroupName MyResourceGroup -AutomationAccountName MyAutomationAccount -ComputerName MyServer1, MyServer2 -OutputFolder C:\Users\joe\Desktop_`
+	`Get-AzureRMAutomationDscOnboardingMetaconfig -ResourceGroupName MyResourceGroup -AutomationAccountName MyAutomationAccount -ComputerName MyServer1, MyServer2 -OutputFolder C:\Users\joe\Desktop_`
 
 6.  Optionally, view and update the metaconfigurations in the output folder as needed to match the [PowerShell DSC Local Configuration Manager fields and values](http://https://technet.microsoft.com/zh-cn/library/dn249922.aspx?f=255&MSPPError=-2147217396) you want, if the defaults do not match your use case.
 
 7.  Remotely apply the PowerShell DSC metaconfiguration to the machines you want to onboard:
+<!-- keep by customization: end -->
     	
     	$SecurePass = ConvertTo-SecureString -string "<root password>" -AsPlainText -Force
         $Cred = New-Object System.Management.Automation.PSCredential "root", $SecurPass
@@ -215,14 +238,153 @@ On-premises Linux machines <!-- deleted by customization, Linux machines in Azur
         $Session = New-CimSession -Credential:$Cred -ComputerName:<your Linux machine> -Port:5986 -Authentication:basic -SessionOption:$Opt
     	
     	Set-DscLocalConfigurationManager -CimSession $Session -Path C:\Users\joe\Desktop\DscMetaConfigs
+<!-- deleted by customization
+The machine this command is run from must have the latest version of [WMF 5](http://www.microsoft.com/download/details.aspx?id=48729) installed.
+
+5.  If you cannot apply the PowerShell DSC metaconfigurations remotely, for each Linux machine to onboard, copy the metaconfiguration corresponding to that machine from the folder in step 5 onto the Linux machine. Then call `SetDscLocalConfigurationManager.py` locally on each Linux machine you want to onboard to Azure Automation DSC:
+-->
+<!-- keep by customization: begin -->
 
 8.  If you cannot apply the PowerShell DSC metaconfigurations remotely, for each Linux machine to onboard, copy the metaconfiguration corresponding to that machine from the folder in step 5 onto the Linux machine. Then call `SetDscLocalConfigurationManager.py` locally on each Linux machine you want to onboard to Azure Automation DSC:
+<!-- keep by customization: end -->
 
 	`/opt/microsoft/dsc/Scripts/SetDscLocalConfigurationManager.py -configurationmof <path to metaconfiguration file>`
 
-9.  Using the Azure Management Portal or cmdlets, check that the machines to onboard now show up as DSC nodes registered in your Azure Automation account.
+<!-- deleted by customization 6 --><!-- keep by customization: begin --> 9 <!-- keep by customization: end -->.  Using the Azure Management Portal or cmdlets, check that the machines to onboard now show up as DSC nodes registered in your Azure Automation account.
 
 <!-- deleted by customization
+##Generating DSC metaconfigurations
+To generically onboard any machine to Azure Automation DSC, a DSC metaconfiguration can be generated that, when applied, tells the DSC agent on the machine to pull from and/or report to Azure Automation DSC. DSC metaconfigurations for Azure Automation DSC can be generated using either a PowerShell DSC configuration, or the Azure Automation PowerShell cmdlets.
+
+**Note:** DSC metaconfigurations contain the secrets needed to onboard a machine to an Automation account for management. Make sure to properly protect any DSC metaconfigurations you create, or delete them after use.
+
+###Using a DSC Configuration
+1.	Open the PowerShell ISE as an administrator in a machine in your local environment. The machine must have the latest version of [WMF 5](http://www.microsoft.com/download/details.aspx?id=48729) installed.
+
+2.	Copy the following script locally. This script contains a PowerShell DSC configuration for creating metaconfigurations, and a command to kick off the metaconfiguration creation.
+    
+        # The DSC configuration that will generate metaconfigurations
+        [DscLocalConfigurationManager()]
+        Configuration DscMetaConfigs 
+        { 
+            param 
+            ( 
+                [Parameter(Mandatory=$True)] 
+                $RegistrationUrl,
+         
+                [Parameter(Mandatory=$True)] 
+                [String]$RegistrationKey,
+
+                [Parameter(Mandatory=$True)] 
+                [String[]]$ComputerName,
+
+                [Int]$RefreshFrequencyMins = 30, 
+            
+                [Int]$ConfigurationModeFrequencyMins = 15, 
+            
+                [String]$ConfigurationMode = "ApplyAndMonitor", 
+            
+                [String]$NodeConfigurationName,
+
+                [Boolean]$RebootNodeIfNeeded= $False,
+
+                [String]$ActionAfterReboot = "ContinueConfiguration",
+
+                [Boolean]$AllowModuleOverwrite = $False,
+
+                [Boolean]$ReportOnly
+            )
+
+    
+            if(!$NodeConfigurationName -or $NodeConfigurationName -eq "") 
+            { 
+                $ConfigurationNames = $null 
+            } 
+            else 
+            { 
+                $ConfigurationNames = @($NodeConfigurationName) 
+            }
+
+            if($ReportOnly)
+            {
+               $RefreshMode = "PUSH"
+            }
+            else
+            {
+               $RefreshMode = "PULL"
+            }
+
+            Node $ComputerName
+            {
+
+                Settings 
+                { 
+                    RefreshFrequencyMins = $RefreshFrequencyMins 
+                    RefreshMode = $RefreshMode 
+                    ConfigurationMode = $ConfigurationMode 
+                    AllowModuleOverwrite  = $AllowModuleOverwrite 
+                    RebootNodeIfNeeded = $RebootNodeIfNeeded 
+                    ActionAfterReboot = $ActionAfterReboot 
+                    ConfigurationModeFrequencyMins = $ConfigurationModeFrequencyMins 
+                }
+
+                if(!$ReportOnly)
+                {
+                   ConfigurationRepositoryWeb AzureAutomationDSC 
+                    { 
+                        ServerUrl = $RegistrationUrl 
+                        RegistrationKey = $RegistrationKey 
+                        ConfigurationNames = $ConfigurationNames 
+                    }
+
+                    ResourceRepositoryWeb AzureAutomationDSC 
+                    { 
+                       ServerUrl = $RegistrationUrl 
+                       RegistrationKey = $RegistrationKey 
+                    }
+                }
+
+                ReportServerWeb AzureAutomationDSC 
+                { 
+                ServerUrl = $RegistrationUrl 
+                RegistrationKey = $RegistrationKey 
+                }
+            } 
+        }
+        # Create the metaconfigurations
+        # TODO: edit the below as needed for your use case
+        DscMetaConfigs `
+            -RegistrationUrl "<fill me in>" `
+            -RegistrationKey "<fill me in>" `
+            -ComputerName "<some VM to onboard>", "<some other VM to onboard>" `
+            -NodeConfigurationName "SimpleConfig.webserver" `
+            -RefreshFrequencyMins 30 `
+            -ConfigurationModeFrequencyMins 15 `
+            -RebootNodeIfNeeded $False `
+            -AllowModuleOverwrite $False `
+            -ConfigurationMode "ApplyAndMonitor" `
+            -ActionAfterReboot "ContinueConfiguration" `
+            -ReportOnly $False # Set to $True to have machines only report to AA DSC but not pull from it
+
+3.	Fill in the registration key and URL for your Automation account, as well as the names of the machines to onboard. All other parameters are optional. To find the registration key and registration URL for your Automation account, see the [**Secure registration**](#secure-registration) section below.
+
+4.	If you want the machines to report DSC status information to Azure Automation DSC, but not pull configuration or PowerShell modules, set the **ReportOnly** parameter to true.
+
+5.	Run the script. You should now have a folder called **DscMetaConfigs** in your working directory, containing the PowerShell DSC metaconfigurations for the machines to onboard.
+
+###Using the Azure Automation cmdlets
+If the PowerShell DSC Local Configuration Manager defaults match your use case, and you want to onboard machines such that they both pull from and report to Azure Automation DSC, the Azure Automation cmdlets provide a simplified method of generating the DSC metaconfigurations needed:
+
+1.	Open the PowerShell console or PowerShell ISE as an administrator in a machine in your local environment.
+
+2.	Connect to Azure Resource Manager using **Add-AzureRmAccount**
+
+3.	Download the PowerShell DSC metaconfigurations for the machines you want to onboard from the Automation account to which you want to onboard nodes:
+
+        Get-AzureRmAutomationDscOnboardingMetaconfig -ResourceGroupName MyResourceGroup -AutomationAccountName MyAutomationAccount -ComputerName MyServer1, MyServer2 -OutputFolder C:\Users\joe\Desktop
+
+You should now have a folder called ***DscMetaConfigs***, containing the PowerShell DSC metaconfigurations for the machines to onboard.
+
 ##Secure registration
 -->
 <!-- keep by customization: begin -->

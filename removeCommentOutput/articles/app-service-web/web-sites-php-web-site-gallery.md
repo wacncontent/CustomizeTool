@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create a WordPress web site in Azure Websites | Windows Azure"
-	description="Learn how to create a new Azure web site for a WordPress blog using the Azure Management Portal."
+	pageTitle="Create a WordPress web app in Azure | Windows Azure"
+	description="Learn how to create a new Azure web app for a WordPress blog using the Azure Management Portal."
 	services="app-service\web"
 	documentationCenter="php"
 	authors="tfitzmac"
@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/13/2015"
+	ms.date="02/08/2016"
 	wacn.date=""/>
 
-# Create a WordPress web site in Azure Websites
+# Create a WordPress web app in Azure
 
-This tutorial shows how to find an application in the Azure Marketplace and install it in an Azure Websites. The tutorial uses a WordPress blog site as an example, but the process is similar for many other Marketplace applications.
+This tutorial shows how to deploy a WordPress blog site from the Azure gallery.
 
 When you're done with the tutorial you'll have your own WordPress blog site up and running in the cloud.
 
@@ -22,18 +22,20 @@ When you're done with the tutorial you'll have your own WordPress blog site up a
 
 You'll learn:
 
-* How to find an application template in the Azure Marketplace.
-* How to create a web site in Azure Websites that is based on the template.
-* How to configure Azure Websites settings for the new web site and MySQL database.
+* How to find an application template in the Azure gallery.
+* How to create a web app in Azure that is based on the template.
+* How to configure Azure settings for the new web app and database.
 
-The Azure Marketplace makes available a wide range of popular web sites developed by Microsoft, third party companies, and open source software initiatives. The web sites are built on a wide range of popular frameworks, such as [PHP](/develop/nodejs/) in this WordPress example, [.NET](/develop/net/), [Node.js](/develop/nodejs/), [Java](/develop/java/), and [Python](/develop/python/), to name a few. To create a web site from the Azure Marketplace the only software you need is the browser that you use for the [Azure Management Portal](https://manage.windowsazure.cn/). 
+The Azure gallery makes available a wide range of popular web apps developed by Microsoft, third party companies, and open source software initiatives. The web apps are built on a wide range of popular frameworks, such as [PHP](/develop/nodejs/) in this WordPress example, [.NET](/develop/net/), [Node.js](/develop/nodejs/), [Java](/develop/java/), and [Python](/develop/python/), to name a few. To create a web app from the Azure gallery the only software you need is the browser that you use for the [Azure Management Portal](https://manage.windowsazure.cn/). 
+
+The WordPress site that you deploy in this tutorial uses MySQL for the database. If you wish to instead use SQL Database for the database, see [Project Nami](http://projectnami.org/). **Project Nami** is also available through the Marketplace.
 
 > [AZURE.NOTE]
 > To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [activate your Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 >
-> If you want to get started with Azure Websites before you sign up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web site in Azure Websitesâno credit card required, and no commitments.
+> If you want to get started with Azure before you sign up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azureâno credit card required, and no commitments.
 
-## Select WordPress and configure for Azure Websites
+## Select WordPress and configure for Azure
 
 1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn/).
 
@@ -41,7 +43,7 @@ The Azure Marketplace makes available a wide range of popular web sites develope
 	
     ![Create New][5]
 	
-3. Search for **WordPress**, and then click **WordPress**.
+3. Search for **WordPress**, and then click **WordPress**. If you wish to use SQL Database instead of MySQL, search for **Project Nami**.
 
 	![WordPress from list][7]
 	
@@ -49,9 +51,9 @@ The Azure Marketplace makes available a wide range of popular web sites develope
 
 	![Create](./media/web-sites-php-web-site-gallery/create.png)
 
-4. Enter a name for the web site in the **Web Apps** box.
+4. Enter a name for the web app in the **Web app** box.
 
-	This name must be unique in the chinacloudsites.cn domain because the URL of the web site will be {name}.chinacloudsites.cn. If the name you enter isn't unique, a red exclamation mark appears in the text box.
+	This name must be unique in the chinacloudsites.cn domain because the URL of the web app will be {name}.chinacloudsites.cn. If the name you enter isn't unique, a red exclamation mark appears in the text box.
 
 8. If you have more than one subscription, choose the one you want to use. 
 
@@ -61,7 +63,7 @@ The Azure Marketplace makes available a wide range of popular web sites develope
 
 5. Select an **App Service plan/Location** or create a new one.
 
-	For more information about App Service plans, see [App Service plans overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview)	
+	For more information about App Service plans, see [Azure App Service plans overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview)	
 
 7. Click **Database**, and then in the **New MySQL Database** blade provide the required values for configuring your MySQL database.
 
@@ -69,7 +71,7 @@ The Azure Marketplace makes available a wide range of popular web sites develope
 
 	b. Leave the **Database Type** set to **Shared**.
 
-	c. Choose the same location as the one you chose for the web site.
+	c. Choose the same location as the one you chose for the web app.
 
 	d. Choose a pricing tier. Mercury (free with minimal allowed connections and disk space) is fine for this tutorial.
 
@@ -77,23 +79,23 @@ The Azure Marketplace makes available a wide range of popular web sites develope
 
 8. In the **WordPress** blade, accept the legal terms, and then click **Create**. 
 
-	![Configure web site](./media/web-sites-php-web-site-gallery/configure.png)
+	![Configure web app](./media/web-sites-php-web-site-gallery/configure.png)
 
-	Azure Websites creates the web site, typically in less than a minute. You can watch the progress by clicking the bell icon at the top of the portal page.
+	Azure creates the web app, typically in less than a minute. You can watch the progress by clicking the bell icon at the top of the portal page.
 
 	![Progress indicator](./media/web-sites-php-web-site-gallery/progress.png)
 
-## Launch and manage your WordPress web site
+## Launch and manage your WordPress web app
 	
-7. When the web site creation is finished, navigate in the Azure Management Portal to the resource group in which you created the application, and you can see the web site and the database.
+7. When the web app creation is finished, navigate in the Azure Management Portal to the resource group in which you created the application, and you can see the web app and the database.
 
-	The extra resource with the light bulb icon is [Application Insights](/home/features/application-insights/), which provides monitoring services for your web site.
+	The extra resource with the light bulb icon is [Application Insights](/home/features/application-insights/), which provides monitoring services for your web app.
 
-1. In the **Resource group** blade, click the web site line.
+1. In the **Resource group** blade, click the web app line.
 
-	![Configure web site](./media/web-sites-php-web-site-gallery/resourcegroup.png)
+	![Configure web app](./media/web-sites-php-web-site-gallery/resourcegroup.png)
 
-2. In the web site blade, click **Browse**.
+2. In the Web app blade, click **Browse**.
 
     ![site URL][browse]
 
@@ -109,12 +111,12 @@ The Azure Marketplace makes available a wide range of popular web sites develope
 
 ## Next steps
 
-You've seen how to create and deploy a PHP web site from the gallery. For more information about using PHP in Azure, see the [PHP Developer Center](/develop/php/).
+You've seen how to create and deploy a PHP web app from the gallery. For more information about using PHP in Azure, see the [PHP Developer Center](/develop/php/).
 
-For more information about how to work with Azure Websites, see the links on the left side of the page (for wide browser windows) or at the top of the page (for narrow browser windows). 
+For more information about how to work with Azure Web Apps, see the links on the left side of the page (for wide browser windows) or at the top of the page (for narrow browser windows). 
 
 ## What's changed
-* For a guide to the change from Websites to Azure Websites, see [Azure Websites and its impact on existing Azure Services](/documentation/services/web-sites/).
+* For a guide to the change from Websites to Azure Web App, see [Azure and its impact on existing Azure Services](/documentation/services/web-sites/).
 
 [5]: ./media/web-sites-php-web-site-gallery/startmarketplace.png
 [7]: ./media/web-sites-php-web-site-gallery/search-web-app.png

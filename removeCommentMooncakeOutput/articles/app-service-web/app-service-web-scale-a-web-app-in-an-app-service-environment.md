@@ -1,8 +1,8 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="How to Scale an App in an Azure Websites Environment" 
-	description="Scaling an app in an Azure Websites Environment" 
+	pageTitle="How to Scale an App in an Azure Environment" 
+	description="Scaling an app in an Azure Environment" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="ccompy" 
@@ -14,43 +14,43 @@
 	ms.date="10/26/2015"
 	wacn.date=""/>
 
-# Scaling apps in an Azure Websites Environment #
+# Scaling apps in an Azure Environment #
 
-At a high level, Azure Websites Environments are essentially personal deployments of the Azure Websites into your VNET and only manageable by your subscription. They offer new networking capabilities because they are in your VNET and can also be scaled beyond what is normally available in the Azure Websites environments.  If you need more information around what an Azure Websites Environment(ASE) is then see [What is an Azure Websites Environment][WhatisASE].  For details around creating an Azure Websites Environment or creating a web site in an Azure Websites Environment see [How to Create an Azure Websites Environment][HowtoCreateASE] and [How to create a web site in an Azure Websites Environment][CreateWebappinASE]
+At a high level, Azure Environments are essentially personal deployments of the Azure into your VNET and only manageable by your subscription. They offer new networking capabilities because they are in your VNET and can also be scaled beyond what is normally available in the Azure environments.  If you need more information around what an Azure Environment(ASE) is then see [What is an Azure Environment][WhatisASE].  For details around creating an Azure Environment or creating a web app in an Azure Environment see [How to Create an Azure Environment][HowtoCreateASE] and [How to create a web app in an Azure Environment][CreateWebappinASE]
 
-As a quick reminder, when you normally change a scale attribute for a web, mobile or API app in the Azure Websites, you are changing that at an App Service Plan(ASP) level.  For details around scaling App Service Plans or just for details on App Service Plans outside of the Azure Websites Environments see [Scale a web site in Azure Websites][ScaleWebapp] and [App Service Plans in depth overview][Appserviceplans].
+As a quick reminder, when you normally change a scale attribute for a web, mobile or API app in the Azure Web App, you are changing that at an App Service Plan(ASP) level.  For details around scaling App Service Plans or just for details on App Service Plans outside of the Azure Environments see [Scale a web app in Azure][ScaleWebapp] and [App Service Plans in depth overview][Appserviceplans].
 
-Scaling an app in an Azure Websites Environment is very similar to scaling apps normally.  In the Azure Websites there are normally three things you can scale:
+Scaling an app in an Azure Environment is very similar to scaling apps normally.  In the Azure there are normally three things you can scale:
 
 - pricing plan
 - worker size (for dedicated instances)
 - number of instances.
 
-In an ASE there is no need to select or change the pricing plan.  In terms of capabilities it is already at a Premium pricing capability level.  In an Azure Websites Environment there are also no shared workers.  They are all dedicated workers.  
+In an ASE there is no need to select or change the pricing plan.  In terms of capabilities it is already at a Premium pricing capability level.  In an Azure Environment there are also no shared workers.  They are all dedicated workers.  
 
-With respect to worker sizes, the ASE admin can assign the size of the compute resource to be used for each worker pool.  That means you can have Worker Pool 1 with P4 compute resources and Worker Pool 2 with P1 compute resources, if desired.  They do not have to be in size order.  For details around the sizes and their pricing see the document here [Azure Websites Pricing][AppServicePricing].  This leaves the scaling options for web sites and App Service Plans in an Azure Websites Environment to be:
+With respect to worker sizes, the ASE admin can assign the size of the compute resource to be used for each worker pool.  That means you can have Worker Pool 1 with P4 compute resources and Worker Pool 2 with P1 compute resources, if desired.  They do not have to be in size order.  For details around the sizes and their pricing see the document here [Azure Pricing][AppServicePricing].  This leaves the scaling options for web apps and App Service Plans in an Azure Environment to be:
 
 - worker pool selection
 - number of instances
 
-Changing either item is done through the appropriate UI shown for your ASE hosted App Service Plans.  You won't be able to scale up your ASP beyond the number of available compute resources in the worker pool that your ASP is in.  If you need more you need to get your ASE administrator to add more compute resources to the worker pool that you need them in.  For information around re-configuring your ASE read the information here: [How to Configure an Azure Websites environment][HowtoConfigureASE].  You may also want to take advantage of the ASE autoscale features to add capacity based on schedule or metrics.  To get more details on configuring autoscale for the ASE environment itself see [How to configure autoscale for an Azure Websites Environment][ASEAutoscale].
+Changing either item is done through the appropriate UI shown for your ASE hosted App Service Plans.  You won't be able to scale up your ASP beyond the number of available compute resources in the worker pool that your ASP is in.  If you need more you need to get your ASE administrator to add more compute resources to the worker pool that you need them in.  For information around re-configuring your ASE read the information here: [How to Configure an Azure environment][HowtoConfigureASE].  You may also want to take advantage of the ASE autoscale features to add capacity based on schedule or metrics.  To get more details on configuring autoscale for the ASE environment itself see [How to configure autoscale for an Azure Environment][ASEAutoscale].
 
 ![][1]
 
 ### Scaling the number of instances ###
 
-When you first create your web site in an Azure Websites Environment you should scale it up to at least 2 instances to provide fault tolerance.   
+When you first create your web app in an Azure Environment you should scale it up to at least 2 instances to provide fault tolerance.   
 
 If your ASE has enough capacity then this is pretty simple.  You go to your App Service Plan that holds the sites you want to scale up and select Scale.  This opens the UI where you can manually set the scale for your ASP or configure autoscale rules for your ASP.  To manually scale your app simply set ***Scale by*** to ***an instance count that I enter manually***.  From here either drag the slider to the desired quantity or enter it in the box next to the slider.  
 
 ![][2] 
 
-The autoscale rules for an ASP in an ASE work the same as they do normally.  You can select ***CPU Percentage*** under ***Scale by*** and create autoscale rules for your ASP based on CPU Percentage or you can create more complex rules using ***schedule and performance rules***.  To see more complete details on configuring autoscale use the guide here [Scale an app in Azure Websites][AppScale]. 
+The autoscale rules for an ASP in an ASE work the same as they do normally.  You can select ***CPU Percentage*** under ***Scale by*** and create autoscale rules for your ASP based on CPU Percentage or you can create more complex rules using ***schedule and performance rules***.  To see more complete details on configuring autoscale use the guide here [Scale an app in Azure Web App][AppScale]. 
 
 
 ### Worker Pool selection ###
 
-As noted earlier, the worker pool selection is accessed from the ASP UI.  Open the blade for the ASP that you want to scale and select worker pool.  You will see all of the worker pools which you have configured in your Azure Websites Environment.  If you have only one worker pool then you will only see the one pool listed.  To change what worker pool your ASP is in, you simply select the worker pool you want your App Service Plan to move to.  
+As noted earlier, the worker pool selection is accessed from the ASP UI.  Open the blade for the ASP that you want to scale and select worker pool.  You will see all of the worker pools which you have configured in your Azure Environment.  If you have only one worker pool then you will only see the one pool listed.  To change what worker pool your ASP is in, you simply select the worker pool you want your App Service Plan to move to.  
 
 ![][3]
 
@@ -60,9 +60,9 @@ Before moving your ASP from one worker pool to another it is important to make s
 
 ## Getting started
 
-To get started with Azure Websites Environments, see [How To Create An Azure Websites Environment][HowtoCreateASE]
+To get started with Azure Environments, see [How To Create An Azure Environment][HowtoCreateASE]
 
-For more information about the Azure Websites platform, see [Azure Websites][AzureAppService].
+For more information about the Azure platform, see [Azure Web App][AzureAppService].
 
 <!--Image references-->
 [1]: ./media/app-service-web-scale-a-web-app-in-an-app-service-environment/aseappscale-aspblade.png

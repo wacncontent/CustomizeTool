@@ -23,13 +23,13 @@ This example will create a DMZ with a firewall, four windows servers, and Networ
 ## Environment Description
 In this example there is a subscription that contains the following:
 
-- Two cloud services: “FrontEnd001” and “BackEnd001”
-- A Virtual Network, “CorpNetwork”, with two subnets; “FrontEnd” and “BackEnd”
+- Two cloud services: "FrontEnd001" and "BackEnd001"
+- A Virtual Network, "CorpNetwork", with two subnets; "FrontEnd" and "BackEnd"
 - A single Network Security Group that is applied to both subnets
 - A network virtual appliance, in this example a Barracuda NG Firewall, connected to the Frontend subnet
-- A Windows Server that represents an application web server (“IIS01”)
-- Two windows servers that represent application back end servers (“AppVM01”, “AppVM02”)
-- A Windows server that represents a DNS server (“DNS01”)
+- A Windows Server that represents an application web server ("IIS01")
+- Two windows servers that represent application back end servers ("AppVM01", "AppVM02")
+- A Windows server that represents a DNS server ("DNS01")
 
 >[AZURE.NOTE] Although this example uses a Barracuda NG Firewall, many of the different Network Virtual Appliances could be used for this example.
 
@@ -46,14 +46,14 @@ To build the environment;
 Once the script runs successfully the following post-script steps may be taken;
 
 1.	Set up the firewall rules, this is covered in the section below titled: Firewall Rules.
-2.	Optionally in the references section are two scripts to set up the web server and app server with a simple web site to allow testing with this DMZ configuration.
+2.	Optionally in the references section are two scripts to set up the web server and app server with a simple web application to allow testing with this DMZ configuration.
 
 The next section explains most of the scripts statements relative to Network Security Groups.
 
 ## Network Security Groups (NSG)
 For this example, a NSG group is built and then loaded with six rules. 
 
->[AZURE.TIP] Generally speaking, you should create your specific “Allow” rules first and then the more generic “Deny” rules last. The assigned priority dictates which rules are evaluated first. Once traffic is found to apply to a specific rule, no further rules are evaluated. NSG rules can apply in either in the inbound or outbound direction (from the perspective of the subnet).
+>[AZURE.TIP] Generally speaking, you should create your specific "Allow" rules first and then the more generic "Deny" rules last. The assigned priority dictates which rules are evaluated first. Once traffic is found to apply to a specific rule, no further rules are evaluated. NSG rules can apply in either in the inbound or outbound direction (from the perspective of the subnet).
 
 Declaratively, the following rules are being built for inbound traffic:
 
@@ -64,7 +64,7 @@ Declaratively, the following rules are being built for inbound traffic:
 5.	Any traffic (all ports) from the Internet to the entire VNet (both subnets) is Denied
 6.	Any traffic (all ports) from the Frontend subnet to the Backend subnet is Denied
 
-With these rules bound to each subnet, if a HTTP request was inbound from the Internet to the web server, both rules 3 (allow) and 5 (deny) would apply, but since rule 3 has a higher priority only it would apply and rule 5 would not come into play. Thus the HTTP request would be allowed to the firewall. If that same traffic was trying to reach the DNS01 server, rule 5 (Deny) would be the first to apply and the traffic would not be allowed to pass to the server. Rule 6 (Deny) blocks the Frontend subnet from talking to the Backend subnet (except for allowed traffic in rules 1 and 4), this protects the Backend network in case an attacker compromises the web site on the Frontend, the attacker would have limited access to the Backend “protected” network (only to resources exposed on the AppVM01 server).
+With these rules bound to each subnet, if a HTTP request was inbound from the Internet to the web server, both rules 3 (allow) and 5 (deny) would apply, but since rule 3 has a higher priority only it would apply and rule 5 would not come into play. Thus the HTTP request would be allowed to the firewall. If that same traffic was trying to reach the DNS01 server, rule 5 (Deny) would be the first to apply and the traffic would not be allowed to pass to the server. Rule 6 (Deny) blocks the Frontend subnet from talking to the Backend subnet (except for allowed traffic in rules 1 and 4), this protects the Backend network in case an attacker compromises the web application on the Frontend, the attacker would have limited access to the Backend "protected" network (only to resources exposed on the AppVM01 server).
 
 There is a default outbound rule that allows traffic out to the internet. For this example, we're allowing outbound traffic and not modifying any outbound rules. To lock down traffic in both directions, User Defined Routing is required, this is explored in a different example that can found in the [main security boundary document][HOME].
 
@@ -75,9 +75,9 @@ A management client will need to be installed on a PC to manage the firewall and
 
 Instructions for client download and connecting to the Barracuda used in this example can be found here: [Barracuda NG Admin](https://techlib.barracuda.com/NG61/NGAdmin)
 
-On the firewall, forwarding rules will need to be created. Since this example only routes internet traffic in-bound to the firewall and then to the web server, only one forwarding NAT rule is needed. On the Barracuda NG firewall used in this example the rule would be a Destination NAT rule (“Dst NAT”) to pass this traffic.
+On the firewall, forwarding rules will need to be created. Since this example only routes internet traffic in-bound to the firewall and then to the web server, only one forwarding NAT rule is needed. On the Barracuda NG firewall used in this example the rule would be a Destination NAT rule ("Dst NAT") to pass this traffic.
 
-To create the following rule (or verify existing default rules), starting from the Barracuda NG Admin client dashboard, navigate to the configuration tab, in the Operational Configuration section click Ruleset. A grid called, “Main Rules” will show the existing active and deactivated rules on the firewall. In the upper right corner of this grid is a small, green “+” button, click this to create a new rule (Note: your firewall may be “locked” for changes, if you see a button marked “Lock” and you are unable to create or edit rules, click this button to “unlock” the ruleset and allow editing). If you wish to edit an existing rule, select that rule, right-click and select Edit Rule.
+To create the following rule (or verify existing default rules), starting from the Barracuda NG Admin client dashboard, navigate to the configuration tab, in the Operational Configuration section click Ruleset. A grid called, "Main Rules" will show the existing active and deactivated rules on the firewall. In the upper right corner of this grid is a small, green "+" button, click this to create a new rule (Note: your firewall may be "locked" for changes, if you see a button marked "Lock" and you are unable to create or edit rules, click this button to "unlock" the ruleset and allow editing). If you wish to edit an existing rule, select that rule, right-click and select Edit Rule.
 
 Create a new rule and provide a name, such as "WebTraffic". 
 
@@ -87,7 +87,7 @@ The rule itself would look something like this:
 
 ![Firewall Rule][3]
 
-Here any inbound address that hits the Firewall trying to reach HTTP (port 80 or 443 for HTTPS) will be sent out the Firewall's “DHCP1 Local IP” interface and redirected to the Web Server with the IP Address of 10.0.1.5. Since the traffic is coming in on port 80 and going to the web server on port 80 no port change was needed. However, the Target List could have been 10.0.1.5:8080 if our Web Server listened on port 8080 thus translating the inbound port 80 on the firewall to inbound port 8080 on the web server.
+Here any inbound address that hits the Firewall trying to reach HTTP (port 80 or 443 for HTTPS) will be sent out the Firewall's "DHCP1 Local IP" interface and redirected to the Web Server with the IP Address of 10.0.1.5. Since the traffic is coming in on port 80 and going to the web server on port 80 no port change was needed. However, the Target List could have been 10.0.1.5:8080 if our Web Server listened on port 8080 thus translating the inbound port 80 on the firewall to inbound port 8080 on the web server.
 
 A Connection Method should also be signified, for the Destination Rule from the Internet, "Dynamic SNAT" is most appropriate. 
 
@@ -100,7 +100,7 @@ With the ruleset modified to add this rule, the ruleset must be uploaded to the 
 
 ![Firewall Rule Activation][4]
 
-In the upper right hand corner of the management client are a cluster of buttons. Click the “Send Changes” button to send the modified rules to the firewall, then click the “Activate” button.
+In the upper right hand corner of the management client are a cluster of buttons. Click the "Send Changes" button to send the modified rules to the firewall, then click the "Activate" button.
 
 With the activation of the firewall ruleset this example environment build is complete. Optionally, the post build scripts in the References section can be run to add an application to this environment to test the below traffic scenarios.
 
@@ -207,7 +207,7 @@ More examples and an overview of network security boundaries can be found [here]
 
 ## References
 ### Main Script and Network Config
-Save the Full Script in a PowerShell script file. Save the Network Config into a file named “NetworkConf2.xml”.
+Save the Full Script in a PowerShell script file. Save the Network Config into a file named "NetworkConf2.xml".
 Modify the user defined variables as needed. Run the script, then follow the Firewall rule setup instruction above.
 
 #### Full Script
@@ -504,14 +504,14 @@ This PowerShell script should be run locally on an internet connected PC or serv
 	
 	# Optional Post-script Manual Configuration
 	  # Configure Firewall
-	  # Install Test web site (Run Post-Build Script on the IIS Server)
+	  # Install Test Web App (Run Post-Build Script on the IIS Server)
 	  # Install Backend resource (Run Post-Build Script on the AppVM01)
 	  Write-Host
 	  Write-Host "Build Complete!" -ForegroundColor Green
 	  Write-Host
 	  Write-Host "Optional Post-script Manual Configuration Steps" -ForegroundColor Gray
 	  Write-Host " - Configure Firewall" -ForegroundColor Gray
-	  Write-Host " - Install Test web site (Run Post-Build Script on the IIS Server)" -ForegroundColor Gray
+	  Write-Host " - Install Test Web App (Run Post-Build Script on the IIS Server)" -ForegroundColor Gray
 	  Write-Host " - Install Backend resource (Run Post-Build Script on the AppVM01)" -ForegroundColor Gray
 	  Write-Host
 

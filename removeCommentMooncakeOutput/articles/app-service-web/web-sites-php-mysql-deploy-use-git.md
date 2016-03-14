@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create a PHP-MySQL web site in Azure Websites and deploy using Git"
-	description="A tutorial that demonstrates how to create a PHP web site that stores data in MySQL and use Git deployment to Azure."
+	pageTitle="Create a PHP-MySQL web app in Azure and deploy using Git"
+	description="A tutorial that demonstrates how to create a PHP web app that stores data in MySQL and use Git deployment to Azure."
 	services="app-service\web"
 	documentationCenter="php"
 	authors="tfitzmac"
@@ -13,7 +13,7 @@
 	ms.date="11/19/2015"
 	wacn.date=""/>
 
-#Create a PHP-MySQL web site in Azure Websites and deploy using Git
+#Create a PHP-MySQL web app in Azure and deploy using Git
 
 > [AZURE.SELECTOR]
 - [.Net](/documentation/articles/web-sites-dotnet-get-started)
@@ -23,14 +23,14 @@
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
 - [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-This tutorial shows you how to create a PHP-MySQL web site and how to deploy it to [Azure Websites](/documentation/services/web-sites/) using Git. You will use [PHP][install-php], the MySQL Command-Line Tool (part of [MySQL][install-mysql]), and [Git][install-git] installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP/MySQL web site running in Azure.
+This tutorial shows you how to create a PHP-MySQL web app and how to deploy it to [Azure Web App](/documentation/services/web-sites/) using Git. You will use [PHP][install-php], the MySQL Command-Line Tool (part of [MySQL][install-mysql]), and [Git][install-git] installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP/MySQL web app running in Azure.
 
 You will learn:
 
-* How to create a web site and a MySQL database using the [Azure Management Portal](https://manage.windowsazure.cn). Because PHP is enabled in [Azure Websites](/documentation/services/web-sites/) by default, nothing special is required to run your PHP code.
+* How to create a web app and a MySQL database using the [Azure Management Portal](https://manage.windowsazure.cn). Because PHP is enabled in [Azure Web Apps](/documentation/services/web-sites/) by default, nothing special is required to run your PHP code.
 * How to publish and re-publish your application to Azure using Git.
 
-By following this tutorial, you will build a simple registration web site in PHP. The application will be hosted in web sites. A screenshot of the completed application is below:
+By following this tutorial, you will build a simple registration web app in PHP. The application will be hosted in Web Apps. A screenshot of the completed application is below:
 
 ![Azure PHP web site][running-app]
 
@@ -39,9 +39,9 @@ By following this tutorial, you will build a simple registration web site in PHP
 This tutorial assumes you have [PHP][install-php], the MySQL Command-Line Tool (part of [MySQL][install-mysql]), and [Git][install-git] installed on your computer.
 
 
-##<a id="create-web-site-and-set-up-git"></a>Create a web site and set up Git publishing
+##<a id="create-web-site-and-set-up-git"></a>Create a web app and set up Git publishing
 
-Follow these steps to create a web site and a MySQL database:
+Follow these steps to create a web app and a MySQL database:
 
 1. Login to the [Azure Management Portal][management-portal].
 2. Click the **New** icon on the bottom left of the portal.
@@ -83,7 +83,7 @@ Follow these steps to create a web site and a MySQL database:
 
 ##Get remote MySQL connection information
 
-To connect to the MySQL database that is running in web sites, your will need the connection information. To get MySQL connection information, follow these steps:
+To connect to the MySQL database that is running in Web Apps, your will need the connection information. To get MySQL connection information, follow these steps:
 
 1. In Azure Management Portal, click **MYSQL DATABASE ON AZURE**, and open your MYSQL database server. In **Dashboard** page, under **quick glance**, you can get your host and port.
 
@@ -97,7 +97,7 @@ To connect to the MySQL database that is running in web sites, your will need th
 
 ##Build and test your app locally
 
-Now that you have created a web site, you can develop your application locally, then deploy it after testing.
+Now that you have created a web app, you can develop your application locally, then deploy it after testing.
 
 The Registration application is a simple PHP application that allows you to register for an event by providing your name and email address. Information about previous registrants is displayed in a table. Registration information is stored in a MySQL database. The application consists of one file (copy/paste code available below):
 
@@ -215,12 +215,12 @@ You can now browse to **http://localhost:8000/** to test the application.
 
 ##Publish your app
 
-After you have tested your app locally, you can publish it to web sites using Git. You will initialize your local Git repository and publish the application.
+After you have tested your app locally, you can publish it to Web Apps using Git. You will initialize your local Git repository and publish the application.
 
 > [AZURE.NOTE]
-> These are the same steps shown in the Azure Management Portal at the end of the Create a web site and Set up Git Publishing section above.
+> These are the same steps shown in the Azure Management Portal at the end of the Create a web app and Set up Git Publishing section above.
 
-1. (Optional)  If you've forgotten or misplaced your Git remote repostitory URL, navigate to the web site properties on the Azure Management Portal.
+1. (Optional)  If you've forgotten or misplaced your Git remote repostitory URL, navigate to the web app properties on the Azure Management Portal.
 
 1. Open GitBash (or a terminal, if Git is in your `PATH`), change directories to the root directory of your application, and run the following commands:
 

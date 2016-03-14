@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/05/2015"
+	ms.date="01/22/2016"
 	wacn.date=""/>
 
 # <a id="nonendorsed"> </a>Information for Non-Endorsed Distributions #
@@ -25,10 +25,12 @@
 
 All distributions running on Azure will need to meet a number of prerequisites to have a chance to properly run on the platform.  This article is by no means comprehensive as every distribution is different; and it is quite possible that even if you meet all the criteria below you will still need to significantly tweak your Linux system to ensure that it properly runs on the platform.
 
-It is for this reason that we recommend that you start with one of our [Linux on Azure Endorsed Distributions](/documentation/articles/linux-endorsed-distributions) when possible. The following articles will guide you through how to prepare the various endorsed Linux distributions that are supported on Azure:
+It is for this reason that we recommend that you start with one of our [Linux on Azure Endorsed Distributions](/documentation/articles/virtual-machines-linux-endorsed-distributions) when possible. The following articles will guide you through how to prepare the various endorsed Linux distributions that are supported on Azure:
 
 - **[CentOS-based Distributions](/documentation/articles/virtual-machines-linux-create-upload-vhd-centos)**
+- **[Debian Linux](/documentation/articles/virtual-machines-linux-create-upload-vhd-debian)**
 - **[Oracle Linux](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)**
+- **[Red Hat Enterprise Linux](/documentation/articles/virtual-machines-linux-create-upload-vhd-redhat)**
 - **[SLES & openSUSE](/documentation/articles/virtual-machines-linux-create-upload-vhd-suse)**
 - **[Ubuntu](/documentation/articles/virtual-machines-linux-create-upload-vhd-ubuntu)**
 
@@ -68,7 +70,7 @@ Next, rebuild the initrd with the `hv_vmbus` and `hv_storvsc` kernel modules:
 
 VHD images on Azure must have a virtual size aligned to 1MB.  Typically, VHDs created using Hyper-V should already be aligned correctly.  If the VHD is not aligned correctly then you may receive an error message similar to the following when you attempt to create an *image* from your VHD:
 
-	"The VHD http://<mystorageaccount>.blob.core.chinacloudapi.cn/vhds/MyLinuxVM.vhd has an unsupported virtual size of 21475270656 bytes. The size must be a whole number (in MBs)."
+	"The VHD http://<mystorageaccount>.blob.core.chinacloudapi.cn/vhds/MyLinuxVM.vhd has an unsupported virtual size of 21475270656 bytes. The size must be a whole number (in MBs).â
 
 To remedy this you can resize the VM using either the Hyper-V Manager console or the [Resize-VHD](http://technet.microsoft.com/zh-cn/library/hh848535.aspx) Powershell cmdlet.  If you are not running in a Windows environment then it is recommended to use qemu-img to convert (if needed) and resize the VHD.
 
@@ -103,7 +105,7 @@ To remedy this you can resize the VM using either the Hyper-V Manager console or
 
 ## Linux Kernel Requirements ##
 
-The Linux Integration Services (LIS) drivers for Hyper-V and Azure are contributed directly to the upstream Linux kernel. Many distributions that include a recent Linux kernel version (i.e. 3.x) will have these drivers available already, or otherwise provide backported versions of these drivers with their kernels.  These drivers are constantly being updated in the upstream kernel with new fixes and features, so when possible it is recommended to run an [endorsed distribution](/documentation/articles/linux-endorsed-distributions) that will include these fixes and updates.
+The Linux Integration Services (LIS) drivers for Hyper-V and Azure are contributed directly to the upstream Linux kernel. Many distributions that include a recent Linux kernel version (i.e. 3.x) will have these drivers available already, or otherwise provide backported versions of these drivers with their kernels.  These drivers are constantly being updated in the upstream kernel with new fixes and features, so when possible it is recommended to run an [endorsed distribution](/documentation/articles/virtual-machines-linux-endorsed-distributions) that will include these fixes and updates.
 
 If you are running a variant of Red Hat Enterprise Linux versions **6.0-6.3**, then you will need to install the latest LIS drivers for Hyper-V. The drivers can be found [at this location](http://go.microsoft.com/fwlink/p/?LinkID=254263&clcid=0x409). As of RHEL **6.4+** (and derivatives) the LIS drivers are already included with the kernel and so no additional installation packages are needed to run those systems on Azure.
 

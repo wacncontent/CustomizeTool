@@ -15,7 +15,7 @@
 
 # Using the Azure CLI for Mac, Linux, and Windows with Azure Service Management
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/azure-cli-arm-commands).
 
 This article describes how to use the Azure CLI in the Service Management mode (asm mode) to create, manage, and delete services on the command line of Mac, Linux, and Windows computers. You can perform many of the same tasks using the various libraries of the Azure SDKs, with Azure PowerShell, and using the Azure Management Portal. Using Azure services with the Service Management mode is conceptually similar to creating and managing individual Azure concepts and services like Websites, Virtual Machines, Virtual Networks, Storage, and so on.  
 
@@ -610,8 +610,12 @@ This command creates a new cloud service
 	+ Getting locations
 	help:    Location:
 	  1) China East
-	  2) China Nort
-	  : 2
+	  2) China North
+	  3) China North
+	  4) West Europe
+	  5) China East
+	  6) China North
+	  : 6
 	+ Creating cloud service
 	data:    Cloud service name newservicemsopentech
 	info:    service create command OK
@@ -841,7 +845,11 @@ This command lists your web app locations.
 	+ Getting locations
 	data:    Name
 	data:    ----------------
+	data:    West Europe
 	data:    China North
+	data:    China North
+	data:    China North
+	data:    China East
 	data:    China East
 	info:    site location list command OK
 
@@ -1154,6 +1162,7 @@ This command lists geographic locations supported by Mobile Services.
 	~$ azure mobile locations
 	info:    Executing command mobile locations
 	info:    China East (default)
+	info:    China North
 	info:    China North
 
 **mobile create [options] [servicename] [sqlAdminUsername] [sqlAdminPassword]**
@@ -1814,7 +1823,13 @@ Display a list of all available namespace locations.
 	data:    Name              Code
 	data:    ----------------  ----------------
 	data:    China East         China East
+	data:    West Europe       West Europe
+	data:    China North      China North
+	data:    China East           China East
+	data:    China North    China North
 	data:    China North  China North
+	data:    China North           China North
+	data:    China East  China East
 	info:    sb namespace location list command OK
 
 **sb namespace show &lt;name>**
