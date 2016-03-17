@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Selecting User Names for Linux | Windows Azure" 
+	pageTitle="Selecting User Names for Linux | Azure" 
 	description="Learn how to select user names for a Linux virtual machine in Azure." 
 	services="virtual-machines" 
 	documentationCenter="" 
@@ -245,4 +245,3 @@ The following are user names that you should avoid using when provisioning a Lin
 - whoopsie
 - www-data
 
- 

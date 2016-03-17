@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-   pageTitle="How to create NSGs in ARM mode using the Azure Management Portal | Windows Azure"
+   pageTitle="How to create NSGs in ARM mode using the Azure Management Portal | Azure"
    description="Learn how to create and deploy NSGs in ARM using the Azure Management Portal"
    services="virtual-network"
    documentationCenter="na"

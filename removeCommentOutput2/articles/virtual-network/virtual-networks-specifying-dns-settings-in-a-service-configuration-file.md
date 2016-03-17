@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Specifying DNS Settings in a service configuration file | Windows Azure"
+   pageTitle="Specifying DNS Settings in a service configuration file | Azure"
    description="specifying custom DNS settings using service configuration file for virtual network"
    services="virtual-network"
    documentationCenter="na"
@@ -25,7 +25,7 @@ A service configuration file may contain a DnsServers element with a list of IPv
         <DnsServer name="ID3" IPAddress="IPAddress3" />
       </DnsServers>
 
->[AZURE.WARNING] The **name** attribute in the **DnsServer** element is used only as a reference name. It does not represent the host name for the DNS server. Each **DnsServer** attribute value must be unique across the entire Windows Azure subscription.
+>[AZURE.WARNING] The **name** attribute in the **DnsServer** element is used only as a reference name. It does not represent the host name for the DNS server. Each **DnsServer** attribute value must be unique across the entire Azure subscription.
 
 ## See Also
 

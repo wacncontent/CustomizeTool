@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Line of business application Phase 3 | Windows Azure" 
+	pageTitle="Line of business application Phase 3 | Azure" 
 	description="Create the computers and the SQL Server cluster and enable Availability Groups in Phase 3 of the line of business application in Azure." 
 	documentationCenter=""
 	services="virtual-machines" 
@@ -151,7 +151,7 @@ Use the following procedure twice, once for each virtual machine running SQL Ser
 
 1. On the Start screen, type **SQL Studio**, and then click **SQL Server 2014 Management Studio**.
 2. In **Connect to Server**, click **Connect**.
-3. In the left pane, right-click the top nodeâthe default instance named after the machineâand then click **Properties**.
+3. In the left pane, right-click the top node—the default instance named after the machine—and then click **Properties**.
 4.	In **Server Properties**, click **Database Settings**.
 5.	In **Database default locations**, set the following values: 
 	- For **Data**, set the path to **f:\Data**.

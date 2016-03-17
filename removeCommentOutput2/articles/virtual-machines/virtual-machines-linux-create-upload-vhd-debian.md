@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Prepare Debian Linux VHD | Windows Azure"
+	pageTitle="Prepare Debian Linux VHD | Azure"
 	description="Learn how to create Debian 7 & 8 VHD files for deployment in Azure."
 	services="virtual-machines"
 	documentationCenter=""

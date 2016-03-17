@@ -1,5 +1,5 @@
 <properties
-   pageTitle="DMZ Example - Build a Simple DMZ with NSGs | Windows Azure"
+   pageTitle="DMZ Example - Build a Simple DMZ with NSGs | Azure"
    description="Build a DMZ with Network Security Groups (NSG)"
    services="virtual-network"
    documentationCenter="na"
@@ -13,8 +13,6 @@
 	wacn.date=""/>
 
 # Example 1 - Build a Simple DMZ with NSGs
-
-[Return to the Security Boundary Best Practices Page][HOME]
 
 This example will create a simple DMZ with four windows servers and Network Security Groups. It will also walk through each of the relevant commands to provide a deeper understanding of each step. There is a also a Traffic Scenario section to provide a in-depth step-by-step how traffic proceeds through the layers of defense in the DMZ. Finally, in the references section is the complete code and instruction to build this environment to test and experiment with various scenarios. 
 
@@ -223,8 +221,6 @@ Each rule is discussed in more detail as follows (Note; any item in the below li
 
 ## Conclusion
 This is a relatively simple and straight forward way of isolating the back end subnet from inbound traffic.
-
-More examples and an overview of network security boundaries can be found [here][HOME].
 
 ## References
 ### Main Script and Network Config

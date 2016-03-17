@@ -1,5 +1,5 @@
 <properties
-	pageTitle="HBase tutorial: Get started with HBase in Hadoop | Windows Azure"
+	pageTitle="HBase tutorial: Get started with HBase in Hadoop | Azure"
 	description="Follow this HBase tutorial to get started using Apache HBase with Hadoop in HDInsight. Create tables from the HBase shell and query them using Hive."
 	keywords="apache hbase,hbase,hbase shell,hbase tutorial"
 	services="hdinsight"
@@ -147,6 +147,7 @@ You can create a text file and upload the file to your own storage account if yo
 HBase in HDInsight ships with a Web UI for monitoring clusters. Using the Web UI, you can request statistics or information about regions.
 
 To open the Web UI, you must RDP into the cluster, and then click the HMaster Info Web UI shortcut on your desktop, or use the following URL in a web browser:
+
 
 	http://zookeeper[0-2]:60010/master-status
 

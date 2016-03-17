@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use SSH on Windows to connect to Linux virtual machines | Windows Azure" 
+	pageTitle="Use SSH on Windows to connect to Linux virtual machines | Azure" 
 description="Learn how to generate and use SSH keys on a Windows computer to connect to a Linux virtual machine on Azure." 
 	services="virtual-machines" 
 	documentationCenter="" 
@@ -39,12 +39,10 @@ If you're feeling especially geeky, you can also try out the [new port of the **
 
 ## Which key files do you need to create?
 
-A basic SSH setup for Azure includes an **ssh-rsa** public and private key pair of 2048 bits (by default, **ssh-keygen** stores these files as **~/.ssh/id_rsa** and **~/.ssh/id-rsa.pub** unless you change the defaults) as well as a `.pem` file generated from the **id_rsa** private key file for use with the classic deployment model of the Management Portal. 
 
-Here are the deployment scenarios, and the types of files you use in each:
+A basic SSH setup for Azure includes a `.pem` file generated from the **id_rsa** private key file for use with the Management Portal. 
 
-1. **ssh-rsa** keys are required for any deployment using the [Azure Management Portal](https://manage.windowsazure.cn), regardless of the deployment model.
-2. .pem file are required to create VMs using the [Management Portal](https://manage.windowsazure.cn). .pem files are also supported in classic deployments that use the [Azure CLI](/documentation/articles/xplat-cli-install).
+.pem file are required to create VMs using the [Management Portal](https://manage.windowsazure.cn). .pem files are also supported in classic deployments that use the [Azure CLI](/documentation/articles/xplat-cli-install).
 
 > [AZURE.NOTE] If you plan to manage service deployed with the classic deployment model, you may also want to create a **.cer** format file to upload to the portal -- although this doesn't involve **ssh** or connecting to Linux VMS, which is the subject of this article. To create those files on Linux or Mac, type  
 

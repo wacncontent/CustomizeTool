@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Configure Traffic Manager failover traffic routing method | Windows Azure"
+   pageTitle="Configure Traffic Manager failover traffic routing method | Azure"
    description="This article will help you configure failover traffic routing method in Traffic Manager"
    services="traffic-manager"
    documentationCenter=""
@@ -47,4 +47,3 @@ Note that Azure Websites already provides failover traffic routing method functi
 [Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
 
 [Azure Traffic Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
- 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hybrid cloud test environment | Windows Azure" 
+	pageTitle="Hybrid cloud test environment | Azure" 
 	description="Learn how to create a hybrid cloud environment for IT pro or development testing, complete with a simplfied on-premises network." 
 	services="virtual-network" 
 	documentationCenter="" 
@@ -15,10 +15,10 @@
 
 # Set up a hybrid cloud environment for testing
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
-This topic steps you through creating a hybrid cloud environment with Windows Azure for testing. Here is the resulting configuration.
+This topic steps you through creating a hybrid cloud environment with Azure for testing. Here is the resulting configuration.
 
 ![](./media/virtual-networks-setup-hybrid-cloud-environment-testing/CreateHybridCloudVNet_5.png)
 
@@ -42,7 +42,7 @@ There are five major phases to setting up this hybrid cloud test environment:
 4.	Create the site-to-site VPN connection.
 5.	Configure DC2. 
 
-If you don't already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). 
+If you don't already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscri
 
 >[AZURE.NOTE] Virtual machines and virtual network gateways in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. To reduce the costs of running this test environment when you are not using it, see [Minimizing the ongoing costs of this environment](#costs) in this topic for more information.
 
@@ -287,7 +287,8 @@ This is your current configuration.
  
 Your hybrid cloud environment is now ready for testing.
 
-## Minimizing the ongoing costs of this environment
+
+##<a id="costs"></a> Minimizing the ongoing costs of this environment
 
 To minimize the costs of running the virtual machines in this environment, perform your needed testing and demonstration as quickly as possible and then delete them or shut down the virtual machines when you are not using them. For example, you could use Azure automation and a runbook to automatically shut down the virtual machines in the Test_VNET virtual network at the end of each business day. For more information, see [Get started with Azure Automation](/documentation/articles/automation-create-runbook-from-samples). 
 

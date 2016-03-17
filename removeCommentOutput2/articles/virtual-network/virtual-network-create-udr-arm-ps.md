@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-   pageTitle="Control routing and use virtual appliances in Resource Manager using PowerShell | Windows Azure"
+   pageTitle="Control routing and use virtual appliances in Resource Manager using PowerShell | Azure"
    description="Learn how to control routing and use virtual appliances in Azure PowerShell"
    services="virtual-network"
    documentationCenter="na"

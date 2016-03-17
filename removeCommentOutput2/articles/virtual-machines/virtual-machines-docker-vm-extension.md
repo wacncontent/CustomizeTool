@@ -27,8 +27,6 @@ This topic describes:
 To create Docker-enabled VMs right now, see:
 
 + [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]
-+ [How to use the Docker VM Extension with the Azure Management Portal]
-+ [How to Get Started Quickly with Docker in the Azure gallery]
 
 To learn more about the extension and how it works, see the [Docker Extension User Guide](https://github.com/Azure/azure-docker-extension/blob/master/README.md).
 
@@ -54,7 +52,7 @@ For more information about what Docker is and how it really works, see [What is 
 
 #### Docker and Linux Container Security Best Practices
 
-Because containers do share access to the host computer's kernel, if malicious code is able to gain root it may also be able to gain access not only to the host computer but also the other containers. To secure your container system more strongly than the default configuration, [Docker recommends](https://docs.docker.com/articles/security/) using addition group-policy or [role-based security](http://en.wikipedia.org/wiki/Role-based_access_control) as well, such as [SELinux](http://selinuxproject.org/page/Main_Page) or [AppArmor](http://wiki.apparmor.net/index.php/Main_Page), for example, as well as reducing as much as possible the kernel capabilities that the containers are granted. In addition, there are many other documents on the Internet that describe approaches to security using containers like Docker.
+Because containers do share access to the host computer's kernel, if malicious code is able to gain root it may also be able to gain access not only to the host computer but also the other containers. To secure your container system more strongly than the default configuration, [Docker recommends](https://docs.docker.com/articles/security/) using addition group-policy or [role-based security](http://zh.wikipedia.org/wiki/RBAC) as well, such as [SELinux](http://selinuxproject.org/page/Main_Page) or [AppArmor](http://wiki.apparmor.net/index.php/Main_Page), for example, as well as reducing as much as possible the kernel capabilities that the containers are granted. In addition, there are many other documents on the Internet that describe approaches to security using containers like Docker.
 
 ## How to use the Docker VM Extension with Azure
 
@@ -65,7 +63,6 @@ You can use the portal to add the Docker VM Extension to any compatible Linux VM
 To create Docker-enabled VMs right now, see:
 
 + [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]
-+ [How to use the Docker VM Extension with the Azure Management Portal]
 
 ## Virtual Machine Extensions for Linux and Windows
 The [Docker VM extension for Azure](https://github.com/Azure/azure-docker-extension/blob/master/README.md) is just one of several VM extensions that provide special behaviour, and more are in development. For example, several of the [Linux VM Agent extension](/documentation/articles/virtual-machines-linux-agent-user-guide) features allow you to modify and manage the Virtual Machine, including security features, kernel and networking features, and so on. The VMAccess extension for example lets you reset the administrator password or SSH key.
@@ -74,8 +71,6 @@ For a complete list, see [Azure VM Extensions](/documentation/articles/virtual-m
 
 <!--Anchors-->
 [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]: /documentation/articles/virtual-machines-docker-with-xplat-cli/
-[How to use the Docker VM Extension with the Azure Management Portal]: /documentation/articles/virtual-machines-docker-with-portal/
-[How to Get Started Quickly with Docker in the Azure gallery]: /documentation/articles/virtual-machines-docker-ubuntu-quickstart/
 [Docker and Linux Containers]: #Docker-and-Linux-Containers
 [How to use the Docker VM Extension with Azure]: #How-to-use-the-Docker-VM-Extension-with-Azure
 [Virtual Machine Extensions for Linux and Windows]: #Virtual-Machine-Extensions-For-Linux-and-Windows

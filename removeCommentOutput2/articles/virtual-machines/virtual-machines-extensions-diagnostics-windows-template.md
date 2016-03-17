@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Create a Windows Virtual machine with monitoring and diagnostics using Azure Resource Manager Template | Windows Azure"
+	pageTitle="Create a Windows Virtual machine with monitoring and diagnostics using Azure Resource Manager Template | Azure"
 	description="Use a Azure resource manager template to create a new Windows virtual machine with Azure diagnostics extension."
 	services="virtual-machines"
 	documentationCenter=""

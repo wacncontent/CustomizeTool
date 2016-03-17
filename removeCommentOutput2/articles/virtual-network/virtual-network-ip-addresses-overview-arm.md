@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   pageTitle="Public and private IP addressing in Azure Resource Manager | Windows Azure"
+   pageTitle="Public and private IP addressing in Azure Resource Manager | Azure"
    description="Learn about public and private IP addressing in Azure Resource Manager"
    services="virtual-network"
    documentationCenter="na"
@@ -19,7 +19,7 @@ You can assign IP addresses to Azure resources to communicate with other Azure r
 
 Public IP addresses are used for communication with the Internet, including Azure public-facing services.
 
-Private IP addresses are used for communication within an Azure virtual network (VNet), and your on-premises network when you use ExpressRoute circuit to extend your network to Azure.
+Private IP addresses are used for communication within an Azure virtual network (VNet), and your on-premises network when you use a VPN gateway or ExpressRoute circuit to extend your network to Azure.
 
 [AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-network-ip-addresses-overview-classic).
 
@@ -31,6 +31,8 @@ Public IP addresses allow Azure resources to communicate with Internet and Azure
 In Azure Resource Manager, a [public IP](/documentation/articles/resource-groups-networking#public-ip-address) address is a resource that has its own properties. You can associate a public IP address resource with any of the following resources:
 
 - VMs
+- Internet facing load balancers
+- VPN gateways
 - Application gateways
 
 ### Allocation method
@@ -60,6 +62,8 @@ You can associate a Public IP address with a [Virtual machine](/documentation/ar
 ### Internet facing load balancers
 You can associate a public IP address with an [Azure Load Balancer](/documentation/articles/load-balancer-overview), by assigning it to the load balancer **front end** configuration. This public IP address serves as a load-balanced virtual IP address (VIP). You can assign either a dynamic or a static public IP address to a load balancer front end. You can also assign multiple public IP addresses to a load balancer front end, which enables [multi-vip](/documentation/articles/load-balancer-multivip) scenarios like a multi-tenant environment with SSL-based websites.
 
+### VPN gateways
+[Azure VPN Gateway](/documentation/articles/vpn-gateway-about-vpngateways) is used to connect an Azure virtual network (VNet) to other Azure VNets or on-premises network. You need to assign a public IP address to its **IP configuration** to enable communicate with the remote network. Currently, you can only assign a dynamic public IP address to a VPN gateway.
 
 ### Application gateways
 You can associate a public IP address with an Azure [Application gateway](/documentation/articles/application-gateway-introduction), by assigning it to gateway's **front end** configuration. This public IP address serves as a load-balanced VIP. Currently, you can only assign a *dynamic* public IP address to an application gateway front end configuration.
@@ -69,13 +73,13 @@ The table below shows the specific property through which a public IP address ca
 
 |Top-level Resource|IP Address association|Dynamic|Static|
 |---|---|---|---|
-<!|Virtual machine|Network interface card (NIC)|Yes|Yes|
+|Virtual machine|Network interface card (NIC)|Yes|Yes|
 |Load balancer|Front end configuration|Yes|Yes|
 |VPN gateway|Gateway IP configuration|Yes|No|
 |Application gateway|Front end configuration|Yes|No|
 
 ## Private IP addresses
-Private IP addresses allow Azure resources to communicate with other resources in a [virtual network](/documentation/articles/virtual-networks-overview)(VNet), or in on-premises network through ExpressRoute circuit, without using an Internet-reachable IP address.
+Private IP addresses allow Azure resources to communicate with other resources in a [virtual network](/documentation/articles/virtual-networks-overview)(VNet), or in on-premises network through a VPN gateway or ExpressRoute circuit, without using an Internet-reachable IP address.
 
 In Azure Resource Manager deployment model, a private IP address is associated to various Azure resources.
 

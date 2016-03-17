@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Configure AlwaysOn availability groups Azure Resource Manager | Windows Azure"
+	pageTitle="Configure AlwaysOn availability groups Azure Resource Manager | Azure"
 	description="Create an AlwaysOn availability group with Azure virtual machines in Azure Resource Manager mode. This tutorial primarily uses the user interface to automatically create the entire solution."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -26,7 +28,7 @@
 
 This end-to-end tutorial shows you how to create a SQL Server availability group with Azure Resource Manager virtual machines. The tutorial uses Azure blades to configure a template. You will review the default settings, type required settings, and update the blades in the portal as you walk through this tutorial. 
 
->[AZURE.NOTE] In the Azure Management Portal, there is a new gallery setup for AlwaysOn availability groups with a Listener. This configures everything you need for AlwaysOn availability groups automatically. For more information, see [SQL Server AlwaysOn Offering in Windows Azure Management Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). 
+>[AZURE.NOTE] In the Azure Management Portal, there is a new gallery setup for AlwaysOn availability groups with a Listener. This configures everything you need for AlwaysOn availability groups automatically. For more information, see [SQL Server AlwaysOn Offering in Azure Management Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). 
 
 At the end of the tutorial, your SQL Server AlwaysOn solution in Azure will consist of the following elements:
 
@@ -244,7 +246,7 @@ To RDP to the primary domain controller, follow these steps:
 
 1.	On the blade for **ad-primary-dc** click **Connect**. Your browser will ask if you want to open or save the remote connection object. Click **Open**. 
 ![Connect to DC](./media/virtual-machines-sql-server-alwayson-availability-groups-gui-arm/13-ad-primary-dc-connect.png)
-1.	**Remote desktop connection** may warn you that the publisher of this remote connection canât be identified. Click **Connect**.
+1.	**Remote desktop connection** may warn you that the publisher of this remote connection can't be identified. Click **Connect**.
 
 1.	Windows security prompts you to enter your credentials to connect to the IP address of the primary domain controller. Click **Use another account**. For **User name** type **contoso\DomainAdmin**. This is the account you chose for administrator user name. Use the complex password that you chose when you configured the template.
 

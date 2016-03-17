@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Attach a disk to a VM | Windows Azure"
+	pageTitle="Attach a disk to a VM | Azure"
 	description="Attach a data disk to a Windows virtual machine created with the classic deployment model and initialize it."
 	services="virtual-machines, storage"
 	documentationCenter=""
@@ -15,7 +15,7 @@
 
 # Attach a data disk to a Windows virtual machine created with the classic deployment model
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 If you need an additional data disk, you can attach an empty disk or an existing disk with data to a VM. In both cases, the disks are .vhd files that reside in an Azure storage account. In the case of a new disk, after you attach the disk, you'll also need to initialize it so it's ready for use by a Windows VM.
 
@@ -49,4 +49,4 @@ It's a best practice to use one or more separate disks to store a virtual machin
 
 [About disks and VHDs for virtual machines](/documentation/articles/virtual-machines-disks-vhds)
 
-[logon]: virtual-machines-log-on-windows-server.md
+[logon]: /documentation/articles/virtual-machines-log-on-windows-server

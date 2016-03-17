@@ -38,7 +38,7 @@ Azure Managed Cache Service and Azure Redis Cache are similar but implement some
 |Managed Cache Service feature|Managed Cache Service support|Azure Redis Cache support|
 |---|---|---|
 |Named caches|A default cache is configured, and in the Standard and Premium cache offerings, up to nine additional named caches can be configured if desired.|Azure Redis caches have 16 databases that can be used to implement a similar functionality to named caches. For more information, see [Default Redis server configuration](/documentation/articles/cache-configure#default-redis-server-configuration).|
-|High Availability|Provides high availability for items in the cache in the Standard and Premium cache offerings. If items are lost due to a failure, backup copies of the items in the cache are still available. Writes to the secondary cache are made synchronously.|High availability is available in the Standard and Premium cache offerings, which have a two node Primary/Replica configuration (each shard in a Premium cache has a primary/replica pair). Writes to the replica are made asynchronously. For more information, see [Azure Redis Cache pricing](/home/features/redis-cache/#price).| 
+|High Availability|Provides high availability for items in the cache in the Standard and Premium cache offerings. If items are lost due to a failure, backup copies of the items in the cache are still available. Writes to the secondary cache are made synchronously.|High availability is available in the Standard and Premium cache offerings, which have a two node Primary/Replica configuration (each shard in a Premium cache has a primary/replica pair). Writes to the replica are made asynchronously. For more information, see [Azure Redis Cache pricing](/home/features/cac
 |Notifications|Allows clients to receive asynchronous notifications when a variety of cache operations occur on a named cache.|Client applications can use Redis pub/sub or [Keyspace notifications](/documentation/articles/cache-configure#keyspace-notifications-advanced-settings) to achieve a similar functionality to notifications.|
 |Local cache|Stores a copy of cached objects locally on the client for extra-fast access.|Client applications would need to implement this functionality using a dictionary or similar data structure.|
 |Eviction Policy|None or LRU. The default policy is LRU.|Azure Redis Cache supports the following eviction policies: volatile-lru, allkeys-lru, volatile-random, allkeys-random, volatile-ttl, noeviction. The default policy is volatile-lru. For more information, see [Default Redis server configuration](/documentation/articles/cache-configure#default-redis-server-configuration).|
@@ -48,19 +48,19 @@ Azure Managed Cache Service and Azure Redis Cache are similar but implement some
 
 ## Choose a Cache Offering
 
-Windows Azure Redis Cache is available in the following tiers:
+Azure Redis Cache is available in the following tiers:
 
 -	**Basic** - Single node. Multiple sizes up to 53 GB.
 -	**Standard** - Two-node Primary/Replica. Multiple sizes up to 53 GB. 99.9% SLA.
--	**Premium** - Two-node Primary/Replica with up to 10 shards. Multiple sizes from 6 GB to 530 GB (contact us for more). All Standard tier features and more including support for [Redis cluster](/documentation/articles/cache-how-to-premium-clustering). 99.9% SLA.
+-	**Premium** - Two-node Primary/Replica with up to 10 shards. Multiple sizes from 6 GB to 530 GB (contact us for more). All Standard tier features and more including support for [Redis cluster](/documentation/articles/cache-how-to-premium-clustering), [Redis persistence](/docum. . 99.9% SLA.
 
-Each tier differs in terms of features and pricing. The features are covered later in this guide, and for more information on pricing, see [Cache Pricing Details](/home/features/redis-cache/#price).
+Each tier differs in terms of features and pricing. The features are covered later in this guide, and for more information on pricing, see [Cache Pricing Details](/home/features/cac.
 
 A starting point for migration is to pick the size that matches the size of your previous Managed Cache Service cache, and then scale up or down depending on the requirements of your application. For more guidance on choosing the right Azure Redis Cache offering, see [What Redis Cache offering and size should I use?](/documentation/articles/cache-faq#what-redis-cache-offering-and-size-should-i-use).
 
 ## Create a Cache
 
-Caches in Azure Redis Cache can be created by using PowerShell, or Azure CLI.
+Caches in Azure Redis Cache can be created in the [Azure Management Pob Pby using ARM templates, PowerShell, or Azure CLI.
 
 -	To create a cache using ARM templates, see [Create a Redis cache using a template](/documentation/articles/cache-redis-cache-arm-provision).
 -	To create a cache using Azure PowerShell, see [Manage Azure Redis Cache with Azure PowerShell](/documentation/articles/cache-howto-manage-redis-cache-powershell).

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="How to use Azure Redis Cache with Java | Windows Azure"
+   pageTitle="How to use Azure Redis Cache with Java | Azure"
 	description="Get started with Azure Redis Cache using Java"
 	services="redis-cache"
 	documentationCenter=""
@@ -20,7 +20,7 @@
 - [Java](/documentation/articles/cache-java-get-started)
 - [Python](/documentation/articles/cache-python-get-started)
 
-Azure Redis Cache gives you access to a dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Windows Azure.
+Azure Redis Cache gives you access to a dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Azure.
 
 This topic shows you how to get started with Azure Redis Cache using Java.
 
@@ -34,7 +34,8 @@ This tutorial uses Jedis, but you can use any Java client listed at [http://redi
 
 ## Create a Redis cache on Azure
 
-In Windows Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
+
+In Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
@@ -52,6 +53,7 @@ Use the following PowerShell Script to create a cache:
 
 ## Enable the non-SSL endpoint
 
+
 You can use the following PowerShell command to enable the non-SSL endpoint
 
 	Set-AzureRmRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>" -EnableNonSslPort $true
@@ -62,6 +64,7 @@ You can use the following PowerShell command to enable the non-SSL endpoint
 	package com.mycompany.app;
 	import redis.clients.jedis.Jedis;
 	import redis.clients.jedis.JedisShardInfo;
+
 
 	/* Make sure you turn on non-SSL port in Azure Redis using Azure PowerShell */
 	public class App
@@ -80,7 +83,6 @@ You can use the following PowerShell command to enable the non-SSL endpoint
 
 ## Next steps
 
-- [Enable cache diagnostics](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx#EnableDiagnostics) so you can [monitor](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx) the health of your cache.
 - Read the official [Redis documentation](http://redis.io/documentation).
 
 

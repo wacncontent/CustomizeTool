@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Compute-intensive Java application on a VM | Windows Azure"
+	pageTitle="Compute-intensive Java application on a VM | Azure"
 	description="Learn how to create an Azure virtual machine that runs a compute-intensive Java application that can be monitored by another Java application."
 	services="virtual-machines"
 	documentationCenter="java"
@@ -15,12 +15,12 @@
 
 # How to run a compute-intensive task in Java on a virtual machine
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
  
 
 With Azure, you can use a virtual machine to handle compute-intensive tasks. For example, a virtual machine can handle tasks and deliver results to client machines or mobile applications. After reading this article, you will have an understanding of how to create a virtual machine that runs a compute-intensive Java application that can be monitored by another Java application.
 
-This tutorial assumes you know how to create Java console applications, can import libraries to your Java application, and can generate a Java archive (JAR). No knowledge of Windows Azure is assumed.
+This tutorial assumes you know how to create Java console applications, can import libraries to your Java application, and can generate a Java archive (JAR). No knowledge of Azure is assumed.
 
 You will learn:
 

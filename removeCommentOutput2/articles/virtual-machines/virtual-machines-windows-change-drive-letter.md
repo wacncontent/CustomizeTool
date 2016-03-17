@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Make the D drive of a VM a data disk | Windows Azure"
+	pageTitle="Make the D drive of a VM a data disk | Azure"
 	description="Describes how to change drive letters for a Windows VM created using the classic deployment model so that you can use the D: drive as a data drive."
 	services="virtual-machines"
 	documentationCenter=""
@@ -108,6 +108,7 @@ If you want to use an existing data disk, make sure you've also uploaded the VHD
 [About Azure Storage accounts][Storage]
 
 <!--Link references-->
+
 [Attach]: storage-windows-attach-disk.md
 
 [VHD]: virtual-machines-create-upload-vhd-windows-server.md

@@ -1,8 +1,8 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Deploy Resources Using .NET Libraries | Windows Azure"
-	description="Learn to use the Compute, Storage, and Network .NET libraries to create and delete resources in Windows Azure using the Resource Manager."
+	pageTitle="Deploy Resources Using .NET Libraries | Azure"
+	description="Learn to use the Compute, Storage, and Network .NET libraries to create and delete resources in Azure using the Resource Manager."
 	services="virtual-machines,virtual-network,storage"
 	documentationCenter=""
 	authors="davidmu1"
@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
-This tutorial shows you how to use the Compute, Storage, and Network .NET libraries to create and delete resources in Windows Azure. It also shows you how to authenticate the requests to Azure Resource Manager by using Azure Active Directory.
+This tutorial shows you how to use the Compute, Storage, and Network .NET libraries to create and delete resources in Azure. It also shows you how to authenticate the requests to Azure Resource Manager by using Azure Active Directory.
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 

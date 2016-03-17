@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a custom Windows virtual machine | Windows Azure"
+	pageTitle="Create a custom Windows virtual machine | Azure"
 	description="Learn how to create a custom Windows virtual machine from the Azure Management Portal using the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -17,7 +17,7 @@
 # Create a custom virtual machine running Windows
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
  
 
 

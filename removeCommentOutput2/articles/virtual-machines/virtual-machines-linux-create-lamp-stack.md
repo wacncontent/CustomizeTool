@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create a LAMP Stack with Azure | Windows Azure"
-	description="Learn how to create a LAMP Stack with Windows Azure using Azure virtual machines (VMs) running Linux."
+	pageTitle="Create a LAMP Stack with Azure | Azure"
+	description="Learn how to create a LAMP Stack with Azure using Azure virtual machines (VMs) running Linux."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="NingKuang"
@@ -13,20 +13,21 @@
 	ms.date="12/15/2015"
 	wacn.date=""/>
 
-#How to create a LAMP Stack with Windows Azure
+#How to create a LAMP Stack with Azure
 
 A "LAMP" stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web applications. This term is actually an acronym that represents the Linux operating system with the Apache web server. The site data is stored in a MySQL database, and dynamic content is processed by PHP.  
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
-In this guide, we'll get a LAMP stack installed on a Linux image and deploy it on Windows Azure.  
+In this guide, we'll get a LAMP stack installed on a Linux image and deploy it on Azure.  
 
 You will learn:  
 
 -	How to create an Azure virtual machine.
 -	How to prepare the virtual machine for the LAMP stack.
 -	How to install software that is needed by your LAMP server on the virtual machine.
+
 
 It is assumed that the reader already has an Azure subscription.  If not you can sign up for a trial at [http://www.windowsazure.cn/](/pricing/1rmb-trial/). 
 
@@ -262,7 +263,7 @@ Answer "y" to download software packages. Then answer "y" to Importing GPG key 0
 	warning: rpmts_HdrFromFdno: Header V3 DSA signature: NOKEY, key ID e8562897
 	updates/gpgkey                                                                                                                                                                       | 1.5 kB     00:00
 	Importing GPG key 0xE8562897 "CentOS-5 Key (CentOS 5 Official Signing Key) <centos-5-key@centos.org>" from /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-	Is this ok [y/N]: y  
+	Is this ok [y/N]: y
 
 ###Debian, Ubuntu base
 This has been tested on Ubuntu 14.04.  

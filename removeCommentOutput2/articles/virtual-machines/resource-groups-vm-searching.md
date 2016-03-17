@@ -1,7 +1,5 @@
-<!-- to be customized -->
-
 <properties
-   pageTitle="Navigate and select VM images | Windows Azure"
+   pageTitle="Navigate and select VM images | Azure"
    description="Learn how to determine the publisher, offer, and SKU for images when creating an Azure virtual machine with the Resource Manager deployment model."
    services="virtual-machines"
    documentationCenter=""
@@ -18,11 +16,16 @@
 
 # Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI
 
+
+> [AZURE.NOTE] This article describes how to navigate and select virtual machine images, using a recent installation of either the Azure CLI or Azure PowerShell. As a prerequisite, you would need to change to the Service Manager mode. With the Azure CLI, enter that mode by typing `azure config mode asm`. For Azure PowerShell 0.9 or earlier, type `Switch-AzureMode AzureServiceManager`.
+
 ## Table of commonly used images
+
 
 
 | PublisherName | product | Name |
 |:---------------------------------|:-------------------------------------------|:---------------------------------|:--------------------|
+
 | OpenLogic | CentOS | f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-CentOS-70-20150904 |
 | OpenLogic | CentOS | f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-CentOS-71-20150731 |
 | Microsoft SharePoint Group | MicrosoftSharePointServer | 9619bdbee1584b6f80d684565a6eeb74__SharePoint-2013-Trial-3-26-2014 |
@@ -40,6 +43,7 @@
 
 
 ## Azure CLI
+
 
 The easiest and quickest way to locate an image is to call the `azure vm image list` command and pass the publisher name, and OS. For example, the following list is only a short example -- many lists are quite long -- if you know that "Canonical" is a publisher for the "Ubuntu". You can use the following bash command to search
 
@@ -73,6 +77,7 @@ And, you will get the following output.
 More information about how to use these images, see [Create a multi-VM deployment with the Azure CLI](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)
 
 ## PowerShell
+
 
 When creating a new virtual machine, in some cases you need to specify an image name. And, these image name can be achieved by `Get-AzureVMImage`. However, the list is quite long, so you need to use the following PowerShell script to filter the result of `Get-AzureVMImage`.
 

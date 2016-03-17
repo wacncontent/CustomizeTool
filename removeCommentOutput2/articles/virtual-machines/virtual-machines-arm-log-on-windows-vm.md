@@ -1,7 +1,5 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-	pageTitle="Log on to a Windows VM | Windows Azure"
+	pageTitle="Log on to a Windows VM | Azure"
 	description="Use the Azure Management Portal to log on to a Windows virtual machine created with the Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -22,7 +20,8 @@
 In the Azure Management Portal, you use the **Connect** button to start a Remote Desktop session and log on to a Windows VM.
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-log-on-windows-server).
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 ## Connect to the virtual machine
@@ -32,9 +31,6 @@ In the Azure Management Portal, you use the **Connect** button to start a Remote
 2. Click **Virtual Machines**, and then select the virtual machine.
 
 3. On the command bar at the bottom of the page, click **Connect**.
-
-	![Log on to the virtual machine](./media/arm_log_on_windows_vm/rm_windows_connect.png)
-	
 
 4. Clicking **Connect** creates and downloads a Remote Desktop Protocol file (.rdp file). Click **Open** to use this file.
 

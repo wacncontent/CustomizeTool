@@ -1,5 +1,5 @@
 <properties 
-   pageTitle=" Traffic Manager - traffic routing methods | Windows Azure"
+   pageTitle=" Traffic Manager - traffic routing methods | Azure"
    description="This articles will help you understand the different traffic routing methods used by Traffic Manager"
    services="traffic-manager"
    documentationCenter=""
@@ -124,4 +124,3 @@ If you want the figures in this topic as PowerPoint sides for your own presentat
 [Create a profile](/documentation/articles/traffic-manager-manage-profiles)
 
 [Add an endpoint](/documentation/articles/traffic-manager-endpoints)
- 

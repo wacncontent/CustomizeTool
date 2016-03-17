@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Azure Redis Cache with Node.js | Windows Azure"
+	pageTitle="How to use Azure Redis Cache with Node.js | Azure"
 	description="Get started with Azure Redis Cache using Node.js and node_redis."
 	services="redis-cache"
 	documentationCenter=""
@@ -20,7 +20,7 @@
 - [Java](/documentation/articles/cache-java-get-started)
 - [Python](/documentation/articles/cache-python-get-started)
 
-Azure Redis Cache gives you access to a secure, dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Windows Azure.
+Azure Redis Cache gives you access to a secure, dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Azure.
 
 This topic shows you how to get started with Azure Redis Cache using Node.js. For another example of using Azure Redis Cache with Node.js, see [Build a Node.js Chat Application with Socket.IO on an Azure Website][].
 
@@ -35,7 +35,8 @@ This tutorial uses [node_redis](https://github.com/mranney/node_redis), but you 
 
 ## Create a Redis cache on Azure
 
-In Windows Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
+
+In Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
@@ -58,19 +59,21 @@ You can use the following PowerShell command to enable the non-SSL endpoint
 
 ## Add something to the cache and retrieve it
 
+
 	var redis = require("redis");
 
-	// Add your cache name and access key.
+// Add your cache name and access key.
+
 	var client = redis.createClient(6379,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>' });
 
-	client.set("foo", "bar", function(err, reply) {
-	    console.log(reply);
-	});
+client.set("foo", "bar", function(err, reply) {
+  console.log(reply);
+});
 
-	client.get("foo",  function(err, reply) {
-	    console.log(reply);
-	});
-
+client.get("foo",  function(err, reply) {
+  console.log(reply);
+});
+```
 
 Output:
 
@@ -89,4 +92,4 @@ Output:
 [3]: ./media/cache-nodejs-get-started/cache03.png
 [4]: ./media/cache-nodejs-get-started/cache04.png
 
-[Build a Node.js Chat Application with Socket.IO on an Azure Website]: /documentation/articles/web-sites-nodejs-chat-app-socketio 
+[Build a Node.js Chat Application with Socket.IO on an Azure Website]: /documentation/articles/web-sites-nodejs-chat-app-socketio

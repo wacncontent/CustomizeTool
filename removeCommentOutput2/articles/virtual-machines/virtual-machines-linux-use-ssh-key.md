@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use SSH on Linux and Mac | Windows Azure" 
+	pageTitle="Use SSH on Linux and Mac | Azure" 
 	description="Generate and use SSH keys on Linux and Mac for the Resource Manager and classic deployment models on Azure." 
 	services="virtual-machines" 
 	documentationCenter="" 
@@ -19,13 +19,14 @@
 - [Windows](/documentation/articles/virtual-machines-windows-use-ssh-key)
 - [Linux/Mac](/documentation/articles/virtual-machines-linux-use-ssh-key)
 
-This topic describes how to use **ssh-keygen** and **openssl** on Linux and Mac to create and use **ssh-rsa** format and **.pem** format files to secure communication with Azure VMs based on Linux.
+This topic describes how to use **ssh-keygen** and **openssl** on Linux and Mac to create and use **ssh-rsa** format and **.pem** format files to secure communication with Azure VMs based on Linux. Creating Linux-based Azure
 
 > [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 ## Which files do you need?
 
 A basic ssh setup for Azure includes an **ssh-rsa** public and private key pair of 2048 bits (by default, **ssh-keygen** stores these files as **~/.ssh/id_rsa** and **~/.ssh/id-rsa.pub** unless you change the defaults) as well as a `.pem` file generated from the **id_rsa** private key file for use with the classic deployment model of the Management Portal. 
+
 
 .pem file are required to create VMs using the [Management Portal](https://manage.windowsazure.cn). .pem files are also supported in classic deployments that use the [Azure CLI](/documentation/articles/xplat-cli-install). 
 
@@ -73,11 +74,11 @@ To convert your .pem file into a DER encoded X509 certificate file.
 
 ## Use SSH keys you already have
 
-You can use ssh-rsa (`.pub`) keys for all new work; you may need to create a `.pem` file from your keys if you need to use the Management Portal.
+You can use ssh-rsa (`.pub`) keys for all new work, especially with the Resour; ; you may need to create a `.pem` file from your keys if you need to use the Management Portal.
 
 ## Create a VM with your public key file
 
-Once you've created the files you need, there are many ways to create a VM to which you can securely connect using a public-private key exchange. In almost all situations, pass the .pub file when prompted for an ssh key file path or the contents of a file as a string.
+Once you've created the files you need, there are many ways to create a VM to which you can securely connect using a public-private key exchange. In almost all situations, especially using Resource Mp pass the .pub file when prompted for an ssh key file path or the contents of a file as a string.
 
 ### Example: Creating a VM with the id_rsa.pub file
 
@@ -163,6 +164,7 @@ Examine the network profile section:
 	data:    Network Profile:
 	data:      Network Interfaces:
 	data:        Network Interface #1:
+
 	data:          Id:/subscriptions/<guid>/providers/Microsoft.Network/networkInterfaces/testnic 
 	data:          Primary                   :true
 	data:          MAC Address               :00-0D-3A-21-8E-AE
@@ -182,7 +184,7 @@ If you didn't use the default SSH port of 22 when you created the VM, you can di
 	azure network nsg show testrg testnsg
 	info:    Executing command network nsg show
 	+ Looking up the network security group "testnsg"
-	data:    Id                              : /subscriptions/<guid>/providers/Microsoft.Network/networkSecurityGroups/testnsg 
+	data:    Id                              : /subscriptions/<guid>/resou
 	data:    Name                            : testnsg
 	data:    Type                            : Microsoft.Network/networkSecurityGroups
 	data:    Location                        : westeurope

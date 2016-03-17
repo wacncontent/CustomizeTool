@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-   pageTitle="Deploy a VM with a static public IP using PowerShell in Resource Manager | Windows Azure"
+   pageTitle="Deploy a VM with a static public IP using PowerShell in Resource Manager | Azure"
    description="Learn how to deploy VMs with a static public IP using PowerShell in Resource Manager"
    services="virtual-network"
    documentationCenter="na"
@@ -212,4 +212,3 @@ After making any necessary changes, and understanding the script show above, run
 		Error               : 
 		ErrorText           : 
 
-   

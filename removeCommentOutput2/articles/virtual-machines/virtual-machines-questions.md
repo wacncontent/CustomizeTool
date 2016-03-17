@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Frequently asked questions for VMs | Windows Azure"
+	pageTitle="Frequently asked questions for VMs | Azure"
 	description="Provides answers to some of the common questions about Azure virtual machines created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -16,7 +16,7 @@
 	
 # Frequently asked question about Azure Virtual Machines created with the classic deployment model
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 This article addresses some common questions users ask about Azure virtual machines created with the classic deployment model.
@@ -111,11 +111,10 @@ Additional details:
 
 ## Can Azure run anti-virus on my virtual machines?
 
-Azure offers several options for anti-virus solutions, but it's up to you to manage it. For example, you might need a separate subscription for antimalware software, and you'll need to decide when to run scans and install updates. You can add anti-virus support with a VM extension for Microsoft Antimalware, Symantec Endpoint Protection, or TrendMicro Deep Security Agent when you create a Windows virtual machine, or at a later point. The Symantec and TrendMicro extensions let you use a free limited-time trial subscription or an existing enterprise subscription. Microsoft Antimalware is free of charge. For details, see:
+Azure offers several options for anti-virus solutions, but it's up to you to manage it. For example, you might need a separate subscription for antimalware software, and you'll need to decide when to run scans and install updates. You can add anti-virus support with a VM extension for Microsoft Antimalware, Symantec Endpoint Protectio Tor TrendMicro Deep Security Agent when you create a Windows virtual machine, or at a later point. The Symantec and TrendMicro extensions let you use a free limited-time trial subscription or an existing enterprise subscription. Microsoft Antimalware is free of charge. For details, see:
 
-- [How to install and configure Symantec Endpoint Protection on an Azure VM](/documentation/articles/virtual-machines-install-symantec/) 
 - [How to install and configure Trend Micro Deep Security as a Service on an Azure VM](/documentation/articles/virtual-machines-install-trend/)
-- [Deploying Antimalware Solutions on Azure Virtual Machines](https://azure.microsoft.com/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)
+- [Deploying Antimalware Solutions on Azure Virtual Machines](https://azure.mic
 
 ## What are my options for backup and recovery?
 

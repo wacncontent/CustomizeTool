@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use Azure Premium Storage with SQL Server | Windows Azure"
+	pageTitle="Use Azure Premium Storage with SQL Server | Azure"
 	description="This article uses resources created with the classic deployment model, and gives guidance on using Azure Premium Storage with SQL Server running on Azure Virtual Machines."
 	services="virtual-machines"
 	documentationCenter=""
@@ -166,8 +166,9 @@ The example below shows how to place the OS VHD onto premium storage and attach 
     $location = "West Europe"
 
     #Set up subscription
-    Set-AzureSubscription -SubscriptionName $mysubscription
-    Select-AzureSubscription -SubscriptionName $mysubscription -Current  
+
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription
+    Select-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription -Current  
 
 #### Step 1: Create a Premium Storage Account
 
@@ -195,7 +196,7 @@ The example below shows how to place the OS VHD onto premium storage and attach 
     $xiostorage = Get-AzureStorageKey -StorageAccountName $newxiostorageaccountname
 
     ##Generate storage acc contexts
-    $xioContext = New-AzureStorageContext -StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary   
+    $xioContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $newxiostorag  -StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary
 
     #Create container
     $containerName = 'vhds'
@@ -205,12 +206,12 @@ The example below shows how to place the OS VHD onto premium storage and attach 
     #NOTE: Set up subscription and default storage account which will be used to place the OS VHD in
 
     #If you want to place the OS VHD Premium Storage Account
-    Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount  $newxiostorageaccountname  
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription  -SubscriptionName $mysubscription -CurrentStorageAccount  $newxiostorageaccountname
 
     #If you wanted to place the OS VHD Standard Storage Account but attach Premium Storage VHDs then you would run this instead:
     $standardstorageaccountname = "danstdams"
 
-    Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount  $standardstorageaccountname
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription  -SubscriptionName $mysubscription -CurrentStorageAccount  $standardstorageaccountname
 
 #### Step 6: Create VM
     #Get list of available SQL Server Images from the Azure Image Gallery.
@@ -285,8 +286,9 @@ You can use an existing image. Or, you can [take an image of an existing machine
     $xiostorage = Get-AzureStorageKey -StorageAccountName $newxiostorageaccountname
 
     #Set up contexts for the storage accounts:
-    $origContext = New-AzureStorageContext  -StorageAccountName $origstorageaccountname -StorageAccountKey $originalstorage.Primary
-    $destContext = New-AzureStorageContext  -StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary  
+
+    $origContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $origstorageaccountname -StorageAccountKey $originalstorage.Primary
+    $destContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary  
 
 #### Step 4: Copy Blob between Storage Accounts
     #Get Image VHD
@@ -366,7 +368,7 @@ On-premises SQL Server AlwaysOn Availability Groups use a Listener on-premises t
 
 ![DeploymentsUseAlwaysOn][6]
 
-In Windows Azure you can have only one IP address assigned to a NIC on the VM, so in order to achieve the same layer of abstraction as on-premises, Azure utilizes the IP address that is assigned to the Internal/External Load Balancers (ILB/ELB). The IP resource that is shared between the servers is set to the same IP as the ILB/ELB. This is published in the DNS, and client traffic is passed through the ILB/ELB to the Primary SQL Server replica. The ILB/ELB knows which SQL Server is primary since it uses probes to probe the AlwaysOn IP resource. In the previous example, it probes each node that has an endpoint referenced by the ELB/ILB, whichever responds is the Primary SQL Server.
+In Azure you can have only one IP address assigned to a NIC on the VM, so in order to achieve the same layer of abstraction as on-premises, Azure utilizes the IP address that is assigned to the Internal/External Load Balancers (ILB/ELB). The IP resource that is shared between the servers is set to the same IP as the ILB/ELB. This is published in the DNS, and client traffic is passed through the ILB/ELB to the Primary SQL Server replica. The ILB/ELB knows which SQL Server is primary since it uses probes to probe the AlwaysOn IP resource. In the previous example, it probes each node that has an endpoint referenced by the ELB/ILB, whichever responds is the Primary SQL Server.
 
 > [AZURE.NOTE] The ILB and ELB are both assigned to a particular Azure cloud service, therefore any cloud migration in Azure will most likely mean that the Load Balancer IP will change.
 
@@ -567,10 +569,10 @@ In this example we are going to demonstrate moving from an ELB to ILB. ELB was a
 
 ### Pre Steps: Connect to Subscription
 
-    Add-AzureAccount
+    Add-AzureAccount -Environment AzureChinaCloud
 
     #Set up subscription
-    Get-AzureSubscription
+    Get-AzureSubscription -Environment AzureChinaCloud
 
 #### Step 1: Create New Storage Account and Cloud Service
     $mysubscription = "DansSubscription"
@@ -589,12 +591,14 @@ In this example we are going to demonstrate moving from an ELB to ILB. ELB was a
     $xiostorage = Get-AzureStorageKey -StorageAccountName $newxiostorageaccountname
 
     #Generate storage acc contexts
-    $origContext = New-AzureStorageContext  -StorageAccountName $origstorageaccountname -StorageAccountKey $originalstorage.Primary
-    $xioContext = New-AzureStorageContext  -StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary  
+
+    $origContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $origstorageaccountname -StorageAccountKey $originalstorage.Primary
+    $xioContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary  
 
     #Set up subscription and default storage account
-    Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount $origstorageaccountname
-    Select-AzureSubscription -SubscriptionName $mysubscription -Current
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription  -SubscriptionName $mysubscription -CurrentStorageAccount $origstorageaccountname
+
+    Select-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription -Current
 
     #CREATE NEW CLOUD SVC
     $vnet = "dansvnetwesteur"
@@ -807,8 +811,9 @@ For information for individual blobs:
 #### Step 11: Register OS disk
 
     #Change storage account
-    Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount $newxiostorageaccountname
-    Select-AzureSubscription -SubscriptionName $mysubscription -Current
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription  -SubscriptionName $mysubscription -CurrentStorageAccount $newxiostorageaccountname
+
+    Select-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription -Current
 
     #Register OS disk
     $osdiskimport = $diskobjects | where {$_.lun -eq "Windows"}
@@ -979,11 +984,13 @@ For TLOG volumes these should be set to NONE.
     $xiostoragenode2 = Get-AzureStorageKey -StorageAccountName $newxiostorageaccountnamenode2
 
     #Generate storage acc contexts
-    $xioContextnode2 = New-AzureStorageContext  -StorageAccountName $newxiostorageaccountnamenode2 -StorageAccountKey $xiostoragenode2.Primary  
+
+    $xioContextnode2 = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $newxiostorageaccountnamenode2 -StorageAccountKey $xiostoragenode2.Primary  
 
     #Set up subscription and default storage account
-    Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount $newxiostorageaccountnamenode2
-    Select-AzureSubscription -SubscriptionName $mysubscription -Current
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription  -SubscriptionName $mysubscription -CurrentStorageAccount $newxiostorageaccountnamenode2
+
+    Select-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription -Current
 
 #### Step 20: Copy VHDS
     #Ensure you have created the container for these:
@@ -1040,8 +1047,9 @@ For information for individual blobs:
 
 #### Step 21: Register OS disk
     #change storage account to the new XIO storage account
-    Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount $newxiostorageaccountnamenode2
-    Select-AzureSubscription -SubscriptionName $mysubscription -Current
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription  -SubscriptionName $mysubscription -CurrentStorageAccount $newxiostorageaccountnamenode2
+
+    Select-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription -Current
 
     #Register OS disk
     $osdiskimport = $diskobjects | where {$_.lun -eq "Windows"}

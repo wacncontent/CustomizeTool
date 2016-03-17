@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Simulated hybrid cloud test environment | Windows Azure" 
+	pageTitle="Simulated hybrid cloud test environment | Azure" 
 	description="Create a simulated hybrid cloud environment for IT pro or development testing, using two Azure virtual networks and a VNet-to-VNet connection." 
 	services="virtual-network" 
 	documentationCenter="" 
@@ -15,9 +15,9 @@
 
 # Set up a simulated hybrid cloud environment for testing (classic deployment mode)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/d
 
-This article steps you through creating a simulated hybrid cloud environment with Windows Azure for testing using two separate Azure virtual networks. Use this configuration as an alternative to 
+This article steps you through creating a simulated hybrid cloud environment with Azure for testing using two separate Azure virtual networks. Use this configuration as an alternative to 
 [Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing) when you do not have a direct Internet connection and an available public IP address. Here is the resulting configuration.
 
 ![](./media/virtual-networks-setup-simulated-hybrid-cloud-environment-testing/CreateSimHybridCloud_4.png)
@@ -41,9 +41,9 @@ There are four major phases to setting up this hybrid cloud test environment:
 3.	Create the VNet-to-VNet VPN connection.
 4.	Configure DC2. 
 
-If you don't already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). 
+If you don't already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscri
 
->[AZURE.NOTE] Virtual machines and virtual network gateways in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. To reduce the costs of running this test environment when you are not using it, see [Minimizing the ongoing costs of this environment](#costs) in this article for more information.
+o>[AZURE.NOTE] Virtual machines and virtual network gateways in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. To reduce the costs of running this test environment when you are not using it, see [Minimizing the ongoing costs of this environment](#costs) in this article for more information.
 
 
 ## Phase 1: Configure the TestLab virtual network

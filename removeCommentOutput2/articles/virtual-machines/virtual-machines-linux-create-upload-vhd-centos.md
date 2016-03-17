@@ -66,7 +66,7 @@ This article assumes that you have already installed a CentOS (or similar deriva
 		PEERDNS=yes
 		IPV6INIT=no
 
-6.	Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when cloning a virtual machine in Windows Azure or Hyper-V:
+6.	Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when cloning a virtual machine in Azure or Hyper-V:
 
 		# sudo mkdir -m 0700 /var/lib/waagent
 		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/
@@ -233,7 +233,7 @@ Preparing a CentOS 7 virtual machine for Azure is very similar to CentOS 6, howe
 		PEERDNS=yes
 		IPV6INIT=no
 
-5.	Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when cloning a virtual machine in Windows Azure or Hyper-V:
+5.	Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when cloning a virtual machine in Azure or Hyper-V:
 
 		# sudo mkdir -m 0700 /var/lib/waagent
 		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/ 2>/dev/null
@@ -318,7 +318,17 @@ Preparing a CentOS 7 virtual machine for Azure is very similar to CentOS 6, howe
 
 12.	Ensure that the SSH server is installed and configured to start at boot time.  This is usually the default.
 
-13. Install the Azure Linux Agent by running the following command:
+13.	**Only if building the image from VMWare, VirtualBox or KVM:** Add Hyper-V modules into initramfs:
+
+    Edit `/etc/dracut.conf`, add content:
+
+        add_drivers+="hv_vmbus hv_netvsc hv_storvsc"
+
+    Rebuild the initramfs:
+
+        # dracut -f -v
+
+14. Install the Azure Linux Agent by running the following command:
 
 		# sudo yum install WALinuxAgent
 

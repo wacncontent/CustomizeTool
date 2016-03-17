@@ -36,6 +36,7 @@ In this tutorial, you will learn how to use the Event Hubs spout and bolt to rea
 
 	> [AZURE.NOTE] Your editor or IDE may have specific functionality for working with Maven that is not addressed in this document. For information about the capabilities of your editing environment, see the documentation for the product you are using.
 
+
 * An SCP client. For Windows clients, we recommend PSCP, which is available from the [PuTTY download page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
 ##Understanding the example
@@ -237,7 +238,7 @@ You must populate both of these with information about your Event Hub and HDInsi
 
 The following environment variables may be set when you install Java and the JDK on your development workstation. However, you should check that they exist and that they contain the correct values for your system.
 
-* **JAVA_HOME** - should point to the directory where the Java runtime environment (JRE) is installed. For example, In Windows, it would have a value similar to `c:\Program Files (x86)\Java\jre1.7`
+* **JAVA_HOME** - should point to the directory where the Java runtime environment (JRE) is installed. For example, in a Unix or Linux distribuI In Windows, it would have a value similar to `c:\Program Files (x86)\Java\jre1.7`
 
 * **PATH** - should contain the following paths:
 
@@ -314,6 +315,7 @@ Event Hubs is the data source for this example. Use the following steps to creat
 ## Deploy the topologies
 
 The jar created by this project contains two topologies; __com.microsoft.example.EventHubWriter__ and __com.microsoft.example.EventHubReader__. The EventHubWriter topology should be started first, as it writes events in to Event Hub that are then read by the EventHubReader.
+
 
 ###If using a Windows-based cluster
 

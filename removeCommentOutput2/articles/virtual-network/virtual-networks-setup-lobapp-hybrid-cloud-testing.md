@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="LOB application test environment | Windows Azure" 
+	pageTitle="LOB application test environment | Azure" 
 	description="Learn how to create a web-based, line of business application in a hybrid cloud environment for IT pro or development testing." 
 	services="virtual-network" 
 	documentationCenter="" 
@@ -15,10 +15,10 @@
 
 # Set up a web-based LOB application in a hybrid cloud for testing
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
-This topic steps you through creating a hybrid cloud environment for testing an intranet line-of-business (LOB) application hosted in Windows Azure. Here is the resulting configuration.
+This topic steps you through creating a hybrid cloud environment for testing an intranet line-of-business (LOB) application hosted in Azure. Here is the resulting configuration.
 
 ![](./media/virtual-networks-setup-lobapp-hybrid-cloud-testing/CreateLOBAppHybridCloud_3.png)
 
@@ -42,7 +42,7 @@ There are three major phases to setting up this hybrid cloud test environment:
 2.	Configure the SQL server computer (SQL1).
 3.	Configure the LOB server (LOB1).
 
-If you do not already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). 
+If you do not already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscri
 
 ## Phase 1: Set up the hybrid cloud environment
 

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Custom-provision Hadoop clusters in HDInsight | Windows Azure" 
+   pageTitle="Custom-provision Hadoop clusters in HDInsight | Azure" 
    description="Learn how to custom-provision clusters for Azure HDInsight by using the Azure Management Portal, Azure PowerShell, a command line, or a .NET SDK." 
    services="hdinsight" 
    documentationCenter="" 
@@ -43,6 +43,7 @@ Before you begin the instructions in this article, you must have the following:
  
 - **Operating system**
 
+
 	You can provision HDInsight clusters on one of the following operating system: 
 	- **HDInsight on Windows (Windows Server 2012 R2 Datacenter)**:
 
@@ -59,9 +60,10 @@ Before you begin the instructions in this article, you must have the following:
 	- HBase clusters:  for NoSQL workloads
 	- Storm clusters: for real time event processing workloads
 
+
 	![HDInsight clusters](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
  
-	> [AZURE.NOTE] *Azure HDInsight cluster* is also called *Hadoop clusters in HDInsight*, or *HDInsight cluster*. Sometimes, it is used interchangeably with *Hadoop cluster*. They all refer to the Hadoop clusters hosted in the Windows Azure environment. 	   
+	> [AZURE.NOTE] *Azure HDInsight cluster* is also called *Hadoop clusters in HDInsight*, or *HDInsight cluster*. Sometimes, it is used interchangeably with *Hadoop cluster*. They all refer to the Hadoop clusters hosted in the Azure environment. 	   
 
 	Within a given cluster type, there are different roles for the various nodes, which allow a customer to size those nodes in a given role appropriate to the details of their workload. For example, a Hadoop cluster can have its worker nodes provisioned with a large amount of memory if the type of analytics being performed are memory intensive.
 
@@ -217,6 +219,7 @@ You can install additional components or customize cluster configuration by usin
 
 	![diagram of point-to-site configuration](./media/hdinsight-provision-clusters-v1/hdinsight-vnet-point-to-site.png)
 
+
 For more information on Virtual Network features, benefits, and capabilities, see the [Azure Virtual Network overview](/documentation/articles/virtual-networks-overview).
 
 > [AZURE.NOTE] You must create the Azure virtual network before provisioning an HDInsight cluster. For more information, see [Virtual Network configuration tasks](/home/features/virtual-machines/).
@@ -228,7 +231,7 @@ For more information on Virtual Network features, benefits, and capabilities, se
 >
 > It is highly recommended to designate a single subnet for one cluster.
 
-## Provision tools
+##<a name="cluster-creation-methods"></a> Provision tools
 
 - The Azure Management Portal
 - Azure PowerShell
@@ -569,7 +572,7 @@ HDInsight uses an Azure Blob storage container as the default file system. An Az
 
 		azure storage account create [options] <StorageAccountName>
 
-	When prompted for a location, select a location where an HDInsight cluster can be provisioned. The storage must be in the same location as the HDInsight cluster. Currently, only the **China North**, and **China East** regions can host HDInsight clusters.
+	When prompted for a location, select a location where an HDInsight cluster can be provisioned. The storage must be in the same location as the HDInsight cluster. Currently, only the **China East**, **China North**, **N North**, and **China East** regions can host HDInsight clusters.
 
 For information on creating an Azure Storage account by using the Azure Management Portal, see [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account).
 

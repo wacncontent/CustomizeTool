@@ -1,5 +1,5 @@
 <properties
-   pageTitle="MapReduce with Hadoop on HDInsight | Windows Azure"
+   pageTitle="MapReduce with Hadoop on HDInsight | Azure"
    description="Learn how to run MapReduce jobs on Hadoop in HDInsight clusters. You'll run a basic word count operation implemented as a Java MapReduce job."
    services="hdinsight"
    documentationCenter=""
@@ -150,8 +150,9 @@ HDInsight can run HiveQL jobs by using a variety of methods. Use the following t
 
 | **Use this**...                                                    | **...to do this**                                       | ...with this **cluster operating system** | ...from this **client operating system** |
 |:-------------------------------------------------------------------|:--------------------------------------------------------|:------------------------------------------|:-----------------------------------------|
+
 | [Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl)                     | Submit the job remotely by using **REST**               | Windows                          | Windows        |
-| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell) | Submit the job remotely by using **Windows PowerShell** |  Windows                          | Windows                                  |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell) | Submit the job remotely by using **Windows PowerShell** | Windows                          | Windows                                  |
 | [Remote Desktop](/documentation/articles/hdinsight-hadoop-use-mapreduce-remote-desktop)    | Use the Hadoop command through **Remote Desktop**       | Windows                                   | Windows                                  |
 
 ##<a id="nextsteps"></a>Next steps

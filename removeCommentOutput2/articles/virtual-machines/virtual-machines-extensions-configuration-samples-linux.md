@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   pageTitle="Sample configuration for Linux VM extensions | Windows Azure"
+   pageTitle="Sample configuration for Linux VM extensions | Azure"
    description="Sample configuration for authoring templates with extensions for Linux VMs"
    services="virtual-machines"
    documentationCenter=""

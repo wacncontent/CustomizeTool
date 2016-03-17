@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties"
-pageTitle="title="List of Oracle VM images | Windows Azure"
+pageTitle="title="List of Oracle VM images | Azure"
 description="Get the list of Oracle images in the Azure Gallery and learn how to create an Oracle virtual machine based on one."
 services="virtual-machines"
 documentationCenter=""
@@ -18,7 +20,7 @@ tags="azure-service-management, azure-resource-manager"/>
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
-To create virtual machines based on Oracle images, sign in to the [Azure Management Portal](https://manage.windowsazure.cn/), click **Marketplace**, click **Compute**, and then type **Oracle** into the Search box. Select an image and follow the instructions to set up the image on Windows Azure. Note that Oracle images by Microsoft on the [Azure Management Portal](https://manage.windowsazure.cn/) run on Windows, and Oracle images by Oracle run on Oracle Linux.
+To create virtual machines based on Oracle images, sign in to the [Azure Management Portal](https://manage.windowsazure.cn/), click **Marketplace**, click **Compute**, and then type **Oracle** into the Search box. Select an image and follow the instructions to set up the image on Azure. Note that Oracle images by Microsoft on the [Azure Management Portal](https://manage.windowsazure.cn/) run on Windows, and Oracle images by Oracle run on Oracle Linux.
 
 ![](./media/virtual-machines-oracle-list-oracle-virtual-machine-images/image1.png)
 

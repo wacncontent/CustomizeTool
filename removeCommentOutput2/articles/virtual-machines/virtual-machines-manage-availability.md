@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage the availability of VMs | Windows Azure"
+	pageTitle="Manage the availability of VMs | Azure"
 	description="Learn how to use multiple virtual machines to ensure high availability for your Azure application."
 	services="virtual-machines"
 	documentationCenter=""
@@ -18,9 +18,9 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 ## Understand planned vs. unplanned maintenance
-There are two types of Windows Azure platform events that can affect the availability of your virtual machines: planned maintenance and unplanned maintenance.
+There are two types of Azure platform events that can affect the availability of your virtual machines: planned maintenance and unplanned maintenance.
 
-- **Planned maintenance events** are periodic updates made by 21vnet to the underlying Azure platform to improve overall reliability, performance, and security of the platform infrastructure that your virtual machines run on. The majority of these updates are performed without any impact upon your virtual machines or cloud services. However, there are instances where these updates require a reboot of your virtual machine to apply the required updates to the platform infrastructure.
+- **Planned maintenance events** are periodic updates made by Microsoft to the underlying Azure platform to improve overall reliability, performance, and security of the platform infrastructure that your virtual machines run on. The majority of these updates are performed without any impact upon your virtual machines or cloud services. However, there are instances where these updates require a reboot of your virtual machine to apply the required updates to the platform infrastructure.
 
 - **Unplanned maintenance events** occur when the hardware or physical infrastructure underlying your virtual machine has faulted in some way. This may include local network failures, local disk failures, or other rack level failures. When such a failure is detected, the Azure platform will automatically migrate your virtual machine from the unhealthy physical machine hosting your virtual machine to a healthy physical machine. Such events are rare, but may also cause your virtual machine to reboot.
 
@@ -66,4 +66,4 @@ Avoid leaving a single instance virtual machine in an Availability Set by itself
 [Configure each application tier into separate Availability Sets]: #configure-each-application-tier-into-separate-availability-sets
 [Combine the Load Balancer with Availability Sets]: #combine-the-load-balancer-with-availability-sets
 [Avoid single instance virtual machines in Availability Sets]: #avoid-single-instance-virtual-machines-in-availability-sets
-[How to Configure An Availability Set for virtual machines]: /documentation/articles/virtual-machines-how-to-configure-availability 
+[How to Configure An Availability Set for virtual machines]: /documentation/articles/virtual-machines-how-to-configure-availability

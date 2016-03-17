@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-   pageTitle="Deploy a VM with a static public IP using a template in Resource Manager | Windows Azure"
+   pageTitle="Deploy a VM with a static public IP using a template in Resource Manager | Azure"
    description="Learn how to deploy VMs with a static public IP using a template in Resource Manager"
    services="virtual-network"
    documentationCenter="na"

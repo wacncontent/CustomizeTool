@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Submit Hadoop jobs in HDInsight | Windows Azure"
+	pageTitle="Submit Hadoop jobs in HDInsight | Azure"
 	description="Learn how to submit Hadoop jobs to Azure HDInsight Hadoop."
 	editor="cgronlun"
 	manager="paulettm"
@@ -47,6 +47,7 @@ See [Use Sqoop with HDInsight][hdinsight-use-sqoop].
 
 ##Submit Hive/Pig/Sqoop jobs using HDInsight .NET SDK
 The HDInsight .NET SDK provides .NET client libraries, which makes it easier to work with HDInsight clusters from .NET. 
+
 
 **<a name="mapreduce-sdk"></a> To Submit jobs**
 
@@ -207,7 +208,7 @@ The HDInsight .NET SDK provides .NET client libraries, which makes it easier to 
 						return null;
 					}
 		
-					return string.Join("&define=", defines.Select(x => x.Key + "%3D" + x.Value).ToArray());
+					sreturn "&define=" + string.Join("&define=", defines.Select(x => x.Key + "%3D" + x.Value).ToArray());
 				}
 				private static string ConvertArgsToString(List<string> args)
 				{
@@ -236,6 +237,7 @@ In this article, you have learned several ways to create an HDInsight cluster. T
 * [HDInsight Cmdlet Reference Documentation][hdinsight-powershell-reference]
 * [Use Hive with HDInsight][hdinsight-use-hive]
 * [Use Pig with HDInsight][hdinsight-use-pig]
+
 
 
 [azure-certificate]: /documentation/articles/cloud-services-certs-create/

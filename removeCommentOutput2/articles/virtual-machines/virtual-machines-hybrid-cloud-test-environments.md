@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Hybrid cloud test environments in Azure | Windows Azure"
+	pageTitle="Hybrid cloud test environments in Azure | Azure"
 	description="Find the articles that describe how to build dev/test or proof-of-concept IT pro environments for your Azure-based hybrid cloud."
 	documentationCenter=""
 	services="virtual-machines"
@@ -14,6 +14,7 @@
 	wacn.date=""/>
 
 # Azure hybrid cloud test environments
+
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
 

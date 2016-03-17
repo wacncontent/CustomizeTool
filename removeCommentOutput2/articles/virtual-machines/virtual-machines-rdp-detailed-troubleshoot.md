@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Detailed Remote Desktop troubleshooting | Windows Azure"
+	pageTitle="Detailed Remote Desktop troubleshooting | Azure"
 	description="Detailed troubleshooting steps for RDP connections to an Azure virtual machine running Windows."
 	services="virtual-machines"
 	documentationCenter=""
@@ -23,7 +23,7 @@ This article provides detailed troubleshooting steps to diagnose and fix complex
 
 If you get a Remote Desktop error message that does not resemble any of the specific error messages covered in [the basic Remote Desktop troubleshooting guide](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections), you can follow these steps and try to figure out why the Remote Desktop (or [RDP](https://en.wikipedia.org/wiki/Remote_Desktop_Protocol)) client is unable to connect to the RDP service on the Azure VM.
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](http. Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](https://azure.microsoand click on **Get Support**. For information about using Azure Support, read the [Azure Support FAQ](/support/faq/).
 
 
 ## Components of a Remote Desktop connection
@@ -80,7 +80,7 @@ Verify that a computer directly connected to the Internet can make Remote Deskto
 
 ![](./media/virtual-machines-rdp-detailed-troubleshoot/tshootrdp_2.png)
 
-If you do not have a computer that is directly connected to the Internet, create and test with a new Azure virtual machine in cloud service. For more information, see [Create a virtual machine running Windows in Azure](/documentation/articles/virtual-machines-windows-tutorial-classic-portal). You can delete the virtual machine and the cloud service, after the test.
+ccIf you do not have a computer that is directly connected to the Internet, create and test with a new Azure virtual machine in a resource group or cloud service. For more information, see [Create a virtual machine running Windows in Azure](/documentation/articles/virtual-machines-windows-tutorial-classic-portal). You can delete the virtual machine and the resource group or the cloud service, after the test.
 
 If you can create a Remote Desktop connection with a computer directly attached to the Internet, check your organization intranet edge device for:
 

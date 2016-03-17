@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Host a Ruby on Rails website on a Linux VM | Windows Azure"
+	pageTitle="Host a Ruby on Rails website on a Linux VM | Azure"
 	description="Set up and host a Ruby on Rails-based website on Azure using a Linux virtual machine."
 	services="virtual-machines"
 	documentationCenter="ruby"
@@ -23,7 +23,7 @@ This tutorial shows how to host a Ruby on Rails website on Azure using a Linux v
 
 This tutorial was validated using Ubuntu Server 14.04 LTS. If you use a different Linux distribution, you might need to modify the steps to install Rails.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 ## Create an Azure VM
@@ -143,15 +143,15 @@ To use Azure services from your Ruby application, see:
 
 
 <!-- WA.com links -->
-[blobs]: ../storage-ruby-how-to-use-blob-storage.md
+[blobs]: /documentation/articles/storage-ruby-how-to-use-blob-storage
 
 [cdn-howto]: /develop/ruby/app-services/
 
 [management-portal]: https://manage.windowsazure.cn/
 
-[tables]: /develop/ruby/how-to-guides/table-service/
+[tables]: /develop/ruby/how-to-guides
 
-[vm-instructions]: virtual-machines-linux-tutorial.md
+[vm-instructions]: /documentation/articles/vir
 
 
 <!-- External Links -->

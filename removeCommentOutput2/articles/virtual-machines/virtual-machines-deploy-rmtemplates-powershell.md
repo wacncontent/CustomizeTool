@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Manage Azure Resource Manager VMs | Windows Azure"
+	pageTitle="Manage Azure Resource Manager VMs | Azure"
 	description="Manage virtual machines using Azure Resource Manager, templates, and PowerShell."
 	services="virtual-machines"
 	documentationCenter=""
@@ -24,7 +24,7 @@
 <br>
 
 
-Using Azure PowerShell and Resource Manager templates provides you with a lot of power and flexibility when managing resources in Windows Azure. You can use the tasks in this article to manage virtual machine resources.
+Using Azure PowerShell and Resource Manager templates provides you with a lot of power and flexibility when managing resources in Azure. You can use the tasks in this article to manage virtual machine resources.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
@@ -189,7 +189,7 @@ If you would like to see a video of this task being done, take a look at this:
 
 In the following command, replace *resource group name* with the name of the resource group that contains the virtual machine and *VM name* with the name of the machine, and then run it:  
 
-	Remove-AzureRmVM -ResourceGroupName "resource group name" âName "VM name"
+	Remove-AzureRmVM -ResourceGroupName "resource group name" -Name "VM name"
 
 > [AZURE.NOTE] You can use the **-Force** parameter to skip the confirmation prompt.
 

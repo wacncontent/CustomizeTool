@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Analyze and Process JSON documents with Hive in HDInsight | Windows Azure"
+   pageTitle="Analyze and Process JSON documents with Hive in HDInsight | Azure"
    description="Learn how to use JSON documents and analyze them using Hive in HDInsight."
    services="hdinsight"
    documentationCenter=""
@@ -257,4 +257,3 @@ For other related articles, see
 [image-hdi-hivejson-serde_query2]: ./media/hdinsight-using-json-in-hive/serde_query2.png
 [image-hdi-hivejson-serde_query3]: ./media/hdinsight-using-json-in-hive/serde_query3.png
 [image-hdi-hivejson-serde_result]: ./media/hdinsight-using-json-in-hive/serde_result.png
- 

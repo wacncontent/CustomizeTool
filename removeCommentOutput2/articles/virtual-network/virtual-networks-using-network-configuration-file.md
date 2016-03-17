@@ -42,4 +42,4 @@ When you export, all of the settings for the virtual networks in your subscripti
 1. In the **Management Portal**, in the navigation pane on the bottom left, click **New**.
 2. Click **Network Services** -> **Virtual Network** -> **Import Configuration**.
 3. On the **Import the network configuration file** page, browse to your network configuration file, and then click the **next** arrow.
-4. On the **Building your network** page, you'll see information on the screen showing which sections of your network configuration will be changed or created. If the changes look correct to you, click the checkmark to proceed to update or create your virtual network. 
+4. On the **Building your network** page, you'll see information on the screen showing which sections of your network configuration will be changed or created. If the changes look correct to you, click the checkmark to proceed to update or create your virtual network.

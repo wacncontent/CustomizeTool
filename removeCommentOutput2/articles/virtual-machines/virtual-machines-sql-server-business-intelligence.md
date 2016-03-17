@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL Server Business Intelligence | Windows Azure"
+	pageTitle="SQL Server Business Intelligence | Azure"
 	description="This topic uses resources created with the classic deployment model, and describes the Business Intelligence (BI) features available for SQL Server running on Azure Virtual Machines (VMs)."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -17,27 +17,27 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
  
-The Windows Azure Virtual Machine gallery includes images that contain SQL Server installations. The SQL Server editions supported in the gallery images are the same installation files you can install to on-premises computers and virtual machines. This topic summarizes the SQL Server Business Intelligence (BI) Features installed on the images and configuration steps required after a virtual machine is provisioned. This topic also describes supported deployment topologies for BI features and best practices.
+The Azure Virtual Machine gallery includes images that contain SQL Server installations. The SQL Server editions supported in the gallery images are the same installation files you can install to on-premises computers and virtual machines. This topic summarizes the SQL Server Business Intelligence (BI) Features installed on the images and configuration steps required after a virtual machine is provisioned. This topic also describes supported deployment topologies for BI features and best practices.
 
 ## License Considerations
 
-There are two ways to license SQL Server in Windows Azure Virtual Machines:
+There are two ways to license SQL Server in Azure Virtual Machines:
 
-1. License mobility benefits that are part of Software Assurance. For more information, see [License Mobility through Software Assurance on Azure](/pricing/license-mobility/).
+1. License mobility benefits that are part of Software Assurance. For more information, see [License Mobility through Software Assurance on Azure](https://azure.micros.
 
 1. Pay per hour rate of Azure Virtual Machines with SQL Server installed. See the "SQL Server" section in [Virtual Machines Pricing](/home/features/virtual-machines/#price).
 
-For more information on licensing and current rates, see [Virtual Machines Licensing FAQ](/pricing/licensing-faq/%20/).
+For more information on licensing and current rates, see [Virtual Machines Licensing FAQ](https://azure.microsof.
 
 ## SQL Server Images Available in Azure Virtual Machine Gallery
 
-The Windows Azure Virtual Machine gallery includes several images that contain Microsoft SQL Server. The software installed on the virtual machine images varies based on the version of the operating system and the version of SQL Server. The list of images available in the Azure virtual machine gallery changes frequently.
+The Azure Virtual Machine gallery includes several images that contain Microsoft SQL Server. The software installed on the virtual machine images varies based on the version of the operating system and the version of SQL Server. The list of images available in the Azure virtual machine gallery changes frequently.
 
 ![SQL image in azure VM gallery](./media/virtual-machines-sql-server-business-intelligence/IC741367.png)
 
 ![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif) The following PowerShell script returns the list of Azure images that contain "SQL-Server" in the ImageName:
 
-	# assumes you have already uploaded a management certificate to your Windows Azure Subscription. View the thumbprint value from the "settings" menu in Azure Management Portal.
+	# assumes you have already uploaded a management certificate to your Azure Subscription. View the thumbprint value from the "settings" menu in Azure Management Portal.
 	
 	$subscriptionID = ""    # REQUIRED: Provide your subscription ID.
 	$subscriptionName = "" # REQUIRED: Provide your subscription name.
@@ -62,7 +62,7 @@ For more information on editions and features supported by SQL Server, see the f
 
 ### BI Features Installed on the SQL Server Virtual Machine Gallery Images
 
-The following table summarizes the Business Intelligence features installed on the common Windows Azure Virtual Machine gallery images for SQL Server"
+The following table summarizes the Business Intelligence features installed on the common Azure Virtual Machine gallery images for SQL Server"
 
 - SQL Server 2014 RTM Enterprise
 
@@ -75,12 +75,12 @@ The following table summarizes the Business Intelligence features installed on t
 |SQL Server BI Feature|Installed on the gallery image|Notes|
 |---|---|---|
 |**Reporting Services Native Mode**|Yes|Installed but requires configuration, including the report manager URL. See the section [Configure Reporting Services](#configure-reporting-services).|
-|**Reporting Services SharePoint Mode**|No|The Windows Azure Virtual Machine gallery image does not include SharePoint or SharePoint installation files. <sup>1</sup>|
+|**Reporting Services SharePoint Mode**|No|The Azure Virtual Machine gallery image does not include SharePoint or SharePoint installation files. <sup>1</sup>|
 |**Analysis Services Multidimensional and Data mining (OLAP)**|Yes|Installed and configured as the default Analysis Services instance|
 |**Analysis Services Tabular**|No|Supported in SQL Server 2012 and 2014 images but it is not installed by default. Install another instance of Analysis Services. See the section Install other SQL Server Services and features in this topic.|
-|**Analysis Services Power Pivot for SharePoint**|No|The Windows Azure Virtual Machine gallery image does not include SharePoint or SharePoint installation files. <sup>1</sup>|
+|**Analysis Services Power Pivot for SharePoint**|No|The Azure Virtual Machine gallery image does not include SharePoint or SharePoint installation files. <sup>1</sup>|
 
-<sup>1</sup> For additional information on SharePoint and Azure virtual machines, see [Windows Azure Architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx) and [SharePoint Deployment on Windows Azure Virtual Machines](https://www.microsoft.com/download/details.aspx?id=34598).
+<sup>1</sup> For additional information on SharePoint and Azure virtual machines, see [Azure Architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx) and [SharePoint Deployment on Azure Virtual Machines](https://www.microsoft.com/download/details.aspx?id=34598).
 
 ![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif) Run the following PowerShell command to get a list of installed services that contain "SQL" in the service name.
 
@@ -108,11 +108,11 @@ The following table summarizes the Business Intelligence features installed on t
 
 	For more information, see the following: [Uninstall Reporting Services](https://msdn.microsoft.com/zh-cn/library/hh479745.aspx) and [Uninstall an Instance of Analysis Services](https://msdn.microsoft.com/zh-cn/library/ms143687.aspx).
 
-- Check **Windows Update** for new 'Important updates'. The Windows Azure Virtual Machine images are frequently refreshed; however important updates could become available from **Windows Update** after the VM image was last refreshed.
+- Check **Windows Update** for new 'Important updates'. The Azure Virtual Machine images are frequently refreshed; however important updates could become available from **Windows Update** after the VM image was last refreshed.
 
 ## Example Deployment Topologies
 
-The following are example deployments that use Windows Azure Virtual Machines. The topologies in these diagrams are only some of the possible topologies you can use with SQL Server BI features and Windows Azure Virtual Machines.
+The following are example deployments that use Azure Virtual Machines. The topologies in these diagrams are only some of the possible topologies you can use with SQL Server BI features and Azure Virtual Machines.
 
 ### Single Virtual Machine
 
@@ -212,7 +212,7 @@ Or
 
 1. Click **Apply** to configure the default values.
 
-1. Note the **Report Server Web Service URLs**. Note, the default TCP port is 80 and is part of the URL. In a later step, you create a Windows Azure Virtual Machine Endpoint for the port.
+1. Note the **Report Server Web Service URLs**. Note, the default TCP port is 80 and is part of the URL. In a later step, you create a Azure Virtual Machine Endpoint for the port.
 
 1. In the **Results** pane, verify the actions completed successfully.
 
@@ -273,7 +273,7 @@ If you want to connect to Report Manager on the virtual machine from a remote co
 
 ### To Create and Publish Reports to the Azure Virtual Machine
 
-The following table summarizes some of the options available to publish existing reports from an on-premises computer to the report server hosted on the Windows Azure Virtual Machine:
+The following table summarizes some of the options available to publish existing reports from an on-premises computer to the report server hosted on the Azure Virtual Machine:
 
 - **Report Builder**: The virtual machine includes the click-once version of Microsoft SQL Server Report Builder. To start Report builder the first time on the virtual machine:
 											
@@ -312,8 +312,8 @@ To install additional SQL Server services, such as Analysis Services in tabular 
 Or run C:\SQLServer_12.0_full\setup.exe or C:\SQLServer_11.0_full\setup.exe
 
 >[AZURE.NOTE] The first time you run SQL Server setup, more setup files may be downloaded and require a reboot of the virtual machine and a restart of SQL Server setup.
->
->If you need to repeatedly customize the image selected from the Windows Azure Virtual Machine, consider creating your own SQL Server image. Analysis Services SysPrep functionality was enabled with SQL Server 2012 SP1 CU2. For more information, see [Considerations for Installing SQL Server Using SysPrep](https://msdn.microsoft.com/zh-cn/library/ee210754.aspx).
+
+><p>If you need to repeatedly customize the image selected from the Azure Virtual Machine, consider creating your own SQL Server image. Analysis Services SysPrep functionality was enabled with SQL Server 2012 SP1 CU2. For more information, see [Considerations for Installing SQL Server Using SysPrep](https://msdn.microsoft.com/zh-cn/library/ee210754.aspx).
 
 ### To Install Analysis Services Tabular Mode
 
@@ -367,7 +367,7 @@ For more information see, the **Virtual Machine Endpoints and Firewall Ports** s
 
 ## Virtual Machine Endpoints and Firewall Ports
 
-This section summarizes Windows Azure Virtual Machine Endpoints to create and ports to open in the virtual machine firewalls. The following table summarizes the **TCP** ports to create endpoints for and the ports to open in the virtual machines firewall.
+This section summarizes Azure Virtual Machine Endpoints to create and ports to open in the virtual machine firewalls. The following table summarizes the **TCP** ports to create endpoints for and the ports to open in the virtual machines firewall.
 
 - If you are using a single VM and the following two items are true, you do not need to create VM endpoints and you do not need to open the ports in the firewall on the VM.
 

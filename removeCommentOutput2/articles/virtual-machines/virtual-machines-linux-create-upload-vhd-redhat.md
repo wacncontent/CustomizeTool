@@ -75,7 +75,7 @@ This section assumes that you have already installed a RHEL image from an ISO fi
         PEERDNS=yes
         IPV6INIT=no
 
-6.	Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when cloning a virtual machine in Windows Azure or Hyper-V:
+6.	Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when cloning a virtual machine in Azure or Hyper-V:
 
         # sudo mkdir -m 0700 /var/lib/waagent
         # sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/
@@ -264,7 +264,7 @@ The Azure Linux Agent can automatically configure swap space using the local res
         PEERDNS=yes
         IPV6INIT=no
 
-6.	Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when cloning a virtual machine in Windows Azure or Hyper-V:
+6.	Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when cloning a virtual machine in Azure or Hyper-V:
 
         # mkdir -m 0700 /var/lib/waagent
         # mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/
@@ -534,7 +534,7 @@ This section assumes that you have already installed a RHEL virtual machine in V
         PEERDNS=yes
         IPV6INIT=no
 
-4.	Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when cloning a virtual machine in Windows Azure or Hyper-V:
+4.	Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when cloning a virtual machine in Azure or Hyper-V:
 
         # sudo mkdir -m 0700 /var/lib/waagent
         # sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/

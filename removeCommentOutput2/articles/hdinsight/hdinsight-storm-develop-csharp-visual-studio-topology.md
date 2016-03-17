@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Apache Storm topologies with Visual Studio and C#  | Windows Azure"
+   pageTitle="Apache Storm topologies with Visual Studio and C#  | Azure"
    description="Learn how to create Storm topologies in C# by creating a simple word count topology in Visual Studio using the HDInsight Tools for Visual Studio."
    services="hdinsight"
    documentationCenter=""
@@ -218,82 +218,82 @@ In the next sections, you will modify this project into a basic WordCount applic
 	    string sentence = tuple.GetString(0);
 	    // Split at space characters
 	    foreach (string word in sentence.Split(' '))
-	    {
-	        Context.Logger.Info("Emit: {0}", word);
-	        //Emit each word
-	        this.ctx.Emit(new Values(word));
-	    }
-
-
-	    Context.Logger.Info("Execute exit");
-	}
-	```
+		    {
+		        Context.Logger.Info("Emit: {0}", word);
+		        //Emit each word
+		        this.ctx.Emit(new Values(word));
+		    }
+	
+	
+		    Context.Logger.Info("Execute exit");
+		}
+		
 
 	Take a moment to read through the comments to understand what this code does.
 
 5.	Open **Counter.cs** and replace the class contents with the following:
 
-	```
-	private Context ctx;
-
-
-	// Dictionary for holding words and counts
-	private Dictionary<string, int> counts = new Dictionary<string, int>();
-
-
-	// Constructor
-	public Counter(Context ctx)
-	{
-	    Context.Logger.Info("Counter constructor called");
-	    // Set instance context
-	    this.ctx = ctx;
-
-
-	    // Declare Input and Output schemas
-	    Dictionary<string, List<Type>> inputSchema = new Dictionary<string, List<Type>>();
-	    // A tuple containing a string field - the word
-	    inputSchema.Add("default", new List<Type>() { typeof(string) });
-
-
-	    Dictionary<string, List<Type>> outputSchema = new Dictionary<string, List<Type>>();
-	    // A tuple containing a string and integer field - the word and the word count
-	    outputSchema.Add("default", new List<Type>() { typeof(string), typeof(int) });
-	    this.ctx.DeclareComponentSchema(new ComponentStreamSchema(inputSchema, outputSchema));
-	}
-
-
-	// Get a new instance
-	public static Counter Get(Context ctx, Dictionary<string, Object> parms)
-	{
-	    return new Counter(ctx);
-	}
-
-
-	// Called when a new tuple is available
-	public void Execute(SCPTuple tuple)
-	{
-	    Context.Logger.Info("Execute enter");
-
-
-	    // Get the word from the tuple
-	    string word = tuple.GetString(0);
-	    // Do we already have an entry for the word in the dictionary?
-	    // If no, create one with a count of 0
-	    int count = counts.ContainsKey(word) ? counts[word] : 0;
-	    // Increment the count
-	    count++;
-	    // Update the count in the dictionary
-	    counts[word] = count;
-
-
-	    Context.Logger.Info("Emit: {0}, count: {1}", word, count);
-	    // Emit the word and count information
-	    this.ctx.Emit(Constants.DEFAULT_STREAM_ID, new List<SCPTuple> { tuple }, new Values(word, count));
-
-
-	    Context.Logger.Info("Execute exit");
-	}
-	```
+	
+		private Context ctx;
+	
+	
+		// Dictionary for holding words and counts
+		private Dictionary<string, int> counts = new Dictionary<string, int>();
+	
+	
+		// Constructor
+		public Counter(Context ctx)
+		{
+		    Context.Logger.Info("Counter constructor called");
+		    // Set instance context
+		    this.ctx = ctx;
+	
+	
+		    // Declare Input and Output schemas
+		    Dictionary<string, List<Type>> inputSchema = new Dictionary<string, List<Type>>();
+		    // A tuple containing a string field - the word
+		    inputSchema.Add("default", new List<Type>() { typeof(string) });
+	
+	
+		    Dictionary<string, List<Type>> outputSchema = new Dictionary<string, List<Type>>();
+		    // A tuple containing a string and integer field - the word and the word count
+		    outputSchema.Add("default", new List<Type>() { typeof(string), typeof(int) });
+		    this.ctx.DeclareComponentSchema(new ComponentStreamSchema(inputSchema, outputSchema));
+		}
+	
+	
+		// Get a new instance
+		public static Counter Get(Context ctx, Dictionary<string, Object> parms)
+		{
+		    return new Counter(ctx);
+		}
+	
+	
+		// Called when a new tuple is available
+		public void Execute(SCPTuple tuple)
+		{
+		    Context.Logger.Info("Execute enter");
+	
+	
+		    // Get the word from the tuple
+		    string word = tuple.GetString(0);
+		    // Do we already have an entry for the word in the dictionary?
+		    // If no, create one with a count of 0
+		    int count = counts.ContainsKey(word) ? counts[word] : 0;
+		    // Increment the count
+		    count++;
+		    // Update the count in the dictionary
+		    counts[word] = count;
+	
+	
+		    Context.Logger.Info("Emit: {0}, count: {1}", word, count);
+		    // Emit the word and count information
+		    this.ctx.Emit(Constants.DEFAULT_STREAM_ID, new List<SCPTuple> { tuple }, new Values(word, count));
+	
+	
+		    Context.Logger.Info("Execute exit");
+		}
+		
 
 	Take a moment to read through the comments to understand what this code does.
 
@@ -309,58 +309,59 @@ Because word count is held locally in the Counter instance, we want to make sure
 
 Open **Program.cs**. The important method is **ITopologyBuilder**, which is used to define the topology that is submitted to Storm. Replace the contents of **ITopologyBuilder** with the following code to implement the topology described previously:
 
-```
-    // Create a new topology named 'WordCount'
-    TopologyBuilder topologyBuilder = new TopologyBuilder("WordCount");
+	
+	    // Create a new topology named 'WordCount'
+	    TopologyBuilder topologyBuilder = new TopologyBuilder("WordCount");
+	
+	    // Add the spout to the topology.
+	    // Name the component 'sentences'
+	    // Name the field that is emitted as 'sentence'
+	    topologyBuilder.SetSpout(
+	        "sentences",
+	        Spout.Get,
+	        new Dictionary<string, List<string>>()
+	        {
+	            {Constants.DEFAULT_STREAM_ID, new List<string>(){"sentence"}}
+	        },
+	        1);
+	    // Add the splitter bolt to the topology.
+	    // Name the component 'splitter'
+	    // Name the field that is emitted 'word'
+	    // Use suffleGrouping to distribute incoming tuples
+	    //   from the 'sentences' spout across instances
+	    //   of the splitter
+	    topologyBuilder.SetBolt(
+	        "splitter",
+	        Splitter.Get,
+	        new Dictionary<string, List<string>>()
+	        {
+	            {Constants.DEFAULT_STREAM_ID, new List<string>(){"word"}}
+	        },
+	        1).shuffleGrouping("sentences");
+	
+	    // Add the counter bolt to the topology.
+	    // Name the component 'counter'
+	    // Name the fields that are emitted 'word' and 'count'
+	    // Use fieldsGrouping to ensure that tuples are routed
+	    //   to counter instances based on the contents of field
+	    //   position 0 (the word). This could also have been
+	    //   List<string>(){"word"}.
+	    //   This ensures that the word 'jumped', for example, will always
+	    //   go to the same instance
+	    topologyBuilder.SetBolt(
+	        "counter",
+	        Counter.Get,
+	        new Dictionary<string, List<string>>()
+	        {
+	            {Constants.DEFAULT_STREAM_ID, new List<string>(){"word", "count"}}
+	        },
+	        1).fieldsGrouping("splitter", new List<int>() { 0 });
+	
+	    // Add topology config
+	    topologyBuilder.SetTopologyConfig(new Dictionary<string, string>()
+	    {
 
-    // Add the spout to the topology.
-    // Name the component 'sentences'
-    // Name the field that is emitted as 'sentence'
-    topologyBuilder.SetSpout(
-        "sentences",
-        Spout.Get,
-        new Dictionary<string, List<string>>()
-        {
-            {Constants.DEFAULT_STREAM_ID, new List<string>(){"sentence"}}
-        },
-        1);
-    // Add the splitter bolt to the topology.
-    // Name the component 'splitter'
-    // Name the field that is emitted 'word'
-    // Use suffleGrouping to distribute incoming tuples
-    //   from the 'sentences' spout across instances
-    //   of the splitter
-    topologyBuilder.SetBolt(
-        "splitter",
-        Splitter.Get,
-        new Dictionary<string, List<string>>()
-        {
-            {Constants.DEFAULT_STREAM_ID, new List<string>(){"word"}}
-        },
-        1).shuffleGrouping("sentences");
-
-    // Add the counter bolt to the topology.
-    // Name the component 'counter'
-    // Name the fields that are emitted 'word' and 'count'
-    // Use fieldsGrouping to ensure that tuples are routed
-    //   to counter instances based on the contents of field
-    //   position 0 (the word). This could also have been
-    //   List<string>(){"word"}.
-    //   This ensures that the word 'jumped', for example, will always
-    //   go to the same instance
-    topologyBuilder.SetBolt(
-        "counter",
-        Counter.Get,
-        new Dictionary<string, List<string>>()
-        {
-            {Constants.DEFAULT_STREAM_ID, new List<string>(){"word", "count"}}
-        },
-        1).fieldsGrouping("splitter", new List<int>() { 0 });
-
-    // Add topology config
-    topologyBuilder.SetTopologyConfig(new Dictionary<string, string>()
-    {
-        {"topology.kryo.register","[\"[B\"]"}
+	        {"topology.kryo.register","[\"[B\"]"}
     });
 
     return topologyBuilder;

@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-   pageTitle="Deploy multi NIC VMs using a template in Resource Manager | Windows Azure"
+   pageTitle="Deploy multi NIC VMs using a template in Resource Manager | Azure"
    description="Learn how to deploy multi NIC VMs using a template in Resource Manager"
    services="virtual-network"
    documentationCenter="na"

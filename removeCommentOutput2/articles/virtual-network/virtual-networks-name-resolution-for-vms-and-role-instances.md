@@ -36,7 +36,8 @@ The type of name resolution you use depends on how your VMs and role instances n
 | Name resolution between role instances located in different cloud services, not in a virtual network| Not applicable. Connectivity between VMs and role instances in different cloud services is not supported outside a virtual network.| Not applicable.|
 
 
-## Azure-provided name resolution
+
+##<a name="azure-provided-name-resolution"></a> Azure-provided name resolution
 
 Along with resolution of public DNS names, Azure provides internal name resolution for VMs and role instances that reside within the same virtual network or cloud service.  VMs/instances in a cloud service share the same DNS suffix, so the hostname alone is sufficient but, in classic virtual networks, different cloud services have different DNS suffixes, so the FQDN is needed to resolve names between different cloud services.  In ARM-based virtual networks, the DNS suffix is the same across the virtual network so the FQDN is not needed, and the DNS name can be assigned to either the NIC or the virtual machine. 
 Although Azure-provided name resolution does not require any configuration, it is not the appropriate choice for all deployment scenarios, as seen on the table above.
@@ -123,7 +124,8 @@ The resolv.conf file is usually auto-generated and should not be edited.  The sp
 	- add 'echo "options timeout:1 attempts:5"' to '/etc/NetworkManager/dispatcher.d/11-dhclient' 
 	- run 'service network restart' to update
 
-## Name resolution using your own DNS server
+
+##<a name="name-resolution-using-your-own-dns-server"></a> Name resolution using your own DNS server
 
 If your name resolution requirements go beyond the features provided by Azure, you have the option of using your own DNS servers. When you use your own DNS servers, you are responsible for managing the DNS records.
 

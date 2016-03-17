@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Availability of Hadoop clusters in HDInsight | Windows Azure"
+	pageTitle="Availability of Hadoop clusters in HDInsight | Azure"
 	description="HDInsight deploys highly available and reliable clusters with an addtional head node."
 	services="hdinsight"
 	tags="azure-portal"

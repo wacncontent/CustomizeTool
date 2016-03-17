@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configure an ILB Listener for AlwaysOn Availability Groups | Windows Azure"
+	pageTitle="Configure an ILB Listener for AlwaysOn Availability Groups | Azure"
 	description="This tutorial uses resources created with  the classic deployment model, and creates an AlwaysOn Availability Group Listener in Azure using an Internal Load Balancer (ILB)."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -133,4 +133,3 @@ For ILB, you must first create the internal load balancer. This is done in the s
 ## Next steps
 
 [AZURE.INCLUDE [Listener-Next-Steps](../includes/virtual-machines-ag-listener-next-steps.md)]
-

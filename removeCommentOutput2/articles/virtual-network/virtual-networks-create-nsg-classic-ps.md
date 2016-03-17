@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="How to create NSGs in classic mode using PowerShell| Windows Azure"
+   pageTitle="How to create NSGs in classic mode using PowerShell| Azure"
    description="Learn how to create and deploy NSGs in classic mode using PowerShell"
    services="virtual-network"
    documentationCenter="na"
@@ -18,8 +18,6 @@
 [AZURE.INCLUDE [virtual-networks-create-nsg-selectors-classic-include](../includes/virtual-networks-create-nsg-selectors-classic-include.md)]
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../includes/virtual-networks-create-nsg-intro-include.md)]
-
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] 
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../includes/virtual-networks-create-nsg-scenario-include.md)]
 
@@ -204,4 +202,4 @@ To create an NSG named named **NSG-FrontEnd** based on the scenario above, follo
 		           ALLOW VNET OUTBOUND  65000     Allow    VIRTUAL_NETWORK *             VIRTUAL_NETWORK  *              *       
 		           ALLOW INTERNET       65001     Allow    *               *             INTERNET         *              *       
 		           OUTBOUND                                                                                                      
-		           DENY ALL OUTBOUND    65500     Deny     *               *             *                *              *   
+		           DENY ALL OUTBOUND    65500     Deny     *               *             *                *              *

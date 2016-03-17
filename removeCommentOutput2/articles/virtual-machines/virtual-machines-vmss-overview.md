@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Virtual Machine Scale Sets Overview | Windows Azure"
+	pageTitle="Virtual Machine Scale Sets Overview | Azure"
 	description="Learn more about Virtual Machine Scale Sets"
 	services="virtual-machines"
 	documentationCenter=""

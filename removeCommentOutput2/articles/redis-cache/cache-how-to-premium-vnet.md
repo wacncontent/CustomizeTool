@@ -24,7 +24,8 @@ For information on other premium cache features, see [How to configure persisten
 
 ## Virtual network support
 
-In Windows Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
+
+In Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
 
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]

@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Testing SAP NetWeaver on Windows Azure SUSE Linux VMs | Windows Azure"
-   description="Testing SAP NetWeaver on Windows Azure SUSE Linux VMs"
+   pageTitle="Testing SAP NetWeaver on Azure SUSE Linux VMs | Azure"
+   description="Testing SAP NetWeaver on Azure SUSE Linux VMs"
    services="virtual-machines,virtual-network,storage"
    documentationCenter="saponazure"
    authors="hermanndms"
@@ -13,10 +13,10 @@
 	ms.date="02/12/2016"
 	wacn.date=""/>
 
-# Testing SAP NetWeaver on Windows Azure SUSE Linux VMs
+# Testing SAP NetWeaver on Azure SUSE Linux VMs
 
 
-Here is a list of items to consider when you're testing SAP NetWeaver on Windows Azure SUSE Linux VMs.
+Here is a list of items to consider when you're testing SAP NetWeaver on Azure SUSE Linux VMs.
 There is no official SAP support statement for SAP-Linux-Azure at this point.
 Nevertheless, customers can do some testing, demonstrating, or prototyping as long as they are not dependent
 on official SAP support.
@@ -25,7 +25,7 @@ The following information should help you avoid some potential pitfalls.
 
 
 
-## SUSE images on Windows Azure for testing SAP
+## SUSE images on Azure for testing SAP
 
 For SAP testing on Azure, use only SUSE Linux Enterprise Server (SLES) 11 SP4 and SLES 12. A special SUSE image is in the Azure gallery ("SLES 11 SP3 for SAP CAL"), but this is not intended for general usage. It's reserved for the [SAP Cloud Appliance Library]
 (https://cal.sap.com/) solution. There was no option
@@ -132,11 +132,9 @@ file is created, you can deploy the VM by using the following CLI command as an 
 
    ```
    azure group deployment create "<deployment name>" -g "<resource group name>" --template-file "<../../filename.json>"
-
-   ```
 You can find more details about JSON template files in [this article] (resource-group-authoring-templates.md) and [this webpage] (https://azure.microsoft.com/documentation/templates/).
 
-You can find more details about CLI and Azure Resource Manager in [this article](/documentation/articles/xplat-cli-azure-resource-manager).
+You can find more details about CLI and Azure Resource Manager in [this article] (xplat-cli-azure-r.
 
 ## SAP license and hardware key
 
@@ -163,6 +161,7 @@ if "no_root_squash" is set for the share. This was the solution in an internal t
 ## Logical volumes
 
 Logical Volume Manager (LVM) isn't fully validated on Azure. If you need a big logical volume across multiple Azure
+
 data disks (e.g. for the SAP database), you should use mdadm. [This article](/documentation/articles/virtual-machines-linux-configure-raid) describes how to set up Linux RAID on Azure by using mdadm.
 
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Troubleshoot SSH connection to an Azure VM | Windows Azure"
+	pageTitle="Troubleshoot SSH connection to an Azure VM | Azure"
 	description="Troubleshoot and fix SSH errors like SSH connection failed or SSH connection refused for an Azure virtual machine running Linux."
 	keywords="ssh connection refused,ssh error,azure ssh,SSH connection failed"
 	services="virtual-machines"
@@ -22,7 +22,7 @@ There could be various causes of SSH errors while trying to connect to a Linux-b
 
 This article only applies to Azure virtual machines running Linux. For Azure virtual machines running Windows, see [Troubleshoot Remote Desktop connection to an Azure VM](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections).
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and CSDN forums](/support/forums/). Alternatively, you can file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click **Get support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](/support/forums/). Alternatively, you can file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click **Get support**. For information about using Azure Support, read the [Azure Support FAQ](/support/faq/).
 
 
 ## Fix common SSH errors
@@ -32,6 +32,7 @@ This section lists quick fix steps for common SSH connection issues.
 ### Virtual machines created using classic deployment model
 
 Try these steps to resolve the most common SSH connection failures:
+
 
 1. You can use Azure CLi to reset ssh connection.
 
@@ -56,6 +57,7 @@ Try these steps to resolve the most common SSH connection failures:
 	- Reset the SSH configuration.
 
 5. Check VM's Resource Health for any platform issues.<br>
+
 	Virtual Machines > your Linux virtual machine > **Monitor**
 
 
@@ -143,7 +145,7 @@ If you do not have another VM in the same virtual network, you can easily create
 
 If you can create an SSH connection with a VM in the same virtual network, check:
 
-- The endpoint configuration for SSH traffic on the target VM. The private TCP port of the endpoint should match the TCP port on which the SSH service on the VM is listening (default is 22). verify the SSH TCP port number in the Azure Management Portal with **Virtual Machines** > *VM name* > **Endpoints**.
+- The endpoint configuration for SSH traffic on the target VM. The private TCP port of the endpoint should match the TCP port on which the SSH service on the VM is listening (default is 22). For VMs created in the Resov **verify the SSH TCP port number in the Azure Management Portal with **Browse** > **Virtual machines (v2)** > *VM name* > **Settings** > **Endpoints**.
 - The ACL for the SSH traffic endpoint on the target virtual machine. ACLs allow you to specify allowed or denied incoming traffic from the Internet, based on its source IP address. Misconfigured ACLs can prevent incoming SSH traffic to the endpoint. Check your ACLs to ensure that incoming traffic from public IP addresses of your proxy or other edge server are allowed. For more information, see [About network access control lists (ACLs)](/documentation/articles/virtual-networks-acl).
 
 To eliminate the endpoint as a source of the problem, remove the current endpoint and create a new endpoint and specify the **SSH** name (TCP port 22 for the public and private port number). For more information, see [Set up endpoints on a virtual machine in Azure](/documentation/articles/virtual-machines-set-up-endpoints).

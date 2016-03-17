@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a VM running MySQL | Windows Azure"
+	pageTitle="Create a VM running MySQL | Azure"
 	description="Create an Azure virtual machine created with the classic deployment model running Windows Server 2012 R2, and then install and configure the MySQL database on it."
 	services="virtual-machines"
 	documentationCenter=""
@@ -16,7 +16,7 @@
 
 # Install MySQL on a virtual machine created with the classic deployment model running Windows Server 2012 R2
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 [MySQL](http://www.mysql.com) is a popular open source, SQL database. Using the [Azure Management Portal](http://manage.windowsazure.cn), you can create a virtual machine running Windows Server 2012 R2 from the Image Gallery. You can then install and configure it as a MySQL Server.

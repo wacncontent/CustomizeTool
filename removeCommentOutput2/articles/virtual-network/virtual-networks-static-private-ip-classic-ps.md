@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="How to set a static private IP in classic mode using PowerShell| Windows Azure"
+   pageTitle="How to set a static private IP in classic mode using PowerShell| Azure"
    description="Understanding static private IPs (DIPs) and how to manage them in classic mode and PowerShell"
    services="virtual-network"
    documentationCenter="na"
@@ -18,8 +18,6 @@
 [AZURE.INCLUDE [virtual-networks-static-private-ip-selectors-classic-include](../includes/virtual-networks-static-private-ip-selectors-classic-include.md)]
 
 [AZURE.INCLUDE [virtual-networks-static-private-ip-intro-include](../includes/virtual-networks-static-private-ip-intro-include.md)]
-
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] 
 
 [AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../includes/virtual-networks-static-ip-scenario-include.md)]
 

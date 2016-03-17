@@ -1,5 +1,5 @@
 <properties
- pageTitle="Write data to Power BI from Apache Storm | Windows Azure"
+ pageTitle="Write data to Power BI from Apache Storm | Azure"
  description="Write data to Power BI from a C# topology running on an Apache Storm cluster in HDInsight. Also, create a report and real-time dashboard using Power BI."
  services="hdinsight"
  documentationCenter=""
@@ -46,16 +46,15 @@ The following files in this project implement the Power BI specific functionalit
 * **Data.cs**: Describes the data object/row that will be sent to Power BI
 
 > [AZURE.WARNING] Power BI seems to allow the creation of multiple datasets with the same name. This can occur if the dataset does not exist, and your topology creates multiple instances of the Power BI Bolt. To avoid this, either set the parallelism hint of the bolt to 1 (as this example does,) or create the dataset before deploying the topology.
->
-> The **CreateDataset** console application included in this solution is provided as an example of how to create the dataset outside of the topology.
+
+> <p>The **CreateDataset** console application included in this solution is provided as an example of how to create the dataset outside of the topology.
 
 ## Register a Power BI application
 
-1. Follow the steps in the [Power BI quickstart](https://msdn.microsoft.com/zh-cn/library/mt186546.aspx) to sign up for Power BI.
 
-2. Follow the steps in [Register an app](https://msdn.microsoft.com/zh-cn/library/dn877542.aspx) to create an application registration. This will be used when accessing the Power BI REST API.
+Follow the steps in [Register an app](https://powerbi.microsoft.com/documentation/powerbi-developer-register-a-client-app/) to create an application registration. This will be used when accessing the Power BI REST API.
 
-    > [AZURE.IMPORTANT] Save the **Client ID** for the application registration.
+> [AZURE.IMPORTANT] Save the **Client ID** for the application registration.
 
 ## Download the example
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Release notes for Hadoop components on Azure HDInsight | Windows Azure"
+	pageTitle="Release notes for Hadoop components on Azure HDInsight | Azure"
 	description="Latest release notes and versions of Hadoop components for Azure HDInsight. Get development tips and details for Hadoop, Apache Storm, and HBase."
 	services="hdinsight"
 	documentationCenter=""
@@ -30,7 +30,7 @@ This release contains the following updates.
 
 | Title                                           | Description                                          | Impacted Area (for example, Service, component, or SDK) | Cluster Type (for example, Hadoop, HBase, or Storm) | JIRA (if applicable) |
 |-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
-| Updated HDInsight versions for all HDInsight clusters and HDP versions for HDInsight 3.2 clusters (Windows) | With this release, HDInsight and HDP versions have been updated | Service    | All| N/A
+| Updated HDInsight versions for all HDInsight clusters and HDP versions for HDInsight 3.2 clusters (Windows and Linux) | With this release, HDInsight and HDP versions have been updated | Service    | All| N/A
 
 
 ## Notes for 10/27/2015 release of HDInsight
@@ -47,7 +47,7 @@ This release contains the following updates.
 
 | Title                                           | Description                                          | Impacted Area (for example, Service, component, or SDK) | Cluster Type (for example, Hadoop, HBase, or Storm) | JIRA (if applicable) |
 |-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
-| Updated HDInsight versions for all HDInsight clusters (Windows) | With this release, HDInsight and HDP versions have been updated | Service    | All| N/A
+| Updated HDInsight versions for all HDInsight clusters (Windows and Linux) | With this release, HDInsight and HDP versions have been updated | Service    | All| N/A
 
 
 ## Notes for 10/20/2015 release of HDInsight
@@ -570,8 +570,8 @@ This release contains the following updates.
 </tr>
 
 <tr>
-<td>Upgrade to Azure Storage SDK for Java 2.0</td>
-<td>HDInsight version 3.2 is upgraded to use the latest version of the Azure Storage SDK for Java. This contains several important bug fixes over the current 0.6.0 version.</td>
+A<td>Upgrade to Microsoft Azure Storage SDK for Java 2.0</td>
+A<td>HDInsight version 3.2 is upgraded to use the latest version of the Microsoft Azure Storage SDK for Java. This contains several important bug fixes over the current 0.6.0 version.</td>
 <td>HDP</td>
 <td>All</td>
 <td>N/A</td>
@@ -892,8 +892,8 @@ This release contains the following component update.
 </tr>
 
 <tr>
-<td><a href = "/documentation/articles/hdinsight-hadoop-customize-cluster-v1" target="_blank">Cluster customization General Avalability</a></td>
-<td><p>Customization provides the ability for you to customize your Azure HDInsight clusters with projects that are available from the Apache Hadoop ecosystem. With this new feature, you can experiment and deploy Hadoop projects to Azure HDInsight. This is enabled through the **Script Action** feature, which can modify Hadoop clusters in arbitrary ways by using custom scripts. This customization is available on all types of HDInsight clusters including Hadoop, HBase, and Storm. To demonstrate the power of this capability, we have documented the process to install the popular <a href = "/documentation/articles/hdinsight-hadoop-r-scripts" target="_blank">R</a>, <a href = "/documentation/articles/hdinsight-hadoop-solr-install-v1" target="_blank">Solr</a>, and <a href = "/documentation/articles/hdinsight-hadoop-giraph-install-v1" target="_blank">Giraph</a> modules. This release also adds the capability for customers to specify their custom script action via the Azure Management Portal, provides guidelines and best practices about how to build custom script actions using helper methods, and provides guidelines about how to test the script action. </p></td>
+<td><a href = "hdinsight-hadoop-customizetarget="_blank">Cluster customization General Avalability</a></td>
+<td><p>Customization provides the ability for you to customize your Azure HDInsight clusters with projects that are available from the Apache Hadoop ecosystem. With this new feature, you can experiment and deploy Hadoop projects to Azure HDInsight. This is enabled through the **Script Action** feature, which can modify Hadoop clusters in arbitrary ways by using custom scripts. This customization is available on all types of HDInsight clusters including Hadoop, HBase, and Storm. To demonstrate the power of this capability, we have documented the process to install the popular <a href = "hdinsight-hadoop-spark-instarget="_blank">R</a>, <a href = "hdinsight-hadoop-solr-insttarget="_blank">Solr</a>, and <a href = "hdinsight-hadoop-giraph-intarget="_blank">Giraph</a> modules. This release also adds the capability for customers to specify their custom script action via the Azure Management Portal, provides guidelines and best practices about how to build custom script actions using helper methods, and provides guidelines about how to test the script action. </p></td>
 <td>Feature General Availability</td>
 <td>All</td>
 <td>N/A</td>
@@ -1055,7 +1055,7 @@ Learn how to work with HDInsight by walking through some basic scenarios (such a
 <br>
 
 
-**Note**: To demonstrate the new capabilities made available by cluster customization, the procedures using Script Action to install R modules on a cluster have been documented. For further information, see:
+R**Note**: To demonstrate the new capabilities made available by cluster customization, the procedures using Script Action to install Spark and R modules on a cluster have been documented. For further information, see:
 
 * [Install and use R on HDInsight Hadoop clusters](/documentation/articles/hdinsight-hadoop-r-scripts)
 
@@ -1418,6 +1418,7 @@ Release notes for the Hortonworks Data Platforms (HDPs) that are used by HDInsig
 [nuget-link]: https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.HDInsight/
 
 [webpi-link]: http://go.microsoft.com/?linkid=9811175&clcid=0x409
+
 
 [hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts
  

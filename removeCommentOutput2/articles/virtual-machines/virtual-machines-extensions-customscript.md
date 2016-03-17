@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Custom Script extension on a Windows VM | Windows Azure"
+   pageTitle="Custom Script extension on a Windows VM | Azure"
    description="Automate Azure VM configuration tasks by using the Custom Script extension to run PowerShell scripts on a remote Windows VM"
    services="virtual-machines"
    documentationCenter=""
@@ -20,7 +20,7 @@ This article gives an overview of using the Custom Script extension on Windows V
 Virtual machine (VM) extensions are built by Microsoft and trusted third-party publishers to extend the functionality of the VM. For an overview of VM extensions, see
 [Azure VM extensions and features](/documentation/articles/virtual-machines-extensions-features).
 
-Link:
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
 
 

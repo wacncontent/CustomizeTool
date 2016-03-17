@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use Python with Hive and Pig in HDInsight | Windows Azure"
+	pageTitle="Use Python with Hive and Pig in HDInsight | Azure"
 	description="Learn how to use Python User Defined Functions (UDF) from Hive and Pig in HDInsight, the Hadoop technology stack on Azure."
 	services="hdinsight"
 	documentationCenter=""
@@ -21,10 +21,10 @@ Hive and Pig are great for working with data in HDInsight, but sometimes you nee
 
 ##Requirements
 
+
 * An HDInsight cluster (Windows-based)
 
 * A text editor
- 
 ##<a name="python"></a>Python on HDInsight
 
 Python2.7 is installed by default on HDInsight 3.0 and later clusters. Hive can be used with this version of Python for stream processing (data is passed between Hive and Python using STDOUT/STDIN).
@@ -144,6 +144,7 @@ When the data is returned to Pig, it will have a consistent schema as defined in
 
 ##<a name="running"></a>Running the examples
 
+
 If you are using a Windows-based HDInsight cluster and a Windows client, use the **PowerShell** steps.
 
 ####Hive
@@ -199,6 +200,7 @@ These steps use Azure PowerShell. If this is not already installed and configure
 		$pathToStreamingFile = "C:\path\to\streaming.py"
 		$pathToJythonFile = "C:\path\to\jython.py"
 
+
 		$hdiStore = get-azurehdinsightcluster -name $clusterName
 		$storageAccountName = $hdiStore.DefaultStorageAccount.StorageAccountName.Split(".",2)[0]
 		$storageAccountKey = $hdiStore.defaultstorageaccount.storageaccountkey
@@ -225,14 +227,18 @@ After uploading the files, use the following PowerShell scripts to start the job
 	             "FROM hivesampletable " +
 	             "ORDER BY clientid LIMIT 50;"
 
+
 	$jobDefinition = New-AzureHDInsightHiveJobDefinition -Query $HiveQuery -StatusFolder '/hivepython'
 
 	$job = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $jobDefinition
 	Write-Host "Wait for the Hive job to complete ..." -ForegroundColor Green
+
 	Wait-AzureHDInsightJob -Job $job
     # Uncomment the following to see stderr output
+
     # Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
 	Write-Host "Display the standard output ..." -ForegroundColor Green
+
 	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardOutput
 
 The output for the **Hive** job should appear similar to the following:
@@ -253,14 +259,18 @@ The output for the **Hive** job should appear similar to the following:
 	            "DETAILS = foreach LOG generate myfuncs.create_structure(LINE);" +
 	            "DUMP DETAILS;"
 
+
 	$jobDefinition = New-AzureHDInsightPigJobDefinition -Query $PigQuery -StatusFolder '/pigpython'
 
 	$job = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $jobDefinition
 	Write-Host "Wait for the Pig job to complete ..." -ForegroundColor Green
+
 	Wait-AzureHDInsightJob -Job $job
     # Uncomment the following to see stderr output
+
     # Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
 	Write-Host "Display the standard output ..." -ForegroundColor Green
+
 	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardOutput
 
 The output for the **Pig** job should appear similar to the following:
@@ -290,6 +300,7 @@ If you are using an editor that cannot create LF line endings, or are unsure wha
 ###PowerShell scripts
 
 Both of the example PowerShell scripts used to run the examples contain a commented line that will display error output for the job. If you are not seeing the expected output for the job, uncomment the following line and see if the error information indicates a problem.
+
 
 	# Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
 

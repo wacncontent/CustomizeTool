@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Log on to a VM | Windows Azure"
+	pageTitle="Log on to a VM | Azure"
 	description="Use the Azure Management Portal to log on to a Windows virtual machine created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -22,7 +22,7 @@ In the Azure Management Portal, you use the **Connect** button to start a Remote
 
 Do you want to connect to a Linux VM? See [How to log on to a virtual machine running Linux](/documentation/articles/virtual-machines-linux-how-to-log-on).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 ## Connect to the virtual machine
 

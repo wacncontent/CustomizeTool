@@ -1,5 +1,5 @@
 <properties
-pageTitle="Considerations for using Oracle VM images | Windows Azure"
+pageTitle="Considerations for using Oracle VM images | Azure"
 description="Learn about supported configurations and limitations for an Oracle VM on Windows Server in Azure before you deploy."
 services="virtual-machines"
 documentationCenter=""
@@ -18,7 +18,8 @@ tags="azure-service-management"/>
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
-This article covers considerations for Oracle virtual machines in Azure, which are based on Oracle software images provided by Microsoft, with Windows Server as the operating system.  
+
+This article covers considerations for Oracle virtual machines in Azure, which are based on Oracle software images uploaded by user, with Windows Server as the operating system. You can also create VHD locally and upload it to Azure for the virtual machine creation.
 
 -  Oracle Database virtual machine images
 -  Oracle WebLogic Server virtual machine images
@@ -101,6 +102,3 @@ For related information, see KB article **860340.1** at <http://support.oracle.c
 	Note that the JDK available in this JDK 6 and 7 images, and the virtual machines and images derived from them, can only be used within Azure.
 
 -  **64-bit JDK.** The Oracle WebLogic Server virtual machine images and the Oracle JDK virtual machine images provided by Azure contain the 64-bit versions of both Windows Server and the JDK.
-
-##Additional resources
-[Oracle virtual machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)

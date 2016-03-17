@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Performance considerations for Azure Traffic Manager | Windows Azure"
+   pageTitle="Performance considerations for Azure Traffic Manager | Azure"
    description="Understand performance on Traffic Manager and how to test performance of your website when using Traffic Manager"
    services="traffic-manager"
    documentationCenter=""

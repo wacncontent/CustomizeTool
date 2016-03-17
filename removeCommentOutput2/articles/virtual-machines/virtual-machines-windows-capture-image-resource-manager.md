@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Capture a Windows VM in Resource Manager | Windows Azure"
+	pageTitle="Capture a Windows VM in Resource Manager | Azure"
 	description="Learn how to capture an image of a Windows-based Azure virtual machine (VM) created with the Azure Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter=""

@@ -45,4 +45,4 @@ To move a role instance, edit the CSCFG file. In the example below, we are movin
 	            <Subnets><Subnet name="Subnet-2" /></Subnets>
 	       </InstanceAddress>
 	    </AddressAssignments>
-	</NetworkConfiguration> 
+	</NetworkConfiguration>

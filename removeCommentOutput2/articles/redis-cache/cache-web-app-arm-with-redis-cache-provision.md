@@ -12,20 +12,20 @@
 	ms.date="12/16/2015"
 	wacn.date=""/>
 
-# Create a web site plus Redis Cache using a template
+# Create a Web App plus Redis Cache using a template
 
-In this topic, you will learn how to create an Azure Resource Manager template that deploys an Azure web site with Redis cache. You will learn how to define which resources are deployed and
+In this topic, you will learn how to create an Azure Resource Manager template that deploys an Azure Web App with Redis cache. You will learn how to define which resources are deployed and 
 how to define parameters that are specified when the deployment is executed. You can use this template for your own deployments, or customize it to meet your requirements.
 
 For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
 
-For the complete template, see [web site with Redis Cache template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-with-redis-cache/azuredeploy.json).
+For the complete template, see [Web App with Redis Cache template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-with-redis-cache/azuredeploy.json).
 
 ## What you will deploy
 
 In this template, you will deploy:
 
-- Azure web site
+- Azure Web App
 - Azure Redis Cache.
 
 
@@ -43,9 +43,9 @@ In this template, you will deploy:
 
 ### Redis Cache
 
-Creates the Azure Redis Cache that is used with the web site. The name of the cache is specified in the **redisCacheName** parameter.
+Creates the Azure Redis Cache that is used with the web app. The name of the cache is specified in the **redisCacheName** parameter.
 
-The template creates the cache in the same location as the web site, which is recommended for best performance.
+The template creates the cache in the same location as the web app, which is recommended for best performance. 
 
     {
       "apiVersion": "2014-04-01-preview",
@@ -63,11 +63,11 @@ The template creates the cache in the same location as the web site, which is re
       }
     }
 
-### web site
+### Web app
 
-Creates the web site with name specified in the **siteName** parameter.
+Creates the web app with name specified in the **siteName** parameter.
 
-Notice that the web site is configured with app setting properties that enable it to work with the Redis Cache. This app settings are dynamically created based on values provided during deployment.
+Notice that the web app is configured with app setting properties that enable it to work with the Redis Cache. This app settings are dynamically created based on values provided during deployment.
         
     {
       "apiVersion": "2015-04-01",

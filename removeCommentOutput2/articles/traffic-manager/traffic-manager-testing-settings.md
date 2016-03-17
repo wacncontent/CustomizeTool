@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Testing Traffic Manager Settings | Windows Azure"
+   pageTitle="Testing Traffic Manager Settings | Azure"
    description="This article will help you test Traffic Manager settings"
    services="traffic-manager"
    documentationCenter=""
@@ -68,4 +68,3 @@ There are free web-based DNS lookup and dig services available. Some of these gi
 
 
 
- 

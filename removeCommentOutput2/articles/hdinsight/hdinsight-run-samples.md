@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Run the Hadoop samples in HDInsight | Windows Azure"
+	pageTitle="Run the Hadoop samples in HDInsight | Azure"
 	description="Get started using the Azure HDInsight service with the samples provided. Use PowerShell scripts that run MapReduce programs on data clusters."
 	services="hdinsight"
 	documentationCenter=""
@@ -60,9 +60,11 @@ For the procedure of developing a Java MapReduce program, see - [Develop Java Ma
 		$subscriptionName = "<Azure Subscription Name>"
 		$clusterName = "<HDInsight cluster name>"             # HDInsight cluster name
 		
+
 		Select-AzureSubscription $subscriptionName
 		
 		# Define the MapReduce job
+
 		$mrJobDefinition = New-AzureHDInsightMapReduceJobDefinition `
 									-JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" `
 									-ClassName "wordcount" `
@@ -70,26 +72,32 @@ For the procedure of developing a Java MapReduce program, see - [Develop Java Ma
 		
 		# Submit the job and wait for job completion
 		$cred = Get-Credential -Message "Enter the HDInsight cluster HTTP user credential:" 
+
 		$mrJob = Start-AzureHDInsightJob `
 							-Cluster $clusterName `
 							-Credential $cred `
 							-JobDefinition $mrJobDefinition 
 		
+
 		Wait-AzureHDInsightJob `
 			-Cluster $clusterName `
 			-Credential $cred `
 			-JobId $mrJob.JobId 
 		
 		# Get the job output
+
 		$cluster = Get-AzureHDInsightCluster -Name $clusterName
 		$defaultStorageAccount = $cluster.DefaultStorageAccount -replace '.blob.core.chinacloudapi.cn'
+
 		$defaultStorageAccountKey = Get-AzureStorageKey -StorageAccountName $defaultStorageAccount |  %{ $_.Primary }
 		$defaultStorageContainer = $cluster.DefaultStorageContainer
 		
+
 		Get-AzureHDInsightJobOutput `
 			-Cluster $clusterName `
 			-Credential $cred `
 			-JobId $mrJob.JobId `
+
 			-StandardError
 
 		# Download the job output to the workstation
@@ -123,6 +131,7 @@ For more information about the Hadoop Streaming interface, see [Hadoop Streaming
 
 - Follow the procdure in [Word count - Java](#word-count-java), and replace the job definition with the following:
 
+
 		$mrJobDefinition = New-AzureHDInsightStreamingMapReduceJobDefinition `
 									-Files <a collection of files> `
 									-Mapper "cat.exe" `
@@ -144,6 +153,7 @@ The script provided for this sample submits a Hadoop jar job and is set up to ru
 **To submit a pi estimator job**
 
 - Follow the procdure in [Word count - Java](#word-count-java), and replace the job definition with the following:
+
 
 		$mrJobJobDefinition = New-AzureHDInsightMapReduceJobDefinition `
 									-JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" `
@@ -172,16 +182,19 @@ Three tasks are required by the sample, each corresponding to one of the MapRedu
 
 - Follow the procdure in [Word count - Java](#word-count-java), and use the following job definitions:
 
+
 	$teragen = New-AzureHDInsightMapReduceJobDefinition `
 								-JarFile "/example/jars/hadoop-mapreduce-examples.jar" `
 								-ClassName "teragen" `
 								-Arguments "-Dmapred.map.tasks=50", "100000000", "/example/data/10GB-sort-input"
 	
+
 	$terasort = New-AzureHDInsightMapReduceJobDefinition `
 								-JarFile "/example/jars/hadoop-mapreduce-examples.jar" `
 								-ClassName "terasort" `
 								-Arguments "-Dmapred.map.tasks=50", "-Dmapred.reduce.tasks=25", "/example/data/10GB-sort-input", "/example/data/10GB-sort-output"
 	
+
 	$teravalidate = New-AzureHDInsightMapReduceJobDefinition `
 								-JarFile "/example/jars/hadoop-mapreduce-examples.jar" `
 								-ClassName "teravalidate" `
@@ -980,6 +993,7 @@ The code for the TeraSort MapReduce program is presented for inspection in this 
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples
+
 [hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
 [hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming
 [hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator

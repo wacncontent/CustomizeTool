@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Install the LAMP stack on a Linux virtual machine | Windows Azure"
+	pageTitle="Install the LAMP stack on a Linux virtual machine | Azure"
 	description="Learn how to install the LAMP stack on a Linux virtual machine (VM) in Azure."
 	services="virtual-machines"
 	documentationCenter=""
@@ -33,9 +33,10 @@ A LAMP stack consists of the following different elements:
 You will need the following packages installed:
 
 - `apache2`
-- `mysql-server`
-- `php5`
-- `php5-mysql`
+
+- **mysql-server**
+- **php5**
+- **php5-mysql**
 
 After running `apt-get update` to update the local list of packages, you can then install these packages with a single `apt-get install` command:
 
@@ -54,10 +55,11 @@ This will install the minimum required PHP extensions needed to use PHP with MyS
 You will need the following packages installed:
 
 - `httpd`
-- `mysql`
-- `mysql-server`
-- `php`
-- `php-mysql`
+
+- **mysql**
+- **mysql-server**
+- **php**
+- **php-mysql**
 
 You can install these packages with a single `yum install` command:
 
@@ -113,7 +115,8 @@ Setting Up
 
 			# mysqladmin -u root -p password yourpassword
 
-	- You can then manage MySQL using the `mysql` or `mysqladmin` utilities.
+
+	- You can then manage MySQL using the **mysql** or **mysqladmin** utilities.
 
 
 ##Further Reading
@@ -123,4 +126,3 @@ Suppose you want to automate these steps to deploy applications to remote Linux 
 There are many other resources for setting up a LAMP stack on Ubuntu.
 
 - [https://help.ubuntu.com/community/ApacheMySQLPHP](https://help.ubuntu.com/community/ApacheMySQLPHP)
- 

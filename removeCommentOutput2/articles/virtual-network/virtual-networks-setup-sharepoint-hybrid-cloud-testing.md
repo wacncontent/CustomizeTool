@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SharePoint 2013 farm test environment | Windows Azure" 
+	pageTitle="SharePoint 2013 farm test environment | Azure" 
 	description="Learn how to create a two-tier SharePoint Server 2013 intranet farm in a hybrid cloud environment for development or IT pro testing." 
 	services="virtual-network" 
 	documentationCenter="" 
@@ -15,17 +15,17 @@
 
 # Set up a SharePoint intranet farm in a hybrid cloud for testing
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
-This topic steps you through creating a hybrid cloud environment for testing an intranet SharePoint farm hosted in Windows Azure. Here is the resulting configuration.
+This topic steps you through creating a hybrid cloud environment for testing an intranet SharePoint farm hosted in Azure. Here is the resulting configuration.
 
 ![](./media/virtual-networks-setup-sharepoint-hybrid-cloud-testing/CreateSPFarmHybridCloud_3.png)
  
 This configuration simulates a SharePoint in Azure production environment from your location on the Internet. It consists of:
 
 - A simplified on-premises network (the Corpnet subnet).
-- A cross-premises virtual network hosted in Windows Azure (TestVNET).
+- A cross-premises virtual network hosted in Azure (TestVNET).
 - A site-to-site VPN connection.
 - A two-tier SharePoint farm and secondary domain controller in the TestVNET virtual network.
 
@@ -40,7 +40,7 @@ There are three major phases to setting up this hybrid cloud test environment:
 2.	Configure the SQL server computer (SQL1).
 3.	Configure the SharePoint server (SP1).
 
-If you do not already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). 
+If you do not already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscri
 
 ## Phase 1: Set up the hybrid cloud environment
 

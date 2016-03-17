@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   pageTitle="Create a virtual network using an ARM template | Windows Azure"
+   pageTitle="Create a virtual network using an ARM template | Azure"
    description="Learn how to create a virtual network using an ARM template | Resource Manager."
    services="virtual-network"
    documentationCenter=""

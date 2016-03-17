@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Troubleshooting resource group deployments | Windows Azure"
+   pageTitle="Troubleshooting resource group deployments | Azure"
    description="Describes common problems deploying resources created using Resource Manager deployment model, and shows how to detect and fix these issues."
    services="azure-resource-manager,virtual-machines"
    documentationCenter=""
@@ -205,6 +205,7 @@ For versions of PowerShell prior to 1.0, you can see the full list of resources 
 
     Name                                    Locations                               LocationsString
     ----                                    ---------                               ---------------
+
     ResourceGroup                           {China East, china North}				{China East, china North}
     Microsoft.AppService/apiapps            {China East, china North}				{China East, china North}
     ...
@@ -224,6 +225,7 @@ For Azure CLI, you can use **azure location list**. Because the list of location
     azure location list --json | jq '.[] | select(.name == "Microsoft.Compute/virtualMachines")'
     {
       "name": "Microsoft.Compute/virtualMachines",
+
       "location": "China East,China North"
     }
 
@@ -302,6 +304,7 @@ For Powershell 1.0, use **Get-AzureRmResourceProvider**.
 
     PS C:\> Get-AzureRmResourceProvider -ListAvailable
 
+
 	ProviderNamespace         RegistrationState ResourceTypes                                                                               Locations
 	-----------------         ----------------- -------------                                                                               ---------
 	microsoft.backup          Registering       {BackupVault}                                                                               {China East, China North}
@@ -319,6 +322,7 @@ To see whether the provider is registered for use using the Azure CLI, use the `
         info:    Executing command provider list
         + Getting ARM registered providers
         data:    Namespace                        Registered
+
 		data:    -------------------------  -----------
 		data:    microsoft.backup           Registering
 		data:    Microsoft.Batch            Registered
@@ -329,7 +333,7 @@ To see whether the provider is registered for use using the Azure CLI, use the `
 		data:    Microsoft.Insights         Registered
 		data:    Microsoft.KeyVault         Registered
 		data:    Microsoft.SiteRecovery     Registered
-        data:    Microsoft.Sql               Registered
+        data:    Microsoft.Sql                Registered
 		data:    Microsoft.StreamAnalytics  Registered
 		data:    Microsoft.Web              Registered
 		data:    Microsoft.Authorization    Registered
@@ -377,7 +381,8 @@ Note however, that this does not necessarily mean that your resource group is "a
 
 You can prevent Azure from reporting deployment success, however, by creating a custom script for your custom template -- using the [CustomScriptExtension](https://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/) for example -- that knows how to monitor the entire deployment for system-wide readiness and returns successfully only when users can interact with the entire deployment. If you want to ensure that your extension is the last to run, use the **dependsOn** property in your template. An example can be seen when [creating template deployments](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx).
 
-## Useful tools to interact with Azure
+
+##<a name="useful-tools-to-interact-with-azure"></a> Useful tools to interact with Azure
 When you work with your Azure resources from the command-line, you will collect tools that help you do your work. Azure resource group templates are JSON documents, and the Azure Resource Manager API accepts and returns JSON, so JSON parsing tools are some of the first things you will use to help you navigate information about your resources and to design or interact with templates and template parameter files.
 
 ### Mac, Linux, and Windows tools

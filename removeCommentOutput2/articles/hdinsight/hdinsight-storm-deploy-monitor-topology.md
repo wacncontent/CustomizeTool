@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Deploy and manage Apache Storm topologies on HDInsight | Windows Azure"
+   pageTitle="Deploy and manage Apache Storm topologies on HDInsight | Azure"
    description="Learn how to deploy, monitor and manage Apache Storm topologies using the Storm Dashboard on HDInsight. Use Hadoop tools for Visual Studio."
    services="hdinsight"
    documentationCenter=""

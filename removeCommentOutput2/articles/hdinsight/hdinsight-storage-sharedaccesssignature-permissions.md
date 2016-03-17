@@ -28,6 +28,7 @@ Shared Access Signatures (SAS) are a feature of Azure storage accounts that allo
     
     * Python must be version 2.7 or higher
 
+
 * [Azure PowerShell][powershell] - you can use Azure PowerShell to create a new cluster and add a Shared Access Signature during cluster creation.
 
 * The example files from [https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature](https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature). This repository has the following:
@@ -114,7 +115,7 @@ When creating an HDInsight cluster, you must specify a primary storage account a
 
 In order to use a Shared Access Signature to limit access to a container, you must add a custom entry to the __core-site__ configuration for the cluster.
 
-* For __Windows-based__ HDInsight clusters, you can do this during cluster creation using PowerShell.
+H* For __Windows-based__ or __Linux-based__ HDInsight clusters, you can do this during cluster creation using PowerShell.
 
 ###Create a new cluster that uses the SAS
 
@@ -124,6 +125,7 @@ An example of creating an HDInsight cluster that uses the SAS is included in the
 
         # Replace 'mycluster' with the name of the cluster to be created
         $clusterName = 'mycluster'
+
         # Valid value is 'Windows'
         $osType = 'Windows'
         # Replace with the Azure data center you want to the cluster to live in
@@ -147,17 +149,19 @@ An example of creating an HDInsight cluster that uses the SAS is included in the
 
 2. From the prompt, use the following to authenticate to your Azure subscription:
 
+
         Add-AzureAccount -Environment AzureChinaCloud
     
     When prompted, login with the account for your Azure subscription.
     
-    If your login is associated with multiple Azure subscriptions, you may need to use `Select-AzureSubscription` to select the subscription you wish to use.
+    If your login is associated with multiple Azure subscriptions, you may need to use Select-AzureRmSubscription` to select the subscription you wish to use.
 
 2. From the prompt, change directories to the `CreateCluster` directory that contains the HDInsightSAS.ps1 file. Then use the following to run the script
         
         .\HDInsightSAS.ps1
     
-    As the script runs, it will log output to the PowerShell prompt as it creates storage accounts. It will then prompt you to enter the HTTP user for the HDInsight cluster. This is the user account used to secure HTTP/s access to the cluster.
+    sAs the script runs, it will log output to the PowerShell prompt as it creates the resource group and storage accounts. It will then prompt you to enter the HTTP user for the HDInsight cluster. This is the user account used to secure HTTP/s access to the cluster.
+
 
     > [AZURE.IMPORTANT] When prompted for the HTTP/s user name and password, you must provide a password that meets the following criteria:
     >
@@ -217,14 +221,16 @@ Once connected to the cluster, use the following steps to verify that you can on
 
 __Symptoms__: When creating a cluster using the PowerShell script, you may receive the following error message:
 
+
     New-AzureHDInsightCluster : A task was canceled.
     At C:\Users\larryfr\Documents\GitHub\hdinsight-azure-storage-sas\CreateCluster\HDInsightSAS.ps1:62 char:5
+
     +     New-AzureHDInsightCluster `
     +     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        + CategoryInfo          : NotSpecified: (:) [New-AzureHDInsightCluster], CloudException
+        + CategoryInfo          : NotSpecified: (:) [New-AzureRmHDInsightCluste, CloudException
         + FullyQualifiedErrorId : Hyak.Common.CloudException,Microsoft.Azure.Commands.HDInsight.NewAzureHDInsightClusterCommand
 
-__Cause__: This error can occur if you use a password for the admin/HTTP user for the cluster.
+__Cause__: This error can occur if you use a password for the admin/HTTP user for the cluster, or (for Linux-based cluste..
 
 __Resolution__: Use a password that meets the following criteria:
 

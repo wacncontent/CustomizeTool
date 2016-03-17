@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Simulated hybrid cloud test environment | Windows Azure" 
+	pageTitle="Simulated hybrid cloud test environment | Azure" 
 	description="Create a simulated hybrid cloud environment for IT pro or development testing, using two Azure virtual networks and a VNet-to-VNet connection." 
 	services="virtual-network" 
 	documentationCenter="" 
@@ -17,7 +19,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing).
 
-This article steps you through creating a simulated hybrid cloud environment with Windows Azure for testing using two separate Azure virtual networks. Use this configuration as an alternative to 
+This article steps you through creating a simulated hybrid cloud environment with Azure for testing using two separate Azure virtual networks. Use this configuration as an alternative to 
 [Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing) when you do not have a direct Internet connection and an available public IP address. Here is the resulting configuration.
 
 ![](./media/virtual-machines-setup-simulated-hybrid-cloud-environment-testing/CreateSimHybridCloud_4.png)

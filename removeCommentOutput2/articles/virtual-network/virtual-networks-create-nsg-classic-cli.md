@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="How to create NSGs in classic mode using the Azure CLI| Windows Azure"
+   pageTitle="How to create NSGs in classic mode using the Azure CLI| Azure"
    description="Learn how to create and deploy NSGs in classic mode using the Azure CLI"
    services="virtual-network"
    documentationCenter="na"
@@ -18,8 +18,6 @@
 [AZURE.INCLUDE [virtual-networks-create-nsg-selectors-classic-include](../includes/virtual-networks-create-nsg-selectors-classic-include.md)]
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../includes/virtual-networks-create-nsg-intro-include.md)]
-
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] 
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../includes/virtual-networks-create-nsg-scenario-include.md)]
 

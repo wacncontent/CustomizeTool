@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Python components in a Storm topology on HDinsight | Windows Azure"
+   pageTitle="Use Python components in a Storm topology on HDinsight | Azure"
    description="Learn how you can use Python components from with Apache Storm on Azure HDInsight. You will learn how to use Python components from both a Java based, and Clojure based Storm topology."
    services="hdinsight"
    documentationCenter=""
@@ -72,8 +72,8 @@ The actual Python files are stored in the `/multilang/resources` directory in th
 This includes all the files in the `/multilang` folder in the jar that will be built from this project.
 
 > [AZURE.IMPORTANT] Note that this only specifies the `/multilang` directory and not `/multilang/resources`. Storm expects non-JVM resources in a `resources` directory, so it is looked for internally already. Placing components in this folder allows you to just reference by name in the Java code. For example, `super("python", "countbolt.py");`. Another way to think of it is that Storm sees the `resources` directory as the root (/) when accessing multi-lang resources.
->
-> For this example project, the `storm.py` module is included in the `/multilang/resources` directory.
+
+> <p>For this example project, the `storm.py` module is included in the `/multilang/resources` directory.
 
 ###Build and run the project
 
@@ -103,7 +103,7 @@ To deploy the project to an HDInsight cluster running Apache Storm, use the foll
 
         Finally, select __Submit__ to start the topology.
 
-> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line or by using the Storm UI, select the topology, and then select the __Kill__ button.
+> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line (SSH session to a Linux cluo or by using the Storm UI, select the topology, and then select the __Kill__ button.
 
 ##Python components with a Clojure topology
 
@@ -145,7 +145,7 @@ __To build an uberjar and deploy to HDInsight__, use the following steps:
 
             Finally, select __Submit__ to start the topology.
 
-> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line or by using the Storm UI, select the topology, and then select the __Kill__ button.
+> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line (SSH session to a Linux cluo or by using the Storm UI, select the topology, and then select the __Kill__ button.
 
 ##Next steps
 

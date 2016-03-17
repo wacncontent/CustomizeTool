@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Base Configuration Test Environment"
-	description="Learn how to create a simple dev/test environment that simulates a simplified intranet in Windows Azure."
+	description="Learn how to create a simple dev/test environment that simulates a simplified intranet in Azure."
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -15,7 +15,7 @@
 
 # Base Configuration test environment
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-base-configuration-test-environment-resource-manager).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 This article provides you with step-by-step instructions to create the Base Configuration test environment in an Azure Virtual Network.
 
@@ -47,9 +47,10 @@ There are four phases to setting up the Corpnet subnet of the Windows Server 201
 3.	Configure APP1.
 4.	Configure CLIENT1.
 
-If you do not already have an Azure account, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Platforms subscription, see [Azure benefit for MSDN Platform subscribers](https://azure.microsoft.com/offers/ms-azr-0062p/).
 
-> [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN Platforms subscription, or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Pricing Calculator](/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
+If you do not already have an Azure account, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/).
+
+> [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Pricing Calculator](/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
 
 ## Phase 1: Create the virtual network
 
@@ -98,7 +99,7 @@ If this command returns "False", your proposed name is unique. Then, create the 
 
 	$stAccount="<your storage account name>"
 	New-AzureStorageAccount -StorageAccountName $stAccount -Location $loc
-	Set-AzureSubscription -SubscriptionName $subscr -CurrentStorageAccountName $stAccount
+	Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $subscr -CurrentStorageAccountName $stAccount
 
 This is your current configuration.
 

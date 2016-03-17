@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Create a VM with a template | Windows Azure"
+	pageTitle="Create a VM with a template | Azure"
 	description="Use a Resource Manager template to easily create a new Windows virtual machine with PowerShell."
 	services="virtual-machines"
 	documentationCenter=""
@@ -19,7 +19,9 @@
 
 > [AZURE.SELECTOR]
 - [Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
-- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
+- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
+- [PowerShell - Template](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template)
+- [Portal - Linux](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
 - [CLI](/documentation/articles/virtual-machines-linux-tutorial)
 
 <br>

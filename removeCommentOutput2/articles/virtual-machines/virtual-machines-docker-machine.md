@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use docker-machine with Azure | Windows Azure"
+   pageTitle="Use docker-machine with Azure | Azure"
    description="Shows how to get up and running on Azure with Docker Machine on Ubuntu, using the classic deployment model."
    services="virtual-machines"
    documentationCenter="virtual-machines"
@@ -197,7 +197,7 @@ Open your favorite browser and have a look.
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
-Go to the [Docker user guide](https://docs.docker.com/userguide/) and create some applications on Windows Azure. Or, go play with [Docker Swarm on Azure] and see how [swarm](https://github.com/docker/swarm) can be used with docker and Azure.
+Go to the [Docker user guide](https://docs.docker.com/userguide/) and create some applications on Azure. Or, go play with [Docker Swarm on Azure] and see how [swarm](https://github.com/docker/swarm) can be used with docker and Azure.
 
 <!--Image references-->
 [nginx]: ./media/virtual-machines-docker-machine/nginxondocker.png

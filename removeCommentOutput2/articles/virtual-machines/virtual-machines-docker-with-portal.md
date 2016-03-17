@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Using Docker VM Extension for Linux | Windows Azure"
+	pageTitle="Using Docker VM Extension for Linux | Azure"
 	description="Describes Docker and the Azure Virtual Machines extensions, and how to create Azure Virtual Machines that are docker hosts using the Azure CLI in classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -139,8 +139,8 @@ You are ready to go to the [Docker User Guide] and use your Docker VM. If you wa
 
 <!--Link references-->
 [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]: /documentation/articles/virtual-machines-docker-with-xplat-cli/
-[Azure Linux Agent]: virtual-machines-linux-agent-user-guide.md
-[Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
+[Azure Linux Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide
+[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
 
 [Running Docker with https]: http://docs.docker.com/articles/https/
 [Docker User Guide]: https://docs.docker.com/userguide/

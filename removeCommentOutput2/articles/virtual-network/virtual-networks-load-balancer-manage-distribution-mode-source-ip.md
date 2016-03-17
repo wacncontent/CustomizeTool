@@ -27,7 +27,6 @@ Source IP affinity solves a previous [incompatibility between the Azure Load Bal
 Source IP Affinity can be configured for:
 
 * [Virtual machine endpoints](/documentation/articles/virtual-machines-set-up-endpoints)
-* [Load-balanced endpoint sets](/documentation/articles/load-balancer-overview)
 * [Web roles](http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
 * [Worker roles](http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
 
@@ -52,7 +51,7 @@ Please download [the latest Azure PowerShell release](https://github.com/Azure/a
 
     Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 -LoadBalancerDistribution "sourceIP"| Update-AzureVM  
 
-    Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 â€"LoadBalancerDistribution â€œsourceIPâ€�| Update-AzureVM
+    Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 -LoadBalancerDistribution "sourceIP"| Update-AzureVM  
 
 LoadBalancerDistribution can be set to sourceIP for 2-tuple (source IP, Destination IP) load balancing, sourceIPProtocol for 3-tuple (source IP, Destination IP, protocol) load balancing, or none if you want the default behavior (5-tuple load balancing).  
 

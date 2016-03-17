@@ -1,5 +1,3 @@
-<!-- to be customized -->
-
 <properties 
    pageTitle="What is a Network Security Group (NSG)"
    description="Learn about Network Security Groups (NSG)"
@@ -24,7 +22,6 @@ NSGs contain the following properties.
 |Property|Description|Constraints|Considerations|
 |---|---|---|---|
 |Name|Name for the NSG|Must be unique within the region<br/>Can contain letters, numbers, underscores, periods and hyphens<br/>Must start with a letter or number<br/>Must end with a letter, number, or underscore<br/>Can have up to 80 characters|Since you may need to create several NSGs, make sure you have a naming convention that makes it easy to identify the function of your NSGs|
-|Region|Azure region where the NSG is hosted|NSGs can only be applied to resources within the region it is created|See [limits](#Limits) below to understand how many NSGs you can have in a region|
 |Rules|Rules that define what traffic is allowed, or denied||See [NSG rules](#Nsg-rules) below| 
 
 >[AZURE.NOTE] Endpoint-based ACLs and network security groups are not supported on the same VM instance. If you want to use an NSG and have an endpoint ACL already in place, first remove the endpoint ACL. For information about how to do this, see [Managing Access Control Lists (ACLs) for Endpoints by using PowerShell](/documentation/articles/virtual-networks-acl-powershell).
@@ -85,7 +82,7 @@ As illustrated by the default rules below, traffic originating and ending in a V
 
 ## Associating NSGs
 
-You can associate an NSG to VMs, and subnets, depending on the deployment model you are using.
+, You can associate an NSG to VMs, NICs, and subnets, depending on the deployment model you are using.
 
 [AZURE.INCLUDE [learn-about-deployment-models-both-include.md](../includes/learn-about-deployment-models-both-include.md)]
  
@@ -93,29 +90,28 @@ You can associate an NSG to VMs, and subnets, depending on the deployment model 
 
 - **Associating an NSG to a subnet (all deployments)**. When you associate an NSG to a subnet, the network access rules in the NSG are applied to all the IaaS and PaaS resources in the subnet. 
 
-You can associate different NSGs to a VM and the subnet that a VM is bound to. When that happens, all network access rules are applied to the traffic in the following order:
+You can associate different NSGs to a VM (or NIC, depending on the da Vand the subnet that a NIC or VM is bound to. When that happens, all network access rules are applied to the traffic in the following order:
 
 - **Inbound traffic**
 	1. NSG applied to subnet.
-	2. NSG applied to VM (classic).
+	V2. NSG applied to NIC (Resource Manager) or VM (classic).
 - **Outbound traffic**
-	1. NSG applied to VM (classic).
+	V1. NSG applied to NIC (Resource Manager) or VM (classic).
 	2. NSG applied to subnet.
 
 ![NSG ACLs](./media/virtual-network-nsg-overview/figure2.png)
 
->[AZURE.NOTE] Although you can only associate a single NSG to a subnet, VM; you can associate the same NSG to as many resources as you want.
+; >[AZURE.NOTE] Although you can only associate a single NSG to a subnet, VM, or NIC; you can associate the same NSG to as many resources as you want.
 
 ## Implementation
-You can implement NSGs in the classic or Resource Manager deployment models using the different tools listed below.
+You can implement NSGs in the classic or Resource Manager deploymu using the different tools listed below.
 
-|Deployment tool|Classic|Resource Manager|
+|Deployment tool|Classic|Resource Manag
 |---|---|---|
-|Management Portal|![No][red]|![No][red]|
-|Azure Management Portal|![No][red]|<a href="/documentation/articles/virtual-networks-create-nsg-arm-pportal">![Yes][green]</a>|
-|PowerShell|<a href="/documentation/articles/virtual-networks-create-nsg-classic-ps">![Yes][green]</a>|<a href="/documentation/articles/virtual-networks-create-nsg-arm-ps">![Yes][green]</a>|
-|Azure CLI|<a href="/documentation/articles/virtual-networks-create-nsg-classic-cli">![Yes][green]</a>|<a href="/documentation/articles/virtual-networks-create-nsg-arm-cli">![Yes][green]</a>|
-|ARM template|![No][red]|<a href="/documentation/articles/virtual-networks-create-nsg-arm-template">![Yes][green]</a>|
+|Management Portal|![No][red![No][red]|
+
+|PowerShell|<a href="/documentation/articles/virtual-networks-create-nsg-classic-ps">![Yes][green]</a>|
+|Azure CLI|<a href="/documentation/articles/virtual-networks-create-nsg-classic-cli">![Yes][green]</a>|
 
 |**Key**|![Yes][green] Supported. Click for article.|![No][red] Not Supported.|
 |---|---|---|
@@ -124,7 +120,7 @@ You can implement NSGs in the classic or Resource Manager deployment models usin
 
 Before implementing NSGs, you need to answer the questions below:	
 
-1. What types of resources do you want to filter traffic to or from (VM, VMs or other resources such as cloud services or application service environments connected to the same subnet, or between resources connected to different subnets)?
+1. What types of resources do you want to filter traffic to or from (NICs in the same VM, VMs or other resources such as cloud services or application service environments connected to the same subnet, or between resources connected to different subnets)?
 
 2. Are the resources you want to filter traffic to/from connected to subnets in existing VNets or will they be connected to new VNets or subnets?
  
@@ -140,7 +136,7 @@ You need to consider the following limits when designing your NSGs.
 
 |**Description**|**Default Limit**|**Implications**|
 |---|---|---|
-|Number of NSGs you can associate to a subnet, VM|1|This means you cannot combine NSGs. Ensure all the rules needed for a given set of resources are included in a single NSG.|
+|Number of NSGs you can associate to a subnet, VM, or NIC|1|This means you cannot combine NSGs. Ensure all the rules needed for a given set of resources are included in a single NSG.|
 |NSGs per region per subscription|100|By default, a new NSG is created for each VM you create in the Azure Management Portal. If you allow this default behavior, you will run out of NSGs quickly. Make sure you keep this limit in mind during your design, and separate your resources into multiple regions or subscriptions if necessary. |
 |NSG rules per NSG|200|Use a broad range of IP and ports to ensure you do not go over this limit. |
 
@@ -187,6 +183,7 @@ To illustrate the application of the information in this article, we'll define N
 7. Access to port 3389 to all SQL Server VMs in the back end from the front end subnet only.
 8. Access to port 1433 to all SQL Server VMs in the back end from the front end subnet only.
 
+
 ![NSGs](./media/virtual-network-nsg-overview/figure1.png)
 
 As seen in the diagram above, the *Web1* and *Web2* VMs are connected to the *FrontEnd* subnet, and the *DB1* and *DB2* VMs are connected to the *BackEnd* subnet.  Both subnets are part of the *TestVNet* VNet. All resources are assigned to the *China North* Azure region.
@@ -223,7 +220,7 @@ Requirements 1-6 (with exception of 3) above are all confined to subnet spaces. 
 |---|---|---|---|---|---|---|---|
 |deny Internet|Deny|100|\*|\*|INTERNET|\*|\*|
 
-### NSG for single VM in FrontEnd for RDP from Internet
+i### NSG for single VM (NIC) in FrontEnd for RDP from Internet
 
 **Incoming rules**
 

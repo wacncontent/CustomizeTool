@@ -1,5 +1,5 @@
 <properties
- pageTitle="Process vehicle sensor data with Apache Storm on HDInsight | Windows Azure"
+ pageTitle="Process vehicle sensor data with Apache Storm on HDInsight | Azure"
  description="Learn how to process vehicle sensor data from Event Hubs using Apache Storm on HDInsight. Add model data from DocumentDB, and store output to storage."
  services="hdinsight,documentdb,notification-hubs"
  documentationCenter=""

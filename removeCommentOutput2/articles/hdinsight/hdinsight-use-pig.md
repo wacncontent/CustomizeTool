@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Pig in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Pig in HDInsight | Azure"
    description="Learn how to use Pig with Hadoop on HDInsight."
    services="hdinsight"
    documentationCenter=""
@@ -86,9 +86,10 @@ HDInsight can run Pig Latin jobs by using a variety of methods. Use the followin
 
 | **Use this** if you want...                                   | ...an **interactive** shell | ...**batch** processing | ...with this **cluster operating system** | ...from this **client operating system** |
 |:--------------------------------------------------------------|:---------------------------:|:-----------------------:|:------------------------------------------|:-----------------------------------------|
+
 | [Curl](/documentation/articles/hdinsight-hadoop-use-pig-curl)                      |           &nbsp;            |            ✔            | Windows                          | Windows        |
-| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1) |           &nbsp;            |            ✔            |  Windows                          | Windows (for now)                        |
-| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-pig-powershell)  |           &nbsp;            |            ✔            |  Windows                          | Windows                                  |
+| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1) |           &nbsp;            |            ✔            | Windows                          | Windows (for now)                        |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-pig-powershell)  |           &nbsp;            |            ✔            | Windows                          | Windows                                  |
 | [Remote Desktop](/documentation/articles/hdinsight-hadoop-use-pig-remote-desktop)  |              ✔              |            ✔            | Windows                                   | Windows                                  |
 
 
